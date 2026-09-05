@@ -154,6 +154,56 @@ describe("역질문", () => {
   });
 });
 
+describe("단어 뜻 질문", () => {
+  it("가르치는 단어는 뜻을 그냥 주지 않고 사다리로 답한다", async () => {
+    // serve는 이 문장의 채점 포인트다 — 뜻이 곧 정답이다
+    const session = await startedSession();
+    const view = await say(session, "serve가 뭐예요?");
+    expect(view.message).toBe(hint(RESIGNATION, 0, 1));
+  });
+
+  it("사다리를 썼으므로 다음에는 2단이 나온다", async () => {
+    const session = await startedSession();
+    await say(session, "serve가 뭐예요?");
+    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 2));
+  });
+
+  it("가르치지 않는 단어는 모델이 답하고, 오답으로 세지 않는다", async () => {
+    const seen: string[] = [];
+    setTutorLlm({
+      speak: async (input) => {
+        seen.push(`${input.action}:${input.askedWord}`);
+        return { message: "company는 회사라는 뜻이에요." };
+      },
+    });
+    const session = await startedSession();
+    const view = await say(session, "company가 뭐예요?");
+    expect(seen).toEqual(["ANSWER_WORD:company"]);
+    expect(view.message).toContain("회사라는 뜻");
+    // miss를 안 셌으므로 다음 「모르겠어요」는 1단이어야 한다
+    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 1));
+  });
+
+  it("어댑터가 없으면 사다리로 폴백한다", async () => {
+    const session = await startedSession();
+    expect((await say(session, "company가 뭐예요?")).message).toBe(hint(RESIGNATION, 0, 1));
+  });
+
+  it("모델이 정답을 흘리면 그 발화를 버린다", async () => {
+    setTutorLlm({
+      speak: async () => ({ message: "serve는 근무하다라는 뜻이에요." }),
+    });
+    const session = await startedSession();
+    expect((await say(session, "company가 뭐예요?")).message).toBe(hint(RESIGNATION, 0, 1));
+  });
+
+  it("해석 시도를 단어 질문으로 잘못 보지 않는다", async () => {
+    const session = await startedSession();
+    const view = await say(session, CORRECT[0]!);
+    expect(view.progressIndex).toBe(2);
+  });
+});
+
 describe("힌트 사다리", () => {
   it("1→2→3단을 순서대로만 오른다", async () => {
     const session = await startedSession();

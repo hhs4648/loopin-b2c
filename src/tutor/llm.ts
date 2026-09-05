@@ -22,14 +22,21 @@ export type TutorAction =
   | "TREAT_EXPECTED"
   | "TREAT_PARTIAL"
   | "TREAT_UNEXPECTED"
+  | "ANSWER_WORD"
   | "HINT_1"
   | "HINT_2"
   | "HINT_3"
   | "FRUSTRATION_EXPLAIN"
   | "DONE";
 
-/** 모델이 말을 만들어도 되는 액션 — 이 둘뿐이다. */
-export type SpokenAction = "TREAT_PARTIAL" | "TREAT_UNEXPECTED";
+/**
+ * 모델이 말을 만들어도 되는 액션 — 이 셋뿐이다.
+ *
+ * `ANSWER_WORD`는 **이번 문장에서 가르치지 않는 단어**의 뜻을 묻는 질문에만
+ * 열린다. 가르치는 단어(채점 포인트)는 코드가 힌트 사다리로 답한다 — 그 뜻이
+ * 곧 이 문장의 정답이라서다.
+ */
+export type SpokenAction = "TREAT_PARTIAL" | "TREAT_UNEXPECTED" | "ANSWER_WORD";
 
 /**
  * 모델에게 넘기는 **현재 unit만**. 편지 전체를 매 턴 넣지 않는다.
@@ -71,6 +78,8 @@ export type JudgeResult = {
 export type SpeakInput = {
   action: SpokenAction;
   studentText: string;
+  /** `ANSWER_WORD`일 때 학생이 물어본 단어 */
+  askedWord?: string;
   unit: UnitBrief;
   state: SessionBrief;
   matchedPoints?: string[];

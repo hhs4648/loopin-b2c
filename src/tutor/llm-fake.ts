@@ -31,7 +31,7 @@ export function createFakeTutorLlm(mode: FakeMode): TutorLlm {
       return { diagnosis: hit ? "B" : "D", confidence: 0.5 };
     },
 
-    async speak({ action, unit }) {
+    async speak({ action, unit, askedWord }) {
       if (mode === "leak") {
         // 일부러 정답 키를 흘린다 — 가드레일이 잡아야 정상
         return {
@@ -43,6 +43,11 @@ export function createFakeTutorLlm(mode: FakeMode): TutorLlm {
         return {
           message:
             "자 보자. 여기 동사가 뭐야? 그리고 앞에 있는 건 뭘까? 한번 봐. 다시 해봐.",
+        };
+      }
+      if (action === "ANSWER_WORD") {
+        return {
+          message: `${askedWord}는 이 문장에서 그렇게 중요한 단어는 아니에요. 뜻만 알고 넘어가도 돼요.`,
         };
       }
       if (action === "TREAT_PARTIAL") {

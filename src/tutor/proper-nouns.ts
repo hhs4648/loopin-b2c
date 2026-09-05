@@ -1,4 +1,4 @@
-import type { ProperNoun } from "../../content/tutor/types";
+import type { LessonChunk, ProperNoun } from "../../content/tutor/types";
 
 /**
  * 고유명사 종류를 학생이 보는 말로.
@@ -37,4 +37,37 @@ export function askedAboutProperNoun(
     return text.includes(n.en) || text.includes(bare) || text.includes(n.ko);
   });
   return hit ?? null;
+}
+
+/**
+ * 학생이 **문장 속 단어의 뜻**을 물었는지. 물었으면 그 단어를 준다.
+ *
+ * 영어 토큰이 지금 문장 안에 있어야 한다 — 아무 영어나 잡으면 해석 시도를
+ * 질문으로 오해한다.
+ */
+export function askedAboutWord(text: string, sentence: string): string | null {
+  if (!ASKING.test(text)) return null;
+  const inSentence = new Set(
+    (sentence.match(/[A-Za-z][A-Za-z'-]+/g) ?? []).map((w) => w.toLowerCase()),
+  );
+  const asked = (text.match(/[A-Za-z][A-Za-z'-]+/g) ?? []).find((w) =>
+    inSentence.has(w.toLowerCase()),
+  );
+  return asked ?? null;
+}
+
+/**
+ * 그 단어가 **이번 문장에서 가르치는 것**인가.
+ *
+ * 가르치는 단어면 뜻을 그냥 주면 안 된다 — 그게 이 문장의 정답이다. 힌트
+ * 사다리로 답한다. 가르치는 대상이 아닌 단어(그냥 막힌 것)는 알려 준다.
+ */
+export function isTaughtWord(word: string, chunk: LessonChunk): boolean {
+  const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const needle = new RegExp(`\\b${escaped}\\b`, "i");
+  const haystacks = [
+    ...(chunk.scoring_points ?? []).map((p) => p.text),
+    ...(chunk.expected_errors ?? []).flatMap((e) => [e.detect, ...(e.signals ?? [])]),
+  ];
+  return haystacks.some((h) => needle.test(h));
 }

@@ -8,7 +8,12 @@ import {
   type UnitBrief,
 } from "./llm";
 import { classify, isUnknownInput, matchChoice } from "./match";
-import { askedAboutProperNoun, nounKind } from "./proper-nouns";
+import {
+  askedAboutProperNoun,
+  askedAboutWord,
+  isTaughtWord,
+  nounKind,
+} from "./proper-nouns";
 
 export const UNKNOWN_BTN = "잘 모르겠어요";
 export const HINT_BTN = "힌트 주세요";
@@ -403,6 +408,57 @@ function bannedFor(s: EngineState): string[] {
 }
 
 /**
+ * **단어 뜻 질문.**
+ *
+ * 「serve가 뭐예요?」는 무시할 질문이 아니다. 다만 답이 두 갈래다.
+ *
+ * - **이번 문장에서 가르치는 단어**(채점 포인트·예상 오류가 겨냥하는 단어)면
+ *   뜻이 곧 정답이다. 그냥 알려 주면 학생은 다음부터 해석 대신 단어부터
+ *   물어보고, 힌트 사다리에 옆문이 생긴다. 그래서 **사다리 한 단으로 답한다** —
+ *   침묵이 아니라 그 단어를 콕 집은 응답이다(2단이 정확히 그 대사다).
+ * - **가르치지 않는 단어**는 그냥 막힌 것이다. 알려 주고 하던 자리로 돌려보낸다.
+ *   레슨 JSON에 단어 사전이 없으므로 이건 모델이 답한다. 어댑터가 없으면
+ *   사다리로 폴백한다.
+ */
+async function answerWord(
+  s: EngineState,
+  word: string,
+  studentText: string,
+): Promise<EngineState> {
+  if (isTaughtWord(word, current(s))) return climbHint(s);
+
+  const llm = getTutorLlm();
+  if (!llm) return climbHint(s);
+
+  const spoken = await safeCall(() =>
+    llm.speak({
+      action: "ANSWER_WORD",
+      askedWord: word,
+      studentText,
+      unit: briefOf(s),
+      state: {
+        unitIndex: s.unitIndex,
+        hintRung: s.hintRung,
+        missCountInUnit: s.missCountInUnit,
+        lastTutorUtterance: s.lastTutorUtterance,
+      },
+    }),
+  );
+  if (!spoken) return climbHint(s);
+
+  const verdict = validateLlmOutput(spoken, { bannedStrings: bannedFor(s) });
+  if (!verdict.ok) {
+    console.warn("[tutor] 단어 뜻 발화 폐기 →", verdict.reason);
+    return climbHint(s);
+  }
+
+  // 물어본 것은 오답이 아니다 — miss도 힌트 단수도 그대로다
+  return say(s, `${spoken.message} ${frame.fixed_lines.return_to_lesson}`, {
+    effect: null,
+  });
+}
+
+/**
  * **D(예상 밖) · B(부분 정답) — 모델이 열리는 유일한 자리.**
  *
  * 어댑터가 없으면 여기서 하는 일은 `climbHint`와 똑같다. 즉 지금 데모의 동작이
@@ -563,6 +619,16 @@ export function createSession(lessonId?: string | null) {
           screen: "study",
           buttons: [HINT_BTN, UNKNOWN_BTN],
         });
+        return view(s);
+      }
+
+      /*
+        단어 뜻 질문은 해석 시도가 아니다. `classify`에 넘기면 예상 밖(D)으로
+        보고 힌트를 올린다 — 물어본 학생이 사다리를 한 단 잃는다.
+      */
+      const askedWord = askedAboutWord(text, current(s).text);
+      if (askedWord) {
+        s = await answerWord(s, askedWord, text);
         return view(s);
       }
 
