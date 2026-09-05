@@ -71,3 +71,15 @@ export function isTaughtWord(word: string, chunk: LessonChunk): boolean {
   ];
   return haystacks.some((h) => needle.test(h));
 }
+
+/**
+ * 「왜요?」 — 이유를 묻는 말인지.
+ *
+ * 레슨은 원리 설명을 **학생이 물었을 때만** 꺼내도록 적어 둔다
+ * (`on_why_question`). 묻기 전에 설명하면 그건 강의다.
+ */
+const ASKING_WHY = /(왜|어째서|이유가|왠지|왜요|왜 그런|어떻게 그렇)/;
+
+export function askedWhy(text: string): boolean {
+  return ASKING_WHY.test(text);
+}

@@ -12,6 +12,7 @@ import { classify, isUnknownInput, matchChoice } from "./match";
 import {
   askedAboutProperNoun,
   askedAboutWord,
+  askedWhy,
   isTaughtWord,
   nounKind,
 } from "./proper-nouns";
@@ -65,6 +66,8 @@ type Branch = {
     string,
     { message: string; reveal_answer?: boolean; next?: string }
   >;
+  /** 「왜요?」라고 물었을 때만 꺼내는 원리 설명. 묻기 전에는 하지 않는다 */
+  onWhy?: string;
 };
 
 type EngineState = {
@@ -90,6 +93,12 @@ type EngineState = {
   toldAnyPoint: boolean;
   /** 이번 문장에서 해석을 시도한 횟수 */
   attemptsInUnit: number;
+  /**
+   * 이 문장에서 각 예상 오류가 몇 번째인지.
+   * 같은 실수를 두 번째로 하면 **다른 방식으로** 대응해야 한다 —
+   * 같은 대사를 또 하면 학생은 말이 안 통한다고 느낀다.
+   */
+  errorRounds: Record<string, number>;
   /** 항목 단위 학습 기록. 서버가 생기면 그대로 흘려보낸다 */
   pointLog: PointRecord[];
   pending: Branch | null;
@@ -154,6 +163,7 @@ function initialState(lesson: Lesson): EngineState {
     toldPoints: [],
     toldAnyPoint: false,
     attemptsInUnit: 0,
+    errorRounds: {},
     pointLog: [],
     pending: null,
     errorIds: [],
@@ -217,6 +227,7 @@ function startUnit(s: EngineState, index: number, lead: string): EngineState {
     nudgedPoints: [],
     toldPoints: [],
     attemptsInUnit: 0,
+    errorRounds: {},
     pending: null,
     screen: "study",
     placeholder: "해석을 적어 보세요…",
@@ -295,22 +306,41 @@ function advance(s: EngineState, praise: string, light: boolean): EngineState {
   );
 }
 
+/**
+ * 예상 오류(C) 처치.
+ *
+ * **같은 오류를 두 번째로 하면 라운드가 넘어간다.** 레슨이 `rounds`로 여러 벌을
+ * 적어 둔 경우(탈레스 E3), 1회차는 짧은 교정만 하고 2회차에 2지선다로 방식을
+ * 바꾼다. 예전에는 항상 첫 라운드만 써서 같은 대사가 반복됐다 —
+ * `TEST_SCENARIOS` #10이 「1회차 설명을 다시 하면 실패」라고 정해 둔 그 동작이다.
+ *
+ * 라운드를 다 쓰면 마지막 라운드를 유지한다. 없는 라운드를 찾다가 침묵하는 것보다
+ * 낫다.
+ */
 function openBranch(s: EngineState, errorId: string): EngineState {
   const error = errorOf(s, errorId);
-  // `rounds`로 쓴 레슨도 첫 라운드를 고정 대사로 쓴다 (탈레스 E3)
-  const t = error?.treatment ?? error?.rounds?.[0];
+  const rounds = error?.rounds?.length
+    ? error.rounds
+    : error?.treatment
+      ? [error.treatment]
+      : [];
+  const round = (s.errorRounds[errorId] ?? 0) + 1;
+  const t = rounds[Math.min(round, rounds.length) - 1];
   if (!t?.message) return nudgeNext(s, s.checkedPoints);
   const choices = t.choices ?? [];
   return say(s, t.message, {
     hadAnyError: true,
     missCountInUnit: s.missCountInUnit + 1,
+    errorRounds: { ...s.errorRounds, [errorId]: round },
     errorIds: s.errorIds.includes(`${s.unitIndex + 1}:${errorId}`)
       ? s.errorIds
       : [...s.errorIds, `${s.unitIndex + 1}:${errorId}`],
     pending:
       t.on_choice && choices.length
-        ? { errorId, choices, on_choice: t.on_choice }
-        : null,
+        ? { errorId, choices, on_choice: t.on_choice, onWhy: t.on_why_question?.message }
+        : t.on_why_question?.message
+          ? { errorId, choices: [], on_choice: {}, onWhy: t.on_why_question.message }
+          : null,
     screen: "study",
     buttons: uniqueButtons([...choices.map((c) => c.label), UNKNOWN_BTN]),
     placeholder: "선생님께 답해 보세요…",
@@ -687,6 +717,16 @@ function compactEq(a: string, b: string) {
 
 function handlePending(s: EngineState, text: string): EngineState {
   const pending = s.pending!;
+
+  /*
+    **「왜요?」는 오답이 아니다.** 레슨이 원리 설명을 여기 적어 둔 이유가 그것이다 —
+    묻기 전에 설명하면 강의가 되고, 물었는데 안 해 주면 답답해진다.
+    miss도 안 세고 2지선다도 그대로 둔다.
+  */
+  if (pending.onWhy && askedWhy(text)) {
+    return say(s, pending.onWhy, { effect: null });
+  }
+
   if (isUnknownInput(text)) {
     if (pending.errorId === "FRUSTRATION") {
       return advance(
@@ -788,8 +828,17 @@ export function createSession(lessonId?: string | null) {
       }
 
       if (s.pending) {
-        s = handlePending(s, text);
-        return view(s);
+        /*
+          선택지 없이 **설명만 걸려 있는** pending이 있다 (1회차 교정 + 「왜요?」).
+          그건 답을 기다리는 게 아니라 물어볼 기회를 열어 둔 것이므로, 「왜요?」가
+          아니면 보통 흐름으로 흘려보낸다. 안 그러면 다시 시도한 해석이
+          「선택지 밖 답」으로 처리된다.
+        */
+        if (s.pending.choices.length || askedWhy(text)) {
+          s = handlePending(s, text);
+          return view(s);
+        }
+        s = { ...s, pending: null };
       }
 
       if (s.stage === "intro") {

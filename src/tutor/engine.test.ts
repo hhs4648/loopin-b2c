@@ -260,6 +260,57 @@ describe("2지선다 중에 고친 답을 바로 적을 때", () => {
   });
 });
 
+describe("예상 오류의 다중 라운드 (TEST_SCENARIOS #9·#10)", () => {
+  const E3 = THALES.chunks[0]!.expected_errors!.find((e) => e.id === "E3")!;
+  const WRONG_ORDER = "밀레투스라는 도시의 소아시아에서 태어난";
+
+  it("1회차는 짧은 교정만 한다 — 원리를 먼저 강의하지 않는다", async () => {
+    const session = await startedSession(THALES.id);
+    const view = await say(session, WRONG_ORDER);
+    expect(view.message).toBe(E3.rounds![0]!.message);
+    // 주소 비유(원리 설명)는 물었을 때만 나온다
+    expect(view.message).not.toContain("주소");
+  });
+
+  it("「왜요?」라고 물으면 그때 원리를 설명한다 — 오답으로 세지 않는다", async () => {
+    const session = await startedSession(THALES.id);
+    await say(session, WRONG_ORDER);
+    const view = await say(session, "왜요?");
+    expect(view.message).toBe(E3.rounds![0]!.on_why_question!.message);
+  });
+
+  it("같은 오류를 또 하면 2회차로 넘어간다 — 같은 대사를 반복하지 않는다", async () => {
+    const session = await startedSession(THALES.id);
+    await say(session, WRONG_ORDER);
+    const view = await say(session, WRONG_ORDER);
+    expect(view.message).toBe(E3.rounds![1]!.message);
+    expect(view.message).not.toBe(E3.rounds![0]!.message);
+    // 2회차는 2지선다로 방식을 바꾼다
+    for (const choice of E3.rounds![1]!.choices!) {
+      expect(view.buttons).toContain(choice.label);
+    }
+  });
+
+  it("라운드를 다 쓰면 마지막 라운드를 유지한다", async () => {
+    const session = await startedSession(THALES.id);
+    await say(session, WRONG_ORDER, WRONG_ORDER); // 1회차 → 2회차(2지선다)
+    // 2지선다에 답해서 분기를 닫는다
+    const right = E3.rounds![1]!.choices!.find((c) => c.correct)!;
+    await say(session, right.label);
+    // 그러고도 또 같은 실수를 하면 마지막 라운드가 유지된다
+    const view = await say(session, WRONG_ORDER);
+    expect(view.message).toBe(E3.rounds![1]!.message);
+  });
+
+  it("문장이 바뀌면 라운드도 처음부터다", async () => {
+    const session = await startedSession(THALES.id);
+    await say(session, WRONG_ORDER);
+    await say(session, "소아시아의 밀레투스라는 도시에서 태어난");
+    // 2번 문장으로 넘어갔다 — 1번 문장의 라운드 기록은 남지 않는다
+    expect(session.view().progressIndex).toBe(2);
+  });
+});
+
 describe("체크리스트 유도", () => {
   it("못 한 것 중 첫 번째만 짚는다", async () => {
     const session = await startedSession();
