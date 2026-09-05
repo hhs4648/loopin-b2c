@@ -1,0 +1,16 @@
+---
+description: 다정쌤 UI는 상냥쌤 HTML 프로토타입 셸을 따른다
+globs: docs/tutor/**,content/tutor/**
+alwaysApply: true
+---
+
+# Tutor UI
+
+Visual source: KakaoTalk prototypes `학습첫화면_대답버튼.html` (classroom chat) and `상냥쌤 문장 학습.html` (sentence study). Spec: `docs/tutor/UI.md`. Slim copies: `docs/tutor/refs/`.
+
+- Mobile canvas 390×844, cream classroom `#f7efe6`, accent `#ef7a93`.
+- Two screens: **classroom chat** (character + one teacher bubble + last student bubble + pill quick replies + round input) and **sentence study** (huge English line + small teacher bubble + interpretation input).
+- Do not build a long chat transcript. One current teacher line, one last student line.
+- `buttons` from the tutor JSON render as the pink outline pills. Input bar stays (text + mic + send).
+- Product name is **다정쌤**, not 상냥한 선생님. Keep the prototype look; swap the label.
+- Do not import haksup UI.

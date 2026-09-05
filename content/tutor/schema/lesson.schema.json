@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loopin.local/tutor/lesson.schema.json",
+  "title": "Loopin 다정쌤 lesson",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "category",
+    "topic_intro",
+    "sentence",
+    "grammar_type",
+    "split_rule",
+    "proper_nouns",
+    "chunks"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "version": { "type": "string" },
+    "updated": { "type": "string" },
+    "authors": {
+      "type": "object",
+      "properties": {
+        "content": { "type": "string" },
+        "prompt": { "type": "string" }
+      }
+    },
+    "category": { "type": "string", "description": "예: 리딩" },
+    "topic_intro": { "type": "string" },
+    "sentence": { "type": "string" },
+    "grammar_type": { "type": "string" },
+    "split_rule": {
+      "type": "object",
+      "required": ["when", "how", "labels"],
+      "properties": {
+        "when": { "type": "string" },
+        "how": { "type": "string" },
+        "labels": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "proper_nouns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["en", "ko"],
+        "properties": {
+          "en": { "type": "string" },
+          "ko": { "type": "string" },
+          "type": { "type": "string" }
+        }
+      }
+    },
+    "proper_noun_tip": {
+      "type": "object",
+      "properties": {
+        "tell_once_on_first_appearance": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "chunks": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/chunk" }
+    }
+  },
+  "$defs": {
+    "chunk": {
+      "type": "object",
+      "required": ["id", "text", "model_translation", "scoring_points"],
+      "properties": {
+        "id": { "type": "integer", "minimum": 1 },
+        "text": { "type": "string" },
+        "model_translation": { "type": "string" },
+        "scoring_points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "text"],
+            "properties": {
+              "id": { "type": "integer" },
+              "text": { "type": "string" }
+            }
+          }
+        },
+        "error_priority": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "동시 오류 시 처치 순서. 예: E2, E3, E1"
+        },
+        "expected_errors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/expectedError" }
+        },
+        "hint_ladder": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["rung", "message"],
+            "properties": {
+              "rung": { "type": "integer", "minimum": 1, "maximum": 3 },
+              "message": { "type": "string" }
+            }
+          }
+        },
+        "anticipated_responses": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/anticipatedResponse" }
+        },
+        "anticipated_questions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "teach_points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "message"],
+            "properties": {
+              "id": { "type": "integer" },
+              "label": { "type": "string" },
+              "message": { "type": "string" },
+              "enrichment": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "expectedError": {
+      "type": "object",
+      "required": ["id", "detect"],
+      "properties": {
+        "id": { "type": "string" },
+        "detect": { "type": "string" },
+        "never_mark_correct": { "type": "boolean" },
+        "signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "rounds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/treatmentRound" }
+        },
+        "treatment": { "$ref": "#/$defs/treatmentRound" }
+      }
+    },
+    "treatmentRound": {
+      "type": "object",
+      "properties": {
+        "round": { "type": "integer" },
+        "style": { "type": "string" },
+        "forbid": { "type": "array", "items": { "type": "string" } },
+        "message": { "type": "string" },
+        "choices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label"],
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" },
+              "correct": { "type": "boolean" }
+            }
+          }
+        },
+        "on_choice": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/branch" }
+        },
+        "on_why_question": { "$ref": "#/$defs/branch" },
+        "next": { "type": "string" }
+      }
+    },
+    "branch": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "reveal_answer": { "type": "boolean" },
+        "next": { "type": "string" }
+      }
+    },
+    "anticipatedResponse": {
+      "type": "object",
+      "required": ["when", "match", "message"],
+      "properties": {
+        "when": { "type": "string" },
+        "match": { "type": "array", "items": { "type": "string" } },
+        "do_not_repeat_question": { "type": "boolean" },
+        "message": { "type": "string" },
+        "next": { "type": "string" }
+      }
+    }
+  }
+}

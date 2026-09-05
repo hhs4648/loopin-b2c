@@ -1,0 +1,13 @@
+---
+description: Loopin B2C product identity — not haksup
+alwaysApply: true
+---
+
+# Product
+
+This repository is **Loopin B2C**, the real Loopin consumer product.
+
+- Existing apps called **haksup** are a different line. Do not treat this repo as a haksup fork.
+- Do not copy haksup screens, copy, data models, or tutor behavior unless a human explicitly asks.
+- First product surface: **다정쌤** English interpretation tutor. Spec lives in `docs/tutor/` and `content/tutor/`.
+- Korean student-facing copy uses **다정한 해요체**. Banmal is forbidden in tutor voice.
