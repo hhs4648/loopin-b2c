@@ -4,7 +4,7 @@
 
 | 경로 | 역할 |
 |------|------|
-| `prompts/dajung-system.v0.1.md` | 시스템 프롬프트. `===` 사이를 통째로 사용 |
+| `prompts/dajung-system.v0.2.md` | 시스템 프롬프트. `===` 사이를 통째로 사용 |
 | `frame.json` | 레슨과 무관한 고정 틀 (말투, 절대 규칙, 힌트, 좌절 방지) |
 | `lessons/resignation-letter.json` | 퇴사 편지 7문장 데모. 문장 단위, 예상 1·2·3 |
 | `lessons/*.json` | 문장·청크·예상 오류·고정 대사. 문장 교체는 여기만 |

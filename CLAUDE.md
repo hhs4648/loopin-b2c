@@ -68,6 +68,6 @@ LLM 출력 계약:
 - UI: `src/components/ClassroomChat.tsx`, `SentenceStudy.tsx`
 - 퇴사 편지 7문장 레슨: `content/tutor/lessons/resignation-letter.json`
 - 탈레스 원안 레슨(참고): `content/tutor/lessons/thales-participial-phrase-front.json`
-- 시스템 프롬프트 원안: `content/tutor/prompts/dajung-system.v0.1.md`
+- 시스템 프롬프트 원안: `content/tutor/prompts/dajung-system.v0.2.md`
 
 커밋은 인간이 요청하기 전에 하지 마라.

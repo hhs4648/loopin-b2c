@@ -13,7 +13,7 @@ When you change or implement the tutor, read in this order:
 1. `docs/tutor/ARCHITECTURE.md` — layers, turn pipeline, LLM contract
 2. `docs/tutor/README.md` — map of files
 3. `docs/tutor/IMPLEMENTATION.md` — what code must do vs what the LLM may do
-4. `content/tutor/prompts/dajung-system.v0.1.md` — paste-ready system prompt
+4. `content/tutor/prompts/dajung-system.v0.2.md` — paste-ready system prompt
 5. `content/tutor/lessons/` + `content/tutor/schema/lesson.schema.json` — swappable lesson data
 
 Do not invent new pedagogy. If a student path is not in the spec, follow the unexpected-error ladder in the spec. Do not reveal the answer before the hint ladder (or the frustration exception) allows it.
