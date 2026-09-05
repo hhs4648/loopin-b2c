@@ -17,7 +17,9 @@ Loopin B2C의 1:1 영어 해석 교정 튜터입니다. 설계 원칙은 하나�
 | `content/tutor/frame.json` | 앱 · LLM 조립기 | 캐릭터/절대규칙 등 레슨과 무관한 고정 틀 |
 | `content/tutor/schema/lesson.schema.json` | 검증 | 레슨 JSON 계약 |
 | `content/tutor/lessons/*.json` | 콘텐츠 | 문장 · 청크 · 예상 오류 · 고정 대사 |
-| `content/tutor/types.ts` | 앱 | TypeScript 타입 |
+| `content/tutor/types.ts` | 앱 | 레슨 데이터 타입 (세션 상태는 여기 없다 — `engine.ts`) |
+| `src/tutor/lessons.ts` | 앱 | 레슨 목록. 지문 추가는 여기 한 줄 |
+| `src/tutor/llm.ts` | 앱 | LLM 어댑터 계약 + 가드레일 ([`LLM_ASSEMBLY.md`](LLM_ASSEMBLY.md)) |
 | [`TEST_SCENARIOS.md`](TEST_SCENARIOS.md) | QA | 프롬프트 분기 체크리스트 |
 | [`LLM_ASSEMBLY.md`](LLM_ASSEMBLY.md) | 나중에 LLM 붙일 때 | 프롬프트 조립 방법 |
 | [`UI.md`](UI.md) | 구현하는 AI | 상냥쌤 HTML 프로토타입과 같은 화면 셸 |

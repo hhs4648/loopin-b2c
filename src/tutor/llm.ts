@@ -48,7 +48,7 @@ export type UnitBrief = {
 export type SessionBrief = {
   unitIndex: number;
   hintRung: number;
-  missCount: number;
+  missCountInUnit: number;
   /** 같은 말을 두 번 하지 않게 */
   lastTutorUtterance: string;
 };

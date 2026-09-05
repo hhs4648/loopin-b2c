@@ -76,6 +76,7 @@ type SessionState = {
   hintRung: 0 | 1 | 2 | 3;
   missCountInUnit: number;     // 오답 + 모르겠어요. unit이 바뀌면 0
   pendingBranch: string | null; // 2지선다 대기 중이면 그 오류 id
+  reachedHint3: boolean;        // 3단(정답 공개)을 본 문장이 있었나 → 결과 「취약」
   properNounsTold: string[];    // 이미 제시한 고유명사
   hadAnyError: boolean;
   skipFinalRetake: boolean;     // 좌절 방지 발동
@@ -84,6 +85,10 @@ type SessionState = {
   result: "이해" | "오류후이해" | "설명제공" | "취약" | null;
 };
 ```
+
+**이 표가 단일 소스다.** 실물은 `src/tutor/engine.ts`의 `EngineState`.
+지금 데모가 아직 안 가진 것: `pending_choice`·`wrap_up` 단계(2지선다는 별도 필드로
+들고 있고, 마무리 통합 재시도는 없다), `properNounsTold`(칩은 문장에서 매번 뽑는다).
 
 규칙:
 
@@ -242,7 +247,7 @@ speech: 해요체
 | D | E와 같음 | LLM, 위치→되묻기→힌트 |
 | E | 힌트 사다리 | 동일. 코드 |
 | 고유명사 | 인트로 한 줄 + 칩 | 동일. 코드 |
-| 기록 | 종료 시 엔진 | 서버 저장, 말풍선 숨김 |
+| 기록 | 종료 시 엔진. 네 값 모두 나옴 | 서버 저장, 말풍선 숨김 |
 
 LLM을 붙여도 **C와 E와 카운터는 코드에 남긴다.** 여기까지 모델에 주면 선공개·힌트 점프가 다시 생긴다.
 

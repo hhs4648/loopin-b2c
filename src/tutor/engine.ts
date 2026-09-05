@@ -45,13 +45,14 @@ type Branch = {
 type EngineState = {
   /** 이 세션이 가르치는 지문. 지문 교체는 이것만 바꾸면 된다 */
   lesson: Lesson;
-  stage: "intro" | "chunk" | "done";
+  stage: "intro" | "unit" | "done";
   unitIndex: number;
   hintRung: 0 | 1 | 2 | 3;
-  missCount: number;
+  missCountInUnit: number;
   skipFinalRetake: boolean;
   hadAnyError: boolean;
-  properNounTipTold: boolean;
+  /** 힌트 3단(=모범 해석 공개)까지 간 문장이 하나라도 있었나 */
+  reachedHint3: boolean;
   pending: Branch | null;
   errorIds: string[];
   result: TutorResult | null;
@@ -110,10 +111,10 @@ function initialState(lesson: Lesson): EngineState {
     stage: "intro",
     unitIndex: 0,
     hintRung: 0,
-    missCount: 0,
+    missCountInUnit: 0,
     skipFinalRetake: false,
     hadAnyError: false,
-    properNounTipTold: true,
+    reachedHint3: false,
     pending: null,
     errorIds: [],
     result: null,
@@ -168,10 +169,10 @@ function say(
 
 function startUnit(s: EngineState, index: number, lead: string): EngineState {
   return say(s, `${lead}이 문장을 해석해볼까요?`, {
-    stage: "chunk",
+    stage: "unit",
     unitIndex: index,
     hintRung: 0,
-    missCount: 0,
+    missCountInUnit: 0,
     pending: null,
     screen: "study",
     placeholder: "해석을 적어 보세요…",
@@ -198,6 +199,15 @@ function advance(s: EngineState, praise: string, light: boolean): EngineState {
   if (s.unitIndex < s.lesson.chunks.length - 1) {
     return startUnit(stepped, s.unitIndex + 1, `${praise} 다음 문장이에요. `);
   }
+  /*
+    **결과 네 값이 여기서 갈린다.** `[기록]`은 다음 수업을 고르는 근거라
+    "그냥 다 오류후이해"로 뭉치면 쓸모가 없다. 강한 신호부터 본다.
+
+    설명제공 — 좌절 방지가 발동해서 정답을 설명해 줬다 (시도를 더 강요하지 않음)
+    취약     — 좌절까지는 아니지만 힌트 3단(정답 공개)을 봐야 넘어간 문장이 있다
+    오류후이해 — 틀렸지만 3단 전에 스스로 고쳤다
+    이해     — 오류 없이 통과
+  */
   if (s.skipFinalRetake) {
     return finish(stepped, "설명제공", `${praise} 끝까지 같이 봤어요. 오늘은 여기까지 해요.`);
   }
@@ -206,6 +216,13 @@ function advance(s: EngineState, praise: string, light: boolean): EngineState {
       stepped,
       "이해",
       `${praise} ${s.lesson.chunks.length}문장 모두 잘 따라왔어요. 오늘 정말 잘했어요.`,
+    );
+  }
+  if (s.reachedHint3) {
+    return finish(
+      stepped,
+      "취약",
+      `${praise} 오늘은 힌트를 끝까지 본 문장이 있었어요. 같은 유형을 한 번 더 보면 훨씬 편해질 거예요.`,
     );
   }
   return finish(
@@ -223,7 +240,7 @@ function openBranch(s: EngineState, errorId: string): EngineState {
   const choices = t.choices ?? [];
   return say(s, t.message, {
     hadAnyError: true,
-    missCount: s.missCount + 1,
+    missCountInUnit: s.missCountInUnit + 1,
     errorIds: s.errorIds.includes(`${s.unitIndex + 1}:${errorId}`)
       ? s.errorIds
       : [...s.errorIds, `${s.unitIndex + 1}:${errorId}`],
@@ -281,13 +298,27 @@ function frustration(s: EngineState): EngineState {
 }
 
 function climbHint(s: EngineState): EngineState {
-  const miss = s.missCount + 1;
-  if (miss >= 4) return frustration({ ...s, missCount: miss, hadAnyError: true });
+  const miss = s.missCountInUnit + 1;
+  if (miss >= 4) return frustration({ ...s, missCountInUnit: miss, hadAnyError: true });
   const rung = Math.min(3, s.hintRung + 1) as 1 | 2 | 3;
   return say(s, hintOf(s, rung) ?? hintOf(s, 1)!, {
     hintRung: rung,
-    missCount: miss,
+    missCountInUnit: miss,
     hadAnyError: true,
+    /*
+      3단은 모범 해석을 알려 주는 단이다. 그 문장은 스스로 못 넘은 것으로 남긴다.
+      **3단이 없는 레슨에서는 세지 않는다** — 사다리가 2칸뿐이라 학생이 정답을
+      본 적이 없는데 「취약」으로 남으면 기록이 거짓말이 된다.
+    */
+    reachedHint3: s.reachedHint3 || (rung === 3 && hintOf(s, 3) != null),
+    /*
+      예상 오류(C)만 기록하면 「결과=취약 / 오류=없음」이 나온다. 정답을 보고
+      넘어간 문장도 다음 수업을 고르는 근거이므로 같이 남긴다.
+    */
+    errorIds:
+      rung === 3 && hintOf(s, 3) != null && !s.errorIds.includes(`${s.unitIndex + 1}:HINT3`)
+        ? [...s.errorIds, `${s.unitIndex + 1}:HINT3`]
+        : s.errorIds,
     pending: null,
     screen: "study",
     buttons: [HINT_BTN, UNKNOWN_BTN],
@@ -362,9 +393,9 @@ async function treatUnexpectedOrPartial(
   const llm = getTutorLlm();
   if (!llm) return climbHint(s);
 
-  const miss = s.missCount + 1;
+  const miss = s.missCountInUnit + 1;
   if (miss >= 4) {
-    return frustration({ ...s, missCount: miss, hadAnyError: true });
+    return frustration({ ...s, missCountInUnit: miss, hadAnyError: true });
   }
 
   const unit = briefOf(s);
@@ -381,7 +412,7 @@ async function treatUnexpectedOrPartial(
       state: {
         unitIndex: s.unitIndex,
         hintRung: s.hintRung,
-        missCount: s.missCount,
+        missCountInUnit: s.missCountInUnit,
         lastTutorUtterance: s.lastTutorUtterance,
       },
       matchedPoints: judged?.matchedPoints,
@@ -396,7 +427,7 @@ async function treatUnexpectedOrPartial(
   }
 
   return say(s, spoken.message, {
-    missCount: miss,
+    missCountInUnit: miss,
     hadAnyError: true,
     pending: null,
     screen: "study",
@@ -414,17 +445,42 @@ function handlePending(s: EngineState, text: string): EngineState {
   const pending = s.pending!;
   if (isUnknownInput(text)) {
     if (pending.errorId === "FRUSTRATION") {
-      return advance({ ...s, pending: null, skipFinalRetake: true }, "괜찮아요, 방금 같이 본 그 문장이에요.", false);
+      return advance(
+        { ...s, pending: null, skipFinalRetake: true },
+        "괜찮아요, 방금 같이 본 그 문장이에요.",
+        false,
+      );
     }
     return climbHint({ ...s, pending: null });
   }
+  /*
+    **좌절 방지 뒤에는 학생을 붙잡아 두지 않는다.**
+    선택지 밖의 답이 와도 다음 문장으로 넘긴다. 예전에는 여기서 `climbHint`로
+    갔는데, miss가 이미 4라 좌절 방지가 다시 열리고 → 또 못 맞히고 → 무한히
+    같은 문장에 갇혔다 (2026-09-06 재현: 「네」라고 답하니 수업이 안 끝났다).
+  */
+  const escapeFrustration = (state: EngineState) =>
+    advance(
+      { ...state, pending: null, skipFinalRetake: true },
+      "괜찮아요, 방금 같이 본 그 문장이에요.",
+      false,
+    );
+
   const byLabel = matchChoice(text, pending.choices.map((c) => c.label));
   const choice =
     pending.choices.find((c) => c.label === byLabel || compactEq(text, c.id)) ??
     pending.choices.find((c) => byLabel === c.label);
-  if (!choice) return climbHint({ ...s, pending: null });
+  if (!choice) {
+    return pending.errorId === "FRUSTRATION"
+      ? escapeFrustration(s)
+      : climbHint({ ...s, pending: null });
+  }
   const branch = pending.on_choice[choice.id];
-  if (!branch) return climbHint({ ...s, pending: null });
+  if (!branch) {
+    return pending.errorId === "FRUSTRATION"
+      ? escapeFrustration(s)
+      : climbHint({ ...s, pending: null });
+  }
   if (pending.errorId === "FRUSTRATION" || branch.next === "advance") {
     return advance({ ...s, pending: null, skipFinalRetake: true, result: "설명제공" }, branch.message, false);
   }

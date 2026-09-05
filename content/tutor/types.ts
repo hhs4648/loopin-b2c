@@ -5,25 +5,14 @@
 
 export type TutorResult = "이해" | "오류후이해" | "설명제공" | "취약";
 
-export type SessionStage = "intro" | "chunk" | "wrap_up" | "done";
-
 export type Diagnosis = "A" | "B" | "C" | "D" | "E";
 
-export type SessionState = {
-  lessonId: string;
-  stage: SessionStage;
-  chunkIndex: number;
-  hintRung: 0 | 1 | 2 | 3;
-  missCountInChunk: number;
-  skipFinalRetake: boolean;
-  hadAnyError: boolean;
-  properNounTipTold: boolean;
-  lastTutorUtterance: string;
-  taughtPointIndex: number;
-  pendingBranch: string | null;
-  errorIds: string[];
-  result: TutorResult | null;
-};
+/*
+  세션 상태 타입은 여기 두지 않는다.
+  **`src/tutor/engine.ts`의 `EngineState`가 실물**이고, 규격은
+  `docs/tutor/ARCHITECTURE.md` §3이다. 예전에는 이 파일에도 한 벌 있어서
+  세 곳(문서 2 + 코드 1)이 서로 다른 이름을 썼다 (`chunkIndex` vs `unitIndex`).
+*/
 
 export type TutorUiOutput = {
   message: string;

@@ -25,4 +25,5 @@ Frame is fixed. The model may only improvise inside it.
 - After 3 misses + “모르겠어요” in one chunk, switch to 설명제공 (do not keep pushing)
 - End with the `[기록]` line (not student-facing)
 
-Source of truth: `docs/tutor/IMPLEMENTATION.md` and `content/tutor/`.
+Source of truth: `docs/tutor/ARCHITECTURE.md` and `content/tutor/`.
+`IMPLEMENTATION.md` explains the same frame with the 탈레스 lesson as its example; where the two differ, ARCHITECTURE wins.

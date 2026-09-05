@@ -17,25 +17,12 @@
 
 ## 2. 세션 상태 (코드가 반드시 기억)
 
-한 수업 세션마다 아래를 유지합니다. LLM만 기억하게 두면 힌트 단수·좌절 카운트가 깨집니다.
+한 수업 세션마다 상태를 유지합니다. LLM만 기억하게 두면 힌트 단수·좌절 카운트가 깨집니다.
 
-```ts
-type SessionState = {
-  lessonId: string;
-  stage: "intro" | "chunk" | "wrap_up" | "done";
-  chunkIndex: number;          // 0-based
-  hintRung: 0 | 1 | 2 | 3;     // 현재 청크의 힌트 사다리. 0 = 아직 안 씀
-  missCountInChunk: number;    // 오류 + "잘 모르겠어요" 합산. 청크 넘어가면 0
-  skipFinalRetake: boolean;    // 좌절 방지 발동 시 true → 전체 통합 재시도 생략
-  hadAnyError: boolean;        // 마무리에서 통합 재시도 여부
-  properNounTipTold: boolean;  // 고유명사 팁은 첫 등장 때 한 번만
-  lastTutorUtterance: string;  // 같은 문장 반복 금지용
-  taughtPointIndex: number;    // teach_points를 하나씩 나갈 때
-  pendingBranch: string | null; // 예: E1에서 "동사 vs 과거분사" 대기
-  errorIds: string[];          // [기록]용
-  result: "이해" | "오류후이해" | "설명제공" | "취약" | null;
-};
-```
+**필드 목록은 [`ARCHITECTURE.md`](ARCHITECTURE.md) §3이 단일 소스입니다.** 이 문서에도
+같은 표를 두었더니 두 벌이 서로 어긋났습니다(`chunkIndex` vs `unitIndex`,
+`missCountInChunk` vs `missCountInUnit`). 실제 코드는 `src/tutor/engine.ts`의
+`EngineState`입니다.
 
 ### 카운트 규칙
 
@@ -68,7 +55,9 @@ type SessionState = {
 - 그 외 오답은 **D**. 순서 고정: 위치만 짚기 → 되묻기 또는 2지선다 → 막히면 힌트.
 - “잘 모르겠어요” / 무응답 / 포기는 **E**. 힌트 사다리를 **한 단만** 올린다. 건너뛰기 금지.
 
-오류가 동시에 여러 개면 JSON의 `error_priority` 순서로 **하나만** 처치한다. 이 레슨 청크1은 `E2 → E3 → E1`.
+오류가 동시에 여러 개면 JSON의 `error_priority` 순서로 **하나만** 처치한다.
+(이 문서의 `E1`~`E4`는 **탈레스 레슨**의 오류 id다. 퇴사 편지 레슨은 `P2`·`P3`를 쓴다 —
+id는 레슨마다 자유이고, 코드는 `error_priority` 순서만 본다.)
 
 ## 5. 고정 대사가 있는 분기
 
@@ -94,9 +83,17 @@ expected_error에 `script`가 있으면 LLM이 문장을 바꿔 쓰지 않습니
 | `이해` | 오류 없이 통과 |
 | `오류후이해` | 오류가 있었으나 학생이 스스로 (또는 힌트 후) 교정 |
 | `설명제공` | 좌절 방지로 정답을 설명해 줌 |
-| `취약` | 힌트 3단까지 갔거나, 교정에 실패하고 세션이 끝난 경우 |
+| `취약` | 힌트 3단(모범 해석 공개)을 봐야 넘어간 문장이 하나라도 있는 경우 |
 
 앱 단계에서는 `[기록]`을 파싱해 저장하고 말풍선에서는 숨깁니다.
+
+**판정 순서는 강한 신호부터입니다** (`engine.ts`의 `advance`):
+`설명제공`(좌절 방지 발동) → `취약`(힌트 3단 도달) → `오류후이해`(오류는 있었으나 스스로 교정)
+→ `이해`. 3단이 없는 레슨에서는 `취약`을 세지 않습니다 — 학생이 정답을 본 적이 없는데
+「취약」으로 남으면 기록이 거짓말이 됩니다.
+
+힌트 3단으로 넘어간 문장은 `오류=3:HINT3`처럼 같이 남깁니다. 예상 오류만 기록하면
+「결과=취약 / 오류=없음」이 나옵니다.
 
 ## 7. UI 셸 + JSON (나중 단계)
 
