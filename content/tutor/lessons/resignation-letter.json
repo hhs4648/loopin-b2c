@@ -23,6 +23,13 @@
       "id": 1,
       "text": "It has been a privilege to serve in this company for the past four years.",
       "model_translation": "지난 4년 동안 이 회사에서 근무할 수 있었던 것은 영광이었다",
+      "praise": "serve를 '근무하다'로, privilege를 '영광'으로 잡은 거 정말 잘했어요.",
+      "demo_match": {
+        "p1": [
+          ["영광", "보람", "기쁘"],
+          ["근무", "일하", "일했", "일한", "일하는", "일해요"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "It has been a privilege to ~ → '~할 수 있어서 영광이었다'" },
         { "id": 2, "text": "serve → 근무하다 (회사 맥락)" }
@@ -33,6 +40,7 @@
           "id": "P2",
           "detect": "serve를 봉사하다로 해석",
           "signals": ["봉사"],
+          "not_signals": ["근무", "일하", "일했", "일한"],
           "treatment": {
             "message": "좋은 시도예요! 그런데 하나만 물어볼게요~ 이 편지는 회사 퇴사 인사예요. 여기서 serve는 '봉사하다'일까요, '근무하다'일까요?",
             "choices": [
@@ -77,7 +85,7 @@
       ],
       "hint_ladder": [
         { "rung": 1, "message": "to 뒤에 있는 동사부터 볼까요? It has been a privilege to ~ 형태예요~" },
-        { "rung": 2, "message": "힌트 배달 왔습니다~ privilege는 '영광', serve는 여기선 '근무하다', for the past four years는 '지난 4년 동안'이에요. 편하게 한번 해볼까요?" },
+        { "rung": 2, "message": "여기서 serve는 ‘봉사하다’가 아니에요. 회사 이야기라고 생각하면 어떤 뜻일까요?" },
         { "rung": 3, "message": "정답은 '지난 4년 동안 이 회사에서 근무할 수 있었던 것은 영광이었다'예요. 한번 따라 말해볼래요? 그대로여도 좋아요~" }
       ]
     },
@@ -85,6 +93,13 @@
       "id": 2,
       "text": "The experiences and insights I have gained as a safety manager have been invaluable.",
       "model_translation": "안전관리자로서 얻은 경험과 통찰은 무엇과도 바꿀 수 없을 만큼 소중했다",
+      "praise": "invaluable을 '소중하다'로 본 거 정말 잘했어요.",
+      "demo_match": {
+        "p1": [
+          ["경험"],
+          ["소중", "귀중", "값진", "보배", "큰 도움"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "as a safety manager → '~로서'" },
         { "id": 2, "text": "invaluable → 매우 소중하다 (가치 없다가 아님)" }
@@ -140,7 +155,7 @@
       ],
       "hint_ladder": [
         { "rung": 1, "message": "주어 I랑, as a safety manager가 어떤 관계인지부터 볼까요~" },
-        { "rung": 2, "message": "힌트 배달 왔습니다~ as는 '~로서', safety manager는 안전관리자, invaluable은 '매우 소중하다'예요. 편하게 한번 해볼까요?" },
+        { "rung": 2, "message": "invaluable의 in-을 ‘아니다’로 보면 뜻이 정반대가 돼요. 앞의 experiences와 어울리는 쪽으로 다시 볼까요?" },
         { "rung": 3, "message": "정답은 '안전관리자로서 얻은 경험과 통찰은 무엇과도 바꿀 수 없을 만큼 소중했다'예요. 한번 따라 말해볼래요?" }
       ]
     },
@@ -148,6 +163,13 @@
       "id": 3,
       "text": "However, after careful consideration, I have accepted a position at another company and will be leaving Lewis Ltd.",
       "model_translation": "하지만 신중히 생각한 끝에, 다른 회사의 자리를 수락했고 Lewis Ltd.를 떠나게 되었습니다",
+      "praise": "leaving을 '떠나다'로, position을 '자리'로 잡은 거 정말 잘했어요.",
+      "demo_match": {
+        "p1": [
+          ["떠나", "퇴사", "그만", "이직"],
+          ["자리", "직위", "다른 회사", "새 회사"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "However → 앞 내용과 반대" },
         { "id": 2, "text": "position → 직위/자리, leaving → 떠나다" }
@@ -203,7 +225,7 @@
       ],
       "hint_ladder": [
         { "rung": 1, "message": "However랑 leaving부터 볼까요? 앞 문장과 반대되는 결정이에요~" },
-        { "rung": 2, "message": "힌트 배달 왔습니다~ However는 '하지만', position은 '자리', leaving은 '떠나다', Lewis Ltd.는 회사 이름 그대로예요. 편하게 한번 해볼까요?" },
+        { "rung": 2, "message": "position을 ‘위치’로 두면 문장이 어색해져요. 회사에서 accept a position이라고 하면 무엇을 받아들인 걸까요?" },
         { "rung": 3, "message": "정답은 '하지만 신중히 생각한 끝에, 다른 회사의 자리를 수락했고 Lewis Ltd.를 떠나게 되었습니다'예요. 한번 따라 말해볼래요?" }
       ]
     },
@@ -211,6 +233,13 @@
       "id": 4,
       "text": "This was not an easy decision to make, but I am confident that my new role will help me with my future goals.",
       "model_translation": "쉬운 결정은 아니었지만, 새 역할이 앞으로의 목표에 도움이 될 거라고 확신한다",
+      "praise": "쉬운 결정이 아니었다는 점과 확신을 같이 담은 거 정말 잘했어요.",
+      "demo_match": {
+        "p1": [
+          ["아니었", "쉽지", "어려운"],
+          ["확신", "도움", "목표"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "not an easy decision → 쉬운 결정은 아니었다" },
         { "id": 2, "text": "confident → 확신한다" }
@@ -266,7 +295,7 @@
       ],
       "hint_ladder": [
         { "rung": 1, "message": "앞은 결정이 쉽지 않았다는 말, 뒤는 but으로 이어져요. 그 흐름부터 볼까요~" },
-        { "rung": 2, "message": "힌트 배달 왔습니다~ not an easy decision은 '쉬운 결정은 아니었다', confident는 '확신한다', role은 '역할'이에요. 편하게 한번 해볼까요?" },
+        { "rung": 2, "message": "confident를 성격 이야기로 보면 that 뒤가 안 이어져요. 뒤에 오는 내용을 어떻게 여긴다는 말일까요?" },
         { "rung": 3, "message": "정답은 '쉬운 결정은 아니었지만, 새 역할이 앞으로의 목표에 도움이 될 거라고 확신한다'예요. 한번 따라 말해볼래요?" }
       ]
     },
@@ -274,6 +303,14 @@
       "id": 5,
       "text": "My last day of work will be on April 30th.",
       "model_translation": "마지막 근무일은 4월 30일이다",
+      "praise": "'마지막 근무일'이랑 4월 30일을 정확히 본 거 정말 잘했어요.",
+      "demo_match": {
+        "p1": [
+          ["마지막"],
+          ["4월"],
+          ["30"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "last day of work → 마지막 근무일" },
         { "id": 2, "text": "April 30th → 4월 30일" }
@@ -329,7 +366,7 @@
       ],
       "hint_ladder": [
         { "rung": 1, "message": "last랑 April부터 볼까요? 언제 끝나는지 말하는 문장이에요~" },
-        { "rung": 2, "message": "힌트 배달 왔습니다~ last day of work는 '마지막 근무일', April 30th는 4월 30일이에요. 편하게 한번 해볼까요?" },
+        { "rung": 2, "message": "last를 ‘지난’으로 읽으면 뒤의 April 30th와 안 맞아요. 앞으로 올 날이라면 어떤 날일까요?" },
         { "rung": 3, "message": "정답은 '마지막 근무일은 4월 30일이다'예요. 한번 따라 말해볼래요?" }
       ]
     },
@@ -337,6 +374,12 @@
       "id": 6,
       "text": "I will do all I can to assist in a smooth transfer of duties.",
       "model_translation": "업무가 원활히 인수인계되도록 최선을 다하겠다",
+      "praise": "인수인계를 위해 최선을 다하겠다는 뜻을 잘 살렸어요.",
+      "demo_match": {
+        "p1": [
+          ["인수", "인계", "넘기"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "do all I can → 최선을 다하다" },
         { "id": 2, "text": "transfer of duties → 업무 인수인계" }
@@ -392,7 +435,7 @@
       ],
       "hint_ladder": [
         { "rung": 1, "message": "do all I can이랑 transfer of duties부터 볼까요~" },
-        { "rung": 2, "message": "힌트 배달 왔습니다~ do all I can은 '최선을 다하다', smooth는 '원활한', transfer of duties는 '업무 인수인계'예요. 편하게 한번 해볼까요?" },
+        { "rung": 2, "message": "transfer를 ‘이체’로 보면 돈 이야기가 돼요. duties와 함께 쓰였을 때는 무엇을 넘기는 걸까요?" },
         { "rung": 3, "message": "정답은 '업무가 원활히 인수인계되도록 최선을 다하겠다'예요. 한번 따라 말해볼래요?" }
       ]
     },
@@ -400,6 +443,12 @@
       "id": 7,
       "text": "I wish both you and Lewis Ltd. every good fortune.",
       "model_translation": "당신과 Lewis Ltd. 모두에게 행운이 있기를 바란다",
+      "praise": "행운을 당신과 회사에 함께 빈 거 정말 잘했어요.",
+      "demo_match": {
+        "p1": [
+          ["행운", "잘 되", "번창"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "wish ~ every good fortune → 행운을 빌다" },
         { "id": 2, "text": "both you and Lewis Ltd. → 당신과 회사 둘 다" }
@@ -455,7 +504,7 @@
       ],
       "hint_ladder": [
         { "rung": 1, "message": "wish랑 both부터 볼까요? 작별 인사로 복을 비는 문장이에요~" },
-        { "rung": 2, "message": "힌트 배달 왔습니다~ wish는 '바라다', both A and B는 'A와 B 둘 다', fortune은 여기선 '행운'이에요. 편하게 한번 해볼까요?" },
+        { "rung": 2, "message": "여기서 fortune은 ‘재산’이 아니에요. 작별 인사로 빌어 주는 것이라면 무엇일까요?" },
         { "rung": 3, "message": "정답은 '당신과 Lewis Ltd. 모두에게 행운이 있기를 바란다'예요. 한번 따라 말해볼래요?" }
       ]
     }

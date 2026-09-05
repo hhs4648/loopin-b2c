@@ -3,7 +3,15 @@ import { ClassroomChat } from "./components/ClassroomChat";
 import { SentenceStudy } from "./components/SentenceStudy";
 import { createSession, type TutorView } from "./tutor/engine";
 
-const session = createSession();
+/*
+  지문은 데이터다. 개발에서는 `?lesson=<id>`로 갈아끼워 본다
+  (`src/tutor/lessons.ts`). 값이 없거나 못 찾으면 첫 레슨.
+*/
+const session = createSession(
+  import.meta.env.DEV
+    ? new URLSearchParams(window.location.search).get("lesson")
+    : null,
+);
 
 export function App() {
   const [view, setView] = useState<TutorView>(() => session.view());

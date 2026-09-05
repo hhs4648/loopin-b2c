@@ -70,6 +70,11 @@ export type ExpectedError = {
   detect: string;
   never_mark_correct?: boolean;
   signals?: string[];
+  /**
+   * 이 말이 같이 있으면 그 오류가 아니다.
+   * (예: '봉사'가 있어도 '근무'가 같이 있으면 serve 오해가 아니다)
+   */
+  not_signals?: string[];
   treatment?: TreatmentRound;
   rounds?: TreatmentRound[];
 };
@@ -94,10 +99,25 @@ export type TeachPoint = {
   enrichment?: string;
 };
 
+/**
+ * LLM이 붙기 전까지 쓰는 **데모용 정답 매칭**.
+ *
+ * 오류(C) 매칭은 여기 두지 않는다 — `expected_errors[].signals`와
+ * `error_priority`가 이미 그 일을 한다. 여기 있는 건 정답(A) 판정뿐이고,
+ * 프로덕션에서는 LLM 의미 판정으로 대체된다.
+ */
+export type DemoMatch = {
+  /** AND 그룹들. 그룹마다 하나씩 걸리면 정답 */
+  p1: string[][];
+};
+
 export type LessonChunk = {
   id: number;
   text: string;
   model_translation: string;
+  /** 정답일 때 하는 구체적 칭찬. 없으면 프레임의 기본 칭찬 */
+  praise?: string;
+  demo_match?: DemoMatch;
   scoring_points: ScoringPoint[];
   error_priority?: string[];
   expected_errors?: ExpectedError[];

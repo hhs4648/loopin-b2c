@@ -75,6 +75,17 @@
         "id": { "type": "integer", "minimum": 1 },
         "text": { "type": "string" },
         "model_translation": { "type": "string" },
+        "praise": { "type": "string" },
+        "demo_match": {
+          "type": "object",
+          "required": ["p1"],
+          "properties": {
+            "p1": {
+              "type": "array",
+              "items": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
         "scoring_points": {
           "type": "array",
           "items": {
@@ -137,6 +148,10 @@
         "detect": { "type": "string" },
         "never_mark_correct": { "type": "boolean" },
         "signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "not_signals": {
           "type": "array",
           "items": { "type": "string" }
         },

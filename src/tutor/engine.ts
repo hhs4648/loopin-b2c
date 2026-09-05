@@ -1,21 +1,18 @@
-import lesson from "../../content/tutor/lessons/resignation-letter.json";
+import frame from "../../content/tutor/frame.json";
 import type { Lesson, LessonChunk, ProperNoun, TutorResult } from "../../content/tutor/types";
-import { classifyUnit, isUnknownInput, matchChoice } from "./match";
+import { getLesson } from "./lessons";
 import {
   getTutorLlm,
   safeCall,
   validateLlmOutput,
   type UnitBrief,
 } from "./llm";
-import { PRAISE, UNIT_MATCH } from "./units";
+import { classify, isUnknownInput, matchChoice } from "./match";
 
 export const UNKNOWN_BTN = "잘 모르겠어요";
 export const HINT_BTN = "힌트 주세요";
 export const READY_BTN = "네, 좋아요!";
 export const READ_BTN = "다 읽었어요";
-
-const data = lesson as unknown as Lesson;
-const units = data.chunks;
 
 export type UiScreen = "chat" | "study";
 
@@ -46,6 +43,8 @@ type Branch = {
 };
 
 type EngineState = {
+  /** 이 세션이 가르치는 지문. 지문 교체는 이것만 바꾸면 된다 */
+  lesson: Lesson;
   stage: "intro" | "chunk" | "done";
   unitIndex: number;
   hintRung: 0 | 1 | 2 | 3;
@@ -68,7 +67,7 @@ type EngineState = {
 };
 
 function current(s: EngineState): LessonChunk {
-  return units[s.unitIndex]!;
+  return s.lesson.chunks[s.unitIndex]!;
 }
 
 function errorOf(s: EngineState, id: string) {
@@ -83,11 +82,31 @@ function uniqueButtons(btns: string[]) {
   return [...new Set(btns.filter(Boolean))];
 }
 
-const INTRO =
-  "오늘은 퇴사 인사 편지예요. Lewis Ltd.는 회사 이름이라 해석하지 말고 그대로 두면 돼요. 한 문장씩 해석해볼까요?";
+/**
+ * 인트로도 **레슨에서 만든다.**
+ * 예전에는 "퇴사 인사 편지…Lewis Ltd.…"가 코드에 박혀 있어서, 지문을 바꾸면
+ * 다른 지문을 앞에 두고 퇴사 편지를 소개했다.
+ */
+function introMessage(lesson: Lesson): string {
+  const tip = lesson.proper_noun_tip?.message?.trim();
+  return [
+    `오늘은 ${lesson.topic_intro}를 볼 거예요.`,
+    tip,
+    "한 문장씩 해석해볼까요?",
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
 
-function initialState(): EngineState {
+/** 레슨에 칭찬 문구가 없으면 프레임의 기본 칭찬 */
+function praiseFor(s: EngineState): string {
+  return current(s).praise ?? frame.fixed_lines.praise_default;
+}
+
+function initialState(lesson: Lesson): EngineState {
+  const intro = introMessage(lesson);
   return {
+    lesson,
     stage: "intro",
     unitIndex: 0,
     hintRung: 0,
@@ -98,19 +117,19 @@ function initialState(): EngineState {
     pending: null,
     errorIds: [],
     result: null,
-    lastTutorUtterance: INTRO,
+    lastTutorUtterance: intro,
     studentLine: "",
     effect: null,
     screen: "chat",
-    message: INTRO,
+    message: intro,
     buttons: [READY_BTN, UNKNOWN_BTN],
     placeholder: "선생님께 답해 보세요…",
     ended: false,
   };
 }
 
-function nounsIn(text: string): ProperNoun[] {
-  return (data.proper_nouns ?? []).filter((n) =>
+function nounsIn(s: EngineState, text: string): ProperNoun[] {
+  return (s.lesson.proper_nouns ?? []).filter((n) =>
     text.includes(n.en) || text.includes(n.en.replace(/\.$/, "")),
   );
 }
@@ -128,12 +147,13 @@ function view(s: EngineState): TutorView {
     activeChunk: u.text,
     chunkLabel: `${s.unitIndex + 1}문장`,
     progressIndex: s.unitIndex + 1,
-    progressTotal: units.length,
+    progressTotal: s.lesson.chunks.length,
     ended: s.ended,
-    properNouns: s.stage === "intro" ? data.proper_nouns ?? [] : nounsIn(u.text),
+    properNouns:
+      s.stage === "intro" ? s.lesson.proper_nouns ?? [] : nounsIn(s, u.text),
     recordLine:
       s.ended && s.result
-        ? `[기록] 유형=${data.grammar_type} / 결과=${s.result} / 오류=${s.errorIds.join(",") || "없음"}`
+        ? `[기록] 유형=${s.lesson.grammar_type} / 결과=${s.result} / 오류=${s.errorIds.join(",") || "없음"}`
         : null,
   };
 }
@@ -175,14 +195,18 @@ function finish(s: EngineState, result: TutorResult, closing: string): EngineSta
 
 function advance(s: EngineState, praise: string, light: boolean): EngineState {
   const stepped = { ...s, effect: light ? ("light" as const) : null };
-  if (s.unitIndex < units.length - 1) {
+  if (s.unitIndex < s.lesson.chunks.length - 1) {
     return startUnit(stepped, s.unitIndex + 1, `${praise} 다음 문장이에요. `);
   }
   if (s.skipFinalRetake) {
-    return finish(stepped, "설명제공", `${praise} 편지 끝까지 같이 봤어요. 오늘은 여기까지 해요.`);
+    return finish(stepped, "설명제공", `${praise} 끝까지 같이 봤어요. 오늘은 여기까지 해요.`);
   }
   if (!s.hadAnyError) {
-    return finish(stepped, "이해", `${praise} 일곱 문장 모두 잘 따라왔어요. 오늘 정말 잘했어요.`);
+    return finish(
+      stepped,
+      "이해",
+      `${praise} ${s.lesson.chunks.length}문장 모두 잘 따라왔어요. 오늘 정말 잘했어요.`,
+    );
   }
   return finish(
     stepped,
@@ -191,8 +215,10 @@ function advance(s: EngineState, praise: string, light: boolean): EngineState {
   );
 }
 
-function openBranch(s: EngineState, errorId: "P2" | "P3"): EngineState {
-  const t = errorOf(s, errorId)?.treatment;
+function openBranch(s: EngineState, errorId: string): EngineState {
+  const error = errorOf(s, errorId);
+  // `rounds`로 쓴 레슨도 첫 라운드를 고정 대사로 쓴다 (탈레스 E3)
+  const t = error?.treatment ?? error?.rounds?.[0];
   if (!t?.message) return climbHint(s);
   const choices = t.choices ?? [];
   return say(s, t.message, {
@@ -214,13 +240,19 @@ function openBranch(s: EngineState, errorId: "P2" | "P3"): EngineState {
 
 function frustration(s: EngineState): EngineState {
   const u = current(s);
-  const wrong = errorOf(s, "P3")?.treatment?.choices?.find((c) => !c.correct)?.label
-    ?? errorOf(s, "P2")?.treatment?.choices?.find((c) => !c.correct)?.label
-    ?? "잘 모르겠어요";
+  /*
+    쉬운 2지선다의 오답 쪽은 **레슨이 이미 적어 둔 오해**에서 가져온다.
+    예전에는 "P2"/"P3"라는 id를 코드가 알고 있어서, id 체계가 다른 레슨
+    (탈레스의 E1~E4)에서는 아무것도 못 찾았다.
+  */
+  const wrong =
+    (u.expected_errors ?? [])
+      .flatMap((e) => e.treatment?.choices ?? e.rounds?.[0]?.choices ?? [])
+      .find((c) => !c.correct)?.label ?? "잘 모르겠어요";
   const right = u.model_translation;
   return say(
     s,
-    `오늘 문장이 좀 까다롭죠? 괜찮아요, 우리 그냥 같이 봐요. 정답은 '${right}'예요. 어느 쪽이 더 가깝나요?`,
+    `${frame.fixed_lines.frustration_tone} 정답은 '${right}'예요. 어느 쪽이 더 가깝나요?`,
     {
       skipFinalRetake: true,
       hadAnyError: true,
@@ -406,8 +438,13 @@ function handlePending(s: EngineState, text: string): EngineState {
   });
 }
 
-export function createSession() {
-  let s = initialState();
+/**
+ * 한 수업 세션. `lessonId`를 주면 그 지문으로 시작한다
+ * (없거나 못 찾으면 첫 레슨).
+ */
+export function createSession(lessonId?: string | null) {
+  const lesson = getLesson(lessonId);
+  let s = initialState(lesson);
   return {
     view: () => view(s),
     async submit(raw: string) {
@@ -434,18 +471,14 @@ export function createSession() {
         return view(s);
       }
 
-      const path = classifyUnit(text, UNIT_MATCH[s.unitIndex]!);
+      const verdict = classify(text, current(s));
 
-      if (path === "P1") {
-        s = advance(s, PRAISE[s.unitIndex]!, s.hadAnyError);
+      if (verdict.kind === "A") {
+        s = advance(s, praiseFor(s), s.hadAnyError);
         return view(s);
       }
-      if (path === "P2") {
-        s = openBranch(s, "P2");
-        return view(s);
-      }
-      if (path === "P3") {
-        s = openBranch(s, "P3");
+      if (verdict.kind === "C") {
+        s = openBranch(s, verdict.errorId);
         return view(s);
       }
 
@@ -464,7 +497,7 @@ export function createSession() {
       return view(s);
     },
     reset() {
-      s = initialState();
+      s = initialState(lesson);
       return view(s);
     },
   };

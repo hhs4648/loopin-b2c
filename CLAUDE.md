@@ -59,7 +59,8 @@ LLM 출력 계약:
 
 ## 코드 위치
 
-- 엔진: `src/tutor/engine.ts`, `match.ts`, `units.ts`
+- 엔진: `src/tutor/engine.ts`, `match.ts`, `lessons.ts`, `llm.ts`
+- 매칭 키워드·칭찬 문구는 **레슨 JSON 안**에 있다 (`demo_match.p1`, `praise`). 예전 `units.ts`는 없어졌다
 - UI: `src/components/ClassroomChat.tsx`, `SentenceStudy.tsx`
 - 퇴사 편지 7문장 레슨: `content/tutor/lessons/resignation-letter.json`
 - 탈레스 원안 레슨(참고): `content/tutor/lessons/thales-participial-phrase-front.json`

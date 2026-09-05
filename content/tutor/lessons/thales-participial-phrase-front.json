@@ -30,6 +30,13 @@
       "id": 1,
       "text": "Born in the city of Miletus in Asia Minor,",
       "model_translation": "소아시아의 밀레투스라는 도시에서 태어난",
+      "praise": "Born을 '태어난'으로 잡아서 뒤 문장과 이어 준 거 정말 잘했어요.",
+      "demo_match": {
+        "p1": [
+          ["태어난", "태어나서", "태어났던"],
+          ["밀레투스", "밀레토스"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "born을 '태어난'(수식)으로 처리" },
         { "id": 2, "text": "in을 '~에서'로 처리" }
@@ -150,6 +157,14 @@
       "id": 2,
       "text": "he lived from around 624 B.C. to 546 B.C.",
       "model_translation": "그는 기원전 약 624년부터 546년까지 살았다",
+      "praise": "B.C.를 '기원전'으로 정확히 본 거 정말 잘했어요.",
+      "demo_match": {
+        "p1": [
+          ["기원전"],
+          ["624"],
+          ["546"]
+        ]
+      },
       "scoring_points": [
         { "id": 1, "text": "he/lived를 주어/동사로 처리" },
         { "id": 2, "text": "from~to를 '~부터 ~까지'로 처리" },
