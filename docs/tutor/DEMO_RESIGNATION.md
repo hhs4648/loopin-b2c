@@ -12,4 +12,4 @@
 | 6 | smooth transfer of duties | 인수인계 | transfer=이체 | smooth=매끄러운 |
 | 7 | wish … good fortune | 행운 | fortune=재산 | both 한쪽만 |
 
-그 외 입력 / 잘 모르겠어요 = 힌트 사다리. 나중에 D만 LLM.
+그 외 입력 / 잘 모르겠어요 = 체크리스트에서 못 한 항목 하나 유도. 나중에 D·B만 LLM.

@@ -6,12 +6,12 @@
  *
  * 코드에 남는 것(모델에 절대 넘기지 않는 것):
  * - C 예상 오류(P2/P3) 고정 대사
- * - E 「잘 모르겠어요」 힌트 사다리 1→2→3
+ * - E 「잘 모르겠어요」 체크리스트 유도 (못 한 것 하나)
  * - miss 카운트와 좌절 방지 임계
  * - 다음 unit으로 넘어갈지
  *
  * 어댑터가 등록돼 있지 않으면 엔진은 **지금 데모와 완전히 같이** 동작한다
- * (D도 힌트 사다리로 접힌다). 그래서 이 파일이 들어와도 화면 동작은 안 바뀐다.
+ * (D도 체크리스트 유도로 접힌다). 그래서 이 파일이 들어와도 화면 동작은 안 바뀐다.
  */
 
 /** 엔진이 고르는 이번 턴 액션. 모델은 이걸 고르지 않는다. */
@@ -23,9 +23,8 @@ export type TutorAction =
   | "TREAT_PARTIAL"
   | "TREAT_UNEXPECTED"
   | "ANSWER_WORD"
-  | "HINT_1"
-  | "HINT_2"
-  | "HINT_3"
+  | "NUDGE_POINT"
+  | "TELL_POINT"
   | "FRUSTRATION_EXPLAIN"
   | "DONE";
 
@@ -33,7 +32,7 @@ export type TutorAction =
  * 모델이 말을 만들어도 되는 액션 — 이 셋뿐이다.
  *
  * `ANSWER_WORD`는 **이번 문장에서 가르치지 않는 단어**의 뜻을 묻는 질문에만
- * 열린다. 가르치는 단어(채점 포인트)는 코드가 힌트 사다리로 답한다 — 그 뜻이
+ * 열린다. 가르치는 단어(채점 포인트)는 코드가 그 항목 유도로 답한다 — 그 뜻이
  * 곧 이 문장의 정답이라서다.
  */
 export type SpokenAction = "TREAT_PARTIAL" | "TREAT_UNEXPECTED" | "ANSWER_WORD";
@@ -41,20 +40,21 @@ export type SpokenAction = "TREAT_PARTIAL" | "TREAT_UNEXPECTED" | "ANSWER_WORD";
 /**
  * 모델에게 넘기는 **현재 unit만**. 편지 전체를 매 턴 넣지 않는다.
  *
- * `hintLadderVisible`은 지금 허용된 단까지 **잘라서** 넘긴다. "3단은 쓰지 마"라고
- * 지시하는 대신 물리적으로 안 보이게 하는 쪽이 확실하다.
+ * `nextNudge`는 **지금 유도해도 되는 항목 하나**다. 다음 항목이나 `tell`까지
+ * 보여 주고 "쓰지 마"라고 지시하는 대신 물리적으로 안 보이게 한다.
  */
 export type UnitBrief = {
   index: number;
   text: string;
   scoringPoints: string[];
   errorPriority: string[];
-  hintLadderVisible: string[];
+  /** 학생이 이미 낸 항목 id — 맞은 것을 다시 시키지 않게 */
+  checkedPoints: number[];
+  nextNudge?: string;
 };
 
 export type SessionBrief = {
   unitIndex: number;
-  hintRung: number;
   missCountInUnit: number;
   /** 같은 말을 두 번 하지 않게 */
   lastTutorUtterance: string;
@@ -110,7 +110,7 @@ export function getTutorLlm(): TutorLlm | null {
 
 /**
  * 모델 호출은 **실패해도 수업이 멈추면 안 된다.**
- * 던지거나 늦으면 `null`을 주고, 엔진은 힌트 사다리로 폴백한다.
+ * 던지거나 늦으면 `null`을 주고, 엔진은 코드의 항목 유도로 폴백한다.
  */
 export async function safeCall<T>(
   run: () => Promise<T | null>,

@@ -26,9 +26,21 @@ export type ProperNoun = {
   type?: string;
 };
 
+/**
+ * 이 문장에서 학생이 스스로 내야 하는 것 하나. **체크리스트 한 줄**이다.
+ *
+ * 배열 순서가 곧 **쉬운 순**이다. 아직 못 한 것 중 첫 번째를 유도한다.
+ * (나중에 학생 데이터가 쌓이면 첫 시도 체크율로 이 순서를 덮어쓸 수 있다.)
+ */
 export type ScoringPoint = {
   id: number;
   text: string;
+  /** 학생 답에 이 말이 하나라도 있으면 체크 */
+  check?: string[];
+  /** 아직 못 한 항목을 유도하는 말. 답을 주지 않는다 */
+  nudge?: string;
+  /** 같은 항목에서 또 막혔을 때 **그 항목만** 알려 준다 */
+  tell?: string;
 };
 
 export type Choice = {
@@ -68,11 +80,6 @@ export type ExpectedError = {
   rounds?: TreatmentRound[];
 };
 
-export type HintRung = {
-  rung: 1 | 2 | 3;
-  message: string;
-};
-
 export type AnticipatedResponse = {
   when: string;
   match: string[];
@@ -88,29 +95,15 @@ export type TeachPoint = {
   enrichment?: string;
 };
 
-/**
- * LLM이 붙기 전까지 쓰는 **데모용 정답 매칭**.
- *
- * 오류(C) 매칭은 여기 두지 않는다 — `expected_errors[].signals`와
- * `error_priority`가 이미 그 일을 한다. 여기 있는 건 정답(A) 판정뿐이고,
- * 프로덕션에서는 LLM 의미 판정으로 대체된다.
- */
-export type DemoMatch = {
-  /** AND 그룹들. 그룹마다 하나씩 걸리면 정답 */
-  p1: string[][];
-};
-
 export type LessonChunk = {
   id: number;
   text: string;
   model_translation: string;
   /** 정답일 때 하는 구체적 칭찬. 없으면 프레임의 기본 칭찬 */
   praise?: string;
-  demo_match?: DemoMatch;
   scoring_points: ScoringPoint[];
   error_priority?: string[];
   expected_errors?: ExpectedError[];
-  hint_ladder?: HintRung[];
   anticipated_responses?: AnticipatedResponse[];
   anticipated_questions?: string[];
   teach_points?: TeachPoint[];

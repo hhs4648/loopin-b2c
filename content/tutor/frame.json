@@ -11,7 +11,12 @@
     "max_sentences": 4,
     "min_sentences": 2,
     "rapport": {
-      "examples": ["어머", "와아", "^^", "~"],
+      "examples": [
+        "어머",
+        "와아",
+        "^^",
+        "~"
+      ],
       "max_per_turn": 1
     },
     "praise": "specific_only",
@@ -27,17 +32,32 @@
     "do_not_repeat_previous_wording",
     "acknowledge_partial_credit_first"
   ],
-  "stages": ["intro", "chunk", "wrap_up", "record"],
-  "diagnosis": ["A_correct", "B_partial", "C_expected_error", "D_unexpected_error", "E_unknown"],
-  "unexpected_error_order": ["point_location_only", "reask_or_binary_choice", "hint"],
-  "hint_ladder": {
-    "skip_forbidden": true,
-    "rungs": [
-      { "id": 1, "name": "direction", "give": "where_to_look_only" },
-      { "id": 2, "name": "materials", "give": "vocab_meanings", "retry_line": "편하게 한번 해볼까요?" },
-      { "id": 3, "name": "answer", "give": "answer_plus_reason", "follow_line": "한번 따라 말해볼래요? 그대로여도 좋아요~" }
-    ]
+  "stages": [
+    "intro",
+    "chunk",
+    "wrap_up",
+    "record"
+  ],
+  "diagnosis": [
+    "A_correct",
+    "B_partial",
+    "C_expected_error",
+    "D_unexpected_error",
+    "E_unknown"
+  ],
+  "point_guidance": {
+    "source": "lesson.scoring_points",
+    "order": "배열 순서 = 쉬운 순 (작성자가 정한다)",
+    "one_per_turn": true,
+    "first_miss": "못 한 것 중 첫 번째의 nudge",
+    "same_point_again": "그 항목의 tell — 그 항목만 알려 준다",
+    "full_answer_only_at": "frustration_guard"
   },
+  "unexpected_error_order": [
+    "point_location_only",
+    "reask_or_binary_choice",
+    "hint"
+  ],
   "frustration_guard": {
     "count": "errors_plus_unknown_in_current_chunk",
     "threshold": 3,
@@ -50,14 +70,21 @@
     }
   },
   "record_line": "[기록] 유형=<grammar_type> / 결과=이해|오류후이해|설명제공|취약 / 오류=<error ids>",
-  "results": ["이해", "오류후이해", "설명제공", "취약"],
+  "results": [
+    "이해",
+    "오류후이해",
+    "설명제공",
+    "취약"
+  ],
   "ui_output": {
     "enabled_in_v0_1_chat_test": false,
     "when_app_wired": {
       "format": "json",
       "shape": {
         "message": "말풍선 내용",
-        "buttons": ["잘 모르겠어요"],
+        "buttons": [
+          "잘 모르겠어요"
+        ],
         "effect": null
       },
       "effect_light_only_when": "student_self_corrected_an_error"

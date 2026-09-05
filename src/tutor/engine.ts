@@ -22,6 +22,24 @@ export const READ_BTN = "다 읽었어요";
 
 export type UiScreen = "chat" | "study";
 
+/**
+ * 항목 하나에 대한 학습 기록.
+ *
+ * **`firstTry`가 난이도의 근거다.** 유도 후 결과로 난이도를 재면, 우리가 늘
+ * 1번 항목을 먼저 유도하기 때문에 1번이 쉬워 보이는 편향이 생긴다.
+ * 지금은 세션 안에만 쌓이고, 서버가 생기면 그대로 흘려보낸다.
+ */
+export type PointRecord = {
+  lessonId: string;
+  unit: number;
+  point: number;
+  firstTry: boolean;
+  nudged: boolean;
+  told: boolean;
+  /** 좌절 방지로 모범 해석을 본 뒤였나 */
+  revealed: boolean;
+};
+
 export type TutorView = {
   screen: UiScreen;
   message: string;
@@ -53,12 +71,26 @@ type EngineState = {
   lesson: Lesson;
   stage: "intro" | "unit" | "done";
   unitIndex: number;
-  hintRung: 0 | 1 | 2 | 3;
   missCountInUnit: number;
   skipFinalRetake: boolean;
   hadAnyError: boolean;
-  /** 힌트 3단(=모범 해석 공개)까지 간 문장이 하나라도 있었나 */
-  reachedHint3: boolean;
+  /** 이번 문장에서 학생이 낸 체크리스트 항목 */
+  checkedPoints: number[];
+  /** 첫 시도에 스스로 낸 항목 — 난이도 데이터의 근거 */
+  firstTryPoints: number[];
+  /** 이미 한 번 유도한 항목 (두 번째부터는 `tell`) */
+  nudgedPoints: number[];
+  /** 이번 문장에서 답을 알려 준 항목 */
+  toldPoints: number[];
+  /**
+   * 세션 전체에서 한 번이라도 답을 알려 줬나 → 결과 「취약」.
+   * `toldPoints`는 문장이 바뀌면 비워지므로 그것만 보면 마지막 문장만 남는다.
+   */
+  toldAnyPoint: boolean;
+  /** 이번 문장에서 해석을 시도한 횟수 */
+  attemptsInUnit: number;
+  /** 항목 단위 학습 기록. 서버가 생기면 그대로 흘려보낸다 */
+  pointLog: PointRecord[];
   pending: Branch | null;
   errorIds: string[];
   result: TutorResult | null;
@@ -79,10 +111,6 @@ function current(s: EngineState): LessonChunk {
 
 function errorOf(s: EngineState, id: string) {
   return current(s).expected_errors?.find((e) => e.id === id);
-}
-
-function hintOf(s: EngineState, rung: 1 | 2 | 3) {
-  return current(s).hint_ladder?.find((h) => h.rung === rung)?.message;
 }
 
 function uniqueButtons(btns: string[]) {
@@ -116,11 +144,16 @@ function initialState(lesson: Lesson): EngineState {
     lesson,
     stage: "intro",
     unitIndex: 0,
-    hintRung: 0,
     missCountInUnit: 0,
     skipFinalRetake: false,
     hadAnyError: false,
-    reachedHint3: false,
+    checkedPoints: [],
+    firstTryPoints: [],
+    nudgedPoints: [],
+    toldPoints: [],
+    toldAnyPoint: false,
+    attemptsInUnit: 0,
+    pointLog: [],
     pending: null,
     errorIds: [],
     result: null,
@@ -177,8 +210,12 @@ function startUnit(s: EngineState, index: number, lead: string): EngineState {
   return say(s, `${lead}이 문장을 해석해볼까요?`, {
     stage: "unit",
     unitIndex: index,
-    hintRung: 0,
     missCountInUnit: 0,
+    checkedPoints: [],
+    firstTryPoints: [],
+    nudgedPoints: [],
+    toldPoints: [],
+    attemptsInUnit: 0,
     pending: null,
     screen: "study",
     placeholder: "해석을 적어 보세요…",
@@ -204,8 +241,23 @@ function finish(s: EngineState, result: TutorResult, closing: string): EngineSta
   });
 }
 
+/** 이 문장의 항목별 결과. 서버가 생기면 그대로 쌓아 난이도 순서를 덮어쓴다 */
+function recordsFor(s: EngineState): PointRecord[] {
+  return (current(s).scoring_points ?? []).map((p) => ({
+    lessonId: s.lesson.id,
+    unit: s.unitIndex + 1,
+    point: p.id,
+    /** 유도 **전에** 스스로 냈나 — 난이도는 이것만 본다 */
+    firstTry: s.firstTryPoints.includes(p.id),
+    nudged: s.nudgedPoints.includes(p.id),
+    told: s.toldPoints.includes(p.id),
+    revealed: s.skipFinalRetake,
+  }));
+}
+
 function advance(s: EngineState, praise: string, light: boolean): EngineState {
-  const stepped = { ...s, effect: light ? ("light" as const) : null };
+  const logged = { ...s, pointLog: [...s.pointLog, ...recordsFor(s)] };
+  const stepped = { ...logged, effect: light ? ("light" as const) : null };
   if (s.unitIndex < s.lesson.chunks.length - 1) {
     return startUnit(stepped, s.unitIndex + 1, `${praise} 다음 문장이에요. `);
   }
@@ -228,11 +280,11 @@ function advance(s: EngineState, praise: string, light: boolean): EngineState {
       `${praise} ${s.lesson.chunks.length}문장 모두 잘 따라왔어요. 오늘 정말 잘했어요.`,
     );
   }
-  if (s.reachedHint3) {
+  if (s.toldAnyPoint) {
     return finish(
       stepped,
       "취약",
-      `${praise} 오늘은 힌트를 끝까지 본 문장이 있었어요. 같은 유형을 한 번 더 보면 훨씬 편해질 거예요.`,
+      `${praise} 오늘은 답을 같이 본 곳이 있었어요. 같은 유형을 한 번 더 보면 훨씬 편해질 거예요.`,
     );
   }
   return finish(
@@ -246,7 +298,7 @@ function openBranch(s: EngineState, errorId: string): EngineState {
   const error = errorOf(s, errorId);
   // `rounds`로 쓴 레슨도 첫 라운드를 고정 대사로 쓴다 (탈레스 E3)
   const t = error?.treatment ?? error?.rounds?.[0];
-  if (!t?.message) return climbHint(s);
+  if (!t?.message) return nudgeNext(s, s.checkedPoints);
   const choices = t.choices ?? [];
   return say(s, t.message, {
     hadAnyError: true,
@@ -331,27 +383,43 @@ function answerProperNoun(s: EngineState, noun: ProperNoun): EngineState {
   });
 }
 
-function climbHint(s: EngineState): EngineState {
+/**
+ * **체크리스트 유도 — 못 한 것 중 하나만.**
+ *
+ * 예전에는 1·2·3단 고정 사다리였다. 학생이 뭘 썼는지 보지 않아서, 절반을
+ * 맞힌 학생에게도 이미 한 걸 또 시켰다. 이제는 낸 것에 체크하고 **아직 못 한
+ * 것 중 첫 번째**(= 레슨에 적힌 순서 = 쉬운 순)만 짚는다.
+ *
+ * 같은 항목에서 또 막히면 그 항목만 `tell`로 알려 준다. 모범 해석 전체는
+ * 여전히 좌절 방지(miss 4회)에서만 나온다.
+ */
+function nudgeNext(s: EngineState, checked: number[]): EngineState {
   const miss = s.missCountInUnit + 1;
-  if (miss >= 4) return frustration({ ...s, missCountInUnit: miss, hadAnyError: true });
-  const rung = Math.min(3, s.hintRung + 1) as 1 | 2 | 3;
-  return say(s, hintOf(s, rung) ?? hintOf(s, 1)!, {
-    hintRung: rung,
+  if (miss >= 4) {
+    return frustration({ ...s, checkedPoints: checked, missCountInUnit: miss, hadAnyError: true });
+  }
+
+  const points = current(s).scoring_points ?? [];
+  const target = points.find((p) => !checked.includes(p.id));
+  if (!target) return s; // 전부 체크됐으면 부를 일이 없다
+
+  const gained = checked.filter((id) => !s.checkedPoints.includes(id));
+  const already = s.nudgedPoints.includes(target.id);
+  const line = (already ? target.tell : target.nudge) ?? target.nudge ?? target.text;
+  const lead = gained.length ? "좋아요, 그 부분은 맞았어요. " : "";
+
+  return say(s, `${lead}${line}`, {
+    checkedPoints: checked,
     missCountInUnit: miss,
     hadAnyError: true,
-    /*
-      3단은 모범 해석을 알려 주는 단이다. 그 문장은 스스로 못 넘은 것으로 남긴다.
-      **3단이 없는 레슨에서는 세지 않는다** — 사다리가 2칸뿐이라 학생이 정답을
-      본 적이 없는데 「취약」으로 남으면 기록이 거짓말이 된다.
-    */
-    reachedHint3: s.reachedHint3 || (rung === 3 && hintOf(s, 3) != null),
-    /*
-      예상 오류(C)만 기록하면 「결과=취약 / 오류=없음」이 나온다. 정답을 보고
-      넘어간 문장도 다음 수업을 고르는 근거이므로 같이 남긴다.
-    */
+    nudgedPoints: already ? s.nudgedPoints : [...s.nudgedPoints, target.id],
+    toldPoints: already && !s.toldPoints.includes(target.id)
+      ? [...s.toldPoints, target.id]
+      : s.toldPoints,
+    toldAnyPoint: s.toldAnyPoint || already,
     errorIds:
-      rung === 3 && hintOf(s, 3) != null && !s.errorIds.includes(`${s.unitIndex + 1}:HINT3`)
-        ? [...s.errorIds, `${s.unitIndex + 1}:HINT3`]
+      already && !s.errorIds.includes(`${s.unitIndex + 1}:점수${target.id}`)
+        ? [...s.errorIds, `${s.unitIndex + 1}:점수${target.id}`]
         : s.errorIds,
     pending: null,
     screen: "study",
@@ -362,22 +430,40 @@ function climbHint(s: EngineState): EngineState {
 }
 
 /**
- * 모델에게 넘길 **현재 unit만** 추린다.
- *
- * 힌트 사다리는 지금 허용된 단까지만 잘라서 넘긴다 — 다음 단을 보여 주고
- * "쓰지 마"라고 지시하면 언젠가 쓴다.
+ * 이번 답을 체크리스트에 반영한다. 첫 시도는 따로 남긴다 — **유도 전에 스스로
+ * 낸 것**만이 난이도의 근거가 되기 때문이다. 우리가 늘 1번을 먼저 유도하면
+ * 1번 체크율이 올라가서, 유도 후 기록으로 난이도를 재면 편향이 생긴다.
  */
+function withAttempt(s: EngineState, hit: number[]) {
+  const checked = [...new Set([...s.checkedPoints, ...hit])];
+  const first = s.attemptsInUnit === 0;
+  return {
+    checked,
+    next: {
+      ...s,
+      // checkedPoints는 일부러 안 바꾼다. `nudgeNext`가 **이번 턴에 새로 낸 것**을
+      // 알아야 "그 부분은 맞았어요"를 붙일 수 있다
+      attemptsInUnit: s.attemptsInUnit + 1,
+      firstTryPoints: first ? hit : s.firstTryPoints,
+    },
+  };
+}
+
 function briefOf(s: EngineState): UnitBrief {
   const u = current(s);
-  const allowedRung = Math.min(3, s.hintRung + 1);
+  const points = u.scoring_points ?? [];
+  const target = points.find((p) => !s.checkedPoints.includes(p.id));
   return {
     index: s.unitIndex,
     text: u.text,
-    scoringPoints: (u.scoring_points ?? []).map((p) => p.text),
+    scoringPoints: points.map((p) => p.text),
     errorPriority: u.error_priority ?? [],
-    hintLadderVisible: (u.hint_ladder ?? [])
-      .filter((h) => h.rung <= allowedRung)
-      .map((h) => h.message),
+    checkedPoints: s.checkedPoints,
+    /*
+      **지금 유도해도 되는 것 하나만** 넘긴다. 나머지 항목의 `tell`이나 다음
+      항목까지 보여 주고 "쓰지 마"라고 지시하면 언젠가 쓴다.
+    */
+    nextNudge: target?.nudge,
   };
 }
 
@@ -390,13 +476,13 @@ function briefOf(s: EngineState): UnitBrief {
  */
 function bannedFor(s: EngineState): string[] {
   const u = current(s);
-  const allowedRung = Math.min(3, s.hintRung + 1);
   const correctChoices = (u.expected_errors ?? []).flatMap((e) =>
     (e.treatment?.choices ?? []).filter((c) => c.correct).map((c) => c.label),
   );
-  const lockedHints = (u.hint_ladder ?? [])
-    .filter((h) => h.rung > allowedRung)
-    .map((h) => h.message);
+  // 아직 알려 주지 않은 항목의 답
+  const lockedTells = (u.scoring_points ?? [])
+    .filter((p) => !s.toldPoints.includes(p.id))
+    .flatMap((p) => (p.tell ? [p.tell] : []));
   // "It has been a privilege to ~ → '~할 수 있어서 영광이었다'" 에서 화살표 뒤쪽
   const scoringAnswers = (u.scoring_points ?? []).flatMap((point) => {
     const tail = point.text.split("→").slice(1).join("→").trim();
@@ -406,7 +492,7 @@ function bannedFor(s: EngineState): string[] {
   return [
     u.model_translation,
     ...correctChoices,
-    ...lockedHints,
+    ...lockedTells,
     ...scoringAnswers,
   ];
 }
@@ -418,7 +504,7 @@ function bannedFor(s: EngineState): string[] {
  *
  * - **이번 문장에서 가르치는 단어**(채점 포인트·예상 오류가 겨냥하는 단어)면
  *   뜻이 곧 정답이다. 그냥 알려 주면 학생은 다음부터 해석 대신 단어부터
- *   물어보고, 힌트 사다리에 옆문이 생긴다. 그래서 **사다리 한 단으로 답한다** —
+ *   물어보고, 유도에 옆문이 생긴다. 그래서 **그 항목 유도로 답한다** —
  *   침묵이 아니라 그 단어를 콕 집은 응답이다(2단이 정확히 그 대사다).
  * - **가르치지 않는 단어**는 그냥 막힌 것이다. 알려 주고 하던 자리로 돌려보낸다.
  *   레슨 JSON에 단어 사전이 없으므로 이건 모델이 답한다. 어댑터가 없으면
@@ -429,10 +515,10 @@ async function answerWord(
   word: string,
   studentText: string,
 ): Promise<EngineState> {
-  if (isTaughtWord(word, current(s))) return climbHint(s);
+  if (isTaughtWord(word, current(s))) return nudgeNext(s, s.checkedPoints);
 
   const llm = getTutorLlm();
-  if (!llm) return climbHint(s);
+  if (!llm) return nudgeNext(s, s.checkedPoints);
 
   const spoken = await safeCall(() =>
     llm.speak({
@@ -442,18 +528,17 @@ async function answerWord(
       unit: briefOf(s),
       state: {
         unitIndex: s.unitIndex,
-        hintRung: s.hintRung,
         missCountInUnit: s.missCountInUnit,
         lastTutorUtterance: s.lastTutorUtterance,
       },
     }),
   );
-  if (!spoken) return climbHint(s);
+  if (!spoken) return nudgeNext(s, s.checkedPoints);
 
   const verdict = validateLlmOutput(spoken, { bannedStrings: bannedFor(s) });
   if (!verdict.ok) {
     console.warn("[tutor] 단어 뜻 발화 폐기 →", verdict.reason);
-    return climbHint(s);
+    return nudgeNext(s, s.checkedPoints);
   }
 
   // 물어본 것은 오답이 아니다 — miss도 힌트 단수도 그대로다
@@ -465,18 +550,19 @@ async function answerWord(
 /**
  * **D(예상 밖) · B(부분 정답) — 모델이 열리는 유일한 자리.**
  *
- * 어댑터가 없으면 여기서 하는 일은 `climbHint`와 똑같다. 즉 지금 데모의 동작이
+ * 어댑터가 없으면 여기서 하는 일은 `nudgeNext`와 똑같다. 즉 지금 데모의 동작이
  * 그대로 남는다. 어댑터가 있어도 다음은 코드가 쥔다:
  * - miss 카운트와 좌절 임계(4번째)는 모델을 부르기 **전에** 코드가 판단한다
- * - 가드레일에 걸리면 발화를 버리고 힌트 사다리 한 단으로 폴백한다
+ * - 가드레일에 걸리면 발화를 버리고 코드의 항목 유도로 폴백한다
  * - `effect: "light"`는 스스로 고친 순간만이므로 여기서는 절대 켜지 않는다
  */
 async function treatUnexpectedOrPartial(
   s: EngineState,
   text: string,
+  checked: number[] = s.checkedPoints,
 ): Promise<EngineState> {
   const llm = getTutorLlm();
-  if (!llm) return climbHint(s);
+  if (!llm) return nudgeNext(s, checked);
 
   const miss = s.missCountInUnit + 1;
   if (miss >= 4) {
@@ -496,22 +582,22 @@ async function treatUnexpectedOrPartial(
       unit,
       state: {
         unitIndex: s.unitIndex,
-        hintRung: s.hintRung,
         missCountInUnit: s.missCountInUnit,
         lastTutorUtterance: s.lastTutorUtterance,
       },
       matchedPoints: judged?.matchedPoints,
     }),
   );
-  if (!spoken) return climbHint(s);
+  if (!spoken) return nudgeNext(s, checked);
 
   const verdict = validateLlmOutput(spoken, { bannedStrings: bannedFor(s) });
   if (!verdict.ok) {
     console.warn("[tutor] 발화 폐기 →", verdict.reason);
-    return climbHint(s);
+    return nudgeNext(s, checked);
   }
 
   return say(s, spoken.message, {
+    checkedPoints: checked,
     missCountInUnit: miss,
     hadAnyError: true,
     pending: null,
@@ -536,7 +622,7 @@ function handlePending(s: EngineState, text: string): EngineState {
         false,
       );
     }
-    return climbHint({ ...s, pending: null });
+    return nudgeNext({ ...s, pending: null }, s.checkedPoints);
   }
   /*
     **좌절 방지 뒤에는 학생을 붙잡아 두지 않는다.**
@@ -565,18 +651,27 @@ function handlePending(s: EngineState, text: string): EngineState {
       `effect: "light"`는 **스스로** 고친 순간만이다. 좌절 방지로 정답을 이미
       알려 준 뒤라면 켜지 않는다.
     */
-    if (classify(text, current(s)).kind === "A") {
-      return advance({ ...s, pending: null }, praiseFor(s), !s.skipFinalRetake);
+    const retry = classify(text, current(s));
+    if (retry.kind === "points") {
+      const checked = [...new Set([...s.checkedPoints, ...retry.hit])];
+      const points = current(s).scoring_points ?? [];
+      if (points.length && points.every((p) => checked.includes(p.id))) {
+        return advance(
+          { ...s, pending: null, checkedPoints: checked },
+          praiseFor(s),
+          !s.skipFinalRetake,
+        );
+      }
     }
     return pending.errorId === "FRUSTRATION"
       ? escapeFrustration(s)
-      : climbHint({ ...s, pending: null });
+      : nudgeNext({ ...s, pending: null }, s.checkedPoints);
   }
   const branch = pending.on_choice[choice.id];
   if (!branch) {
     return pending.errorId === "FRUSTRATION"
       ? escapeFrustration(s)
-      : climbHint({ ...s, pending: null });
+      : nudgeNext({ ...s, pending: null }, s.checkedPoints);
   }
   if (pending.errorId === "FRUSTRATION" || branch.next === "advance") {
     return advance({ ...s, pending: null, skipFinalRetake: true, result: "설명제공" }, branch.message, false);
@@ -650,29 +745,39 @@ export function createSession(lessonId?: string | null) {
 
       const verdict = classify(text, current(s));
 
-      if (verdict.kind === "A") {
-        s = advance(s, praiseFor(s), s.hadAnyError);
-        return view(s);
-      }
       if (verdict.kind === "C") {
         s = openBranch(s, verdict.errorId);
         return view(s);
       }
 
       /*
-        여기부터 두 갈래다. **E와 D를 섞으면 안 된다.**
-        학생이 스스로 「잘 모르겠어요」라고 말한 것(E)은 코드가 힌트 사다리를
-        한 단 올린다 — 모델을 부르지 않는다.
+        **E와 D를 섞으면 안 된다.** 「잘 모르겠어요」는 해석 시도가 아니므로
+        체크할 것도 없다. 코드가 다음 항목을 유도한다 — 모델을 부르지 않는다.
       */
       if (isUnknownInput(text)) {
-        s = climbHint(s);
+        s = nudgeNext(s, s.checkedPoints);
         return view(s);
       }
 
-      // 해석을 시도했는데 A(P1)도 C(P2/P3)도 아니다 = D, 판정에 따라 B.
-      s = await treatUnexpectedOrPartial(s, text);
+      // 해석 시도 — 체크리스트에 반영한다
+      const attempt = withAttempt(s, verdict.hit);
+      s = attempt.next;
+      const points = current(s).scoring_points ?? [];
+      if (points.length && points.every((p) => attempt.checked.includes(p.id))) {
+        s = advance({ ...s, checkedPoints: attempt.checked }, praiseFor(s), s.hadAnyError);
+        return view(s);
+      }
+
+      /*
+        못 한 항목이 남았다 = 부분 정답(B)이거나 예상 밖(D)이다.
+        모델이 있으면 맞은 것을 인정하며 말하게 하고, 없으면 코드가 다음 항목
+        하나를 유도한다.
+      */
+      s = await treatUnexpectedOrPartial(s, text, attempt.checked);
       return view(s);
     },
+    /** 항목별 학습 기록. 서버가 생기면 이걸 그대로 보낸다 */
+    records: () => s.pointLog,
     reset() {
       s = initialState(lesson);
       return view(s);

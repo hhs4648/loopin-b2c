@@ -18,8 +18,8 @@ const THALES = getLesson("thales-participial-phrase-front");
 /** 퇴사 편지 7문장의 정답 예시 (레슨의 `demo_match.p1`을 만족한다) */
 const CORRECT = [
   "지난 4년간 이 회사에서 근무한 것은 큰 영광이었습니다",
-  "제가 얻은 경험은 정말 소중했습니다",
-  "다른 회사의 자리를 수락하고 떠나게 되었습니다",
+  "안전관리자로서 얻은 경험은 정말 소중했습니다",
+  "하지만 다른 회사의 자리를 수락하고 떠나게 되었습니다",
   "쉬운 결정은 아니었지만 확신합니다",
   "마지막 근무일은 4월 30일입니다",
   "업무 인수인계를 위해 최선을 다하겠습니다",
@@ -42,10 +42,10 @@ async function say(
   return view;
 }
 
-function hint(lesson: Lesson, unit: number, rung: 1 | 2 | 3): string {
-  const found = lesson.chunks[unit]!.hint_ladder?.find((h) => h.rung === rung);
-  if (!found) throw new Error(`문장 ${unit + 1}에 힌트 ${rung}단이 없다`);
-  return found.message;
+function point(lesson: Lesson, unit: number, index: number) {
+  const found = lesson.chunks[unit]!.scoring_points?.[index];
+  if (!found) throw new Error(`문장 ${unit + 1}에 ${index + 1}번 항목이 없다`);
+  return found;
 }
 
 afterEach(() => setTutorLlm(null));
@@ -139,7 +139,7 @@ describe("역질문", () => {
     const session = await startedSession();
     await say(session, "Lewis Ltd.가 뭐예요?");
     // 되묻기가 miss였다면 이 「모르겠어요」는 2단이 나왔을 것이다
-    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 1));
+    expect((await say(session, "잘 모르겠어요")).message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("2지선다 중에 물어봐도 선택지를 뺏지 않는다", async () => {
@@ -170,13 +170,13 @@ describe("단어 뜻 질문", () => {
     // serve는 이 문장의 채점 포인트다 — 뜻이 곧 정답이다
     const session = await startedSession();
     const view = await say(session, "serve가 뭐예요?");
-    expect(view.message).toBe(hint(RESIGNATION, 0, 1));
+    expect(view.message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("사다리를 썼으므로 다음에는 2단이 나온다", async () => {
     const session = await startedSession();
     await say(session, "serve가 뭐예요?");
-    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 2));
+    expect((await say(session, "잘 모르겠어요")).message).toBe(point(RESIGNATION, 0, 0).tell);
   });
 
   it("가르치지 않는 단어는 모델이 답하고, 오답으로 세지 않는다", async () => {
@@ -192,12 +192,12 @@ describe("단어 뜻 질문", () => {
     expect(seen).toEqual(["ANSWER_WORD:company"]);
     expect(view.message).toContain("회사라는 뜻");
     // miss를 안 셌으므로 다음 「모르겠어요」는 1단이어야 한다
-    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 1));
+    expect((await say(session, "잘 모르겠어요")).message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("어댑터가 없으면 사다리로 폴백한다", async () => {
     const session = await startedSession();
-    expect((await say(session, "company가 뭐예요?")).message).toBe(hint(RESIGNATION, 0, 1));
+    expect((await say(session, "company가 뭐예요?")).message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("모델이 정답을 흘리면 그 발화를 버린다", async () => {
@@ -205,7 +205,7 @@ describe("단어 뜻 질문", () => {
       speak: async () => ({ message: "serve는 근무하다라는 뜻이에요." }),
     });
     const session = await startedSession();
-    expect((await say(session, "company가 뭐예요?")).message).toBe(hint(RESIGNATION, 0, 1));
+    expect((await say(session, "company가 뭐예요?")).message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("해석 시도를 단어 질문으로 잘못 보지 않는다", async () => {
@@ -245,7 +245,7 @@ describe("2지선다 중에 고친 답을 바로 적을 때", () => {
   it("정답이 아니면 예전처럼 힌트로 간다", async () => {
     const session = await openBranch();
     expect((await say(session, "음 뭔가 특권 같은 느낌이에요")).message).toBe(
-      hint(RESIGNATION, 0, 1),
+      point(RESIGNATION, 0, 0).nudge,
     );
   });
 
@@ -260,27 +260,76 @@ describe("2지선다 중에 고친 답을 바로 적을 때", () => {
   });
 });
 
-describe("힌트 사다리", () => {
-  it("1→2→3단을 순서대로만 오른다", async () => {
+describe("체크리스트 유도", () => {
+  it("못 한 것 중 첫 번째만 짚는다", async () => {
     const session = await startedSession();
-    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 1));
-    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 2));
-    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 3));
+    // '근무'만 맞고 '영광'은 빠진 답 → 1번 항목(영광)을 유도해야 한다
+    const view = await say(session, "이 회사에서 근무했습니다");
+    expect(view.message).toContain(point(RESIGNATION, 0, 0).nudge);
   });
 
-  it("3단 전에는 모범 해석이 나오지 않는다", async () => {
+  it("맞은 것은 인정하고 다시 시키지 않는다", async () => {
+    const session = await startedSession();
+    const view = await say(session, "이 회사에서 근무했습니다");
+    expect(view.message).toContain("맞았어요");
+    // 2번(serve)은 이미 체크됐으므로 그 유도는 나오지 않는다
+    expect(view.message).not.toContain(point(RESIGNATION, 0, 1).nudge);
+  });
+
+  it("같은 항목에서 또 막히면 그 항목만 알려 준다", async () => {
+    const session = await startedSession();
+    await say(session, "이 회사에서 근무했습니다");
+    const view = await say(session, "잘 모르겠어요");
+    expect(view.message).toContain(point(RESIGNATION, 0, 0).tell);
+  });
+
+  it("유도에는 모범 해석이 없다", async () => {
     const session = await startedSession();
     const answer = RESIGNATION.chunks[0]!.model_translation;
     expect((await say(session, "잘 모르겠어요")).message).not.toContain(answer);
     expect((await say(session, "잘 모르겠어요")).message).not.toContain(answer);
-    expect((await say(session, "잘 모르겠어요")).message).toContain(answer);
   });
 
-  it("문장이 바뀌면 사다리가 처음으로 돌아간다", async () => {
+  it("문장이 바뀌면 체크가 처음부터다", async () => {
     const session = await startedSession();
-    await say(session, "잘 모르겠어요", "잘 모르겠어요");
+    await say(session, "이 회사에서 근무했습니다");
     await say(session, CORRECT[0]!);
-    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 1, 1));
+    // 2번 문장에서 아무것도 안 낸 상태 → 그 문장의 1번 항목 유도
+    const view = await say(session, "잘 모르겠어요");
+    expect(view.message).toContain(point(RESIGNATION, 1, 0).nudge);
+  });
+});
+
+describe("항목 기록", () => {
+  it("첫 시도에 스스로 낸 항목을 남긴다 — 난이도의 근거", async () => {
+    const session = await startedSession();
+    await say(session, CORRECT[0]!);
+    const first = session.records().filter((r) => r.unit === 1);
+    expect(first).toHaveLength(2);
+    expect(first.every((r) => r.firstTry)).toBe(true);
+    expect(first.every((r) => !r.nudged && !r.told)).toBe(true);
+  });
+
+  it("유도를 받고 낸 항목은 첫 시도가 아니다", async () => {
+    const session = await startedSession();
+    await say(session, "이 회사에서 근무했습니다");
+    await say(session, CORRECT[0]!);
+    const byPoint = Object.fromEntries(
+      session.records().filter((r) => r.unit === 1).map((r) => [r.point, r]),
+    );
+    expect(byPoint[2]!.firstTry).toBe(true);
+    expect(byPoint[1]!.firstTry).toBe(false);
+    expect(byPoint[1]!.nudged).toBe(true);
+  });
+
+  it("레슨 id와 문장 번호가 함께 남는다", async () => {
+    const session = await startedSession();
+    await say(session, CORRECT[0]!);
+    expect(session.records()[0]).toMatchObject({
+      lessonId: RESIGNATION.id,
+      unit: 1,
+      point: 1,
+    });
   });
 });
 
@@ -330,10 +379,10 @@ describe("기록", () => {
     expect(record).toContain("1:P2");
   });
 
-  it("힌트 3단을 봐야 넘어갔으면 취약", async () => {
+  it("답을 알려 줘야 넘어갔으면 취약", async () => {
     const record = await finish(["잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요"]);
     expect(record).toContain("결과=취약");
-    expect(record).toContain("1:HINT3");
+    expect(record).toContain("1:점수1");
   });
 
   it("좌절 방지가 발동했으면 설명제공", async () => {
@@ -382,7 +431,7 @@ describe("LLM 자리", () => {
 
   it("어댑터가 없으면 예상 밖 입력도 힌트 사다리로 접힌다", async () => {
     const session = await startedSession();
-    expect((await say(session, unexpected)).message).toBe(hint(RESIGNATION, 0, 1));
+    expect((await say(session, unexpected)).message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("어댑터가 있으면 D는 모델 발화로 나간다", async () => {
@@ -401,7 +450,7 @@ describe("LLM 자리", () => {
       },
     });
     const session = await startedSession();
-    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 1));
+    expect((await say(session, "잘 모르겠어요")).message).toBe(point(RESIGNATION, 0, 0).nudge);
     expect(called).toBe(0);
   });
 
@@ -412,7 +461,7 @@ describe("LLM 자리", () => {
       }),
     });
     const session = await startedSession();
-    expect((await say(session, unexpected)).message).toBe(hint(RESIGNATION, 0, 1));
+    expect((await say(session, unexpected)).message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("모델이 죽어도 수업은 이어진다", async () => {
@@ -422,7 +471,7 @@ describe("LLM 자리", () => {
       },
     });
     const session = await startedSession();
-    expect((await say(session, unexpected)).message).toBe(hint(RESIGNATION, 0, 1));
+    expect((await say(session, unexpected)).message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("모델은 정답(A)을 뒤집지 못한다 — A는 코드가 정한다", async () => {

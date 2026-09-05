@@ -12,7 +12,7 @@ Loopin B2C의 1:1 영어 해석 교정 튜터입니다. 설계 원칙은 하나�
 |------|-----------|------|
 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | 전원 | 레이어 · 턴 파이프라인 · LLM 계약 |
 | [`HANDOFF_CLAUDE_CODE.md`](HANDOFF_CLAUDE_CODE.md) | Claude Code | 이어 받을 때 첫 지시 |
-| [`BEHAVIOR.md`](BEHAVIOR.md) | 구현 · 프롬프트 검수 | 진단 A–E, 힌트 사다리, 좌절 방지 |
+| [`BEHAVIOR.md`](BEHAVIOR.md) | 구현 · 프롬프트 검수 | 진단 A–E, 체크리스트 유도, 좌절 방지 |
 | `content/tutor/prompts/dajung-system.v0.1.md` | LLM | `===` 사이 내용을 통째로 시스템 프롬프트로 사용 |
 | `content/tutor/frame.json` | 앱 · LLM 조립기 | 캐릭터/절대규칙 등 레슨과 무관한 고정 틀 |
 | `content/tutor/schema/lesson.schema.json` | 검증 | 레슨 JSON 계약 |

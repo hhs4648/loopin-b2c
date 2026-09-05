@@ -34,79 +34,48 @@ function eachChunk(run: (lesson: Lesson, chunk: LessonChunk, index: number) => v
   }
 }
 
-describe("레슨 힌트", () => {
-  it("1·2단은 정답을 흘리지 않는다", () => {
+describe("레슨 체크리스트", () => {
+  it("유도(nudge)는 정답을 흘리지 않는다", () => {
     const leaks: string[] = [];
     eachChunk((lesson, chunk, i) => {
-      for (const rung of [1, 2] as const) {
-        const message = chunk.hint_ladder?.find((h) => h.rung === rung)?.message;
-        if (!message) continue;
-        const verdict = validateLlmOutput({ message }, { bannedStrings: answersOf(chunk) });
-        if (!verdict.ok) leaks.push(`${lesson.id} 문장${i + 1} ${rung}단 — ${verdict.reason}`);
+      for (const p of chunk.scoring_points ?? []) {
+        if (!p.nudge) continue;
+        const verdict = validateLlmOutput(
+          { message: p.nudge },
+          { bannedStrings: answersOf(chunk) },
+        );
+        if (!verdict.ok) leaks.push(`${lesson.id} 문장${i + 1} 항목${p.id} — ${verdict.reason}`);
       }
     });
     expect(leaks).toEqual([]);
   });
 
-  it("3단은 모범 해석을 알려 준다 — 여기까지 와야 공개다", () => {
+  it("항목마다 체크 키워드·유도·알려주기가 다 있다", () => {
     eachChunk((lesson, chunk, i) => {
-      const message = chunk.hint_ladder?.find((h) => h.rung === 3)?.message;
-      // 사다리가 2칸인 레슨도 있다. 있으면 정답이 들어 있어야 한다
-      if (!message) return;
-      expect(message, `${lesson.id} 문장${i + 1}`).toContain(chunk.model_translation);
-    });
-  });
-
-  it("단이 비지 않는다 — 1단 없이 2단만 있는 문장은 사다리가 아니다", () => {
-    eachChunk((lesson, chunk, i) => {
-      const rungs = (chunk.hint_ladder ?? []).map((h) => h.rung).sort();
-      if (!rungs.length) return;
-      expect(rungs, `${lesson.id} 문장${i + 1}`).toEqual(
-        Array.from({ length: rungs.length }, (_, n) => n + 1),
-      );
-    });
-  });
-});
-
-describe("레슨 고정 대사", () => {
-  it("한 턴에 질문은 하나다", () => {
-    const offenders: string[] = [];
-    eachChunk((lesson, chunk, i) => {
-      const lines = [
-        ...(chunk.hint_ladder ?? []).map((h) => h.message),
-        ...(chunk.expected_errors ?? []).flatMap((e) => [
-          e.treatment?.message,
-          ...Object.values(e.treatment?.on_choice ?? {}).map((b) => b.message),
-          ...(e.rounds ?? []).map((r) => r.message),
-        ]),
-      ].filter((x): x is string => Boolean(x));
-      for (const line of lines) {
-        const questions = (line.match(/[?？]/g) ?? []).length;
-        if (questions > 1) offenders.push(`${lesson.id} 문장${i + 1} — ${line.slice(0, 40)}…`);
+      for (const p of chunk.scoring_points ?? []) {
+        const where = `${lesson.id} 문장${i + 1} 항목${p.id}`;
+        expect(p.check?.length, where).toBeGreaterThan(0);
+        expect(p.nudge, where).toBeTruthy();
+        expect(p.tell, where).toBeTruthy();
       }
     });
-    expect(offenders).toEqual([]);
   });
 
-  it("반말이 없다", () => {
-    const offenders: string[] = [];
+  it("알려주기(tell)는 그 항목만 답한다 — 모범 해석 전체가 아니다", () => {
     eachChunk((lesson, chunk, i) => {
-      for (const h of chunk.hint_ladder ?? []) {
-        const verdict = validateLlmOutput(
-          { message: h.message },
-          { bannedStrings: [], maxSentences: 99, maxQuestions: 99 },
+      for (const p of chunk.scoring_points ?? []) {
+        expect(p.tell, `${lesson.id} 문장${i + 1} 항목${p.id}`).not.toContain(
+          chunk.model_translation,
         );
-        if (!verdict.ok) offenders.push(`${lesson.id} 문장${i + 1} ${h.rung}단 — ${verdict.reason}`);
       }
     });
-    expect(offenders).toEqual([]);
   });
 });
 
 describe("레슨 데이터 계약", () => {
-  it("정답 매칭(demo_match)이 모든 문장에 있다 — 없으면 정답을 못 알아본다", () => {
+  it("체크리스트가 모든 문장에 있다 — 없으면 정답을 못 알아본다", () => {
     eachChunk((lesson, chunk, i) => {
-      expect(chunk.demo_match?.p1?.length, `${lesson.id} 문장${i + 1}`).toBeGreaterThan(0);
+      expect(chunk.scoring_points?.length, `${lesson.id} 문장${i + 1}`).toBeGreaterThan(0);
     });
   });
 
