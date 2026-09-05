@@ -19,16 +19,16 @@ export function createFakeTutorLlm(mode: FakeMode): TutorLlm {
   return {
     async judge({ studentText, unit }) {
       /*
-        진짜 콜 1을 흉내만 낸다. 채점 포인트의 한국어 조각이 학생 답에 하나라도
-        들어 있으면 부분 정답(B), 아니면 D. **A와 C는 코드가 이미 정했으므로
-        여기서 나올 수 없다** — 모델이 오답을 정답으로 뒤집을 길이 없다.
+        진짜 콜 1을 흉내만 낸다. 채점 포인트의 한국어 조각이 학생 답에 들어 있으면
+        그 항목을 체크로 본다. **판정은 여기서 끝이 아니다** — 전부 체크됐는지,
+        그래서 다음 문장으로 갈지는 엔진이 정한다.
       */
-      const hit = unit.scoringPoints.some((point) => {
+      const checkedPoints = unit.scoringPoints.flatMap((point, index) => {
         const tail = point.split("→").pop() ?? "";
         const word = tail.replace(/[^가-힣]/g, "").slice(0, 3);
-        return word.length >= 2 && studentText.includes(word);
+        return word.length >= 2 && studentText.includes(word) ? [index + 1] : [];
       });
-      return { diagnosis: hit ? "B" : "D", confidence: 0.5 };
+      return { checkedPoints, confidence: 0.5 };
     },
 
     async speak({ action, unit, askedWord }) {

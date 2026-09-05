@@ -587,11 +587,30 @@ async function treatUnexpectedOrPartial(
     return frustration({ ...s, missCountInUnit: miss, hadAnyError: true });
   }
 
-  const unit = briefOf(s);
+  /*
+    **의미 판정은 체크리스트를 넓히는 데만 쓴다.**
+    키워드가 놓친 항목을 모델이 잡아 주면 그만큼 체크가 늘고, A/B/D 판정과
+    다음 행동은 그대로 코드가 한다. 실패하면 키워드 결과만 쓴다.
+  */
   const judged = llm.judge
-    ? await safeCall(() => llm.judge!({ studentText: text, unit }))
+    ? await safeCall(() => llm.judge!({ studentText: text, unit: briefOf(s) }))
     : null;
-  const partial = judged?.diagnosis === "B";
+  const known = (current(s).scoring_points ?? []).map((p) => p.id);
+  const merged = [
+    ...new Set([
+      ...checked,
+      ...(judged?.checkedPoints ?? []).filter((id) => known.includes(id)),
+    ]),
+  ];
+
+  // 모델 덕분에 전부 채워졌으면 정답으로 넘긴다
+  const points = current(s).scoring_points ?? [];
+  if (points.length && points.every((p) => merged.includes(p.id))) {
+    return advance({ ...s, checkedPoints: merged }, praiseFor(s), s.hadAnyError);
+  }
+
+  const unit = briefOf({ ...s, checkedPoints: merged });
+  const partial = merged.length > 0;
 
   const spoken = await safeCall(() =>
     llm.speak({
@@ -603,19 +622,18 @@ async function treatUnexpectedOrPartial(
         missCountInUnit: s.missCountInUnit,
         lastTutorUtterance: s.lastTutorUtterance,
       },
-      matchedPoints: judged?.matchedPoints,
     }),
   );
-  if (!spoken) return nudgeNext(s, checked);
+  if (!spoken) return nudgeNext(s, merged);
 
   const verdict = validateLlmOutput(spoken, voiceGuardFor(s));
   if (!verdict.ok) {
     console.warn("[tutor] 발화 폐기 →", verdict.reason);
-    return nudgeNext(s, checked);
+    return nudgeNext(s, merged);
   }
 
   return say(s, spoken.message, {
-    checkedPoints: checked,
+    checkedPoints: merged,
     missCountInUnit: miss,
     hadAnyError: true,
     pending: null,

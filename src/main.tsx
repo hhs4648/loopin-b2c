@@ -11,10 +11,29 @@ import "./styles.css";
 */
 if (import.meta.env.DEV) {
   const mode = new URLSearchParams(window.location.search).get("fakellm");
+  const apiKey = import.meta.env.VITE_ANTHROPIC_API_KEY?.trim();
+
   if (mode === "normal" || mode === "leak" || mode === "bad") {
     void import("./tutor/llm-fake").then(({ createFakeTutorLlm }) => {
       setTutorLlm(createFakeTutorLlm(mode));
       console.info(`[tutor] 가짜 LLM 어댑터 연결: ${mode}`);
+    });
+  } else if (apiKey) {
+    /*
+      **개발 전용.** 브라우저가 Anthropic API를 직접 부른다 — 키가 번들에 실린다.
+      배포 전에는 프록시 서버로 옮긴다. 키가 없으면 지금처럼 코드만으로 돈다.
+    */
+    void import("./tutor/llm-claude").then(({ createClaudeTutorLlm }) => {
+      setTutorLlm(
+        createClaudeTutorLlm({
+          apiKey,
+          onUsage: (u) =>
+            console.info(
+              `[tutor] ${u.call} ${u.ms}ms · 입력 ${u.inputTokens}(캐시 ${u.cachedTokens}) · 출력 ${u.outputTokens}`,
+            ),
+        }),
+      );
+      console.info("[tutor] Claude 어댑터 연결됨 (개발 전용)");
     });
   }
 }
