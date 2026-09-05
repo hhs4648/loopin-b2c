@@ -79,6 +79,15 @@ function textOf(message: Anthropic.Message): string {
 export type ClaudeAdapterOptions = {
   apiKey: string;
   model?: string;
+  /**
+   * 발화 콜의 깊이.
+   *
+   * **기본이 `low`인 건 재 보고 정한 것이다** (2026-09-06, 같은 대화 2턴 비교).
+   * `medium`은 느리고(6.7초 vs 3.7초) 비싸고, 레슨의 유도 문구를 그대로
+   * 베끼는 일이 있었다. `low`는 학생이 쓴 말에 맞춰 다시 말했다.
+   * 표본이 작으므로 대화가 쌓이면 다시 잰다.
+   */
+  speakEffort?: "low" | "medium";
   /** 호출마다 토큰·지연을 보고 싶을 때 */
   onUsage?: (info: {
     call: "judge" | "speak";
@@ -96,6 +105,7 @@ export function createClaudeTutorLlm(options: ClaudeAdapterOptions): TutorLlm {
     dangerouslyAllowBrowser: true,
   });
   const model = options.model ?? MODEL;
+  const effort = options.speakEffort ?? "low";
 
   async function call(
     which: "judge" | "speak",
@@ -184,33 +194,33 @@ export function createClaudeTutorLlm(options: ClaudeAdapterOptions): TutorLlm {
                 "아직 못 한 항목 **하나만** 스스로 찾도록 유도한다.",
               ].join(" ");
 
+      /*
+        **캐시가 먹도록 안 변하는 것부터 쌓는다.**
+        프레임(캐릭터·말투)은 수업 내내 같고, 문장 블록은 그 문장을 푸는 동안
+        같다. 매 턴 달라지는 것(이번 할 일·학생 발화)은 캐시 경계 뒤로 보낸다.
+      */
       const system: Anthropic.TextBlockParam[] = [
-        // 프레임은 안 변한다 — 여기까지 캐시한다
         { type: "text", text: characterSystem(), cache_control: { type: "ephemeral" } },
-        {
-          type: "text",
-          text: [
-            "## 이번 턴에 할 일",
-            task,
-            unit.nextNudge
-              ? `\n참고로 이 항목의 유도 문구는 이렇다: "${unit.nextNudge}"\n같은 말을 그대로 반복하지 말고, 학생이 쓴 말에 맞춰 다시 말한다.`
-              : "",
-            state.lastTutorUtterance
-              ? `\n직전에 한 말: "${state.lastTutorUtterance}" — 이 말을 되풀이하지 않는다.`
-              : "",
-          ]
-            .filter(Boolean)
-            .join("\n"),
-        },
+        { type: "text", text: unitBlock(unit), cache_control: { type: "ephemeral" } },
       ];
 
-      const answer = await call(
-        "speak",
-        system,
-        `${unitBlock(unit)}\n\n## 학생이 방금 한 말\n${studentText}`,
-        512,
-        "medium",
-      );
+      const userText = [
+        "## 이번 턴에 할 일",
+        task,
+        unit.nextNudge
+          ? `\n이 항목의 유도 문구는 이렇다: "${unit.nextNudge}"\n같은 말을 그대로 반복하지 말고, 학생이 쓴 말에 맞춰 다시 말한다.`
+          : "",
+        state.lastTutorUtterance
+          ? `\n직전에 한 말: "${state.lastTutorUtterance}" — 이 말을 되풀이하지 않는다.`
+          : "",
+        "",
+        "## 학생이 방금 한 말",
+        studentText,
+      ]
+        .filter(Boolean)
+        .join("\n");
+
+      const answer = await call("speak", system, userText, 512, effort);
       return answer ? { message: answer } : null;
     },
   };

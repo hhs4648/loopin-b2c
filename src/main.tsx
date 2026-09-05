@@ -27,6 +27,11 @@ if (import.meta.env.DEV) {
       setTutorLlm(
         createClaudeTutorLlm({
           apiKey,
+          // 기본은 low. ?effort=medium 으로 올려서 비교해 볼 수 있다
+          speakEffort:
+            new URLSearchParams(window.location.search).get("effort") === "medium"
+              ? "medium"
+              : "low",
           onUsage: (u) =>
             console.info(
               `[tutor] ${u.call} ${u.ms}ms · 입력 ${u.inputTokens}(캐시 ${u.cachedTokens}) · 출력 ${u.outputTokens}`,

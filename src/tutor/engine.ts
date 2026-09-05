@@ -474,28 +474,55 @@ function briefOf(s: EngineState): UnitBrief {
  * **채점 포인트의 한국어 쪽도 넣는다.** 모델에게 `scoring_points`를 주는 이유는
  * 판정하라고지 읊으라고가 아니다. 안 막으면 모범 해석을 피해 가면서
  * `serve → 근무하다` 같은 답을 그대로 흘린다 (2026-09-06 가짜 어댑터로 재현).
+ *
+ * **다만 학생이 이미 낸 항목은 뺀다.** 그건 더 이상 비밀이 아니고, 오히려
+ * 「맞은 점을 먼저 구체적으로 인정한다」가 프레임의 규칙이다. 안 빼면 학생이
+ * 「근무한」이라고 써 놓았는데 그걸 짚어 주는 말이 통째로 폐기된다
+ * (2026-09-06 실제 대화에서 재현).
  */
-function bannedFor(s: EngineState): string[] {
+function bannedFor(s: EngineState, checked = s.checkedPoints): string[] {
   const u = current(s);
+  const points = u.scoring_points ?? [];
+  const done = points.filter((p) => checked.includes(p.id));
+  /** 이미 낸 항목의 설명문 — 여기 들어 있는 말은 금지에서 뺀다 */
+  const revealed = done.map((p) => p.text).join(" ");
+
   const correctChoices = (u.expected_errors ?? []).flatMap((e) =>
-    (e.treatment?.choices ?? []).filter((c) => c.correct).map((c) => c.label),
+    [...(e.treatment?.choices ?? []), ...(e.rounds?.[0]?.choices ?? [])]
+      .filter((c) => c.correct)
+      .map((c) => c.label),
   );
-  // 아직 알려 주지 않은 항목의 답
-  const lockedTells = (u.scoring_points ?? [])
-    .filter((p) => !s.toldPoints.includes(p.id))
+  const lockedTells = points
+    .filter((p) => !s.toldPoints.includes(p.id) && !checked.includes(p.id))
     .flatMap((p) => (p.tell ? [p.tell] : []));
   // "It has been a privilege to ~ → '~할 수 있어서 영광이었다'" 에서 화살표 뒤쪽
-  const scoringAnswers = (u.scoring_points ?? []).flatMap((point) => {
-    const tail = point.text.split("→").slice(1).join("→").trim();
-    const cleaned = tail.replace(/^['"“”‘’]|['"“”‘’]$/g, "").trim();
-    return cleaned ? [cleaned] : [];
-  });
+  const scoringAnswers = points
+    .filter((p) => !checked.includes(p.id))
+    .flatMap((p) => {
+      const tail = p.text.split("→").slice(1).join("→").trim();
+      const cleaned = tail.replace(/^['"“”‘’]|['"“”‘’]$/g, "").trim();
+      return cleaned ? [cleaned] : [];
+    });
+
+  /*
+    긴 문장만 막으면 모델이 **짧게 줄여서** 흘린다. 레슨에서 답은 따옴표 안에
+    적혀 있으므로(`privilege는 여기서 '영광'이에요`), 아직 못 낸 항목의 따옴표
+    안쪽을 따로 뽑아 막는다 (2026-09-06 재현: 「privilege는 '영광'이에요」가
+    통과했다).
+  */
+  const quotedAnswers = points
+    .filter((p) => !checked.includes(p.id))
+    .flatMap((p) => [...`${p.text} ${p.tell ?? ""}`.matchAll(/['‘’"“”]([^'‘’"“”]{2,})['‘’"“”]/g)])
+    .map((m) => m[1]!.trim())
+    .filter((word) => word && !word.startsWith("~"));
+
   return [
     u.model_translation,
     ...correctChoices,
     ...lockedTells,
     ...scoringAnswers,
-  ];
+    ...quotedAnswers,
+  ].filter((banned) => banned && !revealed.includes(banned));
 }
 
 /**
@@ -504,9 +531,9 @@ function bannedFor(s: EngineState): string[] {
  * 금지 문자열뿐 아니라 **말투 규칙까지** 함께 넘긴다. 기준값은 `frame.json`에서
  * 오고, 직전 대사를 같이 줘서 같은 말을 두 번 하지 못하게 한다.
  */
-function voiceGuardFor(s: EngineState): GuardContext {
+function voiceGuardFor(s: EngineState, checked = s.checkedPoints): GuardContext {
   return {
-    bannedStrings: bannedFor(s),
+    bannedStrings: bannedFor(s, checked),
     minSentences: frame.speech.min_sentences,
     previousUtterance: s.lastTutorUtterance,
   };
@@ -588,33 +615,26 @@ async function treatUnexpectedOrPartial(
   }
 
   /*
-    **의미 판정은 체크리스트를 넓히는 데만 쓴다.**
-    키워드가 놓친 항목을 모델이 잡아 주면 그만큼 체크가 늘고, A/B/D 판정과
-    다음 행동은 그대로 코드가 한다. 실패하면 키워드 결과만 쓴다.
+    **두 콜을 동시에 보낸다.** 직렬로 붙이면 판정(약 3초) + 발화(약 4초) = 7초를
+    학생이 기다린다. 발화는 판정 결과가 없어도 만들 수 있다 — 체크리스트와 학생
+    답을 같이 주면 맞은 부분은 모델이 알아서 인정한다. 판정은 **체크 상태를
+    갱신**하는 데 쓰이므로, 도착한 뒤에 반영해도 늦지 않다.
+
+    판정이 먼저다. 모델이 "전부 채웠다"고 보면 발화는 버리고 다음 문장으로 넘긴다
+    (유도할 게 없는데 유도하는 말이 나가면 안 된다).
+
+    키워드가 하나라도 잡았으면 판정 콜을 아예 안 부른다. 그때는 부분 정답이라는
+    게 이미 확실해서 다음 할 일이 안 바뀐다 — 콜 하나와 비용 3할이 빠진다.
   */
-  const judged = llm.judge
-    ? await safeCall(() => llm.judge!({ studentText: text, unit: briefOf(s) }))
-    : null;
-  const known = (current(s).scoring_points ?? []).map((p) => p.id);
-  const merged = [
-    ...new Set([
-      ...checked,
-      ...(judged?.checkedPoints ?? []).filter((id) => known.includes(id)),
-    ]),
-  ];
+  const unit = briefOf(s);
+  const judging =
+    llm.judge && checked.length === 0
+      ? safeCall(() => llm.judge!({ studentText: text, unit }))
+      : Promise.resolve(null);
 
-  // 모델 덕분에 전부 채워졌으면 정답으로 넘긴다
-  const points = current(s).scoring_points ?? [];
-  if (points.length && points.every((p) => merged.includes(p.id))) {
-    return advance({ ...s, checkedPoints: merged }, praiseFor(s), s.hadAnyError);
-  }
-
-  const unit = briefOf({ ...s, checkedPoints: merged });
-  const partial = merged.length > 0;
-
-  const spoken = await safeCall(() =>
+  const speaking = safeCall(() =>
     llm.speak({
-      action: partial ? "TREAT_PARTIAL" : "TREAT_UNEXPECTED",
+      action: checked.length > 0 ? "TREAT_PARTIAL" : "TREAT_UNEXPECTED",
       studentText: text,
       unit,
       state: {
@@ -624,9 +644,26 @@ async function treatUnexpectedOrPartial(
       },
     }),
   );
+
+  const [judged, spoken] = await Promise.all([judging, speaking]);
+
+  const known = (current(s).scoring_points ?? []).map((p) => p.id);
+  const merged = [
+    ...new Set([
+      ...checked,
+      ...(judged?.checkedPoints ?? []).filter((id) => known.includes(id)),
+    ]),
+  ];
+
+  // 모델 덕분에 전부 채워졌으면 발화를 버리고 정답으로 넘긴다
+  const points = current(s).scoring_points ?? [];
+  if (points.length && points.every((p) => merged.includes(p.id))) {
+    return advance({ ...s, checkedPoints: merged }, praiseFor(s), s.hadAnyError);
+  }
+
   if (!spoken) return nudgeNext(s, merged);
 
-  const verdict = validateLlmOutput(spoken, voiceGuardFor(s));
+  const verdict = validateLlmOutput(spoken, voiceGuardFor(s, merged));
   if (!verdict.ok) {
     console.warn("[tutor] 발화 폐기 →", verdict.reason);
     return nudgeNext(s, merged);

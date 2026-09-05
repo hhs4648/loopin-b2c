@@ -454,6 +454,27 @@ describe("LLM 자리", () => {
     expect(called).toBe(0);
   });
 
+  it("학생이 이미 낸 답은 짚어 줘도 된다 — 금지어에서 빠진다", async () => {
+    /*
+      회귀: 학생이 「근무한」이라고 써 놓았는데 그걸 인정하는 말이
+      「근무하다」 금지어에 걸려 통째로 폐기됐다 (2026-09-06 실제 대화).
+    */
+    const acknowledgement = "근무하다로 옮긴 부분이 정확해요. 앞부분만 다시 볼까요?";
+    setTutorLlm({ speak: async () => ({ message: acknowledgement }) });
+    const session = await startedSession();
+    const view = await say(session, "이 회사에서 근무했습니다");
+    expect(view.message).toBe(acknowledgement);
+  });
+
+  it("아직 못 낸 항목의 답은 여전히 막는다", async () => {
+    setTutorLlm({
+      speak: async () => ({ message: "privilege는 '영광'이에요. 이제 이어 볼까요?" }),
+    });
+    const session = await startedSession();
+    const view = await say(session, "이 회사에서 근무했습니다");
+    expect(view.message).not.toContain("영광");
+  });
+
   it("가드레일에 걸린 발화는 버리고 힌트로 폴백한다", async () => {
     setTutorLlm({
       speak: async () => ({

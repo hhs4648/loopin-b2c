@@ -208,7 +208,8 @@ export function validateLlmOutput(
   const haystack = compact(message);
   for (const banned of ctx.bannedStrings) {
     const needle = compact(banned);
-    if (needle.length >= 4 && haystack.includes(needle)) {
+    // 2자짜리 정답(「영광」)도 막아야 한다. 짧다고 봐주면 줄여서 흘린다
+    if (needle.length >= 2 && haystack.includes(needle)) {
       return { ok: false, reason: `정답 선공개: "${banned}"` };
     }
   }
@@ -218,7 +219,7 @@ export function validateLlmOutput(
     const label = compact(button);
     for (const banned of ctx.bannedStrings) {
       const needle = compact(banned);
-      if (needle.length >= 4 && label.includes(needle)) {
+      if (needle.length >= 2 && label.includes(needle)) {
         return { ok: false, reason: `정답이 버튼에 노출: "${button}"` };
       }
     }

@@ -166,7 +166,7 @@
             "관리자로",
             "매니저로"
           ],
-          "nudge": "as a safety manager는 어떤 자격으로 얻었는지를 말해요. '~로'와 '~로서' 중 어느 쪽이 자연스러울까요?",
+          "nudge": "as a safety manager는 어떤 자격으로 그 경험을 얻었는지를 말해요. 한국어로 옮길 때 뒤에 어떤 말을 붙이면 자연스러울까요?",
           "tell": "as a safety manager는 '안전관리자로서'예요."
         }
       ],
@@ -703,7 +703,7 @@
             "둘 다",
             "모두"
           ],
-          "nudge": "both A and B는 둘을 함께 가리켜요. 행운을 빌어 주는 대상이 둘 다 들어갔나요?",
+          "nudge": "both A and B는 둘을 함께 가리켜요. 편지를 받는 사람 말고 하나가 더 있는데, 그게 빠지지 않았나요?",
           "tell": "both you and Lewis Ltd.는 '당신과 Lewis Ltd. 둘 다'예요."
         }
       ],
