@@ -177,10 +177,16 @@ button, input { font-family: inherit; }
 .icon-btn.send:hover { background: #e2607d; }
 .icon-btn:disabled { opacity: .5; cursor: default; }
 
+/*
+  캐릭터 폭. 그림이 거의 정사각(650×616)이라, 폭을 키우면 그만큼 키도 커져서
+  머리가 말풍선 뒤로 들어간다. 말풍선이 `17% + 58cqw` 자리에 있으므로
+  캐릭터 키(≈0.95×폭)가 거기까지 닿지 않는 값으로 둔다.
+*/
 .teacher-full {
-  position: absolute; left: 50%; bottom: 17%;
-  transform: translateX(-50%); width: 76cqw; z-index: 3;
+  position: absolute; left: 50%; bottom: 15%;
+  transform: translateX(-50%); width: 58cqw; z-index: 3;
 }
+.teacher-art { display: block; width: 100%; height: auto; }
 .teacher-bob { animation: bob 3.4s ease-in-out infinite; filter: drop-shadow(0 10px 14px rgba(80,40,30,.18)); }
 
 .teacher-bubble {

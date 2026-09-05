@@ -1,46 +1,23 @@
-export function TeacherFigure({ size = "lg" }: { size?: "lg" | "sm" }) {
-  const w = size === "lg" ? "100%" : 72;
+/**
+ * 다정쌤.
+ *
+ * 원본은 `assets/상냥한 선생님.svg`(282KB, 비트맵이 박힌 Figma 내보내기)이고,
+ * 화면에는 표시 크기에 맞춰 뽑은 `public/assets/dajung-teacher.webp`(39KB)를 쓴다.
+ * `public/`에 넣는 건 전부 학생 기기로 내려가므로 원본을 그대로 싣지 않는다.
+ *
+ * 예전에는 여기서 손으로 그린 SVG를 `height="auto"`로 그렸다. SVG 속성에는
+ * `auto`가 없어서 브라우저가 오류를 내고, 높이를 못 잡은 그림이 화면 폭만큼
+ * 커져 **얼굴이 말풍선 뒤로 들어갔다.** 크기는 CSS(부모 폭)만으로 정한다.
+ */
+export function TeacherFigure() {
   return (
-    <svg
-      viewBox="0 0 200 260"
-      width={w}
-      height="auto"
-      role="img"
-      aria-label="다정쌤"
-      style={{
-        position: "relative",
-        width: w,
-        height: "auto",
-        flex: "none",
-      }}
-    >
-      <ellipse cx="100" cy="248" rx="62" ry="10" fill="rgba(60,30,10,.22)" />
-      <path
-        d="M46 150c8 52 32 78 54 78s46-26 54-78c-18 10-36 14-54 14s-36-4-54-14z"
-        fill="#3a3a3f"
-      />
-      <path
-        d="M58 128c10 46 28 70 42 70s32-24 42-70c-14 8-28 12-42 12s-28-4-42-12z"
-        fill="#ef7a93"
-      />
-      <path d="M78 122c6 28 10 44 22 44s16-16 22-44" fill="#f6e9ec" />
-      <circle cx="100" cy="92" r="44" fill="#f3c7b3" />
-      <path
-        d="M58 88c8-40 28-58 42-58s34 18 42 58c-20-12-64-12-84 0z"
-        fill="#2b2430"
-      />
-      <path d="M70 70c18-22 44-22 60 0-18-8-42-8-60 0z" fill="#3a3a3f" />
-      <ellipse cx="86" cy="96" rx="5" ry="6" fill="#2b2430" />
-      <ellipse cx="114" cy="96" rx="5" ry="6" fill="#2b2430" />
-      <path
-        d="M90 114q10 10 20 0"
-        fill="none"
-        stroke="#e2607d"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <circle cx="78" cy="104" r="6" fill="#f0a3b4" opacity=".7" />
-      <circle cx="122" cy="104" r="6" fill="#f0a3b4" opacity=".7" />
-    </svg>
+    <img
+      className="teacher-art"
+      src="/assets/dajung-teacher.webp"
+      alt="다정쌤"
+      width={650}
+      height={616}
+      draggable={false}
+    />
   );
 }
