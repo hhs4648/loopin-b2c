@@ -849,8 +849,9 @@ export function createSession(lessonId?: string | null) {
       s = await treatUnexpectedOrPartial(s, text, attempt.checked);
       return view(s);
     },
-    /** 항목별 학습 기록. 서버가 생기면 이걸 그대로 보낸다 */
+    /** 항목별 학습 기록. 수업이 끝날 때 서버로 보낸다 */
     records: () => s.pointLog,
+    lessonId: () => s.lesson.id,
     reset() {
       s = initialState(lesson);
       return view(s);

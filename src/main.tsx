@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import { setTutorLlm } from "./tutor/llm";
+import { recordLlmCall, supabaseConfig } from "./tutor/records";
 import "./styles.css";
 
 /*
@@ -18,10 +19,11 @@ if (import.meta.env.DEV) {
       setTutorLlm(createFakeTutorLlm(mode));
       console.info(`[tutor] 가짜 LLM 어댑터 연결: ${mode}`);
     });
-  } else if (apiKey) {
+  } else if (apiKey && new URLSearchParams(window.location.search).has("direct")) {
     /*
-      **개발 전용.** 브라우저가 Anthropic API를 직접 부른다 — 키가 번들에 실린다.
-      배포 전에는 프록시 서버로 옮긴다. 키가 없으면 지금처럼 코드만으로 돈다.
+      **개발 전용 직접 호출.** 브라우저가 Anthropic을 직접 부른다 — 키가 번들에
+      실린다. 프록시를 배포하기 전이나, 프록시 없이 프롬프트만 빨리 고쳐 볼 때
+      `?direct` 를 붙여서 쓴다. 평소에는 아래 프록시 경로를 탄다.
     */
     void import("./tutor/llm-claude").then(({ createClaudeTutorLlm }) => {
       setTutorLlm(
@@ -32,13 +34,31 @@ if (import.meta.env.DEV) {
             new URLSearchParams(window.location.search).get("effort") === "medium"
               ? "medium"
               : "low",
-          onUsage: (u) =>
+          onUsage: (u) => {
             console.info(
               `[tutor] ${u.call} ${u.ms}ms · 입력 ${u.inputTokens}(캐시 ${u.cachedTokens}) · 출력 ${u.outputTokens}`,
-            ),
+            );
+            void recordLlmCall({
+              call: u.call,
+              ms: u.ms,
+              inputTokens: u.inputTokens,
+              cachedTokens: u.cachedTokens,
+              outputTokens: u.outputTokens,
+            });
+          },
         }),
       );
-      console.info("[tutor] Claude 어댑터 연결됨 (개발 전용)");
+      console.info("[tutor] Claude 직접 호출 (개발 전용 — 키가 번들에 실린다)");
+    });
+  } else if (supabaseConfig()) {
+    /*
+      **평소 경로.** 키는 서버에만 있다. 브라우저는 액션과 문장만 보낸다.
+      함수가 아직 배포 전이면 호출이 실패하고, 엔진은 코드 유도로 폴백한다 —
+      수업은 그대로 돈다.
+    */
+    void import("./tutor/llm-proxy").then(({ createProxyTutorLlm }) => {
+      setTutorLlm(createProxyTutorLlm());
+      console.info("[tutor] 프록시 어댑터 연결됨");
     });
   }
 }

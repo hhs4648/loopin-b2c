@@ -7,6 +7,10 @@ interface ImportMetaEnv {
    * 서버로 옮긴다. 비워 두면 앱은 지금처럼 코드만으로 돈다.
    */
   readonly VITE_ANTHROPIC_API_KEY?: string;
+  /** Supabase 프로젝트 URL. 없으면 기록을 남기지 않는다 */
+  readonly VITE_SUPABASE_URL?: string;
+  /** anon 키 — 공개돼도 되는 값이다. 보호는 RLS가 한다 */
+  readonly VITE_SUPABASE_ANON_KEY?: string;
 }
 
 interface ImportMeta {

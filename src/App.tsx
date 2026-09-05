@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ClassroomChat } from "./components/ClassroomChat";
 import { SentenceStudy } from "./components/SentenceStudy";
 import { createSession, type TutorView } from "./tutor/engine";
+import { finishSessionRecord, startSessionRecord } from "./tutor/records";
 
 /*
   지문은 데이터다. 개발에서는 `?lesson=<id>`로 갈아끼워 본다
@@ -23,6 +24,22 @@ export function App() {
     const id = window.setInterval(() => setSeconds((n) => n + 1), 1000);
     return () => window.clearInterval(id);
   }, []);
+
+  /*
+    수업 하나가 기록의 단위다. 시작할 때 행을 하나 열고, 끝날 때 결과와
+    항목 기록을 한 번에 채운다. 실패해도 수업은 그대로 진행된다.
+  */
+  useEffect(() => {
+    void startSessionRecord(session.lessonId());
+  }, []);
+
+  const ended = view.ended;
+  const recordLine = view.recordLine;
+  useEffect(() => {
+    if (!ended || !recordLine) return;
+    const result = recordLine.match(/결과=([^\s/]+)/)?.[1];
+    if (result) void finishSessionRecord(result, session.records());
+  }, [ended, recordLine]);
 
   const elapsed = useMemo(() => {
     const m = String(Math.floor(seconds / 60)).padStart(2, "0");

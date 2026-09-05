@@ -8,10 +8,13 @@
     "build": "tsc --noEmit && vitest run && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "fn:deploy": "npx supabase functions deploy dajung-llm",
+    "fn:serve": "npx supabase functions serve dajung-llm --env-file .env.local"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.124.0",
+    "@supabase/supabase-js": "^2.115.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
