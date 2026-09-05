@@ -30,3 +30,10 @@ npx supabase functions deploy dajung-llm
 
 호출이 실패하면 엔진은 코드 유도로 폴백한다. 수업은 그대로 돈다 — 모델이 하던
 D·B·단어 뜻만 코드가 대신할 뿐이다.
+
+## 배포 상태 (2026-09-06)
+
+- 함수: `dajung-llm` — `verify_jwt = false` (프리플라이트 때문. 자체 검사가 더 엄격)
+- 앱: https://loopin-b2c.vercel.app
+- 앱 환경변수는 `VITE_SUPABASE_URL` · `VITE_SUPABASE_ANON_KEY` **둘뿐이다.**
+  Anthropic 키는 앱에 들어가지 않는다.
