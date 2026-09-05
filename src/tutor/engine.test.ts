@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from "vitest";
 import type { Lesson } from "../../content/tutor/types";
-import { createSession, READY_BTN } from "./engine";
+import { createSession, MORE_BTN, NEXT_BTN, READY_BTN } from "./engine";
 import { getLesson } from "./lessons";
 import { setTutorLlm, type TutorLlm } from "./llm";
 
@@ -311,6 +311,68 @@ describe("예상 오류의 다중 라운드 (TEST_SCENARIOS #9·#10)", () => {
   });
 });
 
+describe("설명 국면 teach_points (TEST_SCENARIOS #5)", () => {
+  const CHUNK2 = THALES.chunks[1]!;
+  const POINTS = CHUNK2.teach_points!;
+
+  /** 탈레스 2번 문장에서 좌절 방지까지 몰고 간다 */
+  async function reachExplanation() {
+    const session = await startedSession(THALES.id);
+    await say(session, "소아시아의 밀레투스라는 도시에서 태어난"); // 1번 문장 통과
+    await say(session, "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요");
+    return session;
+  }
+
+  it("한꺼번에 쏟지 않고 첫 항목만 내보낸다", async () => {
+    const session = await reachExplanation();
+    const view = await say(session, "네");
+    expect(view.message).toContain(POINTS[0]!.message);
+    expect(view.message).not.toContain(POINTS[1]!.message);
+    expect(view.progressIndex).toBe(2); // 아직 그 문장에 머문다
+  });
+
+  it("「다음으로」를 누를 때마다 하나씩 나간다", async () => {
+    const session = await reachExplanation();
+    await say(session, "네");
+    expect((await say(session, NEXT_BTN)).message).toContain(POINTS[1]!.message);
+    expect((await say(session, NEXT_BTN)).message).toContain(POINTS[2]!.message);
+  });
+
+  it("「더 알고 싶어요」는 그 항목의 심화만 준다", async () => {
+    const session = await reachExplanation();
+    await say(session, "네");
+    await say(session, NEXT_BTN); // 2번 항목
+    const view = await say(session, NEXT_BTN); // 3번 항목 (around, enrichment 있음)
+    expect(view.buttons).toContain(MORE_BTN);
+    const deeper = await say(session, MORE_BTN);
+    expect(deeper.message).toBe(POINTS[2]!.enrichment);
+  });
+
+  it("심화는 한 번만 권한다 — 본 항목에는 버튼이 안 붙는다", async () => {
+    const session = await reachExplanation();
+    await say(session, "네", NEXT_BTN, NEXT_BTN, MORE_BTN);
+    const view = await say(session, NEXT_BTN);
+    // 다음 항목(B.C.)으로 넘어갔고, 그 항목의 심화는 아직 안 봤다
+    expect(view.message).toContain(POINTS[3]!.message);
+    expect(view.buttons).toContain(MORE_BTN);
+  });
+
+  it("다 보면 수업이 끝난다", async () => {
+    const session = await reachExplanation();
+    await say(session, "네", NEXT_BTN, NEXT_BTN, NEXT_BTN, NEXT_BTN);
+    expect(session.view().ended).toBe(true);
+    expect(session.view().recordLine).toContain("결과=설명제공");
+  });
+
+  it("스스로 푼 학생은 설명 국면에 들어가지 않는다", async () => {
+    const session = await startedSession(THALES.id);
+    await say(session, "소아시아의 밀레투스라는 도시에서 태어난");
+    const view = await say(session, "그는 기원전 624년부터 546년까지 살았다");
+    expect(view.ended).toBe(true);
+    expect(view.message).not.toContain(POINTS[0]!.message);
+  });
+});
+
 describe("체크리스트 유도", () => {
   it("못 한 것 중 첫 번째만 짚는다", async () => {
     const session = await startedSession();
@@ -339,6 +401,19 @@ describe("체크리스트 유도", () => {
     const answer = RESIGNATION.chunks[0]!.model_translation;
     expect((await say(session, "잘 모르겠어요")).message).not.toContain(answer);
     expect((await say(session, "잘 모르겠어요")).message).not.toContain(answer);
+  });
+
+  it("답을 알려 준 항목은 다시 짚지 않고 다음으로 넘어간다", async () => {
+    /*
+      회귀: 한 항목의 답을 알려 준 뒤에도 계속 그 항목이 걸려서 같은 `tell`이
+      반복됐다 (2026-09-06 탈레스 2번 문장).
+    */
+    const session = await startedSession(THALES.id);
+    await say(session, "소아시아의 밀레투스라는 도시에서 태어난");
+    const p = THALES.chunks[1]!.scoring_points!;
+    expect((await say(session, "잘 모르겠어요")).message).toBe(p[0]!.nudge);
+    expect((await say(session, "잘 모르겠어요")).message).toBe(p[0]!.tell);
+    expect((await say(session, "잘 모르겠어요")).message).toBe(p[1]!.nudge);
   });
 
   it("문장이 바뀌면 체크가 처음부터다", async () => {

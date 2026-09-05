@@ -21,6 +21,8 @@ export const UNKNOWN_BTN = "잘 모르겠어요";
 export const HINT_BTN = "힌트 주세요";
 export const READY_BTN = "네, 좋아요!";
 export const READ_BTN = "다 읽었어요";
+export const MORE_BTN = "더 알고 싶어요";
+export const NEXT_BTN = "다음으로";
 
 export type UiScreen = "chat" | "study";
 
@@ -99,6 +101,15 @@ type EngineState = {
    * 같은 대사를 또 하면 학생은 말이 안 통한다고 느낀다.
    */
   errorRounds: Record<string, number>;
+  /**
+   * 설명 국면 — 지금 보여 주고 있는 `teach_points` 번호. 아니면 null.
+   *
+   * 좌절 방지로 답을 알려 준 학생에게만 연다. 스스로 푼 학생을 붙잡고 설명하면
+   * 그건 상이 아니라 벌이다.
+   */
+  teaching: number | null;
+  /** 이미 심화(enrichment)까지 본 항목 */
+  enrichedPoints: number[];
   /** 항목 단위 학습 기록. 서버가 생기면 그대로 흘려보낸다 */
   pointLog: PointRecord[];
   pending: Branch | null;
@@ -164,6 +175,8 @@ function initialState(lesson: Lesson): EngineState {
     toldAnyPoint: false,
     attemptsInUnit: 0,
     errorRounds: {},
+    teaching: null,
+    enrichedPoints: [],
     pointLog: [],
     pending: null,
     errorIds: [],
@@ -228,6 +241,8 @@ function startUnit(s: EngineState, index: number, lead: string): EngineState {
     toldPoints: [],
     attemptsInUnit: 0,
     errorRounds: {},
+    teaching: null,
+    enrichedPoints: [],
     pending: null,
     screen: "study",
     placeholder: "해석을 적어 보세요…",
@@ -251,6 +266,53 @@ function finish(s: EngineState, result: TutorResult, closing: string): EngineSta
     pending: null,
     effect: null,
   });
+}
+
+/**
+ * **설명 국면 — 한 번에 하나씩.**
+ *
+ * 레슨의 `teach_points`를 순서대로 하나씩 내보내고 학생을 기다린다. 한꺼번에
+ * 쏟으면 그건 강의고, 학생은 읽지 않는다 (`BEHAVIOR.md` §5).
+ *
+ * 체크리스트와 내용이 겹치는 항목이 많다 — 겹치는 건 이미 유도에서 다뤘고,
+ * 여기서 새로 생기는 건 **`enrichment`**(더 깊은 설명)다. 그래서 「더 알고
+ * 싶어요」를 누른 학생에게만 그걸 준다.
+ */
+function teachStep(s: EngineState, index: number): EngineState {
+  const points = current(s).teach_points ?? [];
+  const point = points[index];
+  if (!point) {
+    return advance(
+      { ...s, teaching: null },
+      "오늘 이 문장은 여기까지 같이 봤어요.",
+      false,
+    );
+  }
+  const more = point.enrichment && !s.enrichedPoints.includes(index) ? [MORE_BTN] : [];
+  return say(s, point.message, {
+    teaching: index,
+    screen: "study",
+    buttons: uniqueButtons([...more, NEXT_BTN]),
+    placeholder: "선생님께 답해 보세요…",
+    effect: null,
+  });
+}
+
+function handleTeaching(s: EngineState, text: string): EngineState {
+  const index = s.teaching!;
+  const point = (current(s).teach_points ?? [])[index];
+  const wantsMore = matchChoice(text, [MORE_BTN]) != null;
+
+  if (wantsMore && point?.enrichment && !s.enrichedPoints.includes(index)) {
+    return say(s, point.enrichment, {
+      enrichedPoints: [...s.enrichedPoints, index],
+      buttons: [NEXT_BTN],
+      screen: "study",
+      placeholder: "선생님께 답해 보세요…",
+      effect: null,
+    });
+  }
+  return teachStep(s, index + 1);
 }
 
 /** 이 문장의 항목별 결과. 서버가 생기면 그대로 쌓아 난이도 순서를 덮어쓴다 */
@@ -431,7 +493,15 @@ function nudgeNext(s: EngineState, checked: number[]): EngineState {
   }
 
   const points = current(s).scoring_points ?? [];
-  const target = points.find((p) => !checked.includes(p.id));
+  /*
+    **이미 답을 알려 준 항목은 건너뛴다.** 못 낸 것 중 첫 번째만 보면, 한 항목을
+    알려 준 뒤에도 계속 그 항목이 걸려서 같은 `tell`이 반복된다 — 학생에게는
+    말이 안 통하는 화면이다 (2026-09-06 탈레스 2번 문장에서 재현).
+    남은 게 전부 알려 준 것뿐이면 그때는 그 항목을 다시 짚는다.
+  */
+  const target =
+    points.find((p) => !checked.includes(p.id) && !s.toldPoints.includes(p.id)) ??
+    points.find((p) => !checked.includes(p.id));
   if (!target) return s; // 전부 체크됐으면 부를 일이 없다
 
   const gained = checked.filter((id) => !s.checkedPoints.includes(id));
@@ -743,12 +813,16 @@ function handlePending(s: EngineState, text: string): EngineState {
     갔는데, miss가 이미 4라 좌절 방지가 다시 열리고 → 또 못 맞히고 → 무한히
     같은 문장에 갇혔다 (2026-09-06 재현: 「네」라고 답하니 수업이 안 끝났다).
   */
-  const escapeFrustration = (state: EngineState) =>
-    advance(
-      { ...state, pending: null, skipFinalRetake: true },
-      "괜찮아요, 방금 같이 본 그 문장이에요.",
-      false,
-    );
+  /*
+    좌절 방지를 빠져나갈 때, 이 문장에 `teach_points`가 있으면 **설명 국면**으로
+    간다. 답을 알려 준 학생이 바로 다음 문장으로 떠밀리지 않게 하는 자리다.
+  */
+  const escapeFrustration = (state: EngineState) => {
+    const next = { ...state, pending: null, skipFinalRetake: true };
+    return (current(state).teach_points ?? []).length
+      ? teachStep(next, 0)
+      : advance(next, "괜찮아요, 방금 같이 본 그 문장이에요.", false);
+  };
 
   const byLabel = matchChoice(text, pending.choices.map((c) => c.label));
   const choice =
@@ -787,7 +861,10 @@ function handlePending(s: EngineState, text: string): EngineState {
       : nudgeNext({ ...s, pending: null }, s.checkedPoints);
   }
   if (pending.errorId === "FRUSTRATION" || branch.next === "advance") {
-    return advance({ ...s, pending: null, skipFinalRetake: true, result: "설명제공" }, branch.message, false);
+    const next = { ...s, pending: null, skipFinalRetake: true, result: "설명제공" as const };
+    return (current(s).teach_points ?? []).length
+      ? say(teachStep(next, 0), `${branch.message} ${(current(s).teach_points ?? [])[0]!.message}`)
+      : advance(next, branch.message, false);
   }
   const light = !!choice.correct && !branch.reveal_answer;
   return say(s, branch.message, {
@@ -824,6 +901,12 @@ export function createSession(lessonId?: string | null) {
           : null;
       if (asked) {
         s = answerProperNoun(s, asked);
+        return view(s);
+      }
+
+      // 설명 국면이 열려 있으면 그 흐름이 먼저다
+      if (s.teaching != null) {
+        s = handleTeaching(s, text);
         return view(s);
       }
 
