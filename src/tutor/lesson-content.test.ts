@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Lesson, LessonChunk } from "../../content/tutor/types";
+import frame from "../../content/tutor/frame.json";
 import { getLesson, lessonIds } from "./lessons";
 import { validateLlmOutput } from "./llm";
 
@@ -69,6 +70,35 @@ describe("레슨 체크리스트", () => {
         );
       }
     });
+  });
+});
+
+describe("말투 예시(frame.voice_examples)", () => {
+  it("좋은 예시는 가드레일을 통과한다 — 예시가 규칙을 어기면 모델도 어긴다", () => {
+    const bad: string[] = [];
+    for (const example of frame.voice_examples.good) {
+      const verdict = validateLlmOutput(
+        { message: example.tutor },
+        { bannedStrings: [], minSentences: frame.speech.min_sentences },
+      );
+      if (!verdict.ok) bad.push(`${example.action} — ${verdict.reason}`);
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it("나쁜 예시는 전부 걸린다 — 안 걸리면 가드레일에 구멍이 있다", () => {
+    const passed: string[] = [];
+    for (const example of frame.voice_examples.bad) {
+      const verdict = validateLlmOutput(
+        { message: example.tutor },
+        {
+          bannedStrings: ["근무하다"],
+          minSentences: frame.speech.min_sentences,
+        },
+      );
+      if (verdict.ok) passed.push(`${example.why}: ${example.tutor}`);
+    }
+    expect(passed).toEqual([]);
   });
 });
 

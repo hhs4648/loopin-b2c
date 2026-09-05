@@ -14,6 +14,8 @@
  * (D도 체크리스트 유도로 접힌다). 그래서 이 파일이 들어와도 화면 동작은 안 바뀐다.
  */
 
+import frame from "../../content/tutor/frame.json";
+
 /** 엔진이 고르는 이번 턴 액션. 모델은 이걸 고르지 않는다. */
 export type TutorAction =
   | "INTRO"
@@ -127,11 +129,21 @@ export async function safeCall<T>(
   }
 }
 
+/**
+ * 검사 기준의 **기본값은 `frame.json`에서 온다.**
+ * 말투 규칙을 코드에 또 적어 두면 프레임을 고쳐도 검사가 안 따라온다.
+ */
 export type GuardContext = {
-  /** 모범 해석, 정답 선택지 라벨, 아직 못 쓰는 힌트 단 */
+  /** 모범 해석, 정답 선택지 라벨, 아직 안 알려 준 항목의 답 */
   bannedStrings: string[];
   maxSentences?: number;
+  /** 모델 발화에만 건다. 레슨의 짧은 고정 대사까지 막지 않으려고 기본은 1 */
+  minSentences?: number;
   maxQuestions?: number;
+  /** 말버릇(^^ 어머 …) 허용 개수 */
+  maxRapport?: number;
+  /** 직전 다정쌤 대사 — 같은 말을 두 번 하지 않는다 */
+  previousUtterance?: string;
 };
 
 export type GuardVerdict = { ok: true } | { ok: false; reason: string };
@@ -178,6 +190,15 @@ export function validateLlmOutput(
   const message = output.message?.trim() ?? "";
   if (!message) return { ok: false, reason: "빈 발화" };
 
+  /*
+    **같은 말을 두 번 하지 않는다** (`frame.absolute_rules`).
+    모델은 막히면 직전 문장을 그대로 되풀이하는 버릇이 있고, 학생에게는
+    말이 안 통하는 것처럼 보인다.
+  */
+  if (ctx.previousUtterance && compact(ctx.previousUtterance) === compact(message)) {
+    return { ok: false, reason: "직전 대사와 같은 말" };
+  }
+
   const haystack = compact(message);
   for (const banned of ctx.bannedStrings) {
     const needle = compact(banned);
@@ -198,15 +219,32 @@ export function validateLlmOutput(
   }
 
   const sentences = sentencesOf(message);
-  const maxSentences = ctx.maxSentences ?? 4;
+  const maxSentences = ctx.maxSentences ?? frame.speech.max_sentences;
   if (sentences.length > maxSentences) {
     return { ok: false, reason: `문장 ${sentences.length}개 (최대 ${maxSentences})` };
+  }
+  const minSentences = ctx.minSentences ?? 1;
+  if (sentences.length < minSentences) {
+    return { ok: false, reason: `문장 ${sentences.length}개 (최소 ${minSentences})` };
   }
 
   const questions = (message.match(/[?？]/g) ?? []).length;
   const maxQuestions = ctx.maxQuestions ?? 1;
   if (questions > maxQuestions) {
     return { ok: false, reason: `한 턴에 질문 ${questions}개` };
+  }
+
+  /*
+    말버릇은 **한 턴에 하나까지**. 매 문장에 붙으면 다정한 게 아니라 산만해진다.
+    물결표(~)는 `from ~ to` 같은 문법 표기로도 쓰여서 세지 않는다 (frame 참고).
+  */
+  const maxRapport = ctx.maxRapport ?? frame.speech.rapport.max_per_turn;
+  const rapport = frame.speech.rapport.examples.reduce(
+    (count, marker) => count + message.split(marker).length - 1,
+    0,
+  );
+  if (rapport > maxRapport) {
+    return { ok: false, reason: `말버릇 ${rapport}개 (최대 ${maxRapport})` };
   }
 
   const banmal = sentences.find(looksBanmal);

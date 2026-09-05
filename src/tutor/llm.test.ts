@@ -66,6 +66,47 @@ describe("validateLlmOutput", () => {
     },
   );
 
+  it("직전 대사를 그대로 되풀이하면 버린다", () => {
+    const line = "지금 막힌 곳은 문장 뒷부분이에요. 그 부분만 다시 볼까요?";
+    const v = validateLlmOutput(
+      { message: line },
+      { bannedStrings: banned, previousUtterance: line },
+    );
+    expect(v.ok).toBe(false);
+  });
+
+  it("말버릇이 한 턴에 둘 이상이면 버린다", () => {
+    const v = validateLlmOutput(
+      { message: "어머 잘했어요^^ 이번엔 뒷부분만 볼까요?" },
+      { bannedStrings: banned },
+    );
+    expect(v.ok).toBe(false);
+  });
+
+  it("말버릇 하나는 통과한다", () => {
+    const v = validateLlmOutput(
+      { message: "잘했어요^^ 이번엔 뒷부분만 볼까요?" },
+      { bannedStrings: banned },
+    );
+    expect(v.ok).toBe(true);
+  });
+
+  it("물결표는 말버릇으로 세지 않는다 — 문법 표기로도 쓰인다", () => {
+    const v = validateLlmOutput(
+      { message: "from ~ to는 짝을 이루는 표현이에요. 어떻게 이어 줄까요?" },
+      { bannedStrings: banned },
+    );
+    expect(v.ok).toBe(true);
+  });
+
+  it("모델 발화가 한 문장뿐이면 버린다 (min_sentences)", () => {
+    const v = validateLlmOutput(
+      { message: "뒷부분을 다시 볼까요?" },
+      { bannedStrings: banned, minSentences: 2 },
+    );
+    expect(v.ok).toBe(false);
+  });
+
   it.each([
     "좋아요. 앞부분은 맞았어요. 뒤쪽만 다시 볼게요. 어느 부분이 걸리나요?",
     "잘했어요! 이번엔 뒷부분만 볼까요?",

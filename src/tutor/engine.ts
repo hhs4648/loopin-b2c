@@ -5,6 +5,7 @@ import {
   getTutorLlm,
   safeCall,
   validateLlmOutput,
+  type GuardContext,
   type UnitBrief,
 } from "./llm";
 import { classify, isUnknownInput, matchChoice } from "./match";
@@ -498,6 +499,20 @@ function bannedFor(s: EngineState): string[] {
 }
 
 /**
+ * 모델 발화에 거는 검사 기준.
+ *
+ * 금지 문자열뿐 아니라 **말투 규칙까지** 함께 넘긴다. 기준값은 `frame.json`에서
+ * 오고, 직전 대사를 같이 줘서 같은 말을 두 번 하지 못하게 한다.
+ */
+function voiceGuardFor(s: EngineState): GuardContext {
+  return {
+    bannedStrings: bannedFor(s),
+    minSentences: frame.speech.min_sentences,
+    previousUtterance: s.lastTutorUtterance,
+  };
+}
+
+/**
  * **단어 뜻 질문.**
  *
  * 「serve가 뭐예요?」는 무시할 질문이 아니다. 다만 답이 두 갈래다.
@@ -535,16 +550,19 @@ async function answerWord(
   );
   if (!spoken) return nudgeNext(s, s.checkedPoints);
 
-  const verdict = validateLlmOutput(spoken, { bannedStrings: bannedFor(s) });
+  /*
+    **검사는 학생이 실제로 보는 문장에 건다.** 엔진이 복귀 문구를 뒤에 붙이므로,
+    모델 발화만 따로 재면 문장 수도 물음표 수도 실제와 다르다.
+  */
+  const message = `${spoken.message} ${frame.fixed_lines.return_to_lesson}`;
+  const verdict = validateLlmOutput({ ...spoken, message }, voiceGuardFor(s));
   if (!verdict.ok) {
     console.warn("[tutor] 단어 뜻 발화 폐기 →", verdict.reason);
     return nudgeNext(s, s.checkedPoints);
   }
 
-  // 물어본 것은 오답이 아니다 — miss도 힌트 단수도 그대로다
-  return say(s, `${spoken.message} ${frame.fixed_lines.return_to_lesson}`, {
-    effect: null,
-  });
+  // 물어본 것은 오답이 아니다 — miss도 유도 단계도 그대로다
+  return say(s, message, { effect: null });
 }
 
 /**
@@ -590,7 +608,7 @@ async function treatUnexpectedOrPartial(
   );
   if (!spoken) return nudgeNext(s, checked);
 
-  const verdict = validateLlmOutput(spoken, { bannedStrings: bannedFor(s) });
+  const verdict = validateLlmOutput(spoken, voiceGuardFor(s));
   if (!verdict.ok) {
     console.warn("[tutor] 발화 폐기 →", verdict.reason);
     return nudgeNext(s, checked);
