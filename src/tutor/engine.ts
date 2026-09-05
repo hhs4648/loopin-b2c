@@ -8,6 +8,7 @@ import {
   type UnitBrief,
 } from "./llm";
 import { classify, isUnknownInput, matchChoice } from "./match";
+import { askedAboutProperNoun, nounKind } from "./proper-nouns";
 
 export const UNKNOWN_BTN = "잘 모르겠어요";
 export const HINT_BTN = "힌트 주세요";
@@ -301,6 +302,26 @@ function frustration(s: EngineState): EngineState {
   );
 }
 
+/**
+ * **역질문 — 오답이 아니다.**
+ *
+ * 고유명사를 되물으면 짧게 답하고 하던 자리로 돌려보낸다. miss도 힌트 단수도
+ * 건드리지 않는다 (`ARCHITECTURE.md` §4-2). 이게 없을 때는 「Asia Minor가
+ * 뭐예요?」가 오답(E)으로 세어져서, 궁금해서 물어본 학생이 힌트를 한 단
+ * 잃고 좌절 방지에 가까워졌다.
+ *
+ * 2지선다가 열려 있으면 **그대로 둔다** — 답할 자리를 뺏지 않는다.
+ */
+function answerProperNoun(s: EngineState, noun: ProperNoun): EngineState {
+  const told = frame.fixed_lines.proper_noun_question
+    .replace("{name}", noun.en)
+    .replace("{type}", nounKind(noun.type));
+  return say(s, `${told} ${frame.fixed_lines.return_to_lesson}`, {
+    // 화면·버튼·카운터는 건드리지 않는다. 하던 자리 그대로다
+    effect: null,
+  });
+}
+
 function climbHint(s: EngineState): EngineState {
   const miss = s.missCountInUnit + 1;
   if (miss >= 4) return frustration({ ...s, missCountInUnit: miss, hadAnyError: true });
@@ -511,6 +532,20 @@ export function createSession(lessonId?: string | null) {
       const text = raw.trim();
       if (!text || s.ended) return view(s);
       s = { ...s, studentLine: text, effect: null };
+
+      /*
+        **순서를 바꾸지 않는다** (ARCHITECTURE §4).
+        역질문은 2지선다보다 먼저 본다. 학생이 선택지를 고르다 말고 이름을
+        물어봤을 때, 그걸 「선택지 밖 답」으로 처리하면 오답이 된다.
+      */
+      const asked =
+        s.stage !== "intro"
+          ? askedAboutProperNoun(text, s.lesson.proper_nouns ?? [])
+          : null;
+      if (asked) {
+        s = answerProperNoun(s, asked);
+        return view(s);
+      }
 
       if (s.pending) {
         s = handlePending(s, text);

@@ -114,6 +114,46 @@ describe("진단", () => {
   });
 });
 
+describe("역질문", () => {
+  it("고유명사를 물으면 답하고 하던 자리로 돌아온다", async () => {
+    // TEST_SCENARIOS #11
+    const session = await startedSession(THALES.id);
+    const view = await say(session, "Asia Minor가 뭐예요?");
+    expect(view.message).toContain("Asia Minor");
+    expect(view.message).toContain("지역명");
+    expect(view.progressIndex).toBe(1);
+  });
+
+  it("오답으로 세지 않는다 — 힌트 사다리가 그대로다", async () => {
+    const session = await startedSession();
+    await say(session, "Lewis Ltd.가 뭐예요?");
+    // 되묻기가 miss였다면 이 「모르겠어요」는 2단이 나왔을 것이다
+    expect((await say(session, "잘 모르겠어요")).message).toBe(hint(RESIGNATION, 0, 1));
+  });
+
+  it("2지선다 중에 물어봐도 선택지를 뺏지 않는다", async () => {
+    const session = await startedSession();
+    const opened = await say(session, "지난 4년간 이 회사에서 봉사한 것은 영광이었습니다");
+    const view = await say(session, "Lewis Ltd.가 뭐예요?");
+    expect(view.buttons).toEqual(opened.buttons);
+    // 아직 그 자리 — 선택지에 답하면 원래 분기로 이어진다
+    const after = await say(session, "근무하다");
+    expect(after.message).not.toBe(view.message);
+  });
+
+  it("해석 시도를 되묻기로 잘못 보지 않는다", async () => {
+    const session = await startedSession();
+    const view = await say(session, "지난 4년간 이 회사에서 근무한 것은 큰 영광이었습니다");
+    expect(view.progressIndex).toBe(2);
+  });
+
+  it("종류 이름이 화면과 같은 말을 쓴다", async () => {
+    const session = await startedSession();
+    const view = await say(session, "Lewis Ltd.가 뭐예요?");
+    expect(view.message).toContain("회사 이름");
+  });
+});
+
 describe("힌트 사다리", () => {
   it("1→2→3단을 순서대로만 오른다", async () => {
     const session = await startedSession();

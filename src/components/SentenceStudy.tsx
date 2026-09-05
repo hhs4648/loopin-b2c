@@ -3,6 +3,7 @@ import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
 import type { TutorView } from "../tutor/engine";
+import { nounKind } from "../tutor/proper-nouns";
 
 type Props = {
   view: TutorView;
@@ -87,13 +88,6 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose }: Props) 
       </div>
     </div>
   );
-}
-
-function nounKind(type?: string) {
-  if (type === "company") return "회사 이름";
-  if (type === "place") return "지명";
-  if (type === "person") return "사람 이름";
-  return "고유명사";
 }
 
 function highlightNouns(sentence: string, nouns: TutorView["properNouns"]) {

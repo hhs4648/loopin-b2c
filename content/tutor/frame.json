@@ -64,7 +64,7 @@
     }
   },
   "fixed_lines": {
-    "proper_noun_question": "좋은 질문이에요^^ 대문자로 되어 있는 건 이름이고, 여기선 지역명이어서 해석할 때 {name}라고 그대로 쓰면 돼요!",
+    "proper_noun_question": "좋은 질문이에요^^ 대문자로 되어 있는 건 이름이고, 여기선 {type}이어서 해석할 때 {name}라고 그대로 쓰면 돼요!",
     "offer_proper_noun_fact": "그래도 궁금하면 뭔지 알려줄까요?",
     "return_to_lesson": "자, 그럼 하던 해석 이어서 해볼까요? 😊",
     "wrap_up_retake": "오늘 배운 걸 모아서, 한번 전체적으로 해석해볼까요?",

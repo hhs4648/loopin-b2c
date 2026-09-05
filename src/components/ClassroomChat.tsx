@@ -3,6 +3,7 @@ import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
 import type { TutorView } from "../tutor/engine";
+import { nounKind } from "../tutor/proper-nouns";
 
 type Props = {
   view: TutorView;
@@ -57,7 +58,7 @@ export function ClassroomChat({ view, elapsed, typing, onSend, onClose }: Props)
           <div className="noun-chips intro">
             {view.properNouns.map((n) => (
               <span key={n.en} className="noun-chip">
-                {n.en} · 회사 이름 · 그대로
+                {n.en} · {nounKind(n.type)} · 그대로
               </span>
             ))}
           </div>
