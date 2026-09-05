@@ -4,6 +4,25 @@
 
 레슨: `content/tutor/lessons/thales-participial-phrase-front.json`
 
+## 자동화된 것
+
+```bash
+npm test          # 한 번 돌리기 (`npm run build`에도 들어 있다)
+npm run test:watch
+```
+
+| 파일 | 무엇 |
+|------|------|
+| `src/tutor/engine.test.ts` | 진단·힌트 사다리·좌절 방지·기록 네 값·한 턴 질문 하나·LLM 자리 |
+| `src/tutor/lesson-content.test.ts` | 레슨 글 자체 (힌트가 정답을 흘리는지, 반말, 질문 두 개, 데이터 계약) |
+| `src/tutor/llm.test.ts` | 가드레일 |
+
+아래 표의 **#1 · #3 · #4 · #12 · #13 · #14는 자동으로 돕니다.** 나머지는 모델이
+있어야 하거나(다중 라운드·역질문) 아직 엔진에 없는 기능이라 사람이 봅니다.
+
+> `#11 역질문`은 **아직 구현되지 않았습니다.** `ARCHITECTURE.md` §4-2에 있는 단계인데
+> 엔진에 자리가 없어서, 지금은 「Asia Minor가 뭐예요?」가 오답(E)으로 셉니다.
+
 ## 필수 5개 (원안)
 
 | # | 학생 역할 | 통과 조건 |

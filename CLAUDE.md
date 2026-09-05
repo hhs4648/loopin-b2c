@@ -17,6 +17,10 @@
 
 실행: `npm install` → `npm run dev` → http://127.0.0.1:5173/
 
+확인: `npm test` (엔진·레슨 글·가드레일 회귀). `npm run build`가 타입검사 → 테스트 →
+빌드 순서로 돌므로, 빌드가 통과하면 회귀도 통과한 것이다.
+개발 중에는 `?lesson=<id>`로 지문을, `?fakellm=normal|leak|bad`로 가짜 모델을 꽂을 수 있다.
+
 ---
 
 ## 절대 깨지 말 것

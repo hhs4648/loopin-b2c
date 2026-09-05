@@ -269,7 +269,11 @@ function frustration(s: EngineState): EngineState {
   const right = u.model_translation;
   return say(
     s,
-    `${frame.fixed_lines.frustration_tone} 정답은 '${right}'예요. 어느 쪽이 더 가깝나요?`,
+    /*
+      프레임 문구가 이미 「까다롭죠?」로 한 번 묻는다. 여기서 또 물으면
+      한 턴에 질문이 둘이 된다 — 버튼이 바로 아래 있으니 청유형으로 끝낸다.
+    */
+    `${frame.fixed_lines.frustration_tone} 정답은 '${right}'예요. 아래에서 더 가까운 쪽을 골라 주세요.`,
     {
       skipFinalRetake: true,
       hadAnyError: true,
