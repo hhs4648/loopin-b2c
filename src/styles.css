@@ -202,6 +202,18 @@ button, input { font-family: inherit; }
   font-size: 17px; line-height: 1.45; font-weight: 500;
   text-align: center; min-width: 200px; box-sizing: border-box;
 }
+/*
+  스스로 고친 순간에만 켜지는 표시 (`effect: "light"`).
+  정답을 알려 준 뒤에는 켜지 않는다 — 엔진이 그 판단을 한다.
+  칭찬은 이미 말로 하므로, 여기서는 한 번 밝아졌다 가라앉는 정도로만 둔다.
+*/
+@keyframes lit {
+  0% { box-shadow: 0 12px 30px rgba(60,30,20,.16), 0 0 0 1px rgba(226,96,125,.18); }
+  35% { box-shadow: 0 12px 30px rgba(239,122,147,.34), 0 0 0 3px rgba(239,122,147,.5); }
+  100% { box-shadow: 0 12px 30px rgba(60,30,20,.16), 0 0 0 1px rgba(226,96,125,.18); }
+}
+.bubble-card.lit { animation: pop .4s ease-out, lit 1.3s ease-out .1s; }
+
 .bubble-tail {
   position: absolute; left: 50%; bottom: -11px; width: 22px; height: 22px;
   background: #fff; transform: translateX(-50%) rotate(45deg);

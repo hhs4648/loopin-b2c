@@ -43,7 +43,10 @@ export function ClassroomChat({ view, elapsed, typing, onSend, onClose }: Props)
       </div>
 
       <div className="teacher-bubble">
-          <div className="bubble-card" aria-live="polite">
+          <div
+            className={`bubble-card${view.effect === "light" ? " lit" : ""}`}
+            aria-live="polite"
+          >
           {typing ? <TypingDots /> : <span>{view.message}</span>}
           <i className="bubble-tail" />
         </div>

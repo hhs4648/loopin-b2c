@@ -183,7 +183,11 @@ function startUnit(s: EngineState, index: number, lead: string): EngineState {
     screen: "study",
     placeholder: "해석을 적어 보세요…",
     buttons: [READ_BTN, HINT_BTN, UNKNOWN_BTN],
-    effect: null,
+    /*
+      **`effect`를 여기서 끄지 않는다.** 스스로 고친 턴은 반짝여야 하는데,
+      그 순간이 곧 다음 문장으로 넘어가는 순간이라 여기서 null로 덮으면
+      `light`가 화면에 도달한 적이 없다. 다음 입력이 오면 `submit`이 끈다.
+    */
   });
 }
 
@@ -552,6 +556,18 @@ function handlePending(s: EngineState, text: string): EngineState {
     pending.choices.find((c) => c.label === byLabel || compactEq(text, c.id)) ??
     pending.choices.find((c) => byLabel === c.label);
   if (!choice) {
+    /*
+      **선택지를 무시하고 고친 답을 바로 적는 학생이 많다.** 버튼을 누르는 대신
+      해석을 다시 쓰는 게 자연스럽기 때문이다. 정답이면 정답으로 받는다 —
+      예전에는 「선택지 밖」으로 보고 힌트를 올려서, 스스로 고쳐 놓고도 오답
+      취급을 받았다.
+
+      `effect: "light"`는 **스스로** 고친 순간만이다. 좌절 방지로 정답을 이미
+      알려 준 뒤라면 켜지 않는다.
+    */
+    if (classify(text, current(s)).kind === "A") {
+      return advance({ ...s, pending: null }, praiseFor(s), !s.skipFinalRetake);
+    }
     return pending.errorId === "FRUSTRATION"
       ? escapeFrustration(s)
       : climbHint({ ...s, pending: null });

@@ -68,7 +68,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose }: Props) 
 
       <div className="study-stage">
         <div className="teacher-bubble study-bubble-over" aria-live="polite">
-          <div className="bubble-card">
+          <div className={`bubble-card${view.effect === "light" ? " lit" : ""}`}>
             {typing ? (
               <div className="dots"><i /><i /><i /></div>
             ) : (

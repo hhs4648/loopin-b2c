@@ -70,6 +70,17 @@ describe("진단", () => {
     expect(view.progressIndex).toBe(2);
   });
 
+  it("처음부터 맞히면 반짝이지 않는다 — 고칠 게 없었다", async () => {
+    const session = await startedSession();
+    expect((await say(session, CORRECT[0]!)).effect).toBe(null);
+  });
+
+  it("틀렸다가 스스로 고치면 반짝인다", async () => {
+    const session = await startedSession();
+    await say(session, "잘 모르겠어요");
+    expect((await say(session, CORRECT[0]!)).effect).toBe("light");
+  });
+
   it("예상 오류(C)는 레슨의 고정 대사와 선택지를 그대로 쓴다", async () => {
     const session = await startedSession();
     const view = await say(session, "지난 4년간 이 회사에서 봉사한 것은 영광이었습니다");
@@ -201,6 +212,51 @@ describe("단어 뜻 질문", () => {
     const session = await startedSession();
     const view = await say(session, CORRECT[0]!);
     expect(view.progressIndex).toBe(2);
+  });
+});
+
+describe("2지선다 중에 고친 답을 바로 적을 때", () => {
+  async function openBranch() {
+    const session = await startedSession();
+    await say(session, "지난 4년간 이 회사에서 봉사한 것은 영광이었습니다");
+    return session;
+  }
+
+  it("버튼을 안 눌러도 정답이면 정답이다", async () => {
+    const session = await openBranch();
+    const view = await say(session, CORRECT[0]!);
+    expect(view.progressIndex).toBe(2);
+    expect(view.message).toContain(RESIGNATION.chunks[0]!.praise);
+  });
+
+  it("스스로 고친 것이므로 반짝인다", async () => {
+    const session = await openBranch();
+    expect((await say(session, CORRECT[0]!)).effect).toBe("light");
+  });
+
+  it("기록에는 그 오류가 남는다", async () => {
+    const session = await openBranch();
+    await say(session, ...CORRECT);
+    const record = session.view().recordLine ?? "";
+    expect(record).toContain("결과=오류후이해");
+    expect(record).toContain("1:P2");
+  });
+
+  it("정답이 아니면 예전처럼 힌트로 간다", async () => {
+    const session = await openBranch();
+    expect((await say(session, "음 뭔가 특권 같은 느낌이에요")).message).toBe(
+      hint(RESIGNATION, 0, 1),
+    );
+  });
+
+  it("좌절 방지 뒤에 맞혀도 결과는 설명제공이고 반짝이지 않는다", async () => {
+    const session = await startedSession();
+    await say(session, "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요");
+    const view = await say(session, CORRECT[0]!);
+    expect(view.progressIndex).toBe(2);
+    expect(view.effect).toBe(null);
+    await say(session, ...CORRECT.slice(1));
+    expect(session.view().recordLine).toContain("결과=설명제공");
   });
 });
 
