@@ -73,13 +73,54 @@ describe("레슨 체크리스트", () => {
   });
 });
 
+/*
+  **유도는 못 낸 항목에 나가지, 틀린 항목에 나가는 게 아니다.**
+
+  학생이 어떤 항목을 안 냈다고 해서 그걸 어떻게 오해했다는 뜻은 아니다.
+  실제로 틀렸을 때 쓸 대사는 `expected_errors`에 따로 있다. 유도가 미리
+  "X는 Y가 아니에요"라고 해버리면, 하지도 않은 실수를 뒤집어씌우면서
+  **틀린 답 Y까지 알려 주는** 셈이 된다 (2026-09-06 실제 불평).
+*/
+const PREEMPTIVE_DENIAL = /아니에요|아니라|아닙니다|아니고|(으)?로\s*(보면|두면|읽으면)/;
+
+describe("유도 문구", () => {
+  for (const lesson of LESSONS) {
+    it(`${lesson.id} — 안 한 오해를 미리 부정하지 않는다`, () => {
+      const offenders: string[] = [];
+      lesson.chunks.forEach((chunk, i) => {
+        for (const p of chunk.scoring_points ?? []) {
+          const hit = p.nudge?.match(PREEMPTIVE_DENIAL);
+          if (hit) offenders.push(`문장${i + 1} 항목${p.id}: "${hit[0]}" — ${p.nudge}`);
+        }
+      });
+      expect(offenders).toEqual([]);
+    });
+
+    it(`${lesson.id} — 유도가 어느 자리인지 가리킨다`, () => {
+      const vague: string[] = [];
+      lesson.chunks.forEach((chunk, i) => {
+        for (const p of chunk.scoring_points ?? []) {
+          if (p.nudge && /(그|이|저)\s*(부분|쪽)/.test(p.nudge)) {
+            vague.push(`문장${i + 1} 항목${p.id}: ${p.nudge}`);
+          }
+        }
+      });
+      expect(vague).toEqual([]);
+    });
+  }
+});
+
 describe("말투 예시(frame.voice_examples)", () => {
   it("좋은 예시는 가드레일을 통과한다 — 예시가 규칙을 어기면 모델도 어긴다", () => {
     const bad: string[] = [];
     for (const example of frame.voice_examples.good) {
       const verdict = validateLlmOutput(
         { message: example.tutor },
-        { bannedStrings: [], minSentences: frame.speech.min_sentences },
+        {
+          bannedStrings: [],
+          minSentences: frame.speech.min_sentences,
+          studentText: example.student,
+        },
       );
       if (!verdict.ok) bad.push(`${example.action} — ${verdict.reason}`);
     }
@@ -94,6 +135,8 @@ describe("말투 예시(frame.voice_examples)", () => {
         {
           bannedStrings: ["근무하다"],
           minSentences: frame.speech.min_sentences,
+          // 「학생이 쓰지 않은 말을 부정」은 학생 발화가 있어야 잴 수 있다
+          studentText: "student" in example ? example.student : undefined,
         },
       );
       if (verdict.ok) passed.push(`${example.why}: ${example.tutor}`);

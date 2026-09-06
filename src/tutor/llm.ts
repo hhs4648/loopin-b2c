@@ -150,12 +150,62 @@ export type GuardContext = {
   maxRapport?: number;
   /** 직전 다정쌤 대사 — 같은 말을 두 번 하지 않는다 */
   previousUtterance?: string;
+  /**
+   * 학생이 방금 쓴 말.
+   *
+   * **하지 않은 해석을 부정하는 걸 막으려고 받는다.** 학생이 쓴 적 없는
+   * 뜻을 「X는 Y가 아니에요」라고 부정하면, 안 한 실수를 뒤집어씌우면서
+   * 틀린 답까지 알려 주는 셈이 된다 (2026-09-06 실제 불평).
+   */
+  studentText?: string;
 };
 
 export type GuardVerdict = { ok: true } | { ok: false; reason: string };
 
 function compact(s: string): string {
   return s.toLowerCase().replace(/[“”"'’.,!?~\-·…\s]/g, "");
+}
+
+/**
+ * 뭉뚱그리는 지시어.
+ *
+ * 「그 부분은 맞았어요」를 들은 학생은 **어디가 맞았는지 모른다.** 영어 원문의
+ * 단어나 구를 그대로 집어서 말해야 한다.
+ *
+ * 「그 단어」는 일부러 뺐다 — 단어 뜻을 물어본 학생에게는 그게 어느 단어인지
+ * 분명하다. 정말 가리키는 데가 없는 말만 막는다.
+ */
+const VAGUE_REFERENCE = /(그|이|저)\s*(부분|쪽)|거기(는|가|를)?\s|그거(는|가|를)?\s/;
+
+/**
+ * 부정당한 말을 뽑는다 — 따옴표에 든 것과 「Y가 아니에요」의 Y.
+ *
+ * 「은/는 아니었다」(쉬운 결정은 아니었다)는 일부러 뺐다. 그건 해석 자체이지
+ * 학생을 부정하는 말이 아니다.
+ */
+const DENIED_QUOTED = /['"“”‘’]([^'"“”‘’]{1,15})['"“”‘’]\s*(?:이|가|은|는)?\s*아니/g;
+const DENIED_BARE = /([가-힣]{2,8})(?:이|가)\s*아니/g;
+
+/**
+ * 어미를 떼고 줄기만 남긴다.
+ *
+ * 학생이 「봉사했습니다」라고 썼는데 선생님이 「'봉사하다'가 아니에요」라고 하는
+ * 건 **정당한 교정이다.** 글자 그대로 비교하면 이걸 막아 버린다.
+ */
+function stemOf(term: string): string {
+  return term
+    .trim()
+    .replace(/(하다|한다|했다|하는|하기|해요|합니다|이다|이에요|예요|다)$/u, "")
+    .trim();
+}
+
+function deniedTerms(message: string): string[] {
+  const terms: string[] = [];
+  for (const re of [DENIED_QUOTED, DENIED_BARE]) {
+    re.lastIndex = 0;
+    for (const m of message.matchAll(re)) if (m[1]) terms.push(m[1]);
+  }
+  return terms;
 }
 
 function sentencesOf(message: string): string[] {
@@ -256,6 +306,26 @@ export function validateLlmOutput(
 
   const banmal = sentences.find(looksBanmal);
   if (banmal) return { ok: false, reason: `반말: "${banmal}"` };
+
+  const vague = message.match(VAGUE_REFERENCE);
+  if (vague) {
+    return { ok: false, reason: `뭉뚱그린 지시어: "${vague[0].trim()}"` };
+  }
+
+  /*
+    **학생이 쓰지 않은 말을 부정하지 않는다.**
+    못 낸 항목은 틀린 게 아니라 아직 안 나온 것이다. 안 한 오해를 미리
+    부정하면 학생은 하지도 않은 실수로 지적받고, 틀린 답까지 듣게 된다.
+  */
+  if (ctx.studentText != null) {
+    const said = compact(ctx.studentText);
+    for (const term of deniedTerms(message)) {
+      const stem = compact(stemOf(term));
+      if (stem.length >= 2 && !said.includes(stem)) {
+        return { ok: false, reason: `학생이 쓰지 않은 말을 부정: "${term}"` };
+      }
+    }
+  }
 
   return { ok: true };
 }

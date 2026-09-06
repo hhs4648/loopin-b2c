@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ClassroomChat } from "./components/ClassroomChat";
 import { SentenceStudy } from "./components/SentenceStudy";
 import { createSession, type TutorView } from "./tutor/engine";
+import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
 
 /*
@@ -12,6 +13,13 @@ const session = createSession(
   import.meta.env.DEV
     ? new URLSearchParams(window.location.search).get("lesson")
     : null,
+  /*
+    이름을 아는 학생이면 묻는 턴을 건너뛴다. 개발에서 인사 화면을 다시 보려면
+    `?newname`을 붙인다.
+  */
+  import.meta.env.DEV && new URLSearchParams(window.location.search).has("newname")
+    ? null
+    : loadLearnerName(),
 );
 
 export function App() {
@@ -61,6 +69,10 @@ export function App() {
         .then((next) => {
           setView(next);
           setChatOverride(false);
+          // 인사 턴에서 이름을 받았으면 다음 수업을 위해 남긴다.
+          // 못 알아들었을 때(null) 이미 있던 이름을 지우지는 않는다
+          const name = session.learnerName();
+          if (name) saveLearnerName(name);
         })
         .catch((error: unknown) => {
           console.error("[tutor] 턴 처리 실패", error);

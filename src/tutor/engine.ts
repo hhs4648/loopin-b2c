@@ -8,6 +8,7 @@ import {
   type GuardContext,
   type UnitBrief,
 } from "./llm";
+import { parseName } from "./learner-name";
 import { classify, isUnknownInput, matchChoice } from "./match";
 import {
   askedAboutProperNoun,
@@ -75,7 +76,9 @@ type Branch = {
 type EngineState = {
   /** 이 세션이 가르치는 지문. 지문 교체는 이것만 바꾸면 된다 */
   lesson: Lesson;
-  stage: "intro" | "unit" | "done";
+  /** 부를 이름. 없으면 이름 없이 인사한다 — 받아낼 때까지 되묻지 않는다 */
+  learnerName: string | null;
+  stage: "greeting" | "intro" | "unit" | "done";
   unitIndex: number;
   missCountInUnit: number;
   skipFinalRetake: boolean;
@@ -143,15 +146,35 @@ function uniqueButtons(btns: string[]) {
  * 예전에는 "퇴사 인사 편지…Lewis Ltd.…"가 코드에 박혀 있어서, 지문을 바꾸면
  * 다른 지문을 앞에 두고 퇴사 편지를 소개했다.
  */
-function introMessage(lesson: Lesson): string {
+function introMessage(lesson: Lesson, name: string | null): string {
   const tip = lesson.proper_noun_tip?.message?.trim();
+  const hello = name
+    ? frame.fixed_lines.greet_named.replace("{name}", name)
+    : frame.fixed_lines.greet_plain;
   return [
+    hello,
     `오늘은 ${lesson.topic_intro}를 볼 거예요.`,
     tip,
-    "한 문장씩 해석해볼까요?",
+    frame.fixed_lines.ready_question,
   ]
     .filter(Boolean)
     .join(" ");
+}
+
+/**
+ * 이름을 받고(또는 못 알아듣고) 수업 소개로 넘어간다.
+ *
+ * 이름은 여기서 한 번만 정해진다. 못 알아들으면 `null`이고, 그러면 그냥
+ * "안녕하세요!"로 연다.
+ */
+function enterIntro(s: EngineState, name: string | null): EngineState {
+  return say(s, introMessage(s.lesson, name), {
+    learnerName: name,
+    stage: "intro",
+    screen: "chat",
+    buttons: [READY_BTN, UNKNOWN_BTN],
+    placeholder: "선생님께 답해 보세요…",
+  });
 }
 
 /** 레슨에 칭찬 문구가 없으면 프레임의 기본 칭찬 */
@@ -159,11 +182,18 @@ function praiseFor(s: EngineState): string {
   return current(s).praise ?? frame.fixed_lines.praise_default;
 }
 
-function initialState(lesson: Lesson): EngineState {
-  const intro = introMessage(lesson);
+function initialState(lesson: Lesson, learnerName: string | null): EngineState {
+  /*
+    이름을 아는 학생에게 또 묻지 않는다. 두 번째 수업부터는 곧장 인사로 연다.
+  */
+  const asking = !learnerName;
+  const opening = asking
+    ? frame.fixed_lines.ask_name
+    : introMessage(lesson, learnerName);
   return {
     lesson,
-    stage: "intro",
+    learnerName,
+    stage: asking ? "greeting" : "intro",
     unitIndex: 0,
     missCountInUnit: 0,
     skipFinalRetake: false,
@@ -181,13 +211,13 @@ function initialState(lesson: Lesson): EngineState {
     pending: null,
     errorIds: [],
     result: null,
-    lastTutorUtterance: intro,
+    lastTutorUtterance: opening,
     studentLine: "",
     effect: null,
     screen: "chat",
-    message: intro,
-    buttons: [READY_BTN, UNKNOWN_BTN],
-    placeholder: "선생님께 답해 보세요…",
+    message: opening,
+    buttons: asking ? [] : [READY_BTN, UNKNOWN_BTN],
+    placeholder: asking ? "이름을 알려 주세요…" : "선생님께 답해 보세요…",
     ended: false,
   };
 }
@@ -214,7 +244,11 @@ function view(s: EngineState): TutorView {
     progressTotal: s.lesson.chunks.length,
     ended: s.ended,
     properNouns:
-      s.stage === "intro" ? s.lesson.proper_nouns ?? [] : nounsIn(s, u.text),
+      s.stage === "greeting"
+        ? [] // 이름을 묻는 자리에 지문 이야기를 같이 띄우지 않는다
+        : s.stage === "intro"
+          ? s.lesson.proper_nouns ?? []
+          : nounsIn(s, u.text),
     recordLine:
       s.ended && s.result
         ? `[기록] 유형=${s.lesson.grammar_type} / 결과=${s.result} / 오류=${s.errorIds.join(",") || "없음"}`
@@ -486,7 +520,41 @@ function answerProperNoun(s: EngineState, noun: ProperNoun): EngineState {
  * 같은 항목에서 또 막히면 그 항목만 `tell`로 알려 준다. 모범 해석 전체는
  * 여전히 좌절 방지(miss 4회)에서만 나온다.
  */
-function nudgeNext(s: EngineState, checked: number[]): EngineState {
+/**
+ * 방금 낸 것을 **학생이 쓴 말 그대로** 인정한다.
+ *
+ * 예전에는 "좋아요, 그 부분은 맞았어요."였다. 학생은 어느 부분인지 모른다
+ * (2026-09-06 실제 불평). 항목 설명을 대신 쓰면 아직 안 낸 답이 새어 나가므로,
+ * **학생 자신이 쓴 말**을 되짚어 준다 — 이미 쓴 말이라 유출이 아니다.
+ */
+function acknowledge(
+  s: EngineState,
+  gained: number[],
+  studentText?: string,
+): string {
+  if (!gained.length) return "";
+  if (!studentText) return "좋아요, 지금 쓴 해석은 맞았어요. ";
+
+  const keywords = (current(s).scoring_points ?? [])
+    .filter((p) => gained.includes(p.id))
+    .flatMap((p) => p.check ?? [])
+    .filter((k) => studentText.includes(k))
+    .sort((a, b) => b.length - a.length);
+
+  const key = keywords[0];
+  if (!key) return "좋아요, 지금 쓴 해석은 맞았어요. ";
+
+  // 「기쁘」가 아니라 「기쁘게」로 되짚는다 — 학생이 쓴 낱말째로 잘라 준다
+  const word = studentText.slice(studentText.indexOf(key)).split(/\s/)[0] ?? key;
+  const quoted = word.length <= 12 ? word : key;
+  return `「${quoted}」까지 잘 잡았어요. `;
+}
+
+function nudgeNext(
+  s: EngineState,
+  checked: number[],
+  studentText?: string,
+): EngineState {
   const miss = s.missCountInUnit + 1;
   if (miss >= 4) {
     return frustration({ ...s, checkedPoints: checked, missCountInUnit: miss, hadAnyError: true });
@@ -507,7 +575,7 @@ function nudgeNext(s: EngineState, checked: number[]): EngineState {
   const gained = checked.filter((id) => !s.checkedPoints.includes(id));
   const already = s.nudgedPoints.includes(target.id);
   const line = (already ? target.tell : target.nudge) ?? target.nudge ?? target.text;
-  const lead = gained.length ? "좋아요, 그 부분은 맞았어요. " : "";
+  const lead = acknowledge(s, gained, studentText);
 
   return say(s, `${lead}${line}`, {
     checkedPoints: checked,
@@ -543,7 +611,7 @@ function withAttempt(s: EngineState, hit: number[]) {
     next: {
       ...s,
       // checkedPoints는 일부러 안 바꾼다. `nudgeNext`가 **이번 턴에 새로 낸 것**을
-      // 알아야 "그 부분은 맞았어요"를 붙일 수 있다
+      // 알아야 맞힌 말을 되짚어 줄 수 있다
       attemptsInUnit: s.attemptsInUnit + 1,
       firstTryPoints: first ? hit : s.firstTryPoints,
     },
@@ -631,11 +699,17 @@ function bannedFor(s: EngineState, checked = s.checkedPoints): string[] {
  * 금지 문자열뿐 아니라 **말투 규칙까지** 함께 넘긴다. 기준값은 `frame.json`에서
  * 오고, 직전 대사를 같이 줘서 같은 말을 두 번 하지 못하게 한다.
  */
-function voiceGuardFor(s: EngineState, checked = s.checkedPoints): GuardContext {
+function voiceGuardFor(
+  s: EngineState,
+  checked = s.checkedPoints,
+  studentText?: string,
+): GuardContext {
   return {
     bannedStrings: bannedFor(s, checked),
     minSentences: frame.speech.min_sentences,
     previousUtterance: s.lastTutorUtterance,
+    // 학생이 쓰지 않은 해석을 부정하지 못하게 원문을 같이 넘긴다
+    studentText,
   };
 }
 
@@ -682,7 +756,10 @@ async function answerWord(
     모델 발화만 따로 재면 문장 수도 물음표 수도 실제와 다르다.
   */
   const message = `${spoken.message} ${frame.fixed_lines.return_to_lesson}`;
-  const verdict = validateLlmOutput({ ...spoken, message }, voiceGuardFor(s));
+  const verdict = validateLlmOutput(
+    { ...spoken, message },
+    voiceGuardFor(s, s.checkedPoints, studentText),
+  );
   if (!verdict.ok) {
     console.warn("[tutor] 단어 뜻 발화 폐기 →", verdict.reason);
     return nudgeNext(s, s.checkedPoints);
@@ -707,7 +784,7 @@ async function treatUnexpectedOrPartial(
   checked: number[] = s.checkedPoints,
 ): Promise<EngineState> {
   const llm = getTutorLlm();
-  if (!llm) return nudgeNext(s, checked);
+  if (!llm) return nudgeNext(s, checked, text);
 
   const miss = s.missCountInUnit + 1;
   if (miss >= 4) {
@@ -761,12 +838,12 @@ async function treatUnexpectedOrPartial(
     return advance({ ...s, checkedPoints: merged }, praiseFor(s), s.hadAnyError);
   }
 
-  if (!spoken) return nudgeNext(s, merged);
+  if (!spoken) return nudgeNext(s, merged, text);
 
-  const verdict = validateLlmOutput(spoken, voiceGuardFor(s, merged));
+  const verdict = validateLlmOutput(spoken, voiceGuardFor(s, merged, text));
   if (!verdict.ok) {
     console.warn("[tutor] 발화 폐기 →", verdict.reason);
-    return nudgeNext(s, merged);
+    return nudgeNext(s, merged, text);
   }
 
   return say(s, spoken.message, {
@@ -880,15 +957,24 @@ function handlePending(s: EngineState, text: string): EngineState {
  * 한 수업 세션. `lessonId`를 주면 그 지문으로 시작한다
  * (없거나 못 찾으면 첫 레슨).
  */
-export function createSession(lessonId?: string | null) {
+export function createSession(lessonId?: string | null, learnerName?: string | null) {
   const lesson = getLesson(lessonId);
-  let s = initialState(lesson);
+  let s = initialState(lesson, learnerName?.trim() || null);
   return {
     view: () => view(s),
     async submit(raw: string) {
       const text = raw.trim();
       if (!text || s.ended) return view(s);
       s = { ...s, studentLine: text, effect: null };
+
+      /*
+        **이름이 먼저다.** 아직 인사 중이면 이 말은 해석 시도가 아니라 이름이다.
+        아래 어떤 판정에도 넣지 않는다.
+      */
+      if (s.stage === "greeting") {
+        s = enterIntro(s, parseName(text));
+        return view(s);
+      }
 
       /*
         **순서를 바꾸지 않는다** (ARCHITECTURE §4).
@@ -984,8 +1070,11 @@ export function createSession(lessonId?: string | null) {
     /** 항목별 학습 기록. 수업이 끝날 때 서버로 보낸다 */
     records: () => s.pointLog,
     lessonId: () => s.lesson.id,
+    /** 이번 수업에서 부르기로 한 이름. 앱이 받아서 저장한다 */
+    learnerName: () => s.learnerName,
     reset() {
-      s = initialState(lesson);
+      // 이름은 들고 간다 — 「다시 시작」마다 이름을 다시 묻지 않는다
+      s = initialState(lesson, s.learnerName);
       return view(s);
     },
   };

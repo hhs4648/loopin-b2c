@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
+import frame from "../../content/tutor/frame.json";
 import type { Lesson } from "../../content/tutor/types";
 import { createSession, MORE_BTN, NEXT_BTN, READY_BTN } from "./engine";
 import { getLesson } from "./lessons";
@@ -26,9 +27,9 @@ const CORRECT = [
   "당신과 회사 모두에게 행운이 있기를 바랍니다",
 ];
 
-/** 인트로를 지나 첫 문장까지 온 세션 */
+/** 인트로를 지나 첫 문장까지 온 세션. 이름은 이미 아는 것으로 둔다 */
 async function startedSession(lessonId?: string) {
-  const session = createSession(lessonId);
+  const session = createSession(lessonId, "민준");
   await session.submit(READY_BTN);
   return session;
 }
@@ -50,14 +51,57 @@ function point(lesson: Lesson, unit: number, index: number) {
 
 afterEach(() => setTutorLlm(null));
 
+describe("인사", () => {
+  it("이름을 모르면 먼저 물어본다", () => {
+    const view = createSession().view();
+    expect(view.message).toBe(frame.fixed_lines.ask_name);
+    // 이름을 묻는 자리에 지문 이야기를 같이 띄우지 않는다
+    expect(view.properNouns).toHaveLength(0);
+    expect(view.buttons).toHaveLength(0);
+  });
+
+  it("이름을 받으면 그 이름으로 부르고 준비됐는지 묻는다", async () => {
+    const session = createSession();
+    const view = await session.submit("저는 민준이에요");
+    expect(view.message).toContain("민준님");
+    expect(view.message).toContain(frame.fixed_lines.ready_question);
+    expect(session.learnerName()).toBe("민준");
+  });
+
+  it("이름을 못 알아들어도 되묻지 않고 그냥 시작한다", async () => {
+    const session = createSession();
+    const view = await session.submit("그건 말하기 싫어요");
+    expect(view.message).toContain(frame.fixed_lines.greet_plain);
+    expect(view.message).toContain(RESIGNATION.topic_intro);
+    expect(session.learnerName()).toBe(null);
+  });
+
+  it("이름을 이미 알면 묻지 않는다", () => {
+    expect(createSession(null, "민준").view().message).toContain("민준님");
+  });
+
+  it("「다시 시작」해도 이름을 다시 묻지 않는다", async () => {
+    const session = createSession();
+    await session.submit("민준");
+    expect(session.reset().message).toContain("민준님");
+  });
+
+  it("이름은 해석 시도로 세지 않는다 — 첫 문장은 그대로 남는다", async () => {
+    const session = createSession();
+    await session.submit("민준");
+    expect(session.view().progressIndex).toBe(1);
+    expect(session.records()).toHaveLength(0);
+  });
+});
+
 describe("인트로", () => {
   it("레슨에서 만든다 — 지문을 바꾸면 인트로도 바뀐다", () => {
-    expect(createSession().view().message).toContain(RESIGNATION.topic_intro);
-    expect(createSession(THALES.id).view().message).toContain(THALES.topic_intro);
+    expect(createSession(null, "민준").view().message).toContain(RESIGNATION.topic_intro);
+    expect(createSession(THALES.id, "민준").view().message).toContain(THALES.topic_intro);
   });
 
   it("고유명사를 미리 보여 준다 — 해석 과제가 아니다", () => {
-    const view = createSession().view();
+    const view = createSession(null, "민준").view();
     expect(view.properNouns.map((n) => n.en)).toContain("Lewis Ltd.");
   });
 });
@@ -384,7 +428,8 @@ describe("체크리스트 유도", () => {
   it("맞은 것은 인정하고 다시 시키지 않는다", async () => {
     const session = await startedSession();
     const view = await say(session, "이 회사에서 근무했습니다");
-    expect(view.message).toContain("맞았어요");
+    // 학생이 쓴 말을 그대로 되짚어 인정한다
+    expect(view.message).toContain("근무했습니다");
     // 2번(serve)은 이미 체크됐으므로 그 유도는 나오지 않는다
     expect(view.message).not.toContain(point(RESIGNATION, 0, 1).nudge);
   });
@@ -551,8 +596,29 @@ describe("한 턴에 질문 하나", () => {
   });
 });
 
+describe("맞힌 것 인정하기", () => {
+  /*
+    "좋아요, 그 부분은 맞았어요"는 학생이 어디를 말하는지 모른다 (2026-09-06 불평).
+    항목 설명으로 인정하면 아직 안 낸 답이 새므로, 학생이 쓴 말을 되짚는다.
+  */
+  it("학생이 쓴 말을 그대로 되짚는다 — 「그 부분」이라고 하지 않는다", async () => {
+    const session = await startedSession();
+    const view = await say(session, "이 회사에 있었던 것은 큰 영광이었습니다");
+    expect(view.message).toContain("영광이었습니다");
+    expect(view.message).not.toContain("그 부분");
+    // 아직 못 낸 항목(serve)의 답은 여전히 안 나온다
+    expect(view.message).not.toContain("근무");
+  });
+
+  it("낸 게 없으면 인정하는 말을 붙이지 않는다", async () => {
+    const session = await startedSession();
+    const view = await say(session, "잘 모르겠어요");
+    expect(view.message).toBe(point(RESIGNATION, 0, 0).nudge);
+  });
+});
+
 describe("LLM 자리", () => {
-  const spoken = "지금 막힌 곳은 문장 뒷부분이에요. 그 부분만 다시 볼까요?";
+  const spoken = "privilege를 잘 봤어요. 이제 serve 자리를 같이 볼까요?";
   const unexpected = "이 문장은 뭔가 특권 같은 느낌인데 잘 안 잡히네요";
 
   it("어댑터가 없으면 예상 밖 입력도 힌트 사다리로 접힌다", async () => {

@@ -52,7 +52,7 @@
             "일한",
             "일해요"
           ],
-          "nudge": "여기서 serve는 '봉사하다'가 아니에요. 회사 이야기라고 생각하면 어떤 뜻일까요?",
+          "nudge": "serve in this company for the past four years — 이 회사에서 4년 동안 한 일이에요. serve를 여기서는 뭐라고 옮기면 자연스러울까요?",
           "tell": "serve는 여기서 '근무하다'예요."
         }
       ],
@@ -154,7 +154,7 @@
             "보배",
             "큰 도움"
           ],
-          "nudge": "invaluable의 in-을 '아니다'로 보면 뜻이 정반대가 돼요. 앞의 experiences와 어울리는 쪽으로 다시 볼까요?",
+          "nudge": "invaluable은 value(가치)에서 나온 말이에요. 값을 매기기 어려울 만큼이라면, 그 경험이 어땠다는 걸까요?",
           "tell": "invaluable은 '매우 소중하다'예요."
         },
         {
@@ -277,7 +277,7 @@
             "퇴사",
             "이직"
           ],
-          "nudge": "position을 '위치'로 두면 문장이 어색해져요. 회사에서 accept a position이라고 하면 무엇을 받아들인 걸까요?",
+          "nudge": "accept a position at another company — 다른 회사에서 무엇을 받아들였다는 걸까요?",
           "tell": "position은 '자리(직위)', leaving은 '떠나다'예요."
         }
       ],
@@ -385,7 +385,7 @@
             "자신 있",
             "믿"
           ],
-          "nudge": "confident를 성격 이야기로 보면 that 뒤가 안 이어져요. 뒤에 오는 내용을 어떻게 여긴다는 말일까요?",
+          "nudge": "I am confident that ~ 는 뒤에 오는 내용을 두고 하는 말이에요. 새 자리가 도움이 될 거라는 걸 어떻게 여긴다는 걸까요?",
           "tell": "confident는 '확신한다'예요."
         }
       ],
@@ -487,7 +487,7 @@
           "check": [
             "마지막"
           ],
-          "nudge": "last를 '지난'으로 읽으면 뒤의 April 30th와 안 맞아요. 앞으로 올 날이라면 어떤 날일까요?",
+          "nudge": "My last day of work will be ~ 는 앞으로 올 날 이야기예요. 회사에 나오는 날 중에서 어떤 날일까요?",
           "tell": "last day of work는 '마지막 근무일'이에요."
         }
       ],
@@ -594,7 +594,7 @@
             "인계",
             "넘기"
           ],
-          "nudge": "transfer를 '이체'로 보면 돈 이야기가 돼요. duties와 함께 쓰였을 때는 무엇을 넘기는 걸까요?",
+          "nudge": "transfer of duties에서 duties는 맡아서 하던 일이에요. 그 일을 다음 사람에게 넘기는 걸 한국어로 뭐라고 할까요?",
           "tell": "transfer of duties는 '업무 인수인계'예요."
         }
       ],
@@ -691,7 +691,7 @@
             "번창",
             "복"
           ],
-          "nudge": "여기서 fortune은 '재산'이 아니에요. 작별 인사로 빌어 주는 것이라면 무엇일까요?",
+          "nudge": "every good fortune은 떠나면서 빌어 주는 말이에요. 앞날에 무엇이 있기를 바란다는 걸까요?",
           "tell": "fortune은 여기서 '행운'이에요."
         },
         {
@@ -703,7 +703,7 @@
             "둘 다",
             "모두"
           ],
-          "nudge": "both A and B는 둘을 함께 가리켜요. 편지를 받는 사람 말고 하나가 더 있는데, 그게 빠지지 않았나요?",
+          "nudge": "both you and Lewis Ltd.는 둘을 함께 가리켜요. 편지를 받는 사람 말고 하나가 더 있는데, 그게 무엇일까요?",
           "tell": "both you and Lewis Ltd.는 '당신과 Lewis Ltd. 둘 다'예요."
         }
       ],
