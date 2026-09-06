@@ -1,4 +1,7 @@
-supabase
-docs
-_design-source
-assets
+# 배포에 안 올리는 것 — 앞의 /는 "루트의 그것만"이라는 뜻이다.
+# `assets`처럼 쓰면 public/assets 까지 걸려서 캐릭터 이미지가 통째로 빠진다
+# (2026-09-06 재현: 배포본에서 404).
+/assets
+/docs
+/supabase
+/_design-source
