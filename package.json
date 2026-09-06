@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "lessons": "python scripts/build_lesson.py",
     "build": "tsc --noEmit && vitest run && vite build",
     "preview": "vite preview",
     "test": "vitest run",

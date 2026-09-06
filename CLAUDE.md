@@ -64,6 +64,8 @@ LLM 출력 계약:
 ## 코드 위치
 
 - 엔진: `src/tutor/engine.ts`, `match.ts`, `lessons.ts`, `llm.ts`
+- **지문을 고칠 때는 `scripts/specs/*.json`을 고치고 `npm run lessons`.**
+  `content/tutor/lessons/*.json`은 생성물이라 손으로 고치면 덮어써진다 (`scripts/specs/README.md`)
 - 수업 목록(메인 화면): `content/tutor/sets.json` + `src/tutor/sets.ts` + `src/components/LessonList.tsx`.
   **세트가 학생이 고르는 단위**다 — 지문을 추가하면 세트에도 넣어야 목록에 뜬다 (`sets.test.ts`가 검사한다)
 - 매칭 키워드·칭찬 문구는 **레슨 JSON 안**에 있다 (`demo_match.p1`, `praise`). 예전 `units.ts`는 없어졌다

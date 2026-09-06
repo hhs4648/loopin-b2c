@@ -269,8 +269,7 @@ def build(spec):
     ])
 
 
-def main():
-    spec_path = Path(sys.argv[1])
+def one(spec_path):
     spec = json.load(io.open(spec_path, encoding="utf-8"), object_pairs_hook=OrderedDict)
     lesson = build(spec)
     out = Path("content/tutor/lessons") / f"{lesson['id']}.json"
@@ -280,6 +279,24 @@ def main():
     points = sum(len(c["scoring_points"]) for c in lesson["chunks"])
     errors = sum(len(c.get("expected_errors", [])) for c in lesson["chunks"])
     print(f"{out} — {len(lesson['chunks'])}문장 · 채점 포인트 {points} · 오해 {errors}")
+
+
+def main():
+    """
+    인자를 안 주면 **스펙을 전부 다시 뽑는다.**
+
+    유도 문구 규칙이나 공용 사전이 바뀌면 한 지문만이 아니라 전부 다시 만들어야
+    한다. 손으로 고친 레슨 JSON은 여기서 덮어써진다 — 고칠 곳은 언제나 스펙이다.
+
+        npm run lessons                          전부
+        npm run lessons scripts/specs/suneung-21.json   하나만
+    """
+    args = sys.argv[1:]
+    paths = [Path(a) for a in args] if args else sorted(Path("scripts/specs").glob("*.json"))
+    for path in paths:
+        one(path)
+    if not args:
+        print(f"\n{len(paths)}개 지문을 다시 만들었습니다.")
 
 
 if __name__ == "__main__":
