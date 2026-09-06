@@ -95,12 +95,23 @@ export type TeachPoint = {
   enrichment?: string;
 };
 
+/** 문장 학습에서 단어를 눌렀을 때 보여줄, 이 문맥의 짧은 뜻 */
+export type WordGloss = {
+  en: string;
+  ko: string;
+};
+
 export type LessonChunk = {
   id: number;
   text: string;
   model_translation: string;
   /** 정답일 때 하는 구체적 칭찬. 없으면 프레임의 기본 칭찬 */
   praise?: string;
+  /**
+   * 단어/구 → 한국어 뜻. 문장 전체 해석이 아니다.
+   * 긴 구가 있으면 그 구를 통째로 누른다.
+   */
+  glosses?: WordGloss[];
   scoring_points: ScoringPoint[];
   error_priority?: string[];
   expected_errors?: ExpectedError[];
@@ -124,10 +135,6 @@ export type Lesson = {
     labels: string[];
   };
   proper_nouns: ProperNoun[];
-  proper_noun_tip?: {
-    tell_once_on_first_appearance: boolean;
-    message: string;
-  };
   chunks: LessonChunk[];
 };
 

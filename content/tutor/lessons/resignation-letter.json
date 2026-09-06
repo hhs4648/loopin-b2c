@@ -20,16 +20,25 @@
       "type": "company"
     }
   ],
-  "proper_noun_tip": {
-    "tell_once_on_first_appearance": true,
-    "message": "Lewis Ltd.는 회사 이름이라 해석하지 말고 그대로 두면 돼요."
-  },
   "chunks": [
     {
       "id": 1,
       "text": "It has been a privilege to serve in this company for the past four years.",
       "model_translation": "지난 4년 동안 이 회사에서 근무할 수 있었던 것은 영광이었다",
       "praise": "serve를 '근무하다'로, privilege를 '영광'으로 잡은 거 정말 잘했어요.",
+      "glosses": [
+        { "en": "It", "ko": "(가주어) ~한 것은" },
+        { "en": "has been", "ko": "~이었다" },
+        { "en": "a", "ko": "하나의" },
+        { "en": "privilege", "ko": "영광, 특권" },
+        { "en": "to", "ko": "~하는 것" },
+        { "en": "serve", "ko": "근무하다" },
+        { "en": "in", "ko": "~에서" },
+        { "en": "this", "ko": "이" },
+        { "en": "company", "ko": "회사" },
+        { "en": "for", "ko": "~동안" },
+        { "en": "the past four years", "ko": "지난 4년" }
+      ],
       "scoring_points": [
         {
           "id": 1,
@@ -143,6 +152,19 @@
       "text": "The experiences and insights I have gained as a safety manager have been invaluable.",
       "model_translation": "안전관리자로서 얻은 경험과 통찰은 무엇과도 바꿀 수 없을 만큼 소중했다",
       "praise": "invaluable을 '소중하다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        { "en": "The", "ko": "그" },
+        { "en": "experiences", "ko": "경험" },
+        { "en": "and", "ko": "그리고" },
+        { "en": "insights", "ko": "통찰" },
+        { "en": "I", "ko": "나는" },
+        { "en": "have gained", "ko": "얻은" },
+        { "en": "as", "ko": "~로서" },
+        { "en": "a", "ko": "하나의" },
+        { "en": "safety manager", "ko": "안전관리자" },
+        { "en": "have been", "ko": "~이었다" },
+        { "en": "invaluable", "ko": "매우 소중한" }
+      ],
       "scoring_points": [
         {
           "id": 1,
@@ -254,6 +276,20 @@
       "text": "However, after careful consideration, I have accepted a position at another company and will be leaving Lewis Ltd.",
       "model_translation": "하지만 신중히 생각한 끝에, 다른 회사의 자리를 수락했고 Lewis Ltd.를 떠나게 되었습니다",
       "praise": "leaving을 '떠나다'로, position을 '자리'로 잡은 거 정말 잘했어요.",
+      "glosses": [
+        { "en": "However", "ko": "하지만" },
+        { "en": "after careful consideration", "ko": "신중히 생각한 끝에" },
+        { "en": "I", "ko": "나는" },
+        { "en": "have accepted", "ko": "수락했다" },
+        { "en": "a", "ko": "하나의" },
+        { "en": "position", "ko": "자리, 직위" },
+        { "en": "at", "ko": "~에서" },
+        { "en": "another", "ko": "다른" },
+        { "en": "company", "ko": "회사" },
+        { "en": "and", "ko": "그리고" },
+        { "en": "will be leaving", "ko": "떠나게 될 것이다" },
+        { "en": "Lewis Ltd.", "ko": "회사 이름 · 그대로" }
+      ],
       "scoring_points": [
         {
           "id": 1,
@@ -364,6 +400,26 @@
       "text": "This was not an easy decision to make, but I am confident that my new role will help me with my future goals.",
       "model_translation": "쉬운 결정은 아니었지만, 새 역할이 앞으로의 목표에 도움이 될 거라고 확신한다",
       "praise": "쉬운 결정이 아니었다는 점과 확신을 같이 담은 거 정말 잘했어요.",
+      "glosses": [
+        { "en": "This", "ko": "이것은" },
+        { "en": "was not", "ko": "~이 아니었다" },
+        { "en": "an", "ko": "하나의" },
+        { "en": "easy", "ko": "쉬운" },
+        { "en": "decision", "ko": "결정" },
+        { "en": "to make", "ko": "내리는" },
+        { "en": "but", "ko": "하지만" },
+        { "en": "I", "ko": "나는" },
+        { "en": "am confident", "ko": "확신한다" },
+        { "en": "that", "ko": "~라는 것을" },
+        { "en": "my", "ko": "나의" },
+        { "en": "new", "ko": "새로운" },
+        { "en": "role", "ko": "역할" },
+        { "en": "will help", "ko": "도움이 될 것이다" },
+        { "en": "me", "ko": "나를" },
+        { "en": "with", "ko": "~에" },
+        { "en": "future", "ko": "미래의" },
+        { "en": "goals", "ko": "목표" }
+      ],
       "scoring_points": [
         {
           "id": 1,
@@ -471,6 +527,13 @@
       "text": "My last day of work will be on April 30th.",
       "model_translation": "마지막 근무일은 4월 30일이다",
       "praise": "'마지막 근무일'이랑 4월 30일을 정확히 본 거 정말 잘했어요.",
+      "glosses": [
+        { "en": "My", "ko": "나의" },
+        { "en": "last day of work", "ko": "마지막 근무일" },
+        { "en": "will be", "ko": "~일 것이다" },
+        { "en": "on", "ko": "~에" },
+        { "en": "April 30th", "ko": "4월 30일" }
+      ],
       "scoring_points": [
         {
           "id": 1,
@@ -573,6 +636,16 @@
       "text": "I will do all I can to assist in a smooth transfer of duties.",
       "model_translation": "업무가 원활히 인수인계되도록 최선을 다하겠다",
       "praise": "인수인계를 위해 최선을 다하겠다는 뜻을 잘 살렸어요.",
+      "glosses": [
+        { "en": "I", "ko": "나는" },
+        { "en": "will", "ko": "~할 것이다" },
+        { "en": "do all I can", "ko": "최선을 다하다" },
+        { "en": "to assist", "ko": "돕기 위해" },
+        { "en": "in", "ko": "~하는 데" },
+        { "en": "a", "ko": "하나의" },
+        { "en": "smooth", "ko": "원활한" },
+        { "en": "transfer of duties", "ko": "업무 인수인계" }
+      ],
       "scoring_points": [
         {
           "id": 1,
@@ -681,6 +754,13 @@
       "text": "I wish both you and Lewis Ltd. every good fortune.",
       "model_translation": "당신과 Lewis Ltd. 모두에게 행운이 있기를 바란다",
       "praise": "행운을 당신과 회사에 함께 빈 거 정말 잘했어요.",
+      "glosses": [
+        { "en": "I", "ko": "나는" },
+        { "en": "wish", "ko": "빌다" },
+        { "en": "both you and", "ko": "~와 … 둘 다" },
+        { "en": "Lewis Ltd.", "ko": "회사 이름 · 그대로" },
+        { "en": "every good fortune", "ko": "모든 행운" }
+      ],
       "scoring_points": [
         {
           "id": 1,

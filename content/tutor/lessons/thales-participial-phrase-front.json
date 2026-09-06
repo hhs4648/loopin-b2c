@@ -36,16 +36,19 @@
       "type": "person"
     }
   ],
-  "proper_noun_tip": {
-    "tell_once_on_first_appearance": true,
-    "message": "대문자로 시작하는 고유명사는 한국어로 해석하지 않고 그대로 읽어도 돼요."
-  },
   "chunks": [
     {
       "id": 1,
       "text": "Born in the city of Miletus in Asia Minor,",
       "model_translation": "소아시아의 밀레투스라는 도시에서 태어난",
       "praise": "Born을 '태어난'으로 잡아서 뒤 문장과 이어 준 거 정말 잘했어요.",
+      "glosses": [
+        { "en": "Born", "ko": "태어난" },
+        { "en": "in", "ko": "~에서" },
+        { "en": "the city of", "ko": "~라는 도시" },
+        { "en": "Miletus", "ko": "밀레투스 (지명)" },
+        { "en": "Asia Minor", "ko": "소아시아 (지역명)" }
+      ],
       "scoring_points": [
         {
           "id": 1,
@@ -228,6 +231,16 @@
       "text": "he lived from around 624 B.C. to 546 B.C.",
       "model_translation": "그는 기원전 약 624년부터 546년까지 살았다",
       "praise": "B.C.를 '기원전'으로 정확히 본 거 정말 잘했어요.",
+      "glosses": [
+        { "en": "he", "ko": "그는" },
+        { "en": "lived", "ko": "살았다" },
+        { "en": "from", "ko": "~부터" },
+        { "en": "around", "ko": "약" },
+        { "en": "624", "ko": "624년" },
+        { "en": "B.C.", "ko": "기원전" },
+        { "en": "to", "ko": "~까지" },
+        { "en": "546", "ko": "546년" }
+      ],
       "scoring_points": [
         {
           "id": 1,

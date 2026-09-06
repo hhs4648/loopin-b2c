@@ -1,8 +1,9 @@
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
 import type { TutorView } from "../tutor/engine";
+import { glossSpans, glossesFor } from "../tutor/glosses";
 import { nounKind } from "../tutor/proper-nouns";
 
 type Props = {
@@ -48,7 +49,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose }: Props) 
       </header>
 
       <div className="study-sentence">
-        <p className="english">{highlightNouns(view.sentence, view.properNouns)}</p>
+        <GlossSentence sentence={view.sentence} nouns={view.properNouns} glosses={view.glosses} />
         {view.properNouns.length > 0 ? (
           <div className="noun-chips">
             {view.properNouns.map((n) => (
@@ -62,7 +63,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose }: Props) 
           <button type="button" className="listen" onClick={listen}>
             <SpeakerIcon /> 듣기
           </button>
-          <span>{words} words</span>
+          <span>단어를 누르면 뜻이 나와요 · {words} words</span>
         </div>
       </div>
 
@@ -90,35 +91,64 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose }: Props) 
   );
 }
 
-function highlightNouns(sentence: string, nouns: TutorView["properNouns"]) {
-  if (!nouns.length) return sentence;
+function GlossSentence({
+  sentence,
+  nouns,
+  glosses,
+}: {
+  sentence: string;
+  nouns: TutorView["properNouns"];
+  glosses: TutorView["glosses"];
+}) {
+  const [open, setOpen] = useState<number | null>(null);
+  const spans = glossSpans(sentence, glossesFor(glosses, nouns));
+
+  useEffect(() => {
+    setOpen(null);
+  }, [sentence]);
+
+  useEffect(() => {
+    function close(e: MouseEvent) {
+      if (!(e.target instanceof Element) || !e.target.closest(".english")) setOpen(null);
+    }
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
+  }, []);
+
   const parts: ReactNode[] = [];
-  let rest = sentence;
-  let key = 0;
-  while (rest.length) {
-    let hit: { at: number; len: number; en: string } | null = null;
-    for (const n of nouns) {
-      const forms = [n.en, n.en.replace(/\.$/, "")].filter(Boolean);
-      for (const form of forms) {
-        const at = rest.indexOf(form);
-                if (at >= 0 && (!hit || at < hit.at || (at === hit.at && form.length > hit.len))) {
-                  hit = { at, len: form.length, en: n.en };
-                }
-      }
+  spans.forEach((span, i) => {
+    if (!span.gloss) {
+      parts.push(span.text);
+      return;
     }
-    if (!hit) {
-      parts.push(rest);
-      break;
-    }
-    if (hit.at > 0) parts.push(rest.slice(0, hit.at));
-    parts.push(
-      <mark key={key++} className="noun-mark">
-        {rest.slice(hit.at, hit.at + hit.len)}
-      </mark>,
+    const noun = nouns.some(
+      (n) => n.en === span.gloss!.en || n.en.replace(/\.$/, "") === span.text.replace(/\.$/, ""),
     );
-    rest = rest.slice(hit.at + hit.len);
-  }
-  return parts;
+    const selected = open === i;
+    parts.push(
+      <span key={i} className={`english-token${selected ? " open" : ""}`}>
+        <button
+          type="button"
+          className={`english-word${noun ? " noun-mark" : ""}`}
+          aria-expanded={selected}
+          aria-label={`${span.text}, ${span.gloss.ko}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpen(selected ? null : i);
+          }}
+        >
+          {span.text}
+        </button>
+        {selected ? (
+          <span className="gloss-tip" role="tooltip">
+            {span.gloss.ko}
+          </span>
+        ) : null}
+      </span>,
+    );
+  });
+
+  return <p className="english">{parts}</p>;
 }
 
 function BackIcon() {

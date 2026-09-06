@@ -11,6 +11,7 @@ import { firstLessonId, getSet, setOfLesson } from "./tutor/sets";
 /*
   개발에서 지문 하나만 보고 싶을 때가 있다. `?lesson=<id>`나 `?set=<id>`가
   있으면 목록을 건너뛰고 바로 시작한다 (`src/tutor/sets.ts`).
+  문장 학습의 단어 뜻은 레슨 JSON `glosses`에서 온다.
 */
 const params = new URLSearchParams(window.location.search);
 const directLesson = import.meta.env.DEV ? params.get("lesson") : null;

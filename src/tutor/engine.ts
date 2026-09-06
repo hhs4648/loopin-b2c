@@ -5,7 +5,9 @@ import type {
   ProperNoun,
   ScoringPoint,
   TutorResult,
+  WordGloss,
 } from "../../content/tutor/types";
+import { lookupGloss } from "./glosses";
 import { getLesson } from "./lessons";
 import {
   getTutorLlm,
@@ -66,6 +68,8 @@ export type TutorView = {
   ended: boolean;
   recordLine: string | null;
   properNouns: ProperNoun[];
+  /** 지금 문장의 단어 뜻. 문장 학습에서 눌러 본다 */
+  glosses: WordGloss[];
 };
 
 type Branch = {
@@ -152,19 +156,23 @@ function uniqueButtons(btns: string[]) {
  * 예전에는 "퇴사 인사 편지…Lewis Ltd.…"가 코드에 박혀 있어서, 지문을 바꾸면
  * 다른 지문을 앞에 두고 퇴사 편지를 소개했다.
  */
+/**
+ * 인트로는 **세 마디**다 — 인사 · 오늘 볼 것 · 준비됐는지.
+ *
+ * 고유명사는 여기서 말하지 않는다. 예전에는 "Lewis Ltd.는 회사 이름이라
+ * 해석하지 말고 그대로 두면 돼요"가 가운데 끼어서, 아직 문장을 보지도 않은
+ * 학생에게 문장 이야기를 먼저 했다. **버튼 위의 칩이 그 일을 한다** — 이름들을
+ * 눈으로 한 번 보여 주는 게 문장으로 설명하는 것보다 짧고 정확하다.
+ */
 function introMessage(lesson: Lesson, name: string | null): string {
-  const tip = lesson.proper_noun_tip?.message?.trim();
   const hello = name
     ? frame.fixed_lines.greet_named.replace("{name}", name)
     : frame.fixed_lines.greet_plain;
   return [
     hello,
     `오늘은 ${lesson.topic_intro}를 볼 거예요.`,
-    tip,
     frame.fixed_lines.ready_question,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  ].join(" ");
 }
 
 /**
@@ -186,6 +194,31 @@ function enterIntro(s: EngineState, name: string | null): EngineState {
 /** 레슨에 칭찬 문구가 없으면 프레임의 기본 칭찬 */
 function praiseFor(s: EngineState): string {
   return current(s).praise ?? frame.fixed_lines.praise_default;
+}
+
+/**
+ * 따옴표 뒤에 붙일 「이에요」와 「예요」.
+ *
+ * 받침이 있으면 「이에요」다. 「'기원전'예요」처럼 틀린 말이 나오지 않게
+ * **말을 만들어 내는 자리마다** 이걸 쓴다 (레슨에 손으로 적은 문구는 그대로 둔다).
+ */
+function copula(text: string): string {
+  const last = text.trim().slice(-1);
+  const code = last.charCodeAt(0) - 0xac00;
+  if (code < 0 || code > 11171) return "예요"; // 한글이 아니면 판단하지 않는다
+  return code % 28 === 0 ? "예요" : "이에요";
+}
+
+/**
+ * 정답으로 통과할 때 하는 말 — **칭찬 다음에 정확한 해석을 보여 준다.**
+ *
+ * 채점은 뜻만 맞으면 통과시킨다(어순·조사·직역/의역을 안 따진다). 그래서 통과한
+ * 답과 모범 해석이 꽤 다를 수 있는데, 칭찬만 하면 학생은 **자기가 맞았다는 것만
+ * 알고 정확한 문장은 못 본다.** 맞힌 자리가 정확한 해석을 볼 가장 좋은 자리다.
+ */
+function praiseWithAnswer(s: EngineState): string {
+  const answer = current(s).model_translation;
+  return `${praiseFor(s)} 문장을 정확히 해석하면 '${answer}'${copula(answer)}.`;
 }
 
 function initialState(lesson: Lesson, learnerName: string | null): EngineState {
@@ -255,6 +288,7 @@ function view(s: EngineState): TutorView {
         : s.stage === "intro"
           ? s.lesson.proper_nouns ?? []
           : nounsIn(s, u.text),
+    glosses: s.stage === "greeting" || s.stage === "intro" ? [] : (u.glosses ?? []),
     recordLine:
       s.ended && s.result
         ? `[기록] 유형=${s.lesson.grammar_type} / 결과=${s.result} / 오류=${s.errorIds.join(",") || "없음"}`
@@ -502,7 +536,7 @@ function frustration(s: EngineState): EngineState {
   const points = u.scoring_points ?? [];
   const target = points.find((p) => !s.checkedPoints.includes(p.id)) ?? points[0];
   const answer = u.model_translation;
-  const opening = `${frame.fixed_lines.frustration_tone} 정답은 '${answer}'예요.`;
+  const opening = `${frame.fixed_lines.frustration_tone} 정답은 '${answer}'${copula(answer)}.`;
   const base = {
     skipFinalRetake: true,
     hadAnyError: true,
@@ -532,7 +566,7 @@ function frustration(s: EngineState): EngineState {
     ? `아래에서 '${english}'의 뜻에 더 가까운 쪽을 골라 주세요.`
     : "아래에서 더 가까운 쪽을 골라 주세요.";
   const correct = english
-    ? `맞아요. '${english}'의 뜻은 '${pair.right}'예요.`
+    ? `맞아요. '${english}'의 뜻은 '${pair.right}'${copula(pair.right)}.`
     : `맞아요. '${pair.right}'가 맞아요.`;
 
   return say(
@@ -806,8 +840,8 @@ function voiceGuardFor(
  *   물어보고, 유도에 옆문이 생긴다. 그래서 **그 항목 유도로 답한다** —
  *   침묵이 아니라 그 단어를 콕 집은 응답이다(2단이 정확히 그 대사다).
  * - **가르치지 않는 단어**는 그냥 막힌 것이다. 알려 주고 하던 자리로 돌려보낸다.
- *   레슨 JSON에 단어 사전이 없으므로 이건 모델이 답한다. 어댑터가 없으면
- *   사다리로 폴백한다.
+ *   레슨 JSON `glosses`에 있으면 그걸 쓰고, 없을 때만 모델이 답한다.
+ *   어댑터도 없으면 사다리로 폴백한다.
  */
 async function answerWord(
   s: EngineState,
@@ -815,6 +849,15 @@ async function answerWord(
   studentText: string,
 ): Promise<EngineState> {
   if (isTaughtWord(word, current(s))) return nudgeNext(s, s.checkedPoints);
+
+  const fromLesson = lookupGloss(word, current(s).glosses);
+  if (fromLesson) {
+    return say(
+      s,
+      `${word}는 여기서 '${fromLesson.ko}'예요. ${frame.fixed_lines.return_to_lesson}`,
+      { effect: null },
+    );
+  }
 
   const llm = getTutorLlm();
   if (!llm) return nudgeNext(s, s.checkedPoints);
@@ -918,7 +961,7 @@ async function treatUnexpectedOrPartial(
   // 모델 덕분에 전부 채워졌으면 발화를 버리고 정답으로 넘긴다
   const points = current(s).scoring_points ?? [];
   if (points.length && points.every((p) => merged.includes(p.id))) {
-    return advance({ ...s, checkedPoints: merged }, praiseFor(s), s.hadAnyError);
+    return advance({ ...s, checkedPoints: merged }, praiseWithAnswer(s), s.hadAnyError);
   }
 
   if (!spoken) return nudgeNext(s, merged, text);
@@ -1005,7 +1048,7 @@ function handlePending(s: EngineState, text: string): EngineState {
       if (points.length && points.every((p) => checked.includes(p.id))) {
         return advance(
           { ...s, pending: null, checkedPoints: checked },
-          praiseFor(s),
+          praiseWithAnswer(s),
           !s.skipFinalRetake,
         );
       }
@@ -1138,7 +1181,7 @@ export function createSession(lessonId?: string | null, learnerName?: string | n
       s = attempt.next;
       const points = current(s).scoring_points ?? [];
       if (points.length && points.every((p) => attempt.checked.includes(p.id))) {
-        s = advance({ ...s, checkedPoints: attempt.checked }, praiseFor(s), s.hadAnyError);
+        s = advance({ ...s, checkedPoints: attempt.checked }, praiseWithAnswer(s), s.hadAnyError);
         return view(s);
       }
 

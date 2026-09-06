@@ -160,4 +160,13 @@ describe("레슨 데이터 계약", () => {
       }
     });
   });
+
+  it("단어 뜻이 있고, 문장 전체 해석을 그대로 넣지 않는다", () => {
+    eachChunk((lesson, chunk, i) => {
+      expect(chunk.glosses?.length, `${lesson.id} 문장${i + 1}`).toBeGreaterThan(0);
+      for (const g of chunk.glosses ?? []) {
+        expect(g.ko, `${lesson.id} 문장${i + 1} ${g.en}`).not.toBe(chunk.model_translation);
+      }
+    });
+  });
 });

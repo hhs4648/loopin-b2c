@@ -16,6 +16,9 @@ type Props = {
 };
 
 export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose }: Props) {
+  // 칩이 뜨면 아래 도크가 그만큼 높아진다. 학생 말풍선을 같이 올리지 않으면 가린다
+  const showNouns = view.properNouns.length > 0 && !view.ended;
+
   return (
     <div className="stage-fill">
       <ClassroomBg />
@@ -55,17 +58,30 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
       </div>
 
       {view.studentLine ? (
-        <div className="student-bubble">{view.studentLine}</div>
+        <div className={`student-bubble${showNouns ? " raised" : ""}`}>
+          {view.studentLine}
+        </div>
       ) : null}
 
       <div className="dock">
-        {view.properNouns.length > 0 && !view.ended ? (
-          <div className="noun-chips intro">
-            {view.properNouns.map((n) => (
-              <span key={n.en} className="noun-chip">
-                {n.en} · {nounKind(n.type)} · 그대로
-              </span>
-            ))}
+        {/*
+          **고유명사는 말로 설명하지 않고 여기서 보여 준다.** 예전에는 인트로
+          대사에 "Lewis Ltd.는 회사 이름이라 …"가 끼어 있었다. 문장을 보지도 않은
+          학생에게 문장 이야기를 먼저 하는 셈이라 뺐다.
+
+          문장 학습 화면의 칩은 안내문 없이 혼자 서야 해서 「· 그대로」를 달고
+          있다. 여기는 위에 한 줄이 있으니 붙이지 않는다.
+        */}
+        {showNouns ? (
+          <div className="noun-intro">
+            <span className="noun-intro-label">그대로 쓰면 되는 이름이에요</span>
+            <div className="noun-chips intro">
+              {view.properNouns.map((n) => (
+                <span key={n.en} className="noun-chip">
+                  {n.en} · {nounKind(n.type)}
+                </span>
+              ))}
+            </div>
           </div>
         ) : null}
         <QuickReplies buttons={view.buttons} hidden={typing || view.ended} onPick={onSend} />

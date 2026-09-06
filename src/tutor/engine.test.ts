@@ -104,14 +104,51 @@ describe("인트로", () => {
     const view = createSession(null, "민준").view();
     expect(view.properNouns.map((n) => n.en)).toContain("Lewis Ltd.");
   });
+
+  it("인트로에서는 단어 뜻을 아직 넘기지 않는다", () => {
+    expect(createSession(null, "민준").view().glosses).toEqual([]);
+  });
+
+  it("고유명사를 대사로 설명하지 않는다 — 보여 주는 건 칩이 한다", () => {
+    // 문장을 보지도 않은 학생에게 문장 이야기를 먼저 하지 않는다
+    const view = createSession(null, "민준").view();
+    expect(view.message).not.toContain("Lewis Ltd.");
+    expect(view.message.split(/(?<=[.!?])\s+/).filter(Boolean)).toHaveLength(3);
+  });
 });
 
 describe("진단", () => {
+  it("문장에 들어가면 그 문장의 단어 뜻을 넘긴다", async () => {
+    const session = await startedSession();
+    expect(session.view().glosses.map((g) => g.en)).toContain("privilege");
+  });
+
   it("정답(A)이면 칭찬하고 다음 문장으로 간다", async () => {
     const session = await startedSession();
     const view = await say(session, CORRECT[0]!);
     expect(view.message).toContain(RESIGNATION.chunks[0]!.praise);
     expect(view.progressIndex).toBe(2);
+  });
+
+  /*
+    맞혔다는 것만 알려 주면, 학생은 **자기 표현이 통했다**는 것만 알고 정확한
+    해석은 못 본다. 채점이 뜻만 보고 통과시키기 때문에 통과한 답과 모범 해석이
+    꽤 다를 수 있다 (2026-09-06 요청).
+  */
+  it("정답이면 칭찬하고 정확한 해석을 보여 준다", async () => {
+    const session = await startedSession();
+    // 뜻은 맞지만 모범 해석과는 말이 다른 답 — 정확한 문장을 보여 줄 자리다
+    const view = await say(session, "이 회사에서 4년 일한 건 참 기쁘고 좋았어요");
+    expect(view.message).toContain(RESIGNATION.chunks[0]!.praise);
+    expect(view.message).toContain(RESIGNATION.chunks[0]!.model_translation);
+  });
+
+  it("따옴표 뒤 조사를 받침에 맞춘다", async () => {
+    // 「'…영광이었다'예요」 / 받침이 있으면 「이에요」
+    const session = await startedSession();
+    const view = await say(session, CORRECT[0]!);
+    const answer = RESIGNATION.chunks[0]!.model_translation;
+    expect(view.message).toContain(`'${answer}'예요`); // 「…다」 → 받침 없음
   });
 
   it("처음부터 맞히면 반짝이지 않는다 — 고칠 게 없었다", async () => {
@@ -223,33 +260,26 @@ describe("단어 뜻 질문", () => {
     expect((await say(session, "잘 모르겠어요")).message).toBe(point(RESIGNATION, 0, 0).tell);
   });
 
-  it("가르치지 않는 단어는 모델이 답하고, 오답으로 세지 않는다", async () => {
+  it("가르치지 않는 단어는 레슨 JSON 뜻을 바로 준다", async () => {
+    const session = await startedSession();
+    const view = await say(session, "company가 뭐예요?");
+    expect(view.message).toContain("회사");
+    expect(view.message).toContain(frame.fixed_lines.return_to_lesson);
+  });
+
+  it("JSON 뜻이 있으면 모델을 부르지 않고, 오답으로도 세지 않는다", async () => {
     const seen: string[] = [];
     setTutorLlm({
       speak: async (input) => {
         seen.push(`${input.action}:${input.askedWord}`);
-        return { message: "company는 회사라는 뜻이에요." };
+        return { message: "이건 나가면 안 되는 말이에요." };
       },
     });
     const session = await startedSession();
     const view = await say(session, "company가 뭐예요?");
-    expect(seen).toEqual(["ANSWER_WORD:company"]);
-    expect(view.message).toContain("회사라는 뜻");
-    // miss를 안 셌으므로 다음 「모르겠어요」는 1단이어야 한다
+    expect(seen).toEqual([]);
+    expect(view.message).toContain("회사");
     expect((await say(session, "잘 모르겠어요")).message).toBe(point(RESIGNATION, 0, 0).nudge);
-  });
-
-  it("어댑터가 없으면 사다리로 폴백한다", async () => {
-    const session = await startedSession();
-    expect((await say(session, "company가 뭐예요?")).message).toBe(point(RESIGNATION, 0, 0).nudge);
-  });
-
-  it("모델이 정답을 흘리면 그 발화를 버린다", async () => {
-    setTutorLlm({
-      speak: async () => ({ message: "serve는 근무하다라는 뜻이에요." }),
-    });
-    const session = await startedSession();
-    expect((await say(session, "company가 뭐예요?")).message).toBe(point(RESIGNATION, 0, 0).nudge);
   });
 
   it("해석 시도를 단어 질문으로 잘못 보지 않는다", async () => {
