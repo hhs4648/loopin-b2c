@@ -1,0 +1,173 @@
+{
+  "id": "moeui-2027-09-38-citizen-science",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 38번",
+  "category": "리딩",
+  "topic_intro": "시민이 참여하는 과학과 행정",
+  "sentence": "The growth and success of citizen science and citizen engagement has been made possible by the Internet and mobile technology, encouraging and coordinating the efforts of millions of people throughout the world. Websites, smartphone apps, and social media have been instrumental in expanding the reach and impact of a diversity of citizen science projects across time and geographical zones. Citizen science involves local people helping scientists carry out a scientific project at scale. Currently, thousands of such projects have been set up all over the world, whereby volunteers help out in a number of research areas, including biodiversity, air quality, astronomy, and environmental issues. They do so by participating in scientific activities such as monitoring plants and wildlife, collecting air and water samples, categorizing galaxies, and analyzing DNA sequences. Citizen engagement involves people helping governments, rather than scientists, to improve public services and policies in their communities.",
+  "grammar_type": "문장삽입_과학논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 분사구가 뒤에 붙으면",
+    "how": "분사구·whereby 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [
+    { "en": "Internet", "ko": "인터넷", "type": "other" },
+    { "en": "DNA", "ko": "디엔에이", "type": "other" }
+  ],
+  "chunks": [
+    {
+      "text": "The growth and success of citizen science and citizen engagement has been made possible by the Internet and mobile technology, encouraging and coordinating the efforts of millions of people throughout the world.",
+      "ko": "시민 과학과 시민 참여가 자라고 잘된 것은 인터넷과 이동 통신 기술 덕분에 가능해졌고, 그 기술이 온 세계 수백만 명의 노력을 북돋우고 엮어 주었다",
+      "praise": "has been made possible by를 '~덕분에 가능해졌다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "has been made possible by ~", "sub": "가", "top": "는", "answer": "~덕분에 가능해졌다", "check": ["가능", "덕분", "덕택", "때문"] },
+        { "en": "encouraging and coordinating the efforts", "sub": "이", "top": "은", "answer": "노력을 북돋우고 엮어 주면서", "check": ["북돋", "격려", "엮", "조율", "노력"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "encouraging을 문장의 동사로 보고 끊음", "signals": ["기술이 격려했다."], "ask": "encouraging은 앞 내용에 어떻게 붙나요?", "wrong": "기술이 격려했다", "right": "격려하고 엮으면서" },
+        { "id": "E2", "detect": "engagement를 '약혼'으로 해석", "signals": ["약혼"], "ask": "citizen engagement는 무엇일까요?", "wrong": "시민 약혼", "right": "시민 참여" }
+      ],
+      "glosses": [
+        ["growth", "자람, 성장"],
+        ["success", "잘됨, 성공"],
+        ["citizen", "시민"],
+        ["science", "과학"],
+        ["engagement", "참여"],
+        ["possible", "가능한"],
+        ["Internet", "인터넷"],
+        ["mobile", "이동 통신의"],
+        ["technology", "기술"],
+        ["encouraging", "북돋우는"],
+        ["coordinating", "엮어 주는"],
+        ["efforts", "노력"],
+        ["millions", "수백만"],
+        ["throughout", "~ 곳곳에"]
+      ]
+    },
+    {
+      "text": "Websites, smartphone apps, and social media have been instrumental in expanding the reach and impact of a diversity of citizen science projects across time and geographical zones.",
+      "ko": "웹사이트와 스마트폰 앱과 소셜 미디어는, 여러 시민 과학 사업이 시간과 지역을 넘어 닿는 범위와 영향을 넓히는 데 큰 몫을 했다",
+      "praise": "instrumental in을 '~에 큰 몫을 하다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "have been instrumental in ~", "sub": "이", "top": "은", "answer": "~에 큰 몫을 했다", "check": ["몫", "도움", "역할", "기여"] },
+        { "en": "expanding the reach and impact", "sub": "이", "top": "은", "answer": "닿는 범위와 영향을 넓히는 것", "check": ["범위", "영향", "넓", "확대"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "instrumental을 '악기의'로 해석", "signals": ["악기"], "ask": "instrumental in ~ 은 굳어진 표현이에요.", "wrong": "악기의 역할", "right": "~에 큰 몫을 하는" },
+        { "id": "E2", "detect": "reach를 동사 '닿다'로만 보고 명사를 놓침", "signals": ["닿는다."], "ask": "the reach and impact에서 reach는 무엇일까요?", "wrong": "닿고 영향을 준다", "right": "닿는 범위와 영향" }
+      ],
+      "glosses": [
+        ["Websites", "웹사이트"],
+        ["smartphone", "스마트폰"],
+        ["apps", "앱"],
+        ["instrumental", "큰 몫을 하는"],
+        ["expanding", "넓히는 것"],
+        ["reach", "닿는 범위"],
+        ["impact", "영향"],
+        ["diversity", "여러 가지"],
+        ["projects", "사업"],
+        ["geographical", "지리의"],
+        ["zones", "지역"]
+      ]
+    },
+    {
+      "text": "Citizen science involves local people helping scientists carry out a scientific project at scale.",
+      "ko": "시민 과학이란 지역 주민이 과학자를 도와 과학 사업을 큰 규모로 해내는 것을 말한다",
+      "praise": "help + 목적어 + 동사원형을 '~가 …하도록 돕다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "involves local people helping scientists", "sub": "가", "top": "는", "answer": "지역 주민이 과학자를 돕는 것을 말한다", "check": ["주민", "지역", "돕", "과학자"] },
+        { "en": "carry out a project at scale", "sub": "이", "top": "은", "answer": "사업을 큰 규모로 해내다", "check": ["해내", "수행", "규모", "진행"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "carry out을 '밖으로 나르다'로 직역", "signals": ["밖으로 나른다", "운반"], "ask": "carry out a project는 무엇을 하는 걸까요?", "wrong": "사업을 밖으로 나른다", "right": "사업을 해낸다" },
+        { "id": "E2", "detect": "at scale을 '저울로'로 해석", "signals": ["저울"], "ask": "at scale은 무엇을 말할까요?", "wrong": "저울로", "right": "큰 규모로" }
+      ],
+      "glosses": [
+        ["involves", "~을 말한다, ~을 담고 있다"],
+        ["local", "지역의"],
+        ["helping", "돕는"],
+        ["scientists", "과학자"],
+        ["carry out", "해내다"],
+        ["scientific", "과학의"],
+        ["at scale", "큰 규모로"]
+      ]
+    },
+    {
+      "text": "Currently, thousands of such projects have been set up all over the world, whereby volunteers help out in a number of research areas, including biodiversity, air quality, astronomy, and environmental issues.",
+      "ko": "지금 그런 사업 수천 개가 온 세계에 세워져 있고, 그 안에서 자원봉사자들이 생물 다양성, 공기 질, 천문학, 환경 문제를 비롯한 여러 연구 분야에서 손을 보탠다",
+      "praise": "whereby를 '그 안에서'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "have been set up all over the world", "sub": "이", "top": "은", "answer": "온 세계에 세워져 있다", "check": ["세워", "만들어", "생겨", "온 세계"] },
+        { "en": "volunteers help out", "sub": "가", "top": "는", "answer": "자원봉사자들이 손을 보탠다", "check": ["자원", "봉사", "돕", "보탠"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "whereby를 '어디에서'로 보고 의문사로 해석", "signals": ["어디에서"], "ask": "whereby는 앞의 무엇을 받을까요?", "wrong": "어디에서 봉사자가", "right": "그 사업 안에서 봉사자가" },
+        { "id": "E2", "detect": "have been set up을 능동으로 보고 '사업이 세웠다'로 뒤집음", "signals": ["사업이 세웠"], "ask": "have been set up은 세우는 쪽일까요, 세워지는 쪽일까요?", "wrong": "사업이 세웠다", "right": "사업이 세워졌다" }
+      ],
+      "glosses": [
+        ["Currently", "지금"],
+        ["thousands", "수천"],
+        ["set up", "세워진"],
+        ["whereby", "그 안에서"],
+        ["volunteers", "자원봉사자"],
+        ["help out", "손을 보태다"],
+        ["research", "연구"],
+        ["areas", "분야"],
+        ["biodiversity", "생물 다양성"],
+        ["air quality", "공기 질"],
+        ["astronomy", "천문학"],
+        ["environmental", "환경의"],
+        ["issues", "문제"]
+      ]
+    },
+    {
+      "text": "They do so by participating in scientific activities such as monitoring plants and wildlife, collecting air and water samples, categorizing galaxies, and analyzing DNA sequences.",
+      "ko": "그들은 식물과 야생 동물을 살피고, 공기와 물 표본을 모으고, 은하를 갈래 짓고, 디엔에이 서열을 분석하는 것 같은 과학 활동에 참여함으로써 그렇게 한다",
+      "praise": "-ing 넷이 나란한 것을 다 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "do so by participating in ~", "sub": "가", "top": "는", "answer": "~에 참여함으로써 그렇게 한다", "check": ["참여", "함으로써", "그렇게"] },
+        { "en": "monitoring, collecting, categorizing, analyzing", "sub": "이", "top": "은", "answer": "살피고 모으고 갈래 짓고 분석하는 것", "check": ["살피", "관찰", "모으", "수집", "분류", "분석"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "do so가 무엇을 받는지 놓침", "signals": ["무엇을 하는지", "그것을 한다."], "ask": "do so는 앞의 어떤 말을 대신할까요?", "wrong": "그것을 한다", "right": "손을 보탠다" },
+        { "id": "E2", "detect": "categorizing을 '범주로 나가다'처럼 흐림", "signals": ["범주로 간다"], "ask": "categorize galaxies는 무엇을 하는 걸까요?", "wrong": "은하로 나간다", "right": "은하를 갈래 짓는다" }
+      ],
+      "glosses": [
+        ["participating in", "~에 참여하는 것"],
+        ["activities", "활동"],
+        ["monitoring", "살피는 것"],
+        ["plants", "식물"],
+        ["wildlife", "야생 동물"],
+        ["collecting", "모으는 것"],
+        ["samples", "표본"],
+        ["categorizing", "갈래 짓는 것"],
+        ["galaxies", "은하"],
+        ["analyzing", "분석하는 것"],
+        ["DNA", "디엔에이"],
+        ["sequences", "서열"]
+      ]
+    },
+    {
+      "text": "Citizen engagement involves people helping governments, rather than scientists, to improve public services and policies in their communities.",
+      "ko": "시민 참여란 사람들이 과학자가 아니라 정부를 도와, 자기 지역의 공공 서비스와 정책을 나아지게 하는 것을 말한다",
+      "praise": "rather than scientists를 '과학자가 아니라'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "helping governments, rather than scientists", "sub": "가", "top": "는", "answer": "과학자가 아니라 정부를 돕는 것", "check": ["정부", "과학자", "아니라", "돕"] },
+        { "en": "improve public services and policies", "sub": "가", "top": "는", "answer": "공공 서비스와 정책을 나아지게 하다", "check": ["공공", "서비스", "정책", "나아지", "개선"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "rather than의 앞뒤를 뒤바꿔 '정부가 아니라 과학자'로 해석", "signals": ["정부가 아니라 과학자"], "ask": "돕는 대상은 누구일까요?", "wrong": "정부가 아니라 과학자를 돕는다", "right": "과학자가 아니라 정부를 돕는다" }
+      ],
+      "glosses": [
+        ["governments", "정부"],
+        ["rather than", "~가 아니라"],
+        ["improve", "나아지게 하다"],
+        ["public", "공공의"],
+        ["services", "서비스"],
+        ["policies", "정책"],
+        ["communities", "지역 사회"]
+      ]
+    }
+  ]
+}

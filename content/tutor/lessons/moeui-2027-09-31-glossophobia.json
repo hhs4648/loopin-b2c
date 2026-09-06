@@ -1,0 +1,1210 @@
+{
+  "id": "moeui-2027-09-31-glossophobia",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 31번",
+  "category": "리딩",
+  "topic_intro": "남 앞에 서면 왜 그렇게 떨리는가",
+  "sentence": "What stresses you out more than anything? Perhaps it's speaking in front of others. For many, this is so stressful it even has a name: glossophobia. The explanation for why it's uncomfortable to have everyone's eyes on you is probably that, for almost all of our evolution, it's been extremely important not to be excluded from the group. To prepare for what might happen if you are evaluated and socially shamed — and thus alienated from the group — your brain fires up the stress system and your heart begins to beat harder. Our natural sensitivity to being evaluated by other people is another example of our brain not being adapted to the modern world. If we give a bad presentation at work, we are unlikely to lose our job and thus risk starving to death. But in the world we long ago evolved for, exclusion from the group could be a matter of life and death. Belonging was not merely a matter of safety but also of survival.",
+  "grammar_type": "빈칸추론_심리논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 대시로 나뉘면",
+    "how": "대시·and 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "What stresses you out more than anything? Perhaps it's speaking in front of others. For many, this is so stressful it even has a name: glossophobia.",
+      "model_translation": "무엇이 당신을 가장 힘들게 하는가? 아마 남 앞에서 말하는 일일 것이다. 많은 사람에게 이것은 너무 힘들어서 이름까지 붙어 있다. 바로 발표 공포증이다",
+      "praise": "so ~ that 구조에서 that이 빠진 걸 알아본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "stresses",
+          "ko": "힘들게 하다"
+        },
+        {
+          "en": "anything",
+          "ko": "무엇이든"
+        },
+        {
+          "en": "Perhaps",
+          "ko": "아마"
+        },
+        {
+          "en": "speaking",
+          "ko": "말하는 것"
+        },
+        {
+          "en": "in front of",
+          "ko": "~ 앞에서"
+        },
+        {
+          "en": "stressful",
+          "ko": "힘든"
+        },
+        {
+          "en": "name",
+          "ko": "이름"
+        },
+        {
+          "en": "glossophobia",
+          "ko": "발표 공포증"
+        },
+        {
+          "en": "out",
+          "ko": "밖으로 (stress ~ out: 힘들게 하다)"
+        },
+        {
+          "en": "it's",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "What",
+          "ko": "무엇"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "than",
+          "ko": "~보다"
+        },
+        {
+          "en": "others",
+          "ko": "남들, 다른 사람들"
+        },
+        {
+          "en": "For",
+          "ko": "~동안"
+        },
+        {
+          "en": "many",
+          "ko": "많은"
+        },
+        {
+          "en": "this",
+          "ko": "이"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "so",
+          "ko": "그래서"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "even",
+          "ko": "심지어"
+        },
+        {
+          "en": "has",
+          "ko": "가지다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "stresses you out → 당신을 힘들게 하다",
+          "check": [
+            "힘들",
+            "스트레스",
+            "괴롭"
+          ],
+          "nudge": "stresses you out가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "stresses you out는 여기서 '당신을 힘들게 하다'예요."
+        },
+        {
+          "id": 2,
+          "text": "speaking in front of others → 남 앞에서 말하는 것",
+          "check": [
+            "남 앞",
+            "사람들 앞",
+            "발표",
+            "말하는"
+          ],
+          "nudge": "speaking in front of others가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "speaking in front of others는 여기서 '남 앞에서 말하는 것'이에요."
+        },
+        {
+          "id": 3,
+          "text": "so stressful (that) it even has a name → 너무 힘들어서 이름까지 붙어 있다",
+          "check": [
+            "너무",
+            "이름",
+            "붙어",
+            "있을 정도"
+          ],
+          "nudge": "so stressful (that) it even has a name이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "so stressful (that) it even has a name은 여기서 '너무 힘들어서 이름까지 붙어 있다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "stress out을 '스트레스를 내보내다'로 해석",
+          "signals": [
+            "내보낸다",
+            "밖으로"
+          ],
+          "treatment": {
+            "message": "stress someone out은 한 덩어리로 쓰이는 말이에요. '스트레스를 내보낸다'일까요, '누군가를 힘들게 한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "스트레스를 내보낸다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "누군가를 힘들게 한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '누군가를 힘들게 한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '누군가를 힘들게 한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "so ~ that의 that 생략을 못 보고 두 문장으로 끊음",
+          "signals": [
+            "매우 힘들다. 이것은 이름"
+          ],
+          "treatment": {
+            "message": "so stressful 뒤에 무엇이 생략됐을까요? '매우 힘들다. 이름이 있다'일까요, '너무 힘들어서 이름까지 있다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "매우 힘들다. 이름이 있다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "너무 힘들어서 이름까지 있다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '너무 힘들어서 이름까지 있다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '너무 힘들어서 이름까지 있다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "The explanation for why it's uncomfortable to have everyone's eyes on you is probably that, for almost all of our evolution, it's been extremely important not to be excluded from the group.",
+      "model_translation": "모두의 눈이 자기에게 쏠리는 것이 왜 불편한지에 대한 설명은 아마 이것이다 — 진화의 거의 모든 기간 동안 무리에서 밀려나지 않는 것이 몹시 중요했다는 것",
+      "praise": "긴 주어 뒤의 is ~ that절을 이어 준 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "explanation",
+          "ko": "설명"
+        },
+        {
+          "en": "uncomfortable",
+          "ko": "불편한"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈, 시선"
+        },
+        {
+          "en": "probably",
+          "ko": "아마"
+        },
+        {
+          "en": "almost",
+          "ko": "거의"
+        },
+        {
+          "en": "evolution",
+          "ko": "진화"
+        },
+        {
+          "en": "extremely",
+          "ko": "몹시"
+        },
+        {
+          "en": "excluded",
+          "ko": "밀려난"
+        },
+        {
+          "en": "group",
+          "ko": "무리"
+        },
+        {
+          "en": "it's",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "everyone's",
+          "ko": "모두의"
+        },
+        {
+          "en": "it's",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "The",
+          "ko": "그"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "why",
+          "ko": "왜"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "have",
+          "ko": "가지다"
+        },
+        {
+          "en": "on",
+          "ko": "~에"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "all",
+          "ko": "모든"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "our",
+          "ko": "우리의"
+        },
+        {
+          "en": "been",
+          "ko": "~이었다"
+        },
+        {
+          "en": "important",
+          "ko": "중요한"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "have everyone's eyes on you → 모두의 눈이 자기에게 쏠리다",
+          "check": [
+            "눈",
+            "시선",
+            "쏠리",
+            "쳐다"
+          ],
+          "nudge": "have everyone's eyes on you가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "have everyone's eyes on you는 여기서 '모두의 눈이 자기에게 쏠리다'예요."
+        },
+        {
+          "id": 2,
+          "text": "for almost all of our evolution → 진화의 거의 모든 기간 동안",
+          "check": [
+            "진화",
+            "거의",
+            "내내"
+          ],
+          "nudge": "for almost all of our evolution이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "for almost all of our evolution은 여기서 '진화의 거의 모든 기간 동안'이에요."
+        },
+        {
+          "id": 3,
+          "text": "not to be excluded from the group → 무리에서 밀려나지 않는 것",
+          "check": [
+            "무리",
+            "집단",
+            "밀려",
+            "배제",
+            "제외"
+          ],
+          "nudge": "not to be excluded from the group이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "not to be excluded from the group은 여기서 '무리에서 밀려나지 않는 것'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "긴 주어에 밀려 is의 자리를 놓침",
+          "signals": [
+            "설명이 불편하다"
+          ],
+          "treatment": {
+            "message": "The explanation ... is 뒤에 무엇이 올까요? '설명이 불편하다'일까요, '설명은 ~라는 것이다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "설명이 불편하다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "설명은 ~라는 것이다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '설명은 ~라는 것이다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '설명은 ~라는 것이다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "excluded를 능동으로 보고 '배제하지 않는 것'으로 뒤집음",
+          "signals": [
+            "배제하지 않는",
+            "제외하지 않는"
+          ],
+          "treatment": {
+            "message": "be excluded는 밀어내는 쪽일까요, 밀려나는 쪽일까요? '무리를 배제하지 않는 것'일까요, '무리에서 밀려나지 않는 것'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "무리를 배제하지 않는 것",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "무리에서 밀려나지 않는 것",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '무리에서 밀려나지 않는 것'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '무리에서 밀려나지 않는 것'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "To prepare for what might happen if you are evaluated and socially shamed — and thus alienated from the group — your brain fires up the stress system and your heart begins to beat harder.",
+      "model_translation": "평가를 받고 사람들 앞에서 창피를 당해 무리에서 떨어져 나갈 때를 대비하려고, 뇌는 스트레스 체계에 불을 붙이고 심장은 더 세게 뛰기 시작한다",
+      "praise": "대시 사이를 앞말의 풀이로 읽은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "prepare for",
+          "ko": "~에 대비하다"
+        },
+        {
+          "en": "happen",
+          "ko": "일어나다"
+        },
+        {
+          "en": "evaluated",
+          "ko": "평가받는"
+        },
+        {
+          "en": "socially",
+          "ko": "사람들 사이에서"
+        },
+        {
+          "en": "shamed",
+          "ko": "창피를 당한"
+        },
+        {
+          "en": "thus",
+          "ko": "그래서"
+        },
+        {
+          "en": "alienated",
+          "ko": "떨어져 나간"
+        },
+        {
+          "en": "brain",
+          "ko": "뇌"
+        },
+        {
+          "en": "fires up",
+          "ko": "작동시키다"
+        },
+        {
+          "en": "heart",
+          "ko": "심장"
+        },
+        {
+          "en": "beat",
+          "ko": "뛰다"
+        },
+        {
+          "en": "harder",
+          "ko": "더 세게"
+        },
+        {
+          "en": "To",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "what",
+          "ko": "무엇"
+        },
+        {
+          "en": "might",
+          "ko": "~일지도 모른다"
+        },
+        {
+          "en": "if",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "group",
+          "ko": "무리"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "stress",
+          "ko": "스트레스"
+        },
+        {
+          "en": "system",
+          "ko": "체계"
+        },
+        {
+          "en": "begins",
+          "ko": "시작하다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "to prepare for what might happen → 일어날지 모를 일에 대비하려고",
+          "check": [
+            "대비",
+            "준비",
+            "일어날"
+          ],
+          "nudge": "to prepare for what might happen이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "to prepare for what might happen은 여기서 '일어날지 모를 일에 대비하려고'예요."
+        },
+        {
+          "id": 2,
+          "text": "evaluated and socially shamed → 평가받고 창피를 당하다",
+          "check": [
+            "평가",
+            "창피",
+            "부끄",
+            "수치"
+          ],
+          "nudge": "evaluated and socially shamed가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "evaluated and socially shamed는 여기서 '평가받고 창피를 당하다'예요."
+        },
+        {
+          "id": 3,
+          "text": "fires up the stress system → 스트레스 체계에 불을 붙이다",
+          "check": [
+            "스트레스",
+            "작동",
+            "불",
+            "가동"
+          ],
+          "nudge": "fires up the stress system이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "fires up the stress system은 여기서 '스트레스 체계에 불을 붙이다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "fires up을 '해고하다'로 해석",
+          "signals": [
+            "해고"
+          ],
+          "treatment": {
+            "message": "brain fires up the system은 무엇을 하는 걸까요? '체계를 해고한다'일까요, '체계를 작동시킨다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "체계를 해고한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "체계를 작동시킨다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '체계를 작동시킨다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '체계를 작동시킨다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "shamed를 능동으로 보고 '창피를 주다'로 뒤집음",
+          "signals": [
+            "창피를 준다",
+            "부끄럽게 한다"
+          ],
+          "treatment": {
+            "message": "socially shamed는 주는 쪽일까요, 당하는 쪽일까요? '남에게 창피를 준다'일까요, '남들 앞에서 창피를 당한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "남에게 창피를 준다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "남들 앞에서 창피를 당한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '남들 앞에서 창피를 당한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '남들 앞에서 창피를 당한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Our natural sensitivity to being evaluated by other people is another example of our brain not being adapted to the modern world.",
+      "model_translation": "남에게 평가받는 일에 대한 우리의 타고난 예민함은, 우리 뇌가 현대 세계에 맞추어져 있지 않다는 또 하나의 예다",
+      "praise": "our brain not being adapted를 '뇌가 맞추어져 있지 않다는 것'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "natural",
+          "ko": "타고난"
+        },
+        {
+          "en": "sensitivity",
+          "ko": "예민함"
+        },
+        {
+          "en": "another",
+          "ko": "또 하나의"
+        },
+        {
+          "en": "example",
+          "ko": "예"
+        },
+        {
+          "en": "adapted to",
+          "ko": "~에 맞추어진"
+        },
+        {
+          "en": "modern",
+          "ko": "현대의"
+        },
+        {
+          "en": "Our",
+          "ko": "우리의"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "being",
+          "ko": "~인 것"
+        },
+        {
+          "en": "evaluated",
+          "ko": "평가받는"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        },
+        {
+          "en": "other",
+          "ko": "다른"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "brain",
+          "ko": "뇌"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "world",
+          "ko": "세계"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "natural sensitivity to being evaluated → 평가받는 일에 대한 타고난 예민함",
+          "check": [
+            "타고난",
+            "예민",
+            "민감",
+            "평가"
+          ],
+          "nudge": "natural sensitivity to being evaluated이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "natural sensitivity to being evaluated은 여기서 '평가받는 일에 대한 타고난 예민함'이에요."
+        },
+        {
+          "id": 2,
+          "text": "not being adapted to the modern world → 현대 세계에 맞추어져 있지 않은 것",
+          "check": [
+            "현대",
+            "맞추",
+            "적응",
+            "않"
+          ],
+          "nudge": "not being adapted to the modern world이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "not being adapted to the modern world은 여기서 '현대 세계에 맞추어져 있지 않은 것'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "부정을 놓치고 '뇌가 현대에 적응했다'로 해석",
+          "signals": [
+            "적응했다",
+            "맞춰져 있다."
+          ],
+          "treatment": {
+            "message": "not being adapted는 적응했다는 뜻일까요? '뇌가 현대에 적응했다'일까요, '뇌가 현대에 적응하지 못했다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "뇌가 현대에 적응했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "뇌가 현대에 적응하지 못했다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '뇌가 현대에 적응하지 못했다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '뇌가 현대에 적응하지 못했다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "If we give a bad presentation at work, we are unlikely to lose our job and thus risk starving to death.",
+      "model_translation": "회사에서 발표를 못했다고 해서 일자리를 잃고 굶어 죽을 위험에 놓일 일은 거의 없다",
+      "praise": "are unlikely to를 '~할 일은 거의 없다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "presentation",
+          "ko": "발표"
+        },
+        {
+          "en": "unlikely",
+          "ko": "~할 것 같지 않은"
+        },
+        {
+          "en": "lose",
+          "ko": "잃다"
+        },
+        {
+          "en": "job",
+          "ko": "일자리"
+        },
+        {
+          "en": "risk",
+          "ko": "위험을 무릅쓰다"
+        },
+        {
+          "en": "starving",
+          "ko": "굶는 것"
+        },
+        {
+          "en": "death",
+          "ko": "죽음"
+        },
+        {
+          "en": "If",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "give",
+          "ko": "주다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "bad",
+          "ko": "나쁜"
+        },
+        {
+          "en": "at",
+          "ko": "~에서"
+        },
+        {
+          "en": "work",
+          "ko": "일하다, 일"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "our",
+          "ko": "우리의"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "thus",
+          "ko": "그래서"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "are unlikely to lose our job → 일자리를 잃을 일은 거의 없다",
+          "check": [
+            "일자리",
+            "직장",
+            "잃",
+            "거의 없"
+          ],
+          "nudge": "are unlikely to lose our job이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "are unlikely to lose our job은 여기서 '일자리를 잃을 일은 거의 없다'예요."
+        },
+        {
+          "id": 2,
+          "text": "risk starving to death → 굶어 죽을 위험에 놓이다",
+          "check": [
+            "굶",
+            "죽을",
+            "위험"
+          ],
+          "nudge": "risk starving to death가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "risk starving to death는 여기서 '굶어 죽을 위험에 놓이다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "unlikely를 '~할 것 같다'로 뒤집음",
+          "signals": [
+            "잃을 것 같다",
+            "잃기 쉽다"
+          ],
+          "treatment": {
+            "message": "unlikely to는 그럴 것 같다는 뜻일까요? '일자리를 잃기 쉽다'일까요, '일자리를 잃을 일은 거의 없다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "일자리를 잃기 쉽다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "일자리를 잃을 일은 거의 없다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '일자리를 잃을 일은 거의 없다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '일자리를 잃을 일은 거의 없다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "But in the world we long ago evolved for, exclusion from the group could be a matter of life and death. Belonging was not merely a matter of safety but also of survival.",
+      "model_translation": "그러나 우리가 오래전 적응해 살아온 세계에서는 무리에서 밀려나는 일이 삶과 죽음의 문제일 수 있었다. 속해 있다는 것은 안전의 문제일 뿐 아니라 생존의 문제이기도 했다",
+      "praise": "not merely A but also B를 두 갈래로 살린 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "long ago",
+          "ko": "오래전"
+        },
+        {
+          "en": "evolved",
+          "ko": "진화했다"
+        },
+        {
+          "en": "exclusion",
+          "ko": "밀려남, 배제"
+        },
+        {
+          "en": "matter",
+          "ko": "문제"
+        },
+        {
+          "en": "life",
+          "ko": "삶"
+        },
+        {
+          "en": "Belonging",
+          "ko": "속해 있음"
+        },
+        {
+          "en": "merely",
+          "ko": "단지"
+        },
+        {
+          "en": "safety",
+          "ko": "안전"
+        },
+        {
+          "en": "survival",
+          "ko": "생존"
+        },
+        {
+          "en": "But",
+          "ko": "하지만"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "world",
+          "ko": "세계"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        },
+        {
+          "en": "group",
+          "ko": "무리"
+        },
+        {
+          "en": "could",
+          "ko": "~일까 (추측)"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "death",
+          "ko": "죽음"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "also",
+          "ko": "또한"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the world we long ago evolved for → 우리가 오래전 적응해 살아온 세계",
+          "check": [
+            "오래전",
+            "진화",
+            "적응",
+            "세계"
+          ],
+          "nudge": "the world we long ago evolved for가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the world we long ago evolved for는 여기서 '우리가 오래전 적응해 살아온 세계'예요."
+        },
+        {
+          "id": 2,
+          "text": "a matter of life and death → 삶과 죽음의 문제",
+          "check": [
+            "삶",
+            "죽음",
+            "생사",
+            "문제"
+          ],
+          "nudge": "a matter of life and death가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a matter of life and death는 여기서 '삶과 죽음의 문제'예요."
+        },
+        {
+          "id": 3,
+          "text": "not merely A but also B → A뿐 아니라 B도",
+          "check": [
+            "뿐 아니",
+            "뿐만",
+            "이기도"
+          ],
+          "nudge": "not merely A but also B가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "not merely A but also B는 여기서 'A뿐 아니라 B도'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Belonging을 '소지품'으로 해석",
+          "signals": [
+            "소지품",
+            "물건"
+          ],
+          "treatment": {
+            "message": "여기 Belonging은 무엇을 말할까요? '소지품'일까요, '무리에 속해 있다는 것'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "소지품",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "무리에 속해 있다는 것",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '무리에 속해 있다는 것'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '무리에 속해 있다는 것'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "evolved for를 '진화했다'로만 보고 for를 놓침",
+          "signals": [
+            "세계가 진화했다"
+          ],
+          "treatment": {
+            "message": "we evolved for the world는 누가 무엇에 맞추어 진화했다는 걸까요? '세계가 진화했다'일까요, '우리가 그 세계에 맞추어 진화했다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "세계가 진화했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "우리가 그 세계에 맞추어 진화했다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '우리가 그 세계에 맞추어 진화했다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '우리가 그 세계에 맞추어 진화했다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

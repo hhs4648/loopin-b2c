@@ -1,0 +1,915 @@
+{
+  "id": "moeui-2027-09-41-curious-nonbelief-1",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 41·42번 (1)",
+  "category": "리딩",
+  "topic_intro": "광고를 못 믿으면서도 궁금해지는 마음",
+  "sentence": "In a consumer research classic, Maloney proposed that the disbelief most people experience when encountering exaggerated product claims is often overwhelmed by a natural curiosity. When advertising information conflicts with existing beliefs, the resulting disagreement must be somehow resolved. This is often done by yielding to the message and trying out the product in an attempt to readjust personal attitudes toward the brand. In his study, a sample of housewives was exposed to advertisements for food products and then divided into two groups: those participants that found the ad claims to be believable and the others that thought they were hard to believe.",
+  "grammar_type": "장문독해_소비자연구",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 콜론으로 나뉘면",
+    "how": "콜론·and 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Maloney",
+      "ko": "맬로니",
+      "type": "person"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "In a consumer research classic, Maloney proposed that the disbelief most people experience when encountering exaggerated product claims is often overwhelmed by a natural curiosity.",
+      "model_translation": "소비자 연구의 고전에서 맬로니는, 과장된 제품 주장을 마주할 때 대부분의 사람이 느끼는 불신이 흔히 저절로 생기는 호기심에 눌린다고 말했다",
+      "praise": "긴 주어(the disbelief ~ claims) 뒤의 동사 is를 찾아낸 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "consumer",
+          "ko": "소비자"
+        },
+        {
+          "en": "research",
+          "ko": "연구"
+        },
+        {
+          "en": "classic",
+          "ko": "고전"
+        },
+        {
+          "en": "Maloney",
+          "ko": "맬로니(사람 이름)"
+        },
+        {
+          "en": "proposed",
+          "ko": "말했다, 내놓았다"
+        },
+        {
+          "en": "disbelief",
+          "ko": "믿지 않음"
+        },
+        {
+          "en": "experience",
+          "ko": "느끼다, 겪다"
+        },
+        {
+          "en": "encountering",
+          "ko": "마주하는 것"
+        },
+        {
+          "en": "exaggerated",
+          "ko": "과장된"
+        },
+        {
+          "en": "product",
+          "ko": "제품"
+        },
+        {
+          "en": "claims",
+          "ko": "주장"
+        },
+        {
+          "en": "overwhelmed",
+          "ko": "눌린"
+        },
+        {
+          "en": "natural",
+          "ko": "저절로 생기는"
+        },
+        {
+          "en": "curiosity",
+          "ko": "호기심"
+        },
+        {
+          "en": "In",
+          "ko": "~에서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "most",
+          "ko": "가장"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "often",
+          "ko": "자주"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the disbelief most people experience → 대부분의 사람이 느끼는 불신",
+          "check": [
+            "불신",
+            "못 믿",
+            "의심"
+          ],
+          "nudge": "the disbelief most people experience이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the disbelief most people experience은 여기서 '대부분의 사람이 느끼는 불신'이에요."
+        },
+        {
+          "id": 2,
+          "text": "exaggerated product claims → 과장된 제품 주장",
+          "check": [
+            "과장",
+            "부풀",
+            "주장",
+            "광고 문구"
+          ],
+          "nudge": "exaggerated product claims이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "exaggerated product claims은 여기서 '과장된 제품 주장'이에요."
+        },
+        {
+          "id": 3,
+          "text": "is overwhelmed by a natural curiosity → 저절로 생기는 호기심에 눌린다",
+          "check": [
+            "호기심",
+            "눌",
+            "압도",
+            "이긴"
+          ],
+          "nudge": "is overwhelmed by a natural curiosity가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "is overwhelmed by a natural curiosity는 여기서 '저절로 생기는 호기심에 눌린다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "disbelief 뒤 관계사 생략을 못 보고 끊음",
+          "signals": [
+            "불신. 대부분의 사람이 겪는다",
+            "불신이 겪는다"
+          ],
+          "treatment": {
+            "message": "most people experience는 앞의 무엇을 꾸밀까요? '불신이 사람들을 겪는다'일까요, '사람들이 느끼는 불신'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "불신이 사람들을 겪는다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사람들이 느끼는 불신",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사람들이 느끼는 불신'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사람들이 느끼는 불신'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "is overwhelmed를 능동으로 보고 '불신이 호기심을 누른다'로 뒤집음",
+          "signals": [
+            "불신이 호기심을 누",
+            "불신이 압도"
+          ],
+          "treatment": {
+            "message": "is overwhelmed by는 누르는 쪽일까요, 눌리는 쪽일까요? '불신이 호기심을 누른다'일까요, '불신이 호기심에 눌린다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "불신이 호기심을 누른다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "불신이 호기심에 눌린다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '불신이 호기심에 눌린다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '불신이 호기심에 눌린다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "When advertising information conflicts with existing beliefs, the resulting disagreement must be somehow resolved.",
+      "model_translation": "광고가 주는 정보가 이미 가진 믿음과 부딪히면, 그렇게 생긴 어긋남은 어떻게든 풀려야 한다",
+      "praise": "the resulting disagreement를 '그렇게 생긴 어긋남'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "advertising",
+          "ko": "광고"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "conflicts with",
+          "ko": "~와 부딪히다"
+        },
+        {
+          "en": "existing",
+          "ko": "이미 있는"
+        },
+        {
+          "en": "beliefs",
+          "ko": "믿음"
+        },
+        {
+          "en": "resulting",
+          "ko": "그 결과로 생긴"
+        },
+        {
+          "en": "disagreement",
+          "ko": "어긋남"
+        },
+        {
+          "en": "somehow",
+          "ko": "어떻게든"
+        },
+        {
+          "en": "resolved",
+          "ko": "풀린"
+        },
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "must",
+          "ko": "~해야 한다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "conflicts with existing beliefs → 이미 가진 믿음과 부딪히다",
+          "check": [
+            "부딪",
+            "충돌",
+            "믿음",
+            "기존"
+          ],
+          "nudge": "conflicts with existing beliefs가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "conflicts with existing beliefs는 여기서 '이미 가진 믿음과 부딪히다'예요."
+        },
+        {
+          "id": 2,
+          "text": "the resulting disagreement → 그렇게 생긴 어긋남",
+          "check": [
+            "어긋",
+            "불일치",
+            "생긴",
+            "갈등"
+          ],
+          "nudge": "the resulting disagreement이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the resulting disagreement은 여기서 '그렇게 생긴 어긋남'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "conflicts를 명사 '갈등들'로 보고 동사를 놓침",
+          "signals": [
+            "갈등들"
+          ],
+          "treatment": {
+            "message": "이 절의 동사는 무엇일까요? '정보의 갈등들'일까요, '정보가 부딪힌다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "정보의 갈등들",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "정보가 부딪힌다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '정보가 부딪힌다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '정보가 부딪힌다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "resulting을 '결과를 내는'으로 보고 방향을 뒤집음",
+          "signals": [
+            "결과를 내는 불일치"
+          ],
+          "treatment": {
+            "message": "resulting disagreement는 앞 일의 원인일까요, 결과일까요? '결과를 만드는 어긋남'일까요, '그 결과로 생긴 어긋남'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "결과를 만드는 어긋남",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그 결과로 생긴 어긋남",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그 결과로 생긴 어긋남'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그 결과로 생긴 어긋남'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "This is often done by yielding to the message and trying out the product in an attempt to readjust personal attitudes toward the brand.",
+      "model_translation": "이것은 흔히 그 메시지에 져 주고 제품을 한번 써 보면서, 그 상표에 대한 자기 태도를 다시 맞추려 하는 식으로 이루어진다",
+      "praise": "in an attempt to를 '~하려는 시도로'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "done",
+          "ko": "이루어진"
+        },
+        {
+          "en": "yielding to",
+          "ko": "~에 져 주는 것"
+        },
+        {
+          "en": "message",
+          "ko": "메시지"
+        },
+        {
+          "en": "trying out",
+          "ko": "한번 써 보는 것"
+        },
+        {
+          "en": "attempt",
+          "ko": "시도"
+        },
+        {
+          "en": "readjust",
+          "ko": "다시 맞추다"
+        },
+        {
+          "en": "personal",
+          "ko": "자기 자신의"
+        },
+        {
+          "en": "attitudes",
+          "ko": "태도"
+        },
+        {
+          "en": "brand",
+          "ko": "상표"
+        },
+        {
+          "en": "This",
+          "ko": "이"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "often",
+          "ko": "자주"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "product",
+          "ko": "제품"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "toward",
+          "ko": "~에 대한, ~쪽으로"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "by yielding to the message → 메시지에 져 주면서",
+          "check": [
+            "져",
+            "받아들",
+            "굴복",
+            "따르"
+          ],
+          "nudge": "by yielding to the message가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "by yielding to the message는 여기서 '메시지에 져 주면서'예요."
+        },
+        {
+          "id": 2,
+          "text": "trying out the product → 제품을 한번 써 보는 것",
+          "check": [
+            "써 보",
+            "시도",
+            "사용해"
+          ],
+          "nudge": "trying out the product이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "trying out the product은 여기서 '제품을 한번 써 보는 것'이에요."
+        },
+        {
+          "id": 3,
+          "text": "readjust personal attitudes → 자기 태도를 다시 맞추다",
+          "check": [
+            "태도",
+            "다시",
+            "조정",
+            "바꾸"
+          ],
+          "nudge": "readjust personal attitudes가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "readjust personal attitudes는 여기서 '자기 태도를 다시 맞추다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "yielding을 '수확량'으로 해석",
+          "signals": [
+            "수확",
+            "산출"
+          ],
+          "treatment": {
+            "message": "yield to the message는 무엇을 하는 걸까요? '메시지의 수확'일까요, '메시지에 져 주는 것'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "메시지의 수확",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "메시지에 져 주는 것",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '메시지에 져 주는 것'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '메시지에 져 주는 것'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "trying out을 '밖에서 시도하다'로 직역",
+          "signals": [
+            "밖에서 시도"
+          ],
+          "treatment": {
+            "message": "try out a product는 굳어진 표현이에요. '제품을 밖에서 시도한다'일까요, '제품을 한번 써 본다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "제품을 밖에서 시도한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "제품을 한번 써 본다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '제품을 한번 써 본다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '제품을 한번 써 본다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "In his study, a sample of housewives was exposed to advertisements for food products and then divided into two groups:",
+      "model_translation": "그의 연구에서 주부 표본 집단이 식품 광고를 보게 되었고, 그다음 두 무리로 나뉘었다",
+      "praise": "was exposed to를 '보게 되었다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "study",
+          "ko": "연구"
+        },
+        {
+          "en": "sample",
+          "ko": "표본"
+        },
+        {
+          "en": "housewives",
+          "ko": "주부"
+        },
+        {
+          "en": "exposed to",
+          "ko": "~을 접하게 된"
+        },
+        {
+          "en": "advertisements",
+          "ko": "광고"
+        },
+        {
+          "en": "food",
+          "ko": "식품"
+        },
+        {
+          "en": "divided into",
+          "ko": "~로 나뉜"
+        },
+        {
+          "en": "groups",
+          "ko": "무리"
+        },
+        {
+          "en": "In",
+          "ko": "~에서"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "products",
+          "ko": "제품"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "then",
+          "ko": "그때, 그러면"
+        },
+        {
+          "en": "two",
+          "ko": "둘"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "was exposed to advertisements → 광고를 보게 되었다",
+          "check": [
+            "광고",
+            "보게",
+            "노출",
+            "접하"
+          ],
+          "nudge": "was exposed to advertisements가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "was exposed to advertisements는 여기서 '광고를 보게 되었다'예요."
+        },
+        {
+          "id": 2,
+          "text": "divided into two groups → 두 무리로 나뉘었다",
+          "check": [
+            "두",
+            "나뉘",
+            "나누",
+            "무리",
+            "집단"
+          ],
+          "nudge": "divided into two groups가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "divided into two groups는 여기서 '두 무리로 나뉘었다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "was exposed를 능동으로 보고 '광고를 드러냈다'로 뒤집음",
+          "signals": [
+            "광고를 드러냈",
+            "노출시켰"
+          ],
+          "treatment": {
+            "message": "was exposed to는 보여 주는 쪽일까요, 보게 되는 쪽일까요? '주부들이 광고를 드러냈다'일까요, '주부들이 광고를 보게 되었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "주부들이 광고를 드러냈다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "주부들이 광고를 보게 되었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '주부들이 광고를 보게 되었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '주부들이 광고를 보게 되었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "those participants that found the ad claims to be believable and the others that thought they were hard to believe.",
+      "model_translation": "광고 주장이 믿을 만하다고 본 참가자들과, 믿기 어렵다고 생각한 나머지 사람들이다",
+      "praise": "found A to be B를 'A를 B라고 보다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "participants",
+          "ko": "참가자"
+        },
+        {
+          "en": "found",
+          "ko": "~라고 보았다"
+        },
+        {
+          "en": "ad",
+          "ko": "광고"
+        },
+        {
+          "en": "believable",
+          "ko": "믿을 만한"
+        },
+        {
+          "en": "others",
+          "ko": "나머지 사람들"
+        },
+        {
+          "en": "thought",
+          "ko": "생각했다"
+        },
+        {
+          "en": "hard",
+          "ko": "어려운"
+        },
+        {
+          "en": "believe",
+          "ko": "믿다"
+        },
+        {
+          "en": "those",
+          "ko": "저것들"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "claims",
+          "ko": "주장"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "were",
+          "ko": "~이었다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "found the ad claims to be believable → 광고 주장이 믿을 만하다고 보았다",
+          "check": [
+            "믿을 만",
+            "믿을 수 있",
+            "신뢰"
+          ],
+          "nudge": "found the ad claims to be believable가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "found the ad claims to be believable는 여기서 '광고 주장이 믿을 만하다고 보았다'예요."
+        },
+        {
+          "id": 2,
+          "text": "thought they were hard to believe → 믿기 어렵다고 생각했다",
+          "check": [
+            "믿기 어려",
+            "못 믿",
+            "믿기 힘"
+          ],
+          "nudge": "thought they were hard to believe가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "thought they were hard to believe는 여기서 '믿기 어렵다고 생각했다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "found를 '찾았다'로 보고 뜻을 흐림",
+          "signals": [
+            "찾았다"
+          ],
+          "treatment": {
+            "message": "found A to be B에서 found는 무엇일까요? '주장을 찾았다'일까요, '주장을 ~라고 보았다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "주장을 찾았다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "주장을 ~라고 보았다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '주장을 ~라고 보았다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '주장을 ~라고 보았다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "the others를 '다른 것들'로 보고 사람을 놓침",
+          "signals": [
+            "다른 것들"
+          ],
+          "treatment": {
+            "message": "the others는 앞의 무엇을 받을까요? '다른 것들'일까요, '나머지 참가자들'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "다른 것들",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "나머지 참가자들",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '나머지 참가자들'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '나머지 참가자들'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1455 @@
+{
+  "id": "moeui-2027-09-24-aging-boundaries",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 24번",
+  "category": "리딩",
+  "topic_intro": "나이의 경계가 허물어지던 시절",
+  "sentence": "The new views about and questions being asked about aging could be detected across society. \"Something strange is happening in America,\" wrote Marj Jackson Levin for the St. Louis Post-Dispatch in 1988, finding that what she called \"the former boundaries of age\" were being expanded or relaxed in many arenas. Whether it was fortysomething baseball players, midlife women having babies, or the oldest president in the nation's history, it did indeed appear that the preconceptions surrounding aging were weakening. As baby boomers entered midlife, the idea of oldness was being pushed back, and the expectations for what people should or should not be doing at a particular age broadened. Turning fifty had only recently been commonly viewed as the unofficial turning of the corner into one's senior years, but now that number did not automatically mean one could not start a new career or family. In a good number of cases, at least, age was becoming less significant, a clear victory for those lobbying for a less age-centric society.",
+  "grammar_type": "제목_사회논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 but·and로 두 갈래가 되면",
+    "how": "but·and·분사구 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "America",
+      "ko": "미국",
+      "type": "place"
+    },
+    {
+      "en": "Marj Jackson Levin",
+      "ko": "마지 잭슨 레빈",
+      "type": "person"
+    },
+    {
+      "en": "St. Louis Post-Dispatch",
+      "ko": "세인트루이스 포스트디스패치",
+      "type": "other"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "The new views about and questions being asked about aging could be detected across society.",
+      "model_translation": "나이 듦에 대한 새로운 시각과 새로 던져지던 물음들이 사회 곳곳에서 눈에 띄었다",
+      "praise": "questions being asked를 '던져지던 물음들'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "views",
+          "ko": "시각, 견해"
+        },
+        {
+          "en": "questions",
+          "ko": "물음"
+        },
+        {
+          "en": "asked",
+          "ko": "던져지는"
+        },
+        {
+          "en": "aging",
+          "ko": "나이 들어 감"
+        },
+        {
+          "en": "detected",
+          "ko": "눈에 띄는"
+        },
+        {
+          "en": "across",
+          "ko": "~ 곳곳에서"
+        },
+        {
+          "en": "society",
+          "ko": "사회"
+        },
+        {
+          "en": "The",
+          "ko": "그"
+        },
+        {
+          "en": "new",
+          "ko": "새로운"
+        },
+        {
+          "en": "about",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "being",
+          "ko": "~인 것"
+        },
+        {
+          "en": "could",
+          "ko": "~일까 (추측)"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "new views about aging → 나이 듦에 대한 새로운 시각",
+          "check": [
+            "나이",
+            "시각",
+            "관점",
+            "노화"
+          ],
+          "nudge": "new views about aging이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "new views about aging은 여기서 '나이 듦에 대한 새로운 시각'이에요."
+        },
+        {
+          "id": 2,
+          "text": "could be detected across society → 사회 곳곳에서 눈에 띄었다",
+          "check": [
+            "사회",
+            "곳곳",
+            "눈에",
+            "감지",
+            "보였"
+          ],
+          "nudge": "could be detected across society가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "could be detected across society는 여기서 '사회 곳곳에서 눈에 띄었다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "being asked를 문장의 동사로 보고 끊음",
+          "signals": [
+            "질문이 물어졌다",
+            "질문을 물었다"
+          ],
+          "treatment": {
+            "message": "being asked는 앞의 무엇을 꾸밀까요? '질문이 물어졌다'일까요, '던져지고 있던 질문들'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "질문이 물어졌다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "던져지고 있던 질문들",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '던져지고 있던 질문들'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '던져지고 있던 질문들'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "aging을 '노화 현상'으로만 두고 흐림",
+          "signals": [
+            "노화 현상만"
+          ],
+          "treatment": {
+            "message": "여기 aging은 사람이 나이 드는 일을 말해요. '노화 현상'일까요, '나이 들어 감'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "노화 현상",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "나이 들어 감",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '나이 들어 감'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '나이 들어 감'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "\"Something strange is happening in America,\" wrote Marj Jackson Levin for the St. Louis Post-Dispatch in 1988,",
+      "model_translation": "\"미국에서 이상한 일이 벌어지고 있다.\" 1988년 마지 잭슨 레빈이 세인트루이스 포스트디스패치에 그렇게 썼다",
+      "praise": "인용 뒤의 도치(wrote + 사람)를 알아본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Something",
+          "ko": "무언가"
+        },
+        {
+          "en": "strange",
+          "ko": "이상한"
+        },
+        {
+          "en": "happening",
+          "ko": "벌어지고 있는"
+        },
+        {
+          "en": "America",
+          "ko": "미국(지명)"
+        },
+        {
+          "en": "wrote",
+          "ko": "썼다"
+        },
+        {
+          "en": "Marj Jackson Levin",
+          "ko": "마지 잭슨 레빈(사람 이름)"
+        },
+        {
+          "en": "St. Louis Post-Dispatch",
+          "ko": "세인트루이스 포스트디스패치(신문 이름)"
+        },
+        {
+          "en": "Levin",
+          "ko": "마지 잭슨 레빈(이름)"
+        },
+        {
+          "en": "Dispatch",
+          "ko": "세인트루이스 포스트디스패치(이름)"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "1988",
+          "ko": "1988년"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "something strange is happening → 이상한 일이 벌어지고 있다",
+          "check": [
+            "이상",
+            "벌어지",
+            "일어나"
+          ],
+          "nudge": "something strange is happening이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "something strange is happening은 여기서 '이상한 일이 벌어지고 있다'예요."
+        },
+        {
+          "id": 2,
+          "text": "wrote Marj Jackson Levin → 마지 잭슨 레빈이 썼다",
+          "check": [
+            "썼",
+            "적었",
+            "기고"
+          ],
+          "nudge": "wrote Marj Jackson Levin가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "wrote Marj Jackson Levin는 여기서 '마지 잭슨 레빈이 썼다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "도치를 못 보고 wrote의 주어를 앞 인용으로 봄",
+          "signals": [
+            "이상한 일이 썼다"
+          ],
+          "treatment": {
+            "message": "wrote 뒤에 온 것이 주어예요. '이상한 일이 썼다'일까요, '레빈이 썼다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "이상한 일이 썼다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "레빈이 썼다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '레빈이 썼다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '레빈이 썼다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "finding that what she called \"the former boundaries of age\" were being expanded or relaxed in many arenas.",
+      "model_translation": "그녀가 \"예전의 나이 경계\"라고 부른 것이 여러 영역에서 넓어지거나 느슨해지고 있음을 확인하면서 말이다",
+      "praise": "what she called를 통째로 주어로 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "finding",
+          "ko": "확인하면서"
+        },
+        {
+          "en": "called",
+          "ko": "불렀다"
+        },
+        {
+          "en": "former",
+          "ko": "예전의"
+        },
+        {
+          "en": "boundaries",
+          "ko": "경계"
+        },
+        {
+          "en": "age",
+          "ko": "나이"
+        },
+        {
+          "en": "expanded",
+          "ko": "넓어진"
+        },
+        {
+          "en": "relaxed",
+          "ko": "느슨해진"
+        },
+        {
+          "en": "arenas",
+          "ko": "영역, 무대"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "what",
+          "ko": "무엇"
+        },
+        {
+          "en": "she",
+          "ko": "그녀는"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "were",
+          "ko": "~이었다"
+        },
+        {
+          "en": "being",
+          "ko": "~인 것"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "many",
+          "ko": "많은"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "what she called ~ → 그녀가 ~라고 부른 것",
+          "check": [
+            "부른",
+            "일컫",
+            "라고 한"
+          ],
+          "nudge": "what she called ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "what she called ~은 여기서 '그녀가 ~라고 부른 것'이에요."
+        },
+        {
+          "id": 2,
+          "text": "were being expanded or relaxed → 넓어지거나 느슨해지고 있었다",
+          "check": [
+            "넓어",
+            "확장",
+            "느슨",
+            "완화"
+          ],
+          "nudge": "were being expanded or relaxed가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "were being expanded or relaxed는 여기서 '넓어지거나 느슨해지고 있었다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "arenas를 '경기장'으로만 보고 흐림",
+          "signals": [
+            "경기장"
+          ],
+          "treatment": {
+            "message": "in many arenas는 어디를 말할까요? '많은 경기장에서'일까요, '여러 영역에서'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "많은 경기장에서",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "여러 영역에서",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '여러 영역에서'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '여러 영역에서'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "relaxed를 '쉬었다'로 해석",
+          "signals": [
+            "쉬었",
+            "휴식"
+          ],
+          "treatment": {
+            "message": "경계가 relaxed된다면 무엇일까요? '경계가 쉬었다'일까요, '경계가 느슨해졌다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "경계가 쉬었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "경계가 느슨해졌다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '경계가 느슨해졌다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '경계가 느슨해졌다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Whether it was fortysomething baseball players, midlife women having babies, or the oldest president in the nation's history, it did indeed appear that the preconceptions surrounding aging were weakening.",
+      "model_translation": "마흔 몇 살의 야구 선수든, 중년에 아이를 낳는 여성이든, 나라 역사상 가장 나이 많은 대통령이든, 나이 듦을 둘러싼 선입견이 정말로 약해지고 있는 듯 보였다",
+      "praise": "Whether A, B, or C를 셋 다 살린 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Whether",
+          "ko": "~이든"
+        },
+        {
+          "en": "fortysomething",
+          "ko": "마흔 몇 살의"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "players",
+          "ko": "선수"
+        },
+        {
+          "en": "midlife",
+          "ko": "중년의"
+        },
+        {
+          "en": "women",
+          "ko": "여성"
+        },
+        {
+          "en": "babies",
+          "ko": "아기"
+        },
+        {
+          "en": "oldest",
+          "ko": "가장 나이 많은"
+        },
+        {
+          "en": "president",
+          "ko": "대통령"
+        },
+        {
+          "en": "nation's",
+          "ko": "나라의"
+        },
+        {
+          "en": "history",
+          "ko": "역사"
+        },
+        {
+          "en": "indeed",
+          "ko": "정말로"
+        },
+        {
+          "en": "appear",
+          "ko": "~인 듯 보이다"
+        },
+        {
+          "en": "preconceptions",
+          "ko": "선입견"
+        },
+        {
+          "en": "surrounding",
+          "ko": "둘러싼"
+        },
+        {
+          "en": "weakening",
+          "ko": "약해지는"
+        },
+        {
+          "en": "nation's",
+          "ko": "나라의"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "having",
+          "ko": "가지는 것"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "did",
+          "ko": "했다"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "aging",
+          "ko": "나이 들어 감"
+        },
+        {
+          "en": "were",
+          "ko": "~이었다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "whether A, B, or C → A든 B든 C든",
+          "check": [
+            "이든",
+            "든지",
+            "간에"
+          ],
+          "nudge": "whether A, B, or C가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "whether A, B, or C는 여기서 'A든 B든 C든'이에요."
+        },
+        {
+          "id": 2,
+          "text": "it did indeed appear that ~ → 정말로 ~인 듯 보였다",
+          "check": [
+            "정말",
+            "실제로",
+            "보였",
+            "듯"
+          ],
+          "nudge": "it did indeed appear that ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "it did indeed appear that ~은 여기서 '정말로 ~인 듯 보였다'예요."
+        },
+        {
+          "id": 3,
+          "text": "the preconceptions surrounding aging → 나이 듦을 둘러싼 선입견",
+          "check": [
+            "선입견",
+            "편견",
+            "통념",
+            "둘러싼"
+          ],
+          "nudge": "the preconceptions surrounding aging이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the preconceptions surrounding aging은 여기서 '나이 듦을 둘러싼 선입견'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "did appear에서 did를 과거로만 보고 강조를 놓침",
+          "signals": [
+            "나타나는 것을 했다"
+          ],
+          "treatment": {
+            "message": "appear 앞의 did는 무엇을 하고 있을까요? '보이는 것을 했다'일까요, '정말로 그렇게 보였다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "보이는 것을 했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "정말로 그렇게 보였다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '정말로 그렇게 보였다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '정말로 그렇게 보였다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "fortysomething을 '마흔 가지'로 해석",
+          "signals": [
+            "마흔 가지",
+            "40가지"
+          ],
+          "treatment": {
+            "message": "fortysomething baseball players는 어떤 선수일까요? '마흔 가지 야구 선수'일까요, '마흔 몇 살의 야구 선수'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "마흔 가지 야구 선수",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "마흔 몇 살의 야구 선수",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '마흔 몇 살의 야구 선수'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '마흔 몇 살의 야구 선수'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "As baby boomers entered midlife, the idea of oldness was being pushed back, and the expectations for what people should or should not be doing at a particular age broadened.",
+      "model_translation": "베이비붐 세대가 중년에 들어서면서 늙음이라는 생각은 뒤로 밀려나고 있었고, 어느 나이에 무엇을 해야 하고 하지 말아야 하는지에 대한 기대는 넓어졌다",
+      "praise": "긴 주어 뒤의 동사 broadened를 정확히 찾은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "baby boomers",
+          "ko": "베이비붐 세대"
+        },
+        {
+          "en": "entered",
+          "ko": "들어섰다"
+        },
+        {
+          "en": "idea",
+          "ko": "생각"
+        },
+        {
+          "en": "oldness",
+          "ko": "늙음"
+        },
+        {
+          "en": "pushed back",
+          "ko": "뒤로 밀린"
+        },
+        {
+          "en": "expectations",
+          "ko": "기대"
+        },
+        {
+          "en": "particular",
+          "ko": "특정한"
+        },
+        {
+          "en": "broadened",
+          "ko": "넓어졌다"
+        },
+        {
+          "en": "As",
+          "ko": "~로서"
+        },
+        {
+          "en": "midlife",
+          "ko": "중년의"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "being",
+          "ko": "~인 것"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "what",
+          "ko": "무엇"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "should",
+          "ko": "~해야 한다"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        },
+        {
+          "en": "doing",
+          "ko": "하는 것"
+        },
+        {
+          "en": "at",
+          "ko": "~에서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "age",
+          "ko": "나이"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "was being pushed back → 뒤로 밀려나고 있었다",
+          "check": [
+            "밀려",
+            "뒤로",
+            "늦춰"
+          ],
+          "nudge": "was being pushed back이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "was being pushed back은 여기서 '뒤로 밀려나고 있었다'예요."
+        },
+        {
+          "id": 2,
+          "text": "the expectations for what people should be doing → 사람들이 무엇을 해야 하는지에 대한 기대",
+          "check": [
+            "기대",
+            "해야",
+            "통념"
+          ],
+          "nudge": "the expectations for what people should be doing이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the expectations for what people should be doing은 여기서 '사람들이 무엇을 해야 하는지에 대한 기대'예요."
+        },
+        {
+          "id": 3,
+          "text": "broadened → 넓어졌다",
+          "check": [
+            "넓어",
+            "확대",
+            "커졌"
+          ],
+          "nudge": "broadened이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "broadened은 여기서 '넓어졌다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "긴 주어에 밀려 broadened를 놓치고 문장을 끊음",
+          "signals": [
+            "기대이다.",
+            "기대가 있었다."
+          ],
+          "treatment": {
+            "message": "the expectations에 걸리는 동사는 무엇일까요? '~에 대한 기대가 있었다'일까요, '~에 대한 기대가 넓어졌다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "~에 대한 기대가 있었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~에 대한 기대가 넓어졌다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~에 대한 기대가 넓어졌다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~에 대한 기대가 넓어졌다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "pushed back을 '되밀렸다(반발)'로 해석",
+          "signals": [
+            "반발",
+            "저항"
+          ],
+          "treatment": {
+            "message": "the idea of oldness was pushed back은 무엇일까요? '반발을 샀다'일까요, '뒤로 미뤄졌다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "반발을 샀다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "뒤로 미뤄졌다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '뒤로 미뤄졌다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '뒤로 미뤄졌다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Turning fifty had only recently been commonly viewed as the unofficial turning of the corner into one's senior years,",
+      "model_translation": "쉰 살이 되는 것은 얼마 전까지만 해도 노년으로 접어드는 비공식적인 모퉁이로 흔히 여겨졌다",
+      "praise": "turning of the corner를 '접어드는 모퉁이'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Turning",
+          "ko": "~이 되는 것"
+        },
+        {
+          "en": "fifty",
+          "ko": "쉰, 50"
+        },
+        {
+          "en": "recently",
+          "ko": "최근에"
+        },
+        {
+          "en": "commonly",
+          "ko": "흔히"
+        },
+        {
+          "en": "viewed as",
+          "ko": "~로 여겨진"
+        },
+        {
+          "en": "unofficial",
+          "ko": "비공식적인"
+        },
+        {
+          "en": "corner",
+          "ko": "모퉁이"
+        },
+        {
+          "en": "senior years",
+          "ko": "노년"
+        },
+        {
+          "en": "one's",
+          "ko": "하나의"
+        },
+        {
+          "en": "had",
+          "ko": "가지고 있었다"
+        },
+        {
+          "en": "only",
+          "ko": "오직"
+        },
+        {
+          "en": "been",
+          "ko": "~이었다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "into",
+          "ko": "~ 안으로"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "turning fifty → 쉰 살이 되는 것 (주어)",
+          "check": [
+            "쉰",
+            "50",
+            "오십"
+          ],
+          "nudge": "turning fifty이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "turning fifty은 여기서 '쉰 살이 되는 것 (주어)'예요."
+        },
+        {
+          "id": 2,
+          "text": "had only recently been viewed as ~ → 얼마 전까지만 해도 ~로 여겨졌다",
+          "check": [
+            "얼마 전",
+            "최근",
+            "여겨"
+          ],
+          "nudge": "had only recently been viewed as ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "had only recently been viewed as ~는 여기서 '얼마 전까지만 해도 ~로 여겨졌다'예요."
+        },
+        {
+          "id": 3,
+          "text": "into one's senior years → 노년으로 접어드는",
+          "check": [
+            "노년",
+            "황혼",
+            "말년"
+          ],
+          "nudge": "into one's senior years가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "into one's senior years는 여기서 '노년으로 접어드는'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Turning fifty를 '쉰 번 도는 것'으로 해석",
+          "signals": [
+            "쉰 번",
+            "50번 돌"
+          ],
+          "treatment": {
+            "message": "turn fifty는 무슨 뜻일까요? '쉰 번 돌기'일까요, '쉰 살이 되는 것'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "쉰 번 돌기",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "쉰 살이 되는 것",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '쉰 살이 되는 것'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '쉰 살이 되는 것'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "only recently를 '최근에야 비로소'로 뒤집어 시점을 흐림",
+          "signals": [
+            "최근에야 비로소 여겨"
+          ],
+          "treatment": {
+            "message": "had only recently been viewed는 지금도 그렇다는 뜻일까요? '최근에야 그렇게 보기 시작했다'일까요, '얼마 전까지만 해도 그렇게 봤다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "최근에야 그렇게 보기 시작했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "얼마 전까지만 해도 그렇게 봤다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '얼마 전까지만 해도 그렇게 봤다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '얼마 전까지만 해도 그렇게 봤다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "but now that number did not automatically mean one could not start a new career or family.",
+      "model_translation": "그러나 이제 그 숫자가 곧 새 일이나 새 가정을 시작할 수 없다는 뜻은 아니게 되었다",
+      "praise": "이중부정을 정확히 풀어낸 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "number",
+          "ko": "숫자"
+        },
+        {
+          "en": "automatically",
+          "ko": "곧바로, 저절로"
+        },
+        {
+          "en": "mean",
+          "ko": "뜻하다"
+        },
+        {
+          "en": "career",
+          "ko": "일, 경력"
+        },
+        {
+          "en": "family",
+          "ko": "가정"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "now",
+          "ko": "지금"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "did",
+          "ko": "했다"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "one",
+          "ko": "하나"
+        },
+        {
+          "en": "could",
+          "ko": "~일까 (추측)"
+        },
+        {
+          "en": "start",
+          "ko": "시작하다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "new",
+          "ko": "새로운"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "did not automatically mean ~ → 곧 ~라는 뜻은 아니었다",
+          "check": [
+            "뜻은 아니",
+            "의미하지",
+            "곧바로"
+          ],
+          "nudge": "did not automatically mean ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "did not automatically mean ~은 여기서 '곧 ~라는 뜻은 아니었다'예요."
+        },
+        {
+          "id": 2,
+          "text": "could not start a new career or family → 새 일이나 가정을 시작할 수 없다",
+          "check": [
+            "새 일",
+            "직업",
+            "경력",
+            "가정",
+            "가족"
+          ],
+          "nudge": "could not start a new career or family이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "could not start a new career or family은 여기서 '새 일이나 가정을 시작할 수 없다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "이중부정을 놓치고 '시작할 수 없다는 뜻이다'로 해석",
+          "signals": [
+            "시작할 수 없다는 뜻이다"
+          ],
+          "treatment": {
+            "message": "did not mean이 부정하는 것은 무엇일까요? '시작할 수 없다는 뜻이었다'일까요, '시작할 수 없다는 뜻은 아니었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "시작할 수 없다는 뜻이었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "시작할 수 없다는 뜻은 아니었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '시작할 수 없다는 뜻은 아니었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '시작할 수 없다는 뜻은 아니었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "In a good number of cases, at least, age was becoming less significant, a clear victory for those lobbying for a less age-centric society.",
+      "model_translation": "적어도 꽤 많은 경우에 나이는 덜 중요해지고 있었고, 그것은 나이 중심이 덜한 사회를 위해 애쓰던 사람들에게 뚜렷한 승리였다",
+      "praise": "뒤에 붙은 a clear victory를 앞 내용의 풀이로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "cases",
+          "ko": "경우"
+        },
+        {
+          "en": "at least",
+          "ko": "적어도"
+        },
+        {
+          "en": "becoming",
+          "ko": "~이 되어 가는"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "significant",
+          "ko": "중요한"
+        },
+        {
+          "en": "clear",
+          "ko": "뚜렷한"
+        },
+        {
+          "en": "victory",
+          "ko": "승리"
+        },
+        {
+          "en": "lobbying for",
+          "ko": "~을 위해 애쓰는"
+        },
+        {
+          "en": "age-centric",
+          "ko": "나이 중심의"
+        },
+        {
+          "en": "In",
+          "ko": "~에서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "good",
+          "ko": "좋은"
+        },
+        {
+          "en": "number",
+          "ko": "숫자"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "age",
+          "ko": "나이"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "those",
+          "ko": "저것들"
+        },
+        {
+          "en": "society",
+          "ko": "사회"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "in a good number of cases → 꽤 많은 경우에",
+          "check": [
+            "꽤 많",
+            "상당",
+            "많은 경우"
+          ],
+          "nudge": "in a good number of cases가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "in a good number of cases는 여기서 '꽤 많은 경우에'예요."
+        },
+        {
+          "id": 2,
+          "text": "age was becoming less significant → 나이가 덜 중요해지고 있었다",
+          "check": [
+            "나이",
+            "덜 중요",
+            "중요하지"
+          ],
+          "nudge": "age was becoming less significant가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "age was becoming less significant는 여기서 '나이가 덜 중요해지고 있었다'예요."
+        },
+        {
+          "id": 3,
+          "text": "those lobbying for a less age-centric society → 나이 중심이 덜한 사회를 위해 애쓰던 사람들",
+          "check": [
+            "나이 중심",
+            "사회",
+            "애쓰",
+            "운동"
+          ],
+          "nudge": "those lobbying for a less age-centric society가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "those lobbying for a less age-centric society는 여기서 '나이 중심이 덜한 사회를 위해 애쓰던 사람들'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "a good number of를 '좋은 숫자'로 직역",
+          "signals": [
+            "좋은 숫자"
+          ],
+          "treatment": {
+            "message": "a good number of cases는 얼마나 될까요? '좋은 숫자의 경우'일까요, '꽤 많은 경우'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "좋은 숫자의 경우",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "꽤 많은 경우",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '꽤 많은 경우'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '꽤 많은 경우'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "a clear victory를 새 문장으로 보고 앞과 끊음",
+          "signals": [
+            "뚜렷한 승리이다."
+          ],
+          "treatment": {
+            "message": "a clear victory는 앞의 무엇을 다시 말한 걸까요? '따로 떨어진 문장'일까요, '나이가 덜 중요해진 일을 두고 한 말'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "따로 떨어진 문장",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "나이가 덜 중요해진 일을 두고 한 말",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '나이가 덜 중요해진 일을 두고 한 말'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '나이가 덜 중요해진 일을 두고 한 말'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

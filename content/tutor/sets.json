@@ -15,6 +15,19 @@
           "tag": "기출"
         }
       ]
+    },
+    {
+      "id": "moeui",
+      "title": "모의고사",
+      "subtitle": "전국연합학력평가 · 모의평가",
+      "collections": [
+        {
+          "id": "moeui-2027-09",
+          "title": "2027년 9월 모의고사",
+          "subtitle": "2027년 9월 고3 전국연합학력평가 영어",
+          "tag": "모의"
+        }
+      ]
     }
   ],
   "sets": [
@@ -250,6 +263,222 @@
       "subtitle": "장문 독해 — 야구로 이어진 할아버지와 손자",
       "lessons": [
         "suneung-43-baseball-card-2"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-18",
+      "collection": "moeui-2027-09",
+      "title": "18번 문제",
+      "subtitle": "글의 목적 — 졸업식 축사를 정중히 거절하는 편지",
+      "lessons": [
+        "moeui-2027-09-18-decline-speech"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-19",
+      "collection": "moeui-2027-09",
+      "title": "19번 문제",
+      "subtitle": "심경 변화 — 다툰 친구와 화해하는 아침",
+      "lessons": [
+        "moeui-2027-09-19-katie-sarah"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-20",
+      "collection": "moeui-2027-09",
+      "title": "20번 문제",
+      "subtitle": "필자의 주장 — 평생 학습은 선택이 아니다",
+      "lessons": [
+        "moeui-2027-09-20-lifelong-learning"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-21",
+      "collection": "moeui-2027-09",
+      "title": "21번 문제",
+      "subtitle": "함축 의미 — 자동완성은 사회의 거울",
+      "lessons": [
+        "moeui-2027-09-21-autocomplete-mirror"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-22",
+      "collection": "moeui-2027-09",
+      "title": "22번 문제",
+      "subtitle": "요지 — 어디에 앉느냐가 배움을 바꾼다",
+      "lessons": [
+        "moeui-2027-09-22-front-row"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-23",
+      "collection": "moeui-2027-09",
+      "title": "23번 문제",
+      "subtitle": "주제 — 도파민은 쾌락이 아니라 기대의 물질",
+      "lessons": [
+        "moeui-2027-09-23-dopamine"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-24",
+      "collection": "moeui-2027-09",
+      "title": "24번 문제",
+      "subtitle": "제목 — 나이의 경계가 허물어지던 시절",
+      "lessons": [
+        "moeui-2027-09-24-aging-boundaries"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-26",
+      "collection": "moeui-2027-09",
+      "title": "26번 문제",
+      "subtitle": "내용 일치 — 애니메이션 감독 척 존스",
+      "lessons": [
+        "moeui-2027-09-26-chuck-jones"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-29",
+      "collection": "moeui-2027-09",
+      "title": "29번 문제",
+      "subtitle": "어법 — 좋은 지도자가 갖춘 공감 능력",
+      "lessons": [
+        "moeui-2027-09-29-empathy-leader"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-30",
+      "collection": "moeui-2027-09",
+      "title": "30번 문제",
+      "subtitle": "어휘 — 정원의 해충을 없애려 들지 말라",
+      "lessons": [
+        "moeui-2027-09-30-garden-pests"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-31",
+      "collection": "moeui-2027-09",
+      "title": "31번 문제",
+      "subtitle": "빈칸 추론 — 남 앞에 서면 왜 떨리는가",
+      "lessons": [
+        "moeui-2027-09-31-glossophobia"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-32",
+      "collection": "moeui-2027-09",
+      "title": "32번 문제",
+      "subtitle": "빈칸 추론 — 왜 스스로 간지럽히면 안 간지러운가",
+      "lessons": [
+        "moeui-2027-09-32-tickle-surprise"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-33",
+      "collection": "moeui-2027-09",
+      "title": "33번 문제",
+      "subtitle": "빈칸 추론 — 글로 풍경을 그리는 발자크의 방법",
+      "lessons": [
+        "moeui-2027-09-33-balzac-description"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-34",
+      "collection": "moeui-2027-09",
+      "title": "34번 문제",
+      "subtitle": "빈칸 추론 — 농담은 협곡 건너뛰기",
+      "lessons": [
+        "moeui-2027-09-34-joke-canyon"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-35",
+      "collection": "moeui-2027-09",
+      "title": "35번 문제",
+      "subtitle": "무관한 문장 — 관광객이 보는 도시는 왜 몇 곳뿐인가",
+      "lessons": [
+        "moeui-2027-09-35-tourist-selection"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-36",
+      "collection": "moeui-2027-09",
+      "title": "36번 문제",
+      "subtitle": "글의 순서 — 말과 보상이 어긋날 때",
+      "lessons": [
+        "moeui-2027-09-36-mixed-signals"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-37",
+      "collection": "moeui-2027-09",
+      "title": "37번 문제",
+      "subtitle": "글의 순서 — 마흔 개 강에서 시작된 양식 연어",
+      "lessons": [
+        "moeui-2027-09-37-salmon-breeding"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-38",
+      "collection": "moeui-2027-09",
+      "title": "38번 문제",
+      "subtitle": "문장 삽입 — 시민이 참여하는 과학과 행정",
+      "lessons": [
+        "moeui-2027-09-38-citizen-science"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-39",
+      "collection": "moeui-2027-09",
+      "title": "39번 문제",
+      "subtitle": "문장 삽입 — 음악에서 되풀이와 변화의 균형",
+      "lessons": [
+        "moeui-2027-09-39-music-attention"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-40",
+      "collection": "moeui-2027-09",
+      "title": "40번 문제",
+      "subtitle": "요약문 — 무대 조명은 밝히기에서 골라 보이기로",
+      "lessons": [
+        "moeui-2027-09-40-selective-visibility"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-41-1",
+      "collection": "moeui-2027-09",
+      "title": "41·42번 (1)",
+      "subtitle": "장문 독해 — 광고를 못 믿으면서도 궁금해지는 마음",
+      "lessons": [
+        "moeui-2027-09-41-curious-nonbelief-1"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-41-2",
+      "collection": "moeui-2027-09",
+      "title": "41·42번 (2)",
+      "subtitle": "장문 독해 — 못 믿지만 궁금한 사람이 더 써 본다",
+      "lessons": [
+        "moeui-2027-09-41-curious-nonbelief-2"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-43-1",
+      "collection": "moeui-2027-09",
+      "title": "43~45번 (1)",
+      "subtitle": "장문 독해 — 강아지 산책이 짐처럼 느껴지던 때",
+      "lessons": [
+        "moeui-2027-09-43-mickey-walk-1"
+      ]
+    },
+    {
+      "id": "moeui-2027-09-43-2",
+      "collection": "moeui-2027-09",
+      "title": "43~45번 (2)",
+      "subtitle": "장문 독해 — 공원에서 만난 친구, 달라진 마음",
+      "lessons": [
+        "moeui-2027-09-43-mickey-walk-2"
       ]
     }
   ]

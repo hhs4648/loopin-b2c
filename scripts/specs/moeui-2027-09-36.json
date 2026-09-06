@@ -1,0 +1,153 @@
+{
+  "id": "moeui-2027-09-36-mixed-signals",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 36번",
+  "category": "리딩",
+  "topic_intro": "말과 보상이 어긋날 때 직원이 받는 신호",
+  "sentence": "Our choices and actions send messages to others about our values. Consider a manager who communicates to her employees in a call center that \"customer care is the most important thing for our company.\" That's a signal to others regarding values. Now, imagine that the manager sets the incentives such that employees are paid by the number of calls they answer. This incentive sends a very different signal about what the manager is looking for: it's about being fast, which comes at the expense of quality of care. Such mixed signals leave the employees confused about the manager's values and expectations. This mixed signals problem is channeled into a simple question: what should be rewarded? In many cases, performance is multidimensional, but compensation is only given to one aspect of performance, typically the one that is easiest to measure.",
+  "grammar_type": "글의순서_경영논설",
+  "split_rule": {
+    "when": "한 문장이 25단어를 넘거나 콜론으로 나뉘면",
+    "how": "콜론·but 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "text": "Our choices and actions send messages to others about our values. Consider a manager who communicates to her employees in a call center that \"customer care is the most important thing for our company.\"",
+      "ko": "우리의 선택과 행동은 우리가 무엇을 중히 여기는지에 대한 메시지를 남에게 보낸다. 콜센터에서 직원들에게 \"우리 회사에는 고객 응대가 가장 중요하다\"고 말하는 관리자를 떠올려 보라",
+      "praise": "communicates ~ that절을 멀리서 이어 준 거 정말 잘했어요.",
+      "points": [
+        { "en": "send messages about our values", "sub": "가", "top": "는", "answer": "우리가 중히 여기는 것에 대한 메시지를 보낸다", "check": ["가치", "중히", "메시지", "신호"] },
+        { "en": "communicates to her employees that ~", "sub": "가", "top": "는", "answer": "직원들에게 ~라고 말하다", "check": ["직원", "말한", "전한"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "values를 '값'으로만 보고 흐림", "signals": ["값어치", "가격"], "ask": "our values는 무엇을 말할까요?", "wrong": "우리의 값", "right": "우리가 중히 여기는 것" },
+        { "id": "E2", "detect": "Consider를 '고려된'으로 보고 명령문을 놓침", "signals": ["고려된 관리자"], "ask": "문장 앞의 Consider는 무엇일까요?", "wrong": "고려된 관리자", "right": "관리자를 떠올려 보라" }
+      ],
+      "glosses": [
+        ["choices", "선택"],
+        ["actions", "행동"],
+        ["messages", "메시지"],
+        ["values", "중히 여기는 것, 가치"],
+        ["Consider", "떠올려 보라"],
+        ["manager", "관리자"],
+        ["communicates", "말하다, 전하다"],
+        ["employees", "직원"],
+        ["call center", "콜센터"],
+        ["customer care", "고객 응대"],
+        ["company", "회사"]
+      ]
+    },
+    {
+      "text": "That's a signal to others regarding values. Now, imagine that the manager sets the incentives such that employees are paid by the number of calls they answer.",
+      "ko": "그것은 무엇을 중히 여기는지에 대해 남에게 보내는 신호다. 이제 그 관리자가, 직원이 받은 전화 수에 따라 돈을 받도록 성과급을 짠다고 생각해 보라",
+      "praise": "such that ~ 를 '~하도록'으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "sets the incentives such that ~", "sub": "가", "top": "는", "answer": "~하도록 성과급을 짜다", "check": ["성과급", "보상", "짜", "정한"] },
+        { "en": "are paid by the number of calls they answer", "sub": "이", "top": "은", "answer": "받은 전화 수에 따라 돈을 받는다", "check": ["전화", "수", "받은 만큼", "지급"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "are paid를 능동으로 보고 '직원이 지불한다'로 뒤집음", "signals": ["직원이 지불", "직원이 낸다"], "ask": "are paid는 주는 쪽일까요, 받는 쪽일까요?", "wrong": "직원이 지불한다", "right": "직원이 돈을 받는다" },
+        { "id": "E2", "detect": "regarding을 '존경하는'으로 해석", "signals": ["존경"], "ask": "regarding values는 무엇을 말할까요?", "wrong": "가치를 존경하며", "right": "가치에 대해" }
+      ],
+      "glosses": [
+        ["signal", "신호"],
+        ["regarding", "~에 대해"],
+        ["imagine", "생각해 보라"],
+        ["sets", "짜다, 정하다"],
+        ["incentives", "성과급"],
+        ["such that", "~하도록"],
+        ["paid", "돈을 받는"],
+        ["number", "수"],
+        ["calls", "전화"],
+        ["answer", "받다, 응답하다"]
+      ]
+    },
+    {
+      "text": "This incentive sends a very different signal about what the manager is looking for: it's about being fast, which comes at the expense of quality of care.",
+      "ko": "이 성과급은 관리자가 무엇을 바라는지에 대해 아주 다른 신호를 보낸다. 그것은 빠른 것에 대한 이야기이고, 그 빠름은 응대의 질을 대가로 치르고 얻는 것이다",
+      "praise": "at the expense of를 '~을 대가로'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "what the manager is looking for", "sub": "이", "top": "은", "answer": "관리자가 바라는 것", "check": ["바라", "찾는", "원하는"] },
+        { "en": "comes at the expense of quality of care", "sub": "가", "top": "는", "answer": "응대의 질을 대가로 치른다", "check": ["질", "희생", "대가", "잃"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "at the expense of를 '~의 비용으로'로만 보고 흐림", "signals": ["비용으로"], "ask": "at the expense of A는 A가 어떻게 된다는 뜻일까요?", "wrong": "질의 비용으로 온다", "right": "질을 잃으면서 얻는다" },
+        { "id": "E2", "detect": "which의 선행사를 signal로 봄", "signals": ["신호가 질을 희생"], "ask": "질을 대가로 치르는 것은 무엇일까요?", "wrong": "신호가 질을 희생시킨다", "right": "빠름이 질을 대가로 한다" }
+      ],
+      "glosses": [
+        ["incentive", "성과급"],
+        ["different", "다른"],
+        ["looking for", "바라는, 찾는"],
+        ["fast", "빠른"],
+        ["at the expense of", "~을 대가로"],
+        ["quality", "질"],
+        ["care", "응대, 돌봄"]
+      ]
+    },
+    {
+      "text": "Such mixed signals leave the employees confused about the manager's values and expectations.",
+      "ko": "이렇게 엇갈리는 신호는 관리자가 무엇을 중히 여기고 무엇을 바라는지에 대해 직원들을 헷갈리게 만든다",
+      "praise": "leave A confused를 'A를 헷갈리게 만들다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "mixed signals", "sub": "이", "top": "은", "answer": "엇갈리는 신호", "check": ["엇갈", "뒤섞", "혼란", "다른 신호"] },
+        { "en": "leave the employees confused", "sub": "가", "top": "는", "answer": "직원들을 헷갈리게 만들다", "check": ["헷갈", "혼란", "만든"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "leave를 '떠나다'로 해석", "signals": ["떠난다", "남겨 두고 떠"], "ask": "leave A + 형용사는 무엇을 말할까요?", "wrong": "직원들을 떠난다", "right": "직원들을 ~한 상태로 만든다" }
+      ],
+      "glosses": [
+        ["Such", "이런"],
+        ["mixed", "엇갈리는"],
+        ["signals", "신호"],
+        ["leave", "~한 상태로 만들다"],
+        ["confused", "헷갈리는"],
+        ["expectations", "바라는 것, 기대"]
+      ]
+    },
+    {
+      "text": "This mixed signals problem is channeled into a simple question: what should be rewarded?",
+      "ko": "이 엇갈리는 신호 문제는 간단한 물음 하나로 모인다. 무엇에 보상해야 하는가",
+      "praise": "is channeled into를 '~로 모인다'로 본 거 좋아요.",
+      "points": [
+        { "en": "is channeled into a simple question", "sub": "가", "top": "는", "answer": "간단한 물음 하나로 모인다", "check": ["물음", "질문", "모", "귀결", "이어"] },
+        { "en": "what should be rewarded", "sub": "가", "top": "는", "answer": "무엇에 보상해야 하는가", "check": ["보상", "무엇"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "channeled를 '방송 채널'로 해석", "signals": ["채널"], "ask": "is channeled into는 무엇을 말할까요?", "wrong": "채널로 만들어진다", "right": "한 가지로 모인다" }
+      ],
+      "glosses": [
+        ["problem", "문제"],
+        ["channeled into", "~로 모이는"],
+        ["simple", "간단한"],
+        ["question", "물음"],
+        ["rewarded", "보상받는"]
+      ]
+    },
+    {
+      "text": "In many cases, performance is multidimensional, but compensation is only given to one aspect of performance, typically the one that is easiest to measure.",
+      "ko": "많은 경우 일의 성과는 여러 갈래인데, 보상은 성과의 한 면에만, 대개 재기 가장 쉬운 면에만 주어진다",
+      "praise": "the one that is easiest to measure를 앞의 aspect와 이어 붙인 거 정말 잘했어요.",
+      "points": [
+        { "en": "performance is multidimensional", "sub": "가", "top": "는", "answer": "성과는 여러 갈래다", "check": ["성과", "여러", "다차원", "여러 면"] },
+        { "en": "compensation is only given to one aspect", "sub": "이", "top": "은", "answer": "보상은 한 면에만 주어진다", "check": ["보상", "한 면", "하나", "만"] },
+        { "en": "the one that is easiest to measure", "sub": "이", "top": "은", "answer": "재기 가장 쉬운 것", "check": ["재기", "측정", "쉬운"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "is given을 능동으로 보고 '보상이 준다'로 뒤집음", "signals": ["보상이 준다"], "ask": "is given은 주는 쪽일까요, 주어지는 쪽일까요?", "wrong": "보상이 한 면을 준다", "right": "보상이 한 면에만 주어진다" },
+        { "id": "E2", "detect": "the one의 선행사를 performance로 봄", "signals": ["성과가 가장 쉬운"], "ask": "재기 가장 쉬운 것은 무엇일까요?", "wrong": "재기 가장 쉬운 성과", "right": "재기 가장 쉬운 한 면" }
+      ],
+      "glosses": [
+        ["cases", "경우"],
+        ["performance", "일의 성과"],
+        ["multidimensional", "여러 갈래인"],
+        ["compensation", "보상"],
+        ["aspect", "면"],
+        ["typically", "대개"],
+        ["easiest", "가장 쉬운"],
+        ["measure", "재다"]
+      ]
+    }
+  ]
+}

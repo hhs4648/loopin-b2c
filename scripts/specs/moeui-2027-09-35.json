@@ -1,0 +1,142 @@
+{
+  "id": "moeui-2027-09-35-tourist-selection",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 35번",
+  "category": "리딩",
+  "topic_intro": "관광객이 보는 도시는 왜 몇 곳뿐인가",
+  "sentence": "Tourists make intense and short-term use of a very limited number of historical assets and cultural attractions, including material and non-material ones. The reason is to be found in the fact that tourist experience in cities is measured in days and hours, even in minutes in the case of cultural attractions or seconds in particular sites. In addition, cultural tourists do not often repeat their visit to the same place, and therefore they are continuously looking for new attractions. As a result of this, a process of selection of cultural assets takes place since only a few buildings and only a small number of social representations are able to be adapted to the tourist visit. The main difference between the selection of cultural assets made for locals and the one made for tourists is that in the second case, only a small choice is made among the largest, most impressive and unique resources.",
+  "grammar_type": "무관한문장_관광논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 and로 두 갈래가 되면",
+    "how": "and·since 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "text": "Tourists make intense and short-term use of a very limited number of historical assets and cultural attractions, including material and non-material ones.",
+      "ko": "관광객은 아주 적은 수의 역사 자산과 문화 명소를, 물질적인 것과 물질이 아닌 것을 아울러, 짧은 시간에 몰아서 쓴다",
+      "praise": "make use of를 '쓰다'로 묶어 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "make intense and short-term use of ~", "sub": "가", "top": "는", "answer": "~을 짧은 시간에 몰아서 쓰다", "check": ["짧은", "집중", "몰아", "이용", "쓴다"] },
+        { "en": "a very limited number of ~", "sub": "가", "top": "는", "answer": "아주 적은 수의 ~", "check": ["적은", "한정", "제한", "몇 개"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "make use of를 '사용을 만들다'로 직역", "signals": ["사용을 만든다", "이용을 만든"], "ask": "make use of는 한 덩어리로 쓰이는 말이에요.", "wrong": "이용을 만든다", "right": "이용한다" },
+        { "id": "E2", "detect": "intense를 '긴'으로 보고 short-term과 뒤섞음", "signals": ["긴 시간", "오랫동안"], "ask": "intense and short-term은 어떤 이용일까요?", "wrong": "길고 강한 이용", "right": "짧은 시간에 몰아서 하는 이용" }
+      ],
+      "glosses": [
+        ["Tourists", "관광객"],
+        ["intense", "몰아서 하는, 강한"],
+        ["short-term", "짧은 기간의"],
+        ["limited", "한정된"],
+        ["historical", "역사의"],
+        ["assets", "자산"],
+        ["cultural", "문화의"],
+        ["attractions", "명소, 볼거리"],
+        ["including", "~을 아울러"],
+        ["material", "물질의"],
+        ["non-material", "물질이 아닌"]
+      ]
+    },
+    {
+      "text": "The reason is to be found in the fact that tourist experience in cities is measured in days and hours, even in minutes in the case of cultural attractions or seconds in particular sites.",
+      "ko": "그 까닭은 도시에서 관광객이 겪는 시간이 날과 시간 단위로, 문화 명소라면 분 단위로, 어떤 곳에서는 초 단위로 재어진다는 사실에서 찾을 수 있다",
+      "praise": "is to be found를 '찾을 수 있다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "is to be found in the fact that ~", "sub": "이", "top": "은", "answer": "~라는 사실에서 찾을 수 있다", "check": ["찾을 수", "사실", "있다"] },
+        { "en": "is measured in days and hours", "sub": "가", "top": "는", "answer": "날과 시간 단위로 재어진다", "check": ["날", "시간", "재", "측정", "단위"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "is to be found를 '발견되어야 한다'로만 보고 흐림", "signals": ["발견되어야"], "ask": "The reason is to be found in ~ 은 무엇을 말할까요?", "wrong": "이유는 발견되어야 한다", "right": "이유는 ~에서 찾을 수 있다" },
+        { "id": "E2", "detect": "measured를 능동으로 보고 '경험이 잰다'로 뒤집음", "signals": ["경험이 잰다", "경험이 측정한다"], "ask": "is measured는 재는 쪽일까요, 재어지는 쪽일까요?", "wrong": "경험이 시간을 잰다", "right": "경험이 시간으로 재어진다" }
+      ],
+      "glosses": [
+        ["reason", "까닭"],
+        ["fact", "사실"],
+        ["tourist", "관광의"],
+        ["experience", "겪는 것, 경험"],
+        ["cities", "도시"],
+        ["measured", "재어지는"],
+        ["days", "날"],
+        ["hours", "시간"],
+        ["minutes", "분"],
+        ["case", "경우"],
+        ["seconds", "초"],
+        ["sites", "곳, 장소"]
+      ]
+    },
+    {
+      "text": "In addition, cultural tourists do not often repeat their visit to the same place, and therefore they are continuously looking for new attractions.",
+      "ko": "게다가 문화 관광객은 같은 곳을 다시 찾는 일이 잦지 않아서, 늘 새로운 볼거리를 찾아다닌다",
+      "praise": "do not often을 '자주 ~하지 않는다'로 본 거 좋아요.",
+      "points": [
+        { "en": "do not often repeat their visit", "sub": "이", "top": "은", "answer": "다시 찾는 일이 잦지 않다", "check": ["다시", "재방문", "잦지", "않"] },
+        { "en": "continuously looking for new attractions", "sub": "이", "top": "은", "answer": "늘 새로운 볼거리를 찾는다", "check": ["늘", "계속", "새로운", "찾"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "not often을 완전 부정으로 보고 '전혀 안 온다'로 해석", "signals": ["전혀", "결코"], "ask": "do not often은 전부를 부정할까요?", "wrong": "전혀 다시 오지 않는다", "right": "자주 다시 오지는 않는다" }
+      ],
+      "glosses": [
+        ["In addition", "게다가"],
+        ["tourists", "관광객"],
+        ["repeat", "되풀이하다"],
+        ["visit", "방문"],
+        ["same", "같은"],
+        ["therefore", "그래서"],
+        ["continuously", "늘, 끊임없이"],
+        ["looking for", "찾는"]
+      ]
+    },
+    {
+      "text": "As a result of this, a process of selection of cultural assets takes place since only a few buildings and only a small number of social representations are able to be adapted to the tourist visit.",
+      "ko": "그 결과 문화 자산을 골라내는 과정이 일어난다. 관광객의 방문에 맞출 수 있는 건물과 사회적 표상이 몇 개 되지 않기 때문이다",
+      "praise": "takes place를 '일어나다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "a process of selection takes place", "sub": "이", "top": "은", "answer": "골라내는 과정이 일어난다", "check": ["골라", "선별", "선택", "일어"] },
+        { "en": "only a few buildings", "sub": "가", "top": "는", "answer": "몇 개 안 되는 건물", "check": ["몇", "적", "소수", "건물"] },
+        { "en": "are able to be adapted to the tourist visit", "sub": "이", "top": "은", "answer": "관광객 방문에 맞출 수 있다", "check": ["맞출", "적응", "맞춰"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "takes place를 '자리를 차지하다'로 직역", "signals": ["자리를 차지"], "ask": "take place는 굳어진 표현이에요.", "wrong": "자리를 차지한다", "right": "일어난다" },
+        { "id": "E2", "detect": "since를 '~이후로'로 보고 이유를 놓침", "signals": ["이후로", "이래로"], "ask": "여기 since는 시간일까요, 이유일까요?", "wrong": "~한 이후로", "right": "~이기 때문에" }
+      ],
+      "glosses": [
+        ["As a result of", "~의 결과로"],
+        ["process", "과정"],
+        ["selection", "골라내기"],
+        ["takes place", "일어나다"],
+        ["since", "~이기 때문에"],
+        ["buildings", "건물"],
+        ["representations", "표상, 나타냄"],
+        ["adapted to", "~에 맞춘"]
+      ]
+    },
+    {
+      "text": "The main difference between the selection of cultural assets made for locals and the one made for tourists is that in the second case, only a small choice is made among the largest, most impressive and unique resources.",
+      "ko": "지역 주민을 위해 고른 문화 자산과 관광객을 위해 고른 것 사이의 가장 큰 차이는, 뒤쪽의 경우 가장 크고 가장 인상 깊고 남다른 자원 가운데서만 몇 개를 고른다는 점이다",
+      "praise": "긴 주어 뒤의 is that절을 이어 준 거 정말 잘했어요.",
+      "points": [
+        { "en": "the selection made for locals and the one made for tourists", "sub": "이", "top": "은", "answer": "주민을 위한 고르기와 관광객을 위한 고르기", "check": ["주민", "지역", "관광객", "고르"] },
+        { "en": "in the second case", "sub": "가", "top": "는", "answer": "뒤쪽의 경우에는", "check": ["두 번째", "뒤쪽", "후자", "관광객 쪽"] },
+        { "en": "only a small choice is made among ~", "sub": "가", "top": "는", "answer": "~ 가운데서만 몇 개를 고른다", "check": ["몇 개", "적은", "가운데", "중에서"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "the one이 무엇을 받는지 놓침", "signals": ["그 사람", "누군가"], "ask": "the one made for tourists의 the one은 무엇일까요?", "wrong": "관광객을 위해 만들어진 사람", "right": "관광객을 위한 고르기" },
+        { "id": "E2", "detect": "in the second case를 '두 번째 사건'으로 해석", "signals": ["두 번째 사건", "두 번째 상자"], "ask": "the second case는 앞의 무엇을 가리킬까요?", "wrong": "두 번째 사건에서", "right": "관광객 쪽의 경우에" }
+      ],
+      "glosses": [
+        ["main", "가장 큰"],
+        ["difference", "차이"],
+        ["locals", "지역 주민"],
+        ["second", "두 번째의"],
+        ["choice", "고르기, 선택"],
+        ["among", "~ 가운데"],
+        ["largest", "가장 큰"],
+        ["impressive", "인상 깊은"],
+        ["unique", "남다른"],
+        ["resources", "자원"]
+      ]
+    }
+  ]
+}

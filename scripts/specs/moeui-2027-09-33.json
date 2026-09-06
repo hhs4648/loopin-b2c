@@ -1,0 +1,179 @@
+{
+  "id": "moeui-2027-09-33-balzac-description",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 33번",
+  "category": "리딩",
+  "topic_intro": "글로 풍경을 그리는 발자크의 방법",
+  "sentence": "While a picture transports the spectator almost instantly into a landscape, language can only describe it detail by detail, bringing it slowly into the reader's mind. How can a literary work capture the feel of a place in both its atmosphere and its topography without losing the reader in a descriptive forest? One solution, proposed by Balzac, is to tie description to a moving body. Balzac's novels open with detailed portrayals of the setting, but the descriptions never threaten the reader's sense of orientation because they trace a precise path through the fictional world. When the novel describes a house, the narrator inspects the building in a systematic manner, approaching it from the street, examining the garden and the front, entering through the main door, and walking from room to room, as would a real estate agent or a prospective resident. The reader ends up with a precise notion of the layout of the building, all the way down to the floor plan.",
+  "grammar_type": "빈칸추론_문학논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 but으로 나뉘면",
+    "how": "but·분사구 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [
+    { "en": "Balzac", "ko": "발자크", "type": "person" }
+  ],
+  "chunks": [
+    {
+      "text": "While a picture transports the spectator almost instantly into a landscape, language can only describe it detail by detail, bringing it slowly into the reader's mind.",
+      "ko": "그림은 보는 사람을 거의 순식간에 풍경 속으로 옮겨 놓지만, 말은 그것을 하나하나 묘사할 수밖에 없어서 읽는 사람의 머릿속으로 천천히 들여보낸다",
+      "praise": "transports A into B를 'A를 B 속으로 옮겨 놓다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "transports the spectator into a landscape", "sub": "가", "top": "는", "answer": "보는 사람을 풍경 속으로 옮겨 놓다", "check": ["옮겨", "데려", "풍경", "보는 사람"] },
+        { "en": "describe it detail by detail", "sub": "가", "top": "는", "answer": "하나하나 묘사하다", "check": ["하나하나", "세부", "낱낱", "묘사"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "transports를 '운송하다'로만 보고 흐림", "signals": ["운송"], "ask": "그림이 사람을 transport한다면 무엇일까요?", "wrong": "관객을 운송한다", "right": "관객을 풍경 속으로 옮겨 놓는다" },
+        { "id": "E2", "detect": "While을 '~하는 동안'으로 보고 대비를 놓침", "signals": ["하는 동안"], "ask": "문장 앞의 While은 시간일까요, 대비일까요?", "wrong": "그림이 옮기는 동안", "right": "그림은 옮기지만 말은" }
+      ],
+      "glosses": [
+        ["While", "~이지만"],
+        ["picture", "그림"],
+        ["transports", "옮겨 놓다"],
+        ["spectator", "보는 사람"],
+        ["instantly", "순식간에"],
+        ["landscape", "풍경"],
+        ["language", "말, 언어"],
+        ["describe", "묘사하다"],
+        ["detail", "세부"],
+        ["bringing", "들여보내면서"],
+        ["slowly", "천천히"],
+        ["reader's", "읽는 사람의"],
+        ["mind", "머릿속"]
+      ]
+    },
+    {
+      "text": "How can a literary work capture the feel of a place in both its atmosphere and its topography without losing the reader in a descriptive forest?",
+      "ko": "문학 작품이 어떻게 하면 읽는 사람을 묘사의 숲에서 길 잃게 하지 않으면서, 어떤 곳의 분위기와 지형을 함께 담아낼 수 있을까",
+      "praise": "without losing the reader를 '길 잃게 하지 않으면서'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "capture the feel of a place", "sub": "가", "top": "는", "answer": "어떤 곳의 느낌을 담아내다", "check": ["느낌", "분위기", "담아", "잡아"] },
+        { "en": "without losing the reader", "sub": "가", "top": "는", "answer": "읽는 사람을 길 잃게 하지 않으면서", "check": ["잃", "헤매", "않으면서"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "capture를 '붙잡다(사람)'로만 보고 흐림", "signals": ["붙잡는다", "포획"], "ask": "the feel of a place를 capture한다면 무엇일까요?", "wrong": "느낌을 붙잡는다", "right": "느낌을 담아낸다" },
+        { "id": "E2", "detect": "a descriptive forest를 실제 숲으로 봄", "signals": ["묘사적인 숲속", "진짜 숲"], "ask": "여기 forest는 무엇을 빗댄 말일까요?", "wrong": "묘사적인 숲속에서", "right": "묘사가 빽빽한 대목에서" }
+      ],
+      "glosses": [
+        ["literary", "문학의"],
+        ["work", "작품"],
+        ["capture", "담아내다"],
+        ["feel", "느낌"],
+        ["place", "곳"],
+        ["atmosphere", "분위기"],
+        ["topography", "지형"],
+        ["losing", "잃게 하는 것"],
+        ["reader", "읽는 사람"],
+        ["descriptive", "묘사의"],
+        ["forest", "숲"]
+      ]
+    },
+    {
+      "text": "One solution, proposed by Balzac, is to tie description to a moving body.",
+      "ko": "발자크가 내놓은 한 가지 해법은 묘사를 움직이는 몸에 매어 두는 것이다",
+      "praise": "tie A to B를 'A를 B에 매다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "proposed by Balzac", "sub": "가", "top": "는", "answer": "발자크가 내놓은", "check": ["발자크", "내놓", "제안"] },
+        { "en": "tie description to a moving body", "sub": "가", "top": "는", "answer": "묘사를 움직이는 몸에 매다", "check": ["묘사", "움직이는", "몸", "매", "붙"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "proposed를 문장의 동사로 보고 끊음", "signals": ["해법이 제안했다"], "ask": "이 문장의 진짜 동사는 무엇일까요?", "wrong": "해법이 발자크를 제안했다", "right": "발자크가 내놓은 해법은 ~이다" },
+        { "id": "E2", "detect": "tie를 '넥타이'로 해석", "signals": ["넥타이"], "ask": "tie A to B는 무엇을 하는 걸까요?", "wrong": "묘사의 넥타이", "right": "묘사를 ~에 매어 둔다" }
+      ],
+      "glosses": [
+        ["solution", "해법"],
+        ["proposed", "내놓은"],
+        ["Balzac", "발자크(사람 이름)"],
+        ["tie", "매다"],
+        ["description", "묘사"],
+        ["moving", "움직이는"],
+        ["body", "몸"]
+      ]
+    },
+    {
+      "text": "Balzac's novels open with detailed portrayals of the setting, but the descriptions never threaten the reader's sense of orientation because they trace a precise path through the fictional world.",
+      "ko": "발자크의 소설은 배경을 꼼꼼히 그리며 시작하지만, 그 묘사는 읽는 사람의 방향 감각을 흔들지 않는다. 소설 속 세계를 지나는 정확한 길을 따라가기 때문이다",
+      "praise": "sense of orientation을 '방향 감각'으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "open with detailed portrayals", "sub": "이", "top": "은", "answer": "꼼꼼한 묘사로 시작하다", "check": ["시작", "꼼꼼", "자세", "묘사"] },
+        { "en": "never threaten the reader's sense of orientation", "sub": "이", "top": "은", "answer": "읽는 사람의 방향 감각을 흔들지 않는다", "check": ["방향", "감각", "흔들", "위협", "않"] },
+        { "en": "trace a precise path", "sub": "가", "top": "는", "answer": "정확한 길을 따라가다", "check": ["길", "경로", "따라", "정확"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "open을 형용사 '열린'으로 보고 동사를 놓침", "signals": ["열린 소설"], "ask": "novels open with ~ 에서 open은 무엇일까요?", "wrong": "열린 소설들", "right": "소설이 ~로 시작한다" },
+        { "id": "E2", "detect": "never를 놓치고 '방향 감각을 흔든다'로 해석", "signals": ["흔든다", "위협한다"], "ask": "never threaten은 흔든다는 뜻일까요?", "wrong": "방향 감각을 흔든다", "right": "방향 감각을 흔들지 않는다" }
+      ],
+      "glosses": [
+        ["novels", "소설"],
+        ["open with", "~로 시작하다"],
+        ["detailed", "꼼꼼한"],
+        ["portrayals", "그려 냄, 묘사"],
+        ["setting", "배경"],
+        ["descriptions", "묘사"],
+        ["threaten", "흔들다, 위협하다"],
+        ["sense", "감각"],
+        ["orientation", "방향"],
+        ["trace", "따라가다"],
+        ["precise", "정확한"],
+        ["path", "길"],
+        ["fictional", "소설 속의"]
+      ]
+    },
+    {
+      "text": "When the novel describes a house, the narrator inspects the building in a systematic manner, approaching it from the street, examining the garden and the front, entering through the main door, and walking from room to room,",
+      "ko": "소설이 집을 그릴 때 서술자는 건물을 차례차례 살핀다. 길에서 다가가고, 정원과 앞쪽을 살피고, 현관으로 들어가고, 방에서 방으로 걸어 다니면서 말이다",
+      "praise": "분사구 넷이 나란한 것을 다 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "inspects the building in a systematic manner", "sub": "가", "top": "는", "answer": "건물을 차례차례 살피다", "check": ["살피", "점검", "차례", "체계"] },
+        { "en": "approaching, examining, entering, walking", "sub": "이", "top": "은", "answer": "다가가고 살피고 들어가고 걸으면서", "check": ["다가", "살피", "들어", "걸"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "분사구 넷을 문장의 동사로 보고 끊음", "signals": ["다가갔다.", "살폈다. 들어갔다"], "ask": "approaching부터 walking까지는 앞 내용에 어떻게 붙나요?", "wrong": "다가갔다, 살폈다, 들어갔다", "right": "다가가면서, 살피면서 ~ 살핀다" },
+        { "id": "E2", "detect": "manner를 '예절'로 해석", "signals": ["예절", "매너"], "ask": "in a systematic manner는 무엇일까요?", "wrong": "체계적인 예절로", "right": "차례차례, 짜임새 있게" }
+      ],
+      "glosses": [
+        ["novel", "소설"],
+        ["describes", "그리다, 묘사하다"],
+        ["house", "집"],
+        ["narrator", "서술자"],
+        ["inspects", "살피다"],
+        ["building", "건물"],
+        ["systematic", "짜임새 있는"],
+        ["manner", "방식"],
+        ["approaching", "다가가면서"],
+        ["street", "길"],
+        ["examining", "살피면서"],
+        ["garden", "정원"],
+        ["front", "앞쪽"],
+        ["entering", "들어가면서"],
+        ["main door", "현관"],
+        ["room", "방"]
+      ]
+    },
+    {
+      "text": "as would a real estate agent or a prospective resident. The reader ends up with a precise notion of the layout of the building, all the way down to the floor plan.",
+      "ko": "부동산 중개인이나 살러 올 사람이 그렇게 하듯이 말이다. 읽는 사람은 건물 배치를, 평면도에 이르기까지 정확하게 머릿속에 담게 된다",
+      "praise": "as would ~ 의 도치를 알아본 거 정말 잘했어요.",
+      "points": [
+        { "en": "as would a real estate agent", "sub": "가", "top": "는", "answer": "부동산 중개인이 그렇게 하듯이", "check": ["부동산", "중개", "하듯", "처럼"] },
+        { "en": "ends up with a precise notion", "sub": "이", "top": "은", "answer": "결국 정확한 그림을 갖게 된다", "check": ["정확", "결국", "갖게", "머릿속"] },
+        { "en": "all the way down to the floor plan", "sub": "이", "top": "은", "answer": "평면도에 이르기까지", "check": ["평면도", "도면", "까지"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "as would의 도치를 못 보고 주어를 놓침", "signals": ["중개인이 할 것이다."], "ask": "as would a real estate agent는 무엇과 견주는 말일까요?", "wrong": "중개인이 할 것이다", "right": "중개인이 그렇게 하듯이" },
+        { "id": "E2", "detect": "prospective resident를 '전망 좋은 거주자'로 해석", "signals": ["전망", "유망한 거주"], "ask": "prospective resident는 어떤 사람일까요?", "wrong": "전망 좋은 거주자", "right": "살러 올 사람" }
+      ],
+      "glosses": [
+        ["real estate agent", "부동산 중개인"],
+        ["prospective", "앞으로 ~할"],
+        ["resident", "사는 사람"],
+        ["ends up with", "결국 ~을 갖게 되다"],
+        ["notion", "그림, 개념"],
+        ["layout", "배치"],
+        ["all the way down to", "~에 이르기까지"],
+        ["floor plan", "평면도"]
+      ]
+    }
+  ]
+}

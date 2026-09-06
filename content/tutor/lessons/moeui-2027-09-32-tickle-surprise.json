@@ -1,0 +1,1207 @@
+{
+  "id": "moeui-2027-09-32-tickle-surprise",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 32번",
+  "category": "리딩",
+  "topic_intro": "왜 스스로 간지럽히면 간지럽지 않을까",
+  "sentence": "Not only are our sensory systems organized to detect change, but they are most tuned to stimuli that are unexpected and surprising. When you move your body and produce tactile sensations, these stimuli are less noticeable to you than are sensations produced by another individual. The sensations of your own legs touching one another when you cross your legs, for example, are generally less noticeable than a similar touch on your leg would be if someone sitting next to you brushed their leg against yours. Likewise, your reaction to your cat jumping onto your lap is likely to be much greater if you have your eyes closed when it happens. This differential response to surprising tactile stimuli appears to be a defense mechanism that has adaptive significance. It is probably also the reason why being tickled by someone else is more effective at producing an emotional reaction than trying to tickle yourself.",
+  "grammar_type": "빈칸추론_과학논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 for example로 끊기면",
+    "how": "than·if 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Not only are our sensory systems organized to detect change, but they are most tuned to stimuli that are unexpected and surprising.",
+      "model_translation": "우리 감각 체계는 변화를 알아채도록 짜여 있을 뿐 아니라, 뜻밖이고 놀라운 자극에 가장 잘 맞춰져 있다",
+      "praise": "Not only 뒤의 도치를 알아본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Not only",
+          "ko": "~뿐 아니라"
+        },
+        {
+          "en": "sensory",
+          "ko": "감각의"
+        },
+        {
+          "en": "systems",
+          "ko": "체계"
+        },
+        {
+          "en": "organized",
+          "ko": "짜인"
+        },
+        {
+          "en": "detect",
+          "ko": "알아채다"
+        },
+        {
+          "en": "tuned to",
+          "ko": "~에 맞춰진"
+        },
+        {
+          "en": "stimuli",
+          "ko": "자극"
+        },
+        {
+          "en": "unexpected",
+          "ko": "뜻밖의"
+        },
+        {
+          "en": "surprising",
+          "ko": "놀라운"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "our",
+          "ko": "우리의"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "change",
+          "ko": "변화"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "most",
+          "ko": "가장"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Not only are ~, but ~ → ~일 뿐 아니라 ~도",
+          "check": [
+            "뿐 아니",
+            "뿐만",
+            "또한"
+          ],
+          "nudge": "Not only are ~, but ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Not only are ~, but ~는 여기서 '~일 뿐 아니라 ~도'예요."
+        },
+        {
+          "id": 2,
+          "text": "organized to detect change → 변화를 알아채도록 짜여 있다",
+          "check": [
+            "변화",
+            "알아",
+            "감지",
+            "짜여"
+          ],
+          "nudge": "organized to detect change가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "organized to detect change는 여기서 '변화를 알아채도록 짜여 있다'예요."
+        },
+        {
+          "id": 3,
+          "text": "most tuned to stimuli → 자극에 가장 잘 맞춰져 있다",
+          "check": [
+            "자극",
+            "맞춰",
+            "민감",
+            "반응"
+          ],
+          "nudge": "most tuned to stimuli가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "most tuned to stimuli는 여기서 '자극에 가장 잘 맞춰져 있다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Not only 뒤 도치를 의문문으로 봄",
+          "signals": [
+            "체계가 짜여 있는가"
+          ],
+          "treatment": {
+            "message": "Not only가 앞에 오면 뒤가 도치돼요. '우리 체계는 짜여 있는가'일까요, '우리 체계는 짜여 있을 뿐 아니라'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "우리 체계는 짜여 있는가",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "우리 체계는 짜여 있을 뿐 아니라",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '우리 체계는 짜여 있을 뿐 아니라'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '우리 체계는 짜여 있을 뿐 아니라'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "tuned를 '조율된 악기'로만 보고 흐림",
+          "signals": [
+            "악기",
+            "조율기"
+          ],
+          "treatment": {
+            "message": "감각이 tuned to stimuli라면 무엇일까요? '자극에 조율된 악기'일까요, '자극에 잘 맞춰져 있다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "자극에 조율된 악기",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "자극에 잘 맞춰져 있다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '자극에 잘 맞춰져 있다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '자극에 잘 맞춰져 있다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "When you move your body and produce tactile sensations, these stimuli are less noticeable to you than are sensations produced by another individual.",
+      "model_translation": "당신이 몸을 움직여 촉감을 만들어 낼 때, 그 자극은 다른 사람이 만들어 낸 감각보다 덜 눈에 띈다",
+      "praise": "than are ~ 의 도치를 알아본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "move",
+          "ko": "움직이다"
+        },
+        {
+          "en": "body",
+          "ko": "몸"
+        },
+        {
+          "en": "produce",
+          "ko": "만들어 내다"
+        },
+        {
+          "en": "tactile",
+          "ko": "만지는, 촉각의"
+        },
+        {
+          "en": "sensations",
+          "ko": "감각"
+        },
+        {
+          "en": "noticeable",
+          "ko": "눈에 띄는"
+        },
+        {
+          "en": "produced by",
+          "ko": "~이 만들어 낸"
+        },
+        {
+          "en": "individual",
+          "ko": "사람"
+        },
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "these",
+          "ko": "이것들"
+        },
+        {
+          "en": "stimuli",
+          "ko": "자극"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "than",
+          "ko": "~보다"
+        },
+        {
+          "en": "another",
+          "ko": "다른"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "tactile sensations → 촉감, 만지는 느낌",
+          "check": [
+            "촉감",
+            "촉각",
+            "감각"
+          ],
+          "nudge": "tactile sensations이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "tactile sensations은 여기서 '촉감, 만지는 느낌'이에요."
+        },
+        {
+          "id": 2,
+          "text": "less noticeable than ~ → ~보다 덜 눈에 띈다",
+          "check": [
+            "덜",
+            "보다",
+            "알아채기 어려"
+          ],
+          "nudge": "less noticeable than ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "less noticeable than ~은 여기서 '~보다 덜 눈에 띈다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "than are의 도치를 못 보고 주어를 뒤바꿈",
+          "signals": [
+            "감각이 자극보다"
+          ],
+          "treatment": {
+            "message": "than 뒤의 주어는 무엇일까요? '감각이 자극보다 덜 띈다'일까요, '내 자극이 남의 감각보다 덜 띈다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "감각이 자극보다 덜 띈다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "내 자극이 남의 감각보다 덜 띈다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '내 자극이 남의 감각보다 덜 띈다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '내 자극이 남의 감각보다 덜 띈다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "produced by another individual을 '다른 사람이 받은'으로 뒤집음",
+          "signals": [
+            "다른 사람이 받은",
+            "남이 느낀"
+          ],
+          "treatment": {
+            "message": "produced by는 만드는 쪽일까요, 받는 쪽일까요? '다른 사람이 받은 감각'일까요, '다른 사람이 만들어 낸 감각'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "다른 사람이 받은 감각",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "다른 사람이 만들어 낸 감각",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '다른 사람이 만들어 낸 감각'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '다른 사람이 만들어 낸 감각'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "The sensations of your own legs touching one another when you cross your legs, for example, are generally less noticeable than a similar touch on your leg would be",
+      "model_translation": "예를 들어 다리를 꼬을 때 자기 다리끼리 닿는 느낌은, 다리에 닿는 비슷한 촉감보다 대체로 덜 눈에 띈다",
+      "praise": "긴 주어 뒤의 are를 정확히 찾은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "own",
+          "ko": "자기 자신의"
+        },
+        {
+          "en": "legs",
+          "ko": "다리"
+        },
+        {
+          "en": "touching",
+          "ko": "닿는"
+        },
+        {
+          "en": "one another",
+          "ko": "서로"
+        },
+        {
+          "en": "cross",
+          "ko": "꼬다, 건너다"
+        },
+        {
+          "en": "generally",
+          "ko": "대체로"
+        },
+        {
+          "en": "similar",
+          "ko": "비슷한"
+        },
+        {
+          "en": "touch",
+          "ko": "촉감, 닿음"
+        },
+        {
+          "en": "The",
+          "ko": "그"
+        },
+        {
+          "en": "sensations",
+          "ko": "감각"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "example",
+          "ko": "예"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "noticeable",
+          "ko": "눈에 띄는"
+        },
+        {
+          "en": "than",
+          "ko": "~보다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "on",
+          "ko": "~에"
+        },
+        {
+          "en": "leg",
+          "ko": "다리"
+        },
+        {
+          "en": "would",
+          "ko": "~할 것이다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "your own legs touching one another → 자기 다리끼리 서로 닿는 것",
+          "check": [
+            "다리",
+            "서로",
+            "닿"
+          ],
+          "nudge": "your own legs touching one another가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "your own legs touching one another는 여기서 '자기 다리끼리 서로 닿는 것'이에요."
+        },
+        {
+          "id": 2,
+          "text": "when you cross your legs → 다리를 꼬을 때",
+          "check": [
+            "꼬",
+            "포갤",
+            "겹칠"
+          ],
+          "nudge": "when you cross your legs가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "when you cross your legs는 여기서 '다리를 꼬을 때'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "touching을 문장의 동사로 보고 끊음",
+          "signals": [
+            "다리가 닿는다."
+          ],
+          "treatment": {
+            "message": "touching one another는 앞의 무엇을 꾸밀까요? '다리가 서로 닿는다'일까요, '서로 닿는 다리의 느낌'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "다리가 서로 닿는다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "서로 닿는 다리의 느낌",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '서로 닿는 다리의 느낌'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '서로 닿는 다리의 느낌'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "cross를 '건너다'로 해석",
+          "signals": [
+            "건너",
+            "가로지"
+          ],
+          "treatment": {
+            "message": "cross your legs는 무엇을 하는 걸까요? '다리를 건너다'일까요, '다리를 꼬다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "다리를 건너다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "다리를 꼬다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '다리를 꼬다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '다리를 꼬다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "if someone sitting next to you brushed their leg against yours.",
+      "model_translation": "옆에 앉은 누군가가 자기 다리를 당신 다리에 스쳤을 때 느껴질 촉감보다 말이다",
+      "praise": "brushed A against B를 'A를 B에 스치다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "someone",
+          "ko": "누군가"
+        },
+        {
+          "en": "sitting",
+          "ko": "앉아 있는"
+        },
+        {
+          "en": "next to",
+          "ko": "~ 옆에"
+        },
+        {
+          "en": "brushed",
+          "ko": "스쳤다"
+        },
+        {
+          "en": "against",
+          "ko": "~에 대고"
+        },
+        {
+          "en": "yours",
+          "ko": "당신의 것"
+        },
+        {
+          "en": "if",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "their",
+          "ko": "그들의"
+        },
+        {
+          "en": "leg",
+          "ko": "다리"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "someone sitting next to you → 옆에 앉은 누군가",
+          "check": [
+            "옆",
+            "곁",
+            "앉은"
+          ],
+          "nudge": "someone sitting next to you가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "someone sitting next to you는 여기서 '옆에 앉은 누군가'예요."
+        },
+        {
+          "id": 2,
+          "text": "brushed their leg against yours → 자기 다리를 당신 다리에 스치다",
+          "check": [
+            "스치",
+            "닿",
+            "부딪"
+          ],
+          "nudge": "brushed their leg against yours가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "brushed their leg against yours는 여기서 '자기 다리를 당신 다리에 스치다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "brushed를 '솔질하다'로 해석",
+          "signals": [
+            "솔질",
+            "빗질"
+          ],
+          "treatment": {
+            "message": "brush A against B는 무엇을 하는 걸까요? '다리를 솔질했다'일까요, '다리를 스쳤다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "다리를 솔질했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "다리를 스쳤다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '다리를 스쳤다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '다리를 스쳤다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Likewise, your reaction to your cat jumping onto your lap is likely to be much greater if you have your eyes closed when it happens.",
+      "model_translation": "마찬가지로 고양이가 무릎 위로 뛰어오를 때 눈을 감고 있었다면 당신의 반응은 훨씬 클 가능성이 높다",
+      "praise": "have your eyes closed를 '눈을 감고 있다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Likewise",
+          "ko": "마찬가지로"
+        },
+        {
+          "en": "reaction",
+          "ko": "반응"
+        },
+        {
+          "en": "cat",
+          "ko": "고양이"
+        },
+        {
+          "en": "jumping",
+          "ko": "뛰어오르는"
+        },
+        {
+          "en": "onto",
+          "ko": "~ 위로"
+        },
+        {
+          "en": "lap",
+          "ko": "무릎"
+        },
+        {
+          "en": "greater",
+          "ko": "더 큰"
+        },
+        {
+          "en": "closed",
+          "ko": "감긴"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "likely",
+          "ko": "~할 것 같은"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        },
+        {
+          "en": "much",
+          "ko": "많이"
+        },
+        {
+          "en": "if",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "have",
+          "ko": "가지다"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "happens",
+          "ko": "일어나다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "your cat jumping onto your lap → 고양이가 무릎 위로 뛰어오르는 것",
+          "check": [
+            "고양이",
+            "무릎",
+            "뛰어",
+            "올라"
+          ],
+          "nudge": "your cat jumping onto your lap이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "your cat jumping onto your lap은 여기서 '고양이가 무릎 위로 뛰어오르는 것'이에요."
+        },
+        {
+          "id": 2,
+          "text": "have your eyes closed → 눈을 감고 있다",
+          "check": [
+            "눈",
+            "감"
+          ],
+          "nudge": "have your eyes closed가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "have your eyes closed는 여기서 '눈을 감고 있다'예요."
+        },
+        {
+          "id": 3,
+          "text": "much greater → 훨씬 크다",
+          "check": [
+            "훨씬",
+            "더 크",
+            "커진"
+          ],
+          "nudge": "much greater가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "much greater는 여기서 '훨씬 크다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "have your eyes closed를 '눈을 감게 시키다'로 해석",
+          "signals": [
+            "감게 시키",
+            "감으라고"
+          ],
+          "treatment": {
+            "message": "have + 목적어 + 과거분사는 어떤 상태를 말할까요? '눈을 감게 시킨다'일까요, '눈을 감고 있다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "눈을 감게 시킨다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "눈을 감고 있다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '눈을 감고 있다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '눈을 감고 있다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "This differential response to surprising tactile stimuli appears to be a defense mechanism that has adaptive significance.",
+      "model_translation": "놀라운 촉각 자극에 대한 이런 다른 반응은, 적응에 값어치가 있는 방어 장치로 보인다",
+      "praise": "differential response를 '다르게 나타나는 반응'으로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "differential",
+          "ko": "달라지는"
+        },
+        {
+          "en": "response",
+          "ko": "반응"
+        },
+        {
+          "en": "appears to be",
+          "ko": "~인 듯 보이다"
+        },
+        {
+          "en": "defense",
+          "ko": "방어"
+        },
+        {
+          "en": "mechanism",
+          "ko": "장치, 구조"
+        },
+        {
+          "en": "adaptive",
+          "ko": "적응에 도움이 되는"
+        },
+        {
+          "en": "significance",
+          "ko": "값어치, 의미"
+        },
+        {
+          "en": "This",
+          "ko": "이"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "surprising",
+          "ko": "놀라운"
+        },
+        {
+          "en": "tactile",
+          "ko": "만지는, 촉각의"
+        },
+        {
+          "en": "stimuli",
+          "ko": "자극"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "has",
+          "ko": "가지다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "differential response → 다르게 나타나는 반응",
+          "check": [
+            "다른 반응",
+            "차이",
+            "달라지는"
+          ],
+          "nudge": "differential response가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "differential response는 여기서 '다르게 나타나는 반응'이에요."
+        },
+        {
+          "id": 2,
+          "text": "a defense mechanism that has adaptive significance → 적응에 값어치가 있는 방어 장치",
+          "check": [
+            "방어",
+            "장치",
+            "적응",
+            "의미",
+            "값어치"
+          ],
+          "nudge": "a defense mechanism that has adaptive significance가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a defense mechanism that has adaptive significance는 여기서 '적응에 값어치가 있는 방어 장치'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "differential을 '차별하는'으로 보고 흐림",
+          "signals": [
+            "차별"
+          ],
+          "treatment": {
+            "message": "differential response는 무엇이 다르다는 걸까요? '차별하는 반응'일까요, '경우에 따라 달라지는 반응'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "차별하는 반응",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "경우에 따라 달라지는 반응",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '경우에 따라 달라지는 반응'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '경우에 따라 달라지는 반응'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "mechanism을 '기계'로 해석",
+          "signals": [
+            "기계"
+          ],
+          "treatment": {
+            "message": "defense mechanism은 무엇일까요? '방어 기계'일까요, '몸이 스스로를 지키는 장치'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "방어 기계",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "몸이 스스로를 지키는 장치",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '몸이 스스로를 지키는 장치'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '몸이 스스로를 지키는 장치'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "It is probably also the reason why being tickled by someone else is more effective at producing an emotional reaction than trying to tickle yourself.",
+      "model_translation": "그것은 아마 남이 간지럽힐 때가 스스로 간지럽히려 할 때보다 감정 반응을 더 잘 일으키는 까닭이기도 하다",
+      "praise": "being tickled by someone else를 '남이 간지럽히는 것'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "reason",
+          "ko": "까닭"
+        },
+        {
+          "en": "tickled",
+          "ko": "간지럽혀지는"
+        },
+        {
+          "en": "effective",
+          "ko": "효과 있는"
+        },
+        {
+          "en": "producing",
+          "ko": "일으키는 것"
+        },
+        {
+          "en": "emotional",
+          "ko": "감정의"
+        },
+        {
+          "en": "tickle",
+          "ko": "간지럽히다"
+        },
+        {
+          "en": "yourself",
+          "ko": "당신 자신"
+        },
+        {
+          "en": "It",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "probably",
+          "ko": "아마"
+        },
+        {
+          "en": "also",
+          "ko": "또한"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "why",
+          "ko": "왜"
+        },
+        {
+          "en": "being",
+          "ko": "~인 것"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        },
+        {
+          "en": "someone",
+          "ko": "누군가"
+        },
+        {
+          "en": "else",
+          "ko": "다른"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "at",
+          "ko": "~에서"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "reaction",
+          "ko": "반응"
+        },
+        {
+          "en": "than",
+          "ko": "~보다"
+        },
+        {
+          "en": "trying",
+          "ko": "~하려 애쓰는"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "being tickled by someone else → 남이 간지럽히는 것",
+          "check": [
+            "남이",
+            "다른 사람",
+            "간지럽"
+          ],
+          "nudge": "being tickled by someone else이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "being tickled by someone else은 여기서 '남이 간지럽히는 것'이에요."
+        },
+        {
+          "id": 2,
+          "text": "more effective at producing ~ than ~ → ~보다 ~을 더 잘 일으킨다",
+          "check": [
+            "더",
+            "보다",
+            "잘 일으",
+            "효과"
+          ],
+          "nudge": "more effective at producing ~ than ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "more effective at producing ~ than ~은 여기서 '~보다 ~을 더 잘 일으킨다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "being tickled를 능동으로 보고 '남을 간지럽히는 것'으로 뒤집음",
+          "signals": [
+            "남을 간지럽히",
+            "내가 간지럽히"
+          ],
+          "treatment": {
+            "message": "being tickled by someone else는 누가 누구를 간지럽히나요? '내가 남을 간지럽히는 것'일까요, '남이 나를 간지럽히는 것'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "내가 남을 간지럽히는 것",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "남이 나를 간지럽히는 것",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '남이 나를 간지럽히는 것'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '남이 나를 간지럽히는 것'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

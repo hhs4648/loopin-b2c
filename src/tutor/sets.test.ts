@@ -49,9 +49,11 @@ describe("수업 세트", () => {
   });
 
   it("대분류 > 중분류 > 세트 세 켜가 이어진다", () => {
-    expect(allGroups().map((g) => g.id)).toEqual(["suneung"]);
-    expect(allCollections().map((c) => c.id)).toEqual(["suneung-2024"]);
-    expect(setsIn("suneung-2024")).toHaveLength(allSets().length);
+    expect(allGroups().map((g) => g.id)).toEqual(["suneung", "moeui"]);
+    expect(allCollections().map((c) => c.id)).toEqual(["suneung-2024", "moeui-2027-09"]);
+    // 모든 세트는 어느 중분류엔가 담긴다 — 흩어진 것이 없어야 한다
+    const inCollections = allCollections().reduce((n, c) => n + setsIn(c.id).length, 0);
+    expect(inCollections).toBe(allSets().length);
   });
 
   it("2024 수능에 26문제가 들어 있다", () => {

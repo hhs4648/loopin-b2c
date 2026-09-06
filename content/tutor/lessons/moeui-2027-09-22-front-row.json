@@ -1,0 +1,1191 @@
+{
+  "id": "moeui-2027-09-22-front-row",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 22번",
+  "category": "리딩",
+  "topic_intro": "어디에 앉느냐가 배움을 바꾼다는 실험",
+  "sentence": "Studies show that people who sit in the front row learn and retain more than others in the audience, partially because those in the front row are more eager to learn, and they show more attention to the speaker in order to avoid being called on. Those in the middle sections are the next most attentive and ask the most questions, as the middle section is considered a safe area, surrounded by others. The side areas and back are the least responsive and attentive. In one experiment we conducted, we placed name cards on participants' seats so they could not take their usual positions. We intentionally sat enthusiastic people to the sides and rear of the room, and well-known back-row hermits sat in the front. We found that this strategy not only increased the participation and recall of the normally negative participants who sat up front, it also decreased the participation and recall of the usually positive participants who had been sent to the back.",
+  "grammar_type": "요지_실험논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 and로 두 갈래가 되면",
+    "how": "and·because 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Studies show that people who sit in the front row learn and retain more than others in the audience,",
+      "model_translation": "연구에 따르면 앞줄에 앉는 사람들은 청중의 다른 사람들보다 더 많이 배우고 더 많이 기억한다",
+      "praise": "who sit in the front row가 people을 꾸민다는 걸 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Studies",
+          "ko": "연구"
+        },
+        {
+          "en": "show",
+          "ko": "보여 주다"
+        },
+        {
+          "en": "sit",
+          "ko": "앉다"
+        },
+        {
+          "en": "front row",
+          "ko": "앞줄"
+        },
+        {
+          "en": "learn",
+          "ko": "배우다"
+        },
+        {
+          "en": "retain",
+          "ko": "기억해 두다"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        },
+        {
+          "en": "audience",
+          "ko": "청중"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "who",
+          "ko": "~하는 사람"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "than",
+          "ko": "~보다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "people who sit in the front row → 앞줄에 앉는 사람들",
+          "check": [
+            "앞줄",
+            "앞자리",
+            "앞에 앉"
+          ],
+          "nudge": "people who sit in the front row이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "people who sit in the front row은 여기서 '앞줄에 앉는 사람들'이에요."
+        },
+        {
+          "id": 2,
+          "text": "learn and retain more → 더 많이 배우고 기억한다",
+          "check": [
+            "배우",
+            "기억",
+            "더 많이",
+            "간직"
+          ],
+          "nudge": "learn and retain more가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "learn and retain more는 여기서 '더 많이 배우고 기억한다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "retain을 '보유하다(물건)'로만 보고 흐림",
+          "signals": [
+            "보유"
+          ],
+          "treatment": {
+            "message": "배운 것을 retain한다면 무엇일까요? '더 많이 보유한다'일까요, '더 많이 기억한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "더 많이 보유한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "더 많이 기억한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '더 많이 기억한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '더 많이 기억한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "Studies show that의 that절 끝을 못 잡고 끊음",
+          "signals": [
+            "연구가 보여 준다."
+          ],
+          "treatment": {
+            "message": "show that 뒤는 어디까지일까요? '연구가 보여 준다'일까요, '연구에 따르면 ~한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "연구가 보여 준다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "연구에 따르면 ~한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '연구에 따르면 ~한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '연구에 따르면 ~한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "partially because those in the front row are more eager to learn, and they show more attention to the speaker in order to avoid being called on.",
+      "model_translation": "그 까닭 하나는 앞줄에 앉은 사람들이 더 배우고 싶어 하기 때문이고, 또 지목당하지 않으려고 말하는 사람에게 더 주의를 기울이기 때문이다",
+      "praise": "in order to avoid being called on을 '지목당하지 않으려고'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "partially",
+          "ko": "부분적으로, 한 가지 까닭은"
+        },
+        {
+          "en": "eager",
+          "ko": "몹시 하고 싶어 하는"
+        },
+        {
+          "en": "attention",
+          "ko": "주의"
+        },
+        {
+          "en": "speaker",
+          "ko": "말하는 사람"
+        },
+        {
+          "en": "in order to",
+          "ko": "~하려고"
+        },
+        {
+          "en": "avoid",
+          "ko": "피하다"
+        },
+        {
+          "en": "called on",
+          "ko": "지목당하는"
+        },
+        {
+          "en": "front row",
+          "ko": "앞줄"
+        },
+        {
+          "en": "because",
+          "ko": "왜냐하면"
+        },
+        {
+          "en": "those",
+          "ko": "~인 사람들"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "learn",
+          "ko": "배우다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "show",
+          "ko": "보여 주다"
+        },
+        {
+          "en": "being",
+          "ko": "~인 것"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "more eager to learn → 더 배우고 싶어 하는",
+          "check": [
+            "배우고 싶",
+            "열의",
+            "의욕",
+            "열심"
+          ],
+          "nudge": "more eager to learn이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "more eager to learn은 여기서 '더 배우고 싶어 하는'이에요."
+        },
+        {
+          "id": 2,
+          "text": "in order to avoid being called on → 지목당하지 않으려고",
+          "check": [
+            "지목",
+            "지名",
+            "불리지",
+            "걸리지",
+            "시키지"
+          ],
+          "nudge": "in order to avoid being called on이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "in order to avoid being called on은 여기서 '지목당하지 않으려고'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "being called on을 '전화를 받다'로 해석",
+          "signals": [
+            "전화"
+          ],
+          "treatment": {
+            "message": "수업에서 call on someone은 무엇일까요? '전화받는 것을 피하려고'일까요, '지목당하는 것을 피하려고'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "전화받는 것을 피하려고",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "지목당하는 것을 피하려고",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '지목당하는 것을 피하려고'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '지목당하는 것을 피하려고'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "avoid 뒤의 수동을 놓치고 '부르지 않으려고'로 뒤집음",
+          "signals": [
+            "부르지 않으려고",
+            "부르는 것을 피"
+          ],
+          "treatment": {
+            "message": "being called on은 부르는 쪽일까요, 불리는 쪽일까요? '부르는 것을 피하려고'일까요, '불리는 것을 피하려고'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "부르는 것을 피하려고",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "불리는 것을 피하려고",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '불리는 것을 피하려고'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '불리는 것을 피하려고'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Those in the middle sections are the next most attentive and ask the most questions, as the middle section is considered a safe area, surrounded by others.",
+      "model_translation": "가운데 구역에 앉은 사람들이 그다음으로 주의를 기울이고 질문을 가장 많이 한다. 가운데는 다른 사람들에게 둘러싸인 안전한 자리로 여겨지기 때문이다",
+      "praise": "as를 이유로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "Those",
+          "ko": "~인 사람들"
+        },
+        {
+          "en": "middle",
+          "ko": "가운데의"
+        },
+        {
+          "en": "sections",
+          "ko": "구역"
+        },
+        {
+          "en": "attentive",
+          "ko": "주의를 기울이는"
+        },
+        {
+          "en": "questions",
+          "ko": "질문"
+        },
+        {
+          "en": "considered",
+          "ko": "여겨지는"
+        },
+        {
+          "en": "safe",
+          "ko": "안전한"
+        },
+        {
+          "en": "area",
+          "ko": "자리, 구역"
+        },
+        {
+          "en": "surrounded by",
+          "ko": "~에게 둘러싸인"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "next",
+          "ko": "다음의"
+        },
+        {
+          "en": "most",
+          "ko": "가장"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "ask",
+          "ko": "묻다"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "section",
+          "ko": "구역, 부분"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the next most attentive → 그다음으로 주의를 기울이는",
+          "check": [
+            "그다음",
+            "두 번째",
+            "주의"
+          ],
+          "nudge": "the next most attentive가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the next most attentive는 여기서 '그다음으로 주의를 기울이는'이에요."
+        },
+        {
+          "id": 2,
+          "text": "is considered a safe area → 안전한 자리로 여겨진다",
+          "check": [
+            "안전",
+            "여겨",
+            "간주"
+          ],
+          "nudge": "is considered a safe area가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "is considered a safe area는 여기서 '안전한 자리로 여겨진다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "as를 '~로서'로 보고 이유를 놓침",
+          "signals": [
+            "로서"
+          ],
+          "treatment": {
+            "message": "여기 as는 무엇을 잇나요? '가운데 구역으로서'일까요, '가운데는 ~이기 때문에'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "가운데 구역으로서",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "가운데는 ~이기 때문에",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '가운데는 ~이기 때문에'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '가운데는 ~이기 때문에'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "surrounded를 문장의 동사로 보고 끊음",
+          "signals": [
+            "둘러쌌다",
+            "에워쌌다"
+          ],
+          "treatment": {
+            "message": "surrounded by others는 앞의 무엇을 꾸밀까요? '그들이 다른 사람을 둘러쌌다'일까요, '다른 사람들에게 둘러싸인'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그들이 다른 사람을 둘러쌌다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "다른 사람들에게 둘러싸인",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '다른 사람들에게 둘러싸인'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '다른 사람들에게 둘러싸인'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "The side areas and back are the least responsive and attentive. In one experiment we conducted, we placed name cards on participants' seats so they could not take their usual positions.",
+      "model_translation": "옆쪽과 뒤쪽이 가장 덜 반응하고 덜 집중한다. 우리가 진행한 한 실험에서, 참가자들이 늘 앉던 자리에 앉지 못하도록 좌석에 이름표를 놓았다",
+      "praise": "so they could not ~ 을 '~하지 못하도록'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "side",
+          "ko": "옆쪽의"
+        },
+        {
+          "en": "areas",
+          "ko": "구역"
+        },
+        {
+          "en": "back",
+          "ko": "뒤쪽"
+        },
+        {
+          "en": "least",
+          "ko": "가장 덜"
+        },
+        {
+          "en": "responsive",
+          "ko": "반응하는"
+        },
+        {
+          "en": "experiment",
+          "ko": "실험"
+        },
+        {
+          "en": "conducted",
+          "ko": "진행했다"
+        },
+        {
+          "en": "placed",
+          "ko": "놓았다"
+        },
+        {
+          "en": "name cards",
+          "ko": "이름표"
+        },
+        {
+          "en": "participants",
+          "ko": "참가자"
+        },
+        {
+          "en": "seats",
+          "ko": "좌석"
+        },
+        {
+          "en": "usual",
+          "ko": "평소의"
+        },
+        {
+          "en": "positions",
+          "ko": "자리"
+        },
+        {
+          "en": "The",
+          "ko": "그"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "attentive",
+          "ko": "주의를 기울이는"
+        },
+        {
+          "en": "In",
+          "ko": "~에서"
+        },
+        {
+          "en": "one",
+          "ko": "하나"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "on",
+          "ko": "~에"
+        },
+        {
+          "en": "so",
+          "ko": "그래서"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "could",
+          "ko": "~일까 (추측)"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "take",
+          "ko": "가져가다"
+        },
+        {
+          "en": "their",
+          "ko": "그들의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the least responsive and attentive → 가장 덜 반응하고 덜 집중하는",
+          "check": [
+            "가장 덜",
+            "제일 덜",
+            "반응",
+            "집중"
+          ],
+          "nudge": "the least responsive and attentive가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the least responsive and attentive는 여기서 '가장 덜 반응하고 덜 집중하는'이에요."
+        },
+        {
+          "id": 2,
+          "text": "so they could not take their usual positions → 늘 앉던 자리에 앉지 못하도록",
+          "check": [
+            "늘",
+            "평소",
+            "앉지 못",
+            "자리"
+          ],
+          "nudge": "so they could not take their usual positions이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "so they could not take their usual positions은 여기서 '늘 앉던 자리에 앉지 못하도록'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "least를 '적어도'로 보고 최상급을 놓침",
+          "signals": [
+            "적어도"
+          ],
+          "treatment": {
+            "message": "the least responsive는 어느 정도일까요? '적어도 반응한다'일까요, '가장 덜 반응한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "적어도 반응한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "가장 덜 반응한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '가장 덜 반응한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '가장 덜 반응한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "positions를 '직위'로 해석",
+          "signals": [
+            "직위",
+            "지위"
+          ],
+          "treatment": {
+            "message": "좌석 이야기에서 positions는 무엇일까요? '평소의 직위'일까요, '평소 앉던 자리'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "평소의 직위",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "평소 앉던 자리",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '평소 앉던 자리'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '평소 앉던 자리'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "We intentionally sat enthusiastic people to the sides and rear of the room, and well-known back-row hermits sat in the front.",
+      "model_translation": "우리는 열의 있는 사람들을 일부러 방의 옆과 뒤에 앉히고, 늘 뒷줄에 숨던 사람들을 앞에 앉혔다",
+      "praise": "sat을 '앉혔다'(타동사)로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "intentionally",
+          "ko": "일부러"
+        },
+        {
+          "en": "sat",
+          "ko": "앉혔다, 앉았다"
+        },
+        {
+          "en": "enthusiastic",
+          "ko": "열의 있는"
+        },
+        {
+          "en": "sides",
+          "ko": "옆쪽"
+        },
+        {
+          "en": "rear",
+          "ko": "뒤쪽"
+        },
+        {
+          "en": "room",
+          "ko": "방"
+        },
+        {
+          "en": "well-known",
+          "ko": "잘 알려진"
+        },
+        {
+          "en": "back-row",
+          "ko": "뒷줄의"
+        },
+        {
+          "en": "hermits",
+          "ko": "숨어 지내는 사람"
+        },
+        {
+          "en": "front",
+          "ko": "앞쪽"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "sat enthusiastic people to the sides → 열의 있는 사람들을 옆에 앉혔다",
+          "check": [
+            "열의",
+            "적극",
+            "앉혔",
+            "앉게"
+          ],
+          "nudge": "sat enthusiastic people to the sides가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "sat enthusiastic people to the sides는 여기서 '열의 있는 사람들을 옆에 앉혔다'예요."
+        },
+        {
+          "id": 2,
+          "text": "back-row hermits → 늘 뒷줄에 숨는 사람들",
+          "check": [
+            "뒷줄",
+            "뒤",
+            "숨",
+            "은둔"
+          ],
+          "nudge": "back-row hermits가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "back-row hermits는 여기서 '늘 뒷줄에 숨는 사람들'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "sat을 자동사로 보고 '사람들이 앉았다'로 해석",
+          "signals": [
+            "사람들이 앉았다"
+          ],
+          "treatment": {
+            "message": "we sat people to the sides에서 앉은 쪽은 누구일까요? '우리가 옆에 앉았다'일까요, '우리가 그들을 옆에 앉혔다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "우리가 옆에 앉았다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "우리가 그들을 옆에 앉혔다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '우리가 그들을 옆에 앉혔다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '우리가 그들을 옆에 앉혔다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "hermits를 '은둔자(종교)'로만 보고 흐림",
+          "signals": [
+            "수도자",
+            "은둔 수행"
+          ],
+          "treatment": {
+            "message": "back-row hermits는 어떤 사람일까요? '뒷줄의 수도자'일까요, '늘 뒷줄에 숨는 사람'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "뒷줄의 수도자",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "늘 뒷줄에 숨는 사람",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '늘 뒷줄에 숨는 사람'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '늘 뒷줄에 숨는 사람'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "We found that this strategy not only increased the participation and recall of the normally negative participants who sat up front, it also decreased the participation and recall of the usually positive participants who had been sent to the back.",
+      "model_translation": "이 방법이 앞에 앉게 된 평소 소극적인 참가자들의 참여와 기억을 늘렸을 뿐 아니라, 뒤로 보내진 평소 적극적인 참가자들의 참여와 기억을 줄이기도 했다는 것을 우리는 알아냈다",
+      "praise": "not only A, it also B를 두 갈래로 살린 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "found",
+          "ko": "알아냈다"
+        },
+        {
+          "en": "strategy",
+          "ko": "방법, 전략"
+        },
+        {
+          "en": "increased",
+          "ko": "늘렸다"
+        },
+        {
+          "en": "participation",
+          "ko": "참여"
+        },
+        {
+          "en": "recall",
+          "ko": "기억해 냄"
+        },
+        {
+          "en": "normally",
+          "ko": "평소에"
+        },
+        {
+          "en": "negative",
+          "ko": "소극적인"
+        },
+        {
+          "en": "up front",
+          "ko": "앞쪽에"
+        },
+        {
+          "en": "decreased",
+          "ko": "줄였다"
+        },
+        {
+          "en": "usually",
+          "ko": "평소에"
+        },
+        {
+          "en": "positive",
+          "ko": "적극적인"
+        },
+        {
+          "en": "sent",
+          "ko": "보내진"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "this",
+          "ko": "이"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "only",
+          "ko": "오직"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "participants",
+          "ko": "참가자"
+        },
+        {
+          "en": "who",
+          "ko": "~하는 사람"
+        },
+        {
+          "en": "sat",
+          "ko": "앉혔다, 앉았다"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "also",
+          "ko": "또한"
+        },
+        {
+          "en": "had",
+          "ko": "가지고 있었다"
+        },
+        {
+          "en": "been",
+          "ko": "~이었다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "back",
+          "ko": "뒤쪽"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "not only increased ~, it also decreased ~ → 늘렸을 뿐 아니라 줄이기도 했다",
+          "check": [
+            "뿐 아니",
+            "늘",
+            "줄",
+            "감소"
+          ],
+          "nudge": "not only increased ~, it also decreased ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "not only increased ~, it also decreased ~는 여기서 '늘렸을 뿐 아니라 줄이기도 했다'예요."
+        },
+        {
+          "id": 2,
+          "text": "normally negative participants who sat up front → 앞에 앉게 된 평소 소극적인 참가자들",
+          "check": [
+            "소극",
+            "부정적",
+            "평소",
+            "앞에"
+          ],
+          "nudge": "normally negative participants who sat up front이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "normally negative participants who sat up front은 여기서 '앞에 앉게 된 평소 소극적인 참가자들'이에요."
+        },
+        {
+          "id": 3,
+          "text": "who had been sent to the back → 뒤로 보내진",
+          "check": [
+            "뒤로",
+            "보내",
+            "뒷자리"
+          ],
+          "nudge": "who had been sent to the back가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "who had been sent to the back는 여기서 '뒤로 보내진'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "increased와 decreased의 대상을 뒤바꿈",
+          "signals": [
+            "앞에 앉은 사람의 참여가 줄",
+            "뒤로 간 사람의 참여가 늘"
+          ],
+          "treatment": {
+            "message": "앞에 앉은 사람은 늘었을까요, 줄었을까요? '앞에 앉은 사람의 참여가 줄었다'일까요, '앞에 앉은 사람의 참여가 늘었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "앞에 앉은 사람의 참여가 줄었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "앞에 앉은 사람의 참여가 늘었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '앞에 앉은 사람의 참여가 늘었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '앞에 앉은 사람의 참여가 늘었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "negative/positive를 '나쁜/좋은 사람'으로 보고 흐림",
+          "signals": [
+            "나쁜 참가자",
+            "좋은 참가자"
+          ],
+          "treatment": {
+            "message": "여기 negative participants는 어떤 사람일까요? '나쁜 참가자'일까요, '평소 소극적인 참가자'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "나쁜 참가자",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "평소 소극적인 참가자",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '평소 소극적인 참가자'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '평소 소극적인 참가자'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

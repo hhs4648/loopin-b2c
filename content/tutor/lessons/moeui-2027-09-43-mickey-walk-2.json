@@ -1,0 +1,1192 @@
+{
+  "id": "moeui-2027-09-43-mickey-walk-2",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 43·44·45번 (2)",
+  "category": "리딩",
+  "topic_intro": "공원에서 만난 친구, 그리고 달라진 마음",
+  "sentence": "One day, Tim got a call from Jack. \"Hello, Tim. How's everything going with Mickey?\" Tim replied, \"Actually, it's pretty hard walking him every day. We've been taking the same route, and it has become a little boring.\" Jack offered him a new idea. \"How about going to Happy Dog Park?\" When Tim and Mickey arrived at the park Jack had recommended, dozens of dogs were already jumping and playing. Just then, Tim saw a boy about his age standing with a small dog. Gathering his courage, Tim walked over to him. Having something in common as dog owners, Tim and Daniel enjoyed talking to each other. They spent the next two hours pleasantly chatting and decided to walk their dogs together regularly. After returning from a walk one day, Tim said to Mickey, \"Walking you felt like a burden at first, but now I see doing things for you can be great for me, too!\"",
+  "grammar_type": "장문독해_서사문",
+  "split_rule": {
+    "when": "한 문장이 25단어를 넘거나 and로 두 갈래가 되면",
+    "how": "and·분사구 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Tim",
+      "ko": "팀",
+      "type": "person"
+    },
+    {
+      "en": "Mickey",
+      "ko": "미키",
+      "type": "person"
+    },
+    {
+      "en": "Jack",
+      "ko": "잭",
+      "type": "person"
+    },
+    {
+      "en": "Daniel",
+      "ko": "대니얼",
+      "type": "person"
+    },
+    {
+      "en": "Happy Dog Park",
+      "ko": "해피 도그 공원",
+      "type": "place"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "One day, Tim got a call from Jack. \"Hello, Tim. How's everything going with Mickey?\"",
+      "model_translation": "어느 날 팀은 잭에게서 전화를 받았다. \"안녕하세요, 팀. 미키와는 다 잘 되어 가나요?\"",
+      "praise": "How's everything going을 '다 잘 되어 가나요'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "One day",
+          "ko": "어느 날"
+        },
+        {
+          "en": "got a call",
+          "ko": "전화를 받았다"
+        },
+        {
+          "en": "Hello",
+          "ko": "안녕하세요"
+        },
+        {
+          "en": "everything",
+          "ko": "모든 것"
+        },
+        {
+          "en": "going",
+          "ko": "되어 가는"
+        },
+        {
+          "en": "Tim",
+          "ko": "팀(이름)"
+        },
+        {
+          "en": "Mickey",
+          "ko": "미키(이름)"
+        },
+        {
+          "en": "Jack",
+          "ko": "잭(이름)"
+        },
+        {
+          "en": "How's",
+          "ko": "어떻게의"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "got a call from Jack → 잭에게서 전화를 받았다",
+          "check": [
+            "전화",
+            "연락",
+            "받"
+          ],
+          "nudge": "got a call from Jack이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "got a call from Jack은 여기서 '잭에게서 전화를 받았다'예요."
+        },
+        {
+          "id": 2,
+          "text": "How's everything going → 다 잘 되어 가나요",
+          "check": [
+            "잘 되",
+            "어떻게",
+            "지내"
+          ],
+          "nudge": "How's everything going이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "How's everything going은 여기서 '다 잘 되어 가나요'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "got a call from을 '잭에게 전화했다'로 뒤집음",
+          "signals": [
+            "잭에게 전화했",
+            "잭에게 걸었"
+          ],
+          "treatment": {
+            "message": "got a call from Jack은 누가 건 전화일까요? '팀이 잭에게 전화했다'일까요, '잭이 팀에게 전화했다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "팀이 잭에게 전화했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "잭이 팀에게 전화했다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '잭이 팀에게 전화했다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '잭이 팀에게 전화했다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Tim replied, \"Actually, it's pretty hard walking him every day. We've been taking the same route, and it has become a little boring.\"",
+      "model_translation": "팀이 답했다. \"사실 날마다 산책시키는 게 꽤 힘들어요. 계속 같은 길로만 다녔더니 좀 지루해졌어요\"",
+      "praise": "We've been taking을 '계속 다녀 왔다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "replied",
+          "ko": "답했다"
+        },
+        {
+          "en": "Actually",
+          "ko": "사실은"
+        },
+        {
+          "en": "pretty",
+          "ko": "꽤"
+        },
+        {
+          "en": "walking",
+          "ko": "산책시키는 것"
+        },
+        {
+          "en": "taking",
+          "ko": "다니는 것"
+        },
+        {
+          "en": "same",
+          "ko": "같은"
+        },
+        {
+          "en": "route",
+          "ko": "길"
+        },
+        {
+          "en": "boring",
+          "ko": "지루한"
+        },
+        {
+          "en": "Tim",
+          "ko": "팀(이름)"
+        },
+        {
+          "en": "it's",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "We've",
+          "ko": "우리는은 ~했다"
+        },
+        {
+          "en": "hard",
+          "ko": "어려운, 힘든"
+        },
+        {
+          "en": "him",
+          "ko": "그를"
+        },
+        {
+          "en": "every",
+          "ko": "모든"
+        },
+        {
+          "en": "day",
+          "ko": "날"
+        },
+        {
+          "en": "been",
+          "ko": "~이었다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "has",
+          "ko": "가지다"
+        },
+        {
+          "en": "become",
+          "ko": "~이 되다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "little",
+          "ko": "거의 없는"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "it's pretty hard walking him every day → 날마다 산책시키는 게 꽤 힘들다",
+          "check": [
+            "힘들",
+            "날마다",
+            "매일",
+            "산책"
+          ],
+          "nudge": "it's pretty hard walking him every day가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "it's pretty hard walking him every day는 여기서 '날마다 산책시키는 게 꽤 힘들다'예요."
+        },
+        {
+          "id": 2,
+          "text": "we've been taking the same route → 계속 같은 길로 다녀 왔다",
+          "check": [
+            "같은",
+            "길",
+            "경로",
+            "계속"
+          ],
+          "nudge": "we've been taking the same route가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "we've been taking the same route는 여기서 '계속 같은 길로 다녀 왔다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Actually를 '실제로'로만 보고 흐림",
+          "signals": [
+            "실제로는 사실"
+          ],
+          "treatment": {
+            "message": "대화에서 Actually는 무엇을 하는 말일까요? '실제로'일까요, '사실은'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "실제로",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사실은",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사실은'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사실은'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "route를 '경로 안내'처럼 두고 흐림",
+          "signals": [
+            "노선표",
+            "경로 안내"
+          ],
+          "treatment": {
+            "message": "the same route는 무엇일까요? '같은 노선표'일까요, '같은 길'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "같은 노선표",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "같은 길",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '같은 길'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '같은 길'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Jack offered him a new idea. \"How about going to Happy Dog Park?\" When Tim and Mickey arrived at the park Jack had recommended, dozens of dogs were already jumping and playing.",
+      "model_translation": "잭이 새로운 생각을 하나 내놓았다. \"해피 도그 공원에 가 보는 건 어때요?\" 팀과 미키가 잭이 알려 준 공원에 이르렀을 때, 이미 수십 마리 개가 뛰고 놀고 있었다",
+      "praise": "the park Jack had recommended를 '잭이 알려 준 공원'으로 묶은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "offered",
+          "ko": "내놓았다"
+        },
+        {
+          "en": "idea",
+          "ko": "생각"
+        },
+        {
+          "en": "How about",
+          "ko": "~하는 건 어때"
+        },
+        {
+          "en": "Happy Dog Park",
+          "ko": "해피 도그 공원(장소 이름)"
+        },
+        {
+          "en": "arrived at",
+          "ko": "~에 이르렀다"
+        },
+        {
+          "en": "park",
+          "ko": "공원"
+        },
+        {
+          "en": "recommended",
+          "ko": "알려 주었다, 추천했다"
+        },
+        {
+          "en": "dozens of",
+          "ko": "수십의"
+        },
+        {
+          "en": "already",
+          "ko": "이미"
+        },
+        {
+          "en": "jumping",
+          "ko": "뛰는"
+        },
+        {
+          "en": "playing",
+          "ko": "노는"
+        },
+        {
+          "en": "Tim",
+          "ko": "팀(이름)"
+        },
+        {
+          "en": "Mickey",
+          "ko": "미키(이름)"
+        },
+        {
+          "en": "Jack",
+          "ko": "잭(이름)"
+        },
+        {
+          "en": "him",
+          "ko": "그를"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "new",
+          "ko": "새로운"
+        },
+        {
+          "en": "going",
+          "ko": "되어 가는"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "had",
+          "ko": "가지고 있었다"
+        },
+        {
+          "en": "dogs",
+          "ko": "개들"
+        },
+        {
+          "en": "were",
+          "ko": "~이었다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "How about going to ~ → ~에 가 보는 건 어때요",
+          "check": [
+            "어때",
+            "가 보",
+            "어떨까"
+          ],
+          "nudge": "How about going to ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "How about going to ~는 여기서 '~에 가 보는 건 어때요'예요."
+        },
+        {
+          "id": 2,
+          "text": "the park Jack had recommended → 잭이 알려 준 공원",
+          "check": [
+            "잭",
+            "추천",
+            "알려",
+            "공원"
+          ],
+          "nudge": "the park Jack had recommended가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the park Jack had recommended는 여기서 '잭이 알려 준 공원'이에요."
+        },
+        {
+          "id": 3,
+          "text": "dozens of dogs → 수십 마리의 개",
+          "check": [
+            "수십",
+            "많은 개",
+            "여러"
+          ],
+          "nudge": "dozens of dogs이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "dozens of dogs은 여기서 '수십 마리의 개'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "park 뒤 관계사 생략을 못 보고 끊음",
+          "signals": [
+            "공원. 잭이 추천했다"
+          ],
+          "treatment": {
+            "message": "Jack had recommended는 앞의 무엇을 꾸밀까요? '공원, 잭이 추천했다'일까요, '잭이 추천한 공원'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "공원, 잭이 추천했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "잭이 추천한 공원",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '잭이 추천한 공원'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '잭이 추천한 공원'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "dozens of를 '열두 마리'로 해석",
+          "signals": [
+            "열두",
+            "12마리"
+          ],
+          "treatment": {
+            "message": "dozens of는 몇 마리쯤일까요? '열두 마리의 개'일까요, '수십 마리의 개'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "열두 마리의 개",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "수십 마리의 개",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '수십 마리의 개'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '수십 마리의 개'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Just then, Tim saw a boy about his age standing with a small dog. Gathering his courage, Tim walked over to him.",
+      "model_translation": "바로 그때 팀은 작은 개와 함께 서 있는, 자기 또래쯤 되는 남자아이를 보았다. 용기를 내어 팀은 그에게 걸어갔다",
+      "praise": "saw a boy ~ standing을 '서 있는 아이를 보았다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Just then",
+          "ko": "바로 그때"
+        },
+        {
+          "en": "saw",
+          "ko": "보았다"
+        },
+        {
+          "en": "boy",
+          "ko": "남자아이"
+        },
+        {
+          "en": "about",
+          "ko": "~쯤"
+        },
+        {
+          "en": "age",
+          "ko": "나이"
+        },
+        {
+          "en": "standing",
+          "ko": "서 있는"
+        },
+        {
+          "en": "small",
+          "ko": "작은"
+        },
+        {
+          "en": "Gathering",
+          "ko": "끌어모으며"
+        },
+        {
+          "en": "courage",
+          "ko": "용기"
+        },
+        {
+          "en": "walked over to",
+          "ko": "~에게 걸어갔다"
+        },
+        {
+          "en": "Tim",
+          "ko": "팀(이름)"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        },
+        {
+          "en": "dog",
+          "ko": "개"
+        },
+        {
+          "en": "him",
+          "ko": "그를"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "a boy about his age → 자기 또래쯤 되는 남자아이",
+          "check": [
+            "또래",
+            "나이",
+            "비슷한"
+          ],
+          "nudge": "a boy about his age가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a boy about his age는 여기서 '자기 또래쯤 되는 남자아이'예요."
+        },
+        {
+          "id": 2,
+          "text": "standing with a small dog → 작은 개와 함께 서 있는",
+          "check": [
+            "서 있",
+            "작은 개"
+          ],
+          "nudge": "standing with a small dog이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "standing with a small dog은 여기서 '작은 개와 함께 서 있는'이에요."
+        },
+        {
+          "id": 3,
+          "text": "gathering his courage → 용기를 내어",
+          "check": [
+            "용기",
+            "마음먹",
+            "큰맘"
+          ],
+          "nudge": "gathering his courage가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "gathering his courage는 여기서 '용기를 내어'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "standing을 문장의 동사로 보고 끊음",
+          "signals": [
+            "소년이 서 있었다."
+          ],
+          "treatment": {
+            "message": "saw a boy standing에서 standing은 앞의 무엇을 꾸밀까요? '소년이 서 있었다'일까요, '서 있는 소년을 보았다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "소년이 서 있었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "서 있는 소년을 보았다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '서 있는 소년을 보았다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '서 있는 소년을 보았다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "about his age를 '그의 나이에 대해'로 직역",
+          "signals": [
+            "나이에 대해"
+          ],
+          "treatment": {
+            "message": "a boy about his age는 어떤 아이일까요? '그의 나이에 대한 소년'일까요, '그와 또래쯤 되는 소년'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그의 나이에 대한 소년",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그와 또래쯤 되는 소년",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그와 또래쯤 되는 소년'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그와 또래쯤 되는 소년'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Having something in common as dog owners, Tim and Daniel enjoyed talking to each other. They spent the next two hours pleasantly chatting and decided to walk their dogs together regularly.",
+      "model_translation": "개를 키우는 사람으로서 통하는 것이 있었기에 팀과 대니얼은 서로 이야기하는 것을 즐겼다. 둘은 다음 두 시간을 즐겁게 수다 떨며 보냈고, 앞으로 함께 개를 산책시키기로 했다",
+      "praise": "spend + 시간 + -ing를 '~하며 시간을 보내다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Having",
+          "ko": "가지고 있어서"
+        },
+        {
+          "en": "in common",
+          "ko": "공통으로"
+        },
+        {
+          "en": "owners",
+          "ko": "키우는 사람, 주인"
+        },
+        {
+          "en": "Daniel",
+          "ko": "대니얼(사람 이름)"
+        },
+        {
+          "en": "enjoyed",
+          "ko": "즐겼다"
+        },
+        {
+          "en": "talking",
+          "ko": "이야기하는 것"
+        },
+        {
+          "en": "each other",
+          "ko": "서로"
+        },
+        {
+          "en": "spent",
+          "ko": "보냈다"
+        },
+        {
+          "en": "hours",
+          "ko": "시간"
+        },
+        {
+          "en": "pleasantly",
+          "ko": "즐겁게"
+        },
+        {
+          "en": "chatting",
+          "ko": "수다 떠는 것"
+        },
+        {
+          "en": "together",
+          "ko": "함께"
+        },
+        {
+          "en": "regularly",
+          "ko": "자주, 규칙적으로"
+        },
+        {
+          "en": "Tim",
+          "ko": "팀(이름)"
+        },
+        {
+          "en": "something",
+          "ko": "어떤 것"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "dog",
+          "ko": "개"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "They",
+          "ko": "그것들"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "next",
+          "ko": "다음의"
+        },
+        {
+          "en": "two",
+          "ko": "둘"
+        },
+        {
+          "en": "decided",
+          "ko": "하기로 했다"
+        },
+        {
+          "en": "walk",
+          "ko": "걷다, 산책"
+        },
+        {
+          "en": "their",
+          "ko": "그들의"
+        },
+        {
+          "en": "dogs",
+          "ko": "개들"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "having something in common → 통하는 것이 있어서",
+          "check": [
+            "통하",
+            "공통",
+            "같은 점"
+          ],
+          "nudge": "having something in common이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "having something in common은 여기서 '통하는 것이 있어서'예요."
+        },
+        {
+          "id": 2,
+          "text": "spent the next two hours chatting → 다음 두 시간을 수다 떨며 보냈다",
+          "check": [
+            "두 시간",
+            "보냈",
+            "수다",
+            "이야기"
+          ],
+          "nudge": "spent the next two hours chatting이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "spent the next two hours chatting은 여기서 '다음 두 시간을 수다 떨며 보냈다'예요."
+        },
+        {
+          "id": 3,
+          "text": "decided to walk their dogs together regularly → 함께 개를 자주 산책시키기로 했다",
+          "check": [
+            "함께",
+            "같이",
+            "정기",
+            "자주",
+            "산책"
+          ],
+          "nudge": "decided to walk their dogs together regularly가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "decided to walk their dogs together regularly는 여기서 '함께 개를 자주 산책시키기로 했다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "맨 앞 Having을 문장의 동사로 봄",
+          "signals": [
+            "그들은 가졌다."
+          ],
+          "treatment": {
+            "message": "Having something in common은 앞에 붙는 말일까요? '그들은 공통점을 가졌다'일까요, '통하는 것이 있어서'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그들은 공통점을 가졌다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "통하는 것이 있어서",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '통하는 것이 있어서'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '통하는 것이 있어서'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "owners를 '주인님'처럼 두고 흐림",
+          "signals": [
+            "주인님"
+          ],
+          "treatment": {
+            "message": "dog owners는 어떤 사람일까요? '개의 주인님'일까요, '개를 키우는 사람'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "개의 주인님",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "개를 키우는 사람",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '개를 키우는 사람'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '개를 키우는 사람'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "After returning from a walk one day, Tim said to Mickey, \"Walking you felt like a burden at first, but now I see doing things for you can be great for me, too!\"",
+      "model_translation": "어느 날 산책에서 돌아온 뒤 팀이 미키에게 말했다. \"처음엔 너를 산책시키는 게 짐처럼 느껴졌는데, 이제는 너를 위해 무언가를 하는 게 나한테도 아주 좋을 수 있다는 걸 알겠어!\"",
+      "praise": "Walking you를 주어로 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "returning",
+          "ko": "돌아오는 것"
+        },
+        {
+          "en": "said to",
+          "ko": "~에게 말했다"
+        },
+        {
+          "en": "felt like",
+          "ko": "~처럼 느껴졌다"
+        },
+        {
+          "en": "at first",
+          "ko": "처음에는"
+        },
+        {
+          "en": "see",
+          "ko": "알다, 보다"
+        },
+        {
+          "en": "doing",
+          "ko": "하는 것"
+        },
+        {
+          "en": "things",
+          "ko": "일들"
+        },
+        {
+          "en": "great",
+          "ko": "아주 좋은"
+        },
+        {
+          "en": "One day",
+          "ko": "어느 날"
+        },
+        {
+          "en": "Tim",
+          "ko": "팀(이름)"
+        },
+        {
+          "en": "Mickey",
+          "ko": "미키(이름)"
+        },
+        {
+          "en": "After",
+          "ko": "~ 후에"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "walk",
+          "ko": "걷다, 산책"
+        },
+        {
+          "en": "Walking",
+          "ko": "산책시키는 것"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "burden",
+          "ko": "짐, 부담"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "now",
+          "ko": "지금"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        },
+        {
+          "en": "me",
+          "ko": "나를"
+        },
+        {
+          "en": "too",
+          "ko": "~도, 너무"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "walking you felt like a burden → 너를 산책시키는 것이 짐처럼 느껴졌다",
+          "check": [
+            "짐",
+            "부담",
+            "느껴",
+            "산책"
+          ],
+          "nudge": "walking you felt like a burden이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "walking you felt like a burden은 여기서 '너를 산책시키는 것이 짐처럼 느껴졌다'예요."
+        },
+        {
+          "id": 2,
+          "text": "doing things for you can be great for me → 너를 위해 하는 일이 나에게도 좋을 수 있다",
+          "check": [
+            "너를 위",
+            "나에게",
+            "좋",
+            "도움"
+          ],
+          "nudge": "doing things for you can be great for me가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "doing things for you can be great for me는 여기서 '너를 위해 하는 일이 나에게도 좋을 수 있다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Walking you를 '너와 걷는 동안'으로 보고 주어를 놓침",
+          "signals": [
+            "너와 걷는 동안",
+            "걸으면서"
+          ],
+          "treatment": {
+            "message": "felt 앞에 오는 것이 주어예요. '너와 걸으면서 느꼈다'일까요, '너를 산책시키는 일이 ~로 느껴졌다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "너와 걸으면서 느꼈다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "너를 산책시키는 일이 ~로 느껴졌다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '너를 산책시키는 일이 ~로 느껴졌다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '너를 산책시키는 일이 ~로 느껴졌다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "for me, too의 too를 놓치고 '나에게만 좋다'로 해석",
+          "signals": [
+            "나에게만"
+          ],
+          "treatment": {
+            "message": "for me, too의 too는 무엇을 더하는 말일까요? '나에게만 좋다'일까요, '나에게도 좋다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "나에게만 좋다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "나에게도 좋다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '나에게도 좋다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '나에게도 좋다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

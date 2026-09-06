@@ -1,0 +1,144 @@
+{
+  "id": "moeui-2027-09-41-curious-nonbelief-2",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 41·42번 (2)",
+  "category": "리딩",
+  "topic_intro": "못 믿지만 궁금한 사람이 제일 많이 써 본다",
+  "sentence": "The latter group was further divided into two groups, those who confidently disbelieved the claims and those who had what Maloney described as a curious nonbelief. The latter was tied into beliefs that actual product experience was necessary to fully judge the claims. Few consumers who clearly disbelieved the message were interested in trying the product (18%). However, Maloney's results showed that more consumers who were in the curious nonbelief group were ready to try the product (44%) than in the group that expressed no concerns about the advertising claims (34%). The results suggest that advertising that causes consumers not to believe the message claims but makes them curious may be the most effective form of new product advertising. Convincing consumers that the claims about a new product are true is not necessary to create interest in product trial.",
+  "grammar_type": "장문독해_소비자연구",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 than으로 비교가 이어지면",
+    "how": "than·but 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [
+    { "en": "Maloney", "ko": "맬로니", "type": "person" }
+  ],
+  "chunks": [
+    {
+      "text": "The latter group was further divided into two groups, those who confidently disbelieved the claims and those who had what Maloney described as a curious nonbelief.",
+      "ko": "뒤쪽 무리는 다시 둘로 나뉘었다. 주장을 자신 있게 믿지 않은 사람들과, 맬로니가 '궁금한 불신'이라고 부른 마음을 가진 사람들이다",
+      "praise": "what Maloney described as ~ 를 통째로 목적어로 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "the latter group", "sub": "이", "top": "은", "answer": "뒤쪽 무리", "check": ["뒤쪽", "후자", "나중"] },
+        { "en": "confidently disbelieved the claims", "sub": "가", "top": "는", "answer": "자신 있게 믿지 않았다", "check": ["자신", "확신", "믿지 않", "못 믿"] },
+        { "en": "what Maloney described as a curious nonbelief", "sub": "이", "top": "은", "answer": "맬로니가 '궁금한 불신'이라고 부른 것", "check": ["궁금", "호기심", "불신", "부른"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "the latter를 '나중의 것'으로만 보고 무엇인지 놓침", "signals": ["나중 것", "후자의 것"], "ask": "the latter group은 앞의 어느 무리일까요?", "wrong": "나중 것", "right": "믿기 어렵다고 한 무리" },
+        { "id": "E2", "detect": "nonbelief를 '무신론'으로 해석", "signals": ["무신론", "신을 안 믿"], "ask": "curious nonbelief는 무엇을 안 믿는 마음일까요?", "wrong": "궁금한 무신론", "right": "궁금해하면서 안 믿는 마음" }
+      ],
+      "glosses": [
+        ["latter", "뒤쪽의, 후자의"],
+        ["further", "다시, 더"],
+        ["divided", "나뉜"],
+        ["confidently", "자신 있게"],
+        ["disbelieved", "믿지 않았다"],
+        ["described as", "~라고 부른"],
+        ["curious", "궁금해하는"],
+        ["nonbelief", "믿지 않음"]
+      ]
+    },
+    {
+      "text": "The latter was tied into beliefs that actual product experience was necessary to fully judge the claims.",
+      "ko": "그 뒤쪽 마음은, 주장을 제대로 가늠하려면 제품을 실제로 써 봐야 한다는 믿음과 이어져 있었다",
+      "praise": "was tied into를 '~와 이어져 있었다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "was tied into beliefs that ~", "sub": "가", "top": "는", "answer": "~라는 믿음과 이어져 있었다", "check": ["이어", "묶여", "연결", "믿음"] },
+        { "en": "actual product experience was necessary", "sub": "가", "top": "는", "answer": "실제로 써 보는 것이 필요했다", "check": ["실제", "직접", "써 봐", "필요"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "tied를 '넥타이를 맸다'로 해석", "signals": ["넥타이"], "ask": "be tied into ~ 는 무엇을 말할까요?", "wrong": "믿음에 넥타이를 맸다", "right": "믿음과 이어져 있었다" },
+        { "id": "E2", "detect": "judge를 '판사'로 해석", "signals": ["판사"], "ask": "judge the claims는 무엇을 하는 걸까요?", "wrong": "주장의 판사", "right": "주장을 가늠하다" }
+      ],
+      "glosses": [
+        ["tied into", "~와 이어진"],
+        ["actual", "실제의"],
+        ["necessary", "필요한"],
+        ["fully", "제대로, 온전히"],
+        ["judge", "가늠하다, 판단하다"]
+      ]
+    },
+    {
+      "text": "Few consumers who clearly disbelieved the message were interested in trying the product (18%).",
+      "ko": "메시지를 뚜렷하게 믿지 않은 소비자 가운데 제품을 써 보는 데 관심을 보인 사람은 거의 없었다 (18%)",
+      "praise": "Few를 '거의 없었다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "few consumers", "sub": "가", "top": "는", "answer": "소비자가 거의 없었다", "check": ["거의 없", "드물", "많지 않"] },
+        { "en": "were interested in trying the product", "sub": "이", "top": "은", "answer": "제품을 써 보는 데 관심이 있었다", "check": ["관심", "흥미", "써 보"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "Few를 'a few'로 보고 '몇몇은 있었다'로 뒤집음", "signals": ["몇몇은", "일부는 관심"], "ask": "관사 없는 few는 있다는 뜻일까요, 없다는 뜻일까요?", "wrong": "몇몇 소비자는 관심이 있었다", "right": "관심을 보인 소비자는 거의 없었다" }
+      ],
+      "glosses": [
+        ["Few", "거의 없는"],
+        ["consumers", "소비자"],
+        ["clearly", "뚜렷하게"],
+        ["interested in", "~에 관심 있는"],
+        ["trying", "써 보는 것"]
+      ]
+    },
+    {
+      "text": "However, Maloney's results showed that more consumers who were in the curious nonbelief group were ready to try the product (44%) than in the group that expressed no concerns about the advertising claims (34%).",
+      "ko": "그러나 맬로니의 결과는, '궁금한 불신' 무리의 소비자가 광고 주장에 아무 의심도 보이지 않은 무리(34%)보다 제품을 써 볼 마음이 더 컸다(44%)는 것을 보여 주었다",
+      "praise": "more ~ than 의 두 무리를 끝까지 갈라서 읽은 거 정말 잘했어요.",
+      "points": [
+        { "en": "more consumers ... than in the group ~", "sub": "가", "top": "는", "answer": "~ 무리보다 더 많은 소비자가", "check": ["보다", "더 많", "무리"] },
+        { "en": "were ready to try the product", "sub": "이", "top": "은", "answer": "제품을 써 볼 마음이 있었다", "check": ["써 볼", "시도", "준비", "마음"] },
+        { "en": "expressed no concerns about the claims", "sub": "이", "top": "은", "answer": "주장에 아무 의심도 보이지 않았다", "check": ["의심", "걱정", "없", "믿"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "비교 방향을 뒤집어 믿은 무리가 더 많이 써 봤다고 해석", "signals": ["믿은 무리가 더", "34%가 더"], "ask": "제품을 써 볼 마음이 더 컸던 쪽은 어느 무리일까요?", "wrong": "광고를 믿은 무리가 더 많았다", "right": "궁금해하며 안 믿은 무리가 더 많았다" },
+        { "id": "E2", "detect": "expressed no concerns를 '걱정을 나타냈다'로 뒤집음", "signals": ["걱정을 나타냈", "우려를 표했"], "ask": "no concerns는 걱정이 있다는 뜻일까요?", "wrong": "걱정을 나타냈다", "right": "아무 걱정도 없었다" }
+      ],
+      "glosses": [
+        ["results", "결과"],
+        ["showed", "보여 주었다"],
+        ["ready to", "~할 마음이 있는"],
+        ["expressed", "나타냈다"],
+        ["concerns", "의심, 걱정"]
+      ]
+    },
+    {
+      "text": "The results suggest that advertising that causes consumers not to believe the message claims but makes them curious may be the most effective form of new product advertising.",
+      "ko": "이 결과는, 소비자가 광고 주장을 믿지는 않게 하면서도 궁금하게 만드는 광고가 새 제품 광고에서 가장 잘 통하는 형태일 수 있음을 보여 준다",
+      "praise": "causes A not to B but makes A ~ 를 두 갈래로 살린 거 정말 잘했어요.",
+      "points": [
+        { "en": "causes consumers not to believe", "sub": "가", "top": "는", "answer": "소비자가 믿지 않게 만든다", "check": ["믿지 않", "못 믿게", "만든"] },
+        { "en": "but makes them curious", "sub": "가", "top": "는", "answer": "그러면서 궁금하게 만든다", "check": ["궁금", "호기심"] },
+        { "en": "the most effective form of ~", "sub": "이", "top": "은", "answer": "가장 잘 통하는 형태", "check": ["가장", "효과", "잘 통하", "형태"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "not to believe와 makes curious를 한 덩어리로 묶어 뜻을 흐림", "signals": ["믿지 않게 하고 궁금하지 않게"], "ask": "but 뒤는 앞과 반대되는 결과예요.", "wrong": "믿지도 궁금하지도 않게 한다", "right": "믿게 하지는 않지만 궁금하게 한다" },
+        { "id": "E2", "detect": "suggest를 '제안하다'로만 보고 흐림", "signals": ["제안한다"], "ask": "The results suggest that ~ 은 무엇일까요?", "wrong": "결과가 제안한다", "right": "결과가 ~임을 보여 준다" }
+      ],
+      "glosses": [
+        ["suggest", "보여 주다, 시사하다"],
+        ["causes", "~하게 만들다"],
+        ["makes", "~하게 만들다"],
+        ["effective", "잘 통하는"],
+        ["form", "형태"]
+      ]
+    },
+    {
+      "text": "Convincing consumers that the claims about a new product are true is not necessary to create interest in product trial.",
+      "ko": "새 제품에 대한 주장이 사실이라고 소비자를 설득하는 일은, 제품을 써 보고 싶은 마음을 만드는 데 꼭 필요하지는 않다",
+      "praise": "Convincing ~ 를 통째로 주어로 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "convincing consumers that ~", "sub": "이", "top": "은", "answer": "소비자를 ~라고 설득하는 것 (주어)", "check": ["설득", "납득", "믿게"] },
+        { "en": "is not necessary to create interest", "sub": "가", "top": "는", "answer": "관심을 만드는 데 꼭 필요하지는 않다", "check": ["필요하지", "않", "관심"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "Convincing을 명령문이나 분사구로 보고 주어를 놓침", "signals": ["소비자를 설득하라", "설득하면서"], "ask": "is not necessary 앞에 오는 것이 주어예요.", "wrong": "소비자를 설득하라", "right": "설득하는 일은 필요하지 않다" },
+        { "id": "E2", "detect": "부정을 놓치고 '설득이 필요하다'로 해석", "signals": ["필요하다."], "ask": "is not necessary는 필요하다는 뜻일까요?", "wrong": "설득이 필요하다", "right": "설득이 꼭 필요하지는 않다" }
+      ],
+      "glosses": [
+        ["Convincing", "설득하는 것"],
+        ["true", "사실인"],
+        ["create", "만들어 내다"],
+        ["interest", "관심"],
+        ["trial", "써 보기"]
+      ]
+    }
+  ]
+}

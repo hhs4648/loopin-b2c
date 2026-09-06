@@ -1,0 +1,1255 @@
+{
+  "id": "moeui-2027-09-26-chuck-jones",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 26번",
+  "category": "리딩",
+  "topic_intro": "애니메이션 감독 척 존스의 삶",
+  "sentence": "Chuck Jones was an influential director and artist whose work shaped animated films and cartoon production. He was born in Spokane, Washington, in 1912, though he grew up in Los Angeles. As a child, Jones had many opportunities to draw. He used the leftover pencils and paper that his father brought him from work. Jones began his career in animation in 1930 and was quickly promoted. In the 1940s, he created famous characters such as Wile E. Coyote and the Road Runner. He directed the famous cartoon film How the Grinch Stole Christmas, which is still enjoyed by many people today. Jones started his own company, Chuck Jones Enterprises, in 1970. For his contribution to the field of animation, he received an Honorary Academy Award in 1996. Late in his life, he established a non-profit organization supporting art education and other creative skills.",
+  "grammar_type": "내용일치_인물소개",
+  "split_rule": {
+    "when": "한 문장이 25단어를 넘거나 관계사절이 붙으면",
+    "how": "관계사·though 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Chuck Jones",
+      "ko": "척 존스",
+      "type": "person"
+    },
+    {
+      "en": "Spokane",
+      "ko": "스포캔",
+      "type": "place"
+    },
+    {
+      "en": "Washington",
+      "ko": "워싱턴",
+      "type": "place"
+    },
+    {
+      "en": "Los Angeles",
+      "ko": "로스앤젤레스",
+      "type": "place"
+    },
+    {
+      "en": "Wile E. Coyote",
+      "ko": "와일 E. 코요테",
+      "type": "other"
+    },
+    {
+      "en": "Road Runner",
+      "ko": "로드 러너",
+      "type": "other"
+    },
+    {
+      "en": "How the Grinch Stole Christmas",
+      "ko": "그린치는 어떻게 크리스마스를 훔쳤나",
+      "type": "other"
+    },
+    {
+      "en": "Chuck Jones Enterprises",
+      "ko": "척 존스 엔터프라이즈",
+      "type": "other"
+    },
+    {
+      "en": "Honorary Academy Award",
+      "ko": "아카데미 공로상",
+      "type": "other"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Chuck Jones was an influential director and artist whose work shaped animated films and cartoon production.",
+      "model_translation": "척 존스는 그의 작업이 애니메이션 영화와 만화 제작을 빚어낸, 영향력 있는 감독이자 예술가였다",
+      "praise": "whose work를 앞의 사람과 이어 붙인 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Chuck Jones",
+          "ko": "척 존스(사람 이름)"
+        },
+        {
+          "en": "influential",
+          "ko": "영향력 있는"
+        },
+        {
+          "en": "director",
+          "ko": "감독"
+        },
+        {
+          "en": "artist",
+          "ko": "예술가"
+        },
+        {
+          "en": "whose",
+          "ko": "그의"
+        },
+        {
+          "en": "work",
+          "ko": "작업, 작품"
+        },
+        {
+          "en": "shaped",
+          "ko": "빚어냈다"
+        },
+        {
+          "en": "animated",
+          "ko": "애니메이션의"
+        },
+        {
+          "en": "films",
+          "ko": "영화"
+        },
+        {
+          "en": "cartoon",
+          "ko": "만화"
+        },
+        {
+          "en": "production",
+          "ko": "제작"
+        },
+        {
+          "en": "Jones",
+          "ko": "척 존스(이름)"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "an influential director and artist → 영향력 있는 감독이자 예술가",
+          "check": [
+            "영향",
+            "감독",
+            "예술가"
+          ],
+          "nudge": "an influential director and artist가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "an influential director and artist는 여기서 '영향력 있는 감독이자 예술가'예요."
+        },
+        {
+          "id": 2,
+          "text": "whose work shaped ~ → 그의 작업이 ~을 빚어낸",
+          "check": [
+            "작업",
+            "작품",
+            "빚",
+            "만들",
+            "형성"
+          ],
+          "nudge": "whose work shaped ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "whose work shaped ~는 여기서 '그의 작업이 ~을 빚어낸'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "whose를 '누구의'로 보고 의문사로 해석",
+          "signals": [
+            "누구의 작품"
+          ],
+          "treatment": {
+            "message": "여기 whose는 앞의 무엇을 받을까요? '누구의 작품이'일까요, '그의 작품이'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "누구의 작품이",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그의 작품이",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그의 작품이'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그의 작품이'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "shaped를 '모양이었다'로 보고 동사를 놓침",
+          "signals": [
+            "모양이었다",
+            "형태였다"
+          ],
+          "treatment": {
+            "message": "his work shaped ~ 는 무엇을 했다는 걸까요? '작품이 모양이었다'일까요, '작품이 ~을 빚어냈다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "작품이 모양이었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "작품이 ~을 빚어냈다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '작품이 ~을 빚어냈다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '작품이 ~을 빚어냈다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "He was born in Spokane, Washington, in 1912, though he grew up in Los Angeles.",
+      "model_translation": "그는 1912년 워싱턴주 스포캔에서 태어났지만, 로스앤젤레스에서 자랐다",
+      "praise": "though를 '~이지만'으로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "born",
+          "ko": "태어난"
+        },
+        {
+          "en": "Spokane",
+          "ko": "스포캔(지명)"
+        },
+        {
+          "en": "Washington",
+          "ko": "워싱턴(지명)"
+        },
+        {
+          "en": "though",
+          "ko": "비록 ~이지만"
+        },
+        {
+          "en": "grew up",
+          "ko": "자랐다"
+        },
+        {
+          "en": "Los Angeles",
+          "ko": "로스앤젤레스(지명)"
+        },
+        {
+          "en": "Angeles",
+          "ko": "로스앤젤레스(이름)"
+        },
+        {
+          "en": "He",
+          "ko": "그는"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "1912",
+          "ko": "1912년"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "was born in ~ → ~에서 태어났다",
+          "check": [
+            "태어",
+            "출생"
+          ],
+          "nudge": "was born in ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "was born in ~은 여기서 '~에서 태어났다'예요."
+        },
+        {
+          "id": 2,
+          "text": "though he grew up in ~ → ~에서 자랐지만",
+          "check": [
+            "자랐",
+            "컸",
+            "성장"
+          ],
+          "nudge": "though he grew up in ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "though he grew up in ~는 여기서 '~에서 자랐지만'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "태어난 곳과 자란 곳을 뒤바꿈",
+          "signals": [
+            "로스앤젤레스에서 태어",
+            "스포캔에서 자랐"
+          ],
+          "treatment": {
+            "message": "태어난 곳은 어디일까요? '로스앤젤레스에서 태어났다'일까요, '스포캔에서 태어났다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "로스앤젤레스에서 태어났다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "스포캔에서 태어났다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '스포캔에서 태어났다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '스포캔에서 태어났다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "As a child, Jones had many opportunities to draw. He used the leftover pencils and paper that his father brought him from work.",
+      "model_translation": "어린 시절 존스는 그림 그릴 기회가 많았다. 그는 아버지가 일터에서 가져다준 남은 연필과 종이를 썼다",
+      "praise": "that his father brought를 앞의 것들과 이어 붙인 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "child",
+          "ko": "아이"
+        },
+        {
+          "en": "opportunities",
+          "ko": "기회"
+        },
+        {
+          "en": "draw",
+          "ko": "그리다"
+        },
+        {
+          "en": "leftover",
+          "ko": "쓰다 남은"
+        },
+        {
+          "en": "pencils",
+          "ko": "연필"
+        },
+        {
+          "en": "paper",
+          "ko": "종이"
+        },
+        {
+          "en": "father",
+          "ko": "아버지"
+        },
+        {
+          "en": "brought",
+          "ko": "가져다주었다"
+        },
+        {
+          "en": "Jones",
+          "ko": "척 존스(이름)"
+        },
+        {
+          "en": "As",
+          "ko": "~로서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "had",
+          "ko": "가지고 있었다"
+        },
+        {
+          "en": "many",
+          "ko": "많은"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "He",
+          "ko": "그는"
+        },
+        {
+          "en": "used",
+          "ko": "사용했다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "him",
+          "ko": "그를"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        },
+        {
+          "en": "work",
+          "ko": "작업, 작품"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "as a child → 어린 시절에",
+          "check": [
+            "어릴",
+            "어린",
+            "아이"
+          ],
+          "nudge": "as a child가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "as a child는 여기서 '어린 시절에'예요."
+        },
+        {
+          "id": 2,
+          "text": "the leftover pencils and paper that his father brought → 아버지가 가져다준 남은 연필과 종이",
+          "check": [
+            "아버지",
+            "연필",
+            "종이",
+            "남은"
+          ],
+          "nudge": "the leftover pencils and paper that his father brought이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the leftover pencils and paper that his father brought은 여기서 '아버지가 가져다준 남은 연필과 종이'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "leftover를 '남은 음식'으로만 보고 흐림",
+          "signals": [
+            "남은 음식"
+          ],
+          "treatment": {
+            "message": "연필·종이와 같이 온 leftover는 무엇일까요? '남은 음식'일까요, '쓰다 남은 것'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "남은 음식",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "쓰다 남은 것",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '쓰다 남은 것'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '쓰다 남은 것'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "brought him from work를 '그를 일터에서 데려왔다'로 해석",
+          "signals": [
+            "그를 데려",
+            "그를 일터"
+          ],
+          "treatment": {
+            "message": "아버지가 가져온 것은 무엇일까요? '그를 일터에서 데려왔다'일까요, '그에게 연필과 종이를 가져다주었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그를 일터에서 데려왔다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그에게 연필과 종이를 가져다주었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그에게 연필과 종이를 가져다주었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그에게 연필과 종이를 가져다주었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Jones began his career in animation in 1930 and was quickly promoted.",
+      "model_translation": "존스는 1930년에 애니메이션 일을 시작했고 빠르게 승진했다",
+      "praise": "was promoted를 '승진했다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "began",
+          "ko": "시작했다"
+        },
+        {
+          "en": "career",
+          "ko": "일, 경력"
+        },
+        {
+          "en": "animation",
+          "ko": "애니메이션"
+        },
+        {
+          "en": "quickly",
+          "ko": "빠르게"
+        },
+        {
+          "en": "promoted",
+          "ko": "승진한"
+        },
+        {
+          "en": "Jones",
+          "ko": "척 존스(이름)"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "1930",
+          "ko": "1930년"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "began his career in animation → 애니메이션 일을 시작했다",
+          "check": [
+            "시작",
+            "경력",
+            "일을"
+          ],
+          "nudge": "began his career in animation이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "began his career in animation은 여기서 '애니메이션 일을 시작했다'예요."
+        },
+        {
+          "id": 2,
+          "text": "was quickly promoted → 빠르게 승진했다",
+          "check": [
+            "승진",
+            "빠르",
+            "올라"
+          ],
+          "nudge": "was quickly promoted가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "was quickly promoted는 여기서 '빠르게 승진했다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "promoted를 '홍보되었다'로 해석",
+          "signals": [
+            "홍보"
+          ],
+          "treatment": {
+            "message": "사람에게 쓰인 was promoted는 무엇일까요? '빠르게 홍보되었다'일까요, '빠르게 승진했다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "빠르게 홍보되었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "빠르게 승진했다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '빠르게 승진했다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '빠르게 승진했다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "In the 1940s, he created famous characters such as Wile E. Coyote and the Road Runner.",
+      "model_translation": "1940년대에 그는 와일 E. 코요테와 로드 러너 같은 유명한 인물들을 만들었다",
+      "praise": "such as를 '~ 같은'으로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "1940s",
+          "ko": "1940년대"
+        },
+        {
+          "en": "created",
+          "ko": "만들었다"
+        },
+        {
+          "en": "famous",
+          "ko": "유명한"
+        },
+        {
+          "en": "characters",
+          "ko": "등장인물"
+        },
+        {
+          "en": "Wile E. Coyote",
+          "ko": "와일 E. 코요테(등장인물)"
+        },
+        {
+          "en": "Road Runner",
+          "ko": "로드 러너(등장인물)"
+        },
+        {
+          "en": "Coyote",
+          "ko": "와일 E. 코요테(이름)"
+        },
+        {
+          "en": "Runner",
+          "ko": "로드 러너(이름)"
+        },
+        {
+          "en": "In",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "such",
+          "ko": "그러한"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "created famous characters → 유명한 인물들을 만들었다",
+          "check": [
+            "만들",
+            "창조",
+            "캐릭터",
+            "인물"
+          ],
+          "nudge": "created famous characters가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "created famous characters는 여기서 '유명한 인물들을 만들었다'예요."
+        },
+        {
+          "id": 2,
+          "text": "such as ~ → ~ 같은",
+          "check": [
+            "같은",
+            "예를 들"
+          ],
+          "nudge": "such as ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "such as ~는 여기서 '~ 같은'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "characters를 '성격'으로 해석",
+          "signals": [
+            "성격"
+          ],
+          "treatment": {
+            "message": "만화에서 characters는 무엇일까요? '유명한 성격들'일까요, '유명한 등장인물들'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "유명한 성격들",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "유명한 등장인물들",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '유명한 등장인물들'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '유명한 등장인물들'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "He directed the famous cartoon film How the Grinch Stole Christmas, which is still enjoyed by many people today.",
+      "model_translation": "그는 유명한 만화 영화 「그린치는 어떻게 크리스마스를 훔쳤나」를 감독했는데, 그 작품은 오늘날에도 많은 사람에게 사랑받는다",
+      "praise": "which가 앞의 영화를 받는 걸 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "directed",
+          "ko": "감독했다"
+        },
+        {
+          "en": "film",
+          "ko": "영화"
+        },
+        {
+          "en": "How the Grinch Stole Christmas",
+          "ko": "그린치는 어떻게 크리스마스를 훔쳤나(영화 제목)"
+        },
+        {
+          "en": "still",
+          "ko": "여전히"
+        },
+        {
+          "en": "enjoyed",
+          "ko": "즐겨지는"
+        },
+        {
+          "en": "today",
+          "ko": "오늘날"
+        },
+        {
+          "en": "Christmas",
+          "ko": "그린치는 어떻게 크리스마스를 훔쳤나(이름)"
+        },
+        {
+          "en": "He",
+          "ko": "그는"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "famous",
+          "ko": "유명한"
+        },
+        {
+          "en": "cartoon",
+          "ko": "만화"
+        },
+        {
+          "en": "which",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        },
+        {
+          "en": "many",
+          "ko": "많은"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "directed the famous cartoon film → 유명한 만화 영화를 감독했다",
+          "check": [
+            "감독",
+            "연출",
+            "만들"
+          ],
+          "nudge": "directed the famous cartoon film이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "directed the famous cartoon film은 여기서 '유명한 만화 영화를 감독했다'예요."
+        },
+        {
+          "id": 2,
+          "text": "which is still enjoyed by many people → 지금도 많은 사람이 즐긴다",
+          "check": [
+            "지금도",
+            "여전",
+            "즐",
+            "사랑"
+          ],
+          "nudge": "which is still enjoyed by many people가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "which is still enjoyed by many people는 여기서 '지금도 많은 사람이 즐긴다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "is enjoyed를 능동으로 보고 '즐긴다'의 주체를 뒤바꿈",
+          "signals": [
+            "영화가 사람들을 즐긴"
+          ],
+          "treatment": {
+            "message": "즐기는 쪽은 영화일까요, 사람들일까요? '영화가 사람들을 즐긴다'일까요, '사람들이 영화를 즐긴다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "영화가 사람들을 즐긴다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사람들이 영화를 즐긴다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사람들이 영화를 즐긴다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사람들이 영화를 즐긴다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Jones started his own company, Chuck Jones Enterprises, in 1970. For his contribution to the field of animation, he received an Honorary Academy Award in 1996.",
+      "model_translation": "존스는 1970년에 자기 회사 척 존스 엔터프라이즈를 세웠다. 애니메이션 분야에 기여한 공로로 그는 1996년에 아카데미 공로상을 받았다",
+      "praise": "For his contribution을 '기여한 공로로'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "started",
+          "ko": "세웠다, 시작했다"
+        },
+        {
+          "en": "own",
+          "ko": "자기 자신의"
+        },
+        {
+          "en": "company",
+          "ko": "회사"
+        },
+        {
+          "en": "Chuck Jones Enterprises",
+          "ko": "척 존스 엔터프라이즈(회사 이름)"
+        },
+        {
+          "en": "contribution",
+          "ko": "기여"
+        },
+        {
+          "en": "field",
+          "ko": "분야"
+        },
+        {
+          "en": "received",
+          "ko": "받았다"
+        },
+        {
+          "en": "Honorary Academy Award",
+          "ko": "아카데미 공로상"
+        },
+        {
+          "en": "Chuck Jones",
+          "ko": "척 존스(사람 이름)"
+        },
+        {
+          "en": "Jones",
+          "ko": "척 존스(이름)"
+        },
+        {
+          "en": "Enterprises",
+          "ko": "척 존스 엔터프라이즈(이름)"
+        },
+        {
+          "en": "Award",
+          "ko": "아카데미 공로상(이름)"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "1970",
+          "ko": "1970년"
+        },
+        {
+          "en": "For",
+          "ko": "~동안"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "animation",
+          "ko": "애니메이션"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "1996",
+          "ko": "1996년"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "started his own company → 자기 회사를 세웠다",
+          "check": [
+            "회사",
+            "설립",
+            "세웠",
+            "차렸"
+          ],
+          "nudge": "started his own company가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "started his own company는 여기서 '자기 회사를 세웠다'예요."
+        },
+        {
+          "id": 2,
+          "text": "for his contribution to ~ → ~에 기여한 공로로",
+          "check": [
+            "기여",
+            "공로",
+            "공헌"
+          ],
+          "nudge": "for his contribution to ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "for his contribution to ~은 여기서 '~에 기여한 공로로'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "For를 '~을 위해'로만 보고 이유를 놓침",
+          "signals": [
+            "기여를 위해"
+          ],
+          "treatment": {
+            "message": "상을 받은 까닭을 말하는 For예요. '기여를 위해 상을 받았다'일까요, '기여한 공로로 상을 받았다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "기여를 위해 상을 받았다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "기여한 공로로 상을 받았다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '기여한 공로로 상을 받았다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '기여한 공로로 상을 받았다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Late in his life, he established a non-profit organization supporting art education and other creative skills.",
+      "model_translation": "생애 후반에 그는 예술 교육과 다른 창의적 기술을 뒷받침하는 비영리 단체를 세웠다",
+      "praise": "supporting이 organization을 꾸민다는 걸 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Late",
+          "ko": "늦게, 후반에"
+        },
+        {
+          "en": "life",
+          "ko": "생애, 삶"
+        },
+        {
+          "en": "established",
+          "ko": "세웠다"
+        },
+        {
+          "en": "non-profit",
+          "ko": "비영리의"
+        },
+        {
+          "en": "organization",
+          "ko": "단체"
+        },
+        {
+          "en": "supporting",
+          "ko": "뒷받침하는"
+        },
+        {
+          "en": "art",
+          "ko": "예술"
+        },
+        {
+          "en": "creative",
+          "ko": "창의적인"
+        },
+        {
+          "en": "skills",
+          "ko": "기술"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "education",
+          "ko": "교육"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "other",
+          "ko": "다른"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "late in his life → 생애 후반에",
+          "check": [
+            "후반",
+            "말년",
+            "늦게",
+            "노년"
+          ],
+          "nudge": "late in his life가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "late in his life는 여기서 '생애 후반에'예요."
+        },
+        {
+          "id": 2,
+          "text": "a non-profit organization supporting ~ → ~을 뒷받침하는 비영리 단체",
+          "check": [
+            "비영리",
+            "단체",
+            "기관",
+            "돕",
+            "지원"
+          ],
+          "nudge": "a non-profit organization supporting ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a non-profit organization supporting ~은 여기서 '~을 뒷받침하는 비영리 단체'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "supporting을 문장의 동사로 보고 끊음",
+          "signals": [
+            "단체를 세우고 지원했다"
+          ],
+          "treatment": {
+            "message": "supporting은 앞의 무엇을 꾸밀까요? '단체를 세우고 지원했다'일까요, '~을 뒷받침하는 단체를 세웠다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "단체를 세우고 지원했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~을 뒷받침하는 단체를 세웠다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~을 뒷받침하는 단체를 세웠다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~을 뒷받침하는 단체를 세웠다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "late를 '늦은/지각한'으로만 보고 흐림",
+          "signals": [
+            "늦은 인생",
+            "지각"
+          ],
+          "treatment": {
+            "message": "late in his life는 언제일까요? '늦은 인생에'일까요, '생애 후반에'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "늦은 인생에",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "생애 후반에",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '생애 후반에'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '생애 후반에'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

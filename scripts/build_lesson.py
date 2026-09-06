@@ -87,9 +87,19 @@ def fill_glosses(text, listed, lesson_wide=(), lesson_phrases=(), nouns=()):
     여기서도 같이 세어야 없는 구멍을 있다고 잘못 알리지 않는다.
     """
     for n in nouns:
+        ko = f"{n.get('ko', n['en'])}(이름)"
         if n["en"].lower() not in have and occurs(n["en"], lowered):
-            listed.append((n["en"], f"{n.get('ko', n['en'])}(이름)"))
+            listed.append((n["en"], ko))
             have.add(n["en"].lower())
+        """
+        성이나 이름만 따로 나오기도 한다 — 「Chuck Jones」를 소개한 뒤로는
+        그냥 「Jones」다. 그걸 안 넣으면 뜻 없는 낱말로 남는다.
+        """
+        parts = tokens(n["en"])
+        last = parts[-1] if len(parts) > 1 else None
+        if last and last.lower() not in have and occurs(last, lowered):
+            listed.append((last, ko))
+            have.add(last.lower())
 
     wide = dict(lesson_wide)
 

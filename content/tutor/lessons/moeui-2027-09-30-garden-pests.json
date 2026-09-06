@@ -1,0 +1,1270 @@
+{
+  "id": "moeui-2027-09-30-garden-pests",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 30번",
+  "category": "리딩",
+  "topic_intro": "정원의 해충을 없애려 들지 말라는 이야기",
+  "sentence": "There is good news about pests and medicinal herbs: Most herbs either repel pests or attract beneficial insects that help keep pest populations in check. So the more herbs you grow, the more you will attract pollinators and \"good\" bugs that like to eat the more destructive pests, which will lead to a more successful garden! When it comes to managing pests in the garden, it's important to remember that you are altering the ecosystem of an area that existed on its own before you planted anything into it. So the first couple years in a new garden can feel like wave after wave of pests are overtaking your plants. This is normal. The goal of a long-term healthy garden is to work with the environment you are trying to cultivate to allow the plants, pollinators, and even the annoying pests to balance out. Immediately attempting to remove a new pest entirely from your garden will only further these initial imbalances and prolong the process of helping your garden grow better on its own.",
+  "grammar_type": "어휘_실용논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 콜론으로 나뉘면",
+    "how": "콜론·관계사 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "There is good news about pests and medicinal herbs: Most herbs either repel pests or attract beneficial insects that help keep pest populations in check.",
+      "model_translation": "해충과 약초에 대해 반가운 소식이 있다. 대부분의 허브는 해충을 쫓아내거나, 해충 수를 눌러 두는 데 도움이 되는 이로운 곤충을 불러들인다",
+      "praise": "either A or B를 두 갈래로 살린 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "good news",
+          "ko": "반가운 소식"
+        },
+        {
+          "en": "pests",
+          "ko": "해충"
+        },
+        {
+          "en": "medicinal",
+          "ko": "약으로 쓰는"
+        },
+        {
+          "en": "herbs",
+          "ko": "허브, 약초"
+        },
+        {
+          "en": "either",
+          "ko": "둘 중 하나"
+        },
+        {
+          "en": "repel",
+          "ko": "쫓아내다"
+        },
+        {
+          "en": "attract",
+          "ko": "불러들이다"
+        },
+        {
+          "en": "beneficial",
+          "ko": "이로운"
+        },
+        {
+          "en": "insects",
+          "ko": "곤충"
+        },
+        {
+          "en": "populations",
+          "ko": "수, 개체 수"
+        },
+        {
+          "en": "in check",
+          "ko": "눌린 상태로"
+        },
+        {
+          "en": "There",
+          "ko": "거기에"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "about",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "Most",
+          "ko": "가장"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "help",
+          "ko": "돕다"
+        },
+        {
+          "en": "keep",
+          "ko": "지키다"
+        },
+        {
+          "en": "pest",
+          "ko": "해충"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "either repel pests or attract beneficial insects → 해충을 쫓아내거나 이로운 곤충을 불러들인다",
+          "check": [
+            "쫓아",
+            "물리",
+            "불러",
+            "끌어",
+            "곤충"
+          ],
+          "nudge": "either repel pests or attract beneficial insects가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "either repel pests or attract beneficial insects는 여기서 '해충을 쫓아내거나 이로운 곤충을 불러들인다'예요."
+        },
+        {
+          "id": 2,
+          "text": "keep pest populations in check → 해충 수를 눌러 두다",
+          "check": [
+            "수를",
+            "개체",
+            "억제",
+            "눌러",
+            "조절"
+          ],
+          "nudge": "keep pest populations in check이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "keep pest populations in check은 여기서 '해충 수를 눌러 두다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "keep in check를 '점검하다'로 해석",
+          "signals": [
+            "점검",
+            "확인한다"
+          ],
+          "treatment": {
+            "message": "keep ~ in check는 한 덩어리로 쓰이는 말이에요. '해충 수를 점검한다'일까요, '해충 수가 늘지 않게 눌러 둔다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "해충 수를 점검한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "해충 수가 늘지 않게 눌러 둔다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '해충 수가 늘지 않게 눌러 둔다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '해충 수가 늘지 않게 눌러 둔다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "medicinal을 '의학의 사람'처럼 두고 흐림",
+          "signals": [
+            "의학자"
+          ],
+          "treatment": {
+            "message": "medicinal herbs는 무엇일까요? '의학 허브 학자'일까요, '약으로 쓰는 풀'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "의학 허브 학자",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "약으로 쓰는 풀",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '약으로 쓰는 풀'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '약으로 쓰는 풀'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "So the more herbs you grow, the more you will attract pollinators and \"good\" bugs that like to eat the more destructive pests, which will lead to a more successful garden!",
+      "model_translation": "그러니 허브를 많이 기를수록, 더 해로운 해충을 즐겨 먹는 꽃가루 매개자와 \"좋은\" 벌레를 더 많이 불러들이게 되고, 그것이 더 잘되는 정원으로 이어진다",
+      "praise": "the more ~ the more ~ 를 '~할수록 더'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "grow",
+          "ko": "기르다"
+        },
+        {
+          "en": "pollinators",
+          "ko": "꽃가루를 옮기는 곤충"
+        },
+        {
+          "en": "bugs",
+          "ko": "벌레"
+        },
+        {
+          "en": "destructive",
+          "ko": "해를 많이 끼치는"
+        },
+        {
+          "en": "lead to",
+          "ko": "~로 이어지다"
+        },
+        {
+          "en": "successful",
+          "ko": "잘되는"
+        },
+        {
+          "en": "garden",
+          "ko": "정원"
+        },
+        {
+          "en": "So",
+          "ko": "그래서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "herbs",
+          "ko": "허브, 약초"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "will",
+          "ko": "~할 것이다"
+        },
+        {
+          "en": "attract",
+          "ko": "불러들이다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "good",
+          "ko": "좋은"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "like",
+          "ko": "~처럼, 좋아하다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "eat",
+          "ko": "먹다"
+        },
+        {
+          "en": "pests",
+          "ko": "해충"
+        },
+        {
+          "en": "which",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the more A, the more B → A할수록 더 B하다",
+          "check": [
+            "ㄹ수록",
+            "을수록",
+            "많을수록"
+          ],
+          "nudge": "the more A, the more B가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the more A, the more B는 여기서 'A할수록 더 B하다'예요."
+        },
+        {
+          "id": 2,
+          "text": "pollinators and good bugs → 꽃가루 매개자와 좋은 벌레",
+          "check": [
+            "꽃가루",
+            "벌레",
+            "곤충",
+            "매개"
+          ],
+          "nudge": "pollinators and good bugs가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "pollinators and good bugs는 여기서 '꽃가루 매개자와 좋은 벌레'예요."
+        },
+        {
+          "id": 3,
+          "text": "which will lead to a more successful garden → 그것이 더 잘되는 정원으로 이어진다",
+          "check": [
+            "이어",
+            "이끌",
+            "되게",
+            "정원"
+          ],
+          "nudge": "which will lead to a more successful garden가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "which will lead to a more successful garden는 여기서 '그것이 더 잘되는 정원으로 이어진다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "the more ~ the more를 단순 비교로 보고 상관관계를 놓침",
+          "signals": [
+            "더 많은 허브. 그리고 더"
+          ],
+          "treatment": {
+            "message": "the more ~ the more는 두 가지가 어떻게 움직인다는 걸까요? '허브가 많고 곤충도 많다'일까요, '허브가 많을수록 곤충도 많아진다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "허브가 많고 곤충도 많다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "허브가 많을수록 곤충도 많아진다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '허브가 많을수록 곤충도 많아진다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '허브가 많을수록 곤충도 많아진다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "which의 선행사를 bugs로 봄",
+          "signals": [
+            "벌레가 정원으로 이어"
+          ],
+          "treatment": {
+            "message": "정원을 잘되게 하는 것은 앞 내용 전체예요. '벌레가 정원으로 이어진다'일까요, '그렇게 되는 것이 정원을 잘되게 한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "벌레가 정원으로 이어진다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그렇게 되는 것이 정원을 잘되게 한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그렇게 되는 것이 정원을 잘되게 한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그렇게 되는 것이 정원을 잘되게 한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "When it comes to managing pests in the garden, it's important to remember that you are altering the ecosystem of an area that existed on its own before you planted anything into it.",
+      "model_translation": "정원의 해충을 다루는 일이라면, 당신이 아무것도 심기 전부터 스스로 있어 온 그 땅의 생태계를 당신이 바꾸고 있다는 것을 기억해야 한다",
+      "praise": "when it comes to를 '~에 관한 한'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "when it comes to",
+          "ko": "~에 관한 한"
+        },
+        {
+          "en": "managing",
+          "ko": "다루는 것"
+        },
+        {
+          "en": "remember",
+          "ko": "기억하다"
+        },
+        {
+          "en": "altering",
+          "ko": "바꾸고 있는"
+        },
+        {
+          "en": "ecosystem",
+          "ko": "생태계"
+        },
+        {
+          "en": "area",
+          "ko": "땅, 구역"
+        },
+        {
+          "en": "existed",
+          "ko": "있어 왔다"
+        },
+        {
+          "en": "on its own",
+          "ko": "스스로"
+        },
+        {
+          "en": "planted",
+          "ko": "심었다"
+        },
+        {
+          "en": "it's",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "pests",
+          "ko": "해충"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "garden",
+          "ko": "정원"
+        },
+        {
+          "en": "important",
+          "ko": "중요한"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "before",
+          "ko": "~ 전에"
+        },
+        {
+          "en": "anything",
+          "ko": "어떤 것"
+        },
+        {
+          "en": "into",
+          "ko": "~ 안으로"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "when it comes to ~ → ~에 관한 한",
+          "check": [
+            "관한 한",
+            "이라면",
+            "얘기라면",
+            "대해서는"
+          ],
+          "nudge": "when it comes to ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "when it comes to ~는 여기서 '~에 관한 한'이에요."
+        },
+        {
+          "id": 2,
+          "text": "you are altering the ecosystem → 당신이 생태계를 바꾸고 있다",
+          "check": [
+            "생태계",
+            "바꾸",
+            "변화"
+          ],
+          "nudge": "you are altering the ecosystem이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "you are altering the ecosystem은 여기서 '당신이 생태계를 바꾸고 있다'예요."
+        },
+        {
+          "id": 3,
+          "text": "an area that existed on its own → 스스로 있어 온 땅",
+          "check": [
+            "스스로",
+            "저절로",
+            "있어 온",
+            "존재"
+          ],
+          "nudge": "an area that existed on its own가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "an area that existed on its own는 여기서 '스스로 있어 온 땅'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "when it comes to를 '~이 올 때'로 직역",
+          "signals": [
+            "올 때",
+            "다가올 때"
+          ],
+          "treatment": {
+            "message": "when it comes to는 굳어진 표현이에요. '해충 관리가 올 때'일까요, '해충 관리에 관한 한'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "해충 관리가 올 때",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "해충 관리에 관한 한",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '해충 관리에 관한 한'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '해충 관리에 관한 한'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "altering을 '제단(altar)'이나 '고치다'로 흐림",
+          "signals": [
+            "제단"
+          ],
+          "treatment": {
+            "message": "생태계를 alter한다는 건 무엇일까요? '생태계의 제단'일까요, '생태계를 바꾼다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "생태계의 제단",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "생태계를 바꾼다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '생태계를 바꾼다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '생태계를 바꾼다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "So the first couple years in a new garden can feel like wave after wave of pests are overtaking your plants. This is normal.",
+      "model_translation": "그래서 새 정원에서 맞는 첫 몇 해는 해충이 파도처럼 밀려와 식물을 덮치는 것처럼 느껴질 수 있다. 그것은 흔한 일이다",
+      "praise": "wave after wave를 '파도처럼 밀려오는'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "first",
+          "ko": "첫"
+        },
+        {
+          "en": "couple",
+          "ko": "두어, 몇"
+        },
+        {
+          "en": "feel like",
+          "ko": "~인 것처럼 느껴지다"
+        },
+        {
+          "en": "wave",
+          "ko": "파도, 물결"
+        },
+        {
+          "en": "overtaking",
+          "ko": "덮치는"
+        },
+        {
+          "en": "plants",
+          "ko": "식물"
+        },
+        {
+          "en": "normal",
+          "ko": "흔한, 정상인"
+        },
+        {
+          "en": "So",
+          "ko": "그래서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "years",
+          "ko": "해, 년"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "new",
+          "ko": "새로운"
+        },
+        {
+          "en": "garden",
+          "ko": "정원"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "after",
+          "ko": "~ 후에"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "pests",
+          "ko": "해충"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "This",
+          "ko": "이"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the first couple years → 첫 몇 해",
+          "check": [
+            "첫",
+            "처음",
+            "몇 해",
+            "이삼 년"
+          ],
+          "nudge": "the first couple years가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the first couple years는 여기서 '첫 몇 해'예요."
+        },
+        {
+          "id": 2,
+          "text": "wave after wave of pests → 밀려오고 또 밀려오는 해충",
+          "check": [
+            "파도",
+            "밀려",
+            "연달",
+            "계속"
+          ],
+          "nudge": "wave after wave of pests가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "wave after wave of pests는 여기서 '밀려오고 또 밀려오는 해충'이에요."
+        },
+        {
+          "id": 3,
+          "text": "are overtaking your plants → 식물을 덮치고 있다",
+          "check": [
+            "덮",
+            "뒤덮",
+            "점령",
+            "식물"
+          ],
+          "nudge": "are overtaking your plants이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "are overtaking your plants은 여기서 '식물을 덮치고 있다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "feel like를 '좋아하는 기분'으로 해석",
+          "signals": [
+            "좋아하는 기분"
+          ],
+          "treatment": {
+            "message": "feel like + 절은 무엇을 말할까요? '좋아하는 기분이다'일까요, '~인 것처럼 느껴진다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "좋아하는 기분이다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~인 것처럼 느껴진다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~인 것처럼 느껴진다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~인 것처럼 느껴진다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "overtaking을 '추월하다'로 해석",
+          "signals": [
+            "추월"
+          ],
+          "treatment": {
+            "message": "해충이 식물을 overtake한다면 무엇일까요? '식물을 추월한다'일까요, '식물을 덮친다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "식물을 추월한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "식물을 덮친다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '식물을 덮친다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '식물을 덮친다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "The goal of a long-term healthy garden is to work with the environment you are trying to cultivate to allow the plants, pollinators, and even the annoying pests to balance out.",
+      "model_translation": "오래도록 건강한 정원의 목표는, 가꾸려는 그 환경과 함께 일해서 식물과 꽃가루 매개자와 성가신 해충까지도 서로 균형을 이루게 하는 것이다",
+      "praise": "allow A to B를 'A가 B하게 하다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "goal",
+          "ko": "목표"
+        },
+        {
+          "en": "long-term",
+          "ko": "오래가는"
+        },
+        {
+          "en": "healthy",
+          "ko": "건강한"
+        },
+        {
+          "en": "environment",
+          "ko": "환경"
+        },
+        {
+          "en": "cultivate",
+          "ko": "가꾸다"
+        },
+        {
+          "en": "allow",
+          "ko": "~하게 하다"
+        },
+        {
+          "en": "annoying",
+          "ko": "성가신"
+        },
+        {
+          "en": "balance out",
+          "ko": "균형을 이루다"
+        },
+        {
+          "en": "The",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "garden",
+          "ko": "정원"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "work",
+          "ko": "일하다, 일"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "trying",
+          "ko": "~하려 애쓰는"
+        },
+        {
+          "en": "plants",
+          "ko": "식물"
+        },
+        {
+          "en": "pollinators",
+          "ko": "꽃가루를 옮기는 곤충"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "even",
+          "ko": "심지어"
+        },
+        {
+          "en": "pests",
+          "ko": "해충"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "work with the environment → 환경과 함께 일하다",
+          "check": [
+            "환경",
+            "함께",
+            "같이"
+          ],
+          "nudge": "work with the environment이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "work with the environment은 여기서 '환경과 함께 일하다'예요."
+        },
+        {
+          "id": 2,
+          "text": "allow ~ to balance out → ~이 균형을 이루게 하다",
+          "check": [
+            "균형",
+            "맞추",
+            "이루게"
+          ],
+          "nudge": "allow ~ to balance out이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "allow ~ to balance out은 여기서 '~이 균형을 이루게 하다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "work with를 '~로 일하다'로만 보고 흐림",
+          "signals": [
+            "환경으로 일한다"
+          ],
+          "treatment": {
+            "message": "work with the environment는 무엇을 하는 걸까요? '환경으로 일한다'일까요, '환경과 손발을 맞춘다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "환경으로 일한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "환경과 손발을 맞춘다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '환경과 손발을 맞춘다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '환경과 손발을 맞춘다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "balance out을 '균형을 없애다'로 뒤집음",
+          "signals": [
+            "균형을 없",
+            "균형이 깨"
+          ],
+          "treatment": {
+            "message": "balance out은 어떻게 된다는 뜻일까요? '균형이 깨진다'일까요, '서로 균형을 이룬다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "균형이 깨진다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "서로 균형을 이룬다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '서로 균형을 이룬다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '서로 균형을 이룬다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Immediately attempting to remove a new pest entirely from your garden will only further these initial imbalances and prolong the process of helping your garden grow better on its own.",
+      "model_translation": "새 해충을 정원에서 곧바로 완전히 없애려 드는 것은 이런 처음의 불균형을 키우기만 하고, 정원이 스스로 더 잘 자라도록 돕는 과정을 늘일 뿐이다",
+      "praise": "further를 동사 '키우다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Immediately",
+          "ko": "곧바로"
+        },
+        {
+          "en": "attempting",
+          "ko": "하려 드는 것"
+        },
+        {
+          "en": "remove",
+          "ko": "없애다"
+        },
+        {
+          "en": "entirely",
+          "ko": "완전히"
+        },
+        {
+          "en": "further",
+          "ko": "키우다, 더 밀고 나가다"
+        },
+        {
+          "en": "initial",
+          "ko": "처음의"
+        },
+        {
+          "en": "imbalances",
+          "ko": "불균형"
+        },
+        {
+          "en": "prolong",
+          "ko": "늘이다"
+        },
+        {
+          "en": "process",
+          "ko": "과정"
+        },
+        {
+          "en": "helping",
+          "ko": "돕는 것"
+        },
+        {
+          "en": "better",
+          "ko": "더 잘"
+        },
+        {
+          "en": "on its own",
+          "ko": "스스로"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "new",
+          "ko": "새로운"
+        },
+        {
+          "en": "pest",
+          "ko": "해충"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "garden",
+          "ko": "정원"
+        },
+        {
+          "en": "will",
+          "ko": "~할 것이다"
+        },
+        {
+          "en": "only",
+          "ko": "오직"
+        },
+        {
+          "en": "these",
+          "ko": "이것들"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "grow",
+          "ko": "기르다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "immediately attempting to remove ~ → 곧바로 없애려 드는 것 (주어)",
+          "check": [
+            "곧바로",
+            "즉시",
+            "없애",
+            "제거"
+          ],
+          "nudge": "immediately attempting to remove ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "immediately attempting to remove ~은 여기서 '곧바로 없애려 드는 것 (주어)'예요."
+        },
+        {
+          "id": 2,
+          "text": "will only further these imbalances → 불균형을 키우기만 한다",
+          "check": [
+            "불균형",
+            "키우",
+            "더",
+            "악화"
+          ],
+          "nudge": "will only further these imbalances가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "will only further these imbalances는 여기서 '불균형을 키우기만 한다'예요."
+        },
+        {
+          "id": 3,
+          "text": "prolong the process → 과정을 늘이다",
+          "check": [
+            "늘",
+            "길게",
+            "연장",
+            "오래"
+          ],
+          "nudge": "prolong the process이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "prolong the process은 여기서 '과정을 늘이다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "further를 부사 '더 나아가'로 보고 동사를 놓침",
+          "signals": [
+            "더 나아가"
+          ],
+          "treatment": {
+            "message": "will only further these imbalances에서 further는 무엇일까요? '더 나아가 불균형'일까요, '불균형을 키운다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "더 나아가 불균형",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "불균형을 키운다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '불균형을 키운다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '불균형을 키운다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "on its own의 주체를 사람으로 봄",
+          "signals": [
+            "당신 혼자",
+            "스스로 돕는"
+          ],
+          "treatment": {
+            "message": "스스로 자라는 것은 무엇일까요? '당신 혼자 힘으로'일까요, '정원이 스스로'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "당신 혼자 힘으로",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "정원이 스스로",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '정원이 스스로'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '정원이 스스로'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

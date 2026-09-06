@@ -1,0 +1,587 @@
+{
+  "id": "moeui-2027-09-31-glossophobia",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 31번",
+  "category": "리딩",
+  "topic_intro": "남 앞에 서면 왜 그렇게 떨리는가",
+  "sentence": "What stresses you out more than anything? Perhaps it's speaking in front of others. For many, this is so stressful it even has a name: glossophobia. The explanation for why it's uncomfortable to have everyone's eyes on you is probably that, for almost all of our evolution, it's been extremely important not to be excluded from the group. To prepare for what might happen if you are evaluated and socially shamed — and thus alienated from the group — your brain fires up the stress system and your heart begins to beat harder. Our natural sensitivity to being evaluated by other people is another example of our brain not being adapted to the modern world. If we give a bad presentation at work, we are unlikely to lose our job and thus risk starving to death. But in the world we long ago evolved for, exclusion from the group could be a matter of life and death. Belonging was not merely a matter of safety but also of survival.",
+  "grammar_type": "빈칸추론_심리논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 대시로 나뉘면",
+    "how": "대시·and 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "text": "What stresses you out more than anything? Perhaps it's speaking in front of others. For many, this is so stressful it even has a name: glossophobia.",
+      "ko": "무엇이 당신을 가장 힘들게 하는가? 아마 남 앞에서 말하는 일일 것이다. 많은 사람에게 이것은 너무 힘들어서 이름까지 붙어 있다. 바로 발표 공포증이다",
+      "praise": "so ~ that 구조에서 that이 빠진 걸 알아본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "stresses you out",
+          "sub": "가",
+          "top": "는",
+          "answer": "당신을 힘들게 하다",
+          "check": [
+            "힘들",
+            "스트레스",
+            "괴롭"
+          ]
+        },
+        {
+          "en": "speaking in front of others",
+          "sub": "가",
+          "top": "는",
+          "answer": "남 앞에서 말하는 것",
+          "check": [
+            "남 앞",
+            "사람들 앞",
+            "발표",
+            "말하는"
+          ]
+        },
+        {
+          "en": "so stressful (that) it even has a name",
+          "sub": "이",
+          "top": "은",
+          "answer": "너무 힘들어서 이름까지 붙어 있다",
+          "check": [
+            "너무",
+            "이름",
+            "붙어",
+            "있을 정도"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "stress out을 '스트레스를 내보내다'로 해석",
+          "signals": [
+            "내보낸다",
+            "밖으로"
+          ],
+          "ask": "stress someone out은 한 덩어리로 쓰이는 말이에요.",
+          "wrong": "스트레스를 내보낸다",
+          "right": "누군가를 힘들게 한다"
+        },
+        {
+          "id": "E2",
+          "detect": "so ~ that의 that 생략을 못 보고 두 문장으로 끊음",
+          "signals": [
+            "매우 힘들다. 이것은 이름"
+          ],
+          "ask": "so stressful 뒤에 무엇이 생략됐을까요?",
+          "wrong": "매우 힘들다. 이름이 있다",
+          "right": "너무 힘들어서 이름까지 있다"
+        }
+      ],
+      "glosses": [
+        [
+          "stresses",
+          "힘들게 하다"
+        ],
+        [
+          "anything",
+          "무엇이든"
+        ],
+        [
+          "Perhaps",
+          "아마"
+        ],
+        [
+          "speaking",
+          "말하는 것"
+        ],
+        [
+          "in front of",
+          "~ 앞에서"
+        ],
+        [
+          "stressful",
+          "힘든"
+        ],
+        [
+          "name",
+          "이름"
+        ],
+        [
+          "glossophobia",
+          "발표 공포증"
+        ],
+        [
+          "out",
+          "밖으로 (stress ~ out: 힘들게 하다)"
+        ]
+      ]
+    },
+    {
+      "text": "The explanation for why it's uncomfortable to have everyone's eyes on you is probably that, for almost all of our evolution, it's been extremely important not to be excluded from the group.",
+      "ko": "모두의 눈이 자기에게 쏠리는 것이 왜 불편한지에 대한 설명은 아마 이것이다 — 진화의 거의 모든 기간 동안 무리에서 밀려나지 않는 것이 몹시 중요했다는 것",
+      "praise": "긴 주어 뒤의 is ~ that절을 이어 준 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "have everyone's eyes on you",
+          "sub": "가",
+          "top": "는",
+          "answer": "모두의 눈이 자기에게 쏠리다",
+          "check": [
+            "눈",
+            "시선",
+            "쏠리",
+            "쳐다"
+          ]
+        },
+        {
+          "en": "for almost all of our evolution",
+          "sub": "이",
+          "top": "은",
+          "answer": "진화의 거의 모든 기간 동안",
+          "check": [
+            "진화",
+            "거의",
+            "내내"
+          ]
+        },
+        {
+          "en": "not to be excluded from the group",
+          "sub": "이",
+          "top": "은",
+          "answer": "무리에서 밀려나지 않는 것",
+          "check": [
+            "무리",
+            "집단",
+            "밀려",
+            "배제",
+            "제외"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "긴 주어에 밀려 is의 자리를 놓침",
+          "signals": [
+            "설명이 불편하다"
+          ],
+          "ask": "The explanation ... is 뒤에 무엇이 올까요?",
+          "wrong": "설명이 불편하다",
+          "right": "설명은 ~라는 것이다"
+        },
+        {
+          "id": "E2",
+          "detect": "excluded를 능동으로 보고 '배제하지 않는 것'으로 뒤집음",
+          "signals": [
+            "배제하지 않는",
+            "제외하지 않는"
+          ],
+          "ask": "be excluded는 밀어내는 쪽일까요, 밀려나는 쪽일까요?",
+          "wrong": "무리를 배제하지 않는 것",
+          "right": "무리에서 밀려나지 않는 것"
+        }
+      ],
+      "glosses": [
+        [
+          "explanation",
+          "설명"
+        ],
+        [
+          "uncomfortable",
+          "불편한"
+        ],
+        [
+          "eyes",
+          "눈, 시선"
+        ],
+        [
+          "probably",
+          "아마"
+        ],
+        [
+          "almost",
+          "거의"
+        ],
+        [
+          "evolution",
+          "진화"
+        ],
+        [
+          "extremely",
+          "몹시"
+        ],
+        [
+          "excluded",
+          "밀려난"
+        ],
+        [
+          "group",
+          "무리"
+        ]
+      ]
+    },
+    {
+      "text": "To prepare for what might happen if you are evaluated and socially shamed — and thus alienated from the group — your brain fires up the stress system and your heart begins to beat harder.",
+      "ko": "평가를 받고 사람들 앞에서 창피를 당해 무리에서 떨어져 나갈 때를 대비하려고, 뇌는 스트레스 체계에 불을 붙이고 심장은 더 세게 뛰기 시작한다",
+      "praise": "대시 사이를 앞말의 풀이로 읽은 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "to prepare for what might happen",
+          "sub": "이",
+          "top": "은",
+          "answer": "일어날지 모를 일에 대비하려고",
+          "check": [
+            "대비",
+            "준비",
+            "일어날"
+          ]
+        },
+        {
+          "en": "evaluated and socially shamed",
+          "sub": "가",
+          "top": "는",
+          "answer": "평가받고 창피를 당하다",
+          "check": [
+            "평가",
+            "창피",
+            "부끄",
+            "수치"
+          ]
+        },
+        {
+          "en": "fires up the stress system",
+          "sub": "이",
+          "top": "은",
+          "answer": "스트레스 체계에 불을 붙이다",
+          "check": [
+            "스트레스",
+            "작동",
+            "불",
+            "가동"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "fires up을 '해고하다'로 해석",
+          "signals": [
+            "해고"
+          ],
+          "ask": "brain fires up the system은 무엇을 하는 걸까요?",
+          "wrong": "체계를 해고한다",
+          "right": "체계를 작동시킨다"
+        },
+        {
+          "id": "E2",
+          "detect": "shamed를 능동으로 보고 '창피를 주다'로 뒤집음",
+          "signals": [
+            "창피를 준다",
+            "부끄럽게 한다"
+          ],
+          "ask": "socially shamed는 주는 쪽일까요, 당하는 쪽일까요?",
+          "wrong": "남에게 창피를 준다",
+          "right": "남들 앞에서 창피를 당한다"
+        }
+      ],
+      "glosses": [
+        [
+          "prepare for",
+          "~에 대비하다"
+        ],
+        [
+          "happen",
+          "일어나다"
+        ],
+        [
+          "evaluated",
+          "평가받는"
+        ],
+        [
+          "socially",
+          "사람들 사이에서"
+        ],
+        [
+          "shamed",
+          "창피를 당한"
+        ],
+        [
+          "thus",
+          "그래서"
+        ],
+        [
+          "alienated",
+          "떨어져 나간"
+        ],
+        [
+          "brain",
+          "뇌"
+        ],
+        [
+          "fires up",
+          "작동시키다"
+        ],
+        [
+          "heart",
+          "심장"
+        ],
+        [
+          "beat",
+          "뛰다"
+        ],
+        [
+          "harder",
+          "더 세게"
+        ]
+      ]
+    },
+    {
+      "text": "Our natural sensitivity to being evaluated by other people is another example of our brain not being adapted to the modern world.",
+      "ko": "남에게 평가받는 일에 대한 우리의 타고난 예민함은, 우리 뇌가 현대 세계에 맞추어져 있지 않다는 또 하나의 예다",
+      "praise": "our brain not being adapted를 '뇌가 맞추어져 있지 않다는 것'으로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "natural sensitivity to being evaluated",
+          "sub": "이",
+          "top": "은",
+          "answer": "평가받는 일에 대한 타고난 예민함",
+          "check": [
+            "타고난",
+            "예민",
+            "민감",
+            "평가"
+          ]
+        },
+        {
+          "en": "not being adapted to the modern world",
+          "sub": "이",
+          "top": "은",
+          "answer": "현대 세계에 맞추어져 있지 않은 것",
+          "check": [
+            "현대",
+            "맞추",
+            "적응",
+            "않"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "부정을 놓치고 '뇌가 현대에 적응했다'로 해석",
+          "signals": [
+            "적응했다",
+            "맞춰져 있다."
+          ],
+          "ask": "not being adapted는 적응했다는 뜻일까요?",
+          "wrong": "뇌가 현대에 적응했다",
+          "right": "뇌가 현대에 적응하지 못했다"
+        }
+      ],
+      "glosses": [
+        [
+          "natural",
+          "타고난"
+        ],
+        [
+          "sensitivity",
+          "예민함"
+        ],
+        [
+          "another",
+          "또 하나의"
+        ],
+        [
+          "example",
+          "예"
+        ],
+        [
+          "adapted to",
+          "~에 맞추어진"
+        ],
+        [
+          "modern",
+          "현대의"
+        ]
+      ]
+    },
+    {
+      "text": "If we give a bad presentation at work, we are unlikely to lose our job and thus risk starving to death.",
+      "ko": "회사에서 발표를 못했다고 해서 일자리를 잃고 굶어 죽을 위험에 놓일 일은 거의 없다",
+      "praise": "are unlikely to를 '~할 일은 거의 없다'로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "are unlikely to lose our job",
+          "sub": "이",
+          "top": "은",
+          "answer": "일자리를 잃을 일은 거의 없다",
+          "check": [
+            "일자리",
+            "직장",
+            "잃",
+            "거의 없"
+          ]
+        },
+        {
+          "en": "risk starving to death",
+          "sub": "가",
+          "top": "는",
+          "answer": "굶어 죽을 위험에 놓이다",
+          "check": [
+            "굶",
+            "죽을",
+            "위험"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "unlikely를 '~할 것 같다'로 뒤집음",
+          "signals": [
+            "잃을 것 같다",
+            "잃기 쉽다"
+          ],
+          "ask": "unlikely to는 그럴 것 같다는 뜻일까요?",
+          "wrong": "일자리를 잃기 쉽다",
+          "right": "일자리를 잃을 일은 거의 없다"
+        }
+      ],
+      "glosses": [
+        [
+          "presentation",
+          "발표"
+        ],
+        [
+          "unlikely",
+          "~할 것 같지 않은"
+        ],
+        [
+          "lose",
+          "잃다"
+        ],
+        [
+          "job",
+          "일자리"
+        ],
+        [
+          "risk",
+          "위험을 무릅쓰다"
+        ],
+        [
+          "starving",
+          "굶는 것"
+        ],
+        [
+          "death",
+          "죽음"
+        ]
+      ]
+    },
+    {
+      "text": "But in the world we long ago evolved for, exclusion from the group could be a matter of life and death. Belonging was not merely a matter of safety but also of survival.",
+      "ko": "그러나 우리가 오래전 적응해 살아온 세계에서는 무리에서 밀려나는 일이 삶과 죽음의 문제일 수 있었다. 속해 있다는 것은 안전의 문제일 뿐 아니라 생존의 문제이기도 했다",
+      "praise": "not merely A but also B를 두 갈래로 살린 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "the world we long ago evolved for",
+          "sub": "가",
+          "top": "는",
+          "answer": "우리가 오래전 적응해 살아온 세계",
+          "check": [
+            "오래전",
+            "진화",
+            "적응",
+            "세계"
+          ]
+        },
+        {
+          "en": "a matter of life and death",
+          "sub": "가",
+          "top": "는",
+          "answer": "삶과 죽음의 문제",
+          "check": [
+            "삶",
+            "죽음",
+            "생사",
+            "문제"
+          ]
+        },
+        {
+          "en": "not merely A but also B",
+          "sub": "가",
+          "top": "는",
+          "answer": "A뿐 아니라 B도",
+          "check": [
+            "뿐 아니",
+            "뿐만",
+            "이기도"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "Belonging을 '소지품'으로 해석",
+          "signals": [
+            "소지품",
+            "물건"
+          ],
+          "ask": "여기 Belonging은 무엇을 말할까요?",
+          "wrong": "소지품",
+          "right": "무리에 속해 있다는 것"
+        },
+        {
+          "id": "E2",
+          "detect": "evolved for를 '진화했다'로만 보고 for를 놓침",
+          "signals": [
+            "세계가 진화했다"
+          ],
+          "ask": "we evolved for the world는 누가 무엇에 맞추어 진화했다는 걸까요?",
+          "wrong": "세계가 진화했다",
+          "right": "우리가 그 세계에 맞추어 진화했다"
+        }
+      ],
+      "glosses": [
+        [
+          "long ago",
+          "오래전"
+        ],
+        [
+          "evolved",
+          "진화했다"
+        ],
+        [
+          "exclusion",
+          "밀려남, 배제"
+        ],
+        [
+          "matter",
+          "문제"
+        ],
+        [
+          "life",
+          "삶"
+        ],
+        [
+          "Belonging",
+          "속해 있음"
+        ],
+        [
+          "merely",
+          "단지"
+        ],
+        [
+          "safety",
+          "안전"
+        ],
+        [
+          "survival",
+          "생존"
+        ]
+      ]
+    }
+  ]
+}

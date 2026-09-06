@@ -1,0 +1,167 @@
+{
+  "id": "moeui-2027-09-22-front-row",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 22번",
+  "category": "리딩",
+  "topic_intro": "어디에 앉느냐가 배움을 바꾼다는 실험",
+  "sentence": "Studies show that people who sit in the front row learn and retain more than others in the audience, partially because those in the front row are more eager to learn, and they show more attention to the speaker in order to avoid being called on. Those in the middle sections are the next most attentive and ask the most questions, as the middle section is considered a safe area, surrounded by others. The side areas and back are the least responsive and attentive. In one experiment we conducted, we placed name cards on participants' seats so they could not take their usual positions. We intentionally sat enthusiastic people to the sides and rear of the room, and well-known back-row hermits sat in the front. We found that this strategy not only increased the participation and recall of the normally negative participants who sat up front, it also decreased the participation and recall of the usually positive participants who had been sent to the back.",
+  "grammar_type": "요지_실험논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 and로 두 갈래가 되면",
+    "how": "and·because 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "text": "Studies show that people who sit in the front row learn and retain more than others in the audience,",
+      "ko": "연구에 따르면 앞줄에 앉는 사람들은 청중의 다른 사람들보다 더 많이 배우고 더 많이 기억한다",
+      "praise": "who sit in the front row가 people을 꾸민다는 걸 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "people who sit in the front row", "sub": "이", "top": "은", "answer": "앞줄에 앉는 사람들", "check": ["앞줄", "앞자리", "앞에 앉"] },
+        { "en": "learn and retain more", "sub": "가", "top": "는", "answer": "더 많이 배우고 기억한다", "check": ["배우", "기억", "더 많이", "간직"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "retain을 '보유하다(물건)'로만 보고 흐림", "signals": ["보유"], "ask": "배운 것을 retain한다면 무엇일까요?", "wrong": "더 많이 보유한다", "right": "더 많이 기억한다" },
+        { "id": "E2", "detect": "Studies show that의 that절 끝을 못 잡고 끊음", "signals": ["연구가 보여 준다."], "ask": "show that 뒤는 어디까지일까요?", "wrong": "연구가 보여 준다", "right": "연구에 따르면 ~한다" }
+      ],
+      "glosses": [
+        ["Studies", "연구"],
+        ["show", "보여 주다"],
+        ["sit", "앉다"],
+        ["front row", "앞줄"],
+        ["learn", "배우다"],
+        ["retain", "기억해 두다"],
+        ["others", "다른 사람들"],
+        ["audience", "청중"]
+      ]
+    },
+    {
+      "text": "partially because those in the front row are more eager to learn, and they show more attention to the speaker in order to avoid being called on.",
+      "ko": "그 까닭 하나는 앞줄에 앉은 사람들이 더 배우고 싶어 하기 때문이고, 또 지목당하지 않으려고 말하는 사람에게 더 주의를 기울이기 때문이다",
+      "praise": "in order to avoid being called on을 '지목당하지 않으려고'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "more eager to learn", "sub": "이", "top": "은", "answer": "더 배우고 싶어 하는", "check": ["배우고 싶", "열의", "의욕", "열심"] },
+        { "en": "in order to avoid being called on", "sub": "이", "top": "은", "answer": "지목당하지 않으려고", "check": ["지목", "지名", "불리지", "걸리지", "시키지"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "being called on을 '전화를 받다'로 해석", "signals": ["전화"], "ask": "수업에서 call on someone은 무엇일까요?", "wrong": "전화받는 것을 피하려고", "right": "지목당하는 것을 피하려고" },
+        { "id": "E2", "detect": "avoid 뒤의 수동을 놓치고 '부르지 않으려고'로 뒤집음", "signals": ["부르지 않으려고", "부르는 것을 피"], "ask": "being called on은 부르는 쪽일까요, 불리는 쪽일까요?", "wrong": "부르는 것을 피하려고", "right": "불리는 것을 피하려고" }
+      ],
+      "glosses": [
+        ["partially", "부분적으로, 한 가지 까닭은"],
+        ["eager", "몹시 하고 싶어 하는"],
+        ["attention", "주의"],
+        ["speaker", "말하는 사람"],
+        ["in order to", "~하려고"],
+        ["avoid", "피하다"],
+        ["called on", "지목당하는"]
+      ]
+    },
+    {
+      "text": "Those in the middle sections are the next most attentive and ask the most questions, as the middle section is considered a safe area, surrounded by others.",
+      "ko": "가운데 구역에 앉은 사람들이 그다음으로 주의를 기울이고 질문을 가장 많이 한다. 가운데는 다른 사람들에게 둘러싸인 안전한 자리로 여겨지기 때문이다",
+      "praise": "as를 이유로 본 거 좋아요.",
+      "points": [
+        { "en": "the next most attentive", "sub": "가", "top": "는", "answer": "그다음으로 주의를 기울이는", "check": ["그다음", "두 번째", "주의"] },
+        { "en": "is considered a safe area", "sub": "가", "top": "는", "answer": "안전한 자리로 여겨진다", "check": ["안전", "여겨", "간주"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "as를 '~로서'로 보고 이유를 놓침", "signals": ["로서"], "ask": "여기 as는 무엇을 잇나요?", "wrong": "가운데 구역으로서", "right": "가운데는 ~이기 때문에" },
+        { "id": "E2", "detect": "surrounded를 문장의 동사로 보고 끊음", "signals": ["둘러쌌다", "에워쌌다"], "ask": "surrounded by others는 앞의 무엇을 꾸밀까요?", "wrong": "그들이 다른 사람을 둘러쌌다", "right": "다른 사람들에게 둘러싸인" }
+      ],
+      "glosses": [
+        ["Those", "~인 사람들"],
+        ["middle", "가운데의"],
+        ["sections", "구역"],
+        ["attentive", "주의를 기울이는"],
+        ["questions", "질문"],
+        ["considered", "여겨지는"],
+        ["safe", "안전한"],
+        ["area", "자리, 구역"],
+        ["surrounded by", "~에게 둘러싸인"]
+      ]
+    },
+    {
+      "text": "The side areas and back are the least responsive and attentive. In one experiment we conducted, we placed name cards on participants' seats so they could not take their usual positions.",
+      "ko": "옆쪽과 뒤쪽이 가장 덜 반응하고 덜 집중한다. 우리가 진행한 한 실험에서, 참가자들이 늘 앉던 자리에 앉지 못하도록 좌석에 이름표를 놓았다",
+      "praise": "so they could not ~ 을 '~하지 못하도록'으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "the least responsive and attentive", "sub": "가", "top": "는", "answer": "가장 덜 반응하고 덜 집중하는", "check": ["가장 덜", "제일 덜", "반응", "집중"] },
+        { "en": "so they could not take their usual positions", "sub": "이", "top": "은", "answer": "늘 앉던 자리에 앉지 못하도록", "check": ["늘", "평소", "앉지 못", "자리"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "least를 '적어도'로 보고 최상급을 놓침", "signals": ["적어도"], "ask": "the least responsive는 어느 정도일까요?", "wrong": "적어도 반응한다", "right": "가장 덜 반응한다" },
+        { "id": "E2", "detect": "positions를 '직위'로 해석", "signals": ["직위", "지위"], "ask": "좌석 이야기에서 positions는 무엇일까요?", "wrong": "평소의 직위", "right": "평소 앉던 자리" }
+      ],
+      "glosses": [
+        ["side", "옆쪽의"],
+        ["areas", "구역"],
+        ["back", "뒤쪽"],
+        ["least", "가장 덜"],
+        ["responsive", "반응하는"],
+        ["experiment", "실험"],
+        ["conducted", "진행했다"],
+        ["placed", "놓았다"],
+        ["name cards", "이름표"],
+        ["participants", "참가자"],
+        ["seats", "좌석"],
+        ["usual", "평소의"],
+        ["positions", "자리"]
+      ]
+    },
+    {
+      "text": "We intentionally sat enthusiastic people to the sides and rear of the room, and well-known back-row hermits sat in the front.",
+      "ko": "우리는 열의 있는 사람들을 일부러 방의 옆과 뒤에 앉히고, 늘 뒷줄에 숨던 사람들을 앞에 앉혔다",
+      "praise": "sat을 '앉혔다'(타동사)로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "sat enthusiastic people to the sides", "sub": "가", "top": "는", "answer": "열의 있는 사람들을 옆에 앉혔다", "check": ["열의", "적극", "앉혔", "앉게"] },
+        { "en": "back-row hermits", "sub": "가", "top": "는", "answer": "늘 뒷줄에 숨는 사람들", "check": ["뒷줄", "뒤", "숨", "은둔"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "sat을 자동사로 보고 '사람들이 앉았다'로 해석", "signals": ["사람들이 앉았다"], "ask": "we sat people to the sides에서 앉은 쪽은 누구일까요?", "wrong": "우리가 옆에 앉았다", "right": "우리가 그들을 옆에 앉혔다" },
+        { "id": "E2", "detect": "hermits를 '은둔자(종교)'로만 보고 흐림", "signals": ["수도자", "은둔 수행"], "ask": "back-row hermits는 어떤 사람일까요?", "wrong": "뒷줄의 수도자", "right": "늘 뒷줄에 숨는 사람" }
+      ],
+      "glosses": [
+        ["intentionally", "일부러"],
+        ["sat", "앉혔다, 앉았다"],
+        ["enthusiastic", "열의 있는"],
+        ["sides", "옆쪽"],
+        ["rear", "뒤쪽"],
+        ["room", "방"],
+        ["well-known", "잘 알려진"],
+        ["back-row", "뒷줄의"],
+        ["hermits", "숨어 지내는 사람"],
+        ["front", "앞쪽"]
+      ]
+    },
+    {
+      "text": "We found that this strategy not only increased the participation and recall of the normally negative participants who sat up front, it also decreased the participation and recall of the usually positive participants who had been sent to the back.",
+      "ko": "이 방법이 앞에 앉게 된 평소 소극적인 참가자들의 참여와 기억을 늘렸을 뿐 아니라, 뒤로 보내진 평소 적극적인 참가자들의 참여와 기억을 줄이기도 했다는 것을 우리는 알아냈다",
+      "praise": "not only A, it also B를 두 갈래로 살린 거 정말 잘했어요.",
+      "points": [
+        { "en": "not only increased ~, it also decreased ~", "sub": "가", "top": "는", "answer": "늘렸을 뿐 아니라 줄이기도 했다", "check": ["뿐 아니", "늘", "줄", "감소"] },
+        { "en": "normally negative participants who sat up front", "sub": "이", "top": "은", "answer": "앞에 앉게 된 평소 소극적인 참가자들", "check": ["소극", "부정적", "평소", "앞에"] },
+        { "en": "who had been sent to the back", "sub": "가", "top": "는", "answer": "뒤로 보내진", "check": ["뒤로", "보내", "뒷자리"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "increased와 decreased의 대상을 뒤바꿈", "signals": ["앞에 앉은 사람의 참여가 줄", "뒤로 간 사람의 참여가 늘"], "ask": "앞에 앉은 사람은 늘었을까요, 줄었을까요?", "wrong": "앞에 앉은 사람의 참여가 줄었다", "right": "앞에 앉은 사람의 참여가 늘었다" },
+        { "id": "E2", "detect": "negative/positive를 '나쁜/좋은 사람'으로 보고 흐림", "signals": ["나쁜 참가자", "좋은 참가자"], "ask": "여기 negative participants는 어떤 사람일까요?", "wrong": "나쁜 참가자", "right": "평소 소극적인 참가자" }
+      ],
+      "glosses": [
+        ["found", "알아냈다"],
+        ["strategy", "방법, 전략"],
+        ["increased", "늘렸다"],
+        ["participation", "참여"],
+        ["recall", "기억해 냄"],
+        ["normally", "평소에"],
+        ["negative", "소극적인"],
+        ["up front", "앞쪽에"],
+        ["decreased", "줄였다"],
+        ["usually", "평소에"],
+        ["positive", "적극적인"],
+        ["sent", "보내진"]
+      ]
+    }
+  ]
+}

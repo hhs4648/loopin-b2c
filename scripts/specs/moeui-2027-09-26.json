@@ -1,0 +1,201 @@
+{
+  "id": "moeui-2027-09-26-chuck-jones",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 26번",
+  "category": "리딩",
+  "topic_intro": "애니메이션 감독 척 존스의 삶",
+  "sentence": "Chuck Jones was an influential director and artist whose work shaped animated films and cartoon production. He was born in Spokane, Washington, in 1912, though he grew up in Los Angeles. As a child, Jones had many opportunities to draw. He used the leftover pencils and paper that his father brought him from work. Jones began his career in animation in 1930 and was quickly promoted. In the 1940s, he created famous characters such as Wile E. Coyote and the Road Runner. He directed the famous cartoon film How the Grinch Stole Christmas, which is still enjoyed by many people today. Jones started his own company, Chuck Jones Enterprises, in 1970. For his contribution to the field of animation, he received an Honorary Academy Award in 1996. Late in his life, he established a non-profit organization supporting art education and other creative skills.",
+  "grammar_type": "내용일치_인물소개",
+  "split_rule": {
+    "when": "한 문장이 25단어를 넘거나 관계사절이 붙으면",
+    "how": "관계사·though 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [
+    { "en": "Chuck Jones", "ko": "척 존스", "type": "person" },
+    { "en": "Spokane", "ko": "스포캔", "type": "place" },
+    { "en": "Washington", "ko": "워싱턴", "type": "place" },
+    { "en": "Los Angeles", "ko": "로스앤젤레스", "type": "place" },
+    { "en": "Wile E. Coyote", "ko": "와일 E. 코요테", "type": "other" },
+    { "en": "Road Runner", "ko": "로드 러너", "type": "other" },
+    { "en": "How the Grinch Stole Christmas", "ko": "그린치는 어떻게 크리스마스를 훔쳤나", "type": "other" },
+    { "en": "Chuck Jones Enterprises", "ko": "척 존스 엔터프라이즈", "type": "other" },
+    { "en": "Honorary Academy Award", "ko": "아카데미 공로상", "type": "other" }
+  ],
+  "chunks": [
+    {
+      "text": "Chuck Jones was an influential director and artist whose work shaped animated films and cartoon production.",
+      "ko": "척 존스는 그의 작업이 애니메이션 영화와 만화 제작을 빚어낸, 영향력 있는 감독이자 예술가였다",
+      "praise": "whose work를 앞의 사람과 이어 붙인 거 정말 잘했어요.",
+      "points": [
+        { "en": "an influential director and artist", "sub": "가", "top": "는", "answer": "영향력 있는 감독이자 예술가", "check": ["영향", "감독", "예술가"] },
+        { "en": "whose work shaped ~", "sub": "가", "top": "는", "answer": "그의 작업이 ~을 빚어낸", "check": ["작업", "작품", "빚", "만들", "형성"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "whose를 '누구의'로 보고 의문사로 해석", "signals": ["누구의 작품"], "ask": "여기 whose는 앞의 무엇을 받을까요?", "wrong": "누구의 작품이", "right": "그의 작품이" },
+        { "id": "E2", "detect": "shaped를 '모양이었다'로 보고 동사를 놓침", "signals": ["모양이었다", "형태였다"], "ask": "his work shaped ~ 는 무엇을 했다는 걸까요?", "wrong": "작품이 모양이었다", "right": "작품이 ~을 빚어냈다" }
+      ],
+      "glosses": [
+        ["Chuck Jones", "척 존스(사람 이름)"],
+        ["influential", "영향력 있는"],
+        ["director", "감독"],
+        ["artist", "예술가"],
+        ["whose", "그의"],
+        ["work", "작업, 작품"],
+        ["shaped", "빚어냈다"],
+        ["animated", "애니메이션의"],
+        ["films", "영화"],
+        ["cartoon", "만화"],
+        ["production", "제작"]
+      ]
+    },
+    {
+      "text": "He was born in Spokane, Washington, in 1912, though he grew up in Los Angeles.",
+      "ko": "그는 1912년 워싱턴주 스포캔에서 태어났지만, 로스앤젤레스에서 자랐다",
+      "praise": "though를 '~이지만'으로 본 거 좋아요.",
+      "points": [
+        { "en": "was born in ~", "sub": "이", "top": "은", "answer": "~에서 태어났다", "check": ["태어", "출생"] },
+        { "en": "though he grew up in ~", "sub": "가", "top": "는", "answer": "~에서 자랐지만", "check": ["자랐", "컸", "성장"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "태어난 곳과 자란 곳을 뒤바꿈", "signals": ["로스앤젤레스에서 태어", "스포캔에서 자랐"], "ask": "태어난 곳은 어디일까요?", "wrong": "로스앤젤레스에서 태어났다", "right": "스포캔에서 태어났다" }
+      ],
+      "glosses": [
+        ["born", "태어난"],
+        ["Spokane", "스포캔(지명)"],
+        ["Washington", "워싱턴(지명)"],
+        ["though", "비록 ~이지만"],
+        ["grew up", "자랐다"],
+        ["Los Angeles", "로스앤젤레스(지명)"]
+      ]
+    },
+    {
+      "text": "As a child, Jones had many opportunities to draw. He used the leftover pencils and paper that his father brought him from work.",
+      "ko": "어린 시절 존스는 그림 그릴 기회가 많았다. 그는 아버지가 일터에서 가져다준 남은 연필과 종이를 썼다",
+      "praise": "that his father brought를 앞의 것들과 이어 붙인 거 정말 잘했어요.",
+      "points": [
+        { "en": "as a child", "sub": "가", "top": "는", "answer": "어린 시절에", "check": ["어릴", "어린", "아이"] },
+        { "en": "the leftover pencils and paper that his father brought", "sub": "이", "top": "은", "answer": "아버지가 가져다준 남은 연필과 종이", "check": ["아버지", "연필", "종이", "남은"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "leftover를 '남은 음식'으로만 보고 흐림", "signals": ["남은 음식"], "ask": "연필·종이와 같이 온 leftover는 무엇일까요?", "wrong": "남은 음식", "right": "쓰다 남은 것" },
+        { "id": "E2", "detect": "brought him from work를 '그를 일터에서 데려왔다'로 해석", "signals": ["그를 데려", "그를 일터"], "ask": "아버지가 가져온 것은 무엇일까요?", "wrong": "그를 일터에서 데려왔다", "right": "그에게 연필과 종이를 가져다주었다" }
+      ],
+      "glosses": [
+        ["child", "아이"],
+        ["opportunities", "기회"],
+        ["draw", "그리다"],
+        ["leftover", "쓰다 남은"],
+        ["pencils", "연필"],
+        ["paper", "종이"],
+        ["father", "아버지"],
+        ["brought", "가져다주었다"]
+      ]
+    },
+    {
+      "text": "Jones began his career in animation in 1930 and was quickly promoted.",
+      "ko": "존스는 1930년에 애니메이션 일을 시작했고 빠르게 승진했다",
+      "praise": "was promoted를 '승진했다'로 본 거 좋아요.",
+      "points": [
+        { "en": "began his career in animation", "sub": "이", "top": "은", "answer": "애니메이션 일을 시작했다", "check": ["시작", "경력", "일을"] },
+        { "en": "was quickly promoted", "sub": "가", "top": "는", "answer": "빠르게 승진했다", "check": ["승진", "빠르", "올라"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "promoted를 '홍보되었다'로 해석", "signals": ["홍보"], "ask": "사람에게 쓰인 was promoted는 무엇일까요?", "wrong": "빠르게 홍보되었다", "right": "빠르게 승진했다" }
+      ],
+      "glosses": [
+        ["began", "시작했다"],
+        ["career", "일, 경력"],
+        ["animation", "애니메이션"],
+        ["quickly", "빠르게"],
+        ["promoted", "승진한"]
+      ]
+    },
+    {
+      "text": "In the 1940s, he created famous characters such as Wile E. Coyote and the Road Runner.",
+      "ko": "1940년대에 그는 와일 E. 코요테와 로드 러너 같은 유명한 인물들을 만들었다",
+      "praise": "such as를 '~ 같은'으로 본 거 좋아요.",
+      "points": [
+        { "en": "created famous characters", "sub": "가", "top": "는", "answer": "유명한 인물들을 만들었다", "check": ["만들", "창조", "캐릭터", "인물"] },
+        { "en": "such as ~", "sub": "가", "top": "는", "answer": "~ 같은", "check": ["같은", "예를 들"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "characters를 '성격'으로 해석", "signals": ["성격"], "ask": "만화에서 characters는 무엇일까요?", "wrong": "유명한 성격들", "right": "유명한 등장인물들" }
+      ],
+      "glosses": [
+        ["1940s", "1940년대"],
+        ["created", "만들었다"],
+        ["famous", "유명한"],
+        ["characters", "등장인물"],
+        ["Wile E. Coyote", "와일 E. 코요테(등장인물)"],
+        ["Road Runner", "로드 러너(등장인물)"]
+      ]
+    },
+    {
+      "text": "He directed the famous cartoon film How the Grinch Stole Christmas, which is still enjoyed by many people today.",
+      "ko": "그는 유명한 만화 영화 「그린치는 어떻게 크리스마스를 훔쳤나」를 감독했는데, 그 작품은 오늘날에도 많은 사람에게 사랑받는다",
+      "praise": "which가 앞의 영화를 받는 걸 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "directed the famous cartoon film", "sub": "이", "top": "은", "answer": "유명한 만화 영화를 감독했다", "check": ["감독", "연출", "만들"] },
+        { "en": "which is still enjoyed by many people", "sub": "가", "top": "는", "answer": "지금도 많은 사람이 즐긴다", "check": ["지금도", "여전", "즐", "사랑"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "is enjoyed를 능동으로 보고 '즐긴다'의 주체를 뒤바꿈", "signals": ["영화가 사람들을 즐긴"], "ask": "즐기는 쪽은 영화일까요, 사람들일까요?", "wrong": "영화가 사람들을 즐긴다", "right": "사람들이 영화를 즐긴다" }
+      ],
+      "glosses": [
+        ["directed", "감독했다"],
+        ["film", "영화"],
+        ["How the Grinch Stole Christmas", "그린치는 어떻게 크리스마스를 훔쳤나(영화 제목)"],
+        ["still", "여전히"],
+        ["enjoyed", "즐겨지는"],
+        ["today", "오늘날"]
+      ]
+    },
+    {
+      "text": "Jones started his own company, Chuck Jones Enterprises, in 1970. For his contribution to the field of animation, he received an Honorary Academy Award in 1996.",
+      "ko": "존스는 1970년에 자기 회사 척 존스 엔터프라이즈를 세웠다. 애니메이션 분야에 기여한 공로로 그는 1996년에 아카데미 공로상을 받았다",
+      "praise": "For his contribution을 '기여한 공로로'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "started his own company", "sub": "가", "top": "는", "answer": "자기 회사를 세웠다", "check": ["회사", "설립", "세웠", "차렸"] },
+        { "en": "for his contribution to ~", "sub": "이", "top": "은", "answer": "~에 기여한 공로로", "check": ["기여", "공로", "공헌"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "For를 '~을 위해'로만 보고 이유를 놓침", "signals": ["기여를 위해"], "ask": "상을 받은 까닭을 말하는 For예요.", "wrong": "기여를 위해 상을 받았다", "right": "기여한 공로로 상을 받았다" }
+      ],
+      "glosses": [
+        ["started", "세웠다, 시작했다"],
+        ["own", "자기 자신의"],
+        ["company", "회사"],
+        ["Chuck Jones Enterprises", "척 존스 엔터프라이즈(회사 이름)"],
+        ["contribution", "기여"],
+        ["field", "분야"],
+        ["received", "받았다"],
+        ["Honorary Academy Award", "아카데미 공로상"]
+      ]
+    },
+    {
+      "text": "Late in his life, he established a non-profit organization supporting art education and other creative skills.",
+      "ko": "생애 후반에 그는 예술 교육과 다른 창의적 기술을 뒷받침하는 비영리 단체를 세웠다",
+      "praise": "supporting이 organization을 꾸민다는 걸 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "late in his life", "sub": "가", "top": "는", "answer": "생애 후반에", "check": ["후반", "말년", "늦게", "노년"] },
+        { "en": "a non-profit organization supporting ~", "sub": "이", "top": "은", "answer": "~을 뒷받침하는 비영리 단체", "check": ["비영리", "단체", "기관", "돕", "지원"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "supporting을 문장의 동사로 보고 끊음", "signals": ["단체를 세우고 지원했다"], "ask": "supporting은 앞의 무엇을 꾸밀까요?", "wrong": "단체를 세우고 지원했다", "right": "~을 뒷받침하는 단체를 세웠다" },
+        { "id": "E2", "detect": "late를 '늦은/지각한'으로만 보고 흐림", "signals": ["늦은 인생", "지각"], "ask": "late in his life는 언제일까요?", "wrong": "늦은 인생에", "right": "생애 후반에" }
+      ],
+      "glosses": [
+        ["Late", "늦게, 후반에"],
+        ["life", "생애, 삶"],
+        ["established", "세웠다"],
+        ["non-profit", "비영리의"],
+        ["organization", "단체"],
+        ["supporting", "뒷받침하는"],
+        ["art", "예술"],
+        ["creative", "창의적인"],
+        ["skills", "기술"]
+      ]
+    }
+  ]
+}

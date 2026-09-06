@@ -1,0 +1,1070 @@
+{
+  "id": "moeui-2027-09-36-mixed-signals",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 36번",
+  "category": "리딩",
+  "topic_intro": "말과 보상이 어긋날 때 직원이 받는 신호",
+  "sentence": "Our choices and actions send messages to others about our values. Consider a manager who communicates to her employees in a call center that \"customer care is the most important thing for our company.\" That's a signal to others regarding values. Now, imagine that the manager sets the incentives such that employees are paid by the number of calls they answer. This incentive sends a very different signal about what the manager is looking for: it's about being fast, which comes at the expense of quality of care. Such mixed signals leave the employees confused about the manager's values and expectations. This mixed signals problem is channeled into a simple question: what should be rewarded? In many cases, performance is multidimensional, but compensation is only given to one aspect of performance, typically the one that is easiest to measure.",
+  "grammar_type": "글의순서_경영논설",
+  "split_rule": {
+    "when": "한 문장이 25단어를 넘거나 콜론으로 나뉘면",
+    "how": "콜론·but 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Our choices and actions send messages to others about our values. Consider a manager who communicates to her employees in a call center that \"customer care is the most important thing for our company.\"",
+      "model_translation": "우리의 선택과 행동은 우리가 무엇을 중히 여기는지에 대한 메시지를 남에게 보낸다. 콜센터에서 직원들에게 \"우리 회사에는 고객 응대가 가장 중요하다\"고 말하는 관리자를 떠올려 보라",
+      "praise": "communicates ~ that절을 멀리서 이어 준 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "choices",
+          "ko": "선택"
+        },
+        {
+          "en": "actions",
+          "ko": "행동"
+        },
+        {
+          "en": "messages",
+          "ko": "메시지"
+        },
+        {
+          "en": "values",
+          "ko": "중히 여기는 것, 가치"
+        },
+        {
+          "en": "Consider",
+          "ko": "떠올려 보라"
+        },
+        {
+          "en": "manager",
+          "ko": "관리자"
+        },
+        {
+          "en": "communicates",
+          "ko": "말하다, 전하다"
+        },
+        {
+          "en": "employees",
+          "ko": "직원"
+        },
+        {
+          "en": "call center",
+          "ko": "콜센터"
+        },
+        {
+          "en": "customer care",
+          "ko": "고객 응대"
+        },
+        {
+          "en": "company",
+          "ko": "회사"
+        },
+        {
+          "en": "Our",
+          "ko": "우리의"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "send",
+          "ko": "보내다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "others",
+          "ko": "남들, 다른 사람들"
+        },
+        {
+          "en": "about",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "who",
+          "ko": "~하는 사람"
+        },
+        {
+          "en": "her",
+          "ko": "그녀의"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "most",
+          "ko": "가장"
+        },
+        {
+          "en": "important",
+          "ko": "중요한"
+        },
+        {
+          "en": "thing",
+          "ko": "것"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "send messages about our values → 우리가 중히 여기는 것에 대한 메시지를 보낸다",
+          "check": [
+            "가치",
+            "중히",
+            "메시지",
+            "신호"
+          ],
+          "nudge": "send messages about our values가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "send messages about our values는 여기서 '우리가 중히 여기는 것에 대한 메시지를 보낸다'예요."
+        },
+        {
+          "id": 2,
+          "text": "communicates to her employees that ~ → 직원들에게 ~라고 말하다",
+          "check": [
+            "직원",
+            "말한",
+            "전한"
+          ],
+          "nudge": "communicates to her employees that ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "communicates to her employees that ~는 여기서 '직원들에게 ~라고 말하다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "values를 '값'으로만 보고 흐림",
+          "signals": [
+            "값어치",
+            "가격"
+          ],
+          "treatment": {
+            "message": "our values는 무엇을 말할까요? '우리의 값'일까요, '우리가 중히 여기는 것'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "우리의 값",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "우리가 중히 여기는 것",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '우리가 중히 여기는 것'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '우리가 중히 여기는 것'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "Consider를 '고려된'으로 보고 명령문을 놓침",
+          "signals": [
+            "고려된 관리자"
+          ],
+          "treatment": {
+            "message": "문장 앞의 Consider는 무엇일까요? '고려된 관리자'일까요, '관리자를 떠올려 보라'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "고려된 관리자",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "관리자를 떠올려 보라",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '관리자를 떠올려 보라'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '관리자를 떠올려 보라'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "That's a signal to others regarding values. Now, imagine that the manager sets the incentives such that employees are paid by the number of calls they answer.",
+      "model_translation": "그것은 무엇을 중히 여기는지에 대해 남에게 보내는 신호다. 이제 그 관리자가, 직원이 받은 전화 수에 따라 돈을 받도록 성과급을 짠다고 생각해 보라",
+      "praise": "such that ~ 를 '~하도록'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "signal",
+          "ko": "신호"
+        },
+        {
+          "en": "regarding",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "imagine",
+          "ko": "생각해 보라"
+        },
+        {
+          "en": "sets",
+          "ko": "짜다, 정하다"
+        },
+        {
+          "en": "incentives",
+          "ko": "성과급"
+        },
+        {
+          "en": "such that",
+          "ko": "~하도록"
+        },
+        {
+          "en": "paid",
+          "ko": "돈을 받는"
+        },
+        {
+          "en": "number",
+          "ko": "수"
+        },
+        {
+          "en": "calls",
+          "ko": "전화"
+        },
+        {
+          "en": "answer",
+          "ko": "받다, 응답하다"
+        },
+        {
+          "en": "That's",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "others",
+          "ko": "남들, 다른 사람들"
+        },
+        {
+          "en": "values",
+          "ko": "중히 여기는 것, 가치"
+        },
+        {
+          "en": "Now",
+          "ko": "지금"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "manager",
+          "ko": "관리자"
+        },
+        {
+          "en": "employees",
+          "ko": "직원"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "sets the incentives such that ~ → ~하도록 성과급을 짜다",
+          "check": [
+            "성과급",
+            "보상",
+            "짜",
+            "정한"
+          ],
+          "nudge": "sets the incentives such that ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "sets the incentives such that ~는 여기서 '~하도록 성과급을 짜다'예요."
+        },
+        {
+          "id": 2,
+          "text": "are paid by the number of calls they answer → 받은 전화 수에 따라 돈을 받는다",
+          "check": [
+            "전화",
+            "수",
+            "받은 만큼",
+            "지급"
+          ],
+          "nudge": "are paid by the number of calls they answer이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "are paid by the number of calls they answer은 여기서 '받은 전화 수에 따라 돈을 받는다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "are paid를 능동으로 보고 '직원이 지불한다'로 뒤집음",
+          "signals": [
+            "직원이 지불",
+            "직원이 낸다"
+          ],
+          "treatment": {
+            "message": "are paid는 주는 쪽일까요, 받는 쪽일까요? '직원이 지불한다'일까요, '직원이 돈을 받는다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "직원이 지불한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "직원이 돈을 받는다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '직원이 돈을 받는다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '직원이 돈을 받는다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "regarding을 '존경하는'으로 해석",
+          "signals": [
+            "존경"
+          ],
+          "treatment": {
+            "message": "regarding values는 무엇을 말할까요? '가치를 존경하며'일까요, '가치에 대해'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "가치를 존경하며",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "가치에 대해",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '가치에 대해'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '가치에 대해'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "This incentive sends a very different signal about what the manager is looking for: it's about being fast, which comes at the expense of quality of care.",
+      "model_translation": "이 성과급은 관리자가 무엇을 바라는지에 대해 아주 다른 신호를 보낸다. 그것은 빠른 것에 대한 이야기이고, 그 빠름은 응대의 질을 대가로 치르고 얻는 것이다",
+      "praise": "at the expense of를 '~을 대가로'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "incentive",
+          "ko": "성과급"
+        },
+        {
+          "en": "different",
+          "ko": "다른"
+        },
+        {
+          "en": "looking for",
+          "ko": "바라는, 찾는"
+        },
+        {
+          "en": "fast",
+          "ko": "빠른"
+        },
+        {
+          "en": "at the expense of",
+          "ko": "~을 대가로"
+        },
+        {
+          "en": "quality",
+          "ko": "질"
+        },
+        {
+          "en": "care",
+          "ko": "응대, 돌봄"
+        },
+        {
+          "en": "it's",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "This",
+          "ko": "이"
+        },
+        {
+          "en": "sends",
+          "ko": "보낸다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "very",
+          "ko": "매우"
+        },
+        {
+          "en": "signal",
+          "ko": "신호"
+        },
+        {
+          "en": "about",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "what",
+          "ko": "무엇"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "manager",
+          "ko": "관리자"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "being",
+          "ko": "~인 것"
+        },
+        {
+          "en": "which",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "comes",
+          "ko": "오다"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "what the manager is looking for → 관리자가 바라는 것",
+          "check": [
+            "바라",
+            "찾는",
+            "원하는"
+          ],
+          "nudge": "what the manager is looking for이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "what the manager is looking for은 여기서 '관리자가 바라는 것'이에요."
+        },
+        {
+          "id": 2,
+          "text": "comes at the expense of quality of care → 응대의 질을 대가로 치른다",
+          "check": [
+            "질",
+            "희생",
+            "대가",
+            "잃"
+          ],
+          "nudge": "comes at the expense of quality of care가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "comes at the expense of quality of care는 여기서 '응대의 질을 대가로 치른다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "at the expense of를 '~의 비용으로'로만 보고 흐림",
+          "signals": [
+            "비용으로"
+          ],
+          "treatment": {
+            "message": "at the expense of A는 A가 어떻게 된다는 뜻일까요? '질의 비용으로 온다'일까요, '질을 잃으면서 얻는다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "질의 비용으로 온다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "질을 잃으면서 얻는다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '질을 잃으면서 얻는다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '질을 잃으면서 얻는다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "which의 선행사를 signal로 봄",
+          "signals": [
+            "신호가 질을 희생"
+          ],
+          "treatment": {
+            "message": "질을 대가로 치르는 것은 무엇일까요? '신호가 질을 희생시킨다'일까요, '빠름이 질을 대가로 한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "신호가 질을 희생시킨다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "빠름이 질을 대가로 한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '빠름이 질을 대가로 한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '빠름이 질을 대가로 한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Such mixed signals leave the employees confused about the manager's values and expectations.",
+      "model_translation": "이렇게 엇갈리는 신호는 관리자가 무엇을 중히 여기고 무엇을 바라는지에 대해 직원들을 헷갈리게 만든다",
+      "praise": "leave A confused를 'A를 헷갈리게 만들다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Such",
+          "ko": "이런"
+        },
+        {
+          "en": "mixed",
+          "ko": "엇갈리는"
+        },
+        {
+          "en": "signals",
+          "ko": "신호"
+        },
+        {
+          "en": "leave",
+          "ko": "~한 상태로 만들다"
+        },
+        {
+          "en": "confused",
+          "ko": "헷갈리는"
+        },
+        {
+          "en": "expectations",
+          "ko": "바라는 것, 기대"
+        },
+        {
+          "en": "manager's",
+          "ko": "관리자의"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "employees",
+          "ko": "직원"
+        },
+        {
+          "en": "about",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "values",
+          "ko": "중히 여기는 것, 가치"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "mixed signals → 엇갈리는 신호",
+          "check": [
+            "엇갈",
+            "뒤섞",
+            "혼란",
+            "다른 신호"
+          ],
+          "nudge": "mixed signals이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "mixed signals은 여기서 '엇갈리는 신호'예요."
+        },
+        {
+          "id": 2,
+          "text": "leave the employees confused → 직원들을 헷갈리게 만들다",
+          "check": [
+            "헷갈",
+            "혼란",
+            "만든"
+          ],
+          "nudge": "leave the employees confused가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "leave the employees confused는 여기서 '직원들을 헷갈리게 만들다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "leave를 '떠나다'로 해석",
+          "signals": [
+            "떠난다",
+            "남겨 두고 떠"
+          ],
+          "treatment": {
+            "message": "leave A + 형용사는 무엇을 말할까요? '직원들을 떠난다'일까요, '직원들을 ~한 상태로 만든다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "직원들을 떠난다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "직원들을 ~한 상태로 만든다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '직원들을 ~한 상태로 만든다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '직원들을 ~한 상태로 만든다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "This mixed signals problem is channeled into a simple question: what should be rewarded?",
+      "model_translation": "이 엇갈리는 신호 문제는 간단한 물음 하나로 모인다. 무엇에 보상해야 하는가",
+      "praise": "is channeled into를 '~로 모인다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "problem",
+          "ko": "문제"
+        },
+        {
+          "en": "channeled into",
+          "ko": "~로 모이는"
+        },
+        {
+          "en": "simple",
+          "ko": "간단한"
+        },
+        {
+          "en": "question",
+          "ko": "물음"
+        },
+        {
+          "en": "rewarded",
+          "ko": "보상받는"
+        },
+        {
+          "en": "This",
+          "ko": "이"
+        },
+        {
+          "en": "mixed",
+          "ko": "엇갈리는"
+        },
+        {
+          "en": "signals",
+          "ko": "신호"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "what",
+          "ko": "무엇"
+        },
+        {
+          "en": "should",
+          "ko": "~해야 한다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "is channeled into a simple question → 간단한 물음 하나로 모인다",
+          "check": [
+            "물음",
+            "질문",
+            "모",
+            "귀결",
+            "이어"
+          ],
+          "nudge": "is channeled into a simple question가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "is channeled into a simple question는 여기서 '간단한 물음 하나로 모인다'예요."
+        },
+        {
+          "id": 2,
+          "text": "what should be rewarded → 무엇에 보상해야 하는가",
+          "check": [
+            "보상",
+            "무엇"
+          ],
+          "nudge": "what should be rewarded가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "what should be rewarded는 여기서 '무엇에 보상해야 하는가'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "channeled를 '방송 채널'로 해석",
+          "signals": [
+            "채널"
+          ],
+          "treatment": {
+            "message": "is channeled into는 무엇을 말할까요? '채널로 만들어진다'일까요, '한 가지로 모인다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "채널로 만들어진다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "한 가지로 모인다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '한 가지로 모인다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '한 가지로 모인다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "In many cases, performance is multidimensional, but compensation is only given to one aspect of performance, typically the one that is easiest to measure.",
+      "model_translation": "많은 경우 일의 성과는 여러 갈래인데, 보상은 성과의 한 면에만, 대개 재기 가장 쉬운 면에만 주어진다",
+      "praise": "the one that is easiest to measure를 앞의 aspect와 이어 붙인 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "cases",
+          "ko": "경우"
+        },
+        {
+          "en": "performance",
+          "ko": "일의 성과"
+        },
+        {
+          "en": "multidimensional",
+          "ko": "여러 갈래인"
+        },
+        {
+          "en": "compensation",
+          "ko": "보상"
+        },
+        {
+          "en": "aspect",
+          "ko": "면"
+        },
+        {
+          "en": "typically",
+          "ko": "대개"
+        },
+        {
+          "en": "easiest",
+          "ko": "가장 쉬운"
+        },
+        {
+          "en": "measure",
+          "ko": "재다"
+        },
+        {
+          "en": "In",
+          "ko": "~에서"
+        },
+        {
+          "en": "many",
+          "ko": "많은"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "only",
+          "ko": "오직"
+        },
+        {
+          "en": "given",
+          "ko": "주어진"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "one",
+          "ko": "하나"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "performance is multidimensional → 성과는 여러 갈래다",
+          "check": [
+            "성과",
+            "여러",
+            "다차원",
+            "여러 면"
+          ],
+          "nudge": "performance is multidimensional가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "performance is multidimensional는 여기서 '성과는 여러 갈래다'예요."
+        },
+        {
+          "id": 2,
+          "text": "compensation is only given to one aspect → 보상은 한 면에만 주어진다",
+          "check": [
+            "보상",
+            "한 면",
+            "하나",
+            "만"
+          ],
+          "nudge": "compensation is only given to one aspect이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "compensation is only given to one aspect은 여기서 '보상은 한 면에만 주어진다'예요."
+        },
+        {
+          "id": 3,
+          "text": "the one that is easiest to measure → 재기 가장 쉬운 것",
+          "check": [
+            "재기",
+            "측정",
+            "쉬운"
+          ],
+          "nudge": "the one that is easiest to measure이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the one that is easiest to measure은 여기서 '재기 가장 쉬운 것'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "is given을 능동으로 보고 '보상이 준다'로 뒤집음",
+          "signals": [
+            "보상이 준다"
+          ],
+          "treatment": {
+            "message": "is given은 주는 쪽일까요, 주어지는 쪽일까요? '보상이 한 면을 준다'일까요, '보상이 한 면에만 주어진다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "보상이 한 면을 준다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "보상이 한 면에만 주어진다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '보상이 한 면에만 주어진다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '보상이 한 면에만 주어진다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "the one의 선행사를 performance로 봄",
+          "signals": [
+            "성과가 가장 쉬운"
+          ],
+          "treatment": {
+            "message": "재기 가장 쉬운 것은 무엇일까요? '재기 가장 쉬운 성과'일까요, '재기 가장 쉬운 한 면'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "재기 가장 쉬운 성과",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "재기 가장 쉬운 한 면",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '재기 가장 쉬운 한 면'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '재기 가장 쉬운 한 면'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

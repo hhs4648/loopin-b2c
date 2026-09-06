@@ -1,0 +1,191 @@
+{
+  "id": "moeui-2027-09-23-dopamine",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 23번",
+  "category": "리딩",
+  "topic_intro": "도파민은 쾌락이 아니라 기대의 물질이라는 이야기",
+  "sentence": "Popular culture loves to label dopamine as the \"pleasure molecule,\" yet science reveals a richer, more nuanced reality. Dopamine's true role is found not simply in the thrill of reward, but in the dance of anticipation, striving, and imagining what could be. The rush of motivation that energizes you at the start of a new day, the focus that allows you to solve complex problems, and the curiosity that fuels ambition are all orchestrated by dopamine. Dopamine doesn't give contentment; it delivers possibility. It sets the stage for new challenges, frames future goals as attainable, and propels you to ask \"What if?\" about new opportunities, relationships, or aspirations. The anticipation of a meaningful conversation, the excitement for a fresh project, and even just the temptation of a delicious meal are all sparked by dopamine's drive for future reward. Critically, dopamine rewards the process, not just the finished result.",
+  "grammar_type": "주제_과학논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 세미콜론으로 나뉘면",
+    "how": "세미콜론·yet 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "text": "Popular culture loves to label dopamine as the \"pleasure molecule,\" yet science reveals a richer, more nuanced reality.",
+      "ko": "대중문화는 도파민을 \"쾌락 분자\"라고 이름 붙이기를 좋아하지만, 과학은 더 풍부하고 더 결이 많은 실상을 드러낸다",
+      "praise": "label A as B를 'A를 B라고 이름 붙이다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "label A as B", "sub": "가", "top": "는", "answer": "A를 B라고 이름 붙이다", "check": ["이름", "부르", "라벨", "라고 한"] },
+        { "en": "yet science reveals ~", "sub": "이", "top": "은", "answer": "그러나 과학은 ~을 드러낸다", "check": ["그러나", "하지만", "드러", "밝히"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "yet을 '아직'으로 보고 앞뒤 대비를 놓침", "signals": ["아직 과학은"], "ask": "문장 가운데의 yet은 무엇을 잇나요?", "wrong": "아직 과학은", "right": "그러나 과학은" },
+        { "id": "E2", "detect": "nuanced를 '미묘한 사람'처럼 두고 흐림", "signals": ["뉘앙스의"], "ask": "more nuanced reality는 어떤 실상일까요?", "wrong": "뉘앙스의 현실", "right": "결이 더 많은 실상" }
+      ],
+      "glosses": [
+        ["Popular culture", "대중문화"],
+        ["label", "이름 붙이다"],
+        ["dopamine", "도파민"],
+        ["pleasure", "쾌락"],
+        ["molecule", "분자"],
+        ["yet", "그러나"],
+        ["science", "과학"],
+        ["reveals", "드러내다"],
+        ["richer", "더 풍부한"],
+        ["nuanced", "결이 많은, 미묘한"],
+        ["reality", "실상, 현실"]
+      ]
+    },
+    {
+      "text": "Dopamine's true role is found not simply in the thrill of reward, but in the dance of anticipation, striving, and imagining what could be.",
+      "ko": "도파민이 하는 진짜 몫은 보상의 짜릿함에만 있는 것이 아니라, 기대하고 애쓰고 무엇이 될 수 있을지 그려 보는 몸짓 속에 있다",
+      "praise": "not simply A but B를 살려서 옮긴 거 정말 잘했어요.",
+      "points": [
+        { "en": "not simply A, but B", "sub": "가", "top": "는", "answer": "A만이 아니라 B에", "check": ["만이 아니", "뿐 아니", "아니라"] },
+        { "en": "the thrill of reward", "sub": "이", "top": "은", "answer": "보상의 짜릿함", "check": ["보상", "짜릿", "스릴"] },
+        { "en": "anticipation, striving, and imagining what could be", "sub": "이", "top": "은", "answer": "기대하고 애쓰고 무엇이 될 수 있을지 그려 보는 것", "check": ["기대", "애쓰", "노력", "상상", "그려"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "not simply A but B에서 앞쪽만 읽고 끊음", "signals": ["보상의 짜릿함에 있지 않다."], "ask": "but 뒤에 진짜 자리가 나와요.", "wrong": "보상의 짜릿함에 없다", "right": "짜릿함만이 아니라 기대 속에 있다" },
+        { "id": "E2", "detect": "the dance를 '춤'으로만 보고 비유를 놓침", "signals": ["춤 속에"], "ask": "여기 dance는 무엇이 오가는 모습을 말해요.", "wrong": "기대의 춤 속에", "right": "기대가 오가는 움직임 속에" }
+      ],
+      "glosses": [
+        ["true", "진짜의"],
+        ["role", "몫, 역할"],
+        ["simply", "단순히"],
+        ["thrill", "짜릿함"],
+        ["reward", "보상"],
+        ["dance", "움직임, 춤"],
+        ["anticipation", "기대"],
+        ["striving", "애쓰는 것"],
+        ["imagining", "그려 보는 것"]
+      ]
+    },
+    {
+      "text": "The rush of motivation that energizes you at the start of a new day, the focus that allows you to solve complex problems, and the curiosity that fuels ambition are all orchestrated by dopamine.",
+      "ko": "새 하루가 시작될 때 당신에게 힘을 주는 의욕의 솟구침, 복잡한 문제를 풀게 해 주는 집중, 야망에 불을 지피는 호기심은 모두 도파민이 지휘한다",
+      "praise": "주어 셋이 나란한 것을 잡고 동사까지 이어 준 거 정말 잘했어요.",
+      "points": [
+        { "en": "the rush of motivation that energizes you", "sub": "이", "top": "은", "answer": "당신에게 힘을 주는 의욕의 솟구침", "check": ["의욕", "동기", "솟구", "힘을"] },
+        { "en": "the curiosity that fuels ambition", "sub": "가", "top": "는", "answer": "야망에 불을 지피는 호기심", "check": ["호기심", "야망", "불을", "부추"] },
+        { "en": "are all orchestrated by dopamine", "sub": "가", "top": "는", "answer": "모두 도파민이 지휘한다", "check": ["도파민", "지휘", "이끌", "조율"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "주어가 셋인 걸 놓치고 첫 번째만 해석", "signals": ["의욕의 솟구침이 도파민에 의해"], "ask": "are 앞에 주어가 몇 개일까요?", "wrong": "의욕만 도파민이 만든다", "right": "의욕·집중·호기심 셋 다 도파민이 지휘한다" },
+        { "id": "E2", "detect": "orchestrated를 '오케스트라 연주'로 직역", "signals": ["오케스트라"], "ask": "orchestrate는 무엇을 하는 걸까요?", "wrong": "도파민이 연주한다", "right": "도파민이 지휘한다" }
+      ],
+      "glosses": [
+        ["rush", "솟구침"],
+        ["motivation", "의욕"],
+        ["energizes", "힘을 주다"],
+        ["start", "시작"],
+        ["focus", "집중"],
+        ["allows", "~할 수 있게 하다"],
+        ["solve", "풀다"],
+        ["complex", "복잡한"],
+        ["problems", "문제"],
+        ["curiosity", "호기심"],
+        ["fuels", "불을 지피다"],
+        ["ambition", "야망"],
+        ["orchestrated", "지휘된"]
+      ]
+    },
+    {
+      "text": "Dopamine doesn't give contentment; it delivers possibility.",
+      "ko": "도파민은 만족을 주지 않는다. 도파민이 주는 것은 가능성이다",
+      "praise": "contentment와 possibility를 맞세운 걸 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "doesn't give contentment", "sub": "가", "top": "는", "answer": "만족을 주지 않는다", "check": ["만족", "주지 않", "안 준"] },
+        { "en": "delivers possibility", "sub": "가", "top": "는", "answer": "가능성을 준다", "check": ["가능성", "준다", "전한"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "contentment를 '내용'으로 헷갈림", "signals": ["내용"], "ask": "contentment와 content는 다른 말이에요.", "wrong": "내용을 주지 않는다", "right": "만족을 주지 않는다" }
+      ],
+      "glosses": [
+        ["contentment", "만족"],
+        ["delivers", "준다, 전한다"],
+        ["possibility", "가능성"]
+      ]
+    },
+    {
+      "text": "It sets the stage for new challenges, frames future goals as attainable, and propels you to ask \"What if?\" about new opportunities, relationships, or aspirations.",
+      "ko": "도파민은 새로운 도전의 무대를 깔고, 앞날의 목표를 이룰 수 있는 것으로 틀 지우며, 새로운 기회와 관계와 바람을 두고 \"만약에?\"라고 묻게 떠민다",
+      "praise": "동사 셋이 나란한 것을 다 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "sets the stage for ~", "sub": "가", "top": "는", "answer": "~의 무대를 깔다", "check": ["무대", "판을", "바탕", "마련"] },
+        { "en": "frames future goals as attainable", "sub": "이", "top": "은", "answer": "앞날의 목표를 이룰 수 있는 것으로 여기게 하다", "check": ["목표", "이룰 수", "달성", "틀"] },
+        { "en": "propels you to ask", "sub": "이", "top": "은", "answer": "묻게 떠민다", "check": ["떠민", "몰아", "하게 만든", "이끈"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "frames를 명사 '액자'로 보고 동사를 놓침", "signals": ["액자"], "ask": "이 문장에서 frames는 무엇일까요?", "wrong": "목표의 액자", "right": "목표를 ~로 틀 지운다" },
+        { "id": "E2", "detect": "attainable을 '매력적인'으로 헷갈림", "signals": ["매력적"], "ask": "attain은 무엇을 하는 걸까요?", "wrong": "매력적인 목표", "right": "이룰 수 있는 목표" }
+      ],
+      "glosses": [
+        ["sets the stage", "무대를 깔다"],
+        ["challenges", "도전"],
+        ["frames", "틀 지우다"],
+        ["future", "앞날의"],
+        ["goals", "목표"],
+        ["attainable", "이룰 수 있는"],
+        ["propels", "떠밀다"],
+        ["opportunities", "기회"],
+        ["relationships", "관계"],
+        ["aspirations", "바람, 포부"]
+      ]
+    },
+    {
+      "text": "The anticipation of a meaningful conversation, the excitement for a fresh project, and even just the temptation of a delicious meal are all sparked by dopamine's drive for future reward.",
+      "ko": "뜻깊은 대화에 대한 기대, 새 일에 대한 설렘, 심지어 맛있는 음식이 주는 유혹까지도 모두 앞날의 보상을 향한 도파민의 충동에서 불붙는다",
+      "praise": "긴 주어 셋 뒤의 동사를 정확히 찾은 거 정말 잘했어요.",
+      "points": [
+        { "en": "the anticipation of a meaningful conversation", "sub": "이", "top": "은", "answer": "뜻깊은 대화에 대한 기대", "check": ["기대", "대화", "뜻깊"] },
+        { "en": "are all sparked by ~", "sub": "가", "top": "는", "answer": "모두 ~에서 불붙는다", "check": ["불", "촉발", "일어", "생겨"] },
+        { "en": "dopamine's drive for future reward", "sub": "가", "top": "는", "answer": "앞날의 보상을 향한 도파민의 충동", "check": ["충동", "욕구", "보상", "앞날", "미래"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "sparked를 능동으로 보고 '불을 붙인다'로 뒤집음", "signals": ["불을 붙인다", "촉발한다."], "ask": "are sparked by는 하는 쪽일까요, 되는 쪽일까요?", "wrong": "기대가 도파민에 불을 붙인다", "right": "기대가 도파민에서 불붙는다" },
+        { "id": "E2", "detect": "drive를 '운전'으로 해석", "signals": ["운전"], "ask": "dopamine's drive for reward는 무엇일까요?", "wrong": "도파민의 운전", "right": "도파민의 충동" }
+      ],
+      "glosses": [
+        ["meaningful", "뜻깊은"],
+        ["conversation", "대화"],
+        ["excitement", "설렘"],
+        ["fresh", "새로운"],
+        ["project", "일, 계획"],
+        ["temptation", "유혹"],
+        ["delicious", "맛있는"],
+        ["meal", "식사"],
+        ["sparked", "불붙은"],
+        ["drive", "충동"]
+      ]
+    },
+    {
+      "text": "Critically, dopamine rewards the process, not just the finished result. It's what sharpens focus and fills ordinary moments with potential.",
+      "ko": "중요한 것은 도파민이 끝난 결과만이 아니라 과정에 보상을 준다는 점이다. 도파민은 집중을 벼리고 평범한 순간을 가능성으로 채우는 것이다",
+      "praise": "rewards를 동사 '보상을 준다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "rewards the process, not just the result", "sub": "가", "top": "는", "answer": "결과만이 아니라 과정에 보상을 준다", "check": ["과정", "결과", "보상"] },
+        { "en": "sharpens focus", "sub": "가", "top": "는", "answer": "집중을 벼리다", "check": ["집중", "날카", "예리", "높이"] },
+        { "en": "fills ordinary moments with potential", "sub": "이", "top": "은", "answer": "평범한 순간을 가능성으로 채우다", "check": ["평범", "순간", "가능성", "채우"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "Critically를 '비판적으로'로 해석", "signals": ["비판적으로"], "ask": "문장 앞의 Critically는 무엇을 말할까요?", "wrong": "비판적으로 말하면", "right": "중요한 것은" },
+        { "id": "E2", "detect": "rewards를 명사 '보상들'로 보고 동사를 놓침", "signals": ["보상들"], "ask": "이 문장의 동사는 무엇일까요?", "wrong": "과정의 보상들", "right": "과정에 보상을 준다" }
+      ],
+      "glosses": [
+        ["Critically", "중요하게도"],
+        ["rewards", "보상을 주다"],
+        ["process", "과정"],
+        ["finished", "끝난"],
+        ["sharpens", "벼리다, 날카롭게 하다"],
+        ["fills", "채우다"],
+        ["ordinary", "평범한"],
+        ["moments", "순간"],
+        ["potential", "가능성"]
+      ]
+    }
+  ]
+}

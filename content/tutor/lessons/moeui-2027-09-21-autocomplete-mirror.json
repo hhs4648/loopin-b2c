@@ -1,0 +1,1553 @@
+{
+  "id": "moeui-2027-09-21-autocomplete-mirror",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 21번",
+  "category": "리딩",
+  "topic_intro": "자동완성이 사회를 비추는 거울이라는 이야기",
+  "sentence": "Social media companies are working to keep you on site or attempting to deliver results useful to you. You can see this personalization reflected in the results of search engines, which try to maximize relevance: searching for \"bakery\" in New York should return different results than searching in Paris. Features like the little predictive-text cues of autocomplete also look to maximize relevance by suggesting refinements: typing in \"cats\" might prompt the user with \"cats movie\" or \"cats that don't shed.\" Autocomplete suggestions offer a look into the algorithm's understanding of accumulated user behavior — an immensely important part of how key social media algorithms work. The outputs are personalized, but the data sets are massive, and the platforms are mining for similarities across vast quantities of user information. If a whole lot of users near you or similar to you complete the search that you've begun with specific words, the autocomplete algorithm takes that into account and may be more likely to suggest them to you. Since the results are derived from data related to millions of searches, autocomplete is, in a sense, holding a mirror up to society.",
+  "grammar_type": "함축의미_기술논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 콜론·대시로 나뉘면",
+    "how": "콜론·대시·but 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "New York",
+      "ko": "뉴욕",
+      "type": "place"
+    },
+    {
+      "en": "Paris",
+      "ko": "파리",
+      "type": "place"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Social media companies are working to keep you on site or attempting to deliver results useful to you.",
+      "model_translation": "소셜 미디어 회사들은 당신을 사이트에 붙잡아 두려 하거나, 당신에게 쓸모 있는 결과를 내주려 애쓴다",
+      "praise": "keep you on site를 '사이트에 붙잡아 두다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Social media",
+          "ko": "소셜 미디어"
+        },
+        {
+          "en": "companies",
+          "ko": "회사"
+        },
+        {
+          "en": "working to",
+          "ko": "~하려 애쓰는"
+        },
+        {
+          "en": "keep",
+          "ko": "붙잡아 두다"
+        },
+        {
+          "en": "site",
+          "ko": "사이트"
+        },
+        {
+          "en": "attempting",
+          "ko": "시도하는"
+        },
+        {
+          "en": "deliver",
+          "ko": "내주다, 전하다"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "useful",
+          "ko": "쓸모 있는"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "on",
+          "ko": "~에"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "keep you on site → 당신을 사이트에 붙잡아 두다",
+          "check": [
+            "붙잡",
+            "머물",
+            "머무르",
+            "떠나지"
+          ],
+          "nudge": "keep you on site가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "keep you on site는 여기서 '당신을 사이트에 붙잡아 두다'예요."
+        },
+        {
+          "id": 2,
+          "text": "results useful to you → 당신에게 쓸모 있는 결과",
+          "check": [
+            "쓸모",
+            "유용",
+            "도움이 되는"
+          ],
+          "nudge": "results useful to you가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "results useful to you는 여기서 '당신에게 쓸모 있는 결과'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "deliver를 '배달하다'로 해석",
+          "signals": [
+            "배달",
+            "배송"
+          ],
+          "treatment": {
+            "message": "results와 같이 온 deliver는 무엇일까요? '결과를 배달하다'일까요, '결과를 내주다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "결과를 배달하다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "결과를 내주다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '결과를 내주다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '결과를 내주다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "on site를 '현장에서'로만 보고 흐림",
+          "signals": [
+            "현장에서"
+          ],
+          "treatment": {
+            "message": "여기 site는 어디를 말할까요? '현장에 머물게 하다'일까요, '그 사이트에 머물게 하다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "현장에 머물게 하다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그 사이트에 머물게 하다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그 사이트에 머물게 하다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그 사이트에 머물게 하다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You can see this personalization reflected in the results of search engines, which try to maximize relevance:",
+      "model_translation": "이런 개인 맞춤이 검색 엔진 결과에 비쳐 있는 것을 볼 수 있는데, 검색 엔진은 관련성을 가장 높이려 한다",
+      "praise": "see A reflected를 'A가 비쳐 있는 것을 보다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "personalization",
+          "ko": "개인 맞춤"
+        },
+        {
+          "en": "reflected",
+          "ko": "비쳐 있는"
+        },
+        {
+          "en": "search engines",
+          "ko": "검색 엔진"
+        },
+        {
+          "en": "maximize",
+          "ko": "가장 높이다"
+        },
+        {
+          "en": "relevance",
+          "ko": "관련성"
+        },
+        {
+          "en": "You",
+          "ko": "당신은"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "this",
+          "ko": "이"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "which",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "try",
+          "ko": "~하려 하다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "see this personalization reflected → 개인 맞춤이 비쳐 있는 것을 보다",
+          "check": [
+            "개인",
+            "맞춤",
+            "비쳐",
+            "반영"
+          ],
+          "nudge": "see this personalization reflected이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "see this personalization reflected은 여기서 '개인 맞춤이 비쳐 있는 것을 보다'예요."
+        },
+        {
+          "id": 2,
+          "text": "maximize relevance → 관련성을 가장 높이다",
+          "check": [
+            "관련",
+            "적합",
+            "높이",
+            "최대"
+          ],
+          "nudge": "maximize relevance가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "maximize relevance는 여기서 '관련성을 가장 높이다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "reflected를 문장의 동사로 보고 끊음",
+          "signals": [
+            "개인화가 반영했다"
+          ],
+          "treatment": {
+            "message": "see A reflected에서 A는 비추는 쪽일까요, 비쳐지는 쪽일까요? '개인화가 결과를 반영했다'일까요, '개인화가 결과에 비쳐 있다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "개인화가 결과를 반영했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "개인화가 결과에 비쳐 있다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '개인화가 결과에 비쳐 있다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '개인화가 결과에 비쳐 있다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "searching for \"bakery\" in New York should return different results than searching in Paris.",
+      "model_translation": "뉴욕에서 \"bakery\"를 검색하면 파리에서 검색할 때와 다른 결과가 나와야 한다",
+      "praise": "searching을 주어로 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "searching for",
+          "ko": "~을 검색하는 것"
+        },
+        {
+          "en": "bakery",
+          "ko": "빵집"
+        },
+        {
+          "en": "New York",
+          "ko": "뉴욕(지명)"
+        },
+        {
+          "en": "return",
+          "ko": "내놓다"
+        },
+        {
+          "en": "different",
+          "ko": "다른"
+        },
+        {
+          "en": "Paris",
+          "ko": "파리(지명)"
+        },
+        {
+          "en": "York",
+          "ko": "뉴욕(이름)"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "should",
+          "ko": "~해야 한다"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "than",
+          "ko": "~보다"
+        },
+        {
+          "en": "searching",
+          "ko": "검색하는 것"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "searching for ~ in New York → 뉴욕에서 ~을 검색하는 것 (주어)",
+          "check": [
+            "검색",
+            "찾"
+          ],
+          "nudge": "searching for ~ in New York가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "searching for ~ in New York는 여기서 '뉴욕에서 ~을 검색하는 것 (주어)'예요."
+        },
+        {
+          "id": 2,
+          "text": "should return different results than ~ → ~와 다른 결과가 나와야 한다",
+          "check": [
+            "다른 결과",
+            "달라야",
+            "다르게"
+          ],
+          "nudge": "should return different results than ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "should return different results than ~는 여기서 '~와 다른 결과가 나와야 한다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "return을 '돌아가다'로 해석",
+          "signals": [
+            "돌아간다",
+            "반환된다."
+          ],
+          "treatment": {
+            "message": "검색이 return하는 것은 무엇일까요? '결과로 돌아간다'일까요, '결과를 내놓는다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "결과로 돌아간다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "결과를 내놓는다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '결과를 내놓는다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '결과를 내놓는다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Features like the little predictive-text cues of autocomplete also look to maximize relevance by suggesting refinements:",
+      "model_translation": "자동완성의 작은 예측 문구 같은 기능도 다듬어진 검색어를 제안해서 관련성을 가장 높이려 한다",
+      "praise": "look to를 '~하려 하다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Features",
+          "ko": "기능"
+        },
+        {
+          "en": "little",
+          "ko": "작은"
+        },
+        {
+          "en": "predictive-text",
+          "ko": "예측 문구의"
+        },
+        {
+          "en": "cues",
+          "ko": "실마리, 안내"
+        },
+        {
+          "en": "autocomplete",
+          "ko": "자동완성"
+        },
+        {
+          "en": "look to",
+          "ko": "~하려 하다"
+        },
+        {
+          "en": "suggesting",
+          "ko": "제안하는 것"
+        },
+        {
+          "en": "refinements",
+          "ko": "다듬어진 것"
+        },
+        {
+          "en": "like",
+          "ko": "~처럼, 좋아하다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "also",
+          "ko": "또한"
+        },
+        {
+          "en": "maximize",
+          "ko": "가장 높이다"
+        },
+        {
+          "en": "relevance",
+          "ko": "관련성"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "predictive-text cues of autocomplete → 자동완성의 예측 문구",
+          "check": [
+            "자동완성",
+            "예측",
+            "미리"
+          ],
+          "nudge": "predictive-text cues of autocomplete가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "predictive-text cues of autocomplete는 여기서 '자동완성의 예측 문구'예요."
+        },
+        {
+          "id": 2,
+          "text": "look to maximize relevance → 관련성을 가장 높이려 하다",
+          "check": [
+            "관련",
+            "높이려",
+            "하려"
+          ],
+          "nudge": "look to maximize relevance가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "look to maximize relevance는 여기서 '관련성을 가장 높이려 하다'예요."
+        },
+        {
+          "id": 3,
+          "text": "by suggesting refinements → 다듬어진 검색어를 제안해서",
+          "check": [
+            "제안",
+            "다듬",
+            "구체",
+            "좁혀"
+          ],
+          "nudge": "by suggesting refinements가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "by suggesting refinements는 여기서 '다듬어진 검색어를 제안해서'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "look to를 '~을 바라보다'로 해석",
+          "signals": [
+            "바라본다"
+          ],
+          "treatment": {
+            "message": "look to + 동사는 무슨 뜻일까요? '높이는 것을 바라본다'일까요, '높이려 한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "높이는 것을 바라본다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "높이려 한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '높이려 한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '높이려 한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "refinements를 '정제소'로 해석",
+          "signals": [
+            "정제소",
+            "정유"
+          ],
+          "treatment": {
+            "message": "검색어의 refinements는 무엇일까요? '정제소'일까요, '더 다듬어진 검색어'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "정제소",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "더 다듬어진 검색어",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '더 다듬어진 검색어'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '더 다듬어진 검색어'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "typing in \"cats\" might prompt the user with \"cats movie\" or \"cats that don't shed.\"",
+      "model_translation": "\"cats\"를 입력하면 사용자에게 \"cats movie\"나 \"cats that don't shed\"를 띄워 줄 수 있다",
+      "praise": "prompt the user with를 '사용자에게 띄워 주다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "typing in",
+          "ko": "입력하는 것"
+        },
+        {
+          "en": "cats",
+          "ko": "고양이"
+        },
+        {
+          "en": "prompt",
+          "ko": "띄워 주다, 부추기다"
+        },
+        {
+          "en": "user",
+          "ko": "사용자"
+        },
+        {
+          "en": "movie",
+          "ko": "영화"
+        },
+        {
+          "en": "shed",
+          "ko": "털이 빠지다"
+        },
+        {
+          "en": "don't",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "might",
+          "ko": "~일지도 모른다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "typing in ~ → ~을 입력하는 것 (주어)",
+          "check": [
+            "입력",
+            "치면",
+            "타이핑"
+          ],
+          "nudge": "typing in ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "typing in ~은 여기서 '~을 입력하는 것 (주어)'예요."
+        },
+        {
+          "id": 2,
+          "text": "prompt the user with ~ → 사용자에게 ~을 띄워 주다",
+          "check": [
+            "띄워",
+            "제시",
+            "보여",
+            "권"
+          ],
+          "nudge": "prompt the user with ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "prompt the user with ~는 여기서 '사용자에게 ~을 띄워 주다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "prompt를 '즉각적인'으로 보고 동사를 놓침",
+          "signals": [
+            "즉각적"
+          ],
+          "treatment": {
+            "message": "이 문장의 동사는 무엇일까요? '즉각적인 사용자'일까요, '사용자에게 띄워 준다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "즉각적인 사용자",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사용자에게 띄워 준다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사용자에게 띄워 준다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사용자에게 띄워 준다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Autocomplete suggestions offer a look into the algorithm's understanding of accumulated user behavior — an immensely important part of how key social media algorithms work.",
+      "model_translation": "자동완성 제안은 알고리즘이 쌓인 사용자 행동을 어떻게 이해하고 있는지 들여다볼 창을 준다. 그것은 주요 소셜 미디어 알고리즘이 어떻게 움직이는지에서 대단히 중요한 부분이다",
+      "praise": "offer a look into를 '들여다볼 창을 주다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "suggestions",
+          "ko": "제안"
+        },
+        {
+          "en": "offer",
+          "ko": "주다"
+        },
+        {
+          "en": "look into",
+          "ko": "들여다보기"
+        },
+        {
+          "en": "algorithm's",
+          "ko": "알고리즘의"
+        },
+        {
+          "en": "understanding",
+          "ko": "이해"
+        },
+        {
+          "en": "accumulated",
+          "ko": "쌓인"
+        },
+        {
+          "en": "behavior",
+          "ko": "행동"
+        },
+        {
+          "en": "immensely",
+          "ko": "대단히"
+        },
+        {
+          "en": "key",
+          "ko": "주요한"
+        },
+        {
+          "en": "algorithms",
+          "ko": "알고리즘"
+        },
+        {
+          "en": "Social media",
+          "ko": "소셜 미디어"
+        },
+        {
+          "en": "algorithm's",
+          "ko": "알고리즘의"
+        },
+        {
+          "en": "Autocomplete",
+          "ko": "자동완성"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "user",
+          "ko": "사용자"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "important",
+          "ko": "중요한"
+        },
+        {
+          "en": "part",
+          "ko": "부분"
+        },
+        {
+          "en": "how",
+          "ko": "어떻게"
+        },
+        {
+          "en": "work",
+          "ko": "일하다, 일"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "offer a look into ~ → ~을 들여다볼 기회를 준다",
+          "check": [
+            "들여다",
+            "엿볼",
+            "볼 수 있",
+            "보여"
+          ],
+          "nudge": "offer a look into ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "offer a look into ~는 여기서 '~을 들여다볼 기회를 준다'예요."
+        },
+        {
+          "id": 2,
+          "text": "accumulated user behavior → 쌓인 사용자 행동",
+          "check": [
+            "쌓인",
+            "축적",
+            "누적",
+            "행동"
+          ],
+          "nudge": "accumulated user behavior가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "accumulated user behavior는 여기서 '쌓인 사용자 행동'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "a look을 '한 번 보기'로만 보고 관용을 놓침",
+          "signals": [
+            "한 번 봄"
+          ],
+          "treatment": {
+            "message": "offer a look into는 한 덩어리로 쓰이는 말이에요. '한 번 보기를 준다'일까요, '들여다볼 기회를 준다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "한 번 보기를 준다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "들여다볼 기회를 준다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '들여다볼 기회를 준다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '들여다볼 기회를 준다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "대시 뒤를 새 문장으로 보고 앞과 끊음",
+          "signals": [
+            "대단히 중요한 부분이다. 그것은"
+          ],
+          "treatment": {
+            "message": "대시 뒤는 앞의 무엇을 설명할까요? '따로 떨어진 문장'일까요, '앞말을 다시 풀어 준 말'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "따로 떨어진 문장",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "앞말을 다시 풀어 준 말",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '앞말을 다시 풀어 준 말'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '앞말을 다시 풀어 준 말'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "The outputs are personalized, but the data sets are massive, and the platforms are mining for similarities across vast quantities of user information.",
+      "model_translation": "내놓는 결과는 개인에 맞춰지지만, 자료 더미는 어마어마하고, 플랫폼들은 엄청난 양의 사용자 정보에서 닮은 점을 캐내고 있다",
+      "praise": "mining for similarities를 '닮은 점을 캐내다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "outputs",
+          "ko": "내놓는 결과"
+        },
+        {
+          "en": "personalized",
+          "ko": "개인에 맞춘"
+        },
+        {
+          "en": "data sets",
+          "ko": "자료 더미"
+        },
+        {
+          "en": "massive",
+          "ko": "어마어마한"
+        },
+        {
+          "en": "platforms",
+          "ko": "플랫폼"
+        },
+        {
+          "en": "mining",
+          "ko": "캐내는 것"
+        },
+        {
+          "en": "similarities",
+          "ko": "닮은 점"
+        },
+        {
+          "en": "vast",
+          "ko": "엄청난"
+        },
+        {
+          "en": "quantities",
+          "ko": "양"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "The",
+          "ko": "그"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "across",
+          "ko": "~에 걸쳐"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "user",
+          "ko": "사용자"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the outputs are personalized → 결과는 개인에 맞춰진다",
+          "check": [
+            "개인",
+            "맞춤",
+            "개인화"
+          ],
+          "nudge": "the outputs are personalized이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the outputs are personalized은 여기서 '결과는 개인에 맞춰진다'예요."
+        },
+        {
+          "id": 2,
+          "text": "mining for similarities → 닮은 점을 캐내다",
+          "check": [
+            "닮은",
+            "비슷",
+            "유사",
+            "캐"
+          ],
+          "nudge": "mining for similarities이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "mining for similarities은 여기서 '닮은 점을 캐내다'예요."
+        },
+        {
+          "id": 3,
+          "text": "vast quantities of user information → 엄청난 양의 사용자 정보",
+          "check": [
+            "엄청",
+            "방대",
+            "많은 양",
+            "정보"
+          ],
+          "nudge": "vast quantities of user information가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "vast quantities of user information는 여기서 '엄청난 양의 사용자 정보'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "mining을 '광산'으로 보고 동사를 놓침",
+          "signals": [
+            "광산"
+          ],
+          "treatment": {
+            "message": "플랫폼이 mining한다면 무엇을 하는 걸까요? '닮은 점의 광산'일까요, '닮은 점을 캐낸다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "닮은 점의 광산",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "닮은 점을 캐낸다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '닮은 점을 캐낸다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '닮은 점을 캐낸다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "but이 잇는 앞뒤를 뒤바꿔 해석",
+          "signals": [
+            "자료가 개인화되고 결과가 방대"
+          ],
+          "treatment": {
+            "message": "개인에 맞춰지는 쪽은 결과일까요, 자료일까요? '자료가 개인에 맞춰진다'일까요, '결과가 개인에 맞춰진다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "자료가 개인에 맞춰진다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "결과가 개인에 맞춰진다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '결과가 개인에 맞춰진다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '결과가 개인에 맞춰진다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "If a whole lot of users near you or similar to you complete the search that you've begun with specific words, the autocomplete algorithm takes that into account and may be more likely to suggest them to you.",
+      "model_translation": "당신 가까이 있거나 당신과 비슷한 사용자가 아주 많이, 당신이 시작한 검색을 어떤 낱말로 끝맺는다면, 자동완성 알고리즘은 그것을 셈에 넣어 그 낱말들을 당신에게 더 잘 제안하게 될 수 있다",
+      "praise": "긴 조건절의 주어와 동사를 이어 준 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "a whole lot of",
+          "ko": "아주 많은"
+        },
+        {
+          "en": "users",
+          "ko": "사용자"
+        },
+        {
+          "en": "near",
+          "ko": "가까이"
+        },
+        {
+          "en": "similar to",
+          "ko": "~와 비슷한"
+        },
+        {
+          "en": "complete",
+          "ko": "끝맺다"
+        },
+        {
+          "en": "search",
+          "ko": "검색"
+        },
+        {
+          "en": "begun",
+          "ko": "시작했다"
+        },
+        {
+          "en": "specific",
+          "ko": "특정한"
+        },
+        {
+          "en": "takes",
+          "ko": "(셈에) 넣다"
+        },
+        {
+          "en": "likely",
+          "ko": "~할 것 같은"
+        },
+        {
+          "en": "suggest",
+          "ko": "제안하다"
+        },
+        {
+          "en": "into",
+          "ko": "~ 안으로"
+        },
+        {
+          "en": "account",
+          "ko": "셈, 고려"
+        },
+        {
+          "en": "you've",
+          "ko": "당신은은 ~했다"
+        },
+        {
+          "en": "If",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        },
+        {
+          "en": "words",
+          "ko": "말, 단어들"
+        },
+        {
+          "en": "autocomplete",
+          "ko": "자동완성"
+        },
+        {
+          "en": "algorithm",
+          "ko": "알고리즘"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "may",
+          "ko": "~일지도 모른다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "them",
+          "ko": "그들을"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "users near you or similar to you → 당신 가까이 있거나 당신과 비슷한 사용자",
+          "check": [
+            "가까",
+            "근처",
+            "비슷",
+            "닮은"
+          ],
+          "nudge": "users near you or similar to you가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "users near you or similar to you는 여기서 '당신 가까이 있거나 당신과 비슷한 사용자'예요."
+        },
+        {
+          "id": 2,
+          "text": "takes that into account → 그것을 셈에 넣다",
+          "check": [
+            "고려",
+            "감안",
+            "셈에",
+            "반영"
+          ],
+          "nudge": "takes that into account가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "takes that into account는 여기서 '그것을 셈에 넣다'예요."
+        },
+        {
+          "id": 3,
+          "text": "may be more likely to suggest → 더 잘 제안하게 될 수 있다",
+          "check": [
+            "더",
+            "가능성",
+            "제안"
+          ],
+          "nudge": "may be more likely to suggest가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "may be more likely to suggest는 여기서 '더 잘 제안하게 될 수 있다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "take into account를 '계좌를 가지다'로 해석",
+          "signals": [
+            "계좌"
+          ],
+          "treatment": {
+            "message": "take into account는 굳어진 표현이에요. '그것을 계좌에 넣는다'일까요, '그것을 고려한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그것을 계좌에 넣는다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그것을 고려한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그것을 고려한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그것을 고려한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "complete를 형용사 '완전한'으로 보고 동사를 놓침",
+          "signals": [
+            "완전한 검색"
+          ],
+          "treatment": {
+            "message": "users가 complete the search 한다면 무엇을 하는 걸까요? '완전한 검색'일까요, '검색을 끝맺는다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "완전한 검색",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "검색을 끝맺는다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '검색을 끝맺는다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '검색을 끝맺는다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Since the results are derived from data related to millions of searches, autocomplete is, in a sense, holding a mirror up to society.",
+      "model_translation": "그 결과가 수백만 건의 검색과 이어진 자료에서 나온 것이므로, 자동완성은 어떤 뜻에서 사회에 거울을 들이대고 있는 셈이다",
+      "praise": "holding a mirror up to를 '거울을 들이대다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Since",
+          "ko": "~이기 때문에"
+        },
+        {
+          "en": "derived from",
+          "ko": "~에서 나온"
+        },
+        {
+          "en": "related to",
+          "ko": "~와 이어진"
+        },
+        {
+          "en": "millions",
+          "ko": "수백만"
+        },
+        {
+          "en": "searches",
+          "ko": "검색"
+        },
+        {
+          "en": "in a sense",
+          "ko": "어떤 뜻에서는"
+        },
+        {
+          "en": "holding",
+          "ko": "들고 있는"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울"
+        },
+        {
+          "en": "society",
+          "ko": "사회"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "data",
+          "ko": "자료"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "autocomplete",
+          "ko": "자동완성"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "up",
+          "ko": "위로"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "are derived from ~ → ~에서 나온 것이다",
+          "check": [
+            "나온",
+            "비롯",
+            "유래",
+            "얻은"
+          ],
+          "nudge": "are derived from ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "are derived from ~는 여기서 '~에서 나온 것이다'예요."
+        },
+        {
+          "id": 2,
+          "text": "in a sense → 어떤 뜻에서는",
+          "check": [
+            "어떤 면",
+            "어떤 뜻",
+            "말하자면",
+            "일종"
+          ],
+          "nudge": "in a sense가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "in a sense는 여기서 '어떤 뜻에서는'이에요."
+        },
+        {
+          "id": 3,
+          "text": "holding a mirror up to society → 사회에 거울을 들이대고 있다",
+          "check": [
+            "거울",
+            "사회",
+            "비추"
+          ],
+          "nudge": "holding a mirror up to society가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "holding a mirror up to society는 여기서 '사회에 거울을 들이대고 있다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Since를 '~이후로'로 보고 이유를 놓침",
+          "signals": [
+            "이후로",
+            "이래로"
+          ],
+          "treatment": {
+            "message": "문장 앞의 Since는 시간일까요, 이유일까요? '결과가 나온 이후로'일까요, '결과가 나온 것이므로'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "결과가 나온 이후로",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "결과가 나온 것이므로",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '결과가 나온 것이므로'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '결과가 나온 것이므로'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "hold a mirror up to를 그대로 두고 뜻을 흐림",
+          "signals": [
+            "거울을 들고 있다"
+          ],
+          "treatment": {
+            "message": "사회에 거울을 들이댄다는 건 무엇을 말할까요? '거울을 들고 있다'일까요, '사회의 모습을 그대로 비춘다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "거울을 들고 있다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사회의 모습을 그대로 비춘다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사회의 모습을 그대로 비춘다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사회의 모습을 그대로 비춘다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

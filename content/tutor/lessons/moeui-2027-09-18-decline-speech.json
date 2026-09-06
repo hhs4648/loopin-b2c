@@ -1,0 +1,1000 @@
+{
+  "id": "moeui-2027-09-18-decline-speech",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2027년 9월 모의고사 18번",
+  "category": "리딩",
+  "topic_intro": "졸업식 축사 초청을 정중히 거절하는 편지",
+  "sentence": "Dear Mr. Steve Carter, Congratulations on the 60th graduation ceremony of Yuoralis High School. As a former student, I am extremely proud that the school has become one of the best schools in the local community. I felt honored when I received your kind invitation to deliver a speech at the ceremony. However, I am deeply sorry to say that I will not be able to give a speech because I have a very important overseas business trip scheduled during that time. I would have loved to speak to the graduating students, but I must decline your invitation to this meaningful celebration. I wish you a memorable graduation ceremony. Sincerely, Jane Whittmore",
+  "grammar_type": "글의목적_편지",
+  "split_rule": {
+    "when": "한 문장이 25단어를 넘거나 but으로 나뉘면",
+    "how": "because·but 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Steve Carter",
+      "ko": "스티브 카터",
+      "type": "person"
+    },
+    {
+      "en": "Yuoralis High School",
+      "ko": "유오랄리스 고등학교",
+      "type": "place"
+    },
+    {
+      "en": "Jane Whittmore",
+      "ko": "제인 휘트모어",
+      "type": "person"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Congratulations on the 60th graduation ceremony of Yuoralis High School.",
+      "model_translation": "유오랄리스 고등학교의 60회 졸업식을 축하합니다",
+      "praise": "Congratulations on ~ 을 '~을 축하합니다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "Congratulations on",
+          "ko": "~을 축하합니다"
+        },
+        {
+          "en": "60th",
+          "ko": "60번째의"
+        },
+        {
+          "en": "graduation",
+          "ko": "졸업"
+        },
+        {
+          "en": "ceremony",
+          "ko": "식, 예식"
+        },
+        {
+          "en": "Yuoralis High School",
+          "ko": "유오랄리스 고등학교(학교 이름)"
+        },
+        {
+          "en": "School",
+          "ko": "유오랄리스 고등학교(이름)"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Congratulations on ~ → ~을 축하합니다",
+          "check": [
+            "축하"
+          ],
+          "nudge": "Congratulations on ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Congratulations on ~은 여기서 '~을 축하합니다'예요."
+        },
+        {
+          "id": 2,
+          "text": "the 60th graduation ceremony → 60회 졸업식",
+          "check": [
+            "졸업식",
+            "60",
+            "예순"
+          ],
+          "nudge": "the 60th graduation ceremony가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the 60th graduation ceremony는 여기서 '60회 졸업식'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "ceremony를 '의식/예식'으로만 두고 졸업식을 놓침",
+          "signals": [
+            "의식을 축하",
+            "예식"
+          ],
+          "treatment": {
+            "message": "graduation과 같이 온 ceremony는 무엇일까요? '졸업 의식'일까요, '졸업식'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "졸업 의식",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "졸업식",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '졸업식'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '졸업식'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "As a former student, I am extremely proud that the school has become one of the best schools in the local community.",
+      "model_translation": "졸업생으로서 저는 그 학교가 지역에서 손꼽히는 학교가 된 것이 몹시 자랑스럽습니다",
+      "praise": "As a former student를 '졸업생으로서'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "former",
+          "ko": "예전의"
+        },
+        {
+          "en": "student",
+          "ko": "학생"
+        },
+        {
+          "en": "extremely",
+          "ko": "몹시"
+        },
+        {
+          "en": "proud",
+          "ko": "자랑스러운"
+        },
+        {
+          "en": "school",
+          "ko": "학교"
+        },
+        {
+          "en": "become",
+          "ko": "~이 되다"
+        },
+        {
+          "en": "best",
+          "ko": "가장 좋은"
+        },
+        {
+          "en": "schools",
+          "ko": "학교들"
+        },
+        {
+          "en": "local",
+          "ko": "지역의"
+        },
+        {
+          "en": "community",
+          "ko": "지역 사회"
+        },
+        {
+          "en": "As",
+          "ko": "~로서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "am",
+          "ko": "~이다"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "has",
+          "ko": "가지다"
+        },
+        {
+          "en": "one",
+          "ko": "하나"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "as a former student → 졸업생으로서",
+          "check": [
+            "졸업생",
+            "예전",
+            "former",
+            "출신"
+          ],
+          "nudge": "as a former student가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "as a former student는 여기서 '졸업생으로서'예요."
+        },
+        {
+          "id": 2,
+          "text": "one of the best schools → 손꼽히는 학교 가운데 하나",
+          "check": [
+            "손꼽",
+            "최고",
+            "가장 좋은",
+            "하나"
+          ],
+          "nudge": "one of the best schools가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "one of the best schools는 여기서 '손꼽히는 학교 가운데 하나'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "former를 '형식의'로 보고 뜻을 흐림",
+          "signals": [
+            "형식적인"
+          ],
+          "treatment": {
+            "message": "a former student는 어떤 사람일까요? '형식적인 학생'일까요, '예전에 다닌 학생(졸업생)'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "형식적인 학생",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "예전에 다닌 학생(졸업생)",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '예전에 다닌 학생(졸업생)'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '예전에 다닌 학생(졸업생)'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "one of the best를 '최고의 학교'로 단정",
+          "signals": [
+            "최고의 학교가 되었다",
+            "제일 좋은 학교가 되었다"
+          ],
+          "treatment": {
+            "message": "one of ~ 는 하나만 가리킬까요? '최고의 학교가 되었다'일까요, '손꼽히는 학교 가운데 하나가 되었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "최고의 학교가 되었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "손꼽히는 학교 가운데 하나가 되었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '손꼽히는 학교 가운데 하나가 되었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '손꼽히는 학교 가운데 하나가 되었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "I felt honored when I received your kind invitation to deliver a speech at the ceremony.",
+      "model_translation": "식에서 축사를 해 달라는 친절한 초청을 받았을 때 저는 영광스러웠습니다",
+      "praise": "deliver a speech를 '축사를 하다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "felt",
+          "ko": "느꼈다"
+        },
+        {
+          "en": "honored",
+          "ko": "영광스러운"
+        },
+        {
+          "en": "received",
+          "ko": "받았다"
+        },
+        {
+          "en": "kind",
+          "ko": "친절한"
+        },
+        {
+          "en": "invitation",
+          "ko": "초청"
+        },
+        {
+          "en": "deliver",
+          "ko": "(연설을) 하다"
+        },
+        {
+          "en": "speech",
+          "ko": "연설, 축사"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "at",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "ceremony",
+          "ko": "식, 예식"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "felt honored → 영광스러웠다",
+          "check": [
+            "영광",
+            "영예",
+            "기뻤"
+          ],
+          "nudge": "felt honored가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "felt honored는 여기서 '영광스러웠다'예요."
+        },
+        {
+          "id": 2,
+          "text": "invitation to deliver a speech → 축사를 해 달라는 초청",
+          "check": [
+            "초청",
+            "초대",
+            "연설",
+            "축사",
+            "말씀"
+          ],
+          "nudge": "invitation to deliver a speech이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "invitation to deliver a speech은 여기서 '축사를 해 달라는 초청'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "deliver를 '배달하다'로 해석",
+          "signals": [
+            "배달",
+            "배송"
+          ],
+          "treatment": {
+            "message": "speech와 같이 온 deliver는 무엇일까요? '연설을 배달하다'일까요, '연설을 하다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "연설을 배달하다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "연설을 하다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '연설을 하다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '연설을 하다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "felt honored를 능동으로 보고 '영광을 주었다'로 해석",
+          "signals": [
+            "영광을 주었",
+            "영예를 드렸"
+          ],
+          "treatment": {
+            "message": "honored는 하는 쪽일까요, 받는 쪽일까요? '영광을 주었다'일까요, '영광스러웠다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "영광을 주었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "영광스러웠다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '영광스러웠다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '영광스러웠다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "However, I am deeply sorry to say that I will not be able to give a speech",
+      "model_translation": "그러나 축사를 할 수 없게 되어 몹시 죄송합니다",
+      "praise": "sorry to say that ~ 을 '~라고 말씀드려 죄송하다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "However",
+          "ko": "그러나"
+        },
+        {
+          "en": "deeply",
+          "ko": "몹시"
+        },
+        {
+          "en": "sorry",
+          "ko": "죄송한"
+        },
+        {
+          "en": "able to",
+          "ko": "~할 수 있는"
+        },
+        {
+          "en": "give a speech",
+          "ko": "연설하다"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "am",
+          "ko": "~이다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "say",
+          "ko": "말하다"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "will",
+          "ko": "~할 것이다"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "deeply sorry to say that ~ → ~라고 말씀드리게 되어 몹시 죄송하다",
+          "check": [
+            "죄송",
+            "미안",
+            "안타"
+          ],
+          "nudge": "deeply sorry to say that ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "deeply sorry to say that ~은 여기서 '~라고 말씀드리게 되어 몹시 죄송하다'예요."
+        },
+        {
+          "id": 2,
+          "text": "will not be able to give a speech → 축사를 할 수 없을 것이다",
+          "check": [
+            "할 수 없",
+            "못 하",
+            "어렵"
+          ],
+          "nudge": "will not be able to give a speech가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "will not be able to give a speech는 여기서 '축사를 할 수 없을 것이다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "부정을 놓치고 '연설을 하겠다'로 해석",
+          "signals": [
+            "연설을 하겠",
+            "축사를 하겠"
+          ],
+          "treatment": {
+            "message": "will not be able to는 할 수 있다는 뜻일까요? '연설을 할 것이다'일까요, '연설을 할 수 없을 것이다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "연설을 할 것이다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "연설을 할 수 없을 것이다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '연설을 할 수 없을 것이다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '연설을 할 수 없을 것이다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "because I have a very important overseas business trip scheduled during that time.",
+      "model_translation": "그 기간에 아주 중요한 해외 출장이 잡혀 있기 때문입니다",
+      "praise": "scheduled가 trip을 꾸민다는 걸 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "because",
+          "ko": "왜냐하면"
+        },
+        {
+          "en": "important",
+          "ko": "중요한"
+        },
+        {
+          "en": "overseas",
+          "ko": "해외의"
+        },
+        {
+          "en": "business trip",
+          "ko": "출장"
+        },
+        {
+          "en": "scheduled",
+          "ko": "예정된"
+        },
+        {
+          "en": "during",
+          "ko": "~ 동안"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "have",
+          "ko": "가지다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "very",
+          "ko": "매우"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "time",
+          "ko": "시간"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "an overseas business trip → 해외 출장",
+          "check": [
+            "해외",
+            "출장",
+            "외국"
+          ],
+          "nudge": "an overseas business trip이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "an overseas business trip은 여기서 '해외 출장'이에요."
+        },
+        {
+          "id": 2,
+          "text": "scheduled during that time → 그 기간에 잡혀 있는",
+          "check": [
+            "잡혀",
+            "예정",
+            "그 기간",
+            "그때"
+          ],
+          "nudge": "scheduled during that time이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "scheduled during that time은 여기서 '그 기간에 잡혀 있는'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "scheduled를 문장의 동사로 보고 끊음",
+          "signals": [
+            "출장을 예정했다",
+            "일정을 잡았다."
+          ],
+          "treatment": {
+            "message": "scheduled는 앞의 무엇을 꾸밀까요? '출장을 예정했다'일까요, '예정되어 있는 출장'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "출장을 예정했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "예정되어 있는 출장",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '예정되어 있는 출장'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '예정되어 있는 출장'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "I would have loved to speak to the graduating students, but I must decline your invitation to this meaningful celebration.",
+      "model_translation": "졸업생들에게 이야기하고 싶었지만, 이 뜻깊은 행사의 초청을 거절할 수밖에 없습니다",
+      "praise": "would have loved to를 '~하고 싶었지만'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "would have loved to",
+          "ko": "~하고 싶었을 것이다"
+        },
+        {
+          "en": "speak to",
+          "ko": "~에게 이야기하다"
+        },
+        {
+          "en": "graduating",
+          "ko": "졸업하는"
+        },
+        {
+          "en": "students",
+          "ko": "학생들"
+        },
+        {
+          "en": "must",
+          "ko": "~해야 한다"
+        },
+        {
+          "en": "decline",
+          "ko": "거절하다"
+        },
+        {
+          "en": "meaningful",
+          "ko": "뜻깊은"
+        },
+        {
+          "en": "celebration",
+          "ko": "행사, 축하 자리"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "invitation",
+          "ko": "초청"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "this",
+          "ko": "이"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "would have loved to ~ → ~하고 싶었을 것이다 (아쉬움)",
+          "check": [
+            "싶었",
+            "하고 싶",
+            "바랐"
+          ],
+          "nudge": "would have loved to ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "would have loved to ~는 여기서 '~하고 싶었을 것이다 (아쉬움)'예요."
+        },
+        {
+          "id": 2,
+          "text": "must decline your invitation → 초청을 거절할 수밖에 없다",
+          "check": [
+            "거절",
+            "사양",
+            "못 가",
+            "수밖에"
+          ],
+          "nudge": "must decline your invitation이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "must decline your invitation은 여기서 '초청을 거절할 수밖에 없다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "would have loved를 실제 일로 보고 '이야기했다'로 해석",
+          "signals": [
+            "이야기했다",
+            "말했다."
+          ],
+          "treatment": {
+            "message": "would have loved to는 실제 일일까요, 아쉬움일까요? '졸업생들에게 이야기했다'일까요, '이야기하고 싶었지만 못 한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "졸업생들에게 이야기했다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "이야기하고 싶었지만 못 한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '이야기하고 싶었지만 못 한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '이야기하고 싶었지만 못 한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "decline을 '감소하다'로 해석",
+          "signals": [
+            "감소",
+            "줄어"
+          ],
+          "treatment": {
+            "message": "invitation과 같이 온 decline은 무엇일까요? '초청이 줄어들다'일까요, '초청을 거절하다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "초청이 줄어들다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "초청을 거절하다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '초청을 거절하다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '초청을 거절하다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "I wish you a memorable graduation ceremony.",
+      "model_translation": "기억에 남는 졸업식이 되기를 바랍니다",
+      "praise": "wish A B를 'A에게 B를 빌다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "wish",
+          "ko": "바라다, 빌다"
+        },
+        {
+          "en": "memorable",
+          "ko": "기억에 남는"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "graduation",
+          "ko": "졸업"
+        },
+        {
+          "en": "ceremony",
+          "ko": "식, 예식"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "I wish you ~ → ~하시기를 바랍니다",
+          "check": [
+            "바랍",
+            "빕니다",
+            "되기를"
+          ],
+          "nudge": "I wish you ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "I wish you ~는 여기서 '~하시기를 바랍니다'예요."
+        },
+        {
+          "id": 2,
+          "text": "a memorable graduation ceremony → 기억에 남는 졸업식",
+          "check": [
+            "기억",
+            "뜻깊",
+            "잊지"
+          ],
+          "nudge": "a memorable graduation ceremony가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a memorable graduation ceremony는 여기서 '기억에 남는 졸업식'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "memorable을 '기념하는'으로 보고 뜻을 흐림",
+          "signals": [
+            "기념하는"
+          ],
+          "treatment": {
+            "message": "memorable은 누구에게 남는다는 뜻일까요? '기념하는 졸업식'일까요, '기억에 남는 졸업식'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "기념하는 졸업식",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "기억에 남는 졸업식",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '기억에 남는 졸업식'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '기억에 남는 졸업식'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
