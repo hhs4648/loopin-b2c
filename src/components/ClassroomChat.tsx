@@ -7,13 +7,15 @@ import { nounKind } from "../tutor/proper-nouns";
 
 type Props = {
   view: TutorView;
+  /** 지금 푸는 세트 이름. 목록에서 고른 게 뭔지 화면에 남겨 둔다 */
+  setTitle?: string;
   elapsed: string;
   typing: boolean;
   onSend: (text: string) => void;
   onClose: () => void;
 };
 
-export function ClassroomChat({ view, elapsed, typing, onSend, onClose }: Props) {
+export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose }: Props) {
   return (
     <div className="stage-fill">
       <ClassroomBg />
@@ -22,7 +24,7 @@ export function ClassroomChat({ view, elapsed, typing, onSend, onClose }: Props)
           <span className="avatar">다</span>
           <div className="chip-text">
             <strong>다정쌤</strong>
-            <small>오늘의 학습 · 1단계</small>
+            <small>{setTitle ?? "오늘의 학습"}</small>
           </div>
         </div>
         <div className="top-right">
@@ -69,7 +71,7 @@ export function ClassroomChat({ view, elapsed, typing, onSend, onClose }: Props)
         <QuickReplies buttons={view.buttons} hidden={typing || view.ended} onPick={onSend} />
         {view.ended ? (
           <button type="button" className="pill restart" onClick={onClose}>
-            다시 시작
+            수업 목록으로
           </button>
         ) : (
           <InputBar placeholder={view.placeholder} disabled={typing} onSend={onSend} />

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "updated": "2026-09-06",
+  "note": "수업 목록에 뜨는 순서대로. 세트 하나가 학생이 한 번에 앉는 분량이다",
+  "sets": [
+    {
+      "id": "suneung-18",
+      "tag": "수능",
+      "title": "수능 18번 문제",
+      "subtitle": "글의 목적 — 회사를 떠나며 쓰는 인사 편지",
+      "lessons": ["resignation-letter"]
+    },
+    {
+      "id": "participial-front",
+      "tag": "문법",
+      "title": "분사구문 연습",
+      "subtitle": "문장 앞 과거분사 — 고대 그리스의 철학자 탈레스",
+      "lessons": ["thales-participial-phrase-front"]
+    }
+  ]
+}

@@ -368,3 +368,80 @@ button, input { font-family: inherit; }
   font: 10px/1.3 ui-monospace, monospace; color: #8a7f88;
   white-space: pre-wrap; pointer-events: none;
 }
+
+/*
+  메인 화면 — 수업 목록.
+
+  선생님은 **뒤쪽 장식**이다. 교실 화면에서는 말풍선의 임자라 가운데 크게
+  서지만, 여기서는 카드가 주인공이라 오른쪽 아래로 물러나고 카드가 그 위를
+  덮는다(z-index). 카드가 늘면 목록만 스크롤된다.
+*/
+.home-body {
+  position: absolute;
+  left: 0; right: 0;
+  top: calc(env(safe-area-inset-top, 0px) + 78px);
+  bottom: 0;
+  z-index: 4;
+  padding: 8px 18px calc(env(safe-area-inset-bottom, 0px) + 18px);
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+}
+.home-hello {
+  font-family: "Gowun Dodum", "Noto Sans KR", sans-serif;
+  font-size: 14px; color: #8a7f88; margin-bottom: 2px;
+}
+.home-title {
+  font-size: 26px; font-weight: 800; letter-spacing: -.5px;
+  margin-bottom: 16px;
+}
+
+.set-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+.set-card {
+  width: 100%; text-align: left; cursor: pointer;
+  display: flex; flex-direction: column; gap: 4px;
+  border: none; border-radius: 22px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  padding: 16px 18px 14px;
+  box-shadow: 0 10px 24px rgba(60,30,20,.12), 0 0 0 1px rgba(226,96,125,.14);
+  color: inherit;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.set-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(60,30,20,.18), 0 0 0 1px rgba(226,96,125,.3);
+}
+.set-card:active { transform: translateY(0); }
+
+.set-tag {
+  align-self: flex-start;
+  background: #f6e9ec; color: #e2607d;
+  border-radius: 999px; padding: 3px 10px;
+  font-size: 11px; font-weight: 700;
+}
+.set-title { font-size: 18px; font-weight: 700; margin-top: 4px; }
+.set-subtitle { font-size: 13px; color: #8a7f88; line-height: 1.4; }
+.set-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 10px;
+}
+.set-count {
+  font-size: 12px; font-weight: 600; color: #8a7f88;
+  background: #f4efe9; border-radius: 999px; padding: 4px 10px;
+}
+.set-go {
+  display: flex; align-items: center; gap: 3px;
+  font-size: 13px; font-weight: 700; color: #e2607d;
+}
+
+.home-mascot {
+  position: absolute; right: 2cqw; bottom: 5%;
+  width: 46cqw; z-index: 2;
+  pointer-events: none;
+}
+/*
+  교실 배경을 그대로 쓰되 선생님 자리와 겹치는 소품은 뺀다. 목록 화면에서는
+  선생님이 오른쪽 아래에 서고, 거기가 원래 화분·시계 자리다.
+*/
+.home .plant, .home .clock { display: none; }

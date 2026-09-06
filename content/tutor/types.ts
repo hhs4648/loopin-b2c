@@ -130,3 +130,20 @@ export type Lesson = {
   };
   chunks: LessonChunk[];
 };
+
+/**
+ * 수업 세트 — **학생이 한 번에 앉는 분량**이자 목록에 뜨는 카드 하나.
+ *
+ * 레슨(지문)과 따로 두는 이유는 셈이 다르기 때문이다. 「수능 18번 문제」는
+ * 학생이 고르는 단위이고, 레슨은 그 안에 들어가는 지문이다. 지금은 세트마다
+ * 지문이 하나지만, 같은 유형의 지문을 여러 개 묶는 게 원래 목적이다.
+ */
+export type LessonSet = {
+  id: string;
+  /** 카드 왼쪽 위 라벨 (수능 · 문법 …) */
+  tag: string;
+  title: string;
+  subtitle: string;
+  /** `lessons.ts`의 레슨 id. 순서대로 푼다 */
+  lessons: string[];
+};

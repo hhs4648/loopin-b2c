@@ -1,53 +1,75 @@
 import { useEffect, useMemo, useState } from "react";
+import type { LessonSet } from "../content/tutor/types";
 import { ClassroomChat } from "./components/ClassroomChat";
+import { LessonList } from "./components/LessonList";
 import { SentenceStudy } from "./components/SentenceStudy";
-import { createSession, type TutorView } from "./tutor/engine";
+import { createSession, type TutorSession, type TutorView } from "./tutor/engine";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
+import { firstLessonId, getSet, setOfLesson } from "./tutor/sets";
 
 /*
-  지문은 데이터다. 개발에서는 `?lesson=<id>`로 갈아끼워 본다
-  (`src/tutor/lessons.ts`). 값이 없거나 못 찾으면 첫 레슨.
+  개발에서 지문 하나만 보고 싶을 때가 있다. `?lesson=<id>`나 `?set=<id>`가
+  있으면 목록을 건너뛰고 바로 시작한다 (`src/tutor/sets.ts`).
 */
-const session = createSession(
-  import.meta.env.DEV
-    ? new URLSearchParams(window.location.search).get("lesson")
-    : null,
-  /*
-    이름을 아는 학생이면 묻는 턴을 건너뛴다. 개발에서 인사 화면을 다시 보려면
-    `?newname`을 붙인다.
-  */
-  import.meta.env.DEV && new URLSearchParams(window.location.search).has("newname")
-    ? null
-    : loadLearnerName(),
-);
+const params = new URLSearchParams(window.location.search);
+const directLesson = import.meta.env.DEV ? params.get("lesson") : null;
+const directSet = import.meta.env.DEV ? getSet(params.get("set")) : null;
+
+type Started = { session: TutorSession; set: LessonSet | null };
+
+/** 수업 하나를 연다. 이름은 아는 사람이면 물어보지 않고 그 이름으로 인사한다 */
+function open(lessonId: string | null): Started {
+  const session = createSession(
+    lessonId,
+    import.meta.env.DEV && params.has("newname") ? null : loadLearnerName(),
+  );
+  return { session, set: setOfLesson(session.lessonId()) };
+}
 
 export function App() {
-  const [view, setView] = useState<TutorView>(() => session.view());
+  /*
+    **수업은 목록에서 고른 뒤에 만든다.** 예전에는 모듈이 로드될 때 세션을
+    하나 만들어 두고 앱을 열자마자 그 지문이 시작됐다. 이제 화면이 둘이라
+    (목록 / 수업) 고르기 전에는 세션이 없다.
+  */
+  const [started, setStarted] = useState<Started | null>(() => {
+    if (directLesson) return open(directLesson);
+    if (directSet) return open(firstLessonId(directSet));
+    return null;
+  });
+  const [view, setView] = useState<TutorView | null>(
+    () => started?.session.view() ?? null,
+  );
   const [chatOverride, setChatOverride] = useState(false);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
 
+  const session = started?.session ?? null;
+
+  // 시계는 수업 중에만 간다. 목록을 보는 시간은 공부한 시간이 아니다
   useEffect(() => {
+    if (!session) return;
     const id = window.setInterval(() => setSeconds((n) => n + 1), 1000);
     return () => window.clearInterval(id);
-  }, []);
+  }, [session]);
 
   /*
     수업 하나가 기록의 단위다. 시작할 때 행을 하나 열고, 끝날 때 결과와
     항목 기록을 한 번에 채운다. 실패해도 수업은 그대로 진행된다.
   */
   useEffect(() => {
+    if (!session) return;
     void startSessionRecord(session.lessonId());
-  }, []);
+  }, [session]);
 
-  const ended = view.ended;
-  const recordLine = view.recordLine;
+  const ended = view?.ended ?? false;
+  const recordLine = view?.recordLine ?? null;
   useEffect(() => {
-    if (!ended || !recordLine) return;
+    if (!ended || !recordLine || !session) return;
     const result = recordLine.match(/결과=([^\s/]+)/)?.[1];
     if (result) void finishSessionRecord(result, session.records());
-  }, [ended, recordLine]);
+  }, [ended, recordLine, session]);
 
   const elapsed = useMemo(() => {
     const m = String(Math.floor(seconds / 60)).padStart(2, "0");
@@ -56,12 +78,12 @@ export function App() {
   }, [seconds]);
 
   /*
-    한 턴이 **비동기**가 됐다. D(예상 밖)·B(부분 정답)에서 LLM을 부를 수 있어서다.
-    어댑터가 없으면 즉시 끝나므로 체감은 지금과 같다. 실패해도 타이핑 표시가
-    남지 않도록 `finally`에서 반드시 푼다.
+    한 턴이 **비동기**다. D(예상 밖)·B(부분 정답)에서 LLM을 부를 수 있어서다.
+    어댑터가 없으면 즉시 끝나므로 체감은 같다. 실패해도 타이핑 표시가 남지
+    않도록 `finally`에서 반드시 푼다.
   */
   function send(text: string) {
-    if (typing) return;
+    if (typing || !session) return;
     setTyping(true);
     window.setTimeout(() => {
       void session
@@ -81,10 +103,30 @@ export function App() {
     }, 700);
   }
 
-  function closeOrReset() {
-    setView(session.reset());
+  function startSet(set: LessonSet) {
+    const next = open(firstLessonId(set));
+    setStarted(next);
+    setView(next.session.view());
     setChatOverride(false);
     setSeconds(0);
+  }
+
+  /** 「학습 종료」와 「다시 시작」이 같은 자리로 간다 — 수업 목록 */
+  function backToList() {
+    setStarted(null);
+    setView(null);
+    setChatOverride(false);
+    setSeconds(0);
+  }
+
+  if (!started || !view) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <LessonList learnerName={loadLearnerName()} onPick={startSet} />
+        </div>
+      </div>
+    );
   }
 
   const screen = chatOverride ? "chat" : view.screen;
@@ -98,15 +140,16 @@ export function App() {
             typing={typing}
             onSend={send}
             onBack={() => setChatOverride(true)}
-            onClose={closeOrReset}
+            onClose={backToList}
           />
         ) : (
           <ClassroomChat
             view={view}
+            setTitle={started.set?.title}
             elapsed={elapsed}
             typing={typing}
             onSend={send}
-            onClose={closeOrReset}
+            onClose={backToList}
           />
         )}
         {view.recordLine ? <pre className="record">{view.recordLine}</pre> : null}
