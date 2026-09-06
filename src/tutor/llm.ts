@@ -183,6 +183,15 @@ const VAGUE_REFERENCE = /(그|이|저)\s*(부분|쪽)|거기(는|가|를)?\s|그
  * 「은/는 아니었다」(쉬운 결정은 아니었다)는 일부러 뺐다. 그건 해석 자체이지
  * 학생을 부정하는 말이 아니다.
  */
+/**
+ * 뜻을 알려 주고 번역어만 묻는 질문.
+ *
+ * 「…자기가 할 수 있는 건 다 하겠다는 말인데, 한국어로는 보통 어떤 표현을
+ * 쓸까요?」 — 학생이 낼 답을 선생님이 먼저 말해 버렸다. 남은 자리는 이름만
+ * 말한다 (2026-09-06 화면).
+ */
+const TRANSLATION_QUIZ = /한국어(로|로는|에서는|로 옮기|로 하면)?[^?]{0,40}(뭐라고|어떤\s*(말|표현|단어))/;
+
 const DENIED_QUOTED = /['"“”‘’]([^'"“”‘’]{1,15})['"“”‘’]\s*(?:이|가|은|는)?\s*아니/g;
 const DENIED_BARE = /([가-힣]{2,8})(?:이|가)\s*아니/g;
 
@@ -310,6 +319,11 @@ export function validateLlmOutput(
   const vague = message.match(VAGUE_REFERENCE);
   if (vague) {
     return { ok: false, reason: `뭉뚱그린 지시어: "${vague[0].trim()}"` };
+  }
+
+  const quiz = message.match(TRANSLATION_QUIZ);
+  if (quiz) {
+    return { ok: false, reason: `뜻을 알려 주고 번역어만 물음: "${quiz[0].trim()}"` };
   }
 
   /*

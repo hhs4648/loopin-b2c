@@ -538,7 +538,11 @@ describe("항목 기록", () => {
 });
 
 describe("좌절 방지", () => {
-  it("4번째부터는 시도를 강요하지 않고 설명해 준다", async () => {
+  /*
+    **묻고 나서 알려 준다** (2026-09-06). 예전에는 모범 해석을 먼저 다 말하고
+    2지선다를 냈다. 답이 방금 한 말 안에 있으니 고르는 게 확인이 아니었다.
+  */
+  it("4번째부터는 시도를 강요하지 않고, 쉬운 것 하나만 묻는다", async () => {
     const session = await startedSession();
     const view = await say(
       session,
@@ -547,8 +551,25 @@ describe("좌절 방지", () => {
       "잘 모르겠어요",
       "잘 모르겠어요",
     );
+    expect(view.message).toContain(frame.fixed_lines.frustration_tone);
+    expect(view.message).not.toContain(RESIGNATION.chunks[0]!.model_translation);
+    expect(view.buttons).toHaveLength(2);
+  });
+
+  it("고르고 나면 정확한 해석을 알려 준다", async () => {
+    const session = await startedSession();
+    await say(session, "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요");
+    const view = await say(session, "근무하다");
     expect(view.message).toContain(RESIGNATION.chunks[0]!.model_translation);
-    expect(view.buttons.length).toBeGreaterThan(1);
+    expect(view.progressIndex).toBe(2);
+  });
+
+  it("고르지 않고 넘어가도 정확한 해석은 보여 준다", async () => {
+    // 안 그러면 답을 못 본 채로 다음 문장으로 떠밀린다
+    const session = await startedSession();
+    await say(session, "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요");
+    const view = await say(session, "그냥 넘어갈래요");
+    expect(view.message).toContain(RESIGNATION.chunks[0]!.model_translation);
   });
 
   /*
@@ -565,8 +586,8 @@ describe("좌절 방지", () => {
       "잘 모르겠어요",
     );
     const answer = RESIGNATION.chunks[0]!.model_translation;
-    expect(view.message).toContain(answer); // 설명은 한다
-    expect(view.buttons).not.toContain(answer); // 보기로 내밀지는 않는다
+    expect(view.buttons).not.toContain(answer);
+    expect(view.buttons.every((b) => b.length < 20)).toBe(true); // 문장이 아니라 낱말이다
   });
 
   it("2지선다는 보기가 둘이다", async () => {

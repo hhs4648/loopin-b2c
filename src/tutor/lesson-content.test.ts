@@ -96,6 +96,40 @@ describe("유도 문구", () => {
       expect(offenders).toEqual([]);
     });
 
+    /*
+      **유도는 남은 자리의 이름만 말한다** (2026-09-06 요청).
+      예전에는 「do all I can은 자기가 할 수 있는 걸 다 하겠다는 말이에요.
+      한국어로는 흔히 뭐라고 할까요?」였다 — 뜻을 다 말해 놓고 번역어만 물었으니
+      학생이 낼 답을 먼저 말한 셈이다. 뜻은 두 번째로 막혔을 때 `tell`이 준다.
+    */
+    it(`${lesson.id} — 유도가 영어 원문을 집는다`, () => {
+      const noEnglish: string[] = [];
+      lesson.chunks.forEach((chunk, i) => {
+        for (const p of chunk.scoring_points ?? []) {
+          if (p.nudge && !/[a-zA-Z]/.test(p.nudge)) {
+            noEnglish.push(`문장${i + 1} 항목${p.id}: ${p.nudge}`);
+          }
+        }
+      });
+      expect(noEnglish).toEqual([]);
+    });
+
+    it(`${lesson.id} — 유도가 뜻을 알려 주고 번역어만 묻지 않는다`, () => {
+      const offenders: string[] = [];
+      lesson.chunks.forEach((chunk, i) => {
+        for (const p of chunk.scoring_points ?? []) {
+          const verdict = validateLlmOutput(
+            { message: p.nudge ?? "" },
+            { bannedStrings: [] },
+          );
+          if (p.nudge && !verdict.ok) {
+            offenders.push(`문장${i + 1} 항목${p.id}: ${verdict.reason} — ${p.nudge}`);
+          }
+        }
+      });
+      expect(offenders).toEqual([]);
+    });
+
     it(`${lesson.id} — 유도가 어느 자리인지 가리킨다`, () => {
       const vague: string[] = [];
       lesson.chunks.forEach((chunk, i) => {

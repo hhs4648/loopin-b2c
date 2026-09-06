@@ -129,6 +129,26 @@ describe("validateLlmOutput", () => {
     expect(v.ok).toBe(true);
   });
 
+  it("뜻을 알려 주고 번역어만 물으면 버린다", () => {
+    // 학생이 낼 답을 선생님이 먼저 말해 버린 모양이다
+    for (const message of [
+      "do all I can은 자기가 할 수 있는 걸 다 하겠다는 말인데, 한국어로는 보통 어떤 표현을 쓸까요?",
+      "이건 그 일을 넘긴다는 뜻이에요. 한국어로 뭐라고 할까요?",
+    ]) {
+      expect(validateLlmOutput({ message }, { bannedStrings: [] }).ok, message).toBe(
+        false,
+      );
+    }
+  });
+
+  it("남은 자리를 이름만 짚으면 통과한다", () => {
+    const v = validateLlmOutput(
+      { message: "「인수인계」까지 잘 잡았어요. do all I can이 아직 해석에 안 나왔어요." },
+      { bannedStrings: [], studentText: "인수인계를 돕겠습니다" },
+    );
+    expect(v.ok).toBe(true);
+  });
+
   it("말버릇이 한 턴에 둘 이상이면 버린다", () => {
     const v = validateLlmOutput(
       { message: "어머 잘했어요^^ 이번엔 뒷부분만 볼까요?" },

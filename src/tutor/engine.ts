@@ -217,8 +217,13 @@ function copula(text: string): string {
  * 알고 정확한 문장은 못 본다.** 맞힌 자리가 정확한 해석을 볼 가장 좋은 자리다.
  */
 function praiseWithAnswer(s: EngineState): string {
+  return `${praiseFor(s)} ${revealOf(s)}`;
+}
+
+/** 이 문장의 정확한 해석 한 줄. 정답으로 통과할 때와 좌절 방지 끝에 쓴다 */
+function revealOf(s: EngineState): string {
   const answer = current(s).model_translation;
-  return `${praiseFor(s)} 문장을 정확히 해석하면 '${answer}'${copula(answer)}.`;
+  return `문장을 정확히 해석하면 '${answer}'${copula(answer)}.`;
 }
 
 function initialState(lesson: Lesson, learnerName: string | null): EngineState {
@@ -535,8 +540,11 @@ function frustration(s: EngineState): EngineState {
   const u = current(s);
   const points = u.scoring_points ?? [];
   const target = points.find((p) => !s.checkedPoints.includes(p.id)) ?? points[0];
-  const answer = u.model_translation;
-  const opening = `${frame.fixed_lines.frustration_tone} 정답은 '${answer}'${copula(answer)}.`;
+  /*
+    **묻고 나서 알려 준다.** 예전에는 모범 해석을 먼저 다 말하고 2지선다를 냈다.
+    답이 방금 한 말 안에 들어 있으니 고르는 게 확인이 아니라 받아쓰기였다.
+  */
+  const reveal = revealOf(s);
   const base = {
     skipFinalRetake: true,
     hadAnyError: true,
@@ -547,10 +555,11 @@ function frustration(s: EngineState): EngineState {
   const pair = frustrationPair(s, target);
   if (!pair) {
     /*
-      짝지을 보기가 없으면 **억지로 문제를 만들지 않는다.** 설명하고 넘어간다.
-      한쪽만 있는 2지선다는 문제가 아니라 받아쓰기다.
+      짝지을 보기가 없으면 **억지로 문제를 만들지 않는다.** 물어볼 게 없으니
+      바로 알려 주고 넘어간다. 한쪽만 있는 2지선다는 문제가 아니라 받아쓰기다.
     */
     const next = { ...s, ...base };
+    const opening = `${frame.fixed_lines.frustration_tone} ${reveal}`;
     const teach = (u.teach_points ?? [])[0];
     return teach
       ? say(teachStep(next, 0), `${opening} ${teach.message}`)
@@ -565,9 +574,9 @@ function frustration(s: EngineState): EngineState {
   const tail = english
     ? `아래에서 '${english}'의 뜻에 더 가까운 쪽을 골라 주세요.`
     : "아래에서 더 가까운 쪽을 골라 주세요.";
-  const correct = english
-    ? `맞아요. '${english}'의 뜻은 '${pair.right}'${copula(pair.right)}.`
-    : `맞아요. '${pair.right}'가 맞아요.`;
+  const named = english
+    ? `'${english}'의 뜻은 '${pair.right}'${copula(pair.right)}.`
+    : `'${pair.right}'가 맞아요.`;
 
   return say(
     s,
@@ -575,7 +584,7 @@ function frustration(s: EngineState): EngineState {
       프레임 문구가 이미 「까다롭죠?」로 한 번 묻는다. 여기서 또 물으면
       한 턴에 질문이 둘이 된다 — 버튼이 바로 아래 있으니 청유형으로 끝낸다.
     */
-    `${opening} ${tail}`,
+    `${frame.fixed_lines.frustration_tone} ${tail}`,
     {
       ...base,
       pending: {
@@ -584,10 +593,14 @@ function frustration(s: EngineState): EngineState {
           { id: "wrong", label: pair.wrong, correct: false },
           { id: "right", label: pair.right, correct: true },
         ],
+        /*
+          고르고 나서야 전체 해석이 나온다. 맞히든 틀리든 보여 준다 —
+          여기까지 온 학생에게 필요한 건 채점이 아니라 정확한 문장이다.
+        */
         on_choice: {
-          right: { message: correct, next: "advance" },
+          right: { message: `맞아요. ${named} ${reveal}`, next: "advance" },
           wrong: {
-            message: `괜찮아요. ${correct.replace(/^맞아요\. /, "")}`,
+            message: `괜찮아요. ${named} ${reveal}`,
             reveal_answer: true,
             next: "advance",
           },
@@ -1004,7 +1017,7 @@ function handlePending(s: EngineState, text: string): EngineState {
     if (pending.errorId === "FRUSTRATION") {
       return advance(
         { ...s, pending: null, skipFinalRetake: true },
-        "괜찮아요, 방금 같이 본 그 문장이에요.",
+        `괜찮아요, 같이 봐요. ${revealOf(s)}`,
         false,
       );
     }
@@ -1024,7 +1037,7 @@ function handlePending(s: EngineState, text: string): EngineState {
     const next = { ...state, pending: null, skipFinalRetake: true };
     return (current(state).teach_points ?? []).length
       ? teachStep(next, 0)
-      : advance(next, "괜찮아요, 방금 같이 본 그 문장이에요.", false);
+      : advance(next, `괜찮아요, 같이 봐요. ${revealOf(state)}`, false);
   };
 
   const byLabel = matchChoice(text, pending.choices.map((c) => c.label));
