@@ -359,7 +359,12 @@ describe("설명 국면 teach_points (TEST_SCENARIOS #5)", () => {
   const CHUNK2 = THALES.chunks[1]!;
   const POINTS = CHUNK2.teach_points!;
 
-  /** 탈레스 2번 문장에서 좌절 방지까지 몰고 간다 */
+  /**
+   * 탈레스 2번 문장에서 좌절 방지까지 몰고 간다.
+   *
+   * 이 문장의 예상 오류(E4)에는 짝지을 보기가 없어서 2지선다를 건너뛰고
+   * 바로 설명으로 들어간다 — 반쪽짜리 2지선다를 지어내지 않는다.
+   */
   async function reachExplanation() {
     const session = await startedSession(THALES.id);
     await say(session, "소아시아의 밀레투스라는 도시에서 태어난"); // 1번 문장 통과
@@ -369,7 +374,7 @@ describe("설명 국면 teach_points (TEST_SCENARIOS #5)", () => {
 
   it("한꺼번에 쏟지 않고 첫 항목만 내보낸다", async () => {
     const session = await reachExplanation();
-    const view = await say(session, "네");
+    const view = session.view();
     expect(view.message).toContain(POINTS[0]!.message);
     expect(view.message).not.toContain(POINTS[1]!.message);
     expect(view.progressIndex).toBe(2); // 아직 그 문장에 머문다
@@ -377,14 +382,12 @@ describe("설명 국면 teach_points (TEST_SCENARIOS #5)", () => {
 
   it("「다음으로」를 누를 때마다 하나씩 나간다", async () => {
     const session = await reachExplanation();
-    await say(session, "네");
     expect((await say(session, NEXT_BTN)).message).toContain(POINTS[1]!.message);
     expect((await say(session, NEXT_BTN)).message).toContain(POINTS[2]!.message);
   });
 
   it("「더 알고 싶어요」는 그 항목의 심화만 준다", async () => {
     const session = await reachExplanation();
-    await say(session, "네");
     await say(session, NEXT_BTN); // 2번 항목
     const view = await say(session, NEXT_BTN); // 3번 항목 (around, enrichment 있음)
     expect(view.buttons).toContain(MORE_BTN);
@@ -394,7 +397,7 @@ describe("설명 국면 teach_points (TEST_SCENARIOS #5)", () => {
 
   it("심화는 한 번만 권한다 — 본 항목에는 버튼이 안 붙는다", async () => {
     const session = await reachExplanation();
-    await say(session, "네", NEXT_BTN, NEXT_BTN, MORE_BTN);
+    await say(session, NEXT_BTN, NEXT_BTN, MORE_BTN);
     const view = await say(session, NEXT_BTN);
     // 다음 항목(B.C.)으로 넘어갔고, 그 항목의 심화는 아직 안 봤다
     expect(view.message).toContain(POINTS[3]!.message);
@@ -403,7 +406,7 @@ describe("설명 국면 teach_points (TEST_SCENARIOS #5)", () => {
 
   it("다 보면 수업이 끝난다", async () => {
     const session = await reachExplanation();
-    await say(session, "네", NEXT_BTN, NEXT_BTN, NEXT_BTN, NEXT_BTN);
+    await say(session, NEXT_BTN, NEXT_BTN, NEXT_BTN, NEXT_BTN);
     expect(session.view().ended).toBe(true);
     expect(session.view().recordLine).toContain("결과=설명제공");
   });
@@ -516,6 +519,61 @@ describe("좌절 방지", () => {
     );
     expect(view.message).toContain(RESIGNATION.chunks[0]!.model_translation);
     expect(view.buttons.length).toBeGreaterThan(1);
+  });
+
+  /*
+    화면에서 잡은 것 (2026-09-06): 정답을 알려 준 뒤 **그 정답 문장을 그대로**
+    보기로 냈다. 고를 게 없는 문제였다. 보기는 레슨이 짝지어 둔 것을 쓴다.
+  */
+  it("모범 해석을 보기로 내지 않는다 — 그러면 고를 게 없다", async () => {
+    const session = await startedSession();
+    const view = await say(
+      session,
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+    );
+    const answer = RESIGNATION.chunks[0]!.model_translation;
+    expect(view.message).toContain(answer); // 설명은 한다
+    expect(view.buttons).not.toContain(answer); // 보기로 내밀지는 않는다
+  });
+
+  it("2지선다는 보기가 둘이다", async () => {
+    const session = await startedSession();
+    const view = await say(
+      session,
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+    );
+    expect(view.buttons).toHaveLength(2);
+    expect(view.buttons).not.toContain("잘 모르겠어요");
+  });
+
+  it("막힌 항목을 겨냥한 보기를 고른다", async () => {
+    // 1번 문장을 넘기고, 2번 문장(invaluable)에서 막히게 한다
+    const session = await startedSession();
+    await say(session, CORRECT[0]!);
+    const view = await say(
+      session,
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+      "잘 모르겠어요",
+    );
+    expect(view.buttons).toEqual(["매우 소중하다", "가치 없다"]);
+    expect(view.message).toContain("invaluable");
+  });
+
+  it("고르고 나면 그 자리의 답을 짚어 준다", async () => {
+    const session = await startedSession();
+    await say(session, CORRECT[0]!);
+    await say(session, "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요", "잘 모르겠어요");
+    const view = await say(session, "매우 소중하다");
+    expect(view.message).toContain("'invaluable'의 뜻은 '매우 소중하다'예요");
+    expect(view.progressIndex).toBe(3); // 넘어간다
   });
 
   it("선택지 밖의 답을 해도 다음 문장으로 넘어간다", async () => {

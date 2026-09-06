@@ -1,5 +1,11 @@
 import frame from "../../content/tutor/frame.json";
-import type { Lesson, LessonChunk, ProperNoun, TutorResult } from "../../content/tutor/types";
+import type {
+  Lesson,
+  LessonChunk,
+  ProperNoun,
+  ScoringPoint,
+  TutorResult,
+} from "../../content/tutor/types";
 import { getLesson } from "./lessons";
 import {
   getTutorLlm,
@@ -444,46 +450,123 @@ function openBranch(s: EngineState, errorId: string): EngineState {
   });
 }
 
+/**
+ * 좌절 방지에 낼 2지선다 한 쌍.
+ *
+ * **레슨이 이미 짝지어 둔 보기를 그대로 쓴다.** 예전에는 오답만 레슨에서
+ * 가져오고 정답 자리에 **모범 해석 전체**를 넣었다. 방금 알려 준 그 문장이
+ * 그대로 보기가 되니 고를 게 없는 문제가 됐다 (2026-09-06 화면).
+ *
+ * 막힌 항목을 겨냥한 오해부터 찾는다 — 그 오해의 정답 보기가 항목의 `check`에
+ * 걸리면 같은 것을 다루고 있다는 뜻이다. 없으면 이 문장의 다른 오해라도 쓴다.
+ * 같은 문장 이야기라 어긋나지 않는다.
+ */
+function frustrationPair(
+  s: EngineState,
+  target?: ScoringPoint,
+): { right: string; wrong: string } | null {
+  const pairs = (current(s).expected_errors ?? [])
+    /*
+      **모든 라운드를 본다.** 탈레스 E3의 2지선다는 2라운드에 있어서, 1라운드만
+      보던 예전 코드는 그 문장에서 아무 보기도 못 찾았다.
+    */
+    .map((e) => [
+      ...(e.treatment?.choices ?? []),
+      ...(e.rounds ?? []).flatMap((r) => r.choices ?? []),
+    ])
+    .map((cs) => ({
+      right: cs.find((c) => c.correct)?.label ?? "",
+      wrong: cs.find((c) => !c.correct)?.label ?? "",
+    }))
+    .filter((p) => p.right && p.wrong);
+
+  const keys = target?.check ?? [];
+  return pairs.find((p) => keys.some((k) => p.right.includes(k))) ?? pairs[0] ?? null;
+}
+
+/**
+ * 「invaluable → 매우 소중하다」에서 앞쪽만. 물어볼 자리의 이름이 필요하다.
+ *
+ * 화살표가 없는 형식(탈레스의 「in을 '~에서'로 처리」)은 통째로 설명문이라
+ * 이름으로 못 쓴다. 그때는 빈 문자열을 주고 일반 문구로 묻는다.
+ */
+function englishOf(point?: ScoringPoint): string {
+  const text = point?.text ?? "";
+  if (!text.includes("→")) return "";
+  const head = text.split("→")[0]!.trim();
+  return /[a-zA-Z]/.test(head) && head.length <= 30 ? head : "";
+}
+
 function frustration(s: EngineState): EngineState {
   const u = current(s);
+  const points = u.scoring_points ?? [];
+  const target = points.find((p) => !s.checkedPoints.includes(p.id)) ?? points[0];
+  const answer = u.model_translation;
+  const opening = `${frame.fixed_lines.frustration_tone} 정답은 '${answer}'예요.`;
+  const base = {
+    skipFinalRetake: true,
+    hadAnyError: true,
+    result: "설명제공" as const,
+    pending: null,
+  };
+
+  const pair = frustrationPair(s, target);
+  if (!pair) {
+    /*
+      짝지을 보기가 없으면 **억지로 문제를 만들지 않는다.** 설명하고 넘어간다.
+      한쪽만 있는 2지선다는 문제가 아니라 받아쓰기다.
+    */
+    const next = { ...s, ...base };
+    const teach = (u.teach_points ?? [])[0];
+    return teach
+      ? say(teachStep(next, 0), `${opening} ${teach.message}`)
+      : advance(next, opening, false);
+  }
+
   /*
-    쉬운 2지선다의 오답 쪽은 **레슨이 이미 적어 둔 오해**에서 가져온다.
-    예전에는 "P2"/"P3"라는 id를 코드가 알고 있어서, id 체계가 다른 레슨
-    (탈레스의 E1~E4)에서는 아무것도 못 찾았다.
+    영어 낱말에 한국어 조사를 붙이면 「invaluable는」처럼 틀린 말이 나온다.
+    받침을 알 수 없으므로 조사가 붙지 않는 자리에 놓는다.
   */
-  const wrong =
-    (u.expected_errors ?? [])
-      .flatMap((e) => e.treatment?.choices ?? e.rounds?.[0]?.choices ?? [])
-      .find((c) => !c.correct)?.label ?? "잘 모르겠어요";
-  const right = u.model_translation;
+  const english = englishOf(target);
+  const tail = english
+    ? `아래에서 '${english}'의 뜻에 더 가까운 쪽을 골라 주세요.`
+    : "아래에서 더 가까운 쪽을 골라 주세요.";
+  const correct = english
+    ? `맞아요. '${english}'의 뜻은 '${pair.right}'예요.`
+    : `맞아요. '${pair.right}'가 맞아요.`;
+
   return say(
     s,
     /*
       프레임 문구가 이미 「까다롭죠?」로 한 번 묻는다. 여기서 또 물으면
       한 턴에 질문이 둘이 된다 — 버튼이 바로 아래 있으니 청유형으로 끝낸다.
     */
-    `${frame.fixed_lines.frustration_tone} 정답은 '${right}'예요. 아래에서 더 가까운 쪽을 골라 주세요.`,
+    `${opening} ${tail}`,
     {
-      skipFinalRetake: true,
-      hadAnyError: true,
-      result: "설명제공",
+      ...base,
       pending: {
         errorId: "FRUSTRATION",
         choices: [
-          { id: "wrong", label: wrong, correct: false },
-          { id: "right", label: right, correct: true },
+          { id: "wrong", label: pair.wrong, correct: false },
+          { id: "right", label: pair.right, correct: true },
         ],
         on_choice: {
-          right: { message: "맞아요. 그 표현이면 충분해요.", next: "advance" },
+          right: { message: correct, next: "advance" },
           wrong: {
-            message: `괜찮아요. 정답은 '${right}'예요.`,
+            message: `괜찮아요. ${correct.replace(/^맞아요\. /, "")}`,
             reveal_answer: true,
             next: "advance",
           },
         },
       },
       screen: "study",
-      buttons: uniqueButtons([wrong, right, UNKNOWN_BTN]),
+      /*
+        **2지선다에는 보기가 둘이다.** 「잘 모르겠어요」까지 세 개를 띄우면
+        2지선다가 아니게 된다. 그래도 적어서 내면 `escapeFrustration`이 받는다.
+        정답이 늘 아래에 오지 않도록 문장마다 순서를 뒤집는다.
+      */
+      buttons:
+        s.unitIndex % 2 === 0 ? [pair.wrong, pair.right] : [pair.right, pair.wrong],
       placeholder: "선생님께 답해 보세요…",
       effect: null,
     },
