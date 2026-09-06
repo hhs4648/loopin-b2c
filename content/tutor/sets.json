@@ -8,14 +8,234 @@
       "tag": "수능",
       "title": "수능 18번 문제",
       "subtitle": "글의 목적 — 회사를 떠나며 쓰는 인사 편지",
-      "lessons": ["resignation-letter"]
+      "lessons": [
+        "resignation-letter"
+      ]
     },
     {
-      "id": "participial-front",
-      "tag": "문법",
-      "title": "분사구문 연습",
-      "subtitle": "문장 앞 과거분사 — 고대 그리스의 철학자 탈레스",
-      "lessons": ["thales-participial-phrase-front"]
+      "id": "suneung-19",
+      "tag": "수능",
+      "title": "수능 19번 문제",
+      "subtitle": "심경 변화 — 바다에 표류하다 구조되는 이야기",
+      "lessons": [
+        "suneung-19-anna-rescue"
+      ]
+    },
+    {
+      "id": "suneung-20",
+      "tag": "수능",
+      "title": "수능 20번 문제",
+      "subtitle": "필자의 주장 — 성인 학습자를 가르치는 사람의 역할",
+      "lessons": [
+        "suneung-20-adult-learners"
+      ]
+    },
+    {
+      "id": "suneung-21",
+      "tag": "수능",
+      "title": "수능 21번 문제",
+      "subtitle": "함축 의미 — 값을 알면 맛이 달라진다",
+      "lessons": [
+        "suneung-21-wine-perception"
+      ]
+    },
+    {
+      "id": "suneung-22",
+      "tag": "수능",
+      "title": "수능 22번 문제",
+      "subtitle": "요지 — 언어에 따라 감정이 달라진다",
+      "lessons": [
+        "suneung-22-multilingual-emotion"
+      ]
+    },
+    {
+      "id": "suneung-23",
+      "tag": "수능",
+      "title": "수능 23번 문제",
+      "subtitle": "주제 — 무리에서 밀려나는 것에 대한 두려움",
+      "lessons": [
+        "suneung-23-social-death"
+      ]
+    },
+    {
+      "id": "suneung-24",
+      "tag": "수능",
+      "title": "수능 24번 문제",
+      "subtitle": "제목 — 먼 미래의 사람들도 지금 우리만큼 중요하다",
+      "lessons": [
+        "suneung-24-future-generations"
+      ]
+    },
+    {
+      "id": "suneung-26",
+      "tag": "수능",
+      "title": "수능 26번 문제",
+      "subtitle": "내용 일치 — 노벨 화학상 과학자 일리야 프리고진",
+      "lessons": [
+        "suneung-26-ilya-prigogine"
+      ]
+    },
+    {
+      "id": "suneung-27",
+      "tag": "수능",
+      "title": "수능 27번 문제",
+      "subtitle": "실용문 — 전자 금고 사용 설명서",
+      "lessons": [
+        "suneung-27-safe-manual"
+      ]
+    },
+    {
+      "id": "suneung-28",
+      "tag": "수능",
+      "title": "수능 28번 문제",
+      "subtitle": "실용문 — 세계 시의 날 시 대회 안내",
+      "lessons": [
+        "suneung-28-poetry-competition"
+      ]
+    },
+    {
+      "id": "suneung-29",
+      "tag": "수능",
+      "title": "수능 29번 문제",
+      "subtitle": "어법 — 다른 문화로 건너간다는 것",
+      "lessons": [
+        "suneung-29-crossing-cultures"
+      ]
+    },
+    {
+      "id": "suneung-30",
+      "tag": "수능",
+      "title": "수능 30번 문제",
+      "subtitle": "어휘 — 위치를 찾을 때 무엇에 기대는가",
+      "lessons": [
+        "suneung-30-geometry-landmarks"
+      ]
+    },
+    {
+      "id": "suneung-31",
+      "tag": "수능",
+      "title": "수능 31번 문제",
+      "subtitle": "빈칸 추론 — 자라면서 잃는 것",
+      "lessons": [
+        "suneung-31-losing-metaphor"
+      ]
+    },
+    {
+      "id": "suneung-32",
+      "tag": "수능",
+      "title": "수능 32번 문제",
+      "subtitle": "빈칸 추론 — 크게 희생한 사람들의 말",
+      "lessons": [
+        "suneung-32-altruists-no-choice"
+      ]
+    },
+    {
+      "id": "suneung-33",
+      "tag": "수능",
+      "title": "수능 33번 문제",
+      "subtitle": "빈칸 추론 — 어쩔 수 없는 일에 화내지 않기",
+      "lessons": [
+        "suneung-33-stoic-control"
+      ]
+    },
+    {
+      "id": "suneung-34",
+      "tag": "수능",
+      "title": "수능 34번 문제",
+      "subtitle": "빈칸 추론 — 이름에 맞춰 색을 바꾼 일본",
+      "lessons": [
+        "suneung-34-japanese-ao"
+      ]
+    },
+    {
+      "id": "suneung-35",
+      "tag": "수능",
+      "title": "수능 35번 문제",
+      "subtitle": "무관한 문장 — 여러 갈래의 영어를 보는 눈",
+      "lessons": [
+        "suneung-35-translingual"
+      ]
+    },
+    {
+      "id": "suneung-36",
+      "tag": "수능",
+      "title": "수능 36번 문제",
+      "subtitle": "글의 순서 — 즉흥 연주와 작곡, 창작의 두 끝",
+      "lessons": [
+        "suneung-36-creative-spectrum"
+      ]
+    },
+    {
+      "id": "suneung-37",
+      "tag": "수능",
+      "title": "수능 37번 문제",
+      "subtitle": "글의 순서 — 자연과 도시를 함께 놓기",
+      "lessons": [
+        "suneung-37-urban-planning"
+      ]
+    },
+    {
+      "id": "suneung-38",
+      "tag": "수능",
+      "title": "수능 38번 문제",
+      "subtitle": "문장 삽입 — 실시간 자료와 보험료",
+      "lessons": [
+        "suneung-38-insurance-realtime"
+      ]
+    },
+    {
+      "id": "suneung-39",
+      "tag": "수능",
+      "title": "수능 39번 문제",
+      "subtitle": "문장 삽입 — 원근법 그림이 보여 주는 것",
+      "lessons": [
+        "suneung-39-perspective-painting"
+      ]
+    },
+    {
+      "id": "suneung-40",
+      "tag": "수능",
+      "title": "수능 40번 문제",
+      "subtitle": "요약문 — 뇌는 평생 다시 빚어진다",
+      "lessons": [
+        "suneung-40-brain-plasticity"
+      ]
+    },
+    {
+      "id": "suneung-41-1",
+      "tag": "수능",
+      "title": "수능 41·42번 (1)",
+      "subtitle": "장문 독해 — 내 삶을 이야기하는 말투",
+      "lessons": [
+        "suneung-41-narrator-1"
+      ]
+    },
+    {
+      "id": "suneung-41-2",
+      "tag": "수능",
+      "title": "수능 41·42번 (2)",
+      "subtitle": "장문 독해 — 머릿속을 스쳐 가는 생각",
+      "lessons": [
+        "suneung-41-narrator-2"
+      ]
+    },
+    {
+      "id": "suneung-43-1",
+      "tag": "수능",
+      "title": "수능 43~45번 (1)",
+      "subtitle": "장문 독해 — 차고에서 찾은 야구 카드",
+      "lessons": [
+        "suneung-43-baseball-card-1"
+      ]
+    },
+    {
+      "id": "suneung-43-2",
+      "tag": "수능",
+      "title": "수능 43~45번 (2)",
+      "subtitle": "장문 독해 — 야구로 이어진 할아버지와 손자",
+      "lessons": [
+        "suneung-43-baseball-card-2"
+      ]
     }
   ]
 }

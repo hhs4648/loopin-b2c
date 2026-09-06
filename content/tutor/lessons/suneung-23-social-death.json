@@ -1,0 +1,1807 @@
+{
+  "id": "suneung-23-social-death",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 23번",
+  "category": "리딩",
+  "topic_intro": "무리에서 밀려나는 것을 왜 그토록 두려워하는가",
+  "sentence": "Sociologist Brooke Harrington said if there was an E = mc² of social science, it would be SD > PD, \"social death is more frightening than physical death.\" This is why we feel deeply threatened when a new idea challenges the ones that have become part of our identity. For some ideas, the ones that identify us as members of a group, we don't reason as individuals; we reason as a member of a tribe. We want to seem trustworthy, and reputation management as a trustworthy individual often overrides most other concerns, even our own mortality. This is not entirely irrational. A human alone in this world faces a lot of difficulty, but being alone in the world before modern times was almost certainly a death sentence. So we carry with us an innate drive to form groups, join groups, remain in those groups, and oppose other groups. But once you can identify them, you start favoring us; so much so that given a choice between an outcome that favors both groups a lot or one that favors both much less but still favors yours more than theirs, that's the one you will pick.",
+  "grammar_type": "주제_추상논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 but·세미콜론으로 두 갈래가 되면",
+    "how": "but·세미콜론 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Brooke Harrington",
+      "ko": "브룩 해링턴",
+      "type": "person"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Sociologist Brooke Harrington said if there was an E = mc² of social science, it would be SD > PD,",
+      "model_translation": "사회학자 브룩 해링턴은, 사회과학에 E = mc² 같은 것이 있다면 그것은 SD > PD일 것이라고 말했다",
+      "praise": "if ~ would be를 가정으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Sociologist",
+          "ko": "사회학자"
+        },
+        {
+          "en": "Brooke Harrington",
+          "ko": "브룩 해링턴(사람 이름)"
+        },
+        {
+          "en": "E = mc²",
+          "ko": "질량-에너지 등가식(아인슈타인의 공식)"
+        },
+        {
+          "en": "social science",
+          "ko": "사회과학"
+        },
+        {
+          "en": "SD",
+          "ko": "social death(사회적 죽음)"
+        },
+        {
+          "en": "PD",
+          "ko": "physical death(육체적 죽음)"
+        },
+        {
+          "en": "said",
+          "ko": "말했다"
+        },
+        {
+          "en": "if",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "there",
+          "ko": "거기에"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "would",
+          "ko": "~할 것이다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Sociologist → 사회학자",
+          "check": [
+            "사회학자",
+            "사회학"
+          ],
+          "nudge": "Sociologist가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Sociologist는 여기서 '사회학자'예요."
+        },
+        {
+          "id": 2,
+          "text": "if there was ~, it would be ~ → ~이 있다면 그것은 ~일 것이다",
+          "check": [
+            "있다면",
+            "라면",
+            "일 것",
+            "것이다"
+          ],
+          "nudge": "if there was ~, it would be ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "if there was ~, it would be ~는 여기서 '~이 있다면 그것은 ~일 것이다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "가정법을 과거 사실로 보고 '있었다'로 해석",
+          "signals": [
+            "있었다",
+            "이었다"
+          ],
+          "treatment": {
+            "message": "if ~ would be는 실제 있었던 일일까요, 가정일까요? '실제로 있었다'일까요, '있다면 ~일 것이다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "실제로 있었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "있다면 ~일 것이다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '있다면 ~일 것이다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '있다면 ~일 것이다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "\"social death is more frightening than physical death.\"",
+      "model_translation": "\"사회적 죽음이 육체적 죽음보다 더 무섭다\"",
+      "praise": "more ~ than을 비교로 정확히 살린 거 좋아요.",
+      "glosses": [
+        {
+          "en": "death",
+          "ko": "죽음"
+        },
+        {
+          "en": "frightening",
+          "ko": "무서운"
+        },
+        {
+          "en": "physical",
+          "ko": "육체적인"
+        },
+        {
+          "en": "social",
+          "ko": "사회적인"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "than",
+          "ko": "~보다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "social death → 사회적 죽음",
+          "check": [
+            "사회적 죽음",
+            "사회적인 죽음"
+          ],
+          "nudge": "social death이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "social death은 여기서 '사회적 죽음'이에요."
+        },
+        {
+          "id": 2,
+          "text": "more frightening than ~ → ~보다 더 무섭다",
+          "check": [
+            "더 무섭",
+            "더 두렵",
+            "보다 무서"
+          ],
+          "nudge": "more frightening than ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "more frightening than ~은 여기서 '~보다 더 무섭다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "비교 방향을 뒤집어 육체적 죽음이 더 무섭다고 해석",
+          "signals": [
+            "육체적 죽음이 더",
+            "신체적 죽음이 더"
+          ],
+          "treatment": {
+            "message": "than 앞뒤 중 어느 쪽이 더 무섭다는 걸까요? '육체적 죽음이 더 무섭다'일까요, '사회적 죽음이 더 무섭다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "육체적 죽음이 더 무섭다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사회적 죽음이 더 무섭다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사회적 죽음이 더 무섭다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사회적 죽음이 더 무섭다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "This is why we feel deeply threatened when a new idea challenges the ones that have become part of our identity.",
+      "model_translation": "그래서 우리는 새로운 생각이 우리 정체성의 일부가 된 생각들에 맞설 때 깊이 위협을 느낀다",
+      "praise": "the ones가 앞의 ideas를 받는 걸 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "This is why",
+          "ko": "그래서 ~하는 것이다"
+        },
+        {
+          "en": "deeply",
+          "ko": "깊이"
+        },
+        {
+          "en": "threatened",
+          "ko": "위협받는"
+        },
+        {
+          "en": "idea",
+          "ko": "생각"
+        },
+        {
+          "en": "challenges",
+          "ko": "맞서다, 이의를 제기하다"
+        },
+        {
+          "en": "ones",
+          "ko": "것들"
+        },
+        {
+          "en": "become",
+          "ko": "~이 되다"
+        },
+        {
+          "en": "part",
+          "ko": "일부"
+        },
+        {
+          "en": "identity",
+          "ko": "정체성"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "feel",
+          "ko": "느끼다"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "new",
+          "ko": "새로운"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "have",
+          "ko": "가지다"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "our",
+          "ko": "우리의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "This is why → 그래서 ~하는 것이다",
+          "check": [
+            "그래서",
+            "그렇기 때문",
+            "이래서",
+            "까닭"
+          ],
+          "nudge": "This is why가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "This is why는 여기서 '그래서 ~하는 것이다'예요."
+        },
+        {
+          "id": 2,
+          "text": "feel deeply threatened → 깊이 위협을 느끼다",
+          "check": [
+            "위협",
+            "위태",
+            "겁"
+          ],
+          "nudge": "feel deeply threatened이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "feel deeply threatened은 여기서 '깊이 위협을 느끼다'예요."
+        },
+        {
+          "id": 3,
+          "text": "the ones that have become part of our identity → 우리 정체성의 일부가 된 생각들",
+          "check": [
+            "정체성",
+            "일부가 된",
+            "자기 자신"
+          ],
+          "nudge": "the ones that have become part of our identity이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the ones that have become part of our identity은 여기서 '우리 정체성의 일부가 된 생각들'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "This is why를 '이것이 이유이다'로 어색하게 두고 인과를 흐림",
+          "signals": [
+            "이것이 이유",
+            "이것은 왜"
+          ],
+          "treatment": {
+            "message": "This is why 뒤에는 결과가 올까요, 원인이 올까요? '이것이 왜인가 하면'일까요, '그래서 ~하는 것이다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "이것이 왜인가 하면",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그래서 ~하는 것이다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그래서 ~하는 것이다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그래서 ~하는 것이다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "challenges를 명사 '도전들'로 보고 동사를 놓침",
+          "signals": [
+            "도전들",
+            "과제들"
+          ],
+          "treatment": {
+            "message": "이 절의 동사는 무엇일까요? '새로운 생각의 도전들'일까요, '새로운 생각이 맞선다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "새로운 생각의 도전들",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "새로운 생각이 맞선다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '새로운 생각이 맞선다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '새로운 생각이 맞선다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "For some ideas, the ones that identify us as members of a group, we don't reason as individuals;",
+      "model_translation": "어떤 생각들, 곧 우리를 어떤 집단의 구성원으로 규정하는 생각들에 대해서는, 우리는 개인으로서 판단하지 않는다",
+      "praise": "the ones가 앞의 some ideas를 다시 말하는 걸 잡은 거 좋아요.",
+      "glosses": [
+        {
+          "en": "ideas",
+          "ko": "생각들"
+        },
+        {
+          "en": "identify",
+          "ko": "규정하다, 알아보다"
+        },
+        {
+          "en": "members",
+          "ko": "구성원"
+        },
+        {
+          "en": "group",
+          "ko": "집단"
+        },
+        {
+          "en": "reason",
+          "ko": "판단하다, 추론하다"
+        },
+        {
+          "en": "individuals",
+          "ko": "개인"
+        },
+        {
+          "en": "don't",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "For",
+          "ko": "~동안"
+        },
+        {
+          "en": "some",
+          "ko": "어떤"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "ones",
+          "ko": "것들"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "us",
+          "ko": "우리를"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "identify us as members of a group → 우리를 집단의 구성원으로 규정하다",
+          "check": [
+            "구성원",
+            "일원",
+            "소속",
+            "규정"
+          ],
+          "nudge": "identify us as members of a group이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "identify us as members of a group은 여기서 '우리를 집단의 구성원으로 규정하다'예요."
+        },
+        {
+          "id": 2,
+          "text": "we don't reason as individuals → 우리는 개인으로서 판단하지 않는다",
+          "check": [
+            "개인",
+            "판단하지 않",
+            "생각하지 않",
+            "따지지 않"
+          ],
+          "nudge": "we don't reason as individuals가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "we don't reason as individuals는 여기서 '우리는 개인으로서 판단하지 않는다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "reason을 명사 '이유'로 보고 동사를 놓침",
+          "signals": [
+            "이유가 없",
+            "이유로"
+          ],
+          "treatment": {
+            "message": "we don't reason에서 reason은 무엇일까요? '개인으로서의 이유'일까요, '개인으로서 판단하다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "개인으로서의 이유",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "개인으로서 판단하다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '개인으로서 판단하다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '개인으로서 판단하다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "identify를 '알아보다'로만 보고 '규정하다'를 놓침",
+          "signals": [
+            "알아본다",
+            "식별한다"
+          ],
+          "treatment": {
+            "message": "identify us as ~는 우리를 어떻게 한다는 걸까요? '우리를 알아본다'일까요, '우리를 ~로 규정한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "우리를 알아본다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "우리를 ~로 규정한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '우리를 ~로 규정한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '우리를 ~로 규정한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "we reason as a member of a tribe.",
+      "model_translation": "우리는 부족의 일원으로서 판단한다",
+      "praise": "as a member of a tribe를 '부족의 일원으로서'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "member",
+          "ko": "일원, 구성원"
+        },
+        {
+          "en": "tribe",
+          "ko": "부족, 무리"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "reason",
+          "ko": "판단하다, 추론하다"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "as a member of a tribe → 부족의 일원으로서",
+          "check": [
+            "부족",
+            "일원",
+            "구성원",
+            "무리"
+          ],
+          "nudge": "as a member of a tribe가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "as a member of a tribe는 여기서 '부족의 일원으로서'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "tribe를 '종족 전체'로 보고 무리라는 뜻을 흐림",
+          "signals": [
+            "종족 전체",
+            "인류"
+          ],
+          "treatment": {
+            "message": "여기 tribe는 내가 속한 무리를 말해요. '인류의 일원으로서'일까요, '부족(내 무리)의 일원으로서'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "인류의 일원으로서",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "부족(내 무리)의 일원으로서",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '부족(내 무리)의 일원으로서'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '부족(내 무리)의 일원으로서'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "We want to seem trustworthy, and reputation management as a trustworthy individual often overrides most other concerns, even our own mortality.",
+      "model_translation": "우리는 믿을 만해 보이고 싶어 하고, 믿을 만한 사람이라는 평판을 관리하는 일은 흔히 다른 대부분의 관심사를, 심지어 자기 목숨까지도 앞선다",
+      "praise": "overrides를 '앞선다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "seem",
+          "ko": "~해 보이다"
+        },
+        {
+          "en": "trustworthy",
+          "ko": "믿을 만한"
+        },
+        {
+          "en": "reputation",
+          "ko": "평판"
+        },
+        {
+          "en": "management",
+          "ko": "관리"
+        },
+        {
+          "en": "individual",
+          "ko": "개인"
+        },
+        {
+          "en": "overrides",
+          "ko": "~보다 앞서다, 우선하다"
+        },
+        {
+          "en": "concerns",
+          "ko": "관심사, 걱정거리"
+        },
+        {
+          "en": "mortality",
+          "ko": "죽음, 죽는다는 사실"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "want",
+          "ko": "원하다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "often",
+          "ko": "자주"
+        },
+        {
+          "en": "most",
+          "ko": "가장"
+        },
+        {
+          "en": "other",
+          "ko": "다른"
+        },
+        {
+          "en": "even",
+          "ko": "심지어"
+        },
+        {
+          "en": "our",
+          "ko": "우리의"
+        },
+        {
+          "en": "own",
+          "ko": "자기 자신의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "seem trustworthy → 믿을 만해 보이다",
+          "check": [
+            "믿을",
+            "신뢰",
+            "미덥"
+          ],
+          "nudge": "seem trustworthy가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "seem trustworthy는 여기서 '믿을 만해 보이다'예요."
+        },
+        {
+          "id": 2,
+          "text": "reputation management → 평판 관리",
+          "check": [
+            "평판",
+            "명성",
+            "이미지"
+          ],
+          "nudge": "reputation management이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "reputation management은 여기서 '평판 관리'예요."
+        },
+        {
+          "id": 3,
+          "text": "overrides most other concerns → 다른 대부분의 관심사를 앞선다",
+          "check": [
+            "앞선",
+            "우선",
+            "능가",
+            "이긴"
+          ],
+          "nudge": "overrides most other concerns가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "overrides most other concerns는 여기서 '다른 대부분의 관심사를 앞선다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "mortality를 '사망률'로만 보고 문맥을 놓침",
+          "signals": [
+            "사망률"
+          ],
+          "treatment": {
+            "message": "our own mortality는 무엇을 말할까요? '우리의 사망률'일까요, '우리 자신의 목숨(죽는다는 사실)'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "우리의 사망률",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "우리 자신의 목숨(죽는다는 사실)",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '우리 자신의 목숨(죽는다는 사실)'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '우리 자신의 목숨(죽는다는 사실)'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "overrides를 '무시하다'로 보고 방향을 흐림",
+          "signals": [
+            "무시한다"
+          ],
+          "treatment": {
+            "message": "override는 두 가지 중 어느 쪽이 이긴다는 뜻일까요? '관심사를 무시한다'일까요, '관심사보다 앞선다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "관심사를 무시한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "관심사보다 앞선다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '관심사보다 앞선다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '관심사보다 앞선다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "This is not entirely irrational.",
+      "model_translation": "이것이 완전히 비합리적인 것은 아니다",
+      "praise": "not entirely를 '완전히 ~은 아니다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "entirely",
+          "ko": "완전히"
+        },
+        {
+          "en": "irrational",
+          "ko": "비합리적인"
+        },
+        {
+          "en": "This",
+          "ko": "이"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "not entirely irrational → 완전히 비합리적인 것은 아니다",
+          "check": [
+            "완전히",
+            "전적으로",
+            "아니"
+          ],
+          "nudge": "not entirely irrational이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "not entirely irrational은 여기서 '완전히 비합리적인 것은 아니다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "not entirely를 완전 부정으로 보고 '전혀 아니다'로 해석",
+          "signals": [
+            "전혀",
+            "결코"
+          ],
+          "treatment": {
+            "message": "not entirely는 전부를 부정할까요, 일부만 부정할까요? '전혀 비합리적이지 않다'일까요, '완전히 비합리적인 것은 아니다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "전혀 비합리적이지 않다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "완전히 비합리적인 것은 아니다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '완전히 비합리적인 것은 아니다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '완전히 비합리적인 것은 아니다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "A human alone in this world faces a lot of difficulty,",
+      "model_translation": "이 세상에 홀로 있는 사람은 많은 어려움을 마주한다",
+      "praise": "alone이 human을 꾸민다는 걸 잡은 거 좋아요.",
+      "glosses": [
+        {
+          "en": "human",
+          "ko": "사람"
+        },
+        {
+          "en": "alone",
+          "ko": "홀로"
+        },
+        {
+          "en": "faces",
+          "ko": "마주하다"
+        },
+        {
+          "en": "difficulty",
+          "ko": "어려움"
+        },
+        {
+          "en": "A",
+          "ko": "하나의"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "this",
+          "ko": "이"
+        },
+        {
+          "en": "world",
+          "ko": "세계, 세상"
+        },
+        {
+          "en": "lot",
+          "ko": "많음 (a lot of ~: 많은)"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "a human alone in this world → 이 세상에 홀로 있는 사람",
+          "check": [
+            "홀로",
+            "혼자",
+            "고립"
+          ],
+          "nudge": "a human alone in this world이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a human alone in this world은 여기서 '이 세상에 홀로 있는 사람'이에요."
+        },
+        {
+          "id": 2,
+          "text": "faces a lot of difficulty → 많은 어려움을 마주한다",
+          "check": [
+            "어려움",
+            "곤란",
+            "겪",
+            "마주"
+          ],
+          "nudge": "faces a lot of difficulty가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "faces a lot of difficulty는 여기서 '많은 어려움을 마주한다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "faces를 명사 '얼굴들'로 보고 동사를 놓침",
+          "signals": [
+            "얼굴"
+          ],
+          "treatment": {
+            "message": "이 문장의 동사는 무엇일까요? '사람의 얼굴들'일까요, '사람이 마주한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "사람의 얼굴들",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사람이 마주한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사람이 마주한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사람이 마주한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "but being alone in the world before modern times was almost certainly a death sentence.",
+      "model_translation": "그러나 현대 이전에 세상에 홀로 있다는 것은 거의 틀림없이 사형선고였다",
+      "praise": "a death sentence를 '사형선고'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "being alone",
+          "ko": "홀로 있는 것"
+        },
+        {
+          "en": "modern times",
+          "ko": "현대"
+        },
+        {
+          "en": "almost",
+          "ko": "거의"
+        },
+        {
+          "en": "certainly",
+          "ko": "틀림없이"
+        },
+        {
+          "en": "sentence",
+          "ko": "선고, 문장"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "world",
+          "ko": "세계, 세상"
+        },
+        {
+          "en": "before",
+          "ko": "~ 전에"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "death",
+          "ko": "죽음"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "being alone → 홀로 있다는 것",
+          "check": [
+            "홀로",
+            "혼자"
+          ],
+          "nudge": "being alone이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "being alone은 여기서 '홀로 있다는 것'이에요."
+        },
+        {
+          "id": 2,
+          "text": "almost certainly a death sentence → 거의 틀림없이 사형선고였다",
+          "check": [
+            "사형",
+            "죽음",
+            "틀림없",
+            "거의 확실"
+          ],
+          "nudge": "almost certainly a death sentence가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "almost certainly a death sentence는 여기서 '거의 틀림없이 사형선고였다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "sentence를 '문장'으로 해석",
+          "signals": [
+            "죽음의 문장",
+            "죽음 문장"
+          ],
+          "treatment": {
+            "message": "death와 같이 온 sentence는 무엇일까요? '죽음의 문장'일까요, '사형선고'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "죽음의 문장",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사형선고",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사형선고'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사형선고'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "So we carry with us an innate drive to form groups, join groups, remain in those groups, and oppose other groups.",
+      "model_translation": "그래서 우리는 집단을 만들고, 집단에 들어가고, 그 집단에 남고, 다른 집단에 맞서려는 타고난 충동을 지니고 다닌다",
+      "praise": "네 가지 동작을 나란히 살린 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "carry",
+          "ko": "지니다"
+        },
+        {
+          "en": "innate",
+          "ko": "타고난"
+        },
+        {
+          "en": "drive",
+          "ko": "충동, 욕구"
+        },
+        {
+          "en": "form",
+          "ko": "만들다"
+        },
+        {
+          "en": "join",
+          "ko": "들어가다"
+        },
+        {
+          "en": "remain",
+          "ko": "남다"
+        },
+        {
+          "en": "groups",
+          "ko": "집단들"
+        },
+        {
+          "en": "oppose",
+          "ko": "맞서다"
+        },
+        {
+          "en": "So",
+          "ko": "그래서"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        },
+        {
+          "en": "us",
+          "ko": "우리를"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "those",
+          "ko": "저것들"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "other",
+          "ko": "다른"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "an innate drive → 타고난 충동",
+          "check": [
+            "타고난",
+            "본능",
+            "천성",
+            "충동",
+            "욕구"
+          ],
+          "nudge": "an innate drive가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "an innate drive는 여기서 '타고난 충동'이에요."
+        },
+        {
+          "id": 2,
+          "text": "form / join / remain in / oppose → 만들고, 들어가고, 남고, 맞서다",
+          "check": [
+            "만들",
+            "들어가",
+            "가입",
+            "남",
+            "맞서",
+            "반대"
+          ],
+          "nudge": "form / join / remain in / oppose가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "form / join / remain in / oppose는 여기서 '만들고, 들어가고, 남고, 맞서다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "carry with us를 '가지고 나른다'로 어색하게 해석",
+          "signals": [
+            "나른다",
+            "운반"
+          ],
+          "treatment": {
+            "message": "carry with us는 몸에 지니고 다닌다는 뜻이에요. '우리와 함께 나른다'일까요, '지니고 다닌다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "우리와 함께 나른다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "지니고 다닌다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '지니고 다닌다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '지니고 다닌다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "innate를 '내부의'로 보고 '타고난'을 놓침",
+          "signals": [
+            "내부의",
+            "내재적 자료"
+          ],
+          "treatment": {
+            "message": "innate는 언제부터 있는 것일까요? '내부의 충동'일까요, '타고난 충동'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "내부의 충동",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "타고난 충동",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '타고난 충동'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '타고난 충동'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "But once you can identify them, you start favoring us;",
+      "model_translation": "그러나 일단 '그들'을 알아볼 수 있게 되면, 당신은 '우리'를 편들기 시작한다",
+      "praise": "them과 us의 대비를 살린 거 좋아요.",
+      "glosses": [
+        {
+          "en": "once",
+          "ko": "일단 ~하면"
+        },
+        {
+          "en": "identify",
+          "ko": "알아보다"
+        },
+        {
+          "en": "start",
+          "ko": "시작하다"
+        },
+        {
+          "en": "favoring",
+          "ko": "편드는 것"
+        },
+        {
+          "en": "But",
+          "ko": "하지만"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "them",
+          "ko": "그들을"
+        },
+        {
+          "en": "us",
+          "ko": "우리를"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "once you can identify them → 일단 그들을 알아보게 되면",
+          "check": [
+            "일단",
+            "알아보",
+            "구별",
+            "되면"
+          ],
+          "nudge": "once you can identify them이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "once you can identify them은 여기서 '일단 그들을 알아보게 되면'이에요."
+        },
+        {
+          "id": 2,
+          "text": "start favoring us → 우리를 편들기 시작한다",
+          "check": [
+            "편들",
+            "우리 편",
+            "우호",
+            "선호"
+          ],
+          "nudge": "start favoring us가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "start favoring us는 여기서 '우리를 편들기 시작한다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "once를 '한 번'으로 해석",
+          "signals": [
+            "한 번",
+            "한번 알아"
+          ],
+          "treatment": {
+            "message": "문장 앞의 once는 횟수일까요, 시점일까요? '한 번 알아보면'일까요, '일단 알아보게 되면'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "한 번 알아보면",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "일단 알아보게 되면",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '일단 알아보게 되면'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '일단 알아보게 되면'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "so much so that given a choice between an outcome that favors both groups a lot or one that favors both much less but still favors yours more than theirs,",
+      "model_translation": "그 정도가 심해서, 두 집단 모두에게 크게 이로운 결과와, 두 집단 모두에게 훨씬 덜 이롭지만 그래도 그들보다 당신 쪽에 더 이로운 결과 중에서 고르라고 하면",
+      "praise": "두 선택지를 끝까지 갈라서 읽은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "so much so that",
+          "ko": "그 정도가 심해서"
+        },
+        {
+          "en": "given",
+          "ko": "~이 주어지면"
+        },
+        {
+          "en": "choice",
+          "ko": "선택"
+        },
+        {
+          "en": "outcome",
+          "ko": "결과"
+        },
+        {
+          "en": "favors",
+          "ko": "이롭게 하다, 편들다"
+        },
+        {
+          "en": "yours",
+          "ko": "당신 쪽의 것"
+        },
+        {
+          "en": "theirs",
+          "ko": "그들 쪽의 것"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "between",
+          "ko": "~ 사이에"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "both",
+          "ko": "둘 다"
+        },
+        {
+          "en": "groups",
+          "ko": "집단들"
+        },
+        {
+          "en": "lot",
+          "ko": "많음 (a lot of ~: 많은)"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "one",
+          "ko": "하나"
+        },
+        {
+          "en": "much",
+          "ko": "많이"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "still",
+          "ko": "여전히"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "than",
+          "ko": "~보다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "so much so that → 그 정도가 심해서",
+          "check": [
+            "정도",
+            "심해",
+            "나머지",
+            "그래서"
+          ],
+          "nudge": "so much so that이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "so much so that은 여기서 '그 정도가 심해서'예요."
+        },
+        {
+          "id": 2,
+          "text": "given a choice between A or B → A와 B 중에서 고르라고 하면",
+          "check": [
+            "고르",
+            "선택",
+            "중에서"
+          ],
+          "nudge": "given a choice between A or B이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "given a choice between A or B은 여기서 'A와 B 중에서 고르라고 하면'이에요."
+        },
+        {
+          "id": 3,
+          "text": "favors yours more than theirs → 그들보다 당신 쪽에 더 이롭다",
+          "check": [
+            "당신 쪽",
+            "우리 쪽",
+            "보다 더",
+            "유리"
+          ],
+          "nudge": "favors yours more than theirs가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "favors yours more than theirs는 여기서 '그들보다 당신 쪽에 더 이롭다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "given을 '주어진'으로만 보고 조건이라는 걸 놓침",
+          "signals": [
+            "주어진 선택",
+            "주어진 것"
+          ],
+          "treatment": {
+            "message": "given a choice는 언제를 말할까요? '주어진 선택은'일까요, '선택하라고 하면'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "주어진 선택은",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "선택하라고 하면",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '선택하라고 하면'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '선택하라고 하면'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "yours와 theirs를 뒤바꿔 해석",
+          "signals": [
+            "그들에게 더 이",
+            "그들 쪽이 더"
+          ],
+          "treatment": {
+            "message": "yours는 누구 쪽일까요? '그들 쪽에 더 이롭다'일까요, '당신 쪽에 더 이롭다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그들 쪽에 더 이롭다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "당신 쪽에 더 이롭다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '당신 쪽에 더 이롭다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '당신 쪽에 더 이롭다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "that's the one you will pick.",
+      "model_translation": "당신이 고를 것은 바로 그쪽이다",
+      "praise": "that's the one을 '바로 그것'으로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "pick",
+          "ko": "고르다"
+        },
+        {
+          "en": "that's",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "one",
+          "ko": "하나"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "will",
+          "ko": "~할 것이다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "that's the one you will pick → 당신이 고를 것은 바로 그것이다",
+          "check": [
+            "고를",
+            "선택할",
+            "바로 그"
+          ],
+          "nudge": "that's the one you will pick이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "that's the one you will pick은 여기서 '당신이 고를 것은 바로 그것이다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "the one을 '한 개'로 보고 지시를 놓침",
+          "signals": [
+            "하나를 고를",
+            "한 개"
+          ],
+          "treatment": {
+            "message": "the one은 앞의 무엇을 가리킬까요? '하나를 고른다'일까요, '바로 그 결과를 고른다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "하나를 고른다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "바로 그 결과를 고른다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '바로 그 결과를 고른다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '바로 그 결과를 고른다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

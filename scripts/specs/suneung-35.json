@@ -1,0 +1,164 @@
+{
+  "id": "suneung-35-translingual",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 35번",
+  "category": "리딩",
+  "topic_intro": "여러 갈래의 영어를 장벽이 아니라 길로 보는 관점",
+  "sentence": "No doubt students collaborating with other speakers of English might encounter language variances, which may interfere with intentionality. To address such disparities, Horner, Lu, Royster, and Trimbur (2011) call for a \"translingual approach\" in which language varieties are not perceived as barriers, but as avenues for meaning making. Similarly, Galloway and Rose (2015) study of Global Englishes found that exposure to other Englishes helps normalize language differences. Educators have to work with students to examine phrases, expressions, and other ranges of English language use for their rhetorical and communicative possibilities and not their perceived errors or inferior status. After all, students are constantly reading texts and listening to speakers whose Englishes do not necessarily conform to what is considered standard in their own communities.",
+  "grammar_type": "무관한문장_학술논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 관계사절로 길어지면",
+    "how": "관계사·and 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [
+    { "en": "Horner", "ko": "호너", "type": "person" },
+    { "en": "Galloway", "ko": "갤러웨이", "type": "person" },
+    { "en": "Global Englishes", "ko": "글로벌 잉글리시", "type": "other" }
+  ],
+  "chunks": [
+    {
+      "text": "No doubt students collaborating with other speakers of English might encounter language variances, which may interfere with intentionality.",
+      "ko": "영어를 쓰는 다른 사람들과 함께 작업하는 학생들이 언어 차이를 만날 수 있다는 점은 분명하고, 그 차이는 의도 전달을 방해할 수 있다",
+      "praise": "collaborating이 students를 꾸민다는 걸 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "No doubt", "sub": "가", "top": "는", "answer": "분명히, 의심할 여지 없이", "check": ["분명", "틀림없", "의심", "물론"] },
+        { "en": "students collaborating with ~", "sub": "이", "top": "은", "answer": "~와 함께 작업하는 학생들", "check": ["함께", "협업", "협력", "작업하는"] },
+        { "en": "interfere with intentionality", "sub": "가", "top": "는", "answer": "의도 전달을 방해하다", "check": ["방해", "의도", "가로막"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "collaborating을 문장의 동사로 보고 끊음", "signals": ["학생들이 협업한다."], "ask": "이 문장의 진짜 동사는 무엇일까요?", "wrong": "학생들이 협업한다", "right": "협업하는 학생들이 만날 수 있다" },
+        { "id": "E2", "detect": "variances를 '분산'으로만 보고 문맥을 놓침", "signals": ["분산"], "ask": "language variances는 무엇일까요?", "wrong": "언어의 분산", "right": "언어의 차이" }
+      ],
+      "glosses": [
+        ["No doubt", "분명히"],
+        ["collaborating", "함께 작업하는"],
+        ["speakers", "말하는 사람들"],
+        ["English", "영어"],
+        ["encounter", "만나다, 마주치다"],
+        ["variances", "차이"],
+        ["interfere with", "~을 방해하다"],
+        ["intentionality", "의도(를 담아 전하기)"]
+      ]
+    },
+    {
+      "text": "To address such disparities, Horner, Lu, Royster, and Trimbur (2011) call for a \"translingual approach\"",
+      "ko": "그러한 차이를 다루기 위해 호너, 루, 로이스터, 트림버(2011)는 \"횡단언어적 접근\"을 요구한다",
+      "praise": "address를 '다루다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "to address such disparities", "sub": "가", "top": "는", "answer": "그러한 차이를 다루기 위해", "check": ["다루", "해결", "차이", "위해"] },
+        { "en": "call for ~", "sub": "가", "top": "는", "answer": "~을 요구하다", "check": ["요구", "촉구", "주장"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "address를 '주소'로 해석", "signals": ["주소"], "ask": "To address 뒤에 문제가 오면 무슨 뜻일까요?", "wrong": "그런 차이의 주소", "right": "그런 차이를 다루기 위해" },
+        { "id": "E2", "detect": "call for를 '부르다'로 해석", "signals": ["부른다", "전화"], "ask": "call for는 한 덩어리로 쓰이는 말이에요.", "wrong": "접근을 부른다", "right": "접근을 요구한다" }
+      ],
+      "glosses": [
+        ["To address", "~을 다루기 위해"],
+        ["disparities", "차이, 격차"],
+        ["Horner", "호너(사람 이름)"],
+        ["Lu", "루(사람 이름)"],
+        ["Royster", "로이스터(사람 이름)"],
+        ["Trimbur", "트림버(사람 이름)"],
+        ["call for", "~을 요구하다"],
+        ["translingual", "횡단언어적인"],
+        ["approach", "접근(법)"]
+      ]
+    },
+    {
+      "text": "in which language varieties are not perceived as barriers, but as avenues for meaning making.",
+      "ko": "그 접근에서는 여러 갈래의 언어가 장벽이 아니라 뜻을 만들어 내는 길로 여겨진다",
+      "praise": "not A but B를 살려서 옮긴 거 정말 잘했어요.",
+      "points": [
+        { "en": "are not perceived as A, but as B", "sub": "가", "top": "는", "answer": "A가 아니라 B로 여겨진다", "check": ["여겨", "인식", "보이", "아니라"] },
+        { "en": "avenues for meaning making", "sub": "가", "top": "는", "answer": "뜻을 만들어 내는 길", "check": ["길", "통로", "뜻", "의미"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "avenues를 '가로수길/큰길'로만 보고 비유를 놓침", "signals": ["대로", "가로수"], "ask": "여기 avenues는 무엇에 이르는 길일까요?", "wrong": "의미를 만드는 큰길", "right": "뜻을 만들어 내는 통로" },
+        { "id": "E2", "detect": "not ~ but ~ 에서 앞쪽만 읽고 끊음", "signals": ["장벽으로 여겨지지 않는다."], "ask": "but 뒤에 무엇으로 여겨진다고 했나요?", "wrong": "장벽으로 여겨지지 않는다", "right": "장벽이 아니라 길로 여겨진다" }
+      ],
+      "glosses": [
+        ["in which", "그 안에서"],
+        ["varieties", "여러 갈래, 변종"],
+        ["perceived", "여겨지는"],
+        ["barriers", "장벽"],
+        ["avenues", "길, 통로"]
+      ]
+    },
+    {
+      "text": "Similarly, Galloway and Rose (2015) study of Global Englishes found that exposure to other Englishes helps normalize language differences.",
+      "ko": "마찬가지로 갤러웨이와 로즈(2015)의 글로벌 잉글리시 연구는 다른 영어들에 노출되는 것이 언어 차이를 예사롭게 만드는 데 도움이 된다는 것을 알아냈다",
+      "praise": "exposure to를 '~에 노출되는 것'으로 본 거 좋아요.",
+      "points": [
+        { "en": "exposure to other Englishes", "sub": "가", "top": "는", "answer": "다른 영어들에 노출되는 것", "check": ["노출", "접하", "겪"] },
+        { "en": "helps normalize language differences", "sub": "가", "top": "는", "answer": "언어 차이를 예사롭게 만드는 데 도움이 된다", "check": ["예사", "정상", "자연스럽", "도움"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "normalize를 '정상으로 되돌리다'로 보고 뜻을 흐림", "signals": ["정상으로 되돌"], "ask": "차이를 normalize한다는 건 무엇일까요?", "wrong": "차이를 정상으로 되돌린다", "right": "차이를 예사로운 것으로 만든다" }
+      ],
+      "glosses": [
+        ["Similarly", "마찬가지로"],
+        ["Galloway", "갤러웨이(사람 이름)"],
+        ["Rose", "로즈(사람 이름)"],
+        ["Global Englishes", "글로벌 잉글리시(세계 여러 영어)"],
+        ["exposure", "노출"],
+        ["Englishes", "여러 갈래의 영어"],
+        ["helps", "돕다"],
+        ["normalize", "예사로운 것으로 만들다"],
+        ["differences", "차이"]
+      ]
+    },
+    {
+      "text": "Educators have to work with students to examine phrases, expressions, and other ranges of English language use for their rhetorical and communicative possibilities and not their perceived errors or inferior status.",
+      "ko": "교육자는 학생들과 함께, 어구와 표현을 비롯한 여러 영어 사용을 오류나 열등함으로 보지 말고 수사적·소통적 가능성의 면에서 살펴야 한다",
+      "praise": "for A and not B를 '~의 면에서 보되 ~로 보지 말고'로 살린 거 정말 잘했어요.",
+      "points": [
+        { "en": "examine ~ for their possibilities", "sub": "가", "top": "는", "answer": "가능성의 면에서 살피다", "check": ["살피", "검토", "가능성", "따져"] },
+        { "en": "and not their perceived errors", "sub": "이", "top": "은", "answer": "오류로 보지 말고", "check": ["오류", "잘못", "실수", "아니라"] },
+        { "en": "inferior status", "sub": "가", "top": "는", "answer": "열등한 지위", "check": ["열등", "낮은", "떨어지"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "for를 '~을 위해'로만 보고 관점을 놓침", "signals": ["가능성을 위해"], "ask": "examine A for B에서 for B는 무엇을 말할까요?", "wrong": "가능성을 위해 살핀다", "right": "가능성이라는 면에서 살핀다" },
+        { "id": "E2", "detect": "and not 뒤를 놓치고 오류도 함께 본다고 해석", "signals": ["오류도 살핀다", "오류와 가능성을"], "ask": "and not 뒤에 오는 것은 어떻게 하라는 걸까요?", "wrong": "오류도 함께 살핀다", "right": "오류로 보지는 말라" }
+      ],
+      "glosses": [
+        ["Educators", "교육자"],
+        ["examine", "살피다"],
+        ["phrases", "어구"],
+        ["expressions", "표현"],
+        ["ranges", "범위, 갈래"],
+        ["rhetorical", "수사적인"],
+        ["communicative", "소통의"],
+        ["possibilities", "가능성"],
+        ["errors", "오류"],
+        ["inferior", "열등한"]
+      ]
+    },
+    {
+      "text": "After all, students are constantly reading texts and listening to speakers whose Englishes do not necessarily conform to what is considered standard in their own communities.",
+      "ko": "어차피 학생들은 자기 공동체에서 표준으로 여겨지는 것에 반드시 들어맞지는 않는 영어를 쓰는 글과 사람을 끊임없이 읽고 듣고 있다",
+      "praise": "not necessarily를 '반드시 ~은 아니다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "After all", "sub": "이", "top": "은", "answer": "어차피, 결국", "check": ["어차피", "결국", "따지고 보면"] },
+        { "en": "do not necessarily conform to ~", "sub": "가", "top": "는", "answer": "반드시 ~에 들어맞지는 않는다", "check": ["반드시", "꼭", "들어맞지 않", "일치하지"] },
+        { "en": "what is considered standard", "sub": "이", "top": "은", "answer": "표준으로 여겨지는 것", "check": ["표준", "여겨지는"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "not necessarily를 완전 부정으로 보고 '전혀 맞지 않는다'로 해석", "signals": ["전혀 맞지 않", "결코"], "ask": "not necessarily는 전부를 부정할까요?", "wrong": "전혀 표준에 맞지 않는다", "right": "반드시 표준에 맞는 것은 아니다" },
+        { "id": "E2", "detect": "After all을 '모든 것 뒤에'로 직역", "signals": ["모든 것 후에", "결국 모든"], "ask": "After all은 굳어진 표현이에요.", "wrong": "모든 것 뒤에", "right": "어차피, 따지고 보면" }
+      ],
+      "glosses": [
+        ["After all", "어차피, 따지고 보면"],
+        ["constantly", "끊임없이"],
+        ["texts", "글"],
+        ["listening", "듣는 것"],
+        ["whose", "그들의"],
+        ["necessarily", "반드시"],
+        ["conform to", "~에 들어맞다"],
+        ["considered", "여겨지는"],
+        ["standard", "표준"],
+        ["communities", "공동체"]
+      ]
+    }
+  ]
+}

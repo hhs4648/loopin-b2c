@@ -23,9 +23,45 @@ describe("수업 세트", () => {
     expect(new Set(ids).size).toBe(ids.length);
   });
 
-  it("모든 지문이 어느 세트에는 들어 있다 — 목록에서 못 여는 지문을 남기지 않는다", () => {
-    const orphans = lessonIds().filter((id) => !setOfLesson(id));
+  it("목록에 올리지 않은 지문은 참고용으로 적어 둔 것만 허용한다", () => {
+    /*
+      탈레스 원안은 엔진 회귀용으로 JSON을 남긴다. 학생이 고르는 목록에는
+      올리지 않는다.
+    */
+    const allowedUnlisted = new Set(["thales-participial-phrase-front"]);
+    const orphans = lessonIds().filter((id) => !setOfLesson(id) && !allowedUnlisted.has(id));
     expect(orphans).toEqual([]);
+  });
+
+  it("수업 목록 순서", () => {
+    expect(allSets().map((set) => set.id)).toEqual([
+      "suneung-18",
+      "suneung-19",
+      "suneung-20",
+      "suneung-21",
+      "suneung-22",
+      "suneung-23",
+      "suneung-24",
+      "suneung-26",
+      "suneung-27",
+      "suneung-28",
+      "suneung-29",
+      "suneung-30",
+      "suneung-31",
+      "suneung-32",
+      "suneung-33",
+      "suneung-34",
+      "suneung-35",
+      "suneung-36",
+      "suneung-37",
+      "suneung-38",
+      "suneung-39",
+      "suneung-40",
+      "suneung-41-1",
+      "suneung-41-2",
+      "suneung-43-1",
+      "suneung-43-2",
+    ]);
   });
 
   it("카드에 띄우는 문장 수가 실제 지문과 같다", () => {

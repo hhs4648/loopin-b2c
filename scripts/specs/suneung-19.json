@@ -1,0 +1,854 @@
+{
+  "id": "suneung-19-anna-rescue",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 19번",
+  "category": "리딩",
+  "topic_intro": "바다에 표류하다 구조되는 이야기",
+  "sentence": "The piece of wreckage Anna held on to that served as a life preserver had a window. Now that there was light, she looked through it and down into the water. She wished she hadn't. She spied dark shapes moving beneath her. What could they be? Fish? Sharks? Anna shook with fear, her blood running cold. The last bits of strength were draining away from her arms and upper body. She did not know how much longer she could hang on, but then Anna glanced up and couldn't believe what she saw. A fishing boat was approaching over the big waves. After being in the water for 3 hours, she was finally rescued. When she got on the boat, she felt a sense of relief spread through her body.",
+  "grammar_type": "심경변화_서사문",
+  "split_rule": {
+    "when": "이야기가 한 문장 안에서 뒤집히면",
+    "how": "but then 앞에서 끊는다. 그 밖에는 문장 하나가 한 덩어리다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Anna",
+      "ko": "애나",
+      "type": "person"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "The piece of wreckage Anna held on to that served as a life preserver had a window.",
+      "ko": "애나가 붙잡고 있던, 구명구 역할을 해 준 그 잔해 조각에는 창문이 하나 있었다",
+      "praise": "served as를 '역할을 하다'로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "served as ~",
+          "sub": "가",
+          "top": "는",
+          "answer": "~ 역할을 하다",
+          "check": [
+            "역할",
+            "구명구",
+            "구명"
+          ]
+        },
+        {
+          "en": "The piece of wreckage ... had a window",
+          "sub": "이",
+          "top": "은",
+          "answer": "잔해 조각에 창문이 있었다",
+          "check": [
+            "창문",
+            "잔해",
+            "조각"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "창문이 있던 것을 애나로 봄 (관계사절 둘에 밀림)",
+          "signals": [
+            "애나에게 창문",
+            "그녀에게 창문",
+            "애나는 창문"
+          ],
+          "ask": "창문이 있었던 건 애나일까요, 잔해 조각일까요?",
+          "wrong": "애나에게 창문이 있었다",
+          "right": "잔해 조각에 창문이 있었다"
+        },
+        {
+          "id": "E2",
+          "detect": "served를 '섬기다/봉사하다'로 해석",
+          "signals": [
+            "봉사",
+            "섬기",
+            "복무"
+          ],
+          "ask": "여기 served는 물건이 하는 일이에요.",
+          "wrong": "봉사했다",
+          "right": "~ 역할을 했다"
+        }
+      ],
+      "glosses": [
+        [
+          "The piece of wreckage",
+          "잔해 조각"
+        ],
+        [
+          "Anna",
+          "애나(사람 이름)"
+        ],
+        [
+          "held on to",
+          "붙잡고 있었다"
+        ],
+        [
+          "that",
+          "(관계대명사)"
+        ],
+        [
+          "served as",
+          "~ 역할을 했다"
+        ],
+        [
+          "a life preserver",
+          "구명구"
+        ],
+        [
+          "had",
+          "가지고 있었다"
+        ],
+        [
+          "a window",
+          "창문 하나"
+        ]
+      ]
+    },
+    {
+      "text": "Now that there was light, she looked through it and down into the water.",
+      "ko": "이제 빛이 들어오자, 그녀는 그것을 통해 물속을 내려다보았다",
+      "praise": "Now that을 '~하자'로 본 거 좋아요.",
+      "points": [
+        {
+          "en": "looked through it",
+          "sub": "이",
+          "top": "은",
+          "answer": "그것을 통해 보았다",
+          "check": [
+            "통해",
+            "통과",
+            "너머"
+          ]
+        },
+        {
+          "en": "Now that",
+          "sub": "이",
+          "top": "은",
+          "answer": "~하자 / ~이므로",
+          "check": [
+            "이제",
+            "하자",
+            "때문",
+            "니까"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "Now that의 that을 지시사로 보고 '지금 저것'으로 해석",
+          "signals": [
+            "지금 저것",
+            "이제 그것이"
+          ],
+          "ask": "Now that은 두 단어가 한 덩어리예요.",
+          "wrong": "지금 저것은",
+          "right": "빛이 들어오자"
+        }
+      ],
+      "glosses": [
+        [
+          "Now that",
+          "~하자, ~이므로"
+        ],
+        [
+          "there was light",
+          "빛이 있었다"
+        ],
+        [
+          "she",
+          "그녀는"
+        ],
+        [
+          "looked through",
+          "~을 통해 보았다"
+        ],
+        [
+          "it",
+          "그것(창문)"
+        ],
+        [
+          "down into the water",
+          "물속을 내려다보며"
+        ],
+        [
+          "and",
+          "그리고"
+        ]
+      ]
+    },
+    {
+      "text": "She wished she hadn't.",
+      "ko": "그녀는 그러지 말걸 하고 후회했다",
+      "praise": "생략된 말을 채워서 읽은 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "She wished",
+          "sub": "가",
+          "top": "는",
+          "answer": "후회했다 (그러지 말걸)",
+          "check": [
+            "후회",
+            "말걸",
+            "괜히",
+            "그러지 말"
+          ]
+        },
+        {
+          "en": "she hadn't (looked)",
+          "sub": "이",
+          "top": "은",
+          "answer": "보지 말걸 그랬다",
+          "check": [
+            "보지",
+            "안 봤",
+            "안 볼"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "wish + 과거완료를 단순한 소망으로 보고 후회를 놓침",
+          "signals": [
+            "바랐다",
+            "원했다",
+            "희망"
+          ],
+          "ask": "wish 뒤에 과거완료가 오면 지난 일을 두고 하는 말이에요.",
+          "wrong": "그러기를 바랐다",
+          "right": "그러지 말걸 후회했다"
+        }
+      ],
+      "glosses": [
+        [
+          "She",
+          "그녀는"
+        ],
+        [
+          "wished",
+          "~했더라면 하고 바랐다(후회)"
+        ],
+        [
+          "she hadn't",
+          "그러지 않았더라면 (뒤에 looked 생략)"
+        ]
+      ]
+    },
+    {
+      "text": "She spied dark shapes moving beneath her.",
+      "ko": "그녀는 자기 아래에서 움직이는 어두운 형체들을 발견했다",
+      "praise": "moving이 shapes를 꾸민다는 걸 잡은 거 좋아요.",
+      "points": [
+        {
+          "en": "spied",
+          "sub": "가",
+          "top": "는",
+          "answer": "발견했다",
+          "check": [
+            "발견",
+            "봤",
+            "보았",
+            "포착"
+          ]
+        },
+        {
+          "en": "dark shapes moving beneath her",
+          "sub": "가",
+          "top": "는",
+          "answer": "자기 아래에서 움직이는 어두운 형체들",
+          "check": [
+            "움직이는",
+            "어두운",
+            "형체",
+            "그림자"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "spied를 '염탐하다/훔쳐보다'로 해석",
+          "signals": [
+            "염탐",
+            "훔쳐",
+            "정탐",
+            "스파이"
+          ],
+          "ask": "spy가 동사로 쓰이면 '몰래 보다'만은 아니에요.",
+          "wrong": "염탐했다",
+          "right": "발견했다"
+        },
+        {
+          "id": "E2",
+          "detect": "moving을 문장의 동사로 보고 두 문장으로 끊음",
+          "signals": [
+            "형체들이 움직였다",
+            "그림자가 움직였다"
+          ],
+          "ask": "이 문장의 동사는 하나뿐이에요.",
+          "wrong": "형체들이 움직였다",
+          "right": "움직이는 형체들을 발견했다"
+        }
+      ],
+      "glosses": [
+        [
+          "She",
+          "그녀는"
+        ],
+        [
+          "spied",
+          "발견했다, 알아보았다"
+        ],
+        [
+          "dark shapes",
+          "어두운 형체들"
+        ],
+        [
+          "moving",
+          "움직이는"
+        ],
+        [
+          "beneath her",
+          "그녀 아래에서"
+        ]
+      ]
+    },
+    {
+      "text": "What could they be? Fish? Sharks?",
+      "ko": "그것들은 무엇일까? 물고기? 상어?",
+      "praise": "could를 추측으로 읽은 거 잘했어요.",
+      "points": [
+        {
+          "en": "What could they be",
+          "sub": "가",
+          "top": "는",
+          "answer": "그것들은 무엇일까?",
+          "check": [
+            "무엇일까",
+            "뭘까",
+            "무엇일지",
+            "뭐지"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "could를 능력·과거로 보고 '무엇이 될 수 있었나'로 해석",
+          "signals": [
+            "될 수 있었",
+            "할 수 있었"
+          ],
+          "ask": "여기 could는 '~일까'라는 추측이에요.",
+          "wrong": "무엇이 될 수 있었나?",
+          "right": "무엇일까?"
+        }
+      ],
+      "glosses": [
+        [
+          "What",
+          "무엇"
+        ],
+        [
+          "could",
+          "~일까 (추측)"
+        ],
+        [
+          "they",
+          "그것들"
+        ],
+        [
+          "be",
+          "이다"
+        ],
+        [
+          "Fish",
+          "물고기"
+        ],
+        [
+          "Sharks",
+          "상어"
+        ]
+      ]
+    },
+    {
+      "text": "Anna shook with fear, her blood running cold.",
+      "ko": "애나는 두려움에 떨었고, 피가 차갑게 식었다",
+      "praise": "her blood running cold를 뒤에 붙는 설명으로 본 거 좋아요.",
+      "points": [
+        {
+          "en": "shook with fear",
+          "sub": "가",
+          "top": "는",
+          "answer": "두려움에 떨었다",
+          "check": [
+            "두려움",
+            "무서",
+            "겁",
+            "떨"
+          ]
+        },
+        {
+          "en": "her blood running cold",
+          "sub": "가",
+          "top": "는",
+          "answer": "피가 차갑게 식은 채로",
+          "check": [
+            "피가",
+            "차갑",
+            "싸늘",
+            "식"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "shook을 타동사로 보고 무언가를 흔들었다고 해석",
+          "signals": [
+            "흔들었다",
+            "흔들어"
+          ],
+          "ask": "여기 shook은 애나 자신이 어떻게 됐는지를 말해요.",
+          "wrong": "무언가를 흔들었다",
+          "right": "두려움에 떨었다"
+        },
+        {
+          "id": "E2",
+          "detect": "run을 '흐르다/달리다'로 보고 피가 흘렀다고 해석",
+          "signals": [
+            "피가 흘렀",
+            "피가 흘러",
+            "피가 달렸"
+          ],
+          "ask": "여기 running cold는 피가 어떻게 됐는지를 말해요.",
+          "wrong": "피가 흘러내렸다",
+          "right": "피가 차갑게 식었다"
+        }
+      ],
+      "glosses": [
+        [
+          "Anna",
+          "애나(사람 이름)"
+        ],
+        [
+          "shook",
+          "떨었다"
+        ],
+        [
+          "with fear",
+          "두려움에"
+        ],
+        [
+          "her blood",
+          "그녀의 피가"
+        ],
+        [
+          "running cold",
+          "차갑게 식은 채로"
+        ]
+      ]
+    },
+    {
+      "text": "The last bits of strength were draining away from her arms and upper body.",
+      "ko": "마지막 남은 힘이 그녀의 팔과 상체에서 빠져나가고 있었다",
+      "praise": "last를 '마지막 남은'으로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "the last bits of strength",
+          "sub": "이",
+          "top": "은",
+          "answer": "마지막 남은 힘",
+          "check": [
+            "마지막",
+            "남은 힘",
+            "힘이"
+          ]
+        },
+        {
+          "en": "were draining away",
+          "sub": "가",
+          "top": "는",
+          "answer": "빠져나가고 있었다",
+          "check": [
+            "빠져나",
+            "빠지",
+            "사라지",
+            "빠져 나"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "last를 '지난'으로 해석",
+          "signals": [
+            "지난 힘",
+            "지난번"
+          ],
+          "ask": "여기 last는 시간이 아니라 남은 정도를 말해요.",
+          "wrong": "지난 힘",
+          "right": "마지막 남은 힘"
+        },
+        {
+          "id": "E2",
+          "detect": "drain을 '배수하다/물을 빼다'로 해석",
+          "signals": [
+            "배수",
+            "물을 뺐",
+            "하수"
+          ],
+          "ask": "drain이 힘과 같이 쓰이면 뜻이 달라져요.",
+          "wrong": "물을 빼내고 있었다",
+          "right": "빠져나가고 있었다"
+        }
+      ],
+      "glosses": [
+        [
+          "The last bits of",
+          "마지막 남은"
+        ],
+        [
+          "strength",
+          "힘"
+        ],
+        [
+          "were draining away",
+          "빠져나가고 있었다"
+        ],
+        [
+          "from her arms",
+          "그녀의 팔에서"
+        ],
+        [
+          "and upper body",
+          "그리고 상체에서"
+        ]
+      ]
+    },
+    {
+      "text": "She did not know how much longer she could hang on,",
+      "ko": "그녀는 얼마나 더 오래 버틸 수 있을지 알 수 없었다",
+      "praise": "hang on을 '버티다'로 본 거 좋아요.",
+      "points": [
+        {
+          "en": "hang on",
+          "sub": "이",
+          "top": "은",
+          "answer": "버티다",
+          "check": [
+            "버티",
+            "견디",
+            "매달"
+          ]
+        },
+        {
+          "en": "how much longer she could hang on",
+          "sub": "이",
+          "top": "은",
+          "answer": "얼마나 더 오래 버틸 수 있을지",
+          "check": [
+            "얼마나",
+            "언제까지",
+            "더 오래"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "hang on을 '전화를 끊지 않다'로 해석",
+          "signals": [
+            "전화",
+            "끊지 않"
+          ],
+          "ask": "hang on은 상황에 따라 뜻이 갈려요.",
+          "wrong": "전화를 끊지 않다",
+          "right": "버티다"
+        }
+      ],
+      "glosses": [
+        [
+          "She did not know",
+          "그녀는 알지 못했다"
+        ],
+        [
+          "how much longer",
+          "얼마나 더 오래"
+        ],
+        [
+          "she could",
+          "그녀가 ~할 수 있을지"
+        ],
+        [
+          "hang on",
+          "버티다"
+        ]
+      ]
+    },
+    {
+      "text": "but then Anna glanced up and couldn't believe what she saw.",
+      "ko": "그런데 그때 애나는 위를 올려다보았고, 자기가 본 것을 믿을 수 없었다",
+      "praise": "what she saw를 '그녀가 본 것'으로 묶은 거 잘했어요.",
+      "points": [
+        {
+          "en": "glanced up",
+          "sub": "이",
+          "top": "은",
+          "answer": "위를 올려다보았다",
+          "check": [
+            "올려다",
+            "위를",
+            "쳐다"
+          ]
+        },
+        {
+          "en": "couldn't believe what she saw",
+          "sub": "가",
+          "top": "는",
+          "answer": "자기가 본 것을 믿을 수 없었다",
+          "check": [
+            "믿을 수 없",
+            "믿기지",
+            "본 것"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "what을 의문사로 보고 '무엇을 봤는지'로 해석",
+          "signals": [
+            "무엇을 봤는지",
+            "뭘 봤는지"
+          ],
+          "ask": "여기 what은 '~하는 것'으로 묶여요.",
+          "wrong": "무엇을 봤는지 믿을 수 없었다",
+          "right": "자기가 본 것을 믿을 수 없었다"
+        }
+      ],
+      "glosses": [
+        [
+          "but then",
+          "그런데 그때"
+        ],
+        [
+          "Anna",
+          "애나(사람 이름)"
+        ],
+        [
+          "glanced up",
+          "위를 올려다보았다"
+        ],
+        [
+          "couldn't believe",
+          "믿을 수 없었다"
+        ],
+        [
+          "what she saw",
+          "그녀가 본 것"
+        ],
+        [
+          "and",
+          "그리고"
+        ]
+      ]
+    },
+    {
+      "text": "A fishing boat was approaching over the big waves.",
+      "ko": "고깃배 한 척이 큰 파도를 넘어 다가오고 있었다",
+      "praise": "approaching을 '다가오고 있었다'로 본 거 좋아요.",
+      "points": [
+        {
+          "en": "a fishing boat",
+          "sub": "가",
+          "top": "는",
+          "answer": "고깃배 한 척",
+          "check": [
+            "고깃배",
+            "어선",
+            "낚싯배",
+            "배가",
+            "배 한"
+          ]
+        },
+        {
+          "en": "was approaching over the big waves",
+          "sub": "가",
+          "top": "는",
+          "answer": "큰 파도를 넘어 다가오고 있었다",
+          "check": [
+            "다가",
+            "접근",
+            "파도"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "approaching을 명사 '접근법'으로 해석",
+          "signals": [
+            "접근법",
+            "접근 방식"
+          ],
+          "ask": "여기 approaching은 배가 하고 있는 일이에요.",
+          "wrong": "접근법이었다",
+          "right": "다가오고 있었다"
+        }
+      ],
+      "glosses": [
+        [
+          "A fishing boat",
+          "고깃배 한 척"
+        ],
+        [
+          "was approaching",
+          "다가오고 있었다"
+        ],
+        [
+          "over",
+          "~을 넘어"
+        ],
+        [
+          "the big waves",
+          "큰 파도"
+        ]
+      ]
+    },
+    {
+      "text": "After being in the water for 3 hours, she was finally rescued.",
+      "ko": "물속에 세 시간 동안 있은 뒤, 그녀는 마침내 구조되었다",
+      "praise": "was rescued를 '구조되었다'로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "was finally rescued",
+          "sub": "가",
+          "top": "는",
+          "answer": "마침내 구조되었다",
+          "check": [
+            "구조",
+            "구출",
+            "구해"
+          ]
+        },
+        {
+          "en": "After being in the water for 3 hours",
+          "sub": "이",
+          "top": "은",
+          "answer": "물속에 세 시간 있은 뒤",
+          "check": [
+            "세 시간",
+            "3시간",
+            "3 시간",
+            "있은 뒤",
+            "지난 후"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "수동태를 능동으로 보고 그녀가 구조했다고 해석",
+          "signals": [
+            "그녀가 구조했",
+            "그녀는 구조했"
+          ],
+          "ask": "rescued 앞에 was가 있어요.",
+          "wrong": "그녀가 구조했다",
+          "right": "그녀가 구조되었다"
+        }
+      ],
+      "glosses": [
+        [
+          "After being in the water",
+          "물속에 있은 뒤"
+        ],
+        [
+          "for 3 hours",
+          "세 시간 동안"
+        ],
+        [
+          "she",
+          "그녀는"
+        ],
+        [
+          "was finally rescued",
+          "마침내 구조되었다"
+        ]
+      ]
+    },
+    {
+      "text": "When she got on the boat, she felt a sense of relief spread through her body.",
+      "ko": "배에 올라탔을 때, 그녀는 안도감이 온몸에 퍼지는 것을 느꼈다",
+      "praise": "felt ~ spread를 '퍼지는 것을 느꼈다'로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "got on the boat",
+          "sub": "이",
+          "top": "은",
+          "answer": "배에 올라탔다",
+          "check": [
+            "올라",
+            "탔",
+            "탑승"
+          ]
+        },
+        {
+          "en": "felt a sense of relief spread",
+          "sub": "이",
+          "top": "은",
+          "answer": "안도감이 퍼지는 것을 느꼈다",
+          "check": [
+            "안도",
+            "안심",
+            "퍼지",
+            "번지"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "spread를 명사 '확산'으로 보고 동사 자리를 놓침",
+          "signals": [
+            "확산",
+            "퍼짐을"
+          ],
+          "ask": "felt 뒤에는 '무엇이 어떻게 되는지'가 와요.",
+          "wrong": "안도의 확산을 느꼈다",
+          "right": "안도감이 퍼지는 것을 느꼈다"
+        }
+      ],
+      "glosses": [
+        [
+          "When she got on the boat",
+          "배에 올라탔을 때"
+        ],
+        [
+          "she felt",
+          "그녀는 느꼈다"
+        ],
+        [
+          "a sense of relief",
+          "안도감"
+        ],
+        [
+          "spread",
+          "퍼지는 것을"
+        ],
+        [
+          "through her body",
+          "온몸에"
+        ]
+      ]
+    }
+  ]
+}

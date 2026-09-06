@@ -1,0 +1,1306 @@
+{
+  "id": "suneung-37-urban-planning",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 37번",
+  "category": "리딩",
+  "topic_intro": "자연과 도시를 함께 놓으려는 여러 도시계획 갈래",
+  "sentence": "Today, historic ideas about integrating nature and urban/suburban space find expression in various interpretations of sustainable urban planning. However, the role of social justice in these approaches remains highly controversial. For example, Landscape Urbanism is a relatively recent planning approach that advocates for native habitat designs that include diverse species and landscapes that require very low resource use. However, critics claim that Landscape Urbanists prioritize aesthetic and ecological concerns over human needs. In contrast, New Urbanism is an approach that was popularized in the 1980s and promotes walkable streets, compact design, and mixed-use developments. But Landscape Urbanists find that these designs do not prioritize the natural environment and often involve diverting streams and disrupting natural wetlands. Still others, such as those advocating for \"just sustainabilities\" or \"complete streets,\" find that both approaches are overly idealistic and neither pays enough attention to the realities of social dynamics and systemic inequality.",
+  "grammar_type": "글의순서_도시계획",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 and로 두 갈래가 되면",
+    "how": "and·관계사 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Landscape Urbanism",
+      "ko": "랜드스케이프 어버니즘",
+      "type": "other"
+    },
+    {
+      "en": "New Urbanism",
+      "ko": "뉴 어버니즘",
+      "type": "other"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Today, historic ideas about integrating nature and urban/suburban space find expression in various interpretations of sustainable urban planning.",
+      "model_translation": "오늘날 자연과 도시·교외 공간을 하나로 엮으려는 오래된 생각들은 지속 가능한 도시계획의 여러 해석 속에서 표현을 얻는다",
+      "praise": "find expression in을 '~에서 표현을 얻는다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Today",
+          "ko": "오늘날"
+        },
+        {
+          "en": "historic",
+          "ko": "오래된, 역사가 있는"
+        },
+        {
+          "en": "integrating",
+          "ko": "하나로 엮는 것"
+        },
+        {
+          "en": "nature",
+          "ko": "자연"
+        },
+        {
+          "en": "urban",
+          "ko": "도시의"
+        },
+        {
+          "en": "suburban",
+          "ko": "교외의"
+        },
+        {
+          "en": "find expression in",
+          "ko": "~에서 표현되어 나타나다"
+        },
+        {
+          "en": "various",
+          "ko": "여러"
+        },
+        {
+          "en": "interpretations",
+          "ko": "해석"
+        },
+        {
+          "en": "sustainable",
+          "ko": "지속 가능한"
+        },
+        {
+          "en": "planning",
+          "ko": "계획"
+        },
+        {
+          "en": "ideas",
+          "ko": "생각들"
+        },
+        {
+          "en": "about",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "space",
+          "ko": "공간, 우주"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "integrating nature and urban space → 자연과 도시 공간을 하나로 엮는 것",
+          "check": [
+            "자연",
+            "도시",
+            "통합",
+            "엮",
+            "합치"
+          ],
+          "nudge": "integrating nature and urban space이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "integrating nature and urban space은 여기서 '자연과 도시 공간을 하나로 엮는 것'이에요."
+        },
+        {
+          "id": 2,
+          "text": "find expression in ~ → ~에서 표현을 얻는다",
+          "check": [
+            "표현",
+            "드러",
+            "나타"
+          ],
+          "nudge": "find expression in ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "find expression in ~은 여기서 '~에서 표현을 얻는다'예요."
+        },
+        {
+          "id": 3,
+          "text": "sustainable urban planning → 지속 가능한 도시계획",
+          "check": [
+            "지속",
+            "도시계획",
+            "계획"
+          ],
+          "nudge": "sustainable urban planning이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "sustainable urban planning은 여기서 '지속 가능한 도시계획'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "historic를 '역사적 사건의'로만 보고 흐림",
+          "signals": [
+            "역사적 사건"
+          ],
+          "treatment": {
+            "message": "historic ideas는 어떤 생각일까요? '역사적 사건의 생각'일까요, '오래전부터 있어 온 생각'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "역사적 사건의 생각",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "오래전부터 있어 온 생각",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '오래전부터 있어 온 생각'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '오래전부터 있어 온 생각'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "find를 '찾다'로만 보고 관용구를 놓침",
+          "signals": [
+            "표현을 찾는다"
+          ],
+          "treatment": {
+            "message": "find expression in은 한 덩어리로 쓰이는 말이에요. '표현을 찾는다'일까요, '~에서 표현되어 나타난다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "표현을 찾는다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~에서 표현되어 나타난다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~에서 표현되어 나타난다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~에서 표현되어 나타난다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "However, the role of social justice in these approaches remains highly controversial.",
+      "model_translation": "그러나 이런 접근들에서 사회 정의가 하는 몫은 여전히 논쟁이 많다",
+      "praise": "remains를 '여전히 ~이다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "However",
+          "ko": "그러나"
+        },
+        {
+          "en": "role",
+          "ko": "역할, 몫"
+        },
+        {
+          "en": "justice",
+          "ko": "정의"
+        },
+        {
+          "en": "approaches",
+          "ko": "접근(법)"
+        },
+        {
+          "en": "remains",
+          "ko": "여전히 ~이다"
+        },
+        {
+          "en": "highly",
+          "ko": "매우"
+        },
+        {
+          "en": "controversial",
+          "ko": "논쟁이 많은"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "social",
+          "ko": "사회적인"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "these",
+          "ko": "이것들"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the role of social justice → 사회 정의가 하는 몫",
+          "check": [
+            "사회 정의",
+            "역할",
+            "몫"
+          ],
+          "nudge": "the role of social justice가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the role of social justice는 여기서 '사회 정의가 하는 몫'이에요."
+        },
+        {
+          "id": 2,
+          "text": "remains highly controversial → 여전히 논쟁이 많다",
+          "check": [
+            "논쟁",
+            "논란",
+            "여전"
+          ],
+          "nudge": "remains highly controversial이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "remains highly controversial은 여기서 '여전히 논쟁이 많다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "remains를 명사 '유물/나머지'로 해석",
+          "signals": [
+            "유물",
+            "나머지"
+          ],
+          "treatment": {
+            "message": "이 문장의 동사는 무엇일까요? '논쟁적인 나머지'일까요, '여전히 논쟁적이다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "논쟁적인 나머지",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "여전히 논쟁적이다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '여전히 논쟁적이다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '여전히 논쟁적이다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "For example, Landscape Urbanism is a relatively recent planning approach that advocates for native habitat designs that include diverse species and landscapes that require very low resource use.",
+      "model_translation": "예를 들어 랜드스케이프 어버니즘은 비교적 최근의 계획 접근으로, 다양한 종을 품고 자원을 아주 적게 쓰는 토착 서식지 설계와 경관을 주장한다",
+      "praise": "that절 셋이 각각 무엇을 꾸미는지 가려낸 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Landscape Urbanism",
+          "ko": "랜드스케이프 어버니즘(도시계획 갈래)"
+        },
+        {
+          "en": "relatively",
+          "ko": "비교적"
+        },
+        {
+          "en": "recent",
+          "ko": "최근의"
+        },
+        {
+          "en": "advocates for",
+          "ko": "~을 주장하다"
+        },
+        {
+          "en": "native",
+          "ko": "그 땅 본래의, 토착의"
+        },
+        {
+          "en": "habitat",
+          "ko": "서식지"
+        },
+        {
+          "en": "designs",
+          "ko": "설계"
+        },
+        {
+          "en": "include",
+          "ko": "품다, 포함하다"
+        },
+        {
+          "en": "diverse",
+          "ko": "다양한"
+        },
+        {
+          "en": "species",
+          "ko": "종"
+        },
+        {
+          "en": "landscapes",
+          "ko": "경관"
+        },
+        {
+          "en": "resource",
+          "ko": "자원"
+        },
+        {
+          "en": "For",
+          "ko": "~동안"
+        },
+        {
+          "en": "example",
+          "ko": "예"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "planning",
+          "ko": "계획"
+        },
+        {
+          "en": "approach",
+          "ko": "접근"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "require",
+          "ko": "필요로 하다"
+        },
+        {
+          "en": "very",
+          "ko": "매우"
+        },
+        {
+          "en": "low",
+          "ko": "낮은"
+        },
+        {
+          "en": "use",
+          "ko": "사용, 사용하다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "advocates for ~ → ~을 주장하다",
+          "check": [
+            "주장",
+            "옹호",
+            "지지"
+          ],
+          "nudge": "advocates for ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "advocates for ~는 여기서 '~을 주장하다'예요."
+        },
+        {
+          "id": 2,
+          "text": "native habitat designs → 토착 서식지 설계",
+          "check": [
+            "토착",
+            "서식지",
+            "설계",
+            "본래"
+          ],
+          "nudge": "native habitat designs이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "native habitat designs은 여기서 '토착 서식지 설계'예요."
+        },
+        {
+          "id": 3,
+          "text": "require very low resource use → 자원을 아주 적게 쓰다",
+          "check": [
+            "자원",
+            "적게",
+            "낮은"
+          ],
+          "nudge": "require very low resource use가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "require very low resource use는 여기서 '자원을 아주 적게 쓰다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "advocates를 명사 '옹호자들'로 보고 동사를 놓침",
+          "signals": [
+            "옹호자들"
+          ],
+          "treatment": {
+            "message": "that advocates에서 advocates는 무엇일까요? '최근 접근의 옹호자들'일까요, '~을 주장하는 접근'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "최근 접근의 옹호자들",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~을 주장하는 접근",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~을 주장하는 접근'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~을 주장하는 접근'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "native를 '원주민의'로만 보고 문맥을 놓침",
+          "signals": [
+            "원주민"
+          ],
+          "treatment": {
+            "message": "habitat과 같이 온 native는 무엇일까요? '원주민 서식지'일까요, '그 땅 본래의 서식지'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "원주민 서식지",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그 땅 본래의 서식지",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그 땅 본래의 서식지'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그 땅 본래의 서식지'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "However, critics claim that Landscape Urbanists prioritize aesthetic and ecological concerns over human needs.",
+      "model_translation": "그러나 비평가들은 랜드스케이프 어버니스트들이 사람의 필요보다 미적·생태적 관심을 앞세운다고 주장한다",
+      "praise": "prioritize A over B를 'B보다 A를 앞세우다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "critics",
+          "ko": "비평가"
+        },
+        {
+          "en": "claim",
+          "ko": "주장하다"
+        },
+        {
+          "en": "Urbanists",
+          "ko": "어버니스트(그 갈래를 따르는 사람들)"
+        },
+        {
+          "en": "prioritize",
+          "ko": "앞세우다"
+        },
+        {
+          "en": "aesthetic",
+          "ko": "미적인"
+        },
+        {
+          "en": "ecological",
+          "ko": "생태적인"
+        },
+        {
+          "en": "concerns",
+          "ko": "관심사"
+        },
+        {
+          "en": "needs",
+          "ko": "필요"
+        },
+        {
+          "en": "However",
+          "ko": "그러나"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "Landscape",
+          "ko": "경관, 풍경"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "over",
+          "ko": "~을 넘어"
+        },
+        {
+          "en": "human",
+          "ko": "사람"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "prioritize A over B → B보다 A를 앞세우다",
+          "check": [
+            "앞세",
+            "우선",
+            "먼저",
+            "보다"
+          ],
+          "nudge": "prioritize A over B가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "prioritize A over B는 여기서 'B보다 A를 앞세우다'예요."
+        },
+        {
+          "id": 2,
+          "text": "aesthetic and ecological concerns → 미적·생태적 관심",
+          "check": [
+            "미적",
+            "아름",
+            "생태",
+            "관심"
+          ],
+          "nudge": "aesthetic and ecological concerns이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "aesthetic and ecological concerns은 여기서 '미적·생태적 관심'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "A와 B를 뒤바꿔 사람의 필요를 앞세운다고 해석",
+          "signals": [
+            "사람의 필요를 우선",
+            "인간의 필요를 먼저"
+          ],
+          "treatment": {
+            "message": "over 앞뒤 중 어느 쪽을 앞세운다는 걸까요? '사람의 필요를 앞세운다'일까요, '미적·생태적 관심을 앞세운다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "사람의 필요를 앞세운다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "미적·생태적 관심을 앞세운다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '미적·생태적 관심을 앞세운다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '미적·생태적 관심을 앞세운다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "In contrast, New Urbanism is an approach that was popularized in the 1980s and promotes walkable streets, compact design, and mixed-use developments.",
+      "model_translation": "이와 달리 뉴 어버니즘은 1980년대에 널리 퍼진 접근으로, 걷기 좋은 거리와 촘촘한 설계, 복합 용도 개발을 밀어붙인다",
+      "praise": "was popularized를 '널리 퍼졌다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "In contrast",
+          "ko": "이와 달리"
+        },
+        {
+          "en": "New Urbanism",
+          "ko": "뉴 어버니즘(도시계획 갈래)"
+        },
+        {
+          "en": "popularized",
+          "ko": "널리 퍼진"
+        },
+        {
+          "en": "1980s",
+          "ko": "1980년대"
+        },
+        {
+          "en": "promotes",
+          "ko": "밀어붙이다, 장려하다"
+        },
+        {
+          "en": "walkable",
+          "ko": "걷기 좋은"
+        },
+        {
+          "en": "streets",
+          "ko": "거리"
+        },
+        {
+          "en": "compact",
+          "ko": "촘촘한"
+        },
+        {
+          "en": "design",
+          "ko": "설계"
+        },
+        {
+          "en": "mixed-use",
+          "ko": "복합 용도의"
+        },
+        {
+          "en": "developments",
+          "ko": "개발"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "approach",
+          "ko": "접근"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "In contrast → 이와 달리",
+          "check": [
+            "이와 달리",
+            "대조",
+            "반면"
+          ],
+          "nudge": "In contrast가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "In contrast는 여기서 '이와 달리'예요."
+        },
+        {
+          "id": 2,
+          "text": "was popularized → 널리 퍼졌다",
+          "check": [
+            "널리",
+            "유행",
+            "퍼진",
+            "대중화"
+          ],
+          "nudge": "was popularized가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "was popularized는 여기서 '널리 퍼졌다'예요."
+        },
+        {
+          "id": 3,
+          "text": "walkable streets, compact design → 걷기 좋은 거리, 촘촘한 설계",
+          "check": [
+            "걷기",
+            "보행",
+            "거리",
+            "촘촘",
+            "밀집"
+          ],
+          "nudge": "walkable streets, compact design이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "walkable streets, compact design은 여기서 '걷기 좋은 거리, 촘촘한 설계'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "compact를 '작은 화장품 갑'으로 해석",
+          "signals": [
+            "콤팩트 갑",
+            "화장"
+          ],
+          "treatment": {
+            "message": "design과 같이 온 compact는 무엇일까요? '콤팩트 설계품'일까요, '촘촘한 설계'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "콤팩트 설계품",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "촘촘한 설계",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '촘촘한 설계'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '촘촘한 설계'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "mixed-use를 '섞어 쓴'으로만 보고 흐림",
+          "signals": [
+            "섞어 쓴 개발"
+          ],
+          "treatment": {
+            "message": "mixed-use developments는 무엇일까요? '섞어 쓴 개발'일까요, '주거와 상업을 함께 두는 복합 용도 개발'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "섞어 쓴 개발",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "주거와 상업을 함께 두는 복합 용도 개발",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '주거와 상업을 함께 두는 복합 용도 개발'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '주거와 상업을 함께 두는 복합 용도 개발'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "But Landscape Urbanists find that these designs do not prioritize the natural environment and often involve diverting streams and disrupting natural wetlands.",
+      "model_translation": "그러나 랜드스케이프 어버니스트들은 그런 설계가 자연환경을 앞세우지 않고, 흔히 물줄기를 돌리고 자연 습지를 망가뜨리는 일을 끌어들인다고 본다",
+      "praise": "involve 뒤의 두 가지를 나란히 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "environment",
+          "ko": "환경"
+        },
+        {
+          "en": "involve",
+          "ko": "끌어들이다, 수반하다"
+        },
+        {
+          "en": "diverting",
+          "ko": "돌리는 것"
+        },
+        {
+          "en": "streams",
+          "ko": "물줄기, 개울"
+        },
+        {
+          "en": "disrupting",
+          "ko": "망가뜨리는 것"
+        },
+        {
+          "en": "wetlands",
+          "ko": "습지"
+        },
+        {
+          "en": "But",
+          "ko": "하지만"
+        },
+        {
+          "en": "Landscape",
+          "ko": "경관, 풍경"
+        },
+        {
+          "en": "Urbanists",
+          "ko": "어버니스트(그 갈래를 따르는 사람들)"
+        },
+        {
+          "en": "find",
+          "ko": "찾다, 발견하다"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "these",
+          "ko": "이것들"
+        },
+        {
+          "en": "designs",
+          "ko": "설계"
+        },
+        {
+          "en": "do",
+          "ko": "하다"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "prioritize",
+          "ko": "앞세우다"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "natural",
+          "ko": "자연의"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "often",
+          "ko": "자주"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "do not prioritize the natural environment → 자연환경을 앞세우지 않는다",
+          "check": [
+            "자연환경",
+            "앞세우지 않",
+            "우선하지"
+          ],
+          "nudge": "do not prioritize the natural environment이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "do not prioritize the natural environment은 여기서 '자연환경을 앞세우지 않는다'예요."
+        },
+        {
+          "id": 2,
+          "text": "diverting streams → 물줄기를 돌리는 것",
+          "check": [
+            "물줄기",
+            "하천",
+            "돌리",
+            "우회"
+          ],
+          "nudge": "diverting streams이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "diverting streams은 여기서 '물줄기를 돌리는 것'이에요."
+        },
+        {
+          "id": 3,
+          "text": "disrupting natural wetlands → 자연 습지를 망가뜨리는 것",
+          "check": [
+            "습지",
+            "망가",
+            "훼손",
+            "무너"
+          ],
+          "nudge": "disrupting natural wetlands이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "disrupting natural wetlands은 여기서 '자연 습지를 망가뜨리는 것'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "involve를 '관여하다'로만 보고 목적어를 놓침",
+          "signals": [
+            "관여한다."
+          ],
+          "treatment": {
+            "message": "involve 뒤에 오는 두 가지는 무엇일까요? '설계가 관여한다'일까요, '물줄기를 돌리고 습지를 망가뜨리는 일을 끌어들인다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "설계가 관여한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "물줄기를 돌리고 습지를 망가뜨리는 일을 끌어들인다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '물줄기를 돌리고 습지를 망가뜨리는 일을 끌어들인다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '물줄기를 돌리고 습지를 망가뜨리는 일을 끌어들인다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "streams를 '흐름/스트리밍'으로 해석",
+          "signals": [
+            "스트리밍",
+            "흐름을 돌"
+          ],
+          "treatment": {
+            "message": "diverting streams는 무엇을 돌리는 걸까요? '스트리밍을 돌린다'일까요, '물줄기를 돌린다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "스트리밍을 돌린다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "물줄기를 돌린다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '물줄기를 돌린다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '물줄기를 돌린다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Still others, such as those advocating for \"just sustainabilities\" or \"complete streets,\" find that both approaches are overly idealistic and neither pays enough attention to the realities of social dynamics and systemic inequality.",
+      "model_translation": "또 다른 이들, 예를 들어 \"정의로운 지속가능성\"이나 \"완전한 거리\"를 주장하는 사람들은 두 접근 모두 지나치게 이상적이며 어느 쪽도 사회 역학과 구조적 불평등의 현실에 충분히 눈길을 주지 않는다고 본다",
+      "praise": "neither를 '어느 쪽도 ~않다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Still others",
+          "ko": "또 다른 이들"
+        },
+        {
+          "en": "advocating",
+          "ko": "주장하는"
+        },
+        {
+          "en": "just",
+          "ko": "정의로운"
+        },
+        {
+          "en": "sustainabilities",
+          "ko": "지속가능성"
+        },
+        {
+          "en": "complete",
+          "ko": "완전한"
+        },
+        {
+          "en": "overly",
+          "ko": "지나치게"
+        },
+        {
+          "en": "idealistic",
+          "ko": "이상적인"
+        },
+        {
+          "en": "neither",
+          "ko": "어느 쪽도 ~아니다"
+        },
+        {
+          "en": "pays",
+          "ko": "(관심을) 주다"
+        },
+        {
+          "en": "enough",
+          "ko": "충분히"
+        },
+        {
+          "en": "attention",
+          "ko": "관심"
+        },
+        {
+          "en": "realities",
+          "ko": "현실"
+        },
+        {
+          "en": "dynamics",
+          "ko": "역학, 움직임"
+        },
+        {
+          "en": "systemic",
+          "ko": "구조적인"
+        },
+        {
+          "en": "inequality",
+          "ko": "불평등"
+        },
+        {
+          "en": "such",
+          "ko": "그러한"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "those",
+          "ko": "저것들"
+        },
+        {
+          "en": "for",
+          "ko": "~동안"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "streets",
+          "ko": "거리"
+        },
+        {
+          "en": "find",
+          "ko": "찾다, 발견하다"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "both",
+          "ko": "둘 다"
+        },
+        {
+          "en": "approaches",
+          "ko": "접근(법)"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "social",
+          "ko": "사회적인"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "still others → 또 다른 이들",
+          "check": [
+            "또 다른",
+            "다른 사람",
+            "한편"
+          ],
+          "nudge": "still others가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "still others는 여기서 '또 다른 이들'이에요."
+        },
+        {
+          "id": 2,
+          "text": "overly idealistic → 지나치게 이상적인",
+          "check": [
+            "지나치",
+            "너무",
+            "이상적"
+          ],
+          "nudge": "overly idealistic이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "overly idealistic은 여기서 '지나치게 이상적인'이에요."
+        },
+        {
+          "id": 3,
+          "text": "neither pays enough attention → 어느 쪽도 충분히 눈길을 주지 않는다",
+          "check": [
+            "어느 쪽도",
+            "둘 다 아니",
+            "관심을 주지 않",
+            "충분히"
+          ],
+          "nudge": "neither pays enough attention가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "neither pays enough attention는 여기서 '어느 쪽도 충분히 눈길을 주지 않는다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "neither를 '둘 중 하나'로 보고 부정을 놓침",
+          "signals": [
+            "둘 중 하나는",
+            "한쪽은"
+          ],
+          "treatment": {
+            "message": "neither는 몇 개를 부정할까요? '한쪽은 관심을 준다'일까요, '어느 쪽도 관심을 주지 않는다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "한쪽은 관심을 준다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "어느 쪽도 관심을 주지 않는다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '어느 쪽도 관심을 주지 않는다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '어느 쪽도 관심을 주지 않는다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "just를 '단지'로 보고 '정의로운'을 놓침",
+          "signals": [
+            "단지 지속가능성"
+          ],
+          "treatment": {
+            "message": "just sustainabilities의 just는 무엇일까요? '단지 지속가능성'일까요, '정의로운 지속가능성'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "단지 지속가능성",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "정의로운 지속가능성",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '정의로운 지속가능성'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '정의로운 지속가능성'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

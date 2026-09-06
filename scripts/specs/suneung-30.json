@@ -1,0 +1,781 @@
+{
+  "id": "suneung-30-geometry-landmarks",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 30번",
+  "category": "리딩",
+  "topic_intro": "위치를 찾을 때 모양과 표지 중 무엇에 기대는가",
+  "sentence": "While it has been found that young children rely exclusively on geometric information to determine the location of an object hidden in a small enclosure, exclusive use of geometry does not occur in larger spaces. Although, in a small room, children failed to incorporate information about nongeometric features (i.e., a blue wall), they used both types of information in a larger room. These findings suggest that geometric and nongeometric information may be combined in a weighted fashion. Geometry may be privileged because it is more stable across time than is nongeometric information. Whether or not nongeometric landmark information is combined with geometry may depend on the ecological validity of nongeometric features; for example, larger features may be more stable and hence more reliable. Further, a variety of mobile animals give more weight to nearer than to farther landmarks in estimation, consistent with Weber's law in which smaller distances would be coded more accurately than larger distances.",
+  "grammar_type": "어휘_학술논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 세미콜론으로 나뉘면",
+    "how": "주절 앞이나 세미콜론 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Weber",
+      "ko": "베버",
+      "type": "person"
+    }
+  ],
+  "chunks": [
+    {
+      "text": "While it has been found that young children rely exclusively on geometric information to determine the location of an object hidden in a small enclosure,",
+      "ko": "어린아이들이 작은 공간에 숨겨진 물체의 위치를 알아내는 데 오직 기하학적 정보에만 기댄다는 것이 밝혀지긴 했지만",
+      "praise": "rely exclusively on을 '오직 ~에만 기댄다'로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "rely exclusively on ~",
+          "sub": "이",
+          "top": "은",
+          "answer": "오직 ~에만 기대다",
+          "check": [
+            "오직",
+            "만 의존",
+            "만 기대",
+            "전적으로"
+          ]
+        },
+        {
+          "en": "to determine the location of an object",
+          "sub": "이",
+          "top": "은",
+          "answer": "물체의 위치를 알아내기 위해",
+          "check": [
+            "위치",
+            "물체",
+            "찾",
+            "알아내"
+          ]
+        },
+        {
+          "en": "hidden in a small enclosure",
+          "sub": "이",
+          "top": "은",
+          "answer": "작은 공간에 숨겨진",
+          "check": [
+            "숨겨",
+            "숨은",
+            "작은"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "While을 '~하는 동안'으로 보고 양보를 놓침",
+          "signals": [
+            "하는 동안",
+            "동안에"
+          ],
+          "ask": "문장 앞의 While은 시간일까요, 양보일까요?",
+          "wrong": "밝혀지는 동안",
+          "right": "밝혀지긴 했지만"
+        },
+        {
+          "id": "E2",
+          "detect": "hidden을 문장의 동사로 보고 끊음",
+          "signals": [
+            "물체가 숨겼다",
+            "물체를 숨긴다"
+          ],
+          "ask": "hidden은 앞의 무엇을 꾸밀까요?",
+          "wrong": "물체가 숨겼다",
+          "right": "숨겨진 물체"
+        }
+      ],
+      "glosses": [
+        [
+          "While",
+          "~이긴 하지만"
+        ],
+        [
+          "has been found",
+          "밝혀졌다"
+        ],
+        [
+          "rely",
+          "기대다, 의존하다"
+        ],
+        [
+          "exclusively",
+          "오직 ~만"
+        ],
+        [
+          "geometric",
+          "기하학적인"
+        ],
+        [
+          "determine",
+          "알아내다, 정하다"
+        ],
+        [
+          "location",
+          "위치"
+        ],
+        [
+          "object",
+          "물체"
+        ],
+        [
+          "hidden",
+          "숨겨진"
+        ],
+        [
+          "enclosure",
+          "둘러싸인 공간"
+        ]
+      ]
+    },
+    {
+      "text": "exclusive use of geometry does not occur in larger spaces.",
+      "ko": "더 넓은 공간에서는 기하만 쓰는 일이 일어나지 않는다",
+      "praise": "exclusive use를 '~만 쓰는 것'으로 본 거 좋아요.",
+      "points": [
+        {
+          "en": "exclusive use of geometry",
+          "sub": "가",
+          "top": "는",
+          "answer": "기하만 쓰는 것",
+          "check": [
+            "기하",
+            "만 쓰",
+            "전적",
+            "오직"
+          ]
+        },
+        {
+          "en": "does not occur in larger spaces",
+          "sub": "가",
+          "top": "는",
+          "answer": "더 넓은 공간에서는 일어나지 않는다",
+          "check": [
+            "넓은",
+            "큰 공간",
+            "일어나지 않",
+            "않는다"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "부정을 놓치고 '넓은 공간에서 일어난다'로 해석",
+          "signals": [
+            "넓은 공간에서 일어난다"
+          ],
+          "ask": "does not occur는 일어난다는 뜻일까요?",
+          "wrong": "넓은 공간에서 일어난다",
+          "right": "넓은 공간에서는 일어나지 않는다"
+        }
+      ],
+      "glosses": [
+        [
+          "exclusive",
+          "오직 그것만의"
+        ],
+        [
+          "geometry",
+          "기하, 모양 정보"
+        ],
+        [
+          "occur",
+          "일어나다"
+        ],
+        [
+          "larger",
+          "더 큰"
+        ],
+        [
+          "spaces",
+          "공간"
+        ]
+      ]
+    },
+    {
+      "text": "Although, in a small room, children failed to incorporate information about nongeometric features (i.e., a blue wall), they used both types of information in a larger room.",
+      "ko": "작은 방에서는 아이들이 기하가 아닌 특징(예를 들어 파란 벽)에 대한 정보를 함께 쓰지 못했지만, 더 큰 방에서는 두 종류의 정보를 모두 썼다",
+      "praise": "failed to를 '~하지 못했다'로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "failed to incorporate",
+          "sub": "가",
+          "top": "는",
+          "answer": "함께 쓰지 못했다",
+          "check": [
+            "못했",
+            "실패",
+            "반영하지"
+          ]
+        },
+        {
+          "en": "nongeometric features",
+          "sub": "가",
+          "top": "는",
+          "answer": "기하가 아닌 특징",
+          "check": [
+            "기하",
+            "아닌",
+            "비기하"
+          ]
+        },
+        {
+          "en": "both types of information",
+          "sub": "가",
+          "top": "는",
+          "answer": "두 종류의 정보 모두",
+          "check": [
+            "두 종류",
+            "둘 다",
+            "모두",
+            "양쪽"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "failed to를 '실패했다'로만 보고 뒤 동작을 놓침",
+          "signals": [
+            "실패했다."
+          ],
+          "ask": "failed to incorporate는 무엇을 못 했다는 걸까요?",
+          "wrong": "아이들이 실패했다",
+          "right": "정보를 함께 쓰지 못했다"
+        },
+        {
+          "id": "E2",
+          "detect": "i.e.를 '즉'이 아니라 다른 것으로 봄",
+          "signals": [
+            "그것은",
+            "이것은 예"
+          ],
+          "ask": "i.e.는 앞말을 어떻게 하는 걸까요?",
+          "wrong": "그것은 파란 벽",
+          "right": "예를 들어 파란 벽"
+        }
+      ],
+      "glosses": [
+        [
+          "Although",
+          "비록 ~이지만"
+        ],
+        [
+          "small",
+          "작은"
+        ],
+        [
+          "room",
+          "방"
+        ],
+        [
+          "children",
+          "아이들"
+        ],
+        [
+          "failed",
+          "~하지 못했다"
+        ],
+        [
+          "incorporate",
+          "함께 넣다, 반영하다"
+        ],
+        [
+          "nongeometric",
+          "기하가 아닌"
+        ],
+        [
+          "features",
+          "특징"
+        ],
+        [
+          "i.e.",
+          "즉, 예를 들어"
+        ],
+        [
+          "blue",
+          "파란"
+        ],
+        [
+          "wall",
+          "벽"
+        ],
+        [
+          "types",
+          "종류"
+        ]
+      ]
+    },
+    {
+      "text": "These findings suggest that geometric and nongeometric information may be combined in a weighted fashion.",
+      "ko": "이 연구 결과들은 기하 정보와 기하가 아닌 정보가 가중치를 두어 합쳐질 수 있음을 시사한다",
+      "praise": "in a weighted fashion을 '가중치를 두어'로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "these findings suggest that ~",
+          "sub": "이",
+          "top": "은",
+          "answer": "이 연구 결과들은 ~을 시사한다",
+          "check": [
+            "연구 결과",
+            "발견",
+            "시사",
+            "보여"
+          ]
+        },
+        {
+          "en": "in a weighted fashion",
+          "sub": "이",
+          "top": "은",
+          "answer": "가중치를 두어",
+          "check": [
+            "가중",
+            "비중",
+            "무게"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "fashion을 '유행/패션'으로 해석",
+          "signals": [
+            "패션",
+            "유행"
+          ],
+          "ask": "in a ~ fashion은 무엇을 말할까요?",
+          "wrong": "가중된 패션으로",
+          "right": "가중치를 두는 방식으로"
+        },
+        {
+          "id": "E2",
+          "detect": "suggest를 '제안하다'로만 보고 문맥을 놓침",
+          "signals": [
+            "제안한다"
+          ],
+          "ask": "연구 결과가 suggest한다면 무엇일까요?",
+          "wrong": "제안한다",
+          "right": "시사한다"
+        }
+      ],
+      "glosses": [
+        [
+          "findings",
+          "연구 결과"
+        ],
+        [
+          "suggest",
+          "시사하다"
+        ],
+        [
+          "combined",
+          "합쳐진"
+        ],
+        [
+          "weighted",
+          "가중치를 둔"
+        ],
+        [
+          "fashion",
+          "방식"
+        ]
+      ]
+    },
+    {
+      "text": "Geometry may be privileged because it is more stable across time than is nongeometric information.",
+      "ko": "기하 정보는 기하가 아닌 정보보다 시간이 지나도 더 한결같기 때문에 더 우대받을 수 있다",
+      "praise": "than is 뒤의 도치를 알아본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "may be privileged",
+          "sub": "가",
+          "top": "는",
+          "answer": "더 우대받을 수 있다",
+          "check": [
+            "우대",
+            "우선",
+            "특권",
+            "앞선"
+          ]
+        },
+        {
+          "en": "more stable across time than ~",
+          "sub": "가",
+          "top": "는",
+          "answer": "~보다 시간이 지나도 더 한결같다",
+          "check": [
+            "한결",
+            "안정",
+            "변하지",
+            "보다 더"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "privileged를 '특권층의'로 보고 사람 이야기로 봄",
+          "signals": [
+            "특권층",
+            "귀족"
+          ],
+          "ask": "여기서 우대받는 것은 사람일까요, 정보일까요?",
+          "wrong": "특권층이다",
+          "right": "더 우대받는다"
+        },
+        {
+          "id": "E2",
+          "detect": "than is의 도치를 못 보고 주어를 뒤바꿈",
+          "signals": [
+            "기하가 아닌 정보가 더 안정"
+          ],
+          "ask": "than 뒤의 주어는 무엇일까요?",
+          "wrong": "기하가 아닌 정보가 더 한결같다",
+          "right": "기하 정보가 더 한결같다"
+        }
+      ],
+      "glosses": [
+        [
+          "Geometry",
+          "기하, 모양 정보"
+        ],
+        [
+          "privileged",
+          "우대받는"
+        ],
+        [
+          "stable",
+          "한결같은, 안정된"
+        ],
+        [
+          "across time",
+          "시간이 지나도"
+        ]
+      ]
+    },
+    {
+      "text": "Whether or not nongeometric landmark information is combined with geometry may depend on the ecological validity of nongeometric features;",
+      "ko": "기하가 아닌 표지 정보가 기하와 합쳐지는지 아닌지는 그 특징들이 실제 환경에서 얼마나 쓸 만한지에 달려 있을 수 있다",
+      "praise": "Whether or not 절을 통째로 주어로 잡은 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "whether or not ~",
+          "sub": "이",
+          "top": "은",
+          "answer": "~인지 아닌지는",
+          "check": [
+            "인지 아닌지",
+            "여부",
+            "지 아닌"
+          ]
+        },
+        {
+          "en": "landmark information",
+          "sub": "가",
+          "top": "는",
+          "answer": "표지(눈에 띄는 지형지물) 정보",
+          "check": [
+            "표지",
+            "지형",
+            "랜드마크",
+            "기준점"
+          ]
+        },
+        {
+          "en": "ecological validity",
+          "sub": "가",
+          "top": "는",
+          "answer": "실제 환경에서의 유효성",
+          "check": [
+            "실제 환경",
+            "생태",
+            "타당",
+            "쓸 만"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "Whether를 '~인지 물어보다'로 보고 주어를 놓침",
+          "signals": [
+            "물어본다",
+            "궁금하다"
+          ],
+          "ask": "Whether or not 절은 문장에서 무엇 노릇을 할까요?",
+          "wrong": "합쳐지는지 물어본다",
+          "right": "합쳐지는지 아닌지가 (주어)"
+        },
+        {
+          "id": "E2",
+          "detect": "landmark를 '기념물'로만 해석",
+          "signals": [
+            "기념물",
+            "명소"
+          ],
+          "ask": "길을 찾을 때 쓰는 landmark는 무엇일까요?",
+          "wrong": "기념물 정보",
+          "right": "표지가 되는 지형지물 정보"
+        }
+      ],
+      "glosses": [
+        [
+          "Whether or not",
+          "~인지 아닌지"
+        ],
+        [
+          "landmark",
+          "표지가 되는 지형지물"
+        ],
+        [
+          "depend on",
+          "~에 달려 있다"
+        ],
+        [
+          "ecological",
+          "생태적인, 실제 환경의"
+        ],
+        [
+          "validity",
+          "유효성, 타당성"
+        ]
+      ]
+    },
+    {
+      "text": "for example, larger features may be more stable and hence more reliable.",
+      "ko": "예를 들어 더 큰 특징은 더 한결같고 따라서 더 믿을 만할 수 있다",
+      "praise": "hence를 '따라서'로 본 거 좋아요.",
+      "points": [
+        {
+          "en": "hence",
+          "sub": "가",
+          "top": "는",
+          "answer": "따라서",
+          "check": [
+            "따라서",
+            "그래서",
+            "그러므로"
+          ]
+        },
+        {
+          "en": "more reliable",
+          "sub": "이",
+          "top": "은",
+          "answer": "더 믿을 만한",
+          "check": [
+            "믿을",
+            "신뢰",
+            "의지"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "hence를 '여기서부터'로 해석",
+          "signals": [
+            "여기서부터",
+            "이후로"
+          ],
+          "ask": "형용사 사이에 낀 hence는 무엇일까요?",
+          "wrong": "여기서부터 더 믿을 만한",
+          "right": "따라서 더 믿을 만한"
+        }
+      ],
+      "glosses": [
+        [
+          "for example",
+          "예를 들어"
+        ],
+        [
+          "hence",
+          "따라서"
+        ],
+        [
+          "reliable",
+          "믿을 만한"
+        ]
+      ]
+    },
+    {
+      "text": "Further, a variety of mobile animals give more weight to nearer than to farther landmarks in estimation,",
+      "ko": "더 나아가, 움직이는 여러 동물들은 거리를 어림잡을 때 먼 표지보다 가까운 표지에 더 무게를 둔다",
+      "praise": "give more weight to A than to B를 정확히 갈라 읽은 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "a variety of mobile animals",
+          "sub": "이",
+          "top": "은",
+          "answer": "움직이는 여러 동물들",
+          "check": [
+            "여러",
+            "다양",
+            "동물",
+            "움직이는"
+          ]
+        },
+        {
+          "en": "give more weight to A than to B",
+          "sub": "가",
+          "top": "는",
+          "answer": "B보다 A에 더 무게를 두다",
+          "check": [
+            "무게",
+            "비중",
+            "보다 더",
+            "중시"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "nearer와 farther를 뒤바꿔 해석",
+          "signals": [
+            "먼 표지에 더",
+            "멀리 있는 것에 더"
+          ],
+          "ask": "더 무게를 두는 쪽은 가까운 쪽일까요, 먼 쪽일까요?",
+          "wrong": "먼 표지에 더 무게를 둔다",
+          "right": "가까운 표지에 더 무게를 둔다"
+        },
+        {
+          "id": "E2",
+          "detect": "mobile을 '휴대전화의'로 해석",
+          "signals": [
+            "휴대",
+            "모바일"
+          ],
+          "ask": "동물에 붙은 mobile은 무엇일까요?",
+          "wrong": "휴대용 동물",
+          "right": "움직여 다니는 동물"
+        }
+      ],
+      "glosses": [
+        [
+          "Further",
+          "더 나아가"
+        ],
+        [
+          "a variety of",
+          "여러, 다양한"
+        ],
+        [
+          "mobile",
+          "움직여 다니는"
+        ],
+        [
+          "animals",
+          "동물"
+        ],
+        [
+          "weight",
+          "무게, 비중"
+        ],
+        [
+          "nearer",
+          "더 가까운"
+        ],
+        [
+          "farther",
+          "더 먼"
+        ],
+        [
+          "landmarks",
+          "표지가 되는 지형지물"
+        ],
+        [
+          "estimation",
+          "어림잡기, 추정"
+        ]
+      ]
+    },
+    {
+      "text": "consistent with Weber's law in which smaller distances would be coded more accurately than larger distances.",
+      "ko": "이는 더 짧은 거리가 더 긴 거리보다 더 정확하게 부호화된다는 베버의 법칙과 들어맞는다",
+      "praise": "consistent with를 '~와 들어맞는다'로 본 거 정말 잘했어요.",
+      "points": [
+        {
+          "en": "consistent with ~",
+          "sub": "이",
+          "top": "은",
+          "answer": "~와 들어맞는",
+          "check": [
+            "들어맞",
+            "일치",
+            "부합",
+            "맞는"
+          ]
+        },
+        {
+          "en": "smaller distances would be coded more accurately",
+          "sub": "가",
+          "top": "는",
+          "answer": "더 짧은 거리가 더 정확하게 부호화된다",
+          "check": [
+            "짧은",
+            "작은 거리",
+            "정확",
+            "부호"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "id": "E1",
+          "detect": "consistent를 '꾸준한'으로만 보고 with를 놓침",
+          "signals": [
+            "꾸준한",
+            "일관된 성격"
+          ],
+          "ask": "consistent with는 무엇과 무엇의 관계일까요?",
+          "wrong": "꾸준한 베버의 법칙",
+          "right": "베버의 법칙과 들어맞는"
+        },
+        {
+          "id": "E2",
+          "detect": "비교 방향을 뒤집어 큰 거리가 더 정확하다고 해석",
+          "signals": [
+            "큰 거리가 더 정확",
+            "먼 거리가 더 정확"
+          ],
+          "ask": "더 정확하게 부호화되는 쪽은 어느 쪽일까요?",
+          "wrong": "더 긴 거리가 더 정확하다",
+          "right": "더 짧은 거리가 더 정확하다"
+        }
+      ],
+      "glosses": [
+        [
+          "consistent with",
+          "~와 들어맞는"
+        ],
+        [
+          "Weber's",
+          "베버의(사람 이름)"
+        ],
+        [
+          "law",
+          "법칙"
+        ],
+        [
+          "smaller",
+          "더 작은"
+        ],
+        [
+          "distances",
+          "거리"
+        ],
+        [
+          "coded",
+          "부호화된"
+        ],
+        [
+          "accurately",
+          "정확하게"
+        ]
+      ]
+    }
+  ]
+}

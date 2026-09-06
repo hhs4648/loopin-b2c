@@ -1,0 +1,255 @@
+{
+  "id": "suneung-21-wine-perception",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 21번",
+  "category": "리딩",
+  "topic_intro": "값을 알면 맛이 달라진다는 지각 이야기",
+  "sentence": "That perception is a construction is not true just of one's perception of sensory input, such as visual and auditory information. It is true of your social perceptions as well — your perceptions of the people you meet, the food you eat, and even of the products you buy. For example, in a study of wine, when wines were tasted blind, there was little or no correlation between the ratings of a wine's taste and its cost, but there was a significant correlation when the wines were labeled by price. That wasn't because the subjects consciously believed that the higher-priced wines should be the better ones and thus revised whatever opinion they had accordingly. Or rather, it wasn't true just at the conscious level. We know because as the subjects were tasting the wine, the researchers were imaging their brain activity, and the imaging showed that drinking what they believed was an expensive glass of wine really did activate their centers of taste for pleasure more than drinking a glass of the same wine that had been labeled as cheaper. That's related to the placebo effect. Like pain, taste is not just the product of sensory signals; it depends also on psychological factors: you don't just taste the wine; you taste its price.",
+  "grammar_type": "함축의미_추상논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 but·and로 두 갈래가 되면",
+    "how": "but·and·콜론 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "text": "That perception is a construction is not true just of one's perception of sensory input, such as visual and auditory information.",
+      "ko": "지각이 구성된 것이라는 말은 시각과 청각 정보 같은 감각 입력에 대한 지각에만 해당되는 것이 아니다",
+      "praise": "맨 앞의 That절을 주어로 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "That perception is a construction", "sub": "이", "top": "은", "answer": "지각이 구성된 것이라는 말은 (주어)", "check": ["지각이 구성", "지각은 구성", "구성된 것이라는", "구성물이라는"] },
+        { "en": "is not true just of ~", "sub": "가", "top": "는", "answer": "~에만 해당되는 것이 아니다", "check": ["만 해당", "만 그런", "뿐만 아니", "국한"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "맨 앞의 That을 지시사로 보고 '저 지각은'으로 해석", "signals": ["저 지각", "그 지각은 구성"], "ask": "맨 앞 That은 어디까지를 묶고 있을까요?", "wrong": "저 지각은 구성물이다", "right": "지각이 구성된 것이라는 말은" },
+        { "id": "E2", "detect": "not just를 완전 부정으로 보고 '사실이 아니다'로 해석", "signals": ["사실이 아니다", "맞지 않다"], "ask": "not just는 뒤에 이어질 말이 있어요.", "wrong": "사실이 아니다", "right": "그것에만 해당되는 게 아니다" }
+      ],
+      "glosses": [
+        ["perception", "지각, 인식"],
+        ["construction", "구성된 것, 구성물"],
+        ["true of", "~에 해당되는"],
+        ["one's", "어떤 사람의"],
+        ["sensory input", "감각 입력"],
+        ["such as", "예를 들어 ~ 같은"],
+        ["visual", "시각의"],
+        ["auditory", "청각의"],
+        ["information", "정보"]
+      ]
+    },
+    {
+      "text": "It is true of your social perceptions as well — your perceptions of the people you meet, the food you eat, and even of the products you buy.",
+      "ko": "그것은 사회적 지각에도 똑같이 해당된다 — 만나는 사람, 먹는 음식, 심지어 사는 물건에 대한 지각에도 말이다",
+      "praise": "as well을 '~에도'로 이어 붙인 거 좋아요.",
+      "points": [
+        { "en": "as well", "sub": "이", "top": "은", "answer": "~에도 마찬가지로", "check": ["에도", "마찬가지", "똑같이", "역시"] },
+        { "en": "the people you meet, the food you eat", "sub": "가", "top": "는", "answer": "만나는 사람, 먹는 음식", "check": ["만나는 사람", "먹는 음식", "만나는", "먹는"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "the people you meet에서 관계절을 놓치고 두 덩어리로 끊음", "signals": ["사람들 당신은 만난다", "사람들과 당신이 만난"], "ask": "you meet은 앞의 무엇을 꾸밀까요?", "wrong": "사람들, 그리고 당신은 만난다", "right": "당신이 만나는 사람들" }
+      ],
+      "glosses": [
+        ["social perceptions", "사회적 지각"],
+        ["as well", "~도 마찬가지로"],
+        ["perceptions", "지각"],
+        ["meet", "만나다"],
+        ["food", "음식"],
+        ["eat", "먹다"],
+        ["products", "제품, 물건"],
+        ["buy", "사다"]
+      ]
+    },
+    {
+      "text": "For example, in a study of wine, when wines were tasted blind, there was little or no correlation between the ratings of a wine's taste and its cost,",
+      "ko": "예를 들어 와인 연구에서, 상표를 가리고 맛을 봤을 때는 와인 맛 평가와 가격 사이에 상관관계가 거의 또는 전혀 없었다",
+      "praise": "tasted blind를 '상표를 가리고 맛봤다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "tasted blind", "sub": "가", "top": "는", "answer": "상표를 가리고 맛을 보다", "check": ["가리고", "블라인드", "모르고", "숨기고"] },
+        { "en": "little or no correlation", "sub": "이", "top": "은", "answer": "상관관계가 거의 또는 전혀 없었다", "check": ["상관", "관계가 거의", "관련이 거의", "없었"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "blind를 '눈먼'으로 보고 사람 상태로 해석", "signals": ["눈먼", "장님", "눈이 안 보이"], "ask": "여기 blind는 맛보는 방식이에요.", "wrong": "눈먼 채로 맛봤다", "right": "상표를 가리고 맛봤다" },
+        { "id": "E2", "detect": "little을 '조금 있다'로 보고 뜻을 뒤집음", "signals": ["조금 있었", "약간 있었"], "ask": "관사 없는 little은 있다는 뜻일까요, 없다는 뜻일까요?", "wrong": "상관관계가 조금 있었다", "right": "상관관계가 거의 없었다" }
+      ],
+      "glosses": [
+        ["For example", "예를 들어"],
+        ["study", "연구"],
+        ["wine", "와인"],
+        ["wines", "와인들"],
+        ["tasted", "맛보았다"],
+        ["blind", "상표를 가린 채로"],
+        ["correlation", "상관관계"],
+        ["ratings", "평가, 점수"],
+        ["taste", "맛"],
+        ["cost", "가격, 비용"]
+      ]
+    },
+    {
+      "text": "but there was a significant correlation when the wines were labeled by price.",
+      "ko": "그러나 와인에 가격표가 붙어 있을 때는 뚜렷한 상관관계가 있었다",
+      "praise": "were labeled를 '표시되어 있었다'로 본 거 좋아요.",
+      "points": [
+        { "en": "a significant correlation", "sub": "가", "top": "는", "answer": "뚜렷한 상관관계", "check": ["뚜렷", "유의미", "상당한", "큰 상관"] },
+        { "en": "were labeled by price", "sub": "가", "top": "는", "answer": "가격이 표시되어 있었다", "check": ["가격", "표시", "라벨", "가격표"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "significant를 '중요한'으로만 보고 통계적 뜻을 놓침", "signals": ["중요한 상관"], "ask": "연구 이야기에서 significant는 정도를 말해요.", "wrong": "중요한 상관관계", "right": "뚜렷한 상관관계" }
+      ],
+      "glosses": [
+        ["significant", "뚜렷한, 유의미한"],
+        ["correlation", "상관관계"],
+        ["labeled", "표시되어 있었다"],
+        ["price", "가격"]
+      ]
+    },
+    {
+      "text": "That wasn't because the subjects consciously believed that the higher-priced wines should be the better ones and thus revised whatever opinion they had accordingly.",
+      "ko": "그것은 피험자들이 비싼 와인이 더 좋을 것이라고 의식적으로 믿고서 자기 의견을 그에 맞춰 고쳤기 때문이 아니었다",
+      "praise": "That wasn't because를 '~때문이 아니었다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "the subjects", "sub": "가", "top": "는", "answer": "피험자들", "check": ["피험자", "실험 참가", "참가자", "대상자"] },
+        { "en": "That wasn't because ~", "sub": "가", "top": "는", "answer": "~ 때문이 아니었다", "check": ["때문이 아니", "탓이 아니", "이유가 아니"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "subjects를 '주제/과목'으로 해석", "signals": ["주제", "과목", "제목"], "ask": "실험 이야기에서 subjects는 무엇일까요?", "wrong": "주제들", "right": "피험자들" },
+        { "id": "E2", "detect": "부정의 범위를 놓치고 '믿지 않았기 때문이다'로 해석", "signals": ["믿지 않았기 때문", "믿지 않아서"], "ask": "not이 부정하는 건 believed일까요, because절 전체일까요?", "wrong": "믿지 않았기 때문이다", "right": "믿었기 때문이 아니다" }
+      ],
+      "glosses": [
+        ["subjects", "피험자들"],
+        ["consciously", "의식적으로"],
+        ["believed", "믿었다"],
+        ["higher-priced", "더 비싼"],
+        ["better", "더 좋은"],
+        ["ones", "것들"],
+        ["thus", "그래서"],
+        ["revised", "고쳤다, 수정했다"],
+        ["whatever", "무엇이든"],
+        ["opinion", "의견"],
+        ["accordingly", "그에 맞춰"]
+      ]
+    },
+    {
+      "text": "Or rather, it wasn't true just at the conscious level.",
+      "ko": "아니, 더 정확히 말하면 그것은 의식 수준에서만 일어난 일이 아니었다",
+      "praise": "Or rather를 '더 정확히 말하면'으로 본 거 좋아요.",
+      "points": [
+        { "en": "Or rather", "sub": "가", "top": "는", "answer": "더 정확히 말하면", "check": ["더 정확히", "아니 오히려", "그보다는", "말하자면"] },
+        { "en": "just at the conscious level", "sub": "이", "top": "은", "answer": "의식 수준에서만", "check": ["의식", "수준에서만", "차원에서만"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "Or를 선택의 '또는'으로 보고 앞 문장과 나란히 둠", "signals": ["또는 오히려", "혹은 오히려"], "ask": "Or rather는 앞말을 고쳐 말하는 표현이에요.", "wrong": "또는 오히려", "right": "더 정확히 말하면" }
+      ],
+      "glosses": [
+        ["Or rather", "더 정확히 말하면"],
+        ["conscious", "의식적인"],
+        ["level", "수준, 차원"]
+      ]
+    },
+    {
+      "text": "We know because as the subjects were tasting the wine, the researchers were imaging their brain activity,",
+      "ko": "우리가 그것을 아는 이유는, 피험자들이 와인을 맛보는 동안 연구자들이 그들의 뇌 활동을 촬영하고 있었기 때문이다",
+      "praise": "as를 '~하는 동안'으로 본 거 잘했어요.",
+      "points": [
+        { "en": "as ~ were tasting", "sub": "가", "top": "는", "answer": "~하는 동안", "check": ["동안", "면서", "때"] },
+        { "en": "were imaging their brain activity", "sub": "가", "top": "는", "answer": "뇌 활동을 촬영하고 있었다", "check": ["뇌", "촬영", "영상", "찍"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "as를 '~로서'나 '~때문에'로 보고 뜻을 바꿈", "signals": ["로서", "때문에 피험자"], "ask": "여기 as는 두 일이 같이 일어난다는 뜻이에요.", "wrong": "피험자로서", "right": "피험자들이 맛보는 동안" },
+        { "id": "E2", "detect": "imaging을 '상상하다'로 해석", "signals": ["상상"], "ask": "연구자가 뇌를 두고 한 일이에요.", "wrong": "뇌 활동을 상상하고 있었다", "right": "뇌 활동을 촬영하고 있었다" }
+      ],
+      "glosses": [
+        ["We know", "우리는 안다"],
+        ["subjects", "피험자들"],
+        ["tasting", "맛보고 있는"],
+        ["researchers", "연구자들"],
+        ["imaging", "영상으로 찍고 있었다"],
+        ["brain activity", "뇌 활동"]
+      ]
+    },
+    {
+      "text": "and the imaging showed that drinking what they believed was an expensive glass of wine really did activate their centers of taste for pleasure",
+      "ko": "그리고 그 영상은, 비싼 와인이라고 믿은 것을 마시는 일이 실제로 쾌감을 담당하는 미각 중추를 활성화시켰음을 보여 주었다",
+      "praise": "really did activate를 강조로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "what they believed was an expensive glass of wine", "sub": "가", "top": "는", "answer": "비싼 와인이라고 그들이 믿은 것", "check": ["믿은", "믿었던", "비싼 와인이라고"] },
+        { "en": "really did activate", "sub": "가", "top": "는", "answer": "실제로 활성화시켰다", "check": ["실제로", "정말", "활성", "자극"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "did를 과거의 '했다'로만 보고 강조를 놓침", "signals": ["활성화를 했다", "했었다"], "ask": "activate 앞의 did는 무엇을 하고 있을까요?", "wrong": "활성화하는 것을 했다", "right": "실제로 활성화시켰다" }
+      ],
+      "glosses": [
+        ["imaging", "영상 촬영 결과"],
+        ["showed", "보여 주었다"],
+        ["drinking", "마시는 것"],
+        ["believed", "믿었다"],
+        ["expensive", "비싼"],
+        ["glass", "잔"],
+        ["really", "실제로"],
+        ["activate", "활성화시키다"],
+        ["centers", "중추"],
+        ["pleasure", "쾌감, 즐거움"]
+      ]
+    },
+    {
+      "text": "more than drinking a glass of the same wine that had been labeled as cheaper.",
+      "ko": "더 싸다고 표시된 같은 와인을 마시는 것보다 더 그랬다",
+      "praise": "비교 대상 둘을 정확히 맞춘 거 좋아요.",
+      "points": [
+        { "en": "more than drinking ~", "sub": "이", "top": "은", "answer": "~을 마시는 것보다 더", "check": ["보다 더", "보다", "에 비해"] },
+        { "en": "the same wine that had been labeled as cheaper", "sub": "가", "top": "는", "answer": "더 싸다고 표시된 같은 와인", "check": ["같은 와인", "싸다고", "저렴", "싼"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "the same wine을 다른 와인으로 보고 비교를 흐림", "signals": ["다른 와인", "값싼 와인은 달랐"], "ask": "두 잔은 같은 와인일까요, 다른 와인일까요?", "wrong": "더 싼 다른 와인", "right": "더 싸다고 표시된 같은 와인" }
+      ],
+      "glosses": [
+        ["more than", "~보다 더"],
+        ["drinking", "마시는 것"],
+        ["glass", "잔"],
+        ["same", "같은"],
+        ["wine", "와인"],
+        ["labeled", "표시된"],
+        ["cheaper", "더 싼"]
+      ]
+    },
+    {
+      "text": "That's related to the placebo effect.",
+      "ko": "그것은 플라세보 효과와 관련이 있다",
+      "praise": "is related to를 '~와 관련이 있다'로 본 거 좋아요.",
+      "points": [
+        { "en": "is related to", "sub": "가", "top": "는", "answer": "~와 관련이 있다", "check": ["관련", "연관", "관계가 있"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "related를 '친척의'로 해석", "signals": ["친척", "혈연"], "ask": "여기 related는 두 가지 사이의 관계예요.", "wrong": "친척이다", "right": "관련이 있다" }
+      ],
+      "glosses": [
+        ["related to", "~와 관련이 있는"],
+        ["placebo effect", "플라세보 효과(가짜 약 효과)"]
+      ]
+    },
+    {
+      "text": "Like pain, taste is not just the product of sensory signals; it depends also on psychological factors: you don't just taste the wine; you taste its price.",
+      "ko": "통증처럼 맛도 감각 신호만의 산물이 아니라 심리적 요인에도 달려 있다. 당신은 와인만 맛보는 것이 아니라 그 가격을 맛본다",
+      "praise": "마지막 대비를 살려서 옮긴 거 정말 잘했어요.",
+      "points": [
+        { "en": "not just the product of sensory signals", "sub": "이", "top": "은", "answer": "감각 신호만의 산물이 아니다", "check": ["감각", "신호", "산물", "만이 아니"] },
+        { "en": "depends also on psychological factors", "sub": "가", "top": "는", "answer": "심리적 요인에도 달려 있다", "check": ["심리", "요인", "달려", "좌우"] },
+        { "en": "you taste its price", "sub": "가", "top": "는", "answer": "그 가격을 맛본다", "check": ["가격을 맛", "값을 맛", "가격도"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "Like를 동사 '좋아하다'로 해석", "signals": ["통증을 좋아", "고통을 좋아"], "ask": "문장 맨 앞의 Like는 무엇을 하고 있을까요?", "wrong": "통증을 좋아한다", "right": "통증처럼" },
+        { "id": "E2", "detect": "product를 '제품'으로 보고 문맥을 놓침", "signals": ["제품이 아니", "상품이 아니"], "ask": "여기 product는 무엇에서 나온 결과를 말해요.", "wrong": "감각 신호의 제품", "right": "감각 신호의 산물" }
+      ],
+      "glosses": [
+        ["Like", "~처럼"],
+        ["pain", "통증"],
+        ["taste", "맛, 맛보다"],
+        ["product", "산물, 결과물"],
+        ["sensory signals", "감각 신호"],
+        ["depends on", "~에 달려 있다"],
+        ["psychological", "심리적인"],
+        ["factors", "요인"],
+        ["price", "가격"]
+      ]
+    }
+  ]
+}

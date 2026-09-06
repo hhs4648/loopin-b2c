@@ -1,0 +1,776 @@
+{
+  "id": "suneung-28-poetry-competition",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 28번",
+  "category": "리딩",
+  "topic_intro": "세계 시의 날 시 대회 안내문",
+  "sentence": "World Poetry Day Competition. In honor of World Poetry Day, let's experience the power of words with our poetry competition! Competition Details: Theme: Unexpected Moments. Deadline: March 21, 2024 (World Poetry Day). Age: Only those who are under age 18 can participate. Special Opportunities: Poetry Workshop: All participants can join our poetry workshop led by well-known poets. How to Participate: Compose your poem inspired by the theme. You can submit your piece only through E-mail at administer@worldpoetry.org.",
+  "grammar_type": "실용문_안내문",
+  "split_rule": {
+    "when": "안내문은 항목이 곧 한 덩어리다",
+    "how": "항목 하나를 한 덩어리로 본다",
+    "labels": [
+      "항목"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "World Poetry Day",
+      "ko": "세계 시의 날",
+      "type": "other"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "In honor of World Poetry Day, let's experience the power of words with our poetry competition!",
+      "model_translation": "세계 시의 날을 기념하여, 우리 시 대회에서 말의 힘을 함께 느껴 봅시다",
+      "praise": "In honor of를 '~을 기념하여'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "In honor of",
+          "ko": "~을 기념하여"
+        },
+        {
+          "en": "World Poetry Day",
+          "ko": "세계 시의 날"
+        },
+        {
+          "en": "experience",
+          "ko": "경험하다, 느끼다"
+        },
+        {
+          "en": "power",
+          "ko": "힘"
+        },
+        {
+          "en": "words",
+          "ko": "말, 단어"
+        },
+        {
+          "en": "poetry",
+          "ko": "시"
+        },
+        {
+          "en": "competition",
+          "ko": "대회"
+        },
+        {
+          "en": "let's",
+          "ko": "~하자"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        },
+        {
+          "en": "our",
+          "ko": "우리의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "In honor of ~ → ~을 기념하여",
+          "check": [
+            "기념",
+            "기려",
+            "축하"
+          ],
+          "nudge": "In honor of ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "In honor of ~는 여기서 '~을 기념하여'예요."
+        },
+        {
+          "id": 2,
+          "text": "the power of words → 말의 힘",
+          "check": [
+            "말의 힘",
+            "단어의 힘",
+            "언어의 힘"
+          ],
+          "nudge": "the power of words이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the power of words은 여기서 '말의 힘'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "honor를 '명예'로만 보고 굳어진 표현을 놓침",
+          "signals": [
+            "명예 안에서",
+            "명예로"
+          ],
+          "treatment": {
+            "message": "In honor of는 한 덩어리로 쓰이는 말이에요. '세계 시의 날의 명예 안에서'일까요, '세계 시의 날을 기념하여'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "세계 시의 날의 명예 안에서",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "세계 시의 날을 기념하여",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '세계 시의 날을 기념하여'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '세계 시의 날을 기념하여'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Theme: Unexpected Moments.",
+      "model_translation": "주제: 뜻밖의 순간들",
+      "praise": "Unexpected를 '뜻밖의'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "Theme",
+          "ko": "주제"
+        },
+        {
+          "en": "Unexpected",
+          "ko": "뜻밖의"
+        },
+        {
+          "en": "Moments",
+          "ko": "순간들"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Unexpected Moments → 뜻밖의 순간들",
+          "check": [
+            "뜻밖",
+            "예상치",
+            "예기치",
+            "순간"
+          ],
+          "nudge": "Unexpected Moments가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Unexpected Moments는 여기서 '뜻밖의 순간들'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "unexpected를 '기대되는'으로 보고 뜻을 뒤집음",
+          "signals": [
+            "기대되는",
+            "기대하는"
+          ],
+          "treatment": {
+            "message": "un-이 앞에 붙으면 뜻이 어떻게 될까요? '기대되는 순간들'일까요, '뜻밖의 순간들'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "기대되는 순간들",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "뜻밖의 순간들",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '뜻밖의 순간들'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '뜻밖의 순간들'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Deadline: March 21, 2024 (World Poetry Day).",
+      "model_translation": "마감: 2024년 3월 21일 (세계 시의 날)",
+      "praise": "날짜를 한국어 순서로 바꾼 거 좋아요.",
+      "glosses": [
+        {
+          "en": "Deadline",
+          "ko": "마감 기한"
+        },
+        {
+          "en": "March",
+          "ko": "3월"
+        },
+        {
+          "en": "World Poetry Day",
+          "ko": "세계 시의 날"
+        },
+        {
+          "en": "21",
+          "ko": "21"
+        },
+        {
+          "en": "2024",
+          "ko": "2024년"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Deadline → 마감",
+          "check": [
+            "마감",
+            "기한",
+            "마지막 날"
+          ],
+          "nudge": "Deadline이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Deadline은 여기서 '마감'이에요."
+        },
+        {
+          "id": 2,
+          "text": "March 21, 2024 → 2024년 3월 21일",
+          "check": [
+            "3월",
+            "21일",
+            "2024"
+          ],
+          "nudge": "March 21, 2024가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "March 21, 2024는 여기서 '2024년 3월 21일'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "영어 날짜 순서를 그대로 옮김",
+          "signals": [
+            "3월 21 2024",
+            "21일 3월"
+          ],
+          "treatment": {
+            "message": "한국어는 큰 단위부터 쓰지요? '3월 21, 2024'일까요, '2024년 3월 21일'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "3월 21, 2024",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "2024년 3월 21일",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '2024년 3월 21일'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '2024년 3월 21일'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Age: Only those who are under age 18 can participate.",
+      "model_translation": "나이: 18세 미만인 사람만 참가할 수 있다",
+      "praise": "those who를 '~인 사람들'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Age",
+          "ko": "나이"
+        },
+        {
+          "en": "Only",
+          "ko": "오직 ~만"
+        },
+        {
+          "en": "those",
+          "ko": "~인 사람들"
+        },
+        {
+          "en": "under",
+          "ko": "~ 미만의"
+        },
+        {
+          "en": "age",
+          "ko": "나이"
+        },
+        {
+          "en": "participate",
+          "ko": "참가하다"
+        },
+        {
+          "en": "who",
+          "ko": "~하는 사람"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "18",
+          "ko": "18"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "those who ~ → ~인 사람들",
+          "check": [
+            "사람",
+            "이들",
+            "자만"
+          ],
+          "nudge": "those who ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "those who ~는 여기서 '~인 사람들'이에요."
+        },
+        {
+          "id": 2,
+          "text": "under age 18 → 18세 미만",
+          "check": [
+            "18",
+            "미만",
+            "아래",
+            "이하"
+          ],
+          "nudge": "under age 18이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "under age 18은 여기서 '18세 미만'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "those를 '저것들'로 보고 사람을 놓침",
+          "signals": [
+            "저것들",
+            "그것들만"
+          ],
+          "treatment": {
+            "message": "those who 뒤에 who가 오면 무엇을 가리킬까요? '저것들만'일까요, '~인 사람들만'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "저것들만",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~인 사람들만",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~인 사람들만'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~인 사람들만'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "under 18을 '18세 이상'으로 뒤집음",
+          "signals": [
+            "이상",
+            "넘는"
+          ],
+          "treatment": {
+            "message": "under는 위일까요, 아래일까요? '18세 이상'일까요, '18세 미만'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "18세 이상",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "18세 미만",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '18세 미만'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '18세 미만'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Poetry Workshop: All participants can join our poetry workshop led by well-known poets.",
+      "model_translation": "시 워크숍: 모든 참가자는 잘 알려진 시인들이 이끄는 우리 시 워크숍에 참여할 수 있다",
+      "praise": "led by를 앞의 workshop과 이어 붙인 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Workshop",
+          "ko": "워크숍"
+        },
+        {
+          "en": "participants",
+          "ko": "참가자"
+        },
+        {
+          "en": "join",
+          "ko": "참여하다"
+        },
+        {
+          "en": "workshop",
+          "ko": "워크숍"
+        },
+        {
+          "en": "led by",
+          "ko": "~이 이끄는"
+        },
+        {
+          "en": "well-known",
+          "ko": "잘 알려진"
+        },
+        {
+          "en": "poets",
+          "ko": "시인들"
+        },
+        {
+          "en": "Poetry",
+          "ko": "시"
+        },
+        {
+          "en": "All",
+          "ko": "모든"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "our",
+          "ko": "우리의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "all participants → 모든 참가자",
+          "check": [
+            "모든",
+            "전원",
+            "참가자"
+          ],
+          "nudge": "all participants가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "all participants는 여기서 '모든 참가자'예요."
+        },
+        {
+          "id": 2,
+          "text": "led by well-known poets → 잘 알려진 시인들이 이끄는",
+          "check": [
+            "시인",
+            "이끄",
+            "진행",
+            "유명"
+          ],
+          "nudge": "led by well-known poets가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "led by well-known poets는 여기서 '잘 알려진 시인들이 이끄는'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "led를 문장의 동사로 보고 '이끌었다'로 해석",
+          "signals": [
+            "이끌었다",
+            "인도했다"
+          ],
+          "treatment": {
+            "message": "led by는 앞의 무엇을 꾸밀까요? '워크숍이 이끌었다'일까요, '시인들이 이끄는 워크숍'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "워크숍이 이끌었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "시인들이 이끄는 워크숍",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '시인들이 이끄는 워크숍'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '시인들이 이끄는 워크숍'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Compose your poem inspired by the theme.",
+      "model_translation": "주제에서 영감을 받은 시를 지으세요",
+      "praise": "inspired by를 앞의 poem과 이어 붙인 거 좋아요.",
+      "glosses": [
+        {
+          "en": "Compose",
+          "ko": "짓다, 쓰다"
+        },
+        {
+          "en": "poem",
+          "ko": "시"
+        },
+        {
+          "en": "inspired by",
+          "ko": "~에서 영감을 받은"
+        },
+        {
+          "en": "theme",
+          "ko": "주제"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Compose your poem → 시를 지으세요",
+          "check": [
+            "시를",
+            "짓",
+            "쓰"
+          ],
+          "nudge": "Compose your poem이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Compose your poem은 여기서 '시를 지으세요'예요."
+        },
+        {
+          "id": 2,
+          "text": "inspired by the theme → 주제에서 영감을 받은",
+          "check": [
+            "영감",
+            "주제"
+          ],
+          "nudge": "inspired by the theme가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "inspired by the theme는 여기서 '주제에서 영감을 받은'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Compose를 '구성 요소'로 보고 명령문을 놓침",
+          "signals": [
+            "구성",
+            "성분"
+          ],
+          "treatment": {
+            "message": "안내문에서 동사로 시작하면 무엇일까요? '시의 구성'일까요, '시를 지으세요'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "시의 구성",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "시를 지으세요",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '시를 지으세요'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '시를 지으세요'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "You can submit your piece only through E-mail at administer@worldpoetry.org.",
+      "model_translation": "작품은 오직 이메일로만 낼 수 있다",
+      "praise": "only through를 '오직 ~로만'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "submit",
+          "ko": "제출하다, 내다"
+        },
+        {
+          "en": "piece",
+          "ko": "작품"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "E-mail",
+          "ko": "이메일"
+        },
+        {
+          "en": "administer@worldpoetry.org",
+          "ko": "이메일 주소"
+        },
+        {
+          "en": "You",
+          "ko": "당신은"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "only",
+          "ko": "오직 ~만"
+        },
+        {
+          "en": "at",
+          "ko": "~에서"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "submit your piece → 작품을 내다",
+          "check": [
+            "작품",
+            "제출",
+            "내"
+          ],
+          "nudge": "submit your piece이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "submit your piece은 여기서 '작품을 내다'예요."
+        },
+        {
+          "id": 2,
+          "text": "only through E-mail → 오직 이메일로만",
+          "check": [
+            "이메일",
+            "메일",
+            "만"
+          ],
+          "nudge": "only through E-mail이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "only through E-mail은 여기서 '오직 이메일로만'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "piece를 '조각'으로 해석",
+          "signals": [
+            "조각"
+          ],
+          "treatment": {
+            "message": "대회에서 내는 piece는 무엇일까요? '조각을 제출한다'일까요, '작품을 제출한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "조각을 제출한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "작품을 제출한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '작품을 제출한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '작품을 제출한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

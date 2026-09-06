@@ -1,0 +1,242 @@
+{
+  "id": "suneung-29-crossing-cultures",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 29번",
+  "category": "리딩",
+  "topic_intro": "다른 문화로 건너가는 일이 사람을 어떻게 바꾸는가",
+  "sentence": "The process of crossing cultures challenges the very basis of who we are as cultural beings. It offers opportunities for new learning and growth. Being \"uprooted\" from our home brings us understanding not only of the people and their culture in our new environment, but of ourselves and our home culture. Although the difficulties that can arise from crossing cultures are often shocking, success stories are everywhere. Despite, or rather because of, the suffering and ambivalence we undergo when we cross cultures, we gradually find ourselves uniquely privileged to define ourselves and others anew with clarity and insight that we could not have cultivated without leaving home. Adapting to a new and unfamiliar culture, then, is more than survival. It is a life-changing journey. It is a process of \"becoming\" — personal reinvention, transformation, growth, reaching out beyond the boundaries of our own existence. The process does not require that we abandon our former personalities and the cultures into which we were born. Rather, it compels us to find ourselves as if for the first time, particularly those \"cultural invariants\" within us — aspects that we hold dear and refuse to compromise.",
+  "grammar_type": "어법_추상논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 대시로 나뉘면",
+    "how": "쉼표·대시 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "text": "The process of crossing cultures challenges the very basis of who we are as cultural beings.",
+      "ko": "문화를 건너가는 과정은 우리가 문화적 존재로서 누구인가 하는 그 바탕 자체를 뒤흔든다",
+      "praise": "challenges를 '뒤흔든다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "the process of crossing cultures", "sub": "이", "top": "은", "answer": "문화를 건너가는 과정", "check": ["문화", "건너", "넘나", "과정"] },
+        { "en": "challenges the very basis", "sub": "가", "top": "는", "answer": "바탕 자체를 뒤흔든다", "check": ["바탕", "기반", "근본", "흔들", "도전"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "challenges를 명사 '도전들'로 보고 동사를 놓침", "signals": ["도전들", "과제들"], "ask": "이 문장의 동사는 무엇일까요?", "wrong": "문화 건너기의 도전들", "right": "과정이 뒤흔든다" },
+        { "id": "E2", "detect": "the very를 '아주'로만 보고 강조를 흐림", "signals": ["아주 기반", "매우 기반"], "ask": "명사 앞의 very는 무엇을 강조할까요?", "wrong": "아주 기반을", "right": "바로 그 바탕 자체를" }
+      ],
+      "glosses": [
+        ["process", "과정"],
+        ["crossing", "건너가는 것"],
+        ["cultures", "문화들"],
+        ["challenges", "뒤흔들다, 이의를 제기하다"],
+        ["very", "바로 그"],
+        ["basis", "바탕, 기반"],
+        ["cultural", "문화적인"],
+        ["beings", "존재"]
+      ]
+    },
+    {
+      "text": "It offers opportunities for new learning and growth.",
+      "ko": "그것은 새로운 배움과 성장의 기회를 준다",
+      "praise": "offers를 '준다'로 본 거 좋아요.",
+      "points": [
+        { "en": "offers opportunities", "sub": "가", "top": "는", "answer": "기회를 준다", "check": ["기회", "제공", "주"] },
+        { "en": "new learning and growth", "sub": "가", "top": "는", "answer": "새로운 배움과 성장", "check": ["배움", "학습", "성장"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "offers를 명사 '제안들'로 해석", "signals": ["제안들", "할인"], "ask": "이 문장의 동사는 무엇일까요?", "wrong": "기회의 제안들", "right": "기회를 준다" }
+      ],
+      "glosses": [
+        ["offers", "준다, 제공한다"],
+        ["opportunities", "기회"],
+        ["learning", "배움"],
+        ["growth", "성장"]
+      ]
+    },
+    {
+      "text": "Being \"uprooted\" from our home brings us understanding not only of the people and their culture in our new environment, but of ourselves and our home culture.",
+      "ko": "고향에서 \"뿌리 뽑히는\" 일은 새 환경의 사람들과 그 문화뿐 아니라 우리 자신과 고향 문화까지 이해하게 해 준다",
+      "praise": "not only A but B를 끝까지 이어 읽은 거 정말 잘했어요.",
+      "points": [
+        { "en": "being uprooted from our home", "sub": "이", "top": "은", "answer": "고향에서 뿌리 뽑히는 일", "check": ["뿌리", "고향", "떠나", "뽑히"] },
+        { "en": "brings us understanding", "sub": "가", "top": "는", "answer": "우리에게 이해를 가져다준다", "check": ["이해", "알게", "깨닫"] },
+        { "en": "not only A but B", "sub": "가", "top": "는", "answer": "A뿐 아니라 B도", "check": ["뿐 아니", "뿐만 아니", "까지"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "uprooted를 능동으로 보고 '뿌리를 뽑았다'로 해석", "signals": ["뿌리를 뽑았", "뽑아낸"], "ask": "being uprooted는 하는 쪽일까요, 당하는 쪽일까요?", "wrong": "우리가 뿌리를 뽑는 것", "right": "우리가 뿌리 뽑히는 것" },
+        { "id": "E2", "detect": "but of 뒤를 놓치고 앞쪽만 해석", "signals": ["새 환경의 문화를 이해하게 된다."], "ask": "but of 뒤에도 이해할 대상이 하나 더 있어요.", "wrong": "새 환경의 문화만 이해한다", "right": "우리 자신과 고향 문화까지 이해한다" }
+      ],
+      "glosses": [
+        ["Being", "~인 것"],
+        ["uprooted", "뿌리 뽑힌"],
+        ["home", "고향, 집"],
+        ["brings", "가져다준다"],
+        ["understanding", "이해"],
+        ["not only", "~뿐 아니라"],
+        ["culture", "문화"],
+        ["environment", "환경"],
+        ["ourselves", "우리 자신"]
+      ]
+    },
+    {
+      "text": "Although the difficulties that can arise from crossing cultures are often shocking, success stories are everywhere.",
+      "ko": "문화를 건너갈 때 생길 수 있는 어려움이 흔히 충격적이긴 하지만, 성공담은 어디에나 있다",
+      "praise": "Although절의 주어와 동사를 멀리서 이어 준 거 정말 잘했어요.",
+      "points": [
+        { "en": "the difficulties ... are often shocking", "sub": "이", "top": "은", "answer": "어려움이 흔히 충격적이다", "check": ["어려움", "충격", "힘든"] },
+        { "en": "success stories are everywhere", "sub": "가", "top": "는", "answer": "성공담은 어디에나 있다", "check": ["성공", "어디에나", "곳곳"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "that절에 밀려 difficulties의 동사를 arise로 봄", "signals": ["어려움이 생긴다.", "어려움이 일어난다."], "ask": "difficulties에 걸리는 진짜 동사는 무엇일까요?", "wrong": "어려움이 생긴다", "right": "어려움이 충격적이다" }
+      ],
+      "glosses": [
+        ["Although", "비록 ~이지만"],
+        ["difficulties", "어려움"],
+        ["arise", "생기다"],
+        ["shocking", "충격적인"],
+        ["success", "성공"],
+        ["stories", "이야기"],
+        ["everywhere", "어디에나"]
+      ]
+    },
+    {
+      "text": "Despite, or rather because of, the suffering and ambivalence we undergo when we cross cultures,",
+      "ko": "문화를 건널 때 겪는 괴로움과 엇갈린 감정에도 불구하고, 아니 오히려 그것 때문에",
+      "praise": "Despite와 because of가 같은 목적어를 받는 걸 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "Despite, or rather because of ~", "sub": "가", "top": "는", "answer": "~에도 불구하고, 아니 오히려 ~ 때문에", "check": ["불구", "오히려", "때문"] },
+        { "en": "the suffering and ambivalence we undergo", "sub": "가", "top": "는", "answer": "우리가 겪는 괴로움과 엇갈린 감정", "check": ["괴로", "고통", "겪", "양가", "엇갈"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "Despite와 because of를 반대로 이어 읽음", "signals": ["때문에도 불구하고"], "ask": "or rather는 앞말을 어떻게 하는 걸까요?", "wrong": "때문에도 불구하고", "right": "불구하고, 아니 오히려 그것 때문에" },
+        { "id": "E2", "detect": "ambivalence를 '야망'으로 해석", "signals": ["야망", "포부"], "ask": "ambivalence는 감정이 어떤 상태일까요?", "wrong": "야망", "right": "엇갈린 감정" }
+      ],
+      "glosses": [
+        ["Despite", "~에도 불구하고"],
+        ["or rather", "아니 오히려"],
+        ["because of", "~ 때문에"],
+        ["suffering", "괴로움"],
+        ["ambivalence", "엇갈린 감정"],
+        ["undergo", "겪다"],
+        ["cross", "건너다"]
+      ]
+    },
+    {
+      "text": "we gradually find ourselves uniquely privileged to define ourselves and others anew with clarity and insight that we could not have cultivated without leaving home.",
+      "ko": "우리는 차츰, 고향을 떠나지 않았다면 기를 수 없었을 또렷함과 통찰로 자신과 남을 새롭게 규정할 수 있는 남다른 특권을 지닌 자신을 발견하게 된다",
+      "praise": "find ourselves + 형용사를 '~한 자신을 발견하다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "find ourselves uniquely privileged", "sub": "가", "top": "는", "answer": "남다른 특권을 지닌 자신을 발견하다", "check": ["특권", "남다른", "자신을", "발견"] },
+        { "en": "define ourselves and others anew", "sub": "가", "top": "는", "answer": "자신과 남을 새롭게 규정하다", "check": ["새롭게", "새로", "규정", "정의"] },
+        { "en": "could not have cultivated without leaving home", "sub": "이", "top": "은", "answer": "고향을 떠나지 않았다면 기를 수 없었을", "check": ["떠나지 않", "고향", "기를 수 없", "얻을 수 없"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "find ourselves를 '우리를 찾다'로 직역", "signals": ["우리를 찾는다", "자신을 찾는다"], "ask": "find ourselves 뒤에 상태를 나타내는 말이 오면 무슨 뜻일까요?", "wrong": "우리 자신을 찾는다", "right": "~한 자신을 발견하게 된다" },
+        { "id": "E2", "detect": "could not have cultivated를 단순 과거로 보고 가정을 놓침", "signals": ["기르지 못했다.", "얻지 못했다."], "ask": "could not have + 과거분사는 실제 일일까요, 가정일까요?", "wrong": "기르지 못했다", "right": "기를 수 없었을 것이다" }
+      ],
+      "glosses": [
+        ["gradually", "차츰"],
+        ["find", "발견하다"],
+        ["uniquely", "남다르게"],
+        ["privileged", "특권을 지닌"],
+        ["define", "규정하다"],
+        ["others", "남들"],
+        ["anew", "새롭게"],
+        ["clarity", "또렷함, 명료함"],
+        ["insight", "통찰"],
+        ["cultivated", "길렀다"],
+        ["leaving", "떠나는 것"]
+      ]
+    },
+    {
+      "text": "Adapting to a new and unfamiliar culture, then, is more than survival.",
+      "ko": "그러므로 새롭고 낯선 문화에 적응하는 일은 단순한 생존 이상이다",
+      "praise": "Adapting을 주어로 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "adapting to ~", "sub": "가", "top": "는", "answer": "~에 적응하는 일 (주어)", "check": ["적응"] },
+        { "en": "more than survival", "sub": "이", "top": "은", "answer": "생존 이상이다", "check": ["생존", "이상", "그 이상", "넘어"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "then을 '그때'로 보고 접속을 놓침", "signals": ["그때", "그 다음"], "ask": "문장 가운데 끼어든 then은 무엇을 이을까요?", "wrong": "그때 적응하는 것은", "right": "그러므로 적응하는 것은" }
+      ],
+      "glosses": [
+        ["Adapting", "적응하는 것"],
+        ["unfamiliar", "낯선"],
+        ["then", "그러므로"],
+        ["survival", "생존"]
+      ]
+    },
+    {
+      "text": "It is a life-changing journey. It is a process of \"becoming\" — personal reinvention, transformation, growth, reaching out beyond the boundaries of our own existence.",
+      "ko": "그것은 삶을 바꾸는 여정이다. 그것은 \"되어 감\"의 과정, 곧 자기 재발명이고 변모이고 성장이며, 자기 존재의 경계를 넘어 뻗어 나가는 일이다",
+      "praise": "대시 뒤를 앞말의 풀이로 읽은 거 정말 잘했어요.",
+      "points": [
+        { "en": "a life-changing journey", "sub": "가", "top": "는", "answer": "삶을 바꾸는 여정", "check": ["삶", "인생", "여정", "여행"] },
+        { "en": "a process of becoming", "sub": "이", "top": "은", "answer": "되어 감의 과정", "check": ["되어", "되는", "과정"] },
+        { "en": "reaching out beyond the boundaries", "sub": "이", "top": "은", "answer": "경계를 넘어 뻗어 나가는 것", "check": ["경계", "넘어", "뻗", "한계"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "reinvention을 '재발명품'으로 보고 사람 이야기를 놓침", "signals": ["발명품"], "ask": "personal reinvention은 무엇을 다시 만드는 걸까요?", "wrong": "개인 발명품", "right": "자기 자신을 새로 만드는 일" }
+      ],
+      "glosses": [
+        ["life-changing", "삶을 바꾸는"],
+        ["journey", "여정"],
+        ["becoming", "되어 감"],
+        ["personal", "개인의"],
+        ["reinvention", "새로 만들어 냄"],
+        ["transformation", "변모"],
+        ["reaching out", "뻗어 나가는 것"],
+        ["beyond", "~을 넘어"],
+        ["boundaries", "경계"],
+        ["existence", "존재"]
+      ]
+    },
+    {
+      "text": "The process does not require that we abandon our former personalities and the cultures into which we were born.",
+      "ko": "그 과정은 우리가 예전의 성격과 태어난 문화를 버릴 것을 요구하지 않는다",
+      "praise": "into which를 앞의 cultures와 이어 붙인 거 정말 잘했어요.",
+      "points": [
+        { "en": "does not require that ~", "sub": "가", "top": "는", "answer": "~할 것을 요구하지 않는다", "check": ["요구하지 않", "필요하지 않", "않는다"] },
+        { "en": "the cultures into which we were born", "sub": "가", "top": "는", "answer": "우리가 태어난 문화", "check": ["태어난", "태어난 문화"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "부정을 놓치고 '버려야 한다'로 해석", "signals": ["버려야 한다", "포기해야"], "ask": "does not require는 무엇을 부정할까요?", "wrong": "버릴 것을 요구한다", "right": "버릴 것을 요구하지 않는다" },
+        { "id": "E2", "detect": "into which의 선행사를 personalities로 봄", "signals": ["성격 속에서 태어난"], "ask": "우리는 무엇 속에서 태어났을까요?", "wrong": "성격 속에서 태어난", "right": "문화 속에서 태어난" }
+      ],
+      "glosses": [
+        ["require", "요구하다"],
+        ["abandon", "버리다"],
+        ["former", "예전의"],
+        ["personalities", "성격"],
+        ["born", "태어난"]
+      ]
+    },
+    {
+      "text": "Rather, it compels us to find ourselves as if for the first time, particularly those \"cultural invariants\" within us — aspects that we hold dear and refuse to compromise.",
+      "ko": "오히려 그것은 우리로 하여금 처음인 것처럼 자신을 찾게 만든다. 특히 우리 안의 \"문화적 불변 요소\", 곧 우리가 소중히 여기며 양보하지 않으려는 면들을 말이다",
+      "praise": "compels us to를 '~하게 만든다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "compels us to find ourselves", "sub": "가", "top": "는", "answer": "우리로 하여금 자신을 찾게 만든다", "check": ["하게 만들", "하도록", "강요", "찾게"] },
+        { "en": "as if for the first time", "sub": "이", "top": "은", "answer": "마치 처음인 것처럼", "check": ["처음", "마치"] },
+        { "en": "aspects that we hold dear and refuse to compromise", "sub": "이", "top": "은", "answer": "소중히 여기며 양보하지 않으려는 면들", "check": ["소중", "양보", "타협", "면"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "compels를 '강제로 시킨다'로만 보고 문맥을 흐림", "signals": ["강제한다", "억지로"], "ask": "compel us to find는 우리를 어떻게 한다는 걸까요?", "wrong": "우리를 강제한다", "right": "우리로 하여금 찾게 만든다" },
+        { "id": "E2", "detect": "hold dear를 '비싸게 잡다'로 직역", "signals": ["비싸게", "값비싼"], "ask": "hold dear는 한 덩어리로 쓰이는 말이에요.", "wrong": "비싸게 여기는", "right": "소중히 여기는" }
+      ],
+      "glosses": [
+        ["Rather", "오히려"],
+        ["compels", "~하게 만들다"],
+        ["as if", "마치 ~인 것처럼"],
+        ["particularly", "특히"],
+        ["invariants", "변하지 않는 것"],
+        ["within", "~ 안에"],
+        ["aspects", "면, 측면"],
+        ["hold dear", "소중히 여기다"],
+        ["refuse", "거부하다"],
+        ["compromise", "양보하다, 타협하다"]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1088 @@
+{
+  "id": "suneung-41-narrator-2",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 41·42번 (2)",
+  "category": "리딩",
+  "topic_intro": "머릿속을 스쳐 가는 자동적 생각",
+  "sentence": "On the surface are your automatic thoughts. These are like short tapes that momentarily flash through your mind. Call these automatic thoughts a form of \"self-talk\" that you use as you navigate through the day. You produce a wide variety of these automatic thoughts, some consciously and some unconsciously. For example, automatic thoughts that relieve anxiety go something like this: You walk into a room, see a few new people, and say to yourself, \"Oh no, I don't like this. This is not good.\" Automatic thoughts are bad habits that cloud fresh and positive experiences. They can turn a potentially good experience into one fraught with anxiety. If you tell yourself that you are always stressed or full of anxiety before doing something new, that new experience will be tainted by that anxiety.",
+  "grammar_type": "장문독해_심리논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 콜론으로 나뉘면",
+    "how": "콜론·and 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "On the surface are your automatic thoughts. These are like short tapes that momentarily flash through your mind.",
+      "model_translation": "맨 위에는 자동적 생각들이 있다. 이것들은 머릿속을 잠깐 스쳐 가는 짧은 테이프 같다",
+      "praise": "맨 앞 부사구 뒤의 도치를 알아본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "surface",
+          "ko": "표면, 맨 위"
+        },
+        {
+          "en": "automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "short",
+          "ko": "짧은"
+        },
+        {
+          "en": "tapes",
+          "ko": "테이프"
+        },
+        {
+          "en": "momentarily",
+          "ko": "잠깐"
+        },
+        {
+          "en": "flash",
+          "ko": "스쳐 지나가다"
+        },
+        {
+          "en": "mind",
+          "ko": "머릿속, 마음"
+        },
+        {
+          "en": "On",
+          "ko": "~에"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "your",
+          "ko": "당신의"
+        },
+        {
+          "en": "These",
+          "ko": "이것들"
+        },
+        {
+          "en": "like",
+          "ko": "~처럼, 좋아하다"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "On the surface are ~ → 맨 위에는 ~이 있다",
+          "check": [
+            "표면",
+            "맨 위",
+            "겉"
+          ],
+          "nudge": "On the surface are ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "On the surface are ~는 여기서 '맨 위에는 ~이 있다'예요."
+        },
+        {
+          "id": 2,
+          "text": "momentarily flash through your mind → 머릿속을 잠깐 스쳐 가다",
+          "check": [
+            "스쳐",
+            "지나",
+            "잠깐",
+            "순간"
+          ],
+          "nudge": "momentarily flash through your mind가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "momentarily flash through your mind는 여기서 '머릿속을 잠깐 스쳐 가다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "도치를 못 보고 surface를 주어로 봄",
+          "signals": [
+            "표면이 생각"
+          ],
+          "treatment": {
+            "message": "are 뒤에 온 것이 주어예요. '표면이 자동적 생각이다'일까요, '맨 위에 자동적 생각들이 있다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "표면이 자동적 생각이다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "맨 위에 자동적 생각들이 있다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '맨 위에 자동적 생각들이 있다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '맨 위에 자동적 생각들이 있다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "flash를 '번쩍이는 빛'으로만 보고 동사를 놓침",
+          "signals": [
+            "섬광",
+            "플래시"
+          ],
+          "treatment": {
+            "message": "flash through your mind는 무엇이 하는 일일까요? '머릿속의 섬광'일까요, '머릿속을 스쳐 지나간다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "머릿속의 섬광",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "머릿속을 스쳐 지나간다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '머릿속을 스쳐 지나간다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '머릿속을 스쳐 지나간다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Call these automatic thoughts a form of \"self-talk\" that you use as you navigate through the day.",
+      "model_translation": "이 자동적 생각들을, 하루를 헤쳐 나갈 때 쓰는 일종의 \"혼잣말\"이라고 부르라",
+      "praise": "call A B를 'A를 B라고 부르다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Call",
+          "ko": "~라고 부르다"
+        },
+        {
+          "en": "form",
+          "ko": "형태, 일종"
+        },
+        {
+          "en": "self-talk",
+          "ko": "혼잣말"
+        },
+        {
+          "en": "navigate",
+          "ko": "헤쳐 나가다"
+        },
+        {
+          "en": "these",
+          "ko": "이것들"
+        },
+        {
+          "en": "automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "use",
+          "ko": "사용, 사용하다"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "day",
+          "ko": "날"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "call A B → A를 B라고 부르다",
+          "check": [
+            "부르",
+            "라고 하",
+            "일컫"
+          ],
+          "nudge": "call A B가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "call A B는 여기서 'A를 B라고 부르다'예요."
+        },
+        {
+          "id": 2,
+          "text": "as you navigate through the day → 하루를 헤쳐 나갈 때",
+          "check": [
+            "하루",
+            "헤쳐",
+            "지나",
+            "보내"
+          ],
+          "nudge": "as you navigate through the day가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "as you navigate through the day는 여기서 '하루를 헤쳐 나갈 때'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Call을 '전화하다'로 해석",
+          "signals": [
+            "전화"
+          ],
+          "treatment": {
+            "message": "Call A B는 무엇을 하는 걸까요? '생각에게 전화하라'일까요, '생각을 ~라고 부르라'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "생각에게 전화하라",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "생각을 ~라고 부르라",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '생각을 ~라고 부르라'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '생각을 ~라고 부르라'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "navigate를 '항해하다'로만 보고 흐림",
+          "signals": [
+            "항해"
+          ],
+          "treatment": {
+            "message": "navigate through the day는 무엇일까요? '하루를 항해한다'일까요, '하루를 헤쳐 나간다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "하루를 항해한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "하루를 헤쳐 나간다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '하루를 헤쳐 나간다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '하루를 헤쳐 나간다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You produce a wide variety of these automatic thoughts, some consciously and some unconsciously.",
+      "model_translation": "당신은 이런 자동적 생각을 아주 여러 가지로 만들어 내는데, 어떤 것은 의식해서, 어떤 것은 의식하지 못한 채로 만든다",
+      "praise": "some ~ and some ~ 을 '어떤 것은 ~, 어떤 것은 ~'으로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "produce",
+          "ko": "만들어 내다"
+        },
+        {
+          "en": "wide",
+          "ko": "넓은"
+        },
+        {
+          "en": "variety",
+          "ko": "여러 가지"
+        },
+        {
+          "en": "consciously",
+          "ko": "의식해서"
+        },
+        {
+          "en": "unconsciously",
+          "ko": "의식하지 못한 채"
+        },
+        {
+          "en": "You",
+          "ko": "당신은"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "these",
+          "ko": "이것들"
+        },
+        {
+          "en": "automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "some",
+          "ko": "어떤"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "a wide variety of ~ → 아주 여러 가지의 ~",
+          "check": [
+            "여러",
+            "다양",
+            "갖가지"
+          ],
+          "nudge": "a wide variety of ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a wide variety of ~는 여기서 '아주 여러 가지의 ~'예요."
+        },
+        {
+          "id": 2,
+          "text": "some consciously and some unconsciously → 어떤 것은 의식해서, 어떤 것은 의식하지 못한 채",
+          "check": [
+            "의식",
+            "무의식",
+            "어떤 것은"
+          ],
+          "nudge": "some consciously and some unconsciously가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "some consciously and some unconsciously는 여기서 '어떤 것은 의식해서, 어떤 것은 의식하지 못한 채'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "produce를 '농산물'로 해석",
+          "signals": [
+            "농산물"
+          ],
+          "treatment": {
+            "message": "이 문장의 동사는 무엇일까요? '생각의 농산물'일까요, '생각을 만들어 낸다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "생각의 농산물",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "생각을 만들어 낸다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '생각을 만들어 낸다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '생각을 만들어 낸다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "For example, automatic thoughts that relieve anxiety go something like this: You walk into a room, see a few new people, and say to yourself, \"Oh no, I don't like this. This is not good.\"",
+      "model_translation": "예를 들어 불안을 키우는 자동적 생각은 이런 식이다. 방에 들어가 낯선 사람 몇을 보고는 속으로 이렇게 말한다. \"아이고, 이건 싫은데. 이건 좋지 않아\"",
+      "praise": "say to yourself를 '속으로 말하다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "relieve",
+          "ko": "덜어 주다"
+        },
+        {
+          "en": "anxiety",
+          "ko": "불안"
+        },
+        {
+          "en": "walk into",
+          "ko": "~에 들어가다"
+        },
+        {
+          "en": "few",
+          "ko": "몇몇의"
+        },
+        {
+          "en": "don't",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "For",
+          "ko": "~동안"
+        },
+        {
+          "en": "example",
+          "ko": "예"
+        },
+        {
+          "en": "automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "go",
+          "ko": "가다"
+        },
+        {
+          "en": "something",
+          "ko": "어떤 것"
+        },
+        {
+          "en": "like",
+          "ko": "~처럼, 좋아하다"
+        },
+        {
+          "en": "this",
+          "ko": "이"
+        },
+        {
+          "en": "You",
+          "ko": "당신은"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "room",
+          "ko": "방"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "new",
+          "ko": "새로운"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "say",
+          "ko": "말하다"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "yourself",
+          "ko": "당신 자신"
+        },
+        {
+          "en": "Oh",
+          "ko": "아"
+        },
+        {
+          "en": "no",
+          "ko": "~ 없는"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "good",
+          "ko": "좋은"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "go something like this → 이런 식이다",
+          "check": [
+            "이런 식",
+            "이렇",
+            "다음과 같"
+          ],
+          "nudge": "go something like this가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "go something like this는 여기서 '이런 식이다'예요."
+        },
+        {
+          "id": 2,
+          "text": "say to yourself → 속으로 말하다",
+          "check": [
+            "속으로",
+            "혼잣말",
+            "스스로에게"
+          ],
+          "nudge": "say to yourself가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "say to yourself는 여기서 '속으로 말하다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "go를 '가다'로 보고 관용구를 놓침",
+          "signals": [
+            "간다",
+            "이렇게 간다"
+          ],
+          "treatment": {
+            "message": "go something like this는 굳어진 표현이에요. '이렇게 간다'일까요, '이런 식이다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "이렇게 간다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "이런 식이다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '이런 식이다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '이런 식이다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "a few를 'few'로 보고 '거의 없다'로 뒤집음",
+          "signals": [
+            "거의 없는 사람",
+            "사람이 거의"
+          ],
+          "treatment": {
+            "message": "a few는 있다는 뜻일까요, 없다는 뜻일까요? '사람이 거의 없다'일까요, '사람 몇 명이 있다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "사람이 거의 없다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사람 몇 명이 있다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사람 몇 명이 있다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사람 몇 명이 있다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Automatic thoughts are bad habits that cloud fresh and positive experiences.",
+      "model_translation": "자동적 생각은 새롭고 긍정적인 경험을 흐리는 나쁜 버릇이다",
+      "praise": "cloud를 동사 '흐리다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "habits",
+          "ko": "버릇, 습관"
+        },
+        {
+          "en": "cloud",
+          "ko": "흐리다"
+        },
+        {
+          "en": "fresh",
+          "ko": "새로운"
+        },
+        {
+          "en": "positive",
+          "ko": "긍정적인"
+        },
+        {
+          "en": "Automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "bad",
+          "ko": "나쁜"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "experiences",
+          "ko": "경험"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "bad habits → 나쁜 버릇",
+          "check": [
+            "나쁜 버릇",
+            "습관"
+          ],
+          "nudge": "bad habits이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "bad habits은 여기서 '나쁜 버릇'이에요."
+        },
+        {
+          "id": 2,
+          "text": "cloud fresh and positive experiences → 새롭고 긍정적인 경험을 흐리다",
+          "check": [
+            "흐리",
+            "가리",
+            "망치",
+            "덮"
+          ],
+          "nudge": "cloud fresh and positive experiences가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "cloud fresh and positive experiences는 여기서 '새롭고 긍정적인 경험을 흐리다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "cloud를 명사 '구름'으로 보고 동사를 놓침",
+          "signals": [
+            "구름"
+          ],
+          "treatment": {
+            "message": "that cloud ~ 에서 cloud는 무엇일까요? '경험의 구름'일까요, '경험을 흐린다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "경험의 구름",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "경험을 흐린다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '경험을 흐린다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '경험을 흐린다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "They can turn a potentially good experience into one fraught with anxiety.",
+      "model_translation": "그것들은 좋을 수도 있었던 경험을 불안으로 가득 찬 경험으로 바꿔 버릴 수 있다",
+      "praise": "turn A into B를 'A를 B로 바꾸다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "turn",
+          "ko": "바꾸다"
+        },
+        {
+          "en": "potentially",
+          "ko": "~일 수도 있는"
+        },
+        {
+          "en": "fraught with",
+          "ko": "~으로 가득 찬"
+        },
+        {
+          "en": "into",
+          "ko": "~로"
+        },
+        {
+          "en": "They",
+          "ko": "그것들"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "good",
+          "ko": "좋은"
+        },
+        {
+          "en": "experience",
+          "ko": "경험"
+        },
+        {
+          "en": "one",
+          "ko": "하나"
+        },
+        {
+          "en": "anxiety",
+          "ko": "불안"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "turn A into B → A를 B로 바꾸다",
+          "check": [
+            "바꾸",
+            "만들",
+            "로 만든"
+          ],
+          "nudge": "turn A into B가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "turn A into B는 여기서 'A를 B로 바꾸다'예요."
+        },
+        {
+          "id": 2,
+          "text": "fraught with anxiety → 불안으로 가득 찬",
+          "check": [
+            "불안",
+            "가득",
+            "차 있"
+          ],
+          "nudge": "fraught with anxiety가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "fraught with anxiety는 여기서 '불안으로 가득 찬'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "one이 experience를 받는 걸 놓침",
+          "signals": [
+            "하나로 바꾼다",
+            "한 개로"
+          ],
+          "treatment": {
+            "message": "into one의 one은 무엇을 가리킬까요? '하나로 바꾼다'일까요, '그런 경험으로 바꾼다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "하나로 바꾼다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그런 경험으로 바꾼다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그런 경험으로 바꾼다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그런 경험으로 바꾼다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "If you tell yourself that you are always stressed or full of anxiety before doing something new, that new experience will be tainted by that anxiety.",
+      "model_translation": "새로운 일을 하기 전에 자기가 늘 스트레스를 받거나 불안으로 가득하다고 스스로에게 말한다면, 그 새로운 경험은 그 불안으로 물들게 된다",
+      "praise": "will be tainted by를 '~로 물들게 된다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "tell",
+          "ko": "말하다"
+        },
+        {
+          "en": "stressed",
+          "ko": "스트레스를 받는"
+        },
+        {
+          "en": "full of",
+          "ko": "~으로 가득한"
+        },
+        {
+          "en": "tainted",
+          "ko": "물든, 더럽혀진"
+        },
+        {
+          "en": "If",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "yourself",
+          "ko": "당신 자신"
+        },
+        {
+          "en": "that",
+          "ko": "~라는 것을"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "always",
+          "ko": "항상"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "anxiety",
+          "ko": "불안"
+        },
+        {
+          "en": "before",
+          "ko": "~ 전에"
+        },
+        {
+          "en": "doing",
+          "ko": "하는 것"
+        },
+        {
+          "en": "something",
+          "ko": "어떤 것"
+        },
+        {
+          "en": "new",
+          "ko": "새로운"
+        },
+        {
+          "en": "experience",
+          "ko": "경험"
+        },
+        {
+          "en": "will",
+          "ko": "~할 것이다"
+        },
+        {
+          "en": "be",
+          "ko": "이다"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "tell yourself that ~ → 스스로에게 ~라고 말하다",
+          "check": [
+            "스스로",
+            "자신에게",
+            "속으로"
+          ],
+          "nudge": "tell yourself that ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "tell yourself that ~는 여기서 '스스로에게 ~라고 말하다'예요."
+        },
+        {
+          "id": 2,
+          "text": "will be tainted by ~ → ~로 물들게 된다",
+          "check": [
+            "물들",
+            "오염",
+            "얼룩",
+            "망가"
+          ],
+          "nudge": "will be tainted by ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "will be tainted by ~는 여기서 '~로 물들게 된다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "수동태를 능동으로 보고 '경험이 물들인다'로 해석",
+          "signals": [
+            "경험이 물들인다",
+            "경험이 오염시"
+          ],
+          "treatment": {
+            "message": "will be tainted는 하는 쪽일까요, 되는 쪽일까요? '경험이 불안을 물들인다'일까요, '경험이 불안으로 물든다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "경험이 불안을 물들인다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "경험이 불안으로 물든다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '경험이 불안으로 물든다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '경험이 불안으로 물든다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

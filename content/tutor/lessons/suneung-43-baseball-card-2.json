@@ -1,0 +1,1211 @@
+{
+  "id": "suneung-43-baseball-card-2",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 43·44·45번 (2)",
+  "category": "리딩",
+  "topic_intro": "야구로 이어진 할아버지와 손자",
+  "sentence": "\"Hey, Grandpa! I found this cool baseball card of you. Were you a baseball player?\" he asked, eyes filled with curiosity. A spark of nostalgia lit up Grandpa Joe's eyes as he took the card. Memories flooded back, and he told stories of his youthful days on the baseball field. Grandpa Joe spoke of the thrill of the game and the joy of hitting a home run. Tommy, fascinated by these stories, felt more connected to his grandfather. Eager to learn more, he asked Grandpa Joe to teach him about baseball. They spent afternoons in the backyard as he shared the wisdom of the game with his grandson. Together, they practiced hitting, catching, and even laughed over the mistakes. As they bonded over baseball, the gap between generations closed. Grandpa Joe's eyes no longer held just the twinkle of untold stories; they now radiated warmth and shared memories.",
+  "grammar_type": "장문독해_서사문",
+  "split_rule": {
+    "when": "한 문장이 25단어를 넘거나 세미콜론으로 나뉘면",
+    "how": "세미콜론·and 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Tommy",
+      "ko": "토미",
+      "type": "person"
+    },
+    {
+      "en": "Grandpa Joe",
+      "ko": "조 할아버지",
+      "type": "person"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "\"Hey, Grandpa! I found this cool baseball card of you. Were you a baseball player?\" he asked, eyes filled with curiosity.",
+      "model_translation": "\"할아버지! 할아버지가 찍힌 멋진 야구 카드를 찾았어요. 야구 선수였어요?\" 그는 호기심이 가득한 눈으로 물었다",
+      "praise": "eyes filled with curiosity를 '호기심이 가득한 눈으로'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Hey",
+          "ko": "저기, 있잖아요"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "cool",
+          "ko": "멋진"
+        },
+        {
+          "en": "player",
+          "ko": "선수"
+        },
+        {
+          "en": "asked",
+          "ko": "물었다"
+        },
+        {
+          "en": "filled with",
+          "ko": "~으로 가득한"
+        },
+        {
+          "en": "curiosity",
+          "ko": "호기심"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "found",
+          "ko": "찾았다, 밝혀졌다"
+        },
+        {
+          "en": "this",
+          "ko": "이"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "you",
+          "ko": "당신은"
+        },
+        {
+          "en": "Were",
+          "ko": "~이었다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "this cool baseball card of you → 할아버지가 찍힌 이 멋진 야구 카드",
+          "check": [
+            "카드",
+            "멋진",
+            "할아버지"
+          ],
+          "nudge": "this cool baseball card of you가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "this cool baseball card of you는 여기서 '할아버지가 찍힌 이 멋진 야구 카드'예요."
+        },
+        {
+          "id": 2,
+          "text": "eyes filled with curiosity → 호기심이 가득한 눈으로",
+          "check": [
+            "호기심",
+            "눈",
+            "가득"
+          ],
+          "nudge": "eyes filled with curiosity이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "eyes filled with curiosity은 여기서 '호기심이 가득한 눈으로'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "eyes filled를 새 문장으로 보고 끊음",
+          "signals": [
+            "눈이 채워졌다."
+          ],
+          "treatment": {
+            "message": "eyes filled with curiosity는 무엇을 덧붙이는 말일까요? '눈이 호기심으로 채워졌다'일까요, '호기심 가득한 눈으로 물었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "눈이 호기심으로 채워졌다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "호기심 가득한 눈으로 물었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '호기심 가득한 눈으로 물었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '호기심 가득한 눈으로 물었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "A spark of nostalgia lit up Grandpa Joe's eyes as he took the card.",
+      "model_translation": "카드를 받아 든 조 할아버지의 눈에 그리움의 불꽃이 반짝 켜졌다",
+      "praise": "lit up을 '반짝 켜졌다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "spark",
+          "ko": "불꽃"
+        },
+        {
+          "en": "nostalgia",
+          "ko": "그리움, 옛 생각"
+        },
+        {
+          "en": "took",
+          "ko": "받아 들었다"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(이름)"
+        },
+        {
+          "en": "Grandpa Joe's",
+          "ko": "조 할아버지의"
+        },
+        {
+          "en": "A",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "lit",
+          "ko": "불을 밝혔다, 반짝였다"
+        },
+        {
+          "en": "up",
+          "ko": "위로"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "a spark of nostalgia → 그리움의 불꽃",
+          "check": [
+            "그리움",
+            "향수",
+            "불꽃",
+            "빛"
+          ],
+          "nudge": "a spark of nostalgia가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a spark of nostalgia는 여기서 '그리움의 불꽃'이에요."
+        },
+        {
+          "id": 2,
+          "text": "lit up his eyes → 눈을 환하게 밝혔다",
+          "check": [
+            "눈",
+            "밝",
+            "반짝",
+            "빛났"
+          ],
+          "nudge": "lit up his eyes이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "lit up his eyes은 여기서 '눈을 환하게 밝혔다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "nostalgia를 '노스탤지어 상표'처럼 두고 뜻을 흐림",
+          "signals": [
+            "노스탤지어라는"
+          ],
+          "treatment": {
+            "message": "nostalgia는 어떤 마음일까요? '노스탤지어라는 불꽃'일까요, '옛날을 그리워하는 마음'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "노스탤지어라는 불꽃",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "옛날을 그리워하는 마음",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '옛날을 그리워하는 마음'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '옛날을 그리워하는 마음'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Memories flooded back, and he told stories of his youthful days on the baseball field.",
+      "model_translation": "추억이 밀려들었고, 그는 야구장에서 보낸 젊은 날의 이야기를 들려주었다",
+      "praise": "flooded back을 '밀려들었다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Memories",
+          "ko": "추억"
+        },
+        {
+          "en": "flooded back",
+          "ko": "밀려들었다"
+        },
+        {
+          "en": "told",
+          "ko": "들려주었다"
+        },
+        {
+          "en": "youthful",
+          "ko": "젊은"
+        },
+        {
+          "en": "days",
+          "ko": "날들, 시절"
+        },
+        {
+          "en": "field",
+          "ko": "경기장, 들판"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기들"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "on",
+          "ko": "~에"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "memories flooded back → 추억이 밀려들었다",
+          "check": [
+            "추억",
+            "기억",
+            "밀려",
+            "떠올"
+          ],
+          "nudge": "memories flooded back가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "memories flooded back는 여기서 '추억이 밀려들었다'예요."
+        },
+        {
+          "id": 2,
+          "text": "his youthful days on the baseball field → 야구장에서 보낸 젊은 날",
+          "check": [
+            "젊은",
+            "야구장",
+            "시절"
+          ],
+          "nudge": "his youthful days on the baseball field이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "his youthful days on the baseball field은 여기서 '야구장에서 보낸 젊은 날'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "flooded를 '홍수가 났다'로 직역",
+          "signals": [
+            "홍수"
+          ],
+          "treatment": {
+            "message": "memories flooded back은 무엇이 일어난 걸까요? '추억에 홍수가 났다'일까요, '추억이 밀려들었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "추억에 홍수가 났다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "추억이 밀려들었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '추억이 밀려들었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '추억이 밀려들었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Grandpa Joe spoke of the thrill of the game and the joy of hitting a home run.",
+      "model_translation": "조 할아버지는 경기의 짜릿함과 홈런을 치는 기쁨에 대해 이야기했다",
+      "praise": "spoke of를 '~에 대해 이야기했다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "spoke of",
+          "ko": "~에 대해 이야기했다"
+        },
+        {
+          "en": "thrill",
+          "ko": "짜릿함"
+        },
+        {
+          "en": "game",
+          "ko": "경기"
+        },
+        {
+          "en": "joy",
+          "ko": "기쁨"
+        },
+        {
+          "en": "hitting",
+          "ko": "치는 것"
+        },
+        {
+          "en": "home run",
+          "ko": "홈런"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(이름)"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "spoke of ~ → ~에 대해 이야기했다",
+          "check": [
+            "이야기",
+            "말했",
+            "얘기"
+          ],
+          "nudge": "spoke of ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "spoke of ~는 여기서 '~에 대해 이야기했다'예요."
+        },
+        {
+          "id": 2,
+          "text": "the thrill of the game and the joy of hitting → 경기의 짜릿함과 치는 기쁨",
+          "check": [
+            "짜릿",
+            "스릴",
+            "기쁨",
+            "즐거움"
+          ],
+          "nudge": "the thrill of the game and the joy of hitting이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the thrill of the game and the joy of hitting은 여기서 '경기의 짜릿함과 치는 기쁨'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "hitting a home run을 '홈런에 맞다'로 방향을 뒤집음",
+          "signals": [
+            "홈런에 맞",
+            "홈런을 맞"
+          ],
+          "treatment": {
+            "message": "hitting a home run은 누가 무엇을 하는 걸까요? '홈런에 맞는 것'일까요, '홈런을 치는 것'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "홈런에 맞는 것",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "홈런을 치는 것",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '홈런을 치는 것'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '홈런을 치는 것'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Tommy, fascinated by these stories, felt more connected to his grandfather. Eager to learn more, he asked Grandpa Joe to teach him about baseball.",
+      "model_translation": "이 이야기들에 푹 빠진 토미는 할아버지와 더 가까워진 느낌이 들었다. 더 배우고 싶어진 그는 야구를 가르쳐 달라고 조 할아버지에게 부탁했다",
+      "praise": "삽입된 분사구를 건너뛰고 주어와 동사를 이은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "fascinated",
+          "ko": "푹 빠진"
+        },
+        {
+          "en": "felt",
+          "ko": "느꼈다"
+        },
+        {
+          "en": "connected",
+          "ko": "이어진, 가까운"
+        },
+        {
+          "en": "Eager",
+          "ko": "몹시 하고 싶어 하는"
+        },
+        {
+          "en": "learn",
+          "ko": "배우다"
+        },
+        {
+          "en": "teach",
+          "ko": "가르치다"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미(이름)"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(이름)"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        },
+        {
+          "en": "these",
+          "ko": "이것들"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기들"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "grandfather",
+          "ko": "할아버지"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "asked",
+          "ko": "물었다"
+        },
+        {
+          "en": "him",
+          "ko": "그를"
+        },
+        {
+          "en": "about",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "fascinated by these stories → 이 이야기들에 푹 빠진",
+          "check": [
+            "빠진",
+            "매료",
+            "사로잡",
+            "반한"
+          ],
+          "nudge": "fascinated by these stories가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "fascinated by these stories는 여기서 '이 이야기들에 푹 빠진'이에요."
+        },
+        {
+          "id": 2,
+          "text": "felt more connected to ~ → ~와 더 가까워진 느낌이 들었다",
+          "check": [
+            "가까",
+            "연결",
+            "친밀",
+            "느꼈"
+          ],
+          "nudge": "felt more connected to ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "felt more connected to ~는 여기서 '~와 더 가까워진 느낌이 들었다'예요."
+        },
+        {
+          "id": 3,
+          "text": "asked A to teach him → A에게 가르쳐 달라고 부탁했다",
+          "check": [
+            "가르쳐",
+            "부탁",
+            "요청",
+            "달라고"
+          ],
+          "nudge": "asked A to teach him가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "asked A to teach him는 여기서 'A에게 가르쳐 달라고 부탁했다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "fascinated를 문장의 동사로 보고 끊음",
+          "signals": [
+            "토미는 매료시켰다"
+          ],
+          "treatment": {
+            "message": "이 문장의 진짜 동사는 무엇일까요? '토미가 매료시켰다'일까요, '이야기에 빠진 토미가 느꼈다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "토미가 매료시켰다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "이야기에 빠진 토미가 느꼈다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '이야기에 빠진 토미가 느꼈다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '이야기에 빠진 토미가 느꼈다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "Eager to learn을 '배우기를 열망한다'로 두고 주어를 놓침",
+          "signals": [
+            "배우기를 열망한다."
+          ],
+          "treatment": {
+            "message": "더 배우고 싶었던 사람은 누구일까요? '배우고 싶다'일까요, '더 배우고 싶어진 토미는'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "배우고 싶다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "더 배우고 싶어진 토미는",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '더 배우고 싶어진 토미는'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '더 배우고 싶어진 토미는'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "They spent afternoons in the backyard as he shared the wisdom of the game with his grandson.",
+      "model_translation": "할아버지가 손자에게 경기의 지혜를 나눠 주는 동안 둘은 뒤뜰에서 여러 오후를 보냈다",
+      "praise": "shared A with B를 'B에게 A를 나눠 주다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "spent",
+          "ko": "보냈다"
+        },
+        {
+          "en": "afternoons",
+          "ko": "오후"
+        },
+        {
+          "en": "backyard",
+          "ko": "뒤뜰"
+        },
+        {
+          "en": "shared",
+          "ko": "나눠 주었다"
+        },
+        {
+          "en": "wisdom",
+          "ko": "지혜"
+        },
+        {
+          "en": "grandson",
+          "ko": "손자"
+        },
+        {
+          "en": "They",
+          "ko": "그것들"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "game",
+          "ko": "경기"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "spent afternoons in the backyard → 뒤뜰에서 오후를 보냈다",
+          "check": [
+            "뒤뜰",
+            "마당",
+            "오후",
+            "보냈"
+          ],
+          "nudge": "spent afternoons in the backyard이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "spent afternoons in the backyard은 여기서 '뒤뜰에서 오후를 보냈다'예요."
+        },
+        {
+          "id": 2,
+          "text": "shared the wisdom of the game → 경기의 지혜를 나눠 주었다",
+          "check": [
+            "지혜",
+            "나눠",
+            "알려",
+            "전해"
+          ],
+          "nudge": "shared the wisdom of the game이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "shared the wisdom of the game은 여기서 '경기의 지혜를 나눠 주었다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "he가 누구인지 뒤바꿔 토미가 가르쳤다고 해석",
+          "signals": [
+            "토미가 가르",
+            "손자가 알려"
+          ],
+          "treatment": {
+            "message": "지혜를 나눠 준 사람은 누구일까요? '토미가 지혜를 나눠 주었다'일까요, '할아버지가 지혜를 나눠 주었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "토미가 지혜를 나눠 주었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "할아버지가 지혜를 나눠 주었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '할아버지가 지혜를 나눠 주었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '할아버지가 지혜를 나눠 주었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Together, they practiced hitting, catching, and even laughed over the mistakes.",
+      "model_translation": "둘은 함께 치기와 받기를 연습했고, 실수를 두고 웃기까지 했다",
+      "praise": "laughed over를 '~을 두고 웃었다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "Together",
+          "ko": "함께"
+        },
+        {
+          "en": "practiced",
+          "ko": "연습했다"
+        },
+        {
+          "en": "catching",
+          "ko": "받는 것"
+        },
+        {
+          "en": "laughed",
+          "ko": "웃었다"
+        },
+        {
+          "en": "mistakes",
+          "ko": "실수"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "hitting",
+          "ko": "치는 것"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "even",
+          "ko": "심지어"
+        },
+        {
+          "en": "over",
+          "ko": "~을 넘어"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "practiced hitting, catching → 치기와 받기를 연습했다",
+          "check": [
+            "연습",
+            "치기",
+            "받기",
+            "잡"
+          ],
+          "nudge": "practiced hitting, catching이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "practiced hitting, catching은 여기서 '치기와 받기를 연습했다'예요."
+        },
+        {
+          "id": 2,
+          "text": "laughed over the mistakes → 실수를 두고 웃었다",
+          "check": [
+            "실수",
+            "웃"
+          ],
+          "nudge": "laughed over the mistakes가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "laughed over the mistakes는 여기서 '실수를 두고 웃었다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "laughed over를 '실수를 비웃었다'로 해석",
+          "signals": [
+            "비웃"
+          ],
+          "treatment": {
+            "message": "laugh over the mistakes는 어떤 웃음일까요? '실수를 비웃었다'일까요, '실수를 두고 같이 웃었다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "실수를 비웃었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "실수를 두고 같이 웃었다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '실수를 두고 같이 웃었다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '실수를 두고 같이 웃었다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "As they bonded over baseball, the gap between generations closed. Grandpa Joe's eyes no longer held just the twinkle of untold stories; they now radiated warmth and shared memories.",
+      "model_translation": "야구로 가까워지면서 세대 사이의 틈이 좁혀졌다. 조 할아버지의 눈에는 이제 못다 한 이야기의 반짝임만 있는 것이 아니라, 따뜻함과 함께 나눈 추억이 뿜어져 나왔다",
+      "praise": "no longer just ~ 를 '이제 ~만 있는 게 아니라'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "bonded",
+          "ko": "가까워졌다"
+        },
+        {
+          "en": "gap",
+          "ko": "틈, 간격"
+        },
+        {
+          "en": "generations",
+          "ko": "세대"
+        },
+        {
+          "en": "closed",
+          "ko": "좁혀졌다, 닫혔다"
+        },
+        {
+          "en": "no longer",
+          "ko": "더 이상 ~않다"
+        },
+        {
+          "en": "held",
+          "ko": "담고 있었다"
+        },
+        {
+          "en": "twinkle",
+          "ko": "반짝임"
+        },
+        {
+          "en": "radiated",
+          "ko": "뿜어냈다"
+        },
+        {
+          "en": "warmth",
+          "ko": "따뜻함"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(이름)"
+        },
+        {
+          "en": "Grandpa Joe's",
+          "ko": "조 할아버지의"
+        },
+        {
+          "en": "As",
+          "ko": "~로서"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "over",
+          "ko": "~을 넘어"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "between",
+          "ko": "~ 사이에"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "just",
+          "ko": "단지, 막"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "untold",
+          "ko": "아직 하지 않은"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기들"
+        },
+        {
+          "en": "now",
+          "ko": "지금"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "shared",
+          "ko": "나눠 주었다"
+        },
+        {
+          "en": "memories",
+          "ko": "추억"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "bonded over baseball → 야구로 가까워졌다",
+          "check": [
+            "야구",
+            "가까",
+            "친해",
+            "이어"
+          ],
+          "nudge": "bonded over baseball가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "bonded over baseball는 여기서 '야구로 가까워졌다'예요."
+        },
+        {
+          "id": 2,
+          "text": "the gap between generations closed → 세대 사이의 틈이 좁혀졌다",
+          "check": [
+            "세대",
+            "틈",
+            "간격",
+            "좁"
+          ],
+          "nudge": "the gap between generations closed이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the gap between generations closed은 여기서 '세대 사이의 틈이 좁혀졌다'예요."
+        },
+        {
+          "id": 3,
+          "text": "no longer held just ~ → 이제 ~만 담고 있지 않았다",
+          "check": [
+            "더 이상",
+            "이제",
+            "만 있",
+            "않"
+          ],
+          "nudge": "no longer held just ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "no longer held just ~는 여기서 '이제 ~만 담고 있지 않았다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "closed를 '닫혔다'로만 보고 뜻을 흐림",
+          "signals": [
+            "세대가 닫혔"
+          ],
+          "treatment": {
+            "message": "the gap closed는 무엇이 어떻게 된 걸까요? '세대가 닫혔다'일까요, '세대 사이의 틈이 좁혀졌다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "세대가 닫혔다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "세대 사이의 틈이 좁혀졌다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '세대 사이의 틈이 좁혀졌다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '세대 사이의 틈이 좁혀졌다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "no longer를 놓치고 '반짝임만 있었다'로 해석",
+          "signals": [
+            "반짝임만 있었다"
+          ],
+          "treatment": {
+            "message": "no longer just는 무엇을 부정할까요? '반짝임만 담고 있었다'일까요, '이제 반짝임만 담고 있지 않았다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "반짝임만 담고 있었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "이제 반짝임만 담고 있지 않았다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '이제 반짝임만 담고 있지 않았다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '이제 반짝임만 담고 있지 않았다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

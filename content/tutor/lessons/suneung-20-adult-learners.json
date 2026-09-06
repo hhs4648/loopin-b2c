@@ -1,0 +1,994 @@
+{
+  "id": "suneung-20-adult-learners",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 20번",
+  "category": "리딩",
+  "topic_intro": "성인 학습자를 가르치는 사람의 역할",
+  "sentence": "By definition, adult learners have a self-concept of being in charge of their own lives and have a need to be seen and treated as being capable of taking responsibility for their own learning. As such, learners need to be given the freedom and autonomy to assume responsibility for their own choices and to be proactive in making decisions that contribute to their educational experiences. Rather than perform the role of the \"sage on the stage,\" in working with adult learners, the instructor's role should be the \"guide on the side\" — a facilitator of learning, and a coach or mentor who works alongside their learners to promote achievement and academic success. The facilitator role extends beyond course delivery, and includes the broader pedagogical tasks that will support learners on their growth such as helping them effectively manage their time; fostering engagement; assigning meaningful and relevant learning activities; and so on.",
+  "grammar_type": "필자주장_추상논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 and로 두 갈래가 되면",
+    "how": "and 앞이나 대시(—) 앞에서 끊는다. 한 덩어리에 해석할 것이 두세 개가 되게 한다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "By definition, adult learners have a self-concept of being in charge of their own lives",
+      "model_translation": "정의상, 성인 학습자는 자기 삶을 스스로 책임지고 있다는 자아개념을 가지고 있다",
+      "praise": "in charge of를 '책임지는'으로 본 거 잘했어요.",
+      "glosses": [
+        {
+          "en": "By definition",
+          "ko": "정의상, 본래"
+        },
+        {
+          "en": "adult learners",
+          "ko": "성인 학습자"
+        },
+        {
+          "en": "have a self-concept of",
+          "ko": "~라는 자아개념을 가지고 있다"
+        },
+        {
+          "en": "being in charge of",
+          "ko": "~을 책임지고 있다는 것"
+        },
+        {
+          "en": "their own lives",
+          "ko": "자기 자신의 삶"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "By definition → 정의상",
+          "check": [
+            "정의상",
+            "정의",
+            "본래",
+            "원래"
+          ],
+          "nudge": "By definition이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "By definition은 여기서 '정의상'이에요."
+        },
+        {
+          "id": 2,
+          "text": "in charge of their own lives → 자기 삶을 스스로 책임지는",
+          "check": [
+            "책임",
+            "주도",
+            "이끌"
+          ],
+          "nudge": "in charge of their own lives가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "in charge of their own lives는 여기서 '자기 삶을 스스로 책임지는'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "in charge of의 방향을 반대로 보고 '~을 맡기는'으로 해석",
+          "signals": [
+            "맡기는",
+            "맡겨"
+          ],
+          "treatment": {
+            "message": "in charge of는 누가 누구를 책임지는 걸까요? '자기 삶을 남에게 맡기는'일까요, '자기 삶을 스스로 책임지는'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "자기 삶을 남에게 맡기는",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "자기 삶을 스스로 책임지는",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '자기 삶을 스스로 책임지는'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '자기 삶을 스스로 책임지는'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "and have a need to be seen and treated as being capable of taking responsibility for their own learning.",
+      "model_translation": "그리고 자기 학습에 책임질 수 있는 사람으로 여겨지고 대우받고 싶은 욕구가 있다",
+      "praise": "be seen and treated를 '여겨지고 대우받다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "and have a need to",
+          "ko": "그리고 ~하고 싶은 욕구가 있다"
+        },
+        {
+          "en": "be seen and treated as",
+          "ko": "~로 여겨지고 대우받다"
+        },
+        {
+          "en": "being capable of",
+          "ko": "~할 수 있는 사람인 것"
+        },
+        {
+          "en": "taking responsibility for",
+          "ko": "~에 책임을 지는 것"
+        },
+        {
+          "en": "their own learning",
+          "ko": "자기 자신의 학습"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "be seen and treated as → ~로 여겨지고 대우받다",
+          "check": [
+            "여겨지",
+            "대우받",
+            "취급받",
+            "보이길"
+          ],
+          "nudge": "be seen and treated as가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "be seen and treated as는 여기서 '~로 여겨지고 대우받다'예요."
+        },
+        {
+          "id": 2,
+          "text": "capable of taking responsibility for → ~에 책임질 수 있는",
+          "check": [
+            "책임질 수",
+            "책임을 질",
+            "감당"
+          ],
+          "nudge": "capable of taking responsibility for이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "capable of taking responsibility for은 여기서 '~에 책임질 수 있는'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "수동을 능동으로 보고 '보고 대우한다'로 해석",
+          "signals": [
+            "보고 대우",
+            "바라보고 대우하",
+            "여기고 대우하"
+          ],
+          "treatment": {
+            "message": "be seen에서 성인 학습자는 보는 쪽일까요, 보이는 쪽일까요? '남을 그렇게 보고 대우한다'일까요, '그렇게 여겨지고 대우받는다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "남을 그렇게 보고 대우한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그렇게 여겨지고 대우받는다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그렇게 여겨지고 대우받는다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그렇게 여겨지고 대우받는다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "As such, learners need to be given the freedom and autonomy to assume responsibility for their own choices",
+      "model_translation": "그러므로 학습자에게는 자기 선택에 책임을 질 자유와 자율성이 주어져야 한다",
+      "praise": "need to be given을 '주어져야 한다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "As such",
+          "ko": "그러므로, 그런 만큼"
+        },
+        {
+          "en": "learners",
+          "ko": "학습자는"
+        },
+        {
+          "en": "need to be given",
+          "ko": "주어져야 한다"
+        },
+        {
+          "en": "the freedom and autonomy",
+          "ko": "자유와 자율성"
+        },
+        {
+          "en": "to assume responsibility for",
+          "ko": "~에 책임을 질"
+        },
+        {
+          "en": "their own choices",
+          "ko": "자기 자신의 선택"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "autonomy → 자율성",
+          "check": [
+            "자율",
+            "자주",
+            "스스로 정"
+          ],
+          "nudge": "autonomy가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "autonomy는 여기서 '자율성'이에요."
+        },
+        {
+          "id": 2,
+          "text": "need to be given → 주어져야 한다",
+          "check": [
+            "주어져",
+            "받아야",
+            "제공받"
+          ],
+          "nudge": "need to be given이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "need to be given은 여기서 '주어져야 한다'예요."
+        },
+        {
+          "id": 3,
+          "text": "As such → 그러므로",
+          "check": [
+            "그러므로",
+            "따라서",
+            "그래서",
+            "그렇기"
+          ],
+          "nudge": "As such이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "As such은 여기서 '그러므로'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "need to be given을 능동으로 보고 학습자가 준다고 해석",
+          "signals": [
+            "학습자가 주어야",
+            "학습자는 주어야",
+            "학생이 줘야"
+          ],
+          "treatment": {
+            "message": "자유와 자율성을 주는 쪽은 누구일까요? '학습자가 자유를 주어야 한다'일까요, '학습자에게 자유가 주어져야 한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "학습자가 자유를 주어야 한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "학습자에게 자유가 주어져야 한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '학습자에게 자유가 주어져야 한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '학습자에게 자유가 주어져야 한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "assume을 '가정하다'로 해석",
+          "signals": [
+            "가정",
+            "추정"
+          ],
+          "treatment": {
+            "message": "assume이 responsibility와 같이 오면 뜻이 달라져요. '책임을 가정하다'일까요, '책임을 지다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "책임을 가정하다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "책임을 지다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '책임을 지다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '책임을 지다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "and to be proactive in making decisions that contribute to their educational experiences.",
+      "model_translation": "또 자신의 교육 경험에 도움이 되는 결정을 내리는 데 주도적일 자유와 자율성이 주어져야 한다",
+      "praise": "that의 선행사를 decisions로 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "and to be proactive in",
+          "ko": "그리고 ~에 주도적이다"
+        },
+        {
+          "en": "making decisions",
+          "ko": "결정을 내리는 것"
+        },
+        {
+          "en": "that contribute to",
+          "ko": "~에 도움이 되는"
+        },
+        {
+          "en": "their educational experiences",
+          "ko": "자신의 교육 경험"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "proactive → 주도적인",
+          "check": [
+            "주도",
+            "적극",
+            "능동",
+            "먼저 나서"
+          ],
+          "nudge": "proactive가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "proactive는 여기서 '주도적인'이에요."
+        },
+        {
+          "id": 2,
+          "text": "that contribute to → ~에 도움이 되는",
+          "check": [
+            "도움이 되",
+            "기여",
+            "보탬",
+            "이바지"
+          ],
+          "nudge": "that contribute to가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "that contribute to는 여기서 '~에 도움이 되는'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "proactive를 '사전 예방적인'으로 해석",
+          "signals": [
+            "사전 예방",
+            "예방적"
+          ],
+          "treatment": {
+            "message": "여기 proactive는 학습자가 어떻게 하는지를 말해요. '사전 예방적인'일까요, '주도적인'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "사전 예방적인",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "주도적인",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '주도적인'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '주도적인'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Rather than perform the role of the \"sage on the stage,\" in working with adult learners, the instructor's role should be the \"guide on the side\"",
+      "model_translation": "성인 학습자와 함께할 때 교수자의 역할은 '무대 위의 현자'가 아니라 '곁에서 돕는 안내자'여야 한다",
+      "praise": "Rather than으로 두 역할을 맞세운 걸 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Rather than",
+          "ko": "~하기보다는, ~가 아니라"
+        },
+        {
+          "en": "perform the role of",
+          "ko": "~의 역할을 하다"
+        },
+        {
+          "en": "the sage on the stage",
+          "ko": "무대 위의 현자(혼자 강의하는 사람)"
+        },
+        {
+          "en": "in working with",
+          "ko": "~와 함께할 때"
+        },
+        {
+          "en": "adult learners",
+          "ko": "성인 학습자"
+        },
+        {
+          "en": "the instructor's role",
+          "ko": "교수자의 역할"
+        },
+        {
+          "en": "should be",
+          "ko": "~여야 한다"
+        },
+        {
+          "en": "the guide on the side",
+          "ko": "곁에서 돕는 안내자"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "sage",
+          "ko": "현자"
+        },
+        {
+          "en": "on",
+          "ko": "~ 위의"
+        },
+        {
+          "en": "stage",
+          "ko": "무대"
+        },
+        {
+          "en": "guide",
+          "ko": "안내자"
+        },
+        {
+          "en": "side",
+          "ko": "곁, 옆"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Rather than A → A가 아니라",
+          "check": [
+            "아니라",
+            "보다는",
+            "대신"
+          ],
+          "nudge": "Rather than A가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Rather than A는 여기서 'A가 아니라'예요."
+        },
+        {
+          "id": 2,
+          "text": "the instructor's role should be ~ → 교수자의 역할은 ~여야 한다",
+          "check": [
+            "역할",
+            "교수자",
+            "강사",
+            "교사",
+            "가르치는 사람"
+          ],
+          "nudge": "the instructor's role should be ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the instructor's role should be ~은 여기서 '교수자의 역할은 ~여야 한다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "Rather than을 '차라리'로만 보고 두 역할의 대비를 놓침",
+          "signals": [
+            "차라리"
+          ],
+          "treatment": {
+            "message": "Rather than은 앞뒤 둘을 맞세워요. '차라리 무대 위의 현자를 하라'일까요, '무대 위의 현자가 아니라 곁의 안내자여야 한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "차라리 무대 위의 현자를 하라",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "무대 위의 현자가 아니라 곁의 안내자여야 한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '무대 위의 현자가 아니라 곁의 안내자여야 한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '무대 위의 현자가 아니라 곁의 안내자여야 한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "sage를 허브(샐비어)나 다른 뜻으로 해석",
+          "signals": [
+            "샐비어",
+            "허브",
+            "세이지"
+          ],
+          "treatment": {
+            "message": "여기 sage는 사람을 가리켜요. '무대 위의 허브'일까요, '무대 위의 현자'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "무대 위의 허브",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "무대 위의 현자",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '무대 위의 현자'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '무대 위의 현자'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "— a facilitator of learning, and a coach or mentor who works alongside their learners to promote achievement and academic success.",
+      "model_translation": "즉 학습을 돕는 조력자이자, 학습자 곁에서 함께하며 성취와 학업적 성공을 북돋우는 코치나 멘토여야 한다",
+      "praise": "promote를 '북돋우다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "a facilitator of learning",
+          "ko": "학습을 돕는 조력자"
+        },
+        {
+          "en": "and a coach or mentor",
+          "ko": "그리고 코치나 멘토"
+        },
+        {
+          "en": "who works alongside",
+          "ko": "~ 곁에서 함께하는"
+        },
+        {
+          "en": "their learners",
+          "ko": "자신의 학습자들"
+        },
+        {
+          "en": "to promote",
+          "ko": "~을 북돋우기 위해"
+        },
+        {
+          "en": "achievement and academic success",
+          "ko": "성취와 학업적 성공"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "a facilitator of learning → 학습을 돕는 조력자",
+          "check": [
+            "조력",
+            "돕는",
+            "촉진",
+            "도와주는"
+          ],
+          "nudge": "a facilitator of learning가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a facilitator of learning는 여기서 '학습을 돕는 조력자'예요."
+        },
+        {
+          "id": 2,
+          "text": "works alongside → 곁에서 함께하다",
+          "check": [
+            "곁에서",
+            "함께",
+            "나란히",
+            "옆에서"
+          ],
+          "nudge": "works alongside가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "works alongside는 여기서 '곁에서 함께하다'예요."
+        },
+        {
+          "id": 3,
+          "text": "promote → 북돋우다",
+          "check": [
+            "북돋",
+            "촉진",
+            "높이",
+            "이끌어"
+          ],
+          "nudge": "promote가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "promote는 여기서 '북돋우다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "promote를 '승진시키다/홍보하다'로 해석",
+          "signals": [
+            "승진",
+            "홍보",
+            "판촉"
+          ],
+          "treatment": {
+            "message": "promote가 achievement와 같이 오면 뜻이 달라져요. '성취를 홍보하다'일까요, '성취를 북돋우다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "성취를 홍보하다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "성취를 북돋우다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '성취를 북돋우다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '성취를 북돋우다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "The facilitator role extends beyond course delivery, and includes the broader pedagogical tasks that will support learners on their growth",
+      "model_translation": "조력자 역할은 수업 전달을 넘어서며, 학습자의 성장을 뒷받침할 더 넓은 교육적 과업까지 포함한다",
+      "praise": "extends beyond를 '~을 넘어선다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "The facilitator role",
+          "ko": "조력자 역할은"
+        },
+        {
+          "en": "extends beyond",
+          "ko": "~을 넘어선다"
+        },
+        {
+          "en": "course delivery",
+          "ko": "수업 전달"
+        },
+        {
+          "en": "and includes",
+          "ko": "그리고 포함한다"
+        },
+        {
+          "en": "the broader pedagogical tasks",
+          "ko": "더 넓은 교육적 과업"
+        },
+        {
+          "en": "that will support",
+          "ko": "~을 뒷받침할"
+        },
+        {
+          "en": "learners on their growth",
+          "ko": "학습자의 성장"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "extends beyond → ~을 넘어선다",
+          "check": [
+            "넘어",
+            "이상",
+            "그치지 않"
+          ],
+          "nudge": "extends beyond가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "extends beyond는 여기서 '~을 넘어선다'예요."
+        },
+        {
+          "id": 2,
+          "text": "course delivery → 수업 전달",
+          "check": [
+            "수업",
+            "강의",
+            "가르치는 것"
+          ],
+          "nudge": "course delivery가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "course delivery는 여기서 '수업 전달'이에요."
+        },
+        {
+          "id": 3,
+          "text": "pedagogical tasks → 교육적 과업",
+          "check": [
+            "교육",
+            "교수",
+            "과업",
+            "일들"
+          ],
+          "nudge": "pedagogical tasks가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "pedagogical tasks는 여기서 '교육적 과업'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "delivery를 '배달'로 해석",
+          "signals": [
+            "배달",
+            "배송",
+            "택배"
+          ],
+          "treatment": {
+            "message": "course와 같이 쓰인 delivery는 무엇일까요? '수업 배달'일까요, '수업 전달'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "수업 배달",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "수업 전달",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '수업 전달'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '수업 전달'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "extends를 '연장하다'로 보고 뜻을 뒤집음",
+          "signals": [
+            "연장",
+            "늘린다"
+          ],
+          "treatment": {
+            "message": "extends beyond는 범위 이야기예요. '수업 시간을 연장한다'일까요, '수업 전달을 넘어선다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "수업 시간을 연장한다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "수업 전달을 넘어선다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '수업 전달을 넘어선다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '수업 전달을 넘어선다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "such as helping them effectively manage their time; fostering engagement; assigning meaningful and relevant learning activities; and so on.",
+      "model_translation": "예를 들어 시간을 효과적으로 관리하도록 돕는 것, 참여를 이끌어 내는 것, 의미 있고 관련성 있는 학습 활동을 부여하는 것 등이다",
+      "praise": "셋이 나란히 놓인 걸 다 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "such as",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "helping them",
+          "ko": "그들이 ~하도록 돕는 것"
+        },
+        {
+          "en": "effectively manage their time",
+          "ko": "시간을 효과적으로 관리하다"
+        },
+        {
+          "en": "fostering engagement",
+          "ko": "참여를 이끌어 내는 것"
+        },
+        {
+          "en": "assigning",
+          "ko": "부여하는 것"
+        },
+        {
+          "en": "meaningful and relevant learning activities",
+          "ko": "의미 있고 관련성 있는 학습 활동"
+        },
+        {
+          "en": "and so on",
+          "ko": "등등"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "such as → 예를 들어",
+          "check": [
+            "예를 들",
+            "예컨대",
+            "가령",
+            "같은"
+          ],
+          "nudge": "such as가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "such as는 여기서 '예를 들어'예요."
+        },
+        {
+          "id": 2,
+          "text": "helping / fostering / assigning → 돕는 것, 이끌어 내는 것, 부여하는 것",
+          "check": [
+            "돕는",
+            "이끌",
+            "부여",
+            "주는 것",
+            "맡기"
+          ],
+          "nudge": "helping / fostering / assigning이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "helping / fostering / assigning은 여기서 '돕는 것, 이끌어 내는 것, 부여하는 것'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "세미콜론을 문장 끝으로 보고 첫 항목만 해석",
+          "signals": [
+            "시간을 관리하도록 돕는 것이다",
+            "돕는 것이다."
+          ],
+          "treatment": {
+            "message": "세미콜론으로 이어진 것이 몇 개일까요? '예는 하나뿐이다'일까요, '예가 셋 나란히 놓였다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "예는 하나뿐이다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "예가 셋 나란히 놓였다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '예가 셋 나란히 놓였다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '예가 셋 나란히 놓였다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "engagement를 '약혼'으로 해석",
+          "signals": [
+            "약혼"
+          ],
+          "treatment": {
+            "message": "수업 이야기에서 engagement는 무엇일까요? '약혼'일까요, '참여'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "약혼",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "참여",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '참여'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '참여'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

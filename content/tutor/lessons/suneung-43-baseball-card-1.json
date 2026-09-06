@@ -1,0 +1,1129 @@
+{
+  "id": "suneung-43-baseball-card-1",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 43·44·45번 (1)",
+  "category": "리딩",
+  "topic_intro": "차고에서 찾은 오래된 야구 카드",
+  "sentence": "Once upon a time in the small town of Meadowville, there lived a curious boy named Tommy. Tommy's grandfather, affectionately known as Grandpa Joe, had always been a mysterious figure to him. Grandpa Joe was a man of few words, but his eyes lit up from stories untold. One lazy summer afternoon, while searching the garage, Tommy found an old, forgotten box. As he opened it, the treasure of memories spilled out, including an old baseball card featuring a young Grandpa Joe. Tommy's eyes widened with excitement as he examined the card. In the card, Grandpa Joe stood proudly in a baseball uniform. He was not the quiet person Tommy knew. Intrigued by this discovery, Tommy rushed inside the house to find Grandpa Joe.",
+  "grammar_type": "장문독해_서사문",
+  "split_rule": {
+    "when": "한 문장이 25단어를 넘거나 but으로 나뉘면",
+    "how": "but·분사구 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [
+    {
+      "en": "Meadowville",
+      "ko": "메도빌",
+      "type": "place"
+    },
+    {
+      "en": "Tommy",
+      "ko": "토미",
+      "type": "person"
+    },
+    {
+      "en": "Grandpa Joe",
+      "ko": "조 할아버지",
+      "type": "person"
+    }
+  ],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Once upon a time in the small town of Meadowville, there lived a curious boy named Tommy.",
+      "model_translation": "옛날 옛적 메도빌이라는 작은 마을에 토미라는 호기심 많은 소년이 살았다",
+      "praise": "there lived 도치를 알아본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Once upon a time",
+          "ko": "옛날 옛적에"
+        },
+        {
+          "en": "town",
+          "ko": "마을"
+        },
+        {
+          "en": "Meadowville",
+          "ko": "메도빌(지명)"
+        },
+        {
+          "en": "lived",
+          "ko": "살았다"
+        },
+        {
+          "en": "curious",
+          "ko": "호기심 많은"
+        },
+        {
+          "en": "boy",
+          "ko": "소년"
+        },
+        {
+          "en": "named",
+          "ko": "~라는 이름의"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미(사람 이름)"
+        },
+        {
+          "en": "in",
+          "ko": "~에서"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "small",
+          "ko": "작은"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "there",
+          "ko": "거기에"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Once upon a time → 옛날 옛적에",
+          "check": [
+            "옛날",
+            "옛적",
+            "먼 옛날"
+          ],
+          "nudge": "Once upon a time가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Once upon a time는 여기서 '옛날 옛적에'예요."
+        },
+        {
+          "id": 2,
+          "text": "there lived a curious boy → 호기심 많은 소년이 살았다",
+          "check": [
+            "호기심",
+            "소년",
+            "살았"
+          ],
+          "nudge": "there lived a curious boy가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "there lived a curious boy는 여기서 '호기심 많은 소년이 살았다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "there를 '거기에'로 보고 장소로 해석",
+          "signals": [
+            "거기에 살았"
+          ],
+          "treatment": {
+            "message": "there lived의 there는 장소를 가리킬까요? '거기에 살았다'일까요, '~이 살았다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "거기에 살았다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~이 살았다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~이 살았다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~이 살았다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "named를 문장의 동사로 보고 끊음",
+          "signals": [
+            "소년이 이름 붙였다"
+          ],
+          "treatment": {
+            "message": "named Tommy는 앞의 무엇을 꾸밀까요? '소년이 토미라고 이름 지었다'일까요, '토미라는 이름의 소년'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "소년이 토미라고 이름 지었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "토미라는 이름의 소년",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '토미라는 이름의 소년'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '토미라는 이름의 소년'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Tommy's grandfather, affectionately known as Grandpa Joe, had always been a mysterious figure to him.",
+      "model_translation": "다정하게 조 할아버지라고 불리던 토미의 할아버지는 토미에게 늘 알 수 없는 사람이었다",
+      "praise": "삽입된 분사구를 건너뛰고 주어와 동사를 이은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "grandfather",
+          "ko": "할아버지"
+        },
+        {
+          "en": "affectionately",
+          "ko": "다정하게"
+        },
+        {
+          "en": "known as",
+          "ko": "~라고 불리는"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(사람 이름)"
+        },
+        {
+          "en": "mysterious",
+          "ko": "알 수 없는, 신비로운"
+        },
+        {
+          "en": "figure",
+          "ko": "인물"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미(이름)"
+        },
+        {
+          "en": "Tommy's",
+          "ko": "토미(사람 이름)의"
+        },
+        {
+          "en": "had",
+          "ko": "가지고 있었다"
+        },
+        {
+          "en": "always",
+          "ko": "항상"
+        },
+        {
+          "en": "been",
+          "ko": "~이었다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "him",
+          "ko": "그를"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "affectionately known as ~ → 다정하게 ~라고 불리는",
+          "check": [
+            "불리",
+            "알려",
+            "다정"
+          ],
+          "nudge": "affectionately known as ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "affectionately known as ~는 여기서 '다정하게 ~라고 불리는'이에요."
+        },
+        {
+          "id": 2,
+          "text": "a mysterious figure → 알 수 없는 사람",
+          "check": [
+            "신비",
+            "알 수 없",
+            "수수께끼"
+          ],
+          "nudge": "a mysterious figure가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a mysterious figure는 여기서 '알 수 없는 사람'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "figure를 '숫자/그림'으로 해석",
+          "signals": [
+            "숫자",
+            "도형"
+          ],
+          "treatment": {
+            "message": "사람에게 쓰인 figure는 무엇일까요? '신비한 숫자'일까요, '알 수 없는 사람'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "신비한 숫자",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "알 수 없는 사람",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '알 수 없는 사람'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '알 수 없는 사람'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "known as를 문장의 동사로 보고 끊음",
+          "signals": [
+            "할아버지는 알려졌다."
+          ],
+          "treatment": {
+            "message": "이 문장의 진짜 동사는 무엇일까요? '할아버지는 알려졌다'일까요, '할아버지는 ~였다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "할아버지는 알려졌다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "할아버지는 ~였다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '할아버지는 ~였다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '할아버지는 ~였다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Grandpa Joe was a man of few words, but his eyes lit up from stories untold.",
+      "model_translation": "조 할아버지는 말수가 적은 사람이었지만, 그의 눈은 아직 하지 않은 이야기들로 반짝였다",
+      "praise": "a man of few words를 '말수가 적은 사람'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "man",
+          "ko": "사람, 남자"
+        },
+        {
+          "en": "words",
+          "ko": "말"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "lit up",
+          "ko": "반짝였다"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기"
+        },
+        {
+          "en": "untold",
+          "ko": "아직 하지 않은"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(사람 이름)"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "few",
+          "ko": "거의 없는"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "his",
+          "ko": "그의"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "a man of few words → 말수가 적은 사람",
+          "check": [
+            "말수",
+            "말이 적",
+            "과묵"
+          ],
+          "nudge": "a man of few words가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "a man of few words는 여기서 '말수가 적은 사람'이에요."
+        },
+        {
+          "id": 2,
+          "text": "his eyes lit up → 그의 눈이 반짝였다",
+          "check": [
+            "눈",
+            "빛",
+            "반짝"
+          ],
+          "nudge": "his eyes lit up이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "his eyes lit up은 여기서 '그의 눈이 반짝였다'예요."
+        },
+        {
+          "id": 3,
+          "text": "stories untold → 아직 하지 않은 이야기들",
+          "check": [
+            "하지 않은",
+            "말하지",
+            "숨은",
+            "못다"
+          ],
+          "nudge": "stories untold가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "stories untold는 여기서 '아직 하지 않은 이야기들'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "few words를 '몇 마디 말'로 보고 뜻을 흐림",
+          "signals": [
+            "몇 마디"
+          ],
+          "treatment": {
+            "message": "a man of few words는 어떤 사람일까요? '몇 마디 말의 사람'일까요, '말수가 적은 사람'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "몇 마디 말의 사람",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "말수가 적은 사람",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '말수가 적은 사람'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '말수가 적은 사람'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "untold를 '말해진'으로 뒤집음",
+          "signals": [
+            "말해진 이야기",
+            "들려준 이야기"
+          ],
+          "treatment": {
+            "message": "un-이 붙으면 뜻이 어떻게 될까요? '이미 말한 이야기'일까요, '아직 하지 않은 이야기'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "이미 말한 이야기",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "아직 하지 않은 이야기",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '아직 하지 않은 이야기'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '아직 하지 않은 이야기'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "One lazy summer afternoon, while searching the garage, Tommy found an old, forgotten box.",
+      "model_translation": "어느 나른한 여름 오후, 차고를 뒤지던 토미는 오래되어 잊힌 상자를 하나 찾았다",
+      "praise": "while searching을 '뒤지던 중에'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "lazy",
+          "ko": "나른한"
+        },
+        {
+          "en": "summer",
+          "ko": "여름"
+        },
+        {
+          "en": "afternoon",
+          "ko": "오후"
+        },
+        {
+          "en": "while",
+          "ko": "~하는 동안"
+        },
+        {
+          "en": "searching",
+          "ko": "뒤지는 것"
+        },
+        {
+          "en": "garage",
+          "ko": "차고"
+        },
+        {
+          "en": "forgotten",
+          "ko": "잊힌"
+        },
+        {
+          "en": "box",
+          "ko": "상자"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미(이름)"
+        },
+        {
+          "en": "One",
+          "ko": "하나"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "found",
+          "ko": "찾았다, 밝혀졌다"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "old",
+          "ko": "나이 든, 오래된"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "while searching the garage → 차고를 뒤지던 중에",
+          "check": [
+            "차고",
+            "뒤지",
+            "찾던",
+            "살피"
+          ],
+          "nudge": "while searching the garage가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "while searching the garage는 여기서 '차고를 뒤지던 중에'예요."
+        },
+        {
+          "id": 2,
+          "text": "an old, forgotten box → 오래되어 잊힌 상자",
+          "check": [
+            "오래",
+            "잊힌",
+            "낡은",
+            "상자"
+          ],
+          "nudge": "an old, forgotten box가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "an old, forgotten box는 여기서 '오래되어 잊힌 상자'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "while searching의 주어를 다른 사람으로 봄",
+          "signals": [
+            "누군가 차고를"
+          ],
+          "treatment": {
+            "message": "차고를 뒤진 사람은 누구일까요? '누군가 차고를 뒤지는 동안'일까요, '토미가 차고를 뒤지던 중에'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "누군가 차고를 뒤지는 동안",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "토미가 차고를 뒤지던 중에",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '토미가 차고를 뒤지던 중에'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '토미가 차고를 뒤지던 중에'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "As he opened it, the treasure of memories spilled out, including an old baseball card featuring a young Grandpa Joe.",
+      "model_translation": "상자를 열자 추억이라는 보물이 쏟아져 나왔는데, 거기에는 젊은 조 할아버지가 실린 오래된 야구 카드도 있었다",
+      "praise": "featuring이 card를 꾸민다는 걸 잡은 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "opened",
+          "ko": "열었다"
+        },
+        {
+          "en": "treasure",
+          "ko": "보물"
+        },
+        {
+          "en": "memories",
+          "ko": "추억"
+        },
+        {
+          "en": "spilled out",
+          "ko": "쏟아져 나왔다"
+        },
+        {
+          "en": "including",
+          "ko": "~을 포함하여"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        },
+        {
+          "en": "featuring",
+          "ko": "~이 실린"
+        },
+        {
+          "en": "young",
+          "ko": "젊은"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(사람 이름)"
+        },
+        {
+          "en": "As",
+          "ko": "~로서"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "an",
+          "ko": "하나의"
+        },
+        {
+          "en": "old",
+          "ko": "나이 든, 오래된"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "spilled out → 쏟아져 나왔다",
+          "check": [
+            "쏟아",
+            "흘러",
+            "나왔"
+          ],
+          "nudge": "spilled out이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "spilled out은 여기서 '쏟아져 나왔다'예요."
+        },
+        {
+          "id": 2,
+          "text": "featuring a young Grandpa Joe → 젊은 조 할아버지가 실린",
+          "check": [
+            "젊은",
+            "실린",
+            "찍힌",
+            "담긴"
+          ],
+          "nudge": "featuring a young Grandpa Joe가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "featuring a young Grandpa Joe는 여기서 '젊은 조 할아버지가 실린'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "featuring을 '특징'으로 보고 동사를 놓침",
+          "signals": [
+            "특징"
+          ],
+          "treatment": {
+            "message": "featuring a young Grandpa Joe는 카드가 어떤 카드라는 걸까요? '젊은 할아버지의 특징'일까요, '젊은 할아버지가 실린 카드'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "젊은 할아버지의 특징",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "젊은 할아버지가 실린 카드",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '젊은 할아버지가 실린 카드'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '젊은 할아버지가 실린 카드'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "As he opened it을 '그가 그것을 열었기 때문에'로만 봄",
+          "signals": [
+            "열었기 때문"
+          ],
+          "treatment": {
+            "message": "여기 As는 시점을 말해요. '열었기 때문에'일까요, '열자마자'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "열었기 때문에",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "열자마자",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '열자마자'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '열자마자'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Tommy's eyes widened with excitement as he examined the card. In the card, Grandpa Joe stood proudly in a baseball uniform. He was not the quiet person Tommy knew.",
+      "model_translation": "토미가 카드를 살펴보는 동안 그의 눈이 신이 나서 커졌다. 카드 속에서 조 할아버지는 야구 유니폼을 입고 당당하게 서 있었다. 그는 토미가 알던 조용한 사람이 아니었다",
+      "praise": "the quiet person Tommy knew를 '토미가 알던 조용한 사람'으로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "widened",
+          "ko": "커졌다"
+        },
+        {
+          "en": "excitement",
+          "ko": "신남, 흥분"
+        },
+        {
+          "en": "examined",
+          "ko": "살펴보았다"
+        },
+        {
+          "en": "stood",
+          "ko": "서 있었다"
+        },
+        {
+          "en": "proudly",
+          "ko": "당당하게"
+        },
+        {
+          "en": "uniform",
+          "ko": "유니폼"
+        },
+        {
+          "en": "quiet",
+          "ko": "조용한"
+        },
+        {
+          "en": "knew",
+          "ko": "알고 있었다"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(사람 이름)"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미(이름)"
+        },
+        {
+          "en": "Tommy's",
+          "ko": "토미(사람 이름)의"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "with",
+          "ko": "~에"
+        },
+        {
+          "en": "as",
+          "ko": "~로서"
+        },
+        {
+          "en": "he",
+          "ko": "그는"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        },
+        {
+          "en": "In",
+          "ko": "~에서"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "person",
+          "ko": "사람"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "eyes widened with excitement → 신이 나서 눈이 커졌다",
+          "check": [
+            "눈이 커",
+            "휘둥그",
+            "신이",
+            "흥분"
+          ],
+          "nudge": "eyes widened with excitement이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "eyes widened with excitement은 여기서 '신이 나서 눈이 커졌다'예요."
+        },
+        {
+          "id": 2,
+          "text": "stood proudly → 당당하게 서 있었다",
+          "check": [
+            "당당",
+            "자랑",
+            "서 있"
+          ],
+          "nudge": "stood proudly가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "stood proudly는 여기서 '당당하게 서 있었다'예요."
+        },
+        {
+          "id": 3,
+          "text": "the quiet person Tommy knew → 토미가 알던 조용한 사람",
+          "check": [
+            "조용",
+            "알던",
+            "알고 있던"
+          ],
+          "nudge": "the quiet person Tommy knew이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the quiet person Tommy knew은 여기서 '토미가 알던 조용한 사람'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "person 뒤 관계사 생략을 못 보고 끊음",
+          "signals": [
+            "조용한 사람. 토미는 알았다"
+          ],
+          "treatment": {
+            "message": "Tommy knew는 앞의 무엇을 꾸밀까요? '조용한 사람, 토미는 알았다'일까요, '토미가 알던 조용한 사람'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "조용한 사람, 토미는 알았다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "토미가 알던 조용한 사람",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '토미가 알던 조용한 사람'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '토미가 알던 조용한 사람'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Intrigued by this discovery, Tommy rushed inside the house to find Grandpa Joe.",
+      "model_translation": "이 발견에 마음이 끌린 토미는 조 할아버지를 찾으러 집 안으로 달려갔다",
+      "praise": "맨 앞 분사구를 뒤의 토미와 이어 붙인 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Intrigued",
+          "ko": "마음이 끌린"
+        },
+        {
+          "en": "discovery",
+          "ko": "발견"
+        },
+        {
+          "en": "rushed",
+          "ko": "달려갔다"
+        },
+        {
+          "en": "inside",
+          "ko": "안으로"
+        },
+        {
+          "en": "house",
+          "ko": "집"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지(사람 이름)"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미(이름)"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        },
+        {
+          "en": "this",
+          "ko": "이"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "to",
+          "ko": "~하는 것"
+        },
+        {
+          "en": "find",
+          "ko": "찾다, 발견하다"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Intrigued by this discovery → 이 발견에 마음이 끌려",
+          "check": [
+            "끌린",
+            "호기심",
+            "궁금",
+            "흥미"
+          ],
+          "nudge": "Intrigued by this discovery가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Intrigued by this discovery는 여기서 '이 발견에 마음이 끌려'예요."
+        },
+        {
+          "id": 2,
+          "text": "rushed inside to find ~ → ~을 찾으러 안으로 달려갔다",
+          "check": [
+            "달려",
+            "뛰어",
+            "찾으러"
+          ],
+          "nudge": "rushed inside to find ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "rushed inside to find ~는 여기서 '~을 찾으러 안으로 달려갔다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "맨 앞 Intrigued를 문장의 동사로 봄",
+          "signals": [
+            "흥미를 끌었다.",
+            "끌었다."
+          ],
+          "treatment": {
+            "message": "Intrigued 앞에 주어가 있나요? '그것이 흥미를 끌었다'일까요, '~에 마음이 끌린 토미는'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그것이 흥미를 끌었다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~에 마음이 끌린 토미는",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~에 마음이 끌린 토미는'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~에 마음이 끌린 토미는'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

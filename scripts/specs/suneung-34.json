@@ -1,0 +1,226 @@
+{
+  "id": "suneung-34-japanese-ao",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 34번",
+  "category": "리딩",
+  "topic_intro": "이름에 맞추어 신호등 색을 바꾼 일본 이야기",
+  "sentence": "Japanese used to have a color word, ao, that spanned both green and blue. In the modern language, however, ao has come to be restricted mostly to blue shades, and green is usually expressed by the word midori. When the first traffic lights were imported from the United States and installed in Japan in the 1930s, they were just as green as anywhere else. Nevertheless, in common parlance the go light was called ao shingoo, perhaps because the three primary colors on Japanese artists' palettes are traditionally aka(red), kiiro(yellow), and ao. The label ao for a green light did not appear so out of the ordinary at first, because of the remaining associations of the word ao with greenness. But over time, the difference between the green color and the dominant meaning of the word ao began to feel awkward. Nations that are less assertive might have opted for the solution of simply changing the official name of the go light to midori. Not so the Japanese. Rather than alter the name to fit reality, the Japanese government announced in 1973 that reality should be altered to fit the name: henceforth, go lights would be a color that better corresponded to the dominant meaning of ao.",
+  "grammar_type": "빈칸추론_언어문화",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 and·콜론으로 나뉘면",
+    "how": "and·콜론 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [
+    { "en": "Japanese", "ko": "일본어, 일본인", "type": "other" },
+    { "en": "Japan", "ko": "일본", "type": "place" },
+    { "en": "United States", "ko": "미국", "type": "place" },
+    { "en": "ao", "ko": "아오", "type": "other" },
+    { "en": "midori", "ko": "미도리", "type": "other" }
+  ],
+  "chunks": [
+    {
+      "text": "Japanese used to have a color word, ao, that spanned both green and blue.",
+      "ko": "일본어에는 초록과 파랑을 모두 아우르는 ao라는 색깔 낱말이 있었다",
+      "praise": "spanned를 '아우르다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "used to have", "sub": "가", "top": "는", "answer": "예전에는 있었다", "check": ["예전", "옛날", "있었"] },
+        { "en": "spanned both green and blue", "sub": "가", "top": "는", "answer": "초록과 파랑을 모두 아울렀다", "check": ["초록", "파랑", "아우", "걸쳐", "둘 다"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "used to를 '~하는 데 쓰였다'로 해석", "signals": ["쓰였다", "사용되었다"], "ask": "used to have는 무엇을 말할까요?", "wrong": "가지는 데 쓰였다", "right": "예전에는 가지고 있었다" },
+        { "id": "E2", "detect": "spanned를 '뻗다'로만 보고 뜻을 흐림", "signals": ["뻗었다"], "ask": "색 이름이 두 색을 span한다면 무슨 뜻일까요?", "wrong": "초록과 파랑으로 뻗었다", "right": "초록과 파랑을 모두 아울렀다" }
+      ],
+      "glosses": [
+        ["Japanese", "일본어, 일본인"],
+        ["used to", "예전에는 ~였다"],
+        ["color", "색깔"],
+        ["ao", "아오(일본어 색 이름)"],
+        ["spanned", "아울렀다, 걸쳐 있었다"],
+        ["green", "초록"],
+        ["blue", "파랑"]
+      ]
+    },
+    {
+      "text": "In the modern language, however, ao has come to be restricted mostly to blue shades, and green is usually expressed by the word midori.",
+      "ko": "그러나 현대 일본어에서 ao는 대체로 파란 계열에만 쓰이게 되었고, 초록은 보통 midori라는 낱말로 나타낸다",
+      "praise": "has come to be restricted를 '~하게 되었다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "has come to be restricted to ~", "sub": "이", "top": "은", "answer": "~에만 쓰이게 되었다", "check": ["되었", "한정", "국한", "만 쓰"] },
+        { "en": "is expressed by ~", "sub": "가", "top": "는", "answer": "~로 나타낸다", "check": ["나타내", "표현", "쓴다"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "come to를 '오다'로 보고 변화를 놓침", "signals": ["오게 되었다", "왔다"], "ask": "come to + 동사는 무엇을 말할까요?", "wrong": "제한되러 왔다", "right": "제한되게 되었다" },
+        { "id": "E2", "detect": "shades를 '그늘'로 해석", "signals": ["그늘"], "ask": "blue shades는 무엇일까요?", "wrong": "파란 그늘", "right": "파란 계열의 색조" }
+      ],
+      "glosses": [
+        ["modern", "현대의"],
+        ["restricted", "한정된"],
+        ["mostly", "대체로"],
+        ["shades", "색조"],
+        ["usually", "보통"],
+        ["expressed", "나타내어지는"],
+        ["midori", "미도리(일본어로 초록)"]
+      ]
+    },
+    {
+      "text": "When the first traffic lights were imported from the United States and installed in Japan in the 1930s, they were just as green as anywhere else.",
+      "ko": "1930년대에 첫 신호등이 미국에서 들어와 일본에 설치되었을 때, 그것들은 다른 어느 곳과 똑같이 초록이었다",
+      "praise": "just as green as anywhere else를 '다른 곳과 똑같이 초록'으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "were imported and installed", "sub": "이", "top": "은", "answer": "수입되어 설치되었다", "check": ["수입", "들어", "설치"] },
+        { "en": "just as green as anywhere else", "sub": "가", "top": "는", "answer": "다른 어느 곳과 똑같이 초록인", "check": ["똑같이", "다른 곳", "마찬가지", "초록"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "수동태를 능동으로 보고 신호등이 수입했다고 해석", "signals": ["신호등이 수입했", "신호등이 설치했"], "ask": "were imported는 하는 쪽일까요, 되는 쪽일까요?", "wrong": "신호등이 수입했다", "right": "신호등이 수입되었다" }
+      ],
+      "glosses": [
+        ["traffic lights", "신호등"],
+        ["imported", "수입된"],
+        ["United States", "미국"],
+        ["installed", "설치된"],
+        ["Japan", "일본"],
+        ["1930s", "1930년대"],
+        ["anywhere else", "다른 어느 곳"]
+      ]
+    },
+    {
+      "text": "Nevertheless, in common parlance the go light was called ao shingoo, perhaps because the three primary colors on Japanese artists' palettes are traditionally aka(red), kiiro(yellow), and ao.",
+      "ko": "그런데도 일상적인 말로는 진행 신호를 ao shingoo라고 불렀다. 아마도 일본 화가들의 팔레트에 있는 삼원색이 전통적으로 아카(빨강), 키이로(노랑), 아오이기 때문일 것이다",
+      "praise": "in common parlance를 '일상적인 말로는'으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "in common parlance", "sub": "가", "top": "는", "answer": "일상적인 말로는", "check": ["일상", "흔히", "보통 말", "일반적으로"] },
+        { "en": "was called ~", "sub": "가", "top": "는", "answer": "~라고 불렸다", "check": ["불렸", "부르", "불린"] },
+        { "en": "the three primary colors", "sub": "가", "top": "는", "answer": "삼원색", "check": ["삼원색", "세 가지 색", "기본색"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "parlance를 '의회'로 해석", "signals": ["의회"], "ask": "in common parlance는 말하는 방식을 뜻해요.", "wrong": "공통 의회에서", "right": "일상적인 말로는" },
+        { "id": "E2", "detect": "Nevertheless를 '그러므로'로 해석", "signals": ["그러므로", "따라서"], "ask": "Nevertheless는 앞말과 어떤 관계일까요?", "wrong": "그러므로", "right": "그런데도" }
+      ],
+      "glosses": [
+        ["Nevertheless", "그런데도"],
+        ["common parlance", "일상적인 말투"],
+        ["go light", "진행 신호"],
+        ["called", "불렸다"],
+        ["shingoo", "신고(일본어로 신호)"],
+        ["perhaps", "아마도"],
+        ["primary colors", "원색"],
+        ["artists", "화가들"],
+        ["palettes", "팔레트"],
+        ["traditionally", "전통적으로"],
+        ["aka", "아카(일본어로 빨강)"],
+        ["red", "빨강"],
+        ["kiiro", "키이로(일본어로 노랑)"],
+        ["yellow", "노랑"]
+      ]
+    },
+    {
+      "text": "The label ao for a green light did not appear so out of the ordinary at first, because of the remaining associations of the word ao with greenness.",
+      "ko": "초록 불에 ao라는 이름을 붙인 것이 처음에는 그리 이상해 보이지 않았다. ao라는 낱말에 초록의 느낌이 아직 남아 있었기 때문이다",
+      "praise": "out of the ordinary를 '이상한'으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "did not appear out of the ordinary", "sub": "가", "top": "는", "answer": "이상해 보이지 않았다", "check": ["이상", "어색", "보이지 않"] },
+        { "en": "the remaining associations of ao with greenness", "sub": "이", "top": "은", "answer": "ao에 남아 있는 초록의 연상", "check": ["남아", "연상", "느낌", "초록"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "out of the ordinary를 '평범하게 벗어나'로 어색하게 직역", "signals": ["평범함 밖에서"], "ask": "out of the ordinary는 한 덩어리로 쓰이는 말이에요.", "wrong": "평범함 밖으로 보였다", "right": "이상해 보였다" },
+        { "id": "E2", "detect": "부정을 놓치고 '이상해 보였다'로 해석", "signals": ["이상해 보였다"], "ask": "did not appear는 어떻게 보였다는 걸까요?", "wrong": "이상해 보였다", "right": "이상해 보이지 않았다" }
+      ],
+      "glosses": [
+        ["label", "이름표, 이름 붙이기"],
+        ["appear", "~해 보이다"],
+        ["out of the ordinary", "이상한, 예사롭지 않은"],
+        ["at first", "처음에는"],
+        ["because of", "~ 때문에"],
+        ["remaining", "남아 있는"],
+        ["associations", "연상, 이어짐"],
+        ["greenness", "초록임"]
+      ]
+    },
+    {
+      "text": "But over time, the difference between the green color and the dominant meaning of the word ao began to feel awkward.",
+      "ko": "그러나 시간이 지나면서 초록색과 ao라는 낱말의 주된 뜻 사이의 차이가 어색하게 느껴지기 시작했다",
+      "praise": "the dominant meaning을 '주된 뜻'으로 본 거 좋아요.",
+      "points": [
+        { "en": "over time", "sub": "이", "top": "은", "answer": "시간이 지나면서", "check": ["시간이 지", "차츰", "시간이 흐"] },
+        { "en": "the dominant meaning", "sub": "이", "top": "은", "answer": "주된 뜻", "check": ["주된", "지배", "대표"] },
+        { "en": "began to feel awkward", "sub": "가", "top": "는", "answer": "어색하게 느껴지기 시작했다", "check": ["어색", "이상하게", "느껴"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "over time을 '시간을 넘어서'로 직역", "signals": ["시간을 넘어"], "ask": "over time은 굳어진 표현이에요.", "wrong": "시간을 넘어", "right": "시간이 지나면서" }
+      ],
+      "glosses": [
+        ["over time", "시간이 지나면서"],
+        ["difference", "차이"],
+        ["dominant", "주된, 우세한"],
+        ["meaning", "뜻"],
+        ["began", "시작했다"],
+        ["awkward", "어색한"]
+      ]
+    },
+    {
+      "text": "Nations that are less assertive might have opted for the solution of simply changing the official name of the go light to midori. Not so the Japanese.",
+      "ko": "덜 고집스러운 나라였다면 진행 신호의 공식 이름을 그냥 midori로 바꾸는 쪽을 택했을지도 모른다. 일본은 그렇지 않았다",
+      "praise": "might have opted를 '택했을지도 모른다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "might have opted for ~", "sub": "가", "top": "는", "answer": "~을 택했을지도 모른다", "check": ["택했을", "골랐을", "선택했을"] },
+        { "en": "Not so the Japanese", "sub": "가", "top": "는", "answer": "일본은 그렇지 않았다", "check": ["일본은 그렇지", "일본은 아니", "달랐"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "might have opted를 실제 일로 보고 '택했다'로 해석", "signals": ["택했다.", "골랐다."], "ask": "might have + 과거분사는 실제 일일까요, 가정일까요?", "wrong": "그 나라들은 택했다", "right": "택했을지도 모른다" },
+        { "id": "E2", "detect": "assertive를 '주장이 강한 사람'으로만 보고 나라 이야기를 놓침", "signals": ["주장하는 사람"], "ask": "Nations that are less assertive는 어떤 나라일까요?", "wrong": "덜 주장하는 사람들", "right": "덜 고집스러운 나라들" }
+      ],
+      "glosses": [
+        ["Nations", "나라들"],
+        ["assertive", "고집스러운, 자기주장이 강한"],
+        ["opted for", "~을 택했다"],
+        ["solution", "해결책"],
+        ["simply", "그냥, 단순히"],
+        ["changing", "바꾸는 것"],
+        ["official", "공식의"],
+        ["name", "이름"],
+        ["Not so", "그렇지 않다"]
+      ]
+    },
+    {
+      "text": "Rather than alter the name to fit reality, the Japanese government announced in 1973 that reality should be altered to fit the name:",
+      "ko": "현실에 맞게 이름을 바꾸는 대신, 일본 정부는 1973년에 이름에 맞게 현실을 바꿔야 한다고 발표했다",
+      "praise": "두 문장의 이름과 현실을 뒤바꾼 구조를 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "rather than alter the name to fit reality", "sub": "가", "top": "는", "answer": "현실에 맞게 이름을 바꾸는 대신", "check": ["대신", "않고", "현실에 맞"] },
+        { "en": "reality should be altered to fit the name", "sub": "이", "top": "은", "answer": "이름에 맞게 현실을 바꿔야 한다", "check": ["이름에 맞", "현실을 바꿔", "현실을 고쳐"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "이름과 현실을 뒤바꿔 해석", "signals": ["현실에 맞게 이름을 바꿔야", "이름을 바꾸기로"], "ask": "정부가 바꾸겠다고 한 것은 이름일까요, 현실일까요?", "wrong": "이름을 현실에 맞게 바꾼다", "right": "현실을 이름에 맞게 바꾼다" },
+        { "id": "E2", "detect": "alter를 '제단(altar)'으로 헷갈림", "signals": ["제단"], "ask": "alter는 무엇을 하는 동사일까요?", "wrong": "이름의 제단", "right": "이름을 바꾸다" }
+      ],
+      "glosses": [
+        ["Rather than", "~하기보다는, ~ 대신"],
+        ["alter", "바꾸다"],
+        ["fit", "맞다, 맞추다"],
+        ["reality", "현실"],
+        ["government", "정부"],
+        ["announced", "발표했다"],
+        ["altered", "바뀐"]
+      ]
+    },
+    {
+      "text": "henceforth, go lights would be a color that better corresponded to the dominant meaning of ao.",
+      "ko": "이제부터 진행 신호는 ao의 주된 뜻에 더 잘 들어맞는 색이 될 것이라고 말이다",
+      "praise": "corresponded to를 '~에 들어맞다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "henceforth", "sub": "가", "top": "는", "answer": "이제부터", "check": ["이제부터", "앞으로", "이후로"] },
+        { "en": "corresponded to ~", "sub": "가", "top": "는", "answer": "~에 들어맞다", "check": ["들어맞", "일치", "대응", "맞는"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "corresponded를 '편지를 주고받다'로 해석", "signals": ["편지"], "ask": "correspond to는 두 가지가 어떤 사이라는 뜻일까요?", "wrong": "뜻과 편지를 주고받았다", "right": "뜻에 들어맞았다" }
+      ],
+      "glosses": [
+        ["henceforth", "이제부터"],
+        ["lights", "불, 등"],
+        ["better", "더 잘"],
+        ["corresponded to", "~에 들어맞았다"]
+      ]
+    }
+  ]
+}

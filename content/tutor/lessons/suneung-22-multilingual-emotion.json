@@ -1,0 +1,1454 @@
+{
+  "id": "suneung-22-multilingual-emotion",
+  "version": "1.0",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 22번",
+  "category": "리딩",
+  "topic_intro": "언어에 따라 감정이 달라진다는 이야기",
+  "sentence": "Though it may seem extreme, a multilingual can quite literally feel differently about people, events or things when using one language versus another. The likelihood of being rattled by curse words or taboo words changes across native and second languages. Speakers of multiple languages not only report feeling different, but their bodies have different physiological reactions and their minds make different emotionally driven decisions across languages. The exact relationship between positive and negative emotions and language varies across people. For some, the second language carries more positive connotations because it is associated with freedom, opportunity, financial well-being and escape from persecution, whereas the native language is associated with poverty and hardship. For others, the opposite is true — the second language is associated with post-immigration challenges, discrimination and lack of close relationships, whereas the native language is associated with family, friends and parental love. And many are somewhere in between, having a mix of positive and negative experiences associated with each language.",
+  "grammar_type": "요지_추상논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 whereas·but으로 두 갈래가 되면",
+    "how": "whereas·but 앞에서 끊는다",
+    "labels": [
+      "문장"
+    ]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "id": 1,
+      "text": "Though it may seem extreme, a multilingual can quite literally feel differently about people, events or things when using one language versus another.",
+      "model_translation": "극단적으로 들릴지 모르지만, 다중 언어 사용자는 어떤 언어를 쓰느냐에 따라 사람과 사건, 사물에 대해 정말 말 그대로 다르게 느낄 수 있다",
+      "praise": "quite literally를 '말 그대로'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Though",
+          "ko": "비록 ~이지만"
+        },
+        {
+          "en": "seem",
+          "ko": "~처럼 보이다"
+        },
+        {
+          "en": "extreme",
+          "ko": "극단적인"
+        },
+        {
+          "en": "multilingual",
+          "ko": "다중 언어 사용자"
+        },
+        {
+          "en": "quite",
+          "ko": "꽤, 정말"
+        },
+        {
+          "en": "literally",
+          "ko": "말 그대로"
+        },
+        {
+          "en": "feel",
+          "ko": "느끼다"
+        },
+        {
+          "en": "differently",
+          "ko": "다르게"
+        },
+        {
+          "en": "events",
+          "ko": "사건"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        },
+        {
+          "en": "versus",
+          "ko": "~와 견주어, ~냐 ~냐"
+        },
+        {
+          "en": "using",
+          "ko": "사용하는 것"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "may",
+          "ko": "~일지도 모른다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "can",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "about",
+          "ko": "~에 대해"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "things",
+          "ko": "것들"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "one",
+          "ko": "하나"
+        },
+        {
+          "en": "another",
+          "ko": "다른"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "Though it may seem extreme → 극단적으로 보일지 모르지만",
+          "check": [
+            "극단",
+            "지나치",
+            "보일지",
+            "들릴지"
+          ],
+          "nudge": "Though it may seem extreme이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "Though it may seem extreme은 여기서 '극단적으로 보일지 모르지만'이에요."
+        },
+        {
+          "id": 2,
+          "text": "quite literally → 말 그대로, 정말로",
+          "check": [
+            "말 그대로",
+            "정말",
+            "실제로",
+            "문자 그대로"
+          ],
+          "nudge": "quite literally이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "quite literally은 여기서 '말 그대로, 정말로'예요."
+        },
+        {
+          "id": 3,
+          "text": "one language versus another → 어떤 언어를 쓰느냐에 따라",
+          "check": [
+            "어떤 언어",
+            "언어에 따라",
+            "다른 언어"
+          ],
+          "nudge": "one language versus another가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "one language versus another는 여기서 '어떤 언어를 쓰느냐에 따라'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "literally를 '문학적으로'로 해석",
+          "signals": [
+            "문학적"
+          ],
+          "treatment": {
+            "message": "literally는 literature와 다른 말이에요. '문학적으로'일까요, '말 그대로'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "문학적으로",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "말 그대로",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '말 그대로'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '말 그대로'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "Though를 '~을 통해'로 보고 뜻을 바꿈",
+          "signals": [
+            "통해서",
+            "통하여"
+          ],
+          "treatment": {
+            "message": "문장 맨 앞의 Though는 앞뒤를 어떻게 잇나요? '그것을 통해'일까요, '비록 ~이지만'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그것을 통해",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "비록 ~이지만",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '비록 ~이지만'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '비록 ~이지만'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "The likelihood of being rattled by curse words or taboo words changes across native and second languages.",
+      "model_translation": "욕설이나 금기어에 흔들릴 가능성은 모국어냐 제2언어냐에 따라 달라진다",
+      "praise": "likelihood를 '가능성'으로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "likelihood",
+          "ko": "가능성"
+        },
+        {
+          "en": "rattled",
+          "ko": "흔들리는, 동요하는"
+        },
+        {
+          "en": "curse words",
+          "ko": "욕설"
+        },
+        {
+          "en": "taboo words",
+          "ko": "금기어"
+        },
+        {
+          "en": "changes",
+          "ko": "달라진다"
+        },
+        {
+          "en": "across",
+          "ko": "~에 따라, ~에 걸쳐"
+        },
+        {
+          "en": "native",
+          "ko": "모국의"
+        },
+        {
+          "en": "second",
+          "ko": "두 번째의"
+        },
+        {
+          "en": "languages",
+          "ko": "언어들"
+        },
+        {
+          "en": "The",
+          "ko": "그"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "being",
+          "ko": "~인 것"
+        },
+        {
+          "en": "by",
+          "ko": "~에 의해"
+        },
+        {
+          "en": "or",
+          "ko": "또는"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the likelihood of ~ → ~할 가능성",
+          "check": [
+            "가능성",
+            "확률",
+            "정도"
+          ],
+          "nudge": "the likelihood of ~이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the likelihood of ~은 여기서 '~할 가능성'이에요."
+        },
+        {
+          "id": 2,
+          "text": "changes across native and second languages → 모국어와 제2언어에 따라 달라진다",
+          "check": [
+            "모국어",
+            "제2언어",
+            "달라",
+            "차이"
+          ],
+          "nudge": "changes across native and second languages가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "changes across native and second languages는 여기서 '모국어와 제2언어에 따라 달라진다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "changes를 명사 '변화들'로 보고 동사를 놓침",
+          "signals": [
+            "변화들",
+            "변화가 모국어"
+          ],
+          "treatment": {
+            "message": "이 문장의 동사는 무엇일까요? '가능성의 변화들'일까요, '가능성이 달라진다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "가능성의 변화들",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "가능성이 달라진다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '가능성이 달라진다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '가능성이 달라진다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "rattled를 '덜컹거리다'로 해석",
+          "signals": [
+            "덜컹",
+            "흔들리는 소리"
+          ],
+          "treatment": {
+            "message": "사람에게 쓰인 rattled는 무엇일까요? '덜컹거리다'일까요, '흔들리다, 동요하다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "덜컹거리다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "흔들리다, 동요하다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '흔들리다, 동요하다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '흔들리다, 동요하다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Speakers of multiple languages not only report feeling different, but their bodies have different physiological reactions and their minds make different emotionally driven decisions across languages.",
+      "model_translation": "여러 언어를 쓰는 사람들은 다르게 느낀다고 말할 뿐 아니라, 몸이 다른 생리적 반응을 보이고 마음도 언어에 따라 감정에 이끌린 다른 결정을 내린다",
+      "praise": "not only A but B를 두 갈래로 살린 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "Speakers",
+          "ko": "말하는 사람들"
+        },
+        {
+          "en": "multiple",
+          "ko": "여러"
+        },
+        {
+          "en": "report",
+          "ko": "말하다, 보고하다"
+        },
+        {
+          "en": "feeling",
+          "ko": "느끼는 것"
+        },
+        {
+          "en": "different",
+          "ko": "다른"
+        },
+        {
+          "en": "bodies",
+          "ko": "몸"
+        },
+        {
+          "en": "physiological",
+          "ko": "생리적인"
+        },
+        {
+          "en": "reactions",
+          "ko": "반응"
+        },
+        {
+          "en": "minds",
+          "ko": "마음"
+        },
+        {
+          "en": "emotionally",
+          "ko": "감정적으로"
+        },
+        {
+          "en": "driven",
+          "ko": "이끌린"
+        },
+        {
+          "en": "decisions",
+          "ko": "결정"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "languages",
+          "ko": "언어들"
+        },
+        {
+          "en": "not",
+          "ko": "~아니다"
+        },
+        {
+          "en": "only",
+          "ko": "오직"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "their",
+          "ko": "그들의"
+        },
+        {
+          "en": "have",
+          "ko": "가지다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "make",
+          "ko": "만들다"
+        },
+        {
+          "en": "across",
+          "ko": "~에 따라, ~에 걸쳐"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "not only A but B → A뿐 아니라 B도",
+          "check": [
+            "뿐 아니라",
+            "뿐만 아니라",
+            "게다가"
+          ],
+          "nudge": "not only A but B가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "not only A but B는 여기서 'A뿐 아니라 B도'예요."
+        },
+        {
+          "id": 2,
+          "text": "physiological reactions → 생리적 반응",
+          "check": [
+            "생리",
+            "신체",
+            "몸의 반응"
+          ],
+          "nudge": "physiological reactions이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "physiological reactions은 여기서 '생리적 반응'이에요."
+        },
+        {
+          "id": 3,
+          "text": "emotionally driven decisions → 감정에 이끌린 결정",
+          "check": [
+            "감정",
+            "정서"
+          ],
+          "nudge": "emotionally driven decisions이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "emotionally driven decisions은 여기서 '감정에 이끌린 결정'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "report를 명사 '보고서'로 해석",
+          "signals": [
+            "보고서"
+          ],
+          "treatment": {
+            "message": "여기 report는 사람이 하는 일이에요. '보고서'일까요, '말한다, 보고한다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "보고서",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "말한다, 보고한다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '말한다, 보고한다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '말한다, 보고한다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "driven을 '운전된'으로 해석",
+          "signals": [
+            "운전"
+          ],
+          "treatment": {
+            "message": "emotionally driven은 무엇에 이끌린다는 뜻일까요? '감정적으로 운전된'일까요, '감정에 이끌린'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "감정적으로 운전된",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "감정에 이끌린",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '감정에 이끌린'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '감정에 이끌린'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "The exact relationship between positive and negative emotions and language varies across people.",
+      "model_translation": "긍정적·부정적 감정과 언어 사이의 정확한 관계는 사람마다 다르다",
+      "praise": "varies across people을 '사람마다 다르다'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "exact",
+          "ko": "정확한"
+        },
+        {
+          "en": "relationship",
+          "ko": "관계"
+        },
+        {
+          "en": "positive",
+          "ko": "긍정적인"
+        },
+        {
+          "en": "negative",
+          "ko": "부정적인"
+        },
+        {
+          "en": "emotions",
+          "ko": "감정"
+        },
+        {
+          "en": "varies",
+          "ko": "다르다, 달라진다"
+        },
+        {
+          "en": "across",
+          "ko": "~에 따라"
+        },
+        {
+          "en": "The",
+          "ko": "그"
+        },
+        {
+          "en": "between",
+          "ko": "~ 사이에"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the exact relationship between ~ → ~ 사이의 정확한 관계",
+          "check": [
+            "정확한 관계",
+            "관계는",
+            "사이의 관계"
+          ],
+          "nudge": "the exact relationship between ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the exact relationship between ~는 여기서 '~ 사이의 정확한 관계'예요."
+        },
+        {
+          "id": 2,
+          "text": "varies across people → 사람마다 다르다",
+          "check": [
+            "사람마다",
+            "사람에 따라",
+            "제각각",
+            "다양"
+          ],
+          "nudge": "varies across people가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "varies across people는 여기서 '사람마다 다르다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "varies를 '다양하다'로만 보고 '사람마다'를 놓침",
+          "signals": [
+            "다양하다."
+          ],
+          "treatment": {
+            "message": "across people은 무엇을 말할까요? '관계가 다양하다'일까요, '사람마다 다르다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "관계가 다양하다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "사람마다 다르다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '사람마다 다르다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '사람마다 다르다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "For some, the second language carries more positive connotations because it is associated with freedom, opportunity, financial well-being and escape from persecution,",
+      "model_translation": "어떤 사람에게는 제2언어가 더 긍정적인 느낌을 지닌다. 자유, 기회, 경제적 안정, 박해에서의 탈출과 이어져 있기 때문이다",
+      "praise": "carries connotations를 '느낌을 지닌다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "For some",
+          "ko": "어떤 사람에게는"
+        },
+        {
+          "en": "carries",
+          "ko": "지닌다"
+        },
+        {
+          "en": "connotations",
+          "ko": "함축된 느낌"
+        },
+        {
+          "en": "associated with",
+          "ko": "~와 이어진"
+        },
+        {
+          "en": "freedom",
+          "ko": "자유"
+        },
+        {
+          "en": "opportunity",
+          "ko": "기회"
+        },
+        {
+          "en": "financial",
+          "ko": "경제적인"
+        },
+        {
+          "en": "well-being",
+          "ko": "안정, 행복"
+        },
+        {
+          "en": "escape",
+          "ko": "탈출"
+        },
+        {
+          "en": "persecution",
+          "ko": "박해"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "second",
+          "ko": "두 번째의"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        },
+        {
+          "en": "more",
+          "ko": "더"
+        },
+        {
+          "en": "positive",
+          "ko": "긍정적인"
+        },
+        {
+          "en": "because",
+          "ko": "왜냐하면"
+        },
+        {
+          "en": "it",
+          "ko": "(가주어) ~한 것은"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "from",
+          "ko": "~부터"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "For some → 어떤 사람에게는",
+          "check": [
+            "어떤 사람",
+            "일부",
+            "누군가에게"
+          ],
+          "nudge": "For some이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "For some은 여기서 '어떤 사람에게는'이에요."
+        },
+        {
+          "id": 2,
+          "text": "carries more positive connotations → 더 긍정적인 느낌을 지닌다",
+          "check": [
+            "긍정",
+            "느낌",
+            "함축",
+            "뉘앙스"
+          ],
+          "nudge": "carries more positive connotations가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "carries more positive connotations는 여기서 '더 긍정적인 느낌을 지닌다'예요."
+        },
+        {
+          "id": 3,
+          "text": "is associated with → ~와 이어져 있다",
+          "check": [
+            "연관",
+            "관련",
+            "이어",
+            "결부"
+          ],
+          "nudge": "is associated with이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "is associated with은 여기서 '~와 이어져 있다'예요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "carries를 '나른다'로 해석",
+          "signals": [
+            "나른다",
+            "운반"
+          ],
+          "treatment": {
+            "message": "carry가 뜻이나 느낌과 같이 오면 어떻게 될까요? '긍정적 느낌을 나른다'일까요, '긍정적 느낌을 지닌다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "긍정적 느낌을 나른다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "긍정적 느낌을 지닌다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '긍정적 느낌을 지닌다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '긍정적 느낌을 지닌다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "well-being을 '우물'이나 다른 뜻으로 봄",
+          "signals": [
+            "우물",
+            "잘 존재"
+          ],
+          "treatment": {
+            "message": "financial well-being은 무엇일까요? '재정적 우물'일까요, '경제적 안정'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "재정적 우물",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "경제적 안정",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '경제적 안정'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '경제적 안정'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "whereas the native language is associated with poverty and hardship.",
+      "model_translation": "반면에 모국어는 가난, 고생과 이어져 있다",
+      "praise": "whereas를 '반면에'로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "whereas",
+          "ko": "반면에"
+        },
+        {
+          "en": "poverty",
+          "ko": "가난"
+        },
+        {
+          "en": "hardship",
+          "ko": "고생, 어려움"
+        },
+        {
+          "en": "associated with",
+          "ko": "~와 이어진"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "native",
+          "ko": "모국의"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "whereas → 반면에",
+          "check": [
+            "반면",
+            "그러나",
+            "한편",
+            "에 비해"
+          ],
+          "nudge": "whereas가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "whereas는 여기서 '반면에'예요."
+        },
+        {
+          "id": 2,
+          "text": "poverty and hardship → 가난과 고생",
+          "check": [
+            "가난",
+            "빈곤",
+            "고생",
+            "어려움",
+            "고난"
+          ],
+          "nudge": "poverty and hardship가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "poverty and hardship는 여기서 '가난과 고생'이에요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "whereas를 '~하는 곳에서'로 해석",
+          "signals": [
+            "하는 곳",
+            "그곳에서"
+          ],
+          "treatment": {
+            "message": "whereas는 앞뒤를 맞세우는 말이에요. '모국어가 있는 곳에서'일까요, '반면에 모국어는'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "모국어가 있는 곳에서",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "반면에 모국어는",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '반면에 모국어는'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '반면에 모국어는'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "For others, the opposite is true — the second language is associated with post-immigration challenges, discrimination and lack of close relationships,",
+      "model_translation": "다른 사람에게는 그 반대다 — 제2언어가 이민 후의 어려움, 차별, 가까운 관계의 부족과 이어져 있다",
+      "praise": "the opposite is true를 '그 반대다'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "For others",
+          "ko": "다른 사람에게는"
+        },
+        {
+          "en": "opposite",
+          "ko": "반대"
+        },
+        {
+          "en": "post-immigration",
+          "ko": "이민 후의"
+        },
+        {
+          "en": "challenges",
+          "ko": "어려움, 난관"
+        },
+        {
+          "en": "discrimination",
+          "ko": "차별"
+        },
+        {
+          "en": "lack",
+          "ko": "부족"
+        },
+        {
+          "en": "close",
+          "ko": "가까운"
+        },
+        {
+          "en": "relationships",
+          "ko": "관계"
+        },
+        {
+          "en": "associated with",
+          "ko": "~와 이어진"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "true",
+          "ko": "사실인, 참인"
+        },
+        {
+          "en": "second",
+          "ko": "두 번째의"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "the opposite is true → 그 반대다",
+          "check": [
+            "반대",
+            "거꾸로",
+            "정반대"
+          ],
+          "nudge": "the opposite is true가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "the opposite is true는 여기서 '그 반대다'예요."
+        },
+        {
+          "id": 2,
+          "text": "post-immigration challenges → 이민 후의 어려움",
+          "check": [
+            "이민",
+            "이주",
+            "어려움",
+            "난관"
+          ],
+          "nudge": "post-immigration challenges가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "post-immigration challenges는 여기서 '이민 후의 어려움'이에요."
+        },
+        {
+          "id": 3,
+          "text": "lack of close relationships → 가까운 관계의 부족",
+          "check": [
+            "부족",
+            "없",
+            "결여",
+            "가까운 관계"
+          ],
+          "nudge": "lack of close relationships이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "lack of close relationships은 여기서 '가까운 관계의 부족'이에요."
+        }
+      ],
+      "error_priority": [
+        "E2",
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "the opposite is true를 '반대가 사실이다'로 어색하게 두고 뜻을 흐림",
+          "signals": [
+            "반대가 진실",
+            "반대가 참"
+          ],
+          "treatment": {
+            "message": "여기 true는 '앞 사람과 반대'라는 뜻이에요. '반대가 참이다'일까요, '그 반대다'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "반대가 참이다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "그 반대다",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '그 반대다'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '그 반대다'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        },
+        {
+          "id": "E2",
+          "detect": "post-를 '우편/기둥'으로 해석",
+          "signals": [
+            "우편",
+            "기둥"
+          ],
+          "treatment": {
+            "message": "post-immigration의 post는 시간을 말해요. '우편 이민'일까요, '이민 후의'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "우편 이민",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "이민 후의",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '이민 후의'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '이민 후의'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "whereas the native language is associated with family, friends and parental love.",
+      "model_translation": "반면에 모국어는 가족, 친구, 부모의 사랑과 이어져 있다",
+      "praise": "parental love를 '부모의 사랑'으로 본 거 좋아요.",
+      "glosses": [
+        {
+          "en": "family",
+          "ko": "가족"
+        },
+        {
+          "en": "friends",
+          "ko": "친구"
+        },
+        {
+          "en": "parental",
+          "ko": "부모의"
+        },
+        {
+          "en": "love",
+          "ko": "사랑"
+        },
+        {
+          "en": "associated with",
+          "ko": "~와 이어진"
+        },
+        {
+          "en": "whereas",
+          "ko": "반면에"
+        },
+        {
+          "en": "the",
+          "ko": "그"
+        },
+        {
+          "en": "native",
+          "ko": "모국의"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "parental love → 부모의 사랑",
+          "check": [
+            "부모",
+            "어버이"
+          ],
+          "nudge": "parental love가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "parental love는 여기서 '부모의 사랑'이에요."
+        },
+        {
+          "id": 2,
+          "text": "is associated with family, friends → 가족, 친구와 이어져 있다",
+          "check": [
+            "가족",
+            "친구"
+          ],
+          "nudge": "is associated with family, friends가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "is associated with family, friends는 여기서 '가족, 친구와 이어져 있다'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "parental을 '부모가 되는'으로 어색하게 해석",
+          "signals": [
+            "부모가 되는"
+          ],
+          "treatment": {
+            "message": "parental love는 누가 주는 사랑일까요? '부모가 되는 사랑'일까요, '부모의 사랑'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "부모가 되는 사랑",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "부모의 사랑",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '부모의 사랑'이에요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '부모의 사랑'이에요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "And many are somewhere in between, having a mix of positive and negative experiences associated with each language.",
+      "model_translation": "그리고 많은 사람은 그 중간 어딘가에 있어서, 각 언어마다 긍정적 경험과 부정적 경험이 섞여 있다",
+      "praise": "somewhere in between을 '중간 어딘가'로 본 거 정말 잘했어요.",
+      "glosses": [
+        {
+          "en": "many",
+          "ko": "많은 사람"
+        },
+        {
+          "en": "somewhere",
+          "ko": "어딘가에"
+        },
+        {
+          "en": "in between",
+          "ko": "그 중간에"
+        },
+        {
+          "en": "having",
+          "ko": "가진 채로"
+        },
+        {
+          "en": "mix",
+          "ko": "섞임"
+        },
+        {
+          "en": "experiences",
+          "ko": "경험"
+        },
+        {
+          "en": "each",
+          "ko": "각각의"
+        },
+        {
+          "en": "associated with",
+          "ko": "~와 이어진"
+        },
+        {
+          "en": "And",
+          "ko": "그리고"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "a",
+          "ko": "하나의"
+        },
+        {
+          "en": "of",
+          "ko": "~의"
+        },
+        {
+          "en": "positive",
+          "ko": "긍정적인"
+        },
+        {
+          "en": "negative",
+          "ko": "부정적인"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        }
+      ],
+      "scoring_points": [
+        {
+          "id": 1,
+          "text": "somewhere in between → 그 중간 어딘가에",
+          "check": [
+            "중간",
+            "사이",
+            "가운데"
+          ],
+          "nudge": "somewhere in between이 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "somewhere in between은 여기서 '그 중간 어딘가에'예요."
+        },
+        {
+          "id": 2,
+          "text": "having a mix of ~ → ~이 섞여 있는 채로",
+          "check": [
+            "섞여",
+            "혼합",
+            "뒤섞",
+            "함께 가지"
+          ],
+          "nudge": "having a mix of ~가 아직 해석에 안 나왔어요. 한번 더 해볼까요?",
+          "tell": "having a mix of ~는 여기서 '~이 섞여 있는 채로'예요."
+        }
+      ],
+      "error_priority": [
+        "E1"
+      ],
+      "expected_errors": [
+        {
+          "id": "E1",
+          "detect": "having을 새 문장의 동사로 보고 끊음",
+          "signals": [
+            "많은 사람이 가진다.",
+            "그리고 가진다"
+          ],
+          "treatment": {
+            "message": "having은 앞 내용을 어떻게 이을까요? '그리고 그들은 가진다'일까요, '~을 가진 채로'일까요?",
+            "choices": [
+              {
+                "id": "wrong",
+                "label": "그리고 그들은 가진다",
+                "correct": false
+              },
+              {
+                "id": "right",
+                "label": "~을 가진 채로",
+                "correct": true
+              }
+            ],
+            "on_choice": {
+              "right": {
+                "message": "맞아요! '~을 가진 채로'예요. 그 뜻으로 다시 한번 해볼까요?",
+                "next": "retry_chunk"
+              },
+              "wrong": {
+                "message": "괜찮아요, 헷갈리기 쉬워요. '~을 가진 채로'예요. 그 뜻으로 다시 해볼까요?",
+                "reveal_answer": true,
+                "next": "retry_chunk"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

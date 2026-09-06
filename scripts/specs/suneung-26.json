@@ -1,0 +1,223 @@
+{
+  "id": "suneung-26-ilya-prigogine",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 26번",
+  "category": "리딩",
+  "topic_intro": "노벨 화학상을 받은 과학자 일리야 프리고진의 삶",
+  "sentence": "Ilya Prigogine was born into a Jewish family in Moscow. In 1921, he and his family left Russia, eventually settling in Belgium. His parents encouraged him to become a lawyer, and he first studied law at the Free University of Brussels. It was then that he became interested in psychology and behavioral research. In turn, reading about these subjects sparked his interest in chemistry since chemical processes affect the mind and body. He eventually dropped out of law school. Prigogine then studied chemistry and physics at the same time at the Free University of Brussels. He obtained the equivalent of a master's degree in both fields in 1939, and he obtained a PhD in chemistry in 1941 at the Free University of Brussels, where he accepted the position of professor in 1947. Considered one of the founders of complexity science, Ilya Prigogine was awarded the Nobel Prize in Chemistry in 1977.",
+  "grammar_type": "내용일치_인물소개",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 and로 두 갈래가 되면",
+    "how": "and 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [
+    { "en": "Ilya Prigogine", "ko": "일리야 프리고진", "type": "person" },
+    { "en": "Moscow", "ko": "모스크바", "type": "place" },
+    { "en": "Russia", "ko": "러시아", "type": "place" },
+    { "en": "Belgium", "ko": "벨기에", "type": "place" },
+    { "en": "Free University of Brussels", "ko": "브뤼셀 자유대학교", "type": "place" },
+    { "en": "Nobel Prize", "ko": "노벨상", "type": "other" }
+  ],
+  "chunks": [
+    {
+      "text": "Ilya Prigogine was born into a Jewish family in Moscow.",
+      "ko": "일리야 프리고진은 모스크바의 한 유대인 가정에서 태어났다",
+      "praise": "was born into를 '~에서 태어났다'로 본 거 좋아요.",
+      "points": [
+        { "en": "was born into a Jewish family", "sub": "가", "top": "는", "answer": "유대인 가정에서 태어났다", "check": ["태어", "출생", "유대"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "was born을 능동으로 보고 '낳았다'로 해석", "signals": ["낳았", "출산"], "ask": "born 앞의 was는 무엇을 말할까요?", "wrong": "가정을 낳았다", "right": "가정에서 태어났다" }
+      ],
+      "glosses": [
+        ["Ilya Prigogine", "일리야 프리고진(사람 이름)"],
+        ["was born into", "~에서 태어났다"],
+        ["Jewish", "유대인의"],
+        ["family", "가정"],
+        ["Moscow", "모스크바(지명)"]
+      ]
+    },
+    {
+      "text": "In 1921, he and his family left Russia, eventually settling in Belgium.",
+      "ko": "1921년에 그와 그의 가족은 러시아를 떠나 결국 벨기에에 정착했다",
+      "praise": "settling을 뒤에 붙는 분사구문으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "left Russia", "sub": "가", "top": "는", "answer": "러시아를 떠났다", "check": ["떠나", "떠났", "출국"] },
+        { "en": "eventually settling in Belgium", "sub": "이", "top": "은", "answer": "결국 벨기에에 정착했다", "check": ["정착", "자리 잡", "결국", "벨기에"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "left를 '왼쪽'으로 해석", "signals": ["왼쪽"], "ask": "이 문장의 동사는 무엇일까요?", "wrong": "러시아 왼쪽", "right": "러시아를 떠났다" },
+        { "id": "E2", "detect": "settling을 '해결하다'로만 해석", "signals": ["해결"], "ask": "settle in 뒤에 나라 이름이 오면 무슨 뜻일까요?", "wrong": "벨기에를 해결하며", "right": "벨기에에 정착하며" }
+      ],
+      "glosses": [
+        ["left", "떠났다"],
+        ["Russia", "러시아(지명)"],
+        ["eventually", "결국"],
+        ["settling", "정착하면서"],
+        ["Belgium", "벨기에(지명)"]
+      ]
+    },
+    {
+      "text": "His parents encouraged him to become a lawyer, and he first studied law at the Free University of Brussels.",
+      "ko": "그의 부모는 그가 변호사가 되도록 권했고, 그는 브뤼셀 자유대학교에서 처음에 법학을 공부했다",
+      "praise": "encouraged him to become을 '~하도록 권했다'로 본 거 좋아요.",
+      "points": [
+        { "en": "encouraged him to become a lawyer", "sub": "가", "top": "는", "answer": "그가 변호사가 되도록 권했다", "check": ["변호사", "권", "격려", "되도록"] },
+        { "en": "first studied law", "sub": "이", "top": "은", "answer": "처음에 법학을 공부했다", "check": ["법", "법학", "처음"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "encouraged를 '용기를 얻었다'로 보고 방향을 뒤집음", "signals": ["용기를 얻", "격려받"], "ask": "권한 쪽은 부모일까요, 그일까요?", "wrong": "그가 부모에게 권했다", "right": "부모가 그에게 권했다" },
+        { "id": "E2", "detect": "law를 '법칙'으로만 해석", "signals": ["법칙"], "ask": "대학에서 공부한 law는 무엇일까요?", "wrong": "법칙을 공부했다", "right": "법학을 공부했다" }
+      ],
+      "glosses": [
+        ["parents", "부모"],
+        ["encouraged", "권했다, 격려했다"],
+        ["lawyer", "변호사"],
+        ["studied", "공부했다"],
+        ["law", "법, 법학"],
+        ["Free University of Brussels", "브뤼셀 자유대학교(학교 이름)"]
+      ]
+    },
+    {
+      "text": "It was then that he became interested in psychology and behavioral research.",
+      "ko": "바로 그때 그는 심리학과 행동 연구에 관심을 갖게 되었다",
+      "praise": "It was then that ~ 를 강조로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "It was then that ~", "sub": "이", "top": "은", "answer": "바로 그때 ~했다", "check": ["바로 그때", "그때", "그 무렵"] },
+        { "en": "became interested in", "sub": "이", "top": "은", "answer": "~에 관심을 갖게 되었다", "check": ["관심", "흥미"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "It was ~ that 강조구문을 '그것은 ~이었다'로 직역", "signals": ["그것은 그때였다"], "ask": "It was then that은 무엇을 강조할까요?", "wrong": "그것은 그때였다", "right": "바로 그때였다" }
+      ],
+      "glosses": [
+        ["It was then that", "바로 그때 ~했다"],
+        ["became", "~이 되었다"],
+        ["interested", "관심 있는"],
+        ["psychology", "심리학"],
+        ["behavioral", "행동의"],
+        ["research", "연구"]
+      ]
+    },
+    {
+      "text": "In turn, reading about these subjects sparked his interest in chemistry since chemical processes affect the mind and body.",
+      "ko": "이어서 이런 주제들에 대해 읽은 것이 화학에 대한 관심에 불을 붙였다. 화학 과정이 마음과 몸에 영향을 주기 때문이다",
+      "praise": "reading을 주어로 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "reading about these subjects", "sub": "이", "top": "은", "answer": "이런 주제들에 대해 읽은 것 (주어)", "check": ["읽은 것", "읽는 것", "독서"] },
+        { "en": "sparked his interest", "sub": "가", "top": "는", "answer": "관심에 불을 붙였다", "check": ["관심", "불러일으", "촉발", "불을"] },
+        { "en": "since ~", "sub": "가", "top": "는", "answer": "~ 때문에", "check": ["때문", "니까", "므로"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "since를 '~이후로'로 보고 시간으로 해석", "signals": ["이후로", "이래로"], "ask": "여기 since는 시간일까요, 이유일까요?", "wrong": "화학 과정이 영향을 준 이후로", "right": "화학 과정이 영향을 주기 때문에" },
+        { "id": "E2", "detect": "subjects를 '피험자'로 해석", "signals": ["피험자"], "ask": "reading about these subjects의 subjects는 무엇일까요?", "wrong": "이 피험자들", "right": "이 주제들" }
+      ],
+      "glosses": [
+        ["In turn", "이어서, 그 결과"],
+        ["reading", "읽는 것"],
+        ["subjects", "주제들"],
+        ["sparked", "불을 붙였다"],
+        ["interest", "관심"],
+        ["chemistry", "화학"],
+        ["since", "~이기 때문에"],
+        ["chemical", "화학의"],
+        ["processes", "과정"],
+        ["affect", "영향을 주다"],
+        ["mind", "마음"],
+        ["body", "몸"]
+      ]
+    },
+    {
+      "text": "He eventually dropped out of law school.",
+      "ko": "그는 결국 법대를 중퇴했다",
+      "praise": "dropped out of를 '중퇴했다'로 본 거 좋아요.",
+      "points": [
+        { "en": "dropped out of law school", "sub": "이", "top": "은", "answer": "법대를 중퇴했다", "check": ["중퇴", "그만", "자퇴", "관뒀"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "dropped out을 '떨어뜨렸다'로 해석", "signals": ["떨어뜨"], "ask": "drop out of school은 무엇을 말할까요?", "wrong": "학교를 떨어뜨렸다", "right": "학교를 중퇴했다" }
+      ],
+      "glosses": [
+        ["dropped out of", "중퇴했다"],
+        ["school", "학교"]
+      ]
+    },
+    {
+      "text": "Prigogine then studied chemistry and physics at the same time at the Free University of Brussels.",
+      "ko": "그 후 프리고진은 브뤼셀 자유대학교에서 화학과 물리학을 동시에 공부했다",
+      "praise": "at the same time을 '동시에'로 본 거 좋아요.",
+      "points": [
+        { "en": "chemistry and physics", "sub": "가", "top": "는", "answer": "화학과 물리학", "check": ["화학", "물리"] },
+        { "en": "at the same time", "sub": "이", "top": "은", "answer": "동시에", "check": ["동시", "함께", "같이"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "at the same time을 '같은 시간에'로 직역해 어색해짐", "signals": ["같은 시간에"], "ask": "두 과목을 어떻게 공부했다는 걸까요?", "wrong": "같은 시간에", "right": "동시에" }
+      ],
+      "glosses": [
+        ["Prigogine", "프리고진(사람 이름)"],
+        ["physics", "물리학"],
+        ["at the same time", "동시에"]
+      ]
+    },
+    {
+      "text": "He obtained the equivalent of a master's degree in both fields in 1939,",
+      "ko": "그는 1939년에 두 분야 모두에서 석사 학위에 해당하는 것을 받았다",
+      "praise": "the equivalent of를 '~에 해당하는 것'으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "obtained", "sub": "이", "top": "은", "answer": "받았다, 얻었다", "check": ["받", "취득", "얻"] },
+        { "en": "the equivalent of a master's degree", "sub": "가", "top": "는", "answer": "석사 학위에 해당하는 것", "check": ["석사", "학위", "해당", "상당"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "equivalent를 무시하고 석사 학위를 받았다고 단정", "signals": ["석사 학위를 받았다"], "ask": "the equivalent of가 붙으면 무엇이 달라질까요?", "wrong": "석사 학위를 받았다", "right": "석사 학위에 해당하는 것을 받았다" }
+      ],
+      "glosses": [
+        ["obtained", "받았다, 얻었다"],
+        ["equivalent", "~에 해당하는 것"],
+        ["master's", "석사의"],
+        ["degree", "학위"],
+        ["fields", "분야"]
+      ]
+    },
+    {
+      "text": "and he obtained a PhD in chemistry in 1941 at the Free University of Brussels, where he accepted the position of professor in 1947.",
+      "ko": "그리고 그는 1941년 브뤼셀 자유대학교에서 화학 박사 학위를 받았고, 그곳에서 1947년에 교수 자리를 받아들였다",
+      "praise": "where가 앞의 대학을 받는 걸 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "a PhD in chemistry", "sub": "가", "top": "는", "answer": "화학 박사 학위", "check": ["박사", "화학"] },
+        { "en": "where he accepted the position of professor", "sub": "가", "top": "는", "answer": "그곳에서 교수 자리를 받아들였다", "check": ["교수", "자리", "직위", "그곳"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "where를 '어디에서'로 보고 의문사로 해석", "signals": ["어디에서"], "ask": "여기 where는 앞의 무엇을 받을까요?", "wrong": "어디에서 교수가 되었나", "right": "그 대학에서 교수가 되었다" },
+        { "id": "E2", "detect": "position을 '위치'로 해석", "signals": ["위치"], "ask": "교수와 같이 쓰인 position은 무엇일까요?", "wrong": "교수의 위치", "right": "교수 자리" }
+      ],
+      "glosses": [
+        ["PhD", "박사 학위"],
+        ["where", "그곳에서"],
+        ["accepted", "받아들였다"],
+        ["position", "자리, 직위"],
+        ["professor", "교수"]
+      ]
+    },
+    {
+      "text": "Considered one of the founders of complexity science, Ilya Prigogine was awarded the Nobel Prize in Chemistry in 1977.",
+      "ko": "복잡성 과학의 창시자 중 한 사람으로 여겨지는 일리야 프리고진은 1977년에 노벨 화학상을 받았다",
+      "praise": "맨 앞 분사구문을 뒤의 사람과 이어 붙인 거 정말 잘했어요.",
+      "points": [
+        { "en": "Considered one of the founders", "sub": "가", "top": "는", "answer": "창시자 중 한 사람으로 여겨지는", "check": ["창시", "여겨", "간주", "한 사람"] },
+        { "en": "was awarded the Nobel Prize", "sub": "가", "top": "는", "answer": "노벨상을 받았다", "check": ["노벨", "수상", "받"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "was awarded를 능동으로 보고 '상을 주었다'로 해석", "signals": ["상을 주었", "수여했"], "ask": "was awarded는 주는 쪽일까요, 받는 쪽일까요?", "wrong": "노벨상을 주었다", "right": "노벨상을 받았다" },
+        { "id": "E2", "detect": "맨 앞 Considered를 문장의 동사로 봄", "signals": ["여겼다.", "간주했다."], "ask": "Considered 앞에 주어가 있나요?", "wrong": "그는 여겼다", "right": "~로 여겨지는" }
+      ],
+      "glosses": [
+        ["Considered", "~로 여겨지는"],
+        ["founders", "창시자"],
+        ["complexity science", "복잡성 과학"],
+        ["was awarded", "받았다"],
+        ["Nobel Prize", "노벨상"],
+        ["Chemistry", "화학"]
+      ]
+    }
+  ]
+}

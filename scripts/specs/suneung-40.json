@@ -1,0 +1,220 @@
+{
+  "id": "suneung-40-brain-plasticity",
+  "updated": "2026-09-06",
+  "source": "2024학년도 수능 40번",
+  "category": "리딩",
+  "topic_intro": "뇌는 한 번 굳는 것이 아니라 평생 다시 빚어진다",
+  "sentence": "\"Brain plasticity\" is a term we use in neuroscience. Whether intentionally or not, \"plasticity\" suggests that the key idea is to mold something once and keep it that way forever: to shape the plastic toy and never change it again. But that's not what the brain does. It carries on remolding itself throughout your life. Think of a developing city, and note the way it grows, improves, and responds to the world around it. Observe where the city builds its truck stops, how it crafts its immigration policies, and how it modifies its education and legal systems. A city is always changing. A city is not designed by urban planners and then immobilized like a plastic object. It continually develops. Just like cities, brains never reach an end point. We spend our lives blossoming toward something, even as the target moves. Consider the feeling of encountering a diary that you wrote many years ago. It represents the thinking, opinions, and viewpoint of someone who was a bit different from who you are now. Despite having the same name and the same early history, in the years between inscription and interpretation the narrator has altered.",
+  "grammar_type": "요약문_과학논설",
+  "split_rule": {
+    "when": "한 문장이 30단어를 넘거나 콜론으로 나뉘면",
+    "how": "콜론·and 앞에서 끊는다",
+    "labels": ["문장"]
+  },
+  "proper_nouns": [],
+  "chunks": [
+    {
+      "text": "\"Brain plasticity\" is a term we use in neuroscience.",
+      "ko": "\"뇌 가소성\"은 신경과학에서 우리가 쓰는 용어다",
+      "praise": "we use가 앞의 term을 꾸민다는 걸 잡은 거 좋아요.",
+      "points": [
+        { "en": "a term we use", "sub": "이", "top": "은", "answer": "우리가 쓰는 용어", "check": ["용어", "말", "쓰는"] },
+        { "en": "neuroscience", "sub": "가", "top": "는", "answer": "신경과학", "check": ["신경과학", "신경"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "term을 '학기'로 해석", "signals": ["학기"], "ask": "신경과학에서 쓰는 term은 무엇일까요?", "wrong": "우리가 쓰는 학기", "right": "우리가 쓰는 용어" }
+      ],
+      "glosses": [
+        ["Brain", "뇌"],
+        ["plasticity", "가소성(모양이 바뀌는 성질)"],
+        ["term", "용어"],
+        ["neuroscience", "신경과학"]
+      ]
+    },
+    {
+      "text": "Whether intentionally or not, \"plasticity\" suggests that the key idea is to mold something once and keep it that way forever: to shape the plastic toy and never change it again.",
+      "ko": "일부러든 아니든, \"가소성\"이라는 말은 핵심이 무언가를 한 번 빚어 놓고 그대로 영원히 두는 것이라는 느낌을 준다. 플라스틱 장난감을 모양 지어 놓고 다시는 바꾸지 않는 것처럼 말이다",
+      "praise": "콜론 뒤를 앞말의 풀이로 읽은 거 정말 잘했어요.",
+      "points": [
+        { "en": "whether intentionally or not", "sub": "이", "top": "은", "answer": "일부러든 아니든", "check": ["일부러", "의도", "든 아니든"] },
+        { "en": "mold something once and keep it that way forever", "sub": "가", "top": "는", "answer": "한 번 빚어 놓고 그대로 영원히 두다", "check": ["한 번", "빚", "만들", "그대로", "영원"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "suggests를 '제안하다'로만 보고 문맥을 놓침", "signals": ["제안한다"], "ask": "낱말이 suggest한다면 무엇일까요?", "wrong": "제안한다", "right": "~라는 느낌을 준다" },
+        { "id": "E2", "detect": "mold를 '곰팡이'로 해석", "signals": ["곰팡이"], "ask": "여기 mold는 무엇을 하는 걸까요?", "wrong": "무언가에 곰팡이가 슬다", "right": "무언가를 빚다" }
+      ],
+      "glosses": [
+        ["Whether", "~이든 아니든"],
+        ["intentionally", "일부러"],
+        ["suggests", "~라는 느낌을 주다"],
+        ["key", "핵심의"],
+        ["mold", "빚다, 모양 짓다"],
+        ["once", "한 번"],
+        ["forever", "영원히"],
+        ["plastic", "플라스틱의"],
+        ["toy", "장난감"]
+      ]
+    },
+    {
+      "text": "But that's not what the brain does. It carries on remolding itself throughout your life.",
+      "ko": "그러나 뇌가 하는 일은 그것이 아니다. 뇌는 평생에 걸쳐 자기 자신을 계속 다시 빚어 나간다",
+      "praise": "carries on -ing를 '계속 ~해 나간다'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "that's not what the brain does", "sub": "가", "top": "는", "answer": "뇌가 하는 일은 그것이 아니다", "check": ["아니", "하는 일"] },
+        { "en": "carries on remolding itself", "sub": "가", "top": "는", "answer": "자기 자신을 계속 다시 빚어 나간다", "check": ["계속", "다시", "빚", "바꿔"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "carries on을 '나른다'로 해석", "signals": ["나른다", "운반"], "ask": "carry on -ing는 한 덩어리로 쓰이는 말이에요.", "wrong": "자신을 나른다", "right": "계속 자신을 다시 빚는다" }
+      ],
+      "glosses": [
+        ["carries on", "계속 ~해 나가다"],
+        ["remolding", "다시 빚는 것"],
+        ["itself", "자기 자신"],
+        ["throughout", "~에 걸쳐"]
+      ]
+    },
+    {
+      "text": "Think of a developing city, and note the way it grows, improves, and responds to the world around it.",
+      "ko": "자라나는 도시를 떠올리고, 그 도시가 커지고 나아지고 둘레 세상에 반응하는 방식을 눈여겨보라",
+      "praise": "the way it grows를 '자라는 방식'으로 본 거 좋아요.",
+      "points": [
+        { "en": "a developing city", "sub": "가", "top": "는", "answer": "자라나는 도시", "check": ["자라", "발전", "커지는", "도시"] },
+        { "en": "the way it grows, improves, and responds", "sub": "이", "top": "은", "answer": "커지고 나아지고 반응하는 방식", "check": ["방식", "커지", "나아지", "반응"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "note를 명사 '메모'로 보고 명령문을 놓침", "signals": ["메모", "쪽지"], "ask": "and note the way에서 note는 무엇일까요?", "wrong": "그 방식의 메모", "right": "그 방식을 눈여겨보라" },
+        { "id": "E2", "detect": "developing을 '개발도상의'로만 보고 흐림", "signals": ["개발도상"], "ask": "a developing city는 어떤 도시일까요?", "wrong": "개발도상 도시", "right": "자라나고 있는 도시" }
+      ],
+      "glosses": [
+        ["Think of", "~을 떠올리다"],
+        ["developing", "자라나는"],
+        ["city", "도시"],
+        ["note", "눈여겨보다"],
+        ["grows", "커지다"],
+        ["improves", "나아지다"],
+        ["responds", "반응하다"],
+        ["around", "둘레의"]
+      ]
+    },
+    {
+      "text": "Observe where the city builds its truck stops, how it crafts its immigration policies, and how it modifies its education and legal systems.",
+      "ko": "그 도시가 어디에 화물차 휴게소를 짓는지, 이민 정책을 어떻게 짜는지, 교육 제도와 법 제도를 어떻게 고치는지 살펴보라",
+      "praise": "where와 how로 이어진 셋을 나란히 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "Observe where ~, how ~, and how ~", "sub": "가", "top": "는", "answer": "~인지 살펴보라", "check": ["살펴", "관찰", "보라"] },
+        { "en": "crafts its immigration policies", "sub": "가", "top": "는", "answer": "이민 정책을 짜다", "check": ["이민", "정책", "만들", "짜"] },
+        { "en": "modifies its education and legal systems", "sub": "가", "top": "는", "answer": "교육 제도와 법 제도를 고치다", "check": ["교육", "법", "제도", "고치", "바꾸"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "crafts를 명사 '공예품'으로 해석", "signals": ["공예"], "ask": "how it crafts에서 crafts는 무엇일까요?", "wrong": "정책의 공예품", "right": "정책을 짜는 방식" }
+      ],
+      "glosses": [
+        ["Observe", "살펴보다"],
+        ["builds", "짓다"],
+        ["truck stops", "화물차 휴게소"],
+        ["crafts", "짜다, 공들여 만들다"],
+        ["immigration", "이민"],
+        ["policies", "정책"],
+        ["modifies", "고치다"],
+        ["education", "교육"],
+        ["legal", "법의"]
+      ]
+    },
+    {
+      "text": "A city is always changing. A city is not designed by urban planners and then immobilized like a plastic object. It continually develops.",
+      "ko": "도시는 늘 바뀐다. 도시는 도시계획가가 설계해 놓은 뒤 플라스틱 물건처럼 굳어 버리는 것이 아니다. 도시는 끊임없이 자라난다",
+      "praise": "부정이 뒤의 immobilized까지 걸린다는 걸 잡은 거 정말 잘했어요.",
+      "points": [
+        { "en": "is not designed ... and then immobilized", "sub": "가", "top": "는", "answer": "설계된 뒤 굳어 버리는 것이 아니다", "check": ["설계", "굳", "고정", "아니"] },
+        { "en": "continually develops", "sub": "가", "top": "는", "answer": "끊임없이 자라난다", "check": ["끊임없", "계속", "자라", "발전"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "부정이 immobilized까지 걸리는 걸 놓침", "signals": ["설계되지 않고 굳는다", "굳어 버린다."], "ask": "not은 어디까지 부정할까요?", "wrong": "설계되지 않고 굳어 버린다", "right": "설계된 뒤 굳어 버리는 것이 아니다" }
+      ],
+      "glosses": [
+        ["always", "늘"],
+        ["changing", "바뀌는"],
+        ["designed", "설계된"],
+        ["planners", "계획가"],
+        ["immobilized", "굳어 움직이지 않게 된"],
+        ["object", "물건"],
+        ["continually", "끊임없이"],
+        ["develops", "자라나다"]
+      ]
+    },
+    {
+      "text": "Just like cities, brains never reach an end point. We spend our lives blossoming toward something, even as the target moves.",
+      "ko": "도시와 꼭 마찬가지로 뇌도 결코 끝점에 이르지 않는다. 우리는 목표가 움직이는 동안에도 무언가를 향해 피어나며 삶을 보낸다",
+      "praise": "even as를 '~하는 동안에도'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "never reach an end point", "sub": "가", "top": "는", "answer": "결코 끝점에 이르지 않는다", "check": ["끝", "결코", "도달하지 않", "이르지 않"] },
+        { "en": "even as the target moves", "sub": "가", "top": "는", "answer": "목표가 움직이는 동안에도", "check": ["목표", "움직", "동안에도", "바뀌어도"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "even as를 '심지어 ~로서'로 해석", "signals": ["심지어 로서"], "ask": "even as는 한 덩어리로 '~하는 동안에도'예요.", "wrong": "심지어 목표로서", "right": "목표가 움직이는 동안에도" }
+      ],
+      "glosses": [
+        ["Just like", "꼭 ~처럼"],
+        ["cities", "도시들"],
+        ["brains", "뇌"],
+        ["reach", "이르다"],
+        ["end point", "끝점"],
+        ["spend", "보내다"],
+        ["blossoming", "피어나는 것"],
+        ["toward", "~을 향해"],
+        ["even as", "~하는 동안에도"],
+        ["target", "목표"],
+        ["moves", "움직이다"]
+      ]
+    },
+    {
+      "text": "Consider the feeling of encountering a diary that you wrote many years ago. It represents the thinking, opinions, and viewpoint of someone who was a bit different from who you are now.",
+      "ko": "여러 해 전에 쓴 일기를 다시 마주할 때의 느낌을 떠올려 보라. 그 일기는 지금의 당신과 조금 다른 어떤 사람의 생각과 의견과 관점을 담고 있다",
+      "praise": "who you are now를 '지금의 당신'으로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "encountering a diary that you wrote", "sub": "이", "top": "은", "answer": "당신이 쓴 일기를 마주하는 것", "check": ["일기", "마주", "만나", "발견"] },
+        { "en": "someone who was a bit different from who you are now", "sub": "이", "top": "은", "answer": "지금의 당신과 조금 다른 사람", "check": ["지금", "다른 사람", "조금 다"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "who you are now를 '지금 당신이 누구인지'로 어색하게 직역", "signals": ["당신이 누구인지"], "ask": "who you are now는 무엇을 가리킬까요?", "wrong": "지금 당신이 누구인지와 달랐다", "right": "지금의 당신과 달랐다" }
+      ],
+      "glosses": [
+        ["Consider", "떠올려 보라"],
+        ["feeling", "느낌"],
+        ["encountering", "마주하는 것"],
+        ["diary", "일기"],
+        ["wrote", "썼다"],
+        ["ago", "전에"],
+        ["opinions", "의견"],
+        ["viewpoint", "관점"],
+        ["someone", "어떤 사람"],
+        ["bit", "조금"]
+      ]
+    },
+    {
+      "text": "Despite having the same name and the same early history, in the years between inscription and interpretation the narrator has altered.",
+      "ko": "이름도 같고 어린 시절 이력도 같지만, 적어 놓은 때와 다시 읽는 때 사이의 세월 동안 그 이야기하는 사람은 달라졌다",
+      "praise": "inscription과 interpretation을 '적은 때'와 '읽는 때'로 본 거 정말 잘했어요.",
+      "points": [
+        { "en": "Despite having the same name", "sub": "이", "top": "은", "answer": "이름이 같은데도", "check": ["같은 이름", "이름은 같", "에도 불구"] },
+        { "en": "between inscription and interpretation", "sub": "이", "top": "은", "answer": "적어 놓은 때와 읽는 때 사이", "check": ["적", "쓴", "해석", "읽는", "사이"] },
+        { "en": "the narrator has altered", "sub": "가", "top": "는", "answer": "이야기하는 사람이 달라졌다", "check": ["달라", "바뀌", "변했", "화자"] }
+      ],
+      "errors": [
+        { "id": "E1", "detect": "Despite 뒤의 having을 동사로 보고 끊음", "signals": ["같은 이름을 가진다."], "ask": "Despite 뒤에는 명사 노릇을 하는 말이 와요.", "wrong": "같은 이름을 가진다", "right": "같은 이름을 가졌는데도" },
+        { "id": "E2", "detect": "altered를 '제단'이나 '바꾸었다'로 방향을 뒤집음", "signals": ["화자가 바꾸었다", "제단"], "ask": "the narrator has altered는 바꿨다는 걸까요, 달라졌다는 걸까요?", "wrong": "화자가 무언가를 바꿨다", "right": "화자가 달라졌다" }
+      ],
+      "glosses": [
+        ["Despite", "~에도 불구하고"],
+        ["same", "같은"],
+        ["early", "이른, 어린 시절의"],
+        ["history", "이력, 역사"],
+        ["years", "세월"],
+        ["inscription", "적어 놓음"],
+        ["interpretation", "해석, 다시 읽음"],
+        ["narrator", "이야기하는 사람"],
+        ["altered", "달라졌다"]
+      ]
+    }
+  ]
+}
