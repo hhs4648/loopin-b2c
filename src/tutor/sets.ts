@@ -1,13 +1,25 @@
 import data from "../../content/tutor/sets.json" with { type: "json" };
-import type { Lesson, LessonSet } from "../../content/tutor/types";
+import type {
+  Lesson,
+  LessonCollection,
+  LessonGroup,
+  LessonSet,
+} from "../../content/tutor/types";
 import { getLesson, lessonIds } from "./lessons";
 
 /**
- * 수업 목록.
+ * 수업 목록 — **대분류 → 중분류 → 세트** 세 켜다.
  *
- * **세트를 추가할 때 고치는 곳은 `content/tutor/sets.json` 하나다.** 여기 코드는
+ *     수능 (대분류)
+ *       └ 2024 수능 (중분류)
+ *           ├ 18번 문제
+ *           └ 19번 문제 …
+ *
+ * 목록을 바꿀 때 고치는 곳은 `content/tutor/sets.json` 하나다. 여기 코드는
  * 그걸 읽어서 레슨과 이어 주기만 한다.
  */
+
+const GROUPS = data.groups as LessonGroup[];
 
 const SETS = (data.sets as LessonSet[]).filter((set) =>
   /*
@@ -16,6 +28,24 @@ const SETS = (data.sets as LessonSet[]).filter((set) =>
   */
   set.lessons.some((id) => lessonIds().includes(id)),
 );
+
+export function allGroups(): LessonGroup[] {
+  return GROUPS;
+}
+
+/** 중분류 전체 — 대분류 순서 그대로 펼친 것 */
+export function allCollections(): LessonCollection[] {
+  return GROUPS.flatMap((group) => group.collections);
+}
+
+export function getCollection(id?: string | null): LessonCollection | null {
+  return allCollections().find((c) => c.id === id) ?? null;
+}
+
+/** 이 중분류에 든 세트들. 목록에 뜨는 순서다 */
+export function setsIn(collectionId: string): LessonSet[] {
+  return SETS.filter((set) => set.collection === collectionId);
+}
 
 export function allSets(): LessonSet[] {
   return SETS;
@@ -40,7 +70,7 @@ export function firstLessonId(set: LessonSet): string {
   return lessonsOf(set)[0]!.id;
 }
 
-/** 지문이 속한 세트 — 수업 화면 머리글에 세트 이름을 띄우려고 */
+/** 지문이 속한 세트 — 수업 화면 머리글에 이름을 띄우려고 */
 export function setOfLesson(lessonId: string): LessonSet | null {
   return SETS.find((set) => set.lessons.includes(lessonId)) ?? null;
 }

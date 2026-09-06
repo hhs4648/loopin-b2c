@@ -514,3 +514,22 @@ button, input { font-family: inherit; }
   background: rgba(255,255,255,.7);
   border-radius: 999px; padding: 3px 10px;
 }
+
+/* 대분류는 카드가 아니라 묶음 제목이다 — 하나뿐인 것을 누르게 하지 않는다 */
+.group { margin-bottom: 18px; }
+.group-title {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 15px; font-weight: 800; margin-bottom: 8px;
+}
+.group-title small { font-size: 12px; font-weight: 500; color: #8a7f88; }
+
+/* 끝낸 문제 — 가라앉히되 다시 풀 수 있게 남겨 둔다 */
+.set-card.done { background: rgba(255,255,255,.7); box-shadow: 0 6px 16px rgba(60,30,20,.07); }
+.set-card.done .set-title, .set-card.done .set-subtitle { color: #8a7f88; }
+.set-card.done .set-go { color: #b39aa4; }
+.done-mark {
+  margin-left: 8px; vertical-align: 2px;
+  background: #e8f0e4; color: #4f7a45;
+  border-radius: 999px; padding: 2px 8px;
+  font-size: 11px; font-weight: 700;
+}

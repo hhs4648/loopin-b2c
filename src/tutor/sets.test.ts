@@ -2,7 +2,16 @@ import { describe, expect, it } from "vitest";
 import data from "../../content/tutor/sets.json";
 import type { LessonSet } from "../../content/tutor/types";
 import { getLesson, lessonIds } from "./lessons";
-import { allSets, firstLessonId, sentenceCount, setOfLesson } from "./sets";
+import {
+  allCollections,
+  allGroups,
+  allSets,
+  firstLessonId,
+  getCollection,
+  sentenceCount,
+  setOfLesson,
+  setsIn,
+} from "./sets";
 
 const RAW = data.sets as LessonSet[];
 
@@ -33,35 +42,23 @@ describe("수업 세트", () => {
     expect(orphans).toEqual([]);
   });
 
-  it("수업 목록 순서", () => {
-    expect(allSets().map((set) => set.id)).toEqual([
-      "suneung-18",
-      "suneung-19",
-      "suneung-20",
-      "suneung-21",
-      "suneung-22",
-      "suneung-23",
-      "suneung-24",
-      "suneung-26",
-      "suneung-27",
-      "suneung-28",
-      "suneung-29",
-      "suneung-30",
-      "suneung-31",
-      "suneung-32",
-      "suneung-33",
-      "suneung-34",
-      "suneung-35",
-      "suneung-36",
-      "suneung-37",
-      "suneung-38",
-      "suneung-39",
-      "suneung-40",
-      "suneung-41-1",
-      "suneung-41-2",
-      "suneung-43-1",
-      "suneung-43-2",
-    ]);
+  it("모든 세트가 있는 중분류에 붙어 있다 — 안 그러면 목록에서 못 연다", () => {
+    const known = new Set(allCollections().map((c) => c.id));
+    const orphans = allSets().filter((s) => !known.has(s.collection));
+    expect(orphans.map((s) => s.id)).toEqual([]);
+  });
+
+  it("대분류 > 중분류 > 세트 세 켜가 이어진다", () => {
+    expect(allGroups().map((g) => g.id)).toEqual(["suneung"]);
+    expect(allCollections().map((c) => c.id)).toEqual(["suneung-2024"]);
+    expect(setsIn("suneung-2024")).toHaveLength(allSets().length);
+  });
+
+  it("2024 수능에 26문제가 들어 있다", () => {
+    const sets = setsIn("suneung-2024");
+    expect(getCollection("suneung-2024")?.title).toBe("2024 수능");
+    expect(sets).toHaveLength(26);
+    expect(sets[0]!.title).toBe("18번 문제");
   });
 
   it("카드에 띄우는 문장 수가 실제 지문과 같다", () => {
@@ -79,7 +76,7 @@ describe("수업 세트", () => {
 
   it("수능 18번 세트에 퇴사 편지 7문장이 들어 있다", () => {
     const suneung = allSets().find((set) => set.id === "suneung-18");
-    expect(suneung?.title).toBe("수능 18번 문제");
+    expect(suneung?.title).toBe("18번 문제");
     expect(suneung?.lessons).toEqual(["resignation-letter"]);
     expect(sentenceCount(suneung!)).toBe(7);
   });

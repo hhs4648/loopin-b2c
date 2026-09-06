@@ -147,10 +147,32 @@ export type Lesson = {
  */
 export type LessonSet = {
   id: string;
-  /** 카드 왼쪽 위 라벨 (수능 · 문법 …) */
-  tag: string;
+  /** 어느 중분류에 들어가는지 (`LessonCollection.id`) */
+  collection: string;
   title: string;
   subtitle: string;
   /** `lessons.ts`의 레슨 id. 순서대로 푼다 */
   lessons: string[];
+};
+
+/**
+ * 중분류 — **한 시험지 한 벌.** 「2024 수능」 안에 18~45번이 들어간다.
+ *
+ * 세트를 여기에 담지 않고 세트가 `collection` id로 붙는다. 그래야 지문을
+ * 추가할 때 고칠 곳이 한 줄이다.
+ */
+export type LessonCollection = {
+  id: string;
+  title: string;
+  subtitle: string;
+  /** 카드 왼쪽 위 라벨 (기출 · 모의 …) */
+  tag: string;
+};
+
+/** 대분류 — 수능 · 모의고사 · 교과서처럼 가장 큰 갈래 */
+export type LessonGroup = {
+  id: string;
+  title: string;
+  subtitle: string;
+  collections: LessonCollection[];
 };

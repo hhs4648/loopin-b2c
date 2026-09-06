@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
-import type { LessonSet } from "../content/tutor/types";
+import type { LessonCollection, LessonSet } from "../content/tutor/types";
 import { ClassroomChat } from "./components/ClassroomChat";
 import { LessonList } from "./components/LessonList";
 import { SentenceStudy } from "./components/SentenceStudy";
 import { createSession, type TutorSession, type TutorView } from "./tutor/engine";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
+import { markDone } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
-import { firstLessonId, getSet, setOfLesson } from "./tutor/sets";
+import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets";
 
 /*
   개발에서 지문 하나만 보고 싶을 때가 있다. `?lesson=<id>`나 `?set=<id>`가
@@ -42,6 +43,10 @@ export function App() {
   const [view, setView] = useState<TutorView | null>(
     () => started?.session.view() ?? null,
   );
+  /* 목록에서 열어 둔 중분류. null이면 중분류 목록을 본다 */
+  const [collection, setCollection] = useState<LessonCollection | null>(() =>
+    directSet ? getCollection(directSet.collection) : null,
+  );
   const [chatOverride, setChatOverride] = useState(false);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
@@ -66,11 +71,15 @@ export function App() {
 
   const ended = view?.ended ?? false;
   const recordLine = view?.recordLine ?? null;
+  const setId = started?.set?.id;
   useEffect(() => {
     if (!ended || !recordLine || !session) return;
     const result = recordLine.match(/결과=([^\s/]+)/)?.[1];
-    if (result) void finishSessionRecord(result, session.records());
-  }, [ended, recordLine, session]);
+    if (!result) return;
+    void finishSessionRecord(result, session.records());
+    // 목록에 「완료」를 칠하려면 지금 손에 있는 값이 필요하다
+    if (setId) markDone(setId, result);
+  }, [ended, recordLine, session, setId]);
 
   const elapsed = useMemo(() => {
     const m = String(Math.floor(seconds / 60)).padStart(2, "0");
@@ -105,6 +114,7 @@ export function App() {
   }
 
   function startSet(set: LessonSet) {
+    setCollection(getCollection(set.collection));
     const next = open(firstLessonId(set));
     setStarted(next);
     setView(next.session.view());
@@ -112,7 +122,10 @@ export function App() {
     setSeconds(0);
   }
 
-  /** 「학습 종료」와 「다시 시작」이 같은 자리로 간다 — 수업 목록 */
+  /**
+   * 「학습 종료」와 「다시 시작」이 같은 자리로 간다 — **그 문제가 있던 목록**.
+   * 맨 앞으로 돌려보내면 방금 있던 자리를 다시 찾아 들어가야 한다.
+   */
   function backToList() {
     setStarted(null);
     setView(null);
@@ -124,7 +137,13 @@ export function App() {
     return (
       <div className="viewport">
         <div className="phone">
-          <LessonList learnerName={loadLearnerName()} onPick={startSet} />
+          <LessonList
+            learnerName={loadLearnerName()}
+            collection={collection}
+            onOpenCollection={setCollection}
+            onBack={() => setCollection(null)}
+            onPickSet={startSet}
+          />
         </div>
       </div>
     );
