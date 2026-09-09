@@ -15,6 +15,27 @@ import "./styles.css";
   개발 전용은 둘뿐이다: 가짜 어댑터(`?fakellm=`)와 브라우저 직접 호출(`?direct`).
   직접 호출은 키가 번들에 실리므로 프로덕션 빌드에서 통째로 빠진다.
 */
+/*
+  **보이는 높이를 직접 재서 CSS에 넘긴다** (`--app-h`, `styles.css`의 `.viewport`).
+
+  `100dvh`면 될 것 같지만, 카톡 인앱 브라우저처럼 위아래 막대를 **포함해서**
+  재는 웹뷰가 있다. 그러면 액자가 보이는 자리보다 커지고, 가운데 정렬이라
+  위아래가 똑같이 잘려 나간다 (2026-09-06 카톡에서 실제로 이렇게 잘렸다).
+
+  `window.innerHeight`는 그 웹뷰에서도 **실제로 그릴 수 있는 높이**다.
+  `visualViewport.height`를 쓰지 않는 이유는 키보드가 올라오면 같이 줄어들어서
+  — 글자 칠 때마다 화면이 통째로 쪼그라든다.
+*/
+function syncAppHeight() {
+  document.documentElement.style.setProperty("--app-h", `${window.innerHeight}px`);
+}
+syncAppHeight();
+window.addEventListener("resize", syncAppHeight);
+// 회전 직후에는 아직 옛 높이가 나온다 — 다음 프레임에 한 번 더 잰다
+window.addEventListener("orientationchange", () => {
+  requestAnimationFrame(syncAppHeight);
+});
+
 const params = new URLSearchParams(window.location.search);
 const fakeMode = params.get("fakellm");
 

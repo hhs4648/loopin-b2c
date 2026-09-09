@@ -7,6 +7,14 @@
 
 html, body, #root { height: 100%; }
 
+/*
+  화면을 통째로 못 움직이게 막는다. 안 막으면 카톡·인스타 같은 **인앱
+  브라우저**에서 손가락으로 페이지를 밀어 올릴 수 있고, 그 순간 액자 위가
+  주소창 뒤로 들어가 잘린 것처럼 보인다. 안쪽에서 스크롤하는 칸들은
+  각자 `overflow-y: auto`를 갖고 있어 영향이 없다.
+*/
+html, body { overflow: hidden; overscroll-behavior: none; }
+
 body { background: #1d1a1f; }
 
 button, input { font-family: inherit; }
@@ -28,26 +36,72 @@ button, input { font-family: inherit; }
   50% { opacity: .3; }
 }
 
+/*
+  화면 크기 대응은 여기 두 규칙이 전부다. 아래 화면들은 전부 `.phone` 안쪽
+  기준(`cqw`/`cqh`)으로 그려지므로, `.phone`만 실제 화면에 맞으면 따라온다.
+*/
 .viewport {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  /* 모바일 주소창이 먹은 만큼 뺀 **진짜 보이는 높이**. 위 100vh는 옛 브라우저용 */
+  height: 100dvh;
+  /*
+    카톡 인앱 브라우저처럼 `dvh`를 위아래 막대 **포함**으로 재는 웹뷰가 있다.
+    그런 데서는 액자가 보이는 높이보다 커져 다시 잘린다. `--app-h`는
+    `main.tsx`가 `window.innerHeight`로 직접 재서 넣어 주는 값이고,
+    못 넣었으면 위의 `dvh`가 그대로 남는다.
+  */
+  height: var(--app-h, 100dvh);
   display: flex;
   align-items: center;
   justify-content: center;
   background: #1d1a1f;
 }
 
+/*
+  액자는 390×844로 그려 두고, 화면이 그보다 작으면 통째로 줄여 넣는다.
+
+  예전 `scale(min(calc(100vw / 390), ...))`은 **길이 ÷ 숫자 = 길이**라
+  `scale()`이 받는 숫자가 아니었다. 선언 전체가 무효라 액자가 844px 그대로
+  남았고, 화면이 그보다 낮은 휴대폰에서 **위아래가 잘렸다**. 나누는 쪽에
+  단위를 붙여야(`/ 390px`) 숫자가 나온다.
+
+  `, 1`을 넣어 확대는 하지 않는다 — 데스크톱은 지금 보던 크기 그대로다.
+*/
 .phone {
   position: relative;
   width: 390px;
   height: 844px;
   flex: none;
-  transform: scale(min(calc(100vw / 390), calc(100vh / 844)));
+  transform: scale(min(calc(100vw / 390px), calc(100vh / 844px), 1));
+  transform: scale(min(calc(100dvw / 390px), calc(100dvh / 844px), 1));
+  transform: scale(min(calc(100dvw / 390px), calc(var(--app-h, 100dvh) / 844px), 1));
   transform-origin: center;
   overflow: hidden;
   background: #f7efe6;
   color: #2b2430;
   container-type: size;
+
+  /*
+    선생님 그림 폭. 그림이 거의 정사각(650×616)이라 폭이 곧 키다.
+    폭만 보면(58cqw) 화면이 낮을 때 키가 남는 높이를 넘어 말풍선을 뚫는다.
+    높이 몫(27cqh)도 같이 재서 작은 쪽을 쓴다 — 390×844에서는 폭 쪽이 작아
+    보던 크기 그대로다(226.19px).
+  */
+  --teacher-w: min(58cqw, 27cqh);
+}
+
+/*
+  휴대폰에서는 액자를 버리고 **화면을 꽉 채운다.** 390×844를 줄여 넣으면
+  잘리지는 않아도 좌우에 검은 띠가 생기고 글씨·버튼이 그만큼 작아진다.
+  480px 상한은 작은 창의 데스크톱에서 선생님 그림이 과하게 커지는 걸 막는다.
+*/
+@media (max-width: 640px) {
+  .phone {
+    width: min(100%, 480px);
+    height: 100%;
+    transform: none;
+  }
 }
 
 .stage-fill { position: absolute; inset: 0; }
@@ -65,6 +119,11 @@ button, input { font-family: inherit; }
   border-radius: 3px;
   display: block;
 }
+
+/* 소품 크기는 px 고정이라, 좁은 화면에서는 액자 폭(390 기준)만큼 같이 줄인다 */
+.clock, .plant { transform: scale(min(1, calc(100cqw / 390px))); }
+.clock { transform-origin: right center; }
+.plant { transform-origin: right bottom; }
 
 .clock {
   position: absolute;
@@ -178,29 +237,47 @@ button, input { font-family: inherit; }
 .icon-btn:disabled { opacity: .5; cursor: default; }
 
 /*
-  캐릭터 폭. 그림이 거의 정사각(650×616)이라, 폭을 키우면 그만큼 키도 커져서
-  머리가 말풍선 뒤로 들어간다. 말풍선이 `17% + 58cqw` 자리에 있으므로
-  캐릭터 키(≈0.95×폭)가 거기까지 닿지 않는 값으로 둔다.
+  캐릭터 폭은 `--teacher-w`(`.phone`)로 한 군데서 정한다. 그림이 거의
+  정사각(650×616)이라 폭을 키우면 그만큼 키도 커져서 머리가 말풍선 뒤로
+  들어간다. 말풍선이 `그 폭 + 아래 여백` 자리에 있으므로 둘이 같은 값을
+  봐야 화면 크기가 바뀌어도 간격이 유지된다.
 */
 .teacher-full {
-  position: absolute; left: 50%; bottom: 15%;
-  transform: translateX(-50%); width: 58cqw; z-index: 3;
+  position: absolute; left: 50%; bottom: max(15%, 118px);
+  transform: translateX(-50%); width: var(--teacher-w); z-index: 3;
 }
 .teacher-art { display: block; width: 100%; height: auto; }
 .teacher-bob { animation: bob 3.4s ease-in-out infinite; filter: drop-shadow(0 10px 14px rgba(80,40,30,.18)); }
 
+/*
+  아래쪽 앵커에 px 하한을 둔다. 도크(빠른답변 + 입력칸)는 높이가 px로 고정인데
+  17%만 쓰면 화면이 낮을수록 그 아래로 파고들어 말풍선이 입력칸에 깔린다.
+  844px에서는 17% = 143.5px라 하한(132px)이 걸리지 않아 지금 모습 그대로다.
+*/
 .teacher-bubble {
-  position: absolute; left: 50%; bottom: calc(17% + 58cqw);
+  position: absolute; left: 50%; bottom: calc(max(17%, 132px) + var(--teacher-w));
   transform: translateX(-50%); z-index: 4; animation: pop .4s ease-out;
   width: max-content; max-width: 86cqw;
 }
 .bubble-card {
   position: relative; background: #fff; border-radius: 22px;
-  padding: 16px 22px;
+  /* 390px에서 16px/22px·17px — 보던 값 그대로고, 좁은 기기에서만 줄어든다 */
+  padding: clamp(12px, 4.1cqw, 16px) clamp(14px, 5.7cqw, 22px);
   box-shadow: 0 12px 30px rgba(60,30,20,.16), 0 0 0 1px rgba(226,96,125,.18);
   font-family: "Gowun Dodum", "Noto Sans KR", sans-serif;
-  font-size: 17px; line-height: 1.45; font-weight: 500;
-  text-align: center; min-width: 200px; box-sizing: border-box;
+  font-size: clamp(15px, 4.4cqw, 17px); line-height: 1.45; font-weight: 500;
+  text-align: center; min-width: min(200px, 56cqw); box-sizing: border-box;
+  display: flex; flex-direction: column;
+}
+/*
+  선생님 말이 길어도 말풍선이 제 자리를 벗어나지 않게 막는다. 안 막으면
+  위로 자라서 교실 화면에서는 상단 바를, 문장 학습 화면에서는 **지문을**
+  덮는다. 넘치는 만큼은 말풍선 안에서 스크롤한다.
+  꼬리(`.bubble-tail`)는 절대 위치라 이 스크롤에 잘리지 않는다.
+*/
+.bubble-card > span { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.teacher-bubble .bubble-card {
+  max-height: calc(100cqh - max(17cqh, 132px) - var(--teacher-w) - 66px);
 }
 /*
   스스로 고친 순간에만 켜지는 표시 (`effect: "light"`).
@@ -221,7 +298,7 @@ button, input { font-family: inherit; }
 }
 
 .student-bubble {
-  position: absolute; right: 16px; bottom: calc(17% + 26px); z-index: 4;
+  position: absolute; right: 16px; bottom: calc(max(17%, 132px) + 26px); z-index: 4;
   animation: pop .35s ease-out; max-width: 62cqw;
   background: #ef7a93; color: #fff; border-radius: 18px 18px 4px 18px;
   padding: 11px 16px; font-size: 15px; line-height: 1.45;
@@ -282,13 +359,25 @@ button, input { font-family: inherit; }
 .dots-bar i { width: 8px; height: 5px; border-radius: 3px; background: #e6d8cc; }
 .dots-bar i.on { width: 18px; background: #ef7a93; }
 
+/*
+  지문은 길이가 제각각이라 이 칸이 높이를 다 먹으면 아래 선생님·말풍선이
+  눌린다. 화면 높이의 34%까지만 쓰고 더 길면 이 칸 안에서 스크롤한다.
+  화면이 더 낮을 때 먼저 양보하는 것도(`flex-shrink`) 이 칸이다.
+*/
 .study-sentence {
-  flex: none;
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: 34cqh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 18px 24px 8px;
 }
 .english {
   font-family: "Gowun Dodum", "Noto Sans KR", sans-serif;
-  font-size: 22px; line-height: 1.4; font-weight: 500; letter-spacing: -.01em;
+  /* 390px에서 21.84px — 보던 22px 그대로고, 좁은 기기에서만 줄어든다 */
+  font-size: clamp(17px, 5.6cqw, 24px);
+  line-height: 1.4; font-weight: 500; letter-spacing: -.01em;
+  overflow-wrap: break-word;
 }
 .english-token {
   position: relative;
@@ -319,8 +408,9 @@ button, input { font-family: inherit; }
   bottom: auto;
   transform: translateX(-50%);
   z-index: 7;
-  max-width: 240px;
-  white-space: nowrap;
+  max-width: min(240px, 62cqw);
+  width: max-content;
+  white-space: normal;
   text-align: center;
   background: #fff;
   color: #2b2430;
@@ -344,15 +434,20 @@ button, input { font-family: inherit; }
   border: 6px solid transparent;
   border-bottom-color: #fff;
 }
-.listen-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+.listen-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; min-width: 0; }
 .listen {
+  flex: none; white-space: nowrap;
   height: 40px; border: none; border-radius: 999px; background: #fff; color: #e2607d;
   font-weight: 600; font-size: 14px; padding: 0 16px 0 12px; cursor: pointer;
   display: flex; align-items: center; gap: 8px;
   box-shadow: 0 6px 16px rgba(60,30,20,.1);
 }
 .listen:hover { background: #f6e9ec; }
-.listen-row span { font-size: 13px; color: #a2969e; }
+/* 안내문이 「듣기」를 두 줄로 밀지 않게 — 자리가 모자라면 안내문이 줄어든다 */
+.listen-row span {
+  min-width: 0; font-size: clamp(11px, 3.4cqw, 13px); color: #a2969e;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 
 .noun-chips {
   display: flex;
@@ -385,26 +480,44 @@ button, input { font-family: inherit; }
   font-style: normal;
 }
 
+/*
+  지문·도크가 쓰고 남은 자리가 무대다. 여기서만 크기를 재도록 컨테이너로
+  만들어 두면(`container-type: size`) 선생님과 말풍선이 남은 높이에 맞춰 같이
+  줄어든다 — 무대가 좁아졌는데 선생님만 그대로여서 지문 위로 올라타는 일이
+  없다. `--mascot`을 말풍선도 같이 보므로 둘은 항상 붙어 다닌다.
+*/
 .study-stage {
   position: relative;
-  flex: 1;
-  min-height: 0;
+  flex: 1 1 auto;
+  min-height: 132px;
+  container-type: size;
+  /*
+    선생님이 무대를 다 차지하면 말풍선이 한두 줄로 눌린다. 가르치는 건
+    말풍선이므로 화면이 낮을수록 선생님이 먼저 양보한다 — 말풍선 몫으로
+    116px는 남긴다. 390×844(무대 494px)에서는 폭 쪽이 작아 지금 크기 그대로다.
+  */
+  --mascot: min(42cqw, 52cqh, calc(100cqh - 116px));
 }
 .study-bubble-over {
   position: absolute;
   left: 50%;
-  bottom: 46%;
+  /* 선생님 키(폭의 0.95배) 바로 위 */
+  bottom: calc(var(--mascot) * .95 + 10px);
   transform: translateX(-50%);
   z-index: 4;
   width: max-content;
-  max-width: 86%;
+  max-width: 86cqw;
+}
+/* 무대(지문·도크가 쓰고 남은 자리) 밖으로 자라지 않는다 */
+.study-bubble-over .bubble-card {
+  max-height: calc(100cqh - var(--mascot) * .95 - 16px);
 }
 .study-mascot {
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 42%;
+  width: var(--mascot);
   z-index: 3;
   filter: drop-shadow(0 10px 14px rgba(80,40,30,.18));
   animation: bob 3.4s ease-in-out infinite;
@@ -491,7 +604,7 @@ button, input { font-family: inherit; }
 
 .home-mascot {
   position: absolute; right: 2cqw; bottom: 5%;
-  width: 46cqw; z-index: 2;
+  width: min(46cqw, 22cqh); z-index: 2;
   pointer-events: none;
 }
 /*
@@ -501,7 +614,7 @@ button, input { font-family: inherit; }
 .home .plant, .home .clock { display: none; }
 
 /* 고유명사 칩이 뜬 만큼 학생 말풍선을 올린다 (라벨 28 + 칩 28 + 여백 16) */
-.student-bubble.raised { bottom: calc(17% + 26px + 72px); }
+.student-bubble.raised { bottom: calc(max(17%, 132px) + 26px + 72px); }
 
 /* 인트로의 고유명사 안내 — 칩만 두면 왜 떠 있는지 모른다 */
 .noun-intro {
