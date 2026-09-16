@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useLayoutEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 
 type Props = {
   placeholder: string;
@@ -8,6 +8,14 @@ type Props = {
 
 export function InputBar({ placeholder, disabled, onSend }: Props) {
   const [value, setValue] = useState("");
+  const area = useRef<HTMLTextAreaElement>(null);
+
+  useLayoutEffect(() => {
+    const el = area.current;
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${el.scrollHeight}px`;
+  }, [value]);
 
   function submit(e: FormEvent) {
     e.preventDefault();
@@ -17,12 +25,21 @@ export function InputBar({ placeholder, disabled, onSend }: Props) {
     setValue("");
   }
 
+  function onKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key !== "Enter" || e.shiftKey || e.nativeEvent.isComposing) return;
+    e.preventDefault();
+    e.currentTarget.form?.requestSubmit();
+  }
+
   return (
     <form className="input-bar" onSubmit={submit}>
-      <input
+      <textarea
+        ref={area}
+        rows={1}
         value={value}
         disabled={disabled}
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={onKeyDown}
         placeholder={placeholder}
       />
       <button type="button" title="음성으로 말하기" className="icon-btn ghost" disabled>
