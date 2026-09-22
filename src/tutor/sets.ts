@@ -6,6 +6,7 @@ import type {
   LessonSet,
 } from "../../content/tutor/types";
 import { getLesson, lessonIds } from "./lessons";
+import { getPolicyLesson, policyLessonIds } from "./policy/lessons";
 
 /**
  * 수업 목록 — **대분류 → 중분류 → 세트** 세 켜다.
@@ -21,12 +22,25 @@ import { getLesson, lessonIds } from "./lessons";
 
 const GROUPS = data.groups as LessonGroup[];
 
+/**
+ * 목록에 올릴 수 있는 지문 전부 — 예전 레슨과 Teaching Policy 레슨.
+ * 모양과 엔진은 달라도 학생이 고르는 자리는 같다.
+ */
+export function knownLessonIds(): string[] {
+  return [...lessonIds(), ...policyLessonIds()];
+}
+
+/** 지문 하나의 문장 수 — 어느 쪽 레슨이든 */
+export function sentencesIn(lessonId: string): number {
+  return getPolicyLesson(lessonId)?.sentences.length ?? getLesson(lessonId).chunks.length;
+}
+
 const SETS = (data.sets as LessonSet[]).filter((set) =>
   /*
     없는 레슨 id를 적어 두면 카드는 뜨는데 눌러도 엉뚱한 지문이 열린다
     (`getLesson`이 첫 레슨으로 폴백한다). 그런 세트는 아예 목록에서 뺀다.
   */
-  set.lessons.some((id) => lessonIds().includes(id)),
+  set.lessons.some((id) => knownLessonIds().includes(id)),
 );
 
 export function allGroups(): LessonGroup[] {
@@ -55,19 +69,24 @@ export function getSet(id?: string | null): LessonSet | null {
   return SETS.find((set) => set.id === id) ?? null;
 }
 
-/** 세트에 실제로 들어 있는 지문들 */
+/** 세트에 실제로 들어 있는 지문 id들 */
+function lessonIdsOf(set: LessonSet): string[] {
+  return set.lessons.filter((id) => knownLessonIds().includes(id));
+}
+
+/** 세트에 든 **예전 모양** 지문들 */
 export function lessonsOf(set: LessonSet): Lesson[] {
   return set.lessons.filter((id) => lessonIds().includes(id)).map((id) => getLesson(id));
 }
 
 /** 카드에 띄우는 분량. 지문이 여럿이면 다 더한다 */
 export function sentenceCount(set: LessonSet): number {
-  return lessonsOf(set).reduce((n, lesson) => n + lesson.chunks.length, 0);
+  return lessonIdsOf(set).reduce((n, id) => n + sentencesIn(id), 0);
 }
 
 /** 이 세트를 시작하면 열리는 지문 */
 export function firstLessonId(set: LessonSet): string {
-  return lessonsOf(set)[0]!.id;
+  return lessonIdsOf(set)[0]!;
 }
 
 /** 지문이 속한 세트 — 수업 화면 머리글에 이름을 띄우려고 */

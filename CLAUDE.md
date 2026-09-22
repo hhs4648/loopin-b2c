@@ -74,4 +74,24 @@ LLM 출력 계약:
 - 탈레스 원안 레슨(참고): `content/tutor/lessons/thales-participial-phrase-front.json`
 - 시스템 프롬프트 원안: `content/tutor/prompts/dajung-system.v0.2.md`
 
+## Teaching Policy 레슨 (앞으로의 공식 policy)
+
+**방향 (2026-09-22 결정).** 새 Teaching Policy가 공식이다. 2025년 3월 모의고사부터 지문을
+하나씩 만들며 고쳐 나간다. 예전 해석 엔진과 예전 레슨은 **지금은 그대로 두고 나중에 폐기**
+한다 — 거기에 새 작업을 하지 마라. 말투와 가르치는 로직은 계속 분리하고, LLM은 꼭 필요한
+곳에만 쓴다(비용). 웬만하면 코드로 한다. UX/UI는 현재 것을 유지한다.
+
+2025년 3월 모의고사 21번부터는 **다른 엔진**이 돈다 — 해석을 적게 하는 대신, 정책이
+문장마다 상호작용(뜻 고르기·대응표·대비·예측)을 고른다. 화면과 말투는 그대로.
+읽을 것: `docs/tutor/policy/README.md` → 명세 `Loopin_Teaching_Policy_Spec_v0.1.md` →
+**`docs/tutor/policy/AUTHORING_RULES.md`** (지문 만드는 규칙. 21번으로 정했고 새 지문은 전부 이대로).
+
+- 코드: `src/tutor/policy/` (`decide.ts` 정책 · `session.ts` 세션 · `student-state.ts`)
+- 레슨: `content/tutor/policy-lessons/*.json` — **가르치는 내용만**, 말투 없는 `brief`로 쓴다 (`npm run lessons`와 무관)
+- 대사: `content/tutor/policy-copy/dajung/*.json` — brief에서 다정쌤 말투로 **미리 뽑은 생성물**.
+  LLM은 이때만 쓴다. **수업 중에는 모델을 부르지 않는다.** brief를 고치면
+  `npm run policy:copy check|prompt|stamp` (말투 규칙은 같은 폴더 `VOICE.md`)
+- **예전 레슨과 `engine.ts`는 그대로 둔다.** 위 「절대 깨지 말 것」 중 말풍선·해요체·
+  한 턴에 하나·학생을 기다린다·정답 선공개 금지는 이쪽에도 그대로 적용된다
+
 커밋은 인간이 요청하기 전에 하지 마라.

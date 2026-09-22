@@ -1,0 +1,1269 @@
+{
+  "id": "moeui-2025-03-21-descartes-tree",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2025년 3월 고3 전국연합학력평가 영어 21번 (밑줄 의미 추론, 3점)",
+  "brief": {
+    "topic": "데카르트의 '나무' 비유로 과학과 철학의 관계를 설명하는 글. 종이로 푼 뒤의 복습",
+    "closing": "나무 한 그루로 글 전체를 읽음. 밑줄 문장이 왜 '과학이 철학에서 분리됨'인지 나무 그림으로 설명할 수 있게 됨. 수고 인사"
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "deep"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "high",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "deep"
+  },
+  "panels": {
+    "tree_full": {
+      "kind": "mapping",
+      "title": "데카르트의 나무",
+      "rows": [
+        {
+          "left": "roots",
+          "right": "metaphysics 형이상학"
+        },
+        {
+          "left": "trunk",
+          "right": "physics 물리학"
+        },
+        {
+          "left": "branches & fruit",
+          "right": "applied science 응용과학"
+        }
+      ]
+    }
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "The unity of science and philosophy in the old classical sense was perhaps best described by the famous tree of Descartes:",
+      "model_translation": "옛 고전적 의미에서의 과학과 철학의 통합은 아마도 데카르트의 유명한 나무로 가장 잘 설명되었을 것이다.",
+      "teaching_value": "high",
+      "vocabulary": {
+        "unity": "teaching_target",
+        "classical": "concept_support",
+        "described": "lookup_only",
+        "famous": "lookup_only"
+      },
+      "emphasis": [
+        "classical",
+        "Descartes"
+      ],
+      "glosses": [
+        {
+          "en": "unity",
+          "ko": "통합, 통일성 · 여기서는 과학과 철학을 하나의 연결된 체계로 보는 관점"
+        },
+        {
+          "en": "science",
+          "ko": "과학"
+        },
+        {
+          "en": "philosophy",
+          "ko": "철학"
+        },
+        {
+          "en": "old",
+          "ko": "옛날의"
+        },
+        {
+          "en": "classical",
+          "ko": "고전적 · 여기서는 '옛날의 전통적인 관점에서'로 이해하면 돼요"
+        },
+        {
+          "en": "sense",
+          "ko": "의미, 관점"
+        },
+        {
+          "en": "perhaps",
+          "ko": "아마도"
+        },
+        {
+          "en": "best described",
+          "ko": "가장 잘 설명된"
+        },
+        {
+          "en": "famous",
+          "ko": "유명한"
+        },
+        {
+          "en": "tree",
+          "ko": "나무"
+        },
+        {
+          "en": "Descartes",
+          "ko": "데카르트 · '나는 생각한다, 고로 존재한다'로 유명한 철학자예요"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "skill": "sentence_meaning",
+          "brief": {
+            "ask": "먼저 문장이 무슨 말을 하는지부터 잡기. 가장 가까운 뜻 고르기 (진단)",
+            "reask": "문장 뜻 고르기로 복귀",
+            "hints": [
+              "unity가 '하나'라는 말. 과학과 철학의 관계가 어땠다는 건지부터",
+              "'was described by the tree' — 나무가 무언가를 '설명해 주는' 문장. 옛 관점에서 과학과 철학이 어떤 사이였는지 볼 것"
+            ],
+            "explain": "정답 a. 옛날에는 과학과 철학을 하나의 연결된 체계로 보았고, 데카르트의 나무가 그걸 잘 보여 줌. 주어가 길고 unity도 맥락을 봐야 해서 구조를 보면 훨씬 명확해짐",
+            "praise": "정답 인정 + 핵심 방향은 잘 잡음. 그런데 객관식은 맞혀도 문장 구조까지 본 건 아닐 수 있음 (그래서 구조를 이어서 본다는 예고)",
+            "feedback": {
+              "b": "'분리되어야 한다'는 반대. unity는 '하나'라는 말. 나무가 무엇을 보여 주는지 다시",
+              "c": "실제 나무가 아님. 'famous tree of Descartes'는 비유. 고전 시대 과학자 얘기도 아님"
+            }
+          },
+          "options": [
+            {
+              "id": "a",
+              "label": "옛날에는 과학과 철학을 하나의 연결된 체계로 보았고, 이를 데카르트의 나무가 잘 보여 준다",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "데카르트는 과학과 철학이 서로 완전히 분리되어야 한다고 나무를 통해 주장했다"
+            },
+            {
+              "id": "c",
+              "label": "고전 시대의 과학자들은 실제 나무를 연구하면서 철학적 원리를 발견했다"
+            }
+          ]
+        },
+        {
+          "id": "s1_subject",
+          "type": "choice",
+          "interaction": "structure_choice",
+          "skill": "long_subject",
+          "when": "unless_stable",
+          "brief": {
+            "ask": "이 문장은 주어가 좀 김. 주어가 어디까지인지 찾게 하기",
+            "reask": "주어 범위 고르기로 복귀",
+            "hints": [
+              "동사 was described 바로 앞까지 전부 주어. 그 앞에 무엇이 붙어 있는지",
+              "of science and philosophy도, in the old classical sense도 앞의 unity를 꾸밈"
+            ],
+            "explain": "주어는 c까지. in the old classical sense도 '어떤 관점에서의 unity인지'를 붙여 설명하고 있음",
+            "praise": "정답 인정. in the old classical sense까지가 앞의 unity를 꾸미니까 여기까지가 긴 주어",
+            "feedback": {
+              "a": "unity 뒤에 붙은 of science and philosophy도 unity를 꾸밈 (무엇의 통합인지). 더 길게",
+              "b": "in the old classical sense도 '어떤 관점에서의 unity인지'를 붙여 설명. 거기까지"
+            }
+          },
+          "options": [
+            {
+              "id": "a",
+              "label": "The unity"
+            },
+            {
+              "id": "b",
+              "label": "The unity of science and philosophy"
+            },
+            {
+              "id": "c",
+              "label": "The unity of science and philosophy in the old classical sense",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": "s1_structure",
+          "type": "show",
+          "interaction": "structure_highlight",
+          "when": "unless_stable",
+          "skill": "long_subject",
+          "brief": {
+            "say": "문장을 이렇게 끊어 보면 훨씬 단순해짐 (뼈대 그림을 보게). 긴 주어 + 동사 + '무엇으로'"
+          },
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "주어",
+                "text": "The unity of science and philosophy in the old classical sense",
+                "ko": "옛날의 전통적인 관점에서 과학과 철학이 하나로 연결되어 있다는 생각은"
+              },
+              {
+                "label": "동사",
+                "text": "was perhaps best described",
+                "ko": "아마 가장 잘 설명되었다"
+              },
+              {
+                "label": "무엇으로?",
+                "text": "by the famous tree of Descartes",
+                "ko": "데카르트의 유명한 '나무'로"
+              }
+            ]
+          }
+        },
+        {
+          "id": "s1_unity",
+          "type": "show",
+          "interaction": "note",
+          "skill": "unity_in_context",
+          "highlight": [
+            "unity"
+          ],
+          "brief": {
+            "say": "unity가 중요. 사전 뜻 '통합'만 알고 넘어가면 부족. 단순히 과학과 철학이 같이 있었다는 뜻이라기보다, 둘을 지금처럼 완전히 분리된 분야로 보지 않았다는 것에 가까움. (한 줄 정리는 그림에)"
+          },
+          "panel": {
+            "kind": "note",
+            "label": "한 줄로 잡으면",
+            "text": "옛날에는 과학 + 철학 전체를 하나의 연결된 체계처럼 보았고, 데카르트의 '나무'가 그 생각을 잘 보여 준다"
+          }
+        },
+        {
+          "id": "s1_bridge",
+          "type": "show",
+          "interaction": "bridge",
+          "button": "첫 문장 이해했어요",
+          "brief": {
+            "say": "호기심 다리: 과학과 철학이 하나라는 걸 왜 하필 '나무'로 설명했을까 (질문 하나, 답하게 하지 않음). 다음 문장에서 뿌리·줄기·가지가 각각 뭘 뜻하는지 보면 알 수 있다고 예고 🌳"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "The roots of this tree corresponded to metaphysics (the intelligible principles), the trunk to physics (statements of intermediate generality), and the branches and fruit to what we would call applied science.",
+      "model_translation": "이 나무의 뿌리는 형이상학(이해할 수 있는 원리들)에, 줄기는 물리학(중간 정도의 일반성을 지닌 진술들)에, 가지와 열매는 우리가 응용과학이라 부를 만한 것에 해당했다.",
+      "teaching_value": "high",
+      "vocabulary": {
+        "roots": "lookup_only",
+        "trunk": "lookup_only",
+        "branches": "lookup_only",
+        "corresponded to": "teaching_target",
+        "metaphysics": "concept_support",
+        "applied science": "concept_support"
+      },
+      "glosses": [
+        {
+          "en": "roots",
+          "ko": "뿌리"
+        },
+        {
+          "en": "trunk",
+          "ko": "(나무의) 줄기"
+        },
+        {
+          "en": "branches",
+          "ko": "가지"
+        },
+        {
+          "en": "fruit",
+          "ko": "열매"
+        },
+        {
+          "en": "corresponded",
+          "ko": "correspond: 일치하다 · 해당하다 · 편지를 주고받다"
+        },
+        {
+          "en": "metaphysics",
+          "ko": "형이상학"
+        },
+        {
+          "en": "intelligible",
+          "ko": "이해할 수 있는"
+        },
+        {
+          "en": "principles",
+          "ko": "원리들"
+        },
+        {
+          "en": "physics",
+          "ko": "물리학"
+        },
+        {
+          "en": "statements",
+          "ko": "진술"
+        },
+        {
+          "en": "intermediate",
+          "ko": "중간의"
+        },
+        {
+          "en": "generality",
+          "ko": "일반성"
+        },
+        {
+          "en": "what we would call",
+          "ko": "우리가 ~라고 부를 만한 것"
+        },
+        {
+          "en": "applied science",
+          "ko": "응용과학"
+        }
+      ],
+      "helps": [
+        {
+          "id": "what_is_metaphysics",
+          "label": "형이상학이 뭐예요?",
+          "brief": "눈에 보이는 현상 너머의 근본 원리를 따지는 철학 분야. 이 글에서는 모든 학문의 바탕이 되는 원리 = 나무의 뿌리라는 것만"
+        },
+        {
+          "id": "what_is_applied_science",
+          "label": "응용과학이 뭐예요?",
+          "brief": "원리를 실제 문제에 써서 쓸모 있는 결과를 내는 분야. 공학·의학을 떠올리면 됨"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_correspond",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "brief": {
+            "ask": "정보가 많아 괄호를 잠시 뺐다고 알림. 뼈대에서 corresponded to의 뜻 묻기",
+            "reask": "corresponded to 뜻 고르기로 복귀",
+            "hints": [
+              "나무의 뿌리와 학문 하나를 나란히 짝짓는 문장",
+              "비유에서 A corresponded to B = A와 B를 짝지음. 뿌리 = 형이상학인 셈"
+            ],
+            "explain": "여기서는 '~에 해당했다'. 나무의 각 부분이 어떤 학문에 해당하는지 짝짓는 문장",
+            "praise": "정답 인정",
+            "feedback": {
+              "b": "그 뜻도 있는 단어임을 인정. 여기서는 뿌리와 학문을 짝짓는 중"
+            }
+          },
+          "skill": "correspond_to",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "highlight": [
+            "corresponded to"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "label": "~에 해당했다",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "~와 편지를 주고받았다"
+            },
+            {
+              "id": "c",
+              "label": "~에 반응했다"
+            }
+          ]
+        },
+        {
+          "id": "s2_map_trunk",
+          "type": "choice",
+          "interaction": "visual_mapping",
+          "brief": {
+            "ask": "roots → metaphysics는 문장에 명시됨을 확인. trunk는 무엇에 해당하는지 묻기",
+            "reask": "trunk 대응 고르기로 복귀",
+            "hints": [
+              "the trunk to physics에 동사가 없음. 앞 동사가 반복되어 생략",
+              "the trunk [corresponded] to physics로 읽기"
+            ],
+            "explain": "the trunk corresponded to physics에서 반복 동사 생략. trunk = physics(물리학)",
+            "praise": "정답 인정"
+          },
+          "skill": "parallel_ellipsis",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "panel": {
+            "kind": "mapping",
+            "title": "데카르트의 나무",
+            "rows": [
+              {
+                "left": "roots",
+                "right": "metaphysics 형이상학"
+              },
+              {
+                "left": "trunk",
+                "right": null
+              },
+              {
+                "left": "branches & fruit",
+                "right": null
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "a",
+              "label": "metaphysics"
+            },
+            {
+              "id": "b",
+              "label": "physics",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "label": "applied science"
+            }
+          ],
+          "panel_after": {
+            "kind": "mapping",
+            "title": "데카르트의 나무",
+            "rows": [
+              {
+                "left": "roots",
+                "right": "metaphysics 형이상학"
+              },
+              {
+                "left": "trunk",
+                "right": "physics 물리학"
+              },
+              {
+                "left": "branches & fruit",
+                "right": null
+              }
+            ]
+          }
+        },
+        {
+          "id": "s2_map_fruit",
+          "type": "choice",
+          "interaction": "visual_mapping",
+          "brief": {
+            "ask": "마지막 칸. branches and fruit는 무엇에 해당하는지 묻기",
+            "reask": "branches and fruit 대응 고르기로 복귀",
+            "hints": [
+              "여기도 동사 생략. the branches and fruit to 뒤를 볼 것",
+              "what we would call applied science가 한 덩어리 = 우리가 응용과학이라 부를 만한 것"
+            ],
+            "explain": "the branches and fruit [corresponded] to what we would call applied science. 가지·열매 = 응용과학",
+            "praise": "정답 인정 + 나무(대응표)가 다 채워짐"
+          },
+          "skill": "parallel_ellipsis",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "panel": {
+            "kind": "mapping",
+            "title": "데카르트의 나무",
+            "rows": [
+              {
+                "left": "roots",
+                "right": "metaphysics 형이상학"
+              },
+              {
+                "left": "trunk",
+                "right": "physics 물리학"
+              },
+              {
+                "left": "branches & fruit",
+                "right": null
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "a",
+              "label": "metaphysics"
+            },
+            {
+              "id": "b",
+              "label": "physics"
+            },
+            {
+              "id": "c",
+              "label": "applied science",
+              "correct": true
+            }
+          ],
+          "panel_after": "tree_full"
+        },
+        {
+          "id": "s2_what",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "what we would call applied science의 what = '~하는 것'. '우리가 응용과학이라고 부를 만한 것'. 짧게만"
+          },
+          "when": "if_struggled",
+          "skill": "what_clause",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "highlight": [
+            "what we would call applied science"
+          ],
+          "panel": "tree_full"
+        },
+        {
+          "id": "s2_parallel",
+          "type": "show",
+          "interaction": "structure_highlight",
+          "brief": {
+            "say": "동사 corresponded는 처음 한 번만, 뒤는 생략. 같은 틀이 세 번 반복되는 병렬 구조"
+          },
+          "when": "unless_stable",
+          "skill": "parallel_ellipsis",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "①",
+                "text": "The roots corresponded to metaphysics"
+              },
+              {
+                "label": "②",
+                "text": "the trunk [corresponded] to physics"
+              },
+              {
+                "label": "③",
+                "text": "the branches and fruit [corresponded] to applied science"
+              }
+            ]
+          }
+        },
+        {
+          "id": "s2_restore",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "괄호 복원. 괄호는 바로 앞 단어를 풀어 주는 말 → 뼈대를 잡은 뒤 읽으면 쉬움. 뜻은 그림에 적혀 있음"
+          },
+          "highlight": [
+            "(the intelligible principles)",
+            "(statements of intermediate generality)"
+          ],
+          "panel": {
+            "kind": "mapping",
+            "title": "데카르트의 나무",
+            "rows": [
+              {
+                "left": "roots",
+                "right": "metaphysics 형이상학",
+                "note": "이해할 수 있는 원리들"
+              },
+              {
+                "left": "trunk",
+                "right": "physics 물리학",
+                "note": "중간 정도로 일반적인 진술들"
+              },
+              {
+                "left": "branches & fruit",
+                "right": "applied science 응용과학"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "He regarded the whole system of science and philosophy as we today regard science alone; he felt that the metaphysical principles were ultimately justified by their “fruits,” not merely by their self-evidence.",
+      "model_translation": "오늘날 우리가 과학만을 바라보듯이 그는 과학과 철학의 전체 체계를 바라보았다. 그는 형이상학적 원리가 단지 자명함에 의해서가 아니라 궁극적으로 그 '열매'에 의해 정당화된다고 느꼈다.",
+      "teaching_value": "high",
+      "vocabulary": {
+        "regarded": "lookup_only",
+        "as": "teaching_target",
+        "justified": "lookup_only",
+        "fruits": "teaching_target",
+        "self-evidence": "concept_support"
+      },
+      "glosses": [
+        {
+          "en": "regarded",
+          "ko": "바라보았다, 여겼다"
+        },
+        {
+          "en": "regard",
+          "ko": "바라보다, 여기다"
+        },
+        {
+          "en": "whole system",
+          "ko": "전체 체계"
+        },
+        {
+          "en": "science",
+          "ko": "과학"
+        },
+        {
+          "en": "philosophy",
+          "ko": "철학"
+        },
+        {
+          "en": "alone",
+          "ko": "~만, 단독으로"
+        },
+        {
+          "en": "metaphysical",
+          "ko": "형이상학의"
+        },
+        {
+          "en": "principles",
+          "ko": "원리들"
+        },
+        {
+          "en": "ultimately",
+          "ko": "궁극적으로"
+        },
+        {
+          "en": "justified",
+          "ko": "정당화되는"
+        },
+        {
+          "en": "not merely",
+          "ko": "단지 ~만이 아니라"
+        },
+        {
+          "en": "self-evidence",
+          "ko": "자명함 (증명 없이도 당연해 보임)"
+        }
+      ],
+      "helps": [
+        {
+          "id": "what_is_metaphysics",
+          "label": "형이상학이 뭐예요?",
+          "brief": "눈에 보이는 현상 너머의 근본 원리를 따지는 철학 분야. 이 글에서는 모든 학문의 바탕이 되는 원리 = 나무의 뿌리라는 것만"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_as",
+          "type": "choice",
+          "interaction": "translation_choice",
+          "brief": {
+            "ask": "문장이 길어 앞 절반만 먼저. 맞는 해석 고르기",
+            "reask": "앞 절반 해석 고르기로 복귀",
+            "hints": [
+              "as 뒤에 주어+동사(we … regard)가 또 나옴 → 접속사 as",
+              "접속사 as = '~하듯이'. '오늘날 우리가 과학만을 바라보듯이'가 먼저 한 덩어리"
+            ],
+            "explain": "정답 a. regard A as B의 as가 아니라 접속사 as(~하듯이). 오늘날 우리가 과학만을 하나의 체계로 보듯, 그는 과학+철학 전체를 그렇게 봄",
+            "praise": "정답 인정",
+            "feedback": {
+              "b": "regard A as B 오독(예상 오류). 떠오를 수 있음을 인정하되, as 뒤에 we today regard로 주어+동사가 또 나옴을 짚기"
+            }
+          },
+          "skill": "as_conjunction",
+          "display": "He regarded the whole system of science and philosophy as we today regard science alone;",
+          "options": [
+            {
+              "id": "a",
+              "label": "오늘날 우리가 과학만을 바라보듯이, 그는 과학과 철학 전체를 바라보았다",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "그는 과학과 철학 전체를, 오늘날 우리가 아는 과학 하나로 여겼다"
+            },
+            {
+              "id": "c",
+              "label": "오늘날 우리가 그렇듯, 그는 과학만을 하나의 체계로 여겼다"
+            }
+          ]
+        },
+        {
+          "id": "s3_as_structure",
+          "type": "show",
+          "interaction": "structure_highlight",
+          "brief": {
+            "say": "as 뒤에 주어+동사가 또 나오면 '~하듯이'. regard A as B와 헷갈리기 쉬운 자리 → 한 번만 짧게 짚음"
+          },
+          "when": "if_struggled",
+          "skill": "as_conjunction",
+          "display": "He regarded the whole system of science and philosophy as we today regard science alone;",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "주절",
+                "text": "He regarded the whole system of science and philosophy"
+              },
+              {
+                "label": "as절",
+                "text": "as we today regard science alone"
+              },
+              {
+                "label": "as",
+                "text": "~하듯이 (뒤에 주어 + 동사)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "s3_quotes",
+          "type": "think",
+          "interaction": "clickable_question",
+          "brief": {
+            "ask": "뒤 절반. fruits에만 따옴표가 있음에 주목시키고 왜인지 생각하게 (정답 말하지 않음)",
+            "reask": "따옴표 이유 생각하기로 복귀",
+            "hint": "진짜 과일 얘기가 아님. 단어를 평소와 다른 뜻으로 쓸 때 따옴표를 붙이곤 함",
+            "summary": "따옴표 = 진짜 과일이 아니라 비유라는 표시. 무엇을 빗댔는지는 앞 문장의 나무에서 찾기 (아직 답 말하지 않음)"
+          },
+          "skill": "metaphor_inference",
+          "display": "he felt that the metaphysical principles were ultimately justified by their “fruits,” not merely by their self-evidence.",
+          "highlight": [
+            "“fruits,”"
+          ]
+        },
+        {
+          "id": "s3_fruits",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "brief": {
+            "ask": "앞 문장의 나무 그림을 다시 꺼냈음을 알림. 여기서 fruits가 뜻하는 것 묻기",
+            "reask": "fruits 뜻 고르기로 복귀",
+            "hints": [
+              "나무 그림에서 fruit가 어느 칸이었는지 볼 것",
+              "fruit는 applied science 칸. 원리에서 실제로 맺히는 것"
+            ],
+            "explain": "정답 b. 나무에서 열매 = 응용과학 → fruits = 과학과 철학에서 실제로 얻어지는 응용·결과",
+            "praise": "정답 인정 + 앞 문장의 나무를 잘 가져옴"
+          },
+          "skill": "metaphor_inference",
+          "retrieve": true,
+          "display": "he felt that the metaphysical principles were ultimately justified by their “fruits,” not merely by their self-evidence.",
+          "highlight": [
+            "“fruits,”"
+          ],
+          "panel": "tree_full",
+          "options": [
+            {
+              "id": "a",
+              "label": "과학 이론의 뿌리가 되는 철학적 원리"
+            },
+            {
+              "id": "b",
+              "label": "과학과 철학을 통해 실제로 얻어지는 응용·결과",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "label": "과학자가 관찰한 자연 그 자체"
+            }
+          ]
+        },
+        {
+          "id": "s3_contrast",
+          "type": "think",
+          "interaction": "contrast_reasoning",
+          "brief": {
+            "ask": "글이 fruits와 self-evidence를 대비시킴. 둘이 어떻게 다른지 생각하게 (바로 설명하지 않음)",
+            "reask": "두 말의 차이 생각하기로 복귀",
+            "hint": "하나는 밖으로 나타나는 결과와 관련, 다른 하나는 원리 자체가 얼마나 당연해 보이는지와 관련",
+            "summary": "fruits = 실제로 나오는 결과. self-evidence = 증명 없이도 원리 자체가 당연해 보임. 데카르트: 형이상학 원리는 당연해 보여서만이 아니라 결과를 내기 때문에 정당"
+          },
+          "skill": "fruits_vs_self_evidence",
+          "display": "he felt that the metaphysical principles were ultimately justified by their “fruits,” not merely by their self-evidence.",
+          "highlight": [
+            "“fruits,”",
+            "self-evidence"
+          ],
+          "panel_after": {
+            "kind": "contrast",
+            "left": {
+              "title": "fruits",
+              "text": "실제로 나오는 결과·응용으로 정당화"
+            },
+            "right": {
+              "title": "self-evidence",
+              "text": "원리 자체가 자명해 보여서 정당화"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What we today call applied science consisted for him not only in mechanics but also in medicine and ethics.",
+      "model_translation": "오늘날 우리가 응용과학이라 부르는 것은 그에게 역학뿐 아니라 의학과 윤리학으로도 이루어져 있었다.",
+      "teaching_value": "medium",
+      "vocabulary": {
+        "mechanics": "lookup_only",
+        "medicine": "lookup_only",
+        "ethics": "lookup_only"
+      },
+      "glosses": [
+        {
+          "en": "What we today call",
+          "ko": "오늘날 우리가 ~라고 부르는 것"
+        },
+        {
+          "en": "applied science",
+          "ko": "응용과학"
+        },
+        {
+          "en": "consisted",
+          "ko": "(consist in) ~에 있었다, ~로 이루어졌다"
+        },
+        {
+          "en": "for him",
+          "ko": "그에게는"
+        },
+        {
+          "en": "not only",
+          "ko": "~뿐만 아니라"
+        },
+        {
+          "en": "but also",
+          "ko": "~도 또한"
+        },
+        {
+          "en": "mechanics",
+          "ko": "역학"
+        },
+        {
+          "en": "medicine",
+          "ko": "의학"
+        },
+        {
+          "en": "ethics",
+          "ko": "윤리학"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_scope",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "brief": {
+            "ask": "What we today call applied science는 앞에서 본 표현(회상). 데카르트에게 응용과학(열매)의 범위 묻기",
+            "reask": "응용과학 범위 고르기로 복귀",
+            "hints": [
+              "not only A but also B 찾기",
+              "not only A but also B = A뿐 아니라 B도. mechanics, medicine, ethics 모두 포함"
+            ],
+            "explain": "not only in mechanics but also in medicine and ethics = 역학뿐 아니라 의학·윤리학에도. 데카르트에게 열매는 그만큼 넓었음",
+            "praise": "정답 인정 + 데카르트에게 열매는 꽤 넓었음",
+            "feedback": {
+              "c": "not A but B와 혼동. only/also가 있으므로 A가 빠지지 않음"
+            }
+          },
+          "skill": "not_only_but_also",
+          "options": [
+            {
+              "id": "a",
+              "label": "역학뿐이었다"
+            },
+            {
+              "id": "b",
+              "label": "역학뿐 아니라 의학과 윤리학까지",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "label": "역학이 아니라 의학과 윤리학"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "The difficulty was that from the general principles of Cartesian or Aristotelian science-philosophy no results could be derived which were precisely in agreement with observation, but these principles seemed to be intelligible and plausible.",
+      "model_translation": "어려움은 데카르트식 또는 아리스토텔레스식 과학-철학의 일반 원리로부터는 관찰과 정확히 일치하는 결과를 전혀 끌어낼 수 없었는데도, 이 원리들이 이해할 수 있고 그럴듯해 보였다는 점이었다.",
+      "teaching_value": "high",
+      "vocabulary": {
+        "derived": "teaching_target",
+        "in agreement with": "lookup_only",
+        "observation": "lookup_only",
+        "plausible": "lookup_only"
+      },
+      "glosses": [
+        {
+          "en": "difficulty",
+          "ko": "어려움, 문제"
+        },
+        {
+          "en": "general principles",
+          "ko": "일반 원리들"
+        },
+        {
+          "en": "Cartesian",
+          "ko": "데카르트의"
+        },
+        {
+          "en": "Aristotelian",
+          "ko": "아리스토텔레스의"
+        },
+        {
+          "en": "science-philosophy",
+          "ko": "과학-철학 (둘이 하나였던 옛 학문)"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "derived",
+          "ko": "(derive A from B) B에서 A를 끌어내다"
+        },
+        {
+          "en": "precisely",
+          "ko": "정확히"
+        },
+        {
+          "en": "in agreement with",
+          "ko": "~와 일치하는"
+        },
+        {
+          "en": "observation",
+          "ko": "관찰"
+        },
+        {
+          "en": "principles",
+          "ko": "원리들"
+        },
+        {
+          "en": "seemed",
+          "ko": "~처럼 보였다"
+        },
+        {
+          "en": "intelligible",
+          "ko": "이해할 수 있는"
+        },
+        {
+          "en": "plausible",
+          "ko": "그럴듯한"
+        }
+      ],
+      "helps": [
+        {
+          "id": "cartesian_aristotelian",
+          "label": "Cartesian, Aristotelian이 뭐예요?",
+          "brief": "Cartesian = 데카르트의, Aristotelian = 아리스토텔레스의. 둘 다 근본 원리에서 출발해 세상을 설명하려 한 옛 학문"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_difficulty",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "brief": {
+            "ask": "글의 전환점. 긴 수식어를 잠시 뺐다고 알림. 그 '어려움'이 무엇이었는지 묻기",
+            "reask": "'어려움'이 무엇인지 고르기로 복귀",
+            "hints": [
+              "no results … which were …에서 which 이하는 멀리 있는 results를 수식",
+              "관찰과 정확히 일치하는 결과는 하나도 끌어낼 수 없었음. but 뒤에서 원리가 어때 보였는지 볼 것"
+            ],
+            "explain": "정답 a. which 이하가 떨어진 results를 수식 → 관찰과 정확히 일치하는 결과를 끌어낼 수 없었음. 그런데도 원리는 이해되고 그럴듯해 보였다는 게 어려움",
+            "praise": "정답 인정",
+            "feedback": {
+              "b": "but 뒤 확인: 원리는 intelligible and plausible (이해되고 그럴듯해 보임)",
+              "c": "no results could be derived — 결과가 많았던 게 아님"
+            }
+          },
+          "skill": "distant_relative_clause",
+          "display": "The difficulty was that no results could be derived which were precisely in agreement with observation, but these principles seemed to be intelligible and plausible.",
+          "options": [
+            {
+              "id": "a",
+              "label": "원리는 그럴듯한데, 관찰과 딱 맞는 결과가 나오지 않았다",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "관찰 결과는 정확했지만, 원리를 이해할 수 없었다"
+            },
+            {
+              "id": "c",
+              "label": "원리에서 너무 많은 결과가 나와서 관찰하기 어려웠다"
+            }
+          ]
+        },
+        {
+          "id": "s5_restore",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "뺐던 부분 복원. from the general principles … = 그 일반 원리들로부터 (결과를 어디서 끌어내려 했는지). 나무로 치면 뿌리에서 곧바로 열매를 얻으려 한 것"
+          },
+          "highlight": [
+            "from the general principles of Cartesian or Aristotelian science-philosophy"
+          ]
+        },
+        {
+          "id": "s5_predict",
+          "type": "think",
+          "interaction": "prediction",
+          "brief": {
+            "ask": "뿌리는 그럴듯한데 열매가 안 열림. 사람들이 이 나무를 어떻게 했을지 다음 문장 전에 예상하게",
+            "reask": "예상하기로 복귀",
+            "hint": "열매는 얻고 싶은데 뿌리에서는 안 나옴. 나무의 어느 부분만 있으면 될지",
+            "summary": "예상을 들고 다음 문장으로. 다음이 시험의 밑줄 문장 (답 말하지 않음)"
+          },
+          "panel": "tree_full"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "So the tree was cut in the middle.",
+      "model_translation": "그래서 그 나무는 가운데가 잘렸다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "So",
+          "ko": "그래서"
+        },
+        {
+          "en": "was cut",
+          "ko": "잘렸다"
+        },
+        {
+          "en": "in the middle",
+          "ko": "가운데에서"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_where",
+          "type": "choice",
+          "interaction": "visual_mapping",
+          "brief": {
+            "ask": "시험의 밑줄 문장임을 알림. 나무의 '가운데'가 잘렸다면 어디와 어디 사이인지 묻기",
+            "reask": "잘린 위치 고르기로 복귀",
+            "hints": [
+              "앞 문장에서 결과가 안 나온 쪽이 나무의 어느 부분이었는지 회상",
+              "결과를 못 낸 건 뿌리(형이상학). 열매를 맺으려면 어디부터 남겨야 할지"
+            ],
+            "explain": "뿌리와 줄기 사이. 뿌리(형이상학)에서 관찰과 맞는 결과가 안 나옴 → 뿌리를 떼고 줄기(물리학)부터 남김",
+            "praise": "정답 인정"
+          },
+          "skill": "metaphor_inference",
+          "retrieve": true,
+          "panel": "tree_full",
+          "options": [
+            {
+              "id": "a",
+              "label": "뿌리와 줄기 사이",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "줄기와 가지 사이"
+            },
+            {
+              "id": "c",
+              "label": "가지와 열매 사이"
+            }
+          ],
+          "panel_after": {
+            "kind": "mapping",
+            "title": "잘린 나무",
+            "rows": [
+              {
+                "left": "roots",
+                "right": "metaphysics 형이상학",
+                "note": "✂ 잘려 나감"
+              },
+              {
+                "left": "trunk",
+                "right": "physics 물리학"
+              },
+              {
+                "left": "branches & fruit",
+                "right": "applied science 응용과학"
+              }
+            ]
+          }
+        },
+        {
+          "id": "s6_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "brief": {
+            "ask": "이 문장이 글에서 뜻하는 바 묻기 (시험 문제 그 자체)",
+            "reask": "밑줄 문장의 의미 고르기로 복귀",
+            "hints": [
+              "잘려 나간 쪽과 남은 쪽을 각각 학문 이름으로 바꿔 보기",
+              "잘려 나간 것 = 뿌리(형이상학). 남은 것 = 줄기(물리학)와 열매(응용과학)"
+            ],
+            "explain": "정답 a. 뿌리가 잘림 = 과학이 철학적 토대(형이상학)와 분리. 남은 줄기(물리 원리)에서 결과를 끌어냄. 시험지 ①번과 같은 내용",
+            "praise": "정답 인정 + 시험지 ①번이 이 내용",
+            "feedback": {
+              "b": "잘려 나간 쪽이 뿌리(형이상학). 우선이 된 게 아니라 떨어져 나감",
+              "c": "잘린 건 뿌리뿐. 줄기(물리 원리)는 남음"
+            }
+          },
+          "skill": "underlined_meaning",
+          "panel": {
+            "kind": "mapping",
+            "title": "잘린 나무",
+            "rows": [
+              {
+                "left": "roots",
+                "right": "metaphysics 형이상학",
+                "note": "✂ 잘려 나감"
+              },
+              {
+                "left": "trunk",
+                "right": "physics 물리학"
+              },
+              {
+                "left": "branches & fruit",
+                "right": "applied science 응용과학"
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "a",
+              "label": "과학이 철학적 토대에서 떨어져 나와, 물리 원리에서 결과를 끌어내게 되었다",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "실용적 결과가 중요해지면서 형이상학이 가장 우선이 되었다"
+            },
+            {
+              "id": "c",
+              "label": "응용과학이 형이상학과 물리 원리 모두에 덜 기대게 되었다"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "For the derivation of technical results, it was necessary to start from the physical principles in the trunk.",
+      "model_translation": "기술적 결과를 끌어내기 위해서는 줄기에 있는 물리적 원리에서 출발할 필요가 있었다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "derivation",
+          "ko": "끌어냄, 도출"
+        },
+        {
+          "en": "technical results",
+          "ko": "기술적 결과"
+        },
+        {
+          "en": "it was necessary to",
+          "ko": "~할 필요가 있었다"
+        },
+        {
+          "en": "start from",
+          "ko": "~에서 출발하다"
+        },
+        {
+          "en": "physical principles",
+          "ko": "물리적 원리들"
+        },
+        {
+          "en": "trunk",
+          "ko": "(나무의) 줄기"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_confirm",
+          "type": "show",
+          "interaction": "read_and_continue",
+          "brief": {
+            "say": "방금 고른 답을 글이 직접 확인해 주는 문장. 기술적 결과를 끌어내려면 줄기의 물리 원리에서 출발해야 했음"
+          },
+          "highlight": [
+            "start from the physical principles in the trunk"
+          ],
+          "button": "다 읽었어요"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Science in the new sense was to think only of how the fruits would develop from the trunk without regard to the roots.",
+      "model_translation": "새로운 의미의 과학은 뿌리는 고려하지 않고 열매가 줄기에서 어떻게 자라날지만을 생각하게 되었다.",
+      "teaching_value": "high",
+      "vocabulary": {
+        "without regard to": "teaching_target",
+        "was to": "concept_support"
+      },
+      "glosses": [
+        {
+          "en": "in the new sense",
+          "ko": "새로운 의미에서의"
+        },
+        {
+          "en": "was to",
+          "ko": "(be to) ~하게 되어 있었다, ~해야 했다"
+        },
+        {
+          "en": "think only of",
+          "ko": "~만을 생각하다"
+        },
+        {
+          "en": "fruits",
+          "ko": "열매"
+        },
+        {
+          "en": "develop",
+          "ko": "자라나다, 발전하다"
+        },
+        {
+          "en": "trunk",
+          "ko": "(나무의) 줄기"
+        },
+        {
+          "en": "without regard to",
+          "ko": "~을 고려하지 않고"
+        },
+        {
+          "en": "roots",
+          "ko": "뿌리"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_new_sense",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "brief": {
+            "ask": "마지막 문장. 첫 문장의 old classical sense와 여기 new sense가 짝(회상). 새 의미의 과학은 무엇이 달라졌는지 묻기",
+            "reask": "새 의미의 과학 고르기로 복귀",
+            "hints": [
+              "without regard to = ~을 고려하지 않고",
+              "only of how the fruits would develop from the trunk — 줄기에서 열매가 나오는 것'만' 생각"
+            ],
+            "explain": "정답 a. without regard to the roots = 뿌리는 고려하지 않고. 새 과학은 줄기(물리학)에서 열매(응용)가 어떻게 나오는지만 생각",
+            "praise": "정답 인정"
+          },
+          "skill": "old_vs_new_sense",
+          "retrieve": true,
+          "highlight": [
+            "in the new sense",
+            "without regard to the roots"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "label": "뿌리는 신경 쓰지 않고, 줄기에서 열매가 어떻게 나오는지만 생각한다",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "뿌리에서 열매가 어떻게 나오는지를 더 깊이 따진다"
+            },
+            {
+              "id": "c",
+              "label": "줄기 없이 뿌리에서 바로 열매를 얻는다"
+            }
+          ]
+        },
+        {
+          "id": "s8_wrap",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체 = 이 한 장면. 하나였던 나무에서 뿌리가 잘리고, 과학은 줄기와 열매만 보게 됨"
+          },
+          "panel": {
+            "kind": "contrast",
+            "left": {
+              "title": "옛 의미의 과학",
+              "text": "뿌리·줄기·열매가 한 그루 — 과학과 철학이 하나"
+            },
+            "right": {
+              "title": "새 의미의 과학",
+              "text": "줄기와 열매만 — 철학(뿌리)과 분리"
+            }
+          },
+          "button": "수업 마칠게요"
+        }
+      ]
+    }
+  ]
+}

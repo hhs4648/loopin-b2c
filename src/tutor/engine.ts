@@ -26,6 +26,8 @@ import {
   nounKind,
 } from "./proper-nouns";
 
+import type { StudyPanel } from "./policy/types";
+
 export const UNKNOWN_BTN = "잘 모르겠어요";
 export const HINT_BTN = "힌트 주세요";
 export const READY_BTN = "네, 좋아요!";
@@ -70,6 +72,22 @@ export type TutorView = {
   properNouns: ProperNoun[];
   /** 지금 문장의 단어 뜻. 문장 학습에서 눌러 본다 */
   glosses: WordGloss[];
+  /*
+    아래 넷은 Teaching Policy 레슨(`src/tutor/policy/`)만 채운다.
+    예전 레슨에서는 비어 있고 화면도 예전 그대로다.
+  */
+  /** 이번 스텝에서 강조할 구절 (노란 칠) */
+  highlight?: string[];
+  /** 문장 내내 색으로 띄우는 단어 (누르면 뜻) */
+  emphasis?: string[];
+  /** 문장 아래에 띄우는 그림 — 문장 뼈대, 대응표, 대비 */
+  panel?: StudyPanel | null;
+  /** 눌러야 열리는 배경 설명. 라벨이 곧 보내는 말이다 */
+  helps?: string[];
+  /** 보기가 길면 알약을 세로로 쌓는다 */
+  buttonLayout?: "row" | "stack";
+  /** 보기가 아닌 버튼(「잘 모르겠어요」 등) — 보기와 다른 색으로 그린다 */
+  auxButtons?: string[];
 };
 
 type Branch = {

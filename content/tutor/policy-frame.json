@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "note": "Teaching Policy 레슨이 같이 쓰는 고정 대사. 지문과 상관없는 말만 여기 둔다. 해요체.",
+  "buttons": {
+    "next": "다음으로",
+    "thought": "생각해 봤어요",
+    "back": "이어서 할게요"
+  },
+  "lines": {
+    "intro_topic": "오늘은 {topic} 볼 거예요.",
+    "start_known": "좋아요. ",
+    "wrong_lead": "음, 조금 아쉬워요.",
+    "dont_know_lead": "괜찮아요, 힌트를 줄게요.",
+    "explain_lead": "괜찮아요, 같이 정리해 봐요.",
+    "self_correct": "음, 한 번만 더 천천히 봐요. 이건 혼자 고칠 수 있을 거예요.",
+    "pick_from_buttons": "아래 보기 중에서 하나를 골라 주세요 😊",
+    "word_answer": "'{word}'는 '{ko}'라는 뜻이에요.",
+    "word_unknown": "그 단어는 문장에서 직접 눌러 보면 뜻이 나와요."
+  }
+}

@@ -1,13 +1,14 @@
 import { describe, expect, it } from "vitest";
 import data from "../../content/tutor/sets.json";
 import type { LessonSet } from "../../content/tutor/types";
-import { getLesson, lessonIds } from "./lessons";
 import {
   allCollections,
   allGroups,
   allSets,
   firstLessonId,
   getCollection,
+  knownLessonIds,
+  sentencesIn,
   sentenceCount,
   setOfLesson,
   setsIn,
@@ -22,7 +23,7 @@ const RAW = data.sets as LessonSet[];
 describe("수업 세트", () => {
   it("적어 둔 레슨 id가 실제로 있다", () => {
     const missing = RAW.flatMap((set) =>
-      set.lessons.filter((id) => !lessonIds().includes(id)).map((id) => `${set.id}: ${id}`),
+      set.lessons.filter((id) => !knownLessonIds().includes(id)).map((id) => `${set.id}: ${id}`),
     );
     expect(missing).toEqual([]);
   });
@@ -38,7 +39,7 @@ describe("수업 세트", () => {
       올리지 않는다.
     */
     const allowedUnlisted = new Set(["thales-participial-phrase-front"]);
-    const orphans = lessonIds().filter((id) => !setOfLesson(id) && !allowedUnlisted.has(id));
+    const orphans = knownLessonIds().filter((id) => !setOfLesson(id) && !allowedUnlisted.has(id));
     expect(orphans).toEqual([]);
   });
 
@@ -50,7 +51,11 @@ describe("수업 세트", () => {
 
   it("대분류 > 중분류 > 세트 세 켜가 이어진다", () => {
     expect(allGroups().map((g) => g.id)).toEqual(["suneung", "moeui"]);
-    expect(allCollections().map((c) => c.id)).toEqual(["suneung-2024", "moeui-2027-09"]);
+    expect(allCollections().map((c) => c.id)).toEqual([
+      "suneung-2024",
+      "moeui-2027-09",
+      "moeui-2025-03",
+    ]);
     // 모든 세트는 어느 중분류엔가 담긴다 — 흩어진 것이 없어야 한다
     const inCollections = allCollections().reduce((n, c) => n + setsIn(c.id).length, 0);
     expect(inCollections).toBe(allSets().length);
@@ -65,7 +70,7 @@ describe("수업 세트", () => {
 
   it("카드에 띄우는 문장 수가 실제 지문과 같다", () => {
     for (const set of allSets()) {
-      const real = set.lessons.reduce((n, id) => n + getLesson(id).chunks.length, 0);
+      const real = set.lessons.reduce((n, id) => n + sentencesIn(id), 0);
       expect(sentenceCount(set), set.id).toBe(real);
     }
   });

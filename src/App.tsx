@@ -5,6 +5,9 @@ import { LessonList } from "./components/LessonList";
 import { SentenceStudy } from "./components/SentenceStudy";
 import { createSession, type TutorSession, type TutorView } from "./tutor/engine";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
+import { isPolicyLesson } from "./tutor/policy/lessons";
+import { createPolicySession } from "./tutor/policy/session";
+import type { UiObservation } from "./tutor/policy/types";
 import { markDone } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
 import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets";
@@ -18,14 +21,21 @@ const params = new URLSearchParams(window.location.search);
 const directLesson = import.meta.env.DEV ? params.get("lesson") : null;
 const directSet = import.meta.env.DEV ? getSet(params.get("set")) : null;
 
-type Started = { session: TutorSession; set: LessonSet | null };
+/*
+  세션이 둘이다 — 예전 해석 엔진과 Teaching Policy 엔진. 둘은 **같은 모양**을
+  돌려주므로 아래 화면 코드는 어느 쪽인지 모른다. 어느 엔진이 돌지는 레슨이 정한다.
+*/
+type AnySession = TutorSession & { observe?: (observation: UiObservation) => void };
+
+type Started = { session: AnySession; set: LessonSet | null };
 
 /** 수업 하나를 연다. 이름은 아는 사람이면 물어보지 않고 그 이름으로 인사한다 */
 function open(lessonId: string | null): Started {
-  const session = createSession(
-    lessonId,
-    import.meta.env.DEV && params.has("newname") ? null : loadLearnerName(),
-  );
+  const name = import.meta.env.DEV && params.has("newname") ? null : loadLearnerName();
+  const session: AnySession =
+    lessonId && isPolicyLesson(lessonId)
+      ? createPolicySession(lessonId, name)
+      : createSession(lessonId, name);
   return { session, set: setOfLesson(session.lessonId()) };
 }
 
@@ -161,6 +171,7 @@ export function App() {
             onSend={send}
             onBack={() => setChatOverride(true)}
             onClose={backToList}
+            onObserve={session?.observe}
           />
         ) : (
           <ClassroomChat
