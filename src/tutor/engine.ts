@@ -35,7 +35,7 @@ export const READ_BTN = "다 읽었어요";
 export const MORE_BTN = "더 알고 싶어요";
 export const NEXT_BTN = "다음으로";
 
-export type UiScreen = "chat" | "study";
+export type UiScreen = "chat" | "study" | "read";
 
 /**
  * 항목 하나에 대한 학습 기록.
@@ -88,6 +88,25 @@ export type TutorView = {
   buttonLayout?: "row" | "stack";
   /** 보기가 아닌 버튼(「잘 모르겠어요」 등) — 보기와 다른 색으로 그린다 */
   auxButtons?: string[];
+  /** 지금 버튼들이 보기라서 ①②③을 단다 (「다음으로」 하나일 때는 안 단다) */
+  numbered?: boolean;
+  /** 머리글 「문장 학습」 자리에 쓸 말 — 「지문 읽기」「문제 풀기」 */
+  progressLabel?: string;
+  /**
+   * 지문 읽기 화면(`screen: "read"`). 문장이 하나씩 드러나며 소리로 읽히고,
+   * 다 드러나면 「계속」으로 넘어간다.
+   */
+  passage?: {
+    heading: string;
+    title: string;
+    sentences: string[];
+    /** 지금까지 드러난 문장 수 */
+    revealed: number;
+    /** 지금 읽고 있는 문장 (0부터) */
+    current: number;
+    /** 시험에서 밑줄 친 구절 */
+    underline: string | null;
+  };
 };
 
 type Branch = {

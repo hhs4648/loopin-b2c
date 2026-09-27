@@ -27,6 +27,7 @@ export function stepSource(step: PolicyStep) {
 /** [자리, 지금 brief의 도장, 대사에 찍힌 도장] — 둘이 다르면 대사가 낡은 것이다 */
 export function stamps(lesson: PolicyLesson, copy: PolicyCopy): [string, string, string | undefined][] {
   const out: [string, string, string | undefined][] = [["lesson", stampOf(lesson.brief), copy.from]];
+  if (lesson.exam) out.push(["exam", stampOf(lesson.exam.brief), copy.exam?.from]);
   for (const sentence of lesson.sentences) {
     for (const help of sentence.helps ?? []) {
       out.push([`helps.${help.id}`, stampOf(help.brief), copy.helps[help.id]?.from]);

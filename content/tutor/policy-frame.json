@@ -4,7 +4,12 @@
   "buttons": {
     "next": "다음으로",
     "thought": "생각해 봤어요",
-    "back": "이어서 할게요"
+    "back": "이어서 할게요",
+    "skip": "넘어갈게요",
+    "read_done": "계속",
+    "mode_try": "바로 풀어 볼게요",
+    "mode_analyze": "분석부터 할게요",
+    "analyze_start": "분석 시작할게요"
   },
   "lines": {
     "intro_topic": "오늘은 {topic} 볼 거예요.",
@@ -15,6 +20,10 @@
     "self_correct": "음, 한 번만 더 천천히 봐요. 이건 혼자 고칠 수 있을 거예요.",
     "pick_from_buttons": "아래 보기 중에서 하나를 골라 주세요 😊",
     "word_answer": "'{word}'는 '{ko}'라는 뜻이에요.",
-    "word_unknown": "그 단어는 문장에서 직접 눌러 보면 뜻이 나와요."
+    "word_unknown": "그 단어는 문장에서 직접 눌러 보면 뜻이 나와요.",
+    "intro_rate": "오늘 볼 문제는 오답률 {rate}%의 문제예요.",
+    "read_intro": "먼저 지문을 한 번 쭉 읽어 볼게요.",
+    "choose_mode": "다 읽었어요. 바로 한 번 풀어 볼까요, 아니면 지문을 먼저 분석해 볼까요?",
+    "final_lead": "이제 문제를 다시 풀어 봐요. "
   }
 }

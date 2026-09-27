@@ -29,6 +29,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
     window.speechSynthesis.speak(u);
   }
 
+
   const words = view.sentence.trim().split(/\s+/).length;
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
 
@@ -40,7 +41,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </button>
         <div className="study-progress">
           <span>
-            문장 학습 · {view.progressIndex} / {view.progressTotal}
+            {view.progressLabel ?? "문장 학습"} · {view.progressIndex} / {view.progressTotal}
           </span>
           <div className="dots-bar">
             {dots.map((i) => (
@@ -103,16 +104,19 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
       {view.panel ? <StudyPanelView panel={view.panel} /> : null}
 
       <div className="study-stage">
-        <div className="teacher-bubble study-bubble-over" aria-live="polite">
-          <div className={`bubble-card${view.effect === "light" ? " lit" : ""}`}>
-            {typing ? (
-              <div className="dots"><i /><i /><i /></div>
-            ) : (
-              <span>{view.message}</span>
-            )}
-            <i className="bubble-tail" />
+        {/* 지문을 읽는 동안은 할 말이 없다 — 빈 말풍선을 띄우지 않는다 */}
+        {typing || view.message ? (
+          <div className="teacher-bubble study-bubble-over" aria-live="polite">
+            <div className={`bubble-card${view.effect === "light" ? " lit" : ""}`}>
+              {typing ? (
+                <div className="dots"><i /><i /><i /></div>
+              ) : (
+                <span>{view.message}</span>
+              )}
+              <i className="bubble-tail" />
+            </div>
           </div>
-        </div>
+        ) : null}
         <div className="study-mascot">
           <div className="teacher-bob">
             <TeacherFigure />
@@ -126,6 +130,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           hidden={typing}
           layout={view.buttonLayout}
           aux={view.auxButtons}
+          numbered={view.numbered}
           onPick={onSend}
         />
         <InputBar placeholder={view.placeholder} disabled={typing} onSend={onSend} />

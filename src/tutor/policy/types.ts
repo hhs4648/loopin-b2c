@@ -101,6 +101,10 @@ type StepBase = {
   panel?: PanelRef;
   /** 앞 문장에서 만든 표상을 다시 꺼내 쓰는 스텝인가 (§15) */
   retrieve?: boolean;
+  /** 「이미 알고 있어요, 넘어갈게요」를 둔다. 학생의 말을 믿고 넘어간다 — 기록은 남긴다 */
+  skippable?: boolean;
+  /** 이 스텝을 건너뛰면 같이 건너뛴다 (예: 주어 질문을 넘기면 뼈대 그림도) */
+  skip_with?: string;
 };
 
 export type ChoiceOption = {
@@ -123,6 +127,12 @@ export type ChoiceStep = StepBase & {
   brief: ChoiceCopy;
   /** 맞힌 뒤 패널을 이렇게 바꿔 보여 준다 (대응표의 칸이 채워진다) */
   panel_after?: PanelRef;
+  /**
+   * 칭찬을 **따로 한 말풍선**으로 보여 주고 「다음으로」를 기다린다.
+   * 기본은 다음 스텝 말 앞에 붙는다("맞아요! 그럼 …"). 칭찬에 뜻 되짚기가
+   * 들어가 길어지면 이걸 켠다 — 한 말풍선에 한두 문장.
+   */
+  praise_alone?: boolean;
 };
 
 /** contrast_reasoning 등 — 채점하지 않는다. 생각할 틈을 주고, 그다음 정리한다 */
@@ -190,6 +200,7 @@ export type PolicyCopy = {
   closing: string;
   helps: Record<string, Stamped<{ answer: string }>>;
   steps: Record<string, Stamped<Partial<ChoiceCopy & ThinkCopy & ShowCopy>>>;
+  exam?: Stamped<ExamCopy>;
 };
 
 /** 눌러야 열리는 배경 설명 (§18 optional_help). 지문 이해에 필요한 만큼만 */
@@ -213,12 +224,33 @@ export type PolicySentence = {
   steps: PolicyStep[];
 };
 
+/** 시험 문제 그대로 — 처음에 풀어 볼 수도, 분석 뒤에 풀 수도 있다 */
+export type ExamQuestion = {
+  question: string;
+  /** 밑줄 친 구절. 이 구절이 든 문장을 문제 화면에 띄우고 노랗게 칠한다 */
+  underline: string;
+  /** EBS가 공개하는 오답률(%). 인트로에서 말한다 */
+  wrong_rate?: number;
+  wrong_rate_source?: string;
+  options: ChoiceOption[];
+  brief: ExamCopy;
+};
+
+export type ExamCopy = {
+  ask: string;
+  first_correct: string;
+  first_wrong: string;
+  final_correct: string;
+  final_wrong: string;
+};
+
 export type PolicyLesson = {
   id: string;
   kind: "policy";
   version: string;
   source: string;
   brief: { topic: string; closing: string };
+  exam?: ExamQuestion;
   context: LearningContext;
   item: ItemProperty;
   proper_nouns?: ProperNoun[];
@@ -235,6 +267,8 @@ export type Observation =
   | { kind: "answer"; correct: boolean; optionId: string; latencyMs: number }
   | { kind: "dont_know"; latencyMs: number }
   | { kind: "thought"; latencyMs: number }
+  | { kind: "skip" }
+  | { kind: "exam"; when: "first" | "final"; correct: boolean; optionId: string }
   | { kind: "continue" };
 
 /** 화면에서 바로 올라오는 관찰 — 턴을 만들지 않는다 */

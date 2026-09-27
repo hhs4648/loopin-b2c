@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { LessonCollection, LessonSet } from "../content/tutor/types";
 import { ClassroomChat } from "./components/ClassroomChat";
 import { LessonList } from "./components/LessonList";
+import { ReadPassage } from "./components/ReadPassage";
 import { SentenceStudy } from "./components/SentenceStudy";
 import { createSession, type TutorSession, type TutorView } from "./tutor/engine";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
@@ -164,7 +165,9 @@ export function App() {
   return (
     <div className="viewport">
       <div className="phone">
-        {screen === "study" ? (
+        {screen === "read" && view.passage ? (
+          <ReadPassage view={view} onSend={send} onClose={backToList} />
+        ) : screen === "study" ? (
           <SentenceStudy
             view={view}
             typing={typing}

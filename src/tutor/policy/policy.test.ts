@@ -41,12 +41,22 @@ function wrongLabels(stepId: string): string[] {
   return step.options.filter((o) => !o.correct).map((o) => o.label);
 }
 
-/** 1문장을 혼자 다 맞히고 2문장 첫 질문까지 간다 */
-async function passSentence1(session: ReturnType<typeof harness>["session"]) {
+type Session = ReturnType<typeof harness>["session"];
+
+/** 인트로 → 지문 읽기(8문장) → 「분석부터 할게요」 → 1문장 첫 질문 */
+async function startAnalysis(session: Session) {
   let v = await session.submit(READY_BTN);
+  if (v.screen === "read") v = await session.submit("계속");
+  return session.submit("분석부터 할게요");
+}
+
+/** 1문장을 혼자 다 맞히고 2문장 첫 질문까지 간다 */
+async function passSentence1(session: Session) {
+  let v = await startAnalysis(session);
   v = await session.submit(correctLabel("s1_meaning"));
+  v = await session.submit("다음으로");
   v = await session.submit(correctLabel("s1_subject"));
-  for (let i = 0; i < 3; i++) v = await session.submit(v.buttons[0]!);
+  for (let i = 0; i < 4; i++) v = await session.submit(v.buttons[0]!);
   return v;
 }
 
@@ -145,21 +155,26 @@ describe("21번 수업 흐름", () => {
     expect(named.buttons).toEqual([READY_BTN]);
 
     const anonymous = createPolicySession(LESSON_ID, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 }).view();
-    expect(anonymous.message.startsWith("안녕하세요! 오늘은")).toBe(true);
+    expect(anonymous.message.startsWith("안녕하세요! 오늘 볼 문제는")).toBe(true);
     expect(anonymous.buttons).toEqual([READY_BTN]);
   });
 
   it("첫 문장: 뜻 고르기 → 맞혀도 주어 범위 묻기 → 뼈대 → unity → 다리 질문 → 2문장", async () => {
     const { session } = harness();
-    let v = await session.submit(READY_BTN);
+    let v = await startAnalysis(session);
     expect(v.screen).toBe("study");
     expect(session.lastAction()?.action).toBe("ASK_MEANING_CHOICE");
     expect(v.buttons).toContain(UNKNOWN_BTN);
 
-    // 객관식은 찍을 수 있다 — 맞혀도 구조를 한 번 묻는다
+    // 칭찬 + 뜻 되짚기가 한 말풍선. 그다음에 구조 질문
     v = await session.submit(correctLabel("s1_meaning"));
+    expect(v.message.startsWith("맞았어요!")).toBe(true);
+    expect(v.buttons).toEqual(["다음으로"]);
+
+    // 객관식은 찍을 수 있다 — 맞혀도 구조를 한 번 묻는다
+    v = await session.submit("다음으로");
     expect(session.lastAction()?.action).toBe("ASK_STRUCTURE");
-    expect(v.message.startsWith("맞아요!")).toBe(true);
+    expect(v.message).toContain("주어가 어디까지일까요?");
     expect(v.panel).toBeNull();
 
     v = await session.submit(correctLabel("s1_subject"));
@@ -168,7 +183,12 @@ describe("21번 수업 흐름", () => {
 
     v = await session.submit(v.buttons[0]!);
     expect(v.highlight).toEqual(["unity"]);
-    expect(v.panel?.kind).toBe("note");
+    expect(v.panel).toBeNull();
+
+    // 요약 그림은 다음 화면에
+    v = await session.submit(v.buttons[0]!);
+    expect(session.lastAction()?.interactionId).toBe("s1_summary");
+    expect(v.panel?.kind).toBe("structure");
 
     v = await session.submit(v.buttons[0]!);
     expect(session.lastAction()?.action).toBe("ASK_BRIDGE");
@@ -195,7 +215,7 @@ describe("21번 수업 흐름", () => {
 
   it("오답 → 그 오개념을 겨냥한 힌트 → 보기에서 빠진다 → 또 틀리면 설명", async () => {
     const { session, student } = harness();
-    await session.submit(READY_BTN);
+    await startAnalysis(session);
     const [b, c] = wrongLabels("s1_meaning");
 
     let v = await session.submit(b!);
@@ -210,15 +230,36 @@ describe("21번 수업 흐름", () => {
     expect(v.buttons).toEqual(["다음으로"]);
 
     await session.submit("다음으로");
-    // 문장이 끝나야 저장한다
+    // 문장이 끝나야 저장한다 (설명을 본 뒤라 칭찬 말풍선은 없다)
     await session.submit(correctLabel("s1_subject"));
-    for (let i = 0; i < 3; i++) await session.submit(v.buttons[0] ?? "다음으로");
+    for (let i = 0; i < 4; i++) await session.submit("다음으로");
     expect(skillOf(student(), "sentence_meaning").failure).toBe(1);
+  });
+
+  it("「이미 알고 있어요」로 주어 질문을 넘기면 뼈대 그림도 같이 건너뛴다", async () => {
+    const { session, events, student } = harness();
+    await startAnalysis(session);
+    await session.submit(correctLabel("s1_meaning"));
+    let v = await session.submit("다음으로");
+    expect(v.buttons).toContain("넘어갈게요");
+    v = await session.submit("넘어갈게요");
+    expect(session.lastAction()?.interactionId).toBe("s1_unity");
+    // 틀린 뒤에는 넘길 수 없다
+    const other = harness().session;
+    await startAnalysis(other);
+    await other.submit(correctLabel("s1_meaning"));
+    await other.submit("다음으로");
+    v = await other.submit(wrongLabels("s1_subject")[0]!);
+    expect(v.buttons).not.toContain("넘어갈게요");
+    // 맞힌 것으로 적지 않는다. 넘겼다는 기록은 남는다 (문장이 끝나야 쌓인다)
+    for (let i = 0; i < 3; i++) await session.submit("다음으로");
+    expect(skillOf(student(), "long_subject").independent).toBe(0);
+    expect(events.some((e) => (e.observation as { kind: string }).kind === "skip")).toBe(true);
   });
 
   it("틀렸다가 스스로 고친 턴만 반짝인다", async () => {
     const { session } = harness();
-    await session.submit(READY_BTN);
+    await startAnalysis(session);
     await session.submit(wrongLabels("s1_meaning")[0]!);
     const v = await session.submit(correctLabel("s1_meaning"));
     expect(v.effect).toBe("light");
@@ -239,6 +280,8 @@ describe("21번 수업 흐름", () => {
     expect(v.buttons).toContain(correctLabel("s2_correspond"));
     const after = await session.submit(correctLabel("s2_correspond"));
     expect(after.effect).toBeNull();
+    // 첫 스텝이 지나면 칩은 숨는다
+    expect(after.helps).toEqual([]);
     for (const id of ["s2_map_trunk", "s2_map_fruit"]) await session.submit(correctLabel(id));
     for (let i = 0; i < 3; i++) await session.submit("다음으로");
     expect(events.some((e) => (e.observation as { kind: string }).kind === "help_click")).toBe(true);
@@ -249,7 +292,7 @@ describe("21번 수업 흐름", () => {
 
   it("보기 밖의 말은 시도로 세지 않는다", async () => {
     const { session } = harness();
-    await session.submit(READY_BTN);
+    await startAnalysis(session);
     const v = await session.submit("음 글쎄요");
     expect(v.buttons).toHaveLength(4);
     expect(session.lastAction()?.action).toBe("ASK_MEANING_CHOICE");
@@ -277,18 +320,74 @@ describe("21번 수업 흐름", () => {
     expect(v.panel?.kind).toBe("mapping");
   });
 
-  it("끝까지 혼자 맞히면 결과는 「이해」", async () => {
+  it("끝까지 혼자 맞히면 결과는 「이해」 — 마지막에 시험 문제를 풀고 끝난다", async () => {
     const { session } = harness();
-    let v = await session.submit(READY_BTN);
-    for (let guard = 0; guard < 80 && !v.ended; guard++) {
+    let v = await startAnalysis(session);
+    for (let guard = 0; guard < 80 && !v.ended && v.progressLabel !== "문제 풀기"; guard++) {
       const id = session.lastAction()?.interactionId ?? "";
       const step = lesson.sentences.flatMap((s) => s.steps).find((s) => s.id === id);
       const resolved = v.buttons.length === 1;
       v = await session.submit(step?.type === "choice" && !resolved ? correctLabel(id) : v.buttons[0]!);
     }
+    expect(v.progressLabel).toBe("문제 풀기");
+    expect(v.buttons).toHaveLength(5);
+    expect(v.highlight).toEqual(["the tree was cut in the middle"]);
+    v = await session.submit(lesson.exam!.options.find((o) => o.correct)!.label);
     expect(v.ended).toBe(true);
     expect(v.screen).toBe("chat");
+    expect(v.message.startsWith("정답이에요!")).toBe(true);
     expect(v.recordLine).toContain("결과=이해");
+  });
+
+  it("인트로에 오답률을 말하고, 지문이 한 문장씩 드러나며 읽힌다", async () => {
+    const { session } = harness();
+    expect(session.view().message).toContain("오답률 57.4%");
+    let v = await session.submit(READY_BTN);
+    expect(v.screen).toBe("read");
+    expect(v.passage?.revealed).toBe(1);
+    expect(v.passage?.sentences).toHaveLength(8);
+    expect(v.passage?.underline).toBe("the tree was cut in the middle");
+    expect(v.buttons).toEqual(["계속"]);
+    // 화면이 한 문장을 다 읽으면 다음 문장이 드러난다
+    v = await session.submit("__read_next");
+    expect(v.passage?.revealed).toBe(2);
+    expect(v.passage?.current).toBe(1);
+    for (let i = 0; i < 10; i++) v = await session.submit("__read_next");
+    expect(v.passage?.revealed).toBe(8); // 끝에서 더 가지 않는다
+    v = await session.submit("계속");
+    expect(v.screen).toBe("chat");
+    expect(v.buttons).toEqual(["바로 풀어 볼게요", "분석부터 할게요"]);
+  });
+
+  it("「계속」은 다 읽기 전에도 넘어간다", async () => {
+    const { session } = harness();
+    await session.submit(READY_BTN);
+    const v = await session.submit("계속");
+    expect(v.screen).toBe("chat");
+  });
+
+  it("바로 풀기: 맞혀도 분석으로, 틀려도 답을 말하지 않는다", async () => {
+    const { session, events } = harness();
+    let v = await session.submit(READY_BTN);
+    v = await session.submit("계속");
+    v = await session.submit("바로 풀어 볼게요");
+    expect(v.progressLabel).toBe("문제 풀기");
+    expect(v.numbered).toBe(true);
+    v = await session.submit(lesson.exam!.options[2]!.label); // 오답
+    expect(v.message).not.toContain("①");
+    expect(v.message).toContain("정답을 말하지 않을게요");
+    expect(v.buttons).toEqual(["분석 시작할게요"]);
+    v = await session.submit("분석 시작할게요");
+    expect(session.lastAction()?.interactionId).toBe("s1_meaning");
+
+    const other = harness().session;
+    await other.submit(READY_BTN);
+    await other.submit("계속");
+    await other.submit("바로 풀어 볼게요");
+    v = await other.submit(lesson.exam!.options[0]!.label); // 정답
+    expect(v.message).toContain("맞았어요");
+    expect(v.buttons).toEqual(["분석 시작할게요"]);
+    void events;
   });
 });
 

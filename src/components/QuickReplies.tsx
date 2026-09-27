@@ -5,23 +5,34 @@ type Props = {
   layout?: "row" | "stack";
   /** 보기가 아닌 버튼 — 옅은 색으로 구분한다 */
   aux?: string[];
+  /** 보기에 ①②③을 단다 */
+  numbered?: boolean;
   onPick: (label: string) => void;
 };
 
-export function QuickReplies({ buttons, hidden, layout = "row", aux = [], onPick }: Props) {
+const NUMERALS = ["①", "②", "③", "④", "⑤"];
+
+export function QuickReplies({ buttons, hidden, layout = "row", aux, numbered, onPick }: Props) {
   if (hidden || buttons.length === 0) return null;
+  // 보기에는 ①②③을 단다. 보조 버튼(`aux`)과 「다음으로」 같은 단독 버튼에는 안 단다
+  let n = 0;
   return (
     <div className={`quick-row${layout === "stack" ? " stack" : ""}`}>
-      {buttons.map((label) => (
-        <button
-          key={label}
-          type="button"
-          className={`pill${aux.includes(label) ? " aux" : ""}`}
-          onClick={() => onPick(label)}
-        >
-          {label}
-        </button>
-      ))}
+      {buttons.map((label) => {
+        const isAux = aux?.includes(label) ?? true;
+        const numeral = numbered && !isAux ? NUMERALS[n++] : null;
+        return (
+          <button
+            key={label}
+            type="button"
+            className={`pill${isAux ? " aux" : ""}${numeral ? " numbered" : ""}`}
+            onClick={() => onPick(label)}
+          >
+            {numeral ? <span className="pill-num">{numeral}</span> : null}
+            {label}
+          </button>
+        );
+      })}
     </div>
   );
 }

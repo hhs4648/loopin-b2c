@@ -101,9 +101,19 @@
 
 ---
 
+## 2-7. 오답률 · 선택지 비율
+
+- 시험별 오답률과 선택지별 비율은 **`content/tutor/exam-stats/모의고사_오답률.xlsx`** 한 곳에서 관리한다
+  (EBS가 공개하는 오답률 상위 15문항). 시험 한 회차 = 시트 하나
+- 레슨 JSON의 `exam.wrong_rate`는 이 시트에서 옮겨 적는다. 인트로에서 "오답률 ○○%의 문제예요"로 쓰인다
+- 시트의 **최다 오답 번호**는 그 문제에서 학생들이 가장 많이 걸린 오개념 후보다. 레슨의 오답 보기와
+  `feedback`을 만들 때 먼저 본다 (21번은 ④ 21.3%)
+- 시트에 앱 작업 상태(예정 · 작업중 · 완료)와 레슨 id도 같이 적는다
+
 ## 3. 새 지문 체크리스트
 
-1. `content/tutor/policy-lessons/<id>.json` — 문장, `emphasis`, `glosses`, 스텝, `brief`, 보기
+0. 오답률 시트에서 그 문항의 오답률·최다 오답을 확인하고, 상태를 「작업중」으로
+1. `content/tutor/policy-lessons/<id>.json` — 문장, `emphasis`, `glosses`, 스텝, `brief`, 보기, `exam.wrong_rate`
 2. `npm run policy:copy prompt <id>` → 대사를 `content/tutor/policy-copy/dajung/<id>.json`에 → `stamp`
 3. `src/tutor/policy/lessons.ts`에 레슨 한 줄 + 대사 한 줄
 4. `content/tutor/sets.json`에 세트
