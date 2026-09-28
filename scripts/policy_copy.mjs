@@ -50,6 +50,7 @@ function load(id) {
 /** [자리, 지금 brief의 도장, 재료] */
 function slots(lesson) {
   const out = [["lesson", stampOf(lesson.brief), { brief: lesson.brief }]];
+  if (lesson.intro) out.push(["intro", stampOf(lesson.intro), { intro: lesson.intro }]);
   if (lesson.exam) out.push(["exam", stampOf(lesson.exam.brief), { question: lesson.exam.question, options: lesson.exam.options, brief: lesson.exam.brief }]);
   for (const sentence of lesson.sentences) {
     for (const help of sentence.helps ?? []) {
@@ -69,6 +70,7 @@ function slots(lesson) {
 function stampIn(copy, slot) {
   if (slot === "lesson") return copy.from;
   if (slot === "exam") return copy.exam?.from;
+  if (slot === "intro") return copy.intro?.from;
   const [kind, id] = slot.split(".");
   return copy[kind]?.[id]?.from;
 }
@@ -97,6 +99,7 @@ if (mode === "stamp") {
     const { lesson, copy, path } = load(id);
     for (const [slot, stamp] of slots(lesson)) {
       if (slot === "lesson") copy.from = stamp;
+      else if (slot === "intro") { if (!copy.intro) throw new Error(`${id}: 대사가 없다 — intro`); copy.intro.from = stamp; }
       else if (slot === "exam") { if (!copy.exam) throw new Error(`${id}: 대사가 없다 — exam`); copy.exam.from = stamp; }
       else {
         const [kind, key] = slot.split(".");

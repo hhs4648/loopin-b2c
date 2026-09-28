@@ -90,6 +90,8 @@ export type TutorView = {
   auxButtons?: string[];
   /** 지금 버튼들이 보기라서 ①②③을 단다 (「다음으로」 하나일 때는 안 단다) */
   numbered?: boolean;
+  /** 교실 화면 칠판에 띄우는 그림 (도입에서 데카르트 초상 등) */
+  boardImage?: { src: string; alt: string; credit?: string; kind?: "photo" | "drawing" } | null;
   /** 머리글 「문장 학습」 자리에 쓸 말 — 「지문 읽기」「문제 풀기」 */
   progressLabel?: string;
   /**

@@ -41,6 +41,20 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
         </div>
       </header>
 
+      {/* 칠판에 띄우는 그림 (도입의 데카르트 초상 등). 파일이 없으면 조용히 숨는다 */}
+      {view.boardImage ? (
+        <figure className={`board-image ${view.boardImage.kind ?? "photo"}`} key={view.boardImage.src}>
+          <img
+            src={view.boardImage.src}
+            alt={view.boardImage.alt}
+            onError={(e) => {
+              (e.currentTarget.parentElement as HTMLElement).hidden = true;
+            }}
+          />
+          {view.boardImage.credit ? <figcaption>{view.boardImage.credit}</figcaption> : null}
+        </figure>
+      ) : null}
+
       <div className="teacher-full">
         <div className="teacher-bob">
           <TeacherFigure />

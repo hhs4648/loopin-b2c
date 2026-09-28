@@ -201,6 +201,8 @@ export type PolicyCopy = {
   helps: Record<string, Stamped<{ answer: string }>>;
   steps: Record<string, Stamped<Partial<ChoiceCopy & ThinkCopy & ShowCopy>>>;
   exam?: Stamped<ExamCopy>;
+  /** 도입 단계 id → 대사 키 → 대사 */
+  intro?: Stamped<Record<string, Record<string, string>>>;
 };
 
 /** 눌러야 열리는 배경 설명 (§18 optional_help). 지문 이해에 필요한 만큼만 */
@@ -231,6 +233,8 @@ export type ExamQuestion = {
   underline: string;
   /** EBS가 공개하는 오답률(%). 인트로에서 말한다 */
   wrong_rate?: number;
+  /** 그 모의고사에서 오답률 순위 (Top N) — `content/tutor/exam-stats/모의고사_오답률.xlsx` */
+  wrong_rank?: number;
   wrong_rate_source?: string;
   options: ChoiceOption[];
   brief: ExamCopy;
@@ -244,6 +248,26 @@ export type ExamCopy = {
   final_wrong: string;
 };
 
+/**
+ * 수업 도입 — 지문을 읽기 전의 짧은 대화. 한 화면에 선생님 말은 세 문장까지.
+ *
+ * - `say`: 말하고 「다음」을 기다린다. id가 `rate`면 대사 대신 오답률 문구를 쓴다
+ * - `ask`: 보기를 고르게 하고, 고른 보기에 맞는 답(`replies`)을 한다.
+ *   `inline`이면 그 답을 다음 질문 앞에 붙여 한 화면으로 보인다
+ */
+export type IntroStep =
+  | { id: string; type: "say"; button?: string; brief: Record<string, string> }
+  | {
+      id: string;
+      type: "ask";
+      options: { id: string; label: string }[];
+      replies: Record<string, { line: string; inline?: boolean; image?: string }>;
+      brief: Record<string, string>;
+    };
+
+/** `drawing`은 칠판에 그린 그림처럼 테두리 없이, `photo`(기본)는 사진처럼 흰 테두리 */
+export type LessonImage = { src: string; alt: string; credit?: string; kind?: "photo" | "drawing" };
+
 export type PolicyLesson = {
   id: string;
   kind: "policy";
@@ -251,6 +275,12 @@ export type PolicyLesson = {
   source: string;
   brief: { topic: string; closing: string };
   exam?: ExamQuestion;
+  intro?: IntroStep[];
+  /** 도입 내내 칠판에 그려 두는 그림 (`images`의 키). 사진을 띄울 때만 잠깐 가린다 */
+  intro_board?: string;
+  /** 수업이 끝났을 때 칠판에 띄우는 그림 (도입의 물음표를 채운 판) */
+  closing_board?: string;
+  images?: Record<string, LessonImage>;
   context: LearningContext;
   item: ItemProperty;
   proper_nouns?: ProperNoun[];
@@ -268,6 +298,7 @@ export type Observation =
   | { kind: "dont_know"; latencyMs: number }
   | { kind: "thought"; latencyMs: number }
   | { kind: "skip" }
+  | { kind: "intro"; optionId: string }
   | { kind: "exam"; when: "first" | "final"; correct: boolean; optionId: string }
   | { kind: "continue" };
 

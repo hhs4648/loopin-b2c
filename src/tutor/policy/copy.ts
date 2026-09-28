@@ -28,6 +28,7 @@ export function stepSource(step: PolicyStep) {
 export function stamps(lesson: PolicyLesson, copy: PolicyCopy): [string, string, string | undefined][] {
   const out: [string, string, string | undefined][] = [["lesson", stampOf(lesson.brief), copy.from]];
   if (lesson.exam) out.push(["exam", stampOf(lesson.exam.brief), copy.exam?.from]);
+  if (lesson.intro) out.push(["intro", stampOf(lesson.intro), copy.intro?.from as string | undefined]);
   for (const sentence of lesson.sentences) {
     for (const help of sentence.helps ?? []) {
       out.push([`helps.${help.id}`, stampOf(help.brief), copy.helps[help.id]?.from]);

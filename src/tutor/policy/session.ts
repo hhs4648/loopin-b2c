@@ -1,7 +1,6 @@
-import frame from "../../../content/tutor/frame.json";
 import policyFrame from "../../../content/tutor/policy-frame.json";
 import type { TutorResult } from "../../../content/tutor/types";
-import { READY_BTN, UNKNOWN_BTN, HINT_BTN, type PointRecord, type TutorView } from "../engine";
+import { UNKNOWN_BTN, HINT_BTN, type PointRecord, type TutorView } from "../engine";
 import { lookupGloss } from "../glosses";
 import { isUnknownInput, matchChoice } from "../match";
 import { askedAboutWord } from "../proper-nouns";
@@ -46,6 +45,7 @@ const THOUGHT_BTN = policyFrame.buttons.thought;
 const BACK_BTN = policyFrame.buttons.back;
 const SKIP_BTN = policyFrame.buttons.skip;
 const READ_DONE_BTN = policyFrame.buttons.read_done;
+const INTRO_NEXT_BTN = policyFrame.buttons.intro_next;
 /** 읽기 화면이 한 문장을 다 읽었을 때 보내는 신호. 학생의 말이 아니다 */
 export const READ_NEXT_CMD = "__read_next";
 const MODE_TRY_BTN = policyFrame.buttons.mode_try;
@@ -79,6 +79,11 @@ type State = {
    * 시험 문제가 없는 레슨은 read 뒤에 바로 lesson으로 간다.
    */
   stage: "intro" | "read" | "mode" | "exam_first" | "lesson" | "exam_final" | "done";
+  /** 도입 단계에서 지금 보고 있는 스텝 */
+  ii: number;
+  /** 도입 ask에 답한 뒤, 「다음」을 누르면 갈 곳 (답을 보여 주는 중) */
+  introReplied: boolean;
+  boardImage: string | null;
   /** 읽기 단계에서 보고 있는 문장 */
   ri: number;
   /** 처음에 풀어 봤다면 그 결과 */
@@ -137,6 +142,9 @@ export function createPolicySession(
     const base: State = {
       learnerName: name,
       stage: "intro",
+      ii: 0,
+      introReplied: false,
+      boardImage: null,
       ri: 0,
       firstAnswer: null,
       si: 0,
@@ -150,9 +158,8 @@ export function createPolicySession(
       anyAssisted: false,
       anyExplained: false,
       student: baseline,
-      message: introMessage(name),
-      // 「준비됐나요?」에 「잘 모르겠어요」는 답이 아니다 — 시작 버튼 하나만
-      buttons: [READY_BTN],
+      message: "",
+      buttons: [],
       studentLine: "",
       effect: null,
       panel: null,
@@ -160,20 +167,71 @@ export function createPolicySession(
       shownAt: d.now(),
       lastAction: null,
     };
-    return base;
+    return showIntro(base, 0, "");
   }
 
-  function introMessage(name: string | null): string {
-    const hello = name
-      ? frame.fixed_lines.greet_named.replace("{name}", name)
-      : frame.fixed_lines.greet_plain;
-    const rate = lesson.exam?.wrong_rate;
-    return [
-      hello,
-      ...(rate != null ? [L.intro_rate.replace("{rate}", String(rate))] : []),
-      L.intro_topic.replace("{topic}", copy.topic_intro),
-      frame.fixed_lines.ready_question,
-    ].join(" ");
+  /* ── 도입 ───────────────────────────────────────────────────────── */
+
+  /** 도입 스텝 i를 연다. 도입이 없거나 끝났으면 읽기로. `lead`는 앞 답을 이어 붙일 때 */
+  function showIntro(st0: State, i: number, lead: string): State {
+    const step = lesson.intro?.[i];
+    // 도입이 없거나 끝났으면 읽기로 (초기화 중에도 불리므로 `s`를 건드리지 않는다)
+    if (!step) return { ...st0, stage: "read", ri: 0, message: L.read_intro, buttons: [READ_DONE_BTN], panel: null };
+    const lines = copy.intro?.[step.id] ?? {};
+    let text: string;
+    if (step.id === "rate") {
+      const ex = lesson.exam;
+      const rate =
+        ex?.wrong_rate == null
+          ? ""
+          : (ex.wrong_rank != null ? L.intro_rate : L.intro_rate_only)
+              .replace("{rate}", String(ex.wrong_rate))
+              .replace("{rank}", String(ex.wrong_rank ?? ""));
+      // 인사 없이 바로 문제 소개로 연다
+      text = [rate, lines.ask ?? ""].filter(Boolean).join(" ");
+    } else {
+      text = step.type === "say" ? (lines.say ?? "") : (lines.ask ?? "");
+    }
+    const buttons =
+      step.type === "ask" ? step.options.map((o) => o.label) : [step.button ?? INTRO_NEXT_BTN];
+    return { ...st0, stage: "intro", ii: i, introReplied: false, message: `${lead}${text}`.trim(), buttons };
+  }
+
+  function onIntro(text: string) {
+    const step = lesson.intro?.[s.ii];
+    if (!step) return startReading();
+    // 답을 보여 주던 중이면 「다음」으로 다음 스텝
+    if (step.type === "say" || s.introReplied) {
+      s = showIntro({ ...s, boardImage: null }, s.ii + 1, "");
+      return;
+    }
+    const picked = step.options.find((o) => o.label === text) ??
+      step.options.find((o) => o.label === matchChoice(text, step.options.map((x) => x.label)));
+    if (!picked) {
+      s = { ...s, message: `${L.pick_from_buttons} ${copy.intro?.[step.id]?.ask ?? ""}`.trim() };
+      return;
+    }
+    pending.push({
+      at: new Date(d.now()).toISOString(),
+      lessonId: lesson.id,
+      sentenceId: 0,
+      stepId: `intro_${step.id}`,
+      observation: { kind: "intro", optionId: picked.id },
+      action: { action: "CONTINUE" },
+    });
+    const reply = step.replies[picked.id];
+    const line = reply ? (copy.intro?.[step.id]?.[reply.line] ?? "") : "";
+    if (!reply || reply.inline) {
+      s = showIntro({ ...s, boardImage: null }, s.ii + 1, line ? `${line} ` : "");
+      return;
+    }
+    s = {
+      ...s,
+      introReplied: true,
+      message: line,
+      buttons: [INTRO_NEXT_BTN],
+      boardImage: reply.image ?? null,
+    };
   }
 
   /* ── 지문 읽기 · 문제 풀기 ──────────────────────────────────────── */
@@ -553,9 +611,16 @@ export function createPolicySession(
     return {
       screen: reading ? "read" : onStudy ? "study" : "chat",
       message: s.message,
+      boardImage: (() => {
+        const key =
+          s.boardImage ??
+          (s.stage === "intro" ? lesson.intro_board : s.stage === "done" ? lesson.closing_board : null);
+        return key ? (lesson.images?.[key] ?? null) : null;
+      })(),
       buttons: s.buttons,
       placeholder: "선생님께 답해 보세요…",
-      studentLine: s.studentLine,
+      // 학생이 방금 고른 답은 화면에 다시 띄우지 않는다 — 다음 질문과 섞여 헷갈린다
+      studentLine: "",
       effect: s.effect,
       sentence: shown,
       activeChunk: shown,
@@ -603,7 +668,7 @@ export function createPolicySession(
       s = { ...s, studentLine: text, effect: null };
 
       if (s.stage === "intro") {
-        startReading();
+        onIntro(text);
         return view();
       }
       if (s.stage === "read") {

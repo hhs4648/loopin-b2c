@@ -41,7 +41,8 @@
       "first_wrong": "지금은 정답을 말하지 않음. 지문을 분석하고 나서 다시 풀자",
       "final_correct": "정답 인정 (한 문장)",
       "final_wrong": "정답은 ①. 뿌리(형이상학)가 잘려 나가고 줄기(물리 원리)에서 결과를 끌어내게 됐다는 뜻"
-    }
+    },
+    "wrong_rank": 7
   },
   "context": {
     "mode": "paper_review",
@@ -1320,5 +1321,130 @@
         }
       ]
     }
-  ]
+  ],
+  "images": {
+    "descartes": {
+      "src": "/assets/descartes.jpg",
+      "alt": "데카르트 초상",
+      "credit": "Frans Hals, 1649 · 퍼블릭 도메인"
+    },
+    "tree": {
+      "src": "/assets/descartes-tree.svg",
+      "alt": "데카르트의 나무 그림",
+      "kind": "drawing"
+    },
+    "tree_filled": {
+      "src": "/assets/descartes-tree-filled.svg",
+      "alt": "데카르트의 나무 — 뿌리는 형이상학, 줄기는 물리학, 가지와 열매는 응용과학",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "rate",
+      "type": "ask",
+      "options": [
+        {
+          "id": "yes",
+          "label": "네~"
+        },
+        {
+          "id": "worried",
+          "label": "앗 걱정돼요.."
+        }
+      ],
+      "replies": {
+        "worried": {
+          "line": "reassure",
+          "inline": true
+        }
+      },
+      "brief": {
+        "say": "(고정 문구) 오답률 {rate}%, 이번 모의고사 Top{rank}",
+        "ask": "잘 풀어 볼 자신 있는지 가볍게 (답에 따라 따로 반응하지 않고 바로 다음으로)",
+        "reassure": "괜찮다고 한마디 (다음 질문 앞에 붙음)"
+      }
+    },
+    {
+      "id": "know_descartes",
+      "type": "ask",
+      "options": [
+        {
+          "id": "yes",
+          "label": "네, 알아요 😀"
+        },
+        {
+          "id": "heard",
+          "label": "들어는 봤어요 😮"
+        },
+        {
+          "id": "no",
+          "label": "잘 몰라요 😓"
+        }
+      ],
+      "replies": {
+        "yes": {
+          "line": "known",
+          "inline": true
+        },
+        "heard": {
+          "line": "explain",
+          "image": "descartes"
+        },
+        "no": {
+          "line": "explain",
+          "image": "descartes"
+        }
+      },
+      "brief": {
+        "ask": "데카르트가 누군지 아는지",
+        "known": "잘 알고 있다고 짧게 인정 (다음 질문이 바로 이어 붙음)",
+        "explain": "데카르트를 두 문장 이내로: 코기토로 유명한 17세기 프랑스 철학자, 수학 업적. 뿌리·줄기·열매 대응은 말하지 않음"
+      }
+    },
+    {
+      "id": "era",
+      "type": "ask",
+      "options": [
+        {
+          "id": "similar",
+          "label": "과학과 철학이 비슷하게 여겨졌어요"
+        },
+        {
+          "id": "separate",
+          "label": "과학과 철학이 완전히 별개로 여겨졌어요"
+        },
+        {
+          "id": "unsure",
+          "label": "흠.. 잘 모르겠어요"
+        }
+      ],
+      "replies": {
+        "similar": {
+          "line": "right"
+        },
+        "separate": {
+          "line": "answer"
+        },
+        "unsure": {
+          "line": "answer"
+        }
+      },
+      "brief": {
+        "ask": "데카르트가 살던 17세기에 과학과 철학의 관계가 어땠을지",
+        "right": "맞았다고 + 17세기에는 과학과 철학이 같은 뿌리에서 나온 학문으로 여겨짐",
+        "answer": "답은 '비슷하게 여겨졌다' + 같은 뿌리 설명"
+      }
+    },
+    {
+      "id": "go",
+      "type": "say",
+      "button": "네, 좋아요!",
+      "brief": {
+        "say": "그럼 지문을 살펴보자"
+      }
+    }
+  ],
+  "intro_board": "tree",
+  "closing_board": "tree_filled"
 }

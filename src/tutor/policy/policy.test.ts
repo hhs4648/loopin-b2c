@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { UNKNOWN_BTN, HINT_BTN, READY_BTN } from "../engine";
+import { UNKNOWN_BTN, HINT_BTN } from "../engine";
 import { decideOnChoice, shouldShow, type DecideInput } from "./decide";
 import { stamps } from "./copy";
 import { allPolicyLessons, getPolicyCopy } from "./lessons";
@@ -43,9 +43,16 @@ function wrongLabels(stepId: string): string[] {
 
 type Session = ReturnType<typeof harness>["session"];
 
-/** 인트로 → 지문 읽기(8문장) → 「분석부터 할게요」 → 1문장 첫 질문 */
+/** 도입을 첫 번째 보기로 끝까지 넘긴다 → 읽기 화면 */
+async function passIntro(session: Session) {
+  let v = session.view();
+  for (let guard = 0; guard < 12 && v.screen === "chat"; guard++) v = await session.submit(v.buttons[0]!);
+  return v;
+}
+
+/** 도입 → 지문 읽기 → 「분석부터 할게요」 → 1문장 첫 질문 */
 async function startAnalysis(session: Session) {
-  let v = await session.submit(READY_BTN);
+  let v = await passIntro(session);
   if (v.screen === "read") v = await session.submit("계속");
   return session.submit("분석부터 할게요");
 }
@@ -149,14 +156,58 @@ describe("학생 상태 (§4, §11, §17)", () => {
 });
 
 describe("21번 수업 흐름", () => {
-  it("이름을 묻지 않는다 — 가입할 때 넣는 것이다. 모르면 그냥 인사한다", () => {
+  it("첫 화면은 인사 없이 오답률 소개로 연다", () => {
     const named = harness().session.view();
-    expect(named.message.startsWith("안녕하세요, 민지님!")).toBe(true);
-    expect(named.buttons).toEqual([READY_BTN]);
+    expect(named.message).toBe("이번 문제는 오답률 57.4%로, 오답률 Top7 문제예요. 자신 있나요~?");
+    // 칠판에는 데카르트의 나무가 그려져 있다
+    expect(named.boardImage?.kind).toBe("drawing");
+    expect(named.buttons).toEqual(["네~", "앗 걱정돼요.."]);
 
     const anonymous = createPolicySession(LESSON_ID, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 }).view();
-    expect(anonymous.message.startsWith("안녕하세요! 오늘 볼 문제는")).toBe(true);
-    expect(anonymous.buttons).toEqual([READY_BTN]);
+    expect(anonymous.message.startsWith("이번 문제는")).toBe(true);
+  });
+
+  it("도입: 데카르트를 아는지 → 모르면 사진과 설명 → 17세기 질문 → 지문으로", async () => {
+    const { session } = harness();
+    let v = await session.submit("앗 걱정돼요..");
+    // 글 소개는 칠판 제목이 한다 — 바로 데카르트 질문
+    expect(v.message).toBe("괜찮아요, 같이 차근차근 봐요! 수업 들어가기 전에, 배경지식 조금만 살펴봐요. 혹시 데카르트가 누군지 아나요?");
+    expect(v.buttons).toEqual(["네, 알아요 😀", "들어는 봤어요 😮", "잘 몰라요 😓"]);
+    expect(v.studentLine).toBe("");
+
+    v = await session.submit("잘 몰라요 😓");
+    expect(v.message).toContain("17세기 프랑스 철학자");
+    expect(v.boardImage?.alt).toBe("데카르트 초상");
+    expect(v.buttons).toEqual(["네"]);
+    v = await session.submit("네");
+    expect(v.boardImage?.kind).toBe("drawing"); // 사진이 내려가면 나무가 돌아온다
+    expect(v.message).toBe("데카르트가 살던 17세기에는 과학과 철학의 관계가 어땠을까요?");
+
+    v = await session.submit("흠.. 잘 모르겠어요");
+    expect(v.message.startsWith("답은 '과학과 철학이 비슷하게 여겨졌다'예요.")).toBe(true);
+    v = await session.submit("네");
+    expect(v.message).toBe("그럼 지문을 한번 살펴볼까요?");
+    expect(v.buttons).toEqual(["네, 좋아요!"]);
+    v = await session.submit("네, 좋아요!");
+    expect(v.screen).toBe("read");
+  });
+
+  it("도입: 데카르트를 안다고 하면 설명 없이 다음 질문이 한 화면에 붙는다", async () => {
+    const { session } = harness();
+    await session.submit("네~");
+    let v = await session.submit("네, 알아요 😀");
+    expect(v.message).toBe("잘 알고 있군요~ 데카르트가 살던 17세기에는 과학과 철학의 관계가 어땠을까요?");
+    expect(v.boardImage?.kind).toBe("drawing");
+    v = await session.submit("과학과 철학이 비슷하게 여겨졌어요");
+    expect(v.message.startsWith("맞아요~~")).toBe(true);
+  });
+
+  it("도입의 선생님 말은 한 화면에 세 문장까지", async () => {
+    const lines = Object.values(copy.intro ?? {}).flatMap((x) =>
+      typeof x === "string" ? [] : Object.values(x),
+    );
+    const long = lines.filter((line) => (line.match(/[.?!~](\s|$)/g) ?? []).length > 3);
+    expect(long).toEqual([]);
   });
 
   it("첫 문장: 뜻 고르기 → 맞혀도 주어 범위 묻기 → 뼈대 → unity → 다리 질문 → 2문장", async () => {
@@ -267,7 +318,6 @@ describe("21번 수업 흐름", () => {
 
   it("도움말은 사다리를 건드리지 않고, 「모른다」로 적지도 않는다 (§20)", async () => {
     const { session, events } = harness();
-    await session.submit(READY_BTN);
     // 1문장은 도움말 대신 단어 강조를 쓴다. 도움말 칩은 2문장에 있다
     let v = await passSentence1(session);
     expect(v.emphasis).toEqual([]);
@@ -337,12 +387,14 @@ describe("21번 수업 흐름", () => {
     expect(v.screen).toBe("chat");
     expect(v.message.startsWith("정답이에요!")).toBe(true);
     expect(v.recordLine).toContain("결과=이해");
+    // 마무리에는 물음표를 채운 나무가 칠판에
+    expect(v.boardImage?.src).toBe("/assets/descartes-tree-filled.svg");
   });
 
   it("인트로에 오답률을 말하고, 지문이 한 문장씩 드러나며 읽힌다", async () => {
     const { session } = harness();
     expect(session.view().message).toContain("오답률 57.4%");
-    let v = await session.submit(READY_BTN);
+    let v = await passIntro(session);
     expect(v.screen).toBe("read");
     expect(v.passage?.revealed).toBe(1);
     expect(v.passage?.sentences).toHaveLength(8);
@@ -361,14 +413,14 @@ describe("21번 수업 흐름", () => {
 
   it("「계속」은 다 읽기 전에도 넘어간다", async () => {
     const { session } = harness();
-    await session.submit(READY_BTN);
+    await passIntro(session);
     const v = await session.submit("계속");
     expect(v.screen).toBe("chat");
   });
 
   it("바로 풀기: 맞혀도 분석으로, 틀려도 답을 말하지 않는다", async () => {
     const { session, events } = harness();
-    let v = await session.submit(READY_BTN);
+    let v = await passIntro(session);
     v = await session.submit("계속");
     v = await session.submit("바로 풀어 볼게요");
     expect(v.progressLabel).toBe("문제 풀기");
@@ -381,7 +433,7 @@ describe("21번 수업 흐름", () => {
     expect(session.lastAction()?.interactionId).toBe("s1_meaning");
 
     const other = harness().session;
-    await other.submit(READY_BTN);
+    await passIntro(other);
     await other.submit("계속");
     await other.submit("바로 풀어 볼게요");
     v = await other.submit(lesson.exam!.options[0]!.label); // 정답
@@ -461,9 +513,9 @@ describe("21번 글 — 절대 규칙", () => {
     }
   });
 
-  it("인트로는 「네, 좋아요!」 하나, 고유명사 칩 없음 (AUTHORING_RULES §1)", () => {
+  it("인트로는 자신 있는지 묻는 두 버튼, 고유명사 칩 없음 (AUTHORING_RULES §1)", () => {
     const v = harness().session.view();
-    expect(v.buttons).toEqual([READY_BTN]);
+    expect(v.buttons).toEqual(["네~", "앗 걱정돼요.."]);
     expect(v.properNouns).toEqual([]);
   });
 

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="22 -44 356 250" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 칠판에 마커로 그린 듯한 데카르트의 나무. 도입에서는 학문 이름을 ?로 비워 둔다 (2문장에서 채운다) -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-size="14" font-weight="700" fill="#2b2430">
+    <text x="200" y="-16" text-anchor="middle" font-size="18">'데카르트의 나무' = 과학과 철학을 나무로 표현</text>
+  </g>
+  <line x1="40" y1="150" x2="200" y2="150" stroke="#b9a99c" stroke-width="2.5" stroke-dasharray="6 6"/>
+  <g stroke="#8a5a3c" stroke-width="4">
+    <path d="M120 150 C118 160 104 168 88 178"/>
+    <path d="M120 150 C121 164 118 176 116 190"/>
+    <path d="M120 150 C124 162 138 170 154 180"/>
+    <path d="M104 166 C96 166 88 162 80 164"/>
+    <path d="M140 170 C148 168 156 170 164 168"/>
+  </g>
+  <path d="M112 150 L114 92 L126 92 L128 150 Z" fill="#c08a5f" stroke="#8a5a3c" stroke-width="4"/>
+  <g stroke="#8a5a3c" stroke-width="4">
+    <path d="M118 96 C108 84 96 78 82 76"/>
+    <path d="M122 96 C132 84 146 78 160 76"/>
+    <path d="M120 94 L120 64"/>
+  </g>
+  <path d="M70 80 C54 76 50 52 68 44 C66 22 94 12 108 24 C116 8 146 10 150 28 C168 20 190 36 180 54 C196 66 184 92 164 88 C156 100 132 100 124 92 C114 102 90 100 84 90 C76 92 70 88 70 80 Z"
+        fill="#d9eed3" stroke="#4f9a5a" stroke-width="4"/>
+  <g fill="#ef7a93" stroke="#d2566f" stroke-width="2">
+    <circle cx="88" cy="56" r="7"/><circle cx="118" cy="40" r="7"/><circle cx="150" cy="54" r="7"/>
+    <circle cx="170" cy="72" r="7"/><circle cx="104" cy="78" r="7"/><circle cx="138" cy="80" r="7"/>
+  </g>
+  <g stroke="#8a7f88" stroke-width="2" stroke-dasharray="3 5">
+    <path d="M188 56 L234 56"/>
+    <path d="M132 120 L234 120"/>
+    <path d="M160 176 L234 176"/>
+  </g>
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-size="19" font-weight="700" fill="#2b2430">
+    <text x="240" y="50">나뭇가지와 과일</text>
+    <text x="240" y="73" fill="#d2566f">→ ?</text>
+    <text x="240" y="115">줄기</text>
+    <text x="240" y="138" fill="#d2566f">→ ?</text>
+    <text x="240" y="171">뿌리</text>
+    <text x="240" y="194" fill="#d2566f">→ ?</text>
+  </g>
+</svg>

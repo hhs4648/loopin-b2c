@@ -19,7 +19,7 @@ export function QuickReplies({ buttons, hidden, layout = "row", aux, numbered, o
   return (
     <div className={`quick-row${layout === "stack" ? " stack" : ""}`}>
       {buttons.map((label) => {
-        const isAux = aux?.includes(label) ?? true;
+        const isAux = aux?.includes(label) ?? false;
         const numeral = numbered && !isAux ? NUMERALS[n++] : null;
         return (
           <button

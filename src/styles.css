@@ -806,3 +806,21 @@ mark.hl, .english-token.hl .english-word {
   box-shadow: 0 8px 20px rgba(226,96,125,.3);
 }
 .read-continue:hover { background: #e2607d; }
+
+/* 칠판 위 그림 — 도입에서 인물 사진 등을 칠판에 붙인 것처럼 */
+.board-image {
+  position: absolute; left: 50%; top: 17%; transform: translateX(-50%); z-index: 2;
+  height: 26%; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+/* 등장 애니메이션은 그림에만 — figure에 걸면 transform이 가운데 정렬을 덮는다 */
+.board-image img {
+  animation: pop .35s ease-out;
+  height: 100%; width: auto; border-radius: 6px; background: #fff;
+  box-shadow: 0 6px 16px rgba(60,30,20,.2); border: 4px solid #fff;
+}
+.board-image figcaption { font-size: 10px; color: #8a7f88; white-space: nowrap; }
+.board-image.drawing img { border: none; box-shadow: none; background: none; border-radius: 0; }
+/* 이름표까지 들어간 그림은 칠판 폭에 맞춘다 */
+/* 칠판 위쪽에 붙인다 — 아래로 내려오면 말풍선에 가린다 */
+.board-image.drawing { width: 74%; height: auto; top: 30.5%; transform: translate(-50%, -50%); }
+.board-image.drawing img { width: 100%; height: auto; }
