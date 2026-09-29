@@ -19,7 +19,12 @@ import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets"
   문장 학습의 단어 뜻은 레슨 JSON `glosses`에서 온다.
 */
 const params = new URLSearchParams(window.location.search);
-const directLesson = import.meta.env.DEV ? params.get("lesson") : null;
+/*
+  공유용 한 장짜리 HTML(`scripts/build_share.mjs`)은 빌드할 때 `VITE_SHARE_LESSON`에 지문을
+  박는다. 그 파일에는 목록이 없고, 열면 바로 그 수업이 시작된다.
+*/
+const shareLesson = (import.meta.env.VITE_SHARE_LESSON as string | undefined) || null;
+const directLesson = import.meta.env.DEV ? params.get("lesson") : shareLesson;
 const directSet = import.meta.env.DEV ? getSet(params.get("set")) : null;
 
 /*
@@ -138,6 +143,15 @@ export function App() {
    * 맨 앞으로 돌려보내면 방금 있던 자리를 다시 찾아 들어가야 한다.
    */
   function backToList() {
+    // 공유 파일에는 목록이 없다 — 닫으면 같은 수업을 처음부터
+    if (shareLesson) {
+      const next = open(shareLesson);
+      setStarted(next);
+      setView(next.session.view());
+      setChatOverride(false);
+      setSeconds(0);
+      return;
+    }
     setStarted(null);
     setView(null);
     setChatOverride(false);
