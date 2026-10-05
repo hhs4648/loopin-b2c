@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import type { TutorView } from "../tutor/engine";
+import type { TutorView } from "../tutor/view";
 import { READ_NEXT_CMD } from "../tutor/policy/session";
 import { PassagePager } from "./PassagePager";
 

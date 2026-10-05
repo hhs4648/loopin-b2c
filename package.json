@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "lessons": "python scripts/build_lesson.py",
     "policy:copy": "node scripts/policy_copy.mjs",
     "build": "tsc --noEmit && vitest run && vite build",
     "preview": "vite preview",

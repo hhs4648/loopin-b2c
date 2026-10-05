@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-import { lessonIds, getLesson } from "./lessons";
 import { glossSpans, lookupGloss } from "./glosses";
 
 describe("glossSpans", () => {
@@ -31,22 +30,5 @@ describe("lookupGloss", () => {
 
   it("구 안의 단어로도 찾는다", () => {
     expect(lookupGloss("past", glosses)?.ko).toBe("지난 4년");
-  });
-});
-
-describe("레슨 단어 뜻 커버", () => {
-  it("문장 속 단어마다 뜻이 있다 — 누르면 빈칸이 나오면 안 된다", () => {
-    const missing: string[] = [];
-    for (const id of lessonIds()) {
-      const lesson = getLesson(id);
-      lesson.chunks.forEach((chunk, i) => {
-        const spans = glossSpans(chunk.text, chunk.glosses ?? []);
-        for (const span of spans) {
-          if (!/[A-Za-z0-9]/.test(span.text)) continue;
-          if (!span.gloss) missing.push(`${lesson.id} 문장${i + 1}: ${span.text}`);
-        }
-      });
-    }
-    expect(missing).toEqual([]);
   });
 });

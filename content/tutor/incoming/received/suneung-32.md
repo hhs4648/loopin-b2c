@@ -1,8 +1,0 @@
-# 수능 32번문제 (받은 원문)
-
-- 출처: 2024 고3 수능 32번 문제
-- 받은 날: 2026-09-06
-
-## 지문
-
-The commonsense understanding of the moral status of altruistic acts conforms to how most of us think about our responsibilities toward others. We tend to get offended when someone else or society determines for us how much of what we have should be given away; we are adults and should have the right to make such decisions for ourselves. Yet, when interviewed, altruists known for making the largest sacrifices — and bringing about the greatest benefits to their recipients — assert just the opposite. They insist that they had absolutely no choice but to act as they did . Organ donors, and everyday citizens who risk their own lives to save others in mortal danger are remarkably consistent in their explicit denials that they have done anything deserving of high praise as well as in their assurance that anyone in their shoes should have done exactly the same thing. To be sure, it seems that the more altruistic someone is, the more they are likely to insist that they have done no more than all of us would be expected to do, lest we shirk our basic moral obligation to humanity.

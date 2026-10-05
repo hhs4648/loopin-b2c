@@ -1,4 +1,4 @@
-import type { TutorView } from "../tutor/engine";
+import type { TutorView } from "../tutor/view";
 import { CHECK_CMD } from "../tutor/policy/session";
 
 type Props = { view: TutorView; onSend: (text: string) => void; onClose: () => void };

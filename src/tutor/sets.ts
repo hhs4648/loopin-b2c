@@ -1,11 +1,9 @@
 import data from "../../content/tutor/sets.json" with { type: "json" };
 import type {
-  Lesson,
   LessonCollection,
   LessonGroup,
   LessonSet,
 } from "../../content/tutor/types";
-import { getLesson, lessonIds } from "./lessons";
 import { getPolicyLesson, policyLessonIds } from "./policy/lessons";
 
 /**
@@ -27,12 +25,12 @@ const GROUPS = data.groups as LessonGroup[];
  * 모양과 엔진은 달라도 학생이 고르는 자리는 같다.
  */
 export function knownLessonIds(): string[] {
-  return [...lessonIds(), ...policyLessonIds()];
+  return policyLessonIds();
 }
 
 /** 지문 하나의 문장 수 — 어느 쪽 레슨이든 */
 export function sentencesIn(lessonId: string): number {
-  return getPolicyLesson(lessonId)?.sentences.length ?? getLesson(lessonId).chunks.length;
+  return getPolicyLesson(lessonId)?.sentences.length ?? 0;
 }
 
 const SETS = (data.sets as LessonSet[]).filter((set) =>
@@ -72,11 +70,6 @@ export function getSet(id?: string | null): LessonSet | null {
 /** 세트에 실제로 들어 있는 지문 id들 */
 function lessonIdsOf(set: LessonSet): string[] {
   return set.lessons.filter((id) => knownLessonIds().includes(id));
-}
-
-/** 세트에 든 **예전 모양** 지문들 */
-export function lessonsOf(set: LessonSet): Lesson[] {
-  return set.lessons.filter((id) => lessonIds().includes(id)).map((id) => getLesson(id));
 }
 
 /** 카드에 띄우는 분량. 지문이 여럿이면 다 더한다 */

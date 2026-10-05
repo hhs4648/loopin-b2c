@@ -1,6 +1,6 @@
 import policyFrame from "../../../content/tutor/policy-frame.json";
 import type { TutorResult } from "../../../content/tutor/types";
-import { UNKNOWN_BTN, HINT_BTN, type PointRecord, type TutorView } from "../engine";
+import { UNKNOWN_BTN, HINT_BTN, type PointRecord, type TutorView } from "../view";
 import { lookupGloss } from "../glosses";
 import { isUnknownInput, matchChoice } from "../match";
 import { askedAboutWord } from "../proper-nouns";

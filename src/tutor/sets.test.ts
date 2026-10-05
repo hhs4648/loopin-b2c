@@ -49,25 +49,7 @@ describe("수업 세트", () => {
     expect(orphans.map((s) => s.id)).toEqual([]);
   });
 
-  it("대분류 > 중분류 > 세트 세 켜가 이어진다", () => {
-    expect(allGroups().map((g) => g.id)).toEqual(["suneung", "moeui"]);
-    expect(allCollections().map((c) => c.id)).toEqual([
-      "suneung-2024",
-      "moeui-2027-09",
-      "moeui-2025-03",
-      "moeui-2026-03",
-    ]);
-    // 모든 세트는 어느 중분류엔가 담긴다 — 흩어진 것이 없어야 한다
-    const inCollections = allCollections().reduce((n, c) => n + setsIn(c.id).length, 0);
-    expect(inCollections).toBe(allSets().length);
-  });
 
-  it("2024 수능에 26문제가 들어 있다", () => {
-    const sets = setsIn("suneung-2024");
-    expect(getCollection("suneung-2024")?.title).toBe("2024 수능");
-    expect(sets).toHaveLength(26);
-    expect(sets[0]!.title).toBe("18번 문제");
-  });
 
   it("카드에 띄우는 문장 수가 실제 지문과 같다", () => {
     for (const set of allSets()) {
@@ -82,10 +64,11 @@ describe("수업 세트", () => {
     }
   });
 
-  it("수능 18번 세트에 퇴사 편지 7문장이 들어 있다", () => {
-    const suneung = allSets().find((set) => set.id === "suneung-18");
-    expect(suneung?.title).toBe("18번 문제");
-    expect(suneung?.lessons).toEqual(["resignation-letter"]);
-    expect(sentenceCount(suneung!)).toBe(7);
+
+  it("목록에는 2026년 3월 21번 하나만 있다 (2026-10-05에 새로 시작)", () => {
+    expect(allGroups().map((g) => g.id)).toEqual(["moeui"]);
+    expect(allCollections().map((c) => c.id)).toEqual(["moeui-2026-03"]);
+    expect(setsIn("moeui-2026-03").map((s) => s.id)).toEqual(["moeui-2026-03-21"]);
+    expect(getCollection("moeui-2026-03")?.title).toBe("2026년 3월 모의고사");
   });
 });

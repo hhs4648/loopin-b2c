@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import type { TutorView } from "../tutor/engine";
+import type { TutorView } from "../tutor/view";
 import { MATCH_DONE_CMD } from "../tutor/policy/session";
 
 type Props = { view: TutorView; onSend: (text: string) => void; onClose: () => void };

@@ -1,5 +1,5 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import type { PointRecord } from "./engine";
+import type { PointRecord } from "./view";
 
 /**
  * 학습 기록을 서버에 남긴다.

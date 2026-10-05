@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "re
 import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
-import type { TutorView } from "../tutor/engine";
+import type { TutorView } from "../tutor/view";
 import type { WordGloss } from "../../content/tutor/types";
 import { glossSpans, glossesFor } from "../tutor/glosses";
 import { nounKind } from "../tutor/proper-nouns";

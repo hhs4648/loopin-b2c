@@ -1,8 +1,0 @@
-# 수능 43,44,45번문제 (받은 원문)
-
-- 출처: 2024 고3 수능 43,44,45번 문제
-- 받은 날: 2026-09-06
-
-## 지문
-
-Once upon a time in the small town of Meadowville, there lived a curious boy named Tommy. Tommy's grandfather, affectionately known as Grandpa Joe, had always been a mysterious figure to him. Grandpa Joe was a man of few words, but his eyes lit up from stories untold. One lazy summer afternoon, while searching the garage, Tommy found an old, forgotten box. As he opened it, the treasure of memories spilled out, including an old baseball card featuring a young Grandpa Joe. Tommy's eyes widened with excitement as he examined the card. In the card, Grandpa Joe stood proudly in a baseball uniform. He was not the quiet person Tommy knew. Intrigued by this discovery, Tommy rushed inside the house to find Grandpa Joe. "Hey, Grandpa! I found this cool baseball card of you. Were you a baseball player?" he asked, eyes filled with curiosity. A spark of nostalgia lit up Grandpa Joe's eyes as he took the card. Memories flooded back, and he told stories of his youthful days on the baseball field. Grandpa Joe spoke of the thrill of the game and the joy of hitting a home run. Tommy, fascinated by these stories, felt more connected to his grandfather. Eager to learn more, he asked Grandpa Joe to teach him about baseball. They spent afternoons in the backyard as he shared the wisdom of the game with his grandson. Together, they practiced hitting, catching, and even laughed over the mistakes. As they bonded over baseball, the gap between generations closed. Grandpa Joe's eyes no longer held just the twinkle of untold stories; they now radiated warmth and shared memories.

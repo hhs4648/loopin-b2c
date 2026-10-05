@@ -6,10 +6,10 @@ import { ReadPassage } from "./components/ReadPassage";
 import { MatchGame } from "./components/MatchGame";
 import { WordCheck } from "./components/WordCheck";
 import { SentenceStudy } from "./components/SentenceStudy";
-import { createSession, type TutorSession, type TutorView } from "./tutor/engine";
+import type { TutorView } from "./tutor/view";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
-import { isPolicyLesson } from "./tutor/policy/lessons";
-import { createPolicySession } from "./tutor/policy/session";
+import { policyLessonIds } from "./tutor/policy/lessons";
+import { createPolicySession, type PolicySession } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
 import { markDone } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
@@ -29,21 +29,17 @@ const shareLesson = (import.meta.env.VITE_SHARE_LESSON as string | undefined) ||
 const directLesson = import.meta.env.DEV ? params.get("lesson") : shareLesson;
 const directSet = import.meta.env.DEV ? getSet(params.get("set")) : null;
 
-/*
-  세션이 둘이다 — 예전 해석 엔진과 Teaching Policy 엔진. 둘은 **같은 모양**을
-  돌려주므로 아래 화면 코드는 어느 쪽인지 모른다. 어느 엔진이 돌지는 레슨이 정한다.
-*/
-type AnySession = TutorSession & { observe?: (observation: UiObservation) => void };
+/* 수업은 전부 Teaching Policy 세션이다 (예전 해석 엔진은 2026-10-05에 지웠다) */
+type AnySession = PolicySession & { observe?: (observation: UiObservation) => void };
 
 type Started = { session: AnySession; set: LessonSet | null };
 
 /** 수업 하나를 연다. 이름은 아는 사람이면 물어보지 않고 그 이름으로 인사한다 */
 function open(lessonId: string | null): Started {
   const name = import.meta.env.DEV && params.has("newname") ? null : loadLearnerName();
-  const session: AnySession =
-    lessonId && isPolicyLesson(lessonId)
-      ? createPolicySession(lessonId, name)
-      : createSession(lessonId, name);
+  // 모르는 id면 첫 수업으로
+  const id = lessonId && policyLessonIds().includes(lessonId) ? lessonId : policyLessonIds()[0]!;
+  const session: AnySession = createPolicySession(id, name);
   return { session, set: setOfLesson(session.lessonId()) };
 }
 

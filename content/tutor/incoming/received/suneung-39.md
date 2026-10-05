@@ -1,8 +1,0 @@
-# 수능 39번문제 (받은 원문)
-
-- 출처: 2024 고3 수능 39번 문제
-- 받은 날: 2026-09-06
-
-## 지문
-
-Almost all the figurative paintings we are familiar with now are in perspective. They present foreshortened figures and objects that diminish as they move away from the focal point of the painting. A painting in perspective represents how the world looks to a person seeing the scene from a particular position in space. This stands in contrast to earlier figurative art, which had been as focused on representing what the artist knew about the objects and the space he or she was painting as on how they looked. These pictures are beautiful in their own right, but they do not represent scenes as we might see them if we were looking at them. They are also less informative as to the layout of the space they represent. The fact that perspective and information about spatial layout go together reveals something important about seeing. Not only do we see the world through an egocentric frame but we also see it in a way that allows us to extract information about distances to, and sizes of, objects relative to us, and relative to one another.

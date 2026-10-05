@@ -2,7 +2,7 @@ import { ClassroomBg } from "./ClassroomBg";
 import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
-import type { TutorView } from "../tutor/engine";
+import type { TutorView } from "../tutor/view";
 import { nounKind } from "../tutor/proper-nouns";
 import { SAVE_CMD, WEEKS_CMD } from "../tutor/policy/session";
 
