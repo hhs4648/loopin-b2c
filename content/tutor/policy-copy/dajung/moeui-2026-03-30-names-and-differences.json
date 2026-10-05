@@ -1,0 +1,210 @@
+{
+  "lesson": "moeui-2026-03-30-names-and-differences",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어휘 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_group": {
+      "say": "conceptualize, categorize, put a name on은 여기서 모두 '이름 붙여 묶는다'는 같은 뜻이에요. 셋 중 하나만 이해해도 충분해요.",
+      "from": "r5ec4l"
+    },
+    "s1_q": {
+      "ask": "이름을 붙이면 'abstract away from its particularities' 한대요. particularities는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요.",
+        "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요."
+      ],
+      "explain": "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities는 떨어져 나가니, 같은 그룹이 아니에요."
+      },
+      "from": "otgte1"
+    },
+    "s1_map": {
+      "say": "이름을 붙여 묶으면 하나하나의 특징은 무시된다, 이게 이 글의 요지예요. 오른쪽에서 왼쪽으로 가는 화살표, 이 과정이 'abstract away'예요.",
+      "from": "1vk8b58"
+    },
+    "s2_picture": {
+      "say": "여기서 'Picture'는 '그림'이 아니라 '상상해 보다'라는 동사예요. 잔디밭에 핀 데이지와 클로버를 한번 상상해 보래요.",
+      "from": "1a5pspk"
+    },
+    "s3_nouns": {
+      "say": "'Those four ordinary nouns'는 앞 문장의 네 단어예요. daisies, clover, flower, lawn 모두 보통 명사, 즉 이름이에요.",
+      "from": "1h4h6sg"
+    },
+    "s3_q": {
+      "ask": "이 네 이름은 그것들의 differences를 빠뜨린대요(leave out). differences는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "1문장에서 이름을 붙이면 무엇이 떨어져 나갔는지 떠올려 봐요.",
+        "1문장에서 이름을 붙이면 무엇이 떨어져 나갔는지 떠올려 봐요."
+      ],
+      "explain": "1문장에서 이름을 붙이면 무엇이 떨어져 나갔는지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "이름은 차이를 빠뜨려요(leave out). 이름 쪽이 아니라, 빠져나가는 particularities와 같은 쪽이에요."
+      },
+      "from": "qhewvg"
+    },
+    "s3_map": {
+      "say": "'leave out'은 1문장의 'abstract away'와 같은 말, 같은 화살표예요. 데이지도 송이마다 모양이 다른데, 다 '데이지'라고 부르면 그 차이는 빠져 버려요.",
+      "from": "1inix03"
+    },
+    "s3_check": {
+      "say": "그래서 ①differences는 문맥에 맞아요. 이름은 하나하나의 차이를 빠뜨린다는 1문장 요지와 그대로 이어지거든요.",
+      "from": "7yyw3n"
+    },
+    "s4_skim": {
+      "say": "앞 문장의 반복이에요. 'Flower'도 세세한 차이를 무시하고 꽃을 다 묶어요. 앞을 이해했다면 깊게 안 읽어도 돼요.",
+      "from": "1i1v8p9"
+    },
+    "s5_q": {
+      "ask": "이번엔 'Lawn(잔디)'이라는 이름이에요. 4문장의 'Flower'처럼 이름이라면, 다양한 풀들은 어떻게 될까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요.",
+        "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요."
+      ],
+      "explain": "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요."
+      },
+      "from": "15f4yov"
+    },
+    "s5_map": {
+      "say": "'Lawn'도 이름이니까 왼쪽 그룹이에요. 그럼 ②acknowledges(인정한다)가 어느 쪽 말인지 기억해 둬요.",
+      "from": "lst0ou"
+    },
+    "s6_sort": {
+      "ask": "가까이 보면(Zoom in) individuality와 uniqueness가 보인대요. 이 두 단어는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 쪽일지, 하나하나 따로인 쪽일지 생각해 봐요.",
+        "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 쪽일지, 하나하나 따로인 쪽일지 생각해 봐요."
+      ],
+      "explain": "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 쪽일지, 하나하나 따로인 쪽일지 생각해 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 게 아니라 하나하나 따로라는 말이에요."
+      },
+      "from": "1yn8wbr"
+    },
+    "s6_map": {
+      "say": "가까이 들여다보면 하나하나 다 달라요. 그래서 개별성과 고유성은 오른쪽 그룹이에요.",
+      "from": "v79rew"
+    },
+    "s7_q": {
+      "ask": "'No two daisies … are exactly alike'는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요.",
+        "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요."
+      ],
+      "explain": "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요.",
+        "o1": "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요."
+      },
+      "from": "1opehwe"
+    },
+    "s7_yet": {
+      "say": "'yet'이 문장 앞에 나오면 '그러나'라는 뜻이에요. 'and yet' 앞은 '다 다르다', 뒤는 '균일해 보인다'로 서로 반대예요.",
+      "from": "1k4qz1x"
+    },
+    "s7_map": {
+      "say": "가까이 보면 다 다르지만, 힐끗 보면 균일한(uniformly) 카펫처럼 보인대요.",
+      "from": "1oz05z6"
+    },
+    "s8_q": {
+      "ask": "대부분의 실용적인 목적(practical purposes)에서는, 풀과 꽃의 차이가 중요할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?",
+        "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?"
+      ],
+      "explain": "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?"
+      },
+      "from": "1exu6by"
+    },
+    "s8_map": {
+      "say": "보통 때는 차이를 무시해도 돼요. 다음 문장의 'Not so'가 그 반대 경우예요.",
+      "from": "1l5f6q0"
+    },
+    "s9_map": {
+      "say": "'Not so'는 '~에게는 그렇지 않다'예요. 경기장 관리인에게는 풀 종류와 자라는 단계가 정말 중요해요.",
+      "from": "14xczkf"
+    },
+    "s10_q": {
+      "ask": "무한한 정신(infinite mind)이라면, 풀잎을 모두 한 범주로 묶어야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'need not be'를 봐요. 'must'와 반대예요.",
+        "'need not be'를 봐요. 'must'와 반대예요."
+      ],
+      "explain": "'need not be'를 봐요. 'must'와 반대예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'need not be'를 봐요. 'must'와 반대예요."
+      },
+      "from": "1bqhudj"
+    },
+    "s10_map": {
+      "say": "기억력이 무한하면 풀잎 하나하나를 따로 기억할 수 있어요. 그래서 한데 묶을 필요가 없다는 거예요.",
+      "from": "qeqgxz"
+    },
+    "s11_map": {
+      "say": "풀잎마다 자기 이름을 가질 수 있대요. 여러분이 고유한 이름을 가진 것처럼요.",
+      "from": "1rifsld"
+    }
+  },
+  "exam": {
+    "ask": "밑줄 단어마다 지도의 어느 쪽 말인지 떠올려 봐요. 문장이 속한 쪽과 안 맞는 걸 골라요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 아니에요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "final_wrong": "정답은 ②예요. 'Lawn'은 여러 풀을 한데 묶는 이름이라, 차이를 인정하는 게 아니라 무시해요(neglects).",
+    "option_feedback": {
+      "1": "보통 명사는 이름이라 차이를 빠뜨려요. differences는 흐름에 맞아요.",
+      "3": "'No two … are alike'는 똑같은 두 송이가 없다는 말이에요. 하나하나 다르다는 흐름에 맞아요.",
+      "4": "보통 때는 차이를 무시해도 된다는 말이에요. 뒤의 'Not so … groundskeeper'가 그 반대 경우예요.",
+      "5": "무한한 정신은 풀잎을 한데 묶을 필요가 없다는 말이에요. 'need not'과 함께 흐름에 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 지문이 다시 보고 싶으면 아래 버튼을 눌러요.",
+    "from": "oysyt5"
+  },
+  "intro": {
+    "method1": {
+      "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+    },
+    "method2": {
+      "say": "요지를 잡고, 단어를 두 그룹으로 나눈 뒤, 밑줄 단어가 맞는 쪽에 있는지 볼 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "method_short": {
+      "say": "칠판 순서대로 바로 시작해 볼게요."
+    },
+    "from": "b6ntlr"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "정답이에요! 이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "분석 없이 맞혔어요! 이 지문은 잘 소화했으니 복습 목록에서 뺄게요.",
+    "mastered_later": "분석 없이 맞혔어요! 그래도 {weeks} 뒤에 한 번만 더 확인해 볼게요."
+  },
+  "from": "1h8ynss"
+}

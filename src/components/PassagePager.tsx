@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 
 type Props = {
   sentences: string[];
-  underline: string | null;
+  underline: string[];
   /** 있으면 마지막 장에 시험 보기를 보여 준다 */
   options?: string[] | null;
   /** 처음 펼칠 장 */
@@ -73,15 +74,19 @@ export function PassagePager({ sentences, underline, options, start = 0 }: Props
   );
 }
 
-function underlined(text: string, phrase: string | null) {
-  if (!phrase) return text;
-  const at = text.indexOf(phrase);
-  if (at < 0) return text;
-  return (
-    <>
-      {text.slice(0, at)}
-      <u className="read-underline">{phrase}</u>
-      {text.slice(at + phrase.length)}
-    </>
-  );
+function underlined(text: string, phrases: string[]) {
+  const hits = phrases
+    .map((p) => [text.indexOf(p), p] as const)
+    .filter(([at]) => at >= 0)
+    .sort((a, b) => a[0] - b[0]);
+  if (!hits.length) return text;
+  const out: ReactNode[] = [];
+  let pos = 0;
+  for (const [at, p] of hits) {
+    if (at < pos) continue;
+    out.push(text.slice(pos, at), <u key={at} className="read-underline">{p}</u>);
+    pos = at + p.length;
+  }
+  out.push(text.slice(pos));
+  return <>{out}</>;
 }

@@ -77,7 +77,7 @@ export type TutorView = {
   faded?: string[];
   /** 건너뛰어도 되는 부분 — 음영 */
   shaded?: string[];
-  /** ❓ 개념 말풍선 */
+  /** ❓ 개념 — 문장 아래 칩. 누르면 참고 설명 */
   concepts?: { en: string; title: string; text: string }[];
   /** 💡 요령 말풍선 */
   tips?: { label: string; text: string }[];
@@ -95,7 +95,7 @@ export type TutorView = {
   /** false면 아래 입력창을 숨긴다 — 버튼으로만 답하는 화면에서 (기본은 보인다) */
   allowInput?: boolean;
   /** 문장 학습 중 위의 「전체 지문」으로 여는 지문 */
-  fullPassage?: { sentences: string[]; underline: string | null } | null;
+  fullPassage?: { sentences: string[]; underline: string[] } | null;
   /** 이전·다음 문장으로 옮겨 갈 수 있나 */
   canPrevSentence?: boolean;
   canNextSentence?: boolean;
@@ -115,8 +115,8 @@ export type TutorView = {
     revealed: number;
     /** 지금 읽고 있는 문장 (0부터) */
     current: number;
-    /** 시험에서 밑줄 친 구절 */
-    underline: string | null;
+    /** 시험에서 밑줄 친 구절 (어휘 문제는 여러 개) */
+    underline: string[];
     /** false면 한 문장씩 드러내며 읽지 않는다 — 장으로 넘겨 보는 지문(+ 문제와 보기) */
     auto?: boolean;
     /** 장으로 넘겨 볼 때 마지막 장에 붙이는 시험 보기 */

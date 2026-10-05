@@ -831,14 +831,6 @@ mark.hl, .english-token.hl .english-word {
 /* 흐림 = 빼도 되는 삽입 / 음영 = 건너뛰어도 되는 부분 */
 .english .faded, .english-token.faded .english-word { opacity: .32; }
 .english .shaded, .english-token.shaded { background: rgba(138,127,136,.16); border-radius: 3px; }
-/* ❓ — 단어 위에 작게. 이 단어가 있는 줄만 위 간격이 벌어진다 */
-.english-token.concept { padding-top: .85em; }
-.concept-mark {
-  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  font-size: .5em; line-height: 1; pointer-events: none;
-}
-.gloss-tip.concept-tip { max-width: min(280px, 76cqw); font-weight: 500; line-height: 1.5; }
-.gloss-tip.concept-tip strong { color: #e2607d; }
 
 .method-steps {
   flex: none; display: flex; gap: 6px; margin: 8px 18px 0; padding: 0; list-style: none;
@@ -971,7 +963,7 @@ mark.hl, .english-token.hl .english-word {
 .study-panel.board {
   position: relative; background: #fff; border: 5px solid #d9dde3; border-radius: 12px;
   box-shadow: 0 6px 16px rgba(60,30,20,.1); padding: 10px 10px 8px; gap: 6px;
-  max-height: 34cqh; overflow-y: auto;
+  max-height: 42cqh; overflow-y: auto;
 }
 .board-magnets {
   position: absolute; top: 6px; right: 8px; width: 34px; height: 8px;
@@ -996,5 +988,34 @@ mark.hl, .english-token.hl .english-word {
 .board-group.right .board-word { color: #c0455f; }
 .board-word.quote { color: #b4630d !important; }
 .board-word.fresh { background: #ffe58a; border-color: #f2c33d; animation: pop .35s ease-out; }
+.board-group.left.solo, .board-group.left:has(.board-cluster) { flex: 1 1 0; }
+.board-cluster {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  border: 2px solid #8fd0c0; border-radius: 26px; padding: 7px 8px; background: #fff;
+}
+.board-cluster.fresh { animation: pop .35s ease-out; box-shadow: 0 0 0 3px #ffe58a; }
+.board-cluster small { font-size: 10.5px; color: #5b4f57; }
+.board-cluster .board-word { white-space: nowrap; font-size: 12px; }
+.board-arrow { font-size: 16px; line-height: 1; color: #2f7d6c; }
+.board-picture { display: block; width: 100%; max-height: 120px; object-fit: contain; }
+.study-panel.picture .board-words { margin-top: 2px; }
+.board-process {
+  align-self: center; flex: none; max-width: 64px; display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.board-process b { font-size: 22px; line-height: 1; color: #c0455f; }
+.board-process small {
+  font-size: 10.5px; font-weight: 700; line-height: 1.2; color: #5b4f57; text-align: center;
+  border-radius: 6px; padding: 1px 3px;
+}
+.board-process small.fresh { background: #ffe58a; animation: pop .35s ease-out; }
+.board-sort { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-top: 2px; }
+.board-sort-hint { font-size: 11px; color: #8a7f88; }
+.board-sort-chip {
+  display: inline-flex; gap: 4px; padding: 5px 7px; border-radius: 999px; border: 2px dashed #b9a6d8;
+  background: #f6f1ff; cursor: grab; touch-action: none; user-select: none; position: relative; z-index: 5;
+}
+.board-sort-chip.dragging { cursor: grabbing; box-shadow: 0 6px 16px rgba(60,30,20,.2); }
+.board-sort-chip .board-word { color: #6a4fa0; }
+.board-group.drop-over { box-shadow: 0 0 0 3px #ffe58a; }
 .board-between { align-self: center; flex: none; font-size: 20px; color: #8a7f88; }
 .board-caption { margin: 0; text-align: center; font-size: 12px; color: #5b4f57; }

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import type { ReactNode } from "react";
 import type { TutorView } from "../tutor/view";
 import { READ_NEXT_CMD } from "../tutor/policy/session";
 import { PassagePager } from "./PassagePager";
@@ -152,17 +153,21 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
 }
 
 /** 시험에서 밑줄 친 구절은 여기서도 밑줄 */
-function underlined(text: string, phrase: string | null) {
-  if (!phrase) return text;
-  const at = text.indexOf(phrase);
-  if (at < 0) return text;
-  return (
-    <>
-      {text.slice(0, at)}
-      <u className="read-underline">{phrase}</u>
-      {text.slice(at + phrase.length)}
-    </>
-  );
+function underlined(text: string, phrases: string[]) {
+  const hits = phrases
+    .map((p) => [text.indexOf(p), p] as const)
+    .filter(([at]) => at >= 0)
+    .sort((a, b) => a[0] - b[0]);
+  if (!hits.length) return text;
+  const out: ReactNode[] = [];
+  let pos = 0;
+  for (const [at, p] of hits) {
+    if (at < pos) continue;
+    out.push(text.slice(pos, at), <u key={at} className="read-underline">{p}</u>);
+    pos = at + p.length;
+  }
+  out.push(text.slice(pos));
+  return <>{out}</>;
 }
 
 function PlayIcon() {

@@ -110,7 +110,6 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           emphasis={view.emphasis ?? []}
           faded={view.faded ?? []}
           shaded={view.shaded ?? []}
-          concepts={view.concepts ?? []}
           onLookup={(word) => onObserve?.({ kind: "vocab_click", word })}
         />
         {view.properNouns.length > 0 ? (
@@ -151,9 +150,19 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </div>
       ) : null}
 
-      {view.tips?.length ? <TipChips tips={view.tips} /> : null}
+      {view.tips?.length || view.concepts?.length ? <TipChips tips={view.tips ?? []} concepts={view.concepts ?? []} /> : null}
 
-      {view.panel ? <StudyPanelView panel={view.panel} /> : null}
+      {view.panel ? (
+        <StudyPanelView
+          panel={view.panel}
+          // 끌어 넣기는 지금 고를 수 있는 보기일 때만 — 답한 뒤의 화면에서는 칩을 치운다
+          onPick={
+            !typing && view.panel.kind === "groups" && view.panel.sort && view.buttons.includes(view.panel.sort.right)
+              ? onSend
+              : undefined
+          }
+        />
+      ) : null}
 
       <div className="study-stage">
         {/* 지문을 읽는 동안은 할 말이 없다 — 빈 말풍선을 띄우지 않는다 */}
@@ -227,7 +236,6 @@ function GlossSentence({
   emphasis,
   faded,
   shaded,
-  concepts,
   onLookup,
 }: {
   sentence: string;
@@ -237,7 +245,6 @@ function GlossSentence({
   emphasis: string[];
   faded: string[];
   shaded: string[];
-  concepts: NonNullable<TutorView["concepts"]>;
   onLookup: (word: string) => void;
 }) {
   const [open, setOpen] = useState<number | null>(null);
@@ -298,7 +305,6 @@ function GlossSentence({
       else parts.push(span.text);
       return;
     }
-    const concept = concepts.find((c) => c.en.toLowerCase() === span.gloss!.en.toLowerCase());
     const noun = nouns.some(
       (n) => n.en === span.gloss!.en || n.en.replace(/\.$/, "") === span.text.replace(/\.$/, ""),
     );
@@ -306,10 +312,8 @@ function GlossSentence({
     parts.push(
       <span
         key={i}
-        className={`english-token${selected ? " open" : ""}${hl ? " hl" : ""}${marks}${concept ? " concept" : ""}`}
+        className={`english-token${selected ? " open" : ""}${hl ? " hl" : ""}${marks}`}
       >
-        {/* ❓ — 단어 위에 작게. 문장 안에 끼우지 않는다 */}
-        {concept ? <span className="concept-mark" aria-hidden="true">❓</span> : null}
         {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
         <button
           type="button"
@@ -329,18 +333,7 @@ function GlossSentence({
           바로 뒤 문장부호는 같은 칸에 넣어 단어와 같이 다니게 한다.
         */}
         {CLOSING.test(spans[i + 1]?.text ?? "") ? spans[i + 1]!.text : null}
-        {selected && concept ? (
-          <span
-            ref={tipRef}
-            className="gloss-tip concept-tip"
-            role="tooltip"
-            style={shift ? { transform: `translateX(calc(-50% + ${shift}px))` } : undefined}
-          >
-            <span>
-              <strong>{concept.title}</strong> {concept.text}
-            </span>
-          </span>
-        ) : selected ? (
+        {selected ? (
           <span
             ref={tipRef}
             className="gloss-tip"
@@ -370,10 +363,23 @@ function GlossSentence({
   return <p className="english">{parts}</p>;
 }
 
-/** 💡 요령 — 누르면 말풍선으로 열린다. 선생님 말이 아니라 참고 정보 */
-function TipChips({ tips }: { tips: NonNullable<TutorView["tips"]> }) {
+/**
+ * 문장 아래 칩 — ❓ 개념(단어 하나로 안 되는 말)과 💡 요령. 누르면 아래에 참고 설명이 열린다.
+ * 선생님 말이 아니라 참고 정보. (❓는 예전엔 단어 위에 붙였는데 자리를 너무 차지했다)
+ */
+function TipChips({
+  tips: tipList,
+  concepts,
+}: {
+  tips: NonNullable<TutorView["tips"]>;
+  concepts: NonNullable<TutorView["concepts"]>;
+}) {
+  const tips = [
+    ...concepts.map((c) => ({ icon: "❓", label: c.en, text: `${c.title} ${c.text}` })),
+    ...tipList.map((t) => ({ icon: "💡", ...t })),
+  ];
   const [open, setOpen] = useState<number | null>(null);
-  useEffect(() => setOpen(null), [tips]);
+  useEffect(() => setOpen(null), [tipList, concepts]);
   return (
     <div className="tip-chips">
       <div className="tip-row">
@@ -385,7 +391,7 @@ function TipChips({ tips }: { tips: NonNullable<TutorView["tips"]> }) {
             aria-expanded={open === i}
             onClick={() => setOpen(open === i ? null : i)}
           >
-            💡 {tip.label}
+            {tip.icon} {tip.label}
           </button>
         ))}
       </div>

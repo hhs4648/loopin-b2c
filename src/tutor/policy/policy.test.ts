@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { decideOnChoice, shouldShow, type DecideInput } from "./decide";
 import { stamps } from "./copy";
 import { allPolicyLessons, getPolicyCopy } from "./lessons";
-import { createPolicySession } from "./session";
+import { createPolicySession, underlinesOf } from "./session";
 import {
   emptyStudentState,
   recordPerformance,
@@ -160,7 +160,7 @@ for (const L of allPolicyLessons()) {
           for (const phrase of [...(step.faded ?? []), ...(step.shaded ?? [])]) expect(shown, step.id).toContain(phrase);
         }
       }
-      if (L.exam) expect(L.sentences.some((s) => s.text.includes(L.exam!.underline))).toBe(true);
+      for (const u of L.exam ? underlinesOf(L.exam) : []) expect(L.sentences.some((s) => s.text.includes(u)), u).toBe(true);
     });
 
     it.skipIf(!!L.passage_on_try)("처음부터 끝까지 혼자 맞히면 시험 문제를 풀고 「이해」로 끝난다", async () => {

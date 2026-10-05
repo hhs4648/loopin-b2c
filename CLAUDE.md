@@ -32,7 +32,7 @@
 - **수업 중에는 LLM을 부르지 않는다.** 대사는 brief에서 다정쌤 말투로 미리 뽑아 JSON에 둔다
   (`npm run policy:copy check|prompt|stamp`, 말투 규칙 `content/tutor/policy-copy/dajung/VOICE.md`)
 - 버튼으로만 답하는 수업이라 입력창은 없다
-- 표시: 흐림 = 빼도 되는 삽입, 음영 = 건너뛰어도 되는 문장, ❓ = 단어 위 개념 말풍선, 💡 = 요령 Tip
+- 표시: 흐림 = 빼도 되는 삽입, 음영 = 건너뛰어도 되는 문장, ❓ = 개념 칩, 💡 = 요령 Tip (둘 다 문장 아래 칩, 누르면 참고 설명)
 
 ## 코드
 
@@ -40,6 +40,7 @@
 - 화면: `src/components/` (ClassroomChat, SentenceStudy, ReadPassage, PassagePager, StudyPanel, WordCheck, MatchGame)
 - 수업 목록: `content/tutor/sets.json` — 지문을 추가하면 세트에도 넣어야 목록에 뜬다
 - 레슨 등록: `src/tutor/policy/lessons.ts` (레슨 한 줄 + 대사 한 줄)
+- 30번처럼 스크립트로 만든 레슨은 `scripts/lessons/`의 생성기를 고치고 다시 돌린다 (JSON을 직접 고치지 않는다)
 - 오답률: `content/tutor/exam-stats/모의고사_오답률.xlsx`
 - 공유용 한 장 HTML: `node scripts/build_share.mjs <lesson-id> share/<이름>.html`
 

@@ -87,18 +87,52 @@ export type MapPanel = {
  * 칠판 위 두 그룹 — 서로 다른 단어 무리를 한눈에. 문장을 지날 때마다 단어가 쌓인다.
  * `fresh`는 이번 문장에서 새로 붙은 단어, `quote`는 따옴표 친 말.
  */
+export type BoardGroup = {
+  label: string;
+  /**
+   * 같은 뜻으로 쓰인 단어 묶음 — 그룹 안의 작은 원으로 그린다 (`note`는 원 아래 한 줄).
+   * `arrow`를 주면 묶음과 `words` 사이에 그 화살표를 그린다
+   */
+  cluster?: { words: string[]; note?: string; fresh?: boolean };
+  arrow?: string;
+  words: { text: string; fresh?: boolean; quote?: boolean }[];
+};
+
 export type GroupsPanel = {
   kind: "groups";
   title?: string;
-  left: { label: string; words: { text: string; fresh?: boolean; quote?: boolean }[] };
-  right: { label: string; words: { text: string; fresh?: boolean; quote?: boolean }[] };
+  left: BoardGroup;
+  /** 아직 반대쪽이 안 나왔으면 비워 둔다 — 왼쪽 그룹만 그린다 */
+  right?: BoardGroup;
   /** 두 그룹 사이 표시 (기본 ≠) */
   between?: string;
+  /**
+   * 두 그룹 사이를 잇는 과정 — 그룹에 속하는 단어가 아니라 화살표 위에 쓴다
+   * (예: 오른쪽 → 왼쪽 「abstract away = leave out」). 있으면 `between` 기호 대신 화살표
+   */
+  process?: { arrow?: string; words: { text: string; fresh?: boolean }[] };
+  /**
+   * 학생이 직접 나눌 단어 — 칠판 아래 칩으로 두고, 끌어서 그룹에 넣으면 그 쪽 보기(`left`·`right`,
+   * choice 스텝의 보기 글)를 고른 것으로 친다. 아래 버튼으로 골라도 된다
+   */
+  sort?: { words: string[]; left: string; right: string };
   /** 칠판 아래 한 줄 — 이번 문장이 그룹에 무엇을 더했는지 */
   caption?: string;
 };
 
-export type StudyPanel = StructurePanel | MappingPanel | ContrastPanel | NotePanel | MapPanel | GroupsPanel;
+/** 칠판 그림 — 예시 장면을 그려 보이고, 아래에 그 장면의 단어를 붙인다 */
+export type PicturePanel = {
+  kind: "picture";
+  title?: string;
+  src: string;
+  alt: string;
+  words?: { text: string; fresh?: boolean; quote?: boolean }[];
+  /** 있으면 단어들을 원 하나로 묶고 원 아래에 이 말을 쓴다 (예: 그 네 개의 보통 명사) */
+  words_label?: string;
+  caption?: string;
+};
+
+export type StudyPanel = StructurePanel | MappingPanel | ContrastPanel | NotePanel | MapPanel | GroupsPanel | PicturePanel;
 export type PanelRef = StudyPanel | string;
 
 /* ── 스텝 ─────────────────────────────────────────────────────────── */
@@ -259,7 +293,7 @@ export type OptionalHelp = {
   brief: string;
 };
 
-/** ❓ 단어 위에 작게 붙는 개념 설명. 누르면 그 단어에서 말풍선이 열린다 (선생님 말 아님) */
+/** ❓ 개념 설명 — 문장 아래 💡 Tip 옆에 칩으로. 누르면 참고 설명이 열린다 (선생님 말 아님) */
 export type ConceptNote = { en: string; title: string; text: string };
 
 export type PolicySentence = {
@@ -283,8 +317,13 @@ export type ExamQuestion = {
   analysis_first?: boolean;
   /** 보기 단어 뜻 (보기 화면에서 단어를 누르면) */
   glosses?: WordGloss[];
-  /** 밑줄 친 구절. 이 구절이 든 문장을 문제 화면에 띄우고 노랗게 칠한다 */
-  underline: string;
+  /**
+   * 밑줄 친 구절. 이 구절이 든 문장을 문제 화면에 띄우고 노랗게 칠한다.
+   * 어휘 문제처럼 밑줄이 여러 개면 배열 — 그때 문제 화면에 띄울 문장은 `sentence`로 정한다
+   */
+  underline: string | string[];
+  /** 문제 화면에 띄울 문장 id (기본: 첫 밑줄이 든 문장) */
+  sentence?: number;
   /** EBS가 공개하는 오답률(%). 인트로에서 말한다 */
   wrong_rate?: number;
   /** 그 모의고사에서 오답률 순위 (Top N) — `content/tutor/exam-stats/모의고사_오답률.xlsx` */

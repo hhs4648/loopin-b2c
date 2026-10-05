@@ -19,6 +19,7 @@ import {
 } from "./student-state";
 import type {
   ChoiceStep,
+  ExamQuestion,
   Observation,
   PanelRef,
   PerformanceStatus,
@@ -29,6 +30,11 @@ import type {
   TeachingAction,
   UiObservation,
 } from "./types";
+
+/** 밑줄 친 구절들 — 밑줄 의미 문제는 하나, 어휘 문제는 여러 개 */
+export function underlinesOf(exam: ExamQuestion): string[] {
+  return Array.isArray(exam.underline) ? exam.underline : [exam.underline];
+}
 
 /**
  * Teaching Policy 레슨의 세션 — **Presentation 쪽 절반**이다 (명세 §2).
@@ -317,8 +323,12 @@ export function createPolicySession(
 
   /** 밑줄 친 구절이 든 문장 — 문제 화면에 띄운다 */
   function examSentence(): PolicySentence {
-    const u = lesson.exam!.underline;
-    return lesson.sentences.find((x) => x.text.includes(u)) ?? lesson.sentences[lesson.sentences.length - 1]!;
+    const ex = lesson.exam!;
+    const [u] = underlinesOf(ex);
+    return (
+      lesson.sentences.find((x) => (ex.sentence != null ? x.id === ex.sentence : x.text.includes(u!))) ??
+      lesson.sentences[lesson.sentences.length - 1]!
+    );
   }
 
   function askExam(when: "first" | "final") {
@@ -824,7 +834,7 @@ export function createPolicySession(
     const onStudy = inLesson || exam;
     const shown = inLesson ? (st.display ?? sen.text) : sen.text;
     // 밑줄 친 구절은 읽을 때도, 문제를 풀 때도 노랗게
-    const underline = lesson.exam && shown.includes(lesson.exam.underline) ? [lesson.exam.underline] : [];
+    const underline = lesson.exam ? underlinesOf(lesson.exam).filter((u) => shown.includes(u)) : [];
     // 한 줄에 못 들어가는 보기가 있으면 세로로 쌓는다
     const stack = s.buttons.some((b) => b.length > 18);
     return {
@@ -862,7 +872,7 @@ export function createPolicySession(
             sentences: lesson.sentences.map((x) => x.text),
             revealed: s.ri + 1,
             current: s.ri,
-            underline: lesson.exam?.underline ?? null,
+            underline: lesson.exam ? underlinesOf(lesson.exam) : [],
             auto: !lesson.passage_on_try,
             options: lesson.passage_on_try ? (lesson.exam?.options.map((o) => o.label) ?? null) : null,
           }
@@ -883,7 +893,7 @@ export function createPolicySession(
             ...sen.glosses,
             ...(sen.concepts ?? [])
               .filter((c) => !sen.glosses.some((g) => g.en.toLowerCase() === c.en.toLowerCase()))
-              .map((c) => ({ en: c.en, ko: c.title })),
+              .map((c) => ({ en: c.en, ko: c.title.replace(/:\s*$/, "") })),
           ]
         : [],
       faded: inLesson ? (st.faded ?? []) : [],
@@ -910,7 +920,7 @@ export function createPolicySession(
       allowInput: false,
       fullPassage:
         lesson.passage_on_try && (inLesson || exam)
-          ? { sentences: lesson.sentences.map((x) => x.text), underline: lesson.exam?.underline ?? null }
+          ? { sentences: lesson.sentences.map((x) => x.text), underline: lesson.exam ? underlinesOf(lesson.exam) : [] }
           : null,
       canPrevSentence: inLesson && s.si > 0,
       canNextSentence: inLesson,

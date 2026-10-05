@@ -1,0 +1,2060 @@
+{
+  "id": "moeui-2026-03-30-names-and-differences",
+  "kind": "policy",
+  "version": "0.2",
+  "source": "2026년 3월 고3 전국연합학력평가 영어 30번 (문맥상 낱말의 쓰임, 2점)",
+  "brief": {
+    "topic": "어휘 문제 푸는 법: 요지 → 두 그룹 → 밑줄 단어 맞춰 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "word_in_context",
+    "labels": [
+      "요지 잡기",
+      "두 그룹으로 나누기",
+      "밑줄 단어 맞춰 보기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "images": {
+    "method": {
+      "src": "/assets/vocab-method.svg",
+      "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "method1",
+      "type": "say",
+      "show_when": "first",
+      "button": "네",
+      "brief": {
+        "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "show_when": "first",
+      "button": "좋아요",
+      "brief": {
+        "say": "요지를 잡고, 단어를 두 그룹으로 나눈 뒤, 밑줄 단어가 맞는 쪽에 있는지 볼 거예요. 칠판 순서대로 해 볼게요."
+      }
+    },
+    {
+      "id": "method_short",
+      "type": "say",
+      "show_when": "later",
+      "button": "시작할게요",
+      "brief": {
+        "say": "칠판 순서대로 바로 시작해 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?",
+    "underline": [
+      "①differences",
+      "②acknowledges",
+      "③alike",
+      "④ignored",
+      "⑤co-categorized"
+    ],
+    "sentence": 1,
+    "analysis_first": true,
+    "glosses": [
+      {
+        "en": "differences",
+        "ko": "차이"
+      },
+      {
+        "en": "acknowledges",
+        "ko": "인정하다"
+      },
+      {
+        "en": "alike",
+        "ko": "비슷한, 같은"
+      },
+      {
+        "en": "ignored",
+        "ko": "무시되는"
+      },
+      {
+        "en": "co-categorized",
+        "ko": "한 범주로 같이 묶인"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "differences",
+        "keywords": [
+          "differences"
+        ],
+        "ko": "차이"
+      },
+      {
+        "id": "2",
+        "label": "acknowledges",
+        "keywords": [
+          "acknowledges"
+        ],
+        "ko": "인정한다",
+        "correct": true
+      },
+      {
+        "id": "3",
+        "label": "alike",
+        "keywords": [
+          "alike"
+        ],
+        "ko": "같은"
+      },
+      {
+        "id": "4",
+        "label": "ignored",
+        "keywords": [
+          "ignored"
+        ],
+        "ko": "무시되는"
+      },
+      {
+        "id": "5",
+        "label": "co-categorized",
+        "keywords": [
+          "co-categorized"
+        ],
+        "ko": "한 범주로 묶인"
+      }
+    ],
+    "brief": {
+      "ask": "밑줄 단어마다 지도의 어느 쪽 말인지 떠올려 봐요. 문장이 속한 쪽과 안 맞는 걸 골라요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 아니에요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "final_wrong": "정답은 ②예요. 'Lawn'은 여러 풀을 한데 묶는 이름이라, 차이를 인정하는 게 아니라 무시해요(neglects).",
+      "option_feedback": {
+        "1": "보통 명사는 이름이라 차이를 빠뜨려요. differences는 흐름에 맞아요.",
+        "3": "'No two … are alike'는 똑같은 두 송이가 없다는 말이에요. 하나하나 다르다는 흐름에 맞아요.",
+        "4": "보통 때는 차이를 무시해도 된다는 말이에요. 뒤의 'Not so … groundskeeper'가 그 반대 경우예요.",
+        "5": "무한한 정신은 풀잎을 한데 묶을 필요가 없다는 말이에요. 'need not'과 함께 흐름에 맞아요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 지문이 다시 보고 싶으면 아래 버튼을 눌러요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "conceptualize",
+        "ko": "개념화하다"
+      },
+      {
+        "en": "categorize",
+        "ko": "범주화하다"
+      },
+      {
+        "en": "abstract away from",
+        "ko": "~에서 떼어 내다, 무시하다"
+      },
+      {
+        "en": "particularities",
+        "ko": "세부 특징"
+      },
+      {
+        "en": "ordinary noun",
+        "ko": "보통 명사"
+      },
+      {
+        "en": "co-categorize",
+        "ko": "한 범주로 같이 묶다"
+      },
+      {
+        "en": "individuality",
+        "ko": "개별성"
+      },
+      {
+        "en": "uniqueness",
+        "ko": "고유성"
+      },
+      {
+        "en": "uniformly",
+        "ko": "균일하게"
+      },
+      {
+        "en": "practical",
+        "ko": "실용적인"
+      },
+      {
+        "en": "groundskeeper",
+        "ko": "경기장 관리인"
+      },
+      {
+        "en": "constituent",
+        "ko": "구성하는"
+      },
+      {
+        "en": "infinite",
+        "ko": "무한한"
+      },
+      {
+        "en": "distinct",
+        "ko": "뚜렷이 다른"
+      }
+    ],
+    "options": [
+      {
+        "en": "difference",
+        "ko": "차이"
+      },
+      {
+        "en": "acknowledge",
+        "ko": "인정하다"
+      },
+      {
+        "en": "alike",
+        "ko": "비슷한, 같은"
+      },
+      {
+        "en": "ignore",
+        "ko": "무시하다"
+      },
+      {
+        "en": "neglect",
+        "ko": "무시하다, 소홀히 하다"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Every time you conceptualize, categorize, and put a name on something that is not a proper name, you abstract away from its particularities.",
+      "model_translation": "고유 명사가 아닌 이름을 붙여 무언가를 개념화하고, 범주화하고, 명명할 때마다, 우리는 그 대상의 세부 특징을 무시한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "conceptualize",
+          "ko": "개념화하다"
+        },
+        {
+          "en": "categorize",
+          "ko": "범주화하다, 분류하다"
+        },
+        {
+          "en": "put a name on",
+          "ko": "~에 이름을 붙이다"
+        },
+        {
+          "en": "proper name",
+          "ko": "고유명사 · 하나뿐인 대상의 이름이에요 (철수, 서울)"
+        },
+        {
+          "en": "abstract away from",
+          "ko": "~에서 떼어 내다 · 여기서는 '무시하다'로 이해하면 돼요"
+        },
+        {
+          "en": "particularities",
+          "ko": "세부 특징 · 하나하나가 가진 특성"
+        },
+        {
+          "en": "Every time",
+          "ko": "~할 때마다"
+        },
+        {
+          "en": "something",
+          "ko": "무언가"
+        }
+      ],
+      "emphasis": [
+        "conceptualize",
+        "categorize",
+        "put a name on",
+        "abstract away from",
+        "particularities"
+      ],
+      "steps": [
+        {
+          "id": "s1_group",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "conceptualize, categorize, put a name on은 여기서 모두 '이름 붙여 묶는다'는 같은 뜻이에요. 셋 중 하나만 이해해도 충분해요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ],
+                "fresh": true
+              },
+              "words": []
+            }
+          },
+          "highlight": [
+            "conceptualize",
+            "categorize",
+            "put a name on"
+          ],
+          "faded": [
+            "that is not a proper name"
+          ]
+        },
+        {
+          "id": "s1_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이름을 붙이면 'abstract away from its particularities' 한대요. particularities는 어느 그룹일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요.",
+              "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요."
+            ],
+            "explain": "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities는 떨어져 나가니, 같은 그룹이 아니에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 이름 붙이기"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 반대쪽",
+              "correct": true
+            }
+          ],
+          "method": 0,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": []
+            },
+            "right": {
+              "label": "반대쪽",
+              "words": []
+            },
+            "between": "",
+            "sort": {
+              "words": [
+                "particularities"
+              ],
+              "left": "왼쪽 · 이름 붙이기",
+              "right": "오른쪽 · 반대쪽"
+            }
+          },
+          "highlight": [
+            "abstract away from its particularities"
+          ],
+          "faded": [
+            "that is not a proper name"
+          ]
+        },
+        {
+          "id": "s1_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이름을 붙여 묶으면 하나하나의 특징은 무시된다, 이게 이 글의 요지예요. 오른쪽에서 왼쪽으로 가는 화살표, 이 과정이 'abstract away'예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": []
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities",
+                  "fresh": true
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "하나하나의 특징 → 이름으로 묶이며 무시"
+          },
+          "faded": [
+            "that is not a proper name"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Picture daisies and clover flowers in a lawn.",
+      "model_translation": "잔디에 있는 데이지와 클로버 꽃을 떠올려 보라.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Picture",
+          "ko": "상상해 보다 · 여기서는 '그림'이 아니라 동사예요"
+        },
+        {
+          "en": "daisies",
+          "ko": "데이지 꽃"
+        },
+        {
+          "en": "clover",
+          "ko": "클로버"
+        },
+        {
+          "en": "lawn",
+          "ko": "잔디밭"
+        },
+        {
+          "en": "flowers",
+          "ko": "꽃"
+        }
+      ],
+      "emphasis": [
+        "Picture"
+      ],
+      "steps": [
+        {
+          "id": "s2_picture",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기서 'Picture'는 '그림'이 아니라 '상상해 보다'라는 동사예요. 잔디밭에 핀 데이지와 클로버를 한번 상상해 보래요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/daisies-clover.svg",
+            "alt": "잔디밭에 핀 데이지와 클로버 꽃",
+            "words": [
+              {
+                "text": "“daisies”",
+                "quote": true,
+                "fresh": true
+              },
+              {
+                "text": "“clover”",
+                "quote": true,
+                "fresh": true
+              },
+              {
+                "text": "“flower”",
+                "quote": true,
+                "fresh": true
+              },
+              {
+                "text": "“lawn”",
+                "quote": true,
+                "fresh": true
+              }
+            ]
+          },
+          "highlight": [
+            "Picture"
+          ],
+          "tips": [
+            {
+              "label": "명령문",
+              "text": "문장 맨 앞에 주어 없이 동사가 오면 명령문이에요. '~해 봐라'로 읽으면 돼요. 여기선 'Picture …'가 '~을 상상해 봐라'예요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Those four ordinary nouns leave out their ①differences.",
+      "model_translation": "그 네 개의 보통 명사는 그것들의 차이를 생략한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Those four ordinary nouns",
+          "ko": "그 네 개의 보통 명사 · 앞 문장의 daisies, clover, flower, lawn이에요"
+        },
+        {
+          "en": "ordinary nouns",
+          "ko": "보통 명사"
+        },
+        {
+          "en": "leave out",
+          "ko": "빠뜨리다, 생략하다"
+        },
+        {
+          "en": "differences",
+          "ko": "차이"
+        },
+        {
+          "en": "their",
+          "ko": "그것들의"
+        }
+      ],
+      "emphasis": [
+        "ordinary nouns",
+        "leave out"
+      ],
+      "steps": [
+        {
+          "id": "s3_nouns",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'Those four ordinary nouns'는 앞 문장의 네 단어예요. daisies, clover, flower, lawn 모두 보통 명사, 즉 이름이에요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/daisies-clover.svg",
+            "alt": "잔디밭에 핀 데이지와 클로버 꽃",
+            "words": [
+              {
+                "text": "“daisies”",
+                "quote": true
+              },
+              {
+                "text": "“clover”",
+                "quote": true
+              },
+              {
+                "text": "“flower”",
+                "quote": true
+              },
+              {
+                "text": "“lawn”",
+                "quote": true
+              }
+            ],
+            "words_label": "Those four ordinary nouns · 그 네 개의 보통 명사"
+          },
+          "highlight": [
+            "Those four ordinary nouns"
+          ]
+        },
+        {
+          "id": "s3_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 네 이름은 그것들의 differences를 빠뜨린대요(leave out). differences는 어느 그룹일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "1문장에서 이름을 붙이면 무엇이 떨어져 나갔는지 떠올려 봐요.",
+              "1문장에서 이름을 붙이면 무엇이 떨어져 나갔는지 떠올려 봐요."
+            ],
+            "explain": "1문장에서 이름을 붙이면 무엇이 떨어져 나갔는지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "이름은 차이를 빠뜨려요(leave out). 이름 쪽이 아니라, 빠져나가는 particularities와 같은 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 이름 붙이기"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 하나하나 다름",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                }
+              ]
+            },
+            "sort": {
+              "words": [
+                "differences"
+              ],
+              "left": "왼쪽 · 이름 붙이기",
+              "right": "오른쪽 · 하나하나 다름"
+            }
+          },
+          "highlight": [
+            "leave out their ①differences"
+          ]
+        },
+        {
+          "id": "s3_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'leave out'은 1문장의 'abstract away'와 같은 말, 같은 화살표예요. 데이지도 송이마다 모양이 다른데, 다 '데이지'라고 부르면 그 차이는 빠져 버려요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences",
+                  "fresh": true
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "abstract away = leave out"
+          }
+        },
+        {
+          "id": "s3_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그래서 ①differences는 문맥에 맞아요. 이름은 하나하나의 차이를 빠뜨린다는 1문장 요지와 그대로 이어지거든요."
+          },
+          "method": 2,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "① differences → 요지와 맞아요 ✓"
+          },
+          "highlight": [
+            "①differences"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "“Flower” co-categorizes the white and yellow types with the beige ones, and all the many other sorts to be found elsewhere.",
+      "model_translation": "'꽃'이라는 말은 흰색과 노란색 종류를 베이지색 종류, 그리고 다른 곳의 수많은 종류와 함께 하나의 범주로 묶는다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "co-categorizes",
+          "ko": "한 범주로 같이 묶다"
+        },
+        {
+          "en": "types",
+          "ko": "종류"
+        },
+        {
+          "en": "beige",
+          "ko": "베이지색"
+        },
+        {
+          "en": "sorts",
+          "ko": "종류"
+        },
+        {
+          "en": "elsewhere",
+          "ko": "다른 곳에서"
+        },
+        {
+          "en": "Flower",
+          "ko": "꽃"
+        },
+        {
+          "en": "white and yellow",
+          "ko": "흰색과 노란색"
+        },
+        {
+          "en": "ones",
+          "ko": "것들 · 여기서는 types(종류)를 받아요"
+        },
+        {
+          "en": "many",
+          "ko": "많은"
+        },
+        {
+          "en": "other",
+          "ko": "다른"
+        },
+        {
+          "en": "to be found",
+          "ko": "발견되는"
+        }
+      ],
+      "emphasis": [
+        "co-categorizes"
+      ],
+      "steps": [
+        {
+          "id": "s4_skim",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "앞 문장의 반복이에요. 'Flower'도 세세한 차이를 무시하고 꽃을 다 묶어요. 앞을 이해했다면 깊게 안 읽어도 돼요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”",
+                  "fresh": true
+                },
+                {
+                  "text": "co-categorize",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "'꽃' → 색이 달라도 한데 묶음"
+          },
+          "shaded": [
+            "“Flower” co-categorizes the white and yellow types with the beige ones, and all the many other sorts to be found elsewhere."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "“Lawn” ②acknowledges the varieties of grass and all the nongrassy plants that are there.",
+      "model_translation": "'잔디'라는 말은 그곳의 다양한 풀과 풀이 아닌 모든 식물을 인정한다(→ 무시한다).",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "acknowledges",
+          "ko": "인정하다"
+        },
+        {
+          "en": "varieties",
+          "ko": "다양한 종류"
+        },
+        {
+          "en": "nongrassy plants",
+          "ko": "풀이 아닌 식물"
+        },
+        {
+          "en": "Lawn",
+          "ko": "잔디"
+        },
+        {
+          "en": "grass",
+          "ko": "풀"
+        },
+        {
+          "en": "that are there",
+          "ko": "거기 있는"
+        }
+      ],
+      "emphasis": [
+        "varieties"
+      ],
+      "steps": [
+        {
+          "id": "s5_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이번엔 'Lawn(잔디)'이라는 이름이에요. 4문장의 'Flower'처럼 이름이라면, 다양한 풀들은 어떻게 될까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요.",
+              "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요."
+            ],
+            "explain": "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "다양함이 드러나요"
+            },
+            {
+              "id": "o1",
+              "label": "한데 묶여요",
+              "correct": true
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "s5_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'Lawn'도 이름이니까 왼쪽 그룹이에요. 그럼 ②acknowledges(인정한다)가 어느 쪽 말인지 기억해 둬요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”"
+                },
+                {
+                  "text": "co-categorize"
+                },
+                {
+                  "text": "“Lawn”",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                },
+                {
+                  "text": "varieties",
+                  "fresh": true
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "'잔디' → 여러 풀을 한데 묶음"
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Zoom in, and you will find individuality and uniqueness everywhere.",
+      "model_translation": "확대해 보면, 개별성과 고유성을 어디에서나 발견할 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Zoom in",
+          "ko": "확대하다, 가까이 보다"
+        },
+        {
+          "en": "individuality",
+          "ko": "개별성 · 하나하나가 따로인 성질"
+        },
+        {
+          "en": "uniqueness",
+          "ko": "고유성 · 하나뿐인 성질"
+        },
+        {
+          "en": "everywhere",
+          "ko": "어디에서나"
+        },
+        {
+          "en": "find",
+          "ko": "발견하다"
+        }
+      ],
+      "emphasis": [
+        "Zoom in",
+        "individuality",
+        "uniqueness"
+      ],
+      "steps": [
+        {
+          "id": "s6_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "가까이 보면(Zoom in) individuality와 uniqueness가 보인대요. 이 두 단어는 어느 그룹일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 쪽일지, 하나하나 따로인 쪽일지 생각해 봐요.",
+              "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 쪽일지, 하나하나 따로인 쪽일지 생각해 봐요."
+            ],
+            "explain": "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 쪽일지, 하나하나 따로인 쪽일지 생각해 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 게 아니라 하나하나 따로라는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 이름 붙이기"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 하나하나 다름",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”"
+                },
+                {
+                  "text": "co-categorize"
+                },
+                {
+                  "text": "“Lawn”"
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                },
+                {
+                  "text": "varieties"
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "sort": {
+              "words": [
+                "individuality",
+                "uniqueness"
+              ],
+              "left": "왼쪽 · 이름 붙이기",
+              "right": "오른쪽 · 하나하나 다름"
+            }
+          },
+          "highlight": [
+            "individuality and uniqueness"
+          ]
+        },
+        {
+          "id": "s6_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "가까이 들여다보면 하나하나 다 달라요. 그래서 개별성과 고유성은 오른쪽 그룹이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”"
+                },
+                {
+                  "text": "co-categorize"
+                },
+                {
+                  "text": "“Lawn”"
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                },
+                {
+                  "text": "varieties"
+                },
+                {
+                  "text": "individuality",
+                  "fresh": true
+                },
+                {
+                  "text": "uniqueness",
+                  "fresh": true
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "가까이 보면 → 하나하나 다름"
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "No two daisies, no two clovers, are exactly ③alike, and yet they present to a quick glance a carpet patterned uniformly enough.",
+      "model_translation": "어떤 데이지 두 송이도, 어떤 클로버 두 개도 정확히 같지 않지만, 힐끗 보면 충분히 균일한 무늬의 카펫으로 보인다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "alike",
+          "ko": "비슷한, 같은"
+        },
+        {
+          "en": "and yet",
+          "ko": "그러나 · yet이 문장 앞에 오면 '그러나'예요"
+        },
+        {
+          "en": "present",
+          "ko": "(모습을) 보이다, 나타내다 · 여기서는 '~처럼 보이다'"
+        },
+        {
+          "en": "to a quick glance",
+          "ko": "힐끗 보기에"
+        },
+        {
+          "en": "quick glance",
+          "ko": "힐끗 보기"
+        },
+        {
+          "en": "patterned",
+          "ko": "무늬가 있는"
+        },
+        {
+          "en": "uniformly",
+          "ko": "균일하게"
+        },
+        {
+          "en": "No two daisies",
+          "ko": "어떤 데이지 두 송이도 ~않다"
+        },
+        {
+          "en": "no two clovers",
+          "ko": "어떤 클로버 두 개도 ~않다"
+        },
+        {
+          "en": "exactly",
+          "ko": "정확히"
+        },
+        {
+          "en": "carpet",
+          "ko": "카펫, 양탄자"
+        },
+        {
+          "en": "enough",
+          "ko": "충분히"
+        }
+      ],
+      "emphasis": [
+        "and yet",
+        "uniformly"
+      ],
+      "steps": [
+        {
+          "id": "s7_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'No two daisies … are exactly alike'는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요.",
+              "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요."
+            ],
+            "explain": "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요.",
+              "o1": "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "모든 데이지가 똑같다"
+            },
+            {
+              "id": "o1",
+              "label": "두 송이만 똑같다"
+            },
+            {
+              "id": "o2",
+              "label": "똑같은 두 송이는 없다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "tips": [
+            {
+              "label": "No two A are alike",
+              "text": "'똑같은 A 두 개는 없다', 즉 'A는 하나하나 다 다르다'예요. 부정이 주어에 붙어서 거꾸로 읽기 쉬워요."
+            }
+          ]
+        },
+        {
+          "id": "s7_yet",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'yet'이 문장 앞에 나오면 '그러나'라는 뜻이에요. 'and yet' 앞은 '다 다르다', 뒤는 '균일해 보인다'로 서로 반대예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "and yet"
+          ],
+          "tips": [
+            {
+              "label": "to a quick glance",
+              "text": "'to + 보는 눈'은 '~가 보기에'예요 (to the naked eye: 맨눈으로 보기에). 그래서 'they present to a quick glance a carpet'은 '힐끗 보기에 그것들은 카펫의 모습을 보인다', 즉 '힐끗 보면 카펫처럼 보인다'예요."
+            }
+          ]
+        },
+        {
+          "id": "s7_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "가까이 보면 다 다르지만, 힐끗 보면 균일한(uniformly) 카펫처럼 보인대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”"
+                },
+                {
+                  "text": "co-categorize"
+                },
+                {
+                  "text": "“Lawn”"
+                },
+                {
+                  "text": "quick glance",
+                  "fresh": true
+                },
+                {
+                  "text": "uniformly",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                },
+                {
+                  "text": "varieties"
+                },
+                {
+                  "text": "individuality"
+                },
+                {
+                  "text": "uniqueness"
+                },
+                {
+                  "text": "no two … alike",
+                  "fresh": true
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "가까이 → 다름 ↔ 힐끗 → 균일"
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "For most practical purposes, the differences can be ④ignored—making a daisy chain, sunbathing, and the like.",
+      "model_translation": "데이지 꽃 사슬 만들기, 일광욕 같은 대부분의 실용적인 목적에서는 그 차이를 무시할 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "practical purposes",
+          "ko": "실용적인 목적"
+        },
+        {
+          "en": "ignored",
+          "ko": "무시되는"
+        },
+        {
+          "en": "daisy chain",
+          "ko": "데이지 꽃목걸이"
+        },
+        {
+          "en": "sunbathing",
+          "ko": "일광욕"
+        },
+        {
+          "en": "and the like",
+          "ko": "~ 등"
+        },
+        {
+          "en": "For most",
+          "ko": "대부분의 ~에서는"
+        },
+        {
+          "en": "differences",
+          "ko": "차이"
+        },
+        {
+          "en": "can be",
+          "ko": "~될 수 있다"
+        },
+        {
+          "en": "making",
+          "ko": "만들기"
+        }
+      ],
+      "emphasis": [
+        "practical purposes"
+      ],
+      "steps": [
+        {
+          "id": "s8_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "대부분의 실용적인 목적(practical purposes)에서는, 풀과 꽃의 차이가 중요할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?",
+              "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?"
+            ],
+            "explain": "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?"
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "중요해요"
+            },
+            {
+              "id": "o1",
+              "label": "상관없어요",
+              "correct": true
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "s8_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "보통 때는 차이를 무시해도 돼요. 다음 문장의 'Not so'가 그 반대 경우예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”"
+                },
+                {
+                  "text": "co-categorize"
+                },
+                {
+                  "text": "“Lawn”"
+                },
+                {
+                  "text": "quick glance"
+                },
+                {
+                  "text": "uniformly"
+                },
+                {
+                  "text": "practical purposes",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                },
+                {
+                  "text": "varieties"
+                },
+                {
+                  "text": "individuality"
+                },
+                {
+                  "text": "uniqueness"
+                },
+                {
+                  "text": "no two … alike"
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "보통 때 → 차이 무시해도 됨"
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Not so, however, for the groundskeeper of a sports stadium, where the constituent grasses and their stages of growth really do matter.",
+      "model_translation": "그러나 스포츠 경기장 관리인에게는 그렇지 않은데, 그곳에서는 잔디를 이루는 풀들과 그 성장 단계가 정말 중요하다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Not so",
+          "ko": "그렇지 않다 · 앞 문장의 '무시해도 된다'를 뒤집어요"
+        },
+        {
+          "en": "groundskeeper",
+          "ko": "경기장 관리인"
+        },
+        {
+          "en": "stadium",
+          "ko": "경기장"
+        },
+        {
+          "en": "constituent",
+          "ko": "구성하는"
+        },
+        {
+          "en": "stages of growth",
+          "ko": "성장 단계"
+        },
+        {
+          "en": "really do matter",
+          "ko": "정말 중요하다"
+        },
+        {
+          "en": "however",
+          "ko": "그러나"
+        },
+        {
+          "en": "sports",
+          "ko": "스포츠"
+        },
+        {
+          "en": "where",
+          "ko": "그곳에서는"
+        },
+        {
+          "en": "grasses",
+          "ko": "풀들"
+        }
+      ],
+      "emphasis": [
+        "Not so",
+        "groundskeeper",
+        "really do matter"
+      ],
+      "steps": [
+        {
+          "id": "s9_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'Not so'는 '~에게는 그렇지 않다'예요. 경기장 관리인에게는 풀 종류와 자라는 단계가 정말 중요해요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”"
+                },
+                {
+                  "text": "co-categorize"
+                },
+                {
+                  "text": "“Lawn”"
+                },
+                {
+                  "text": "quick glance"
+                },
+                {
+                  "text": "uniformly"
+                },
+                {
+                  "text": "practical purposes"
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                },
+                {
+                  "text": "varieties"
+                },
+                {
+                  "text": "individuality"
+                },
+                {
+                  "text": "uniqueness"
+                },
+                {
+                  "text": "no two … alike"
+                },
+                {
+                  "text": "groundskeeper",
+                  "fresh": true
+                },
+                {
+                  "text": "really do matter",
+                  "fresh": true
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "관리인에겐 → 차이가 중요"
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "And to an infinite mind, with infinite memory, each blade of grass, with its own distinct life history, need not be ⑤co-categorized with all its fellows.",
+      "model_translation": "그리고 무한한 기억력을 지닌 무한한 정신에게, 고유한 생애를 지닌 각각의 풀잎은 다른 모든 풀잎과 한 범주로 묶일 필요가 없다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "infinite mind",
+          "ko": "무한한 정신"
+        },
+        {
+          "en": "blade",
+          "ko": "(풀의) 잎"
+        },
+        {
+          "en": "distinct",
+          "ko": "뚜렷이 다른"
+        },
+        {
+          "en": "need not be",
+          "ko": "~될 필요가 없다"
+        },
+        {
+          "en": "co-categorized",
+          "ko": "한 범주로 같이 묶인"
+        },
+        {
+          "en": "fellows",
+          "ko": "같은 무리, 동료"
+        },
+        {
+          "en": "grass",
+          "ko": "풀"
+        },
+        {
+          "en": "infinite memory",
+          "ko": "무한한 기억력"
+        },
+        {
+          "en": "each",
+          "ko": "각각의"
+        },
+        {
+          "en": "life history",
+          "ko": "생애, 살아온 이력"
+        },
+        {
+          "en": "its own",
+          "ko": "그 자신의"
+        }
+      ],
+      "emphasis": [
+        "infinite mind",
+        "need not be"
+      ],
+      "steps": [
+        {
+          "id": "s10_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "무한한 정신(infinite mind)이라면, 풀잎을 모두 한 범주로 묶어야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'need not be'를 봐요. 'must'와 반대예요.",
+              "'need not be'를 봐요. 'must'와 반대예요."
+            ],
+            "explain": "'need not be'를 봐요. 'must'와 반대예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'need not be'를 봐요. 'must'와 반대예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "묶어야 해요"
+            },
+            {
+              "id": "o1",
+              "label": "묶을 필요가 없어요",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "faded": [
+            ", with infinite memory,",
+            ", with its own distinct life history,"
+          ]
+        },
+        {
+          "id": "s10_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "기억력이 무한하면 풀잎 하나하나를 따로 기억할 수 있어요. 그래서 한데 묶을 필요가 없다는 거예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”"
+                },
+                {
+                  "text": "co-categorize"
+                },
+                {
+                  "text": "“Lawn”"
+                },
+                {
+                  "text": "quick glance"
+                },
+                {
+                  "text": "uniformly"
+                },
+                {
+                  "text": "practical purposes"
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                },
+                {
+                  "text": "varieties"
+                },
+                {
+                  "text": "individuality"
+                },
+                {
+                  "text": "uniqueness"
+                },
+                {
+                  "text": "no two … alike"
+                },
+                {
+                  "text": "groundskeeper"
+                },
+                {
+                  "text": "really do matter"
+                },
+                {
+                  "text": "infinite mind",
+                  "fresh": true
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "무한한 정신 → 묶을 필요 없음"
+          },
+          "faded": [
+            ", with infinite memory,",
+            ", with its own distinct life history,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Each could have its own name, as you yourself do.",
+      "model_translation": "여러분 자신이 그러하듯, 각각은 자기만의 이름을 가질 수 있다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "its own name",
+          "ko": "자기만의 이름 · 고유명사처럼"
+        },
+        {
+          "en": "as you yourself do",
+          "ko": "여러분 자신이 그러하듯"
+        },
+        {
+          "en": "Each",
+          "ko": "각각"
+        },
+        {
+          "en": "could have",
+          "ko": "가질 수 있다"
+        }
+      ],
+      "emphasis": [
+        "its own name"
+      ],
+      "steps": [
+        {
+          "id": "s11_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "풀잎마다 자기 이름을 가질 수 있대요. 여러분이 고유한 이름을 가진 것처럼요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "이름 붙이기 · 같게 묶음",
+              "cluster": {
+                "words": [
+                  "conceptualize",
+                  "categorize",
+                  "put a name on"
+                ]
+              },
+              "words": [
+                {
+                  "text": "four ordinary nouns"
+                },
+                {
+                  "text": "“Flower”"
+                },
+                {
+                  "text": "co-categorize"
+                },
+                {
+                  "text": "“Lawn”"
+                },
+                {
+                  "text": "quick glance"
+                },
+                {
+                  "text": "uniformly"
+                },
+                {
+                  "text": "practical purposes"
+                }
+              ]
+            },
+            "right": {
+              "label": "하나하나 다름",
+              "words": [
+                {
+                  "text": "particularities"
+                },
+                {
+                  "text": "differences"
+                },
+                {
+                  "text": "varieties"
+                },
+                {
+                  "text": "individuality"
+                },
+                {
+                  "text": "uniqueness"
+                },
+                {
+                  "text": "no two … alike"
+                },
+                {
+                  "text": "groundskeeper"
+                },
+                {
+                  "text": "really do matter"
+                },
+                {
+                  "text": "infinite mind"
+                },
+                {
+                  "text": "its own name",
+                  "fresh": true
+                }
+              ]
+            },
+            "process": {
+              "arrow": "←",
+              "words": [
+                {
+                  "text": "abstract away"
+                },
+                {
+                  "text": "= leave out"
+                }
+              ]
+            },
+            "caption": "자기만의 이름 = 하나하나 다름"
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

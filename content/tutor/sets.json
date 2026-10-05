@@ -26,6 +26,15 @@
       "lessons": [
         "moeui-2026-03-21-music-researchers"
       ]
+    },
+    {
+      "id": "moeui-2026-03-30",
+      "collection": "moeui-2026-03",
+      "title": "30번 문제",
+      "subtitle": "어휘 — 이름을 붙이면 차이가 사라진다",
+      "lessons": [
+        "moeui-2026-03-30-names-and-differences"
+      ]
     }
   ]
 }
