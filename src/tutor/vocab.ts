@@ -10,6 +10,8 @@ export type VocabEntry = {
   ko: string;
   /** 어느 문장에서 저장했나 — 나중에 문맥과 같이 보여 주려고 */
   sentence: string;
+  /** 어느 지문에서 나온 단어인가 — 지문별 단어 목록을 만든다 */
+  source?: string;
   savedAt: string;
 };
 
@@ -50,6 +52,17 @@ export function toggleVocab(
   const next = isSaved(entries, entry.en)
     ? entries.filter((e) => keyOf(e.en) !== keyOf(entry.en))
     : [...entries, { ...entry, savedAt: new Date().toISOString() }];
+  save(next);
+  return next;
+}
+
+/** 마무리 단어 체크에서 고른 단어들을 한 번에 넣는다. 이미 있는 단어는 그대로 둔다 */
+export function addVocab(words: Omit<VocabEntry, "savedAt">[]): VocabEntry[] {
+  const entries = loadVocab();
+  const next = [...entries];
+  for (const w of words) {
+    if (!isSaved(next, w.en)) next.push({ ...w, savedAt: new Date().toISOString() });
+  }
   save(next);
   return next;
 }

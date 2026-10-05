@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import type { TutorView } from "../tutor/engine";
 import { READ_NEXT_CMD } from "../tutor/policy/session";
+import { PassagePager } from "./PassagePager";
 
 type Props = {
   view: TutorView;
@@ -47,6 +48,8 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
     다음 문장을 부르지 않는다.
   */
   useEffect(() => {
+    // 전체를 한 번에 보여 주는 지문(바로 풀기)은 혼자 읽어 나가지 않는다
+    if (p.auto === false) return;
     let live = true;
     let timer = 0;
     let done = false;
@@ -85,11 +88,15 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
         <button type="button" className="icon-btn dark" title="학습 종료" onClick={onClose}>
           <CloseIcon />
         </button>
-        <div className="read-bar">
-          {p.sentences.map((_, i) => (
-            <i key={i} className={i < p.revealed ? "on" : ""} />
-          ))}
-        </div>
+        {p.auto === false ? (
+          <span className="read-label">문제 보기</span>
+        ) : (
+          <div className="read-bar">
+            {p.sentences.map((_, i) => (
+              <i key={i} className={i < p.revealed ? "on" : ""} />
+            ))}
+          </div>
+        )}
       </header>
 
       <div className="read-scroll">
@@ -97,6 +104,13 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
         <h1 className="read-title">{p.title}</h1>
         {view.message ? <p className="read-note">{view.message}</p> : null}
 
+        {/* 넘겨 보는 지문 — 문제 제목 아래 지문을 장으로, 마지막 장에 보기 */}
+        {p.auto === false ? (
+          <PassagePager sentences={p.sentences} underline={p.underline} options={p.options} />
+        ) : null}
+
+        {/* (.read-list는 display:flex라 hidden 속성이 안 먹는다 — 아예 그리지 않는다) */}
+        {p.auto !== false ? (
         <div className="read-list">
           {p.sentences.slice(0, p.revealed).map((text, i) => (
             <div
@@ -118,11 +132,17 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
             </div>
           ))}
         </div>
+        ) : null}
       </div>
 
       <div className="read-dock">
-        {view.buttons.map((label) => (
-          <button key={label} type="button" className="read-continue" onClick={() => onSend(label)}>
+        {view.buttons.map((label, i) => (
+          <button
+            key={label}
+            type="button"
+            className={`read-continue${i > 0 ? " second" : ""}`}
+            onClick={() => onSend(label)}
+          >
             {label}
           </button>
         ))}

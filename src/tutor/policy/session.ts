@@ -4,6 +4,8 @@ import { UNKNOWN_BTN, HINT_BTN, type PointRecord, type TutorView } from "../engi
 import { lookupGloss } from "../glosses";
 import { isUnknownInput, matchChoice } from "../match";
 import { askedAboutWord } from "../proper-nouns";
+import { addVocab } from "../vocab";
+import { bumpMethodIntro, methodIntroCount, saveReview, type ReviewStatus } from "./review";
 import { decideOnChoice, openingAction, shouldShow, type DecideInput } from "./decide";
 import { choiceCopy, showCopy, thinkCopy } from "./copy";
 import { getPolicyCopy, getPolicyLesson } from "./lessons";
@@ -48,9 +50,18 @@ const READ_DONE_BTN = policyFrame.buttons.read_done;
 const INTRO_NEXT_BTN = policyFrame.buttons.intro_next;
 /** 읽기 화면이 한 문장을 다 읽었을 때 보내는 신호. 학생의 말이 아니다 */
 export const READ_NEXT_CMD = "__read_next";
+/* 마무리 화면이 보내는 신호 — 학생의 말이 아니라 화면 조작이다 */
+export const WEEKS_CMD = "__weeks:";
+export const SAVE_CMD = "__save";
+export const CHECK_CMD = "__check:";
+export const MATCH_DONE_CMD = "__match_done";
+export const PREV_SENTENCE_CMD = "__prev_sentence";
+export const NEXT_SENTENCE_CMD = "__next_sentence";
 const MODE_TRY_BTN = policyFrame.buttons.mode_try;
 const MODE_ANALYZE_BTN = policyFrame.buttons.mode_analyze;
 const ANALYZE_START_BTN = policyFrame.buttons.analyze_start;
+const SOLVE_BTN = policyFrame.buttons.solve;
+const PASSAGE_AGAIN_BTN = policyFrame.buttons.passage_again;
 
 /** 기기 저장소·시계를 갈아 끼울 수 있게 — 테스트에서 쓴다 */
 export type PolicyDeps = {
@@ -78,7 +89,27 @@ type State = {
    *   → exam_first(고르면) → lesson → exam_final → done
    * 시험 문제가 없는 레슨은 read 뒤에 바로 lesson으로 간다.
    */
-  stage: "intro" | "read" | "mode" | "exam_first" | "lesson" | "exam_final" | "done";
+  stage:
+    | "intro"
+    | "read"
+    | "mode"
+    | "exam_first"
+    | "lesson"
+    | "exam_final"
+    | "review"
+    | "words"
+    | "match"
+    | "done";
+  /** 「자세히 볼래요」를 누른 스텝 — `optional_of`가 이것인 스텝만 연다 */
+  detailOpen: string | null;
+  /** 마지막 시험 문제에서 틀리고 지운 보기 */
+  finalWrong: string[];
+  reviewWeeks: number | null;
+  reviewSaved: boolean;
+  reviewStatus: ReviewStatus | null;
+  /** 단어 체크 — 0 본문 단어, 1 보기 단어 */
+  wordPart: number;
+  checked: string[];
   /** 도입 단계에서 지금 보고 있는 스텝 */
   ii: number;
   /** 도입 ask에 답한 뒤, 「다음」을 누르면 갈 곳 (답을 보여 주는 중) */
@@ -128,6 +159,12 @@ export function createPolicySession(
   if (!foundCopy) throw new Error(`policy copy not found: ${lessonId}`);
   const copy = foundCopy;
   const d: PolicyDeps = { ...DEFAULT_DEPS, ...deps };
+  /* 이 유형의 풀이법 설명을 몇 번 봤나 — `intro_times`번까지는 도입에서 설명한다 */
+  const methodSeen = lesson.method ? methodIntroCount(lesson.method.type) : 0;
+  const methodFresh = !lesson.method || methodSeen < lesson.method.intro_times;
+  let methodBumped = false;
+  const readButton = lesson.read_button ?? READ_DONE_BTN;
+  const ending = copy.ending ?? {};
 
   let pending: LearningEvent[] = [];
   /*
@@ -142,6 +179,13 @@ export function createPolicySession(
     const base: State = {
       learnerName: name,
       stage: "intro",
+      detailOpen: null,
+      finalWrong: [],
+      reviewWeeks: null,
+      reviewSaved: false,
+      reviewStatus: null,
+      wordPart: 0,
+      checked: [],
       ii: 0,
       introReplied: false,
       boardImage: null,
@@ -176,7 +220,21 @@ export function createPolicySession(
   function showIntro(st0: State, i: number, lead: string): State {
     const step = lesson.intro?.[i];
     // 도입이 없거나 끝났으면 읽기로 (초기화 중에도 불리므로 `s`를 건드리지 않는다)
-    if (!step) return { ...st0, stage: "read", ri: 0, message: L.read_intro, buttons: [READ_DONE_BTN], panel: null };
+    if (!step) {
+      if (lesson.method && !methodBumped) {
+        methodBumped = true;
+        bumpMethodIntro(lesson.method.type);
+      }
+      // 한 문장씩 읽기를 뺀 레슨은 여기서 「바로 풀기 / 분석」을 고른다
+      if (lesson.passage_on_try) {
+        return { ...st0, stage: "mode", message: "", buttons: [MODE_TRY_BTN, readButton], panel: null };
+      }
+      return { ...st0, stage: "read", ri: 0, message: L.read_intro, buttons: [readButton], panel: null };
+    }
+    // 풀이법 설명은 처음 몇 번만, 그 뒤엔 짧은 시작 화면만
+    if (step.type === "say" && step.show_when === (methodFresh ? "later" : "first")) {
+      return showIntro(st0, i + 1, lead);
+    }
     const lines = copy.intro?.[step.id] ?? {};
     let text: string;
     if (step.id === "rate") {
@@ -237,7 +295,7 @@ export function createPolicySession(
   /* ── 지문 읽기 · 문제 풀기 ──────────────────────────────────────── */
 
   function startReading() {
-    s = { ...s, stage: "read", ri: 0, message: L.read_intro, buttons: [READ_DONE_BTN], panel: null };
+    s = { ...s, stage: "read", ri: 0, message: L.read_intro, buttons: [readButton], panel: null };
   }
 
   /** 읽기 화면이 한 문장을 다 읽었다 — 다음 문장을 드러낸다. 마지막이면 그대로 둔다 */
@@ -248,7 +306,7 @@ export function createPolicySession(
 
   /** 다 읽었으면: 시험 문제가 있으면 어떻게 할지 고르게, 없으면 바로 분석 */
   function askMode() {
-    if (!lesson.exam) return startLesson();
+    if (!lesson.exam || lesson.exam.analysis_first) return startLesson();
     s = { ...s, stage: "mode", message: L.choose_mode, buttons: [MODE_TRY_BTN, MODE_ANALYZE_BTN] };
   }
 
@@ -269,8 +327,18 @@ export function createPolicySession(
       ...s,
       stage: when === "first" ? "exam_first" : "exam_final",
       si: lesson.sentences.indexOf(examSentence()),
-      message: `${when === "final" ? L.final_lead : ""}${ex.ask}`,
-      buttons: lesson.exam!.options.map((o) => o.label),
+      message:
+        when === "first" && lesson.passage_on_try
+          ? (ex.ask_first ?? ex.ask)
+          : `${when === "final" && !lesson.exam!.analysis_first ? L.final_lead : ""}${ex.ask}`,
+      // 분석 먼저인 문제는 보기를 카드로 그린다 (핵심 단어 색칠, ▸ 한국어) — 버튼은 없다.
+      // 바로 풀기에서는 실제 시험처럼 색칠·한국어 없이, 지문으로 돌아가는 버튼만
+      buttons: lesson.exam!.analysis_first
+        ? when === "first" && lesson.passage_on_try
+          ? [PASSAGE_AGAIN_BTN]
+          : []
+        : lesson.exam!.options.map((o) => o.label),
+      finalWrong: [],
       panel: null,
       shownAt: d.now(),
     };
@@ -298,6 +366,28 @@ export function createPolicySession(
       observation: { kind: "exam", when, correct, optionId: picked.id },
       action: { action: when === "first" ? "CONTINUE" : "FINISH", reason: [correct ? "exam_correct" : "exam_wrong"] },
     });
+    if (when === "first" && lesson.passage_on_try) {
+      // 분석 없이 맞혔다 — 이 문제는 소화했다. 틀렸으면 답을 말하지 않고 분석으로
+      if (correct) {
+        s = {
+          ...s,
+          firstAnswer: { optionId: picked.id, correct },
+          stage: "review",
+          reviewStatus: "mastered",
+          reviewWeeks: null,
+          buttons: [NEXT_BTN],
+        };
+        s = { ...s, message: ending.mastered ?? ex.first_correct };
+        return;
+      }
+      s = {
+        ...s,
+        firstAnswer: { optionId: picked.id, correct },
+        message: ex.first_wrong,
+        buttons: [readButton],
+      };
+      return;
+    }
     if (when === "first") {
       // 찍어서 맞힐 수 있다 — 맞혀도 분석은 한다. 틀려도 답을 말하지 않는다 (§6)
       s = {
@@ -308,8 +398,112 @@ export function createPolicySession(
       };
       return;
     }
+    if (exam.analysis_first) {
+      // 틀리면 그 보기를 지우고 다시 고르게 한다. 맞히면 마무리(복습 주기 · 단어)로
+      if (!correct) {
+        s = {
+          ...s,
+          finalWrong: [...s.finalWrong, picked.id],
+          anyExplained: true,
+          message: `${L.wrong_lead} ${ex.option_feedback?.[picked.id] ?? ""}`.trim(),
+        };
+        return;
+      }
+      const missed = s.finalWrong.length > 0;
+      s = {
+        ...s,
+        stage: "review",
+        reviewStatus: missed ? "analyzed_wrong" : "analyzed_correct",
+        reviewWeeks: missed ? 1 : 3,
+        buttons: [NEXT_BTN],
+        effect: missed ? "light" : null,
+      };
+      s = { ...s, message: reviewMessage() };
+      return;
+    }
     s = { ...s, anyExplained: s.anyExplained || !correct, effect: correct && s.firstAnswer && !s.firstAnswer.correct ? "light" : null };
     finish(`${correct ? ex.final_correct : ex.final_wrong} `);
+  }
+
+  /* ── 마무리: 다시 볼 주기 · 단어 체크 · 짝 맞추기 ───────────────── */
+
+  function weeksLabel(w: number | null) {
+    return w == null ? "다시 안 봄" : `${w}주`;
+  }
+
+  function reviewMessage(): string {
+    if (s.reviewStatus === "mastered") {
+      return s.reviewWeeks == null
+        ? (ending.mastered ?? "")
+        : (ending.mastered_later ?? "").replace("{weeks}", weeksLabel(s.reviewWeeks));
+    }
+    if (s.reviewWeeks == null) return ending.never ?? "";
+    const base = s.finalWrong.length ? ending.wrong : ending.correct;
+    return (base ?? "").replace("{weeks}", weeksLabel(s.reviewWeeks));
+  }
+
+  const keyWords = () => lesson.key_words ?? { passage: [], options: [] };
+
+  function startWords(part: number) {
+    const title = part === 0 ? ending.words_passage : ending.words_options;
+    s = {
+      ...s,
+      stage: "words",
+      wordPart: part,
+      message: title ?? "",
+      buttons: [part === 0 && keyWords().options.length ? NEXT_BTN : (ending.words_done ?? NEXT_BTN)],
+    };
+  }
+
+  /** 짝 맞추기 — 체크한 단어 먼저, 모자라면 본문 단어로 채워 8개까지 */
+  function matchPairs() {
+    const all = [...keyWords().passage, ...keyWords().options];
+    const picked = all.filter((w) => s.checked.includes(w.en));
+    for (const w of keyWords().passage) {
+      if (picked.length >= 8) break;
+      if (!picked.includes(w)) picked.push(w);
+    }
+    return picked.slice(0, 8);
+  }
+
+  function onEnding(text: string) {
+    if (s.stage === "review") {
+      if (text.startsWith(WEEKS_CMD)) {
+        const v = text.slice(WEEKS_CMD.length);
+        s = { ...s, reviewWeeks: v === "none" ? null : Number(v) };
+        s = { ...s, message: reviewMessage() };
+        return;
+      }
+      if (text === SAVE_CMD) {
+        s = { ...s, reviewSaved: !s.reviewSaved };
+        return;
+      }
+      saveReview(lesson.id, {
+        status: s.reviewStatus ?? "analyzed_correct",
+        weeks: s.reviewWeeks,
+        saved: s.reviewSaved,
+      });
+      if (lesson.key_words) return startWords(0);
+      return finish("");
+    }
+    if (s.stage === "words") {
+      if (text.startsWith(CHECK_CMD)) {
+        const en = text.slice(CHECK_CMD.length);
+        s = { ...s, checked: s.checked.includes(en) ? s.checked.filter((x) => x !== en) : [...s.checked, en] };
+        return;
+      }
+      if (s.wordPart === 0 && keyWords().options.length) return startWords(1);
+      // 체크한 단어는 단어장으로 — 어느 지문에서 나왔는지 같이
+      const all = [...keyWords().passage, ...keyWords().options];
+      addVocab(
+        all
+          .filter((w) => s.checked.includes(w.en))
+          .map((w) => ({ en: w.en, ko: w.ko, sentence: "", source: lesson.id })),
+      );
+      s = { ...s, stage: "match", message: ending.match_title ?? "", buttons: [] };
+      return;
+    }
+    if (s.stage === "match" && text === MATCH_DONE_CMD) finish("");
   }
 
   const sentence = (): PolicySentence => lesson.sentences[s.si]!;
@@ -359,7 +553,7 @@ export function createPolicySession(
       if (s.resolved) return [NEXT_BTN];
       return s.thinkHinted ? [THOUGHT_BTN] : [THOUGHT_BTN, HINT_BTN];
     }
-    return [st.button ?? NEXT_BTN];
+    return st.detail_button ? [st.button ?? NEXT_BTN, st.detail_button] : [st.button ?? NEXT_BTN];
   }
 
   /* ── 스텝 열기 · 넘어가기 ───────────────────────────────────────── */
@@ -375,6 +569,11 @@ export function createPolicySession(
       if (s.pi >= sentence().steps.length) {
         s = { ...s, si: s.si + 1, pi: 0, struggledInSentence: false, skipped: [] };
         flush();
+        continue;
+      }
+      // 「자세히 볼래요」를 안 누른 학생에게는 그 뒤의 자세한 스텝을 보여 주지 않는다
+      if (step().optional_of && s.detailOpen !== step().optional_of) {
+        s = { ...s, pi: s.pi + 1 };
         continue;
       }
       const withSkipped = step().skip_with && s.skipped.includes(step().skip_with!);
@@ -418,7 +617,7 @@ export function createPolicySession(
       stage: "done",
       si: lesson.sentences.length - 1,
       pi: 0,
-      message: `${lead}${copy.closing}`.trim(),
+      message: `${lead}${ending.closing ?? copy.closing}`.trim(),
       buttons: [],
       panel: null,
       lastAction: { action: "FINISH" },
@@ -454,6 +653,25 @@ export function createPolicySession(
     } else {
       // 보기 밖의 말 — 시도로 세지 않는다. 사다리도 그대로 둔다
       s = { ...s, message: `${L.pick_from_buttons} ${lines.reask ?? ""}`.trim() };
+      return;
+    }
+
+    /*
+      한 번만 고르는 질문 — 틀리면 "아쉽게도 아니에요." + 이유를 말하고 넘어간다.
+      학생이 틀렸다는 걸 분명히 알게 하되, 같은 질문에 붙잡아 두지 않는다.
+    */
+    if (st.one_try && !(observation.kind === "answer" && observation.correct)) {
+      if (picked) s = { ...s, wrongPicks: [...s.wrongPicks, picked.id] };
+      const why = (picked && lines.feedback?.[picked.id]) ?? lines.hints[0];
+      log(observation, { action: "EXPLAIN", interactionId: st.id, intensity: "brief" }, "explained");
+      settle(st, "explained");
+      s = {
+        ...s,
+        resolved: true,
+        message: `${picked ? L.wrong_lead : L.dont_know_lead} ${why}`,
+        panel: panelOf(st.panel_after) ?? s.panel,
+      };
+      s = { ...s, buttons: [NEXT_BTN], shownAt: d.now() };
       return;
     }
 
@@ -597,7 +815,8 @@ export function createPolicySession(
   }
 
   function view(): TutorView {
-    const reading = s.stage === "read";
+    // 처음 고르는 화면(문제·지문·보기)도 지문 화면을 쓴다
+    const reading = s.stage === "read" || (s.stage === "mode" && !!lesson.passage_on_try);
     const exam = s.stage === "exam_first" || s.stage === "exam_final";
     const sen = sentence();
     const st = step();
@@ -609,7 +828,15 @@ export function createPolicySession(
     // 한 줄에 못 들어가는 보기가 있으면 세로로 쌓는다
     const stack = s.buttons.some((b) => b.length > 18);
     return {
-      screen: reading ? "read" : onStudy ? "study" : "chat",
+      screen: reading
+        ? "read"
+        : s.stage === "words"
+          ? "words"
+          : s.stage === "match"
+            ? "match"
+            : onStudy
+              ? "study"
+              : "chat",
       message: s.message,
       boardImage: (() => {
         const key =
@@ -636,6 +863,8 @@ export function createPolicySession(
             revealed: s.ri + 1,
             current: s.ri,
             underline: lesson.exam?.underline ?? null,
+            auto: !lesson.passage_on_try,
+            options: lesson.passage_on_try ? (lesson.exam?.options.map((o) => o.label) ?? null) : null,
           }
         : undefined,
       ended: s.stage === "done",
@@ -648,14 +877,64 @@ export function createPolicySession(
           ? (lesson.proper_nouns ?? [])
           : []
         : (lesson.proper_nouns ?? []).filter((n) => shown.includes(n.en)),
-      glosses: onStudy ? sen.glosses : [],
+      // ❓ 개념 구절도 한 덩어리로 잡히게 뜻 목록에 넣는다
+      glosses: onStudy
+        ? [
+            ...sen.glosses,
+            ...(sen.concepts ?? [])
+              .filter((c) => !sen.glosses.some((g) => g.en.toLowerCase() === c.en.toLowerCase()))
+              .map((c) => ({ en: c.en, ko: c.title })),
+          ]
+        : [],
+      faded: inLesson ? (st.faded ?? []) : [],
+      shaded: inLesson ? (st.shaded ?? []) : [],
+      concepts: inLesson ? (sen.concepts ?? []) : [],
+      tips: inLesson ? (st.tips ?? []) : [],
+      methodSteps:
+        lesson.method && (inLesson || s.stage === "exam_final")
+          ? { labels: lesson.method.labels, active: exam ? lesson.method.labels.length - 1 : (st.method ?? null) }
+          : null,
+      examOptions:
+        exam && lesson.exam?.analysis_first && !(s.stage === "exam_first" && s.firstAnswer)
+          ? lesson.exam.options
+              .filter((o) => !s.finalWrong.includes(o.id))
+              .map((o) =>
+                // 바로 풀기는 실제 시험처럼 — 색칠도 한국어도 없이
+                s.stage === "exam_first"
+                  ? { id: o.id, label: o.label, keywords: [], ko: "" }
+                  : { id: o.id, label: o.label, keywords: o.keywords ?? [], ko: o.ko ?? "" },
+              )
+          : null,
+      examGlosses: lesson.exam?.glosses ?? [],
+      // 이 수업은 버튼으로만 답한다 — 자유 응답이 없으니 입력창도 없다
+      allowInput: false,
+      fullPassage:
+        lesson.passage_on_try && (inLesson || exam)
+          ? { sentences: lesson.sentences.map((x) => x.text), underline: lesson.exam?.underline ?? null }
+          : null,
+      canPrevSentence: inLesson && s.si > 0,
+      canNextSentence: inLesson,
+      review:
+        s.stage === "review"
+          ? { weeks: s.reviewWeeks, saved: s.reviewSaved, choices: [1, 2, 3, 4, 5, null], caption: ending.save_caption ?? "" }
+          : null,
+      wordCheck:
+        s.stage === "words"
+          ? {
+              title: s.message,
+              step: `${s.wordPart === 0 ? "본문 단어" : "보기 단어"} ${s.wordPart + 1}/${keyWords().options.length ? 2 : 1}`,
+              words: s.wordPart === 0 ? keyWords().passage : keyWords().options,
+              checked: s.checked,
+            }
+          : null,
+      matchPairs: s.stage === "match" ? matchPairs() : null,
       highlight: inLesson ? (st.highlight ?? []) : underline,
       emphasis: inLesson ? (sen.emphasis ?? []) : [],
       panel: inLesson ? s.panel : null,
       // 도움말 칩은 문장의 첫 스텝에서만. 수업이 진행되면 화면에 이미 많다
       helps: inLesson && s.pi === 0 ? (sen.helps ?? []).map((h) => h.label) : [],
       buttonLayout: stack ? "stack" : "row",
-      auxButtons: [UNKNOWN_BTN, HINT_BTN, SKIP_BTN],
+      auxButtons: [UNKNOWN_BTN, HINT_BTN, SKIP_BTN, PASSAGE_AGAIN_BTN, ...(inLesson && st.detail_button ? [st.detail_button] : [])],
       numbered: (inLesson && st.type === "choice" && !s.resolved && !s.aside) || (exam && s.buttons.length > 1),
     };
   }
@@ -665,16 +944,32 @@ export function createPolicySession(
     async submit(raw: string): Promise<TutorView> {
       const text = raw.trim();
       if (!text || s.stage === "done") return view();
-      s = { ...s, studentLine: text, effect: null };
+      s = { ...s, studentLine: text.startsWith("__") ? s.studentLine : text, effect: null };
 
       if (s.stage === "intro") {
         onIntro(text);
         return view();
       }
       if (s.stage === "read") {
+        // 바로 풀기: 지문 전체를 본 뒤 문제로 (답을 고른 적이 있으면 그 문제로 돌아간다)
+        if (lesson.passage_on_try) {
+          if (text !== READ_NEXT_CMD) askExam("first");
+          return view();
+        }
         // 「계속」이면 다 읽지 않았어도 넘어간다. 화면이 보내는 신호면 한 문장 더
         if (text === READ_NEXT_CMD) readNext();
         else askMode();
+        return view();
+      }
+      if (s.stage === "mode" && lesson.passage_on_try) {
+        // 처음에 문제·지문·보기를 한 번 다 보여 준 화면에서 고른다
+        if (text === MODE_TRY_BTN) askExam("first");
+        else if (text === readButton) startLesson();
+        return view();
+      }
+      // 바로 풀다가 지문을 다시 본다 — 고른 답은 없으니 그대로 돌아오면 된다
+      if (s.stage === "exam_first" && !s.firstAnswer && text === PASSAGE_AGAIN_BTN) {
+        s = { ...s, stage: "read", message: "", buttons: [SOLVE_BTN] };
         return view();
       }
       if (s.stage === "mode") {
@@ -687,8 +982,26 @@ export function createPolicySession(
         startLesson();
         return view();
       }
+      if (s.stage === "exam_first" && text === PASSAGE_AGAIN_BTN) {
+        s = { ...s, stage: "read", message: "", buttons: [SOLVE_BTN] };
+        return view();
+      }
       if (s.stage === "exam_first" || s.stage === "exam_final") {
         onExam(text);
+        return view();
+      }
+      if (s.stage === "review" || s.stage === "words" || s.stage === "match") {
+        onEnding(text);
+        return view();
+      }
+
+      // 위의 ‹ › — 이전 문장으로 돌아가거나, 이 문장을 넘기고 다음 문장으로
+      if (s.stage === "lesson" && (text === PREV_SENTENCE_CMD || text === NEXT_SENTENCE_CMD)) {
+        const to = s.si + (text === PREV_SENTENCE_CMD ? -1 : 1);
+        if (to < 0) return view();
+        log({ kind: "continue" }, { action: "CONTINUE", interactionId: step().id, reason: [text === PREV_SENTENCE_CMD ? "student_went_back" : "student_skipped_sentence"] });
+        s = { ...s, si: to, pi: 0, detailOpen: null, aside: null, struggledInSentence: false, skipped: [] };
+        open("");
         return view();
       }
 
@@ -706,6 +1019,13 @@ export function createPolicySession(
       if (st.skippable && text === SKIP_BTN && !s.resolved) {
         log({ kind: "skip" }, { action: "CONTINUE", interactionId: st.id, reason: ["student_claims_known"] });
         s = { ...s, skipped: [...s.skipped, st.id] };
+        next();
+        return view();
+      }
+      // 「자세히 볼래요」 — 이 스텝에 딸린 자세한 스텝들을 연다
+      if (st.type === "show" && st.detail_button && text === st.detail_button) {
+        log({ kind: "continue" }, { action: "CONTINUE", interactionId: st.id, reason: ["student_wants_detail"] });
+        s = { ...s, detailOpen: st.id };
         next();
         return view();
       }

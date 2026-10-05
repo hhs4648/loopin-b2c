@@ -3,11 +3,14 @@ import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
 import type { TutorView } from "../tutor/engine";
+import type { WordGloss } from "../../content/tutor/types";
 import { glossSpans, glossesFor } from "../tutor/glosses";
 import { nounKind } from "../tutor/proper-nouns";
 import { isSaved, loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab";
 import type { UiObservation } from "../tutor/policy/types";
 import { StudyPanelView } from "./StudyPanel";
+import { PassagePager } from "./PassagePager";
+import { NEXT_SENTENCE_CMD, PREV_SENTENCE_CMD } from "../tutor/policy/session";
 
 type Props = {
   view: TutorView;
@@ -30,18 +33,51 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   }
 
 
+  const [showPassage, setShowPassage] = useState(false);
   const words = view.sentence.trim().split(/\s+/).length;
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
 
   return (
     <div className={`stage-fill study${view.panel ? " has-panel" : ""}`}>
       <header className="study-top">
-        <button type="button" className="icon-btn light" title="이전" onClick={onBack}>
-          <BackIcon />
-        </button>
+        {/*
+          지문이 따로 있는 수업은 왼쪽 위가 「전체 지문」이다. 예전 ‹(교실로 돌아가기)는
+          돌아올 길이 없어서 눌리면 화면이 갑자기 넘어간 것처럼 보였다.
+        */}
+        {view.fullPassage ? (
+          <button type="button" className="passage-btn" onClick={() => setShowPassage(true)}>
+            전체 지문
+          </button>
+        ) : (
+          <button type="button" className="icon-btn light" title="이전" onClick={onBack}>
+            <BackIcon />
+          </button>
+        )}
         <div className="study-progress">
-          <span>
+          <span className="progress-line">
+            {view.canNextSentence != null && view.fullPassage ? (
+              <button
+                type="button"
+                className="sentence-arrow"
+                disabled={!view.canPrevSentence || typing}
+                aria-label="이전 문장"
+                onClick={() => onSend(PREV_SENTENCE_CMD)}
+              >
+                ‹
+              </button>
+            ) : null}
             {view.progressLabel ?? "문장 학습"} · {view.progressIndex} / {view.progressTotal}
+            {view.canNextSentence != null && view.fullPassage ? (
+              <button
+                type="button"
+                className="sentence-arrow"
+                disabled={!view.canNextSentence || typing}
+                aria-label="다음 문장"
+                onClick={() => onSend(NEXT_SENTENCE_CMD)}
+              >
+                ›
+              </button>
+            ) : null}
           </span>
           <div className="dots-bar">
             {dots.map((i) => (
@@ -54,6 +90,17 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </button>
       </header>
 
+      {/* 「밑줄 문제 푸는 법」 — 지금 어느 단계인지 */}
+      {view.methodSteps ? (
+        <ol className="method-steps">
+          {view.methodSteps.labels.map((label, i) => (
+            <li key={label} className={view.methodSteps!.active === i ? "on" : ""}>
+              <b>{"①②③④"[i]}</b> {label}
+            </li>
+          ))}
+        </ol>
+      ) : null}
+
       <div className="study-sentence">
         <GlossSentence
           sentence={view.sentence}
@@ -61,6 +108,9 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           glosses={view.glosses}
           highlight={view.highlight ?? []}
           emphasis={view.emphasis ?? []}
+          faded={view.faded ?? []}
+          shaded={view.shaded ?? []}
+          concepts={view.concepts ?? []}
           onLookup={(word) => onObserve?.({ kind: "vocab_click", word })}
         />
         {view.properNouns.length > 0 ? (
@@ -101,6 +151,8 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </div>
       ) : null}
 
+      {view.tips?.length ? <TipChips tips={view.tips} /> : null}
+
       {view.panel ? <StudyPanelView panel={view.panel} /> : null}
 
       <div className="study-stage">
@@ -124,7 +176,33 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </div>
       </div>
 
+      {showPassage && view.fullPassage ? (
+        <div className="passage-overlay" role="dialog" aria-label="전체 지문">
+          <div className="passage-sheet">
+            <div className="passage-sheet-top">
+              <b>전체 지문</b>
+              <button type="button" className="icon-btn dark" title="닫기" onClick={() => setShowPassage(false)}>
+                <CloseIcon />
+              </button>
+            </div>
+            <PassagePager
+              sentences={view.fullPassage.sentences}
+              underline={view.fullPassage.underline}
+              start={0}
+            />
+          </div>
+        </div>
+      ) : null}
+
       <div className="study-dock">
+        {view.examOptions ? (
+          <ExamOptions
+            options={view.examOptions}
+            glosses={view.examGlosses ?? []}
+            disabled={typing}
+            onPick={onSend}
+          />
+        ) : null}
         <QuickReplies
           buttons={view.buttons}
           hidden={typing}
@@ -133,7 +211,9 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           numbered={view.numbered}
           onPick={onSend}
         />
-        <InputBar placeholder={view.placeholder} disabled={typing} onSend={onSend} />
+        {view.allowInput === false ? null : (
+          <InputBar placeholder={view.placeholder} disabled={typing} onSend={onSend} />
+        )}
       </div>
     </div>
   );
@@ -145,6 +225,9 @@ function GlossSentence({
   glosses,
   highlight,
   emphasis,
+  faded,
+  shaded,
+  concepts,
   onLookup,
 }: {
   sentence: string;
@@ -152,6 +235,9 @@ function GlossSentence({
   glosses: TutorView["glosses"];
   highlight: string[];
   emphasis: string[];
+  faded: string[];
+  shaded: string[];
+  concepts: NonNullable<TutorView["concepts"]>;
   onLookup: (word: string) => void;
 }) {
   const [open, setOpen] = useState<number | null>(null);
@@ -160,6 +246,8 @@ function GlossSentence({
   const [shift, setShift] = useState(0);
   const spans = glossSpans(sentence, glossesFor(glosses, nouns));
   const marked = highlightRanges(sentence, highlight);
+  const fadedAt = highlightRanges(sentence, faded);
+  const shadedAt = highlightRanges(sentence, shaded);
 
   /*
     뜻 상자는 단어 아래 가운데에 뜬다. 단어가 가장자리에 있으면 상자가 화면 밖으로
@@ -197,17 +285,31 @@ function GlossSentence({
     // 옆 단어에 이미 붙여 그린 문장부호
     if (i > 0 && spans[i - 1]!.gloss && CLOSING.test(span.text)) return;
     if (spans[i + 1]?.gloss && OPENING.test(span.text)) return;
-    const hl = marked.some(([from, to]) => start < to && at > from);
+    const hit = (ranges: [number, number][]) => ranges.some(([from, to]) => start < to && at > from);
+    const hl = hit(marked);
+    /*
+      흐림 = 빼도 되는 삽입, 음영 = 건너뛰어도 되는 부분. 공백까지 같은 칸으로 감싸야
+      음영이 단어마다 끊기지 않고 한 줄로 이어진다.
+    */
+    const marks = `${hit(fadedAt) ? " faded" : ""}${hit(shadedAt) ? " shaded" : ""}`;
     if (!span.gloss) {
-      parts.push(hl ? <mark key={i} className="hl">{span.text}</mark> : span.text);
+      if (hl) parts.push(<mark key={i} className={`hl${marks}`}>{span.text}</mark>);
+      else if (marks) parts.push(<span key={i} className={marks.trim()}>{span.text}</span>);
+      else parts.push(span.text);
       return;
     }
+    const concept = concepts.find((c) => c.en.toLowerCase() === span.gloss!.en.toLowerCase());
     const noun = nouns.some(
       (n) => n.en === span.gloss!.en || n.en.replace(/\.$/, "") === span.text.replace(/\.$/, ""),
     );
     const selected = open === i;
     parts.push(
-      <span key={i} className={`english-token${selected ? " open" : ""}${hl ? " hl" : ""}`}>
+      <span
+        key={i}
+        className={`english-token${selected ? " open" : ""}${hl ? " hl" : ""}${marks}${concept ? " concept" : ""}`}
+      >
+        {/* ❓ — 단어 위에 작게. 문장 안에 끼우지 않는다 */}
+        {concept ? <span className="concept-mark" aria-hidden="true">❓</span> : null}
         {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
         <button
           type="button"
@@ -227,7 +329,18 @@ function GlossSentence({
           바로 뒤 문장부호는 같은 칸에 넣어 단어와 같이 다니게 한다.
         */}
         {CLOSING.test(spans[i + 1]?.text ?? "") ? spans[i + 1]!.text : null}
-        {selected ? (
+        {selected && concept ? (
+          <span
+            ref={tipRef}
+            className="gloss-tip concept-tip"
+            role="tooltip"
+            style={shift ? { transform: `translateX(calc(-50% + ${shift}px))` } : undefined}
+          >
+            <span>
+              <strong>{concept.title}</strong> {concept.text}
+            </span>
+          </span>
+        ) : selected ? (
           <span
             ref={tipRef}
             className="gloss-tip"
@@ -255,6 +368,114 @@ function GlossSentence({
   });
 
   return <p className="english">{parts}</p>;
+}
+
+/** 💡 요령 — 누르면 말풍선으로 열린다. 선생님 말이 아니라 참고 정보 */
+function TipChips({ tips }: { tips: NonNullable<TutorView["tips"]> }) {
+  const [open, setOpen] = useState<number | null>(null);
+  useEffect(() => setOpen(null), [tips]);
+  return (
+    <div className="tip-chips">
+      <div className="tip-row">
+        {tips.map((tip, i) => (
+          <button
+            key={tip.label}
+            type="button"
+            className={`tip-chip${open === i ? " on" : ""}`}
+            aria-expanded={open === i}
+            onClick={() => setOpen(open === i ? null : i)}
+          >
+            💡 {tip.label}
+          </button>
+        ))}
+      </div>
+      {open != null ? <div className="info-pop">{tips[open]!.text}</div> : null}
+    </div>
+  );
+}
+
+/**
+ * 시험 보기 — 영어만 먼저. 핵심 단어는 색칠하고, 단어를 누르면 뜻, ▸를 누르면
+ * 보기 아래에 짧은 한국어. 보기(카드)를 누르면 그걸 답으로 고른 것이다.
+ */
+function ExamOptions({
+  options,
+  glosses,
+  disabled,
+  onPick,
+}: {
+  options: NonNullable<TutorView["examOptions"]>;
+  glosses: WordGloss[];
+  disabled: boolean;
+  onPick: (label: string) => void;
+}) {
+  const [ko, setKo] = useState<string[]>([]);
+  const [word, setWord] = useState<{ id: string; gloss: WordGloss } | null>(null);
+  const NUM = "①②③④⑤";
+  return (
+    <ol className="exam-options">
+      {options.map((o) => {
+        const ranges = highlightRanges(o.label, o.keywords);
+        let at = 0;
+        const parts = glossSpans(o.label, glosses).map((span, i) => {
+          const start = at;
+          at += span.text.length;
+          const kw = ranges.some(([a, b]) => start < b && at > a);
+          if (!span.gloss) return kw ? <b key={i} className="kw">{span.text}</b> : span.text;
+          const g = span.gloss;
+          return (
+            <button
+              key={i}
+              type="button"
+              className={`exam-word${kw ? " kw" : ""}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                setWord(word?.id === o.id && word.gloss.en === g.en ? null : { id: o.id, gloss: g });
+              }}
+            >
+              {span.text}
+            </button>
+          );
+        });
+        const n = Number(o.id) - 1;
+        return (
+          <li key={o.id}>
+            <div
+              role="button"
+              tabIndex={0}
+              aria-disabled={disabled}
+              className="exam-option"
+              onClick={() => !disabled && onPick(o.label)}
+              onKeyDown={(e) => e.key === "Enter" && !disabled && onPick(o.label)}
+            >
+              <span className="exam-num">{NUM[n] ?? o.id}</span>
+              <span className="exam-text">{parts}</span>
+              {o.ko ? (
+                <button
+                  type="button"
+                  className={`exam-ko-toggle${ko.includes(o.id) ? " on" : ""}`}
+                  aria-label="한국어로 보기"
+                  aria-expanded={ko.includes(o.id)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setKo(ko.includes(o.id) ? ko.filter((x) => x !== o.id) : [...ko, o.id]);
+                  }}
+                >
+                  ▸
+                </button>
+              ) : null}
+            </div>
+            {word?.id === o.id ? (
+              <div className="exam-gloss">
+                <b>{word.gloss.en}</b> <GlossText ko={word.gloss.ko} />
+              </div>
+            ) : null}
+            {ko.includes(o.id) ? <div className="exam-ko">{o.ko}</div> : null}
+          </li>
+        );
+      })}
+    </ol>
+  );
 }
 
 /** 단어 바로 뒤에 붙는 문장부호 */

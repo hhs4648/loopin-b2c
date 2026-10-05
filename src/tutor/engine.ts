@@ -35,7 +35,7 @@ export const READ_BTN = "다 읽었어요";
 export const MORE_BTN = "더 알고 싶어요";
 export const NEXT_BTN = "다음으로";
 
-export type UiScreen = "chat" | "study" | "read";
+export type UiScreen = "chat" | "study" | "read" | "words" | "match";
 
 /**
  * 항목 하나에 대한 학습 기록.
@@ -90,6 +90,35 @@ export type TutorView = {
   auxButtons?: string[];
   /** 지금 버튼들이 보기라서 ①②③을 단다 (「다음으로」 하나일 때는 안 단다) */
   numbered?: boolean;
+  /*
+    ── Teaching Policy 문장 화면 표시 ──
+  */
+  /** 빼도 되는 삽입 — 흐리게 */
+  faded?: string[];
+  /** 건너뛰어도 되는 부분 — 음영 */
+  shaded?: string[];
+  /** ❓ 개념 말풍선 */
+  concepts?: { en: string; title: string; text: string }[];
+  /** 💡 요령 말풍선 */
+  tips?: { label: string; text: string }[];
+  /** 「밑줄 문제 푸는 법」 단계 표시. active가 null이면 표시만 */
+  methodSteps?: { labels: string[]; active: number | null } | null;
+  /** 시험 보기 — 핵심 단어 색칠, ▸ 한국어 */
+  examOptions?: { id: string; label: string; keywords: string[]; ko: string }[] | null;
+  examGlosses?: WordGloss[];
+  /** 마무리 — 다시 볼 주기와 특별 저장 */
+  review?: { weeks: number | null; saved: boolean; choices: (number | null)[]; caption: string } | null;
+  /** 마무리 — 주요 단어 체크 */
+  wordCheck?: { title: string; step: string; words: WordGloss[]; checked: string[] } | null;
+  /** 마무리 — 짝 맞추기 */
+  matchPairs?: WordGloss[] | null;
+  /** false면 아래 입력창을 숨긴다 — 버튼으로만 답하는 화면에서 (기본은 보인다) */
+  allowInput?: boolean;
+  /** 문장 학습 중 위의 「전체 지문」으로 여는 지문 */
+  fullPassage?: { sentences: string[]; underline: string | null } | null;
+  /** 이전·다음 문장으로 옮겨 갈 수 있나 */
+  canPrevSentence?: boolean;
+  canNextSentence?: boolean;
   /** 교실 화면 칠판에 띄우는 그림 (도입에서 데카르트 초상 등) */
   boardImage?: { src: string; alt: string; credit?: string; kind?: "photo" | "drawing" } | null;
   /** 머리글 「문장 학습」 자리에 쓸 말 — 「지문 읽기」「문제 풀기」 */
@@ -108,6 +137,10 @@ export type TutorView = {
     current: number;
     /** 시험에서 밑줄 친 구절 */
     underline: string | null;
+    /** false면 한 문장씩 드러내며 읽지 않는다 — 장으로 넘겨 보는 지문(+ 문제와 보기) */
+    auto?: boolean;
+    /** 장으로 넘겨 볼 때 마지막 장에 붙이는 시험 보기 */
+    options?: string[] | null;
   };
 };
 

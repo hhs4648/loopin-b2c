@@ -32,6 +32,12 @@
           "title": "2025년 3월 모의고사",
           "subtitle": "2025년 3월 고3 전국연합학력평가 영어",
           "tag": "모의"
+        },
+        {
+          "id": "moeui-2026-03",
+          "title": "2026년 3월 모의고사",
+          "subtitle": "2026년 3월 고3 전국연합학력평가 영어",
+          "tag": "모의"
         }
       ]
     }
@@ -494,6 +500,15 @@
       "subtitle": "밑줄 의미 — 데카르트의 나무, 과학과 철학의 분리",
       "lessons": [
         "moeui-2025-03-21-descartes-tree"
+      ]
+    },
+    {
+      "id": "moeui-2026-03-21",
+      "collection": "moeui-2026-03",
+      "title": "21번 문제",
+      "subtitle": "밑줄 의미 — 음악가도 '연구자'가 된다",
+      "lessons": [
+        "moeui-2026-03-21-music-researchers"
       ]
     }
   ]

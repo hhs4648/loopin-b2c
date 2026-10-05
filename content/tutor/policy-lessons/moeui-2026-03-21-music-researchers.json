@@ -1,0 +1,1276 @@
+{
+  "id": "moeui-2026-03-21-music-researchers",
+  "kind": "policy",
+  "version": "0.2",
+  "source": "2026년 3월 고3 전국연합학력평가 영어 21번 (밑줄 의미 추론, 3점)",
+  "brief": {
+    "topic": "밑줄 문제 푸는 법: 핵심 단어 → 관계 → 밑줄 뜻",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "underline_meaning",
+    "labels": [
+      "핵심 단어 찾기",
+      "관계 잡기",
+      "밑줄 뜻 고르기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "images": {
+    "method": {
+      "src": "/assets/underline-method.svg",
+      "alt": "밑줄 문제 푸는 법: ① 핵심 단어 찾기 ② 단어 사이의 관계 잡기 ③ 밑줄 뜻 고르기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "method1",
+      "type": "say",
+      "show_when": "first",
+      "button": "네",
+      "brief": {
+        "say": "밑줄 문제는 시간 싸움이에요. 단어를 다 알 필요는 없어요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "show_when": "first",
+      "button": "좋아요",
+      "brief": {
+        "say": "핵심 단어를 찾고, 그 단어들의 관계만 잡으면 밑줄 뜻이 보여요. 칠판 순서대로 해 볼게요."
+      }
+    },
+    {
+      "id": "method_short",
+      "type": "say",
+      "show_when": "later",
+      "button": "시작할게요",
+      "brief": {
+        "say": "칠판 순서대로 바로 시작해 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "밑줄 친 become “researchers” just like everyone else가 다음 글에서 의미하는 바로 가장 적절한 것은? [3점]",
+    "underline": "become “researchers” just like everyone else",
+    "analysis_first": true,
+    "glosses": [
+      {
+        "en": "reproduce",
+        "ko": "재현하다"
+      },
+      {
+        "en": "signature style",
+        "ko": "대표 스타일"
+      },
+      {
+        "en": "master composers",
+        "ko": "거장 작곡가들"
+      },
+      {
+        "en": "faithfully",
+        "ko": "충실하게"
+      },
+      {
+        "en": "admit",
+        "ko": "인정하다"
+      },
+      {
+        "en": "artistic output",
+        "ko": "예술 결과물"
+      },
+      {
+        "en": "not subject to",
+        "ko": "~에 좌우되지 않는"
+      },
+      {
+        "en": "temporal",
+        "ko": "시간의, 일시적인"
+      },
+      {
+        "en": "factors",
+        "ko": "요인"
+      },
+      {
+        "en": "embrace",
+        "ko": "받아들이다"
+      },
+      {
+        "en": "prevailing",
+        "ko": "널리 퍼진"
+      },
+      {
+        "en": "technically demonstrable",
+        "ko": "기술적으로 보여 줄 수 있는"
+      },
+      {
+        "en": "novelty",
+        "ko": "새로움"
+      },
+      {
+        "en": "formal",
+        "ko": "형식의"
+      },
+      {
+        "en": "progress",
+        "ko": "진보"
+      },
+      {
+        "en": "question",
+        "ko": "의문을 제기하다"
+      },
+      {
+        "en": "impact",
+        "ko": "영향"
+      },
+      {
+        "en": "maintaining",
+        "ko": "유지하는"
+      },
+      {
+        "en": "aesthetic",
+        "ko": "미적인"
+      },
+      {
+        "en": "cultural identities",
+        "ko": "문화적 정체성"
+      },
+      {
+        "en": "distinguish",
+        "ko": "구별하다"
+      },
+      {
+        "en": "fundamental",
+        "ko": "근본적인"
+      },
+      {
+        "en": "independence",
+        "ko": "독립성"
+      },
+      {
+        "en": "craft",
+        "ko": "기술, 솜씨"
+      },
+      {
+        "en": "principles",
+        "ko": "원리"
+      },
+      {
+        "en": "science",
+        "ko": "과학"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "reproduce the signature style of master composers faithfully",
+        "keywords": [
+          "reproduce",
+          "master composers"
+        ],
+        "ko": "기존 작곡가의 것을 재현"
+      },
+      {
+        "id": "2",
+        "label": "admit that the quality of artistic output is not subject to temporal factors",
+        "keywords": [
+          "not subject to temporal"
+        ],
+        "ko": "일시적이지 않다, 즉 영구적이다"
+      },
+      {
+        "id": "3",
+        "label": "embrace the prevailing focus on technically demonstrable novelty and formal progress",
+        "keywords": [
+          "embrace",
+          "novelty",
+          "progress"
+        ],
+        "ko": "새로움을 받아들인다",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "question the impact that music has on maintaining aesthetic standards and cultural identities",
+        "keywords": [
+          "question the impact"
+        ],
+        "ko": "음악의 영향력을 의심한다"
+      },
+      {
+        "id": "5",
+        "label": "distinguish the fundamental independence musicians have on their craft from the principles of science",
+        "keywords": [
+          "distinguish",
+          "independence",
+          "from",
+          "science"
+        ],
+        "ko": "과학으로부터 음악의 독립성을 구별한다"
+      }
+    ],
+    "brief": {
+      "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 아니에요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "final_wrong": "정답은 ③이에요.",
+      "option_feedback": {
+        "1": "6문장에서 앞선 이들은 outmoded(구식)로 밀려났죠.",
+        "2": "지도에 없는 이야기예요. 글은 새로움과 진보 경쟁을 말하고 있어요.",
+        "4": "지도에 없는 이야기예요. 글은 새로움과 진보 경쟁을 말하고 있어요.",
+        "5": "science는 지도에도 있지만, 글에선 과학을 흉내 내요. 구별하는 게 아니에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 지문이 다시 보고 싶으면 아래 버튼을 눌러요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "innovator",
+        "ko": "혁신가"
+      },
+      {
+        "en": "inventor",
+        "ko": "발명가"
+      },
+      {
+        "en": "those who",
+        "ko": "~하는 사람들"
+      },
+      {
+        "en": "novelty",
+        "ko": "새로움"
+      },
+      {
+        "en": "technique",
+        "ko": "기술"
+      },
+      {
+        "en": "never-ending progress",
+        "ko": "끝없는 진보"
+      },
+      {
+        "en": "arms race",
+        "ko": "군비 경쟁"
+      },
+      {
+        "en": "last thing",
+        "ko": "최신의 것"
+      },
+      {
+        "en": "outmoded",
+        "ko": "구식의"
+      },
+      {
+        "en": "patent",
+        "ko": "특허"
+      },
+      {
+        "en": "predecessor",
+        "ko": "전임자, 앞선 것"
+      },
+      {
+        "en": "modernity",
+        "ko": "현대성"
+      },
+      {
+        "en": "era",
+        "ko": "시대"
+      },
+      {
+        "en": "indefinite",
+        "ko": "끝이 없는, 무기한의"
+      },
+      {
+        "en": "consequence",
+        "ko": "결과"
+      },
+      {
+        "en": "owe it to oneself to",
+        "ko": "~하는 게 마땅하다, ~해야 한다"
+      }
+    ],
+    "options": [
+      {
+        "en": "reproduce",
+        "ko": "재현하다"
+      },
+      {
+        "en": "composer",
+        "ko": "작곡가"
+      },
+      {
+        "en": "admit",
+        "ko": "인정하다"
+      },
+      {
+        "en": "output",
+        "ko": "결과물, 산출물"
+      },
+      {
+        "en": "be subject to",
+        "ko": "~에 좌우되다"
+      },
+      {
+        "en": "temporal",
+        "ko": "시간의, 일시적인"
+      },
+      {
+        "en": "embrace",
+        "ko": "받아들이다"
+      },
+      {
+        "en": "question",
+        "ko": "의문을 제기하다"
+      },
+      {
+        "en": "impact",
+        "ko": "영향"
+      },
+      {
+        "en": "aesthetic",
+        "ko": "미적인"
+      },
+      {
+        "en": "distinguish",
+        "ko": "구별하다"
+      },
+      {
+        "en": "independence",
+        "ko": "독립성"
+      },
+      {
+        "en": "craft",
+        "ko": "기술, 솜씨"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "A brilliant musician can in fact be an innovator without strictly speaking being an inventor.",
+      "model_translation": "뛰어난 음악가는 사실 엄밀히 말해 발명가가 아니면서도 혁신가일 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "brilliant musician",
+          "ko": "훌륭한 음악가"
+        },
+        {
+          "en": "in fact",
+          "ko": "사실"
+        },
+        {
+          "en": "innovator",
+          "ko": "혁신가 · 새로운 방식을 만들어 내는 사람"
+        },
+        {
+          "en": "strictly speaking",
+          "ko": "엄밀히 말해"
+        },
+        {
+          "en": "inventor",
+          "ko": "발명가 · 없던 것을 새로 발명하는 사람"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "첫 문장의 핵심 단어는 이 세 개예요. innovator와 inventor는 같은 사람일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요.",
+              "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요."
+            ],
+            "explain": "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같아요"
+            },
+            {
+              "id": "o1",
+              "label": "달라요",
+              "correct": true
+            }
+          ],
+          "method": 0
+        },
+        {
+          "id": "s1_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "둘은 달라요. 발명가가 아니어도, 즉 새것을 발명하지 않아도 훌륭한 음악가가 될 수 있다는 말이에요."
+          },
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "innovator 쪽 · 훌륭한 음악가",
+              "words": [
+                {
+                  "text": "brilliant musician"
+                },
+                {
+                  "text": "innovator"
+                }
+              ]
+            },
+            "right": {
+              "label": "inventor 쪽 · 새로움·진보",
+              "words": [
+                {
+                  "text": "inventor",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "훌륭한 음악가 ≠ 발명가"
+          },
+          "button": "다음 문장"
+        }
+      ],
+      "emphasis": [
+        "brilliant musician",
+        "innovator",
+        "inventor"
+      ]
+    },
+    {
+      "id": 2,
+      "text": "In such cases, those who expect “great discoveries” will be disappointed.",
+      "model_translation": "그런 경우 '위대한 발견'을 기대하는 사람들은 실망할 것이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "In such cases",
+          "ko": "그런 경우에 · 앞 문장의 경우를 가리켜요"
+        },
+        {
+          "en": "those who",
+          "ko": "~하는 사람들"
+        },
+        {
+          "en": "expect",
+          "ko": "기대하다"
+        },
+        {
+          "en": "great discoveries",
+          "ko": "위대한 발견"
+        },
+        {
+          "en": "disappointed",
+          "ko": "실망한"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'In such cases'는 앞 문장의 경우, 즉 발명하지 않아도 훌륭한 음악가인 경우예요. 'great discoveries'는 지도에서 어느 쪽과 가까울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요.",
+              "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요."
+            ],
+            "explain": "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요.",
+            "praise": "맞아요.",
+            "feedback": {
+              "o0": "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "innovator"
+            },
+            {
+              "id": "o1",
+              "label": "inventor",
+              "correct": true
+            }
+          ],
+          "method": 0
+        },
+        {
+          "id": "s2_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "훌륭한 음악가는 꼭 새로운 걸 추구할 필요가 없어요. 그런데도 '위대한 발견'을 기대한다면 실망하게 될 거예요."
+          },
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "innovator 쪽 · 훌륭한 음악가",
+              "words": [
+                {
+                  "text": "brilliant musician"
+                },
+                {
+                  "text": "innovator"
+                }
+              ]
+            },
+            "right": {
+              "label": "inventor 쪽 · 새로움·진보",
+              "words": [
+                {
+                  "text": "inventor"
+                },
+                {
+                  "text": "“great discoveries”",
+                  "fresh": true,
+                  "quote": true
+                }
+              ]
+            },
+            "caption": "이걸 기대하는 사람은 → 실망"
+          },
+          "button": "다음 문장"
+        }
+      ],
+      "emphasis": [
+        "great discoveries",
+        "disappointed"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Let there be no doubt: the eager need for novelty, so characteristic of the escalating modernist auction, involves the idea that a musical act is a thing, in which case, music is no more than technique, technique alone.",
+      "model_translation": "의심의 여지 없이, 모더니즘 경매의 특징인 새로움에 대한 열망은 음악 행위가 하나의 사물이라는 생각을 수반하며, 그 경우 음악은 기술, 오직 기술에 불과하다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Let there be no doubt",
+          "ko": "의심의 여지 없이"
+        },
+        {
+          "en": "eager",
+          "ko": "열렬한"
+        },
+        {
+          "en": "novelty",
+          "ko": "새로움"
+        },
+        {
+          "en": "characteristic of",
+          "ko": "~의 특징인"
+        },
+        {
+          "en": "escalating",
+          "ko": "점점 고조되는"
+        },
+        {
+          "en": "modernist",
+          "ko": "모더니즘의"
+        },
+        {
+          "en": "auction",
+          "ko": "경매"
+        },
+        {
+          "en": "involves",
+          "ko": "수반하다"
+        },
+        {
+          "en": "musical act",
+          "ko": "음악 행위"
+        },
+        {
+          "en": "in which case",
+          "ko": "그 경우에"
+        },
+        {
+          "en": "no more than",
+          "ko": "~에 불과한"
+        },
+        {
+          "en": "technique",
+          "ko": "기술"
+        },
+        {
+          "en": "alone",
+          "ko": "오직"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "길죠. 흐린 부분은 건너뛰어도 돼요. '새로움(novelty)'을 원하면, 음악은 무엇이 된다고 하나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "끝부분 'music is no more than technique'를 봐요.",
+              "끝부분 'music is no more than technique'를 봐요."
+            ],
+            "explain": "끝부분 'music is no more than technique'를 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "끝부분 'music is no more than technique'를 봐요.",
+              "o2": "끝부분 'music is no more than technique'를 봐요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "감정의 표현"
+            },
+            {
+              "id": "o1",
+              "label": "기술(technique)일 뿐",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "위대한 발견"
+            }
+          ],
+          "method": 0,
+          "faded": [
+            "so characteristic of the escalating modernist auction"
+          ],
+          "tips": [
+            {
+              "label": "콤마 사이 건너뛰기",
+              "text": "콤마(,) 두 개 사이는 앞말을 덧붙여 설명하는 부분일 때가 많아요. 급할 때는 건너뛰고 앞뒤만 이어 읽어도 뜻이 통해요."
+            }
+          ]
+        },
+        {
+          "id": "s3_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'no more than'은 '~에 불과한'이에요. 새로움만 좇으면 음악은 '기술'에 불과해진다는 거예요."
+          },
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "innovator 쪽 · 훌륭한 음악가",
+              "words": [
+                {
+                  "text": "brilliant musician"
+                },
+                {
+                  "text": "innovator"
+                }
+              ]
+            },
+            "right": {
+              "label": "inventor 쪽 · 새로움·진보",
+              "words": [
+                {
+                  "text": "inventor"
+                },
+                {
+                  "text": "“great discoveries”",
+                  "quote": true
+                },
+                {
+                  "text": "novelty",
+                  "fresh": true
+                },
+                {
+                  "text": "technique",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "새로움을 원하면 음악 = 기술일 뿐"
+          },
+          "highlight": [
+            "no more than"
+          ],
+          "faded": [
+            "so characteristic of the escalating modernist auction"
+          ],
+          "button": "다음 문장"
+        }
+      ],
+      "emphasis": [
+        "novelty",
+        "technique"
+      ]
+    },
+    {
+      "id": 4,
+      "text": "And just as technique is the consequence of an indefinite process of perfection—with each automobile or kitchen appliance show introducing what is new and improved in comparison to last year’s—so never-ending progress shall be the law of music.",
+      "model_translation": "그리고 기술이 끝없는 완벽화 과정의 결과이듯이, 끝없는 진보가 음악의 법칙이 될 것이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "just as",
+          "ko": "~하듯이"
+        },
+        {
+          "en": "technique",
+          "ko": "기술"
+        },
+        {
+          "en": "consequence",
+          "ko": "결과"
+        },
+        {
+          "en": "indefinite",
+          "ko": "끝이 없는"
+        },
+        {
+          "en": "perfection",
+          "ko": "완벽화, 개선"
+        },
+        {
+          "en": "automobile",
+          "ko": "자동차"
+        },
+        {
+          "en": "kitchen appliance",
+          "ko": "주방 가전"
+        },
+        {
+          "en": "in comparison to",
+          "ko": "~와 비교해"
+        },
+        {
+          "en": "never-ending progress",
+          "ko": "끝없는 진보"
+        },
+        {
+          "en": "law",
+          "ko": "법칙"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_skim",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 문장은 앞 문장을 풀어 쓴 부분이에요. 시험에선 깊게 안 읽어도 답이 풀려요."
+          },
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "innovator 쪽 · 훌륭한 음악가",
+              "words": [
+                {
+                  "text": "brilliant musician"
+                },
+                {
+                  "text": "innovator"
+                }
+              ]
+            },
+            "right": {
+              "label": "inventor 쪽 · 새로움·진보",
+              "words": [
+                {
+                  "text": "inventor"
+                },
+                {
+                  "text": "“great discoveries”",
+                  "quote": true
+                },
+                {
+                  "text": "novelty"
+                },
+                {
+                  "text": "technique"
+                },
+                {
+                  "text": "never-ending progress",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "기술처럼 끝없는 진보"
+          },
+          "shaded": [
+            "And just as technique is the consequence of an indefinite process of perfection—with each automobile or kitchen appliance show introducing what is new and improved in comparison to last year’s—so never-ending progress shall be the law of music."
+          ],
+          "faded": [
+            "—with each automobile or kitchen appliance show introducing what is new and improved in comparison to last year’s—"
+          ],
+          "button": "다음 문장",
+          "detail_button": "자세히 볼래요",
+          "tips": [
+            {
+              "label": "풀어 쓴 문장 알아보기",
+              "text": "'And'나 'just as'로 시작해서 비유나 예시가 이어지면, 앞말을 보충하는 문장일 때가 많아요."
+            }
+          ]
+        },
+        {
+          "id": "s4_just_as",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'just as A, so B'는 'A하듯이 B하다'예요. 기술이 끝없이 개선되듯이, 음악에는 무엇이 법칙이 될까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'so' 뒤를 봐요. 'never-ending progress'예요.",
+              "'so' 뒤를 봐요. 'never-ending progress'예요."
+            ],
+            "explain": "'so' 뒤를 봐요. 'never-ending progress'예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'so' 뒤를 봐요. 'never-ending progress'예요.",
+              "o1": "'so' 뒤를 봐요. 'never-ending progress'예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "전통 지키기"
+            },
+            {
+              "id": "o1",
+              "label": "완벽한 한 곡"
+            },
+            {
+              "id": "o2",
+              "label": "끝없는 진보",
+              "correct": true
+            }
+          ],
+          "optional_of": "s4_skim",
+          "faded": [
+            "—with each automobile or kitchen appliance show introducing what is new and improved in comparison to last year’s—"
+          ],
+          "highlight": [
+            "just as",
+            "so never-ending progress shall be the law of music"
+          ],
+          "tips": [
+            {
+              "label": "대시 사이 건너뛰기",
+              "text": "대시(—) 두 개 사이도 예시나 덧붙임일 때가 많아요. 여기는 '자동차, 가전 신제품이 해마다 새로 나오듯이'라는 예시예요."
+            }
+          ]
+        },
+        {
+          "id": "s4_detail_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "기술처럼 음악도 끝없이 '더 새롭게, 더 낫게'를 좇게 된다는 거예요."
+          },
+          "optional_of": "s4_skim",
+          "button": "다음 문장"
+        }
+      ],
+      "emphasis": [
+        "technique",
+        "never-ending progress"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Farther, faster, more powerful!",
+      "model_translation": "더 멀리, 더 빨리, 더 강력하게!",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Farther",
+          "ko": "더 멀리"
+        },
+        {
+          "en": "powerful",
+          "ko": "강력한"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_skim",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "감탄문이에요. 끝없는 진보를 외치는 구호라서 넘어가도 돼요."
+          },
+          "shaded": [
+            "Farther, faster, more powerful!"
+          ],
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "In this arms race, each new music, breaking its predecessor’s records, offers itself as the last thing in modernity; and each musician, forcing predecessors into the category of the unfashionable and outmoded, claims the patent on the invention.",
+      "model_translation": "이 군비 경쟁에서 새 음악은 저마다 최신의 것을 자처하고, 음악가는 저마다 앞선 이들을 구식으로 밀어내며 발명 특허를 주장한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "breaking",
+          "ko": "깨며"
+        },
+        {
+          "en": "predecessor",
+          "ko": "앞선 것, 전임자"
+        },
+        {
+          "en": "records",
+          "ko": "기록"
+        },
+        {
+          "en": "offers itself as",
+          "ko": "~라고 자처하다"
+        },
+        {
+          "en": "last thing",
+          "ko": "최신의 것 · '마지막'이 아니에요"
+        },
+        {
+          "en": "modernity",
+          "ko": "현대성"
+        },
+        {
+          "en": "forcing",
+          "ko": "몰아넣으며"
+        },
+        {
+          "en": "unfashionable",
+          "ko": "유행에 뒤진"
+        },
+        {
+          "en": "outmoded",
+          "ko": "구식의"
+        },
+        {
+          "en": "claims",
+          "ko": "주장하다"
+        },
+        {
+          "en": "patent",
+          "ko": "특허"
+        },
+        {
+          "en": "invention",
+          "ko": "발명"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "군비 경쟁(arms race)이 붙었어요. 이 경쟁에서 음악가는 무엇을 주장하나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "세미콜론(;) 뒤 'each musician … claims'를 봐요.",
+              "세미콜론(;) 뒤 'each musician … claims'를 봐요."
+            ],
+            "explain": "세미콜론(;) 뒤 'each musician … claims'를 봐요.",
+            "praise": "맞아요.",
+            "feedback": {
+              "o0": "세미콜론(;) 뒤 'each musician … claims'를 봐요.",
+              "o1": "세미콜론(;) 뒤 'each musician … claims'를 봐요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "거장의 전통"
+            },
+            {
+              "id": "o1",
+              "label": "관객의 사랑"
+            },
+            {
+              "id": "o2",
+              "label": "발명 특허",
+              "correct": true
+            }
+          ],
+          "method": 0,
+          "faded": [
+            "breaking its predecessor’s records",
+            "forcing predecessors into the category of the unfashionable and outmoded"
+          ],
+          "tips": [
+            {
+              "label": "last thing",
+              "text": "'last thing'은 '마지막'이 아니라 '최신의 것'이에요. 같은 문장의 'outmoded(구식의)'와 반대말이에요."
+            }
+          ]
+        },
+        {
+          "id": "s6_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "1문장에선 발명가가 아니어도 된다고 했죠. 그런데 이 경쟁에선 음악가가 '발명' 특허를 주장해요."
+          },
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "innovator 쪽 · 훌륭한 음악가",
+              "words": [
+                {
+                  "text": "brilliant musician"
+                },
+                {
+                  "text": "innovator"
+                }
+              ]
+            },
+            "right": {
+              "label": "inventor 쪽 · 새로움·진보",
+              "words": [
+                {
+                  "text": "inventor"
+                },
+                {
+                  "text": "“great discoveries”",
+                  "quote": true
+                },
+                {
+                  "text": "novelty"
+                },
+                {
+                  "text": "technique"
+                },
+                {
+                  "text": "never-ending progress"
+                },
+                {
+                  "text": "arms race",
+                  "fresh": true
+                },
+                {
+                  "text": "last thing",
+                  "fresh": true
+                },
+                {
+                  "text": "patent",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "음악가가 '발명' 특허를 주장 → inventor 쪽으로"
+          },
+          "faded": [
+            "breaking its predecessor’s records",
+            "forcing predecessors into the category of the unfashionable and outmoded"
+          ],
+          "button": "다음 문장"
+        }
+      ],
+      "emphasis": [
+        "arms race",
+        "last thing",
+        "outmoded",
+        "patent"
+      ],
+      "concepts": [
+        {
+          "en": "arms race",
+          "title": "군비 경쟁:",
+          "text": "나라끼리 상대보다 더 센 무기를 갖겠다고 끝없이 겨루는 것. 한쪽이 앞서면 다른 쪽이 또 따라잡으려 해서 멈추지 않아요. 여기선 음악가끼리 '더 새로운 것'을 겨루는 걸 빗댄 말이에요."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "In an era where pastiches of “scientific investigation” have become quasi-universal, musicians owe it to themselves to become “researchers” just like everyone else.",
+      "model_translation": "'과학적 연구'의 모방작이 거의 보편화된 시대에, 음악가들은 다른 모두처럼 '연구자'가 되어야만 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "era",
+          "ko": "시대"
+        },
+        {
+          "en": "pastiches",
+          "ko": "모방작 · 겉모양만 흉내 낸 것"
+        },
+        {
+          "en": "scientific investigation",
+          "ko": "과학적 연구"
+        },
+        {
+          "en": "owe it to themselves to",
+          "ko": "~해야 한다고 여기다"
+        },
+        {
+          "en": "researchers",
+          "ko": "연구자"
+        },
+        {
+          "en": "just like everyone else",
+          "ko": "다른 모두처럼"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "드디어 밑줄이에요. 'researchers'에 따옴표가 붙어 있어요. 진짜 연구자라는 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요.",
+              "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요."
+            ],
+            "explain": "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요.",
+            "praise": "맞아요.",
+            "feedback": {
+              "o0": "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "진짜 연구자"
+            },
+            {
+              "id": "o1",
+              "label": "연구자 흉내",
+              "correct": true
+            }
+          ],
+          "method": 0,
+          "highlight": [
+            "“scientific investigation”",
+            "“researchers”"
+          ],
+          "tips": [
+            {
+              "label": "따옴표",
+              "text": "따옴표는 '진짜 그 말이 아니라 그렇게 불리는 것'이라는 표시일 때가 많아요. 이 글에서 따옴표가 붙은 말을 모아 보면 흐름이 보여요."
+            },
+            {
+              "label": "owe it to oneself to",
+              "text": "'V하는 게 자신에게 마땅하다', 즉 'V해야 한다'는 뜻이에요. 여기선 음악가들이 연구자가 '되어야 한다고 여긴다'는 말이에요. 자주 나오는 표현이라 외워 두면 좋아요."
+            }
+          ]
+        },
+        {
+          "id": "s7_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "음악가도 과학자처럼 '새 기술'과 '진보'를 내세우게 됐다는 말이에요."
+          },
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "innovator 쪽 · 훌륭한 음악가",
+              "words": [
+                {
+                  "text": "brilliant musician"
+                },
+                {
+                  "text": "innovator"
+                }
+              ]
+            },
+            "right": {
+              "label": "inventor 쪽 · 새로움·진보",
+              "words": [
+                {
+                  "text": "inventor"
+                },
+                {
+                  "text": "“great discoveries”",
+                  "quote": true
+                },
+                {
+                  "text": "novelty"
+                },
+                {
+                  "text": "technique"
+                },
+                {
+                  "text": "never-ending progress"
+                },
+                {
+                  "text": "arms race"
+                },
+                {
+                  "text": "last thing"
+                },
+                {
+                  "text": "patent"
+                },
+                {
+                  "text": "“scientific investigation”",
+                  "fresh": true,
+                  "quote": true
+                },
+                {
+                  "text": "“researchers”",
+                  "fresh": true,
+                  "quote": true
+                }
+              ]
+            },
+            "caption": "결국 음악가도 과학 흉내 → inventor 쪽"
+          },
+          "button": "문제 풀러 갈게요"
+        }
+      ],
+      "emphasis": [
+        "researchers"
+      ],
+      "concepts": [
+        {
+          "en": "quasi-universal",
+          "title": "quasi-universal:",
+          "text": "거의 보편적인, 즉 '거의 어디에나 있는'이라는 뜻이에요. quasi-는 '거의, ~에 가까운'이라는 뜻으로 앞에 붙어요. 시험지 아래에는 '준(準)보편적인'이라고 나와요."
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

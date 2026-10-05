@@ -4,6 +4,7 @@ import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
 import type { TutorView } from "../tutor/engine";
 import { nounKind } from "../tutor/proper-nouns";
+import { SAVE_CMD, WEEKS_CMD } from "../tutor/policy/session";
 
 type Props = {
   view: TutorView;
@@ -98,12 +99,40 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
             </div>
           </div>
         ) : null}
+        {/* 마무리 — 다시 볼 주기와 특별 저장 */}
+        {view.review ? (
+          <div className="review-panel">
+            <label className="review-weeks">
+              <span>다시 볼 때</span>
+              <select
+                id="review-weeks"
+                value={view.review.weeks == null ? "none" : String(view.review.weeks)}
+                onChange={(e) => onSend(`${WEEKS_CMD}${e.target.value}`)}
+              >
+                {view.review.choices.map((w) => (
+                  <option key={String(w)} value={w == null ? "none" : String(w)}>
+                    {w == null ? "다시 안 봄" : `${w}주 뒤`}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <button
+              type="button"
+              className={`review-save${view.review.saved ? " on" : ""}`}
+              aria-pressed={view.review.saved}
+              onClick={() => onSend(SAVE_CMD)}
+            >
+              {view.review.saved ? "★ 저장됨" : "☆ 저장"}
+            </button>
+            {view.review.caption ? <p className="review-caption">{view.review.caption}</p> : null}
+          </div>
+        ) : null}
         <QuickReplies buttons={view.buttons} hidden={typing || view.ended} onPick={onSend} />
         {view.ended ? (
           <button type="button" className="pill restart" onClick={onClose}>
             수업 목록으로
           </button>
-        ) : (
+        ) : view.allowInput === false ? null : (
           <InputBar placeholder={view.placeholder} disabled={typing} onSend={onSend} />
         )}
       </div>

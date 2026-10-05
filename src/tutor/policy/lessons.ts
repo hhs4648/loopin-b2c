@@ -1,5 +1,7 @@
 import descartesTree from "../../../content/tutor/policy-lessons/moeui-2025-03-21-descartes-tree.json";
 import descartesTreeDajung from "../../../content/tutor/policy-copy/dajung/moeui-2025-03-21-descartes-tree.json";
+import musicResearchers from "../../../content/tutor/policy-lessons/moeui-2026-03-21-music-researchers.json";
+import musicResearchersDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-21-music-researchers.json";
 import type { PolicyCopy, PolicyLesson } from "./types";
 
 /**
@@ -9,11 +11,11 @@ import type { PolicyCopy, PolicyLesson } from "./types";
  * 다르다. 지문을 추가하면 여기에 레슨 한 줄과 대사 한 줄,
  * `content/tutor/sets.json`에 세트 하나.
  */
-const POLICY_LESSONS = [descartesTree] as unknown as PolicyLesson[];
+const POLICY_LESSONS = [descartesTree, musicResearchers] as unknown as PolicyLesson[];
 
 /** 캐릭터 → 레슨 → 뽑아 둔 대사. 지금 캐릭터는 다정쌤 하나다 */
 const POLICY_COPY: Record<string, PolicyCopy[]> = {
-  dajung: [descartesTreeDajung] as unknown as PolicyCopy[],
+  dajung: [descartesTreeDajung, musicResearchersDajung] as unknown as PolicyCopy[],
 };
 
 export function getPolicyCopy(lessonId: string, character = "dajung"): PolicyCopy | null {

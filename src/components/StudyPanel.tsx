@@ -50,6 +50,52 @@ export function StudyPanelView({ panel }: { panel: StudyPanel }) {
     );
   }
 
+  if (panel.kind === "groups") {
+    const group = (g: typeof panel.left, side: string) => (
+      <div className={`board-group ${side}`}>
+        <span className="board-group-label">{g.label}</span>
+        <div className="board-words">
+          {g.words.map((w) => (
+            <span key={w.text} className={`board-word${w.fresh ? " fresh" : ""}${w.quote ? " quote" : ""}`}>
+              {w.text}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+    return (
+      <div className="study-panel board">
+        <i className="board-magnets" aria-hidden="true" />
+        {panel.title ? <div className="panel-title">{panel.title}</div> : null}
+        <div className="board-groups">
+          {group(panel.left, "left")}
+          <b className="board-between">{panel.between ?? "≠"}</b>
+          {group(panel.right, "right")}
+        </div>
+        {panel.caption ? <p className="board-caption">{panel.caption}</p> : null}
+      </div>
+    );
+  }
+
+  if (panel.kind === "map") {
+    return (
+      <div
+        className="study-panel map"
+        ref={(el) => {
+          // 지도가 길어지면 새로 붙은 줄(맨 아래)이 보이게 내려 둔다
+          if (el) el.scrollTop = el.scrollHeight;
+        }}
+      >
+        {panel.title ? <div className="panel-title">{panel.title}</div> : null}
+        {panel.rows.map((row, i) => (
+          <div key={i} className={`map-row${row.fresh ? " fresh" : ""}${row.quote ? " quote" : ""}`}>
+            {row.text}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="study-panel contrast">
       {[panel.left, panel.right].map((side) => (

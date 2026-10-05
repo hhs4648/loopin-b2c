@@ -3,6 +3,8 @@ import type { LessonCollection, LessonSet } from "../content/tutor/types";
 import { ClassroomChat } from "./components/ClassroomChat";
 import { LessonList } from "./components/LessonList";
 import { ReadPassage } from "./components/ReadPassage";
+import { MatchGame } from "./components/MatchGame";
+import { WordCheck } from "./components/WordCheck";
 import { SentenceStudy } from "./components/SentenceStudy";
 import { createSession, type TutorSession, type TutorView } from "./tutor/engine";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
@@ -110,6 +112,11 @@ export function App() {
   */
   function send(text: string) {
     if (typing || !session) return;
+    // 화면 조작 신호(__로 시작)는 선생님이 생각할 일이 아니다 — 기다리지 않고 바로
+    if (text.startsWith("__")) {
+      void session.submit(text).then(setView);
+      return;
+    }
     setTyping(true);
     window.setTimeout(() => {
       void session
@@ -181,6 +188,10 @@ export function App() {
       <div className="phone">
         {screen === "read" && view.passage ? (
           <ReadPassage view={view} onSend={send} onClose={backToList} />
+        ) : screen === "words" && view.wordCheck ? (
+          <WordCheck view={view} onSend={send} onClose={backToList} />
+        ) : screen === "match" && view.matchPairs ? (
+          <MatchGame view={view} onSend={send} onClose={backToList} />
         ) : screen === "study" ? (
           <SentenceStudy
             view={view}

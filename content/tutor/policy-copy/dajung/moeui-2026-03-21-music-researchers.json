@@ -1,0 +1,170 @@
+{
+  "lesson": "moeui-2026-03-21-music-researchers",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "밑줄 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_q": {
+      "ask": "첫 문장의 핵심 단어는 이 세 개예요. innovator와 inventor는 같은 사람일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요.",
+        "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요."
+      ],
+      "explain": "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요."
+      },
+      "from": "10ablub"
+    },
+    "s1_map": {
+      "say": "둘은 달라요. 발명가가 아니어도, 즉 새것을 발명하지 않아도 훌륭한 음악가가 될 수 있다는 말이에요.",
+      "from": "tl45yw"
+    },
+    "s2_q": {
+      "ask": "'In such cases'는 앞 문장의 경우, 즉 발명하지 않아도 훌륭한 음악가인 경우예요. 'great discoveries'는 지도에서 어느 쪽과 가까울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요.",
+        "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요."
+      ],
+      "explain": "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요.",
+      "praise": "맞아요.",
+      "feedback": {
+        "o0": "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요."
+      },
+      "from": "ruq7mz"
+    },
+    "s2_map": {
+      "say": "훌륭한 음악가는 꼭 새로운 걸 추구할 필요가 없어요. 그런데도 '위대한 발견'을 기대한다면 실망하게 될 거예요.",
+      "from": "hkbqg2"
+    },
+    "s3_q": {
+      "ask": "길죠. 흐린 부분은 건너뛰어도 돼요. '새로움(novelty)'을 원하면, 음악은 무엇이 된다고 하나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "끝부분 'music is no more than technique'를 봐요.",
+        "끝부분 'music is no more than technique'를 봐요."
+      ],
+      "explain": "끝부분 'music is no more than technique'를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "끝부분 'music is no more than technique'를 봐요.",
+        "o2": "끝부분 'music is no more than technique'를 봐요."
+      },
+      "from": "17kg117"
+    },
+    "s3_map": {
+      "say": "'no more than'은 '~에 불과한'이에요. 새로움만 좇으면 음악은 '기술'에 불과해진다는 거예요.",
+      "from": "a20bpf"
+    },
+    "s4_skim": {
+      "say": "이 문장은 앞 문장을 풀어 쓴 부분이에요. 시험에선 깊게 안 읽어도 답이 풀려요.",
+      "from": "13s9u88"
+    },
+    "s4_just_as": {
+      "ask": "'just as A, so B'는 'A하듯이 B하다'예요. 기술이 끝없이 개선되듯이, 음악에는 무엇이 법칙이 될까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'so' 뒤를 봐요. 'never-ending progress'예요.",
+        "'so' 뒤를 봐요. 'never-ending progress'예요."
+      ],
+      "explain": "'so' 뒤를 봐요. 'never-ending progress'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'so' 뒤를 봐요. 'never-ending progress'예요.",
+        "o1": "'so' 뒤를 봐요. 'never-ending progress'예요."
+      },
+      "from": "tkvxrt"
+    },
+    "s4_detail_end": {
+      "say": "기술처럼 음악도 끝없이 '더 새롭게, 더 낫게'를 좇게 된다는 거예요.",
+      "from": "1lw0nax"
+    },
+    "s5_skim": {
+      "say": "감탄문이에요. 끝없는 진보를 외치는 구호라서 넘어가도 돼요.",
+      "from": "1pgwm4r"
+    },
+    "s6_q": {
+      "ask": "군비 경쟁(arms race)이 붙었어요. 이 경쟁에서 음악가는 무엇을 주장하나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "세미콜론(;) 뒤 'each musician … claims'를 봐요.",
+        "세미콜론(;) 뒤 'each musician … claims'를 봐요."
+      ],
+      "explain": "세미콜론(;) 뒤 'each musician … claims'를 봐요.",
+      "praise": "맞아요.",
+      "feedback": {
+        "o0": "세미콜론(;) 뒤 'each musician … claims'를 봐요.",
+        "o1": "세미콜론(;) 뒤 'each musician … claims'를 봐요."
+      },
+      "from": "1cgq8m2"
+    },
+    "s6_map": {
+      "say": "1문장에선 발명가가 아니어도 된다고 했죠. 그런데 이 경쟁에선 음악가가 '발명' 특허를 주장해요.",
+      "from": "ek24mx"
+    },
+    "s7_q": {
+      "ask": "드디어 밑줄이에요. 'researchers'에 따옴표가 붙어 있어요. 진짜 연구자라는 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요.",
+        "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요."
+      ],
+      "explain": "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요.",
+      "praise": "맞아요.",
+      "feedback": {
+        "o0": "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요."
+      },
+      "from": "7w6av5"
+    },
+    "s7_map": {
+      "say": "음악가도 과학자처럼 '새 기술'과 '진보'를 내세우게 됐다는 말이에요.",
+      "from": "1oxv9dq"
+    }
+  },
+  "exam": {
+    "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 아니에요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "final_wrong": "정답은 ③이에요.",
+    "option_feedback": {
+      "1": "6문장에서 앞선 이들은 outmoded(구식)로 밀려났죠.",
+      "2": "지도에 없는 이야기예요. 글은 새로움과 진보 경쟁을 말하고 있어요.",
+      "4": "지도에 없는 이야기예요. 글은 새로움과 진보 경쟁을 말하고 있어요.",
+      "5": "science는 지도에도 있지만, 글에선 과학을 흉내 내요. 구별하는 게 아니에요."
+    },
+    "from": "112gpta",
+    "ask_first": "실제 시험처럼 풀어 봐요. 지문이 다시 보고 싶으면 아래 버튼을 눌러요."
+  },
+  "intro": {
+    "method1": {
+      "say": "밑줄 문제는 시간 싸움이에요. 단어를 다 알 필요는 없어요."
+    },
+    "method2": {
+      "say": "핵심 단어를 찾고, 그 단어들의 관계만 잡으면 밑줄 뜻이 보여요. 칠판 순서대로 해 볼게요."
+    },
+    "method_short": {
+      "say": "칠판 순서대로 바로 시작해 볼게요."
+    },
+    "from": "1rlh9iv"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "정답이에요! 이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "분석 없이 맞혔어요! 이 지문은 잘 소화했으니 복습 목록에서 뺄게요.",
+    "mastered_later": "분석 없이 맞혔어요! 그래도 {weeks} 뒤에 한 번만 더 확인해 볼게요."
+  },
+  "from": "v1qpyk"
+}

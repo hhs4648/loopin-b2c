@@ -73,7 +73,32 @@ export type ContrastPanel = {
   right: { title: string; text: string };
 };
 
-export type StudyPanel = StructurePanel | MappingPanel | ContrastPanel | NotePanel;
+/**
+ * 단어 지도 — 문장을 따라가며 핵심 단어와 관계(=, ≠, →, ↔)를 한 줄씩 쌓는다.
+ * `fresh`는 이번 문장에서 새로 붙은 줄, `quote`는 따옴표 친 말 줄(같은 색으로 잇는다).
+ */
+export type MapPanel = {
+  kind: "map";
+  title?: string;
+  rows: { text: string; fresh?: boolean; quote?: boolean }[];
+};
+
+/**
+ * 칠판 위 두 그룹 — 서로 다른 단어 무리를 한눈에. 문장을 지날 때마다 단어가 쌓인다.
+ * `fresh`는 이번 문장에서 새로 붙은 단어, `quote`는 따옴표 친 말.
+ */
+export type GroupsPanel = {
+  kind: "groups";
+  title?: string;
+  left: { label: string; words: { text: string; fresh?: boolean; quote?: boolean }[] };
+  right: { label: string; words: { text: string; fresh?: boolean; quote?: boolean }[] };
+  /** 두 그룹 사이 표시 (기본 ≠) */
+  between?: string;
+  /** 칠판 아래 한 줄 — 이번 문장이 그룹에 무엇을 더했는지 */
+  caption?: string;
+};
+
+export type StudyPanel = StructurePanel | MappingPanel | ContrastPanel | NotePanel | MapPanel | GroupsPanel;
 export type PanelRef = StudyPanel | string;
 
 /* ── 스텝 ─────────────────────────────────────────────────────────── */
@@ -101,6 +126,18 @@ type StepBase = {
   panel?: PanelRef;
   /** 앞 문장에서 만든 표상을 다시 꺼내 쓰는 스텝인가 (§15) */
   retrieve?: boolean;
+  /** 빼도 되는 삽입(콤마·대시 사이) — 흐리게 */
+  faded?: string[];
+  /** 건너뛰어도 되는 문장·부분 — 음영 */
+  shaded?: string[];
+  /** 💡 누르면 말풍선으로 열리는 요령 (지문 밖에서도 쓰는 표현·요령) */
+  tips?: { label: string; text: string }[];
+  /** 「밑줄 문제 푸는 법」 중 지금 단계 (0 핵심 단어, 1 관계, 2 밑줄 뜻) */
+  method?: number;
+  /** 이 스텝에 「자세히 볼래요」 같은 버튼을 둔다. 누르면 `optional_of`가 이 스텝인 것들을 연다 */
+  detail_button?: string;
+  /** 앞 스텝에서 「자세히」를 고른 학생만 보는 스텝 */
+  optional_of?: string;
   /** 「이미 알고 있어요, 넘어갈게요」를 둔다. 학생의 말을 믿고 넘어간다 — 기록은 남긴다 */
   skippable?: boolean;
   /** 이 스텝을 건너뛰면 같이 건너뛴다 (예: 주어 질문을 넘기면 뼈대 그림도) */
@@ -111,6 +148,10 @@ export type ChoiceOption = {
   id: string;
   label: string;
   correct?: boolean;
+  /** 시험 보기에서 색칠할 핵심 단어 */
+  keywords?: string[];
+  /** ▸를 누르면 보기 아래에 뜨는 짧은 한국어 */
+  ko?: string;
 };
 
 /** meaning_choice / translation_choice / structure_choice(주어 범위 등) / visual_mapping의 한 칸 / prediction */
@@ -129,10 +170,13 @@ export type ChoiceStep = StepBase & {
   panel_after?: PanelRef;
   /**
    * 칭찬을 **따로 한 말풍선**으로 보여 주고 「다음으로」를 기다린다.
-   * 기본은 다음 스텝 말 앞에 붙는다("맞아요! 그럼 …"). 칭찬에 뜻 되짚기가
+   * 기본은 다음 스텝 말 앞에 붙는다("맞아요! 그럼 …").
+   * (`one_try`: 한 번 틀리면 다시 고르게 하지 않고 이유를 말한 뒤 넘어간다) 칭찬에 뜻 되짚기가
    * 들어가 길어지면 이걸 켠다 — 한 말풍선에 한두 문장.
    */
   praise_alone?: boolean;
+  /** 한 번만 고르게 한다. 틀리면 "아쉽게도 아니에요." + 이유 → 「다음으로」 */
+  one_try?: boolean;
 };
 
 /** contrast_reasoning 등 — 채점하지 않는다. 생각할 틈을 주고, 그다음 정리한다 */
@@ -201,6 +245,8 @@ export type PolicyCopy = {
   helps: Record<string, Stamped<{ answer: string }>>;
   steps: Record<string, Stamped<Partial<ChoiceCopy & ThinkCopy & ShowCopy>>>;
   exam?: Stamped<ExamCopy>;
+  /** 마무리 — 복습 주기 · 단어 체크 · 짝 맞추기 */
+  ending?: Record<string, string>;
   /** 도입 단계 id → 대사 키 → 대사 */
   intro?: Stamped<Record<string, Record<string, string>>>;
 };
@@ -213,8 +259,12 @@ export type OptionalHelp = {
   brief: string;
 };
 
+/** ❓ 단어 위에 작게 붙는 개념 설명. 누르면 그 단어에서 말풍선이 열린다 (선생님 말 아님) */
+export type ConceptNote = { en: string; title: string; text: string };
+
 export type PolicySentence = {
   id: number;
+  concepts?: ConceptNote[];
   text: string;
   model_translation: string;
   teaching_value: Level3;
@@ -229,6 +279,10 @@ export type PolicySentence = {
 /** 시험 문제 그대로 — 처음에 풀어 볼 수도, 분석 뒤에 풀 수도 있다 */
 export type ExamQuestion = {
   question: string;
+  /** 분석을 먼저 한다 — 「바로 풀어 볼게요」를 묻지 않고, 시험 문제는 분석 뒤에 한 번 */
+  analysis_first?: boolean;
+  /** 보기 단어 뜻 (보기 화면에서 단어를 누르면) */
+  glosses?: WordGloss[];
   /** 밑줄 친 구절. 이 구절이 든 문장을 문제 화면에 띄우고 노랗게 칠한다 */
   underline: string;
   /** EBS가 공개하는 오답률(%). 인트로에서 말한다 */
@@ -242,6 +296,10 @@ export type ExamQuestion = {
 
 export type ExamCopy = {
   ask: string;
+  /** 바로 풀기에서 — 색칠·한국어가 없으니 다른 말을 한다 */
+  ask_first?: string;
+  /** 고른 보기마다 "아쉽게도 아니에요." 뒤에 붙는 이유 */
+  option_feedback?: Record<string, string>;
   first_correct: string;
   first_wrong: string;
   final_correct: string;
@@ -256,7 +314,14 @@ export type ExamCopy = {
  *   `inline`이면 그 답을 다음 질문 앞에 붙여 한 화면으로 보인다
  */
 export type IntroStep =
-  | { id: string; type: "say"; button?: string; brief: Record<string, string> }
+  | {
+      id: string;
+      type: "say";
+      button?: string;
+      /** first: 풀이법 설명을 아직 `intro_times`번 안 본 학생만 / later: 그 뒤의 학생만 */
+      show_when?: "first" | "later";
+      brief: Record<string, string>;
+    }
   | {
       id: string;
       type: "ask";
@@ -281,6 +346,20 @@ export type PolicyLesson = {
   /** 수업이 끝났을 때 칠판에 띄우는 그림 (도입의 물음표를 채운 판) */
   closing_board?: string;
   images?: Record<string, LessonImage>;
+  /**
+   * 문제 유형별 풀이법 칠판. `intro_times`번째 수업까지는 도입에서 설명하고, 그 뒤로는
+   * 칠판만 띄우고 바로 시작한다 (같은 유형 수업을 몇 번 봤는지는 기기에 센다)
+   */
+  method?: { type: string; labels: string[]; intro_times: number };
+  /** 지문 읽기 화면의 버튼 (기본 「계속」) */
+  read_button?: string;
+  /**
+   * 한 문장씩 읽는 화면을 빼고, 도입 뒤에 「바로 풀기 / 분석」을 고르게 한다.
+   * 바로 풀기를 고른 학생만 지문 전체를 한 화면에서 보고 바로 문제를 푼다.
+   */
+  passage_on_try?: boolean;
+  /** 마무리 단어 체크 — 본문 단어와 보기 단어를 따로 */
+  key_words?: { passage: WordGloss[]; options: WordGloss[] };
   context: LearningContext;
   item: ItemProperty;
   proper_nouns?: ProperNoun[];

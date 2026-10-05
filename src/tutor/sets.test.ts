@@ -55,6 +55,7 @@ describe("수업 세트", () => {
       "suneung-2024",
       "moeui-2027-09",
       "moeui-2025-03",
+      "moeui-2026-03",
     ]);
     // 모든 세트는 어느 중분류엔가 담긴다 — 흩어진 것이 없어야 한다
     const inCollections = allCollections().reduce((n, c) => n + setsIn(c.id).length, 0);
