@@ -493,7 +493,36 @@
       "title": "21번 문제",
       "subtitle": "밑줄 의미 — 데카르트의 나무, 과학과 철학의 분리",
       "lessons": [
-        "moeui-2025-03-21-descartes-tree"
+        "moeui-2025-03-21-u1-words",
+        "moeui-2025-03-21-u6-exam"
+      ],
+      "units": [
+        {
+          "title": "단어 (1)",
+          "subtitle": "나무의 세 부분에 붙은 단어",
+          "lesson": "moeui-2025-03-21-u1-words"
+        },
+        {
+          "title": "단어 (2)",
+          "subtitle": "원리에서 결과를 끌어내다"
+        },
+        {
+          "title": "핵심 문장 찾기",
+          "subtitle": "문제를 푸는 문장 세 개"
+        },
+        {
+          "title": "주어·동사 찾기",
+          "subtitle": "긴 문장 두 개의 뼈대"
+        },
+        {
+          "title": "문법",
+          "subtitle": "생략된 동사 · regard A as B"
+        },
+        {
+          "title": "실전 풀기",
+          "subtitle": "오답률 57.4% · 밑줄 의미",
+          "lesson": "moeui-2025-03-21-u6-exam"
+        }
       ]
     }
   ]

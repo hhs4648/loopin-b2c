@@ -4,6 +4,7 @@ import type {
   LessonCollection,
   LessonGroup,
   LessonSet,
+  LessonUnit,
 } from "../../content/tutor/types";
 import { getLesson, lessonIds } from "./lessons";
 import { getPolicyLesson, policyLessonIds } from "./policy/lessons";
@@ -87,6 +88,22 @@ export function sentenceCount(set: LessonSet): number {
 /** 이 세트를 시작하면 열리는 지문 */
 export function firstLessonId(set: LessonSet): string {
   return lessonIdsOf(set)[0]!;
+}
+
+/**
+ * 한 문제를 쪼갠 학습 단위들. 단위가 없는 세트(지문 하나를 통째로 하는 수업)는 빈 배열.
+ * 아직 레슨이 없는 단위도 들어 있다 — 목록에 「준비 중」으로 보여 준다.
+ */
+export function unitsOf(set: LessonSet): LessonUnit[] {
+  return set.units ?? [];
+}
+
+/** 이 단위 다음에 할 수 있는(만들어진) 단위. 마지막이면 null */
+export function nextUnit(set: LessonSet, lessonId: string): LessonUnit | null {
+  const units = unitsOf(set);
+  const at = units.findIndex((u) => u.lesson === lessonId);
+  if (at < 0) return null;
+  return units.slice(at + 1).find((u) => !!u.lesson) ?? null;
 }
 
 /** 지문이 속한 세트 — 수업 화면 머리글에 이름을 띄우려고 */

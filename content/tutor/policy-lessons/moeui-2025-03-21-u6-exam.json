@@ -1,0 +1,471 @@
+{
+  "id": "moeui-2025-03-21-u6-exam",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2025년 3월 고3 전국연합학력평가 영어 21번 (밑줄 의미 추론, 3점)",
+  "unit": "실전 풀기",
+  "brief": {
+    "topic": "21번 시험 문제를 그대로 푼다 — 밑줄 친 the tree was cut in the middle의 의미",
+    "closing": "어려운 문제를 끝까지 풀었음. 수고 인사 (한 문장)"
+  },
+  "exam": {
+    "question": "밑줄 친 the tree was cut in the middle이 다음 글에서 의미하는 바로 가장 적절한 것은? [3점]",
+    "underline": "the tree was cut in the middle",
+    "wrong_rate": 57.4,
+    "wrong_rank": 7,
+    "wrong_rate_source": "EBS 오답률 상위 문항",
+    "options": [
+      {
+        "id": "1",
+        "label": "Science detached itself from philosophical foundations and shifted to deriving outcomes based on physical principles.",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "Metaphysics became the first priority above all as practical results took precedence over intelligible theory."
+      },
+      {
+        "id": "3",
+        "label": "Results consistent with the observation were the utmost priority in Cartesian science-philosophy."
+      },
+      {
+        "id": "4",
+        "label": "Applied science moved toward being less reliant on both metaphysical and physical principles."
+      },
+      {
+        "id": "5",
+        "label": "Science de-emphasized ethical considerations in favor of raw observations."
+      }
+    ],
+    "shortlist": [
+      "1",
+      "3",
+      "4"
+    ],
+    "brief": {
+      "ask": "시험 문제 그대로. 보기는 많이 고른 세 개만 먼저 보여 준다고 알림. 밑줄 친 부분이 뜻하는 바로 가장 적절한 것 고르기",
+      "final_correct": "정답 인정 + 뿌리(철학)는 떼어 내고 줄기(물리 원리)에서 결과를 끌어낸다는 뜻 (두 문장)",
+      "final_wrong": "정답은 ①. 뿌리(형이상학)가 잘려 나가고 줄기(물리 원리)에서 결과를 끌어내게 됐다는 뜻",
+      "feedback": {
+        "2": "뿌리 = 형이상학. 나무가 잘린 뒤 뿌리를 어떻게 했는지 마지막 문장의 without regard to the roots를 다시 볼 것",
+        "3": "지문은 옛 원리에서 관찰과 일치하는 결과가 나오지 않았다고 함. 밑줄은 그다음에 일어난 변화",
+        "4": "both가 걸림. start from the physical principles in the trunk — 줄기는 버리지 않았음",
+        "5": "ethics는 응용과학의 예로 한 번 나올 뿐. 윤리를 덜 중요하게 봤다는 말은 지문에 없음"
+      }
+    }
+  },
+  "context": {
+    "mode": "first_attempt",
+    "exam_relevance": "high",
+    "time_budget": "short"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "high",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "minimal"
+  },
+  "images": {
+    "tree_filled": {
+      "src": "/assets/descartes-tree-filled.svg",
+      "alt": "데카르트의 나무 — 뿌리는 형이상학, 줄기는 물리학, 가지와 열매는 응용과학",
+      "kind": "drawing"
+    }
+  },
+  "closing_board": "tree_filled",
+  "intro": [
+    {
+      "id": "rate",
+      "type": "say",
+      "button": "네, 풀어 볼게요",
+      "brief": {
+        "say": "(고정 문구) 오답률 {rate}%, 이번 모의고사 Top{rank}",
+        "ask": "지문을 읽고 바로 풀어 보자"
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "text": "The unity of science and philosophy in the old classical sense was perhaps best described by the famous tree of Descartes:",
+      "model_translation": "옛 고전적 의미에서의 과학과 철학의 통합은 아마도 데카르트의 유명한 나무로 가장 잘 설명되었을 것이다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "unity",
+          "ko": "통합, 통일성 · 여기서는 과학과 철학을 하나의 연결된 체계로 보는 관점"
+        },
+        {
+          "en": "science",
+          "ko": "과학"
+        },
+        {
+          "en": "philosophy",
+          "ko": "철학"
+        },
+        {
+          "en": "old",
+          "ko": "옛날의"
+        },
+        {
+          "en": "classical",
+          "ko": "고전적 · 여기서는 '옛날의 전통적인 관점에서'로 이해하면 돼요"
+        },
+        {
+          "en": "sense",
+          "ko": "의미, 관점"
+        },
+        {
+          "en": "perhaps",
+          "ko": "아마도"
+        },
+        {
+          "en": "best described",
+          "ko": "가장 잘 설명된"
+        },
+        {
+          "en": "famous",
+          "ko": "유명한"
+        },
+        {
+          "en": "tree",
+          "ko": "나무"
+        },
+        {
+          "en": "Descartes",
+          "ko": "데카르트 · '나는 생각한다, 고로 존재한다'로 유명한 철학자예요"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 2,
+      "text": "The roots of this tree corresponded to metaphysics (the intelligible principles), the trunk to physics (statements of intermediate generality), and the branches and fruit to what we would call applied science.",
+      "model_translation": "이 나무의 뿌리는 형이상학(이해할 수 있는 원리들)에, 줄기는 물리학(중간 정도의 일반성을 지닌 진술들)에, 가지와 열매는 우리가 응용과학이라 부를 만한 것에 해당했다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "roots",
+          "ko": "뿌리"
+        },
+        {
+          "en": "trunk",
+          "ko": "(나무의) 줄기"
+        },
+        {
+          "en": "branches",
+          "ko": "가지"
+        },
+        {
+          "en": "fruit",
+          "ko": "열매"
+        },
+        {
+          "en": "corresponded",
+          "ko": "correspond: 일치하다 · 해당하다 · 편지를 주고받다"
+        },
+        {
+          "en": "metaphysics",
+          "ko": "형이상학"
+        },
+        {
+          "en": "intelligible",
+          "ko": "이해할 수 있는"
+        },
+        {
+          "en": "principles",
+          "ko": "원리들"
+        },
+        {
+          "en": "physics",
+          "ko": "물리학"
+        },
+        {
+          "en": "statements",
+          "ko": "진술"
+        },
+        {
+          "en": "intermediate",
+          "ko": "중간의"
+        },
+        {
+          "en": "generality",
+          "ko": "일반성"
+        },
+        {
+          "en": "what we would call",
+          "ko": "우리가 ~라고 부를 만한 것"
+        },
+        {
+          "en": "applied science",
+          "ko": "응용과학"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 3,
+      "text": "He regarded the whole system of science and philosophy as we today regard science alone; he felt that the metaphysical principles were ultimately justified by their “fruits,” not merely by their self-evidence.",
+      "model_translation": "오늘날 우리가 과학만을 바라보듯이 그는 과학과 철학의 전체 체계를 바라보았다. 그는 형이상학적 원리가 단지 자명함에 의해서가 아니라 궁극적으로 그 '열매'에 의해 정당화된다고 느꼈다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "regarded",
+          "ko": "바라보았다, 여겼다"
+        },
+        {
+          "en": "regard",
+          "ko": "바라보다, 여기다"
+        },
+        {
+          "en": "whole system",
+          "ko": "전체 체계"
+        },
+        {
+          "en": "science",
+          "ko": "과학"
+        },
+        {
+          "en": "philosophy",
+          "ko": "철학"
+        },
+        {
+          "en": "alone",
+          "ko": "~만, 단독으로"
+        },
+        {
+          "en": "metaphysical",
+          "ko": "형이상학의"
+        },
+        {
+          "en": "principles",
+          "ko": "원리들"
+        },
+        {
+          "en": "ultimately",
+          "ko": "궁극적으로"
+        },
+        {
+          "en": "justified",
+          "ko": "정당화되는"
+        },
+        {
+          "en": "not merely",
+          "ko": "단지 ~만이 아니라"
+        },
+        {
+          "en": "self-evidence",
+          "ko": "자명함 (증명 없이도 당연해 보임)"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 4,
+      "text": "What we today call applied science consisted for him not only in mechanics but also in medicine and ethics.",
+      "model_translation": "오늘날 우리가 응용과학이라 부르는 것은 그에게 역학뿐 아니라 의학과 윤리학으로도 이루어져 있었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "What we today call",
+          "ko": "오늘날 우리가 ~라고 부르는 것"
+        },
+        {
+          "en": "applied science",
+          "ko": "응용과학"
+        },
+        {
+          "en": "consisted",
+          "ko": "(consist in) ~에 있었다, ~로 이루어졌다"
+        },
+        {
+          "en": "for him",
+          "ko": "그에게는"
+        },
+        {
+          "en": "not only",
+          "ko": "~뿐만 아니라"
+        },
+        {
+          "en": "but also",
+          "ko": "~도 또한"
+        },
+        {
+          "en": "mechanics",
+          "ko": "역학"
+        },
+        {
+          "en": "medicine",
+          "ko": "의학"
+        },
+        {
+          "en": "ethics",
+          "ko": "윤리학"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 5,
+      "text": "The difficulty was that from the general principles of Cartesian or Aristotelian science-philosophy no results could be derived which were precisely in agreement with observation, but these principles seemed to be intelligible and plausible.",
+      "model_translation": "어려움은 데카르트식 또는 아리스토텔레스식 과학-철학의 일반 원리로부터는 관찰과 정확히 일치하는 결과를 전혀 끌어낼 수 없었는데도, 이 원리들이 이해할 수 있고 그럴듯해 보였다는 점이었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "difficulty",
+          "ko": "어려움, 문제"
+        },
+        {
+          "en": "general principles",
+          "ko": "일반 원리들"
+        },
+        {
+          "en": "Cartesian",
+          "ko": "데카르트의"
+        },
+        {
+          "en": "Aristotelian",
+          "ko": "아리스토텔레스의"
+        },
+        {
+          "en": "science-philosophy",
+          "ko": "과학-철학 (둘이 하나였던 옛 학문)"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "derived",
+          "ko": "(derive A from B) B에서 A를 끌어내다"
+        },
+        {
+          "en": "precisely",
+          "ko": "정확히"
+        },
+        {
+          "en": "in agreement with",
+          "ko": "~와 일치하는"
+        },
+        {
+          "en": "observation",
+          "ko": "관찰"
+        },
+        {
+          "en": "principles",
+          "ko": "원리들"
+        },
+        {
+          "en": "seemed",
+          "ko": "~처럼 보였다"
+        },
+        {
+          "en": "intelligible",
+          "ko": "이해할 수 있는"
+        },
+        {
+          "en": "plausible",
+          "ko": "그럴듯한"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 6,
+      "text": "So the tree was cut in the middle.",
+      "model_translation": "그래서 그 나무는 가운데가 잘렸다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "So",
+          "ko": "그래서"
+        },
+        {
+          "en": "was cut",
+          "ko": "잘렸다"
+        },
+        {
+          "en": "in the middle",
+          "ko": "가운데에서"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 7,
+      "text": "For the derivation of technical results, it was necessary to start from the physical principles in the trunk.",
+      "model_translation": "기술적 결과를 끌어내기 위해서는 줄기에 있는 물리적 원리에서 출발할 필요가 있었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "derivation",
+          "ko": "끌어냄, 도출"
+        },
+        {
+          "en": "technical results",
+          "ko": "기술적 결과"
+        },
+        {
+          "en": "it was necessary to",
+          "ko": "~할 필요가 있었다"
+        },
+        {
+          "en": "start from",
+          "ko": "~에서 출발하다"
+        },
+        {
+          "en": "physical principles",
+          "ko": "물리적 원리들"
+        },
+        {
+          "en": "trunk",
+          "ko": "(나무의) 줄기"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 8,
+      "text": "Science in the new sense was to think only of how the fruits would develop from the trunk without regard to the roots.",
+      "model_translation": "새로운 의미의 과학은 뿌리는 고려하지 않고 열매가 줄기에서 어떻게 자라날지만을 생각하게 되었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "in the new sense",
+          "ko": "새로운 의미에서의"
+        },
+        {
+          "en": "was to",
+          "ko": "(be to) ~하게 되어 있었다, ~해야 했다"
+        },
+        {
+          "en": "think only of",
+          "ko": "~만을 생각하다"
+        },
+        {
+          "en": "fruits",
+          "ko": "열매"
+        },
+        {
+          "en": "develop",
+          "ko": "자라나다, 발전하다"
+        },
+        {
+          "en": "trunk",
+          "ko": "(나무의) 줄기"
+        },
+        {
+          "en": "without regard to",
+          "ko": "~을 고려하지 않고"
+        },
+        {
+          "en": "roots",
+          "ko": "뿌리"
+        }
+      ],
+      "steps": []
+    }
+  ]
+}

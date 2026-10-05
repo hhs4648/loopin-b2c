@@ -131,6 +131,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           layout={view.buttonLayout}
           aux={view.auxButtons}
           numbered={view.numbered}
+          numerals={view.numerals}
           onPick={onSend}
         />
         <InputBar placeholder={view.placeholder} disabled={typing} onSend={onSend} />

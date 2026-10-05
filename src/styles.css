@@ -824,3 +824,27 @@ mark.hl, .english-token.hl .english-word {
 /* 칠판 위쪽에 붙인다 — 아래로 내려오면 말풍선에 가린다 */
 .board-image.drawing { width: 74%; height: auto; top: 30.5%; transform: translate(-50%, -50%); }
 .board-image.drawing img { width: 100%; height: auto; }
+
+/*
+  ── 단위 목록 ────────────────────────────────────────────────────────
+  한 문제를 쪼갠 작은 학습 단위들. 카드는 세트 카드를 그대로 쓰되 한 줄로 눕힌다 —
+  여섯 개가 한 화면에 다 보여야 「얼마나 남았는지」가 보인다.
+*/
+.set-card.unit-card { flex-direction: row; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 18px; }
+.unit-num {
+  flex: none; width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #f6e9ec; color: #e2607d; font-size: 13px; font-weight: 800;
+}
+.unit-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.unit-card .set-title { font-size: 16px; margin-top: 0; }
+.unit-card .set-go { flex: none; }
+.set-card.done .unit-num { background: #e8f0e4; color: #4f7a45; }
+/* 아직 안 만든 단위 — 자리는 보여 주되 누를 수 없다 */
+.set-card.soon { cursor: default; background: rgba(255,255,255,.55); box-shadow: 0 0 0 1px rgba(60,30,20,.06); }
+.set-card.soon:hover { transform: none; box-shadow: 0 0 0 1px rgba(60,30,20,.06); }
+.set-card.soon .set-title, .set-card.soon .set-subtitle, .set-card.soon .set-go { color: #b8adb4; }
+.set-card.soon .unit-num { background: #f1ece8; color: #b8adb4; }
+
+/* 단위를 끝낸 자리 — 「쉬기」와 「다음」을 나란히 */
+.quick-row.end-row { justify-content: flex-end; }

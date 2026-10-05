@@ -7,12 +7,14 @@ type Props = {
   aux?: string[];
   /** 보기에 ①②③을 단다 */
   numbered?: boolean;
+  /** 달 번호를 직접 준다 (보기 순서대로). 없으면 ①부터 차례로 */
+  numerals?: string[];
   onPick: (label: string) => void;
 };
 
 const NUMERALS = ["①", "②", "③", "④", "⑤"];
 
-export function QuickReplies({ buttons, hidden, layout = "row", aux, numbered, onPick }: Props) {
+export function QuickReplies({ buttons, hidden, layout = "row", aux, numbered, numerals, onPick }: Props) {
   if (hidden || buttons.length === 0) return null;
   // 보기에는 ①②③을 단다. 보조 버튼(`aux`)과 「다음으로」 같은 단독 버튼에는 안 단다
   let n = 0;
@@ -20,7 +22,7 @@ export function QuickReplies({ buttons, hidden, layout = "row", aux, numbered, o
     <div className={`quick-row${layout === "stack" ? " stack" : ""}`}>
       {buttons.map((label) => {
         const isAux = aux?.includes(label) ?? false;
-        const numeral = numbered && !isAux ? NUMERALS[n++] : null;
+        const numeral = numbered && !isAux ? (numerals ?? NUMERALS)[n++] : null;
         return (
           <button
             key={label}

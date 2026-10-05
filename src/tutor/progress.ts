@@ -11,7 +11,10 @@
 
 const KEY = "dajung.done";
 
-/** 세트 id → 마지막으로 받은 결과 (이해·오류후이해·취약·설명제공) */
+/**
+ * 세트 id → 마지막으로 받은 결과 (이해·오류후이해·취약·설명제공).
+ * 단위로 쪼갠 세트는 **단위의 레슨 id**로도 같은 자리에 적는다 — 세트 id와 겹치지 않는다.
+ */
 export type Progress = Record<string, string>;
 
 export function loadProgress(): Progress {
@@ -42,4 +45,16 @@ export function markDone(setId: string, result: string): void {
 
 export function isDone(progress: Progress, setId: string): boolean {
   return setId in progress;
+}
+
+/**
+ * 단위 하나를 끝냈다. 만들어진 단위를 다 끝냈으면 세트도 「완료」가 된다 —
+ * 세트의 결과는 마지막 단위(실전 풀기)의 것이다.
+ */
+export function markUnitDone(setId: string, unitLessons: string[], lessonId: string, result: string): void {
+  markDone(lessonId, result);
+  const progress = loadProgress();
+  if (unitLessons.every((id) => isDone(progress, id))) {
+    markDone(setId, progress[unitLessons[unitLessons.length - 1]!] ?? result);
+  }
 }

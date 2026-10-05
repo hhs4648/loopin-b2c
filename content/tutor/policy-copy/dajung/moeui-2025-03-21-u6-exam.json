@@ -1,0 +1,28 @@
+{
+  "lesson": "moeui-2025-03-21-u6-exam",
+  "character": "dajung",
+  "note": "생성물. 가르치는 내용은 policy-lessons의 brief를 고치고, 이 파일은 그 brief에서 다정쌤 말투로 다시 뽑는다 (scripts/policy_copy.mjs)",
+  "topic_intro": "21번 문제를 그대로 풀어",
+  "closing": "어려운 문제를 끝까지 풀었어요, 수고했어요 😊",
+  "helps": {},
+  "steps": {},
+  "intro": {
+    "rate": {
+      "ask": "지문을 읽고 바로 풀어 봐요."
+    },
+    "from": "1fcuquf"
+  },
+  "exam": {
+    "ask": "시험 문제 그대로예요. 보기는 많이들 고른 세 개만 먼저 보여 줄게요. 밑줄 친 부분이 뜻하는 바로 가장 적절한 것은 무엇일까요?",
+    "final_correct": "정답이에요! 뿌리인 철학은 떼어 내고, 줄기인 물리 원리에서 결과를 끌어낸다는 뜻이에요.",
+    "final_wrong": "정답은 ①이에요. 뿌리(형이상학)가 잘려 나가고, 줄기(물리 원리)에서 결과를 끌어내게 됐다는 뜻이에요.",
+    "feedback": {
+      "2": "뿌리가 형이상학이었죠. 나무가 잘린 뒤에 뿌리를 어떻게 했는지, 마지막 문장의 'without regard to the roots'를 다시 봐요.",
+      "3": "지문은 옛 원리에서 관찰과 일치하는 결과가 나오지 않았다고 했어요. 밑줄은 그다음에 일어난 변화를 말해요.",
+      "4": "'both'를 봐요. 'start from the physical principles in the trunk'라고 했으니, 줄기는 버리지 않았어요.",
+      "5": "'ethics'는 응용과학의 예로 한 번 나올 뿐이에요. 윤리를 덜 중요하게 봤다는 말은 지문에 없어요."
+    },
+    "from": "1wk0oel"
+  },
+  "from": "dzc9eb"
+}

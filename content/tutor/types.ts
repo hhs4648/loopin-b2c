@@ -153,6 +153,19 @@ export type LessonSet = {
   subtitle: string;
   /** `lessons.ts`의 레슨 id. 순서대로 푼다 */
   lessons: string[];
+  /**
+   * 한 문제를 **작은 학습 단위**로 쪼갠 것 (단어 → 핵심 문장 → … → 실전 풀기).
+   * 있으면 세트를 눌렀을 때 수업이 바로 열리지 않고 단위 목록이 먼저 나온다.
+   * `lessons`에는 이 중 만들어진 단위의 레슨만, 같은 순서로 적는다.
+   */
+  units?: LessonUnit[];
+};
+
+/** `lesson`이 없으면 아직 안 만든 단위다 — 목록에 「준비 중」으로 뜬다 */
+export type LessonUnit = {
+  title: string;
+  subtitle: string;
+  lesson?: string;
 };
 
 /**

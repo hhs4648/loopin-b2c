@@ -10,7 +10,8 @@
     "mode_try": "바로 풀어 볼게요",
     "mode_analyze": "분석부터 할게요",
     "analyze_start": "분석 시작할게요",
-    "intro_next": "네"
+    "intro_next": "네",
+    "exam_all": "보기 다 볼래요"
   },
   "lines": {
     "start_known": "좋아요. ",

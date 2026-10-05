@@ -39,6 +39,13 @@ npm run policy:copy stamp     # 대사를 고친 뒤 도장
 고유명사 칩(「Descartes · 사람 이름 · 그대로」)은 이 수업에서 쓰지 않는다 — 굳이 필요 없는
 정보다. 이름은 단어 뜻(`glosses`)에 「데카르트」처럼 넣어 누르면 보이게만 한다.
 
+## 한 문제를 작은 단위로 (2026-09-30)
+
+21번부터는 지문 하나를 통째로 하지 않고 **단위**(단어 → 핵심 문장 → … → 실전 풀기)로 쪼갠다.
+규칙은 `AUTHORING_RULES.md` §0. 단위 하나가 레슨 JSON 하나다 (`moeui-2025-03-21-u1-words` …).
+통째로 된 예전 21번(`…-descartes-tree`)은 목록에서 내렸고 엔진 회귀용으로 남겼다 —
+`?lesson=moeui-2025-03-21-descartes-tree`로는 여전히 열린다.
+
 ## 어디에 무엇이 있나
 
 | 무엇 | 어디 |
@@ -51,7 +58,8 @@ npm run policy:copy stamp     # 대사를 고친 뒤 도장
 | 대사 뽑기 도구 | `scripts/policy_copy.mjs` |
 | 지문과 상관없는 고정 대사 | `content/tutor/policy-frame.json` |
 | 그림(뼈대·대응표·대비) | `src/components/StudyPanel.tsx` |
-| 회귀 테스트 | `src/tutor/policy/policy.test.ts` |
+| 회귀 테스트 | `src/tutor/policy/policy.test.ts` (예전 21번) · `units.test.ts` (단위 수업) |
+| 단위 목록 화면 | `src/components/LessonList.tsx` — `sets.json`의 `units` |
 
 ## 스텝 세 가지
 

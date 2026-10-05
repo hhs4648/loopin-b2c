@@ -7,12 +7,16 @@ import {
   allSets,
   firstLessonId,
   getCollection,
+  getSet,
   knownLessonIds,
+  nextUnit,
   sentencesIn,
   sentenceCount,
   setOfLesson,
   setsIn,
+  unitsOf,
 } from "./sets";
+import { getPolicyLesson } from "./policy/lessons";
 
 const RAW = data.sets as LessonSet[];
 
@@ -36,9 +40,13 @@ describe("수업 세트", () => {
   it("목록에 올리지 않은 지문은 참고용으로 적어 둔 것만 허용한다", () => {
     /*
       탈레스 원안은 엔진 회귀용으로 JSON을 남긴다. 학생이 고르는 목록에는
-      올리지 않는다.
+      올리지 않는다. 통째로 된 예전 21번도 같다 — 21번은 작은 단위로 다시 만드는
+      중이고, 예전 것은 Teaching Policy 엔진 회귀용으로만 남겼다.
     */
-    const allowedUnlisted = new Set(["thales-participial-phrase-front"]);
+    const allowedUnlisted = new Set([
+      "thales-participial-phrase-front",
+      "moeui-2025-03-21-descartes-tree",
+    ]);
     const orphans = knownLessonIds().filter((id) => !setOfLesson(id) && !allowedUnlisted.has(id));
     expect(orphans).toEqual([]);
   });
@@ -79,6 +87,27 @@ describe("수업 세트", () => {
     for (const set of allSets()) {
       expect(firstLessonId(set), set.id).toBe(set.lessons[0]);
     }
+  });
+
+  it("단위로 쪼갠 세트: 만들어진 단위의 레슨이 `lessons`와 같은 순서로 같다", () => {
+    for (const set of RAW) {
+      if (!set.units) continue;
+      const built = set.units.flatMap((u) => (u.lesson ? [u.lesson] : []));
+      expect(built, set.id).toEqual(set.lessons);
+      // 단위 이름은 그 레슨이 머리글에 띄우는 이름과 같아야 한다
+      for (const u of set.units) {
+        if (u.lesson) expect(getPolicyLesson(u.lesson)?.unit, u.lesson).toBe(u.title);
+      }
+      const titles = set.units.map((u) => u.title);
+      expect(new Set(titles).size, set.id).toBe(titles.length);
+    }
+  });
+
+  it("다음 단위는 만들어진 것 중에서 고른다 — 「준비 중」은 건너뛴다", () => {
+    const set = getSet("moeui-2025-03-21")!;
+    expect(unitsOf(set)).toHaveLength(6);
+    expect(nextUnit(set, "moeui-2025-03-21-u1-words")?.title).toBe("실전 풀기");
+    expect(nextUnit(set, "moeui-2025-03-21-u6-exam")).toBeNull();
   });
 
   it("수능 18번 세트에 퇴사 편지 7문장이 들어 있다", () => {

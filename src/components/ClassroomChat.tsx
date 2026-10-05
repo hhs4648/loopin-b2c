@@ -13,9 +13,14 @@ type Props = {
   typing: boolean;
   onSend: (text: string) => void;
   onClose: () => void;
+  /**
+   * 단위로 쪼갠 문제에서, 이 단위 다음에 할 단위. 끝났을 때 「다음」과 「쉬기」를
+   * 나란히 둔다 — 끊어도 되는 자리라는 걸 학생이 알 수 있게.
+   */
+  next?: { title: string; onGo: () => void } | null;
 };
 
-export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose }: Props) {
+export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose, next }: Props) {
   // 칩이 뜨면 아래 도크가 그만큼 높아진다. 학생 말풍선을 같이 올리지 않으면 가린다
   const showNouns = view.properNouns.length > 0 && !view.ended;
 
@@ -100,9 +105,20 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
         ) : null}
         <QuickReplies buttons={view.buttons} hidden={typing || view.ended} onPick={onSend} />
         {view.ended ? (
-          <button type="button" className="pill restart" onClick={onClose}>
-            수업 목록으로
-          </button>
+          next ? (
+            <div className="quick-row end-row">
+              <button type="button" className="pill aux" onClick={onClose}>
+                여기서 쉴게요
+              </button>
+              <button type="button" className="pill" onClick={next.onGo}>
+                다음: {next.title}
+              </button>
+            </div>
+          ) : (
+            <button type="button" className="pill restart" onClick={onClose}>
+              수업 목록으로
+            </button>
+          )
         ) : (
           <InputBar placeholder={view.placeholder} disabled={typing} onSend={onSend} />
         )}

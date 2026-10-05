@@ -9,9 +9,9 @@ import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { isPolicyLesson } from "./tutor/policy/lessons";
 import { createPolicySession } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
-import { markDone } from "./tutor/progress";
+import { markDone, markUnitDone } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
-import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets";
+import { firstLessonId, getCollection, getSet, nextUnit, setOfLesson, unitsOf } from "./tutor/sets";
 
 /*
   개발에서 지문 하나만 보고 싶을 때가 있다. `?lesson=<id>`나 `?set=<id>`가
@@ -53,7 +53,8 @@ export function App() {
   */
   const [started, setStarted] = useState<Started | null>(() => {
     if (directLesson) return open(directLesson);
-    if (directSet) return open(firstLessonId(directSet));
+    // 단위로 쪼갠 세트는 수업이 아니라 단위 목록부터 연다
+    if (directSet && !unitsOf(directSet).length) return open(firstLessonId(directSet));
     return null;
   });
   const [view, setView] = useState<TutorView | null>(
@@ -63,6 +64,14 @@ export function App() {
   const [collection, setCollection] = useState<LessonCollection | null>(() =>
     directSet ? getCollection(directSet.collection) : null,
   );
+  /*
+    단위 목록을 열어 둔 세트. 단위 하나를 끝내거나 닫으면 **이 목록으로** 돌아온다 —
+    다음 단위를 고르는 자리다.
+  */
+  const [unitSet, setUnitSet] = useState<LessonSet | null>(() => {
+    const set = directSet ?? (import.meta.env.DEV && directLesson ? setOfLesson(directLesson) : null);
+    return set && unitsOf(set).length ? set : null;
+  });
   const [chatOverride, setChatOverride] = useState(false);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
@@ -87,15 +96,18 @@ export function App() {
 
   const ended = view?.ended ?? false;
   const recordLine = view?.recordLine ?? null;
-  const setId = started?.set?.id;
+  const set = started?.set ?? null;
   useEffect(() => {
     if (!ended || !recordLine || !session) return;
     const result = recordLine.match(/결과=([^\s/]+)/)?.[1];
     if (!result) return;
     void finishSessionRecord(result, session.records());
     // 목록에 「완료」를 칠하려면 지금 손에 있는 값이 필요하다
-    if (setId) markDone(setId, result);
-  }, [ended, recordLine, session, setId]);
+    if (!set) return;
+    const unitLessons = unitsOf(set).flatMap((u) => (u.lesson ? [u.lesson] : []));
+    if (unitLessons.length) markUnitDone(set.id, unitLessons, session.lessonId(), result);
+    else markDone(set.id, result);
+  }, [ended, recordLine, session, set]);
 
   const elapsed = useMemo(() => {
     const m = String(Math.floor(seconds / 60)).padStart(2, "0");
@@ -131,7 +143,15 @@ export function App() {
 
   function startSet(set: LessonSet) {
     setCollection(getCollection(set.collection));
-    const next = open(firstLessonId(set));
+    if (unitsOf(set).length) {
+      setUnitSet(set);
+      return;
+    }
+    startLesson(firstLessonId(set));
+  }
+
+  function startLesson(lessonId: string) {
+    const next = open(lessonId);
     setStarted(next);
     setView(next.session.view());
     setChatOverride(false);
@@ -165,9 +185,11 @@ export function App() {
           <LessonList
             learnerName={loadLearnerName()}
             collection={collection}
+            unitSet={unitSet}
             onOpenCollection={setCollection}
-            onBack={() => setCollection(null)}
+            onBack={() => (unitSet ? setUnitSet(null) : setCollection(null))}
             onPickSet={startSet}
+            onPickUnit={startLesson}
           />
         </div>
       </div>
@@ -175,6 +197,7 @@ export function App() {
   }
 
   const screen = chatOverride ? "chat" : view.screen;
+  const unitNext = started.set ? nextUnit(started.set, started.session.lessonId()) : null;
 
   return (
     <div className="viewport">
@@ -198,6 +221,7 @@ export function App() {
             typing={typing}
             onSend={send}
             onClose={backToList}
+            next={unitNext?.lesson ? { title: unitNext.title, onGo: () => startLesson(unitNext.lesson!) } : null}
           />
         )}
         {view.recordLine ? <pre className="record">{view.recordLine}</pre> : null}

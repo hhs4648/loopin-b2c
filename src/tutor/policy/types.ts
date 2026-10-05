@@ -237,15 +237,27 @@ export type ExamQuestion = {
   wrong_rank?: number;
   wrong_rate_source?: string;
   options: ChoiceOption[];
+  /**
+   * 처음에 보여 줄 보기 id — **정답 + 가장 많이 고른 오답 둘** (오답률 시트에서 옮긴다).
+   * 다섯 개를 다 읽는 부담을 던다. 학생이 「보기 다 볼래요」를 누르면 전부 펼친다.
+   * 없으면 처음부터 전부 보여 준다.
+   */
+  shortlist?: string[];
   brief: ExamCopy;
 };
 
 export type ExamCopy = {
   ask: string;
-  first_correct: string;
-  first_wrong: string;
+  /** 분석 전에 먼저 풀어 볼 때의 말. 문제만 푸는 단위에는 없다 */
+  first_correct?: string;
+  first_wrong?: string;
   final_correct: string;
   final_wrong: string;
+  /**
+   * 오답 보기 id → 왜 그 보기가 아닌지 (정답은 말하지 않는다).
+   * 있으면 처음 틀렸을 때 그 보기만 치우고 **한 번 더** 고르게 한다.
+   */
+  feedback?: Record<string, string>;
 };
 
 /**
@@ -273,6 +285,13 @@ export type PolicyLesson = {
   kind: "policy";
   version: string;
   source: string;
+  /**
+   * 한 문제를 쪼갠 **학습 단위**일 때 그 이름 (`sets.json`의 `units[].title`과 같다).
+   * 머리글에 「문장 학습」 대신 이 이름이 뜨고, 진행은 문장이 아니라 스텝으로 센다.
+   */
+  unit?: string;
+  /** 지문 읽기 화면을 건너뛴다 — 단어·구조처럼 문장 몇 개만 보는 단위 */
+  skip_read?: boolean;
   brief: { topic: string; closing: string };
   exam?: ExamQuestion;
   intro?: IntroStep[];
@@ -300,6 +319,7 @@ export type Observation =
   | { kind: "skip" }
   | { kind: "intro"; optionId: string }
   | { kind: "exam"; when: "first" | "final"; correct: boolean; optionId: string }
+  | { kind: "exam_show_all" }
   | { kind: "continue" };
 
 /** 화면에서 바로 올라오는 관찰 — 턴을 만들지 않는다 */

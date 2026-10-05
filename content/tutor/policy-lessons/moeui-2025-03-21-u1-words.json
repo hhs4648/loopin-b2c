@@ -1,0 +1,243 @@
+{
+  "id": "moeui-2025-03-21-u1-words",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2025년 3월 고3 전국연합학력평가 영어 21번 (밑줄 의미 추론, 3점)",
+  "unit": "단어 (1)",
+  "skip_read": true,
+  "brief": {
+    "topic": "21번을 푸는 데 필요한 단어 — 나무의 세 부분에 붙은 trunk, metaphysics, applied science",
+    "closing": "단어 세 개를 나무에 붙였음. 이 나무가 21번의 열쇠. 수고 인사 (두 문장까지)"
+  },
+  "context": {
+    "mode": "regular_learning",
+    "exam_relevance": "high",
+    "time_budget": "short"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "high",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "minimal"
+  },
+  "panels": {
+    "tree_words": {
+      "kind": "mapping",
+      "title": "데카르트의 나무",
+      "rows": [
+        {
+          "left": "roots 뿌리",
+          "right": "metaphysics 형이상학",
+          "note": "철학 — 보이지 않는 근본 원리"
+        },
+        {
+          "left": "trunk 줄기",
+          "right": "physics 물리학"
+        },
+        {
+          "left": "branches & fruit 가지·열매",
+          "right": "applied science 응용과학",
+          "note": "실제로 써먹는 과학"
+        }
+      ]
+    }
+  },
+  "images": {
+    "tree": {
+      "src": "/assets/descartes-tree.svg",
+      "alt": "데카르트의 나무 그림",
+      "kind": "drawing"
+    },
+    "tree_filled": {
+      "src": "/assets/descartes-tree-filled.svg",
+      "alt": "데카르트의 나무 — 뿌리는 형이상학, 줄기는 물리학, 가지와 열매는 응용과학",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "tree",
+  "closing_board": "tree_filled",
+  "intro": [
+    {
+      "id": "go",
+      "type": "say",
+      "button": "네, 좋아요!",
+      "brief": {
+        "say": "21번은 나무 한 그루만 알면 풀림. 먼저 나무에 붙은 단어 세 개부터 보자"
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "id": 2,
+      "text": "The roots of this tree corresponded to metaphysics (the intelligible principles), the trunk to physics (statements of intermediate generality), and the branches and fruit to what we would call applied science.",
+      "model_translation": "이 나무의 뿌리는 형이상학(이해할 수 있는 원리들)에, 줄기는 물리학(중간 정도의 일반성을 지닌 진술들)에, 가지와 열매는 우리가 응용과학이라 부를 만한 것에 해당했다.",
+      "teaching_value": "high",
+      "vocabulary": {
+        "trunk": "teaching_target",
+        "metaphysics": "teaching_target",
+        "applied science": "teaching_target"
+      },
+      "glosses": [
+        {
+          "en": "roots",
+          "ko": "뿌리"
+        },
+        {
+          "en": "tree",
+          "ko": "나무"
+        },
+        {
+          "en": "corresponded",
+          "ko": "correspond: 일치하다 · 여기서는 '~에 해당했다'"
+        },
+        {
+          "en": "physics",
+          "ko": "물리학"
+        },
+        {
+          "en": "branches",
+          "ko": "가지"
+        },
+        {
+          "en": "fruit",
+          "ko": "열매"
+        },
+        {
+          "en": "what we would call",
+          "ko": "우리가 ~라고 부를 만한 것"
+        }
+      ],
+      "steps": [
+        {
+          "id": "w1_trunk",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "skill": "vocab_trunk",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "highlight": [
+            "the trunk"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "label": "가지"
+            },
+            {
+              "id": "b",
+              "label": "줄기",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "label": "자동차 트렁크"
+            }
+          ],
+          "brief": {
+            "ask": "노란 칠을 한 trunk가 나무의 어느 부분인지 묻기",
+            "reask": "trunk 뜻 고르기로 복귀",
+            "hints": [
+              "나무의 부분이 roots → trunk → branches 순서로 나옴",
+              "뿌리와 가지 사이, 나무 한가운데의 굵은 부분"
+            ],
+            "explain": "trunk = 나무의 줄기. 뿌리와 가지 사이의 굵은 기둥",
+            "praise": "정답 인정 (한마디)",
+            "feedback": {
+              "a": "가지는 뒤에 branches로 따로 나옴. trunk는 그 앞 부분",
+              "c": "그 뜻도 있는 단어임을 인정. 여기는 나무 이야기 — roots와 branches 사이에 있는 부분"
+            }
+          }
+        },
+        {
+          "id": "w1_metaphysics",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "skill": "vocab_metaphysics",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "highlight": [
+            "metaphysics"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "label": "물리학의 한 분야"
+            },
+            {
+              "id": "b",
+              "label": "물리학보다 발전한 최신 과학"
+            },
+            {
+              "id": "c",
+              "label": "보이지 않는 근본 원리를 따지는 철학",
+              "correct": true
+            }
+          ],
+          "brief": {
+            "ask": "이번에는 metaphysics. 어떤 학문인지 묻기",
+            "reask": "metaphysics가 어떤 학문인지 고르기로 복귀",
+            "hints": [
+              "meta- = '~너머'. physics가 다루는 눈에 보이는 자연, 그 너머를 묻는 학문",
+              "과학이 아니라 철학 쪽. 나무에서도 땅속에 있어 보이지 않는 부분과 짝"
+            ],
+            "explain": "metaphysics = 형이상학, 곧 눈에 보이지 않는 근본 원리를 따지는 철학. 이 글에서는 '철학 쪽'이라는 것만 알면 됨",
+            "praise": "정답 인정 + 우리말로는 형이상학 (한 문장)",
+            "feedback": {
+              "a": "physics가 들어 있어 그렇게 보이기 쉬움. 앞의 meta- = '~너머'",
+              "b": "meta-는 '더 발전한'이 아니라 '~너머'. 과학 너머에 있는 학문"
+            }
+          }
+        },
+        {
+          "id": "w1_applied",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "skill": "vocab_applied_science",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "highlight": [
+            "applied science"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "label": "원리만 연구하는 순수 과학"
+            },
+            {
+              "id": "b",
+              "label": "원리를 실제 쓸모에 써먹는 과학",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "label": "지원해서 들어가는 과학"
+            }
+          ],
+          "brief": {
+            "ask": "마지막은 applied science. 어떤 과학인지 묻기",
+            "reask": "applied science가 어떤 과학인지 고르기로 복귀",
+            "hints": [
+              "apply에는 '지원하다' 말고 '적용하다'도 있음",
+              "나무에서는 가지·열매와 짝. 열매는 따서 쓰는 것"
+            ],
+            "explain": "applied science = 응용과학. 원리를 실제에 적용해 쓸모 있는 결과를 내는 과학 (의학·공학)",
+            "praise": "정답 인정 + 우리말로는 응용과학 (한 문장)",
+            "feedback": {
+              "a": "반대쪽. applied = '적용된'",
+              "c": "apply에 '지원하다' 뜻도 있음을 인정. 여기서는 '적용하다'"
+            }
+          }
+        },
+        {
+          "id": "w1_tree",
+          "type": "show",
+          "interaction": "note",
+          "display": "The roots of this tree corresponded to metaphysics, the trunk to physics, and the branches and fruit to what we would call applied science.",
+          "panel": "tree_words",
+          "brief": {
+            "say": "세 단어를 나무에 붙인 표. 뿌리는 철학 쪽, 줄기와 열매는 과학 쪽 (두 문장)"
+          }
+        }
+      ]
+    }
+  ]
+}
