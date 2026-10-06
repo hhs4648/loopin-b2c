@@ -12,7 +12,8 @@
     "analyze_start": "분석 시작할게요",
     "intro_next": "네",
     "solve": "문제 풀기",
-    "passage_again": "지문 다시 볼래요"
+    "passage_again": "지문 다시 볼래요",
+    "points_done": "다 봤어요"
   },
   "lines": {
     "start_known": "좋아요. ",
@@ -29,6 +30,7 @@
     "final_lead": "이제 문제를 다시 풀어 봐요. ",
     "intro_rate_only": "이번 문제는 오답률 {rate}%의 문제예요.",
     "choose_mode_short": "바로 한 번 풀어 볼까요, 아니면 분석부터 해 볼까요?",
-    "review_back": "그럼 남은 보기에서 다시 골라 봐요."
+    "review_back": "그럼 남은 보기에서 다시 골라 봐요.",
+    "points_title": "오늘 헷갈렸던 곳이에요. 다시 보고 싶은 건 ☆를 눌러 저장해요."
   }
 }

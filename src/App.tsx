@@ -2,7 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import type { LessonCollection, LessonSet } from "../content/tutor/types";
 import { ClassroomChat } from "./components/ClassroomChat";
 import { LessonList } from "./components/LessonList";
+import { SavedBook, type SavedKind } from "./components/SavedBook";
 import { ReadPassage } from "./components/ReadPassage";
+import { PointsReview } from "./components/PointsReview";
 import { MatchGame } from "./components/MatchGame";
 import { WordCheck } from "./components/WordCheck";
 import { SentenceStudy } from "./components/SentenceStudy";
@@ -62,6 +64,8 @@ export function App() {
     directSet ? getCollection(directSet.collection) : null,
   );
   const [chatOverride, setChatOverride] = useState(false);
+  /** 메인에서 연 단어장 · 내 노트 */
+  const [saved, setSaved] = useState<SavedKind | null>(null);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
 
@@ -161,6 +165,16 @@ export function App() {
     setSeconds(0);
   }
 
+  if ((!started || !view) && saved) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <SavedBook kind={saved} onBack={() => setSaved(null)} />
+        </div>
+      </div>
+    );
+  }
+
   if (!started || !view) {
     return (
       <div className="viewport">
@@ -171,6 +185,7 @@ export function App() {
             onOpenCollection={setCollection}
             onBack={() => setCollection(null)}
             onPickSet={startSet}
+            onOpenSaved={setSaved}
           />
         </div>
       </div>
@@ -186,6 +201,8 @@ export function App() {
           <ReadPassage view={view} onSend={send} onClose={backToList} />
         ) : screen === "words" && view.wordCheck ? (
           <WordCheck view={view} onSend={send} onClose={backToList} />
+        ) : screen === "points" && view.pointsReview ? (
+          <PointsReview view={view} onSend={send} onClose={backToList} />
         ) : screen === "match" && view.matchPairs ? (
           <MatchGame view={view} onSend={send} onClose={backToList} />
         ) : screen === "study" ? (

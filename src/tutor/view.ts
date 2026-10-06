@@ -15,7 +15,7 @@ export const READ_BTN = "다 읽었어요";
 export const MORE_BTN = "더 알고 싶어요";
 export const NEXT_BTN = "다음으로";
 
-export type UiScreen = "chat" | "study" | "read" | "words" | "match";
+export type UiScreen = "chat" | "study" | "read" | "words" | "match" | "points";
 
 /**
  * 항목 하나에 대한 학습 기록.
@@ -93,6 +93,8 @@ export type TutorView = {
   review?: { weeks: number | null; saved: boolean; choices: (number | null)[]; caption: string } | null;
   /** 마무리 — 주요 단어 체크 */
   wordCheck?: { title: string; step: string; words: WordGloss[]; checked: string[] } | null;
+  /** 마무리 — 오늘 헷갈렸던 곳 (별표로 노트에 저장) */
+  pointsReview?: { title: string; lessonId: string; items: { key: string; title: string; text: string }[] } | null;
   /** 마무리 — 짝 맞추기 */
   matchPairs?: WordGloss[] | null;
   /** false면 아래 입력창을 숨긴다 — 버튼으로만 답하는 화면에서 (기본은 보인다) */

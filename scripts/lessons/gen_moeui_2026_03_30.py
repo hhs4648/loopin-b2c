@@ -20,6 +20,24 @@ RIGHT = "하나하나 다름"
 CLUSTER = {"words": ["conceptualize", "categorize", "put a name on"]}
 
 
+# 수업 끝 「오늘 헷갈렸던 곳」 — 틀렸거나 힌트를 본 질문만 이 한 줄로 모아 보여 준다
+POINTS = {
+    "s1_q": "abstract away from = ~에서 떼어 내다 → 이름을 붙이면 하나하나의 특징(particularities)은 무시된다 (글의 요지)",
+    "s3_q": "leave out = abstract away → 보통 명사는 차이(differences)를 빠뜨린다",
+    "s5_sort": "'Lawn'도 보통 명사(이름) → 이름 붙이기 그룹",
+    "s6_sort": "Zoom in(가까이 보면) → individuality(개별성)·uniqueness(고유성) = 하나하나 다름",
+    "s7_q": "No two A are alike = 똑같은 A 두 개는 없다 → 하나하나 다 다르다",
+    "s8_sort": "For most practical purposes = 대부분의 실용적인 목적에서는 → 차이를 무시해도 된다",
+    "s9_sort": "Not so = 앞 문장과 반대 · do matter = 정말 중요하다(강조의 do) → 관리인에겐 차이가 중요",
+    "s10_q": "need not be = ~될 필요가 없다 → 무한한 기억력이면 풀잎을 묶을 필요가 없다",
+    "s10_distinct": "distinct = 독특한, 뚜렷이 다른 · with = ~를 가진",
+    "s10_fellows": "fellows = 같은 무리 → 여기서는 다른 풀잎들",
+    "s10_cocat": "co-categorize = 한 범주로 같이 묶다 (need not이 붙어 '묶을 필요가 없다')",
+    "s11_each": "Each = 10문장의 each blade of grass(각각의 풀잎)",
+    "s11_do": "as you yourself do의 do = have your own name (앞 동사를 반복하지 않으려고 do)",
+    "s11_could": "could = 불가능한 가정 '~할 수 있을 텐데' (실제로 그렇다는 게 아님)",
+}
+
 SORT_LEFT = "왼쪽 · 이름 붙이기"
 SORT_RIGHT = "오른쪽 · 하나하나 다름"
 
@@ -52,11 +70,14 @@ def board(left_words, right_words=None, caption=None, fresh_cluster=False, betwe
 
 
 def choice(id, ask, options, hint, praise="맞아요!", method=1, why=None, **extra):
-    """why: 틀렸을 때 「아쉽게도 틀렸어요.」 뒤의 이유 (없으면 힌트)"""
+    """why: 틀렸을 때 「아쉽게도 틀렸어요.」 뒤의 이유 (없으면 힌트). point: 수업 끝 「헷갈린 포인트」 한 줄 (POINTS)"""
     feedback = {o[0]: why or hint for o in options if not o[2]}
+    brief = {"ask": ask, "reask": "그럼 하나 골라 봐요.", "hints": [hint, hint], "explain": hint, "praise": praise, "feedback": feedback}
+    if id in POINTS:
+        brief["point"] = POINTS[id]
     return {
         "id": id, "type": "choice", "interaction": "meaning_choice", "one_try": True,
-        "brief": {"ask": ask, "reask": "그럼 하나 골라 봐요.", "hints": [hint, hint], "explain": hint, "praise": praise, "feedback": feedback},
+        "brief": brief,
         "options": [{"id": o[0], "label": o[1], **({"correct": True} if o[2] else {})} for o in options],
         "method": method, **extra,
     }
@@ -458,6 +479,12 @@ exam = {
                      "reply": "알려 줘서 고마워요. 앞으로 비슷한 문제가 나오면 단어 느낌보다 앞뒤 관계를, 특히 Not so를 강조해서 알려 줄게요."},
                 ],
             },
+        },
+        "option_points": {
+            "1": "① differences: 보통 명사(왼쪽)가 차이를 빠뜨린다 → 문맥에 맞음",
+            "3": "③ alike: No two … alike = 다 다르다 · yet 앞뒤는 반대 → 문맥에 맞음",
+            "4": "④ ignored: Not so로 8·9문장은 반대 → 보통 때는 차이를 무시해도 됨",
+            "5": "⑤ co-categorized: 무한한 기억력이면 묶을 필요가 없음 → 문맥에 맞음",
         },
         "option_feedback": {
             "1": "ordinary nouns(보통 명사)는 왼쪽, 즉 하나하나의 특성을 담지 않는 그룹이에요. 그런 이름이 차이(differences)를 빠뜨린다(leave out)는 건 자연스러우니, ①은 문맥에 맞아요.",

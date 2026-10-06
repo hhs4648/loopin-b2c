@@ -67,6 +67,7 @@ const MODE_TRY_BTN = policyFrame.buttons.mode_try;
 const MODE_ANALYZE_BTN = policyFrame.buttons.mode_analyze;
 const ANALYZE_START_BTN = policyFrame.buttons.analyze_start;
 const SOLVE_BTN = policyFrame.buttons.solve;
+const POINTS_DONE_BTN = policyFrame.buttons.points_done;
 const PASSAGE_AGAIN_BTN = policyFrame.buttons.passage_again;
 
 /** 기기 저장소·시계를 갈아 끼울 수 있게 — 테스트에서 쓴다 */
@@ -102,6 +103,7 @@ type State = {
     | "exam_first"
     | "lesson"
     | "exam_final"
+  | "points"
     | "review"
     | "words"
     | "match"
@@ -125,6 +127,8 @@ type State = {
   ri: number;
   /** 처음에 풀어 봤다면 그 결과 */
   firstAnswer: { optionId: string; correct: boolean } | null;
+  /** 헷갈린 질문 — 수업 끝 「헷갈린 포인트」에 모은다 (같은 키는 한 번) */
+  points: { key: string; title: string; text: string }[];
   /** 마지막 문제에서 정답을 골라 해설(`answer_explain`)을 보는 중 — 「다음으로」면 다시 볼 주기로 */
   examSolved: boolean;
   /** 많이 고른 오답을 같이 자세히 보는 중 — 보기 id와 몇 번째 화면인지 (0 제안 · 1 설명 · 2 질문 · 3 답) */
@@ -203,6 +207,7 @@ export function createPolicySession(
       firstAnswer: null,
       examSolved: false,
       examReview: null,
+      points: [],
       si: 0,
       pi: 0,
       resolved: false,
@@ -424,6 +429,11 @@ export function createPolicySession(
           anyExplained: true,
           message: `${L.wrong_lead} ${ex.option_feedback?.[picked.id] ?? ""}`.trim(),
         };
+        addPoint(
+          `exam_${picked.id}`,
+          `문제 ${"①②③④⑤"[Number(picked.id) - 1] ?? picked.id}`,
+          ex.option_points?.[picked.id] ?? ex.option_feedback?.[picked.id] ?? "",
+        );
         if (review) {
           // 많이 고른 오답 — 그 밑줄이 든 문장으로 가서 같이 자세히 본다
           const u = underlinesOf(exam)[exam.options.findIndex((o) => o.id === picked.id)];
@@ -558,7 +568,7 @@ export function createPolicySession(
         saved: s.reviewSaved,
       });
       if (lesson.key_words) return startWords(0);
-      return finish("");
+      return toPoints();
     }
     if (s.stage === "words") {
       if (text.startsWith(CHECK_CMD)) {
@@ -577,7 +587,14 @@ export function createPolicySession(
       s = { ...s, stage: "match", message: ending.match_title ?? "", buttons: [] };
       return;
     }
-    if (s.stage === "match" && text === MATCH_DONE_CMD) finish("");
+    if (s.stage === "match" && text === MATCH_DONE_CMD) return toPoints();
+    if (s.stage === "points" && text === POINTS_DONE_BTN) finish("");
+  }
+
+  /** 헷갈린 곳이 있으면 정리 화면, 없으면 끝 */
+  function toPoints() {
+    if (!s.points.length) return finish("");
+    s = { ...s, stage: "points", message: L.points_title, buttons: [POINTS_DONE_BTN] };
   }
 
   const sentence = (): PolicySentence => lesson.sentences[s.si]!;
@@ -701,7 +718,17 @@ export function createPolicySession(
 
   /* ── choice ─────────────────────────────────────────────────────── */
 
+  /** 수업 끝 「헷갈린 포인트」에 하나 더한다 — 같은 키면 한 번만 */
+  function addPoint(key: string, title: string, text: string) {
+    if (!text || s.points.some((p) => p.key === key)) return;
+    s = { ...s, points: [...s.points, { key, title, text }] };
+  }
+
   function settle(st: ChoiceStep, status: PerformanceStatus) {
+    if (status !== "independent_success") {
+      const c = copy.steps[st.id];
+      addPoint(st.id, `${sentence().id}문장`, c?.point ?? c?.explain ?? "");
+    }
     if (st.skill) {
       s = { ...s, student: recordPerformance(s.student, st.skill, status, s.wrongPicks.length) };
     }
@@ -914,6 +941,8 @@ export function createPolicySession(
           ? "words"
           : s.stage === "match"
             ? "match"
+            : s.stage === "points"
+              ? "points"
             : onStudy
               ? "study"
               : "chat",
@@ -1021,6 +1050,7 @@ export function createPolicySession(
             }
           : null,
       matchPairs: s.stage === "match" ? matchPairs() : null,
+      pointsReview: s.stage === "points" ? { title: s.message, lessonId: lesson.id, items: s.points } : null,
       highlight: inLesson ? (st.highlight ?? []) : underline,
       emphasis: inLesson ? (sen.emphasis ?? []) : [],
       panel: inLesson || s.examReview ? s.panel : null,
@@ -1094,7 +1124,7 @@ export function createPolicySession(
         onExam(text);
         return view();
       }
-      if (s.stage === "review" || s.stage === "words" || s.stage === "match") {
+      if (s.stage === "review" || s.stage === "words" || s.stage === "match" || s.stage === "points") {
         onEnding(text);
         return view();
       }

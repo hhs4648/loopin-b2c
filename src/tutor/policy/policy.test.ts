@@ -365,6 +365,10 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.matchPairs?.slice(0, 2).map((w) => w.en)).toEqual(["outmoded", "embrace"]);
     expect(v.matchPairs).toHaveLength(8);
     v = await session.submit("__match_done");
+    // 헷갈린 곳(⑤를 골랐다)을 한 줄로 정리하고, 별표로 노트에 저장할 수 있다
+    expect(v.screen).toBe("points");
+    expect(v.pointsReview?.items.map((p) => p.title)).toEqual(["문제 ⑤"]);
+    v = await session.submit("다 봤어요");
     expect(v.ended).toBe(true);
   });
 

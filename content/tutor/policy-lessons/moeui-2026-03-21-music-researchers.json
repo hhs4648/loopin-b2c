@@ -408,7 +408,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o0": "'without'을 봐요. inventor가 '아니면서도' innovator일 수 있대요."
-            }
+            },
+            "point": "innovator ≠ inventor · without = '~가 아니면서도' → 훌륭한 음악가는 발명가가 아니어도 된다"
           },
           "options": [
             {
@@ -509,7 +510,8 @@
             "praise": "맞아요.",
             "feedback": {
               "o0": "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요."
-            }
+            },
+            "point": "great discoveries(위대한 발견)는 새로움·발명(inventor) 쪽 말"
           },
           "options": [
             {
@@ -646,7 +648,8 @@
             "feedback": {
               "o0": "끝부분 'music is no more than technique'를 봐요.",
               "o2": "끝부분 'music is no more than technique'를 봐요."
-            }
+            },
+            "point": "no more than = ~에 불과한 → 새로움을 좇으면 음악은 기술(technique)일 뿐"
           },
           "options": [
             {
@@ -858,7 +861,8 @@
             "feedback": {
               "o0": "'so' 뒤를 봐요. 'never-ending progress'예요.",
               "o1": "'so' 뒤를 봐요. 'never-ending progress'예요."
-            }
+            },
+            "point": "just as A, so B = A하듯이 B하다 → 음악의 법칙은 끝없는 진보"
           },
           "options": [
             {
@@ -1009,7 +1013,8 @@
             "feedback": {
               "o0": "세미콜론(;) 뒤 'each musician … claims'를 봐요.",
               "o1": "세미콜론(;) 뒤 'each musician … claims'를 봐요."
-            }
+            },
+            "point": "last thing = 최신의 것('마지막' 아님) · 음악가가 '발명 특허'를 주장 → inventor 쪽"
           },
           "options": [
             {
@@ -1164,7 +1169,8 @@
             "praise": "맞아요.",
             "feedback": {
               "o0": "앞의 'pastiches(모방작)'를 봐요. 과학 연구를 흉내 내는 시대라는 말이에요."
-            }
+            },
+            "point": "\"researchers\"의 따옴표 = 진짜가 아니라 흉내 · pastiches = 모방작"
           },
           "options": [
             {

@@ -257,6 +257,8 @@ export type ChoiceCopy = {
   praise: string;
   /** 오답 보기 id → 그 오개념을 겨냥한 첫 힌트. 없으면 `hints[0]` */
   feedback?: Record<string, string>;
+  /** 이 질문에서 헷갈린 학생에게 수업 끝 「헷갈린 포인트」로 보여 줄 한 줄 정리. 없으면 `explain` */
+  point?: string;
 };
 
 export type ThinkCopy = {
@@ -362,6 +364,8 @@ export type ExamCopy = {
    * 고른 이유는 skill로 기록해, 다음 수업에서 비슷한 문장이 나오면 강조하는 데 쓴다
    */
   option_review?: Record<string, OptionReview>;
+  /** 마지막 문제에서 고른 오답마다 수업 끝 「헷갈린 포인트」 한 줄. 없으면 `option_feedback` */
+  option_points?: Record<string, string>;
   /** 고른 보기마다 "아쉽게도 틀렸어요." 뒤에 붙는 이유 */
   option_feedback?: Record<string, string>;
   first_correct: string;

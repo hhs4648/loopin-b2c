@@ -225,6 +225,12 @@
           ]
         }
       },
+      "option_points": {
+        "1": "① differences: 보통 명사(왼쪽)가 차이를 빠뜨린다 → 문맥에 맞음",
+        "3": "③ alike: No two … alike = 다 다르다 · yet 앞뒤는 반대 → 문맥에 맞음",
+        "4": "④ ignored: Not so로 8·9문장은 반대 → 보통 때는 차이를 무시해도 됨",
+        "5": "⑤ co-categorized: 무한한 기억력이면 묶을 필요가 없음 → 문맥에 맞음"
+      },
       "option_feedback": {
         "1": "ordinary nouns(보통 명사)는 왼쪽, 즉 하나하나의 특성을 담지 않는 그룹이에요. 그런 이름이 차이(differences)를 빠뜨린다(leave out)는 건 자연스러우니, ①은 문맥에 맞아요.",
         "3": "'No two … are alike'는 똑같은 두 송이가 없다는 말이에요. 하나하나 다르다는 흐름에 맞아요.",
@@ -439,7 +445,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o0": "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities는 떨어져 나가니, 같은 그룹이 아니에요."
-            }
+            },
+            "point": "abstract away from = ~에서 떼어 내다 → 이름을 붙이면 하나하나의 특징(particularities)은 무시된다 (글의 요지)"
           },
           "options": [
             {
@@ -702,7 +709,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o0": "이름은 차이를 빠뜨려요(leave out). 이름 쪽이 아니라, 빠져나가는 particularities와 같은 쪽이에요."
-            }
+            },
+            "point": "leave out = abstract away → 보통 명사는 차이(differences)를 빠뜨린다"
           },
           "options": [
             {
@@ -1041,7 +1049,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o1": "'Lawn'은 2문장의 네 이름 중 하나예요. 이름이니까 이름 붙이는 쪽이에요."
-            }
+            },
+            "point": "'Lawn'도 보통 명사(이름) → 이름 붙이기 그룹"
           },
           "options": [
             {
@@ -1217,7 +1226,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o0": "individuality는 '개별성', uniqueness는 '고유성'이에요. 이름으로 묶는 게 아니라 하나하나 따로라는 말이에요."
-            }
+            },
+            "point": "Zoom in(가까이 보면) → individuality(개별성)·uniqueness(고유성) = 하나하나 다름"
           },
           "options": [
             {
@@ -1435,7 +1445,8 @@
             "feedback": {
               "o0": "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요.",
               "o1": "'No'가 'two daisies' 앞에 붙어 있어요. 그런 두 송이가 '없다'는 말이에요."
-            }
+            },
+            "point": "No two A are alike = 똑같은 A 두 개는 없다 → 하나하나 다 다르다"
           },
           "options": [
             {
@@ -1620,7 +1631,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o1": "꽃목걸이나 일광욕 같은 보통 목적에서는 차이를 무시해요. 그래서 이름으로 묶는 쪽이에요."
-            }
+            },
+            "point": "For most practical purposes = 대부분의 실용적인 목적에서는 → 차이를 무시해도 된다"
           },
           "options": [
             {
@@ -1855,7 +1867,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o0": "관리인에게는 풀 하나하나의 차이가 중요해요. 그래서 하나하나 다른 쪽이에요."
-            }
+            },
+            "point": "Not so = 앞 문장과 반대 · do matter = 정말 중요하다(강조의 do) → 관리인에겐 차이가 중요"
           },
           "options": [
             {
@@ -2135,7 +2148,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o0": "'need not be'를 봐요. 'must'와 반대예요."
-            }
+            },
+            "point": "need not be = ~될 필요가 없다 → 무한한 기억력이면 풀잎을 묶을 필요가 없다"
           },
           "options": [
             {
@@ -2204,7 +2218,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o0": "distinct는 '독특한, 뚜렷이 다른'이에요. 풀잎 하나하나가 따로라는 말이라 하나하나 다른 쪽이에요."
-            }
+            },
+            "point": "distinct = 독특한, 뚜렷이 다른 · with = ~를 가진"
           },
           "options": [
             {
@@ -2323,7 +2338,8 @@
             "feedback": {
               "o0": "fellow는 '동료, 같은 무리'예요. its가 풀잎이니까, 같은 잔디밭에서 함께 자라는 같은 무리를 말해요.",
               "o2": "fellow는 '동료, 같은 무리'예요. its가 풀잎이니까, 같은 잔디밭에서 함께 자라는 같은 무리를 말해요."
-            }
+            },
+            "point": "fellows = 같은 무리 → 여기서는 다른 풀잎들"
           },
           "options": [
             {
@@ -2436,7 +2452,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o1": "co-categorize는 '한 범주로 같이 묶다'예요. 이름으로 묶는 쪽이에요."
-            }
+            },
+            "point": "co-categorize = 한 범주로 같이 묶다 (need not이 붙어 '묶을 필요가 없다')"
           },
           "options": [
             {
@@ -2675,7 +2692,8 @@
             "feedback": {
               "o0": "10문장의 주어 'each blade of grass'를 받아요. 풀잎 하나하나를 말해요.",
               "o2": "10문장의 주어 'each blade of grass'를 받아요. 풀잎 하나하나를 말해요."
-            }
+            },
+            "point": "Each = 10문장의 each blade of grass(각각의 풀잎)"
           },
           "options": [
             {
@@ -2714,7 +2732,8 @@
             "feedback": {
               "o0": "do는 앞의 'have its own name'을 받아요. 여러분도 저마다 이름이 있잖아요.",
               "o2": "do는 앞의 'have its own name'을 받아요. 여러분도 저마다 이름이 있잖아요."
-            }
+            },
+            "point": "as you yourself do의 do = have your own name (앞 동사를 반복하지 않으려고 do)"
           },
           "options": [
             {
@@ -2752,7 +2771,8 @@
             "praise": "맞아요!",
             "feedback": {
               "o0": "'could'는 10문장의 불가능한 가정을 이어받아요. 실제로 그렇다는 게 아니에요."
-            }
+            },
+            "point": "could = 불가능한 가정 '~할 수 있을 텐데' (실제로 그렇다는 게 아님)"
           },
           "options": [
             {

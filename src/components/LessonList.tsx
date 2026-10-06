@@ -1,5 +1,8 @@
 import type { LessonCollection, LessonSet } from "../../content/tutor/types";
 import { isDone, loadProgress, type Progress } from "../tutor/progress";
+import { loadNotes } from "../tutor/notes";
+import { loadVocab } from "../tutor/vocab";
+import type { SavedKind } from "./SavedBook";
 import { allGroups, sentenceCount, setsIn } from "../tutor/sets";
 import { ClassroomBg } from "./ClassroomBg";
 import { TeacherFigure } from "./TeacherFigure";
@@ -34,6 +37,8 @@ type Props = {
   onOpenCollection: (collection: LessonCollection) => void;
   onBack: () => void;
   onPickSet: (set: LessonSet) => void;
+  /** 단어장 · 내 노트 열기 */
+  onOpenSaved: (kind: SavedKind) => void;
 };
 
 export function LessonList({
@@ -42,8 +47,11 @@ export function LessonList({
   onOpenCollection,
   onBack,
   onPickSet,
+  onOpenSaved,
 }: Props) {
   const progress = loadProgress();
+  const vocabCount = loadVocab().length;
+  const noteCount = loadNotes().length;
 
   return (
     <div className="stage-fill home">
@@ -104,6 +112,16 @@ export function LessonList({
               {learnerName ? `${learnerName}님, 오늘은 어떤 걸 볼까요?` : "오늘은 어떤 걸 볼까요?"}
             </p>
             <h1 className="home-title">수업 목록</h1>
+            <div className="my-shelf">
+              <button type="button" className="shelf-btn" onClick={() => onOpenSaved("vocab")}>
+                <b>📒 단어장</b>
+                <small>저장한 단어 {vocabCount}개</small>
+              </button>
+              <button type="button" className="shelf-btn" onClick={() => onOpenSaved("notes")}>
+                <b>⭐ 내 노트</b>
+                <small>헷갈린 포인트 {noteCount}개</small>
+              </button>
+            </div>
             {allGroups().map((group) => (
               <section key={group.id} className="group">
                 <h2 className="group-title">
