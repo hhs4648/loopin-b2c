@@ -686,14 +686,6 @@ mark.hl, .english-token.hl .english-word {
   text-decoration-color: #e2607d;
   text-decoration-style: solid;
 }
-.help-chips { flex: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0 24px 6px; }
-.help-chip {
-  height: 30px; padding: 0 12px; border-radius: 999px; cursor: pointer;
-  border: 1.5px dashed #d9a9b5; background: rgba(255,255,255,.7);
-  color: #b45a70; font-size: 12px; font-weight: 600;
-}
-.help-chip:hover { background: #fff; }
-.help-chip:disabled { opacity: .5; cursor: default; }
 
 .study-panel {
   flex: none;
@@ -724,7 +716,11 @@ mark.hl, .english-token.hl .english-word {
   color: #c9b9c0; border: 1.5px dashed #e6d8cc; border-radius: 8px; padding: 0 14px;
 }
 .panel-right small { display: block; font-size: 11px; font-weight: 500; color: #8a7f88; }
-.study-panel.contrast { flex-direction: row; gap: 10px; }
+.study-panel.contrast { flex-direction: column; gap: 6px; }
+.contrast-row { display: flex; gap: 10px; align-items: stretch; }
+.contrast-between { align-self: center; flex: none; font-size: 22px; color: #c0455f; }
+.with-between .panel-side + .contrast-between + .panel-side { border-left: none; padding-left: 0; }
+.with-between .panel-side { border: 2px dashed #e6d8cc; border-radius: 12px; padding: 8px; }
 .panel-side { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .panel-side + .panel-side { border-left: 1.5px dashed #e6d8cc; padding-left: 10px; }
 .panel-side strong { font-size: 12px; color: #e2607d; }
@@ -873,6 +869,11 @@ mark.hl, .english-token.hl .english-word {
 .exam-text { flex: 1; min-width: 0; }
 .exam-word { font: inherit; color: inherit; background: none; border: none; padding: 0; cursor: pointer; text-decoration: underline dotted rgba(239,122,147,.5); text-underline-offset: 3px; }
 .exam-option .kw { color: #d2566f; font-weight: 700; background: #fde8ee; border-radius: 3px; }
+.exam-peek {
+  flex: none; margin-left: auto; padding: 3px 9px; border-radius: 999px; cursor: pointer;
+  border: 1.5px solid #8fd0c0; background: #eefaf6; color: #3f9a86; font-size: 11.5px; font-weight: 700;
+}
+.exam-peek.on { background: #8fd0c0; color: #fff; }
 .exam-ko-toggle {
   flex: none; width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer;
   background: #eefaf6; color: #3f9a86; font-size: 15px; line-height: 1; transition: transform .2s;

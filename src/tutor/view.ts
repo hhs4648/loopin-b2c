@@ -62,8 +62,6 @@ export type TutorView = {
   emphasis?: string[];
   /** 문장 아래에 띄우는 그림 — 문장 뼈대, 대응표, 대비 */
   panel?: StudyPanel | null;
-  /** 눌러야 열리는 배경 설명. 라벨이 곧 보내는 말이다 */
-  helps?: string[];
   /** 보기가 길면 알약을 세로로 쌓는다 */
   buttonLayout?: "row" | "stack";
   /** 보기가 아닌 버튼(「잘 모르겠어요」 등) — 보기와 다른 색으로 그린다 */
@@ -86,6 +84,11 @@ export type TutorView = {
   /** 시험 보기 — 핵심 단어 색칠, ▸ 한국어 */
   examOptions?: { id: string; label: string; keywords: string[]; ko: string }[] | null;
   examGlosses?: WordGloss[];
+  /**
+   * 밑줄이 여러 개인 문제(어휘) — 보기 id마다 그 밑줄이 든 문장. 보기의 「문장 보기」를 누르면
+   * 위 문장 칸이 그 문장으로 바뀐다 (보기를 고르는 건 아니다)
+   */
+  examSentences?: Record<string, { sentence: string; underline: string; glosses: WordGloss[] }> | null;
   /** 마무리 — 다시 볼 주기와 특별 저장 */
   review?: { weeks: number | null; saved: boolean; choices: (number | null)[]; caption: string } | null;
   /** 마무리 — 주요 단어 체크 */

@@ -225,7 +225,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
 
     // 틀리면 답을 말하지 않고 분석으로
     v = await session.submit(L.exam!.options[0]!.label);
-    expect(v.message).toBe("아쉽게도 아니에요. 정답은 분석하면서 같이 찾아봐요.");
+    expect(v.message).toBe("아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.");
     expect(v.examOptions).toBeNull();
     v = await session.submit("분석하러 갈게요");
     expect(session.lastAction()?.interactionId).toBe("s1_q");
@@ -272,10 +272,10 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.examOptions).toHaveLength(5);
   });
 
-  it("틀리면 「아쉽게도 아니에요.」 + 이유, 다시 고르게 하지 않고 넘어간다", async () => {
+  it("틀리면 「아쉽게도 틀렸어요.」 + 이유, 다시 고르게 하지 않고 넘어간다", async () => {
     const { session } = await toAnalysis();
     let v = await session.submit("같아요");
-    expect(v.message.startsWith("아쉽게도 아니에요. 'without'을 봐요.")).toBe(true);
+    expect(v.message.startsWith("아쉽게도 틀렸어요. 'without'을 봐요.")).toBe(true);
     expect(v.buttons).toEqual(["다음으로"]);
     v = await session.submit("다음으로");
     expect(v.message.startsWith("둘은 달라요.")).toBe(true);
@@ -334,7 +334,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.methodSteps?.active).toBe(2);
 
     v = await session.submit(L.exam!.options[4]!.label);
-    expect(v.message).toBe("아쉽게도 아니에요. science는 지도에도 있지만, 글에선 과학을 흉내 내요. 구별하는 게 아니에요.");
+    expect(v.message).toBe("아쉽게도 틀렸어요. science는 지도에도 있지만, 글에선 과학을 흉내 내요. 구별하는 게 아니에요.");
     expect(v.examOptions).toHaveLength(4);
 
     v = await session.submit(L.exam!.options[2]!.label);
@@ -380,5 +380,41 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.review?.weeks).toBe(3);
     expect(v.message.startsWith("잘했어요.")).toBe(true);
     expect(v.message).toContain("3주 뒤에");
+  });
+});
+
+describe("2026년 3월 30번 — 어휘 문제", () => {
+  const ID = "moeui-2026-03-30-names-and-differences";
+  const L = allPolicyLessons().find((l) => l.id === ID)!;
+
+  it("29%가 고른 ③을 고르면 같이 자세히 보고, 어디서 헷갈렸는지 기록한 뒤 문제로 돌아온다", async () => {
+    let saved = emptyStudentState();
+    const session = createPolicySession(ID, null, {
+      loadStudent: emptyStudentState, saveStudent: (st) => { saved = st; }, logEvents() {}, now: () => 0,
+    });
+    let v = session.view();
+    for (let g = 0; g < 5 && !v.buttons.includes("분석하러 갈게요"); g++) v = await session.submit(v.buttons[0]!);
+    v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 80 && !v.examOptions; g++) {
+      const id = session.lastAction()?.interactionId ?? "";
+      const step = L.sentences.flatMap((x) => x.steps).find((x) => x.id === id);
+      v = await session.submit(step?.type === "choice" && v.buttons.length > 1 ? step.options.find((o) => o.correct)!.label : v.buttons[0]!);
+    }
+    expect(v.examOptions).toHaveLength(5);
+
+    v = await session.submit("alike");
+    expect(v.message.startsWith("아쉽게도 틀렸어요. ③은 29%나")).toBe(true);
+    expect(v.examOptions).toBeNull();
+    expect(v.sentence).toContain("③alike");
+    v = await session.submit("같이 볼게요");
+    expect(v.panel?.kind).toBe("contrast");
+    v = await session.submit("다음으로");
+    expect(v.buttons).toEqual(["No를 못 봤어요", "yet 앞뒤가 반대인 게 헷갈렸어요", "둘 다요"]);
+    v = await session.submit("No를 못 봤어요");
+    expect(v.message).toContain("No를 강조해서");
+    expect(saved.skills.no_negation).toBeTruthy();
+    v = await session.submit("다음으로");
+    expect(v.examOptions).toHaveLength(4);
+    expect(v.sentence).toBe(L.sentences[0]!.text);
   });
 });

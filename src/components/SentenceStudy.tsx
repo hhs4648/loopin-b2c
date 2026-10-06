@@ -34,6 +34,27 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
 
 
   const [showPassage, setShowPassage] = useState(false);
+  // 어휘 문제: 보기의 「문장 보기」로 잠깐 띄운 문장 (보기 id)
+  const [peek, setPeek] = useState<string | null>(null);
+  const peeked = peek ? view.examSentences?.[peek] : undefined;
+  useEffect(() => setPeek(null), [view.sentence, view.progressLabel]);
+  /*
+    칠판이 크면 긴 문장은 칸 안에서 스크롤된다. 노랗게 칠한 구절이 칸 밖에 숨지 않게
+    스텝이 바뀔 때마다 그 구절로 칸만 내려 준다 (화면 전체는 움직이지 않는다)
+  */
+  const sentenceBox = useRef<HTMLDivElement>(null);
+  const highlightKey = (view.highlight ?? []).join("|");
+  useEffect(() => {
+    const box = sentenceBox.current;
+    const mark = box?.querySelector<HTMLElement>(".hl");
+    if (!box) return;
+    if (!mark) {
+      box.scrollTop = 0;
+      return;
+    }
+    const top = mark.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop;
+    box.scrollTop = Math.max(0, top - 12);
+  }, [highlightKey, view.sentence, peek]);
   const words = view.sentence.trim().split(/\s+/).length;
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
 
@@ -101,12 +122,12 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </ol>
       ) : null}
 
-      <div className="study-sentence">
+      <div className="study-sentence" ref={sentenceBox}>
         <GlossSentence
-          sentence={view.sentence}
+          sentence={peeked?.sentence ?? view.sentence}
           nouns={view.properNouns}
-          glosses={view.glosses}
-          highlight={view.highlight ?? []}
+          glosses={peeked?.glosses ?? view.glosses}
+          highlight={peeked ? [peeked.underline] : (view.highlight ?? [])}
           emphasis={view.emphasis ?? []}
           faded={view.faded ?? []}
           shaded={view.shaded ?? []}
@@ -128,27 +149,6 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           <span>단어를 누르면 뜻이 나와요 · {words} words</span>
         </div>
       </div>
-
-      {/*
-        눌러야 열리는 배경 설명. 묻지 않은 학생에게 철학 강의를 하지 않는다 —
-        궁금한 학생만 누르고, 선생님이 말풍선으로 짧게 답한다.
-        지문 칸 밖에 둔다 — 지문 칸은 스크롤이라 그 안에 넣으면 칩이 잘려 안 보인다.
-      */}
-      {view.helps?.length ? (
-        <div className="help-chips">
-          {view.helps.map((label) => (
-            <button
-              key={label}
-              type="button"
-              className="help-chip"
-              disabled={typing}
-              onClick={() => onSend(label)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-      ) : null}
 
       {view.tips?.length || view.concepts?.length ? <TipChips tips={view.tips ?? []} concepts={view.concepts ?? []} /> : null}
 
@@ -208,6 +208,9 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           <ExamOptions
             options={view.examOptions}
             glosses={view.examGlosses ?? []}
+            peekable={view.examSentences ?? null}
+            peek={peek}
+            onPeek={(id) => setPeek(peek === id ? null : id)}
             disabled={typing}
             onPick={onSend}
           />
@@ -407,11 +410,18 @@ function TipChips({
 function ExamOptions({
   options,
   glosses,
+  peekable,
+  peek,
+  onPeek,
   disabled,
   onPick,
 }: {
   options: NonNullable<TutorView["examOptions"]>;
   glosses: WordGloss[];
+  /** 어휘 문제 — 보기마다 「문장 보기」를 단다 */
+  peekable: TutorView["examSentences"];
+  peek: string | null;
+  onPeek: (id: string) => void;
   disabled: boolean;
   onPick: (label: string) => void;
 }) {
@@ -456,6 +466,19 @@ function ExamOptions({
             >
               <span className="exam-num">{NUM[n] ?? o.id}</span>
               <span className="exam-text">{parts}</span>
+              {peekable?.[o.id] ? (
+                <button
+                  type="button"
+                  className={`exam-peek${peek === o.id ? " on" : ""}`}
+                  aria-pressed={peek === o.id}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onPeek(o.id);
+                  }}
+                >
+                  문장 보기
+                </button>
+              ) : null}
               {o.ko ? (
                 <button
                   type="button"
@@ -487,7 +510,7 @@ function ExamOptions({
 /** 단어 바로 뒤에 붙는 문장부호 */
 const CLOSING = /^[,.;:!?)”’"']$/;
 /** 단어 바로 앞에 붙는 문장부호 */
-const OPENING = /^[(“‘]$/;
+const OPENING = /^[(“‘①②③④⑤]$/;
 
 /** 강조할 구절이 문장의 몇 번째 글자부터 몇 번째까지인지 */
 function highlightRanges(sentence: string, phrases: string[]): [number, number][] {

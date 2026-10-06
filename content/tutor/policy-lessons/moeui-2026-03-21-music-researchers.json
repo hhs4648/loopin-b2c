@@ -216,7 +216,7 @@
     "brief": {
       "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고 골라 봐요.",
       "first_correct": "맞았어요!",
-      "first_wrong": "아쉽게도 아니에요. 정답은 분석하면서 같이 찾아봐요.",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
       "final_correct": "정답이에요!",
       "final_wrong": "정답은 ③이에요.",
       "option_feedback": {

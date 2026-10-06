@@ -16,7 +16,7 @@
   },
   "lines": {
     "start_known": "좋아요. ",
-    "wrong_lead": "아쉽게도 아니에요.",
+    "wrong_lead": "아쉽게도 틀렸어요.",
     "dont_know_lead": "괜찮아요, 힌트를 줄게요.",
     "explain_lead": "괜찮아요, 같이 정리해 봐요.",
     "self_correct": "음, 한 번만 더 천천히 봐요. 이건 혼자 고칠 수 있을 거예요.",
@@ -28,6 +28,7 @@
     "choose_mode": "다 읽었어요. 바로 한 번 풀어 볼까요, 아니면 지문을 먼저 분석해 볼까요?",
     "final_lead": "이제 문제를 다시 풀어 봐요. ",
     "intro_rate_only": "이번 문제는 오답률 {rate}%의 문제예요.",
-    "choose_mode_short": "바로 한 번 풀어 볼까요, 아니면 분석부터 해 볼까요?"
+    "choose_mode_short": "바로 한 번 풀어 볼까요, 아니면 분석부터 해 볼까요?",
+    "review_back": "그럼 남은 보기에서 다시 골라 봐요."
   }
 }

@@ -153,14 +153,20 @@ export function StudyPanelView({ panel, onPick }: { panel: StudyPanel; onPick?: 
     );
   }
 
+  const side = (s: typeof panel.left) => (
+    <div className="panel-side">
+      <strong>{s.title}</strong>
+      <span>{s.text}</span>
+    </div>
+  );
   return (
-    <div className="study-panel contrast">
-      {[panel.left, panel.right].map((side) => (
-        <div key={side.title} className="panel-side">
-          <strong>{side.title}</strong>
-          <span>{side.text}</span>
-        </div>
-      ))}
+    <div className={`study-panel contrast${panel.between ? " with-between" : ""}`}>
+      {panel.title ? <div className="panel-title">{panel.title}</div> : null}
+      <div className="contrast-row">
+        {side(panel.left)}
+        {panel.between ? <b className="contrast-between">{panel.between}</b> : null}
+        {side(panel.right)}
+      </div>
     </div>
   );
 }

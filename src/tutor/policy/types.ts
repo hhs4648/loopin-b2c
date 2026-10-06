@@ -69,6 +69,9 @@ export type MappingPanel = {
 
 export type ContrastPanel = {
   kind: "contrast";
+  title?: string;
+  /** 두 칸 사이 기호 (예: ↔ 반대 관계). 없으면 점선만 */
+  between?: string;
   left: { title: string; text: string };
   right: { title: string; text: string };
 };
@@ -209,7 +212,7 @@ export type ChoiceStep = StepBase & {
    * 들어가 길어지면 이걸 켠다 — 한 말풍선에 한두 문장.
    */
   praise_alone?: boolean;
-  /** 한 번만 고르게 한다. 틀리면 "아쉽게도 아니에요." + 이유 → 「다음으로」 */
+  /** 한 번만 고르게 한다. 틀리면 "아쉽게도 틀렸어요." + 이유 → 「다음으로」 */
   one_try?: boolean;
 };
 
@@ -285,7 +288,10 @@ export type PolicyCopy = {
   intro?: Stamped<Record<string, Record<string, string>>>;
 };
 
-/** 눌러야 열리는 배경 설명 (§18 optional_help). 지문 이해에 필요한 만큼만 */
+/**
+ * 예상 질문 (§18 optional_help) — 문장 첫 질문의 보기 옆 민트 버튼. 누른 학생에게만
+ * 선생님이 짧게 답한다. 지문 이해에 필요한 만큼만
+ */
 export type OptionalHelp = {
   id: string;
   /** 칩에 적는 말 — 학생의 말이다 */
@@ -333,15 +339,39 @@ export type ExamQuestion = {
   brief: ExamCopy;
 };
 
+export type OptionReview = {
+  /** 「아쉽게도 틀렸어요.」를 포함한 첫 화면 — 많이 틀렸다는 말과 같이 보자는 제안 */
+  intro: string;
+  intro_button: string;
+  /** 그림과 함께 하는 설명 */
+  say: string;
+  panel?: StudyPanel;
+  /** 어디서 헷갈렸는지 묻는 말 (물음표 하나) */
+  ask: string;
+  /** 고른 이유 — `skills`에 기록하고 `reply`로 답한다 */
+  choices: { label: string; skills: string[]; reply: string }[];
+};
+
 export type ExamCopy = {
   ask: string;
   /** 바로 풀기에서 — 색칠·한국어가 없으니 다른 말을 한다 */
   ask_first?: string;
-  /** 고른 보기마다 "아쉽게도 아니에요." 뒤에 붙는 이유 */
+  /**
+   * 많이 고른 오답 — 이 보기를 고르면 한 줄 해설 대신 같이 자세히 본다.
+   * 「많이 틀렸어요, 같이 볼까요?」 → 그림과 설명 → 「어디서 헷갈렸어요?」(버튼) → 답에 맞춘 말.
+   * 고른 이유는 skill로 기록해, 다음 수업에서 비슷한 문장이 나오면 강조하는 데 쓴다
+   */
+  option_review?: Record<string, OptionReview>;
+  /** 고른 보기마다 "아쉽게도 틀렸어요." 뒤에 붙는 이유 */
   option_feedback?: Record<string, string>;
   first_correct: string;
   first_wrong: string;
   final_correct: string;
+  /**
+   * 분석 뒤 마지막 문제에서 정답을 골랐을 때, 다시 볼 주기 전에 한 화면 보여 주는 정답 해설.
+   * 없으면 바로 다시 볼 주기로 (21번)
+   */
+  answer_explain?: string;
   final_wrong: string;
 };
 
@@ -418,7 +448,9 @@ export type Observation =
   | { kind: "skip" }
   | { kind: "intro"; optionId: string }
   | { kind: "exam"; when: "first" | "final"; correct: boolean; optionId: string }
-  | { kind: "continue" };
+  | { kind: "continue" }
+  /** 마지막 문제에서 많이 고른 오답을 고른 이유 (버튼) */
+  | { kind: "wrong_reason"; optionId: string; reason: string; skills: string[] };
 
 /** 화면에서 바로 올라오는 관찰 — 턴을 만들지 않는다 */
 export type UiObservation = { kind: "vocab_click"; word: string };

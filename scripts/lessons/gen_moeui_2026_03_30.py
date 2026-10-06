@@ -6,7 +6,7 @@
     python3 scripts/lessons/gen_moeui_2026_03_30.py
     npm run policy:copy stamp moeui-2026-03-30-names-and-differences
 
-1~4·6·7문장은 선생님과 화면을 보며 정했다. 5·8~11문장은 아직 초안.
+1~11문장 모두 선생님과 화면을 보며 정했다.
 """
 import copy
 import json
@@ -52,7 +52,7 @@ def board(left_words, right_words=None, caption=None, fresh_cluster=False, betwe
 
 
 def choice(id, ask, options, hint, praise="맞아요!", method=1, why=None, **extra):
-    """why: 틀렸을 때 「아쉽게도 아니에요.」 뒤의 이유 (없으면 힌트)"""
+    """why: 틀렸을 때 「아쉽게도 틀렸어요.」 뒤의 이유 (없으면 힌트)"""
     feedback = {o[0]: why or hint for o in options if not o[2]}
     return {
         "id": id, "type": "choice", "interaction": "meaning_choice", "one_try": True,
@@ -78,9 +78,23 @@ S1 = "Every time you conceptualize, categorize, and put a name on something that
 L = ["abstract away"]
 R = ["particularities"]
 
-S6_LEFT = L + ["four ordinary nouns", "leave out", "“Flower”", "co-categorize", "“Lawn”"]
-S6_BEFORE = board(S6_LEFT, R + ["differences", "varieties"])
-S6_AFTER = board(S6_LEFT, R + ["differences", "varieties", "individuality*", "uniqueness*"], "가까이 보면 → 하나하나 다름")
+S5_LEFT = L + ["four ordinary nouns", "leave out", "“Flower”"]
+S5_BEFORE = board(S5_LEFT, R + ["differences"])
+S5_AFTER = board(S5_LEFT + ["“Lawn”*"], R + ["differences"], "'잔디'도 이름")
+S7_LEFT = L + ["four ordinary nouns", "leave out", "“Flower”", "“Lawn”", "quick glance", "uniformly"]
+S7_RIGHT = R + ["differences", "individuality", "uniqueness", "no two … alike"]
+S8_BEFORE = board(S7_LEFT, S7_RIGHT)
+S8_AFTER = board(S7_LEFT + ["practical purposes*"], S7_RIGHT, "보통 목적 → 차이를 무시해도 됨")
+S9_BEFORE = board(S7_LEFT + ["practical purposes"], S7_RIGHT)
+S9_AFTER = board(S7_LEFT + ["practical purposes"], S7_RIGHT + ["groundskeeper*"], "관리인에겐 → 차이가 중요")
+S10_LEFT = S7_LEFT + ["practical purposes"]
+S10_RIGHT = S7_RIGHT + ["groundskeeper"]
+S10_BEFORE = board(S10_LEFT, S10_RIGHT)
+S10_MID = board(S10_LEFT, S10_RIGHT + ["distinct"])
+S10_AFTER = board(S10_LEFT + ["co-categorize*"], S10_RIGHT + ["distinct"], "need not + co-categorize → 묶을 필요 없음")
+S6_LEFT = L + ["four ordinary nouns", "leave out", "“Flower”", "“Lawn”"]
+S6_BEFORE = board(S6_LEFT, R + ["differences"])
+S6_AFTER = board(S6_LEFT, R + ["differences", "individuality*", "uniqueness*"], "가까이 보면 → 하나하나 다름")
 
 sentences = [
     {
@@ -171,7 +185,7 @@ sentences = [
         "emphasis": ["co-categorizes"],
         "steps": [
             show("s4_skim", "앞 문장의 반복이에요. 'Flower'도 세세한 차이를 무시하고 꽃을 다 묶어요. 앞을 이해했다면 깊게 안 읽어도 돼요.",
-                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”*", "co-categorize*"], R + ["differences"], "'꽃' → 색이 달라도 한데 묶음"),
+                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”*"], R + ["differences"], "'꽃' → 색이 달라도 한데 묶음"),
                  shaded=["“Flower” co-categorizes the white and yellow types with the beige ones, and all the many other sorts to be found elsewhere."]),
         ],
     },
@@ -180,14 +194,17 @@ sentences = [
         "model_translation": "'잔디'라는 말은 그곳의 다양한 풀과 풀이 아닌 모든 식물을 인정한다(→ 무시한다).",
         "teaching_value": "high",
         "glosses": [g("acknowledges", "인정하다"), g("varieties", "다양한 종류"), g("nongrassy plants", "풀이 아닌 식물")],
-        "emphasis": ["varieties"],
+        "emphasis": ["Lawn"],
         "steps": [
-            choice("s5_q",
-                   "이번엔 'Lawn(잔디)'이라는 이름이에요. 4문장의 'Flower'처럼 이름이라면, 다양한 풀들은 어떻게 될까요?",
-                   [("o0", "다양함이 드러나요", False), ("o1", "한데 묶여요", True)],
-                   "'Flower'가 색이 다른 꽃들을 어떻게 했는지 떠올려 봐요."),
-            show("s5_map", "'Lawn'도 이름이니까 왼쪽 그룹이에요. 그럼 ②acknowledges(인정한다)가 어느 쪽 말인지 기억해 둬요.",
-                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”", "co-categorize", "“Lawn”*"], R + ["differences", "varieties*"], "'잔디' → 여러 풀을 한데 묶음")),
+            # 정답 문장이지만 ②는 여기서 말하지 않는다 — 마지막 문제에서 학생이 맞힌다
+            choice("s5_sort",
+                   "이번엔 'Lawn(잔디)'이에요. 'Lawn'은 어느 그룹일까요?",
+                   [("o0", SORT_LEFT, True), ("o1", SORT_RIGHT, False)],
+                   "2문장의 네 이름(daisies, clover, flower, lawn)을 떠올려 봐요.",
+                   why="'Lawn'은 2문장의 네 이름 중 하나예요. 이름이니까 이름 붙이는 쪽이에요.",
+                   panel={**S5_BEFORE, "sort": {"words": ["“Lawn”"], "left": SORT_LEFT, "right": SORT_RIGHT}}),
+            show("s5_map", "'Lawn'도 2문장의 네 이름 중 하나라서 왼쪽 그룹이에요.",
+                 panel=S5_AFTER),
         ],
     },
     {
@@ -225,8 +242,8 @@ sentences = [
                  highlight=["and yet"],
                  tips=[{"label": "to a quick glance", "text": "'to + 보는 눈'은 '~가 보기에'예요 (to the naked eye: 맨눈으로 보기에). 그래서 'they present to a quick glance a carpet'은 '힐끗 보기에 그것들은 카펫의 모습을 보인다', 즉 '힐끗 보면 카펫처럼 보인다'예요."}]),
             show("s7_map", "가까이 보면 다 다르지만, 힐끗 보면 균일한(uniformly) 카펫처럼 보인대요.",
-                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”", "co-categorize", "“Lawn”", "quick glance*", "uniformly*"],
-                             R + ["differences", "varieties", "individuality", "uniqueness", "no two … alike*"], "가까이 → 다름 ↔ 힐끗 → 균일")),
+                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”", "“Lawn”", "quick glance*", "uniformly*"],
+                             R + ["differences", "individuality", "uniqueness", "no two … alike*"], "가까이 → 다름 ↔ 힐끗 → 균일")),
         ],
     },
     {
@@ -236,13 +253,15 @@ sentences = [
         "glosses": [g("practical purposes", "실용적인 목적"), g("ignored", "무시되는"), g("daisy chain", "데이지 꽃목걸이"), g("sunbathing", "일광욕"), g("and the like", "~ 등")],
         "emphasis": ["practical purposes"],
         "steps": [
-            choice("s8_q",
-                   "대부분의 실용적인 목적(practical purposes)에서는, 풀과 꽃의 차이가 중요할까요?",
-                   [("o0", "중요해요", False), ("o1", "상관없어요", True)],
-                   "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?"),
-            show("s8_map", "보통 때는 차이를 무시해도 돼요. 다음 문장의 'Not so'가 그 반대 경우예요.",
-                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”", "co-categorize", "“Lawn”", "quick glance", "uniformly", "practical purposes*"],
-                             R + ["differences", "varieties", "individuality", "uniqueness", "no two … alike"], "보통 때 → 차이 무시해도 됨")),
+            choice("s8_sort",
+                   "'For most practical purposes(대부분의 실용적인 목적에서는)' 차이를 무시해도 된대요. practical purposes는 어느 그룹일까요?",
+                   [("o0", SORT_LEFT, True), ("o1", SORT_RIGHT, False)],
+                   "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?",
+                   why="꽃목걸이나 일광욕 같은 보통 목적에서는 차이를 무시해요. 그래서 이름으로 묶는 쪽이에요.",
+                   panel={**S8_BEFORE, "sort": {"words": ["practical purposes"], "left": SORT_LEFT, "right": SORT_RIGHT}},
+                   faded=["—making a daisy chain, sunbathing, and the like"]),
+            show("s8_map", "보통 때는 풀과 꽃의 차이를 무시해도 돼요.",
+                 panel=S8_AFTER),
         ],
     },
     {
@@ -252,26 +271,79 @@ sentences = [
         "glosses": [g("Not so", "그렇지 않다 · 앞 문장의 '무시해도 된다'를 뒤집어요"), g("groundskeeper", "경기장 관리인"), g("stadium", "경기장"), g("constituent", "구성하는"), g("stages of growth", "성장 단계"), g("really do matter", "정말 중요하다")],
         "emphasis": ["Not so", "groundskeeper", "really do matter"],
         "steps": [
-            show("s9_map", "'Not so'는 '~에게는 그렇지 않다'예요. 경기장 관리인에게는 풀 종류와 자라는 단계가 정말 중요해요.",
-                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”", "co-categorize", "“Lawn”", "quick glance", "uniformly", "practical purposes"],
-                             R + ["differences", "varieties", "individuality", "uniqueness", "no two … alike", "groundskeeper*", "really do matter*"], "관리인에겐 → 차이가 중요")),
+            choice("s9_sort",
+                   "경기장 관리인(groundskeeper)에게는 풀 종류와 자라는 단계가 정말 중요하대요. groundskeeper는 어느 그룹일까요?",
+                   [("o0", SORT_LEFT, False), ("o1", SORT_RIGHT, True)],
+                   "'really do matter(정말 중요하다)'를 봐요. 관리인에게 무엇이 중요한지 생각해 봐요.",
+                   why="관리인에게는 풀 하나하나의 차이가 중요해요. 그래서 하나하나 다른 쪽이에요.",
+                   panel={**S9_BEFORE, "sort": {"words": ["groundskeeper"], "left": SORT_LEFT, "right": SORT_RIGHT}},
+                   tips=[{"label": "do matter", "text": "matter는 동사로 '중요하다'예요. 'do matter'의 do는 '하다'가 아니라 강조의 do라서, '정말 중요하다'로 읽어요."}]),
+            show("s9_map", "관리인에게는 풀 하나하나의 차이가 중요해요.",
+                 button="다음",
+                 panel=S9_AFTER),
+            # 단어 그룹은 잠시 치우고 8·9문장의 반대 관계만 보여 준다
+            show("s9_contrast", "'Not so'는 '그렇지 않다'예요. 그래서 8문장과 9문장은 서로 반대 관계예요.",
+                 panel={"kind": "contrast", "title": "Not so → 반대 관계", "between": "↔",
+                        "left": {"title": "8문장 · practical purposes", "text": "꽃목걸이, 일광욕 → 차이를 무시해도 돼요"},
+                        "right": {"title": "9문장 · groundskeeper", "text": "경기장 관리 → 차이가 정말 중요해요"}},
+                 highlight=["Not so"]),
         ],
     },
     {
         "id": 10, "text": "And to an infinite mind, with infinite memory, each blade of grass, with its own distinct life history, need not be ⑤co-categorized with all its fellows.",
         "model_translation": "그리고 무한한 기억력을 지닌 무한한 정신에게, 고유한 생애를 지닌 각각의 풀잎은 다른 모든 풀잎과 한 범주로 묶일 필요가 없다.",
         "teaching_value": "high",
-        "glosses": [g("infinite mind", "무한한 정신"), g("blade", "(풀의) 잎"), g("distinct", "뚜렷이 다른"), g("need not be", "~될 필요가 없다"), g("co-categorized", "한 범주로 같이 묶인"), g("fellows", "같은 무리, 동료")],
+        "glosses": [g("infinite mind", "무한한 정신 · 여기서는 기억력이 무한한 사람이에요"), g("blade", "칼날 · 여기서는 '풀잎'이에요"), g("distinct", "독특한, 뚜렷이 다른"), g("need not be", "~될 필요가 없다"), g("co-categorized", "한 범주로 같이 묶인"), g("fellows", "동료, 같은 무리")],
         "emphasis": ["infinite mind", "need not be"],
+        "helps": [{"id": "s10_subject", "label": "주어 찾기 헷갈려요",
+                   "brief": "'to'처럼 전치사로 시작하는 덩어리는 보통 주어가 아니에요. 'with'로 시작하는 두 덩어리도 마찬가지예요. 그걸 빼면 주어는 'each blade of grass(각각의 풀잎)'예요."}],
         "steps": [
             choice("s10_q",
                    "무한한 정신(infinite mind)이라면, 풀잎을 모두 한 범주로 묶어야 할까요?",
                    [("o0", "묶어야 해요", False), ("o1", "묶을 필요가 없어요", True)],
                    "'need not be'를 봐요. 'must'와 반대예요.",
+                   # infinite mind = 무한한 기억력을 가진 사람. 학생이 모를 테니 그림으로
+                   panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/infinite-mind-blades.svg",
+                          "alt": "무한한 기억력을 가진 사람(infinite mind)과, 모양이 하나하나 다른 풀잎들. 화살표가 풀잎 하나(blade of grass)를 가리킨다"},
+                   faded=[", with infinite memory,", ", with its own distinct life history,"],
+                   tips=[{"label": "blade", "text": "'blade'는 원래 '칼날'이라는 뜻이에요. 'blade of grass'처럼 쓰면 칼날처럼 가늘고 긴 '풀잎'을 말해요."}]),
+            show("s10_imagine", "사람은 무한한 기억력을 가질 수 없어요. 그러니 이 문장은 '만약 그런 정신이 있다면'이라는 불가능한 상황을 가정하고 있어요.",
+                 method=1, button="다음",
+                 panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/infinite-mind-blades.svg",
+                        "alt": "무한한 기억력을 가진 사람(infinite mind)과, 모양이 하나하나 다른 풀잎들. 화살표가 풀잎 하나(blade of grass)를 가리킨다"},
+                 highlight=["to an infinite mind"],
+                 faded=[", with its own distinct life history,"]),
+            choice("s10_distinct",
+                   "풀잎마다 'its own distinct life history'가 있대요. distinct는 어느 그룹일까요?",
+                   [("o0", SORT_LEFT, False), ("o1", SORT_RIGHT, True)],
+                   "distinct는 '독특한, 뚜렷이 다른'이에요. 풀잎끼리 묶이는 말일지, 따로인 말일지 생각해 봐요.",
+                   why="distinct는 '독특한, 뚜렷이 다른'이에요. 풀잎 하나하나가 따로라는 말이라 하나하나 다른 쪽이에요.",
+                   method=1,
+                   panel={**S10_BEFORE, "sort": {"words": ["distinct"], "left": SORT_LEFT, "right": SORT_RIGHT}},
+                   highlight=["its own distinct life history"],
+                   faded=[", with infinite memory,"],
+                   tips=[{"label": "with = ~를 가진", "text": "'with'는 여기서 '~를 가진'이라는 뜻이에요. 'with infinite memory'는 '무한한 기억력을 가진', 'with its own distinct life history'는 '자기만의 독특한 생애를 가진'이에요."}]),
+            choice("s10_fellows",
+                   "'all its fellows'의 its는 풀잎을 가리켜요. 여기서 fellows는 무엇일까요?",
+                   [("o0", "사람 친구들", False), ("o1", "다른 풀잎들", True), ("o2", "무한한 정신", False)],
+                   "fellow는 원래 '동료, 같은 무리'예요. 풀잎의 동료라면 누구일까요?",
+                   why="fellow는 '동료, 같은 무리'예요. its가 풀잎이니까, 같은 잔디밭에서 함께 자라는 같은 무리를 말해요.",
+                   method=1,
+                   panel=S10_MID,
+                   highlight=["all its fellows"],
                    faded=[", with infinite memory,", ", with its own distinct life history,"]),
-            show("s10_map", "기억력이 무한하면 풀잎 하나하나를 따로 기억할 수 있어요. 그래서 한데 묶을 필요가 없다는 거예요.",
-                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”", "co-categorize", "“Lawn”", "quick glance", "uniformly", "practical purposes"],
-                             R + ["differences", "varieties", "individuality", "uniqueness", "no two … alike", "groundskeeper", "really do matter", "infinite mind*"], "무한한 정신 → 묶을 필요 없음"),
+            choice("s10_cocat",
+                   "'co-categorized with all its fellows'의 co-categorize는 어느 그룹일까요?",
+                   [("o0", SORT_LEFT, True), ("o1", SORT_RIGHT, False)],
+                   "4문장의 '“Flower” co-categorizes …'를 떠올려 봐요. 꽃들을 어떻게 했죠?",
+                   why="co-categorize는 '한 범주로 같이 묶다'예요. 이름으로 묶는 쪽이에요.",
+                   method=1,
+                   panel={**S10_MID, "sort": {"words": ["co-categorize"], "left": SORT_LEFT, "right": SORT_RIGHT}},
+                   highlight=["⑤co-categorized with all its fellows"],
+                   faded=[", with infinite memory,", ", with its own distinct life history,"]),
+            show("s10_map", "co-categorize는 '묶는' 쪽 말이에요. 그런데 앞에 'need not'이 있어서, 다른 풀잎들과 묶을 필요가 없다는 뜻이 돼요.",
+                 panel=S10_AFTER,
+                 highlight=["need not be"],
                  faded=[", with infinite memory,", ", with its own distinct life history,"]),
         ],
     },
@@ -282,10 +354,28 @@ sentences = [
         "glosses": [g("its own name", "자기만의 이름 · 고유명사처럼"), g("as you yourself do", "여러분 자신이 그러하듯")],
         "emphasis": ["its own name"],
         "steps": [
-            show("s11_map", "풀잎마다 자기 이름을 가질 수 있대요. 여러분이 고유한 이름을 가진 것처럼요.",
+            # 끌어 넣기는 여기까지 충분했다 — 확인 질문 세 개로 짧게. proper name은 꺼내지 않는다
+            choice("s11_each",
+                   "마지막 문장이에요. 'Each'는 무엇을 가리킬까요?",
+                   [("o0", "각각의 사람", False), ("o1", "각각의 풀잎", True), ("o2", "각각의 이름", False)],
+                   "10문장의 주어를 떠올려 봐요.",
+                   why="10문장의 주어 'each blade of grass'를 받아요. 풀잎 하나하나를 말해요.",
+                   highlight=["Each"]),
+            choice("s11_do",
+                   "'as you yourself do'의 do는 무엇을 받을까요?",
+                   [("o0", "이름을 붙이다", False), ("o1", "자기 이름을 가지다", True), ("o2", "풀잎이 되다", False)],
+                   "앞에 나온 동사를 다시 쓰지 않으려고 do로 받았어요. 앞의 동사구를 찾아봐요.",
+                   why="do는 앞의 'have its own name'을 받아요. 여러분도 저마다 이름이 있잖아요.",
+                   highlight=["as you yourself do"]),
+            choice("s11_could",
+                   "사람이 저마다 이름을 갖듯, 풀잎도 그럴 수 있대요. 실제로 풀잎마다 이름이 있다는 말일까요?",
+                   [("o0", "실제로 그렇다", False), ("o1", "그럴 수 있다는 가정이다", True)],
+                   "'could'를 봐요. 10문장의 '무한한 기억력'을 떠올려 봐요.",
+                   why="'could'는 10문장의 불가능한 가정을 이어받아요. 실제로 그렇다는 게 아니에요.",
+                   highlight=["could"]),
+            show("s11_end", "'could'는 10문장의 불가능한 가정을 이어받아요. 무한한 기억력이 있다면, 풀잎도 사람처럼 저마다 이름을 가질 수 있을 텐데요.",
                  button="문제 풀러 갈게요",
-                 panel=board(L + ["four ordinary nouns", "leave out", "“Flower”", "co-categorize", "“Lawn”", "quick glance", "uniformly", "practical purposes"],
-                             R + ["differences", "varieties", "individuality", "uniqueness", "no two … alike", "groundskeeper", "really do matter", "infinite mind", "its own name*"], "자기만의 이름 = 하나하나 다름")),
+                 highlight=["could"]),
         ],
     },
 ]
@@ -324,16 +414,56 @@ exam = {
         {"id": "5", "label": "co-categorized", "keywords": ["co-categorized"], "ko": "한 범주로 묶인"},
     ],
     "brief": {
-        "ask": "밑줄 단어마다 지도의 어느 쪽 말인지 떠올려 봐요. 문장이 속한 쪽과 안 맞는 걸 골라요.",
+        "ask": "밑줄 단어마다 칠판의 어느 그룹 말인지 떠올려 봐요. 문장 흐름과 안 맞는 걸 골라요.",
         "first_correct": "맞았어요!",
-        "first_wrong": "아쉽게도 아니에요. 정답은 분석하면서 같이 찾아봐요.",
+        "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
         "final_correct": "정답이에요!",
-        "final_wrong": "정답은 ②예요. 'Lawn'은 여러 풀을 한데 묶는 이름이라, 차이를 인정하는 게 아니라 무시해요(neglects).",
+        # 분석 뒤 ②를 맞히면 다시 볼 주기 전에 이 해설을 한 화면 보여 준다
+        "answer_explain": "정답이에요! 'Lawn'은 왼쪽, 'the varieties of grass …'는 오른쪽 그룹이에요. 개개의 차이를 따지지 않는 보통 명사가 다양함을 '인정한다(acknowledges)'는 건 맞지 않아요(→ neglects).",
+        "final_wrong": "정답은 ②예요. 'Lawn'은 왼쪽, 'the varieties of grass …'는 오른쪽 그룹이에요. 개개의 차이를 따지지 않는 보통 명사가 다양함을 '인정한다(acknowledges)'는 건 맞지 않아요(→ neglects).",
+        # ③은 29%가 고른 오답 — 한 줄 해설 대신 같이 자세히 보고, 어디서 헷갈렸는지 기록한다
+        "option_review": {
+            "3": {
+                "intro": "아쉽게도 틀렸어요. ③은 29%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+                "intro_button": "같이 볼게요",
+                "say": "yet은 앞뒤를 반대로 잇는 말이에요. 앞은 '어떤 데이지도 똑같지 않다', 즉 모두 제각각 다르고 고유하다는 뜻이에요. 뒤는 그래도 힐끗 보면 균일한(uniformly) 무늬로 보일 수 있다는 거예요.",
+                "panel": {"kind": "contrast", "title": "yet → 앞뒤가 반대", "between": "↔",
+                          "left": {"title": "No two daisies … are exactly ③alike", "text": "모두 제각각 다르고 고유하다"},
+                          "right": {"title": "a carpet patterned uniformly enough", "text": "힐끗 보면 균일한 무늬로 보인다"}},
+                "ask": "그래서 ③alike는 문맥에 맞아요. 어디서 헷갈렸어요?",
+                "choices": [
+                    {"label": "No를 못 봤어요", "skills": ["no_negation"],
+                     "reply": "알려 줘서 고마워요. 'No two … alike'처럼 No가 앞에 붙으면 뜻이 뒤집혀요. 앞으로 비슷한 문장이 나오면 No를 강조해서 알려 줄게요."},
+                    {"label": "yet 앞뒤가 반대인 게 헷갈렸어요", "skills": ["yet_contrast"],
+                     "reply": "알려 줘서 고마워요. yet 앞뒤는 반대 관계예요. 앞으로 비슷한 문장이 나오면 yet을 강조해서 알려 줄게요."},
+                    {"label": "둘 다요", "skills": ["no_negation", "yet_contrast"],
+                     "reply": "알려 줘서 고마워요. 앞으로 비슷한 문장이 나오면 No와 yet을 강조해서 알려 줄게요."},
+                ],
+            },
+            # ④는 38%로 가장 많이 고른 오답 — 9문장 Not so로 반대 관계를 추측하게 한다
+            "4": {
+                "intro": "아쉽게도 틀렸어요. ④는 38%나 고른, 가장 많이 헷갈린 보기예요. 같이 자세히 볼까요?",
+                "intro_button": "같이 볼게요",
+                "say": "'Not so'는 앞 문장과 반대라는 신호예요. 9문장이 '풀 하나하나가 정말 중요하다(do matter)'니까, 8문장은 반대로 '개별 차이는 무시될 수 있다'가 맞아요.",
+                "panel": {"kind": "contrast", "title": "Not so → 앞뒤가 반대", "between": "↔",
+                          "left": {"title": "8 · the differences can be ④ignored", "text": "개별 차이는 무시될 수 있다"},
+                          "right": {"title": "9 · the constituent grasses … really do matter", "text": "풀 하나하나가 정말 중요하다"}},
+                "ask": "그래서 ④ignored는 문맥에 맞아요. 어디서 헷갈렸어요?",
+                "choices": [
+                    {"label": "ignored가 부정적인 말이라 틀려 보였어요", "skills": ["word_feeling"],
+                     "reply": "알려 줘서 고마워요. 단어 느낌이 아니라 앞뒤 문장과의 관계로 판단해야 해요. 앞으로 비슷한 문제가 나오면 이 점을 강조해서 알려 줄게요."},
+                    {"label": "Not so가 반대라는 걸 못 봤어요", "skills": ["not_so_contrast"],
+                     "reply": "알려 줘서 고마워요. 'Not so'는 앞 문장과 반대라는 신호예요. 앞으로 비슷한 문장이 나오면 Not so를 강조해서 알려 줄게요."},
+                    {"label": "둘 다요", "skills": ["word_feeling", "not_so_contrast"],
+                     "reply": "알려 줘서 고마워요. 앞으로 비슷한 문제가 나오면 단어 느낌보다 앞뒤 관계를, 특히 Not so를 강조해서 알려 줄게요."},
+                ],
+            },
+        },
         "option_feedback": {
-            "1": "보통 명사는 이름이라 차이를 빠뜨려요. differences는 흐름에 맞아요.",
+            "1": "ordinary nouns(보통 명사)는 왼쪽, 즉 하나하나의 특성을 담지 않는 그룹이에요. 그런 이름이 차이(differences)를 빠뜨린다(leave out)는 건 자연스러우니, ①은 문맥에 맞아요.",
             "3": "'No two … are alike'는 똑같은 두 송이가 없다는 말이에요. 하나하나 다르다는 흐름에 맞아요.",
             "4": "보통 때는 차이를 무시해도 된다는 말이에요. 뒤의 'Not so … groundskeeper'가 그 반대 경우예요.",
-            "5": "무한한 정신은 풀잎을 한데 묶을 필요가 없다는 말이에요. 'need not'과 함께 흐름에 맞아요.",
+            "5": "기억력이 무한한 사람은 풀을 굳이 묶지 않아도 하나하나 다 기억할 수 있어요. 그래서 묶일 필요가 없다는 ⑤는 문맥에 맞아요.",
         },
         "ask_first": "실제 시험처럼 풀어 봐요. 지문이 다시 보고 싶으면 아래 버튼을 눌러요.",
     },
@@ -360,8 +490,9 @@ lesson = {
         "passage": [g("conceptualize", "개념화하다"), g("categorize", "범주화하다"), g("abstract away from", "~에서 떼어 내다, 무시하다"),
                     g("particularities", "세부 특징"), g("ordinary noun", "보통 명사"), g("co-categorize", "한 범주로 같이 묶다"),
                     g("individuality", "개별성"), g("uniqueness", "고유성"), g("uniformly", "균일하게"),
-                    g("practical", "실용적인"), g("groundskeeper", "경기장 관리인"), g("constituent", "구성하는"),
-                    g("infinite", "무한한"), g("distinct", "뚜렷이 다른")],
+                    g("practical", "실용적인"), g("groundskeeper", "경기장 관리인"), g("matter", "중요하다"),
+                    g("infinite", "무한한"), g("distinct", "독특한, 뚜렷이 다른"),
+                    g("blade", "(풀의) 잎 · 원래는 칼날"), g("fellow", "동료, 같은 무리"), g("glance", "힐끗 봄")],
         "options": [g("difference", "차이"), g("acknowledge", "인정하다"), g("alike", "비슷한, 같은"), g("ignore", "무시하다"), g("neglect", "무시하다, 소홀히 하다")],
     },
     "context": {"mode": "paper_review", "exam_relevance": "high", "time_budget": "normal"},
@@ -380,10 +511,12 @@ c = {
     "lesson": ID, "character": "dajung", "note": "생성물",
     "topic_intro": "어휘 문제 푸는 법",
     "closing": ref["closing"],
-    "helps": {}, "steps": steps,
+    "helps": {h["id"]: {"answer": h["brief"]} for s_ in sentences for h in s_.get("helps", [])},
+    "steps": steps,
     "exam": {k: v for k, v in exam["brief"].items()},
     "intro": {i["id"]: dict(i["brief"]) for i in lesson["intro"]},
-    "ending": ref["ending"],
+    # 정답 해설이 이미 「정답이에요!」로 시작하니, 다시 볼 주기 말에서는 빼 둔다
+    "ending": {**ref["ending"], "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요."},
 }
 json.dump(c, open(f"{ROOT}/content/tutor/policy-copy/dajung/{ID}.json", "w"), ensure_ascii=False, indent=2)
 print("ok", ID)

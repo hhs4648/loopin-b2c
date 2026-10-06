@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 150" fill="none">
+  <!-- 칠판 그림: 무한한 기억력을 가진 사람(infinite mind)과, 하나하나 다른 풀잎들 (30번 10문장) -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <!-- 사람 + 생각 풍선 속 ∞ -->
+    <circle cx="62" cy="62" r="17" fill="#ffe1d0" stroke="#2b2430" stroke-width="2"/>
+    <circle cx="56" cy="60" r="2" fill="#2b2430"/><circle cx="68" cy="60" r="2" fill="#2b2430"/>
+    <path d="M56 69 Q62 73 68 69" stroke="#2b2430" stroke-width="2" stroke-linecap="round"/>
+    <path d="M36 112 Q36 84 62 84 Q88 84 88 112Z" fill="#9cc7ef" stroke="#2b2430" stroke-width="2"/>
+    <circle cx="86" cy="40" r="3" fill="#fff" stroke="#8a7f88" stroke-width="1.5"/>
+    <circle cx="93" cy="31" r="4.5" fill="#fff" stroke="#8a7f88" stroke-width="1.5"/>
+    <ellipse cx="114" cy="18" rx="24" ry="14" fill="#fff" stroke="#8a7f88" stroke-width="1.5"/>
+    <text x="114" y="27" text-anchor="middle" font-size="24" fill="#c0455f">∞</text>
+    <text x="62" y="131" text-anchor="middle" font-size="14" fill="#2f7d6c">infinite mind</text>
+    <text x="62" y="146" text-anchor="middle" font-size="11.5" fill="#5b4f57">(무한한 기억력)</text>
+
+    <!-- 하나하나 다른 풀잎 -->
+    <path d="M150 128 H330" stroke="#a6d79a" stroke-width="6" stroke-linecap="round"/>
+    <g stroke-linecap="round" stroke-linejoin="round" stroke="#3f7f39" stroke-width="1.5">
+      <path d="M168 126 Q160 92 172 58 Q174 92 176 126Z" fill="#7cc06f"/>
+      <path d="M192 126 Q196 98 184 74 Q200 96 200 126Z" fill="#5ea255"/>
+      <path d="M214 126 Q208 86 222 40 Q222 86 222 126Z" fill="#8fd07f"/>
+      <path d="M238 126 Q246 102 236 82 Q252 100 246 126Z" fill="#6fb46a"/>
+      <path d="M262 126 Q254 96 270 66 Q270 98 270 126Z" fill="#9ad88a"/>
+      <path d="M288 126 Q292 106 282 92 Q298 104 296 126Z" fill="#5ea255"/>
+      <path d="M312 126 Q306 90 318 62 Q318 94 320 126Z" fill="#7cc06f"/>
+    </g>
+    <!-- 화살표: blade of grass -->
+    <text x="268" y="22" text-anchor="middle" font-size="13" fill="#c0455f">blade of grass</text>
+    <text x="268" y="36" text-anchor="middle" font-size="10.5" fill="#5b4f57">(풀잎 하나)</text>
+    <path d="M262 40 L230 56" stroke="#c0455f" stroke-width="2" stroke-linecap="round"/>
+    <path d="M230 56 L240 55 M230 56 L235 47" stroke="#c0455f" stroke-width="2" stroke-linecap="round"/>
+    <text x="240" y="146" text-anchor="middle" font-size="11" fill="#5b4f57">풀잎마다 모양이 다 달라요</text>
+  </g>
+</svg>

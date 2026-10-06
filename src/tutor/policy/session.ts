@@ -125,6 +125,10 @@ type State = {
   ri: number;
   /** 처음에 풀어 봤다면 그 결과 */
   firstAnswer: { optionId: string; correct: boolean } | null;
+  /** 마지막 문제에서 정답을 골라 해설(`answer_explain`)을 보는 중 — 「다음으로」면 다시 볼 주기로 */
+  examSolved: boolean;
+  /** 많이 고른 오답을 같이 자세히 보는 중 — 보기 id와 몇 번째 화면인지 (0 제안 · 1 설명 · 2 질문 · 3 답) */
+  examReview: { optionId: string; step: number } | null;
   si: number;
   pi: number;
   /** choice: 풀이 중 → 끝남(설명을 봤다). think: 생각 중 → 정리를 봤다 */
@@ -197,6 +201,8 @@ export function createPolicySession(
       boardImage: null,
       ri: 0,
       firstAnswer: null,
+      examSolved: false,
+      examReview: null,
       si: 0,
       pi: 0,
       resolved: false,
@@ -411,31 +417,89 @@ export function createPolicySession(
     if (exam.analysis_first) {
       // 틀리면 그 보기를 지우고 다시 고르게 한다. 맞히면 마무리(복습 주기 · 단어)로
       if (!correct) {
+        const review = ex.option_review?.[picked.id];
         s = {
           ...s,
           finalWrong: [...s.finalWrong, picked.id],
           anyExplained: true,
           message: `${L.wrong_lead} ${ex.option_feedback?.[picked.id] ?? ""}`.trim(),
         };
+        if (review) {
+          // 많이 고른 오답 — 그 밑줄이 든 문장으로 가서 같이 자세히 본다
+          const u = underlinesOf(exam)[exam.options.findIndex((o) => o.id === picked.id)];
+          const at = u ? lesson.sentences.findIndex((x) => x.text.includes(u)) : -1;
+          s = {
+            ...s,
+            examReview: { optionId: picked.id, step: 0 },
+            si: at >= 0 ? at : s.si,
+            message: review.intro,
+            buttons: [review.intro_button],
+          };
+        }
         return;
       }
-      const missed = s.finalWrong.length > 0;
-      s = {
-        ...s,
-        stage: "review",
-        reviewStatus: missed ? "analyzed_wrong" : "analyzed_correct",
-        reviewWeeks: missed ? 1 : 3,
-        buttons: [NEXT_BTN],
-        effect: missed ? "light" : null,
-      };
-      s = { ...s, message: reviewMessage() };
+      if (ex.answer_explain) {
+        s = { ...s, examSolved: true, message: ex.answer_explain, buttons: [NEXT_BTN] };
+        return;
+      }
+      startReview();
       return;
     }
     s = { ...s, anyExplained: s.anyExplained || !correct, effect: correct && s.firstAnswer && !s.firstAnswer.correct ? "light" : null };
     finish(`${correct ? ex.final_correct : ex.final_wrong} `);
   }
 
+  /** 많이 고른 오답을 같이 자세히 본다 — 제안 → 그림·설명 → 어디서 헷갈렸나 → 답 → 문제로 */
+  function onExamReview(text: string) {
+    const r = s.examReview!;
+    const review = copy.exam!.option_review![r.optionId]!;
+    if (r.step === 0) {
+      s = { ...s, examReview: { ...r, step: 1 }, message: review.say, panel: review.panel ?? null, buttons: [NEXT_BTN] };
+      return;
+    }
+    if (r.step === 1) {
+      s = { ...s, examReview: { ...r, step: 2 }, message: review.ask, buttons: review.choices.map((c) => c.label) };
+      return;
+    }
+    if (r.step === 2) {
+      const pick = review.choices.find((c) => c.label === text);
+      if (!pick) return;
+      // 헷갈린 곳을 기록한다 — 다음 수업에서 비슷한 문장이 나오면 이 skill을 보고 강조한다
+      let student = s.student;
+      for (const skill of pick.skills) student = recordPerformance(student, skill, "explained", 1);
+      s = { ...s, student };
+      log({ kind: "wrong_reason", optionId: r.optionId, reason: pick.label, skills: pick.skills }, { action: "SUMMARIZE", reason: ["wrong_reason"] });
+      flush();
+      s = { ...s, examReview: { ...r, step: 3 }, message: pick.reply, buttons: [NEXT_BTN] };
+      return;
+    }
+    // 문제로 돌아온다 — 고른 보기는 지워진 채로
+    s = {
+      ...s,
+      examReview: null,
+      si: lesson.sentences.indexOf(examSentence()),
+      panel: null,
+      message: L.review_back,
+      buttons: [],
+    };
+  }
+
   /* ── 마무리: 다시 볼 주기 · 단어 체크 · 짝 맞추기 ───────────────── */
+
+  /** 분석 뒤 마지막 문제를 맞혔다 — 다시 볼 주기로. 한 번이라도 틀렸으면 1주, 아니면 3주 */
+  function startReview() {
+    const missed = s.finalWrong.length > 0;
+    s = {
+      ...s,
+      stage: "review",
+      examSolved: false,
+      reviewStatus: missed ? "analyzed_wrong" : "analyzed_correct",
+      reviewWeeks: missed ? 1 : 3,
+      buttons: [NEXT_BTN],
+      effect: missed ? "light" : null,
+    };
+    s = { ...s, message: reviewMessage() };
+  }
 
   function weeksLabel(w: number | null) {
     return w == null ? "다시 안 봄" : `${w}주`;
@@ -667,7 +731,7 @@ export function createPolicySession(
     }
 
     /*
-      한 번만 고르는 질문 — 틀리면 "아쉽게도 아니에요." + 이유를 말하고 넘어간다.
+      한 번만 고르는 질문 — 틀리면 "아쉽게도 틀렸어요." + 이유를 말하고 넘어간다.
       학생이 틀렸다는 걸 분명히 알게 하되, 같은 질문에 붙잡아 두지 않는다.
     */
     if (st.one_try && !(observation.kind === "answer" && observation.correct)) {
@@ -796,10 +860,8 @@ export function createPolicySession(
     if (help) {
       // 눌렀다는 것만 남긴다. 「모른다」로 바꿔 적지 않는다 (§20)
       log({ kind: "help_click", helpId: help.id }, { action: "ALLOW_LOOKUP", target: help.id, intensity: "minimal" });
-      const aside = s.aside ?? {
-        message: st.type !== "show" && !s.resolved ? (copy.steps[st.id]?.reask ?? s.message) : s.message,
-        buttons: s.buttons,
-      };
+      // 돌아오면 원래 질문을 그대로 다시 보인다 — 질문이 무엇이었는지 잊지 않게
+      const aside = s.aside ?? { message: s.message, buttons: s.buttons };
       s = { ...s, aside, message: copy.helps[help.id]?.answer ?? "", buttons: [BACK_BTN] };
       return true;
     }
@@ -835,6 +897,14 @@ export function createPolicySession(
     const shown = inLesson ? (st.display ?? sen.text) : sen.text;
     // 밑줄 친 구절은 읽을 때도, 문제를 풀 때도 노랗게
     const underline = lesson.exam ? underlinesOf(lesson.exam).filter((u) => shown.includes(u)) : [];
+    /*
+      예상 질문(「주어 찾기 헷갈려요」 등) — 학생의 말이라 보기 옆에 민트 버튼으로 둔다.
+      문장의 첫 질문에서, 아직 답하기 전에만. 누르면 곁길로 답하고 「이어서 할게요」로 돌아온다
+    */
+    const helpButtons =
+      inLesson && s.pi === 0 && st.type === "choice" && !s.resolved && !s.aside
+        ? (sen.helps ?? []).map((h) => h.label)
+        : [];
     // 한 줄에 못 들어가는 보기가 있으면 세로로 쌓는다
     const stack = s.buttons.some((b) => b.length > 18);
     return {
@@ -854,8 +924,7 @@ export function createPolicySession(
           (s.stage === "intro" ? lesson.intro_board : s.stage === "done" ? lesson.closing_board : null);
         return key ? (lesson.images?.[key] ?? null) : null;
       })(),
-      buttons: s.buttons,
-      placeholder: "선생님께 답해 보세요…",
+      buttons: [...s.buttons, ...helpButtons],
       // 학생이 방금 고른 답은 화면에 다시 띄우지 않는다 — 다음 질문과 섞여 헷갈린다
       studentLine: "",
       effect: s.effect,
@@ -905,7 +974,7 @@ export function createPolicySession(
           ? { labels: lesson.method.labels, active: exam ? lesson.method.labels.length - 1 : (st.method ?? null) }
           : null,
       examOptions:
-        exam && lesson.exam?.analysis_first && !(s.stage === "exam_first" && s.firstAnswer)
+        exam && lesson.exam?.analysis_first && !(s.stage === "exam_first" && s.firstAnswer) && !s.examSolved && !s.examReview
           ? lesson.exam.options
               .filter((o) => !s.finalWrong.includes(o.id))
               .map((o) =>
@@ -916,8 +985,22 @@ export function createPolicySession(
               )
           : null,
       examGlosses: lesson.exam?.glosses ?? [],
+      examSentences: (() => {
+        const ex = lesson.exam;
+        const lines = ex ? underlinesOf(ex) : [];
+        if (!exam || !ex || lines.length < 2) return null;
+        // 보기 순서 = 밑줄 순서 (①~⑤)
+        const out: Record<string, { sentence: string; underline: string; glosses: typeof sen.glosses }> = {};
+        ex.options.forEach((o, i) => {
+          const u = lines[i];
+          const hit = u ? lesson.sentences.find((x) => x.text.includes(u)) : undefined;
+          if (u && hit) out[o.id] = { sentence: hit.text, underline: u, glosses: hit.glosses };
+        });
+        return out;
+      })(),
       // 이 수업은 버튼으로만 답한다 — 자유 응답이 없으니 입력창도 없다
       allowInput: false,
+      placeholder: "선생님께 답해 보세요…",
       fullPassage:
         lesson.passage_on_try && (inLesson || exam)
           ? { sentences: lesson.sentences.map((x) => x.text), underline: lesson.exam ? underlinesOf(lesson.exam) : [] }
@@ -940,11 +1023,13 @@ export function createPolicySession(
       matchPairs: s.stage === "match" ? matchPairs() : null,
       highlight: inLesson ? (st.highlight ?? []) : underline,
       emphasis: inLesson ? (sen.emphasis ?? []) : [],
-      panel: inLesson ? s.panel : null,
-      // 도움말 칩은 문장의 첫 스텝에서만. 수업이 진행되면 화면에 이미 많다
-      helps: inLesson && s.pi === 0 ? (sen.helps ?? []).map((h) => h.label) : [],
+      panel: inLesson || s.examReview ? s.panel : null,
       buttonLayout: stack ? "stack" : "row",
-      auxButtons: [UNKNOWN_BTN, HINT_BTN, SKIP_BTN, PASSAGE_AGAIN_BTN, ...(inLesson && st.detail_button ? [st.detail_button] : [])],
+      auxButtons: [
+        UNKNOWN_BTN, HINT_BTN, SKIP_BTN, PASSAGE_AGAIN_BTN,
+        ...(inLesson && st.detail_button ? [st.detail_button] : []),
+        ...helpButtons,
+      ],
       numbered: (inLesson && st.type === "choice" && !s.resolved && !s.aside) || (exam && s.buttons.length > 1),
     };
   }
@@ -994,6 +1079,15 @@ export function createPolicySession(
       }
       if (s.stage === "exam_first" && text === PASSAGE_AGAIN_BTN) {
         s = { ...s, stage: "read", message: "", buttons: [SOLVE_BTN] };
+        return view();
+      }
+      if (s.stage === "exam_final" && s.examReview) {
+        onExamReview(text);
+        return view();
+      }
+      if (s.stage === "exam_final" && s.examSolved) {
+        // 정답 해설을 봤다 — 「다음으로」면 다시 볼 주기로
+        if (text === NEXT_BTN) startReview();
         return view();
       }
       if (s.stage === "exam_first" || s.stage === "exam_final") {
