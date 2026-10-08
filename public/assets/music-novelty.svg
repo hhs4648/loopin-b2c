@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 170" fill="none">
+  <!-- 칠판: 이번 글 — 음악과 새로움의 관계는? (21번 도입) -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <text x="170" y="34" text-anchor="middle" font-size="18" fill="#8a7f88">이번 글</text>
+    <rect x="22" y="62" width="104" height="58" rx="16" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="2.5"/>
+    <text x="74" y="99" text-anchor="middle" font-size="24" fill="#2f7d6c">음악</text>
+    <rect x="214" y="62" width="104" height="58" rx="16" fill="#fff5f7" stroke="#ef7a93" stroke-width="2.5"/>
+    <text x="266" y="99" text-anchor="middle" font-size="24" fill="#c0455f">새로움</text>
+    <path d="M134 91 H206" stroke="#8a7f88" stroke-width="2.5" stroke-dasharray="6 6" stroke-linecap="round"/>
+    <circle cx="170" cy="91" r="19" fill="#fff" stroke="#f2c33d" stroke-width="2.5"/>
+    <text x="170" y="101" text-anchor="middle" font-size="26" fill="#d9a51f">?</text>
+    <text x="170" y="152" text-anchor="middle" font-size="15" fill="#5b4f57">좋은 음악은 새로워야 할까?</text>
+  </g>
+</svg>

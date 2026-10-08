@@ -52,6 +52,10 @@ export function openingAction(step: PolicyStep, input: DecideInput): TeachingAct
       ...(step.retrieve ? { reason: ["retrieve_previous_representation"] } : {}),
     };
   }
+  if (step.type === "pick") {
+    // 문장에서 핵심 단어를 직접 찾는다 — 뜻 고르기와 같은 진단 질문
+    return { action: "ASK_MEANING_CHOICE", interactionId: step.id, target: step.skill };
+  }
   if (step.type === "think") {
     return {
       action: step.interaction === "prediction" ? "ASK_PREDICTION" : "ASK_CONTRAST",

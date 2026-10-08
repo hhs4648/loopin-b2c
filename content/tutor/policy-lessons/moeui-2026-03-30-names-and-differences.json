@@ -17,6 +17,7 @@
     "intro_times": 3
   },
   "read_button": "분석하러 갈게요",
+  "read_first": true,
   "images": {
     "method": {
       "src": "/assets/vocab-method.svg",
@@ -29,7 +30,6 @@
     {
       "id": "method1",
       "type": "say",
-      "show_when": "first",
       "button": "네",
       "brief": {
         "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
@@ -38,19 +38,9 @@
     {
       "id": "method2",
       "type": "say",
-      "show_when": "first",
       "button": "좋아요",
       "brief": {
         "say": "요지를 잡고, 단어를 두 그룹으로 나눈 뒤, 밑줄 단어가 맞는 쪽에 있는지 볼 거예요. 칠판 순서대로 해 볼게요."
-      }
-    },
-    {
-      "id": "method_short",
-      "type": "say",
-      "show_when": "later",
-      "button": "시작할게요",
-      "brief": {
-        "say": "칠판 순서대로 바로 시작해 볼게요."
       }
     }
   ],
@@ -237,7 +227,7 @@
         "4": "보통 때는 차이를 무시해도 된다는 말이에요. 뒤의 'Not so … groundskeeper'가 그 반대 경우예요.",
         "5": "기억력이 무한한 사람은 풀을 굳이 묶지 않아도 하나하나 다 기억할 수 있어요. 그래서 묶일 필요가 없다는 ⑤는 문맥에 맞아요."
       },
-      "ask_first": "실제 시험처럼 풀어 봐요. 지문이 다시 보고 싶으면 아래 버튼을 눌러요."
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."
     }
   },
   "key_words": {
@@ -291,16 +281,8 @@
         "ko": "중요하다"
       },
       {
-        "en": "infinite",
-        "ko": "무한한"
-      },
-      {
         "en": "distinct",
         "ko": "독특한, 뚜렷이 다른"
-      },
-      {
-        "en": "blade",
-        "ko": "(풀의) 잎 · 원래는 칼날"
       },
       {
         "en": "fellow",

@@ -15,7 +15,7 @@ export function PointsReview({ view, onSend, onClose }: Props) {
     <div className="stage-fill words points">
       <header className="words-top">
         <span className="words-step">헷갈린 포인트</span>
-        <button type="button" className="icon-btn dark" title="학습 종료" onClick={onClose}>
+        <button type="button" className="close-soft" title="학습 종료" aria-label="학습 종료" onClick={onClose}>
           ✕
         </button>
       </header>

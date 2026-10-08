@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
@@ -9,8 +9,8 @@ import { nounKind } from "../tutor/proper-nouns";
 import { isSaved, loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab";
 import type { UiObservation } from "../tutor/policy/types";
 import { StudyPanelView } from "./StudyPanel";
-import { PassagePager } from "./PassagePager";
-import { NEXT_SENTENCE_CMD, PREV_SENTENCE_CMD } from "../tutor/policy/session";
+import { PassageFull } from "./PassageFull";
+import { NEXT_SENTENCE_CMD, PICK_CMD, PREV_SENTENCE_CMD } from "../tutor/policy/session";
 
 type Props = {
   view: TutorView;
@@ -21,6 +21,8 @@ type Props = {
   /** 턴이 아닌 관찰(단어를 눌러 봄)을 세션에 알린다. 예전 레슨에는 없다 */
   onObserve?: (observation: UiObservation) => void;
 };
+
+const NO_CONCEPTS: NonNullable<TutorView["concepts"]> = [];
 
 export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve }: Props) {
   function listen() {
@@ -34,8 +36,53 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
 
 
   const [showPassage, setShowPassage] = useState(false);
+  /*
+    문장 먼저 읽기 — 「다 읽었어요」는 문장 길이만큼(2~6초) 지나서 나타난다.
+    바로 눌러 넘기지 못하게, 영어를 한 번은 보게 한다
+  */
+  const [readWait, setReadWait] = useState(false);
+  /*
+    읽기가 끝나 문장이 가운데에서 위로 갈 때 「툭」 옮겨 가지 않게 — 옮기기 전 자리를
+    기억해 두었다가, 새 자리에서 그만큼 끌어내린 뒤 부드럽게 올려 보낸다 (FLIP)
+  */
+  // 「듣기 · 단어를 누르면 …」 줄은 처음 몇 화면만 — 칠판 분석이 한 번 나오면 그 뒤로는 치운다
+  const [sawBoard, setSawBoard] = useState(false);
+  useEffect(() => {
+    if (view.panel) setSawBoard(true);
+  }, [view.panel]);
+  const sentenceTips = useMemo(() => (view.tips ?? []).filter((t) => !t.hint), [view.tips]);
+  const hintTips = useMemo(() => (view.tips ?? []).filter((t) => t.hint), [view.tips]);
+  const lastTop = useRef<{ top: number; sentence: string } | null>(null);
+  const hasPanel = !!view.panel;
+  useLayoutEffect(() => {
+    const el = sentenceBox.current?.querySelector<HTMLElement>(".english");
+    if (!el) return;
+    const top = el.getBoundingClientRect().top;
+    const prev = lastTop.current;
+    lastTop.current = { top, sentence: view.sentence };
+    // 같은 문장이 자리만 옮길 때만 (가운데 ↔ 칠판 때문에 위로). 새 문장은 그냥 그 자리에
+    if (!prev || prev.sentence !== view.sentence) return;
+    const from = prev.top;
+    if (Math.abs(from - top) < 4) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    el.animate([{ transform: `translateY(${from - top}px)` }, { transform: "translateY(0)" }], {
+      duration: 450,
+      easing: "cubic-bezier(.2,.8,.2,1)",
+    });
+  }, [view.readingFirst, hasPanel, view.sentence]);
+  useEffect(() => {
+    if (!view.readingFirst || !view.readDelayMs) {
+      setReadWait(false);
+      return;
+    }
+    setReadWait(true);
+    const id = window.setTimeout(() => setReadWait(false), view.readDelayMs);
+    return () => window.clearTimeout(id);
+  }, [view.readingFirst, view.readDelayMs, view.sentence]);
   // 어휘 문제: 보기의 「문장 보기」로 잠깐 띄운 문장 (보기 id)
   const [peek, setPeek] = useState<string | null>(null);
+  // 💡 Tip을 연 동안 문장에서 표시할 단어 (Tip의 `mark`)
+  const [tipMark, setTipMark] = useState<string | null>(null);
   const peeked = peek ? view.examSentences?.[peek] : undefined;
   useEffect(() => setPeek(null), [view.sentence, view.progressLabel]);
   /*
@@ -46,20 +93,23 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   const highlightKey = (view.highlight ?? []).join("|");
   useEffect(() => {
     const box = sentenceBox.current;
-    const mark = box?.querySelector<HTMLElement>(".hl");
     if (!box) return;
-    if (!mark) {
-      box.scrollTop = 0;
-      return;
-    }
-    const top = mark.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop;
+    box.scrollTop = 0;
+    const marks = [...box.querySelectorAll<HTMLElement>(tipMark ? ".hl-tip" : ".hl, .hl2, .ul")];
+    if (!marks.length) return;
+    // 칠한 구절이 처음부터 다 보이면 그대로 둔다. 칸 아래로 숨으면 첫 구절이 위에 오게 내린다
+    const boxTop = box.getBoundingClientRect().top;
+    const bottom = Math.max(...marks.map((m) => m.getBoundingClientRect().bottom - boxTop));
+    if (bottom <= box.clientHeight) return;
+    const top = Math.min(...marks.map((m) => m.getBoundingClientRect().top - boxTop));
     box.scrollTop = Math.max(0, top - 12);
-  }, [highlightKey, view.sentence, peek]);
-  const words = view.sentence.trim().split(/\s+/).length;
+  }, [highlightKey, view.sentence, peek, tipMark]);
+  // 덩어리를 나누는 슬래시(/)는 단어가 아니다
+  const words = view.sentence.trim().split(/\s+/).filter((w) => w !== "/").length;
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
 
   return (
-    <div className={`stage-fill study${view.panel ? " has-panel" : ""}`}>
+    <div className={`stage-fill study${view.celebrate ? " celebrate" : ""}${view.panel ? " has-panel" : ""}${view.readingFirst ? " reading-first" : ""}`}>
       <header className="study-top">
         {/*
           지문이 따로 있는 수업은 왼쪽 위가 「전체 지문」이다. 예전 ‹(교실로 돌아가기)는
@@ -87,7 +137,12 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
                 ‹
               </button>
             ) : null}
-            {view.progressLabel ?? "문장 학습"} · {view.progressIndex} / {view.progressTotal}
+            {/* 위쪽은 한 줄로 — 풀이법 단계(①②③)도 따로 줄을 두지 않고 여기 적는다 */}
+            {view.progressLabel ??
+              (view.methodSteps?.active != null
+                ? `${"①②③④"[view.methodSteps.active]} ${view.methodSteps.labels[view.methodSteps.active]}`
+                : "문장 학습")}{" "}
+            · {view.progressIndex}/{view.progressTotal}
             {view.canNextSentence != null && view.fullPassage ? (
               <button
                 type="button"
@@ -106,28 +161,24 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             ))}
           </div>
         </div>
-        <button type="button" className="icon-btn dark" title="학습 종료" onClick={onClose}>
+        <button type="button" className="close-soft" title="학습 종료" aria-label="학습 종료" onClick={onClose}>
           <CloseIcon />
         </button>
       </header>
 
-      {/* 「밑줄 문제 푸는 법」 — 지금 어느 단계인지 */}
-      {view.methodSteps ? (
-        <ol className="method-steps">
-          {view.methodSteps.labels.map((label, i) => (
-            <li key={label} className={view.methodSteps!.active === i ? "on" : ""}>
-              <b>{"①②③④"[i]}</b> {label}
-            </li>
-          ))}
-        </ol>
-      ) : null}
 
       <div className="study-sentence" ref={sentenceBox}>
+        {view.sentenceTag && !peeked ? <span className="sentence-no">{view.sentenceTag}</span> : null}
         <GlossSentence
           sentence={peeked?.sentence ?? view.sentence}
           nouns={view.properNouns}
           glosses={peeked?.glosses ?? view.glosses}
-          highlight={peeked ? [peeked.underline] : (view.highlight ?? [])}
+          highlight={peeked ? [] : (view.highlight ?? [])}
+          underline={peeked ? [peeked.underline] : (view.underline ?? [])}
+          highlightAlt={peeked ? [] : (view.highlightAlt ?? [])}
+          tipMark={peeked ? null : tipMark}
+          pick={peeked ? null : (view.pick ?? null)}
+          onPickWord={(w) => !typing && onSend(`${PICK_CMD}${w}`)}
           emphasis={view.emphasis ?? []}
           faded={view.faded ?? []}
           shaded={view.shaded ?? []}
@@ -142,15 +193,22 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             ))}
           </div>
         ) : null}
-        <div className="listen-row">
+        {sawBoard ? null : <div className="listen-row">
           <button type="button" className="listen" onClick={listen}>
             <SpeakerIcon /> 듣기
           </button>
           <span>단어를 누르면 뜻이 나와요 · {words} words</span>
-        </div>
+        </div>}
       </div>
 
-      {view.tips?.length || view.concepts?.length ? <TipChips tips={view.tips ?? []} concepts={view.concepts ?? []} /> : null}
+      {sentenceTips.length || view.concepts?.length ? (
+        <TipChips
+          tips={sentenceTips}
+          concepts={view.concepts ?? []}
+          onMark={setTipMark}
+          onHint={() => onObserve?.({ kind: "hint_open" })}
+        />
+      ) : null}
 
       {view.panel ? (
         <StudyPanelView
@@ -168,11 +226,23 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         {/* 지문을 읽는 동안은 할 말이 없다 — 빈 말풍선을 띄우지 않는다 */}
         {typing || view.message ? (
           <div className="teacher-bubble study-bubble-over" aria-live="polite">
-            <div className={`bubble-card${view.effect === "light" ? " lit" : ""}`}>
+            {/* 힌트는 선생님 말풍선 바로 위 — 질문을 읽다가 바로 누를 수 있게 */}
+            {hintTips.length && !typing ? (
+              <TipChips
+                tips={hintTips}
+                concepts={NO_CONCEPTS}
+                onMark={setTipMark}
+                onHint={() => onObserve?.({ kind: "hint_open" })}
+              />
+            ) : null}
+            <div className={`bubble-card${view.effect === "light" ? " lit" : ""}${view.celebrate ? " cheer" : ""}`}>
               {typing ? (
                 <div className="dots"><i /><i /><i /></div>
               ) : (
-                <span>{view.message}</span>
+                <span>
+                  {view.message}
+                  {view.bubbleNote ? <small className="bubble-note">{view.bubbleNote}</small> : null}
+                </span>
               )}
               <i className="bubble-tail" />
             </div>
@@ -190,14 +260,14 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           <div className="passage-sheet">
             <div className="passage-sheet-top">
               <b>전체 지문</b>
-              <button type="button" className="icon-btn dark" title="닫기" onClick={() => setShowPassage(false)}>
+              <button type="button" className="close-soft" title="닫기" aria-label="닫기" onClick={() => setShowPassage(false)}>
                 <CloseIcon />
               </button>
             </div>
-            <PassagePager
+            <PassageFull
+              given={view.fullPassage.given}
               sentences={view.fullPassage.sentences}
               underline={view.fullPassage.underline}
-              start={0}
             />
           </div>
         </div>
@@ -209,6 +279,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             options={view.examOptions}
             glosses={view.examGlosses ?? []}
             peekable={view.examSentences ?? null}
+            explain={view.examExplain ?? null}
             peek={peek}
             onPeek={(id) => setPeek(peek === id ? null : id)}
             disabled={typing}
@@ -217,7 +288,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         ) : null}
         <QuickReplies
           buttons={view.buttons}
-          hidden={typing}
+          hidden={typing || readWait}
           layout={view.buttonLayout}
           aux={view.auxButtons}
           numbered={view.numbered}
@@ -236,6 +307,11 @@ function GlossSentence({
   nouns,
   glosses,
   highlight,
+  underline,
+  highlightAlt,
+  tipMark,
+  pick,
+  onPickWord,
   emphasis,
   faded,
   shaded,
@@ -245,6 +321,12 @@ function GlossSentence({
   nouns: TutorView["properNouns"];
   glosses: TutorView["glosses"];
   highlight: string[];
+  underline: string[];
+  highlightAlt: string[];
+  tipMark: string | null;
+  /** 「찾기」 스텝 — 후보 구절을 누르면 고른다 (뜻 대신) */
+  pick: TutorView["pick"];
+  onPickWord: (word: string) => void;
   emphasis: string[];
   faded: string[];
   shaded: string[];
@@ -256,6 +338,10 @@ function GlossSentence({
   const [shift, setShift] = useState(0);
   const spans = glossSpans(sentence, glossesFor(glosses, nouns));
   const marked = highlightRanges(sentence, highlight);
+  const markedAlt = highlightRanges(sentence, highlightAlt);
+  const markedUl = highlightRanges(sentence, underline);
+  const markedTip = tipMark ? wordRanges(sentence, tipMark) : [];
+  const candAt = (pick?.candidates ?? []).flatMap((c) => wordRanges(sentence, c).map(([a, b]) => ({ c, a, b })));
   const fadedAt = highlightRanges(sentence, faded);
   const shadedAt = highlightRanges(sentence, shaded);
 
@@ -297,15 +383,41 @@ function GlossSentence({
     if (spans[i + 1]?.gloss && OPENING.test(span.text)) return;
     const hit = (ranges: [number, number][]) => ranges.some(([from, to]) => start < to && at > from);
     const hl = hit(marked);
+    const hl2 = !hl && hit(markedAlt);
+    const tip = hit(markedTip);
     /*
       흐림 = 빼도 되는 삽입, 음영 = 건너뛰어도 되는 부분. 공백까지 같은 칸으로 감싸야
       음영이 단어마다 끊기지 않고 한 줄로 이어진다.
     */
-    const marks = `${hit(fadedAt) ? " faded" : ""}${hit(shadedAt) ? " shaded" : ""}`;
+    const marks = `${hit(fadedAt) ? " faded" : ""}${hit(shadedAt) ? " shaded" : ""}${hit(markedUl) ? " ul" : ""}`;
     if (!span.gloss) {
-      if (hl) parts.push(<mark key={i} className={`hl${marks}`}>{span.text}</mark>);
+      if (tip) parts.push(<mark key={i} className={`hl-tip${marks}`}>{span.text}</mark>);
+      else if (hl || hl2) parts.push(<mark key={i} className={`${hl ? "hl" : "hl2"}${marks}`}>{span.text}</mark>);
       else if (marks) parts.push(<span key={i} className={marks.trim()}>{span.text}</span>);
       else parts.push(span.text);
+      return;
+    }
+    // 「찾기」 후보 — 점선 상자로, 누르면 고른다
+    const cand = candAt.find((x) => start < x.b && at > x.a);
+    if (cand && pick) {
+      const state = pick.found.includes(cand.c) ? " found" : pick.missed.includes(cand.c) ? " missed" : "";
+      parts.push(
+        <span key={i} className={`english-token${marks}`}>
+          {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
+          <button
+            type="button"
+            className={`english-word cand${state}`}
+            disabled={!pick.open || !!state}
+            onClick={(e) => {
+              e.stopPropagation();
+              onPickWord(cand.c);
+            }}
+          >
+            {span.text}
+          </button>
+          {CLOSING.test(spans[i + 1]?.text ?? "") ? spans[i + 1]!.text : null}
+        </span>,
+      );
       return;
     }
     const noun = nouns.some(
@@ -315,7 +427,7 @@ function GlossSentence({
     parts.push(
       <span
         key={i}
-        className={`english-token${selected ? " open" : ""}${hl ? " hl" : ""}${marks}`}
+        className={`english-token${selected ? " open" : ""}${hl ? " hl" : ""}${hl2 ? " hl2" : ""}${tip ? " hl-tip" : ""}${marks}`}
       >
         {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
         <button
@@ -373,16 +485,25 @@ function GlossSentence({
 function TipChips({
   tips: tipList,
   concepts,
+  onMark,
+  onHint,
 }: {
   tips: NonNullable<TutorView["tips"]>;
   concepts: NonNullable<TutorView["concepts"]>;
+  /** 연 Tip이 문장에서 가리키는 단어 — 닫으면 null */
+  onMark: (mark: string | null) => void;
+  /** 「힌트」 칩을 열었다 — 세션에 알린다 */
+  onHint: () => void;
 }) {
   const tips = [
     ...concepts.map((c) => ({ icon: "❓", label: c.en, text: `${c.title} ${c.text}` })),
     ...tipList.map((t) => ({ icon: "💡", ...t })),
-  ];
+  ] as { icon: string; label: string; text: string; mark?: string; hint?: boolean }[];
   const [open, setOpen] = useState<number | null>(null);
-  useEffect(() => setOpen(null), [tipList, concepts]);
+  useEffect(() => {
+    setOpen(null);
+    onMark(null);
+  }, [tipList, concepts]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="tip-chips">
       <div className="tip-row">
@@ -390,9 +511,14 @@ function TipChips({
           <button
             key={tip.label}
             type="button"
-            className={`tip-chip${open === i ? " on" : ""}`}
+            className={`tip-chip${open === i ? " on" : ""}${tip.hint ? " hint" : ""}`}
             aria-expanded={open === i}
-            onClick={() => setOpen(open === i ? null : i)}
+            onClick={() => {
+              const next = open === i ? null : i;
+              setOpen(next);
+              onMark(next == null ? null : (tips[next]!.mark ?? null));
+              if (next != null && tips[next]!.hint) onHint();
+            }}
           >
             {tip.icon} {tip.label}
           </button>
@@ -413,6 +539,7 @@ function ExamOptions({
   peekable,
   peek,
   onPeek,
+  explain,
   disabled,
   onPick,
 }: {
@@ -422,10 +549,18 @@ function ExamOptions({
   peekable: TutorView["examSentences"];
   peek: string | null;
   onPeek: (id: string) => void;
+  /** 해설만 보는 화면 — 보기를 누르면 해설이 열린다 */
+  explain: TutorView["examExplain"];
   disabled: boolean;
   onPick: (label: string) => void;
 }) {
   const [ko, setKo] = useState<string[]>([]);
+  const [opened, setOpened] = useState<string[]>([]);
+  const pick = (o: { id: string; label: string }) => {
+    if (disabled) return;
+    if (explain) setOpened(opened.includes(o.id) ? opened.filter((x) => x !== o.id) : [...opened, o.id]);
+    else onPick(o.label);
+  };
   const [word, setWord] = useState<{ id: string; gloss: WordGloss } | null>(null);
   const NUM = "①②③④⑤";
   return (
@@ -460,9 +595,9 @@ function ExamOptions({
               role="button"
               tabIndex={0}
               aria-disabled={disabled}
-              className="exam-option"
-              onClick={() => !disabled && onPick(o.label)}
-              onKeyDown={(e) => e.key === "Enter" && !disabled && onPick(o.label)}
+              className={`exam-option${explain?.[o.id]?.correct ? " is-answer" : ""}`}
+              onClick={() => pick(o)}
+              onKeyDown={(e) => e.key === "Enter" && pick(o)}
             >
               <span className="exam-num">{NUM[n] ?? o.id}</span>
               <span className="exam-text">{parts}</span>
@@ -500,6 +635,11 @@ function ExamOptions({
               </div>
             ) : null}
             {ko.includes(o.id) ? <div className="exam-ko">{o.ko}</div> : null}
+            {explain && opened.includes(o.id) ? (
+              <div className={`exam-explain${explain[o.id]?.correct ? " right" : ""}`}>
+                <b>{explain[o.id]?.correct ? "정답" : "오답"}</b> {explain[o.id]?.text}
+              </div>
+            ) : null}
           </li>
         );
       })}
@@ -520,6 +660,13 @@ function highlightRanges(sentence: string, phrases: string[]): [number, number][
     if (from >= 0) ranges.push([from, from + phrase.length]);
   }
   return ranges;
+}
+
+/** 단어 단위로 찾는다 — Tip이 가리키는 「one」이 Nonetheless 안에서 잡히지 않게 */
+function wordRanges(sentence: string, word: string): [number, number][] {
+  const esc = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const m = new RegExp(`(?<![A-Za-z])${esc}(?![A-Za-z])`).exec(sentence);
+  return m ? [[m.index, m.index + word.length]] : [];
 }
 
 /** 「통합, 통일성 · 여기서는 …」 — 뜻은 진하게, 「·」 뒤의 해설은 연하게 */

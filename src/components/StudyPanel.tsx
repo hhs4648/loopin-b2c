@@ -14,7 +14,7 @@ export function StudyPanelView({ panel, onPick }: { panel: StudyPanel; onPick?: 
         {panel.rows.map((row) => (
           <div key={row.label + row.text} className="panel-row">
             <span className="panel-label">{row.label}</span>
-            <span className="panel-text">
+            <span className={`panel-text${row.tone ? ` tone-${row.tone}` : ""}`}>
               {row.text}
               {row.ko ? <small>{row.ko}</small> : null}
             </span>

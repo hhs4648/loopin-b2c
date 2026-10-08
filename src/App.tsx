@@ -5,13 +5,14 @@ import { LessonList } from "./components/LessonList";
 import { SavedBook, type SavedKind } from "./components/SavedBook";
 import { ReadPassage } from "./components/ReadPassage";
 import { PointsReview } from "./components/PointsReview";
+import { SummaryView } from "./components/SummaryView";
 import { MatchGame } from "./components/MatchGame";
 import { WordCheck } from "./components/WordCheck";
 import { SentenceStudy } from "./components/SentenceStudy";
 import type { TutorView } from "./tutor/view";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { policyLessonIds } from "./tutor/policy/lessons";
-import { createPolicySession, type PolicySession } from "./tutor/policy/session";
+import { AUTO_NEXT_CMD, createPolicySession, type PolicySession } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
 import { markDone } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
@@ -110,6 +111,14 @@ export function App() {
     어댑터가 없으면 즉시 끝나므로 체감은 같다. 실패해도 타이핑 표시가 남지
     않도록 `finally`에서 반드시 푼다.
   */
+  // 버튼 없이 저절로 넘어가는 말 (도입의 「첫 문장의 핵심 단어를 찾아볼까요?」 등)
+  useEffect(() => {
+    const ms = view?.autoNextMs;
+    if (!ms || !session) return;
+    const id = window.setTimeout(() => void session.submit(AUTO_NEXT_CMD).then(setView), ms);
+    return () => window.clearTimeout(id);
+  }, [view, session]);
+
   function send(text: string) {
     if (typing || !session) return;
     // 화면 조작 신호(__로 시작)는 선생님이 생각할 일이 아니다 — 기다리지 않고 바로
@@ -201,6 +210,8 @@ export function App() {
           <ReadPassage view={view} onSend={send} onClose={backToList} />
         ) : screen === "words" && view.wordCheck ? (
           <WordCheck view={view} onSend={send} onClose={backToList} />
+        ) : screen === "summary" && view.summary && session ? (
+          <SummaryView view={view} lessonId={session.lessonId()} onSend={send} onClose={backToList} />
         ) : screen === "points" && view.pointsReview ? (
           <PointsReview view={view} onSend={send} onClose={backToList} />
         ) : screen === "match" && view.matchPairs ? (

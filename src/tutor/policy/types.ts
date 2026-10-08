@@ -49,8 +49,8 @@ export type VocabularySupport = "lookup_only" | "teaching_target" | "concept_sup
 
 export type StructurePanel = {
   kind: "structure";
-  /** `ko`가 있으면 영어 아래에 작은 글씨로 뜻을 단다 */
-  rows: { label: string; text: string; ko?: string }[];
+  /** `ko`가 있으면 영어 아래에 작은 글씨로 뜻을 단다. `tone`은 문장 강조색(노랑 hl · 민트 hl2)과 맞춘다 */
+  rows: { label: string; text: string; ko?: string; tone?: "hl" | "hl2" }[];
 };
 
 /** 한 줄 정리 카드 */
@@ -159,6 +159,8 @@ type StepBase = {
   display?: string;
   /** 문장 안에서 강조할 구절 */
   highlight?: string[];
+  /** 두 번째 색(민트)으로 강조할 구절 — 노란 강조와 덩어리를 나눠 보일 때 (예: 「~에게는」 덩어리 ↔ 주어) */
+  highlight_alt?: string[];
   /** 그림 자체이거나, 레슨 `panels`에 적어 둔 이름 */
   panel?: PanelRef;
   /** 앞 문장에서 만든 표상을 다시 꺼내 쓰는 스텝인가 (§15) */
@@ -167,8 +169,12 @@ type StepBase = {
   faded?: string[];
   /** 건너뛰어도 되는 문장·부분 — 음영 */
   shaded?: string[];
-  /** 💡 누르면 말풍선으로 열리는 요령 (지문 밖에서도 쓰는 표현·요령) */
-  tips?: { label: string; text: string }[];
+  /**
+   * 💡 누르면 말풍선으로 열리는 요령 (지문 밖에서도 쓰는 표현·요령).
+   * `mark`가 있으면 Tip을 연 동안 문장에서 그 단어를 표시한다 — 긴 문장에서 찾기 힘든 단어 (one 등).
+   * 단어 단위로 찾는다 (Nonetheless 안의 one은 안 잡는다)
+   */
+  tips?: { label: string; text: string; mark?: string; hint?: boolean }[];
   /** 「밑줄 문제 푸는 법」 중 지금 단계 (0 핵심 단어, 1 관계, 2 밑줄 뜻) */
   method?: number;
   /** 이 스텝에 「자세히 볼래요」 같은 버튼을 둔다. 누르면 `optional_of`가 이 스텝인 것들을 연다 */
@@ -214,6 +220,11 @@ export type ChoiceStep = StepBase & {
   praise_alone?: boolean;
   /** 한 번만 고르게 한다. 틀리면 "아쉽게도 틀렸어요." + 이유 → 「다음으로」 */
   one_try?: boolean;
+  /**
+   * 문장 아래 💡 칩 줄 맨 앞에 「힌트」 — 누르면 선생님 말 없이 상자에 `hints[0]`이 바로 열린다.
+   * 연 것은 기록한다 (힌트로 맞히면 혼자 맞힌 게 아니다 §11)
+   */
+  hint_button?: boolean;
 };
 
 /** contrast_reasoning 등 — 채점하지 않는다. 생각할 틈을 주고, 그다음 정리한다 */
@@ -238,7 +249,31 @@ export type ShowStep = StepBase & {
   button?: string;
 };
 
-export type PolicyStep = ChoiceStep | ThinkStep | ShowStep;
+/**
+ * 문장에서 직접 찾기 — 문장 안의 후보 구절(점선 상자)을 눌러 `answers`를 다 찾는다.
+ * 틀린 후보를 누르면 그 자리에서 짧게 말하고 계속 찾게 한다. 다 찾으면 칭찬 + 다음 스텝
+ */
+export type PickStep = StepBase & {
+  type: "pick";
+  interaction: "word_pick";
+  candidates: string[];
+  answers: string[];
+  brief: PickCopy;
+};
+
+export type PickCopy = {
+  ask: string;
+  /** 틀린 후보를 눌렀을 때 (「아쉽게도 틀렸어요.」 뒤) */
+  wrong: string;
+  /** 몇 개 찾았는데 아직 남았을 때 — {n}은 남은 개수 */
+  more: string;
+  praise: string;
+  /** 「잘 모르겠어요」 — 답을 다 보여 주며 */
+  explain: string;
+  point?: string;
+};
+
+export type PolicyStep = ChoiceStep | ThinkStep | ShowStep | PickStep;
 
 /*
   ── 대사 ──────────────────────────────────────────────────────────────
@@ -282,7 +317,7 @@ export type PolicyCopy = {
   topic_intro: string;
   closing: string;
   helps: Record<string, Stamped<{ answer: string }>>;
-  steps: Record<string, Stamped<Partial<ChoiceCopy & ThinkCopy & ShowCopy>>>;
+  steps: Record<string, Stamped<Partial<ChoiceCopy & ThinkCopy & ShowCopy & PickCopy>>>;
   exam?: Stamped<ExamCopy>;
   /** 마무리 — 복습 주기 · 단어 체크 · 짝 맞추기 */
   ending?: Record<string, string>;
@@ -306,6 +341,8 @@ export type ConceptNote = { en: string; title: string; text: string };
 
 export type PolicySentence = {
   id: number;
+  /** 「3문장」 대신 쓰는 이름 — 문장 넣기 문제의 「주어진 문장」 */
+  label?: string;
   concepts?: ConceptNote[];
   text: string;
   model_translation: string;
@@ -393,6 +430,10 @@ export type IntroStep =
       button?: string;
       /** first: 풀이법 설명을 아직 `intro_times`번 안 본 학생만 / later: 그 뒤의 학생만 */
       show_when?: "first" | "later";
+      /** 버튼 없이 이만큼(ms) 뒤에 저절로 넘어간다 */
+      auto_ms?: number;
+      /** 이 말 동안 칠판에 띄울 그림 (`images`의 키). 없으면 풀이법 칠판 */
+      image?: string;
       brief: Record<string, string>;
     }
   | {
@@ -424,6 +465,11 @@ export type PolicyLesson = {
    * 칠판만 띄우고 바로 시작한다 (같은 유형 수업을 몇 번 봤는지는 기기에 센다)
    */
   method?: { type: string; labels: string[]; intro_times: number };
+  /**
+   * 문장마다 처음엔 영어 문장만 가운데 크게 — 질문·보기는 「다 읽었어요」 뒤에.
+   * 학생이 한국어 질문·보기만 보고 푸는 걸 막는다 (2026-10-07 지인 테스트)
+   */
+  read_first?: boolean;
   /** 지문 읽기 화면의 버튼 (기본 「계속」) */
   read_button?: string;
   /**
@@ -457,7 +503,7 @@ export type Observation =
   | { kind: "wrong_reason"; optionId: string; reason: string; skills: string[] };
 
 /** 화면에서 바로 올라오는 관찰 — 턴을 만들지 않는다 */
-export type UiObservation = { kind: "vocab_click"; word: string };
+export type UiObservation = { kind: "vocab_click"; word: string } | { kind: "hint_open" };
 
 /** 명세 §21 */
 export type TeachingActionName =

@@ -185,7 +185,7 @@ button, input { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: calc(env(safe-area-inset-top, 0px) + 14px) 16px 0;
+  padding: calc(var(--safe-top, env(safe-area-inset-top, 0px)) + 14px) 16px 0;
   z-index: 5;
 }
 .chip {
@@ -309,7 +309,7 @@ button, input { font-family: inherit; }
 
 .dock {
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 6;
-  padding: 0 14px calc(env(safe-area-inset-bottom, 0px) + 16px);
+  padding: 0 14px calc(var(--safe-bottom, env(safe-area-inset-bottom, 0px)) + 16px);
   display: flex; flex-direction: column; gap: 10px;
 }
 
@@ -359,11 +359,11 @@ button, input { font-family: inherit; }
 
 .study { background: #f7efe6; display: flex; flex-direction: column; animation: pop .4s ease-out; }
 .study-top {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: calc(env(safe-area-inset-top, 0px) + 14px) 14px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 6px;
+  padding: calc(var(--safe-top, env(safe-area-inset-top, 0px)) + 8px) 12px 0;
   flex: none;
 }
-.study-progress { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.study-progress { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; }
 .study-progress span { font-size: 12px; font-weight: 600; color: #8a7f88; letter-spacing: .04em; }
 .dots-bar { display: flex; gap: 5px; }
 .dots-bar i { width: 8px; height: 5px; border-radius: 3px; background: #e6d8cc; }
@@ -377,10 +377,10 @@ button, input { font-family: inherit; }
 .study-sentence {
   flex: 0 1 auto;
   min-height: 0;
-  max-height: 34cqh;
+  max-height: 56cqh;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 18px 24px 8px;
+  padding: 10px 22px 6px;
 }
 .english {
   font-family: "Gowun Dodum", "Noto Sans KR", sans-serif;
@@ -545,7 +545,7 @@ button, input { font-family: inherit; }
 
 .study-dock {
   flex: none;
-  padding: 0 14px calc(env(safe-area-inset-bottom, 0px) + 16px);
+  padding: 0 14px calc(var(--safe-bottom, env(safe-area-inset-bottom, 0px)) + 16px);
   display: flex; flex-direction: column; gap: 12px;
   z-index: 6;
 }
@@ -566,10 +566,10 @@ button, input { font-family: inherit; }
 .home-body {
   position: absolute;
   left: 0; right: 0;
-  top: calc(env(safe-area-inset-top, 0px) + 78px);
+  top: calc(var(--safe-top, env(safe-area-inset-top, 0px)) + 78px);
   bottom: 0;
   z-index: 4;
-  padding: 8px 18px calc(env(safe-area-inset-bottom, 0px) + 18px);
+  padding: 8px 18px calc(var(--safe-bottom, env(safe-area-inset-bottom, 0px)) + 18px);
   display: flex; flex-direction: column;
   overflow-y: auto;
 }
@@ -679,6 +679,24 @@ mark.hl, .english-token.hl .english-word {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+/* 시험지의 밑줄 — 음영이 아니라 진짜 밑줄 (뜻 점선 밑줄보다 진하게) */
+.english .ul, .english-token.ul .english-word {
+  text-decoration: underline; text-decoration-style: solid; text-decoration-color: #2b2430;
+  text-decoration-thickness: 2px; text-underline-offset: 5px;
+}
+/* 💡 Tip을 연 동안 그 Tip이 가리키는 단어 */
+mark.hl-tip, .english-token.hl-tip .english-word {
+  background: #ffd1dc; color: inherit; border-radius: 4px; outline: 2px solid #e2607d; outline-offset: 1px;
+  animation: pop .35s ease-out;
+}
+/* 두 번째 색 — 노란 덩어리와 나눠 보일 때 (「~에게는」 ↔ 주어) */
+mark.hl2, .english-token.hl2 .english-word {
+  background: rgba(143, 208, 192, .55);
+  color: inherit;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 /* 문장 내내 눈에 띄는 단어 — 이 글에서 뜻을 짚어야 하는 것. 누르면 뜻이 나온다 */
 .english-word.em {
   color: #e2607d;
@@ -746,7 +764,7 @@ mark.hl, .english-token.hl .english-word {
 /* 그림이 뜨면 무대가 낮아진다. 선생님이 먼저 작아져서 말풍선 몫을 남긴다 */
 /* 그림이 크면 무대가 낮아지고, 그만큼 선생님이 작아진다. 말풍선 몫 150px는 남긴다 */
 .study.has-panel .study-stage { --mascot: min(42cqw, 44cqh, calc(100cqh - 150px)); }
-.study.has-panel .study-sentence { max-height: 30cqh; }
+.study.has-panel .study-sentence { max-height: 38cqh; }
 
 /*
   무대가 너무 낮으면(그림 + 세로 보기) 선생님이 콩알만 해진다. 그럴 바엔 선생님을
@@ -767,7 +785,7 @@ mark.hl, .english-token.hl .english-word {
 .read { background: #f7efe6; display: flex; flex-direction: column; animation: pop .4s ease-out; }
 .read-top {
   flex: none; display: flex; align-items: center; gap: 14px;
-  padding: calc(env(safe-area-inset-top, 0px) + 14px) 14px 8px;
+  padding: calc(var(--safe-top, env(safe-area-inset-top, 0px)) + 14px) 14px 8px;
 }
 .read-bar { flex: 1; display: flex; gap: 4px; }
 .read-bar i { flex: 1; height: 5px; border-radius: 3px; background: #e6d8cc; transition: background .3s; }
@@ -797,7 +815,7 @@ mark.hl, .english-token.hl .english-word {
   font-size: 15.5px; line-height: 1.55; color: #2b2430; overflow-wrap: break-word;
 }
 .read-underline { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: #e2607d; font-weight: 700; }
-.read-dock { flex: none; padding: 8px 14px calc(env(safe-area-inset-bottom, 0px) + 16px); }
+.read-dock { flex: none; padding: 8px 14px calc(var(--safe-bottom, env(safe-area-inset-bottom, 0px)) + 16px); }
 .read-continue {
   width: 100%; height: 48px; border: none; border-radius: 16px; cursor: pointer;
   background: #ef7a93; color: #fff; font-size: 16px; font-weight: 700;
@@ -894,7 +912,7 @@ mark.hl, .english-token.hl .english-word {
 .review-caption { grid-column: 1 / -1; margin: 0; font-size: 11.5px; color: #8a7f88; }
 
 .words { background: #f7efe6; display: flex; flex-direction: column; animation: pop .35s ease-out; }
-.words-top { flex: none; display: flex; align-items: center; justify-content: space-between; padding: calc(env(safe-area-inset-top, 0px) + 14px) 16px 4px; }
+.words-top { flex: none; display: flex; align-items: center; justify-content: space-between; padding: calc(var(--safe-top, env(safe-area-inset-top, 0px)) + 14px) 16px 4px; }
 .words-step { font-size: 12px; font-weight: 700; color: #a2969e; letter-spacing: .04em; }
 .words-title { margin: 4px 20px 10px; font-family: "Gowun Dodum", "Noto Sans KR", sans-serif; font-size: 17px; color: #2b2430; }
 .words-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; list-style: none; margin: 0; padding: 0 16px 12px; display: flex; flex-direction: column; gap: 6px; }
@@ -904,7 +922,7 @@ mark.hl, .english-token.hl .english-word {
 .word-row.on .word-box { background: #ef7a93; border-color: #ef7a93; }
 .word-en { font-weight: 700; color: #2b2430; font-size: 14.5px; }
 .word-ko { margin-left: auto; font-size: 12.5px; color: #8a7f88; text-align: right; }
-.words-dock { flex: none; padding: 8px 14px calc(env(safe-area-inset-bottom, 0px) + 16px); display: flex; flex-direction: column; gap: 8px; }
+.words-dock { flex: none; padding: 8px 14px calc(var(--safe-bottom, env(safe-area-inset-bottom, 0px)) + 16px); display: flex; flex-direction: column; gap: 8px; }
 .words-count { font-size: 12px; color: #8a7f88; text-align: center; }
 .match-grid { flex: 1 1 auto; min-height: 0; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 16px 12px; align-content: start; }
 .match-col { display: flex; flex-direction: column; gap: 8px; }
@@ -917,36 +935,19 @@ mark.hl, .english-token.hl .english-word {
 .match-skip { align-self: center; border: none; background: none; color: #a2969e; font-size: 12.5px; text-decoration: underline; cursor: pointer; }
 .english-token.faded .english-word.em { opacity: 1; }
 
-/* 장으로 넘겨 보는 지문 */
+/* 문제 보기 화면 머리 */
 .read-label { font-size: 12px; font-weight: 700; color: #a2969e; letter-spacing: .04em; }
-.pager { display: flex; flex-direction: column; gap: 10px; }
-.pager-body { min-height: 0; display: flex; flex-direction: column; gap: 10px; }
-.pager-text {
-  margin: 0; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,.85);
-  font-family: "Gowun Dodum", "Noto Sans KR", sans-serif; font-size: 15.5px; line-height: 1.6; color: #2b2430;
-  overflow-wrap: break-word;
-}
-.pager-n { display: inline-block; min-width: 1.4em; margin-right: 4px; font-size: 11px; font-weight: 700; color: #e2607d; vertical-align: 2px; }
-.pager-options { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.pager-options li { padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,.85); font-size: 14px; line-height: 1.45; color: #2b2430; }
-.pager-options b { color: #e2607d; margin-right: 4px; }
-.pager-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12.5px; font-weight: 700; color: #8a7f88; }
-.pager-nav button {
-  height: 34px; padding: 0 14px; border-radius: 999px; border: 1.5px solid #ef7a93; background: #fff;
-  color: #e2607d; font-weight: 700; cursor: pointer;
-}
-.pager-nav button:disabled { opacity: .35; cursor: default; }
 .read-continue.second { background: #fff; color: #e2607d; border: 1.5px solid #ef7a93; box-shadow: none; }
 .read-dock { display: flex; flex-direction: column; gap: 8px; }
 
 /* 문장 학습 머리글 — 전체 지문 · 이전/다음 문장 */
 .passage-btn {
-  height: 36px; padding: 0 12px; border-radius: 999px; border: none; background: #fff; color: #e2607d;
+  flex: none; height: 28px; padding: 0 10px; border-radius: 999px; border: none; background: #fff; color: #e2607d;
   font-size: 12.5px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 16px rgba(60,30,20,.1);
 }
 .progress-line { display: inline-flex; align-items: center; gap: 8px; }
 .sentence-arrow {
-  width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid #ef7a93; background: #fff; color: #e2607d;
+  width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #ef7a93; background: #fff; color: #e2607d;
   font-size: 15px; line-height: 1; cursor: pointer; display: grid; place-items: center;
 }
 .sentence-arrow:disabled { opacity: .3; cursor: default; }
@@ -956,7 +957,7 @@ mark.hl, .english-token.hl .english-word {
 }
 .passage-sheet {
   width: 100%; max-height: 88%; overflow-y: auto; background: #f7efe6; border-radius: 22px 22px 0 0;
-  padding: 14px 16px calc(env(safe-area-inset-bottom, 0px) + 18px); display: flex; flex-direction: column; gap: 10px;
+  padding: 14px 16px calc(var(--safe-bottom, env(safe-area-inset-bottom, 0px)) + 18px); display: flex; flex-direction: column; gap: 10px;
 }
 .passage-sheet-top { display: flex; align-items: center; justify-content: space-between; font-size: 15px; color: #2b2430; }
 
@@ -1044,8 +1045,8 @@ mark.hl, .english-token.hl .english-word {
 .shelf-btn b { font-size: 15px; color: #2b2430; }
 .shelf-btn small { font-size: 12px; color: #8a7f88; }
 .saved { background: #f7efe6; display: flex; flex-direction: column; }
-.saved-top { flex: none; padding: calc(env(safe-area-inset-top, 0px) + 14px) 16px 0; }
-.saved-body-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 8px 18px calc(env(safe-area-inset-bottom, 0px) + 24px); }
+.saved-top { flex: none; padding: calc(var(--safe-top, env(safe-area-inset-top, 0px)) + 14px) 16px 0; }
+.saved-body-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 8px 18px calc(var(--safe-bottom, env(safe-area-inset-bottom, 0px)) + 24px); }
 .saved-title { margin: 6px 0 12px; font-size: 26px; color: #2b2430; }
 .saved-empty { margin: 8px 0; font-size: 14px; line-height: 1.6; color: #5b4f57; }
 .saved-group { margin-bottom: 14px; }
@@ -1059,3 +1060,166 @@ mark.hl, .english-token.hl .english-word {
 .saved-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; font-size: 14px; line-height: 1.5; color: #2b2430; }
 .saved-en { font-size: 16px; color: #2b2430; }
 .saved-tag { font-size: 12px; color: #e2607d; }
+
+/* 뼈대 줄을 문장 강조색과 맞춘다 */
+.panel-text.tone-hl { background: rgba(255, 214, 102, .45); border-radius: 6px; padding: 1px 6px; }
+.panel-text.tone-hl2 { background: rgba(143, 208, 192, .45); border-radius: 6px; padding: 1px 6px; }
+
+/* 문제 보기 — 시험지처럼 지문을 한 덩어리로 */
+.passage-full { display: flex; flex-direction: column; gap: 12px; }
+.passage-given {
+  margin: 0; padding: 12px 14px; border: 1.5px solid #2b2430; border-radius: 6px; background: #fff;
+  font-size: 14.5px; line-height: 1.65; color: #2b2430;
+}
+.passage-text {
+  margin: 0; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.88);
+  font-size: 14.5px; line-height: 1.75; color: #2b2430; overflow-wrap: break-word;
+}
+.passage-options {
+  list-style: none; margin: 0; padding: 12px 16px; border-radius: 14px; background: rgba(255,255,255,.88);
+  display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.5; color: #2b2430;
+}
+.passage-options b { color: #d2566f; margin-right: 4px; }
+
+/* 문제 보기 — 지문은 꼼꼼히 읽는 게 아니라 훑어보기 */
+/* balance는 짧은 줄로 일찍 끊는다 — 문제 글은 끝까지 채우고, 한글 낱말은 중간에서 안 끊는다 */
+.read.preview .read-title {
+  font-size: 16px; line-height: 1.5; margin-bottom: 12px; text-wrap: wrap; word-break: keep-all; overflow-wrap: anywhere;
+}
+.read.preview .read-label {
+  font-size: 13px; letter-spacing: 0; color: #3f9a86; background: #eefaf6; border: 1.5px solid #8fd0c0;
+  border-radius: 999px; padding: 3px 12px;
+}
+
+/* 작고 연한 ✕ — 눈에 띄지 않게 오른쪽 위 끝에 */
+.close-soft {
+  margin-left: auto; width: 28px; height: 28px; border: none; border-radius: 50%; padding: 0;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  background: transparent; color: #a2969e;
+}
+.close-soft:hover { background: rgba(43,36,48,.06); color: #2b2430; }
+.close-soft svg { width: 14px; height: 14px; }
+.close-soft { font-size: 15px; line-height: 1; flex: none; }
+
+/* 바로 풀기 — 지문 아래 보기를 눌러 고른다 */
+.passage-options.pickable { padding: 6px; gap: 4px; }
+.passage-pick {
+  width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: none; border: 1.5px solid transparent; border-radius: 10px; padding: 7px 10px;
+}
+.passage-options.pickable .passage-pick { border-color: #f1c6d0; background: #fff; }
+.passage-pick:hover { border-color: #e2607d; }
+.passage-options li.picked { text-decoration: line-through; opacity: .5; }
+.passage-options.pickable li { list-style: none; }
+.read-say {
+  margin: 0; padding: 10px 14px; border-radius: 14px; background: #fff; border: 1.5px solid #eadfd5;
+  font-size: 14px; line-height: 1.5; color: #2b2430;
+}
+
+/* 해설만 보는 마지막 화면 — 정답 보기 표시, 누르면 해설 */
+.exam-option.is-answer { border-color: #8fd0c0; background: #f2fbf8; }
+.exam-option.is-answer .exam-num::after { content: " 정답"; font-size: 11px; color: #2f7d6c; }
+.exam-explain {
+  margin: 4px 4px 2px; padding: 8px 12px; border-radius: 12px; background: #fff; border: 1.5px dashed #f1c6d0;
+  font-size: 13.5px; line-height: 1.55; color: #2b2430;
+}
+.exam-explain b { color: #d2566f; margin-right: 4px; }
+.exam-explain.right { border-color: #8fd0c0; }
+.exam-explain.right b { color: #2f7d6c; }
+.passage-options li.right { background: #e6f6f1; border-radius: 10px; padding: 4px 6px; color: #2f7d6c; font-weight: 600; }
+
+/* 바로 맞힌 뒤 「핵심만 정리」 */
+.summary-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 0 16px 12px; display: flex; flex-direction: column; gap: 14px; }
+.summary-section { display: flex; flex-direction: column; gap: 6px; }
+.summary-section h2 { margin: 0; font-size: 13px; font-weight: 700; color: #8a7f88; }
+.summary-section .study-panel.board { max-height: none; }
+.summary-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.summary-list li { background: #fff; border: 1.5px solid #eadfd5; border-radius: 14px; padding: 9px 12px; display: flex; flex-direction: column; gap: 3px; }
+.summary-list b { font-size: 13px; color: #b4630d; }
+.summary-list span { font-size: 13.5px; line-height: 1.55; color: #2b2430; }
+.summary-words { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.summary-words li {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 8px; align-items: center;
+  background: #fff; border: 1.5px solid #eadfd5; border-radius: 12px; padding: 6px 8px;
+}
+.summary-words .point-star { grid-row: span 2; width: 26px; height: 26px; font-size: 15px; }
+.summary-en { font-weight: 700; font-size: 13.5px; color: #2b2430; overflow-wrap: anywhere; }
+.summary-ko { font-size: 12px; color: #5b4f57; overflow-wrap: anywhere; }
+.summary-board-toggle {
+  align-self: stretch; padding: 10px 14px; border-radius: 14px; border: 1.5px dashed #8fd0c0; background: #eefaf6;
+  color: #2f7d6c; font-weight: 700; font-size: 14px; cursor: pointer;
+}
+.summary-board-toggle.on { border-style: solid; }
+
+/* 버튼 셋 이상 — 한 줄에 나란히, 낮게 */
+.read-dock.row { flex-direction: row; flex-wrap: wrap; }
+.read-dock.row .read-say { flex: 1 0 100%; }
+.read-dock.row .read-continue { flex: 1 1 0; min-width: 0; height: 44px; padding: 0 6px; font-size: 14.5px; }
+
+/* 「찾기」 — 문장 안 후보 구절. 누르면 고른다 */
+.english-word.cand {
+  text-decoration: none; border: 1.5px dashed #b9a6d8; background: #f6f1ff; border-radius: 6px; padding: 0 3px;
+}
+.english-word.cand:not(:disabled):hover { border-color: #6a4fa0; }
+.english-word.cand.found { border-style: solid; border-color: #8fd0c0; background: #e6f6f1; color: #2f7d6c; font-weight: 700; }
+.english-word.cand.missed { opacity: .45; text-decoration: line-through; }
+.english-word.cand:disabled { cursor: default; }
+.stage-fill.tap-next { cursor: pointer; }
+.tip-chip.hint { border-color: #8fd0c0; background: #eefaf6; color: #2f7d6c; }
+.tip-chip.hint.on { background: #8fd0c0; color: #fff; }
+
+/* 문장 먼저 읽기 — 영어 문장만 가운데 크게, 질문·보기는 아직 */
+.study.reading-first .study-sentence {
+  flex: 1 1 auto; max-height: none; display: flex; flex-direction: column; justify-content: center;
+}
+.study.reading-first .english { font-size: clamp(19px, 6.4cqw, 27px); line-height: 1.6; }
+.study.reading-first .study-stage { flex: 0 0 auto; }
+.bubble-note { display: block; margin-top: 4px; font-size: 12px; color: #8a7f88; }
+
+/*
+  칠판이 없는 화면은 문장을 위쪽 절반의 가운데에 — 칠판이 나올 때만 위로 붙는다
+  (선생님 무대와 반씩 나눠 쓴다)
+*/
+.study:not(.reading-first) .study-sentence {
+  flex: 1 1 0; max-height: none; display: flex; flex-direction: column; justify-content: center;
+}
+/*
+  칠판이 없는 화면은 문장 자리를 화면 높이의 절반으로 고정한다 — 보기가 몇 줄이든
+  문장은 같은 자리(가운데 쪽)에 있고, 줄어드는 건 선생님 무대다
+*/
+.study:not(.has-panel) .study-sentence {
+  flex: 0 1 50cqh; min-height: min(max-content, 30cqh); max-height: none;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.study:not(.has-panel) .study-stage { flex: 1 1 0; }
+/* 칠판은 맨 위(머리줄 바로 아래)로 — 문장은 칠판과 선생님 사이 가운데에 그대로 */
+.study.has-panel .study-top { order: -2; }
+.study.has-panel > .study-panel { order: -1; margin-top: 8px; }
+.study.has-panel:not(.reading-first) .study-sentence { min-height: min(max-content, 34cqh); }
+
+/* 말풍선 위 힌트 칩 — 말풍선과 같이 선생님 위에 붙어 다닌다 */
+.study-bubble-over { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.study-bubble-over .tip-chips { padding: 0; align-items: center; max-width: 86cqw; }
+.study-bubble-over .tip-row { justify-content: center; }
+.study-bubble-over .info-pop { border-color: #8fd0c0; background: #eefaf6; text-align: left; }
+
+/* 도입 「넘어가기」 — 버튼 아래 밑줄 글자 */
+.skip-link {
+  align-self: flex-end; margin-top: -4px; padding: 4px 14px; border: 0; background: none; cursor: pointer;
+  color: #5c4a42; font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;
+}
+
+/* 문장 번호 — 문장 바로 위 작은 꼬리표 */
+.sentence-no {
+  align-self: flex-start; margin-bottom: 8px; padding: 3px 10px; border-radius: 999px;
+  background: #e9e4fb; color: #5b4bb5; font-size: 12.5px; font-weight: 700; letter-spacing: .02em;
+}
+/* 문장 하나를 맞힌 칭찬 — 말풍선을 따로 눈에 띄게 (선생님 표정·몸짓은 나중에) */
+.bubble-card.cheer {
+  background: #fff4c9; border: 2px solid #f2c33d; font-weight: 700; color: #6b4d00;
+  animation: cheer-pop .5s cubic-bezier(.2,1.6,.4,1);
+}
+@keyframes cheer-pop { 0% { transform: scale(.85); } 100% { transform: scale(1); } }
+.study.celebrate .english { opacity: .55; transition: opacity .3s; }
+.bubble-card.cheer .bubble-tail { background: #fff4c9; }
+.bubble-card.cheer .bubble-tail { border-right: 2px solid #f2c33d; border-bottom: 2px solid #f2c33d; bottom: -12px; }

@@ -492,7 +492,7 @@ exam = {
             "4": "보통 때는 차이를 무시해도 된다는 말이에요. 뒤의 'Not so … groundskeeper'가 그 반대 경우예요.",
             "5": "기억력이 무한한 사람은 풀을 굳이 묶지 않아도 하나하나 다 기억할 수 있어요. 그래서 묶일 필요가 없다는 ⑤는 문맥에 맞아요.",
         },
-        "ask_first": "실제 시험처럼 풀어 봐요. 지문이 다시 보고 싶으면 아래 버튼을 눌러요.",
+        "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
     },
 }
 
@@ -502,15 +502,15 @@ lesson = {
     "brief": {"topic": "어휘 문제 푸는 법: 요지 → 두 그룹 → 밑줄 단어 맞춰 보기", "closing": "수고 인사"},
     "method": {"type": "word_in_context", "labels": ["요지 잡기", "두 그룹으로 나누기", "밑줄 단어 맞춰 보기"], "intro_times": 3},
     "read_button": "분석하러 갈게요",
+    # 문장마다 영어 문장부터 — 질문·보기는 「다 읽었어요」 뒤에
+    "read_first": True,
     "images": {"method": {"src": "/assets/vocab-method.svg", "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기", "kind": "drawing"}},
     "intro_board": "method",
     "intro": [
-        {"id": "method1", "type": "say", "show_when": "first", "button": "네",
+        {"id": "method1", "type": "say", "button": "네",
          "brief": {"say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."}},
-        {"id": "method2", "type": "say", "show_when": "first", "button": "좋아요",
+        {"id": "method2", "type": "say", "button": "좋아요",
          "brief": {"say": "요지를 잡고, 단어를 두 그룹으로 나눈 뒤, 밑줄 단어가 맞는 쪽에 있는지 볼 거예요. 칠판 순서대로 해 볼게요."}},
-        {"id": "method_short", "type": "say", "show_when": "later", "button": "시작할게요",
-         "brief": {"say": "칠판 순서대로 바로 시작해 볼게요."}},
     ],
     "exam": exam,
     "key_words": {
@@ -518,8 +518,8 @@ lesson = {
                     g("particularities", "세부 특징"), g("ordinary noun", "보통 명사"), g("co-categorize", "한 범주로 같이 묶다"),
                     g("individuality", "개별성"), g("uniqueness", "고유성"), g("uniformly", "균일하게"),
                     g("practical", "실용적인"), g("groundskeeper", "경기장 관리인"), g("matter", "중요하다"),
-                    g("infinite", "무한한"), g("distinct", "독특한, 뚜렷이 다른"),
-                    g("blade", "(풀의) 잎 · 원래는 칼날"), g("fellow", "동료, 같은 무리"), g("glance", "힐끗 봄")],
+                    g("distinct", "독특한, 뚜렷이 다른"), g("fellow", "동료, 같은 무리"), g("glance", "힐끗 봄")],
+        # infinite, blade는 시험지 아래 *로 풀어 준 단어 — 핵심 단어가 아니라 뺐다
         "options": [g("difference", "차이"), g("acknowledge", "인정하다"), g("alike", "비슷한, 같은"), g("ignore", "무시하다"), g("neglect", "무시하다, 소홀히 하다")],
     },
     "context": {"mode": "paper_review", "exam_relevance": "high", "time_budget": "normal"},

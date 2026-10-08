@@ -1,10 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 170" fill="none">
-  <!-- 칠판: 밑줄 문제 푸는 법 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 140" fill="none">
+  <!-- 칠판: 밑줄 문제 푸는 법 (두 단계) -->
   <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
     <text x="170" y="30" text-anchor="middle" font-size="22" fill="#2b2430">밑줄 문제 푸는 법</text>
     <line x1="80" y1="42" x2="260" y2="42" stroke="#ef7a93" stroke-width="3" stroke-linecap="round"/>
     <text x="54" y="80" font-size="20" fill="#d2566f">①</text><text x="84" y="80" font-size="20" fill="#2b2430">핵심 단어 찾기</text>
     <text x="54" y="114" font-size="20" fill="#d2566f">②</text><text x="84" y="114" font-size="20" fill="#2b2430">단어 사이의 관계 잡기</text>
-    <text x="54" y="148" font-size="20" fill="#d2566f">③</text><text x="84" y="148" font-size="20" fill="#2b2430">밑줄 뜻 고르기</text>
   </g>
 </svg>

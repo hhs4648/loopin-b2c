@@ -4,7 +4,7 @@ import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
 import type { TutorView } from "../tutor/view";
 import { nounKind } from "../tutor/proper-nouns";
-import { SAVE_CMD, WEEKS_CMD } from "../tutor/policy/session";
+import { AUTO_NEXT_CMD, SAVE_CMD, WEEKS_CMD } from "../tutor/policy/session";
 
 type Props = {
   view: TutorView;
@@ -21,7 +21,15 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
   const showNouns = view.properNouns.length > 0 && !view.ended;
 
   return (
-    <div className="stage-fill">
+    <div
+      className={`stage-fill${view.tapToNext ? " tap-next" : ""}`}
+      // 수업 소개(도입 말) 중에는 화면 아무 데나 눌러도 다음 말로 — 버튼은 자기 일을 한다
+      onClick={(e) => {
+        if (!view.tapToNext || typing) return;
+        if ((e.target as HTMLElement).closest("button, select, a, input")) return;
+        onSend(view.buttons[0] ?? AUTO_NEXT_CMD);
+      }}
+    >
       <ClassroomBg />
       <header className="top-bar">
         <div className="chip">
@@ -36,7 +44,7 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
             <i className="live-dot" />
             {elapsed}
           </div>
-          <button type="button" className="icon-btn dark" title="학습 종료" onClick={onClose}>
+          <button type="button" className="close-soft" title="학습 종료" aria-label="학습 종료" onClick={onClose}>
             <CloseIcon />
           </button>
         </div>
@@ -128,6 +136,11 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
           </div>
         ) : null}
         <QuickReplies buttons={view.buttons} hidden={typing || view.ended} onPick={onSend} />
+        {view.skipButton && !typing ? (
+          <button type="button" className="skip-link" onClick={() => onSend(view.skipButton!)}>
+            {view.skipButton}
+          </button>
+        ) : null}
         {view.ended ? (
           <button type="button" className="pill restart" onClick={onClose}>
             수업 목록으로

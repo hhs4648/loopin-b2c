@@ -22,7 +22,7 @@
       "id": "moeui-2026-03-21",
       "collection": "moeui-2026-03",
       "title": "21번 문제",
-      "subtitle": "밑줄 의미 — 음악가도 '연구자'가 된다",
+      "subtitle": "밑줄 의미 — 음악과 새로움의 관계",
       "lessons": [
         "moeui-2026-03-21-music-researchers"
       ]
@@ -34,6 +34,15 @@
       "subtitle": "어휘 — 이름을 붙이면 차이가 사라진다",
       "lessons": [
         "moeui-2026-03-30-names-and-differences"
+      ]
+    },
+    {
+      "id": "moeui-2026-03-39",
+      "collection": "moeui-2026-03",
+      "title": "39번 문제",
+      "subtitle": "문장 넣기 — 열려 있어도 외부인에겐 장막",
+      "lessons": [
+        "moeui-2026-03-39-epistemic-communities"
       ]
     }
   ]

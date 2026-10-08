@@ -15,7 +15,22 @@ import "./styles.css";
   — 글자 칠 때마다 화면이 통째로 쪼그라든다.
 */
 function syncAppHeight() {
-  document.documentElement.style.setProperty("--app-h", `${window.innerHeight}px`);
+  /*
+    공유 페이지(claude.ai 아티팩트)는 휴대폰 노치·홈 막대만큼 <html>에 위아래 여백을 준다.
+    그 여백을 빼지 않으면 앱이 아래로 밀려 맨 아래 버튼이 화면 밖으로 나간다 (2026-10-07 휴대폰에서 실제로).
+  */
+  const root = getComputedStyle(document.documentElement);
+  const pad = (parseFloat(root.paddingTop) || 0) + (parseFloat(root.paddingBottom) || 0);
+  document.documentElement.style.setProperty("--app-h", `${window.innerHeight - pad}px`);
+  // 그 여백이 이미 노치·홈 막대 자리를 비워 줬다 — 화면 안에서 또 비우면 위가 두 번 빈다
+  const el = document.documentElement.style;
+  if (pad > 0) {
+    el.setProperty("--safe-top", "0px");
+    el.setProperty("--safe-bottom", "0px");
+  } else {
+    el.removeProperty("--safe-top");
+    el.removeProperty("--safe-bottom");
+  }
 }
 syncAppHeight();
 window.addEventListener("resize", syncAppHeight);

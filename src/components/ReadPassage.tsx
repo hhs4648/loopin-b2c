@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import type { ReactNode } from "react";
 import type { TutorView } from "../tutor/view";
 import { READ_NEXT_CMD } from "../tutor/policy/session";
-import { PassagePager } from "./PassagePager";
+import { PassageFull } from "./PassageFull";
 
 type Props = {
   view: TutorView;
@@ -83,14 +83,22 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [p.current]);
 
+  // 바로 풀기를 누르면 화면은 그대로, 지문 아래 보기가 보이게 내려 준다
+  useEffect(() => {
+    if (!p.pickable) return;
+    document.querySelector(".passage-options")?.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, [p.pickable]);
+
   return (
-    <div className="stage-fill read">
+    <div className={`stage-fill read${p.auto === false ? " preview" : ""}`}>
       <header className="read-top">
-        <button type="button" className="icon-btn dark" title="학습 종료" onClick={onClose}>
-          <CloseIcon />
-        </button>
+        {p.auto === false ? null : (
+          <button type="button" className="close-soft" title="학습 종료" aria-label="학습 종료" onClick={onClose}>
+            <CloseIcon />
+          </button>
+        )}
         {p.auto === false ? (
-          <span className="read-label">문제 보기</span>
+          <span className="read-label">지문 한눈에 미리보기</span>
         ) : (
           <div className="read-bar">
             {p.sentences.map((_, i) => (
@@ -98,16 +106,30 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
             ))}
           </div>
         )}
+        {p.auto === false ? (
+          <button type="button" className="close-soft" title="학습 종료" aria-label="학습 종료" onClick={onClose}>
+            <CloseIcon />
+          </button>
+        ) : null}
       </header>
 
       <div className="read-scroll">
-        <p className="read-heading">{p.heading}</p>
+        {/* 문제 보기에서는 시험 이름을 빼둔다 — 문제 글과 겹친다 */}
+        {p.auto !== false ? <p className="read-heading">{p.heading}</p> : null}
         <h1 className="read-title">{p.title}</h1>
-        {view.message ? <p className="read-note">{view.message}</p> : null}
+        {view.message && p.auto !== false ? <p className="read-note">{view.message}</p> : null}
 
-        {/* 넘겨 보는 지문 — 문제 제목 아래 지문을 장으로, 마지막 장에 보기 */}
+        {/* 시험지처럼 — 문제 제목 아래 (주어진 문장) · 지문 전체 · 보기. 꼼꼼히 읽히려는 게 아니다 */}
         {p.auto === false ? (
-          <PassagePager sentences={p.sentences} underline={p.underline} options={p.options} />
+          <PassageFull
+            given={p.given}
+            sentences={p.sentences}
+            underline={p.underline}
+            options={p.options}
+            onPick={p.pickable ? onSend : null}
+            picked={p.picked}
+            right={p.right}
+          />
         ) : null}
 
         {/* (.read-list는 display:flex라 hidden 속성이 안 먹는다 — 아예 그리지 않는다) */}
@@ -136,7 +158,10 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
         ) : null}
       </div>
 
-      <div className="read-dock">
+      {/* 지문 미리보기에서는 버튼을 한 줄로 — 지문 자리를 넓힌다 */}
+      <div className={`read-dock${p.auto === false && view.buttons.length >= 2 ? " row" : ""}`}>
+        {/* 미리보기 화면에서 선생님 말(바로 풀기 안내, 채점)은 버튼 바로 위에 — 보기를 고르는 손 가까이 */}
+        {view.message && p.auto === false ? <p className="read-say">{view.message}</p> : null}
         {view.buttons.map((label, i) => (
           <button
             key={label}

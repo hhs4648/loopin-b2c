@@ -11,9 +11,14 @@
     "mode_analyze": "분석부터 할게요",
     "analyze_start": "분석 시작할게요",
     "intro_next": "네",
+    "intro_skip": "넘어가기",
     "solve": "문제 풀기",
     "passage_again": "지문 다시 볼래요",
-    "points_done": "다 봤어요"
+    "points_done": "다 봤어요",
+    "analyze_deep": "제대로 분석",
+    "summary_only": "핵심 정리",
+    "end_now": "끝내기",
+    "read_first_done": "다 읽었어요"
   },
   "lines": {
     "start_known": "좋아요. ",
@@ -31,6 +36,13 @@
     "intro_rate_only": "이번 문제는 오답률 {rate}%의 문제예요.",
     "choose_mode_short": "바로 한 번 풀어 볼까요, 아니면 분석부터 해 볼까요?",
     "review_back": "그럼 남은 보기에서 다시 골라 봐요.",
-    "points_title": "오늘 헷갈렸던 곳이에요. 다시 보고 싶은 건 ☆를 눌러 저장해요."
+    "points_title": "오늘 헷갈렸던 곳이에요. 다시 보고 싶은 건 ☆를 눌러 저장해요.",
+    "first_correct_offer": "맞았어요! 이 지문에는 시험에 자주 나오는 중요 표현이 많아요. 어떻게 할까요?",
+    "explain_only": "답은 이미 맞혔으니, 보기를 눌러 해설만 봐요.",
+    "summary_title": "이 지문의 중요 표현과 주요 단어를 모았어요.",
+    "read_first": "먼저 문장을 읽어 봐요.",
+    "read_next": "이제 {name}을 읽어 봐요.",
+    "sentence_done": "맞아요! {name}을 아주 잘 이해했어요!",
+    "read_first_note": "모르는 단어는 눌러서 ☆로 저장해요"
   }
 }

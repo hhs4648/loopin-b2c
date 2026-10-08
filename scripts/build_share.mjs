@@ -3,6 +3,7 @@
  * Teaching Policy 레슨 하나를 **공유용 HTML 한 장**으로 뽑는다.
  *
  *   node scripts/build_share.mjs <lesson-id> [out.html]
+ *   node scripts/build_share.mjs all [out.html]     ← 수업 목록부터 (모든 레슨, 단어장·노트 포함)
  *
  * 실제 앱을 그대로 빌드해서(VITE_SHARE_LESSON=<id>) JS·CSS·그림을 파일 하나에 넣는다.
  * 앱을 고치면 이 명령을 다시 돌리기만 하면 된다 — 따로 흉내 낸 코드가 없다.
@@ -16,7 +17,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const [id, out] = process.argv.slice(2);
 if (!id) {
-  console.error("usage: build_share.mjs <lesson-id> [out.html]");
+  console.error("usage: build_share.mjs <lesson-id|all> [out.html]");
   process.exit(1);
 }
 
@@ -25,7 +26,8 @@ rmSync(tmp, { recursive: true, force: true });
 execSync(`npx vite build --outDir "${tmp}" --emptyOutDir --logLevel warn`, {
   cwd: ROOT,
   stdio: "inherit",
-  env: { ...process.env, VITE_SHARE_LESSON: id },
+  // all이면 레슨을 정하지 않는다 — 앱이 수업 목록부터 연다
+  env: id === "all" ? { ...process.env, VITE_SHARE_LESSON: "" } : { ...process.env, VITE_SHARE_LESSON: id },
 });
 
 let html = readFileSync(join(tmp, "index.html"), "utf8");

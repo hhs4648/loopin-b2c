@@ -1,0 +1,122 @@
+{
+  "lesson": "moeui-2026-03-39-epistemic-communities",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "문장 넣기 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {
+    "g_subject_help": {
+      "answer": "'for'처럼 전치사로 시작하는 덩어리는 주어가 아니에요. 'for most outsiders'는 '대부분의 외부인에게는'으로 읽어요. 그걸 빼면 주어가 보여요.",
+      "from": "w3ijc7"
+    },
+    "s2_subject_help": {
+      "answer": "'To acquire …'처럼 To로 시작하는 덩어리는 '~하기 위해'라는 뜻이라 주어가 아니에요. 콤마 뒤 첫 단어를 봐요.",
+      "from": "13m069p"
+    }
+  },
+  "steps": {
+    "g_subject": {
+      "ask": "먼저 주어진 문장이에요. 이 문장의 주어는 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'for most outsiders'는 'for'로 시작하는 덩어리예요. 그다음 덩어리를 봐요.",
+        "'for most outsiders'는 'for'로 시작하는 덩어리예요. 그다음 덩어리를 봐요."
+      ],
+      "explain": "'for most outsiders'는 'for'로 시작하는 덩어리예요. 그다음 덩어리를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'for most outsiders'는 '대부분의 외부인에게는'이라는 덩어리라 주어가 아니에요. 그다음 덩어리가 주어예요.",
+        "o2": "'for most outsiders'는 '대부분의 외부인에게는'이라는 덩어리라 주어가 아니에요. 그다음 덩어리가 주어예요."
+      },
+      "point": "for most outsiders = 대부분의 외부인에게는(주어 아님) · 주어는 even completely transparent practices",
+      "from": "1hxfvok"
+    },
+    "g_structure": {
+      "say": "'for most outsiders'는 '대부분의 외부인에게는'으로 읽어요. 주어는 'even completely transparent practices', 즉 '완전히 투명한 관행조차'예요.",
+      "from": "3zycn4"
+    },
+    "g_dash": {
+      "say": "'lift the veil'은 비유라 한 번에 안 들어와요. 대시 뒤를 보면 쉬워요. 교육과 기술 습득 없이는 공유되는 정보를 이해할 수 없대요.",
+      "from": "11890db"
+    },
+    "s2_subject": {
+      "ask": "이 문장의 주어는 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요.",
+        "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요."
+      ],
+      "explain": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'라서 주어가 아니에요. 콤마 뒤 'one needs'에서 주어를 찾아요.",
+        "o2": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'라서 주어가 아니에요. 콤마 뒤 'one needs'에서 주어를 찾아요."
+      },
+      "point": "To acquire … = ~하기 위해(주어 아님) · 주어는 one(누구든) · 콤마 사이가 메인 문장",
+      "from": "92cnzj"
+    },
+    "s2_slash": {
+      "say": "'To acquire …'는 '~하기 위해'라서 주어가 아니에요. 주어는 'one', 여기서도 '누구든'이에요. 콤마 사이가 주어와 동사가 있는 메인 문장이라 꼭 읽어야 해요.",
+      "from": "11xyd9t"
+    },
+    "s3_draft": {
+      "say": "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요.",
+      "from": "1vszwdf"
+    },
+    "s4_draft": {
+      "say": "능력 시험이 붙은 입회 절차가 있는 경우가 많대요.",
+      "from": "b03enl"
+    },
+    "s5_draft": {
+      "say": "옛날에는 지식 공동체가 비밀이었고, 신입에게 엄격한 충성심 시험이 있었대요.",
+      "from": "1h42fg"
+    },
+    "s6_draft": {
+      "say": "지금도 흔적은 있지만, 전체적으로는 개방성, 어느 정도는 외부인에게까지 열린 쪽으로 바뀌었대요.",
+      "from": "bcdjt6"
+    },
+    "s7_draft": {
+      "say": "지식을 최대한 '접근 가능하게' 하려면 다른, 더 적극적인 전략이 필요하대요.",
+      "from": "1m85p0r"
+    }
+  },
+  "exam": {
+    "ask": "주어진 문장의 단서(Nonetheless, transparent, outsiders)를 떠올리며 들어갈 곳을 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! '투명한 관행'과 '외부인'은 바로 앞 문장의 개방성, 외부인을 향한 개방을 받아요. 그런데도(Nonetheless) 외부인은 이해 못 하니, '다른, 더 적극적인 전략'이 필요하다로 이어져요.",
+    "final_wrong": "정답은 ⑤예요.",
+    "option_feedback": {
+      "1": "여기서는 아직 지식 공동체가 무엇인지만 말했어요. '투명한 관행'이 나올 자리가 아니에요.",
+      "2": "신입이 배우는 이야기 중이에요. '투명한 관행'이나 '외부인'을 받을 말이 앞에 없어요.",
+      "3": "입회 절차 이야기 중이에요. '투명한 관행'을 받을 말이 앞에 없어요.",
+      "4": "바로 앞은 '비밀에 부쳤다'예요. 비밀 뒤에 '투명한 관행조차'가 오면 어색해요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "yavmjz"
+  },
+  "intro": {
+    "method1": {
+      "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."
+    },
+    "method2": {
+      "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾을 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "from": "1leqppo"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "f1irti"
+}

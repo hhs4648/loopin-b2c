@@ -15,7 +15,7 @@ export const READ_BTN = "다 읽었어요";
 export const MORE_BTN = "더 알고 싶어요";
 export const NEXT_BTN = "다음으로";
 
-export type UiScreen = "chat" | "study" | "read" | "words" | "match" | "points";
+export type UiScreen = "chat" | "study" | "read" | "words" | "match" | "points" | "summary";
 
 /**
  * 항목 하나에 대한 학습 기록.
@@ -58,6 +58,27 @@ export type TutorView = {
   */
   /** 이번 스텝에서 강조할 구절 (노란 칠) */
   highlight?: string[];
+  /** 시험지의 밑줄 친 구절 — 음영이 아니라 밑줄로 그린다 */
+  underline?: string[];
+  /** 「찾기」 스텝 — 문장 안 후보 구절을 눌러 고른다. found는 맞힌 것, missed는 틀리게 누른 것 */
+  pick?: { candidates: string[]; found: string[]; missed: string[]; open: boolean } | null;
+  /** 수업 소개(도입 말) 중 — 화면 아무 데나 눌러도 다음 말로 */
+  tapToNext?: boolean;
+  /** 문장 위 꼬리표 — 「문장 2」, 「주어진 문장」 */
+  sentenceTag?: string | null;
+  /** 문장 하나를 맞히고 끝낸 칭찬 화면 */
+  celebrate?: boolean;
+  /** 도입 건너뛰기 — 버튼 아래 밑줄 글자로 */
+  skipButton?: string | null;
+  /** 이 말은 버튼 없이 이만큼(ms) 뒤 저절로 넘어간다 — 화면이 AUTO_NEXT_CMD를 보낸다 */
+  autoNextMs?: number | null;
+  /** 말풍선 아래 작은 안내 (문장 먼저 읽기의 「모르는 단어는 ☆로 저장해요」) */
+  bubbleNote?: string | null;
+  /** 문장 먼저 읽기 — 영어 문장만 가운데 크게. 버튼은 readDelayMs 뒤에 나타난다 */
+  readingFirst?: boolean;
+  readDelayMs?: number | null;
+  /** 두 번째 색(민트) 강조 */
+  highlightAlt?: string[];
   /** 문장 내내 색으로 띄우는 단어 (누르면 뜻) */
   emphasis?: string[];
   /** 문장 아래에 띄우는 그림 — 문장 뼈대, 대응표, 대비 */
@@ -78,12 +99,14 @@ export type TutorView = {
   /** ❓ 개념 — 문장 아래 칩. 누르면 참고 설명 */
   concepts?: { en: string; title: string; text: string }[];
   /** 💡 요령 말풍선 */
-  tips?: { label: string; text: string }[];
+  tips?: { label: string; text: string; mark?: string; hint?: boolean }[];
   /** 「밑줄 문제 푸는 법」 단계 표시. active가 null이면 표시만 */
   methodSteps?: { labels: string[]; active: number | null } | null;
   /** 시험 보기 — 핵심 단어 색칠, ▸ 한국어 */
   examOptions?: { id: string; label: string; keywords: string[]; ko: string }[] | null;
   examGlosses?: WordGloss[];
+  /** 해설만 보는 마지막 화면 — 보기 id마다 정답 여부와 해설. 보기를 누르면 고르는 게 아니라 해설이 열린다 */
+  examExplain?: Record<string, { correct: boolean; text: string }> | null;
   /**
    * 밑줄이 여러 개인 문제(어휘) — 보기 id마다 그 밑줄이 든 문장. 보기의 「문장 보기」를 누르면
    * 위 문장 칸이 그 문장으로 바뀐다 (보기를 고르는 건 아니다)
@@ -93,6 +116,13 @@ export type TutorView = {
   review?: { weeks: number | null; saved: boolean; choices: (number | null)[]; caption: string } | null;
   /** 마무리 — 주요 단어 체크 */
   wordCheck?: { title: string; step: string; words: WordGloss[]; checked: string[] } | null;
+  /** 바로 맞힌 뒤 「핵심만 정리」 — 칠판 그림, 중요 표현, 주요 단어 */
+  summary?: {
+    title: string;
+    board: StudyPanel | null;
+    expressions: { icon: string; label: string; text: string }[];
+    words: WordGloss[];
+  } | null;
   /** 마무리 — 오늘 헷갈렸던 곳 (별표로 노트에 저장) */
   pointsReview?: { title: string; lessonId: string; items: { key: string; title: string; text: string }[] } | null;
   /** 마무리 — 짝 맞추기 */
@@ -100,7 +130,7 @@ export type TutorView = {
   /** false면 아래 입력창을 숨긴다 — 버튼으로만 답하는 화면에서 (기본은 보인다) */
   allowInput?: boolean;
   /** 문장 학습 중 위의 「전체 지문」으로 여는 지문 */
-  fullPassage?: { sentences: string[]; underline: string[] } | null;
+  fullPassage?: { given?: string | null; sentences: string[]; underline: string[] } | null;
   /** 이전·다음 문장으로 옮겨 갈 수 있나 */
   canPrevSentence?: boolean;
   canNextSentence?: boolean;
@@ -115,6 +145,8 @@ export type TutorView = {
   passage?: {
     heading: string;
     title: string;
+    /** 문장 넣기 문제의 「주어진 문장」 — 지문과 따로 */
+    given?: string | null;
     sentences: string[];
     /** 지금까지 드러난 문장 수 */
     revealed: number;
@@ -124,7 +156,13 @@ export type TutorView = {
     underline: string[];
     /** false면 한 문장씩 드러내며 읽지 않는다 — 장으로 넘겨 보는 지문(+ 문제와 보기) */
     auto?: boolean;
-    /** 장으로 넘겨 볼 때 마지막 장에 붙이는 시험 보기 */
+    /** 지문 아래에 붙이는 시험 보기 */
     options?: string[] | null;
+    /** 바로 풀기 중 — 보기를 누르면 그 보기를 답으로 고른다 */
+    pickable?: boolean;
+    /** 바로 풀기에서 고른 오답 보기 id ("1"~"5") — 줄이 그어진다 */
+    picked?: string | null;
+    /** 바로 풀기에서 맞힌 보기 id — 초록으로 */
+    right?: string | null;
   };
 };
