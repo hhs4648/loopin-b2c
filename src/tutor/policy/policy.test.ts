@@ -48,11 +48,21 @@ function autoRead<T extends { submit: (t: string) => Promise<TutorView> }>(sessi
   session.submit = async (t: string) => {
     let v = await submit(t);
     // 문장을 맞히고 끝낸 칭찬 화면 → 「다음」, 새 문장 읽기 → 「다 읽었어요」
-    for (let g = 0; g < 4 && (v.readingFirst || v.celebrate); g++) v = await submit(v.celebrate ? v.buttons[0]! : "다 읽었어요");
+    for (let g = 0; g < 6 && (v.readingFirst || v.celebrate || v.praiseOnly); g++)
+      v = await submit(v.praiseOnly ? "__auto_next" : v.celebrate ? v.buttons[0]! : "다 읽었어요");
     return v;
   };
   return session;
 }
+
+/** 21번 2문장을 다 맞히는 답 — such cases → discoveries → 자유 해석 → 1·2문장 요지 */
+const S2_RIGHT = [
+  "앞 문장의 경우, 즉 발명하지 않아도 훌륭한 음악가인 경우",
+  "inventor",
+  "그런 경우, '위대한 발견'을 기대하는 사람들은 실망하게 될 것이다.",
+  "다음으로",
+  "좋은 음악은 꼭 새로울 필요는 없다. 음악이 새로워야 한다고 믿는 사람들은 실망하게 될 것이다.",
+];
 
 /** 수업을 한 걸음 — 「찾기」는 답을 다 누르고, 고르기는 정답, 그 밖은 첫 버튼(없으면 자동 넘김) */
 async function answer(
@@ -66,6 +76,7 @@ async function answer(
     return x;
   }
   if (step?.type === "choice" && v.buttons.length > 1) return session.submit(step.options.find((o) => o.correct)!.label);
+  if (step?.type === "translate" && v.allowInput) return session.submit(step.model);
   return session.submit(v.buttons[0] ?? "__auto_next");
 }
 
@@ -346,7 +357,10 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.message).toContain("먼저 문장을 읽어 봐요.");
     v = await session.submit("다 읽었어요");
     for (const w of ["brilliant musician", "innovator", "without", "inventor"]) v = await session.submit(`__pick:${w}`);
+    expect(v.praiseOnly).toBe(true);
+    v = await session.submit("__auto_next");
     v = await session.submit("대조");
+    v = await session.submit("__auto_next");
     v = await session.submit("다음");
     v = await session.submit("뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다");
     expect(v.celebrate).toBe(true);
@@ -358,6 +372,42 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.readingFirst).toBe(true);
     expect(v.sentenceTag).toBe("문장 2");
     expect(v.message).toBe("이제 두 번째 문장을 읽어 봐요.");
+  });
+
+  it("2문장: such cases → discoveries → 자유 해석(규칙으로 채점, 틀린 곳·고친 곳 표시) → 1·2문장 요지", async () => {
+    const { session } = await toAnalysis();
+    for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다"]) await session.submit(t);
+    let v = session.view();
+    expect(session.lastAction()?.interactionId).toBe("s2_cases");
+    expect(v.message).toBe("'In such cases'가 의미하는 건 뭘까요?");
+    expect(v.highlight).toEqual(["In such cases"]);
+    v = await session.submit("앞 문장의 경우, 즉 발명하지 않아도 훌륭한 음악가인 경우");
+    expect(v.message).toContain("discoveries는");
+    v = await session.submit("inventor");
+    expect(v.message).toBe("그럼 이 문장을 자유롭게 해석해 봐요.");
+    expect(v.allowInput).toBe(true);
+    v = await session.submit("이런 케이스에서 위대한 발견을 기대하는 그것들은 실망한다");
+    expect(v.allowInput).toBe(false);
+    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
+    const t = v.translation!;
+    expect(t.save).toBe(true);
+    expect(t.marks.map(([a, b]) => t.mine!.slice(a, b))).toEqual(["케이스", "그것들은", "실망한다"]);
+    expect(t.fixes).toEqual(["사람들은", "실망하게 될 것이다", "그런 경우"]);
+    expect(t.notes).toHaveLength(3);
+    v = await session.submit("다음으로");
+    expect(v.sentenceTag).toBe("문장 1·2");
+    expect(v.message).toBe("자, 그럼 문장 1과 2를 모두 읽고 저자가 하고자 하는 말을 골라 볼까요?");
+    expect(v.sentence).toContain("A brilliant musician");
+    expect(v.sentence).toContain("will be disappointed");
+  });
+
+  it("자유 해석 — 고칠 곳이 없으면 칭찬하고 저장하지 않는다", async () => {
+    const { session } = await toAnalysis();
+    for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", S2_RIGHT[0]!, "inventor"]) await session.submit(t);
+    const v = await session.submit("그런 경우에 위대한 발견을 기대하는 사람들은 실망할 것이다");
+    expect(v.message).toBe("잘 해석했어요! 고칠 곳이 없어요.");
+    expect(v.translation?.save).toBe(false);
+    expect(v.translation?.marks).toEqual([]);
   });
 
   it("도입 중 「넘어가기」를 누르면 남은 도입을 건너뛰고 첫 문장으로", async () => {
@@ -376,7 +426,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.canPrevSentence).toBe(false);
     v = await session.submit("__next_sentence");
     expect(v.progressIndex).toBe(2);
-    expect(session.lastAction()?.interactionId).toBe("s2_q");
+    expect(session.lastAction()?.interactionId).toBe("s2_cases");
     v = await session.submit("__prev_sentence");
     expect(v.progressIndex).toBe(1);
     expect(session.lastAction()?.interactionId).toBe("s1_pick");
@@ -420,7 +470,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     v = await session.submit("__pick:inventor");
     v = await session.submit("__pick:brilliant musician");
     expect(session.lastAction()?.interactionId).toBe("s1_q");
-    expect(v.message).toBe("다 찾았어요! innovator와 inventor의 관계는 어떨까요?");
+    expect(v.message).toBe("innovator와 inventor의 관계는 어떨까요?");
     expect(v.tips?.[0]?.label).toBe("힌트");
   });
 
@@ -448,17 +498,29 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.panel?.kind).toBe("groups");
   });
 
-  it("맞히면 칭찬이 지도 설명 앞에 붙는다", async () => {
-    const { session } = await toAnalysis();
-    const v = await session.submit("대조");
-    expect(v.message.startsWith("맞아요! 둘은 달라요.")).toBe(true);
+  it("맞았다는 말과 다음 말은 따로 — 칭찬만 한 화면(버튼 없이 잠깐) 뒤에 다음 말", async () => {
+    const session = rawSession();
+    let v = await session.submit("분석하러 갈게요");
+    v = await session.submit("넘어가기");
+    v = await session.submit("다 읽었어요");
+    for (const w of ["brilliant musician", "innovator", "without", "inventor"]) v = await session.submit(`__pick:${w}`);
+    expect(v.message).toBe("다 찾았어요!");
+    expect(v.buttons).toEqual([]);
+    expect(v.autoNextMs).toBeGreaterThan(0);
+    v = await session.submit("__auto_next");
+    expect(v.message).toBe("innovator와 inventor의 관계는 어떨까요?");
+    v = await session.submit("대조");
+    expect(v.message).toBe("맞아요!");
+    expect(v.praiseOnly).toBe(true);
+    v = await session.submit("__auto_next");
+    expect(v.message.startsWith("둘은 달라요.")).toBe(true);
     expect(v.methodSteps?.active).toBe(1);
   });
 
   it("4문장은 음영 + 대시 흐림. 「다음 문장」이면 자세한 스텝을 건너뛰고, 「자세히 볼래요」면 연다", async () => {
     const walkTo4 = async () => {
       const { session } = await toAnalysis();
-      for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", "inventor", "다음 문장", "기술(technique)일 뿐", "다음 문장"]) await session.submit(t);
+      for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", ...S2_RIGHT, "기술(technique)일 뿐", "다음 문장"]) await session.submit(t);
       return session;
     };
     let session = await walkTo4();
@@ -478,7 +540,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
 
   it("6문장의 arms race는 ❓ 개념, last thing은 💡 Tip", async () => {
     const { session } = await toAnalysis();
-    for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", "inventor", "다음 문장", "기술(technique)일 뿐", "다음 문장", "다음 문장", "다음 문장"]) await session.submit(t);
+    for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", ...S2_RIGHT, "기술(technique)일 뿐", "다음 문장", "다음 문장", "다음 문장"]) await session.submit(t);
     const v = session.view();
     expect(session.lastAction()?.interactionId).toBe("s6_q");
     expect(v.concepts?.[0]?.en).toBe("arms race");

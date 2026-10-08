@@ -37,6 +37,7 @@ const stepSource = (step) => ({
   brief: step.brief,
   options: (step.options ?? []).map((o) => [o.id, o.label, !!o.correct]),
   ...(step.type === "pick" ? { pick: [step.candidates, step.answers] } : {}),
+  ...(step.type === "translate" ? { translate: [step.model, step.rules] } : {}),
 });
 
 function load(id) {

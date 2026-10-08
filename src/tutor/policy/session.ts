@@ -1,13 +1,13 @@
 import policyFrame from "../../../content/tutor/policy-frame.json";
 import type { TutorResult } from "../../../content/tutor/types";
-import { UNKNOWN_BTN, HINT_BTN, type PointRecord, type TutorView } from "../view";
+import { UNKNOWN_BTN, HINT_BTN, type PointRecord, type TranslationResult, type TutorView } from "../view";
 import { lookupGloss } from "../glosses";
 import { isUnknownInput, matchChoice } from "../match";
 import { askedAboutWord } from "../proper-nouns";
 import { addVocab } from "../vocab";
 import { bumpMethodIntro, methodIntroCount, saveReview, type ReviewStatus } from "./review";
 import { decideOnChoice, openingAction, shouldShow, type DecideInput } from "./decide";
-import { choiceCopy, pickCopy, showCopy, thinkCopy } from "./copy";
+import { choiceCopy, pickCopy, showCopy, thinkCopy, translateCopy } from "./copy";
 import { getPolicyCopy, getPolicyLesson } from "./lessons";
 import {
   appendEvents,
@@ -20,6 +20,7 @@ import {
 import type {
   BoardGroup,
   PickStep,
+  TranslateStep,
   ChoiceStep,
   ExamQuestion,
   Observation,
@@ -38,6 +39,29 @@ const NTH = ["첫 번째", "두 번째", "세 번째", "네 번째", "다섯 번
 /** 순서(1부터)를 「두 번째」처럼 */
 function nth(n: number): string {
   return NTH[n - 1] ?? `${n}번째`;
+}
+
+/**
+ * 자유 해석 채점 — 모델 없이 규칙으로. 규칙마다 `wrong`이 걸리거나 `need`가 하나도
+ * 없으면 그 규칙이 걸린다. `wrong`에 걸린 자리는 학생 글에서 표시한다.
+ */
+export function gradeTranslation(st: TranslateStep, text: string): { issues: string[]; marks: [number, number][] } {
+  const issues: string[] = [];
+  const marks: [number, number][] = [];
+  for (const rule of st.rules) {
+    let hit = false;
+    for (const src of rule.wrong ?? []) {
+      for (const m of text.matchAll(new RegExp(src, "g"))) {
+        if (!m[0]) continue;
+        hit = true;
+        marks.push([m.index!, m.index! + m[0].length]);
+      }
+    }
+    if (!hit && rule.need?.length && !rule.need.some((src) => new RegExp(src).test(text))) hit = true;
+    if (hit) issues.push(rule.id);
+  }
+  marks.sort((a, b) => a[0] - b[0]);
+  return { issues, marks };
 }
 
 export function underlinesOf(exam: ExamQuestion): string[] {
@@ -82,6 +106,8 @@ const READ_FIRST_DONE_BTN = policyFrame.buttons.read_first_done;
 export const PICK_CMD = "__pick:";
 /** 도입의 자동 넘김 — 화면이 시간이 지나면 보낸다 */
 export const AUTO_NEXT_CMD = "__auto_next";
+/** 맞았다는 말을 보여 주는 시간 — 그 뒤에 다음 질문 */
+const PRAISE_MS = 1300;
 const ANALYZE_DEEP_BTN = policyFrame.buttons.analyze_deep;
 const SUMMARY_ONLY_BTN = policyFrame.buttons.summary_only;
 const END_NOW_BTN = policyFrame.buttons.end_now;
@@ -149,10 +175,14 @@ type State = {
   readingFirst: boolean;
   /** 한 문장을 맞히고 끝냈다 — 칭찬만 하는 화면 (다음 문장은 「다음」 뒤에) */
   sentenceDone: boolean;
+  /** 맞았다는 말만 하는 화면 — 다음 질문은 잠깐 뒤에 따로 */
+  praiseOnly: boolean;
   readSentences: number[];
   /** 「찾기」 스텝에서 지금까지 찾은 구절과 틀리게 누른 구절 */
   found: string[];
   missed: string[];
+  /** 자유 해석을 채점한 결과 — 내 해석(틀린 곳 표시)과 고친 해석 */
+  translation: TranslationResult | null;
   /** 바로 풀어서 맞힌 뒤 분석을 본다 — 마지막 문제는 다시 풀지 않고 보기마다 해설만 */
   explainOnly: boolean;
   /** 도입(칠판 풀이법)이 끝났다 — 문제를 먼저 보는 레슨은 여기서 분석으로 들어간다 */
@@ -244,9 +274,11 @@ export function createPolicySession(
       introDone: false,
       explainOnly: false,
       found: [],
+      translation: null,
       missed: [],
       readingFirst: false,
       sentenceDone: false,
+      praiseOnly: false,
       readSentences: [],
       si: 0,
       pi: 0,
@@ -739,7 +771,7 @@ export function createPolicySession(
 
   function buttonsFor(st: PolicyStep): string[] {
     if (st.type === "choice") return s.resolved ? [NEXT_BTN] : choiceButtons(st);
-    if (st.type === "pick") return s.resolved ? [NEXT_BTN] : [UNKNOWN_BTN];
+    if (st.type === "pick" || st.type === "translate") return s.resolved ? [NEXT_BTN] : [UNKNOWN_BTN];
     if (st.type === "think") {
       if (s.resolved) return [NEXT_BTN];
       return s.thinkHinted ? [THOUGHT_BTN] : [THOUGHT_BTN, HINT_BTN];
@@ -801,6 +833,11 @@ export function createPolicySession(
       });
       s = { ...s, pi: s.pi + 1 };
     }
+    // 칭찬은 따로 한 화면 — 다음 질문은 그 뒤에 (같은 문장 안에서만. 새 문장이면 문장 칭찬 화면이 한다)
+    if (praising && lead.trim() && !(lesson.read_first && !s.readSentences.includes(s.si))) {
+      s = { ...s, praiseOnly: true, message: lead.trim(), buttons: [], panel: s.panel, shownAt: d.now() };
+      return;
+    }
     const st = step();
     const action = openingAction(st, input());
     // 처음 보는 문장이면 영어 문장부터 — 질문·보기는 「다 읽었어요」 뒤에
@@ -825,6 +862,7 @@ export function createPolicySession(
       thinkHinted: false,
       found: [],
       missed: [],
+      translation: null,
       panel: panelOf(st.panel),
       lastAction: action,
     };
@@ -835,9 +873,22 @@ export function createPolicySession(
           ? thinkCopy(copy, st.id).ask
           : st.type === "pick"
             ? pickCopy(copy, st.id).ask
-            : choiceCopy(copy, st.id).ask;
+            : st.type === "translate"
+              ? translateCopy(copy, st.id).ask
+              : choiceCopy(copy, st.id).ask;
     s = { ...s, message: `${lead}${body}`.trim(), buttons: buttonsFor(st), shownAt: d.now() };
     log({ kind: "start" }, action);
+  }
+
+  /**
+   * 맞았다는 말과 다음 질문은 **따로 말한다.** 칭찬만 한 화면을 띄우고 잠깐 뒤에 다음 질문으로.
+   * 문장이 끝나는 자리면 문장 칭찬 화면(sentenceDone)이 대신한다
+   */
+  let praising = false;
+  function praiseThenNext(praise: string | undefined) {
+    praising = true;
+    next(praise ? `${praise} ` : "");
+    praising = false;
   }
 
   function next(lead = "") {
@@ -889,7 +940,55 @@ export function createPolicySession(
     }
     log({ kind: "answer", correct: true, optionId: word, latencyMs: d.now() - s.shownAt }, { action: "PRAISE", interactionId: st.id });
     s = { ...s, resolved: true };
-    next(lines.praise ? `${lines.praise} ` : "");
+    praiseThenNext(lines.praise);
+  }
+
+  /* ── translate: 자유 해석 ───────────────────────────────────────── */
+
+  function onTranslate(st: TranslateStep, text: string) {
+    const lines = translateCopy(copy, st.id);
+    if (s.resolved) return next();
+    const title = sentence().label ?? `${sentence().id}문장`;
+    if (text === UNKNOWN_BTN) {
+      log({ kind: "dont_know", latencyMs: d.now() - s.shownAt }, { action: "EXPLAIN", interactionId: st.id });
+      addPoint(st.id, title, lines.point ?? lines.explain);
+      s = {
+        ...s,
+        resolved: true,
+        anyExplained: true,
+        struggledInSentence: true,
+        translation: { mine: null, marks: [], model: st.model, fixes: [], notes: [], save: true, english: sentence().text, lessonId: lesson.id, where: title },
+        message: lines.explain,
+        buttons: [NEXT_BTN],
+      };
+      return;
+    }
+    const result = gradeTranslation(st, text);
+    log(
+      { kind: "translation", text, issues: result.issues, latencyMs: d.now() - s.shownAt },
+      { action: result.issues.length ? "EXPLAIN" : "PRAISE", interactionId: st.id },
+      result.issues.length ? "explained" : "independent_success",
+    );
+    const wrong = result.issues.length > 0;
+    if (wrong) addPoint(st.id, title, lines.point ?? lines.explain);
+    s = {
+      ...s,
+      resolved: true,
+      ...(wrong ? { anyAssisted: true, struggledInSentence: true } : {}),
+      translation: {
+        mine: text,
+        marks: result.marks,
+        model: st.model,
+        fixes: result.issues.map((id) => st.rules.find((r) => r.id === id)!.fix),
+        notes: result.issues.map((id) => lines.feedback[id] ?? "").filter(Boolean),
+        save: wrong,
+        english: sentence().text,
+        lessonId: lesson.id,
+        where: title,
+      },
+      message: wrong ? `${L.wrong_lead} ${lines.wrong}` : lines.praise,
+      buttons: [NEXT_BTN],
+    };
   }
 
   /* ── choice ─────────────────────────────────────────────────────── */
@@ -974,7 +1073,7 @@ export function createPolicySession(
         s = { ...s, buttons: buttonsFor(st), shownAt: d.now() };
         return;
       }
-      next(`${lines.praise} `);
+      praiseThenNext(lines.praise);
       s = { ...s, effect: light ? "light" : null };
       return;
     }
@@ -1179,9 +1278,13 @@ export function createPolicySession(
           ]
         : [],
       faded: inLesson ? (st.faded ?? []) : [],
+      // 흐린 부분이 있으면 왜 흐린지 문장 아래 작게
+      fadedNote: inLesson && st.faded?.length ? L.faded_note : null,
       shaded: inLesson ? (st.shaded ?? []) : [],
-      concepts: inLesson && !s.readingFirst && !s.sentenceDone ? (sen.concepts ?? []) : [],
-      tips: inLesson && !s.readingFirst && !s.sentenceDone
+      concepts: inLesson && !s.readingFirst && !s.sentenceDone && !s.praiseOnly ? (sen.concepts ?? []) : [],
+      tips: inLesson && s.readingFirst && st.faded?.length
+        ? [{ label: L.faded_tip_label, text: L.faded_tip }]
+        : inLesson && !s.readingFirst && !s.sentenceDone && !s.praiseOnly
         ? [
             // 「힌트」 칩 — 아직 답하기 전에만
             ...(st.type === "choice" && st.hint_button && !s.resolved
@@ -1234,9 +1337,10 @@ export function createPolicySession(
         });
         return out;
       })(),
-      // 이 수업은 버튼으로만 답한다 — 자유 응답이 없으니 입력창도 없다
-      allowInput: false,
-      placeholder: "선생님께 답해 보세요…",
+      // 버튼으로 답하는 수업 — 입력창은 자유 해석 스텝에만
+      allowInput: inLesson && st.type === "translate" && !s.resolved && !s.readingFirst,
+      placeholder: inLesson && st.type === "translate" ? (translateCopy(copy, st.id).placeholder ?? "해석을 써 보세요") : "",
+      translation: inLesson ? s.translation : null,
       fullPassage:
         lesson.passage_on_try && (inLesson || exam)
           ? { given: givenText, sentences: passageTexts, underline: lesson.exam ? underlinesOf(lesson.exam) : [] }
@@ -1268,17 +1372,19 @@ export function createPolicySession(
           ? INTRO_SKIP_BTN
           : null,
       autoNextMs: (() => {
+        if (inLesson && s.praiseOnly) return PRAISE_MS;
         const st0 = s.stage === "intro" ? lesson.intro?.[s.ii] : undefined;
         return st0?.type === "say" && st0.auto_ms ? st0.auto_ms : null;
       })(),
       pointsReview: s.stage === "points" ? { title: s.message, lessonId: lesson.id, items: s.points } : null,
-      highlight: inLesson && !s.readingFirst ? (st.highlight ?? []) : [],
+      highlight: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight ?? []) : [],
       underline,
-      highlightAlt: inLesson && !s.readingFirst ? (st.highlight_alt ?? []) : [],
+      highlightAlt: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight_alt ?? []) : [],
       readingFirst: inLesson && s.readingFirst,
-      sentenceTag: inLesson ? (sen.label ?? `문장 ${sentenceNumber(s.si)}`) : null,
+      sentenceTag: inLesson ? ((!s.readingFirst && st.tag) || sen.label || `문장 ${sentenceNumber(s.si)}`) : null,
       // 맞힌 칭찬 화면 — 나중에 선생님 표정·몸짓을 바꾼다
       celebrate: inLesson && s.sentenceDone,
+      praiseOnly: inLesson && s.praiseOnly,
       bubbleNote: inLesson && s.readingFirst ? L.read_first_note : null,
       readDelayMs: inLesson && s.readingFirst ? Math.min(6000, Math.max(2000, sen.text.split(/\s+/).length * 250)) : null,
       pick:
@@ -1293,7 +1399,7 @@ export function createPolicySession(
         ...(inLesson && st.detail_button ? [st.detail_button] : []),
         ...helpButtons,
       ],
-      numbered: (inLesson && st.type === "choice" && !s.resolved && !s.aside) || (exam && s.buttons.length > 1),
+      numbered: (inLesson && st.type === "choice" && !s.resolved && !s.aside && !s.readingFirst && !s.sentenceDone) || (exam && s.buttons.length > 1),
     };
   }
 
@@ -1387,7 +1493,14 @@ export function createPolicySession(
         const to = s.si + (text === PREV_SENTENCE_CMD ? -1 : 1);
         if (to < 0) return view();
         log({ kind: "continue" }, { action: "CONTINUE", interactionId: step().id, reason: [text === PREV_SENTENCE_CMD ? "student_went_back" : "student_skipped_sentence"] });
-        s = { ...s, si: to, pi: 0, sentenceDone: false, detailOpen: null, aside: null, struggledInSentence: false, skipped: [] };
+        s = { ...s, si: to, pi: 0, sentenceDone: false, praiseOnly: false, detailOpen: null, aside: null, struggledInSentence: false, skipped: [] };
+        open("");
+        return view();
+      }
+
+      // 맞았다는 말만 한 화면 — 저절로(또는 눌러서) 다음 질문으로
+      if (s.stage === "lesson" && s.praiseOnly) {
+        s = { ...s, praiseOnly: false };
         open("");
         return view();
       }
@@ -1438,6 +1551,7 @@ export function createPolicySession(
       if (st.type === "choice") onChoice(st, text);
       else if (st.type === "think") onThink(st, text);
       else if (st.type === "pick") onPick(st, text);
+      else if (st.type === "translate") onTranslate(st, text);
       else {
         log({ kind: "continue" }, { action: "CONTINUE", interactionId: st.id });
         next();

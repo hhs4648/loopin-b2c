@@ -2,7 +2,8 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode }
 import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
-import type { TutorView } from "../tutor/view";
+import type { TranslationResult, TutorView } from "../tutor/view";
+import { addNote } from "../tutor/notes";
 import type { WordGloss } from "../../content/tutor/types";
 import { glossSpans, glossesFor } from "../tutor/glosses";
 import { nounKind } from "../tutor/proper-nouns";
@@ -90,6 +91,22 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
     스텝이 바뀔 때마다 그 구절로 칸만 내려 준다 (화면 전체는 움직이지 않는다)
   */
   const sentenceBox = useRef<HTMLDivElement>(null);
+  /*
+    문장 위 여백 — 문장마다 한 번 잰다. 짧은 문장은 화면 위에서 15% 내려오고, 긴 문장은
+    문장 자리(화면 절반) 안에 다 들어오도록 여백을 줄인다. 같은 문장 안에서는 바뀌지 않는다
+  */
+  const [lead, setLead] = useState<number | null>(null);
+  useLayoutEffect(() => {
+    const box = sentenceBox.current;
+    const root = box?.closest<HTMLElement>(".study");
+    const en = box?.querySelector<HTMLElement>(".english");
+    if (!box || !root || !en) return;
+    const h = root.clientHeight;
+    // 문장 + 꼬리표 + 아래 줄(듣기·흐림 설명)까지 문장 자리 안에 들어오게
+    const pad = parseFloat(getComputedStyle(box).paddingTop) || 0;
+    const room = h * 0.5 - (box.scrollHeight - pad) - 8;
+    setLead(Math.round(Math.max(12, Math.min(h * 0.15, room))));
+  }, [view.sentence]);
   const highlightKey = (view.highlight ?? []).join("|");
   useEffect(() => {
     const box = sentenceBox.current;
@@ -109,7 +126,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
 
   return (
-    <div className={`stage-fill study${view.celebrate ? " celebrate" : ""}${view.panel ? " has-panel" : ""}${view.readingFirst ? " reading-first" : ""}`}>
+    <div className={`stage-fill study${view.celebrate ? " celebrate" : ""}${view.panel || view.translation ? " has-panel" : ""}${view.readingFirst ? " reading-first" : ""}`}>
       <header className="study-top">
         {/*
           지문이 따로 있는 수업은 왼쪽 위가 「전체 지문」이다. 예전 ‹(교실로 돌아가기)는
@@ -167,7 +184,11 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
       </header>
 
 
-      <div className="study-sentence" ref={sentenceBox}>
+      <div
+        className="study-sentence"
+        ref={sentenceBox}
+        style={lead == null ? undefined : ({ "--lead": `${lead}px` } as React.CSSProperties)}
+      >
         {view.sentenceTag && !peeked ? <span className="sentence-no">{view.sentenceTag}</span> : null}
         <GlossSentence
           sentence={peeked?.sentence ?? view.sentence}
@@ -184,6 +205,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           shaded={view.shaded ?? []}
           onLookup={(word) => onObserve?.({ kind: "vocab_click", word })}
         />
+        {view.fadedNote && !peeked ? <p className="faded-note"><span className="faded-swatch">흐림</span>{view.fadedNote}</p> : null}
         {view.properNouns.length > 0 ? (
           <div className="noun-chips">
             {view.properNouns.map((n) => (
@@ -209,6 +231,8 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           onHint={() => onObserve?.({ kind: "hint_open" })}
         />
       ) : null}
+
+      {view.translation ? <TranslationCard result={view.translation} /> : null}
 
       {view.panel ? (
         <StudyPanelView
@@ -712,5 +736,70 @@ function SpeakerIcon() {
       <path d="M15.5 8.5a5 5 0 0 1 0 7" />
       <path d="M18.5 5.5a9 9 0 0 1 0 13" />
     </svg>
+  );
+}
+
+/**
+ * 자유 해석 결과 — 내 해석(틀린 곳 빨강 밑줄)과 고친 해석(고친 곳 초록), 짚을 말.
+ * 틀렸으면 「연습할 문장」으로 내 노트에 저장한다.
+ */
+function TranslationCard({ result }: { result: TranslationResult }) {
+  useEffect(() => {
+    if (!result.save) return;
+    addNote({
+      key: `practice:${result.english}`,
+      lessonId: result.lessonId,
+      title: `연습할 문장 · ${result.where}`,
+      text: `${result.english}\n→ ${result.model}${result.mine ? `\n(내 해석: ${result.mine})` : ""}`,
+    });
+  }, [result]);
+  const mine = result.mine;
+  const mineParts: ReactNode[] = [];
+  if (mine) {
+    let at = 0;
+    result.marks.forEach(([a, b], i) => {
+      if (a < at) return;
+      if (a > at) mineParts.push(mine.slice(at, a));
+      mineParts.push(<mark key={i} className="tr-wrong">{mine.slice(a, b)}</mark>);
+      at = b;
+    });
+    mineParts.push(mine.slice(at));
+  }
+  const modelParts: ReactNode[] = [];
+  {
+    const spans = result.fixes
+      .map((f) => [result.model.indexOf(f), f.length] as const)
+      .filter(([i]) => i >= 0)
+      .sort((x, y) => x[0] - y[0]);
+    let at = 0;
+    spans.forEach(([i, n], k) => {
+      if (i < at) return;
+      if (i > at) modelParts.push(result.model.slice(at, i));
+      modelParts.push(<mark key={k} className="tr-fix">{result.model.slice(i, i + n)}</mark>);
+      at = i + n;
+    });
+    modelParts.push(result.model.slice(at));
+  }
+  return (
+    <div className="study-panel translation-card">
+      {mine ? (
+        <div className="tr-row">
+          <span className="tr-label">내 해석</span>
+          <p className="tr-mine">{mineParts}</p>
+        </div>
+      ) : null}
+      <div className="tr-row">
+        <span className="tr-label fix">{mine && result.fixes.length ? "고친 해석" : "해석"}</span>
+        <p className="tr-model">{modelParts}</p>
+      </div>
+      {result.notes.length ? (
+        <ul className="tr-notes">
+          {result.notes.map((n) => (
+            <li key={n}>{n}</li>
+          ))}
+        </ul>
+      ) : null}
+      {result.save ? <p className="tr-saved">★ 연습할 문장으로 내 노트에 저장했어요</p> : null}
+    </div>
   );
 }

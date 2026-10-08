@@ -64,6 +64,12 @@ export type TutorView = {
   pick?: { candidates: string[]; found: string[]; missed: string[]; open: boolean } | null;
   /** 수업 소개(도입 말) 중 — 화면 아무 데나 눌러도 다음 말로 */
   tapToNext?: boolean;
+  /** 맞았다는 말만 하는 짧은 화면 (잠깐 뒤 저절로 다음 질문) */
+  praiseOnly?: boolean;
+  /** 흐린 부분이 왜 흐린지 — 문장 아래 작게 */
+  fadedNote?: string | null;
+  /** 자유 해석 결과 — 내 해석(틀린 곳 표시) · 고친 해석(고친 곳 표시) · 짚을 말 */
+  translation?: TranslationResult | null;
   /** 문장 위 꼬리표 — 「문장 2」, 「주어진 문장」 */
   sentenceTag?: string | null;
   /** 문장 하나를 맞히고 끝낸 칭찬 화면 */
@@ -165,4 +171,21 @@ export type TutorView = {
     /** 바로 풀기에서 맞힌 보기 id — 초록으로 */
     right?: string | null;
   };
+};
+
+export type TranslationResult = {
+  /** 학생이 쓴 해석. 「잘 모르겠어요」면 null */
+  mine: string | null;
+  /** `mine`에서 틀린 자리 [시작, 끝) */
+  marks: [number, number][];
+  model: string;
+  /** `model`에서 고친 구절 */
+  fixes: string[];
+  notes: string[];
+  /** 연습할 문장으로 저장한다 */
+  save: boolean;
+  english: string;
+  lessonId: string;
+  /** 「2문장」 */
+  where: string;
 };

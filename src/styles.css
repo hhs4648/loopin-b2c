@@ -1169,11 +1169,7 @@ mark.hl2, .english-token.hl2 .english-word {
 .tip-chip.hint.on { background: #8fd0c0; color: #fff; }
 
 /* 문장 먼저 읽기 — 영어 문장만 가운데 크게, 질문·보기는 아직 */
-.study.reading-first .study-sentence {
-  flex: 1 1 auto; max-height: none; display: flex; flex-direction: column; justify-content: center;
-}
-.study.reading-first .english { font-size: clamp(19px, 6.4cqw, 27px); line-height: 1.6; }
-.study.reading-first .study-stage { flex: 0 0 auto; }
+
 .bubble-note { display: block; margin-top: 4px; font-size: 12px; color: #8a7f88; }
 
 /*
@@ -1188,8 +1184,12 @@ mark.hl2, .english-token.hl2 .english-word {
   문장은 같은 자리(가운데 쪽)에 있고, 줄어드는 건 선생님 무대다
 */
 .study:not(.has-panel) .study-sentence {
-  flex: 0 1 50cqh; min-height: min(max-content, 30cqh); max-height: none;
-  display: flex; flex-direction: column; justify-content: center;
+  /* 문장 자리는 화면 절반. 긴 문장은 64%까지 늘고, 그보다 길면 문장 안에서 스크롤 */
+  flex: 0 0 auto; min-height: 50cqh; max-height: 64cqh;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  /* 가운데 맞춤이 아니라 위에서 같은 거리 — 아래 줄(듣기 등)이 생기고 사라져도 문장은 그대로.
+     거리는 문장 길이에 맞춰 화면이 잰다(--lead) */
+  padding-top: var(--lead, max(24px, 15cqh));
 }
 .study:not(.has-panel) .study-stage { flex: 1 1 0; }
 /* 칠판은 맨 위(머리줄 바로 아래)로 — 문장은 칠판과 선생님 사이 가운데에 그대로 */
@@ -1223,3 +1223,35 @@ mark.hl2, .english-token.hl2 .english-word {
 .study.celebrate .english { opacity: .55; transition: opacity .3s; }
 .bubble-card.cheer .bubble-tail { background: #fff4c9; }
 .bubble-card.cheer .bubble-tail { border-right: 2px solid #f2c33d; border-bottom: 2px solid #f2c33d; bottom: -12px; }
+
+/* 자유 해석 결과 카드 */
+.translation-card { display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5; max-height: 40cqh; overflow-y: auto; }
+.tr-row { display: flex; flex-direction: column; gap: 2px; }
+.tr-label { font-size: 11.5px; font-weight: 700; color: #a0939c; }
+.tr-label.fix { color: #2f7d6c; }
+.tr-mine, .tr-model { margin: 0; color: #2b2430; }
+.tr-wrong { background: none; color: #d0455f; text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.tr-fix { background: #d9f3ea; color: #1f6b5a; font-weight: 700; border-radius: 4px; padding: 0 2px; }
+.tr-notes { margin: 0; padding-left: 18px; color: #4a3f47; font-size: 13px; }
+.tr-notes li + li { margin-top: 3px; }
+.tr-saved { margin: 0; font-size: 12px; color: #b08a1a; font-weight: 600; }
+.study.has-panel > .translation-card { order: -1; margin-top: 8px; }
+.saved-body > span:not(.saved-en) { white-space: pre-line; }
+
+/*
+  문장 글자 — 읽기 화면과 질문 화면이 같은 크기. 후보 상자·강조·찾은 단어가 생겨도
+  글자 폭이 바뀌지 않게(줄바꿈이 그대로) 테두리 대신 outline, 굵게 대신 획을 쓴다
+*/
+.study .study-sentence .english { font-size: clamp(19px, 6cqw, 25px); line-height: 1.6; }
+/* 상자는 단어 안쪽(inset 그림자)에만 — 옆 단어와 겹치지 않고 글자 폭도 그대로 */
+.english-word.cand, .english-word.cand.found {
+  border: 0; padding: 0 1px; outline: none; line-height: 1.3; border-radius: 5px;
+  box-shadow: inset 0 0 0 1.5px #c9b8e6;
+}
+.english-word.cand:not(:disabled):hover { box-shadow: inset 0 0 0 1.5px #6a4fa0; }
+.english-word.cand.found { box-shadow: inset 0 0 0 2px #8fd0c0; font-weight: inherit; -webkit-text-stroke: .4px currentColor; }
+.english-word.em { font-weight: inherit; -webkit-text-stroke: .5px currentColor; }
+
+/* 흐린 부분 설명 — 문장 아래 작게 */
+.faded-note { margin: 8px 0 0; font-size: 12.5px; line-height: 1.45; color: #8a7f88; display: flex; gap: 6px; align-items: baseline; }
+.faded-swatch { flex: none; padding: 0 6px; border-radius: 4px; background: rgba(138,127,136,.12); color: #b9aeb6; font-size: 11.5px; font-weight: 700; }

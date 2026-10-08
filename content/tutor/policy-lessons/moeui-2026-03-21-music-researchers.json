@@ -543,7 +543,7 @@
     {
       "id": 2,
       "text": "In such cases, those who expect “great discoveries” will be disappointed.",
-      "model_translation": "그런 경우 '위대한 발견'을 기대하는 사람들은 실망할 것이다.",
+      "model_translation": "그런 경우, '위대한 발견'을 기대하는 사람들은 실망하게 될 것이다.",
       "teaching_value": "medium",
       "glosses": [
         {
@@ -569,19 +569,59 @@
       ],
       "steps": [
         {
+          "id": "s2_cases",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "highlight": [
+            "In such cases"
+          ],
+          "brief": {
+            "ask": "'In such cases'가 의미하는 건 뭘까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "such는 앞에서 말한 것을 가리켜요.",
+              "such는 앞에서 말한 것을 가리켜요."
+            ],
+            "explain": "such cases는 '그런 경우', 앞 문장에서 말한 경우예요. 발명하지 않아도 훌륭한 음악가인 경우죠.",
+            "praise": "맞아요.",
+            "feedback": {
+              "o1": "앞 문장은 발명가가 '아니어도' 혁신가일 수 있다고 했어요. such cases는 바로 그 경우예요.",
+              "o2": "위대한 발견을 기대하는 건 이 문장 뒤쪽 이야기예요. such는 앞 문장을 가리켜요."
+            },
+            "point": "In such cases = 그런 경우에 (앞 문장의 경우 — 발명하지 않아도 훌륭한 음악가인 경우)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "앞 문장의 경우, 즉 발명하지 않아도 훌륭한 음악가인 경우",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "음악가가 새로운 것을 발명해 낸 경우"
+            },
+            {
+              "id": "o2",
+              "label": "사람들이 위대한 발견을 기대하는 경우"
+            }
+          ],
+          "method": 1
+        },
+        {
           "id": "s2_q",
           "type": "choice",
           "interaction": "meaning_choice",
           "one_try": true,
           "brief": {
-            "ask": "'In such cases'는 앞 문장의 경우, 즉 발명하지 않아도 훌륭한 음악가인 경우예요. 'great discoveries'는 지도에서 어느 쪽과 가까울까요?",
+            "ask": "discoveries는 'innovator(혁신가)'와 'inventor(발명가)' 중 어느 쪽에 해당하는 단어일까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
               "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요.",
               "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요."
             ],
             "explain": "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요.",
-            "praise": "맞아요.",
+            "praise": "잘 찾았어요.",
             "feedback": {
               "o0": "발견은 없던 걸 새로 찾아내는 거예요. 새것을 '발명'하는 쪽과 가까워요."
             },
@@ -598,46 +638,110 @@
               "correct": true
             }
           ],
-          "method": 0
+          "method": 0,
+          "highlight": [
+            "great discoveries"
+          ]
         },
         {
-          "id": "s2_map",
-          "type": "show",
-          "interaction": "note",
+          "id": "s2_free",
+          "type": "translate",
+          "interaction": "free_translation",
+          "model": "그런 경우, '위대한 발견'을 기대하는 사람들은 실망하게 될 것이다.",
+          "rules": [
+            {
+              "id": "those_who",
+              "need": [
+                "사람"
+              ],
+              "wrong": [
+                "그것들?[은는이가]?"
+              ],
+              "fix": "사람들은"
+            },
+            {
+              "id": "will",
+              "need": [
+                "실망하게 될",
+                "실망할"
+              ],
+              "wrong": [
+                "실망한다",
+                "실망했다",
+                "실망하다",
+                "실망하게 된다",
+                "실망스럽다"
+              ],
+              "fix": "실망하게 될 것이다"
+            },
+            {
+              "id": "cases",
+              "need": [
+                "경우",
+                "사례",
+                "때"
+              ],
+              "wrong": [
+                "케이스",
+                "상자",
+                "사건"
+              ],
+              "fix": "그런 경우"
+            }
+          ],
           "brief": {
-            "say": "훌륭한 음악가는 꼭 새로운 걸 추구할 필요가 없어요. 그런데도 '위대한 발견'을 기대한다면 실망하게 될 거예요."
-          },
-          "method": 1,
-          "panel": {
-            "kind": "groups",
-            "title": "단어 지도",
-            "left": {
-              "label": "innovator 쪽 · 훌륭한 음악가",
-              "words": [
-                {
-                  "text": "brilliant musician"
-                },
-                {
-                  "text": "innovator"
-                }
-              ]
+            "ask": "그럼 이 문장을 자유롭게 해석해 봐요.",
+            "praise": "잘 해석했어요! 고칠 곳이 없어요.",
+            "wrong": "고친 부분을 같이 봐요.",
+            "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+            "feedback": {
+              "those_who": "those who는 '그것들'이 아니라 '~하는 사람들'이라는 뜻이에요. 중요한 표현이니 나중에 연습할 문장으로 저장해 둘게요.",
+              "will": "will be disappointed는 미래 시제라 '실망하게 될 것이다'로 해석해야 해요.",
+              "cases": "여기서 case는 '경우, 사례' 등으로 해석하면 돼요."
             },
-            "right": {
-              "label": "inventor 쪽 · 새로움·진보",
-              "words": [
-                {
-                  "text": "inventor"
-                },
-                {
-                  "text": "“great discoveries”",
-                  "fresh": true,
-                  "quote": true
-                }
-              ]
-            },
-            "caption": "이걸 기대하는 사람은 → 실망"
+            "placeholder": "여기에 해석을 써 보세요",
+            "point": "In such cases, those who expect “great discoveries” will be disappointed. = 그런 경우, '위대한 발견'을 기대하는 사람들은 실망하게 될 것이다."
           },
-          "button": "다음 문장"
+          "method": 1
+        },
+        {
+          "id": "s2_both",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "display": "A brilliant musician can in fact be an innovator without strictly speaking being an inventor. In such cases, those who expect “great discoveries” will be disappointed.",
+          "tag": "문장 1·2",
+          "brief": {
+            "ask": "자, 그럼 문장 1과 2를 모두 읽고 저자가 하고자 하는 말을 골라 볼까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "1문장은 발명가가 아니어도 훌륭한 음악가일 수 있다고 했어요.",
+              "1문장은 발명가가 아니어도 훌륭한 음악가일 수 있다고 했어요."
+            ],
+            "explain": "두 문장을 합치면, 좋은 음악이 꼭 새로울 필요는 없다는 말이에요. 새로움만 기대하는 사람은 실망하게 돼요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "1문장은 발명가가 '아니어도' 훌륭한 음악가일 수 있다고 했어요. 꼭 새로운 걸 발명할 필요는 없어요.",
+              "o2": "위대한 발견을 기대하면 '실망'하게 된다고 했어요. 음악가에게 발견을 바라는 말이 아니에요."
+            },
+            "point": "1·2문장 = 좋은 음악은 꼭 새로울 필요는 없다. 새로움을 기대하는 사람은 실망하게 된다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "좋은 음악은 꼭 새로울 필요는 없다. 음악이 새로워야 한다고 믿는 사람들은 실망하게 될 것이다.",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "좋은 음악가는 새로운 것을 발명해야 한다. 그렇지 않으면 사람들이 실망하게 될 것이다."
+            },
+            {
+              "id": "o2",
+              "label": "음악가도 연구자처럼 위대한 발견을 해야 한다. 그래야 훌륭한 음악가가 된다."
+            }
+          ],
+          "method": 1
         }
       ],
       "emphasis": [

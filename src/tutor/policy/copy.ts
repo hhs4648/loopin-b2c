@@ -1,4 +1,4 @@
-import type { ChoiceCopy, PickCopy, PolicyCopy, PolicyLesson, PolicyStep, ShowCopy, ThinkCopy } from "./types";
+import type { ChoiceCopy, PickCopy, TranslateCopy, PolicyCopy, PolicyLesson, PolicyStep, ShowCopy, ThinkCopy } from "./types";
 
 /**
  * 뽑아 둔 대사를 꺼낸다.
@@ -22,6 +22,7 @@ export function stepSource(step: PolicyStep) {
     brief: step.brief,
     options: (step.type === "choice" ? step.options : []).map((o) => [o.id, o.label, !!o.correct]),
     ...(step.type === "pick" ? { pick: [step.candidates, step.answers] } : {}),
+    ...(step.type === "translate" ? { translate: [step.model, step.rules] } : {}),
   };
 }
 
@@ -52,4 +53,7 @@ export function pickCopy(copy: PolicyCopy, id: string): PickCopy {
 }
 export function showCopy(copy: PolicyCopy, id: string): ShowCopy {
   return copy.steps[id] as ShowCopy;
+}
+export function translateCopy(copy: PolicyCopy, id: string): TranslateCopy {
+  return copy.steps[id] as TranslateCopy;
 }

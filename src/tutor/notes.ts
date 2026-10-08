@@ -48,3 +48,10 @@ export function toggleNote(entries: NoteEntry[], e: Omit<NoteEntry, "savedAt">):
   save(next);
   return next;
 }
+
+/** 저장해 둔다 — 이미 있으면 그대로 (틀린 해석의 「연습할 문장」처럼 수업이 알아서 넣을 때) */
+export function addNote(e: Omit<NoteEntry, "savedAt">): void {
+  const entries = loadNotes();
+  if (isNoteSaved(entries, e)) return;
+  save([...entries, { ...e, savedAt: new Date().toISOString() }]);
+}

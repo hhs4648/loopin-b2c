@@ -157,6 +157,8 @@ type StepBase = {
   skill?: string;
   /** 점진 공개(§13) — 이 스텝 동안 문장을 이렇게 보여 준다. 없으면 원문 */
   display?: string;
+  /** 문장 위 꼬리표를 바꾼다 — 여러 문장을 한 화면에 보일 때 「문장 1·2」 */
+  tag?: string;
   /** 문장 안에서 강조할 구절 */
   highlight?: string[];
   /** 두 번째 색(민트)으로 강조할 구절 — 노란 강조와 덩어리를 나눠 보일 때 (예: 「~에게는」 덩어리 ↔ 주어) */
@@ -273,7 +275,47 @@ export type PickCopy = {
   point?: string;
 };
 
-export type PolicyStep = ChoiceStep | ThinkStep | ShowStep | PickStep;
+/**
+ * 자유 해석 — 학생이 문장을 직접 한국어로 옮겨 쓴다 (입력창은 이 스텝에만).
+ * **채점은 모델 없이** 규칙으로 한다: 규칙마다 꼭 있어야 할 말(`need`)과
+ * 흔한 잘못(`wrong`, 학생 글에서 빨갛게 표시)을 정규식으로 적어 둔다.
+ * 걸린 규칙마다 고친 해석(`model`)에서 `fix` 구절을 초록으로 보여 주고, 피드백을 단다.
+ * 학생이 쓴 해석은 그대로 기록한다 (나중에 연구에 쓴다).
+ */
+export type TranslateRule = {
+  id: string;
+  /** 이 중 하나는 있어야 맞다 (정규식) */
+  need?: string[];
+  /** 이 중 하나라도 있으면 틀린 것 — 학생 글에서 표시한다 (정규식) */
+  wrong?: string[];
+  /** 고친 해석에서 이 규칙이 고친 구절 */
+  fix: string;
+};
+
+export type TranslateStep = StepBase & {
+  type: "translate";
+  interaction: "free_translation";
+  /** 고친 해석 (모범 해석) */
+  model: string;
+  rules: TranslateRule[];
+  brief: TranslateCopy;
+};
+
+export type TranslateCopy = {
+  ask: string;
+  /** 고칠 곳이 없을 때 */
+  praise: string;
+  /** 고칠 곳이 있을 때 (「아쉽게도 틀렸어요.」 뒤) */
+  wrong: string;
+  /** 「잘 모르겠어요」 — 고친 해석을 보여 주며 */
+  explain: string;
+  /** 규칙 id → 그 잘못을 짚는 말 (고친 해석 아래 목록) */
+  feedback: Record<string, string>;
+  placeholder?: string;
+  point?: string;
+};
+
+export type PolicyStep = ChoiceStep | ThinkStep | ShowStep | PickStep | TranslateStep;
 
 /*
   ── 대사 ──────────────────────────────────────────────────────────────
@@ -317,7 +359,7 @@ export type PolicyCopy = {
   topic_intro: string;
   closing: string;
   helps: Record<string, Stamped<{ answer: string }>>;
-  steps: Record<string, Stamped<Partial<ChoiceCopy & ThinkCopy & ShowCopy & PickCopy>>>;
+  steps: Record<string, Stamped<Partial<ChoiceCopy & ThinkCopy & ShowCopy & PickCopy & TranslateCopy>>>;
   exam?: Stamped<ExamCopy>;
   /** 마무리 — 복습 주기 · 단어 체크 · 짝 맞추기 */
   ending?: Record<string, string>;
@@ -499,6 +541,8 @@ export type Observation =
   | { kind: "intro"; optionId: string }
   | { kind: "exam"; when: "first" | "final"; correct: boolean; optionId: string }
   | { kind: "continue" }
+  /** 자유 해석 — 학생이 쓴 글 그대로와 걸린 규칙 */
+  | { kind: "translation"; text: string; issues: string[]; latencyMs: number }
   /** 마지막 문제에서 많이 고른 오답을 고른 이유 (버튼) */
   | { kind: "wrong_reason"; optionId: string; reason: string; skills: string[] };
 
@@ -511,6 +555,7 @@ export type TeachingActionName =
   | "ALLOW_LOOKUP"
   | "ASK_MEANING_CHOICE"
   | "ASK_TRANSLATION_CHOICE"
+  | "ASK_FREE_TRANSLATION"
   | "ASK_STRUCTURE"
   | "SHOW_STRUCTURE"
   | "SHOW_VISUAL_MAPPING"
