@@ -1,0 +1,583 @@
+{
+  "lesson": "moeui-2026-03-24-translation-strangeness",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "제목 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_fate": {
+      "ask": "너무 익숙해진 것(something too domesticated)은 어떻게 된다고 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'isn’t actually more accessible'에 not이 붙어 있어요. 콤마 뒤를 봐요.",
+        "'isn’t actually more accessible'에 not이 붙어 있어요. 콤마 뒤를 봐요."
+      ],
+      "explain": "'isn’t actually more accessible'에 not이 붙어 있어요. 콤마 뒤를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'isn’t actually more accessible'이라서 다가가기 쉬워지는 게 아니래요. 콤마 뒤 'it evaporates', 사라져 버린대요."
+      },
+      "point": "Something too domesticated = 너무 익숙해진 것 → 다가가기 쉬워지는 게 아니라(isn't accessible) 사라진다(evaporates)",
+      "from": "30v59w"
+    },
+    "s1_contrast": {
+      "say": "너무 익숙해진 것은 다가가기 쉬워지는 게 아니라 사라져 버려요. 너무 익숙해서 당연하게 여기니까 눈에 안 보이는 거예요.",
+      "from": "2cqzs2"
+    },
+    "s1_art": {
+      "ask": "그럼 예술(art)의 역할은 뭘까요? 자유롭게 써 봐요.",
+      "praise": "잘 답했어요! 예술은 익숙해서 안 보이던 것을 다시 보이게 해요.",
+      "wrong": "모범 답과 같이 봐요.",
+      "explain": "괜찮아요. 모범 답을 같이 봐요.",
+      "feedback": {
+        "target": "its는 something too domesticated, 즉 너무 익숙해서 당연하게 여기던 것을 가리켜요.",
+        "visible": "restores its visibility는 '그것이 다시 보이게 한다'예요. visibility는 '눈에 보임'이에요."
+      },
+      "placeholder": "예술은 …",
+      "point": "art restores its visibility = 예술이 그것(너무 익숙한 것)을 다시 보이게 한다",
+      "from": "8u66yd"
+    },
+    "s1_pick": {
+      "ask": "이제 이 문장의 핵심어 6개를 찾아볼까요?",
+      "wrong": "그건 핵심어가 아니에요. 익숙한 것이 어떻게 되고, 무엇이 그것을 되살리는지 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 domesticated, evaporates, take it for granted, art, restores, visibility예요. 익숙한 것은 사라지고, 예술이 그것을 다시 보이게 해요.",
+      "point": "1문장 핵심어 = domesticated · evaporates · take it for granted · art · restores · visibility",
+      "from": "1qr4kur"
+    },
+    "s1_keys": {
+      "ask": "그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.",
+      "praise": "잘 해석했어요! 핵심어만으로도 뜻이 잡혀요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "familiar": "domesticated는 '너무 익숙해진'이에요. 문장의 주인공이에요.",
+        "fade": "evaporates는 '사라져 버린다'예요. 다가가기 쉬워지는 게 아니에요.",
+        "granted": "take it for granted는 '그것을 당연하게 여기다'예요.",
+        "art": "art, 예술이 그것을 되살리는 주인공이에요.",
+        "visible": "restores its visibility는 '다시 보이게 한다'예요."
+      },
+      "placeholder": "핵심어만 보고 해석해 보세요",
+      "point": "핵심어만으로 해석 = 너무 익숙해진 것은 사라져 버리고, 우리는 예술이 다시 보이게 할 때까지 그것을 당연하게 여긴다.",
+      "from": "h6w3rr"
+    },
+    "s2_this": {
+      "say": "this처럼 앞에 나온 걸 가리키는 말이 나오면, 가리키는 것을 앞 문장에서 찾아야 해요. 'this task'가 무엇인지 앞 문장에서 찾아볼게요.",
+      "from": "nuoshb"
+    },
+    "s2_task": {
+      "ask": "'this task(이 일)'가 가리키는 건 문장 1에서 어느 부분일까요?",
+      "wrong": "그건 '할 일'이 아니에요. 누가 무엇을 해 주는 일인지 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "this task는 'art restores its visibility', 익숙해서 안 보이던 것을 예술이 다시 보이게 하는 일이에요.",
+      "point": "this task = 앞 문장의 'art restores its visibility' (익숙해서 안 보이던 것을 다시 보이게 하는 일) · this·that 같은 지시어는 앞 문장에서 찾는다",
+      "from": "11v3sd7"
+    },
+    "s2_task_back": {
+      "say": "this task는 익숙해서 안 보이던 것을 다시 보이게 하는 일이에요.",
+      "from": "1koun42"
+    },
+    "s2_suited": {
+      "ask": "그럼 this task에 특히 잘 맞는 건 무엇일까요?",
+      "wrong": "그건 이 일에 잘 맞는 주인공이 아니에요. 문장의 주어를 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "'translation(번역)'이에요. 번역이 이 일에 특히 잘 맞는 예술(art)이래요.",
+      "point": "this task(다시 보이게 하는 일)에 특히 잘 맞는 것 = translation(번역) · art는 번역이 무엇인지 말하는 말",
+      "from": "14e1ne5"
+    },
+    "s2_pick": {
+      "ask": "이 문장의 핵심어 4개를 찾아볼까요?",
+      "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 무엇이 어떤 일에 맞는지 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 translation, art, suited, this task예요. 번역은 이 일에 잘 맞는 예술이에요.",
+      "point": "2문장 핵심어 = translation · art · suited · this task",
+      "from": "1ieg8bu"
+    },
+    "s2_keys": {
+      "ask": "그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.",
+      "praise": "잘 해석했어요! 핵심어만으로도 뜻이 잡혀요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "translation": "translation은 '번역'이에요. 문장의 주인공이에요.",
+        "task": "this task는 앞에서 찾은 '이 일', 다시 보이게 하는 일이에요.",
+        "suited": "well suited for는 '~에 잘 맞는'이에요.",
+        "art": "art는 '예술'이에요. 번역도 예술이래요."
+      },
+      "placeholder": "핵심어만 보고 해석해 보세요",
+      "point": "핵심어만으로 해석 = 번역은 이 일에 특히 잘 맞는 예술이다.",
+      "from": "1dg4gpf"
+    },
+    "s3_while_know": {
+      "say": "while은 '~하는 반면에'와 '~하는 동안에', 두 가지 뜻이 있어요.",
+      "point": "while = ① ~하는 반면에(대조) ② ~하는 동안에(시간) · 앞뒤가 반대면 '반면에'",
+      "from": "1fb154i"
+    },
+    "s3_while": {
+      "ask": "여기서 while은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞은 작품이 묻힌다, 뒤는 번역이 작품을 풀어 준다예요. 서로 반대예요.",
+        "앞은 작품이 묻힌다, 뒤는 번역이 작품을 풀어 준다예요. 서로 반대예요."
+      ],
+      "explain": "앞은 작품이 묻힌다, 뒤는 번역이 작품을 풀어 준다예요. 서로 반대예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "앞은 작품이 묻혀 버린다, 뒤는 번역이 작품을 풀어 준다예요. 시간이 아니라 서로 반대되는 내용이에요."
+      },
+      "point": "while = ~하는 반면에 (앞: 작품이 묻힌다 ↔ 뒤: 번역이 풀어 준다)",
+      "from": "px75oe"
+    },
+    "s3_two_pairs": {
+      "say": "이 문장은 'while(접속사) + 주어 + 동사, 주어 + 동사' 구조예요. 주어와 동사가 두 쌍 있어요. 각각 찾아볼게요.",
+      "from": "cpabn0"
+    },
+    "s3_subj1": {
+      "ask": "while 뒤 첫 번째 주어는 무엇일까요?",
+      "wrong": "그건 동사 뒤에 나오는 말이에요. while 바로 뒤를 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "while 바로 뒤 'a great work of literature(위대한 문학 작품)'가 첫 번째 주어예요.",
+      "point": "while 덩어리의 주어 = a great work of literature (동사 accumulates)",
+      "from": "1g40jip"
+    },
+    "s3_verb1": {
+      "ask": "그럼 이 주어의 동사는 무엇일까요?",
+      "wrong": "그건 동사가 아니거나, 다른 덩어리의 동사예요. 주어 바로 뒤를 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "주어 바로 뒤 'accumulates(쌓는다)'가 동사예요. bury는 study guides를 꾸미는 that 덩어리 안의 동사예요.",
+      "point": "주어 a great work of literature의 동사 = accumulates (bury는 that 덩어리 안의 동사)",
+      "from": "14dggwn"
+    },
+    "s3_subj2": {
+      "ask": "콤마 뒤 두 번째 주어는 무엇일까요?",
+      "wrong": "그건 동사 뒤에 나오는 말이에요. 콤마 바로 뒤를 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "콤마 바로 뒤 'translations of that work(그 작품의 번역본)'가 두 번째 주어예요.",
+      "point": "메인 문장의 주어 = translations of that work (동사 free) · 콤마 뒤 첫 덩어리",
+      "from": "9tkmns"
+    },
+    "s3_verb2": {
+      "ask": "두 번째 주어의 동사는 무엇일까요?",
+      "wrong": "그건 동사가 아니에요. 주어 바로 뒤를 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "주어 바로 뒤 'free(해방시키다)'가 동사예요. putting은 by 뒤에 붙은 '옮김으로써'예요.",
+      "point": "주어 translations of that work의 동사 = free (putting은 by ~ing '옮김으로써')",
+      "from": "1u9rdmw"
+    },
+    "s3_pairs": {
+      "say": "while 덩어리는 'a great work of literature + accumulates', 메인 문장은 'translations of that work + free'예요.",
+      "from": "1akft5e"
+    },
+    "s3_keys": {
+      "ask": "주어와 동사는 핵심어예요. 그럼 주어와 동사를 포함해서 핵심어 6개를 찾아볼까요?",
+      "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 동사 뒤에 오는 말도 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 a great work of literature, accumulates, imitations, translations of that work, free, its stodgy fame이에요. 주어·동사와 동사 뒤 목적어예요.",
+      "point": "3문장 핵심어 = 주어·동사 + 목적어: a great work of literature · accumulates · imitations · translations of that work · free · its stodgy fame",
+      "from": "61sjjb"
+    },
+    "s3_trans": {
+      "ask": "그럼 핵심어를 가지고 이 문장을 해석해 봐요. 문장이 기니까 이번엔 보기를 줄게요. 어떤 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "주어 ①은 a great work of literature, 주어 ②는 translations of that work예요. free는 '풀어 주다'예요.",
+        "주어 ①은 a great work of literature, 주어 ②는 translations of that work예요. free는 '풀어 주다'예요."
+      ],
+      "explain": "주어 ①은 a great work of literature, 주어 ②는 translations of that work예요. free는 '풀어 주다'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "while은 '반면에', 주어 ②는 translations of that work, free는 '풀어 주다'예요. 번역본이 작품을 따분한 명성에서 풀어 줘요.",
+        "o2": "while은 '반면에', 주어 ②는 translations of that work, free는 '풀어 주다'예요. 번역본이 작품을 따분한 명성에서 풀어 줘요."
+      },
+      "point": "3문장 = 위대한 문학 작품은 모방작 등이 쌓여 묻힐 수 있는 반면, 번역본은 작품을 따분한 명성에서 풀어 준다",
+      "from": "bd5mv2"
+    },
+    "s3_sort_lit": {
+      "ask": "1문장의 두 그룹을 다시 가져왔어요. literature(문학 작품)는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "위대한 작품은 모방작과 연구가 쌓여 묻혀 버린대요. 익숙해져서 안 보이는 쪽이에요.",
+        "위대한 작품은 모방작과 연구가 쌓여 묻혀 버린대요. 익숙해져서 안 보이는 쪽이에요."
+      ],
+      "explain": "위대한 작품은 모방작과 연구가 쌓여 묻혀 버린대요. 익숙해져서 안 보이는 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "위대한 작품은 모방작과 연구가 쌓여 묻혀 버린대요. 익숙해져서 안 보이는 쪽이에요."
+      },
+      "from": "1aob7dy"
+    },
+    "s3_sort_trans": {
+      "ask": "그럼 translation(번역)은 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "번역은 작품을 따분한 명성에서 풀어 주고 돌을 다시 돌답게 만들어요. 다시 보이게 하는 쪽이에요.",
+        "번역은 작품을 따분한 명성에서 풀어 주고 돌을 다시 돌답게 만들어요. 다시 보이게 하는 쪽이에요."
+      ],
+      "explain": "번역은 작품을 따분한 명성에서 풀어 주고 돌을 다시 돌답게 만들어요. 다시 보이게 하는 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "번역은 작품을 따분한 명성에서 풀어 주고 돌을 다시 돌답게 만들어요. 다시 보이게 하는 쪽이에요."
+      },
+      "from": "rjqpez"
+    },
+    "s3_art": {
+      "ask": "아까 예술은 익숙한 걸 다시 보이게 만든다고 했죠. 이 문장에서 예술에 해당하는 걸 찾아볼까요?",
+      "wrong": "그건 작품을 묻어 버리거나, 그냥 옮길 곳이에요. 작품을 풀어 주는 쪽을 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "'translations of that work', 번역본이 예술 쪽이에요. 작품을 다시 돌답게, 생생하게 보이게 해요.",
+      "point": "3문장에서 예술(다시 보이게 하는 것) = translations of that work (번역본)",
+      "from": "1cdpuqb"
+    },
+    "s4_one": {
+      "ask": "여기서 one은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "one 앞에 'A bad text'가 있어요. 같은 말을 또 쓰지 않으려고 one으로 받아요.",
+        "one 앞에 'A bad text'가 있어요. 같은 말을 또 쓰지 않으려고 one으로 받아요."
+      ],
+      "explain": "one 앞에 'A bad text'가 있어요. 같은 말을 또 쓰지 않으려고 one으로 받아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "one 앞에 'A bad text'가 있어요. 'a text'를 또 쓰지 않으려고 one으로 받은 거예요.",
+        "o2": "one 앞에 'A bad text'가 있어요. 'a text'를 또 쓰지 않으려고 one으로 받은 거예요."
+      },
+      "point": "A bad text is one that … = one은 앞의 text를 다시 받는 '것(글)' (숫자 1 · '누구든'과 다름)",
+      "from": "13yr4wd"
+    },
+    "s4_lacks": {
+      "ask": "그럼 안 좋은 글(a bad text)은 어떤 글이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "lacks는 '~이 없다'예요. 콤마 사이 'in Berman’s terms'는 건너뛰고 읽어요.",
+        "lacks는 '~이 없다'예요. 콤마 사이 'in Berman’s terms'는 건너뛰고 읽어요."
+      ],
+      "explain": "lacks는 '~이 없다'예요. 콤마 사이 'in Berman’s terms'는 건너뛰고 읽어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "lacks는 '~이 없다'예요. 콤마 사이 'in Berman’s terms(Berman의 용어로)'는 빼도 되는 삽입이에요.",
+        "o2": "lacks는 '~이 없다'예요. 콤마 사이 'in Berman’s terms(Berman의 용어로)'는 빼도 되는 삽입이에요."
+      },
+      "point": "lacks “native strangeness” = '본래의 낯섦'이 없다 · in Berman’s terms(Berman의 용어로)는 빼도 되는 삽입",
+      "from": "1dilsbl"
+    },
+    "s4_sign": {
+      "ask": "그럼 native strangeness(본래의 낯섦)는 좋은 말일까요, 나쁜 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "안 좋은 글(a bad text)에 그게 부족하대요(lacks). 부족하면 안 좋은 거라면, 있으면 어떨까요?",
+        "안 좋은 글(a bad text)에 그게 부족하대요(lacks). 부족하면 안 좋은 거라면, 있으면 어떨까요?"
+      ],
+      "explain": "안 좋은 글(a bad text)에 그게 부족하대요(lacks). 부족하면 안 좋은 거라면, 있으면 어떨까요?",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "안 좋은 글(a bad text)은 그게 부족한(lacks) 글이에요. 부족해서 안 좋은 거라면, 있어야 좋은 거예요."
+      },
+      "point": "native strangeness = 좋은 말(+) · a bad text(−)가 lacks(−, 부족하다) → 부족해서 안 좋으면 있어야 좋은 것",
+      "from": "18lqmeu"
+    },
+    "s4_sign_why": {
+      "say": "bad text는 −, lacks(부족하다)도 −예요. 안 좋은 글은 이게 부족한 거니까, native strangeness는 좋은 말(+)이에요.",
+      "from": "xza43h"
+    },
+    "s4_sort": {
+      "ask": "native strangeness(본래의 낯섦)는 1문장의 두 그룹 중 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "domesticated는 '너무 익숙해진'이에요. 낯섦은 그 반대예요.",
+        "domesticated는 '너무 익숙해진'이에요. 낯섦은 그 반대예요."
+      ],
+      "explain": "domesticated는 '너무 익숙해진'이에요. 낯섦은 그 반대예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "domesticated는 '너무 익숙해진'이에요. 낯섦은 그 반대라, 익숙해서 안 보이는 쪽이 아니에요."
+      },
+      "point": "native strangeness(본래의 낯섦) = 익숙해진 것(domesticated)의 반대 → 번역·예술이 살려 내는 쪽",
+      "from": "yuilzv"
+    },
+    "s4_nothing": {
+      "ask": "그런 글을 번역하면 어떻게 된대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "대시 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요.",
+        "대시 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요."
+      ],
+      "explain": "대시 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "낯섦이 없는 글은 번역이 살려 낼 게 없어요. 대시 뒤 'nothing happens'를 봐요.",
+        "o2": "낯섦이 없는 글은 번역이 살려 낼 게 없어요. 대시 뒤 'nothing happens'를 봐요."
+      },
+      "point": "낯섦이 없는 글은 번역해도 nothing happens(아무 일도 일어나지 않는다)",
+      "from": "1c4vu3j"
+    },
+    "s4_why": {
+      "say": "번역은 작품 안의 낯섦을 살려 내는 일이에요. 그래서 낯섦은 없애거나 극복할 게 아니라, 좋은 글에 꼭 있어야 하는 거예요.",
+      "from": "1bwjuu0"
+    },
+    "s4_pick": {
+      "ask": "이 문장의 핵심어 4개를 찾아볼까요?",
+      "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 어떤 글이 무엇이 없고, 그래서 어떻게 되는지 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 A bad text, lacks, native strangeness, nothing happens예요. 안 좋은 글은 낯섦이 없어서 번역해도 아무 일도 없어요.",
+      "point": "4문장 핵심어 = A bad text · lacks · native strangeness · nothing happens",
+      "from": "tlsk9u"
+    },
+    "s4_keys": {
+      "ask": "그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.",
+      "praise": "잘 해석했어요! 핵심어만으로도 뜻이 잡혀요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "bad": "A bad text는 '안 좋은 글'이에요.",
+        "strange": "native strangeness는 '본래의 낯섦', 작품이 원래 가진 낯선 느낌이에요.",
+        "lacks": "lacks는 '~이 없다'예요. 낯섦이 없는 글이에요.",
+        "nothing": "nothing happens는 '아무 일도 일어나지 않는다'예요."
+      },
+      "placeholder": "핵심어만 보고 해석해 보세요",
+      "point": "핵심어만으로 해석 = 안 좋은 글은 본래의 낯섦이 없어서, 번역해도 아무 일도 일어나지 않는다.",
+      "from": "1v6nxfl"
+    },
+    "s5_subj": {
+      "ask": "이 문장의 주어는 무엇일까요?",
+      "wrong": "그건 동사 뒤에 나오는 말이에요. is 앞 덩어리를 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "is 앞 덩어리 'The translation of a true work of art(진정한 예술 작품의 번역)'가 주어예요.",
+      "point": "5문장 주어 = The translation of a true work of art (is 앞 덩어리)",
+      "from": "1o230by"
+    },
+    "s5_it": {
+      "ask": "because 바로 뒤 it은 무엇을 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "because 뒤 it은 앞 문장의 주어를 다시 받아요.",
+        "because 뒤 it은 앞 문장의 주어를 다시 받아요."
+      ],
+      "explain": "because 뒤 it은 앞 문장의 주어를 다시 받아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "because 뒤 it은 앞 주어, 즉 '번역'이 무언가를 강화한다는 말이에요. 맨 끝 'in it'의 it이 작품이에요.",
+        "o2": "because 뒤 it은 앞 주어, 즉 '번역'이 무언가를 강화한다는 말이에요. 맨 끝 'in it'의 it이 작품이에요."
+      },
+      "point": "because it의 it = 번역(The translation) · 끝의 in it의 it = 작품",
+      "from": "5c36v2"
+    },
+    "s5_inherent": {
+      "ask": "번역이 강화하는 자질(qualities)은 원래 어디에 있던 걸까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "already inherent in it은 '그 안에 이미 내재된'이에요. it은 작품이에요.",
+        "already inherent in it은 '그 안에 이미 내재된'이에요. it은 작품이에요."
+      ],
+      "explain": "already inherent in it은 '그 안에 이미 내재된'이에요. it은 작품이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'already inherent in it'은 '그것(작품) 안에 이미 내재된'이에요. 번역이 새로 만드는 게 아니에요.",
+        "o2": "'already inherent in it'은 '그것(작품) 안에 이미 내재된'이에요. 번역이 새로 만드는 게 아니에요."
+      },
+      "point": "qualities already inherent in it = 작품 안에 이미 있던 자질 (= native strangeness)",
+      "from": "1rlpbff"
+    },
+    "s5_link": {
+      "say": "작품 안에 이미 있던 자질, 바로 앞 문장의 native strangeness(본래의 낯섦)예요. 번역은 그걸 더 강하게 살려 줘요.",
+      "from": "1xvcosc"
+    },
+    "s5_pick": {
+      "ask": "이 문장의 핵심어 6개를 찾아볼까요?",
+      "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 주어·동사와 동사 뒤 목적어를 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 The translation of a true work of art, significant, reinforces, enhances, qualities, inherent예요.",
+      "point": "5문장 핵심어 = The translation of a true work of art · significant · reinforces · enhances · qualities · inherent",
+      "from": "j136h"
+    },
+    "s5_keys": {
+      "ask": "그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.",
+      "praise": "잘 해석했어요! 핵심어만으로도 뜻이 잡혀요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "translation": "The translation of a true work of art는 '진정한 예술 작품의 번역'이에요.",
+        "inherent": "already inherent in it은 '작품 안에 이미 있는'이에요.",
+        "qualities": "qualities는 '자질, 특성'이에요.",
+        "reinforce": "reinforces and enhances는 '강화하고 높여 준다'예요.",
+        "significant": "significant는 '의미 있는, 중요한'이에요."
+      },
+      "placeholder": "핵심어만 보고 해석해 보세요",
+      "point": "핵심어만으로 해석 = 진정한 예술 작품의 번역은 작품 안에 이미 있는 자질을 강화하고 높여 주기 때문에 의미 있다.",
+      "from": "1wykt05"
+    },
+    "s6_notbut": {
+      "ask": "'not A, but B'는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not 뒤가 A, but 뒤가 B예요. 앞은 부정하고 뒤를 말해요.",
+        "not 뒤가 A, but 뒤가 B예요. 앞은 부정하고 뒤를 말해요."
+      ],
+      "explain": "not 뒤가 A, but 뒤가 B예요. 앞은 부정하고 뒤를 말해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "not A, but B는 앞(A)을 부정하고 뒤(B)를 말하는 구조예요. 뒤가 글쓴이가 하고 싶은 말이에요.",
+        "o2": "not A, but B는 앞(A)을 부정하고 뒤(B)를 말하는 구조예요. 뒤가 글쓴이가 하고 싶은 말이에요."
+      },
+      "point": "not A, but B = A가 아니라 B (뒤가 글쓴이의 말)",
+      "from": "1o75ony"
+    },
+    "s6_what": {
+      "ask": "그럼 번역은 임시방편이 아니라 무엇이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "but 뒤를 봐요. étrange는 프랑스어로 strange예요.",
+        "but 뒤를 봐요. étrange는 프랑스어로 strange예요."
+      ],
+      "explain": "but 뒤를 봐요. étrange는 프랑스어로 strange예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "but 뒤 'the mode of existence by which a work reaches us as étrange'예요. étrange는 프랑스어로 strange예요.",
+        "o2": "but 뒤 'the mode of existence by which a work reaches us as étrange'예요. étrange는 프랑스어로 strange예요."
+      },
+      "point": "번역 = 임시방편(makeshift)이 아니라, 작품이 우리에게 낯설게(étrange) 다가오는 방식",
+      "from": "1x1mims"
+    },
+    "s6_link": {
+      "say": "étrange는 '낯선'이에요. 번역 덕분에 작품이 다시 낯설게, 즉 생생하게 우리에게 다가온다는 말이에요.",
+      "from": "nufezq"
+    },
+    "s6_pick": {
+      "ask": "이 문장의 핵심어 5개를 찾아볼까요?",
+      "wrong": "그건 뜻을 덧붙이거나 건너뛰어도 되는 말이에요. not A but B의 A와 B를 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 translation, makeshift, the mode of existence, reaches us, étrange예요.",
+      "point": "6문장 핵심어 = translation · makeshift · the mode of existence · reaches us · étrange",
+      "from": "gqk4de"
+    },
+    "s6_keys": {
+      "ask": "그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.",
+      "praise": "잘 해석했어요! 핵심어만으로도 뜻이 잡혀요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "translation": "translation은 '번역'이에요.",
+        "makeshift": "makeshift는 '임시방편'이에요.",
+        "notbut": "not A, but B는 'A가 아니라 B'예요.",
+        "strange": "étrange는 '낯선'이에요. 영어 strange와 같아요.",
+        "reach": "reaches us는 '우리에게 다가온다'예요. the mode of existence는 그 '방식'이에요."
+      },
+      "placeholder": "핵심어만 보고 해석해 보세요",
+      "point": "핵심어만으로 해석 = 번역은 임시방편이 아니라, 작품이 우리에게 낯설게 다가오는 방식이다.",
+      "from": "v59www"
+    },
+    "s7_make": {
+      "ask": "번역은 작품(the work)을 어떻게 보이게 만든대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "make + 목적어 + seem은 '~가 …하게 보이게 만들다'예요. seem 뒤를 봐요.",
+        "make + 목적어 + seem은 '~가 …하게 보이게 만들다'예요. seem 뒤를 봐요."
+      ],
+      "explain": "make + 목적어 + seem은 '~가 …하게 보이게 만들다'예요. seem 뒤를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'makes the work seem more strange'는 '작품을 더 낯설게 보이게 만든다'예요. 익숙하게 만드는 게 아니에요.",
+        "o1": "'makes the work seem more strange'는 '작품을 더 낯설게 보이게 만든다'예요. 익숙하게 만드는 게 아니에요."
+      },
+      "point": "makes the work seem more strange = 작품을 더 낯설게 보이게 만든다 (make + 목적어 + 동사원형)",
+      "from": "1vkd1va"
+    },
+    "s7_sort": {
+      "ask": "'seem more strange(더 낯설게 보인다)'는 1문장의 두 그룹 중 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "낯설게 보인다는 건 익숙해서 안 보이는 것의 반대예요.",
+        "낯설게 보인다는 건 익숙해서 안 보이는 것의 반대예요."
+      ],
+      "explain": "낯설게 보인다는 건 익숙해서 안 보이는 것의 반대예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "낯설게 보인다는 건 다시 눈에 들어온다는 말이에요. 익숙해서 안 보이는 쪽의 반대예요."
+      },
+      "point": "seem more strange(더 낯설게 보인다) = 다시 보이게 하는 쪽 (익숙해서 안 보임의 반대)",
+      "from": "vakjh7"
+    },
+    "s7_pick": {
+      "ask": "이 문장의 핵심어 5개를 찾아볼까요?",
+      "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 무엇이 무엇을 어떻게 만드는지 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 translation, makes, the work, more strange, newly strange예요.",
+      "point": "7문장 핵심어 = translation · makes · the work · more strange · newly strange",
+      "from": "11uoww8"
+    },
+    "s7_keys": {
+      "ask": "그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.",
+      "praise": "잘 해석했어요! 핵심어만으로도 뜻이 잡혀요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "translation": "translation은 '번역'이에요.",
+        "work": "the work는 '그 작품'이에요.",
+        "strange": "more strange는 '더 낯선'이에요. 익숙하게 만드는 게 아니에요.",
+        "newly": "newly strange는 '새롭게 낯선'이에요.",
+        "make": "makes the work seem은 '작품이 ~하게 보이도록 만든다'예요."
+      },
+      "placeholder": "핵심어만 보고 해석해 보세요",
+      "point": "핵심어만으로 해석 = 번역은 작품을 더 낯설게, 그리고 새롭게 낯설게 보이게 만든다.",
+      "from": "1g93akb"
+    },
+    "s7_gist": {
+      "say": "다 모으면 이래요. 너무 익숙해진 작품은 안 보이게 되는데, 번역은 작품의 낯섦을 살려 다시 생생하게 보이게 해요.",
+      "from": "u49qws"
+    }
+  },
+  "exam": {
+    "ask": "핵심어(translation, strange)를 떠올리며 제목을 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 번역은 너무 익숙해진 작품을 다시 낯설게 만들어 살려 내요. 그게 번역의 진짜 소명이에요.",
+    "final_wrong": "정답은 ①이에요.",
+    "option_feedback": {
+      "2": "글은 원래 어조를 다듬는 이야기가 아니에요. 오히려 다가가기 쉬움(accessible)은 아니라고 했어요.",
+      "3": "학습 가이드가 작품을 묻어 버릴 수 있다는 말은 잠깐 나와요. 글의 중심은 번역이에요.",
+      "4": "translation이 들어가서 헷갈렸죠. 지역 문학을 퍼뜨리는 이야기는 글에 없어요.",
+      "5": "글은 '본래의 낯섦'을 극복하는 게 아니라 살려야 한다고 해요. 방향이 반대예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "1rd0h4v"
+  },
+  "intro": {
+    "topic": {
+      "say": "너무 익숙한 것은 왜 눈에 안 들어올까요? 이번 글은 번역과 낯섦의 관계를 다뤄요."
+    },
+    "method1": {
+      "say": "제목 문제는 글 전체를 한 줄로 묶는 말을 찾는 거예요. 문장마다 핵심어를 찾고 글쓴이 생각을 잡아 볼게요."
+    },
+    "from": "1drgaz"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1qvt5jb"
+}

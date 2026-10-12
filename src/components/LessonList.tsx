@@ -90,6 +90,7 @@ export function LessonList({
                     >
                       <strong className="set-title">
                         {set.title}
+                        {set.wrong_rate != null ? <span className="set-rate">(오답률 {set.wrong_rate}%)</span> : null}
                         {done ? <span className="done-mark">완료</span> : null}
                       </strong>
                       <span className="set-subtitle">{set.subtitle}</span>

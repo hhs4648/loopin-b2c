@@ -24,6 +24,8 @@ export type SkillRecord = {
 export type StudentState = {
   version: 1;
   skills: Record<string, SkillRecord>;
+  /** 「이미 잘 알고 있어요 → 다음부턴 안 뜨게」를 고른 설명들 (스텝의 `known` 키) */
+  known?: string[];
 };
 
 export function emptyStudentState(): StudentState {

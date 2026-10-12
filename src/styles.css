@@ -843,7 +843,8 @@ mark.hl2, .english-token.hl2 .english-word {
 
 /* ── 밑줄 문제 데모(2026-03 21번) 화면 요소 ─────────────────────────── */
 /* 흐림 = 빼도 되는 삽입 / 음영 = 건너뛰어도 되는 부분 */
-.english .faded, .english-token.faded .english-word { opacity: .32; }
+/* 흐림은 바깥 칸에 한 번만 — 안쪽 단어에 또 걸면 뜻 있는 단어만 더 흐려진다 */
+.english .faded { opacity: .32; }
 .english .shaded, .english-token.shaded { background: rgba(138,127,136,.16); border-radius: 3px; }
 
 .method-steps {
@@ -1160,10 +1161,10 @@ mark.hl2, .english-token.hl2 .english-word {
 .english-word.cand {
   text-decoration: none; border: 1.5px dashed #b9a6d8; background: #f6f1ff; border-radius: 6px; padding: 0 3px;
 }
-.english-word.cand:not(:disabled):hover { border-color: #6a4fa0; }
+.english-word.cand:not([aria-disabled]):hover { border-color: #6a4fa0; }
 .english-word.cand.found { border-style: solid; border-color: #8fd0c0; background: #e6f6f1; color: #2f7d6c; font-weight: 700; }
 .english-word.cand.missed { opacity: .45; text-decoration: line-through; }
-.english-word.cand:disabled { cursor: default; }
+.english-word.cand[aria-disabled] { cursor: default; }
 .stage-fill.tap-next { cursor: pointer; }
 .tip-chip.hint { border-color: #8fd0c0; background: #eefaf6; color: #2f7d6c; }
 .tip-chip.hint.on { background: #8fd0c0; color: #fff; }
@@ -1177,7 +1178,8 @@ mark.hl2, .english-token.hl2 .english-word {
   (선생님 무대와 반씩 나눠 쓴다)
 */
 .study:not(.reading-first) .study-sentence {
-  flex: 1 1 0; max-height: none; display: flex; flex-direction: column; justify-content: center;
+  /* safe — 문장이 자리보다 길면 가운데 맞춤 대신 위에서부터 (위아래로 넘치지 않게) */
+  flex: 1 1 0; max-height: none; display: flex; flex-direction: column; justify-content: safe center;
 }
 /*
   칠판이 없는 화면은 문장 자리를 화면 높이의 절반으로 고정한다 — 보기가 몇 줄이든
@@ -1195,7 +1197,10 @@ mark.hl2, .english-token.hl2 .english-word {
 /* 칠판은 맨 위(머리줄 바로 아래)로 — 문장은 칠판과 선생님 사이 가운데에 그대로 */
 .study.has-panel .study-top { order: -2; }
 .study.has-panel > .study-panel { order: -1; margin-top: 8px; }
-.study.has-panel:not(.reading-first) .study-sentence { min-height: min(max-content, 34cqh); }
+/* 칠판·결과 카드가 있어도 문장은 다 보이게 — 줄어드는 건 선생님 무대. 너무 길면 문장 안에서 스크롤 */
+.study.has-panel:not(.reading-first) .study-sentence { flex: 0 1 auto; min-height: 0; max-height: 56cqh; }
+/* 남는 자리만 선생님 무대 — 모자라면 문장이 먼저 줄고(문장 안에서 스크롤) 버튼은 화면 안에 남는다 */
+.study.has-panel:not(.reading-first) .study-stage { flex: 1 1 0; min-height: 110px; }
 
 /* 말풍선 위 힌트 칩 — 말풍선과 같이 선생님 위에 붙어 다닌다 */
 .study-bubble-over { display: flex; flex-direction: column; align-items: center; gap: 6px; }
@@ -1248,10 +1253,46 @@ mark.hl2, .english-token.hl2 .english-word {
   border: 0; padding: 0 1px; outline: none; line-height: 1.3; border-radius: 5px;
   box-shadow: inset 0 0 0 1.5px #c9b8e6;
 }
-.english-word.cand:not(:disabled):hover { box-shadow: inset 0 0 0 1.5px #6a4fa0; }
+.english-word.cand:not([aria-disabled]):hover { box-shadow: inset 0 0 0 1.5px #6a4fa0; }
 .english-word.cand.found { box-shadow: inset 0 0 0 2px #8fd0c0; font-weight: inherit; -webkit-text-stroke: .4px currentColor; }
 .english-word.em { font-weight: inherit; -webkit-text-stroke: .5px currentColor; }
 
 /* 흐린 부분 설명 — 문장 아래 작게 */
 .faded-note { margin: 8px 0 0; font-size: 12.5px; line-height: 1.45; color: #8a7f88; display: flex; gap: 6px; align-items: baseline; }
 .faded-swatch { flex: none; padding: 0 6px; border-radius: 4px; background: rgba(138,127,136,.12); color: #b9aeb6; font-size: 11.5px; font-weight: 700; }
+
+/* 앞 문장 보기 — 문장 꼬리표 양옆 ‹ › */
+.sentence-flip { display: flex; align-items: center; gap: 6px; align-self: flex-start; margin-bottom: 8px; }
+.sentence-flip .sentence-no { margin-bottom: 0; }
+.flip-arrow {
+  width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #ef7a93; background: #fff; color: #e2607d;
+  font-size: 17px; line-height: 1; cursor: pointer; display: grid; place-items: center; padding: 0 0 2px;
+}
+.flip-arrow:disabled { border-color: #eadfe3; color: #d8cbd0; cursor: default; }
+/* 구절 고르기 — 상자 대신 음영 */
+.english-word.cand.shade { box-shadow: none; background: rgba(138,127,136,.16); border-radius: 4px; }
+.english-word.cand.shade:not([aria-disabled]):hover { background: rgba(138,127,136,.3); box-shadow: none; }
+.english-word.cand.shade.found { background: #d9f3ea; box-shadow: inset 0 0 0 2px #8fd0c0; }
+
+/* 단어 위 + / − 표시 (좋은 말 · 나쁜 말) */
+.english-token[data-sign]::before {
+  content: attr(data-sign); position: absolute; left: 50%; top: -0.55em; transform: translateX(-50%);
+  width: 1.15em; height: 1.15em; border-radius: 50%; display: grid; place-items: center;
+  font-size: 0.62em; font-weight: 800; line-height: 1; color: #fff; pointer-events: none;
+  animation: pop .35s ease-out;
+}
+.english-token.sign-minus::before { background: #e2607d; }
+.english-token.sign-plus::before { background: #3fae8f; }
+.english-token.sign-minus .english-word { background: rgba(226,96,125,.12); border-radius: 4px; }
+.english-token.sign-plus .english-word { background: rgba(63,174,143,.14); border-radius: 4px; }
+
+/* 덩어리 나누기 슬래시 */
+.english .slash { color: #e2607d; font-weight: 800; padding: 0 2px; }
+.passage-text + .passage-text { margin-top: 8px; }
+
+/* 긴 구절은 글처럼 줄을 바꾼다 — 칸 꾸밈(배경·상자)은 줄마다 이어 그린다 */
+.english-token.long { display: inline; }
+.english-word { box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+/* 목록 카드 — 제목 옆 오답률 */
+.set-rate { margin-left: 6px; font-size: 13px; font-weight: 600; color: #e2607d; }

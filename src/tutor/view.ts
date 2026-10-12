@@ -61,9 +61,14 @@ export type TutorView = {
   /** 시험지의 밑줄 친 구절 — 음영이 아니라 밑줄로 그린다 */
   underline?: string[];
   /** 「찾기」 스텝 — 문장 안 후보 구절을 눌러 고른다. found는 맞힌 것, missed는 틀리게 누른 것 */
-  pick?: { candidates: string[]; found: string[]; missed: string[]; open: boolean } | null;
+  /** `shade` — 후보를 상자 대신 음영으로 (긴 구절을 고를 때) */
+  pick?: { candidates: string[]; found: string[]; missed: string[]; open: boolean; shade?: boolean } | null;
+  /** 앞 문장을 보여 주는 스텝 — ‹ › 로 지금 문장(`text`)과 오간다 */
+  flip?: { tag: string; text: string; highlight?: string[] } | null;
   /** 수업 소개(도입 말) 중 — 화면 아무 데나 눌러도 다음 말로 */
   tapToNext?: boolean;
+  /** 단어 위 + / − 표시 */
+  signs?: { text: string; sign: "+" | "−" }[];
   /** 맞았다는 말만 하는 짧은 화면 (잠깐 뒤 저절로 다음 질문) */
   praiseOnly?: boolean;
   /** 흐린 부분이 왜 흐린지 — 문장 아래 작게 */
@@ -188,4 +193,6 @@ export type TranslationResult = {
   lessonId: string;
   /** 「2문장」 */
   where: string;
+  /** 카드 이름 — 없으면 「내 해석」·「고친 해석」 */
+  labels?: { mine: string; model: string };
 };

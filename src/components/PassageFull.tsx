@@ -24,14 +24,17 @@ export function PassageFull({ given, sentences, underline, options, onPick, pick
   return (
     <div className="passage-full">
       {given ? <p className="passage-given">{given}</p> : null}
-      <p className="passage-text">
-        {sentences.map((text, i) => (
-          <span key={i}>
-            {underlined(text, underline)}
-            {i < sentences.length - 1 ? " " : ""}
-          </span>
-        ))}
-      </p>
+      {/* 순서 문제처럼 (A)·(B)·(C)로 시작하는 문장에서 단락을 나눈다 — 시험지 모양 그대로 */}
+      {paragraphs(sentences).map((para, k) => (
+        <p key={k} className="passage-text">
+          {para.map((text, i) => (
+            <span key={i}>
+              {underlined(text, underline)}
+              {i < para.length - 1 ? " " : ""}
+            </span>
+          ))}
+        </p>
+      ))}
       {options?.length ? (
         <ol className={`passage-options${onPick ? " pickable" : ""}`}>
           {options.map((o, i) => (
@@ -51,6 +54,15 @@ export function PassageFull({ given, sentences, underline, options, onPick, pick
       ) : null}
     </div>
   );
+}
+
+function paragraphs(sentences: string[]): string[][] {
+  const out: string[][] = [];
+  for (const text of sentences) {
+    if (!out.length || /^\([A-C]\)/.test(text)) out.push([]);
+    out[out.length - 1]!.push(text);
+  }
+  return out;
 }
 
 function underlined(text: string, phrases: string[]) {

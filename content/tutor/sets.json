@@ -23,6 +23,7 @@
       "collection": "moeui-2026-03",
       "title": "21번 문제",
       "subtitle": "밑줄 의미 — 음악과 새로움의 관계",
+      "wrong_rate": 58.6,
       "lessons": [
         "moeui-2026-03-21-music-researchers"
       ]
@@ -32,6 +33,7 @@
       "collection": "moeui-2026-03",
       "title": "30번 문제",
       "subtitle": "어휘 — 이름을 붙이면 차이가 사라진다",
+      "wrong_rate": 80.9,
       "lessons": [
         "moeui-2026-03-30-names-and-differences"
       ]
@@ -41,8 +43,39 @@
       "collection": "moeui-2026-03",
       "title": "39번 문제",
       "subtitle": "문장 넣기 — 열려 있어도 외부인에겐 장막",
+      "wrong_rate": 71.7,
       "lessons": [
         "moeui-2026-03-39-epistemic-communities"
+      ]
+    },
+    {
+      "id": "moeui-2026-03-24",
+      "collection": "moeui-2026-03",
+      "title": "24번 문제",
+      "subtitle": "제목 — 번역은 익숙한 것을 다시 낯설게",
+      "wrong_rate": 65.7,
+      "lessons": [
+        "moeui-2026-03-24-translation-strangeness"
+      ]
+    },
+    {
+      "id": "moeui-2026-03-36",
+      "collection": "moeui-2026-03",
+      "title": "36번 문제",
+      "subtitle": "순서 — 끝없는 고민을 멈추는 말",
+      "wrong_rate": 64.9,
+      "lessons": [
+        "moeui-2026-03-36-conversation-stoppers"
+      ]
+    },
+    {
+      "id": "moeui-2026-03-33",
+      "collection": "moeui-2026-03",
+      "title": "33번 문제",
+      "subtitle": "빈칸 — 훌륭한 건물은 몸과 마음의 연장",
+      "wrong_rate": 63.5,
+      "lessons": [
+        "moeui-2026-03-33-profound-building"
       ]
     }
   ]

@@ -159,8 +159,15 @@ type StepBase = {
   display?: string;
   /** 문장 위 꼬리표를 바꾼다 — 여러 문장을 한 화면에 보일 때 「문장 1·2」 */
   tag?: string;
+  /**
+   * `display`로 앞 문장을 보여 줄 때 — 문장 위 ‹ › 로 지금 문장과 오가게 한다.
+   * 지금 문장에서 칠할 구절(예: this task)을 적는다
+   */
+  flip?: { highlight?: string[] };
   /** 문장 안에서 강조할 구절 */
   highlight?: string[];
+  /** 단어 위에 붙이는 작은 표시 — 좋은 말(+)·나쁜 말(−)처럼 단어의 방향을 보일 때 */
+  signs?: { text: string; sign: "+" | "−" }[];
   /** 두 번째 색(민트)으로 강조할 구절 — 노란 강조와 덩어리를 나눠 보일 때 (예: 「~에게는」 덩어리 ↔ 주어) */
   highlight_alt?: string[];
   /** 그림 자체이거나, 레슨 `panels`에 적어 둔 이름 */
@@ -169,6 +176,9 @@ type StepBase = {
   retrieve?: boolean;
   /** 빼도 되는 삽입(콤마·대시 사이) — 흐리게 */
   faded?: string[];
+  /** 흐림이 콤마·대시가 아닐 때(괄호 등) 문장 아래 안내와 읽기 화면 Tip을 바꾼다 */
+  faded_note?: string;
+  faded_tip?: { label: string; text: string };
   /** 건너뛰어도 되는 문장·부분 — 음영 */
   shaded?: string[];
   /**
@@ -181,6 +191,12 @@ type StepBase = {
   method?: number;
   /** 이 스텝에 「자세히 볼래요」 같은 버튼을 둔다. 누르면 `optional_of`가 이 스텝인 것들을 연다 */
   detail_button?: string;
+  /**
+   * 설명 화면에 「이미 잘 알고 있어요」를 둔다 — 누르면 「다음부턴 안 뜨도록 할까요?」(네/취소).
+   * 어느 쪽이든 이번엔 이 설명과 `skip_with`로 딸린 스텝을 건너뛰고, 「네」면 이 키를 학생 상태에 남겨
+   * 다음 수업부터 같은 키의 설명을 안 보여 준다. (등급을 모르니 1·2등급은 스스로 건너뛰게 한다)
+   */
+  known?: string;
   /** 앞 스텝에서 「자세히」를 고른 학생만 보는 스텝 */
   optional_of?: string;
   /** 「이미 알고 있어요, 넘어갈게요」를 둔다. 학생의 말을 믿고 넘어간다 — 기록은 남긴다 */
@@ -260,6 +276,8 @@ export type PickStep = StepBase & {
   interaction: "word_pick";
   candidates: string[];
   answers: string[];
+  /** 후보를 상자 대신 음영으로 보인다 (구절을 고를 때) */
+  shade?: boolean;
   brief: PickCopy;
 };
 
@@ -298,6 +316,8 @@ export type TranslateStep = StepBase & {
   /** 고친 해석 (모범 해석) */
   model: string;
   rules: TranslateRule[];
+  /** 해석이 아니라 생각을 쓰게 할 때 카드 이름 — 기본은 「내 해석」·「고친 해석」 */
+  labels?: { mine: string; model: string };
   brief: TranslateCopy;
 };
 
@@ -346,7 +366,11 @@ export type ThinkCopy = {
   summary: string;
 };
 
-export type ShowCopy = { say: string };
+export type ShowCopy = {
+  say: string;
+  /** `detail_button`(예: 「다음에 또 알려주세요」)을 누른 학생의 「헷갈린 포인트」에 남길 한 줄 */
+  point?: string;
+};
 
 /** 뽑은 대사에는 도장이 붙는다 — 어느 brief에서 뽑았는지 (brief의 해시) */
 type Stamped<T> = T & { from?: string };
@@ -408,7 +432,8 @@ export type ExamQuestion = {
    * 밑줄 친 구절. 이 구절이 든 문장을 문제 화면에 띄우고 노랗게 칠한다.
    * 어휘 문제처럼 밑줄이 여러 개면 배열 — 그때 문제 화면에 띄울 문장은 `sentence`로 정한다
    */
-  underline: string | string[];
+  /** 밑줄 친 구절 — 제목·주제 문제처럼 밑줄이 없으면 비운다 */
+  underline?: string | string[];
   /** 문제 화면에 띄울 문장 id (기본: 첫 밑줄이 든 문장) */
   sentence?: number;
   /** EBS가 공개하는 오답률(%). 인트로에서 말한다 */

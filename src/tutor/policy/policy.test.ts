@@ -10,6 +10,7 @@ import {
 } from "./student-state";
 import type { ChoiceStep, PolicyStep } from "./types";
 import type { TutorView } from "../view";
+import { glossSpans } from "../glosses";
 
 /*
   정책 단위 테스트는 레슨에 기대지 않는다 — 지문을 갈아 끼워도 그대로 돈다.
@@ -185,6 +186,17 @@ for (const L of allPolicyLessons()) {
         const c = C.steps[step.id]!;
         for (const line of [c.ask!, ...c.hints!, ...Object.values(c.feedback ?? {})]) {
           expect(line, step.id).not.toContain(right[0]!.label);
+        }
+      }
+    });
+
+    it("「찾기」 후보는 화면의 문장에서 따로 누를 수 있다 (뜻이 달린 칸 하나와 딱 맞는다)", () => {
+      for (const sen of L.sentences) {
+        for (const step of sen.steps) {
+          if (step.type !== "pick") continue;
+          const shown = step.display ?? sen.text;
+          const spans = glossSpans(shown, sen.glosses).filter((x) => x.gloss).map((x) => x.text.replace(/[.,;:!?]+$/, ""));
+          for (const c of step.candidates) expect(spans, `${step.id}: ${c}`).toContain(c);
         }
       }
     });
@@ -654,5 +666,326 @@ describe("2026년 3월 30번 — 어휘 문제", () => {
     v = await session.submit("다음으로");
     expect(v.examOptions).toHaveLength(4);
     expect(v.sentence).toBe(L.sentences[0]!.text);
+  });
+});
+
+describe("2026년 3월 24번 — 제목 문제", () => {
+  const ID24 = "moeui-2026-03-24-translation-strangeness";
+  const L24 = () => allPolicyLessons().find((l) => l.id === ID24)!;
+  const raw = () =>
+    createPolicySession(ID24, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+
+  it("1문장: accessible X / evaporates O → 예술의 역할 자유 응답(힌트 its) → 핵심어 6개 찾기 → 핵심어만으로 해석", async () => {
+    const session = raw();
+    let v = await session.submit("분석하러 갈게요");
+    v = await session.submit("넘어가기");
+    expect(v.readingFirst).toBe(true);
+    v = await session.submit("다 읽었어요");
+    expect(v.concepts?.map((c) => c.en)).toEqual(["domesticated", "take it for granted"]);
+    // 핵심어는 마지막에 직접 찾는다 — 미리 색칠하지 않는다
+    expect(v.emphasis).toEqual([]);
+    v = await session.submit("사라져 버린다 (evaporates)");
+    expect(v.praiseOnly).toBe(true);
+    v = await session.submit("__auto_next");
+    expect(v.panel?.kind).toBe("contrast");
+    v = await session.submit("다음");
+    expect(v.message).toBe("그럼 예술(art)의 역할은 뭘까요? 자유롭게 써 봐요.");
+    expect(v.allowInput).toBe(true);
+    expect(v.tips?.find((t) => t.hint)?.text).toContain("something too domesticated");
+    v = await session.submit("예술은 너무 익숙한 것을 다시 보이게 해 준다");
+    expect(v.message).toBe("잘 답했어요! 예술은 익숙해서 안 보이던 것을 다시 보이게 해요.");
+    expect(v.translation?.labels).toEqual({ mine: "내 답", model: "모범 답" });
+    expect(v.tips?.some((t) => t.hint)).toBe(false);
+    v = await session.submit("다음으로");
+    expect(v.message).toBe("이제 이 문장의 핵심어 6개를 찾아볼까요?");
+    for (const w of ["domesticated", "evaporates", "take it for granted", "art", "restores", "visibility"]) v = await session.submit(`__pick:${w}`);
+    expect(v.praiseOnly).toBe(true);
+    v = await session.submit("__auto_next");
+    // 찾은 핵심어만 가지고 해석해 본다
+    expect(v.message).toBe("그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.");
+    expect(v.allowInput).toBe(true);
+    expect(v.highlight).toContain("take it for granted");
+    v = await session.submit("익숙한 것은 사라지고 우리는 당연하게 여긴다 예술이 다시 보이게 할 때까지");
+    expect(v.translation?.fixes).toEqual([]);
+    v = await session.submit("다음으로");
+    expect(v.celebrate).toBe(true);
+  });
+
+  it("2문장: this 같은 지시어는 앞 문장에서 — 문장 1을 띄워 음영 구절 중 this task를 고른다(‹ › 로 오감)", async () => {
+    const session = raw();
+    let v = await session.submit("분석하러 갈게요");
+    v = await session.submit("넘어가기");
+    v = await session.submit("__next_sentence");
+    v = await session.submit("다 읽었어요");
+    expect(v.message.startsWith("this처럼 앞에 나온 걸 가리키는 말이 나오면")).toBe(true);
+    expect(v.highlight).toEqual(["this task"]);
+    v = await session.submit("앞 문장 볼게요");
+    expect(v.sentenceTag).toBe("문장 1");
+    expect(v.sentence).toBe(L24().sentences[0]!.text);
+    expect(v.pick?.shade).toBe(true);
+    expect(v.flip).toEqual({ tag: "문장 2", text: L24().sentences[1]!.text, highlight: ["this task"] });
+    v = await session.submit("__pick:take it for granted");
+    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
+    v = await session.submit("__pick:art restores its visibility");
+    expect(v.message).toBe("맞아요!");
+    v = await session.submit("__auto_next");
+    expect(v.sentenceTag).toBe("문장 2");
+    expect(v.flip).toBeNull();
+    expect(v.message).toBe("this task는 익숙해서 안 보이던 것을 다시 보이게 하는 일이에요.");
+    v = await session.submit("다음");
+    // 이 일에 잘 맞는 건 — 문장에서 고른다
+    expect(v.message).toBe("그럼 this task에 특히 잘 맞는 건 무엇일까요?");
+    expect(v.highlight).toEqual(["this task"]);
+    v = await session.submit("__pick:art");
+    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
+    v = await session.submit("__pick:translation");
+    v = await session.submit("__auto_next");
+    expect(v.message).toBe("이 문장의 핵심어 4개를 찾아볼까요?");
+    for (const w of ["translation", "art", "suited", "this task"]) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    expect(v.message).toBe("그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.");
+    v = await session.submit("번역은 이 일에 잘 맞는 예술이다");
+    expect(v.translation?.fixes).toEqual([]);
+    v = await session.submit("다음으로");
+    expect(v.celebrate).toBe(true);
+    expect(v.message).toBe("맞아요! 두 번째 문장을 아주 잘 이해했어요!");
+  });
+
+  it("3문장: while 두 뜻 → 주어·동사 두 쌍 찾기 → 핵심어 → 해석 보기 → 두 그룹에 끌어 넣기 → 예술에 해당하는 것", async () => {
+    const session = raw();
+    let v = await session.submit("분석하러 갈게요");
+    v = await session.submit("넘어가기");
+    v = await session.submit("__next_sentence");
+    v = await session.submit("__next_sentence");
+    v = await session.submit("다 읽었어요");
+    expect(v.buttons).toEqual(["이미 잘 알고 있어요", "다음에 또 알려주세요"]);
+    v = await session.submit("다음에 또 알려주세요");
+    expect(v.message).toBe("여기서 while은 무슨 뜻일까요?");
+    v = await session.submit("~하는 반면에");
+    v = await session.submit("__auto_next");
+    v = await session.submit("찾아볼게요");
+    expect(v.pick?.shade).toBe(true);
+    for (const w of ["a great work of literature", "accumulates", "translations of that work", "free"]) {
+      v = await session.submit(`__pick:${w}`);
+      expect(v.message).toBe("맞아요!");
+      v = await session.submit("__auto_next");
+    }
+    expect(v.panel?.kind).toBe("structure");
+    v = await session.submit("다음");
+    expect(v.tips?.find((t) => t.hint)?.text).toContain("목적어");
+    for (const w of ["a great work of literature", "accumulates", "imitations", "translations of that work", "free", "its stodgy fame"]) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    expect(v.buttons).toHaveLength(4);
+    v = await session.submit("위대한 문학 작품은 모방작 같은 것들이 쌓이는 반면, 그 번역본은 작품을 따분한 명성에서 풀어 준다");
+    v = await session.submit("__auto_next");
+    expect(v.panel?.kind).toBe("groups");
+    v = await session.submit("왼쪽 · 익숙해서 안 보임");
+    v = await session.submit("__auto_next");
+    v = await session.submit("오른쪽 · 다시 보이게 함");
+    v = await session.submit("__auto_next");
+    expect(v.message.startsWith("아까 예술은")).toBe(true);
+    v = await session.submit("__pick:translations of that work");
+    expect(v.celebrate).toBe(true);
+  });
+
+  it("4문장: one(앞의 text) → 낯섦이 없는 글 → 좋은 말(+)인지(−·−·+ 표시) → native strangeness는 다시 보이게 하는 쪽 → 아무 일도 안 일어남 → 핵심어 → 해석", async () => {
+    const session = raw();
+    let v = await session.submit("분석하러 갈게요");
+    v = await session.submit("넘어가기");
+    for (let i = 0; i < 3; i++) v = await session.submit("__next_sentence");
+    v = await session.submit("다 읽었어요");
+    expect(v.message).toBe("여기서 one은 무슨 뜻일까요?");
+    expect(v.faded).toEqual(["in Berman’s terms"]);
+    v = await session.submit("앞의 text를 다시 받는 '것(글)'");
+    v = await session.submit("__auto_next");
+    v = await session.submit("'본래의 낯섦'이 없는 글");
+    v = await session.submit("__auto_next");
+    expect(v.message).toBe("그럼 native strangeness(본래의 낯섦)는 좋은 말일까요, 나쁜 말일까요?");
+    expect(v.signs).toEqual([]);
+    v = await session.submit("나쁜 말 (−)");
+    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
+    v = await session.submit("다음으로");
+    // 설명 화면 — bad text −, lacks −, native strangeness +
+    expect(v.signs?.map((x) => `${x.text}${x.sign}`)).toEqual(["A bad text−", "lacks−", "native strangeness+"]);
+    v = await session.submit("다음");
+    expect(v.panel?.kind).toBe("groups");
+    v = await session.submit("오른쪽 · 다시 보이게 함");
+    v = await session.submit("__auto_next");
+    v = await session.submit("아무 일도 일어나지 않는다");
+    v = await session.submit("__auto_next");
+    expect(v.message).toContain("극복할 게 아니라");
+    v = await session.submit("다음");
+    for (const w of ["A bad text", "lacks", "native strangeness", "nothing happens"]) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    v = await session.submit("안 좋은 글은 본래의 낯섦이 없어서 번역해도 아무 일도 일어나지 않는다");
+    expect(v.translation?.fixes).toEqual([]);
+    v = await session.submit("다음으로");
+    expect(v.message).toBe("맞아요! 네 번째 문장을 아주 잘 이해했어요!");
+  });
+
+  it("5~7문장: 주어·it·이미 내재된 자질 → not A but B·괄호 건너뛰기 → make+목적어+seem → 글 전체 한 줄 → 문제", async () => {
+    const session = raw();
+    let v = await session.submit("분석하러 갈게요");
+    v = await session.submit("넘어가기");
+    for (let i = 0; i < 4; i++) v = await session.submit("__next_sentence");
+    expect(v.sentenceTag).toBe("문장 5");
+    v = await session.submit("다 읽었어요");
+    const go = async (t: string) => {
+      v = await session.submit(t);
+      if (v.praiseOnly) v = await session.submit("__auto_next");
+      return v;
+    };
+    await go("__pick:The translation of a true work of art");
+    await go("번역 (The translation)");
+    await go("작품 안에 이미 있던 것");
+    expect(v.signs?.map((x) => x.sign)).toEqual(["+", "+"]);
+    await go("다음");
+    for (const w of ["The translation of a true work of art", "significant", "reinforces", "enhances", "qualities", "inherent"]) await go(`__pick:${w}`);
+    await go("진정한 예술 작품의 번역은 작품 안에 이미 있는 자질을 강화해 주기 때문에 의미 있다");
+    expect(v.translation?.fixes).toEqual([]);
+    await go("다음으로");
+    expect(v.message).toBe("맞아요! 다섯 번째 문장을 아주 잘 이해했어요!");
+    await go("다음으로");
+    // 문장 6 — 괄호 속 덧붙임만 흐림, 안내도 괄호로
+    expect(v.faded?.[0]).toContain("Heyvaert");
+    expect(v.fadedNote).toContain("괄호");
+    expect(v.tips?.[0]?.label).toBe("괄호 건너뛰기");
+    await go("다 읽었어요");
+    await go("A가 아니라 B");
+    await go("작품이 우리에게 낯설게 다가오는 방식");
+    await go("다음");
+    for (const w of ["translation", "makeshift", "the mode of existence", "reaches us", "étrange"]) await go(`__pick:${w}`);
+    await go("번역은 임시방편이 아니라 작품이 우리에게 낯설게 다가오는 방식이다");
+    expect(v.translation?.fixes).toEqual([]);
+    await go("다음으로");
+    await go("다음으로");
+    // 문장 7 — As Wilson put it은 주어+동사가 있어 흐리지 않는다
+    expect(v.faded ?? []).toEqual([]);
+    await go("다 읽었어요");
+    await go("더 낯설게, 새롭게 낯설게");
+    await go("오른쪽 · 다시 보이게 함");
+    for (const w of ["translation", "makes", "the work", "more strange", "newly strange"]) await go(`__pick:${w}`);
+    await go("번역은 작품을 더 낯설게 그리고 새롭게 낯설게 보이게 만든다");
+    expect(v.translation?.fixes).toEqual([]);
+    await go("다음으로");
+    expect(v.message.startsWith("다 모으면 이래요.")).toBe(true);
+    await go("문제 풀러 갈게요");
+    expect(v.examOptions).toHaveLength(5);
+  });
+
+  it("3문장 주어·동사 찾기는 슬래시로 나눠 보이고, 「이미 잘 알고 있어요 → 네」면 이번과 다음 수업에서 건너뛴다", async () => {
+    let saved = emptyStudentState();
+    const mk = () =>
+      createPolicySession(ID24, null, { loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0 });
+    const toPairs = async (session: ReturnType<typeof mk>) => {
+      for (const t of ["분석하러 갈게요", "넘어가기", "__next_sentence", "__next_sentence", "다 읽었어요", "다음에 또 알려주세요", "~하는 반면에"]) {
+        await session.submit(t);
+      }
+      return session.submit("__auto_next");
+    };
+    let session = mk();
+    let v = await toPairs(session);
+    expect(v.sentence).toContain("bury it, / translations");
+    expect(v.buttons).toEqual(["찾아볼게요", "이미 잘 알고 있어요"]);
+    v = await session.submit("이미 잘 알고 있어요");
+    expect(v.message).toBe("좋아요. 다음부턴 이 설명이 안 뜨도록 할까요?");
+    expect(v.buttons).toEqual(["네", "취소"]);
+    v = await session.submit("네");
+    // 주어·동사 찾기를 건너뛰고 핵심어 찾기로
+    expect(session.lastAction()?.interactionId).toBe("s3_keys");
+    expect(saved.known).toEqual(["clause_pairs"]);
+    // 다음 수업 — 설명 자체가 안 뜬다
+    session = mk();
+    v = await toPairs(session);
+    expect(session.lastAction()?.interactionId).toBe("s3_keys");
+  });
+
+  it("「이미 잘 알고 있어요 → 취소」면 이번만 건너뛰고 저장하지 않는다", async () => {
+    let saved = emptyStudentState();
+    const session = createPolicySession(ID24, null, { loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0 });
+    for (const t of ["분석하러 갈게요", "넘어가기", "__next_sentence", "__next_sentence", "다 읽었어요", "다음에 또 알려주세요", "~하는 반면에", "__auto_next", "이미 잘 알고 있어요"]) await session.submit(t);
+    await session.submit("취소");
+    expect(session.lastAction()?.interactionId).toBe("s3_keys");
+    expect(saved.known ?? []).toEqual([]);
+  });
+
+  it("예술의 역할 — 가리키는 것·보이게 한다가 없으면 짚어 준다", async () => {
+    const session = raw();
+    for (const t of ["분석하러 갈게요", "넘어가기", "다 읽었어요", "사라져 버린다 (evaporates)", "__auto_next", "다음"]) await session.submit(t);
+    const v = await session.submit("예술은 사람들을 감동시킨다");
+    expect(v.translation?.fixes).toEqual(["너무 익숙해서 당연하게 여기던 것을", "다시 보이게 한다"]);
+    expect(v.translation?.save).toBe(true);
+  });
+});
+
+describe("2026년 3월 36번 — 순서 문제", () => {
+  const ID36 = "moeui-2026-03-36-conversation-stoppers";
+  it("주어진 글(+로 끝남) → (A) This is a problem → (B) in this manner → (C) The problem → 순서 고르기", async () => {
+    const session = createPolicySession(ID36, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    v = await session.submit("넘어가기");
+    expect(v.sentenceTag).toBe("주어진 글");
+    const go = async (t: string) => {
+      v = await session.submit(t);
+      for (let g = 0; g < 3 && (v.praiseOnly || v.readingFirst || v.celebrate); g++)
+        v = await session.submit(v.praiseOnly ? "__auto_next" : v.celebrate ? v.buttons[0]! : "다 읽었어요");
+      return v;
+    };
+    await go("다 읽었어요");
+    await go("대화를 끝내 주는 역할");
+    await go("좋게 본다 (+)");
+    expect(v.signs?.[0]?.sign).toBe("+");
+    await go("다음");
+    await go("이유를 끝없이 물으면 생기는 문제");
+    expect(v.sentence.startsWith("(A) This")).toBe(true);
+    await go("어떤 '문제'에 대한 설명");
+    await go("더 이상의 생각을 바로 멈추게 하는 말");
+    await go("생각을 멈추게 하는 어떤 방식");
+    await go("더 이상 이유를 찾을 필요가 없다");
+    await go("이유를 끝없이 물어서 결정을 못 하는 것");
+    await go("이유를 늘 물을 수 있고 그게 도움이 됐다는 말");
+    expect(v.panel?.kind).toBe("structure");
+    await go("문제 풀러 갈게요");
+    expect(v.examOptions?.map((o) => o.label)).toEqual(["(A)-(C)-(B)", "(B)-(A)-(C)", "(B)-(C)-(A)", "(C)-(A)-(B)", "(C)-(B)-(A)"]);
+  });
+});
+
+describe("2026년 3월 33번 — 빈칸 문제", () => {
+  const ID33 = "moeui-2026-03-33-profound-building";
+  it("빈칸 문장부터 → 공간=행동 연출(+/−) → 몸·마음 두 그룹 → 사는 사람이 기준 → 한 줄 요지 → 문제", async () => {
+    const session = createPolicySession(ID33, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    v = await session.submit("넘어가기");
+    const go = async (t: string) => {
+      v = await session.submit(t);
+      for (let g = 0; g < 3 && (v.praiseOnly || v.readingFirst || v.celebrate); g++)
+        v = await session.submit(v.praiseOnly ? "__auto_next" : v.celebrate ? v.buttons[0]! : "다 읽었어요");
+      return v;
+    };
+    await go("다 읽었어요");
+    expect(v.sentenceTag).toBe("빈칸 문장");
+    expect(v.sentence).toBe("A profound building is ________.");
+    expect(v.flip?.tag).toBe("문장 1");
+    await go("훌륭한 건물이 어떤 건물인지");
+    await go("행동을 이끄는 공간 연출");
+    expect(v.signs).toHaveLength(6);
+    await go("다음 문장");
+    expect(v.panel?.kind).toBe("groups");
+    await go("왼쪽 · 몸 (행동)");
+    await go("오른쪽 · 마음 (느낌)");
+    await go("다음 문장");
+    await go("사람들의 행동과 욕구");
+    await go("다음 문장");
+    expect(v.faded).toEqual(["While designing a house,"]);
+    await go("미래에 그 집에 살 사람");
+    await go("사는 사람이 정원을 내다보고 싶은 곳");
+    await go("사는 사람이 오르내리고 싶은 곳");
+    await go("말없이도 쓰임새를 드러내서");
+    // 빈칸이 주장과 같은 쪽인지 반대 쪽인지 먼저
+    expect(v.message).toBe("이 빈칸 문장은 글쓴이 주장과 같은 쪽일까요, 반대 쪽일까요?");
+    await go("같은 쪽 (주장 그대로)");
+    await go("사는 사람의 몸과 마음의 움직임에 꼭 맞는 건물");
+    await go("문제 풀러 갈게요");
+    expect(v.examOptions).toHaveLength(5);
   });
 });

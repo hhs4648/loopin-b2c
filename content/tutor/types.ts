@@ -151,6 +151,8 @@ export type LessonSet = {
   collection: string;
   title: string;
   subtitle: string;
+  /** 시험 오답률(%) — 목록 카드 제목 옆에 「(오답률 80.9%)」 */
+  wrong_rate?: number;
   /** `lessons.ts`의 레슨 id. 순서대로 푼다 */
   lessons: string[];
 };

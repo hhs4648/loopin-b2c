@@ -1,0 +1,238 @@
+{
+  "lesson": "moeui-2026-03-33-profound-building",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_blank": {
+      "ask": "빈칸 문제는 빈칸 문장부터 봐요. 그럼 글에서 무엇을 찾아야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
+        "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요."
+      ],
+      "explain": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
+        "o2": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요."
+      },
+      "point": "빈칸 문제는 빈칸 문장부터 — 'A profound building is ____' → 좋은 건물이 어떤 건물인지 찾는다",
+      "from": "18koqvc"
+    },
+    "s1_what": {
+      "ask": "그럼 첫 문장부터 봐요. 건축 구조물은 무엇의 한 형태래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'spatial choreography that guides action'을 봐요. choreography는 '연출'이에요.",
+        "'spatial choreography that guides action'을 봐요. choreography는 '연출'이에요."
+      ],
+      "explain": "'spatial choreography that guides action'을 봐요. choreography는 '연출'이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'spatial choreography'는 공간의 연출, 'that guides action'은 행동을 이끈다는 말이에요. 취향이나 그림 이야기가 아니에요.",
+        "o1": "'spatial choreography'는 공간의 연출, 'that guides action'은 행동을 이끈다는 말이에요. 취향이나 그림 이야기가 아니에요."
+      },
+      "point": "architectural structures = spatial choreography that guides action (행동을 이끄는 공간 연출)",
+      "from": "wwoglt"
+    },
+    "s1_pairs": {
+      "say": "세미콜론(;) 뒤는 짝으로 읽어요. 공간은 행동을 돕기도(+) 하고 막기도(−) 해요.",
+      "from": "1oxnyd6"
+    },
+    "s2_body": {
+      "ask": "공간이 이끄는 것을 두 그룹으로 나눠 봐요. 'movement and behavior(움직임과 행동)'는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "움직임과 행동은 몸으로 하는 거예요.",
+        "움직임과 행동은 몸으로 하는 거예요."
+      ],
+      "explain": "움직임과 행동은 몸으로 하는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "움직임과 행동은 몸으로 하는 거예요."
+      },
+      "point": "movement and behavior(움직임·행동) = 몸 쪽",
+      "from": "j2ltpl"
+    },
+    "s2_mind": {
+      "ask": "'but it also' 뒤의 'emotions and feelings(감정과 느낌)'는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요.",
+        "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요."
+      ],
+      "explain": "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요."
+      },
+      "point": "perceptions, emotions and feelings(지각·감정·느낌) = 마음 쪽",
+      "from": "1yzmo12"
+    },
+    "s2_both": {
+      "say": "공간은 몸의 움직임뿐 아니라 마음의 느낌까지 이끌어요. 이 두 그룹을 기억해 둬요.",
+      "from": "vloo1o"
+    },
+    "s3_designer": {
+      "ask": "좋은 설계자는 누구의 무엇을 알아챈다고 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "intuits 뒤 'human behavior and desire'를 봐요.",
+        "intuits 뒤 'human behavior and desire'를 봐요."
+      ],
+      "explain": "intuits 뒤 'human behavior and desire'를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "intuits 뒤 'human behavior and desire', 인간의 행동과 욕구를 알아챈대요. 설계자 자신의 취향이 아니에요.",
+        "o2": "intuits 뒤 'human behavior and desire', 인간의 행동과 욕구를 알아챈대요. 설계자 자신의 취향이 아니에요."
+      },
+      "point": "좋은 설계자는 자기 취향이 아니라 사용자의 행동과 욕구(human behavior and desire)를 알아챈다",
+      "from": "mchg7r"
+    },
+    "s3_fit": {
+      "say": "그래서 설계자가 짠 대본이 실제 사는 사람의 욕구와 꼭 맞아떨어져요. 설계자의 취향이 아니라 사는 사람이 기준이에요.",
+      "from": "t25o1r"
+    },
+    "s4_behalf": {
+      "ask": "설계자는 누구를 대신해서 상상 속 집을 살아 보나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'on behalf of'는 '~을 대신해서'예요. 그 뒤를 봐요.",
+        "'on behalf of'는 '~을 대신해서'예요. 그 뒤를 봐요."
+      ],
+      "explain": "'on behalf of'는 '~을 대신해서'예요. 그 뒤를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'on behalf of the future dweller', 미래의 거주자를 대신해서래요. 설계자는 사는 사람이 되어 미리 살아 봐요.",
+        "o1": "'on behalf of the future dweller', 미래의 거주자를 대신해서래요. 설계자는 사는 사람이 되어 미리 살아 봐요."
+      },
+      "point": "on behalf of the future dweller = 미래에 살 사람을 대신해서",
+      "from": "881y4n"
+    },
+    "s5_where": {
+      "ask": "창문은 어디에 있어야 '올바르게' 놓인 걸까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요.",
+        "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요."
+      ],
+      "explain": "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요.",
+        "o2": "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요."
+      },
+      "point": "올바른 창문 = 사는 사람이 내다보고 싶은 바로 그곳",
+      "from": "i94z3j"
+    },
+    "s6_same": {
+      "ask": "계단도 같은 원리예요. 계단은 어디에 놓일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요.",
+        "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요."
+      ],
+      "explain": "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요.",
+        "o2": "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요."
+      },
+      "point": "계단도 사는 사람이 오르내리고 싶은 곳 — 창문과 같은 원리",
+      "from": "npnpbp"
+    },
+    "s7_why": {
+      "ask": "성공적인 건축에는 왜 설명서나 표지판이 필요 없을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "여기서 as는 '~이기 때문에'예요. as 뒤를 봐요.",
+        "여기서 as는 '~이기 때문에'예요. as 뒤를 봐요."
+      ],
+      "explain": "여기서 as는 '~이기 때문에'예요. as 뒤를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "as는 여기서 '~이기 때문에'예요. 'it reveals its very structure and use in a wordless manner', 말없이 쓰임새를 드러내서래요.",
+        "o1": "as는 여기서 '~이기 때문에'예요. 'it reveals its very structure and use in a wordless manner', 말없이 쓰임새를 드러내서래요."
+      },
+      "point": "as = ~이기 때문에 · 성공적인 건축은 말없이도 쓰임새를 드러낸다",
+      "from": "cjwfcq"
+    },
+    "s8_side": {
+      "ask": "이 빈칸 문장은 글쓴이 주장과 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "profound(심오한, 훌륭한)는 좋은 말(+)이에요. But이나 not 같은 반전 단서도 없어요.",
+        "profound(심오한, 훌륭한)는 좋은 말(+)이에요. But이나 not 같은 반전 단서도 없어요."
+      ],
+      "explain": "profound(심오한, 훌륭한)는 좋은 말(+)이에요. But이나 not 같은 반전 단서도 없어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "profound(훌륭한)는 좋은 말(+)이고, But이나 not 같은 반전 단서가 없어요. 훌륭한 건물을 설명하니 주장 그대로예요."
+      },
+      "point": "빈칸이 주장과 같은 쪽인지 반대 쪽인지 먼저 — profound(+) 건물을 설명하고 반전 단서가 없으니 주장과 같은 쪽",
+      "from": "1dphlh5"
+    },
+    "s8_gist": {
+      "ask": "지금까지를 한 줄로 모으면, 훌륭한 건물은 어떤 건물일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "공간은 몸과 마음을 함께 이끌고, 설계자는 사는 사람이 기준이었어요.",
+        "공간은 몸과 마음을 함께 이끌고, 설계자는 사는 사람이 기준이었어요."
+      ],
+      "explain": "공간은 몸과 마음을 함께 이끌고, 설계자는 사는 사람이 기준이었어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "공간은 몸(행동)과 마음(느낌)을 함께 이끌고, 좋은 설계자는 자기 취향이 아니라 사는 사람의 행동과 욕구에 맞춰요.",
+        "o1": "공간은 몸(행동)과 마음(느낌)을 함께 이끌고, 좋은 설계자는 자기 취향이 아니라 사는 사람의 행동과 욕구에 맞춰요."
+      },
+      "point": "글 전체 = 좋은 건물은 사는 사람의 몸(행동)과 마음(느낌)에 꼭 맞는다",
+      "from": "p1bk5h"
+    },
+    "s8_go": {
+      "say": "빈칸은 주장과 같은 쪽이니, 이 주장을 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "13h2rf4"
+    }
+  },
+  "exam": {
+    "ask": "훌륭한 건물은 사는 사람의 몸과 마음에 꼭 맞는다는 생각을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 훌륭한 건물은 사는 사람의 행동(몸)과 느낌(마음)에 꼭 맞아서, 그 몸과 마음이 하는 일을 이어서 넓혀 주는 연장이에요.",
+    "final_wrong": "정답은 ③이에요.",
+    "option_feedback": {
+      "1": "시대의 문화를 전하는 이야기는 글에 없어요. 글은 사는 사람의 행동과 느낌에 맞추는 건축 이야기예요.",
+      "2": "비전문가, 즉 사는 사람의 의견과 떨어진다면 사는 사람에게 맞춘다는 글과 반대예요.",
+      "4": "글에 designer가 여러 번 나와서 헷갈렸죠. 하지만 설계자는 자기 취향이 아니라 사는 사람의 행동과 욕구에 맞춰요.",
+      "5": "겉모습이 기능을 가린다면, 말없이도 쓰임새를 드러낸다는 7문장과 반대예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "12j9t4j"
+  },
+  "intro": {
+    "topic": {
+      "say": "좋은 집은 왜 설명서 없이도 쓰기 편할까요? 이번 글은 건축과 사람의 몸과 마음을 다뤄요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "5zkq06"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1wwzgpn"
+}

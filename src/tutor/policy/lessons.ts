@@ -4,6 +4,12 @@ import namesAndDifferences from "../../../content/tutor/policy-lessons/moeui-202
 import namesAndDifferencesDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-30-names-and-differences.json";
 import epistemicCommunities from "../../../content/tutor/policy-lessons/moeui-2026-03-39-epistemic-communities.json";
 import epistemicCommunitiesDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-39-epistemic-communities.json";
+import translationStrangeness from "../../../content/tutor/policy-lessons/moeui-2026-03-24-translation-strangeness.json";
+import translationStrangenessDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-24-translation-strangeness.json";
+import conversationStoppers from "../../../content/tutor/policy-lessons/moeui-2026-03-36-conversation-stoppers.json";
+import conversationStoppersDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-36-conversation-stoppers.json";
+import profoundBuilding from "../../../content/tutor/policy-lessons/moeui-2026-03-33-profound-building.json";
+import profoundBuildingDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-33-profound-building.json";
 import type { PolicyCopy, PolicyLesson } from "./types";
 
 /**
@@ -13,11 +19,11 @@ import type { PolicyCopy, PolicyLesson } from "./types";
  * 다르다. 지문을 추가하면 여기에 레슨 한 줄과 대사 한 줄,
  * `content/tutor/sets.json`에 세트 하나.
  */
-const POLICY_LESSONS = [musicResearchers, namesAndDifferences, epistemicCommunities] as unknown as PolicyLesson[];
+const POLICY_LESSONS = [musicResearchers, namesAndDifferences, epistemicCommunities, translationStrangeness, conversationStoppers, profoundBuilding] as unknown as PolicyLesson[];
 
 /** 캐릭터 → 레슨 → 뽑아 둔 대사. 지금 캐릭터는 다정쌤 하나다 */
 const POLICY_COPY: Record<string, PolicyCopy[]> = {
-  dajung: [musicResearchersDajung, namesAndDifferencesDajung, epistemicCommunitiesDajung] as unknown as PolicyCopy[],
+  dajung: [musicResearchersDajung, namesAndDifferencesDajung, epistemicCommunitiesDajung, translationStrangenessDajung, conversationStoppersDajung, profoundBuildingDajung] as unknown as PolicyCopy[],
 };
 
 export function getPolicyCopy(lessonId: string, character = "dajung"): PolicyCopy | null {

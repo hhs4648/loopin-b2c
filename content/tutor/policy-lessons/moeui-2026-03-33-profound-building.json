@@ -1,0 +1,1203 @@
+{
+  "id": "moeui-2026-03-33-profound-building",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 3월 고3 전국연합학력평가 영어 33번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 주장 잡기 → 빈칸이 주장과 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기 찾기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "좋은 집은 왜 설명서 없이도 쓰기 편할까요? 이번 글은 건축과 사람의 몸과 마음을 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 8,
+    "analysis_first": true,
+    "glosses": [
+      {
+        "en": "instrument",
+        "ko": "도구"
+      },
+      {
+        "en": "pass down",
+        "ko": "물려주다, 전하다"
+      },
+      {
+        "en": "cultural mindsets",
+        "ko": "문화적 사고방식"
+      },
+      {
+        "en": "independent from",
+        "ko": "~와 떨어진"
+      },
+      {
+        "en": "nonprofessional",
+        "ko": "비전문가의"
+      },
+      {
+        "en": "extension",
+        "ko": "연장, 확장"
+      },
+      {
+        "en": "bodily",
+        "ko": "신체의"
+      },
+      {
+        "en": "mental",
+        "ko": "정신의"
+      },
+      {
+        "en": "capabilities",
+        "ko": "능력"
+      },
+      {
+        "en": "aesthetic preference",
+        "ko": "미적 취향"
+      },
+      {
+        "en": "outward appearance",
+        "ko": "겉모습"
+      },
+      {
+        "en": "masks",
+        "ko": "가리다"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "an instrument to pass down cultural mindsets of its time",
+        "keywords": [
+          "pass down",
+          "cultural mindsets"
+        ],
+        "ko": "그 시대의 문화적 사고방식을 전하는 도구"
+      },
+      {
+        "id": "2",
+        "label": "a spatial logic made independent from nonprofessional opinions",
+        "keywords": [
+          "independent from",
+          "nonprofessional opinions"
+        ],
+        "ko": "비전문가의 의견과 떨어져서 만든 공간 논리"
+      },
+      {
+        "id": "3",
+        "label": "an extension of human bodily and mental actions and capabilities",
+        "keywords": [
+          "extension",
+          "bodily and mental"
+        ],
+        "ko": "인간의 신체적·정신적 행동과 능력의 연장",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "an architectural expression of the designer’s aesthetic preference",
+        "keywords": [
+          "designer’s",
+          "aesthetic preference"
+        ],
+        "ko": "설계자의 미적 취향을 건축으로 표현한 것"
+      },
+      {
+        "id": "5",
+        "label": "a structure whose outward appearance masks its function",
+        "keywords": [
+          "outward appearance",
+          "masks its function"
+        ],
+        "ko": "겉모습이 기능을 가리는 구조물"
+      }
+    ],
+    "brief": {
+      "ask": "훌륭한 건물은 사는 사람의 몸과 마음에 꼭 맞는다는 생각을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 훌륭한 건물은 사는 사람의 행동(몸)과 느낌(마음)에 꼭 맞아서, 그 몸과 마음이 하는 일을 이어서 넓혀 주는 연장이에요.",
+      "final_wrong": "정답은 ③이에요.",
+      "option_feedback": {
+        "1": "시대의 문화를 전하는 이야기는 글에 없어요. 글은 사는 사람의 행동과 느낌에 맞추는 건축 이야기예요.",
+        "2": "비전문가, 즉 사는 사람의 의견과 떨어진다면 사는 사람에게 맞춘다는 글과 반대예요.",
+        "4": "글에 designer가 여러 번 나와서 헷갈렸죠. 하지만 설계자는 자기 취향이 아니라 사는 사람의 행동과 욕구에 맞춰요.",
+        "5": "겉모습이 기능을 가린다면, 말없이도 쓰임새를 드러낸다는 7문장과 반대예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "architectural",
+        "ko": "건축의"
+      },
+      {
+        "en": "spatial",
+        "ko": "공간의"
+      },
+      {
+        "en": "facilitate",
+        "ko": "촉진하다"
+      },
+      {
+        "en": "prohibit",
+        "ko": "금지하다"
+      },
+      {
+        "en": "inhibit",
+        "ko": "억제하다"
+      },
+      {
+        "en": "predetermine",
+        "ko": "미리 결정하다"
+      },
+      {
+        "en": "perception",
+        "ko": "지각, 인식"
+      },
+      {
+        "en": "empathic",
+        "ko": "공감할 수 있는"
+      },
+      {
+        "en": "occupant",
+        "ko": "입주자"
+      },
+      {
+        "en": "instinctual",
+        "ko": "본능적인"
+      },
+      {
+        "en": "on behalf of",
+        "ko": "~을 대신해서"
+      },
+      {
+        "en": "dweller",
+        "ko": "거주자"
+      },
+      {
+        "en": "reveal",
+        "ko": "드러내다"
+      },
+      {
+        "en": "profound",
+        "ko": "심오한"
+      }
+    ],
+    "options": [
+      {
+        "en": "extension",
+        "ko": "연장, 확장"
+      },
+      {
+        "en": "bodily",
+        "ko": "신체의"
+      },
+      {
+        "en": "aesthetic",
+        "ko": "미적인"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "All architectural structures are forms of spatial choreography that guides action; space facilitates or prohibits, encourages or prevents, invites or inhibits.",
+      "model_translation": "모든 건축 구조물은 행동을 유도하는 공간적 연출의 형태인데, 공간은 촉진하거나 금지하고, 권장하거나 막고, 초대하거나 억제한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "architectural structures",
+          "ko": "건축 구조물"
+        },
+        {
+          "en": "forms of",
+          "ko": "~의 형태"
+        },
+        {
+          "en": "spatial",
+          "ko": "공간의"
+        },
+        {
+          "en": "choreography",
+          "ko": "연출"
+        },
+        {
+          "en": "guides action",
+          "ko": "행동을 이끌다"
+        },
+        {
+          "en": "space",
+          "ko": "공간"
+        },
+        {
+          "en": "facilitates",
+          "ko": "촉진하다, 쉽게 하다"
+        },
+        {
+          "en": "prohibits",
+          "ko": "금지하다"
+        },
+        {
+          "en": "encourages",
+          "ko": "권장하다"
+        },
+        {
+          "en": "prevents",
+          "ko": "막다"
+        },
+        {
+          "en": "invites",
+          "ko": "초대하다"
+        },
+        {
+          "en": "inhibits",
+          "ko": "억제하다"
+        },
+        {
+          "en": "A profound building",
+          "ko": "심오한(훌륭한) 건물"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_blank",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸 문제는 빈칸 문장부터 봐요. 그럼 글에서 무엇을 찾아야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
+              "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요."
+            ],
+            "explain": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
+              "o2": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요."
+            },
+            "point": "빈칸 문제는 빈칸 문장부터 — 'A profound building is ____' → 좋은 건물이 어떤 건물인지 찾는다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "건축의 역사"
+            },
+            {
+              "id": "o1",
+              "label": "훌륭한 건물이 어떤 건물인지",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "설계자의 이름"
+            }
+          ],
+          "method": 0,
+          "display": "A profound building is ________.",
+          "tag": "빈칸 문장",
+          "flip": {},
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸 문장을 먼저 읽고 무엇을 찾을지 정해요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요. 빈칸 앞뒤의 단서(But, However, not, 좋은 말·나쁜 말)로 어느 쪽인지 먼저 파악해요."
+            }
+          ]
+        },
+        {
+          "id": "s1_what",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 첫 문장부터 봐요. 건축 구조물은 무엇의 한 형태래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'spatial choreography that guides action'을 봐요. choreography는 '연출'이에요.",
+              "'spatial choreography that guides action'을 봐요. choreography는 '연출'이에요."
+            ],
+            "explain": "'spatial choreography that guides action'을 봐요. choreography는 '연출'이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'spatial choreography'는 공간의 연출, 'that guides action'은 행동을 이끈다는 말이에요. 취향이나 그림 이야기가 아니에요.",
+              "o1": "'spatial choreography'는 공간의 연출, 'that guides action'은 행동을 이끈다는 말이에요. 취향이나 그림 이야기가 아니에요."
+            },
+            "point": "architectural structures = spatial choreography that guides action (행동을 이끄는 공간 연출)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "설계자의 개인 취향"
+            },
+            {
+              "id": "o1",
+              "label": "아름다운 그림"
+            },
+            {
+              "id": "o2",
+              "label": "행동을 이끄는 공간 연출",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "spatial choreography that guides action"
+          ]
+        },
+        {
+          "id": "s1_pairs",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "세미콜론(;) 뒤는 짝으로 읽어요. 공간은 행동을 돕기도(+) 하고 막기도(−) 해요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "signs": [
+            {
+              "text": "facilitates",
+              "sign": "+"
+            },
+            {
+              "text": "prohibits",
+              "sign": "−"
+            },
+            {
+              "text": "encourages",
+              "sign": "+"
+            },
+            {
+              "text": "prevents",
+              "sign": "−"
+            },
+            {
+              "text": "invites",
+              "sign": "+"
+            },
+            {
+              "text": "inhibits",
+              "sign": "−"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "This choreography predetermines patterns of movement and behavior, but it also guides experiential characteristics, perceptions, imageries, emotions and feelings.",
+      "model_translation": "이러한 연출은 움직임과 행동 양식을 미리 결정하지만, 그것은 또한 경험적 특성, 지각, 심상, 감정과 느낌을 유도한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "This choreography",
+          "ko": "이 연출"
+        },
+        {
+          "en": "predetermines",
+          "ko": "미리 결정하다"
+        },
+        {
+          "en": "patterns of movement and behavior",
+          "ko": "움직임과 행동 양식"
+        },
+        {
+          "en": "but it also",
+          "ko": "그러나 그것은 또한"
+        },
+        {
+          "en": "guides",
+          "ko": "이끌다"
+        },
+        {
+          "en": "experiential characteristics",
+          "ko": "경험적 특성"
+        },
+        {
+          "en": "perceptions",
+          "ko": "지각, 인식"
+        },
+        {
+          "en": "imageries",
+          "ko": "심상, 이미지"
+        },
+        {
+          "en": "emotions and feelings",
+          "ko": "감정과 느낌"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_body",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "공간이 이끄는 것을 두 그룹으로 나눠 봐요. 'movement and behavior(움직임과 행동)'는 어느 그룹일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "움직임과 행동은 몸으로 하는 거예요.",
+              "움직임과 행동은 몸으로 하는 거예요."
+            ],
+            "explain": "움직임과 행동은 몸으로 하는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "움직임과 행동은 몸으로 하는 거예요."
+            },
+            "point": "movement and behavior(움직임·행동) = 몸 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 몸 (행동)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 마음 (느낌)"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "공간이 이끄는 것",
+            "between": "+",
+            "left": {
+              "label": "몸 · 움직임과 행동",
+              "words": []
+            },
+            "right": {
+              "label": "마음 · 지각과 느낌",
+              "words": []
+            },
+            "sort": {
+              "words": [
+                "movement and behavior"
+              ],
+              "left": "왼쪽 · 몸 (행동)",
+              "right": "오른쪽 · 마음 (느낌)"
+            }
+          },
+          "highlight": [
+            "patterns of movement and behavior"
+          ]
+        },
+        {
+          "id": "s2_mind",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'but it also' 뒤의 'emotions and feelings(감정과 느낌)'는 어느 그룹일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요.",
+              "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요."
+            ],
+            "explain": "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요."
+            },
+            "point": "perceptions, emotions and feelings(지각·감정·느낌) = 마음 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 몸 (행동)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 마음 (느낌)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "공간이 이끄는 것",
+            "between": "+",
+            "left": {
+              "label": "몸 · 움직임과 행동",
+              "words": [
+                {
+                  "text": "movement and behavior",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 · 지각과 느낌",
+              "words": []
+            },
+            "sort": {
+              "words": [
+                "emotions and feelings"
+              ],
+              "left": "왼쪽 · 몸 (행동)",
+              "right": "오른쪽 · 마음 (느낌)"
+            }
+          },
+          "highlight": [
+            "experiential characteristics, perceptions, imageries, emotions and feelings"
+          ]
+        },
+        {
+          "id": "s2_both",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "공간은 몸의 움직임뿐 아니라 마음의 느낌까지 이끌어요. 이 두 그룹을 기억해 둬요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "공간이 이끄는 것",
+            "between": "+",
+            "left": {
+              "label": "몸 · 움직임과 행동",
+              "words": [
+                {
+                  "text": "movement and behavior",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 · 지각과 느낌",
+              "words": [
+                {
+                  "text": "emotions and feelings",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "공간 = 몸과 마음을 함께 이끈다"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "A sensitive and empathic designer intuits human behavior and desire, and this intuitive architectural scripting resonates with the actual user/occupant’s natural and instinctual needs and intentions.",
+      "model_translation": "세심하고 공감할 수 있는 설계자는 인간의 행동과 욕망을 직관으로 알며, 이러한 직관적인 건축적 대본 쓰기는 실제 사용자 또는 입주자의 자연스럽고 본능적인 욕구 및 의도와 공명한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "A sensitive and empathic designer",
+          "ko": "세심하고 공감할 줄 아는 설계자"
+        },
+        {
+          "en": "intuits",
+          "ko": "직관으로 알다"
+        },
+        {
+          "en": "human behavior and desire",
+          "ko": "인간의 행동과 욕구"
+        },
+        {
+          "en": "intuitive",
+          "ko": "직관적인"
+        },
+        {
+          "en": "architectural scripting",
+          "ko": "건축적 대본 쓰기"
+        },
+        {
+          "en": "resonates with",
+          "ko": "~와 공명하다, 꼭 맞아떨어지다"
+        },
+        {
+          "en": "user/occupant’s",
+          "ko": "사용자·입주자의"
+        },
+        {
+          "en": "natural and instinctual",
+          "ko": "자연스럽고 본능적인"
+        },
+        {
+          "en": "needs and intentions",
+          "ko": "욕구와 의도"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_designer",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "좋은 설계자는 누구의 무엇을 알아챈다고 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "intuits 뒤 'human behavior and desire'를 봐요.",
+              "intuits 뒤 'human behavior and desire'를 봐요."
+            ],
+            "explain": "intuits 뒤 'human behavior and desire'를 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "intuits 뒤 'human behavior and desire', 인간의 행동과 욕구를 알아챈대요. 설계자 자신의 취향이 아니에요.",
+              "o2": "intuits 뒤 'human behavior and desire', 인간의 행동과 욕구를 알아챈대요. 설계자 자신의 취향이 아니에요."
+            },
+            "point": "좋은 설계자는 자기 취향이 아니라 사용자의 행동과 욕구(human behavior and desire)를 알아챈다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "자기 자신의 취향"
+            },
+            {
+              "id": "o1",
+              "label": "사람들의 행동과 욕구",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "다른 건축가들의 유행"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "intuits human behavior and desire"
+          ]
+        },
+        {
+          "id": "s3_fit",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그래서 설계자가 짠 대본이 실제 사는 사람의 욕구와 꼭 맞아떨어져요. 설계자의 취향이 아니라 사는 사람이 기준이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "resonates with the actual user/occupant’s natural and instinctual needs and intentions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "While designing a house, the designer lives, uses and feels the non-existent house in his imagination on behalf of the future dweller.",
+      "model_translation": "주택을 설계하는 동안, 설계자는 자신의 상상 속에서 미래 거주자를 대신하여 존재하지 않는 집을 경험하고, 사용하고, 느낀다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "While designing a house",
+          "ko": "집을 설계하는 동안"
+        },
+        {
+          "en": "the designer",
+          "ko": "설계자"
+        },
+        {
+          "en": "lives, uses and feels",
+          "ko": "살아 보고, 써 보고, 느껴 보다"
+        },
+        {
+          "en": "non-existent",
+          "ko": "존재하지 않는"
+        },
+        {
+          "en": "in his imagination",
+          "ko": "상상 속에서"
+        },
+        {
+          "en": "on behalf of",
+          "ko": "~을 대신해서"
+        },
+        {
+          "en": "the future dweller",
+          "ko": "미래의 거주자"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_behalf",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "설계자는 누구를 대신해서 상상 속 집을 살아 보나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'on behalf of'는 '~을 대신해서'예요. 그 뒤를 봐요.",
+              "'on behalf of'는 '~을 대신해서'예요. 그 뒤를 봐요."
+            ],
+            "explain": "'on behalf of'는 '~을 대신해서'예요. 그 뒤를 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'on behalf of the future dweller', 미래의 거주자를 대신해서래요. 설계자는 사는 사람이 되어 미리 살아 봐요.",
+              "o1": "'on behalf of the future dweller', 미래의 거주자를 대신해서래요. 설계자는 사는 사람이 되어 미리 살아 봐요."
+            },
+            "point": "on behalf of the future dweller = 미래에 살 사람을 대신해서"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "자기 가족"
+            },
+            {
+              "id": "o1",
+              "label": "다른 설계자"
+            },
+            {
+              "id": "o2",
+              "label": "미래에 그 집에 살 사람",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "on behalf of the future dweller"
+          ],
+          "faded": [
+            "While designing a house,"
+          ],
+          "tips": [
+            {
+              "label": "on behalf of",
+              "mark": "on behalf of",
+              "text": "'~을 대신해서, ~을 위해'예요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "A correctly placed window is located exactly where the occupant wishes to look out into the garden, or where daylight is needed.",
+      "model_translation": "올바르게 배치된 창문은 입주자가 정원을 내다보고 싶어 하는, 또는 햇빛이 필요한 바로 그곳에 설치된다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "A correctly placed window",
+          "ko": "올바르게 놓인 창문"
+        },
+        {
+          "en": "is located",
+          "ko": "놓여 있다"
+        },
+        {
+          "en": "exactly where",
+          "ko": "바로 ~하는 곳에"
+        },
+        {
+          "en": "the occupant",
+          "ko": "입주자, 사는 사람"
+        },
+        {
+          "en": "wishes to",
+          "ko": "~하고 싶어 하다"
+        },
+        {
+          "en": "look out into the garden",
+          "ko": "정원을 내다보다"
+        },
+        {
+          "en": "daylight",
+          "ko": "햇빛"
+        },
+        {
+          "en": "is needed",
+          "ko": "필요하다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_where",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "창문은 어디에 있어야 '올바르게' 놓인 걸까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요.",
+              "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요."
+            ],
+            "explain": "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요.",
+              "o2": "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요."
+            },
+            "point": "올바른 창문 = 사는 사람이 내다보고 싶은 바로 그곳"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사는 사람이 정원을 내다보고 싶은 곳",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "설계자가 보기에 예쁜 곳"
+            },
+            {
+              "id": "o2",
+              "label": "공사비가 가장 싼 곳"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "exactly where the occupant wishes to look out into the garden"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "The stairway is located where the dweller wishes to enter the floor above or below.",
+      "model_translation": "계단은 거주자가 위층이나 아래층으로 들어가고 싶어 하는 곳에 설치된다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "The stairway",
+          "ko": "계단"
+        },
+        {
+          "en": "is located",
+          "ko": "놓여 있다"
+        },
+        {
+          "en": "the dweller",
+          "ko": "거주자, 사는 사람"
+        },
+        {
+          "en": "wishes to",
+          "ko": "~하고 싶어 하다"
+        },
+        {
+          "en": "enter the floor above or below",
+          "ko": "위층이나 아래층으로 가다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_same",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "계단도 같은 원리예요. 계단은 어디에 놓일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요.",
+              "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요."
+            ],
+            "explain": "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요.",
+              "o2": "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요."
+            },
+            "point": "계단도 사는 사람이 오르내리고 싶은 곳 — 창문과 같은 원리"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "건물 한가운데 아무 곳"
+            },
+            {
+              "id": "o1",
+              "label": "사는 사람이 오르내리고 싶은 곳",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "설계 규칙에 정해진 곳"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "where the dweller wishes to enter the floor above or below"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Successful architecture does not need manuals or signage for its use, as it reveals its very structure and use in a wordless manner.",
+      "model_translation": "성공적인 건축에는 그것의 사용을 위한 설명서나 표지판이 필요하지 않은데, 성공적인 건축은 무언의 방식으로 바로 그 구조와 용도를 드러내기 때문이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Successful architecture",
+          "ko": "성공적인 건축"
+        },
+        {
+          "en": "does not need",
+          "ko": "필요하지 않다"
+        },
+        {
+          "en": "manuals or signage",
+          "ko": "설명서나 표지판"
+        },
+        {
+          "en": "as",
+          "ko": "~이기 때문에"
+        },
+        {
+          "en": "reveals",
+          "ko": "드러내다"
+        },
+        {
+          "en": "its very structure and use",
+          "ko": "바로 그 구조와 쓰임새"
+        },
+        {
+          "en": "in a wordless manner",
+          "ko": "말없이"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_why",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "성공적인 건축에는 왜 설명서나 표지판이 필요 없을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "여기서 as는 '~이기 때문에'예요. as 뒤를 봐요.",
+              "여기서 as는 '~이기 때문에'예요. as 뒤를 봐요."
+            ],
+            "explain": "여기서 as는 '~이기 때문에'예요. as 뒤를 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "as는 여기서 '~이기 때문에'예요. 'it reveals its very structure and use in a wordless manner', 말없이 쓰임새를 드러내서래요.",
+              "o1": "as는 여기서 '~이기 때문에'예요. 'it reveals its very structure and use in a wordless manner', 말없이 쓰임새를 드러내서래요."
+            },
+            "point": "as = ~이기 때문에 · 성공적인 건축은 말없이도 쓰임새를 드러낸다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사람들이 설명서를 안 읽어서"
+            },
+            {
+              "id": "o1",
+              "label": "건물이 아주 단순해서"
+            },
+            {
+              "id": "o2",
+              "label": "말없이도 쓰임새를 드러내서",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "as it reveals its very structure and use in a wordless manner"
+          ],
+          "tips": [
+            {
+              "label": "as",
+              "mark": "as",
+              "text": "as는 '~처럼, ~할 때, ~이기 때문에' 등 뜻이 많아요. 콤마 뒤에서 이유를 덧붙이면 '~이기 때문에'예요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "A profound building is ________.",
+      "model_translation": "심오한 건물은 ________이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "A profound building",
+          "ko": "심오한(훌륭한) 건물"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 빈칸 문장은 글쓴이 주장과 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "profound(심오한, 훌륭한)는 좋은 말(+)이에요. But이나 not 같은 반전 단서도 없어요.",
+              "profound(심오한, 훌륭한)는 좋은 말(+)이에요. But이나 not 같은 반전 단서도 없어요."
+            ],
+            "explain": "profound(심오한, 훌륭한)는 좋은 말(+)이에요. But이나 not 같은 반전 단서도 없어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "profound(훌륭한)는 좋은 말(+)이고, But이나 not 같은 반전 단서가 없어요. 훌륭한 건물을 설명하니 주장 그대로예요."
+            },
+            "point": "빈칸이 주장과 같은 쪽인지 반대 쪽인지 먼저 — profound(+) 건물을 설명하고 반전 단서가 없으니 주장과 같은 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 (주장 그대로)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 (반대 의견)"
+            }
+          ],
+          "method": 1,
+          "signs": [
+            {
+              "text": "A profound building",
+              "sign": "+"
+            }
+          ],
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장에 But, However, not 같은 반전 단서가 있거나 나쁜 말(−)을 설명하면 반대 의견이 들어가요. 좋은 말(+)을 그대로 설명하면 주장과 같은 말이 들어가요."
+            }
+          ]
+        },
+        {
+          "id": "s8_gist",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "지금까지를 한 줄로 모으면, 훌륭한 건물은 어떤 건물일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "공간은 몸과 마음을 함께 이끌고, 설계자는 사는 사람이 기준이었어요.",
+              "공간은 몸과 마음을 함께 이끌고, 설계자는 사는 사람이 기준이었어요."
+            ],
+            "explain": "공간은 몸과 마음을 함께 이끌고, 설계자는 사는 사람이 기준이었어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "공간은 몸(행동)과 마음(느낌)을 함께 이끌고, 좋은 설계자는 자기 취향이 아니라 사는 사람의 행동과 욕구에 맞춰요.",
+              "o1": "공간은 몸(행동)과 마음(느낌)을 함께 이끌고, 좋은 설계자는 자기 취향이 아니라 사는 사람의 행동과 욕구에 맞춰요."
+            },
+            "point": "글 전체 = 좋은 건물은 사는 사람의 몸(행동)과 마음(느낌)에 꼭 맞는다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "설계자의 취향을 잘 보여 주는 건물"
+            },
+            {
+              "id": "o1",
+              "label": "그 시대의 문화를 전하는 건물"
+            },
+            {
+              "id": "o2",
+              "label": "사는 사람의 몸과 마음의 움직임에 꼭 맞는 건물",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "공간이 이끄는 것",
+            "between": "+",
+            "left": {
+              "label": "몸 · 움직임과 행동",
+              "words": [
+                {
+                  "text": "movement and behavior",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 · 지각과 느낌",
+              "words": [
+                {
+                  "text": "emotions and feelings",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "훌륭한 건물 = 사는 사람의 몸과 마음에 꼭 맞는다"
+          }
+        },
+        {
+          "id": "s8_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 주장과 같은 쪽이니, 이 주장을 다른 말로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "groups",
+            "title": "공간이 이끄는 것",
+            "between": "+",
+            "left": {
+              "label": "몸 · 움직임과 행동",
+              "words": [
+                {
+                  "text": "movement and behavior",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 · 지각과 느낌",
+              "words": [
+                {
+                  "text": "emotions and feelings",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "훌륭한 건물 = 사는 사람의 몸과 마음에 꼭 맞는다"
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

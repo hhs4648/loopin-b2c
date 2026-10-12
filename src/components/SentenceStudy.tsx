@@ -85,6 +85,10 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   // 💡 Tip을 연 동안 문장에서 표시할 단어 (Tip의 `mark`)
   const [tipMark, setTipMark] = useState<string | null>(null);
   const peeked = peek ? view.examSentences?.[peek] : undefined;
+  // 앞 문장을 보는 스텝에서 › 를 눌러 지금 문장을 보는 중
+  const [flipped, setFlipped] = useState(false);
+  useEffect(() => setFlipped(false), [view.sentence]);
+  const alt = flipped && view.flip ? view.flip : null;
   useEffect(() => setPeek(null), [view.sentence, view.progressLabel]);
   /*
     칠판이 크면 긴 문장은 칸 안에서 스크롤된다. 노랗게 칠한 구절이 칸 밖에 숨지 않게
@@ -189,16 +193,26 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         ref={sentenceBox}
         style={lead == null ? undefined : ({ "--lead": `${lead}px` } as React.CSSProperties)}
       >
-        {view.sentenceTag && !peeked ? <span className="sentence-no">{view.sentenceTag}</span> : null}
+        {view.flip && !peeked ? (
+          // 앞 문장을 보는 스텝 — ‹ › 로 앞 문장과 지금 문장을 오간다
+          <div className="sentence-flip">
+            <button type="button" className="flip-arrow" disabled={!flipped} aria-label="앞 문장" onClick={() => setFlipped(false)}>‹</button>
+            <span className="sentence-no">{flipped ? view.flip.tag : view.sentenceTag}</span>
+            <button type="button" className="flip-arrow" disabled={flipped} aria-label="다음 문장" onClick={() => setFlipped(true)}>›</button>
+          </div>
+        ) : view.sentenceTag && !peeked ? (
+          <span className="sentence-no">{view.sentenceTag}</span>
+        ) : null}
         <GlossSentence
-          sentence={peeked?.sentence ?? view.sentence}
+          sentence={peeked?.sentence ?? (alt ? alt.text : view.sentence)}
           nouns={view.properNouns}
           glosses={peeked?.glosses ?? view.glosses}
-          highlight={peeked ? [] : (view.highlight ?? [])}
+          highlight={peeked || alt ? (alt?.highlight ?? []) : (view.highlight ?? [])}
           underline={peeked ? [peeked.underline] : (view.underline ?? [])}
-          highlightAlt={peeked ? [] : (view.highlightAlt ?? [])}
-          tipMark={peeked ? null : tipMark}
-          pick={peeked ? null : (view.pick ?? null)}
+          highlightAlt={peeked || alt ? [] : (view.highlightAlt ?? [])}
+          tipMark={peeked || alt ? null : tipMark}
+          pick={peeked || alt ? null : (view.pick ?? null)}
+          signs={peeked || alt ? [] : (view.signs ?? [])}
           onPickWord={(w) => !typing && onSend(`${PICK_CMD}${w}`)}
           emphasis={view.emphasis ?? []}
           faded={view.faded ?? []}
@@ -335,6 +349,7 @@ function GlossSentence({
   highlightAlt,
   tipMark,
   pick,
+  signs,
   onPickWord,
   emphasis,
   faded,
@@ -350,6 +365,7 @@ function GlossSentence({
   tipMark: string | null;
   /** 「찾기」 스텝 — 후보 구절을 누르면 고른다 (뜻 대신) */
   pick: TutorView["pick"];
+  signs: NonNullable<TutorView["signs"]>;
   onPickWord: (word: string) => void;
   emphasis: string[];
   faded: string[];
@@ -415,10 +431,14 @@ function GlossSentence({
     */
     const marks = `${hit(fadedAt) ? " faded" : ""}${hit(shadedAt) ? " shaded" : ""}${hit(markedUl) ? " ul" : ""}`;
     if (!span.gloss) {
-      if (tip) parts.push(<mark key={i} className={`hl-tip${marks}`}>{span.text}</mark>);
-      else if (hl || hl2) parts.push(<mark key={i} className={`${hl ? "hl" : "hl2"}${marks}`}>{span.text}</mark>);
-      else if (marks) parts.push(<span key={i} className={marks.trim()}>{span.text}</span>);
-      else parts.push(span.text);
+      // 덩어리 나누기 슬래시(/)는 굵고 진하게 — 문장 구조가 한눈에 보이게
+      const text: ReactNode = span.text.includes("/")
+        ? span.text.split(/(\/)/).map((t, k) => (t === "/" ? <b key={k} className="slash">/</b> : t))
+        : span.text;
+      if (tip) parts.push(<mark key={i} className={`hl-tip${marks}`}>{text}</mark>);
+      else if (hl || hl2) parts.push(<mark key={i} className={`${hl ? "hl" : "hl2"}${marks}`}>{text}</mark>);
+      else if (marks) parts.push(<span key={i} className={marks.trim()}>{text}</span>);
+      else parts.push(<span key={i}>{text}</span>);
       return;
     }
     // 「찾기」 후보 — 점선 상자로, 누르면 고른다
@@ -426,19 +446,15 @@ function GlossSentence({
     if (cand && pick) {
       const state = pick.found.includes(cand.c) ? " found" : pick.missed.includes(cand.c) ? " missed" : "";
       parts.push(
-        <span key={i} className={`english-token${marks}`}>
+        <span key={i} className={`english-token${longPhrase(span.text) ? " long" : ""}${marks}`}>
           {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
-          <button
-            type="button"
-            className={`english-word cand${state}`}
+          <Tap
+            className={`english-word cand${pick.shade ? " shade" : ""}${state}`}
             disabled={!pick.open || !!state}
-            onClick={(e) => {
-              e.stopPropagation();
-              onPickWord(cand.c);
-            }}
+            onTap={() => onPickWord(cand.c)}
           >
             {span.text}
-          </button>
+          </Tap>
           {CLOSING.test(spans[i + 1]?.text ?? "") ? spans[i + 1]!.text : null}
         </span>,
       );
@@ -448,25 +464,25 @@ function GlossSentence({
       (n) => n.en === span.gloss!.en || n.en.replace(/\.$/, "") === span.text.replace(/\.$/, ""),
     );
     const selected = open === i;
+    const sign = signs.find((x) => x.text === span.text.replace(/[.,;:!?]+$/, ""))?.sign;
     parts.push(
       <span
         key={i}
-        className={`english-token${selected ? " open" : ""}${hl ? " hl" : ""}${hl2 ? " hl2" : ""}${tip ? " hl-tip" : ""}${marks}`}
+        {...(sign ? { "data-sign": sign } : {})}
+        className={`english-token${longPhrase(span.text) ? " long" : ""}${sign ? (sign === "+" ? " sign-plus" : " sign-minus") : ""}${selected ? " open" : ""}${hl ? " hl" : ""}${hl2 ? " hl2" : ""}${tip ? " hl-tip" : ""}${marks}`}
       >
         {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
-        <button
-          type="button"
+        <Tap
           className={`english-word${noun ? " noun-mark" : ""}${emphasis.includes(span.text.replace(/[.,;:]$/, "")) ? " em" : ""}`}
-          aria-expanded={selected}
-          aria-label={`${span.text}, ${span.gloss.ko}`}
-          onClick={(e) => {
-            e.stopPropagation();
+          expanded={selected}
+          label={`${span.text}, ${span.gloss.ko}`}
+          onTap={() => {
             if (!selected) onLookup(span.text);
             setOpen(selected ? null : i);
           }}
         >
           {span.text}
-        </button>
+        </Tap>
         {/*
           단어는 inline-block이라 뒤의 쉼표가 혼자 다음 줄 머리로 떨어질 수 있다.
           바로 뒤 문장부호는 같은 칸에 넣어 단어와 같이 다니게 한다.
@@ -784,12 +800,12 @@ function TranslationCard({ result }: { result: TranslationResult }) {
     <div className="study-panel translation-card">
       {mine ? (
         <div className="tr-row">
-          <span className="tr-label">내 해석</span>
+          <span className="tr-label">{result.labels?.mine ?? "내 해석"}</span>
           <p className="tr-mine">{mineParts}</p>
         </div>
       ) : null}
       <div className="tr-row">
-        <span className="tr-label fix">{mine && result.fixes.length ? "고친 해석" : "해석"}</span>
+        <span className="tr-label fix">{result.labels?.model ?? (mine && result.fixes.length ? "고친 해석" : "해석")}</span>
         <p className="tr-model">{modelParts}</p>
       </div>
       {result.notes.length ? (
@@ -801,5 +817,53 @@ function TranslationCard({ result }: { result: TranslationResult }) {
       ) : null}
       {result.save ? <p className="tr-saved">★ 연습할 문장으로 내 노트에 저장했어요</p> : null}
     </div>
+  );
+}
+
+/** 네 단어 넘는 구절 — 한 덩어리 상자로 그리면 줄 끝에서 통째로 접혀서, 글처럼 줄을 바꾸게 둔다 */
+function longPhrase(text: string): boolean {
+  return text.trim().split(/\s+/).length >= 4;
+}
+
+/**
+ * 문장 속 단어 칸. <button>은 한 덩어리(inline-block)로만 그려져 긴 구절이 줄을 못 바꾼다 —
+ * 글자처럼 흐르는 span에 버튼 역할(키보드 Enter·Space)을 준다
+ */
+function Tap({
+  className,
+  disabled,
+  expanded,
+  label,
+  onTap,
+  children,
+}: {
+  className: string;
+  disabled?: boolean;
+  expanded?: boolean;
+  label?: string;
+  onTap: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <span
+      role="button"
+      tabIndex={disabled ? -1 : 0}
+      aria-disabled={disabled || undefined}
+      aria-expanded={expanded}
+      aria-label={label}
+      className={className}
+      onClick={(e) => {
+        e.stopPropagation();
+        if (!disabled) onTap();
+      }}
+      onKeyDown={(e) => {
+        if (disabled || (e.key !== "Enter" && e.key !== " ")) return;
+        e.preventDefault();
+        e.stopPropagation();
+        onTap();
+      }}
+    >
+      {children}
+    </span>
   );
 }
