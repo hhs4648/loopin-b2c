@@ -1,0 +1,1151 @@
+{
+  "id": "moeui-2026-03-38-gesture-glue",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 3월 고3 전국연합학력평가 영어 38번 (주어진 문장 넣기, 3점)",
+  "brief": {
+    "topic": "문장 넣기 푸는 법: 주어진 문장의 단서 → 앞 내용 예측 → 흐름이 끊기는 곳",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "sentence_insertion",
+    "labels": [
+      "주어진 문장 단서 찾기",
+      "앞에 올 내용 예측하기",
+      "흐름 끊기는 곳 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "method": {
+      "src": "/assets/insert-method.svg",
+      "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "말할 때 손짓은 왜 저절로 나올까요? 이번 글은 언어와 제스처가 함께 생각을 표현하는 방식을 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "문장 넣기는 주어진 문장의 단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾아요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? [3점]",
+    "underline": [
+      "(①)",
+      "(②)",
+      "(③)",
+      "(④)",
+      "(⑤)"
+    ],
+    "numbers_only": true,
+    "sentence": 1,
+    "analysis_first": true,
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "For example … 앞",
+        "keywords": [],
+        "ko": "언어·제스처가 결합한다 뒤"
+      },
+      {
+        "id": "2",
+        "label": "This kind of choice … 앞",
+        "keywords": [],
+        "ko": "완료/진행을 골라야 한다는 예시 뒤"
+      },
+      {
+        "id": "3",
+        "label": "Instead, it offers … 앞",
+        "keywords": [],
+        "ko": "이런 선택은 언어의 특징 뒤",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "In this view … 앞",
+        "keywords": [],
+        "ko": "대신 접착제를 제공한다 뒤"
+      },
+      {
+        "id": "5",
+        "label": "Rather, the minimal … 앞",
+        "keywords": [],
+        "ko": "말과 제스처는 중복도 번역도 아니다 뒤"
+      }
+    ],
+    "brief": {
+      "ask": "주어진 문장의 단서(such choices, gesture)를 떠올리며 들어갈 곳을 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! '이런 선택은 언어의 특징이다' 뒤에 '제스처는 그런 선택을 주지 않는다'가 오고, 이어서 'Instead, it(제스처)은 접착제를 준다'로 이어져요.",
+      "final_wrong": "정답은 ③이에요.",
+      "option_feedback": {
+        "1": "이 자리 앞에는 아직 '선택' 이야기가 없어요. such choices가 받을 말이 없어요.",
+        "2": "이 자리 앞은 선택의 예시까지예요. 바로 뒤 'This kind of choice'가 그 예시를 받아야 해서 끊기면 안 돼요.",
+        "4": "많이 고른 오답이에요. 여기 넣으면 'Instead, it'의 it이 그 앞 문장의 language가 돼서 말이 안 돼요.",
+        "5": "이 자리 앞은 이미 말과 제스처의 관계를 정리하는 중이에요. 선택 이야기로 돌아갈 자리가 아니에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "gesture",
+        "ko": "제스처, 몸짓"
+      },
+      {
+        "en": "in that",
+        "ko": "~라는 점에서"
+      },
+      {
+        "en": "demonstrate",
+        "ko": "입증하다"
+      },
+      {
+        "en": "systematically",
+        "ko": "체계적으로"
+      },
+      {
+        "en": "integrated",
+        "ko": "결합된"
+      },
+      {
+        "en": "conceptualize",
+        "ko": "개념화하다"
+      },
+      {
+        "en": "formulate",
+        "ko": "명확하게 말하다"
+      },
+      {
+        "en": "categorical",
+        "ko": "범주적인"
+      },
+      {
+        "en": "ongoing",
+        "ko": "진행 중인"
+      },
+      {
+        "en": "characteristic",
+        "ko": "특징적인, 특징"
+      },
+      {
+        "en": "unite",
+        "ko": "결합하다"
+      },
+      {
+        "en": "redundant",
+        "ko": "중복되는"
+      },
+      {
+        "en": "minimal",
+        "ko": "최소의"
+      },
+      {
+        "en": "combination",
+        "ko": "결합"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 문장",
+      "text": "According to McNeil and Duncan, gesture is different from language in that it does not present the speaker with such choices.",
+      "model_translation": "McNeil과 Duncan에 따르면, 제스처는 화자에게 그러한 선택을 제시하지 않는다는 점에서 언어와 다르다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "According to McNeil and Duncan",
+          "ko": "McNeil과 Duncan에 따르면"
+        },
+        {
+          "en": "gesture",
+          "ko": "제스처, 몸짓"
+        },
+        {
+          "en": "is different from language",
+          "ko": "언어와 다르다"
+        },
+        {
+          "en": "in that",
+          "ko": "~라는 점에서"
+        },
+        {
+          "en": "does not present",
+          "ko": "제시하지 않다"
+        },
+        {
+          "en": "the speaker",
+          "ko": "말하는 사람, 화자"
+        },
+        {
+          "en": "such choices",
+          "ko": "그러한 선택들"
+        }
+      ],
+      "steps": [
+        {
+          "id": "g_clue",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "According to McNeil and Duncan",
+            "is different from language",
+            "the speaker",
+            "such choices"
+          ],
+          "answers": [
+            "such choices"
+          ],
+          "brief": {
+            "ask": "주어진 문장에서 앞 문장과 이어지는 단서를 찾아볼까요?",
+            "wrong": "그건 이 문장 안에서 뜻이 끝나는 말이에요. 앞에서 말한 걸 다시 가리키는 말을 찾아봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "'such choices(그러한 선택들)'예요. such는 앞에서 말한 걸 가리키니, 앞에 '선택' 이야기가 있어야 해요.",
+            "point": "주어진 문장의 단서 = such choices (그러한 선택들) → 앞에 '선택' 이야기가 있어야"
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "in that",
+              "mark": "in that",
+              "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."
+            }
+          ]
+        },
+        {
+          "id": "g_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 주어진 문장 앞에는 어떤 내용이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "such choices는 앞에 나온 '선택'을 받아요. 제스처는 그런 선택을 주지 않는대요.",
+              "such choices는 앞에 나온 '선택'을 받아요. 제스처는 그런 선택을 주지 않는대요."
+            ],
+            "explain": "such choices는 앞에 나온 '선택'을 받아요. 제스처는 그런 선택을 주지 않는대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "such choices는 앞에서 말한 선택이에요. 제스처는 선택을 주지 않는다고 했으니, 앞에는 선택을 주는 쪽 이야기가 와야 해요.",
+              "o2": "such choices는 앞에서 말한 선택이에요. 제스처는 선택을 주지 않는다고 했으니, 앞에는 선택을 주는 쪽 이야기가 와야 해요."
+            },
+            "point": "주어진 문장 앞 = 언어가 화자에게 선택을 하게 한다는 내용"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "제스처가 접착제 역할을 한다는 내용"
+            },
+            {
+              "id": "o1",
+              "label": "언어가 화자에게 선택을 하게 한다는 내용",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "말과 제스처가 중복된다는 내용"
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "g_after",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 문장 바로 뒤에는 무엇이 오면 자연스러울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠.",
+              "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠."
+            ],
+            "explain": "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠.",
+              "o1": "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠."
+            },
+            "point": "주어진 문장 뒤 = 제스처가 선택 대신 하는 일 (Instead, it offers …)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "또 다른 언어의 선택 예시"
+            },
+            {
+              "id": "o1",
+              "label": "McNeil이 누구인지 소개"
+            },
+            {
+              "id": "o2",
+              "label": "제스처가 선택 대신 하는 일",
+              "correct": true
+            }
+          ],
+          "method": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Scholars have demonstrated that the gestures hearing people produce while they are speaking are systematically made at the same time with speech such that language and gesture must be considered “co-expressive”.",
+      "model_translation": "학자들은 들을 수 있는 사람이 말하는 동안 보여 주는 제스처가, 언어와 제스처를 반드시 '공동 표현적'이라고 간주해야 할 만큼, 말과 동시에 체계적으로 만들어진다는 것을 입증해 왔다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Scholars",
+          "ko": "학자들"
+        },
+        {
+          "en": "have demonstrated",
+          "ko": "입증해 왔다"
+        },
+        {
+          "en": "the gestures",
+          "ko": "제스처들"
+        },
+        {
+          "en": "hearing people",
+          "ko": "들을 수 있는 사람들, 청인"
+        },
+        {
+          "en": "produce",
+          "ko": "만들어 내다"
+        },
+        {
+          "en": "while they are speaking",
+          "ko": "말하는 동안"
+        },
+        {
+          "en": "systematically",
+          "ko": "체계적으로"
+        },
+        {
+          "en": "at the same time with speech",
+          "ko": "말과 동시에"
+        },
+        {
+          "en": "such that",
+          "ko": "~할 만큼"
+        },
+        {
+          "en": "co-expressive",
+          "ko": "함께 표현하는"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_what",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "학자들이 입증한 건 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'at the same time with speech'를 봐요.",
+              "'at the same time with speech'를 봐요."
+            ],
+            "explain": "'at the same time with speech'를 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'systematically made at the same time with speech', 말과 동시에 체계적으로 만들어진대요. 그래서 둘이 함께 표현한대요(co-expressive).",
+              "o1": "'systematically made at the same time with speech', 말과 동시에 체계적으로 만들어진대요. 그래서 둘이 함께 표현한대요(co-expressive)."
+            },
+            "point": "제스처는 말과 동시에 체계적으로 만들어진다 → co-expressive(함께 표현하는)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "제스처는 말과 상관없이 나온다"
+            },
+            {
+              "id": "o1",
+              "label": "제스처는 말보다 먼저 나온다"
+            },
+            {
+              "id": "o2",
+              "label": "제스처는 말과 동시에 만들어진다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "at the same time with speech"
+          ],
+          "tips": [
+            {
+              "label": "hearing people",
+              "mark": "hearing people",
+              "text": "여기서 hearing은 '듣는 중인'이 아니라 '들을 수 있는'이에요. hearing people은 청각 장애가 없는 사람, 청인이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "This tightly integrated pairing of language and gesture enables speakers to conceptualize and formulate their thoughts in terms of both the “categorical” requirements of language, and the “imagistic” possibilities of gesture.",
+      "model_translation": "이러한 언어와 제스처의 단단히 결합된 한 쌍은 화자가 언어의 '범주적' 요구와 제스처의 '심상적' 가능성 두 관점 모두에서 자기 생각을 개념화하고 명확하게 말할 수 있게 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "This tightly integrated pairing",
+          "ko": "이렇게 단단히 결합된 한 쌍"
+        },
+        {
+          "en": "enables",
+          "ko": "~할 수 있게 하다"
+        },
+        {
+          "en": "conceptualize",
+          "ko": "개념화하다"
+        },
+        {
+          "en": "formulate",
+          "ko": "명확하게 말하다"
+        },
+        {
+          "en": "in terms of",
+          "ko": "~의 관점에서"
+        },
+        {
+          "en": "categorical",
+          "ko": "범주적인 · 딱 나눠 정하는"
+        },
+        {
+          "en": "requirements",
+          "ko": "요구"
+        },
+        {
+          "en": "imagistic",
+          "ko": "심상적인 · 그림 같은"
+        },
+        {
+          "en": "possibilities",
+          "ko": "가능성"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_cat",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "언어와 제스처를 두 그룹으로 나눠 봐요. 'categorical(범주적)'은 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'the categorical requirements of language'예요. of 뒤를 봐요.",
+              "'the categorical requirements of language'예요. of 뒤를 봐요."
+            ],
+            "explain": "'the categorical requirements of language'예요. of 뒤를 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'the categorical requirements of language'예요. of 뒤를 봐요."
+            },
+            "point": "categorical(범주적) = 언어 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 언어",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 제스처"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어와 제스처",
+            "between": "+",
+            "left": {
+              "label": "언어 (language)",
+              "words": []
+            },
+            "right": {
+              "label": "제스처 (gesture)",
+              "words": []
+            },
+            "sort": {
+              "words": [
+                "categorical"
+              ],
+              "left": "왼쪽 · 언어",
+              "right": "오른쪽 · 제스처"
+            }
+          },
+          "highlight": [
+            "“categorical” requirements of language"
+          ]
+        },
+        {
+          "id": "s2_img",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 'imagistic(심상적, 그림 같은)'은 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'the imagistic possibilities of gesture'예요. of 뒤를 봐요.",
+              "'the imagistic possibilities of gesture'예요. of 뒤를 봐요."
+            ],
+            "explain": "'the imagistic possibilities of gesture'예요. of 뒤를 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'the imagistic possibilities of gesture'예요. of 뒤를 봐요."
+            },
+            "point": "imagistic(심상적, 그림 같은) = 제스처 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 언어"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 제스처",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어와 제스처",
+            "between": "+",
+            "left": {
+              "label": "언어 (language)",
+              "words": [
+                {
+                  "text": "categorical",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "제스처 (gesture)",
+              "words": []
+            },
+            "sort": {
+              "words": [
+                "imagistic"
+              ],
+              "left": "왼쪽 · 언어",
+              "right": "오른쪽 · 제스처"
+            }
+          },
+          "highlight": [
+            "“imagistic” possibilities of gesture"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "(①) For example, in describing an event, one must decide if the event has been completed or is ongoing if the language being spoken at that moment has a verbal affix for each meaning and one or the other must be chosen.",
+      "model_translation": "예를 들어, 어떤 사건을 묘사할 때, 만약 그 순간에 말해지고 있는 언어가 각 의미에 대한 동사에 붙는 접사를 가지고 있고 둘 중 하나를 반드시 선택해야 한다면, 화자는 그 사건이 완료되었는지 또는 진행 중인지를 반드시 결정해야 한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "For example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "in describing an event",
+          "ko": "어떤 사건을 묘사할 때"
+        },
+        {
+          "en": "one must decide",
+          "ko": "화자는 정해야 한다"
+        },
+        {
+          "en": "has been completed",
+          "ko": "끝났다, 완료되었다"
+        },
+        {
+          "en": "ongoing",
+          "ko": "진행 중인"
+        },
+        {
+          "en": "verbal affix",
+          "ko": "동사에 붙는 접사"
+        },
+        {
+          "en": "for each meaning",
+          "ko": "각 의미마다"
+        },
+        {
+          "en": "one or the other",
+          "ko": "둘 중 하나"
+        },
+        {
+          "en": "must be chosen",
+          "ko": "골라야 한다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_choice",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 예시에서 언어는 화자에게 무엇을 하게 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'one must decide if the event has been completed or is ongoing'을 봐요.",
+              "'one must decide if the event has been completed or is ongoing'을 봐요."
+            ],
+            "explain": "'one must decide if the event has been completed or is ongoing'을 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'one must decide if the event has been completed or is ongoing'을 봐요.",
+              "o2": "'one must decide if the event has been completed or is ongoing'을 봐요."
+            },
+            "point": "언어는 화자에게 완료인지 진행인지 고르게 한다 (must decide)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사건을 그림으로 그리게 한다"
+            },
+            {
+              "id": "o1",
+              "label": "완료인지 진행인지 꼭 고르게 한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "아무것도 고르지 않게 한다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "one must decide if the event has been completed or is ongoing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "(②) This kind of choice is characteristic of language as a semiotic system.",
+      "model_translation": "이러한 종류의 선택은 기호 체계로서 언어의 특징이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "This kind of choice",
+          "ko": "이런 종류의 선택"
+        },
+        {
+          "en": "is characteristic of",
+          "ko": "~의 특징이다"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        },
+        {
+          "en": "as a semiotic system",
+          "ko": "기호 체계로서"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'choice(선택)'는 언어와 제스처 중 어느 쪽의 특징이래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'This kind of choice is characteristic of language'예요.",
+              "'This kind of choice is characteristic of language'예요."
+            ],
+            "explain": "'This kind of choice is characteristic of language'예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'This kind of choice is characteristic of language'예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 언어",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 제스처"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어와 제스처",
+            "between": "+",
+            "left": {
+              "label": "언어 (language)",
+              "words": [
+                {
+                  "text": "categorical"
+                }
+              ]
+            },
+            "right": {
+              "label": "제스처 (gesture)",
+              "words": [
+                {
+                  "text": "imagistic"
+                }
+              ]
+            },
+            "sort": {
+              "words": [
+                "choice"
+              ],
+              "left": "왼쪽 · 언어",
+              "right": "오른쪽 · 제스처"
+            }
+          },
+          "highlight": [
+            "This kind of choice is characteristic of language"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "(③) Instead, it offers a kind of glue, which helps unite linguistic elements in a larger semiotic expression, which, as a whole, shares important characteristics with the represented objects.",
+      "model_translation": "대신에, 그것은 일종의 접착제를 제공하는데, 그것은 언어적 요소들을 더 큰 기호 표현 안에서 결합하도록 돕고, 그것은, 전체로서, 표현된 대상과 중요한 특징을 공유한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Instead",
+          "ko": "대신에"
+        },
+        {
+          "en": "it offers",
+          "ko": "그것은 제공한다"
+        },
+        {
+          "en": "a kind of glue",
+          "ko": "일종의 접착제"
+        },
+        {
+          "en": "unite",
+          "ko": "결합하다, 묶다"
+        },
+        {
+          "en": "linguistic elements",
+          "ko": "언어적 요소"
+        },
+        {
+          "en": "larger",
+          "ko": "더 큰"
+        },
+        {
+          "en": "expression",
+          "ko": "표현"
+        },
+        {
+          "en": "as a whole",
+          "ko": "전체로서"
+        },
+        {
+          "en": "shares",
+          "ko": "공유하다"
+        },
+        {
+          "en": "important characteristics",
+          "ko": "중요한 특징"
+        },
+        {
+          "en": "the represented objects",
+          "ko": "표현된 대상"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_it",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'Instead, it offers a kind of glue'의 it은 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "언어 요소들(linguistic elements)을 묶어 주는 접착제예요. 언어가 자기를 묶을 리는 없어요.",
+              "언어 요소들(linguistic elements)을 묶어 주는 접착제예요. 언어가 자기를 묶을 리는 없어요."
+            ],
+            "explain": "언어 요소들(linguistic elements)을 묶어 주는 접착제예요. 언어가 자기를 묶을 리는 없어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "접착제(glue)처럼 언어 요소들을 묶어 주는 건 언어 바깥의 것이에요. Instead(대신에)는 선택을 주지 않는 쪽이 대신 하는 일이에요.",
+              "o2": "접착제(glue)처럼 언어 요소들을 묶어 주는 건 언어 바깥의 것이에요. Instead(대신에)는 선택을 주지 않는 쪽이 대신 하는 일이에요."
+            },
+            "point": "Instead, it offers glue의 it = 제스처 (언어 요소를 묶어 주는 접착제)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "언어 (language)"
+            },
+            {
+              "id": "o1",
+              "label": "제스처 (gesture)",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "선택 (choice)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Instead, it offers a kind of glue"
+          ]
+        },
+        {
+          "id": "s5_need",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 'Instead, it(제스처)'이 나오려면 바로 앞에 무엇이 있어야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. Instead는 앞과 반대되는 걸 대신 말할 때 써요.",
+              "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. Instead는 앞과 반대되는 걸 대신 말할 때 써요."
+            ],
+            "explain": "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. Instead는 앞과 반대되는 걸 대신 말할 때 써요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. 그리고 Instead(대신에)니까, 앞에는 제스처가 '하지 않는' 일이 있어야 해요.",
+              "o1": "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. 그리고 Instead(대신에)니까, 앞에는 제스처가 '하지 않는' 일이 있어야 해요."
+            },
+            "point": "Instead, it(제스처)이 나오려면 바로 앞에 제스처 이야기가 있어야 한다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "언어의 선택 이야기"
+            },
+            {
+              "id": "o1",
+              "label": "접착제 이야기"
+            },
+            {
+              "id": "o2",
+              "label": "제스처는 선택을 주지 않는다는 이야기",
+              "correct": true
+            }
+          ],
+          "method": 2,
+          "highlight": [
+            "Instead, it"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "언어와 제스처",
+            "between": "+",
+            "left": {
+              "label": "언어 (language)",
+              "words": [
+                {
+                  "text": "categorical"
+                },
+                {
+                  "text": "choice"
+                }
+              ]
+            },
+            "right": {
+              "label": "제스처 (gesture)",
+              "words": [
+                {
+                  "text": "imagistic"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "s5_glue",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "제스처는 선택을 주는 대신, 언어 요소들을 묶어 주는 접착제 역할을 해요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "언어와 제스처",
+            "between": "+",
+            "left": {
+              "label": "언어 (language)",
+              "words": [
+                {
+                  "text": "categorical"
+                },
+                {
+                  "text": "choice"
+                }
+              ]
+            },
+            "right": {
+              "label": "제스처 (gesture)",
+              "words": [
+                {
+                  "text": "imagistic"
+                },
+                {
+                  "text": "glue",
+                  "fresh": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "(④) In this view, speech and gesture are not redundant nor is one a “translation” of the other.",
+      "model_translation": "이러한 관점에서, 말과 제스처는 중복되는 것이 아니며 어느 하나가 다른 하나의 '번역'도 아니다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "In this view",
+          "ko": "이런 관점에서"
+        },
+        {
+          "en": "speech and gesture",
+          "ko": "말과 제스처"
+        },
+        {
+          "en": "redundant",
+          "ko": "중복되는, 불필요한"
+        },
+        {
+          "en": "nor is one",
+          "ko": "어느 하나가 ~도 아니다"
+        },
+        {
+          "en": "a “translation”",
+          "ko": "'번역'"
+        },
+        {
+          "en": "of the other",
+          "ko": "다른 하나의"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_rel",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 관점에서 말과 제스처는 어떤 관계래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요.",
+              "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요."
+            ],
+            "explain": "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요.",
+              "o2": "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요."
+            },
+            "point": "speech and gesture are not redundant nor … a translation = 말과 제스처는 중복도 번역도 아니다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "서로 중복되지 않고 각자 다른 일을 한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "같은 말을 두 번 한다"
+            },
+            {
+              "id": "o2",
+              "label": "하나가 다른 하나의 번역이다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "speech and gesture are not redundant nor is one a “translation” of the other"
+          ],
+          "tips": [
+            {
+              "label": "not A nor B",
+              "mark": "nor",
+              "text": "'A도 아니고 B도 아니다'예요. nor 뒤에서는 주어와 동사 순서가 바뀌어요(nor is one …)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "(⑤) Rather, the minimal processing unit for the expression of thought is a combination of the two: it is “imagistic-categorial” in nature.",
+      "model_translation": "오히려, 사고 표현을 위한 최소 처리 단위는 이 둘의 결합이며, 그것은 본질적으로 '심상적-범주적'이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Rather",
+          "ko": "오히려"
+        },
+        {
+          "en": "the minimal processing unit",
+          "ko": "최소 처리 단위"
+        },
+        {
+          "en": "for the expression of thought",
+          "ko": "생각을 표현하기 위한"
+        },
+        {
+          "en": "a combination of the two",
+          "ko": "둘의 결합"
+        },
+        {
+          "en": "imagistic-categorial",
+          "ko": "심상적-범주적"
+        },
+        {
+          "en": "in nature",
+          "ko": "본질적으로"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_unit",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "생각을 표현하는 최소 단위는 무엇이래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'a combination of the two'를 봐요. the two는 말과 제스처예요.",
+              "'a combination of the two'를 봐요. the two는 말과 제스처예요."
+            ],
+            "explain": "'a combination of the two'를 봐요. the two는 말과 제스처예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'a combination of the two'를 봐요. the two는 말과 제스처예요.",
+              "o1": "'a combination of the two'를 봐요. the two는 말과 제스처예요."
+            },
+            "point": "생각을 표현하는 최소 단위 = 말과 제스처의 결합 (imagistic-categorial)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "말 하나"
+            },
+            {
+              "id": "o1",
+              "label": "제스처 하나"
+            },
+            {
+              "id": "o2",
+              "label": "말과 제스처의 결합",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "a combination of the two"
+          ]
+        },
+        {
+          "id": "s7_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "언어는 고르게 하고(categorical), 제스처는 묶어 줘요(imagistic). 이제 주어진 문장이 들어갈 곳을 골라 봐요."
+          },
+          "method": 2,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "groups",
+            "title": "언어와 제스처",
+            "between": "+",
+            "left": {
+              "label": "언어 (language)",
+              "words": [
+                {
+                  "text": "categorical"
+                },
+                {
+                  "text": "choice"
+                }
+              ]
+            },
+            "right": {
+              "label": "제스처 (gesture)",
+              "words": [
+                {
+                  "text": "imagistic"
+                },
+                {
+                  "text": "glue"
+                }
+              ]
+            },
+            "caption": "생각 = 언어 + 제스처 (imagistic-categorial)"
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

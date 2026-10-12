@@ -434,6 +434,8 @@ export type ExamQuestion = {
    */
   /** 밑줄 친 구절 — 제목·주제 문제처럼 밑줄이 없으면 비운다 */
   underline?: string | string[];
+  /** 보기 글이 「… 앞」처럼 자리 표시뿐이면(문장 넣기) 보기를 숫자 ①~⑤만 가로로 보인다 */
+  numbers_only?: boolean;
   /** 문제 화면에 띄울 문장 id (기본: 첫 밑줄이 든 문장) */
   sentence?: number;
   /** EBS가 공개하는 오답률(%). 인트로에서 말한다 */

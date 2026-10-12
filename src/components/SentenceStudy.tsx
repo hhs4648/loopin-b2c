@@ -5,9 +5,10 @@ import { InputBar } from "./InputBar";
 import type { TranslationResult, TutorView } from "../tutor/view";
 import { addNote } from "../tutor/notes";
 import type { WordGloss } from "../../content/tutor/types";
-import { glossSpans, glossesFor } from "../tutor/glosses";
+import { glossSpans, glossesFor, splitPhraseGlosses } from "../tutor/glosses";
 import { nounKind } from "../tutor/proper-nouns";
 import { isSaved, loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab";
+import { lessonIdOfSentence } from "../tutor/vocabTest";
 import type { UiObservation } from "../tutor/policy/types";
 import { StudyPanelView } from "./StudyPanel";
 import { PassageFull } from "./PassageFull";
@@ -318,6 +319,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             glosses={view.examGlosses ?? []}
             peekable={view.examSentences ?? null}
             explain={view.examExplain ?? null}
+            numbersOnly={!!view.examNumbersOnly}
             peek={peek}
             onPeek={(id) => setPeek(peek === id ? null : id)}
             disabled={typing}
@@ -376,7 +378,8 @@ function GlossSentence({
   const [vocab, setVocab] = useState<VocabEntry[]>(() => loadVocab());
   const tipRef = useRef<HTMLSpanElement>(null);
   const [shift, setShift] = useState(0);
-  const spans = glossSpans(sentence, glossesFor(glosses, nouns));
+  // 구절 뜻은 단어마다 나눠 보인다 — 지금 통째로 고르는 후보 구절만 그대로
+  const spans = glossSpans(sentence, glossesFor(splitPhraseGlosses(glosses, pick?.candidates ?? []), nouns));
   const marked = highlightRanges(sentence, highlight);
   const markedAlt = highlightRanges(sentence, highlightAlt);
   const markedUl = highlightRanges(sentence, underline);
@@ -503,7 +506,7 @@ function GlossSentence({
               aria-label={isSaved(vocab, span.gloss.en) ? "단어장에서 빼기" : "단어장에 저장"}
               onClick={(e) => {
                 e.stopPropagation();
-                setVocab(toggleVocab(vocab, { en: span.gloss!.en, ko: span.gloss!.ko, sentence }));
+                setVocab(toggleVocab(vocab, { en: span.gloss!.en, ko: span.gloss!.ko, sentence, source: lessonIdOfSentence(sentence) }));
               }}
             >
               <StarIcon filled={isSaved(vocab, span.gloss.en)} />
@@ -580,6 +583,7 @@ function ExamOptions({
   peek,
   onPeek,
   explain,
+  numbersOnly,
   disabled,
   onPick,
 }: {
@@ -591,6 +595,8 @@ function ExamOptions({
   onPeek: (id: string) => void;
   /** 해설만 보는 화면 — 보기를 누르면 해설이 열린다 */
   explain: TutorView["examExplain"];
+  /** 보기 글 없이 숫자만 가로로 (문장 넣기) */
+  numbersOnly: boolean;
   disabled: boolean;
   onPick: (label: string) => void;
 }) {
@@ -603,6 +609,38 @@ function ExamOptions({
   };
   const [word, setWord] = useState<{ id: string; gloss: WordGloss } | null>(null);
   const NUM = "①②③④⑤";
+  if (numbersOnly) {
+    // 문장 넣기 — 「… 앞」 같은 자리 표시는 빼고 숫자만 가로로. 해설은 줄 아래에
+    return (
+      <div className="exam-numbers-wrap">
+        <div className="exam-numbers">
+          {options.map((o) => (
+            <div
+              key={o.id}
+              role="button"
+              tabIndex={0}
+              aria-disabled={disabled}
+              aria-label={`${NUM[Number(o.id) - 1] ?? o.id} ${o.label}`}
+              className={`exam-num-btn${explain?.[o.id]?.correct ? " is-answer" : ""}${opened.includes(o.id) ? " on" : ""}`}
+              onClick={() => pick(o)}
+              onKeyDown={(e) => e.key === "Enter" && pick(o)}
+            >
+              {NUM[Number(o.id) - 1] ?? o.id}
+            </div>
+          ))}
+        </div>
+        {explain
+          ? options
+              .filter((o) => opened.includes(o.id))
+              .map((o) => (
+                <div key={o.id} className={`exam-explain${explain[o.id]?.correct ? " right" : ""}`}>
+                  <b>{NUM[Number(o.id) - 1]} {explain[o.id]?.correct ? "정답" : "오답"}</b> {explain[o.id]?.text}
+                </div>
+              ))
+          : null}
+      </div>
+    );
+  }
   return (
     <ol className="exam-options">
       {options.map((o) => {

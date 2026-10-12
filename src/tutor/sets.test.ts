@@ -65,10 +65,10 @@ describe("수업 세트", () => {
   });
 
 
-  it("목록은 2026년 3월 모의고사 — 21번, 30번, 39번, 24번, 36번, 33번 (2026-10-05에 새로 시작)", () => {
+  it("목록은 2026년 3월 모의고사 — 21번, 30번, 39번, 24번, 36번, 33번, 38번 (2026-10-05에 새로 시작)", () => {
     expect(allGroups().map((g) => g.id)).toEqual(["moeui"]);
     expect(allCollections().map((c) => c.id)).toEqual(["moeui-2026-03"]);
-    expect(setsIn("moeui-2026-03").map((s) => s.id)).toEqual(["moeui-2026-03-21", "moeui-2026-03-30", "moeui-2026-03-39", "moeui-2026-03-24", "moeui-2026-03-36", "moeui-2026-03-33"]);
+    expect(setsIn("moeui-2026-03").map((s) => s.id)).toEqual(["moeui-2026-03-21", "moeui-2026-03-30", "moeui-2026-03-39", "moeui-2026-03-24", "moeui-2026-03-36", "moeui-2026-03-33", "moeui-2026-03-38"]);
     expect(getCollection("moeui-2026-03")?.title).toBe("2026년 3월 모의고사");
   });
 });

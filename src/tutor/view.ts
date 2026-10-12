@@ -115,6 +115,8 @@ export type TutorView = {
   methodSteps?: { labels: string[]; active: number | null } | null;
   /** 시험 보기 — 핵심 단어 색칠, ▸ 한국어 */
   examOptions?: { id: string; label: string; keywords: string[]; ko: string }[] | null;
+  /** 시험 보기를 숫자만 가로로 (문장 넣기) */
+  examNumbersOnly?: boolean;
   examGlosses?: WordGloss[];
   /** 해설만 보는 마지막 화면 — 보기 id마다 정답 여부와 해설. 보기를 누르면 고르는 게 아니라 해설이 열린다 */
   examExplain?: Record<string, { correct: boolean; text: string }> | null;
@@ -169,6 +171,8 @@ export type TutorView = {
     auto?: boolean;
     /** 지문 아래에 붙이는 시험 보기 */
     options?: string[] | null;
+    /** 보기를 숫자만 가로로 (문장 넣기) */
+    numbersOnly?: boolean;
     /** 바로 풀기 중 — 보기를 누르면 그 보기를 답으로 고른다 */
     pickable?: boolean;
     /** 바로 풀기에서 고른 오답 보기 id ("1"~"5") — 줄이 그어진다 */

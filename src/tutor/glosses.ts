@@ -1,5 +1,6 @@
 import type { ProperNoun, WordGloss } from "../../content/tutor/types";
 import { nounKind } from "./proper-nouns";
+import wordBook from "../../content/tutor/word-glosses.json";
 
 export type GlossSpan = {
   text: string;
@@ -74,4 +75,39 @@ export function glossesFor(chunkGlosses: WordGloss[] | undefined, nouns: ProperN
     .filter((n) => !listed.some((g) => g.en.toLowerCase() === n.en.toLowerCase()))
     .map((n) => ({ en: n.en, ko: `${nounKind(n.type)} · 그대로` }));
   return [...listed, ...extra];
+}
+
+const WORDS = (wordBook as { words: Record<string, string> }).words;
+
+/**
+ * 구절 뜻(「lift the veil」 = 장막을 걷어 내다)을 단어마다 나눈다 — 학생은 단어를 따로 외운다.
+ * 단어 뜻은 레슨에 그 단어 뜻이 있으면 그것, 없으면 공용 단어 사전(`word-glosses.json`).
+ * 뜻 옆에 「· lift the veil = 장막을 걷어 내다」처럼 구절 뜻을 붙인다. 뜻을 모르는 단어(the, of, 이름)는 그냥 글자.
+ * `keep`에 든 구절(지금 통째로 고르는 후보)은 나누지 않는다.
+ */
+export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): WordGloss[] {
+  const keepSet = new Set(keep.map((k) => k.toLowerCase()));
+  const singles = new Map<string, WordGloss>();
+  for (const g of glosses) if (!/\s/.test(g.en.trim())) singles.set(g.en.toLowerCase(), g);
+  const out: WordGloss[] = [];
+  const added = new Set<string>();
+  for (const g of glosses) {
+    const words = g.en.trim().split(/\s+/);
+    if (words.length < 2 || keepSet.has(g.en.toLowerCase())) {
+      out.push(g);
+      continue;
+    }
+    const phraseKo = g.ko.split(" · ")[0];
+    for (const raw of words) {
+      const w = raw.replace(/^[“"‘'(]+|[”"’'),.;:!?]+$/g, "");
+      const key = w.toLowerCase();
+      if (!w || added.has(key)) continue;
+      const own = singles.get(key)?.ko ?? WORDS[key];
+      if (!own) continue;
+      added.add(key);
+      // 레슨에 이미 그 단어 뜻이 있으면 그대로 두고(따로 들어가 있다), 사전 뜻이면 구절 뜻을 붙여 넣는다
+      if (!singles.has(key)) out.push({ ...g, en: w, ko: `${own.split(" · ")[0]} · ${g.en} = ${phraseKo}` });
+    }
+  }
+  return out;
 }

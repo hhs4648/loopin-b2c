@@ -100,7 +100,7 @@ export const CHECK_CMD = "__check:";
 export const MATCH_DONE_CMD = "__match_done";
 export const PREV_SENTENCE_CMD = "__prev_sentence";
 export const NEXT_SENTENCE_CMD = "__next_sentence";
-const MODE_TRY_BTN = policyFrame.buttons.mode_try;
+export const MODE_TRY_BTN = policyFrame.buttons.mode_try;
 const MODE_ANALYZE_BTN = policyFrame.buttons.mode_analyze;
 const ANALYZE_START_BTN = policyFrame.buttons.analyze_start;
 const SOLVE_BTN = policyFrame.buttons.solve;
@@ -1230,7 +1230,7 @@ export function createPolicySession(
       문장의 첫 질문에서, 아직 답하기 전에만. 누르면 곁길로 답하고 「이어서 할게요」로 돌아온다
     */
     const helpButtons =
-      inLesson && s.pi === 0 && st.type === "choice" && !s.resolved && !s.aside
+      inLesson && s.pi === 0 && st.type === "choice" && !s.resolved && !s.aside && !s.readingFirst && !s.praiseOnly
         ? (sen.helps ?? []).map((h) => h.label)
         : [];
     // 한 줄에 못 들어가는 보기가 있으면 세로로 쌓는다
@@ -1277,6 +1277,7 @@ export function createPolicySession(
             underline: lesson.exam ? underlinesOf(lesson.exam) : [],
             auto: !lesson.passage_on_try,
             options: lesson.passage_on_try ? (lesson.exam?.options.map((o) => o.label) ?? null) : null,
+            numbersOnly: !!lesson.exam?.numbers_only,
             pickable: s.stage === "exam_first" && !s.firstAnswer,
             picked: s.stage === "exam_first" && s.firstAnswer && !s.firstAnswer.correct ? s.firstAnswer.optionId : null,
             right: s.stage === "exam_first" && s.firstAnswer?.correct ? s.firstAnswer.optionId : null,
@@ -1322,6 +1323,7 @@ export function createPolicySession(
         lesson.method && (inLesson || s.stage === "exam_final")
           ? { labels: lesson.method.labels, active: exam ? lesson.method.labels.length - 1 : (st.method ?? null) }
           : null,
+      examNumbersOnly: !!lesson.exam?.numbers_only,
       examOptions:
         exam && lesson.exam?.analysis_first && !(s.stage === "exam_first" && s.firstAnswer) && !s.examSolved && !s.examReview
           ? lesson.exam.options

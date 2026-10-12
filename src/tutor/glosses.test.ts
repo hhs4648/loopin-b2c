@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { glossSpans, lookupGloss } from "./glosses";
+import { glossSpans, lookupGloss, splitPhraseGlosses } from "./glosses";
 
 describe("glossSpans", () => {
   it("긴 구가 짧은 단어보다 먼저 맞는다", () => {
@@ -30,5 +30,29 @@ describe("lookupGloss", () => {
 
   it("구 안의 단어로도 찾는다", () => {
     expect(lookupGloss("past", glosses)?.ko).toBe("지난 4년");
+  });
+});
+
+describe("구절 뜻을 단어마다 나누기", () => {
+  const glosses = [
+    { en: "lift the veil", ko: "장막을 걷어 내다 · 숨겨진 것을 드러내다" },
+    { en: "completely transparent", ko: "완전히 투명한" },
+    { en: "practices", ko: "관행, 하는 방식" },
+  ];
+
+  it("구절 안의 단어마다 따로 뜻을 달고, 구절 뜻은 뒤에 붙인다 (the 같은 말은 그냥 글자)", () => {
+    const out = splitPhraseGlosses(glosses);
+    expect(out.find((g) => g.en === "lift")?.ko).toBe("들어 올리다 · lift the veil = 장막을 걷어 내다");
+    expect(out.find((g) => g.en === "veil")?.ko).toContain("장막");
+    expect(out.find((g) => g.en === "transparent")?.ko).toBe("투명한 · completely transparent = 완전히 투명한");
+    expect(out.some((g) => g.en === "the")).toBe(false);
+    const spans = glossSpans("do not lift the veil behind", out).filter((s) => s.gloss).map((s) => s.text);
+    expect(spans).toEqual(["lift", "veil"]);
+  });
+
+  it("지금 통째로 고르는 후보 구절은 나누지 않는다", () => {
+    const out = splitPhraseGlosses(glosses, ["lift the veil"]);
+    expect(out.some((g) => g.en === "lift the veil")).toBe(true);
+    expect(out.some((g) => g.en === "lift")).toBe(false);
   });
 });

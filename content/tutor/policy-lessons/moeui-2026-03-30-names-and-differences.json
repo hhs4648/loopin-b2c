@@ -1696,10 +1696,7 @@
               "left": "왼쪽 · 이름 붙이기",
               "right": "오른쪽 · 하나하나 다름"
             }
-          },
-          "faded": [
-            "—making a daisy chain, sunbathing, and the like"
-          ]
+          }
         },
         {
           "id": "s8_map",
@@ -2105,13 +2102,6 @@
       "emphasis": [
         "infinite mind",
         "need not be"
-      ],
-      "helps": [
-        {
-          "id": "s10_subject",
-          "label": "주어 찾기 헷갈려요",
-          "brief": "'to'처럼 전치사로 시작하는 덩어리는 보통 주어가 아니에요. 'with'로 시작하는 두 덩어리도 마찬가지예요. 그걸 빼면 주어는 'each blade of grass(각각의 풀잎)'예요."
-        }
       ],
       "steps": [
         {

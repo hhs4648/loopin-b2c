@@ -1,0 +1,238 @@
+{
+  "lesson": "moeui-2026-03-38-gesture-glue",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "문장 넣기 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_clue": {
+      "ask": "주어진 문장에서 앞 문장과 이어지는 단서를 찾아볼까요?",
+      "wrong": "그건 이 문장 안에서 뜻이 끝나는 말이에요. 앞에서 말한 걸 다시 가리키는 말을 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "'such choices(그러한 선택들)'예요. such는 앞에서 말한 걸 가리키니, 앞에 '선택' 이야기가 있어야 해요.",
+      "point": "주어진 문장의 단서 = such choices (그러한 선택들) → 앞에 '선택' 이야기가 있어야",
+      "from": "mzvkag"
+    },
+    "g_before": {
+      "ask": "그럼 주어진 문장 앞에는 어떤 내용이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "such choices는 앞에 나온 '선택'을 받아요. 제스처는 그런 선택을 주지 않는대요.",
+        "such choices는 앞에 나온 '선택'을 받아요. 제스처는 그런 선택을 주지 않는대요."
+      ],
+      "explain": "such choices는 앞에 나온 '선택'을 받아요. 제스처는 그런 선택을 주지 않는대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "such choices는 앞에서 말한 선택이에요. 제스처는 선택을 주지 않는다고 했으니, 앞에는 선택을 주는 쪽 이야기가 와야 해요.",
+        "o2": "such choices는 앞에서 말한 선택이에요. 제스처는 선택을 주지 않는다고 했으니, 앞에는 선택을 주는 쪽 이야기가 와야 해요."
+      },
+      "point": "주어진 문장 앞 = 언어가 화자에게 선택을 하게 한다는 내용",
+      "from": "150nwch"
+    },
+    "g_after": {
+      "ask": "주어진 문장 바로 뒤에는 무엇이 오면 자연스러울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠.",
+        "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠."
+      ],
+      "explain": "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠.",
+        "o1": "제스처는 선택을 주지 않는대요. 그럼 대신 무엇을 하는지가 궁금해지죠."
+      },
+      "point": "주어진 문장 뒤 = 제스처가 선택 대신 하는 일 (Instead, it offers …)",
+      "from": "clq1jq"
+    },
+    "s1_what": {
+      "ask": "학자들이 입증한 건 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'at the same time with speech'를 봐요.",
+        "'at the same time with speech'를 봐요."
+      ],
+      "explain": "'at the same time with speech'를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'systematically made at the same time with speech', 말과 동시에 체계적으로 만들어진대요. 그래서 둘이 함께 표현한대요(co-expressive).",
+        "o1": "'systematically made at the same time with speech', 말과 동시에 체계적으로 만들어진대요. 그래서 둘이 함께 표현한대요(co-expressive)."
+      },
+      "point": "제스처는 말과 동시에 체계적으로 만들어진다 → co-expressive(함께 표현하는)",
+      "from": "98pyt8"
+    },
+    "s2_cat": {
+      "ask": "언어와 제스처를 두 그룹으로 나눠 봐요. 'categorical(범주적)'은 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'the categorical requirements of language'예요. of 뒤를 봐요.",
+        "'the categorical requirements of language'예요. of 뒤를 봐요."
+      ],
+      "explain": "'the categorical requirements of language'예요. of 뒤를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'the categorical requirements of language'예요. of 뒤를 봐요."
+      },
+      "point": "categorical(범주적) = 언어 쪽",
+      "from": "1rvxx5g"
+    },
+    "s2_img": {
+      "ask": "그럼 'imagistic(심상적, 그림 같은)'은 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'the imagistic possibilities of gesture'예요. of 뒤를 봐요.",
+        "'the imagistic possibilities of gesture'예요. of 뒤를 봐요."
+      ],
+      "explain": "'the imagistic possibilities of gesture'예요. of 뒤를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'the imagistic possibilities of gesture'예요. of 뒤를 봐요."
+      },
+      "point": "imagistic(심상적, 그림 같은) = 제스처 쪽",
+      "from": "1fx2yy6"
+    },
+    "s3_choice": {
+      "ask": "이 예시에서 언어는 화자에게 무엇을 하게 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'one must decide if the event has been completed or is ongoing'을 봐요.",
+        "'one must decide if the event has been completed or is ongoing'을 봐요."
+      ],
+      "explain": "'one must decide if the event has been completed or is ongoing'을 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'one must decide if the event has been completed or is ongoing'을 봐요.",
+        "o2": "'one must decide if the event has been completed or is ongoing'을 봐요."
+      },
+      "point": "언어는 화자에게 완료인지 진행인지 고르게 한다 (must decide)",
+      "from": "1gb3qch"
+    },
+    "s4_sort": {
+      "ask": "'choice(선택)'는 언어와 제스처 중 어느 쪽의 특징이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'This kind of choice is characteristic of language'예요.",
+        "'This kind of choice is characteristic of language'예요."
+      ],
+      "explain": "'This kind of choice is characteristic of language'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'This kind of choice is characteristic of language'예요."
+      },
+      "from": "mfoutj"
+    },
+    "s5_it": {
+      "ask": "'Instead, it offers a kind of glue'의 it은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "언어 요소들(linguistic elements)을 묶어 주는 접착제예요. 언어가 자기를 묶을 리는 없어요.",
+        "언어 요소들(linguistic elements)을 묶어 주는 접착제예요. 언어가 자기를 묶을 리는 없어요."
+      ],
+      "explain": "언어 요소들(linguistic elements)을 묶어 주는 접착제예요. 언어가 자기를 묶을 리는 없어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "접착제(glue)처럼 언어 요소들을 묶어 주는 건 언어 바깥의 것이에요. Instead(대신에)는 선택을 주지 않는 쪽이 대신 하는 일이에요.",
+        "o2": "접착제(glue)처럼 언어 요소들을 묶어 주는 건 언어 바깥의 것이에요. Instead(대신에)는 선택을 주지 않는 쪽이 대신 하는 일이에요."
+      },
+      "point": "Instead, it offers glue의 it = 제스처 (언어 요소를 묶어 주는 접착제)",
+      "from": "5lpqr6"
+    },
+    "s5_need": {
+      "ask": "그럼 'Instead, it(제스처)'이 나오려면 바로 앞에 무엇이 있어야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. Instead는 앞과 반대되는 걸 대신 말할 때 써요.",
+        "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. Instead는 앞과 반대되는 걸 대신 말할 때 써요."
+      ],
+      "explain": "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. Instead는 앞과 반대되는 걸 대신 말할 때 써요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. 그리고 Instead(대신에)니까, 앞에는 제스처가 '하지 않는' 일이 있어야 해요.",
+        "o1": "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. 그리고 Instead(대신에)니까, 앞에는 제스처가 '하지 않는' 일이 있어야 해요."
+      },
+      "point": "Instead, it(제스처)이 나오려면 바로 앞에 제스처 이야기가 있어야 한다",
+      "from": "pzbgyl"
+    },
+    "s5_glue": {
+      "say": "제스처는 선택을 주는 대신, 언어 요소들을 묶어 주는 접착제 역할을 해요.",
+      "from": "1hf7zz4"
+    },
+    "s6_rel": {
+      "ask": "이 관점에서 말과 제스처는 어떤 관계래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요.",
+        "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요."
+      ],
+      "explain": "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요.",
+        "o2": "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요."
+      },
+      "point": "speech and gesture are not redundant nor … a translation = 말과 제스처는 중복도 번역도 아니다",
+      "from": "10dgouo"
+    },
+    "s7_unit": {
+      "ask": "생각을 표현하는 최소 단위는 무엇이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'a combination of the two'를 봐요. the two는 말과 제스처예요.",
+        "'a combination of the two'를 봐요. the two는 말과 제스처예요."
+      ],
+      "explain": "'a combination of the two'를 봐요. the two는 말과 제스처예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'a combination of the two'를 봐요. the two는 말과 제스처예요.",
+        "o1": "'a combination of the two'를 봐요. the two는 말과 제스처예요."
+      },
+      "point": "생각을 표현하는 최소 단위 = 말과 제스처의 결합 (imagistic-categorial)",
+      "from": "1gmly69"
+    },
+    "s7_go": {
+      "say": "언어는 고르게 하고(categorical), 제스처는 묶어 줘요(imagistic). 이제 주어진 문장이 들어갈 곳을 골라 봐요.",
+      "from": "mf3hcw"
+    }
+  },
+  "exam": {
+    "ask": "주어진 문장의 단서(such choices, gesture)를 떠올리며 들어갈 곳을 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! '이런 선택은 언어의 특징이다' 뒤에 '제스처는 그런 선택을 주지 않는다'가 오고, 이어서 'Instead, it(제스처)은 접착제를 준다'로 이어져요.",
+    "final_wrong": "정답은 ③이에요.",
+    "option_feedback": {
+      "1": "이 자리 앞에는 아직 '선택' 이야기가 없어요. such choices가 받을 말이 없어요.",
+      "2": "이 자리 앞은 선택의 예시까지예요. 바로 뒤 'This kind of choice'가 그 예시를 받아야 해서 끊기면 안 돼요.",
+      "4": "많이 고른 오답이에요. 여기 넣으면 'Instead, it'의 it이 그 앞 문장의 language가 돼서 말이 안 돼요.",
+      "5": "이 자리 앞은 이미 말과 제스처의 관계를 정리하는 중이에요. 선택 이야기로 돌아갈 자리가 아니에요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "q3fg75"
+  },
+  "intro": {
+    "topic": {
+      "say": "말할 때 손짓은 왜 저절로 나올까요? 이번 글은 언어와 제스처가 함께 생각을 표현하는 방식을 다뤄요."
+    },
+    "method1": {
+      "say": "문장 넣기는 주어진 문장의 단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾아요."
+    },
+    "from": "1hyldgr"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "f1irti"
+}

@@ -13,13 +13,15 @@ type Props = {
   picked?: string | null;
   /** 맞힌 보기 번호 — 초록으로 */
   right?: string | null;
+  /** 보기 글 없이 숫자 ①~⑤만 가로로 (문장 넣기) */
+  numbersOnly?: boolean;
 };
 
 /**
  * 문제지처럼 지문을 한 덩어리로 쭉 보여 준다. 문장 번호도, 장 넘기기도 없다 —
  * 학생이 처음 보는 건 실제 시험지 모양이어야 「무슨 문제인지」 바로 안다.
  */
-export function PassageFull({ given, sentences, underline, options, onPick, picked, right }: Props) {
+export function PassageFull({ given, sentences, underline, options, onPick, picked, right, numbersOnly }: Props) {
   const NUM = "①②③④⑤";
   return (
     <div className="passage-full">
@@ -36,16 +38,16 @@ export function PassageFull({ given, sentences, underline, options, onPick, pick
         </p>
       ))}
       {options?.length ? (
-        <ol className={`passage-options${onPick ? " pickable" : ""}`}>
+        <ol className={`passage-options${onPick ? " pickable" : ""}${numbersOnly ? " numbers" : ""}`}>
           {options.map((o, i) => (
             <li key={o} className={picked === String(i + 1) ? "picked" : right === String(i + 1) ? "right" : undefined}>
               {onPick ? (
-                <button type="button" className="passage-pick" onClick={() => onPick(o)}>
-                  <b>{NUM[i]}</b> {o}
+                <button type="button" className="passage-pick" aria-label={numbersOnly ? `${NUM[i]} ${o}` : undefined} onClick={() => onPick(o)}>
+                  <b>{NUM[i]}</b> {numbersOnly ? null : o}
                 </button>
               ) : (
                 <>
-                  <b>{NUM[i]}</b> {o}
+                  <b>{NUM[i]}</b> {numbersOnly ? null : o}
                 </>
               )}
             </li>

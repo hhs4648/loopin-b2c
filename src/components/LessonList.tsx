@@ -24,7 +24,13 @@ import { TeacherFigure } from "./TeacherFigure";
  * 원래 자리에 두면 매번 그것들을 지나쳐 내려가야 한다. 끼리끼리 순서는
  * 그대로 둔다 — 문제 번호가 곧 순서라 뒤섞으면 오히려 못 찾는다.
  */
-function doneLast(sets: LessonSet[], progress: Progress): LessonSet[] {
+/** 오답률 높은 순 — 많이 틀리는 문제가 위로. 오답률이 없는 세트는 맨 뒤 */
+function byWrongRate(sets: LessonSet[]): LessonSet[] {
+  return [...sets].sort((a, b) => (b.wrong_rate ?? -1) - (a.wrong_rate ?? -1));
+}
+
+function doneLast(all: LessonSet[], progress: Progress): LessonSet[] {
+  const sets = byWrongRate(all);
   const todo = sets.filter((s) => !isDone(progress, s.id));
   const done = sets.filter((s) => isDone(progress, s.id));
   return [...todo, ...done];

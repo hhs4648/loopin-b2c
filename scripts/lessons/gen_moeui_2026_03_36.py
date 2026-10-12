@@ -203,7 +203,7 @@ sentences = [
                    "(C)가 말하는 문제는 무엇일까요?",
                    [("o0", "좋은 답을 듣지 못하는 것", False), ("o1", "도덕을 지키지 않는 것", False),
                     ("o2", "이유를 끝없이 물어서 결정을 못 하는 것", True)],
-                   "대시 뒤 'do so endlessly, never coming to a decision'을 봐요.",
+                   "대시(—) 뒤 'do so endlessly, never coming to a decision'을 봐요.",
                    why="좋은 답을 받아도 '그건 왜?'라고 또 물을 수 있대요. 그렇게 끝없이 물어서 결정을 못 하는 게 문제예요.",
                    highlight=["we can potentially do so endlessly, never coming to a decision"],
                    method=0),

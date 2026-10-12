@@ -4,12 +4,7 @@
   "note": "생성물",
   "topic_intro": "어휘 문제 푸는 법",
   "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
-  "helps": {
-    "s10_subject": {
-      "answer": "'to'처럼 전치사로 시작하는 덩어리는 보통 주어가 아니에요. 'with'로 시작하는 두 덩어리도 마찬가지예요. 그걸 빼면 주어는 'each blade of grass(각각의 풀잎)'예요.",
-      "from": "cgxs70"
-    }
-  },
+  "helps": {},
   "steps": {
     "s1_group": {
       "say": "conceptualize, categorize, put a name on은 여기서 모두 '이름 붙여 묶는다'는 같은 뜻이에요. 셋 중 하나만 이해해도 충분해요.",

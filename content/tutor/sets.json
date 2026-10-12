@@ -77,6 +77,16 @@
       "lessons": [
         "moeui-2026-03-33-profound-building"
       ]
+    },
+    {
+      "id": "moeui-2026-03-38",
+      "collection": "moeui-2026-03",
+      "title": "38번 문제",
+      "subtitle": "문장 넣기 — 제스처는 선택 대신 접착제",
+      "wrong_rate": 62.3,
+      "lessons": [
+        "moeui-2026-03-38-gesture-glue"
+      ]
     }
   ]
 }

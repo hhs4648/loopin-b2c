@@ -1676,14 +1676,14 @@
             "ask": "그런 글을 번역하면 어떻게 된대요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
-              "대시 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요.",
-              "대시 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요."
+              "대시(—) 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요.",
+              "대시(—) 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요."
             ],
-            "explain": "대시 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요.",
+            "explain": "대시(—) 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요.",
             "praise": "맞아요!",
             "feedback": {
-              "o0": "낯섦이 없는 글은 번역이 살려 낼 게 없어요. 대시 뒤 'nothing happens'를 봐요.",
-              "o2": "낯섦이 없는 글은 번역이 살려 낼 게 없어요. 대시 뒤 'nothing happens'를 봐요."
+              "o0": "낯섦이 없는 글은 번역이 살려 낼 게 없어요. 대시(—) 뒤 'nothing happens'를 봐요.",
+              "o2": "낯섦이 없는 글은 번역이 살려 낼 게 없어요. 대시(—) 뒤 'nothing happens'를 봐요."
             },
             "point": "낯섦이 없는 글은 번역해도 nothing happens(아무 일도 일어나지 않는다)"
           },

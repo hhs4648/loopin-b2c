@@ -201,6 +201,16 @@ for (const L of allPolicyLessons()) {
       }
     });
 
+    it("흐림(삽입)은 대시(—)가 두 개일 때만 — 대시 하나로 시작하는 구절은 생략하지 않는다", () => {
+      for (const sen of L.sentences) {
+        for (const step of sen.steps) {
+          for (const f of step.faded ?? []) {
+            if (f.trim().startsWith("—")) expect(f.trim().slice(1), `${step.id}: ${f}`).toContain("—");
+          }
+        }
+      }
+    });
+
     it("강조 구절이 화면의 문장 안에 있다", () => {
       for (const sen of L.sentences) {
         for (const step of sen.steps) {
@@ -547,7 +557,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     session = await walkTo4();
     v = await session.submit("자세히 볼래요");
     expect(session.lastAction()?.interactionId).toBe("s4_just_as");
-    expect(v.tips?.[0]?.label).toBe("콤마·대시 사이 건너뛰기");
+    expect(v.tips?.[0]?.label).toBe("콤마(,)·대시(—) 사이 건너뛰기");
   });
 
   it("6문장의 arms race는 ❓ 개념, last thing은 💡 Tip", async () => {
@@ -985,6 +995,40 @@ describe("2026년 3월 33번 — 빈칸 문제", () => {
     expect(v.message).toBe("이 빈칸 문장은 글쓴이 주장과 같은 쪽일까요, 반대 쪽일까요?");
     await go("같은 쪽 (주장 그대로)");
     await go("사는 사람의 몸과 마음의 움직임에 꼭 맞는 건물");
+    await go("문제 풀러 갈게요");
+    expect(v.examOptions).toHaveLength(5);
+  });
+});
+
+describe("2026년 3월 38번 — 문장 넣기", () => {
+  const ID38 = "moeui-2026-03-38-gesture-glue";
+  it("such choices 단서 → 앞뒤 예측 → 언어/제스처 두 그룹 → Instead, it(제스처) 앞엔 제스처 이야기 → 문제", async () => {
+    const session = createPolicySession(ID38, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    const go = async (t: string) => {
+      v = await session.submit(t);
+      for (let g = 0; g < 3 && (v.praiseOnly || v.readingFirst || v.celebrate); g++)
+        v = await session.submit(v.praiseOnly ? "__auto_next" : v.celebrate ? v.buttons[0]! : "다 읽었어요");
+      return v;
+    };
+    await go("다 읽었어요");
+    expect(v.sentenceTag).toBe("주어진 문장");
+    expect(v.pick?.shade).toBe(true);
+    await go("__pick:such choices");
+    await go("언어가 화자에게 선택을 하게 한다는 내용");
+    await go("제스처가 선택 대신 하는 일");
+    await go("제스처는 말과 동시에 만들어진다");
+    await go("왼쪽 · 언어");
+    await go("오른쪽 · 제스처");
+    await go("완료인지 진행인지 꼭 고르게 한다");
+    await go("왼쪽 · 언어");
+    await go("제스처 (gesture)");
+    await go("제스처는 선택을 주지 않는다는 이야기");
+    expect(v.panel?.kind).toBe("groups");
+    await go("다음 문장");
+    await go("서로 중복되지 않고 각자 다른 일을 한다");
+    await go("말과 제스처의 결합");
     await go("문제 풀러 갈게요");
     expect(v.examOptions).toHaveLength(5);
   });

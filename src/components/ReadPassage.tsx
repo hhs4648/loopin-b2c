@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import type { ReactNode } from "react";
 import type { TutorView } from "../tutor/view";
-import { READ_NEXT_CMD } from "../tutor/policy/session";
+import { MODE_TRY_BTN, READ_NEXT_CMD } from "../tutor/policy/session";
 import { PassageFull } from "./PassageFull";
 
 type Props = {
@@ -19,6 +19,9 @@ type Props = {
  */
 export function ReadPassage({ view, onSend, onClose }: Props) {
   const p = view.passage!;
+  // 처음 고르는 화면 — 「바로 풀어 볼게요」는 큰 버튼에서 빼서 위에 밑줄 글자로
+  const tryLink = p.auto === false && view.buttons.length === 2 && view.buttons[1] === MODE_TRY_BTN;
+  const dockButtons = tryLink ? view.buttons.slice(0, 1) : view.buttons;
   const sendRef = useRef(onSend);
   sendRef.current = onSend;
   const rows = useRef<(HTMLDivElement | null)[]>([]);
@@ -126,6 +129,7 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
             sentences={p.sentences}
             underline={p.underline}
             options={p.options}
+            numbersOnly={p.numbersOnly}
             onPick={p.pickable ? onSend : null}
             picked={p.picked}
             right={p.right}
@@ -159,10 +163,10 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
       </div>
 
       {/* 지문 미리보기에서는 버튼을 한 줄로 — 지문 자리를 넓힌다 */}
-      <div className={`read-dock${p.auto === false && view.buttons.length >= 2 ? " row" : ""}`}>
+      <div className={`read-dock${p.auto === false && dockButtons.length >= 2 ? " row" : ""}`}>
         {/* 미리보기 화면에서 선생님 말(바로 풀기 안내, 채점)은 버튼 바로 위에 — 보기를 고르는 손 가까이 */}
         {view.message && p.auto === false ? <p className="read-say">{view.message}</p> : null}
-        {view.buttons.map((label, i) => (
+        {dockButtons.map((label, i) => (
           <button
             key={label}
             type="button"
@@ -172,6 +176,12 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
             {label}
           </button>
         ))}
+        {/* 「바로 풀어 볼게요」는 큰 버튼 아래에 밑줄 글자로 — 큰 버튼은 「분석하러 갈게요」 하나 */}
+        {tryLink ? (
+          <button type="button" className="read-try-link" onClick={() => onSend(MODE_TRY_BTN)}>
+            {MODE_TRY_BTN}
+          </button>
+        ) : null}
       </div>
     </div>
   );

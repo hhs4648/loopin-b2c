@@ -47,8 +47,7 @@ POINTS = {
 GIVEN = ("Nonetheless, for most outsiders even completely transparent practices do not lift the veil behind which "
          "such forms of knowledge are hidden—without the relevant training and acquisition of skills, which often take "
          "many years, one simply cannot make sense of the information that is being shared.")
-DASH = ("—without the relevant training and acquisition of skills, which often take many years, one simply cannot make "
-        "sense of the information that is being shared.")
+# 대시(—) 뒤 「without … shared」는 대시가 하나뿐이라 삽입이 아니다 — 흐리지 않는다 (대시 두 개 사이만 삽입)
 
 S2_SLASH = "To acquire expert knowledge, / one needs to become a member of the relevant group of knowledge bearers, / for which I will use the term “epistemic communities.”"
 
@@ -80,8 +79,6 @@ sentences = [
             g("being shared", "공유되고 있는"),
         ],
         "emphasis": ["Nonetheless", "for most outsiders", "completely transparent"],
-        "helps": [{"id": "g_subject_help", "label": "주어 찾기 헷갈려요",
-                   "brief": "'for'처럼 전치사로 시작하는 덩어리는 주어가 아니에요. 'for most outsiders'는 '대부분의 외부인에게는'으로 읽어요. 그걸 빼면 주어가 보여요."}],
         "steps": [
             choice("g_subject",
                    "먼저 주어진 문장이에요. 이 문장의 주어는 무엇일까요?",
@@ -90,7 +87,7 @@ sentences = [
                    why="'for most outsiders'는 '대부분의 외부인에게는'이라는 덩어리라 주어가 아니에요. 그다음 덩어리가 주어예요.",
                    highlight=["even completely transparent practices"],
                    highlight_alt=["for most outsiders"],
-                   faded=[DASH]),
+                   ),
             show("g_structure",
                  "'for most outsiders'는 '대부분의 외부인에게는'으로 읽어요. 주어는 'even completely transparent practices', 즉 '완전히 투명한 관행조차'예요.",
                  button="다음",
@@ -101,10 +98,10 @@ sentences = [
                  ]},
                  highlight=["even completely transparent practices"],
                  highlight_alt=["for most outsiders"],
-                 faded=[DASH]),
+                 ),
             # 대시 앞 'lift the veil'은 비유라 한 번에 안 들어온다 — 같은 말을 쉽게 풀어 쓴 대시 뒤로 읽는다
             show("g_dash",
-                 "'lift the veil'은 비유라 한 번에 안 들어와요. 대시 뒤를 보면 쉬워요. 교육과 기술 습득 없이는 공유되는 정보를 이해할 수 없대요.",
+                 "'lift the veil'은 비유라 한 번에 안 들어와요. 대시(—) 뒤를 보면 쉬워요. 교육과 기술 습득 없이는 공유되는 정보를 이해할 수 없대요.",
                  highlight=["without the relevant training and acquisition of skills", "one simply cannot make sense of the information that is being shared"],
                  faded=[", which often take many years,"],
                  tips=[
@@ -122,8 +119,6 @@ sentences = [
         "teaching_value": "medium",
         "glosses": [g("acquire", "습득하다"), g("expert knowledge", "전문 지식"), g("member", "구성원"), g("relevant", "관련된"),
                     g("knowledge bearers", "지식 보유자"), g("term", "용어"), g("epistemic communities", "지식 공동체")],
-        "helps": [{"id": "s2_subject_help", "label": "주어 찾기 헷갈려요",
-                   "brief": "'To acquire …'처럼 To로 시작하는 덩어리는 '~하기 위해'라는 뜻이라 주어가 아니에요. 콤마 뒤 첫 단어를 봐요."}],
         "steps": [
             choice("s2_subject",
                    "이 문장의 주어는 무엇일까요?",
@@ -200,6 +195,8 @@ sentences = [
 exam = {
     "question": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? [3점]",
     "underline": ["(①)", "(②)", "(③)", "(④)", "(⑤)"],
+    # 보기 글이 「… 앞」뿐이라 숫자 ①~⑤만 가로로 보인다
+    "numbers_only": True,
     "sentence": 1,
     "analysis_first": True,
     "glosses": [],

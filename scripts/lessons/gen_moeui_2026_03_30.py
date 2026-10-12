@@ -279,8 +279,8 @@ sentences = [
                    [("o0", SORT_LEFT, True), ("o1", SORT_RIGHT, False)],
                    "대시(—) 뒤 예시를 봐요. 꽃목걸이를 만들거나 일광욕할 때 풀 종류를 따지나요?",
                    why="꽃목걸이나 일광욕 같은 보통 목적에서는 차이를 무시해요. 그래서 이름으로 묶는 쪽이에요.",
-                   panel={**S8_BEFORE, "sort": {"words": ["practical purposes"], "left": SORT_LEFT, "right": SORT_RIGHT}},
-                   faded=["—making a daisy chain, sunbathing, and the like"]),
+                   # 대시(—)가 하나뿐 — 삽입이 아니라 앞말의 예시라 흐리지 않는다 (힌트도 대시 뒤를 보라고 한다)
+                   panel={**S8_BEFORE, "sort": {"words": ["practical purposes"], "left": SORT_LEFT, "right": SORT_RIGHT}}),
             show("s8_map", "보통 때는 풀과 꽃의 차이를 무시해도 돼요.",
                  panel=S8_AFTER),
         ],
@@ -316,8 +316,6 @@ sentences = [
         "teaching_value": "high",
         "glosses": [g("infinite mind", "무한한 정신 · 여기서는 기억력이 무한한 사람이에요"), g("blade", "칼날 · 여기서는 '풀잎'이에요"), g("distinct", "독특한, 뚜렷이 다른"), g("need not be", "~될 필요가 없다"), g("co-categorized", "한 범주로 같이 묶인"), g("fellows", "동료, 같은 무리")],
         "emphasis": ["infinite mind", "need not be"],
-        "helps": [{"id": "s10_subject", "label": "주어 찾기 헷갈려요",
-                   "brief": "'to'처럼 전치사로 시작하는 덩어리는 보통 주어가 아니에요. 'with'로 시작하는 두 덩어리도 마찬가지예요. 그걸 빼면 주어는 'each blade of grass(각각의 풀잎)'예요."}],
         "steps": [
             choice("s10_q",
                    "무한한 정신(infinite mind)이라면, 풀잎을 모두 한 범주로 묶어야 할까요?",
