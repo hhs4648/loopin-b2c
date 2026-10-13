@@ -106,58 +106,452 @@
       "wrong": "고친 부분을 같이 봐요.",
       "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
       "feedback": {
-        "one": "S one은 숫자 1이 아니라 '누구든, 사람'이에요.",
+        "one": "S one은 숫자 1이 아니라 '사람'이에요. 여기서는 외부인을 가리켜요.",
         "information": "O the information은 '그 정보'예요.",
         "understand": "V make sense of는 '~을 이해하다'예요.",
         "not": "cannot이 있으니 '~할 수 없다'예요."
       },
       "placeholder": "S·V·O만 보고 해석해 보세요",
       "point": "S·V·O ② = 누구든 그 정보를 이해할 수 없다.",
-      "from": "z4h9lz"
+      "from": "i5aer9"
+    },
+    "g_rel": {
+      "ask": "이번엔 노란색으로 표시된 부분을 해석해 봐요.",
+      "praise": "잘 해석했어요! that 뒤가 앞 단어를 꾸며 주는 걸 잘 잡았어요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "that": "여기서 that은 '그것'이 아니라 앞의 information을 꾸며 주는 말이에요.",
+        "share": "is being shared는 '공유되고 있는'이에요.",
+        "modify": "'공유되고 있는 정보'처럼 뒤에서부터 꾸며 해석해요.",
+        "information": "information은 '정보'예요."
+      },
+      "placeholder": "노란 부분을 우리말로 써 보세요",
+      "point": "the information that is being shared = 공유되고 있는 정보 · that + 주어 없는 문장 → 앞 단어를 꾸민다",
+      "from": "15qbcxd"
+    },
+    "g_rel_note": {
+      "say": "that 뒤에 주어 없이 바로 동사가 오면, 그 덩어리가 앞 단어를 꾸며 줘요. 'that is being shared'가 앞의 information을 꾸며서 '공유되고 있는 정보'예요.",
+      "from": "1fi4lmy"
+    },
+    "g_shared": {
+      "say": "shared는 앞서 본 집단 안에서, 내부인끼리 공유된다는 뜻이에요. 그래서 대시(—) 뒤도 앞과 같은 말이에요. 외부인은 내부인끼리 공유하는 지식을 이해하기 어렵다는 거예요.",
+      "from": "1awfmdh"
+    },
+    "g_dash_tip": {
+      "say": "수능 팁이에요. 대시(—) 앞뒤는 비슷한 뜻인 경우가 많아요. 한쪽을 이해했다면 다른 쪽은 가볍게 넘기며 시간을 아낄 수 있어요.",
+      "from": "1jgzfgn"
     },
     "g_structure": {
       "say": "",
       "from": "16m7al0"
     },
-    "g_dash": {
-      "say": "'lift the veil'은 비유라 한 번에 안 들어와요. 대시(—) 뒤를 보면 쉬워요. 교육과 기술 습득 없이는 공유되는 정보를 이해할 수 없대요.",
-      "from": "po9yne"
+    "g_nonetheless": {
+      "say": "마지막으로 Nonetheless를 짚고 가요. '그럼에도 불구하고'라서, 바로 앞 문장은 이 문장과 반대 상황이어야 해요.",
+      "from": "1600xfz"
     },
-    "s2_subject": {
-      "ask": "이 문장의 주어는 무엇일까요?",
+    "g_nonetheless_before": {
+      "ask": "그럼 이 문장 바로 앞에는 어떤 내용이 와야 할까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
-        "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요.",
-        "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요."
+        "이 문장은 '외부인은 지식에 닿기 어렵다'예요. Nonetheless 앞에는 그 반대 상황이 와요.",
+        "이 문장은 '외부인은 지식에 닿기 어렵다'예요. Nonetheless 앞에는 그 반대 상황이 와요."
       ],
-      "explain": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요.",
+      "explain": "이 문장은 '외부인은 지식에 닿기 어렵다'예요. Nonetheless 앞에는 그 반대 상황이 와요.",
       "praise": "맞아요!",
       "feedback": {
-        "o0": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'라서 주어가 아니에요. 콤마 뒤 'one needs'에서 주어를 찾아요.",
-        "o2": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'라서 주어가 아니에요. 콤마 뒤 'one needs'에서 주어를 찾아요."
+        "o1": "그건 이 문장과 같은 쪽 말이에요. Nonetheless 앞에는 반대 상황, 즉 지식이 외부인에게도 열려 있다는 말이 와야 해요.",
+        "o2": "그건 이 문장과 같은 쪽 말이에요. Nonetheless 앞에는 반대 상황, 즉 지식이 외부인에게도 열려 있다는 말이 와야 해요."
       },
-      "point": "To acquire … = ~하기 위해(주어 아님) · 주어는 one(누구든) · 콤마 사이가 메인 문장",
-      "from": "92cnzj"
+      "point": "Nonetheless(그럼에도 불구하고) → 바로 앞 문장은 반대 상황 · 주어진 문장 앞에는 '지식이 외부인에게도 열려 있다'가 와야 한다",
+      "from": "1549us9"
+    },
+    "g_nonetheless_note": {
+      "say": "앞 문장이 '지식이 외부인에게도 열려 있다'라면, 그럼에도 외부인은 지식에 닿기 어렵다는 흐름이 돼요. 지문에서 이런 반대 상황이 나오는 곳 바로 뒤가 이 문장 자리예요.",
+      "from": "q8031n"
+    },
+    "s2_svc": {
+      "ask": "이번엔 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사·목적어가 아니에요.",
+      "wrong_by": {
+        "To acquire": "To + 동사는 '~하기 위해'라서 문장의 동사가 아니에요.",
+        "expert knowledge": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'라서, 그 안의 expert knowledge는 주어가 아니에요.",
+        "the relevant group": "of 뒤 덩어리는 앞의 a member를 꾸며 줘요. '관련 집단의 구성원'이에요. 목적어는 그 앞에서 찾아봐요.",
+        "I": "그건 for which 뒤 덩어리 안의 주어예요. 문장 전체의 주어가 아니에요.",
+        "will use": "그건 for which 뒤 덩어리 안의 동사예요. 문장 전체의 동사가 아니에요.",
+        "the term": "그건 for which 뒤 덩어리 안의 목적어예요. 문장 전체의 목적어가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 one, 동사는 needs, 목적어는 to become a member(구성원이 되는 것)예요.",
+      "point": "To acquire … = ~하기 위해(주어 아님) · S one / V needs / O to become a member · 콤마 사이가 메인 문장",
+      "from": "1bug6dp"
+    },
+    "s2_sum": {
+      "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+      "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "knowledge": "expert knowledge는 '전문 지식'이에요.",
+        "acquire": "To acquire는 '얻기 위해, 습득하려면'이에요.",
+        "group": "group은 '집단'이에요. 어떤 집단의 구성원이 되는지가 중요해요.",
+        "member": "to become a member는 '구성원이 되는 것'이에요."
+      },
+      "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+      "point": "To acquire expert knowledge, one needs to become a member of … group = 전문 지식을 습득하려면 집단의 구성원이 되어야 한다",
+      "from": "17ys6ii"
+    },
+    "s2_bear_q": {
+      "ask": "knowledge bearers의 bear는 헷갈리기 쉬운 단어예요. 여기서 bear는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "knowledge(지식)와 붙어 있어요. 지식을 어떻게 하는 사람들일까요?",
+        "knowledge(지식)와 붙어 있어요. 지식을 어떻게 하는 사람들일까요?"
+      ],
+      "explain": "knowledge(지식)와 붙어 있어요. 지식을 어떻게 하는 사람들일까요?",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "여기서 bear는 그 뜻이 아니에요. 바로 이어서 설명해 줄게요.",
+        "o1": "여기서 bear는 그 뜻이 아니에요. 바로 이어서 설명해 줄게요."
+      },
+      "from": "ab5838"
+    },
+    "s2_bear": {
+      "say": "bear는 '곰', '참다', '낳다' 말고도 '지니다, 가지고 있다'라는 뜻이 있어요. bearer는 '지닌 사람'이라서, knowledge bearers는 '지식을 지닌 사람들', 즉 지식 보유자예요.",
+      "from": "1hyoecc"
+    },
+    "s2_name": {
+      "ask": "그럼 이 지식 보유자 집단을 가리키는 말은 무엇일까요? 문장에서 찾아 눌러 봐요.",
+      "wrong": "그건 집단을 가리키는 말이 아니에요.",
+      "wrong_by": {
+        "expert knowledge": "그건 집단이 지닌 '전문 지식'이에요. 집단을 부르는 이름을 찾아봐요.",
+        "a member": "a member는 집단 안의 구성원 한 명이에요. 집단 전체를 부르는 말을 찾아봐요.",
+        "I": "I는 글쓴이예요. 글쓴이가 이 집단을 무엇이라고 부르는지 찾아봐요.",
+        "the term": "the term은 '용어'예요. 어떤 용어인지 바로 뒤를 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요! 글쓴이는 이 집단을 epistemic communities(지식 공동체)라고 불러요.",
+      "explain": "for which는 '그 집단에 대해'예요. 글쓴이는 이 집단을 epistemic communities(지식 공동체)라고 불러요.",
+      "point": "the relevant group of knowledge bearers = epistemic communities(지식 공동체) · for which I will use the term …",
+      "from": "ci3x22"
+    },
+    "s2_join_pic": {
+      "say": "아까 외부인은 장막에 막혀 집단 안의 지식에 닿기 어려웠어요. 이 문장은 그 지식을 얻으려면 집단 안으로 들어가 구성원이 되어야 한다는 말이에요.",
+      "from": "1wpctl"
+    },
+    "s2_groups": {
+      "say": "수능에서는 같은 쪽 단어 묶음이 중요해요. 이 글은 내부자(전문가)와 외부자(초보자)의 대비가 계속 반복돼요. 첫 단어는 넣어 뒀으니, 나머지는 직접 옮겨 봐요.",
+      "from": "n81wqm"
+    },
+    "s2_sort_member": {
+      "ask": "'a member'(구성원), 어느 쪽일까요? 끌어서 넣어 봐요.",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+      ],
+      "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "a member는 집단의 구성원이라 집단 안, 내부자 쪽이에요."
+      },
+      "from": "ib1kbs"
+    },
+    "s2_sort_comm": {
+      "ask": "'epistemic communities'(지식 공동체), 어느 쪽일까요? 끌어서 넣어 봐요.",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+      ],
+      "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "epistemic communities는 지식 보유자 집단 그 자체라 내부자 쪽이에요."
+      },
+      "from": "1tp7st5"
+    },
+    "s2_groups_done": {
+      "say": "구성원(a member)과 지식 공동체(epistemic communities)는 집단 안, 내부자 쪽이에요.",
+      "from": "1ai3hg3"
     },
     "s2_slash": {
-      "say": "'To acquire …'는 '~하기 위해'라서 주어가 아니에요. 주어는 'one', 여기서도 '누구든'이에요. 콤마 사이가 주어와 동사가 있는 메인 문장이라 꼭 읽어야 해요.",
-      "from": "11xyd9t"
+      "say": "'To acquire …'는 '~하기 위해'라서 주어가 아니에요. 콤마 사이가 주어와 동사가 있는 메인 문장이라 꼭 읽어야 해요.",
+      "from": "1dgqyk7"
+    },
+    "s3_sv": {
+      "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요? 동사가 하나가 아닐 수도 있어요.",
+      "wrong": "그건 주어나 동사가 아니에요.",
+      "wrong_by": {
+        "from experts": "from 같은 전치사가 붙은 덩어리는 주어나 동사가 될 수 없어요.",
+        "into the common practices": "into 같은 전치사가 붙은 덩어리는 주어나 동사가 될 수 없어요.",
+        "and": "and는 앞뒤를 이어 주는 말이에요. and 뒤에 무엇이 오는지 봐요.",
+        "the relevant epistemic community": "of 뒤 덩어리라 주어가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 A newcomer, 동사는 learns와 is socialized 두 개예요.",
+      "point": "A newcomer(S) learns(V) … and is socialized(V) … · and 뒤에 주어 없이 동사가 오면 앞 주어의 동사가 하나 더",
+      "from": "f7o5iy"
+    },
+    "s3_and": {
+      "say": "and 뒤에 주어 없이 동사가 바로 오면, 앞 주어의 동사가 하나 더 있는 거예요. 그래서 A newcomer가 learns도 하고, is socialized도 돼요.",
+      "from": "1253ak0"
+    },
+    "s3_prep": {
+      "ask": "from, into 같은 전치사 뒤의 명사는 '전치사의 목적어'예요. 이 문장에서 두 개를 찾아볼까요?",
+      "wrong": "그건 전치사의 목적어가 아니에요.",
+      "wrong_by": {
+        "A newcomer": "A newcomer는 문장의 주어예요. 전치사 from, into 바로 뒤를 봐요.",
+        "is socialized": "is socialized는 동사예요. 전치사 from, into 바로 뒤를 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요! experts는 from의, the common practices는 into의 목적어예요.",
+      "explain": "from experts의 experts, into the common practices의 the common practices가 전치사의 목적어예요.",
+      "point": "전치사 + 명사 = 전치사의 목적어 · from experts(전문가들로부터), into the common practices(공동 관행 속으로) · 문장의 목적어(O)와는 달라요",
+      "from": "tjztw4"
+    },
+    "s3_sum": {
+      "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+      "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "newcomer": "newcomer는 '새로 온 사람'이에요.",
+        "experts": "experts는 '전문가'예요.",
+        "learns": "learns는 '배운다'예요.",
+        "socialized": "is socialized는 '사회화된다, 익숙해진다'예요.",
+        "community": "community는 '공동체, 집단'이에요. 앞 문장의 그 집단이에요."
+      },
+      "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+      "point": "A newcomer learns from experts and is socialized into … community = 새로 온 사람은 전문가로부터 배우고 그 집단에 사회화된다",
+      "from": "q2qde"
+    },
+    "s3_sort_experts": {
+      "ask": "'experts'(전문가), 어느 쪽일까요? 끌어서 넣어 봐요.",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+      ],
+      "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "experts는 지식을 가진 전문가라 내부자 쪽이에요."
+      },
+      "from": "kh6c9p"
+    },
+    "s3_sort_newcomer": {
+      "ask": "'a newcomer'(새로 온 사람), 어느 쪽일까요? 끌어서 넣어 봐요.",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+      ],
+      "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "a newcomer는 이제 막 들어오는 사람이라 초보자 쪽이에요."
+      },
+      "from": "5d3n9c"
     },
     "s3_draft": {
-      "say": "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요.",
-      "from": "1vszwdf"
+      "say": "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요. 단어 지도에도 붙여 둘게요.",
+      "from": "3xp99w"
+    },
+    "s4_sv": {
+      "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어나 동사가 아니에요.",
+      "wrong_by": {
+        "Often": "Often은 '자주'라서 주어나 동사가 아니에요.",
+        "there": "there are 문장에서 there는 주어가 아니에요. 주어는 are 뒤에 와요.",
+        "combined with": "combined with는 '~와 결합된'이라 앞 말을 꾸며 줘요. 문장의 동사가 아니에요.",
+        "tests": "tests는 with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "a candidate’s abilities": "of 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "동사는 are, 주어는 are 뒤의 admittance processes예요.",
+      "point": "there are + 명사 = 명사가 있다 · 주어는 are 뒤 admittance processes · combined with는 꾸미는 말",
+      "from": "1trgs3o"
+    },
+    "s4_there": {
+      "say": "there are 문장은 are 뒤의 명사가 진짜 주어예요. 그래서 'admittance processes(입회 절차)가 있다'로 읽어요. combined with는 동사가 아니라 '~와 결합된'으로 앞 말을 꾸며 줘요.",
+      "from": "1bjj6zj"
+    },
+    "s4_key": {
+      "say": "핵심어는 주어·동사와 tests예요. 입회 절차(admittance processes)가 있고, 거기에 능력 시험(tests)이 붙어 있다는 말이에요.",
+      "from": "1l81agm"
+    },
+    "s4_pic": {
+      "say": "집단에 들어가는 문이 입회 절차예요. 후보자는 그 문을 지나기 전에 능력 시험을 봐요.",
+      "from": "16avr8o"
+    },
+    "s4_sort_candidate": {
+      "ask": "'a candidate'(후보자), 어느 쪽일까요? 끌어서 넣어 봐요.",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+      ],
+      "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "a candidate는 아직 시험을 보는 후보자라 집단 바깥, 초보자 쪽이에요."
+      },
+      "from": "1gjb73c"
     },
     "s4_draft": {
-      "say": "능력 시험이 붙은 입회 절차가 있는 경우가 많대요.",
-      "from": "b03enl"
+      "say": "능력 시험이 붙은 입회 절차가 있는 경우가 많대요. 단어 지도에도 붙여 둘게요.",
+      "from": "go8bty"
+    },
+    "s5_sv": {
+      "ask": "이번엔 주어(S), 동사(V), 보어(C)를 찾아볼까요? 보어는 동사 뒤에서 주어가 어떤 상태인지 말해 줘요.",
+      "wrong": "그건 주어·동사·보어가 아니에요.",
+      "wrong_by": {
+        "the premodern era": "In 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "strict tests": "with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "new members": "for 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "fears": "because of 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "specialized knowledge": "그건 that 뒤 덩어리(두려움의 내용) 안의 주어예요. 문장 전체의 주어가 아니에요.",
+        "would fall": "그건 that 뒤 덩어리 안의 동사예요. 문장 전체의 동사가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 epistemic communities, 동사는 were often kept, 보어는 secret(비밀인 상태)이에요.",
+      "point": "epistemic communities(S) were often kept(V) secret(C) · 뒤는 with(시험), because of(이유)로 덧붙임",
+      "from": "m01hsv"
+    },
+    "s5_sum": {
+      "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+      "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "past": "In the premodern era는 '전근대 시대에는', 즉 옛날이에요.",
+        "secret": "were kept secret은 '비밀로 유지되었다'예요.",
+        "test": "tests는 '시험'이에요.",
+        "loyalty": "loyalty는 '충성심'이에요."
+      },
+      "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+      "point": "In the premodern era, epistemic communities were often kept secret … = 옛날엔 지식 공동체가 비밀이었고 충성심 시험이 있었다",
+      "from": "1xz7ur6"
     },
     "s5_draft": {
       "say": "옛날에는 지식 공동체가 비밀이었고, 신입에게 엄격한 충성심 시험이 있었대요.",
       "from": "1h42fg"
     },
+    "s6_sv": {
+      "ask": "이 문장에는 주어·동사가 두 쌍 있어요. 주어(S), 동사(V), 보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사·보어가 아니에요.",
+      "wrong_by": {
+        "these older practices": "of 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "but": "but은 두 문장을 이어 주는 말이에요. but 뒤에 새 주어·동사가 와요.",
+        "openness": "to 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "the members": "among 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "outsiders": "toward 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "but 앞은 S Some traces, V may still be, C present(존재하는)예요. but 뒤는 S the ideal, V has shifted예요.",
+      "point": "Some traces(S) may still be(V) present(C) … but … the ideal(S) has shifted(V) to openness",
+      "from": "iizh9n"
+    },
+    "s6_obj": {
+      "ask": "has shifted to는 '~로 옮겨 갔다'예요. 무엇으로 옮겨 갔는지, to 뒤의 전치사의 목적어(전목)를 찾아볼까요?",
+      "wrong": "그건 동사에 딸린 전치사의 목적어가 아니에요.",
+      "wrong_by": {
+        "these older practices": "of 뒤에서 traces를 꾸며 주는 말이에요. has shifted to 바로 뒤를 봐요.",
+        "the members": "among 뒤에서 꾸며 주는 말이에요. has shifted to 바로 뒤를 봐요.",
+        "outsiders": "toward 뒤에서 덧붙인 말이에요. has shifted to 바로 뒤를 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "has shifted to 뒤의 openness(개방성)예요.",
+      "point": "the ideal has shifted to openness = 이상이 개방성으로 옮겨 갔다 · openness = 동사에 딸린 전치사의 목적어",
+      "from": "1hc3ov5"
+    },
+    "s6_but": {
+      "say": "but 뒤가 글쓴이가 말하고 싶은 쪽이에요. 옛 흔적은 남아 있지만, 전체적으로는 개방성으로 바뀌었다는 거예요. 구성원끼리는 물론, 어느 정도는 외부인에게도요.",
+      "from": "gzxuxp"
+    },
+    "s6_sum": {
+      "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+      "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "trace": "Some traces … may still be present는 '흔적이 여전히 남아 있을 수 있다'예요.",
+        "shift": "has shifted는 '옮겨 갔다, 바뀌었다'예요.",
+        "open": "openness는 '개방성', 즉 열려 있는 것이에요.",
+        "outsider": "toward outsiders는 '외부인을 향해'예요."
+      },
+      "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+      "point": "… but on the whole, the ideal has shifted to openness … toward outsiders = 옛 흔적은 있지만 이제는 외부인에게도 열린 쪽으로 바뀌었다",
+      "from": "hnstoo"
+    },
+    "s6_sort_members": {
+      "ask": "'the members'(구성원들), 어느 쪽일까요? 끌어서 넣어 봐요.",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+      ],
+      "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "the members는 지식 공동체의 구성원들이라 내부자 쪽이에요."
+      },
+      "from": "1g410uh"
+    },
+    "s6_sort_out": {
+      "ask": "'toward outsiders'(외부인을 향해), 어느 쪽일까요? 끌어서 넣어 봐요.",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+      ],
+      "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "toward outsiders는 '외부인을 향해'라 외부자 쪽이에요."
+      },
+      "from": "1h9rv8t"
+    },
     "s6_draft": {
-      "say": "지금도 흔적은 있지만, 전체적으로는 개방성, 어느 정도는 외부인에게까지 열린 쪽으로 바뀌었대요.",
-      "from": "bcdjt6"
+      "say": "지금도 흔적은 있지만, 전체적으로는 개방성, 어느 정도는 외부인에게까지 열린 쪽으로 바뀌었대요. 단어 지도에도 붙여 둘게요.",
+      "from": "1hx57a5"
+    },
+    "s7_sv": {
+      "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어나 동사가 아니에요.",
+      "wrong_by": {
+        "to make": "to + 동사는 '~하기 위해'라서 문장의 동사가 아니에요.",
+        "certain forms of knowledge": "그건 make 뒤의 말이에요. 문장 전체의 주어가 아니에요.",
+        "accessible": "accessible은 '접근 가능한'이라 주어나 동사가 아니에요.",
+        "realistically possible": "'현실적으로 가능한'이라 주어나 동사가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Other, more active strategies, 동사는 are needed예요.",
+      "point": "Other, more active strategies(S) are needed(V) to make … accessible",
+      "from": "11g3krp"
+    },
+    "s7_sum": {
+      "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+      "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+      "wrong": "고친 부분을 같이 봐요.",
+      "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+      "feedback": {
+        "strategy": "strategies는 '전략'이에요.",
+        "active": "more active는 '더 적극적인'이에요.",
+        "need": "are needed는 '필요하다'예요.",
+        "access": "accessible은 '접근 가능한'이에요."
+      },
+      "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+      "point": "Other, more active strategies are needed to make … knowledge … accessible = 지식을 접근 가능하게 하려면 더 적극적인 전략이 필요하다",
+      "from": "ravnjf"
     },
     "s7_draft": {
       "say": "지식을 최대한 '접근 가능하게' 하려면 다른, 더 적극적인 전략이 필요하대요.",

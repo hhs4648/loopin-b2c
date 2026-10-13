@@ -260,13 +260,6 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             ))}
           </div>
         ) : null}
-        {/* 덩어리 고르기에서 3초 동안 아무것도 안 누르면 — 무엇을 할지 화살표로 알려 준다 (듣기 자리) */}
-        {pickNudge ? (
-          <p className="pick-nudge" role="status">
-            <span className="nudge-arrow" aria-hidden="true">👆</span>
-            {view.pick?.shade ? "회색 부분을 눌러 보세요!" : "상자 친 부분을 눌러 보세요!"}
-          </p>
-        ) : null}
         {sawBoard || shadePick ? null : <div className="listen-row">
           <button type="button" className="listen" onClick={listen}>
             <SpeakerIcon /> 듣기
@@ -312,6 +305,16 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         {/* 지문을 읽는 동안은 할 말이 없다 — 빈 말풍선을 띄우지 않는다 */}
         {typing || view.message ? (
           <div className="teacher-bubble study-bubble-over" aria-live="polite">
+            {/*
+              덩어리 고르기에서 3초 동안 아무것도 안 누르면 — 무엇을 할지 말풍선 위에서 알려 준다.
+              (문장 칸 안에 두면 긴 문장에서는 스크롤 아래로 숨는다)
+            */}
+            {pickNudge ? (
+              <p className="pick-nudge" role="status">
+                <span className="nudge-arrow" aria-hidden="true">👆</span>
+                {view.pick?.shade ? "회색 부분을 눌러 보세요!" : "상자 친 부분을 눌러 보세요!"}
+              </p>
+            ) : null}
             {/* 힌트는 선생님 말풍선 바로 위 — 질문을 읽다가 바로 누를 수 있게 */}
             {hintTips.length && !typing ? (
               <TipChips

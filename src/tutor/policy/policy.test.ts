@@ -498,7 +498,9 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 5 && v.screen !== "study"; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     expect(v.pick?.open).toBe(true);
-    expect(v.buttons).toEqual(["잘 모르겠어요"]);
+    // 「잘 모르겠어요」는 큰 버튼이 아니라 밑줄 글자
+    expect(v.buttons).toEqual([]);
+    expect(v.linkButtons).toEqual(["잘 모르겠어요"]);
     v = await session.submit("__pick:in fact");
     expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
     expect(v.pick?.missed).toEqual(["in fact"]);
@@ -1102,6 +1104,176 @@ describe("2026년 3월 39번 — 주어진 문장 주어·동사 찾기", () => 
     v = await session.submit("누구든 그 정보를 이해할 수 없다");
     expect(v.translation?.fixes).toEqual([]);
     expect(v.buttons).not.toContain("주어 찾기 헷갈려요");
+    // 관계사 수식 — 못 맞히면 that + 주어 없는 문장 설명 → shared = 집단 안 → 대시 앞뒤 같은 말 → 수능 팁
+    v = await session.submit("다음으로");
+    expect(v.message).toBe("이번엔 노란색으로 표시된 부분을 해석해 봐요.");
+    v = await session.submit("그것은 공유되고 있다");
+    expect(v.translation?.fixes.length).toBeGreaterThan(0);
+    v = await session.submit("다음으로");
+    expect(v.message.startsWith("that 뒤에 주어 없이 바로 동사가 오면")).toBe(true);
+    v = await session.submit("다음");
+    expect(v.message.startsWith("shared는 앞서 본 집단 안에서")).toBe(true);
+    v = await session.submit("다음");
+    expect(v.message.startsWith("수능 팁이에요. 대시(—) 앞뒤는")).toBe(true);
+    v = await session.submit("다음");
+    expect(v.panel?.kind).toBe("structure");
+    // 마지막으로 Nonetheless — 앞 문장은 반대 상황
+    v = await session.submit("다음");
+    expect(v.message.startsWith("마지막으로 Nonetheless를 짚고 가요.")).toBe(true);
+    v = await session.submit("다음");
+    expect(v.message).toBe("그럼 이 문장 바로 앞에는 어떤 내용이 와야 할까요?");
+    v = await session.submit("외부인은 전문 지식을 이해하기 어렵다");
+    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
+    v = await session.submit(v.buttons[0]);
+    expect(v.panel).toMatchObject({ kind: "contrast", title: "Nonetheless → 앞뒤가 반대" });
+  });
+
+  it("관계사 수식을 한 번에 맞히면 설명을 건너뛰고, 다음부터는 묻지 않는다", async () => {
+    let saved = emptyStudentState();
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    v = await session.submit("다 읽었어요");
+    for (let g = 0; g < 60 && v.message !== "이번엔 노란색으로 표시된 부분을 해석해 봐요."; g++) {
+      v = await session.submit(v.allowInput ? "답 바로 보기" : v.pick?.open ? "잘 모르겠어요" : (v.buttons[0] ?? "__auto_next"));
+    }
+    expect(v.message).toBe("이번엔 노란색으로 표시된 부분을 해석해 봐요.");
+    v = await session.submit("공유되고 있는 정보");
+    expect(v.translation?.fixes).toEqual([]);
+    expect(saved.known).toContain("rel_that_no_subject");
+    v = await session.submit("다음으로");
+    expect(v.message.startsWith("shared는 앞서 본 집단 안에서")).toBe(true);
+  });
+});
+
+describe("2026년 3월 39번 — 문장 1 주어·동사·목적어 찾기", () => {
+  it("읽기 끝나면 덩어리째 S·V·O를 찾고(to become a member = needs의 목적어), for which 뒤 I는 덧붙임 안의 주어라고 알려 준 뒤 S·V·O만 해석한다", async () => {
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    v = await session.submit("__next_sentence");
+    expect(v.readingFirst).toBe(true);
+    v = await session.submit("다 읽었어요");
+    expect(session.lastAction()?.interactionId).toBe("s2_svc");
+    expect(v.pick?.shade).toBe(true);
+    v = await session.submit("__pick:I");
+    expect(v.message).toContain("for which 뒤 덩어리 안의 주어예요");
+    for (const w of ["one", "needs", "to become a member"]) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    expect(v.roles?.map((r) => r.role)).toEqual(["S", "V", "O"]);
+    expect(v.allowInput).toBe(true);
+    // 핵심어로 상황 요약 (직역 말고)
+    expect(v.message.startsWith("노란 핵심어만 보고, 직역 말고")).toBe(true);
+    v = await session.submit("전문 지식을 얻으려면 집단의 구성원이 되어야 한다");
+    expect(v.translation?.fixes).toEqual([]);
+    // bear — 고르게 하고 그다음 설명
+    v = await session.submit("다음으로");
+    expect(v.message.endsWith("여기서 bear는 무슨 뜻일까요?")).toBe(true);
+    v = await session.submit("낳다");
+    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
+    for (let g = 0; g < 3 && !v.message.startsWith("bear는 '곰', '참다', '낳다' 말고도"); g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    expect(v.message.startsWith("bear는 '곰', '참다', '낳다' 말고도")).toBe(true);
+    // 이 집단을 가리키는 말
+    v = await session.submit("다음");
+    expect(v.message.startsWith("그럼 이 지식 보유자 집단을 가리키는 말은")).toBe(true);
+    v = await session.submit("__pick:the term");
+    expect(v.message).toContain("어떤 용어인지 바로 뒤를 봐요");
+    v = await session.submit("__pick:epistemic communities");
+    v = await session.submit("__auto_next");
+    expect(v.panel).toMatchObject({ kind: "picture", src: "/assets/member-join.svg" });
+    // 내부자(전문가) ↔ 외부자(초보자) 단어 묶음
+    v = await session.submit("다음");
+    expect(v.message.startsWith("수능에서는 같은 쪽 단어 묶음이 중요해요.")).toBe(true);
+    expect(v.panel).toMatchObject({ kind: "groups", left: { label: "내부자 · 전문가 쪽" }, right: { label: "외부자 · 초보자 쪽" } });
+    // 첫 단어(knowledge bearers, outsiders)만 미리 넣고, 나머지는 학생이 끌어 넣는다
+    expect(v.panel?.kind === "groups" && v.panel.left.words.map((w) => w.text)).toEqual(["knowledge bearers"]);
+    v = await session.submit("다음");
+    expect(v.panel?.kind === "groups" && v.panel.sort?.words).toEqual(["a member"]);
+    v = await session.submit("오른쪽 · 외부자(초보자) 쪽");
+    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
+  });
+});
+
+describe("2026년 3월 39번 — 문장 2 동사 두 개·전치사의 목적어", () => {
+  it("and 뒤 동사까지 S·V를 찾고, 전치사의 목적어를 찾은 뒤 핵심어로 요약하고, 단어 지도로 끝난다", async () => {
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    v = await session.submit("__next_sentence");
+    v = await session.submit("__next_sentence");
+    expect(v.sentenceTag).toBe("문장 2");
+    v = await session.submit("다 읽었어요");
+    expect(session.lastAction()?.interactionId).toBe("s3_sv");
+    v = await session.submit("__pick:from experts");
+    expect(v.message).toContain("전치사가 붙은 덩어리는 주어나 동사가 될 수 없어요");
+    for (const w of ["A newcomer", "learns", "is socialized"]) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    expect(v.message.startsWith("and 뒤에 주어 없이 동사가 바로 오면")).toBe(true);
+    v = await session.submit("다음");
+    expect(v.message.startsWith("from, into 같은 전치사 뒤의 명사는")).toBe(true);
+    for (const w of ["experts", "the common practices"]) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    expect(v.roles?.map((r) => r.role)).toEqual(["S", "V", "V", "전목", "전목"]);
+    expect(v.allowInput).toBe(true);
+    v = await session.submit("새로 온 사람은 전문가에게 배우고 그 집단에 적응한다");
+    expect(v.translation?.fixes).toEqual([]);
+    v = await session.submit("다음으로");
+    expect(v.panel?.kind).toBe("groups");
+  });
+});
+
+describe("2026년 3월 39번 — 문장 3~6도 주어·동사 찾기 → 핵심어 요약", () => {
+  // [주어·동사(보어) 고르기, 그 답, 전치사의 목적어 답, 요약]
+  const cases: [string, string[], string[], string][] = [
+    ["s5_sv", ["epistemic communities", "were often kept", "secret"], [],
+     "옛날엔 지식 공동체가 비밀이었고 충성심 시험이 있었다"],
+    ["s6_sv", ["Some traces", "may still be", "present", "the ideal", "has shifted"], ["openness"],
+     "흔적은 남아 있지만 외부인에게도 열린 쪽으로 바뀌었다"],
+    ["s7_sv", ["Other, more active strategies", "are needed"], [], "지식에 접근 가능하게 하려면 더 적극적인 전략이 필요하다"],
+  ];
+  it.each(cases)("%s — 찾은 뒤 요약을 맞히고 다음으로 넘어간다", async (pickId, answers, preps, summary) => {
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    for (let g = 0; g < 10 && !(v.readingFirst && session.lastAction()?.interactionId === pickId); g++) {
+      v = await session.submit("__next_sentence");
+    }
+    v = await session.submit("다 읽었어요");
+    expect(session.lastAction()?.interactionId).toBe(pickId);
+    for (const w of answers) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    expect(v.roles).toHaveLength(answers.length);
+    // 전치사의 목적어 찾기 → 전목 표시가 더해진다
+    if (preps.length) {
+      expect(v.message).toContain("전치사의 목적어(전목)");
+      for (const w of preps) v = await session.submit(`__pick:${w}`);
+      v = await session.submit("__auto_next");
+      expect(v.roles?.filter((r) => r.role === "전목")).toHaveLength(preps.length);
+    }
+    // 문법 설명 화면(but)이 있으면 넘긴다
+    for (let g = 0; g < 2 && !v.allowInput; g++) v = await session.submit(v.buttons[0]);
+    expect(v.message.startsWith("노란 핵심어만 보고")).toBe(true);
+    v = await session.submit(summary);
+    expect(v.translation?.fixes).toEqual([]);
+  });
+});
+
+describe("2026년 3월 39번 — 문장 3은 요약 없이 핵심어(주어·동사 + tests) → 그림", () => {
+  it("there are 설명 뒤 핵심어를 짚고 입회 절차 그림을 보여 준다", async () => {
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    for (let g = 0; g < 10 && !(v.readingFirst && v.sentenceTag === "문장 3"); g++) v = await session.submit("__next_sentence");
+    v = await session.submit("다 읽었어요");
+    expect(session.lastAction()?.interactionId).toBe("s4_sv");
+    for (const w of ["are", "admittance processes"]) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    expect(v.message.startsWith("there are 문장은")).toBe(true);
+    v = await session.submit("다음");
+    expect(v.message.startsWith("핵심어는 주어·동사와 tests예요.")).toBe(true);
+    expect(v.allowInput).toBeFalsy();
+    v = await session.submit("다음");
+    expect(v.panel).toMatchObject({ kind: "picture", src: "/assets/admittance-test.svg" });
   });
 });
 

@@ -641,7 +641,8 @@
                 "누구",
                 "사람",
                 "아무도",
-                "우리"
+                "우리",
+                "외부인"
               ],
               "fix": "누구든"
             },
@@ -681,7 +682,7 @@
             "wrong": "고친 부분을 같이 봐요.",
             "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
             "feedback": {
-              "one": "S one은 숫자 1이 아니라 '누구든, 사람'이에요.",
+              "one": "S one은 숫자 1이 아니라 '사람'이에요. 여기서는 외부인을 가리켜요.",
               "information": "O the information은 '그 정보'예요.",
               "understand": "V make sense of는 '~을 이해하다'예요.",
               "not": "cannot이 있으니 '~할 수 없다'예요."
@@ -690,6 +691,148 @@
             "point": "S·V·O ② = 누구든 그 정보를 이해할 수 없다."
           },
           "method": 0
+        },
+        {
+          "id": "g_rel",
+          "type": "translate",
+          "interaction": "free_translation",
+          "known": "rel_that_no_subject",
+          "model": "공유되고 있는 그 정보",
+          "rules": [
+            {
+              "id": "that",
+              "wrong": [
+                "그것",
+                "저것"
+              ],
+              "fix": "공유되고 있는 정보"
+            },
+            {
+              "id": "share",
+              "need": [
+                "공유",
+                "나누",
+                "나눠",
+                "나눈",
+                "주고받",
+                "전달"
+              ],
+              "fix": "공유되고 있는"
+            },
+            {
+              "id": "modify",
+              "need": [
+                "(공유|나누|나눠|나눈|주고받|전달)[^.]*정보"
+              ],
+              "wrong": [
+                "정보(는|가|이|를)\\s*\\S*\\s*(공유|나누|나눠|주고받|전달)"
+              ],
+              "fix": "공유되고 있는 정보"
+            },
+            {
+              "id": "information",
+              "need": [
+                "정보"
+              ],
+              "fix": "정보"
+            }
+          ],
+          "highlight": [
+            "the information that is being shared"
+          ],
+          "brief": {
+            "ask": "이번엔 노란색으로 표시된 부분을 해석해 봐요.",
+            "praise": "잘 해석했어요! that 뒤가 앞 단어를 꾸며 주는 걸 잘 잡았어요.",
+            "wrong": "고친 부분을 같이 봐요.",
+            "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+            "feedback": {
+              "that": "여기서 that은 '그것'이 아니라 앞의 information을 꾸며 주는 말이에요.",
+              "share": "is being shared는 '공유되고 있는'이에요.",
+              "modify": "'공유되고 있는 정보'처럼 뒤에서부터 꾸며 해석해요.",
+              "information": "information은 '정보'예요."
+            },
+            "placeholder": "노란 부분을 우리말로 써 보세요",
+            "point": "the information that is being shared = 공유되고 있는 정보 · that + 주어 없는 문장 → 앞 단어를 꾸민다"
+          },
+          "method": 0
+        },
+        {
+          "id": "g_rel_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "that 뒤에 주어 없이 바로 동사가 오면, 그 덩어리가 앞 단어를 꾸며 줘요. 'that is being shared'가 앞의 information을 꾸며서 '공유되고 있는 정보'예요."
+          },
+          "method": 0,
+          "button": "다음",
+          "if_missed": "g_rel",
+          "skip_with": "g_rel",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "앞 단어",
+                "text": "the information",
+                "ko": "정보",
+                "tone": "hl2"
+              },
+              {
+                "label": "꾸며 줌",
+                "text": "that + (주어 없음) is being shared",
+                "ko": "공유되고 있는",
+                "tone": "hl"
+              }
+            ]
+          },
+          "highlight": [
+            "that is being shared"
+          ],
+          "highlight_alt": [
+            "the information"
+          ]
+        },
+        {
+          "id": "g_shared",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "shared는 앞서 본 집단 안에서, 내부인끼리 공유된다는 뜻이에요. 그래서 대시(—) 뒤도 앞과 같은 말이에요. 외부인은 내부인끼리 공유하는 지식을 이해하기 어렵다는 거예요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "대시(—) 앞",
+                "text": "do not lift the veil",
+                "ko": "외부인은 장막을 걷지 못한다 = 숨겨진 지식에 닿지 못한다",
+                "tone": "hl2"
+              },
+              {
+                "label": "대시(—) 뒤",
+                "text": "cannot make sense of the information that is being shared",
+                "ko": "외부인은 집단 안에서 공유되는 정보를 이해할 수 없다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "highlight": [
+            "one simply cannot make sense of the information that is being shared"
+          ],
+          "highlight_alt": [
+            "do not lift the veil"
+          ]
+        },
+        {
+          "id": "g_dash_tip",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "수능 팁이에요. 대시(—) 앞뒤는 비슷한 뜻인 경우가 많아요. 한쪽을 이해했다면 다른 쪽은 가볍게 넘기며 시간을 아낄 수 있어요."
+          },
+          "method": 0,
+          "button": "다음"
         },
         {
           "id": "g_structure",
@@ -724,7 +867,7 @@
               {
                 "label": "대시(—) 뒤",
                 "text": "one + cannot make sense of",
-                "ko": "누구든 + 이해할 수 없다",
+                "ko": "누구든(= 외부인) + 이해할 수 없다",
                 "tone": "hl"
               }
             ]
@@ -734,35 +877,97 @@
           ],
           "highlight_alt": [
             "for most outsiders"
-          ]
-        },
-        {
-          "id": "g_dash",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "'lift the veil'은 비유라 한 번에 안 들어와요. 대시(—) 뒤를 보면 쉬워요. 교육과 기술 습득 없이는 공유되는 정보를 이해할 수 없대요."
-          },
-          "method": 0,
-          "button": "다음 문장",
-          "highlight": [
-            "without the relevant training and acquisition of skills",
-            "one simply cannot make sense of the information that is being shared"
-          ],
-          "faded": [
-            ", which often take many years,"
           ],
           "tips": [
             {
               "label": "one",
               "mark": "one",
-              "text": "여기서 one은 숫자 '1'이 아니라 특정되지 않은 '사람', 즉 '누구든'이에요. 'one simply cannot …'은 '누구든 그야말로 ~할 수 없다'예요."
+              "text": "여기서 one은 숫자 '1'이 아니라 '사람'이에요. 이 문장에서는 앞에 나온 outsiders(외부인)를 가리켜요. 'one simply cannot …'은 '외부인은 그야말로 ~할 수 없다'예요."
             },
             {
               "label": "make sense of",
               "mark": "make sense of",
               "text": "'~을 이해하다'라는 중요한 표현이에요. 'make sense'만 쓰면 '말이 되다, 이치에 맞다'예요."
             }
+          ]
+        },
+        {
+          "id": "g_nonetheless",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "마지막으로 Nonetheless를 짚고 가요. '그럼에도 불구하고'라서, 바로 앞 문장은 이 문장과 반대 상황이어야 해요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "Nonetheless"
+          ]
+        },
+        {
+          "id": "g_nonetheless_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 이 문장 바로 앞에는 어떤 내용이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "이 문장은 '외부인은 지식에 닿기 어렵다'예요. Nonetheless 앞에는 그 반대 상황이 와요.",
+              "이 문장은 '외부인은 지식에 닿기 어렵다'예요. Nonetheless 앞에는 그 반대 상황이 와요."
+            ],
+            "explain": "이 문장은 '외부인은 지식에 닿기 어렵다'예요. Nonetheless 앞에는 그 반대 상황이 와요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "그건 이 문장과 같은 쪽 말이에요. Nonetheless 앞에는 반대 상황, 즉 지식이 외부인에게도 열려 있다는 말이 와야 해요.",
+              "o2": "그건 이 문장과 같은 쪽 말이에요. Nonetheless 앞에는 반대 상황, 즉 지식이 외부인에게도 열려 있다는 말이 와야 해요."
+            },
+            "point": "Nonetheless(그럼에도 불구하고) → 바로 앞 문장은 반대 상황 · 주어진 문장 앞에는 '지식이 외부인에게도 열려 있다'가 와야 한다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "지식이 외부인에게도 열려 가고 있다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "외부인은 전문 지식을 이해하기 어렵다"
+            },
+            {
+              "id": "o2",
+              "label": "전문가가 되려면 오랜 훈련이 필요하다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Nonetheless"
+          ]
+        },
+        {
+          "id": "g_nonetheless_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "앞 문장이 '지식이 외부인에게도 열려 있다'라면, 그럼에도 외부인은 지식에 닿기 어렵다는 흐름이 돼요. 지문에서 이런 반대 상황이 나오는 곳 바로 뒤가 이 문장 자리예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "contrast",
+            "title": "Nonetheless → 앞뒤가 반대",
+            "between": "↔",
+            "left": {
+              "title": "바로 앞 문장 (찾을 곳)",
+              "text": "지식이 외부인에게도 열려 있다"
+            },
+            "right": {
+              "title": "주어진 문장",
+              "text": "그래도 외부인은 지식에 닿기 어렵다"
+            }
+          },
+          "highlight": [
+            "Nonetheless"
           ]
         }
       ]
@@ -773,6 +978,42 @@
       "model_translation": "전문 지식을 습득하기 위해서는 관련 지식 보유자 집단의 구성원이 되어야 하는데, 그것에 나는 '지식 공동체'라는 용어를 사용하겠다.",
       "teaching_value": "medium",
       "glosses": [
+        {
+          "en": "To acquire",
+          "ko": "얻기 위해, 습득하기 위해"
+        },
+        {
+          "en": "one",
+          "ko": "누구든, 사람"
+        },
+        {
+          "en": "needs",
+          "ko": "필요로 하다, ~해야 한다"
+        },
+        {
+          "en": "to become a member",
+          "ko": "구성원이 되는 것"
+        },
+        {
+          "en": "a member",
+          "ko": "구성원"
+        },
+        {
+          "en": "the relevant group",
+          "ko": "관련 집단"
+        },
+        {
+          "en": "I",
+          "ko": "나"
+        },
+        {
+          "en": "will use",
+          "ko": "사용할 것이다"
+        },
+        {
+          "en": "the term",
+          "ko": "용어"
+        },
         {
           "en": "acquire",
           "ko": "습득하다"
@@ -791,7 +1032,7 @@
         },
         {
           "en": "knowledge bearers",
-          "ko": "지식 보유자"
+          "ko": "지식 보유자 · 지식을 지닌 사람들"
         },
         {
           "en": "term",
@@ -820,48 +1061,440 @@
       ],
       "steps": [
         {
-          "id": "s2_subject",
+          "id": "s2_svc",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "To acquire",
+            "expert knowledge",
+            "one",
+            "needs",
+            "to become a member",
+            "the relevant group",
+            "I",
+            "will use",
+            "the term"
+          ],
+          "answers": [
+            "one",
+            "needs",
+            "to become a member"
+          ],
+          "roles": {
+            "one": "S",
+            "needs": "V",
+            "to become a member": "O"
+          },
+          "brief": {
+            "ask": "이번엔 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사·목적어가 아니에요.",
+            "wrong_by": {
+              "To acquire": "To + 동사는 '~하기 위해'라서 문장의 동사가 아니에요.",
+              "expert knowledge": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'라서, 그 안의 expert knowledge는 주어가 아니에요.",
+              "the relevant group": "of 뒤 덩어리는 앞의 a member를 꾸며 줘요. '관련 집단의 구성원'이에요. 목적어는 그 앞에서 찾아봐요.",
+              "I": "그건 for which 뒤 덩어리 안의 주어예요. 문장 전체의 주어가 아니에요.",
+              "will use": "그건 for which 뒤 덩어리 안의 동사예요. 문장 전체의 동사가 아니에요.",
+              "the term": "그건 for which 뒤 덩어리 안의 목적어예요. 문장 전체의 목적어가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 one, 동사는 needs, 목적어는 to become a member(구성원이 되는 것)예요.",
+            "point": "To acquire … = ~하기 위해(주어 아님) · S one / V needs / O to become a member · 콤마 사이가 메인 문장"
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_sum",
+          "type": "translate",
+          "interaction": "free_translation",
+          "model": "전문 지식을 습득하려면 집단의 구성원이 되어야 한다.",
+          "labels": {
+            "mine": "내 요약",
+            "model": "요약 예시"
+          },
+          "rules": [
+            {
+              "id": "knowledge",
+              "need": [
+                "지식"
+              ],
+              "fix": "전문 지식을"
+            },
+            {
+              "id": "acquire",
+              "need": [
+                "습득",
+                "얻",
+                "배우",
+                "갖",
+                "가지"
+              ],
+              "fix": "습득하려면"
+            },
+            {
+              "id": "group",
+              "need": [
+                "집단",
+                "그룹",
+                "모임",
+                "공동체",
+                "단체"
+              ],
+              "fix": "집단의"
+            },
+            {
+              "id": "member",
+              "need": [
+                "구성원",
+                "회원",
+                "일원",
+                "멤버",
+                "들어가",
+                "속해",
+                "가입"
+              ],
+              "fix": "구성원이 되어야 한다"
+            }
+          ],
+          "highlight": [
+            "acquire expert knowledge",
+            "one needs to become a member",
+            "group"
+          ],
+          "brief": {
+            "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+            "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+            "wrong": "고친 부분을 같이 봐요.",
+            "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+            "feedback": {
+              "knowledge": "expert knowledge는 '전문 지식'이에요.",
+              "acquire": "To acquire는 '얻기 위해, 습득하려면'이에요.",
+              "group": "group은 '집단'이에요. 어떤 집단의 구성원이 되는지가 중요해요.",
+              "member": "to become a member는 '구성원이 되는 것'이에요."
+            },
+            "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+            "point": "To acquire expert knowledge, one needs to become a member of … group = 전문 지식을 습득하려면 집단의 구성원이 되어야 한다"
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_bear_q",
           "type": "choice",
           "interaction": "meaning_choice",
           "one_try": true,
           "brief": {
-            "ask": "이 문장의 주어는 무엇일까요?",
+            "ask": "knowledge bearers의 bear는 헷갈리기 쉬운 단어예요. 여기서 bear는 무슨 뜻일까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
-              "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요.",
-              "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요."
+              "knowledge(지식)와 붙어 있어요. 지식을 어떻게 하는 사람들일까요?",
+              "knowledge(지식)와 붙어 있어요. 지식을 어떻게 하는 사람들일까요?"
             ],
-            "explain": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'예요. 콤마 뒤를 봐요.",
+            "explain": "knowledge(지식)와 붙어 있어요. 지식을 어떻게 하는 사람들일까요?",
             "praise": "맞아요!",
             "feedback": {
-              "o0": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'라서 주어가 아니에요. 콤마 뒤 'one needs'에서 주어를 찾아요.",
-              "o2": "'To acquire expert knowledge'는 '전문 지식을 얻기 위해'라서 주어가 아니에요. 콤마 뒤 'one needs'에서 주어를 찾아요."
-            },
-            "point": "To acquire … = ~하기 위해(주어 아님) · 주어는 one(누구든) · 콤마 사이가 메인 문장"
+              "o0": "여기서 bear는 그 뜻이 아니에요. 바로 이어서 설명해 줄게요.",
+              "o1": "여기서 bear는 그 뜻이 아니에요. 바로 이어서 설명해 줄게요."
+            }
           },
           "options": [
             {
               "id": "o0",
-              "label": "expert knowledge"
+              "label": "낳다"
             },
             {
               "id": "o1",
-              "label": "one",
-              "correct": true
+              "label": "참다, 견디다"
             },
             {
               "id": "o2",
-              "label": "a member"
+              "label": "지니다, 가지고 있다",
+              "correct": true
             }
           ],
+          "method": 0,
+          "highlight": [
+            "knowledge bearers"
+          ]
+        },
+        {
+          "id": "s2_bear",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "bear는 '곰', '참다', '낳다' 말고도 '지니다, 가지고 있다'라는 뜻이 있어요. bearer는 '지닌 사람'이라서, knowledge bearers는 '지식을 지닌 사람들', 즉 지식 보유자예요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "knowledge bearers"
+          ]
+        },
+        {
+          "id": "s2_name",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "expert knowledge",
+            "a member",
+            "I",
+            "the term",
+            "epistemic communities"
+          ],
+          "answers": [
+            "epistemic communities"
+          ],
+          "brief": {
+            "ask": "그럼 이 지식 보유자 집단을 가리키는 말은 무엇일까요? 문장에서 찾아 눌러 봐요.",
+            "wrong": "그건 집단을 가리키는 말이 아니에요.",
+            "wrong_by": {
+              "expert knowledge": "그건 집단이 지닌 '전문 지식'이에요. 집단을 부르는 이름을 찾아봐요.",
+              "a member": "a member는 집단 안의 구성원 한 명이에요. 집단 전체를 부르는 말을 찾아봐요.",
+              "I": "I는 글쓴이예요. 글쓴이가 이 집단을 무엇이라고 부르는지 찾아봐요.",
+              "the term": "the term은 '용어'예요. 어떤 용어인지 바로 뒤를 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요! 글쓴이는 이 집단을 epistemic communities(지식 공동체)라고 불러요.",
+            "explain": "for which는 '그 집단에 대해'예요. 글쓴이는 이 집단을 epistemic communities(지식 공동체)라고 불러요.",
+            "point": "the relevant group of knowledge bearers = epistemic communities(지식 공동체) · for which I will use the term …"
+          },
           "method": 0
+        },
+        {
+          "id": "s2_join_pic",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "아까 외부인은 장막에 막혀 집단 안의 지식에 닿기 어려웠어요. 이 문장은 그 지식을 얻으려면 집단 안으로 들어가 구성원이 되어야 한다는 말이에요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/member-join.svg",
+            "alt": "바깥에 있던 외부인이 지식 보유자 집단 안으로 들어가 구성원이 되어 가운데 지식 곁에 선다"
+          },
+          "highlight": [
+            "one needs to become a member of the relevant group of knowledge bearers"
+          ]
+        },
+        {
+          "id": "s2_groups",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "수능에서는 같은 쪽 단어 묶음이 중요해요. 이 글은 내부자(전문가)와 외부자(초보자)의 대비가 계속 반복돼요. 첫 단어는 넣어 뒀으니, 나머지는 직접 옮겨 봐요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)"
+          }
+        },
+        {
+          "id": "s2_sort_member",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'a member'(구성원), 어느 쪽일까요? 끌어서 넣어 봐요.",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+            ],
+            "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "a member는 집단의 구성원이라 집단 안, 내부자 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 내부자(전문가) 쪽",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          ],
+          "method": 0,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)",
+            "sort": {
+              "words": [
+                "a member"
+              ],
+              "left": "왼쪽 · 내부자(전문가) 쪽",
+              "right": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          }
+        },
+        {
+          "id": "s2_sort_comm",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'epistemic communities'(지식 공동체), 어느 쪽일까요? 끌어서 넣어 봐요.",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+            ],
+            "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "epistemic communities는 지식 보유자 집단 그 자체라 내부자 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 내부자(전문가) 쪽",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          ],
+          "method": 0,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)",
+            "sort": {
+              "words": [
+                "epistemic communities"
+              ],
+              "left": "왼쪽 · 내부자(전문가) 쪽",
+              "right": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          }
+        },
+        {
+          "id": "s2_groups_done",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "구성원(a member)과 지식 공동체(epistemic communities)는 집단 안, 내부자 쪽이에요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원",
+                  "fresh": true
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)"
+          }
         },
         {
           "id": "s2_slash",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "'To acquire …'는 '~하기 위해'라서 주어가 아니에요. 주어는 'one', 여기서도 '누구든'이에요. 콤마 사이가 주어와 동사가 있는 메인 문장이라 꼭 읽어야 해요."
+            "say": "'To acquire …'는 '~하기 위해'라서 주어가 아니에요. 콤마 사이가 주어와 동사가 있는 메인 문장이라 꼭 읽어야 해요."
           },
           "method": 0,
           "button": "다음 문장",
@@ -913,8 +1546,40 @@
       "id": 3,
       "text": "(①) A newcomer learns from experts and is socialized into the common practices of the relevant epistemic community.",
       "model_translation": "새로 온 사람은 전문가들로부터 배우며, 관련 지식 공동체의 공동 관행에 사회화된다.",
-      "teaching_value": "low",
+      "teaching_value": "medium",
       "glosses": [
+        {
+          "en": "A newcomer",
+          "ko": "새로 온 사람"
+        },
+        {
+          "en": "learns",
+          "ko": "배운다"
+        },
+        {
+          "en": "from experts",
+          "ko": "전문가들로부터"
+        },
+        {
+          "en": "and",
+          "ko": "그리고"
+        },
+        {
+          "en": "is socialized",
+          "ko": "사회화된다, 익숙해진다"
+        },
+        {
+          "en": "into the common practices",
+          "ko": "공동 관행 속으로"
+        },
+        {
+          "en": "the common practices",
+          "ko": "공동 관행"
+        },
+        {
+          "en": "the relevant epistemic community",
+          "ko": "관련 지식 공동체"
+        },
         {
           "en": "newcomer",
           "ko": "새로 온 사람"
@@ -932,24 +1597,384 @@
           "ko": "공동 관행"
         },
         {
-          "en": "learns",
-          "ko": "배우다"
-        },
-        {
           "en": "community",
-          "ko": "공동체"
+          "ko": "공동체, 집단"
         }
       ],
       "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A newcomer",
+            "learns",
+            "from experts",
+            "and",
+            "is socialized",
+            "into the common practices",
+            "the relevant epistemic community"
+          ],
+          "answers": [
+            "A newcomer",
+            "learns",
+            "is socialized"
+          ],
+          "roles": {
+            "A newcomer": "S",
+            "learns": "V",
+            "is socialized": "V"
+          },
+          "brief": {
+            "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요? 동사가 하나가 아닐 수도 있어요.",
+            "wrong": "그건 주어나 동사가 아니에요.",
+            "wrong_by": {
+              "from experts": "from 같은 전치사가 붙은 덩어리는 주어나 동사가 될 수 없어요.",
+              "into the common practices": "into 같은 전치사가 붙은 덩어리는 주어나 동사가 될 수 없어요.",
+              "and": "and는 앞뒤를 이어 주는 말이에요. and 뒤에 무엇이 오는지 봐요.",
+              "the relevant epistemic community": "of 뒤 덩어리라 주어가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 A newcomer, 동사는 learns와 is socialized 두 개예요.",
+            "point": "A newcomer(S) learns(V) … and is socialized(V) … · and 뒤에 주어 없이 동사가 오면 앞 주어의 동사가 하나 더"
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_and",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "and 뒤에 주어 없이 동사가 바로 오면, 앞 주어의 동사가 하나 더 있는 거예요. 그래서 A newcomer가 learns도 하고, is socialized도 돼요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "and is socialized"
+          ],
+          "highlight_alt": [
+            "A newcomer"
+          ]
+        },
+        {
+          "id": "s3_prep",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "A newcomer",
+            "experts",
+            "the common practices",
+            "is socialized"
+          ],
+          "answers": [
+            "experts",
+            "the common practices"
+          ],
+          "roles": {
+            "experts": "전목",
+            "the common practices": "전목"
+          },
+          "brief": {
+            "ask": "from, into 같은 전치사 뒤의 명사는 '전치사의 목적어'예요. 이 문장에서 두 개를 찾아볼까요?",
+            "wrong": "그건 전치사의 목적어가 아니에요.",
+            "wrong_by": {
+              "A newcomer": "A newcomer는 문장의 주어예요. 전치사 from, into 바로 뒤를 봐요.",
+              "is socialized": "is socialized는 동사예요. 전치사 from, into 바로 뒤를 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요! experts는 from의, the common practices는 into의 목적어예요.",
+            "explain": "from experts의 experts, into the common practices의 the common practices가 전치사의 목적어예요.",
+            "point": "전치사 + 명사 = 전치사의 목적어 · from experts(전문가들로부터), into the common practices(공동 관행 속으로) · 문장의 목적어(O)와는 달라요"
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_sum",
+          "type": "translate",
+          "interaction": "free_translation",
+          "model": "새로 온 사람은 전문가로부터 배우고, 그 집단에 사회화된다.",
+          "labels": {
+            "mine": "내 요약",
+            "model": "요약 예시"
+          },
+          "rules": [
+            {
+              "id": "newcomer",
+              "need": [
+                "새로",
+                "새 ",
+                "신입",
+                "초보",
+                "신참",
+                "뉴커머"
+              ],
+              "fix": "새로 온 사람은"
+            },
+            {
+              "id": "experts",
+              "need": [
+                "전문가"
+              ],
+              "fix": "전문가로부터"
+            },
+            {
+              "id": "learns",
+              "need": [
+                "배우",
+                "배운",
+                "학습",
+                "익히",
+                "익힌"
+              ],
+              "fix": "배우고"
+            },
+            {
+              "id": "socialized",
+              "need": [
+                "사회화",
+                "익숙",
+                "적응",
+                "녹아",
+                "어울",
+                "물들"
+              ],
+              "fix": "사회화된다"
+            },
+            {
+              "id": "community",
+              "need": [
+                "집단",
+                "공동체",
+                "그룹",
+                "모임",
+                "단체"
+              ],
+              "fix": "그 집단에"
+            }
+          ],
+          "highlight": [
+            "newcomer",
+            "learns",
+            "experts",
+            "is socialized",
+            "community"
+          ],
+          "brief": {
+            "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+            "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+            "wrong": "고친 부분을 같이 봐요.",
+            "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+            "feedback": {
+              "newcomer": "newcomer는 '새로 온 사람'이에요.",
+              "experts": "experts는 '전문가'예요.",
+              "learns": "learns는 '배운다'예요.",
+              "socialized": "is socialized는 '사회화된다, 익숙해진다'예요.",
+              "community": "community는 '공동체, 집단'이에요. 앞 문장의 그 집단이에요."
+            },
+            "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+            "point": "A newcomer learns from experts and is socialized into … community = 새로 온 사람은 전문가로부터 배우고 그 집단에 사회화된다"
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_sort_experts",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'experts'(전문가), 어느 쪽일까요? 끌어서 넣어 봐요.",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+            ],
+            "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "experts는 지식을 가진 전문가라 내부자 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 내부자(전문가) 쪽",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          ],
+          "method": 0,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체"
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)",
+            "sort": {
+              "words": [
+                "experts"
+              ],
+              "left": "왼쪽 · 내부자(전문가) 쪽",
+              "right": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          }
+        },
+        {
+          "id": "s3_sort_newcomer",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'a newcomer'(새로 온 사람), 어느 쪽일까요? 끌어서 넣어 봐요.",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+            ],
+            "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "a newcomer는 이제 막 들어오는 사람이라 초보자 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 내부자(전문가) 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 외부자(초보자) 쪽",
+              "correct": true
+            }
+          ],
+          "method": 0,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체"
+                },
+                {
+                  "text": "experts",
+                  "ko": "전문가"
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)",
+            "sort": {
+              "words": [
+                "a newcomer"
+              ],
+              "left": "왼쪽 · 내부자(전문가) 쪽",
+              "right": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          }
+        },
         {
           "id": "s3_draft",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요."
+            "say": "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요. 단어 지도에도 붙여 둘게요."
           },
           "method": 0,
-          "button": "다음 문장"
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체"
+                },
+                {
+                  "text": "experts",
+                  "ko": "전문가",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                },
+                {
+                  "text": "a newcomer",
+                  "ko": "새로 온 사람",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)"
+          }
         }
       ]
     },
@@ -957,8 +1982,24 @@
       "id": 4,
       "text": "(②) Often there are admittance processes, combined with tests of a candidate’s abilities.",
       "model_translation": "자주 후보자의 능력에 대한 시험과 결합한 입회 절차가 존재한다.",
-      "teaching_value": "low",
+      "teaching_value": "medium",
       "glosses": [
+        {
+          "en": "Often",
+          "ko": "자주"
+        },
+        {
+          "en": "there",
+          "ko": "(there are: ~이 있다)"
+        },
+        {
+          "en": "are",
+          "ko": "있다"
+        },
+        {
+          "en": "a candidate’s abilities",
+          "ko": "후보자의 능력"
+        },
         {
           "en": "admittance processes",
           "ko": "입회 절차"
@@ -980,20 +2021,229 @@
           "ko": "능력"
         },
         {
-          "en": "Often",
-          "ko": "자주"
+          "en": "admittance",
+          "ko": "입회, 들어가는 것"
         }
       ],
       "steps": [
+        {
+          "id": "s4_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Often",
+            "there",
+            "are",
+            "admittance processes",
+            "combined with",
+            "tests",
+            "a candidate’s abilities"
+          ],
+          "answers": [
+            "are",
+            "admittance processes"
+          ],
+          "roles": {
+            "are": "V",
+            "admittance processes": "S"
+          },
+          "brief": {
+            "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어나 동사가 아니에요.",
+            "wrong_by": {
+              "Often": "Often은 '자주'라서 주어나 동사가 아니에요.",
+              "there": "there are 문장에서 there는 주어가 아니에요. 주어는 are 뒤에 와요.",
+              "combined with": "combined with는 '~와 결합된'이라 앞 말을 꾸며 줘요. 문장의 동사가 아니에요.",
+              "tests": "tests는 with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+              "a candidate’s abilities": "of 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "동사는 are, 주어는 are 뒤의 admittance processes예요.",
+            "point": "there are + 명사 = 명사가 있다 · 주어는 are 뒤 admittance processes · combined with는 꾸미는 말"
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_there",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "there are 문장은 are 뒤의 명사가 진짜 주어예요. 그래서 'admittance processes(입회 절차)가 있다'로 읽어요. combined with는 동사가 아니라 '~와 결합된'으로 앞 말을 꾸며 줘요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "there are admittance processes"
+          ],
+          "highlight_alt": [
+            "combined with"
+          ]
+        },
+        {
+          "id": "s4_key",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "핵심어는 주어·동사와 tests예요. 입회 절차(admittance processes)가 있고, 거기에 능력 시험(tests)이 붙어 있다는 말이에요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "there are admittance processes",
+            "tests"
+          ]
+        },
+        {
+          "id": "s4_pic",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "집단에 들어가는 문이 입회 절차예요. 후보자는 그 문을 지나기 전에 능력 시험을 봐요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/admittance-test.svg",
+            "alt": "후보자가 능력 시험을 보고 입회 절차라는 문을 지나 지식 공동체 안으로 들어간다"
+          }
+        },
+        {
+          "id": "s4_sort_candidate",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'a candidate'(후보자), 어느 쪽일까요? 끌어서 넣어 봐요.",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+            ],
+            "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "a candidate는 아직 시험을 보는 후보자라 집단 바깥, 초보자 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 내부자(전문가) 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 외부자(초보자) 쪽",
+              "correct": true
+            }
+          ],
+          "method": 0,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체"
+                },
+                {
+                  "text": "experts",
+                  "ko": "전문가"
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                },
+                {
+                  "text": "a newcomer",
+                  "ko": "새로 온 사람"
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)",
+            "sort": {
+              "words": [
+                "a candidate"
+              ],
+              "left": "왼쪽 · 내부자(전문가) 쪽",
+              "right": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          }
+        },
         {
           "id": "s4_draft",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "능력 시험이 붙은 입회 절차가 있는 경우가 많대요."
+            "say": "능력 시험이 붙은 입회 절차가 있는 경우가 많대요. 단어 지도에도 붙여 둘게요."
           },
           "method": 0,
-          "button": "다음 문장"
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체"
+                },
+                {
+                  "text": "experts",
+                  "ko": "전문가"
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                },
+                {
+                  "text": "a newcomer",
+                  "ko": "새로 온 사람"
+                },
+                {
+                  "text": "a candidate",
+                  "ko": "후보자",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)"
+          }
         }
       ]
     },
@@ -1001,8 +2251,40 @@
       "id": 5,
       "text": "(③) In the premodern era, epistemic communities were often kept secret, with strict tests of loyalty for new members, not least because of fears that specialized knowledge would fall into the “wrong hands.”",
       "model_translation": "전근대적인 시대에는, 지식 공동체가 자주 비밀에 부쳐졌고, 신입 구성원에게 엄격한 충성심 시험이 있었는데, 특히 전문적인 지식이 '잘못된 손'에 들어갈 것이라는 두려움 때문이었다.",
-      "teaching_value": "high",
+      "teaching_value": "medium",
       "glosses": [
+        {
+          "en": "In the premodern era",
+          "ko": "전근대 시대에는"
+        },
+        {
+          "en": "the premodern era",
+          "ko": "전근대 시대"
+        },
+        {
+          "en": "secret",
+          "ko": "비밀인, 비밀"
+        },
+        {
+          "en": "epistemic communities",
+          "ko": "지식 공동체"
+        },
+        {
+          "en": "were often kept",
+          "ko": "자주 (~하게) 유지되었다"
+        },
+        {
+          "en": "strict tests",
+          "ko": "엄격한 시험"
+        },
+        {
+          "en": "new members",
+          "ko": "신입 구성원"
+        },
+        {
+          "en": "would fall",
+          "ko": "떨어질 것이다, 들어갈 것이다"
+        },
         {
           "en": "premodern era",
           "ko": "전근대 시대"
@@ -1040,15 +2322,137 @@
           "ko": "공동체들"
         },
         {
-          "en": "new members",
-          "ko": "신입 구성원"
-        },
-        {
           "en": "would fall into",
           "ko": "~에 들어가게 될"
         }
       ],
       "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the premodern era",
+            "epistemic communities",
+            "were often kept",
+            "secret",
+            "strict tests",
+            "new members",
+            "fears",
+            "specialized knowledge",
+            "would fall"
+          ],
+          "answers": [
+            "epistemic communities",
+            "were often kept",
+            "secret"
+          ],
+          "roles": {
+            "epistemic communities": "S",
+            "were often kept": "V",
+            "secret": "C"
+          },
+          "brief": {
+            "ask": "이번엔 주어(S), 동사(V), 보어(C)를 찾아볼까요? 보어는 동사 뒤에서 주어가 어떤 상태인지 말해 줘요.",
+            "wrong": "그건 주어·동사·보어가 아니에요.",
+            "wrong_by": {
+              "the premodern era": "In 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+              "strict tests": "with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+              "new members": "for 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+              "fears": "because of 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+              "specialized knowledge": "그건 that 뒤 덩어리(두려움의 내용) 안의 주어예요. 문장 전체의 주어가 아니에요.",
+              "would fall": "그건 that 뒤 덩어리 안의 동사예요. 문장 전체의 동사가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 epistemic communities, 동사는 were often kept, 보어는 secret(비밀인 상태)이에요.",
+            "point": "epistemic communities(S) were often kept(V) secret(C) · 뒤는 with(시험), because of(이유)로 덧붙임"
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_sum",
+          "type": "translate",
+          "interaction": "free_translation",
+          "model": "옛날에는 지식 공동체가 비밀이었고, 신입에게 엄격한 충성심 시험이 있었다.",
+          "labels": {
+            "mine": "내 요약",
+            "model": "요약 예시"
+          },
+          "rules": [
+            {
+              "id": "past",
+              "need": [
+                "옛날",
+                "과거",
+                "전근대",
+                "예전",
+                "옛"
+              ],
+              "fix": "옛날에는"
+            },
+            {
+              "id": "secret",
+              "need": [
+                "비밀",
+                "숨기",
+                "숨겨",
+                "감추",
+                "감춰",
+                "폐쇄",
+                "닫"
+              ],
+              "fix": "비밀이었고"
+            },
+            {
+              "id": "test",
+              "need": [
+                "시험",
+                "테스트",
+                "검사",
+                "검증"
+              ],
+              "fix": "시험"
+            },
+            {
+              "id": "loyalty",
+              "need": [
+                "충성"
+              ],
+              "fix": "충성심"
+            }
+          ],
+          "highlight": [
+            "premodern era",
+            "epistemic communities",
+            "kept secret",
+            "strict tests of loyalty"
+          ],
+          "brief": {
+            "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+            "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+            "wrong": "고친 부분을 같이 봐요.",
+            "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+            "feedback": {
+              "past": "In the premodern era는 '전근대 시대에는', 즉 옛날이에요.",
+              "secret": "were kept secret은 '비밀로 유지되었다'예요.",
+              "test": "tests는 '시험'이에요.",
+              "loyalty": "loyalty는 '충성심'이에요."
+            },
+            "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+            "point": "In the premodern era, epistemic communities were often kept secret … = 옛날엔 지식 공동체가 비밀이었고 충성심 시험이 있었다"
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "not least because of",
+              "mark": "not least because of",
+              "text": "'특히 ~때문에'예요. 비밀로 한 이유가 뒤에 나와요. 전문 지식이 '잘못된 손', 즉 나쁜 사람에게 들어갈까 봐서예요."
+            }
+          ]
+        },
         {
           "id": "s5_draft",
           "type": "show",
@@ -1067,6 +2471,38 @@
       "model_translation": "이러한 오래된 관행의 일부 흔적이 오늘날에도 여전히 존재할 수 있지만, 전체적으로 보아, 이상은 지식 공동체 구성원 사이에서 개방성, 그리고 또한, 어느 정도는, 외부인을 향한 것으로 옮겨 갔다.",
       "teaching_value": "high",
       "glosses": [
+        {
+          "en": "Some traces",
+          "ko": "일부 흔적"
+        },
+        {
+          "en": "these older practices",
+          "ko": "이러한 오래된 관행"
+        },
+        {
+          "en": "may still be",
+          "ko": "여전히 ~일 수 있다"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "the ideal",
+          "ko": "이상, 바람직하다고 여기는 것"
+        },
+        {
+          "en": "has shifted",
+          "ko": "옮겨 갔다, 바뀌었다"
+        },
+        {
+          "en": "the members",
+          "ko": "구성원들"
+        },
+        {
+          "en": "outsiders",
+          "ko": "외부인"
+        },
         {
           "en": "traces",
           "ko": "흔적"
@@ -1126,14 +2562,411 @@
       ],
       "steps": [
         {
+          "id": "s6_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Some traces",
+            "these older practices",
+            "may still be",
+            "present",
+            "but",
+            "the ideal",
+            "has shifted",
+            "openness",
+            "the members",
+            "outsiders"
+          ],
+          "answers": [
+            "Some traces",
+            "may still be",
+            "present",
+            "the ideal",
+            "has shifted"
+          ],
+          "roles": {
+            "Some traces": "S",
+            "may still be": "V",
+            "present": "C",
+            "the ideal": "S",
+            "has shifted": "V"
+          },
+          "brief": {
+            "ask": "이 문장에는 주어·동사가 두 쌍 있어요. 주어(S), 동사(V), 보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사·보어가 아니에요.",
+            "wrong_by": {
+              "these older practices": "of 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+              "but": "but은 두 문장을 이어 주는 말이에요. but 뒤에 새 주어·동사가 와요.",
+              "openness": "to 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+              "the members": "among 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+              "outsiders": "toward 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "but 앞은 S Some traces, V may still be, C present(존재하는)예요. but 뒤는 S the ideal, V has shifted예요.",
+            "point": "Some traces(S) may still be(V) present(C) … but … the ideal(S) has shifted(V) to openness"
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_obj",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "these older practices",
+            "openness",
+            "the members",
+            "outsiders"
+          ],
+          "answers": [
+            "openness"
+          ],
+          "roles": {
+            "openness": "전목"
+          },
+          "brief": {
+            "ask": "has shifted to는 '~로 옮겨 갔다'예요. 무엇으로 옮겨 갔는지, to 뒤의 전치사의 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 동사에 딸린 전치사의 목적어가 아니에요.",
+            "wrong_by": {
+              "these older practices": "of 뒤에서 traces를 꾸며 주는 말이에요. has shifted to 바로 뒤를 봐요.",
+              "the members": "among 뒤에서 꾸며 주는 말이에요. has shifted to 바로 뒤를 봐요.",
+              "outsiders": "toward 뒤에서 덧붙인 말이에요. has shifted to 바로 뒤를 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "has shifted to 뒤의 openness(개방성)예요.",
+            "point": "the ideal has shifted to openness = 이상이 개방성으로 옮겨 갔다 · openness = 동사에 딸린 전치사의 목적어"
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_but",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "but 뒤가 글쓴이가 말하고 싶은 쪽이에요. 옛 흔적은 남아 있지만, 전체적으로는 개방성으로 바뀌었다는 거예요. 구성원끼리는 물론, 어느 정도는 외부인에게도요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "the ideal has shifted to openness"
+          ],
+          "highlight_alt": [
+            "toward outsiders"
+          ]
+        },
+        {
+          "id": "s6_sum",
+          "type": "translate",
+          "interaction": "free_translation",
+          "model": "옛 흔적은 남아 있지만, 이제는 구성원끼리, 그리고 외부인에게도 열린 쪽으로 바뀌었다.",
+          "labels": {
+            "mine": "내 요약",
+            "model": "요약 예시"
+          },
+          "rules": [
+            {
+              "id": "trace",
+              "need": [
+                "흔적",
+                "남아",
+                "남았",
+                "여전"
+              ],
+              "fix": "옛 흔적은 남아 있지만"
+            },
+            {
+              "id": "shift",
+              "need": [
+                "바뀌",
+                "바꾸",
+                "바뀐",
+                "변했",
+                "변화",
+                "변하",
+                "옮겨",
+                "이동",
+                "됐",
+                "되었"
+              ],
+              "fix": "바뀌었다"
+            },
+            {
+              "id": "open",
+              "need": [
+                "개방",
+                "열린",
+                "열려",
+                "열리",
+                "공개",
+                "열었"
+              ],
+              "fix": "열린 쪽으로"
+            },
+            {
+              "id": "outsider",
+              "need": [
+                "외부"
+              ],
+              "fix": "외부인에게도"
+            }
+          ],
+          "highlight": [
+            "traces",
+            "older practices",
+            "the ideal has shifted to openness",
+            "toward outsiders"
+          ],
+          "brief": {
+            "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+            "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+            "wrong": "고친 부분을 같이 봐요.",
+            "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+            "feedback": {
+              "trace": "Some traces … may still be present는 '흔적이 여전히 남아 있을 수 있다'예요.",
+              "shift": "has shifted는 '옮겨 갔다, 바뀌었다'예요.",
+              "open": "openness는 '개방성', 즉 열려 있는 것이에요.",
+              "outsider": "toward outsiders는 '외부인을 향해'예요."
+            },
+            "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+            "point": "… but on the whole, the ideal has shifted to openness … toward outsiders = 옛 흔적은 있지만 이제는 외부인에게도 열린 쪽으로 바뀌었다"
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_sort_members",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'the members'(구성원들), 어느 쪽일까요? 끌어서 넣어 봐요.",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+            ],
+            "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "the members는 지식 공동체의 구성원들이라 내부자 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 내부자(전문가) 쪽",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          ],
+          "method": 0,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체"
+                },
+                {
+                  "text": "experts",
+                  "ko": "전문가"
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                },
+                {
+                  "text": "a newcomer",
+                  "ko": "새로 온 사람"
+                },
+                {
+                  "text": "a candidate",
+                  "ko": "후보자"
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)",
+            "sort": {
+              "words": [
+                "the members"
+              ],
+              "left": "왼쪽 · 내부자(전문가) 쪽",
+              "right": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          }
+        },
+        {
+          "id": "s6_sort_out",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'toward outsiders'(외부인을 향해), 어느 쪽일까요? 끌어서 넣어 봐요.",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+              "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
+            ],
+            "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "toward outsiders는 '외부인을 향해'라 외부자 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 내부자(전문가) 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 외부자(초보자) 쪽",
+              "correct": true
+            }
+          ],
+          "method": 0,
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체"
+                },
+                {
+                  "text": "experts",
+                  "ko": "전문가"
+                },
+                {
+                  "text": "the members",
+                  "ko": "구성원들"
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                },
+                {
+                  "text": "a newcomer",
+                  "ko": "새로 온 사람"
+                },
+                {
+                  "text": "a candidate",
+                  "ko": "후보자"
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)",
+            "sort": {
+              "words": [
+                "toward outsiders"
+              ],
+              "left": "왼쪽 · 내부자(전문가) 쪽",
+              "right": "오른쪽 · 외부자(초보자) 쪽"
+            }
+          }
+        },
+        {
           "id": "s6_draft",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "지금도 흔적은 있지만, 전체적으로는 개방성, 어느 정도는 외부인에게까지 열린 쪽으로 바뀌었대요."
+            "say": "지금도 흔적은 있지만, 전체적으로는 개방성, 어느 정도는 외부인에게까지 열린 쪽으로 바뀌었대요. 단어 지도에도 붙여 둘게요."
           },
           "method": 0,
-          "button": "다음 문장"
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "between": "↔",
+            "left": {
+              "label": "내부자 · 전문가 쪽",
+              "words": [
+                {
+                  "text": "knowledge bearers",
+                  "ko": "지식 보유자"
+                },
+                {
+                  "text": "a member",
+                  "ko": "구성원"
+                },
+                {
+                  "text": "epistemic communities",
+                  "ko": "지식 공동체"
+                },
+                {
+                  "text": "experts",
+                  "ko": "전문가"
+                },
+                {
+                  "text": "the members",
+                  "ko": "구성원들",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "외부자 · 초보자 쪽",
+              "words": [
+                {
+                  "text": "outsiders",
+                  "ko": "외부인"
+                },
+                {
+                  "text": "a newcomer",
+                  "ko": "새로 온 사람"
+                },
+                {
+                  "text": "a candidate",
+                  "ko": "후보자"
+                },
+                {
+                  "text": "toward outsiders",
+                  "ko": "외부인을 향해",
+                  "fresh": true
+                }
+              ]
+            },
+            "caption": "내부자(전문가) ↔ 외부자(초보자)"
+          }
         }
       ]
     },
@@ -1143,6 +2976,14 @@
       "model_translation": "특정한 형태의 지식을 현실적으로 가능한 한 '접근 가능하게' 만들기 위해서는, 다른, 보다 더 적극적인 전략이 필요하다.",
       "teaching_value": "high",
       "glosses": [
+        {
+          "en": "Other, more active strategies",
+          "ko": "다른, 더 적극적인 전략"
+        },
+        {
+          "en": "to make",
+          "ko": "만들기 위해"
+        },
         {
           "en": "Other",
           "ko": "다른"
@@ -1173,6 +3014,114 @@
         }
       ],
       "steps": [
+        {
+          "id": "s7_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Other, more active strategies",
+            "are needed",
+            "to make",
+            "certain forms of knowledge",
+            "accessible",
+            "realistically possible"
+          ],
+          "answers": [
+            "Other, more active strategies",
+            "are needed"
+          ],
+          "roles": {
+            "Other, more active strategies": "S",
+            "are needed": "V"
+          },
+          "brief": {
+            "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어나 동사가 아니에요.",
+            "wrong_by": {
+              "to make": "to + 동사는 '~하기 위해'라서 문장의 동사가 아니에요.",
+              "certain forms of knowledge": "그건 make 뒤의 말이에요. 문장 전체의 주어가 아니에요.",
+              "accessible": "accessible은 '접근 가능한'이라 주어나 동사가 아니에요.",
+              "realistically possible": "'현실적으로 가능한'이라 주어나 동사가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Other, more active strategies, 동사는 are needed예요.",
+            "point": "Other, more active strategies(S) are needed(V) to make … accessible"
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_sum",
+          "type": "translate",
+          "interaction": "free_translation",
+          "model": "지식을 접근 가능하게 만들려면 더 적극적인 전략이 필요하다.",
+          "labels": {
+            "mine": "내 요약",
+            "model": "요약 예시"
+          },
+          "rules": [
+            {
+              "id": "strategy",
+              "need": [
+                "전략",
+                "방법",
+                "방안",
+                "대책"
+              ],
+              "fix": "전략이"
+            },
+            {
+              "id": "active",
+              "need": [
+                "적극"
+              ],
+              "fix": "더 적극적인"
+            },
+            {
+              "id": "need",
+              "need": [
+                "필요",
+                "해야"
+              ],
+              "fix": "필요하다"
+            },
+            {
+              "id": "access",
+              "need": [
+                "접근",
+                "다가",
+                "닿",
+                "쉽게",
+                "알 수",
+                "이해"
+              ],
+              "fix": "접근 가능하게"
+            }
+          ],
+          "highlight": [
+            "more active strategies",
+            "are needed",
+            "knowledge",
+            "accessible"
+          ],
+          "brief": {
+            "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
+            "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
+            "wrong": "고친 부분을 같이 봐요.",
+            "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
+            "feedback": {
+              "strategy": "strategies는 '전략'이에요.",
+              "active": "more active는 '더 적극적인'이에요.",
+              "need": "are needed는 '필요하다'예요.",
+              "access": "accessible은 '접근 가능한'이에요."
+            },
+            "placeholder": "어떤 상황인지 한 줄로 써 보세요",
+            "point": "Other, more active strategies are needed to make … knowledge … accessible = 지식을 접근 가능하게 하려면 더 적극적인 전략이 필요하다"
+          },
+          "method": 0
+        },
         {
           "id": "s7_draft",
           "type": "show",

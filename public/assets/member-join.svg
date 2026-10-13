@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 190" fill="none">
+  <!-- 39번 문장 1 칠판: 전문 지식을 얻으려면 집단 안으로 들어가 구성원이 되어야 한다 (장막 그림과 짝) -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <ellipse cx="128" cy="100" rx="112" ry="76" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="3"/>
+    <text x="128" y="44" text-anchor="middle" font-size="13" fill="#2f7d6c">지식 보유자 집단</text>
+    <text x="128" y="58" text-anchor="middle" font-size="10" fill="#5b9c8d">knowledge bearers</text>
+    <!-- 원래 구성원 -->
+    <g fill="#8fd0c0">
+      <circle cx="44" cy="96" r="8"/><rect x="35" y="106" width="18" height="20" rx="9"/>
+      <circle cx="74" cy="134" r="8"/><rect x="65" y="144" width="18" height="18" rx="9"/>
+    </g>
+    <!-- 가운데 지식 -->
+    <rect x="88" y="76" width="76" height="46" rx="10" fill="#fff8e1" stroke="#f2c33d" stroke-width="2.5"/>
+    <text x="126" y="98" text-anchor="middle" font-size="15" fill="#b08a1a">지식</text>
+    <text x="126" y="114" text-anchor="middle" font-size="11" fill="#b08a1a">knowledge</text>
+    <!-- 새 구성원: 안으로 들어와 지식 곁에 선다 -->
+    <g fill="#ef7a93">
+      <circle cx="200" cy="92" r="9"/><rect x="189" y="103" width="22" height="24" rx="11"/>
+    </g>
+    <path d="M186 100 H170" stroke="#ef7a93" stroke-width="3" stroke-linecap="round"/>
+    <text x="200" y="146" text-anchor="middle" font-size="12" fill="#c0455f">구성원</text>
+    <text x="200" y="161" text-anchor="middle" font-size="10" fill="#8a7f88">a member</text>
+    <!-- 바깥에 있던 자리 (흐리게) → 안으로 들어가는 화살표 -->
+    <g fill="#ef7a93" opacity=".35">
+      <circle cx="304" cy="92" r="9"/><rect x="293" y="103" width="22" height="24" rx="11"/>
+    </g>
+    <path d="M288 112 C270 128 246 128 226 114" stroke="#ef7a93" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/>
+    <path d="M226 114 L238 113 M226 114 L231 125" stroke="#ef7a93" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="304" y="146" text-anchor="middle" font-size="12" fill="#8a7f88">외부인</text>
+    <text x="294" y="56" text-anchor="middle" font-size="12" fill="#c0455f">들어가야</text>
+    <text x="294" y="71" text-anchor="middle" font-size="12" fill="#c0455f">지식을 얻어요</text>
+  </g>
+</svg>

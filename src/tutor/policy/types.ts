@@ -98,7 +98,8 @@ export type BoardGroup = {
    */
   cluster?: { words: string[]; note?: string; fresh?: boolean };
   arrow?: string;
-  words: { text: string; fresh?: boolean; quote?: boolean }[];
+  /** `ko`가 있으면 영어 아래에 작게 뜻을 적는다 */
+  words: { text: string; ko?: string; fresh?: boolean; quote?: boolean }[];
 };
 
 export type GroupsPanel = {
@@ -158,7 +159,7 @@ type StepBase = {
   /** 점진 공개(§13) — 이 스텝 동안 문장을 이렇게 보여 준다. 없으면 원문 */
   display?: string;
   /** 이 스텝을 마치면 덩어리 위에 표시를 붙인다 (예: for most outsiders → 「대상」) — 그 문장이 끝날 때까지 남는다 */
-  mark_roles?: { text: string; role: "S" | "V" | "O" | "대상" }[];
+  mark_roles?: { text: string; role: "S" | "V" | "O" | "C" | "대상" | "전목" }[];
   /** 칠판을 위가 아니라 아래(버튼 바로 위)에 — 말 없이 정리 표만 보여 줄 때 */
   panel_below?: boolean;
   /** 문장 위 꼬리표를 바꾼다 — 여러 문장을 한 화면에 보일 때 「문장 1·2」 */
@@ -207,6 +208,12 @@ type StepBase = {
   skippable?: boolean;
   /** 이 스텝을 건너뛰면 같이 건너뛴다 (예: 주어 질문을 넘기면 뼈대 그림도) */
   skip_with?: string;
+  /**
+   * 이 id의 자유 해석을 한 번에 맞히지 못한 학생만 본다 (맞힌 학생에게는 설명을 건너뛴다).
+   * 자유 해석에 `known`이 있으면 한 번에 맞힌 학생은 그 키가 학생 상태에 남아,
+   * 다음부터 같은 키의 질문·설명을 안 본다 (예: that + 주어 없는 문장 수식)
+   */
+  if_missed?: string;
 };
 
 export type ChoiceOption = {
@@ -285,7 +292,7 @@ export type PickStep = StepBase & {
   /** 「잘 모르겠어요」를 두지 않는다 — 끝까지 직접 찾게 할 때 */
   no_unknown?: boolean;
   /** 주어·동사(·목적어) 찾기 — 찾은 정답 위에 S·V·O 표시를 붙여 그 문장이 끝날 때까지 남긴다 */
-  roles?: Record<string, "S" | "V" | "O" | "대상">;
+  roles?: Record<string, "S" | "V" | "O" | "C" | "대상" | "전목">;
   brief: PickCopy;
 };
 

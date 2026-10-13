@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 190" fill="none">
+  <!-- 39번 문장 3 칠판: 집단에 들어가는 문(입회 절차)에서 후보자가 능력 시험을 본다 -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <!-- 집단 (오른쪽) -->
+    <ellipse cx="270" cy="100" rx="64" ry="72" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="3"/>
+    <text x="270" y="50" text-anchor="middle" font-size="12" fill="#2f7d6c">지식 공동체</text>
+    <g fill="#8fd0c0">
+      <circle cx="262" cy="86" r="8"/><rect x="253" y="96" width="18" height="20" rx="9"/>
+      <circle cx="298" cy="104" r="8"/><rect x="289" y="114" width="18" height="20" rx="9"/>
+      <circle cx="270" cy="138" r="7"/><rect x="262" y="147" width="16" height="14" rx="7"/>
+    </g>
+    <!-- 문: 입회 절차 -->
+    <rect x="170" y="62" width="40" height="78" rx="6" fill="#fff" stroke="#c9b9c0" stroke-width="3"/>
+    <rect x="178" y="70" width="24" height="70" rx="3" fill="#f6eff2"/>
+    <circle cx="198" cy="106" r="2.5" fill="#c9b9c0"/>
+    <text x="190" y="158" text-anchor="middle" font-size="12" fill="#5b4f57">입회 절차</text>
+    <text x="190" y="172" text-anchor="middle" font-size="10" fill="#8a7f88">admittance</text>
+    <!-- 시험지: 능력 시험 -->
+    <g transform="translate(108 30)">
+      <rect width="40" height="48" rx="4" fill="#fff8e1" stroke="#f2c33d" stroke-width="2.5"/>
+      <path d="M8 14 H32 M8 23 H32 M8 32 H24" stroke="#d9b24a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M26 34 L30 39 L38 28" stroke="#2f9e7e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="128" y="22" text-anchor="middle" font-size="12" fill="#b08a1a">능력 시험 test</text>
+    <!-- 후보자: 시험을 보고 문으로 -->
+    <g fill="#ef7a93">
+      <circle cx="58" cy="94" r="10"/><rect x="46" y="106" width="24" height="28" rx="12"/>
+    </g>
+    <text x="58" y="152" text-anchor="middle" font-size="12" fill="#c0455f">후보자</text>
+    <text x="58" y="166" text-anchor="middle" font-size="10" fill="#8a7f88">a candidate</text>
+    <path d="M78 118 C104 118 134 112 162 104" stroke="#ef7a93" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/>
+    <path d="M162 104 L151 101 M162 104 L154 112" stroke="#ef7a93" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>

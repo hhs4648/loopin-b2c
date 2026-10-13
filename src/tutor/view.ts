@@ -74,7 +74,7 @@ export type TutorView = {
   /** 문장 먼저 읽기에서 이해 정도·아는 단어 비율 막대를 보인다 (지문의 첫 문장만) */
   selfCheck?: boolean;
   /** 찾은 주어·동사 — 덩어리 위 S·V 표시 */
-  roles?: { text: string; role: "S" | "V" | "O" | "대상" }[];
+  roles?: { text: string; role: "S" | "V" | "O" | "C" | "대상" | "전목" }[];
   /** 주어진 문장(글)을 시험지처럼 상자 안에 보인다 */
   givenBox?: boolean;
   /** 단어 위 + / − 표시 */

@@ -68,8 +68,9 @@ export function StudyPanelView({ panel, onPick }: { panel: StudyPanel; onPick?: 
         {g.cluster && g.arrow && g.words.length ? <b className="board-arrow">{g.arrow}</b> : null}
         <div className="board-words">
           {g.words.map((w) => (
-            <span key={w.text} className={`board-word${w.fresh ? " fresh" : ""}${w.quote ? " quote" : ""}`}>
+            <span key={w.text} className={`board-word${w.fresh ? " fresh" : ""}${w.quote ? " quote" : ""}${w.ko ? " with-ko" : ""}`}>
               {w.text}
+              {w.ko ? <small>{w.ko}</small> : null}
             </span>
           ))}
         </div>

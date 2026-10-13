@@ -187,7 +187,7 @@ type State = {
   /** 자유 해석에서 「잘 모르겠어요」를 한 번 눌렀다 — 이제 「답 바로 보기」가 뜬다 */
   translateNudged: boolean;
   /** 이 문장에서 찾은 주어·동사 (S·V 표시) */
-  roles: { text: string; role: "S" | "V" | "O" | "대상" }[];
+  roles: { text: string; role: "S" | "V" | "O" | "C" | "대상" | "전목" }[];
   readSentences: number[];
   /** 「찾기」 스텝에서 지금까지 찾은 구절과 틀리게 누른 구절 */
   found: string[];
@@ -215,6 +215,8 @@ type State = {
   struggledInSentence: boolean;
   /** 이 문장에서 「이미 알고 있어요」로 넘긴 스텝 */
   skipped: string[];
+  /** 이 수업에서 한 번에 맞힌 자유 해석 (`if_missed` 설명을 건너뛴다) */
+  cleanPass: string[];
   anyAssisted: boolean;
   anyExplained: boolean;
   student: StudentState;
@@ -302,6 +304,7 @@ export function createPolicySession(
       thinkHinted: false,
       struggledInSentence: false,
       skipped: [],
+      cleanPass: [],
       anyAssisted: false,
       anyExplained: false,
       student: baseline,
@@ -788,7 +791,8 @@ export function createPolicySession(
     if (st.type === "pick" && st.no_unknown && !s.resolved) return [];
     // 자유 해석은 큰 버튼 없이 — 「잘 모르겠어요」는 입력창 위 밑줄 글자(linkButtons)
     if (st.type === "translate") return s.resolved ? [NEXT_BTN] : [];
-    if (st.type === "pick") return s.resolved ? [NEXT_BTN] : [UNKNOWN_BTN];
+    // 고르기도 「잘 모르겠어요」는 큰 버튼이 아니라 밑줄 글자(linkButtons)
+    if (st.type === "pick") return s.resolved ? [NEXT_BTN] : [];
     if (st.type === "think") {
       if (s.resolved) return [NEXT_BTN];
       return s.thinkHinted ? [THOUGHT_BTN] : [THOUGHT_BTN, HINT_BTN];
@@ -847,6 +851,13 @@ export function createPolicySession(
       if (known && s.student.known?.includes(known)) {
         log({ kind: "skip" }, { action: "CONTINUE", interactionId: step().id, reason: ["student_said_known"] });
         s = { ...s, skipped: [...s.skipped, step().id], pi: s.pi + 1 };
+        continue;
+      }
+      // 한 번에 맞힌 학생에게는 그 해석의 설명을 건너뛴다
+      const missedOf = step().if_missed;
+      if (missedOf && s.cleanPass.includes(missedOf)) {
+        log({ kind: "continue" }, { action: "CONTINUE", interactionId: step().id, reason: ["student_translated_well"] });
+        s = { ...s, pi: s.pi + 1 };
         continue;
       }
       const withSkipped = step().skip_with && s.skipped.includes(step().skip_with!);
@@ -1018,6 +1029,14 @@ export function createPolicySession(
     );
     const wrong = result.issues.length > 0;
     if (wrong) addPoint(st.id, title, lines.point ?? lines.explain);
+    // 한 번에 맞혔다 — 이 해석의 설명은 건너뛰고, `known`이 있으면 다음부터 같은 질문을 안 한다
+    if (!wrong && !s.translateNudged) {
+      s = { ...s, cleanPass: [...s.cleanPass, st.id] };
+      if (st.known && !s.student.known?.includes(st.known)) {
+        s = { ...s, student: { ...s.student, known: [...(s.student.known ?? []), st.known] } };
+        d.saveStudent(s.student);
+      }
+    }
     s = {
       ...s,
       resolved: true,
@@ -1395,7 +1414,9 @@ export function createPolicySession(
       translation: inLesson ? s.translation : null,
       linkButtons: inLesson && st.type === "translate" && !s.resolved && !s.readingFirst && !s.praiseOnly
         ? [s.translateNudged ? SHOW_ANSWER_BTN : UNKNOWN_BTN]
-        : [],
+        : inLesson && st.type === "pick" && !st.no_unknown && !s.resolved && !s.readingFirst && !s.praiseOnly
+          ? [UNKNOWN_BTN]
+          : [],
       fullPassage:
         lesson.passage_on_try && (inLesson || exam)
           ? { given: givenText, sentences: passageTexts, underline: lesson.exam ? underlinesOf(lesson.exam) : [] }
