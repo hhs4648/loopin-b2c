@@ -142,7 +142,8 @@ export function App() {
           console.error("[tutor] 턴 처리 실패", error);
         })
         .finally(() => setTyping(false));
-    }, 700);
+      // 점 세 개는 잠깐만 — 길면 여러 지문을 이어 푸는 학생에게 답답하다
+    }, 250);
   }
 
   function startSet(set: LessonSet) {

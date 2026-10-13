@@ -401,6 +401,7 @@
       "steps": [
         {
           "id": "s1_pick",
+          "keyword": true,
           "type": "pick",
           "interaction": "word_pick",
           "candidates": [

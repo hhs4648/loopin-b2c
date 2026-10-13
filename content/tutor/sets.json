@@ -9,6 +9,12 @@
       "subtitle": "전국연합학력평가 · 모의평가",
       "collections": [
         {
+          "id": "mopyeong-2026-06",
+          "title": "2026학년도 6월 모의평가",
+          "subtitle": "2025년 6월 시행 · 한국교육과정평가원",
+          "tag": "평가원"
+        },
+        {
           "id": "moeui-2026-03",
           "title": "2026년 3월 모의고사",
           "subtitle": "2026년 3월 고3 전국연합학력평가 영어",
@@ -86,6 +92,24 @@
       "wrong_rate": 62.3,
       "lessons": [
         "moeui-2026-03-38-gesture-glue"
+      ]
+    },
+    {
+      "id": "mopyeong-2026-06-34",
+      "collection": "mopyeong-2026-06",
+      "title": "34번 문제",
+      "subtitle": "빈칸 — 지리학이 묻는 '어디'",
+      "lessons": [
+        "mopyeong-2026-06-34-geography-where"
+      ]
+    },
+    {
+      "id": "mopyeong-2026-06-37",
+      "collection": "mopyeong-2026-06",
+      "title": "37번 문제",
+      "subtitle": "순서 — 자석 추로 본 혼돈",
+      "lessons": [
+        "mopyeong-2026-06-37-chaos-pendulum"
       ]
     }
   ]

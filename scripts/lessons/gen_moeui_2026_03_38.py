@@ -268,6 +268,8 @@ exam = {
     "underline": ["(①)", "(②)", "(③)", "(④)", "(⑤)"],
     # 보기 글이 「… 앞」뿐이라 숫자 ①~⑤만 가로로 보인다
     "numbers_only": True,
+    # 답 고르기 화면 — 지문 전체에 칠해 둘 핵심어 (①~⑤ 자리를 찾는 단서)
+    "passage_highlight": ["gesture is different from language", "such choices", "This kind of choice is characteristic of language", "Instead, it offers a kind of glue"],
     "sentence": 1,
     "analysis_first": True,
     "glosses": [],

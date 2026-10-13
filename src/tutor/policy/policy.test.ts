@@ -2,13 +2,13 @@ import { describe, expect, it } from "vitest";
 import { decideOnChoice, shouldShow, type DecideInput } from "./decide";
 import { stamps } from "./copy";
 import { allPolicyLessons, getPolicyCopy } from "./lessons";
-import { createPolicySession, underlinesOf } from "./session";
+import { createPolicySession, gradeTranslation, underlinesOf } from "./session";
 import {
   emptyStudentState,
   recordPerformance,
   skillOf,
 } from "./student-state";
-import type { ChoiceStep, PolicyStep } from "./types";
+import type { ChoiceStep, PolicyStep, TranslateStep } from "./types";
 import type { TutorView } from "../view";
 import { glossSpans, splitPhraseGlosses } from "../glosses";
 
@@ -481,7 +481,9 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.buttons).toEqual(["다 읽었어요"]);
     expect(v.pick).toBeNull();
     expect(v.emphasis).toEqual([]);
-    expect(v.readDelayMs).toBeGreaterThanOrEqual(2000);
+    // 「다 읽었어요」는 잠깐 기다렸다가 — 1.2~3.5초
+    expect(v.readDelayMs).toBeGreaterThanOrEqual(1200);
+    expect(v.readDelayMs).toBeLessThanOrEqual(3500);
     v = await session.submit("다 읽었어요");
     expect(v.readingFirst).toBe(false);
     expect(v.pick?.open).toBe(true);
@@ -502,8 +504,11 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.buttons).toEqual([]);
     expect(v.linkButtons).toEqual(["잘 모르겠어요"]);
     v = await session.submit("__pick:in fact");
-    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(true);
+    // 핵심어 고르기는 틀렸다고 하지 않는다 — 더 좋은 선택이 있다고만
+    expect(v.message.startsWith("더 좋은 선택이 있어요.")).toBe(true);
+    expect(v.message).not.toContain("틀렸어요");
     expect(v.pick?.missed).toEqual(["in fact"]);
+    expect(v.pick?.soft).toBe(true);
     v = await session.submit("__pick:innovator");
     expect(v.message).toBe("좋아요! 3개 남았어요.");
     v = await session.submit("__pick:without");
@@ -1227,8 +1232,6 @@ describe("2026년 3월 39번 — 문장 3~6도 주어·동사 찾기 → 핵심�
   const cases: [string, string[], string[], string][] = [
     ["s5_sv", ["epistemic communities", "were often kept", "secret"], [],
      "옛날엔 지식 공동체가 비밀이었고 충성심 시험이 있었다"],
-    ["s6_sv", ["Some traces", "may still be", "present", "the ideal", "has shifted"], ["openness"],
-     "흔적은 남아 있지만 외부인에게도 열린 쪽으로 바뀌었다"],
     ["s7_sv", ["Other, more active strategies", "are needed"], [], "지식에 접근 가능하게 하려면 더 적극적인 전략이 필요하다"],
   ];
   it.each(cases)("%s — 찾은 뒤 요약을 맞히고 다음으로 넘어간다", async (pickId, answers, preps, summary) => {
@@ -1277,49 +1280,107 @@ describe("2026년 3월 39번 — 문장 3은 요약 없이 핵심어(주어·동
   });
 });
 
-describe("문장 먼저 읽기 — 스스로 매긴 이해 정도·아는 단어 비율", () => {
-  it("「다 읽었어요」 전에 남긴 값이 기록과 학생 상태에 쌓인다", async () => {
-    let saved = emptyStudentState();
-    const events: unknown[] = [];
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, {
-      loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents(e) { events.push(...e); }, now: () => 0,
-    });
+describe("2026년 3월 39번 — 문장 5: S·V·C·목적어 모두 → 앞부분 뜻 고르기 → but → 핵심어 → 칠판", () => {
+  it("요약 없이 secret → openness 칠판으로 정리한다", async () => {
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
-    expect(v.selfCheck).toBe(true);
-    session.observe({ kind: "self_report", understand: 70, known: 40 });
+    for (let g = 0; g < 10 && !(v.readingFirst && v.sentenceTag === "문장 5"); g++) v = await session.submit("__next_sentence");
     v = await session.submit("다 읽었어요");
-    expect(saved.reading?.[0]).toMatchObject({ lesson: "moeui-2026-03-39-epistemic-communities", sentence: 1, understand: 70, known: 40 });
-    // 다음 문장 읽기에서는 막대가 없다 (첫 문장만)
-    for (let g = 0; g < 30 && !(v.readingFirst && v.sentenceTag !== "주어진 문장"); g++) v = await session.submit("__next_sentence");
-    expect(v.readingFirst).toBe(true);
-    expect(v.selfCheck).toBe(false);
+    // 먼저 주어·동사·보어·목적어를 모두 찾는다
+    expect(session.lastAction()?.interactionId).toBe("s6_sv");
+    v = await session.submit("__pick:these older practices");
+    expect(v.message).toContain("traces를 꾸며 주는 말이에요");
+    for (const w of ["Some traces", "may still be", "present", "the ideal", "has shifted", "openness"]) v = await session.submit(`__pick:${w}`);
+    v = await session.submit("__auto_next");
+    expect(v.roles?.map((r) => r.role)).toEqual(["S", "V", "C", "S", "V", "전목"]);
+    // 앞부분 뜻 고르기 — present = 남아 있는
+    expect(v.message).toBe("노란 부분은 무슨 뜻일까요?");
+    v = await session.submit("옛 관행이 오늘날 사람들에게 선물이 될 수 있다");
+    expect(v.message).toContain("'선물'이나 '현재의'가 아니라");
+    for (let g = 0; g < 3 && !v.message.startsWith("but은 앞과 뒤를"); g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    expect(v.message.startsWith("but은 앞과 뒤를 뒤집는 말이에요.")).toBe(true);
+    v = await session.submit("다음");
+    expect(v.message.startsWith("핵심어 members(구성원)와 outsiders(외부인)")).toBe(true);
+    v = await session.submit("다음");
+    expect(v.panel).toMatchObject({ kind: "groups", left: { label: "과거 · premodern" }, right: { label: "지금 · today" } });
+    expect(v.allowInput).toBeFalsy();
   });
+});
 
-  it("이 문제를 처음 볼 때만 묻는다 — 다시 풀 때는 막대가 없다", async () => {
-    let saved = emptyStudentState();
-    const deps = { loadStudent: () => saved, saveStudent(st: typeof saved) { saved = st; }, logEvents() {}, now: () => 0 };
-    const toFirst = async () => {
-      const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, deps);
-      let v = await session.submit("분석하러 갈게요");
-      for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
-      return { session, v };
-    };
-    let { session, v } = await toFirst();
-    expect(v.selfCheck).toBe(true);
-    session.observe({ kind: "self_report", understand: null, known: null });
-    ({ v } = await toFirst());
-    expect(v.selfCheck).toBe(false);
+describe("자유 해석 — 한 군데까지는 봐준다", () => {
+  const given = () => allPolicyLessons().find((l) => l.id === "moeui-2026-03-39-epistemic-communities")!.sentences[0];
+  const svo1 = () => given().steps.find((x) => x.id === "g_svo1") as TranslateStep;
+  it("lift를 '들어올리다'로 써도 맞다", () => {
+    expect(gradeTranslation(svo1(), "대부분의 외부인에게는 완전히 투명한 관행조차 장막을 들어올리지 못한다").issues).toEqual([]);
   });
-
-  it("막대를 안 건드리면 응답 없음(null)으로 남는다", async () => {
-    let saved = emptyStudentState();
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, {
-      loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0,
-    });
+  it("한 군데만 다르면 틀렸다고 하지 않고 그 곳만 표시한다", async () => {
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
-    session.observe({ kind: "self_report", understand: null, known: 30 });
-    expect(saved.reading?.[0]).toMatchObject({ understand: null, known: 30 });
+    v = await session.submit("다 읽었어요");
+    for (const w of ["even completely transparent practices", "do not lift", "the veil", "one", "cannot make sense of", "the information"]) v = await session.submit(`__pick:${w}`);
+    for (let g = 0; g < 8 && !v.allowInput; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    v = await session.submit("투명한 관행조차 장막을 걷어 내지 못한다");
+    expect(v.message.startsWith("아쉽게도 틀렸어요.")).toBe(false);
+    expect(v.message).toContain("한 군데만 다르게 썼어요.");
+    expect(v.translation?.fixes).toHaveLength(1);
+    expect(v.translation?.save).toBe(false);
+  });
+  it("for most outsiders의 for는 '~에게'만 — '위해'가 뜨지 않는다", () => {
+    const fr = splitPhraseGlosses(given().glosses).find((g) => g.en === "for");
+    expect(fr?.ko.startsWith("~에게")).toBe(true);
+    expect(fr?.ko).not.toContain("위해");
+  });
+});
+
+describe("2026학년도 6월 모평 34·37번 — 처음부터 끝까지 정답으로 지나가면 보기 화면까지 간다", () => {
+  it.each(["mopyeong-2026-06-34-geography-where", "mopyeong-2026-06-37-chaos-pendulum"])("%s", async (id) => {
+    const lesson = allPolicyLessons().find((l) => l.id === id)!;
+    const steps = new Map(lesson.sentences.flatMap((s) => s.steps).map((st) => [st.id, st]));
+    const session = createPolicySession(id, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    const seen = new Set<string>();
+    for (let g = 0; g < 200 && !v.examOptions; g++) {
+      const st = steps.get(session.lastAction()?.interactionId ?? "");
+      if (v.readingFirst) v = await session.submit("다 읽었어요");
+      else if (st?.type === "pick" && v.pick?.open) {
+        seen.add(st.id);
+        for (const a of st.answers) v = await session.submit(`__pick:${a}`);
+      } else if (st?.type === "choice" && !v.buttons.includes("다음으로") && v.buttons.length > 1) {
+        seen.add(st.id);
+        v = await session.submit(st.options.find((o) => o.correct)!.label);
+      } else v = await session.submit(v.buttons[0] ?? "__auto_next");
+    }
+    expect(v.examOptions).toHaveLength(5);
+    // 주어·동사 찾기와 보기 고르기를 실제로 지나왔다
+    expect([...seen].some((x) => x.endsWith("_sv"))).toBe(true);
+  });
+});
+
+describe("도입 — 풀이법 설명은 그 유형을 처음 풀 때만", () => {
+  it("같은 유형을 두 번째 풀면 method 말을 건너뛴다", async () => {
+    // 풀이법 설명을 몇 번 봤는지는 브라우저 저장소에 남는다 — 테스트에서는 흉내 낸 저장소로
+    const store = new Map<string, string>();
+    const g = globalThis as unknown as { window?: unknown };
+    const had = g.window;
+    g.window = { localStorage: { getItem: (k: string) => store.get(k) ?? null, setItem: (k: string, v: string) => void store.set(k, v), removeItem: (k: string) => void store.delete(k) } };
+    const deps = { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 };
+    const intros = async () => {
+      const session = createPolicySession("moeui-2026-03-21-music-researchers", null, deps);
+      let v = await session.submit("분석하러 갈게요");
+      const said: string[] = [];
+      for (let g = 0; g < 6 && !v.readingFirst; g++) {
+        said.push(v.message);
+        v = await session.submit(v.buttons[0] ?? "__auto_next");
+      }
+      return said;
+    };
+    const first = await intros();
+    expect(first.some((m) => m.includes("시간 싸움"))).toBe(true);
+    const second = await intros();
+    expect(second.some((m) => m.includes("시간 싸움"))).toBe(false);
+    expect(second.length).toBeLessThan(first.length);
+    g.window = had;
   });
 });

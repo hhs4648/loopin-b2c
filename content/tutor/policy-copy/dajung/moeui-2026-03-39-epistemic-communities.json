@@ -59,7 +59,7 @@
       },
       "placeholder": "S·V·O만 보고 해석해 보세요",
       "point": "S·V·O ① = 대부분의 외부인에게는 완전히 투명한 관행조차 장막을 걷어 내지 못한다.",
-      "from": "ohb0u4"
+      "from": "16aw0c"
     },
     "g_veil": {
       "ask": "여기서 lift the veil은 무엇을 가린 장막을 들어 올린다는 걸까요? 지문에서 힌트가 될 수 있는 단어를 골라 봐요.",
@@ -403,8 +403,8 @@
       "from": "1gjb73c"
     },
     "s4_draft": {
-      "say": "능력 시험이 붙은 입회 절차가 있는 경우가 많대요. 단어 지도에도 붙여 둘게요.",
-      "from": "go8bty"
+      "say": "",
+      "from": "16m7al0"
     },
     "s5_sv": {
       "ask": "이번엔 주어(S), 동사(V), 보어(C)를 찾아볼까요? 보어는 동사 뒤에서 주어가 어떤 상태인지 말해 줘요.",
@@ -422,6 +422,10 @@
       "explain": "주어는 epistemic communities, 동사는 were often kept, 보어는 secret(비밀인 상태)이에요.",
       "point": "epistemic communities(S) were often kept(V) secret(C) · 뒤는 with(시험), because of(이유)로 덧붙임",
       "from": "m01hsv"
+    },
+    "s5_past": {
+      "say": "In the premodern era는 '전근대 시대에는', 즉 과거를 말해요. 모의고사에서는 과거와 현대의 대조가 자주 나와요. 뒤에서 지금은 어떤지 나오는지 봐요.",
+      "from": "12jrlkz"
     },
     "s5_sum": {
       "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
@@ -443,53 +447,46 @@
       "from": "1h42fg"
     },
     "s6_sv": {
-      "ask": "이 문장에는 주어·동사가 두 쌍 있어요. 주어(S), 동사(V), 보어(C)를 모두 찾아볼까요?",
-      "wrong": "그건 주어·동사·보어가 아니에요.",
+      "ask": "이 문장에는 주어·동사가 두 쌍 있어요. 주어(S), 동사(V), 그리고 보어(C)나 목적어까지 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사·보어·목적어가 아니에요.",
       "wrong_by": {
-        "these older practices": "of 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "these older practices": "of 뒤에서 traces를 꾸며 주는 말이에요. 주어는 그 앞에 있어요.",
         "but": "but은 두 문장을 이어 주는 말이에요. but 뒤에 새 주어·동사가 와요.",
-        "openness": "to 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
-        "the members": "among 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
-        "outsiders": "toward 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
+        "the members": "among 뒤에서 꾸며 주는 말이에요.",
+        "outsiders": "toward 뒤에서 덧붙인 말이에요."
       },
       "more": "좋아요! {n}개 남았어요.",
       "praise": "다 찾았어요!",
-      "explain": "but 앞은 S Some traces, V may still be, C present(존재하는)예요. but 뒤는 S the ideal, V has shifted예요.",
-      "point": "Some traces(S) may still be(V) present(C) … but … the ideal(S) has shifted(V) to openness",
-      "from": "iizh9n"
+      "explain": "but 앞은 S Some traces, V may still be, C present예요. but 뒤는 S the ideal, V has shifted, to 뒤 openness예요.",
+      "point": "Some traces(S) may still be(V) present(C) … but … the ideal(S) has shifted(V) to openness(전목)",
+      "from": "ndtzee"
     },
-    "s6_obj": {
-      "ask": "has shifted to는 '~로 옮겨 갔다'예요. 무엇으로 옮겨 갔는지, to 뒤의 전치사의 목적어(전목)를 찾아볼까요?",
-      "wrong": "그건 동사에 딸린 전치사의 목적어가 아니에요.",
-      "wrong_by": {
-        "these older practices": "of 뒤에서 traces를 꾸며 주는 말이에요. has shifted to 바로 뒤를 봐요.",
-        "the members": "among 뒤에서 꾸며 주는 말이에요. has shifted to 바로 뒤를 봐요.",
-        "outsiders": "toward 뒤에서 덧붙인 말이에요. has shifted to 바로 뒤를 봐요."
-      },
-      "more": "좋아요! {n}개 남았어요.",
+    "s6_traces": {
+      "ask": "노란 부분은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "traces는 '흔적', present는 여기서 '존재하는, 남아 있는'이에요.",
+        "traces는 '흔적', present는 여기서 '존재하는, 남아 있는'이에요."
+      ],
+      "explain": "traces는 '흔적', present는 여기서 '존재하는, 남아 있는'이에요.",
       "praise": "맞아요!",
-      "explain": "has shifted to 뒤의 openness(개방성)예요.",
-      "point": "the ideal has shifted to openness = 이상이 개방성으로 옮겨 갔다 · openness = 동사에 딸린 전치사의 목적어",
-      "from": "1hc3ov5"
+      "feedback": {
+        "o0": "여기서 present는 '선물'이나 '현재의'가 아니라 '존재하는, 남아 있는'이에요. traces(흔적)라서 조금만 남아 있다는 말이에요.",
+        "o2": "여기서 present는 '선물'이나 '현재의'가 아니라 '존재하는, 남아 있는'이에요. traces(흔적)라서 조금만 남아 있다는 말이에요."
+      },
+      "from": "1pd15ci"
     },
     "s6_but": {
-      "say": "but 뒤가 글쓴이가 말하고 싶은 쪽이에요. 옛 흔적은 남아 있지만, 전체적으로는 개방성으로 바뀌었다는 거예요. 구성원끼리는 물론, 어느 정도는 외부인에게도요.",
-      "from": "gzxuxp"
+      "say": "but은 앞과 뒤를 뒤집는 말이에요. 그래서 but 뒤가 글쓴이가 하고 싶은 중요한 말이에요.",
+      "from": "wmsrsw"
     },
-    "s6_sum": {
-      "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
-      "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
-      "wrong": "고친 부분을 같이 봐요.",
-      "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
-      "feedback": {
-        "trace": "Some traces … may still be present는 '흔적이 여전히 남아 있을 수 있다'예요.",
-        "shift": "has shifted는 '옮겨 갔다, 바뀌었다'예요.",
-        "open": "openness는 '개방성', 즉 열려 있는 것이에요.",
-        "outsider": "toward outsiders는 '외부인을 향해'예요."
-      },
-      "placeholder": "어떤 상황인지 한 줄로 써 보세요",
-      "point": "… but on the whole, the ideal has shifted to openness … toward outsiders = 옛 흔적은 있지만 이제는 외부인에게도 열린 쪽으로 바뀌었다",
-      "from": "hnstoo"
+    "s6_keys": {
+      "say": "핵심어 members(구성원)와 outsiders(외부인)도 봐요. 개방성이 구성원끼리, 그리고 어느 정도는 외부인에게까지 넓어졌다는 거예요.",
+      "from": "1jcplao"
+    },
+    "s6_board": {
+      "say": "내부자도 외부자도, 이상(=추구하는 바)이 secret(비밀)에서 openness(개방성), 즉 공개로 넘어갔어요.",
+      "from": "v6fwi2"
     },
     "s6_sort_members": {
       "ask": "'the members'(구성원들), 어느 쪽일까요? 끌어서 넣어 봐요.",
@@ -505,23 +502,9 @@
       },
       "from": "1g410uh"
     },
-    "s6_sort_out": {
-      "ask": "'toward outsiders'(외부인을 향해), 어느 쪽일까요? 끌어서 넣어 봐요.",
-      "reask": "그럼 하나 골라 봐요.",
-      "hints": [
-        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
-        "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요."
-      ],
-      "explain": "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
-      "praise": "맞아요!",
-      "feedback": {
-        "o0": "toward outsiders는 '외부인을 향해'라 외부자 쪽이에요."
-      },
-      "from": "1h9rv8t"
-    },
     "s6_draft": {
-      "say": "지금도 흔적은 있지만, 전체적으로는 개방성, 어느 정도는 외부인에게까지 열린 쪽으로 바뀌었대요. 단어 지도에도 붙여 둘게요.",
-      "from": "1hx57a5"
+      "say": "",
+      "from": "16m7al0"
     },
     "s7_sv": {
       "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
@@ -559,7 +542,7 @@
     }
   },
   "exam": {
-    "ask": "주어진 문장의 단서(Nonetheless, transparent, outsiders)를 떠올리며 들어갈 곳을 골라 봐요.",
+    "ask": "핵심어 위주로 읽고 들어갈 곳을 찾아봐요. Nonetheless(그럼에도 불구하고)는 앞 문장과 내용이 달라질 때 써요. 이걸 잘 생각하고 골라 봐요.",
     "first_correct": "맞았어요!",
     "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
     "final_correct": "정답이에요!",
@@ -572,7 +555,7 @@
       "4": "바로 앞은 '비밀에 부쳤다'예요. 비밀 뒤에 '투명한 관행조차'가 오면 어색해요."
     },
     "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
-    "from": "yavmjz"
+    "from": "180m47k"
   },
   "intro": {
     "method1": {

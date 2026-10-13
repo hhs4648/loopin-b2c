@@ -85,6 +85,14 @@ const WORDS = (wordBook as { words: Record<string, string> }).words;
  * 뜻 옆에 「· lift the veil = 장막을 걷어 내다」처럼 구절 뜻을 붙인다. 뜻을 모르는 단어(the, of, 이름)는 그냥 글자.
  * `keep`에 든 구절(지금 통째로 고르는 후보)은 나누지 않는다.
  */
+const ARTICLES = new Set(["a", "an", "the"]);
+/** 사전에 있어도 덩어리 안에서는 그 덩어리 뜻으로만 보이는 기능어 (2026-10-14: to make의 to가 '~로, ~에게'로 떴다) */
+const CONTEXT_WORDS = new Set([
+  "to", "of", "for", "in", "on", "with", "from", "into", "at", "by", "as", "about", "toward", "towards",
+  "be", "is", "are", "was", "were", "been", "being", "has", "have", "had", "do", "does", "did", "not",
+  "will", "would", "may", "might", "can", "could", "should", "must", "which", "that", "it", "this", "these",
+]);
+
 export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): WordGloss[] {
   const keepSet = new Set(keep.map((k) => k.toLowerCase()));
   const singles = new Map<string, WordGloss>();
@@ -102,8 +110,15 @@ export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): W
       const w = raw.replace(/^[“"‘'(]+|[”"’'),.;:!?]+$/g, "");
       const key = w.toLowerCase();
       if (!w || added.has(key)) continue;
-      const own = singles.get(key)?.ko ?? WORDS[key];
-      if (!own) continue;
+      // to, of, for 같은 짧은 기능어는 뜻이 문맥마다 달라서 사전 뜻을 쓰지 않는다 — 구절 뜻만 (to make = 만들기 위해)
+      const own = singles.get(key)?.ko ?? (CONTEXT_WORDS.has(key) ? undefined : WORDS[key]);
+      if (!own) {
+        // 사전에 없는 단어도 누르면 구절 뜻은 보이게 — 관사(a, an, the)만 뺀다
+        if (ARTICLES.has(key)) continue;
+        added.add(key);
+        out.push({ ...g, en: w, ko: `${g.en} = ${phraseKo}` });
+        continue;
+      }
       added.add(key);
       // 레슨에 이미 그 단어 뜻이 있으면 그대로 두고(따로 들어가 있다), 사전 뜻이면 구절 뜻을 붙여 넣는다
       if (!singles.has(key)) out.push({ ...g, en: w, ko: `${own.split(" · ")[0]} · ${g.en} = ${phraseKo}` });

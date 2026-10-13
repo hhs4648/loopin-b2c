@@ -45,6 +45,8 @@
     "explain_only": "답은 이미 맞혔으니, 보기를 눌러 해설만 봐요.",
     "summary_title": "이 지문의 중요 표현과 주요 단어를 모았어요.",
     "read_first": "먼저 문장을 읽어 봐요.",
+    "pick_better": "더 좋은 선택이 있어요.",
+    "translate_one_diff": "한 군데만 다르게 썼어요. 표시해 둘게요.",
     "translate_nudge": "괜찮아요. 위 문장에서 모르는 단어를 하나씩 눌러 뜻을 보고, 한국어로 써 봐요.",
     "known_confirm": "좋아요. 다음부턴 이 설명이 안 뜨도록 할까요?",
     "read_next": "이제 {name}을 읽어 봐요.",

@@ -56,3 +56,14 @@ describe("구절 뜻을 단어마다 나누기", () => {
     expect(out.some((g) => g.en === "lift")).toBe(false);
   });
 });
+
+describe("덩어리 안의 기능어는 덩어리 뜻으로", () => {
+  it("to make의 to는 '~로, ~에게'가 아니라 to make의 뜻", () => {
+    const to = splitPhraseGlosses([{ en: "to make", ko: "만들기 위해" }]).find((g) => g.en === "to");
+    expect(to?.ko).toBe("to make = 만들기 위해");
+  });
+  it("레슨에 따로 적은 단어 뜻은 그대로 먼저", () => {
+    const fr = splitPhraseGlosses([{ en: "for", ko: "~에게(는)" }, { en: "for most outsiders", ko: "대부분의 외부인에게는" }]).find((g) => g.en === "for");
+    expect(fr?.ko).toBe("~에게(는)");
+  });
+});

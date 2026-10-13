@@ -112,7 +112,7 @@ export const PICK_CMD = "__pick:";
 /** 도입의 자동 넘김 — 화면이 시간이 지나면 보낸다 */
 export const AUTO_NEXT_CMD = "__auto_next";
 /** 맞았다는 말을 보여 주는 시간 — 그 뒤에 다음 질문 */
-const PRAISE_MS = 1300;
+const PRAISE_MS = 1000;
 const ANALYZE_DEEP_BTN = policyFrame.buttons.analyze_deep;
 const SUMMARY_ONLY_BTN = policyFrame.buttons.summary_only;
 const END_NOW_BTN = policyFrame.buttons.end_now;
@@ -249,6 +249,11 @@ export function createPolicySession(
   /* 이 유형의 풀이법 설명을 몇 번 봤나 — `intro_times`번까지는 도입에서 설명한다 */
   const methodSeen = lesson.method ? methodIntroCount(lesson.method.type) : 0;
   const methodFresh = !lesson.method || methodSeen < lesson.method.intro_times;
+  /*
+    풀이법 설명(도입의 method… 말)은 그 유형을 **처음** 풀 때만 — 여러 지문을 이어 푸는 수험생에게
+    매번 같은 설명은 답답하다 (2026-10-14 테스트 피드백: 첫 문장까지 25초)
+  */
+  const methodFirstTime = !lesson.method || methodSeen === 0;
   let methodBumped = false;
   const readButton = lesson.read_button ?? READ_DONE_BTN;
   // 문장 넣기의 「주어진 문장」(label이 있는 문장)은 지문과 따로 보여 준다
@@ -340,6 +345,9 @@ export function createPolicySession(
     }
     // 풀이법 설명은 처음 몇 번만, 그 뒤엔 짧은 시작 화면만
     if (step.type === "say" && step.show_when === (methodFresh ? "later" : "first")) {
+      return showIntro(st0, i + 1, lead);
+    }
+    if (step.type === "say" && !step.show_when && step.id.startsWith("method") && !methodFirstTime) {
       return showIntro(st0, i + 1, lead);
     }
     const lines = copy.intro?.[step.id] ?? {};
@@ -974,8 +982,14 @@ export function createPolicySession(
     if (!st.candidates.includes(word) || s.found.includes(word) || s.missed.includes(word)) return;
     if (!st.answers.includes(word)) {
       log({ kind: "answer", correct: false, optionId: word, latencyMs: d.now() - s.shownAt }, { action: "GIVE_LIGHT_HINT", interactionId: st.id });
+      const why = lines.wrong_by?.[word] ?? lines.wrong;
+      // 핵심어 고르기는 틀렸다고 하지 않는다 — 더 좋은 선택이 있다고만
+      if (st.keyword) {
+        s = { ...s, missed: [...s.missed, word], message: `${L.pick_better} ${why}` };
+        return;
+      }
       addPoint(st.id, sentence().label ?? `${sentence().id}문장`, lines.point ?? lines.explain);
-      s = { ...s, missed: [...s.missed, word], anyAssisted: true, struggledInSentence: true, message: `${L.wrong_lead} ${lines.wrong_by?.[word] ?? lines.wrong}` };
+      s = { ...s, missed: [...s.missed, word], anyAssisted: true, struggledInSentence: true, message: `${L.wrong_lead} ${why}` };
       return;
     }
     const found = [...s.found, word];
@@ -1022,12 +1036,15 @@ export function createPolicySession(
       return;
     }
     const result = gradeTranslation(st, text);
+    // 한 군데까지는 봐준다 — 틀렸다고 하지 않고, 다른 곳만 표시해 둔다 (규칙이 둘 이상일 때)
+    const oneDiff = result.issues.length === 1 && st.rules.length >= 2;
+    const wrong = result.issues.length > 0 && !oneDiff;
+    // 기록에는 다른 곳(issues)을 그대로 남긴다
     log(
       { kind: "translation", text, issues: result.issues, latencyMs: d.now() - s.shownAt },
-      { action: result.issues.length ? "EXPLAIN" : "PRAISE", interactionId: st.id },
-      result.issues.length ? "explained" : "independent_success",
+      { action: wrong ? "EXPLAIN" : "PRAISE", interactionId: st.id },
+      wrong ? "explained" : "independent_success",
     );
-    const wrong = result.issues.length > 0;
     if (wrong) addPoint(st.id, title, lines.point ?? lines.explain);
     // 한 번에 맞혔다 — 이 해석의 설명은 건너뛰고, `known`이 있으면 다음부터 같은 질문을 안 한다
     if (!wrong && !s.translateNudged) {
@@ -1053,7 +1070,7 @@ export function createPolicySession(
         where: title,
         labels: st.labels,
       },
-      message: wrong ? `${L.wrong_lead} ${lines.wrong}` : lines.praise,
+      message: wrong ? `${L.wrong_lead} ${lines.wrong}` : oneDiff ? `${lines.praise} ${L.translate_one_diff}` : lines.praise,
       buttons: [NEXT_BTN],
     };
   }
@@ -1368,6 +1385,24 @@ export function createPolicySession(
           ? { labels: lesson.method.labels, active: exam ? lesson.method.labels.length - 1 : (st.method ?? null) }
           : null,
       examNumbersOnly: !!lesson.exam?.numbers_only,
+      examPassage:
+        s.stage === "exam_final" && lesson.exam?.numbers_only
+          ? {
+              given: givenText,
+              sentences: passageTexts,
+              highlight: [],
+              // 문장마다: 분석 때 자유 해석에서 칠했던 핵심어 + 레슨에 따로 적은 핵심어(그 문장에 있는 것만)
+              highlightBy: Object.fromEntries(
+                lesson.sentences.map((x) => [
+                  x.text,
+                  [
+                    ...x.steps.flatMap((st) => (st.type === "translate" ? (st.highlight ?? []) : [])),
+                    ...(lesson.exam?.passage_highlight ?? []).filter((h) => x.text.includes(h)),
+                  ],
+                ]),
+              ),
+            }
+          : undefined,
       examOptions:
         exam && lesson.exam?.analysis_first && !(s.stage === "exam_first" && s.firstAnswer) && !s.examSolved && !s.examReview
           ? lesson.exam.options
@@ -1460,7 +1495,6 @@ export function createPolicySession(
       highlightAlt: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight_alt ?? []) : [],
       readingFirst: inLesson && s.readingFirst,
       // 이해 정도·아는 단어 비율은 이 문제를 처음 볼 때, 지문의 첫 문장에서만 — 다시 풀 때는 묻지 않는다
-      selfCheck: inLesson && s.readingFirst && s.si === 0 && !s.student.reading?.some((r) => r.lesson === lesson.id),
       sentenceTag: inLesson ? ((!s.readingFirst && st.tag) || sen.label || `문장 ${sentenceNumber(s.si)}`) : null,
       // 주어진 문장·글은 시험지처럼 상자 안에 — 원문 그대로 보일 때만 (다른 문장을 띄운 스텝은 아님)
       givenBox: inLesson && !!sen.label && shown === sen.text,
@@ -1468,10 +1502,11 @@ export function createPolicySession(
       celebrate: inLesson && s.sentenceDone,
       praiseOnly: inLesson && s.praiseOnly,
       bubbleNote: inLesson && s.readingFirst ? L.read_first_note : null,
-      readDelayMs: inLesson && s.readingFirst ? Math.min(6000, Math.max(2000, sen.text.split(/\s+/).length * 250)) : null,
+      // 「다 읽었어요」는 문장 길이만큼 기다렸다가 — 너무 길면 답답하다 (1.2~3.5초)
+      readDelayMs: inLesson && s.readingFirst ? Math.min(3500, Math.max(1200, sen.text.split(/\s+/).length * 120)) : null,
       pick:
         inLesson && st.type === "pick" && !s.readingFirst
-          ? { candidates: st.candidates, found: s.found, missed: s.missed, open: !s.resolved, shade: st.shade }
+          ? { candidates: st.candidates, found: s.found, missed: s.missed, open: !s.resolved, shade: st.shade, soft: !!st.keyword }
           : null,
       flip:
         inLesson && st.flip && !s.readingFirst

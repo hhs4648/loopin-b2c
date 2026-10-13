@@ -199,7 +199,7 @@ sentences = [
                 "answers": ["domesticated", "evaporates", "take it for granted", "art", "restores", "visibility"],
                 "brief": {
                     "ask": "이제 이 문장의 핵심어 6개를 찾아볼까요?",
-                    "wrong": "그건 핵심어가 아니에요. 익숙한 것이 어떻게 되고, 무엇이 그것을 되살리는지 찾아봐요.",
+                    "wrong": "그건 핵심어로는 약해요. 익숙한 것이 어떻게 되고, 무엇이 그것을 되살리는지 찾아봐요.",
                     "more": "좋아요! {n}개 남았어요.",
                     "praise": "다 찾았어요!",
                     "explain": "핵심어는 domesticated, evaporates, take it for granted, art, restores, visibility예요. 익숙한 것은 사라지고, 예술이 그것을 다시 보이게 해요.",
@@ -296,7 +296,7 @@ sentences = [
                 "answers": ["translation", "art", "suited", "this task"],
                 "brief": {
                     "ask": "이 문장의 핵심어 4개를 찾아볼까요?",
-                    "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 무엇이 어떤 일에 맞는지 찾아봐요.",
+                    "wrong": "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 무엇이 어떤 일에 맞는지 찾아봐요.",
                     "more": "좋아요! {n}개 남았어요.",
                     "praise": "다 찾았어요!",
                     "explain": "핵심어는 translation, art, suited, this task예요. 번역은 이 일에 잘 맞는 예술이에요.",
@@ -410,7 +410,7 @@ sentences = [
                  ["while", "a great work of literature", "accumulates", "imitations", "may well", "translations of that work",
                   "free", "its stodgy fame", "again", "precisely"],
                  ["a great work of literature", "accumulates", "imitations", "translations of that work", "free", "its stodgy fame"],
-                 "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 동사 뒤에 오는 말도 찾아봐요.",
+                 "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 동사 뒤에 오는 말도 찾아봐요.",
                  "핵심어는 a great work of literature, accumulates, imitations, translations of that work, free, its stodgy fame이에요. 주어·동사와 동사 뒤 목적어예요.",
                  praise="다 찾았어요!",
                  tips=[{"label": "힌트", "hint": True,
@@ -518,7 +518,7 @@ sentences = [
             pick("s4_pick", "이 문장의 핵심어 4개를 찾아볼까요?",
                  ["A bad text", "in Berman’s terms", "lacks", "native strangeness", "when", "you", "nothing happens"],
                  ["A bad text", "lacks", "native strangeness", "nothing happens"],
-                 "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 어떤 글이 무엇이 없고, 그래서 어떻게 되는지 찾아봐요.",
+                 "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 어떤 글이 무엇이 없고, 그래서 어떻게 되는지 찾아봐요.",
                  "핵심어는 A bad text, lacks, native strangeness, nothing happens예요. 안 좋은 글은 낯섦이 없어서 번역해도 아무 일도 없어요.",
                  praise="다 찾았어요!", faded=[S4_FADED], method=0),
             {
@@ -592,7 +592,7 @@ sentences = [
                  ["The translation of a true work of art", "significant", "because", "reinforces", "enhances", "qualities",
                   "already", "inherent"],
                  ["The translation of a true work of art", "significant", "reinforces", "enhances", "qualities", "inherent"],
-                 "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 주어·동사와 동사 뒤 목적어를 찾아봐요.",
+                 "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 주어·동사와 동사 뒤 목적어를 찾아봐요.",
                  "핵심어는 The translation of a true work of art, significant, reinforces, enhances, qualities, inherent예요.",
                  praise="다 찾았어요!", method=0),
             {
@@ -727,7 +727,7 @@ sentences = [
             pick("s7_pick", "이 문장의 핵심어 5개를 찾아볼까요?",
                  ["As Wilson put it", "translation", "makes", "the work", "seem", "more strange", "and", "newly strange"],
                  ["translation", "makes", "the work", "more strange", "newly strange"],
-                 "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 무엇이 무엇을 어떻게 만드는지 찾아봐요.",
+                 "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 무엇이 무엇을 어떻게 만드는지 찾아봐요.",
                  "핵심어는 translation, makes, the work, more strange, newly strange예요.",
                  praise="다 찾았어요!", method=0),
             {
@@ -844,6 +844,12 @@ lesson = {
     "sentences": sentences,
     "passage_on_try": True,
 }
+
+# 핵심어 고르기는 정답이 하나로 딱 떨어지지 않는다 — 틀렸다고 하지 않고 「더 좋은 선택이 있어요」
+for s_ in sentences:
+    for st in s_["steps"]:
+        if st["type"] == "pick" and "핵심어" in st["brief"]["ask"]:
+            st["keyword"] = True
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

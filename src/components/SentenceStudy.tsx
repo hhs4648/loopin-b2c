@@ -13,7 +13,7 @@ import type { UiObservation } from "../tutor/policy/types";
 import { StudyPanelView } from "./StudyPanel";
 import { BoardDrawer, isBoardPanel } from "./BoardDrawer";
 import { PassageFull } from "./PassageFull";
-import { NEXT_SENTENCE_CMD, PICK_CMD, PREV_SENTENCE_CMD, READ_FIRST_DONE_BTN } from "../tutor/policy/session";
+import { NEXT_SENTENCE_CMD, PICK_CMD, PREV_SENTENCE_CMD } from "../tutor/policy/session";
 
 type Props = {
   view: TutorView;
@@ -110,9 +110,6 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   const peeked = peek ? view.examSentences?.[peek] : undefined;
   // 자유 해석 입력창에 손이 가 있는 동안 (자판이 올라온 동안)
   const [kbOpen, setKbOpen] = useState(false);
-  // 문장 먼저 읽기 — 학생이 매기는 이해 정도·아는 단어 비율. 안 건드리면 null(응답 없음)
-  const [selfReport, setSelfReport] = useState<SelfReport>({ understand: null, known: null });
-  useEffect(() => setSelfReport({ understand: null, known: null }), [view.sentence]);
   // 앞 문장을 보는 스텝에서 › 를 눌러 지금 문장을 보는 중
   const [flipped, setFlipped] = useState(false);
   useEffect(() => setFlipped(false), [view.sentence]);
@@ -158,7 +155,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
 
   return (
-    <div className={`stage-fill study${kbOpen && view.allowInput ? " kb-open" : ""}${view.allowInput || view.translation ? " input-mode" : ""}${view.celebrate ? " celebrate" : ""}${inlinePanel ? " has-panel" : ""}${boardNow ? " board-on" : ""}${view.panelBelow ? " input-mode" : ""}${view.readingFirst ? " reading-first" : ""}`}>
+    <div className={`stage-fill study${kbOpen && view.allowInput ? " kb-open" : ""}${view.allowInput || view.translation ? " input-mode" : ""}${view.celebrate ? " celebrate" : ""}${inlinePanel ? " has-panel" : ""}${boardNow ? " board-on" : ""}${view.panelBelow ? " input-mode" : ""}${view.readingFirst ? " reading-first" : ""}${view.examPassage ? " exam-passage-mode" : ""}`}>
       <header className="study-top">
         {/*
           지문이 따로 있는 수업은 왼쪽 위가 「전체 지문」이다. 예전 ‹(교실로 돌아가기)는
@@ -267,6 +264,19 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           <span>단어를 누르면 뜻이 나와요 · {words} words</span>
         </div>}
       </div>
+
+      {/* 문장 넣기 — 답을 고를 때는 지문 전체를 시험지처럼, 핵심어를 칠해서 (①~⑤가 어디인지 보이게) */}
+      {view.examPassage ? (
+        <div className="exam-passage">
+          <PassageFull
+            given={view.examPassage.given}
+            sentences={view.examPassage.sentences}
+            underline={[]}
+            highlight={view.examPassage.highlight}
+            highlightBy={view.examPassage.highlightBy}
+          />
+        </div>
+      ) : null}
 
       {sentenceTips.length || view.concepts?.length ? (
         <TipChips
@@ -383,20 +393,13 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         {view.panel && view.panelBelow ? <StudyPanelView panel={view.panel} /> : null}
         {/* 자유 해석 결과 — 답을 쓴 자리(아래)에 그대로 */}
         {view.translation ? <TranslationCard result={view.translation} /> : null}
-        {view.selfCheck ? <ReadCheck key={view.sentence} value={selfReport} onChange={setSelfReport} /> : null}
         <QuickReplies
           buttons={view.buttons}
           hidden={typing || readWait}
           layout={view.buttonLayout}
           aux={view.auxButtons}
           numbered={view.numbered}
-          onPick={(label) => {
-            // 「다 읽었어요」 — 스스로 매긴 이해 정도·아는 단어 비율을 같이 남긴다
-            if (view.selfCheck && label === READ_FIRST_DONE_BTN) {
-              onObserve?.({ kind: "self_report", understand: selfReport.understand, known: selfReport.known });
-            }
-            onSend(label);
-          }}
+          onPick={onSend}
         />
         {view.linkButtons?.length && !typing ? (
           <div className="link-row">
@@ -553,7 +556,8 @@ function GlossSentence({
     // 「찾기」 후보 — 점선 상자로, 누르면 고른다
     const cand = candAt.find((x) => start < x.b && at > x.a);
     if (cand && pick) {
-      const state = pick.found.includes(cand.c) ? " found" : pick.missed.includes(cand.c) ? " missed" : "";
+      // 핵심어 고르기에서 덜 좋은 선택은 줄을 긋지 않고 흐리게만 (틀렸다는 표시가 아니다)
+      const state = pick.found.includes(cand.c) ? " found" : pick.missed.includes(cand.c) ? (pick.soft ? " missed soft" : " missed") : "";
       parts.push(
         <span key={i} {...roleAttr} className={`english-token${longPhrase(span.text) ? " long" : ""}${marks}`}>
           {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
@@ -1010,43 +1014,5 @@ function Tap({
     >
       {children}
     </span>
-  );
-}
-
-type SelfReport = { understand: number | null; known: number | null };
-
-/**
- * 문장 먼저 읽기 — 이해한 정도와 아는 단어 비율을 막대로 스스로 매긴다.
- * 처음엔 값이 없다(회색 막대, 「—」). 누르거나 끌어야 값이 생긴다 — 안 건드린 건 응답 없음으로 남긴다
- */
-function ReadCheck({ value, onChange }: { value: SelfReport; onChange: (v: SelfReport) => void }) {
-  const row = (label: string, key: keyof SelfReport) => {
-    const v = value[key];
-    const set = (n: number) => onChange({ ...value, [key]: n });
-    return (
-      <label className={`read-check-row${v == null ? " unset" : ""}`}>
-        <span className="read-check-label">{label}</span>
-        <input
-          type="range"
-          min={0}
-          max={100}
-          step={10}
-          value={v ?? 50}
-          aria-valuetext={v == null ? "아직 안 매김" : `${v}%`}
-          onChange={(e) => set(Number(e.target.value))}
-          // 가운데(50)를 눌러도 값이 바뀌지 않아 onChange가 안 온다 — 손을 떼면 그 자리로 매긴다
-          onPointerUp={(e) => set(Number((e.target as HTMLInputElement).value))}
-          onKeyUp={(e) => set(Number((e.target as HTMLInputElement).value))}
-        />
-        <b className="read-check-value">{v == null ? "—" : `${v}%`}</b>
-      </label>
-    );
-  };
-  return (
-    <div className="read-check">
-      {row("이해한 정도", "understand")}
-      {row("아는 단어 비율", "known")}
-      <p className="read-check-note">내 실력을 판단해서 나에게 맞춘 학습을 주는 데 쓰여요.</p>
-    </div>
   );
 }

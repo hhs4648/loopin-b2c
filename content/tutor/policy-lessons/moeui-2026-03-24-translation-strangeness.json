@@ -461,13 +461,14 @@
           ],
           "brief": {
             "ask": "이제 이 문장의 핵심어 6개를 찾아볼까요?",
-            "wrong": "그건 핵심어가 아니에요. 익숙한 것이 어떻게 되고, 무엇이 그것을 되살리는지 찾아봐요.",
+            "wrong": "그건 핵심어로는 약해요. 익숙한 것이 어떻게 되고, 무엇이 그것을 되살리는지 찾아봐요.",
             "more": "좋아요! {n}개 남았어요.",
             "praise": "다 찾았어요!",
             "explain": "핵심어는 domesticated, evaporates, take it for granted, art, restores, visibility예요. 익숙한 것은 사라지고, 예술이 그것을 다시 보이게 해요.",
             "point": "1문장 핵심어 = domesticated · evaporates · take it for granted · art · restores · visibility"
           },
-          "method": 0
+          "method": 0,
+          "keyword": true
         },
         {
           "id": "s1_keys",
@@ -720,13 +721,14 @@
           ],
           "brief": {
             "ask": "이 문장의 핵심어 4개를 찾아볼까요?",
-            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 무엇이 어떤 일에 맞는지 찾아봐요.",
+            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 무엇이 어떤 일에 맞는지 찾아봐요.",
             "more": "좋아요! {n}개 남았어요.",
             "praise": "다 찾았어요!",
             "explain": "핵심어는 translation, art, suited, this task예요. 번역은 이 일에 잘 맞는 예술이에요.",
             "point": "2문장 핵심어 = translation · art · suited · this task"
           },
-          "method": 0
+          "method": 0,
+          "keyword": true
         },
         {
           "id": "s2_keys",
@@ -1147,7 +1149,7 @@
           ],
           "brief": {
             "ask": "주어와 동사는 핵심어예요. 그럼 주어와 동사를 포함해서 핵심어 6개를 찾아볼까요?",
-            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 동사 뒤에 오는 말도 찾아봐요.",
+            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 동사 뒤에 오는 말도 찾아봐요.",
             "more": "좋아요! {n}개 남았어요.",
             "praise": "다 찾았어요!",
             "explain": "핵심어는 a great work of literature, accumulates, imitations, translations of that work, free, its stodgy fame이에요. 주어·동사와 동사 뒤 목적어예요.",
@@ -1160,7 +1162,8 @@
               "hint": true,
               "text": "동사 뒤에 나오는 명사, 즉 목적어도 보통 핵심어예요."
             }
-          ]
+          ],
+          "keyword": true
         },
         {
           "id": "s3_trans",
@@ -1784,7 +1787,7 @@
           ],
           "brief": {
             "ask": "이 문장의 핵심어 4개를 찾아볼까요?",
-            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 어떤 글이 무엇이 없고, 그래서 어떻게 되는지 찾아봐요.",
+            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 어떤 글이 무엇이 없고, 그래서 어떻게 되는지 찾아봐요.",
             "more": "좋아요! {n}개 남았어요.",
             "praise": "다 찾았어요!",
             "explain": "핵심어는 A bad text, lacks, native strangeness, nothing happens예요. 안 좋은 글은 낯섦이 없어서 번역해도 아무 일도 없어요.",
@@ -1793,7 +1796,8 @@
           "method": 0,
           "faded": [
             "in Berman’s terms"
-          ]
+          ],
+          "keyword": true
         },
         {
           "id": "s4_keys",
@@ -2074,13 +2078,14 @@
           ],
           "brief": {
             "ask": "이 문장의 핵심어 6개를 찾아볼까요?",
-            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 주어·동사와 동사 뒤 목적어를 찾아봐요.",
+            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 주어·동사와 동사 뒤 목적어를 찾아봐요.",
             "more": "좋아요! {n}개 남았어요.",
             "praise": "다 찾았어요!",
             "explain": "핵심어는 The translation of a true work of art, significant, reinforces, enhances, qualities, inherent예요.",
             "point": "5문장 핵심어 = The translation of a true work of art · significant · reinforces · enhances · qualities · inherent"
           },
-          "method": 0
+          "method": 0,
+          "keyword": true
         },
         {
           "id": "s5_keys",
@@ -2377,7 +2382,8 @@
           "faded": [
             "(translated by Heyvaert as “foreign,” but I’m not sure about that)"
           ],
-          "faded_note": "흐린 부분은 괄호 속 글쓴이의 덧붙임이라 건너뛰어도 돼요"
+          "faded_note": "흐린 부분은 괄호 속 글쓴이의 덧붙임이라 건너뛰어도 돼요",
+          "keyword": true
         },
         {
           "id": "s6_keys",
@@ -2659,13 +2665,14 @@
           ],
           "brief": {
             "ask": "이 문장의 핵심어 5개를 찾아볼까요?",
-            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어가 아니에요. 무엇이 무엇을 어떻게 만드는지 찾아봐요.",
+            "wrong": "그건 뜻을 덧붙이는 말이라 핵심어로는 약해요. 무엇이 무엇을 어떻게 만드는지 찾아봐요.",
             "more": "좋아요! {n}개 남았어요.",
             "praise": "다 찾았어요!",
             "explain": "핵심어는 translation, makes, the work, more strange, newly strange예요.",
             "point": "7문장 핵심어 = translation · makes · the work · more strange · newly strange"
           },
-          "method": 0
+          "method": 0,
+          "keyword": true
         },
         {
           "id": "s7_keys",

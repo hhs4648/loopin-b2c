@@ -62,7 +62,7 @@ export type TutorView = {
   underline?: string[];
   /** 「찾기」 스텝 — 문장 안 후보 구절을 눌러 고른다. found는 맞힌 것, missed는 틀리게 누른 것 */
   /** `shade` — 후보를 상자 대신 음영으로 (긴 구절을 고를 때) */
-  pick?: { candidates: string[]; found: string[]; missed: string[]; open: boolean; shade?: boolean } | null;
+  pick?: { candidates: string[]; found: string[]; missed: string[]; open: boolean; shade?: boolean; soft?: boolean } | null;
   /** 앞 문장을 보여 주는 스텝 — ‹ › 로 지금 문장(`text`)과 오간다 */
   flip?: { tag: string; text: string; highlight?: string[] } | null;
   /** 수업 소개(도입 말) 중 — 화면 아무 데나 눌러도 다음 말로 */
@@ -71,8 +71,6 @@ export type TutorView = {
   panelBelow?: boolean;
   /** 눈에 덜 띄게 밑줄 글자로 두는 버튼 (자유 해석의 「잘 모르겠어요」·「답 바로 보기」) */
   linkButtons?: string[];
-  /** 문장 먼저 읽기에서 이해 정도·아는 단어 비율 막대를 보인다 (지문의 첫 문장만) */
-  selfCheck?: boolean;
   /** 찾은 주어·동사 — 덩어리 위 S·V 표시 */
   roles?: { text: string; role: "S" | "V" | "O" | "C" | "대상" | "전목" }[];
   /** 주어진 문장(글)을 시험지처럼 상자 안에 보인다 */
@@ -127,6 +125,8 @@ export type TutorView = {
   examOptions?: { id: string; label: string; keywords: string[]; ko: string }[] | null;
   /** 시험 보기를 숫자만 가로로 (문장 넣기) */
   examNumbersOnly?: boolean;
+  /** 문장 넣기 — 답을 고르는 화면에서 문장 대신 지문 전체(주어진 문장 + ①~⑤ 지문)와 칠한 핵심어 */
+  examPassage?: { given: string | null; sentences: string[]; highlight: string[]; highlightBy: Record<string, string[]> };
   examGlosses?: WordGloss[];
   /** 해설만 보는 마지막 화면 — 보기 id마다 정답 여부와 해설. 보기를 누르면 고르는 게 아니라 해설이 열린다 */
   examExplain?: Record<string, { correct: boolean; text: string }> | null;

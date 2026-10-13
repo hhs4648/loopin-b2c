@@ -1,0 +1,298 @@
+{
+  "lesson": "mopyeong-2026-06-34-geography-where",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_blank": {
+      "ask": "빈칸 문제는 빈칸 문장부터 봐요. 그럼 글에서 무엇을 찾아야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'without some awareness of ____, it is difficult to …'예요. ____을 모르면 판단하기 어렵대요.",
+        "'without some awareness of ____, it is difficult to …'예요. ____을 모르면 판단하기 어렵대요."
+      ],
+      "explain": "'without some awareness of ____, it is difficult to …'예요. ____을 모르면 판단하기 어렵대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'without ~, it is difficult to …'는 '~이 없으면 …하기 어렵다'예요. 빈칸에는 꼭 알아야 하는 것이 들어가요.",
+        "o2": "'without ~, it is difficult to …'는 '~이 없으면 …하기 어렵다'예요. 빈칸에는 꼭 알아야 하는 것이 들어가요."
+      },
+      "point": "빈칸 문제는 빈칸 문장부터 — without some awareness of ____, it is difficult to … = ____을 모르면 판단하기 어렵다",
+      "from": "14115zj"
+    },
+    "s1_sv": {
+      "ask": "이제 첫 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어나 동사가 아니에요.",
+      "wrong_by": {
+        "geography": "with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "where": "콜론(:) 뒤에서 그 단어가 무엇인지 알려 주는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 One word, 동사는 is inextricably associated예요.",
+      "from": "1mp4j2f"
+    },
+    "s1_word": {
+      "ask": "지리학과 떼려야 뗄 수 없는 그 단어는 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "콜론(:) 뒤가 그 단어예요.",
+        "콜론(:) 뒤가 그 단어예요."
+      ],
+      "explain": "콜론(:) 뒤가 그 단어예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "콜론(:) 뒤가 앞에서 말한 'One word'가 무엇인지 알려 줘요. 콜론 바로 뒤를 봐요.",
+        "o2": "콜론(:) 뒤가 앞에서 말한 'One word'가 무엇인지 알려 줘요. 콜론 바로 뒤를 봐요."
+      },
+      "point": "지리학과 떼려야 뗄 수 없는 단어 = where(어디)",
+      "from": "tjg5cv"
+    },
+    "s1_map": {
+      "say": "where(어디)가 이 글의 첫 열쇠예요. 단어 지도에 넣어 둘게요.",
+      "from": "am2my0"
+    },
+    "s2_sv": {
+      "ask": "because 뒤에서 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어나 동사가 아니에요.",
+      "wrong_by": {
+        "is": "That is는 because 앞이에요. because 뒤에서 찾아봐요.",
+        "the premise": "from 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
+        "something": "그건 that 뒤 덩어리(전제의 내용) 안의 말이에요.",
+        "takes place": "그건 that 뒤 덩어리(전제의 내용) 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "because 뒤는 S geography, V starts예요.",
+      "from": "14k52o0"
+    },
+    "s2_matters": {
+      "ask": "'it matters where something takes place'는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "matter는 동사로 '중요하다'예요. it은 뒤의 where 덩어리를 대신하는 가주어예요.",
+        "matter는 동사로 '중요하다'예요. it은 뒤의 where 덩어리를 대신하는 가주어예요."
+      ],
+      "explain": "matter는 동사로 '중요하다'예요. it은 뒤의 where 덩어리를 대신하는 가주어예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "it은 뒤의 'where something takes place'를 대신하는 가주어예요. matter는 '중요하다', where는 '어디'예요.",
+        "o2": "it은 뒤의 'where something takes place'를 대신하는 가주어예요. matter는 '중요하다', where는 '어디'예요."
+      },
+      "point": "it matters where … = 어디에서 일어나는지가 중요하다 (it은 가주어)",
+      "from": "2e5v4u"
+    },
+    "s3_key": {
+      "ask": "글쓴이가 말하는 핵심 질문은 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not simply A; B예요. 세미콜론 뒤 B가 글쓴이 생각이에요.",
+        "not simply A; B예요. 세미콜론 뒤 B가 글쓴이 생각이에요."
+      ],
+      "explain": "not simply A; B예요. 세미콜론 뒤 B가 글쓴이 생각이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'not simply where questions'는 '단순히 어디 질문만은 아니다'예요. 세미콜론 뒤 'why there', 'so what'이 글쓴이가 말하는 핵심 질문이에요.",
+        "o2": "'not simply where questions'는 '단순히 어디 질문만은 아니다'예요. 세미콜론 뒤 'why there', 'so what'이 글쓴이가 말하는 핵심 질문이에요."
+      },
+      "point": "not simply A; B — 세미콜론 뒤 B(why there, so what)가 글쓴이 생각",
+      "from": "1x2ge25"
+    },
+    "s4_sv": {
+      "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요? 주어가 꽤 길 수도 있어요.",
+      "wrong": "그건 주어나 동사가 아니에요.",
+      "wrong_by": {
+        "spatial arrangements": "그건 taking 뒤 덩어리 안의 말이에요. 문장 맨 앞부터 봐요.",
+        "variations": "그건 taking 뒤 덩어리 안의 말이에요. 문장 맨 앞부터 봐요.",
+        "interconnections": "그건 taking 뒤 덩어리 안의 말이에요. 문장 맨 앞부터 봐요.",
+        "seriously": "seriously는 '진지하게'라서 주어나 동사가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Getting to such questions(그런 질문에 이르는 것), 동사는 means예요.",
+      "from": "1cefhy4"
+    },
+    "s4_what": {
+      "ask": "그런 질문에 답하려면 무엇을 진지하게 봐야 한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "means taking 뒤 'spatial arrangements, variations, and interconnections'를 봐요.",
+        "means taking 뒤 'spatial arrangements, variations, and interconnections'를 봐요."
+      ],
+      "explain": "means taking 뒤 'spatial arrangements, variations, and interconnections'를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "means taking 뒤 'spatial arrangements, variations, and interconnections'를 봐요.",
+        "o2": "means taking 뒤 'spatial arrangements, variations, and interconnections'를 봐요."
+      },
+      "point": "spatial arrangements = 공간 배치 (어디에 어떻게 놓여 있나)",
+      "from": "lv50go"
+    },
+    "s4_map": {
+      "say": "spatial arrangements(공간 배치)도 where와 같은 쪽이에요. 어디에, 어떻게 놓여 있나예요.",
+      "from": "pwy4pu"
+    },
+    "s5_sv": {
+      "ask": "이번엔 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사·목적어가 아니에요.",
+      "wrong_by": {
+        "spatial circumstances": "of 뒤에서 appreciation을 꾸며 주는 말이에요.",
+        "where to find food and services": "대시(―) 뒤의 예예요. 문장의 주어·동사·목적어가 아니에요.",
+        "how to get to work places": "대시(―) 뒤의 예예요. 문장의 주어·동사·목적어가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Engaging in even the simplest day-to-day activity, 동사는 requires, 목적어는 some appreciation이에요.",
+      "from": "2apo9l"
+    },
+    "s5_appreciation": {
+      "ask": "여기서 appreciation은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "of spatial circumstances(공간적 상황)를 '감사'할 수는 없어요.",
+        "of spatial circumstances(공간적 상황)를 '감사'할 수는 없어요."
+      ],
+      "explain": "of spatial circumstances(공간적 상황)를 '감사'할 수는 없어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "appreciation은 '감사'로 많이 알지만, 공간적 상황을 '감사'할 수는 없어요. 여기서는 '알고 있음'에 가까운 뜻이에요.",
+        "o2": "appreciation은 '감사'로 많이 알지만, 공간적 상황을 '감사'할 수는 없어요. 여기서는 '알고 있음'에 가까운 뜻이에요."
+      },
+      "point": "appreciation = 감사가 아니라 '이해, 인식' · spatial circumstances = 공간적 상황",
+      "from": "1luxlv"
+    },
+    "s5_dash": {
+      "say": "대시(―) 뒤는 spatial circumstances의 예예요. 음식을 어디서 찾을지, 직장에 어떻게 갈지처럼 일상도 '어디'를 알아야 해요.",
+      "from": "kwswjd"
+    },
+    "s5_map": {
+      "say": "spatial circumstances(공간적 상황)도 같은 쪽이에요.",
+      "from": "e5khun"
+    },
+    "s6_scale": {
+      "ask": "Moving up in scale은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "scale은 여기서 '규모'예요. 일상(앞 문장)에서 사업·정책(이 문장)으로 크기를 키운다는 말이에요.",
+        "scale은 여기서 '규모'예요. 일상(앞 문장)에서 사업·정책(이 문장)으로 크기를 키운다는 말이에요."
+      ],
+      "explain": "scale은 여기서 '규모'예요. 일상(앞 문장)에서 사업·정책(이 문장)으로 크기를 키운다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "scale은 '저울'로 많이 알지만 여기서는 '규모'예요. 앞 문장의 일상 활동에서 사업·정책 판단으로 규모를 키운다는 말이에요.",
+        "o2": "scale은 '저울'로 많이 알지만 여기서는 '규모'예요. 앞 문장의 일상 활동에서 사업·정책 판단으로 규모를 키운다는 말이에요."
+      },
+      "from": "19icujg"
+    },
+    "s6_side": {
+      "ask": "빈칸은 글쓴이 주장과 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "without(~이 없으면) 뒤가 difficult(어렵다, −)예요. 그러니 빈칸은 꼭 있어야 하는 것이에요.",
+        "without(~이 없으면) 뒤가 difficult(어렵다, −)예요. 그러니 빈칸은 꼭 있어야 하는 것이에요."
+      ],
+      "explain": "without(~이 없으면) 뒤가 difficult(어렵다, −)예요. 그러니 빈칸은 꼭 있어야 하는 것이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'~이 없으면 판단하기 어렵다'는 빈칸이 꼭 필요하다는 말이에요. 반전 단서도 없으니 글쓴이 주장과 같은 쪽이에요."
+      },
+      "point": "without(없으면) → difficult(−) · 빈칸 = 꼭 알아야 하는 것 = 글쓴이 주장과 같은 쪽",
+      "from": "q26mr2"
+    },
+    "s7_sv": {
+      "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어나 동사가 아니에요.",
+      "wrong_by": {
+        "population distributions": "그건 고려할 것들의 예예요. 문장 맨 앞부터 봐요.",
+        "the location of roads": "그건 고려할 것들의 예예요. 문장 맨 앞부터 봐요.",
+        "socio-economic patterns": "그건 고려할 것들의 예예요. 문장 맨 앞부터 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Locating a new store or public service(새 가게나 공공 서비스의 위치를 정하는 것), 동사는 requires예요.",
+      "from": "1dn9nsy"
+    },
+    "s7_examples": {
+      "say": "빈칸 문장 뒤는 예시예요. 가게 위치를 정하려면 인구 분포, 도로 위치를 따져야 하는데, 모두 '어디에 어떻게 놓여 있나'예요.",
+      "point": "가게 위치를 정할 때 인구 분포·도로 위치를 고려 = 모두 '어디에 어떻게 배치돼 있나'",
+      "from": "1selgby"
+    },
+    "s8_sv": {
+      "ask": "마지막 문장이에요. 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사·목적어가 아니에요.",
+      "wrong_by": {
+        "the political organization": "of 뒤에서 고려할 것들의 예예요.",
+        "the layout": "of 뒤에서 고려할 것들의 예예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Understanding why and where migration happens, 동사는 requires, 목적어는 consideration이에요.",
+      "from": "1r4ry6i"
+    },
+    "s8_map": {
+      "say": "the layout(배치)까지, 이 글은 '공간이 어떻게 배치돼 있나'를 계속 다른 말로 말해요.",
+      "from": "13acl77"
+    },
+    "s8_gist": {
+      "ask": "그럼 빈칸에는 어떤 말이 들어가야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "단어 지도에 모은 말들을 떠올려 봐요. 모두 '어디에, 어떻게 놓여 있나'예요.",
+        "단어 지도에 모은 말들을 떠올려 봐요. 모두 '어디에, 어떻게 놓여 있나'예요."
+      ],
+      "explain": "단어 지도에 모은 말들을 떠올려 봐요. 모두 '어디에, 어떻게 놓여 있나'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "where, spatial arrangements, spatial circumstances, location, layout 모두 '어디에, 어떻게 배치돼 있나'예요. 빈칸도 같은 말이 와야 해요.",
+        "o2": "where, spatial arrangements, spatial circumstances, location, layout 모두 '어디에, 어떻게 배치돼 있나'예요. 빈칸도 같은 말이 와야 해요."
+      },
+      "point": "글 전체 = 지리학은 '어디'에서 출발해, 공간 배치를 알아야 판단하고 이해할 수 있다",
+      "from": "175r03b"
+    },
+    "s8_go": {
+      "say": "빈칸은 주장과 같은 쪽이에요. '어디에, 어떻게 배치돼 있나'를 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "1n8o4z4"
+    }
+  },
+  "exam": {
+    "ask": "단어 지도에 모은 '어디에, 어떻게 배치돼 있나'를 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 지리학은 '어디'에서 출발해, 공간 배치를 진지하게 봐요. 그래서 현상이 지구 표면에 어떻게 배치돼 있는지 알아야 판단하고 이해할 수 있어요.",
+    "final_wrong": "정답은 ②예요.",
+    "option_feedback": {
+      "1": "문화 간 갈등이 늘어난다는 이야기는 글에 없어요. 글은 '어디에, 어떻게 놓여 있나'를 계속 말해요.",
+      "3": "자원이 언제 고갈될지는 '언제' 질문이에요. 이 글은 '어디' 질문에서 출발해요.",
+      "4": "기후 변화로 피해를 입는 곳 이야기는 글에 없어요. place(장소)가 나와서 헷갈렸죠.",
+      "5": "territory(영토)가 마지막 문장에 나와서 헷갈렸죠. 하지만 글은 결정 권한이 아니라 공간 배치 이야기예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "v04wmy"
+  },
+  "intro": {
+    "topic": {
+      "say": "새 가게를 어디에 낼지 정하려면 무엇부터 알아야 할까요? 이번 글은 지리학이 묻는 '어디'를 다뤄요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 같은 말이 다른 말로 반복되는 걸 모으면 빈칸이 보여요."
+    },
+    "from": "74dugj"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1yrqsju"
+}
