@@ -1350,7 +1350,7 @@ mark.hl2, .english-token.hl2 .english-word {
 .english .role-head { position: relative; }
 .english [data-role]::after {
   content: attr(data-role); position: absolute; left: 0; top: -0.62em;
-  padding: 0 5px; border-radius: 6px; font-size: 0.5em; font-weight: 800; line-height: 1.45; color: #fff;
+  padding: 0 5px; border-radius: 6px; font-size: 0.5em; font-weight: 800; line-height: 1.45; color: #fff; white-space: nowrap;
   pointer-events: none; animation: pop .35s ease-out;
 }
 .english [data-role="S"]::after { background: #4b7be5; }
@@ -1369,8 +1369,9 @@ mark.hl2, .english-token.hl2 .english-word {
 /* 자유 해석 — 입력창 바로 위에 해석할 영어를 붙여 둔다 (키보드가 올라와도 보이게) */
 .translate-ref {
   margin: 0 2px 6px; padding: 8px 12px; border-radius: 12px; background: #fff8e1; border: 1.5px solid #f2d27a;
-  font-size: 15px; line-height: 1.5; color: #2b2430; max-height: 30vh; overflow-y: auto;
+  color: #2b2430; position: relative;
 }
+.translate-ref .english { font-size: 16px; line-height: 1.6; }
 .translate-ref small { display: block; font-size: 11px; font-weight: 700; color: #a0939c; margin-bottom: 2px; }
 
 /* 자유 해석 — 입력창과 「보고 쓸 부분」이 화면 안에 남도록 위 문장 영역이 먼저 줄어든다(문장은 스크롤) */
@@ -1396,3 +1397,84 @@ mark.hl2, .english-token.hl2 .english-word {
 .read-check-row.unset input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; opacity: 0; }
 .read-check-row.unset input[type="range"]::-moz-range-thumb { opacity: 0; }
 .read-check-row.unset .read-check-value { color: #b9aeb6; }
+.english [data-role="대상"]::after { background: #8a6fd6; }
+.english .role-대상, .english .role-대상 .english-word {
+  text-decoration-line: underline; text-decoration-style: solid; text-decoration-thickness: 3px;
+  text-underline-offset: 6px; text-decoration-skip-ink: none; text-decoration-color: #b4a2ea;
+}
+/* 자판이 올라온 동안 — 선생님 무대를 접고 문장 자리를 넓힌다 */
+.study.kb-open .study-stage { display: none; }
+.study.kb-open .study-sentence { max-height: none !important; flex: 1 1 auto !important; }
+
+/* 밑줄 글자 버튼 — 「잘 모르겠어요」처럼 눈에 덜 띄게 */
+.link-row { display: flex; justify-content: flex-end; padding: 0 6px 4px; }
+.text-link { border: 0; background: none; padding: 2px 4px; cursor: pointer; color: #8a7f88; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+
+/* 덩어리 고르기 안내 — 손가락이 좌우로 왔다 갔다 */
+.pick-nudge { margin: 10px 0 0; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: #e2607d; animation: pop .35s ease-out; }
+.nudge-arrow { display: inline-block; font-size: 20px; animation: nudge-swing 1.1s ease-in-out infinite; }
+@keyframes nudge-swing { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(14px); } }
+@media (prefers-reduced-motion: reduce) { .nudge-arrow { animation: none; } }
+
+/* 자유 해석 결과 — 아래 입력 자리에, 다른 글과 비슷한 크기로 */
+.study-dock .translation-card { margin: 0 2px 8px; font-size: 16px; line-height: 1.55; max-height: 42cqh; }
+.study-dock .translation-card .tr-label { font-size: 12.5px; }
+.study-dock .translation-card .tr-notes { font-size: 14.5px; }
+.study-dock .translation-card .tr-saved { font-size: 13px; }
+
+/*
+  자판이 올라온 동안 — 공유 화면(아티팩트) 안에서는 바깥 페이지가 앱을 통째로 밀어 올린다.
+  막을 수 없으니 앱 전체를 스크롤되게 해서, 위로 밀려난 문장을 끌어내려 볼 수 있게 한다
+*/
+.study.kb-open { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.study.kb-open > * { flex-shrink: 0; }
+.study.kb-open .study-sentence { max-height: none !important; overflow: visible; }
+/* 「보고 쓸 부분」의 뜻 상자는 위로 — 아래로 열면 입력창을 가린다 */
+.translate-ref .gloss-tip { top: auto; bottom: calc(100% + 8px); }
+.study-dock .study-panel { margin: 0 2px 8px; }
+
+/*
+  칠판 서랍 — 단어 지도·그림은 문장 자리를 덮는 큰 흰 칠판으로. 오른쪽 손잡이로 열고 닫는다.
+  위아래 자리(머리줄 아래 ~ 선생님 무대 위)는 화면이 재서 top/bottom으로 준다
+*/
+.study.board-on:not(.reading-first) .study-sentence { min-height: 56cqh; }
+.board-drawer {
+  position: absolute; left: 26px; right: 10px; z-index: 7;
+  transform: translateX(calc(100% + 8px));
+  transition: transform .32s cubic-bezier(.2,.8,.2,1);
+}
+.board-drawer.open { transform: translateX(0); }
+.board-drawer.dragging { transition: none; }
+.board-sheet {
+  height: 100%; display: flex; flex-direction: column; gap: 4px;
+  background: #fff; border: 6px solid #d9dde3; border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(60,30,20,.16); padding: 6px 8px 8px; overflow: hidden;
+}
+.board-drawer:not(.open) .board-sheet { visibility: hidden; transition: visibility 0s .32s; }
+.board-close { align-self: flex-start; font-size: 13px; padding: 2px 4px; }
+.board-sheet .study-panel {
+  flex: 1 1 auto; min-height: 0; margin: 0; max-height: none;
+  border: 0; box-shadow: none; padding: 4px 4px 2px; overflow-y: auto;
+  font-size: 15px; animation: none;
+}
+.board-sheet .study-panel.picture { justify-content: center; }
+.board-sheet .board-picture { flex: 1 1 auto; min-height: 0; max-height: none; height: 100%; }
+.board-sheet .panel-title { font-size: 12.5px; }
+.board-sheet .board-group-label { font-size: 12.5px; }
+.board-sheet .board-word { font-size: 15px; padding: 3px 10px; }
+.board-sheet .board-cluster .board-word { font-size: 14px; }
+.board-sheet .board-caption { font-size: 14px; }
+.board-sheet .board-groups { flex: 1 1 auto; }
+.board-sheet .map-row { font-size: 15px; }
+/* 손잡이 — 칠판 왼쪽 가장자리에 붙어 있어서, 접으면 화면 오른쪽 끝에 남는다 */
+.board-handle {
+  position: absolute; top: 50%; left: -26px; transform: translateY(-50%);
+  width: 28px; padding: 12px 0; border: 0; border-radius: 12px 0 0 12px;
+  background: #d9dde3; color: #5b4f57; touch-action: none; cursor: grab;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  box-shadow: -3px 4px 10px rgba(60,30,20,.12);
+}
+.board-handle span { font-size: 18px; line-height: 1; }
+.board-handle b { writing-mode: vertical-rl; font-size: 12px; letter-spacing: .1em; }
+.board-drawer:not(.open) .board-handle { background: #ef7a93; color: #fff; }
+.board-sheet .board-group { justify-content: center; }

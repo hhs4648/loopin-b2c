@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 190" fill="none">
+  <!-- 39번 칠판 ①: 지식 공동체(전문가 집단)가 있고, 외부인은 바깥에 있다 -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <!-- 집단 -->
+    <ellipse cx="118" cy="98" rx="98" ry="74" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="3"/>
+    <text x="118" y="44" text-anchor="middle" font-size="14" fill="#2f7d6c">전문가 집단</text>
+    <!-- 구성원 -->
+    <g fill="#8fd0c0">
+      <circle cx="76" cy="84" r="9"/><rect x="66" y="95" width="20" height="22" rx="10"/>
+      <circle cx="118" cy="74" r="9"/><rect x="108" y="85" width="20" height="22" rx="10"/>
+      <circle cx="160" cy="84" r="9"/><rect x="150" y="95" width="20" height="22" rx="10"/>
+      <circle cx="97" cy="122" r="9"/><rect x="87" y="133" width="20" height="18" rx="9"/>
+      <circle cx="139" cy="122" r="9"/><rect x="129" y="133" width="20" height="18" rx="9"/>
+    </g>
+    <!-- 외부인 -->
+    <g fill="#ef7a93">
+      <circle cx="286" cy="88" r="11"/><rect x="273" y="101" width="26" height="30" rx="13"/>
+    </g>
+    <text x="286" y="152" text-anchor="middle" font-size="15" fill="#c0455f">외부인</text>
+    <text x="286" y="170" text-anchor="middle" font-size="12" fill="#8a7f88">outsider</text>
+    <path d="M226 110 H262" stroke="#c9bec5" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/>
+  </g>
+</svg>

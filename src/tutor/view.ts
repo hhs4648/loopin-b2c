@@ -67,10 +67,14 @@ export type TutorView = {
   flip?: { tag: string; text: string; highlight?: string[] } | null;
   /** 수업 소개(도입 말) 중 — 화면 아무 데나 눌러도 다음 말로 */
   tapToNext?: boolean;
+  /** 칠판을 아래(버튼 바로 위)에 보인다 */
+  panelBelow?: boolean;
+  /** 눈에 덜 띄게 밑줄 글자로 두는 버튼 (자유 해석의 「잘 모르겠어요」·「답 바로 보기」) */
+  linkButtons?: string[];
   /** 문장 먼저 읽기에서 이해 정도·아는 단어 비율 막대를 보인다 (지문의 첫 문장만) */
   selfCheck?: boolean;
   /** 찾은 주어·동사 — 덩어리 위 S·V 표시 */
-  roles?: { text: string; role: "S" | "V" | "O" }[];
+  roles?: { text: string; role: "S" | "V" | "O" | "대상" }[];
   /** 주어진 문장(글)을 시험지처럼 상자 안에 보인다 */
   givenBox?: boolean;
   /** 단어 위 + / − 표시 */

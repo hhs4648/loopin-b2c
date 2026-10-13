@@ -369,11 +369,93 @@
           "method": 0
         },
         {
+          "id": "g_for",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 for most outsiders는 어떤 역할일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "for most outsiders는 '대부분의 외부인에게는'이에요. 주어는 아니지만, 장막을 못 걷는 게 누구에게 그런지 알려 줘요.",
+              "for most outsiders는 '대부분의 외부인에게는'이에요. 주어는 아니지만, 장막을 못 걷는 게 누구에게 그런지 알려 줘요."
+            ],
+            "explain": "for most outsiders는 '대부분의 외부인에게는'이에요. 주어는 아니지만, 장막을 못 걷는 게 누구에게 그런지 알려 줘요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "for가 붙어서 주어는 될 수 없어요. 대신 '대부분의 외부인에게는', 이 문장이 누구에게 해당하는지 알려 주는 중요한 정보예요.",
+              "o2": "for가 붙어서 주어는 될 수 없어요. 대신 '대부분의 외부인에게는', 이 문장이 누구에게 해당하는지 알려 주는 중요한 정보예요."
+            },
+            "point": "for most outsiders = 대부분의 외부인에게는 · 주어는 아니지만 이 문장이 해당하는 대상(누구에게)이라 중요한 정보"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "주어"
+            },
+            {
+              "id": "o1",
+              "label": "이 문장이 해당하는 대상 (~에게는)",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "목적어"
+            }
+          ],
+          "method": 0,
+          "highlight": [
+            "for most outsiders"
+          ],
+          "mark_roles": [
+            {
+              "text": "for most outsiders",
+              "role": "대상"
+            }
+          ]
+        },
+        {
+          "id": "g_for_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "for + 명사는 모의고사에서 '~에게는'이라는 뜻으로 자주 쓰여요. 주어는 아니지만 중요한 정보예요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "for most outsiders"
+          ]
+        },
+        {
+          "id": "g_svo_tip",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "수능은 주어, 동사, 목적어 + 핵심 내용 위주로 빠르게 해석해 보면 좋아요. 한번 해 볼까요?"
+          },
+          "method": 0,
+          "button": "네"
+        },
+        {
           "id": "g_svo1",
           "type": "translate",
           "interaction": "free_translation",
-          "model": "완전히 투명한 관행조차 장막을 걷어 내지 못한다.",
+          "model": "대부분의 외부인에게는 완전히 투명한 관행조차 장막을 걷어 내지 못한다.",
           "rules": [
+            {
+              "id": "outsiders",
+              "need": [
+                "외부",
+                "바깥",
+                "밖의",
+                "모르는 사람",
+                "남들",
+                "타인",
+                "비전문가"
+              ],
+              "fix": "대부분의 외부인에게는"
+            },
             {
               "id": "practices",
               "need": [
@@ -417,24 +499,135 @@
             }
           ],
           "highlight": [
+            "for most outsiders",
             "even completely transparent practices",
             "do not lift the veil"
           ],
           "brief": {
-            "ask": "수능 문장은 주어·동사(목적어) 위주로 빠르게 읽으면 좋아요. 그럼 노란색으로 표시된 부분만 해석해 봐요.",
+            "ask": "그럼 노란색으로 표시된 부분만 해석해 봐요.",
             "praise": "잘 해석했어요! S·V·O만 잡아도 뜻이 보여요.",
             "wrong": "고친 부분을 같이 봐요.",
             "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
             "feedback": {
+              "outsiders": "for most outsiders는 '대부분의 외부인에게는'이에요. 누구에게 해당하는지 빠뜨리면 안 돼요.",
               "practices": "S even completely transparent practices는 '완전히 투명한 관행조차'예요.",
               "veil": "O the veil은 '장막'이에요.",
               "lift": "V do not lift는 '들어 올리지(걷어 내지) 못한다'예요.",
               "not": "do not이 있으니 '~하지 못한다'예요."
             },
             "placeholder": "S·V·O만 보고 해석해 보세요",
-            "point": "S·V·O ① = 완전히 투명한 관행조차 장막을 걷어 내지 못한다."
+            "point": "S·V·O ① = 대부분의 외부인에게는 완전히 투명한 관행조차 장막을 걷어 내지 못한다."
           },
           "method": 0
+        },
+        {
+          "id": "g_veil",
+          "type": "pick",
+          "interaction": "word_pick",
+          "candidates": [
+            "outsiders",
+            "practices",
+            "veil",
+            "knowledge",
+            "training"
+          ],
+          "answers": [
+            "knowledge"
+          ],
+          "highlight": [
+            "lift the veil"
+          ],
+          "brief": {
+            "ask": "여기서 lift the veil은 무엇을 가린 장막을 들어 올린다는 걸까요? 지문에서 힌트가 될 수 있는 단어를 골라 봐요.",
+            "wrong": "그건 장막 뒤에 숨겨진 게 아니에요. veil 바로 뒤를 읽어 봐요.",
+            "wrong_by": {
+              "outsiders": "outsiders는 장막을 못 걷는 사람들이에요. 장막 뒤에 숨겨진 걸 찾아봐요.",
+              "practices": "practices(관행)는 장막을 걷으려는 쪽이에요. 장막 뒤에 숨겨진 걸 찾아봐요.",
+              "veil": "veil은 장막 자체예요. 장막 뒤에 무엇이 숨겨져 있는지 찾아봐요.",
+              "training": "training은 대시(—) 뒤에서 장막을 걷는 데 필요한 것이에요. veil 바로 뒤를 읽어 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "'behind which such forms of knowledge are hidden', 장막 뒤에 그런 지식이 숨겨져 있대요. 답은 knowledge예요.",
+            "point": "lift the veil = 장막 뒤에 숨겨진 지식(knowledge)을 드러내다 · behind which such forms of knowledge are hidden"
+          },
+          "method": 1
+        },
+        {
+          "id": "g_veil_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 lift the veil은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "veil 뒤에는 그런 지식(knowledge)이 숨겨져 있어요. 장막을 걷으면 그 지식이 보이게 돼요.",
+              "veil 뒤에는 그런 지식(knowledge)이 숨겨져 있어요. 장막을 걷으면 그 지식이 보이게 돼요."
+            ],
+            "explain": "veil 뒤에는 그런 지식(knowledge)이 숨겨져 있어요. 장막을 걷으면 그 지식이 보이게 돼요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "여기서 veil은 진짜 천이 아니라 비유예요. 장막 뒤에 지식이 숨겨져 있으니, 걷어 낸다는 건 그 지식을 드러내 이해하게 한다는 뜻이에요.",
+              "o2": "여기서 veil은 진짜 천이 아니라 비유예요. 장막 뒤에 지식이 숨겨져 있으니, 걷어 낸다는 건 그 지식을 드러내 이해하게 한다는 뜻이에요."
+            },
+            "point": "lift the veil(비유) = 숨겨진 지식을 드러내 이해하게 하다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "얼굴을 가린 천을 벗기다"
+            },
+            {
+              "id": "o1",
+              "label": "숨겨진 지식을 드러내 이해하게 하다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "관행을 모두에게 공개하다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "lift the veil",
+            "behind which such forms of knowledge are hidden"
+          ]
+        },
+        {
+          "id": "g_veil_pic1",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "전문가들이 모인 집단이 있고, 외부인은 그 바깥에 있어요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/veil-group.svg",
+            "alt": "전문가 집단의 원 바깥에 외부인이 서 있다"
+          }
+        },
+        {
+          "id": "g_veil_pic2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "집단 안에는 전문 지식이 있어요. 관행이 아무리 투명해도, 외부인은 장막에 막혀 그 지식에 닿기 어려워요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/veil-knowledge.svg",
+            "alt": "집단 가운데 지식이 있고, 장막 바깥의 외부인이 손을 뻗지만 닿지 않는다"
+          },
+          "highlight": [
+            "behind which such forms of knowledge are hidden"
+          ]
         },
         {
           "id": "g_svo2",
@@ -503,10 +696,11 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "'for most outsiders'는 전치사 덩어리라 주어가 아니에요. 주어·동사 두 쌍은 칠판에 정리해 뒀어요."
+            "say": ""
           },
           "method": 0,
           "button": "다음",
+          "panel_below": true,
           "panel": {
             "kind": "structure",
             "rows": [

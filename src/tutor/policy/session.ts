@@ -89,6 +89,7 @@ const READ_DONE_BTN = policyFrame.buttons.read_done;
 const INTRO_NEXT_BTN = policyFrame.buttons.intro_next;
 const INTRO_SKIP_BTN = policyFrame.buttons.intro_skip;
 const KNOWN_BTN = policyFrame.buttons.known;
+const SHOW_ANSWER_BTN = policyFrame.buttons.show_answer;
 const YES_BTN = policyFrame.buttons.yes;
 const CANCEL_BTN = policyFrame.buttons.cancel;
 /** 읽기 화면이 한 문장을 다 읽었을 때 보내는 신호. 학생의 말이 아니다 */
@@ -183,8 +184,10 @@ type State = {
   praiseOnly: boolean;
   /** 「이미 잘 알고 있어요」 뒤 「다음부턴 안 뜨도록 할까요?」를 묻는 중 */
   knownAsk: boolean;
+  /** 자유 해석에서 「잘 모르겠어요」를 한 번 눌렀다 — 이제 「답 바로 보기」가 뜬다 */
+  translateNudged: boolean;
   /** 이 문장에서 찾은 주어·동사 (S·V 표시) */
-  roles: { text: string; role: "S" | "V" | "O" }[];
+  roles: { text: string; role: "S" | "V" | "O" | "대상" }[];
   readSentences: number[];
   /** 「찾기」 스텝에서 지금까지 찾은 구절과 틀리게 누른 구절 */
   found: string[];
@@ -288,6 +291,7 @@ export function createPolicySession(
       sentenceDone: false,
       praiseOnly: false,
       knownAsk: false,
+      translateNudged: false,
       roles: [],
       readSentences: [],
       si: 0,
@@ -782,7 +786,9 @@ export function createPolicySession(
   function buttonsFor(st: PolicyStep): string[] {
     if (st.type === "choice") return s.resolved ? [NEXT_BTN] : choiceButtons(st);
     if (st.type === "pick" && st.no_unknown && !s.resolved) return [];
-    if (st.type === "pick" || st.type === "translate") return s.resolved ? [NEXT_BTN] : [UNKNOWN_BTN];
+    // 자유 해석은 큰 버튼 없이 — 「잘 모르겠어요」는 입력창 위 밑줄 글자(linkButtons)
+    if (st.type === "translate") return s.resolved ? [NEXT_BTN] : [];
+    if (st.type === "pick") return s.resolved ? [NEXT_BTN] : [UNKNOWN_BTN];
     if (st.type === "think") {
       if (s.resolved) return [NEXT_BTN];
       return s.thinkHinted ? [THOUGHT_BTN] : [THOUGHT_BTN, HINT_BTN];
@@ -882,6 +888,7 @@ export function createPolicySession(
       found: [],
       missed: [],
       translation: null,
+      translateNudged: false,
       panel: panelOf(st.panel),
       lastAction: action,
     };
@@ -913,7 +920,9 @@ export function createPolicySession(
   }
 
   function next(lead = "") {
-    s = { ...s, pi: s.pi + 1 };
+    // 마친 스텝이 덩어리 표시를 남기면(예: 「대상」) 붙여 둔다
+    const marks = step()?.mark_roles?.filter((m) => !s.roles.some((r) => r.text === m.text)) ?? [];
+    s = { ...s, roles: [...s.roles, ...marks], pi: s.pi + 1 };
     open(lead);
   }
 
@@ -981,7 +990,13 @@ export function createPolicySession(
       return;
     }
     const title = sentence().label ?? `${sentence().id}문장`;
-    if (text === UNKNOWN_BTN) {
+    // 「잘 모르겠어요」 — 바로 답을 주지 않고, 단어를 눌러 보며 써 보자고 한다. 그래도 싫으면 「답 바로 보기」
+    if (text === UNKNOWN_BTN && !s.translateNudged) {
+      log({ kind: "dont_know", latencyMs: d.now() - s.shownAt }, { action: "GIVE_LIGHT_HINT", interactionId: st.id });
+      s = { ...s, translateNudged: true, message: L.translate_nudge, shownAt: d.now() };
+      return;
+    }
+    if (text === UNKNOWN_BTN || text === SHOW_ANSWER_BTN) {
       log({ kind: "dont_know", latencyMs: d.now() - s.shownAt }, { action: "EXPLAIN", interactionId: st.id });
       addPoint(st.id, title, lines.point ?? lines.explain);
       s = {
@@ -1378,6 +1393,9 @@ export function createPolicySession(
       allowInput: inLesson && st.type === "translate" && !s.resolved && !s.readingFirst,
       placeholder: inLesson && st.type === "translate" ? (translateCopy(copy, st.id).placeholder ?? "해석을 써 보세요") : "",
       translation: inLesson ? s.translation : null,
+      linkButtons: inLesson && st.type === "translate" && !s.resolved && !s.readingFirst && !s.praiseOnly
+        ? [s.translateNudged ? SHOW_ANSWER_BTN : UNKNOWN_BTN]
+        : [],
       fullPassage:
         lesson.passage_on_try && (inLesson || exam)
           ? { given: givenText, sentences: passageTexts, underline: lesson.exam ? underlinesOf(lesson.exam) : [] }
@@ -1420,8 +1438,8 @@ export function createPolicySession(
       underline,
       highlightAlt: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight_alt ?? []) : [],
       readingFirst: inLesson && s.readingFirst,
-      // 이해 정도·아는 단어 비율은 지문의 첫 문장에서만 매긴다 — 문장마다 매기면 귀찮아서 안 건드린다
-      selfCheck: inLesson && s.readingFirst && s.si === 0,
+      // 이해 정도·아는 단어 비율은 이 문제를 처음 볼 때, 지문의 첫 문장에서만 — 다시 풀 때는 묻지 않는다
+      selfCheck: inLesson && s.readingFirst && s.si === 0 && !s.student.reading?.some((r) => r.lesson === lesson.id),
       sentenceTag: inLesson ? ((!s.readingFirst && st.tag) || sen.label || `문장 ${sentenceNumber(s.si)}`) : null,
       // 주어진 문장·글은 시험지처럼 상자 안에 — 원문 그대로 보일 때만 (다른 문장을 띄운 스텝은 아님)
       givenBox: inLesson && !!sen.label && shown === sen.text,
@@ -1440,6 +1458,7 @@ export function createPolicySession(
           : null,
       emphasis: inLesson && !s.readingFirst ? (sen.emphasis ?? []) : [],
       panel: inLesson || s.examReview ? s.panel : null,
+      panelBelow: inLesson && !!st.panel_below && !s.praiseOnly,
       buttonLayout: stack ? "stack" : "row",
       auxButtons: [
         UNKNOWN_BTN, HINT_BTN, SKIP_BTN, PASSAGE_AGAIN_BTN,

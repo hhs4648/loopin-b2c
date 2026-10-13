@@ -10,7 +10,7 @@ import {
 } from "./student-state";
 import type { ChoiceStep, PolicyStep } from "./types";
 import type { TutorView } from "../view";
-import { glossSpans } from "../glosses";
+import { glossSpans, splitPhraseGlosses } from "../glosses";
 
 /*
   정책 단위 테스트는 레슨에 기대지 않는다 — 지문을 갈아 끼워도 그대로 돈다.
@@ -195,7 +195,8 @@ for (const L of allPolicyLessons()) {
         for (const step of sen.steps) {
           if (step.type !== "pick") continue;
           const shown = step.display ?? sen.text;
-          const spans = glossSpans(shown, sen.glosses).filter((x) => x.gloss).map((x) => x.text.replace(/[.,;:!?]+$/, ""));
+          // 화면처럼 — 지금 고르는 후보 구절은 그대로, 나머지 구절 뜻은 단어마다 나뉜다
+          const spans = glossSpans(shown, splitPhraseGlosses(sen.glosses, step.candidates)).filter((x) => x.gloss).map((x) => x.text.replace(/[.,;:!?]+$/, ""));
           for (const c of step.candidates) expect(spans, `${step.id}: ${c}`).toContain(c);
         }
       }
@@ -421,6 +422,21 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.message).toBe("자, 그럼 문장 1과 2를 모두 읽고 저자가 하고자 하는 말을 골라 볼까요?");
     expect(v.sentence).toContain("A brilliant musician");
     expect(v.sentence).toContain("will be disappointed");
+  });
+
+  it("자유 해석 — 「잘 모르겠어요」는 밑줄 글자. 누르면 단어를 눌러 보며 써 보자고 하고, 그다음에야 「답 바로 보기」", async () => {
+    const { session } = await toAnalysis();
+    for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", S2_RIGHT[0]!, "inventor"]) await session.submit(t);
+    let v = session.view();
+    expect(v.buttons).toEqual([]);
+    expect(v.linkButtons).toEqual(["잘 모르겠어요"]);
+    v = await session.submit("잘 모르겠어요");
+    expect(v.message).toContain("모르는 단어를 하나씩 눌러 뜻을 보고");
+    expect(v.translation).toBeNull();
+    expect(v.linkButtons).toEqual(["답 바로 보기"]);
+    v = await session.submit("답 바로 보기");
+    expect(v.translation?.model).toBeTruthy();
+    expect(v.linkButtons).toEqual([]);
   });
 
   it("자유 해석 — 고칠 곳이 없으면 칭찬하고 저장하지 않는다", async () => {
@@ -1051,13 +1067,37 @@ describe("2026년 3월 39번 — 주어진 문장 주어·동사 찾기", () => 
     expect(v.roles).toEqual([{ text: "even completely transparent practices", role: "S" }]);
     for (const w of ["do not lift", "the veil", "one", "cannot make sense of", "the information"]) v = await session.submit(`__pick:${w}`);
     v = await session.submit("__auto_next");
-    // 다음 화면에도 S·V·O가 남는다 — 이어서 S·V·O만으로 해석
+    // 다음 화면에도 S·V·O가 남는다 — for most outsiders는 주어가 아니지만 「대상」
     expect(v.roles?.map((r) => r.role)).toEqual(["S", "V", "O", "S", "V", "O"]);
-    expect(v.message).toBe("수능 문장은 주어·동사(목적어) 위주로 빠르게 읽으면 좋아요. 그럼 노란색으로 표시된 부분만 해석해 봐요.");
+    expect(v.message).toBe("그럼 for most outsiders는 어떤 역할일까요?");
+    v = await session.submit("이 문장이 해당하는 대상 (~에게는)");
+    v = await session.submit("__auto_next");
+    // 맞힌 다음 바로 넘어가지 않고 for + 명사를 설명한다
+    expect(v.message).toBe("for + 명사는 모의고사에서 '~에게는'이라는 뜻으로 자주 쓰여요. 주어는 아니지만 중요한 정보예요.");
+    v = await session.submit("다음");
+    expect(v.roles?.map((r) => r.role)).toContain("대상");
+    // 안내 말과 해석 요청은 따로
+    expect(v.message).toBe("수능은 주어, 동사, 목적어 + 핵심 내용 위주로 빠르게 해석해 보면 좋아요. 한번 해 볼까요?");
+    v = await session.submit("네");
+    expect(v.message).toBe("그럼 노란색으로 표시된 부분만 해석해 봐요.");
     expect(v.allowInput).toBe(true);
-    v = await session.submit("완전히 투명한 관행조차 장막을 걷어 내지 못한다");
+    v = await session.submit("대부분의 외부인에게는 완전히 투명한 관행조차 장막을 걷어 내지 못한다");
     expect(v.translation?.fixes).toEqual([]);
     v = await session.submit("다음으로");
+    // lift the veil — 장막 뒤에 숨겨진 것 찾기 → 뜻
+    expect(v.message.startsWith("여기서 lift the veil은 무엇을 가린 장막을")).toBe(true);
+    v = await session.submit("__pick:veil");
+    expect(v.message).toContain("veil은 장막 자체예요");
+    v = await session.submit("__pick:knowledge");
+    v = await session.submit("__auto_next");
+    expect(v.message).toBe("그럼 lift the veil은 무슨 뜻일까요?");
+    v = await session.submit("숨겨진 지식을 드러내 이해하게 하다");
+    v = await session.submit("__auto_next");
+    // 그림 ① 집단과 바깥의 외부인 → ② 집단 안의 지식, 닿기 어려운 외부인
+    expect(v.panel).toMatchObject({ kind: "picture", src: "/assets/veil-group.svg" });
+    v = await session.submit("다음");
+    expect(v.panel).toMatchObject({ kind: "picture", src: "/assets/veil-knowledge.svg" });
+    v = await session.submit("다음");
     expect(v.message).toBe("이번에도 노란색으로 표시된 부분만 해석해 봐요.");
     v = await session.submit("누구든 그 정보를 이해할 수 없다");
     expect(v.translation?.fixes).toEqual([]);
@@ -1081,6 +1121,22 @@ describe("문장 먼저 읽기 — 스스로 매긴 이해 정도·아는 단어
     // 다음 문장 읽기에서는 막대가 없다 (첫 문장만)
     for (let g = 0; g < 30 && !(v.readingFirst && v.sentenceTag !== "주어진 문장"); g++) v = await session.submit("__next_sentence");
     expect(v.readingFirst).toBe(true);
+    expect(v.selfCheck).toBe(false);
+  });
+
+  it("이 문제를 처음 볼 때만 묻는다 — 다시 풀 때는 막대가 없다", async () => {
+    let saved = emptyStudentState();
+    const deps = { loadStudent: () => saved, saveStudent(st: typeof saved) { saved = st; }, logEvents() {}, now: () => 0 };
+    const toFirst = async () => {
+      const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, deps);
+      let v = await session.submit("분석하러 갈게요");
+      for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+      return { session, v };
+    };
+    let { session, v } = await toFirst();
+    expect(v.selfCheck).toBe(true);
+    session.observe({ kind: "self_report", understand: null, known: null });
+    ({ v } = await toFirst());
     expect(v.selfCheck).toBe(false);
   });
 

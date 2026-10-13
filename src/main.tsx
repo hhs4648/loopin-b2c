@@ -21,7 +21,13 @@ function syncAppHeight() {
   */
   const root = getComputedStyle(document.documentElement);
   const pad = (parseFloat(root.paddingTop) || 0) + (parseFloat(root.paddingBottom) || 0);
-  document.documentElement.style.setProperty("--app-h", `${window.innerHeight - pad}px`);
+  /*
+    자판이 올라오면 보이는 높이(visualViewport)가 줄어든다 — 그 높이에 앱을 맞춰야 위 문장과
+    입력창이 둘 다 보인다. 안 그러면 페이지가 밀려 올라가 문장이 가려진다
+  */
+  const vv = window.visualViewport;
+  const h = vv ? Math.min(window.innerHeight, vv.height) : window.innerHeight;
+  document.documentElement.style.setProperty("--app-h", `${h - pad}px`);
   // 그 여백이 이미 노치·홈 막대 자리를 비워 줬다 — 화면 안에서 또 비우면 위가 두 번 빈다
   const el = document.documentElement.style;
   if (pad > 0) {
@@ -34,6 +40,11 @@ function syncAppHeight() {
 }
 syncAppHeight();
 window.addEventListener("resize", syncAppHeight);
+window.visualViewport?.addEventListener("resize", () => {
+  syncAppHeight();
+  // 자판 때문에 밀려 올라간 페이지를 제자리로 — 앱이 이미 보이는 높이에 맞춰졌다
+  window.scrollTo(0, 0);
+});
 // 회전 직후에는 아직 옛 높이가 나온다 — 다음 프레임에 한 번 더 잰다
 window.addEventListener("orientationchange", () => {
   requestAnimationFrame(syncAppHeight);

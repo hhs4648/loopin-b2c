@@ -11,6 +11,7 @@ import { isSaved, loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab
 import { lessonIdOfSentence } from "../tutor/vocabTest";
 import type { UiObservation } from "../tutor/policy/types";
 import { StudyPanelView } from "./StudyPanel";
+import { BoardDrawer, isBoardPanel } from "./BoardDrawer";
 import { PassageFull } from "./PassageFull";
 import { NEXT_SENTENCE_CMD, PICK_CMD, PREV_SENTENCE_CMD, READ_FIRST_DONE_BTN } from "../tutor/policy/session";
 
@@ -49,13 +50,34 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   */
   // 「듣기 · 단어를 누르면 …」 줄은 처음 몇 화면만 — 칠판 분석이 한 번 나오면 그 뒤로는 치운다
   const [sawBoard, setSawBoard] = useState(false);
+  // 덩어리 고르기(음영) 화면은 듣기 줄을 빼고, 3초 동안 반응이 없으면 「회색 부분을 눌러 보세요!」
+  const shadePick = !!view.pick?.shade && !view.readingFirst;
+  const pickUntouched = !!view.pick?.open && !view.pick.found.length && !view.pick.missed.length;
+  const [pickNudge, setPickNudge] = useState(false);
+  useEffect(() => {
+    setPickNudge(false);
+    if (!pickUntouched || typing) return;
+    const id = window.setTimeout(() => setPickNudge(true), 3000);
+    return () => window.clearTimeout(id);
+  }, [pickUntouched, typing, view.sentence, view.message]);
   useEffect(() => {
     if (view.panel) setSawBoard(true);
   }, [view.panel]);
   const sentenceTips = useMemo(() => (view.tips ?? []).filter((t) => !t.hint), [view.tips]);
   const hintTips = useMemo(() => (view.tips ?? []).filter((t) => t.hint), [view.tips]);
   const lastTop = useRef<{ top: number; sentence: string } | null>(null);
-  const hasPanel = !!view.panel;
+  /*
+    단어 지도·그림은 칠판 서랍으로 크게 — 문장 자리를 덮고, 오른쪽 손잡이로 열고 닫는다.
+    칠판 스텝이 지나도 같은 문장 안에서는 손잡이가 남아 다시 볼 수 있다
+  */
+  const boardNow = !view.panelBelow && isBoardPanel(view.panel) ? view.panel : null;
+  const [lastBoard, setLastBoard] = useState<{ sentence: string; panel: NonNullable<TutorView["panel"]> } | null>(null);
+  useEffect(() => {
+    if (boardNow) setLastBoard({ sentence: view.sentence, panel: boardNow });
+  }, [boardNow, view.sentence]);
+  const board = boardNow ?? (lastBoard?.sentence === view.sentence && !view.readingFirst ? lastBoard.panel : null);
+  const inlinePanel = view.panel && !view.panelBelow && !boardNow ? view.panel : null;
+  const hasPanel = !!inlinePanel;
   useLayoutEffect(() => {
     const el = sentenceBox.current?.querySelector<HTMLElement>(".english");
     if (!el) return;
@@ -86,6 +108,8 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   // 💡 Tip을 연 동안 문장에서 표시할 단어 (Tip의 `mark`)
   const [tipMark, setTipMark] = useState<string | null>(null);
   const peeked = peek ? view.examSentences?.[peek] : undefined;
+  // 자유 해석 입력창에 손이 가 있는 동안 (자판이 올라온 동안)
+  const [kbOpen, setKbOpen] = useState(false);
   // 문장 먼저 읽기 — 학생이 매기는 이해 정도·아는 단어 비율. 안 건드리면 null(응답 없음)
   const [selfReport, setSelfReport] = useState<SelfReport>({ understand: null, known: null });
   useEffect(() => setSelfReport({ understand: null, known: null }), [view.sentence]);
@@ -134,7 +158,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
 
   return (
-    <div className={`stage-fill study${view.allowInput ? " input-mode" : ""}${view.celebrate ? " celebrate" : ""}${view.panel || view.translation ? " has-panel" : ""}${view.readingFirst ? " reading-first" : ""}`}>
+    <div className={`stage-fill study${kbOpen && view.allowInput ? " kb-open" : ""}${view.allowInput || view.translation ? " input-mode" : ""}${view.celebrate ? " celebrate" : ""}${inlinePanel ? " has-panel" : ""}${boardNow ? " board-on" : ""}${view.panelBelow ? " input-mode" : ""}${view.readingFirst ? " reading-first" : ""}`}>
       <header className="study-top">
         {/*
           지문이 따로 있는 수업은 왼쪽 위가 「전체 지문」이다. 예전 ‹(교실로 돌아가기)는
@@ -236,7 +260,14 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             ))}
           </div>
         ) : null}
-        {sawBoard ? null : <div className="listen-row">
+        {/* 덩어리 고르기에서 3초 동안 아무것도 안 누르면 — 무엇을 할지 화살표로 알려 준다 (듣기 자리) */}
+        {pickNudge ? (
+          <p className="pick-nudge" role="status">
+            <span className="nudge-arrow" aria-hidden="true">👆</span>
+            {view.pick?.shade ? "회색 부분을 눌러 보세요!" : "상자 친 부분을 눌러 보세요!"}
+          </p>
+        ) : null}
+        {sawBoard || shadePick ? null : <div className="listen-row">
           <button type="button" className="listen" onClick={listen}>
             <SpeakerIcon /> 듣기
           </button>
@@ -253,14 +284,24 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         />
       ) : null}
 
-      {view.translation ? <TranslationCard result={view.translation} /> : null}
 
-      {view.panel ? (
+      {inlinePanel ? (
         <StudyPanelView
-          panel={view.panel}
+          panel={inlinePanel}
           // 끌어 넣기는 지금 고를 수 있는 보기일 때만 — 답한 뒤의 화면에서는 칩을 치운다
           onPick={
-            !typing && view.panel.kind === "groups" && view.panel.sort && view.buttons.includes(view.panel.sort.right)
+            !typing && inlinePanel.kind === "groups" && inlinePanel.sort && view.buttons.includes(inlinePanel.sort.right)
+              ? onSend
+              : undefined
+          }
+        />
+      ) : null}
+      {board ? (
+        <BoardDrawer
+          panel={board}
+          fresh={board === boardNow}
+          onPick={
+            !typing && board === boardNow && board.kind === "groups" && board.sort && view.buttons.includes(board.sort.right)
               ? onSend
               : undefined
           }
@@ -318,7 +359,11 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </div>
       ) : null}
 
-      <div className="study-dock">
+      <div
+        className="study-dock"
+        onFocusCapture={(e) => (e.target as HTMLElement).tagName === "TEXTAREA" && setKbOpen(true)}
+        onBlurCapture={(e) => (e.target as HTMLElement).tagName === "TEXTAREA" && setKbOpen(false)}
+      >
         {view.examOptions ? (
           <ExamOptions
             options={view.examOptions}
@@ -332,6 +377,9 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             onPick={onSend}
           />
         ) : null}
+        {view.panel && view.panelBelow ? <StudyPanelView panel={view.panel} /> : null}
+        {/* 자유 해석 결과 — 답을 쓴 자리(아래)에 그대로 */}
+        {view.translation ? <TranslationCard result={view.translation} /> : null}
         {view.selfCheck ? <ReadCheck key={view.sentence} value={selfReport} onChange={setSelfReport} /> : null}
         <QuickReplies
           buttons={view.buttons}
@@ -347,12 +395,38 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             onSend(label);
           }}
         />
+        {view.linkButtons?.length && !typing ? (
+          <div className="link-row">
+            {view.linkButtons.map((label) => (
+              <button key={label} type="button" className="text-link" onClick={() => onSend(label)}>
+                {label}
+              </button>
+            ))}
+          </div>
+        ) : null}
         {view.allowInput === false ? null : (
           // 키보드가 올라오면 위 문장이 밀려나므로, 해석할 영어를 입력창 바로 위에 다시 보여 준다
-          <p className="translate-ref">
-            <small>보고 쓸 부분</small>
-            {view.highlight?.length ? view.highlight.join(" … ") : view.sentence}
-          </p>
+          // 이 영어도 단어를 눌러 뜻을 볼 수 있다 — 자판이 올라와 위 문장이 밀려나도 여기서 보며 쓴다
+          <div className="translate-ref">
+            <small>보고 쓸 부분 · 단어를 누르면 뜻이 나와요</small>
+            <GlossSentence
+              sentence={view.highlight?.length ? view.highlight.join(" … ") : view.sentence}
+              nouns={view.properNouns}
+              glosses={view.glosses}
+              highlight={[]}
+              underline={[]}
+              highlightAlt={[]}
+              tipMark={null}
+              pick={null}
+              signs={[]}
+              roles={[]}
+              onPickWord={() => {}}
+              emphasis={[]}
+              faded={[]}
+              shaded={[]}
+              onLookup={(word) => onObserve?.({ kind: "vocab_click", word })}
+            />
+          </div>
         )}
         {view.allowInput === false ? null : (
           <InputBar placeholder={view.placeholder} disabled={typing} onSend={onSend} />
@@ -419,7 +493,8 @@ function GlossSentence({
   useLayoutEffect(() => {
     setShift(0);
     const tip = tipRef.current;
-    const box = tip?.closest(".study-sentence");
+    // 입력창 위 「보고 쓸 부분」 안에서도 그 상자 안으로 밀어 넣는다
+    const box = tip?.closest(".study-sentence, .translate-ref");
     if (!tip || !box) return;
     const t = tip.getBoundingClientRect();
     const b = box.getBoundingClientRect();
