@@ -26,6 +26,8 @@ export type StudentState = {
   skills: Record<string, SkillRecord>;
   /** 「이미 잘 알고 있어요 → 다음부턴 안 뜨게」를 고른 설명들 (스텝의 `known` 키) */
   known?: string[];
+  /** 문장 먼저 읽기에서 스스로 매긴 이해 정도·아는 단어 비율 (최근 것부터 쌓인다) */
+  reading?: { lesson: string; sentence: number; understand: number | null; known: number | null; at: string }[];
 };
 
 export function emptyStudentState(): StudentState {

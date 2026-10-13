@@ -1198,9 +1198,9 @@ mark.hl2, .english-token.hl2 .english-word {
 .study.has-panel .study-top { order: -2; }
 .study.has-panel > .study-panel { order: -1; margin-top: 8px; }
 /* 칠판·결과 카드가 있어도 문장은 다 보이게 — 줄어드는 건 선생님 무대. 너무 길면 문장 안에서 스크롤 */
-.study.has-panel:not(.reading-first) .study-sentence { flex: 0 1 auto; min-height: 0; max-height: 56cqh; }
+.study.has-panel:not(.reading-first) .study-sentence { flex: 0 1 auto; min-height: 0; max-height: 46cqh; }
 /* 남는 자리만 선생님 무대 — 모자라면 문장이 먼저 줄고(문장 안에서 스크롤) 버튼은 화면 안에 남는다 */
-.study.has-panel:not(.reading-first) .study-stage { flex: 1 1 0; min-height: 110px; }
+.study.has-panel:not(.reading-first) .study-stage { flex: 1 1 0; min-height: 132px; }
 
 /* 말풍선 위 힌트 칩 — 말풍선과 같이 선생님 위에 붙어 다닌다 */
 .study-bubble-over { display: flex; flex-direction: column; align-items: center; gap: 6px; }
@@ -1342,3 +1342,57 @@ mark.hl2, .english-token.hl2 .english-word {
 }
 .exam-num-btn.on { background: #fde8ee; }
 .exam-num-btn.is-answer.on { background: #e6f6f1; border-color: #8fd0c0; color: #2f7d6c; }
+
+/* 주어진 문장 — 시험지처럼 상자 안에 */
+.given-box { border: 1.5px solid #2b2430; border-radius: 8px; background: #fff; padding: 10px 14px; }
+
+/* 주어(S)·동사(V) 표시 — 덩어리 첫 칸 위 글자 + 덩어리 밑줄 색 */
+.english .role-head { position: relative; }
+.english [data-role]::after {
+  content: attr(data-role); position: absolute; left: 0; top: -0.62em;
+  padding: 0 5px; border-radius: 6px; font-size: 0.5em; font-weight: 800; line-height: 1.45; color: #fff;
+  pointer-events: none; animation: pop .35s ease-out;
+}
+.english [data-role="S"]::after { background: #4b7be5; }
+.english [data-role="V"]::after { background: #e2607d; }
+/* 밑줄은 글자 밑줄 하나로 고르게 — 단어 칸의 점선 밑줄을 덮어 쓴다. 칸이 겹쳐 두 번 그려져도 같은 색이 되게 불투명한 색 */
+.english .role-S, .english .role-S .english-word,
+.english .role-V, .english .role-V .english-word,
+.english .role-O, .english .role-O .english-word {
+  text-decoration-line: underline; text-decoration-style: solid; text-decoration-thickness: 3px;
+  text-underline-offset: 6px; text-decoration-skip-ink: none;
+}
+.english .role-S, .english .role-S .english-word { text-decoration-color: #7d9ceb; }
+.english .role-V, .english .role-V .english-word { text-decoration-color: #ea8ea3; }
+.english [data-role="O"]::after { background: #2f9e7e; }
+.english .role-O, .english .role-O .english-word { text-decoration-color: #6cbba3; }
+/* 자유 해석 — 입력창 바로 위에 해석할 영어를 붙여 둔다 (키보드가 올라와도 보이게) */
+.translate-ref {
+  margin: 0 2px 6px; padding: 8px 12px; border-radius: 12px; background: #fff8e1; border: 1.5px solid #f2d27a;
+  font-size: 15px; line-height: 1.5; color: #2b2430; max-height: 30vh; overflow-y: auto;
+}
+.translate-ref small { display: block; font-size: 11px; font-weight: 700; color: #a0939c; margin-bottom: 2px; }
+
+/* 자유 해석 — 입력창과 「보고 쓸 부분」이 화면 안에 남도록 위 문장 영역이 먼저 줄어든다(문장은 스크롤) */
+.study.input-mode .study-sentence { flex: 0 1 auto !important; min-height: 0 !important; max-height: 40cqh !important; padding-top: 8px !important; }
+.study.input-mode .study-stage { flex: 1 1 0; min-height: 96px; }
+
+/* 문장 먼저 읽기 — 이해 정도·아는 단어 비율 막대 */
+.read-check { display: flex; flex-direction: column; gap: 4px; padding: 8px 12px; margin: 0 2px 6px; border-radius: 14px; background: rgba(255,255,255,.85); }
+.read-check-row { display: grid; grid-template-columns: 84px 1fr 40px; align-items: center; gap: 8px; }
+.read-check-label { font-size: 12.5px; font-weight: 600; color: #4a3f47; }
+.read-check-row input[type="range"] { width: 100%; accent-color: #ef7a93; }
+.read-check-value { font-size: 13px; color: #e2607d; text-align: right; }
+.read-check-help { align-self: flex-start; border: 0; background: none; padding: 0; font-size: 11.5px; color: #a0939c; cursor: pointer; }
+.read-check-note { margin: 0; font-size: 11.5px; color: #8a7f88; }
+/* 문장 먼저 읽기 — 이해 정도 막대와 「다 읽었어요」가 화면 안에 남도록 문장 영역이 먼저 줄어든다 */
+.study.reading-first .study-sentence { flex: 0 1 auto !important; min-height: 0 !important; }
+.study.reading-first .study-stage { flex: 1 1 0; min-height: 96px; }
+
+/* 아직 안 매긴 막대 — 회색, 손잡이 없이 */
+.read-check-row.unset input[type="range"] {
+  -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: #e7dfe3; margin: 9px 0;
+}
+.read-check-row.unset input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; opacity: 0; }
+.read-check-row.unset input[type="range"]::-moz-range-thumb { opacity: 0; }
+.read-check-row.unset .read-check-value { color: #b9aeb6; }

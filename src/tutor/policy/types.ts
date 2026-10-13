@@ -278,6 +278,10 @@ export type PickStep = StepBase & {
   answers: string[];
   /** 후보를 상자 대신 음영으로 보인다 (구절을 고를 때) */
   shade?: boolean;
+  /** 「잘 모르겠어요」를 두지 않는다 — 끝까지 직접 찾게 할 때 */
+  no_unknown?: boolean;
+  /** 주어·동사(·목적어) 찾기 — 찾은 정답 위에 S·V·O 표시를 붙여 그 문장이 끝날 때까지 남긴다 */
+  roles?: Record<string, "S" | "V" | "O">;
   brief: PickCopy;
 };
 
@@ -285,6 +289,8 @@ export type PickCopy = {
   ask: string;
   /** 틀린 후보를 눌렀을 때 (「아쉽게도 틀렸어요.」 뒤) */
   wrong: string;
+  /** 후보마다 다른 이유 (예: for most outsiders → 전치사가 붙으면 주어가 아니다). 없으면 `wrong` */
+  wrong_by?: Record<string, string>;
   /** 몇 개 찾았는데 아직 남았을 때 — {n}은 남은 개수 */
   more: string;
   praise: string;
@@ -574,7 +580,14 @@ export type Observation =
   | { kind: "wrong_reason"; optionId: string; reason: string; skills: string[] };
 
 /** 화면에서 바로 올라오는 관찰 — 턴을 만들지 않는다 */
-export type UiObservation = { kind: "vocab_click"; word: string } | { kind: "hint_open" };
+export type UiObservation =
+  | { kind: "vocab_click"; word: string }
+  | { kind: "hint_open" }
+  /**
+   * 문장을 먼저 읽고 학생이 스스로 매긴 이해 정도·아는 단어 비율(0~100) — 실력 판단·맞춤 학습에 쓴다.
+   * 막대를 안 건드렸으면 null(응답 없음) — 통계에서 평균에 넣지 않고 응답률로 따로 본다
+   */
+  | { kind: "self_report"; understand: number | null; known: number | null };
 
 /** 명세 §21 */
 export type TeachingActionName =

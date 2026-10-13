@@ -67,6 +67,12 @@ export type TutorView = {
   flip?: { tag: string; text: string; highlight?: string[] } | null;
   /** 수업 소개(도입 말) 중 — 화면 아무 데나 눌러도 다음 말로 */
   tapToNext?: boolean;
+  /** 문장 먼저 읽기에서 이해 정도·아는 단어 비율 막대를 보인다 (지문의 첫 문장만) */
+  selfCheck?: boolean;
+  /** 찾은 주어·동사 — 덩어리 위 S·V 표시 */
+  roles?: { text: string; role: "S" | "V" | "O" }[];
+  /** 주어진 문장(글)을 시험지처럼 상자 안에 보인다 */
+  givenBox?: boolean;
   /** 단어 위 + / − 표시 */
   signs?: { text: string; sign: "+" | "−" }[];
   /** 맞았다는 말만 하는 짧은 화면 (잠깐 뒤 저절로 다음 질문) */

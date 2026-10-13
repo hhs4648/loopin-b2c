@@ -105,7 +105,7 @@ const MODE_ANALYZE_BTN = policyFrame.buttons.mode_analyze;
 const ANALYZE_START_BTN = policyFrame.buttons.analyze_start;
 const SOLVE_BTN = policyFrame.buttons.solve;
 const POINTS_DONE_BTN = policyFrame.buttons.points_done;
-const READ_FIRST_DONE_BTN = policyFrame.buttons.read_first_done;
+export const READ_FIRST_DONE_BTN = policyFrame.buttons.read_first_done;
 /** 문장에서 후보 구절을 눌렀다 — 「찾기」 스텝 */
 export const PICK_CMD = "__pick:";
 /** 도입의 자동 넘김 — 화면이 시간이 지나면 보낸다 */
@@ -183,6 +183,8 @@ type State = {
   praiseOnly: boolean;
   /** 「이미 잘 알고 있어요」 뒤 「다음부턴 안 뜨도록 할까요?」를 묻는 중 */
   knownAsk: boolean;
+  /** 이 문장에서 찾은 주어·동사 (S·V 표시) */
+  roles: { text: string; role: "S" | "V" | "O" }[];
   readSentences: number[];
   /** 「찾기」 스텝에서 지금까지 찾은 구절과 틀리게 누른 구절 */
   found: string[];
@@ -286,6 +288,7 @@ export function createPolicySession(
       sentenceDone: false,
       praiseOnly: false,
       knownAsk: false,
+      roles: [],
       readSentences: [],
       si: 0,
       pi: 0,
@@ -778,6 +781,7 @@ export function createPolicySession(
 
   function buttonsFor(st: PolicyStep): string[] {
     if (st.type === "choice") return s.resolved ? [NEXT_BTN] : choiceButtons(st);
+    if (st.type === "pick" && st.no_unknown && !s.resolved) return [];
     if (st.type === "pick" || st.type === "translate") return s.resolved ? [NEXT_BTN] : [UNKNOWN_BTN];
     if (st.type === "think") {
       if (s.resolved) return [NEXT_BTN];
@@ -823,7 +827,7 @@ export function createPolicySession(
           };
           return;
         }
-        s = { ...s, si: s.si + 1, pi: 0, struggledInSentence: false, skipped: [] };
+        s = { ...s, si: s.si + 1, pi: 0, struggledInSentence: false, skipped: [], roles: [] };
         flush();
         continue;
       }
@@ -929,6 +933,12 @@ export function createPolicySession(
 
   /* ── pick: 문장에서 직접 찾기 ───────────────────────────────────── */
 
+  /** 찾은 주어·동사에 S·V 표시 — 그 문장이 끝날 때까지 남는다 */
+  function addRoles(st: PickStep, words: string[]): State["roles"] {
+    const add = words.filter((w) => st.roles?.[w] && !s.roles.some((r) => r.text === w)).map((w) => ({ text: w, role: st.roles![w]! }));
+    return [...s.roles, ...add];
+  }
+
   function onPick(st: PickStep, text: string) {
     const lines = pickCopy(copy, st.id);
     if (s.resolved) return next();
@@ -936,7 +946,7 @@ export function createPolicySession(
       // 다 보여 주고 정리한다
       log({ kind: "dont_know", latencyMs: d.now() - s.shownAt }, { action: "EXPLAIN", interactionId: st.id });
       addPoint(st.id, sentence().label ?? `${sentence().id}문장`, lines.point ?? lines.explain);
-      s = { ...s, found: st.answers, resolved: true, anyExplained: true, struggledInSentence: true, message: lines.explain, buttons: [NEXT_BTN] };
+      s = { ...s, found: st.answers, roles: addRoles(st, st.answers), resolved: true, anyExplained: true, struggledInSentence: true, message: lines.explain, buttons: [NEXT_BTN] };
       return;
     }
     if (!text.startsWith(PICK_CMD)) return;
@@ -945,11 +955,11 @@ export function createPolicySession(
     if (!st.answers.includes(word)) {
       log({ kind: "answer", correct: false, optionId: word, latencyMs: d.now() - s.shownAt }, { action: "GIVE_LIGHT_HINT", interactionId: st.id });
       addPoint(st.id, sentence().label ?? `${sentence().id}문장`, lines.point ?? lines.explain);
-      s = { ...s, missed: [...s.missed, word], anyAssisted: true, struggledInSentence: true, message: `${L.wrong_lead} ${lines.wrong}` };
+      s = { ...s, missed: [...s.missed, word], anyAssisted: true, struggledInSentence: true, message: `${L.wrong_lead} ${lines.wrong_by?.[word] ?? lines.wrong}` };
       return;
     }
     const found = [...s.found, word];
-    s = { ...s, found };
+    s = { ...s, found, roles: addRoles(st, [word]) };
     const left = st.answers.length - found.length;
     if (left > 0) {
       s = { ...s, message: lines.more.replace("{n}", String(left)) };
@@ -1406,10 +1416,15 @@ export function createPolicySession(
       pointsReview: s.stage === "points" ? { title: s.message, lessonId: lesson.id, items: s.points } : null,
       highlight: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight ?? []) : [],
       signs: inLesson && !s.readingFirst && !s.praiseOnly ? (st.signs ?? []) : [],
+      roles: inLesson && !s.readingFirst ? s.roles : [],
       underline,
       highlightAlt: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight_alt ?? []) : [],
       readingFirst: inLesson && s.readingFirst,
+      // 이해 정도·아는 단어 비율은 지문의 첫 문장에서만 매긴다 — 문장마다 매기면 귀찮아서 안 건드린다
+      selfCheck: inLesson && s.readingFirst && s.si === 0,
       sentenceTag: inLesson ? ((!s.readingFirst && st.tag) || sen.label || `문장 ${sentenceNumber(s.si)}`) : null,
+      // 주어진 문장·글은 시험지처럼 상자 안에 — 원문 그대로 보일 때만 (다른 문장을 띄운 스텝은 아님)
+      givenBox: inLesson && !!sen.label && shown === sen.text,
       // 맞힌 칭찬 화면 — 나중에 선생님 표정·몸짓을 바꾼다
       celebrate: inLesson && s.sentenceDone,
       praiseOnly: inLesson && s.praiseOnly,
@@ -1525,7 +1540,7 @@ export function createPolicySession(
         const to = s.si + (text === PREV_SENTENCE_CMD ? -1 : 1);
         if (to < 0) return view();
         log({ kind: "continue" }, { action: "CONTINUE", interactionId: step().id, reason: [text === PREV_SENTENCE_CMD ? "student_went_back" : "student_skipped_sentence"] });
-        s = { ...s, si: to, pi: 0, sentenceDone: false, praiseOnly: false, knownAsk: false, detailOpen: null, aside: null, struggledInSentence: false, skipped: [] };
+        s = { ...s, si: to, pi: 0, sentenceDone: false, praiseOnly: false, knownAsk: false, roles: [], detailOpen: null, aside: null, struggledInSentence: false, skipped: [] };
         open("");
         return view();
       }
@@ -1621,6 +1636,14 @@ export function createPolicySession(
         log(o, { action: "GIVE_LIGHT_HINT", interactionId: st.id, intensity: "minimal" });
         addPoint(st.id, sentence().label ?? `${sentence().id}문장`, lines.point ?? lines.explain);
         s = { ...s, rung: 1 };
+        return;
+      }
+      if (o.kind === "self_report") {
+        // 실력 판단·맞춤 학습용 — 기록하고 학생 상태에도 남긴다 (최근 200개)
+        log(o, { action: "CONTINUE", interactionId: step().id, reason: ["self_report"] });
+        const entry = { lesson: lesson.id, sentence: sentence().id, understand: o.understand, known: o.known, at: new Date(d.now()).toISOString() };
+        s = { ...s, student: { ...s.student, reading: [entry, ...(s.student.reading ?? [])].slice(0, 200) } };
+        d.saveStudent(s.student);
         return;
       }
       log(o, { action: "ALLOW_LOOKUP", target: o.word });
