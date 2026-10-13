@@ -906,7 +906,7 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     expect(v.examOptions).toHaveLength(5);
   });
 
-  it("3문장 주어·동사 찾기는 슬래시로 나눠 보이고, 「이미 잘 알고 있어요 → 네」면 이번과 다음 수업에서 건너뛴다", async () => {
+  it("3문장 주어·동사 찾기는 슬래시로 나눠 보이고, 「이미 잘 알고 있어요」면 묻지 않고 이번과 다음 수업에서 건너뛴다", async () => {
     let saved = emptyStudentState();
     const mk = () =>
       createPolicySession(ID24, null, { loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0 });
@@ -920,26 +920,14 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     let v = await toPairs(session);
     expect(v.sentence).toContain("bury it, / translations");
     expect(v.buttons).toEqual(["찾아볼게요", "이미 잘 알고 있어요"]);
+    // 묻지 않고 바로 건너뛴다 — 주어·동사 찾기를 건너뛰고 핵심어 찾기로
     v = await session.submit("이미 잘 알고 있어요");
-    expect(v.message).toBe("좋아요. 다음부턴 이 설명이 안 뜨도록 할까요?");
-    expect(v.buttons).toEqual(["네", "취소"]);
-    v = await session.submit("네");
-    // 주어·동사 찾기를 건너뛰고 핵심어 찾기로
     expect(session.lastAction()?.interactionId).toBe("s3_keys");
     expect(saved.known).toEqual(["clause_pairs"]);
     // 다음 수업 — 설명 자체가 안 뜬다
     session = mk();
     v = await toPairs(session);
     expect(session.lastAction()?.interactionId).toBe("s3_keys");
-  });
-
-  it("「이미 잘 알고 있어요 → 취소」면 이번만 건너뛰고 저장하지 않는다", async () => {
-    let saved = emptyStudentState();
-    const session = createPolicySession(ID24, null, { loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0 });
-    for (const t of ["분석하러 갈게요", "넘어가기", "__next_sentence", "__next_sentence", "다 읽었어요", "다음에 또 알려주세요", "~하는 반면에", "__auto_next", "이미 잘 알고 있어요"]) await session.submit(t);
-    await session.submit("취소");
-    expect(session.lastAction()?.interactionId).toBe("s3_keys");
-    expect(saved.known ?? []).toEqual([]);
   });
 
   it("예술의 역할 — 가리키는 것·보이게 한다가 없으면 짚어 준다", async () => {
@@ -1057,9 +1045,77 @@ describe("2026년 3월 38번 — 문장 넣기", () => {
   });
 });
 
-describe("2026년 3월 39번 — 주어진 문장 주어·동사 찾기", () => {
+describe("2026년 3월 39번 — 줄인 판(2026-10-14): 줄기는 모두에게, 아는 건 건너뛴다", () => {
+  const ID = "moeui-2026-03-39-epistemic-communities";
+  /** 정답만 고르며 보기 화면까지 간다. 지나온 스텝 id를 돌려준다 */
+  async function walk(firstSvoWrong = false) {
+    let saved = emptyStudentState();
+    const lesson = allPolicyLessons().find((l) => l.id === ID)!;
+    const steps = new Map(lesson.sentences.flatMap((s) => s.steps).map((st) => [st.id, st]));
+    const session = createPolicySession(ID, null, { loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    const seen: string[] = [];
+    let wrongOnce = firstSvoWrong;
+    for (let g = 0; g < 300 && !v.examOptions; g++) {
+      const id = session.lastAction()?.interactionId ?? "";
+      const st = steps.get(id);
+      if (st && seen[seen.length - 1] !== id) seen.push(id);
+      if (v.readingFirst) v = await session.submit("다 읽었어요");
+      else if (st?.type === "pick" && v.pick?.open) {
+        if (wrongOnce) {
+          wrongOnce = false;
+          v = await session.submit(`__pick:${st.candidates.find((c) => !st.answers.includes(c))}`);
+        }
+        for (const a of st.answers) v = await session.submit(`__pick:${a}`);
+      } else if (st?.type === "choice" && !v.buttons.includes("다음으로") && v.buttons.length > 1) {
+        v = await session.submit(st.options.find((o) => o.correct)!.label);
+      } else if (st?.type === "translate" && v.allowInput) v = await session.submit(st.model);
+      else v = await session.submit(v.buttons[0] ?? "__auto_next");
+    }
+    return { v, seen, saved };
+  }
+
+  it("다 맞히면: S·V·O 찾기는 처음 한 번만, 딸린 설명·대시 뒤 해석은 건너뛰고, ①~⑤ 흐름 확인과 Other를 지나 보기 화면에 간다", async () => {
+    const { v, seen, saved } = await walk();
+    expect(v.examOptions).toHaveLength(5);
+    expect(saved.known).toContain("svo_find");
+    expect(seen.filter((x) => /_svc?$/.test(x))).toEqual(["g_sv"]);
+    for (const x of ["g_for_note", "g_svo2", "g_rel_note"]) expect(seen).not.toContain(x);
+    for (const x of ["s3_flow", "s4_flow", "s5_flow", "s6_flow", "s7_other", "s7_flow", "s2_sort", "s3_sort_experts"]) expect(seen).toContain(x);
+    // 잘하는 학생 기준 — 예전 56스텝에서 크게 줄었다
+    expect(seen.length).toBeLessThanOrEqual(35);
+  });
+
+  it("주어진 문장에서 S·V·O를 한 번 틀리면 다음 문장에서도 S·V·O를 찾고, 거기서 다 맞히면 그다음부터 건너뛴다", async () => {
+    const { seen } = await walk(true);
+    expect(seen.filter((x) => /_svc?$/.test(x))).toEqual(["g_sv", "s2_svc"]);
+  });
+
+  it("S·V·O 해석 안내 대사 없이 바로 해석하고, 노란 박스 위에 「왜 핵심어만 보나요?」 칩이 뜬다", async () => {
+    const { seen } = await walk();
+    expect(seen).not.toContain("g_svo_tip");
+    const session = createPolicySession(ID, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    v = await session.submit("다 읽었어요");
+    for (const w of ["even completely transparent practices", "do not lift", "the veil", "one", "cannot make sense of", "the information"]) v = await session.submit(`__pick:${w}`);
+    for (let g = 0; g < 8 && !v.allowInput; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    expect(session.lastAction()?.interactionId).toBe("g_svo1");
+    expect(v.translateWhy?.label).toBe("왜 핵심어만 보나요?");
+    expect(v.translateWhy?.text).toContain("시간 제한");
+    v = await session.submit("대부분의 외부인에게는 완전히 투명한 관행조차 장막을 걷어 내지 못한다");
+    expect(v.translateWhy).toBeNull();
+  });
+
+  it("문법 설명은 ❓ 칩으로 남는다", () => {
+    const lesson = allPolicyLessons().find((l) => l.id === ID)!;
+    expect(lesson.sentences.flatMap((s) => (s.concepts ?? []).map((c) => c.en))).toEqual(["knowledge bearers", "from experts", "there are", "present"]);
+  });
+});
+
+describe("2026년 3월 39번 이전 버전(v1) — 주어진 문장 주어·동사 찾기", () => {
   it("읽기 끝나면 덩어리째 S·V·O 두 쌍을 찾고 S·V·O만으로 해석한다 — for most outsiders는 전치사라서, 찾은 건 S·V 표시로 남는다", async () => {
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     expect(v.givenBox).toBe(true);
@@ -1135,7 +1191,7 @@ describe("2026년 3월 39번 — 주어진 문장 주어·동사 찾기", () => 
 
   it("관계사 수식을 한 번에 맞히면 설명을 건너뛰고, 다음부터는 묻지 않는다", async () => {
     let saved = emptyStudentState();
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0 });
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: () => saved, saveStudent(st) { saved = st; }, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     v = await session.submit("다 읽었어요");
@@ -1151,9 +1207,9 @@ describe("2026년 3월 39번 — 주어진 문장 주어·동사 찾기", () => 
   });
 });
 
-describe("2026년 3월 39번 — 문장 1 주어·동사·목적어 찾기", () => {
+describe("2026년 3월 39번 이전 버전(v1) — 문장 1 주어·동사·목적어 찾기", () => {
   it("읽기 끝나면 덩어리째 S·V·O를 찾고(to become a member = needs의 목적어), for which 뒤 I는 덧붙임 안의 주어라고 알려 준 뒤 S·V·O만 해석한다", async () => {
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     v = await session.submit("__next_sentence");
@@ -1199,9 +1255,9 @@ describe("2026년 3월 39번 — 문장 1 주어·동사·목적어 찾기", () 
   });
 });
 
-describe("2026년 3월 39번 — 문장 2 동사 두 개·전치사의 목적어", () => {
+describe("2026년 3월 39번 이전 버전(v1) — 문장 2 동사 두 개·전치사의 목적어", () => {
   it("and 뒤 동사까지 S·V를 찾고, 전치사의 목적어를 찾은 뒤 핵심어로 요약하고, 단어 지도로 끝난다", async () => {
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     v = await session.submit("__next_sentence");
@@ -1227,7 +1283,7 @@ describe("2026년 3월 39번 — 문장 2 동사 두 개·전치사의 목적어
   });
 });
 
-describe("2026년 3월 39번 — 문장 3~6도 주어·동사 찾기 → 핵심어 요약", () => {
+describe("2026년 3월 39번 이전 버전(v1) — 문장 3~6도 주어·동사 찾기 → 핵심어 요약", () => {
   // [주어·동사(보어) 고르기, 그 답, 전치사의 목적어 답, 요약]
   const cases: [string, string[], string[], string][] = [
     ["s5_sv", ["epistemic communities", "were often kept", "secret"], [],
@@ -1235,7 +1291,7 @@ describe("2026년 3월 39번 — 문장 3~6도 주어·동사 찾기 → 핵심�
     ["s7_sv", ["Other, more active strategies", "are needed"], [], "지식에 접근 가능하게 하려면 더 적극적인 전략이 필요하다"],
   ];
   it.each(cases)("%s — 찾은 뒤 요약을 맞히고 다음으로 넘어간다", async (pickId, answers, preps, summary) => {
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     for (let g = 0; g < 10 && !(v.readingFirst && session.lastAction()?.interactionId === pickId); g++) {
@@ -1261,9 +1317,9 @@ describe("2026년 3월 39번 — 문장 3~6도 주어·동사 찾기 → 핵심�
   });
 });
 
-describe("2026년 3월 39번 — 문장 3은 요약 없이 핵심어(주어·동사 + tests) → 그림", () => {
+describe("2026년 3월 39번 이전 버전(v1) — 문장 3은 요약 없이 핵심어(주어·동사 + tests) → 그림", () => {
   it("there are 설명 뒤 핵심어를 짚고 입회 절차 그림을 보여 준다", async () => {
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     for (let g = 0; g < 10 && !(v.readingFirst && v.sentenceTag === "문장 3"); g++) v = await session.submit("__next_sentence");
@@ -1280,9 +1336,9 @@ describe("2026년 3월 39번 — 문장 3은 요약 없이 핵심어(주어·동
   });
 });
 
-describe("2026년 3월 39번 — 문장 5: S·V·C·목적어 모두 → 앞부분 뜻 고르기 → but → 핵심어 → 칠판", () => {
+describe("2026년 3월 39번 이전 버전(v1) — 문장 5: S·V·C·목적어 모두 → 앞부분 뜻 고르기 → but → 핵심어 → 칠판", () => {
   it("요약 없이 secret → openness 칠판으로 정리한다", async () => {
-    const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     for (let g = 0; g < 10 && !(v.readingFirst && v.sentenceTag === "문장 5"); g++) v = await session.submit("__next_sentence");

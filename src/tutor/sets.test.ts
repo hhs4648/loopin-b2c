@@ -69,7 +69,7 @@ describe("수업 세트", () => {
     expect(allGroups().map((g) => g.id)).toEqual(["moeui"]);
     expect(allCollections().map((c) => c.id)).toEqual(["mopyeong-2026-06", "moeui-2026-03"]);
     expect(setsIn("mopyeong-2026-06").map((s) => s.id)).toEqual(["mopyeong-2026-06-34", "mopyeong-2026-06-37"]);
-    expect(setsIn("moeui-2026-03").map((s) => s.id)).toEqual(["moeui-2026-03-21", "moeui-2026-03-30", "moeui-2026-03-39", "moeui-2026-03-24", "moeui-2026-03-36", "moeui-2026-03-33", "moeui-2026-03-38"]);
+    expect(setsIn("moeui-2026-03").map((s) => s.id)).toEqual(["moeui-2026-03-21", "moeui-2026-03-30", "moeui-2026-03-39", "moeui-2026-03-39-v1", "moeui-2026-03-24", "moeui-2026-03-36", "moeui-2026-03-33", "moeui-2026-03-38"]);
     expect(getCollection("moeui-2026-03")?.title).toBe("2026년 3월 모의고사");
   });
 });

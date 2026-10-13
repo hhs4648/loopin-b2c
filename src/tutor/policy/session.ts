@@ -90,8 +90,6 @@ const INTRO_NEXT_BTN = policyFrame.buttons.intro_next;
 const INTRO_SKIP_BTN = policyFrame.buttons.intro_skip;
 const KNOWN_BTN = policyFrame.buttons.known;
 const SHOW_ANSWER_BTN = policyFrame.buttons.show_answer;
-const YES_BTN = policyFrame.buttons.yes;
-const CANCEL_BTN = policyFrame.buttons.cancel;
 /** 읽기 화면이 한 문장을 다 읽었을 때 보내는 신호. 학생의 말이 아니다 */
 export const READ_NEXT_CMD = "__read_next";
 /* 마무리 화면이 보내는 신호 — 학생의 말이 아니라 화면 조작이다 */
@@ -183,7 +181,6 @@ type State = {
   /** 맞았다는 말만 하는 화면 — 다음 질문은 잠깐 뒤에 따로 */
   praiseOnly: boolean;
   /** 「이미 잘 알고 있어요」 뒤 「다음부턴 안 뜨도록 할까요?」를 묻는 중 */
-  knownAsk: boolean;
   /** 자유 해석에서 「잘 모르겠어요」를 한 번 눌렀다 — 이제 「답 바로 보기」가 뜬다 */
   translateNudged: boolean;
   /** 이 문장에서 찾은 주어·동사 (S·V 표시) */
@@ -297,7 +294,6 @@ export function createPolicySession(
       readingFirst: false,
       sentenceDone: false,
       praiseOnly: false,
-      knownAsk: false,
       translateNudged: false,
       roles: [],
       readSentences: [],
@@ -1001,10 +997,22 @@ export function createPolicySession(
     }
     log({ kind: "answer", correct: true, optionId: word, latencyMs: d.now() - s.shownAt }, { action: "PRAISE", interactionId: st.id });
     s = { ...s, resolved: true };
+    // 하나도 안 틀리고 다 찾았다 — `known`이 있으면 다음부터 같은 찾기(예: S·V·O)를 안 한다
+    if (!s.missed.length) {
+      s = { ...s, cleanPass: [...s.cleanPass, st.id] };
+      remember(st.known);
+    }
     praiseThenNext(lines.praise);
   }
 
   /* ── translate: 자유 해석 ───────────────────────────────────────── */
+
+  /** 학생 상태에 「이미 안다」 키를 남긴다 — 다음부터 같은 키의 스텝을 건너뛴다 */
+  function remember(key?: string) {
+    if (!key || s.student.known?.includes(key)) return;
+    s = { ...s, student: { ...s.student, known: [...(s.student.known ?? []), key] } };
+    d.saveStudent(s.student);
+  }
 
   function onTranslate(st: TranslateStep, text: string) {
     const lines = translateCopy(copy, st.id);
@@ -1049,10 +1057,7 @@ export function createPolicySession(
     // 한 번에 맞혔다 — 이 해석의 설명은 건너뛰고, `known`이 있으면 다음부터 같은 질문을 안 한다
     if (!wrong && !s.translateNudged) {
       s = { ...s, cleanPass: [...s.cleanPass, st.id] };
-      if (st.known && !s.student.known?.includes(st.known)) {
-        s = { ...s, student: { ...s.student, known: [...(s.student.known ?? []), st.known] } };
-        d.saveStudent(s.student);
-      }
+      remember(st.known);
     }
     s = {
       ...s,
@@ -1142,6 +1147,8 @@ export function createPolicySession(
       const assisted = s.rung > 0 || s.wrongPicks.length > 0;
       const status = assisted ? "hint_assisted_success" : "independent_success";
       log(observation, action, status);
+      // 한 번에 맞혔다 — `if_missed`로 딸린 설명은 건너뛴다
+      if (!assisted) s = { ...s, cleanPass: [...s.cleanPass, st.id] };
       // 틀렸다가 스스로 고친 턴만 반짝인다
       const light = s.wrongPicks.length > 0;
       settle(st, status);
@@ -1446,6 +1453,7 @@ export function createPolicySession(
       // 버튼으로 답하는 수업 — 입력창은 자유 해석 스텝에만
       allowInput: inLesson && st.type === "translate" && !s.resolved && !s.readingFirst,
       placeholder: inLesson && st.type === "translate" ? (translateCopy(copy, st.id).placeholder ?? "해석을 써 보세요") : "",
+      translateWhy: inLesson && st.type === "translate" && !s.resolved && !s.readingFirst ? (st.why ?? null) : null,
       translation: inLesson ? s.translation : null,
       linkButtons: inLesson && st.type === "translate" && !s.resolved && !s.readingFirst && !s.praiseOnly
         ? [s.translateNudged ? SHOW_ANSWER_BTN : UNKNOWN_BTN]
@@ -1615,7 +1623,7 @@ export function createPolicySession(
         const to = s.si + (text === PREV_SENTENCE_CMD ? -1 : 1);
         if (to < 0) return view();
         log({ kind: "continue" }, { action: "CONTINUE", interactionId: step().id, reason: [text === PREV_SENTENCE_CMD ? "student_went_back" : "student_skipped_sentence"] });
-        s = { ...s, si: to, pi: 0, sentenceDone: false, praiseOnly: false, knownAsk: false, roles: [], detailOpen: null, aside: null, struggledInSentence: false, skipped: [] };
+        s = { ...s, si: to, pi: 0, sentenceDone: false, praiseOnly: false, roles: [], detailOpen: null, aside: null, struggledInSentence: false, skipped: [] };
         open("");
         return view();
       }
@@ -1663,21 +1671,12 @@ export function createPolicySession(
         next();
         return view();
       }
-      // 「이미 잘 알고 있어요」 → 다음부턴 안 뜨게 할지 묻는다. 어느 쪽이든 이번엔 건너뛴다
-      if (s.knownAsk) {
-        if (text !== YES_BTN && text !== CANCEL_BTN) return view();
-        const key = st.known!;
-        if (text === YES_BTN && !s.student.known?.includes(key)) {
-          s = { ...s, student: { ...s.student, known: [...(s.student.known ?? []), key] } };
-          d.saveStudent(s.student);
-        }
-        log({ kind: "skip" }, { action: "CONTINUE", interactionId: st.id, reason: [text === YES_BTN ? "student_said_known_always" : "student_said_known_once"] });
-        s = { ...s, knownAsk: false, skipped: [...s.skipped, st.id] };
-        next();
-        return view();
-      }
+      // 「이미 잘 알고 있어요」 — 묻지 않고 건너뛰고, 다음 수업부터도 같은 키의 설명을 안 보여 준다
       if (st.type === "show" && st.known && text === KNOWN_BTN) {
-        s = { ...s, knownAsk: true, message: L.known_confirm, buttons: [YES_BTN, CANCEL_BTN], shownAt: d.now() };
+        remember(st.known);
+        log({ kind: "skip" }, { action: "CONTINUE", interactionId: st.id, reason: ["student_said_known_always"] });
+        s = { ...s, skipped: [...s.skipped, st.id] };
+        next();
         return view();
       }
       // 「자세히 볼래요」 — 이 스텝에 딸린 자세한 스텝들을 연다

@@ -1374,6 +1374,7 @@ mark.hl2, .english-token.hl2 .english-word {
   margin: 0 2px 6px; padding: 8px 12px; border-radius: 12px; background: #fff8e1; border: 1.5px solid #f2d27a;
   color: #2b2430; position: relative;
 }
+.why-chip { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin: 0 2px 6px; }
 .translate-ref .english { font-size: 16px; line-height: 1.6; }
 .translate-ref small { display: block; font-size: 11px; font-weight: 700; color: #a0939c; margin-bottom: 2px; }
 

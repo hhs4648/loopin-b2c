@@ -55,6 +55,16 @@
       ]
     },
     {
+      "id": "moeui-2026-03-39-v1",
+      "collection": "moeui-2026-03",
+      "title": "39번 문제 · 이전 버전",
+      "subtitle": "줄이기 전(2026-10-14) 그대로 — 비교용",
+      "wrong_rate": 71.7,
+      "lessons": [
+        "moeui-2026-03-39-epistemic-communities-v1"
+      ]
+    },
+    {
       "id": "moeui-2026-03-24",
       "collection": "moeui-2026-03",
       "title": "24번 문제",

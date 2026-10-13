@@ -200,6 +200,7 @@ type StepBase = {
    * 설명 화면에 「이미 잘 알고 있어요」를 둔다 — 누르면 「다음부턴 안 뜨도록 할까요?」(네/취소).
    * 어느 쪽이든 이번엔 이 설명과 `skip_with`로 딸린 스텝을 건너뛰고, 「네」면 이 키를 학생 상태에 남겨
    * 다음 수업부터 같은 키의 설명을 안 보여 준다. (등급을 모르니 1·2등급은 스스로 건너뛰게 한다)
+   * 자유 해석·고르기(pick)에 달면 한 번에 맞힌 학생에게 키가 남는다 (예: `svo_find` — S·V·O 찾기)
    */
   known?: string;
   /** 앞 스텝에서 「자세히」를 고른 학생만 보는 스텝 */
@@ -340,6 +341,8 @@ export type TranslateStep = StepBase & {
   rules: TranslateRule[];
   /** 해석이 아니라 생각을 쓰게 할 때 카드 이름 — 기본은 「내 해석」·「고친 해석」 */
   labels?: { mine: string; model: string };
+  /** 「보고 쓸 부분」 위 💡 칩 — 누르면 참고 설명 (예: 「왜 핵심어만 보나요?」). 선생님 말이 아니다 */
+  why?: { label: string; text: string };
   brief: TranslateCopy;
 };
 

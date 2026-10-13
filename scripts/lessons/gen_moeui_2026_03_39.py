@@ -7,6 +7,14 @@
     npm run policy:copy stamp moeui-2026-03-39-epistemic-communities
 
 주어진 문장(첫 화면)의 주어 찾기는 선생님과 정했다. 나머지 문장과 푸는 법 칠판은 아직 초안.
+
+2026-10-14 줄이기 (56스텝 → 기본 약 30). 줄이기 전 그대로는 레슨 `…-v1`(목록 「39번 문제 · 이전 버전」),
+생성기는 archive/2026-03-39-v1/. 원칙:
+- 문제를 푸는 줄기(주어진 문장 단서 → 6문장 openness → 7문장 Other → ①~⑤ 흐름 확인)는 모두에게
+- S·V·O 찾기는 `known: svo_find` — 한 번에 다 찾으면 다음 S·V·O 찾기부터 건너뛴다
+- 문법 설명(bear, there are, 전치사의 목적어, traces·present)은 ❓ 개념 칩(`concepts`)으로
+- 끌어 넣기는 2·3문장에서만. 4·6문장 단어는 지도에 바로 붙인다
+- 요약 해석은 2·7문장만. 3·5문장은 선생님 요약으로 대신
 """
 import copy
 import json
@@ -39,9 +47,10 @@ def show(id, say, method=0, button="다음 문장", **extra):
 
 
 def sv_pick(id, candidates, roles, ask, wrong_by, explain, point, wrong="그건 주어나 동사가 아니에요."):
-    """읽기 끝나면 덩어리째 주어·동사(목적어) 찾기 — 찾은 건 S·V·O 표시로 남는다"""
+    """읽기 끝나면 덩어리째 주어·동사(목적어) 찾기 — 찾은 건 S·V·O 표시로 남는다.
+    한 번에 다 찾은 학생은 `svo_find` 키가 남아 다음 S·V·O 찾기부터 건너뛴다"""
     return {
-        "id": id, "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True,
+        "id": id, "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True, "known": "svo_find",
         "candidates": candidates, "answers": list(roles), "roles": roles,
         "brief": {"ask": ask, "wrong": wrong, "wrong_by": wrong_by, "more": "좋아요! {n}개 남았어요.",
                   "praise": "다 찾았어요!", "explain": explain, "point": point},
@@ -53,7 +62,7 @@ def key_summary(id, model, rules, highlight, feedback, point, **extra):
     """노란 핵심어만 보고 직역 말고 상황 요약 (자유 응답, 규칙 채점)"""
     return {
         "id": id, "type": "translate", "interaction": "free_translation",
-        "model": model, "labels": {"mine": "내 요약", "model": "요약 예시"},
+        "model": model, "labels": {"mine": "내 요약", "model": "요약 예시"}, "why": WHY_KEYS,
         "rules": [{"id": r[0], "need": r[1], "fix": r[2]} for r in rules],
         "highlight": highlight,
         "brief": {
@@ -82,17 +91,32 @@ def groups_board(n_in, n_out, fresh=(), caption="내부자(전문가) ↔ 외부
             "caption": caption}
 
 
+# 핵심어(노란 부분)만 보고 해석하는 스텝 — 「보고 쓸 부분」 위 💡 칩 (2026-10-14: 안내 대사 대신)
+WHY_KEYS = {"label": "왜 핵심어만 보나요?",
+            "text": "수능은 시간 제한이 있어요. 그래서 핵심어를 찾아 빠르게 읽는 연습이 중요해요."}
+
 SORT_LEFT = "왼쪽 · 내부자(전문가) 쪽"
 SORT_RIGHT = "오른쪽 · 외부자(초보자) 쪽"
 
 
 def sort_word(id, en, ko, inside, n_in, n_out, why):
-    """단어 지도에 학생이 직접 옮긴다 — 첫 단어(knowledge bearers, outsiders)만 미리 넣고 나머지는 끌어 넣기"""
-    return choice(id, f"'{en}'({ko}), 어느 쪽일까요? 끌어서 넣어 봐요.",
+    """단어 지도에 학생이 직접 옮긴다 — 첫 단어(knowledge bearers, outsiders)만 미리 넣고 나머지는 끌어 넣기.
+    en·ko에 여러 단어(같은 쪽)를 리스트로 주면 한 번에 옮긴다"""
+    words = en if isinstance(en, list) else [en]
+    kos = ko if isinstance(ko, list) else [ko]
+    name = ", ".join(f"'{w}'({k})" for w, k in zip(words, kos))
+    return choice(id, f"{name}, 어느 쪽일까요? 끌어서 넣어 봐요.",
                   [("o0", SORT_LEFT, inside), ("o1", SORT_RIGHT, not inside)],
                   "집단 안에서 지식을 가진 쪽인지, 바깥이나 막 들어오는 쪽인지 떠올려 봐요.",
                   why=why,
-                  panel={**groups_board(n_in, n_out), "sort": {"words": [en], "left": SORT_LEFT, "right": SORT_RIGHT}})
+                  panel={**groups_board(n_in, n_out), "sort": {"words": words, "left": SORT_LEFT, "right": SORT_RIGHT}})
+
+
+def flow_check(id, place, ask, breaks, why, praise):
+    """흐름 확인 — 푸는 법 ③. 이 자리(①~⑤)에서 앞뒤가 그대로 이어지는지, 끊기는지"""
+    return choice(id, ask,
+                  [("o0", "자연스럽게 이어져요", not breaks), ("o1", "흐름이 끊겨요", breaks)],
+                  why, why=why, praise=praise, highlight=[place], method=2)
 
 
 def main_obj_pick(id, candidates, answers, ask, wrong_by, explain, point):
@@ -164,7 +188,7 @@ sentences = [
         "steps": [
             # 읽기 끝나면 바로 주어·동사 찾기 — 대시(—) 뒤도 새 문장이라 두 쌍을 한꺼번에. 덩어리째 누른다
             {
-                "id": "g_sv", "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True,
+                "id": "g_sv", "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True, "known": "svo_find",
                 "candidates": ["for most outsiders", "even completely transparent practices", "do not lift", "the veil",
                                "such forms of knowledge", "are hidden", "the relevant training", "one",
                                "cannot make sense of", "the information"],
@@ -196,13 +220,13 @@ sentences = [
                    highlight=["for most outsiders"],
                    mark_roles=[{"text": "for most outsiders", "role": "대상"}],
                    method=0),
+            # 못 맞힌 학생만
             show("g_for_note",
                  "for + 명사는 모의고사에서 '~에게는'이라는 뜻으로 자주 쓰여요. 주어는 아니지만 중요한 정보예요.",
-                 button="다음", highlight=["for most outsiders"], method=0),
-            show("g_svo_tip", "수능은 주어, 동사, 목적어 + 핵심 내용 위주로 빠르게 해석해 보면 좋아요. 한번 해 볼까요?", button="네", method=0),
+                 button="다음", highlight=["for most outsiders"], method=0, if_missed="g_for"),
             # S·V·O(+대상)만 가지고 간단히 해석 — 두 쌍이라 한 쌍씩
             {
-                "id": "g_svo1", "type": "translate", "interaction": "free_translation",
+                "id": "g_svo1", "type": "translate", "interaction": "free_translation", "why": WHY_KEYS,
                 "model": "대부분의 외부인에게는 완전히 투명한 관행조차 장막을 걷어 내지 못한다.",
                 "rules": [
                     {"id": "outsiders", "need": ["외부", "바깥", "밖의", "모르는 사람", "남들", "타인", "비전문가"], "fix": "대부분의 외부인에게는"},
@@ -213,7 +237,7 @@ sentences = [
                 ],
                 "highlight": ["for most outsiders", "even completely transparent practices", "do not lift the veil"],
                 "brief": {
-                    "ask": "그럼 노란색으로 표시된 부분만 해석해 봐요.",
+                    "ask": "노란색으로 표시된 부분만 해석해 봐요.",
                     "praise": "잘 해석했어요! S·V·O만 잡아도 뜻이 보여요.",
                     "wrong": "고친 부분을 같이 봐요.",
                     "explain": "괜찮아요. 고친 해석을 같이 봐요. 연습할 문장으로 저장해 둘게요.",
@@ -259,22 +283,26 @@ sentences = [
                    why="여기서 veil은 진짜 천이 아니라 비유예요. 장막 뒤에 지식이 숨겨져 있으니, 걷어 낸다는 건 그 지식을 드러내 이해하게 한다는 뜻이에요.",
                    highlight=["lift the veil", "behind which such forms of knowledge are hidden"],
                    method=1),
-            # 그림으로 — ① 집단과 바깥의 외부인 ② 집단 안의 지식, 장막에 막혀 닿기 어려운 외부인
-            show("g_veil_pic1",
-                 "전문가들이 모인 집단이 있고, 외부인은 그 바깥에 있어요.",
-                 button="다음",
-                 panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/veil-group.svg",
-                        "alt": "전문가 집단의 원 바깥에 외부인이 서 있다"},
-                 method=1),
+            # 그림 한 장 — 집단 안의 지식, 장막에 막혀 닿기 어려운 외부인
             show("g_veil_pic2",
-                 "집단 안에는 전문 지식이 있어요. 관행이 아무리 투명해도, 외부인은 장막에 막혀 그 지식에 닿기 어려워요.",
+                 "전문가 집단 안에는 전문 지식이 있어요. 관행이 아무리 투명해도, 바깥의 외부인은 장막에 막혀 그 지식에 닿기 어려워요.",
                  button="다음",
                  panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/veil-knowledge.svg",
                         "alt": "집단 가운데 지식이 있고, 장막 바깥의 외부인이 손을 뻗지만 닿지 않는다"},
                  highlight=["behind which such forms of knowledge are hidden"],
                  method=1),
+            # 대시(—) 앞뒤는 같은 말 — 대시 뒤 해석은 하고 싶은 학생만 (「대시 뒤도 해석해 볼래요」)
+            show("g_dash_tip",
+                 "수능 팁이에요. 대시(—) 앞뒤는 비슷한 뜻인 경우가 많아서, 한쪽을 이해했다면 다른 쪽은 가볍게 넘겨도 돼요. 여기서도 대시 뒤는 '외부인은 집단 안에서 공유되는 정보를 이해할 수 없다'로, 앞과 같은 말이에요.",
+                 button="다음", detail_button="대시 뒤도 해석해 볼래요",
+                 panel={"kind": "structure", "rows": [
+                     {"label": "대시(—) 앞", "text": "do not lift the veil", "ko": "외부인은 장막을 걷지 못한다 = 숨겨진 지식에 닿지 못한다", "tone": "hl2"},
+                     {"label": "대시(—) 뒤", "text": "cannot make sense of the information that is being shared", "ko": "외부인은 집단 안에서 공유되는 정보를 이해할 수 없다", "tone": "hl"},
+                 ]},
+                 highlight=["one simply cannot make sense of the information that is being shared"],
+                 highlight_alt=["do not lift the veil"]),
             {
-                "id": "g_svo2", "type": "translate", "interaction": "free_translation",
+                "id": "g_svo2", "type": "translate", "interaction": "free_translation", "optional_of": "g_dash_tip", "why": WHY_KEYS,
                 "model": "누구든 그 정보를 이해할 수 없다.",
                 "rules": [
                     {"id": "one", "need": ["누구", "사람", "아무도", "우리", "외부인"], "fix": "누구든"},
@@ -337,19 +365,6 @@ sentences = [
                      {"label": "꾸며 줌", "text": "that + (주어 없음) is being shared", "ko": "공유되고 있는", "tone": "hl"},
                  ]},
                  highlight=["that is being shared"], highlight_alt=["the information"]),
-            # shared = 집단 안에서 — 대시 뒤도 대시 앞과 같은 말
-            show("g_shared",
-                 "shared는 앞서 본 집단 안에서, 내부인끼리 공유된다는 뜻이에요. 그래서 대시(—) 뒤도 앞과 같은 말이에요. 외부인은 내부인끼리 공유하는 지식을 이해하기 어렵다는 거예요.",
-                 button="다음",
-                 panel={"kind": "structure", "rows": [
-                     {"label": "대시(—) 앞", "text": "do not lift the veil", "ko": "외부인은 장막을 걷지 못한다 = 숨겨진 지식에 닿지 못한다", "tone": "hl2"},
-                     {"label": "대시(—) 뒤", "text": "cannot make sense of the information that is being shared", "ko": "외부인은 집단 안에서 공유되는 정보를 이해할 수 없다", "tone": "hl"},
-                 ]},
-                 highlight=["one simply cannot make sense of the information that is being shared"],
-                 highlight_alt=["do not lift the veil"]),
-            show("g_dash_tip",
-                 "수능 팁이에요. 대시(—) 앞뒤는 비슷한 뜻인 경우가 많아요. 한쪽을 이해했다면 다른 쪽은 가볍게 넘기며 시간을 아낄 수 있어요.",
-                 button="다음"),
             show("g_structure",
                  "",
                  button="다음", panel_below=True,
@@ -394,6 +409,8 @@ sentences = [
         "text": "To acquire expert knowledge, one needs to become a member of the relevant group of knowledge bearers, for which I will use the term “epistemic communities.”",
         "model_translation": "전문 지식을 습득하기 위해서는 관련 지식 보유자 집단의 구성원이 되어야 하는데, 그것에 나는 '지식 공동체'라는 용어를 사용하겠다.",
         "teaching_value": "medium",
+        "concepts": [{"en": "knowledge bearers", "title": "bear = 지니다:",
+                      "text": "bear는 '곰', '참다', '낳다' 말고도 '지니다, 가지고 있다'라는 뜻이 있어요. bearer는 '지닌 사람'이라서 knowledge bearers는 '지식을 지닌 사람들', 즉 지식 보유자예요."}],
         "glosses": [g("To acquire", "얻기 위해, 습득하기 위해"), g("one", "누구든, 사람"), g("needs", "필요로 하다, ~해야 한다"), g("to become a member", "구성원이 되는 것"),
                     g("a member", "구성원"), g("the relevant group", "관련 집단"), g("I", "나"), g("will use", "사용할 것이다"),
                     g("the term", "용어"),
@@ -402,7 +419,7 @@ sentences = [
         "steps": [
             # 주어진 문장처럼 — 읽기 끝나면 덩어리째 주어·동사·목적어 찾기 (to become a member = needs의 목적어) (for which 뒤는 덧붙임 안의 주어·동사)
             {
-                "id": "s2_svc", "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True,
+                "id": "s2_svc", "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True, "known": "svo_find",
                 "candidates": ["To acquire", "expert knowledge", "one", "needs", "to become a member",
                                "the relevant group", "I", "will use", "the term"],
                 "answers": ["one", "needs", "to become a member"],
@@ -427,7 +444,7 @@ sentences = [
             },
             # S·V·O + 핵심어(acquire expert knowledge, group)로 — 직역 말고 어떤 상황인지 요약
             {
-                "id": "s2_sum", "type": "translate", "interaction": "free_translation",
+                "id": "s2_sum", "type": "translate", "interaction": "free_translation", "why": WHY_KEYS,
                 "model": "전문 지식을 습득하려면 집단의 구성원이 되어야 한다.",
                 "labels": {"mine": "내 요약", "model": "요약 예시"},
                 "rules": [
@@ -453,16 +470,7 @@ sentences = [
                 },
                 "method": 0,
             },
-            # bear는 헷갈리기 쉽다 — 먼저 고르게 하고, 그다음 설명
-            choice("s2_bear_q",
-                   "knowledge bearers의 bear는 헷갈리기 쉬운 단어예요. 여기서 bear는 무슨 뜻일까요?",
-                   [("o0", "낳다", False), ("o1", "참다, 견디다", False), ("o2", "지니다, 가지고 있다", True)],
-                   "knowledge(지식)와 붙어 있어요. 지식을 어떻게 하는 사람들일까요?",
-                   why="여기서 bear는 그 뜻이 아니에요. 바로 이어서 설명해 줄게요.",
-                   highlight=["knowledge bearers"]),
-            show("s2_bear",
-                 "bear는 '곰', '참다', '낳다' 말고도 '지니다, 가지고 있다'라는 뜻이 있어요. bearer는 '지닌 사람'이라서, knowledge bearers는 '지식을 지닌 사람들', 즉 지식 보유자예요.",
-                 button="다음", highlight=["knowledge bearers"]),
+            # bear(지니다)는 ❓ 개념 칩으로 (문장 concepts)
             # 이 집단을 가리키는 말 — 글쓴이가 붙인 이름 epistemic communities
             {
                 "id": "s2_name", "type": "pick", "interaction": "word_pick", "shade": True,
@@ -484,27 +492,18 @@ sentences = [
                 },
                 "method": 0,
             },
-            # 주어진 문장의 장막 그림과 짝 — 지식을 얻으려면 집단 안으로 들어가 구성원이 되어야 한다
-            show("s2_join_pic",
-                 "아까 외부인은 장막에 막혀 집단 안의 지식에 닿기 어려웠어요. 이 문장은 그 지식을 얻으려면 집단 안으로 들어가 구성원이 되어야 한다는 말이에요.",
-                 button="다음",
-                 panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/member-join.svg",
-                        "alt": "바깥에 있던 외부인이 지식 보유자 집단 안으로 들어가 구성원이 되어 가운데 지식 곁에 선다"},
-                 highlight=["one needs to become a member of the relevant group of knowledge bearers"]),
             # 수능은 같은 쪽 단어 묶음이 중요 — 내부자(전문가) ↔ 외부자(초보자)
             show("s2_groups",
                  "수능에서는 같은 쪽 단어 묶음이 중요해요. 이 글은 내부자(전문가)와 외부자(초보자)의 대비가 계속 반복돼요. 첫 단어는 넣어 뒀으니, 나머지는 직접 옮겨 봐요.",
                  button="다음",
                  panel=groups_board(1, 1, fresh=("knowledge bearers", "outsiders"))),
-            sort_word("s2_sort_member", "a member", "구성원", True, 1, 1,
-                      "a member는 집단의 구성원이라 집단 안, 내부자 쪽이에요."),
-            sort_word("s2_sort_comm", "epistemic communities", "지식 공동체", True, 2, 1,
-                      "epistemic communities는 지식 보유자 집단 그 자체라 내부자 쪽이에요."),
-            show("s2_groups_done", "구성원(a member)과 지식 공동체(epistemic communities)는 집단 안, 내부자 쪽이에요.",
-                 button="다음", panel=groups_board(3, 1, fresh=("a member", "epistemic communities"))),
-            # 맞히든 틀리든 슬래시로 덩어리를 나눠 보여 준다. 콤마 사이는 삽입이 아니라 메인 문장 — 흐리지 않는다
+            # 같은 쪽 두 단어를 한 번에
+            sort_word("s2_sort", ["a member", "epistemic communities"], ["구성원", "지식 공동체"], True, 1, 1,
+                      "구성원(a member)과 지식 공동체(epistemic communities)는 집단 안, 내부자 쪽이에요."),
+            # 구조 설명 — 이미 아는 학생은 「이미 잘 알고 있어요」로 건너뛴다
             show("s2_slash",
                  "'To acquire …'는 '~하기 위해'라서 주어가 아니에요. 콤마 사이가 주어와 동사가 있는 메인 문장이라 꼭 읽어야 해요.",
+                 known="to_purpose_front",
                  display=S2_SLASH,
                  panel={"kind": "structure", "rows": [
                      {"label": "~하기 위해", "text": "To acquire expert knowledge", "ko": "전문 지식을 얻기 위해", "tone": "hl2"},
@@ -524,6 +523,8 @@ sentences = [
         "text": "(①) A newcomer learns from experts and is socialized into the common practices of the relevant epistemic community.",
         "model_translation": "새로 온 사람은 전문가들로부터 배우며, 관련 지식 공동체의 공동 관행에 사회화된다.",
         "teaching_value": "medium",
+        "concepts": [{"en": "from experts", "title": "전치사의 목적어:",
+                      "text": "from, into 같은 전치사 뒤의 명사는 '전치사의 목적어'예요. from experts의 experts, into the common practices의 the common practices예요. 문장의 목적어(O)와는 달라요."}],
         "glosses": [g("A newcomer", "새로 온 사람"), g("learns", "배운다"), g("from experts", "전문가들로부터"),
                     g("and", "그리고"), g("is socialized", "사회화된다, 익숙해진다"),
                     g("into the common practices", "공동 관행 속으로"), g("the common practices", "공동 관행"),
@@ -533,7 +534,7 @@ sentences = [
         "steps": [
             # 주어·동사 찾기 — and 뒤에 주어 없이 동사가 또 온다 (동사 두 개)
             {
-                "id": "s3_sv", "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True,
+                "id": "s3_sv", "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True, "known": "svo_find",
                 "candidates": ["A newcomer", "learns", "from experts", "and", "is socialized",
                                "into the common practices", "the relevant epistemic community"],
                 "answers": ["A newcomer", "learns", "is socialized"],
@@ -556,63 +557,19 @@ sentences = [
             },
             show("s3_and",
                  "and 뒤에 주어 없이 동사가 바로 오면, 앞 주어의 동사가 하나 더 있는 거예요. 그래서 A newcomer가 learns도 하고, is socialized도 돼요.",
-                 button="다음", highlight=["and is socialized"], highlight_alt=["A newcomer"]),
-            # 전치사의 목적어 — from experts의 experts, into the common practices의 the common practices
-            {
-                "id": "s3_prep", "type": "pick", "interaction": "word_pick", "shade": True,
-                "candidates": ["A newcomer", "experts", "the common practices", "is socialized"],
-                "answers": ["experts", "the common practices"],
-                "roles": {"experts": "전목", "the common practices": "전목"},
-                "brief": {
-                    "ask": "from, into 같은 전치사 뒤의 명사는 '전치사의 목적어'예요. 이 문장에서 두 개를 찾아볼까요?",
-                    "wrong": "그건 전치사의 목적어가 아니에요.",
-                    "wrong_by": {
-                        "A newcomer": "A newcomer는 문장의 주어예요. 전치사 from, into 바로 뒤를 봐요.",
-                        "is socialized": "is socialized는 동사예요. 전치사 from, into 바로 뒤를 봐요.",
-                    },
-                    "more": "좋아요! {n}개 남았어요.",
-                    "praise": "맞아요! experts는 from의, the common practices는 into의 목적어예요.",
-                    "explain": "from experts의 experts, into the common practices의 the common practices가 전치사의 목적어예요.",
-                    "point": "전치사 + 명사 = 전치사의 목적어 · from experts(전문가들로부터), into the common practices(공동 관행 속으로) · 문장의 목적어(O)와는 달라요",
-                },
-                "method": 0,
-            },
-            # 핵심어로 상황 요약 — newcomer, learns, experts, is socialized, community
-            {
-                "id": "s3_sum", "type": "translate", "interaction": "free_translation",
-                "model": "새로 온 사람은 전문가로부터 배우고, 그 집단에 사회화된다.",
-                "labels": {"mine": "내 요약", "model": "요약 예시"},
-                "rules": [
-                    {"id": "newcomer", "need": ["새로", "새 ", "신입", "초보", "신참", "뉴커머"], "fix": "새로 온 사람은"},
-                    {"id": "experts", "need": ["전문가"], "fix": "전문가로부터"},
-                    {"id": "learns", "need": ["배우", "배운", "학습", "익히", "익힌"], "fix": "배우고"},
-                    {"id": "socialized", "need": ["사회화", "익숙", "적응", "녹아", "어울", "물들"], "fix": "사회화된다"},
-                    {"id": "community", "need": ["집단", "공동체", "그룹", "모임", "단체"], "fix": "그 집단에"},
-                ],
-                "highlight": ["newcomer", "learns", "experts", "is socialized", "community"],
-                "brief": {
-                    "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
-                    "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
-                    "wrong": "고친 부분을 같이 봐요.",
-                    "explain": "괜찮아요. 요약 예시를 같이 봐요. 연습할 문장으로 저장해 둘게요.",
-                    "feedback": {
-                        "newcomer": "newcomer는 '새로 온 사람'이에요.",
-                        "experts": "experts는 '전문가'예요.",
-                        "learns": "learns는 '배운다'예요.",
-                        "socialized": "is socialized는 '사회화된다, 익숙해진다'예요.",
-                        "community": "community는 '공동체, 집단'이에요. 앞 문장의 그 집단이에요.",
-                    },
-                    "placeholder": "어떤 상황인지 한 줄로 써 보세요",
-                    "point": "A newcomer learns from experts and is socialized into … community = 새로 온 사람은 전문가로부터 배우고 그 집단에 사회화된다",
-                },
-                "method": 0,
-            },
+                 button="다음", highlight=["and is socialized"], highlight_alt=["A newcomer"], known="and_second_verb"),
             sort_word("s3_sort_experts", "experts", "전문가", True, 3, 1,
                       "experts는 지식을 가진 전문가라 내부자 쪽이에요."),
             sort_word("s3_sort_newcomer", "a newcomer", "새로 온 사람", False, 4, 1,
                       "a newcomer는 이제 막 들어오는 사람이라 초보자 쪽이에요."),
+            # 요약 해석 대신 선생님 요약
             show("s3_draft", "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요. 단어 지도에도 붙여 둘게요.",
-                 panel=groups_board(4, 2, fresh=("experts", "a newcomer"))),
+                 button="다음", panel=groups_board(4, 2, fresh=("experts", "a newcomer"))),
+            flow_check("s3_flow", "(①)",
+                       "① 자리예요. '구성원이 되어야 한다' → '신입은 전문가에게 배운다', 자연스럽게 이어지나요?",
+                       False,
+                       "구성원이 되는 이야기 다음에 신입이 배우는 이야기가 바로 이어져요. 주어진 문장이 끼어들 틈이 없어요.",
+                       "맞아요! 구성원이 되는 이야기 → 신입이 배우는 이야기로 이어져요."),
         ],
     },
     {
@@ -620,38 +577,23 @@ sentences = [
         "text": "(②) Often there are admittance processes, combined with tests of a candidate’s abilities.",
         "model_translation": "자주 후보자의 능력에 대한 시험과 결합한 입회 절차가 존재한다.",
         "teaching_value": "medium",
+        "concepts": [{"en": "there are", "title": "there are + 명사:",
+                      "text": "there are 문장은 are 뒤의 명사가 진짜 주어예요. 그래서 'admittance processes(입회 절차)가 있다'로 읽어요. combined with는 동사가 아니라 '~와 결합된'으로 앞 말을 꾸며 줘요."}],
         "glosses": [g("Often", "자주"), g("there", "(there are: ~이 있다)"), g("are", "있다"),
                     g("a candidate’s abilities", "후보자의 능력"),
                     g("admittance processes", "입회 절차"), g("combined with", "~와 결합된"), g("tests", "시험"),
                     g("candidate", "후보자"), g("abilities", "능력"), g("admittance", "입회, 들어가는 것")],
         "steps": [
-            sv_pick("s4_sv",
-                    ["Often", "there", "are", "admittance processes", "combined with", "tests", "a candidate’s abilities"],
-                    {"are": "V", "admittance processes": "S"},
-                    "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
-                    {"Often": "Often은 '자주'라서 주어나 동사가 아니에요.",
-                     "there": "there are 문장에서 there는 주어가 아니에요. 주어는 are 뒤에 와요.",
-                     "combined with": "combined with는 '~와 결합된'이라 앞 말을 꾸며 줘요. 문장의 동사가 아니에요.",
-                     "tests": "tests는 with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
-                     "a candidate’s abilities": "of 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."},
-                    "동사는 are, 주어는 are 뒤의 admittance processes예요.",
-                    "there are + 명사 = 명사가 있다 · 주어는 are 뒤 admittance processes · combined with는 꾸미는 말"),
-            show("s4_there",
-                 "there are 문장은 are 뒤의 명사가 진짜 주어예요. 그래서 'admittance processes(입회 절차)가 있다'로 읽어요. combined with는 동사가 아니라 '~와 결합된'으로 앞 말을 꾸며 줘요.",
-                 button="다음", highlight=["there are admittance processes"], highlight_alt=["combined with"]),
-            # 요약 대신 — 핵심어(주어·동사 + tests) 짚고, 상황을 그림으로
+            # 짧은 문장 — S·V·O 찾기 없이 핵심어만. there are는 ❓ 칩. 후보자는 지도에 바로 붙인다
             show("s4_key",
-                 "핵심어는 주어·동사와 tests예요. 입회 절차(admittance processes)가 있고, 거기에 능력 시험(tests)이 붙어 있다는 말이에요.",
-                 button="다음", highlight=["there are admittance processes", "tests"]),
-            show("s4_pic",
-                 "집단에 들어가는 문이 입회 절차예요. 후보자는 그 문을 지나기 전에 능력 시험을 봐요.",
-                 button="다음",
-                 panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/admittance-test.svg",
-                        "alt": "후보자가 능력 시험을 보고 입회 절차라는 문을 지나 지식 공동체 안으로 들어간다"}),
-            sort_word("s4_sort_candidate", "a candidate", "후보자", False, 4, 2,
-                      "a candidate는 아직 시험을 보는 후보자라 집단 바깥, 초보자 쪽이에요."),
-            show("s4_draft", "",
+                 "핵심어는 입회 절차(admittance processes)와 능력 시험(tests)이에요. 후보자(a candidate)는 시험을 보고 들어가야 하니 아직 바깥 쪽이에요. 단어 지도에 붙여 둘게요.",
+                 button="다음", highlight=["admittance processes", "tests"],
                  panel=groups_board(4, 3, fresh=("a candidate",))),
+            flow_check("s4_flow", "(②)",
+                       "② 자리예요. '신입은 전문가에게 배운다' → '입회 절차와 시험이 있다', 자연스럽게 이어지나요?",
+                       False,
+                       "둘 다 집단에 들어가는 과정 이야기라 그대로 이어져요. '투명한 관행'이나 '외부인'을 받을 말이 없어요.",
+                       "맞아요! 둘 다 집단에 들어가는 과정 이야기예요."),
         ],
     },
     {
@@ -685,20 +627,16 @@ sentences = [
                  button="다음", highlight=["In the premodern era"],
                  tips=[{"label": "pre-", "mark": "premodern",
                         "text": "pre-는 '~ 이전, 미리'라는 뜻이에요. pre + modern(근대) = 근대 이전, 즉 전근대예요. preview(미리 보기)의 pre-도 같아요."}]),
-            key_summary("s5_sum", "옛날에는 지식 공동체가 비밀이었고, 신입에게 엄격한 충성심 시험이 있었다.",
-                        [("past", ["옛날", "과거", "전근대", "예전", "옛"], "옛날에는"),
-                         ("secret", ["비밀", "숨기", "숨겨", "감추", "감춰", "폐쇄", "닫"], "비밀이었고"),
-                         ("test", ["시험", "테스트", "검사", "검증"], "시험"),
-                         ("loyalty", ["충성"], "충성심")],
-                        ["premodern era", "epistemic communities were often kept secret", "strict tests of loyalty"],
-                        {"past": "In the premodern era는 '전근대 시대에는', 즉 옛날이에요.",
-                         "secret": "were kept secret은 '비밀로 유지되었다'예요.",
-                         "test": "tests는 '시험'이에요.",
-                         "loyalty": "loyalty는 '충성심'이에요."},
-                        "In the premodern era, epistemic communities were often kept secret … = 옛날엔 지식 공동체가 비밀이었고 충성심 시험이 있었다",
-                        tips=[{"label": "not least because of", "mark": "not least because of",
-                               "text": "'특히 ~때문에'예요. 비밀로 한 이유가 뒤에 나와요. 전문 지식이 '잘못된 손', 즉 나쁜 사람에게 들어갈까 봐서예요."}]),
-            show("s5_draft", "옛날에는 지식 공동체가 비밀이었고, 신입에게 엄격한 충성심 시험이 있었대요."),
+            # 요약 해석 대신 선생님 요약
+            show("s5_draft", "옛날에는 지식 공동체가 비밀이었고, 신입에게 엄격한 충성심 시험이 있었대요.",
+                 button="다음", highlight=["epistemic communities were often kept secret", "strict tests of loyalty"],
+                 tips=[{"label": "not least because of", "mark": "not least because of",
+                        "text": "'특히 ~때문에'예요. 비밀로 한 이유가 뒤에 나와요. 전문 지식이 '잘못된 손', 즉 나쁜 사람에게 들어갈까 봐서예요."}]),
+            flow_check("s5_flow", "(③)",
+                       "③ 자리예요. '입회 절차와 시험이 있다' → '옛날엔 비밀이었고 충성심 시험이 있었다', 자연스럽게 이어지나요?",
+                       False,
+                       "시험 이야기가 옛날의 더 엄격한 시험으로 이어져요. 여기도 '투명한 관행'을 받을 말이 없어요.",
+                       "맞아요! 시험 이야기가 옛날의 엄격한 시험으로 이어져요."),
         ],
     },
     {
@@ -706,6 +644,8 @@ sentences = [
         "text": "(④) Some traces of these older practices may still be present today, but on the whole, the ideal has shifted to openness among the members of epistemic communities, and also, to some extent, toward outsiders.",
         "model_translation": "이러한 오래된 관행의 일부 흔적이 오늘날에도 여전히 존재할 수 있지만, 전체적으로 보아, 이상은 지식 공동체 구성원 사이에서 개방성, 그리고 또한, 어느 정도는, 외부인을 향한 것으로 옮겨 갔다.",
         "teaching_value": "high",
+        "concepts": [{"en": "present", "title": "present = 존재하는:",
+                      "text": "여기서 present는 '선물'이나 '현재의'가 아니라 '존재하는, 남아 있는'이에요. Some traces … may still be present today는 '옛 관행의 흔적이 오늘날에도 조금은 남아 있을 수 있다'예요."}],
         "glosses": [g("Some traces", "일부 흔적"), g("these older practices", "이러한 오래된 관행"), g("may still be", "여전히 ~일 수 있다"),
                     g("but", "하지만"), g("the ideal", "이상, 바람직하다고 여기는 것"), g("has shifted", "옮겨 갔다, 바뀌었다"),
                     g("the members", "구성원들"), g("outsiders", "외부인"),
@@ -715,7 +655,7 @@ sentences = [
         "steps": [
             # 읽기 끝나면 먼저 주어·동사·보어·목적어를 모두 찾는다 (두 쌍)
             {
-                "id": "s6_sv", "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True,
+                "id": "s6_sv", "type": "pick", "interaction": "word_pick", "shade": True, "no_unknown": True, "known": "svo_find",
                 "candidates": ["Some traces", "these older practices", "may still be", "present", "but", "the ideal",
                                "has shifted", "openness", "the members", "outsiders"],
                 "answers": ["Some traces", "may still be", "present", "the ideal", "has shifted", "openness"],
@@ -737,38 +677,26 @@ sentences = [
                 },
                 "method": 0,
             },
-            # 앞부분 뜻 — present는 '선물'·'현재의'가 아니라 '존재하는, 남아 있는'
-            choice("s6_traces",
-                   "노란 부분은 무슨 뜻일까요?",
-                   [("o0", "옛 관행이 오늘날 사람들에게 선물이 될 수 있다", False),
-                    ("o1", "옛 관행의 흔적이 오늘날에도 조금은 남아 있을 수 있다", True),
-                    ("o2", "옛 관행이 오늘날 완전히 사라졌다", False)],
-                   "traces는 '흔적', present는 여기서 '존재하는, 남아 있는'이에요.",
-                   why="여기서 present는 '선물'이나 '현재의'가 아니라 '존재하는, 남아 있는'이에요. traces(흔적)라서 조금만 남아 있다는 말이에요.",
-                   highlight=["Some traces of these older practices may still be present today"]),
             # but 뒤가 중요한 말
             show("s6_but",
                  "but은 앞과 뒤를 뒤집는 말이에요. 그래서 but 뒤가 글쓴이가 하고 싶은 중요한 말이에요.",
                  button="다음", highlight=["but"],
                  tips=[{"label": "on the whole", "mark": "on the whole",
                         "text": "'전체적으로 봤을 때에는'이라는 뜻이에요. whole만 떼어 '전체'로 읽지 말고 한 덩어리로 봐요."}]),
-            # 그 밖의 핵심어 — members, outsiders
+            # 핵심어 members·outsiders + 칠판(secret → openness). outsiders는 주어진 문장의 outsiders와 같은 말
             show("s6_keys",
-                 "핵심어 members(구성원)와 outsiders(외부인)도 봐요. 개방성이 구성원끼리, 그리고 어느 정도는 외부인에게까지 넓어졌다는 거예요.",
-                 button="다음", highlight=["the members", "outsiders"]),
-            # 칠판 — 과거 secret → 지금 openness (내부자도 외부자도)
-            show("s6_board",
-                 "내부자도 외부자도, 이상(=추구하는 바)이 secret(비밀)에서 openness(개방성), 즉 공개로 넘어갔어요.",
-                 button="다음",
+                 "핵심어는 secret에서 바뀐 openness(개방성)예요. 구성원(members)끼리, 그리고 어느 정도는 외부인(outsiders)에게까지 열렸대요. 이 outsiders는 주어진 문장의 outsiders와 같은 말이에요.",
+                 button="다음", highlight=["openness", "outsiders"], highlight_alt=["the members"],
                  panel={"kind": "groups", "title": "칠판", "between": "→",
                         "left": {"label": "과거 · premodern", "words": [{"text": "secret", "ko": "비밀"}]},
                         "right": {"label": "지금 · today", "words": [{"text": "openness", "ko": "개방성 = 공개", "fresh": True}]},
                         "process": {"arrow": "→", "words": [{"text": "the ideal has shifted"}]},
                         "caption": "구성원(members)끼리도, 외부인(outsiders)에게도"}),
-            sort_word("s6_sort_members", "the members", "구성원들", True, 4, 3,
-                      "the members는 지식 공동체의 구성원들이라 내부자 쪽이에요."),
-            show("s6_draft", "",
-                 panel=groups_board(5, 3, fresh=("the members",))),
+            flow_check("s6_flow", "(④)",
+                       "④ 자리예요. '옛날엔 비밀이었다' → '흔적은 남았지만 이제는 개방', 자연스럽게 이어지나요?",
+                       False,
+                       "these older practices가 바로 앞의 옛날 비밀 이야기를 받아요. 비밀 바로 뒤에 '투명한 관행조차'가 오면 오히려 어색해요.",
+                       "맞아요! these older practices가 바로 앞의 옛날 이야기를 받아요."),
         ],
     },
     {
@@ -803,6 +731,18 @@ sentences = [
                          "need": "are needed는 '필요하다'예요.",
                          "access": "accessible은 '접근 가능한'이에요."},
                         "Other, more active strategies are needed to make … knowledge … accessible = 지식을 접근 가능하게 하려면 더 적극적인 전략이 필요하다"),
+            # 정답의 열쇠 — Other(다른)는 앞에서 말한 방법(투명하게 공개하기)과 다르다는 말
+            choice("s7_other",
+                   "Other는 '다른'이에요. 다른 전략이라면, 앞에서 어떤 방법으로는 부족하다고 했을까요?",
+                   [("o0", "비밀로 지키는 방법", False), ("o1", "투명하게 공개하는 방법", True), ("o2", "시험으로 뽑는 방법", False)],
+                   "Other는 앞에서 말한 방법과 '다른'이에요. 지금 이상은 개방이니, 투명하게 열어도 부족하다는 말이 먼저 나와야 '다른' 전략이 이어져요.",
+                   praise="맞아요! 투명하게 열어도 부족하니까 '다른' 전략이 필요한 거예요.",
+                   highlight=["Other"], method=1),
+            flow_check("s7_flow", "(⑤)",
+                       "⑤ 자리예요. '외부인에게까지 열렸다' → '다른, 더 적극적인 전략이 필요하다', 자연스럽게 이어지나요?",
+                       True,
+                       "열렸다고 해 놓고 바로 '다른' 전략을 말하면, 무엇으로는 부족한지가 빠져 있어요. 그래서 ⑤ 자리에서는 앞뒤가 끊어져요.",
+                       "맞아요! 무엇으로는 부족한지가 빠져 있어서 흐름이 끊겨요."),
             show("s7_draft", "지식을 최대한 '접근 가능하게' 하려면 다른, 더 적극적인 전략이 필요하대요.", button="문제 풀러 갈게요"),
         ],
     },

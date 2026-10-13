@@ -410,6 +410,9 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             ))}
           </div>
         ) : null}
+        {view.allowInput !== false && view.translateWhy ? (
+          <WhyChip key={view.translateWhy.label + (view.highlight ?? []).join()} why={view.translateWhy} />
+        ) : null}
         {view.allowInput === false ? null : (
           // 키보드가 올라오면 위 문장이 밀려나므로, 해석할 영어를 입력창 바로 위에 다시 보여 준다
           // 이 영어도 단어를 눌러 뜻을 볼 수 있다 — 자판이 올라와 위 문장이 밀려나도 여기서 보며 쓴다
@@ -679,6 +682,19 @@ function TipChips({
         ))}
       </div>
       {open != null ? <div className="info-pop">{tips[open]!.text}</div> : null}
+    </div>
+  );
+}
+
+/** 「보고 쓸 부분」 위 💡 칩 — 누르면 참고 설명이 열린다 (예: 왜 핵심어만 보나요?) */
+function WhyChip({ why }: { why: { label: string; text: string } }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="why-chip">
+      <button type="button" className={`tip-chip${open ? " on" : ""}`} aria-expanded={open} onClick={() => setOpen(!open)}>
+        💡 {why.label}
+      </button>
+      {open ? <div className="info-pop">{why.text}</div> : null}
     </div>
   );
 }

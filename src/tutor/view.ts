@@ -40,6 +40,8 @@ export type TutorView = {
   message: string;
   buttons: string[];
   placeholder: string;
+  /** 자유 해석 「보고 쓸 부분」 위 💡 칩 (누르면 참고 설명) */
+  translateWhy?: { label: string; text: string } | null;
   studentLine: string;
   effect: null | "light";
   sentence: string;

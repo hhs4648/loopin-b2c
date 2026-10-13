@@ -4,6 +4,9 @@ import namesAndDifferences from "../../../content/tutor/policy-lessons/moeui-202
 import namesAndDifferencesDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-30-names-and-differences.json";
 import epistemicCommunities from "../../../content/tutor/policy-lessons/moeui-2026-03-39-epistemic-communities.json";
 import epistemicCommunitiesDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-39-epistemic-communities.json";
+// 39번 줄이기 전 그대로 (2026-10-14) — 비교용. 생성기는 archive/2026-03-39-v1/
+import epistemicCommunitiesV1 from "../../../content/tutor/policy-lessons/moeui-2026-03-39-epistemic-communities-v1.json";
+import epistemicCommunitiesV1Dajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-39-epistemic-communities-v1.json";
 import translationStrangeness from "../../../content/tutor/policy-lessons/moeui-2026-03-24-translation-strangeness.json";
 import translationStrangenessDajung from "../../../content/tutor/policy-copy/dajung/moeui-2026-03-24-translation-strangeness.json";
 import conversationStoppers from "../../../content/tutor/policy-lessons/moeui-2026-03-36-conversation-stoppers.json";
@@ -25,11 +28,11 @@ import type { PolicyCopy, PolicyLesson } from "./types";
  * 다르다. 지문을 추가하면 여기에 레슨 한 줄과 대사 한 줄,
  * `content/tutor/sets.json`에 세트 하나.
  */
-const POLICY_LESSONS = [musicResearchers, namesAndDifferences, epistemicCommunities, translationStrangeness, conversationStoppers, profoundBuilding, gestureGlue, geographyWhere, chaosPendulum] as unknown as PolicyLesson[];
+const POLICY_LESSONS = [musicResearchers, namesAndDifferences, epistemicCommunities, epistemicCommunitiesV1, translationStrangeness, conversationStoppers, profoundBuilding, gestureGlue, geographyWhere, chaosPendulum] as unknown as PolicyLesson[];
 
 /** 캐릭터 → 레슨 → 뽑아 둔 대사. 지금 캐릭터는 다정쌤 하나다 */
 const POLICY_COPY: Record<string, PolicyCopy[]> = {
-  dajung: [musicResearchersDajung, namesAndDifferencesDajung, epistemicCommunitiesDajung, translationStrangenessDajung, conversationStoppersDajung, profoundBuildingDajung, gestureGlueDajung, geographyWhereDajung, chaosPendulumDajung] as unknown as PolicyCopy[],
+  dajung: [musicResearchersDajung, namesAndDifferencesDajung, epistemicCommunitiesDajung, epistemicCommunitiesV1Dajung, translationStrangenessDajung, conversationStoppersDajung, profoundBuildingDajung, gestureGlueDajung, geographyWhereDajung, chaosPendulumDajung] as unknown as PolicyCopy[],
 };
 
 export function getPolicyCopy(lessonId: string, character = "dajung"): PolicyCopy | null {
