@@ -77,17 +77,29 @@ export function glossesFor(chunkGlosses: WordGloss[] | undefined, nouns: ProperN
   return [...listed, ...extra];
 }
 
-const WORDS = (wordBook as { words: Record<string, string> }).words;
+export const WORDS = (wordBook as { words: Record<string, string> }).words;
 
 /**
  * 구절 뜻(「lift the veil」 = 장막을 걷어 내다)을 단어마다 나눈다 — 학생은 단어를 따로 외운다.
  * 단어 뜻은 레슨에 그 단어 뜻이 있으면 그것, 없으면 공용 단어 사전(`word-glosses.json`).
- * 뜻 옆에 「· lift the veil = 장막을 걷어 내다」처럼 구절 뜻을 붙인다. 뜻을 모르는 단어(the, of, 이름)는 그냥 글자.
+ * 단어 뜻(`ko`)과 그 단어가 들어간 덩어리(`phrase`)를 따로 준다 — 뜻 상자 윗줄·아랫줄, 별도 따로.
+ * 관사(a, an, the)는 그냥 글자. to·of 같은 기능어는 단어 뜻 없이 덩어리 뜻만.
  * `keep`에 든 구절(지금 통째로 고르는 후보)은 나누지 않는다.
  */
 const ARTICLES = new Set(["a", "an", "the"]);
+/**
+ * 단어 뜻이 없어도 되는 말 — 관사·접속사·대명사처럼 덩어리 안에서만 뜻이 생기는 말.
+ * 이 밖의 단어(내용어)는 덩어리 안에 있어도 단어 뜻이 있어야 한다 (규칙 테스트가 검사)
+ */
+export const FUNCTION_WORDS = new Set([
+  "a", "an", "the", "and", "or", "but", "so", "nor", "yet", "if", "than", "all", "both", "each", "every", "either",
+  "neither", "some", "any", "no", "such", "own", "same", "other", "else", "another", "here", "there", "those", "it",
+  "its", "itself", "they", "them", "their", "themselves", "he", "him", "his", "she", "her", "we", "us", "our", "you",
+  "your", "yourself", "i", "me", "my", "one", "ones", "who", "whom", "whose", "something", "anything", "everything",
+  "everyone", "someone", "just", "too", "very", "quite", "really", "also", "even", "much",
+]);
 /** 사전에 있어도 덩어리 안에서는 그 덩어리 뜻으로만 보이는 기능어 (2026-10-14: to make의 to가 '~로, ~에게'로 떴다) */
-const CONTEXT_WORDS = new Set([
+export const CONTEXT_WORDS = new Set([
   "to", "of", "for", "in", "on", "with", "from", "into", "at", "by", "as", "about", "toward", "towards",
   "be", "is", "are", "was", "were", "been", "being", "has", "have", "had", "do", "does", "did", "not",
   "will", "would", "may", "might", "can", "could", "should", "must", "which", "that", "it", "this", "these",
@@ -97,6 +109,8 @@ export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): W
   const keepSet = new Set(keep.map((k) => k.toLowerCase()));
   const singles = new Map<string, WordGloss>();
   for (const g of glosses) if (!/\s/.test(g.en.trim())) singles.set(g.en.toLowerCase(), g);
+  /** 단어 → 그 단어가 처음 들어간 덩어리 (뜻 상자 아랫줄 「덩어리」) */
+  const phraseOf = new Map<string, { en: string; ko: string }>();
   const out: WordGloss[] = [];
   const added = new Set<string>();
   for (const g of glosses) {
@@ -105,24 +119,31 @@ export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): W
       out.push(g);
       continue;
     }
-    const phraseKo = g.ko.split(" · ")[0];
+    const phrase = { en: g.en, ko: g.ko.split(" · ")[0] };
     for (const raw of words) {
       const w = raw.replace(/^[“"‘'(]+|[”"’'),.;:!?]+$/g, "");
       const key = w.toLowerCase();
-      if (!w || added.has(key)) continue;
-      // to, of, for 같은 짧은 기능어는 뜻이 문맥마다 달라서 사전 뜻을 쓰지 않는다 — 구절 뜻만 (to make = 만들기 위해)
+      if (!w) continue;
+      if (!phraseOf.has(key)) phraseOf.set(key, phrase);
+      if (added.has(key)) continue;
+      // to, of, for 같은 짧은 기능어는 뜻이 문맥마다 달라서 사전 뜻을 쓰지 않는다 — 덩어리 뜻만 (to make = 만들기 위해)
       const own = singles.get(key)?.ko ?? (CONTEXT_WORDS.has(key) ? undefined : WORDS[key]);
       if (!own) {
-        // 사전에 없는 단어도 누르면 구절 뜻은 보이게 — 관사(a, an, the)만 뺀다
+        // 단어 뜻이 없어도 누르면 덩어리 뜻은 보이게 — 관사(a, an, the)만 뺀다
         if (ARTICLES.has(key)) continue;
         added.add(key);
-        out.push({ ...g, en: w, ko: `${g.en} = ${phraseKo}` });
+        out.push({ en: w, ko: "", phrase });
         continue;
       }
       added.add(key);
-      // 레슨에 이미 그 단어 뜻이 있으면 그대로 두고(따로 들어가 있다), 사전 뜻이면 구절 뜻을 붙여 넣는다
-      if (!singles.has(key)) out.push({ ...g, en: w, ko: `${own.split(" · ")[0]} · ${g.en} = ${phraseKo}` });
+      // 레슨에 그 단어 뜻이 따로 있으면 그걸 쓴다(아래에서 덩어리를 붙인다). 없으면 사전 뜻 + 덩어리
+      if (!singles.has(key)) out.push({ en: w, ko: own, phrase });
     }
   }
-  return out;
+  // 레슨에 따로 적은 단어 뜻에도, 그 단어가 들어간 덩어리를 아랫줄로 붙인다
+  return out.map((g) => {
+    if (g.phrase || /\s/.test(g.en.trim())) return g;
+    const phrase = phraseOf.get(g.en.toLowerCase());
+    return phrase ? { ...g, phrase } : g;
+  });
 }

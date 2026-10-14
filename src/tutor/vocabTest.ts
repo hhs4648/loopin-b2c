@@ -261,7 +261,9 @@ export function pickWords(
     const s = statOf(stats, w.en);
     return s.seen === 0 ? 2 : s.wrong / s.seen;
   };
-  return [...vocab]
+  // 단어 연습은 단어 카드로 — 숙어(덩어리) 카드는 단어가 모자랄 때만 섞는다
+  const words = vocab.filter((w) => w.kind !== "phrase");
+  return [...(words.length >= 2 ? words : vocab)]
     .sort((a, b) => weak(b) - weak(a) || b.savedAt.localeCompare(a.savedAt))
     .slice(0, size);
 }

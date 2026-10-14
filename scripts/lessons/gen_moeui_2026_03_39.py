@@ -692,6 +692,9 @@ sentences = [
                         "right": {"label": "지금 · today", "words": [{"text": "openness", "ko": "개방성 = 공개", "fresh": True}]},
                         "process": {"arrow": "→", "words": [{"text": "the ideal has shifted"}]},
                         "caption": "구성원(members)끼리도, 외부인(outsiders)에게도"}),
+            show("s6_open_link",
+                 "openness(개방성)는 주어진 문장의 transparent(투명한)와 이어지는 말이에요. 관행이 공개되었으니 '투명한 관행'이라는 말이 나올 수 있어요.",
+                 button="다음", highlight=["openness"]),
             flow_check("s6_flow", "(④)",
                        "④ 자리예요. '옛날엔 비밀이었다' → '흔적은 남았지만 이제는 개방', 자연스럽게 이어지나요?",
                        False,
@@ -754,9 +757,10 @@ exam = {
     # 보기 글이 「… 앞」뿐이라 숫자 ①~⑤만 가로로 보인다
     "numbers_only": True,
     # 답 고르기 화면 — 지문 전체에 칠해 둘 핵심어 (①~⑤ 자리를 찾는 단서)
-    "passage_highlight": ["Nonetheless", "for most outsiders", "even completely transparent practices", "kept secret", "the ideal has shifted to openness", "toward outsiders", "Other, more active strategies", "accessible",
-                          # 자유 해석 대신 핵심어 짚기로 다룬 문장 3·5
-                          "there are admittance processes", "tests", "Some traces", "older practices", "may still be present today", "but", "the members"],
+    "passage_highlight": ["Nonetheless", "for most outsiders", "even completely transparent practices", "kept secret",
+                          "the ideal has shifted to openness", "Other, more active strategies", "accessible", "but"],
+    # 답 고르기 화면에서 칠하지 않을 말 — 분석 때 칠했어도 여기서는 뺀다 (2026-10-14 선생님)
+    "passage_unhighlight": ["strict tests of loyalty"],
     "sentence": 1,
     "analysis_first": True,
     "glosses": [],
@@ -775,10 +779,10 @@ exam = {
         "answer_explain": "정답이에요! '투명한 관행'과 '외부인'은 바로 앞 문장의 개방성, 외부인을 향한 개방을 받아요. 그런데도(Nonetheless) 외부인은 이해 못 하니, '다른, 더 적극적인 전략'이 필요하다로 이어져요.",
         "final_wrong": "정답은 ⑤예요.",
         "option_feedback": {
-            "1": "여기서는 아직 지식 공동체가 무엇인지만 말했어요. '투명한 관행'이 나올 자리가 아니에요.",
-            "2": "신입이 배우는 이야기 중이에요. '투명한 관행'이나 '외부인'을 받을 말이 앞에 없어요.",
-            "3": "입회 절차 이야기 중이에요. '투명한 관행'을 받을 말이 앞에 없어요.",
-            "4": "바로 앞은 '비밀에 부쳤다'예요. 비밀 뒤에 '투명한 관행조차'가 오면 어색해요.",
+            "1": "주어진 문장의 Nonetheless는 앞 문장과 내용이 달라졌다는 뜻이에요. 주어진 문장은 외부인이 지식에 접근하기 어렵다는 내용이었어요. 이와 반대되는 내용이 앞에 오도록 골라 봐요.",
+            "2": "주어진 문장의 Nonetheless는 앞 문장과 내용이 달라졌다는 뜻이에요. 주어진 문장은 외부인이 지식에 접근하기 어렵다는 내용이었어요. 이와 반대되는 내용이 앞에 오도록 골라 봐요.",
+            "3": "주어진 문장의 Nonetheless는 앞 문장과 내용이 달라졌다는 뜻이에요. 주어진 문장은 외부인이 지식에 접근하기 어렵다는 내용이었어요. 이와 반대되는 내용이 앞에 오도록 골라 봐요.",
+            "4": "주어진 문장의 Nonetheless는 앞 문장과 내용이 달라졌다는 뜻이에요. 주어진 문장은 외부인이 지식에 접근하기 어렵다는 내용이었어요. 이와 반대되는 내용이 앞에 오도록 골라 봐요.",
         },
         "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
     },

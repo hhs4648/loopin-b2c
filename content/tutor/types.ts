@@ -98,7 +98,13 @@ export type TeachPoint = {
 /** 문장 학습에서 단어를 눌렀을 때 보여줄, 이 문맥의 짧은 뜻 */
 export type WordGloss = {
   en: string;
+  /** 단어 하나의 뜻. 비어 있으면 덩어리 뜻만 보인다 (to, of 같은 기능어) */
   ko: string;
+  /**
+   * 이 단어가 들어간 덩어리 — 뜻 상자 아랫줄. 단어 카드와 따로 「숙어」 카드로 저장할 수 있다
+   * (inextricably → is inextricably associated with)
+   */
+  phrase?: { en: string; ko: string };
 };
 
 export type LessonChunk = {

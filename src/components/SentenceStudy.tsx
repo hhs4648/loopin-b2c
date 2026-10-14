@@ -612,20 +612,33 @@ function GlossSentence({
             role="tooltip"
             style={shift ? { transform: `translateX(calc(-50% + ${shift}px))` } : undefined}
           >
-            {/* 별표 = 단어장에 넣기. 뜻 왼쪽, 빈 별에서 누르면 노랗게 찬다 */}
-            <button
-              type="button"
-              className={`vocab-star${isSaved(vocab, span.gloss.en) ? " on" : ""}`}
-              aria-pressed={isSaved(vocab, span.gloss.en)}
-              aria-label={isSaved(vocab, span.gloss.en) ? "단어장에서 빼기" : "단어장에 저장"}
-              onClick={(e) => {
-                e.stopPropagation();
-                setVocab(toggleVocab(vocab, { en: span.gloss!.en, ko: span.gloss!.ko, sentence, source: lessonIdOfSentence(sentence) }));
-              }}
-            >
-              <StarIcon filled={isSaved(vocab, span.gloss.en)} />
-            </button>
-            <GlossText ko={span.gloss.ko} />
+            {/*
+              윗줄 = 단어 하나의 뜻(단어 카드), 아랫줄 = 그 단어가 들어간 덩어리(숙어 카드).
+              별은 따로 — 뜻 왼쪽, 빈 별에서 누르면 노랗게 찬다
+            */}
+            {span.gloss.ko ? (
+              <span className="gloss-line">
+                <VocabStar
+                  vocab={vocab}
+                  en={span.gloss.en}
+                  onToggle={() => setVocab(toggleVocab(vocab, { en: span.gloss!.en, ko: span.gloss!.ko, kind: "word", sentence, source: lessonIdOfSentence(sentence) }))}
+                />
+                <GlossText ko={span.gloss.ko} />
+              </span>
+            ) : null}
+            {span.gloss.phrase && span.gloss.phrase.ko !== span.gloss.ko ? (
+              <span className={`gloss-line gloss-phrase${span.gloss.ko ? "" : " only"}`}>
+                <VocabStar
+                  vocab={vocab}
+                  en={span.gloss.phrase.en}
+                  onToggle={() => setVocab(toggleVocab(vocab, { en: span.gloss!.phrase!.en, ko: span.gloss!.phrase!.ko, kind: "phrase", sentence, source: lessonIdOfSentence(sentence) }))}
+                />
+                <span className="gloss-ko">
+                  {span.gloss.ko ? <small className="gloss-phrase-tag">덩어리</small> : null}
+                  <b className="gloss-phrase-en">{span.gloss.phrase.en}</b> {span.gloss.phrase.ko}
+                </span>
+              </span>
+            ) : null}
           </span>
         ) : null}
       </span>,
@@ -875,6 +888,24 @@ function wordRanges(sentence: string, word: string): [number, number][] {
 }
 
 /** 「통합, 통일성 · 여기서는 …」 — 뜻은 진하게, 「·」 뒤의 해설은 연하게 */
+function VocabStar({ vocab, en, onToggle }: { vocab: VocabEntry[]; en: string; onToggle: () => void }) {
+  const on = isSaved(vocab, en);
+  return (
+    <button
+      type="button"
+      className={`vocab-star${on ? " on" : ""}`}
+      aria-pressed={on}
+      aria-label={on ? `${en} 단어장에서 빼기` : `${en} 단어장에 저장`}
+      onClick={(e) => {
+        e.stopPropagation();
+        onToggle();
+      }}
+    >
+      <StarIcon filled={on} />
+    </button>
+  );
+}
+
 function GlossText({ ko }: { ko: string }) {
   const at = ko.indexOf(" · ");
   if (at < 0) return <span className="gloss-ko">{ko}</span>;

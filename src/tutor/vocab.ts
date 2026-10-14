@@ -12,6 +12,8 @@ export type VocabEntry = {
   sentence: string;
   /** 어느 지문에서 나온 단어인가 — 지문별 단어 목록을 만든다 */
   source?: string;
+  /** 단어 하나(word)인가, 전치사가 붙은 덩어리·숙어(phrase)인가 — 연습을 따로 한다. 예전 기록은 없음 = 단어 */
+  kind?: "word" | "phrase";
   savedAt: string;
 };
 

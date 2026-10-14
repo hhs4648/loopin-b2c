@@ -312,51 +312,24 @@
       ],
       "steps": [
         {
-          "id": "s1_blank",
-          "type": "choice",
-          "interaction": "meaning_choice",
-          "one_try": true,
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
           "brief": {
-            "ask": "빈칸 문제는 빈칸 문장부터 봐요. 그럼 글에서 무엇을 찾아야 할까요?",
-            "reask": "그럼 하나 골라 봐요.",
-            "hints": [
-              "'without some awareness of ____, it is difficult to …'예요. ____을 모르면 판단하기 어렵대요.",
-              "'without some awareness of ____, it is difficult to …'예요. ____을 모르면 판단하기 어렵대요."
-            ],
-            "explain": "'without some awareness of ____, it is difficult to …'예요. ____을 모르면 판단하기 어렵대요.",
-            "praise": "맞아요!",
-            "feedback": {
-              "o0": "'without ~, it is difficult to …'는 '~이 없으면 …하기 어렵다'예요. 빈칸에는 꼭 알아야 하는 것이 들어가요.",
-              "o2": "'without ~, it is difficult to …'는 '~이 없으면 …하기 어렵다'예요. 빈칸에는 꼭 알아야 하는 것이 들어가요."
-            },
-            "point": "빈칸 문제는 빈칸 문장부터 — without some awareness of ____, it is difficult to … = ____을 모르면 판단하기 어렵다"
+            "say": "빈칸은 여섯째 문장에 있어요. 무엇을 모르면 판단하기 어렵다는 건지 생각하며 처음부터 읽어 봐요."
           },
-          "options": [
-            {
-              "id": "o0",
-              "label": "지리학이 생긴 역사"
-            },
-            {
-              "id": "o1",
-              "label": "모르면 판단하기 어려운 것",
-              "correct": true
-            },
-            {
-              "id": "o2",
-              "label": "사업에 성공하는 방법"
-            }
-          ],
           "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
           "display": "Moving up in scale, without some awareness of ________, it is difficult to make reasoned business or policy judgments, make sense of events, or grasp some of the basic forces shaping life on the planet.",
           "tag": "빈칸 문장",
-          "flip": {},
           "highlight": [
             "without some awareness of ________, it is difficult to"
           ],
           "tips": [
             {
               "label": "빈칸 문제 요령",
-              "text": "빈칸 문장을 먼저 읽고 무엇을 찾을지 정해요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요. 반전 단서(But, However, not)와 좋은 말·나쁜 말로 어느 쪽인지 파악해요."
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
             }
           ]
         },
@@ -381,7 +354,7 @@
             "is inextricably associated": "V"
           },
           "brief": {
-            "ask": "이제 첫 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+            "ask": "첫 문장의 주어(S)와 동사(V)를 찾아볼까요?",
             "wrong": "그건 주어나 동사가 아니에요.",
             "wrong_by": {
               "geography": "with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
@@ -1092,6 +1065,68 @@
           ]
         },
         {
+          "id": "s6_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "드디어 빈칸 문장이에요. 앞에서 모은 말을 떠올리면, 빈칸에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "단어 지도를 봐요. where, spatial arrangements, spatial circumstances가 계속 나왔어요.",
+              "단어 지도를 봐요. where, spatial arrangements, spatial circumstances가 계속 나왔어요."
+            ],
+            "explain": "단어 지도를 봐요. where, spatial arrangements, spatial circumstances가 계속 나왔어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "앞 문장들은 계속 where(어디), spatial arrangements(공간 배치), spatial circumstances(공간적 상황)를 말했어요. 빈칸도 그쪽 말이어야 해요.",
+              "o2": "앞 문장들은 계속 where(어디), spatial arrangements(공간 배치), spatial circumstances(공간적 상황)를 말했어요. 빈칸도 그쪽 말이어야 해요."
+            },
+            "point": "빈칸 = 앞에서 계속 나온 말(where, spatial arrangements, spatial circumstances) = 어디에 어떻게 놓여 있나"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "어디에, 어떻게 놓여 있는지 (공간 배치)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "사업에 성공하는 방법"
+            },
+            {
+              "id": "o2",
+              "label": "사람들의 감정 변화"
+            }
+          ],
+          "method": 0,
+          "highlight": [
+            "without some awareness of ________"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "단어 지도",
+            "left": {
+              "label": "공간 · 어디에 어떻게 놓여 있나",
+              "words": [
+                {
+                  "text": "where",
+                  "ko": "어디"
+                },
+                {
+                  "text": "spatial arrangements",
+                  "ko": "공간 배치"
+                },
+                {
+                  "text": "spatial circumstances",
+                  "ko": "공간적 상황"
+                }
+              ]
+            },
+            "caption": "모두 같은 말 — 어디에, 어떻게 배치돼 있나"
+          }
+        },
+        {
           "id": "s6_side",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1378,73 +1413,6 @@
                   "text": "the layout",
                   "ko": "배치",
                   "fresh": true
-                }
-              ]
-            },
-            "caption": "모두 같은 말 — 어디에, 어떻게 배치돼 있나"
-          }
-        },
-        {
-          "id": "s8_gist",
-          "type": "choice",
-          "interaction": "meaning_choice",
-          "one_try": true,
-          "brief": {
-            "ask": "그럼 빈칸에는 어떤 말이 들어가야 할까요?",
-            "reask": "그럼 하나 골라 봐요.",
-            "hints": [
-              "단어 지도에 모은 말들을 떠올려 봐요. 모두 '어디에, 어떻게 놓여 있나'예요.",
-              "단어 지도에 모은 말들을 떠올려 봐요. 모두 '어디에, 어떻게 놓여 있나'예요."
-            ],
-            "explain": "단어 지도에 모은 말들을 떠올려 봐요. 모두 '어디에, 어떻게 놓여 있나'예요.",
-            "praise": "맞아요!",
-            "feedback": {
-              "o1": "where, spatial arrangements, spatial circumstances, location, layout 모두 '어디에, 어떻게 배치돼 있나'예요. 빈칸도 같은 말이 와야 해요.",
-              "o2": "where, spatial arrangements, spatial circumstances, location, layout 모두 '어디에, 어떻게 배치돼 있나'예요. 빈칸도 같은 말이 와야 해요."
-            },
-            "point": "글 전체 = 지리학은 '어디'에서 출발해, 공간 배치를 알아야 판단하고 이해할 수 있다"
-          },
-          "options": [
-            {
-              "id": "o0",
-              "label": "지구 위에 무엇이 어떻게 배치돼 있는지",
-              "correct": true
-            },
-            {
-              "id": "o1",
-              "label": "문화 사이의 갈등이 왜 늘어나는지"
-            },
-            {
-              "id": "o2",
-              "label": "누가 땅에 대한 결정권을 가지는지"
-            }
-          ],
-          "method": 0,
-          "panel": {
-            "kind": "groups",
-            "title": "단어 지도",
-            "left": {
-              "label": "공간 · 어디에 어떻게 놓여 있나",
-              "words": [
-                {
-                  "text": "where",
-                  "ko": "어디"
-                },
-                {
-                  "text": "spatial arrangements",
-                  "ko": "공간 배치"
-                },
-                {
-                  "text": "spatial circumstances",
-                  "ko": "공간적 상황"
-                },
-                {
-                  "text": "the location of roads",
-                  "ko": "도로의 위치"
-                },
-                {
-                  "text": "the layout",
-                  "ko": "배치"
                 }
               ]
             },

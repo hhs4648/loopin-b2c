@@ -105,12 +105,15 @@ export function SavedBook({ kind, onBack }: Props) {
                           className={`point-star${on ? " on" : ""}`}
                           aria-pressed={on}
                           aria-label={on ? "단어장에서 빼기" : "다시 저장"}
-                          onClick={() => setVocab(toggleVocab(vocab, { en: w.en, ko: w.ko, sentence: w.sentence, source: w.source }))}
+                          onClick={() => setVocab(toggleVocab(vocab, { en: w.en, ko: w.ko, kind: w.kind, sentence: w.sentence, source: w.source }))}
                         >
                           {on ? "★" : "☆"}
                         </button>
                         <span className="saved-body">
-                          <b className="saved-en">{w.en}</b>
+                          <b className="saved-en">
+                            {w.kind === "phrase" ? <small className="saved-kind">숙어</small> : null}
+                            {w.en}
+                          </b>
                           <span>{w.ko}</span>
                           <small className="saved-meta">
                             {shortDate(w.savedAt)} 저장 · {(source && setOfLesson(source)?.title) || "다른 수업"}

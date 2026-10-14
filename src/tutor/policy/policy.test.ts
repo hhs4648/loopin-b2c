@@ -10,7 +10,7 @@ import {
 } from "./student-state";
 import type { ChoiceStep, PolicyStep, TranslateStep } from "./types";
 import type { TutorView } from "../view";
-import { glossSpans, splitPhraseGlosses } from "../glosses";
+import { CONTEXT_WORDS, FUNCTION_WORDS, WORDS, glossSpans, splitPhraseGlosses } from "../glosses";
 
 /*
   정책 단위 테스트는 레슨에 기대지 않는다 — 지문을 갈아 끼워도 그대로 돈다.
@@ -632,6 +632,17 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.wordCheck?.words.some((w) => w.en === "pastiche")).toBe(false);
     v = await session.submit("__check:outmoded");
     expect(v.wordCheck?.checked).toEqual(["outmoded"]);
+    // 끌어서 여러 개 — 켜고 끄기, 모두 고르기·모두 풀기
+    const ens = v.wordCheck!.words.map((w) => w.en);
+    v = await session.submit(`__check_set:on:${ens[1]}|${ens[2]}`);
+    expect(v.wordCheck?.checked).toEqual(["outmoded", ens[1], ens[2]].filter((x, i, a) => a.indexOf(x) === i));
+    v = await session.submit(`__check_set:off:${ens[1]}`);
+    expect(v.wordCheck?.checked).not.toContain(ens[1]);
+    v = await session.submit("__check_all");
+    expect(ens.every((e) => v.wordCheck!.checked.includes(e))).toBe(true);
+    v = await session.submit("__check_none");
+    expect(v.wordCheck?.checked).toEqual([]);
+    v = await session.submit("__check:outmoded");
     v = await session.submit("다음으로");
     expect(v.wordCheck?.step).toBe("보기 단어 2/2");
     v = await session.submit("__check:embrace");
@@ -973,7 +984,7 @@ describe("2026년 3월 36번 — 순서 문제", () => {
 
 describe("2026년 3월 33번 — 빈칸 문제", () => {
   const ID33 = "moeui-2026-03-33-profound-building";
-  it("빈칸 문장부터 → 공간=행동 연출(+/−) → 몸·마음 두 그룹 → 사는 사람이 기준 → 한 줄 요지 → 문제", async () => {
+  it("빈칸 위치 먼저(질문 없이) → 문장 1 읽기 → 공간=행동 연출(+/−) → 몸·마음 두 그룹 → 사는 사람이 기준 → 한 줄 요지 → 문제", async () => {
     const session = createPolicySession(ID33, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     v = await session.submit("넘어가기");
@@ -983,11 +994,15 @@ describe("2026년 3월 33번 — 빈칸 문제", () => {
         v = await session.submit(v.praiseOnly ? "__auto_next" : v.celebrate ? v.buttons[0]! : "다 읽었어요");
       return v;
     };
-    await go("다 읽었어요");
+    // 읽기 전에 빈칸 위치만 짚는다 (질문 없이) — 그다음 문장 1을 읽는다
+    expect(v.readingFirst).toBe(false);
     expect(v.sentenceTag).toBe("빈칸 문장");
     expect(v.sentence).toBe("A profound building is ________.");
-    expect(v.flip?.tag).toBe("문장 1");
-    await go("훌륭한 건물이 어떤 건물인지");
+    expect(v.buttons).toEqual(["처음부터 읽어 볼게요"]);
+    v = await session.submit("처음부터 읽어 볼게요");
+    expect(v.readingFirst).toBe(true);
+    expect(v.sentenceTag).toBe("문장 1");
+    await go("다 읽었어요");
     await go("행동을 이끄는 공간 연출");
     expect(v.signs).toHaveLength(6);
     await go("다음 문장");
@@ -1438,5 +1453,43 @@ describe("도입 — 풀이법 설명은 그 유형을 처음 풀 때만", () =>
     expect(second.some((m) => m.includes("시간 싸움"))).toBe(false);
     expect(second.length).toBeLessThan(first.length);
     g.window = had;
+  });
+});
+
+describe("덩어리 안의 내용어는 단어 뜻이 있다 — 단어 카드로 저장하고 연습할 수 있게", () => {
+  it.each(allPolicyLessons().map((l) => [l.id, l] as const))("%s", (_id, lesson) => {
+    const missing: string[] = [];
+    for (const s of lesson.sentences) {
+      const singles = new Set(s.glosses.filter((g) => !/\s/.test(g.en.trim())).map((g) => g.en.toLowerCase()));
+      for (const g of s.glosses) {
+        const words = g.en.trim().split(/\s+/);
+        if (words.length < 2) continue;
+        for (const raw of words) {
+          const k = raw.replace(/^[“"‘'(]+|[”"’'),.;:!?]+$/g, "").toLowerCase();
+          if (!k || /^[\W\d_]+$/.test(k) || FUNCTION_WORDS.has(k) || CONTEXT_WORDS.has(k)) continue;
+          if (!singles.has(k) && !WORDS[k]) missing.push(`${s.id}:${k}`);
+        }
+      }
+    }
+    expect(missing).toEqual([]);
+  });
+});
+
+describe("6월 34번 — 빈칸 위치 먼저(질문 없이) → 순서대로 읽기 → 빈칸 문장에서 질문", () => {
+  it("읽기 전에 빈칸 문장을 짚고, 빈칸 질문은 빈칸 문장에 도착해서 한다", async () => {
+    const session = createPolicySession("mopyeong-2026-06-34-geography-where", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 4 && v.sentenceTag !== "빈칸 문장"; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    expect(v.readingFirst).toBe(false);
+    expect(v.message).toContain("빈칸은 여섯째 문장에 있어요.");
+    expect(v.buttons).toEqual(["처음부터 읽어 볼게요"]);
+    v = await session.submit("처음부터 읽어 볼게요");
+    expect(v.readingFirst).toBe(true);
+    expect(v.sentenceTag).toBe("문장 1");
+    v = await session.submit("다 읽었어요");
+    expect(session.lastAction()?.interactionId).toBe("s1_sv");
+    const lesson = allPolicyLessons().find((l) => l.id === "mopyeong-2026-06-34-geography-where")!;
+    const blankSentence = lesson.sentences.find((s) => s.steps.some((st) => st.id === "s6_fill"))!;
+    expect(blankSentence.text).toContain("________");
   });
 });

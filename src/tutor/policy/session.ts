@@ -96,6 +96,10 @@ export const READ_NEXT_CMD = "__read_next";
 export const WEEKS_CMD = "__weeks:";
 export const SAVE_CMD = "__save";
 export const CHECK_CMD = "__check:";
+/** 단어 체크 — 끌어서 여러 개를 한 번에 켜거나 끈다 (`__check_set:on:a|b`), 모두 고르기·모두 풀기 */
+export const CHECK_SET_CMD = "__check_set:";
+export const CHECK_ALL_CMD = "__check_all";
+export const CHECK_NONE_CMD = "__check_none";
 export const MATCH_DONE_CMD = "__match_done";
 export const PREV_SENTENCE_CMD = "__prev_sentence";
 export const NEXT_SENTENCE_CMD = "__next_sentence";
@@ -728,6 +732,24 @@ export function createPolicySession(
         s = { ...s, checked: s.checked.includes(en) ? s.checked.filter((x) => x !== en) : [...s.checked, en] };
         return;
       }
+      if (text.startsWith(CHECK_SET_CMD)) {
+        const [mode, list = ""] = text.slice(CHECK_SET_CMD.length).split(/:(.*)/s);
+        const words = list.split("|").filter(Boolean);
+        s = {
+          ...s,
+          checked: mode === "on" ? [...new Set([...s.checked, ...words])] : s.checked.filter((x) => !words.includes(x)),
+        };
+        return;
+      }
+      if (text === CHECK_ALL_CMD || text === CHECK_NONE_CMD) {
+        const shown = s.wordPart === 0 ? keyWords().passage : keyWords().options;
+        const ens = shown.map((w) => w.en);
+        s = {
+          ...s,
+          checked: text === CHECK_ALL_CMD ? [...new Set([...s.checked, ...ens])] : s.checked.filter((x) => !ens.includes(x)),
+        };
+        return;
+      }
       if (s.wordPart === 0 && keyWords().options.length) return startWords(1);
       // 체크한 단어는 단어장으로 — 어느 지문에서 나왔는지 같이
       const all = [...keyWords().passage, ...keyWords().options];
@@ -880,8 +902,8 @@ export function createPolicySession(
     }
     const st = step();
     const action = openingAction(st, input());
-    // 처음 보는 문장이면 영어 문장부터 — 질문·보기는 「다 읽었어요」 뒤에
-    if (lesson.read_first && !s.readSentences.includes(s.si)) {
+    // 처음 보는 문장이면 영어 문장부터 — 질문·보기는 「다 읽었어요」 뒤에 (읽기 전에 짚는 스텝만 먼저)
+    if (lesson.read_first && !s.readSentences.includes(s.si) && !st.before_read) {
       s = {
         ...s,
         readingFirst: true,
@@ -1405,7 +1427,7 @@ export function createPolicySession(
                   [
                     ...x.steps.flatMap((st) => (st.type === "translate" ? (st.highlight ?? []) : [])),
                     ...(lesson.exam?.passage_highlight ?? []).filter((h) => x.text.includes(h)),
-                  ],
+                  ].filter((h) => !(lesson.exam?.passage_unhighlight ?? []).includes(h)),
                 ]),
               ),
             }

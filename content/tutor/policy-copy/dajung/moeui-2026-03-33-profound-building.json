@@ -6,24 +6,12 @@
   "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
   "helps": {},
   "steps": {
-    "s1_blank": {
-      "ask": "빈칸 문제는 빈칸 문장부터 봐요. 그럼 글에서 무엇을 찾아야 할까요?",
-      "reask": "그럼 하나 골라 봐요.",
-      "hints": [
-        "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
-        "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요."
-      ],
-      "explain": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
-      "praise": "맞아요!",
-      "feedback": {
-        "o0": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요.",
-        "o2": "'A profound building is ____'예요. 빈칸이 설명하는 건 building이에요."
-      },
-      "point": "빈칸 문제는 빈칸 문장부터 — 'A profound building is ____' → 좋은 건물이 어떤 건물인지 찾는다",
-      "from": "18koqvc"
+    "s1_where": {
+      "say": "빈칸은 마지막 문장에 있어요. 훌륭한 건물(A profound building)이 어떤 건물인지 생각하며 처음부터 읽어 봐요.",
+      "from": "so5p01"
     },
     "s1_what": {
-      "ask": "그럼 첫 문장부터 봐요. 건축 구조물은 무엇의 한 형태래요?",
+      "ask": "건축 구조물은 무엇의 한 형태래요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
         "'spatial choreography that guides action'을 봐요. choreography는 '연출'이에요.",
@@ -36,7 +24,7 @@
         "o1": "'spatial choreography'는 공간의 연출, 'that guides action'은 행동을 이끈다는 말이에요. 취향이나 그림 이야기가 아니에요."
       },
       "point": "architectural structures = spatial choreography that guides action (행동을 이끄는 공간 연출)",
-      "from": "wwoglt"
+      "from": "1c30py1"
     },
     "s1_pairs": {
       "say": "세미콜론(;) 뒤는 짝으로 읽어요. 공간은 행동을 돕기도(+) 하고 막기도(−) 해요.",
