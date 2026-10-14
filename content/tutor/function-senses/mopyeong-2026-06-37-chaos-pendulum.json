@@ -1,0 +1,96 @@
+{
+ "1": [
+  {
+   "word": "as",
+   "phrase": "sold as an executive toy",
+   "sense": "~로",
+   "usage": "전치사 as + 명사 (sell A as B = A를 B로 팔다)"
+  },
+  {
+   "word": "that",
+   "phrase": "a pendulum that swings",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "the magnets that it visits",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 주어·동사 (목적어 빠진 문장)"
+  }
+ ],
+ "6": [
+  {
+   "word": "If",
+   "phrase": "If the pendulum is released",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if (조건)"
+  },
+  {
+   "word": "but",
+   "phrase": "the same but soon",
+   "sense": "그러나",
+   "usage": "접속사 but"
+  }
+ ],
+ "8": [
+  {
+   "word": "to",
+   "phrase": "taken to start",
+   "sense": "~하려고",
+   "usage": "to + 동사원형 (목적)"
+  }
+ ],
+ "9": [
+  {
+   "word": "to",
+   "phrase": "leads to chaos",
+   "sense": "~로",
+   "usage": "lead to ~ = ~로 이어지다"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "In order to produce",
+   "sense": "~하기 위해",
+   "usage": "in order to + 동사원형 (목적)"
+  },
+  {
+   "word": "to",
+   "phrase": "has to be",
+   "sense": "~해야 한다",
+   "usage": "have to + 동사원형"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "to become so",
+   "sense": "~하려면",
+   "usage": "to + 동사원형 (목적·조건)"
+  },
+  {
+   "word": "so",
+   "phrase": "become so",
+   "sense": "그렇게(혼돈 상태로)",
+   "usage": "부사 so (앞의 chaotic을 받음)"
+  },
+  {
+   "word": "to",
+   "phrase": "need to be pushed",
+   "sense": "~하는 것을",
+   "usage": "need to + 동사원형"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "Before that point",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  }
+ ]
+}

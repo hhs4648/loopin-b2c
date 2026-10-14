@@ -135,6 +135,33 @@ export function StudyPanelView({ panel, onPick }: { panel: StudyPanel; onPick?: 
     );
   }
 
+  if (panel.kind === "story") {
+    return (
+      <div
+        className="study-panel board story"
+        ref={(el) => {
+          // 새 장면은 맨 아래에 붙는다 — 보이게 내려 둔다
+          if (el) el.scrollTop = el.scrollHeight;
+        }}
+      >
+        <i className="board-magnets" aria-hidden="true" />
+        {panel.title ? <div className="panel-title">{panel.title}</div> : null}
+        <div className="story-scenes">
+          {panel.scenes.map((s, i) => (
+            <div key={i} className={`story-scene${s.fresh ? " fresh" : ""}`}>
+              <span className="story-icon" aria-hidden="true">{s.icon}</span>
+              <span className="story-body">
+                {s.label ? <small className="story-label">{s.label}</small> : null}
+                <b>{s.en}</b>
+                <span>{s.ko}</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   if (panel.kind === "map") {
     return (
       <div

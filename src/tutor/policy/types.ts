@@ -136,7 +136,17 @@ export type PicturePanel = {
   caption?: string;
 };
 
-export type StudyPanel = StructurePanel | MappingPanel | ContrastPanel | NotePanel | MapPanel | GroupsPanel | PicturePanel;
+/**
+ * 칠판 정리 — 2~3문장마다 지금까지 어떤 상황인지 장면을 쌓는다(그림 아이콘 + 영어 핵심어 + 한국어 한 줄).
+ * `fresh`는 이번에 붙은 장면
+ */
+export type StoryPanel = {
+  kind: "story";
+  title?: string;
+  scenes: { label: string; icon: string; en: string; ko: string; fresh?: boolean }[];
+};
+
+export type StudyPanel = StructurePanel | MappingPanel | ContrastPanel | NotePanel | MapPanel | GroupsPanel | PicturePanel | StoryPanel;
 export type PanelRef = StudyPanel | string;
 
 /* ── 스텝 ─────────────────────────────────────────────────────────── */
@@ -214,6 +224,14 @@ type StepBase = {
    * 읽기 전에 무엇을 생각하며 읽을지 짚을 때. 그다음에 이 문장 읽기로 간다
    */
   before_read?: boolean;
+  /** 문장 대신 지문 전체를 시험지처럼 보이고, 여기 적은 말을 칠한다 (빈칸 문장이 지문 어디 있는지 보여 줄 때) */
+  show_passage?: string[];
+  /**
+   * 이 화면을 보일 학생 단계(고 1~2등급 · 중 3~5등급 · 초 6~8등급). 없으면 모두에게.
+   * 영어를 돕는 화면(주어·동사 찾기, 가리키는 말, 헷갈리는 단어 뜻)만 단계를 나눈다 —
+   * 내용 파악(문장 뜻, 요약, 그림, 쪼갠 설명)은 고·중도 어렵다 (2026-10-14 선생님)
+   */
+  levels?: ("고" | "중" | "초")[];
   /**
    * 이 id의 자유 해석을 한 번에 맞히지 못한 학생만 본다 (맞힌 학생에게는 설명을 건너뛴다).
    * 자유 해석에 `known`이 있으면 한 번에 맞힌 학생은 그 키가 학생 상태에 남아,
@@ -473,6 +491,11 @@ export type ExamQuestion = {
   passage_highlight?: string[];
   /** 답 고르기 화면에서 칠하지 않을 말 (분석 때 자유 해석에서 칠한 것이라도) */
   passage_unhighlight?: string[];
+  /**
+   * 있으면 답 고르기 화면의 칠하기를 **이것만**으로 — 자유 해석 범위(긴 덩어리) 대신 핵심 단어만 (칠하기는 최소한).
+   * 문장마다 그 문장에 든 단어만 칠한다
+   */
+  passage_keywords?: string[];
   /** 문제 화면에 띄울 문장 id (기본: 첫 밑줄이 든 문장) */
   sentence?: number;
   /** EBS가 공개하는 오답률(%). 인트로에서 말한다 */

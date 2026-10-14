@@ -3,6 +3,7 @@ import { decideOnChoice, shouldShow, type DecideInput } from "./decide";
 import { stamps } from "./copy";
 import { allPolicyLessons, getPolicyCopy } from "./lessons";
 import { createPolicySession, gradeTranslation, underlinesOf } from "./session";
+import { SENSE_WORDS, sensesOf } from "./senses";
 import {
   emptyStudentState,
   recordPerformance,
@@ -565,7 +566,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
   it("4문장은 음영 + 대시 흐림. 「다음 문장」이면 자세한 스텝을 건너뛰고, 「자세히 볼래요」면 연다", async () => {
     const walkTo4 = async () => {
       const { session } = await toAnalysis();
-      for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", ...S2_RIGHT, "기술(technique)일 뿐", "다음 문장"]) await session.submit(t);
+      for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", ...S2_RIGHT, "다음 문장", "기술(technique)일 뿐", "다음 문장"]) await session.submit(t);
       return session;
     };
     let session = await walkTo4();
@@ -574,6 +575,8 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.shaded).toEqual([L.sentences[3]!.text]);
     expect(v.faded?.[0]).toContain("automobile");
     expect(v.buttons).toEqual(["다음 문장", "자세히 볼래요"]);
+    v = await session.submit("다음 문장");
+    expect(session.lastAction()?.interactionId).toBe("story_4");
     v = await session.submit("다음 문장");
     expect(session.lastAction()?.interactionId).toBe("s5_skim");
 
@@ -585,7 +588,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
 
   it("6문장의 arms race는 ❓ 개념, last thing은 💡 Tip", async () => {
     const { session } = await toAnalysis();
-    for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", ...S2_RIGHT, "기술(technique)일 뿐", "다음 문장", "다음 문장", "다음 문장"]) await session.submit(t);
+    for (const t of ["대조", "다음", "뛰어난 음악가는 엄밀히 말해 발명가가 아니어도 혁신가일 수 있다", ...S2_RIGHT, "다음 문장", "기술(technique)일 뿐", "다음 문장", "다음 문장", "다음 문장", "다음 문장"]) await session.submit(t);
     const v = session.view();
     expect(session.lastAction()?.interactionId).toBe("s6_q");
     expect(v.concepts?.[0]?.en).toBe("arms race");
@@ -829,7 +832,12 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     v = await session.submit("__auto_next");
     expect(v.message.startsWith("아까 예술은")).toBe(true);
     v = await session.submit("__pick:translations of that work");
-    expect(v.celebrate).toBe(true);
+    if (v.praiseOnly) v = await session.submit("__auto_next");
+    // 문장 3 뒤 칠판 정리 — 지금까지 장면이 쌓이고 이번 장면만 노랗게
+    expect(v.panel?.kind).toBe("story");
+    if (v.panel?.kind === "story") expect(v.panel.scenes.filter((x) => x.fresh)).toHaveLength(2);
+    v = await session.submit("다음 문장");
+    expect(v.sentenceTag).toBe("문장 4");
   });
 
   it("4문장: one(앞의 text) → 낯섦이 없는 글 → 좋은 말(+)인지(−·−·+ 표시) → native strangeness는 다시 보이게 하는 쪽 → 아무 일도 안 일어남 → 핵심어 → 해석", async () => {
@@ -959,8 +967,9 @@ describe("2026년 3월 36번 — 순서 문제", () => {
     expect(v.sentenceTag).toBe("주어진 글");
     const go = async (t: string) => {
       v = await session.submit(t);
-      for (let g = 0; g < 3 && (v.praiseOnly || v.readingFirst || v.celebrate); g++)
-        v = await session.submit(v.praiseOnly ? "__auto_next" : v.celebrate ? v.buttons[0]! : "다 읽었어요");
+      // 칠판 정리(2~3문장마다)는 넘긴다 — 따로 검사한다
+      for (let g = 0; g < 4 && (v.praiseOnly || v.readingFirst || v.celebrate || v.panel?.kind === "story"); g++)
+        v = await session.submit(v.praiseOnly ? "__auto_next" : v.readingFirst ? "다 읽었어요" : v.buttons[0]!);
       return v;
     };
     await go("다 읽었어요");
@@ -969,6 +978,11 @@ describe("2026년 3월 36번 — 순서 문제", () => {
     expect(v.signs?.[0]?.sign).toBe("+");
     await go("다음");
     await go("이유를 끝없이 물으면 생기는 문제");
+    // (A)를 읽기 전에 한 번 — 시험지 순서라 어색할 수 있다
+    for (let g = 0; g < 2 && !v.message.includes("시험지 순서대로"); g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    expect(v.message).toContain("시험지 순서대로");
+    expect(v.readingFirst).toBe(false);
+    await go("(A)부터 읽어 볼게요");
     expect(v.sentence.startsWith("(A) This")).toBe(true);
     await go("어떤 '문제'에 대한 설명");
     await go("더 이상의 생각을 바로 멈추게 하는 말");
@@ -990,8 +1004,9 @@ describe("2026년 3월 33번 — 빈칸 문제", () => {
     v = await session.submit("넘어가기");
     const go = async (t: string) => {
       v = await session.submit(t);
-      for (let g = 0; g < 3 && (v.praiseOnly || v.readingFirst || v.celebrate); g++)
-        v = await session.submit(v.praiseOnly ? "__auto_next" : v.celebrate ? v.buttons[0]! : "다 읽었어요");
+      // 칠판 정리(2~3문장마다)는 넘긴다 — 따로 검사한다
+      for (let g = 0; g < 4 && (v.praiseOnly || v.readingFirst || v.celebrate || v.panel?.kind === "story"); g++)
+        v = await session.submit(v.praiseOnly ? "__auto_next" : v.readingFirst ? "다 읽었어요" : v.buttons[0]!);
       return v;
     };
     // 읽기 전에 빈칸 위치만 짚는다 (질문 없이) — 그다음 문장 1을 읽는다
@@ -1034,8 +1049,9 @@ describe("2026년 3월 38번 — 문장 넣기", () => {
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     const go = async (t: string) => {
       v = await session.submit(t);
-      for (let g = 0; g < 3 && (v.praiseOnly || v.readingFirst || v.celebrate); g++)
-        v = await session.submit(v.praiseOnly ? "__auto_next" : v.celebrate ? v.buttons[0]! : "다 읽었어요");
+      // 칠판 정리(2~3문장마다)는 넘긴다 — 따로 검사한다
+      for (let g = 0; g < 4 && (v.praiseOnly || v.readingFirst || v.celebrate || v.panel?.kind === "story"); g++)
+        v = await session.submit(v.praiseOnly ? "__auto_next" : v.readingFirst ? "다 읽었어요" : v.buttons[0]!);
       return v;
     };
     await go("다 읽었어요");
@@ -1097,8 +1113,8 @@ describe("2026년 3월 39번 — 줄인 판(2026-10-14): 줄기는 모두에게,
     expect(seen.filter((x) => /_svc?$/.test(x))).toEqual(["g_sv"]);
     for (const x of ["g_for_note", "g_svo2", "g_rel_note"]) expect(seen).not.toContain(x);
     for (const x of ["s3_flow", "s4_flow", "s5_flow", "s6_flow", "s7_other", "s7_flow", "s2_sort", "s3_sort_experts"]) expect(seen).toContain(x);
-    // 잘하는 학생 기준 — 예전 56스텝에서 크게 줄었다
-    expect(seen.length).toBeLessThanOrEqual(35);
+    // 잘하는 학생 기준 — 예전 56스텝에서 크게 줄었다 (칠판 정리 3장 포함)
+    expect(seen.length).toBeLessThanOrEqual(38);
   });
 
   it("주어진 문장에서 S·V·O를 한 번 틀리면 다음 문장에서도 S·V·O를 찾고, 거기서 다 맞히면 그다음부터 건너뛴다", async () => {
@@ -1479,10 +1495,22 @@ describe("6월 34번 — 빈칸 위치 먼저(질문 없이) → 순서대로 �
   it("읽기 전에 빈칸 문장을 짚고, 빈칸 질문은 빈칸 문장에 도착해서 한다", async () => {
     const session = createPolicySession("mopyeong-2026-06-34-geography-where", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
-    for (let g = 0; g < 4 && v.sentenceTag !== "빈칸 문장"; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    for (let g = 0; g < 4 && !v.message.includes("여섯째 문장"); g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
     expect(v.readingFirst).toBe(false);
-    expect(v.message).toContain("빈칸은 여섯째 문장에 있어요.");
-    expect(v.buttons).toEqual(["처음부터 읽어 볼게요"]);
+    // ① 지문 전체에서 빈칸 문장 위치만
+    expect(v.message).toContain("빈칸은 여기, 여섯째 문장에 있어요.");
+    expect(v.examPassage?.highlight[0]).toContain("________");
+    v = await session.submit("네");
+    // ② 핵심어만 칠한 빈칸 문장 — 뜻 고르기
+    expect(v.examPassage).toBeUndefined();
+    expect(v.sentenceTag).toBe("빈칸 문장");
+    expect(v.message).toContain("이 문장은 무슨 뜻일까요?");
+    v = await session.submit("____을 모르면 판단하고 이해하기 어렵다");
+    for (let g = 0; g < 2 && v.praiseOnly; g++) v = await session.submit("__auto_next");
+    // ③ 중 — 세 덩어리가 같은 말
+    expect(v.message).toContain("모두 '이해하다'라는 같은 말");
+    v = await session.submit("다음");
+    expect(v.message).toContain("무엇을 알아야 하는지 생각하면서 문장 처음부터 읽어 봐요.");
     v = await session.submit("처음부터 읽어 볼게요");
     expect(v.readingFirst).toBe(true);
     expect(v.sentenceTag).toBe("문장 1");
@@ -1491,5 +1519,68 @@ describe("6월 34번 — 빈칸 위치 먼저(질문 없이) → 순서대로 �
     const lesson = allPolicyLessons().find((l) => l.id === "mopyeong-2026-06-34-geography-where")!;
     const blankSentence = lesson.sentences.find((s) => s.steps.some((st) => st.id === "s6_fill"))!;
     expect(blankSentence.text).toContain("________");
+  });
+});
+
+describe("학생 단계 — 고·중·초에 따라 영어를 돕는 화면만 달라진다 (6월 34번 시범)", () => {
+  const walk = async (level: "고" | "중" | "초") => {
+    const id = "mopyeong-2026-06-34-geography-where";
+    const lesson = allPolicyLessons().find((l) => l.id === id)!;
+    const steps = new Map(lesson.sentences.flatMap((s) => s.steps).map((st) => [st.id, st]));
+    const session = createPolicySession(id, null, { loadStudent: () => ({ ...emptyStudentState(), level }), saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    const seen = new Set<string>();
+    for (let g = 0; g < 200 && !v.examOptions; g++) {
+      const st = steps.get(session.lastAction()?.interactionId ?? "");
+      if (st && !v.readingFirst) seen.add(st.id);
+      if (v.readingFirst) v = await session.submit("다 읽었어요");
+      else if (st?.type === "pick" && v.pick?.open) for (const a of st.answers) v = await session.submit(`__pick:${a}`);
+      else if (st?.type === "choice" && !v.buttons.includes("다음으로") && v.buttons.length > 1) v = await session.submit(st.options.find((o) => o.correct)!.label);
+      else v = await session.submit(v.buttons[0] ?? "__auto_next");
+    }
+    expect(v.examOptions).toHaveLength(5);
+    return seen;
+  };
+  it("고는 짧은 문장의 주어·동사, 가리키는 말, 헷갈리는 단어 뜻을 건너뛰고 내용 파악은 그대로 본다", async () => {
+    const high = await walk("고");
+    const mid = await walk("중");
+    for (const id of ["s1_sv", "s1_word", "s5_appreciation", "s6_scale"]) {
+      expect(high.has(id)).toBe(false);
+      expect(mid.has(id)).toBe(true);
+    }
+    for (const id of ["s1_meaning", "s5_sv", "s6_fill", "s6_side", "s4_same"]) expect(high.has(id)).toBe(true);
+    expect(high.size).toBeLessThan(mid.size);
+  });
+  it("초는 중과 같은 화면을 모두 본다", async () => {
+    const low = await walk("초");
+    const mid = await walk("중");
+    expect([...mid].every((id) => low.has(id))).toBe(true);
+  });
+});
+
+describe("다의 기능어(to, for, that …)는 문장마다 그 자리 쓰임이 적혀 있다", () => {
+  const lessons = allPolicyLessons().filter((l) => !l.id.endsWith("-v1"));
+  it.each(lessons.map((l) => [l.id, l] as const))("%s", (_id, lesson) => {
+    const wrong: string[] = [];
+    for (const s of lesson.sentences) {
+      const words = (s.text.match(/[A-Za-z]+/g) ?? []).map((w) => w.toLowerCase()).filter((w) => SENSE_WORDS.includes(w));
+      const written = sensesOf(lesson.id, s.id).map((x) => x.word.toLowerCase());
+      for (const w of SENSE_WORDS) {
+        const need = words.filter((x) => x === w).length;
+        const have = written.filter((x) => x === w).length;
+        if (need !== have) wrong.push(`${s.id}:${w} 문장 ${need}개 / 적은 것 ${have}개`);
+      }
+    }
+    expect(wrong).toEqual([]);
+  });
+});
+
+describe("순서 문제는 시험지 순서대로 (A)→(B)→(C)를 읽고, (A) 앞에서 한 번 알린다", () => {
+  it.each(["moeui-2026-03-36-conversation-stoppers", "mopyeong-2026-06-37-chaos-pendulum"])("%s", (id) => {
+    const lesson = allPolicyLessons().find((l) => l.id === id)!;
+    const heads = lesson.sentences.map((s) => s.text.slice(0, 3)).filter((h) => /^\([ABC]\)$/.test(h));
+    expect(heads).toEqual(["(A)", "(B)", "(C)"]);
+    const a = lesson.sentences.find((s) => s.text.startsWith("(A)"))!;
+    expect(a.steps[0]).toMatchObject({ id: "paper_order", before_read: true });
   });
 });

@@ -16,6 +16,7 @@
 - 끌어 넣기는 2·3문장에서만. 4·6문장 단어는 지도에 바로 붙인다
 - 요약 해석은 2·7문장만. 3·5문장은 선생님 요약으로 대신
 """
+import sys
 import copy
 import json
 import os
@@ -281,7 +282,7 @@ sentences = [
                     ("o2", "관행을 모두에게 공개하다", False)],
                    "veil 뒤에는 그런 지식(knowledge)이 숨겨져 있어요. 장막을 걷으면 그 지식이 보이게 돼요.",
                    why="여기서 veil은 진짜 천이 아니라 비유예요. 장막 뒤에 지식이 숨겨져 있으니, 걷어 낸다는 건 그 지식을 드러내 이해하게 한다는 뜻이에요.",
-                   highlight=["lift the veil", "behind which such forms of knowledge are hidden"],
+                   highlight=["lift the veil", "knowledge", "hidden"],
                    method=1),
             # 그림 한 장 — 집단 안의 지식, 장막에 막혀 닿기 어려운 외부인
             show("g_veil_pic2",
@@ -289,7 +290,7 @@ sentences = [
                  button="다음",
                  panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/veil-knowledge.svg",
                         "alt": "집단 가운데 지식이 있고, 장막 바깥의 외부인이 손을 뻗지만 닿지 않는다"},
-                 highlight=["behind which such forms of knowledge are hidden"],
+                 highlight=["knowledge", "hidden"],
                  method=1),
             # 대시(—) 앞뒤는 같은 말 — 대시 뒤 해석은 하고 싶은 학생만 (「대시 뒤도 해석해 볼래요」)
             show("g_dash_tip",
@@ -510,7 +511,7 @@ sentences = [
                      {"label": "메인 문장", "text": "one needs to become a member of the relevant group of knowledge bearers", "ko": "누구든 관련 지식 보유자 집단의 구성원이 되어야 한다", "tone": "hl"},
                      {"label": "덧붙임", "text": "for which I will use the term “epistemic communities”", "ko": "그 집단을 나는 '지식 공동체'라고 부르겠다"},
                  ]},
-                 highlight=["one needs to become a member of the relevant group of knowledge bearers"],
+                 highlight=["one needs", "member"],
                  highlight_alt=["To acquire expert knowledge"],
                  tips=[{"label": "콤마 사이 = 늘 삽입?", "mark": "one needs",
                         "text": "콤마 두 개 사이가 늘 빼도 되는 삽입은 아니에요. 그 안에 주어와 동사가 있으면 메인 문장이라 꼭 읽어야 해요. 여기서는 'one needs'가 주어와 동사예요."},
@@ -629,7 +630,7 @@ sentences = [
                         "text": "pre-는 '~ 이전, 미리'라는 뜻이에요. pre + modern(근대) = 근대 이전, 즉 전근대예요. preview(미리 보기)의 pre-도 같아요."}]),
             # 요약 해석 대신 선생님 요약
             show("s5_draft", "옛날에는 지식 공동체가 비밀이었고, 신입에게 엄격한 충성심 시험이 있었대요.",
-                 button="다음", highlight=["epistemic communities were often kept secret", "strict tests of loyalty"],
+                 button="다음", highlight=["kept secret", "strict tests of loyalty"],
                  tips=[{"label": "not least because of", "mark": "not least because of",
                         "text": "'특히 ~때문에'예요. 비밀로 한 이유가 뒤에 나와요. 전문 지식이 '잘못된 손', 즉 나쁜 사람에게 들어갈까 봐서예요."}]),
             flow_check("s5_flow", "(③)",
@@ -757,10 +758,11 @@ exam = {
     # 보기 글이 「… 앞」뿐이라 숫자 ①~⑤만 가로로 보인다
     "numbers_only": True,
     # 답 고르기 화면 — 지문 전체에 칠해 둘 핵심어 (①~⑤ 자리를 찾는 단서)
-    "passage_highlight": ["Nonetheless", "for most outsiders", "even completely transparent practices", "kept secret",
-                          "the ideal has shifted to openness", "Other, more active strategies", "accessible", "but"],
-    # 답 고르기 화면에서 칠하지 않을 말 — 분석 때 칠했어도 여기서는 뺀다 (2026-10-14 선생님)
-    "passage_unhighlight": ["strict tests of loyalty"],
+    # 답 고르기 화면 칠하기 — 분석 때 짚은 핵심어를 **단어로만** (칠하기는 최소한, 2026-10-14 선생님)
+    # 앞서 빼 달라고 한 말(admittance processes, tests, Some traces … present today, the members, toward outsiders)은 넣지 않는다
+    "passage_keywords": ["Nonetheless", "most outsiders", "transparent practices", "lift the veil", "cannot make sense",
+                         "acquire expert knowledge", "member", "group", "newcomer", "learns", "experts", "socialized",
+                         "kept secret", "but", "openness", "more active strategies", "accessible"],
     "sentence": 1,
     "analysis_first": True,
     "glosses": [],
@@ -810,9 +812,11 @@ lesson = {
     "read_button": "분석하러 갈게요",
     # 문장마다 영어 문장부터 — 질문·보기는 「다 읽었어요」 뒤에
     "read_first": True,
-    "images": {"method": {"src": "/assets/insert-method.svg", "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기", "kind": "drawing"}},
+    "images": {"topic": {"src": "/assets/topic-experts.svg", "alt": "칠판: Experts(전문가)와 Outsiders(외부인) 사이에 장막", "kind": "drawing"}, "method": {"src": "/assets/insert-method.svg", "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기", "kind": "drawing"}},
     "intro_board": "method",
     "intro": [
+        {"id": "topic", "type": "say", "button": "네", "image": "topic",
+         "brief": {"say": "전문가의 지식은 밖에서 보면 왜 잘 안 보일까요? 이번 글은 전문가 집단과 외부인 사이의 지식 이야기예요."}},
         {"id": "method1", "type": "say", "button": "네",
          "brief": {"say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."}},
         {"id": "method2", "type": "say", "button": "좋아요",
@@ -834,6 +838,11 @@ lesson = {
     "sentences": sentences,
     "passage_on_try": True,
 }
+
+# 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from story_boards import add_story_boards  # noqa: E402
+add_story_boards(ID, lesson["sentences"])
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

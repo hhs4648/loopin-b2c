@@ -49,6 +49,67 @@
       "point": "장난감 설명 다음엔 '그걸 직접 해 보면'이 오기 쉽다",
       "from": "d8l4g5"
     },
+    "paper_order": {
+      "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 실제 글의 순서와 달라서 단락 사이가 어색하게 이어질 수 있어요. 그 어색한 곳이 바로 순서의 단서예요.",
+      "from": "1u9o88s"
+    },
+    "a_sv": {
+      "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어나 동사가 아니에요.",
+      "wrong_by": {
+        "In order to produce chaos": "In order to는 '~하기 위해'라서 주어가 아니에요.",
+        "a nonlinear system": "within 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the iteration, 동사는 has to be예요.",
+      "from": "1ri1000"
+    },
+    "a_before": {
+      "ask": "(A)는 'the iteration(그 반복)', '혼돈을 만들려면'으로 시작해요. 앞에는 어떤 내용이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
+        "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요."
+      ],
+      "explain": "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요.",
+        "o2": "'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요."
+      },
+      "point": "(A) the iteration, Nor ← (C)의 iteration, not all iteration",
+      "from": "1ratd4v"
+    },
+    "a2_nor": {
+      "ask": "'Nor are all nonlinear systems chaotic'은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요.",
+        "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요."
+      ],
+      "explain": "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "Nor는 '~도 아니다'예요. 앞의 'not all iteration'처럼, 모든 비선형 체계가 혼돈인 것도 아니라는 말이에요.",
+        "o2": "Nor는 '~도 아니다'예요. 앞의 'not all iteration'처럼, 모든 비선형 체계가 혼돈인 것도 아니라는 말이에요."
+      },
+      "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)",
+      "from": "f9zptd"
+    },
+    "a2_link": {
+      "say": "Nor는 앞에 부정이 있어야 써요. 그러니 (A) 바로 앞 단락은 '모두 ~인 것은 아니다' 같은 부정으로 끝나야 해요.",
+      "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)",
+      "from": "1gt6m4r"
+    },
+    "a3_note": {
+      "say": "그 지점(분기점)에 이르기 전에는 꽤 질서 있게 움직일 수도 있대요.",
+      "from": "ki4vem"
+    },
+    "story_4": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
     "b_sv": {
       "ask": "이 문장은 주어 없이 동사로 시작해요. 동사(V) 두 개를 찾아볼까요?",
       "wrong": "그건 주어나 동사가 아니에요.",
@@ -158,57 +219,12 @@
       "from": "nomhn3"
     },
     "c2_next": {
-      "say": "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요.",
-      "from": "15nba99"
+      "say": "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요. 앞에서 읽은 (A)가 바로 그 조건이었죠.",
+      "from": "gyxlic"
     },
-    "a_sv": {
-      "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
-      "wrong": "그건 주어나 동사가 아니에요.",
-      "wrong_by": {
-        "In order to produce chaos": "In order to는 '~하기 위해'라서 주어가 아니에요.",
-        "a nonlinear system": "within 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
-      },
-      "more": "좋아요! {n}개 남았어요.",
-      "praise": "다 찾았어요!",
-      "explain": "주어는 the iteration, 동사는 has to be예요.",
-      "from": "1ri1000"
-    },
-    "a_before": {
-      "ask": "(A)는 'the iteration(그 반복)', '혼돈을 만들려면'으로 시작해요. 앞에는 어떤 내용이 와야 할까요?",
-      "reask": "그럼 하나 골라 봐요.",
-      "hints": [
-        "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
-        "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요."
-      ],
-      "explain": "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
-      "praise": "맞아요!",
-      "feedback": {
-        "o1": "'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요.",
-        "o2": "'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요."
-      },
-      "point": "(A) the iteration, Nor ← (C)의 iteration, not all iteration",
-      "from": "1ratd4v"
-    },
-    "a2_nor": {
-      "ask": "'Nor are all nonlinear systems chaotic'은 무슨 뜻일까요?",
-      "reask": "그럼 하나 골라 봐요.",
-      "hints": [
-        "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요.",
-        "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요."
-      ],
-      "explain": "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요.",
-      "praise": "맞아요!",
-      "feedback": {
-        "o1": "Nor는 '~도 아니다'예요. 앞의 'not all iteration'처럼, 모든 비선형 체계가 혼돈인 것도 아니라는 말이에요.",
-        "o2": "Nor는 '~도 아니다'예요. 앞의 'not all iteration'처럼, 모든 비선형 체계가 혼돈인 것도 아니라는 말이에요."
-      },
-      "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)",
-      "from": "f9zptd"
-    },
-    "a2_link": {
-      "say": "Nor는 앞에 부정이 있어야 써요. (C)의 'not all iteration'에 이어 '비선형 체계도 다 그런 건 아니다'라고 한 번 더 좁혀요.",
-      "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)",
-      "from": "14vguo1"
+    "story_9": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
     },
     "a_go": {
       "say": "단락마다 첫머리 단서를 다 찾았어요. 이제 주어진 글 다음에 이어질 순서를 직접 골라 봐요.",
@@ -238,7 +254,7 @@
     "method1": {
       "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. the, Nor 같은 말이 무엇을 받는지 찾아볼게요."
     },
-    "from": "13wlctm"
+    "from": "1326jy2"
   },
   "ending": {
     "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",

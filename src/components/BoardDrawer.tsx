@@ -4,7 +4,7 @@ import { StudyPanelView } from "./StudyPanel";
 
 /** 칠판으로 크게 띄우는 그림 — 단어 지도·그림·지도. 작은 표·메모는 그대로 문장 아래에 둔다 */
 export function isBoardPanel(panel: StudyPanel | undefined | null): panel is StudyPanel {
-  return !!panel && (panel.kind === "groups" || panel.kind === "picture" || panel.kind === "map");
+  return !!panel && (panel.kind === "groups" || panel.kind === "picture" || panel.kind === "map" || panel.kind === "story");
 }
 
 /**

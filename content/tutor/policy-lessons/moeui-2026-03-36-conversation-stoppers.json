@@ -17,11 +17,19 @@
   },
   "read_button": "분석하러 갈게요",
   "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-why-stop.svg",
+      "alt": "칠판: Why?(왜?)가 계속되다가 Morally wrong!(도덕적으로 잘못!) 표지판에서 멈춘다",
+      "kind": "drawing"
+    }
+  },
   "intro": [
     {
       "id": "topic",
       "type": "say",
       "button": "네",
+      "image": "topic",
       "brief": {
         "say": "왜 '그건 도덕적으로 잘못이야!' 한마디에 고민이 멈출까요? 이번 글은 끝없는 고민과 그걸 멈추는 말을 다뤄요."
       }
@@ -258,7 +266,7 @@
           "method": 0,
           "highlight": [
             "conversation-stoppers",
-            "bring deliberations to a close"
+            "to a close"
           ]
         },
         {
@@ -293,7 +301,7 @@
           ],
           "method": 0,
           "highlight": [
-            "always able to ask for justification",
+            "ask for justification",
             "has served us well"
           ]
         },
@@ -390,6 +398,17 @@
         }
       ],
       "steps": [
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 실제 글의 순서와 달라서 단락 사이가 어색하게 이어질 수 있어요. 그 어색한 곳이 바로 순서의 단서예요."
+          },
+          "method": 1,
+          "button": "(A)부터 읽어 볼게요",
+          "before_read": true
+        },
         {
           "id": "a_before",
           "type": "choice",
@@ -513,11 +532,42 @@
           ],
           "method": 0,
           "highlight": [
-            "stop any further deliberation in its tracks"
+            "stop",
+            "in its tracks"
           ],
           "faded": [
             ", once introduced,"
           ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 글",
+                "icon": "✋",
+                "en": "moral considerations = conversation-stoppers",
+                "ko": "도덕적 고려는 생각을 끝내 줘요 — 우리는 늘 근거를 묻는 존재예요",
+                "fresh": true
+              },
+              {
+                "label": "(A)",
+                "icon": "🔇",
+                "en": "This · squelchers",
+                "ko": "This는 혼자 생각할 때도 문제 — 생각을 멈추는 장치가 쓸모 있어요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -664,7 +714,7 @@
           ],
           "method": 0,
           "highlight": [
-            "no need or room for seeking further justification"
+            "no need or room"
           ],
           "tips": [
             {
@@ -769,7 +819,8 @@
           ],
           "method": 0,
           "highlight": [
-            "we can potentially do so endlessly, never coming to a decision"
+            "endlessly",
+            "never coming to a decision"
           ]
         },
         {
@@ -811,6 +862,50 @@
           "highlight": [
             "The problem is that"
           ]
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 글",
+                "icon": "✋",
+                "en": "moral considerations = conversation-stoppers",
+                "ko": "도덕적 고려는 생각을 끝내 줘요 — 우리는 늘 근거를 묻는 존재예요",
+                "fresh": false
+              },
+              {
+                "label": "(A)",
+                "icon": "🔇",
+                "en": "This · squelchers",
+                "ko": "This는 혼자 생각할 때도 문제 — 생각을 멈추는 장치가 쓸모 있어요",
+                "fresh": false
+              },
+              {
+                "label": "(B)",
+                "icon": "🚫",
+                "en": "“That would be morally wrong!”",
+                "ko": "이 말을 받아들이면 더 근거를 찾을 필요가 없어요",
+                "fresh": true
+              },
+              {
+                "label": "(C)",
+                "icon": "🔁",
+                "en": "“Okay, but what justifies that?”",
+                "ko": "좋은 답을 들어도 계속 물을 수 있어서 결정을 못 내려요",
+                "fresh": true
+              }
+            ]
+          }
         },
         {
           "id": "c_go",

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 170" fill="none">
+  <!-- 6월 34번 도입 칠판: 지리학 — 어디 -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <text x="170" y="30" text-anchor="middle" font-size="16" fill="#8a7f88">이번 글</text>
+    <rect x="18" y="52" width="128" height="66" rx="14" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="2.5"/>
+    <text x="82.0" y="87.0" text-anchor="middle" font-size="19" fill="#2f7d6c">Geography</text>
+    <text x="82.0" y="105.0" text-anchor="middle" font-size="12" fill="#2f7d6c">(지리학)</text>
+    <path d="M150 85 H190" stroke="#8a7f88" stroke-width="2.5" stroke-dasharray="6 6" stroke-linecap="round"/>
+    <rect x="194" y="52" width="128" height="66" rx="14" fill="#fff5f7" stroke="#ef7a93" stroke-width="2.5"/>
+    <text x="258.0" y="87.0" text-anchor="middle" font-size="19" fill="#c0455f">Where</text>
+    <text x="258.0" y="105.0" text-anchor="middle" font-size="12" fill="#c0455f">(어디)</text>
+    <path d="M312 34 c-7 0 -12 5 -12 11 c0 8 12 19 12 19 s12 -11 12 -19 c0 -6 -5 -11 -12 -11 z" fill="#ef7a93"/><circle cx="312" cy="45" r="4" fill="#fff"/>
+    <text x="170" y="158" text-anchor="middle" font-size="14" fill="#5b4f57">지리학은 '어디'를 어떻게 바라볼까?</text>
+  </g>
+</svg>

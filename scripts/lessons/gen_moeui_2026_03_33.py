@@ -11,6 +11,7 @@
 정답 ③ an extension of human bodily and mental actions and capabilities.
 많이 고른 오답 ④(설계자의 미적 취향) 22.1% — 글에 designer가 많이 나와서. ② 18.0%.
 """
+import sys
 import copy
 import json
 import os
@@ -114,7 +115,7 @@ sentences = [
                    [("o0", "설계자의 개인 취향", False), ("o1", "아름다운 그림", False), ("o2", "행동을 이끄는 공간 연출", True)],
                    "'spatial choreography that guides action'을 봐요. choreography는 '연출'이에요.",
                    why="'spatial choreography'는 공간의 연출, 'that guides action'은 행동을 이끈다는 말이에요. 취향이나 그림 이야기가 아니에요.",
-                   highlight=["spatial choreography that guides action"], method=1),
+                   highlight=["guides action"], method=1),
             show("s1_pairs",
                  "세미콜론(;) 뒤는 짝으로 읽어요. 공간은 행동을 돕기도(+) 하고 막기도(−) 해요.",
                  signs=[{"text": "facilitates", "sign": "+"}, {"text": "prohibits", "sign": "−"},
@@ -135,13 +136,13 @@ sentences = [
                    [("o0", BODY, True), ("o1", MIND, False)],
                    "움직임과 행동은 몸으로 하는 거예요.",
                    panel={**board([], []), "sort": {"words": ["movement and behavior"], "left": BODY, "right": MIND}},
-                   highlight=["patterns of movement and behavior"], method=1),
+                   highlight=["movement and behavior"], method=1),
             choice("s2_mind",
                    "'but it also' 뒤의 'emotions and feelings(감정과 느낌)'는 어느 그룹일까요?",
                    [("o0", BODY, False), ("o1", MIND, True)],
                    "감정과 느낌은 마음으로 하는 거예요. but it also는 '그뿐 아니라 또'예요.",
                    panel={**board(["movement and behavior"], []), "sort": {"words": ["emotions and feelings"], "left": BODY, "right": MIND}},
-                   highlight=["experiential characteristics, perceptions, imageries, emotions and feelings"], method=1),
+                   highlight=["emotions and feelings"], method=1),
             show("s2_both",
                  "공간은 몸의 움직임뿐 아니라 마음의 느낌까지 이끌어요. 이 두 그룹을 기억해 둬요.",
                  panel=board(["movement and behavior"], ["emotions and feelings"], "공간 = 몸과 마음을 함께 이끈다"),
@@ -165,7 +166,7 @@ sentences = [
                    highlight=["intuits human behavior and desire"], method=1),
             show("s3_fit",
                  "그래서 설계자가 짠 대본이 실제 사는 사람의 욕구와 꼭 맞아떨어져요. 설계자의 취향이 아니라 사는 사람이 기준이에요.",
-                 highlight=["resonates with the actual user/occupant’s natural and instinctual needs and intentions"],
+                 highlight=["resonates with", "needs and intentions"],
                  method=1),
         ],
     },
@@ -180,7 +181,7 @@ sentences = [
                    [("o0", "자기 가족", False), ("o1", "다른 설계자", False), ("o2", "미래에 그 집에 살 사람", True)],
                    "'on behalf of'는 '~을 대신해서'예요. 그 뒤를 봐요.",
                    why="'on behalf of the future dweller', 미래의 거주자를 대신해서래요. 설계자는 사는 사람이 되어 미리 살아 봐요.",
-                   highlight=["on behalf of the future dweller"],
+                   highlight=["on behalf of", "dweller"],
                    faded=["While designing a house,"],
                    tips=[{"label": "on behalf of", "mark": "on behalf of", "text": "'~을 대신해서, ~을 위해'예요."}],
                    method=1),
@@ -197,7 +198,7 @@ sentences = [
                    [("o0", "사는 사람이 정원을 내다보고 싶은 곳", True), ("o1", "설계자가 보기에 예쁜 곳", False),
                     ("o2", "공사비가 가장 싼 곳", False)],
                    "'where the occupant wishes to look out into the garden'을 봐요. occupant는 사는 사람이에요.",
-                   highlight=["exactly where the occupant wishes to look out into the garden"], method=1),
+                   highlight=["where the occupant wishes"], method=1),
         ],
     },
     {
@@ -210,7 +211,7 @@ sentences = [
                    [("o0", "건물 한가운데 아무 곳", False), ("o1", "사는 사람이 오르내리고 싶은 곳", True),
                     ("o2", "설계 규칙에 정해진 곳", False)],
                    "창문처럼 'where the dweller wishes to …'예요. dweller도 사는 사람이에요.",
-                   highlight=["where the dweller wishes to enter the floor above or below"], method=1),
+                   highlight=["where the dweller wishes"], method=1),
         ],
     },
     {
@@ -225,7 +226,7 @@ sentences = [
                     ("o2", "말없이도 쓰임새를 드러내서", True)],
                    "여기서 as는 '~이기 때문에'예요. as 뒤를 봐요.",
                    why="as는 여기서 '~이기 때문에'예요. 'it reveals its very structure and use in a wordless manner', 말없이 쓰임새를 드러내서래요.",
-                   highlight=["as it reveals its very structure and use in a wordless manner"],
+                   highlight=["wordless"],
                    tips=[{"label": "as", "mark": "as",
                           "text": "as는 '~처럼, ~할 때, ~이기 때문에' 등 뜻이 많아요. 콤마 뒤에서 이유를 덧붙이면 '~이기 때문에'예요."}],
                    method=1),
@@ -314,8 +315,9 @@ lesson = {
     "method": {"type": "blank", "labels": ["빈칸 문장 먼저 보기", "요지 잡기"], "intro_times": 3},
     "read_button": "분석하러 갈게요",
     "read_first": True,
+    "images": {"topic": {"src": "/assets/topic-building.svg", "alt": "칠판: Building(건물) → Body(몸) + Mind(마음)", "kind": "drawing"}},
     "intro": [
-        {"id": "topic", "type": "say", "button": "네",
+        {"id": "topic", "type": "say", "button": "네", "image": "topic",
          "brief": {"say": "좋은 집은 왜 설명서 없이도 쓰기 편할까요? 이번 글은 건축과 사람의 몸과 마음을 다뤄요."}},
         {"id": "method1", "type": "say", "button": "좋아요",
          "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}},
@@ -335,6 +337,11 @@ lesson = {
     "sentences": sentences,
     "passage_on_try": True,
 }
+
+# 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from story_boards import add_story_boards  # noqa: E402
+add_story_boards(ID, lesson["sentences"])
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

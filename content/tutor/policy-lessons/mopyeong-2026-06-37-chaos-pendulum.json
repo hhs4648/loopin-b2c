@@ -17,11 +17,19 @@
   },
   "read_button": "분석하러 갈게요",
   "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-chaos.svg",
+      "alt": "칠판: Chaos(혼돈) — 같은 출발에서 다른 길로 갈라지는 두 선",
+      "kind": "drawing"
+    }
+  },
   "intro": [
     {
       "id": "topic",
       "type": "say",
       "button": "네",
+      "image": "topic",
       "brief": {
         "say": "같은 자리에서 추를 두 번 놓으면 똑같이 움직일까요? 이번 글은 혼돈(chaos)을 장난감으로 설명해요."
       }
@@ -300,7 +308,7 @@
           ],
           "method": 0,
           "highlight": [
-            "A good example of chaos"
+            "chaos"
           ]
         },
         {
@@ -340,7 +348,7 @@
           ],
           "method": 0,
           "highlight": [
-            "a pendulum that swings back and forth between them"
+            "swings back and forth"
           ],
           "tips": [
             {
@@ -353,6 +361,286 @@
     },
     {
       "id": 2,
+      "text": "(A) In order to produce chaos, the iteration has to be within what is called a nonlinear system.",
+      "model_translation": "(A) 혼돈을 만들어 내기 위해서는 그 반복이 이른바 비선형 체계 안에 있어야 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In order to produce chaos",
+          "ko": "혼돈을 만들어 내려면"
+        },
+        {
+          "en": "the iteration",
+          "ko": "그 반복"
+        },
+        {
+          "en": "has to be",
+          "ko": "~에 있어야 한다"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "what is called",
+          "ko": "이른바, ~라고 불리는 것"
+        },
+        {
+          "en": "a nonlinear system",
+          "ko": "비선형 체계"
+        }
+      ],
+      "steps": [
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 실제 글의 순서와 달라서 단락 사이가 어색하게 이어질 수 있어요. 그 어색한 곳이 바로 순서의 단서예요."
+          },
+          "method": 1,
+          "button": "(A)부터 읽어 볼게요",
+          "before_read": true
+        },
+        {
+          "id": "a_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "In order to produce chaos",
+            "the iteration",
+            "has to be",
+            "a nonlinear system"
+          ],
+          "answers": [
+            "the iteration",
+            "has to be"
+          ],
+          "roles": {
+            "the iteration": "S",
+            "has to be": "V"
+          },
+          "brief": {
+            "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어나 동사가 아니에요.",
+            "wrong_by": {
+              "In order to produce chaos": "In order to는 '~하기 위해'라서 주어가 아니에요.",
+              "a nonlinear system": "within 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the iteration, 동사는 has to be예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "a_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 'the iteration(그 반복)', '혼돈을 만들려면'으로 시작해요. 앞에는 어떤 내용이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
+              "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요."
+            ],
+            "explain": "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요.",
+              "o2": "'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요."
+            },
+            "point": "(A) the iteration, Nor ← (C)의 iteration, not all iteration"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "반복이 혼돈을 만들지만, 모든 반복이 그렇지는 않다는 말",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "추를 놓아 보라는 말"
+            },
+            {
+              "id": "o2",
+              "label": "장난감이 어떻게 생겼는지"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "produce chaos",
+            "the iteration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Nor are all nonlinear systems chaotic: to become so they need to be pushed beyond a certain point, called a bifurcation.",
+      "model_translation": "모든 비선형 체계가 혼돈 상태인 것도 아니다. 그렇게 되려면 그것들은 분기라고 불리는 특정 지점 너머로 밀려가야 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Nor are all nonlinear systems chaotic",
+          "ko": "모든 비선형 체계가 혼돈인 것도 아니다"
+        },
+        {
+          "en": "Nor",
+          "ko": "~도 아니다"
+        },
+        {
+          "en": "to become so",
+          "ko": "그렇게 되려면(혼돈이 되려면)"
+        },
+        {
+          "en": "need to be pushed",
+          "ko": "밀려가야 한다"
+        },
+        {
+          "en": "beyond a certain point",
+          "ko": "어떤 지점 너머로"
+        },
+        {
+          "en": "called",
+          "ko": "~라고 불리는"
+        }
+      ],
+      "steps": [
+        {
+          "id": "a2_nor",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'Nor are all nonlinear systems chaotic'은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요.",
+              "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요."
+            ],
+            "explain": "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "Nor는 '~도 아니다'예요. 앞의 'not all iteration'처럼, 모든 비선형 체계가 혼돈인 것도 아니라는 말이에요.",
+              "o2": "Nor는 '~도 아니다'예요. 앞의 'not all iteration'처럼, 모든 비선형 체계가 혼돈인 것도 아니라는 말이에요."
+            },
+            "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "모든 비선형 체계가 혼돈인 것도 아니다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "비선형 체계는 모두 혼돈이다"
+            },
+            {
+              "id": "o2",
+              "label": "비선형 체계는 절대 혼돈이 아니다"
+            }
+          ],
+          "method": 0,
+          "highlight": [
+            "Nor are all nonlinear systems chaotic"
+          ],
+          "tips": [
+            {
+              "label": "Nor + 동사 + 주어",
+              "mark": "Nor are",
+              "text": "Nor가 문장 앞에 오면 '~도 아니다'이고, 뒤의 순서가 바뀌어요(are all nonlinear systems). 앞에도 부정이 있어야 써요."
+            }
+          ]
+        },
+        {
+          "id": "a2_link",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "Nor는 앞에 부정이 있어야 써요. 그러니 (A) 바로 앞 단락은 '모두 ~인 것은 아니다' 같은 부정으로 끝나야 해요.",
+            "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)"
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "Nor are all nonlinear systems chaotic"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Before that point is reached they may behave in a quite orderly fashion.",
+      "model_translation": "그 지점에 도달하기 전에는 그것들은 꽤 질서 있는 방식으로 움직일 수도 있다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Before that point is reached",
+          "ko": "그 지점에 이르기 전에는"
+        },
+        {
+          "en": "they",
+          "ko": "그것들(비선형 체계)"
+        },
+        {
+          "en": "may behave",
+          "ko": "움직일 수도 있다"
+        },
+        {
+          "en": "in a quite orderly fashion",
+          "ko": "꽤 질서 있게"
+        }
+      ],
+      "steps": [
+        {
+          "id": "a3_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그 지점(분기점)에 이르기 전에는 꽤 질서 있게 움직일 수도 있대요."
+          },
+          "method": 0,
+          "button": "다음"
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 글",
+                "icon": "🧲",
+                "en": "magnetic pendulum = chaos",
+                "ko": "자석 네 개 위에서 흔들리는 진자가 혼돈의 예예요",
+                "fresh": true
+              },
+              {
+                "label": "(A)",
+                "icon": "📈",
+                "en": "iteration · nonlinear · bifurcation",
+                "ko": "혼돈은 비선형 계에서, 어떤 지점을 넘어야 생겨요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
       "text": "(B) Release the pendulum and note the magnets that it visits, and in what order.",
       "model_translation": "(B) 추를 놓고 그것이 어떤 자석을, 어떤 순서로 찾아가는지 주목하라.",
       "teaching_value": "high",
@@ -468,7 +756,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 6,
       "text": "If the pendulum is released from the same position a second time, the pattern of movement may at first be the same but soon it will become completely different.",
       "model_translation": "추를 같은 위치에서 두 번째로 놓으면, 움직임의 패턴은 처음에는 같을지도 모르지만 곧 완전히 달라질 것이다.",
       "teaching_value": "high",
@@ -590,7 +878,7 @@
             "alt": "자석 네 개가 정사각형으로 놓인 받침 위에서 추가 흔들린다. 같은 자리에서 두 번 놓았을 때 처음엔 같은 길이다가 곧 서로 다른 길로 갈라진다"
           },
           "highlight": [
-            "at first be the same"
+            "be the same"
           ],
           "highlight_alt": [
             "completely different"
@@ -599,7 +887,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 7,
       "text": "In fact, the pattern of its movement is chaotic.",
       "model_translation": "사실, 그것의 움직임 패턴은 혼돈 상태이다.",
       "teaching_value": "low",
@@ -628,13 +916,13 @@
           "method": 0,
           "button": "다음 문장",
           "highlight": [
-            "the pattern of its movement is chaotic"
+            "chaotic"
           ]
         }
       ]
     },
     {
-      "id": 5,
+      "id": 8,
       "text": "(C) No matter how much care is taken to start the pendulum in the same position, it will visit an entirely different set of points on the two occasions.",
       "model_translation": "(C) 추를 같은 위치에서 출발시키려고 아무리 많은 주의를 기울여도, 그것은 두 번의 경우에 완전히 다른 지점들을 찾아갈 것이다.",
       "teaching_value": "high",
@@ -770,7 +1058,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 9,
       "text": "Chaotic systems are generated by iteration, though not all iteration leads to chaos.",
       "model_translation": "혼돈 체계는 반복에 의해 생성되지만, 모든 반복이 혼돈으로 이어지는 것은 아니다.",
       "teaching_value": "high",
@@ -885,7 +1173,7 @@
           ],
           "method": 0,
           "highlight": [
-            "not all iteration leads to chaos"
+            "not all"
           ],
           "tips": [
             {
@@ -900,242 +1188,58 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요."
-          },
-          "method": 0,
-          "button": "다음 문장",
-          "highlight": [
-            "not all iteration leads to chaos"
-          ]
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "text": "(A) In order to produce chaos, the iteration has to be within what is called a nonlinear system.",
-      "model_translation": "(A) 혼돈을 만들어 내기 위해서는 그 반복이 이른바 비선형 체계 안에 있어야 한다.",
-      "teaching_value": "high",
-      "glosses": [
-        {
-          "en": "In order to produce chaos",
-          "ko": "혼돈을 만들어 내려면"
-        },
-        {
-          "en": "the iteration",
-          "ko": "그 반복"
-        },
-        {
-          "en": "has to be",
-          "ko": "~에 있어야 한다"
-        },
-        {
-          "en": "within",
-          "ko": "~ 안에"
-        },
-        {
-          "en": "what is called",
-          "ko": "이른바, ~라고 불리는 것"
-        },
-        {
-          "en": "a nonlinear system",
-          "ko": "비선형 체계"
-        }
-      ],
-      "steps": [
-        {
-          "id": "a_sv",
-          "type": "pick",
-          "interaction": "word_pick",
-          "shade": true,
-          "no_unknown": true,
-          "candidates": [
-            "In order to produce chaos",
-            "the iteration",
-            "has to be",
-            "a nonlinear system"
-          ],
-          "answers": [
-            "the iteration",
-            "has to be"
-          ],
-          "roles": {
-            "the iteration": "S",
-            "has to be": "V"
-          },
-          "brief": {
-            "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
-            "wrong": "그건 주어나 동사가 아니에요.",
-            "wrong_by": {
-              "In order to produce chaos": "In order to는 '~하기 위해'라서 주어가 아니에요.",
-              "a nonlinear system": "within 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요."
-            },
-            "more": "좋아요! {n}개 남았어요.",
-            "praise": "다 찾았어요!",
-            "explain": "주어는 the iteration, 동사는 has to be예요."
-          },
-          "method": 0
-        },
-        {
-          "id": "a_before",
-          "type": "choice",
-          "interaction": "meaning_choice",
-          "one_try": true,
-          "brief": {
-            "ask": "(A)는 'the iteration(그 반복)', '혼돈을 만들려면'으로 시작해요. 앞에는 어떤 내용이 와야 할까요?",
-            "reask": "그럼 하나 골라 봐요.",
-            "hints": [
-              "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
-              "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요."
-            ],
-            "explain": "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
-            "praise": "맞아요!",
-            "feedback": {
-              "o1": "'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요.",
-              "o2": "'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요."
-            },
-            "point": "(A) the iteration, Nor ← (C)의 iteration, not all iteration"
-          },
-          "options": [
-            {
-              "id": "o0",
-              "label": "반복이 혼돈을 만들지만, 모든 반복이 그렇지는 않다는 말",
-              "correct": true
-            },
-            {
-              "id": "o1",
-              "label": "추를 놓아 보라는 말"
-            },
-            {
-              "id": "o2",
-              "label": "장난감이 어떻게 생겼는지"
-            }
-          ],
-          "method": 1,
-          "highlight": [
-            "In order to produce chaos, the iteration"
-          ]
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "text": "Nor are all nonlinear systems chaotic: to become so they need to be pushed beyond a certain point, called a bifurcation.",
-      "model_translation": "모든 비선형 체계가 혼돈 상태인 것도 아니다. 그렇게 되려면 그것들은 분기라고 불리는 특정 지점 너머로 밀려가야 한다.",
-      "teaching_value": "high",
-      "glosses": [
-        {
-          "en": "Nor are all nonlinear systems chaotic",
-          "ko": "모든 비선형 체계가 혼돈인 것도 아니다"
-        },
-        {
-          "en": "Nor",
-          "ko": "~도 아니다"
-        },
-        {
-          "en": "to become so",
-          "ko": "그렇게 되려면(혼돈이 되려면)"
-        },
-        {
-          "en": "need to be pushed",
-          "ko": "밀려가야 한다"
-        },
-        {
-          "en": "beyond a certain point",
-          "ko": "어떤 지점 너머로"
-        },
-        {
-          "en": "called",
-          "ko": "~라고 불리는"
-        }
-      ],
-      "steps": [
-        {
-          "id": "a2_nor",
-          "type": "choice",
-          "interaction": "meaning_choice",
-          "one_try": true,
-          "brief": {
-            "ask": "'Nor are all nonlinear systems chaotic'은 무슨 뜻일까요?",
-            "reask": "그럼 하나 골라 봐요.",
-            "hints": [
-              "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요.",
-              "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요."
-            ],
-            "explain": "Nor는 앞의 부정(not all)에 이어 '~도 아니다'예요. all과 합치면 '모두 ~인 것도 아니다'예요.",
-            "praise": "맞아요!",
-            "feedback": {
-              "o1": "Nor는 '~도 아니다'예요. 앞의 'not all iteration'처럼, 모든 비선형 체계가 혼돈인 것도 아니라는 말이에요.",
-              "o2": "Nor는 '~도 아니다'예요. 앞의 'not all iteration'처럼, 모든 비선형 체계가 혼돈인 것도 아니라는 말이에요."
-            },
-            "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)"
-          },
-          "options": [
-            {
-              "id": "o0",
-              "label": "모든 비선형 체계가 혼돈인 것도 아니다",
-              "correct": true
-            },
-            {
-              "id": "o1",
-              "label": "비선형 체계는 모두 혼돈이다"
-            },
-            {
-              "id": "o2",
-              "label": "비선형 체계는 절대 혼돈이 아니다"
-            }
-          ],
-          "method": 0,
-          "highlight": [
-            "Nor are all nonlinear systems chaotic"
-          ],
-          "tips": [
-            {
-              "label": "Nor + 동사 + 주어",
-              "mark": "Nor are",
-              "text": "Nor가 문장 앞에 오면 '~도 아니다'이고, 뒤의 순서가 바뀌어요(are all nonlinear systems). 앞에도 부정이 있어야 써요."
-            }
-          ]
-        },
-        {
-          "id": "a2_link",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "Nor는 앞에 부정이 있어야 써요. (C)의 'not all iteration'에 이어 '비선형 체계도 다 그런 건 아니다'라고 한 번 더 좁혀요.",
-            "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)"
+            "say": "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요. 앞에서 읽은 (A)가 바로 그 조건이었죠."
           },
           "method": 0,
           "button": "다음",
           "highlight": [
-            "Nor are all nonlinear systems chaotic"
+            "not all"
           ]
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "text": "Before that point is reached they may behave in a quite orderly fashion.",
-      "model_translation": "그 지점에 도달하기 전에는 그것들은 꽤 질서 있는 방식으로 움직일 수도 있다.",
-      "teaching_value": "low",
-      "glosses": [
-        {
-          "en": "Before that point is reached",
-          "ko": "그 지점에 이르기 전에는"
         },
         {
-          "en": "they",
-          "ko": "그것들(비선형 체계)"
+          "id": "story_9",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 글",
+                "icon": "🧲",
+                "en": "magnetic pendulum = chaos",
+                "ko": "자석 네 개 위에서 흔들리는 진자가 혼돈의 예예요",
+                "fresh": false
+              },
+              {
+                "label": "(A)",
+                "icon": "📈",
+                "en": "iteration · nonlinear · bifurcation",
+                "ko": "혼돈은 비선형 계에서, 어떤 지점을 넘어야 생겨요",
+                "fresh": false
+              },
+              {
+                "label": "(B)",
+                "icon": "👀",
+                "en": "release · same position",
+                "ko": "진자를 놓고 들르는 자석을 봐요 — 같은 데서 놓아도 곧 달라져요",
+                "fresh": true
+              },
+              {
+                "label": "(C)",
+                "icon": "🔀",
+                "en": "entirely different · iteration",
+                "ko": "아무리 조심해도 매번 전혀 다른 곳을 들러요",
+                "fresh": true
+              }
+            ]
+          }
         },
-        {
-          "en": "may behave",
-          "ko": "움직일 수도 있다"
-        },
-        {
-          "en": "in a quite orderly fashion",
-          "ko": "꽤 질서 있게"
-        }
-      ],
-      "steps": [
         {
           "id": "a_go",
           "type": "show",

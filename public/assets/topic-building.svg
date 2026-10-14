@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 170" fill="none">
+  <!-- 3월 33번 도입 칠판: 건물 — 몸 + 마음 -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <text x="170" y="30" text-anchor="middle" font-size="16" fill="#8a7f88">이번 글</text>
+    <path d="M30 88 L72 54 L114 88 V124 H30 Z" fill="#fff8e1" stroke="#f2c33d" stroke-width="2.5"/>
+    <text x="72" y="100" text-anchor="middle" font-size="15" fill="#b08a1a">Building</text><text x="72" y="116" text-anchor="middle" font-size="11" fill="#b08a1a">(건물)</text>
+    <path d="M122 90 H152" stroke="#8a7f88" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M152 90 l-8 -6 M152 90 l-8 6" stroke="#8a7f88" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="158" y="52" width="76" height="70" rx="14" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="2.5"/>
+    <text x="196.0" y="89.0" text-anchor="middle" font-size="19" fill="#2f7d6c">Body</text>
+    <text x="196.0" y="107.0" text-anchor="middle" font-size="12" fill="#2f7d6c">(몸)</text>
+    <text x="246" y="94" text-anchor="middle" font-size="22" fill="#8a7f88">+</text>
+    <rect x="258" y="52" width="72" height="70" rx="14" fill="#fff5f7" stroke="#ef7a93" stroke-width="2.5"/>
+    <text x="294.0" y="89.0" text-anchor="middle" font-size="19" fill="#c0455f">Mind</text>
+    <text x="294.0" y="107.0" text-anchor="middle" font-size="12" fill="#c0455f">(마음)</text>
+    <text x="170" y="158" text-anchor="middle" font-size="14" fill="#5b4f57">좋은 건물은 사는 사람의 몸과 마음에 맞을까?</text>
+  </g>
+</svg>

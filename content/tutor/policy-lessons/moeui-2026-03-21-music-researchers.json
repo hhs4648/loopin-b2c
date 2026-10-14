@@ -743,6 +743,36 @@
             }
           ],
           "method": 1
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🎻",
+                "en": "innovator ≠ inventor",
+                "ko": "뛰어난 음악가는 혁신가지만 꼭 발명가는 아니에요",
+                "fresh": true
+              },
+              {
+                "label": "",
+                "icon": "😞",
+                "en": "“great discoveries”",
+                "ko": "대발견을 기대하면 실망해요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ],
       "emphasis": [
@@ -1064,7 +1094,8 @@
           ],
           "highlight": [
             "just as",
-            "so never-ending progress shall be the law of music"
+            "so",
+            "never-ending progress"
           ],
           "tips": [
             {
@@ -1081,7 +1112,51 @@
             "say": "기술처럼 음악도 끝없이 '더 새롭게, 더 낫게'를 좇게 된다는 거예요."
           },
           "optional_of": "s4_skim",
-          "button": "다음 문장"
+          "button": "다음"
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🎻",
+                "en": "innovator ≠ inventor",
+                "ko": "뛰어난 음악가는 혁신가지만 꼭 발명가는 아니에요",
+                "fresh": false
+              },
+              {
+                "label": "",
+                "icon": "😞",
+                "en": "“great discoveries”",
+                "ko": "대발견을 기대하면 실망해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "⚙️",
+                "en": "music = technique",
+                "ko": "새것에 대한 집착은 음악을 기술로만 봐요",
+                "fresh": true
+              },
+              {
+                "label": "문장 4",
+                "icon": "🚗",
+                "en": "new and improved",
+                "ko": "자동차·가전처럼 해마다 더 나아져야 한다고 봐요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ],
       "emphasis": [
@@ -1283,7 +1358,58 @@
             "breaking its predecessor’s records",
             "forcing predecessors into the category of the unfashionable and outmoded"
           ],
-          "button": "다음 문장"
+          "button": "다음"
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🎻",
+                "en": "innovator ≠ inventor",
+                "ko": "뛰어난 음악가는 혁신가지만 꼭 발명가는 아니에요",
+                "fresh": false
+              },
+              {
+                "label": "",
+                "icon": "😞",
+                "en": "“great discoveries”",
+                "ko": "대발견을 기대하면 실망해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "⚙️",
+                "en": "music = technique",
+                "ko": "새것에 대한 집착은 음악을 기술로만 봐요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "🚗",
+                "en": "new and improved",
+                "ko": "자동차·가전처럼 해마다 더 나아져야 한다고 봐요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5~6",
+                "icon": "🏁",
+                "en": "arms race · patent",
+                "ko": "앞 음악의 기록을 깨고, 내가 발명했다고 주장해요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ],
       "emphasis": [

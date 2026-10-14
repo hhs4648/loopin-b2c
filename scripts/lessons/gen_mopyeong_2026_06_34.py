@@ -12,6 +12,7 @@
 정답 ② how phenomena are arranged on Earth’s surface (해설지로 확인 전). 오답률 자료 없음.
 inextricably, premise는 시험지 아래 *로 풀어 준 단어 — 핵심 단어가 아니다.
 """
+import sys
 import copy
 import json
 import os
@@ -50,6 +51,19 @@ def sv_pick(id, candidates, roles, ask, wrong_by, explain, wrong="그건 주어�
         "candidates": candidates, "answers": list(roles), "roles": roles,
         "brief": {"ask": ask, "wrong": wrong, "wrong_by": wrong_by, "more": "좋아요! {n}개 남았어요.",
                   "praise": "다 찾았어요!", "explain": explain, **({"point": POINTS[id]} if id in POINTS else {})},
+        "method": 0,
+    }
+
+
+def same_pick(id, candidates, answer, ask, wrong_by, praise):
+    """단어 지도에 학생이 직접 넣는다 — 이 문장에서 앞의 말(where)과 같은 쪽 말을 찾아 누른다"""
+    return {
+        "id": id, "type": "pick", "interaction": "word_pick", "shade": True,
+        "candidates": candidates, "answers": [answer],
+        "brief": {"ask": ask, "wrong": "그건 '어디에, 어떻게 놓여 있나'와 같은 쪽 말이 아니에요.", "wrong_by": wrong_by,
+                  "more": "좋아요! {n}개 남았어요.", "praise": praise,
+                  "explain": f"{answer}가 where와 같은 쪽이에요. 어디에, 어떻게 놓여 있나를 말해요."},
+        # 칠판은 찾은 다음에 — 찾는 동안 칠판이 문장을 가리면 안 된다
         "method": 0,
     }
 
@@ -112,25 +126,72 @@ sentences = [
                     g("it is difficult to", "~하기 어렵다"), g("reasoned", "합리적인"), g("judgments", "판단"),
                     g("make sense of", "~을 이해하다"), g("grasp", "파악하다"), g("forces", "힘")],
         "steps": [
-            # 읽기 전에 빈칸 위치만 짚는다 (질문 없이) — 빈칸 문장만 떼어 보면 앞 내용 없이는 이해가 어렵다
+            # ① 지문 전체에서 빈칸 문장 위치만 — 「잠깐 볼까요」 정도로 (2026-10-14 선생님: 처음부터 설명은 어색)
+            show("s1_passage", "빈칸은 여기, 여섯째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+                 button="네", before_read=True, show_passage=[BLANK_TEXT]),
+            # ② 빈칸 문장 — 핵심어만 칠하고 뜻을 고민하게
+            choice("s1_blank_meaning",
+                   "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+                   [("o0", "____을 알면 사업에 성공할 수 있다", False),
+                    ("o1", "____을 모르면 판단하고 이해하기 어렵다", True),
+                    ("o2", "____이 없어도 사건을 이해할 수 있다", False)],
+                   "without은 '~ 없이', difficult는 '어려운'이에요.",
+                   why="without(~ 없이)과 difficult(어려운)를 봐요. ____이 없으면 어렵다는 말이에요.",
+                   before_read=True, display=BLANK_TEXT, tag="빈칸 문장",
+                   highlight=["without", "awareness", "________"],
+                   highlight_alt=["difficult", "judgments", "make sense of", "grasp"],
+                   tips=[{"label": "grasp", "mark": "grasp",
+                          "text": "grasp는 '(손으로) 잡다'와 '(뜻을) 이해하다, 파악하다' 두 뜻이 있어요. 여기서는 이해하다예요."}]),
+            # ③ 중·초 — 세 덩어리가 같은 말(이해하다)이라는 것
+            show("s1_where_map",
+                 "judgments, make sense of, grasp는 모두 '이해하다'라는 같은 말을 반복한 거예요.",
+                 button="다음", before_read=True, levels=["중", "초"],
+                 display=BLANK_TEXT, tag="빈칸 문장",
+                 highlight_alt=["judgments", "make sense of", "grasp"],
+                 panel_below=True,
+                 panel={"kind": "structure", "rows": [
+                     {"label": "모르면", "text": "without some awareness of ____", "tone": "hl"},
+                     {"label": "이해하기 어렵다", "text": "make judgments = make sense of = grasp", "ko": "세 덩어리 모두 '이해하다'", "tone": "hl2"},
+                 ]}),
+            # ④ 이걸 생각하며 처음부터
             show("s1_where",
-                 "빈칸은 여섯째 문장에 있어요. 무엇을 모르면 판단하기 어렵다는 건지 생각하며 처음부터 읽어 봐요.",
+                 "그럼 잘 판단하려면 무엇을 알아야 하는지 생각하면서 문장 처음부터 읽어 봐요.",
                  button="처음부터 읽어 볼게요", before_read=True,
-                 display=BLANK_TEXT, tag="빈칸 문장", highlight=["without some awareness of ________, it is difficult to"],
-                 tips=[{"label": "빈칸 문제 요령",
-                        "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."}]),
+                 # 첫 문장은 버튼을 누른 뒤에 — 이 말은 빈칸 문장을 띄운 채로
+                 display=BLANK_TEXT, tag="빈칸 문장"),
             sv_pick("s1_sv", ["One word", "is inextricably associated", "geography", "where"],
-                    {"One word": "S", "is inextricably associated": "V"},
-                    "첫 문장의 주어(S)와 동사(V)를 찾아볼까요?",
-                    {"geography": "with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
-                     "where": "콜론(:) 뒤에서 그 단어가 무엇인지 알려 주는 말이에요."},
-                    "주어는 One word, 동사는 is inextricably associated예요."),
-            choice("s1_word",
-                   "지리학과 떼려야 뗄 수 없는 그 단어는 무엇일까요?",
-                   [("o0", "where", True), ("o1", "geography", False), ("o2", "word", False)],
-                   "콜론(:) 뒤가 그 단어예요.",
-                   why="콜론(:) 뒤가 앞에서 말한 'One word'가 무엇인지 알려 줘요. 콜론 바로 뒤를 봐요.",
-                   highlight=["One word", "where"]),
+                    {"One word": "S", "is inextricably associated": "V", "geography": "전목"},
+                    "첫 문장의 주어(S), 동사(V), 그리고 with 뒤의 목적어(전목)를 찾아볼까요?",
+                    {"where": "콜론(:) 뒤에서 그 단어가 무엇인지 알려 주는 말이에요."},
+                    "주어는 One word, 동사는 is inextricably associated, with 뒤 목적어는 geography예요.",
+                    wrong="그건 주어·동사·목적어가 아니에요."),
+            # One word가 가리키는 것 — 콜론 뒤
+            {
+                "id": "s1_word", "type": "pick", "interaction": "word_pick", "shade": True,
+                "candidates": ["word", "geography", "where"],
+                "answers": ["where"],
+                "brief": {
+                    "ask": "One word(한 단어)가 가리키는 건 무엇일까요? 문장에서 찾아 눌러 봐요.",
+                    "wrong": "그건 One word가 가리키는 단어가 아니에요.",
+                    "wrong_by": {
+                        "word": "word는 '단어'라는 말 자체예요. 어떤 단어인지는 콜론(:) 뒤를 봐요.",
+                        "geography": "geography는 그 단어와 연관된 대상이에요. 콜론(:) 뒤를 봐요.",
+                    },
+                    "more": "좋아요! {n}개 남았어요.",
+                    "praise": "맞아요! 콜론(:) 뒤의 where가 그 한 단어예요.",
+                    "explain": "콜론(:) 뒤가 앞의 One word가 무엇인지 알려 줘요. 그 단어는 where(어디)예요.",
+                    "point": "One word … : where — 콜론 뒤가 앞말을 풀어 준다 · 그 한 단어 = where(어디)",
+                },
+                "method": 0,
+            },
+            # 이 문장의 뜻 — 객관식
+            choice("s1_meaning",
+                   "그럼 이 문장의 뜻은 무엇일까요?",
+                   [("o0", "지리학은 단 한 단어로 설명할 수 있다", False),
+                    ("o1", "'어디(where)'라는 단어는 지리학과 떼려야 뗄 수 없다", True),
+                    ("o2", "지리학에서는 단어를 정확하게 써야 한다", False)],
+                   "주어 One word = where, 동사 is inextricably associated with = 떼려야 뗄 수 없이 연관되어 있다, 목적어 geography예요.",
+                   why="One word는 where이고, is inextricably associated with geography는 '지리학과 떼려야 뗄 수 없이 연관되어 있다'예요."),
             show("s1_map", "where(어디)가 이 글의 첫 열쇠예요. 단어 지도에 넣어 둘게요.",
                  button="다음 문장", panel=space_board(1, fresh=("where",))),
         ],
@@ -155,9 +216,19 @@ sentences = [
                     ("o2", "언제 일어나는지는 중요하지 않다", False)],
                    "matter는 동사로 '중요하다'예요. it은 뒤의 where 덩어리를 대신하는 가주어예요.",
                    why="it은 뒤의 'where something takes place'를 대신하는 가주어예요. matter는 '중요하다', where는 '어디'예요.",
-                   highlight=["it matters where something takes place"],
+                   highlight=["matters where"],
                    tips=[{"label": "it matters + 의문사", "mark": "it matters",
                           "text": "matter는 동사로 '중요하다'예요. it matters where …는 '어디에서 …하는지가 중요하다'예요. it은 뒤의 where 덩어리를 대신하는 가주어예요."}]),
+            # 문장 1·2를 이어서 — 지리학은 '어디'와 떼려야 뗄 수 없다, 왜냐하면 '어디'가 중요하다는 데서 출발하니까
+            show("s2_both",
+                 "두 문장을 이어 보면, 지리학은 '어디'와 떼려야 뗄 수 없어요. 지리학은 어디에서 일어나는지가 중요하다는 데서 출발하기 때문이에요.",
+                 button="다음 문장", display=f"{S[0]} {S[1]}", tag="문장 1·2",
+                 highlight=["geography", "where"], highlight_alt=["That is because", "matters where"],
+                 panel_below=True,
+                 panel={"kind": "structure", "rows": [
+                     {"label": "문장 1", "text": "geography ↔ where", "ko": "지리학은 '어디'와 떼려야 뗄 수 없다", "tone": "hl"},
+                     {"label": "문장 2 (이유)", "text": "That is because … it matters where", "ko": "어디에서 일어나는지가 중요하니까", "tone": "hl2"},
+                 ]}),
         ],
     },
     {
@@ -171,7 +242,7 @@ sentences = [
                     ("o2", "'언제' 질문", False)],
                    "not simply A; B예요. 세미콜론 뒤 B가 글쓴이 생각이에요.",
                    why="'not simply where questions'는 '단순히 어디 질문만은 아니다'예요. 세미콜론 뒤 'why there', 'so what'이 글쓴이가 말하는 핵심 질문이에요.",
-                   highlight=["they are “why there” and “so what” questions"],
+                   highlight=["“why there”", "“so what”"],
                    tips=[{"label": "not simply A; B", "mark": "not simply",
                           "text": "'단순히 A가 아니라 B'예요. 뒤의 B가 글쓴이가 말하고 싶은 쪽이에요. 끝의 though는 '그렇지만'이에요."}]),
         ],
@@ -196,10 +267,16 @@ sentences = [
                    [("o0", "공간 배치, 차이, 연결", True), ("o1", "역사적 사건의 순서", False),
                     ("o2", "사람들의 감정", False)],
                    "means taking 뒤 'spatial arrangements, variations, and interconnections'를 봐요.",
-                   highlight=["taking spatial arrangements, variations, and interconnections seriously"],
+                   highlight=["spatial arrangements", "seriously"],
                    tips=[{"label": "-ing 주어", "mark": "Getting",
                           "text": "Getting to such questions처럼 -ing로 시작하는 덩어리가 주어일 수 있어요. '~하는 것'으로 읽어요."}]),
-            show("s4_map", "spatial arrangements(공간 배치)도 where와 같은 쪽이에요. 어디에, 어떻게 놓여 있나예요.",
+            # 단어 지도 — 첫 단어(where)는 선생님이 넣었고, 중요한 다음 말은 학생이 찾아 넣는다
+            same_pick("s4_same", ["such questions", "spatial arrangements", "seriously"], "spatial arrangements",
+                      "이 문장에서 where와 같은 쪽 말, 즉 '어디에 어떻게 놓여 있나'를 말하는 걸 찾아 눌러 볼까요?",
+                      {"such questions": "such questions는 앞의 '왜 거기에, 그래서 뭐' 질문을 가리켜요.",
+                       "seriously": "seriously는 '진지하게'라서 어디에 놓여 있는지와는 상관없어요."},
+                      "맞아요! spatial arrangements(공간 배치)도 where와 같은 쪽이에요."),
+            show("s4_map", "단어 지도에 넣었어요.",
                  button="다음 문장", panel=space_board(2, fresh=("spatial arrangements",))),
         ],
     },
@@ -226,12 +303,17 @@ sentences = [
                    [("o0", "감사", False), ("o1", "이해, 인식", True), ("o2", "감상", False)],
                    "of spatial circumstances(공간적 상황)를 '감사'할 수는 없어요.",
                    why="appreciation은 '감사'로 많이 알지만, 공간적 상황을 '감사'할 수는 없어요. 여기서는 '알고 있음'에 가까운 뜻이에요.",
-                   highlight=["some appreciation of spatial circumstances"]),
+                   highlight=["appreciation"]),
             show("s5_dash",
                  "대시(―) 뒤는 spatial circumstances의 예예요. 음식을 어디서 찾을지, 직장에 어떻게 갈지처럼 일상도 '어디'를 알아야 해요.",
-                 highlight=["where to find food and services, how to get to work places"],
+                 highlight=["where to find", "how to get"],
                  highlight_alt=["spatial circumstances"]),
-            show("s5_map", "spatial circumstances(공간적 상황)도 같은 쪽이에요.",
+            same_pick("s5_same", ["some appreciation", "spatial circumstances", "food and services"], "spatial circumstances",
+                      "이번에도 where와 같은 쪽 말을 찾아 눌러 볼까요?",
+                      {"some appreciation": "appreciation은 '이해, 인식'이에요. 무엇에 대한 이해인지 뒤를 봐요.",
+                       "food and services": "음식과 서비스는 예로 든 것이에요. 어디서 찾을지, 그 앞의 말을 봐요."},
+                      "맞아요! spatial circumstances(공간적 상황)도 같은 쪽이에요."),
+            show("s5_map", "단어 지도에 넣었어요.",
                  button="다음 문장", panel=space_board(3, fresh=("spatial circumstances",))),
         ],
     },
@@ -283,7 +365,7 @@ sentences = [
                     "주어는 Locating a new store or public service(새 가게나 공공 서비스의 위치를 정하는 것), 동사는 requires예요."),
             show("s7_examples",
                  "빈칸 문장 뒤는 예시예요. 가게 위치를 정하려면 인구 분포, 도로 위치를 따져야 하는데, 모두 '어디에 어떻게 놓여 있나'예요.",
-                 highlight=["population distributions, the location of roads and utilities"],
+                 highlight=["population distributions", "location of roads"],
                  panel=space_board(4, fresh=("the location of roads",)), point=POINTS["s7_examples"]),
         ],
     },
@@ -359,9 +441,10 @@ lesson = {
     "method": {"type": "blank", "labels": ["빈칸 문장 먼저 보기", "같은 말 모으기"], "intro_times": 3},
     "read_button": "분석하러 갈게요",
     "read_first": True,
+    "images": {"topic": {"src": "/assets/topic-geography-where.svg", "alt": "칠판: Geography(지리학) — Where(어디). 지리학은 '어디'를 어떻게 바라볼까?", "kind": "drawing"}},
     "intro": [
-        {"id": "topic", "type": "say", "button": "네",
-         "brief": {"say": "새 가게를 어디에 낼지 정하려면 무엇부터 알아야 할까요? 이번 글은 지리학이 묻는 '어디'를 다뤄요."}},
+        {"id": "topic", "type": "say", "button": "네", "image": "topic",
+         "brief": {"say": "새 가게를 어디에 낼지 정하려면 무엇부터 알아야 할까요? 이번 글은 지리학이 '어디'를 어떻게 바라보는지 다뤄요."}},
         {"id": "method1", "type": "say", "button": "좋아요",
          "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 같은 말이 다른 말로 반복되는 걸 모으면 빈칸이 보여요."}},
     ],
@@ -381,9 +464,19 @@ lesson = {
     "passage_on_try": True,
 }
 
+# 학생 단계(고 1~2 · 중 3~5 · 초 6~8등급) — 영어를 돕는 화면만 나눈다. 내용 파악 화면은 모두에게
+# 주어·동사 찾기: 짧은 문장(20단어 미만)은 중·초만, 긴 문장은 고도 / 가리키는 말·헷갈리는 단어 뜻: 중·초
+HELP_ONLY = {"s1_word", "s5_appreciation", "s6_scale"}
+for s_ in sentences:
+    long_sentence = len(s_["text"].split()) >= 20
+    for st in s_["steps"]:
+        if (st["id"].endswith("_sv") and not long_sentence) or st["id"] in HELP_ONLY:
+            st["levels"] = ["중", "초"]
+
 # 찾기 후보 덩어리는 화면에서 따로 누를 수 있어야 한다 — 덩어리 뜻이 없으면 채운다
 CHUNKS = {
-    "is inextricably associated": "떼려야 뗄 수 없이 연관되어 있다", "is": "~이다", "something": "어떤 일",
+    "is inextricably associated": "떼려야 뗄 수 없이 연관되어 있다", "is": "~이다", "something": "어떤 일", "word": "단어",
+    "such questions": "그러한 질문", "food and services": "음식과 서비스",
     "the political organization": "정치적 조직", "the layout": "배치",
 }
 for s_ in sentences:
@@ -393,6 +486,11 @@ for s_ in sentences:
             if c_ not in have:
                 s_["glosses"].insert(0, g(c_, CHUNKS[c_]))
                 have.add(c_)
+
+# 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from story_boards import add_story_boards  # noqa: E402
+add_story_boards(ID, lesson["sentences"])
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

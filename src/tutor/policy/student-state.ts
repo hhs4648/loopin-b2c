@@ -21,8 +21,12 @@ export type SkillRecord = {
   mistakes: number;
 };
 
+/** 학생 단계 — 고(1~2등급) · 중(3~5등급) · 초(6~8등급). 처음 목록 화면에서 고른다. 모르면 중 */
+export type StudentLevel = "고" | "중" | "초";
+
 export type StudentState = {
   version: 1;
+  level?: StudentLevel;
   skills: Record<string, SkillRecord>;
   /** 「이미 잘 알고 있어요 → 다음부턴 안 뜨게」를 고른 설명들 (스텝의 `known` 키) */
   known?: string[];

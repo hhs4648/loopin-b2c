@@ -17,13 +17,21 @@
   },
   "read_button": "분석하러 갈게요",
   "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-geography-where.svg",
+      "alt": "칠판: Geography(지리학) — Where(어디). 지리학은 '어디'를 어떻게 바라볼까?",
+      "kind": "drawing"
+    }
+  },
   "intro": [
     {
       "id": "topic",
       "type": "say",
       "button": "네",
+      "image": "topic",
       "brief": {
-        "say": "새 가게를 어디에 낼지 정하려면 무엇부터 알아야 할까요? 이번 글은 지리학이 묻는 '어디'를 다뤄요."
+        "say": "새 가게를 어디에 낼지 정하려면 무엇부터 알아야 할까요? 이번 글은 지리학이 '어디'를 어떻게 바라보는지 다뤄요."
       }
     },
     {
@@ -250,6 +258,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "word",
+          "ko": "단어"
+        },
+        {
           "en": "is inextricably associated",
           "ko": "떼려야 뗄 수 없이 연관되어 있다"
         },
@@ -312,26 +324,127 @@
       ],
       "steps": [
         {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 여섯째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "Moving up in scale, without some awareness of ________, it is difficult to make reasoned business or policy judgments, make sense of events, or grasp some of the basic forces shaping life on the planet."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "without은 '~ 없이', difficult는 '어려운'이에요.",
+              "without은 '~ 없이', difficult는 '어려운'이에요."
+            ],
+            "explain": "without은 '~ 없이', difficult는 '어려운'이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "without(~ 없이)과 difficult(어려운)를 봐요. ____이 없으면 어렵다는 말이에요.",
+              "o2": "without(~ 없이)과 difficult(어려운)를 봐요. ____이 없으면 어렵다는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "____을 알면 사업에 성공할 수 있다"
+            },
+            {
+              "id": "o1",
+              "label": "____을 모르면 판단하고 이해하기 어렵다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "____이 없어도 사건을 이해할 수 있다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "Moving up in scale, without some awareness of ________, it is difficult to make reasoned business or policy judgments, make sense of events, or grasp some of the basic forces shaping life on the planet.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "without",
+            "awareness",
+            "________"
+          ],
+          "highlight_alt": [
+            "difficult",
+            "judgments",
+            "make sense of",
+            "grasp"
+          ],
+          "tips": [
+            {
+              "label": "grasp",
+              "mark": "grasp",
+              "text": "grasp는 '(손으로) 잡다'와 '(뜻을) 이해하다, 파악하다' 두 뜻이 있어요. 여기서는 이해하다예요."
+            }
+          ]
+        },
+        {
+          "id": "s1_where_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "judgments, make sense of, grasp는 모두 '이해하다'라는 같은 말을 반복한 거예요."
+          },
+          "method": 0,
+          "button": "다음",
+          "before_read": true,
+          "levels": [
+            "중",
+            "초"
+          ],
+          "display": "Moving up in scale, without some awareness of ________, it is difficult to make reasoned business or policy judgments, make sense of events, or grasp some of the basic forces shaping life on the planet.",
+          "tag": "빈칸 문장",
+          "highlight_alt": [
+            "judgments",
+            "make sense of",
+            "grasp"
+          ],
+          "panel_below": true,
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "모르면",
+                "text": "without some awareness of ____",
+                "tone": "hl"
+              },
+              {
+                "label": "이해하기 어렵다",
+                "text": "make judgments = make sense of = grasp",
+                "ko": "세 덩어리 모두 '이해하다'",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        {
           "id": "s1_where",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "빈칸은 여섯째 문장에 있어요. 무엇을 모르면 판단하기 어렵다는 건지 생각하며 처음부터 읽어 봐요."
+            "say": "그럼 잘 판단하려면 무엇을 알아야 하는지 생각하면서 문장 처음부터 읽어 봐요."
           },
           "method": 0,
           "button": "처음부터 읽어 볼게요",
           "before_read": true,
           "display": "Moving up in scale, without some awareness of ________, it is difficult to make reasoned business or policy judgments, make sense of events, or grasp some of the basic forces shaping life on the planet.",
-          "tag": "빈칸 문장",
-          "highlight": [
-            "without some awareness of ________, it is difficult to"
-          ],
-          "tips": [
-            {
-              "label": "빈칸 문제 요령",
-              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
-            }
-          ]
+          "tag": "빈칸 문장"
         },
         {
           "id": "s1_sv",
@@ -347,65 +460,96 @@
           ],
           "answers": [
             "One word",
-            "is inextricably associated"
+            "is inextricably associated",
+            "geography"
           ],
           "roles": {
             "One word": "S",
-            "is inextricably associated": "V"
+            "is inextricably associated": "V",
+            "geography": "전목"
           },
           "brief": {
-            "ask": "첫 문장의 주어(S)와 동사(V)를 찾아볼까요?",
-            "wrong": "그건 주어나 동사가 아니에요.",
+            "ask": "첫 문장의 주어(S), 동사(V), 그리고 with 뒤의 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 주어·동사·목적어가 아니에요.",
             "wrong_by": {
-              "geography": "with 뒤 덩어리예요. 전치사 뒤 덩어리는 주어·동사가 될 수 없어요.",
               "where": "콜론(:) 뒤에서 그 단어가 무엇인지 알려 주는 말이에요."
             },
             "more": "좋아요! {n}개 남았어요.",
             "praise": "다 찾았어요!",
-            "explain": "주어는 One word, 동사는 is inextricably associated예요."
+            "explain": "주어는 One word, 동사는 is inextricably associated, with 뒤 목적어는 geography예요."
           },
-          "method": 0
+          "method": 0,
+          "levels": [
+            "중",
+            "초"
+          ]
         },
         {
           "id": "s1_word",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "word",
+            "geography",
+            "where"
+          ],
+          "answers": [
+            "where"
+          ],
+          "brief": {
+            "ask": "One word(한 단어)가 가리키는 건 무엇일까요? 문장에서 찾아 눌러 봐요.",
+            "wrong": "그건 One word가 가리키는 단어가 아니에요.",
+            "wrong_by": {
+              "word": "word는 '단어'라는 말 자체예요. 어떤 단어인지는 콜론(:) 뒤를 봐요.",
+              "geography": "geography는 그 단어와 연관된 대상이에요. 콜론(:) 뒤를 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요! 콜론(:) 뒤의 where가 그 한 단어예요.",
+            "explain": "콜론(:) 뒤가 앞의 One word가 무엇인지 알려 줘요. 그 단어는 where(어디)예요.",
+            "point": "One word … : where — 콜론 뒤가 앞말을 풀어 준다 · 그 한 단어 = where(어디)"
+          },
+          "method": 0,
+          "levels": [
+            "중",
+            "초"
+          ]
+        },
+        {
+          "id": "s1_meaning",
           "type": "choice",
           "interaction": "meaning_choice",
           "one_try": true,
           "brief": {
-            "ask": "지리학과 떼려야 뗄 수 없는 그 단어는 무엇일까요?",
+            "ask": "그럼 이 문장의 뜻은 무엇일까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
-              "콜론(:) 뒤가 그 단어예요.",
-              "콜론(:) 뒤가 그 단어예요."
+              "주어 One word = where, 동사 is inextricably associated with = 떼려야 뗄 수 없이 연관되어 있다, 목적어 geography예요.",
+              "주어 One word = where, 동사 is inextricably associated with = 떼려야 뗄 수 없이 연관되어 있다, 목적어 geography예요."
             ],
-            "explain": "콜론(:) 뒤가 그 단어예요.",
+            "explain": "주어 One word = where, 동사 is inextricably associated with = 떼려야 뗄 수 없이 연관되어 있다, 목적어 geography예요.",
             "praise": "맞아요!",
             "feedback": {
-              "o1": "콜론(:) 뒤가 앞에서 말한 'One word'가 무엇인지 알려 줘요. 콜론 바로 뒤를 봐요.",
-              "o2": "콜론(:) 뒤가 앞에서 말한 'One word'가 무엇인지 알려 줘요. 콜론 바로 뒤를 봐요."
-            },
-            "point": "지리학과 떼려야 뗄 수 없는 단어 = where(어디)"
+              "o0": "One word는 where이고, is inextricably associated with geography는 '지리학과 떼려야 뗄 수 없이 연관되어 있다'예요.",
+              "o2": "One word는 where이고, is inextricably associated with geography는 '지리학과 떼려야 뗄 수 없이 연관되어 있다'예요."
+            }
           },
           "options": [
             {
               "id": "o0",
-              "label": "where",
-              "correct": true
+              "label": "지리학은 단 한 단어로 설명할 수 있다"
             },
             {
               "id": "o1",
-              "label": "geography"
+              "label": "'어디(where)'라는 단어는 지리학과 떼려야 뗄 수 없다",
+              "correct": true
             },
             {
               "id": "o2",
-              "label": "word"
+              "label": "지리학에서는 단어를 정확하게 써야 한다"
             }
           ],
-          "method": 0,
-          "highlight": [
-            "One word",
-            "where"
-          ]
+          "method": 0
         },
         {
           "id": "s1_map",
@@ -513,7 +657,11 @@
             "praise": "다 찾았어요!",
             "explain": "because 뒤는 S geography, V starts예요."
           },
-          "method": 0
+          "method": 0,
+          "levels": [
+            "중",
+            "초"
+          ]
         },
         {
           "id": "s2_matters",
@@ -552,7 +700,7 @@
           ],
           "method": 0,
           "highlight": [
-            "it matters where something takes place"
+            "matters where"
           ],
           "tips": [
             {
@@ -561,6 +709,44 @@
               "text": "matter는 동사로 '중요하다'예요. it matters where …는 '어디에서 …하는지가 중요하다'예요. it은 뒤의 where 덩어리를 대신하는 가주어예요."
             }
           ]
+        },
+        {
+          "id": "s2_both",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "두 문장을 이어 보면, 지리학은 '어디'와 떼려야 뗄 수 없어요. 지리학은 어디에서 일어나는지가 중요하다는 데서 출발하기 때문이에요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "display": "One word is inextricably associated with geography: where. That is because geography starts from the premise that it matters where something takes place on Earth’s surface.",
+          "tag": "문장 1·2",
+          "highlight": [
+            "geography",
+            "where"
+          ],
+          "highlight_alt": [
+            "That is because",
+            "matters where"
+          ],
+          "panel_below": true,
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "문장 1",
+                "text": "geography ↔ where",
+                "ko": "지리학은 '어디'와 떼려야 뗄 수 없다",
+                "tone": "hl"
+              },
+              {
+                "label": "문장 2 (이유)",
+                "text": "That is because … it matters where",
+                "ko": "어디에서 일어나는지가 중요하니까",
+                "tone": "hl2"
+              }
+            ]
+          }
         }
       ]
     },
@@ -633,7 +819,8 @@
           ],
           "method": 0,
           "highlight": [
-            "they are “why there” and “so what” questions"
+            "“why there”",
+            "“so what”"
           ],
           "tips": [
             {
@@ -642,6 +829,36 @@
               "text": "'단순히 A가 아니라 B'예요. 뒤의 B가 글쓴이가 말하고 싶은 쪽이에요. 끝의 though는 '그렇지만'이에요."
             }
           ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🌍",
+                "en": "Geography ↔ Where",
+                "ko": "지리학은 '어디'가 중요하다는 데서 출발해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "❓",
+                "en": "why there? · so what?",
+                "ko": "그냥 어디가 아니라 — 왜 거기? 그래서 어떤데?",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -651,6 +868,10 @@
       "model_translation": "그러한 질문에 이르는 것은 공간적 배치, 차이, 상호 연결을 진지하게 받아들이는 것을 의미한다.",
       "teaching_value": "high",
       "glosses": [
+        {
+          "en": "such questions",
+          "ko": "그러한 질문"
+        },
         {
           "en": "Getting to such questions",
           "ko": "그런 질문에 이르는 것"
@@ -716,7 +937,11 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 Getting to such questions(그런 질문에 이르는 것), 동사는 means예요."
           },
-          "method": 0
+          "method": 0,
+          "levels": [
+            "중",
+            "초"
+          ]
         },
         {
           "id": "s4_what",
@@ -755,7 +980,8 @@
           ],
           "method": 0,
           "highlight": [
-            "taking spatial arrangements, variations, and interconnections seriously"
+            "spatial arrangements",
+            "seriously"
           ],
           "tips": [
             {
@@ -766,11 +992,37 @@
           ]
         },
         {
+          "id": "s4_same",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "such questions",
+            "spatial arrangements",
+            "seriously"
+          ],
+          "answers": [
+            "spatial arrangements"
+          ],
+          "brief": {
+            "ask": "이 문장에서 where와 같은 쪽 말, 즉 '어디에 어떻게 놓여 있나'를 말하는 걸 찾아 눌러 볼까요?",
+            "wrong": "그건 '어디에, 어떻게 놓여 있나'와 같은 쪽 말이 아니에요.",
+            "wrong_by": {
+              "such questions": "such questions는 앞의 '왜 거기에, 그래서 뭐' 질문을 가리켜요.",
+              "seriously": "seriously는 '진지하게'라서 어디에 놓여 있는지와는 상관없어요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요! spatial arrangements(공간 배치)도 where와 같은 쪽이에요.",
+            "explain": "spatial arrangements가 where와 같은 쪽이에요. 어디에, 어떻게 놓여 있나를 말해요."
+          },
+          "method": 0
+        },
+        {
           "id": "s4_map",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "spatial arrangements(공간 배치)도 where와 같은 쪽이에요. 어디에, 어떻게 놓여 있나예요."
+            "say": "단어 지도에 넣었어요."
           },
           "method": 0,
           "button": "다음 문장",
@@ -802,6 +1054,10 @@
       "model_translation": "가장 단순한 일상 활동에 참여하는 것조차도 공간적 상황에 대한 어느 정도의 이해를 필요로 하는데, 음식과 서비스를 어디에서 찾을지, 직장에 어떻게 갈지 등이 그렇다.",
       "teaching_value": "high",
       "glosses": [
+        {
+          "en": "food and services",
+          "ko": "음식과 서비스"
+        },
         {
           "en": "Engaging in even the simplest day-to-day activity",
           "ko": "가장 단순한 일상 활동을 하는 것조차"
@@ -919,7 +1175,11 @@
           ],
           "method": 0,
           "highlight": [
-            "some appreciation of spatial circumstances"
+            "appreciation"
+          ],
+          "levels": [
+            "중",
+            "초"
           ]
         },
         {
@@ -932,21 +1192,48 @@
           "method": 0,
           "button": "다음",
           "highlight": [
-            "where to find food and services, how to get to work places"
+            "where to find",
+            "how to get"
           ],
           "highlight_alt": [
             "spatial circumstances"
           ]
         },
         {
+          "id": "s5_same",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "some appreciation",
+            "spatial circumstances",
+            "food and services"
+          ],
+          "answers": [
+            "spatial circumstances"
+          ],
+          "brief": {
+            "ask": "이번에도 where와 같은 쪽 말을 찾아 눌러 볼까요?",
+            "wrong": "그건 '어디에, 어떻게 놓여 있나'와 같은 쪽 말이 아니에요.",
+            "wrong_by": {
+              "some appreciation": "appreciation은 '이해, 인식'이에요. 무엇에 대한 이해인지 뒤를 봐요.",
+              "food and services": "음식과 서비스는 예로 든 것이에요. 어디서 찾을지, 그 앞의 말을 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요! spatial circumstances(공간적 상황)도 같은 쪽이에요.",
+            "explain": "spatial circumstances가 where와 같은 쪽이에요. 어디에, 어떻게 놓여 있나를 말해요."
+          },
+          "method": 0
+        },
+        {
           "id": "s5_map",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "spatial circumstances(공간적 상황)도 같은 쪽이에요."
+            "say": "단어 지도에 넣었어요."
           },
           "method": 0,
-          "button": "다음 문장",
+          "button": "다음",
           "panel": {
             "kind": "groups",
             "title": "단어 지도",
@@ -969,6 +1256,43 @@
               ]
             },
             "caption": "모두 같은 말 — 어디에, 어떻게 배치돼 있나"
+          }
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🌍",
+                "en": "Geography ↔ Where",
+                "ko": "지리학은 '어디'가 중요하다는 데서 출발해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "❓",
+                "en": "why there? · so what?",
+                "ko": "그냥 어디가 아니라 — 왜 거기? 그래서 어떤데?",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🛒",
+                "en": "spatial arrangements",
+                "ko": "밥 먹을 곳·출근길처럼 일상에도 공간 감각이 필요해요",
+                "fresh": true
+              }
+            ]
           }
         }
       ]
@@ -1062,6 +1386,10 @@
           "method": 0,
           "highlight": [
             "Moving up in scale"
+          ],
+          "levels": [
+            "중",
+            "초"
           ]
         },
         {
@@ -1262,7 +1590,8 @@
           "method": 0,
           "button": "다음",
           "highlight": [
-            "population distributions, the location of roads and utilities"
+            "population distributions",
+            "location of roads"
           ],
           "panel": {
             "kind": "groups",
@@ -1417,6 +1746,57 @@
               ]
             },
             "caption": "모두 같은 말 — 어디에, 어떻게 배치돼 있나"
+          }
+        },
+        {
+          "id": "story_8",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🌍",
+                "en": "Geography ↔ Where",
+                "ko": "지리학은 '어디'가 중요하다는 데서 출발해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "❓",
+                "en": "why there? · so what?",
+                "ko": "그냥 어디가 아니라 — 왜 거기? 그래서 어떤데?",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🛒",
+                "en": "spatial arrangements",
+                "ko": "밥 먹을 곳·출근길처럼 일상에도 공간 감각이 필요해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 6",
+                "icon": "⚖️",
+                "en": "without ____ → difficult",
+                "ko": "____을 모르면 판단하고 이해하기 어려워요",
+                "fresh": true
+              },
+              {
+                "label": "문장 7~8",
+                "icon": "🏪",
+                "en": "new store · migration",
+                "ko": "가게 자리, 사람들이 옮겨 가는 곳도 배치를 따져야 알아요",
+                "fresh": true
+              }
+            ]
           }
         },
         {

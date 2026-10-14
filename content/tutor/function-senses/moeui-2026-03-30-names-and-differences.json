@@ -1,0 +1,78 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "something that is not",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "to be found elsewhere",
+   "sense": "~될",
+   "usage": "to + 동사원형 (앞 명사 sorts를 꾸밈)"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "plants that are there",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "7": [
+  {
+   "word": "yet",
+   "phrase": "and yet they present",
+   "sense": "그러나, 그런데도",
+   "usage": "접속사 yet (= but) — '아직'이 아니다"
+  },
+  {
+   "word": "to",
+   "phrase": "present to a quick glance",
+   "sense": "~에게",
+   "usage": "전치사 to + 명사 (present A to B = B에게 A를 보이다)"
+  }
+ ],
+ "8": [
+  {
+   "word": "For",
+   "phrase": "For most practical purposes",
+   "sense": "~에는, ~을 위해서는",
+   "usage": "전치사 for + 명사 (목적)"
+  }
+ ],
+ "9": [
+  {
+   "word": "so",
+   "phrase": "Not so",
+   "sense": "그렇게, 그런",
+   "usage": "부사 so (Not so = 그렇지 않다)"
+  },
+  {
+   "word": "for",
+   "phrase": "for the groundskeeper",
+   "sense": "~에게는",
+   "usage": "전치사 for + 명사 (대상)"
+  }
+ ],
+ "10": [
+  {
+   "word": "to",
+   "phrase": "to an infinite mind",
+   "sense": "~에게는",
+   "usage": "전치사 to + 명사 (대상)"
+  }
+ ],
+ "11": [
+  {
+   "word": "as",
+   "phrase": "as you yourself do",
+   "sense": "~처럼",
+   "usage": "접속사 as + 주어·동사"
+  }
+ ]
+}

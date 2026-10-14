@@ -9,6 +9,7 @@
 1문장은 선생님과 정했다 (domesticated·take it for granted 뜻 → accessible X / evaporates O →
 예술의 역할 자유 응답 → 핵심어 찾기). 2~5문장, 도입, 푸는 법 칠판은 아직 초안.
 """
+import sys
 import copy
 import json
 import os
@@ -158,7 +159,7 @@ sentences = [
             show("s1_contrast",
                  "너무 익숙해진 것은 다가가기 쉬워지는 게 아니라 사라져 버려요. 너무 익숙해서 당연하게 여기니까 눈에 안 보이는 거예요.",
                  button="다음",
-                 highlight=["isn’t actually more accessible or approachable", "it evaporates altogether"],
+                 highlight=["isn’t", "accessible", "it evaporates altogether"],
                  panel={"kind": "contrast", "title": "너무 익숙해진 것은", "between": "↔",
                         "left": {"title": "✗ accessible", "text": "다가가기 쉬워진다"},
                         "right": {"title": "✓ evaporates", "text": "사라져 버린다"}},
@@ -381,13 +382,13 @@ sentences = [
                  ["accumulates"],
                  "그건 동사가 아니거나, 다른 덩어리의 동사예요. 주어 바로 뒤를 봐요.",
                  "주어 바로 뒤 'accumulates(쌓는다)'가 동사예요. bury는 study guides를 꾸미는 that 덩어리 안의 동사예요.",
-                 highlight_alt=["a great work of literature"], skip_with="s3_two_pairs", display=S3_SLASH, method=1),
+                 highlight_alt=["literature"], skip_with="s3_two_pairs", display=S3_SLASH, method=1),
             pick("s3_subj2", "콤마 뒤 두 번째 주어는 무엇일까요?",
                  ["translations of that work", "its stodgy fame", "the stone", "another language"],
                  ["translations of that work"],
                  "그건 동사 뒤에 나오는 말이에요. 콤마 바로 뒤를 봐요.",
                  "콤마 바로 뒤 'translations of that work(그 작품의 번역본)'가 두 번째 주어예요.",
-                 shade=True, highlight_alt=["a great work of literature"], skip_with="s3_two_pairs", display=S3_SLASH, method=1),
+                 shade=True, highlight_alt=["literature"], skip_with="s3_two_pairs", display=S3_SLASH, method=1),
             pick("s3_verb2", "두 번째 주어의 동사는 무엇일까요?",
                  ["free", "the stone", "precisely", "putting"],
                  ["free"],
@@ -397,7 +398,7 @@ sentences = [
             show("s3_pairs",
                  "while 덩어리는 'a great work of literature + accumulates', 메인 문장은 'translations of that work + free'예요.",
                  button="다음",
-                 highlight=["a great work of literature", "translations of that work"],
+                 highlight=["literature", "translations of that work"],
                  highlight_alt=["accumulates", "free"],
                  panel={"kind": "structure", "rows": [
                      {"label": "while", "text": "접속사 · ~하는 반면에"},
@@ -423,7 +424,7 @@ sentences = [
                     ("o2", "그 번역본은 모방작 같은 것들을 쌓는 반면, 위대한 문학 작품은 따분한 명성에서 벗어난다", False)],
                    "주어 ①은 a great work of literature, 주어 ②는 translations of that work예요. free는 '풀어 주다'예요.",
                    why="while은 '반면에', 주어 ②는 translations of that work, free는 '풀어 주다'예요. 번역본이 작품을 따분한 명성에서 풀어 줘요.",
-                   highlight=["a great work of literature", "accumulates", "imitations", "translations of that work", "free", "its stodgy fame"],
+                   highlight=["literature", "accumulates", "imitations", "translations of that work", "free", "its stodgy fame"],
                    method=0),
             # 1문장의 두 그룹(익숙해서 안 보임 ↔ 다시 보이게 함)에 literature와 translation을 넣는다
             choice("s3_sort_lit",
@@ -473,7 +474,7 @@ sentences = [
                    [("o0", "'본래의 낯섦'이 없는 글", True), ("o1", "'본래의 낯섦'이 너무 많은 글", False), ("o2", "Berman이 쓴 글", False)],
                    "lacks는 '~이 없다'예요. 콤마 사이 'in Berman’s terms'는 건너뛰고 읽어요.",
                    why="lacks는 '~이 없다'예요. 콤마 사이 'in Berman’s terms(Berman의 용어로)'는 빼도 되는 삽입이에요.",
-                   highlight=["A bad text is one that", "lacks “native strangeness”"], faded=[S4_FADED],
+                   highlight=["A bad text", "lacks “native strangeness”"], faded=[S4_FADED],
                    method=1),
             # native strangeness는 좋은 말일까 — bad text(−)가 lacks(−)하는 것 → +
             choice("s4_sign",
@@ -505,7 +506,7 @@ sentences = [
                    [("o0", "더 낯설어진다", False), ("o1", "아무 일도 일어나지 않는다", True), ("o2", "더 유명해진다", False)],
                    "대시(—) 뒤 'when you translate it'의 it은 a bad text예요. 그 뒤를 봐요.",
                    why="낯섦이 없는 글은 번역이 살려 낼 게 없어요. 대시(—) 뒤 'nothing happens'를 봐요.",
-                   highlight=["when you translate it, nothing happens"], faded=[S4_FADED],
+                   highlight=["nothing happens"], faded=[S4_FADED],
                    tips=[{"label": "it", "mark": "it",
                           "text": "translate it의 it은 a bad text, 안 좋은 글이에요."}],
                    method=1),
@@ -580,13 +581,13 @@ sentences = [
                    [("o0", "작품 안에 이미 있던 것", True), ("o1", "번역가가 새로 더한 것", False), ("o2", "다른 언어에 있던 것", False)],
                    "already inherent in it은 '그 안에 이미 내재된'이에요. it은 작품이에요.",
                    why="'already inherent in it'은 '그것(작품) 안에 이미 내재된'이에요. 번역이 새로 만드는 게 아니에요.",
-                   highlight=["qualities already inherent in it"],
+                   highlight=["inherent"],
                    method=1),
             show("s5_link",
                  "작품 안에 이미 있던 자질, 바로 앞 문장의 native strangeness(본래의 낯섦)예요. 번역은 그걸 더 강하게 살려 줘요.",
                  button="다음",
                  signs=[{"text": "reinforces", "sign": "+"}, {"text": "enhances", "sign": "+"}],
-                 highlight=["qualities already inherent in it"],
+                 highlight=["inherent"],
                  method=1),
             pick("s5_pick", "이 문장의 핵심어 6개를 찾아볼까요?",
                  ["The translation of a true work of art", "significant", "because", "reinforces", "enhances", "qualities",
@@ -641,7 +642,7 @@ sentences = [
                    [("o0", "A가 아니라 B", True), ("o1", "A도 B도 아니다", False), ("o2", "A이고 또 B이다", False)],
                    "not 뒤가 A, but 뒤가 B예요. 앞은 부정하고 뒤를 말해요.",
                    why="not A, but B는 앞(A)을 부정하고 뒤(B)를 말하는 구조예요. 뒤가 글쓴이가 하고 싶은 말이에요.",
-                   highlight=["not a makeshift", "but the mode of existence"],
+                   highlight=["not a makeshift", "but", "mode of existence"],
                    faded=[S6_FADED], faded_note=S6_FADED_NOTE, faded_tip=S6_FADED_TIP,
                    method=1),
             choice("s6_what",
@@ -650,7 +651,7 @@ sentences = [
                     ("o2", "원문을 대신하는 임시 수단", False)],
                    "but 뒤를 봐요. étrange는 프랑스어로 strange예요.",
                    why="but 뒤 'the mode of existence by which a work reaches us as étrange'예요. étrange는 프랑스어로 strange예요.",
-                   highlight=["the mode of existence by which a work reaches us as étrange"],
+                   highlight=["mode of existence", "étrange"],
                    faded=[S6_FADED], faded_note=S6_FADED_NOTE,
                    method=1),
             show("s6_link",
@@ -710,7 +711,7 @@ sentences = [
                    [("o0", "더 익숙하고 친근하게", False), ("o1", "더 쉽고 다가가기 쉽게", False), ("o2", "더 낯설게, 새롭게 낯설게", True)],
                    "make + 목적어 + seem은 '~가 …하게 보이게 만들다'예요. seem 뒤를 봐요.",
                    why="'makes the work seem more strange'는 '작품을 더 낯설게 보이게 만든다'예요. 익숙하게 만드는 게 아니에요.",
-                   highlight=["makes the work “seem more strange, and newly strange.”"],
+                   highlight=["more strange", "newly strange"],
                    tips=[{"label": "make + 목적어 + 동사원형", "mark": "makes",
                           "text": "make A do는 'A가 ~하게 만들다'예요. 여기서는 makes the work seem, '작품이 ~하게 보이도록 만든다'예요."},
                          {"label": "As Wilson put it", "mark": "As Wilson put it",
@@ -823,8 +824,9 @@ lesson = {
     "method": {"type": "title", "labels": ["핵심어 찾기", "글쓴이 생각 잡기"], "intro_times": 3},
     "read_button": "분석하러 갈게요",
     "read_first": True,
+    "images": {"topic": {"src": "/assets/topic-translation.svg", "alt": "칠판: Translation(번역) → Strange(다시 낯설게)", "kind": "drawing"}},
     "intro": [
-        {"id": "topic", "type": "say", "button": "네",
+        {"id": "topic", "type": "say", "button": "네", "image": "topic",
          "brief": {"say": "너무 익숙한 것은 왜 눈에 안 들어올까요? 이번 글은 번역과 낯섦의 관계를 다뤄요."}},
         {"id": "method1", "type": "say", "button": "좋아요",
          "brief": {"say": "제목 문제는 글 전체를 한 줄로 묶는 말을 찾는 거예요. 문장마다 핵심어를 찾고 글쓴이 생각을 잡아 볼게요."}},
@@ -850,6 +852,11 @@ for s_ in sentences:
     for st in s_["steps"]:
         if st["type"] == "pick" and "핵심어" in st["brief"]["ask"]:
             st["keyword"] = True
+
+# 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from story_boards import add_story_boards  # noqa: E402
+add_story_boards(ID, lesson["sentences"])
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

@@ -1,0 +1,112 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "According to McNeil",
+   "sense": "~에 따르면",
+   "usage": "according to ~ = ~에 따르면"
+  },
+  {
+   "word": "that",
+   "phrase": "in that it does not",
+   "sense": "~라는 점에서",
+   "usage": "in that + 주어·동사 = ~라는 점에서"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "demonstrated that the gestures",
+   "sense": "~라는 것을",
+   "usage": "접속사 that + 주어·동사 (demonstrate의 내용)"
+  },
+  {
+   "word": "while",
+   "phrase": "while they are speaking",
+   "sense": "~하는 동안",
+   "usage": "접속사 while (시간)"
+  },
+  {
+   "word": "that",
+   "phrase": "such that language",
+   "sense": "그래서 ~할 정도로",
+   "usage": "such that + 주어·동사 = ~할 정도로"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "enables speakers to conceptualize",
+   "sense": "~하게",
+   "usage": "enable A to + 동사원형 = A가 ~할 수 있게 하다"
+  }
+ ],
+ "4": [
+  {
+   "word": "For",
+   "phrase": "For example",
+   "sense": "예를 들어",
+   "usage": "for example = 예를 들어"
+  },
+  {
+   "word": "if",
+   "phrase": "decide if the event",
+   "sense": "~인지",
+   "usage": "접속사 if (명사절) = ~인지 아닌지"
+  },
+  {
+   "word": "if",
+   "phrase": "if the language",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if (조건)"
+  },
+  {
+   "word": "that",
+   "phrase": "at that moment",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  },
+  {
+   "word": "for",
+   "phrase": "for each meaning",
+   "sense": "~마다, ~을 위한",
+   "usage": "전치사 for + 명사"
+  }
+ ],
+ "5": [
+  {
+   "word": "as",
+   "phrase": "as a semiotic system",
+   "sense": "~로서",
+   "usage": "전치사 as + 명사"
+  }
+ ],
+ "6": [
+  {
+   "word": "which",
+   "phrase": "glue, which helps",
+   "sense": "그리고 그것은",
+   "usage": "콤마 + 관계대명사 which (앞 명사 glue를 이어서 설명)"
+  },
+  {
+   "word": "which",
+   "phrase": "expression, which, as a whole",
+   "sense": "그리고 그것은",
+   "usage": "콤마 + 관계대명사 which (앞 명사 expression을 이어서 설명)"
+  },
+  {
+   "word": "as",
+   "phrase": "as a whole",
+   "sense": "전체로서",
+   "usage": "as a whole = 전체로서"
+  }
+ ],
+ "8": [
+  {
+   "word": "for",
+   "phrase": "unit for the expression",
+   "sense": "~을 위한",
+   "usage": "전치사 for + 명사 (목적)"
+  }
+ ]
+}

@@ -1,3 +1,4 @@
+import { sensesOf } from "./senses";
 import policyFrame from "../../../content/tutor/policy-frame.json";
 import type { TutorResult } from "../../../content/tutor/types";
 import { UNKNOWN_BTN, HINT_BTN, type PointRecord, type TranslationResult, type TutorView } from "../view";
@@ -872,6 +873,13 @@ export function createPolicySession(
         s = { ...s, pi: s.pi + 1 };
         continue;
       }
+      // 이 학생 단계에게 안 보이는 화면 — 건너뛰고, 딸린 스텝도 같이 (skip_with)
+      const levels = step().levels;
+      if (levels && !levels.includes(s.student.level ?? "중")) {
+        log({ kind: "skip" }, { action: "CONTINUE", interactionId: step().id, reason: ["student_level"] });
+        s = { ...s, skipped: [...s.skipped, step().id], pi: s.pi + 1 };
+        continue;
+      }
       // 「다음부턴 안 뜨게」를 고른 설명 — 건너뛰고, 딸린 스텝도 같이 (skip_with)
       const known = step().known;
       if (known && s.student.known?.includes(known)) {
@@ -1384,6 +1392,7 @@ export function createPolicySession(
           : []
         : (lesson.proper_nouns ?? []).filter((n) => shown.includes(n.en)),
       // ❓ 개념 구절도 한 덩어리로 잡히게 뜻 목록에 넣는다
+      senses: onStudy && shown === sen.text ? sensesOf(lesson.id, sen.id) : [],
       glosses: onStudy
         ? [
             ...sen.glosses,
@@ -1415,7 +1424,9 @@ export function createPolicySession(
           : null,
       examNumbersOnly: !!lesson.exam?.numbers_only,
       examPassage:
-        s.stage === "exam_final" && lesson.exam?.numbers_only
+        inLesson && st.show_passage && !s.readingFirst
+          ? { given: givenText, sentences: passageTexts, highlight: st.show_passage, highlightBy: {} }
+          : s.stage === "exam_final" && lesson.exam?.numbers_only
           ? {
               given: givenText,
               sentences: passageTexts,
@@ -1424,7 +1435,9 @@ export function createPolicySession(
               highlightBy: Object.fromEntries(
                 lesson.sentences.map((x) => [
                   x.text,
-                  [
+                  lesson.exam?.passage_keywords
+                    ? lesson.exam.passage_keywords.filter((h) => x.text.includes(h))
+                    : [
                     ...x.steps.flatMap((st) => (st.type === "translate" ? (st.highlight ?? []) : [])),
                     ...(lesson.exam?.passage_highlight ?? []).filter((h) => x.text.includes(h)),
                   ].filter((h) => !(lesson.exam?.passage_unhighlight ?? []).includes(h)),
@@ -1520,7 +1533,8 @@ export function createPolicySession(
       pointsReview: s.stage === "points" ? { title: s.message, lessonId: lesson.id, items: s.points } : null,
       highlight: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight ?? []) : [],
       signs: inLesson && !s.readingFirst && !s.praiseOnly ? (st.signs ?? []) : [],
-      roles: inLesson && !s.readingFirst ? s.roles : [],
+      // 다른 문장을 띄운 화면(문장 1·2 함께, 앞 문장 보기)에서는 지금 문장의 S·V 표시를 빼 둔다 — 엉뚱한 단어에 붙는다
+      roles: inLesson && !s.readingFirst && !(st.display && st.tag) ? s.roles : [],
       underline,
       highlightAlt: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight_alt ?? []) : [],
       readingFirst: inLesson && s.readingFirst,

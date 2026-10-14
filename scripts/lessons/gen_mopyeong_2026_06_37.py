@@ -12,6 +12,7 @@
 정답 ③ (B)-(C)-(A) (해설지로 확인 전). 오답률 자료 없음.
 pendulum, iteration, bifurcation은 시험지 아래 *로 풀어 준 단어 — 핵심 단어가 아니다.
 """
+import sys
 import copy
 import json
 import os
@@ -100,14 +101,14 @@ sentences = [
                    "이 글은 무엇을 설명하려고 장난감 이야기를 꺼냈을까요?",
                    [("o0", "장난감을 잘 파는 방법", False), ("o1", "chaos(혼돈)", True), ("o2", "자석의 힘", False)],
                    "첫 문장 'A good example of chaos'를 봐요. 장난감은 chaos의 예예요.",
-                   highlight=["A good example of chaos"]),
+                   highlight=["chaos"]),
             choice("g_next",
                    "주어진 글은 장난감이 어떻게 생겼는지로 끝나요. 다음에는 어떤 내용이 오면 자연스러울까요?",
                    [("o0", "그 추를 직접 놓아 보면 어떻게 움직이는지", True), ("o1", "혼돈이 생기려면 필요한 조건", False),
                     ("o2", "아무리 조심해도 달라진다는 말", False)],
                    "생김새를 설명했으니, 이제 그 장난감을 움직여 보는 이야기가 이어지기 쉬워요.",
                    why="아직 추가 어떻게 움직이는지 안 나왔어요. 조건이나 '아무리 조심해도'는 움직임을 본 다음에야 나올 수 있어요.",
-                   highlight=["a pendulum that swings back and forth between them"],
+                   highlight=["swings back and forth"],
                    tips=[{"label": "순서 문제 요령",
                           "text": "주어진 글의 마지막 문장이 다음 단락의 첫 문장과 이어져요. 단락 첫머리의 the, this, Nor 같은 말이 앞 내용을 가리켜요."}]),
         ],
@@ -158,7 +159,7 @@ sentences = [
                  "같은 자리에서 두 번 놓아도, 처음엔 같다가 곧 완전히 달라진대요. 이게 바로 chaos(혼돈)예요.",
                  panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/magnetic-pendulum.svg",
                         "alt": "자석 네 개가 정사각형으로 놓인 받침 위에서 추가 흔들린다. 같은 자리에서 두 번 놓았을 때 처음엔 같은 길이다가 곧 서로 다른 길로 갈라진다"},
-                 highlight=["at first be the same"], highlight_alt=["completely different"],
+                 highlight=["be the same"], highlight_alt=["completely different"],
                  point=POINTS["b2_change"]),
         ],
     },
@@ -168,7 +169,7 @@ sentences = [
         "glosses": [g("In fact", "사실"), g("the pattern of its movement", "그것의 움직임 패턴"), g("chaotic", "혼돈 상태의")],
         "steps": [
             show("b3_chaotic", "In fact(사실), 그 움직임이 chaotic(혼돈 상태)이래요. 주어진 글의 chaos와 이어져요.",
-                 button="다음 문장", highlight=["the pattern of its movement is chaotic"]),
+                 button="다음 문장", highlight=["chaotic"]),
         ],
     },
     {
@@ -220,12 +221,12 @@ sentences = [
                     ("o2", "모든 반복은 혼돈이 된다", False)],
                    "not all은 '모두 ~인 것은 아니다'예요. 일부만 그렇다는 말이에요.",
                    why="not all은 '모두가 ~인 것은 아니다'예요. 어떤 반복은 혼돈이 되고, 어떤 반복은 안 된다는 말이에요.",
-                   highlight=["not all iteration leads to chaos"],
+                   highlight=["not all"],
                    tips=[{"label": "not all", "mark": "not all",
                           "text": "'모두 ~인 것은 아니다'(부분 부정)예요. '전부 아니다'가 아니에요."}]),
             show("c2_next",
-                 "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요.",
-                 button="다음 문장", highlight=["not all iteration leads to chaos"]),
+                 "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요. 앞에서 읽은 (A)가 바로 그 조건이었죠.",
+                 button="다음", highlight=["not all"]),
         ],
     },
     {
@@ -248,7 +249,7 @@ sentences = [
                     ("o1", "추를 놓아 보라는 말", False), ("o2", "장난감이 어떻게 생겼는지", False)],
                    "the iteration의 the는 앞에서 말한 그 반복이에요. iteration이 먼저 나온 단락을 찾아봐요.",
                    why="'the iteration'은 앞에 나온 iteration이에요. (C)의 끝 'not all iteration leads to chaos' 뒤에 '혼돈을 만들려면 이래야 해요'가 이어져요.",
-                   highlight=["In order to produce chaos, the iteration"], method=1),
+                   highlight=["produce chaos", "the iteration"], method=1),
         ],
     },
     {
@@ -269,7 +270,7 @@ sentences = [
                    tips=[{"label": "Nor + 동사 + 주어", "mark": "Nor are",
                           "text": "Nor가 문장 앞에 오면 '~도 아니다'이고, 뒤의 순서가 바뀌어요(are all nonlinear systems). 앞에도 부정이 있어야 써요."}]),
             show("a2_link",
-                 "Nor는 앞에 부정이 있어야 써요. (C)의 'not all iteration'에 이어 '비선형 체계도 다 그런 건 아니다'라고 한 번 더 좁혀요.",
+                 "Nor는 앞에 부정이 있어야 써요. 그러니 (A) 바로 앞 단락은 '모두 ~인 것은 아니다' 같은 부정으로 끝나야 해요.",
                  highlight=["Nor are all nonlinear systems chaotic"], point=POINTS["a2_nor"]),
         ],
     },
@@ -292,6 +293,33 @@ sentences = [
         ],
     },
 ]
+
+# 시험지 순서대로 (A)→(B)→(C) — 실제 글 순서(정답)로 읽으면 학생이 답을 미리 안다 (2026-10-14 선생님)
+_given, _rest = sentences[0], sentences[1:]
+_part = lambda t: next(p for p in "ABC" if t.startswith(f"({p})"))
+_order, _cur = [], None
+for s_ in _rest:
+    if s_["text"][:3] in ("(A)", "(B)", "(C)"):
+        _cur = _part(s_["text"])
+    _order.append((_cur, s_))
+_rest = [s_ for _, s_ in sorted(_order, key=lambda x: "ABC".index(x[0]))]
+# 마무리(순서 고르러 가기)는 맨 끝 문장(C)으로
+_go = next(st for s_ in _rest for st in s_["steps"] if st["id"] == "a_go")
+for s_ in _rest:
+    s_["steps"] = [st for st in s_["steps"] if st["id"] != "a_go"]
+_rest[-1]["steps"].append(_go)
+# 마무리가 빠진 (A) 끝 문장 — 열쇠 문장이 아니니 한 줄 정리만
+for s_ in _rest:
+    if not s_["steps"]:
+        s_["steps"] = [show("a3_note", "그 지점(분기점)에 이르기 전에는 꽤 질서 있게 움직일 수도 있대요.", button="다음 문장")]
+# (A) 첫 문장 앞에 「시험지 순서라 어색할 수 있다」
+_rest[0]["steps"].insert(0, show("paper_order",
+    "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 실제 글의 순서와 달라서 단락 사이가 어색하게 이어질 수 있어요. 그 어색한 곳이 바로 순서의 단서예요.",
+    button="(A)부터 읽어 볼게요", before_read=True, method=1))
+OLD_IDS = {s_["text"]: s_["id"] for s_ in _rest}
+sentences = [_given] + _rest
+for i, s_ in enumerate(sentences, 1):
+    s_["id"] = i
 
 OPTIONS = [
     ("1", "(A)-(C)-(B)", False), ("2", "(B)-(A)-(C)", False), ("3", "(B)-(C)-(A)", True),
@@ -328,8 +356,9 @@ lesson = {
     "method": {"type": "order", "labels": ["단락 요지 잡기", "연결 단서 찾기"], "intro_times": 3},
     "read_button": "분석하러 갈게요",
     "read_first": True,
+    "images": {"topic": {"src": "/assets/topic-chaos.svg", "alt": "칠판: Chaos(혼돈) — 같은 출발에서 다른 길로 갈라지는 두 선", "kind": "drawing"}},
     "intro": [
-        {"id": "topic", "type": "say", "button": "네",
+        {"id": "topic", "type": "say", "button": "네", "image": "topic",
          "brief": {"say": "같은 자리에서 추를 두 번 놓으면 똑같이 움직일까요? 이번 글은 혼돈(chaos)을 장난감으로 설명해요."}},
         {"id": "method1", "type": "say", "button": "좋아요",
          "brief": {"say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. the, Nor 같은 말이 무엇을 받는지 찾아볼게요."}},
@@ -363,6 +392,11 @@ for s_ in sentences:
             if c_ not in have:
                 s_["glosses"].insert(0, g(c_, CHUNKS[c_]))
                 have.add(c_)
+
+# 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from story_boards import add_story_boards  # noqa: E402
+add_story_boards(ID, lesson["sentences"])
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

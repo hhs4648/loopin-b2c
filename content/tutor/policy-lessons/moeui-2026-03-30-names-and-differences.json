@@ -19,6 +19,11 @@
   "read_button": "분석하러 갈게요",
   "read_first": true,
   "images": {
+    "topic": {
+      "src": "/assets/topic-names.svg",
+      "alt": "칠판: Name(이름) → Differences(차이)는 흐려진다",
+      "kind": "drawing"
+    },
     "method": {
       "src": "/assets/vocab-method.svg",
       "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기",
@@ -27,6 +32,15 @@
   },
   "intro_board": "method",
   "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "이름을 붙이면 무엇이 사라질까요? 이번 글은 이름 붙이기와 하나하나의 차이를 다뤄요."
+      }
+    },
     {
       "id": "method1",
       "type": "say",
@@ -470,7 +484,8 @@
             }
           },
           "highlight": [
-            "abstract away from its particularities"
+            "abstract away",
+            "particularities"
           ],
           "faded": [
             "that is not a proper name"
@@ -815,7 +830,7 @@
             "say": "그래서 ①differences는 문맥에 맞아요. 이름은 하나하나의 차이를 빠뜨린다는 1문장 요지와 그대로 이어지거든요."
           },
           "method": 2,
-          "button": "다음 문장",
+          "button": "다음",
           "panel": {
             "kind": "groups",
             "title": "단어 지도",
@@ -861,6 +876,36 @@
           "highlight": [
             "①differences"
           ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🏷️",
+                "en": "name → abstract away",
+                "ko": "이름을 붙이면 하나하나의 특징이 지워져요",
+                "fresh": true
+              },
+              {
+                "label": "문장 2~3",
+                "icon": "🌼",
+                "en": "daisies · clover · flowers · lawn",
+                "ko": "이 네 이름에는 서로 다른 점이 안 담겨요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -1106,7 +1151,7 @@
             "say": "'Lawn'도 2문장의 네 이름 중 하나라서 왼쪽 그룹이에요."
           },
           "method": 1,
-          "button": "다음 문장",
+          "button": "다음",
           "panel": {
             "kind": "groups",
             "title": "단어 지도",
@@ -1155,6 +1200,43 @@
               ]
             },
             "caption": "'잔디'도 이름"
+          }
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🏷️",
+                "en": "name → abstract away",
+                "ko": "이름을 붙이면 하나하나의 특징이 지워져요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2~3",
+                "icon": "🌼",
+                "en": "daisies · clover · flowers · lawn",
+                "ko": "이 네 이름에는 서로 다른 점이 안 담겨요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🌸",
+                "en": "Flower · Lawn",
+                "ko": "여러 색 꽃, 여러 풀과 풀 아닌 식물이 이름 하나에 다 들어가요",
+                "fresh": true
+              }
+            ]
           }
         }
       ]
@@ -2028,7 +2110,7 @@
             "say": "'Not so'는 '그렇지 않다'예요. 그래서 8문장과 9문장은 서로 반대 관계예요."
           },
           "method": 1,
-          "button": "다음 문장",
+          "button": "다음",
           "panel": {
             "kind": "contrast",
             "title": "Not so → 반대 관계",
@@ -2045,6 +2127,57 @@
           "highlight": [
             "Not so"
           ]
+        },
+        {
+          "id": "story_9",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🏷️",
+                "en": "name → abstract away",
+                "ko": "이름을 붙이면 하나하나의 특징이 지워져요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2~3",
+                "icon": "🌼",
+                "en": "daisies · clover · flowers · lawn",
+                "ko": "이 네 이름에는 서로 다른 점이 안 담겨요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🌸",
+                "en": "Flower · Lawn",
+                "ko": "여러 색 꽃, 여러 풀과 풀 아닌 식물이 이름 하나에 다 들어가요",
+                "fresh": false
+              },
+              {
+                "label": "문장 6~7",
+                "icon": "🔍",
+                "en": "zoom in → all different",
+                "ko": "가까이 보면 다 다르지만, 얼핏 보면 한 카펫 같아요",
+                "fresh": true
+              },
+              {
+                "label": "문장 8~9",
+                "icon": "⚽",
+                "en": "daily life ↔ groundskeeper",
+                "ko": "보통은 차이를 신경 안 써도 되지만, 경기장 관리인에겐 중요해요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -2281,7 +2414,7 @@
             }
           },
           "highlight": [
-            "its own distinct life history"
+            "distinct"
           ],
           "faded": [
             ", with infinite memory,"
@@ -2518,7 +2651,7 @@
             }
           },
           "highlight": [
-            "⑤co-categorized with all its fellows"
+            "⑤co-categorized"
           ],
           "faded": [
             ", with infinite memory,",
@@ -2761,6 +2894,64 @@
           "highlight": [
             "could"
           ]
+        },
+        {
+          "id": "story_11",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🏷️",
+                "en": "name → abstract away",
+                "ko": "이름을 붙이면 하나하나의 특징이 지워져요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2~3",
+                "icon": "🌼",
+                "en": "daisies · clover · flowers · lawn",
+                "ko": "이 네 이름에는 서로 다른 점이 안 담겨요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🌸",
+                "en": "Flower · Lawn",
+                "ko": "여러 색 꽃, 여러 풀과 풀 아닌 식물이 이름 하나에 다 들어가요",
+                "fresh": false
+              },
+              {
+                "label": "문장 6~7",
+                "icon": "🔍",
+                "en": "zoom in → all different",
+                "ko": "가까이 보면 다 다르지만, 얼핏 보면 한 카펫 같아요",
+                "fresh": false
+              },
+              {
+                "label": "문장 8~9",
+                "icon": "⚽",
+                "en": "daily life ↔ groundskeeper",
+                "ko": "보통은 차이를 신경 안 써도 되지만, 경기장 관리인에겐 중요해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 10~11",
+                "icon": "♾️",
+                "en": "infinite mind → its own name",
+                "ko": "끝없는 기억이 있다면 풀잎마다 이름을 붙일 수 있어요",
+                "fresh": true
+              }
+            ]
+          }
         },
         {
           "id": "s11_end",

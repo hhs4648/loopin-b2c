@@ -11,6 +11,7 @@ import { isSaved, loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab
 import { lessonIdOfSentence } from "../tutor/vocabTest";
 import type { UiObservation } from "../tutor/policy/types";
 import { StudyPanelView } from "./StudyPanel";
+import { noteTipOpened, takeTipShow } from "../tutor/tipExposure";
 import { BoardDrawer, isBoardPanel } from "./BoardDrawer";
 import { PassageFull } from "./PassageFull";
 import { NEXT_SENTENCE_CMD, PICK_CMD, PREV_SENTENCE_CMD } from "../tutor/policy/session";
@@ -244,6 +245,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           emphasis={view.emphasis ?? []}
           faded={view.faded ?? []}
           shaded={view.shaded ?? []}
+          senses={peeked || alt ? [] : (view.senses ?? [])}
           onLookup={(word) => onObserve?.({ kind: "vocab_click", word })}
         />
         </div>
@@ -284,6 +286,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           concepts={view.concepts ?? []}
           onMark={setTipMark}
           onHint={() => onObserve?.({ kind: "hint_open" })}
+          appearance={`${view.sentence}|${(view.highlight ?? []).join()}|${(view.highlightAlt ?? []).join()}`}
         />
       ) : null}
 
@@ -332,6 +335,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
                 concepts={NO_CONCEPTS}
                 onMark={setTipMark}
                 onHint={() => onObserve?.({ kind: "hint_open" })}
+                appearance={`${view.sentence}|${view.message}`}
               />
             ) : null}
             <div className={`bubble-card${view.effect === "light" ? " lit" : ""}${view.celebrate ? " cheer" : ""}`}>
@@ -411,7 +415,11 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           </div>
         ) : null}
         {view.allowInput !== false && view.translateWhy ? (
-          <WhyChip key={view.translateWhy.label + (view.highlight ?? []).join()} why={view.translateWhy} />
+          <WhyChip
+            key={view.translateWhy.label + (view.highlight ?? []).join()}
+            why={view.translateWhy}
+            appearance={`${view.sentence}|${(view.highlight ?? []).join()}`}
+          />
         ) : null}
         {view.allowInput === false ? null : (
           // 키보드가 올라오면 위 문장이 밀려나므로, 해석할 영어를 입력창 바로 위에 다시 보여 준다
@@ -461,7 +469,10 @@ function GlossSentence({
   faded,
   shaded,
   onLookup,
+  senses = [],
 }: {
+  /** 다의 기능어의 그 자리 쓰임 — 문장에 나온 순서대로 */
+  senses?: NonNullable<TutorView["senses"]>;
   sentence: string;
   nouns: TutorView["properNouns"];
   glosses: TutorView["glosses"];
@@ -484,7 +495,7 @@ function GlossSentence({
   const tipRef = useRef<HTMLSpanElement>(null);
   const [shift, setShift] = useState(0);
   // 구절 뜻은 단어마다 나눠 보인다 — 지금 통째로 고르는 후보 구절만 그대로
-  const spans = glossSpans(sentence, glossesFor(splitPhraseGlosses(glosses, pick?.candidates ?? []), nouns));
+  const spans = withSenses(glossSpans(sentence, glossesFor(splitPhraseGlosses(glosses, pick?.candidates ?? []), nouns)), senses);
   const marked = highlightRanges(sentence, highlight);
   const markedAlt = highlightRanges(sentence, highlightAlt);
   const markedUl = highlightRanges(sentence, underline);
@@ -613,32 +624,27 @@ function GlossSentence({
             style={shift ? { transform: `translateX(calc(-50% + ${shift}px))` } : undefined}
           >
             {/*
-              윗줄 = 단어 하나의 뜻(단어 카드), 아랫줄 = 그 단어가 들어간 덩어리(숙어 카드).
-              별은 따로 — 뜻 왼쪽, 빈 별에서 누르면 노랗게 찬다
+              한 줄로 — 단어 뜻(진하게) 옆에 그 단어가 들어간 덩어리 뜻(연하게). 별은 단어 카드로 저장한다.
+              단어 뜻이 없는 말(to, of …)은 덩어리 뜻이 본문이고, 별은 덩어리(숙어) 카드로
             */}
-            {span.gloss.ko ? (
-              <span className="gloss-line">
-                <VocabStar
-                  vocab={vocab}
-                  en={span.gloss.en}
-                  onToggle={() => setVocab(toggleVocab(vocab, { en: span.gloss!.en, ko: span.gloss!.ko, kind: "word", sentence, source: lessonIdOfSentence(sentence) }))}
-                />
-                <GlossText ko={span.gloss.ko} />
-              </span>
-            ) : null}
-            {span.gloss.phrase && span.gloss.phrase.ko !== span.gloss.ko ? (
-              <span className={`gloss-line gloss-phrase${span.gloss.ko ? "" : " only"}`}>
-                <VocabStar
-                  vocab={vocab}
-                  en={span.gloss.phrase.en}
-                  onToggle={() => setVocab(toggleVocab(vocab, { en: span.gloss!.phrase!.en, ko: span.gloss!.phrase!.ko, kind: "phrase", sentence, source: lessonIdOfSentence(sentence) }))}
-                />
-                <span className="gloss-ko">
-                  {span.gloss.ko ? <small className="gloss-phrase-tag">덩어리</small> : null}
-                  <b className="gloss-phrase-en">{span.gloss.phrase.en}</b> {span.gloss.phrase.ko}
-                </span>
-              </span>
-            ) : null}
+            {(() => {
+              const g = span.gloss!;
+              const asPhrase = !g.ko && !!g.phrase;
+              const entry = asPhrase
+                ? { en: g.phrase!.en, ko: g.phrase!.ko, kind: "phrase" as const }
+                : { en: g.en, ko: g.ko, kind: "word" as const };
+              const note = !asPhrase && g.phrase && g.phrase.ko !== g.ko ? `${g.phrase.en} = ${g.phrase.ko}` : null;
+              return (
+                <>
+                  <VocabStar
+                    vocab={vocab}
+                    en={entry.en}
+                    onToggle={() => setVocab(toggleVocab(vocab, { ...entry, sentence, source: lessonIdOfSentence(sentence) }))}
+                  />
+                  <GlossText ko={asPhrase ? `${g.phrase!.en} = ${g.phrase!.ko}` : note ? `${g.ko} · ${note}` : g.ko} />
+                </>
+              );
+            })()}
           </span>
         ) : null}
       </span>,
@@ -657,7 +663,10 @@ function TipChips({
   concepts,
   onMark,
   onHint,
+  appearance,
 }: {
+  /** 이 화면을 가리키는 키 — 같은 화면에서 다시 그려져도 한 번으로 센다 */
+  appearance: string;
   tips: NonNullable<TutorView["tips"]>;
   concepts: NonNullable<TutorView["concepts"]>;
   /** 연 Tip이 문장에서 가리키는 단어 — 닫으면 null */
@@ -665,15 +674,21 @@ function TipChips({
   /** 「힌트」 칩을 열었다 — 세션에 알린다 */
   onHint: () => void;
 }) {
+  // 💡 참고 칩은 같은 칩을 세 번(안 누르면 다섯 번)까지만 — 힌트 칩은 그대로
+  const shownTips = useMemo(
+    () => tipList.filter((t) => t.hint || takeTipShow(t.label, appearance)),
+    [tipList, appearance],
+  );
   const tips = [
     ...concepts.map((c) => ({ icon: "❓", label: c.en, text: `${c.title} ${c.text}` })),
-    ...tipList.map((t) => ({ icon: "💡", ...t })),
+    ...shownTips.map((t) => ({ icon: "💡", ...t })),
   ] as { icon: string; label: string; text: string; mark?: string; hint?: boolean }[];
   const [open, setOpen] = useState<number | null>(null);
   useEffect(() => {
     setOpen(null);
     onMark(null);
   }, [tipList, concepts]); // eslint-disable-line react-hooks/exhaustive-deps
+  if (!tips.length) return null;
   return (
     <div className="tip-chips">
       <div className="tip-row">
@@ -688,6 +703,7 @@ function TipChips({
               setOpen(next);
               onMark(next == null ? null : (tips[next]!.mark ?? null));
               if (next != null && tips[next]!.hint) onHint();
+              if (next != null && tips[next]!.icon === "💡" && !tips[next]!.hint) noteTipOpened(tips[next]!.label);
             }}
           >
             {tip.icon} {tip.label}
@@ -700,11 +716,22 @@ function TipChips({
 }
 
 /** 「보고 쓸 부분」 위 💡 칩 — 누르면 참고 설명이 열린다 (예: 왜 핵심어만 보나요?) */
-function WhyChip({ why }: { why: { label: string; text: string } }) {
+function WhyChip({ why, appearance }: { why: { label: string; text: string }; appearance: string }) {
   const [open, setOpen] = useState(false);
+  // 같은 칩은 세 번(안 누르면 다섯 번)까지만
+  const [show] = useState(() => takeTipShow(why.label, appearance));
+  if (!show) return null;
   return (
     <div className="why-chip">
-      <button type="button" className={`tip-chip${open ? " on" : ""}`} aria-expanded={open} onClick={() => setOpen(!open)}>
+      <button
+        type="button"
+        className={`tip-chip${open ? " on" : ""}`}
+        aria-expanded={open}
+        onClick={() => {
+          if (!open) noteTipOpened(why.label);
+          setOpen(!open);
+        }}
+      >
         💡 {why.label}
       </button>
       {open ? <div className="info-pop">{why.text}</div> : null}
@@ -874,7 +901,10 @@ const OPENING = /^[(“‘①②③④⑤]$/;
 function highlightRanges(sentence: string, phrases: string[]): [number, number][] {
   const ranges: [number, number][] = [];
   for (const phrase of phrases) {
-    const from = sentence.indexOf(phrase);
+    // 칠하기는 핵심 단어 하나만 적을 때가 많다 — 단어 안(has 속 as)에서 잡히지 않게 단어 경계로
+    const esc = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const m = new RegExp(`(?<![A-Za-z])${esc}(?![A-Za-z])`).exec(sentence);
+    const from = m ? m.index : sentence.indexOf(phrase);
     if (from >= 0) ranges.push([from, from + phrase.length]);
   }
   return ranges;
@@ -904,6 +934,37 @@ function VocabStar({ vocab, en, onToggle }: { vocab: VocabEntry[]; en: string; o
       <StarIcon filled={on} />
     </button>
   );
+}
+
+/**
+ * 다의 기능어(to, for, that …)에 그 자리 쓰임을 붙인다. 문장에 나온 순서대로 짝짓는다 —
+ * 덩어리 칸(찾기 후보) 안에 든 것도 세어야 뒤의 순서가 맞는다. 뜻이 없던 칸도 누를 수 있게 된다
+ */
+function withSenses(spans: ReturnType<typeof glossSpans>, senses: NonNullable<TutorView["senses"]>) {
+  if (!senses.length) return spans;
+  const queue = new Map<string, typeof senses>();
+  for (const x of senses) queue.set(x.word.toLowerCase(), [...(queue.get(x.word.toLowerCase()) ?? []), x]);
+  const seen = new Map<string, number>();
+  return spans.map((span) => {
+    const words = span.text.match(/[A-Za-z]+/g) ?? [];
+    if (words.length === 1) {
+      const key = words[0]!.toLowerCase();
+      const list = queue.get(key);
+      if (list) {
+        const n = seen.get(key) ?? 0;
+        seen.set(key, n + 1);
+        const x = list[n];
+        return x ? { ...span, gloss: { en: words[0]!, ko: `${x.sense} · ${x.usage}`, sense: true } } : span;
+      }
+      return span;
+    }
+    // 여러 단어 칸 — 안에 든 기능어도 세기만 한다
+    for (const w of words) {
+      const key = w.toLowerCase();
+      if (queue.has(key)) seen.set(key, (seen.get(key) ?? 0) + 1);
+    }
+    return span;
+  });
 }
 
 function GlossText({ ko }: { ko: string }) {

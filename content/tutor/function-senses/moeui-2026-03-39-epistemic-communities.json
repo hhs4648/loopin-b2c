@@ -1,0 +1,108 @@
+{
+ "1": [
+  {
+   "word": "for",
+   "phrase": "for most outsiders",
+   "sense": "~에게는",
+   "usage": "전치사 for + 명사 (대상)"
+  },
+  {
+   "word": "which",
+   "phrase": "behind which such forms",
+   "sense": "그 뒤에",
+   "usage": "전치사 + 관계대명사 which (앞 명사 the veil을 꾸밈)"
+  },
+  {
+   "word": "which",
+   "phrase": "skills, which often take",
+   "sense": "그리고 그것은",
+   "usage": "콤마 + 관계대명사 which (앞 내용을 이어서 설명)"
+  },
+  {
+   "word": "that",
+   "phrase": "information that is being shared",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "2": [
+  {
+   "word": "To",
+   "phrase": "To acquire expert knowledge",
+   "sense": "~하기 위해",
+   "usage": "to + 동사원형 (목적)"
+  },
+  {
+   "word": "to",
+   "phrase": "needs to become",
+   "sense": "~하는 것을",
+   "usage": "to + 동사원형 (need의 목적어)"
+  },
+  {
+   "word": "for",
+   "phrase": "for which I will use",
+   "sense": "~에 대해",
+   "usage": "전치사 for + which (for which = 그 집단에 대해)"
+  },
+  {
+   "word": "which",
+   "phrase": "for which",
+   "sense": "그것(앞 명사)",
+   "usage": "전치사 + 관계대명사 which (앞 명사 group을 받음)"
+  }
+ ],
+ "5": [
+  {
+   "word": "for",
+   "phrase": "for new members",
+   "sense": "~에게",
+   "usage": "전치사 for + 명사 (대상)"
+  },
+  {
+   "word": "that",
+   "phrase": "fears that specialized knowledge",
+   "sense": "~라는",
+   "usage": "동격 that (fears that + 문장 = ~라는 두려움)"
+  }
+ ],
+ "6": [
+  {
+   "word": "but",
+   "phrase": "but on the whole",
+   "sense": "그러나",
+   "usage": "접속사 but — 뒤가 중요한 말"
+  },
+  {
+   "word": "to",
+   "phrase": "shifted to openness",
+   "sense": "~로",
+   "usage": "전치사 to + 명사 (방향)"
+  },
+  {
+   "word": "to",
+   "phrase": "to some extent",
+   "sense": "어느 정도",
+   "usage": "to some extent = 어느 정도는"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "to make certain forms",
+   "sense": "~하기 위해",
+   "usage": "to + 동사원형 (목적)"
+  },
+  {
+   "word": "as",
+   "phrase": "as “accessible”",
+   "sense": "~만큼",
+   "usage": "as ~ as possible = 가능한 한 ~하게 (앞 as)"
+  },
+  {
+   "word": "as",
+   "phrase": "as is realistically possible",
+   "sense": "~만큼",
+   "usage": "as ~ as 의 뒤 as"
+  }
+ ]
+}

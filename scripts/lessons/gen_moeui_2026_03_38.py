@@ -10,6 +10,7 @@
 정답 ③. 많이 고른 오답 ④ 34.1% (정답 37.7%와 거의 같다) — 'Instead, it offers glue' 뒤에 넣은 학생이 많다.
 그러면 Instead의 it이 바로 앞 문장의 language가 되어 말이 안 된다.
 """
+import sys
 import copy
 import json
 import os
@@ -141,7 +142,7 @@ sentences = [
                     ("o2", "제스처는 말과 동시에 만들어진다", True)],
                    "'at the same time with speech'를 봐요.",
                    why="'systematically made at the same time with speech', 말과 동시에 체계적으로 만들어진대요. 그래서 둘이 함께 표현한대요(co-expressive).",
-                   highlight=["at the same time with speech"],
+                   highlight=["at the same time"],
                    tips=[{"label": "hearing people", "mark": "hearing people",
                           "text": "여기서 hearing은 '듣는 중인'이 아니라 '들을 수 있는'이에요. hearing people은 청각 장애가 없는 사람, 청인이에요."}],
                    method=1),
@@ -181,7 +182,7 @@ sentences = [
                    [("o0", "사건을 그림으로 그리게 한다", False), ("o1", "완료인지 진행인지 꼭 고르게 한다", True),
                     ("o2", "아무것도 고르지 않게 한다", False)],
                    "'one must decide if the event has been completed or is ongoing'을 봐요.",
-                   highlight=["one must decide if the event has been completed or is ongoing"],
+                   highlight=["decide", "completed or is ongoing"],
                    method=1),
         ],
     },
@@ -196,7 +197,7 @@ sentences = [
                    [("o0", LANG, True), ("o1", GEST, False)],
                    "'This kind of choice is characteristic of language'예요.",
                    panel={**board(["categorical"], ["imagistic"]), "sort": {"words": ["choice"], "left": LANG, "right": GEST}},
-                   highlight=["This kind of choice is characteristic of language"], method=1),
+                   highlight=["This kind of choice", "language"], method=1),
         ],
     },
     {
@@ -211,7 +212,7 @@ sentences = [
                    [("o0", "언어 (language)", False), ("o1", "제스처 (gesture)", True), ("o2", "선택 (choice)", False)],
                    "언어 요소들(linguistic elements)을 묶어 주는 접착제예요. 언어가 자기를 묶을 리는 없어요.",
                    why="접착제(glue)처럼 언어 요소들을 묶어 주는 건 언어 바깥의 것이에요. Instead(대신에)는 선택을 주지 않는 쪽이 대신 하는 일이에요.",
-                   highlight=["Instead, it offers a kind of glue"], method=1),
+                   highlight=["Instead", "glue"], method=1),
             choice("s5_need",
                    "그럼 'Instead, it(제스처)'이 나오려면 바로 앞에 무엇이 있어야 할까요?",
                    [("o0", "언어의 선택 이야기", False), ("o1", "접착제 이야기", False),
@@ -237,7 +238,7 @@ sentences = [
                    [("o0", "서로 중복되지 않고 각자 다른 일을 한다", True), ("o1", "같은 말을 두 번 한다", False),
                     ("o2", "하나가 다른 하나의 번역이다", False)],
                    "'not redundant nor … a translation'이에요. not A nor B는 'A도 아니고 B도 아니다'예요.",
-                   highlight=["speech and gesture are not redundant nor is one a “translation” of the other"],
+                   highlight=["not redundant", "nor"],
                    tips=[{"label": "not A nor B", "mark": "nor",
                           "text": "'A도 아니고 B도 아니다'예요. nor 뒤에서는 주어와 동사 순서가 바뀌어요(nor is one …)."}],
                    method=1),
@@ -253,7 +254,7 @@ sentences = [
                    "생각을 표현하는 최소 단위는 무엇이래요?",
                    [("o0", "말 하나", False), ("o1", "제스처 하나", False), ("o2", "말과 제스처의 결합", True)],
                    "'a combination of the two'를 봐요. the two는 말과 제스처예요.",
-                   highlight=["a combination of the two"], method=1),
+                   highlight=["combination"], method=1),
             show("s7_go",
                  "언어는 고르게 하고(categorical), 제스처는 묶어 줘요(imagistic). 이제 주어진 문장이 들어갈 곳을 골라 봐요.",
                  button="문제 풀러 갈게요",
@@ -269,7 +270,7 @@ exam = {
     # 보기 글이 「… 앞」뿐이라 숫자 ①~⑤만 가로로 보인다
     "numbers_only": True,
     # 답 고르기 화면 — 지문 전체에 칠해 둘 핵심어 (①~⑤ 자리를 찾는 단서)
-    "passage_highlight": ["gesture is different from language", "such choices", "This kind of choice is characteristic of language", "Instead, it offers a kind of glue"],
+    "passage_highlight": ["different from language", "such choices", "This kind of choice", "language", "Instead", "glue"],
     "sentence": 1,
     "analysis_first": True,
     "glosses": [],
@@ -304,10 +305,10 @@ lesson = {
     "method": {"type": "sentence_insertion", "labels": ["주어진 문장 단서 찾기", "앞에 올 내용 예측하기", "흐름 끊기는 곳 찾기"], "intro_times": 3},
     "read_button": "분석하러 갈게요",
     "read_first": True,
-    "images": {"method": {"src": "/assets/insert-method.svg", "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기", "kind": "drawing"}},
+    "images": {"topic": {"src": "/assets/topic-gesture.svg", "alt": "칠판: Language(언어) + Gesture(제스처)", "kind": "drawing"}, "method": {"src": "/assets/insert-method.svg", "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기", "kind": "drawing"}},
     "intro_board": "method",
     "intro": [
-        {"id": "topic", "type": "say", "button": "네",
+        {"id": "topic", "type": "say", "button": "네", "image": "topic",
          "brief": {"say": "말할 때 손짓은 왜 저절로 나올까요? 이번 글은 언어와 제스처가 함께 생각을 표현하는 방식을 다뤄요."}},
         {"id": "method1", "type": "say", "button": "좋아요",
          "brief": {"say": "문장 넣기는 주어진 문장의 단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾아요."}},
@@ -328,6 +329,11 @@ lesson = {
     "sentences": sentences,
     "passage_on_try": True,
 }
+
+# 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from story_boards import add_story_boards  # noqa: E402
+add_story_boards(ID, lesson["sentences"])
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

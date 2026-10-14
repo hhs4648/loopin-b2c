@@ -19,6 +19,11 @@
   "read_button": "분석하러 갈게요",
   "read_first": true,
   "images": {
+    "topic": {
+      "src": "/assets/topic-experts.svg",
+      "alt": "칠판: Experts(전문가)와 Outsiders(외부인) 사이에 장막",
+      "kind": "drawing"
+    },
     "method": {
       "src": "/assets/insert-method.svg",
       "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기",
@@ -27,6 +32,15 @@
   },
   "intro_board": "method",
   "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "전문가의 지식은 밖에서 보면 왜 잘 안 보일까요? 이번 글은 전문가 집단과 외부인 사이의 지식 이야기예요."
+      }
+    },
     {
       "id": "method1",
       "type": "say",
@@ -54,18 +68,24 @@
       "(⑤)"
     ],
     "numbers_only": true,
-    "passage_highlight": [
+    "passage_keywords": [
       "Nonetheless",
-      "for most outsiders",
-      "even completely transparent practices",
+      "most outsiders",
+      "transparent practices",
+      "lift the veil",
+      "cannot make sense",
+      "acquire expert knowledge",
+      "member",
+      "group",
+      "newcomer",
+      "learns",
+      "experts",
+      "socialized",
       "kept secret",
-      "the ideal has shifted to openness",
-      "Other, more active strategies",
-      "accessible",
-      "but"
-    ],
-    "passage_unhighlight": [
-      "strict tests of loyalty"
+      "but",
+      "openness",
+      "more active strategies",
+      "accessible"
     ],
     "sentence": 1,
     "analysis_first": true,
@@ -607,7 +627,8 @@
           "method": 1,
           "highlight": [
             "lift the veil",
-            "behind which such forms of knowledge are hidden"
+            "knowledge",
+            "hidden"
           ]
         },
         {
@@ -626,7 +647,8 @@
             "alt": "집단 가운데 지식이 있고, 장막 바깥의 외부인이 손을 뻗지만 닿지 않는다"
           },
           "highlight": [
-            "behind which such forms of knowledge are hidden"
+            "knowledge",
+            "hidden"
           ]
         },
         {
@@ -1351,7 +1373,8 @@
             ]
           },
           "highlight": [
-            "one needs to become a member of the relevant group of knowledge bearers"
+            "one needs",
+            "member"
           ],
           "highlight_alt": [
             "To acquire expert knowledge"
@@ -1726,6 +1749,36 @@
           "highlight": [
             "(①)"
           ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🫥",
+                "en": "Nonetheless · outsiders",
+                "ko": "그래도 외부인은 훈련 없이는 지식을 이해할 수 없어요",
+                "fresh": true
+              },
+              {
+                "label": "첫 문장·①",
+                "icon": "👥",
+                "en": "become a member · learns from experts",
+                "ko": "전문 지식을 얻으려면 그 집단의 일원이 되어 배워야 해요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -2039,7 +2092,7 @@
           "method": 0,
           "button": "다음",
           "highlight": [
-            "epistemic communities were often kept secret",
+            "kept secret",
             "strict tests of loyalty"
           ],
           "tips": [
@@ -2083,6 +2136,43 @@
           "highlight": [
             "(③)"
           ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🫥",
+                "en": "Nonetheless · outsiders",
+                "ko": "그래도 외부인은 훈련 없이는 지식을 이해할 수 없어요",
+                "fresh": false
+              },
+              {
+                "label": "첫 문장·①",
+                "icon": "👥",
+                "en": "become a member · learns from experts",
+                "ko": "전문 지식을 얻으려면 그 집단의 일원이 되어 배워야 해요",
+                "fresh": false
+              },
+              {
+                "label": "②~③",
+                "icon": "🔒",
+                "en": "tests · kept secret",
+                "ko": "입회 시험이 있고, 옛날엔 집단을 비밀로 지켰어요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -2588,6 +2678,50 @@
           "highlight": [
             "(⑤)"
           ]
+        },
+        {
+          "id": "story_7",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🫥",
+                "en": "Nonetheless · outsiders",
+                "ko": "그래도 외부인은 훈련 없이는 지식을 이해할 수 없어요",
+                "fresh": false
+              },
+              {
+                "label": "첫 문장·①",
+                "icon": "👥",
+                "en": "become a member · learns from experts",
+                "ko": "전문 지식을 얻으려면 그 집단의 일원이 되어 배워야 해요",
+                "fresh": false
+              },
+              {
+                "label": "②~③",
+                "icon": "🔒",
+                "en": "tests · kept secret",
+                "ko": "입회 시험이 있고, 옛날엔 집단을 비밀로 지켰어요",
+                "fresh": false
+              },
+              {
+                "label": "④~⑤",
+                "icon": "🔓",
+                "en": "openness · more active strategies",
+                "ko": "지금은 개방이 이상이고, 더 적극적인 방법도 필요해요",
+                "fresh": true
+              }
+            ]
+          }
         },
         {
           "id": "s7_draft",

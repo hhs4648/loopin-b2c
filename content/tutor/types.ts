@@ -105,6 +105,8 @@ export type WordGloss = {
    * (inextricably → is inextricably associated with)
    */
   phrase?: { en: string; ko: string };
+  /** 기능어의 그 자리 쓰임 — 덩어리 뜻을 따로 붙이지 않는다 (뜻 · 쓰임) */
+  sense?: boolean;
 };
 
 export type LessonChunk = {

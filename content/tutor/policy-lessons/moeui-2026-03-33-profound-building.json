@@ -17,11 +17,19 @@
   },
   "read_button": "분석하러 갈게요",
   "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-building.svg",
+      "alt": "칠판: Building(건물) → Body(몸) + Mind(마음)",
+      "kind": "drawing"
+    }
+  },
   "intro": [
     {
       "id": "topic",
       "type": "say",
       "button": "네",
+      "image": "topic",
       "brief": {
         "say": "좋은 집은 왜 설명서 없이도 쓰기 편할까요? 이번 글은 건축과 사람의 몸과 마음을 다뤄요."
       }
@@ -361,7 +369,7 @@
           ],
           "method": 1,
           "highlight": [
-            "spatial choreography that guides action"
+            "guides action"
           ]
         },
         {
@@ -498,7 +506,7 @@
             }
           },
           "highlight": [
-            "patterns of movement and behavior"
+            "movement and behavior"
           ]
         },
         {
@@ -558,7 +566,7 @@
             }
           },
           "highlight": [
-            "experiential characteristics, perceptions, imageries, emotions and feelings"
+            "emotions and feelings"
           ]
         },
         {
@@ -689,10 +697,41 @@
             "say": "그래서 설계자가 짠 대본이 실제 사는 사람의 욕구와 꼭 맞아떨어져요. 설계자의 취향이 아니라 사는 사람이 기준이에요."
           },
           "method": 1,
-          "button": "다음 문장",
+          "button": "다음",
           "highlight": [
-            "resonates with the actual user/occupant’s natural and instinctual needs and intentions"
+            "resonates with",
+            "needs and intentions"
           ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🩰",
+                "en": "spatial choreography",
+                "ko": "건물은 춤 안무처럼 사람의 움직임과 느낌을 이끌어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "💭",
+                "en": "designer intuits",
+                "ko": "좋은 설계자는 사람이 원하는 걸 미리 느껴요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -769,7 +808,8 @@
           ],
           "method": 1,
           "highlight": [
-            "on behalf of the future dweller"
+            "on behalf of",
+            "dweller"
           ],
           "faded": [
             "While designing a house,"
@@ -861,7 +901,7 @@
           ],
           "method": 1,
           "highlight": [
-            "exactly where the occupant wishes to look out into the garden"
+            "where the occupant wishes"
           ]
         }
       ]
@@ -931,8 +971,52 @@
           ],
           "method": 1,
           "highlight": [
-            "where the dweller wishes to enter the floor above or below"
+            "where the dweller wishes"
           ]
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🩰",
+                "en": "spatial choreography",
+                "ko": "건물은 춤 안무처럼 사람의 움직임과 느낌을 이끌어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "💭",
+                "en": "designer intuits",
+                "ko": "좋은 설계자는 사람이 원하는 걸 미리 느껴요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "🏠",
+                "en": "lives in imagination",
+                "ko": "아직 없는 집에 상상으로 살아 봐요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5~6",
+                "icon": "🪟",
+                "en": "window · stairway",
+                "ko": "창과 계단이 사는 사람이 원하는 바로 그 자리에 있어요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -1009,7 +1093,7 @@
           ],
           "method": 1,
           "highlight": [
-            "as it reveals its very structure and use in a wordless manner"
+            "wordless"
           ],
           "tips": [
             {

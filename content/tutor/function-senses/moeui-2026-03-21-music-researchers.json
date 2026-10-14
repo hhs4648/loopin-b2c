@@ -1,0 +1,70 @@
+{
+ "3": [
+  {
+   "word": "for",
+   "phrase": "need for novelty",
+   "sense": "~에 대한",
+   "usage": "전치사 for + 명사 (need for ~ = ~에 대한 욕구)"
+  },
+  {
+   "word": "so",
+   "phrase": "so characteristic of",
+   "sense": "그토록, 아주",
+   "usage": "부사 so + 형용사"
+  },
+  {
+   "word": "that",
+   "phrase": "the idea that",
+   "sense": "~라는",
+   "usage": "동격 that (the idea that + 문장 = ~라는 생각)"
+  },
+  {
+   "word": "which",
+   "phrase": "in which case",
+   "sense": "그런",
+   "usage": "in which case = 그런 경우에는"
+  }
+ ],
+ "4": [
+  {
+   "word": "as",
+   "phrase": "just as technique is",
+   "sense": "~처럼, ~하듯이",
+   "usage": "접속사 as + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "in comparison to",
+   "sense": "~와",
+   "usage": "in comparison to = ~와 비교해서"
+  },
+  {
+   "word": "so",
+   "phrase": "— so never-ending progress",
+   "sense": "그래서, 그러므로",
+   "usage": "접속사 so (just as A, so B = A이듯이 B도)"
+  }
+ ],
+ "6": [
+  {
+   "word": "as",
+   "phrase": "offers itself as",
+   "sense": "~로서",
+   "usage": "전치사 as + 명사"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "owe it to themselves",
+   "sense": "~에게",
+   "usage": "전치사 to + 명사 (owe it to oneself = ~하는 게 마땅하다)"
+  },
+  {
+   "word": "to",
+   "phrase": "to become researchers",
+   "sense": "~하는 것",
+   "usage": "to + 동사원형 (owe it to oneself to ~ 의 내용)"
+  }
+ ]
+}

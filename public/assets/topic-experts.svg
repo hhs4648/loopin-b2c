@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 170" fill="none">
+  <!-- 3월 39번 도입 칠판: 전문가 — 외부인 -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <text x="170" y="30" text-anchor="middle" font-size="16" fill="#8a7f88">이번 글</text>
+    <rect x="18" y="52" width="128" height="66" rx="14" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="2.5"/>
+    <text x="82.0" y="87.0" text-anchor="middle" font-size="19" fill="#2f7d6c">Experts</text>
+    <text x="82.0" y="105.0" text-anchor="middle" font-size="12" fill="#2f7d6c">(전문가)</text>
+    <path d="M172 50 C180 66 166 82 174 98 C180 112 170 122 174 128 L184 128 C180 120 190 110 184 96 C178 80 190 66 182 50 Z" fill="#e9e4fb" stroke="#b4a2ea" stroke-width="2"/>
+    <rect x="206" y="52" width="116" height="66" rx="14" fill="#fff5f7" stroke="#ef7a93" stroke-width="2.5"/>
+    <text x="264.0" y="87.0" text-anchor="middle" font-size="19" fill="#c0455f">Outsiders</text>
+    <text x="264.0" y="105.0" text-anchor="middle" font-size="12" fill="#c0455f">(외부인)</text>
+    <text x="170" y="158" text-anchor="middle" font-size="14" fill="#5b4f57">전문가의 지식은 외부인에게 열려 있을까?</text>
+  </g>
+</svg>

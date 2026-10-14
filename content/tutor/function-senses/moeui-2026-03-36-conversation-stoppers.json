@@ -1,0 +1,170 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "argues that one benefit",
+   "sense": "~라고",
+   "usage": "접속사 that + 주어·동사 (argue의 내용)"
+  },
+  {
+   "word": "that",
+   "phrase": "is that they can serve",
+   "sense": "~라는 것",
+   "usage": "접속사 that + 주어·동사 (is의 보어)"
+  },
+  {
+   "word": "as",
+   "phrase": "serve as conversation-stoppers",
+   "sense": "~로서",
+   "usage": "전치사 as + 명사 (serve as ~ = ~의 역할을 하다)"
+  },
+  {
+   "word": "to",
+   "phrase": "is to bring",
+   "sense": "~하는 것",
+   "usage": "to + 동사원형 (is의 보어)"
+  },
+  {
+   "word": "to",
+   "phrase": "bring deliberations to a close",
+   "sense": "~로",
+   "usage": "bring ~ to a close = ~을 끝내다"
+  },
+  {
+   "word": "to",
+   "phrase": "able to ask",
+   "sense": "~할 수 있는",
+   "usage": "be able to + 동사원형"
+  },
+  {
+   "word": "for",
+   "phrase": "ask for justification",
+   "sense": "~을",
+   "usage": "ask for ~ = ~을 요구하다"
+  },
+  {
+   "word": "that",
+   "phrase": "a trait that has served",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "2": [
+  {
+   "word": "as",
+   "phrase": "as much a problem … as",
+   "sense": "~만큼이나",
+   "usage": "as much A as B = B만큼이나 A"
+  },
+  {
+   "word": "for",
+   "phrase": "a problem for our own",
+   "sense": "~에게, ~에",
+   "usage": "전치사 for + 명사 (대상)"
+  },
+  {
+   "word": "as",
+   "phrase": "as for our public",
+   "sense": "~만큼",
+   "usage": "as much A as B 의 뒤 as"
+  },
+  {
+   "word": "for",
+   "phrase": "for our public interpersonal ones",
+   "sense": "~에게, ~에",
+   "usage": "전치사 for + 명사 (대상)"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "suggests that it is",
+   "sense": "~라고",
+   "usage": "접속사 that + 주어·동사 (suggest의 내용)"
+  },
+  {
+   "word": "to",
+   "phrase": "useful to have",
+   "sense": "~하는 것이",
+   "usage": "to + 동사원형 (it is useful to ~ = ~하는 것이 쓸모 있다, 가주어 it)"
+  },
+  {
+   "word": "that",
+   "phrase": "items that, once introduced",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "4": [
+  {
+   "word": "That",
+   "phrase": "That would be morally wrong",
+   "sense": "그것은",
+   "usage": "지시대명사 that"
+  },
+  {
+   "word": "to",
+   "phrase": "appear to work",
+   "sense": "~하는 것처럼",
+   "usage": "appear to + 동사원형 = ~하는 것처럼 보이다"
+  }
+ ],
+ "5": [
+  {
+   "word": "for",
+   "phrase": "room for seeking",
+   "sense": "~할",
+   "usage": "전치사 for + -ing (need/room for ~ = ~할 필요·여지)"
+  },
+  {
+   "word": "if",
+   "phrase": "even if it is tempting",
+   "sense": "~라도",
+   "usage": "even if = 비록 ~라도"
+  },
+  {
+   "word": "that",
+   "phrase": "that’s all there is to it",
+   "sense": "그것",
+   "usage": "that’s all there is to it = 그게 다다 (숙어)"
+  },
+  {
+   "word": "to",
+   "phrase": "all there is to it",
+   "sense": "~에",
+   "usage": "that’s all there is to it = 그게 다다 (숙어)"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "The problem is that",
+   "sense": "~라는 것",
+   "usage": "접속사 that + 주어·동사 (is의 보어)"
+  },
+  {
+   "word": "but",
+   "phrase": "Okay, but what",
+   "sense": "하지만",
+   "usage": "접속사 but"
+  },
+  {
+   "word": "that",
+   "phrase": "justifies that",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞의 답)"
+  },
+  {
+   "word": "so",
+   "phrase": "do so endlessly",
+   "sense": "그렇게",
+   "usage": "do so = 그렇게 하다 (앞의 행동)"
+  },
+  {
+   "word": "to",
+   "phrase": "coming to a decision",
+   "sense": "~에",
+   "usage": "come to a decision = 결정을 내리다"
+  }
+ ]
+}

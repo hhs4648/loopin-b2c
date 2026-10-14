@@ -11,6 +11,7 @@ The problem)로 앞에 올 내용 예측하기 → 마지막에 순서를 고른
 정답 ④ (C)-(A)-(B). 많이 고른 오답 ③ (B)-(C)-(A) 25.7% · ② (B)-(A)-(C) 19.8% —
 주어진 글의 '도덕적 고려'와 (B)의 '도덕적으로 잘못'이 비슷해 보여 (B)로 바로 간 학생이 많다.
 """
+import sys
 import copy
 import json
 import os
@@ -92,12 +93,12 @@ sentences = [
                    [("o0", "대화를 시작하게 하는 역할", False), ("o1", "대화를 끝내 주는 역할", True), ("o2", "새로운 이유를 찾게 하는 역할", False)],
                    "콜론(:) 뒤 'their value is to bring deliberations to a close'를 봐요. close는 '끝'이에요.",
                    why="'conversation-stoppers'는 대화를 멈추는 것이에요. 콜론 뒤에서 'bring deliberations to a close', 고민을 끝낸대요.",
-                   highlight=["conversation-stoppers", "bring deliberations to a close"], method=0),
+                   highlight=["conversation-stoppers", "to a close"], method=0),
             choice("g_sign",
                    "'항상 이유를 요구할 수 있다(always able to ask for justification)'를 글쓴이는 좋게 볼까요, 나쁘게 볼까요?",
                    [("o0", "좋게 본다 (+)", True), ("o1", "나쁘게 본다 (−)", False)],
                    "'this is a trait that has served us well'을 봐요. served us well은 '우리에게 도움이 됐다'예요.",
-                   highlight=["always able to ask for justification", "has served us well"], method=0),
+                   highlight=["ask for justification", "has served us well"], method=0),
             show("g_turn",
                  "has served us well은 +예요. 순서 문제에서 이렇게 좋은 말로 끝나면, 다음엔 '그런데 문제는…' 같은 반전이 오기 쉬워요.",
                  button="다음",
@@ -122,6 +123,10 @@ sentences = [
                     g("as much", "~만큼이나 · as much A as B = B만큼 A도"), g("a problem", "문제"),
                     g("private deliberations", "사적인 고민"), g("public interpersonal ones", "다른 사람과의 공적인 고민")],
         "steps": [
+            # 시험지 순서대로 (A)→(B)→(C)를 읽는다 — 실제 글 순서가 아니라 어색할 수 있다고 한 번 알려 준다
+            show("paper_order",
+                 "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 실제 글의 순서와 달라서 단락 사이가 어색하게 이어질 수 있어요. 그 어색한 곳이 바로 순서의 단서예요.",
+                 button="(A)부터 읽어 볼게요", before_read=True, method=1),
             choice("a_before",
                    "(A)는 'This is … a problem'으로 시작해요. 그럼 (A) 앞에는 어떤 내용이 와야 할까요?",
                    [("o0", "어떤 '문제'에 대한 설명", True), ("o1", "문제를 멈추는 해결책", False), ("o2", "도덕적인 말의 예", False)],
@@ -147,7 +152,7 @@ sentences = [
                     ("o2", "공적인 토론 규칙", False)],
                    "콜론 뒤 'items that … stop any further deliberation in its tracks'를 봐요.",
                    why="콜론 뒤를 봐요. 'stop any further deliberation in its tracks', 더 이상의 고민을 그 자리에서 멈추게 하는 것이래요.",
-                   highlight=["stop any further deliberation in its tracks"],
+                   highlight=["stop", "in its tracks"],
                    faded=[", once introduced,"],
                    method=0),
         ],
@@ -183,7 +188,7 @@ sentences = [
                     ("o2", "다시 처음부터 고민한다", False)],
                    "'there is no need or room for seeking further justification'을 봐요.",
                    why="'no need or room for seeking further justification', 더 이상 이유를 찾을 필요도 여지도 없대요. 고민이 멈춰요.",
-                   highlight=["no need or room for seeking further justification"],
+                   highlight=["no need or room"],
                    tips=[{"label": "that’s all there is to it", "mark": "that’s all there is to it",
                           "text": "'그게 다야, 그저 그뿐이야'예요. 더 따질 게 없다는 말이에요."}],
                    method=0),
@@ -205,7 +210,7 @@ sentences = [
                     ("o2", "이유를 끝없이 물어서 결정을 못 하는 것", True)],
                    "대시(—) 뒤 'do so endlessly, never coming to a decision'을 봐요.",
                    why="좋은 답을 받아도 '그건 왜?'라고 또 물을 수 있대요. 그렇게 끝없이 물어서 결정을 못 하는 게 문제예요.",
-                   highlight=["we can potentially do so endlessly, never coming to a decision"],
+                   highlight=["endlessly", "never coming to a decision"],
                    method=0),
             choice("c_after",
                    "'The problem is that'으로 시작하는 (C)는 어떤 말 바로 뒤에 오면 자연스러울까요?",
@@ -263,8 +268,9 @@ lesson = {
     "method": {"type": "order", "labels": ["단락 요지 잡기", "연결 단서 찾기"], "intro_times": 3},
     "read_button": "분석하러 갈게요",
     "read_first": True,
+    "images": {"topic": {"src": "/assets/topic-why-stop.svg", "alt": "칠판: Why?(왜?)가 계속되다가 Morally wrong!(도덕적으로 잘못!) 표지판에서 멈춘다", "kind": "drawing"}},
     "intro": [
-        {"id": "topic", "type": "say", "button": "네",
+        {"id": "topic", "type": "say", "button": "네", "image": "topic",
          "brief": {"say": "왜 '그건 도덕적으로 잘못이야!' 한마디에 고민이 멈출까요? 이번 글은 끝없는 고민과 그걸 멈추는 말을 다뤄요."}},
         {"id": "method1", "type": "say", "button": "좋아요",
          "brief": {"say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. This, The problem 같은 말이 무엇을 받는지 찾아볼게요."}},
@@ -284,6 +290,11 @@ lesson = {
     "sentences": sentences,
     "passage_on_try": True,
 }
+
+# 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from story_boards import add_story_boards  # noqa: E402
+add_story_boards(ID, lesson["sentences"])
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

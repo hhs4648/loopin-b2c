@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { loadStudentState, saveStudentState, type StudentLevel } from "../tutor/policy/student-state";
 import type { LessonCollection, LessonSet } from "../../content/tutor/types";
 import { isDone, loadProgress, type Progress } from "../tutor/progress";
 import { loadNotes } from "../tutor/notes";
@@ -36,6 +38,9 @@ function doneLast(all: LessonSet[], progress: Progress): LessonSet[] {
   return [...todo, ...done];
 }
 
+/** 학생 단계 — 고 1~2등급 · 중 3~5등급 · 초 6~8등급 */
+const LEVELS: [StudentLevel, string][] = [["고", "1~2등급"], ["중", "3~5등급"], ["초", "6~8등급"]];
+
 type Props = {
   learnerName: string | null;
   /** 열어 둔 중분류. null이면 중분류 목록 */
@@ -57,6 +62,12 @@ export function LessonList({
 }: Props) {
   const progress = loadProgress();
   const vocabCount = loadVocab().length;
+  // 학생 단계 — 수업에서 보일 화면이 달라진다 (영어를 돕는 화면만). 정하지 않았으면 중으로 수업한다
+  const [level, setLevel] = useState<StudentLevel | undefined>(() => loadStudentState().level);
+  const pickLevel = (next: StudentLevel) => {
+    saveStudentState({ ...loadStudentState(), level: next });
+    setLevel(next);
+  };
   const noteCount = loadNotes().length;
 
   return (
@@ -119,6 +130,22 @@ export function LessonList({
               {learnerName ? `${learnerName}님, 오늘은 어떤 걸 볼까요?` : "오늘은 어떤 걸 볼까요?"}
             </p>
             <h1 className="home-title">수업 목록</h1>
+            <div className={`level-row${level ? "" : " unset"}`}>
+              <span className="level-label">{level ? "내 등급" : "최근 모의고사 영어 등급을 골라 주세요"}</span>
+              <div className="level-chips" role="group" aria-label="내 영어 등급">
+                {LEVELS.map(([lv, label]) => (
+                  <button
+                    key={lv}
+                    type="button"
+                    className={`level-chip${level === lv ? " on" : ""}`}
+                    aria-pressed={level === lv}
+                    onClick={() => pickLevel(lv)}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="my-shelf">
               <button type="button" className="shelf-btn" onClick={() => onOpenSaved("vocab")}>
                 <b>📒 단어장</b>

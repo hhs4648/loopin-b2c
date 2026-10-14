@@ -1,0 +1,92 @@
+{
+ "1": [
+  {
+   "word": "for",
+   "phrase": "take it for granted",
+   "sense": "당연하게",
+   "usage": "take ~ for granted = ~을 당연하게 여기다"
+  }
+ ],
+ "2": [
+  {
+   "word": "for",
+   "phrase": "suited for this task",
+   "sense": "~에, ~에 맞게",
+   "usage": "전치사 for + 명사 (be suited for ~ = ~에 알맞다)"
+  }
+ ],
+ "3": [
+  {
+   "word": "while",
+   "phrase": "while a great work",
+   "sense": "~하는 반면, ~하지만",
+   "usage": "접속사 while (대조) + 주어·동사"
+  },
+  {
+   "word": "that",
+   "phrase": "study guides that may",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사 (주어 없는 문장 → 앞 명사 꾸밈)"
+  },
+  {
+   "word": "that",
+   "phrase": "of that work",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사 (그 작품)"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "one that, in Berman’s terms",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that (one that ~ = ~하는 텍스트)"
+  }
+ ],
+ "6": [
+  {
+   "word": "but",
+   "phrase": "not a makeshift, but the mode",
+   "sense": "~이 아니라 …",
+   "usage": "not A but B = A가 아니라 B"
+  },
+  {
+   "word": "which",
+   "phrase": "by which a work reaches us",
+   "sense": "그것에 의해",
+   "usage": "전치사 + 관계대명사 which (앞 명사 the mode를 꾸밈)"
+  },
+  {
+   "word": "as",
+   "phrase": "reaches us as étrange",
+   "sense": "~로서, ~한 것으로",
+   "usage": "전치사 as + 형용사·명사"
+  },
+  {
+   "word": "as",
+   "phrase": "by Heyvaert as “foreign,”",
+   "sense": "~로",
+   "usage": "translate A as B = A를 B로 옮기다"
+  },
+  {
+   "word": "but",
+   "phrase": "but I’m not sure",
+   "sense": "하지만",
+   "usage": "접속사 but + 주어·동사"
+  },
+  {
+   "word": "that",
+   "phrase": "sure about that",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞 내용)"
+  }
+ ],
+ "7": [
+  {
+   "word": "As",
+   "phrase": "As Wilson put it",
+   "sense": "~가 말했듯이",
+   "usage": "접속사 as + 주어·동사 (as A put it = A가 말했듯이)"
+  }
+ ]
+}

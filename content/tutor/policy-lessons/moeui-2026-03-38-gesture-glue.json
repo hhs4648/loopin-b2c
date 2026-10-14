@@ -19,6 +19,11 @@
   "read_button": "분석하러 갈게요",
   "read_first": true,
   "images": {
+    "topic": {
+      "src": "/assets/topic-gesture.svg",
+      "alt": "칠판: Language(언어) + Gesture(제스처)",
+      "kind": "drawing"
+    },
     "method": {
       "src": "/assets/insert-method.svg",
       "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기",
@@ -31,6 +36,7 @@
       "id": "topic",
       "type": "say",
       "button": "네",
+      "image": "topic",
       "brief": {
         "say": "말할 때 손짓은 왜 저절로 나올까요? 이번 글은 언어와 제스처가 함께 생각을 표현하는 방식을 다뤄요."
       }
@@ -55,10 +61,12 @@
     ],
     "numbers_only": true,
     "passage_highlight": [
-      "gesture is different from language",
+      "different from language",
       "such choices",
-      "This kind of choice is characteristic of language",
-      "Instead, it offers a kind of glue"
+      "This kind of choice",
+      "language",
+      "Instead",
+      "glue"
     ],
     "sentence": 1,
     "analysis_first": true,
@@ -416,7 +424,7 @@
           ],
           "method": 1,
           "highlight": [
-            "at the same time with speech"
+            "at the same time"
           ],
           "tips": [
             {
@@ -586,6 +594,36 @@
           "highlight": [
             "“imagistic” possibilities of gesture"
           ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🙌",
+                "en": "gesture ≠ language · no choices",
+                "ko": "몸짓은 말과 달리 선택을 강요하지 않아요",
+                "fresh": true
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "🗣️",
+                "en": "co-expressive · both",
+                "ko": "말과 몸짓은 동시에 나오고, 둘 다로 생각을 표현해요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -670,7 +708,8 @@
           ],
           "method": 1,
           "highlight": [
-            "one must decide if the event has been completed or is ongoing"
+            "decide",
+            "completed or is ongoing"
           ]
         }
       ]
@@ -758,8 +797,46 @@
             }
           },
           "highlight": [
-            "This kind of choice is characteristic of language"
+            "This kind of choice",
+            "language"
           ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🙌",
+                "en": "gesture ≠ language · no choices",
+                "ko": "몸짓은 말과 달리 선택을 강요하지 않아요",
+                "fresh": false
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "🗣️",
+                "en": "co-expressive · both",
+                "ko": "말과 몸짓은 동시에 나오고, 둘 다로 생각을 표현해요",
+                "fresh": false
+              },
+              {
+                "label": "①~②",
+                "icon": "⏳",
+                "en": "language → must choose",
+                "ko": "말은 끝났는지, 진행 중인지 하나를 골라야 해요",
+                "fresh": true
+              }
+            ]
+          }
         }
       ]
     },
@@ -852,7 +929,8 @@
           ],
           "method": 1,
           "highlight": [
-            "Instead, it offers a kind of glue"
+            "Instead",
+            "glue"
           ]
         },
         {
@@ -1028,7 +1106,8 @@
           ],
           "method": 1,
           "highlight": [
-            "speech and gesture are not redundant nor is one a “translation” of the other"
+            "not redundant",
+            "nor"
           ],
           "tips": [
             {
@@ -1109,8 +1188,52 @@
           ],
           "method": 1,
           "highlight": [
-            "a combination of the two"
+            "combination"
           ]
+        },
+        {
+          "id": "story_8",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🙌",
+                "en": "gesture ≠ language · no choices",
+                "ko": "몸짓은 말과 달리 선택을 강요하지 않아요",
+                "fresh": false
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "🗣️",
+                "en": "co-expressive · both",
+                "ko": "말과 몸짓은 동시에 나오고, 둘 다로 생각을 표현해요",
+                "fresh": false
+              },
+              {
+                "label": "①~②",
+                "icon": "⏳",
+                "en": "language → must choose",
+                "ko": "말은 끝났는지, 진행 중인지 하나를 골라야 해요",
+                "fresh": false
+              },
+              {
+                "label": "③~⑤",
+                "icon": "🧩",
+                "en": "glue · combination of the two",
+                "ko": "몸짓은 풀처럼 말을 묶고, 생각의 단위는 둘의 조합이에요",
+                "fresh": true
+              }
+            ]
+          }
         },
         {
           "id": "s7_go",

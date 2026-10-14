@@ -1004,6 +1004,22 @@ mark.hl2, .english-token.hl2 .english-word {
 .board-arrow { font-size: 16px; line-height: 1; color: #2f7d6c; }
 .board-picture { display: block; width: 100%; max-height: 120px; object-fit: contain; }
 .study-panel.picture .board-words { margin-top: 2px; }
+/* 칠판 정리 — 지금까지 이야기 (장면이 쌓이고 새 장면만 노랗게) */
+.story-scenes { display: flex; flex-direction: column; gap: 0; }
+.story-scene {
+  position: relative; display: flex; align-items: center; gap: 10px; padding: 8px 10px;
+  border-radius: 12px; opacity: .72;
+}
+.story-scene + .story-scene { margin-top: 14px; }
+.story-scene + .story-scene::before {
+  content: "↓"; position: absolute; top: -16px; left: 22px; font-size: 13px; color: #b9aeb5;
+}
+.story-scene.fresh { opacity: 1; background: #fff7d1; box-shadow: inset 0 0 0 2px #f2c33d; animation: pop .35s ease-out; }
+.story-icon { flex: none; font-size: 30px; line-height: 1; width: 36px; text-align: center; }
+.story-body { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.story-label { font-size: 10.5px; font-weight: 700; color: #8a7f88; }
+.story-body b { font-family: "Gowun Dodum", "Noto Sans KR", sans-serif; font-size: 15px; color: #2b2430; overflow-wrap: anywhere; }
+.story-body span { font-size: 13px; color: #5b4f57; line-height: 1.4; }
 .board-process {
   align-self: center; flex: none; max-width: 64px; display: flex; flex-direction: column; align-items: center; gap: 2px;
 }
@@ -1503,11 +1519,12 @@ mark.passage-key { background: #fff1b8; color: inherit; border-radius: 3px; padd
 .words-list.two .word-text { display: flex; flex-direction: column; min-width: 0; }
 .words-list.two .word-en { font-size: 14px; overflow-wrap: anywhere; }
 .words-list.two .word-ko { margin-left: 0; text-align: left; font-size: 11.5px; }
-/* 뜻 상자 — 윗줄 단어 뜻, 아랫줄 덩어리(숙어) 뜻. 별은 줄마다 따로 */
-.gloss-tip { flex-direction: column; align-items: stretch; }
-.gloss-line { display: flex; align-items: center; gap: 6px; }
-.gloss-phrase { margin-top: 4px; padding-top: 5px; border-top: 1px dashed #f0d3db; font-size: .92em; }
-.gloss-phrase.only { margin-top: 0; padding-top: 0; border-top: 0; font-size: 1em; }
-.gloss-phrase-tag { display: inline-block; margin-right: 5px; padding: 0 5px; border-radius: 6px; background: #fbeef1; color: #c0455f; font-size: .8em; font-weight: 700; }
-.gloss-phrase-en { font-weight: 700; margin-right: 4px; }
 .saved-kind { display: inline-block; margin-right: 6px; padding: 0 6px; border-radius: 6px; background: #eefaf6; color: #2f7d6c; font-size: 11px; font-weight: 700; vertical-align: 2px; }
+
+/* 수업 목록 — 내 영어 등급 (고·중·초) */
+.level-row { display: flex; flex-direction: column; gap: 6px; margin: 0 0 12px; }
+.level-label { font-size: 12.5px; font-weight: 700; color: #8a7f88; }
+.level-row.unset .level-label { color: #e2607d; }
+.level-chips { display: flex; gap: 6px; }
+.level-chip { flex: 1 1 0; height: 36px; border-radius: 999px; border: 1.5px solid #f1c3cf; background: #fff; color: #c0455f; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.level-chip.on { background: #ef7a93; border-color: #ef7a93; color: #fff; }

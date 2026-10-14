@@ -8,6 +8,7 @@
 
 1~11문장 모두 선생님과 화면을 보며 정했다.
 """
+import sys
 import copy
 import json
 import os
@@ -146,7 +147,7 @@ sentences = [
                    why="'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities는 떨어져 나가니, 같은 그룹이 아니에요.",
                    method=0,
                    panel={**board([], [], right_label="반대쪽"), "sort": {"words": ["particularities"], "left": SORT_LEFT, "right": "오른쪽 · 반대쪽"}},
-                   highlight=["abstract away from its particularities"],
+                   highlight=["abstract away", "particularities"],
                    faded=["that is not a proper name"]),
             show("s1_map",
                  "이름을 붙여 묶으면 하나하나의 특징은 무시된다, 이게 이 글의 요지예요. 오른쪽에서 왼쪽으로 가는 화살표, 이 과정이 'abstract away'예요.",
@@ -339,7 +340,7 @@ sentences = [
                    why="distinct는 '독특한, 뚜렷이 다른'이에요. 풀잎 하나하나가 따로라는 말이라 하나하나 다른 쪽이에요.",
                    method=1,
                    panel={**S10_BEFORE, "sort": {"words": ["distinct"], "left": SORT_LEFT, "right": SORT_RIGHT}},
-                   highlight=["its own distinct life history"],
+                   highlight=["distinct"],
                    faded=[", with infinite memory,"],
                    tips=[{"label": "with = ~를 가진", "text": "'with'는 여기서 '~를 가진'이라는 뜻이에요. 'with infinite memory'는 '무한한 기억력을 가진', 'with its own distinct life history'는 '자기만의 독특한 생애를 가진'이에요."}]),
             choice("s10_fellows",
@@ -358,7 +359,7 @@ sentences = [
                    why="co-categorize는 '한 범주로 같이 묶다'예요. 이름으로 묶는 쪽이에요.",
                    method=1,
                    panel={**S10_MID, "sort": {"words": ["co-categorize"], "left": SORT_LEFT, "right": SORT_RIGHT}},
-                   highlight=["⑤co-categorized with all its fellows"],
+                   highlight=["⑤co-categorized"],
                    faded=[", with infinite memory,", ", with its own distinct life history,"]),
             show("s10_map", "co-categorize는 '묶는' 쪽 말이에요. 그런데 앞에 'need not'이 있어서, 다른 풀잎들과 묶을 필요가 없다는 뜻이 돼요.",
                  panel=S10_AFTER,
@@ -502,9 +503,11 @@ lesson = {
     "read_button": "분석하러 갈게요",
     # 문장마다 영어 문장부터 — 질문·보기는 「다 읽었어요」 뒤에
     "read_first": True,
-    "images": {"method": {"src": "/assets/vocab-method.svg", "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기", "kind": "drawing"}},
+    "images": {"topic": {"src": "/assets/topic-names.svg", "alt": "칠판: Name(이름) → Differences(차이)는 흐려진다", "kind": "drawing"}, "method": {"src": "/assets/vocab-method.svg", "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기", "kind": "drawing"}},
     "intro_board": "method",
     "intro": [
+        {"id": "topic", "type": "say", "button": "네", "image": "topic",
+         "brief": {"say": "이름을 붙이면 무엇이 사라질까요? 이번 글은 이름 붙이기와 하나하나의 차이를 다뤄요."}},
         {"id": "method1", "type": "say", "button": "네",
          "brief": {"say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."}},
         {"id": "method2", "type": "say", "button": "좋아요",
@@ -526,6 +529,11 @@ lesson = {
     "sentences": sentences,
     "passage_on_try": True,
 }
+
+# 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from story_boards import add_story_boards  # noqa: E402
+add_story_boards(ID, lesson["sentences"])
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

@@ -1,0 +1,66 @@
+{
+ "2": [
+  {
+   "word": "That",
+   "phrase": "That is because",
+   "sense": "그것은",
+   "usage": "지시대명사 that (앞 문장 내용)"
+  },
+  {
+   "word": "that",
+   "phrase": "the premise that it matters",
+   "sense": "~라는",
+   "usage": "동격 that (the premise that + 문장 = ~라는 전제)"
+  }
+ ],
+ "3": [
+  {
+   "word": "so",
+   "phrase": "so what",
+   "sense": "그래서",
+   "usage": "so what = 그래서 어떻다는 건가"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "Getting to such questions",
+   "sense": "~에",
+   "usage": "get to ~ = ~에 이르다"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "day-to-day",
+   "sense": "(날마다의)",
+   "usage": "day-to-day = 일상의 (한 단어처럼)"
+  },
+  {
+   "word": "to",
+   "phrase": "where to find",
+   "sense": "~해야 할",
+   "usage": "의문사 + to 동사원형 (where to find = 어디서 찾을지)"
+  },
+  {
+   "word": "to",
+   "phrase": "how to get",
+   "sense": "~해야 할",
+   "usage": "의문사 + to 동사원형 (how to get = 어떻게 갈지)"
+  },
+  {
+   "word": "to",
+   "phrase": "get to work places",
+   "sense": "~에, ~로",
+   "usage": "전치사 to + 명사 (방향)"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "difficult to make",
+   "sense": "~하기",
+   "usage": "to + 동사원형 (it is difficult to ~ = ~하기 어렵다, 가주어 it)"
+  }
+ ]
+}

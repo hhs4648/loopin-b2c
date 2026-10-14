@@ -54,6 +54,8 @@ export type TutorView = {
   properNouns: ProperNoun[];
   /** 지금 문장의 단어 뜻. 문장 학습에서 눌러 본다 */
   glosses: WordGloss[];
+  /** 이 문장의 다의 기능어 쓰임 — 나온 순서대로 (화면 문장이 원문일 때만) */
+  senses?: { word: string; phrase: string; sense: string; usage: string }[];
   /*
     아래 넷은 Teaching Policy 레슨(`src/tutor/policy/`)만 채운다.
     예전 레슨에서는 비어 있고 화면도 예전 그대로다.

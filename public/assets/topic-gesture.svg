@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 170" fill="none">
+  <!-- 3월 38번 도입 칠판: 언어 + 제스처 -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <text x="170" y="30" text-anchor="middle" font-size="16" fill="#8a7f88">이번 글</text>
+    <rect x="18" y="52" width="128" height="66" rx="14" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="2.5"/>
+    <text x="82.0" y="87.0" text-anchor="middle" font-size="19" fill="#2f7d6c">Language</text>
+    <text x="82.0" y="105.0" text-anchor="middle" font-size="12" fill="#2f7d6c">(언어)</text>
+    <text x="170" y="92" text-anchor="middle" font-size="24" fill="#8a7f88">+</text>
+    <rect x="194" y="52" width="128" height="66" rx="14" fill="#fff5f7" stroke="#ef7a93" stroke-width="2.5"/>
+    <text x="258.0" y="87.0" text-anchor="middle" font-size="19" fill="#c0455f">Gesture</text>
+    <text x="258.0" y="105.0" text-anchor="middle" font-size="12" fill="#c0455f">(제스처)</text>
+    <text x="170" y="158" text-anchor="middle" font-size="14" fill="#5b4f57">말할 때 손짓은 어떤 일을 할까?</text>
+  </g>
+</svg>

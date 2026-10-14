@@ -1,0 +1,56 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "choreography that guides",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "2": [
+  {
+   "word": "but",
+   "phrase": "but it also guides",
+   "sense": "그러나, 하지만",
+   "usage": "접속사 but + 주어·동사"
+  }
+ ],
+ "4": [
+  {
+   "word": "While",
+   "phrase": "While designing a house",
+   "sense": "~하는 동안",
+   "usage": "접속사 while (시간) + -ing"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "wishes to look out",
+   "sense": "~하기를",
+   "usage": "to + 동사원형 (wish to ~ = ~하고 싶어 하다)"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "wishes to enter",
+   "sense": "~하기를",
+   "usage": "to + 동사원형 (wish to ~ = ~하고 싶어 하다)"
+  }
+ ],
+ "7": [
+  {
+   "word": "for",
+   "phrase": "signage for its use",
+   "sense": "~을 위한",
+   "usage": "전치사 for + 명사 (목적)"
+  },
+  {
+   "word": "as",
+   "phrase": "as it reveals",
+   "sense": "~이기 때문에",
+   "usage": "접속사 as + 주어·동사 (이유)"
+  }
+ ]
+}
