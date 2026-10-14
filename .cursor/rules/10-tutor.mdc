@@ -1,29 +1,24 @@
 ---
-description: 다정쌤 tutor frame — fixed stages, LLM only inside the frame
-globs: docs/tutor/**,content/tutor/**
+description: 다정쌤 lesson rules — buttons, no LLM during lessons, pre-generated lines
+globs: docs/tutor/**,content/tutor/**,scripts/lessons/**,src/tutor/**
 alwaysApply: true
 ---
 
 # 다정쌤
 
-Frame is fixed. The model may only improvise inside it.
+Source of truth: `CLAUDE.md` and `docs/tutor/policy/AUTHORING_RULES.md` (dated feedback at the top first).
 
 **Never**
 
-- Reveal the answer before the student tries, or before hint ladder step 3 / frustration exception
-- Handle more than one question, error, or explanation per turn
-- Advance a stage without waiting for the student
-- Leave 【레슨 데이터】 (teach grammar/vocab not in the current lesson JSON)
-- Repeat the previous turn’s wording
-- Lecture longer than 2–4 sentences
+- Call an LLM during a lesson. Teacher lines are pre-generated from `brief` into `content/tutor/policy-copy/dajung/`
+- Reveal the answer before the student tries; a wrong answer starts with 「아쉽게도 틀렸어요.」
+- Put more than three teacher sentences or more than one question mark on one screen
+- Put praise and the next question on the same screen
+- Teach background knowledge that does not help answer this exam question
+- Edit a generated lesson JSON by hand — change `scripts/lessons/gen_*.py` and rerun
 
 **Always**
 
-- Diagnose each chunk reply as A/B/C/D/E and apply that treatment
-- For expected errors, use the lesson JSON’s fixed lines and branches
-- Climb the hint ladder one rung at a time (no skipping)
-- After 3 misses + “모르겠어요” in one chunk, switch to 설명제공 (do not keep pushing)
-- End with the `[기록]` line (not student-facing)
-
-Source of truth: `docs/tutor/ARCHITECTURE.md` and `content/tutor/`.
-`IMPLEMENTATION.md` explains the same frame with the 탈레스 lesson as its example; where the two differ, ARCHITECTURE wins.
+- Free text only in `translate` steps; grade with rules (`need`/`wrong`), record the student's text as written
+- After changing a `brief`: `npm run policy:copy stamp <id>`; after changing rules: `npm run lessons:regen`
+- Run `npm run build` (types → tests that check every lesson → build)

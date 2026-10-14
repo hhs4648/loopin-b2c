@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="회의실에서 화이트보드 앞에 선 여자가 발표하고, 왼쪽 테이블에 두 사람이 노트북을 보고 있다">
+  <!-- 벽·바닥 -->
+  <rect width="640" height="400" fill="#eef1f4"/>
+  <rect y="300" width="640" height="100" fill="#c9b49a"/>
+  <rect y="296" width="640" height="6" fill="#b39e84"/>
+  <!-- 뒤 창문 -->
+  <rect x="440" y="40" width="170" height="170" rx="4" fill="#bfe0f7" stroke="#9aa6b2" stroke-width="6"/>
+  <line x1="525" y1="40" x2="525" y2="210" stroke="#9aa6b2" stroke-width="5"/>
+  <line x1="440" y1="125" x2="610" y2="125" stroke="#9aa6b2" stroke-width="5"/>
+  <path d="M450 200 L480 160 L505 185 L530 150 L560 190 L600 165 L600 205 L450 205 Z" fill="#a9d3b0" opacity=".8"/>
+  <!-- 화분 -->
+  <rect x="582" y="252" width="38" height="46" rx="4" fill="#c97b4f"/>
+  <path d="M601 252 C585 220 575 205 588 190 C596 210 600 225 601 252 Z" fill="#4f9d69"/>
+  <path d="M601 252 C615 222 630 210 622 192 C610 210 604 228 601 252 Z" fill="#5fb47b"/>
+  <path d="M601 252 C598 225 602 200 610 182 C614 205 608 230 601 252 Z" fill="#3f8a59"/>
+  <!-- 화이트보드 + 그래프 -->
+  <rect x="200" y="50" width="200" height="130" rx="4" fill="#ffffff" stroke="#b7bec6" stroke-width="6"/>
+  <rect x="225" y="130" width="22" height="35" fill="#5c9cf5"/>
+  <rect x="257" y="110" width="22" height="55" fill="#ef7a93"/>
+  <rect x="289" y="90" width="22" height="75" fill="#2f9e7e"/>
+  <rect x="321" y="75" width="22" height="90" fill="#e39a2d"/>
+  <line x1="220" y1="167" x2="380" y2="167" stroke="#7a828b" stroke-width="2"/>
+  <rect x="200" y="184" width="200" height="6" rx="2" fill="#a3abb4"/>
+  <!-- 발표하는 여자 (가운데) -->
+  <g>
+    <rect x="300" y="250" width="14" height="52" rx="5" fill="#3b3f58"/>
+    <rect x="320" y="250" width="14" height="52" rx="5" fill="#3b3f58"/>
+    <path d="M296 188 Q317 176 338 188 L342 256 L292 256 Z" fill="#e2607d"/>
+    <path d="M298 196 L262 150" stroke="#e2607d" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="259" cy="146" r="7" fill="#f2c7a5"/>
+    <path d="M336 196 L350 238" stroke="#e2607d" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="317" cy="160" r="21" fill="#f2c7a5"/>
+    <path d="M296 160 Q296 134 317 134 Q340 134 339 162 Q333 150 317 148 Q303 150 296 160 Z" fill="#4a3426"/>
+    <path d="M297 158 Q292 185 300 192 L303 160 Z" fill="#4a3426"/>
+    <path d="M338 158 Q343 185 335 192 L332 160 Z" fill="#4a3426"/>
+  </g>
+  <!-- 왼쪽 테이블 -->
+  <rect x="20" y="240" width="200" height="14" rx="4" fill="#8a6a4f"/>
+  <rect x="35" y="254" width="10" height="48" fill="#7a5b42"/>
+  <rect x="195" y="254" width="10" height="48" fill="#7a5b42"/>
+  <!-- 앉은 두 사람 -->
+  <g>
+    <rect x="40" y="200" width="44" height="46" rx="12" fill="#5c9cf5"/>
+    <circle cx="62" cy="182" r="18" fill="#e8b48f"/>
+    <path d="M44 180 Q46 160 62 160 Q80 160 80 180 Q72 170 62 170 Q52 170 44 180 Z" fill="#2c2c2c"/>
+  </g>
+  <g>
+    <rect x="140" y="200" width="44" height="46" rx="12" fill="#2f9e7e"/>
+    <circle cx="162" cy="182" r="18" fill="#f2c7a5"/>
+    <path d="M144 184 Q142 158 162 158 Q184 158 181 186 Q176 168 162 167 Q150 168 144 184 Z" fill="#8a5a33"/>
+  </g>
+  <!-- 노트북·컵 -->
+  <path d="M74 222 L108 222 L114 240 L80 240 Z" fill="#9aa3ad"/>
+  <rect x="78" y="236" width="40" height="4" fill="#7c858f"/>
+  <path d="M120 222 L154 222 L148 240 L114 240 Z" fill="#9aa3ad"/>
+  <rect x="110" y="236" width="40" height="4" fill="#7c858f"/>
+  <rect x="190" y="228" width="12" height="12" rx="2" fill="#ffffff" stroke="#c9ced4"/>
+</svg>

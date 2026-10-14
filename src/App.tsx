@@ -9,6 +9,8 @@ import { SummaryView } from "./components/SummaryView";
 import { MatchGame } from "./components/MatchGame";
 import { WordCheck } from "./components/WordCheck";
 import { SentenceStudy } from "./components/SentenceStudy";
+import { SpeakingLesson } from "./components/SpeakingLesson";
+import { getSpeakingLesson } from "./speaking/lessons";
 import type { TutorView } from "./tutor/view";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { policyLessonIds } from "./tutor/policy/lessons";
@@ -46,7 +48,28 @@ function open(lessonId: string | null): Started {
   return { session, set: setOfLesson(session.lessonId()) };
 }
 
+/*
+  토익 스피킹 시범(2026-10-15) — `?speaking=<id>`로 연다. 독해 수업과 엔진이 달라 따로 그린다.
+  시범이라 개발 빌드가 아니어도 열린다. 공유용 한 장 HTML은 `VITE_SHARE_SPEAKING`에 id를 박는다
+*/
+const speakingLesson = getSpeakingLesson(
+  params.get("speaking") ?? ((import.meta.env.VITE_SHARE_SPEAKING as string | undefined) || null),
+);
+
 export function App() {
+  if (speakingLesson) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <SpeakingLesson lesson={speakingLesson} onClose={() => (window.location.search = "")} />
+        </div>
+      </div>
+    );
+  }
+  return <ReadingApp />;
+}
+
+function ReadingApp() {
   /*
     **수업은 목록에서 고른 뒤에 만든다.** 예전에는 모듈이 로드될 때 세션을
     하나 만들어 두고 앱을 열자마자 그 지문이 시작됐다. 이제 화면이 둘이라

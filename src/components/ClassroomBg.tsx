@@ -54,6 +54,7 @@ export function ClassroomBg() {
         }}
       />
       <div
+        className="whiteboard"
         style={{
           position: "absolute",
           left: "50%",
@@ -83,6 +84,7 @@ export function ClassroomBg() {
         </div>
       </div>
       <div
+        className="whiteboard-tray"
         style={{
           position: "absolute",
           left: "50%",
@@ -96,6 +98,7 @@ export function ClassroomBg() {
         }}
       />
       <div
+        className="whiteboard-markers"
         style={{
           position: "absolute",
           left: "calc(50% - 52px)",

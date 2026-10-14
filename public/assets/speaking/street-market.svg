@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="야외 시장에서 가운데 남자가 과일 가판대에서 과일을 팔고, 오른쪽 여자가 장바구니를 들고 사과를 고른다. 뒤에 나무와 자전거, 해">
+  <!-- 하늘·해·땅 -->
+  <rect width="640" height="400" fill="#cfe9fb"/>
+  <circle cx="570" cy="60" r="32" fill="#ffd45c"/>
+  <rect y="290" width="640" height="110" fill="#d9cbb3"/>
+  <!-- 뒤 나무들 -->
+  <rect x="58" y="170" width="14" height="120" fill="#8a6a4f"/>
+  <circle cx="65" cy="150" r="48" fill="#6cbf7f"/>
+  <circle cx="35" cy="175" r="30" fill="#5aae6e"/>
+  <rect x="478" y="180" width="12" height="110" fill="#8a6a4f"/>
+  <circle cx="484" cy="160" r="42" fill="#6cbf7f"/>
+  <!-- 자전거 (뒤) -->
+  <g stroke="#3b3f58" stroke-width="4" fill="none">
+    <circle cx="540" cy="268" r="22"/>
+    <circle cx="604" cy="268" r="22"/>
+    <path d="M540 268 L566 238 L592 238 L604 268 M566 238 L578 268 L540 268 M592 238 L588 226 M560 232 L574 232"/>
+  </g>
+  <!-- 가판대 차양 -->
+  <path d="M150 110 L420 110 L440 150 L130 150 Z" fill="#ef7a93"/>
+  <path d="M168 110 L184 150 M206 110 L222 150 M244 110 L260 150 M282 110 L298 150 M320 110 L336 150 M358 110 L374 150 M396 110 L412 150" stroke="#fff" stroke-width="12" opacity=".8"/>
+  <rect x="146" y="150" width="8" height="140" fill="#9b7a5e"/>
+  <rect x="416" y="150" width="8" height="140" fill="#9b7a5e"/>
+  <!-- 파는 남자 (가운데, 가판대 뒤) -->
+  <g>
+    <path d="M250 205 Q285 190 320 205 L322 250 L248 250 Z" fill="#5c9cf5"/>
+    <rect x="260" y="200" width="50" height="50" rx="6" fill="#f3efe6" opacity=".9"/>
+    <circle cx="285" cy="178" r="22" fill="#e8b48f"/>
+    <path d="M263 176 Q265 152 285 152 Q306 152 307 176 Q298 164 285 164 Q272 164 263 176 Z" fill="#2c2c2c"/>
+    <path d="M318 214 L348 232" stroke="#5c9cf5" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="352" cy="235" r="7" fill="#e8b48f"/>
+  </g>
+  <!-- 가판대 + 과일 -->
+  <rect x="150" y="240" width="270" height="56" rx="4" fill="#b98a5c"/>
+  <rect x="150" y="240" width="270" height="10" fill="#a2774e"/>
+  <g>
+    <circle cx="180" cy="234" r="11" fill="#e2403f"/><circle cx="200" cy="232" r="11" fill="#e2403f"/><circle cx="190" cy="222" r="11" fill="#d93636"/>
+    <circle cx="232" cy="234" r="10" fill="#f39a2b"/><circle cx="252" cy="234" r="10" fill="#f39a2b"/><circle cx="242" cy="223" r="10" fill="#f0a640"/>
+    <path d="M330 236 Q345 210 372 222 Q352 226 340 240 Z" fill="#f2d14b"/><path d="M336 238 Q356 216 384 230 Q362 232 346 242 Z" fill="#efc63b"/>
+    <circle cx="398" cy="234" r="10" fill="#7cc35a"/><circle cx="406" cy="224" r="9" fill="#6db84d"/>
+  </g>
+  <!-- 오른쪽 여자 + 장바구니 -->
+  <g>
+    <rect x="452" y="300" width="13" height="48" rx="5" fill="#3b3f58"/>
+    <rect x="470" y="300" width="13" height="48" rx="5" fill="#3b3f58"/>
+    <path d="M446 232 Q467 220 488 232 L494 304 L440 304 Z" fill="#2f9e7e"/>
+    <path d="M448 240 L420 250" stroke="#2f9e7e" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="414" cy="251" r="9" fill="#e2403f"/>
+    <path d="M488 242 L500 282" stroke="#2f9e7e" stroke-width="11" stroke-linecap="round"/>
+    <path d="M488 284 L520 284 L514 320 L494 320 Z" fill="#e39a2d"/>
+    <path d="M494 284 Q504 268 514 284" stroke="#b97616" stroke-width="3" fill="none"/>
+    <circle cx="467" cy="204" r="21" fill="#f2c7a5"/>
+    <path d="M446 204 Q446 178 467 178 Q490 178 489 206 Q484 192 467 190 Q452 192 446 204 Z" fill="#6b4226"/>
+    <path d="M447 200 Q440 230 450 236 L452 206 Z" fill="#6b4226"/>
+  </g>
+</svg>

@@ -1,5 +1,10 @@
 # Loopin Teaching Policy Spec v0.1
 
+> **읽기 전에 (2026-10-15)** — 엔진의 **처음 설계**다. 생각의 바탕(학생 상태·관찰·개입 사다리)으로만 읽는다.
+> - 18~20장의 예시(2025년 3월 21번 데카르트)는 지웠다 — `archive/2025-03-21-descartes/`
+> - 「상냥쌤」·반말 예시는 예전 캐릭터다. 지금은 **다정쌤, 해요체** (`content/tutor/policy-copy/dajung/VOICE.md`)
+> - 지금 규칙은 `CLAUDE.md`와 `docs/tutor/policy/AUTHORING_RULES.md`가 이긴다 (세 문장, 물음표 하나, 수업 중 LLM 없음 등)
+
 ## 0. 목적과 적용 전제
 
 이 문서는 기존 Loopin 앱에 **Teaching Policy Engine**을 이식하기 위한

@@ -630,8 +630,10 @@ button, input { font-family: inherit; }
 /*
   교실 배경을 그대로 쓰되 선생님 자리와 겹치는 소품은 뺀다. 목록 화면에서는
   선생님이 오른쪽 아래에 서고, 거기가 원래 화분·시계 자리다.
+  칠판도 뺀다 — 「수업 목록」 제목과 등급 버튼 뒤로 겹쳐 보였다 (2026-10-15)
 */
-.home .plant, .home .clock { display: none; }
+.home .plant, .home .clock,
+.home .whiteboard, .home .whiteboard-tray, .home .whiteboard-markers { display: none; }
 
 /* 고유명사 칩이 뜬 만큼 학생 말풍선을 올린다 (라벨 28 + 칩 28 + 여백 16) */
 .student-bubble.raised { bottom: calc(max(17%, 132px) + 26px + 72px); }
