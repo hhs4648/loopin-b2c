@@ -51,3 +51,14 @@
 확인: `npm run build` (타입검사 → 테스트 → 빌드). 테스트가 지문 규칙(물음표, 세 문장, 보기 수, 강조 구절)을 모든 레슨에 돌린다.
 
 커밋은 인간이 요청하기 전에 하지 마라.
+
+## Claude 메모리 (함께 쓰기)
+
+선생님 피드백·규칙 메모리는 `docs/claude-memory/`에 있다 (git으로 공유).
+Claude Code는 `~/.claude/projects/<프로젝트 경로를 -로 바꾼 이름>/memory`를 읽으므로, 컴퓨터마다 한 번 그 자리를 이 폴더로 링크한다:
+
+```bash
+D=~/.claude/projects/$(pwd | sed 's#[/.]#-#g'); mkdir -p "$D"; [ -e "$D/memory" ] && mv "$D/memory" "$D/memory.bak"; ln -s "$(pwd)/docs/claude-memory" "$D/memory"
+```
+
+메모리가 바뀌면 다른 파일처럼 커밋·푸시한다. 작업 전 `git pull`.
