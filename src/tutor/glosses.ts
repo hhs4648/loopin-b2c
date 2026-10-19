@@ -68,13 +68,13 @@ export function lookupGloss(word: string, glosses: WordGloss[] | undefined): Wor
   );
 }
 
-/** JSON에 빠진 고유명사는 칩과 같은 말로 채운다 */
+/** JSON에 빠진 고유명사는 칩과 같은 말로 채운다. 덩어리 밖에 홀로 선 of 같은 전치사도 기본 뜻으로 누를 수 있게 */
 export function glossesFor(chunkGlosses: WordGloss[] | undefined, nouns: ProperNoun[]): WordGloss[] {
   const listed = chunkGlosses ?? [];
-  const extra = nouns
-    .filter((n) => !listed.some((g) => g.en.toLowerCase() === n.en.toLowerCase()))
-    .map((n) => ({ en: n.en, ko: `${nounKind(n.type)} · 그대로` }));
-  return [...listed, ...extra];
+  const has = (en: string) => listed.some((g) => g.en.toLowerCase() === en.toLowerCase());
+  const extra = nouns.filter((n) => !has(n.en)).map((n) => ({ en: n.en, ko: `${nounKind(n.type)} · 그대로` }));
+  const basics = Object.entries(BASIC_SENSE).filter(([en]) => !has(en)).map(([en, ko]) => ({ en, ko }));
+  return [...listed, ...extra, ...basics];
 }
 
 export const WORDS = (wordBook as { words: Record<string, string> }).words;
@@ -104,6 +104,16 @@ export const CONTEXT_WORDS = new Set([
   "be", "is", "are", "was", "were", "been", "being", "has", "have", "had", "do", "does", "did", "not",
   "will", "would", "may", "might", "can", "could", "should", "must", "which", "that", "it", "this", "these",
 ]);
+
+/**
+ * 문맥 기능어 중 「~의」 정도의 기본 뜻은 띄워도 되는 전치사 (2026-10-20 선생님: of를 누르면 「~의」 정도는 나오면 좋겠다).
+ * to·for·as처럼 자리마다 뜻이 크게 다른 말은 여기 없다 — 레슨의 function-senses에 그 자리 쓰임을 적는다.
+ * 덩어리 안에서는 덩어리 뜻이 아랫줄에 같이 보인다
+ */
+export const BASIC_SENSE: Record<string, string> = {
+  of: "~의", with: "~와 (함께), ~로", from: "~에서, ~로부터", into: "~ 안으로", about: "~에 대해",
+  by: "~에 의해, ~로", in: "~ 안에, ~에서", on: "~ 위에, ~에", at: "~에(서)",
+};
 
 export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): WordGloss[] {
   const keepSet = new Set(keep.map((k) => k.toLowerCase()));
@@ -142,8 +152,9 @@ export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): W
       }
       if (!phraseOf.has(key)) phraseOf.set(key, phrase);
       if (added.has(key)) continue;
-      // to, of, for 같은 짧은 기능어는 뜻이 문맥마다 달라서 사전 뜻을 쓰지 않는다 — 덩어리 뜻만 (to make = 만들기 위해)
-      const own = singles.get(key)?.ko ?? (CONTEXT_WORDS.has(key) ? undefined : WORDS[key]);
+      // to, for 같은 짧은 기능어는 뜻이 문맥마다 달라서 사전 뜻을 쓰지 않는다 — 덩어리 뜻만 (to make = 만들기 위해).
+      // of 같은 전치사는 「~의」 정도의 기본 뜻은 띄운다
+      const own = singles.get(key)?.ko ?? (CONTEXT_WORDS.has(key) ? BASIC_SENSE[key] : WORDS[key]);
       if (!own) {
         // 단어 뜻이 없어도 누르면 덩어리 뜻은 보이게 — 관사(a, an, the)만 뺀다
         if (ARTICLES.has(key)) continue;

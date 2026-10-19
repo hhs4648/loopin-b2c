@@ -66,6 +66,11 @@ describe("덩어리 안의 기능어는 덩어리 뜻으로", () => {
     expect(to?.ko).toBe("");
     expect(to?.phrase).toEqual({ en: "to make", ko: "만들기 위해" });
   });
+  it("of 같은 전치사는 「~의」 정도의 기본 뜻 + 덩어리 뜻 (2026-10-20 선생님)", () => {
+    const of = splitPhraseGlosses([{ en: "no examples of it", ko: "그것의 사례가 없다" }]).find((g) => g.en === "of");
+    expect(of?.ko).toBe("~의");
+    expect(of?.phrase).toEqual({ en: "no examples of it", ko: "그것의 사례가 없다" });
+  });
   it("레슨에 따로 적은 단어 뜻은 그대로 먼저", () => {
     const fr = splitPhraseGlosses([{ en: "for", ko: "~에게(는)" }, { en: "for most outsiders", ko: "대부분의 외부인에게는" }]).find((g) => g.en === "for");
     expect(fr?.ko).toBe("~에게(는)");
