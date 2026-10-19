@@ -1,6 +1,6 @@
 {
   "version": "0.3",
-  "updated": "2026-10-05",
+  "updated": "2026-10-20",
   "note": "대분류(groups) → 중분류(collections) → 세트(sets). 2026년 3월 21번을 기준으로 새로 시작하며 예전 지문은 지웠다",
   "groups": [
     {
@@ -36,6 +36,16 @@
           "exam": {
             "body": "교육청",
             "held": "2024-03"
+          }
+        },
+        {
+          "id": "moeui-2022-03",
+          "title": "2022년 3월 모의고사",
+          "subtitle": "2022년 3월 시행 · 고3 전국연합학력평가",
+          "tag": "모의",
+          "exam": {
+            "body": "교육청",
+            "held": "2022-03"
           }
         }
       ],
@@ -361,6 +371,16 @@
       "subtitle": "내용 일치 — 할아버지의 야구 카드",
       "lessons": [
         "moeui-2024-03-45-story-details"
+      ]
+    },
+    {
+      "id": "moeui-2022-03-29",
+      "collection": "moeui-2022-03",
+      "title": "29번 문제",
+      "subtitle": "어법 — 고대 그리스 음악은 어떤 소리였을까",
+      "wrong_rate": 67.0,
+      "lessons": [
+        "moeui-2022-03-29-greek-music"
       ]
     }
   ]

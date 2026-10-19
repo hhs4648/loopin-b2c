@@ -1606,6 +1606,8 @@ export function createPolicySession(
       // 여러 문장 중 한 문장을 가리킬 때 — 따로 띄우지 않고 그 문장을 [ ]로 묶어 보인다 (2026-10-15 선생님, 공통 규칙)
       sentence: inLesson && !s.readingFirst && st.bracket && shown.includes(st.bracket) ? shown.replace(st.bracket, `[${st.bracket}]`) : shown,
       slashes: inLesson && shown === sen.text ? (sen.slashes ?? []) : [],
+      // 끊어읽기 때 같이 보이는 S·V·O·C — 주어·동사 찾기 전에도 보인다. 학생이 켜야만 보이는 도움이라 답이 새는 게 아니다 (2026-10-20 선생님)
+      slashRoles: inLesson && shown === sen.text ? (sen.roles ?? []) : [],
       bracket: inLesson && !s.readingFirst && st.bracket && shown.includes(st.bracket) ? `[${st.bracket}]` : null,
       activeChunk: shown,
       chunkLabel: sen.label ?? paragraphOf(s.si)?.label ?? `${s.si + 1}문장`,

@@ -1,0 +1,1579 @@
+{
+  "id": "moeui-2022-03-29-greek-music",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 29번 (어법, 3점)",
+  "brief": {
+    "topic": "어법 푸는 법: 밑줄마다 무슨 문법을 묻는지 이름 붙이기 → 그 문장 뼈대(주어·동사·빈자리)로 확인",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "grammar",
+    "labels": [
+      "묻는 문법 이름 붙이기",
+      "뼈대로 확인"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-greek-music.svg",
+      "alt": "칠판: Greek music(고대 그리스 음악) ? No notation(악보도 기록도 없음)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "고대 그리스 음악은 어떤 소리였을까요? 악보도 녹음도 남아 있지 않아서, 글로 남은 설명으로 짐작할 수밖에 없대요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "어법 문제는 밑줄마다 무슨 문법을 묻는지 먼저 이름을 붙여요. 그다음 그 문장의 주어·동사·빈자리로 하나씩 확인할게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 밑줄 친 부분 중, 어법상 틀린 것은? [3점]",
+    "underline": [
+      "①has",
+      "②as",
+      "③consisting",
+      "④to be",
+      "⑤generally"
+    ],
+    "sentence": 3,
+    "analysis_first": true,
+    "wrong_rate": 67.0,
+    "wrong_rank": 1,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "has",
+        "ko": "(현재완료의 조동사)"
+      },
+      {
+        "en": "as",
+        "ko": "~와 (견주어)"
+      },
+      {
+        "en": "consisting",
+        "ko": "구성된"
+      },
+      {
+        "en": "to be",
+        "ko": "~라고 (여기다)"
+      },
+      {
+        "en": "generally",
+        "ko": "일반적으로"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "has",
+        "keywords": [
+          "has"
+        ]
+      },
+      {
+        "id": "2",
+        "label": "as",
+        "keywords": [
+          "as"
+        ],
+        "correct": true
+      },
+      {
+        "id": "3",
+        "label": "consisting",
+        "keywords": [
+          "consisting"
+        ]
+      },
+      {
+        "id": "4",
+        "label": "to be",
+        "keywords": [
+          "to be"
+        ]
+      },
+      {
+        "id": "5",
+        "label": "generally",
+        "keywords": [
+          "generally"
+        ]
+      }
+    ],
+    "brief": {
+      "ask": "밑줄 점검표를 떠올리며, 어법상 틀린 하나를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! more로 두 가지를 견줬으니 짝이 되는 말은 than이어야 해요. ②as with → than with로 고쳐요.",
+      "final_wrong": "정답은 ②예요. 'more concerned with A … as with B'에서 more와 짝을 이루는 말은 than이에요. as with를 than with로 고쳐요.",
+      "option_feedback": {
+        "1": "부정어 nor가 앞에 와서 '조동사 + 주어' 순서가 된 거라 ①has it survived는 맞아요.",
+        "3": "앞에 이미 동사 was가 있어서 접속사 없이 이어 붙이려면 -ing가 와야 해요. ③consisting은 맞아요.",
+        "4": "consider + 목적어 + to be + 보어예요. 목적어 music이 길어서 멀어 보일 뿐 ④to be는 맞아요.",
+        "5": "동사 span을 꾸미는 자리라 부사 ⑤generally가 맞아요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "③ 앞에는 이미 동사 was가 있어서 '동사가 둘'로 보여요. 하지만 접속사 없이 문장을 이어 붙일 때는 동사를 -ing(분사)로 바꿔요. 그래서 consisting이 맞아요.",
+          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "동사가 둘이라 틀린 것 같았어요",
+              "skills": [
+                "participle"
+              ],
+              "reply": "알려 줘서 고마워요. 접속사가 없으면 뒤 동사는 -ing가 돼요. 앞으로 분사로 이어 붙이는 자리를 먼저 짚어 줄게요."
+            },
+            {
+              "label": "consisting of 뜻을 몰랐어요",
+              "skills": [
+                "vocab"
+              ],
+              "reply": "알려 줘서 고마워요. consist of는 '~로 구성되다'예요. 앞으로 이런 숙어를 먼저 알려 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "participle",
+                "vocab"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 분사 자리와 숙어를 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "앞",
+                "text": "a vocal form",
+                "ko": "콤마 앞 — 이미 동사 was가 있다",
+                "tone": "hl"
+              },
+              {
+                "label": "뒤",
+                "text": "consisting of sung verse",
+                "ko": "접속사가 없으니 -ing로 이어 붙인다",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "④to be는 considered와 멀리 떨어져 있어서 어색해 보여요. 목적어 music 뒤에 in which 덩어리가 길게 붙어서 그래요. consider + 목적어 + to be + 보어 모양이라 ④는 맞아요.",
+          "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "considered와 to be가 멀어서 헷갈렸어요",
+              "skills": [
+                "long_object"
+              ],
+              "reply": "알려 줘서 고마워요. 목적어가 길면 보어가 멀어져요. 앞으로 긴 목적어를 먼저 묶어서 보여 줄게요."
+            },
+            {
+              "label": "consider 뒤에 to be가 오는 걸 몰랐어요",
+              "skills": [
+                "verb_pattern"
+              ],
+              "reply": "알려 줘서 고마워요. consider + 목적어 + to be + 보어는 '~을 …라고 여기다'예요. 앞으로 동사 모양을 먼저 알려 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "long_object",
+                "verb_pattern"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 긴 목적어와 동사 모양을 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "여긴 사람",
+                "text": "Plato considered",
+                "ko": "주어 + 동사",
+                "tone": "hl"
+              },
+              {
+                "label": "여긴 대상",
+                "text": "music in which … dance or song",
+                "ko": "목적어 — in which 덩어리가 길게 꾸민다",
+                "tone": "hl2"
+              },
+              {
+                "label": "여긴 어떻다",
+                "text": "to be ‘exceedingly coarse and tasteless’",
+                "ko": "그 목적어가 어떻다는 보어",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "notate",
+        "ko": "악보에 적다"
+      },
+      {
+        "en": "oral tradition",
+        "ko": "구전"
+      },
+      {
+        "en": "improvise",
+        "ko": "즉흥 연주하다"
+      },
+      {
+        "en": "convention",
+        "ko": "관례, 관행"
+      },
+      {
+        "en": "account",
+        "ko": "설명"
+      },
+      {
+        "en": "be concerned with",
+        "ko": "~에 관심이 있다"
+      },
+      {
+        "en": "philosophical",
+        "ko": "철학적인"
+      },
+      {
+        "en": "predominantly",
+        "ko": "대개"
+      },
+      {
+        "en": "consist of",
+        "ko": "~로 구성되다"
+      },
+      {
+        "en": "verse",
+        "ko": "운문"
+      },
+      {
+        "en": "accompany",
+        "ko": "반주하다"
+      },
+      {
+        "en": "accompaniment",
+        "ko": "반주"
+      },
+      {
+        "en": "exceedingly",
+        "ko": "매우"
+      },
+      {
+        "en": "tasteless",
+        "ko": "무미건조한"
+      },
+      {
+        "en": "pitch range",
+        "ko": "음역"
+      },
+      {
+        "en": "span",
+        "ko": "걸쳐 있다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "medium",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "We don’t know what ancient Greek music sounded like, because there are no examples of it in written or notated form, nor ①has it survived in oral tradition.",
+      "model_translation": "우리는 고대 그리스 음악이 어떤 소리를 냈는지 알지 못하는데, 그 이유는 그것이 기록되거나 악보에 적힌 형태로 되어 있는 사례가 없고, 구전으로도 살아남지 못했기 때문이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "don’t know",
+          "ko": "알지 못한다"
+        },
+        {
+          "en": "what ancient Greek music sounded like",
+          "ko": "고대 그리스 음악이 어떤 소리였는지"
+        },
+        {
+          "en": "because",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "there are no examples of it",
+          "ko": "그것의 사례가 없다"
+        },
+        {
+          "en": "in written or notated form",
+          "ko": "기록되거나 악보에 적힌 형태로"
+        },
+        {
+          "en": "nor",
+          "ko": "~도 아니다"
+        },
+        {
+          "en": "has it survived",
+          "ko": "그것이 살아남았다"
+        },
+        {
+          "en": "in oral tradition",
+          "ko": "구전으로"
+        },
+        {
+          "en": "don’t",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "know",
+          "ko": "알다"
+        },
+        {
+          "en": "ancient",
+          "ko": "고대의"
+        },
+        {
+          "en": "Greek",
+          "ko": "그리스의"
+        },
+        {
+          "en": "music",
+          "ko": "음악"
+        },
+        {
+          "en": "sounded",
+          "ko": "소리가 났다"
+        },
+        {
+          "en": "examples",
+          "ko": "사례"
+        },
+        {
+          "en": "written",
+          "ko": "기록된"
+        },
+        {
+          "en": "notated",
+          "ko": "악보에 적힌"
+        },
+        {
+          "en": "form",
+          "ko": "형태"
+        },
+        {
+          "en": "survived",
+          "ko": "살아남았다"
+        },
+        {
+          "en": "oral",
+          "ko": "입으로 전하는"
+        },
+        {
+          "en": "tradition",
+          "ko": "전통 · oral tradition = 구전"
+        }
+      ],
+      "slashes": [
+        "We don’t know",
+        "sounded like,",
+        "no examples of it",
+        "notated form,",
+        "has it survived"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "don’t know",
+          "role": "V"
+        },
+        {
+          "text": "what ancient Greek music sounded like",
+          "role": "O"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "no examples of it",
+          "role": "S"
+        },
+        {
+          "text": "has … survived",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "don’t know",
+            "what ancient Greek music sounded like",
+            "there are no examples of it",
+            "has it survived"
+          ],
+          "answers": [
+            "We",
+            "don’t know",
+            "what ancient Greek music sounded like"
+          ],
+          "roles": {
+            "We": "S",
+            "don’t know": "V",
+            "what ancient Greek music sounded like": "O"
+          },
+          "brief": {
+            "ask": "①이 든 문장이에요. 메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "there are no examples of it": "그건 because 뒤 덩어리의 주어·동사예요. 먼저 메인 문장을 봐요.",
+              "has it survived": "그건 nor 뒤 덩어리예요. 먼저 메인 문장을 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 don’t know, 목적어는 what ancient Greek music sounded like예요. what 덩어리가 '무엇을' 모르는지예요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "어법 문제 요령",
+              "text": "밑줄마다 '무슨 문법을 묻는지' 먼저 이름을 붙여요(어순, 동사의 수, 부사/형용사, 분사, 관계사 뒤 빈자리 …). 그다음 그 문장의 뼈대로 확인해요."
+            }
+          ]
+        },
+        {
+          "id": "s1_nor",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "①has it survived를 봐요. 동사 has가 주어 it보다 앞에 나왔어요. 무엇 때문일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "바로 앞 nor는 '~도 아니다'예요. 부정하는 말이 문장 앞에 오면 어순이 달라져요.",
+              "바로 앞 nor는 '~도 아니다'예요. 부정하는 말이 문장 앞에 오면 어순이 달라져요."
+            ],
+            "explain": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요.",
+              "o2": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요."
+            },
+            "point": "① 부정어 nor가 앞에 와서 조동사 + 주어 어순 → has it survived 맞음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "앞에 온 부정어 nor 때문에 어순이 바뀌어서",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "현재완료는 늘 동사가 주어보다 앞에 와서"
+            },
+            {
+              "id": "o2",
+              "label": "it이 주어가 아니라 목적어라서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "nor",
+            "has it survived"
+          ],
+          "tips": [
+            {
+              "label": "부정어 + 조동사 + 주어",
+              "text": "nor·neither·never처럼 부정하는 말이 문장 앞에 오면 '조동사 + 주어 + 동사' 순서가 돼요. nor has it survived = 그것도 살아남지 못했다.",
+              "mark": "nor"
+            }
+          ]
+        },
+        {
+          "id": "s1_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①has는 맞아요. 밑줄 점검표에 붙여 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "nor has it survived",
+                "ko": "부정어 nor가 앞에 와서 조동사 + 주어 순서",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Much of it was probably improvised anyway, within certain rules and conventions.",
+      "model_translation": "어쨌든 그것의 대부분은 아마도 특정 규칙과 관례 내에서 즉흥적으로 연주되었을 것이다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Much of it",
+          "ko": "그것의 많은 부분이"
+        },
+        {
+          "en": "was probably improvised",
+          "ko": "아마 즉흥 연주였다"
+        },
+        {
+          "en": "anyway",
+          "ko": "어쨌든"
+        },
+        {
+          "en": "within certain rules and conventions",
+          "ko": "특정 규칙과 관례 안에서"
+        },
+        {
+          "en": "probably",
+          "ko": "아마"
+        },
+        {
+          "en": "improvised",
+          "ko": "즉흥 연주되었다"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "rules",
+          "ko": "규칙"
+        },
+        {
+          "en": "conventions",
+          "ko": "관례"
+        }
+      ],
+      "slashes": [
+        "improvised anyway,"
+      ],
+      "roles": [
+        {
+          "text": "Much of it",
+          "role": "S"
+        },
+        {
+          "text": "was probably improvised",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_improvised",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "악보가 없던 이유가 하나 더 있어요. 대부분 정해진 규칙 안에서 즉흥 연주였대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "improvised"
+          ],
+          "tips": [
+            {
+              "label": "improvise",
+              "text": "악보 없이 그 자리에서 즉흥으로 연주하는 거예요.",
+              "mark": "improvised"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "So we are forced largely to guess at its basis from the accounts of writers such as Plato and Aristotle, who were generally more concerned with writing about music as a philosophical and ethical exercise ②as with providing a technical primer on its practice.",
+      "model_translation": "그래서 우리는 주로 플라톤과 아리스토텔레스와 같은 작가들의 설명으로부터 그것의 토대를 추측할 수밖에 없는데, 그들은 실제에 대한 기술적인 입문서를 제공하는 것보다 철학적이고 윤리적인 실천으로서의 음악에 대해 글을 쓰는 것에 대체로 더 관심이 있었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "So",
+          "ko": "그래서"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "are forced",
+          "ko": "~할 수밖에 없다"
+        },
+        {
+          "en": "largely",
+          "ko": "주로"
+        },
+        {
+          "en": "to guess at its basis",
+          "ko": "그 토대를 추측하도록"
+        },
+        {
+          "en": "from the accounts of writers",
+          "ko": "작가들의 설명으로부터"
+        },
+        {
+          "en": "such as Plato and Aristotle",
+          "ko": "플라톤과 아리스토텔레스 같은"
+        },
+        {
+          "en": "who",
+          "ko": "(그 작가들을 가리킴)"
+        },
+        {
+          "en": "were generally more concerned with",
+          "ko": "대체로 ~에 더 관심이 있었다"
+        },
+        {
+          "en": "writing about music",
+          "ko": "음악에 대해 글 쓰는 것"
+        },
+        {
+          "en": "as a philosophical and ethical exercise",
+          "ko": "철학적이고 윤리적인 실천으로서"
+        },
+        {
+          "en": "as with",
+          "ko": "~와 (견주어)"
+        },
+        {
+          "en": "providing a technical primer on its practice",
+          "ko": "실제에 대한 기술적인 입문서를 제공하는 것"
+        },
+        {
+          "en": "forced",
+          "ko": "강요받는"
+        },
+        {
+          "en": "guess",
+          "ko": "추측하다"
+        },
+        {
+          "en": "basis",
+          "ko": "토대"
+        },
+        {
+          "en": "accounts",
+          "ko": "설명"
+        },
+        {
+          "en": "writers",
+          "ko": "작가들"
+        },
+        {
+          "en": "Plato",
+          "ko": "플라톤"
+        },
+        {
+          "en": "Aristotle",
+          "ko": "아리스토텔레스"
+        },
+        {
+          "en": "generally",
+          "ko": "일반적으로, 대체로"
+        },
+        {
+          "en": "concerned",
+          "ko": "관심이 있는 · be concerned with = ~에 관심이 있다"
+        },
+        {
+          "en": "writing",
+          "ko": "글 쓰는 것"
+        },
+        {
+          "en": "music",
+          "ko": "음악"
+        },
+        {
+          "en": "philosophical",
+          "ko": "철학적인"
+        },
+        {
+          "en": "ethical",
+          "ko": "윤리적인"
+        },
+        {
+          "en": "exercise",
+          "ko": "실천, 활동"
+        },
+        {
+          "en": "providing",
+          "ko": "제공하는 것"
+        },
+        {
+          "en": "technical",
+          "ko": "기술적인"
+        },
+        {
+          "en": "primer",
+          "ko": "입문서"
+        },
+        {
+          "en": "practice",
+          "ko": "실제, 실천"
+        }
+      ],
+      "slashes": [
+        "forced largely",
+        "guess at its basis",
+        "accounts of writers",
+        "and Aristotle,",
+        "concerned with",
+        "writing about music",
+        "ethical exercise",
+        "technical primer"
+      ],
+      "roles": [
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "are forced",
+          "role": "V"
+        },
+        {
+          "text": "to guess at its basis",
+          "role": "O"
+        },
+        {
+          "text": "who",
+          "role": "S"
+        },
+        {
+          "text": "were generally more concerned with",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "we",
+            "are forced",
+            "to guess at its basis",
+            "who",
+            "were generally more concerned with"
+          ],
+          "answers": [
+            "we",
+            "are forced",
+            "to guess at its basis"
+          ],
+          "roles": {
+            "we": "S",
+            "are forced": "V",
+            "to guess at its basis": "O"
+          },
+          "brief": {
+            "ask": "아주 긴 문장이에요. 메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "who": "그건 앞의 작가들을 가리키며 꾸미는 덩어리의 시작이에요.",
+              "were generally more concerned with": "그건 who 뒤 덩어리의 동사예요. 먼저 메인 문장을 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 we, 동사는 are forced, 그 뒤 to guess at its basis가 '무엇을 하도록' 강요받는지예요. 콤마 뒤 who부터는 작가들을 꾸며 줘요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_more",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "who 뒤를 봐요. 'more concerned with A ②as with B'로 두 가지를 견주는데, 작가들이 더 관심 있던 쪽은 어디일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "more concerned with 바로 뒤에 오는 쪽이 '더' 관심 있던 쪽이에요.",
+              "more concerned with 바로 뒤에 오는 쪽이 '더' 관심 있던 쪽이에요."
+            ],
+            "explain": "'more concerned with writing about music …', 음악을 철학·윤리의 실천으로 보고 글 쓰는 쪽에 더 관심이 있었대요. 연주 기술 입문서 쪽이 아니고요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'more concerned with writing about music …', 음악을 철학·윤리의 실천으로 보고 글 쓰는 쪽에 더 관심이 있었대요. 연주 기술 입문서 쪽이 아니고요.",
+              "o2": "'more concerned with writing about music …', 음악을 철학·윤리의 실천으로 보고 글 쓰는 쪽에 더 관심이 있었대요. 연주 기술 입문서 쪽이 아니고요."
+            },
+            "point": "작가들은 음악을 철학·윤리로 다루는 글쓰기에 더 관심 — 연주 기술 입문서 쪽이 아니다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "음악에 대해 철학적·윤리적으로 글 쓰는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "음악을 실제로 연주하는 기술적인 입문서를 제공하는 것"
+            },
+            {
+              "id": "o2",
+              "label": "두 쪽에 똑같이 관심이 있었다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "more concerned with",
+            "writing about music"
+          ]
+        },
+        {
+          "id": "s3_hold",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기서 more는 두 가지를 견주는 말이에요. 견줄 때 more와 짝을 이루는 말이 무엇인지 떠올리며, ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
+            "point": "② more가 견주는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인"
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "more concerned with",
+            "as with"
+          ],
+          "tips": [
+            {
+              "label": "more A than B",
+              "text": "두 가지를 견줄 때 '더'는 more, 견주는 대상은 than으로 이어요. more concerned with A than with B = B보다 A에 더 관심이 있다.",
+              "mark": "more"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "It seems Greek music was predominantly a vocal form, ③consisting of sung verse accompanied by instruments such as the lyre or the plucked kithara (the root of ‘guitar’).",
+      "model_translation": "그리스 음악은 대개 성악 형식이었고, 수금이나 퉁기는 키타라('기타'의 뿌리)와 같은 악기의 반주에 의해 노래되는 운문으로 구성되었던 것으로 보인다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "It seems",
+          "ko": "~인 것 같다"
+        },
+        {
+          "en": "Greek music was predominantly a vocal form",
+          "ko": "그리스 음악은 대개 성악 형식이었다"
+        },
+        {
+          "en": "consisting of sung verse",
+          "ko": "노래되는 운문으로 구성된"
+        },
+        {
+          "en": "accompanied by instruments",
+          "ko": "악기의 반주를 받는"
+        },
+        {
+          "en": "such as the lyre",
+          "ko": "수금 같은"
+        },
+        {
+          "en": "or the plucked kithara",
+          "ko": "또는 퉁기는 키타라"
+        },
+        {
+          "en": "(the root of ‘guitar’)",
+          "ko": "('기타'의 뿌리)"
+        },
+        {
+          "en": "seems",
+          "ko": "~인 것 같다"
+        },
+        {
+          "en": "Greek",
+          "ko": "그리스의"
+        },
+        {
+          "en": "music",
+          "ko": "음악"
+        },
+        {
+          "en": "predominantly",
+          "ko": "대개"
+        },
+        {
+          "en": "vocal",
+          "ko": "목소리의, 성악의"
+        },
+        {
+          "en": "form",
+          "ko": "형태"
+        },
+        {
+          "en": "consisting",
+          "ko": "구성된 · consist of = ~로 구성되다"
+        },
+        {
+          "en": "sung",
+          "ko": "노래되는"
+        },
+        {
+          "en": "verse",
+          "ko": "운문"
+        },
+        {
+          "en": "accompanied",
+          "ko": "반주를 받는"
+        },
+        {
+          "en": "instruments",
+          "ko": "악기"
+        },
+        {
+          "en": "lyre",
+          "ko": "수금(현악기)"
+        },
+        {
+          "en": "plucked",
+          "ko": "퉁기는"
+        },
+        {
+          "en": "kithara",
+          "ko": "키타라(옛 현악기)"
+        },
+        {
+          "en": "root",
+          "ko": "뿌리"
+        },
+        {
+          "en": "guitar",
+          "ko": "기타"
+        }
+      ],
+      "slashes": [
+        "It seems",
+        "vocal form,",
+        "sung verse",
+        "accompanied by instruments",
+        "plucked kithara"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "seems",
+          "role": "V"
+        },
+        {
+          "text": "Greek music",
+          "role": "S"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        },
+        {
+          "text": "a vocal form",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_consisting",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "콤마 앞에 이미 동사 was가 있어요. ③자리에 동사 consisted를 그냥 쓸 수 있을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "한 문장에 동사를 둘 쓰려면 and 같은 접속사가 있어야 해요.",
+              "한 문장에 동사를 둘 쓰려면 and 같은 접속사가 있어야 해요."
+            ],
+            "explain": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요.",
+              "o2": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요."
+            },
+            "point": "③ 접속사 없이 이어 붙이는 자리 → 분사 consisting 맞음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "쓸 수 없다 — 접속사 없이 동사를 둘 쓸 수 없어서 -ing로 이어 준다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "쓸 수 있다 — 콤마가 접속사 역할을 해서"
+            },
+            {
+              "id": "o2",
+              "label": "쓸 수 있다 — 주어가 같으면 동사를 두 번 써도 돼서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "was",
+            "consisting"
+          ],
+          "tips": [
+            {
+              "label": "분사로 이어 붙이기",
+              "text": "접속사 없이 문장을 이어 붙일 때 동사를 -ing로 바꿔요. a vocal form, consisting of … = 성악 형식이었고, …로 구성되었다.",
+              "mark": "consisting"
+            }
+          ]
+        },
+        {
+          "id": "s4_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "③consisting도 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "nor has it survived",
+                "ko": "부정어 nor가 앞에 와서 조동사 + 주어 순서",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 맞음",
+                "text": "a vocal form, consisting of",
+                "ko": "접속사 없이 이어 붙이는 분사(-ing)",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "In fact, Plato considered music in which the lyre and flute played alone and not as the accompaniment of dance or song ④to be ‘exceedingly coarse and tasteless’.",
+      "model_translation": "사실, 플라톤은 춤이나 노래의 반주로서가 아닌 수금과 피리만 연주되는 음악을 '매우 조잡하고 무미건조하다'고 여겼다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In fact",
+          "ko": "사실"
+        },
+        {
+          "en": "Plato",
+          "ko": "플라톤은"
+        },
+        {
+          "en": "considered",
+          "ko": "여겼다"
+        },
+        {
+          "en": "music",
+          "ko": "음악을"
+        },
+        {
+          "en": "in which",
+          "ko": "그 안에서"
+        },
+        {
+          "en": "the lyre and flute",
+          "ko": "수금과 피리가"
+        },
+        {
+          "en": "played alone",
+          "ko": "홀로 연주되는"
+        },
+        {
+          "en": "and not as the accompaniment of dance or song",
+          "ko": "춤이나 노래의 반주로서가 아니라"
+        },
+        {
+          "en": "to be ‘exceedingly coarse and tasteless’",
+          "ko": "'매우 조잡하고 무미건조하다'고"
+        },
+        {
+          "en": "lyre",
+          "ko": "수금(현악기)"
+        },
+        {
+          "en": "flute",
+          "ko": "피리"
+        },
+        {
+          "en": "played",
+          "ko": "연주되었다"
+        },
+        {
+          "en": "alone",
+          "ko": "홀로"
+        },
+        {
+          "en": "accompaniment",
+          "ko": "반주"
+        },
+        {
+          "en": "dance",
+          "ko": "춤"
+        },
+        {
+          "en": "song",
+          "ko": "노래"
+        },
+        {
+          "en": "exceedingly",
+          "ko": "매우"
+        },
+        {
+          "en": "coarse",
+          "ko": "조잡한"
+        },
+        {
+          "en": "tasteless",
+          "ko": "무미건조한, 멋없는"
+        }
+      ],
+      "slashes": [
+        "In fact,",
+        "considered music",
+        "played alone",
+        "dance or song"
+      ],
+      "roles": [
+        {
+          "text": "Plato",
+          "role": "S"
+        },
+        {
+          "text": "considered",
+          "role": "V"
+        },
+        {
+          "text": "music",
+          "role": "O"
+        },
+        {
+          "text": "the lyre and flute",
+          "role": "S"
+        },
+        {
+          "text": "played",
+          "role": "V"
+        },
+        {
+          "text": "to be ‘exceedingly coarse and tasteless’",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Plato",
+            "considered",
+            "music",
+            "the lyre and flute",
+            "played alone"
+          ],
+          "answers": [
+            "Plato",
+            "considered",
+            "music"
+          ],
+          "roles": {
+            "Plato": "S",
+            "considered": "V",
+            "music": "O"
+          },
+          "brief": {
+            "ask": "메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the lyre and flute": "그건 in which 뒤, 음악을 꾸미는 덩어리의 주어예요.",
+              "played alone": "그건 in which 뒤 덩어리의 동사예요. 먼저 메인 문장을 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Plato, 동사는 considered, 목적어는 music이에요. in which부터 긴 덩어리가 그 music을 꾸며요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_tobe",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "④to be 뒤의 '매우 조잡하고 무미건조하다'는 무엇을 두고 한 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "considered의 목적어가 무엇이었는지 떠올려 봐요. to be는 그 목적어가 어떻다는 말이에요.",
+              "considered의 목적어가 무엇이었는지 떠올려 봐요. to be는 그 목적어가 어떻다는 말이에요."
+            ],
+            "explain": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요.",
+              "o2": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요."
+            },
+            "point": "④ consider + 목적어(music) + to be + 보어 → to be 맞음 (목적어가 길어 멀리 떨어져 보인다)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "플라톤이 여긴 그 음악 (music)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "춤이나 노래 (dance or song)"
+            },
+            {
+              "id": "o2",
+              "label": "플라톤 자신 (Plato)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "considered",
+            "music",
+            "to be ‘exceedingly coarse and tasteless’"
+          ],
+          "tips": [
+            {
+              "label": "consider + 목적어 + to be",
+              "text": "'~을 …라고 여기다'예요. 목적어가 길면 to be가 멀리 떨어져 보여요. considered music … to be coarse = 그 음악을 조잡하다고 여겼다.",
+              "mark": "to be"
+            }
+          ]
+        },
+        {
+          "id": "s5_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "④to be도 맞아요. 목적어가 길어서 멀어 보였을 뿐이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "nor has it survived",
+                "ko": "부정어 nor가 앞에 와서 조동사 + 주어 순서",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 맞음",
+                "text": "a vocal form, consisting of",
+                "ko": "접속사 없이 이어 붙이는 분사(-ing)",
+                "tone": "hl"
+              },
+              {
+                "label": "④ 맞음",
+                "text": "considered music … to be",
+                "ko": "consider + 목적어 + to be + 보어",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "The melodies seem to have had a very limited pitch range, since the instruments ⑤generally span only an octave, from one E (as we’d now define it) to the next.",
+      "model_translation": "그 선율은 매우 제한된 음역을 가지고 있었던 것으로 보이는데, 왜냐하면 그 악기들은 (우리가 그것을 현재 정의하는 대로) 한 E에서 다음 E까지 단지 한 옥타브에만 걸쳐 있기 때문이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "The melodies",
+          "ko": "그 선율은"
+        },
+        {
+          "en": "seem to have had",
+          "ko": "가지고 있었던 것 같다"
+        },
+        {
+          "en": "a very limited pitch range",
+          "ko": "매우 제한된 음역을"
+        },
+        {
+          "en": "since",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "the instruments",
+          "ko": "그 악기들은"
+        },
+        {
+          "en": "generally span",
+          "ko": "일반적으로 걸쳐 있다"
+        },
+        {
+          "en": "only an octave",
+          "ko": "단지 한 옥타브에만"
+        },
+        {
+          "en": "from one E",
+          "ko": "한 E에서"
+        },
+        {
+          "en": "(as we’d now define it)",
+          "ko": "(우리가 지금 정의하는 대로)"
+        },
+        {
+          "en": "to the next",
+          "ko": "다음 E까지"
+        },
+        {
+          "en": "melodies",
+          "ko": "선율"
+        },
+        {
+          "en": "seem",
+          "ko": "~인 것 같다"
+        },
+        {
+          "en": "limited",
+          "ko": "제한된"
+        },
+        {
+          "en": "pitch",
+          "ko": "음(높이)"
+        },
+        {
+          "en": "range",
+          "ko": "범위 · pitch range = 음역"
+        },
+        {
+          "en": "instruments",
+          "ko": "악기"
+        },
+        {
+          "en": "generally",
+          "ko": "일반적으로, 대체로"
+        },
+        {
+          "en": "span",
+          "ko": "걸쳐 있다"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "octave",
+          "ko": "옥타브"
+        },
+        {
+          "en": "E",
+          "ko": "E (음 이름 '미')"
+        },
+        {
+          "en": "we’d",
+          "ko": "우리가 ~하는 (we would)"
+        },
+        {
+          "en": "now",
+          "ko": "지금"
+        },
+        {
+          "en": "define",
+          "ko": "정의하다"
+        },
+        {
+          "en": "next",
+          "ko": "다음 것"
+        }
+      ],
+      "slashes": [
+        "seem to have had",
+        "pitch range,",
+        "since the instruments",
+        "an octave,",
+        "from one E",
+        "define it)"
+      ],
+      "roles": [
+        {
+          "text": "The melodies",
+          "role": "S"
+        },
+        {
+          "text": "seem to have had",
+          "role": "V"
+        },
+        {
+          "text": "a very limited pitch range",
+          "role": "O"
+        },
+        {
+          "text": "the instruments",
+          "role": "S"
+        },
+        {
+          "text": "span",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_adverb",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "⑤generally는 바로 뒤의 span(걸쳐 있다)을 꾸며요. 동사를 꾸미는 말은 무엇이어야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "동사를 꾸미는 건 형용사가 아니에요.",
+              "동사를 꾸미는 건 형용사가 아니에요."
+            ],
+            "explain": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요.",
+              "o2": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요."
+            },
+            "point": "⑤ 동사 span을 꾸미는 자리 → 부사 generally 맞음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "부사 (generally)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "형용사 (general)"
+            },
+            {
+              "id": "o2",
+              "label": "명사 (generality)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "generally",
+            "span"
+          ]
+        },
+        {
+          "id": "s6_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①③④⑤는 모두 맞았어요. 남은 하나, ②를 다시 떠올리며 문제를 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "nor has it survived",
+                "ko": "부정어 nor가 앞에 와서 조동사 + 주어 순서",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 맞음",
+                "text": "a vocal form, consisting of",
+                "ko": "접속사 없이 이어 붙이는 분사(-ing)",
+                "tone": "hl"
+              },
+              {
+                "label": "④ 맞음",
+                "text": "considered music … to be",
+                "ko": "consider + 목적어 + to be + 보어",
+                "tone": "hl"
+              },
+              {
+                "label": "⑤ 맞음",
+                "text": "generally span",
+                "ko": "동사 span을 꾸미는 부사 generally",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

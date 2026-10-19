@@ -1,0 +1,292 @@
+{
+  "lesson": "moeui-2022-03-29-greek-music",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어법 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_sv": {
+      "ask": "①이 든 문장이에요. 메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "there are no examples of it": "그건 because 뒤 덩어리의 주어·동사예요. 먼저 메인 문장을 봐요.",
+        "has it survived": "그건 nor 뒤 덩어리예요. 먼저 메인 문장을 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 don’t know, 목적어는 what ancient Greek music sounded like예요. what 덩어리가 '무엇을' 모르는지예요.",
+      "from": "6rcfv4"
+    },
+    "s1_nor": {
+      "ask": "①has it survived를 봐요. 동사 has가 주어 it보다 앞에 나왔어요. 무엇 때문일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "바로 앞 nor는 '~도 아니다'예요. 부정하는 말이 문장 앞에 오면 어순이 달라져요.",
+        "바로 앞 nor는 '~도 아니다'예요. 부정하는 말이 문장 앞에 오면 어순이 달라져요."
+      ],
+      "explain": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요.",
+        "o2": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요."
+      },
+      "point": "① 부정어 nor가 앞에 와서 조동사 + 주어 어순 → has it survived 맞음",
+      "from": "aw71d"
+    },
+    "s1_check": {
+      "say": "①has는 맞아요. 밑줄 점검표에 붙여 둘게요.",
+      "from": "9aknjc"
+    },
+    "s2_improvised": {
+      "say": "악보가 없던 이유가 하나 더 있어요. 대부분 정해진 규칙 안에서 즉흥 연주였대요.",
+      "from": "7z6ron"
+    },
+    "s3_sv": {
+      "ask": "아주 긴 문장이에요. 메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "who": "그건 앞의 작가들을 가리키며 꾸미는 덩어리의 시작이에요.",
+        "were generally more concerned with": "그건 who 뒤 덩어리의 동사예요. 먼저 메인 문장을 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 we, 동사는 are forced, 그 뒤 to guess at its basis가 '무엇을 하도록' 강요받는지예요. 콤마 뒤 who부터는 작가들을 꾸며 줘요.",
+      "from": "13gl623"
+    },
+    "s3_more": {
+      "ask": "who 뒤를 봐요. 'more concerned with A ②as with B'로 두 가지를 견주는데, 작가들이 더 관심 있던 쪽은 어디일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "more concerned with 바로 뒤에 오는 쪽이 '더' 관심 있던 쪽이에요.",
+        "more concerned with 바로 뒤에 오는 쪽이 '더' 관심 있던 쪽이에요."
+      ],
+      "explain": "'more concerned with writing about music …', 음악을 철학·윤리의 실천으로 보고 글 쓰는 쪽에 더 관심이 있었대요. 연주 기술 입문서 쪽이 아니고요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'more concerned with writing about music …', 음악을 철학·윤리의 실천으로 보고 글 쓰는 쪽에 더 관심이 있었대요. 연주 기술 입문서 쪽이 아니고요.",
+        "o2": "'more concerned with writing about music …', 음악을 철학·윤리의 실천으로 보고 글 쓰는 쪽에 더 관심이 있었대요. 연주 기술 입문서 쪽이 아니고요."
+      },
+      "point": "작가들은 음악을 철학·윤리로 다루는 글쓰기에 더 관심 — 연주 기술 입문서 쪽이 아니다",
+      "from": "1wudm7z"
+    },
+    "s3_hold": {
+      "say": "여기서 more는 두 가지를 견주는 말이에요. 견줄 때 more와 짝을 이루는 말이 무엇인지 떠올리며, ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
+      "point": "② more가 견주는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인",
+      "from": "1tiol75"
+    },
+    "s4_consisting": {
+      "ask": "콤마 앞에 이미 동사 was가 있어요. ③자리에 동사 consisted를 그냥 쓸 수 있을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "한 문장에 동사를 둘 쓰려면 and 같은 접속사가 있어야 해요.",
+        "한 문장에 동사를 둘 쓰려면 and 같은 접속사가 있어야 해요."
+      ],
+      "explain": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요.",
+        "o2": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요."
+      },
+      "point": "③ 접속사 없이 이어 붙이는 자리 → 분사 consisting 맞음",
+      "from": "14qgvdm"
+    },
+    "s4_check": {
+      "say": "③consisting도 맞아요.",
+      "from": "8yxpp"
+    },
+    "s5_sv": {
+      "ask": "메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the lyre and flute": "그건 in which 뒤, 음악을 꾸미는 덩어리의 주어예요.",
+        "played alone": "그건 in which 뒤 덩어리의 동사예요. 먼저 메인 문장을 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Plato, 동사는 considered, 목적어는 music이에요. in which부터 긴 덩어리가 그 music을 꾸며요.",
+      "from": "z8pplp"
+    },
+    "s5_tobe": {
+      "ask": "④to be 뒤의 '매우 조잡하고 무미건조하다'는 무엇을 두고 한 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "considered의 목적어가 무엇이었는지 떠올려 봐요. to be는 그 목적어가 어떻다는 말이에요.",
+        "considered의 목적어가 무엇이었는지 떠올려 봐요. to be는 그 목적어가 어떻다는 말이에요."
+      ],
+      "explain": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요.",
+        "o2": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요."
+      },
+      "point": "④ consider + 목적어(music) + to be + 보어 → to be 맞음 (목적어가 길어 멀리 떨어져 보인다)",
+      "from": "1d1my0f"
+    },
+    "s5_check": {
+      "say": "④to be도 맞아요. 목적어가 길어서 멀어 보였을 뿐이에요.",
+      "from": "fx5hmx"
+    },
+    "s6_adverb": {
+      "ask": "⑤generally는 바로 뒤의 span(걸쳐 있다)을 꾸며요. 동사를 꾸미는 말은 무엇이어야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "동사를 꾸미는 건 형용사가 아니에요.",
+        "동사를 꾸미는 건 형용사가 아니에요."
+      ],
+      "explain": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요.",
+        "o2": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요."
+      },
+      "point": "⑤ 동사 span을 꾸미는 자리 → 부사 generally 맞음",
+      "from": "1awm5al"
+    },
+    "s6_go": {
+      "say": "①③④⑤는 모두 맞았어요. 남은 하나, ②를 다시 떠올리며 문제를 골라 봐요.",
+      "from": "127pdgi"
+    }
+  },
+  "exam": {
+    "ask": "밑줄 점검표를 떠올리며, 어법상 틀린 하나를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! more로 두 가지를 견줬으니 짝이 되는 말은 than이어야 해요. ②as with → than with로 고쳐요.",
+    "final_wrong": "정답은 ②예요. 'more concerned with A … as with B'에서 more와 짝을 이루는 말은 than이에요. as with를 than with로 고쳐요.",
+    "option_feedback": {
+      "1": "부정어 nor가 앞에 와서 '조동사 + 주어' 순서가 된 거라 ①has it survived는 맞아요.",
+      "3": "앞에 이미 동사 was가 있어서 접속사 없이 이어 붙이려면 -ing가 와야 해요. ③consisting은 맞아요.",
+      "4": "consider + 목적어 + to be + 보어예요. 목적어 music이 길어서 멀어 보일 뿐 ④to be는 맞아요.",
+      "5": "동사 span을 꾸미는 자리라 부사 ⑤generally가 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "③ 앞에는 이미 동사 was가 있어서 '동사가 둘'로 보여요. 하지만 접속사 없이 문장을 이어 붙일 때는 동사를 -ing(분사)로 바꿔요. 그래서 consisting이 맞아요.",
+        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "동사가 둘이라 틀린 것 같았어요",
+            "skills": [
+              "participle"
+            ],
+            "reply": "알려 줘서 고마워요. 접속사가 없으면 뒤 동사는 -ing가 돼요. 앞으로 분사로 이어 붙이는 자리를 먼저 짚어 줄게요."
+          },
+          {
+            "label": "consisting of 뜻을 몰랐어요",
+            "skills": [
+              "vocab"
+            ],
+            "reply": "알려 줘서 고마워요. consist of는 '~로 구성되다'예요. 앞으로 이런 숙어를 먼저 알려 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "participle",
+              "vocab"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 분사 자리와 숙어를 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "앞",
+              "text": "a vocal form",
+              "ko": "콤마 앞 — 이미 동사 was가 있다",
+              "tone": "hl"
+            },
+            {
+              "label": "뒤",
+              "text": "consisting of sung verse",
+              "ko": "접속사가 없으니 -ing로 이어 붙인다",
+              "tone": "hl2"
+            }
+          ]
+        }
+      },
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "④to be는 considered와 멀리 떨어져 있어서 어색해 보여요. 목적어 music 뒤에 in which 덩어리가 길게 붙어서 그래요. consider + 목적어 + to be + 보어 모양이라 ④는 맞아요.",
+        "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "considered와 to be가 멀어서 헷갈렸어요",
+            "skills": [
+              "long_object"
+            ],
+            "reply": "알려 줘서 고마워요. 목적어가 길면 보어가 멀어져요. 앞으로 긴 목적어를 먼저 묶어서 보여 줄게요."
+          },
+          {
+            "label": "consider 뒤에 to be가 오는 걸 몰랐어요",
+            "skills": [
+              "verb_pattern"
+            ],
+            "reply": "알려 줘서 고마워요. consider + 목적어 + to be + 보어는 '~을 …라고 여기다'예요. 앞으로 동사 모양을 먼저 알려 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "long_object",
+              "verb_pattern"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 긴 목적어와 동사 모양을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "여긴 사람",
+              "text": "Plato considered",
+              "ko": "주어 + 동사",
+              "tone": "hl"
+            },
+            {
+              "label": "여긴 대상",
+              "text": "music in which … dance or song",
+              "ko": "목적어 — in which 덩어리가 길게 꾸민다",
+              "tone": "hl2"
+            },
+            {
+              "label": "여긴 어떻다",
+              "text": "to be ‘exceedingly coarse and tasteless’",
+              "ko": "그 목적어가 어떻다는 보어",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "zdft4d"
+  },
+  "intro": {
+    "topic": {
+      "say": "고대 그리스 음악은 어떤 소리였을까요? 악보도 녹음도 남아 있지 않아서, 글로 남은 설명으로 짐작할 수밖에 없대요."
+    },
+    "method1": {
+      "say": "어법 문제는 밑줄마다 무슨 문법을 묻는지 먼저 이름을 붙여요. 그다음 그 문장의 주어·동사·빈자리로 하나씩 확인할게요."
+    },
+    "from": "l8bpoy"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1ufpx7"
+}

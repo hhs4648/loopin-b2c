@@ -305,7 +305,15 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
               onClick={() => setParaAt((paraAt ?? para.at) + 1)}>›</button>
           </div>
         ) : view.sentenceTag && !peeked ? (
-          <span className="sentence-no">{view.sentenceTag}</span>
+          // 듣기는 꼬리표 옆 아이콘만 — 아래 칩 줄에 버튼이 셋이나 되어 많아 보였다 (2026-10-20 선생님). 칠판이 한 번 나오기 전까지만
+          <div className="sentence-tag-row">
+            <span className="sentence-no">{view.sentenceTag}</span>
+            {sawBoard || shadePick ? null : (
+              <button type="button" className="listen-icon" aria-label="듣기" title="듣기" onClick={listen}>
+                <SpeakerIcon />
+              </button>
+            )}
+          </div>
         ) : null}
         <div className={view.givenBox && !peeked && !alt ? "given-box" : undefined}>
         {view.pick?.order && !peeked && !alt ? (
@@ -340,7 +348,10 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           tipMark={peeked || alt ? null : tipMark}
           pick={peeked || alt ? null : (view.pick ?? null)}
           signs={peeked || alt ? [] : (view.signs ?? [])}
-          roles={peeked || alt ? [] : (view.roles ?? [])}
+          roles={peeked || alt ? [] : slashOn
+            // 끊어읽기를 켜면 문장에 적어 둔 S·V·O·C도 같이 — 찾기로 이미 붙은 말은 그대로 두고 나머지만 보탠다
+            ? [...(view.roles ?? []), ...(view.slashRoles ?? []).filter((r) => !(view.roles ?? []).some((x) => x.text === r.text))]
+            : (view.roles ?? [])}
           onPickWord={(w) => !typing && onSend(`${PICK_CMD}${w}`)}
           emphasis={view.emphasis ?? []}
           faded={view.faded ?? []}
@@ -380,15 +391,10 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </div>
       ) : null}
 
-      {/* 듣기 · 끊어읽기 · 헷갈리는 단어 — 문장 칸 밖에 작은 칩 한 줄 (2026-10-16 선생님: 버튼이 너무 많아 보인다).
-          듣기는 칠판이 한 번 나오기 전까지만 */}
+      {/* 끊어읽기 · 헷갈리는 단어 — 문장 칸 밖에 작은 칩 한 줄 (2026-10-16 선생님: 버튼이 너무 많아 보인다).
+          듣기는 문장 꼬리표 옆 아이콘으로 옮겼다 (2026-10-20). 안내문은 칠판이 한 번 나오기 전까지만 */}
       {!(sawBoard || shadePick) || toggleChips ? (
         <div className="sentence-toggles">
-          {sawBoard || shadePick ? null : (
-            <button type="button" className="listen" onClick={listen}>
-              <SpeakerIcon /> 듣기
-            </button>
-          )}
           {toggleChips}
           {/* 지시문은 말풍선 말고 칩 아래에 (2026-10-16 선생님) — 듣기가 보이는 처음 화면들, 밑줄 켰을 땐 그 안내 */}
           {trapHint ? (

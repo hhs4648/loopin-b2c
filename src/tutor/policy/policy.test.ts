@@ -1526,7 +1526,7 @@ describe("자유 해석 — 한 군데까지는 봐준다", () => {
 
 describe("2026학년도 6월 모평 34·37번 — 처음부터 끝까지 정답으로 지나가면 보기 화면까지 간다", () => {
   it.each(["mopyeong-2026-06-34-geography-where", "mopyeong-2026-06-37-chaos-pendulum",
-    ...allPolicyLessons().map((l) => l.id).filter((id) => id.startsWith("moeui-2024-03-"))])("%s", async (id) => {
+    ...allPolicyLessons().map((l) => l.id).filter((id) => id.startsWith("moeui-2024-03-") || id.startsWith("moeui-2022-03-"))])("%s", async (id) => {
     const lesson = allPolicyLessons().find((l) => l.id === id)!;
     const steps = new Map(lesson.sentences.flatMap((s) => s.steps).map((st) => [st.id, st]));
     const session = createPolicySession(id, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
@@ -1850,6 +1850,10 @@ describe("읽는 동안 헷갈리는 단어 Tip을 미리", () => {
 describe("끊어읽기", () => {
   it("적어 둔 끊는 자리는 문장에 그대로 있다 (모든 레슨)", () => {
     for (const l of allPolicyLessons()) for (const s of l.sentences) for (const c of s.slashes ?? []) expect(s.text, `${l.id} ${s.id}`).toContain(c);
+  });
+  it("끊어읽기 때 보이는 S·V·O·C도 문장에 그대로 있다 (모든 레슨)", () => {
+    // 「has … survived」처럼 떨어진 두 조각은 조각마다
+    for (const l of allPolicyLessons()) for (const s of l.sentences) for (const r of s.roles ?? []) for (const part of r.text.split(" … ")) expect(s.text, `${l.id} ${s.id}`).toContain(part);
   });
 });
 

@@ -1,0 +1,88 @@
+{
+ "3": [
+  {
+   "word": "so",
+   "phrase": "So we are forced",
+   "sense": "그래서",
+   "usage": "접속사 so (문장 앞, 결과)"
+  },
+  {
+   "word": "to",
+   "phrase": "to guess",
+   "sense": "~하도록",
+   "usage": "be forced + to부정사"
+  },
+  {
+   "word": "as",
+   "phrase": "such as Plato",
+   "sense": "~ 같은",
+   "usage": "such as + 예시"
+  },
+  {
+   "word": "as",
+   "phrase": "as a philosophical and ethical exercise",
+   "sense": "~로서",
+   "usage": "전치사 as (자격·역할)"
+  },
+  {
+   "word": "as",
+   "phrase": "as with providing",
+   "sense": "~와 (견주어)",
+   "usage": "비교 대상을 잇는 자리 — more와 짝이 맞는지 보기"
+  }
+ ],
+ "4": [
+  {
+   "word": "as",
+   "phrase": "such as the lyre",
+   "sense": "~ 같은",
+   "usage": "such as + 예시"
+  }
+ ],
+ "5": [
+  {
+   "word": "which",
+   "phrase": "in which the lyre and flute played",
+   "sense": "그 안에서 (앞 명사를 꾸밈)",
+   "usage": "전치사 + 관계대명사 (뒤 문장이 완전하다)"
+  },
+  {
+   "word": "as",
+   "phrase": "as the accompaniment",
+   "sense": "~로서",
+   "usage": "전치사 as (자격·역할)"
+  },
+  {
+   "word": "to",
+   "phrase": "to be",
+   "sense": "~라고 (여기다)",
+   "usage": "consider + 목적어 + to be + 보어"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "seem to have had",
+   "sense": "~한 (것 같다)",
+   "usage": "seem + to부정사 (완료형 to have + p.p.)"
+  },
+  {
+   "word": "since",
+   "phrase": "since the instruments",
+   "sense": "~ 때문에",
+   "usage": "접속사 since (이유)"
+  },
+  {
+   "word": "as",
+   "phrase": "as we’d now define it",
+   "sense": "~하는 대로",
+   "usage": "접속사 as (방식)"
+  },
+  {
+   "word": "to",
+   "phrase": "to the next",
+   "sense": "~까지",
+   "usage": "from A to B"
+  }
+ ]
+}

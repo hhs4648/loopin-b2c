@@ -26,6 +26,9 @@ const byName = (files: Record<string, unknown>) =>
   Object.keys(files).sort((a, b) => Number(a.match(/-(\d+)-[a-z]/)?.[1]) - Number(b.match(/-(\d+)-[a-z]/)?.[1])).map((k) => files[k]);
 const LESSONS_2024_03 = byName(import.meta.glob("../../../content/tutor/policy-lessons/moeui-2024-03-*.json", { eager: true, import: "default" }));
 const COPY_2024_03 = byName(import.meta.glob("../../../content/tutor/policy-copy/dajung/moeui-2024-03-*.json", { eager: true, import: "default" }));
+/** 2022년 3월 고3 — 같은 방식(생성기 + 파일 이름) */
+const LESSONS_2022_03 = byName(import.meta.glob("../../../content/tutor/policy-lessons/moeui-2022-03-*.json", { eager: true, import: "default" }));
+const COPY_2022_03 = byName(import.meta.glob("../../../content/tutor/policy-copy/dajung/moeui-2022-03-*.json", { eager: true, import: "default" }));
 
 /**
  * Teaching Policy 레슨 목록.
@@ -34,11 +37,11 @@ const COPY_2024_03 = byName(import.meta.glob("../../../content/tutor/policy-copy
  * 다르다. 지문을 추가하면 여기에 레슨 한 줄과 대사 한 줄,
  * `content/tutor/sets.json`에 세트 하나.
  */
-const POLICY_LESSONS = [musicResearchers, namesAndDifferences, epistemicCommunities, epistemicCommunitiesV1, translationStrangeness, conversationStoppers, profoundBuilding, gestureGlue, geographyWhere, chaosPendulum, ...LESSONS_2024_03] as unknown as PolicyLesson[];
+const POLICY_LESSONS = [musicResearchers, namesAndDifferences, epistemicCommunities, epistemicCommunitiesV1, translationStrangeness, conversationStoppers, profoundBuilding, gestureGlue, geographyWhere, chaosPendulum, ...LESSONS_2024_03, ...LESSONS_2022_03] as unknown as PolicyLesson[];
 
 /** 캐릭터 → 레슨 → 뽑아 둔 대사. 지금 캐릭터는 다정쌤 하나다 */
 const POLICY_COPY: Record<string, PolicyCopy[]> = {
-  dajung: [musicResearchersDajung, namesAndDifferencesDajung, epistemicCommunitiesDajung, epistemicCommunitiesV1Dajung, translationStrangenessDajung, conversationStoppersDajung, profoundBuildingDajung, gestureGlueDajung, geographyWhereDajung, chaosPendulumDajung, ...COPY_2024_03] as unknown as PolicyCopy[],
+  dajung: [musicResearchersDajung, namesAndDifferencesDajung, epistemicCommunitiesDajung, epistemicCommunitiesV1Dajung, translationStrangenessDajung, conversationStoppersDajung, profoundBuildingDajung, gestureGlueDajung, geographyWhereDajung, chaosPendulumDajung, ...COPY_2024_03, ...COPY_2022_03] as unknown as PolicyCopy[],
 };
 
 export function getPolicyCopy(lessonId: string, character = "dajung"): PolicyCopy | null {

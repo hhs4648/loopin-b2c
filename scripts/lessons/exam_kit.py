@@ -300,6 +300,10 @@ def check(lesson, senses):
         for c in s.get("slashes", []):
             if c not in s["text"]:
                 errs.append(f"{s['id']}: 끊는 자리 {c} 없음")
+        for r in s.get("roles", []):
+            # 「has … survived」처럼 떨어진 조각은 조각마다
+            if any(part not in s["text"] for part in r["text"].split(" … ")):
+                errs.append(f"{s['id']}: 끊어읽기 S·V {r['text']} 없음")
         for st in s["steps"]:
             b = st["brief"]
             for line in _lines(b):

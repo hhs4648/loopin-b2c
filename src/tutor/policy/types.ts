@@ -497,6 +497,12 @@ export type PolicySentence = {
    * 2026-10-16 선생님). 문장에 나오는 그대로(문장부호 포함) 적는다
    */
   slashes?: string[];
+  /**
+   * 끊어읽기를 켜면 같이 보이는 S·V·O·C — 메인 문장의 주어·동사·목적어·보어와, 절 안의 주어·동사
+   * (2026-10-20 선생님). 문장에 나오는 그대로 적는다(떨어진 동사는 「has … survived」). 주어·동사 찾기 전에도 보인다 — 학생이 켜야만 보이는 도움이라서
+   * 메인 문장뿐 아니라 because·who 같은 절 안의 주어·동사도 적는다 — 모두 같은 진하기로 (연하게 구분해 봤다가 되돌림, 2026-10-20 선생님)
+   */
+  roles?: { text: string; role: "S" | "V" | "O" | "C" }[];
   glosses: WordGloss[];
   vocabulary?: Record<string, VocabularySupport>;
   helps?: OptionalHelp[];
