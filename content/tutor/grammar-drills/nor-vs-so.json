@@ -1,0 +1,139 @@
+{
+  "id": "nor-vs-so",
+  "title": "nor vs so",
+  "intro": [
+    [
+      "앞이 부정문이면",
+      "nor + 동사 + 주어",
+      "~도 아니다"
+    ],
+    [
+      "앞이 긍정문이면",
+      "and so + 동사 + 주어",
+      "~도 그렇다"
+    ],
+    [
+      "so로 이을 땐",
+      "and가 꼭 필요",
+      "nor는 혼자 잇는다"
+    ],
+    [
+      "대답할 땐",
+      "So do I. / Nor do I.",
+      "나도 그래 / 나도 안 그래"
+    ]
+  ],
+  "items": [
+    {
+      "type": "choice",
+      "sentence": "I like pizza, and ___ does my brother.",
+      "ko": "나는 피자를 좋아하고, 내 동생도 그렇다.",
+      "options": [
+        "so",
+        "nor",
+        "neither"
+      ],
+      "answer": "so",
+      "why": "앞이 긍정문(I like)이에요. '~도 그렇다'는 so + 동사 + 주어예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "I don't like horror movies, ___ does my sister.",
+      "ko": "나는 공포 영화를 안 좋아하고, 언니도 안 좋아한다.",
+      "options": [
+        "nor",
+        "so",
+        "and"
+      ],
+      "answer": "nor",
+      "why": "앞이 부정문(don't like)이에요. '~도 아니다'는 nor이고, nor는 혼자 문장을 이어요."
+    },
+    {
+      "type": "choice",
+      "sentence": "She can swim, and so ___ her friends.",
+      "ko": "그녀는 수영을 할 수 있고, 친구들도 그렇다.",
+      "options": [
+        "can",
+        "do",
+        "are"
+      ],
+      "answer": "can",
+      "why": "앞 문장의 동사 can을 그대로 써요. so can her friends예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "A: I'm tired.  B: So ___ I.",
+      "ko": "A: 나 피곤해.  B: 나도 그래.",
+      "options": [
+        "am",
+        "do",
+        "have"
+      ],
+      "answer": "am",
+      "why": "앞이 be동사(I'm = I am)라서 So am I예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "A: I didn't sleep well.  B: ___ did I.",
+      "ko": "A: 나 잠을 잘 못 잤어.  B: 나도 못 잤어.",
+      "options": [
+        "Nor",
+        "So",
+        "And"
+      ],
+      "answer": "Nor",
+      "why": "앞이 부정문(didn't)이라 '나도 못 잤어'는 Nor did I예요. So는 긍정문 뒤에만 써요."
+    },
+    {
+      "type": "choice",
+      "sentence": "He has finished the work, and so ___ his partner.",
+      "ko": "그는 일을 끝냈고, 그의 동료도 그렇다.",
+      "options": [
+        "has",
+        "does",
+        "is"
+      ],
+      "answer": "has",
+      "why": "동사가 has finished 두 개라 맨 앞 has를 써요. so has his partner예요."
+    },
+    {
+      "type": "input",
+      "sentence": "They went to the concert, and so ___ we.",
+      "ko": "그들은 콘서트에 갔고, 우리도 그랬다.",
+      "answers": [
+        "did"
+      ],
+      "why": "과거 일반동사 went라서 did를 써요. and so did we예요."
+    },
+    {
+      "type": "input",
+      "sentence": "I won't go to the party, nor ___ Tom.",
+      "ko": "나는 파티에 안 갈 거고, 톰도 안 갈 것이다.",
+      "answers": [
+        "will"
+      ],
+      "why": "won't는 will not이에요. 앞이 부정문이라 nor + will + Tom이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "My dad likes coffee, ___ does my mom.",
+      "ko": "아빠는 커피를 좋아하고, 엄마도 그렇다.",
+      "options": [
+        "and so",
+        "so",
+        "nor"
+      ],
+      "answer": "and so",
+      "why": "so는 혼자 문장을 잇지 못해서 and so를 써요. 앞이 긍정문이라 nor는 아니에요."
+    },
+    {
+      "type": "input",
+      "sentence": "A: I love this song.  B: ___ I.",
+      "ko": "A: 나 이 노래 정말 좋아.  B: 나도 그래.",
+      "answers": [
+        "so do"
+      ],
+      "why": "앞이 긍정문이고 일반동사 love라서 So do I예요."
+    }
+  ]
+}

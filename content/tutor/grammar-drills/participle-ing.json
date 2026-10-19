@@ -1,11 +1,27 @@
 {
   "id": "participle-ing",
   "title": "분사로 잇기 (-ing / p.p.)",
-  "rules": [
-    "접속사 없이 동사를 하나 더 쓸 수 없어요 → 두 번째 동사는 분사로",
-    "앞의 명사가 직접 하면 -ing: a box consisting of letters, a girl sitting there",
-    "앞의 명사가 당하면 p.p.(과거분사): a letter written in 1950",
-    "consist of(~로 구성되다)는 수동태로 안 써요 → consisted of(p.p.)도 ✕, consisting of"
+  "intro": [
+    [
+      "동사가 이미 있으면",
+      "두 번째는 -ing / p.p.로",
+      "접속사 없이 동사 둘 ✕"
+    ],
+    [
+      "명사가 직접 하면",
+      "-ing",
+      "a girl sitting there"
+    ],
+    [
+      "명사가 당하면",
+      "p.p.(과거분사)",
+      "a letter written in 1950"
+    ],
+    [
+      "consist of는",
+      "수동 ✕ → consisting",
+      "consisted of ✕"
+    ]
   ],
   "items": [
     {

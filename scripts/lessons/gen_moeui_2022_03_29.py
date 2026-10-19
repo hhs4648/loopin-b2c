@@ -86,8 +86,8 @@ nor_try = choice(
     panel_below=True,
     point="nor + 동사 + 주어(도치), 동사가 둘이면 맨 앞만 → nor has she read",
 )
-# 「네」면 연습할 문법으로 남겨 보충학습실에서 drill 10문제 (content/tutor/grammar-drills/nor-inversion.json)
-nor_more = show("s1_nor_more", "이 문법을 나중에 좀 더 연습할까요?", practice="nor-inversion", button="네")
+# 「네」면 「nor / so」 묶음(기본 개념 · nor vs so · nor vs neither · 작문, 각 10문제)을 보충학습실에 담는다
+nor_more = show("s1_nor_more", "이 문법을 나중에 좀 더 연습할까요?", practice="nor-so", button="네")
 nor_more["brief"]["saved"] = "보충학습실에 담아 뒀어요."
 
 nor_try["brief"]["feedback"] = {

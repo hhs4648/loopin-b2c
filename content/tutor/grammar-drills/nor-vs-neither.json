@@ -1,0 +1,136 @@
+{
+  "id": "nor-vs-neither",
+  "title": "nor vs neither",
+  "intro": [
+    [
+      "뜻은 같아요",
+      "nor = neither",
+      "둘 다 '~도 아니다', 뒤는 도치"
+    ],
+    [
+      "문장을 이을 땐",
+      "nor는 혼자, neither는 and와",
+      "…, nor does she / …, and neither does she"
+    ],
+    [
+      "짝",
+      "neither A nor B",
+      "A도 B도 아니다 (or ✕)"
+    ],
+    [
+      "either로 쓰면",
+      "도치 없이 not 그대로",
+      "She doesn't either."
+    ]
+  ],
+  "items": [
+    {
+      "type": "choice",
+      "sentence": "I don't eat meat, ___ does my sister.",
+      "ko": "나는 고기를 안 먹고, 언니도 안 먹는다.",
+      "options": [
+        "nor",
+        "neither",
+        "either"
+      ],
+      "answer": "nor",
+      "why": "앞에 and가 없어요. 혼자 문장을 잇는 건 nor예요. neither는 and neither로 써야 해요."
+    },
+    {
+      "type": "choice",
+      "sentence": "I don't eat meat, and ___ does my sister.",
+      "ko": "나는 고기를 안 먹고, 언니도 안 먹는다.",
+      "options": [
+        "neither",
+        "either",
+        "so"
+      ],
+      "answer": "neither",
+      "why": "and가 있으니 neither + 도치예요. either는 도치 없이 문장 끝에, so는 긍정문 뒤에 써요."
+    },
+    {
+      "type": "choice",
+      "sentence": "A: I can't drive.  B: ___ can I.",
+      "ko": "A: 나 운전 못 해.  B: 나도 못 해.",
+      "options": [
+        "Neither",
+        "Either",
+        "So"
+      ],
+      "answer": "Neither",
+      "why": "대답할 땐 Neither can I(= Nor can I)예요. either는 I can't either처럼 문장 끝에 와요."
+    },
+    {
+      "type": "choice",
+      "sentence": "___ my brother nor my sister likes fish.",
+      "ko": "내 형도 누나도 생선을 좋아하지 않는다.",
+      "options": [
+        "Neither",
+        "Either",
+        "Not"
+      ],
+      "answer": "Neither",
+      "why": "nor와 짝은 neither예요. neither A nor B = A도 B도 아니다."
+    },
+    {
+      "type": "choice",
+      "sentence": "Neither Tom ___ Jane came to the meeting.",
+      "ko": "톰도 제인도 회의에 오지 않았다.",
+      "options": [
+        "nor",
+        "or",
+        "and"
+      ],
+      "answer": "nor",
+      "why": "neither는 nor와 짝이에요. or는 either와 짝(either A or B)이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "She doesn't like jazz, and I don't like it ___.",
+      "ko": "그녀는 재즈를 안 좋아하고, 나도 안 좋아한다.",
+      "options": [
+        "either",
+        "neither",
+        "too"
+      ],
+      "answer": "either",
+      "why": "부정문 끝의 '~도'는 either예요. 도치가 없어요. too는 긍정문에 써요."
+    },
+    {
+      "type": "input",
+      "sentence": "I haven't seen the movie, and ___ has he.",
+      "ko": "나는 그 영화를 못 봤고, 그도 못 봤다.",
+      "answers": [
+        "neither"
+      ],
+      "why": "and 뒤에서 도치(has he)가 있으니 neither예요."
+    },
+    {
+      "type": "input",
+      "sentence": "He can't speak French, ___ can his wife.",
+      "ko": "그는 프랑스어를 못 하고, 아내도 못 한다.",
+      "answers": [
+        "nor"
+      ],
+      "why": "and가 없이 혼자 잇고 뒤가 도치(can his wife)라서 nor예요."
+    },
+    {
+      "type": "input",
+      "sentence": "A: I don't like coffee.  B: I don't ___.",
+      "ko": "A: 나 커피 안 좋아해.  B: 나도 안 좋아해.",
+      "answers": [
+        "either"
+      ],
+      "why": "I don't처럼 not이 그대로 있고 도치가 없으니 문장 끝에 either예요."
+    },
+    {
+      "type": "input",
+      "sentence": "The room was ___ clean nor quiet.",
+      "ko": "그 방은 깨끗하지도 조용하지도 않았다.",
+      "answers": [
+        "neither"
+      ],
+      "why": "nor와 짝을 이루는 건 neither예요. neither A nor B."
+    }
+  ]
+}

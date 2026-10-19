@@ -5,15 +5,16 @@ import { loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab";
 import { lessonIdOfSentence, loadWordStats, statOf } from "../tutor/vocabTest";
 import { VocabTest } from "./VocabTest";
 import { GrammarDrill } from "./GrammarDrill";
-import { getGrammarDrill } from "../tutor/grammarDrills";
-import { loadGrammarPractice, removeGrammarPractice, type GrammarPracticeEntry } from "../tutor/grammarPractice";
+import { getGrammarDrill, groupOf, type GrammarGroup } from "../tutor/grammarDrills";
+import { loadDrillScores, loadGrammarPractice, removeGrammarPractice, type GrammarPracticeEntry } from "../tutor/grammarPractice";
 
 /**
  * 메인에서 여는 내 공부 — **단어장**과 **노트**.
  *
  * 단어장: 문장에서 단어 뜻의 별표를 누르거나, 마무리 단어 체크에서 고른 단어.
  * 노트: 수업 끝 「헷갈린 포인트」에서 별표를 누른 것.
- * 연습할 문법: 수업 중 「이 문법을 나중에 좀 더 연습할까요?」에서 「네」를 누른 것 — 단어장 위에, 누르면 drill 10문제.
+ * 연습할 문법: 수업 중 「이 문법을 나중에 좀 더 연습할까요?」에서 「네」를 누른 것 — 단어장 위에.
+ *   묶음(「nor / so」)마다 세트(기본 개념 · nor vs so · …)를 순서대로 — 끝낸 세트는 ✓와 점수. 순서를 잠그지는 않는다.
  * 단어장은 최근에 저장한 단어가 위로 — 단어마다 저장한 날짜, 테스트에서 본 횟수·맞힌 횟수·틀린 횟수.
  * 노트는 어느 문제에서 저장했는지로 묶고, 최근에 공부한 문제가 위로 온다.
  * 별표를 다시 누르면 빠진다 (실수로 눌렀을 때 바로 되돌릴 수 있게, 목록에서 바로 지우지는 않는다).
@@ -52,19 +53,34 @@ export function SavedBook({ kind, onBack }: Props) {
   /** 테스트 중이면 볼 단어 (null = 단어장에서 고름). 테스트를 다시 열 때마다 key를 바꾼다 */
   const [test, setTest] = useState<{ only?: VocabEntry[]; n: number } | null>(null);
   const [grammar, setGrammar] = useState<GrammarPracticeEntry[]>(() => (kind === "vocab" ? loadGrammarPractice() : []));
-  /** 풀고 있는 문법 drill id */
-  const [drill, setDrill] = useState<string | null>(null);
+  const [scores, setScores] = useState(() => loadDrillScores());
+  /** 풀고 있는 문법 drill과 그 묶음 */
+  const [drill, setDrill] = useState<{ id: string; group: GrammarGroup } | null>(null);
 
   if (drill) {
+    const at = drill.group.drills.indexOf(drill.id);
+    const nextId = drill.group.drills[at + 1];
+    const nextDrill = nextId ? getGrammarDrill(nextId) : null;
     return (
       <GrammarDrill
-        id={drill}
+        key={drill.id}
+        id={drill.id}
+        next={nextDrill ? { id: nextDrill.id, title: nextDrill.title } : undefined}
+        onOpen={(id) => setDrill({ id, group: drill.group })}
         onClose={() => {
           setDrill(null);
           setGrammar(loadGrammarPractice());
+          setScores(loadDrillScores());
         }}
       />
     );
+  }
+
+  // 담은 것을 묶음으로 — 예전에 drill 하나(nor-inversion)로 담은 것도 그 묶음으로 보인다
+  const groups: { entry: GrammarPracticeEntry; group: GrammarGroup }[] = [];
+  for (const entry of [...grammar].sort((a, b) => b.savedAt.localeCompare(a.savedAt))) {
+    const group = groupOf(entry.id);
+    if (group && !groups.some((x) => x.group.id === group.id)) groups.push({ entry, group });
   }
 
   if (test) {
@@ -106,35 +122,57 @@ export function SavedBook({ kind, onBack }: Props) {
         {grammar.length ? (
           <section className="saved-group gprac">
             <h2 className="saved-group-title">연습할 문법</h2>
-            {[...grammar]
-              .sort((a, b) => b.savedAt.localeCompare(a.savedAt))
-              .map((gp) => {
-                const d = getGrammarDrill(gp.id);
-                return (
-                  <div key={gp.id} className="gprac-row">
-                    <button
-                      type="button"
-                      className="point-star on"
-                      aria-label="연습할 문법에서 빼기"
-                      onClick={() => setGrammar(removeGrammarPractice(gp.id))}
-                    >
-                      ★
+            {groups.map(({ entry, group }) => (
+              <div key={group.id} className="gprac-card">
+                <div className="gprac-head">
+                  <button
+                    type="button"
+                    className="point-star on"
+                    aria-label="연습할 문법에서 빼기"
+                    onClick={() => {
+                      // 이 묶음으로 보이는 것을 다 뺀다
+                      let left = grammar;
+                      for (const g of grammar) if (groupOf(g.id)?.id === group.id) left = removeGrammarPractice(g.id);
+                      setGrammar(left);
+                    }}
+                  >
+                    ★
+                  </button>
+                  <span className="saved-body">
+                    <b className="saved-en">{group.title}</b>
+                    <small className="saved-meta">
+                      {group.subtitle ? `${group.subtitle} · ` : ""}
+                      {shortDate(entry.savedAt)} 저장 · {setOfLesson(entry.lessonId)?.title ?? "다른 수업"}
+                    </small>
+                  </span>
+                  {group.drills.length === 1 ? (
+                    <button type="button" className="gprac-go" onClick={() => setDrill({ id: group.drills[0]!, group })}>
+                      {scores[group.drills[0]!] ? `다시 풀기 · ${scores[group.drills[0]!]!.right}/${scores[group.drills[0]!]!.total}` : "10문제 풀기"}
                     </button>
-                    <span className="saved-body">
-                      <b className="saved-en">{d?.title ?? gp.id}</b>
-                      <small className="saved-meta">
-                        {shortDate(gp.savedAt)} 저장 · {setOfLesson(gp.lessonId)?.title ?? "다른 수업"}
-                        {gp.last ? ` · 지난번 ${gp.last.right}/${gp.last.total}` : ""}
-                      </small>
-                    </span>
-                    {d ? (
-                      <button type="button" className="gprac-go" onClick={() => setDrill(gp.id)}>
-                        {d.items.length}문제 풀기
-                      </button>
-                    ) : null}
-                  </div>
-                );
-              })}
+                  ) : null}
+                </div>
+                {/* 세트가 하나뿐이면 이름이 겹치니 줄을 안 그린다 */}
+                {group.drills.length > 1 ? <ol className="gprac-sets">
+                  {group.drills.map((id, i) => {
+                    const d = getGrammarDrill(id);
+                    if (!d) return null;
+                    const sc = scores[id];
+                    return (
+                      <li key={id} className={`gprac-set${sc ? " done" : ""}`}>
+                        <span className="gprac-num">{sc ? "✓" : i + 1}</span>
+                        <span className="gprac-name">
+                          {d.title}
+                          {sc ? <small className="gprac-score"> {sc.right}/{sc.total}</small> : null}
+                        </span>
+                        <button type="button" className="gprac-go" onClick={() => setDrill({ id, group })}>
+                          {sc ? "다시 풀기" : `${d.items.length}문제 풀기`}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ol> : null}
+              </div>
+            ))}
             {rows.length ? <h2 className="saved-group-title">단어장</h2> : null}
           </section>
         ) : null}

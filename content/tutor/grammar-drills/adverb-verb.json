@@ -1,11 +1,27 @@
 {
   "id": "adverb-verb",
   "title": "부사 vs 형용사",
-  "rules": [
-    "동사를 꾸미는 말 = 부사(-ly): generally span, sings beautifully",
-    "형용사·다른 부사를 꾸미는 것도 부사: surprisingly easy",
-    "형용사는 명사를 꾸미거나 be동사·seem 뒤(보어): a general rule, It is general",
-    "-ly인데 형용사인 말: friendly, lovely"
+  "intro": [
+    [
+      "동사·형용사를 꾸밀 땐",
+      "부사(-ly)",
+      "sings beautifully, surprisingly easy"
+    ],
+    [
+      "명사를 꾸밀 땐",
+      "형용사",
+      "a general rule"
+    ],
+    [
+      "be동사·seem 뒤엔",
+      "형용사",
+      "She is kind."
+    ],
+    [
+      "-ly인데 형용사",
+      "friendly, lovely",
+      "a lovely house"
+    ]
   ],
   "items": [
     {

@@ -1,0 +1,150 @@
+{
+  "id": "nor-writing",
+  "title": "작문",
+  "mode": "writing",
+  "intro": [
+    [
+      "부정문 뒤 '~도 아니다'",
+      "nor + 동사 + 주어",
+      "and neither + 동사 + 주어 / … not … either"
+    ],
+    [
+      "긍정문 뒤 '~도 그렇다'",
+      "and so + 동사 + 주어",
+      "… too"
+    ],
+    [
+      "A도 B도 아니다",
+      "neither A nor B",
+      ""
+    ],
+    [
+      "동사 고르기",
+      "앞 문장의 조동사·be동사 / 일반동사면 do·does·did",
+      ""
+    ]
+  ],
+  "items": [
+    {
+      "type": "input",
+      "sentence": "I haven't read the book, ___.",
+      "ko": "나는 그 책을 안 읽었고, 그녀도 안 읽었다.",
+      "answers": [
+        "nor has she",
+        "nor has she read it",
+        "nor has she read the book",
+        "and neither has she",
+        "and neither has she read it",
+        "and neither has she read the book",
+        "and she hasn't either",
+        "and she hasn't read it either",
+        "and she hasn't read the book either"
+      ],
+      "why": "부정문 뒤라서 nor has she예요. and neither has she, and she hasn't either도 맞아요."
+    },
+    {
+      "type": "input",
+      "sentence": "He doesn't eat fish, ___.",
+      "ko": "그는 생선을 안 먹고, 고기도 안 먹는다.",
+      "answers": [
+        "nor does he eat meat",
+        "and neither does he eat meat",
+        "and he doesn't eat meat either"
+      ],
+      "why": "일반동사 eat이라 does를 앞으로 보내요. nor does he eat meat예요."
+    },
+    {
+      "type": "input",
+      "sentence": "My sister plays the piano, ___.",
+      "ko": "언니는 피아노를 치고, 나도 그렇다.",
+      "answers": [
+        "and so do i",
+        "and i do too",
+        "and so do i play the piano"
+      ],
+      "why": "긍정문 뒤 '~도 그렇다'는 and so do I예요. 일반동사 plays라 do를 써요."
+    },
+    {
+      "type": "input",
+      "sentence": "We can't stay long, ___.",
+      "ko": "우리는 오래 있을 수 없고, 그들도 오래 있을 수 없다.",
+      "answers": [
+        "nor can they",
+        "nor can they stay long",
+        "and neither can they",
+        "and neither can they stay long",
+        "and they can't either",
+        "and they can't stay long either"
+      ],
+      "why": "부정문 뒤, 조동사 can이라 nor can they예요."
+    },
+    {
+      "type": "input",
+      "sentence": "A: I'm hungry.  B: ___.",
+      "ko": "A: 나 배고파.  B: 나도 그래.",
+      "answers": [
+        "so am i",
+        "me too",
+        "i am too"
+      ],
+      "why": "be동사(I'm = I am)라서 So am I예요. Me too도 맞아요."
+    },
+    {
+      "type": "input",
+      "sentence": "A: I didn't do my homework.  B: ___.",
+      "ko": "A: 나 숙제 안 했어.  B: 나도 안 했어.",
+      "answers": [
+        "nor did i",
+        "neither did i",
+        "i didn't either",
+        "i didn't do it either",
+        "me neither"
+      ],
+      "why": "부정문 뒤, 과거 일반동사라 Nor did I(= Neither did I)예요. I didn't either도 맞아요."
+    },
+    {
+      "type": "input",
+      "sentence": "She has never been to Japan, ___.",
+      "ko": "그녀는 일본에 가 본 적이 없고, 중국에도 가 본 적이 없다.",
+      "answers": [
+        "nor has she been to china",
+        "and neither has she been to china",
+        "and she hasn't been to china either",
+        "and she has never been to china either"
+      ],
+      "why": "never가 든 부정문이에요. 동사가 has been 두 개라 has만 앞으로: nor has she been to China예요."
+    },
+    {
+      "type": "input",
+      "sentence": "___ was at home.",
+      "ko": "톰도 미나도 집에 없었다.",
+      "answers": [
+        "neither tom nor mina"
+      ],
+      "why": "A도 B도 아니다는 neither A nor B예요. Neither Tom nor Mina was at home."
+    },
+    {
+      "type": "input",
+      "sentence": "The plan wasn't cheap, ___.",
+      "ko": "그 계획은 싸지 않았고, 쉽지도 않았다.",
+      "answers": [
+        "nor was it easy",
+        "and neither was it easy",
+        "and it wasn't easy either"
+      ],
+      "why": "be동사 was라서 nor was it easy예요."
+    },
+    {
+      "type": "input",
+      "sentence": "They will come to the party, ___.",
+      "ko": "그들은 파티에 올 거고, 우리도 올 것이다.",
+      "answers": [
+        "and so will we",
+        "and we will too",
+        "and we will come too",
+        "and we will come to the party too"
+      ],
+      "why": "긍정문 뒤, 조동사 will이라 and so will we예요."
+    }
+  ]
+}

@@ -1,18 +1,26 @@
 import { useState } from "react";
 import { getGrammarDrill, isRightInput, type DrillItem } from "../tutor/grammarDrills";
-import { recordGrammarDrill } from "../tutor/grammarPractice";
+import { recordDrillInput, recordGrammarDrill } from "../tutor/grammarPractice";
 
-type Props = { id: string; onClose: () => void };
+type Props = {
+  id: string;
+  onClose: () => void;
+  /** 같은 묶음의 다음 세트 — 끝 화면에 「다음 세트」 버튼 */
+  next?: { id: string; title: string };
+  onOpen?: (id: string) => void;
+};
 
 /**
  * 문법 drill — 보충학습실의 「연습할 문법」에서 연다. 10문제, 처음엔 객관식 → 나중엔 주관식이 섞인다 (자료 순서 그대로).
  * 틀리면 첫마디는 「아쉽게도 틀렸어요.」 + 이유, [다음]으로 넘긴다. 끝나면 점수와 틀린 문제의 정답을 보여 준다.
  */
-export function GrammarDrill({ id, onClose }: Props) {
+export function GrammarDrill({ id, onClose, next, onOpen }: Props) {
   const drill = getGrammarDrill(id);
   const [qi, setQi] = useState(0);
   const [marks, setMarks] = useState<boolean[]>([]);
   const [rulesOpen, setRulesOpen] = useState(false);
+  /** 시작 전 규칙 카드를 보고 있나 */
+  const [ready, setReady] = useState(false);
 
   if (!drill) {
     return (
@@ -30,37 +38,49 @@ export function GrammarDrill({ id, onClose }: Props) {
   const right = marks.filter(Boolean).length;
 
   function done(ok: boolean) {
-    const next = [...marks, ok];
-    setMarks(next);
+    const all = [...marks, ok];
+    setMarks(all);
     setQi(qi + 1);
-    if (next.length === items.length) recordGrammarDrill(id, next.filter(Boolean).length, items.length);
+    if (all.length === items.length) recordGrammarDrill(id, all.filter(Boolean).length, items.length);
   }
 
   return (
     <div className="stage-fill words vtest gdrill">
       <header className="words-top">
         <span className="words-step">
-          {drill.title}{item ? ` · ${qi + 1} / ${items.length}` : ""}
+          {drill.title}{ready && item ? ` · ${qi + 1} / ${items.length}` : ""}
         </span>
         <button type="button" className="close-soft" title="그만하기" aria-label="그만하기" onClick={onClose}>
           ✕
         </button>
       </header>
 
-      {item ? (
+      {!ready ? (
+        <>
+          <p className="words-title">시작 전에 규칙부터 짧게 볼게요.</p>
+          <RuleCard drill={drill} />
+          <div className="words-dock">
+            <button type="button" className="read-continue" onClick={() => setReady(true)}>
+              시작하기
+            </button>
+          </div>
+        </>
+      ) : item ? (
         <>
           <button type="button" className="gdrill-rules-toggle" onClick={() => setRulesOpen(!rulesOpen)}>
             💡 {rulesOpen ? "정리 접기" : "정리 보기"}
           </button>
-          {rulesOpen ? (
-            <ul className="gdrill-rules">
-              {drill.rules.map((r) => <li key={r}>{r}</li>)}
-            </ul>
-          ) : null}
+          {rulesOpen ? <RuleCard drill={drill} /> : null}
           {item.type === "choice" ? (
             <ChoiceItem key={qi} item={item} onDone={done} />
           ) : (
-            <InputItem key={qi} item={item} onDone={done} />
+            <InputItem
+              key={qi}
+              item={item}
+              writing={drill.mode === "writing"}
+              onTyped={(typed, ok) => recordDrillInput(id, qi, typed, ok)}
+              onDone={done}
+            />
           )}
         </>
       ) : (
@@ -79,10 +99,15 @@ export function GrammarDrill({ id, onClose }: Props) {
             )}
           </ul>
           <div className="words-dock">
+            {next && onOpen ? (
+              <button type="button" className="read-continue" onClick={() => onOpen(next.id)}>
+                다음 세트: {next.title}
+              </button>
+            ) : null}
             {right < items.length ? (
               <button
                 type="button"
-                className="read-continue"
+                className={`read-continue${next ? " second" : ""}`}
                 onClick={() => {
                   setMarks([]);
                   setQi(0);
@@ -91,13 +116,29 @@ export function GrammarDrill({ id, onClose }: Props) {
                 처음부터 다시
               </button>
             ) : null}
-            <button type="button" className={`read-continue${right < items.length ? " second" : ""}`} onClick={onClose}>
+            <button type="button" className={`read-continue${right < items.length || next ? " second" : ""}`} onClick={onClose}>
               보충학습실로
             </button>
           </div>
         </>
       )}
     </div>
+  );
+}
+
+/** 규칙 카드 — 「부정문일 땐 → nor + 동사 + 주어」 */
+function RuleCard({ drill }: { drill: NonNullable<ReturnType<typeof getGrammarDrill>> }) {
+  return (
+    <ul className="gdrill-card">
+      {drill.intro.map(([when, then, ex]) => (
+        <li key={when + then}>
+          <span className="gdrill-when">{when}</span>
+          <span className="gdrill-arrow">→</span>
+          <b className="gdrill-then">{then}</b>
+          {ex ? <small className="gdrill-ex">{ex}</small> : null}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -169,20 +210,33 @@ function ChoiceItem({ item, onDone }: { item: Extract<DrillItem, { type: "choice
   );
 }
 
-function InputItem({ item, onDone }: { item: Extract<DrillItem, { type: "input" }>; onDone: (ok: boolean) => void }) {
+function InputItem({
+  item,
+  writing,
+  onTyped,
+  onDone,
+}: {
+  item: Extract<DrillItem, { type: "input" }>;
+  /** 작문 — 빈칸이 뒷부분 전체라 길게 쓴다 */
+  writing?: boolean;
+  /** 학생이 쓴 답을 그대로 남긴다 */
+  onTyped: (typed: string, ok: boolean) => void;
+  onDone: (ok: boolean) => void;
+}) {
   const [typed, setTyped] = useState("");
   const [checked, setChecked] = useState<boolean | null>(null);
 
   function check() {
     if (checked !== null || !typed.trim()) return;
     const ok = isRightInput(item, typed);
+    onTyped(typed, ok);
     setChecked(ok);
     if (ok) window.setTimeout(() => onDone(true), 900);
   }
 
   return (
     <>
-      <p className="words-title">빈칸에 들어갈 말을 직접 써 보세요.</p>
+      <p className="words-title">{writing ? "한국어를 보고 빈칸 부분을 영어로 써 보세요." : "빈칸에 들어갈 말을 직접 써 보세요."}</p>
       <Sentence item={item} shown={checked !== null} ok={!!checked} />
       <form
         className="gdrill-input-row"
@@ -195,7 +249,7 @@ function InputItem({ item, onDone }: { item: Extract<DrillItem, { type: "input" 
           className={`gdrill-input${checked === null ? "" : checked ? " right" : " wrong"}`}
           value={typed}
           onChange={(e) => setTyped(e.target.value)}
-          placeholder="영어로 쓰세요"
+          placeholder={writing ? "빈칸 부분을 영어로" : "영어로 쓰세요"}
           autoCapitalize="off"
           autoComplete="off"
           spellCheck={false}

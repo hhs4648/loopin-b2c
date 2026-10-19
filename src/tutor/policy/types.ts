@@ -318,8 +318,8 @@ export type ShowStep = StepBase & {
   /** 누르면 넘어가는 버튼 — 학생의 말이라 캐릭터 말투와 상관없다. 없으면 「다음으로」 */
   button?: string;
   /**
-   * 「이 문법을 나중에 좀 더 연습할까요?」 — [네]/[괜찮아요]. 「네」면 이 문법(drill id,
-   * `content/tutor/grammar-drills/<id>.json`)을 연습할 문법으로 남겨 보충학습실에서 drill을 풀게 한다 (2026-10-20 선생님)
+   * 「이 문법을 나중에 좀 더 연습할까요?」 — [네]/[괜찮아요]. 「네」면 이 문법(drill 또는 묶음 id,
+   * `content/tutor/grammar-drills/`)을 연습할 문법으로 남겨 보충학습실에서 drill을 풀게 한다 (2026-10-20 선생님)
    */
   practice?: string;
 };
