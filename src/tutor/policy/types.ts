@@ -317,6 +317,11 @@ export type ShowStep = StepBase & {
   brief: ShowCopy;
   /** 누르면 넘어가는 버튼 — 학생의 말이라 캐릭터 말투와 상관없다. 없으면 「다음으로」 */
   button?: string;
+  /**
+   * 「이 문법을 나중에 좀 더 연습할까요?」 — [네]/[괜찮아요]. 「네」면 이 문법(drill id,
+   * `content/tutor/grammar-drills/<id>.json`)을 연습할 문법으로 남겨 보충학습실에서 drill을 풀게 한다 (2026-10-20 선생님)
+   */
+  practice?: string;
 };
 
 /**
@@ -445,6 +450,8 @@ export type ThinkCopy = {
 
 export type ShowCopy = {
   say: string;
+  /** `practice` 스텝에서 「네」를 눌렀을 때 다음 말 앞에 붙는 한마디 */
+  saved?: string;
   /** `detail_button`(예: 「다음에 또 알려주세요」)을 누른 학생의 「헷갈린 포인트」에 남길 한 줄 */
   point?: string;
 };
@@ -503,6 +510,11 @@ export type PolicySentence = {
    * 메인 문장뿐 아니라 because·who 같은 절 안의 주어·동사도 적는다 — 모두 같은 진하기로 (연하게 구분해 봤다가 되돌림, 2026-10-20 선생님)
    */
   roles?: { text: string; role: "S" | "V" | "O" | "C" }[];
+  /**
+   * 끊어읽기를 켜면 [ ]로 묶어 보이는 수식어 — 관계대명사절(who·which·that·whose·in which·접촉절)과 분사 덩어리.
+   * 수식어 안의 주어·동사는 roles에 적지 않는다 (2026-10-20 선생님: 관계대명사절은 S·V 안 체크, 괄호로 수식어라는 것만). 문장에 나오는 그대로 적는다
+   */
+  modifiers?: string[];
   glosses: WordGloss[];
   vocabulary?: Record<string, VocabularySupport>;
   helps?: OptionalHelp[];

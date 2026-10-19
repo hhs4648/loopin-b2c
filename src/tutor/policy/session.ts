@@ -8,6 +8,7 @@ import { isUnknownInput, matchChoice } from "../match";
 import { askedAboutWord } from "../proper-nouns";
 import { addVocab } from "../vocab";
 import { recordLessonEvents } from "../lessonLog";
+import { addGrammarPractice } from "../grammarPractice";
 import { bumpMethodIntro, methodIntroCount, saveReview, type ReviewStatus } from "./review";
 import { decideOnChoice, openingAction, shouldShow, type DecideInput } from "./decide";
 import { choiceCopy, pickCopy, showCopy, thinkCopy, translateCopy } from "./copy";
@@ -125,6 +126,7 @@ const PRAISE_MS = 1000;
 /** 이보다 긴 칭찬(설명이 붙은 것)은 저절로 넘기지 않고 「네」로 넘긴다 */
 const LONG_PRAISE = 25;
 const YES_BTN = "네";
+const NO_THANKS_BTN = "괜찮아요";
 const ANALYZE_DEEP_BTN = policyFrame.buttons.analyze_deep;
 const SUMMARY_ONLY_BTN = policyFrame.buttons.summary_only;
 const END_NOW_BTN = policyFrame.buttons.end_now;
@@ -896,6 +898,7 @@ export function createPolicySession(
       if (s.resolved) return [NEXT_BTN];
       return s.thinkHinted ? [THOUGHT_BTN] : [THOUGHT_BTN, HINT_BTN];
     }
+    if (st.practice) return [st.button ?? YES_BTN, NO_THANKS_BTN];
     const main = [st.button ?? NEXT_BTN, ...(st.known && st.button !== KNOWN_BTN ? [KNOWN_BTN] : [])];
     return st.detail_button ? [...main, st.detail_button] : main;
   }
@@ -1608,6 +1611,7 @@ export function createPolicySession(
       slashes: inLesson && shown === sen.text ? (sen.slashes ?? []) : [],
       // 끊어읽기 때 같이 보이는 S·V·O·C — 주어·동사 찾기 전에도 보인다. 학생이 켜야만 보이는 도움이라 답이 새는 게 아니다 (2026-10-20 선생님)
       slashRoles: inLesson && shown === sen.text ? (sen.roles ?? []) : [],
+      slashModifiers: inLesson && shown === sen.text ? (sen.modifiers ?? []) : [],
       bracket: inLesson && !s.readingFirst && st.bracket && shown.includes(st.bracket) ? `[${st.bracket}]` : null,
       activeChunk: shown,
       chunkLabel: sen.label ?? paragraphOf(s.si)?.label ?? `${s.si + 1}문장`,
@@ -1995,6 +1999,16 @@ export function createPolicySession(
         if (point) addPoint(st.id, placeName(), point);
         s = { ...s, detailOpen: st.id };
         next();
+        return view();
+      }
+      // 「이 문법을 나중에 좀 더 연습할까요?」 — 「네」면 연습할 문법으로 남긴다
+      if (st.type === "show" && st.practice) {
+        const yes = text === (st.button ?? YES_BTN);
+        log({ kind: "continue" }, { action: "CONTINUE", interactionId: st.id, reason: [yes ? "practice_saved" : "practice_declined"] });
+        if (yes) {
+          addGrammarPractice(st.practice, lesson.id, d.now());
+          next(showCopy(copy, st.id).saved ? `${showCopy(copy, st.id).saved} ` : "");
+        } else next();
         return view();
       }
       if (st.type === "choice") onChoice(st, text);

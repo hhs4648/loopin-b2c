@@ -6,33 +6,42 @@
   "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
   "helps": {},
   "steps": {
-    "s1_sv": {
-      "ask": "①이 든 문장이에요. 메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
-      "wrong": "그건 주어·동사가 아니에요.",
-      "wrong_by": {
-        "there are no examples of it": "그건 because 뒤 덩어리의 주어·동사예요. 먼저 메인 문장을 봐요.",
-        "has it survived": "그건 nor 뒤 덩어리예요. 먼저 메인 문장을 봐요."
-      },
-      "more": "좋아요! {n}개 남았어요.",
-      "praise": "다 찾았어요!",
-      "explain": "주어는 We, 동사는 don’t know, 목적어는 what ancient Greek music sounded like예요. what 덩어리가 '무엇을' 모르는지예요.",
-      "from": "6rcfv4"
+    "s1_nor_mean": {
+      "say": "①이 든 nor부터 볼게요. nor는 '~도 아니다'라는 뜻이에요.",
+      "from": "1nophrl"
     },
-    "s1_nor": {
-      "ask": "①has it survived를 봐요. 동사 has가 주어 it보다 앞에 나왔어요. 무엇 때문일까요?",
+    "s1_nor_form": {
+      "say": "nor는 완성된 문장 뒤에 「, nor + 동사 + 주어」 순서로 붙어요. 주어와 동사 순서를 바꾸는 이걸 '도치'라고 해요.",
+      "from": "1oa55s"
+    },
+    "s1_nor_aux": {
+      "say": "동사가 두 개 이상이면 맨 앞 동사 하나만 주어 앞으로 가요. has survived에서 has만 it 앞으로 나와 nor has it survived가 됐어요.",
+      "from": "icym96"
+    },
+    "s1_nor_neg": {
+      "say": "그리고 nor 앞에는 늘 부정문이 와요. 여기도 앞에 no examples가 있어요.",
+      "from": "1bphepk"
+    },
+    "s1_nor_try": {
+      "ask": "두 문장을 nor로 합쳐 봐요. 빈칸에 알맞은 것은 무엇일까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
-        "바로 앞 nor는 '~도 아니다'예요. 부정하는 말이 문장 앞에 오면 어순이 달라져요.",
-        "바로 앞 nor는 '~도 아니다'예요. 부정하는 말이 문장 앞에 오면 어순이 달라져요."
+        "nor 뒤에는 동사가 주어 앞으로 가요. 동사가 둘이면 맨 앞 하나만요.",
+        "nor 뒤에는 동사가 주어 앞으로 가요. 동사가 둘이면 맨 앞 하나만요."
       ],
-      "explain": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요.",
-      "praise": "맞아요!",
+      "explain": "nor 뒤에는 동사가 주어 앞으로 가요. 동사가 둘이면 맨 앞 하나만요.",
+      "praise": "맞아요! has만 she 앞으로 나와서 nor has she read예요.",
       "feedback": {
-        "o1": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요.",
-        "o2": "nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요."
+        "o1": "nor 뒤에는 주어와 동사 순서가 바뀌어요(도치). she has가 아니라 has she예요.",
+        "o2": "맨 앞 동사 has 하나만 주어 앞으로 가요. read는 she 뒤에 남아서 has she read예요."
       },
-      "point": "① 부정어 nor가 앞에 와서 조동사 + 주어 어순 → has it survived 맞음",
-      "from": "aw71d"
+      "point": "nor + 동사 + 주어(도치), 동사가 둘이면 맨 앞만 → nor has she read",
+      "from": "1mpupdx"
+    },
+    "s1_nor_more": {
+      "say": "이 문법을 나중에 좀 더 연습할까요?",
+      "saved": "보충학습실에 담아 뒀어요.",
+      "from": "lvds32"
     },
     "s1_check": {
       "say": "①has는 맞아요. 밑줄 점검표에 붙여 둘게요.",
@@ -41,18 +50,6 @@
     "s2_improvised": {
       "say": "악보가 없던 이유가 하나 더 있어요. 대부분 정해진 규칙 안에서 즉흥 연주였대요.",
       "from": "7z6ron"
-    },
-    "s3_sv": {
-      "ask": "아주 긴 문장이에요. 메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
-      "wrong": "그건 주어·동사가 아니에요.",
-      "wrong_by": {
-        "who": "그건 앞의 작가들을 가리키며 꾸미는 덩어리의 시작이에요.",
-        "were generally more concerned with": "그건 who 뒤 덩어리의 동사예요. 먼저 메인 문장을 봐요."
-      },
-      "more": "좋아요! {n}개 남았어요.",
-      "praise": "다 찾았어요!",
-      "explain": "주어는 we, 동사는 are forced, 그 뒤 to guess at its basis가 '무엇을 하도록' 강요받는지예요. 콤마 뒤 who부터는 작가들을 꾸며 줘요.",
-      "from": "13gl623"
     },
     "s3_more": {
       "ask": "who 뒤를 봐요. 'more concerned with A ②as with B'로 두 가지를 견주는데, 작가들이 더 관심 있던 쪽은 어디일까요?",
@@ -75,73 +72,116 @@
       "point": "② more가 견주는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인",
       "from": "1tiol75"
     },
-    "s4_consisting": {
-      "ask": "콤마 앞에 이미 동사 was가 있어요. ③자리에 동사 consisted를 그냥 쓸 수 있을까요?",
+    "s4_cons_mean": {
+      "say": "③consisting부터 볼게요. consist of는 '~로 구성되다'라는 뜻이에요.",
+      "from": "1c3tqe7"
+    },
+    "s4_cons_one": {
+      "say": "콤마 앞에 이미 동사 was가 있어요. 접속사 없이 동사를 하나 더 쓸 수 없어서 consisted는 못 와요.",
+      "from": "aqub1y"
+    },
+    "s4_cons_ing": {
+      "say": "그래서 동사를 -ing로 바꿔 이어 붙여요. 이런 -ing를 '분사'라고 하고, 여기선 앞의 a vocal form을 설명해요.",
+      "from": "1s0cusb"
+    },
+    "s4_cons_pass": {
+      "say": "그리고 consist of는 수동태로 쓰지 않아요. 그래서 과거분사 consisted로도 못 바꾸고, consisting이 맞아요.",
+      "from": "1ibof1l"
+    },
+    "s4_cons_try": {
+      "ask": "두 문장을 접속사 없이 합쳐 봐요. 빈칸에 알맞은 것은 무엇일까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
-        "한 문장에 동사를 둘 쓰려면 and 같은 접속사가 있어야 해요.",
-        "한 문장에 동사를 둘 쓰려면 and 같은 접속사가 있어야 해요."
+        "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요.",
+        "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요."
       ],
-      "explain": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요.",
-      "praise": "맞아요!",
+      "explain": "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요.",
+      "praise": "맞아요! 동사 wrote가 있으니 -ing로 이어서 consisting이에요.",
       "feedback": {
-        "o1": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요.",
-        "o2": "접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요."
+        "o1": "consist of는 수동태로 못 써요. 그리고 이미 동사 wrote가 있어서 consisting이에요.",
+        "o2": "접속사 없이 동사를 하나 더 쓸 수 없어요. 동사 wrote가 있으니 -ing로 이어서 consisting이에요."
       },
-      "point": "③ 접속사 없이 이어 붙이는 자리 → 분사 consisting 맞음",
-      "from": "14qgvdm"
+      "point": "접속사 없이 잇는 자리 + consist of는 수동 ✕ → consisting",
+      "from": "19vlucn"
+    },
+    "s4_cons_more": {
+      "say": "이 문법을 나중에 좀 더 연습할까요?",
+      "saved": "보충학습실에 담아 뒀어요.",
+      "from": "lvds32"
     },
     "s4_check": {
       "say": "③consisting도 맞아요.",
       "from": "8yxpp"
     },
-    "s5_sv": {
-      "ask": "메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
-      "wrong": "그건 주어·동사가 아니에요.",
-      "wrong_by": {
-        "the lyre and flute": "그건 in which 뒤, 음악을 꾸미는 덩어리의 주어예요.",
-        "played alone": "그건 in which 뒤 덩어리의 동사예요. 먼저 메인 문장을 봐요."
-      },
-      "more": "좋아요! {n}개 남았어요.",
-      "praise": "다 찾았어요!",
-      "explain": "주어는 Plato, 동사는 considered, 목적어는 music이에요. in which부터 긴 덩어리가 그 music을 꾸며요.",
-      "from": "z8pplp"
+    "s5_tobe_mean": {
+      "say": "④to be는 앞의 considered와 짝이에요. consider A to be B는 'A를 B라고 여기다'라는 뜻이에요.",
+      "from": "btxp2e"
     },
-    "s5_tobe": {
-      "ask": "④to be 뒤의 '매우 조잡하고 무미건조하다'는 무엇을 두고 한 말일까요?",
+    "s5_tobe_form": {
+      "say": "모양은 consider + 목적어 + to be + 보어예요. to be를 빼고 consider A B로 써도 돼요.",
+      "from": "1hy2jwd"
+    },
+    "s5_tobe_far": {
+      "say": "여기선 목적어 music 뒤에 in which부터 긴 설명이 붙었어요. 그래서 to be가 멀리 떨어져 보일 뿐, 짝은 considered예요.",
+      "from": "elycx8"
+    },
+    "s5_tobe_try": {
+      "ask": "빈칸에 알맞은 것은 무엇일까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
-        "considered의 목적어가 무엇이었는지 떠올려 봐요. to be는 그 목적어가 어떻다는 말이에요.",
-        "considered의 목적어가 무엇이었는지 떠올려 봐요. to be는 그 목적어가 어떻다는 말이에요."
+        "consider + 목적어 뒤에는 to be + 보어가 와요.",
+        "consider + 목적어 뒤에는 to be + 보어가 와요."
       ],
-      "explain": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요.",
-      "praise": "맞아요!",
+      "explain": "consider + 목적어 뒤에는 to be + 보어가 와요.",
+      "praise": "맞아요! consider + 목적어(him) + to be + 보어예요.",
       "feedback": {
-        "o1": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요.",
-        "o2": "considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요."
+        "o1": "consider + 목적어 뒤에는 being이 아니라 to be를 써요.",
+        "o2": "이미 동사 consider가 있어요. 목적어 뒤에는 to be + 보어예요."
       },
-      "point": "④ consider + 목적어(music) + to be + 보어 → to be 맞음 (목적어가 길어 멀리 떨어져 보인다)",
-      "from": "1d1my0f"
+      "point": "consider + 목적어 + to be + 보어",
+      "from": "xk6mtu"
+    },
+    "s5_tobe_more": {
+      "say": "이 문법을 나중에 좀 더 연습할까요?",
+      "saved": "보충학습실에 담아 뒀어요.",
+      "from": "lvds32"
     },
     "s5_check": {
-      "say": "④to be도 맞아요. 목적어가 길어서 멀어 보였을 뿐이에요.",
-      "from": "fx5hmx"
+      "say": "④to be도 맞아요.",
+      "from": "1ugmfkf"
     },
-    "s6_adverb": {
-      "ask": "⑤generally는 바로 뒤의 span(걸쳐 있다)을 꾸며요. 동사를 꾸미는 말은 무엇이어야 할까요?",
+    "s6_adv_mean": {
+      "say": "⑤generally는 '일반적으로, 대개'라는 뜻이에요. 바로 뒤의 동사 span(걸쳐 있다)을 꾸며요.",
+      "from": "7f6kn5"
+    },
+    "s6_adv_rule": {
+      "say": "동사를 꾸미는 말은 부사예요. 그래서 형용사 general이 아니라 -ly가 붙은 generally가 맞아요.",
+      "from": "159ju57"
+    },
+    "s6_adv_adj": {
+      "say": "형용사 general은 명사를 꾸미거나 be동사 뒤에 와요. a general rule, It is general처럼요.",
+      "from": "1kqfjzd"
+    },
+    "s6_adv_try": {
+      "ask": "빈칸에 알맞은 것은 무엇일까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
-        "동사를 꾸미는 건 형용사가 아니에요.",
-        "동사를 꾸미는 건 형용사가 아니에요."
+        "동사 sings를 꾸미는 말이에요.",
+        "동사 sings를 꾸미는 말이에요."
       ],
-      "explain": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요.",
-      "praise": "맞아요!",
+      "explain": "동사 sings를 꾸미는 말이에요.",
+      "praise": "맞아요! 동사 sings를 꾸미니 부사 beautifully예요.",
       "feedback": {
-        "o1": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요.",
-        "o2": "동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요."
+        "o1": "beautiful은 형용사라 동사 sings를 꾸밀 수 없어요. 부사 beautifully예요.",
+        "o2": "beauty는 명사예요. 동사를 꾸미는 건 부사 beautifully예요."
       },
-      "point": "⑤ 동사 span을 꾸미는 자리 → 부사 generally 맞음",
-      "from": "1awm5al"
+      "point": "동사를 꾸미는 자리 → 부사(-ly)",
+      "from": "i5wmxo"
+    },
+    "s6_adv_more": {
+      "say": "이 문법을 나중에 좀 더 연습할까요?",
+      "saved": "보충학습실에 담아 뒀어요.",
+      "from": "lvds32"
     },
     "s6_go": {
       "say": "①③④⑤는 모두 맞았어요. 남은 하나, ②를 다시 떠올리며 문제를 골라 봐요.",
@@ -271,9 +311,9 @@
       "say": "고대 그리스 음악은 어떤 소리였을까요? 악보도 녹음도 남아 있지 않아서, 글로 남은 설명으로 짐작할 수밖에 없대요."
     },
     "method1": {
-      "say": "어법 문제는 밑줄마다 무슨 문법을 묻는지 먼저 이름을 붙여요. 그다음 그 문장의 주어·동사·빈자리로 하나씩 확인할게요."
+      "say": "어법 문제는 다른 문제들과 달리 문법만 보면 돼요. 그래서 이번 유형은 문법 설명 위주로 갈게요."
     },
-    "from": "l8bpoy"
+    "from": "18cbgzc"
   },
   "ending": {
     "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",

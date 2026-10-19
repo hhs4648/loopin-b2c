@@ -3,7 +3,8 @@
     python3 scripts/lessons/gen_moeui_2022_03_29.py   (→ npm run policy:copy stamp <id> → npm run build)
 
 틀: 어법 유형(틀 문서 없음 — 2024년 3월 29번 선례를 따름, 둘 다 Claude 초안).
-푸는 법: 밑줄마다 「무슨 문법을 묻는지」 이름 붙이기 → 그 문장의 뼈대(주어·동사·빈자리)로 확인.
+푸는 법: 어법은 문법만 보면 된다 — S·V 찾기 없이 밑줄 문법 위주로 자세히 (2026-10-20 선생님).
+①nor는 뜻 → 도치 → 동사 둘이면 맨 앞만 → 앞은 부정문 → 바로 연습(객관식) → 「더 연습할까요?」(보충학습실 drill).
 정답이 아닌 밑줄은 「맞아요」로 짚어 밑줄 점검표(rows)에 쌓고, 정답 밑줄(②)은 **구조만** 확인하고
 맞다/틀리다는 문제에서 고르게 한다 (2024년 3월 29번·어휘 30번과 같게).
 
@@ -59,9 +60,150 @@ def check(*done):
     return rows(*[(NAMES[d][0], NAMES[d][1], NAMES[d][2], "hl") for d in done])
 
 
+# ① nor 칠판 — 설명이 한 줄씩 쌓인다
+NOR_ROWS = [
+    ("뜻", "nor", "~도 아니다"),
+    ("도치", "완성된 문장, nor + 동사 + 주어", "주어·동사 순서를 바꾼다"),
+    ("동사 둘", "has survived → nor has it survived", "맨 앞 동사 하나만 앞으로"),
+    ("앞 문장", "nor 앞은 늘 부정문", "there are no examples …"),
+]
+
+
+def nor_board(n):
+    return rows(*[(a, b, c, "hl" if i == n - 1 else None) for i, (a, b, c) in enumerate(NOR_ROWS[:n])])
+
+
+# ① 바로 연습 — 두 문장을 nor로 합치기 (객관식). 보기마다 틀린 이유가 다르다
+nor_try = choice(
+    "s1_nor_try", "두 문장을 nor로 합쳐 봐요. 빈칸에 알맞은 것은 무엇일까요?",
+    [("o0", "has she read", True), ("o1", "she has read", False), ("o2", "has read she", False)],
+    "nor 뒤에는 동사가 주어 앞으로 가요. 동사가 둘이면 맨 앞 하나만요.",
+    praise="맞아요! has만 she 앞으로 나와서 nor has she read예요.",
+    praise_alone=True,
+    panel=rows(("문장 1", "I haven’t read the book.", "나는 그 책을 읽지 않았다"),
+               ("문장 2", "She hasn’t read the book.", "그녀도 그 책을 읽지 않았다"),
+               ("합치기", "I haven’t read the book, nor ___ ___ ___ the book.", None, "hl")),
+    panel_below=True,
+    point="nor + 동사 + 주어(도치), 동사가 둘이면 맨 앞만 → nor has she read",
+)
+# 「네」면 연습할 문법으로 남겨 보충학습실에서 drill 10문제 (content/tutor/grammar-drills/nor-inversion.json)
+nor_more = show("s1_nor_more", "이 문법을 나중에 좀 더 연습할까요?", practice="nor-inversion", button="네")
+nor_more["brief"]["saved"] = "보충학습실에 담아 뒀어요."
+
+nor_try["brief"]["feedback"] = {
+    "o1": "nor 뒤에는 주어와 동사 순서가 바뀌어요(도치). she has가 아니라 has she예요.",
+    "o2": "맨 앞 동사 has 하나만 주어 앞으로 가요. read는 she 뒤에 남아서 has she read예요.",
+}
+
+
 def r(text, role):
     """끊어읽기를 켜면 같이 보이는 S·V·O·C — 절 안의 것도 같은 진하기로"""
     return {"text": text, "role": role}
+
+
+def board(table, n):
+    """칠판 표 — 설명이 한 줄씩 쌓이고, 방금 쌓인 줄을 칠한다"""
+    return rows(*[(a, b, c, "hl" if i == n - 1 else None) for i, (a, b, c) in enumerate(table[:n])])
+
+
+def explain(id, say, table, n, highlight, button="네", **extra):
+    return show(id, say, highlight=highlight, panel=board(table, n), panel_below=True, button=button, **extra)
+
+
+def practice_try(id, ask, panel_rows, options, hint, praise, point, feedback):
+    """바로 연습 — 객관식, 보기마다 틀린 이유가 다르다"""
+    st = choice(id, ask, options, hint, praise=praise, praise_alone=True, panel=rows(*panel_rows), panel_below=True, point=point)
+    st["brief"]["feedback"] = feedback
+    return st
+
+
+def practice_offer(id, drill):
+    """「네」면 연습할 문법으로 남겨 보충학습실에서 drill 10문제 (content/tutor/grammar-drills/<drill>.json)"""
+    st = show(id, "이 문법을 나중에 좀 더 연습할까요?", practice=drill, button="네")
+    st["brief"]["saved"] = "보충학습실에 담아 뒀어요."
+    return st
+
+
+# ③ consisting — 뜻 → 동사는 하나(was) → -ing로 잇기(분사) → consist of는 수동 X
+CONS_ROWS = [
+    ("뜻", "consist of", "~로 구성되다"),
+    ("동사 하나", "Greek music was …, consisted ✕", "접속사 없이 동사를 또 쓸 수 없다"),
+    ("-ing로 잇기", "a vocal form, consisting of …", "분사 — 앞의 a vocal form을 설명"),
+    ("수동 ✕", "consist of는 수동태로 안 쓴다", "consisted of(과거분사)도 ✕"),
+]
+cons_steps = [
+    explain("s4_cons_mean", "③consisting부터 볼게요. consist of는 '~로 구성되다'라는 뜻이에요.", CONS_ROWS, 1, ["consisting"]),
+    explain("s4_cons_one", "콤마 앞에 이미 동사 was가 있어요. 접속사 없이 동사를 하나 더 쓸 수 없어서 consisted는 못 와요.",
+            CONS_ROWS, 2, ["was", "consisting"]),
+    explain("s4_cons_ing", "그래서 동사를 -ing로 바꿔 이어 붙여요. 이런 -ing를 '분사'라고 하고, 여기선 앞의 a vocal form을 설명해요.",
+            CONS_ROWS, 3, ["a vocal form", "consisting"],
+            tips=[tip("-ing와 p.p.", "앞의 명사가 직접 하면 -ing, 당하면 p.p.(과거분사)예요. a form consisting of …(구성한다) / a letter written in 1950(쓰였다).")]),
+    explain("s4_cons_pass", "그리고 consist of는 수동태로 쓰지 않아요. 그래서 과거분사 consisted로도 못 바꾸고, consisting이 맞아요.",
+            CONS_ROWS, 4, ["consisting"], button="알겠어요"),
+    practice_try(
+        "s4_cons_try", "두 문장을 접속사 없이 합쳐 봐요. 빈칸에 알맞은 것은 무엇일까요?",
+        [("문장 1", "She wrote a book.", "그녀는 책을 썼다"), ("문장 2", "It consisted of ten stories.", "그것은 열 개의 이야기로 구성되었다"),
+         ("합치기", "She wrote a book, ___ of ten stories.", None, "hl")],
+        [("o0", "consisting", True), ("o1", "consisted", False), ("o2", "consists", False)],
+        "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요.",
+        "맞아요! 동사 wrote가 있으니 -ing로 이어서 consisting이에요.",
+        "접속사 없이 잇는 자리 + consist of는 수동 ✕ → consisting",
+        {"o1": "consist of는 수동태로 못 써요. 그리고 이미 동사 wrote가 있어서 consisting이에요.",
+         "o2": "접속사 없이 동사를 하나 더 쓸 수 없어요. 동사 wrote가 있으니 -ing로 이어서 consisting이에요."}),
+    practice_offer("s4_cons_more", "participle-ing"),
+]
+
+# ④ to be — consider A to be B → 모양 → 목적어가 길어 멀어 보일 뿐
+TOBE_ROWS = [
+    ("뜻", "consider A to be B", "A를 B라고 여기다"),
+    ("모양", "consider + 목적어 + to be + 보어", "to be는 빼도 된다"),
+    ("멀리 떨어짐", "considered music … to be coarse", "목적어가 길어 멀어 보일 뿐"),
+]
+tobe_steps = [
+    explain("s5_tobe_mean", "④to be는 앞의 considered와 짝이에요. consider A to be B는 'A를 B라고 여기다'라는 뜻이에요.",
+            TOBE_ROWS, 1, ["considered", "to be"]),
+    explain("s5_tobe_form", "모양은 consider + 목적어 + to be + 보어예요. to be를 빼고 consider A B로 써도 돼요.",
+            TOBE_ROWS, 2, ["considered", "to be"],
+            tips=[tip("비슷한 regard", "regard A as B도 'A를 B라고 여기다'예요. regard는 to be가 아니라 as와 짝이에요.")]),
+    explain("s5_tobe_far", "여기선 목적어 music 뒤에 in which부터 긴 설명이 붙었어요. 그래서 to be가 멀리 떨어져 보일 뿐, 짝은 considered예요.",
+            TOBE_ROWS, 3, ["considered", "music", "to be"], button="알겠어요"),
+    practice_try(
+        "s5_tobe_try", "빈칸에 알맞은 것은 무엇일까요?",
+        [("문장", "Many people consider him ___ a genius.", "많은 사람이 그를 천재라고 여긴다", "hl")],
+        [("o0", "to be", True), ("o1", "being", False), ("o2", "is", False)],
+        "consider + 목적어 뒤에는 to be + 보어가 와요.",
+        "맞아요! consider + 목적어(him) + to be + 보어예요.",
+        "consider + 목적어 + to be + 보어",
+        {"o1": "consider + 목적어 뒤에는 being이 아니라 to be를 써요.",
+         "o2": "이미 동사 consider가 있어요. 목적어 뒤에는 to be + 보어예요."}),
+    practice_offer("s5_tobe_more", "consider-to-be"),
+]
+
+# ⑤ generally — 뜻 → 동사를 꾸미면 부사 → 형용사는 명사·be동사 뒤
+ADV_ROWS = [
+    ("뜻", "generally", "일반적으로, 대개"),
+    ("부사", "generally span", "동사를 꾸미는 말 = 부사(-ly)"),
+    ("형용사", "a general rule / It is general.", "명사를 꾸미거나 be동사 뒤"),
+]
+adv_steps = [
+    explain("s6_adv_mean", "⑤generally는 '일반적으로, 대개'라는 뜻이에요. 바로 뒤의 동사 span(걸쳐 있다)을 꾸며요.",
+            ADV_ROWS, 1, ["generally", "span"]),
+    explain("s6_adv_rule", "동사를 꾸미는 말은 부사예요. 그래서 형용사 general이 아니라 -ly가 붙은 generally가 맞아요.",
+            ADV_ROWS, 2, ["generally", "span"],
+            tips=[tip("-ly인데 형용사", "friendly(친절한), lovely(사랑스러운)는 -ly로 끝나도 형용사예요. a lovely house처럼 명사를 꾸며요.")]),
+    explain("s6_adv_adj", "형용사 general은 명사를 꾸미거나 be동사 뒤에 와요. a general rule, It is general처럼요.",
+            ADV_ROWS, 3, ["generally"], button="알겠어요"),
+    practice_try(
+        "s6_adv_try", "빈칸에 알맞은 것은 무엇일까요?",
+        [("문장", "She sings ___.", "그녀는 아름답게 노래한다", "hl")],
+        [("o0", "beautifully", True), ("o1", "beautiful", False), ("o2", "beauty", False)],
+        "동사 sings를 꾸미는 말이에요.",
+        "맞아요! 동사 sings를 꾸미니 부사 beautifully예요.",
+        "동사를 꾸미는 자리 → 부사(-ly)",
+        {"o1": "beautiful은 형용사라 동사 sings를 꾸밀 수 없어요. 부사 beautifully예요.",
+         "o2": "beauty는 명사예요. 동사를 꾸미는 건 부사 beautifully예요."}),
+    practice_offer("s6_adv_more", "adverb-verb"),
+]
 
 
 sentences = [
@@ -76,23 +218,19 @@ sentences = [
                   # because 절·nor 절의 주어·동사도 (2026-10-20 선생님). there are의 주어는 뒤의 no examples of it
                   r("are", "V"), r("no examples of it", "S"), r("has … survived", "V"), r("it", "S")],
         "steps": [
-            sv("s1_sv", ["We", "don’t know", "what ancient Greek music sounded like", "there are no examples of it", "has it survived"],
-               {"We": "S", "don’t know": "V", "what ancient Greek music sounded like": "O"},
-               {"there are no examples of it": "그건 because 뒤 덩어리의 주어·동사예요. 먼저 메인 문장을 봐요.",
-                "has it survived": "그건 nor 뒤 덩어리예요. 먼저 메인 문장을 봐요."},
-               "주어는 We, 동사는 don’t know, 목적어는 what ancient Greek music sounded like예요. what 덩어리가 '무엇을' 모르는지예요.",
-               ask="①이 든 문장이에요. 메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
-               tips=[tip("어법 문제 요령", "밑줄마다 '무슨 문법을 묻는지' 먼저 이름을 붙여요(어순, 동사의 수, 부사/형용사, 분사, 관계사 뒤 빈자리 …). 그다음 그 문장의 뼈대로 확인해요.")]),
-            choice("s1_nor",
-                   "①has it survived를 봐요. 동사 has가 주어 it보다 앞에 나왔어요. 무엇 때문일까요?",
-                   [("o0", "앞에 온 부정어 nor 때문에 어순이 바뀌어서", True),
-                    ("o1", "현재완료는 늘 동사가 주어보다 앞에 와서", False),
-                    ("o2", "it이 주어가 아니라 목적어라서", False)],
-                   "바로 앞 nor는 '~도 아니다'예요. 부정하는 말이 문장 앞에 오면 어순이 달라져요.",
-                   why="nor처럼 부정하는 말이 앞에 오면 의문문처럼 '조동사 + 주어 + 동사' 순서가 돼요. 그래서 ①has it survived는 맞아요.",
-                   highlight=["nor", "has it survived"],
-                   tips=[tip("부정어 + 조동사 + 주어", "nor·neither·never처럼 부정하는 말이 문장 앞에 오면 '조동사 + 주어 + 동사' 순서가 돼요. nor has it survived = 그것도 살아남지 못했다.", "nor")],
-                   point="① 부정어 nor가 앞에 와서 조동사 + 주어 어순 → has it survived 맞음"),
+            # ① nor — 뜻 → 「, nor + 동사 + 주어」(도치) → 동사 둘이면 맨 앞만 → nor 앞은 부정문 (2026-10-20 선생님).
+            # 설명이 넷 이어지니 칠판(표)에 한 줄씩 쌓는다 [[three-lines-then-board]]
+            show("s1_nor_mean", "①이 든 nor부터 볼게요. nor는 '~도 아니다'라는 뜻이에요.",
+                 highlight=["nor"], panel=nor_board(1), panel_below=True, button="네"),
+            show("s1_nor_form", "nor는 완성된 문장 뒤에 「, nor + 동사 + 주어」 순서로 붙어요. 주어와 동사 순서를 바꾸는 이걸 '도치'라고 해요.",
+                 highlight=["nor", "has it survived"], panel=nor_board(2), panel_below=True, button="네",
+                 tips=[tip("반대말 so", "긍정문 뒤에서 '~도 그렇다'는 so를 써요. 순서는 똑같이 so + 동사 + 주어예요. I like jazz, and so does she. = 나는 재즈를 좋아하고, 그녀도 그렇다.")]),
+            show("s1_nor_aux", "동사가 두 개 이상이면 맨 앞 동사 하나만 주어 앞으로 가요. has survived에서 has만 it 앞으로 나와 nor has it survived가 됐어요.",
+                 highlight=["has it survived"], panel=nor_board(3), panel_below=True, button="네"),
+            show("s1_nor_neg", "그리고 nor 앞에는 늘 부정문이 와요. 여기도 앞에 no examples가 있어요.",
+                 highlight=["there are no examples of it", "nor"], panel=nor_board(4), panel_below=True, button="알겠어요"),
+            nor_try,
+            nor_more,
             show("s1_check", "①has는 맞아요. 밑줄 점검표에 붙여 둘게요.", panel=check("1"), panel_below=True, button="다음 문장"),
         ],
     },
@@ -120,12 +258,6 @@ sentences = [
                     "writing about music", "ethical exercise", "technical primer"],
         "roles": [r("we", "S"), r("are forced", "V"), r("to guess at its basis", "O"), r("who", "S"), r("were generally more concerned with", "V")],
         "steps": [
-            sv("s3_sv", ["we", "are forced", "to guess at its basis", "who", "were generally more concerned with"],
-               {"we": "S", "are forced": "V", "to guess at its basis": "O"},
-               {"who": "그건 앞의 작가들을 가리키며 꾸미는 덩어리의 시작이에요.",
-                "were generally more concerned with": "그건 who 뒤 덩어리의 동사예요. 먼저 메인 문장을 봐요."},
-               "주어는 we, 동사는 are forced, 그 뒤 to guess at its basis가 '무엇을 하도록' 강요받는지예요. 콤마 뒤 who부터는 작가들을 꾸며 줘요.",
-               ask="아주 긴 문장이에요. 메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?"),
             choice("s3_more",
                    "who 뒤를 봐요. 'more concerned with A ②as with B'로 두 가지를 견주는데, 작가들이 더 관심 있던 쪽은 어디일까요?",
                    [("o0", "음악에 대해 철학적·윤리적으로 글 쓰는 것", True),
@@ -151,16 +283,7 @@ sentences = [
         "slashes": ["It seems", "vocal form,", "sung verse", "accompanied by instruments", "plucked kithara"],
         "roles": [r("It", "S"), r("seems", "V"), r("Greek music", "S"), r("was", "V"), r("a vocal form", "C")],
         "steps": [
-            choice("s4_consisting",
-                   "콤마 앞에 이미 동사 was가 있어요. ③자리에 동사 consisted를 그냥 쓸 수 있을까요?",
-                   [("o0", "쓸 수 없다 — 접속사 없이 동사를 둘 쓸 수 없어서 -ing로 이어 준다", True),
-                    ("o1", "쓸 수 있다 — 콤마가 접속사 역할을 해서", False),
-                    ("o2", "쓸 수 있다 — 주어가 같으면 동사를 두 번 써도 돼서", False)],
-                   "한 문장에 동사를 둘 쓰려면 and 같은 접속사가 있어야 해요.",
-                   why="접속사가 없으니 동사를 둘 쓸 수 없어요. 그래서 -ing(분사) consisting으로 이어 줘요. ③은 맞아요.",
-                   highlight=["was", "consisting"],
-                   tips=[tip("분사로 이어 붙이기", "접속사 없이 문장을 이어 붙일 때 동사를 -ing로 바꿔요. a vocal form, consisting of … = 성악 형식이었고, …로 구성되었다.", "consisting")],
-                   point="③ 접속사 없이 이어 붙이는 자리 → 분사 consisting 맞음"),
+            *cons_steps,
             show("s4_check", "③consisting도 맞아요.", panel=check("1", "3"), panel_below=True, button="다음 문장"),
         ],
     },
@@ -173,22 +296,8 @@ sentences = [
         "slashes": ["In fact,", "considered music", "played alone", "dance or song"],
         "roles": [r("Plato", "S"), r("considered", "V"), r("music", "O"), r("the lyre and flute", "S"), r("played", "V"), r("to be ‘exceedingly coarse and tasteless’", "C")],
         "steps": [
-            sv("s5_sv", ["Plato", "considered", "music", "the lyre and flute", "played alone"],
-               {"Plato": "S", "considered": "V", "music": "O"},
-               {"the lyre and flute": "그건 in which 뒤, 음악을 꾸미는 덩어리의 주어예요.",
-                "played alone": "그건 in which 뒤 덩어리의 동사예요. 먼저 메인 문장을 봐요."},
-               "주어는 Plato, 동사는 considered, 목적어는 music이에요. in which부터 긴 덩어리가 그 music을 꾸며요.",
-               ask="메인 문장의 주어(S), 동사(V), 목적어(O)를 찾아볼까요?"),
-            choice("s5_tobe",
-                   "④to be 뒤의 '매우 조잡하고 무미건조하다'는 무엇을 두고 한 말일까요?",
-                   [("o0", "플라톤이 여긴 그 음악 (music)", True), ("o1", "춤이나 노래 (dance or song)", False),
-                    ("o2", "플라톤 자신 (Plato)", False)],
-                   "considered의 목적어가 무엇이었는지 떠올려 봐요. to be는 그 목적어가 어떻다는 말이에요.",
-                   why="considered의 목적어가 music이니, to be 뒤는 그 음악이 어떻다는 말이에요. 수금과 피리만 연주되는 음악을 조잡하다고 여긴 거예요.",
-                   highlight=["considered", "music", "to be ‘exceedingly coarse and tasteless’"],
-                   tips=[tip("consider + 목적어 + to be", "'~을 …라고 여기다'예요. 목적어가 길면 to be가 멀리 떨어져 보여요. considered music … to be coarse = 그 음악을 조잡하다고 여겼다.", "to be")],
-                   point="④ consider + 목적어(music) + to be + 보어 → to be 맞음 (목적어가 길어 멀리 떨어져 보인다)"),
-            show("s5_check", "④to be도 맞아요. 목적어가 길어서 멀어 보였을 뿐이에요.", panel=check("1", "3", "4"), panel_below=True, button="다음 문장"),
+            *tobe_steps,
+            show("s5_check", "④to be도 맞아요.", panel=check("1", "3", "4"), panel_below=True, button="다음 문장"),
         ],
     },
     {
@@ -200,13 +309,7 @@ sentences = [
         "slashes": ["seem to have had", "pitch range,", "since the instruments", "an octave,", "from one E", "define it)"],
         "roles": [r("The melodies", "S"), r("seem to have had", "V"), r("a very limited pitch range", "O"), r("the instruments", "S"), r("span", "V")],
         "steps": [
-            choice("s6_adverb",
-                   "⑤generally는 바로 뒤의 span(걸쳐 있다)을 꾸며요. 동사를 꾸미는 말은 무엇이어야 할까요?",
-                   [("o0", "부사 (generally)", True), ("o1", "형용사 (general)", False), ("o2", "명사 (generality)", False)],
-                   "동사를 꾸미는 건 형용사가 아니에요.",
-                   why="동사를 꾸미는 말은 부사예요. 그래서 generally가 맞아요. 형용사 general은 명사를 꾸밀 때 써요.",
-                   highlight=["generally", "span"],
-                   point="⑤ 동사 span을 꾸미는 자리 → 부사 generally 맞음"),
+            *adv_steps,
             show("s6_go",
                  "①③④⑤는 모두 맞았어요. 남은 하나, ②를 다시 떠올리며 문제를 골라 봐요.",
                  panel=check("1", "3", "4", "5"), panel_below=True, button="문제 풀러 갈게요"),
@@ -293,7 +396,7 @@ exam = {
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 29번 (어법, 3점)",
     topic="어법 푸는 법: 밑줄마다 무슨 문법을 묻는지 이름 붙이기 → 그 문장 뼈대(주어·동사·빈자리)로 확인",
-    method={"type": "grammar", "labels": ["묻는 문법 이름 붙이기", "뼈대로 확인"], "intro_times": 3},
+    method={"type": "grammar", "labels": ["밑줄 문법 확인", "틀린 것 고르기"], "intro_times": 3},
     images={"topic": {"src": topic_svg("topic-greek-music.svg", ("Greek music", "고대 그리스 음악"), "?",
                                        ("No notation", "악보도 기록도 없음"),
                                        "그러면 어떤 소리였는지 어떻게 짐작할까?", "2022년 3월 29번 도입 칠판"),
@@ -301,7 +404,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "고대 그리스 음악은 어떤 소리였을까요? 악보도 녹음도 남아 있지 않아서, 글로 남은 설명으로 짐작할 수밖에 없대요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "어법 문제는 밑줄마다 무슨 문법을 묻는지 먼저 이름을 붙여요. 그다음 그 문장의 주어·동사·빈자리로 하나씩 확인할게요."}}],
+            "brief": {"say": "어법 문제는 다른 문제들과 달리 문법만 보면 돼요. 그래서 이번 유형은 문법 설명 위주로 갈게요."}}],
     exam=exam,
     key_words={"passage": [g("notate", "악보에 적다"), g("oral tradition", "구전"), g("improvise", "즉흥 연주하다"),
                            g("convention", "관례, 관행"), g("account", "설명"), g("be concerned with", "~에 관심이 있다"),
@@ -310,6 +413,11 @@ lesson = base_lesson(
                            g("tasteless", "무미건조한"), g("pitch range", "음역"), g("span", "걸쳐 있다")],
                "options": []},
     sentences=sentences, concept="medium")
+
+# 어법은 S·V 찾기 없이 밑줄 문법만 — 분석 스텝은 모두 ① 밑줄 문법 확인, 문제는 ② 틀린 것 고르기
+for _s in lesson["sentences"]:
+    for _st in _s["steps"]:
+        _st["method"] = 0
 
 finish(ID, lesson, senses=SENSES, words=WORDS, topic_intro="어법 푸는 법",
        chunks={"We": "우리는", "don’t know": "알지 못한다",

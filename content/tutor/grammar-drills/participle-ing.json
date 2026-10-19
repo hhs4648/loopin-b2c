@@ -1,0 +1,120 @@
+{
+  "id": "participle-ing",
+  "title": "분사로 잇기 (-ing / p.p.)",
+  "rules": [
+    "접속사 없이 동사를 하나 더 쓸 수 없어요 → 두 번째 동사는 분사로",
+    "앞의 명사가 직접 하면 -ing: a box consisting of letters, a girl sitting there",
+    "앞의 명사가 당하면 p.p.(과거분사): a letter written in 1950",
+    "consist of(~로 구성되다)는 수동태로 안 써요 → consisted of(p.p.)도 ✕, consisting of"
+  ],
+  "items": [
+    {
+      "type": "choice",
+      "sentence": "He sent me a box, ___ of old letters.",
+      "ko": "그는 나에게 오래된 편지들로 구성된 상자를 보냈다.",
+      "options": [
+        "consisting",
+        "consisted",
+        "consists"
+      ],
+      "answer": "consisting",
+      "why": "이미 동사 sent가 있어요. consist of는 수동태로 안 쓰니 -ing로 이어 consisting이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "I saw a girl ___ under the tree.",
+      "ko": "나는 나무 아래 앉아 있는 소녀를 보았다.",
+      "options": [
+        "sitting",
+        "sat",
+        "sits"
+      ],
+      "answer": "sitting",
+      "why": "이미 동사 saw가 있어요. 소녀가 직접 앉아 있으니 -ing, sitting이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "This is a letter ___ in 1950.",
+      "ko": "이것은 1950년에 쓰인 편지다.",
+      "options": [
+        "written",
+        "writing",
+        "wrote"
+      ],
+      "answer": "written",
+      "why": "편지는 직접 쓰는 게 아니라 '쓰인' 거예요. 당하는 쪽이라 과거분사 written이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "The team, ___ of five players, won the game.",
+      "ko": "다섯 명의 선수로 구성된 그 팀이 경기에서 이겼다.",
+      "options": [
+        "consisting",
+        "consisted",
+        "consists"
+      ],
+      "answer": "consisting",
+      "why": "동사는 won이 따로 있어요. 콤마 사이는 팀을 설명하는 분사이고, consist of는 수동 ✕라 consisting이에요."
+    },
+    {
+      "type": "input",
+      "sentence": "We stayed in a house ___ by the lake.",
+      "ko": "우리는 호숫가에 서 있는 집에 머물렀다. (stand)",
+      "answers": [
+        "standing"
+      ],
+      "why": "집이 직접 서 있으니 -ing, standing이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "The book, ___ in simple English, is easy to read.",
+      "ko": "쉬운 영어로 쓰인 그 책은 읽기 쉽다.",
+      "options": [
+        "written",
+        "writing",
+        "writes"
+      ],
+      "answer": "written",
+      "why": "책은 '쓰인' 거예요. 당하는 쪽이라 과거분사 written이에요."
+    },
+    {
+      "type": "input",
+      "sentence": "Look at the boy ___ the guitar.",
+      "ko": "기타를 치고 있는 소년을 봐. (play)",
+      "answers": [
+        "playing"
+      ],
+      "why": "소년이 직접 기타를 치니 -ing, playing이에요."
+    },
+    {
+      "type": "input",
+      "sentence": "The meal, ___ of rice and soup, was simple.",
+      "ko": "밥과 국으로 구성된 그 식사는 소박했다. (consist)",
+      "answers": [
+        "consisting"
+      ],
+      "why": "동사는 was가 따로 있어요. consist of는 수동 ✕라 consisting이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "I have a car ___ in Germany.",
+      "ko": "나는 독일에서 만들어진 차를 가지고 있다.",
+      "options": [
+        "made",
+        "making",
+        "makes"
+      ],
+      "answer": "made",
+      "why": "차는 '만들어진' 거예요. 당하는 쪽이라 과거분사 made예요."
+    },
+    {
+      "type": "input",
+      "sentence": "He bought a phone ___ in Korea.",
+      "ko": "그는 한국에서 만들어진 전화기를 샀다. (make)",
+      "answers": [
+        "made"
+      ],
+      "why": "전화기는 '만들어진' 거예요. 과거분사 made예요."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "consider-to-be",
+  "title": "consider A to be B",
+  "rules": [
+    "consider A to be B = A를 B라고 여기다",
+    "모양: consider + 목적어 + to be + 보어 (to be는 빼도 된다)",
+    "목적어가 길면 to be가 멀리 떨어져 보일 뿐, 짝은 consider",
+    "비슷한 말: regard A as B — regard는 as와 짝"
+  ],
+  "items": [
+    {
+      "type": "choice",
+      "sentence": "They consider the plan ___ too risky.",
+      "ko": "그들은 그 계획이 너무 위험하다고 여긴다.",
+      "options": [
+        "to be",
+        "being",
+        "is"
+      ],
+      "answer": "to be",
+      "why": "consider + 목적어(the plan) 뒤에는 to be + 보어예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "I ___ her to be my best friend.",
+      "ko": "나는 그녀를 가장 친한 친구라고 여긴다.",
+      "options": [
+        "consider",
+        "regard",
+        "look"
+      ],
+      "answer": "consider",
+      "why": "to be와 짝인 건 consider예요. regard는 as와 짝(regard A as B)이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "We regard him ___ a hero.",
+      "ko": "우리는 그를 영웅으로 여긴다.",
+      "options": [
+        "as",
+        "to be",
+        "being"
+      ],
+      "answer": "as",
+      "why": "regard는 as와 짝이에요. regard A as B예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "Many people considered the movie, which lasted four hours, ___ boring.",
+      "ko": "많은 사람이 네 시간짜리 그 영화를 지루하다고 여겼다.",
+      "options": [
+        "to be",
+        "being",
+        "was"
+      ],
+      "answer": "to be",
+      "why": "목적어 the movie 뒤에 설명이 길게 붙었을 뿐, 짝은 considered예요. 그래서 to be예요."
+    },
+    {
+      "type": "input",
+      "sentence": "She considers math ___ easy.",
+      "ko": "그녀는 수학이 쉽다고 여긴다.",
+      "answers": [
+        "to be"
+      ],
+      "why": "consider + 목적어(math) + to be + 보어(easy)예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "Plato considered such music ___ tasteless.",
+      "ko": "플라톤은 그런 음악을 무미건조하다고 여겼다.",
+      "options": [
+        "to be",
+        "be",
+        "being"
+      ],
+      "answer": "to be",
+      "why": "consider + 목적어 뒤에는 to부정사 to be를 써요."
+    },
+    {
+      "type": "input",
+      "sentence": "I regard her ___ my teacher.",
+      "ko": "나는 그녀를 내 선생님으로 여긴다.",
+      "answers": [
+        "as"
+      ],
+      "why": "regard는 as와 짝이에요. regard A as B예요."
+    },
+    {
+      "type": "input",
+      "sentence": "They consider the old bridge, built in 1900, ___ dangerous.",
+      "ko": "그들은 1900년에 지어진 그 오래된 다리를 위험하다고 여긴다.",
+      "answers": [
+        "to be"
+      ],
+      "why": "목적어 the old bridge 뒤에 설명이 붙어 멀어 보일 뿐, 짝은 consider예요. to be예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "Most students consider the test ___ difficult.",
+      "ko": "대부분의 학생은 그 시험이 어렵다고 여긴다.",
+      "options": [
+        "to be",
+        "as to",
+        "being"
+      ],
+      "answer": "to be",
+      "why": "consider + 목적어 + to be + 보어예요."
+    },
+    {
+      "type": "input",
+      "sentence": "Do you consider him ___ honest?",
+      "ko": "너는 그가 정직하다고 여기니?",
+      "answers": [
+        "to be"
+      ],
+      "why": "consider + 목적어(him) + to be + 보어(honest)예요."
+    }
+  ]
+}

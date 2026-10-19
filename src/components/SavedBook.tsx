@@ -4,12 +4,16 @@ import { loadNotes, toggleNote, type NoteEntry } from "../tutor/notes";
 import { loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab";
 import { lessonIdOfSentence, loadWordStats, statOf } from "../tutor/vocabTest";
 import { VocabTest } from "./VocabTest";
+import { GrammarDrill } from "./GrammarDrill";
+import { getGrammarDrill } from "../tutor/grammarDrills";
+import { loadGrammarPractice, removeGrammarPractice, type GrammarPracticeEntry } from "../tutor/grammarPractice";
 
 /**
  * 메인에서 여는 내 공부 — **단어장**과 **노트**.
  *
  * 단어장: 문장에서 단어 뜻의 별표를 누르거나, 마무리 단어 체크에서 고른 단어.
  * 노트: 수업 끝 「헷갈린 포인트」에서 별표를 누른 것.
+ * 연습할 문법: 수업 중 「이 문법을 나중에 좀 더 연습할까요?」에서 「네」를 누른 것 — 단어장 위에, 누르면 drill 10문제.
  * 단어장은 최근에 저장한 단어가 위로 — 단어마다 저장한 날짜, 테스트에서 본 횟수·맞힌 횟수·틀린 횟수.
  * 노트는 어느 문제에서 저장했는지로 묶고, 최근에 공부한 문제가 위로 온다.
  * 별표를 다시 누르면 빠진다 (실수로 눌렀을 때 바로 되돌릴 수 있게, 목록에서 바로 지우지는 않는다).
@@ -47,6 +51,21 @@ export function SavedBook({ kind, onBack }: Props) {
   const [stats, setStats] = useState(() => loadWordStats());
   /** 테스트 중이면 볼 단어 (null = 단어장에서 고름). 테스트를 다시 열 때마다 key를 바꾼다 */
   const [test, setTest] = useState<{ only?: VocabEntry[]; n: number } | null>(null);
+  const [grammar, setGrammar] = useState<GrammarPracticeEntry[]>(() => (kind === "vocab" ? loadGrammarPractice() : []));
+  /** 풀고 있는 문법 drill id */
+  const [drill, setDrill] = useState<string | null>(null);
+
+  if (drill) {
+    return (
+      <GrammarDrill
+        id={drill}
+        onClose={() => {
+          setDrill(null);
+          setGrammar(loadGrammarPractice());
+        }}
+      />
+    );
+  }
 
   if (test) {
     return (
@@ -64,7 +83,8 @@ export function SavedBook({ kind, onBack }: Props) {
     );
   }
 
-  const title = kind === "vocab" ? "단어장" : "내 노트";
+  // 연습할 문법이 있으면 단어장만이 아니니 집 이름(보충학습실)으로
+  const title = kind === "vocab" ? (grammar.length ? "보충학습실" : "단어장") : "내 노트";
   const empty =
     kind === "vocab"
       ? "아직 저장한 단어가 없어요. 수업 중에 단어를 누르고 ☆를 눌러 보세요."
@@ -81,7 +101,43 @@ export function SavedBook({ kind, onBack }: Props) {
       </header>
       <div className="saved-body-scroll">
         <h1 className="saved-title">{title}</h1>
-        {rows.length === 0 ? <p className="saved-empty">{empty}</p> : null}
+        {rows.length === 0 && !grammar.length ? <p className="saved-empty">{empty}</p> : null}
+
+        {grammar.length ? (
+          <section className="saved-group gprac">
+            <h2 className="saved-group-title">연습할 문법</h2>
+            {[...grammar]
+              .sort((a, b) => b.savedAt.localeCompare(a.savedAt))
+              .map((gp) => {
+                const d = getGrammarDrill(gp.id);
+                return (
+                  <div key={gp.id} className="gprac-row">
+                    <button
+                      type="button"
+                      className="point-star on"
+                      aria-label="연습할 문법에서 빼기"
+                      onClick={() => setGrammar(removeGrammarPractice(gp.id))}
+                    >
+                      ★
+                    </button>
+                    <span className="saved-body">
+                      <b className="saved-en">{d?.title ?? gp.id}</b>
+                      <small className="saved-meta">
+                        {shortDate(gp.savedAt)} 저장 · {setOfLesson(gp.lessonId)?.title ?? "다른 수업"}
+                        {gp.last ? ` · 지난번 ${gp.last.right}/${gp.last.total}` : ""}
+                      </small>
+                    </span>
+                    {d ? (
+                      <button type="button" className="gprac-go" onClick={() => setDrill(gp.id)}>
+                        {d.items.length}문제 풀기
+                      </button>
+                    ) : null}
+                  </div>
+                );
+              })}
+            {rows.length ? <h2 className="saved-group-title">단어장</h2> : null}
+          </section>
+        ) : null}
 
         {kind === "vocab" && vocab.length ? (
           <button type="button" className="read-continue vtest-start" onClick={() => setTest({ n: 0 })}>

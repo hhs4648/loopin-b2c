@@ -1,0 +1,120 @@
+{
+  "id": "adverb-verb",
+  "title": "부사 vs 형용사",
+  "rules": [
+    "동사를 꾸미는 말 = 부사(-ly): generally span, sings beautifully",
+    "형용사·다른 부사를 꾸미는 것도 부사: surprisingly easy",
+    "형용사는 명사를 꾸미거나 be동사·seem 뒤(보어): a general rule, It is general",
+    "-ly인데 형용사인 말: friendly, lovely"
+  ],
+  "items": [
+    {
+      "type": "choice",
+      "sentence": "He ___ walks to school.",
+      "ko": "그는 대개 걸어서 학교에 간다.",
+      "options": [
+        "usually",
+        "usual",
+        "use"
+      ],
+      "answer": "usually",
+      "why": "동사 walks를 꾸미니 부사 usually예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "The car moved ___.",
+      "ko": "그 차는 천천히 움직였다.",
+      "options": [
+        "slowly",
+        "slow",
+        "slowness"
+      ],
+      "answer": "slowly",
+      "why": "동사 moved를 꾸미니 부사 slowly예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "This is a ___ problem.",
+      "ko": "이것은 흔한 문제다.",
+      "options": [
+        "common",
+        "commonly",
+        "commonness"
+      ],
+      "answer": "common",
+      "why": "명사 problem을 꾸미니 형용사 common이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "She is very ___.",
+      "ko": "그녀는 매우 친절하다.",
+      "options": [
+        "kind",
+        "kindly",
+        "kindness"
+      ],
+      "answer": "kind",
+      "why": "be동사 뒤에서 주어를 설명하는 보어는 형용사예요. kind예요."
+    },
+    {
+      "type": "input",
+      "sentence": "He answered the question ___.",
+      "ko": "그는 그 질문에 정확하게 답했다. (correct)",
+      "answers": [
+        "correctly"
+      ],
+      "why": "동사 answered를 꾸미니 부사 correctly예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "The plan seems ___.",
+      "ko": "그 계획은 간단해 보인다.",
+      "options": [
+        "simple",
+        "simply",
+        "simplicity"
+      ],
+      "answer": "simple",
+      "why": "seem 뒤는 주어를 설명하는 보어라 형용사 simple이에요."
+    },
+    {
+      "type": "input",
+      "sentence": "The birds ___ fly south in winter.",
+      "ko": "그 새들은 겨울에 대개 남쪽으로 날아간다. (general)",
+      "answers": [
+        "generally"
+      ],
+      "why": "동사 fly를 꾸미니 부사 generally예요. 주어와 동사 사이에 와도 돼요."
+    },
+    {
+      "type": "input",
+      "sentence": "She speaks English ___.",
+      "ko": "그녀는 영어를 유창하게 말한다. (fluent)",
+      "answers": [
+        "fluently"
+      ],
+      "why": "동사 speaks를 꾸미니 부사 fluently예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "They have a ___ house.",
+      "ko": "그들은 사랑스러운 집을 가지고 있다.",
+      "options": [
+        "lovely",
+        "lovelily",
+        "love"
+      ],
+      "answer": "lovely",
+      "why": "lovely는 -ly로 끝나도 형용사예요. 명사 house를 꾸며요."
+    },
+    {
+      "type": "input",
+      "sentence": "The test was ___ easy.",
+      "ko": "그 시험은 놀랍게도 쉬웠다. (surprising)",
+      "answers": [
+        "surprisingly"
+      ],
+      "why": "형용사 easy를 꾸미는 것도 부사예요. surprisingly예요."
+    }
+  ]
+}

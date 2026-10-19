@@ -1,0 +1,89 @@
+{
+  "id": "nor-inversion",
+  "title": "nor 도치",
+  "rules": [
+    "nor = ~도 아니다",
+    "완성된 부정문, nor + 동사 + 주어 — 주어·동사 순서를 바꾸는 것을 '도치'라고 해요",
+    "동사가 둘 이상이면 맨 앞 동사 하나만 앞으로: has survived → nor has it survived",
+    "동사가 하나뿐인 일반동사면 do·does·did를 앞으로: eats → nor does he eat",
+    "반대말: 긍정문 뒤 '~도 그렇다'는 so + 동사 + 주어"
+  ],
+  "items": [
+    {
+      "type": "choice",
+      "sentence": "He doesn't eat meat, nor ___ fish.",
+      "ko": "그는 고기를 먹지 않고, 생선도 먹지 않는다.",
+      "options": ["does he eat", "he does eat", "he eats"],
+      "answer": "does he eat",
+      "why": "nor 뒤에는 동사가 주어 앞으로 가요. 일반동사 eat은 does를 앞으로 보내서 does he eat이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "I can't swim, nor ___ my brother.",
+      "ko": "나는 수영을 못하고, 내 동생도 못한다.",
+      "options": ["can", "can't", "does"],
+      "answer": "can",
+      "why": "nor가 이미 '~도 아니다'라서 not을 또 붙이지 않아요. 앞 문장의 can을 그대로 써서 nor can my brother예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "She has never been to Paris, nor ___ to London.",
+      "ko": "그녀는 파리에 가 본 적이 없고, 런던에도 가 본 적이 없다.",
+      "options": ["has she been", "she has been", "has been she"],
+      "answer": "has she been",
+      "why": "동사가 has been 두 개예요. 맨 앞 has 하나만 주어 앞으로 가서 has she been이에요."
+    },
+    {
+      "type": "choice",
+      "sentence": "We don't know his name, ___ do we know where he lives.",
+      "ko": "우리는 그의 이름을 모르고, 그가 어디 사는지도 모른다.",
+      "options": ["nor", "so", "and"],
+      "answer": "nor",
+      "why": "앞이 부정문이고 뒤가 do we know로 도치됐어요. '~도 아니다'는 nor예요. so는 긍정문 뒤에 써요."
+    },
+    {
+      "type": "input",
+      "sentence": "They didn't call me, nor ___ an email.",
+      "ko": "그들은 나에게 전화하지 않았고, 이메일도 보내지 않았다. (send)",
+      "answers": ["did they send"],
+      "why": "과거의 일반동사라 did를 앞으로 보내요. did + they + send(원형) → nor did they send예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "The plan isn't cheap, nor ___ it easy.",
+      "ko": "그 계획은 싸지도 않고, 쉽지도 않다.",
+      "options": ["is", "it is", "does"],
+      "answer": "is",
+      "why": "be동사는 그대로 주어 앞으로 가요. nor is it easy예요."
+    },
+    {
+      "type": "input",
+      "sentence": "I haven't finished my homework, nor ___ hers.",
+      "ko": "나는 숙제를 끝내지 못했고, 그녀도 자기 숙제를 끝내지 못했다. (she, finish)",
+      "answers": ["has she finished"],
+      "why": "동사가 has finished 두 개예요. 맨 앞 has 하나만 she 앞으로 가서 has she finished예요."
+    },
+    {
+      "type": "input",
+      "sentence": "He won't help us, nor ___ them.",
+      "ko": "그는 우리를 돕지 않을 거고, 그들도 돕지 않을 것이다. (he, help)",
+      "answers": ["will he help"],
+      "why": "won't는 will not이에요. nor 뒤에는 not 없이 will만 앞으로 가서 will he help예요."
+    },
+    {
+      "type": "choice",
+      "sentence": "My sister likes jazz, and ___ I.",
+      "ko": "내 언니는 재즈를 좋아하고, 나도 그렇다.",
+      "options": ["so do", "nor do", "so am"],
+      "answer": "so do",
+      "why": "긍정문 뒤 '~도 그렇다'는 so + 동사 + 주어예요. 일반동사 likes라 do를 써서 so do I예요."
+    },
+    {
+      "type": "input",
+      "sentence": "The test wasn't hard, nor ___ long.",
+      "ko": "그 시험은 어렵지 않았고, 길지도 않았다. (it)",
+      "answers": ["was it"],
+      "why": "be동사 was가 주어 it 앞으로 가요. nor was it long이에요."
+    }
+  ]
+}
