@@ -1,0 +1,150 @@
+{
+ "2": [
+  {
+   "word": "which",
+   "phrase": "with which you describe",
+   "sense": "(그것으로) ~하는",
+   "usage": "전치사 + which = 앞 명사(the tone and perspective)를 꾸밈"
+  },
+  {
+   "word": "that",
+   "phrase": "that narration",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  }
+ ],
+ "3": [
+  {
+   "word": "for",
+   "phrase": "For example",
+   "sense": "(For example의 일부)",
+   "usage": "For example = 예를 들어"
+  },
+  {
+   "word": "if",
+   "phrase": "if you find yourself",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "going to survive",
+   "sense": "~할 (것이다)",
+   "usage": "be going to + 동사원형"
+  },
+  {
+   "word": "to",
+   "phrase": "going to turn out",
+   "sense": "~할 (것이다)",
+   "usage": "be going to + 동사원형"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "time to restructure",
+   "sense": "~할 (때)",
+   "usage": "It’s time + to부정사"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "beliefs that frame",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "6": [
+  {
+   "word": "as",
+   "phrase": "as having many layers",
+   "sense": "~로 (생각하다)",
+   "usage": "think of A as B = A를 B로 생각하다"
+  }
+ ],
+ "8": [
+  {
+   "word": "that",
+   "phrase": "tapes that momentarily flash",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "9": [
+  {
+   "word": "that",
+   "phrase": "self-talk” that you use",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 주어·동사"
+  },
+  {
+   "word": "as",
+   "phrase": "as you navigate",
+   "sense": "~하면서",
+   "usage": "접속사 as + 주어·동사 (동시)"
+  }
+ ],
+ "11": [
+  {
+   "word": "for",
+   "phrase": "For example",
+   "sense": "(For example의 일부)",
+   "usage": "For example = 예를 들어"
+  },
+  {
+   "word": "that",
+   "phrase": "thoughts that relieve",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "say to yourself",
+   "sense": "~에게",
+   "usage": "say to oneself = 혼잣말하다"
+  }
+ ],
+ "12": [
+  {
+   "word": "that",
+   "phrase": "find out that I am",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (find out that …)"
+  }
+ ],
+ "13": [
+  {
+   "word": "that",
+   "phrase": "habits that cloud",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "15": [
+  {
+   "word": "if",
+   "phrase": "If you tell yourself",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사"
+  },
+  {
+   "word": "that",
+   "phrase": "tell yourself that you are",
+   "sense": "~라고",
+   "usage": "명사절 that (tell oneself that …)"
+  },
+  {
+   "word": "that",
+   "phrase": "that new experience",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  },
+  {
+   "word": "that",
+   "phrase": "that anxiety",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  }
+ ]
+}

@@ -1,0 +1,127 @@
+{
+  "lesson": "moeui-2024-03-45-story-details",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "내용 일치 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "d_how": {
+      "say": "내용 일치 문제는 보기를 먼저 훑어요. 보기는 글 순서대로 나오니까, 읽다가 보기 속 열쇠말이 나오면 그 자리에서 맞춰 봐요.",
+      "from": "cj6evu"
+    },
+    "d_1": {
+      "ask": "보기 ① 「Tommy는 차고에서 오래되고 잊혀진 상자를 발견했다.」 이 문장과 비교해 볼까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "while searching the garage, found an old, forgotten box를 봐요.",
+        "while searching the garage, found an old, forgotten box를 봐요."
+      ],
+      "explain": "차고(the garage)를 뒤지다 오래되고 잊혀진 상자를 찾았대요. 보기와 같아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "차고(the garage)를 뒤지다 오래되고 잊혀진 상자를 찾았대요. 보기와 같아요."
+      },
+      "from": "1nz468u"
+    },
+    "d_2": {
+      "ask": "보기 ② 「Grandpa Joe는 야구장에서 보낸 그의 젊은 시절 이야기를 했다.」 이 문장과 비교해 볼까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "stories of his youthful days on the baseball field를 봐요.",
+        "stories of his youthful days on the baseball field를 봐요."
+      ],
+      "explain": "야구장(baseball field)에서 보낸 젊은 시절(youthful days) 이야기를 했대요. 보기와 같아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "야구장(baseball field)에서 보낸 젊은 시절(youthful days) 이야기를 했대요. 보기와 같아요."
+      },
+      "from": "pogj9q"
+    },
+    "d_3": {
+      "ask": "보기 ③ 「그들은 함께 공 치기, 잡기를 연습했다.」 이 문장과 비교해 볼까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "they practiced hitting, catching을 봐요.",
+        "they practiced hitting, catching을 봐요."
+      ],
+      "explain": "함께 치기(hitting), 잡기(catching)를 연습했대요. 보기와 같아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "함께 치기(hitting), 잡기(catching)를 연습했대요. 보기와 같아요."
+      },
+      "from": "12fi3d8"
+    },
+    "d_4": {
+      "ask": "보기 ④ 「야구 카드 속에서 Grandpa Joe는 야구 유니폼을 입고 있었다.」 이 문장과 비교해 볼까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "in a baseball uniform을 봐요.",
+        "in a baseball uniform을 봐요."
+      ],
+      "explain": "카드 속 할아버지는 야구 유니폼(baseball uniform)을 입고 서 있었대요. 보기와 같아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "카드 속 할아버지는 야구 유니폼(baseball uniform)을 입고 서 있었대요. 보기와 같아요."
+      },
+      "from": "1fys4mv"
+    },
+    "d_5": {
+      "ask": "보기 ⑤ 「Tommy는 Grandpa Joe를 찾기 위해 집 밖으로 서둘러 나왔다.」 이 문장과 비교해 볼까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "rushed 뒤 방향을 나타내는 말을 봐요. inside는 '안으로'예요.",
+        "rushed 뒤 방향을 나타내는 말을 봐요. inside는 '안으로'예요."
+      ],
+      "explain": "rushed inside the house, 집 '안으로' 서둘러 들어갔대요. 보기는 '집 밖으로'라서 달라요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "rushed inside the house, 집 '안으로' 서둘러 들어갔대요. 보기는 '집 밖으로'라서 달라요."
+      },
+      "from": "unu3qm"
+    },
+    "d_go": {
+      "say": "장소 하나만 살짝 바꿔도 틀린 보기가 돼요. 문제에서 골라 봐요.",
+      "from": "12jm194"
+    }
+  },
+  "exam": {
+    "ask": "칠판에서 '다름'으로 표시한 보기를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 글은 rushed inside the house, 집 안으로 서둘러 들어갔대요. 보기 ⑤는 '집 밖으로'라서 글과 달라요.",
+    "final_wrong": "정답은 ⑤예요. 글은 inside the house(집 안으로)예요.",
+    "option_feedback": {
+      "1": "while searching the garage, found an old, forgotten box, 글과 같아요.",
+      "2": "stories of his youthful days on the baseball field, 글과 같아요.",
+      "3": "they practiced hitting, catching, 글과 같아요.",
+      "4": "stood proudly in a baseball uniform, 글과 같아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "18nwmc5"
+  },
+  "intro": {
+    "topic": {
+      "say": "43번에서 본 할아버지와 손자 이야기예요. 이번엔 보기 다섯 개를 글과 하나씩 맞춰 볼게요."
+    },
+    "method1": {
+      "say": "보기는 글 순서대로 나와요. 읽다가 보기 속 장면이 나오면 그 자리에서 같은지 다른지 볼 거예요."
+    },
+    "from": "smt90o"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1906h77"
+}

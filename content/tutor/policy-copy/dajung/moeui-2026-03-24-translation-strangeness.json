@@ -6,6 +6,23 @@
   "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
   "helps": {},
   "steps": {
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콤마 앞은 주어 Something too domesticated, 동사 isn’t, 보어 more accessible or approachable이에요. 콤마 뒤는 주어 it, 동사 evaporates예요.",
+      "from": "1xiybou"
+    },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "18dotyu"
+    },
     "s1_fate": {
       "ask": "너무 익숙해진 것(something too domesticated)은 어떻게 된다고 할까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -62,6 +79,25 @@
       "placeholder": "핵심어만 보고 해석해 보세요",
       "point": "핵심어만으로 해석 = 너무 익숙해진 것은 사라져 버리고, 우리는 예술이 다시 보이게 할 때까지 그것을 당연하게 여긴다.",
       "from": "h6w3rr"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "this task": "그건 for 뒤, 무엇에 잘 맞는지 알려 주는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 translation(번역), 동사는 is, 보어는 an art(예술)예요.",
+      "from": "yi0ey5"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "bs0qtl"
     },
     "s2_this": {
       "say": "this처럼 앞에 나온 걸 가리키는 말이 나오면, 가리키는 것을 앞 문장에서 찾아야 해요. 'this task'가 무엇인지 앞 문장에서 찾아볼게요.",
@@ -243,6 +279,26 @@
       "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
       "from": "tguvur"
     },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "lacks": "그건 that 뒤 덩어리 안의 동사예요.",
+        "nothing happens": "그건 대시(—) 뒤 문장이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 A bad text, 동사는 is, 보어는 one(글)이에요.",
+      "from": "1qv105q"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "77n2bt"
+    },
     "s4_one": {
       "ask": "여기서 one은 무슨 뜻일까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -362,6 +418,14 @@
       "point": "5문장 주어 = The translation of a true work of art (is 앞 덩어리)",
       "from": "1o230by"
     },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "w93vbq"
+    },
     "s5_it": {
       "ask": "because 바로 뒤 it은 무엇을 가리킬까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -422,6 +486,23 @@
       "placeholder": "핵심어만 보고 해석해 보세요",
       "point": "핵심어만으로 해석 = 진정한 예술 작품의 번역은 작품 안에 이미 있는 자질을 강화하고 높여 주기 때문에 의미 있다.",
       "from": "1wykt05"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 translation, 동사는 is not, 보어는 a makeshift — but 뒤 the mode of existence도 보어예요(not A but B).",
+      "from": "1juvdj2"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1ioofdi"
     },
     "s6_notbut": {
       "ask": "'not A, but B'는 무슨 뜻일까요?",
@@ -487,6 +568,23 @@
     "story_6": {
       "say": "칠판에 이어서 정리해 볼게요.",
       "from": "tavsof"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 translation, 동사는 makes, 목적어는 the work, 보어는 seem more strange(더 낯설게 보이게)예요.",
+      "from": "1makmwx"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "u9w3ex"
     },
     "s7_make": {
       "ask": "번역은 작품(the work)을 어떻게 보이게 만든대요?",

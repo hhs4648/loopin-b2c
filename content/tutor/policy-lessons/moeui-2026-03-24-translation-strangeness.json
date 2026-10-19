@@ -248,6 +248,26 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "more accessible",
+          "ko": "더 다가가기 쉬운"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "more accessible or approachable",
+          "ko": "더 다가가기 쉬운"
+        },
+        {
+          "en": "isn’t",
+          "ko": "~이 아니다"
+        },
+        {
+          "en": "Something too domesticated",
+          "ko": "너무 익숙해진 것"
+        },
+        {
           "en": "Something",
           "ko": "어떤 것"
         },
@@ -318,6 +338,115 @@
       ],
       "steps": [
         {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Something too domesticated",
+            "isn’t",
+            "more accessible or approachable",
+            "it",
+            "evaporates"
+          ],
+          "answers": [
+            "Something too domesticated",
+            "isn’t",
+            "more accessible or approachable",
+            "it",
+            "evaporates"
+          ],
+          "roles": {
+            "Something too domesticated": "S",
+            "isn’t": "V",
+            "more accessible or approachable": "C",
+            "it": "S",
+            "evaporates": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콤마 앞은 주어 Something too domesticated, 동사 isn’t, 보어 more accessible or approachable이에요. 콤마 뒤는 주어 it, 동사 evaporates예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic"
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "Something too domesticated",
+            "isn’t",
+            "more accessible",
+            "it",
+            "evaporates",
+            "altogether"
+          ],
+          "answers": [
+            "Something too domesticated",
+            "more accessible",
+            "isn’t",
+            "it",
+            "altogether",
+            "evaporates"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Something too domesticated",
+                "ko": "너무 익숙해진 것은"
+              },
+              " ",
+              {
+                "en": "more accessible",
+                "ko": "더 다가가기 쉬운 것"
+              },
+              "이 ",
+              {
+                "en": "isn’t",
+                "ko": "아니다"
+              },
+              ", ",
+              {
+                "en": "it",
+                "ko": "그것은"
+              },
+              " ",
+              {
+                "en": "altogether",
+                "ko": "완전히"
+              },
+              " ",
+              {
+                "en": "evaporates",
+                "ko": "증발해 버린다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Something too domesticated isn’t more accessible, it evaporates altogether."
+        },
+        {
           "id": "s1_fate",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -350,7 +479,8 @@
           "method": 0,
           "highlight": [
             "Something too domesticated"
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s1_contrast",
@@ -569,6 +699,18 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "well suited",
+          "ko": "잘 맞는"
+        },
+        {
+          "en": "an art",
+          "ko": "예술"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
           "en": "Something too domesticated",
           "ko": "너무 익숙해진 것"
         },
@@ -618,6 +760,131 @@
         }
       ],
       "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "translation",
+            "is",
+            "an art",
+            "this task"
+          ],
+          "answers": [
+            "translation",
+            "is",
+            "an art"
+          ],
+          "roles": {
+            "translation": "S",
+            "is": "V",
+            "an art": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "this task": "그건 for 뒤, 무엇에 잘 맞는지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 translation(번역), 동사는 is, 보어는 an art(예술)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "this·that·such",
+              "mark": "this",
+              "text": "this, that, such, these 같은 말은 앞에서 말한 것을 다시 가리켜요. 뜻이 안 잡히면 바로 앞 문장으로 돌아가서 찾아요."
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "perhaps",
+            "translation",
+            "is",
+            "an art",
+            "especially",
+            "well suited",
+            "this task"
+          ],
+          "answers": [
+            "perhaps",
+            "translation",
+            "this task",
+            "especially",
+            "well suited",
+            "an art",
+            "is"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "perhaps",
+                "ko": "아마"
+              },
+              " ",
+              {
+                "en": "translation",
+                "ko": "번역은"
+              },
+              " ",
+              {
+                "en": "this task",
+                "ko": "이 일"
+              },
+              "에 ",
+              {
+                "en": "especially",
+                "ko": "특히"
+              },
+              " ",
+              {
+                "en": "well suited",
+                "ko": "잘 맞는"
+              },
+              " ",
+              {
+                "en": "an art",
+                "ko": "예술"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "this·that·such",
+              "mark": "this",
+              "text": "this, that, such, these 같은 말은 앞에서 말한 것을 다시 가리켜요. 뜻이 안 잡히면 바로 앞 문장으로 돌아가서 찾아요."
+            }
+          ]
+        },
         {
           "id": "s2_this",
           "type": "show",
@@ -1433,6 +1700,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
           "en": "A bad text",
           "ko": "안 좋은 글"
         },
@@ -1474,6 +1745,139 @@
         }
       ],
       "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A bad text",
+            "is",
+            "one",
+            "lacks",
+            "nothing happens"
+          ],
+          "answers": [
+            "A bad text",
+            "is",
+            "one"
+          ],
+          "roles": {
+            "A bad text": "S",
+            "is": "V",
+            "one": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "lacks": "그건 that 뒤 덩어리 안의 동사예요.",
+              "nothing happens": "그건 대시(—) 뒤 문장이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 A bad text, 동사는 is, 보어는 one(글)이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "faded": [
+            "in Berman’s terms"
+          ],
+          "tips": [
+            {
+              "label": "one 세 가지",
+              "mark": "one",
+              "text": "one은 ① 숫자 1 ② 앞에 나온 명사를 다시 받는 '것' ③ 일반적인 '사람, 누구든'으로 쓰여요. 앞에 같은 종류의 명사가 있으면 ②예요."
+            },
+            {
+              "label": "it",
+              "mark": "it",
+              "text": "translate it의 it은 a bad text, 안 좋은 글이에요."
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "A bad text",
+            "is",
+            "one",
+            "lacks",
+            "native strangeness",
+            "nothing happens"
+          ],
+          "answers": [
+            "A bad text",
+            "native strangeness",
+            "lacks",
+            "one",
+            "is",
+            "nothing happens"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A bad text",
+                "ko": "안 좋은 글은"
+              },
+              " ",
+              {
+                "en": "native strangeness",
+                "ko": "본래의 낯섦"
+              },
+              "이 ",
+              {
+                "en": "lacks",
+                "ko": "부족한"
+              },
+              " ",
+              {
+                "en": "one",
+                "ko": "것"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              " — 번역해도 ",
+              {
+                "en": "nothing happens",
+                "ko": "아무 일도 일어나지 않는다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "one 세 가지",
+              "mark": "one",
+              "text": "one은 ① 숫자 1 ② 앞에 나온 명사를 다시 받는 '것' ③ 일반적인 '사람, 누구든'으로 쓰여요. 앞에 같은 종류의 명사가 있으면 ②예요."
+            },
+            {
+              "label": "it",
+              "mark": "it",
+              "text": "translate it의 it은 a bad text, 안 좋은 글이에요."
+            }
+          ]
+        },
         {
           "id": "s4_one",
           "type": "choice",
@@ -1566,7 +1970,8 @@
           ],
           "faded": [
             "in Berman’s terms"
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s4_sign",
@@ -1757,7 +2162,8 @@
               "mark": "it",
               "text": "translate it의 it은 a bad text, 안 좋은 글이에요."
             }
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s4_why",
@@ -1927,6 +2333,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
           "en": "The translation of a true work of art",
           "ko": "진정한 예술 작품의 번역"
         },
@@ -1981,7 +2391,90 @@
             "explain": "is 앞 덩어리 'The translation of a true work of art(진정한 예술 작품의 번역)'가 주어예요.",
             "point": "5문장 주어 = The translation of a true work of art (is 앞 덩어리)"
           },
-          "method": 1
+          "method": 1,
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "it 두 개",
+              "mark": "it",
+              "text": "이 문장에는 it이 두 번 나와요. because 뒤 it은 '번역', 맨 끝 in it의 it은 '작품'이에요."
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "The translation of a true work of art",
+            "significant",
+            "it",
+            "reinforces",
+            "qualities",
+            "inherent"
+          ],
+          "answers": [
+            "The translation of a true work of art",
+            "significant",
+            "it",
+            "inherent",
+            "qualities",
+            "reinforces"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The translation of a true work of art",
+                "ko": "진짜 예술 작품의 번역은"
+              },
+              " ",
+              {
+                "en": "significant",
+                "ko": "의미가 크다"
+              },
+              " — ",
+              {
+                "en": "it",
+                "ko": "그것이"
+              },
+              " 작품에 ",
+              {
+                "en": "inherent",
+                "ko": "원래 있는"
+              },
+              " ",
+              {
+                "en": "qualities",
+                "ko": "자질"
+              },
+              "을 ",
+              {
+                "en": "reinforces",
+                "ko": "강화하기"
+              },
+              " 때문이다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "The translation of a true work of art is significant because it reinforces qualities already inherent in it.",
+          "tips": [
+            {
+              "label": "it 두 개",
+              "mark": "it",
+              "text": "이 문장에는 it이 두 번 나와요. because 뒤 it은 '번역', 맨 끝 in it의 it은 '작품'이에요."
+            }
+          ]
         },
         {
           "id": "s5_it",
@@ -2223,6 +2716,14 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "a makeshift",
+          "ko": "임시방편"
+        },
+        {
+          "en": "is not",
+          "ko": "~이 아니다"
+        },
+        {
           "en": "translation",
           "ko": "번역"
         },
@@ -2272,6 +2773,120 @@
         }
       ],
       "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "translation",
+            "is not",
+            "a makeshift",
+            "the mode of existence"
+          ],
+          "answers": [
+            "translation",
+            "is not",
+            "a makeshift",
+            "the mode of existence"
+          ],
+          "roles": {
+            "translation": "S",
+            "is not": "V",
+            "a makeshift": "C",
+            "the mode of existence": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 translation, 동사는 is not, 보어는 a makeshift — but 뒤 the mode of existence도 보어예요(not A but B)."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "faded": [
+            "(translated by Heyvaert as “foreign,” but I’m not sure about that)"
+          ],
+          "faded_note": "흐린 부분은 괄호 속 글쓴이의 덧붙임이라 건너뛰어도 돼요",
+          "faded_tip": {
+            "label": "괄호 건너뛰기",
+            "text": "괄호 ( ) 안은 글쓴이가 덧붙인 말일 때가 많아요. 급할 때는 건너뛰고 괄호 앞만 읽어도 뜻이 통해요."
+          }
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "translation",
+            "makeshift",
+            "the mode of existence",
+            "a work",
+            "reaches us",
+            "étrange"
+          ],
+          "answers": [
+            "translation",
+            "makeshift",
+            "a work",
+            "étrange",
+            "reaches us",
+            "the mode of existence"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "translation",
+                "ko": "번역은"
+              },
+              " ",
+              {
+                "en": "makeshift",
+                "ko": "임시방편"
+              },
+              "이 아니라, ",
+              {
+                "en": "a work",
+                "ko": "작품이"
+              },
+              " ",
+              {
+                "en": "étrange",
+                "ko": "낯설게"
+              },
+              " ",
+              {
+                "en": "reaches us",
+                "ko": "우리에게 다가오는"
+              },
+              " ",
+              {
+                "en": "the mode of existence",
+                "ko": "존재 방식"
+              },
+              "이다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "translation is not a makeshift, but the mode of existence by which a work reaches us as étrange."
+        },
         {
           "id": "s6_notbut",
           "type": "choice",
@@ -2365,7 +2980,8 @@
           "faded": [
             "(translated by Heyvaert as “foreign,” but I’m not sure about that)"
           ],
-          "faded_note": "흐린 부분은 괄호 속 글쓴이의 덧붙임이라 건너뛰어도 돼요"
+          "faded_note": "흐린 부분은 괄호 속 글쓴이의 덧붙임이라 건너뛰어도 돼요",
+          "meaning_check": true
         },
         {
           "id": "s6_link",
@@ -2604,6 +3220,142 @@
       ],
       "steps": [
         {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "translation",
+            "makes",
+            "the work",
+            "seem"
+          ],
+          "answers": [
+            "translation",
+            "makes",
+            "the work",
+            "seem"
+          ],
+          "roles": {
+            "translation": "S",
+            "makes": "V",
+            "the work": "O",
+            "seem": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 translation, 동사는 makes, 목적어는 the work, 보어는 seem more strange(더 낯설게 보이게)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "tips": [
+            {
+              "label": "make + 목적어 + 동사원형",
+              "mark": "makes",
+              "text": "make A do는 'A가 ~하게 만들다'예요. 여기서는 makes the work seem, '작품이 ~하게 보이도록 만든다'예요."
+            },
+            {
+              "label": "As Wilson put it",
+              "mark": "As Wilson put it",
+              "text": "'Wilson이 말했듯'이에요. put은 여기서 '두다'가 아니라 '말하다, 표현하다'예요."
+            }
+          ]
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "As Wilson put it",
+            "translation",
+            "makes",
+            "the work",
+            "seem",
+            "more strange",
+            "newly strange"
+          ],
+          "answers": [
+            "As Wilson put it",
+            "translation",
+            "the work",
+            "more strange",
+            "newly strange",
+            "seem",
+            "makes"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "As Wilson put it",
+                "ko": "Wilson의 말처럼"
+              },
+              " ",
+              {
+                "en": "translation",
+                "ko": "번역은"
+              },
+              " ",
+              {
+                "en": "the work",
+                "ko": "작품을"
+              },
+              " ",
+              {
+                "en": "more strange",
+                "ko": "더 낯설게"
+              },
+              ", ",
+              {
+                "en": "newly strange",
+                "ko": "새롭게 낯설게"
+              },
+              " ",
+              {
+                "en": "seem",
+                "ko": "보이게"
+              },
+              " ",
+              {
+                "en": "makes",
+                "ko": "만든다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "make + 목적어 + 동사원형",
+              "mark": "makes",
+              "text": "make A do는 'A가 ~하게 만들다'예요. 여기서는 makes the work seem, '작품이 ~하게 보이도록 만든다'예요."
+            },
+            {
+              "label": "As Wilson put it",
+              "mark": "As Wilson put it",
+              "text": "'Wilson이 말했듯'이에요. put은 여기서 '두다'가 아니라 '말하다, 표현하다'예요."
+            }
+          ]
+        },
+        {
           "id": "s7_make",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -2654,7 +3406,8 @@
               "mark": "As Wilson put it",
               "text": "'Wilson이 말했듯'이에요. put은 여기서 '두다'가 아니라 '말하다, 표현하다'예요."
             }
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s7_sort",

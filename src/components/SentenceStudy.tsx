@@ -14,7 +14,9 @@ import { StudyPanelView } from "./StudyPanel";
 import { noteTipOpened, takeTipShow } from "../tutor/tipExposure";
 import { BoardDrawer, isBoardPanel } from "./BoardDrawer";
 import { PassageFull } from "./PassageFull";
-import { NEXT_SENTENCE_CMD, PICK_CMD, PREV_SENTENCE_CMD } from "../tutor/policy/session";
+import { MATCH_CMD, NEXT_SENTENCE_CMD, ORDER_CMD, PICK_CMD, PREV_SENTENCE_CMD } from "../tutor/policy/session";
+import { MatchKo } from "./MatchKo";
+import { OrderBoard } from "./OrderBoard";
 
 type Props = {
   view: TutorView;
@@ -53,7 +55,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   const [sawBoard, setSawBoard] = useState(false);
   // 덩어리 고르기(음영) 화면은 듣기 줄을 빼고, 3초 동안 반응이 없으면 「회색 부분을 눌러 보세요!」
   const shadePick = !!view.pick?.shade && !view.readingFirst;
-  const pickUntouched = !!view.pick?.open && !view.pick.found.length && !view.pick.missed.length;
+  const pickUntouched = !!view.pick?.open && !view.pick.match && !view.pick.order && !view.pick.found.length && !view.pick.missed.length;
   const [pickNudge, setPickNudge] = useState(false);
   useEffect(() => {
     setPickNudge(false);
@@ -107,14 +109,53 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   // 어휘 문제: 보기의 「문장 보기」로 잠깐 띄운 문장 (보기 id)
   const [peek, setPeek] = useState<string | null>(null);
   // 💡 Tip을 연 동안 문장에서 표시할 단어 (Tip의 `mark`)
+  // 끊어읽기 — 누르면 의미 덩어리마다 「/」를 넣어 보인다. 문장이 바뀌면 끈다
+  const [slashOn, setSlashOn] = useState(false);
+  useEffect(() => setSlashOn(false), [view.sentence]);
+  // 자주 헷갈리는 단어 — 누르면 문장 속 그 단어에 밑줄, 단어를 누르면 뜻 아래 💡 (모아보기 목록은 길어서 안 읽는다, 2026-10-16 선생님)
+  const [trapOn, setTrapOn] = useState(false);
+  useEffect(() => setTrapOn(false), [view.sentence]);
+  // 「밑줄 친 단어를 눌러 보세요」는 처음 켰을 때 한 번만 (선생님 말풍선 아래 작은 안내로)
+  const [trapHint, setTrapHint] = useState(false);
+  useEffect(() => setTrapHint(false), [view.sentence]);
+  const toggleTraps = () => {
+    const on = !trapOn;
+    setTrapOn(on);
+    let seen = true;
+    try { seen = localStorage.getItem("trapHintSeen") === "1"; localStorage.setItem("trapHintSeen", "1"); } catch { /* 저장 못 해도 그냥 한 번 보인다 */ }
+    setTrapHint(on && !seen);
+  };
+  const withSlashes = (text: string) => {
+    if (!slashOn || !view.slashes?.length) return text;
+    // 끊는 자리는 원래 문장에서 먼저 다 찾고 뒤에서부터 넣는다 — 「repertoire」와 「repertoire is」처럼 겹쳐도 둘 다 들어가게
+    const cuts = [...new Set(view.slashes.map((after) => {
+      const at = text.indexOf(after);
+      return at < 0 ? -1 : at + after.length;
+    }).filter((x) => x > 0))].sort((a, b) => b - a);
+    let out = text;
+    for (const cut of cuts) {
+      // 「/」 양옆은 아주 좁은 띄어쓰기(hair space)로 — 보통 띄어쓰기는 너무 벌어져 보인다
+      const rest = out.slice(cut).replace(/^ /, "");
+      out = `${out.slice(0, cut)}\u200A/\u200A${rest}`;
+    }
+    return out;
+  };
+
   const [tipMark, setTipMark] = useState<string | null>(null);
+  // 💡 칩을 눌러 칠한 표시는 그 화면에서만 — 다음 화면으로 넘어가면 지운다 (안 그러면 엉뚱한 화면에 분홍 표시가 남는다)
+  useEffect(() => setTipMark(null), [view.message, view.sentence]);
   const peeked = peek ? view.examSentences?.[peek] : undefined;
   // 자유 해석 입력창에 손이 가 있는 동안 (자판이 올라온 동안)
   const [kbOpen, setKbOpen] = useState(false);
   // 앞 문장을 보는 스텝에서 › 를 눌러 지금 문장을 보는 중
   const [flipped, setFlipped] = useState(false);
   useEffect(() => setFlipped(false), [view.sentence]);
-  const alt = flipped && view.flip ? view.flip : null;
+  // 순서 문제 — 단락 안의 다른 문장을 ‹ › 로 잠깐 본다 (null이면 지금 문장)
+  const [paraAt, setParaAt] = useState<number | null>(null);
+  useEffect(() => setParaAt(null), [view.sentence]);
+  const para = view.paragraph && view.paragraph.sentences.length > 1 && !view.flip ? view.paragraph : null;
+  const paraAlt = para && paraAt != null && paraAt !== para.at ? { text: para.sentences[paraAt]!, highlight: [] as string[] } : null;
+  const alt = flipped && view.flip ? view.flip : paraAlt;
   useEffect(() => setPeek(null), [view.sentence, view.progressLabel]);
   /*
     칠판이 크면 긴 문장은 칸 안에서 스크롤된다. 노랗게 칠한 구절이 칸 밖에 숨지 않게
@@ -151,8 +192,26 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
     const top = Math.min(...marks.map((m) => m.getBoundingClientRect().top - boxTop));
     box.scrollTop = Math.max(0, top - 12);
   }, [highlightKey, view.sentence, peek, tipMark]);
-  // 덩어리를 나누는 슬래시(/)는 단어가 아니다
-  const words = view.sentence.trim().split(/\s+/).filter((w) => w !== "/").length;
+  const showSlash = !!view.slashes?.length && !peeked && !view.pick?.match && !view.pick?.order;
+  // 고르는 문제 중에는 밑줄이 답을 알려 줄 수 있어 띄우지 않는다
+  // 지금 문장에 밑줄 칠 단어가 실제로 있을 때만 — 없으면 버튼도 없다 (2026-10-19 선생님)
+  const norm = (t: string) => t.toLowerCase().replace(/[’']/g, "'");
+  const hasTraps = (view.wordTips ?? []).some((w) => norm(view.sentence).includes(norm(w.mark || w.label)));
+  const showTraps = hasTraps && !peeked && !alt && !view.pick;
+  const toggleChips = showSlash || showTraps ? (
+    <>
+      {showSlash ? (
+        <button type="button" className={`slash-toggle${slashOn ? " on" : ""}`} aria-pressed={slashOn} onClick={() => setSlashOn(!slashOn)}>
+          / 끊어읽기
+        </button>
+      ) : null}
+      {showTraps ? (
+        <button type="button" className={`slash-toggle trap-toggle${trapOn ? " on" : ""}`} aria-pressed={trapOn} onClick={toggleTraps}>
+          〰 헷갈리는 단어
+        </button>
+      ) : null}
+    </>
+  ) : null;
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
 
   return (
@@ -185,11 +244,16 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
               </button>
             ) : null}
             {/* 위쪽은 한 줄로 — 풀이법 단계(①②③)도 따로 줄을 두지 않고 여기 적는다 */}
-            {view.progressLabel ??
-              (view.methodSteps?.active != null
-                ? `${"①②③④"[view.methodSteps.active]} ${view.methodSteps.labels[view.methodSteps.active]}`
-                : "문장 학습")}{" "}
-            · {view.progressIndex}/{view.progressTotal}
+            {(() => {
+              const label =
+                view.progressLabel ??
+                (view.methodSteps?.active != null
+                  ? `${"①②③④"[view.methodSteps.active]} ${view.methodSteps.labels[view.methodSteps.active]}`
+                  : "문장 학습");
+              // 순서 문제는 「3/6」 대신 자리(주어진 글 · (A)) — 앞 이름과 같으면 한 번만
+              if (view.progressPlace) return view.progressPlace === label ? label : `${label} · ${view.progressPlace}`;
+              return `${label} · ${view.progressIndex}/${view.progressTotal}`;
+            })()}
             {view.canNextSentence != null && view.fullPassage ? (
               <button
                 type="button"
@@ -226,12 +290,48 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             <span className="sentence-no">{flipped ? view.flip.tag : view.sentenceTag}</span>
             <button type="button" className="flip-arrow" disabled={flipped} aria-label="다음 문장" onClick={() => setFlipped(true)}>›</button>
           </div>
+        ) : para && !peeked ? (
+          // 순서 문제 — 단락 안을 ‹ › 로 오간다 (점은 단락 안 자리, 진한 점이 지금 공부하는 문장)
+          <div className="sentence-flip">
+            <button type="button" className="flip-arrow" disabled={(paraAt ?? para.at) === 0} aria-label="단락의 앞 문장"
+              onClick={() => setParaAt((paraAt ?? para.at) - 1)}>‹</button>
+            <span className="sentence-no">
+              {view.sentenceTag}{" "}
+              {para.sentences.map((_, i) => (
+                <i key={i} className={`para-dot${i === (paraAt ?? para.at) ? " on" : ""}${i === para.at ? " now" : ""}`} />
+              ))}
+            </span>
+            <button type="button" className="flip-arrow" disabled={(paraAt ?? para.at) === para.sentences.length - 1} aria-label="단락의 다음 문장"
+              onClick={() => setParaAt((paraAt ?? para.at) + 1)}>›</button>
+          </div>
         ) : view.sentenceTag && !peeked ? (
           <span className="sentence-no">{view.sentenceTag}</span>
         ) : null}
         <div className={view.givenBox && !peeked && !alt ? "given-box" : undefined}>
+        {view.pick?.order && !peeked && !alt ? (
+          <OrderBoard
+            given={view.pick.order.given}
+            cards={view.pick.order.cards}
+            solved={view.pick.open ? null : view.pick.order.answers}
+            tries={view.pick.missed.length}
+            open={view.pick.open && !typing}
+            onSubmit={(seq) => onSend(`${ORDER_CMD}${seq.join(",")}`)}
+          />
+        ) : view.pick?.match && !peeked && !alt ? (
+          <>
+          <MatchKo
+            sentence={view.sentence}
+            chunks={view.pick.candidates}
+            found={view.pick.found}
+            ko={view.pick.match.ko}
+            open={view.pick.open && !typing}
+            onMatch={(slot, chunk) => onSend(`${MATCH_CMD}${slot}:${chunk}`)}
+          />
+          </>
+        ) : (
+        <>
         <GlossSentence
-          sentence={peeked?.sentence ?? (alt ? alt.text : view.sentence)}
+          sentence={peeked?.sentence ?? (alt ? alt.text : withSlashes(view.sentence))}
           nouns={view.properNouns}
           glosses={peeked?.glosses ?? view.glosses}
           highlight={peeked || alt ? (alt?.highlight ?? []) : (view.highlight ?? [])}
@@ -246,8 +346,14 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           faded={view.faded ?? []}
           shaded={view.shaded ?? []}
           senses={peeked || alt ? [] : (view.senses ?? [])}
+          bracketed={peeked || alt ? null : (view.bracket ?? null)}
+          resetKey={view.message}
+          wordTips={peeked || alt ? [] : (view.wordTips ?? [])}
+          showTraps={trapOn && !peeked && !alt}
           onLookup={(word) => onObserve?.({ kind: "vocab_click", word })}
         />
+        </>
+        )}
         </div>
         {view.fadedNote && !peeked ? <p className="faded-note"><span className="faded-swatch">흐림</span>{view.fadedNote}</p> : null}
         {view.properNouns.length > 0 ? (
@@ -259,12 +365,6 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             ))}
           </div>
         ) : null}
-        {sawBoard || shadePick ? null : <div className="listen-row">
-          <button type="button" className="listen" onClick={listen}>
-            <SpeakerIcon /> 듣기
-          </button>
-          <span>단어를 누르면 뜻이 나와요 · {words} words</span>
-        </div>}
       </div>
 
       {/* 문장 넣기 — 답을 고를 때는 지문 전체를 시험지처럼, 핵심어를 칠해서 (①~⑤가 어디인지 보이게) */}
@@ -280,9 +380,30 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         </div>
       ) : null}
 
+      {/* 듣기 · 끊어읽기 · 헷갈리는 단어 — 문장 칸 밖에 작은 칩 한 줄 (2026-10-16 선생님: 버튼이 너무 많아 보인다).
+          듣기는 칠판이 한 번 나오기 전까지만 */}
+      {!(sawBoard || shadePick) || toggleChips ? (
+        <div className="sentence-toggles">
+          {sawBoard || shadePick ? null : (
+            <button type="button" className="listen" onClick={listen}>
+              <SpeakerIcon /> 듣기
+            </button>
+          )}
+          {toggleChips}
+          {/* 지시문은 말풍선 말고 칩 아래에 (2026-10-16 선생님) — 듣기가 보이는 처음 화면들, 밑줄 켰을 땐 그 안내 */}
+          {trapHint ? (
+            <span className="toggles-hint">밑줄 친 단어를 눌러 보세요</span>
+          ) : sawBoard || shadePick ? null : (
+            <span className="toggles-hint">단어를 누르면 뜻이 나와요 · 모르는 단어는 ☆로 저장해요</span>
+          )}
+        </div>
+      ) : null}
       {sentenceTips.length || view.concepts?.length ? (
         <TipChips
-          tips={sentenceTips}
+          tips={[
+            ...sentenceTips,
+            // 단어 Tip은 칩으로 모으지 않는다 — 「자주 헷갈리는 단어 표시하기」로 문장 속에 밑줄
+          ]}
           concepts={view.concepts ?? []}
           onMark={setTipMark}
           onHint={() => onObserve?.({ kind: "hint_open" })}
@@ -470,9 +591,21 @@ function GlossSentence({
   shaded,
   onLookup,
   senses = [],
+  bracketed = null,
+  resetKey = "",
+  wordTips = [],
+  showTraps = false,
 }: {
+  /** 바뀌면 열린 단어 뜻을 닫는다 (화면이 바뀔 때) */
+  resetKey?: string;
+  /** 문장 속 색 글자로 보일 단어 Tip — 누르면 뜻 아래 Tip 글 */
+  wordTips?: { label: string; text: string; mark?: string }[];
+  /** 헷갈리는 단어 표시 버튼을 켰을 때 — 그 단어에 밑줄 */
+  showTraps?: boolean;
   /** 다의 기능어의 그 자리 쓰임 — 문장에 나온 순서대로 */
   senses?: NonNullable<TutorView["senses"]>;
+  /** [ ]로 묶어 가리키는 한 문장 — 괄호는 색으로, 그 문장은 옅은 바탕으로 */
+  bracketed?: string | null;
   sentence: string;
   nouns: TutorView["properNouns"];
   glosses: TutorView["glosses"];
@@ -495,16 +628,30 @@ function GlossSentence({
   const tipRef = useRef<HTMLSpanElement>(null);
   const [shift, setShift] = useState(0);
   // 구절 뜻은 단어마다 나눠 보인다 — 지금 통째로 고르는 후보 구절만 그대로
-  const spans = withSenses(glossSpans(sentence, glossesFor(splitPhraseGlosses(glosses, pick?.candidates ?? []), nouns)), senses);
+  // 찾은 S·V 표시가 줄임말 조각(it + ’s)에 붙어 있으면 그 조각도 따로 둔다 — 한 칸에 표시가 하나만 붙으니까
+  const rolePieces = roles.map((r) => r.text).filter((t) => !/\s/.test(t) || t.startsWith("’"));
+  const spans = withSenses(glossSpans(sentence, glossesFor(splitPhraseGlosses(glosses, [...(pick?.candidates ?? []), ...rolePieces]), nouns)), senses);
+  /*
+    뜻 상자 아랫줄 「덩어리」는 누른 자리를 실제로 감싸는 덩어리로 — 같은 낱말(in)이 문장 앞 「In many cases」에도
+    있으면 맨 앞 덩어리를 붙이던 것을 고친다 (2026-10-18, 24번 「both are in play」의 in)
+  */
+  const phraseRanges = glosses
+    .filter((g) => /\s/.test(g.en.trim()))
+    .flatMap((g) => allWordRanges(sentence, g.en).map(([a, b]) => ({ a, b, en: g.en, ko: g.ko.split(" · ")[0]! })));
+  const phraseAt = (a: number, b: number) =>
+    phraseRanges.filter((r) => r.a <= a && b <= r.b).sort((x, y) => x.b - x.a - (y.b - y.a))[0] ?? null;
   const marked = highlightRanges(sentence, highlight);
   const markedAlt = highlightRanges(sentence, highlightAlt);
   const markedUl = highlightRanges(sentence, underline);
   const markedTip = tipMark ? wordRanges(sentence, tipMark) : [];
-  const candAt = (pick?.candidates ?? []).flatMap((c) => wordRanges(sentence, c).map(([a, b]) => ({ c, a, b })));
+  // 같은 낱말이 두 번 나오면(does not stop … it stop) 이미 다른 후보가 차지한 자리는 건너뛴다
+  const candPlaced = placeWords(sentence, pick?.candidates ?? []);
+  const candAt = (pick?.candidates ?? []).flatMap((c) => (candPlaced.get(c) ?? []).map(([a, b]) => ({ c, a, b })));
   const fadedAt = highlightRanges(sentence, faded);
   const shadedAt = highlightRanges(sentence, shaded);
   // 단어 경계로 찾는다 — 「one」이 Nonetheless 안에서 잡히지 않게
-  const roleAt = roles.flatMap((r) => wordRanges(sentence, r.text).map(([a, b]) => ({ a, b, role: r.role })));
+  const rolePlaced = placeWords(sentence, roles.map((r) => r.text));
+  const roleAt = roles.flatMap((r) => (rolePlaced.get(r.text) ?? []).map(([a, b]) => ({ a, b, role: r.role })));
 
   /*
     뜻 상자는 단어 아래 가운데에 뜬다. 단어가 가장자리에 있으면 상자가 화면 밖으로
@@ -516,16 +663,23 @@ function GlossSentence({
     // 입력창 위 「보고 쓸 부분」 안에서도 그 상자 안으로 밀어 넣는다
     const box = tip?.closest(".study-sentence, .translate-ref");
     if (!tip || !box) return;
+    // 앞에서 연 단어의 밀어 넣기(shift)가 아직 붙어 있으면 잘못 잰다 — 원래 자리로 되돌리고 잰다
+    tip.style.transform = "";
     const t = tip.getBoundingClientRect();
     const b = box.getBoundingClientRect();
     const pad = 12;
-    if (t.left < b.left + pad) setShift(b.left + pad - t.left);
-    else if (t.right > b.right - pad) setShift(b.right - pad - t.right);
+    const next = t.left < b.left + pad ? b.left + pad - t.left : t.right > b.right - pad ? b.right - pad - t.right : 0;
+    // 값이 그대로면 React가 다시 그리지 않으니 여기서 바로 붙인다
+    if (next) tip.style.transform = `translateX(calc(-50% + ${next}px))`;
+    setShift(next);
+    // 아래로 길게 뜬 상자(💡 붙은 뜻)는 문장 칸 밖으로 잘린다 — 칸을 굴려 다 보이게
+    if (t.bottom > b.bottom) box.scrollTop += t.bottom - b.bottom + 8;
   }, [open]);
 
+  // 화면(선생님 말)이 바뀌면 열어 둔 단어 뜻도 닫는다 — 안 그러면 누른 단어가 다음 화면까지 분홍으로 남는다
   useEffect(() => {
     setOpen(null);
-  }, [sentence]);
+  }, [sentence, resetKey]);
 
   useEffect(() => {
     function close(e: MouseEvent) {
@@ -535,6 +689,11 @@ function GlossSentence({
     return () => document.removeEventListener("click", close);
   }, []);
 
+  // 단어 Tip 자리 — 문장에서 mark(없으면 label)를 찾는다 (따옴표 모양은 가리지 않는다)
+  // 단어 단위로 찾는다 — 글자로만 찾으면 as가 contrast 안에 붙는다 (2026-10-17). 「as … as」면 두 자리 모두
+  const tipAt = wordTips.flatMap((w) => wordRanges(sentence, w.mark || w.label).map(([a, b]) => ({ a, b, tip: w })));
+  const bracketFrom = bracketed ? sentence.indexOf(bracketed) : -1;
+  const bracketAt: [number, number] | null = bracketFrom >= 0 ? [bracketFrom, bracketFrom + bracketed!.length] : null;
   const parts: ReactNode[] = [];
   let at = 0;
   spans.forEach((span, i) => {
@@ -554,12 +713,19 @@ function GlossSentence({
     const inRole = roleAt.find((r) => start < r.b && at > r.a);
     // S·V 표시 — 덩어리 첫 칸 위에 글자, 덩어리 전체에 밑줄 색
     const roleHead = roleAt.find((r) => r.a >= start && r.a < at && span.text.trim());
-    const marks = `${hit(fadedAt) ? " faded" : ""}${hit(shadedAt) ? " shaded" : ""}${hit(markedUl) ? " ul" : ""}${inRole ? ` role-${inRole.role}` : ""}${roleHead ? " role-head" : ""}`;
+    const inBracket = bracketAt && start < bracketAt[1] && at > bracketAt[0];
+    const tipHit = span.text.trim() ? tipAt.find((x) => start < x.b && at > x.a) : undefined;
+    const wordTip = tipHit?.tip;
+    // 문장 속 표시는 버튼을 켰을 때만(늘 띄우면 * 처럼 지저분하다, 2026-10-16 선생님) — 누르면 뜻 아래 💡
+    const marks = `${showTraps && wordTip ? " trap" : ""}${inBracket ? " bracketed" : ""}${hit(fadedAt) ? " faded" : ""}${hit(shadedAt) ? " shaded" : ""}${hit(markedUl) ? " ul" : ""}${inRole ? ` role-${inRole.role}` : ""}${roleHead ? " role-head" : ""}`;
     const roleAttr = roleHead ? { "data-role": roleHead.role } : {};
     if (!span.gloss) {
       // 덩어리 나누기 슬래시(/)는 굵고 진하게 — 문장 구조가 한눈에 보이게
-      const text: ReactNode = span.text.includes("/")
-        ? span.text.split(/(\/)/).map((t, k) => (t === "/" ? <b key={k} className="slash">/</b> : t))
+      // [ ] 괄호도 색으로 — 어느 문장을 가리키는지 보이게
+      const text: ReactNode = /[\/\[\]]/.test(span.text)
+        ? span.text.split(/([\/\[\]])/).map((t, k) =>
+            t === "/" ? <b key={k} className="slash">/</b> : t === "[" || t === "]" ? <b key={k} className="bracket-mark">{t}</b> : t,
+          )
         : span.text;
       if (tip) parts.push(<mark key={i} {...roleAttr} className={`hl-tip${marks}`}>{text}</mark>);
       else if (hl || hl2) parts.push(<mark key={i} {...roleAttr} className={`${hl ? "hl" : "hl2"}${marks}`}>{text}</mark>);
@@ -628,12 +794,16 @@ function GlossSentence({
               단어 뜻이 없는 말(to, of …)은 덩어리 뜻이 본문이고, 별은 덩어리(숙어) 카드로
             */}
             {(() => {
-              const g = span.gloss!;
+              const g0 = span.gloss!;
+              const here = g0.phrase ? phraseAt(start, at) : null;
+              const g = here && here.en !== g0.phrase!.en ? { ...g0, phrase: { en: here.en, ko: here.ko } } : g0;
               const asPhrase = !g.ko && !!g.phrase;
+              // 단어 뜻에 이미 붙어 있는 같은 덩어리 풀이(「자리 · in its tracks = …」)는 빼고 레슨의 덩어리 뜻 하나만 — 중복 방지
+              const wordKo = g.phrase && g.ko ? g.ko.split(" · ").filter((part) => !part.startsWith(`${g.phrase!.en} =`)).join(" · ") : g.ko;
               const entry = asPhrase
                 ? { en: g.phrase!.en, ko: g.phrase!.ko, kind: "phrase" as const }
-                : { en: g.en, ko: g.ko, kind: "word" as const };
-              const note = !asPhrase && g.phrase && g.phrase.ko !== g.ko ? `${g.phrase.en} = ${g.phrase.ko}` : null;
+                : { en: g.en, ko: wordKo, kind: "word" as const };
+              const note = !asPhrase && g.phrase && g.phrase.ko !== wordKo ? `${g.phrase.en} = ${g.phrase.ko}` : null;
               return (
                 <>
                   <VocabStar
@@ -641,7 +811,8 @@ function GlossSentence({
                     en={entry.en}
                     onToggle={() => setVocab(toggleVocab(vocab, { ...entry, sentence, source: lessonIdOfSentence(sentence) }))}
                   />
-                  <GlossText ko={asPhrase ? `${g.phrase!.en} = ${g.phrase!.ko}` : note ? `${g.ko} · ${note}` : g.ko} />
+                  <GlossText ko={asPhrase ? `${g.phrase!.en} = ${g.phrase!.ko}` : note ? `${wordKo} · ${note}` : wordKo} />
+                  {wordTip ? <span className="gloss-tip-note">💡 {wordTip.text}</span> : null}
                 </>
               );
             })()}
@@ -676,7 +847,7 @@ function TipChips({
 }) {
   // 💡 참고 칩은 같은 칩을 세 번(안 누르면 다섯 번)까지만 — 힌트 칩은 그대로
   const shownTips = useMemo(
-    () => tipList.filter((t) => t.hint || takeTipShow(t.label, appearance)),
+    () => tipList.filter((t) => t.hint || ("word" in t && t.word) || takeTipShow(t.label, appearance)),
     [tipList, appearance],
   );
   const tips = [
@@ -684,10 +855,12 @@ function TipChips({
     ...shownTips.map((t) => ({ icon: "💡", ...t })),
   ] as { icon: string; label: string; text: string; mark?: string; hint?: boolean }[];
   const [open, setOpen] = useState<number | null>(null);
+  // 칩 목록이 실제로 바뀔 때만 닫는다 — 배열이 새로 만들어질 때마다 닫으면 연 창이 저절로 꺼진다
+  const tipKey = `${tipList.map((x) => `${x.label}|${x.text}`).join("§")}#${concepts.map((c) => c.en).join("§")}`;
   useEffect(() => {
     setOpen(null);
     onMark(null);
-  }, [tipList, concepts]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [tipKey]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!tips.length) return null;
   return (
     <div className="tip-chips">
@@ -710,7 +883,21 @@ function TipChips({
           </button>
         ))}
       </div>
-      {open != null ? <div className="info-pop">{tips[open]!.text}</div> : null}
+      {open != null ? (
+        <div className="info-pop">
+          {/* 모아보기 — 줄마다 「단어 — 설명」, 단어는 굵게 */}
+          {tips[open]!.text.includes("\n")
+            ? tips[open]!.text.split("\n").map((line, k) => {
+                const [w, ...rest] = line.split(" — ");
+                return (
+                  <span key={k} className="info-line">
+                    <b>{w}</b> {rest.join(" — ")}
+                  </span>
+                );
+              })
+            : tips[open]!.text}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -911,10 +1098,59 @@ function highlightRanges(sentence: string, phrases: string[]): [number, number][
 }
 
 /** 단어 단위로 찾는다 — Tip이 가리키는 「one」이 Nonetheless 안에서 잡히지 않게 */
+/**
+ * 문장에서 단어 자리를 단어 단위로 찾는다 (as가 contrast 안에 잡히지 않게).
+ * 「as … as」처럼 「 … 」로 이으면 앞 말 뒤에서 다음 말을 차례로 찾아 여러 자리를 표시한다 (as A as B, not only … but)
+ */
+/**
+ * 여러 낱말·덩어리의 자리를 한꺼번에 — 긴 것부터 자리를 잡고, 짧은 것은 아직 안 잡힌 자리 중 첫 번째로.
+ * 「stop」이 「does not stop」 안과 「it stop」에 다 있으면 뒤의 stop을 준다
+ */
+function placeWords(sentence: string, words: string[]): Map<string, [number, number][]> {
+  const out = new Map<string, [number, number][]>();
+  const taken: [number, number][] = [];
+  const free = ([a, b]: [number, number]) => !taken.some(([x, y]) => a < y && x < b);
+  for (const w of [...new Set(words)].sort((x, y) => y.length - x.length)) {
+    if (w.includes(" … ")) {
+      const r = wordRanges(sentence, w);
+      out.set(w, r);
+      taken.push(...r);
+      continue;
+    }
+    const all = allWordRanges(sentence, w);
+    const hit = all.find(free) ?? all[0];
+    const r = hit ? [hit] : [];
+    out.set(w, r);
+    taken.push(...r);
+  }
+  return out;
+}
+
+function allWordRanges(sentence: string, word: string): [number, number][] {
+  const text = sentence.toLowerCase().replace(/[’']/g, "'");
+  const part = word.toLowerCase().replace(/[’']/g, "'");
+  const esc = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(`${/^[a-z0-9]/.test(part) ? "(?<![a-z0-9])" : ""}${esc}(?![a-z0-9])`, "g");
+  const out: [number, number][] = [];
+  for (let m = re.exec(text); m; m = re.exec(text)) out.push([m.index, m.index + part.length]);
+  return out;
+}
+
 function wordRanges(sentence: string, word: string): [number, number][] {
-  const esc = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const m = new RegExp(`(?<![A-Za-z])${esc}(?![A-Za-z])`).exec(sentence);
-  return m ? [[m.index, m.index + word.length]] : [];
+  const text = sentence.toLowerCase().replace(/[’']/g, "'");
+  const out: [number, number][] = [];
+  let from = 0;
+  for (const part of word.toLowerCase().replace(/[’']/g, "'").split(" … ")) {
+    const esc = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    // ’s처럼 기호로 시작하는 조각은 앞 글자(it)에 붙어 있다 — 앞쪽 경계는 보지 않는다
+    const re = new RegExp(`${/^[a-z0-9]/.test(part) ? "(?<![a-z0-9])" : ""}${esc}(?![a-z0-9])`, "g");
+    re.lastIndex = from;
+    const m = re.exec(text);
+    if (!m) break;
+    out.push([m.index, m.index + part.length]);
+    from = m.index + part.length;
+  }
+  return out;
 }
 
 /** 「통합, 통일성 · 여기서는 …」 — 뜻은 진하게, 「·」 뒤의 해설은 연하게 */

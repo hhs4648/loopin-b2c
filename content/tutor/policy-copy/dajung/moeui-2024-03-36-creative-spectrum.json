@@ -1,0 +1,361 @@
+{
+  "lesson": "moeui-2024-03-36-creative-spectrum",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "순서 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_sv": {
+      "ask": "주어진 글은 두 문장이에요. 주어(S), 동사(V), 목적어(O)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the creative spectrum": "그건 at one end of 뒤, 어디인지 알려 주는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "첫 문장은 S Different creative pursuits, V require, O varying degrees of … thinking이에요. 둘째 문장은 장소가 앞에 나와 V are, S improvisational artists예요.",
+      "from": "1pb0vnv"
+    },
+    "g_two": {
+      "ask": "창의적인 일에는 두 가지 생각이 섞인대요. 무엇과 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'unconscious flexible thinking'과 'in combination with … the conscious ability … through analytical thinking'을 봐요.",
+        "'unconscious flexible thinking'과 'in combination with … the conscious ability … through analytical thinking'을 봐요."
+      ],
+      "explain": "'unconscious flexible thinking'(무의식적이고 유연한 생각)과 'the conscious ability … analytical thinking'(의식적이고 분석적인 생각)이 섞인대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'unconscious flexible thinking'(무의식적이고 유연한 생각)과 'the conscious ability … analytical thinking'(의식적이고 분석적인 생각)이 섞인대요.",
+        "o2": "'unconscious flexible thinking'(무의식적이고 유연한 생각)과 'the conscious ability … analytical thinking'(의식적이고 분석적인 생각)이 섞인대요."
+      },
+      "from": "1j4s8sj"
+    },
+    "g_one_end": {
+      "ask": "음악에서 스펙트럼의 한쪽 끝(one end)에 있는 즉흥 연주가(재즈 음악가)는 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "improvisational은 '즉흥적인'이에요. 즉흥 연주는 미리 분석하기보다 그 자리에서 떠오르는 대로 해요.",
+        "improvisational은 '즉흥적인'이에요. 즉흥 연주는 미리 분석하기보다 그 자리에서 떠오르는 대로 해요."
+      ],
+      "explain": "improvisational은 '즉흥적인'이에요. 즉흥 연주는 미리 분석하기보다 그 자리에서 떠오르는 대로 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "improvisational은 '즉흥적인'이에요. 즉흥 연주는 미리 분석하기보다 그 자리에서 떠오르는 대로 해요."
+      },
+      "from": "13ab5sb"
+    },
+    "g_next": {
+      "ask": "주어진 글은 '한쪽 끝(one end)의 재즈 음악가들'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "방금 재즈 음악가를 처음 소개했어요. 소개 바로 뒤엔 그들을 받는 말이 오기 쉬워요.",
+        "방금 재즈 음악가를 처음 소개했어요. 소개 바로 뒤엔 그들을 받는 말이 오기 쉬워요."
+      ],
+      "explain": "재즈 음악가를 막 소개했으니, 바로 뒤엔 그들(They)이 어떤지 설명이 오기 쉬워요. 모차르트나 과학자는 아직 나오지도 않았어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "재즈 음악가를 막 소개했으니, 바로 뒤엔 그들(They)이 어떤지 설명이 오기 쉬워요. 모차르트나 과학자는 아직 나오지도 않았어요.",
+        "o1": "재즈 음악가를 막 소개했으니, 바로 뒤엔 그들(They)이 어떤지 설명이 오기 쉬워요. 모차르트나 과학자는 아직 나오지도 않았어요."
+      },
+      "from": "k0b4jc"
+    },
+    "paper_order": {
+      "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요.",
+      "from": "11bywp8"
+    },
+    "a_before": {
+      "ask": "(A)는 'On the other end of the spectrum(스펙트럼의 다른 끝에는)'으로 시작해요. 앞에는 무엇이 나와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "the other end(다른 끝)라고 하려면, 먼저 한쪽 끝이 나왔어야 해요.",
+        "the other end(다른 끝)라고 하려면, 먼저 한쪽 끝이 나왔어야 해요."
+      ],
+      "explain": "'the other end'(다른 끝)는 앞에서 한쪽 끝(one end)을 말한 뒤에 나와요. 그러니 (A) 앞에는 한쪽 끝(재즈 쪽) 이야기가 있어야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'the other end'(다른 끝)는 앞에서 한쪽 끝(one end)을 말한 뒤에 나와요. 그러니 (A) 앞에는 한쪽 끝(재즈 쪽) 이야기가 있어야 해요.",
+        "o2": "'the other end'(다른 끝)는 앞에서 한쪽 끝(one end)을 말한 뒤에 나와요. 그러니 (A) 앞에는 한쪽 끝(재즈 쪽) 이야기가 있어야 해요."
+      },
+      "point": "(A) On the other end ← 한쪽 끝(재즈) 이야기가 먼저 나온 뒤",
+      "from": "xtvrh7"
+    },
+    "a_compose": {
+      "say": "다른 끝에는 교향곡처럼 복잡한 곡을 쓰는 작곡가가 있대요. 상상력뿐 아니라 꼼꼼한 계획과 편집이 필요해요.",
+      "from": "6rlkxx"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "Mozart’s creations": "그건 that 뒤 덩어리 안의 주어예요(무엇을 아는지).",
+        "did not appear": "그건 that 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 know예요. that 뒤가 아는 내용이에요.",
+      "from": "1nj70g4"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "rmruhi"
+    },
+    "a2_myth": {
+      "ask": "모차르트의 작품은 전설(myths)이 그리는 것처럼 저절로 완성돼 나왔대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'did not appear spontaneously'를 봐요. 앞에 not이 있어요.",
+        "'did not appear spontaneously'를 봐요. 앞에 not이 있어요."
+      ],
+      "explain": "'even Mozart’s creations did not appear spontaneously', 모차르트의 작품조차 저절로 나온 게 아니래요. 전설이 그리는 것과 달라요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'even Mozart’s creations did not appear spontaneously', 모차르트의 작품조차 저절로 나온 게 아니래요. 전설이 그리는 것과 달라요."
+      },
+      "from": "y5ica7"
+    },
+    "a2_next": {
+      "ask": "(A)는 '모차르트의 작품도 저절로 나온 게 아니다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'저절로가 아니다'라고 했으면, 다음엔 '그 대신 어떻게 했는지'가 오기 쉬워요.",
+        "'저절로가 아니다'라고 했으면, 다음엔 '그 대신 어떻게 했는지'가 오기 쉬워요."
+      ],
+      "explain": "'저절로 나온 게 아니다'라고 부정했으니, 다음엔 '그 대신(Instead) 모차르트는 어떻게 했는지'가 이어지기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'저절로 나온 게 아니다'라고 부정했으니, 다음엔 '그 대신(Instead) 모차르트는 어떻게 했는지'가 이어지기 쉬워요.",
+        "o2": "'저절로 나온 게 아니다'라고 부정했으니, 다음엔 '그 대신(Instead) 모차르트는 어떻게 했는지'가 이어지기 쉬워요."
+      },
+      "point": "(A) 끝 '모차르트도 저절로가 아니다' → 다음은 '대신 어떻게 했는지'",
+      "from": "w7gso2"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "their inhibitions": "그건 lowering(낮추는 것)의 대상이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 They, 동사는 have to be, 보어는 particularly talented예요.",
+      "from": "1c2wnzy"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "그들(재즈 음악가)은 거리낌을 낮추고 무의식에서 떠오른 생각을 받아들이는 데 특히 재능이 있어야 한대요.",
+      "from": "97yyak"
+    },
+    "b_before": {
+      "ask": "(B)는 'They have to be particularly talented at lowering their inhibitions …'로 시작해요. They는 누구일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "억제를 낮추고, 무의식적으로 떠오른 생각을 받아들인대요. 칠판 왼쪽(무의식·유연) 쪽 사람들이에요.",
+        "억제를 낮추고, 무의식적으로 떠오른 생각을 받아들인대요. 칠판 왼쪽(무의식·유연) 쪽 사람들이에요."
+      ],
+      "explain": "'lowering their inhibitions and letting in their unconsciously generated ideas', 떠오르는 대로 받아들이는 건 즉흥 연주가, 재즈 음악가예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'lowering their inhibitions and letting in their unconsciously generated ideas', 떠오르는 대로 받아들이는 건 즉흥 연주가, 재즈 음악가예요.",
+        "o1": "'lowering their inhibitions and letting in their unconsciously generated ideas', 떠오르는 대로 받아들이는 건 즉흥 연주가, 재즈 음악가예요."
+      },
+      "point": "(B) They = 재즈 음악가들 ← 주어진 글 끝 jazz musicians",
+      "from": "157ckhu"
+    },
+    "s4_basic_meaning": {
+      "say": "그들(재즈 음악가)은 거리낌을 낮추고 무의식에서 떠오른 생각을 받아들이는 데 특히 재능이 있어야 한대요.",
+      "from": "hdrfrm"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the process": "그건 although 덩어리 안의 주어예요.",
+        "would require": "그건 although 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콤마 뒤 메인 문장은 주어 that thinking style, 동사 is not이에요.",
+      "from": "7bekvb"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1irtfmx"
+    },
+    "b2_perf": {
+      "say": "재즈 기초를 배울 땐 분석적 생각이 많이 필요하지만, 연주하는 동안엔 그게 큰 요소가 아니래요. 재즈 쪽 이야기를 마무리해요.",
+      "from": "1vk9dzu"
+    },
+    "b2_next": {
+      "ask": "재즈 쪽 이야기를 마쳤어요. (B) 다음엔 무엇이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "주어진 글에서 스펙트럼의 '한쪽 끝'을 말했어요. 한쪽을 다 말했으면 다음은 어디일까요?",
+        "주어진 글에서 스펙트럼의 '한쪽 끝'을 말했어요. 한쪽을 다 말했으면 다음은 어디일까요?"
+      ],
+      "explain": "한쪽 끝(재즈) 이야기가 끝났으니, 다음엔 다른 끝 이야기가 오기 쉬워요. '대신 그는'의 he(한 사람)는 재즈 음악가들(they)을 받을 수 없어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "한쪽 끝(재즈) 이야기가 끝났으니, 다음엔 다른 끝 이야기가 오기 쉬워요. '대신 그는'의 he(한 사람)는 재즈 음악가들(they)을 받을 수 없어요.",
+        "o2": "한쪽 끝(재즈) 이야기가 끝났으니, 다음엔 다른 끝 이야기가 오기 쉬워요. '대신 그는'의 he(한 사람)는 재즈 음악가들(they)을 받을 수 없어요."
+      },
+      "from": "h2ohpq"
+    },
+    "c_before": {
+      "ask": "(C)는 'Instead, he spent long, hard hours analyzing …'으로 시작해요. he와 Instead(대신)가 받을 말은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "he는 한 사람이에요. 그리고 Instead(대신)는 앞에 '~가 아니다'라는 말이 있어야 써요.",
+        "he는 한 사람이에요. 그리고 Instead(대신)는 앞에 '~가 아니다'라는 말이 있어야 써요."
+      ],
+      "explain": "he(한 사람, his unconscious)는 모차르트예요. Instead는 앞의 '저절로 나온 게 아니다(did not appear spontaneously)'를 받아 '대신 오랜 시간 분석했다'로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "he(한 사람, his unconscious)는 모차르트예요. Instead는 앞의 '저절로 나온 게 아니다(did not appear spontaneously)'를 받아 '대신 오랜 시간 분석했다'로 이어져요.",
+        "o1": "he(한 사람, his unconscious)는 모차르트예요. Instead는 앞의 '저절로 나온 게 아니다(did not appear spontaneously)'를 받아 '대신 오랜 시간 분석했다'로 이어져요."
+      },
+      "point": "(C) Instead, he = 모차르트, '저절로가 아니다' 대신 ← (A) 끝",
+      "from": "1krxnck"
+    },
+    "c_analyze": {
+      "say": "모차르트는 무의식에서 떠오른 생각을 오랜 시간 분석하고 다듬었대요. 칠판 오른쪽(분석적 생각) 쪽이에요.",
+      "from": "12w7qux"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "music": "그건 in 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "따옴표 안 첫 문장은 주어 I, 동사 immerse, 목적어 myself예요(나 자신을 몰두시키다).",
+      "from": "xjjasz"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1pvpq09"
+    },
+    "order_link": {
+      "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+      "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+      "wrong_by": {
+        "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+        "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+      "explain": "주어진 글(한쪽 끝: 재즈 음악가) → (B) They(재즈 음악가) → (A) the other end(작곡가), 모차르트도 저절로가 아니다 → (C) Instead, he(모차르트) 순서예요.",
+      "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지",
+      "from": "1bpi18r"
+    },
+    "c_go": {
+      "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?",
+      "from": "eua8yu"
+    }
+  },
+  "exam": {
+    "ask": "단락 첫머리 단서(They, On the other end, Instead, he)를 떠올리며 순서를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 한쪽 끝의 재즈 음악가 → (B) They(재즈 음악가)의 특징 → (A) 다른 끝의 작곡가, 모차르트도 저절로가 아니다 → (C) Instead, he(모차르트)는 오래 분석했다, 순서예요.",
+    "final_wrong": "정답은 ② (B)-(A)-(C)예요.",
+    "option_feedback": {
+      "1": "(A) 'the other end'가 주어진 글 바로 뒤에 오면, 재즈 음악가를 받는 (B) They가 뒤로 밀려 엉뚱한 사람을 가리켜요.",
+      "3": "많이 고른 오답이에요. (C)의 he는 한 사람(모차르트)이라 (B)의 재즈 음악가들(they)을 받을 수 없어요.",
+      "4": "(C)의 he와 Instead가 받을 '모차르트도 저절로가 아니다'가 주어진 글에는 없어요.",
+      "5": "(C)가 맨 앞에 오면 he가 누구인지 알 수 없어요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 20.6%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "(B) 끝이 '연주 중엔 분석적 생각이 큰 요소가 아니다'라서, (C) 'Instead, he … analyzing'을 붙이고 싶었을 거예요. 하지만 he는 한 사람(his unconscious)이라 (B)의 재즈 음악가들(they)을 받을 수 없어요. he가 받을 모차르트는 (A) 끝에 처음 나와요.",
+        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "분석 이야기끼리 이어 버렸어요",
+            "skills": [
+              "content_link_only"
+            ],
+            "reply": "알려 줘서 고마워요. 내용이 비슷해 보여도 he, they 같은 가리키는 말이 맞아야 이어져요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "he가 누구인지 확인 안 했어요",
+            "skills": [
+              "pronoun_number"
+            ],
+            "reply": "알려 줘서 고마워요. he(한 사람)인지 they(여러 사람)인지가 순서 문제의 열쇠예요. 앞으로 대명사를 먼저 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "content_link_only",
+              "pronoun_number"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 대명사와 내용 연결을 같이 짚어 볼게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(B) 끝",
+              "text": "They … that thinking style is not as big a factor",
+              "ko": "재즈 음악가들(they)",
+              "tone": "hl"
+            },
+            {
+              "label": "(C) 첫머리",
+              "text": "Instead, he spent long, hard hours",
+              "ko": "he = 한 사람 = 모차르트 ← (A) 끝",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "l4igwd"
+  },
+  "intro": {
+    "topic": {
+      "say": "모차르트의 곡은 머릿속에서 한 번에 완성됐을까요? 이번 글은 창의적인 일에 필요한 두 가지 생각을 다뤄요."
+    },
+    "method1": {
+      "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. They, he, Instead 같은 말이 무엇을 받는지 찾아볼게요."
+    },
+    "from": "1jl4isr"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "t4h276"
+}

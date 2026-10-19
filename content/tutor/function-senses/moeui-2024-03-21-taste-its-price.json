@@ -1,0 +1,98 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "That perception is a construction",
+   "sense": "~라는 것(은)",
+   "usage": "명사절 that + 완전한 문장 (주어 자리)"
+  },
+  {
+   "word": "as",
+   "phrase": "such as visual",
+   "sense": "~ 같은",
+   "usage": "such as + 명사 (예시)"
+  }
+ ],
+ "2": [
+  {
+   "word": "as",
+   "phrase": "as well",
+   "sense": "~도 또한",
+   "usage": "as well (문장 끝) = 또한"
+  }
+ ],
+ "3": [
+  {
+   "word": "for",
+   "phrase": "For example",
+   "sense": "(For example의 일부)",
+   "usage": "For example = 예를 들어"
+  },
+  {
+   "word": "but",
+   "phrase": "but there was",
+   "sense": "하지만",
+   "usage": "접속사 but + 주어·동사"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "That wasn’t because",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞 문장의 결과)"
+  },
+  {
+   "word": "that",
+   "phrase": "believed that the higher-priced",
+   "sense": "~라고",
+   "usage": "명사절 that (believe that …)"
+  }
+ ],
+ "6": [
+  {
+   "word": "as",
+   "phrase": "as the subjects were tasting",
+   "sense": "~할 때, ~하는 동안",
+   "usage": "접속사 as + 주어·동사 (시간)"
+  },
+  {
+   "word": "that",
+   "phrase": "showed that drinking",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (show that …)"
+  },
+  {
+   "word": "for",
+   "phrase": "taste for pleasure",
+   "sense": "~을 위한, ~의",
+   "usage": "전치사 for + 명사"
+  },
+  {
+   "word": "that",
+   "phrase": "wine that had been labeled",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "as",
+   "phrase": "labeled as cheaper",
+   "sense": "~로",
+   "usage": "label A as B = A에 B라고 붙이다"
+  }
+ ],
+ "7": [
+  {
+   "word": "that",
+   "phrase": "That’s related",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞 내용)"
+  },
+  {
+   "word": "to",
+   "phrase": "related to",
+   "sense": "~와 (관련)",
+   "usage": "be related to + 명사"
+  }
+ ]
+}

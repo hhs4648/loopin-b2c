@@ -1,0 +1,66 @@
+{
+ "1": [
+  {
+   "word": "while",
+   "phrase": "While it has been found",
+   "sense": "~이지만, ~인 반면",
+   "usage": "접속사 while (대조)"
+  },
+  {
+   "word": "that",
+   "phrase": "found that young children",
+   "sense": "~라는 것이",
+   "usage": "명사절 that (it is found that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "to determine",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "failed to incorporate",
+   "sense": "~하지 (못하다)",
+   "usage": "fail + to부정사 = ~하지 못하다"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "suggest that geometric",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (suggest that …)"
+  }
+ ],
+ "5": [
+  {
+   "word": "for",
+   "phrase": "for example",
+   "sense": "(for example의 일부)",
+   "usage": "for example = 예를 들어"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "more weight to nearer",
+   "sense": "~에 (무게를 주다)",
+   "usage": "give weight to + 명사"
+  },
+  {
+   "word": "to",
+   "phrase": "than to farther landmarks",
+   "sense": "~에 (무게를 주다)",
+   "usage": "give weight to (비교 대상 앞에 다시)"
+  },
+  {
+   "word": "which",
+   "phrase": "in which smaller distances",
+   "sense": "그 (법칙)에서는",
+   "usage": "전치사 + which = 앞 명사(Weber’s law)를 받아 덧붙임"
+  }
+ ]
+}

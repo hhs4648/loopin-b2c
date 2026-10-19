@@ -1,0 +1,2203 @@
+{
+  "id": "moeui-2024-03-21-taste-its-price",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 21번 (밑줄 의미 추론, 2점)",
+  "brief": {
+    "topic": "밑줄 문제 푸는 법: 핵심 단어 → 관계(감각 + 마음) → 밑줄 뜻",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "underline_meaning",
+    "labels": [
+      "핵심 단어 찾기",
+      "관계 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-wine-price.svg",
+      "alt": "칠판: Wine(와인 맛) + Price(가격)",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/underline-method.svg",
+      "alt": "밑줄 문제 푸는 법: ① 핵심 단어 찾기 ② 단어 사이의 관계 잡기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "같은 와인인데 비싼 가격표가 붙으면 더 맛있을까요? 이번 글은 맛을 느끼는 데 무엇이 작용하는지 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "수능 문제는 시간 싸움이에요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "밑줄 문제는 핵심 단어 위주로 지문의 요지를 빠르게 파악하면 좋아요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "밑줄 친 you taste its price가 의미하는 바로 가장 적절한 것은?",
+    "underline": "you taste its price",
+    "analysis_first": true,
+    "wrong_rate": 49.9,
+    "wrong_rank": 10,
+    "glosses": [
+      {
+        "en": "customer",
+        "ko": "고객"
+      },
+      {
+        "en": "ratings",
+        "ko": "평가"
+      },
+      {
+        "en": "determine",
+        "ko": "정하다"
+      },
+      {
+        "en": "fool",
+        "ko": "속이다"
+      },
+      {
+        "en": "unplanned",
+        "ko": "계획에 없던"
+      },
+      {
+        "en": "reasonable",
+        "ko": "합리적인"
+      },
+      {
+        "en": "dismiss",
+        "ko": "무시하다"
+      },
+      {
+        "en": "opposing",
+        "ko": "반대하는"
+      },
+      {
+        "en": "consistent",
+        "ko": "일관된"
+      },
+      {
+        "en": "regardless of",
+        "ko": "~와 상관없이"
+      },
+      {
+        "en": "preference",
+        "ko": "취향"
+      },
+      {
+        "en": "perceived",
+        "ko": "지각된, 느껴진"
+      },
+      {
+        "en": "value",
+        "ko": "가치"
+      },
+      {
+        "en": "influences",
+        "ko": "영향을 주다"
+      },
+      {
+        "en": "subjective",
+        "ko": "주관적인"
+      },
+      {
+        "en": "experience",
+        "ko": "경험"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "Customer ratings determine the price of a product.",
+        "keywords": [
+          "Customer ratings",
+          "determine the price"
+        ],
+        "ko": "고객 평가가 제품 가격을 정한다"
+      },
+      {
+        "id": "2",
+        "label": "We fool ourselves into thinking our unplanned buying was reasonable.",
+        "keywords": [
+          "unplanned buying",
+          "reasonable"
+        ],
+        "ko": "충동구매가 합리적이었다고 스스로를 속인다"
+      },
+      {
+        "id": "3",
+        "label": "We immediately dismiss opposing opinions without any consideration.",
+        "keywords": [
+          "dismiss opposing opinions"
+        ],
+        "ko": "반대 의견을 생각도 않고 바로 무시한다"
+      },
+      {
+        "id": "4",
+        "label": "The brain shows consistent response regardless of personal preference.",
+        "keywords": [
+          "consistent response",
+          "regardless"
+        ],
+        "ko": "뇌는 개인 취향과 상관없이 같은 반응을 보인다"
+      },
+      {
+        "id": "5",
+        "label": "The perceived value of a product influences one’s subjective experience of it.",
+        "keywords": [
+          "perceived value",
+          "influences",
+          "subjective experience"
+        ],
+        "ko": "제품의 지각된 가치가 그 제품에 대한 주관적 경험에 영향을 준다",
+        "correct": true
+      }
+    ],
+    "brief": {
+      "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고, 가격(생각)이 맛(경험)을 바꾼다는 방향을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 가격이라는 지각된 가치(perceived value)가 맛이라는 주관적 경험(subjective experience)을 바꿔요. 그래서 와인이 아니라 가격을 맛본다고 한 거예요.",
+      "final_wrong": "정답은 ⑤예요. 가격(지각된 가치)이 맛 경험(주관적 경험)에 영향을 준다는 말이에요.",
+      "option_feedback": {
+        "1": "방향이 거꾸로예요. 글은 가격이 맛 평가를 바꾼다고 했지, 평가가 가격을 정한다고 하지 않았어요.",
+        "2": "충동구매 이야기는 글에 없어요.",
+        "3": "반대 의견을 무시하는 이야기는 글에 없어요.",
+        "4": "뇌가 같은 반응을 보인 게 아니라, 비싸다고 믿을 때 더 활성화됐어요. 반대예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "1": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 23.9%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "①은 '고객 평가가 제품 가격을 정한다'예요. 글에 rating(평가)과 price(가격)가 다 나와서 그럴듯해 보여요. 하지만 글은 거꾸로, 가격표가 맛 평가를 바꾼다고 했어요. 무엇이 무엇을 바꾸는지 방향이 반대예요.",
+          "ask": "그래서 ①이 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "ratings·price가 글에 나와서 골랐어요",
+              "skills": [
+                "word_overlap"
+              ],
+              "reply": "알려 줘서 고마워요. 보기 단어가 글과 겹쳐도, 그 단어들의 관계(무엇이 무엇을 정하나)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "방향(원인과 결과)을 놓쳤어요",
+              "skills": [
+                "cause_direction"
+              ],
+              "reply": "알려 줘서 고마워요. 가격(원인) → 맛 경험(결과)이었어요. 앞으로 원인과 결과의 방향을 칠판에 화살표로 보여 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "word_overlap",
+                "cause_direction"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 방향을 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "글",
+                "text": "labeled by price → ratings of taste",
+                "ko": "가격이 맛 평가를 바꾼다",
+                "tone": "hl"
+              },
+              {
+                "label": "①",
+                "text": "Customer ratings → the price",
+                "ko": "평가가 가격을 정한다 (거꾸로)",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "perception",
+        "ko": "인식, 지각"
+      },
+      {
+        "en": "construction",
+        "ko": "구성물"
+      },
+      {
+        "en": "sensory",
+        "ko": "감각의"
+      },
+      {
+        "en": "auditory",
+        "ko": "청각의"
+      },
+      {
+        "en": "correlation",
+        "ko": "상관관계"
+      },
+      {
+        "en": "significant",
+        "ko": "뚜렷한, 유의미한"
+      },
+      {
+        "en": "subject",
+        "ko": "실험 참가자"
+      },
+      {
+        "en": "consciously",
+        "ko": "의식적으로"
+      },
+      {
+        "en": "revise",
+        "ko": "수정하다"
+      },
+      {
+        "en": "accordingly",
+        "ko": "그에 맞춰"
+      },
+      {
+        "en": "activate",
+        "ko": "활성화하다"
+      },
+      {
+        "en": "placebo effect",
+        "ko": "위약 효과"
+      },
+      {
+        "en": "depend on",
+        "ko": "~에 달려 있다"
+      },
+      {
+        "en": "psychological",
+        "ko": "심리적인"
+      }
+    ],
+    "options": [
+      {
+        "en": "perceived value",
+        "ko": "지각된 가치"
+      },
+      {
+        "en": "subjective",
+        "ko": "주관적인"
+      },
+      {
+        "en": "dismiss",
+        "ko": "무시하다"
+      },
+      {
+        "en": "consistent",
+        "ko": "일관된"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "That perception is a construction is not true just of one’s perception of sensory input, such as visual and auditory information.",
+      "model_translation": "인식이 구성이라는 것은 단지 시각 및 청각 정보와 같은 감각적 투입에 대한 한 사람의 인식에만 해당되는 것이 아니다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "is not true",
+          "ko": "해당하지 않는다"
+        },
+        {
+          "en": "That perception is a construction",
+          "ko": "인식이 (만들어진) 구성물이라는 것은"
+        },
+        {
+          "en": "perception",
+          "ko": "인식, 지각"
+        },
+        {
+          "en": "construction",
+          "ko": "구성물, 만들어진 것"
+        },
+        {
+          "en": "is not true just of",
+          "ko": "~에만 해당하는 것은 아니다"
+        },
+        {
+          "en": "one’s perception of sensory input",
+          "ko": "감각으로 들어오는 것에 대한 인식"
+        },
+        {
+          "en": "sensory input",
+          "ko": "감각 입력"
+        },
+        {
+          "en": "such as",
+          "ko": "~ 같은"
+        },
+        {
+          "en": "visual and auditory information",
+          "ko": "시각·청각 정보"
+        },
+        {
+          "en": "one’s",
+          "ko": "사람의"
+        },
+        {
+          "en": "sensory",
+          "ko": "감각의"
+        },
+        {
+          "en": "input",
+          "ko": "입력"
+        },
+        {
+          "en": "visual",
+          "ko": "시각의"
+        },
+        {
+          "en": "auditory",
+          "ko": "청각의"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        }
+      ],
+      "slashes": [
+        "is a construction",
+        "sensory input,"
+      ],
+      "steps": [
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "That perception is a construction",
+            "is not true",
+            "one’s perception of sensory input",
+            "visual and auditory information"
+          ],
+          "answers": [
+            "That perception is a construction",
+            "is not true"
+          ],
+          "roles": {
+            "That perception is a construction": "S",
+            "is not true": "V"
+          },
+          "brief": {
+            "ask": "이 문장은 주어가 길어요. 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "one’s perception of sensory input": "그건 of 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요.",
+              "visual and auditory information": "그건 such as 뒤, 예시예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 That perception is a construction(인식이 구성물이라는 것), 동사는 is not true예요. That + 문장 전체가 주어예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s1_that",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "That + 문장이 통째로 주어가 될 수 있어요. 'That perception is a construction'은 '인식이 만들어진 것이라는 것은'이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "levels": [
+            "중",
+            "초"
+          ],
+          "highlight": [
+            "That perception is a construction"
+          ],
+          "tips": [
+            {
+              "label": "That + 문장 = 주어",
+              "text": "문장 맨 앞의 That 뒤에 주어·동사가 있고, 그 뒤에 또 동사가 오면 That 덩어리 전체가 주어예요. '~라는 것은'으로 읽어요.",
+              "mark": "That"
+            }
+          ]
+        },
+        {
+          "id": "s1_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not true just of는 '~에만 해당하는 건 아니다'예요. just(~만)가 핵심이에요.",
+              "not true just of는 '~에만 해당하는 건 아니다'예요. just(~만)가 핵심이에요."
+            ],
+            "explain": "'is not true just of one’s perception of sensory input', 감각으로 들어오는 것에만 해당하는 건 아니라는 말이에요. 다른 데도 해당한다는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'is not true just of one’s perception of sensory input', 감각으로 들어오는 것에만 해당하는 건 아니라는 말이에요. 다른 데도 해당한다는 거예요.",
+              "o1": "'is not true just of one’s perception of sensory input', 감각으로 들어오는 것에만 해당하는 건 아니라는 말이에요. 다른 데도 해당한다는 거예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "인식은 감각 정보로만 만들어진다"
+            },
+            {
+              "id": "o1",
+              "label": "시각과 청각은 서로 다르다"
+            },
+            {
+              "id": "o2",
+              "label": "인식이 만들어진 것이라는 건 감각 정보에만 해당하는 게 아니다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "construction",
+            "not true just of",
+            "sensory input"
+          ],
+          "tips": [
+            {
+              "label": "not just",
+              "text": "'~만이 아니다'예요. 뒤에 '다른 것도'가 이어질 거라는 신호예요.",
+              "mark": "just"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "인식을 만드는 것",
+            "left": {
+              "label": "감각 (sensory)",
+              "words": [
+                {
+                  "text": "sensory input",
+                  "ko": "감각 입력",
+                  "fresh": true
+                },
+                {
+                  "text": "visual · auditory",
+                  "ko": "시각·청각",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 (psychological)",
+              "words": []
+            },
+            "between": "+"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "It is true of your social perceptions as well―your perceptions of the people you meet, the food you eat, and even of the products you buy.",
+      "model_translation": "이것은 여러분의 사회적 인식, 즉 여러분이 만나는 사람, 여러분이 먹는 음식, 그리고 심지어 여러분이 사는 제품에 대한 여러분의 인식에도 해당된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "true",
+          "ko": "해당하는"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "It",
+          "ko": "그것"
+        },
+        {
+          "en": "It is true of",
+          "ko": "그것은 ~에도 해당한다"
+        },
+        {
+          "en": "your social perceptions",
+          "ko": "너의 사회적 인식"
+        },
+        {
+          "en": "as well",
+          "ko": "~도 또한"
+        },
+        {
+          "en": "the people you meet",
+          "ko": "네가 만나는 사람들"
+        },
+        {
+          "en": "the food you eat",
+          "ko": "네가 먹는 음식"
+        },
+        {
+          "en": "the products you buy",
+          "ko": "네가 사는 물건들"
+        },
+        {
+          "en": "social",
+          "ko": "사회적인"
+        },
+        {
+          "en": "perceptions",
+          "ko": "인식"
+        },
+        {
+          "en": "meet",
+          "ko": "만나다"
+        },
+        {
+          "en": "eat",
+          "ko": "먹다"
+        },
+        {
+          "en": "products",
+          "ko": "물건, 제품"
+        },
+        {
+          "en": "buy",
+          "ko": "사다"
+        }
+      ],
+      "slashes": [
+        "as well―",
+        "the people you meet,"
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "It",
+            "is",
+            "true",
+            "your social perceptions"
+          ],
+          "answers": [
+            "It",
+            "is",
+            "true"
+          ],
+          "roles": {
+            "It": "S",
+            "is": "V",
+            "true": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "your social perceptions": "그건 of 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 It(앞 문장의 '인식이 구성물이라는 것'), 동사는 is, 보어는 true예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic"
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "It is true of",
+            "your social perceptions",
+            "as well",
+            "the products you buy"
+          ],
+          "answers": [
+            "It is true of",
+            "your social perceptions",
+            "as well",
+            "the products you buy"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "It is true of",
+                "ko": "그것은 ~에도 해당한다"
+              },
+              " ",
+              {
+                "en": "your social perceptions",
+                "ko": "너의 사회적 인식"
+              },
+              " ",
+              {
+                "en": "as well",
+                "ko": "또한"
+              },
+              " — ",
+              {
+                "en": "the products you buy",
+                "ko": "네가 사는 물건들"
+              },
+              "까지."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_also",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 감각 정보 말고 무엇에도 해당한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'It is true of your social perceptions as well'을 봐요. 대시(―) 뒤가 그 예예요.",
+              "'It is true of your social perceptions as well'을 봐요. 대시(―) 뒤가 그 예예요."
+            ],
+            "explain": "'your social perceptions as well', 사회적 인식에도 해당한대요. 대시 뒤에 만나는 사람, 먹는 음식, 사는 물건이 예로 나와요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'your social perceptions as well', 사회적 인식에도 해당한대요. 대시 뒤에 만나는 사람, 먹는 음식, 사는 물건이 예로 나와요.",
+              "o2": "'your social perceptions as well', 사회적 인식에도 해당한대요. 대시 뒤에 만나는 사람, 먹는 음식, 사는 물건이 예로 나와요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "오직 시각 정보"
+            },
+            {
+              "id": "o1",
+              "label": "사회적 인식 — 만나는 사람, 먹는 음식, 사는 물건",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "과학 실험 결과"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "social perceptions",
+            "the products you buy"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "인식을 만드는 것",
+            "left": {
+              "label": "감각 (sensory)",
+              "words": [
+                {
+                  "text": "sensory input",
+                  "ko": "감각 입력"
+                },
+                {
+                  "text": "visual · auditory",
+                  "ko": "시각·청각"
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 (psychological)",
+              "words": [
+                {
+                  "text": "social perceptions",
+                  "ko": "사회적 인식",
+                  "fresh": true
+                },
+                {
+                  "text": "the products you buy",
+                  "ko": "사는 물건",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "For example, in a study of wine, when wines were tasted blind, there was little or no correlation between the ratings of a wine’s taste and its cost, but there was a significant correlation when the wines were labeled by price.",
+      "model_translation": "예를 들어, 와인에 대한 한 연구에서 와인이 조건을 숨긴 상태로 시음되었을 때 와인의 맛에 대한 평가와 그것의 가격 간의 상관관계가 거의 없거나 아예 없었지만, 와인이 가격에 따라 라벨이 붙었을 때는 유의미한 상관관계가 있었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "For example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "in a study of wine",
+          "ko": "와인 연구에서"
+        },
+        {
+          "en": "when wines were tasted blind",
+          "ko": "와인을 가리고 맛보았을 때"
+        },
+        {
+          "en": "there was little or no correlation",
+          "ko": "상관관계가 거의 또는 전혀 없었다"
+        },
+        {
+          "en": "correlation",
+          "ko": "상관관계"
+        },
+        {
+          "en": "between",
+          "ko": "~ 사이에"
+        },
+        {
+          "en": "the ratings of a wine’s taste",
+          "ko": "와인 맛에 대한 평가"
+        },
+        {
+          "en": "its cost",
+          "ko": "그것의 가격"
+        },
+        {
+          "en": "there was a significant correlation",
+          "ko": "뚜렷한 상관관계가 있었다"
+        },
+        {
+          "en": "when the wines were labeled by price",
+          "ko": "와인에 가격표를 붙였을 때"
+        },
+        {
+          "en": "wine",
+          "ko": "와인"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "wines",
+          "ko": "와인들"
+        },
+        {
+          "en": "tasted",
+          "ko": "맛본"
+        },
+        {
+          "en": "blind",
+          "ko": "가리고"
+        },
+        {
+          "en": "little",
+          "ko": "거의 없는"
+        },
+        {
+          "en": "ratings",
+          "ko": "평가"
+        },
+        {
+          "en": "wine’s",
+          "ko": "와인의"
+        },
+        {
+          "en": "taste",
+          "ko": "맛, 맛보다"
+        },
+        {
+          "en": "cost",
+          "ko": "가격"
+        },
+        {
+          "en": "significant",
+          "ko": "뚜렷한"
+        },
+        {
+          "en": "labeled",
+          "ko": "표가 붙은"
+        },
+        {
+          "en": "price",
+          "ko": "가격"
+        }
+      ],
+      "slashes": [
+        "in a study of wine,",
+        "tasted blind,",
+        "a wine’s taste and its cost,",
+        "a significant correlation"
+      ],
+      "steps": [
+        {
+          "id": "s3_blind",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "와인을 가리고(blind) 맛봤을 때와 가격표를 붙였을 때, 결과가 어떻게 달랐대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "but 앞(blind → little or no correlation)과 뒤(labeled by price → significant correlation)를 나눠 봐요.",
+              "but 앞(blind → little or no correlation)과 뒤(labeled by price → significant correlation)를 나눠 봐요."
+            ],
+            "explain": "가리고 마시면 'little or no correlation'(거의 관계없음), 가격표를 붙이면 'a significant correlation'(뚜렷한 관계)이래요. 가격을 알면 맛 평가가 가격을 따라가요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "가리고 마시면 'little or no correlation'(거의 관계없음), 가격표를 붙이면 'a significant correlation'(뚜렷한 관계)이래요. 가격을 알면 맛 평가가 가격을 따라가요.",
+              "o2": "가리고 마시면 'little or no correlation'(거의 관계없음), 가격표를 붙이면 'a significant correlation'(뚜렷한 관계)이래요. 가격을 알면 맛 평가가 가격을 따라가요."
+            },
+            "point": "가리고 마시면 맛 평가 ≠ 가격, 가격표를 붙이면 맛 평가 = 가격을 따라감"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "가리면 맛 평가와 가격이 거의 관계없고, 가격표를 붙이면 관계가 뚜렷했다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "둘 다 관계가 뚜렷했다"
+            },
+            {
+              "id": "o2",
+              "label": "가리면 관계가 뚜렷했고, 가격표를 붙이면 없었다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "tasted blind",
+            "little or no correlation",
+            "significant correlation",
+            "labeled by price"
+          ],
+          "tips": [
+            {
+              "label": "correlation",
+              "text": "'상관관계'예요. 하나가 커지면 다른 것도 커지는 것처럼 함께 움직이는 관계예요.",
+              "mark": "correlation"
+            },
+            {
+              "label": "tasted blind",
+              "text": "'(정보를) 가리고 맛본'이에요. blind test = 상표·가격을 모르고 하는 시험.",
+              "mark": "blind"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "인식을 만드는 것",
+            "left": {
+              "label": "감각 (sensory)",
+              "words": [
+                {
+                  "text": "sensory input",
+                  "ko": "감각 입력"
+                },
+                {
+                  "text": "visual · auditory",
+                  "ko": "시각·청각"
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 (psychological)",
+              "words": [
+                {
+                  "text": "social perceptions",
+                  "ko": "사회적 인식"
+                },
+                {
+                  "text": "the products you buy",
+                  "ko": "사는 물건"
+                },
+                {
+                  "text": "labeled by price",
+                  "ko": "가격표",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          }
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧠",
+                "en": "perception = construction",
+                "ko": "인식은 만들어지는 것 — 감각뿐 아니라 사람·음식·물건에 대한 인식도요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "🍷",
+                "en": "blind ↔ labeled by price",
+                "ko": "가리고 마시면 맛 평가와 가격이 관계없고, 가격표를 붙이면 따라가요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "That wasn’t because the subjects consciously believed that the higher-priced wines should be the better ones and thus revised whatever opinion they had accordingly.",
+      "model_translation": "이는 피험자들이 가격이 더 비싼 와인이 더 좋은 와인일 것이라고 의식적으로 믿어서, 이에 따라 그들이 가졌던 어떠한 의견이든지 수정했기 때문은 아니었다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "wasn’t",
+          "ko": "~이 아니었다"
+        },
+        {
+          "en": "That",
+          "ko": "그것"
+        },
+        {
+          "en": "That wasn’t because",
+          "ko": "그것은 ~ 때문이 아니었다"
+        },
+        {
+          "en": "the subjects",
+          "ko": "실험 참가자들"
+        },
+        {
+          "en": "consciously believed",
+          "ko": "의식적으로 믿었다"
+        },
+        {
+          "en": "the higher-priced wines",
+          "ko": "더 비싼 와인들"
+        },
+        {
+          "en": "should be the better ones",
+          "ko": "더 좋은 것이어야 한다"
+        },
+        {
+          "en": "thus",
+          "ko": "그래서"
+        },
+        {
+          "en": "revised",
+          "ko": "바꿨다"
+        },
+        {
+          "en": "whatever opinion they had",
+          "ko": "그들이 가졌던 어떤 의견이든"
+        },
+        {
+          "en": "accordingly",
+          "ko": "그에 맞춰"
+        },
+        {
+          "en": "subjects",
+          "ko": "실험 참가자들"
+        },
+        {
+          "en": "consciously",
+          "ko": "의식적으로"
+        },
+        {
+          "en": "believed",
+          "ko": "믿었다"
+        },
+        {
+          "en": "higher-priced",
+          "ko": "더 비싼"
+        },
+        {
+          "en": "wines",
+          "ko": "와인들"
+        },
+        {
+          "en": "better",
+          "ko": "더 좋은"
+        },
+        {
+          "en": "whatever",
+          "ko": "무엇이든"
+        },
+        {
+          "en": "opinion",
+          "ko": "의견"
+        }
+      ],
+      "slashes": [
+        "consciously believed",
+        "the better ones"
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "That",
+            "wasn’t",
+            "the subjects",
+            "consciously believed"
+          ],
+          "answers": [
+            "That",
+            "wasn’t"
+          ],
+          "roles": {
+            "That": "S",
+            "wasn’t": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the subjects": "그건 because 뒤 덩어리 안의 주어예요.",
+              "consciously believed": "그건 because 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 That(앞 문장의 결과), 동사는 wasn't예요. because 뒤가 '아니었던' 이유예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "subject",
+              "text": "실험 글에서 subject는 '주제'가 아니라 '실험 참가자(피험자)'예요.",
+              "mark": "subjects"
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "That wasn’t because",
+            "the subjects",
+            "consciously believed",
+            "the higher-priced wines",
+            "should be the better ones"
+          ],
+          "answers": [
+            "That wasn’t because",
+            "the subjects",
+            "the higher-priced wines",
+            "should be the better ones",
+            "consciously believed"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "That wasn’t because",
+                "ko": "그것은 ~ 때문이 아니었다"
+              },
+              " — ",
+              {
+                "en": "the subjects",
+                "ko": "참가자들이"
+              },
+              " ",
+              {
+                "en": "the higher-priced wines",
+                "ko": "더 비싼 와인이"
+              },
+              " ",
+              {
+                "en": "should be the better ones",
+                "ko": "더 좋을 거라고"
+              },
+              " ",
+              {
+                "en": "consciously believed",
+                "ko": "의식적으로 믿었기"
+              },
+              " 때문이."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "That wasn’t because the subjects consciously believed that the higher-priced wines should be the better ones.",
+          "tips": [
+            {
+              "label": "subject",
+              "text": "실험 글에서 subject는 '주제'가 아니라 '실험 참가자(피험자)'예요.",
+              "mark": "subjects"
+            }
+          ]
+        },
+        {
+          "id": "s4_conscious",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그건 참가자들이 '비싼 게 더 좋겠지' 하고 일부러(의식적으로) 의견을 바꿨기 때문이래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "문장 첫머리 'That wasn’t because …'를 봐요. wasn’t because는 '~ 때문이 아니었다'예요.",
+              "문장 첫머리 'That wasn’t because …'를 봐요. wasn’t because는 '~ 때문이 아니었다'예요."
+            ],
+            "explain": "'That wasn’t because …', 의식적으로 믿고 의견을 바꿨기 때문이 아니었대요. 다음 문장에서 더 깊은 이유가 나와요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'That wasn’t because …', 의식적으로 믿고 의견을 바꿨기 때문이 아니었대요. 다음 문장에서 더 깊은 이유가 나와요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그렇다, 일부러 바꿨다"
+            },
+            {
+              "id": "o1",
+              "label": "아니다, 그것 때문만은 아니다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "wasn’t because",
+            "consciously"
+          ],
+          "tips": [
+            {
+              "label": "subject",
+              "text": "실험 글에서 subject는 '주제'가 아니라 '실험 참가자(피험자)'예요.",
+              "mark": "subjects"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Or rather, it wasn’t true just at the conscious level.",
+      "model_translation": "더 정확히 말하면, 이것은 단지 의식적인 수준에서만 그런 것이 아니었다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "the conscious level",
+          "ko": "의식적인 수준"
+        },
+        {
+          "en": "true",
+          "ko": "해당하는"
+        },
+        {
+          "en": "wasn’t",
+          "ko": "~이 아니었다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "Or rather",
+          "ko": "더 정확히 말하면"
+        },
+        {
+          "en": "it wasn’t true",
+          "ko": "그건 사실이 아니었다"
+        },
+        {
+          "en": "just at the conscious level",
+          "ko": "의식적인 수준에서만"
+        },
+        {
+          "en": "conscious",
+          "ko": "의식적인"
+        },
+        {
+          "en": "level",
+          "ko": "수준"
+        },
+        {
+          "en": "rather",
+          "ko": "오히려 · Or rather = 더 정확히는"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "it",
+            "wasn’t",
+            "true",
+            "the conscious level"
+          ],
+          "answers": [
+            "it",
+            "wasn’t",
+            "true"
+          ],
+          "roles": {
+            "it": "S",
+            "wasn’t": "V",
+            "true": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the conscious level": "그건 at 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 it, 동사는 wasn't, 보어는 true예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic"
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "Or rather",
+            "it wasn’t true",
+            "just at the conscious level"
+          ],
+          "answers": [
+            "Or rather",
+            "it wasn’t true",
+            "just at the conscious level"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Or rather",
+                "ko": "더 정확히 말하면"
+              },
+              ", ",
+              {
+                "en": "it wasn’t true",
+                "ko": "그건 사실이 아니었다"
+              },
+              " — ",
+              {
+                "en": "just at the conscious level",
+                "ko": "의식적인 수준에서만"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_rather",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "Or rather(더 정확히는), 의식적인 수준에서만 그런 게 아니었대요. 뇌 깊은 곳에서도 일어났다는 거예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "Or rather",
+            "just at the conscious level"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "We know because as the subjects were tasting the wine, the researchers were imaging their brain activity, and the imaging showed that drinking what they believed was an expensive glass of wine really did activate their centers of taste for pleasure more than drinking a glass of the same wine that had been labeled as cheaper.",
+      "model_translation": "우리는 알 수 있는데, 왜냐하면 피험자들이 와인을 시음할 때 연구원들이 그들의 뇌 활동을 영상화했고, 그 영상은 그들이 고가의 와인 한 잔이라고 믿는 것을 마시는 것이 더 저렴하다고 라벨이 붙었던 같은 와인 한 잔을 마시는 것보다 그들의 만족감을 담당하는 미각 중추를 실제로 더 활성화했다는 것을 보여줬기 때문이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "know",
+          "ko": "안다"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "We know",
+          "ko": "우리는 안다"
+        },
+        {
+          "en": "because",
+          "ko": "왜냐하면"
+        },
+        {
+          "en": "as the subjects were tasting the wine",
+          "ko": "참가자들이 와인을 맛볼 때"
+        },
+        {
+          "en": "the researchers",
+          "ko": "연구자들"
+        },
+        {
+          "en": "were imaging",
+          "ko": "영상으로 찍고 있었다"
+        },
+        {
+          "en": "their brain activity",
+          "ko": "그들의 뇌 활동"
+        },
+        {
+          "en": "the imaging",
+          "ko": "그 영상"
+        },
+        {
+          "en": "showed",
+          "ko": "보여 주었다"
+        },
+        {
+          "en": "drinking what they believed was an expensive glass of wine",
+          "ko": "비싼 와인이라고 믿은 것을 마시는 것"
+        },
+        {
+          "en": "really did activate",
+          "ko": "정말로 활성화했다"
+        },
+        {
+          "en": "their centers of taste for pleasure",
+          "ko": "즐거움을 느끼는 미각 중추"
+        },
+        {
+          "en": "more than",
+          "ko": "~보다 더"
+        },
+        {
+          "en": "drinking a glass of the same wine",
+          "ko": "같은 와인 한 잔을 마시는 것"
+        },
+        {
+          "en": "that had been labeled as cheaper",
+          "ko": "더 싸다고 붙여진"
+        },
+        {
+          "en": "subjects",
+          "ko": "실험 참가자들"
+        },
+        {
+          "en": "tasting",
+          "ko": "맛보는"
+        },
+        {
+          "en": "wine",
+          "ko": "와인"
+        },
+        {
+          "en": "researchers",
+          "ko": "연구자들"
+        },
+        {
+          "en": "imaging",
+          "ko": "영상으로 찍는, 영상"
+        },
+        {
+          "en": "brain",
+          "ko": "뇌"
+        },
+        {
+          "en": "drinking",
+          "ko": "마시는 것"
+        },
+        {
+          "en": "believed",
+          "ko": "믿었다"
+        },
+        {
+          "en": "expensive",
+          "ko": "비싼"
+        },
+        {
+          "en": "glass",
+          "ko": "잔"
+        },
+        {
+          "en": "activate",
+          "ko": "활성화하다"
+        },
+        {
+          "en": "centers",
+          "ko": "중추"
+        },
+        {
+          "en": "taste",
+          "ko": "맛, 맛보다"
+        },
+        {
+          "en": "pleasure",
+          "ko": "즐거움"
+        },
+        {
+          "en": "labeled",
+          "ko": "표가 붙은"
+        },
+        {
+          "en": "cheaper",
+          "ko": "더 싼"
+        }
+      ],
+      "slashes": [
+        "tasting the wine,",
+        "their brain activity,",
+        "the imaging showed",
+        "an expensive glass of wine",
+        "taste for pleasure",
+        "the same wine"
+      ],
+      "steps": [
+        {
+          "id": "s6_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "know",
+            "the researchers",
+            "were imaging",
+            "the imaging",
+            "showed"
+          ],
+          "answers": [
+            "the imaging",
+            "showed"
+          ],
+          "roles": {
+            "the imaging": "S",
+            "showed": "V"
+          },
+          "brief": {
+            "ask": "아주 긴 문장이에요. 실험 결과가 나오는 and 뒤에서 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "We": "그건 맨 앞 '우리는 안다'의 주어예요. 결과는 and 뒤에 있어요.",
+              "know": "그건 맨 앞 '우리는 안다'의 동사예요.",
+              "the researchers": "그건 and 앞, 연구자들이 한 일의 주어예요.",
+              "were imaging": "그건 and 앞, 연구자들이 한 일이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "and 뒤는 주어 the imaging(그 영상), 동사 showed(보여 주었다)예요. that 뒤가 보여 준 내용이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_that_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "drinking what they believed was an expensive glass of wine",
+            "really did activate",
+            "their centers of taste for pleasure",
+            "drinking a glass of the same wine"
+          ],
+          "answers": [
+            "drinking what they believed was an expensive glass of wine",
+            "really did activate",
+            "their centers of taste for pleasure"
+          ],
+          "roles": {
+            "drinking what they believed was an expensive glass of wine": "S",
+            "really did activate": "V",
+            "their centers of taste for pleasure": "O"
+          },
+          "brief": {
+            "ask": "that 뒤가 실험 결과예요. 그 안에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "drinking a glass of the same wine": "그건 more than(~보다) 뒤, 비교하는 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "that 안의 주어는 drinking …(비싸다고 믿은 와인을 마시는 것), 동사는 really did activate, 목적어는 their centers of taste for pleasure예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_result",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "뇌 영상은 무엇을 보여 줬대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "that 뒤 주어는 drinking what they believed was an expensive glass of wine, 동사는 really did activate예요. 마지막의 the same wine도 봐요.",
+              "that 뒤 주어는 drinking what they believed was an expensive glass of wine, 동사는 really did activate예요. 마지막의 the same wine도 봐요."
+            ],
+            "explain": "비싸다고 믿은(believed) 와인을 마시는 것이, 싸다고 붙인 같은(the same) 와인보다 즐거움의 맛 중추를 정말로 더 활성화했대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "비싸다고 믿은(believed) 와인을 마시는 것이, 싸다고 붙인 같은(the same) 와인보다 즐거움의 맛 중추를 정말로 더 활성화했대요.",
+              "o2": "비싸다고 믿은(believed) 와인을 마시는 것이, 싸다고 붙인 같은(the same) 와인보다 즐거움의 맛 중추를 정말로 더 활성화했대요."
+            },
+            "point": "같은 와인이어도 '비싸다고 믿으면' 뇌의 즐거움 맛 중추가 더 활성화 → 믿음이 맛을 바꾼다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "비싼 와인이 실제로 성분이 더 좋았다"
+            },
+            {
+              "id": "o1",
+              "label": "같은 와인인데도 비싸다고 믿고 마시면 즐거움의 맛 중추가 더 활발해졌다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "싸다고 믿은 와인이 더 활발하게 했다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "believed",
+            "really did activate",
+            "the same wine"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "인식을 만드는 것",
+            "left": {
+              "label": "감각 (sensory)",
+              "words": [
+                {
+                  "text": "sensory input",
+                  "ko": "감각 입력"
+                },
+                {
+                  "text": "visual · auditory",
+                  "ko": "시각·청각"
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 (psychological)",
+              "words": [
+                {
+                  "text": "social perceptions",
+                  "ko": "사회적 인식"
+                },
+                {
+                  "text": "labeled by price",
+                  "ko": "가격표"
+                },
+                {
+                  "text": "believed … expensive",
+                  "ko": "비싸다는 믿음",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "That’s related to the placebo effect.",
+      "model_translation": "이는 플라세보 효과와 관련이 있다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "related",
+          "ko": "관련 있는"
+        },
+        {
+          "en": "That",
+          "ko": "그것"
+        },
+        {
+          "en": "That’s related to",
+          "ko": "그것은 ~와 관련 있다"
+        },
+        {
+          "en": "the placebo effect",
+          "ko": "플라세보(위약) 효과"
+        },
+        {
+          "en": "placebo",
+          "ko": "위약, 플라세보"
+        },
+        {
+          "en": "effect",
+          "ko": "효과"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "That",
+            "’s",
+            "related",
+            "the placebo effect"
+          ],
+          "answers": [
+            "That",
+            "’s",
+            "related"
+          ],
+          "roles": {
+            "That": "S",
+            "’s": "V",
+            "related": "C"
+          },
+          "brief": {
+            "ask": "That’s는 That is를 줄인 말이에요. 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the placebo effect": "그건 to 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "That’s = That is예요. 주어 That, 동사 ’s(is), 보어 related(관련 있는)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "tips": [
+            {
+              "label": "placebo effect",
+              "text": "'위약 효과'예요. 효과 없는 가짜 약도 진짜 약이라고 믿고 먹으면 실제로 나아지는 현상이에요.",
+              "mark": "placebo"
+            }
+          ]
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "That’s related to",
+            "the placebo effect"
+          ],
+          "answers": [
+            "That’s related to",
+            "the placebo effect"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "That’s related to",
+                "ko": "그것은 ~와 관련 있다"
+              },
+              " ",
+              {
+                "en": "the placebo effect",
+                "ko": "플라세보 효과"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "placebo effect",
+              "text": "'위약 효과'예요. 효과 없는 가짜 약도 진짜 약이라고 믿고 먹으면 실제로 나아지는 현상이에요.",
+              "mark": "placebo"
+            }
+          ]
+        },
+        {
+          "id": "s7_placebo",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "플라세보 효과와 관련 있대요. 가짜 약도 진짜라고 믿으면 몸이 나아지는 것처럼, 믿음이 실제 느낌을 바꾸는 거예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "the placebo effect"
+          ],
+          "tips": [
+            {
+              "label": "placebo effect",
+              "text": "'위약 효과'예요. 효과 없는 가짜 약도 진짜 약이라고 믿고 먹으면 실제로 나아지는 현상이에요.",
+              "mark": "placebo"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "인식을 만드는 것",
+            "left": {
+              "label": "감각 (sensory)",
+              "words": [
+                {
+                  "text": "sensory input",
+                  "ko": "감각 입력"
+                },
+                {
+                  "text": "visual · auditory",
+                  "ko": "시각·청각"
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 (psychological)",
+              "words": [
+                {
+                  "text": "social perceptions",
+                  "ko": "사회적 인식"
+                },
+                {
+                  "text": "labeled by price",
+                  "ko": "가격표"
+                },
+                {
+                  "text": "believed … expensive",
+                  "ko": "비싸다는 믿음"
+                },
+                {
+                  "text": "placebo effect",
+                  "ko": "플라세보 효과",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          },
+          "meaning_check": true
+        },
+        {
+          "id": "story_7",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧠",
+                "en": "perception = construction",
+                "ko": "인식은 만들어지는 것 — 감각뿐 아니라 사람·음식·물건에 대한 인식도요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "🍷",
+                "en": "blind ↔ labeled by price",
+                "ko": "가리고 마시면 맛 평가와 가격이 관계없고, 가격표를 붙이면 따라가요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~6",
+                "icon": "🔬",
+                "en": "not just conscious · brain activity",
+                "ko": "일부러 의견을 바꾼 게 아니라, 비싸다고 믿으면 뇌의 즐거움 중추가 더 활발했어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 7",
+                "icon": "💊",
+                "en": "placebo effect",
+                "ko": "믿음이 실제 느낌을 바꾸는 플라세보 효과와 같아요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Like pain, taste is not just the product of sensory signals; it depends also on psychological factors: you don’t just taste the wine; you taste its price.",
+      "model_translation": "통증과 같이 미각은 단순히 감각 신호의 산물일 뿐만 아니라, 그것은 심리적 요인에도 좌우된다. 여러분은 와인을 단순히 맛보는 것이 아니다. 여러분은 그것의 가격을 맛보는 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Like pain",
+          "ko": "통증처럼"
+        },
+        {
+          "en": "taste",
+          "ko": "맛, 미각"
+        },
+        {
+          "en": "is not just the product of",
+          "ko": "~의 결과만은 아니다"
+        },
+        {
+          "en": "sensory signals",
+          "ko": "감각 신호"
+        },
+        {
+          "en": "it depends also on",
+          "ko": "그것은 ~에도 달려 있다"
+        },
+        {
+          "en": "psychological factors",
+          "ko": "심리적 요인"
+        },
+        {
+          "en": "you don’t just taste the wine",
+          "ko": "너는 와인을 맛보기만 하는 게 아니다"
+        },
+        {
+          "en": "you taste its price",
+          "ko": "너는 그것의 가격을 맛본다"
+        },
+        {
+          "en": "pain",
+          "ko": "통증"
+        },
+        {
+          "en": "product",
+          "ko": "결과물"
+        },
+        {
+          "en": "sensory",
+          "ko": "감각의"
+        },
+        {
+          "en": "signals",
+          "ko": "신호"
+        },
+        {
+          "en": "depends",
+          "ko": "~에 달려 있다"
+        },
+        {
+          "en": "psychological",
+          "ko": "심리적인"
+        },
+        {
+          "en": "factors",
+          "ko": "요인"
+        },
+        {
+          "en": "don’t",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "wine",
+          "ko": "와인"
+        },
+        {
+          "en": "price",
+          "ko": "가격"
+        }
+      ],
+      "slashes": [
+        "Like pain,",
+        "sensory signals;",
+        "psychological factors:",
+        "the wine;"
+      ],
+      "steps": [
+        {
+          "id": "s8_factor",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "세미콜론(;) 앞을 봐요. 맛은 감각 신호의 결과만이 아니라 무엇에도 달려 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'it depends also on …'을 봐요. depend on은 '~에 달려 있다'예요.",
+              "'it depends also on …'을 봐요. depend on은 '~에 달려 있다'예요."
+            ],
+            "explain": "'it depends also on psychological factors', 맛은 마음(psychological)에서 오는 것에도 달려 있대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'it depends also on psychological factors', 맛은 마음(psychological)에서 오는 것에도 달려 있대요.",
+              "o2": "'it depends also on psychological factors', 맛은 마음(psychological)에서 오는 것에도 달려 있대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "와인의 원료"
+            },
+            {
+              "id": "o1",
+              "label": "심리적 요인",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "마시는 장소"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "sensory signals",
+            "psychological factors"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "인식을 만드는 것",
+            "left": {
+              "label": "감각 (sensory)",
+              "words": [
+                {
+                  "text": "sensory input",
+                  "ko": "감각 입력"
+                },
+                {
+                  "text": "visual · auditory",
+                  "ko": "시각·청각"
+                },
+                {
+                  "text": "sensory signals",
+                  "ko": "감각 신호",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 (psychological)",
+              "words": [
+                {
+                  "text": "labeled by price",
+                  "ko": "가격표"
+                },
+                {
+                  "text": "believed … expensive",
+                  "ko": "비싸다는 믿음"
+                },
+                {
+                  "text": "placebo effect",
+                  "ko": "플라세보 효과"
+                },
+                {
+                  "text": "psychological factors",
+                  "ko": "심리적 요인",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          }
+        },
+        {
+          "id": "s8_underline",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "드디어 밑줄이에요. 'you don’t just taste the wine; you taste its price'는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "taste the wine은 감각 쪽, its price는 마음 쪽이에요. 칠판 두 쪽을 이어 봐요.",
+              "taste the wine은 감각 쪽, its price는 마음 쪽이에요. 칠판 두 쪽을 이어 봐요."
+            ],
+            "explain": "와인 자체(감각)만 맛보는 게 아니라, 가격이라는 생각(마음)까지 맛본다는 말이에요. 가격에 대한 믿음이 맛 경험을 바꿔요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "와인 자체(감각)만 맛보는 게 아니라, 가격이라는 생각(마음)까지 맛본다는 말이에요. 가격에 대한 믿음이 맛 경험을 바꿔요.",
+              "o1": "와인 자체(감각)만 맛보는 게 아니라, 가격이라는 생각(마음)까지 맛본다는 말이에요. 가격에 대한 믿음이 맛 경험을 바꿔요."
+            },
+            "point": "you taste its price = 가격(지각된 가치)이라는 생각이 맛이라는 주관적 경험을 바꾼다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "와인 가격은 맛 평가로 정해진다"
+            },
+            {
+              "id": "o1",
+              "label": "비싼 와인일수록 실제로 성분이 좋다"
+            },
+            {
+              "id": "o2",
+              "label": "가격에 대한 생각(믿음)이 맛 경험 자체를 바꾼다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "you taste its price"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "인식을 만드는 것",
+            "left": {
+              "label": "감각 (sensory)",
+              "words": [
+                {
+                  "text": "sensory input",
+                  "ko": "감각 입력"
+                },
+                {
+                  "text": "visual · auditory",
+                  "ko": "시각·청각"
+                },
+                {
+                  "text": "sensory signals",
+                  "ko": "감각 신호"
+                },
+                {
+                  "text": "taste the wine",
+                  "ko": "와인을 맛봄",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "마음 (psychological)",
+              "words": [
+                {
+                  "text": "labeled by price",
+                  "ko": "가격표"
+                },
+                {
+                  "text": "believed … expensive",
+                  "ko": "비싸다는 믿음"
+                },
+                {
+                  "text": "placebo effect",
+                  "ko": "플라세보 효과"
+                },
+                {
+                  "text": "psychological factors",
+                  "ko": "심리적 요인"
+                },
+                {
+                  "text": "taste its price",
+                  "ko": "가격을 맛봄",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          }
+        },
+        {
+          "id": "s8_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 뜻을 다른 말로 바꿔 쓴 보기를 골라 봐요. 무엇이 무엇을 바꾸는지, 방향도 꼭 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

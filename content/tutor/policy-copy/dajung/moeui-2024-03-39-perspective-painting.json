@@ -1,0 +1,481 @@
+{
+  "lesson": "moeui-2024-03-39-perspective-painting",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "문장 넣기 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_sv": {
+      "ask": "콤마 앞에서 주어(S), 동사(V), 그리고 to 뒤의 목적어(전목)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the artist": "그건 which 뒤 덩어리 안의 말이에요. 콤마 앞에서 찾아봐요.",
+        "knew": "그건 what 덩어리 안의 동사예요. 콤마 앞에서 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 This, 동사는 stands (in contrast to), to 뒤 목적어는 earlier figurative art예요.",
+      "from": "1mbgesx"
+    },
+    "g_this": {
+      "ask": "This(이것)는 earlier figurative art(예전 구상화)와 대조된대요. 그럼 This는 어떤 그림일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "stands in contrast to는 '~와 대조를 이룬다'예요. 대조라면 서로 달라야 해요.",
+        "stands in contrast to는 '~와 대조를 이룬다'예요. 대조라면 서로 달라야 해요."
+      ],
+      "explain": "This는 예전 구상화와 '대조'된다고 했어요. 예전 그림 자체일 수는 없고, 그것과 다른 그림이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "This는 예전 구상화와 '대조'된다고 했어요. 예전 그림 자체일 수는 없고, 그것과 다른 그림이에요.",
+        "o2": "This는 예전 구상화와 '대조'된다고 했어요. 예전 그림 자체일 수는 없고, 그것과 다른 그림이에요."
+      },
+      "point": "This stands in contrast to earlier figurative art — This는 예전 구상화와 '다른' 그림 (바로 앞 문장에 있어야 한다)",
+      "from": "1w5w17f"
+    },
+    "g_which": {
+      "ask": "콤마 뒤 which는 앞의 무엇을 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "콤마 + which는 바로 앞 명사를 덧붙여 설명해요. 콤마 바로 앞을 봐요.",
+        "콤마 + which는 바로 앞 명사를 덧붙여 설명해요. 콤마 바로 앞을 봐요."
+      ],
+      "explain": "콤마 + which는 바로 앞 명사, earlier figurative art(예전 구상화)를 덧붙여 설명해요. which 뒤는 모두 예전 그림 이야기예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "콤마 + which는 바로 앞 명사, earlier figurative art(예전 구상화)를 덧붙여 설명해요. which 뒤는 모두 예전 그림 이야기예요.",
+        "o2": "콤마 + which는 바로 앞 명사, earlier figurative art(예전 구상화)를 덧붙여 설명해요. which 뒤는 모두 예전 그림 이야기예요."
+      },
+      "point": "earlier figurative art, which … = which 뒤는 예전 구상화에 대한 설명",
+      "from": "bnan4v"
+    },
+    "g_knew": {
+      "ask": "그럼 예전 구상화는 무엇까지 그렸대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "as A as B는 'B만큼 A'예요. what the artist knew(화가가 아는 것)와 how they looked(보이는 모습)를 봐요.",
+        "as A as B는 'B만큼 A'예요. what the artist knew(화가가 아는 것)와 how they looked(보이는 모습)를 봐요."
+      ],
+      "explain": "'as focused on what the artist knew … as on how they looked', 보이는 모습만큼 화가가 아는 것도 나타내는 데 집중했대요. 보이지 않아도 아는 것까지 그린 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'as focused on what the artist knew … as on how they looked', 보이는 모습만큼 화가가 아는 것도 나타내는 데 집중했대요. 보이지 않아도 아는 것까지 그린 거예요.",
+        "o1": "'as focused on what the artist knew … as on how they looked', 보이는 모습만큼 화가가 아는 것도 나타내는 데 집중했대요. 보이지 않아도 아는 것까지 그린 거예요."
+      },
+      "point": "earlier figurative art = 보이는 모습만큼, (눈에 안 보여도) 화가가 아는 것까지 그렸다",
+      "from": "fmlqha"
+    },
+    "g_knew_pic": {
+      "say": "그림으로 보면 이래요. 아는 대로 그리면 멀리 있는 사람도 실제 크기로, 보이는 대로 그리면 멀수록 작게 그려요.",
+      "from": "fvfkyk"
+    },
+    "g_before": {
+      "ask": "This는 이 예전 그림과 대조된대요. 그럼 주어진 문장 바로 앞에는 어떤 내용이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "This가 가리키는 앞 내용이 예전 그림과 '대조'돼야 해요. 대조라면 예전 그림 쪽이 아니에요.",
+        "This가 가리키는 앞 내용이 예전 그림과 '대조'돼야 해요. 대조라면 예전 그림 쪽이 아니에요."
+      ],
+      "explain": "This(앞 문장의 내용)가 예전 그림과 대조된다고 했어요. 그러니 바로 앞에는 예전 그림이 아닌, 상대적으로 최근의 그림 방식 이야기가 와야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "This(앞 문장의 내용)가 예전 그림과 대조된다고 했어요. 그러니 바로 앞에는 예전 그림이 아닌, 상대적으로 최근의 그림 방식 이야기가 와야 해요.",
+        "o1": "This(앞 문장의 내용)가 예전 그림과 대조된다고 했어요. 그러니 바로 앞에는 예전 그림이 아닌, 상대적으로 최근의 그림 방식 이야기가 와야 해요."
+      },
+      "point": "주어진 문장 앞 = This = 예전 그림과 대조되는 '최근 기법' 이야기",
+      "from": "auvw6k"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "we are familiar with": "그건 앞의 paintings를 꾸며 주는 덩어리예요(우리에게 익숙한).",
+        "in perspective": "그건 동사 뒤에서 어떤 상태인지 말해 주는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Almost all the figurative paintings, 동사는 are예요.",
+      "from": "26qtt6"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "y9i0pi"
+    },
+    "s1_now": {
+      "say": "지금 우리에게 익숙한 그림은 거의 다 원근법으로 그렸대요. 칠판 왼쪽에 넣어 둘게요.",
+      "from": "1wfz6an"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "diminish": "그건 that 뒤 덩어리 안의 동사예요(작아지는)."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 They, 동사는 present, 목적어는 foreshortened figures and objects예요.",
+      "from": "1hanr9n"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1mekumh"
+    },
+    "s2_small": {
+      "say": "멀어질수록 작아지게 그린대요. 원근법 그림이 어떻게 생겼는지 설명하는 문장이에요.",
+      "from": "1t3v08n"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "a person": "그건 to 뒤, '누구에게' 보이는지 알려 주는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 A painting in perspective, 동사는 represents, 목적어는 how the world looks예요.",
+      "from": "1d47vp8"
+    },
+    "s4_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1lxur92"
+    },
+    "s3_what": {
+      "ask": "원근법 그림은 무엇을 나타낸대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "represents 뒤 'how the world looks'를 봐요. looks는 '~하게 보이다'예요.",
+        "represents 뒤 'how the world looks'를 봐요. looks는 '~하게 보이다'예요."
+      ],
+      "explain": "'how the world looks to a person seeing the scene from a particular position'은 특정한 자리에서 보는 사람에게 세상이 어떻게 보이는지예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'how the world looks to a person seeing the scene from a particular position'은 특정한 자리에서 보는 사람에게 세상이 어떻게 보이는지예요.",
+        "o2": "'how the world looks to a person seeing the scene from a particular position'은 특정한 자리에서 보는 사람에게 세상이 어떻게 보이는지예요."
+      },
+      "from": "1hbtxrp"
+    },
+    "s3_board": {
+      "say": "원근법 그림은 보이는 모습 그대로, 예전 그림은 아는 것까지 그렸어요. 칠판에 붙여 둘게요.",
+      "from": "2rdiga"
+    },
+    "s3_flow": {
+      "ask": "① 자리예요. '멀어질수록 작게 그린다' → '원근법 그림은 보이는 모습을 나타낸다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "둘 다 원근법 그림 이야기라 그대로 이어져요.",
+        "둘 다 원근법 그림 이야기라 그대로 이어져요."
+      ],
+      "explain": "둘 다 원근법 그림 이야기라 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "둘 다 원근법 그림 이야기라 그대로 이어져요."
+      },
+      "from": "tdsj1v"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)·보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "but 앞은 주어 These pictures, 동사 are, 보어 beautiful이에요. but 뒤는 주어 they, 동사 do not represent, 목적어 scenes예요.",
+      "from": "1w8be5r"
+    },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1h0ukae"
+    },
+    "s4_these": {
+      "ask": "These pictures(이 그림들)는 우리가 보는 대로 장면을 나타내지 않는대요. 그럼 어느 쪽 그림일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "원근법 그림은 보이는 모습 그대로를 나타냈어요. '보는 대로 나타내지 않는' 그림은 반대쪽이에요.",
+        "원근법 그림은 보이는 모습 그대로를 나타냈어요. '보는 대로 나타내지 않는' 그림은 반대쪽이에요."
+      ],
+      "explain": "원근법 그림은 보이는 모습 그대로를 나타냈어요. 보는 대로 나타내지 않는 These pictures는 예전 구상화예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "원근법 그림은 보이는 모습 그대로를 나타냈어요. 보는 대로 나타내지 않는 These pictures는 예전 구상화예요."
+      },
+      "point": "These pictures … do not represent scenes as we might see them = 예전 구상화",
+      "from": "x52jwq"
+    },
+    "s4_break": {
+      "say": "그런데 바로 앞 문장까지는 원근법 그림 이야기만 했어요. 예전 그림을 꺼낸 적이 없는데 These pictures가 예전 그림을 가리키니 어색해요.",
+      "point": "② 앞에서 예전 그림을 꺼내 줘야 These pictures가 그것을 가리킬 수 있다",
+      "from": "16to8ia"
+    },
+    "s4_flow": {
+      "ask": "② 자리예요. '원근법 그림은 보이는 모습을 나타낸다' → '이 그림들은 보는 대로 나타내지 않는다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "These pictures가 가리킬 예전 그림이 앞에 없어요. 갑자기 반대 그림 이야기로 넘어가서 흐름이 끊겨요.",
+        "These pictures가 가리킬 예전 그림이 앞에 없어요. 갑자기 반대 그림 이야기로 넘어가서 흐름이 끊겨요."
+      ],
+      "explain": "These pictures가 가리킬 예전 그림이 앞에 없어요. 갑자기 반대 그림 이야기로 넘어가서 흐름이 끊겨요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "These pictures가 가리킬 예전 그림이 앞에 없어요. 갑자기 반대 그림 이야기로 넘어가서 흐름이 끊겨요."
+      },
+      "from": "1w1ewcl"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the layout of the space": "그건 as to(~에 관해) 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 They, 동사는 are, 보어는 (also) less informative예요.",
+      "from": "9ebuc1"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "njlk95"
+    },
+    "s5_also": {
+      "say": "They도 앞 문장의 These pictures, 즉 예전 그림이에요. also(또한), 공간 배치에 대한 정보도 덜 준대요.",
+      "from": "1aqp30u"
+    },
+    "s5_flow": {
+      "ask": "③ 자리예요. '이 그림들은 보는 대로 나타내지 않는다' → '그것들은 또한 정보도 덜 준다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "둘 다 예전 그림 이야기예요. also(또한)로 단점을 하나 더 보태서 그대로 이어져요.",
+        "둘 다 예전 그림 이야기예요. also(또한)로 단점을 하나 더 보태서 그대로 이어져요."
+      ],
+      "explain": "둘 다 예전 그림 이야기예요. also(또한)로 단점을 하나 더 보태서 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "둘 다 예전 그림 이야기예요. also(또한)로 단점을 하나 더 보태서 그대로 이어져요."
+      },
+      "from": "108ivh9"
+    },
+    "story_6": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_sv": {
+      "ask": "이번엔 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "perspective and information about spatial layout": "그건 that 뒤 덩어리 안의 주어예요. The fact가 무슨 사실인지 풀어 주는 덩어리예요.",
+        "go together": "그건 that 뒤 덩어리 안의 동사예요. 문장 전체의 동사는 더 뒤에 있어요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The fact (that … go together), 동사는 reveals, 목적어는 something important예요.",
+      "from": "rkwrqi"
+    },
+    "s7_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "fvxxrq"
+    },
+    "s6_together": {
+      "ask": "'perspective and information about spatial layout go together'는 무슨 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "go together는 '함께 간다'예요. 원근법이 있으면 공간 배치 정보도 같이 있다는 말이에요.",
+        "go together는 '함께 간다'예요. 원근법이 있으면 공간 배치 정보도 같이 있다는 말이에요."
+      ],
+      "explain": "go together는 '함께 간다'예요. 정보를 덜 주는 예전 그림과 달리, 원근법 그림은 배치 정보를 함께 준다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "go together는 '함께 간다'예요. 정보를 덜 주는 예전 그림과 달리, 원근법 그림은 배치 정보를 함께 준다는 말이에요.",
+        "o2": "go together는 '함께 간다'예요. 정보를 덜 주는 예전 그림과 달리, 원근법 그림은 배치 정보를 함께 준다는 말이에요."
+      },
+      "from": "7hi3il"
+    },
+    "s6_flow": {
+      "ask": "④ 자리예요. '예전 그림은 정보도 덜 준다' → '원근법과 공간 정보는 함께 간다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "예전 그림은 정보를 덜 주고, 원근법은 정보와 함께 가요. 대조로 그대로 이어져요.",
+        "예전 그림은 정보를 덜 주고, 원근법은 정보와 함께 가요. 대조로 그대로 이어져요."
+      ],
+      "explain": "예전 그림은 정보를 덜 주고, 원근법은 정보와 함께 가요. 대조로 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "예전 그림은 정보를 덜 주고, 원근법은 정보와 함께 가요. 대조로 그대로 이어져요."
+      },
+      "from": "fp39l4"
+    },
+    "s7_note": {
+      "say": "Not only A but also B는 'A뿐만 아니라 B도'예요. 우리는 나를 중심으로 세상을 볼 뿐 아니라, 거리와 크기 정보도 뽑아낸대요.",
+      "from": "i6064n"
+    },
+    "s7_flow": {
+      "ask": "⑤ 자리예요. '원근법과 공간 정보는 함께 간다' → '우리는 거리·크기 정보도 뽑아내며 본다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞 문장이 '보는 것에 대해 중요한 걸 드러낸다'고 했고, 그 중요한 게 무엇인지 풀어 줘요. 그대로 이어져요.",
+        "앞 문장이 '보는 것에 대해 중요한 걸 드러낸다'고 했고, 그 중요한 게 무엇인지 풀어 줘요. 그대로 이어져요."
+      ],
+      "explain": "앞 문장이 '보는 것에 대해 중요한 걸 드러낸다'고 했고, 그 중요한 게 무엇인지 풀어 줘요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "앞 문장이 '보는 것에 대해 중요한 걸 드러낸다'고 했고, 그 중요한 게 무엇인지 풀어 줘요. 그대로 이어져요."
+      },
+      "from": "xyxkvh"
+    },
+    "story_8": {
+      "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요.",
+      "from": "1m12sey"
+    },
+    "s7_go": {
+      "say": "①~⑤ 중 흐름이 끊긴 곳은 하나였어요. 주어진 문장의 This와 earlier figurative art를 떠올리며 골라 봐요.",
+      "from": "anbwle"
+    }
+  },
+  "exam": {
+    "ask": "주어진 문장의 This와 earlier figurative art를 떠올리며 들어갈 곳을 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 원근법 그림은 보이는 모습을 나타낸다(①문장) → 이것은 아는 것까지 그린 예전 구상화와 대조된다(주어진 문장) → 이 그림들(예전 그림)은 보는 대로 나타내지 않는다, 순서예요.",
+    "final_wrong": "정답은 ②예요. These pictures가 가리킬 예전 구상화를 주어진 문장이 먼저 꺼내 줘야 해요.",
+    "option_feedback": {
+      "1": "① 앞은 아직 원근법 그림의 생김새 이야기예요. This가 가리킬 '보이는 모습 그대로'가 아직 안 나왔어요.",
+      "3": "③에 넣으면 ② 뒤 These pictures가 원근법 그림을 가리키게 돼요. 그런데 원근법 그림은 보는 대로 나타낸다고 했으니 말이 안 맞아요.",
+      "4": "④에 넣으면 This가 '정보를 덜 준다'를 가리켜요. 그 앞의 These pictures는 이미 예전 그림 이야기라, 예전 그림을 다시 꺼낼 필요가 없어요.",
+      "5": "⑤ 앞은 원근법과 공간 정보가 함께 간다는 결론이에요. 예전 그림을 새로 꺼낼 자리가 아니에요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 25.8%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요.",
+        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "These pictures가 원근법 그림인 줄 알았어요",
+            "skills": [
+              "these_refers"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 These·They가 가리키는 대상을 먼저 짚어 줄게요."
+          },
+          {
+            "label": "but 뒤 내용을 놓쳤어요",
+            "skills": [
+              "but_after"
+            ],
+            "reply": "알려 줘서 고마워요. but 뒤 'do not represent scenes as we might see them'이 열쇠였어요. 앞으로 but 뒤를 강조해서 알려 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "these_refers",
+              "but_after"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 but 뒤를 같이 짚어 줄게요."
+          }
+        ]
+      },
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 27.9%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "④에 넣으면 This가 바로 앞 '예전 그림은 정보도 덜 준다'를 가리켜요. 그런데 ② 뒤 These pictures부터 이미 예전 그림 이야기였어요. 예전 그림을 처음 꺼내는 주어진 문장은 These pictures보다 앞, ②에 와야 해요.",
+        "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "These pictures가 원근법 그림인 줄 알았어요",
+            "skills": [
+              "these_refers"
+            ],
+            "reply": "알려 줘서 고마워요. These pictures는 '보는 대로 나타내지 않는' 그림이라 예전 그림이에요. 앞으로 비슷한 문장이 나오면 These가 가리키는 걸 먼저 짚어 줄게요."
+          },
+          {
+            "label": "less informative와 대조라 이어지는 줄 알았어요",
+            "skills": [
+              "contrast_guess"
+            ],
+            "reply": "알려 줘서 고마워요. 대조 느낌만으로 정하지 말고, 가리키는 말(This, These)이 무엇을 받는지 확인해야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "these_refers",
+              "contrast_guess"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 These가 가리키는 대상부터 같이 짚어 볼게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "② 뒤",
+              "text": "These pictures … do not represent scenes as we see",
+              "ko": "보는 대로 나타내지 않는 그림 = 예전 그림",
+              "tone": "hl"
+            },
+            {
+              "label": "주어진 문장",
+              "text": "This ↔ earlier figurative art",
+              "ko": "예전 그림을 처음 꺼낸다",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1le2a15"
+  },
+  "intro": {
+    "topic": {
+      "say": "그림은 눈에 보이는 대로만 그려야 할까요? 이번 글은 원근법 그림과 예전 그림을 견줘요."
+    },
+    "method1": {
+      "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."
+    },
+    "method2": {
+      "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾을 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "from": "192vzga"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "n2z3xx"
+}

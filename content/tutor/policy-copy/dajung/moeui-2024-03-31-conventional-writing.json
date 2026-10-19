@@ -1,0 +1,467 @@
+{
+  "lesson": "moeui-2024-03-31-conventional-writing",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 다섯째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "pb6edm"
+    },
+    "s1_blank_meaning": {
+      "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "conventional은 '틀에 박힌', literal은 '글자 그대로의'예요. with an accompanying ____ of는 '~의 ____이 함께 따라오면서'예요.",
+        "conventional은 '틀에 박힌', literal은 '글자 그대로의'예요. with an accompanying ____ of는 '~의 ____이 함께 따라오면서'예요."
+      ],
+      "explain": "become increasingly conventional and literal은 점점 틀에 박히고 글자 그대로가 된다는 말이에요. 그러면서 예전 노력의 즉흥성·독창성에 ____이 함께 따라온대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "become increasingly conventional and literal은 점점 틀에 박히고 글자 그대로가 된다는 말이에요. 그러면서 예전 노력의 즉흥성·독창성에 ____이 함께 따라온대요.",
+        "o2": "become increasingly conventional and literal은 점점 틀에 박히고 글자 그대로가 된다는 말이에요. 그러면서 예전 노력의 즉흥성·독창성에 ____이 함께 따라온대요."
+      },
+      "from": "1b680h8"
+    },
+    "s1_where_map": {
+      "say": "이 문장에는 '지금(자라면서)'과 '예전(어릴 때)' 두 쪽 말이 같이 있어요.",
+      "from": "qsfhuz"
+    },
+    "s1_where": {
+      "say": "그럼 자라면서 어릴 때의 즉흥성·독창성이 어떻게 되는지 생각하며 문장 처음부터 읽어 봐요.",
+      "from": "a1m71y"
+    },
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "From about ages eight through sixteen": "그건 '언제'를 알려 주는 말이에요.",
+        "eye-hand coordination": "그건 through(~을 통해) 뒤 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 our manual dexterity, 동사는 has strengthened예요.",
+      "from": "vba9qj"
+    },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "htc05y"
+    },
+    "s1_board": {
+      "say": "8살부터 16살 사이에 손재주가 좋아진대요. 이 글은 자라면서 생기는 변화를 말해요. 칠판을 두 쪽으로 나눠 둘게요.",
+      "from": "6uw0wi"
+    },
+    "s2_basic_sv": {
+      "ask": "there is(~이 있다) 문장이에요. 동사(V)와 그 뒤의 진짜 주어(S)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "handwriting skills": "그건 in 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "There is 문장은 동사 뒤가 진짜 주어예요. 동사는 is, 주어는 considerable improvement예요.",
+      "from": "jjo54t"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "ufvje1"
+    },
+    "s2_hand": {
+      "say": "글씨 쓰는 실력도 많이 좋아진대요.",
+      "from": "178ft3q"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the mechanics of language": "그건 over 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 gain, 목적어는 mastery예요(숙달을 얻다 = 익히다).",
+      "from": "1hl5jgt"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "tnqmix"
+    },
+    "s3_mech": {
+      "ask": "We gain mastery over the mechanics of language는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "mechanics는 여기서 '기계'가 아니라 '기법, 기술'이에요. gain mastery over는 '~을 익히다'예요.",
+        "mechanics는 여기서 '기계'가 아니라 '기법, 기술'이에요. gain mastery over는 '~을 익히다'예요."
+      ],
+      "explain": "gain mastery over는 '~을 숙달하다', the mechanics of language는 '언어의 기술'이에요. 문법·맞춤법 같은 걸 익힌다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "gain mastery over는 '~을 숙달하다', the mechanics of language는 '언어의 기술'이에요. 문법·맞춤법 같은 걸 익힌다는 말이에요.",
+        "o2": "gain mastery over는 '~을 숙달하다', the mechanics of language는 '언어의 기술'이에요. 문법·맞춤법 같은 걸 익힌다는 말이에요."
+      },
+      "from": "15880mo"
+    },
+    "s3_board": {
+      "say": "손재주, 글씨, 언어 기술이 모두 좋아져요. 칠판 오른쪽(자라고 난 뒤)에 쌓아 둘게요.",
+      "from": "mznznw"
+    },
+    "s4_sv": {
+      "ask": "as 앞에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "intense preoccupation": "그건 as(~하면서) 뒤 덩어리 안의 주어예요. as 앞에서 찾아봐요.",
+        "gives way to": "그건 as 뒤 덩어리 안의 동사예요. as 앞에서 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 eliminate, 목적어는 the logical gaps(논리적 빈틈)예요.",
+      "from": "1gm8dnv"
+    },
+    "s4_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "h8h3va"
+    },
+    "s4_shift": {
+      "ask": "as 뒤를 봐요. 전체 그림에 대한 집착(the whole vision)이 무엇에 대한 집착으로 바뀐대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "gives way to는 '~로 바뀌다'예요. to 뒤를 봐요.",
+        "gives way to는 '~로 바뀌다'예요. to 뒤를 봐요."
+      ],
+      "explain": "'gives way to preoccupation with correctness', 전체 그림 대신 정확성에 집착하게 된대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'gives way to preoccupation with correctness', 전체 그림 대신 정확성에 집착하게 된대요.",
+        "o1": "'gives way to preoccupation with correctness', 전체 그림 대신 정확성에 집착하게 된대요."
+      },
+      "from": "eg8c6f"
+    },
+    "s4_board": {
+      "say": "어릴 땐 전체 그림을 보고 논리적 빈틈도 있었는데, 자라면서 정확성을 따지게 돼요.",
+      "from": "2bvnyu"
+    },
+    "story_4": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s5_sv": {
+      "ask": "빈칸 문장이에요. 주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the spontaneity and originality": "그건 with an accompanying ____ of 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 our writing and oral storying, 동사는 become, 보어는 increasingly conventional and literal이에요.",
+      "from": "1uagaga"
+    },
+    "s5_sort_now": {
+      "ask": "'conventional and literal(틀에 박히고 글자 그대로인)'은 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "As a result(그 결과) — 정확성에 집착하게 된 결과예요.",
+        "As a result(그 결과) — 정확성에 집착하게 된 결과예요."
+      ],
+      "explain": "As a result(그 결과) — 정확성에 집착하게 된 결과예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "As a result(그 결과) — 정확성에 집착하게 된 결과예요."
+      },
+      "from": "cvq2at"
+    },
+    "s5_sort_early": {
+      "ask": "그럼 'spontaneity and originality(즉흥성과 독창성)'는 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "바로 뒤 'that characterized our earlier efforts'를 봐요. earlier는 '예전의'예요.",
+        "바로 뒤 'that characterized our earlier efforts'를 봐요. earlier는 '예전의'예요."
+      ],
+      "explain": "'that characterized our earlier efforts', 예전 노력의 특징이었대요. 그러니 어릴 때 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'that characterized our earlier efforts', 예전 노력의 특징이었대요. 그러니 어릴 때 쪽이에요."
+      },
+      "from": "bf9mwd"
+    },
+    "s5_side": {
+      "ask": "자라면서 틀에 박힌 쪽이 늘어나요. 그럼 어릴 때의 즉흥성·독창성은 어떻게 될까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "두 쪽은 서로 반대예요. 한쪽이 늘면 다른 쪽은 어떻게 될지 생각해 봐요.",
+        "두 쪽은 서로 반대예요. 한쪽이 늘면 다른 쪽은 어떻게 될지 생각해 봐요."
+      ],
+      "explain": "틀에 박히고(conventional) 글자 그대로(literal)가 되는 건 즉흥성·독창성과 반대예요. 한쪽이 늘면 다른 쪽은 줄어들어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "틀에 박히고(conventional) 글자 그대로(literal)가 되는 건 즉흥성·독창성과 반대예요. 한쪽이 늘면 다른 쪽은 줄어들어요.",
+        "o1": "틀에 박히고(conventional) 글자 그대로(literal)가 되는 건 즉흥성·독창성과 반대예요. 한쪽이 늘면 다른 쪽은 줄어들어요."
+      },
+      "point": "빈칸 = 자라면서(conventional, literal) 어릴 때의 즉흥성·독창성이 줄어든다 → 잃음",
+      "from": "1d3d2u7"
+    },
+    "s5_check": {
+      "say": "빈칸 뒤 문장들도 같은 이야기인지 확인하며 계속 읽어 봐요.",
+      "from": "nlod0r"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "At this stage": "그건 '이 단계에서', 때를 알려 주는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 our vocabulary, 동사는 is (firmly) grounded예요.",
+      "from": "a09c9y"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "lvhm21"
+    },
+    "s6_ground": {
+      "say": "이 시기엔 어휘가 단단히 자리 잡혀 있대요.",
+      "from": "v71mvn"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "everyone else uses": "그건 앞의 words를 꾸며 주는 덩어리예요(다른 모든 사람이 쓰는)."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 use, 목적어는 words예요.",
+      "from": "6jy190"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "15zcy3t"
+    },
+    "s7_same": {
+      "say": "남들이 다 쓰는 단어를 쓴대요. conventional(틀에 박힌)과 같은 말이에요.",
+      "from": "1uml9jj"
+    },
+    "s7_example": {
+      "say": "어릴 땐 자동차를 '빵빵이'처럼 내가 지어낸 말로 불러요. 자라고 나면 남들이 다 쓰는 '자동차'라고 불러요.",
+      "from": "yioxeg"
+    },
+    "story_7": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s8_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "metaphors": "그건 to invent(지어낼) 뒤의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 have, 목적어는 little need(거의 없는 필요)예요.",
+      "from": "1itsjea"
+    },
+    "s8_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "usbso9"
+    },
+    "s8_little": {
+      "ask": "We have little need to invent metaphors는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "little은 a 없이 쓰면 '거의 없는'이에요. a little(조금 있는)과 달라요.",
+        "little은 a 없이 쓰면 '거의 없는'이에요. a little(조금 있는)과 달라요."
+      ],
+      "explain": "little need는 '필요가 거의 없음'이에요. 남들이 쓰는 말로 충분하니 은유를 지어낼 일이 거의 없대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "little need는 '필요가 거의 없음'이에요. 남들이 쓰는 말로 충분하니 은유를 지어낼 일이 거의 없대요.",
+        "o2": "little need는 '필요가 거의 없음'이에요. 남들이 쓰는 말로 충분하니 은유를 지어낼 일이 거의 없대요."
+      },
+      "from": "1brd9rw"
+    },
+    "s8_board": {
+      "say": "은유를 지어내는 건 어릴 때 쪽이에요. 자라면서는 그럴 필요가 거의 없어요.",
+      "from": "egbarv"
+    },
+    "s9_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "a star": "그건 that 뒤 덩어리 안의 주어예요(무엇을 아는지).",
+        "is": "그건 that 뒤 덩어리 안의 동사예요.",
+        "a hot gaseous mass": "그건 that 뒤 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 we, 동사는 know예요. that 뒤가 아는 내용이에요.",
+      "from": "3dxm8"
+    },
+    "s9_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "tcles6"
+    },
+    "s9_star": {
+      "say": "지금은 별을 '뜨거운 기체 덩어리'라고 사실 그대로 말해요. 어릴 땐 '줄기 없는 꽃 같다'고 은유로 말했어요.",
+      "from": "3j009"
+    },
+    "story_9": {
+      "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요.",
+      "from": "1m12sey"
+    },
+    "s9_go": {
+      "say": "빈칸은 자라면서 어릴 때의 즉흥성·독창성이 어떻게 되는지였어요. 그 말을 보기에서 골라 봐요.",
+      "from": "muoa0o"
+    }
+  },
+  "exam": {
+    "ask": "자라면서 쪽이 늘 때 어릴 때 쪽(즉흥성·독창성)이 어떻게 되는지 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 글이 틀에 박히고 글자 그대로가 되면서, 어릴 때의 즉흥성과 독창성은 함께 사라져요. 그래서 loss(잃음)예요.",
+    "final_wrong": "정답은 ① loss예요. 틀에 박힌 쪽이 늘면서 즉흥성·독창성은 잃어 가요.",
+    "option_feedback": {
+      "2": "'an accompanying sense of …'는 말로는 자연스럽지만, 즉흥성의 '감각'이 함께 생긴다면 즉흥성이 남는다는 말이 돼요. 글은 틀에 박혀 간다고 했어요.",
+      "3": "즉흥성·독창성이 늘어난다면 틀에 박힌다는 앞말과 반대예요.",
+      "4": "회복은 잃었던 걸 되찾는 거예요. 글은 이제 막 잃어 가는 중이에요.",
+      "5": "즉흥성을 보여 준다면 은유도 지어낼 텐데, 은유를 지어낼 필요가 거의 없대요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 30.0%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "'an accompanying sense of the spontaneity'는 영어로 자연스럽게 들려서 가장 많이 골랐어요. 하지만 그러면 '즉흥성의 감각이 함께 생긴다', 즉흥성이 살아 있다는 말이 돼요. 글은 틀에 박히고 글자 그대로가 된다고 했으니, 반대쪽인 즉흥성은 줄어야 해요.",
+        "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "말이 자연스러워 보여서 골랐어요",
+            "skills": [
+              "collocation_trap"
+            ],
+            "reply": "알려 줘서 고마워요. 빈칸은 말이 자연스러운지보다 앞뒤 흐름(어느 쪽이 늘고 주는지)으로 정해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "두 쪽이 반대인 걸 못 봤어요",
+            "skills": [
+              "two_sides"
+            ],
+            "reply": "알려 줘서 고마워요. conventional(틀에 박힌)과 spontaneity(즉흥성)는 반대 쪽이에요. 앞으로 두 쪽을 칠판에 나눠서 보여 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "collocation_trap",
+              "two_sides"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 두 쪽을 먼저 나누고 빈칸을 보게 할게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "어릴 때",
+              "text": "spontaneity and originality",
+              "ko": "즉흥성·독창성 → ↓ (loss)",
+              "tone": "hl2"
+            },
+            {
+              "label": "자라고 난 뒤",
+              "text": "conventional and literal",
+              "ko": "틀에 박히고 글자 그대로 ↑",
+              "tone": "hl"
+            }
+          ]
+        }
+      },
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 24.2%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "increase(증가)를 넣으면 '즉흥성과 독창성이 함께 늘어난다'가 돼요. 그런데 글은 점점 틀에 박히고 남들이 쓰는 단어만 쓴대요. 즉흥성은 늘 수가 없어요.",
+        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "자라면 다 좋아진다고 생각했어요",
+            "skills": [
+              "growth_all_good"
+            ],
+            "reply": "알려 줘서 고마워요. 손재주·글씨는 좋아지지만, 그 대가로 즉흥성은 줄어요. 앞으로 좋아지는 것과 잃는 것을 나눠 보여 줄게요."
+          },
+          {
+            "label": "of 뒤가 누구 쪽인지 헷갈렸어요",
+            "skills": [
+              "two_sides"
+            ],
+            "reply": "알려 줘서 고마워요. that characterized our earlier efforts, 예전의 특징이에요. 앞으로 earlier 같은 시간 단서를 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "growth_all_good",
+              "two_sides"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 두 쪽을 먼저 나누고 빈칸을 보게 할게요."
+          }
+        ]
+      }
+    },
+    "from": "19onxxe"
+  },
+  "intro": {
+    "topic": {
+      "say": "어릴 땐 별을 '줄기 없는 꽃'이라고 했는데, 지금은 뭐라고 할까요? 이번 글은 자라면서 글쓰기가 어떻게 바뀌는지 다뤄요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "jphomo"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1k14t10"
+}

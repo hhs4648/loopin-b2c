@@ -1,0 +1,1589 @@
+{
+  "id": "moeui-2024-03-23-tribe-thinking",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 23번 (주제, 3점)",
+  "brief": {
+    "topic": "주제 푸는 법: 되풀이되는 핵심어 모으기 → 글쓴이가 설명하는 현상 잡기 → 글 전체를 한 줄로 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "topic",
+    "labels": [
+      "핵심어 모으기",
+      "한 줄로 묶기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-tribe.svg",
+      "alt": "칠판: Us(우리 편) ↔ Them(그들)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "모두에게 더 좋은 결과보다 '우리 편'에 더 좋은 결과를 고를 때가 있을까요? 이번 글은 사람과 집단의 관계를 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "주제 문제는 글에서 되풀이되는 핵심어를 모아 '무엇에 대한 글인지' 한 줄로 묶는 거예요. 칠판에 핵심어를 쌓아 갈게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 주제로 가장 적절한 것은? [3점]",
+    "sentence": 1,
+    "analysis_first": true,
+    "glosses": [
+      {
+        "en": "tendency",
+        "ko": "경향"
+      },
+      {
+        "en": "prefer",
+        "ko": "선호하다"
+      },
+      {
+        "en": "identifies with",
+        "ko": "~와 동일시하다"
+      },
+      {
+        "en": "necessity",
+        "ko": "필요성"
+      },
+      {
+        "en": "isolation",
+        "ko": "고립"
+      },
+      {
+        "en": "ease",
+        "ko": "덜어 주다"
+      },
+      {
+        "en": "crowds",
+        "ko": "군중"
+      },
+      {
+        "en": "interests",
+        "ko": "관심사"
+      },
+      {
+        "en": "objective",
+        "ko": "객관적인"
+      },
+      {
+        "en": "heated",
+        "ko": "열띤"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "tendency to prefer the group that one identifies with",
+        "keywords": [
+          "prefer the group",
+          "identifies with"
+        ],
+        "ko": "자신이 동일시하는 집단을 선호하는 경향",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "necessity of social isolation to build a reputation",
+        "keywords": [
+          "social isolation",
+          "reputation"
+        ],
+        "ko": "평판을 쌓기 위한 사회적 고립의 필요성"
+      },
+      {
+        "id": "3",
+        "label": "ways to ease one’s irrational fear of crowds",
+        "keywords": [
+          "fear of crowds"
+        ],
+        "ko": "군중에 대한 비이성적 두려움을 덜어 주는 방법"
+      },
+      {
+        "id": "4",
+        "label": "importance of forming groups with different interests",
+        "keywords": [
+          "different interests"
+        ],
+        "ko": "관심사가 다른 집단을 만드는 것의 중요성"
+      },
+      {
+        "id": "5",
+        "label": "tips for staying objective during heated group discussions",
+        "keywords": [
+          "staying objective"
+        ],
+        "ko": "열띤 집단 토론 중에 객관성을 지키는 요령"
+      }
+    ],
+    "brief": {
+      "ask": "칠판에 쌓인 말(social death, tribe, groups, favoring us)을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 사람은 무리에서 밀려나는 걸 가장 무서워해서 부족의 일원으로 판단하고, 결국 '우리 편'을 고른대요. 자신이 속한 집단을 선호하는 경향이 주제예요.",
+      "final_wrong": "정답은 ①이에요. 자신이 속한(동일시하는) 집단을 편드는 경향이 이 글의 주제예요.",
+      "option_feedback": {
+        "2": "reputation이 나와서 헷갈렸죠. 하지만 글은 고립이 아니라 무리에 남으려는 이야기예요.",
+        "3": "군중을 무서워하는 게 아니라 무리에서 밀려나는 걸 무서워해요.",
+        "4": "관심사가 다른 집단을 만들자는 이야기는 없어요. 글은 내 집단을 편드는 경향을 설명해요.",
+        "5": "토론에서 객관성을 지키는 요령은 글에 없어요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "sociologist",
+        "ko": "사회학자"
+      },
+      {
+        "en": "threatened",
+        "ko": "위협받은"
+      },
+      {
+        "en": "identity",
+        "ko": "정체성"
+      },
+      {
+        "en": "tribe",
+        "ko": "부족"
+      },
+      {
+        "en": "trustworthy",
+        "ko": "믿음직한"
+      },
+      {
+        "en": "reputation",
+        "ko": "평판"
+      },
+      {
+        "en": "override",
+        "ko": "~보다 앞서다"
+      },
+      {
+        "en": "mortality",
+        "ko": "죽음"
+      },
+      {
+        "en": "irrational",
+        "ko": "비이성적인"
+      },
+      {
+        "en": "death sentence",
+        "ko": "사형 선고"
+      },
+      {
+        "en": "drive",
+        "ko": "욕구"
+      },
+      {
+        "en": "oppose",
+        "ko": "맞서다"
+      },
+      {
+        "en": "favor",
+        "ko": "편들다, 유리하게 하다"
+      },
+      {
+        "en": "outcome",
+        "ko": "결과"
+      }
+    ],
+    "options": [
+      {
+        "en": "tendency",
+        "ko": "경향"
+      },
+      {
+        "en": "identify with",
+        "ko": "~와 동일시하다"
+      },
+      {
+        "en": "isolation",
+        "ko": "고립"
+      },
+      {
+        "en": "objective",
+        "ko": "객관적인"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Sociologist Brooke Harrington said if there was an E = mc² of social science, it would be SD>PD, “social death is more frightening than physical death.”",
+      "model_translation": "사회학자 Brooke Harrington은 사회 과학의 E = mc²가 있다면, 그것은 SD>PD, 즉 '사회적 죽음이 신체적 죽음보다 더 무섭다.'일 것이라고 말했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Sociologist Brooke Harrington",
+          "ko": "사회학자 브룩 해링턴"
+        },
+        {
+          "en": "said",
+          "ko": "말했다"
+        },
+        {
+          "en": "if there was",
+          "ko": "만약 ~가 있다면"
+        },
+        {
+          "en": "an E = mc² of social science",
+          "ko": "사회 과학의 E = mc²(가장 중요한 공식)"
+        },
+        {
+          "en": "it would be",
+          "ko": "그것은 ~일 것이다"
+        },
+        {
+          "en": "SD>PD",
+          "ko": "사회적 죽음 > 신체적 죽음"
+        },
+        {
+          "en": "social death",
+          "ko": "사회적 죽음(무리에서 밀려남)"
+        },
+        {
+          "en": "is more frightening than",
+          "ko": "~보다 더 무섭다"
+        },
+        {
+          "en": "physical death",
+          "ko": "신체적 죽음"
+        },
+        {
+          "en": "Sociologist",
+          "ko": "사회학자"
+        },
+        {
+          "en": "Brooke",
+          "ko": "브룩"
+        },
+        {
+          "en": "Harrington",
+          "ko": "해링턴"
+        },
+        {
+          "en": "E",
+          "ko": "E"
+        },
+        {
+          "en": "mc²",
+          "ko": "mc²"
+        },
+        {
+          "en": "social",
+          "ko": "사회의"
+        },
+        {
+          "en": "science",
+          "ko": "과학"
+        },
+        {
+          "en": "death",
+          "ko": "죽음"
+        },
+        {
+          "en": "frightening",
+          "ko": "무서운"
+        }
+      ],
+      "slashes": [
+        "Brooke Harrington said",
+        "social science,",
+        "SD>PD,"
+      ],
+      "steps": [
+        {
+          "id": "s1_sdpd",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "SD>PD, 'social death is more frightening than physical death'는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "social death는 '사회적 죽음', 즉 집단에서 밀려나는 거예요. more A than B는 'B보다 더 A'예요.",
+              "social death는 '사회적 죽음', 즉 집단에서 밀려나는 거예요. more A than B는 'B보다 더 A'예요."
+            ],
+            "explain": "'social death is more frightening than physical death', 무리에서 밀려나는 사회적 죽음이 몸의 죽음보다 더 무섭대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'social death is more frightening than physical death', 무리에서 밀려나는 사회적 죽음이 몸의 죽음보다 더 무섭대요.",
+              "o2": "'social death is more frightening than physical death', 무리에서 밀려나는 사회적 죽음이 몸의 죽음보다 더 무섭대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사람들은 몸이 죽는 것보다 무리에서 밀려나는 것을 더 무서워한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "몸이 죽는 것이 가장 무섭다"
+            },
+            {
+              "id": "o2",
+              "label": "사회 과학은 물리학보다 어렵다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "social death",
+            "physical death"
+          ],
+          "tips": [
+            {
+              "label": "E = mc²",
+              "text": "아인슈타인의 유명한 공식이에요. 여기서는 '가장 핵심이 되는 법칙'이라는 뜻으로 빗대어 썼어요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "This is why we feel deeply threatened when a new idea challenges the ones that have become part of our identity.",
+      "model_translation": "이것은 새로운 개념이 우리 정체성의 일부가 된 것들에 도전할 때 우리가 매우 위협적으로 느끼는 이유이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "feel",
+          "ko": "느끼다"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "This",
+          "ko": "이것"
+        },
+        {
+          "en": "This is why",
+          "ko": "이것이 ~하는 이유이다"
+        },
+        {
+          "en": "we feel deeply threatened",
+          "ko": "우리는 크게 위협을 느낀다"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "a new idea",
+          "ko": "새로운 생각"
+        },
+        {
+          "en": "challenges",
+          "ko": "~에 맞서다, 도전하다"
+        },
+        {
+          "en": "the ones",
+          "ko": "그것들(생각들)"
+        },
+        {
+          "en": "that have become part of our identity",
+          "ko": "우리 정체성의 일부가 된"
+        },
+        {
+          "en": "deeply",
+          "ko": "크게, 깊이"
+        },
+        {
+          "en": "threatened",
+          "ko": "위협받은"
+        },
+        {
+          "en": "idea",
+          "ko": "생각"
+        },
+        {
+          "en": "part",
+          "ko": "일부"
+        },
+        {
+          "en": "identity",
+          "ko": "정체성"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "This",
+            "is",
+            "we",
+            "feel"
+          ],
+          "answers": [
+            "This",
+            "is"
+          ],
+          "roles": {
+            "This": "S",
+            "is": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "we": "그건 why 뒤 덩어리 안의 주어예요.",
+              "feel": "그건 why 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 This, 동사는 is예요. why 뒤가 그 이유의 내용이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "This is why ~",
+              "text": "'이것이 ~하는 이유이다'예요. 앞 문장이 원인, 뒤가 결과예요.",
+              "mark": "This is why"
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "This is why",
+            "we feel deeply threatened",
+            "a new idea",
+            "challenges"
+          ],
+          "answers": [
+            "This is why",
+            "we feel deeply threatened",
+            "a new idea",
+            "challenges"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "This is why",
+                "ko": "이것이 ~하는 이유이다"
+              },
+              ": ",
+              {
+                "en": "we feel deeply threatened",
+                "ko": "우리는 크게 위협을 느낀다"
+              },
+              " — ",
+              {
+                "en": "a new idea",
+                "ko": "새로운 생각이"
+              },
+              " ",
+              {
+                "en": "challenges",
+                "ko": "맞설"
+              },
+              " 때."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "This is why ~",
+              "text": "'이것이 ~하는 이유이다'예요. 앞 문장이 원인, 뒤가 결과예요.",
+              "mark": "This is why"
+            }
+          ]
+        },
+        {
+          "id": "s2_identity",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "새 생각이 맞서는 건 그냥 생각이 아니라 정체성의 일부가 된 생각이에요. 그래서 크게 위협을 느낀대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "challenges",
+            "identity"
+          ],
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/new-idea-challenge.svg",
+            "alt": "새 생각(a new idea)이 화살표로 기존 생각(the ones)에 맞선다. 기존 생각은 정체성(identity) 안에, 정체성은 우리 무리(group) 안에 있다. 아래: 크게 위협을 느낀다, 무리에서 밀려날 것 같아서"
+          },
+          "tips": [
+            {
+              "label": "This is why ~",
+              "text": "'이것이 ~하는 이유이다'예요. 앞 문장이 원인, 뒤가 결과예요.",
+              "mark": "This is why"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "For some ideas, the ones that identify us as members of a group, we don’t reason as individuals; we reason as a member of a tribe.",
+      "model_translation": "우리가 한 집단의 구성원으로 우리를 동일시하는 몇몇 견해에 대하여, 우리는 개인으로서 판단하지 않고, 우리는 한 부족의 구성원으로서 판단한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "For some ideas",
+          "ko": "어떤 생각들에 대해서는"
+        },
+        {
+          "en": "the ones that identify us",
+          "ko": "우리를 ~로 규정하는 것들"
+        },
+        {
+          "en": "as members of a group",
+          "ko": "한 집단의 구성원으로"
+        },
+        {
+          "en": "we don’t reason as individuals",
+          "ko": "우리는 개인으로서 판단하지 않는다"
+        },
+        {
+          "en": "we reason",
+          "ko": "우리는 판단한다"
+        },
+        {
+          "en": "as a member of a tribe",
+          "ko": "한 부족의 일원으로서"
+        },
+        {
+          "en": "ideas",
+          "ko": "생각들"
+        },
+        {
+          "en": "identify",
+          "ko": "규정하다, 알아보다"
+        },
+        {
+          "en": "group",
+          "ko": "집단"
+        },
+        {
+          "en": "don’t",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "reason",
+          "ko": "판단하다"
+        },
+        {
+          "en": "individuals",
+          "ko": "개인들"
+        },
+        {
+          "en": "member",
+          "ko": "구성원"
+        },
+        {
+          "en": "tribe",
+          "ko": "부족"
+        }
+      ],
+      "slashes": [
+        "For some ideas,",
+        "members of a group,",
+        "as individuals;"
+      ],
+      "steps": [
+        {
+          "id": "s3_tribe",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "세미콜론(;) 앞뒤를 봐요. 집단과 관련된 생각에서는 우리가 어떻게 판단한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "앞은 'don't reason as individuals(개인으로서 판단하지 않는다)', 뒤가 그 대신 어떻게 하는지예요.",
+              "앞은 'don't reason as individuals(개인으로서 판단하지 않는다)', 뒤가 그 대신 어떻게 하는지예요."
+            ],
+            "explain": "'we don’t reason as individuals; we reason as a member of a tribe', 개인이 아니라 부족의 일원으로서 판단한대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'we don’t reason as individuals; we reason as a member of a tribe', 개인이 아니라 부족의 일원으로서 판단한대요.",
+              "o2": "'we don’t reason as individuals; we reason as a member of a tribe', 개인이 아니라 부족의 일원으로서 판단한대요."
+            },
+            "point": "집단과 관련된 생각 → 개인이 아니라 부족(집단)의 일원으로서 판단한다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "혼자 따로 생각해서 판단한다"
+            },
+            {
+              "id": "o1",
+              "label": "부족의 일원으로서 판단한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "판단하지 않는다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "as individuals",
+            "as a member of a tribe"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "We want to seem trustworthy, and reputation management as a trustworthy individual often overrides most other concerns, even our own mortality.",
+      "model_translation": "우리는 믿음직스럽게 보이고 싶고, 믿음직한 개인으로서의 평판 관리는 흔히 다른 모든 걱정, 심지어 우리 자신의 죽음보다 더 중요하다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "overrides",
+          "ko": "~보다 앞서다"
+        },
+        {
+          "en": "want",
+          "ko": "원하다"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "We want to seem trustworthy",
+          "ko": "우리는 믿음직하게 보이고 싶다"
+        },
+        {
+          "en": "reputation management",
+          "ko": "평판 관리"
+        },
+        {
+          "en": "as a trustworthy individual",
+          "ko": "믿음직한 개인으로서의"
+        },
+        {
+          "en": "often overrides",
+          "ko": "흔히 ~보다 앞선다"
+        },
+        {
+          "en": "most other concerns",
+          "ko": "대부분의 다른 걱정"
+        },
+        {
+          "en": "even our own mortality",
+          "ko": "심지어 우리 자신의 죽음까지"
+        },
+        {
+          "en": "seem",
+          "ko": "~처럼 보이다"
+        },
+        {
+          "en": "trustworthy",
+          "ko": "믿음직한"
+        },
+        {
+          "en": "reputation",
+          "ko": "평판"
+        },
+        {
+          "en": "management",
+          "ko": "관리"
+        },
+        {
+          "en": "individual",
+          "ko": "개인"
+        },
+        {
+          "en": "concerns",
+          "ko": "걱정"
+        },
+        {
+          "en": "mortality",
+          "ko": "죽음"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "want",
+            "reputation management",
+            "overrides",
+            "most other concerns"
+          ],
+          "answers": [
+            "We",
+            "want",
+            "reputation management",
+            "overrides",
+            "most other concerns"
+          ],
+          "roles": {
+            "We": "S",
+            "want": "V",
+            "reputation management": "S",
+            "overrides": "V",
+            "most other concerns": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "and 앞은 주어 We, 동사 want예요. and 뒤는 주어 reputation management, 동사 overrides, 목적어 most other concerns예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "override",
+              "text": "'~보다 더 중요하다, ~을 무시하고 앞서다'예요.",
+              "mark": "overrides"
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "We want to seem trustworthy",
+            "reputation management",
+            "often overrides",
+            "most other concerns"
+          ],
+          "answers": [
+            "We want to seem trustworthy",
+            "reputation management",
+            "most other concerns",
+            "often overrides"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We want to seem trustworthy",
+                "ko": "우리는 믿음직하게 보이고 싶다"
+              },
+              ", ",
+              {
+                "en": "reputation management",
+                "ko": "평판 관리가"
+              },
+              " ",
+              {
+                "en": "most other concerns",
+                "ko": "대부분의 다른 걱정"
+              },
+              "보다 ",
+              {
+                "en": "often overrides",
+                "ko": "흔히 앞선다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "We want to seem trustworthy, and reputation management often overrides most other concerns.",
+          "tips": [
+            {
+              "label": "override",
+              "text": "'~보다 더 중요하다, ~을 무시하고 앞서다'예요.",
+              "mark": "overrides"
+            }
+          ]
+        },
+        {
+          "id": "s4_reputation",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "무리 안에서 믿음직하게 보이는 평판 관리가 다른 걱정, 심지어 죽음보다 앞선대요. SD>PD와 같은 말이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "overrides",
+            "even our own mortality"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "되풀이되는 말",
+            "left": {
+              "label": "집단 (group)",
+              "words": [
+                {
+                  "text": "social death",
+                  "ko": "사회적 죽음",
+                  "fresh": true
+                },
+                {
+                  "text": "identity",
+                  "ko": "정체성",
+                  "fresh": true
+                },
+                {
+                  "text": "a member of a tribe",
+                  "ko": "부족의 일원",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "tips": [
+            {
+              "label": "override",
+              "text": "'~보다 더 중요하다, ~을 무시하고 앞서다'예요.",
+              "mark": "overrides"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "😨",
+                "en": "SD>PD · identity",
+                "ko": "사람은 몸의 죽음보다 무리에서 밀려나는 걸 더 무서워해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "👥",
+                "en": "a member of a tribe",
+                "ko": "집단과 관련된 생각은 부족의 일원으로 판단하고, 평판을 먼저 챙겨요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "This is not entirely irrational.",
+      "model_translation": "이것은 완전히 비이성적인 것이 아니다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "This is not entirely irrational",
+          "ko": "이것이 완전히 비이성적인 것은 아니다"
+        },
+        {
+          "en": "irrational",
+          "ko": "비이성적인"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_not",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이게 완전히 말도 안 되는 건 아니래요. 다음 문장에 그 이유가 나와요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "not entirely irrational"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "A human alone in this world faces a lot of difficulty, but being alone in the world before modern times was almost certainly a death sentence.",
+      "model_translation": "이 세상에 홀로 있는 인간은 많은 어려움을 직면하지만, 근대 이전의 세상에서 혼자 있는 것은 거의 확실하게 사형 선고였다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "was",
+          "ko": "~였다"
+        },
+        {
+          "en": "faces",
+          "ko": "겪다"
+        },
+        {
+          "en": "A human",
+          "ko": "인간"
+        },
+        {
+          "en": "A human alone in this world",
+          "ko": "이 세상에 홀로인 인간"
+        },
+        {
+          "en": "faces a lot of difficulty",
+          "ko": "많은 어려움을 겪는다"
+        },
+        {
+          "en": "being alone in the world",
+          "ko": "세상에 혼자 있는 것"
+        },
+        {
+          "en": "before modern times",
+          "ko": "근대 이전에는"
+        },
+        {
+          "en": "was almost certainly a death sentence",
+          "ko": "거의 확실한 사형 선고였다"
+        },
+        {
+          "en": "alone",
+          "ko": "혼자인"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        },
+        {
+          "en": "lot",
+          "ko": "많음"
+        },
+        {
+          "en": "difficulty",
+          "ko": "어려움"
+        },
+        {
+          "en": "modern",
+          "ko": "근대의"
+        },
+        {
+          "en": "times",
+          "ko": "시대"
+        },
+        {
+          "en": "almost",
+          "ko": "거의"
+        },
+        {
+          "en": "certainly",
+          "ko": "확실히"
+        },
+        {
+          "en": "death",
+          "ko": "죽음"
+        },
+        {
+          "en": "sentence",
+          "ko": "선고"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A human",
+            "faces",
+            "being alone in the world",
+            "was"
+          ],
+          "answers": [
+            "A human",
+            "faces",
+            "being alone in the world",
+            "was"
+          ],
+          "roles": {
+            "A human": "S",
+            "faces": "V",
+            "being alone in the world": "S",
+            "was": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "but 앞은 주어 A human (alone in this world), 동사 faces예요. but 뒤는 주어 being alone in the world(혼자 있는 것), 동사 was예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic"
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "A human alone in this world",
+            "faces a lot of difficulty",
+            "being alone in the world",
+            "before modern times",
+            "was almost certainly a death sentence"
+          ],
+          "answers": [
+            "A human alone in this world",
+            "faces a lot of difficulty",
+            "before modern times",
+            "being alone in the world",
+            "was almost certainly a death sentence"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A human alone in this world",
+                "ko": "세상에 홀로인 인간은"
+              },
+              " ",
+              {
+                "en": "faces a lot of difficulty",
+                "ko": "많은 어려움을 겪는다"
+              },
+              ", 하지만 ",
+              {
+                "en": "before modern times",
+                "ko": "근대 이전에는"
+              },
+              " ",
+              {
+                "en": "being alone in the world",
+                "ko": "혼자 있는 것이"
+              },
+              " ",
+              {
+                "en": "was almost certainly a death sentence",
+                "ko": "거의 확실한 사형 선고였다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_alone",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "옛날에는 혼자가 되면 거의 죽음이었대요. 그래서 무리에서 밀려나는 걸 그렇게 무서워하는 거예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "a death sentence"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "So we carry with us an innate drive to form groups, join groups, remain in those groups, and oppose other groups.",
+      "model_translation": "그래서 우리는 집단을 형성하고, 집단에 합류하고, 그 집단에 남아 있고, 다른 집단에 반대하려는 타고난 욕구를 가지고 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "groups",
+          "ko": "집단들"
+        },
+        {
+          "en": "carry",
+          "ko": "지니다"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "So",
+          "ko": "그래서"
+        },
+        {
+          "en": "we carry with us",
+          "ko": "우리는 지니고 있다"
+        },
+        {
+          "en": "an innate drive",
+          "ko": "타고난 욕구"
+        },
+        {
+          "en": "to form groups",
+          "ko": "집단을 만들려는"
+        },
+        {
+          "en": "join groups",
+          "ko": "집단에 들어가다"
+        },
+        {
+          "en": "remain in those groups",
+          "ko": "그 집단에 남다"
+        },
+        {
+          "en": "oppose other groups",
+          "ko": "다른 집단에 맞서다"
+        },
+        {
+          "en": "innate",
+          "ko": "타고난"
+        },
+        {
+          "en": "drive",
+          "ko": "욕구"
+        },
+        {
+          "en": "form",
+          "ko": "만들다"
+        },
+        {
+          "en": "join",
+          "ko": "들어가다"
+        },
+        {
+          "en": "remain",
+          "ko": "남다"
+        },
+        {
+          "en": "oppose",
+          "ko": "맞서다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "we",
+            "carry",
+            "an innate drive",
+            "groups"
+          ],
+          "answers": [
+            "we",
+            "carry",
+            "an innate drive"
+          ],
+          "roles": {
+            "we": "S",
+            "carry": "V",
+            "an innate drive": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "groups": "그건 to form 뒤, 어떤 욕구인지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 we, 동사는 carry, 목적어는 an innate drive(타고난 욕구)예요. with us는 '지니고'예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_drive",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그래서 우리에겐 집단을 만들고, 들어가고, 남고, 다른 집단에 맞서려는 타고난 욕구가 있대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "innate drive",
+            "oppose other groups"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "되풀이되는 말",
+            "left": {
+              "label": "집단 (group)",
+              "words": [
+                {
+                  "text": "social death",
+                  "ko": "사회적 죽음"
+                },
+                {
+                  "text": "identity",
+                  "ko": "정체성"
+                },
+                {
+                  "text": "a member of a tribe",
+                  "ko": "부족의 일원"
+                },
+                {
+                  "text": "form, join, remain in groups",
+                  "ko": "집단을 만들고 머묾",
+                  "fresh": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "story_7",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "😨",
+                "en": "SD>PD · identity",
+                "ko": "사람은 몸의 죽음보다 무리에서 밀려나는 걸 더 무서워해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "👥",
+                "en": "a member of a tribe",
+                "ko": "집단과 관련된 생각은 부족의 일원으로 판단하고, 평판을 먼저 챙겨요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5~7",
+                "icon": "🏕️",
+                "en": "a death sentence · innate drive",
+                "ko": "옛날엔 혼자면 죽음이었어요 — 그래서 집단을 만들고 남으려는 욕구를 타고났어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "But once you can identify them, you start favoring us; so much so that given a choice between an outcome that favors both groups a lot or one that favors both much less but still favors yours more than theirs, that’s the one you will pick.",
+      "model_translation": "하지만 일단 여러분이 '그들'을 인식할 수 있게 되면, 여러분은 '우리'를 편들기 시작하는데, 매우 그러하므로, 양쪽 집단 모두를 크게 유리하게 하는 결과 또는 양측 모두에게 훨씬 덜 유리하게 하지만 여전히 여러분의 집단을 그들보다 더 유리하게 하는 것 사이에 선택이 주어졌을 때, 그것이 바로 여러분이 고르게 될 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "But once you can identify them",
+          "ko": "하지만 일단 '그들'을 알아볼 수 있게 되면"
+        },
+        {
+          "en": "you start favoring us",
+          "ko": "'우리'를 편들기 시작한다"
+        },
+        {
+          "en": "so much so that",
+          "ko": "너무 그래서"
+        },
+        {
+          "en": "given a choice between",
+          "ko": "~ 사이에서 고르라면"
+        },
+        {
+          "en": "an outcome that favors both groups a lot",
+          "ko": "두 집단 모두에게 크게 유리한 결과"
+        },
+        {
+          "en": "one that favors both much less",
+          "ko": "둘 다에게 훨씬 덜 유리한 결과"
+        },
+        {
+          "en": "but still favors yours more than theirs",
+          "ko": "그래도 그들보다 우리 쪽에 더 유리한"
+        },
+        {
+          "en": "that’s the one you will pick",
+          "ko": "바로 그것을 고를 것이다"
+        },
+        {
+          "en": "identify",
+          "ko": "규정하다, 알아보다"
+        },
+        {
+          "en": "favoring",
+          "ko": "편드는 것"
+        },
+        {
+          "en": "given",
+          "ko": "~가 주어지면"
+        },
+        {
+          "en": "outcome",
+          "ko": "결과"
+        },
+        {
+          "en": "favors",
+          "ko": "~에게 유리하다"
+        },
+        {
+          "en": "groups",
+          "ko": "집단들"
+        },
+        {
+          "en": "lot",
+          "ko": "많음"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "still",
+          "ko": "여전히"
+        },
+        {
+          "en": "yours",
+          "ko": "너의 것(집단)"
+        },
+        {
+          "en": "theirs",
+          "ko": "그들의 것(집단)"
+        },
+        {
+          "en": "pick",
+          "ko": "고르다"
+        }
+      ],
+      "slashes": [
+        "identify them,",
+        "favoring us;",
+        "groups a lot",
+        "much less",
+        "than theirs,"
+      ],
+      "steps": [
+        {
+          "id": "s8_pick",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "두 집단 모두 크게 이득 vs 둘 다 덜 이득이지만 우리 쪽이 더 이득. 사람들은 어느 쪽을 고른대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "마지막 'that’s the one you will pick'의 that은 바로 앞에 나온 'one that … still favors yours more than theirs'예요.",
+              "마지막 'that’s the one you will pick'의 that은 바로 앞에 나온 'one that … still favors yours more than theirs'예요."
+            ],
+            "explain": "'that’s the one you will pick'은 바로 앞의 '둘 다 덜 이득이지만 우리 쪽이 그들보다 더 이득인 결과'예요. 전체 이득보다 '우리 편'을 고른대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'that’s the one you will pick'은 바로 앞의 '둘 다 덜 이득이지만 우리 쪽이 그들보다 더 이득인 결과'예요. 전체 이득보다 '우리 편'을 고른대요.",
+              "o2": "'that’s the one you will pick'은 바로 앞의 '둘 다 덜 이득이지만 우리 쪽이 그들보다 더 이득인 결과'예요. 전체 이득보다 '우리 편'을 고른대요."
+            },
+            "point": "일단 '그들'이 보이면 '우리'를 편든다 — 다 같이 더 이득보다 우리가 더 이득인 쪽을 고른다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "두 집단 모두 크게 이득인 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "둘 다 덜 이득이어도 우리 쪽이 더 이득인 쪽",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "아무것도 고르지 않는다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "favoring us",
+            "favors yours more than theirs"
+          ],
+          "tips": [
+            {
+              "label": "favor",
+              "text": "동사로 '편들다, ~에게 유리하게 하다'예요. 명사 '호의'만 있는 게 아니에요.",
+              "mark": "favoring"
+            }
+          ]
+        },
+        {
+          "id": "s8_gist",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "글 전체가 무엇에 대한 이야기인지 한 줄로 묶으면요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판에 쌓인 말을 봐요. social death, tribe, form groups, favoring us — 모두 '내 집단'이에요.",
+              "칠판에 쌓인 말을 봐요. social death, tribe, form groups, favoring us — 모두 '내 집단'이에요."
+            ],
+            "explain": "무리에서 밀려나는 게 가장 무섭고, 부족의 일원으로 판단하고, 집단을 만들고, 결국 '우리 편'을 고른대요. 내 집단을 편드는 경향이 이 글의 주제예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "무리에서 밀려나는 게 가장 무섭고, 부족의 일원으로 판단하고, 집단을 만들고, 결국 '우리 편'을 고른대요. 내 집단을 편드는 경향이 이 글의 주제예요.",
+              "o1": "무리에서 밀려나는 게 가장 무섭고, 부족의 일원으로 판단하고, 집단을 만들고, 결국 '우리 편'을 고른대요. 내 집단을 편드는 경향이 이 글의 주제예요."
+            },
+            "point": "주제 = 자신이 속한 집단을 선호하는(편드는) 경향"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "평판을 쌓으려면 혼자 지내야 한다는 것"
+            },
+            {
+              "id": "o1",
+              "label": "다른 관심사를 가진 집단을 만들어야 한다는 것"
+            },
+            {
+              "id": "o2",
+              "label": "사람은 자기가 속한 집단을 편드는 경향이 있다는 것",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "되풀이되는 말",
+            "left": {
+              "label": "집단 (group)",
+              "words": [
+                {
+                  "text": "social death",
+                  "ko": "사회적 죽음"
+                },
+                {
+                  "text": "identity",
+                  "ko": "정체성"
+                },
+                {
+                  "text": "a member of a tribe",
+                  "ko": "부족의 일원"
+                },
+                {
+                  "text": "form, join, remain in groups",
+                  "ko": "집단을 만들고 머묾"
+                },
+                {
+                  "text": "favoring us",
+                  "ko": "우리를 편듦",
+                  "fresh": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "s8_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "주제 문제는 이 한 줄을 명사구로 바꿔 쓴 보기를 고르면 돼요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

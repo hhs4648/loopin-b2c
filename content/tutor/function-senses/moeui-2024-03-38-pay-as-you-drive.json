@@ -1,0 +1,98 @@
+{
+ "1": [
+  {
+   "word": "but",
+   "phrase": "But in the future",
+   "sense": "하지만",
+   "usage": "접속사 but (문장 앞)"
+  },
+  {
+   "word": "to",
+   "phrase": "to charge",
+   "sense": "~하도록",
+   "usage": "enable + 목적어 + to부정사 = 목적어가 ~할 수 있게 하다"
+  },
+  {
+   "word": "as",
+   "phrase": "pay-as-you-drive",
+   "sense": "~하는 만큼",
+   "usage": "pay-as-you-drive = 운전하는 만큼 내는"
+  },
+  {
+   "word": "as",
+   "phrase": "as opposed to",
+   "sense": "(as opposed to의 일부)",
+   "usage": "as opposed to = ~와는 달리"
+  },
+  {
+   "word": "to",
+   "phrase": "as opposed to",
+   "sense": "(as opposed to의 일부)",
+   "usage": "as opposed to + 명사"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "are expected to err",
+   "sense": "~할 (것으로)",
+   "usage": "be expected + to부정사"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "is to shield",
+   "sense": "~하는 것",
+   "usage": "be + to부정사 (보어: ~하는 것)"
+  }
+ ],
+ "6": [
+  {
+   "word": "for",
+   "phrase": "For centuries",
+   "sense": "~ 동안",
+   "usage": "전치사 for + 기간"
+  },
+  {
+   "word": "to",
+   "phrase": "to people",
+   "sense": "~에게",
+   "usage": "charge A to B = B에게 A를 매기다"
+  },
+  {
+   "word": "as",
+   "phrase": "such as smokers",
+   "sense": "~ 같은",
+   "usage": "such as + 명사 (예시)"
+  }
+ ],
+ "8": [
+  {
+   "word": "for",
+   "phrase": "paying more for insurance",
+   "sense": "~에 대해, ~로",
+   "usage": "pay for + 명사"
+  }
+ ],
+ "9": [
+  {
+   "word": "but",
+   "phrase": "but many people",
+   "sense": "하지만",
+   "usage": "접속사 but + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "agree to",
+   "sense": "~에 (동의하다)",
+   "usage": "agree to + 명사"
+  },
+  {
+   "word": "if",
+   "phrase": "if it means",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사 (조건)"
+  }
+ ]
+}

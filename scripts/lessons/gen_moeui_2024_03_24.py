@@ -1,0 +1,404 @@
+"""2024년 3월 고3 24번 레슨 + 대사를 만든다 (제목, 2점). 오답률 50.3% · Top 9.
+
+    python3 scripts/lessons/gen_moeui_2024_03_24.py   (→ npm run policy:copy stamp <id> → npm run build)
+
+틀: 2026년 3월 24번(제목) — 문장마다 핵심어·뜻 → 글쓴이 생각 → 글 전체 한 줄 → 제목.
+정답 ⑤ How We Act Beyond the Bounds of Time.
+많이 고른 오답 ④ 19.8%(과거 경험으로 현재 문제 해결 — 글은 과거가 아니라 미래), ① 13.5%(지금 여기 — 글은 지금 너머).
+열쇠: Distance in time = distance in space → 수천 년 뒤 사람도 중요(matter) → 세상은 우리 세대에서 멈추지 않는다 → 예시(속담·폐기물·기후·박물관)
+→ 현재와 미래 사이에 선을 긋지 않는다. 해설지 해석과 대조함. radioactive는 시험지 아래 *로 풀어 준 단어(핵심어 아님).
+"""
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from exam_kit import (g, choice, pick, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg, translate,  # noqa: E402
+                      base_lesson, exam_brief, review, finish)
+
+ID = "moeui-2024-03-24-distance-in-time"
+
+S = [
+    "Distance in time is like distance in space.",
+    "People matter even if they live thousands of miles away.",
+    "Likewise, they matter even if they live thousands of years hence.",
+    "In both cases, it’s easy to mistake distance for unreality, to treat the limits of what we can see as the limits of the world.",
+    "But just as the world does not stop at our doorstep or our country’s borders, neither does it stop with our generation, or the next.",
+    "These ideas are common sense.",
+    "A popular proverb says, “A society grows great when old men plant trees under whose shade they will never sit.”",
+    "When we dispose of radioactive waste, we don’t say, “Who cares if this poisons people centuries from now?”",
+    "Similarly, few of us who care about climate change or pollution do so solely for the sake of people alive today.",
+    "We build museums and parks and bridges that we hope will last for generations; we invest in schools and long-term scientific projects; "
+    "we preserve paintings, traditions, languages; we protect beautiful places.",
+    "In many cases, we don’t draw clear lines between our concerns for the present and the future―both are in play.",
+]
+KO = [
+    "시간 속의 거리는 공간 속의 거리와 같다.",
+    "사람들이 수천 마일 떨어져서 살더라도 그들은 중요하다.",
+    "마찬가지로, 그들이 지금부터 수천 년 후에 살더라도 그들은 중요하다.",
+    "두 경우 모두, 거리를 비현실성으로 착각하고 우리가 볼 수 있는 것의 한계를 세상의 한계로 취급하기 쉽다.",
+    "하지만 세상이 우리의 문 앞이나 우리 국가의 경계에서 멈추지 않는 것처럼, 그것은 우리의 세대나 다음 세대에서 멈추지 않는다.",
+    "이러한 생각들은 상식이다.",
+    "한 유명한 속담은 '사회는 노인들이 그 그늘에 결코 앉지 못할 나무를 심을 때 크게 성장한다.'라고 한다.",
+    "우리가 방사성 폐기물을 버릴 때, 우리는 '이것이 지금으로부터 수백 년 후의 사람들을 해치든 누가 상관하겠는가?'라고 말하지 않는다.",
+    "비슷하게, 기후 변화나 오염에 신경 쓰는 우리들 중 단지 오늘날 살아 있는 사람들을 위해서 그렇게 하는 사람은 거의 없다.",
+    "우리는 대대로 지속되기를 바라는 박물관과 공원과 다리를 만들고, 학교와 장기적인 과학 프로젝트에 투자하고, 그림, 전통, 언어를 보존하고, 아름다운 장소를 보호한다.",
+    "많은 경우, 우리는 현재와 미래에 대한 우리의 걱정 사이에 명확한 선을 긋지 않는다. 둘 다 영향을 끼친다.",
+]
+
+
+def board(space, time, fresh=()):
+    return groups("멀리 있어도", "공간의 거리 (space)", space, "시간의 거리 (time)", time, fresh=fresh, between="=")
+
+
+SP = [("thousands of miles away", "수천 마일 떨어진")]
+TM = [("thousands of years hence", "수천 년 뒤")]
+
+sentences = [
+    {
+        "id": 1, "text": S[0], "model_translation": KO[0], "teaching_value": "high",
+        "glosses": [g("Distance in time", "시간 속의 거리"), g("distance", "거리"), g("time", "시간"), g("is like", "~와 같다"),
+                    g("distance in space", "공간 속의 거리"), g("space", "공간")],
+        "steps": [
+            choice("s1_like",
+                   "여기서 like는 무슨 뜻일까요?",
+                   [("o0", "좋아하다", False), ("o1", "~와 같은", True), ("o2", "~하고 싶다", False)],
+                   "is like 뒤에 명사(distance in space)가 와요. be동사 뒤의 like는 동사가 아니라 비교하는 말이에요.",
+                   why="is like + 명사는 '~와 같다'예요. 좋아한다는 뜻이라면 be동사가 붙지 않아요.",
+                   highlight=["is like"]),
+            translate("s1_tr", "짧지만 글 전체의 열쇠인 문장이에요. 자유롭게 해석해 봐요.",
+                      "시간 속의 거리는 공간 속의 거리와 같다.",
+                      [("time", ["시간"], None, "시간 속의 거리는", "Distance in time은 '시간 속의 거리'예요."),
+                       ("space", ["공간"], None, "공간 속의 거리와", "distance in space는 '공간 속의 거리'예요."),
+                       ("like", ["같", "비슷", "마찬가지"], ["좋아"], "같다", "is like는 '~와 같다'예요. 좋아한다는 뜻이 아니에요.")],
+                      highlight=["Distance in time", "is like", "distance in space"]),
+        ],
+    },
+    {
+        "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "medium",
+        "glosses": [g("People", "사람들"), g("matter", "중요하다"), g("even if", "비록 ~라도"), g("they live", "그들이 산다"),
+                    g("thousands of miles away", "수천 마일 떨어진 곳에")],
+        "steps": [
+            choice("s2_matter",
+                   "수천 마일 떨어져 사는 사람들은 어떻대요?",
+                   [("o0", "그래도 중요하다", True), ("o1", "덜 중요하다", False), ("o2", "만날 수 없다", False)],
+                   "matter는 동사로 '중요하다'예요. even if는 '비록 ~라도'예요.",
+                   why="'People matter even if they live thousands of miles away', 멀리 살아도 그 사람들은 중요하대요.",
+                   highlight=["matter", "even if"],
+                   tips=[tip("matter (동사)", "명사 '문제, 물질'뿐 아니라 동사로 '중요하다'예요. People matter = 사람들은 중요하다.", "matter")]),
+        ],
+    },
+    {
+        "id": 3, "text": S[2], "model_translation": KO[2], "teaching_value": "high",
+        "glosses": [g("Likewise", "마찬가지로"), g("they matter", "그들은 중요하다"), g("even if", "비록 ~라도"),
+                    g("they live", "그들이 산다"), g("thousands of years hence", "지금부터 수천 년 뒤에"), g("hence", "지금부터 (~ 뒤에)")],
+        "steps": [
+            choice("s3_hence",
+                   "Likewise(마찬가지로), 수천 년 뒤에 살 사람들은 어떻대요?",
+                   [("o0", "아직 없으니 중요하지 않다", False), ("o1", "우리와 상관없다", False), ("o2", "그들도 중요하다", True)],
+                   "Likewise는 '마찬가지로'예요. 앞 문장과 같은 말을 시간에 적용해요.",
+                   why="Likewise(마찬가지로), 'they matter', 수천 년 뒤(hence)에 살 사람들도 중요하대요. 공간에서 한 말을 시간에도 그대로 적용해요.",
+                   highlight=["Likewise", "thousands of years hence"],
+                   tips=[tip("hence", "여기서는 '지금부터 (얼마) 뒤에'예요. thousands of years hence = 지금부터 수천 년 뒤. '그러므로'라는 뜻도 있어요.", "hence")],
+                   point="Likewise = 공간에서 멀어도 중요하듯, 시간에서 멀어도(수천 년 뒤) 중요하다"),
+            show("s3_board", "멀리 떨어져 살아도, 먼 미래에 살아도 똑같이 중요하대요. 공간과 시간을 칠판 두 칸에 나란히 놓아 둘게요.",
+                 panel=board(SP, TM, fresh=("thousands of miles away", "thousands of years hence")), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 4, "text": S[3], "model_translation": KO[3], "teaching_value": "high",
+        "glosses": [g("In both cases", "두 경우 모두"), g("it", "그것은 (가주어 — 뒤의 to mistake …를 대신)"), g("’s", "~이다 (= is)"),
+                    g("easy to", "~하기 쉽다"), g("easy", "쉬운"),
+                    g("to mistake distance for unreality", "거리를 비현실로 착각하는 것"), g("the limits of the world", "세상의 한계"),
+                    g("mistake distance for unreality", "거리를 비현실로 착각하다"),
+                    g("mistake", "착각하다"), g("unreality", "비현실, 실제가 아님"),
+                    g("to treat the limits of what we can see", "우리가 볼 수 있는 것의 한계를 취급하다"), g("as the limits of the world", "세상의 한계로")],
+        "slashes": ["In both cases,", "for unreality,", "what we can see"],
+        "steps": [
+            choice("s4_mistake",
+                   "두 경우 모두(In both cases) 우리가 쉽게 하는 실수는 무엇이래요?",
+                   [("o0", "멀리 있으면 진짜가 아닌 것처럼 여기는 것", True), ("o1", "가까운 사람을 무시하는 것", False),
+                    ("o2", "거리를 잘못 재는 것", False)],
+                   "mistake A for B는 'A를 B로 착각하다'예요. distance를 unreality(비현실)로 착각한대요.",
+                   why="'mistake distance for unreality', 멀다는 걸 진짜가 아니라고 착각하고, 내 눈에 보이는 데까지를 세상의 끝으로 여기기 쉽대요.",
+                   highlight=["mistake distance for unreality", "the limits of the world"],
+                   tips=[tip("mistake A for B", "'A를 B로 착각하다'예요. treat A as B = 'A를 B로 여기다'와 같은 구조예요.", "mistake")]),
+        ],
+    },
+    {
+        "id": 5, "text": S[4], "model_translation": KO[4], "teaching_value": "high",
+        "glosses": [g("But", "하지만"), g("just as", "~처럼"), g("the world", "세상"), g("does not stop", "멈추지 않는다"),
+                    g("at our doorstep", "우리 집 문 앞에서"), g("our country’s borders", "우리나라 국경"),
+                    g("neither does it stop", "그것도 멈추지 않는다"), g("with our generation", "우리 세대에서"), g("or the next", "또는 다음 세대에서")],
+        "slashes": ["just as the world", "country’s borders,"],
+        "steps": [
+            sv("s5_sv", ["the world", "does not stop", "our doorstep", "neither", "does", "it", "stop", "our generation"],
+               {"the world": "S", "does not stop": "V", "does": "V", "it": "S", "stop": "V"},
+               {"our doorstep": "그건 at 뒤 덩어리예요.", "our generation": "그건 with 뒤 덩어리예요.",
+                "neither": "neither는 '~도 아니다'라는 부정어예요. 동사는 아니에요."},
+               "앞은 주어 the world, 동사 does not stop이에요. 콤마 뒤는 neither가 앞으로 나와 순서가 바뀌었어요(= it does not stop either). 주어 it, 동사 does … stop이에요.",
+               ask="주어·동사가 두 쌍 있어요. 콤마 뒤는 순서가 바뀌었어요. 주어(S)와 동사(V)를 모두 찾아볼까요?",
+               tips=[tip("neither + 동사 + 주어", "부정어 neither가 앞으로 나오면 순서가 바뀌어요. neither does it stop = it does not stop either(그것도 멈추지 않는다). does와 stop이 함께 동사예요.", "neither")]),
+            choice("s5_neither",
+                   "세상은 문 앞이나 국경에서 멈추지 않듯, 어디에서도 멈추지 않는대요?",
+                   [("o0", "우리 집 앞에서", False), ("o1", "우리 세대나 다음 세대에서", True), ("o2", "과학 프로젝트에서", False)],
+                   "neither does it stop with 뒤를 봐요. 공간(문 앞, 국경)에 이어 이번엔 시간이에요.",
+                   why="'neither does it stop with our generation, or the next', 세상은 우리 세대에서도, 다음 세대에서도 멈추지 않는대요.",
+                   highlight=["neither does it stop", "our generation"],
+                   tips=[tip("neither + 동사 + 주어", "'~도 그렇지 않다'예요. 앞의 부정(does not stop)을 받아 '그것도 멈추지 않는다'예요.", "neither")],
+                   point="just as A, neither B = 세상이 공간에서 멈추지 않듯, 시간(우리 세대)에서도 멈추지 않는다 — 글쓴이 생각"),
+            show("s5_claim", "글쓴이 생각이 나왔어요. 우리가 신경 쓰는 세상은 지금 우리 세대에서 끝나지 않는다는 거예요.",
+                 panel=board(SP + [("our doorstep · borders", "문 앞·국경")], TM + [("our generation, or the next", "우리 세대·다음 세대")],
+                             fresh=("our doorstep · borders", "our generation, or the next")), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "low",
+        "glosses": [g("These ideas", "이런 생각들"), g("are", "~이다"), g("common sense", "상식")],
+        "steps": [
+            show("s6_common", "이런 생각은 상식이래요. 이제부터 우리가 실제로 그렇게 산다는 예시가 이어져요.",
+                 highlight=["common sense"], button="다음 문장"),
+        ],
+    },
+    {
+        "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "high",
+        "glosses": [g("A popular proverb", "유명한 속담"), g("says", "말한다"), g("A society", "사회는"), g("grows great", "크게 성장한다"),
+                    g("when", "~할 때"), g("old men", "노인들"), g("plant trees", "나무를 심다"),
+                    g("under whose shade", "그 나무의 그늘 아래에"), g("they will never sit", "그들은 결코 앉지 못할 것이다")],
+        "steps": [
+            choice("s7_proverb",
+                   "노인들이 그 그늘에 결코 앉지 못할 나무를 심을 때 사회가 위대해진대요. 무슨 뜻일까요?",
+                   [("o0", "노인들은 쉬어야 한다는 것", False), ("o1", "자기는 누리지 못해도 뒤 세대를 위해 일할 때 사회가 커진다는 것", True),
+                    ("o2", "나무를 많이 심어야 한다는 것", False)],
+                   "나무가 자라 그늘이 생길 때쯤 노인들은 없어요. 그늘은 누가 누릴까요?",
+                   why="나무가 자라 그늘이 생길 즈음 심은 노인들은 없어요. 그늘은 뒤 세대가 누려요. 미래를 위해 일하는 모습이에요.",
+                   highlight=["plant trees", "never sit"],
+                   tips=[tip("under whose shade", "whose는 앞의 trees를 받아요. under whose shade = 그 나무들의 그늘 아래.", "whose")]),
+        ],
+    },
+    {
+        "id": 8, "text": S[7], "model_translation": KO[7], "teaching_value": "medium",
+        "glosses": [g("When", "~할 때"), g("we dispose of", "우리가 ~을 버리다"), g("radioactive waste", "방사성 폐기물"),
+                    g("we don’t say", "우리는 말하지 않는다"), g("Who cares", "누가 신경 쓰겠어"), g("if", "~하든"),
+                    g("this poisons people", "이것이 사람들을 해치다"), g("centuries from now", "지금부터 수백 년 뒤")],
+        "steps": [
+            show("s8_waste", "방사성 폐기물을 버릴 때 '수백 년 뒤 사람이 다치든 말든'이라고 하지 않는대요. 미래 사람도 신경 쓰는 예예요.",
+                 highlight=["we don’t say", "centuries from now"],
+                 tips=[tip("Who cares?", "'누가 신경 써?'라는 말로, 실제로는 '아무도 신경 안 쓴다'는 뜻이에요. 우리는 그렇게 말하지 않는다는 거예요.", "Who cares")],
+                 panel=board(SP + [("our doorstep · borders", "문 앞·국경")],
+                             TM + [("our generation, or the next", "우리 세대·다음 세대"), ("centuries from now", "수백 년 뒤")],
+                             fresh=("centuries from now",)), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 9, "text": S[8], "model_translation": KO[8], "teaching_value": "high",
+        "glosses": [g("Similarly", "비슷하게"), g("few of us", "우리 중 거의 없다"), g("who care about", "~에 신경 쓰는"),
+                    g("climate change or pollution", "기후 변화나 오염"), g("do so", "그렇게 하다"), g("solely", "오로지"),
+                    g("for the sake of", "~을 위해"), g("people alive today", "오늘 살아 있는 사람들")],
+        "steps": [
+            choice("s9_few",
+                   "기후 변화를 걱정하는 사람 중에, 오로지 오늘 사는 사람만을 위해 그러는 사람은 어떻대요?",
+                   [("o0", "거의 없다 (few)", True), ("o1", "대부분이다", False), ("o2", "조금은 있다 (a few)", False)],
+                   "few는 a 없이 쓰면 '거의 없는'이에요. a few(조금 있는)와 달라요.",
+                   why="few of us는 '우리 중 거의 없다'예요. 오늘 사람만 위해서 걱정하는 사람은 거의 없고, 미래 사람도 생각한다는 말이에요.",
+                   highlight=["few of us", "solely"],
+                   tips=[tip("few vs a few", "few = 거의 없는(부정), a few = 조금 있는(긍정)이에요.", "few")]),
+        ],
+    },
+    {
+        "id": 10, "text": S[9], "model_translation": KO[9], "teaching_value": "medium",
+        "glosses": [g("We build", "우리는 짓는다"), g("museums and parks and bridges", "박물관과 공원과 다리"),
+                    g("that we hope will last for generations", "여러 세대 동안 남기를 바라는"), g("last", "지속되다, 오래가다 (동사)"), g("we invest in", "우리는 ~에 투자한다"),
+                    g("schools and long-term scientific projects", "학교와 장기 과학 프로젝트"), g("we preserve", "우리는 보존한다"),
+                    g("paintings, traditions, languages", "그림, 전통, 언어"), g("we protect", "우리는 보호한다"), g("beautiful places", "아름다운 장소")],
+        "slashes": ["museums and parks and bridges", "for generations;", "scientific projects;", "languages;"],
+        "steps": [
+            show("s10_list", "박물관·다리, 학교·과학 프로젝트, 그림·전통, 아름다운 장소를 여러 세대 동안 남기려고 만든대요. 모두 미래를 위한 일이에요.",
+                 highlight=["last for generations"],
+                 panel=board(SP + [("our doorstep · borders", "문 앞·국경")],
+                             TM + [("our generation, or the next", "우리 세대·다음 세대"), ("centuries from now", "수백 년 뒤"),
+                                   ("last for generations", "여러 세대 동안")],
+                             fresh=("last for generations",)), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 11, "text": S[10], "model_translation": KO[10], "teaching_value": "high",
+        "glosses": [g("In many cases", "많은 경우"), g("we don’t draw clear lines", "우리는 분명한 선을 긋지 않는다"),
+                    g("between", "~ 사이에"), g("our concerns", "우리의 관심, 걱정"), g("for the present and the future", "현재와 미래에 대한"),
+                    g("both are in play", "둘 다 작용한다")],
+        "steps": [
+            choice("s11_both",
+                   "우리는 현재와 미래에 대한 걱정 사이에 선을 긋지 않는대요. 'both are in play'는 무슨 뜻일까요?",
+                   [("o0", "둘 다 상관없다", False), ("o1", "현재만 중요하다", False), ("o2", "현재와 미래 둘 다 생각한다", True)],
+                   "in play는 '작용하는, 고려되는'이에요. both는 앞의 the present와 the future예요.",
+                   why="both(현재와 미래 둘 다) are in play(작용한다), 우리는 현재와 미래를 함께 생각한다는 말이에요.",
+                   highlight=["both are in play"],
+                   tips=[tip("in play", "'작용하는, 고려되는'이에요. both are in play = 둘 다 작용한다.", "in play")]),
+            choice("s11_gist",
+                   "글 전체를 한 줄로 묶으면 어떤 말일까요?",
+                   [("o0", "지금 이 순간에 집중해야 한다", False), ("o1", "과거 경험으로 오늘의 문제를 푼다", False),
+                    ("o2", "우리는 지금 세대를 넘어 먼 미래까지 생각하며 행동한다", True)],
+                   "칠판 오른쪽을 봐요. 수천 년 뒤, 다음 세대, 수백 년 뒤, 여러 세대 동안이 계속 나왔어요.",
+                   why="공간에서 멀어도 중요하듯, 시간에서 멀어도(미래 세대) 중요해요. 나무 심기, 폐기물, 박물관 모두 미래까지 생각하며 행동하는 예예요.",
+                   panel=board(SP + [("our doorstep · borders", "문 앞·국경")],
+                               TM + [("our generation, or the next", "우리 세대·다음 세대"), ("centuries from now", "수백 년 뒤"),
+                                     ("last for generations", "여러 세대 동안")]),
+                   point="글 전체 = 우리는 시간의 한계(지금 세대)를 넘어 미래까지 생각하며 행동한다"),
+            show("s11_go", "제목은 글 전체를 한 줄로 묶는 말이에요. 이 한 줄을 다른 말로 바꾼 제목을 골라 봐요.", button="문제 풀러 갈게요"),
+        ],
+    },
+]
+
+add_basic(sentences, 2, [m("People", "사람들은"), " ", m("thousands of miles away", "수천 마일 떨어진 곳에"), " ", m("they live", "산다"), " ",
+                         m("even if", "해도"), " ", m("matter", "중요하다"), "."],
+          sv_new=sv_step("s2_basic_sv", ["People", "matter", "they", "live"], {"People": "S", "matter": "V"},
+                         {"they": "그건 even if 뒤 덩어리 안의 주어예요.", "live": "그건 even if 뒤 덩어리 안의 동사예요."},
+                         "주어는 People, 동사는 matter(중요하다)예요."),
+          meaning_after="s2_matter")
+add_basic(sentences, 3, [m("Likewise", "마찬가지로"), ", ", m("thousands of years hence", "수천 년 뒤에"), " ", m("they live", "산다"), " ",
+                         m("even if", "해도"), " ", m("they matter", "그들은 중요하다"), "."],
+          sv_new=sv_step("s3_basic_sv", ["they", "matter", "years"], {"they": "S", "matter": "V"},
+                         {"years": "그건 thousands of 뒤, 얼마나 먼 미래인지 말해 주는 말이에요."},
+                         "콤마 뒤 첫 주어는 they, 동사는 matter예요."),
+          meaning_after="s3_hence")
+add_basic(sentences, 4, [m("In both cases", "두 경우 모두"), ", ", m("mistake distance for unreality", "거리를 비현실로 착각하"), "기 ", m("it’s easy to", "쉽다"), "."],
+          match_display="In both cases, it’s easy to mistake distance for unreality.",
+          sv_new=pick("s4_basic_sv", "it’s easy to ~에서 it은 자리만 채우는 말이에요. 쉬운 게 무엇인지, 진짜 주어를 찾아볼까요?",
+                      ["it’s", "to mistake distance for unreality", "to treat the limits of what we can see", "the limits of the world"],
+                      ["to mistake distance for unreality", "to treat the limits of what we can see"], "그건 진짜 주어가 아니에요.",
+                      "it = to mistake …, to treat … 두 덩어리예요. 거리를 비현실로 착각하는 것, 보이는 것의 한계를 세상의 한계로 여기는 것이 쉽대요.",
+                      wrong_by={"it’s": "it’s의 it은 자리만 채우는 가주어예요. 뒤에서 to로 시작하는 덩어리를 찾아봐요.",
+                                "the limits of the world": "그건 as 뒤, 무엇으로 여기는지예요."},
+                      no_unknown=True, tips=[tip("가주어 it ~ 진주어 to", "it’s easy to ~처럼 it이 앞자리를 채우면, 진짜 주어는 뒤의 to 덩어리예요. 해석은 '~하는 것은 쉽다'.", "it")]),
+          meaning_after="s4_mistake")
+add_basic(sentences, 5, [m("just as", "~처럼"), " ", m("the world", "세상이"), " ", m("at our doorstep", "문 앞에서"), " ", m("does not stop", "멈추지 않는"), ", ",
+                         m("with our generation", "우리 세대에서"), " ", m("neither does it stop", "그것은 멈추지도 않는다"), "."],
+          match_display="But just as the world does not stop at our doorstep, neither does it stop with our generation.",
+          sv_id="s5_sv", meaning_ids=["s5_claim"])
+add_basic(sentences, 7, [m("A society", "사회는"), " ", m("when", "~할 때"), " ", m("old men", "노인들이"), " ", m("plant trees", "나무를 심을"), " 때 ",
+                         m("grows great", "크게 성장한다"), "."],
+          match_display="A society grows great when old men plant trees under whose shade they will never sit.",
+          sv_new=sv_step("s7_basic_sv", ["A popular proverb", "says", "A society", "grows"],
+                         {"A popular proverb": "S", "says": "V"},
+                         {"A society": "그건 따옴표 안 문장의 주어예요. 먼저 바깥 문장을 봐요.", "grows": "그건 따옴표 안 문장의 동사예요."},
+                         "바깥 문장의 주어는 A popular proverb, 동사는 says예요."),
+          meaning_after="s7_proverb")
+add_basic(sentences, 9, [m("Similarly", "비슷하게"), ", ", m("climate change or pollution", "기후 변화나 오염"), "에 ", m("who care about", "신경 쓰는"), " ",
+                         m("few of us", "우리 중 거의 없다"), " — ", m("people alive today", "오늘 살아 있는 사람들"), "만을 ", m("for the sake of", "위해서"), " 그러는 사람은."],
+          match_display="Similarly, few of us who care about climate change or pollution do so solely for the sake of people alive today.",
+          sv_new=sv_step("s9_basic_sv", ["few of us", "care about", "do so"], {"few of us": "S", "do so": "V"},
+                         {"care about": "그건 who 뒤 덩어리 안의 동사예요(신경 쓰는)."},
+                         "주어는 few of us, 동사는 do so(그렇게 하다)예요."),
+          meaning_after="s9_few")
+add_basic(sentences, 11, [m("In many cases", "많은 경우"), ", ", m("we don’t draw clear lines", "우리는 분명한 선을 긋지 않는다"), " — ",
+                          m("for the present and the future", "현재와 미래에 대한"), " ", m("our concerns", "걱정"), " 사이에."],
+          sv_new=sv_step("s11_basic_sv", ["we", "don’t draw", "clear lines", "our concerns"], {"we": "S", "don’t draw": "V", "clear lines": "O"},
+                         {"our concerns": "그건 between 뒤 덩어리예요."},
+                         "주어는 we, 동사는 don't draw, 목적어는 clear lines예요."),
+          meaning_after="s11_both")
+
+SENSES = {
+    2: [sense("if", "even if they live", "비록 ~라도", "even if + 주어·동사 (양보)")],
+    3: [sense("if", "even if they live", "비록 ~라도", "even if + 주어·동사 (양보)")],
+    4: [sense("to", "easy to mistake", "~하기 (쉽다)", "가주어 it … 진주어 to부정사"),
+        sense("for", "distance for unreality", "~로 (착각하다)", "mistake A for B = A를 B로 착각하다"),
+        sense("to", "to treat", "~하는 것", "to부정사 (to mistake와 나란히)"),
+        sense("as", "as the limits of the world", "~로 (여기다)", "treat A as B = A를 B로 여기다")],
+    5: [sense("but", "But just as", "하지만", "접속사 but (문장 앞)"), sense("as", "just as the world", "~처럼", "just as + 주어·동사")],
+    8: [sense("if", "if this poisons", "~하든 (말든)", "Who cares if ~ = ~하든 누가 신경 써")],
+    9: [sense("so", "do so", "그렇게", "do so = 앞의 동사를 받음 (신경 쓰다)"),
+        sense("for", "for the sake of", "~을 위해", "for the sake of + 명사")],
+    10: [sense("that", "bridges that we hope", "(앞 명사를 꾸밈)", "관계대명사 that (we hope는 끼어든 말)"),
+         sense("for", "last for generations", "~ 동안", "전치사 for + 기간")],
+    11: [sense("for", "concerns for the present", "~에 대한", "전치사 for + 명사")],
+}
+
+WORDS = {"distance": "거리", "people": "사람들", "thousands": "수천", "miles": "마일", "away": "떨어져", "likewise": "마찬가지로",
+         "years": "년", "hence": "지금부터 (~ 뒤에)", "both": "둘 다", "cases": "경우", "easy": "쉬운", "mistake": "착각하다",
+         "unreality": "비현실", "treat": "여기다, 다루다", "limits": "한계", "world": "세상", "doorstep": "문 앞", "country’s": "나라의",
+         "borders": "국경", "generation": "세대", "next": "다음", "ideas": "생각들", "common": "흔한", "sense": "감각 · common sense = 상식",
+         "popular": "유명한", "proverb": "속담", "society": "사회", "grows": "자라다", "great": "크게, 위대한", "old": "나이 든", "men": "사람들",
+         "plant": "심다", "trees": "나무들", "shade": "그늘", "sit": "앉다", "dispose": "버리다 · dispose of", "radioactive": "방사성의",
+         "waste": "폐기물", "cares": "신경 쓰다", "poisons": "해치다", "centuries": "수 세기", "similarly": "비슷하게", "care": "신경 쓰다",
+         "climate": "기후", "change": "변화", "pollution": "오염", "solely": "오로지", "sake": "위함 · for the sake of", "alive": "살아 있는",
+         "today": "오늘", "build": "짓다", "museums": "박물관", "parks": "공원", "bridges": "다리", "hope": "바라다", "last": "지속되다",
+         "generations": "세대", "invest": "투자하다", "schools": "학교", "long-term": "장기적인", "scientific": "과학의", "projects": "프로젝트",
+         "preserve": "보존하다", "paintings": "그림", "traditions": "전통", "languages": "언어", "protect": "보호하다", "beautiful": "아름다운",
+         "places": "장소", "draw": "긋다", "clear": "분명한", "lines": "선", "concerns": "관심, 걱정", "present": "현재", "future": "미래",
+         "play": "작용 · in play = 작용하는", "live": "살다", "never": "결코 ~ 않다", "few": "거의 없는", "matter": "중요하다",
+         "time": "시간", "space": "공간", "stop": "멈추다", "it’s": "그것은 ~이다"}
+
+STORIES = [
+    (3, [sc("문장 1~3", "📍", "distance in time = distance in space", "멀리 사는 사람도, 수천 년 뒤 사람도 중요해요")]),
+    (5, [sc("문장 4~5", "🌍", "not stop with our generation", "멀다고 진짜가 아닌 게 아니에요 — 세상은 우리 세대에서 멈추지 않아요")]),
+    (9, [sc("문장 6~8", "🌳", "plant trees · radioactive waste", "앉지도 못할 그늘의 나무를 심고, 수백 년 뒤 사람을 생각하며 폐기물을 버려요"),
+         sc("문장 9", "🌱", "few … solely for today", "기후를 걱정하는 사람도 오늘 사람만 위해서 그러진 않아요")]),
+]
+
+OPTIONS = [
+    ("1", "How to Be Present: Discover the Benefits of Here and Now", ["Present", "Here and Now"], "현재에 충실하는 법: 지금 여기의 이점", False),
+    ("2", "The Power of Time Management: The Key to Success", ["Time Management", "Success"], "시간 관리의 힘: 성공의 열쇠", False),
+    ("3", "Why Is Green Infrastructure Eventually Cost-Effective?", ["Green Infrastructure", "Cost-Effective"], "친환경 기반 시설은 왜 결국 비용 효율적일까?", False),
+    ("4", "Solving Present-Day Problems from Past Experiences", ["Present-Day Problems", "Past Experiences"], "과거 경험으로 오늘의 문제 해결하기", False),
+    ("5", "How We Act Beyond the Bounds of Time", ["Beyond the Bounds of Time"], "우리는 어떻게 시간의 경계를 넘어 행동하는가", True),
+]
+exam = {
+    "question": "다음 글의 제목으로 가장 적절한 것은?",
+    "sentence": 1, "analysis_first": True, "wrong_rate": 50.3, "wrong_rank": 9,
+    "glosses": [g("present", "현재에 충실한, 현재"), g("benefits", "이점"), g("management", "관리"), g("key", "열쇠"), g("success", "성공"),
+                g("infrastructure", "기반 시설"), g("eventually", "결국"), g("cost-effective", "비용 효율적인"), g("solving", "해결하기"),
+                g("present-day", "오늘날의"), g("past experiences", "과거 경험"), g("act", "행동하다"), g("beyond", "~을 넘어"), g("bounds", "경계, 한계")],
+    "options": [{"id": o[0], "label": o[1], "keywords": o[2], "ko": o[3], **({"correct": True} if o[4] else {})} for o in OPTIONS],
+    "brief": exam_brief(
+        "글 전체 한 줄(지금 세대를 넘어 미래까지 생각하며 행동한다)을 떠올리며 제목을 골라 봐요.",
+        "정답이에요! 멀리 있어도 중요하듯 먼 미래의 사람도 중요해요. 나무 심기, 폐기물, 박물관처럼 우리는 시간의 경계를 넘어 행동해요.",
+        "정답은 ⑤예요. 우리는 지금 세대를 넘어, 시간의 경계 너머까지 생각하며 행동한다는 글이에요.",
+        {"1": "'지금 여기'에 집중하라는 건 반대예요. 글은 지금 세대 너머 미래까지 생각한대요.",
+         "2": "시간 관리나 성공 이야기는 글에 없어요. time이 겹쳐서 헷갈리기 쉬워요.",
+         "3": "친환경 시설의 비용 이야기는 글에 없어요. 기후 변화는 예시 중 하나예요.",
+         "4": "글은 과거 경험이 아니라 미래 세대를 생각하는 이야기예요."},
+        {"4": review(19.8,
+                     "④는 '과거 경험으로 오늘의 문제를 해결하기'예요. 그런데 글에 나온 시간은 과거가 아니라 미래예요(thousands of years hence, the next generation, centuries from now). 그리고 오늘의 문제만이 아니라 현재와 미래 사이에 선을 긋지 않는다고 했어요.",
+                     "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+                     [("present·future가 나와서 시간 이야기로만 골랐어요", ["time_direction"],
+                       "알려 줘서 고마워요. 시간 이야기라도 방향(과거/미래)을 봐야 해요. 앞으로 시간 단서를 칠판에 모아 보여 줄게요."),
+                      ("박물관·전통 보존이 과거 이야기 같았어요", ["example_reading"],
+                       "알려 줘서 고마워요. 박물관과 전통은 '여러 세대 동안 남기를 바라는' 것, 미래를 위한 예였어요. 앞으로 예시가 무엇을 보여 주는지 짚어 줄게요."),
+                      ("둘 다요", ["time_direction", "example_reading"], "알려 줘서 고마워요. 앞으로 시간 방향과 예시의 뜻을 같이 짚어 줄게요.")],
+                     panel=rows(("글의 시간", "years hence · the next · centuries from now · for generations", "모두 미래", "hl"),
+                                ("④", "Past Experiences", "과거 → 방향이 다르다", "hl2")),
+                     rank_word="가장 많이 고른")}),
+}
+
+lesson = base_lesson(
+    ID, source="2024년 3월 고3 전국연합학력평가 영어 24번 (제목, 2점)",
+    topic="제목 푸는 법: 문장마다 핵심어와 뜻 → 글쓴이 생각 → 글 전체를 한 줄로 → 그 한 줄을 바꿔 쓴 제목",
+    method={"type": "title", "labels": ["핵심어 찾기", "글쓴이 생각 잡기"], "intro_times": 3},
+    images={"topic": {"src": topic_svg("topic-distance-time.svg", ("Far away", "멀리 사는 사람"), "=", ("Far future", "먼 미래의 사람"),
+                                       "아직 태어나지 않은 사람도 중요할까?", "2024년 3월 24번 도입 칠판"),
+                      "alt": "칠판: Far away(멀리 사는 사람) = Far future(먼 미래의 사람)", "kind": "drawing"}},
+    intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
+            "brief": {"say": "수백 년 뒤에 태어날 사람도 우리에게 중요할까요? 이번 글은 시간 속의 거리를 공간 속의 거리에 견줘요."}},
+           {"id": "method1", "type": "say", "button": "좋아요",
+            "brief": {"say": "제목 문제는 글 전체를 한 줄로 묶는 말을 찾는 거예요. 문장마다 핵심어를 찾고 글쓴이 생각을 잡아 볼게요."}}],
+    exam=exam,
+    key_words={"passage": [g("matter", "중요하다"), g("likewise", "마찬가지로"), g("hence", "지금부터 (~ 뒤에)"), g("mistake A for B", "A를 B로 착각하다"),
+                           g("unreality", "비현실"), g("doorstep", "문 앞"), g("generation", "세대"), g("common sense", "상식"),
+                           g("proverb", "속담"), g("shade", "그늘"), g("dispose of", "~을 버리다"), g("solely", "오로지"),
+                           g("for the sake of", "~을 위해"), g("preserve", "보존하다"), g("in play", "작용하는")],
+               "options": [g("present", "현재에 충실한"), g("infrastructure", "기반 시설"), g("cost-effective", "비용 효율적인"),
+                           g("bounds", "경계, 한계")]},
+    sentences=sentences)
+
+finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="제목 푸는 법",
+       chunks={"People": "사람들", "matter": "중요하다", "they": "그들", "live": "살다", "years": "년", "it’s": "그것은 ~이다", "easy": "쉬운",
+               "distance": "거리", "unreality": "비현실", "the world": "세상", "does not stop": "멈추지 않는다", "our doorstep": "우리 집 문 앞",
+               "it": "그것(세상)", "neither does it stop": "그것도 멈추지 않는다", "neither does": "~도 아니다", "stop": "멈추다", "our generation": "우리 세대", "A popular proverb": "유명한 속담",
+               "says": "말한다", "A society": "사회", "grows": "자라다", "few of us": "우리 중 거의 없다", "care about": "~에 신경 쓰다",
+               "do so": "그렇게 하다", "we": "우리는", "don’t draw": "긋지 않는다", "clear lines": "분명한 선", "our concerns": "우리의 걱정",
+               "thousands of miles away": "수천 마일 떨어진 곳에", "they live": "그들이 산다", "even if": "비록 ~라도",
+               "Likewise": "마찬가지로", "thousands of years hence": "수천 년 뒤에", "they matter": "그들은 중요하다", "In both cases": "두 경우 모두",
+               "mistake distance for unreality": "거리를 비현실로 착각하다", "it’s easy to": "~하기 쉽다", "just as": "~처럼",
+               "at our doorstep": "문 앞에서", "with our generation": "우리 세대에서", "when": "~할 때", "old men": "노인들",
+               "plant trees": "나무를 심다", "grows great": "크게 성장한다", "Similarly": "비슷하게", "climate change or pollution": "기후 변화나 오염",
+               "who care about": "~에 신경 쓰는", "people alive today": "오늘 살아 있는 사람들", "for the sake of": "~을 위해",
+               "In many cases": "많은 경우", "we don’t draw clear lines": "분명한 선을 긋지 않는다", "for the present and the future": "현재와 미래에 대한"})

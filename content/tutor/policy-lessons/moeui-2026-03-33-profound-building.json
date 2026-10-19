@@ -257,6 +257,22 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "spatial choreography",
+          "ko": "공간의 안무"
+        },
+        {
+          "en": "forms of spatial choreography",
+          "ko": "공간 안무의 형태들"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "All architectural structures",
+          "ko": "모든 건축 구조물"
+        },
+        {
           "en": "architectural structures",
           "ko": "건축 구조물"
         },
@@ -333,6 +349,118 @@
           ]
         },
         {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "All architectural structures",
+            "are",
+            "forms of spatial choreography",
+            "space",
+            "facilitates"
+          ],
+          "answers": [
+            "All architectural structures",
+            "are",
+            "forms of spatial choreography"
+          ],
+          "roles": {
+            "All architectural structures": "S",
+            "are": "V",
+            "forms of spatial choreography": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "space": "그건 세미콜론(;) 뒤 문장의 주어예요. 앞에서 찾아봐요.",
+              "facilitates": "그건 세미콜론(;) 뒤 문장의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 All architectural structures, 동사는 are, 보어는 forms of spatial choreography예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "All architectural structures",
+            "are",
+            "forms of",
+            "spatial choreography",
+            "guides action"
+          ],
+          "answers": [
+            "All architectural structures",
+            "guides action",
+            "spatial choreography",
+            "forms of",
+            "are"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "All architectural structures",
+                "ko": "모든 건축 구조물은"
+              },
+              " ",
+              {
+                "en": "guides action",
+                "ko": "행동을 이끄는"
+              },
+              " ",
+              {
+                "en": "spatial choreography",
+                "ko": "공간의 안무"
+              },
+              "의 ",
+              {
+                "en": "forms of",
+                "ko": "형태들"
+              },
+              {
+                "en": "are",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "모든 건축 구조물은 행동을 이끄는 공간의 안무(춤 동작 짜기) 같은 거래요."
+          },
+          "method": 0,
+          "display": "All architectural structures are forms of spatial choreography that guides action.",
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
+            }
+          ]
+        },
+        {
           "id": "s1_what",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -370,7 +498,22 @@
           "method": 1,
           "highlight": [
             "guides action"
-          ]
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s1_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "모든 건축 구조물은 행동을 이끄는 공간의 안무(춤 동작 짜기) 같은 거래요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "s1_pairs",
@@ -417,6 +560,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
           "en": "This choreography",
           "ko": "이 연출"
         },
@@ -454,6 +601,128 @@
         }
       ],
       "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "This choreography",
+            "predetermines",
+            "patterns of movement and behavior",
+            "it",
+            "guides"
+          ],
+          "answers": [
+            "This choreography",
+            "predetermines",
+            "patterns of movement and behavior",
+            "it",
+            "guides"
+          ],
+          "roles": {
+            "This choreography": "S",
+            "predetermines": "V",
+            "patterns of movement and behavior": "O",
+            "it": "S",
+            "guides": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "but 앞은 주어 This choreography, 동사 predetermines, 목적어 patterns of movement and behavior예요. but 뒤는 주어 it, 동사 guides예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic"
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "This choreography",
+            "predetermines",
+            "patterns of movement and behavior",
+            "but it also",
+            "guides",
+            "emotions and feelings"
+          ],
+          "answers": [
+            "This choreography",
+            "patterns of movement and behavior",
+            "predetermines",
+            "but it also",
+            "emotions and feelings",
+            "guides"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "This choreography",
+                "ko": "이 안무는"
+              },
+              " ",
+              {
+                "en": "patterns of movement and behavior",
+                "ko": "움직임과 행동의 패턴"
+              },
+              "을 ",
+              {
+                "en": "predetermines",
+                "ko": "미리 정한다"
+              },
+              ", ",
+              {
+                "en": "but it also",
+                "ko": "그러나 그것은 또한"
+              },
+              " ",
+              {
+                "en": "emotions and feelings",
+                "ko": "감정과 느낌"
+              },
+              "도 ",
+              {
+                "en": "guides",
+                "ko": "이끈다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "이 안무(공간)는 움직임과 행동의 패턴을 미리 정하고, 감정과 느낌 같은 경험도 이끈대요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 안무(공간)는 움직임과 행동의 패턴을 미리 정하고, 감정과 느낌 같은 경험도 이끈대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
+        },
         {
           "id": "s2_body",
           "type": "choice",
@@ -612,6 +881,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "this intuitive architectural scripting",
+          "ko": "이 직관적인 건축 대본"
+        },
+        {
           "en": "A sensitive and empathic designer",
           "ko": "세심하고 공감할 줄 아는 설계자"
         },
@@ -650,6 +923,94 @@
       ],
       "steps": [
         {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A sensitive and empathic designer",
+            "intuits",
+            "human behavior and desire",
+            "this intuitive architectural scripting",
+            "resonates with"
+          ],
+          "answers": [
+            "A sensitive and empathic designer",
+            "intuits",
+            "human behavior and desire",
+            "this intuitive architectural scripting",
+            "resonates with"
+          ],
+          "roles": {
+            "A sensitive and empathic designer": "S",
+            "intuits": "V",
+            "human behavior and desire": "O",
+            "this intuitive architectural scripting": "S",
+            "resonates with": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "and 앞은 주어 A sensitive and empathic designer, 동사 intuits, 목적어 human behavior and desire예요. and 뒤는 주어 this intuitive architectural scripting, 동사 resonates with예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic"
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "A sensitive and empathic designer",
+            "intuits",
+            "human behavior and desire"
+          ],
+          "answers": [
+            "A sensitive and empathic designer",
+            "human behavior and desire",
+            "intuits"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A sensitive and empathic designer",
+                "ko": "섬세하고 공감하는 설계자는"
+              },
+              " ",
+              {
+                "en": "human behavior and desire",
+                "ko": "사람의 행동과 욕구"
+              },
+              "를 ",
+              {
+                "en": "intuits",
+                "ko": "직관으로 알아챈다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "A sensitive and empathic designer intuits human behavior and desire."
+        },
+        {
           "id": "s3_designer",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -687,7 +1048,8 @@
           "method": 1,
           "highlight": [
             "intuits human behavior and desire"
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s3_fit",
@@ -742,6 +1104,10 @@
       "teaching_value": "medium",
       "glosses": [
         {
+          "en": "the non-existent house",
+          "ko": "아직 없는 집"
+        },
+        {
           "en": "While designing a house",
           "ko": "집을 설계하는 동안"
         },
@@ -771,6 +1137,114 @@
         }
       ],
       "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "While designing a house",
+            "the designer",
+            "lives, uses and feels",
+            "the non-existent house"
+          ],
+          "answers": [
+            "the designer",
+            "lives, uses and feels",
+            "the non-existent house"
+          ],
+          "roles": {
+            "the designer": "S",
+            "lives, uses and feels": "V",
+            "the non-existent house": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "While designing a house": "그건 While(~하는 동안) 덩어리예요. 콤마 뒤에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the designer, 동사는 lives, uses and feels(살아 보고, 써 보고, 느껴 본다), 목적어는 the non-existent house예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "faded": [
+            "While designing a house,"
+          ],
+          "tips": [
+            {
+              "label": "on behalf of",
+              "mark": "on behalf of",
+              "text": "'~을 대신해서, ~을 위해'예요."
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "the designer",
+            "lives, uses and feels",
+            "the non-existent house",
+            "in his imagination"
+          ],
+          "answers": [
+            "the designer",
+            "in his imagination",
+            "the non-existent house",
+            "lives, uses and feels"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "the designer",
+                "ko": "설계자는"
+              },
+              " ",
+              {
+                "en": "in his imagination",
+                "ko": "상상 속에서"
+              },
+              " ",
+              {
+                "en": "the non-existent house",
+                "ko": "아직 없는 집"
+              },
+              "을 ",
+              {
+                "en": "lives, uses and feels",
+                "ko": "살아 보고, 써 보고, 느껴 본다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "집을 설계하는 동안, 설계자는 아직 없는 집을 미래에 살 사람 대신 상상 속에서 살아 보고, 써 보고, 느껴 봐요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "on behalf of",
+              "mark": "on behalf of",
+              "text": "'~을 대신해서, ~을 위해'예요."
+            }
+          ]
+        },
         {
           "id": "s4_behalf",
           "type": "choice",
@@ -821,6 +1295,20 @@
               "text": "'~을 대신해서, ~을 위해'예요."
             }
           ]
+        },
+        {
+          "id": "s4_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "집을 설계하는 동안, 설계자는 아직 없는 집을 미래에 살 사람 대신 상상 속에서 살아 보고, 써 보고, 느껴 봐요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         }
       ]
     },
@@ -865,6 +1353,111 @@
       ],
       "steps": [
         {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A correctly placed window",
+            "is located",
+            "the occupant",
+            "wishes to"
+          ],
+          "answers": [
+            "A correctly placed window",
+            "is located"
+          ],
+          "roles": {
+            "A correctly placed window": "S",
+            "is located": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the occupant": "그건 where 뒤 덩어리 안의 주어예요.",
+              "wishes to": "그건 where 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 A correctly placed window, 동사는 is located(놓여 있다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic"
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "A correctly placed window",
+            "is located",
+            "exactly where",
+            "the occupant",
+            "wishes to",
+            "look out into the garden"
+          ],
+          "answers": [
+            "A correctly placed window",
+            "the occupant",
+            "look out into the garden",
+            "wishes to",
+            "exactly where",
+            "is located"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A correctly placed window",
+                "ko": "올바르게 놓인 창문은"
+              },
+              " ",
+              {
+                "en": "the occupant",
+                "ko": "사는 사람이"
+              },
+              " ",
+              {
+                "en": "look out into the garden",
+                "ko": "정원을 내다보고"
+              },
+              " ",
+              {
+                "en": "wishes to",
+                "ko": "싶어 하는"
+              },
+              " ",
+              {
+                "en": "exactly where",
+                "ko": "바로 그곳에"
+              },
+              " ",
+              {
+                "en": "is located",
+                "ko": "있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "올바르게 놓인 창문은 사는 사람이 정원을 내다보고 싶은 바로 그곳, 햇빛이 필요한 곳에 있대요."
+          },
+          "method": 0,
+          "display": "A correctly placed window is located exactly where the occupant wishes to look out into the garden."
+        },
+        {
           "id": "s5_where",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -903,6 +1496,20 @@
           "highlight": [
             "where the occupant wishes"
           ]
+        },
+        {
+          "id": "s5_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "올바르게 놓인 창문은 사는 사람이 정원을 내다보고 싶은 바로 그곳, 햇빛이 필요한 곳에 있대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         }
       ]
     },
@@ -934,6 +1541,103 @@
         }
       ],
       "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The stairway",
+            "is located",
+            "the dweller",
+            "wishes to"
+          ],
+          "answers": [
+            "The stairway",
+            "is located"
+          ],
+          "roles": {
+            "The stairway": "S",
+            "is located": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the dweller": "그건 where 뒤 덩어리 안의 주어예요.",
+              "wishes to": "그건 where 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The stairway, 동사는 is located예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic"
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "The stairway",
+            "is located",
+            "the dweller",
+            "wishes to",
+            "enter the floor above or below"
+          ],
+          "answers": [
+            "The stairway",
+            "the dweller",
+            "enter the floor above or below",
+            "wishes to",
+            "is located"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The stairway",
+                "ko": "계단은"
+              },
+              " ",
+              {
+                "en": "the dweller",
+                "ko": "사는 사람이"
+              },
+              " ",
+              {
+                "en": "enter the floor above or below",
+                "ko": "위층이나 아래층으로 들어가고"
+              },
+              " ",
+              {
+                "en": "wishes to",
+                "ko": "싶어 하는"
+              },
+              " 곳에 ",
+              {
+                "en": "is located",
+                "ko": "있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "계단은 사는 사람이 위층이나 아래층으로 가고 싶은 곳에 있대요."
+          },
+          "method": 0
+        },
         {
           "id": "s6_same",
           "type": "choice",
@@ -973,6 +1677,20 @@
           "highlight": [
             "where the dweller wishes"
           ]
+        },
+        {
+          "id": "s6_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "계단은 사는 사람이 위층이나 아래층으로 가고 싶은 곳에 있대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "story_6",
@@ -1027,6 +1745,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
           "en": "Successful architecture",
           "ko": "성공적인 건축"
         },
@@ -1056,6 +1778,120 @@
         }
       ],
       "steps": [
+        {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Successful architecture",
+            "does not need",
+            "manuals or signage",
+            "it",
+            "reveals"
+          ],
+          "answers": [
+            "Successful architecture",
+            "does not need",
+            "manuals or signage"
+          ],
+          "roles": {
+            "Successful architecture": "S",
+            "does not need": "V",
+            "manuals or signage": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "it": "그건 as(~ 때문에) 뒤 덩어리 안의 주어예요.",
+              "reveals": "그건 as(~ 때문에) 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Successful architecture, 동사는 does not need, 목적어는 manuals or signage예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "tips": [
+            {
+              "label": "as",
+              "mark": "as",
+              "text": "as는 '~처럼, ~할 때, ~이기 때문에' 등 뜻이 많아요. 콤마 뒤에서 이유를 덧붙이면 '~이기 때문에'예요."
+            }
+          ]
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "Successful architecture",
+            "does not need",
+            "manuals or signage",
+            "reveals",
+            "in a wordless manner"
+          ],
+          "answers": [
+            "Successful architecture",
+            "manuals or signage",
+            "does not need",
+            "in a wordless manner",
+            "reveals"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Successful architecture",
+                "ko": "성공적인 건축은"
+              },
+              " ",
+              {
+                "en": "manuals or signage",
+                "ko": "설명서나 표지판"
+              },
+              "이 ",
+              {
+                "en": "does not need",
+                "ko": "필요 없다"
+              },
+              " — ",
+              {
+                "en": "in a wordless manner",
+                "ko": "말없이"
+              },
+              " ",
+              {
+                "en": "reveals",
+                "ko": "드러내기"
+              },
+              " 때문이다."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "성공적인 건축은 말없이도 구조와 쓰임을 드러내서, 설명서나 표지판이 필요 없대요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "as",
+              "mark": "as",
+              "text": "as는 '~처럼, ~할 때, ~이기 때문에' 등 뜻이 많아요. 콤마 뒤에서 이유를 덧붙이면 '~이기 때문에'예요."
+            }
+          ]
+        },
         {
           "id": "s7_why",
           "type": "choice",
@@ -1102,6 +1938,20 @@
               "text": "as는 '~처럼, ~할 때, ~이기 때문에' 등 뜻이 많아요. 콤마 뒤에서 이유를 덧붙이면 '~이기 때문에'예요."
             }
           ]
+        },
+        {
+          "id": "s7_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "성공적인 건축은 말없이도 구조와 쓰임을 드러내서, 설명서나 표지판이 필요 없대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         }
       ]
     },

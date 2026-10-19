@@ -1,0 +1,436 @@
+"""2024년 3월 고3 33번 레슨 + 대사를 만든다 (빈칸 추론, 3점). 오답률 56.1% · Top 7.
+
+    python3 scripts/lessons/gen_moeui_2024_03_33.py   (→ npm run policy:copy stamp <id> → npm run build)
+
+틀: docs/tutor/templates/blank.md (빈칸이 가운데). 정답 ③ reacting emotionally to what is outside your control.
+많이 고른 오답 ⑤ 16.7%(상황이 통제 밖이라고 합리화 — out of control 단어가 겹쳐서), ② 14.6%.
+열쇠: warned against(−, 하지 말라) → 빈칸은 하지 말아야 할 것. 두 그룹 — 할 수 있는 것(within your power) ↔ 할 수 없는 것
+(things you cannot, the rain, that person, the weather). 할 수 없는 것에 화내는(감정) 건 어리석다.
+해설지 해석과 대조함. shun, the Stoics는 시험지 아래 *로 풀어 준 말(핵심어 아님).
+"""
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+                      base_lesson, exam_brief, review, finish)
+
+ID = "moeui-2024-03-33-stoic-control"
+
+BLANK = "In particular, the Stoics warned against ________."
+S = [
+    "Epictetus wrote, “A man’s master is he who is able to confirm or remove whatever that man seeks or shuns.”",
+    "If you depend on no one except yourself to satisfy your desires, you will have no master other than yourself and you will be free.",
+    "Stoic philosophy was about that―taking charge of your life, learning to work on those things that are within your power to "
+    "accomplish or change and not to waste energy on things you cannot.",
+    BLANK,
+    "Often, Epictetus argued, it’s not our circumstances that get us down but rather the judgments we make about them.",
+    "Consider anger.",
+    "We don’t get angry at the rain if it spoils our picnic.",
+    "That would be silly because we can’t do anything about the rain.",
+    "But we often do get angry if someone mistreats us.",
+    "We usually can’t control or change that person any more than we can stop the rain, so that is equally silly.",
+    "More generally, it is just as pointless to tie our feelings of well-being to altering another individual’s behavior as it is to tie them to the weather.",
+    "Epictetus wrote, “If it concerns anything not in our control, be prepared to say that it is nothing to you.”",
+]
+KO = [
+    "Epictetus는 '사람의 주인은 그 사람이 추구하거나 피하는 것 무엇이든지를 확인하거나 제거할 수 있는 사람이다.'라고 썼다.",
+    "만일 여러분이 자신의 욕망을 만족시키기 위해 여러분 자신 외에 누구에게도 의존하지 않는다면, 여러분은 여러분 자신 외에 주인이 없을 것이고 여러분은 자유로울 것이다.",
+    "스토아 철학은 그것에 관한 것이었다. 여러분의 삶을 책임지고, 성취하거나 변화하기 위해 여러분의 힘 안에 있는 것들에 노력하는 것과 여러분이 할 수 없는 것들에 에너지를 낭비하지 않는 것을 배우는 것.",
+    "특히, 스토아학파는 ________에 대해 경고했다.",
+    "흔히, Epictetus는 우리를 낙담시키는 것은 우리의 상황이 아니라 오히려 그것들에 대해 우리가 내리는 판단이라고 주장했다.",
+    "분노를 생각해 보라.",
+    "우리는 비가 우리의 소풍을 망친다 해도, 그것에 화가 나지 않는다.",
+    "그것은 어리석은 짓인데, 우리가 비에 대해 아무것도 할 수 없기 때문이다.",
+    "하지만 우리는 누군가가 우리를 나쁘게 대한다면 흔히 정말 화가 난다.",
+    "우리가 비를 멈출 수 없는 것처럼 우리는 대개 그 사람을 통제하거나 바꿀 수도 없으므로, 그것은 마찬가지로 어리석다.",
+    "더 일반적으로, 우리의 안녕에 관한 감정을 다른 개인의 행동을 바꾸는 것에 연결하는 것은, 그것들을 날씨에 연결하는 것만큼이나 무의미하다.",
+    "Epictetus는 '만약 그것이 우리의 통제 안에 있지 않은 것과 관련이 있다면, 그것은 당신에게 아무것도 아니라고 말할 준비를 하라.'라고 썼다.",
+]
+
+CAN = "왼쪽 · 할 수 있는 것"
+CANT = "오른쪽 · 할 수 없는 것"
+
+
+def board(left, right, fresh=(), sort=None):
+    return groups("내 힘 안 / 밖", "할 수 있는 것 (within your power)", left, "할 수 없는 것", right, fresh=fresh, between="↔",
+                  sort={"words": sort, "left": CAN, "right": CANT} if sort else None)
+
+
+L3 = [("within your power", "내 힘 안의 일")]
+R3 = [("things you cannot", "할 수 없는 일")]
+
+sentences = [
+    {
+        "id": 1, "text": S[0], "model_translation": KO[0], "teaching_value": "medium",
+        "glosses": [g("Epictetus", "에픽테토스 · 고대 그리스의 스토아 철학자"), g("wrote", "썼다"), g("A man’s master", "사람의 주인"),
+                    g("he who", "~하는 사람"), g("is able to", "~할 수 있다"), g("confirm or remove", "확인하거나(주거나) 없애다"),
+                    g("whatever that man seeks or shuns", "그 사람이 원하거나 피하는 무엇이든"),
+                    g("In particular", "특히"), g("the Stoics", "스토아학파"), g("warned against", "~하지 말라고 경고했다")],
+        "steps": [
+            show("s1_passage", "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+                 button="네", before_read=True, show_passage=[BLANK], method=0),
+            show("s1_where",
+                 "warned against는 '~하지 말라고 경고했다'예요. 스토아학파가 무엇을 하지 말라고 했는지 생각하며 처음부터 읽어 봐요.",
+                 button="처음부터 읽어 볼게요", before_read=True, display=BLANK, tag="빈칸 문장", method=0,
+                 highlight=["warned against", "________"], signs=[{"text": "warned against", "sign": "−"}],
+                 tips=[tip("빈칸 문제 요령", "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요.")]),
+            show("s1_master", "내가 원하거나 피하는 걸 주고 빼앗을 수 있는 사람이 내 '주인'이래요. 내 마음이 남에게 달려 있으면 그 사람이 주인이 되는 거예요.",
+                 highlight=["master", "confirm or remove"], button="다음 문장"),
+        ],
+    },
+    {
+        "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "high",
+        "glosses": [g("If", "만약 ~라면"), g("you depend on no one", "아무에게도 기대지 않는다"), g("except yourself", "나 자신 말고는"),
+                    g("to satisfy your desires", "욕구를 채우려고"), g("you will have no master", "주인이 없을 것이다"),
+                    g("other than yourself", "나 자신 말고는"), g("you will be free", "자유로울 것이다")],
+        "slashes": ["except yourself", "your desires,", "other than yourself"],
+        "steps": [
+            choice("s2_free",
+                   "언제 자유로워진대요?",
+                   [("o0", "다른 사람에게 많이 도움받을 때", False), ("o1", "욕구를 채울 때 나 말고 아무에게도 기대지 않을 때", True),
+                    ("o2", "좋은 주인을 만날 때", False)],
+                   "If 뒤 'depend on no one except yourself'를 봐요. no one except yourself는 '나 말고는 아무도'예요.",
+                   why="'If you depend on no one except yourself', 나 말고는 아무에게도 기대지 않으면 나 말고 주인이 없어서 자유롭대요.",
+                   highlight=["depend on no one", "free"],
+                   tips=[tip("no one except ~", "'~ 말고는 아무도 (않다)'예요. depend on no one except yourself = 나 자신에게만 기대다.", "except")]),
+        ],
+    },
+    {
+        "id": 3, "text": S[2], "model_translation": KO[2], "teaching_value": "high",
+        "glosses": [g("Stoic philosophy", "스토아 철학"), g("was", "~였다"), g("about that", "그것에 관한"),
+                    g("taking charge of your life", "삶을 스스로 책임지는 것"), g("learning to work on", "~에 힘쓰는 법을 배우는 것"),
+                    g("those things", "그런 일들"), g("within your power", "내 힘 안에 있는"), g("to accomplish or change", "이루거나 바꿀"),
+                    g("not to waste energy", "에너지를 낭비하지 않는 것"), g("on things you cannot", "할 수 없는 일에")],
+        "slashes": ["about that―", "your life,", "within your power", "accomplish or change"],
+        "steps": [
+            sv("s3_sv", ["Stoic philosophy", "was", "about that", "your life", "those things"],
+               {"Stoic philosophy": "S", "was": "V"},
+               {"about that": "그건 동사 뒤에서 '무엇에 관한' 것인지 말해 줘요.", "your life": "그건 대시(―) 뒤, taking charge of의 대상이에요.",
+                "those things": "그건 대시 뒤, work on의 대상이에요."},
+               "주어는 Stoic philosophy, 동사는 was예요. 대시(―) 뒤가 that(그것)이 무엇인지 풀어 줘요.",
+               ask="주어(S)와 동사(V)를 찾아볼까요?"),
+            choice("s3_cant",
+                   "대시(―) 뒤를 봐요. 스토아 철학은 '할 수 없는 일(things you cannot)'에 대해 뭐라고 했나요?",
+                   [("o0", "더 열심히 노력하라", False), ("o1", "남에게 맡기라", False), ("o2", "에너지를 낭비하지 말라", True)],
+                   "'not to waste energy on things you cannot'을 봐요. waste는 '낭비하다'예요.",
+                   why="'not to waste energy on things you cannot', 할 수 없는 일에는 에너지를 낭비하지 말래요. 내 힘 안의 일에만 힘쓰고요.",
+                   highlight=["within your power", "not to waste energy"],
+                   panel=board(L3, R3, fresh=("within your power", "things you cannot")),
+                   point="스토아 철학 = 내 힘 안의 일(within your power)에 힘쓰고, 할 수 없는 일(things you cannot)에 에너지를 낭비하지 않기"),
+        ],
+    },
+    {
+        "id": 4, "text": BLANK, "model_translation": KO[3], "teaching_value": "high",
+        "glosses": [g("In particular", "특히"), g("the Stoics", "스토아학파"), g("warned against", "~하지 말라고 경고했다")],
+        "steps": [
+            choice("s4_side",
+                   "warned against(~하지 말라고 경고했다) 뒤의 빈칸은 스토아학파가 좋게 본 것일까요, 나쁘게 본 것일까요?",
+                   [("o0", "좋게 본 것 (+)", False), ("o1", "나쁘게 본 것 (−)", True)],
+                   "warn against는 '~하지 말라고 경고하다'예요.",
+                   why="warn against는 '~하지 말라고 경고하다'예요. 빈칸은 하지 말아야 할 일, 나쁘게 본 것(−)이에요.",
+                   signs=[{"text": "warned against", "sign": "−"}], highlight=["warned against"],
+                   tips=[tip("warn against", "'~하지 말라고 경고하다'예요. 뒤에는 하지 말아야 할 일이 와요.", "warned against")]),
+            choice("s4_which",
+                   "In particular(특히)라고 했어요. 앞 문장에서 하지 말라고 한 건 칠판의 어느 쪽 일이었나요?",
+                   [("o0", CAN, False), ("o1", CANT, True)],
+                   "앞 문장 'not to waste energy on things you cannot'을 떠올려 봐요.",
+                   why="앞 문장에서 할 수 없는 일에 에너지를 낭비하지 말라고 했어요. 빈칸은 그중에서도 특히 하지 말아야 할 일이에요.",
+                   panel=board(L3, R3), point="빈칸(warned against, −) = 할 수 없는 일 쪽에서 특히 하지 말아야 할 것"),
+            show("s4_more", "빈칸 뒤에 예가 이어져요. 할 수 없는 일에 무엇을 하지 말라는 건지 확인하며 읽어 봐요.", button="다음 문장"),
+        ],
+    },
+    {
+        "id": 5, "text": S[4], "model_translation": KO[4], "teaching_value": "high",
+        "glosses": [g("Often", "흔히"), g("Epictetus argued", "에픽테토스는 주장했다"), g("it’s not our circumstances", "우리의 상황이 아니다"),
+                    g("get us down", "우리를 우울하게 하다"), g("but rather", "오히려 ~이다"), g("the judgments", "판단"),
+                    g("we make about them", "우리가 그것들에 대해 내리는")],
+        "steps": [
+            choice("s5_judg",
+                   "Epictetus는 우리를 우울하게 하는 게 무엇이라고 했나요?",
+                   [("o0", "상황 자체", False), ("o1", "다른 사람의 말", False), ("o2", "상황에 대해 우리가 내리는 판단", True)],
+                   "it's not A but rather B that ~ = '~하는 건 A가 아니라 B다'예요. but rather 뒤를 봐요.",
+                   why="'it's not our circumstances … but rather the judgments we make about them', 상황이 아니라 그에 대한 우리의 판단이 우리를 우울하게 한대요.",
+                   highlight=["not our circumstances", "the judgments"],
+                   tips=[tip("it's not A but B that ~", "'~하는 건 A가 아니라 B다'예요. 강조하고 싶은 B가 진짜 답이에요.", "not our circumstances"),
+                         tip("get ~ down", "'~을 우울하게 하다, 낙담시키다'예요.", "get us down")]),
+        ],
+    },
+    {
+        "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "low",
+        "glosses": [g("Consider", "생각해 보라"), g("anger", "분노")],
+        "steps": [
+            show("s6_anger", "예로 분노(anger)를 들어요. 감정 이야기예요.", highlight=["anger"], button="다음 문장"),
+        ],
+    },
+    {
+        "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "medium",
+        "glosses": [g("We don’t get angry", "우리는 화내지 않는다"), g("at the rain", "비에"), g("if", "~해도, ~하면"),
+                    g("it spoils our picnic", "그것(비)이 소풍을 망치다")],
+        "steps": [
+            show("s7_rain", "비가 소풍을 망쳐도 우리는 비에 화내지 않는대요.", highlight=["don’t get angry", "the rain"], button="다음 문장"),
+        ],
+    },
+    {
+        "id": 8, "text": S[7], "model_translation": KO[7], "teaching_value": "high",
+        "glosses": [g("That would be silly", "그건 어리석은 일일 것이다"), g("because", "~ 때문에"),
+                    g("we can’t do anything about the rain", "비에 대해 우리가 할 수 있는 게 없다")],
+        "steps": [
+            choice("s8_silly",
+                   "비에 화내는 게 왜 어리석대요?",
+                   [("o0", "비에 대해 우리가 할 수 있는 게 없어서", True), ("o1", "비는 금방 그쳐서", False), ("o2", "소풍은 또 갈 수 있어서", False)],
+                   "because 뒤 'we can't do anything about the rain'을 봐요.",
+                   why="'because we can't do anything about the rain', 비는 우리가 어떻게 할 수 없는 일이라서 화내 봤자 어리석대요.",
+                   highlight=["can’t do anything"],
+                   panel=board(L3, R3 + [("the rain", "비")], fresh=("the rain",))),
+        ],
+    },
+    {
+        "id": 9, "text": S[8], "model_translation": KO[8], "teaching_value": "medium",
+        "glosses": [g("But", "하지만"), g("we often do get angry", "우리는 흔히 정말 화를 낸다"), g("if", "~하면"),
+                    g("someone mistreats us", "누군가 우리를 함부로 대하다")],
+        "steps": [
+            show("s9_person", "But — 그런데 누가 나를 함부로 대하면 우리는 정말 화를 낸대요.",
+                 highlight=["do get angry", "mistreats"],
+                 tips=[tip("강조의 do", "동사 앞의 do는 '정말'이라는 강조예요. do get angry = 정말 화를 낸다.", "do get")], button="다음 문장"),
+        ],
+    },
+    {
+        "id": 10, "text": S[9], "model_translation": KO[9], "teaching_value": "high",
+        "glosses": [g("We usually can’t control or change that person", "우리는 보통 그 사람을 통제하거나 바꿀 수 없다"),
+                    g("any more than", "~할 수 없는 것처럼"), g("we can stop the rain", "우리가 비를 멈출 수 있다"),
+                    g("so", "그래서"), g("that is equally silly", "그것도 똑같이 어리석다")],
+        "steps": [
+            choice("s10_same",
+                   "그 사람에게 화내는 것도 왜 똑같이(equally) 어리석대요?",
+                   [("o0", "그 사람이 나쁜 사람이 아니라서", False), ("o1", "비처럼 그 사람도 우리가 통제하거나 바꿀 수 없어서", True),
+                    ("o2", "화를 내면 건강에 나빠서", False)],
+                   "not ~ any more than은 '~할 수 없는 것처럼 ~도 못 한다'예요. 비와 그 사람을 나란히 놓아 봐요.",
+                   why="'can't control or change that person any more than we can stop the rain', 비를 못 멈추듯 그 사람도 못 바꿔요. 그래서 똑같이 어리석대요.",
+                   highlight=["can’t control or change that person", "any more than"],
+                   panel=board(L3, R3 + [("the rain", "비"), ("that person", "그 사람")], fresh=("that person",)),
+                   tips=[tip("not A any more than B", "'B가 아닌 것처럼 A도 아니다'예요. can't change him any more than stop the rain = 비를 못 멈추듯 그도 못 바꾼다.", "any more than")]),
+        ],
+    },
+    {
+        "id": 11, "text": S[10], "model_translation": KO[10], "teaching_value": "high",
+        "glosses": [g("More generally", "더 일반적으로"), g("it is just as pointless", "똑같이 의미 없다"),
+                    g("to tie our feelings of well-being", "우리의 행복한 기분을 묶는 것"),
+                    g("to altering another individual’s behavior", "다른 사람의 행동을 바꾸는 데"),
+                    g("as it is", "~만큼"), g("to tie them to the weather", "그것들을 날씨에 묶는 것")],
+        "slashes": ["just as pointless", "feelings of well-being", "another individual’s behavior"],
+        "steps": [
+            show("s11_tie",
+                 "더 넓게 말하면, 내 기분을 남의 행동을 바꾸는 데 묶는 건 날씨에 묶는 것만큼 의미 없대요. 둘 다 할 수 없는 일이에요.",
+                 highlight=["just as pointless", "another individual’s behavior", "the weather"],
+                 panel=board(L3, R3 + [("the rain", "비"), ("that person", "그 사람"), ("another individual’s behavior", "남의 행동"), ("the weather", "날씨")],
+                             fresh=("another individual’s behavior", "the weather")),
+                 tips=[tip("just as A as B", "'B만큼 A하다'예요. just as pointless … as it is to tie them to the weather = 날씨에 묶는 것만큼 의미 없다.", "just as")]),
+        ],
+    },
+    {
+        "id": 12, "text": S[11], "model_translation": KO[11], "teaching_value": "high",
+        "glosses": [g("Epictetus wrote", "에픽테토스는 썼다"), g("If it concerns anything", "그게 무엇에 관한 것이든"),
+                    g("not in our control", "우리 통제 안에 있지 않은"), g("be prepared to say", "말할 준비를 하라"),
+                    g("it is nothing to you", "그건 너에게 아무것도 아니다")],
+        "steps": [
+            choice("s12_nothing",
+                   "Epictetus는 통제 밖의 일에 대해 어떻게 말할 준비를 하라고 했나요?",
+                   [("o0", "그 일을 꼭 바꾸겠다고", False), ("o1", "그 일은 나와 상관없다고", True), ("o2", "남에게 대신 해 달라고", False)],
+                   "'be prepared to say that it is nothing to you'를 봐요. nothing to you는 '너에게 아무것도 아닌'이에요.",
+                   why="'it is nothing to you', 통제 밖의 일은 나에게 아무것도 아니라고, 마음 쓰지 말라는 말이에요.",
+                   highlight=["not in our control", "nothing to you"]),
+            show("s12_go", "빈칸은 스토아학파가 경고한(−) 것이에요. 칠판 오른쪽 일들과, 화(anger) 이야기를 떠올리며 바꿔 쓴 보기를 찾아봐요.",
+                 button="문제 풀러 갈게요",
+                 panel=board(L3, R3 + [("the rain", "비"), ("that person", "그 사람"), ("another individual’s behavior", "남의 행동"), ("the weather", "날씨")])),
+        ],
+    },
+]
+
+add_basic(sentences, 1, [m("A man’s master", "사람의 주인은"), " ", m("whatever that man seeks or shuns", "그 사람이 원하거나 피하는 무엇이든"), "을 ",
+                         m("confirm or remove", "주거나 없앨"), " 수 있는 사람이다."],
+          match_display="A man’s master is he who is able to confirm or remove whatever that man seeks or shuns.",
+          sv_new=sv_step("s1_basic_sv", ["Epictetus", "wrote", "A man’s master", "is"],
+                         {"Epictetus": "S", "wrote": "V"},
+                         {"A man’s master": "그건 따옴표 안 문장의 주어예요. 먼저 바깥 문장을 봐요.", "is": "그건 따옴표 안 문장의 동사예요."},
+                         "바깥 문장의 주어는 Epictetus, 동사는 wrote예요. 따옴표 안이 그가 쓴 말이에요."),
+          meaning_ids=["s1_master"])
+add_basic(sentences, 2, [m("If", "만약"), " ", m("except yourself", "나 자신 말고는"), " ", m("you depend on no one", "아무에게도 기대지 않으면"), ", ",
+                         m("you will be free", "자유로울 것이다"), "."],
+          match_display="If you depend on no one except yourself, you will be free.",
+          sv_new=sv_step("s2_basic_sv", ["you", "depend on", "you", "will have", "no master"],
+                         {"you": "S", "will have": "V", "no master": "O"}, {},
+                         "If 덩어리 뒤, 콤마 다음이 메인 문장이에요. 주어 you, 동사 will have, 목적어 no master예요.",
+                         ask="콤마 뒤 메인 문장에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?"),
+          meaning_after="s2_free")
+add_basic(sentences, 5, [m("it’s not our circumstances", "우리의 상황이 아니라"), " ", m("but rather", "오히려"), " ", m("the judgments", "판단"), "이 우리를 ",
+                         m("get us down", "우울하게 한다"), "."],
+          sv_new=sv_step("s5_basic_sv", ["Epictetus", "argued", "our circumstances", "the judgments"],
+                         {"Epictetus": "S", "argued": "V"},
+                         {"our circumstances": "그건 콤마 뒤 문장(주장한 내용) 안의 말이에요.", "the judgments": "그건 주장한 내용 안의 말이에요."},
+                         "콤마 사이에 끼어든 Epictetus argued가 '누가 주장했는지'예요. 주어 Epictetus, 동사 argued예요."),
+          meaning_after="s5_judg")
+add_basic(sentences, 7, [m("We don’t get angry", "우리는 화내지 않는다"), " ", m("at the rain", "비에"), " — ", m("it spoils our picnic", "비가 소풍을 망쳐도"), "."],
+          sv_new=sv_step("s7_basic_sv", ["We", "don’t get", "angry", "the rain", "it", "spoils"],
+                         {"We": "S", "don’t get": "V", "angry": "C"},
+                         {"the rain": "그건 at 뒤 덩어리예요.", "it": "그건 if 뒤 덩어리 안의 주어예요.", "spoils": "그건 if 뒤 덩어리 안의 동사예요."},
+                         "주어는 We, 동사는 don't get, 보어는 angry예요(화가 나지 않는다)."),
+          meaning_ids=["s7_rain"])
+add_basic(sentences, 8, [m("That would be silly", "그건 어리석은 일일 것이다"), " ", m("because", "왜냐하면"), " ",
+                         m("we can’t do anything about the rain", "비에 대해 우리가 할 수 있는 게 없으니까"), "."],
+          sv_new=sv_step("s8_basic_sv", ["That", "would be", "silly", "we", "can’t do"],
+                         {"That": "S", "would be": "V", "silly": "C"},
+                         {"we": "그건 because 뒤 덩어리 안의 주어예요.", "can’t do": "그건 because 뒤 덩어리 안의 동사예요."},
+                         "주어는 That(비에 화내는 것), 동사는 would be, 보어는 silly예요."),
+          meaning_after="s8_silly")
+add_basic(sentences, 9, [m("But", "하지만"), " ", m("someone mistreats us", "누군가 우리를 함부로 대하면"), " ", m("we often do get angry", "우리는 흔히 정말 화를 낸다"), "."],
+          sv_new=sv_step("s9_basic_sv", ["we", "do get", "angry", "someone", "mistreats"],
+                         {"we": "S", "do get": "V", "angry": "C"},
+                         {"someone": "그건 if 뒤 덩어리 안의 주어예요.", "mistreats": "그건 if 뒤 덩어리 안의 동사예요."},
+                         "주어는 we, 동사는 (often) do get, 보어는 angry예요. do는 '정말'이라는 강조예요."),
+          meaning_ids=["s9_person"])
+add_basic(sentences, 10, [m("We usually can’t control or change that person", "우리는 보통 그 사람을 통제하거나 바꿀 수 없다"), " — ",
+                          m("we can stop the rain", "비를 멈출 수 있는"), " 게 아닌 ", m("any more than", "것처럼"), ". ",
+                          m("so", "그래서"), " ", m("that is equally silly", "그것도 똑같이 어리석다"), "."],
+          sv_new=sv_step("s10_basic_sv", ["We", "can’t control or change", "that person", "the rain"],
+                         {"We": "S", "can’t control or change": "V", "that person": "O"},
+                         {"the rain": "그건 any more than 뒤, 비교하는 덩어리 안의 말이에요."},
+                         "주어는 We, 동사는 can't control or change, 목적어는 that person이에요."),
+          meaning_after="s10_same")
+add_basic(sentences, 12, [m("If it concerns anything", "무엇에 관한 것이든"), " ", m("not in our control", "우리 통제 안에 있지 않다면"), ", ",
+                          m("it is nothing to you", "그건 너에게 아무것도 아니라고"), " ", m("be prepared to say", "말할 준비를 하라"), "."],
+          match_display="If it concerns anything not in our control, be prepared to say that it is nothing to you.",
+          sv_new=sv_step("s12_basic_sv", ["Epictetus", "wrote", "it", "concerns", "be prepared"],
+                         {"Epictetus": "S", "wrote": "V"},
+                         {"it": "그건 따옴표 안, If 덩어리의 주어예요.", "concerns": "그건 따옴표 안, If 덩어리의 동사예요.",
+                          "be prepared": "그건 따옴표 안 명령문의 동사예요. 먼저 바깥 문장을 봐요."},
+                         "바깥 문장은 주어 Epictetus, 동사 wrote예요."),
+          meaning_after="s12_nothing")
+
+SENSES = {
+    1: [sense("to", "is able to confirm", "~할 (수 있는)", "be able + to부정사"),
+        sense("that", "that man", "그", "지시형용사 that + 명사")],
+    2: [sense("if", "If you depend", "만약 ~라면", "접속사 if + 주어·동사 (조건)"),
+        sense("to", "to satisfy", "~하기 위해", "to부정사 (목적)")],
+    3: [sense("that", "about that", "그것", "지시대명사 that (뒤 대시가 풀어 줌)"),
+        sense("to", "learning to work", "~하는 (법)", "learn + to부정사"),
+        sense("that", "things that are", "(앞 명사를 꾸밈)", "관계대명사 that + 동사"),
+        sense("to", "within your power to accomplish", "~할 (힘)", "명사 + to부정사"),
+        sense("to", "not to waste", "~하지 않는 (것)", "not + to부정사 (learning에 이어짐)")],
+    5: [sense("that", "circumstances that get us down", "~하는 것은 (강조)", "it is not A but B that ~ (강조 구문)"),
+        sense("but", "but rather", "~이 아니라 (오히려)", "not A but (rather) B")],
+    7: [sense("if", "if it spoils", "~하더라도, ~하면", "접속사 if + 주어·동사")],
+    8: [sense("that", "That would be silly", "그것", "지시대명사 that (앞 문장 내용)")],
+    9: [sense("but", "But we often", "하지만", "접속사 but (문장 앞)"),
+        sense("if", "if someone mistreats", "만약 ~하면", "접속사 if + 주어·동사")],
+    10: [sense("that", "that person", "그", "지시형용사 that + 명사"),
+         sense("so", "so that is", "그래서", "접속사 so (결과)"),
+         sense("that", "that is equally silly", "그것", "지시대명사 that (앞 내용)")],
+    11: [sense("as", "just as pointless", "~만큼 (똑같이)", "as + 형용사 + as (원급 비교의 앞 as)"),
+         sense("to", "to tie our feelings", "~하는 것", "가주어 it … 진주어 to부정사"),
+         sense("to", "to altering", "~에 (묶다)", "tie A to B = A를 B에 묶다 (to 뒤 -ing)"),
+         sense("as", "as it is", "~만큼", "원급 비교의 뒤 as"),
+         sense("to", "to tie them", "~하는 것", "to부정사 (비교 대상)"),
+         sense("to", "to the weather", "~에 (묶다)", "tie A to B")],
+    12: [sense("if", "If it concerns", "만약 ~라면", "접속사 if + 주어·동사"),
+         sense("to", "prepared to say", "~할 (준비)", "be prepared + to부정사"),
+         sense("that", "say that it is", "~라고", "명사절 that (say that …)"),
+         sense("to", "nothing to you", "~에게", "전치사 to + 사람")],
+}
+
+WORDS = {"man’s": "사람의", "man": "사람", "master": "주인", "able": "~할 수 있는", "confirm": "확인하다, 주다", "remove": "없애다",
+         "whatever": "무엇이든", "seeks": "원하다, 추구하다", "shuns": "피하다", "particular": "특정한 · in particular = 특히",
+         "stoics": "스토아학파", "warned": "경고했다", "against": "~에 맞서 · warn against = ~하지 말라고 경고하다",
+         "depend": "의지하다", "except": "~ 말고는", "yourself": "너 자신", "satisfy": "채우다", "desires": "욕구", "master.": "주인",
+         "free": "자유로운", "stoic": "스토아학파의", "philosophy": "철학", "taking": "가지는", "charge": "책임 · take charge of = ~을 책임지다",
+         "learning": "배우는 것", "work": "힘쓰다", "power": "힘", "accomplish": "이루다", "change": "바꾸다", "waste": "낭비하다",
+         "energy": "에너지", "often": "흔히", "argued": "주장했다", "circumstances": "상황", "rather": "오히려", "judgments": "판단",
+         "consider": "생각해 보다", "anger": "분노", "angry": "화난", "rain": "비", "spoils": "망치다", "picnic": "소풍",
+         "silly": "어리석은", "anything": "무엇이든", "mistreats": "함부로 대하다", "usually": "보통", "control": "통제하다, 통제",
+         "stop": "멈추다", "equally": "똑같이", "generally": "일반적으로", "pointless": "의미 없는", "tie": "묶다", "feelings": "감정, 기분",
+         "well-being": "행복, 안녕", "altering": "바꾸는 것", "individual’s": "개인의", "behavior": "행동", "weather": "날씨",
+         "concerns": "~에 관한 것이다", "prepared": "준비된", "nothing": "아무것도 아닌 것", "wrote": "썼다", "don’t": "~하지 않다",
+         "can’t": "~할 수 없다", "would": "~일 것이다", "someone": "누군가", "person": "사람", "get": "~하게 되다", "us": "우리를",
+         "will": "~할 것이다", "within": "~ 안에", "life": "삶", "things": "일들", "said": "말했다"}
+
+STORIES = [
+    (3, [sc("문장 1~2", "🔓", "no master other than yourself", "내 욕구를 남에게 기대지 않으면 내가 내 주인이라 자유로워요"),
+         sc("문장 3", "⚖️", "within your power ↔ things you cannot", "할 수 있는 일엔 힘쓰고, 할 수 없는 일엔 에너지를 낭비하지 말아요")]),
+    (8, [sc("빈칸 문장", "⚠️", "warned against ____", "스토아학파는 특히 ____을 경고했어요"),
+         sc("문장 5~8", "🌧️", "judgments · anger · the rain", "우리를 힘들게 하는 건 상황보다 판단 — 비에는 화내지 않죠, 어쩔 수 없으니까")]),
+    (11, [sc("문장 9~11", "😠", "that person · the weather", "남이 날 함부로 대해도, 그 사람도 비처럼 바꿀 수 없어요 — 화내는 건 똑같이 어리석어요")]),
+]
+
+OPTIONS = [
+    ("1", "making an argument without enough evidence", ["argument", "without enough evidence"], "충분한 증거 없이 주장하는 것", False),
+    ("2", "listening to others’ opinions without judgment", ["others’ opinions", "without judgment"], "판단 없이 남의 의견을 듣는 것", False),
+    ("3", "reacting emotionally to what is outside your control", ["reacting emotionally", "outside your control"], "통제 밖의 일에 감정적으로 반응하는 것", True),
+    ("4", "pretending to have comprehended when you have not", ["pretending", "comprehended"], "이해하지 못했는데 이해한 척하는 것", False),
+    ("5", "rationalizing to yourself that the situation is out of control", ["rationalizing", "out of control"], "상황이 통제 밖이라고 스스로 합리화하는 것", False),
+]
+exam = {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________", "sentence": 4, "analysis_first": True, "wrong_rate": 56.1, "wrong_rank": 7,
+    "glosses": [g("argument", "주장"), g("evidence", "증거"), g("opinions", "의견"), g("judgment", "판단"), g("reacting", "반응하는 것"),
+                g("emotionally", "감정적으로"), g("outside your control", "통제 밖에 있는"), g("pretending", "~인 척하는 것"),
+                g("comprehended", "이해했다"), g("rationalizing", "합리화하는 것"), g("out of control", "통제할 수 없는")],
+    "options": [{"id": o[0], "label": o[1], "keywords": o[2], "ko": o[3], **({"correct": True} if o[4] else {})} for o in OPTIONS],
+    "brief": exam_brief(
+        "warned against(−) 뒤, 칠판 오른쪽 일과 화(anger) 이야기를 떠올리며 골라 봐요.",
+        "정답이에요! 스토아학파는 할 수 없는 일(비, 그 사람, 날씨)에 화내는 것, 즉 통제 밖의 일에 감정적으로 반응하는 걸 경고했어요.",
+        "정답은 ③이에요. 비나 남의 행동처럼 통제할 수 없는 일에 화내는(감정적으로 반응하는) 건 어리석다고 했어요.",
+        {"1": "증거 없이 주장하는 이야기는 글에 없어요. 글은 통제 밖의 일에 대한 감정 이야기예요.",
+         "2": "남의 의견을 듣는 이야기는 글에 없어요. 남이 나를 함부로 대할 때 화내지 말라는 거예요.",
+         "4": "이해한 척하는 이야기는 글에 없어요.",
+         "5": "out of control이 겹쳐서 헷갈렸죠. 하지만 통제 밖이라는 걸 받아들이는 건 스토아학파가 권한 거예요. 경고한 건 그런 일에 화내는 거예요."},
+        {"5": review(16.7,
+                     "⑤에 out of control이 있어서 글과 겹쳐 보여요. 하지만 스토아학파는 통제 밖의 일을 '나와 상관없다'고 받아들이라고 했어요. 경고한 건 통제 밖이라고 여기는 게 아니라, 그런 일에 화내는(감정적으로 반응하는) 거예요.",
+                     "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+                     [("out of control이 글과 겹쳐서 골랐어요", ["word_overlap"],
+                       "알려 줘서 고마워요. 겹치는 단어보다 그 단어로 무엇을 한다는 건지(합리화한다 / 화낸다)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
+                      ("anger 예시를 빈칸과 못 이었어요", ["example_link"],
+                       "알려 줘서 고마워요. 빈칸 뒤 Consider anger부터가 빈칸의 예예요. 앞으로 예시를 빈칸과 이어서 보게 할게요."),
+                      ("둘 다요", ["word_overlap", "example_link"], "알려 줘서 고마워요. 앞으로 겹치는 단어와 예시를 같이 짚어 줄게요.")],
+                     panel=rows(("권한 것", "it is nothing to you", "통제 밖의 일은 나와 상관없다고 받아들이기", "hl"),
+                                ("경고한 것", "get angry at the rain / that person", "통제 밖의 일에 화내기 (감정)", "hl2")))}),
+}
+
+lesson = base_lesson(
+    ID, source="2024년 3월 고3 전국연합학력평가 영어 33번 (빈칸 추론, 3점)",
+    topic="빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",
+    method={"type": "blank", "labels": ["빈칸 문장 먼저 보기", "요지 잡기"], "intro_times": 3},
+    images={"topic": {"src": topic_svg("topic-stoic.svg", ("In my control", "내 힘 안"), "↔", ("Out of control", "내 힘 밖"),
+                                       "어쩔 수 없는 일에 화를 내는 건 어떨까?", "2024년 3월 33번 도입 칠판"),
+                      "alt": "칠판: In my control(내 힘 안) ↔ Out of control(내 힘 밖)", "kind": "drawing"}},
+    intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
+            "brief": {"say": "비가 와서 소풍을 망치면 비에게 화가 나나요? 이번 글은 스토아 철학이 말하는 마음 다스리기를 다뤄요."}},
+           {"id": "method1", "type": "say", "button": "좋아요",
+            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+    exam=exam,
+    key_words={"passage": [g("master", "주인"), g("confirm", "확인하다"), g("depend on", "~에 의지하다"), g("satisfy", "채우다, 만족시키다"),
+                           g("take charge of", "~을 책임지다"), g("accomplish", "이루다"), g("warn against", "~하지 말라고 경고하다"),
+                           g("circumstance", "상황"), g("get ~ down", "~을 우울하게 하다"), g("judgment", "판단"), g("spoil", "망치다"),
+                           g("mistreat", "함부로 대하다"), g("equally", "똑같이"), g("pointless", "의미 없는"), g("well-being", "행복, 안녕"),
+                           g("alter", "바꾸다"), g("concern", "~에 관한 것이다")],
+               "options": [g("evidence", "증거"), g("react", "반응하다"), g("comprehend", "이해하다"), g("rationalize", "합리화하다")]},
+    sentences=sentences)
+
+finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
+       chunks={"Epictetus": "에픽테토스", "wrote": "썼다", "A man’s master": "사람의 주인", "is": "~이다", "you": "너는",
+               "depend on": "~에 기대다", "will have": "가질 것이다", "no master": "주인이 없음", "Stoic philosophy": "스토아 철학",
+               "was": "~였다", "about that": "그것에 관한", "your life": "너의 삶", "those things": "그런 일들", "argued": "주장했다",
+               "our circumstances": "우리의 상황", "the judgments": "판단", "We": "우리는", "don’t get": "~하게 되지 않다", "angry": "화난",
+               "the rain": "비", "it": "그것", "spoils": "망치다", "That": "그것", "would be": "~일 것이다", "silly": "어리석은", "we": "우리는",
+               "can’t do": "할 수 없다", "do get": "정말 ~하게 되다", "someone": "누군가", "mistreats": "함부로 대하다",
+               "can’t control or change": "통제하거나 바꿀 수 없다", "that person": "그 사람", "concerns": "~에 관한 것이다",
+               "be prepared": "준비하라", "whatever that man seeks or shuns": "그 사람이 원하거나 피하는 무엇이든", "confirm or remove": "주거나 없애다",
+               "If": "만약 ~라면", "except yourself": "나 자신 말고는", "you depend on no one": "아무에게도 기대지 않는다",
+               "you will be free": "자유로울 것이다", "it’s not our circumstances": "우리의 상황이 아니다", "but rather": "오히려 ~이다",
+               "get us down": "우리를 우울하게 하다", "We don’t get angry": "우리는 화내지 않는다", "at the rain": "비에",
+               "it spoils our picnic": "그것이 소풍을 망치다", "That would be silly": "그건 어리석은 일일 것이다", "because": "~ 때문에",
+               "we can’t do anything about the rain": "비에 대해 할 수 있는 게 없다", "But": "하지만", "someone mistreats us": "누군가 우리를 함부로 대하다",
+               "we often do get angry": "우리는 흔히 정말 화를 낸다", "We usually can’t control or change that person": "우리는 보통 그 사람을 바꿀 수 없다",
+               "we can stop the rain": "우리가 비를 멈출 수 있다", "any more than": "~할 수 없는 것처럼", "so": "그래서",
+               "that is equally silly": "그것도 똑같이 어리석다", "If it concerns anything": "그게 무엇에 관한 것이든",
+               "not in our control": "우리 통제 안에 있지 않은", "it is nothing to you": "그건 너에게 아무것도 아니다",
+               "be prepared to say": "말할 준비를 하라"})

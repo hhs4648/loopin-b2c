@@ -1,0 +1,2339 @@
+{
+  "id": "moeui-2024-03-39-perspective-painting",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 39번 (주어진 문장 넣기, 3점)",
+  "brief": {
+    "topic": "문장 넣기 푸는 법: 주어진 문장의 단서 → 앞뒤 예측 → ①~⑤ 흐름이 끊기는 곳",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "sentence_insertion",
+    "labels": [
+      "주어진 문장 단서 찾기",
+      "앞에 올 내용 예측하기",
+      "흐름 끊기는 곳 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-perspective.svg",
+      "alt": "칠판: Perspective(원근법) ↔ Earlier art(예전 그림)",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/insert-method.svg",
+      "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "그림은 눈에 보이는 대로만 그려야 할까요? 이번 글은 원근법 그림과 예전 그림을 견줘요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾을 거예요. 칠판 순서대로 해 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은? [3점]",
+    "underline": [
+      "(①)",
+      "(②)",
+      "(③)",
+      "(④)",
+      "(⑤)"
+    ],
+    "numbers_only": true,
+    "passage_keywords": [
+      "This",
+      "earlier figurative art",
+      "knew",
+      "looked",
+      "in perspective",
+      "how the world looks",
+      "These pictures",
+      "do not represent",
+      "also less informative",
+      "go together"
+    ],
+    "sentence": 1,
+    "analysis_first": true,
+    "wrong_rate": 78.1,
+    "wrong_rank": 1,
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "A painting in perspective … 앞",
+        "keywords": [],
+        "ko": "원근법 그림이 작게 그린다 뒤"
+      },
+      {
+        "id": "2",
+        "label": "These pictures are beautiful … 앞",
+        "keywords": [],
+        "ko": "원근법 그림은 보이는 모습을 나타낸다 뒤",
+        "correct": true
+      },
+      {
+        "id": "3",
+        "label": "They are also less informative … 앞",
+        "keywords": [],
+        "ko": "이 그림들은 보는 대로 나타내지 않는다 뒤"
+      },
+      {
+        "id": "4",
+        "label": "The fact that perspective … 앞",
+        "keywords": [],
+        "ko": "그것들은 정보를 덜 준다 뒤"
+      },
+      {
+        "id": "5",
+        "label": "Not only do we see … 앞",
+        "keywords": [],
+        "ko": "원근법과 공간 정보는 함께 간다 뒤"
+      }
+    ],
+    "brief": {
+      "ask": "주어진 문장의 This와 earlier figurative art를 떠올리며 들어갈 곳을 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 원근법 그림은 보이는 모습을 나타낸다(①문장) → 이것은 아는 것까지 그린 예전 구상화와 대조된다(주어진 문장) → 이 그림들(예전 그림)은 보는 대로 나타내지 않는다, 순서예요.",
+      "final_wrong": "정답은 ②예요. These pictures가 가리킬 예전 구상화를 주어진 문장이 먼저 꺼내 줘야 해요.",
+      "option_feedback": {
+        "1": "① 앞은 아직 원근법 그림의 생김새 이야기예요. This가 가리킬 '보이는 모습 그대로'가 아직 안 나왔어요.",
+        "3": "③에 넣으면 ② 뒤 These pictures가 원근법 그림을 가리키게 돼요. 그런데 원근법 그림은 보는 대로 나타낸다고 했으니 말이 안 맞아요.",
+        "4": "④에 넣으면 This가 '정보를 덜 준다'를 가리켜요. 그 앞의 These pictures는 이미 예전 그림 이야기라, 예전 그림을 다시 꺼낼 필요가 없어요.",
+        "5": "⑤ 앞은 원근법과 공간 정보가 함께 간다는 결론이에요. 예전 그림을 새로 꺼낼 자리가 아니에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 27.9%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "④에 넣으면 This가 바로 앞 '예전 그림은 정보도 덜 준다'를 가리켜요. 그런데 ② 뒤 These pictures부터 이미 예전 그림 이야기였어요. 예전 그림을 처음 꺼내는 주어진 문장은 These pictures보다 앞, ②에 와야 해요.",
+          "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "These pictures가 원근법 그림인 줄 알았어요",
+              "skills": [
+                "these_refers"
+              ],
+              "reply": "알려 줘서 고마워요. These pictures는 '보는 대로 나타내지 않는' 그림이라 예전 그림이에요. 앞으로 비슷한 문장이 나오면 These가 가리키는 걸 먼저 짚어 줄게요."
+            },
+            {
+              "label": "less informative와 대조라 이어지는 줄 알았어요",
+              "skills": [
+                "contrast_guess"
+              ],
+              "reply": "알려 줘서 고마워요. 대조 느낌만으로 정하지 말고, 가리키는 말(This, These)이 무엇을 받는지 확인해야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "these_refers",
+                "contrast_guess"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 These가 가리키는 대상부터 같이 짚어 볼게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "② 뒤",
+                "text": "These pictures … do not represent scenes as we see",
+                "ko": "보는 대로 나타내지 않는 그림 = 예전 그림",
+                "tone": "hl"
+              },
+              {
+                "label": "주어진 문장",
+                "text": "This ↔ earlier figurative art",
+                "ko": "예전 그림을 처음 꺼낸다",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 25.8%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요.",
+          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "These pictures가 원근법 그림인 줄 알았어요",
+              "skills": [
+                "these_refers"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 These·They가 가리키는 대상을 먼저 짚어 줄게요."
+            },
+            {
+              "label": "but 뒤 내용을 놓쳤어요",
+              "skills": [
+                "but_after"
+              ],
+              "reply": "알려 줘서 고마워요. but 뒤 'do not represent scenes as we might see them'이 열쇠였어요. 앞으로 but 뒤를 강조해서 알려 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "these_refers",
+                "but_after"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 but 뒤를 같이 짚어 줄게요."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "stand in contrast to",
+        "ko": "~와 대조를 이루다"
+      },
+      {
+        "en": "figurative",
+        "ko": "구상의"
+      },
+      {
+        "en": "represent",
+        "ko": "나타내다"
+      },
+      {
+        "en": "perspective",
+        "ko": "원근법, 시점"
+      },
+      {
+        "en": "diminish",
+        "ko": "작아지다, 줄어들다"
+      },
+      {
+        "en": "focal point",
+        "ko": "초점"
+      },
+      {
+        "en": "particular",
+        "ko": "특정한"
+      },
+      {
+        "en": "in one's own right",
+        "ko": "그 자체로"
+      },
+      {
+        "en": "informative",
+        "ko": "정보를 주는"
+      },
+      {
+        "en": "layout",
+        "ko": "배치"
+      },
+      {
+        "en": "spatial",
+        "ko": "공간의"
+      },
+      {
+        "en": "reveal",
+        "ko": "드러내다"
+      },
+      {
+        "en": "egocentric",
+        "ko": "자기중심적인"
+      },
+      {
+        "en": "extract",
+        "ko": "추출하다"
+      },
+      {
+        "en": "relative to",
+        "ko": "~에 비해, ~에 상대적인"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 문장",
+      "text": "This stands in contrast to earlier figurative art, which had been as focused on representing what the artist knew about the objects and the space he or she was painting as on how they looked.",
+      "teaching_value": "high",
+      "model_translation": "이것은 그것들이 어떻게 '보였는지'만큼이나 화가들이 그리고 있던 사물과 공간에 대해 그들이 '알고 있던' 것을 나타내는 데 초점이 맞추어져 있었던 초기 구상화와는 대조적이다.",
+      "glosses": [
+        {
+          "en": "This",
+          "ko": "이것"
+        },
+        {
+          "en": "stands in contrast to",
+          "ko": "~와 대조를 이루다"
+        },
+        {
+          "en": "earlier figurative art",
+          "ko": "초기(예전) 구상화"
+        },
+        {
+          "en": "figurative",
+          "ko": "구상의 · 사물을 알아볼 수 있게 그리는"
+        },
+        {
+          "en": "had been as focused on",
+          "ko": "~만큼 ~에 초점을 맞춰 왔다"
+        },
+        {
+          "en": "representing",
+          "ko": "나타내는 것"
+        },
+        {
+          "en": "what the artist knew",
+          "ko": "화가가 알고 있던 것"
+        },
+        {
+          "en": "the artist",
+          "ko": "화가"
+        },
+        {
+          "en": "knew",
+          "ko": "알았다"
+        },
+        {
+          "en": "the objects and the space",
+          "ko": "사물과 공간"
+        },
+        {
+          "en": "he or she was painting",
+          "ko": "그(그녀)가 그리고 있던"
+        },
+        {
+          "en": "how they looked",
+          "ko": "그것들이 어떻게 보였는지"
+        },
+        {
+          "en": "stands",
+          "ko": "서 있다 · stand in contrast to = ~와 대조되다"
+        },
+        {
+          "en": "contrast",
+          "ko": "대조"
+        },
+        {
+          "en": "earlier",
+          "ko": "초기의, 예전의"
+        },
+        {
+          "en": "focused",
+          "ko": "초점이 맞춰진"
+        },
+        {
+          "en": "artist",
+          "ko": "화가, 예술가"
+        },
+        {
+          "en": "space",
+          "ko": "공간"
+        },
+        {
+          "en": "painting",
+          "ko": "그리는, 그림"
+        },
+        {
+          "en": "looked",
+          "ko": "보였다"
+        }
+      ],
+      "emphasis": [
+        "earlier figurative art"
+      ],
+      "steps": [
+        {
+          "id": "g_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "This",
+            "stands",
+            "earlier figurative art",
+            "the artist",
+            "knew"
+          ],
+          "answers": [
+            "This",
+            "stands",
+            "earlier figurative art"
+          ],
+          "roles": {
+            "This": "S",
+            "stands": "V",
+            "earlier figurative art": "전목"
+          },
+          "brief": {
+            "ask": "콤마 앞에서 주어(S), 동사(V), 그리고 to 뒤의 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the artist": "그건 which 뒤 덩어리 안의 말이에요. 콤마 앞에서 찾아봐요.",
+              "knew": "그건 what 덩어리 안의 동사예요. 콤마 앞에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 This, 동사는 stands (in contrast to), to 뒤 목적어는 earlier figurative art예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "g_this",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "This(이것)는 earlier figurative art(예전 구상화)와 대조된대요. 그럼 This는 어떤 그림일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "stands in contrast to는 '~와 대조를 이룬다'예요. 대조라면 서로 달라야 해요.",
+              "stands in contrast to는 '~와 대조를 이룬다'예요. 대조라면 서로 달라야 해요."
+            ],
+            "explain": "This는 예전 구상화와 '대조'된다고 했어요. 예전 그림 자체일 수는 없고, 그것과 다른 그림이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "This는 예전 구상화와 '대조'된다고 했어요. 예전 그림 자체일 수는 없고, 그것과 다른 그림이에요.",
+              "o2": "This는 예전 구상화와 '대조'된다고 했어요. 예전 그림 자체일 수는 없고, 그것과 다른 그림이에요."
+            },
+            "point": "This stands in contrast to earlier figurative art — This는 예전 구상화와 '다른' 그림 (바로 앞 문장에 있어야 한다)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "예전 구상화와는 다른, 다른 방식의 그림",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "예전 구상화 그 자체"
+            },
+            {
+              "id": "o2",
+              "label": "그림을 그린 화가"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "This",
+            "stands in contrast to"
+          ],
+          "tips": [
+            {
+              "label": "앞을 가리키는 말",
+              "text": "This, These, Such처럼 앞 내용을 가리키는 말이 주어진 문장에 있으면, 가리키는 대상이 바로 앞 문장에 있어야 해요."
+            }
+          ]
+        },
+        {
+          "id": "g_which",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "콤마 뒤 which는 앞의 무엇을 가리킬까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "콤마 + which는 바로 앞 명사를 덧붙여 설명해요. 콤마 바로 앞을 봐요.",
+              "콤마 + which는 바로 앞 명사를 덧붙여 설명해요. 콤마 바로 앞을 봐요."
+            ],
+            "explain": "콤마 + which는 바로 앞 명사, earlier figurative art(예전 구상화)를 덧붙여 설명해요. which 뒤는 모두 예전 그림 이야기예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "콤마 + which는 바로 앞 명사, earlier figurative art(예전 구상화)를 덧붙여 설명해요. which 뒤는 모두 예전 그림 이야기예요.",
+              "o2": "콤마 + which는 바로 앞 명사, earlier figurative art(예전 구상화)를 덧붙여 설명해요. which 뒤는 모두 예전 그림 이야기예요."
+            },
+            "point": "earlier figurative art, which … = which 뒤는 예전 구상화에 대한 설명"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "This (이것)"
+            },
+            {
+              "id": "o1",
+              "label": "earlier figurative art (예전 구상화)",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "the objects (사물들)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "earlier figurative art,",
+            "which"
+          ]
+        },
+        {
+          "id": "g_knew",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 예전 구상화는 무엇까지 그렸대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "as A as B는 'B만큼 A'예요. what the artist knew(화가가 아는 것)와 how they looked(보이는 모습)를 봐요.",
+              "as A as B는 'B만큼 A'예요. what the artist knew(화가가 아는 것)와 how they looked(보이는 모습)를 봐요."
+            ],
+            "explain": "'as focused on what the artist knew … as on how they looked', 보이는 모습만큼 화가가 아는 것도 나타내는 데 집중했대요. 보이지 않아도 아는 것까지 그린 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'as focused on what the artist knew … as on how they looked', 보이는 모습만큼 화가가 아는 것도 나타내는 데 집중했대요. 보이지 않아도 아는 것까지 그린 거예요.",
+              "o1": "'as focused on what the artist knew … as on how they looked', 보이는 모습만큼 화가가 아는 것도 나타내는 데 집중했대요. 보이지 않아도 아는 것까지 그린 거예요."
+            },
+            "point": "earlier figurative art = 보이는 모습만큼, (눈에 안 보여도) 화가가 아는 것까지 그렸다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "눈에 보이는 모습만"
+            },
+            {
+              "id": "o1",
+              "label": "화가의 감정"
+            },
+            {
+              "id": "o2",
+              "label": "눈에 안 보여도 화가가 아는 것까지",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "what the artist knew",
+            "how they looked"
+          ],
+          "tips": [
+            {
+              "label": "as A as B",
+              "text": "'B만큼 A'예요. as focused on X as on Y = Y만큼이나 X에도 초점을 맞춘",
+              "mark": "as … as"
+            }
+          ]
+        },
+        {
+          "id": "g_knew_pic",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그림으로 보면 이래요. 아는 대로 그리면 멀리 있는 사람도 실제 크기로, 보이는 대로 그리면 멀수록 작게 그려요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/knew-vs-looks.svg",
+            "alt": "왼쪽 예전 그림: 가까운 사람과 먼 사람을 같은 크기로(아는 대로). 오른쪽 원근법: 먼 사람을 작게(한 자리에서 보이는 대로)"
+          },
+          "tips": [
+            {
+              "label": "아는 대로 vs 보이는 대로",
+              "text": "아는 대로 = 실제 크기·모양(멀리 있는 사람도 원래 크기로). 보이는 대로 = 한 자리에서 눈에 비친 모습(멀면 작게)."
+            }
+          ]
+        },
+        {
+          "id": "g_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "This는 이 예전 그림과 대조된대요. 그럼 주어진 문장 바로 앞에는 어떤 내용이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "This가 가리키는 앞 내용이 예전 그림과 '대조'돼야 해요. 대조라면 예전 그림 쪽이 아니에요.",
+              "This가 가리키는 앞 내용이 예전 그림과 '대조'돼야 해요. 대조라면 예전 그림 쪽이 아니에요."
+            ],
+            "explain": "This(앞 문장의 내용)가 예전 그림과 대조된다고 했어요. 그러니 바로 앞에는 예전 그림이 아닌, 상대적으로 최근의 그림 방식 이야기가 와야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "This(앞 문장의 내용)가 예전 그림과 대조된다고 했어요. 그러니 바로 앞에는 예전 그림이 아닌, 상대적으로 최근의 그림 방식 이야기가 와야 해요.",
+              "o1": "This(앞 문장의 내용)가 예전 그림과 대조된다고 했어요. 그러니 바로 앞에는 예전 그림이 아닌, 상대적으로 최근의 그림 방식 이야기가 와야 해요."
+            },
+            "point": "주어진 문장 앞 = This = 예전 그림과 대조되는 '최근 기법' 이야기"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "예전 구상화를 자세히 설명하는 내용"
+            },
+            {
+              "id": "o1",
+              "label": "화가 한 사람의 생애"
+            },
+            {
+              "id": "o2",
+              "label": "예전 그림이 아닌, 상대적으로 최근의 다른 그림 방식",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "This",
+            "earlier figurative art"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Almost all the figurative paintings we are familiar with now are in perspective.",
+      "model_translation": "지금 우리에게 익숙한 거의 모든 구상화는 원근법으로 그린 것이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Almost all the figurative paintings",
+          "ko": "거의 모든 구상화"
+        },
+        {
+          "en": "we are familiar with",
+          "ko": "우리에게 익숙한"
+        },
+        {
+          "en": "now",
+          "ko": "지금"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "in perspective",
+          "ko": "원근법으로 그린"
+        },
+        {
+          "en": "perspective",
+          "ko": "원근법"
+        },
+        {
+          "en": "Almost",
+          "ko": "거의"
+        },
+        {
+          "en": "figurative",
+          "ko": "구상의"
+        },
+        {
+          "en": "paintings",
+          "ko": "그림들"
+        },
+        {
+          "en": "familiar",
+          "ko": "익숙한"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Almost all the figurative paintings",
+            "we are familiar with",
+            "are",
+            "in perspective"
+          ],
+          "answers": [
+            "Almost all the figurative paintings",
+            "are"
+          ],
+          "roles": {
+            "Almost all the figurative paintings": "S",
+            "are": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "we are familiar with": "그건 앞의 paintings를 꾸며 주는 덩어리예요(우리에게 익숙한).",
+              "in perspective": "그건 동사 뒤에서 어떤 상태인지 말해 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Almost all the figurative paintings, 동사는 are예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "perspective",
+              "text": "'원근법'이에요. 가까운 건 크게, 먼 건 작게 그리는 방법이에요. '관점'이라는 뜻도 있어요.",
+              "mark": "perspective"
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "Almost all the figurative paintings",
+            "are",
+            "in perspective"
+          ],
+          "answers": [
+            "Almost all the figurative paintings",
+            "in perspective",
+            "are"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Almost all the figurative paintings",
+                "ko": "거의 모든 구상화는"
+              },
+              " ",
+              {
+                "en": "in perspective",
+                "ko": "원근법으로 그린 것"
+              },
+              {
+                "en": "are",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Almost all the figurative paintings are in perspective.",
+          "tips": [
+            {
+              "label": "perspective",
+              "text": "'원근법'이에요. 가까운 건 크게, 먼 건 작게 그리는 방법이에요. '관점'이라는 뜻도 있어요.",
+              "mark": "perspective"
+            }
+          ]
+        },
+        {
+          "id": "s1_now",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "지금 우리에게 익숙한 그림은 거의 다 원근법으로 그렸대요. 칠판 왼쪽에 넣어 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 그림",
+            "left": {
+              "label": "원근법 그림 · 눈에 보이는 대로",
+              "words": [
+                {
+                  "text": "in perspective",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "예전 구상화 · 아는 대로",
+              "words": [
+                {
+                  "text": "what the artist knew"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "in perspective"
+          ],
+          "tips": [
+            {
+              "label": "perspective",
+              "text": "'원근법'이에요. 가까운 건 크게, 먼 건 작게 그리는 방법이에요. '관점'이라는 뜻도 있어요.",
+              "mark": "perspective"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "They present foreshortened figures and objects that diminish as they move away from the focal point of the painting.",
+      "model_translation": "그것들은 그림의 초점에서 멀어짐에 따라 작아지는 축소된 인물들과 사물들을 나타낸다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "They",
+          "ko": "그것들(원근법 그림)"
+        },
+        {
+          "en": "present",
+          "ko": "보여 주다, 나타내다"
+        },
+        {
+          "en": "foreshortened figures and objects",
+          "ko": "축소된 인물과 사물"
+        },
+        {
+          "en": "diminish",
+          "ko": "작아지다"
+        },
+        {
+          "en": "move away from",
+          "ko": "~에서 멀어지다"
+        },
+        {
+          "en": "the focal point",
+          "ko": "초점"
+        },
+        {
+          "en": "foreshortened",
+          "ko": "축소된 · 원근법으로 짧아 보이게 그린"
+        },
+        {
+          "en": "figures",
+          "ko": "인물들"
+        },
+        {
+          "en": "move",
+          "ko": "움직이다"
+        },
+        {
+          "en": "focal",
+          "ko": "초점의"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "They",
+            "present",
+            "foreshortened figures and objects",
+            "diminish"
+          ],
+          "answers": [
+            "They",
+            "present",
+            "foreshortened figures and objects"
+          ],
+          "roles": {
+            "They": "S",
+            "present": "V",
+            "foreshortened figures and objects": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "diminish": "그건 that 뒤 덩어리 안의 동사예요(작아지는)."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 They, 동사는 present, 목적어는 foreshortened figures and objects예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "as + 주어 + 동사",
+              "text": "여기서 as는 '~함에 따라'예요. as they move away = 그것들이 멀어짐에 따라.",
+              "mark": "as"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "They",
+            "present",
+            "foreshortened figures and objects"
+          ],
+          "answers": [
+            "They",
+            "foreshortened figures and objects",
+            "present"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "They",
+                "ko": "그것들은"
+              },
+              " ",
+              {
+                "en": "foreshortened figures and objects",
+                "ko": "축소된 인물과 사물"
+              },
+              "을 ",
+              {
+                "en": "present",
+                "ko": "보여 준다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "as + 주어 + 동사",
+              "text": "여기서 as는 '~함에 따라'예요. as they move away = 그것들이 멀어짐에 따라.",
+              "mark": "as"
+            }
+          ]
+        },
+        {
+          "id": "s2_small",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "멀어질수록 작아지게 그린대요. 원근법 그림이 어떻게 생겼는지 설명하는 문장이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "diminish",
+            "move away from"
+          ],
+          "tips": [
+            {
+              "label": "as + 주어 + 동사",
+              "text": "여기서 as는 '~함에 따라'예요. as they move away = 그것들이 멀어짐에 따라.",
+              "mark": "as"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🖼️",
+                "en": "This ↔ earlier figurative art",
+                "ko": "예전 구상화는 보이는 모습만큼 '아는 것'도 그렸어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "📐",
+                "en": "in perspective · diminish",
+                "ko": "지금 그림은 거의 원근법 — 멀어질수록 작게 그려요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "(①) A painting in perspective represents how the world looks to a person seeing the scene from a particular position in space.",
+      "model_translation": "원근법으로 그린 그림은 공간의 특정 위치에서 그 장면을 보는 사람에게 세상이 어떻게 '보이는지'를 나타낸다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "a person",
+          "ko": "사람"
+        },
+        {
+          "en": "A painting in perspective",
+          "ko": "원근법으로 그린 그림"
+        },
+        {
+          "en": "represents",
+          "ko": "나타내다"
+        },
+        {
+          "en": "how the world looks",
+          "ko": "세상이 어떻게 보이는지"
+        },
+        {
+          "en": "to a person",
+          "ko": "사람에게"
+        },
+        {
+          "en": "seeing the scene",
+          "ko": "그 장면을 보는"
+        },
+        {
+          "en": "from a particular position",
+          "ko": "특정한 자리에서"
+        },
+        {
+          "en": "in space",
+          "ko": "공간에서"
+        },
+        {
+          "en": "person",
+          "ko": "사람"
+        },
+        {
+          "en": "painting",
+          "ko": "그리는, 그림"
+        },
+        {
+          "en": "perspective",
+          "ko": "원근법"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        },
+        {
+          "en": "looks",
+          "ko": "~하게 보이다"
+        },
+        {
+          "en": "seeing",
+          "ko": "보는"
+        },
+        {
+          "en": "scene",
+          "ko": "장면"
+        },
+        {
+          "en": "particular",
+          "ko": "특정한"
+        },
+        {
+          "en": "space",
+          "ko": "공간"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A painting in perspective",
+            "represents",
+            "how the world looks",
+            "a person"
+          ],
+          "answers": [
+            "A painting in perspective",
+            "represents",
+            "how the world looks"
+          ],
+          "roles": {
+            "A painting in perspective": "S",
+            "represents": "V",
+            "how the world looks": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "a person": "그건 to 뒤, '누구에게' 보이는지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 A painting in perspective, 동사는 represents, 목적어는 how the world looks예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic"
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "A painting in perspective",
+            "represents",
+            "how the world looks"
+          ],
+          "answers": [
+            "A painting in perspective",
+            "how the world looks",
+            "represents"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A painting in perspective",
+                "ko": "원근법 그림은"
+              },
+              " ",
+              {
+                "en": "how the world looks",
+                "ko": "세상이 어떻게 보이는지"
+              },
+              "를 ",
+              {
+                "en": "represents",
+                "ko": "나타낸다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "A painting in perspective represents how the world looks."
+        },
+        {
+          "id": "s3_what",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "원근법 그림은 무엇을 나타낸대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "represents 뒤 'how the world looks'를 봐요. looks는 '~하게 보이다'예요.",
+              "represents 뒤 'how the world looks'를 봐요. looks는 '~하게 보이다'예요."
+            ],
+            "explain": "'how the world looks to a person seeing the scene from a particular position'은 특정한 자리에서 보는 사람에게 세상이 어떻게 보이는지예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'how the world looks to a person seeing the scene from a particular position'은 특정한 자리에서 보는 사람에게 세상이 어떻게 보이는지예요.",
+              "o2": "'how the world looks to a person seeing the scene from a particular position'은 특정한 자리에서 보는 사람에게 세상이 어떻게 보이는지예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "화가가 사물에 대해 아는 것"
+            },
+            {
+              "id": "o1",
+              "label": "한 자리에서 볼 때 세상이 보이는 모습",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "공간의 정확한 크기"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "how the world looks"
+          ]
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "원근법 그림은 보이는 모습 그대로, 예전 그림은 아는 것까지 그렸어요. 칠판에 붙여 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 그림",
+            "left": {
+              "label": "원근법 그림 · 눈에 보이는 대로",
+              "words": [
+                {
+                  "text": "in perspective"
+                },
+                {
+                  "text": "how the world looks",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "예전 구상화 · 아는 대로",
+              "words": [
+                {
+                  "text": "what the artist knew"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s3_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "① 자리예요. '멀어질수록 작게 그린다' → '원근법 그림은 보이는 모습을 나타낸다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "둘 다 원근법 그림 이야기라 그대로 이어져요.",
+              "둘 다 원근법 그림 이야기라 그대로 이어져요."
+            ],
+            "explain": "둘 다 원근법 그림 이야기라 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "둘 다 원근법 그림 이야기라 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "(②) These pictures are beautiful in their own right, but they do not represent scenes as we might see them if we were looking at them.",
+      "model_translation": "이러한 그림들은 그 자체로 아름답지만, 그것들은 만약 우리가 그것들을 보고 있다면 우리가 보고 있을 것 같은 장면들을 나타내지는 않는다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "do not represent",
+          "ko": "나타내지 않는다"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "beautiful",
+          "ko": "아름다운"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "These pictures",
+          "ko": "이 그림들"
+        },
+        {
+          "en": "are beautiful",
+          "ko": "아름답다"
+        },
+        {
+          "en": "in their own right",
+          "ko": "그 자체로"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "they do not represent",
+          "ko": "그것들은 나타내지 않는다"
+        },
+        {
+          "en": "scenes",
+          "ko": "장면들"
+        },
+        {
+          "en": "as we might see them",
+          "ko": "우리가 볼 법한 대로"
+        },
+        {
+          "en": "if we were looking at them",
+          "ko": "우리가 그것들을 보고 있다면"
+        },
+        {
+          "en": "represent",
+          "ko": "나타내다"
+        },
+        {
+          "en": "pictures",
+          "ko": "그림들"
+        },
+        {
+          "en": "right",
+          "ko": "권리 · in one's own right = 그 자체로"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "looking",
+          "ko": "보는"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "These pictures",
+            "are",
+            "beautiful",
+            "they",
+            "do not represent",
+            "scenes"
+          ],
+          "answers": [
+            "These pictures",
+            "are",
+            "beautiful",
+            "they",
+            "do not represent",
+            "scenes"
+          ],
+          "roles": {
+            "These pictures": "S",
+            "are": "V",
+            "beautiful": "C",
+            "they": "S",
+            "do not represent": "V",
+            "scenes": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)·보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "but 앞은 주어 These pictures, 동사 are, 보어 beautiful이에요. but 뒤는 주어 they, 동사 do not represent, 목적어 scenes예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic"
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "These pictures",
+            "are beautiful",
+            "but",
+            "they do not represent",
+            "scenes",
+            "as we might see them"
+          ],
+          "answers": [
+            "These pictures",
+            "are beautiful",
+            "but",
+            "they do not represent",
+            "scenes",
+            "as we might see them"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "These pictures",
+                "ko": "이 그림들은"
+              },
+              " ",
+              {
+                "en": "are beautiful",
+                "ko": "아름답다"
+              },
+              ", ",
+              {
+                "en": "but",
+                "ko": "하지만"
+              },
+              " ",
+              {
+                "en": "they do not represent",
+                "ko": "그것들은 나타내지 않는다"
+              },
+              " — ",
+              {
+                "en": "scenes",
+                "ko": "장면들"
+              },
+              "을 ",
+              {
+                "en": "as we might see them",
+                "ko": "우리가 볼 법한 대로"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "These pictures are beautiful, but they do not represent scenes as we might see them."
+        },
+        {
+          "id": "s4_these",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "These pictures(이 그림들)는 우리가 보는 대로 장면을 나타내지 않는대요. 그럼 어느 쪽 그림일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "원근법 그림은 보이는 모습 그대로를 나타냈어요. '보는 대로 나타내지 않는' 그림은 반대쪽이에요.",
+              "원근법 그림은 보이는 모습 그대로를 나타냈어요. '보는 대로 나타내지 않는' 그림은 반대쪽이에요."
+            ],
+            "explain": "원근법 그림은 보이는 모습 그대로를 나타냈어요. 보는 대로 나타내지 않는 These pictures는 예전 구상화예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "원근법 그림은 보이는 모습 그대로를 나타냈어요. 보는 대로 나타내지 않는 These pictures는 예전 구상화예요."
+            },
+            "point": "These pictures … do not represent scenes as we might see them = 예전 구상화"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 원근법 그림 (눈에 보이는 대로)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 예전 그림 (아는 대로)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 그림",
+            "left": {
+              "label": "원근법 그림 · 눈에 보이는 대로",
+              "words": [
+                {
+                  "text": "in perspective"
+                },
+                {
+                  "text": "how the world looks"
+                }
+              ]
+            },
+            "right": {
+              "label": "예전 구상화 · 아는 대로",
+              "words": [
+                {
+                  "text": "what the artist knew"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "do not represent scenes as we might see them"
+              ],
+              "left": "왼쪽 · 원근법 그림 (눈에 보이는 대로)",
+              "right": "오른쪽 · 예전 그림 (아는 대로)"
+            }
+          },
+          "highlight": [
+            "These pictures",
+            "do not represent"
+          ]
+        },
+        {
+          "id": "s4_break",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그런데 바로 앞 문장까지는 원근법 그림 이야기만 했어요. 예전 그림을 꺼낸 적이 없는데 These pictures가 예전 그림을 가리키니 어색해요.",
+            "point": "② 앞에서 예전 그림을 꺼내 줘야 These pictures가 그것을 가리킬 수 있다"
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 그림",
+            "left": {
+              "label": "원근법 그림 · 눈에 보이는 대로",
+              "words": [
+                {
+                  "text": "in perspective"
+                },
+                {
+                  "text": "how the world looks"
+                }
+              ]
+            },
+            "right": {
+              "label": "예전 구상화 · 아는 대로",
+              "words": [
+                {
+                  "text": "what the artist knew"
+                },
+                {
+                  "text": "do not represent",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "These pictures"
+          ]
+        },
+        {
+          "id": "s4_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "② 자리예요. '원근법 그림은 보이는 모습을 나타낸다' → '이 그림들은 보는 대로 나타내지 않는다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "These pictures가 가리킬 예전 그림이 앞에 없어요. 갑자기 반대 그림 이야기로 넘어가서 흐름이 끊겨요.",
+              "These pictures가 가리킬 예전 그림이 앞에 없어요. 갑자기 반대 그림 이야기로 넘어가서 흐름이 끊겨요."
+            ],
+            "explain": "These pictures가 가리킬 예전 그림이 앞에 없어요. 갑자기 반대 그림 이야기로 넘어가서 흐름이 끊겨요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "These pictures가 가리킬 예전 그림이 앞에 없어요. 갑자기 반대 그림 이야기로 넘어가서 흐름이 끊겨요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요"
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요",
+              "correct": true
+            }
+          ],
+          "method": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "(③) They are also less informative as to the layout of the space they represent.",
+      "model_translation": "그것들은 또한 그것들이 나타내는 공간의 배치에 대해서도 정보를 덜 준다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "less informative",
+          "ko": "정보를 덜 주는"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "They",
+          "ko": "그것들(예전 그림)"
+        },
+        {
+          "en": "are also less informative",
+          "ko": "또한 정보를 덜 준다"
+        },
+        {
+          "en": "as to",
+          "ko": "~에 관해서"
+        },
+        {
+          "en": "the layout of the space",
+          "ko": "공간의 배치"
+        },
+        {
+          "en": "they represent",
+          "ko": "그것들이 나타내는"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "informative",
+          "ko": "정보를 주는"
+        },
+        {
+          "en": "layout",
+          "ko": "배치"
+        },
+        {
+          "en": "space",
+          "ko": "공간"
+        },
+        {
+          "en": "represent",
+          "ko": "나타내다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "They",
+            "are",
+            "less informative",
+            "the layout of the space"
+          ],
+          "answers": [
+            "They",
+            "are",
+            "less informative"
+          ],
+          "roles": {
+            "They": "S",
+            "are": "V",
+            "less informative": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the layout of the space": "그건 as to(~에 관해) 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 They, 동사는 are, 보어는 (also) less informative예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "tips": [
+            {
+              "label": "as to",
+              "text": "'~에 관해서'예요. as to the layout = 배치에 관해서.",
+              "mark": "as to"
+            }
+          ]
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "They",
+            "are also less informative",
+            "the layout of the space"
+          ],
+          "answers": [
+            "They",
+            "the layout of the space",
+            "are also less informative"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "They",
+                "ko": "그것들은"
+              },
+              " ",
+              {
+                "en": "the layout of the space",
+                "ko": "공간의 배치"
+              },
+              "에 관해서도 ",
+              {
+                "en": "are also less informative",
+                "ko": "정보를 덜 준다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "as to",
+              "text": "'~에 관해서'예요. as to the layout = 배치에 관해서.",
+              "mark": "as to"
+            }
+          ]
+        },
+        {
+          "id": "s5_also",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "They도 앞 문장의 These pictures, 즉 예전 그림이에요. also(또한), 공간 배치에 대한 정보도 덜 준대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 그림",
+            "left": {
+              "label": "원근법 그림 · 눈에 보이는 대로",
+              "words": [
+                {
+                  "text": "in perspective"
+                },
+                {
+                  "text": "how the world looks"
+                }
+              ]
+            },
+            "right": {
+              "label": "예전 구상화 · 아는 대로",
+              "words": [
+                {
+                  "text": "what the artist knew"
+                },
+                {
+                  "text": "do not represent"
+                },
+                {
+                  "text": "less informative",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "also less informative"
+          ],
+          "tips": [
+            {
+              "label": "as to",
+              "text": "'~에 관해서'예요. as to the layout = 배치에 관해서.",
+              "mark": "as to"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s5_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "③ 자리예요. '이 그림들은 보는 대로 나타내지 않는다' → '그것들은 또한 정보도 덜 준다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "둘 다 예전 그림 이야기예요. also(또한)로 단점을 하나 더 보태서 그대로 이어져요.",
+              "둘 다 예전 그림 이야기예요. also(또한)로 단점을 하나 더 보태서 그대로 이어져요."
+            ],
+            "explain": "둘 다 예전 그림 이야기예요. also(또한)로 단점을 하나 더 보태서 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "둘 다 예전 그림 이야기예요. also(또한)로 단점을 하나 더 보태서 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🖼️",
+                "en": "This ↔ earlier figurative art",
+                "ko": "예전 구상화는 보이는 모습만큼 '아는 것'도 그렸어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "📐",
+                "en": "in perspective · diminish",
+                "ko": "지금 그림은 거의 원근법 — 멀어질수록 작게 그려요",
+                "fresh": false
+              },
+              {
+                "label": "①~③",
+                "icon": "👀",
+                "en": "how the world looks",
+                "ko": "원근법 그림은 한 자리에서 보이는 모습을 나타내요",
+                "fresh": true
+              },
+              {
+                "label": "",
+                "icon": "🧩",
+                "en": "do not represent · less informative",
+                "ko": "보는 대로 나타내지 않고, 공간 배치 정보도 덜 주는 그림이 있어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "(④) The fact that perspective and information about spatial layout go together reveals something important about seeing.",
+      "model_translation": "시점과 공간 배치에 대한 정보가 함께 어우러진다는 사실은 '보는 것'에 대한 중요한 무언가를 드러낸다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The fact",
+          "ko": "사실"
+        },
+        {
+          "en": "perspective and information about spatial layout",
+          "ko": "원근법과 공간 배치에 대한 정보"
+        },
+        {
+          "en": "go together",
+          "ko": "함께 간다"
+        },
+        {
+          "en": "reveals",
+          "ko": "드러내다"
+        },
+        {
+          "en": "something important",
+          "ko": "중요한 무언가"
+        },
+        {
+          "en": "about seeing",
+          "ko": "보는 것에 대해"
+        },
+        {
+          "en": "spatial",
+          "ko": "공간의"
+        },
+        {
+          "en": "layout",
+          "ko": "배치"
+        },
+        {
+          "en": "perspective",
+          "ko": "원근법"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "go",
+          "ko": "가다"
+        },
+        {
+          "en": "together",
+          "ko": "함께"
+        },
+        {
+          "en": "seeing",
+          "ko": "보는"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The fact",
+            "perspective and information about spatial layout",
+            "go together",
+            "reveals",
+            "something important"
+          ],
+          "answers": [
+            "The fact",
+            "reveals",
+            "something important"
+          ],
+          "roles": {
+            "The fact": "S",
+            "reveals": "V",
+            "something important": "O"
+          },
+          "brief": {
+            "ask": "이번엔 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "perspective and information about spatial layout": "그건 that 뒤 덩어리 안의 주어예요. The fact가 무슨 사실인지 풀어 주는 덩어리예요.",
+              "go together": "그건 that 뒤 덩어리 안의 동사예요. 문장 전체의 동사는 더 뒤에 있어요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The fact (that … go together), 동사는 reveals, 목적어는 something important예요."
+          },
+          "method": 0,
+          "slot": "s7_basic"
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "The fact",
+            "go together",
+            "reveals",
+            "something important"
+          ],
+          "answers": [
+            "The fact",
+            "go together",
+            "something important",
+            "reveals"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The fact",
+                "ko": "~라는 사실은"
+              },
+              " ",
+              {
+                "en": "go together",
+                "ko": "함께 간다"
+              },
+              "는 — ",
+              {
+                "en": "something important",
+                "ko": "중요한 무언가"
+              },
+              "를 ",
+              {
+                "en": "reveals",
+                "ko": "드러낸다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "The fact that perspective and information about spatial layout go together reveals something important."
+        },
+        {
+          "id": "s6_together",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'perspective and information about spatial layout go together'는 무슨 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "go together는 '함께 간다'예요. 원근법이 있으면 공간 배치 정보도 같이 있다는 말이에요.",
+              "go together는 '함께 간다'예요. 원근법이 있으면 공간 배치 정보도 같이 있다는 말이에요."
+            ],
+            "explain": "go together는 '함께 간다'예요. 정보를 덜 주는 예전 그림과 달리, 원근법 그림은 배치 정보를 함께 준다는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "go together는 '함께 간다'예요. 정보를 덜 주는 예전 그림과 달리, 원근법 그림은 배치 정보를 함께 준다는 말이에요.",
+              "o2": "go together는 '함께 간다'예요. 정보를 덜 주는 예전 그림과 달리, 원근법 그림은 배치 정보를 함께 준다는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "원근법 그림이 공간 배치 정보도 함께 준다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "원근법 그림은 공간 정보를 덜 준다"
+            },
+            {
+              "id": "o2",
+              "label": "원근법과 공간은 서로 상관없다"
+            }
+          ],
+          "method": 1,
+          "meaning_check": true
+        },
+        {
+          "id": "s6_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "④ 자리예요. '예전 그림은 정보도 덜 준다' → '원근법과 공간 정보는 함께 간다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "예전 그림은 정보를 덜 주고, 원근법은 정보와 함께 가요. 대조로 그대로 이어져요.",
+              "예전 그림은 정보를 덜 주고, 원근법은 정보와 함께 가요. 대조로 그대로 이어져요."
+            ],
+            "explain": "예전 그림은 정보를 덜 주고, 원근법은 정보와 함께 가요. 대조로 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "예전 그림은 정보를 덜 주고, 원근법은 정보와 함께 가요. 대조로 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "(⑤) Not only do we see the world through an egocentric frame but we also see it in a way that allows us to extract information about distances to, and sizes of, objects relative to us, and relative to one another.",
+      "model_translation": "우리는 자기중심적인 틀을 통해 세상을 볼 뿐만 아니라, 우리로 하여금 우리에게 상대적인, 그리고 서로 상대적인 물체와의 거리와 (물체의) 크기에 대한 정보를 추출하도록 하는 방식으로 그것을 본다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Not only do we see the world",
+          "ko": "우리는 세상을 볼 뿐만 아니라"
+        },
+        {
+          "en": "through an egocentric frame",
+          "ko": "자기중심적인 틀을 통해"
+        },
+        {
+          "en": "egocentric",
+          "ko": "자기중심적인"
+        },
+        {
+          "en": "frame",
+          "ko": "틀"
+        },
+        {
+          "en": "but we also see it",
+          "ko": "우리는 또한 그것을 본다"
+        },
+        {
+          "en": "in a way",
+          "ko": "~하는 방식으로"
+        },
+        {
+          "en": "allows us to extract",
+          "ko": "우리가 뽑아낼 수 있게 해 주다"
+        },
+        {
+          "en": "extract",
+          "ko": "추출하다, 뽑아내다"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "distances to",
+          "ko": "~까지의 거리"
+        },
+        {
+          "en": "sizes of",
+          "ko": "~의 크기"
+        },
+        {
+          "en": "objects",
+          "ko": "물체들"
+        },
+        {
+          "en": "relative to us",
+          "ko": "우리를 기준으로"
+        },
+        {
+          "en": "relative to one another",
+          "ko": "서로를 기준으로"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "way",
+          "ko": "방식"
+        },
+        {
+          "en": "allows",
+          "ko": "허락하다, ~하게 해 주다"
+        },
+        {
+          "en": "distances",
+          "ko": "거리"
+        },
+        {
+          "en": "sizes",
+          "ko": "크기"
+        },
+        {
+          "en": "relative",
+          "ko": "상대적인 · relative to = ~에 비해"
+        }
+      ],
+      "slashes": [
+        "egocentric frame",
+        "in a way",
+        "extract information",
+        "objects relative to us,"
+      ],
+      "steps": [
+        {
+          "id": "s7_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "Not only A but also B는 'A뿐만 아니라 B도'예요. 우리는 나를 중심으로 세상을 볼 뿐 아니라, 거리와 크기 정보도 뽑아낸대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "Not only do we see the world",
+            "but we also see it"
+          ],
+          "tips": [
+            {
+              "label": "Not only + 동사 + 주어",
+              "text": "Not only가 문장 맨 앞에 오면 순서가 바뀌어요. Not only do we see = we not only see.",
+              "mark": "Not only"
+            }
+          ]
+        },
+        {
+          "id": "s7_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "⑤ 자리예요. '원근법과 공간 정보는 함께 간다' → '우리는 거리·크기 정보도 뽑아내며 본다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "앞 문장이 '보는 것에 대해 중요한 걸 드러낸다'고 했고, 그 중요한 게 무엇인지 풀어 줘요. 그대로 이어져요.",
+              "앞 문장이 '보는 것에 대해 중요한 걸 드러낸다'고 했고, 그 중요한 게 무엇인지 풀어 줘요. 그대로 이어져요."
+            ],
+            "explain": "앞 문장이 '보는 것에 대해 중요한 걸 드러낸다'고 했고, 그 중요한 게 무엇인지 풀어 줘요. 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "앞 문장이 '보는 것에 대해 중요한 걸 드러낸다'고 했고, 그 중요한 게 무엇인지 풀어 줘요. 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "story_8",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🖼️",
+                "en": "This ↔ earlier figurative art",
+                "ko": "예전 구상화는 보이는 모습만큼 '아는 것'도 그렸어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "📐",
+                "en": "in perspective · diminish",
+                "ko": "지금 그림은 거의 원근법 — 멀어질수록 작게 그려요",
+                "fresh": false
+              },
+              {
+                "label": "①~③",
+                "icon": "👀",
+                "en": "how the world looks",
+                "ko": "원근법 그림은 한 자리에서 보이는 모습을 나타내요",
+                "fresh": false
+              },
+              {
+                "label": "",
+                "icon": "🧩",
+                "en": "do not represent · less informative",
+                "ko": "보는 대로 나타내지 않고, 공간 배치 정보도 덜 주는 그림이 있어요",
+                "fresh": false
+              },
+              {
+                "label": "④~⑤",
+                "icon": "📏",
+                "en": "go together · distances and sizes",
+                "ko": "원근법과 공간 정보는 함께 가요 — 우리는 거리·크기 정보를 뽑아내며 봐요",
+                "fresh": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "s7_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①~⑤ 중 흐름이 끊긴 곳은 하나였어요. 주어진 문장의 This와 earlier figurative art를 떠올리며 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

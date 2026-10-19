@@ -839,6 +839,41 @@ lesson = {
     "passage_on_try": True,
 }
 
+# 초급 기본 — 문장마다 「주어·동사 찾기」 또는 「해석 맞추기」 하나 (2026-10-15 선생님).
+# 주어·동사 찾기가 이미 있는 문장은 그 자리에 맞추기를 번갈아 둔다. 뜻은 원래 있던 요약·설명이 짚는다
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from beginner import add_basic, fill_chunk_glosses, m, sv_step  # noqa: E402
+
+add_basic(sentences, 2, [m("To acquire", "얻으려면"), " 전문 지식을 ", m("one", "사람은"), " ", m("the relevant group", "관련 집단"), "의 ",
+                         m("to become a member", "일원이 되는 것"), "이 ", m("needs", "필요하다"), "."],
+          match_display="To acquire expert knowledge, one needs to become a member of the relevant group.",
+          sv_id="s2_svc")
+add_basic(sentences, 3, [m("A newcomer", "새로 온 사람은"), " ", m("from experts", "전문가에게서"), " ", m("learns", "배우고"), ", 공동체의 ",
+                         m("into the common practices", "공통된 관행 속으로"), " ", m("is socialized", "사회화된다"), "."],
+          sv_id="s3_sv")
+add_basic(sentences, 4, [m("Often", "흔히"), " ", m("tests", "시험"), "이 붙은 ", m("admittance processes", "입회 절차"), "가 ",
+                         m("are", "있다"), "."],
+          match_display="Often there are admittance processes, combined with tests.",
+          sv_new=sv_step("s4_basic_sv", ["there", "are", "admittance processes", "tests"],
+                         {"are": "V", "admittance processes": "S"},
+                         {"there": "there are(~이 있다)에서 there는 자리만 채우는 말이에요. 진짜 주어는 are 뒤에 있어요.",
+                          "tests": "그건 combined with 뒤의 말이에요."},
+                         "there are 구조라 동사 are 뒤의 admittance processes(입회 절차)가 주어예요.",
+                         ask="there are(~이 있다) 문장이에요. 동사(V)와 그 뒤의 진짜 주어(S)를 찾아볼까요?"))
+add_basic(sentences, 5, [m("In the premodern era", "옛날(근대 이전)에는"), " ", m("epistemic communities", "지식 공동체가"), " ",
+                         m("secret", "비밀로"), " ", m("were often kept", "자주 지켜졌다"), "."],
+          match_display="In the premodern era, epistemic communities were often kept secret.",
+          sv_id="s5_sv")
+add_basic(sentences, 6, [m("Some traces", "어떤 흔적은"), " ", m("today", "오늘날에도"), " ", m("may still be", "여전히 남아 있을 수 있다"), ", ",
+                         m("but", "그러나"), " ", m("the ideal", "이상(추구하는 바)은"), " ", m("openness", "개방성"), "으로 ", m("has shifted", "옮겨 갔다"), "."],
+          match_display="Some traces of these older practices may still be present today, but the ideal has shifted to openness.",
+          sv_id="s6_sv")
+add_basic(sentences, 7, [m("Other, more active strategies", "다른, 더 적극적인 전략이"), " ", m("certain forms of knowledge", "어떤 형태의 지식"), "을 ",
+                         m("accessible", "접근할 수 있게"), " ", m("to make", "만들기 위해"), " ", m("are needed", "필요하다"), "."],
+          sv_id="s7_sv")
+fill_chunk_glosses(sentences, {"there": "거기(자리 채움)", "are": "있다", "admittance processes": "입회 절차", "tests": "시험", "Often": "흔히",
+                               "today": "오늘날", "but": "그러나"})
+
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from story_boards import add_story_boards  # noqa: E402

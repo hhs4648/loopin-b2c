@@ -530,6 +530,99 @@ lesson = {
     "passage_on_try": True,
 }
 
+# 초급 기본 — 문장마다 「주어·동사 + 뜻」 또는 「해석 맞추기」 하나 (2026-10-15 선생님).
+# 밑줄 낱말(②acknowledges 등)의 맞고 틀림을 드러내지 않게 — 맞추기 칸에 밑줄 낱말 뜻을 넣지 않는 곳도 있다
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from beginner import add_basic, fill_chunk_glosses, m, sv_step  # noqa: E402
+
+add_basic(sentences, 1, [m("Every time", "~할 때마다"), " 무언가에 ", m("put a name on", "이름을 붙일"), " 때마다, 우리는 ",
+                         m("its particularities", "그것의 특징들"), "을 ", m("abstract away from", "떼어 내 빼 버린다"), "."],
+          match_display="Every time you put a name on something, you abstract away from its particularities.",
+          sv_new=sv_step("s1_basic_sv", ["Every time", "something", "abstract away from", "its particularities"],
+                         {"abstract away from": "V", "its particularities": "전목"},
+                         {"Every time": "그건 '~할 때마다' 덩어리를 여는 말이에요.", "something": "그건 put a name on의 대상이에요."},
+                         "콤마 뒤 문장은 주어 you, 동사 abstract away from(떼어 내다), from 뒤 목적어 its particularities예요.",
+                         ask="콤마 뒤 문장의 주어는 you예요. 그 동사(V)와 from 뒤의 목적어(전목)를 찾아볼까요?"))
+add_basic(sentences, 2, [m("in a lawn", "잔디밭에 있는"), " ", m("daisies and clover flowers", "데이지와 클로버 꽃"), "을 ", m("Picture", "상상해 봐요"), "."],
+          sv_new=sv_step("s2_basic_sv", ["Picture", "daisies and clover flowers", "in a lawn"],
+                         {"Picture": "V", "daisies and clover flowers": "O"},
+                         {"in a lawn": "그건 '어디에' 있는지 알려 주는 말이에요."},
+                         "명령문이라 주어가 없어요. 동사는 Picture(상상해 보다), 목적어는 daisies and clover flowers예요.",
+                         ask="이 문장은 주어 없이 시작해요. 동사(V)와 목적어(O)를 찾아볼까요?"),
+          meaning_ids=["s2_picture"])
+add_basic(sentences, 3, [m("Those four ordinary nouns", "그 네 개의 보통 명사는"), " 그것들의 ", m("differences", "차이"), "를 ",
+                         m("leave out", "빠뜨린다"), "."],
+          sv_new=sv_step("s3_basic_sv", ["Those four ordinary nouns", "leave out", "differences"],
+                         {"Those four ordinary nouns": "S", "leave out": "V", "differences": "O"}, {},
+                         "주어는 Those four ordinary nouns, 동사는 leave out(빠뜨리다), 목적어는 differences예요."))
+add_basic(sentences, 4, [m("Flower", "'꽃'이라는 말은"), " ", m("the white and yellow types", "흰색과 노란색 종류"), "를 ",
+                         m("the beige ones", "베이지색 종류"), "와 ", m("co-categorizes", "한 범주로 묶는다"), "."],
+          match_display="“Flower” co-categorizes the white and yellow types with the beige ones.",
+          sv_new=sv_step("s4_basic_sv", ["Flower", "co-categorizes", "the white and yellow types"],
+                         {"Flower": "S", "co-categorizes": "V", "the white and yellow types": "O"}, {},
+                         "주어는 “Flower”라는 말, 동사는 co-categorizes(한 범주로 묶다), 목적어는 the white and yellow types예요."))
+add_basic(sentences, 5, [m("Lawn", "'잔디'라는 말에는"), " ", m("the varieties of grass", "여러 종류의 풀"), "과 ", m("that are there", "거기 있는"), " ",
+                         m("nongrassy plants", "풀이 아닌 식물들"), "까지 다 들어가요."],
+          sv_new=sv_step("s5_basic_sv", ["Lawn", "acknowledges", "the varieties of grass"],
+                         {"Lawn": "S", "acknowledges": "V", "the varieties of grass": "O"}, {},
+                         "주어는 “Lawn”이라는 말, 동사는 밑줄 친 ②, 목적어는 the varieties of grass예요."))
+add_basic(sentences, 6, [m("Zoom in", "가까이 들여다봐요"), ", 그러면 ", m("everywhere", "어디에서나"), " ", m("individuality and uniqueness", "개별성과 고유성"),
+                         "을 ", m("will find", "발견할 거예요"), "."],
+          sv_new=sv_step("s6_basic_sv", ["Zoom in", "you", "will find", "individuality and uniqueness"],
+                         {"you": "S", "will find": "V", "individuality and uniqueness": "O"},
+                         {"Zoom in": "그건 and 앞, 주어 없이 시작하는 명령이에요. and 뒤에서 찾아봐요."},
+                         "and 뒤는 주어 you, 동사 will find, 목적어 individuality and uniqueness예요."))
+add_basic(sentences, 7, [m("No two daisies", "어떤 두 데이지도"), " ", m("exactly", "똑같이"), " ", m("alike", "같지"), " 않아요. ",
+                         m("and yet", "그런데도"), " ", m("to a quick glance", "얼핏 보면"), " ", m("a carpet", "카펫"), "처럼 ",
+                         m("uniformly", "균일하게"), " 보여요."],
+          match_display="No two daisies are exactly alike, and yet they present to a quick glance a carpet patterned uniformly enough.",
+          sv_new=sv_step("s7_basic_sv", ["No two daisies", "are", "alike", "they", "present"],
+                         {"No two daisies": "S", "are": "V", "alike": "C", "they": "S", "present": "V"}, {},
+                         "and yet 앞은 주어 No two daisies, 동사 are, 보어 alike예요. 뒤는 주어 they, 동사 present예요."),
+          meaning_ids=["s7_q"])
+add_basic(sentences, 8, [m("For most", "대부분의"), " ", m("practical purposes", "실용적인 목적"), "에서는 ", m("the differences", "차이"), "가 ",
+                         m("ignored", "무시될"), " ", m("can be", "수 있다"), "."],
+          sv_new=sv_step("s8_basic_sv", ["the differences", "can be", "ignored", "practical purposes"],
+                         {"the differences": "S", "can be": "V", "ignored": "V"},
+                         {"practical purposes": "그건 For most 뒤, '어떤 목적에서' 인지 알려 주는 말이에요."},
+                         "주어는 the differences, 동사는 can be ④ignored(무시될 수 있다)예요."))
+add_basic(sentences, 9, [m("Not so", "그렇지 않다"), " — ", m("groundskeeper", "경기장 관리인"), "에게는 ", m("the constituent grasses", "풀의 종류"),
+                         "와 ", m("stages of growth", "자라는 단계"), "가 ", m("really do matter", "정말 중요하다"), "."],
+          sv_new=sv_step("s9_basic_sv", ["Not so", "groundskeeper", "the constituent grasses", "really do matter"],
+                         {"the constituent grasses": "S", "really do matter": "V"},
+                         {"Not so": "그건 '그렇지 않다'는 짧은 말이에요. where 뒤에서 찾아봐요.", "groundskeeper": "그건 for 뒤, 누구에게인지 알려 주는 말이에요."},
+                         "where 뒤 주어는 the constituent grasses (and their stages of growth), 동사는 really do matter(정말 중요하다)예요.",
+                         ask="where 뒤에서 주어(S)와 동사(V)를 찾아볼까요?"))
+add_basic(sentences, 10, [m("to an infinite mind", "무한한 정신에게는"), " ", m("each blade of grass", "풀잎 하나하나가"), " ",
+                          m("all its fellows", "모든 동료(다른 풀잎)"), "와 ", m("co-categorized", "한 범주로 묶일"), " ", m("need not be", "필요가 없다"), "."],
+          match_display="And to an infinite mind, each blade of grass need not be co-categorized with all its fellows.",
+          sv_new=sv_step("s10_basic_sv", ["an infinite mind", "each blade of grass", "need not be", "co-categorized"],
+                         {"each blade of grass": "S", "need not be": "V", "co-categorized": "V"},
+                         {"an infinite mind": "그건 to 뒤, '누구에게'인지 알려 주는 말이에요."},
+                         "주어는 each blade of grass, 동사는 need not be ⑤co-categorized(묶일 필요가 없다)예요."),
+          meaning_ids=["s10_q"])
+add_basic(sentences, 11, [m("Each", "각각(풀잎)은"), " ", m("as you yourself do", "당신이 그렇듯"), " ", m("its own name", "자기만의 이름"), "을 ",
+                          m("could have", "가질 수 있다"), "."],
+          sv_new=sv_step("s11_basic_sv", ["Each", "could have", "its own name"],
+                         {"Each": "S", "could have": "V", "its own name": "O"}, {},
+                         "주어는 Each(각각), 동사는 could have(가질 수 있다), 목적어는 its own name이에요."))
+fill_chunk_glosses(sentences, {
+    "Every time": "~할 때마다", "something": "무언가", "abstract away from": "~에서 떼어 내다", "its particularities": "그것의 특징들",
+    "put a name on": "~에 이름을 붙이다", "Picture": "상상해 보다", "daisies and clover flowers": "데이지와 클로버 꽃", "in a lawn": "잔디밭에",
+    "Those four ordinary nouns": "그 네 개의 보통 명사", "leave out": "빠뜨리다", "differences": "차이",
+    "Flower": "꽃", "co-categorizes": "한 범주로 묶다", "the white and yellow types": "흰색과 노란색 종류", "the beige ones": "베이지색 종류",
+    "Lawn": "잔디", "acknowledges": "인정하다", "the varieties of grass": "여러 종류의 풀", "that are there": "거기 있는",
+    "nongrassy plants": "풀이 아닌 식물들", "Zoom in": "가까이 들여다보다", "you": "너, 사람", "will find": "발견할 것이다",
+    "individuality and uniqueness": "개별성과 고유성", "everywhere": "어디에서나", "No two daisies": "어떤 두 데이지도 ~ 않다",
+    "are": "~이다", "alike": "같은", "they": "그것들", "present": "보여 주다", "and yet": "그런데도", "to a quick glance": "얼핏 보면",
+    "a carpet": "카펫", "uniformly": "균일하게", "exactly": "정확히", "the differences": "그 차이", "can be": "~될 수 있다",
+    "ignored": "무시된", "practical purposes": "실용적인 목적", "For most": "대부분의", "Not so": "그렇지 않다", "groundskeeper": "경기장 관리인",
+    "the constituent grasses": "구성하는 풀들", "really do matter": "정말 중요하다", "stages of growth": "자라는 단계",
+    "an infinite mind": "무한한 정신", "to an infinite mind": "무한한 정신에게는", "each blade of grass": "풀잎 하나하나",
+    "need not be": "~일 필요가 없다", "co-categorized": "한 범주로 묶인", "all its fellows": "모든 동료들",
+    "Each": "각각", "could have": "가질 수 있다", "its own name": "자기만의 이름", "as you yourself do": "당신이 그렇듯",
+})
+
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from story_boards import add_story_boards  # noqa: E402

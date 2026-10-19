@@ -1,0 +1,130 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "stands in contrast to",
+   "sense": "~와 (대조)",
+   "usage": "stand in contrast to + 명사 = ~와 대조를 이루다"
+  },
+  {
+   "word": "which",
+   "phrase": "art, which had been",
+   "sense": "(그것은) ~했던",
+   "usage": "콤마 + which = 앞 명사를 덧붙여 설명"
+  },
+  {
+   "word": "as",
+   "phrase": "as focused on",
+   "sense": "~만큼",
+   "usage": "as + 형용사 + as … (원급 비교의 앞 as)"
+  },
+  {
+   "word": "as",
+   "phrase": "as on how they looked",
+   "sense": "~만큼",
+   "usage": "원급 비교의 뒤 as — 비교 대상 앞"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "objects that diminish",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "as",
+   "phrase": "as they move away",
+   "sense": "~함에 따라",
+   "usage": "접속사 as + 주어·동사 (비례)"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "to a person",
+   "sense": "~에게",
+   "usage": "전치사 to + 사람"
+  }
+ ],
+ "5": [
+  {
+   "word": "but",
+   "phrase": "but they do not",
+   "sense": "하지만",
+   "usage": "접속사 but + 주어·동사"
+  },
+  {
+   "word": "as",
+   "phrase": "as we might see them",
+   "sense": "~대로, ~처럼",
+   "usage": "접속사 as + 주어·동사 (방식)"
+  },
+  {
+   "word": "if",
+   "phrase": "if we were looking",
+   "sense": "만약 ~라면",
+   "usage": "가정법 과거 if + 주어 + were"
+  }
+ ],
+ "6": [
+  {
+   "word": "as",
+   "phrase": "as to the layout",
+   "sense": "~에 관해서",
+   "usage": "as to + 명사"
+  },
+  {
+   "word": "to",
+   "phrase": "as to the layout",
+   "sense": "(as to의 일부)",
+   "usage": "as to = ~에 관해서"
+  }
+ ],
+ "7": [
+  {
+   "word": "that",
+   "phrase": "The fact that",
+   "sense": "~라는 (사실)",
+   "usage": "동격의 that + 완전한 문장"
+  }
+ ],
+ "8": [
+  {
+   "word": "but",
+   "phrase": "but we also see",
+   "sense": "~도 (Not only A but also B)",
+   "usage": "Not only A but (also) B"
+  },
+  {
+   "word": "that",
+   "phrase": "a way that allows",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "allows us to extract",
+   "sense": "~하도록",
+   "usage": "allow + 사람 + to부정사 = 사람이 ~하게 해 주다"
+  },
+  {
+   "word": "to",
+   "phrase": "distances to",
+   "sense": "~까지의",
+   "usage": "전치사 to (거리)"
+  },
+  {
+   "word": "to",
+   "phrase": "relative to us",
+   "sense": "~에 비해, ~을 기준으로",
+   "usage": "relative to + 명사"
+  },
+  {
+   "word": "to",
+   "phrase": "relative to one another",
+   "sense": "~에 비해, ~을 기준으로",
+   "usage": "relative to + 명사"
+  }
+ ]
+}

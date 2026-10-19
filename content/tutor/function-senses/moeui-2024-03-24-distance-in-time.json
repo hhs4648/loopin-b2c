@@ -1,0 +1,102 @@
+{
+ "2": [
+  {
+   "word": "if",
+   "phrase": "even if they live",
+   "sense": "비록 ~라도",
+   "usage": "even if + 주어·동사 (양보)"
+  }
+ ],
+ "3": [
+  {
+   "word": "if",
+   "phrase": "even if they live",
+   "sense": "비록 ~라도",
+   "usage": "even if + 주어·동사 (양보)"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "easy to mistake",
+   "sense": "~하기 (쉽다)",
+   "usage": "가주어 it … 진주어 to부정사"
+  },
+  {
+   "word": "for",
+   "phrase": "distance for unreality",
+   "sense": "~로 (착각하다)",
+   "usage": "mistake A for B = A를 B로 착각하다"
+  },
+  {
+   "word": "to",
+   "phrase": "to treat",
+   "sense": "~하는 것",
+   "usage": "to부정사 (to mistake와 나란히)"
+  },
+  {
+   "word": "as",
+   "phrase": "as the limits of the world",
+   "sense": "~로 (여기다)",
+   "usage": "treat A as B = A를 B로 여기다"
+  }
+ ],
+ "5": [
+  {
+   "word": "but",
+   "phrase": "But just as",
+   "sense": "하지만",
+   "usage": "접속사 but (문장 앞)"
+  },
+  {
+   "word": "as",
+   "phrase": "just as the world",
+   "sense": "~처럼",
+   "usage": "just as + 주어·동사"
+  }
+ ],
+ "8": [
+  {
+   "word": "if",
+   "phrase": "if this poisons",
+   "sense": "~하든 (말든)",
+   "usage": "Who cares if ~ = ~하든 누가 신경 써"
+  }
+ ],
+ "9": [
+  {
+   "word": "so",
+   "phrase": "do so",
+   "sense": "그렇게",
+   "usage": "do so = 앞의 동사를 받음 (신경 쓰다)"
+  },
+  {
+   "word": "for",
+   "phrase": "for the sake of",
+   "sense": "~을 위해",
+   "usage": "for the sake of + 명사"
+  }
+ ],
+ "10": [
+  {
+   "word": "that",
+   "phrase": "bridges that we hope",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that (we hope는 끼어든 말)"
+  },
+  {
+   "word": "for",
+   "phrase": "last for generations",
+   "sense": "~ 동안",
+   "usage": "전치사 for + 기간"
+  }
+ ],
+ "11": [
+  {
+   "word": "for",
+   "phrase": "concerns for the present",
+   "sense": "~에 대한",
+   "usage": "전치사 for + 명사"
+  }
+ ]
+}

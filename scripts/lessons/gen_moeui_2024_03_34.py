@@ -1,0 +1,411 @@
+"""2024년 3월 고3 34번 레슨 + 대사를 만든다 (빈칸 추론, 3점). 오답률 71.9% · Top 2.
+
+    python3 scripts/lessons/gen_moeui_2024_03_34.py   (→ npm run policy:copy stamp <id> → npm run build)
+
+틀: docs/tutor/templates/blank.md — 빈칸 위치 먼저 → 처음부터 읽으며 재진술 모으기 → 빈칸 문장에서 같은 쪽/반대 쪽 → 바꿔 쓴 보기.
+빈칸이 마지막 문장(33번 꼴). 정답 ① reality should be altered to fit the name.
+선택 비율이 고르게 퍼졌다(① 28.1 · ② 18.8 · ③ 18.4 · ④ 18.4 · ⑤ 16.2) — 많이 고른 오답 ②(언어가 생각을 반영)만 같이 본다.
+열쇠: Not so the Japanese(일본은 그러지 않았다) → Rather than A(현실에 맞춰 이름을 바꾸는 대신) → 빈칸 = A의 반대 · 콜론 뒤가 빈칸을 풀어 준다.
+해설지 해석과 대조함. parlance는 시험지 아래 *로 풀어 준 단어(핵심어 아님).
+"""
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+                      base_lesson, exam_brief, review, finish)
+
+ID = "moeui-2024-03-34-ao-green-light"
+
+BLANK = ("Rather than alter the name to fit reality, the Japanese government announced in 1973 that ________: henceforth, "
+         "go lights would be a color that better corresponded to the dominant meaning of ao.")
+S = [
+    "Japanese used to have a color word, ao, that spanned both green and blue.",
+    "In the modern language, however, ao has come to be restricted mostly to blue shades, and green is usually expressed by the word midori.",
+    "When the first traffic lights were imported from the United States and installed in Japan in the 1930s, they were just as green as anywhere else.",
+    "Nevertheless, in common parlance the go light was called ao shingoo, perhaps because the three primary colors on Japanese artists’ palettes are traditionally aka (red), kiiro (yellow), and ao.",
+    "The label ao for a green light did not appear so out of the ordinary at first, because of the remaining associations of the word ao with greenness.",
+    "But over time, the difference between the green color and the dominant meaning of the word ao began to feel awkward.",
+    "Nations that are less assertive might have opted for the solution of simply changing the official name of the go light to midori.",
+    "Not so the Japanese.",
+    BLANK,
+]
+KO = [
+    "예전에 일본어에는 'ao'라는 색상 단어가 있었는데, 이는 초록색과 파란색 모두에 걸쳐 있었다.",
+    "하지만 현대어에서는 'ao'가 주로 파란색 색조로 한정되었고, 초록색은 보통 'midori'라는 단어로 표현된다.",
+    "1930년대에 최초의 신호등이 미국으로부터 수입되고 일본에 설치되었을 때, 그것들은 다른 곳에서와 마찬가지로 초록색이었다.",
+    "그럼에도 불구하고, 일반적인 용어로 주행 신호가 'ao shingoo'라고 불렸는데, 아마도 일본 화가들의 팔레트의 3원색이 전통적으로 'aka'(빨간색), 'kiiro'(노란색), 그리고 'ao'이기 때문일 것이다.",
+    "단어 'ao'와 초록색 간에 남아 있는 연관성 때문에, 초록색 신호등에 'ao'라는 라벨이 처음에는 그리 이상하게 보이지 않았다.",
+    "하지만 시간이 지나면서, 초록색과 'ao' 단어의 주된 의미 사이의 차이가 어색하게 느껴지기 시작했다.",
+    "덜 단호한 나라들은 간단하게 주행 신호의 공식 명칭을 'midori'로 바꾸는 해결책을 선택했을지도 모른다.",
+    "일본은 그렇게 하지 않았다.",
+    "이름을 현실에 맞추어 변경하는 대신, 1973년에 일본 정부는 ________라고 발표했다. 그 이후로, 주행 신호등은 'ao'의 주된 의미에 더 잘 부합하는 색상이 되었다.",
+]
+
+NAME = "왼쪽 · 이름 (name)"
+REAL = "오른쪽 · 실제 색 (reality)"
+
+
+def board(left, right, fresh=(), sort=None):
+    # 묶음 이름은 '이름'과 '실제 색'까지만 — 무엇을 바꿨는지(정답)는 칠판에 쓰지 않는다
+    return groups("이름과 실제 색", "이름 (name)", left, "실제 색 (reality)", right, fresh=fresh, between="↔",
+                  sort={"words": sort, "left": NAME, "right": REAL} if sort else None)
+
+
+sentences = [
+    {
+        "id": 1, "text": S[0], "model_translation": KO[0], "teaching_value": "high",
+        "glosses": [g("Japanese", "일본어"), g("used to have", "예전에 가지고 있었다"), g("a color word", "색 단어"),
+                    g("ao", "아오 · 일본어 색 단어"), g("spanned", "~에 걸쳐 있었다"), g("both green and blue", "초록과 파랑 둘 다"),
+                    g("Rather than", "~하는 대신"), g("alter", "바꾸다"), g("the name", "이름"), g("to fit reality", "현실에 맞추려고"),
+                    g("announced", "발표했다"), g("henceforth", "그 이후로"), g("go lights", "주행 신호등(초록 불)"),
+                    g("corresponded to", "~에 부합했다"), g("the dominant meaning", "주된 의미")],
+        "steps": [
+            show("s1_passage", "빈칸은 마지막 문장에 있어요. 이 문장을 잠깐 볼까요?",
+                 button="네", before_read=True, show_passage=[BLANK], method=0),
+            show("s1_where",
+                 "1973년에 일본 정부가 발표한 내용이 빈칸이에요. 신호등 색과 그 이름에 무슨 일이 있었는지 생각하며 처음부터 읽어 봐요.",
+                 button="처음부터 읽어 볼게요", before_read=True, display=BLANK, tag="빈칸 문장",
+                 highlight=["announced", "________"],
+                 tips=[tip("빈칸 문제 요령", "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요.")],
+                 method=0),
+            choice("s1_ao",
+                   "ao라는 단어는 예전에 어떤 색을 가리켰대요?",
+                   [("o0", "파랑만", False), ("o1", "초록과 파랑 둘 다", True), ("o2", "초록만", False)],
+                   "spanned both green and blue를 봐요. span은 '~에 걸쳐 있다'예요.",
+                   why="spanned both green and blue는 초록과 파랑 두 색에 걸쳐 있었다는 말이에요.",
+                   highlight=["spanned both green and blue"],
+                   tips=[tip("used to", "'예전에 ~했다(지금은 아니다)'예요. used to have = 예전에 가지고 있었다.", "used to")]),
+            show("s1_board", "이 글은 색 이름과 실제 색 이야기예요. 칠판 왼쪽에 이름 ao를 넣어 둘게요.",
+                 panel=board([("ao", "초록 + 파랑")], [], fresh=("ao",)), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "high",
+        "glosses": [g("In the modern language", "현대어에서는"), g("however", "하지만"), g("has come to be restricted", "한정되게 되었다"),
+                    g("mostly", "주로"), g("blue shades", "파란 색조"), g("green", "초록"), g("is usually expressed", "보통 표현된다"),
+                    g("by the word midori", "미도리라는 단어로"), g("midori", "미도리 · 일본어로 초록")],
+        "steps": [
+            choice("s2_now",
+                   "그런데 지금 ao는 주로 무슨 색을 가리킨대요?",
+                   [("o0", "파랑", True), ("o1", "초록", False), ("o2", "빨강", False)],
+                   "however(하지만) 뒤 'restricted mostly to blue shades'를 봐요. restricted to는 '~로 한정된'이에요.",
+                   why="'restricted mostly to blue shades'는 주로 파란 색조로 한정됐다는 말이에요. 초록은 midori가 맡아요.",
+                   highlight=["restricted", "blue shades"]),
+            show("s2_board", "지금 ao는 주로 파랑, 초록은 midori예요. 칠판에 붙여 둘게요.",
+                 panel=board([("ao", "주로 파랑"), ("midori", "초록")], [], fresh=("midori",)), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 3, "text": S[2], "model_translation": KO[2], "teaching_value": "medium",
+        "glosses": [g("When", "~할 때"), g("the first traffic lights", "최초의 신호등"), g("were imported", "수입되었다"),
+                    g("from the United States", "미국에서"), g("installed", "설치된"), g("in the 1930s", "1930년대에"),
+                    g("they", "그것들(신호등)"), g("were", "~였다"), g("just as green", "똑같이 초록인"), g("as anywhere else", "다른 어느 곳과"),
+                    g("anywhere else", "다른 어느 곳")],
+        "slashes": ["the United States", "in the 1930s,"],
+        "steps": [
+            sv("s3_sv", ["the first traffic lights", "were imported", "they", "were", "just as green"],
+               {"they": "S", "were": "V", "just as green": "C"},
+               {"the first traffic lights": "그건 When(~할 때) 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
+                "were imported": "그건 When 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."},
+               "콤마 뒤는 주어 they(신호등), 동사 were, 보어 just as green이에요.",
+               ask="콤마 뒤에서 주어(S), 동사(V), 보어(C)를 찾아볼까요?"),
+            show("s3_green", "처음 들여온 신호등은 다른 나라와 똑같이 초록 불이었대요. 실제 색은 초록이에요.",
+                 panel=board([("ao", "주로 파랑"), ("midori", "초록")], [("green light", "초록 불")], fresh=("green light",)),
+                 highlight=["just as green"], button="다음 문장"),
+        ],
+    },
+    {
+        "id": 4, "text": S[3], "model_translation": KO[3], "teaching_value": "high",
+        "glosses": [g("Nevertheless", "그럼에도 불구하고"), g("in common parlance", "흔히 쓰는 말로"), g("the go light", "주행 신호(초록 불)"),
+                    g("was called", "~라고 불렸다"), g("ao shingoo", "아오 신고 · 'ao 신호'"), g("perhaps because", "아마도 ~이기 때문에"),
+                    g("the three primary colors", "삼원색"), g("on Japanese artists’ palettes", "일본 화가들의 팔레트에서"),
+                    g("traditionally", "전통적으로"), g("aka", "아카 · 빨강"), g("kiiro", "키이로 · 노랑")],
+        "slashes": ["ao shingoo,", "artists’ palettes"],
+        "steps": [
+            choice("s4_called",
+                   "Nevertheless(그럼에도) — 초록 불을 사람들은 뭐라고 불렀대요?",
+                   [("o0", "midori shingoo", False), ("o1", "aka shingoo", False), ("o2", "ao shingoo", True)],
+                   "was called 뒤를 봐요. 불빛은 초록인데 이름은 다른 색 단어예요.",
+                   why="'the go light was called ao shingoo', 초록 불을 ao 신호라고 불렀대요. 그래서 Nevertheless(그럼에도)예요.",
+                   highlight=["was called"],
+                   tips=[tip("Nevertheless", "'그럼에도 불구하고'예요. 앞 내용(실제로는 초록)과 어긋나는 일이 뒤에 나와요.", "Nevertheless")]),
+            show("s4_board", "실제 색은 초록인데 이름은 ao였어요. 이름과 실제 색이 어긋나기 시작해요.",
+                 panel=board([("ao", "주로 파랑"), ("midori", "초록"), ("ao shingoo", "ao 신호")], [("green light", "초록 불")],
+                             fresh=("ao shingoo",)), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 5, "text": S[4], "model_translation": KO[4], "teaching_value": "medium",
+        "glosses": [g("The label ao", "ao라는 이름표"), g("for a green light", "초록 불에 붙인"), g("did not appear", "보이지 않았다"),
+                    g("so out of the ordinary", "그리 이상한"), g("at first", "처음에는"), g("because of", "~ 때문에"),
+                    g("the remaining associations", "남아 있는 연관성"), g("with greenness", "초록과의")],
+        "steps": [
+            choice("s5_first",
+                   "처음엔 초록 불을 ao라고 불러도 왜 그리 이상하지 않았을까요?",
+                   [("o0", "ao에 아직 초록이라는 느낌이 남아 있어서", True), ("o1", "신호등이 원래 파란색이어서", False),
+                    ("o2", "정부가 그렇게 정해서", False)],
+                   "because of 뒤 'the remaining associations … with greenness'를 봐요. remaining은 '남아 있는'이에요.",
+                   why="'the remaining associations of the word ao with greenness', ao와 초록 사이에 남아 있던 연관성 때문이래요.",
+                   highlight=["remaining associations"],
+                   tips=[tip("out of the ordinary", "'평범하지 않은, 이상한'이에요. did not appear so out of the ordinary = 그리 이상해 보이지 않았다.", "out of the ordinary")]),
+        ],
+    },
+    {
+        "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "high",
+        "glosses": [g("But over time", "하지만 시간이 지나며"), g("the difference", "차이"), g("between", "~ 사이의"),
+                    g("the green color", "초록색"), g("the dominant meaning of the word ao", "ao라는 단어의 주된 뜻"),
+                    g("began to feel", "느껴지기 시작했다"), g("awkward", "어색한")],
+        "steps": [
+            sv("s6_sv", ["the difference", "the green color", "the dominant meaning of the word ao", "began to feel", "awkward"],
+               {"the difference": "S", "began to feel": "V", "awkward": "C"},
+               {"the green color": "그건 between(~ 사이의) 뒤 덩어리예요. 전치사 뒤 덩어리는 주어가 아니에요.",
+                "the dominant meaning of the word ao": "그건 between 뒤, and로 이어진 덩어리예요."},
+               "주어는 the difference, 동사는 began to feel, 보어는 awkward(어색한)예요.",
+               ask="이번엔 주어(S), 동사(V), 보어(C)를 찾아볼까요?"),
+            choice("s6_awkward",
+                   "시간이 지나자 무엇이 어색해졌대요?",
+                   [("o0", "신호등이 너무 많아진 것", False), ("o1", "초록 불빛과 ao의 주된 뜻(파랑) 사이의 차이", True),
+                    ("o2", "midori라는 단어", False)],
+                   "주어 the difference between A and B를 봐요. A와 B 사이의 차이예요.",
+                   why="'the difference between the green color and the dominant meaning of the word ao', 초록 불빛과 ao의 주된 뜻(파랑)의 차이가 어색해졌대요.",
+                   panel=board([("ao", "주로 파랑"), ("midori", "초록"), ("ao shingoo", "ao 신호")], [("green light", "초록 불")])),
+            show("s6_board", "이름 ao(파랑)와 실제 색(초록)이 어긋나서 어색해졌어요. 이걸 어떻게 풀었을지가 글의 열쇠예요.",
+                 panel=board([("ao", "주로 파랑"), ("midori", "초록"), ("ao shingoo", "ao 신호")], [("green light", "초록 불"), ("awkward", "어색함")],
+                             fresh=("awkward",)), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "high",
+        "glosses": [g("Nations", "나라들"), g("that are less assertive", "덜 단호한"), g("assertive", "단호한, 자기주장이 강한"),
+                    g("might have opted for", "~을 택했을지도 모른다"), g("the solution", "해결책"),
+                    g("simply changing", "간단히 바꾸는 것"), g("the official name of the go light", "주행 신호의 공식 이름"),
+                    g("to midori", "midori로")],
+        "steps": [
+            choice("s7_other",
+                   "덜 단호한(less assertive) 나라라면 이 어색함을 어떻게 풀었을 거래요?",
+                   [("o0", "신호등 색을 바꾼다", False), ("o1", "공식 이름을 midori로 바꾼다", True), ("o2", "그냥 둔다", False)],
+                   "'changing the official name of the go light to midori'를 봐요. change A to B는 'A를 B로 바꾸다'예요.",
+                   why="'changing the official name of the go light to midori', 신호의 공식 이름을 midori로 바꾸는 쉬운 해결책이에요.",
+                   highlight=["changing the official name"],
+                   tips=[tip("might have p.p.", "'~했을지도 모른다'예요. 실제로 한 일이 아니라, 다른 나라라면 그랬을 수도 있다는 상상이에요.", "might have")]),
+            show("s7_board", "다른 나라라면 이름을 바꿨을 거래요. 이름 쪽을 고치는 방법이에요.",
+                 panel=board([("ao", "주로 파랑"), ("midori", "초록"), ("ao shingoo", "ao 신호"), ("change the name → midori", "이름을 midori로")],
+                             [("green light", "초록 불"), ("awkward", "어색함")], fresh=("change the name → midori",)), button="다음 문장"),
+        ],
+    },
+    {
+        "id": 8, "text": S[7], "model_translation": KO[7], "teaching_value": "high",
+        "glosses": [g("Not so", "그렇지 않다"), g("the Japanese", "일본(사람들)")],
+        "steps": [
+            choice("s8_not_so",
+                   "Not so the Japanese는 무슨 뜻일까요?",
+                   [("o0", "일본도 그렇게 했다", False), ("o1", "일본은 고집이 세지 않다", False), ("o2", "일본은 그렇게 하지 않았다", True)],
+                   "Not so는 '그렇지 않다'예요. 바로 앞 문장의 '이름을 midori로 바꾸기'를 받아요.",
+                   why="Not so는 '그렇지 않다'예요. 일본은 다른 나라처럼 이름을 midori로 바꾸지 않았다는 말이에요.",
+                   point="Not so the Japanese = 일본은 그렇게(이름을 midori로 바꾸기) 하지 않았다",
+                   tips=[tip("Not so", "'그렇지 않다'예요. 앞 문장과 반대라는 신호라서, 뒤에는 앞과 다른 방법이 나와요.", "Not so")]),
+        ],
+    },
+    {
+        "id": 9, "text": BLANK, "model_translation": KO[8], "teaching_value": "high",
+        "glosses": [g("Rather than", "~하는 대신"), g("alter the name", "이름을 바꾸다"), g("to fit reality", "현실에 맞추려고"),
+                    g("the Japanese government", "일본 정부"), g("announced", "발표했다"), g("in 1973", "1973년에"),
+                    g("henceforth", "그 이후로"), g("go lights", "주행 신호등(초록 불)"), g("would be a color", "~한 색이 될 것이다"),
+                    g("better corresponded to", "~에 더 잘 부합했다"), g("the dominant meaning of ao", "ao의 주된 뜻")],
+        "steps": [
+            choice("s9_side",
+                   "빈칸 문장은 Rather than(~하는 대신)으로 시작해요. 빈칸은 'alter the name to fit reality'와 같은 쪽일까요, 반대 쪽일까요?",
+                   [("o0", "같은 쪽 (이름을 바꾼다)", False), ("o1", "반대 쪽 (이름 말고 다른 걸 바꾼다)", True)],
+                   "Rather than A, B는 'A 대신 B'예요. 그리고 앞 문장 Not so the Japanese도 떠올려 봐요.",
+                   why="Rather than A, B는 'A 대신 B'예요. 일본은 이름을 바꾸지 않았으니(Not so), 빈칸은 이름 바꾸기와 반대 쪽이에요.",
+                   highlight=["Rather than", "alter the name to fit reality"],
+                   tips=[tip("Rather than A, B", "'A 하는 대신 B'예요. 빈칸이 B 자리에 있으면 A와 반대 쪽 말이 들어가요.", "Rather than")],
+                   point="Rather than A(현실에 맞춰 이름을 바꾸기), ____ → 빈칸은 A와 반대 쪽"),
+            choice("s9_colon",
+                   "콜론(:) 뒤를 봐요. henceforth(그 이후로) 초록 불은 어떤 색이 된대요?",
+                   [("o0", "midori(초록)에 더 맞는 색", False), ("o1", "ao의 주된 뜻(파랑)에 더 맞는 색", True),
+                    ("o2", "나라마다 다른 색", False)],
+                   "'a color that better corresponded to the dominant meaning of ao'를 봐요. ao의 주된 뜻은 파랑이었어요.",
+                   why="'better corresponded to the dominant meaning of ao', ao의 주된 뜻, 즉 파랑에 더 맞는 색이 됐대요. 실제 색을 바꾼 거예요.",
+                   highlight=["better corresponded to", "the dominant meaning of ao"],
+                   tips=[tip("빈칸 뒤 콜론(:)", "콜론 뒤는 앞말을 풀어 주는 경우가 많아요. 빈칸 바로 뒤에 콜론이 있으면 그 뒤가 빈칸의 힌트예요.")]),
+            choice("s9_fill",
+                   "그럼 정리해서, 일본 정부는 무엇을 바꾸기로 했을까요?",
+                   [("o0", "현실에 맞춰 이름을 바꾸기로", False), ("o1", "이름도 색도 그대로 두기로", False),
+                    ("o2", "이름은 두고 실제 신호등 색을 바꾸기로", True)],
+                   "이름(ao)은 그대로였고, 콜론 뒤에서 신호등이 ao에 맞는 색이 됐어요.",
+                   why="일본은 이름 ao를 지키고, 신호등 색을 ao(파랑)에 더 가깝게 바꿨어요. 이름에 현실을 맞춘 거예요.",
+                   panel=board([("ao", "주로 파랑"), ("midori", "초록"), ("ao shingoo", "ao 신호"), ("change the name → midori", "이름을 midori로")],
+                               [("green light", "초록 불"), ("awkward", "어색함")])),
+            show("s9_go", "빈칸은 Rather than 뒤와 반대 쪽이에요. 이 내용을 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+                 button="문제 풀러 갈게요"),
+        ],
+    },
+]
+
+# 초급 기본 — 문장마다 하나 (빈칸 문장 제외)
+add_basic(sentences, 1, [m("Japanese", "일본어는"), " ", m("a color word", "색 단어"), "를 ", m("used to have", "예전에 가지고 있었다"), ": ",
+                         m("ao", "ao"), " — ", m("both green and blue", "초록과 파랑 둘 다"), "에 ", m("spanned", "걸쳐 있었다"), "."],
+          sv_new=sv_step("s1_basic_sv", ["Japanese", "used to have", "a color word", "spanned"],
+                         {"Japanese": "S", "used to have": "V", "a color word": "O"},
+                         {"spanned": "그건 that 뒤 덩어리 안의 동사예요(걸쳐 있던)."},
+                         "주어는 Japanese(일본어), 동사는 used to have, 목적어는 a color word예요."),
+          meaning_after="s1_ao")
+add_basic(sentences, 2, [m("In the modern language", "현대어에서는"), " ao가 ", m("blue shades", "파란 색조"), "로 ", m("has come to be restricted", "한정되게 되었고"),
+                         ", ", m("green", "초록은"), " ", m("by the word midori", "midori라는 단어로"), " ", m("is usually expressed", "보통 표현된다"), "."],
+          match_display="In the modern language, ao has come to be restricted to blue shades, and green is usually expressed by the word midori.",
+          sv_new=sv_step("s2_basic_sv", ["ao", "has come to be restricted", "green", "is usually expressed"],
+                         {"ao": "S", "has come to be restricted": "V", "green": "S", "is usually expressed": "V"}, {},
+                         "and 앞은 주어 ao, 동사 has come to be restricted예요. and 뒤는 주어 green, 동사 is usually expressed예요."),
+          meaning_after="s2_now")
+add_basic(sentences, 3, [m("When", "~할 때"), " ", m("the first traffic lights", "최초의 신호등이"), " ", m("were imported", "수입되었을"), " 때, ",
+                         m("they", "그것들은"), " ", m("just as green", "똑같이 초록"), m("were", "이었다"), "."],
+          match_display="When the first traffic lights were imported, they were just as green as anywhere else.",
+          sv_id="s3_sv", meaning_ids=["s3_green"])
+add_basic(sentences, 4, [m("Nevertheless", "그럼에도"), ", ", m("the go light", "주행 신호는"), " ", m("ao shingoo", "ao 신호"), "라고 ",
+                         m("was called", "불렸다"), "."],
+          match_display="Nevertheless, the go light was called ao shingoo.",
+          sv_new=sv_step("s4_basic_sv", ["the go light", "was called", "ao shingoo", "the three primary colors"],
+                         {"the go light": "S", "was called": "V", "ao shingoo": "C"},
+                         {"the three primary colors": "그건 perhaps because 뒤 덩어리 안의 주어예요."},
+                         "주어는 the go light, 동사는 was called, 보어는 ao shingoo예요(~라고 불렸다)."),
+          meaning_after="s4_called")
+add_basic(sentences, 5, [m("The label ao", "ao라는 이름표는"), " ", m("at first", "처음에는"), " ", m("so out of the ordinary", "그리 이상하게"), " ",
+                         m("did not appear", "보이지 않았다"), "."],
+          sv_new=sv_step("s5_basic_sv", ["The label ao", "a green light", "did not appear", "so out of the ordinary"],
+                         {"The label ao": "S", "did not appear": "V", "so out of the ordinary": "C"},
+                         {"a green light": "그건 for(~에 붙인) 뒤 덩어리예요."},
+                         "주어는 The label ao, 동사는 did not appear, 보어는 so out of the ordinary예요."),
+          meaning_after="s5_first",
+          meaning="ao라는 이름표는 처음엔 그리 이상해 보이지 않았대요. ao에 초록이라는 느낌이 남아 있었으니까요.")
+add_basic(sentences, 6, [m("But over time", "하지만 시간이 지나며"), ", ", m("the difference", "차이가"), " ", m("awkward", "어색하게"), " ",
+                         m("began to feel", "느껴지기 시작했다"), "."],
+          match_display="But over time, the difference began to feel awkward.",
+          sv_id="s6_sv", meaning_ids=["s6_awkward"])
+add_basic(sentences, 7, [m("Nations", "나라들은"), " ", m("that are less assertive", "덜 단호한"), " — ", m("the solution", "해결책"), "을 ",
+                         m("might have opted for", "택했을지도 모른다"), ": 공식 이름을 ", m("to midori", "midori로"), " 바꾸는 것."],
+          match_display="Nations that are less assertive might have opted for the solution of changing the name to midori.",
+          sv_new=sv_step("s7_basic_sv", ["Nations", "are", "less assertive", "might have opted for", "the solution"],
+                         {"Nations": "S", "might have opted for": "V", "the solution": "전목"},
+                         {"are": "그건 that 뒤 덩어리 안의 동사예요(덜 단호한).", "less assertive": "그건 that 뒤 덩어리 안의 말이에요."},
+                         "주어는 Nations, 동사는 might have opted for, for 뒤 목적어는 the solution이에요."),
+          meaning_after="s7_other")
+add_basic(sentences, 8, [m("the Japanese", "일본은"), " ", m("Not so", "그렇지 않았다"), "."],
+          sv_new=sv_step("s8_basic_sv", ["Not so", "the Japanese"], {"the Japanese": "S"},
+                         {"Not so": "그건 '그렇지 않다'는 말이에요. 누가 그렇지 않은지 찾아봐요."},
+                         "동사가 빠진 짧은 문장이에요. 주어는 the Japanese, Not so는 '그렇게 하지 않았다'예요.",
+                         ask="동사가 빠진 짧은 문장이에요. 주어(S)를 찾아볼까요?"),
+          meaning_after="s8_not_so")
+
+SENSES = {
+    1: [sense("to", "used to have", "(used to의 일부)", "used to + 동사원형 = 예전에 ~했다"),
+        sense("that", "ao, that spanned", "(앞 명사를 꾸밈)", "관계대명사 that + 동사")],
+    2: [sense("to", "has come to be", "~하게 (되다)", "come to + 동사원형 = ~하게 되다"),
+        sense("to", "restricted mostly to blue", "~로 (한정)", "be restricted to + 명사 = ~로 한정되다")],
+    3: [sense("as", "just as green", "~만큼 (똑같이)", "as + 형용사 + as (원급 비교의 앞 as)"),
+        sense("as", "as anywhere else", "~와 (같이)", "원급 비교의 뒤 as — 비교 대상 앞")],
+    5: [sense("for", "for a green light", "~에 붙인, ~에 대한", "전치사 for + 명사"),
+        sense("so", "so out of the ordinary", "그다지, 그렇게", "부사 so + 형용사 (not so = 그리 ~않은)")],
+    6: [sense("but", "But over time", "하지만", "접속사 but (문장 앞)"),
+        sense("to", "began to feel", "~하기 (시작하다)", "begin + to부정사")],
+    7: [sense("that", "Nations that are", "(앞 명사를 꾸밈)", "관계대명사 that + 동사"),
+        sense("for", "opted for", "~을 (택하다)", "opt for + 명사 = ~을 선택하다"),
+        sense("to", "the go light to midori", "~로 (바꾸다)", "change A to B = A를 B로 바꾸다")],
+    8: [sense("so", "Not so", "그렇게 (하지 않다)", "Not so + 주어 = 주어는 그렇지 않다")],
+    9: [sense("to", "to fit reality", "~하도록, ~에 맞추려고", "to부정사 (목적)"),
+        sense("that", "announced in 1973 that", "~라고", "명사절 that (announce that …)"),
+        sense("that", "a color that better", "(앞 명사를 꾸밈)", "관계대명사 that + 동사"),
+        sense("to", "corresponded to", "~에 (부합하다)", "correspond to + 명사 = ~에 부합하다")],
+}
+
+WORDS = {"1930s": "1930년대", "ao": "아오 · 일본어 색 단어", "shingoo": "신고 · 일본어로 신호", "three": "셋의", "artists": "화가들",
+         "midori": "미도리 · 일본어로 초록", "alter": "바꾸다", "color": "색", "word": "단어", "both": "둘 다", "green": "초록", "blue": "파랑", "modern": "현대의", "language": "언어",
+         "shades": "색조", "first": "최초의", "traffic": "교통", "lights": "신호등, 불빛", "united": "연합한", "states": "주, 나라",
+         "common": "흔한", "parlance": "말투, 용어", "go": "가다 · go light = 주행 신호", "light": "불빛, 신호등", "primary": "기본의",
+         "colors": "색들", "japanese": "일본의", "artists’": "화가들의", "palettes": "팔레트", "label": "이름표", "appear": "~처럼 보이다",
+         "ordinary": "평범한", "remaining": "남아 있는", "associations": "연관성", "greenness": "초록빛", "difference": "차이",
+         "dominant": "주된, 지배적인", "meaning": "의미", "began": "시작했다", "feel": "느껴지다", "nations": "나라들",
+         "less": "덜", "opted": "택했다", "solution": "해결책", "simply": "간단히", "changing": "바꾸는 것", "official": "공식의",
+         "name": "이름", "government": "정부", "reality": "현실", "fit": "맞추다", "better": "더 잘", "lights.": "신호등",
+         "corresponded": "부합했다", "imported": "수입된", "usually": "보통", "expressed": "표현된", "restricted": "한정된",
+         "come": "오다 · come to be = ~하게 되다", "called": "~라고 불린", "time": "시간", "over": "~ 동안 · over time = 시간이 지나며",
+         "out": "밖에 · out of the ordinary = 이상한", "rather": "오히려 · rather than = ~ 대신", "used": "used to = 예전에 ~했다",
+         "have": "가지다", "expressed.": "표현된", "anywhere": "어디든", "else": "다른", "first.": "처음", "lights,": "신호등",
+         "perhaps": "아마도", "might": "~일지도 모른다", "opted for": "택했다", "would": "~일 것이다", "official name": "공식 이름",
+         "go lights": "주행 신호등", "began to": "~하기 시작했다", "japanese government": "일본 정부"}
+
+STORIES = [
+    (3, [sc("문장 1~2", "🔵", "ao = green + blue → mostly blue", "ao는 원래 초록·파랑 둘 다였는데, 지금은 주로 파랑 — 초록은 midori"),
+         sc("문장 3", "🚦", "traffic lights · green", "1930년대 들여온 신호등은 다른 나라처럼 초록 불이었어요")]),
+    (6, [sc("문장 4~5", "🏷️", "ao shingoo", "그래도 초록 불을 'ao 신호'라고 불렀어요 — 처음엔 별로 이상하지 않았죠"),
+         sc("문장 6", "😕", "awkward", "시간이 지나자 초록 불빛과 ao(파랑)의 차이가 어색해졌어요")]),
+    (8, [sc("문장 7~8", "🙅", "change the name? · Not so", "다른 나라라면 이름을 midori로 바꿨을 텐데, 일본은 그러지 않았어요"),
+         sc("빈칸 문장", "📢", "1973 · ________", "그 대신 일본 정부가 ____라고 발표했어요")]),
+]
+
+OPTIONS = [
+    ("1", "reality should be altered to fit the name", ["reality", "altered", "fit the name"], "현실이 이름에 맞게 바뀌어야 한다", True),
+    ("2", "language reflected what people had in mind", ["language reflected", "in mind"], "언어가 사람들의 생각을 반영했다", False),
+    ("3", "the go light should follow the global standard", ["global standard"], "주행 신호는 세계 기준을 따라야 한다", False),
+    ("4", "the use of the word ao for go light would be banned", ["ao", "banned"], "주행 신호에 ao라는 말을 쓰는 것이 금지될 것이다", False),
+    ("5", "they would not change the color of go light in any way", ["not change the color"], "주행 신호의 색을 어떤 식으로도 바꾸지 않을 것이다", False),
+]
+exam = {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________", "sentence": 9, "analysis_first": True, "wrong_rate": 71.9, "wrong_rank": 2,
+    "glosses": [g("reality", "현실"), g("altered", "바뀐"), g("fit", "~에 맞다"), g("reflected", "반영했다"), g("had in mind", "마음에 두었다"),
+                g("follow", "따르다"), g("global standard", "세계 기준"), g("banned", "금지된"), g("in any way", "어떤 식으로도")],
+    "options": [{"id": o[0], "label": o[1], "keywords": o[2], "ko": o[3], **({"correct": True} if o[4] else {})} for o in OPTIONS],
+    "brief": exam_brief(
+        "Rather than 뒤와 반대 쪽, 그리고 콜론 뒤 내용을 떠올리며 골라 봐요.",
+        "정답이에요! 일본은 이름(ao)을 현실(초록)에 맞추지 않고, 거꾸로 신호등 색을 ao의 주된 뜻에 맞췄어요. 현실이 이름에 맞게 바뀐 거예요.",
+        "정답은 ①이에요. 이름을 현실에 맞추는 대신(Rather than), 현실(신호등 색)을 이름에 맞췄어요.",
+        {"2": "언어와 생각 이야기는 그럴듯하지만, 빈칸 뒤 콜론은 신호등 색을 바꿨다는 말이에요. 무엇을 무엇에 맞췄는지가 빠졌어요.",
+         "3": "세계 기준은 초록 불이에요. 일본은 오히려 ao에 맞춰 색을 바꿨으니 반대예요.",
+         "4": "ao를 금지하면 이름을 바꾸는 셈이에요. Not so the Japanese, 일본은 이름을 바꾸지 않았어요.",
+         "5": "콜론 뒤에서 신호등이 ao에 더 맞는 색이 됐다고 했어요. 색을 바꾼 거라 반대예요."},
+        {"2": review(18.8,
+                     "'언어가 사람들의 생각을 반영했다'는 그럴듯한 말이지만 글에 없는 일반론이에요. 빈칸 뒤 콜론(:)은 '그 이후로 신호등이 ao에 더 맞는 색이 됐다'예요. 그러니 빈칸은 무엇을 무엇에 맞췄는지, 현실을 이름에 맞췄다는 말이어야 해요.",
+                     "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+                     [("콜론 뒤를 안 봤어요", ["colon_after_blank"],
+                       "알려 줘서 고마워요. 빈칸 바로 뒤 콜론(:)은 빈칸을 풀어 주는 경우가 많아요. 앞으로 빈칸 뒤 콜론을 강조해서 알려 줄게요."),
+                      ("Rather than 뒤가 반대인 걸 놓쳤어요", ["rather_than"],
+                       "알려 줘서 고마워요. Rather than A, B는 'A 대신 B'라서 빈칸은 A와 반대 쪽이에요. 앞으로 이 점을 짚어 줄게요."),
+                      ("둘 다요", ["colon_after_blank", "rather_than"], "알려 줘서 고마워요. 앞으로 Rather than과 빈칸 뒤 콜론을 같이 짚어 줄게요.")],
+                     panel=rows(("Rather than", "alter the name to fit reality", "현실에 맞춰 이름을 바꾸는 대신", "hl"),
+                                ("콜론(:) 뒤", "go lights would be a color … of ao", "신호등이 ao에 맞는 색이 됐다", "hl2")))}),
+}
+
+lesson = base_lesson(
+    ID, source="2024년 3월 고3 전국연합학력평가 영어 34번 (빈칸 추론, 3점)",
+    topic="빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 재진술 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",
+    method={"type": "blank", "labels": ["빈칸 문장 먼저 보기", "요지 잡기"], "intro_times": 3},
+    images={"topic": {"src": topic_svg("topic-ao-green.svg", ("Name", "이름 ao"), "↔", ("Reality", "초록 신호등"),
+                                       "이름과 실제 색이 어긋나면 무엇을 바꿀까?", "2024년 3월 34번 도입 칠판"),
+                      "alt": "칠판: Name(이름 ao) ↔ Reality(초록 신호등)", "kind": "drawing"}},
+    intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
+            "brief": {"say": "초록 불을 파랑이라고 부른다면 어색하겠죠? 이번 글은 일본 신호등의 색과 이름 이야기예요."}},
+           {"id": "method1", "type": "say", "button": "좋아요",
+            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+    exam=exam,
+    key_words={"passage": [g("used to", "예전에 ~했다"), g("span", "~에 걸치다"), g("restrict", "한정하다"), g("shade", "색조"),
+                           g("import", "수입하다"), g("install", "설치하다"), g("nevertheless", "그럼에도 불구하고"),
+                           g("primary color", "원색"), g("out of the ordinary", "이상한, 평범하지 않은"), g("association", "연관성"),
+                           g("dominant", "주된, 지배적인"), g("awkward", "어색한"), g("assertive", "단호한"), g("opt for", "~을 선택하다"),
+                           g("alter", "바꾸다"), g("henceforth", "그 이후로"), g("correspond to", "~에 부합하다")],
+               "options": [g("reality", "현실"), g("reflect", "반영하다"), g("global standard", "세계 기준"), g("ban", "금지하다")]},
+    sentences=sentences)
+
+finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
+       chunks={"Japanese": "일본어", "used to have": "예전에 가지고 있었다", "a color word": "색 단어", "spanned": "걸쳐 있었다",
+               "ao": "ao(색 단어)", "has come to be restricted": "한정되게 되었다", "green": "초록", "is usually expressed": "보통 표현된다",
+               "the first traffic lights": "최초의 신호등", "were imported": "수입되었다", "they": "그것들", "were": "~였다",
+               "just as green": "똑같이 초록인", "the go light": "주행 신호", "was called": "~라고 불렸다", "ao shingoo": "ao 신호",
+               "the three primary colors": "삼원색", "The label ao": "ao라는 이름표", "a green light": "초록 불",
+               "did not appear": "보이지 않았다", "so out of the ordinary": "그리 이상한", "the difference": "차이",
+               "the green color": "초록색", "the dominant meaning of the word ao": "ao라는 단어의 주된 뜻", "began to feel": "느껴지기 시작했다",
+               "awkward": "어색한", "Nations": "나라들", "are": "~이다", "less assertive": "덜 단호한", "might have opted for": "택했을지도 모른다",
+               "the solution": "해결책", "Not so": "그렇지 않다", "the Japanese": "일본(사람들)", "When": "~할 때",
+               "Nevertheless": "그럼에도 불구하고", "at first": "처음에는", "But over time": "하지만 시간이 지나며",
+               "that are less assertive": "덜 단호한", "to midori": "midori로"})

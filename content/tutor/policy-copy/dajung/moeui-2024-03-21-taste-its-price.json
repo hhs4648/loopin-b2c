@@ -1,0 +1,346 @@
+{
+  "lesson": "moeui-2024-03-21-taste-its-price",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "밑줄 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_sv": {
+      "ask": "이 문장은 주어가 길어요. 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "one’s perception of sensory input": "그건 of 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요.",
+        "visual and auditory information": "그건 such as 뒤, 예시예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 That perception is a construction(인식이 구성물이라는 것), 동사는 is not true예요. That + 문장 전체가 주어예요.",
+      "from": "5w3yp2"
+    },
+    "s1_that": {
+      "say": "That + 문장이 통째로 주어가 될 수 있어요. 'That perception is a construction'은 '인식이 만들어진 것이라는 것은'이에요.",
+      "from": "4ghdg1"
+    },
+    "s1_mean": {
+      "ask": "이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not true just of는 '~에만 해당하는 건 아니다'예요. just(~만)가 핵심이에요.",
+        "not true just of는 '~에만 해당하는 건 아니다'예요. just(~만)가 핵심이에요."
+      ],
+      "explain": "'is not true just of one’s perception of sensory input', 감각으로 들어오는 것에만 해당하는 건 아니라는 말이에요. 다른 데도 해당한다는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'is not true just of one’s perception of sensory input', 감각으로 들어오는 것에만 해당하는 건 아니라는 말이에요. 다른 데도 해당한다는 거예요.",
+        "o1": "'is not true just of one’s perception of sensory input', 감각으로 들어오는 것에만 해당하는 건 아니라는 말이에요. 다른 데도 해당한다는 거예요."
+      },
+      "from": "iwkzlb"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "your social perceptions": "그건 of 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 It(앞 문장의 '인식이 구성물이라는 것'), 동사는 is, 보어는 true예요.",
+      "from": "814jen"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "14jpgmh"
+    },
+    "s2_also": {
+      "ask": "그럼 감각 정보 말고 무엇에도 해당한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'It is true of your social perceptions as well'을 봐요. 대시(―) 뒤가 그 예예요.",
+        "'It is true of your social perceptions as well'을 봐요. 대시(―) 뒤가 그 예예요."
+      ],
+      "explain": "'your social perceptions as well', 사회적 인식에도 해당한대요. 대시 뒤에 만나는 사람, 먹는 음식, 사는 물건이 예로 나와요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'your social perceptions as well', 사회적 인식에도 해당한대요. 대시 뒤에 만나는 사람, 먹는 음식, 사는 물건이 예로 나와요.",
+        "o2": "'your social perceptions as well', 사회적 인식에도 해당한대요. 대시 뒤에 만나는 사람, 먹는 음식, 사는 물건이 예로 나와요."
+      },
+      "from": "1vxftjn"
+    },
+    "s3_blind": {
+      "ask": "와인을 가리고(blind) 맛봤을 때와 가격표를 붙였을 때, 결과가 어떻게 달랐대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "but 앞(blind → little or no correlation)과 뒤(labeled by price → significant correlation)를 나눠 봐요.",
+        "but 앞(blind → little or no correlation)과 뒤(labeled by price → significant correlation)를 나눠 봐요."
+      ],
+      "explain": "가리고 마시면 'little or no correlation'(거의 관계없음), 가격표를 붙이면 'a significant correlation'(뚜렷한 관계)이래요. 가격을 알면 맛 평가가 가격을 따라가요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "가리고 마시면 'little or no correlation'(거의 관계없음), 가격표를 붙이면 'a significant correlation'(뚜렷한 관계)이래요. 가격을 알면 맛 평가가 가격을 따라가요.",
+        "o2": "가리고 마시면 'little or no correlation'(거의 관계없음), 가격표를 붙이면 'a significant correlation'(뚜렷한 관계)이래요. 가격을 알면 맛 평가가 가격을 따라가요."
+      },
+      "point": "가리고 마시면 맛 평가 ≠ 가격, 가격표를 붙이면 맛 평가 = 가격을 따라감",
+      "from": "174rhu9"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the subjects": "그건 because 뒤 덩어리 안의 주어예요.",
+        "consciously believed": "그건 because 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 That(앞 문장의 결과), 동사는 wasn't예요. because 뒤가 '아니었던' 이유예요.",
+      "from": "1t2rxnw"
+    },
+    "s4_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "grwv9y"
+    },
+    "s4_conscious": {
+      "ask": "그건 참가자들이 '비싼 게 더 좋겠지' 하고 일부러(의식적으로) 의견을 바꿨기 때문이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "문장 첫머리 'That wasn’t because …'를 봐요. wasn’t because는 '~ 때문이 아니었다'예요.",
+        "문장 첫머리 'That wasn’t because …'를 봐요. wasn’t because는 '~ 때문이 아니었다'예요."
+      ],
+      "explain": "'That wasn’t because …', 의식적으로 믿고 의견을 바꿨기 때문이 아니었대요. 다음 문장에서 더 깊은 이유가 나와요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'That wasn’t because …', 의식적으로 믿고 의견을 바꿨기 때문이 아니었대요. 다음 문장에서 더 깊은 이유가 나와요."
+      },
+      "from": "p5otkj"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the conscious level": "그건 at 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 it, 동사는 wasn't, 보어는 true예요.",
+      "from": "mqk9x0"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "193ua7d"
+    },
+    "s5_rather": {
+      "say": "Or rather(더 정확히는), 의식적인 수준에서만 그런 게 아니었대요. 뇌 깊은 곳에서도 일어났다는 거예요.",
+      "from": "vcnqyp"
+    },
+    "s6_sv": {
+      "ask": "아주 긴 문장이에요. 실험 결과가 나오는 and 뒤에서 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "We": "그건 맨 앞 '우리는 안다'의 주어예요. 결과는 and 뒤에 있어요.",
+        "know": "그건 맨 앞 '우리는 안다'의 동사예요.",
+        "the researchers": "그건 and 앞, 연구자들이 한 일의 주어예요.",
+        "were imaging": "그건 and 앞, 연구자들이 한 일이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "and 뒤는 주어 the imaging(그 영상), 동사 showed(보여 주었다)예요. that 뒤가 보여 준 내용이에요.",
+      "from": "169bs6w"
+    },
+    "s6_that_sv": {
+      "ask": "that 뒤가 실험 결과예요. 그 안에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "drinking a glass of the same wine": "그건 more than(~보다) 뒤, 비교하는 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "that 안의 주어는 drinking …(비싸다고 믿은 와인을 마시는 것), 동사는 really did activate, 목적어는 their centers of taste for pleasure예요.",
+      "from": "1rfgdmc"
+    },
+    "s6_result": {
+      "ask": "뇌 영상은 무엇을 보여 줬대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "that 뒤 주어는 drinking what they believed was an expensive glass of wine, 동사는 really did activate예요. 마지막의 the same wine도 봐요.",
+        "that 뒤 주어는 drinking what they believed was an expensive glass of wine, 동사는 really did activate예요. 마지막의 the same wine도 봐요."
+      ],
+      "explain": "비싸다고 믿은(believed) 와인을 마시는 것이, 싸다고 붙인 같은(the same) 와인보다 즐거움의 맛 중추를 정말로 더 활성화했대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "비싸다고 믿은(believed) 와인을 마시는 것이, 싸다고 붙인 같은(the same) 와인보다 즐거움의 맛 중추를 정말로 더 활성화했대요.",
+        "o2": "비싸다고 믿은(believed) 와인을 마시는 것이, 싸다고 붙인 같은(the same) 와인보다 즐거움의 맛 중추를 정말로 더 활성화했대요."
+      },
+      "point": "같은 와인이어도 '비싸다고 믿으면' 뇌의 즐거움 맛 중추가 더 활성화 → 믿음이 맛을 바꾼다",
+      "from": "e5x5gc"
+    },
+    "s7_basic_sv": {
+      "ask": "That’s는 That is를 줄인 말이에요. 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the placebo effect": "그건 to 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "That’s = That is예요. 주어 That, 동사 ’s(is), 보어 related(관련 있는)예요.",
+      "from": "13tvznf"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "pvtbk9"
+    },
+    "s7_placebo": {
+      "say": "플라세보 효과와 관련 있대요. 가짜 약도 진짜라고 믿으면 몸이 나아지는 것처럼, 믿음이 실제 느낌을 바꾸는 거예요.",
+      "from": "1ksqmzm"
+    },
+    "story_7": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s8_factor": {
+      "ask": "세미콜론(;) 앞을 봐요. 맛은 감각 신호의 결과만이 아니라 무엇에도 달려 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'it depends also on …'을 봐요. depend on은 '~에 달려 있다'예요.",
+        "'it depends also on …'을 봐요. depend on은 '~에 달려 있다'예요."
+      ],
+      "explain": "'it depends also on psychological factors', 맛은 마음(psychological)에서 오는 것에도 달려 있대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'it depends also on psychological factors', 맛은 마음(psychological)에서 오는 것에도 달려 있대요.",
+        "o2": "'it depends also on psychological factors', 맛은 마음(psychological)에서 오는 것에도 달려 있대요."
+      },
+      "from": "vb083y"
+    },
+    "s8_underline": {
+      "ask": "드디어 밑줄이에요. 'you don’t just taste the wine; you taste its price'는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "taste the wine은 감각 쪽, its price는 마음 쪽이에요. 칠판 두 쪽을 이어 봐요.",
+        "taste the wine은 감각 쪽, its price는 마음 쪽이에요. 칠판 두 쪽을 이어 봐요."
+      ],
+      "explain": "와인 자체(감각)만 맛보는 게 아니라, 가격이라는 생각(마음)까지 맛본다는 말이에요. 가격에 대한 믿음이 맛 경험을 바꿔요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "와인 자체(감각)만 맛보는 게 아니라, 가격이라는 생각(마음)까지 맛본다는 말이에요. 가격에 대한 믿음이 맛 경험을 바꿔요.",
+        "o1": "와인 자체(감각)만 맛보는 게 아니라, 가격이라는 생각(마음)까지 맛본다는 말이에요. 가격에 대한 믿음이 맛 경험을 바꿔요."
+      },
+      "point": "you taste its price = 가격(지각된 가치)이라는 생각이 맛이라는 주관적 경험을 바꾼다",
+      "from": "u8kxo5"
+    },
+    "s8_go": {
+      "say": "이 뜻을 다른 말로 바꿔 쓴 보기를 골라 봐요. 무엇이 무엇을 바꾸는지, 방향도 꼭 봐요.",
+      "from": "1jj334m"
+    }
+  },
+  "exam": {
+    "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고, 가격(생각)이 맛(경험)을 바꾼다는 방향을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 가격이라는 지각된 가치(perceived value)가 맛이라는 주관적 경험(subjective experience)을 바꿔요. 그래서 와인이 아니라 가격을 맛본다고 한 거예요.",
+    "final_wrong": "정답은 ⑤예요. 가격(지각된 가치)이 맛 경험(주관적 경험)에 영향을 준다는 말이에요.",
+    "option_feedback": {
+      "1": "방향이 거꾸로예요. 글은 가격이 맛 평가를 바꾼다고 했지, 평가가 가격을 정한다고 하지 않았어요.",
+      "2": "충동구매 이야기는 글에 없어요.",
+      "3": "반대 의견을 무시하는 이야기는 글에 없어요.",
+      "4": "뇌가 같은 반응을 보인 게 아니라, 비싸다고 믿을 때 더 활성화됐어요. 반대예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "1": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 23.9%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "①은 '고객 평가가 제품 가격을 정한다'예요. 글에 rating(평가)과 price(가격)가 다 나와서 그럴듯해 보여요. 하지만 글은 거꾸로, 가격표가 맛 평가를 바꾼다고 했어요. 무엇이 무엇을 바꾸는지 방향이 반대예요.",
+        "ask": "그래서 ①이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "ratings·price가 글에 나와서 골랐어요",
+            "skills": [
+              "word_overlap"
+            ],
+            "reply": "알려 줘서 고마워요. 보기 단어가 글과 겹쳐도, 그 단어들의 관계(무엇이 무엇을 정하나)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "방향(원인과 결과)을 놓쳤어요",
+            "skills": [
+              "cause_direction"
+            ],
+            "reply": "알려 줘서 고마워요. 가격(원인) → 맛 경험(결과)이었어요. 앞으로 원인과 결과의 방향을 칠판에 화살표로 보여 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "word_overlap",
+              "cause_direction"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 방향을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "글",
+              "text": "labeled by price → ratings of taste",
+              "ko": "가격이 맛 평가를 바꾼다",
+              "tone": "hl"
+            },
+            {
+              "label": "①",
+              "text": "Customer ratings → the price",
+              "ko": "평가가 가격을 정한다 (거꾸로)",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1l3txvh"
+  },
+  "intro": {
+    "topic": {
+      "say": "같은 와인인데 비싼 가격표가 붙으면 더 맛있을까요? 이번 글은 맛을 느끼는 데 무엇이 작용하는지 다뤄요."
+    },
+    "method1": {
+      "say": "수능 문제는 시간 싸움이에요."
+    },
+    "method2": {
+      "say": "밑줄 문제는 핵심 단어 위주로 지문의 요지를 빠르게 파악하면 좋아요."
+    },
+    "from": "yocge9"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1s43837"
+}

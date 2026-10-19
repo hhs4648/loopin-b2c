@@ -1,0 +1,1635 @@
+{
+  "id": "moeui-2024-03-43-baseball-card",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 43~45번 중 43번 (글의 순서, 2점)",
+  "brief": {
+    "topic": "이야기 순서 푸는 법: 단락마다 첫 사건과 끝 사건 → 앞 단락 끝 사건에 이어지는 첫 사건 찾기 → 순서 잇기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "order",
+    "labels": [
+      "첫 사건 · 끝 사건",
+      "순서 잇기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-baseball-card.svg",
+      "alt": "칠판: Old Card(옛 야구 카드) → Grandpa(할아버지)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "말수 적은 할아버지의 옛 사진을 찾은 적 있나요? 이번 글은 오래된 야구 카드 한 장에서 시작하는 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "이야기 순서 문제는 사건이 일어난 차례를 따라가요. 단락마다 첫 사건과 끝 사건을 보고 이어 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "주어진 글 (A)에 이어질 내용을 순서에 맞게 배열한 것으로 가장 적절한 것은?",
+    "sentence": 1,
+    "analysis_first": true,
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "(B)-(D)-(C)",
+        "keywords": []
+      },
+      {
+        "id": "2",
+        "label": "(C)-(B)-(D)",
+        "keywords": []
+      },
+      {
+        "id": "3",
+        "label": "(C)-(D)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "4",
+        "label": "(D)-(B)-(C)",
+        "keywords": [],
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "(D)-(C)-(B)",
+        "keywords": []
+      }
+    ],
+    "brief": {
+      "ask": "사건 순서(카드 발견 → 살펴봄 → 받아 듦 → 함께 연습)를 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 카드 발견 → (D) 살펴보고 할아버지께 물음 → (B) 할아버지가 받아 들고 가르쳐 달라는 부탁 → (C) 함께 연습, 순서예요.",
+      "final_wrong": "정답은 ④ (D)-(B)-(C)예요.",
+      "option_feedback": {
+        "1": "(B)에서 할아버지가 카드를 받아 들려면, 먼저 Tommy가 카드를 보여 줘야 해요. 그건 (D)예요.",
+        "2": "(C)의 함께 연습은 가르쳐 달라는 부탁(B 끝) 뒤에 와요.",
+        "3": "(C)는 이야기의 마무리예요. 카드를 보여 주기도 전에 연습할 수 없어요.",
+        "5": "(D) 뒤에 바로 (C)가 오면, 가르쳐 달라는 부탁(B) 없이 연습부터 하게 돼요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "curious",
+        "ko": "호기심 많은"
+      },
+      {
+        "en": "affectionately",
+        "ko": "다정하게"
+      },
+      {
+        "en": "mysterious",
+        "ko": "신비로운"
+      },
+      {
+        "en": "garage",
+        "ko": "차고"
+      },
+      {
+        "en": "nostalgia",
+        "ko": "그리움, 향수"
+      },
+      {
+        "en": "youthful",
+        "ko": "젊은"
+      },
+      {
+        "en": "fascinated",
+        "ko": "매료된"
+      },
+      {
+        "en": "eager",
+        "ko": "간절히 바라는"
+      },
+      {
+        "en": "wisdom",
+        "ko": "지혜"
+      },
+      {
+        "en": "radiate",
+        "ko": "빛나다"
+      },
+      {
+        "en": "examine",
+        "ko": "살펴보다"
+      },
+      {
+        "en": "proudly",
+        "ko": "당당하게"
+      },
+      {
+        "en": "intrigued",
+        "ko": "호기심이 생긴"
+      },
+      {
+        "en": "discovery",
+        "ko": "발견"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "medium",
+    "conceptual_difficulty": "medium",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "(A) Once upon a time in the small town of Meadowville, there lived a curious boy named Tommy.",
+      "model_translation": "(A) 옛날 옛적 Meadowville의 작은 마을에 Tommy라는 이름의 호기심 많은 소년이 살고 있었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Once upon a time",
+          "ko": "옛날 옛적에"
+        },
+        {
+          "en": "in the small town of Meadowville",
+          "ko": "메도우빌이라는 작은 마을에"
+        },
+        {
+          "en": "there lived",
+          "ko": "~가 살았다"
+        },
+        {
+          "en": "a curious boy",
+          "ko": "호기심 많은 소년"
+        },
+        {
+          "en": "named Tommy",
+          "ko": "토미라는 이름의"
+        },
+        {
+          "en": "small",
+          "ko": "작은"
+        },
+        {
+          "en": "town",
+          "ko": "마을"
+        },
+        {
+          "en": "Meadowville",
+          "ko": "메도우빌(마을 이름)"
+        },
+        {
+          "en": "lived",
+          "ko": "살았다"
+        },
+        {
+          "en": "curious",
+          "ko": "호기심 많은"
+        },
+        {
+          "en": "boy",
+          "ko": "소년"
+        },
+        {
+          "en": "named",
+          "ko": "~라는 이름의"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미"
+        }
+      ],
+      "steps": [
+        {
+          "id": "g_story",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이야기 글이에요. 이야기는 사건이 일어난 차례대로 이어져요. 누가 무엇을 했는지 따라가 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "tips": [
+            {
+              "label": "이야기 순서 요령",
+              "text": "단락 첫머리 사건이 바로 앞 단락 끝 사건에 이어지는지 봐요. the card처럼 the가 붙은 말은 앞에서 이미 나온 것이에요."
+            }
+          ]
+        }
+      ],
+      "label": "주어진 글"
+    },
+    {
+      "id": 2,
+      "text": "Tommy’s grandfather, affectionately known as Grandpa Joe, had always been a mysterious figure to (a)him.",
+      "model_translation": "애정 어린 표현으로 Grandpa Joe로 알려진 Tommy의 할아버지는 항상 그에게 신비로운 인물이었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Tommy’s grandfather",
+          "ko": "토미의 할아버지"
+        },
+        {
+          "en": "affectionately known as Grandpa Joe",
+          "ko": "다정하게 '조 할아버지'라고 불리는"
+        },
+        {
+          "en": "had always been",
+          "ko": "늘 ~였다"
+        },
+        {
+          "en": "a mysterious figure",
+          "ko": "신비로운 인물"
+        },
+        {
+          "en": "to (a)him",
+          "ko": "그에게"
+        },
+        {
+          "en": "Tommy’s",
+          "ko": "토미의"
+        },
+        {
+          "en": "grandfather",
+          "ko": "할아버지"
+        },
+        {
+          "en": "affectionately",
+          "ko": "다정하게"
+        },
+        {
+          "en": "known",
+          "ko": "알려진"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe",
+          "ko": "조"
+        },
+        {
+          "en": "always",
+          "ko": "늘"
+        },
+        {
+          "en": "mysterious",
+          "ko": "신비로운"
+        },
+        {
+          "en": "figure",
+          "ko": "인물"
+        },
+        {
+          "en": "a)him",
+          "ko": "(a) 그에게"
+        }
+      ],
+      "steps": [
+        {
+          "id": "g_figure",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Tommy에게 할아버지는 어떤 사람이었나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "a mysterious figure를 봐요. mysterious는 '신비로운'이에요.",
+              "a mysterious figure를 봐요. mysterious는 '신비로운'이에요."
+            ],
+            "explain": "a mysterious figure를 봐요. mysterious는 '신비로운'이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "a mysterious figure를 봐요. mysterious는 '신비로운'이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "늘 신비로운 사람",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "늘 같이 노는 친한 사람"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "a mysterious figure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Grandpa Joe was a man of few words, but his eyes lit up from stories untold.",
+      "model_translation": "Grandpa Joe는 말수가 적은 사람이었지만, 그의 눈은 말하지 않은 이야기들로 빛이 났다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지"
+        },
+        {
+          "en": "was a man of few words",
+          "ko": "말수가 적은 사람이었다"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "his eyes",
+          "ko": "그의 눈은"
+        },
+        {
+          "en": "lit up",
+          "ko": "빛났다"
+        },
+        {
+          "en": "from stories untold",
+          "ko": "말하지 않은 이야기들로"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe",
+          "ko": "조"
+        },
+        {
+          "en": "man",
+          "ko": "사람"
+        },
+        {
+          "en": "few",
+          "ko": "거의 없는"
+        },
+        {
+          "en": "words",
+          "ko": "말"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "lit",
+          "ko": "빛났다(light의 과거)"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기들"
+        },
+        {
+          "en": "untold",
+          "ko": "말하지 않은"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 4,
+      "text": "One lazy summer afternoon, while searching the garage, Tommy found an old, forgotten box.",
+      "model_translation": "어느 나른한 여름 오후, 차고를 탐색하던 중, Tommy는 오래되고 잊혀진 상자를 발견했다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "One lazy summer afternoon",
+          "ko": "어느 나른한 여름 오후"
+        },
+        {
+          "en": "while searching the garage",
+          "ko": "차고를 뒤지다가"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미"
+        },
+        {
+          "en": "found",
+          "ko": "발견했다"
+        },
+        {
+          "en": "an old, forgotten box",
+          "ko": "오래되고 잊혀진 상자"
+        },
+        {
+          "en": "lazy",
+          "ko": "나른한"
+        },
+        {
+          "en": "summer",
+          "ko": "여름"
+        },
+        {
+          "en": "afternoon",
+          "ko": "오후"
+        },
+        {
+          "en": "searching",
+          "ko": "뒤지는"
+        },
+        {
+          "en": "garage",
+          "ko": "차고"
+        },
+        {
+          "en": "old",
+          "ko": "오래된"
+        },
+        {
+          "en": "forgotten",
+          "ko": "잊혀진"
+        },
+        {
+          "en": "box",
+          "ko": "상자"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 5,
+      "text": "As (b)he opened it, the treasure of memories spilled out, including an old baseball card featuring a young Grandpa Joe.",
+      "model_translation": "그가 그것을 열었을 때, 젊은 Grandpa Joe가 등장하는 오래된 야구 카드를 포함한 추억의 보물이 쏟아졌다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "As (b)he opened it",
+          "ko": "그가 그것을 열자"
+        },
+        {
+          "en": "the treasure of memories",
+          "ko": "추억의 보물"
+        },
+        {
+          "en": "spilled out",
+          "ko": "쏟아져 나왔다"
+        },
+        {
+          "en": "including",
+          "ko": "~을 포함해"
+        },
+        {
+          "en": "an old baseball card",
+          "ko": "오래된 야구 카드"
+        },
+        {
+          "en": "featuring a young Grandpa Joe",
+          "ko": "젊은 조 할아버지가 나오는"
+        },
+        {
+          "en": "b)he",
+          "ko": "(b) 그는"
+        },
+        {
+          "en": "opened",
+          "ko": "열었다"
+        },
+        {
+          "en": "treasure",
+          "ko": "보물"
+        },
+        {
+          "en": "memories",
+          "ko": "기억들, 추억"
+        },
+        {
+          "en": "spilled",
+          "ko": "쏟아졌다"
+        },
+        {
+          "en": "old",
+          "ko": "오래된"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        },
+        {
+          "en": "featuring",
+          "ko": "~이 나오는"
+        },
+        {
+          "en": "young",
+          "ko": "젊은"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe",
+          "ko": "조"
+        }
+      ],
+      "steps": [
+        {
+          "id": "g_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(A)는 Tommy가 상자에서 젊은 할아버지가 나오는 야구 카드를 찾으며 끝나요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "an old baseball card"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(A)",
+                "text": "Tommy found … an old baseball card",
+                "ko": "토미가 상자에서 할아버지의 옛 야구 카드를 찾음"
+              }
+            ]
+          }
+        },
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (B)·(C)·(D)를 시험지 순서대로 읽어요. 단락마다 첫 사건과 끝 사건을 봐 두면 좋아요."
+          },
+          "method": 1,
+          "button": "(B)부터 읽어 볼게요"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "(B) A spark of nostalgia lit up Grandpa Joe’s eyes as he took the card.",
+      "model_translation": "(B) 그가 카드를 가져가면서 노스탤지어의 반짝임이 Grandpa Joe의 눈을 밝혔다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "A spark of nostalgia",
+          "ko": "그리움의 불꽃"
+        },
+        {
+          "en": "lit up Grandpa Joe’s eyes",
+          "ko": "조 할아버지의 눈을 밝혔다"
+        },
+        {
+          "en": "as he took the card",
+          "ko": "그가 카드를 받아 들며"
+        },
+        {
+          "en": "spark",
+          "ko": "불꽃, 반짝임"
+        },
+        {
+          "en": "nostalgia",
+          "ko": "그리움, 향수"
+        },
+        {
+          "en": "lit",
+          "ko": "빛났다(light의 과거)"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe’s",
+          "ko": "조의"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "took",
+          "ko": "받아 들었다"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        }
+      ],
+      "steps": [
+        {
+          "id": "b_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "할아버지가 카드를 받아 들며(took the card) 눈이 반짝여요. (B) 앞에는 어떤 장면이 있어야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "카드는 Tommy가 찾았어요. 할아버지가 받아 들려면 누가 건네야 할까요.",
+              "카드는 Tommy가 찾았어요. 할아버지가 받아 들려면 누가 건네야 할까요."
+            ],
+            "explain": "카드는 Tommy가 차고에서 찾았어요. 할아버지가 그 카드를 받아 들려면, 앞에서 Tommy가 카드를 들고 할아버지를 찾아가야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "카드는 Tommy가 차고에서 찾았어요. 할아버지가 그 카드를 받아 들려면, 앞에서 Tommy가 카드를 들고 할아버지를 찾아가야 해요."
+            },
+            "point": "(B) he took the card ← 앞에서 Tommy가 카드를 할아버지께 보여 줘야 한다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "Tommy가 할아버지를 찾아가 카드를 보여 주는 장면",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "두 사람이 뒷마당에서 야구를 연습하는 장면"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "as he took the card"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Memories flooded back, and he told stories of his youthful days on the baseball field.",
+      "model_translation": "기억들이 다시 밀려 들어왔고, 그는 야구장에서 보낸 그의 젊은 시절 이야기를 했다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Memories",
+          "ko": "기억들"
+        },
+        {
+          "en": "flooded back",
+          "ko": "다시 밀려왔다"
+        },
+        {
+          "en": "he told stories",
+          "ko": "그는 이야기를 했다"
+        },
+        {
+          "en": "of his youthful days",
+          "ko": "그의 젊은 시절의"
+        },
+        {
+          "en": "on the baseball field",
+          "ko": "야구장에서"
+        },
+        {
+          "en": "flooded",
+          "ko": "밀려왔다"
+        },
+        {
+          "en": "told",
+          "ko": "말했다"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기들"
+        },
+        {
+          "en": "youthful",
+          "ko": "젊은"
+        },
+        {
+          "en": "days",
+          "ko": "시절"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "field",
+          "ko": "경기장"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 8,
+      "text": "Grandpa Joe spoke of the thrill of the game and the joy of hitting a home run.",
+      "model_translation": "Grandpa Joe는 경기의 전율과 홈런을 치는 기쁨에 관해 이야기했다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지"
+        },
+        {
+          "en": "spoke of",
+          "ko": "~에 대해 이야기했다"
+        },
+        {
+          "en": "the thrill of the game",
+          "ko": "경기의 짜릿함"
+        },
+        {
+          "en": "the joy of hitting a home run",
+          "ko": "홈런을 치는 기쁨"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe",
+          "ko": "조"
+        },
+        {
+          "en": "spoke",
+          "ko": "이야기했다"
+        },
+        {
+          "en": "thrill",
+          "ko": "짜릿함"
+        },
+        {
+          "en": "game",
+          "ko": "경기"
+        },
+        {
+          "en": "joy",
+          "ko": "기쁨"
+        },
+        {
+          "en": "hitting",
+          "ko": "치는 것"
+        },
+        {
+          "en": "home",
+          "ko": "집, 홈"
+        },
+        {
+          "en": "run",
+          "ko": "달리기, 득점"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 9,
+      "text": "Tommy, fascinated by these stories, felt more connected to his grandfather.",
+      "model_translation": "Tommy는 이러한 이야기들에 매료되어 할아버지와 더 연결되어졌다고 느꼈다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Tommy",
+          "ko": "토미"
+        },
+        {
+          "en": "fascinated by these stories",
+          "ko": "이 이야기들에 매료되어"
+        },
+        {
+          "en": "felt more connected",
+          "ko": "더 가까워졌다고 느꼈다"
+        },
+        {
+          "en": "to his grandfather",
+          "ko": "그의 할아버지와"
+        },
+        {
+          "en": "fascinated",
+          "ko": "매료된"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기들"
+        },
+        {
+          "en": "felt",
+          "ko": "느꼈다"
+        },
+        {
+          "en": "connected",
+          "ko": "연결된, 가까운"
+        },
+        {
+          "en": "grandfather",
+          "ko": "할아버지"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 10,
+      "text": "Eager to learn more, (c)he asked Grandpa Joe to teach him about baseball.",
+      "model_translation": "더 배우기를 열망하여, 그는 Grandpa Joe에게 야구를 가르쳐 달라고 부탁했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Eager to learn more",
+          "ko": "더 배우고 싶어서"
+        },
+        {
+          "en": "(c)he",
+          "ko": "그는"
+        },
+        {
+          "en": "asked Grandpa Joe",
+          "ko": "조 할아버지에게 부탁했다"
+        },
+        {
+          "en": "to teach him about baseball",
+          "ko": "그에게 야구를 가르쳐 달라고"
+        },
+        {
+          "en": "Eager",
+          "ko": "간절히 바라는"
+        },
+        {
+          "en": "learn",
+          "ko": "배우다"
+        },
+        {
+          "en": "asked",
+          "ko": "부탁했다, 물었다"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe",
+          "ko": "조"
+        },
+        {
+          "en": "teach",
+          "ko": "가르치다"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        }
+      ],
+      "steps": [
+        {
+          "id": "b_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 Tommy가 야구를 가르쳐 달라고 부탁하며 끝나요. 다음엔 어떤 장면이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "부탁을 했으니, 그 부탁이 어떻게 됐는지가 이어지기 쉬워요.",
+              "부탁을 했으니, 그 부탁이 어떻게 됐는지가 이어지기 쉬워요."
+            ],
+            "explain": "가르쳐 달라고 부탁했으니 다음엔 할아버지가 가르쳐 주는 장면이 와요. 카드를 처음 살펴보는 건 할아버지께 보여 주기 전 일이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "가르쳐 달라고 부탁했으니 다음엔 할아버지가 가르쳐 주는 장면이 와요. 카드를 처음 살펴보는 건 할아버지께 보여 주기 전 일이에요."
+            },
+            "point": "(B) 끝: 가르쳐 달라 부탁 → 다음은 가르쳐 주는 장면"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "할아버지가 야구를 가르쳐 주는 장면",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "Tommy가 카드를 처음 살펴보는 장면"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "asked Grandpa Joe to teach him"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(B)",
+                "text": "he took the card → asked to teach him",
+                "ko": "할아버지가 카드를 받아 듦 → 가르쳐 달라 부탁",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "(C) They spent afternoons in the backyard as (d)he shared the wisdom of the game with his grandson.",
+      "model_translation": "(C) 그들은 뒷마당에서 오후를 보내며, 그는 그의 손자에게 경기의 지혜를 나누어 주었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "They",
+          "ko": "그들은"
+        },
+        {
+          "en": "spent afternoons",
+          "ko": "오후를 보냈다"
+        },
+        {
+          "en": "in the backyard",
+          "ko": "뒷마당에서"
+        },
+        {
+          "en": "as (d)he shared",
+          "ko": "그가 나누어 주며"
+        },
+        {
+          "en": "the wisdom of the game",
+          "ko": "경기의 지혜"
+        },
+        {
+          "en": "with his grandson",
+          "ko": "그의 손자에게"
+        },
+        {
+          "en": "spent",
+          "ko": "보냈다"
+        },
+        {
+          "en": "afternoons",
+          "ko": "오후들"
+        },
+        {
+          "en": "backyard",
+          "ko": "뒷마당"
+        },
+        {
+          "en": "d)he",
+          "ko": "(d) 그는"
+        },
+        {
+          "en": "wisdom",
+          "ko": "지혜"
+        },
+        {
+          "en": "game",
+          "ko": "경기"
+        },
+        {
+          "en": "grandson",
+          "ko": "손자"
+        }
+      ],
+      "steps": [
+        {
+          "id": "c_first",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(C)는 함께 오후를 보내며 할아버지가 손자에게 야구의 지혜를 나눠 주는 장면으로 시작해요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "shared the wisdom of the game"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Together, they practiced hitting, catching, and even laughed over the mistakes.",
+      "model_translation": "함께, 그들은 공 치기, 잡기를 연습하였고 심지어 실수들을 웃어 넘겼다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Together",
+          "ko": "함께"
+        },
+        {
+          "en": "they practiced",
+          "ko": "그들은 연습했다"
+        },
+        {
+          "en": "hitting, catching",
+          "ko": "치기, 잡기"
+        },
+        {
+          "en": "even laughed over the mistakes",
+          "ko": "실수도 웃어넘겼다"
+        },
+        {
+          "en": "practiced",
+          "ko": "연습했다"
+        },
+        {
+          "en": "hitting",
+          "ko": "치는 것"
+        },
+        {
+          "en": "catching",
+          "ko": "잡기"
+        },
+        {
+          "en": "laughed",
+          "ko": "웃었다"
+        },
+        {
+          "en": "over",
+          "ko": "~ 위에, ~에 대해"
+        },
+        {
+          "en": "mistakes",
+          "ko": "실수들"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 13,
+      "text": "As they bonded over baseball, the gap between generations closed.",
+      "model_translation": "그들이 야구를 통해 유대감을 형성하며, 세대 간의 격차가 줄어들었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "As they bonded over baseball",
+          "ko": "그들이 야구로 가까워지면서"
+        },
+        {
+          "en": "the gap between generations",
+          "ko": "세대 간의 차이"
+        },
+        {
+          "en": "closed",
+          "ko": "좁혀졌다"
+        },
+        {
+          "en": "bonded",
+          "ko": "가까워졌다"
+        },
+        {
+          "en": "over",
+          "ko": "~ 위에, ~에 대해"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "gap",
+          "ko": "차이, 틈"
+        },
+        {
+          "en": "generations",
+          "ko": "세대"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 14,
+      "text": "Grandpa Joe’s eyes no longer held just the twinkle of untold stories; they now radiated warmth and shared memories.",
+      "model_translation": "Grandpa Joe의 눈은 더 이상 말하지 않은 이야기들의 반짝임을 지니지 않았고, 이제는 따뜻함과 함께 나눈 기억으로 반짝였다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Grandpa Joe’s eyes",
+          "ko": "조 할아버지의 눈은"
+        },
+        {
+          "en": "no longer held",
+          "ko": "더 이상 담고 있지 않았다"
+        },
+        {
+          "en": "just the twinkle of untold stories",
+          "ko": "말하지 않은 이야기의 반짝임만"
+        },
+        {
+          "en": "they now radiated",
+          "ko": "이제 ~으로 빛났다"
+        },
+        {
+          "en": "warmth and shared memories",
+          "ko": "따뜻함과 함께 나눈 기억"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe’s",
+          "ko": "조의"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "longer",
+          "ko": "더 이상 (no longer)"
+        },
+        {
+          "en": "held",
+          "ko": "담았다"
+        },
+        {
+          "en": "twinkle",
+          "ko": "반짝임"
+        },
+        {
+          "en": "untold",
+          "ko": "말하지 않은"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기들"
+        },
+        {
+          "en": "now",
+          "ko": "이제"
+        },
+        {
+          "en": "radiated",
+          "ko": "빛났다, 내뿜었다"
+        },
+        {
+          "en": "warmth",
+          "ko": "따뜻함"
+        },
+        {
+          "en": "memories",
+          "ko": "기억들, 추억"
+        }
+      ],
+      "steps": [
+        {
+          "id": "c_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(C)는 세대 차가 좁혀지고 할아버지 눈이 따뜻하게 빛났다는, 이야기의 마무리예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "radiated warmth"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(B)",
+                "text": "he took the card → asked to teach him",
+                "ko": "할아버지가 카드를 받아 듦 → 가르쳐 달라 부탁",
+                "tone": "hl"
+              },
+              {
+                "label": "(C)",
+                "text": "They spent afternoons … practiced",
+                "ko": "함께 야구 연습, 세대 차가 좁혀짐",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "(D) Tommy’s eyes widened with excitement as he examined the card.",
+      "model_translation": "(D) 그가 카드를 살펴보면서 Tommy의 눈이 흥분으로 커졌다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Tommy’s eyes",
+          "ko": "토미의 눈이"
+        },
+        {
+          "en": "widened",
+          "ko": "커졌다"
+        },
+        {
+          "en": "with excitement",
+          "ko": "흥분으로"
+        },
+        {
+          "en": "as he examined the card",
+          "ko": "그가 카드를 살펴보며"
+        },
+        {
+          "en": "Tommy’s",
+          "ko": "토미의"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "excitement",
+          "ko": "흥분"
+        },
+        {
+          "en": "examined",
+          "ko": "살펴보았다"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        }
+      ],
+      "steps": [
+        {
+          "id": "d_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Tommy가 카드를 살펴보며(examined the card) 눈이 커져요. (D) 앞에는 어떤 장면이 있어야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "the card는 앞에서 이미 나온 카드예요. Tommy가 카드를 처음 보고 놀라는 장면이에요.",
+              "the card는 앞에서 이미 나온 카드예요. Tommy가 카드를 처음 보고 놀라는 장면이에요."
+            ],
+            "explain": "the card는 앞에 나온 그 카드예요. Tommy가 카드를 처음 살펴보며 놀라는 장면이니, 바로 앞엔 카드를 찾은 장면이 있어야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "the card는 앞에 나온 그 카드예요. Tommy가 카드를 처음 살펴보며 놀라는 장면이니, 바로 앞엔 카드를 찾은 장면이 있어야 해요."
+            },
+            "point": "(D) he examined the card ← 카드를 막 찾은 (A) 끝 바로 뒤"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "Tommy가 카드를 막 찾은 장면",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "할아버지가 카드를 받아 든 장면"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "as he examined the card"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "text": "In the card, Grandpa Joe stood proudly in a baseball uniform.",
+      "model_translation": "카드 속에서, Grandpa Joe는 야구 유니폼을 입고 당당하게 서 있었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "In the card",
+          "ko": "카드 속에서"
+        },
+        {
+          "en": "Grandpa Joe",
+          "ko": "조 할아버지는"
+        },
+        {
+          "en": "stood proudly",
+          "ko": "당당하게 서 있었다"
+        },
+        {
+          "en": "in a baseball uniform",
+          "ko": "야구 유니폼을 입고"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe",
+          "ko": "조"
+        },
+        {
+          "en": "stood",
+          "ko": "서 있었다"
+        },
+        {
+          "en": "proudly",
+          "ko": "당당하게"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "uniform",
+          "ko": "유니폼"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 17,
+      "text": "He was not the quiet person Tommy knew.",
+      "model_translation": "그는 Tommy가 알던 조용한 사람이 아니었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "He",
+          "ko": "그는"
+        },
+        {
+          "en": "was not the quiet person",
+          "ko": "조용한 사람이 아니었다"
+        },
+        {
+          "en": "Tommy knew",
+          "ko": "토미가 알던"
+        },
+        {
+          "en": "quiet",
+          "ko": "조용한"
+        },
+        {
+          "en": "person",
+          "ko": "사람"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미"
+        },
+        {
+          "en": "knew",
+          "ko": "알았다"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 18,
+      "text": "Intrigued by this discovery, Tommy rushed inside the house to find Grandpa Joe.",
+      "model_translation": "이 발견으로 호기심이 불러일으켜져서, Tommy는 Grandpa Joe를 찾아 집 안으로 서둘러 들어갔다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Intrigued by this discovery",
+          "ko": "이 발견에 호기심이 생겨"
+        },
+        {
+          "en": "Tommy",
+          "ko": "토미는"
+        },
+        {
+          "en": "rushed inside the house",
+          "ko": "집 안으로 서둘러 들어갔다"
+        },
+        {
+          "en": "to find Grandpa Joe",
+          "ko": "조 할아버지를 찾으려고"
+        },
+        {
+          "en": "Intrigued",
+          "ko": "호기심이 생긴"
+        },
+        {
+          "en": "discovery",
+          "ko": "발견"
+        },
+        {
+          "en": "rushed",
+          "ko": "서둘러 갔다"
+        },
+        {
+          "en": "inside",
+          "ko": "안으로"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "Joe",
+          "ko": "조"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 19,
+      "text": "“Hey, Grandpa! I found this cool baseball card of you. Were you a baseball player?” (e)he asked, eyes filled with curiosity.",
+      "model_translation": "“할아버지! 제가 할아버지의 이 멋진 야구 카드를 찾았어요. 야구 선수셨어요?” 그는 호기심으로 가득찬 눈으로 물어보았다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Hey, Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "I found this cool baseball card of you",
+          "ko": "할아버지의 멋진 야구 카드를 찾았어요"
+        },
+        {
+          "en": "Were you a baseball player",
+          "ko": "야구 선수셨어요"
+        },
+        {
+          "en": "(e)he asked",
+          "ko": "그가 물었다"
+        },
+        {
+          "en": "eyes filled with curiosity",
+          "ko": "호기심 가득한 눈으로"
+        },
+        {
+          "en": "Hey",
+          "ko": "저기요, 이봐"
+        },
+        {
+          "en": "Grandpa",
+          "ko": "할아버지"
+        },
+        {
+          "en": "cool",
+          "ko": "멋진"
+        },
+        {
+          "en": "baseball",
+          "ko": "야구"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        },
+        {
+          "en": "player",
+          "ko": "선수"
+        },
+        {
+          "en": "e)he",
+          "ko": "(e) 그는"
+        },
+        {
+          "en": "asked",
+          "ko": "부탁했다, 물었다"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "filled",
+          "ko": "가득한"
+        },
+        {
+          "en": "curiosity",
+          "ko": "호기심"
+        }
+      ],
+      "steps": [
+        {
+          "id": "d_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(D)는 Tommy가 할아버지를 찾아가 '야구 선수셨어요?' 하고 묻는 장면으로 끝나요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "Were you a baseball player"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(A)",
+                "text": "Tommy found … an old baseball card",
+                "ko": "토미가 상자에서 할아버지의 옛 야구 카드를 찾음"
+              },
+              {
+                "label": "(D)",
+                "text": "examined the card → rushed to find Grandpa Joe",
+                "ko": "카드를 살펴봄 → 할아버지께 달려가 물음",
+                "tone": "hl"
+              }
+            ]
+          }
+        },
+        {
+          "id": "order_link",
+          "type": "pick",
+          "interaction": "word_pick",
+          "tag": "순서 잇기",
+          "candidates": [
+            "B",
+            "C",
+            "D"
+          ],
+          "answers": [
+            "D",
+            "B",
+            "C"
+          ],
+          "order": {
+            "given": {
+              "id": "given",
+              "label": "(A) 주어진 글",
+              "last": {
+                "en": "… an old baseball card featuring a young Grandpa Joe",
+                "ko": "젊은 할아버지가 나오는 옛 야구 카드"
+              }
+            },
+            "cards": [
+              {
+                "id": "B",
+                "label": "(B)",
+                "first": {
+                  "en": "A spark of nostalgia lit up Grandpa Joe’s eyes as he took the card.",
+                  "ko": "할아버지가 카드를 받아 들며 눈이 반짝임"
+                },
+                "last": {
+                  "en": "… he asked Grandpa Joe to teach him about baseball.",
+                  "ko": "야구를 가르쳐 달라고 부탁"
+                }
+              },
+              {
+                "id": "C",
+                "label": "(C)",
+                "first": {
+                  "en": "They spent afternoons in the backyard …",
+                  "ko": "뒷마당에서 함께 오후를 보냄"
+                },
+                "last": {
+                  "en": "… they now radiated warmth and shared memories.",
+                  "ko": "따뜻함과 함께 나눈 기억으로 빛남"
+                }
+              },
+              {
+                "id": "D",
+                "label": "(D)",
+                "first": {
+                  "en": "Tommy’s eyes widened with excitement as he examined the card.",
+                  "ko": "카드를 살펴보며 눈이 커짐"
+                },
+                "last": {
+                  "en": "“… Were you a baseball player?” he asked …",
+                  "ko": "'야구 선수셨어요?' 하고 물음"
+                }
+              }
+            ]
+          },
+          "brief": {
+            "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+            "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+            "wrong_by": {
+              "0": "(A) 끝에서 Tommy가 카드를 막 찾았어요. 그 바로 뒤에 이어질 첫 사건을 찾아봐요.",
+              "1": "두 번째 칸의 첫 사건이 바로 위 카드의 끝 사건에 이어지는지 다시 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+            "explain": "(A) 카드 발견 → (D) 카드를 살펴보고 할아버지께 물음 → (B) 할아버지가 카드를 받아 들고 옛이야기, 가르쳐 달라 부탁 → (C) 함께 연습 순서예요.",
+            "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지"
+          },
+          "method": 1
+        },
+        {
+          "id": "c_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?"
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

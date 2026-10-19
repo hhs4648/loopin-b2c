@@ -1,0 +1,42 @@
+{
+ "2": [
+  {
+   "word": "so",
+   "phrase": "So I went",
+   "sense": "그래서",
+   "usage": "접속사 so (결과)"
+  },
+  {
+   "word": "to",
+   "phrase": "went to the student services office",
+   "sense": "~에",
+   "usage": "전치사 to (방향)"
+  }
+ ],
+ "3": [
+  {
+   "word": "so",
+   "phrase": "so I need",
+   "sense": "그래서",
+   "usage": "접속사 so (결과)"
+  },
+  {
+   "word": "to",
+   "phrase": "need to go",
+   "sense": "~해야 (하다)",
+   "usage": "need + to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "need to bring",
+   "sense": "~해야 (하다)",
+   "usage": "need + to부정사"
+  },
+  {
+   "word": "for",
+   "phrase": "for a new ID card",
+   "sense": "~을 위해",
+   "usage": "전치사 for + 명사 (목적)"
+  }
+ ]
+}

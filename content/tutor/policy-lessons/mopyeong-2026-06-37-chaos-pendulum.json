@@ -356,6 +356,16 @@
               "text": "주어진 글의 마지막 문장이 다음 단락의 첫 문장과 이어져요. 단락 첫머리의 the, this, Nor 같은 말이 앞 내용을 가리켜요."
             }
           ]
+        },
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요."
+          },
+          "method": 1,
+          "button": "(A)부터 읽어 볼게요"
         }
       ]
     },
@@ -392,17 +402,6 @@
       ],
       "steps": [
         {
-          "id": "paper_order",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 실제 글의 순서와 달라서 단락 사이가 어색하게 이어질 수 있어요. 그 어색한 곳이 바로 순서의 단서예요."
-          },
-          "method": 1,
-          "button": "(A)부터 읽어 볼게요",
-          "before_read": true
-        },
-        {
           "id": "a_sv",
           "type": "pick",
           "interaction": "word_pick",
@@ -433,7 +432,75 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 the iteration, 동사는 has to be예요."
           },
+          "method": 0,
+          "slot": "s2_basic"
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "In order to produce chaos",
+            "the iteration",
+            "has to be",
+            "a nonlinear system"
+          ],
+          "answers": [
+            "In order to produce chaos",
+            "the iteration",
+            "a nonlinear system",
+            "has to be"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In order to produce chaos",
+                "ko": "혼돈을 만들어 내려면"
+              },
+              " ",
+              {
+                "en": "the iteration",
+                "ko": "그 반복은"
+              },
+              " ",
+              {
+                "en": "a nonlinear system",
+                "ko": "비선형 체계"
+              },
+              " 안에 ",
+              {
+                "en": "has to be",
+                "ko": "있어야 한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "혼돈을 만들려면 그 반복(the iteration)이 비선형 체계 안에 있어야 한대요."
+          },
           "method": 0
+        },
+        {
+          "id": "s2_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "혼돈을 만들려면 그 반복(the iteration)이 비선형 체계 안에 있어야 한대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "a_before",
@@ -485,6 +552,22 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "chaotic",
+          "ko": "혼돈 상태의"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "all nonlinear systems",
+          "ko": "모든 비선형 체계"
+        },
+        {
           "en": "Nor are all nonlinear systems chaotic",
           "ko": "모든 비선형 체계가 혼돈인 것도 아니다"
         },
@@ -510,6 +593,114 @@
         }
       ],
       "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "all nonlinear systems",
+            "are",
+            "chaotic",
+            "they",
+            "need to be pushed"
+          ],
+          "answers": [
+            "are",
+            "all nonlinear systems",
+            "chaotic"
+          ],
+          "roles": {
+            "are": "V",
+            "all nonlinear systems": "S",
+            "chaotic": "C"
+          },
+          "brief": {
+            "ask": "Nor 뒤는 동사가 주어보다 먼저 와요. 콜론(:) 앞에서 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "they": "그건 콜론(:) 뒤 문장의 주어예요. 콜론 앞에서 찾아봐요.",
+              "need to be pushed": "그건 콜론(:) 뒤 문장의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "Nor 뒤라 순서가 바뀌었어요(도치). 동사 are, 주어 all nonlinear systems, 보어 chaotic이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "Nor + 동사 + 주어",
+              "mark": "Nor are",
+              "text": "Nor가 문장 앞에 오면 '~도 아니다'이고, 뒤의 순서가 바뀌어요(are all nonlinear systems). 앞에도 부정이 있어야 써요."
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Nor are all nonlinear systems chaotic",
+            "they",
+            "need to be pushed",
+            "beyond a certain point"
+          ],
+          "answers": [
+            "Nor are all nonlinear systems chaotic",
+            "they",
+            "beyond a certain point",
+            "need to be pushed"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Nor are all nonlinear systems chaotic",
+                "ko": "모든 비선형 체계가 혼돈인 것도 아니다"
+              },
+              ": ",
+              {
+                "en": "they",
+                "ko": "그것들은"
+              },
+              " ",
+              {
+                "en": "beyond a certain point",
+                "ko": "어떤 지점 너머로"
+              },
+              " ",
+              {
+                "en": "need to be pushed",
+                "ko": "밀려나야 한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "모든 비선형 체계가 혼돈인 것도 아니래요. 혼돈이 되려면 분기점이라는 어떤 지점 너머로 밀려나야 해요."
+          },
+          "method": 0,
+          "display": "Nor are all nonlinear systems chaotic: they need to be pushed beyond a certain point.",
+          "tips": [
+            {
+              "label": "Nor + 동사 + 주어",
+              "mark": "Nor are",
+              "text": "Nor가 문장 앞에 오면 '~도 아니다'이고, 뒤의 순서가 바뀌어요(are all nonlinear systems). 앞에도 부정이 있어야 써요."
+            }
+          ]
+        },
         {
           "id": "a2_nor",
           "type": "choice",
@@ -555,7 +746,22 @@
               "mark": "Nor are",
               "text": "Nor가 문장 앞에 오면 '~도 아니다'이고, 뒤의 순서가 바뀌어요(are all nonlinear systems). 앞에도 부정이 있어야 써요."
             }
-          ]
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s3_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "모든 비선형 체계가 혼돈인 것도 아니래요. 혼돈이 되려면 분기점이라는 어떤 지점 너머로 밀려나야 해요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "a2_link",
@@ -580,6 +786,14 @@
       "teaching_value": "low",
       "glosses": [
         {
+          "en": "is reached",
+          "ko": "도달되다"
+        },
+        {
+          "en": "that point",
+          "ko": "그 지점"
+        },
+        {
           "en": "Before that point is reached",
           "ko": "그 지점에 이르기 전에는"
         },
@@ -598,6 +812,110 @@
       ],
       "steps": [
         {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "that point",
+            "is reached",
+            "they",
+            "may behave"
+          ],
+          "answers": [
+            "they",
+            "may behave"
+          ],
+          "roles": {
+            "they": "S",
+            "may behave": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "that point": "그건 Before(~ 전에) 덩어리 안의 주어예요.",
+              "is reached": "그건 Before(~ 전에) 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 they(그것들 — 비선형 체계), 동사는 may behave(움직일 수도 있다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "fashion",
+              "mark": "fashion",
+              "text": "'방식'이에요. 옷의 패션이 아니에요. in a quite orderly fashion = 꽤 질서 있는 방식으로."
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "Before that point is reached",
+            "they",
+            "may behave",
+            "in a quite orderly fashion"
+          ],
+          "answers": [
+            "Before that point is reached",
+            "they",
+            "in a quite orderly fashion",
+            "may behave"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Before that point is reached",
+                "ko": "그 지점에 이르기 전에는"
+              },
+              " ",
+              {
+                "en": "they",
+                "ko": "그것들은"
+              },
+              " ",
+              {
+                "en": "in a quite orderly fashion",
+                "ko": "꽤 질서 있게"
+              },
+              " ",
+              {
+                "en": "may behave",
+                "ko": "움직일 수도 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "fashion",
+              "mark": "fashion",
+              "text": "'방식'이에요. 옷의 패션이 아니에요. in a quite orderly fashion = 꽤 질서 있는 방식으로."
+            }
+          ]
+        },
+        {
           "id": "a3_note",
           "type": "show",
           "interaction": "note",
@@ -605,37 +923,15 @@
             "say": "그 지점(분기점)에 이르기 전에는 꽤 질서 있게 움직일 수도 있대요."
           },
           "method": 0,
-          "button": "다음"
-        },
-        {
-          "id": "story_4",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
-          },
-          "method": 0,
           "button": "다음 문장",
-          "panel": {
-            "kind": "story",
-            "title": "지금까지 이야기",
-            "scenes": [
-              {
-                "label": "주어진 글",
-                "icon": "🧲",
-                "en": "magnetic pendulum = chaos",
-                "ko": "자석 네 개 위에서 흔들리는 진자가 혼돈의 예예요",
-                "fresh": true
-              },
-              {
-                "label": "(A)",
-                "icon": "📈",
-                "en": "iteration · nonlinear · bifurcation",
-                "ko": "혼돈은 비선형 계에서, 어떤 지점을 넘어야 생겨요",
-                "fresh": true
-              }
-            ]
-          }
+          "tips": [
+            {
+              "label": "fashion",
+              "mark": "fashion",
+              "text": "'방식'이에요. 옷의 패션이 아니에요. in a quite orderly fashion = 꽤 질서 있는 방식으로."
+            }
+          ],
+          "meaning_check": true
         }
       ]
     },
@@ -704,7 +1000,113 @@
             "praise": "다 찾았어요!",
             "explain": "동사는 Release와 note예요. 주어 없이 동사로 시작하면 '~해 봐요'라는 명령문이에요."
           },
-          "method": 0
+          "method": 0,
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "명령문",
+              "mark": "Release",
+              "text": "주어 없이 동사로 시작하면 '~해 봐요'라는 명령문이에요. 글에서는 독자에게 직접 해 보라고 할 때 써요."
+            },
+            {
+              "label": "note",
+              "mark": "note",
+              "text": "동사로 '주목하다, 눈여겨보다'예요. 공책(노트)이나 메모가 아니에요. note the magnets = 자석들을 눈여겨보다."
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "Release",
+            "the pendulum",
+            "note",
+            "the magnets",
+            "it visits",
+            "in what order"
+          ],
+          "answers": [
+            "the pendulum",
+            "Release",
+            "it visits",
+            "the magnets",
+            "in what order",
+            "note"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "the pendulum",
+                "ko": "추를"
+              },
+              " ",
+              {
+                "en": "Release",
+                "ko": "놓아요"
+              },
+              ". 그리고 ",
+              {
+                "en": "it visits",
+                "ko": "그것이 들르는"
+              },
+              " ",
+              {
+                "en": "the magnets",
+                "ko": "자석들"
+              },
+              "과 ",
+              {
+                "en": "in what order",
+                "ko": "어떤 순서인지"
+              },
+              "를 ",
+              {
+                "en": "note",
+                "ko": "잘 봐요"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "추를 놓고, 추가 어떤 자석에 어떤 순서로 들르는지 잘 보라는 말이에요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "명령문",
+              "mark": "Release",
+              "text": "주어 없이 동사로 시작하면 '~해 봐요'라는 명령문이에요. 글에서는 독자에게 직접 해 보라고 할 때 써요."
+            },
+            {
+              "label": "note",
+              "mark": "note",
+              "text": "동사로 '주목하다, 눈여겨보다'예요. 공책(노트)이나 메모가 아니에요. note the magnets = 자석들을 눈여겨보다."
+            }
+          ]
+        },
+        {
+          "id": "s5_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "추를 놓고, 추가 어떤 자석에 어떤 순서로 들르는지 잘 보라는 말이에요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "b_before",
@@ -750,6 +1152,11 @@
               "label": "명령문",
               "mark": "Release",
               "text": "주어 없이 동사로 시작하면 '~해 봐요'라는 명령문이에요. 글에서는 독자에게 직접 해 보라고 할 때 써요."
+            },
+            {
+              "label": "note",
+              "mark": "note",
+              "text": "동사로 '주목하다, 눈여겨보다'예요. 공책(노트)이나 메모가 아니에요. note the magnets = 자석들을 눈여겨보다."
             }
           ]
         }
@@ -763,15 +1170,15 @@
       "glosses": [
         {
           "en": "it",
-          "ko": "그것(움직임의 패턴)"
+          "ko": "그것"
         },
         {
           "en": "may at first be",
-          "ko": "처음에는 ~일 수도 있다"
+          "ko": "처음엔 ~일 수도 있다"
         },
         {
           "en": "the pendulum",
-          "ko": "추"
+          "ko": "그 추"
         },
         {
           "en": "If",
@@ -820,7 +1227,7 @@
       ],
       "steps": [
         {
-          "id": "b2_sv",
+          "id": "s6_basic_sv",
           "type": "pick",
           "interaction": "word_pick",
           "shade": true,
@@ -831,35 +1238,97 @@
             "the pattern of movement",
             "may at first be",
             "it",
-            "will become",
-            "completely different"
+            "will become"
           ],
           "answers": [
             "the pattern of movement",
             "may at first be",
             "it",
-            "will become",
-            "completely different"
+            "will become"
           ],
           "roles": {
             "the pattern of movement": "S",
             "may at first be": "V",
             "it": "S",
-            "will become": "V",
-            "completely different": "C"
+            "will become": "V"
           },
           "brief": {
-            "ask": "콤마 뒤 문장에는 주어·동사가 두 쌍 있어요. 주어(S), 동사(V), 보어(C)를 모두 찾아볼까요?",
-            "wrong": "그건 주어·동사·보어가 아니에요.",
+            "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
             "wrong_by": {
-              "the pendulum": "그건 If 뒤 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
-              "is released": "그건 If 뒤 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."
+              "the pendulum": "그건 If 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
+              "is released": "그건 If 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."
             },
             "more": "좋아요! {n}개 남았어요.",
             "praise": "다 찾았어요!",
-            "explain": "but 앞은 S the pattern of movement, V may at first be예요. but 뒤는 S it, V will become, C completely different예요."
+            "explain": "but 앞은 주어 the pattern of movement, 동사 may at first be예요. but 뒤는 주어 it, 동사 will become이에요."
           },
-          "method": 0
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic"
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "from the same position",
+            "a second time",
+            "the pattern of movement",
+            "will become",
+            "completely different"
+          ],
+          "answers": [
+            "from the same position",
+            "a second time",
+            "the pattern of movement",
+            "completely different",
+            "will become"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "from the same position",
+                "ko": "같은 자리에서"
+              },
+              " ",
+              {
+                "en": "a second time",
+                "ko": "두 번째로"
+              },
+              " 놓으면, ",
+              {
+                "en": "the pattern of movement",
+                "ko": "움직임의 패턴은"
+              },
+              " ",
+              {
+                "en": "completely different",
+                "ko": "완전히 다르게"
+              },
+              " ",
+              {
+                "en": "will become",
+                "ko": "될 것이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "If the pendulum is released from the same position a second time, the pattern of movement will become completely different."
         },
         {
           "id": "b2_change",
@@ -882,7 +1351,8 @@
           ],
           "highlight_alt": [
             "completely different"
-          ]
+          ],
+          "meaning_check": true
         }
       ]
     },
@@ -892,6 +1362,10 @@
       "model_translation": "사실, 그것의 움직임 패턴은 혼돈 상태이다.",
       "teaching_value": "low",
       "glosses": [
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
         {
           "en": "In fact",
           "ko": "사실"
@@ -907,6 +1381,93 @@
       ],
       "steps": [
         {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the pattern of its movement",
+            "is",
+            "chaotic"
+          ],
+          "answers": [
+            "the pattern of its movement",
+            "is",
+            "chaotic"
+          ],
+          "roles": {
+            "the pattern of its movement": "S",
+            "is": "V",
+            "chaotic": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the pattern of its movement, 동사는 is, 보어는 chaotic(혼돈 상태의)이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic"
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "In fact",
+            "the pattern of its movement",
+            "is",
+            "chaotic"
+          ],
+          "answers": [
+            "In fact",
+            "the pattern of its movement",
+            "chaotic",
+            "is"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In fact",
+                "ko": "사실"
+              },
+              " ",
+              {
+                "en": "the pattern of its movement",
+                "ko": "그 움직임의 패턴은"
+              },
+              " ",
+              {
+                "en": "chaotic",
+                "ko": "혼돈 상태"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
           "id": "b3_chaotic",
           "type": "show",
           "interaction": "note",
@@ -917,7 +1478,8 @@
           "button": "다음 문장",
           "highlight": [
             "chaotic"
-          ]
+          ],
+          "meaning_check": true
         }
       ]
     },
@@ -928,16 +1490,16 @@
       "teaching_value": "high",
       "glosses": [
         {
-          "en": "the pendulum",
-          "ko": "추"
-        },
-        {
           "en": "is taken",
           "ko": "기울여지다"
         },
         {
           "en": "No matter how much care",
           "ko": "아무리 많은 주의를"
+        },
+        {
+          "en": "the pendulum",
+          "ko": "그 추"
         },
         {
           "en": "No matter how much care is taken",
@@ -1005,7 +1567,97 @@
             "praise": "다 찾았어요!",
             "explain": "콤마 뒤는 S it, V will visit, O an entirely different set of points예요."
           },
-          "method": 0
+          "method": 0,
+          "slot": "s8_basic",
+          "tips": [
+            {
+              "label": "No matter how",
+              "mark": "No matter how",
+              "text": "'아무리 ~해도'예요. No matter how much care is taken은 '아무리 많이 조심해도'예요."
+            }
+          ]
+        },
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "candidates": [
+            "No matter how much care is taken",
+            "in the same position",
+            "it",
+            "will visit",
+            "an entirely different set of points"
+          ],
+          "answers": [
+            "No matter how much care is taken",
+            "in the same position",
+            "it",
+            "an entirely different set of points",
+            "will visit"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "No matter how much care is taken",
+                "ko": "아무리 주의를 기울여"
+              },
+              " ",
+              {
+                "en": "in the same position",
+                "ko": "같은 자리에서"
+              },
+              " 추를 출발시켜도, ",
+              {
+                "en": "it",
+                "ko": "그것은"
+              },
+              " ",
+              {
+                "en": "an entirely different set of points",
+                "ko": "전혀 다른 점들을"
+              },
+              " ",
+              {
+                "en": "will visit",
+                "ko": "들를 것이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "아무리 조심해서 같은 자리에서 추를 출발시켜도, 두 번 다 전혀 다른 점들을 들른대요."
+          },
+          "method": 0,
+          "display": "No matter how much care is taken to start the pendulum in the same position, it will visit an entirely different set of points.",
+          "tips": [
+            {
+              "label": "No matter how",
+              "mark": "No matter how",
+              "text": "'아무리 ~해도'예요. No matter how much care is taken은 '아무리 많이 조심해도'예요."
+            }
+          ]
+        },
+        {
+          "id": "s8_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "아무리 조심해서 같은 자리에서 추를 출발시켜도, 두 번 다 전혀 다른 점들을 들른대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "c_before",
@@ -1134,7 +1786,82 @@
             "praise": "다 찾았어요!",
             "explain": "though 앞은 S Chaotic systems, V are generated예요."
           },
-          "method": 0
+          "method": 0,
+          "slot": "s9_basic",
+          "tips": [
+            {
+              "label": "not all",
+              "mark": "not all",
+              "text": "'모두 ~인 것은 아니다'(부분 부정)예요. '전부 아니다'가 아니에요."
+            }
+          ]
+        },
+        {
+          "id": "s9_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s9_basic",
+          "candidates": [
+            "Chaotic systems",
+            "are generated",
+            "iteration",
+            "not all iteration",
+            "leads to"
+          ],
+          "answers": [
+            "Chaotic systems",
+            "iteration",
+            "are generated",
+            "not all iteration",
+            "leads to"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Chaotic systems",
+                "ko": "혼돈 체계는"
+              },
+              " ",
+              {
+                "en": "iteration",
+                "ko": "반복"
+              },
+              "에 의해 ",
+              {
+                "en": "are generated",
+                "ko": "만들어지지만"
+              },
+              ", ",
+              {
+                "en": "not all iteration",
+                "ko": "모든 반복이"
+              },
+              " 혼돈으로 ",
+              {
+                "en": "leads to",
+                "ko": "이어지는"
+              },
+              " 건 아니다."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "혼돈 체계는 반복으로 만들어지지만, 모든 반복이 혼돈이 되는 건 아니래요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "not all",
+              "mark": "not all",
+              "text": "'모두 ~인 것은 아니다'(부분 부정)예요. '전부 아니다'가 아니에요."
+            }
+          ]
         },
         {
           "id": "c2_not_all",
@@ -1181,100 +1908,148 @@
               "mark": "not all",
               "text": "'모두 ~인 것은 아니다'(부분 부정)예요. '전부 아니다'가 아니에요."
             }
-          ]
+          ],
+          "meaning_check": true
         },
         {
-          "id": "c2_next",
+          "id": "s9_basic_meaning",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요. 앞에서 읽은 (A)가 바로 그 조건이었죠."
+            "say": "혼돈 체계는 반복으로 만들어지지만, 모든 반복이 혼돈이 되는 건 아니래요."
           },
           "method": 0,
           "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "c2_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'모든 반복이 혼돈은 아니다'로 끝났어요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'모두 그런 건 아니다'라고 했으면, 다음엔 '그럼 어떤 경우에 그런지'가 오기 쉬워요.",
+              "'모두 그런 건 아니다'라고 했으면, 다음엔 '그럼 어떤 경우에 그런지'가 오기 쉬워요."
+            ],
+            "explain": "'모두 그런 건 아니다'라고 했으면, 다음엔 '그럼 어떤 경우에 그런지'가 오기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'모든 반복이 혼돈은 아니다' 다음엔, 어떤 반복이 혼돈이 되는지 그 조건이 와야 자연스러워요.",
+              "o2": "'모든 반복이 혼돈은 아니다' 다음엔, 어떤 반복이 혼돈이 되는지 그 조건이 와야 자연스러워요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "추를 놓아 보는 실험 방법"
+            },
+            {
+              "id": "o1",
+              "label": "어떤 반복이 혼돈이 되는지, 그 조건",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "자석 장난감의 생김새"
+            }
+          ],
+          "method": 0,
           "highlight": [
             "not all"
           ]
         },
         {
-          "id": "story_9",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "칠판에 이어서 정리해 볼게요."
-          },
-          "method": 0,
-          "button": "다음",
-          "panel": {
-            "kind": "story",
-            "title": "지금까지 이야기",
-            "scenes": [
+          "id": "order_link",
+          "type": "pick",
+          "interaction": "word_pick",
+          "tag": "순서 잇기",
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "answers": [
+            "B",
+            "C",
+            "A"
+          ],
+          "order": {
+            "given": {
+              "id": "given",
+              "label": "주어진 글",
+              "last": {
+                "en": "… a pendulum that swings back and forth between them",
+                "ko": "자석들 사이를 왔다 갔다 하는 추"
+              }
+            },
+            "cards": [
               {
-                "label": "주어진 글",
-                "icon": "🧲",
-                "en": "magnetic pendulum = chaos",
-                "ko": "자석 네 개 위에서 흔들리는 진자가 혼돈의 예예요",
-                "fresh": false
-              },
-              {
+                "id": "A",
                 "label": "(A)",
-                "icon": "📈",
-                "en": "iteration · nonlinear · bifurcation",
-                "ko": "혼돈은 비선형 계에서, 어떤 지점을 넘어야 생겨요",
-                "fresh": false
+                "first": {
+                  "en": "In order to produce chaos, the iteration has to be …",
+                  "ko": "혼돈을 만들려면 그 반복이 ~해야 한다"
+                },
+                "last": {
+                  "en": "Before that point … in a quite orderly fashion",
+                  "ko": "그 지점 전에는 꽤 질서 있게 움직일 수도 있다"
+                }
               },
               {
+                "id": "B",
                 "label": "(B)",
-                "icon": "👀",
-                "en": "release · same position",
-                "ko": "진자를 놓고 들르는 자석을 봐요 — 같은 데서 놓아도 곧 달라져요",
-                "fresh": true
+                "first": {
+                  "en": "Release the pendulum and note the magnets that it visits",
+                  "ko": "추를 놓고 들르는 자석을 봐요"
+                },
+                "last": {
+                  "en": "In fact, the pattern of its movement is chaotic",
+                  "ko": "사실 그 움직임은 혼돈 상태다"
+                }
               },
               {
+                "id": "C",
                 "label": "(C)",
-                "icon": "🔀",
-                "en": "entirely different · iteration",
-                "ko": "아무리 조심해도 매번 전혀 다른 곳을 들러요",
-                "fresh": true
+                "first": {
+                  "en": "No matter how much care is taken to start the pendulum in the same position, …",
+                  "ko": "아무리 조심해서 같은 자리에서 시작해도"
+                },
+                "last": {
+                  "en": "… though not all iteration leads to chaos",
+                  "ko": "모든 반복이 혼돈이 되는 건 아니다"
+                }
               }
             ]
-          }
+          },
+          "brief": {
+            "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+            "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+            "wrong_by": {
+              "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+              "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+            "explain": "주어진 글(추 소개) → (B) Release the pendulum(그 추를 놓아 봐요) → (C) the same position(같은 자리에서 두 번), not all iteration → (A) the iteration, Nor(그 조건) 순서예요.",
+            "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지"
+          },
+          "method": 1
         },
         {
           "id": "a_go",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "단락마다 첫머리 단서를 다 찾았어요. 이제 주어진 글 다음에 이어질 순서를 직접 골라 봐요."
+            "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?"
           },
           "method": 1,
-          "button": "문제 풀러 갈게요",
-          "panel": {
-            "kind": "structure",
-            "rows": [
-              {
-                "label": "주어진 글",
-                "text": "… a pendulum that swings …",
-                "ko": "장난감 추의 생김새",
-                "tone": "hl2"
-              },
-              {
-                "label": "(A)",
-                "text": "the iteration … Nor …",
-                "ko": "앞에 iteration, 부정(not all)이 있어야"
-              },
-              {
-                "label": "(B)",
-                "text": "Release the pendulum …",
-                "ko": "앞에 그 추의 소개가 있어야"
-              },
-              {
-                "label": "(C)",
-                "text": "… the same position … two occasions",
-                "ko": "앞에 '같은 자리에서 두 번째'가 있어야"
-              }
-            ]
-          }
+          "button": "문제 풀러 갈게요"
         }
       ]
     }

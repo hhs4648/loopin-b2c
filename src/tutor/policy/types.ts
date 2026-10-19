@@ -168,6 +168,13 @@ type StepBase = {
   skill?: string;
   /** 점진 공개(§13) — 이 스텝 동안 문장을 이렇게 보여 준다. 없으면 원문 */
   display?: string;
+  /**
+   * 여러 문장(주어진 글·단락) 중 한 문장을 가리킬 때 — 따로 띄우지 않고 원래 화면에서 그 문장을 [ ]로 묶는다.
+   * 「이 문장」이 어디서 어디까지인지 보이게 (2026-10-15 선생님, 공통 규칙)
+   */
+  bracket?: string;
+  /** 「맞아요」 화면에만 띄우는 💡 Tip — 찾기 전에 보이면 답을 미리 말하는 셈일 때 (예: 앞을 가리키는 말) */
+  praise_tips?: { label: string; text: string; mark?: string }[];
   /** 이 스텝을 마치면 덩어리 위에 표시를 붙인다 (예: for most outsiders → 「대상」) — 그 문장이 끝날 때까지 남는다 */
   mark_roles?: { text: string; role: "S" | "V" | "O" | "C" | "대상" | "전목" }[];
   /** 칠판을 위가 아니라 아래(버튼 바로 위)에 — 말 없이 정리 표만 보여 줄 때 */
@@ -232,6 +239,16 @@ type StepBase = {
    * 내용 파악(문장 뜻, 요약, 그림, 쪼갠 설명)은 고·중도 어렵다 (2026-10-14 선생님)
    */
   levels?: ("고" | "중" | "초")[];
+  /**
+   * 같은 자리의 다른 방식 — 같은 `slot`인 스텝 중 **하나만** 보인다(뜻 객관식 / 해석 맞추기 / 핵심어 요약 / 자유 해석 …).
+   * 그 학생 단계에 맞는 것(`levels`) 중 최근에 덜 한 방식을 고른다 — 같은 방식만 계속 나오면 질린다 (2026-10-14 선생님)
+   */
+  slot?: string;
+  /**
+   * 문장 뜻을 다시 풀어 말하거나 객관식으로 확인하는 화면 — 그 문장에서 해석 맞추기를 했으면 건너뛴다
+   * (주어·동사 찾기 `roles`도 같이 건너뛴다, 2026-10-14 선생님)
+   */
+  meaning_check?: boolean;
   /**
    * 이 id의 자유 해석을 한 번에 맞히지 못한 학생만 본다 (맞힌 학생에게는 설명을 건너뛴다).
    * 자유 해석에 `known`이 있으면 한 번에 맞힌 학생은 그 키가 학생 상태에 남아,
@@ -322,8 +339,20 @@ export type PickStep = StepBase & {
   no_unknown?: boolean;
   /** 주어·동사(·목적어) 찾기 — 찾은 정답 위에 S·V·O 표시를 붙여 그 문장이 끝날 때까지 남긴다 */
   roles?: Record<string, "S" | "V" | "O" | "C" | "대상" | "전목">;
+  /**
+   * 해석 맞추기 — 한국어 해석의 칸(`{en, ko}`)마다 맞는 영어 덩어리를 끌어다 놓는다(눌러서 골라 놓아도 된다).
+   * 짧은 문장만(긴 문장 X). 칸의 `en`이 `answers`이고, 영어 덩어리는 `candidates` (2026-10-14 선생님)
+   */
+  match?: { ko: (string | { en: string; ko: string })[] };
+  /**
+   * 순서 잇기 — 주어진 글 아래 빈칸에 단락 카드(A·B·C)를 끌어 순서대로 놓는다. 카드엔 단락의 첫머리·끝 단서.
+   * `answers`가 정답 순서(카드 id). 틀리면 처음 어긋난 자리(0부터)의 `wrong_by["0"]`… 로 짚는다
+   */
+  order?: { given: OrderCard; cards: OrderCard[] };
   brief: PickCopy;
 };
+
+export type OrderCard = { id: string; label: string; first?: { en: string; ko: string }; last?: { en: string; ko: string } };
 
 export type PickCopy = {
   ask: string;
@@ -463,6 +492,11 @@ export type PolicySentence = {
   teaching_value: Level3;
   /** 문장 내내 색으로 눈에 띄게 할 단어 — 누르면 뜻이 나온다. 스텝의 `highlight`와 다르다 */
   emphasis?: string[];
+  /**
+   * 끊어읽기 — 이 말들 바로 뒤에 「/」를 넣는다. 화면의 「/ 끊어읽기」를 누르면 보인다(긴 문장을 의미 덩어리로 읽는 법을 모르는 학생용,
+   * 2026-10-16 선생님). 문장에 나오는 그대로(문장부호 포함) 적는다
+   */
+  slashes?: string[];
   glosses: WordGloss[];
   vocabulary?: Record<string, VocabularySupport>;
   helps?: OptionalHelp[];

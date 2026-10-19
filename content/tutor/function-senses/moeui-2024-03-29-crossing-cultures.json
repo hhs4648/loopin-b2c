@@ -1,0 +1,108 @@
+{
+ "1": [
+  {
+   "word": "as",
+   "phrase": "as cultural beings",
+   "sense": "~로서",
+   "usage": "전치사 as (자격)"
+  }
+ ],
+ "2": [
+  {
+   "word": "for",
+   "phrase": "for new learning",
+   "sense": "~을 위한",
+   "usage": "전치사 for + 명사"
+  }
+ ],
+ "3": [
+  {
+   "word": "but",
+   "phrase": "but of ourselves",
+   "sense": "~도 (not only A but B)",
+   "usage": "not only A but (also) B"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "difficulties that can arise",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "to define",
+   "sense": "~할",
+   "usage": "형용사(privileged) + to부정사"
+  },
+  {
+   "word": "that",
+   "phrase": "insight that we could not",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 주어·동사"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "Adapting to a new",
+   "sense": "~에 (적응하다)",
+   "usage": "adapt to + 명사"
+  }
+ ],
+ "9": [
+  {
+   "word": "that",
+   "phrase": "require that we abandon",
+   "sense": "~하는 것을",
+   "usage": "명사절 that (require that …)"
+  },
+  {
+   "word": "which",
+   "phrase": "the cultures which we were born",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계사 which — 뒤 문장의 빈자리를 확인"
+  }
+ ],
+ "10": [
+  {
+   "word": "to",
+   "phrase": "compels us to find",
+   "sense": "~하도록",
+   "usage": "compel + 사람 + to부정사"
+  },
+  {
+   "word": "as",
+   "phrase": "as if",
+   "sense": "마치 (~인 것처럼)",
+   "usage": "as if + 절·구"
+  },
+  {
+   "word": "if",
+   "phrase": "as if for the first time",
+   "sense": "(as if의 일부)",
+   "usage": "as if = 마치 ~처럼"
+  },
+  {
+   "word": "for",
+   "phrase": "for the first time",
+   "sense": "~ 만에, 처음으로",
+   "usage": "for the first time = 처음으로"
+  },
+  {
+   "word": "that",
+   "phrase": "aspects that we hold",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "refuse to compromise",
+   "sense": "~하기를 (거부하다)",
+   "usage": "refuse + to부정사"
+  }
+ ]
+}

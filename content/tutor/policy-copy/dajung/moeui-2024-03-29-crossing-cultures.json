@@ -1,0 +1,202 @@
+{
+  "lesson": "moeui-2024-03-29-crossing-cultures",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어법 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_topic": {
+      "say": "문화를 넘어가면(다른 나라 문화 속으로 가면) 내가 누구인지의 바탕이 흔들린대요. 이 글의 이야기예요.",
+      "from": "186wiv9"
+    },
+    "s2_offer": {
+      "say": "그 과정은 새로 배우고 자랄 기회를 준대요.",
+      "from": "v1jndr"
+    },
+    "s3_sv": {
+      "ask": "①이 든 문장이에요. 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "us": "그건 '누구에게' 주는지예요(간접목적어). 무엇을 주는지 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Being “uprooted” from our home(고향에서 뿌리째 뽑히는 것), 동사는 ①brings, 목적어는 understanding이에요.",
+      "from": "ku7d86"
+    },
+    "s3_number": {
+      "ask": "주어 Being “uprooted” …는 '~되는 것'이라는 동명사 덩어리예요. 동사는 단수형일까요, 복수형일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "동명사(-ing) 덩어리가 주어면 '하나의 일'로 봐요.",
+        "동명사(-ing) 덩어리가 주어면 '하나의 일'로 봐요."
+      ],
+      "explain": "동명사 덩어리 주어는 '하나의 일'이라 단수 취급해요. 그래서 brings가 맞아요. 바로 앞 home은 from 뒤 명사라 주어가 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "동명사 덩어리 주어는 '하나의 일'이라 단수 취급해요. 그래서 brings가 맞아요. 바로 앞 home은 from 뒤 명사라 주어가 아니에요."
+      },
+      "point": "① 동명사 주어(Being uprooted …)는 단수 → brings 맞음",
+      "from": "1yk134p"
+    },
+    "s3_check": {
+      "say": "①brings는 맞아요. 밑줄 점검표에 붙여 둘게요.",
+      "from": "4n8drl"
+    },
+    "s4_success": {
+      "say": "어려움은 충격적이지만 성공한 이야기도 어디에나 있대요.",
+      "from": "12hz3hf"
+    },
+    "s5_sv": {
+      "ask": "길어요. 콤마 뒤 메인 문장에서 주어(S), 동사(V), 목적어(O), 보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the suffering and ambivalence": "그건 Despite / because of 뒤 덩어리예요. 콤마 뒤 메인 문장에서 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콤마 뒤 메인 문장은 주어 we, 동사 find, 목적어 ourselves, 보어 (uniquely) privileged예요. find + O + C = O가 C하다는 걸 알게 되다.",
+      "from": "t7c6sn"
+    },
+    "s5_adverb": {
+      "ask": "②uniquely는 바로 뒤 privileged(특권을 누리는)를 꾸며요. privileged가 형용사라면, 꾸미는 말은 무엇이어야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "형용사를 꾸미는 건 부사예요. very happy의 very처럼요.",
+        "형용사를 꾸미는 건 부사예요. very happy의 very처럼요."
+      ],
+      "explain": "형용사(privileged)를 꾸미는 건 부사예요. 그래서 uniquely가 맞아요. privileged 자체는 find의 보어라 형용사가 맞고요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "형용사(privileged)를 꾸미는 건 부사예요. 그래서 uniquely가 맞아요. privileged 자체는 find의 보어라 형용사가 맞고요."
+      },
+      "point": "② 형용사 privileged를 꾸미는 부사 uniquely → 맞음",
+      "from": "1f4g3vk"
+    },
+    "s5_check": {
+      "say": "②uniquely는 맞아요.",
+      "from": "ecmkg7"
+    },
+    "s6_subject": {
+      "ask": "③Adapting to a new and unfamiliar culture는 이 문장에서 무슨 역할일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "뒤에 동사 is가 있어요. is 앞에 무엇이 있어야 할까요?",
+        "뒤에 동사 is가 있어요. is 앞에 무엇이 있어야 할까요?"
+      ],
+      "explain": "뒤에 동사 is가 있으니 그 앞 덩어리가 주어예요. 주어 자리엔 동명사(-ing) Adapting이 올 수 있어요. 그래서 ③은 맞아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "뒤에 동사 is가 있으니 그 앞 덩어리가 주어예요. 주어 자리엔 동명사(-ing) Adapting이 올 수 있어요. 그래서 ③은 맞아요.",
+        "o2": "뒤에 동사 is가 있으니 그 앞 덩어리가 주어예요. 주어 자리엔 동명사(-ing) Adapting이 올 수 있어요. 그래서 ③은 맞아요."
+      },
+      "point": "③ 동사 is의 주어 자리 → 동명사 Adapting 맞음",
+      "from": "8rnwvr"
+    },
+    "s6_check": {
+      "say": "③Adapting은 맞아요.",
+      "from": "eyl2xi"
+    },
+    "s7_journey": {
+      "say": "문화에 적응하는 건 삶을 바꾸는 여정이래요.",
+      "from": "1p69gl"
+    },
+    "s8_becoming": {
+      "say": "대시(—) 뒤는 '되어 가는 과정'을 풀어 쓴 말이에요. 앞을 이해했으면 가볍게 넘어가도 돼요.",
+      "from": "1bmq0ar"
+    },
+    "s9_sv": {
+      "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "we": "그건 that 뒤 덩어리 안의 주어예요.",
+        "abandon": "그건 that 뒤 덩어리 안의 동사예요.",
+        "our former personalities and the cultures": "그건 that 뒤 abandon의 목적어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The process, 동사는 does not require예요. that 뒤가 요구하지 않는 내용이에요.",
+      "from": "1iq4it2"
+    },
+    "s9_gap": {
+      "ask": "④which 뒤 'we were born'을 봐요. 이 덩어리에 빠진 자리(주어나 목적어)가 있나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "be born은 '태어나다'라서 목적어를 받지 않아요. 주어 we도 있어요.",
+        "be born은 '태어나다'라서 목적어를 받지 않아요. 주어 we도 있어요."
+      ],
+      "explain": "we(주어) + were born(동사, 태어나다)으로 빠진 자리가 없는 완전한 문장이에요. be born은 목적어를 받지 않아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "we(주어) + were born(동사, 태어나다)으로 빠진 자리가 없는 완전한 문장이에요. be born은 목적어를 받지 않아요.",
+        "o2": "we(주어) + were born(동사, 태어나다)으로 빠진 자리가 없는 완전한 문장이에요. be born은 목적어를 받지 않아요."
+      },
+      "point": "④ which 뒤 we were born은 빠진 자리 없는 완전한 문장 — 관계대명사 which만으로는 안 되는지 문제에서 확인",
+      "from": "r62nkq"
+    },
+    "s9_hold": {
+      "say": "관계대명사 which 뒤는 빠진 자리가 있어야 해요. 여기는 빠진 게 없어요. ④가 맞는지는 문제에서 골라 봐요.",
+      "from": "1lvfy81"
+    },
+    "s10_reflexive": {
+      "ask": "compels us to find ⑤ourselves — 찾는 사람(to find의 주체)은 누구일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "compel + 사람 + to ~는 '사람이 ~하도록 강요하다'예요. 찾는 건 그 사람이에요.",
+        "compel + 사람 + to ~는 '사람이 ~하도록 강요하다'예요. 찾는 건 그 사람이에요."
+      ],
+      "explain": "compel us to find, 찾는 사람은 us(우리)예요. 찾는 대상도 우리 자신이니 재귀대명사 ourselves가 맞아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "compel us to find, 찾는 사람은 us(우리)예요. 찾는 대상도 우리 자신이니 재귀대명사 ourselves가 맞아요.",
+        "o2": "compel us to find, 찾는 사람은 us(우리)예요. 찾는 대상도 우리 자신이니 재귀대명사 ourselves가 맞아요."
+      },
+      "point": "⑤ 찾는 사람 us = 찾는 대상 → 재귀대명사 ourselves 맞음",
+      "from": "1i6r3ss"
+    },
+    "s10_go": {
+      "say": "①②③⑤는 맞았어요. 남은 하나, ④를 다시 떠올리며 문제를 골라 봐요.",
+      "from": "13blldm"
+    }
+  },
+  "exam": {
+    "ask": "밑줄 점검표를 떠올려 봐요. ④ which 뒤에 빠진 자리가 있었나요?",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! which 뒤 'we were born'이 빠진 자리 없는 완전한 문장이라 into which(be born into = ~에 태어나다)로 고쳐요. in which로 써도 어법은 맞지만, 문화·집안에 '태어나다'는 born into라서 into which가 더 자연스러워요.",
+    "final_wrong": "정답은 ④예요. which 뒤가 완전한 문장이라 into which(be born into = ~에 태어나다)여야 해요. in which도 어법은 맞지만 into which가 더 자연스러워요.",
+    "option_feedback": {
+      "1": "동명사 덩어리 주어(Being uprooted …)는 단수라 brings가 맞아요.",
+      "2": "형용사 privileged를 꾸미는 부사 uniquely가 맞아요.",
+      "3": "동사 is의 주어 자리라 동명사 Adapting이 맞아요.",
+      "5": "찾는 사람 us와 찾는 대상이 같아서 재귀대명사 ourselves가 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "vzvsfm"
+  },
+  "intro": {
+    "topic": {
+      "say": "낯선 나라에 가서 살면 나는 어떻게 달라질까요? 이번 글은 문화를 넘어가는 경험을 다뤄요."
+    },
+    "method1": {
+      "say": "어법 문제는 밑줄마다 무슨 문법을 묻는지 먼저 이름을 붙여요. 그다음 그 문장의 주어·동사·빈자리로 확인할게요."
+    },
+    "from": "1nw9b4x"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1ufpx7"
+}

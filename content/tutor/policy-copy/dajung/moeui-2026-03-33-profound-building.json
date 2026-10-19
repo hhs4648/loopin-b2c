@@ -10,6 +10,26 @@
       "say": "빈칸은 마지막 문장에 있어요. 훌륭한 건물(A profound building)이 어떤 건물인지 생각하며 처음부터 읽어 봐요.",
       "from": "so5p01"
     },
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "space": "그건 세미콜론(;) 뒤 문장의 주어예요. 앞에서 찾아봐요.",
+        "facilitates": "그건 세미콜론(;) 뒤 문장의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 All architectural structures, 동사는 are, 보어는 forms of spatial choreography예요.",
+      "from": "1nmcp5z"
+    },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "모든 건축 구조물은 행동을 이끄는 공간의 안무(춤 동작 짜기) 같은 거래요.",
+      "from": "10qjhtv"
+    },
     "s1_what": {
       "ask": "건축 구조물은 무엇의 한 형태래요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -26,9 +46,34 @@
       "point": "architectural structures = spatial choreography that guides action (행동을 이끄는 공간 연출)",
       "from": "1c30py1"
     },
+    "s1_basic_meaning": {
+      "say": "모든 건축 구조물은 행동을 이끄는 공간의 안무(춤 동작 짜기) 같은 거래요.",
+      "from": "y9zwya"
+    },
     "s1_pairs": {
       "say": "세미콜론(;) 뒤는 짝으로 읽어요. 공간은 행동을 돕기도(+) 하고 막기도(−) 해요.",
       "from": "1oxnyd6"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "but 앞은 주어 This choreography, 동사 predetermines, 목적어 patterns of movement and behavior예요. but 뒤는 주어 it, 동사 guides예요.",
+      "from": "94036e"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "이 안무(공간)는 움직임과 행동의 패턴을 미리 정하고, 감정과 느낌 같은 경험도 이끈대요.",
+      "from": "12oyjyp"
+    },
+    "s2_basic_meaning": {
+      "say": "이 안무(공간)는 움직임과 행동의 패턴을 미리 정하고, 감정과 느낌 같은 경험도 이끈대요.",
+      "from": "uf3we7"
     },
     "s2_body": {
       "ask": "공간이 이끄는 것을 두 그룹으로 나눠 봐요. 'movement and behavior(움직임과 행동)'는 어느 그룹일까요?",
@@ -64,6 +109,23 @@
       "say": "공간은 몸의 움직임뿐 아니라 마음의 느낌까지 이끌어요. 이 두 그룹을 기억해 둬요.",
       "from": "vloo1o"
     },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "and 앞은 주어 A sensitive and empathic designer, 동사 intuits, 목적어 human behavior and desire예요. and 뒤는 주어 this intuitive architectural scripting, 동사 resonates with예요.",
+      "from": "1voccsj"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "7686l2"
+    },
     "s3_designer": {
       "ask": "좋은 설계자는 누구의 무엇을 알아챈다고 할까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -88,6 +150,25 @@
       "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
       "from": "tguvur"
     },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "While designing a house": "그건 While(~하는 동안) 덩어리예요. 콤마 뒤에서 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the designer, 동사는 lives, uses and feels(살아 보고, 써 보고, 느껴 본다), 목적어는 the non-existent house예요.",
+      "from": "128lfg6"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "집을 설계하는 동안, 설계자는 아직 없는 집을 미래에 살 사람 대신 상상 속에서 살아 보고, 써 보고, 느껴 봐요.",
+      "from": "1kox6uj"
+    },
     "s4_behalf": {
       "ask": "설계자는 누구를 대신해서 상상 속 집을 살아 보나요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -103,6 +184,30 @@
       },
       "point": "on behalf of the future dweller = 미래에 살 사람을 대신해서",
       "from": "881y4n"
+    },
+    "s4_basic_meaning": {
+      "say": "집을 설계하는 동안, 설계자는 아직 없는 집을 미래에 살 사람 대신 상상 속에서 살아 보고, 써 보고, 느껴 봐요.",
+      "from": "152u9r9"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the occupant": "그건 where 뒤 덩어리 안의 주어예요.",
+        "wishes to": "그건 where 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 A correctly placed window, 동사는 is located(놓여 있다)예요.",
+      "from": "f6jwmu"
+    },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "올바르게 놓인 창문은 사는 사람이 정원을 내다보고 싶은 바로 그곳, 햇빛이 필요한 곳에 있대요.",
+      "from": "1r5o2zy"
     },
     "s5_where": {
       "ask": "창문은 어디에 있어야 '올바르게' 놓인 걸까요?",
@@ -120,6 +225,30 @@
       "point": "올바른 창문 = 사는 사람이 내다보고 싶은 바로 그곳",
       "from": "i94z3j"
     },
+    "s5_basic_meaning": {
+      "say": "올바르게 놓인 창문은 사는 사람이 정원을 내다보고 싶은 바로 그곳, 햇빛이 필요한 곳에 있대요.",
+      "from": "1anomsf"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the dweller": "그건 where 뒤 덩어리 안의 주어예요.",
+        "wishes to": "그건 where 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The stairway, 동사는 is located예요.",
+      "from": "1jvl47q"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "계단은 사는 사람이 위층이나 아래층으로 가고 싶은 곳에 있대요.",
+      "from": "1xq51rd"
+    },
     "s6_same": {
       "ask": "계단도 같은 원리예요. 계단은 어디에 놓일까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -136,9 +265,33 @@
       "point": "계단도 사는 사람이 오르내리고 싶은 곳 — 창문과 같은 원리",
       "from": "npnpbp"
     },
+    "s6_basic_meaning": {
+      "say": "계단은 사는 사람이 위층이나 아래층으로 가고 싶은 곳에 있대요.",
+      "from": "15ciqyv"
+    },
     "story_6": {
       "say": "칠판에 이어서 정리해 볼게요.",
       "from": "tavsof"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "it": "그건 as(~ 때문에) 뒤 덩어리 안의 주어예요.",
+        "reveals": "그건 as(~ 때문에) 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Successful architecture, 동사는 does not need, 목적어는 manuals or signage예요.",
+      "from": "58f4n1"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "성공적인 건축은 말없이도 구조와 쓰임을 드러내서, 설명서나 표지판이 필요 없대요.",
+      "from": "10009ex"
     },
     "s7_why": {
       "ask": "성공적인 건축에는 왜 설명서나 표지판이 필요 없을까요?",
@@ -155,6 +308,10 @@
       },
       "point": "as = ~이기 때문에 · 성공적인 건축은 말없이도 쓰임새를 드러낸다",
       "from": "cjwfcq"
+    },
+    "s7_basic_meaning": {
+      "say": "성공적인 건축은 말없이도 구조와 쓰임을 드러내서, 설명서나 표지판이 필요 없대요.",
+      "from": "rxpm3r"
     },
     "s8_side": {
       "ask": "이 빈칸 문장은 글쓴이 주장과 같은 쪽일까요, 반대 쪽일까요?",

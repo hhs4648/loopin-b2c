@@ -88,8 +88,9 @@ LANG = "왼쪽 · 언어"
 GEST = "오른쪽 · 제스처"
 
 
-def board(left, right, caption=None, fresh=()):
-    p = {"kind": "groups", "title": "언어와 제스처", "between": "+",
+def board(left, right, caption=None, fresh=(), between="≠"):
+    # 둘은 다르다(≠) → 끝에서 둘의 조합(+) — 글의 흐름을 기호로 (2026-10-16 선생님)
+    p = {"kind": "groups", "title": "언어와 제스처", "between": between,
          "left": {"label": "언어 (language)", "words": [{"text": w, **({"fresh": True} if w in fresh else {})} for w in left]},
          "right": {"label": "제스처 (gesture)", "words": [{"text": w, **({"fresh": True} if w in fresh else {})} for w in right]}}
     if caption:
@@ -106,21 +107,43 @@ sentences = [
                     g("is different from language", "언어와 다르다"), g("in that", "~라는 점에서"),
                     g("does not present", "제시하지 않다"), g("the speaker", "말하는 사람, 화자"), g("such choices", "그러한 선택들")],
         "steps": [
-            pick("g_clue", "주어진 문장에서 앞 문장과 이어지는 단서를 찾아볼까요?",
+            # 단서부터 찾게 하면 뜬금없다 — 주어진 문장이 어떤 상황인지 먼저 (2026-10-16 선생님). 중·초는 그 앞에 해석 맞추기
+            show("g_situation",
+                 "주어진 문장은 제스처가 언어와 어떻게 다른지 말해요. 제스처는 말하는 사람에게 그런 선택을 주지 않는대요.",
+                 button="다음",
+                 highlight=["gesture", "is different from language", "does not present"],
+                 panel={"kind": "structure", "rows": [
+                     {"label": "누구 말", "text": "McNeil and Duncan", "ko": "두 학자에 따르면"},
+                     {"label": "무엇이", "text": "gesture ≠ language", "ko": "제스처는 언어와 다르다", "tone": "hl"},
+                     {"label": "어떤 점에서", "text": "does not present the speaker with such choices", "ko": "화자에게 그런 선택을 주지 않는다", "tone": "hl2"},
+                 ]},
+                 method=0),
+            # 「이어지는 단서」가 아니라 앞 내용을 가리키는 말(지시어) 찾기
+            pick("g_clue", "주어진 문장에 앞 내용을 가리키는 말이 하나 있어요. 찾아볼까요?",
                  ["According to McNeil and Duncan", "is different from language", "the speaker", "such choices"],
                  ["such choices"],
                  "그건 이 문장 안에서 뜻이 끝나는 말이에요. 앞에서 말한 걸 다시 가리키는 말을 찾아봐요.",
                  "'such choices(그러한 선택들)'예요. such는 앞에서 말한 걸 가리키니, 앞에 '선택' 이야기가 있어야 해요.",
+                 praise="맞아요! such(그러한)처럼 앞 내용을 가리키는 말은 문장 넣기·순서 문제에서 주의 깊게 보면 좋아요.",
                  shade=True,
                  tips=[{"label": "in that", "mark": "in that", "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."}],
+                 # 찾기 전에 보이면 이르다 — 맞힌 화면에서만 (2026-10-16 선생님)
+                 praise_tips=[{"label": "앞을 가리키는 말", "text": "this, that, such, these, the처럼 앞에 나온 것을 다시 가리키는 말이에요. 문장 넣기에서는 이 말이 가리키는 게 바로 앞 문장에 있어야 해요."}],
                  method=0),
+            # 바로 「앞에 무엇?」을 물으면 와닿지 않는다 — 언어/제스처 두 그룹에 choices부터 나눠 보게 (2026-10-16 선생님)
+            choice("g_sort",
+                   "언어와 제스처를 두 그룹으로 나눠 봐요. 제스처는 그러한 선택을 주지 않는다는 점에서 언어와 다르대요. 그럼 choice는 어디 들어가야 할까요?",
+                   [("o0", LANG, True), ("o1", GEST, False)],
+                   "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요.",
+                   panel={**board([], []), "sort": {"words": ["choice"], "left": LANG, "right": GEST}},
+                   highlight=["gesture", "does not present", "such choices"], method=1),
             choice("g_before",
                    "그럼 주어진 문장 앞에는 어떤 내용이 와야 할까요?",
                    [("o0", "제스처가 접착제 역할을 한다는 내용", False), ("o1", "언어가 화자에게 선택을 하게 한다는 내용", True),
                     ("o2", "말과 제스처가 중복된다는 내용", False)],
                    "such choices는 앞에 나온 '선택'을 받아요. 제스처는 그런 선택을 주지 않는대요.",
                    why="such choices는 앞에서 말한 선택이에요. 제스처는 선택을 주지 않는다고 했으니, 앞에는 선택을 주는 쪽 이야기가 와야 해요.",
-                   method=1),
+                   panel=board(["choice"], [], fresh=("choice",)), method=1),
             choice("g_after",
                    "주어진 문장 바로 뒤에는 무엇이 오면 자연스러울까요?",
                    [("o0", "또 다른 언어의 선택 예시", False), ("o1", "McNeil이 누구인지 소개", False),
@@ -159,13 +182,13 @@ sentences = [
                    "언어와 제스처를 두 그룹으로 나눠 봐요. 'categorical(범주적)'은 어느 쪽일까요?",
                    [("o0", LANG, True), ("o1", GEST, False)],
                    "'the categorical requirements of language'예요. of 뒤를 봐요.",
-                   panel={**board([], []), "sort": {"words": ["categorical"], "left": LANG, "right": GEST}},
+                   panel={**board(["choice"], []), "sort": {"words": ["categorical"], "left": LANG, "right": GEST}},
                    highlight=["“categorical” requirements of language"], method=1),
             choice("s2_img",
                    "그럼 'imagistic(심상적, 그림 같은)'은 어느 쪽일까요?",
                    [("o0", LANG, False), ("o1", GEST, True)],
                    "'the imagistic possibilities of gesture'예요. of 뒤를 봐요.",
-                   panel={**board(["categorical"], [], fresh=("categorical",)), "sort": {"words": ["imagistic"], "left": LANG, "right": GEST}},
+                   panel={**board(["choice", "categorical"], [], fresh=("categorical",)), "sort": {"words": ["imagistic"], "left": LANG, "right": GEST}},
                    highlight=["“imagistic” possibilities of gesture"], method=1),
         ],
     },
@@ -192,12 +215,12 @@ sentences = [
         "glosses": [g("This kind of choice", "이런 종류의 선택"), g("is characteristic of", "~의 특징이다"),
                     g("language", "언어"), g("as a semiotic system", "기호 체계로서")],
         "steps": [
-            choice("s4_sort",
-                   "'choice(선택)'는 언어와 제스처 중 어느 쪽의 특징이래요?",
-                   [("o0", LANG, True), ("o1", GEST, False)],
-                   "'This kind of choice is characteristic of language'예요.",
-                   panel={**board(["categorical"], ["imagistic"]), "sort": {"words": ["choice"], "left": LANG, "right": GEST}},
-                   highlight=["This kind of choice", "language"], method=1),
+            # choices는 주어진 문장에서 이미 언어 쪽에 넣었다 — 다시 나누지 않고 맞았다고 확인만
+            show("s4_sort",
+                 "This kind of choice is characteristic of language — 선택은 언어의 특징이래요. 주어진 문장에서 choice를 언어 쪽에 넣은 게 맞았어요.",
+                 button="다음",
+                 panel=board(["choice", "categorical"], ["imagistic"], fresh=("choice",)),
+                 highlight=["This kind of choice", "language"], method=1),
         ],
     },
     {
@@ -220,11 +243,11 @@ sentences = [
                    "it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. Instead는 앞과 반대되는 걸 대신 말할 때 써요.",
                    why="it이 제스처를 가리키려면 바로 앞에 제스처가 나와야 해요. 그리고 Instead(대신에)니까, 앞에는 제스처가 '하지 않는' 일이 있어야 해요.",
                    highlight=["Instead, it"],
-                   panel=board(["categorical", "choice"], ["imagistic"]),
+                   panel=board(["choice", "categorical"], ["imagistic"]),
                    method=2),
             show("s5_glue",
                  "제스처는 선택을 주는 대신, 언어 요소들을 묶어 주는 접착제 역할을 해요.",
-                 panel=board(["categorical", "choice"], ["imagistic", "glue"], fresh=("glue",)),
+                 panel=board(["choice", "categorical"], ["imagistic", "glue"], fresh=("glue",)),
                  method=1),
         ],
     },
@@ -258,7 +281,7 @@ sentences = [
             show("s7_go",
                  "언어는 고르게 하고(categorical), 제스처는 묶어 줘요(imagistic). 이제 주어진 문장이 들어갈 곳을 골라 봐요.",
                  button="문제 풀러 갈게요",
-                 panel=board(["categorical", "choice"], ["imagistic", "glue"], "생각 = 언어 + 제스처 (imagistic-categorial)"),
+                 panel=board(["choice", "categorical"], ["imagistic", "glue"], "생각 = 언어 + 제스처 (imagistic-categorial)", between="+"),
                  method=2),
         ],
     },
@@ -329,6 +352,125 @@ lesson = {
     "sentences": sentences,
     "passage_on_try": True,
 }
+
+# 초급 기본 — 문장마다 「주어·동사 + 뜻」 또는 「해석 맞추기」 하나 (2026-10-15 선생님)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from beginner import add_basic, add_that_sv, fill_chunk_glosses, m, sv_step  # noqa: E402
+
+add_basic(sentences, 1, [m("According to McNeil and Duncan", "McNeil과 Duncan에 따르면"), " ", m("gesture", "제스처는"), " ",
+                         m("the speaker", "화자에게"), " ", m("such choices", "그런 선택"), "을 ", m("does not present", "주지 않는다"), "는 ",
+                         m("in that", "점에서"), " ", m("is different from language", "언어와 다르다"), "."],
+          sv_new=sv_step("s1_basic_sv", ["gesture", "is different from language", "it", "does not present"],
+                         {"gesture": "S", "is different from language": "V"},
+                         {"it": "그건 in that(~라는 점에서) 뒤 덩어리 안의 주어예요.", "does not present": "그건 in that(~라는 점에서) 뒤 덩어리 안의 동사예요."},
+                         "주어는 gesture(제스처), 동사는 is different from language(언어와 다르다)예요."),
+)
+# 주어진 문장 — 해석 맞추기는 중·초 (2026-10-16 선생님). 고는 상황 표(g_situation)만
+next(x for x in sentences[0]["steps"] if x["id"] == "s1_match")["levels"] = ["중", "초"]
+# 문장 1(31단어)은 길어서 단계 상관없이 주어·동사를 모두 찾는다 + the gestures를 꾸미는 덩어리 (2026-10-16 선생님)
+_s2 = next(x for x in sentences if x["id"] == 2)
+_s2["steps"][0:0] = [
+    sv_step("s1_sv", ["Scholars", "have demonstrated", "the gestures", "hearing people", "produce", "are systematically made"],
+            {"Scholars": "S", "have demonstrated": "V", "the gestures": "S", "are systematically made": "V"},
+            {"hearing people": "그건 the gestures를 꾸미는 덩어리 안의 주어예요. 「듣는 사람들이 만드는」 제스처라는 말이에요.",
+             "produce": "그건 the gestures를 꾸미는 덩어리 안의 동사예요."},
+            "앞은 주어 Scholars, 동사 have demonstrated예요. that 뒤는 주어 the gestures, 동사 are systematically made예요.",
+            ask="긴 문장이에요. 주어(S)와 동사(V)를 모두 찾아볼까요? that 뒤에도 한 쌍 있어요."),
+    {"id": "s1_modify", "type": "show", "interaction": "note", "method": 0, "button": "다음",
+     "brief": {"say": "초록 부분은 앞의 the gestures를 꾸며요. 아래 표처럼 읽어요."},
+     "highlight": ["the gestures"], "highlight_alt": ["hearing people produce while they are speaking"],
+     "panel": {"kind": "structure", "rows": [
+         {"label": "S", "text": "the gestures", "ko": "제스처", "tone": "hl"},
+         {"label": "↖ 꾸밈", "text": "(that) hearing people produce while they are speaking", "ko": "듣는 사람들이 말하는 동안 만드는", "tone": "hl2"},
+         {"label": "V", "text": "are systematically made …", "ko": "(말과 동시에) 체계적으로 만들어진다"},
+     ]},
+     "panel_below": True},
+]
+add_basic(sentences, 3, [m("This tightly integrated pairing", "이렇게 꼭 붙은 짝(언어와 제스처)은"), " ", m("speakers", "화자가"), " ",
+                         m("their thoughts", "자신의 생각"), "을 ", m("formulate", "정리하게"), " ", m("enables", "해 준다"), "."],
+          match_display="This tightly integrated pairing of language and gesture enables speakers to formulate their thoughts.",
+          sv_new=sv_step("s3_basic_sv", ["This tightly integrated pairing", "enables", "speakers", "to conceptualize and formulate"],
+                         # 5형식(enable O to-V) — 보어까지 찾는다. 보어가 빠지면 「무엇을 하게 하는지」가 사라진다 (2026-10-16 선생님)
+                         {"This tightly integrated pairing": "S", "enables": "V", "speakers": "O", "to conceptualize and formulate": "C"},
+                         {},
+                         "주어 This tightly integrated pairing, 동사 enables, 목적어 speakers, 보어 to conceptualize and formulate — 화자가 생각을 개념화하고 정리할 수 있게 해 준대요.",
+                         ask="주어(S)·동사(V)·목적어(O)를 찾고, 목적어가 무엇을 하게 되는지(보어 C)까지 찾아볼까요?"),
+          meaning_after="s2_img",
+          meaning="이렇게 꼭 붙은 언어와 제스처 덕분에, 화자는 언어의 '범주적' 조건과 제스처의 '심상적' 가능성 둘 다로 생각을 정리할 수 있대요.")
+# 5형식 읽는 법 — 문법 말 없이 「사람이 ~하게 해 주다」만 (중·초, 2026-10-16 선생님)
+_s3 = next(x for x in sentences if x["id"] == 3)
+_at = next(i for i, x in enumerate(_s3["steps"]) if x["id"] == "s3_basic_sv") + 1
+_s3["steps"].insert(_at, {
+    "id": "s3_svoc_note", "type": "show", "interaction": "note", "method": 0, "button": "다음", "levels": ["중", "초"],
+    "brief": {"say": "enables + 사람 + to ~는 「사람이 ~하게 해 준다」로 읽어요. 그래서 이 짝은 화자가 생각을 개념화하고 정리할 수 있게 해 준대요."},
+    "highlight": ["enables", "speakers", "to conceptualize and formulate"],
+    "tips": [{"label": "동사 + 사람 + to ~", "text": "enable·allow·help·encourage·force + 사람 + to ~ = 「사람이 ~하게 (해) 주다」. 예: allow us to see = 우리가 보게 해 준다."}],
+})
+
+add_basic(sentences, 4, [m("For example", "예를 들어"), " ", m("in describing an event", "어떤 일을 말할 때"), " 그 일이 ",
+                         m("has been completed", "끝났는지"), " ", m("ongoing", "진행 중인지"), "를 ", m("one must decide", "정해야 한다"), "."],
+          match_display="For example, in describing an event, one must decide if the event has been completed or is ongoing.",
+          sv_new=sv_step("s4_basic_sv", ["one", "must decide", "the event", "has been completed"],
+                         {"one": "S", "must decide": "V"},
+                         {"the event": "그건 if(~인지) 뒤 덩어리 안의 주어예요.", "has been completed": "그건 if(~인지) 뒤 덩어리 안의 동사예요."},
+                         "주어는 one(사람), 동사는 must decide(정해야 한다)예요."),
+          meaning_after="s3_choice",
+          meaning="예를 들어 어떤 일을 말할 때, 언어에 뜻마다 붙는 꼬리말이 있으면 그 일이 끝났는지 진행 중인지 하나를 꼭 골라야 해요.")
+add_basic(sentences, 5, [m("This kind of choice", "이런 종류의 선택은"), " ", m("as a semiotic system", "기호 체계로서"), "의 ",
+                         m("language", "언어"), m("is characteristic of", "의 특징이다"), "."],
+          sv_new=sv_step("s5_basic_sv", ["This kind of choice", "is characteristic of", "language"],
+                         {"This kind of choice": "S", "is characteristic of": "V", "language": "전목"}, {},
+                         "주어는 This kind of choice, 동사는 is characteristic of(~의 특징이다), of 뒤 목적어는 language예요."),
+          meaning_after="s4_sort", meaning="이런 선택은 기호 체계로서 언어가 가진 특징이래요.")
+add_basic(sentences, 6, [m("Instead", "대신에"), ", 그것은 ", m("linguistic elements", "언어 요소들"), "을 ", m("unite", "묶는"), " 걸 돕는 ",
+                         m("a kind of glue", "일종의 접착제"), "를 ", m("offers", "준다"), "."],
+          match_display="Instead, it offers a kind of glue, which helps unite linguistic elements.",
+          sv_new=sv_step("s6_basic_sv", ["it", "offers", "a kind of glue", "linguistic elements"],
+                         {"it": "S", "offers": "V", "a kind of glue": "O"},
+                         {"linguistic elements": "그건 which 뒤에서 무엇을 묶는지 알려 주는 말이에요."},
+                         "주어는 it, 동사는 offers(준다), 목적어는 a kind of glue(일종의 접착제)예요."),
+          meaning_ids=["s5_glue"])
+add_basic(sentences, 7, [m("In this view", "이 관점에서"), " ", m("speech and gesture", "말과 제스처는"), " ", m("redundant", "중복된 것"), "이 ",
+                         m("are not", "아니고"), ", ", m("of the other", "다른 하나의"), " 번역인 ", m("nor is one", "하나가 ~인 것도 아니다"), "."],
+          sv_new=sv_step("s7_basic_sv", ["speech and gesture", "are not", "redundant"],
+                         {"speech and gesture": "S", "are not": "V", "redundant": "C"}, {},
+                         "주어는 speech and gesture, 동사는 are not, 보어는 redundant(중복된)예요."),
+          meaning_ids=["s6_rel"],
+          meaning="이 관점에서 말과 제스처는 서로 겹치지(중복되지) 않고, 하나가 다른 하나의 '번역'도 아니래요.")
+add_basic(sentences, 8, [m("Rather", "오히려"), " ", m("for the expression of thought", "생각을 표현하는"), " ",
+                         m("the minimal processing unit", "최소 처리 단위는"), " ", m("a combination of the two", "둘의 조합"), m("is", "이다"), "."],
+          match_display="Rather, the minimal processing unit for the expression of thought is a combination of the two.",
+          sv_new=sv_step("s8_basic_sv", ["the minimal processing unit", "is", "a combination of the two"],
+                         {"the minimal processing unit": "S", "is": "V", "a combination of the two": "C"}, {},
+                         "주어는 the minimal processing unit, 동사는 is, 보어는 a combination of the two(둘의 조합)예요."),
+          meaning_ids=["s7_unit"], meaning="오히려 생각을 표현하는 최소 단위는 둘(언어와 제스처)의 조합이래요.")
+# in that / if 안이 핵심 — 메인 주어·동사 다음 그 안의 주어·동사 (2026-10-16 선생님, 공통)
+add_that_sv(sentences, 1, "s1_basic_sv", "s1_that_sv", ["it", "does not present", "the speaker"],
+            {"it": "S", "does not present": "V"},
+            {"the speaker": "그건 present의 목적어예요. 주어·동사만 찾아요."},
+            "in that 안의 주어는 it(= gesture, 제스처), 동사는 does not present(주지 않는다)예요.",
+            ask="in that(~라는 점에서) 뒤가 어떻게 다른지예요. 그 안에서 주어(S)와 동사(V)를 찾아볼까요?")
+add_that_sv(sentences, 4, "s4_basic_sv", "s4_that_sv", ["the event", "has been completed", "is ongoing"],
+            {"the event": "S", "has been completed": "V", "is ongoing": "V"}, {},
+            "if 안의 주어는 the event(그 일), 동사는 has been completed(끝났다) 또는 is ongoing(진행 중이다)예요.",
+            ask="if(~인지) 뒤가 무엇을 정하는지예요. 그 안에서 주어(S)와 동사(V)를 모두 찾아볼까요?")
+fill_chunk_glosses(sentences, {
+    "gesture": "제스처", "is different from language": "언어와 다르다", "it": "그것", "does not present": "주지 않는다",
+    "According to McNeil and Duncan": "McNeil과 Duncan에 따르면", "the speaker": "화자", "such choices": "그런 선택들", "in that": "~라는 점에서",
+    "Scholars": "학자들", "have demonstrated": "입증했다", "the gestures": "그 제스처들", "are systematically made": "체계적으로 만들어진다",
+    "at the same time with speech": "말과 동시에", "This tightly integrated pairing": "이 꼭 붙은 짝", "enables": "가능하게 하다",
+    "speakers": "화자들", "to conceptualize and formulate": "개념화하고 정리하는 것", "their thoughts": "그들의 생각", "formulate": "정리하다",
+    "one": "사람(일반)", "must decide": "정해야 한다", "is ongoing": "진행 중이다", "the event": "그 일", "has been completed": "끝났다",
+    "For example": "예를 들어", "in describing an event": "어떤 일을 말할 때", "ongoing": "진행 중인", "one must decide": "사람은 정해야 한다",
+    "This kind of choice": "이런 종류의 선택", "is characteristic of": "~의 특징이다", "language": "언어", "as a semiotic system": "기호 체계로서",
+    "offers": "주다", "a kind of glue": "일종의 접착제", "linguistic elements": "언어 요소들", "unite": "묶다", "Instead": "대신에",
+    "speech and gesture": "말과 제스처", "are not": "~이 아니다", "redundant": "중복된", "In this view": "이 관점에서",
+    "of the other": "다른 하나의", "nor is one": "하나가 ~인 것도 아니다",
+    "the minimal processing unit": "최소 처리 단위", "is": "~이다", "a combination of the two": "둘의 조합", "Rather": "오히려",
+    "for the expression of thought": "생각을 표현하기 위한",
+})
+next(x for x in sentences if x["id"] == 2)["glosses"].append(g("made", "만들어진"))
+next(x for x in sentences if x["id"] == 3)["glosses"].append(g("thoughts", "생각들"))
 
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

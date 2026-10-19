@@ -97,6 +97,17 @@ export function VocabTest({ only, onRetry, onClose }: Props) {
   );
 }
 
+/** 제대로 섞기(Fisher–Yates) — 원래 순서와 같게 나오면 한 칸 돌린다 */
+function shuffled<T>(items: T[]): T[] {
+  const out = [...items];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j]!, out[i]!];
+  }
+  if (out.length > 1 && out.every((x, i) => x === items[i])) out.push(out.shift()!);
+  return out;
+}
+
 /** 짝 맞추기 한 판. 한 번이라도 잘못 짝지은 단어는 틀린 걸로 센다 */
 function MatchRound({
   q,
@@ -105,7 +116,7 @@ function MatchRound({
   q: Extract<Question, { kind: "match" }>;
   onDone: (marks: Record<string, boolean>) => void;
 }) {
-  const right = useMemo(() => [...q.pairs].sort(() => Math.random() - 0.5), [q]);
+  const right = useMemo(() => shuffled(q.pairs), [q]);
   const [pick, setPick] = useState<string | null>(null);
   const [done, setDone] = useState<string[]>([]);
   const [missed, setMissed] = useState<string[]>([]);

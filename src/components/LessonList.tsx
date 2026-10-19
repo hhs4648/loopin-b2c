@@ -6,6 +6,7 @@ import { loadNotes } from "../tutor/notes";
 import { loadVocab } from "../tutor/vocab";
 import type { SavedKind } from "./SavedBook";
 import { allGroups, sentenceCount, setsIn } from "../tutor/sets";
+import { allMiniMocks, loadAttempts, scoreOf } from "../tutor/mini";
 import { ClassroomBg } from "./ClassroomBg";
 import { TeacherFigure } from "./TeacherFigure";
 
@@ -50,6 +51,10 @@ type Props = {
   onPickSet: (set: LessonSet) => void;
   /** 단어장 · 내 노트 열기 */
   onOpenSaved: (kind: SavedKind) => void;
+  /** 미니 모의고사 열기 */
+  onOpenMini: (mockId: string) => void;
+  /** 홈(마을)으로 */
+  onHome?: () => void;
 };
 
 export function LessonList({
@@ -59,6 +64,8 @@ export function LessonList({
   onBack,
   onPickSet,
   onOpenSaved,
+  onOpenMini,
+  onHome,
 }: Props) {
   const progress = loadProgress();
   const vocabCount = loadVocab().length;
@@ -77,6 +84,10 @@ export function LessonList({
       <header className="top-bar">
         {collection ? (
           <button type="button" className="icon-btn light" title="목록으로" onClick={onBack}>
+            <BackIcon />
+          </button>
+        ) : onHome ? (
+          <button type="button" className="icon-btn light" title="홈으로" onClick={onHome}>
             <BackIcon />
           </button>
         ) : (
@@ -156,6 +167,34 @@ export function LessonList({
                 <small>헷갈린 포인트 {noteCount}개</small>
               </button>
             </div>
+            <section className="group">
+              <h2 className="group-title">
+                미니 모의고사
+                <small>시간 재며 풀고 · 바로 채점 · 분석까지</small>
+              </h2>
+              <ul className="set-list">
+                {allMiniMocks().map((m) => {
+                  const last = loadAttempts(m.id)[0];
+                  const s = last ? scoreOf(m, last.answers) : null;
+                  return (
+                    <li key={m.id}>
+                      <button type="button" className="set-card" onClick={() => onOpenMini(m.id)}>
+                        <span className="set-tag">⏱ {m.minutes}분</span>
+                        <strong className="set-title">{m.title}</strong>
+                        <span className="set-subtitle">{m.subtitle}</span>
+                        <span className="set-meta">
+                          <span className="set-count">{s ? `지난 점수 ${s.score}/${s.max}점` : `${m.items.length}문항`}</span>
+                          <span className="set-go">
+                            {s ? "다시 풀기" : "풀어 보기"}
+                            <ArrowIcon />
+                          </span>
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
             {allGroups().map((group) => (
               <section key={group.id} className="group">
                 <h2 className="group-title">
@@ -223,3 +262,5 @@ function BackIcon() {
     </svg>
   );
 }
+
+

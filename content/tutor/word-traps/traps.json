@@ -1,0 +1,166 @@
+{
+  "mopyeong-2026-06-37-chaos-pendulum": [
+    {
+      "word": "note",
+      "kind": "뜻",
+      "mis": "노트, 필기",
+      "ko": "주목하다",
+      "who": "중·초"
+    },
+    {
+      "word": "fashion",
+      "kind": "뜻",
+      "mis": "패션, 유행",
+      "ko": "방식 (in a ~ fashion)",
+      "who": "중·초"
+    }
+  ],
+  "moeui-2026-03-36-conversation-stoppers": [
+    {
+      "word": "as much A as B",
+      "kind": "쓰임",
+      "mis": "(뜻을 모름)",
+      "ko": "B만큼이나 A",
+      "who": "중·초"
+    },
+    {
+      "word": "even if",
+      "kind": "쓰임",
+      "mis": "(뜻을 모름)",
+      "ko": "비록 ~라도",
+      "who": "초"
+    },
+    {
+      "word": "work",
+      "kind": "뜻",
+      "mis": "일하다",
+      "ko": "효과가 있다, 작동하다",
+      "who": "중·초"
+    },
+    {
+      "word": "appear to",
+      "kind": "뜻",
+      "mis": "나타나다",
+      "ko": "~처럼 보이다 (= seem to)",
+      "who": "중·초"
+    },
+    {
+      "word": "manner",
+      "kind": "뜻",
+      "mis": "매너(예절)",
+      "ko": "방식 (in this ~)",
+      "who": "중·초"
+    },
+    {
+      "word": "Once",
+      "kind": "쓰임",
+      "mis": "한 번",
+      "ko": "일단 ~하면 (접속사)",
+      "who": "중·초"
+    },
+    {
+      "word": "room",
+      "kind": "뜻",
+      "mis": "방",
+      "ko": "여지 (no need or room)",
+      "who": "중·초"
+    },
+    {
+      "word": "that's all there is to it",
+      "kind": "뜻",
+      "mis": "—",
+      "ko": "그게 다다, 그저 그뿐이다",
+      "who": "중·초"
+    },
+    {
+      "word": "upon receiving",
+      "kind": "쓰임",
+      "mis": "—",
+      "ko": "~을 받자마자",
+      "who": "중·초"
+    },
+    {
+      "word": "undone",
+      "kind": "뜻",
+      "mis": "undo(취소하다)",
+      "ko": "무너진, 망가진 (undone by ~)",
+      "who": "중·초"
+    },
+    {
+      "word": "ones",
+      "kind": "쓰임",
+      "mis": "하나들",
+      "ko": "앞 명사를 받음 — 여기서는 deliberations",
+      "who": "중·초"
+    },
+    {
+      "word": "interpersonal",
+      "kind": "모양",
+      "mis": "—",
+      "ko": "대인 간의 (inter 사이 + personal)",
+      "who": "중·초"
+    }
+  ],
+  "moeui-2024-03-23-tribe-thinking": [
+    {
+      "word": "mortality",
+      "kind": "모양",
+      "mis": "morality(도덕성)",
+      "ko": "죽음, 언젠가 죽는다는 것 (even our own mortality)",
+      "who": "고·중·초"
+    },
+    {
+      "word": "drive",
+      "kind": "뜻",
+      "mis": "운전하다",
+      "ko": "욕구, 충동 (an innate drive = 타고난 욕구)",
+      "who": "고·중·초"
+    },
+    {
+      "word": "once",
+      "kind": "쓰임",
+      "mis": "한 번",
+      "ko": "일단 ~하면 (접속사, once you can identify them = 일단 그들을 알아보게 되면)",
+      "who": "고·중·초"
+    },
+    {
+      "word": "so much so that",
+      "kind": "쓰임",
+      "mis": "(뜻을 모름)",
+      "ko": "너무 그래서 ~할 정도로 (앞 내용이 얼마나 심한지)",
+      "who": "고·중·초"
+    },
+    {
+      "word": "given",
+      "kind": "쓰임",
+      "mis": "주어진",
+      "ko": "~이 주어지면, ~라면 (given a choice = 선택이 주어지면) · 비슷한 말: provided (~라면)",
+      "who": "고·중·초"
+    }
+  ],
+  "moeui-2024-03-22-multilingual-feelings": [
+    {
+      "word": "driven",
+      "kind": "뜻",
+      "mis": "운전된",
+      "ko": "~에 이끌린, 좌우된 (emotionally driven decisions = 감정에 좌우된 결정)",
+      "who": "고·중·초"
+    }
+  ],
+  "moeui-2024-03-24-distance-in-time": [
+    {
+      "word": "even if",
+      "kind": "쓰임",
+      "mis": "심지어 ~라면",
+      "ko": "비록 ~라도 (even if they live thousands of miles away = 수천 마일 떨어져 살더라도)",
+      "who": "고·중·초"
+    },
+    {
+      "word": "last",
+      "kind": "뜻",
+      "mis": "마지막",
+      "ko": "지속되다, 오래가다 (will last for generations = 여러 세대 동안 지속될)",
+      "who": "고·중·초"
+    }
+  ]
+}

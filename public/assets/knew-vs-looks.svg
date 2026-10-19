@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 210" fill="none">
+  <!-- 2024년 3월 39번: 아는 대로(예전 구상화) vs 보이는 대로(원근법) — 같은 장면, 멀리 있는 사람의 크기 -->
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <!-- 왼쪽: 아는 대로 -->
+    <rect x="8" y="34" width="156" height="128" rx="12" fill="#fff5f7" stroke="#ef7a93" stroke-width="2.5"/>
+    <text x="86" y="24" text-anchor="middle" font-size="14" fill="#c0455f">예전 그림 · 아는 대로</text>
+    <path d="M18 140 H154" stroke="#c9b8a8" stroke-width="2"/>
+    <!-- 가까운 사람 -->
+    <circle cx="50" cy="80" r="11" fill="#f2c8a0"/><rect x="38" y="93" width="24" height="44" rx="8" fill="#e2607d"/>
+    <!-- 먼 사람: 실제 크기 그대로 (화가는 사람 크기를 안다) -->
+    <circle cx="122" cy="80" r="11" fill="#f2c8a0"/><rect x="110" y="93" width="24" height="44" rx="8" fill="#e2607d" opacity=".75"/>
+    <text x="122" y="70" text-anchor="middle" font-size="10" fill="#8a7f88">멀리</text>
+    <text x="86" y="182" text-anchor="middle" font-size="12" fill="#c0455f">what the artist knew</text>
+    <text x="86" y="198" text-anchor="middle" font-size="11" fill="#8a7f88">멀어도 실제 크기대로</text>
+    <!-- 오른쪽: 보이는 대로 -->
+    <rect x="176" y="34" width="156" height="128" rx="12" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="2.5"/>
+    <text x="254" y="24" text-anchor="middle" font-size="14" fill="#2f7d6c">원근법 · 보이는 대로</text>
+    <path d="M186 158 L274 117 M322 158 L290 117" stroke="#c9b8a8" stroke-width="2"/>
+    <circle cx="214" cy="80" r="11" fill="#f2c8a0"/><rect x="202" y="93" width="24" height="44" rx="8" fill="#2f9d86"/>
+    <!-- 먼 사람: 작게 보인다 -->
+    <circle cx="282" cy="93" r="4.5" fill="#f2c8a0"/><rect x="277" y="98" width="10" height="17" rx="3" fill="#2f9d86" opacity=".75"/>
+    <text x="282" y="84" text-anchor="middle" font-size="10" fill="#8a7f88">멀리</text>
+    <text x="254" y="182" text-anchor="middle" font-size="12" fill="#2f7d6c">how they looked</text>
+    <text x="254" y="198" text-anchor="middle" font-size="11" fill="#8a7f88">한 자리에서 보면 멀수록 작게</text>
+  </g>
+</svg>

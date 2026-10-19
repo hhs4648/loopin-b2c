@@ -12,7 +12,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "fn:deploy": "npx supabase functions deploy dajung-llm",
-    "fn:serve": "npx supabase functions serve dajung-llm --env-file .env.local"
+    "fn:serve": "npx supabase functions serve dajung-llm --env-file .env.local",
+    "traps:export": "python3 scripts/word_traps_export.py",
+    "share:mini2403": "VITE_ONLY_MINI=eng-2024-03-full node scripts/build_share.mjs all share/mini-2024-03.html",
+    "mini:gen": "python3 scripts/mini/gen_eng_2024_03_full.py"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.124.0",

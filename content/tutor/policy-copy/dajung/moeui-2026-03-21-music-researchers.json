@@ -209,6 +209,107 @@
     "story_6": {
       "say": "칠판에 이어서 정리해 볼게요.",
       "from": "tavsof"
+    },
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "an inventor": "그건 without(~ 없이) 뒤의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 A brilliant musician, 동사는 can in fact be, 보어는 an innovator(혁신가)예요.",
+      "from": "1tqiekg"
+    },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1q9ezjd"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "expect": "그건 who 뒤 덩어리 안의 동사예요. 문장 끝 쪽을 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 those (who expect …)(~를 기대하는 사람들), 동사는 will be disappointed(실망할 것이다)예요.",
+      "from": "12krhz3"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "f638dl"
+    },
+    "s3_basic_sv": {
+      "ask": "콜론(:) 뒤에서 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콜론 뒤 주어는 the eager need for novelty, 동사는 involves(담고 있다), 목적어는 the idea예요.",
+      "from": "1gm8dwx"
+    },
+    "s3_that_sv": {
+      "ask": "the idea that ~: that 뒤가 그 생각의 내용이에요. 그 안에서 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "that 안의 주어는 a musical act(음악 행위), 동사는 is, 보어는 a thing(하나의 물건)이에요. 음악을 '물건'처럼 본다는 생각이에요.",
+      "from": "1blzrkr"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "i2a6vq"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "세미콜론 앞은 주어 each new music, 동사 offers, 목적어 itself예요. 뒤는 주어 each musician, 동사 claims, 목적어 the patent예요.",
+      "from": "126w6c"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "s1o4hi"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "pastiches": "그건 where 뒤 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
+        "have become": "그건 where 뒤 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 musicians, 동사는 owe it to themselves(스스로에게 ~할 의무가 있다)예요.",
+      "from": "1hzjkp9"
+    },
+    "s7_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "ftb6t2"
     }
   },
   "exam": {

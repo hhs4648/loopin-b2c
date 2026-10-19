@@ -7,6 +7,7 @@
 장면 쓰는 법
 - `after`: 이 문장 공부가 끝난 뒤에 칠판을 띄운다. 그 문장의 마지막 스텝이 「문제 풀러」면 그 앞에
 - 장면 한 줄 = 영어 핵심어 + (한국어 상황 한 줄). 그림은 이모지 하나
+- **순서 문제에는 넣지 않는다** — 시험지 순서라 이야기가 안 맞는다 (2026-10-15 선생님)
 - **답을 말하지 않는다** — 밑줄 의미·제목처럼 요약이 곧 답인 문제는 마지막 문장 앞에서 멈춘다.
   빈칸은 ____로 둔다. 문장 넣기·순서는 내용만, 순서나 자리를 암시하는 말은 쓰지 않는다
 """
@@ -58,18 +59,6 @@ STORIES = {
         (6, [sc("문장 4", "🏠", "lives in imagination", "아직 없는 집에 상상으로 살아 봐요"),
              sc("문장 5~6", "🪟", "window · stairway", "창과 계단이 사는 사람이 원하는 바로 그 자리에 있어요")]),
     ],
-    "moeui-2026-03-36-conversation-stoppers": [
-        (3, [sc("주어진 글", "✋", "moral considerations = conversation-stoppers", "도덕적 고려는 생각을 끝내 줘요 — 우리는 늘 근거를 묻는 존재예요"),
-             sc("(A)", "🔇", "This · squelchers", "This는 혼자 생각할 때도 문제 — 생각을 멈추는 장치가 쓸모 있어요")]),
-        (6, [sc("(B)", "🚫", "“That would be morally wrong!”", "이 말을 받아들이면 더 근거를 찾을 필요가 없어요"),
-             sc("(C)", "🔁", "“Okay, but what justifies that?”", "좋은 답을 들어도 계속 물을 수 있어서 결정을 못 내려요")]),
-    ],
-    "mopyeong-2026-06-37-chaos-pendulum": [
-        (4, [sc("주어진 글", "🧲", "magnetic pendulum = chaos", "자석 네 개 위에서 흔들리는 진자가 혼돈의 예예요"),
-             sc("(A)", "📈", "iteration · nonlinear · bifurcation", "혼돈은 비선형 계에서, 어떤 지점을 넘어야 생겨요")]),
-        (9, [sc("(B)", "👀", "release · same position", "진자를 놓고 들르는 자석을 봐요 — 같은 데서 놓아도 곧 달라져요"),
-             sc("(C)", "🔀", "entirely different · iteration", "아무리 조심해도 매번 전혀 다른 곳을 들러요")]),
-    ],
     "moeui-2026-03-38-gesture-glue": [
         (3, [sc("주어진 문장", "🙌", "gesture ≠ language · no choices", "몸짓은 말과 달리 선택을 강요하지 않아요"),
              sc("문장 1~2", "🗣️", "co-expressive · both", "말과 몸짓은 동시에 나오고, 둘 다로 생각을 표현해요")]),
@@ -104,7 +93,10 @@ def add_story_boards(lesson_id, sentences):
         s = by_id[after]
         s["steps"] = [st for st in s["steps"] if not st["id"].startswith("story_")]
         steps = s["steps"]
+        # 「문제 풀러」·순서 잇기 앞에 — 칠판으로 정리한 뒤에 잇는다
         at = len(steps) - 1 if steps and _is_go(steps[-1]) else len(steps)
+        while at > 0 and steps[at - 1]["id"] == "order_link":
+            at -= 1
         last_in_lesson = after == sentences[-1]["id"]
         say = SAY_FIRST if n == 0 else SAY_LAST if last_in_lesson and len(plan) > 2 else SAY_NEXT
         board = {

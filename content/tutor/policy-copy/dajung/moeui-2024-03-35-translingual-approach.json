@@ -1,0 +1,191 @@
+{
+  "lesson": "moeui-2024-03-35-translingual-approach",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "무관한 문장 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "other speakers of English": "그건 collaborating with(~와 함께 일하는) 뒤 덩어리예요. students를 꾸며요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 students (collaborating with …), 동사는 might encounter, 목적어는 language variances예요.",
+      "from": "1jp1gks"
+    },
+    "s1_topic": {
+      "say": "다른 영어를 쓰는 사람과 일하면 언어 차이를 만나게 된대요. 이 글은 그 언어 차이를 어떻게 볼지에 대한 이야기예요.",
+      "from": "biw0g2"
+    },
+    "s2_sort": {
+      "ask": "① 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요.",
+        "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요."
+      ],
+      "explain": "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요."
+      },
+      "from": "md3lwi"
+    },
+    "s2_dir": {
+      "say": "not A but B — 장벽이 아니라 통로래요. 글의 방향이 나왔어요. 언어 차이를 좋은 가능성으로 보는 쪽이에요.",
+      "from": "1xogsb4"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "exposure": "그건 that 뒤 덩어리 안의 주어예요.",
+        "helps": "그건 that 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Galloway and Rose (2015) study (of Global Englishes), 동사는 found예요.",
+      "from": "cnjoto"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "다른 여러 영어를 접하면 언어 차이가 자연스러운 것이 된다는 연구래요.",
+      "from": "1qfo2zf"
+    },
+    "s3_sort": {
+      "ask": "② 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요.",
+        "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요."
+      ],
+      "explain": "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요."
+      },
+      "from": "1j6tsqr"
+    },
+    "s3_basic_meaning": {
+      "say": "다른 여러 영어를 접하면 언어 차이가 자연스러운 것이 된다는 연구래요.",
+      "from": "7jmc5"
+    },
+    "s4_sort": {
+      "ask": "③ 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요.",
+        "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요."
+      ],
+      "explain": "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요."
+      },
+      "from": "e2j7ds"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "so 앞은 주어 Committing an error, 동사 means예요. so 뒤는 주어 any … error, 동사 should be avoided예요.",
+      "from": "1cpql1f"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "오류는 사실이 아닌 걸 말하는 거니, 어떤 오류든 무조건 피해야 한대요.",
+      "from": "1507qmw"
+    },
+    "s5_sort": {
+      "ask": "④ 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요.",
+        "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요."
+      ],
+      "explain": "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요."
+      },
+      "from": "p8i0zk"
+    },
+    "s5_basic_meaning": {
+      "say": "오류는 사실이 아닌 걸 말하는 거니, 어떤 오류든 무조건 피해야 한대요.",
+      "from": "vg0wie"
+    },
+    "s5_hold": {
+      "say": "③에도 error가 나왔지만, ③은 '오류가 아니라 가능성'이었어요. 같은 단어여도 방향이 다를 수 있어요.",
+      "from": "zjw0el"
+    },
+    "s6_sort": {
+      "ask": "⑤ 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요.",
+        "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요."
+      ],
+      "explain": "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요."
+      },
+      "from": "q8eop2"
+    },
+    "s6_go": {
+      "say": "①②③⑤는 언어 차이를 가능성으로 봐요. 다른 쪽에 놓인 한 문장을 문제에서 골라 봐요.",
+      "from": "1fj0u7w"
+    }
+  },
+  "exam": {
+    "ask": "칠판 두 칸을 떠올려 봐요. 혼자 다른 쪽에 놓인 문장을 골라요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 글은 언어 차이를 장벽이 아니라 가능성으로 보자고 해요. ④만 오류는 무조건 피해야 한다며 반대쪽 이야기를 해요.",
+    "final_wrong": "정답은 ④예요. 나머지는 모두 언어 차이를 가능성으로 보는데, ④만 오류를 무조건 피하라고 해요.",
+    "option_feedback": {
+      "1": "①은 언어 차이를 장벽이 아니라 통로로 보자는 주장, 글의 방향 그 자체예요.",
+      "2": "②는 Similarly로 이어지는 같은 방향의 연구 결과예요.",
+      "3": "③에 error가 나오지만 '오류가 아니라 가능성'을 보라는 말이라 같은 방향이에요.",
+      "5": "⑤는 After all, 학생들이 늘 표준과 다른 영어를 접한다는 이유예요. 같은 방향이에요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "1eufuk5"
+  },
+  "intro": {
+    "topic": {
+      "say": "나라마다 조금씩 다른 영어, 틀린 영어일까요? 이번 글은 언어 차이를 어떻게 볼지 다뤄요."
+    },
+    "method1": {
+      "say": "무관한 문장 문제는 첫 문장으로 글의 방향을 잡고, ①~⑤를 같은 쪽과 다른 쪽으로 나눠요. 칠판에 하나씩 놓아 볼게요."
+    },
+    "from": "118o1z3"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "ox4tgk"
+}

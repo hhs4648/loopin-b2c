@@ -1,0 +1,454 @@
+{
+  "lesson": "moeui-2024-03-34-ao-green-light",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 마지막 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1ae47yg"
+    },
+    "s1_where": {
+      "say": "1973년에 일본 정부가 발표한 내용이 빈칸이에요. 신호등 색과 그 이름에 무슨 일이 있었는지 생각하며 처음부터 읽어 봐요.",
+      "from": "wcxfip"
+    },
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "spanned": "그건 that 뒤 덩어리 안의 동사예요(걸쳐 있던)."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Japanese(일본어), 동사는 used to have, 목적어는 a color word예요.",
+      "from": "e8ma21"
+    },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "auf19l"
+    },
+    "s1_ao": {
+      "ask": "ao라는 단어는 예전에 어떤 색을 가리켰대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "spanned both green and blue를 봐요. span은 '~에 걸쳐 있다'예요.",
+        "spanned both green and blue를 봐요. span은 '~에 걸쳐 있다'예요."
+      ],
+      "explain": "spanned both green and blue는 초록과 파랑 두 색에 걸쳐 있었다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "spanned both green and blue는 초록과 파랑 두 색에 걸쳐 있었다는 말이에요.",
+        "o2": "spanned both green and blue는 초록과 파랑 두 색에 걸쳐 있었다는 말이에요."
+      },
+      "from": "1x237lw"
+    },
+    "s1_board": {
+      "say": "이 글은 색 이름과 실제 색 이야기예요. 칠판 왼쪽에 이름 ao를 넣어 둘게요.",
+      "from": "pi8byc"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "and 앞은 주어 ao, 동사 has come to be restricted예요. and 뒤는 주어 green, 동사 is usually expressed예요.",
+      "from": "1xz6zkn"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "yupzcm"
+    },
+    "s2_now": {
+      "ask": "그런데 지금 ao는 주로 무슨 색을 가리킨대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "however(하지만) 뒤 'restricted mostly to blue shades'를 봐요. restricted to는 '~로 한정된'이에요.",
+        "however(하지만) 뒤 'restricted mostly to blue shades'를 봐요. restricted to는 '~로 한정된'이에요."
+      ],
+      "explain": "'restricted mostly to blue shades'는 주로 파란 색조로 한정됐다는 말이에요. 초록은 midori가 맡아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'restricted mostly to blue shades'는 주로 파란 색조로 한정됐다는 말이에요. 초록은 midori가 맡아요.",
+        "o2": "'restricted mostly to blue shades'는 주로 파란 색조로 한정됐다는 말이에요. 초록은 midori가 맡아요."
+      },
+      "from": "1b3fl2z"
+    },
+    "s2_board": {
+      "say": "지금 ao는 주로 파랑, 초록은 midori예요. 칠판에 붙여 둘게요.",
+      "from": "3sumlb"
+    },
+    "s3_sv": {
+      "ask": "콤마 뒤에서 주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the first traffic lights": "그건 When(~할 때) 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
+        "were imported": "그건 When 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콤마 뒤는 주어 they(신호등), 동사 were, 보어 just as green이에요.",
+      "from": "62uq8w"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "11t3npy"
+    },
+    "s3_green": {
+      "say": "처음 들여온 신호등은 다른 나라와 똑같이 초록 불이었대요. 실제 색은 초록이에요.",
+      "from": "8n9iss"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the three primary colors": "그건 perhaps because 뒤 덩어리 안의 주어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the go light, 동사는 was called, 보어는 ao shingoo예요(~라고 불렸다).",
+      "from": "vcth1m"
+    },
+    "s4_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "27o1o6"
+    },
+    "s4_called": {
+      "ask": "Nevertheless(그럼에도) — 초록 불을 사람들은 뭐라고 불렀대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "was called 뒤를 봐요. 불빛은 초록인데 이름은 다른 색 단어예요.",
+        "was called 뒤를 봐요. 불빛은 초록인데 이름은 다른 색 단어예요."
+      ],
+      "explain": "'the go light was called ao shingoo', 초록 불을 ao 신호라고 불렀대요. 그래서 Nevertheless(그럼에도)예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'the go light was called ao shingoo', 초록 불을 ao 신호라고 불렀대요. 그래서 Nevertheless(그럼에도)예요.",
+        "o1": "'the go light was called ao shingoo', 초록 불을 ao 신호라고 불렀대요. 그래서 Nevertheless(그럼에도)예요."
+      },
+      "from": "6r09bj"
+    },
+    "s4_board": {
+      "say": "실제 색은 초록인데 이름은 ao였어요. 이름과 실제 색이 어긋나기 시작해요.",
+      "from": "1pavf5h"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "a green light": "그건 for(~에 붙인) 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The label ao, 동사는 did not appear, 보어는 so out of the ordinary예요.",
+      "from": "1bku2jv"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "ao라는 이름표는 처음엔 그리 이상해 보이지 않았대요. ao에 초록이라는 느낌이 남아 있었으니까요.",
+      "from": "uw9kfc"
+    },
+    "s5_first": {
+      "ask": "처음엔 초록 불을 ao라고 불러도 왜 그리 이상하지 않았을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "because of 뒤 'the remaining associations … with greenness'를 봐요. remaining은 '남아 있는'이에요.",
+        "because of 뒤 'the remaining associations … with greenness'를 봐요. remaining은 '남아 있는'이에요."
+      ],
+      "explain": "'the remaining associations of the word ao with greenness', ao와 초록 사이에 남아 있던 연관성 때문이래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'the remaining associations of the word ao with greenness', ao와 초록 사이에 남아 있던 연관성 때문이래요.",
+        "o2": "'the remaining associations of the word ao with greenness', ao와 초록 사이에 남아 있던 연관성 때문이래요."
+      },
+      "from": "1wndgr1"
+    },
+    "s5_basic_meaning": {
+      "say": "ao라는 이름표는 처음엔 그리 이상해 보이지 않았대요. ao에 초록이라는 느낌이 남아 있었으니까요.",
+      "from": "hhrl8m"
+    },
+    "s6_sv": {
+      "ask": "이번엔 주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the green color": "그건 between(~ 사이의) 뒤 덩어리예요. 전치사 뒤 덩어리는 주어가 아니에요.",
+        "the dominant meaning of the word ao": "그건 between 뒤, and로 이어진 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the difference, 동사는 began to feel, 보어는 awkward(어색한)예요.",
+      "from": "f15gug"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "pr40vq"
+    },
+    "s6_awkward": {
+      "ask": "시간이 지나자 무엇이 어색해졌대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "주어 the difference between A and B를 봐요. A와 B 사이의 차이예요.",
+        "주어 the difference between A and B를 봐요. A와 B 사이의 차이예요."
+      ],
+      "explain": "'the difference between the green color and the dominant meaning of the word ao', 초록 불빛과 ao의 주된 뜻(파랑)의 차이가 어색해졌대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'the difference between the green color and the dominant meaning of the word ao', 초록 불빛과 ao의 주된 뜻(파랑)의 차이가 어색해졌대요.",
+        "o2": "'the difference between the green color and the dominant meaning of the word ao', 초록 불빛과 ao의 주된 뜻(파랑)의 차이가 어색해졌대요."
+      },
+      "from": "qir1n5"
+    },
+    "s6_board": {
+      "say": "이름 ao(파랑)와 실제 색(초록)이 어긋나서 어색해졌어요. 이걸 어떻게 풀었을지가 글의 열쇠예요.",
+      "from": "gvge0a"
+    },
+    "story_6": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·전치사 뒤 목적어(전목)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "are": "그건 that 뒤 덩어리 안의 동사예요(덜 단호한).",
+        "less assertive": "그건 that 뒤 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Nations, 동사는 might have opted for, for 뒤 목적어는 the solution이에요.",
+      "from": "wz4c4m"
+    },
+    "s7_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1412xhy"
+    },
+    "s7_other": {
+      "ask": "덜 단호한(less assertive) 나라라면 이 어색함을 어떻게 풀었을 거래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'changing the official name of the go light to midori'를 봐요. change A to B는 'A를 B로 바꾸다'예요.",
+        "'changing the official name of the go light to midori'를 봐요. change A to B는 'A를 B로 바꾸다'예요."
+      ],
+      "explain": "'changing the official name of the go light to midori', 신호의 공식 이름을 midori로 바꾸는 쉬운 해결책이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'changing the official name of the go light to midori', 신호의 공식 이름을 midori로 바꾸는 쉬운 해결책이에요.",
+        "o2": "'changing the official name of the go light to midori', 신호의 공식 이름을 midori로 바꾸는 쉬운 해결책이에요."
+      },
+      "from": "vv6gnp"
+    },
+    "s7_board": {
+      "say": "다른 나라라면 이름을 바꿨을 거래요. 이름 쪽을 고치는 방법이에요.",
+      "from": "kx0p25"
+    },
+    "s8_basic_sv": {
+      "ask": "동사가 빠진 짧은 문장이에요. 주어(S)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "Not so": "그건 '그렇지 않다'는 말이에요. 누가 그렇지 않은지 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "동사가 빠진 짧은 문장이에요. 주어는 the Japanese, Not so는 '그렇게 하지 않았다'예요.",
+      "from": "aa1fqh"
+    },
+    "s8_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "v8hi6h"
+    },
+    "s8_not_so": {
+      "ask": "Not so the Japanese는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Not so는 '그렇지 않다'예요. 바로 앞 문장의 '이름을 midori로 바꾸기'를 받아요.",
+        "Not so는 '그렇지 않다'예요. 바로 앞 문장의 '이름을 midori로 바꾸기'를 받아요."
+      ],
+      "explain": "Not so는 '그렇지 않다'예요. 일본은 다른 나라처럼 이름을 midori로 바꾸지 않았다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "Not so는 '그렇지 않다'예요. 일본은 다른 나라처럼 이름을 midori로 바꾸지 않았다는 말이에요.",
+        "o1": "Not so는 '그렇지 않다'예요. 일본은 다른 나라처럼 이름을 midori로 바꾸지 않았다는 말이에요."
+      },
+      "point": "Not so the Japanese = 일본은 그렇게(이름을 midori로 바꾸기) 하지 않았다",
+      "from": "6atznk"
+    },
+    "story_8": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s9_side": {
+      "ask": "빈칸 문장은 Rather than(~하는 대신)으로 시작해요. 빈칸은 'alter the name to fit reality'와 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Rather than A, B는 'A 대신 B'예요. 그리고 앞 문장 Not so the Japanese도 떠올려 봐요.",
+        "Rather than A, B는 'A 대신 B'예요. 그리고 앞 문장 Not so the Japanese도 떠올려 봐요."
+      ],
+      "explain": "Rather than A, B는 'A 대신 B'예요. 일본은 이름을 바꾸지 않았으니(Not so), 빈칸은 이름 바꾸기와 반대 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "Rather than A, B는 'A 대신 B'예요. 일본은 이름을 바꾸지 않았으니(Not so), 빈칸은 이름 바꾸기와 반대 쪽이에요."
+      },
+      "point": "Rather than A(현실에 맞춰 이름을 바꾸기), ____ → 빈칸은 A와 반대 쪽",
+      "from": "a4nvjs"
+    },
+    "s9_colon": {
+      "ask": "콜론(:) 뒤를 봐요. henceforth(그 이후로) 초록 불은 어떤 색이 된대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'a color that better corresponded to the dominant meaning of ao'를 봐요. ao의 주된 뜻은 파랑이었어요.",
+        "'a color that better corresponded to the dominant meaning of ao'를 봐요. ao의 주된 뜻은 파랑이었어요."
+      ],
+      "explain": "'better corresponded to the dominant meaning of ao', ao의 주된 뜻, 즉 파랑에 더 맞는 색이 됐대요. 실제 색을 바꾼 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'better corresponded to the dominant meaning of ao', ao의 주된 뜻, 즉 파랑에 더 맞는 색이 됐대요. 실제 색을 바꾼 거예요.",
+        "o2": "'better corresponded to the dominant meaning of ao', ao의 주된 뜻, 즉 파랑에 더 맞는 색이 됐대요. 실제 색을 바꾼 거예요."
+      },
+      "from": "3j8wzz"
+    },
+    "s9_fill": {
+      "ask": "그럼 정리해서, 일본 정부는 무엇을 바꾸기로 했을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "이름(ao)은 그대로였고, 콜론 뒤에서 신호등이 ao에 맞는 색이 됐어요.",
+        "이름(ao)은 그대로였고, 콜론 뒤에서 신호등이 ao에 맞는 색이 됐어요."
+      ],
+      "explain": "일본은 이름 ao를 지키고, 신호등 색을 ao(파랑)에 더 가깝게 바꿨어요. 이름에 현실을 맞춘 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "일본은 이름 ao를 지키고, 신호등 색을 ao(파랑)에 더 가깝게 바꿨어요. 이름에 현실을 맞춘 거예요.",
+        "o1": "일본은 이름 ao를 지키고, 신호등 색을 ao(파랑)에 더 가깝게 바꿨어요. 이름에 현실을 맞춘 거예요."
+      },
+      "from": "7qfb2s"
+    },
+    "s9_go": {
+      "say": "빈칸은 Rather than 뒤와 반대 쪽이에요. 이 내용을 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "19a3s41"
+    }
+  },
+  "exam": {
+    "ask": "Rather than 뒤와 반대 쪽, 그리고 콜론 뒤 내용을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 일본은 이름(ao)을 현실(초록)에 맞추지 않고, 거꾸로 신호등 색을 ao의 주된 뜻에 맞췄어요. 현실이 이름에 맞게 바뀐 거예요.",
+    "final_wrong": "정답은 ①이에요. 이름을 현실에 맞추는 대신(Rather than), 현실(신호등 색)을 이름에 맞췄어요.",
+    "option_feedback": {
+      "2": "언어와 생각 이야기는 그럴듯하지만, 빈칸 뒤 콜론은 신호등 색을 바꿨다는 말이에요. 무엇을 무엇에 맞췄는지가 빠졌어요.",
+      "3": "세계 기준은 초록 불이에요. 일본은 오히려 ao에 맞춰 색을 바꿨으니 반대예요.",
+      "4": "ao를 금지하면 이름을 바꾸는 셈이에요. Not so the Japanese, 일본은 이름을 바꾸지 않았어요.",
+      "5": "콜론 뒤에서 신호등이 ao에 더 맞는 색이 됐다고 했어요. 색을 바꾼 거라 반대예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 18.8%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "'언어가 사람들의 생각을 반영했다'는 그럴듯한 말이지만 글에 없는 일반론이에요. 빈칸 뒤 콜론(:)은 '그 이후로 신호등이 ao에 더 맞는 색이 됐다'예요. 그러니 빈칸은 무엇을 무엇에 맞췄는지, 현실을 이름에 맞췄다는 말이어야 해요.",
+        "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "콜론 뒤를 안 봤어요",
+            "skills": [
+              "colon_after_blank"
+            ],
+            "reply": "알려 줘서 고마워요. 빈칸 바로 뒤 콜론(:)은 빈칸을 풀어 주는 경우가 많아요. 앞으로 빈칸 뒤 콜론을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "Rather than 뒤가 반대인 걸 놓쳤어요",
+            "skills": [
+              "rather_than"
+            ],
+            "reply": "알려 줘서 고마워요. Rather than A, B는 'A 대신 B'라서 빈칸은 A와 반대 쪽이에요. 앞으로 이 점을 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "colon_after_blank",
+              "rather_than"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 Rather than과 빈칸 뒤 콜론을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "Rather than",
+              "text": "alter the name to fit reality",
+              "ko": "현실에 맞춰 이름을 바꾸는 대신",
+              "tone": "hl"
+            },
+            {
+              "label": "콜론(:) 뒤",
+              "text": "go lights would be a color … of ao",
+              "ko": "신호등이 ao에 맞는 색이 됐다",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "199uocl"
+  },
+  "intro": {
+    "topic": {
+      "say": "초록 불을 파랑이라고 부른다면 어색하겠죠? 이번 글은 일본 신호등의 색과 이름 이야기예요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "1360ntn"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "t3w3tt"
+}

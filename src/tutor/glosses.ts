@@ -107,6 +107,8 @@ export const CONTEXT_WORDS = new Set([
 
 export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): WordGloss[] {
   const keepSet = new Set(keep.map((k) => k.toLowerCase()));
+  /** 줄임말 조각이 찾을 후보인가 — ’s 그대로, 또는 ’ve been driving처럼 그 조각으로 시작하는 덩어리 */
+  const keepsPiece = (piece: string) => [...keepSet].some((k) => k === piece || k.startsWith(`${piece} `));
   const singles = new Map<string, WordGloss>();
   for (const g of glosses) if (!/\s/.test(g.en.trim())) singles.set(g.en.toLowerCase(), g);
   /** 단어 → 그 단어가 처음 들어간 덩어리 (뜻 상자 아랫줄 「덩어리」) */
@@ -115,6 +117,9 @@ export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): W
   const added = new Set<string>();
   for (const g of glosses) {
     const words = g.en.trim().split(/\s+/);
+    const cut0 = g.en.indexOf("’");
+    // 줄임말 통째 뜻(it’s)은 빼고 조각(it, ’s)으로 누르게 — 두 조각이 다 찾을 후보일 때
+    if (words.length === 1 && cut0 > 0 && keepSet.has(g.en.slice(0, cut0).toLowerCase()) && keepsPiece(g.en.slice(cut0).toLowerCase())) continue;
     if (words.length < 2 || keepSet.has(g.en.toLowerCase())) {
       out.push(g);
       continue;
@@ -124,6 +129,17 @@ export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): W
       const w = raw.replace(/^[“"‘'(]+|[”"’'),.;:!?]+$/g, "");
       const key = w.toLowerCase();
       if (!w) continue;
+      // 줄임말을 주어·동사로 나눠 찾을 때(it’s → it + ’s) — 두 조각이 다 찾을 후보면 조각으로 둔다
+      const cut = w.indexOf("’");
+      if (cut > 0 && keepSet.has(w.slice(0, cut).toLowerCase()) && keepsPiece(w.slice(cut).toLowerCase())) {
+        for (const part of [w.slice(0, cut), w.slice(cut)]) {
+          const k = part.toLowerCase();
+          if (added.has(k)) continue;
+          added.add(k);
+          if (!singles.has(k)) out.push({ en: part, ko: "", phrase });
+        }
+        continue;
+      }
       if (!phraseOf.has(key)) phraseOf.set(key, phrase);
       if (added.has(key)) continue;
       // to, of, for 같은 짧은 기능어는 뜻이 문맥마다 달라서 사전 뜻을 쓰지 않는다 — 덩어리 뜻만 (to make = 만들기 위해)

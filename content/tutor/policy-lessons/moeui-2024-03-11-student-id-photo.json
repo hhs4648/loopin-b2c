@@ -1,0 +1,845 @@
+{
+  "id": "moeui-2024-03-11-student-id-photo",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 11번 (듣기 — 마지막 말에 대한 응답, 2점)",
+  "brief": {
+    "topic": "듣기 응답 푸는 법: 누가 무엇을 했는지 → 마지막 말이 무엇을 묻는지 → 거기에 맞는 응답",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "listening_response",
+    "labels": [
+      "누가 무엇을 하는지",
+      "마지막 말 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-student-id.svg",
+      "alt": "칠판: Lost ID(잃어버린 학생증) → New card(새 학생증)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "학생증을 잃어버리면 새로 만들 때 무엇을 챙겨야 할까요? 이번엔 듣기 문제를 대본으로 같이 읽어 봐요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "듣기 응답 문제는 누가 무엇을 했는지, 마지막 말이 무엇을 묻는지 잡는 게 핵심이에요. 문장 아래 🔊 듣기로 소리도 들어 봐요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오.",
+    "underline": "________",
+    "sentence": 4,
+    "analysis_first": true,
+    "wrong_rate": 42.2,
+    "wrong_rank": 13,
+    "glosses": [
+      {
+        "en": "credit card",
+        "ko": "신용 카드"
+      },
+      {
+        "en": "group photo",
+        "ko": "단체 사진"
+      },
+      {
+        "en": "No need",
+        "ko": "필요 없어"
+      },
+      {
+        "en": "have your photo taken",
+        "ko": "사진을 찍다(찍히다)"
+      },
+      {
+        "en": "on the spot",
+        "ko": "그 자리에서"
+      },
+      {
+        "en": "Fortunately",
+        "ko": "다행히"
+      },
+      {
+        "en": "the Lost and Found",
+        "ko": "분실물 센터"
+      },
+      {
+        "en": "reissue",
+        "ko": "재발급하다"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "I’m sorry, but you can’t use it as a credit card.",
+        "keywords": [],
+        "ko": "미안하지만, 그걸 신용 카드로 쓸 수는 없어."
+      },
+      {
+        "id": "2",
+        "label": "Yes, I think it’d be great to take a group photo here.",
+        "keywords": [],
+        "ko": "응, 여기서 단체 사진을 찍으면 좋을 것 같아."
+      },
+      {
+        "id": "3",
+        "label": "No need. You can have your photo taken on the spot.",
+        "keywords": [],
+        "ko": "필요 없어. 그 자리에서 사진을 찍을 수 있어.",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "Fortunately, I found my ID card at the Lost and Found.",
+        "keywords": [],
+        "ko": "다행히 분실물 센터에서 내 학생증을 찾았어."
+      },
+      {
+        "id": "5",
+        "label": "Right. The student services office doesn’t reissue ID cards.",
+        "keywords": [],
+        "ko": "맞아. 학생 지원실은 학생증을 재발급해 주지 않아."
+      }
+    ],
+    "brief": {
+      "ask": "남자의 마지막 질문(사진을 가져가야 하나)과 여자가 이미 겪은 일을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 사진을 가져가야 하냐는 질문에, 직접 재발급받아 본 여자가 '필요 없어, 거기서 바로 찍어 줘'라고 답하는 게 자연스러워요.",
+      "final_wrong": "정답은 ③이에요. 'No need(필요 없어)'로 질문에 바로 답하고, 그 자리에서 사진을 찍을 수 있다고 이유를 덧붙여요.",
+      "option_feedback": {
+        "1": "신용 카드 이야기는 대화와 상관없어요.",
+        "2": "photo가 겹쳐서 헷갈렸죠. 하지만 단체 사진은 새 학생증과 상관없어요.",
+        "4": "여자는 학생증을 찾은 게 아니라 새로 받았어요.",
+        "5": "여자는 바로 그 학생 지원실에서 새 학생증을 받았어요. 재발급을 안 해 준다는 말은 앞뒤가 안 맞아요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 14.8%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "⑤는 '학생 지원실은 학생증을 재발급해 주지 않아'예요. 그런데 여자는 바로 그 학생 지원실에 가서 새 학생증을 받았다고 했어요(got a new one). 그리고 남자가 물은 건 사진을 가져가야 하는지였어요.",
+          "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "여자가 어디서 받았는지 놓쳤어요",
+              "skills": [
+                "detail_earlier"
+              ],
+              "reply": "알려 줘서 고마워요. 응답은 앞에서 한 말과 맞아야 해요. 앞으로 앞 대화의 중요한 사실을 먼저 짚어 줄게요."
+            },
+            {
+              "label": "질문이 무엇이었는지 놓쳤어요",
+              "skills": [
+                "last_question"
+              ],
+              "reply": "알려 줘서 고마워요. 마지막 질문 Do I need to bring my photo가 열쇠였어요. 앞으로 마지막 말을 꼭 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "detail_earlier",
+                "last_question"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 앞 대화의 사실과 마지막 질문을 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "여자의 대답",
+                "text": "went to the student services office and got a new one",
+                "ko": "그 사무실에서 새로 받았다",
+                "tone": "hl"
+              },
+              {
+                "label": "남자의 마지막 말",
+                "text": "Do I need to bring my photo",
+                "ko": "사진을 가져가야 하나?",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "reissue",
+        "ko": "재발급하다"
+      },
+      {
+        "en": "student services office",
+        "ko": "학생 지원실"
+      },
+      {
+        "en": "bring",
+        "ko": "가져가다"
+      },
+      {
+        "en": "get + 물건 + p.p.",
+        "ko": "물건이 ~되게 하다"
+      }
+    ],
+    "options": [
+      {
+        "en": "on the spot",
+        "ko": "그 자리에서"
+      },
+      {
+        "en": "Lost and Found",
+        "ko": "분실물 센터"
+      },
+      {
+        "en": "No need.",
+        "ko": "필요 없어."
+      },
+      {
+        "en": "have one's photo taken",
+        "ko": "사진을 찍다"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "medium",
+    "conceptual_difficulty": "low",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "남자의 첫 말",
+      "text": "Rachel, I heard you got your student ID card reissued.",
+      "teaching_value": "medium",
+      "model_translation": "(남자) Rachel, 너 학생증 재발급받았다고 들었어.",
+      "glosses": [
+        {
+          "en": "Rachel",
+          "ko": "레이철 · 여자 이름"
+        },
+        {
+          "en": "I heard",
+          "ko": "~라고 들었다"
+        },
+        {
+          "en": "you got",
+          "ko": "네가 ~하게 했다"
+        },
+        {
+          "en": "your student ID card",
+          "ko": "너의 학생증"
+        },
+        {
+          "en": "reissued",
+          "ko": "재발급된"
+        },
+        {
+          "en": "heard",
+          "ko": "들었다"
+        },
+        {
+          "en": "got",
+          "ko": "받았다, ~하게 했다"
+        },
+        {
+          "en": "student",
+          "ko": "학생"
+        },
+        {
+          "en": "ID",
+          "ko": "신분증"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_what",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Rachel에게 무슨 일이 있었대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "reissue는 're(다시) + issue(발급하다)'예요. got your card reissued는 '카드를 재발급받았다'예요.",
+              "reissue는 're(다시) + issue(발급하다)'예요. got your card reissued는 '카드를 재발급받았다'예요."
+            ],
+            "explain": "'got your student ID card reissued', 학생증을 재발급받았대요. re-는 '다시'예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'got your student ID card reissued', 학생증을 재발급받았대요. re-는 '다시'예요.",
+              "o2": "'got your student ID card reissued', 학생증을 재발급받았대요. re-는 '다시'예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "학생증을 처음 만들었다"
+            },
+            {
+              "id": "o1",
+              "label": "학생증을 다시 발급받았다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "사진을 찍었다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "reissued"
+          ],
+          "tips": [
+            {
+              "label": "get + 물건 + p.p.",
+              "text": "'(남을 시켜) 물건이 ~되게 하다'예요. got my card reissued = 카드를 재발급받았다.",
+              "mark": "got"
+            },
+            {
+              "label": "re-",
+              "text": "'다시'라는 뜻을 더해요. reissue = 다시 발급하다, rebuild = 다시 짓다.",
+              "mark": "reissued"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "여자의 대답",
+      "text": "Yeah, I lost my old one somewhere. So I went to the student services office and got a new one.",
+      "teaching_value": "high",
+      "model_translation": "(여자) 응, 예전 걸 어디서 잃어버렸어. 그래서 학생 지원실에 가서 새로 받았어.",
+      "glosses": [
+        {
+          "en": "a new one",
+          "ko": "새것"
+        },
+        {
+          "en": "got",
+          "ko": "받았다"
+        },
+        {
+          "en": "went",
+          "ko": "갔다"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "Yeah",
+          "ko": "응"
+        },
+        {
+          "en": "I lost my old one",
+          "ko": "예전 것을 잃어버렸다"
+        },
+        {
+          "en": "somewhere",
+          "ko": "어딘가에서"
+        },
+        {
+          "en": "So",
+          "ko": "그래서"
+        },
+        {
+          "en": "I went to",
+          "ko": "~에 갔다"
+        },
+        {
+          "en": "the student services office",
+          "ko": "학생 지원실"
+        },
+        {
+          "en": "got a new one",
+          "ko": "새것을 받았다"
+        },
+        {
+          "en": "lost",
+          "ko": "잃어버렸다"
+        },
+        {
+          "en": "old",
+          "ko": "예전의"
+        },
+        {
+          "en": "student",
+          "ko": "학생"
+        },
+        {
+          "en": "office",
+          "ko": "사무실"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "I",
+            "went",
+            "the student services office",
+            "got",
+            "a new one"
+          ],
+          "answers": [
+            "I",
+            "went",
+            "got",
+            "a new one"
+          ],
+          "roles": {
+            "I": "S",
+            "went": "V",
+            "got": "V",
+            "a new one": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the student services office": "그건 to 뒤, 어디로 갔는지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "두 번째 문장은 주어 I, 동사 went와 got, got의 목적어 a new one이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic"
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "I lost my old one",
+            "somewhere",
+            "So",
+            "I went to",
+            "the student services office",
+            "got a new one"
+          ],
+          "answers": [
+            "I lost my old one",
+            "somewhere",
+            "So",
+            "the student services office",
+            "I went to",
+            "got a new one"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "I lost my old one",
+                "ko": "예전 것을 잃어버렸다"
+              },
+              " ",
+              {
+                "en": "somewhere",
+                "ko": "어딘가에서"
+              },
+              ". ",
+              {
+                "en": "So",
+                "ko": "그래서"
+              },
+              " ",
+              {
+                "en": "the student services office",
+                "ko": "학생 지원실"
+              },
+              "에 ",
+              {
+                "en": "I went to",
+                "ko": "갔고"
+              },
+              " ",
+              {
+                "en": "got a new one",
+                "ko": "새것을 받았다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_office",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "예전 학생증을 잃어버려서 학생 지원실(student services office)에 가서 새로 받았대요. 그 사무실에서 재발급을 해 준다는 거예요.",
+            "point": "여자는 학생 지원실에서 새 학생증을 받았다 = 그곳에서 재발급해 준다"
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "the student services office",
+            "got a new one"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "남자의 마지막 말",
+      "text": "Actually, I lost mine too, so I need to go there. Do I need to bring my photo for a new ID card?",
+      "teaching_value": "high",
+      "model_translation": "(남자) 사실 나도 내 걸 잃어버려서 거기 가야 해. 새 학생증 만들려면 사진을 가져가야 해?",
+      "glosses": [
+        {
+          "en": "there",
+          "ko": "거기"
+        },
+        {
+          "en": "need to go",
+          "ko": "가야 한다"
+        },
+        {
+          "en": "I",
+          "ko": "나는"
+        },
+        {
+          "en": "Actually",
+          "ko": "사실"
+        },
+        {
+          "en": "I lost mine too",
+          "ko": "나도 내 것을 잃어버렸다"
+        },
+        {
+          "en": "so",
+          "ko": "그래서"
+        },
+        {
+          "en": "I need to go there",
+          "ko": "거기 가야 한다"
+        },
+        {
+          "en": "Do I need to bring",
+          "ko": "내가 ~을 가져가야 하니"
+        },
+        {
+          "en": "my photo",
+          "ko": "내 사진"
+        },
+        {
+          "en": "for a new ID card",
+          "ko": "새 학생증을 위해"
+        },
+        {
+          "en": "go",
+          "ko": "가다"
+        },
+        {
+          "en": "lost",
+          "ko": "잃어버렸다"
+        },
+        {
+          "en": "mine",
+          "ko": "내 것"
+        },
+        {
+          "en": "photo",
+          "ko": "사진"
+        },
+        {
+          "en": "ID",
+          "ko": "신분증"
+        },
+        {
+          "en": "card",
+          "ko": "카드"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "I",
+            "need to go",
+            "there",
+            "my photo"
+          ],
+          "answers": [
+            "I",
+            "need to go"
+          ],
+          "roles": {
+            "I": "S",
+            "need to go": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "there": "그건 '거기(학생 지원실)', 어디로 가는지예요.",
+              "my photo": "그건 마지막 질문 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "so 뒤 문장은 주어 I, 동사 need to go예요(가야 한다)."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "No need",
+              "text": "'그럴 필요 없어'예요. Do I need to ~?에 대한 짧은 대답으로 자주 써요."
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Do I need to bring",
+            "my photo",
+            "for a new ID card"
+          ],
+          "answers": [
+            "Do I need to bring",
+            "for a new ID card",
+            "my photo"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Do I need to bring",
+                "ko": "내가 ~을 가져가야 하나요"
+              },
+              " ",
+              {
+                "en": "for a new ID card",
+                "ko": "새 학생증을 위해"
+              },
+              " ",
+              {
+                "en": "my photo",
+                "ko": "내 사진"
+              },
+              "?"
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "No need",
+              "text": "'그럴 필요 없어'예요. Do I need to ~?에 대한 짧은 대답으로 자주 써요."
+            }
+          ]
+        },
+        {
+          "id": "s3_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "남자의 마지막 질문은 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "마지막 문장 'Do I need to bring my photo …'를 봐요. bring은 '가져가다'예요.",
+              "마지막 문장 'Do I need to bring my photo …'를 봐요. bring은 '가져가다'예요."
+            ],
+            "explain": "'Do I need to bring my photo for a new ID card', 새 학생증을 만들 때 사진을 가져가야 하는지 묻고 있어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'Do I need to bring my photo for a new ID card', 새 학생증을 만들 때 사진을 가져가야 하는지 묻고 있어요.",
+              "o2": "'Do I need to bring my photo for a new ID card', 새 학생증을 만들 때 사진을 가져가야 하는지 묻고 있어요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "학생 지원실이 어디 있나요"
+            },
+            {
+              "id": "o1",
+              "label": "새 학생증을 만들려면 사진을 가져가야 하나요",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "네 학생증을 찾았나요"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Do I need to bring",
+            "my photo"
+          ]
+        },
+        {
+          "id": "s3_kind",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Do I need to ~(~해야 하나요)라는 질문에는 어떤 대답이 자연스러울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "Do I need to ~?는 해야 하는지 묻는 말이에요. 해야 한다/안 해도 된다가 먼저 와요.",
+              "Do I need to ~?는 해야 하는지 묻는 말이에요. 해야 한다/안 해도 된다가 먼저 와요."
+            ],
+            "explain": "Do I need to ~?는 해야 하는지를 묻는 질문이에요. 그래서 필요한지 아닌지와 그 이유가 대답이 돼요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "Do I need to ~?는 해야 하는지를 묻는 질문이에요. 그래서 필요한지 아닌지와 그 이유가 대답이 돼요.",
+              "o2": "Do I need to ~?는 해야 하는지를 묻는 질문이에요. 그래서 필요한지 아닌지와 그 이유가 대답이 돼요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "필요한지 아닌지 말하고 이유를 덧붙인다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "고맙다고만 한다"
+            },
+            {
+              "id": "o2",
+              "label": "다른 질문으로 바꾼다"
+            }
+          ],
+          "method": 1,
+          "tips": [
+            {
+              "label": "No need",
+              "text": "'그럴 필요 없어'예요. Do I need to ~?에 대한 짧은 대답으로 자주 써요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "여자의 응답",
+      "text": "________",
+      "teaching_value": "high",
+      "model_translation": "(여자) ________",
+      "glosses": [],
+      "steps": [
+        {
+          "id": "s4_need",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "여자는 방금 그 사무실에서 직접 재발급받았어요. 사진을 가져가야 하냐는 질문에 어떤 응답이 자연스러울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "여자는 경험이 있어요. 질문(사진을 가져가야 하나)에 바로 답하는 말을 찾아봐요.",
+              "여자는 경험이 있어요. 질문(사진을 가져가야 하나)에 바로 답하는 말을 찾아봐요."
+            ],
+            "explain": "여자는 그 사무실에서 새로 받았으니 재발급은 해 줘요. 단체 사진은 photo만 같아요. 사진이 필요한지에 답하는 말이 자연스러워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "여자는 그 사무실에서 새로 받았으니 재발급은 해 줘요. 단체 사진은 photo만 같아요. 사진이 필요한지에 답하는 말이 자연스러워요.",
+              "o1": "여자는 그 사무실에서 새로 받았으니 재발급은 해 줘요. 단체 사진은 photo만 같아요. 사진이 필요한지에 답하는 말이 자연스러워요."
+            },
+            "point": "응답 = 사진을 가져가야 하나? → 필요 없다, 거기서 찍어 준다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그 사무실은 학생증을 재발급하지 않는다는 말"
+            },
+            {
+              "id": "o1",
+              "label": "여기서 단체 사진을 찍자는 말"
+            },
+            {
+              "id": "o2",
+              "label": "가져갈 필요 없고 거기서 바로 찍어 준다는 말",
+              "correct": true
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "s4_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 실제 보기 다섯 개에서 골라 봐요. 여자가 이미 겪은 일을 떠올려요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

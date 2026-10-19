@@ -1,0 +1,1651 @@
+{
+  "_readme": {
+    "version": "0.3 (2026-09-10)",
+    "source": "2027학년도 9월 모의평가 영어 18·19·20번(20번은 1~5문장). 수정이 구두로 준 판단을 설계 문서 스키마로 옮긴 것",
+    "how_to_use": "각 probe는 특정 청크(position)에 걸린다. 학생이 해석 입력에서 그 청크를 틀리거나 빠뜨리면 options를 칩 3개로 띄우고, 고른 인덱스를 chosen_option으로 로그. 그다음 confidence 칩 2개(확실해 / 잘 모르겠어). option_labels[i]가 곧 진단 라벨이다 (정답은 null).",
+    "unverified": "오답 선택지가 실제 학생 오해와 맞는지는 오늘 학생 테스트로 확인. priority가 null인 단어는 수정이 아직 등급을 안 매긴 것.",
+    "layer_values": [
+      "어휘",
+      "구문",
+      "전략"
+    ],
+    "subtype_values_so_far": [
+      "미지",
+      "형태유사오인",
+      "다의어고정",
+      "단어장뜻괴리",
+      "표현미지",
+      "방향반전",
+      "조동사오인",
+      "패턴미지",
+      "관계사생략수식",
+      "병렬대응",
+      "동사식별(분사→동사 / 동사→분사 양방향)",
+      "주어범위",
+      "개념미지(배경지식)",
+      "L1추상어미지",
+      "부정표현미인식",
+      "that절구분",
+      "전치사결합표현",
+      "접속어종류오인",
+      "논지파악",
+      "문장이해≠지문이해",
+      "단어유추"
+    ],
+    "probe_types": [
+      "뜻고르기",
+      "해석고르기",
+      "구조짚기",
+      "성분짚기",
+      "논지짚기(지문 단위)"
+    ],
+    "remedy_types": [
+      "설명",
+      "문맥뜻",
+      "우선순위등급",
+      "동의어",
+      "반의어짝",
+      "아는것에연결(anchor)",
+      "파생사슬",
+      "통째암기",
+      "규칙카드",
+      "구조색표시",
+      "개념풀어설명",
+      "문법생략·해석패턴만",
+      "조어유추(아는 조각으로 조립)"
+    ],
+    "top_level_sections": [
+      "_readme",
+      "rule_cards",
+      "trigger_words",
+      "remedy_scripts",
+      "app_policies",
+      "passages"
+    ],
+    "trigger_modes": {
+      "always_before_translation": "해석 입력 전에 항상 띄움 (구조 프로브)",
+      "always_after_translation": "해석 후 항상 띄움 (한국어 뜻 프로브, 선지 프로브, 지문 단위 프로브)",
+      "on_missing_or_keyword": "청크가 빠졌거나(on_missing) 학생 해석에 wrong_keywords 중 하나가 포함되면 띄움. 키워드는 오답 선택지의 핵심 단어",
+      "on_help_request": "학생이 '잘 모르겠어요 / 설명 필요해요'를 눌렀을 때 그 문장의 프로브를 띄움. 해석 전·후의 중간 시점 (수정 제안, 21번)"
+    },
+    "l1": "ko",
+    "l2": "en",
+    "l1_agnostic_design": "유형 이름과 필드는 L1(학습자 모어)에 묶지 않는다. 한국어 고유 내용은 l1_* 필드나 note에 넣고, 유형 자체는 L1을 바꿔도 그대로 쓴다. l1_dependency가 high인 유형은 L1이 바뀌면 오답 패턴이 달라질 수 있어 재검증 대상",
+    "subtype_l1_dependency": {
+      "low (L1 무관)": [
+        "미지",
+        "형태유사오인",
+        "다의어고정",
+        "단어장뜻괴리",
+        "표현미지",
+        "전치사결합표현",
+        "부정표현미인식",
+        "개념미지(배경지식)",
+        "동사식별",
+        "that절구분",
+        "접속어종류오인",
+        "논지파악",
+        "문장이해≠지문이해",
+        "단어유추"
+      ],
+      "high (L1 따라 달라짐)": [
+        "방향반전 (L1의 사동/피동 체계에 따라)",
+        "L1추상어미지 (L1의 추상어 난이도에 따라)",
+        "관계사생략수식 (L1 어순: 한국어·일본어처럼 수식어가 앞에 오는 언어에서 강함)",
+        "주어범위 (L1 어순)",
+        "병렬대응 (L1 무관에 가깝지만 문장 길이 감각은 L1 영향)",
+        "조동사오인 (L1에 have 대응어가 있는지)",
+        "패턴미지"
+      ]
+    },
+    "dont_know_option": "모든 프로브에 네 번째 칩 '모르겠어요'를 둔다. 누르면 미지(별표와 같은 신호), 오답을 누르면 오인. 포기하는 학생이 찍어서 오인으로 잘못 잡히는 걸 막는다 (수정 발견, 21번)",
+    "teach_policies": {
+      "proactive": "학생이 묻지 않아도 튜터가 먼저 설명 (consider A B, 트리거 단어)",
+      "on_request": "학생이 물을 때만 (규칙 카드 대부분, S-품사접미사)",
+      "probe": "프로브로 묻고 틀리면 설명"
+    }
+  },
+  "rule_cards": [
+    {
+      "rule_id": "R-감정동사",
+      "layer": "어휘",
+      "subtype": "방향반전",
+      "title": "영어 감정 동사는 '~하게 만들다'",
+      "rule": "startle = 놀래키다, bore = 지루하게 하다, excite = 신나게 하다. '놀라다·지루하다·신나다'라고 말하려면 과거분사(startled, bored, excited)를 쓴다. 한국어와 방향이 반대라 학생이 능동형을 '놀라다'로 해석한다",
+      "applies_to": [
+        "startle",
+        "bore",
+        "excite",
+        "surprise",
+        "frustrate",
+        "disappoint",
+        "delight",
+        "interest",
+        "amaze",
+        "confuse",
+        "embarrass",
+        "satisfy"
+      ],
+      "note": "19번 선지 단어(frustrated, delighted, excited, bored, disappointed)가 전부 이 규칙에 해당. 규칙 하나가 단어 열 개 이상을 덮는다",
+      "l1_dependency": "high (한국어·일본어처럼 감정 동사가 자동사인 L1에서 필요. 영어식 타동 감정동사를 가진 L1에서는 불필요)"
+    },
+    {
+      "rule_id": "R-불규칙pp",
+      "layer": "구문",
+      "subtype": "동사식별",
+      "title": "불규칙 p.p.는 절대 동사가 안 된다",
+      "rule": "driven, known, given, taken, written처럼 불규칙 p.p.는 형태만 봐도 과거분사다. be/have 없이 혼자 있으면 동사가 아니라 앞 명사를 꾸미는 말. 동사 후보에서 바로 뺀다",
+      "applies_to": [
+        "driven",
+        "known",
+        "given",
+        "taken",
+        "written",
+        "shown",
+        "broken",
+        "chosen"
+      ],
+      "note": "20번 첫 문장의 driven. 형태만으로 판정 가능하므로 제일 쉬운 규칙",
+      "l1_dependency": "low"
+    },
+    {
+      "rule_id": "R-규칙ed",
+      "layer": "구문",
+      "subtype": "동사식별",
+      "title": "-ed는 과거형일 수도, p.p.일 수도 있다",
+      "rule": "based, used처럼 규칙 동사의 -ed는 과거형과 p.p.가 같은 모양이라 형태만으로는 모른다. 명시적 판별 규칙 없음 — 문맥으로 판단한다. ('-ed 뒤 명사 = 능동'은 4·5형식 수동에서 깨져서 규칙으로 못 쓴다)",
+      "transfer_method": "규칙 카드가 아니라 예시 라벨링. -ed 문장 200개에 '동사 / 분사'만 찍어 모델에 학습. 프롬프팅으로 안 되고 파인튜닝이 필요한 첫 사례",
+      "student_side": "규칙 암기 대신 동사 찾기 프로브를 반복 노출해서 눈을 만든다. 프로브 = 진단이자 훈련",
+      "scope": "중급 이상. 초급에게는 R-불규칙pp만",
+      "applies_to": [
+        "based",
+        "used",
+        "called",
+        "located",
+        "designed",
+        "developed"
+      ],
+      "note": "수정: '문맥상 판단하는 것 외에 뭐가 가능할지 나도 모르겠다.' 말로 안 되는 전문성의 첫 사례. 규칙형 전문성과 암묵형 전문성을 구분하는 계기",
+      "l1_dependency": "low"
+    },
+    {
+      "rule_id": "R-생각동사that",
+      "layer": "구문",
+      "subtype": "that절구분",
+      "title": "생각·말하기 동사 + that + 완전한 문장 = '~라고'",
+      "rule": "believe, recognize, say, think, know, realize, argue, suggest 같은 '~라고 믿다·인식하다·말하다·생각하다' 동사 뒤의 that은 뒤에 완전한 문장(주어+동사 다 있음)이 오고, '~라고'로 해석한다. 앞 명사를 꾸미는 관계사 that(뒤가 불완전)과 다르다",
+      "applies_to": [
+        "believe",
+        "recognize",
+        "say",
+        "think",
+        "know",
+        "realize",
+        "argue",
+        "suggest",
+        "assume",
+        "claim",
+        "notice",
+        "find"
+      ],
+      "cue": "동사 종류를 먼저 보게 하면 학생이 빠르게 인지한다. that 뒤가 완전한지 세는 것보다 앞 동사를 보는 게 빠르다",
+      "note": "감정동사 규칙처럼 동사 부류 하나가 단어 여러 개를 덮는 규칙. 20번 3문장 'We must recognize that ...'",
+      "l1_dependency": "low"
+    },
+    {
+      "rule_id": "R-주어핵심",
+      "layer": "구문",
+      "subtype": "주어범위",
+      "title": "주어가 길어 보여도 핵심은 명사 하나",
+      "rule": "주어는 명사여야 한다. 앞에 붙은 형용사·부사·분사(rapidly evolving socioeconomic)는 전부 꾸미는 말이고, 핵심은 그 뒤의 명사(ecology). 뒤에 붙은 분사·전치사구(driven by ..., in our approach)도 꾸미는 말",
+      "applies_to": [
+        "형용사+명사",
+        "부사+분사+명사",
+        "명사+분사구",
+        "명사+전치사구"
+      ],
+      "note": "20번 1문장(changes)과 3문장(ecology)에서 반복. 앞 수식어형과 뒤 수식어형 둘 다 나왔다",
+      "l1_dependency": "low"
+    },
+    {
+      "rule_id": "S-조어유추",
+      "layer": "전략",
+      "subtype": "단어유추",
+      "title": "모르는 단어는 아는 조각으로 조립해본다",
+      "rule": "up + skill = 스킬을 올리다. self + transformation = 자기 변화. 아는 조각이 보이면 뜻을 몰라도 유추하고 넘긴다. 유추가 되는 단어는 외우지 않는다",
+      "applies_to": [
+        "upskill",
+        "self-transformation",
+        "rethinking",
+        "lifelong"
+      ],
+      "note": "전략층의 첫 항목. 유형별 풀이 규칙 외에 '단어를 만났을 때의 행동'도 전략층",
+      "l1_dependency": "low"
+    },
+    {
+      "rule_id": "R-짝접속사",
+      "layer": "구문",
+      "subtype": "병렬대응",
+      "title": "not only A but also B — A와 B는 같은 모양",
+      "rule": "not only ~ but also, both ~ and, either ~ or, neither ~ nor는 짝으로 다니고, 앞뒤에 오는 것은 같은 모양(동사면 동사, 명사면 명사)이다. not only 뒤가 promote(동사)면 but also 뒤에서 동사(sustain)를 찾는다. 해석은 'A뿐만 아니라 B도'",
+      "applies_to": [
+        "not only ~ but also",
+        "both ~ and",
+        "either ~ or",
+        "neither ~ nor",
+        "A as well as B"
+      ],
+      "note": "19번 and 병렬(thought ↔ wiped)의 확장. 짝이 되는 단어를 먼저 찾게 하는 것이 같은 처방",
+      "l1_dependency": "low"
+    },
+    {
+      "rule_id": "S-접속어종류",
+      "layer": "전략",
+      "subtype": "접속어종류오인",
+      "title": "접속어 종류가 읽기 강도를 정한다",
+      "rule": "역접(however, but, yet): 논지가 뒤집힌다 → 뒤 문장을 꼭 읽는다. 강화·첨가(furthermore, moreover, in addition, also): 앞 논지가 이어진다 → 뒤 문장은 자세히 안 봐도 된다. 결과(thus, therefore, so): 앞의 결론 → 요지가 나오는 자리라 읽는다",
+      "applies_to": {
+        "역접": [
+          "however",
+          "but",
+          "yet",
+          "nevertheless"
+        ],
+        "강화": [
+          "furthermore",
+          "moreover",
+          "in addition",
+          "also",
+          "besides"
+        ],
+        "결과": [
+          "thus",
+          "therefore",
+          "so",
+          "hence"
+        ]
+      },
+      "note": "18번 '전환어 뒤가 근거'의 일반화. 접속어를 보고 어디를 읽고 어디를 건너뛸지 정하는 것이 전략",
+      "l1_dependency": "low"
+    },
+    {
+      "rule_id": "S-품사접미사",
+      "layer": "전략",
+      "subtype": "단어유추",
+      "l1_dependency": "low",
+      "title": "접미사가 품사를 말해준다",
+      "rule": "-ity, -ness, -tion, -ment는 명사 (necessity, competitiveness, transformation). -ive, -al, -ous, -ful은 형용사. -ly는 부사. 아는 단어(necessary)의 변형이면 뜻은 같고 품사만 바뀐 것",
+      "applies_to": [
+        "necessity",
+        "productivity",
+        "competitiveness",
+        "transformation",
+        "rethinking"
+      ],
+      "note": "20번 necessity. 단어 프로브 대신 규칙 카드로. 학생이 물어볼 때만 (on_help_request). 수정 판단: '짚고 넘어갈지 말지' → 세 질문(답이 바뀌나 / 선지 단어인가 / 규칙으로 여러 단어가 풀리나)으로 규칙 카드 쪽"
+    }
+  ],
+  "trigger_words": [
+    {
+      "word": "defeat",
+      "layer": "어휘",
+      "subtype": "방향반전",
+      "meaning": "명사: 패배 / 동사: 패배시키다 (= 이기다)",
+      "trap": "동사를 '패배하다'로 해석",
+      "policy": "이 단어가 어느 지문에 나오든 설명한다 (레벨 무관)",
+      "probe_template": {
+        "prompt": "동사 defeat의 뜻은?",
+        "options": [
+          "패배시키다, 이기다",
+          "패배하다",
+          "방어하다"
+        ],
+        "answer": 0,
+        "option_labels": [
+          null,
+          "방향반전",
+          "형태유사오인(defend)"
+        ]
+      }
+    }
+  ],
+  "passages": [
+    {
+      "passage_id": "2027-09-18",
+      "question_type": "목적",
+      "difficulty": "쉬움",
+      "solving_rule": {
+        "read_all": false,
+        "signal": "전환어(however / but) 뒤 문장이 답의 근거",
+        "time_budget_sec": 30,
+        "note": "듣기와 병행 가능"
+      },
+      "pre_reading_words": [
+        {
+          "word": "ceremony",
+          "meaning": "행사 (여기선 졸업식)",
+          "priority": "필수",
+          "note": "문맥 의미"
+        },
+        {
+          "word": "overseas",
+          "meaning": "해외의, 해외로",
+          "priority": "필수"
+        },
+        {
+          "word": "decline",
+          "meaning": "거절하다 / 감소하다",
+          "priority": "필수",
+          "note": "다의어. 여기선 거절하다"
+        },
+        {
+          "word": "former",
+          "meaning": "이전의, 예전의",
+          "priority": null
+        },
+        {
+          "word": "deliver a speech",
+          "meaning": "연설하다",
+          "priority": null
+        },
+        {
+          "word": "invitation",
+          "meaning": "초청, 초대",
+          "priority": null
+        },
+        {
+          "word": "honored",
+          "meaning": "영광스러운",
+          "priority": null
+        },
+        {
+          "word": "graduation",
+          "meaning": "졸업",
+          "priority": null
+        },
+        {
+          "word": "memorable",
+          "meaning": "기억에 남는",
+          "priority": null
+        }
+      ],
+      "probes": [
+        {
+          "probe_id": "18-01",
+          "position": "former",
+          "sentence_fragment": "As a former student, I am extremely proud",
+          "layer": "어휘",
+          "subtype": "미지",
+          "target_level": "초급",
+          "probe_type": "뜻고르기",
+          "prompt": "former의 뜻은?",
+          "options": [
+            "이전의, 예전의",
+            "공식적인",
+            "형태의"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "형태유사오인(formal)",
+            "형태유사오인(form)"
+          ],
+          "remedy": "뜻 알려주기. former ↔ latter 짝으로",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "공식",
+              "형태"
+            ]
+          }
+        },
+        {
+          "probe_id": "18-02",
+          "position": "As a former student",
+          "sentence_fragment": "As a former student, I am extremely proud",
+          "layer": "어휘",
+          "subtype": "다의어고정",
+          "target_level": "초·중급",
+          "probe_type": "해석고르기",
+          "prompt": "여기서 As는?",
+          "options": [
+            "~로서",
+            "~때문에",
+            "~할 때"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "다의어고정(as)",
+            "다의어고정(as)"
+          ],
+          "remedy": "as + 명사는 '~로서'. as는 뜻이 많으므로 주의",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "때문",
+              "할 때"
+            ]
+          }
+        },
+        {
+          "probe_id": "18-03",
+          "position": "has become",
+          "sentence_fragment": "the school has become one of the best schools",
+          "layer": "구문",
+          "subtype": "조동사오인",
+          "target_level": "초급",
+          "probe_type": "해석고르기",
+          "prompt": "밑줄 부분의 해석은?",
+          "options": [
+            "학교가 ~가 되었다",
+            "학교가 ~를 가지게 되었다",
+            "학교가 ~를 가지고 있다"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "조동사오인(has→가지다)",
+            "조동사오인(has→가지다)"
+          ],
+          "remedy": "has + p.p.에서 has는 '가지다'가 아니라 시제를 만드는 조동사",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "가지"
+            ]
+          }
+        },
+        {
+          "probe_id": "18-04",
+          "position": "would have loved to speak",
+          "sentence_fragment": "I would have loved to speak to the graduating students",
+          "layer": "구문",
+          "subtype": "패턴미지",
+          "target_level": "초·중급",
+          "probe_type": "해석고르기",
+          "prompt": "밑줄 부분의 해석은?",
+          "options": [
+            "말하고 싶었을 것이다 (그런데 못 한다)",
+            "말하는 것을 좋아했다",
+            "말하고 싶다"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "패턴미지(would have p.p.)",
+            "패턴미지(would have p.p.)"
+          ],
+          "remedy": "would have p.p. = ~했을 텐데 (실제로는 못 함)",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "좋아했"
+            ]
+          }
+        },
+        {
+          "probe_id": "18-05",
+          "position": "decline",
+          "sentence_fragment": "I must decline your invitation",
+          "layer": "어휘",
+          "subtype": "다의어고정",
+          "target_level": "초·중급",
+          "probe_type": "뜻고르기",
+          "prompt": "여기서 decline의 뜻은?",
+          "options": [
+            "거절하다",
+            "감소하다",
+            "연기하다"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "다의어고정(decline=감소)",
+            "미지"
+          ],
+          "remedy": "decline은 뜻이 둘. 감소하다 / 거절하다",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "감소",
+              "줄어"
+            ]
+          }
+        }
+      ],
+      "l1": "ko",
+      "l2": "en"
+    },
+    {
+      "passage_id": "2027-09-19",
+      "question_type": "심경변화",
+      "difficulty": "쉬움",
+      "solving_rule": {
+        "read_all": false,
+        "signal": "앞부분 감정 단어와 뒷부분 감정 단어만 찾는다",
+        "emotion_signal_words": {
+          "before": [
+            "argument",
+            "tears",
+            "cried"
+          ],
+          "after": [
+            "smile",
+            "hug",
+            "laugh"
+          ]
+        },
+        "note": "선지 단어(감정 형용사)는 다른 시험에서도 재활용되므로 전부 확인"
+      },
+      "pre_reading_words": [
+        {
+          "word": "on one's way to",
+          "meaning": "~로 가는 길에",
+          "priority": "필수",
+          "note": "자주 쓰이는 표현. 고급은 생략 가능"
+        },
+        {
+          "word": "argument",
+          "meaning": "말싸움 (단어장의 '논쟁·토론'보다 실제로는 이 뜻이 흔함)",
+          "priority": "필수"
+        },
+        {
+          "word": "wipe",
+          "meaning": "닦다",
+          "priority": null,
+          "anchor": "자동차 와이퍼가 창문을 닦지? 여기서도 닦는다는 뜻"
+        },
+        {
+          "word": "seemed",
+          "meaning": "~처럼 보였다",
+          "priority": null
+        },
+        {
+          "word": "nothing could",
+          "meaning": "아무것도 ~할 수 없었다",
+          "priority": null
+        },
+        {
+          "word": "overcome",
+          "meaning": "극복하다",
+          "priority": null
+        },
+        {
+          "word": "familiar",
+          "meaning": "친숙한",
+          "priority": null
+        },
+        {
+          "word": "as (접속사)",
+          "meaning": "여기서는 ~할 때",
+          "priority": "필수",
+          "note": "18번의 '~로서'와 다름"
+        }
+      ],
+      "choice_words_required": [
+        {
+          "word": "nervous",
+          "meaning": "긴장한"
+        },
+        {
+          "word": "frustrated",
+          "meaning": "좌절한, 답답한"
+        },
+        {
+          "word": "sad",
+          "meaning": "슬픈"
+        },
+        {
+          "word": "delighted",
+          "meaning": "매우 기쁜"
+        },
+        {
+          "word": "excited",
+          "meaning": "신난"
+        },
+        {
+          "word": "calm",
+          "meaning": "차분한"
+        },
+        {
+          "word": "bored",
+          "meaning": "지루한"
+        },
+        {
+          "word": "happy",
+          "meaning": "행복한"
+        },
+        {
+          "word": "hopeful",
+          "meaning": "희망에 찬"
+        },
+        {
+          "word": "disappointed",
+          "meaning": "실망한"
+        }
+      ],
+      "probes": [
+        {
+          "probe_id": "19-01",
+          "position": "On her way to school",
+          "sentence_fragment": "On her way to school, Katie thought of the argument",
+          "layer": "어휘",
+          "subtype": "표현미지",
+          "target_level": "초급",
+          "probe_type": "해석고르기",
+          "prompt": "밑줄 부분의 해석은?",
+          "options": [
+            "학교 가는 길에",
+            "학교 가는 방법에 대해",
+            "학교에서 그녀의 길에"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "다의어고정(way=방법)",
+            "표현미지(직역)"
+          ],
+          "remedy": "on one's way to = ~로 가는 길에. 자주 쓰이는 표현",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "방법"
+            ]
+          }
+        },
+        {
+          "probe_id": "19-02",
+          "position": "argument",
+          "sentence_fragment": "the argument she had with Sarah",
+          "layer": "어휘",
+          "subtype": "단어장뜻괴리",
+          "target_level": "초·중급",
+          "probe_type": "뜻고르기",
+          "prompt": "여기서 argument의 뜻은?",
+          "options": [
+            "말싸움",
+            "토론, 논의",
+            "주장"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "단어장뜻괴리",
+            "다의어고정(argument=주장)"
+          ],
+          "remedy": "시험 지문에선 '말싸움'으로 더 자주 쓰인다",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "토론",
+              "논쟁",
+              "논의",
+              "주장"
+            ]
+          }
+        },
+        {
+          "probe_id": "19-03",
+          "position": "the argument she had with Sarah",
+          "sentence_fragment": "Katie thought of the argument she had with Sarah the day before",
+          "layer": "구문",
+          "subtype": "관계사생략수식",
+          "target_level": "초·중급",
+          "probe_type": "해석고르기",
+          "prompt": "밑줄 부분의 해석은?",
+          "options": [
+            "그녀가 Sarah와 했던 말싸움",
+            "말싸움을, 그녀는 Sarah와 했다",
+            "그녀가 Sarah를 가진 말싸움"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "관계사생략수식(수식을 못 보고 문장으로 끊음)",
+            "조동사오인(had→가지다)"
+          ],
+          "remedy": "명사 + 주어 + 동사 → 주어동사가 앞의 명사를 꾸민다",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "가진",
+              "가지"
+            ]
+          }
+        },
+        {
+          "probe_id": "19-04",
+          "position": "and wiped tears",
+          "sentence_fragment": "Katie thought of the argument ... and wiped tears from her eyes",
+          "layer": "구문",
+          "subtype": "병렬대응",
+          "target_level": "초·중급",
+          "probe_type": "구조짚기",
+          "prompt": "wiped(닦았다)의 주어는 누구?",
+          "options": [
+            "Katie",
+            "the argument",
+            "Sarah"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "병렬대응(and의 짝을 못 찾음)",
+            "병렬대응(and의 짝을 못 찾음)"
+          ],
+          "remedy": "and는 thought와 wiped를 잇는다. 문장이 길어지면 and의 짝을 먼저 찾기",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": []
+          }
+        },
+        {
+          "probe_id": "19-05",
+          "position": "As she walked into her classroom",
+          "sentence_fragment": "As she walked into her classroom, she heard a familiar voice",
+          "layer": "어휘",
+          "subtype": "다의어고정",
+          "target_level": "초·중급",
+          "probe_type": "해석고르기",
+          "prompt": "여기서 As는?",
+          "options": [
+            "~할 때",
+            "~로서",
+            "~때문에"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "다의어고정(as=로서, 18번에서 배운 뜻으로 고정)",
+            "다의어고정(as)"
+          ],
+          "remedy": "as 뒤에 주어+동사가 오면 '~할 때' 또는 '~때문에'. 명사만 오면 '~로서'",
+          "note": "18-02와 짝. 18번에서 '~로서'로 배운 학생이 여기서 ①을 고르는지 본다",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "로서"
+            ]
+          }
+        },
+        {
+          "probe_id": "19-06",
+          "position": "bored (선지 ④)",
+          "sentence_fragment": "④ bored → happy",
+          "layer": "어휘",
+          "subtype": "방향반전",
+          "target_level": "초·중급",
+          "probe_type": "뜻고르기",
+          "prompt": "bored의 뜻은?",
+          "options": [
+            "지루한 (지루함을 느끼는)",
+            "지루하게 하는",
+            "지루함"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "방향반전",
+            "품사오인"
+          ],
+          "remedy": "R-감정동사 규칙 카드. bore = 지루하게 하다, bored = 지루한",
+          "note": "선지 단어 프로브. 지문이 아니라 선지에 건다",
+          "trigger": {
+            "mode": "always_after_translation"
+          },
+          "l1_dependency": "high"
+        }
+      ],
+      "l1": "ko",
+      "l2": "en"
+    },
+    {
+      "passage_id": "2027-09-20",
+      "question_type": "주장",
+      "difficulty": "중간 (여기부터 어려워짐)",
+      "solving_rule": {
+        "read_all": false,
+        "signal": "핵심 단어를 뽑고, 저자의 입장이 긍정/부정/중립 중 어디인지 잡는다. 주장 유형은 저자 입장 = 답",
+        "keywords_here": [
+          "기술 발전",
+          "평생교육(평생학습)",
+          "개인 성장",
+          "국가 생산성",
+          "글로벌 경쟁력"
+        ],
+        "stance_here": "매우 긍정. 평생교육이 개인뿐 아니라 국가까지 좋게 한다고 함",
+        "skip_rule": "furthermore 뒤는 강화라 자세히 안 봐도 된다 (S-접속어종류)",
+        "note": "이 지문도 쉬운 편. 주장을 묻는 글은 다 읽지 않는다"
+      },
+      "sentence_policy": {
+        "sentence_1": "해석 전에 동사 찾기 프로브를 먼저 띄운다. 어려운 문장은 해석 → 프로브 순서가 아니라 구조 프로브 → 해석 순서",
+        "sentence_1_structure": {
+          "text": "Current social changes driven by technological advancements demand a fundamental rethinking in our approach to education.",
+          "chunks": [
+            {
+              "span": "Current social changes",
+              "role": "주어(핵심)",
+              "display": "색1 밑줄"
+            },
+            {
+              "span": "driven by technological advancements",
+              "role": "수식어(주어를 꾸밈)",
+              "display": "색1 옅게 또는 괄호"
+            },
+            {
+              "span": "demand",
+              "role": "동사",
+              "display": "색2"
+            },
+            {
+              "span": "a fundamental rethinking in our approach to education",
+              "role": "목적어",
+              "display": "색3"
+            }
+          ],
+          "why": "한국어와 어순이 달라서 수식어가 주어와 동사 사이에 끼면 학생이 어디까지가 주어인지 못 본다. 밑줄·색으로 주어(핵심)/수식어/동사/목적어를 구분해 시각적으로 보여준다",
+          "timing": "동사 찾기 프로브(20-01) 정답 확인 후, 해석 전에 표시",
+          "app_note": "데모에 이미 단어 밑줄 렌더링이 있으므로 청크 단위 색 밑줄은 같은 방식으로 구현 가능"
+        },
+        "sentence_2": "넷 중 둘은 영어 표현(in particular, no longer), 둘은 한국어·개념 쪽(평생학습 개념, '선택적'의 한국어 의미). 한 문장에 두 종류가 반반",
+        "sentence_3": "that절 구분. 앞 동사(recognize)를 단서로 '~라고' that임을 잡게 한다",
+        "sentence_4": "not only ~ but also 구조를 짚는다. 앞뒤 짝 찾기. 안쪽에 and 병렬(growth and well-being / productivity and competitiveness)도 있어 이중 병렬"
+      },
+      "pre_reading_words": [
+        {
+          "word": "current",
+          "senses": [
+            {
+              "meaning": "해류 (파도)",
+              "pos": "명사",
+              "l1_support": "'해류'라는 한국어를 모를 수 있어 괄호로 '파도' 병기",
+              "l1_support_lang": "ko"
+            },
+            {
+              "meaning": "전류",
+              "pos": "명사"
+            },
+            {
+              "meaning": "최근의, 현재의",
+              "pos": "형용사",
+              "in_this_passage": true
+            }
+          ],
+          "sense_relatedness": "비연관",
+          "memorize_policy": "뜻이 서로 연관이 없으므로 세 뜻을 별개 단어처럼 통째로 암기시킨다 (연관 다의어처럼 핵심 뜻에서 파생시키지 않는다)",
+          "priority": "필수"
+        },
+        {
+          "word": "driven (drive)",
+          "senses": [
+            {
+              "meaning": "운전하다",
+              "pos": "동사",
+              "note": "학생이 아는 기본 뜻"
+            },
+            {
+              "meaning": "몰다, 이끌다, 추진하다",
+              "pos": "동사",
+              "in_this_passage": true,
+              "note": "여기선 수동 '이끌어진, 추진된'"
+            }
+          ],
+          "sense_relatedness": "연관",
+          "derivation_chain": "운전하다 → (차를) 몰다 → (사람·일을) 몰아가다, 이끌다, 추진하다",
+          "memorize_policy": "current와 반대. 기본 뜻 '운전하다'에서 출발해 확장되는 그림을 보여준다. 통째 암기 아님",
+          "priority": "필수",
+          "cross_passage": "23번에 'dopamine's drive for future reward'(명사: 추진력, 욕구)로 재등장. as처럼 지문 간 추적 대상"
+        },
+        {
+          "word": "in particular",
+          "meaning": "특히",
+          "priority": "필수",
+          "subtype": "표현미지",
+          "note": "두 단어를 합쳐서 외우게 한다. particular 단독 뜻(특정한)에서 유추 안 됨"
+        },
+        {
+          "word": "lifelong learning",
+          "meaning": "평생학습",
+          "priority": "필수",
+          "subtype": "개념미지(배경지식)",
+          "concept_explain": "일생에 걸쳐 배워가는 것. 학교를 졸업한 뒤에도 계속 배우는 것",
+          "note": "영어가 아니라 '평생학습'이라는 개념 자체를 모를 수 있음. 한국어 뜻만으로는 부족"
+        },
+        {
+          "word": "optional",
+          "meaning": "선택적인",
+          "priority": "필수",
+          "subtype": "L1추상어미지",
+          "antonym": "essential (필수적인)",
+          "note": "'옵션=선택지'는 알지만 '선택적이다'가 문장에서 무슨 뜻인지 한국어로 이해 못함. 선택적이지 않다 = 필수적이다, 꼭 필요하다. 같은 문장의 essential과 반의어 짝으로 묶어서 가르친다"
+        },
+        {
+          "word": "no longer",
+          "meaning": "더 이상 ~가 아니다",
+          "priority": "필수",
+          "subtype": "부정표현미인식",
+          "note": "not, don't, isn't가 없어도 no longer 자체가 부정어. 주장·요지 유형에서 극성이 뒤집히므로 치명적"
+        },
+        {
+          "word": "essential",
+          "meaning": "필수적인, 꼭 필요한",
+          "priority": "필수",
+          "antonym": "optional"
+        },
+        {
+          "word": "require A to B",
+          "meaning": "A가 B하도록 요구하다 (A=사람, B=그 사람의 행동)",
+          "priority": "필수",
+          "remedy_type": "문법생략·해석패턴만",
+          "note": "5형식 같은 문법 용어는 일부러 안 가르친다. 들어가면 너무 많아짐. 해석 패턴만: A 자리엔 보통 사람, B 자리엔 그 사람의 행동",
+          "scope_policy": "초·중급은 해석 패턴만. 문법 설명은 상위권에서만"
+        },
+        {
+          "word": "engage in",
+          "meaning": "~에 참여하다, ~을 하다",
+          "priority": "필수",
+          "subtype": "전치사결합표현",
+          "note": "in이 붙었을 때의 뜻으로 통째 외우게 한다. engage 단독과 구분"
+        },
+        {
+          "word": "ecology",
+          "meaning": "생태(계)",
+          "priority": null,
+          "note": "여기선 socioeconomic ecology = 사회경제적 생태계, 즉 사회경제 환경"
+        },
+        {
+          "word": "upskilling",
+          "meaning": "기술 향상, 새 기술 익히기",
+          "priority": "유추후넘김",
+          "remedy_type": "조어유추(아는 조각으로 조립)",
+          "note": "up + skill. 뜻을 몰라도 자기 스킬을 올리는 것이라고 유추하게 한다. 외우지 않는다"
+        },
+        {
+          "word": "self-transformation",
+          "meaning": "자기 변화",
+          "priority": "유추후넘김",
+          "remedy_type": "조어유추(아는 조각으로 조립)"
+        },
+        {
+          "word": "initiative",
+          "meaning": "(어떤 목표를 위해) 새로 시작하는 계획·사업·프로그램",
+          "priority": "필수",
+          "subtype": "L1추상어미지",
+          "anchor": "initial = 처음의 → '뭔가를 새로 시작하는 것'",
+          "concept_explain": "정부나 학교가 어떤 목표를 위해 새로 시작한 일. 예: 학교에서 새로 시작한 '아침 독서 프로그램'",
+          "in_this_passage": "lifelong learning initiatives = 평생학습 프로그램들",
+          "do_not_give": "사전 뜻 '주도권'. (유인책은 incentive의 뜻 — initiative에는 없음)",
+          "scope_policy": "take the initiative(주도권을 잡다)는 상위권에서만",
+          "note": "수정 질문: '어떻게 설명해줘야 하지?' → 위 방식으로 제안. 검증 필요",
+          "vs_plan": "plan = 머릿속이나 종이에 있는 계획. initiative = 어떤 문제를 풀려고 조직이 실제로 새로 시작한 일. 계획을 실행에 옮긴 것. 한국어로는 사업·프로그램·캠페인이 가장 가깝다. 한국에서 잘 안 쓰는 단어라 plan과 구분을 못 한다",
+          "confusable": "incentive (유인책, 보상) — 형태가 비슷해서 헷갈림. initial (처음의)과는 연결해서 가르침"
+        },
+        {
+          "word": "not only A but also B",
+          "meaning": "A뿐만 아니라 B도",
+          "priority": "필수",
+          "subtype": "병렬대응"
+        },
+        {
+          "word": "enhance",
+          "meaning": "강화하다, 높이다",
+          "priority": null
+        },
+        {
+          "word": "sustain",
+          "meaning": "유지하다, 지속시키다",
+          "priority": null
+        },
+        {
+          "word": "competitiveness",
+          "meaning": "경쟁력",
+          "priority": "유추후넘김",
+          "remedy_type": "조어유추(아는 조각으로 조립)",
+          "note": "compete + -ive + -ness"
+        },
+        {
+          "word": "furthermore",
+          "meaning": "게다가, 더욱이",
+          "priority": "필수",
+          "subtype": "접속어종류오인",
+          "note": "역접이 아니라 강화. 앞 논지가 이어진다는 신호. 이 뒤는 자세히 안 봐도 됨"
+        },
+        {
+          "word": "necessity",
+          "meaning": "필수(적인 것)",
+          "priority": "유추후넘김",
+          "remedy_type": "규칙카드(S-품사접미사)",
+          "note": "necessary의 명사형. 유추 못 하는 학생이 있으나 프로브 없이 카드로",
+          "author": "수정"
+        },
+        {
+          "word": "consider A B",
+          "meaning": "A를 B로 여기다",
+          "priority": "필수",
+          "remedy_type": "문법생략·해석패턴만",
+          "note": "consider it a necessity. 5형식 용어 없이 '~를 ~로 여기다' 패턴만",
+          "author": "수정 (제안 승인)",
+          "teach_policy": "학생이 안 물어봐도 알려준다 — 해당 문장에서 프로브 없이 튜터가 먼저 설명"
+        }
+      ],
+      "probes": [
+        {
+          "probe_id": "20-02",
+          "position": "Current",
+          "sentence_fragment": "Current social changes driven by technological advancements demand ...",
+          "layer": "어휘",
+          "subtype": "다의어고정",
+          "target_level": "초·중급",
+          "probe_type": "뜻고르기",
+          "timing": "해석 전 (20-01 동사 찾기 다음)",
+          "prompt": "여기서 current의 뜻은?",
+          "options": [
+            "최근의",
+            "전류",
+            "해류(파도)"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "다의어고정(current=전류)",
+            "다의어고정(current=해류)"
+          ],
+          "remedy": "current는 뜻 셋(해류·전류·최근의)이 서로 무관하니 통째로 암기. 여기선 뒤에 명사(changes)가 오므로 형용사 '최근의'",
+          "note": "품사 단서(뒤에 명사 → 형용사)를 처방에 포함. 오답 둘 다 명사 뜻이라 품사 감각도 같이 진단됨",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        },
+        {
+          "probe_id": "20-03",
+          "position": "driven by technological advancements",
+          "sentence_fragment": "Current social changes driven by technological advancements demand ...",
+          "layer": "어휘",
+          "subtype": "다의어고정",
+          "target_level": "초·중급",
+          "probe_type": "해석고르기",
+          "timing": "해석 전 (20-01, 20-02 다음)",
+          "prompt": "여기서 driven은?",
+          "options": [
+            "(기술 발전에 의해) 이끌어진, 추진된",
+            "(기술 발전에 의해) 운전된",
+            "(기술 발전을) 운전하는"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "다의어고정(drive=운전, 기본 뜻에서 확장 못 함)",
+            "다의어고정 + 수동미인식"
+          ],
+          "remedy": "drive는 운전하다에서 몰다 → 이끌다·추진하다로 뻗는다. 여기선 p.p.라서 '이끌어진'",
+          "note": "20-01(구문)과 같은 단어에 걸리는 어휘 프로브. 한 단어에 두 층이 겹치는 첫 사례",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        },
+        {
+          "probe_id": "20-04",
+          "position": "Current social changes",
+          "sentence_fragment": "Current social changes driven by technological advancements demand a fundamental rethinking ...",
+          "layer": "구문",
+          "subtype": "주어범위",
+          "target_level": "초·중급",
+          "probe_type": "성분짚기",
+          "timing": "해석 전 (20-01 다음)",
+          "prompt": "demand(요구한다)의 주어, 즉 '무엇이' 요구하는가?",
+          "options": [
+            "changes (변화들)",
+            "advancements (발전)",
+            "rethinking (재고)"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "주어범위(동사 바로 앞 명사를 주어로 오인)",
+            "주어범위(목적어를 주어로 오인)"
+          ],
+          "remedy": "driven ~ advancements는 changes를 꾸미는 수식어. 주어의 핵심은 changes. 구조 색 표시(sentence_1_structure)로 확인",
+          "note": "동사 바로 앞 명사(advancements)를 주어로 잡는 게 전형적 오류. 수식어가 길수록 이 오류가 는다",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        },
+        {
+          "probe_id": "20-01",
+          "position": "demand",
+          "sentence_fragment": "Current social changes driven by technological advancements demand a fundamental rethinking in our approach to education.",
+          "layer": "구문",
+          "subtype": "동사식별",
+          "target_level": "초·중급",
+          "probe_type": "구조짚기",
+          "timing": "해석 전",
+          "prompt": "이 문장의 동사는?",
+          "options": [
+            "demand",
+            "changes",
+            "driven"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "품사오인(changes 명사→동사)",
+            "분사단독동사오인(driven)"
+          ],
+          "remedy": "R-불규칙pp 규칙 카드. changes 앞에 Current social이 붙어 있으면 명사. driven은 p.p. 혼자라 동사 불가. 남는 것이 demand",
+          "note": "오답 두 개가 서로 다른 라벨. 프로브 하나로 두 오류를 구분한다",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        },
+        {
+          "probe_id": "20-05",
+          "position": "In particular",
+          "sentence_fragment": "In particular, lifelong learning is no longer optional; it is essential.",
+          "layer": "어휘",
+          "subtype": "표현미지",
+          "target_level": "초급",
+          "probe_type": "뜻고르기",
+          "prompt": "In particular의 뜻은?",
+          "options": [
+            "특히",
+            "부분적으로",
+            "특정한 곳에서"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "표현미지(part로 유추)",
+            "표현미지(particular 직역)"
+          ],
+          "remedy": "두 단어를 합쳐 '특히'로 외운다",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "부분",
+              "특정"
+            ]
+          }
+        },
+        {
+          "probe_id": "20-06",
+          "position": "is no longer optional",
+          "sentence_fragment": "lifelong learning is no longer optional",
+          "layer": "어휘",
+          "subtype": "부정표현미인식",
+          "target_level": "초·중급",
+          "probe_type": "해석고르기",
+          "prompt": "밑줄 부분의 해석은?",
+          "options": [
+            "더 이상 선택이 아니다",
+            "더 오래 선택할 수 있다",
+            "선택이다"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "부정표현미인식(longer 직역=더 오래)",
+            "부정표현미인식(no longer 무시)"
+          ],
+          "remedy": "no longer = 더 이상 ~가 아니다. not이 없어도 부정. 이 문장은 '평생학습은 이제 필수'라는 뜻",
+          "note": "주장 유형에서 극성이 뒤집히면 답이 반대로 간다. 선지 ①과 직결",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "더 오래",
+              "선택이다",
+              "선택적이다"
+            ]
+          }
+        },
+        {
+          "probe_id": "20-07",
+          "position": "optional / essential",
+          "sentence_fragment": "lifelong learning is no longer optional; it is essential.",
+          "layer": "어휘",
+          "subtype": "L1추상어미지",
+          "target_level": "초·중급",
+          "probe_type": "뜻고르기",
+          "prompt": "'선택적이지 않다'는 무슨 뜻?",
+          "options": [
+            "꼭 필요하다",
+            "고를 수 없다",
+            "선택지가 하나뿐이다"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "L1추상어미지(선택적을 '고르다'로만 이해)",
+            "L1추상어미지"
+          ],
+          "remedy": "선택적 ↔ 필수적은 반의어. 뒤에 나오는 essential이 바로 그 반대말. 두 단어를 짝으로 외운다",
+          "note": "영어 프로브가 아니라 한국어 뜻 프로브. 하위권에선 이 종류가 많을 것",
+          "trigger": {
+            "mode": "always_after_translation"
+          },
+          "l1_dependency": "high",
+          "l1": "ko"
+        },
+        {
+          "probe_id": "20-08",
+          "position": "recognize that",
+          "sentence_fragment": "We must recognize that the rapidly evolving socioeconomic ecology requires individuals to engage in constant upskilling and self-transformation.",
+          "layer": "구문",
+          "subtype": "that절구분",
+          "target_level": "초·중급",
+          "probe_type": "구조짚기",
+          "timing": "해석 전",
+          "prompt": "여기서 that은 어떤 that?",
+          "options": [
+            "~라고 (뒤에 완전한 문장이 온다)",
+            "~하는 (앞의 말을 꾸민다)",
+            "저것 (지시어)"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "that절구분(관계사로 오인)",
+            "that절구분(지시사로 오인)"
+          ],
+          "remedy": "R-생각동사that. recognize는 '인식하다' 부류 → that 뒤는 완전한 문장, '~라고 인식해야 한다'",
+          "note": "앞 동사 부류를 단서로 쓰는 프로브. 정답을 고른 뒤 '왜?'를 물으면 (동사 때문에 / 뒤 문장이 완전해서) 전략 수준까지 보이지만 오늘은 생략",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        },
+        {
+          "probe_id": "20-09",
+          "position": "the rapidly evolving socioeconomic ecology",
+          "sentence_fragment": "the rapidly evolving socioeconomic ecology requires individuals to engage in ...",
+          "layer": "구문",
+          "subtype": "주어범위",
+          "target_level": "초·중급",
+          "probe_type": "성분짚기",
+          "timing": "해석 전 (20-08 다음)",
+          "prompt": "requires(요구한다)의 주어, 즉 '무엇이' 요구하는가? 핵심 단어 하나",
+          "options": [
+            "ecology",
+            "socioeconomic",
+            "evolving"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "주어범위(형용사를 주어로 오인)",
+            "주어범위(분사를 주어로 오인)"
+          ],
+          "remedy": "R-주어핵심. 주어는 명사. rapidly evolving socioeconomic은 전부 꾸미는 말",
+          "note": "20-04와 같은 유형이지만 수식어가 앞에 붙은 형. 20-04는 뒤에 붙은 형. 둘 다 틀리면 유형 확정, 하나만 틀리면 방향 구분",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        },
+        {
+          "probe_id": "20-10",
+          "position": "lifelong learning initiatives",
+          "sentence_fragment": "If we can enhance lifelong learning initiatives, we will not only promote personal growth ...",
+          "layer": "어휘",
+          "subtype": "L1추상어미지",
+          "target_level": "중급",
+          "probe_type": "뜻고르기",
+          "prompt": "여기서 initiatives의 뜻은?",
+          "options": [
+            "(새로 시작한) 사업·프로그램",
+            "유인책, 보상",
+            "처음 단계"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "형태유사오인(incentive)",
+            "다의어고정(initial=처음에서 못 벗어남)"
+          ],
+          "remedy": "initiative = 계획을 실제로 시작한 것 → 사업·프로그램. plan은 종이 위, initiative는 이미 굴러가는 것. incentive(유인책)와 다른 단어",
+          "note": "수정 본인이 incentive와 혼동 → 학생 오류 패턴과 동일. 전문가의 실수가 오답 선택지의 근거가 된 사례",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "유인",
+              "보상",
+              "처음"
+            ]
+          },
+          "l1_dependency": "high",
+          "l1": "ko"
+        },
+        {
+          "probe_id": "20-11",
+          "position": "not only promote ... but also sustain",
+          "sentence_fragment": "we will not only promote personal growth and well-being but also sustain national productivity and global competitiveness",
+          "layer": "구문",
+          "subtype": "병렬대응",
+          "target_level": "초·중급",
+          "probe_type": "구조짚기",
+          "timing": "해석 전",
+          "prompt": "not only 뒤의 promote(촉진하다)와 짝을 이루는 말은?",
+          "options": [
+            "sustain",
+            "well-being",
+            "national"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "병렬대응(and 병렬과 혼동해 명사에 걸림)",
+            "병렬대응(but also 바로 뒤 단어에 걸림)"
+          ],
+          "remedy": "R-짝접속사. promote가 동사니까 but also 뒤에서 동사를 찾는다 → sustain. '촉진할 뿐만 아니라 유지도 할 것이다'",
+          "note": "오답 ②는 안쪽 and 병렬(growth and well-being)에 걸린 것이라 이중 병렬 혼동을 따로 잡는다",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        },
+        {
+          "probe_id": "20-12",
+          "position": "Furthermore",
+          "sentence_fragment": "Furthermore, our efforts will support social integration ...",
+          "layer": "전략",
+          "subtype": "접속어종류오인",
+          "target_level": "초·중급",
+          "probe_type": "논지짚기(지문 단위)",
+          "timing": "해당 문장 읽기 전",
+          "prompt": "Furthermore 뒤 문장은 앞 문장과 어떤 관계?",
+          "options": [
+            "앞 내용을 더 밀어준다 (같은 방향)",
+            "앞 내용과 반대다",
+            "앞 내용의 결과다"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "접속어종류오인(역접으로 오인)",
+            "접속어종류오인(결과로 오인)"
+          ],
+          "remedy": "S-접속어종류. furthermore = 게다가. 논지가 이어지니 이 문장은 가볍게 넘겨도 된다",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        },
+        {
+          "probe_id": "20-13",
+          "position": "지문 전체",
+          "sentence_fragment": "(지문 단위)",
+          "layer": "전략",
+          "subtype": "논지파악",
+          "target_level": "초·중급",
+          "probe_type": "논지짚기(지문 단위)",
+          "timing": "1~4문장 후, 선지 보기 전",
+          "prompt": "글쓴이는 평생학습을 어떻게 보고 있어?",
+          "options": [
+            "매우 긍정 — 꼭 필요하다",
+            "부정 — 비용이 크다",
+            "중립 — 장단점이 있다"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "논지파악(extra expense 등 부분 단어에 끌림)",
+            "논지파악(입장을 못 잡음)"
+          ],
+          "remedy": "핵심 단어 화살표(passage_map). 개인 성장 + 국가 경쟁력까지 좋다고 하니 매우 긍정. 주장 유형은 이 입장이 곧 답",
+          "note": "지문 단위 프로브 첫 사례. 이걸 맞히면 선지는 거의 자동",
+          "trigger": {
+            "mode": "always_before_translation"
+          }
+        }
+      ],
+      "passage_map": {
+        "display": "칠판 필기처럼 핵심 단어를 화살표 관계로 보여준다 (문장 색 표시와 다른, 지문 단위 시각화)",
+        "nodes": [
+          "기술 발전",
+          "평생교육",
+          "개인 성장·웰빙",
+          "국가 생산성·글로벌 경쟁력",
+          "사회 통합"
+        ],
+        "edges": [
+          {
+            "from": "기술 발전",
+            "to": "평생교육",
+            "label": "요구한다 (필수)"
+          },
+          {
+            "from": "평생교육",
+            "to": "개인 성장·웰빙",
+            "label": "뿐만 아니라"
+          },
+          {
+            "from": "평생교육",
+            "to": "국가 생산성·글로벌 경쟁력",
+            "label": "까지"
+          },
+          {
+            "from": "평생교육",
+            "to": "사회 통합",
+            "label": "furthermore (강화)"
+          }
+        ],
+        "stance": "긍정 (+)",
+        "timing": "체크포인트마다 갱신 (P-체크포인트도식)",
+        "incremental": true,
+        "checkpoints": [
+          {
+            "after_sentence": 2,
+            "nodes_shown": [
+              "기술 발전",
+              "평생교육"
+            ],
+            "edges_shown": [
+              "기술 발전 → 평생교육 (필수)"
+            ],
+            "probe": "지금까지 글쓴이가 말한 건? ① 기술이 바뀌니 평생 배워야 한다 ② 기술 발전이 교육을 망친다 ③ 평생교육은 선택이다"
+          },
+          {
+            "after_sentence": 4,
+            "nodes_shown": [
+              "+ 개인 성장·웰빙",
+              "+ 국가 생산성·경쟁력"
+            ],
+            "edges_shown": [
+              "평생교육 → 개인 / 국가"
+            ],
+            "probe": "20-13 (입장 묻기)"
+          },
+          {
+            "after_sentence": 6,
+            "nodes_shown": [
+              "+ 사회 통합",
+              "+ 비용 아닌 필수"
+            ],
+            "edges_shown": [
+              "furthermore 강화"
+            ],
+            "probe": "선지로 이동"
+          }
+        ]
+      },
+      "l1": "ko",
+      "l2": "en"
+    },
+    {
+      "passage_id": "2027-09-21",
+      "question_type": "함축의미",
+      "difficulty": "중간",
+      "l1": "ko",
+      "l2": "en",
+      "solving_rule": {
+        "note": "미기입"
+      },
+      "pre_reading_words": [
+        {
+          "word": "keep A on B",
+          "meaning": "A를 B에 머물게 하다, 붙잡아두다",
+          "priority": "필수",
+          "subtype": "표현미지",
+          "note": "site는 장소→현장→웹사이트로 파생 (다의어고정 겹침)",
+          "author": "수정"
+        },
+        {
+          "word": "attempt to",
+          "meaning": "~하려고 시도하다",
+          "priority": null,
+          "author": "수정"
+        }
+      ],
+      "probes": [
+        {
+          "probe_id": "21-01",
+          "position": "keep you on site",
+          "sentence_fragment": "Social media companies are working to keep you on site",
+          "layer": "어휘",
+          "subtype": "표현미지",
+          "target_level": "초·중급",
+          "probe_type": "해석고르기",
+          "timing": "해석 후",
+          "trigger": {
+            "mode": "on_missing_or_keyword",
+            "on_missing": true,
+            "wrong_keywords": [
+              "장소",
+              "현장",
+              "자리"
+            ]
+          },
+          "prompt": "밑줄 부분의 해석은?",
+          "options": [
+            "당신을 사이트에 머물게 하다",
+            "당신을 현장에 두다",
+            "당신의 자리를 지키다",
+            "모르겠어요"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "다의어고정(site=장소)",
+            "표현미지(직역)",
+            "미지(포기)"
+          ],
+          "remedy": "파생사슬: site 장소 → 현장 → 웹사이트. keep A on B = A를 B에 붙잡아두다",
+          "author": "수정",
+          "note": "수정 예상 오답: '장소? 사이트?' 하고 해석 포기 → 모르겠어요 칩의 근거"
+        },
+        {
+          "probe_id": "21-02",
+          "position": "or attempting",
+          "sentence_fragment": "are working to keep you on site or attempting to deliver results useful to you",
+          "layer": "구문",
+          "subtype": "병렬대응",
+          "target_level": "초·중급",
+          "probe_type": "구조짚기",
+          "timing": "학생 요청 시",
+          "trigger": {
+            "mode": "on_help_request"
+          },
+          "prompt": "attempting과 짝을 이루는 말은?",
+          "options": [
+            "working",
+            "keep",
+            "results",
+            "모르겠어요"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "병렬대응(to 뒤 동사에 걸림)",
+            "병렬대응(명사에 걸림)",
+            "미지(포기)"
+          ],
+          "remedy": "or 앞뒤가 짝. are working ~ or (are) attempting ~. are를 공유한다",
+          "author": "수정"
+        },
+        {
+          "probe_id": "21-03",
+          "position": "attempting",
+          "sentence_fragment": "are working to keep you on site or attempting to deliver results useful to you",
+          "layer": "구문",
+          "subtype": "동사식별(동사→분사)",
+          "target_level": "초·중급",
+          "probe_type": "구조짚기",
+          "timing": "학생 요청 시 (21-02 다음)",
+          "trigger": {
+            "mode": "on_help_request"
+          },
+          "prompt": "이 문장에서 attempting의 역할은?",
+          "options": [
+            "동사 (are attempting)",
+            "앞 말을 꾸미는 분사·형용사",
+            "명사",
+            "모르겠어요"
+          ],
+          "answer": 0,
+          "option_labels": [
+            null,
+            "동사식별(동사를 분사로 오인)",
+            "품사오인",
+            "미지(포기)"
+          ],
+          "remedy": "are working or attempting → are가 둘 다에 걸린다. attempting은 동사",
+          "author": "수정",
+          "note": "동사식별의 반대 방향(동사→분사) 첫 사례. 21-02와 두 단계로 나눔"
+        }
+      ]
+    }
+  ],
+  "remedy_scripts": [
+    {
+      "script_id": "SC-사전vs실제",
+      "template": "이건 한국어로는 좀 이해하기 어려울 수 있어. 사전에는 {사전뜻}이라고 되어 있는데, 실제 쓰임은 {실제쓰임}이야.",
+      "applies_to_subtypes": [
+        "단어장뜻괴리",
+        "L1추상어미지"
+      ],
+      "examples": [
+        {
+          "word": "initiative",
+          "사전뜻": "계획",
+          "실제쓰임": "어떤 목표를 위해 실제로 새로 시작한 사업이나 프로그램"
+        },
+        {
+          "word": "argument",
+          "사전뜻": "논쟁, 토론",
+          "실제쓰임": "말싸움"
+        },
+        {
+          "word": "optional",
+          "사전뜻": "선택적인",
+          "실제쓰임": "안 해도 되는. 반대는 essential, 꼭 해야 하는"
+        }
+      ],
+      "why": "(1) 사전 뜻과 실제 쓰임을 갈라준다 (2) '어려운 게 네 탓이 아니다'를 먼저 말해 학생이 모르는 걸 자기 문제로 여기지 않게 한다. 하위권에겐 (2)가 더 중요할 수 있음",
+      "note": "수정이 실제로 학생에게 하는 말을 그대로 옮긴 것. AI 튜터 발화는 이 문장 그대로 쓴다",
+      "l1": "ko",
+      "template_note": "발화는 L1로. L1이 바뀌면 템플릿 번역이 아니라 그 나라 교사가 실제로 하는 말로 대체"
+    }
+  ],
+  "app_policies": [
+    {
+      "policy_id": "P-체크포인트도식",
+      "rule": "문장 단위 해석만 이어가면 학생이 지문 내용을 놓친다. 2~3문장마다 멈춰 지금까지의 내용을 도식(마인드맵·화살표 관계도)으로 보여준다. passage_map은 한 번에 완성해 보여주는 게 아니라 문장이 진행될수록 노드와 화살표가 자라나는 형태",
+      "checkpoint_probe": {
+        "prompt": "지금까지 글쓴이가 말한 건?",
+        "form": "객관식 3지, 지문 단위",
+        "diagnoses": "문장이해≠지문이해 — 문장은 해석하는데 글 내용을 못 잡는 학생"
+      },
+      "side_effect": "문장 반복의 피로를 끊는 휴식점 역할도 함",
+      "source": "수정: '해석만 도와주다 보면 정작 이 지문의 내용이 뭔지 아이들이 놓쳐'"
+    }
+  ]
+}

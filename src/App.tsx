@@ -2,6 +2,13 @@ import { useEffect, useMemo, useState } from "react";
 import type { LessonCollection, LessonSet } from "../content/tutor/types";
 import { ClassroomChat } from "./components/ClassroomChat";
 import { LessonList } from "./components/LessonList";
+import { HomeVillage } from "./components/HomeVillage";
+import { CounselRoom } from "./components/CounselRoom";
+import { loadPlan, nextSetOf } from "./tutor/counsel";
+import { loadProgress } from "./tutor/progress";
+import { MiniMockView } from "./components/MiniMockView";
+import { allMiniMocks, getMiniMock } from "./tutor/mini";
+import { finishAnalysis } from "./tutor/miniLog";
 import { SavedBook, type SavedKind } from "./components/SavedBook";
 import { ReadPassage } from "./components/ReadPassage";
 import { PointsReview } from "./components/PointsReview";
@@ -33,6 +40,8 @@ const params = new URLSearchParams(window.location.search);
 const shareLesson = (import.meta.env.VITE_SHARE_LESSON as string | undefined) || null;
 const directLesson = import.meta.env.DEV ? params.get("lesson") : shareLesson;
 const directSet = import.meta.env.DEV ? getSet(params.get("set")) : null;
+/* 학생 테스트 링크(`npm run share:mini2403`)는 미니 모의고사 하나만 연다. 개발에선 `?mini=<id>` */
+const onlyMini = (import.meta.env.DEV ? params.get("mini") : import.meta.env.VITE_ONLY_MINI) || null;
 
 /* 수업은 전부 Teaching Policy 세션이다 (예전 해석 엔진은 2026-10-05에 지웠다) */
 type AnySession = PolicySession & { observe?: (observation: UiObservation) => void };
@@ -90,6 +99,14 @@ function ReadingApp() {
   const [chatOverride, setChatOverride] = useState(false);
   /** 메인에서 연 단어장 · 내 노트 */
   const [saved, setSaved] = useState<SavedKind | null>(null);
+  /** 미니 모의고사 — 분석 레슨을 보고 돌아오면 그 결과로(showLast), 푸는 중에 갔으면 이어 풀기로 */
+  const [miniView, setMiniView] = useState<{ id: string; showLast: boolean; n: number } | null>(() =>
+    onlyMini ? { id: onlyMini, showLast: false, n: 0 } : null,
+  );
+  /** 홈(마을)에 있나 — 「오늘의 학습 시작하기」를 누르면 수업 목록으로 */
+  const [home, setHome] = useState(true);
+  /** 상담실에 있나 */
+  const [counsel, setCounsel] = useState(false);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
 
@@ -119,6 +136,8 @@ function ReadingApp() {
     const result = recordLine.match(/결과=([^\s/]+)/)?.[1];
     if (!result) return;
     void finishSessionRecord(result, session.records());
+    // 미니 모의고사에서 분석하러 왔으면 그 풀이 기록에도 결과를 남긴다
+    finishAnalysis(result);
     // 목록에 「완료」를 칠하려면 지금 손에 있는 값이 필요하다
     if (setId) markDone(setId, result);
   }, [ended, recordLine, session, setId]);
@@ -169,13 +188,16 @@ function ReadingApp() {
     }, 250);
   }
 
-  function startSet(set: LessonSet) {
+  /** analyze — 미니 모의고사에서 넘어왔다: 이미 푼 문제라 미리보기·「바로 풀어 볼게요」를 건너뛰고 바로 다정쌤 분석으로 */
+  function startSet(set: LessonSet, analyze = false) {
     setCollection(getCollection(set.collection));
     const next = open(firstLessonId(set));
     setStarted(next);
     setView(next.session.view());
     setChatOverride(false);
     setSeconds(0);
+    const go = next.session.view().buttons[0];
+    if (analyze && go) void next.session.submit(go).then(setView);
   }
 
   /**
@@ -183,6 +205,7 @@ function ReadingApp() {
    * 맨 앞으로 돌려보내면 방금 있던 자리를 다시 찾아 들어가야 한다.
    */
   function backToList() {
+    finishAnalysis("나감");
     // 공유 파일에는 목록이 없다 — 닫으면 같은 수업을 처음부터
     if (shareLesson) {
       const next = open(shareLesson);
@@ -198,6 +221,27 @@ function ReadingApp() {
     setSeconds(0);
   }
 
+  const mini = miniView ? getMiniMock(miniView.id) : null;
+  if ((!started || !view) && mini && miniView) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <MiniMockView
+            key={`${mini.id}-${miniView.n}`}
+            mock={mini}
+            showLast={miniView.showLast}
+            standalone={miniView.id === onlyMini}
+            onBack={() => setMiniView(null)}
+            onAnalyze={(set, fromExam) => {
+              setMiniView({ id: mini.id, showLast: !fromExam, n: miniView.n + 1 });
+              startSet(set, true);
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
   if ((!started || !view) && saved) {
     return (
       <div className="viewport">
@@ -208,16 +252,74 @@ function ReadingApp() {
     );
   }
 
+  /** 상담실 계획의 문제를 바로 시작한다 (끝나면 다른 수업처럼 그 문제가 있던 목록으로) */
+  function startPlanned(setId: string) {
+    const set = getSet(setId);
+    if (!set) return;
+    setCounsel(false);
+    setHome(false);
+    startSet(set);
+  }
+
+  if ((!started || !view) && counsel) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <CounselRoom
+            learnerName={loadLearnerName()}
+            onClose={() => setCounsel(false)}
+            onStartSet={startPlanned}
+            onOpenMini={() => {
+              const first = allMiniMocks()[0];
+              if (first) setMiniView({ id: first.id, showLast: false, n: 0 });
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if ((!started || !view) && home) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <HomeVillage
+            learnerName={loadLearnerName()}
+            onStart={() => {
+              // 상담실에서 짠 계획이 있으면 그다음 문제로, 없으면 수업 목록으로
+              const plan = loadPlan();
+              const next = plan ? nextSetOf(plan, loadProgress()) : null;
+              if (next) startPlanned(next);
+              else setHome(false);
+            }}
+            onOpenCounsel={() => setCounsel(true)}
+            onOpenMini={() => {
+              const first = allMiniMocks()[0];
+              if (first) setMiniView({ id: first.id, showLast: false, n: 0 });
+              else setHome(false);
+            }}
+            onOpenSaved={setSaved}
+          />
+        </div>
+      </div>
+    );
+  }
+
   if (!started || !view) {
     return (
       <div className="viewport">
         <div className="phone">
           <LessonList
+            onHome={() => {
+              setCollection(null);
+              setHome(true);
+            }}
             learnerName={loadLearnerName()}
             collection={collection}
             onOpenCollection={setCollection}
             onBack={() => setCollection(null)}
             onPickSet={startSet}
+            onOpenMini={(id) => setMiniView({ id, showLast: false, n: 0 })}
             onOpenSaved={setSaved}
           />
         </div>

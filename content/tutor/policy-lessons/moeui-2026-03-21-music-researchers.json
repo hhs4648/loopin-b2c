@@ -374,6 +374,22 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "an inventor",
+          "ko": "발명가"
+        },
+        {
+          "en": "an innovator",
+          "ko": "혁신가"
+        },
+        {
+          "en": "can in fact be",
+          "ko": "사실 ~일 수 있다"
+        },
+        {
+          "en": "A brilliant musician",
+          "ko": "뛰어난 음악가"
+        },
+        {
           "en": "brilliant musician",
           "ko": "훌륭한 음악가"
         },
@@ -399,6 +415,104 @@
         }
       ],
       "steps": [
+        {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A brilliant musician",
+            "can in fact be",
+            "an innovator",
+            "an inventor"
+          ],
+          "answers": [
+            "A brilliant musician",
+            "can in fact be",
+            "an innovator"
+          ],
+          "roles": {
+            "A brilliant musician": "S",
+            "can in fact be": "V",
+            "an innovator": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "an inventor": "그건 without(~ 없이) 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 A brilliant musician, 동사는 can in fact be, 보어는 an innovator(혁신가)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic"
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "A brilliant musician",
+            "in fact",
+            "an innovator",
+            "without",
+            "an inventor"
+          ],
+          "answers": [
+            "A brilliant musician",
+            "in fact",
+            "an inventor",
+            "without",
+            "an innovator"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A brilliant musician",
+                "ko": "뛰어난 음악가는"
+              },
+              " ",
+              {
+                "en": "in fact",
+                "ko": "사실"
+              },
+              " 엄밀히 말해 ",
+              {
+                "en": "an inventor",
+                "ko": "발명가"
+              },
+              "가 ",
+              {
+                "en": "without",
+                "ko": "아니면서도"
+              },
+              " ",
+              {
+                "en": "an innovator",
+                "ko": "혁신가"
+              },
+              "일 수 있다."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
         {
           "id": "s1_pick",
           "keyword": true,
@@ -484,7 +598,7 @@
               ]
             },
             "right": {
-              "label": "inventor 쪽 · 새로움·진보",
+              "label": "inventor 쪽",
               "words": [
                 {
                   "text": "inventor",
@@ -531,7 +645,8 @@
               "label": "뛰어난 음악가는 혁신가가 아니어도 발명가일 수 있다"
             }
           ],
-          "method": 1
+          "method": 1,
+          "meaning_check": true
         }
       ],
       "emphasis": [
@@ -547,6 +662,14 @@
       "model_translation": "그런 경우, '위대한 발견'을 기대하는 사람들은 실망하게 될 것이다.",
       "teaching_value": "medium",
       "glosses": [
+        {
+          "en": "will be disappointed",
+          "ko": "실망할 것이다"
+        },
+        {
+          "en": "those",
+          "ko": "사람들"
+        },
         {
           "en": "In such cases",
           "ko": "그런 경우에 · 앞 문장의 경우를 가리켜요"
@@ -569,6 +692,101 @@
         }
       ],
       "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "those",
+            "expect",
+            "will be disappointed"
+          ],
+          "answers": [
+            "those",
+            "will be disappointed"
+          ],
+          "roles": {
+            "those": "S",
+            "will be disappointed": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "expect": "그건 who 뒤 덩어리 안의 동사예요. 문장 끝 쪽을 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 those (who expect …)(~를 기대하는 사람들), 동사는 will be disappointed(실망할 것이다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic"
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "In such cases",
+            "those",
+            "expect",
+            "great discoveries",
+            "will be disappointed"
+          ],
+          "answers": [
+            "In such cases",
+            "great discoveries",
+            "expect",
+            "those",
+            "will be disappointed"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In such cases",
+                "ko": "그런 경우에"
+              },
+              " ",
+              {
+                "en": "great discoveries",
+                "ko": "'위대한 발견'"
+              },
+              "을 ",
+              {
+                "en": "expect",
+                "ko": "기대하는"
+              },
+              " ",
+              {
+                "en": "those",
+                "ko": "사람들은"
+              },
+              " ",
+              {
+                "en": "will be disappointed",
+                "ko": "실망할 것이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
         {
           "id": "s2_cases",
           "type": "choice",
@@ -787,6 +1005,34 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a thing",
+          "ko": "하나의 물건"
+        },
+        {
+          "en": "a musical act",
+          "ko": "음악 행위"
+        },
+        {
+          "en": "no more than technique",
+          "ko": "기술에 불과한"
+        },
+        {
+          "en": "music",
+          "ko": "음악"
+        },
+        {
+          "en": "the idea",
+          "ko": "생각"
+        },
+        {
+          "en": "the eager need for novelty",
+          "ko": "새로움에 대한 간절한 욕구"
+        },
+        {
           "en": "Let there be no doubt",
           "ko": "의심의 여지 없이"
         },
@@ -837,9 +1083,158 @@
         {
           "en": "alone",
           "ko": "오직"
+        },
+        {
+          "en": "idea",
+          "ko": "생각"
         }
       ],
       "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the eager need for novelty",
+            "involves",
+            "the idea"
+          ],
+          "answers": [
+            "the eager need for novelty",
+            "involves",
+            "the idea"
+          ],
+          "roles": {
+            "the eager need for novelty": "S",
+            "involves": "V",
+            "the idea": "O"
+          },
+          "brief": {
+            "ask": "콜론(:) 뒤에서 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콜론 뒤 주어는 the eager need for novelty, 동사는 involves(담고 있다), 목적어는 the idea예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "faded": [
+            "so characteristic of the escalating modernist auction"
+          ],
+          "tips": [
+            {
+              "label": "콤마(,)·대시(—) 사이 건너뛰기",
+              "text": "콤마(,) 두 개나 대시(—) 두 개 사이는 앞말을 덧붙여 설명하거나 예시를 드는 부분일 때가 많아요. 급할 때는 건너뛰고 앞뒤만 이어 읽어도 뜻이 통해요. 단, 그 안에 주어와 동사가 있으면 메인 문장이라 건너뛰면 안 돼요."
+            }
+          ]
+        },
+        {
+          "id": "s3_that_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "a musical act",
+            "is",
+            "a thing"
+          ],
+          "answers": [
+            "a musical act",
+            "is",
+            "a thing"
+          ],
+          "roles": {
+            "a musical act": "S",
+            "is": "V",
+            "a thing": "C"
+          },
+          "brief": {
+            "ask": "the idea that ~: that 뒤가 그 생각의 내용이에요. 그 안에서 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "that 안의 주어는 a musical act(음악 행위), 동사는 is, 보어는 a thing(하나의 물건)이에요. 음악을 '물건'처럼 본다는 생각이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "the eager need for novelty",
+            "involves",
+            "the idea",
+            "music",
+            "no more than technique"
+          ],
+          "answers": [
+            "the eager need for novelty",
+            "music",
+            "no more than technique",
+            "the idea",
+            "involves"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "the eager need for novelty",
+                "ko": "새로움에 대한 간절한 욕구는"
+              },
+              " ",
+              {
+                "en": "music",
+                "ko": "음악"
+              },
+              "이 ",
+              {
+                "en": "no more than technique",
+                "ko": "기술에 불과하다"
+              },
+              "는 ",
+              {
+                "en": "the idea",
+                "ko": "생각"
+              },
+              "을 ",
+              {
+                "en": "involves",
+                "ko": "담고 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "the eager need for novelty involves the idea that music is no more than technique.",
+          "tips": [
+            {
+              "label": "콤마(,)·대시(—) 사이 건너뛰기",
+              "text": "콤마(,) 두 개나 대시(—) 두 개 사이는 앞말을 덧붙여 설명하거나 예시를 드는 부분일 때가 많아요. 급할 때는 건너뛰고 앞뒤만 이어 읽어도 뜻이 통해요. 단, 그 안에 주어와 동사가 있으면 메인 문장이라 건너뛰면 안 돼요."
+            }
+          ]
+        },
         {
           "id": "s3_q",
           "type": "choice",
@@ -884,7 +1279,8 @@
               "label": "콤마(,)·대시(—) 사이 건너뛰기",
               "text": "콤마(,) 두 개나 대시(—) 두 개 사이는 앞말을 덧붙여 설명하거나 예시를 드는 부분일 때가 많아요. 급할 때는 건너뛰고 앞뒤만 이어 읽어도 뜻이 통해요. 단, 그 안에 주어와 동사가 있으면 메인 문장이라 건너뛰면 안 돼요."
             }
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s3_map",
@@ -909,7 +1305,7 @@
               ]
             },
             "right": {
-              "label": "inventor 쪽 · 새로움·진보",
+              "label": "inventor 쪽 · 새로움",
               "words": [
                 {
                   "text": "inventor"
@@ -1201,6 +1597,30 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "the last thing in modernity",
+          "ko": "현대성의 최신품"
+        },
+        {
+          "en": "the patent",
+          "ko": "특허"
+        },
+        {
+          "en": "each musician",
+          "ko": "음악가 하나하나"
+        },
+        {
+          "en": "itself",
+          "ko": "그 자신"
+        },
+        {
+          "en": "offers",
+          "ko": "내놓다"
+        },
+        {
+          "en": "each new music",
+          "ko": "새 음악 하나하나"
+        },
+        {
           "en": "breaking",
           "ko": "깨며"
         },
@@ -1247,9 +1667,141 @@
         {
           "en": "invention",
           "ko": "발명"
+        },
+        {
+          "en": "music",
+          "ko": "음악"
         }
       ],
       "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "each new music",
+            "offers",
+            "itself",
+            "each musician",
+            "claims",
+            "the patent"
+          ],
+          "answers": [
+            "each new music",
+            "offers",
+            "itself",
+            "each musician",
+            "claims",
+            "the patent"
+          ],
+          "roles": {
+            "each new music": "S",
+            "offers": "V",
+            "itself": "O",
+            "each musician": "S",
+            "claims": "V",
+            "the patent": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "세미콜론 앞은 주어 each new music, 동사 offers, 목적어 itself예요. 뒤는 주어 each musician, 동사 claims, 목적어 the patent예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "faded": [
+            "breaking its predecessor’s records",
+            "forcing predecessors into the category of the unfashionable and outmoded"
+          ],
+          "tips": [
+            {
+              "label": "last thing",
+              "text": "'last thing'은 '마지막'이 아니라 '최신의 것'이에요. 같은 문장의 'outmoded(구식의)'와 반대말이에요."
+            }
+          ]
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "each new music",
+            "offers",
+            "the last thing in modernity",
+            "each musician",
+            "claims",
+            "the patent"
+          ],
+          "answers": [
+            "each new music",
+            "the last thing in modernity",
+            "offers",
+            "each musician",
+            "the patent",
+            "claims"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "each new music",
+                "ko": "새 음악은 저마다"
+              },
+              " 자신을 ",
+              {
+                "en": "the last thing in modernity",
+                "ko": "현대성의 최신품"
+              },
+              "으로 ",
+              {
+                "en": "offers",
+                "ko": "내놓고"
+              },
+              ", ",
+              {
+                "en": "each musician",
+                "ko": "음악가는 저마다"
+              },
+              " ",
+              {
+                "en": "the patent",
+                "ko": "특허"
+              },
+              "를 ",
+              {
+                "en": "claims",
+                "ko": "주장한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "In this arms race, each new music offers itself as the last thing in modernity; and each musician claims the patent on the invention.",
+          "tips": [
+            {
+              "label": "last thing",
+              "text": "'last thing'은 '마지막'이 아니라 '최신의 것'이에요. 같은 문장의 'outmoded(구식의)'와 반대말이에요."
+            }
+          ]
+        },
         {
           "id": "s6_q",
           "type": "choice",
@@ -1295,7 +1847,8 @@
               "label": "last thing",
               "text": "'last thing'은 '마지막'이 아니라 '최신의 것'이에요. 같은 문장의 'outmoded(구식의)'와 반대말이에요."
             }
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s6_map",
@@ -1433,6 +1986,18 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "owe it to themselves",
+          "ko": "스스로에게 ~할 의무가 있다"
+        },
+        {
+          "en": "musicians",
+          "ko": "음악가들"
+        },
+        {
+          "en": "have become",
+          "ko": "~이 되었다"
+        },
+        {
           "en": "era",
           "ko": "시대"
         },
@@ -1462,6 +2027,117 @@
         }
       ],
       "steps": [
+        {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "pastiches",
+            "have become",
+            "musicians",
+            "owe it to themselves"
+          ],
+          "answers": [
+            "musicians",
+            "owe it to themselves"
+          ],
+          "roles": {
+            "musicians": "S",
+            "owe it to themselves": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "pastiches": "그건 where 뒤 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
+              "have become": "그건 where 뒤 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 musicians, 동사는 owe it to themselves(스스로에게 ~할 의무가 있다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "tips": [
+            {
+              "label": "따옴표",
+              "text": "따옴표는 '진짜 그 말이 아니라 그렇게 불리는 것'이라는 표시일 때가 많아요. 이 글에서 따옴표가 붙은 말을 모아 보면 흐름이 보여요."
+            },
+            {
+              "label": "owe it to oneself to",
+              "text": "'V하는 게 자신에게 마땅하다', 즉 'V해야 한다'는 뜻이에요. 여기선 음악가들이 연구자가 '되어야 한다고 여긴다'는 말이에요. 자주 나오는 표현이라 외워 두면 좋아요."
+            }
+          ]
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "musicians",
+            "owe it to themselves",
+            "researchers",
+            "just like everyone else"
+          ],
+          "answers": [
+            "musicians",
+            "just like everyone else",
+            "researchers",
+            "owe it to themselves"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "musicians",
+                "ko": "음악가들은"
+              },
+              " ",
+              {
+                "en": "just like everyone else",
+                "ko": "다른 모두처럼"
+              },
+              " ",
+              {
+                "en": "researchers",
+                "ko": "'연구자'"
+              },
+              "가 되는 것을 ",
+              {
+                "en": "owe it to themselves",
+                "ko": "스스로에게 해야 할 일로 여긴다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "musicians owe it to themselves to become “researchers” just like everyone else.",
+          "tips": [
+            {
+              "label": "따옴표",
+              "text": "따옴표는 '진짜 그 말이 아니라 그렇게 불리는 것'이라는 표시일 때가 많아요. 이 글에서 따옴표가 붙은 말을 모아 보면 흐름이 보여요."
+            },
+            {
+              "label": "owe it to oneself to",
+              "text": "'V하는 게 자신에게 마땅하다', 즉 'V해야 한다'는 뜻이에요. 여기선 음악가들이 연구자가 '되어야 한다고 여긴다'는 말이에요. 자주 나오는 표현이라 외워 두면 좋아요."
+            }
+          ]
+        },
         {
           "id": "s7_q",
           "type": "choice",

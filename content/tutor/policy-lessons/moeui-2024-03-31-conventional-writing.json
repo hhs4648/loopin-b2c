@@ -1,0 +1,2796 @@
+{
+  "id": "moeui-2024-03-31-conventional-writing",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 31번 (빈칸 추론, 2점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-growing-writing.svg",
+      "alt": "칠판: Growing up(자라면서) → Writing(글쓰기)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "어릴 땐 별을 '줄기 없는 꽃'이라고 했는데, 지금은 뭐라고 할까요? 이번 글은 자라면서 글쓰기가 어떻게 바뀌는지 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+    "underline": "________",
+    "sentence": 5,
+    "analysis_first": true,
+    "wrong_rate": 71.0,
+    "wrong_rank": 3,
+    "glosses": [
+      {
+        "en": "loss",
+        "ko": "잃음, 손실"
+      },
+      {
+        "en": "sense",
+        "ko": "감각"
+      },
+      {
+        "en": "increase",
+        "ko": "증가"
+      },
+      {
+        "en": "recovery",
+        "ko": "회복"
+      },
+      {
+        "en": "demonstration",
+        "ko": "보여 줌, 시연"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "loss",
+        "keywords": [
+          "loss"
+        ],
+        "ko": "잃음, 손실",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "sense",
+        "keywords": [
+          "sense"
+        ],
+        "ko": "감각"
+      },
+      {
+        "id": "3",
+        "label": "increase",
+        "keywords": [
+          "increase"
+        ],
+        "ko": "증가"
+      },
+      {
+        "id": "4",
+        "label": "recovery",
+        "keywords": [
+          "recovery"
+        ],
+        "ko": "회복"
+      },
+      {
+        "id": "5",
+        "label": "demonstration",
+        "keywords": [
+          "demonstration"
+        ],
+        "ko": "보여 줌, 시연"
+      }
+    ],
+    "brief": {
+      "ask": "자라면서 쪽이 늘 때 어릴 때 쪽(즉흥성·독창성)이 어떻게 되는지 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 글이 틀에 박히고 글자 그대로가 되면서, 어릴 때의 즉흥성과 독창성은 함께 사라져요. 그래서 loss(잃음)예요.",
+      "final_wrong": "정답은 ① loss예요. 틀에 박힌 쪽이 늘면서 즉흥성·독창성은 잃어 가요.",
+      "option_feedback": {
+        "2": "'an accompanying sense of …'는 말로는 자연스럽지만, 즉흥성의 '감각'이 함께 생긴다면 즉흥성이 남는다는 말이 돼요. 글은 틀에 박혀 간다고 했어요.",
+        "3": "즉흥성·독창성이 늘어난다면 틀에 박힌다는 앞말과 반대예요.",
+        "4": "회복은 잃었던 걸 되찾는 거예요. 글은 이제 막 잃어 가는 중이에요.",
+        "5": "즉흥성을 보여 준다면 은유도 지어낼 텐데, 은유를 지어낼 필요가 거의 없대요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 30.0%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "'an accompanying sense of the spontaneity'는 영어로 자연스럽게 들려서 가장 많이 골랐어요. 하지만 그러면 '즉흥성의 감각이 함께 생긴다', 즉흥성이 살아 있다는 말이 돼요. 글은 틀에 박히고 글자 그대로가 된다고 했으니, 반대쪽인 즉흥성은 줄어야 해요.",
+          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "말이 자연스러워 보여서 골랐어요",
+              "skills": [
+                "collocation_trap"
+              ],
+              "reply": "알려 줘서 고마워요. 빈칸은 말이 자연스러운지보다 앞뒤 흐름(어느 쪽이 늘고 주는지)으로 정해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "두 쪽이 반대인 걸 못 봤어요",
+              "skills": [
+                "two_sides"
+              ],
+              "reply": "알려 줘서 고마워요. conventional(틀에 박힌)과 spontaneity(즉흥성)는 반대 쪽이에요. 앞으로 두 쪽을 칠판에 나눠서 보여 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "collocation_trap",
+                "two_sides"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 두 쪽을 먼저 나누고 빈칸을 보게 할게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "어릴 때",
+                "text": "spontaneity and originality",
+                "ko": "즉흥성·독창성 → ↓ (loss)",
+                "tone": "hl2"
+              },
+              {
+                "label": "자라고 난 뒤",
+                "text": "conventional and literal",
+                "ko": "틀에 박히고 글자 그대로 ↑",
+                "tone": "hl"
+              }
+            ]
+          }
+        },
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 24.2%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "increase(증가)를 넣으면 '즉흥성과 독창성이 함께 늘어난다'가 돼요. 그런데 글은 점점 틀에 박히고 남들이 쓰는 단어만 쓴대요. 즉흥성은 늘 수가 없어요.",
+          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "자라면 다 좋아진다고 생각했어요",
+              "skills": [
+                "growth_all_good"
+              ],
+              "reply": "알려 줘서 고마워요. 손재주·글씨는 좋아지지만, 그 대가로 즉흥성은 줄어요. 앞으로 좋아지는 것과 잃는 것을 나눠 보여 줄게요."
+            },
+            {
+              "label": "of 뒤가 누구 쪽인지 헷갈렸어요",
+              "skills": [
+                "two_sides"
+              ],
+              "reply": "알려 줘서 고마워요. that characterized our earlier efforts, 예전의 특징이에요. 앞으로 earlier 같은 시간 단서를 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "growth_all_good",
+                "two_sides"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 두 쪽을 먼저 나누고 빈칸을 보게 할게요."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "manual",
+        "ko": "손의"
+      },
+      {
+        "en": "coordination",
+        "ko": "협응"
+      },
+      {
+        "en": "considerable",
+        "ko": "상당한"
+      },
+      {
+        "en": "mastery",
+        "ko": "숙달"
+      },
+      {
+        "en": "mechanics",
+        "ko": "기법, 기술"
+      },
+      {
+        "en": "eliminate",
+        "ko": "없애다"
+      },
+      {
+        "en": "characteristic of",
+        "ko": "~의 특징인"
+      },
+      {
+        "en": "perception",
+        "ko": "인식, 지각"
+      },
+      {
+        "en": "preoccupation",
+        "ko": "집착"
+      },
+      {
+        "en": "give way to",
+        "ko": "~로 바뀌다"
+      },
+      {
+        "en": "conventional",
+        "ko": "틀에 박힌, 관습적인"
+      },
+      {
+        "en": "literal",
+        "ko": "글자 그대로의"
+      },
+      {
+        "en": "accompanying",
+        "ko": "수반하는"
+      },
+      {
+        "en": "originality",
+        "ko": "독창성"
+      },
+      {
+        "en": "grounded",
+        "ko": "자리 잡은"
+      },
+      {
+        "en": "metaphor",
+        "ko": "은유"
+      },
+      {
+        "en": "innocent",
+        "ko": "순진한"
+      }
+    ],
+    "options": [
+      {
+        "en": "loss",
+        "ko": "잃음, 손실"
+      },
+      {
+        "en": "recovery",
+        "ko": "회복"
+      },
+      {
+        "en": "demonstration",
+        "ko": "보여 줌, 시연"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "From about ages eight through sixteen, our manual dexterity has strengthened through continually improving eye-hand coordination.",
+      "model_translation": "약 8세부터 16세까지, 우리의 손재주는 눈과 손의 협응을 지속적으로 향상시키면서 강화되어 왔다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "From about ages eight through sixteen",
+          "ko": "약 8세부터 16세까지"
+        },
+        {
+          "en": "our manual dexterity",
+          "ko": "우리의 손재주"
+        },
+        {
+          "en": "dexterity",
+          "ko": "재주, 솜씨"
+        },
+        {
+          "en": "has strengthened",
+          "ko": "강해졌다"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "continually improving",
+          "ko": "계속 좋아지는"
+        },
+        {
+          "en": "eye-hand coordination",
+          "ko": "눈과 손의 협응"
+        },
+        {
+          "en": "As a result",
+          "ko": "그 결과"
+        },
+        {
+          "en": "our writing and oral storying",
+          "ko": "우리의 글쓰기와 말로 하는 이야기"
+        },
+        {
+          "en": "become",
+          "ko": "~해지다"
+        },
+        {
+          "en": "increasingly",
+          "ko": "점점 더"
+        },
+        {
+          "en": "conventional",
+          "ko": "관습적인, 틀에 박힌"
+        },
+        {
+          "en": "literal",
+          "ko": "글자 그대로의, 사실에 충실한"
+        },
+        {
+          "en": "with an accompanying",
+          "ko": "~이 함께 따라오면서"
+        },
+        {
+          "en": "the spontaneity and originality",
+          "ko": "즉흥성과 독창성"
+        },
+        {
+          "en": "characterized",
+          "ko": "~의 특징이었다"
+        },
+        {
+          "en": "our earlier efforts",
+          "ko": "우리의 예전 노력(어릴 때 쓴 것)"
+        },
+        {
+          "en": "ages",
+          "ko": "나이"
+        },
+        {
+          "en": "eight",
+          "ko": "8"
+        },
+        {
+          "en": "sixteen",
+          "ko": "16"
+        },
+        {
+          "en": "manual",
+          "ko": "손의"
+        },
+        {
+          "en": "strengthened",
+          "ko": "강해졌다"
+        },
+        {
+          "en": "continually",
+          "ko": "계속"
+        },
+        {
+          "en": "improving",
+          "ko": "좋아지는"
+        },
+        {
+          "en": "eye-hand",
+          "ko": "눈과 손의"
+        },
+        {
+          "en": "coordination",
+          "ko": "협응"
+        },
+        {
+          "en": "result",
+          "ko": "결과"
+        },
+        {
+          "en": "writing",
+          "ko": "글쓰기"
+        },
+        {
+          "en": "oral",
+          "ko": "말로 하는"
+        },
+        {
+          "en": "storying",
+          "ko": "이야기하기"
+        },
+        {
+          "en": "accompanying",
+          "ko": "함께 따라오는"
+        },
+        {
+          "en": "spontaneity",
+          "ko": "즉흥성"
+        },
+        {
+          "en": "originality",
+          "ko": "독창성"
+        },
+        {
+          "en": "earlier",
+          "ko": "예전의"
+        },
+        {
+          "en": "efforts",
+          "ko": "노력"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 다섯째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "As a result, our writing and oral storying become increasingly conventional and literal, with an accompanying ________ of the spontaneity and originality that characterized our earlier efforts."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "conventional은 '틀에 박힌', literal은 '글자 그대로의'예요. with an accompanying ____ of는 '~의 ____이 함께 따라오면서'예요.",
+              "conventional은 '틀에 박힌', literal은 '글자 그대로의'예요. with an accompanying ____ of는 '~의 ____이 함께 따라오면서'예요."
+            ],
+            "explain": "become increasingly conventional and literal은 점점 틀에 박히고 글자 그대로가 된다는 말이에요. 그러면서 예전 노력의 즉흥성·독창성에 ____이 함께 따라온대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "become increasingly conventional and literal은 점점 틀에 박히고 글자 그대로가 된다는 말이에요. 그러면서 예전 노력의 즉흥성·독창성에 ____이 함께 따라온대요.",
+              "o2": "become increasingly conventional and literal은 점점 틀에 박히고 글자 그대로가 된다는 말이에요. 그러면서 예전 노력의 즉흥성·독창성에 ____이 함께 따라온대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "글쓰기가 자유로워지면서, 즉흥성이 ____ 된다"
+            },
+            {
+              "id": "o1",
+              "label": "글쓰기가 틀에 박혀 가면서, 예전의 즉흥성·독창성에 ____이 함께 생긴다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "어릴 때 글쓰기가 더 틀에 박혀 있었다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "As a result, our writing and oral storying become increasingly conventional and literal, with an accompanying ________ of the spontaneity and originality that characterized our earlier efforts.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "conventional and literal",
+            "________"
+          ],
+          "highlight_alt": [
+            "spontaneity and originality",
+            "earlier efforts"
+          ],
+          "tips": [
+            {
+              "label": "with an accompanying ~",
+              "text": "'~이 함께 따라오면서, ~을 수반하며'예요. 앞 일이 일어나면서 같이 생기는 일이 뒤에 와요.",
+              "mark": "accompanying"
+            }
+          ]
+        },
+        {
+          "id": "s1_where_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 문장에는 '지금(자라면서)'과 '예전(어릴 때)' 두 쪽 말이 같이 있어요."
+          },
+          "method": 0,
+          "button": "다음",
+          "before_read": true,
+          "levels": [
+            "중",
+            "초"
+          ],
+          "display": "As a result, our writing and oral storying become increasingly conventional and literal, with an accompanying ________ of the spontaneity and originality that characterized our earlier efforts.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "conventional and literal"
+          ],
+          "highlight_alt": [
+            "spontaneity and originality",
+            "earlier efforts"
+          ],
+          "panel_below": true,
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "어릴 때",
+                "text": "spontaneity and originality",
+                "ko": "즉흥성과 독창성 (earlier efforts)",
+                "tone": "hl2"
+              },
+              {
+                "label": "자라고 난 뒤",
+                "text": "conventional and literal",
+                "ko": "틀에 박히고 글자 그대로",
+                "tone": "hl"
+              }
+            ]
+          }
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 자라면서 어릴 때의 즉흥성·독창성이 어떻게 되는지 생각하며 문장 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "As a result, our writing and oral storying become increasingly conventional and literal, with an accompanying ________ of the spontaneity and originality that characterized our earlier efforts.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "From about ages eight through sixteen",
+            "our manual dexterity",
+            "has strengthened",
+            "eye-hand coordination"
+          ],
+          "answers": [
+            "our manual dexterity",
+            "has strengthened"
+          ],
+          "roles": {
+            "our manual dexterity": "S",
+            "has strengthened": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "From about ages eight through sixteen": "그건 '언제'를 알려 주는 말이에요.",
+              "eye-hand coordination": "그건 through(~을 통해) 뒤 덩어리 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 our manual dexterity, 동사는 has strengthened예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "tips": [
+            {
+              "label": "with an accompanying ~",
+              "text": "'~이 함께 따라오면서, ~을 수반하며'예요. 앞 일이 일어나면서 같이 생기는 일이 뒤에 와요.",
+              "mark": "accompanying"
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "From about ages eight through sixteen",
+            "our manual dexterity",
+            "has strengthened"
+          ],
+          "answers": [
+            "From about ages eight through sixteen",
+            "our manual dexterity",
+            "has strengthened"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "From about ages eight through sixteen",
+                "ko": "약 8세부터 16세까지"
+              },
+              ", ",
+              {
+                "en": "our manual dexterity",
+                "ko": "우리의 손재주는"
+              },
+              " ",
+              {
+                "en": "has strengthened",
+                "ko": "강해졌다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "From about ages eight through sixteen, our manual dexterity has strengthened.",
+          "tips": [
+            {
+              "label": "with an accompanying ~",
+              "text": "'~이 함께 따라오면서, ~을 수반하며'예요. 앞 일이 일어나면서 같이 생기는 일이 뒤에 와요.",
+              "mark": "accompanying"
+            }
+          ]
+        },
+        {
+          "id": "s1_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "8살부터 16살 사이에 손재주가 좋아진대요. 이 글은 자라면서 생기는 변화를 말해요. 칠판을 두 쪽으로 나눠 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": []
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "manual dexterity ↑",
+                  "ko": "손재주가 좋아짐",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "→"
+          },
+          "highlight": [
+            "has strengthened"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "There is considerable improvement in handwriting skills.",
+      "model_translation": "필기 능력에 상당한 향상이 있다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "handwriting skills",
+          "ko": "글씨 쓰는 실력"
+        },
+        {
+          "en": "There is",
+          "ko": "~이 있다"
+        },
+        {
+          "en": "considerable improvement",
+          "ko": "상당한 향상"
+        },
+        {
+          "en": "in handwriting skills",
+          "ko": "글씨 쓰는 실력에"
+        },
+        {
+          "en": "handwriting",
+          "ko": "손글씨"
+        },
+        {
+          "en": "skills",
+          "ko": "실력"
+        },
+        {
+          "en": "considerable",
+          "ko": "상당한"
+        },
+        {
+          "en": "improvement",
+          "ko": "향상"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "There is",
+            "considerable improvement",
+            "handwriting skills"
+          ],
+          "answers": [
+            "There is",
+            "considerable improvement"
+          ],
+          "roles": {
+            "There is": "V",
+            "considerable improvement": "S"
+          },
+          "brief": {
+            "ask": "there is(~이 있다) 문장이에요. 동사(V)와 그 뒤의 진짜 주어(S)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "handwriting skills": "그건 in 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "There is 문장은 동사 뒤가 진짜 주어예요. 동사는 is, 주어는 considerable improvement예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic"
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "There is",
+            "considerable improvement",
+            "in handwriting skills"
+          ],
+          "answers": [
+            "There is",
+            "in handwriting skills",
+            "considerable improvement"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "There is",
+                "ko": "~이 있다"
+              },
+              " — ",
+              {
+                "en": "in handwriting skills",
+                "ko": "글씨 쓰는 실력에"
+              },
+              " ",
+              {
+                "en": "considerable improvement",
+                "ko": "상당한 향상"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_hand",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글씨 쓰는 실력도 많이 좋아진대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "considerable improvement"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "We gain mastery over the mechanics of language.",
+      "model_translation": "우리는 언어의 기술에 대한 숙달을 얻는다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "mastery",
+          "ko": "숙달"
+        },
+        {
+          "en": "gain",
+          "ko": "얻다"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "gain mastery over",
+          "ko": "~을 익히다, 숙달하다"
+        },
+        {
+          "en": "the mechanics of language",
+          "ko": "언어의 기술(문법·맞춤법)"
+        },
+        {
+          "en": "mechanics",
+          "ko": "기법, 기술"
+        },
+        {
+          "en": "over",
+          "ko": "~ 위에, ~에 대해"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "gain",
+            "mastery",
+            "the mechanics of language"
+          ],
+          "answers": [
+            "We",
+            "gain",
+            "mastery"
+          ],
+          "roles": {
+            "We": "S",
+            "gain": "V",
+            "mastery": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the mechanics of language": "그건 over 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 gain, 목적어는 mastery예요(숙달을 얻다 = 익히다)."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "mechanics",
+              "text": "'기계학'만 있는 게 아니에요. the mechanics of ~ = ~의 기법, 작동 방식.",
+              "mark": "mechanics"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "We",
+            "gain mastery over",
+            "the mechanics of language"
+          ],
+          "answers": [
+            "We",
+            "the mechanics of language",
+            "gain mastery over"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We",
+                "ko": "우리는"
+              },
+              " ",
+              {
+                "en": "the mechanics of language",
+                "ko": "언어의 기술"
+              },
+              "을 ",
+              {
+                "en": "gain mastery over",
+                "ko": "익힌다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "mechanics",
+              "text": "'기계학'만 있는 게 아니에요. the mechanics of ~ = ~의 기법, 작동 방식.",
+              "mark": "mechanics"
+            }
+          ]
+        },
+        {
+          "id": "s3_mech",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "We gain mastery over the mechanics of language는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "mechanics는 여기서 '기계'가 아니라 '기법, 기술'이에요. gain mastery over는 '~을 익히다'예요.",
+              "mechanics는 여기서 '기계'가 아니라 '기법, 기술'이에요. gain mastery over는 '~을 익히다'예요."
+            ],
+            "explain": "gain mastery over는 '~을 숙달하다', the mechanics of language는 '언어의 기술'이에요. 문법·맞춤법 같은 걸 익힌다는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "gain mastery over는 '~을 숙달하다', the mechanics of language는 '언어의 기술'이에요. 문법·맞춤법 같은 걸 익힌다는 말이에요.",
+              "o2": "gain mastery over는 '~을 숙달하다', the mechanics of language는 '언어의 기술'이에요. 문법·맞춤법 같은 걸 익힌다는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "언어로 기계를 다루게 된다"
+            },
+            {
+              "id": "o1",
+              "label": "언어를 쓰는 기술(문법·맞춤법)을 익힌다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "언어를 점점 잊는다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "gain mastery over",
+            "mechanics"
+          ],
+          "tips": [
+            {
+              "label": "mechanics",
+              "text": "'기계학'만 있는 게 아니에요. the mechanics of ~ = ~의 기법, 작동 방식.",
+              "mark": "mechanics"
+            }
+          ]
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "손재주, 글씨, 언어 기술이 모두 좋아져요. 칠판 오른쪽(자라고 난 뒤)에 쌓아 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": []
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "manual dexterity ↑",
+                  "ko": "손재주"
+                },
+                {
+                  "text": "mechanics of language",
+                  "ko": "언어 기술",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "→"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "We also gradually eliminate the logical gaps in our stories―characteristic of our earlier stage of perception―as intense preoccupation with the whole vision gives way to preoccupation with correctness.",
+      "model_translation": "우리는 또한 전체 시각에 대한 강렬한 집착이 정확성에 대한 집착으로 바뀌면서, (우리의 초기 지각 단계의 특징인) 우리 이야기의 논리적 공백을 점차적으로 제거한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "also gradually",
+          "ko": "또한 점점"
+        },
+        {
+          "en": "eliminate",
+          "ko": "없애다"
+        },
+        {
+          "en": "the logical gaps",
+          "ko": "논리적 빈틈"
+        },
+        {
+          "en": "in our stories",
+          "ko": "우리 이야기 속의"
+        },
+        {
+          "en": "characteristic of our earlier stage of perception",
+          "ko": "어릴 적 인식 단계의 특징인"
+        },
+        {
+          "en": "intense preoccupation",
+          "ko": "강한 집착"
+        },
+        {
+          "en": "with the whole vision",
+          "ko": "전체 그림에 대한"
+        },
+        {
+          "en": "gives way to",
+          "ko": "~에 자리를 내주다, ~로 바뀌다"
+        },
+        {
+          "en": "preoccupation with correctness",
+          "ko": "정확성에 대한 집착"
+        },
+        {
+          "en": "correctness",
+          "ko": "정확성"
+        },
+        {
+          "en": "gradually",
+          "ko": "점점"
+        },
+        {
+          "en": "logical",
+          "ko": "논리적인"
+        },
+        {
+          "en": "gaps",
+          "ko": "빈틈"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기"
+        },
+        {
+          "en": "earlier",
+          "ko": "예전의"
+        },
+        {
+          "en": "stage",
+          "ko": "단계"
+        },
+        {
+          "en": "perception",
+          "ko": "인식"
+        },
+        {
+          "en": "intense",
+          "ko": "강한"
+        },
+        {
+          "en": "preoccupation",
+          "ko": "집착"
+        },
+        {
+          "en": "vision",
+          "ko": "그림, 시각"
+        },
+        {
+          "en": "gives",
+          "ko": "주다"
+        },
+        {
+          "en": "way",
+          "ko": "길 · give way to = ~로 바뀌다"
+        }
+      ],
+      "slashes": [
+        "in our stories",
+        "stage of perception―",
+        "the whole vision"
+      ],
+      "steps": [
+        {
+          "id": "s4_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "eliminate",
+            "the logical gaps",
+            "intense preoccupation",
+            "gives way to"
+          ],
+          "answers": [
+            "We",
+            "eliminate",
+            "the logical gaps"
+          ],
+          "roles": {
+            "We": "S",
+            "eliminate": "V",
+            "the logical gaps": "O"
+          },
+          "brief": {
+            "ask": "as 앞에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "intense preoccupation": "그건 as(~하면서) 뒤 덩어리 안의 주어예요. as 앞에서 찾아봐요.",
+              "gives way to": "그건 as 뒤 덩어리 안의 동사예요. as 앞에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 eliminate, 목적어는 the logical gaps(논리적 빈틈)예요."
+          },
+          "method": 0,
+          "faded": [
+            "―characteristic of our earlier stage of perception―"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "give way to",
+              "text": "'~에 자리를 내주다, ~로 바뀌다'예요. A gives way to B = A가 B로 바뀌다.",
+              "mark": "gives way to"
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "We",
+            "also gradually",
+            "eliminate",
+            "the logical gaps",
+            "in our stories"
+          ],
+          "answers": [
+            "We",
+            "in our stories",
+            "the logical gaps",
+            "also gradually",
+            "eliminate"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We",
+                "ko": "우리는"
+              },
+              " ",
+              {
+                "en": "in our stories",
+                "ko": "우리 이야기 속의"
+              },
+              " ",
+              {
+                "en": "the logical gaps",
+                "ko": "논리적 빈틈"
+              },
+              "을 ",
+              {
+                "en": "also gradually",
+                "ko": "또한 점점"
+              },
+              " ",
+              {
+                "en": "eliminate",
+                "ko": "없앤다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "We also gradually eliminate the logical gaps in our stories.",
+          "tips": [
+            {
+              "label": "give way to",
+              "text": "'~에 자리를 내주다, ~로 바뀌다'예요. A gives way to B = A가 B로 바뀌다.",
+              "mark": "gives way to"
+            }
+          ]
+        },
+        {
+          "id": "s4_shift",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "as 뒤를 봐요. 전체 그림에 대한 집착(the whole vision)이 무엇에 대한 집착으로 바뀐대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "gives way to는 '~로 바뀌다'예요. to 뒤를 봐요.",
+              "gives way to는 '~로 바뀌다'예요. to 뒤를 봐요."
+            ],
+            "explain": "'gives way to preoccupation with correctness', 전체 그림 대신 정확성에 집착하게 된대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'gives way to preoccupation with correctness', 전체 그림 대신 정확성에 집착하게 된대요.",
+              "o1": "'gives way to preoccupation with correctness', 전체 그림 대신 정확성에 집착하게 된대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "상상력"
+            },
+            {
+              "id": "o1",
+              "label": "이야기의 길이"
+            },
+            {
+              "id": "o2",
+              "label": "정확성(correctness)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "gives way to",
+            "correctness"
+          ],
+          "tips": [
+            {
+              "label": "give way to",
+              "text": "'~에 자리를 내주다, ~로 바뀌다'예요. A gives way to B = A가 B로 바뀌다.",
+              "mark": "gives way to"
+            }
+          ]
+        },
+        {
+          "id": "s4_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "어릴 땐 전체 그림을 보고 논리적 빈틈도 있었는데, 자라면서 정확성을 따지게 돼요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": [
+                {
+                  "text": "the whole vision",
+                  "ko": "전체 그림",
+                  "fresh": true
+                },
+                {
+                  "text": "logical gaps",
+                  "ko": "논리적 빈틈",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "manual dexterity ↑",
+                  "ko": "손재주"
+                },
+                {
+                  "text": "mechanics of language",
+                  "ko": "언어 기술"
+                },
+                {
+                  "text": "correctness",
+                  "ko": "정확성",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "→"
+          },
+          "faded": [
+            "―characteristic of our earlier stage of perception―"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~3",
+                "icon": "✍️",
+                "en": "dexterity · handwriting · mechanics",
+                "ko": "8~16세에 손재주, 글씨, 언어 기술이 좋아져요",
+                "fresh": true
+              },
+              {
+                "label": "문장 4",
+                "icon": "🎯",
+                "en": "whole vision → correctness",
+                "ko": "전체 그림 대신 정확성을 따지게 돼요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "As a result, our writing and oral storying become increasingly conventional and literal, with an accompanying ________ of the spontaneity and originality that characterized our earlier efforts.",
+      "model_translation": "그 결과, 우리의 글쓰기와 구술은 점점 더 상투적이며 사실에 충실하게 되고, 우리의 초기 노력의 특징이었던 즉흥성과 독창성의 ________을 수반하게 된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "As a result",
+          "ko": "그 결과"
+        },
+        {
+          "en": "our writing and oral storying",
+          "ko": "우리의 글쓰기와 말로 하는 이야기"
+        },
+        {
+          "en": "become",
+          "ko": "~해지다"
+        },
+        {
+          "en": "increasingly conventional and literal",
+          "ko": "점점 틀에 박히고 글자 그대로인"
+        },
+        {
+          "en": "conventional and literal",
+          "ko": "틀에 박히고 글자 그대로인"
+        },
+        {
+          "en": "with an accompanying",
+          "ko": "~이 함께 따라오면서"
+        },
+        {
+          "en": "the spontaneity and originality",
+          "ko": "즉흥성과 독창성"
+        },
+        {
+          "en": "spontaneity and originality",
+          "ko": "즉흥성과 독창성"
+        },
+        {
+          "en": "that characterized our earlier efforts",
+          "ko": "예전 노력의 특징이었던"
+        },
+        {
+          "en": "earlier efforts",
+          "ko": "예전 노력"
+        },
+        {
+          "en": "result",
+          "ko": "결과"
+        },
+        {
+          "en": "writing",
+          "ko": "글쓰기"
+        },
+        {
+          "en": "oral",
+          "ko": "말로 하는"
+        },
+        {
+          "en": "storying",
+          "ko": "이야기하기"
+        },
+        {
+          "en": "increasingly",
+          "ko": "점점 더"
+        },
+        {
+          "en": "conventional",
+          "ko": "틀에 박힌, 관습적인"
+        },
+        {
+          "en": "literal",
+          "ko": "글자 그대로의"
+        },
+        {
+          "en": "accompanying",
+          "ko": "함께 따라오는"
+        },
+        {
+          "en": "spontaneity",
+          "ko": "즉흥성"
+        },
+        {
+          "en": "originality",
+          "ko": "독창성"
+        },
+        {
+          "en": "characterized",
+          "ko": "특징지었다"
+        },
+        {
+          "en": "earlier",
+          "ko": "예전의"
+        },
+        {
+          "en": "efforts",
+          "ko": "노력"
+        }
+      ],
+      "slashes": [
+        "oral storying",
+        "conventional and literal,",
+        "originality"
+      ],
+      "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "our writing and oral storying",
+            "become",
+            "increasingly conventional and literal",
+            "the spontaneity and originality"
+          ],
+          "answers": [
+            "our writing and oral storying",
+            "become",
+            "increasingly conventional and literal"
+          ],
+          "roles": {
+            "our writing and oral storying": "S",
+            "become": "V",
+            "increasingly conventional and literal": "C"
+          },
+          "brief": {
+            "ask": "빈칸 문장이에요. 주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the spontaneity and originality": "그건 with an accompanying ____ of 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 our writing and oral storying, 동사는 become, 보어는 increasingly conventional and literal이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_sort_now",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'conventional and literal(틀에 박히고 글자 그대로인)'은 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "As a result(그 결과) — 정확성에 집착하게 된 결과예요.",
+              "As a result(그 결과) — 정확성에 집착하게 된 결과예요."
+            ],
+            "explain": "As a result(그 결과) — 정확성에 집착하게 된 결과예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "As a result(그 결과) — 정확성에 집착하게 된 결과예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 어릴 때 (8살)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 자라고 난 뒤 (16살)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": [
+                {
+                  "text": "the whole vision",
+                  "ko": "전체 그림"
+                },
+                {
+                  "text": "logical gaps",
+                  "ko": "논리적 빈틈"
+                }
+              ]
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "manual dexterity ↑",
+                  "ko": "손재주"
+                },
+                {
+                  "text": "mechanics of language",
+                  "ko": "언어 기술"
+                },
+                {
+                  "text": "correctness",
+                  "ko": "정확성"
+                }
+              ]
+            },
+            "between": "→",
+            "sort": {
+              "words": [
+                "conventional and literal"
+              ],
+              "left": "왼쪽 · 어릴 때 (8살)",
+              "right": "오른쪽 · 자라고 난 뒤 (16살)"
+            }
+          },
+          "highlight": [
+            "conventional and literal"
+          ]
+        },
+        {
+          "id": "s5_sort_early",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 'spontaneity and originality(즉흥성과 독창성)'는 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "바로 뒤 'that characterized our earlier efforts'를 봐요. earlier는 '예전의'예요.",
+              "바로 뒤 'that characterized our earlier efforts'를 봐요. earlier는 '예전의'예요."
+            ],
+            "explain": "'that characterized our earlier efforts', 예전 노력의 특징이었대요. 그러니 어릴 때 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'that characterized our earlier efforts', 예전 노력의 특징이었대요. 그러니 어릴 때 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 어릴 때 (8살)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 자라고 난 뒤 (16살)"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": [
+                {
+                  "text": "the whole vision",
+                  "ko": "전체 그림"
+                },
+                {
+                  "text": "logical gaps",
+                  "ko": "논리적 빈틈"
+                }
+              ]
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "manual dexterity ↑",
+                  "ko": "손재주"
+                },
+                {
+                  "text": "mechanics of language",
+                  "ko": "언어 기술"
+                },
+                {
+                  "text": "correctness",
+                  "ko": "정확성"
+                },
+                {
+                  "text": "conventional and literal",
+                  "ko": "틀에 박힌"
+                }
+              ]
+            },
+            "between": "→",
+            "sort": {
+              "words": [
+                "spontaneity and originality"
+              ],
+              "left": "왼쪽 · 어릴 때 (8살)",
+              "right": "오른쪽 · 자라고 난 뒤 (16살)"
+            }
+          },
+          "highlight": [
+            "spontaneity and originality",
+            "earlier efforts"
+          ]
+        },
+        {
+          "id": "s5_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "자라면서 틀에 박힌 쪽이 늘어나요. 그럼 어릴 때의 즉흥성·독창성은 어떻게 될까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "두 쪽은 서로 반대예요. 한쪽이 늘면 다른 쪽은 어떻게 될지 생각해 봐요.",
+              "두 쪽은 서로 반대예요. 한쪽이 늘면 다른 쪽은 어떻게 될지 생각해 봐요."
+            ],
+            "explain": "틀에 박히고(conventional) 글자 그대로(literal)가 되는 건 즉흥성·독창성과 반대예요. 한쪽이 늘면 다른 쪽은 줄어들어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "틀에 박히고(conventional) 글자 그대로(literal)가 되는 건 즉흥성·독창성과 반대예요. 한쪽이 늘면 다른 쪽은 줄어들어요.",
+              "o1": "틀에 박히고(conventional) 글자 그대로(literal)가 되는 건 즉흥성·독창성과 반대예요. 한쪽이 늘면 다른 쪽은 줄어들어요."
+            },
+            "point": "빈칸 = 자라면서(conventional, literal) 어릴 때의 즉흥성·독창성이 줄어든다 → 잃음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "함께 늘어난다"
+            },
+            {
+              "id": "o1",
+              "label": "그대로 남는다"
+            },
+            {
+              "id": "o2",
+              "label": "줄어들고 사라진다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": [
+                {
+                  "text": "the whole vision",
+                  "ko": "전체 그림"
+                },
+                {
+                  "text": "logical gaps",
+                  "ko": "논리적 빈틈"
+                },
+                {
+                  "text": "spontaneity and originality",
+                  "ko": "즉흥성·독창성",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "manual dexterity ↑",
+                  "ko": "손재주"
+                },
+                {
+                  "text": "mechanics of language",
+                  "ko": "언어 기술"
+                },
+                {
+                  "text": "correctness",
+                  "ko": "정확성"
+                },
+                {
+                  "text": "conventional and literal",
+                  "ko": "틀에 박힌",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "→"
+          }
+        },
+        {
+          "id": "s5_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸 뒤 문장들도 같은 이야기인지 확인하며 계속 읽어 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "At this stage our vocabulary is firmly grounded.",
+      "model_translation": "이 단계에서 우리의 어휘는 확고하게 기반을 갖는다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "At this stage",
+          "ko": "이 단계에서"
+        },
+        {
+          "en": "our vocabulary",
+          "ko": "우리의 어휘"
+        },
+        {
+          "en": "is firmly grounded",
+          "ko": "단단히 자리 잡혀 있다"
+        },
+        {
+          "en": "stage",
+          "ko": "단계"
+        },
+        {
+          "en": "vocabulary",
+          "ko": "어휘"
+        },
+        {
+          "en": "firmly",
+          "ko": "단단히"
+        },
+        {
+          "en": "grounded",
+          "ko": "자리 잡은"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "At this stage",
+            "our vocabulary",
+            "is firmly grounded"
+          ],
+          "answers": [
+            "our vocabulary",
+            "is firmly grounded"
+          ],
+          "roles": {
+            "our vocabulary": "S",
+            "is firmly grounded": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "At this stage": "그건 '이 단계에서', 때를 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 our vocabulary, 동사는 is (firmly) grounded예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic"
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "At this stage",
+            "our vocabulary",
+            "is firmly grounded"
+          ],
+          "answers": [
+            "At this stage",
+            "our vocabulary",
+            "is firmly grounded"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "At this stage",
+                "ko": "이 단계에서"
+              },
+              " ",
+              {
+                "en": "our vocabulary",
+                "ko": "우리의 어휘는"
+              },
+              " ",
+              {
+                "en": "is firmly grounded",
+                "ko": "단단히 자리 잡혀 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_ground",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 시기엔 어휘가 단단히 자리 잡혀 있대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "firmly grounded"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "We use words everyone else uses.",
+      "model_translation": "우리는 모든 사람이 사용하는 단어를 사용한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "use",
+          "ko": "쓰다"
+        },
+        {
+          "en": "words",
+          "ko": "단어들"
+        },
+        {
+          "en": "everyone else uses",
+          "ko": "다른 모든 사람이 쓰는"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "use",
+            "words",
+            "everyone else uses"
+          ],
+          "answers": [
+            "We",
+            "use",
+            "words"
+          ],
+          "roles": {
+            "We": "S",
+            "use": "V",
+            "words": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "everyone else uses": "그건 앞의 words를 꾸며 주는 덩어리예요(다른 모든 사람이 쓰는)."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 use, 목적어는 words예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic"
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "We",
+            "use",
+            "words",
+            "everyone else uses"
+          ],
+          "answers": [
+            "We",
+            "everyone else uses",
+            "words",
+            "use"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We",
+                "ko": "우리는"
+              },
+              " ",
+              {
+                "en": "everyone else uses",
+                "ko": "다른 모든 사람이 쓰는"
+              },
+              " ",
+              {
+                "en": "words",
+                "ko": "단어들"
+              },
+              "을 ",
+              {
+                "en": "use",
+                "ko": "쓴다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_same",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "남들이 다 쓰는 단어를 쓴대요. conventional(틀에 박힌)과 같은 말이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": [
+                {
+                  "text": "logical gaps",
+                  "ko": "논리적 빈틈"
+                },
+                {
+                  "text": "spontaneity and originality",
+                  "ko": "즉흥성·독창성"
+                }
+              ]
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "correctness",
+                  "ko": "정확성"
+                },
+                {
+                  "text": "conventional and literal",
+                  "ko": "틀에 박힌"
+                },
+                {
+                  "text": "words everyone else uses",
+                  "ko": "남들이 쓰는 단어",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "→"
+          },
+          "highlight": [
+            "everyone else uses"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s7_example",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "어릴 땐 자동차를 '빵빵이'처럼 내가 지어낸 말로 불러요. 자라고 나면 남들이 다 쓰는 '자동차'라고 불러요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "picture",
+            "title": "칠판 그림",
+            "src": "/assets/ppangppang-car.svg",
+            "alt": "작은 아이(어릴 때, 8살)가 자동차를 보고 '빵빵이!', 조금 큰 아이는 '빵빵… 차?', 다 큰 사람(16살)은 '자동차'. 내가 지어낸 말 → 남들이 다 쓰는 말",
+            "words": [
+              {
+                "text": "words everyone else uses"
+              }
+            ]
+          }
+        },
+        {
+          "id": "story_7",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~3",
+                "icon": "✍️",
+                "en": "dexterity · handwriting · mechanics",
+                "ko": "8~16세에 손재주, 글씨, 언어 기술이 좋아져요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "🎯",
+                "en": "whole vision → correctness",
+                "ko": "전체 그림 대신 정확성을 따지게 돼요",
+                "fresh": false
+              },
+              {
+                "label": "빈칸 문장",
+                "icon": "📏",
+                "en": "conventional and literal · ____",
+                "ko": "글이 틀에 박히고 글자 그대로가 되면서, 예전의 즉흥성·독창성에 ____",
+                "fresh": true
+              },
+              {
+                "label": "문장 6~7",
+                "icon": "📚",
+                "en": "words everyone else uses",
+                "ko": "어휘가 자리 잡고, 남들이 쓰는 단어를 써요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "We have little need to invent metaphors to communicate.",
+      "model_translation": "우리는 의사소통하기 위해 은유를 지어낼 필요가 거의 없다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "little need",
+          "ko": "거의 없는 필요"
+        },
+        {
+          "en": "have",
+          "ko": "가지다"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "have little need",
+          "ko": "필요가 거의 없다"
+        },
+        {
+          "en": "to invent metaphors",
+          "ko": "은유를 지어낼"
+        },
+        {
+          "en": "metaphors",
+          "ko": "은유"
+        },
+        {
+          "en": "to communicate",
+          "ko": "의사소통하기 위해"
+        },
+        {
+          "en": "little",
+          "ko": "거의 없는"
+        },
+        {
+          "en": "invent",
+          "ko": "지어내다"
+        },
+        {
+          "en": "communicate",
+          "ko": "의사소통하다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "have",
+            "little need",
+            "metaphors"
+          ],
+          "answers": [
+            "We",
+            "have",
+            "little need"
+          ],
+          "roles": {
+            "We": "S",
+            "have": "V",
+            "little need": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "metaphors": "그건 to invent(지어낼) 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 have, 목적어는 little need(거의 없는 필요)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "tips": [
+            {
+              "label": "little vs a little",
+              "text": "little = 거의 없는(부정), a little = 조금 있는(긍정)이에요.",
+              "mark": "little"
+            }
+          ]
+        },
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "candidates": [
+            "We",
+            "have little need",
+            "to invent metaphors",
+            "to communicate"
+          ],
+          "answers": [
+            "We",
+            "to communicate",
+            "to invent metaphors",
+            "have little need"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We",
+                "ko": "우리는"
+              },
+              " ",
+              {
+                "en": "to communicate",
+                "ko": "의사소통하기 위해"
+              },
+              " ",
+              {
+                "en": "to invent metaphors",
+                "ko": "은유를 지어낼"
+              },
+              " ",
+              {
+                "en": "have little need",
+                "ko": "필요가 거의 없다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "little vs a little",
+              "text": "little = 거의 없는(부정), a little = 조금 있는(긍정)이에요.",
+              "mark": "little"
+            }
+          ]
+        },
+        {
+          "id": "s8_little",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "We have little need to invent metaphors는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "little은 a 없이 쓰면 '거의 없는'이에요. a little(조금 있는)과 달라요.",
+              "little은 a 없이 쓰면 '거의 없는'이에요. a little(조금 있는)과 달라요."
+            ],
+            "explain": "little need는 '필요가 거의 없음'이에요. 남들이 쓰는 말로 충분하니 은유를 지어낼 일이 거의 없대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "little need는 '필요가 거의 없음'이에요. 남들이 쓰는 말로 충분하니 은유를 지어낼 일이 거의 없대요.",
+              "o2": "little need는 '필요가 거의 없음'이에요. 남들이 쓰는 말로 충분하니 은유를 지어낼 일이 거의 없대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "은유를 많이 지어내야 한다"
+            },
+            {
+              "id": "o1",
+              "label": "은유를 지어낼 필요가 거의 없다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "은유를 조금은 지어낸다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "little need"
+          ],
+          "tips": [
+            {
+              "label": "little vs a little",
+              "text": "little = 거의 없는(부정), a little = 조금 있는(긍정)이에요.",
+              "mark": "little"
+            }
+          ]
+        },
+        {
+          "id": "s8_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "은유를 지어내는 건 어릴 때 쪽이에요. 자라면서는 그럴 필요가 거의 없어요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": [
+                {
+                  "text": "logical gaps",
+                  "ko": "논리적 빈틈"
+                },
+                {
+                  "text": "spontaneity and originality",
+                  "ko": "즉흥성·독창성"
+                },
+                {
+                  "text": "invent metaphors",
+                  "ko": "은유 지어내기",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "correctness",
+                  "ko": "정확성"
+                },
+                {
+                  "text": "conventional and literal",
+                  "ko": "틀에 박힌"
+                },
+                {
+                  "text": "words everyone else uses",
+                  "ko": "남들이 쓰는 단어"
+                }
+              ]
+            },
+            "between": "→"
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "By now we know that a star is “a hot gaseous mass floating in space” in contrast to our innocent stage, when we noticed, “Look that star is like a flower without a stem!”",
+      "model_translation": "이제 우리는 '봐 저 별은 줄기가 없는 꽃과 같아!'라고 말했던 순진한 단계와 대조하여, 별이 '우주를 떠다니는 뜨거운 기체 덩어리'라는 것을 알고 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "know",
+          "ko": "알다"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "By now",
+          "ko": "이제는"
+        },
+        {
+          "en": "we know",
+          "ko": "우리는 안다"
+        },
+        {
+          "en": "a star",
+          "ko": "별"
+        },
+        {
+          "en": "a hot gaseous mass",
+          "ko": "뜨거운 기체 덩어리"
+        },
+        {
+          "en": "floating in space",
+          "ko": "우주를 떠다니는"
+        },
+        {
+          "en": "in contrast to",
+          "ko": "~와 대조적으로"
+        },
+        {
+          "en": "our innocent stage",
+          "ko": "우리의 순진한 단계"
+        },
+        {
+          "en": "when we noticed",
+          "ko": "그때 우리는 ~라고 알아챘다"
+        },
+        {
+          "en": "Look",
+          "ko": "봐"
+        },
+        {
+          "en": "that star",
+          "ko": "저 별"
+        },
+        {
+          "en": "is like",
+          "ko": "~ 같다"
+        },
+        {
+          "en": "a flower without a stem",
+          "ko": "줄기 없는 꽃"
+        },
+        {
+          "en": "now",
+          "ko": "지금"
+        },
+        {
+          "en": "star",
+          "ko": "별"
+        },
+        {
+          "en": "hot",
+          "ko": "뜨거운"
+        },
+        {
+          "en": "gaseous",
+          "ko": "기체의"
+        },
+        {
+          "en": "mass",
+          "ko": "덩어리"
+        },
+        {
+          "en": "floating",
+          "ko": "떠다니는"
+        },
+        {
+          "en": "space",
+          "ko": "우주"
+        },
+        {
+          "en": "contrast",
+          "ko": "대조"
+        },
+        {
+          "en": "innocent",
+          "ko": "순진한"
+        },
+        {
+          "en": "stage",
+          "ko": "단계"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "noticed",
+          "ko": "알아챘다"
+        },
+        {
+          "en": "flower",
+          "ko": "꽃"
+        },
+        {
+          "en": "without",
+          "ko": "~ 없이"
+        },
+        {
+          "en": "stem",
+          "ko": "줄기"
+        }
+      ],
+      "slashes": [
+        "floating in space”",
+        "innocent stage,"
+      ],
+      "steps": [
+        {
+          "id": "s9_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "we",
+            "know",
+            "a star",
+            "is",
+            "a hot gaseous mass"
+          ],
+          "answers": [
+            "we",
+            "know"
+          ],
+          "roles": {
+            "we": "S",
+            "know": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "a star": "그건 that 뒤 덩어리 안의 주어예요(무엇을 아는지).",
+              "is": "그건 that 뒤 덩어리 안의 동사예요.",
+              "a hot gaseous mass": "그건 that 뒤 덩어리 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 we, 동사는 know예요. that 뒤가 아는 내용이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s9_basic",
+          "tips": [
+            {
+              "label": "in contrast to",
+              "text": "'~와 대조적으로'예요. 앞뒤가 반대라는 신호예요.",
+              "mark": "in contrast to"
+            }
+          ]
+        },
+        {
+          "id": "s9_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s9_basic",
+          "candidates": [
+            "By now",
+            "we know",
+            "a star",
+            "a hot gaseous mass"
+          ],
+          "answers": [
+            "By now",
+            "we know",
+            "a star",
+            "a hot gaseous mass"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "By now",
+                "ko": "이제는"
+              },
+              " ",
+              {
+                "en": "we know",
+                "ko": "우리는 안다"
+              },
+              " — ",
+              {
+                "en": "a star",
+                "ko": "별"
+              },
+              "이 ",
+              {
+                "en": "a hot gaseous mass",
+                "ko": "뜨거운 기체 덩어리"
+              },
+              "라는 걸."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "By now we know that a star is “a hot gaseous mass floating in space.”",
+          "tips": [
+            {
+              "label": "in contrast to",
+              "text": "'~와 대조적으로'예요. 앞뒤가 반대라는 신호예요.",
+              "mark": "in contrast to"
+            }
+          ]
+        },
+        {
+          "id": "s9_star",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "지금은 별을 '뜨거운 기체 덩어리'라고 사실 그대로 말해요. 어릴 땐 '줄기 없는 꽃 같다'고 은유로 말했어요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "a hot gaseous mass"
+          ],
+          "highlight_alt": [
+            "a flower without a stem"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "어릴 때 vs 자라고 난 뒤",
+            "left": {
+              "label": "어릴 때 (8살)",
+              "words": [
+                {
+                  "text": "spontaneity and originality",
+                  "ko": "즉흥성·독창성"
+                },
+                {
+                  "text": "invent metaphors",
+                  "ko": "은유 지어내기"
+                },
+                {
+                  "text": "like a flower without a stem",
+                  "ko": "줄기 없는 꽃 같다",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "자라고 난 뒤 (16살)",
+              "words": [
+                {
+                  "text": "conventional and literal",
+                  "ko": "틀에 박힌"
+                },
+                {
+                  "text": "words everyone else uses",
+                  "ko": "남들이 쓰는 단어"
+                },
+                {
+                  "text": "a hot gaseous mass",
+                  "ko": "뜨거운 기체 덩어리",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "→"
+          },
+          "tips": [
+            {
+              "label": "in contrast to",
+              "text": "'~와 대조적으로'예요. 앞뒤가 반대라는 신호예요.",
+              "mark": "in contrast to"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "story_9",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~3",
+                "icon": "✍️",
+                "en": "dexterity · handwriting · mechanics",
+                "ko": "8~16세에 손재주, 글씨, 언어 기술이 좋아져요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "🎯",
+                "en": "whole vision → correctness",
+                "ko": "전체 그림 대신 정확성을 따지게 돼요",
+                "fresh": false
+              },
+              {
+                "label": "빈칸 문장",
+                "icon": "📏",
+                "en": "conventional and literal · ____",
+                "ko": "글이 틀에 박히고 글자 그대로가 되면서, 예전의 즉흥성·독창성에 ____",
+                "fresh": false
+              },
+              {
+                "label": "문장 6~7",
+                "icon": "📚",
+                "en": "words everyone else uses",
+                "ko": "어휘가 자리 잡고, 남들이 쓰는 단어를 써요",
+                "fresh": false
+              },
+              {
+                "label": "문장 8~9",
+                "icon": "⭐",
+                "en": "no metaphors · gaseous mass",
+                "ko": "은유를 지어낼 필요가 없어요 — 별은 '줄기 없는 꽃'이 아니라 '기체 덩어리'",
+                "fresh": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "s9_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 자라면서 어릴 때의 즉흥성·독창성이 어떻게 되는지였어요. 그 말을 보기에서 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

@@ -1,0 +1,3025 @@
+{
+  "id": "moeui-2024-03-40-brain-plasticity",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 40번 (요약문 완성, 2점)",
+  "brief": {
+    "topic": "요약문 푸는 법: 지문을 먼저 읽으며 두 쪽 말을 칠판에 모으기 → 요약문 (A)(B)가 각각 어느 쪽인지 → 그 뜻의 말 고르기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "summary",
+    "labels": [
+      "지문 먼저 읽기",
+      "두 쪽 말 모으기",
+      "(A)(B) 맞추기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-brain-plastic.svg",
+      "alt": "칠판: Plastic toy(플라스틱 장난감) ↔ Brain(뇌)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "뇌는 한 번 모양이 잡히면 평생 그대로일까요? 이번 글은 '뇌 가소성'이라는 말의 진짜 뜻을 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "요약문 문제는 지문을 먼저 읽으며 글쓴이 주장을 잡아요. 같은 쪽 말을 칠판에 모아 둘 거예요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "마지막에 요약문을 읽고, (A)와 (B)가 칠판의 어느 쪽 말인지 보고 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?",
+    "underline": [
+      "(A) ________",
+      "(B) ________"
+    ],
+    "sentence": 16,
+    "analysis_first": true,
+    "wrong_rate": 48.3,
+    "wrong_rank": 11,
+    "glosses": [
+      {
+        "en": "permanence",
+        "ko": "영속성, 변하지 않음"
+      },
+      {
+        "en": "transformation",
+        "ko": "변화, 변형"
+      },
+      {
+        "en": "flexibility",
+        "ko": "유연성"
+      },
+      {
+        "en": "sympathizing",
+        "ko": "공감하기"
+      },
+      {
+        "en": "adaptability",
+        "ko": "적응성"
+      },
+      {
+        "en": "restoration",
+        "ko": "회복, 복원"
+      },
+      {
+        "en": "firmness",
+        "ko": "단단함"
+      },
+      {
+        "en": "mobility",
+        "ko": "이동성"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "permanence ······ transformation",
+        "keywords": [],
+        "ko": "영속성(변하지 않음) ······ 변화",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "flexibility ······ sympathizing",
+        "keywords": [],
+        "ko": "유연성 ······ 공감하기"
+      },
+      {
+        "id": "3",
+        "label": "adaptability ······ restoration",
+        "keywords": [],
+        "ko": "적응성 ······ 회복"
+      },
+      {
+        "id": "4",
+        "label": "firmness ······ sympathizing",
+        "keywords": [],
+        "ko": "단단함 ······ 공감하기"
+      },
+      {
+        "id": "5",
+        "label": "mobility ······ transformation",
+        "keywords": [],
+        "ko": "이동성 ······ 변화"
+      }
+    ],
+    "brief": {
+      "ask": "(A)는 칠판 왼쪽(변하지 않음), (B)는 오른쪽(계속되는 변화)이에요. 둘 다 맞는 보기를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 어떤 사람들은 뇌 가소성을 성형되자마자 영원히 그대로(permanence)라고 이해하지만, 뇌는 실제로 평생 변할(transformation) 수 있어요.",
+      "final_wrong": "정답은 ①이에요. (A) 한 번 성형하면 그대로 = permanence, (B) 계속되는 변화 = transformation이에요.",
+      "option_feedback": {
+        "2": "flexibility(유연성)는 plastic의 '잘 휘는' 느낌이지만, (A)는 '한 번 만들면 그대로'예요. 공감(sympathizing)도 글에 없어요.",
+        "3": "adaptability(적응성)는 오히려 오른쪽 말에 가까워요. restoration(원래대로 되돌림)은 계속 바뀐다는 말과 달라요.",
+        "4": "firmness(단단함)는 (A)에 가깝지만, (B)의 공감하기(sympathizing)는 글에 없어요.",
+        "5": "(B) transformation은 맞지만, (A) mobility(이동성)는 '영원히 그대로'와 반대예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 14.6%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "⑤는 (B) transformation은 맞아요. 그런데 (A) mobility(이동성, 움직임)는 '성형되자마자 영원히 그대로'와 반대예요. (A)에는 변하지 않음(permanence)이 와야 해요.",
+          "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "plastic이 잘 변하는 느낌이라 (A)를 그렇게 골랐어요",
+              "skills": [
+                "word_feeling"
+              ],
+              "reply": "알려 줘서 고마워요. 이 글에서 plastic이라는 말이 주는 느낌은 '한 번 만들면 그대로'였어요. 단어의 평소 느낌보다 글에서 어떻게 쓰였는지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "(B)만 보고 골랐어요",
+              "skills": [
+                "two_blanks"
+              ],
+              "reply": "알려 줘서 고마워요. 요약문은 (A)와 (B)가 둘 다 맞아야 해요. 앞으로 두 칸을 하나씩 확인하게 할게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "word_feeling",
+                "two_blanks"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 글 속 뜻과 두 칸 확인을 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(A)",
+                "text": "mold once · keep it that way forever",
+                "ko": "변하지 않음 = permanence",
+                "tone": "hl"
+              },
+              {
+                "label": "(B)",
+                "text": "remolding · always changing · ongoing change",
+                "ko": "변화 = transformation",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "plasticity",
+        "ko": "가소성"
+      },
+      {
+        "en": "neuroscience",
+        "ko": "신경 과학"
+      },
+      {
+        "en": "intentionally",
+        "ko": "의도적으로"
+      },
+      {
+        "en": "suggest",
+        "ko": "암시하다"
+      },
+      {
+        "en": "carry on",
+        "ko": "계속하다"
+      },
+      {
+        "en": "remold",
+        "ko": "다시 성형하다"
+      },
+      {
+        "en": "respond to",
+        "ko": "~에 반응하다"
+      },
+      {
+        "en": "modify",
+        "ko": "수정하다"
+      },
+      {
+        "en": "immobilize",
+        "ko": "고정시키다"
+      },
+      {
+        "en": "continually",
+        "ko": "계속해서"
+      },
+      {
+        "en": "blossom",
+        "ko": "피어나다, 번성하다"
+      },
+      {
+        "en": "encounter",
+        "ko": "우연히 만나다"
+      },
+      {
+        "en": "viewpoint",
+        "ko": "관점"
+      },
+      {
+        "en": "border on",
+        "ko": "거의 ~에 가깝다"
+      },
+      {
+        "en": "narrator",
+        "ko": "화자"
+      },
+      {
+        "en": "alter",
+        "ko": "바뀌다"
+      },
+      {
+        "en": "notion",
+        "ko": "개념"
+      },
+      {
+        "en": "ongoing",
+        "ko": "계속되는"
+      }
+    ],
+    "options": [
+      {
+        "en": "permanence",
+        "ko": "영속성"
+      },
+      {
+        "en": "transformation",
+        "ko": "변화"
+      },
+      {
+        "en": "flexibility",
+        "ko": "유연성"
+      },
+      {
+        "en": "adaptability",
+        "ko": "적응성"
+      },
+      {
+        "en": "restoration",
+        "ko": "회복"
+      },
+      {
+        "en": "mobility",
+        "ko": "이동성"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "“Brain plasticity” is a term we use in neuroscience.",
+      "model_translation": "'뇌 가소성'은 우리가 신경 과학에서 사용하는 용어이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "neuroscience",
+          "ko": "신경 과학"
+        },
+        {
+          "en": "a term",
+          "ko": "용어"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "Brain plasticity",
+          "ko": "뇌 가소성 · 뇌가 바뀔 수 있는 성질"
+        },
+        {
+          "en": "is a term",
+          "ko": "용어이다"
+        },
+        {
+          "en": "we use",
+          "ko": "우리가 쓰는"
+        },
+        {
+          "en": "in neuroscience",
+          "ko": "신경 과학에서"
+        },
+        {
+          "en": "term",
+          "ko": "용어"
+        },
+        {
+          "en": "Brain",
+          "ko": "뇌"
+        },
+        {
+          "en": "plasticity",
+          "ko": "가소성"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Brain plasticity",
+            "is",
+            "a term",
+            "neuroscience"
+          ],
+          "answers": [
+            "Brain plasticity",
+            "is",
+            "a term"
+          ],
+          "roles": {
+            "Brain plasticity": "S",
+            "is": "V",
+            "a term": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "neuroscience": "그건 in 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 “Brain plasticity”, 동사는 is, 보어는 a term이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "tips": [
+            {
+              "label": "요약문 문제 요령",
+              "text": "지문을 먼저 읽으며 글쓴이 주장을 잡고 같은 쪽 말을 모아요. 마지막에 요약문 (A)(B)가 각각 어느 쪽 말인지 보고 골라요."
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "Brain plasticity",
+            "is a term",
+            "we use",
+            "in neuroscience"
+          ],
+          "answers": [
+            "Brain plasticity",
+            "in neuroscience",
+            "we use",
+            "is a term"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Brain plasticity",
+                "ko": "뇌 가소성은"
+              },
+              " ",
+              {
+                "en": "in neuroscience",
+                "ko": "신경 과학에서"
+              },
+              " ",
+              {
+                "en": "we use",
+                "ko": "우리가 쓰는"
+              },
+              " ",
+              {
+                "en": "is a term",
+                "ko": "용어이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "요약문 문제 요령",
+              "text": "지문을 먼저 읽으며 글쓴이 주장을 잡고 같은 쪽 말을 모아요. 마지막에 요약문 (A)(B)가 각각 어느 쪽 말인지 보고 골라요."
+            }
+          ]
+        },
+        {
+          "id": "s1_term",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "뇌 가소성(brain plasticity)이라는 신경 과학 용어 이야기예요. plastic이라는 말에서 나온 용어예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "Brain plasticity"
+          ],
+          "tips": [
+            {
+              "label": "요약문 문제 요령",
+              "text": "지문을 먼저 읽으며 글쓴이 주장을 잡고 같은 쪽 말을 모아요. 마지막에 요약문 (A)(B)가 각각 어느 쪽 말인지 보고 골라요."
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Whether intentionally or not, “plasticity” suggests that the key idea is to mold something once and keep it that way forever: to shape the plastic toy and never change it again.",
+      "model_translation": "의도적이든 아니든, '가소성'은 핵심 개념이 무언가를 한 번 성형하고 그것을 그대로 영원히 유지하는 것이라고 시사한다. 즉, 플라스틱 장난감의 모양을 만들고 다시는 그것을 바꾸지 않는 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Whether intentionally or not",
+          "ko": "의도했든 아니든"
+        },
+        {
+          "en": "plasticity",
+          "ko": "가소성"
+        },
+        {
+          "en": "suggests",
+          "ko": "암시하다"
+        },
+        {
+          "en": "the key idea",
+          "ko": "핵심 개념"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "to mold something once",
+          "ko": "무언가를 한 번 성형하는 것"
+        },
+        {
+          "en": "keep it that way forever",
+          "ko": "영원히 그대로 두다"
+        },
+        {
+          "en": "to shape the plastic toy",
+          "ko": "플라스틱 장난감의 모양을 만드는 것"
+        },
+        {
+          "en": "never change it again",
+          "ko": "다시는 바꾸지 않다"
+        },
+        {
+          "en": "Whether",
+          "ko": "~이든"
+        },
+        {
+          "en": "intentionally",
+          "ko": "의도적으로"
+        },
+        {
+          "en": "idea",
+          "ko": "개념"
+        },
+        {
+          "en": "mold",
+          "ko": "성형하다, 모양을 만들다"
+        },
+        {
+          "en": "keep",
+          "ko": "유지하다"
+        },
+        {
+          "en": "way",
+          "ko": "방식, 상태"
+        },
+        {
+          "en": "forever",
+          "ko": "영원히"
+        },
+        {
+          "en": "shape",
+          "ko": "모양을 만들다"
+        },
+        {
+          "en": "plastic",
+          "ko": "플라스틱"
+        },
+        {
+          "en": "change",
+          "ko": "바꾸다"
+        },
+        {
+          "en": "again",
+          "ko": "다시"
+        }
+      ],
+      "slashes": [
+        "intentionally or not,",
+        "the key idea is",
+        "that way forever:",
+        "the plastic toy"
+      ],
+      "steps": [
+        {
+          "id": "s2_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Whether intentionally or not",
+            "plasticity",
+            "suggests",
+            "the key idea",
+            "is"
+          ],
+          "answers": [
+            "plasticity",
+            "suggests"
+          ],
+          "roles": {
+            "plasticity": "S",
+            "suggests": "V"
+          },
+          "brief": {
+            "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "Whether intentionally or not": "그건 '의도했든 아니든', 덧붙인 말이에요.",
+              "the key idea": "그건 that 뒤 덩어리 안의 주어예요. 먼저 바깥 문장을 봐요.",
+              "is": "그건 that 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 “plasticity”, 동사는 suggests(암시하다)예요. that 뒤가 그 말이 떠올리게 하는 내용이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "plasticity라는 말은 무엇을 떠올리게 한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "that 뒤 'to mold something once and keep it that way forever'를 봐요. 콜론(:) 뒤가 같은 말을 풀어 줘요.",
+              "that 뒤 'to mold something once and keep it that way forever'를 봐요. 콜론(:) 뒤가 같은 말을 풀어 줘요."
+            ],
+            "explain": "'to mold something once and keep it that way forever', 한 번 성형하고 영원히 그대로 두는 거래요. 콜론 뒤 '장난감을 만들고 다시는 안 바꾼다'도 같은 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'to mold something once and keep it that way forever', 한 번 성형하고 영원히 그대로 두는 거래요. 콜론 뒤 '장난감을 만들고 다시는 안 바꾼다'도 같은 말이에요.",
+              "o1": "'to mold something once and keep it that way forever', 한 번 성형하고 영원히 그대로 두는 거래요. 콜론 뒤 '장난감을 만들고 다시는 안 바꾼다'도 같은 말이에요."
+            },
+            "point": "plasticity라는 말의 느낌 = 한 번 성형하고(mold once) 영원히 그대로(keep it that way forever)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "계속해서 모양을 바꾸는 것"
+            },
+            {
+              "id": "o1",
+              "label": "부드럽게 잘 휘는 것"
+            },
+            {
+              "id": "o2",
+              "label": "한 번 모양을 만들고 영원히 그대로 두는 것",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "mold something once",
+            "keep it that way forever",
+            "never change it again"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형",
+                  "fresh": true
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로",
+                  "fresh": true
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": []
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "keep it that way",
+              "text": "'그 상태 그대로 두다'예요. that way = 그런 식으로, 그 상태로.",
+              "mark": "that way"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "But that’s not what the brain does.",
+      "model_translation": "하지만 그것은 뇌가 하는 것이 아니다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "not",
+          "ko": "~이 아니다"
+        },
+        {
+          "en": "But",
+          "ko": "하지만"
+        },
+        {
+          "en": "that’s not",
+          "ko": "그것은 ~이 아니다"
+        },
+        {
+          "en": "what the brain does",
+          "ko": "뇌가 하는 일"
+        },
+        {
+          "en": "brain",
+          "ko": "뇌"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "that",
+            "’s",
+            "not",
+            "what the brain does"
+          ],
+          "answers": [
+            "that",
+            "’s",
+            "what the brain does"
+          ],
+          "roles": {
+            "that": "S",
+            "’s": "V",
+            "what the brain does": "C"
+          },
+          "brief": {
+            "ask": "that’s는 that is를 줄인 말이에요. 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "not": "그건 '~이 아니다', 동사 뒤에 붙은 부정어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "that’s = that is예요. 주어 that, 동사 ’s(is), not 뒤 what the brain does(뇌가 하는 일)가 보어 덩어리예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic"
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "But",
+            "that’s not",
+            "what the brain does"
+          ],
+          "answers": [
+            "But",
+            "that’s not",
+            "what the brain does"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "But",
+                "ko": "하지만"
+              },
+              " ",
+              {
+                "en": "that’s not",
+                "ko": "그것은 ~이 아니다"
+              },
+              " ",
+              {
+                "en": "what the brain does",
+                "ko": "뇌가 하는 일"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_but",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "But — 'that’s not what the brain does'는 무슨 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "that은 앞 문장의 '한 번 성형하고 영원히 그대로'예요. 뇌는 그렇지 않대요.",
+              "that은 앞 문장의 '한 번 성형하고 영원히 그대로'예요. 뇌는 그렇지 않대요."
+            ],
+            "explain": "that(한 번 성형하고 그대로 두기)은 뇌가 하는 일이 아니래요. But으로 말의 느낌과 실제 뇌를 뒤집어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "that(한 번 성형하고 그대로 두기)은 뇌가 하는 일이 아니래요. But으로 말의 느낌과 실제 뇌를 뒤집어요.",
+              "o2": "that(한 번 성형하고 그대로 두기)은 뇌가 하는 일이 아니래요. But으로 말의 느낌과 실제 뇌를 뒤집어요."
+            },
+            "point": "But that’s not what the brain does = 뇌는 '한 번 만들고 그대로'가 아니다 (글쓴이 주장 시작)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "뇌는 한 번 만들고 그대로 두지 않는다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "뇌는 플라스틱 장난감과 똑같다"
+            },
+            {
+              "id": "o2",
+              "label": "뇌는 처음부터 완성돼 있다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "But",
+            "not what the brain does"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "It carries on remolding itself throughout your life.",
+      "model_translation": "뇌는 여러분의 생애 내내 그 자신을 재성형하는 것을 계속한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "your life",
+          "ko": "너의 삶"
+        },
+        {
+          "en": "It",
+          "ko": "그것(뇌)"
+        },
+        {
+          "en": "carries on",
+          "ko": "계속하다"
+        },
+        {
+          "en": "remolding itself",
+          "ko": "스스로를 다시 성형하는 것"
+        },
+        {
+          "en": "throughout your life",
+          "ko": "평생 동안"
+        },
+        {
+          "en": "carries",
+          "ko": "계속하다 · carry on"
+        },
+        {
+          "en": "remolding",
+          "ko": "다시 성형하는 것"
+        },
+        {
+          "en": "throughout",
+          "ko": "~ 내내"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "It",
+            "carries on",
+            "remolding itself",
+            "your life"
+          ],
+          "answers": [
+            "It",
+            "carries on",
+            "remolding itself"
+          ],
+          "roles": {
+            "It": "S",
+            "carries on": "V",
+            "remolding itself": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "your life": "그건 throughout 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 It(뇌), 동사는 carries on, 목적어는 remolding itself예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "carry on -ing",
+              "text": "'계속 ~하다'예요. carries on remolding = 계속 다시 성형한다.",
+              "mark": "carries on"
+            },
+            {
+              "label": "re-",
+              "text": "'다시'예요. remold = 다시 성형하다.",
+              "mark": "remolding"
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "It",
+            "carries on",
+            "remolding itself",
+            "throughout your life"
+          ],
+          "answers": [
+            "It",
+            "throughout your life",
+            "remolding itself",
+            "carries on"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "It",
+                "ko": "그것(뇌)은"
+              },
+              " ",
+              {
+                "en": "throughout your life",
+                "ko": "평생 동안"
+              },
+              " ",
+              {
+                "en": "remolding itself",
+                "ko": "스스로를 다시 성형하기"
+              },
+              "를 ",
+              {
+                "en": "carries on",
+                "ko": "계속한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "carry on -ing",
+              "text": "'계속 ~하다'예요. carries on remolding = 계속 다시 성형한다.",
+              "mark": "carries on"
+            },
+            {
+              "label": "re-",
+              "text": "'다시'예요. remold = 다시 성형하다.",
+              "mark": "remolding"
+            }
+          ]
+        },
+        {
+          "id": "s4_remold",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "뇌는 평생 스스로를 다시 성형하기를 계속한대요. 칠판 오른쪽에 넣어 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "carries on",
+            "remolding itself"
+          ],
+          "tips": [
+            {
+              "label": "carry on -ing",
+              "text": "'계속 ~하다'예요. carries on remolding = 계속 다시 성형한다.",
+              "mark": "carries on"
+            },
+            {
+              "label": "re-",
+              "text": "'다시'예요. remold = 다시 성형하다.",
+              "mark": "remolding"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형"
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로"
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈"
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": [
+                {
+                  "text": "remolding itself",
+                  "ko": "스스로 다시 성형",
+                  "fresh": true
+                },
+                {
+                  "text": "throughout your life",
+                  "ko": "평생",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "meaning_check": true
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧸",
+                "en": "plasticity → mold once, keep forever",
+                "ko": "plastic이라는 말은 한 번 만들고 영원히 그대로라는 느낌을 줘요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "🧠",
+                "en": "remolding itself",
+                "ko": "하지만 뇌는 평생 스스로를 다시 만들어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Think of a developing city, and note the way it grows, improves, and responds to the world around it.",
+      "model_translation": "개발 중인 도시를 생각해 보라, 그리고 그것이 성장하고, 진보하고, 주변 세상에 반응하는 방식에 주목하라.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Think of",
+          "ko": "~을 떠올려 보라"
+        },
+        {
+          "en": "a developing city",
+          "ko": "발전하는 도시"
+        },
+        {
+          "en": "note",
+          "ko": "주목하라"
+        },
+        {
+          "en": "the way",
+          "ko": "방식"
+        },
+        {
+          "en": "grows, improves, and responds",
+          "ko": "자라고, 나아지고, 반응한다"
+        },
+        {
+          "en": "the world around it",
+          "ko": "그 주변 세상"
+        },
+        {
+          "en": "Think",
+          "ko": "생각하다"
+        },
+        {
+          "en": "developing",
+          "ko": "발전하는"
+        },
+        {
+          "en": "city",
+          "ko": "도시"
+        },
+        {
+          "en": "way",
+          "ko": "방식, 상태"
+        },
+        {
+          "en": "grows",
+          "ko": "자라다"
+        },
+        {
+          "en": "improves",
+          "ko": "나아지다"
+        },
+        {
+          "en": "responds",
+          "ko": "반응하다"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        },
+        {
+          "en": "around",
+          "ko": "주변의"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_city",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "뇌를 도시에 빗대요. 발전하는 도시는 자라고, 나아지고, 주변 세상에 반응한대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "a developing city"
+          ],
+          "tips": [
+            {
+              "label": "note",
+              "text": "동사로 '주목하다, 눈여겨보다'예요. 공책(노트)이 아니에요.",
+              "mark": "note"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Observe where the city builds its truck stops, how it crafts its immigration policies, and how it modifies its education and legal systems.",
+      "model_translation": "그 도시가 어디에 그것의 트럭 정류장을 짓고, 어떻게 그것의 이민 정책을 공들여 만들고, 어떻게 그것의 교육과 법률 체계를 수정하는지 관찰하라.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Observe",
+          "ko": "관찰하라"
+        },
+        {
+          "en": "its truck stops",
+          "ko": "트럭 정류장"
+        },
+        {
+          "en": "crafts",
+          "ko": "공들여 만들다"
+        },
+        {
+          "en": "its immigration policies",
+          "ko": "이민 정책"
+        },
+        {
+          "en": "modifies",
+          "ko": "수정하다"
+        },
+        {
+          "en": "its education and legal systems",
+          "ko": "교육·법률 제도"
+        },
+        {
+          "en": "truck",
+          "ko": "트럭"
+        },
+        {
+          "en": "stops",
+          "ko": "정류장"
+        },
+        {
+          "en": "immigration",
+          "ko": "이민"
+        },
+        {
+          "en": "policies",
+          "ko": "정책"
+        },
+        {
+          "en": "education",
+          "ko": "교육"
+        },
+        {
+          "en": "legal",
+          "ko": "법률의"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_skim",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "트럭 정류장, 이민 정책, 교육·법률 제도 — 도시가 바뀌는 예시들이에요. 깊게 안 읽어도 돼요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "modifies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "A city is always changing.",
+      "model_translation": "도시는 항상 변화하고 있다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "A city",
+          "ko": "도시는"
+        },
+        {
+          "en": "is always changing",
+          "ko": "늘 변하고 있다"
+        },
+        {
+          "en": "city",
+          "ko": "도시"
+        },
+        {
+          "en": "always",
+          "ko": "늘"
+        },
+        {
+          "en": "changing",
+          "ko": "변하는"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A city",
+            "is always changing"
+          ],
+          "answers": [
+            "A city",
+            "is always changing"
+          ],
+          "roles": {
+            "A city": "S",
+            "is always changing": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 A city, 동사는 is (always) changing이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic"
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "A city",
+            "is always changing"
+          ],
+          "answers": [
+            "A city",
+            "is always changing"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A city",
+                "ko": "도시는"
+              },
+              " ",
+              {
+                "en": "is always changing",
+                "ko": "늘 변하고 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_change",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "도시는 늘 변하고 있대요. 뇌도 그렇다는 말이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형"
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로"
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈"
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": [
+                {
+                  "text": "remolding itself",
+                  "ko": "스스로 다시 성형"
+                },
+                {
+                  "text": "throughout your life",
+                  "ko": "평생"
+                },
+                {
+                  "text": "always changing",
+                  "ko": "늘 변함",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "always changing"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "A city is not designed by urban planners and then immobilized like a plastic object.",
+      "model_translation": "도시는 도시 계획자들에 의해 설계되고 나서 플라스틱 물건처럼 고정되지 않는다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "urban planners",
+          "ko": "도시 계획가들"
+        },
+        {
+          "en": "A city",
+          "ko": "도시는"
+        },
+        {
+          "en": "is not designed",
+          "ko": "설계되지 않는다"
+        },
+        {
+          "en": "by urban planners",
+          "ko": "도시 계획가들에 의해"
+        },
+        {
+          "en": "and then immobilized",
+          "ko": "그리고 나서 고정되다"
+        },
+        {
+          "en": "immobilized",
+          "ko": "움직이지 못하게 된, 고정된"
+        },
+        {
+          "en": "like a plastic object",
+          "ko": "플라스틱 물건처럼"
+        },
+        {
+          "en": "urban",
+          "ko": "도시의"
+        },
+        {
+          "en": "planners",
+          "ko": "계획가들"
+        },
+        {
+          "en": "city",
+          "ko": "도시"
+        },
+        {
+          "en": "designed",
+          "ko": "설계된"
+        },
+        {
+          "en": "then",
+          "ko": "그때, 그러면"
+        },
+        {
+          "en": "plastic",
+          "ko": "플라스틱"
+        },
+        {
+          "en": "object",
+          "ko": "물건"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "A city",
+            "is not designed",
+            "urban planners",
+            "immobilized"
+          ],
+          "answers": [
+            "A city",
+            "is not designed",
+            "immobilized"
+          ],
+          "roles": {
+            "A city": "S",
+            "is not designed": "V",
+            "immobilized": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "urban planners": "그건 by 뒤, 누가 설계하는지예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 A city, 동사는 is not designed와 (is not) immobilized예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "tips": [
+            {
+              "label": "im- + mobile",
+              "text": "im-은 '아님'이에요. mobile(움직이는) → immobile(움직이지 않는) → immobilize(고정시키다).",
+              "mark": "immobilized"
+            }
+          ]
+        },
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "candidates": [
+            "A city",
+            "is not designed",
+            "by urban planners",
+            "and then immobilized",
+            "like a plastic object"
+          ],
+          "answers": [
+            "A city",
+            "by urban planners",
+            "is not designed",
+            "and then immobilized",
+            "like a plastic object"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A city",
+                "ko": "도시는"
+              },
+              " ",
+              {
+                "en": "by urban planners",
+                "ko": "도시 계획가들에 의해"
+              },
+              " ",
+              {
+                "en": "is not designed",
+                "ko": "설계되고"
+              },
+              " ",
+              {
+                "en": "and then immobilized",
+                "ko": "그다음 고정되지"
+              },
+              " 않는다 — ",
+              {
+                "en": "like a plastic object",
+                "ko": "플라스틱 물건처럼"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "im- + mobile",
+              "text": "im-은 '아님'이에요. mobile(움직이는) → immobile(움직이지 않는) → immobilize(고정시키다).",
+              "mark": "immobilized"
+            }
+          ]
+        },
+        {
+          "id": "s8_fixed",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "도시는 설계된 뒤 플라스틱 물건처럼 고정될까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "문장 앞 'is not'을 봐요. immobilized는 '움직이지 못하게 된, 고정된'이에요.",
+              "문장 앞 'is not'을 봐요. immobilized는 '움직이지 못하게 된, 고정된'이에요."
+            ],
+            "explain": "'is not designed … and then immobilized like a plastic object', 설계된 뒤 플라스틱처럼 고정되지 않는대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'is not designed … and then immobilized like a plastic object', 설계된 뒤 플라스틱처럼 고정되지 않는대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그렇다, 한 번 설계하면 고정된다"
+            },
+            {
+              "id": "o1",
+              "label": "아니다, 고정되지 않는다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "is not designed",
+            "immobilized"
+          ],
+          "tips": [
+            {
+              "label": "im- + mobile",
+              "text": "im-은 '아님'이에요. mobile(움직이는) → immobile(움직이지 않는) → immobilize(고정시키다).",
+              "mark": "immobilized"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형"
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로"
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈"
+                },
+                {
+                  "text": "a plastic object",
+                  "ko": "플라스틱 물건",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": [
+                {
+                  "text": "remolding itself",
+                  "ko": "스스로 다시 성형"
+                },
+                {
+                  "text": "throughout your life",
+                  "ko": "평생"
+                },
+                {
+                  "text": "always changing",
+                  "ko": "늘 변함"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "It continually develops.",
+      "model_translation": "그것은 끊임없이 발전한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "It",
+          "ko": "그것(도시)"
+        },
+        {
+          "en": "continually develops",
+          "ko": "계속 발전한다"
+        },
+        {
+          "en": "continually",
+          "ko": "계속"
+        },
+        {
+          "en": "develops",
+          "ko": "발전하다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_develop",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "도시는 계속 발전한대요. 오른쪽에 쌓아 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형"
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로"
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈"
+                },
+                {
+                  "text": "a plastic object",
+                  "ko": "플라스틱 물건"
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": [
+                {
+                  "text": "remolding itself",
+                  "ko": "스스로 다시 성형"
+                },
+                {
+                  "text": "throughout your life",
+                  "ko": "평생"
+                },
+                {
+                  "text": "always changing",
+                  "ko": "늘 변함"
+                },
+                {
+                  "text": "not immobilized",
+                  "ko": "고정되지 않음",
+                  "fresh": true
+                },
+                {
+                  "text": "continually develops",
+                  "ko": "계속 발전",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "continually develops"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Just like cities, brains never reach an end point.",
+      "model_translation": "도시와 마찬가지로, 뇌는 결코 종점에 도달하지 않는다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "cities",
+          "ko": "도시들"
+        },
+        {
+          "en": "Just like cities",
+          "ko": "도시와 꼭 마찬가지로"
+        },
+        {
+          "en": "brains",
+          "ko": "뇌는"
+        },
+        {
+          "en": "never reach",
+          "ko": "결코 도달하지 않는다"
+        },
+        {
+          "en": "an end point",
+          "ko": "끝나는 지점"
+        },
+        {
+          "en": "reach",
+          "ko": "도달하다"
+        },
+        {
+          "en": "end",
+          "ko": "끝"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s10_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "cities",
+            "brains",
+            "never reach",
+            "an end point"
+          ],
+          "answers": [
+            "brains",
+            "never reach",
+            "an end point"
+          ],
+          "roles": {
+            "brains": "S",
+            "never reach": "V",
+            "an end point": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "cities": "그건 Just like(~처럼) 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 brains, 동사는 never reach, 목적어는 an end point예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s10_basic"
+        },
+        {
+          "id": "s10_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s10_basic",
+          "candidates": [
+            "Just like cities",
+            "brains",
+            "never reach",
+            "an end point"
+          ],
+          "answers": [
+            "Just like cities",
+            "brains",
+            "an end point",
+            "never reach"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Just like cities",
+                "ko": "도시와 마찬가지로"
+              },
+              ", ",
+              {
+                "en": "brains",
+                "ko": "뇌는"
+              },
+              " ",
+              {
+                "en": "an end point",
+                "ko": "끝나는 지점"
+              },
+              "에 ",
+              {
+                "en": "never reach",
+                "ko": "결코 도달하지 않는다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s10_end",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Just like cities(도시처럼), 뇌는 어떻대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'never reach an end point'를 봐요. never는 '결코 ~ 않다'예요.",
+              "'never reach an end point'를 봐요. never는 '결코 ~ 않다'예요."
+            ],
+            "explain": "'brains never reach an end point', 뇌는 결코 끝점에 이르지 않아요. 도시처럼 계속 바뀐다는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'brains never reach an end point', 뇌는 결코 끝점에 이르지 않아요. 도시처럼 계속 바뀐다는 거예요.",
+              "o1": "'brains never reach an end point', 뇌는 결코 끝점에 이르지 않아요. 도시처럼 계속 바뀐다는 거예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "언젠가 완성된다"
+            },
+            {
+              "id": "o1",
+              "label": "도시처럼 계획가가 설계한다"
+            },
+            {
+              "id": "o2",
+              "label": "끝점에 도달하지 않고 계속 바뀐다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Just like cities",
+            "never reach an end point"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형"
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로"
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈"
+                },
+                {
+                  "text": "a plastic object",
+                  "ko": "플라스틱 물건"
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": [
+                {
+                  "text": "remolding itself",
+                  "ko": "스스로 다시 성형"
+                },
+                {
+                  "text": "throughout your life",
+                  "ko": "평생"
+                },
+                {
+                  "text": "always changing",
+                  "ko": "늘 변함"
+                },
+                {
+                  "text": "not immobilized",
+                  "ko": "고정되지 않음"
+                },
+                {
+                  "text": "continually develops",
+                  "ko": "계속 발전"
+                },
+                {
+                  "text": "never reach an end point",
+                  "ko": "끝이 없음",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "story_10",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧸",
+                "en": "plasticity → mold once, keep forever",
+                "ko": "plastic이라는 말은 한 번 만들고 영원히 그대로라는 느낌을 줘요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "🧠",
+                "en": "remolding itself",
+                "ko": "하지만 뇌는 평생 스스로를 다시 만들어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5~9",
+                "icon": "🏙️",
+                "en": "a developing city · always changing",
+                "ko": "발전하는 도시처럼 — 늘 변하고, 고정되지 않고, 계속 발전해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 10",
+                "icon": "♾️",
+                "en": "never reach an end point",
+                "ko": "뇌도 끝점에 이르지 않아요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "We spend our lives blossoming toward something, even as the target moves.",
+      "model_translation": "심지어 우리는 목표물이 움직이더라도, 무언가를 향해 번성하며 삶을 보낸다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "We spend our lives",
+          "ko": "우리는 평생을 보낸다"
+        },
+        {
+          "en": "blossoming toward something",
+          "ko": "무언가를 향해 피어나며"
+        },
+        {
+          "en": "even as",
+          "ko": "~할 때조차"
+        },
+        {
+          "en": "the target moves",
+          "ko": "목표가 움직이다"
+        },
+        {
+          "en": "spend",
+          "ko": "보내다"
+        },
+        {
+          "en": "blossoming",
+          "ko": "피어나는"
+        },
+        {
+          "en": "target",
+          "ko": "목표"
+        },
+        {
+          "en": "moves",
+          "ko": "움직이다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s11_bloom",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "목표가 움직여도 우리는 평생 무언가를 향해 피어나며 산대요. 끝없이 자라는 모습이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "blossoming",
+            "the target moves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Consider the feeling of encountering a diary that you wrote many years ago.",
+      "model_translation": "여러분이 수년 전에 쓴 일기를 우연히 발견했을 때의 감정을 생각해 보라.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Consider",
+          "ko": "생각해 보라"
+        },
+        {
+          "en": "the feeling",
+          "ko": "느낌"
+        },
+        {
+          "en": "encountering a diary",
+          "ko": "일기를 우연히 발견하는 것"
+        },
+        {
+          "en": "that you wrote",
+          "ko": "네가 쓴"
+        },
+        {
+          "en": "many years ago",
+          "ko": "여러 해 전에"
+        },
+        {
+          "en": "feeling",
+          "ko": "느낌"
+        },
+        {
+          "en": "encountering",
+          "ko": "우연히 만나는 것"
+        },
+        {
+          "en": "diary",
+          "ko": "일기"
+        },
+        {
+          "en": "wrote",
+          "ko": "썼다"
+        },
+        {
+          "en": "ago",
+          "ko": "전에"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s12_diary",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "몇 년 전에 쓴 일기를 우연히 발견했을 때의 느낌을 떠올려 보래요. 또 다른 예가 시작돼요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "a diary"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "text": "It represents the thinking, opinions, and viewpoint of someone who was a bit different from who you are now, and that previous person can sometimes border on the unrecognizable.",
+      "model_translation": "그것은 지금의 여러분과는 약간 다른 누군가의 생각, 의견, 그리고 관점을 나타내며, 그 이전의 사람은 때때로 거의 몰라볼 정도의 사람이라고 말할 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "It",
+          "ko": "그것(일기)"
+        },
+        {
+          "en": "represents",
+          "ko": "나타낸다"
+        },
+        {
+          "en": "the thinking, opinions, and viewpoint",
+          "ko": "생각, 의견, 관점"
+        },
+        {
+          "en": "of someone",
+          "ko": "누군가의"
+        },
+        {
+          "en": "who was a bit different",
+          "ko": "조금 달랐던"
+        },
+        {
+          "en": "from who you are now",
+          "ko": "지금의 너와"
+        },
+        {
+          "en": "that previous person",
+          "ko": "그 이전의 사람"
+        },
+        {
+          "en": "can sometimes border on",
+          "ko": "때때로 거의 ~에 가까울 수 있다"
+        },
+        {
+          "en": "the unrecognizable",
+          "ko": "알아볼 수 없는 것"
+        },
+        {
+          "en": "thinking",
+          "ko": "생각"
+        },
+        {
+          "en": "opinions",
+          "ko": "의견"
+        },
+        {
+          "en": "viewpoint",
+          "ko": "관점"
+        },
+        {
+          "en": "bit",
+          "ko": "조금"
+        },
+        {
+          "en": "now",
+          "ko": "지금"
+        },
+        {
+          "en": "previous",
+          "ko": "이전의"
+        },
+        {
+          "en": "person",
+          "ko": "사람"
+        },
+        {
+          "en": "sometimes",
+          "ko": "때때로"
+        },
+        {
+          "en": "border",
+          "ko": "경계 · border on = 거의 ~에 가깝다"
+        },
+        {
+          "en": "unrecognizable",
+          "ko": "알아볼 수 없는"
+        }
+      ],
+      "slashes": [
+        "and viewpoint",
+        "who you are now,",
+        "previous person"
+      ],
+      "steps": [
+        {
+          "id": "s13_diary",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그 일기를 쓴 예전의 나는 지금의 나와 어떻대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'a bit different from who you are now'와 'border on the unrecognizable'을 봐요.",
+              "'a bit different from who you are now'와 'border on the unrecognizable'을 봐요."
+            ],
+            "explain": "'a bit different from who you are now', 지금의 나와 조금 다르고, 'border on the unrecognizable', 때로는 거의 못 알아볼 정도래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'a bit different from who you are now', 지금의 나와 조금 다르고, 'border on the unrecognizable', 때로는 거의 못 알아볼 정도래요.",
+              "o2": "'a bit different from who you are now', 지금의 나와 조금 다르고, 'border on the unrecognizable', 때로는 거의 못 알아볼 정도래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "조금 달라서, 때로는 거의 못 알아볼 정도다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "완전히 똑같다"
+            },
+            {
+              "id": "o2",
+              "label": "아예 다른 사람이 쓴 것이다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "a bit different",
+            "border on the unrecognizable"
+          ],
+          "tips": [
+            {
+              "label": "border on",
+              "text": "'거의 ~에 가깝다'예요. border on the unrecognizable = 거의 못 알아볼 정도다.",
+              "mark": "border on"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Despite having the same name and the same early history, in the years between inscription and interpretation the narrator has altered.",
+      "model_translation": "같은 이름과 같은 초기 역사를 가지고 있음에도 불구하고, 새겨진 글과 해석 사이의 세월 동안 화자가 달라졌다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Despite",
+          "ko": "~에도 불구하고"
+        },
+        {
+          "en": "having the same name",
+          "ko": "같은 이름을 가진 것"
+        },
+        {
+          "en": "the same early history",
+          "ko": "같은 어린 시절"
+        },
+        {
+          "en": "in the years",
+          "ko": "세월 동안"
+        },
+        {
+          "en": "between inscription and interpretation",
+          "ko": "쓴 때와 읽는 때 사이에"
+        },
+        {
+          "en": "the narrator",
+          "ko": "화자, 이야기하는 사람"
+        },
+        {
+          "en": "has altered",
+          "ko": "달라졌다"
+        },
+        {
+          "en": "having",
+          "ko": "가지고 있는 것"
+        },
+        {
+          "en": "early",
+          "ko": "어린 시절의"
+        },
+        {
+          "en": "inscription",
+          "ko": "새겨진 글(쓴 것)"
+        },
+        {
+          "en": "interpretation",
+          "ko": "해석(읽는 것)"
+        },
+        {
+          "en": "narrator",
+          "ko": "화자"
+        },
+        {
+          "en": "altered",
+          "ko": "달라진"
+        }
+      ],
+      "slashes": [
+        "early history,",
+        "inscription and interpretation"
+      ],
+      "steps": [
+        {
+          "id": "s14_alter",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이름과 어린 시절이 같아도, 쓴 때와 읽는 때 사이에 화자(나)가 달라졌대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "Despite",
+            "has altered"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형"
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로"
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈"
+                },
+                {
+                  "text": "a plastic object",
+                  "ko": "플라스틱 물건"
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": [
+                {
+                  "text": "remolding itself",
+                  "ko": "스스로 다시 성형"
+                },
+                {
+                  "text": "throughout your life",
+                  "ko": "평생"
+                },
+                {
+                  "text": "always changing",
+                  "ko": "늘 변함"
+                },
+                {
+                  "text": "not immobilized",
+                  "ko": "고정되지 않음"
+                },
+                {
+                  "text": "continually develops",
+                  "ko": "계속 발전"
+                },
+                {
+                  "text": "never reach an end point",
+                  "ko": "끝이 없음"
+                },
+                {
+                  "text": "the narrator has altered",
+                  "ko": "화자가 달라짐",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "text": "The word “plastic” can be stretched to fit this notion of ongoing change.",
+      "model_translation": "'플라스틱'이라는 단어는 이러한 진행 중인 변화의 개념에 맞도록 확장될 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The word “plastic”",
+          "ko": "'플라스틱'이라는 단어"
+        },
+        {
+          "en": "can be stretched",
+          "ko": "넓혀질 수 있다"
+        },
+        {
+          "en": "to fit",
+          "ko": "~에 맞도록"
+        },
+        {
+          "en": "this notion",
+          "ko": "이 개념"
+        },
+        {
+          "en": "of ongoing change",
+          "ko": "계속되는 변화의"
+        },
+        {
+          "en": "plastic",
+          "ko": "플라스틱"
+        },
+        {
+          "en": "stretched",
+          "ko": "넓혀진"
+        },
+        {
+          "en": "fit",
+          "ko": "맞다"
+        },
+        {
+          "en": "notion",
+          "ko": "개념"
+        },
+        {
+          "en": "ongoing",
+          "ko": "계속되는"
+        },
+        {
+          "en": "change",
+          "ko": "바꾸다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s15_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The word “plastic”",
+            "can be stretched",
+            "this notion"
+          ],
+          "answers": [
+            "The word “plastic”",
+            "can be stretched"
+          ],
+          "roles": {
+            "The word “plastic”": "S",
+            "can be stretched": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "this notion": "그건 to fit(~에 맞도록) 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The word “plastic”, 동사는 can be stretched예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s15_basic"
+        },
+        {
+          "id": "s15_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s15_basic",
+          "candidates": [
+            "The word “plastic”",
+            "can be stretched",
+            "to fit",
+            "this notion",
+            "of ongoing change"
+          ],
+          "answers": [
+            "The word “plastic”",
+            "of ongoing change",
+            "this notion",
+            "to fit",
+            "can be stretched"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The word “plastic”",
+                "ko": "'플라스틱'이라는 단어는"
+              },
+              " ",
+              {
+                "en": "of ongoing change",
+                "ko": "계속되는 변화의"
+              },
+              " ",
+              {
+                "en": "this notion",
+                "ko": "이 개념"
+              },
+              "에 ",
+              {
+                "en": "to fit",
+                "ko": "맞도록"
+              },
+              " ",
+              {
+                "en": "can be stretched",
+                "ko": "넓혀질 수 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s15_stretch",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "글쓴이는 plastic이라는 말을 이제 어떤 뜻에 맞게 넓혀 쓰자고 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'to fit this notion of ongoing change'를 봐요. ongoing은 '계속되는, 진행 중인'이에요.",
+              "'to fit this notion of ongoing change'를 봐요. ongoing은 '계속되는, 진행 중인'이에요."
+            ],
+            "explain": "'this notion of ongoing change', ongoing(계속되는) change(변화)라는 개념에 맞게 plastic의 뜻을 넓히자는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'this notion of ongoing change', ongoing(계속되는) change(변화)라는 개념에 맞게 plastic의 뜻을 넓히자는 거예요.",
+              "o2": "'this notion of ongoing change', ongoing(계속되는) change(변화)라는 개념에 맞게 plastic의 뜻을 넓히자는 거예요."
+            },
+            "point": "글쓴이 주장 = 뇌는 '한 번 성형하면 그대로'가 아니라 평생 계속 변한다 (ongoing change)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "한 번 정해진 모양"
+            },
+            {
+              "id": "o1",
+              "label": "계속되는 변화",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "플라스틱 장난감"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "ongoing change"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형"
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로"
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈"
+                },
+                {
+                  "text": "a plastic object",
+                  "ko": "플라스틱 물건"
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": [
+                {
+                  "text": "remolding itself",
+                  "ko": "스스로 다시 성형"
+                },
+                {
+                  "text": "throughout your life",
+                  "ko": "평생"
+                },
+                {
+                  "text": "always changing",
+                  "ko": "늘 변함"
+                },
+                {
+                  "text": "not immobilized",
+                  "ko": "고정되지 않음"
+                },
+                {
+                  "text": "continually develops",
+                  "ko": "계속 발전"
+                },
+                {
+                  "text": "never reach an end point",
+                  "ko": "끝이 없음"
+                },
+                {
+                  "text": "the narrator has altered",
+                  "ko": "화자가 달라짐"
+                },
+                {
+                  "text": "ongoing change",
+                  "ko": "계속되는 변화",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s15_summary",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 요약문을 읽어요. (A)와 (B)가 칠판의 어느 쪽 말인지 보고 고르면 돼요."
+          },
+          "method": 1,
+          "button": "요약문 읽어 볼게요"
+        },
+        {
+          "id": "story_15",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧸",
+                "en": "plasticity → mold once, keep forever",
+                "ko": "plastic이라는 말은 한 번 만들고 영원히 그대로라는 느낌을 줘요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "🧠",
+                "en": "remolding itself",
+                "ko": "하지만 뇌는 평생 스스로를 다시 만들어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5~9",
+                "icon": "🏙️",
+                "en": "a developing city · always changing",
+                "ko": "발전하는 도시처럼 — 늘 변하고, 고정되지 않고, 계속 발전해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 10",
+                "icon": "♾️",
+                "en": "never reach an end point",
+                "ko": "뇌도 끝점에 이르지 않아요",
+                "fresh": false
+              },
+              {
+                "label": "문장 11~14",
+                "icon": "📔",
+                "en": "a diary · the narrator has altered",
+                "ko": "옛 일기 속 나는 지금의 나와 달라요 — 그사이 내가 바뀌었어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 15",
+                "icon": "🔁",
+                "en": "ongoing change",
+                "ko": "plastic이라는 말을 '계속되는 변화'에 맞게 넓힐 수 있어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "label": "요약문",
+      "text": "While some understand “brain plasticity” to mean (A) ________ upon molding, the brain is actually capable of (B) ________.",
+      "teaching_value": "high",
+      "model_translation": "어떤 사람들은 성형되자마자 '뇌 가소성'이 (A)를 의미한다고 이해하는 반면, 뇌는 실제로 (B)할 수 있다.",
+      "glosses": [
+        {
+          "en": "While",
+          "ko": "~인 반면"
+        },
+        {
+          "en": "some understand",
+          "ko": "어떤 사람들은 이해한다"
+        },
+        {
+          "en": "brain plasticity",
+          "ko": "뇌 가소성"
+        },
+        {
+          "en": "to mean",
+          "ko": "~을 뜻한다고"
+        },
+        {
+          "en": "upon molding",
+          "ko": "성형되자마자"
+        },
+        {
+          "en": "the brain",
+          "ko": "뇌는"
+        },
+        {
+          "en": "is actually capable of",
+          "ko": "실제로는 ~할 수 있다"
+        },
+        {
+          "en": "understand",
+          "ko": "이해하다"
+        },
+        {
+          "en": "brain",
+          "ko": "뇌"
+        },
+        {
+          "en": "plasticity",
+          "ko": "가소성"
+        },
+        {
+          "en": "mean",
+          "ko": "뜻하다"
+        },
+        {
+          "en": "molding",
+          "ko": "성형"
+        },
+        {
+          "en": "actually",
+          "ko": "실제로"
+        },
+        {
+          "en": "capable",
+          "ko": "~할 수 있는"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s16_a_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "어떤 사람들은 brain plasticity가 '성형되자마자(upon molding) (A)'를 뜻한다고 이해한대요. (A)는 칠판 어느 쪽 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "While(~인 반면) 앞뒤는 반대예요. 뒤가 '뇌가 실제로(actually)'니까, 앞은 그와 다른 쪽이에요.",
+              "While(~인 반면) 앞뒤는 반대예요. 뒤가 '뇌가 실제로(actually)'니까, 앞은 그와 다른 쪽이에요."
+            ],
+            "explain": "While 앞은 '어떤 사람들이 이해하는 뜻', 뒤는 '뇌가 실제로 하는 일'이에요. (A)는 plastic이라는 말의 느낌 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "While 앞은 '어떤 사람들이 이해하는 뜻', 뒤는 '뇌가 실제로 하는 일'이에요. (A)는 plastic이라는 말의 느낌 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · plastic이라는 말의 느낌",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 뇌가 실제로 하는 일"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "While",
+            "some understand",
+            "upon molding"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "plastic ↔ brain",
+            "left": {
+              "label": "plastic이라는 말의 느낌",
+              "words": [
+                {
+                  "text": "mold once",
+                  "ko": "한 번 성형"
+                },
+                {
+                  "text": "keep it that way forever",
+                  "ko": "영원히 그대로"
+                },
+                {
+                  "text": "never change it again",
+                  "ko": "다시는 안 바꿈"
+                },
+                {
+                  "text": "a plastic object",
+                  "ko": "플라스틱 물건"
+                }
+              ]
+            },
+            "right": {
+              "label": "뇌가 실제로 하는 일",
+              "words": [
+                {
+                  "text": "remolding itself",
+                  "ko": "스스로 다시 성형"
+                },
+                {
+                  "text": "throughout your life",
+                  "ko": "평생"
+                },
+                {
+                  "text": "always changing",
+                  "ko": "늘 변함"
+                },
+                {
+                  "text": "not immobilized",
+                  "ko": "고정되지 않음"
+                },
+                {
+                  "text": "continually develops",
+                  "ko": "계속 발전"
+                },
+                {
+                  "text": "never reach an end point",
+                  "ko": "끝이 없음"
+                },
+                {
+                  "text": "the narrator has altered",
+                  "ko": "화자가 달라짐"
+                },
+                {
+                  "text": "ongoing change",
+                  "ko": "계속되는 변화"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "While (대조)",
+              "text": "문장 앞 While은 '~인 반면'이에요. 앞과 뒤가 반대 내용이에요.",
+              "mark": "While"
+            }
+          ]
+        },
+        {
+          "id": "s16_a",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 (A)에는 어떤 뜻의 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 왼쪽 'mold once, keep it that way forever, never change it again'을 떠올려 봐요.",
+              "칠판 왼쪽 'mold once, keep it that way forever, never change it again'을 떠올려 봐요."
+            ],
+            "explain": "왼쪽은 한 번 성형하면 영원히 그대로, 다시는 안 바뀐다는 말이에요. (A)는 그 뜻, 변하지 않음이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "왼쪽은 한 번 성형하면 영원히 그대로, 다시는 안 바뀐다는 말이에요. (A)는 그 뜻, 변하지 않음이에요.",
+              "o2": "왼쪽은 한 번 성형하면 영원히 그대로, 다시는 안 바뀐다는 말이에요. (A)는 그 뜻, 변하지 않음이에요."
+            },
+            "point": "(A) = 성형되자마자 영원히 그대로 → '변하지 않음(영속성)'"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "부드럽게 잘 휨"
+            },
+            {
+              "id": "o1",
+              "label": "변하지 않고 그대로임",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "이리저리 움직임"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "(A) ________"
+          ]
+        },
+        {
+          "id": "s16_b",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 '뇌가 실제로 할 수 있는 것'이에요. 어떤 뜻의 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 오른쪽 'remolding, always changing, ongoing change'를 떠올려 봐요.",
+              "칠판 오른쪽 'remolding, always changing, ongoing change'를 떠올려 봐요."
+            ],
+            "explain": "오른쪽은 평생 다시 성형하고, 늘 변하고, 계속 변한다는 말이에요. (B)는 그 뜻, 변화예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "오른쪽은 평생 다시 성형하고, 늘 변하고, 계속 변한다는 말이에요. (B)는 그 뜻, 변화예요.",
+              "o2": "오른쪽은 평생 다시 성형하고, 늘 변하고, 계속 변한다는 말이에요. (B)는 그 뜻, 변화예요."
+            },
+            "point": "(B) = 뇌가 실제로 하는 일 = 평생 계속되는 변화"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "계속 바뀌는 것(변화)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "남에게 공감하는 것"
+            },
+            {
+              "id": "o2",
+              "label": "원래대로 되돌아가는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "(B) ________"
+          ]
+        },
+        {
+          "id": "s16_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(A)와 (B)의 뜻을 둘 다 맞게 담은 보기를 골라 봐요. 한쪽만 맞으면 오답이에요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

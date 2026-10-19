@@ -1,0 +1,338 @@
+{
+  "lesson": "moeui-2024-03-42-automatic-thoughts",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어휘 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "your own life": "그건 of 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 You, 동사는 are, 보어는 the narrator예요.",
+      "from": "dxhib4"
+    },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "zu0ag9"
+    },
+    "s1_narrator": {
+      "say": "우리는 자기 삶을 말로 풀어 가는 내레이터래요. 내가 내 경험을 어떻게 말하는지가 이 글의 주제예요.",
+      "from": "s9chnc"
+    },
+    "s2_sv": {
+      "ask": "주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "you": "그건 with which 뒤 덩어리 안의 주어예요.",
+        "describe": "그건 with which 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The tone and perspective, 동사는 generates, 목적어는 feelings예요.",
+      "from": "nlmsss"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1gpb8ye"
+    },
+    "s2_mean": {
+      "ask": "경험을 어떤 말투와 관점으로 말하느냐가 무엇을 만들어 낸대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "generates 뒤 'feelings associated with that narration'을 봐요.",
+        "generates 뒤 'feelings associated with that narration'을 봐요."
+      ],
+      "explain": "'generates feelings associated with that narration', 그렇게 말한 것과 관련된 감정을 만들어 낸대요. 말하는 방식이 감정을 바꿔요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'generates feelings associated with that narration', 그렇게 말한 것과 관련된 감정을 만들어 낸대요. 말하는 방식이 감정을 바꿔요.",
+        "o2": "'generates feelings associated with that narration', 그렇게 말한 것과 관련된 감정을 만들어 낸대요. 말하는 방식이 감정을 바꿔요."
+      },
+      "point": "요지 시작: 경험을 말하는 방식(어조·관점) → 감정을 만든다",
+      "from": "1jysm22"
+    },
+    "s3_check": {
+      "say": "'이건 어려워', '안 좋게 될 거야'처럼 계속 부정적으로 말하면 불안한 감정이 생긴대요. 부정적인 말 → 불안, 그래서 (a)anxious는 문맥에 맞아요.",
+      "from": "1eglih8"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "h3y8yx"
+    },
+    "s4_time": {
+      "say": "이제 생각하는 방식을 다시 짤 때래요. 글쓴이가 바꾸자고 하는 건 이 부정적인 말하기예요.",
+      "from": "1999hmg"
+    },
+    "story_4": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s5_frame": {
+      "ask": "Underlying ~ are the beliefs: 이야기 밑바탕에 신념이 있대요. 신념은 경험에 무엇을 한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "that 뒤 '(b)frame your experience and give it meaning'을 봐요. frame은 동사로 '틀을 씌우다'예요.",
+        "that 뒤 '(b)frame your experience and give it meaning'을 봐요. frame은 동사로 '틀을 씌우다'예요."
+      ],
+      "explain": "'frame your experience and give it meaning', 신념이 경험에 틀을 씌우고 의미를 준대요. 같은 일도 신념에 따라 다르게 보이는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'frame your experience and give it meaning', 신념이 경험에 틀을 씌우고 의미를 준대요. 같은 일도 신념에 따라 다르게 보이는 거예요.",
+        "o2": "'frame your experience and give it meaning', 신념이 경험에 틀을 씌우고 의미를 준대요. 같은 일도 신념에 따라 다르게 보이는 거예요."
+      },
+      "from": "czsfhn"
+    },
+    "s5_check": {
+      "say": "신념이 경험에 틀을 씌우고 의미를 준다, 이어지는 give it meaning과 같은 방향이라 (b)frame은 문맥에 맞아요.",
+      "from": "1vyouvc"
+    },
+    "s6_layers": {
+      "say": "신념에 여러 층이 있다고 생각해 보래요.",
+      "from": "wo8ah3"
+    },
+    "s7_basic_sv": {
+      "ask": "장소가 맨 앞에 나왔어요. 동사(V)와 그 뒤 주어(S)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the surface": "그건 On 뒤, 어디에 있는지예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "장소(On the surface)가 앞으로 나와 순서가 바뀌었어요. 동사 are, 주어 your automatic thoughts예요.",
+      "from": "fi69d"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "15w0sqx"
+    },
+    "s7_surface": {
+      "say": "맨 겉층에 '자동적 사고(automatic thoughts)'가 있대요. 저절로 떠오르는 생각이에요.",
+      "from": "1ceaz52"
+    },
+    "s8_tapes": {
+      "say": "자동적 사고는 머릿속을 순간 스쳐 가는 짧은 녹음테이프 같대요.",
+      "from": "9hxmgv"
+    },
+    "s9_selftalk": {
+      "say": "자동적 사고를 하루를 지내며 쓰는 '혼잣말(self-talk)'이라고 부르자고 해요.",
+      "from": "j0i3nz"
+    },
+    "s10_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 You, 동사는 (c)produce, 목적어는 a wide variety of these automatic thoughts예요.",
+      "from": "n181yv"
+    },
+    "s10_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1lrhe09"
+    },
+    "s10_check": {
+      "say": "우리는 아주 다양한 자동적 사고를 의식적으로도, 무의식적으로도 만들어 낸대요. 그래서 (c)produce는 문맥에 맞아요.",
+      "from": "shmwmm"
+    },
+    "story_10": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s11_effect": {
+      "ask": "콜론(:) 뒤 예시를 봐요. 방에 들어가며 '이런, 난 이게 싫어, 좋지 않아'라고 혼잣말하면, 불안은 어떻게 될까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "3문장에서 부정적으로 말하면 어떤 감정이 생긴다고 했는지 떠올려 봐요.",
+        "3문장에서 부정적으로 말하면 어떤 감정이 생긴다고 했는지 떠올려 봐요."
+      ],
+      "explain": "'Oh no, I don’t like this', 이런 부정적인 혼잣말은 3문장처럼 불안을 만들어 내요. 불안이 더 커져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'Oh no, I don’t like this', 이런 부정적인 혼잣말은 3문장처럼 불안을 만들어 내요. 불안이 더 커져요.",
+        "o2": "'Oh no, I don’t like this', 이런 부정적인 혼잣말은 3문장처럼 불안을 만들어 내요. 불안이 더 커져요."
+      },
+      "point": "예시 속 자동적 사고('Oh no …')는 불안을 키운다 — 이 흐름에 (d)가 맞는지 문제에서 확인",
+      "from": "kuxmef"
+    },
+    "s11_hold": {
+      "say": "예시는 불안을 키우는 혼잣말이에요. 밑줄 (d)가 이 예시와 같은 방향인지는 마지막 문제에서 확인해 봐요.",
+      "from": "qwi7ma"
+    },
+    "s12_reject": {
+      "say": "'이 사람들은 내가 불안한 걸 곧 알아채고 날 거부할 거야' — 이것도 불안을 키우는 혼잣말이에요.",
+      "from": "xcubf5"
+    },
+    "s13_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "fresh and positive experiences": "그건 that 뒤 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Automatic thoughts, 동사는 are, 보어는 bad habits예요.",
+      "from": "6ejr4g"
+    },
+    "s13_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1ofi91l"
+    },
+    "s13_cloud": {
+      "ask": "자동적 사고는 '나쁜 습관(bad habits)'이래요. 그럼 새롭고 긍정적인 경험을 (e)cloud한다는 건 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "cloud는 명사 '구름'뿐 아니라 동사로 '흐리게 하다'예요. bad habits가 하는 일이니 나쁜 쪽이에요.",
+        "cloud는 명사 '구름'뿐 아니라 동사로 '흐리게 하다'예요. bad habits가 하는 일이니 나쁜 쪽이에요."
+      ],
+      "explain": "cloud는 동사로 '흐리게 하다, 어둡게 하다'예요. 나쁜 습관이 새롭고 좋은 경험을 흐리게 망친다는 뜻이라 (e)는 문맥에 맞아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "cloud는 동사로 '흐리게 하다, 어둡게 하다'예요. 나쁜 습관이 새롭고 좋은 경험을 흐리게 망친다는 뜻이라 (e)는 문맥에 맞아요.",
+        "o2": "cloud는 동사로 '흐리게 하다, 어둡게 하다'예요. 나쁜 습관이 새롭고 좋은 경험을 흐리게 망친다는 뜻이라 (e)는 문맥에 맞아요."
+      },
+      "point": "(e) cloud = 흐리게 하다(동사) — 나쁜 습관이 좋은 경험을 흐린다 → 문맥에 맞음",
+      "from": "vcpjq2"
+    },
+    "s13_check": {
+      "say": "그래서 (e)cloud는 문맥에 맞아요. 나쁜 습관(−)이 좋은 경험을 흐린다(−), 같은 방향이에요.",
+      "from": "1nqgxwo"
+    },
+    "s14_turn": {
+      "say": "자동적 사고는 좋을 수도 있는 경험을 불안으로 가득한 경험으로 바꿀 수 있대요.",
+      "from": "kncmi8"
+    },
+    "story_14": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s15_taint": {
+      "say": "새 일을 앞두고 '난 늘 불안해'라고 말하면, 그 새 경험이 불안으로 물든대요. 처음부터 끝까지 부정적 혼잣말 → 불안이에요.",
+      "from": "150060j"
+    },
+    "s15_go": {
+      "say": "(a)(b)(c)(e)는 흐름에 맞았어요. 남은 하나가 예시(불안을 키우는 혼잣말)와 같은 방향인지 문제에서 골라 봐요.",
+      "from": "ntcjvo"
+    }
+  },
+  "exam": {
+    "ask": "예시 속 혼잣말이 불안을 키우는지 줄이는지 떠올리며, 흐름과 반대인 하나를 골라요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 콜론 뒤 예시('이런, 싫어', '날 거부할 거야')는 불안을 키우는 생각이에요. 그런데 (d)relieve는 '덜어 준다'라서 반대예요. fuel(부채질하다)이 맞아요.",
+    "final_wrong": "정답은 ④ (d)예요. 예시 속 혼잣말은 불안을 키워요. relieve(덜어 주다)가 아니라 fuel(부채질하다)이어야 해요.",
+    "option_feedback": {
+      "1": "부정적으로 말하면 불안한(anxious) 감정이 생긴다는 흐름이라 맞아요.",
+      "2": "신념이 경험에 틀을 씌우고(frame) 의미를 준다, 뒤의 give it meaning과 맞아요.",
+      "3": "우리가 다양한 자동적 사고를 만들어 낸다(produce)는 말이라 맞아요.",
+      "5": "cloud는 동사로 '흐리게 하다'예요. 나쁜 습관이 좋은 경험을 흐린다는 말이라 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 18.7%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "cloud를 명사 '구름'으로만 알면 어색해 보여요. 하지만 동사 cloud는 '흐리게 하다, 망치다'예요. 자동적 사고는 나쁜 습관(bad habits)이라서 새롭고 좋은 경험을 흐리게 망친다, 흐름에 딱 맞아요.",
+        "ask": "그래서 (e)는 문맥에 맞아요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "cloud를 '구름'으로만 알았어요",
+            "skills": [
+              "word_sense_cloud"
+            ],
+            "reply": "알려 줘서 고마워요. cloud는 동사로 '흐리게 하다'예요. 앞으로 이런 단어가 나오면 헷갈리는 단어로 표시해 줄게요."
+          },
+          {
+            "label": "(d) 예시를 불안을 줄이는 말로 읽었어요",
+            "skills": [
+              "example_direction"
+            ],
+            "reply": "알려 줘서 고마워요. 'Oh no, I don’t like this'는 불안을 키우는 말이에요. 앞으로 예시가 어느 방향인지 먼저 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "word_sense_cloud",
+              "example_direction"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 단어의 다른 뜻과 예시의 방향을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(e)",
+              "text": "bad habits that cloud fresh and positive experiences",
+              "ko": "나쁜 습관이 좋은 경험을 흐린다 → 맞음",
+              "tone": "hl"
+            },
+            {
+              "label": "(d)",
+              "text": "thoughts that relieve anxiety: “Oh no …”",
+              "ko": "불안을 키우는 예시인데 relieve(덜어 줌) → 반대",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1078zim"
+  },
+  "intro": {
+    "topic": {
+      "say": "새로운 자리에 갈 때 속으로 어떤 말을 하나요? 이번 글은 혼잣말(자동적 사고)이 감정을 어떻게 바꾸는지 다뤄요."
+    },
+    "method1": {
+      "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+    },
+    "method2": {
+      "say": "요지를 잡고, 말과 감정을 두 쪽으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 하나씩 볼 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "from": "1k3jo0f"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1naml79"
+}

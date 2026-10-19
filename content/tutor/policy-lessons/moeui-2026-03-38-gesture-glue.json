@@ -203,6 +203,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
           "en": "According to McNeil and Duncan",
           "ko": "McNeil과 Duncan에 따르면"
         },
@@ -233,6 +237,203 @@
       ],
       "steps": [
         {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "gesture",
+            "is different from language",
+            "it",
+            "does not present"
+          ],
+          "answers": [
+            "gesture",
+            "is different from language"
+          ],
+          "roles": {
+            "gesture": "S",
+            "is different from language": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "it": "그건 in that(~라는 점에서) 뒤 덩어리 안의 주어예요.",
+              "does not present": "그건 in that(~라는 점에서) 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 gesture(제스처), 동사는 is different from language(언어와 다르다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "tips": [
+            {
+              "label": "in that",
+              "mark": "in that",
+              "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."
+            }
+          ]
+        },
+        {
+          "id": "s1_that_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "it",
+            "does not present",
+            "the speaker"
+          ],
+          "answers": [
+            "it",
+            "does not present"
+          ],
+          "roles": {
+            "it": "S",
+            "does not present": "V"
+          },
+          "brief": {
+            "ask": "in that(~라는 점에서) 뒤가 어떻게 다른지예요. 그 안에서 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the speaker": "그건 present의 목적어예요. 주어·동사만 찾아요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "in that 안의 주어는 it(= gesture, 제스처), 동사는 does not present(주지 않는다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "중",
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "According to McNeil and Duncan",
+            "gesture",
+            "is different from language",
+            "in that",
+            "does not present",
+            "the speaker",
+            "such choices"
+          ],
+          "answers": [
+            "According to McNeil and Duncan",
+            "gesture",
+            "the speaker",
+            "such choices",
+            "does not present",
+            "in that",
+            "is different from language"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "According to McNeil and Duncan",
+                "ko": "McNeil과 Duncan에 따르면"
+              },
+              " ",
+              {
+                "en": "gesture",
+                "ko": "제스처는"
+              },
+              " ",
+              {
+                "en": "the speaker",
+                "ko": "화자에게"
+              },
+              " ",
+              {
+                "en": "such choices",
+                "ko": "그런 선택"
+              },
+              "을 ",
+              {
+                "en": "does not present",
+                "ko": "주지 않는다"
+              },
+              "는 ",
+              {
+                "en": "in that",
+                "ko": "점에서"
+              },
+              " ",
+              {
+                "en": "is different from language",
+                "ko": "언어와 다르다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "in that",
+              "mark": "in that",
+              "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."
+            }
+          ]
+        },
+        {
+          "id": "g_situation",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "주어진 문장은 제스처가 언어와 어떻게 다른지 말해요. 제스처는 말하는 사람에게 그런 선택을 주지 않는대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "gesture",
+            "is different from language",
+            "does not present"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "누구 말",
+                "text": "McNeil and Duncan",
+                "ko": "두 학자에 따르면"
+              },
+              {
+                "label": "무엇이",
+                "text": "gesture ≠ language",
+                "ko": "제스처는 언어와 다르다",
+                "tone": "hl"
+              },
+              {
+                "label": "어떤 점에서",
+                "text": "does not present the speaker with such choices",
+                "ko": "화자에게 그런 선택을 주지 않는다",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        {
           "id": "g_clue",
           "type": "pick",
           "interaction": "word_pick",
@@ -247,10 +448,10 @@
             "such choices"
           ],
           "brief": {
-            "ask": "주어진 문장에서 앞 문장과 이어지는 단서를 찾아볼까요?",
+            "ask": "주어진 문장에 앞 내용을 가리키는 말이 하나 있어요. 찾아볼까요?",
             "wrong": "그건 이 문장 안에서 뜻이 끝나는 말이에요. 앞에서 말한 걸 다시 가리키는 말을 찾아봐요.",
             "more": "좋아요! {n}개 남았어요.",
-            "praise": "맞아요!",
+            "praise": "맞아요! such(그러한)처럼 앞 내용을 가리키는 말은 문장 넣기·순서 문제에서 주의 깊게 보면 좋아요.",
             "explain": "'such choices(그러한 선택들)'예요. such는 앞에서 말한 걸 가리키니, 앞에 '선택' 이야기가 있어야 해요.",
             "point": "주어진 문장의 단서 = such choices (그러한 선택들) → 앞에 '선택' 이야기가 있어야"
           },
@@ -261,6 +462,68 @@
               "mark": "in that",
               "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."
             }
+          ],
+          "praise_tips": [
+            {
+              "label": "앞을 가리키는 말",
+              "text": "this, that, such, these, the처럼 앞에 나온 것을 다시 가리키는 말이에요. 문장 넣기에서는 이 말이 가리키는 게 바로 앞 문장에 있어야 해요."
+            }
+          ]
+        },
+        {
+          "id": "g_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "언어와 제스처를 두 그룹으로 나눠 봐요. 제스처는 그러한 선택을 주지 않는다는 점에서 언어와 다르대요. 그럼 choice는 어디 들어가야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요.",
+              "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요."
+            ],
+            "explain": "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 언어",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 제스처"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어와 제스처",
+            "between": "≠",
+            "left": {
+              "label": "언어 (language)",
+              "words": []
+            },
+            "right": {
+              "label": "제스처 (gesture)",
+              "words": []
+            },
+            "sort": {
+              "words": [
+                "choice"
+              ],
+              "left": "왼쪽 · 언어",
+              "right": "오른쪽 · 제스처"
+            }
+          },
+          "highlight": [
+            "gesture",
+            "does not present",
+            "such choices"
           ]
         },
         {
@@ -298,7 +561,25 @@
               "label": "말과 제스처가 중복된다는 내용"
             }
           ],
-          "method": 1
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어와 제스처",
+            "between": "≠",
+            "left": {
+              "label": "언어 (language)",
+              "words": [
+                {
+                  "text": "choice",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "제스처 (gesture)",
+              "words": []
+            }
+          }
         },
         {
           "id": "g_after",
@@ -346,6 +627,10 @@
       "teaching_value": "medium",
       "glosses": [
         {
+          "en": "are systematically made",
+          "ko": "체계적으로 만들어진다"
+        },
+        {
           "en": "Scholars",
           "ko": "학자들"
         },
@@ -384,9 +669,91 @@
         {
           "en": "co-expressive",
           "ko": "함께 표현하는"
+        },
+        {
+          "en": "made",
+          "ko": "만들어진"
         }
       ],
       "steps": [
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Scholars",
+            "have demonstrated",
+            "the gestures",
+            "hearing people",
+            "produce",
+            "are systematically made"
+          ],
+          "answers": [
+            "Scholars",
+            "have demonstrated",
+            "the gestures",
+            "are systematically made"
+          ],
+          "roles": {
+            "Scholars": "S",
+            "have demonstrated": "V",
+            "the gestures": "S",
+            "are systematically made": "V"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 주어(S)와 동사(V)를 모두 찾아볼까요? that 뒤에도 한 쌍 있어요.",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "hearing people": "그건 the gestures를 꾸미는 덩어리 안의 주어예요. 「듣는 사람들이 만드는」 제스처라는 말이에요.",
+              "produce": "그건 the gestures를 꾸미는 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "앞은 주어 Scholars, 동사 have demonstrated예요. that 뒤는 주어 the gestures, 동사 are systematically made예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s1_modify",
+          "type": "show",
+          "interaction": "note",
+          "method": 0,
+          "button": "다음",
+          "brief": {
+            "say": "초록 부분은 앞의 the gestures를 꾸며요. 아래 표처럼 읽어요."
+          },
+          "highlight": [
+            "the gestures"
+          ],
+          "highlight_alt": [
+            "hearing people produce while they are speaking"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "S",
+                "text": "the gestures",
+                "ko": "제스처",
+                "tone": "hl"
+              },
+              {
+                "label": "↖ 꾸밈",
+                "text": "(that) hearing people produce while they are speaking",
+                "ko": "듣는 사람들이 말하는 동안 만드는",
+                "tone": "hl2"
+              },
+              {
+                "label": "V",
+                "text": "are systematically made …",
+                "ko": "(말과 동시에) 체계적으로 만들어진다"
+              }
+            ]
+          },
+          "panel_below": true
+        },
         {
           "id": "s1_what",
           "type": "choice",
@@ -443,6 +810,18 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "their thoughts",
+          "ko": "그들의 생각"
+        },
+        {
+          "en": "to conceptualize and formulate",
+          "ko": "개념화하고 정리하는 것"
+        },
+        {
+          "en": "speakers",
+          "ko": "화자들"
+        },
+        {
           "en": "This tightly integrated pairing",
           "ko": "이렇게 단단히 결합된 한 쌍"
         },
@@ -477,9 +856,137 @@
         {
           "en": "possibilities",
           "ko": "가능성"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각들"
         }
       ],
       "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "This tightly integrated pairing",
+            "enables",
+            "speakers",
+            "to conceptualize and formulate"
+          ],
+          "answers": [
+            "This tightly integrated pairing",
+            "enables",
+            "speakers",
+            "to conceptualize and formulate"
+          ],
+          "roles": {
+            "This tightly integrated pairing": "S",
+            "enables": "V",
+            "speakers": "O",
+            "to conceptualize and formulate": "C"
+          },
+          "brief": {
+            "ask": "주어(S)·동사(V)·목적어(O)를 찾고, 목적어가 무엇을 하게 되는지(보어 C)까지 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 This tightly integrated pairing, 동사 enables, 목적어 speakers, 보어 to conceptualize and formulate — 화자가 생각을 개념화하고 정리할 수 있게 해 준대요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic"
+        },
+        {
+          "id": "s3_svoc_note",
+          "type": "show",
+          "interaction": "note",
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "중",
+            "초"
+          ],
+          "brief": {
+            "say": "enables + 사람 + to ~는 「사람이 ~하게 해 준다」로 읽어요. 그래서 이 짝은 화자가 생각을 개념화하고 정리할 수 있게 해 준대요."
+          },
+          "highlight": [
+            "enables",
+            "speakers",
+            "to conceptualize and formulate"
+          ],
+          "tips": [
+            {
+              "label": "동사 + 사람 + to ~",
+              "text": "enable·allow·help·encourage·force + 사람 + to ~ = 「사람이 ~하게 (해) 주다」. 예: allow us to see = 우리가 보게 해 준다."
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "This tightly integrated pairing",
+            "enables",
+            "speakers",
+            "formulate",
+            "their thoughts"
+          ],
+          "answers": [
+            "This tightly integrated pairing",
+            "speakers",
+            "their thoughts",
+            "formulate",
+            "enables"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "This tightly integrated pairing",
+                "ko": "이렇게 꼭 붙은 짝(언어와 제스처)은"
+              },
+              " ",
+              {
+                "en": "speakers",
+                "ko": "화자가"
+              },
+              " ",
+              {
+                "en": "their thoughts",
+                "ko": "자신의 생각"
+              },
+              "을 ",
+              {
+                "en": "formulate",
+                "ko": "정리하게"
+              },
+              " ",
+              {
+                "en": "enables",
+                "ko": "해 준다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "이렇게 꼭 붙은 언어와 제스처 덕분에, 화자는 언어의 '범주적' 조건과 제스처의 '심상적' 가능성 둘 다로 생각을 정리할 수 있대요."
+          },
+          "method": 0,
+          "display": "This tightly integrated pairing of language and gesture enables speakers to formulate their thoughts."
+        },
         {
           "id": "s2_cat",
           "type": "choice",
@@ -514,10 +1021,14 @@
           "panel": {
             "kind": "groups",
             "title": "언어와 제스처",
-            "between": "+",
+            "between": "≠",
             "left": {
               "label": "언어 (language)",
-              "words": []
+              "words": [
+                {
+                  "text": "choice"
+                }
+              ]
             },
             "right": {
               "label": "제스처 (gesture)",
@@ -569,10 +1080,13 @@
           "panel": {
             "kind": "groups",
             "title": "언어와 제스처",
-            "between": "+",
+            "between": "≠",
             "left": {
               "label": "언어 (language)",
               "words": [
+                {
+                  "text": "choice"
+                },
                 {
                   "text": "categorical",
                   "fresh": true
@@ -594,6 +1108,20 @@
           "highlight": [
             "“imagistic” possibilities of gesture"
           ]
+        },
+        {
+          "id": "s3_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이렇게 꼭 붙은 언어와 제스처 덕분에, 화자는 언어의 '범주적' 조건과 제스처의 '심상적' 가능성 둘 다로 생각을 정리할 수 있대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "story_3",
@@ -634,6 +1162,22 @@
       "teaching_value": "medium",
       "glosses": [
         {
+          "en": "is ongoing",
+          "ko": "진행 중이다"
+        },
+        {
+          "en": "the event",
+          "ko": "그 일"
+        },
+        {
+          "en": "must decide",
+          "ko": "정해야 한다"
+        },
+        {
+          "en": "one",
+          "ko": "사람(일반)"
+        },
+        {
           "en": "For example",
           "ko": "예를 들어"
         },
@@ -671,6 +1215,138 @@
         }
       ],
       "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "one",
+            "must decide",
+            "the event",
+            "has been completed"
+          ],
+          "answers": [
+            "one",
+            "must decide"
+          ],
+          "roles": {
+            "one": "S",
+            "must decide": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the event": "그건 if(~인지) 뒤 덩어리 안의 주어예요.",
+              "has been completed": "그건 if(~인지) 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 one(사람), 동사는 must decide(정해야 한다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic"
+        },
+        {
+          "id": "s4_that_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the event",
+            "has been completed",
+            "is ongoing"
+          ],
+          "answers": [
+            "the event",
+            "has been completed",
+            "is ongoing"
+          ],
+          "roles": {
+            "the event": "S",
+            "has been completed": "V",
+            "is ongoing": "V"
+          },
+          "brief": {
+            "ask": "if(~인지) 뒤가 무엇을 정하는지예요. 그 안에서 주어(S)와 동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "if 안의 주어는 the event(그 일), 동사는 has been completed(끝났다) 또는 is ongoing(진행 중이다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "For example",
+            "in describing an event",
+            "one must decide",
+            "has been completed",
+            "ongoing"
+          ],
+          "answers": [
+            "For example",
+            "in describing an event",
+            "has been completed",
+            "ongoing",
+            "one must decide"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "For example",
+                "ko": "예를 들어"
+              },
+              " ",
+              {
+                "en": "in describing an event",
+                "ko": "어떤 일을 말할 때"
+              },
+              " 그 일이 ",
+              {
+                "en": "has been completed",
+                "ko": "끝났는지"
+              },
+              " ",
+              {
+                "en": "ongoing",
+                "ko": "진행 중인지"
+              },
+              "를 ",
+              {
+                "en": "one must decide",
+                "ko": "정해야 한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "예를 들어 어떤 일을 말할 때, 언어에 뜻마다 붙는 꼬리말이 있으면 그 일이 끝났는지 진행 중인지 하나를 꼭 골라야 해요."
+          },
+          "method": 0,
+          "display": "For example, in describing an event, one must decide if the event has been completed or is ongoing."
+        },
         {
           "id": "s3_choice",
           "type": "choice",
@@ -711,6 +1387,20 @@
             "decide",
             "completed or is ongoing"
           ]
+        },
+        {
+          "id": "s4_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "예를 들어 어떤 일을 말할 때, 언어에 뜻마다 붙는 꼬리말이 있으면 그 일이 끝났는지 진행 중인지 하나를 꼭 골라야 해요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         }
       ]
     },
@@ -739,42 +1429,112 @@
       ],
       "steps": [
         {
-          "id": "s4_sort",
-          "type": "choice",
-          "interaction": "meaning_choice",
-          "one_try": true,
-          "brief": {
-            "ask": "'choice(선택)'는 언어와 제스처 중 어느 쪽의 특징이래요?",
-            "reask": "그럼 하나 골라 봐요.",
-            "hints": [
-              "'This kind of choice is characteristic of language'예요.",
-              "'This kind of choice is characteristic of language'예요."
-            ],
-            "explain": "'This kind of choice is characteristic of language'예요.",
-            "praise": "맞아요!",
-            "feedback": {
-              "o1": "'This kind of choice is characteristic of language'예요."
-            }
-          },
-          "options": [
-            {
-              "id": "o0",
-              "label": "왼쪽 · 언어",
-              "correct": true
-            },
-            {
-              "id": "o1",
-              "label": "오른쪽 · 제스처"
-            }
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "This kind of choice",
+            "is characteristic of",
+            "language"
           ],
+          "answers": [
+            "This kind of choice",
+            "is characteristic of",
+            "language"
+          ],
+          "roles": {
+            "This kind of choice": "S",
+            "is characteristic of": "V",
+            "language": "전목"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·전치사 뒤 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 This kind of choice, 동사는 is characteristic of(~의 특징이다), of 뒤 목적어는 language예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic"
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "This kind of choice",
+            "is characteristic of",
+            "language",
+            "as a semiotic system"
+          ],
+          "answers": [
+            "This kind of choice",
+            "as a semiotic system",
+            "language",
+            "is characteristic of"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "This kind of choice",
+                "ko": "이런 종류의 선택은"
+              },
+              " ",
+              {
+                "en": "as a semiotic system",
+                "ko": "기호 체계로서"
+              },
+              "의 ",
+              {
+                "en": "language",
+                "ko": "언어"
+              },
+              {
+                "en": "is characteristic of",
+                "ko": "의 특징이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "이런 선택은 기호 체계로서 언어가 가진 특징이래요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_sort",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "This kind of choice is characteristic of language — 선택은 언어의 특징이래요. 주어진 문장에서 choice를 언어 쪽에 넣은 게 맞았어요."
+          },
           "method": 1,
+          "button": "다음",
           "panel": {
             "kind": "groups",
             "title": "언어와 제스처",
-            "between": "+",
+            "between": "≠",
             "left": {
               "label": "언어 (language)",
               "words": [
+                {
+                  "text": "choice",
+                  "fresh": true
+                },
                 {
                   "text": "categorical"
                 }
@@ -787,19 +1547,26 @@
                   "text": "imagistic"
                 }
               ]
-            },
-            "sort": {
-              "words": [
-                "choice"
-              ],
-              "left": "왼쪽 · 언어",
-              "right": "오른쪽 · 제스처"
             }
           },
           "highlight": [
             "This kind of choice",
             "language"
           ]
+        },
+        {
+          "id": "s5_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이런 선택은 기호 체계로서 언어가 가진 특징이래요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "story_5",
@@ -847,6 +1614,14 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "offers",
+          "ko": "주다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
           "en": "Instead",
           "ko": "대신에"
         },
@@ -892,6 +1667,105 @@
         }
       ],
       "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "it",
+            "offers",
+            "a kind of glue",
+            "linguistic elements"
+          ],
+          "answers": [
+            "it",
+            "offers",
+            "a kind of glue"
+          ],
+          "roles": {
+            "it": "S",
+            "offers": "V",
+            "a kind of glue": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "linguistic elements": "그건 which 뒤에서 무엇을 묶는지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 it, 동사는 offers(준다), 목적어는 a kind of glue(일종의 접착제)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic"
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "Instead",
+            "offers",
+            "a kind of glue",
+            "unite",
+            "linguistic elements"
+          ],
+          "answers": [
+            "Instead",
+            "linguistic elements",
+            "unite",
+            "a kind of glue",
+            "offers"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Instead",
+                "ko": "대신에"
+              },
+              ", 그것은 ",
+              {
+                "en": "linguistic elements",
+                "ko": "언어 요소들"
+              },
+              "을 ",
+              {
+                "en": "unite",
+                "ko": "묶는"
+              },
+              " 걸 돕는 ",
+              {
+                "en": "a kind of glue",
+                "ko": "일종의 접착제"
+              },
+              "를 ",
+              {
+                "en": "offers",
+                "ko": "준다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Instead, it offers a kind of glue, which helps unite linguistic elements."
+        },
         {
           "id": "s5_it",
           "type": "choice",
@@ -975,15 +1849,15 @@
           "panel": {
             "kind": "groups",
             "title": "언어와 제스처",
-            "between": "+",
+            "between": "≠",
             "left": {
               "label": "언어 (language)",
               "words": [
                 {
-                  "text": "categorical"
+                  "text": "choice"
                 },
                 {
-                  "text": "choice"
+                  "text": "categorical"
                 }
               ]
             },
@@ -1009,15 +1883,15 @@
           "panel": {
             "kind": "groups",
             "title": "언어와 제스처",
-            "between": "+",
+            "between": "≠",
             "left": {
               "label": "언어 (language)",
               "words": [
                 {
-                  "text": "categorical"
+                  "text": "choice"
                 },
                 {
-                  "text": "choice"
+                  "text": "categorical"
                 }
               ]
             },
@@ -1033,7 +1907,8 @@
                 }
               ]
             }
-          }
+          },
+          "meaning_check": true
         }
       ]
     },
@@ -1043,6 +1918,10 @@
       "model_translation": "이러한 관점에서, 말과 제스처는 중복되는 것이 아니며 어느 하나가 다른 하나의 '번역'도 아니다.",
       "teaching_value": "medium",
       "glosses": [
+        {
+          "en": "are not",
+          "ko": "~이 아니다"
+        },
         {
           "en": "In this view",
           "ko": "이런 관점에서"
@@ -1069,6 +1948,122 @@
         }
       ],
       "steps": [
+        {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "speech and gesture",
+            "are not",
+            "redundant"
+          ],
+          "answers": [
+            "speech and gesture",
+            "are not",
+            "redundant"
+          ],
+          "roles": {
+            "speech and gesture": "S",
+            "are not": "V",
+            "redundant": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 speech and gesture, 동사는 are not, 보어는 redundant(중복된)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "tips": [
+            {
+              "label": "not A nor B",
+              "mark": "nor",
+              "text": "'A도 아니고 B도 아니다'예요. nor 뒤에서는 주어와 동사 순서가 바뀌어요(nor is one …)."
+            }
+          ]
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "In this view",
+            "speech and gesture",
+            "are not",
+            "redundant",
+            "nor is one",
+            "of the other"
+          ],
+          "answers": [
+            "In this view",
+            "speech and gesture",
+            "redundant",
+            "are not",
+            "of the other",
+            "nor is one"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In this view",
+                "ko": "이 관점에서"
+              },
+              " ",
+              {
+                "en": "speech and gesture",
+                "ko": "말과 제스처는"
+              },
+              " ",
+              {
+                "en": "redundant",
+                "ko": "중복된 것"
+              },
+              "이 ",
+              {
+                "en": "are not",
+                "ko": "아니고"
+              },
+              ", ",
+              {
+                "en": "of the other",
+                "ko": "다른 하나의"
+              },
+              " 번역인 ",
+              {
+                "en": "nor is one",
+                "ko": "하나가 ~인 것도 아니다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "이 관점에서 말과 제스처는 서로 겹치지(중복되지) 않고, 하나가 다른 하나의 '번역'도 아니래요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "not A nor B",
+              "mark": "nor",
+              "text": "'A도 아니고 B도 아니다'예요. nor 뒤에서는 주어와 동사 순서가 바뀌어요(nor is one …)."
+            }
+          ]
+        },
         {
           "id": "s6_rel",
           "type": "choice",
@@ -1115,7 +2110,22 @@
               "mark": "nor",
               "text": "'A도 아니고 B도 아니다'예요. nor 뒤에서는 주어와 동사 순서가 바뀌어요(nor is one …)."
             }
-          ]
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s7_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 관점에서 말과 제스처는 서로 겹치지(중복되지) 않고, 하나가 다른 하나의 '번역'도 아니래요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         }
       ]
     },
@@ -1125,6 +2135,10 @@
       "model_translation": "오히려, 사고 표현을 위한 최소 처리 단위는 이 둘의 결합이며, 그것은 본질적으로 '심상적-범주적'이다.",
       "teaching_value": "high",
       "glosses": [
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
         {
           "en": "Rather",
           "ko": "오히려"
@@ -1151,6 +2165,101 @@
         }
       ],
       "steps": [
+        {
+          "id": "s8_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the minimal processing unit",
+            "is",
+            "a combination of the two"
+          ],
+          "answers": [
+            "the minimal processing unit",
+            "is",
+            "a combination of the two"
+          ],
+          "roles": {
+            "the minimal processing unit": "S",
+            "is": "V",
+            "a combination of the two": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the minimal processing unit, 동사는 is, 보어는 a combination of the two(둘의 조합)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic"
+        },
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "candidates": [
+            "Rather",
+            "the minimal processing unit",
+            "for the expression of thought",
+            "is",
+            "a combination of the two"
+          ],
+          "answers": [
+            "Rather",
+            "for the expression of thought",
+            "the minimal processing unit",
+            "a combination of the two",
+            "is"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Rather",
+                "ko": "오히려"
+              },
+              " ",
+              {
+                "en": "for the expression of thought",
+                "ko": "생각을 표현하는"
+              },
+              " ",
+              {
+                "en": "the minimal processing unit",
+                "ko": "최소 처리 단위는"
+              },
+              " ",
+              {
+                "en": "a combination of the two",
+                "ko": "둘의 조합"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "오히려 생각을 표현하는 최소 단위는 둘(언어와 제스처)의 조합이래요."
+          },
+          "method": 0,
+          "display": "Rather, the minimal processing unit for the expression of thought is a combination of the two."
+        },
         {
           "id": "s7_unit",
           "type": "choice",
@@ -1189,7 +2298,22 @@
           "method": 1,
           "highlight": [
             "combination"
-          ]
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s8_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "오히려 생각을 표현하는 최소 단위는 둘(언어와 제스처)의 조합이래요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
         },
         {
           "id": "story_8",
@@ -1252,10 +2376,10 @@
               "label": "언어 (language)",
               "words": [
                 {
-                  "text": "categorical"
+                  "text": "choice"
                 },
                 {
-                  "text": "choice"
+                  "text": "categorical"
                 }
               ]
             },

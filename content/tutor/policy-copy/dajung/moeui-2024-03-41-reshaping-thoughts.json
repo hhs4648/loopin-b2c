@@ -1,0 +1,111 @@
+{
+  "lesson": "moeui-2024-03-41-reshaping-thoughts",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "제목 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_how": {
+      "say": "42번과 같은 글이에요. 이번엔 제목을 찾으려고 글쓴이가 하라는 말과 핵심어만 골라 볼게요.",
+      "from": "1b4kacd"
+    },
+    "s2_feel": {
+      "ask": "말하는 어조와 관점이 무엇을 만들어 낸대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "generates 뒤를 봐요. '그 이야기와 관련된 ~'을 만들어 낸대요.",
+        "generates 뒤를 봐요. '그 이야기와 관련된 ~'을 만들어 낸대요."
+      ],
+      "explain": "generates 뒤를 봐요. '그 이야기와 관련된 ~'을 만들어 낸대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "generates 뒤를 봐요. '그 이야기와 관련된 ~'을 만들어 낸대요."
+      },
+      "from": "1pxf1k5"
+    },
+    "s3_ex": {
+      "say": "'어려워', '안 좋게 될 거야'처럼 말하면 불안한 감정이 생긴대요. 내가 나에게 하는 말이 감정을 바꾼다는 거예요.",
+      "from": "49zlxe"
+    },
+    "s4_main": {
+      "ask": "글쓴이가 이제 무엇을 하라고 하나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "It’s time to 뒤가 글쓴이가 하라는 말이에요. restructure는 '다시 짜다'예요.",
+        "It’s time to 뒤가 글쓴이가 하라는 말이에요. restructure는 '다시 짜다'예요."
+      ],
+      "explain": "It’s time to 뒤가 글쓴이가 하라는 말이에요. restructure는 '다시 짜다'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "It’s time to 뒤가 글쓴이가 하라는 말이에요. restructure는 '다시 짜다'예요."
+      },
+      "from": "1803rkn"
+    },
+    "s4_key": {
+      "say": "제목의 첫 번째 핵심어예요. 생각을 바꾸자. 이제 어떤 생각을 바꾸는지 찾아봐요.",
+      "from": "w617pb"
+    },
+    "s9_talk": {
+      "say": "자동적 사고를 '혼잣말(self-talk)'이라고 부르재요. 두 번째 핵심어예요.",
+      "from": "15rhiz8"
+    },
+    "s13_bad": {
+      "ask": "글쓴이는 자동적 사고를 좋게 보나요, 나쁘게 보나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "주어 Automatic thoughts 바로 뒤 are 다음 말을 봐요.",
+        "주어 Automatic thoughts 바로 뒤 are 다음 말을 봐요."
+      ],
+      "explain": "주어 Automatic thoughts 바로 뒤 are 다음 말을 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "주어 Automatic thoughts 바로 뒤 are 다음 말을 봐요."
+      },
+      "from": "zfck4l"
+    },
+    "s15_go": {
+      "say": "나쁜 혼잣말을 바꿔 생각을 다시 짜자는 글이에요. 두 핵심어를 다 담은 제목을 골라 봐요.",
+      "from": "1xrds6b"
+    }
+  },
+  "exam": {
+    "ask": "칠판의 두 핵심어(생각을 다시 짜기, 혼잣말)를 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! Reshaping Thoughts는 restructure the way you think를, Self-talk는 자동적 사고를 바꿔 쓴 말이에요.",
+    "final_wrong": "정답은 ③이에요. 생각을 다시 짜자(Reshaping Thoughts)는 말과 혼잣말(Self-talk)을 둘 다 담았어요.",
+    "option_feedback": {
+      "1": "Automatic Thoughts는 맞지만 언어 학습 이야기는 글에 없어요.",
+      "2": "Self-talk는 나오지만 말하기 실력을 높이는 글이 아니에요. 혼잣말이 감정을 바꾼다는 글이에요.",
+      "4": "불안은 나쁜 경험을 만든대요. 생산성으로 이어진다는 말은 반대예요.",
+      "5": "남의 속마음이 아니라 내가 나에게 하는 말 이야기예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "from": "ohjjqm"
+  },
+  "intro": {
+    "topic": {
+      "say": "새로운 자리에 갈 때 속으로 어떤 말을 하나요? 이번 글은 혼잣말이 감정을 어떻게 바꾸는지 다뤄요."
+    },
+    "method1": {
+      "say": "제목 문제는 글쓴이가 하라는 말과, 무엇에 대한 말인지를 같이 잡아요. 핵심어 둘을 다 담은 제목이 정답이에요."
+    },
+    "from": "u9o92o"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "f043tu"
+}

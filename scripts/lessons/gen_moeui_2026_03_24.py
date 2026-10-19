@@ -853,6 +853,54 @@ for s_ in sentences:
         if st["type"] == "pick" and "핵심어" in st["brief"]["ask"]:
             st["keyword"] = True
 
+# 초급 기본 — 문장마다 「주어·동사 찾기」 또는 「해석 맞추기」 하나 (2026-10-15 선생님).
+# 문장 3은 주어·동사 두 쌍 찾기가 모두에게 있어 넣지 않는다. 핵심어 자유 해석은 그대로 둔다
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from beginner import add_basic, fill_chunk_glosses, m, sv_step  # noqa: E402
+
+add_basic(sentences, 1, [m("Something too domesticated", "너무 익숙해진 것은"), " ", m("more accessible", "더 다가가기 쉬운 것"), "이 ",
+                         m("isn’t", "아니다"), ", ", m("it", "그것은"), " ", m("altogether", "완전히"), " ", m("evaporates", "증발해 버린다"), "."],
+          match_display="Something too domesticated isn’t more accessible, it evaporates altogether.",
+          sv_new=sv_step("s1_basic_sv", ["Something too domesticated", "isn’t", "more accessible or approachable", "it", "evaporates"],
+                         {"Something too domesticated": "S", "isn’t": "V", "more accessible or approachable": "C", "it": "S", "evaporates": "V"}, {},
+                         "콤마 앞은 주어 Something too domesticated, 동사 isn’t, 보어 more accessible or approachable이에요. 콤마 뒤는 주어 it, 동사 evaporates예요."),
+          meaning_ids=["s1_fate"])
+add_basic(sentences, 2, [m("perhaps", "아마"), " ", m("translation", "번역은"), " ", m("this task", "이 일"), "에 ", m("especially", "특히"), " ",
+                         m("well suited", "잘 맞는"), " ", m("an art", "예술"), m("is", "이다"), "."],
+          sv_new=sv_step("s2_basic_sv", ["translation", "is", "an art", "this task"],
+                         {"translation": "S", "is": "V", "an art": "C"},
+                         {"this task": "그건 for 뒤, 무엇에 잘 맞는지 알려 주는 말이에요."},
+                         "주어는 translation(번역), 동사는 is, 보어는 an art(예술)예요."))
+add_basic(sentences, 4, [m("A bad text", "안 좋은 글은"), " ", m("native strangeness", "본래의 낯섦"), "이 ", m("lacks", "부족한"), " ", m("one", "것"),
+                         m("is", "이다"), " — 번역해도 ", m("nothing happens", "아무 일도 일어나지 않는다"), "."],
+          sv_new=sv_step("s4_basic_sv", ["A bad text", "is", "one", "lacks", "nothing happens"],
+                         {"A bad text": "S", "is": "V", "one": "C"},
+                         {"lacks": "그건 that 뒤 덩어리 안의 동사예요.", "nothing happens": "그건 대시(—) 뒤 문장이에요."},
+                         "주어는 A bad text, 동사는 is, 보어는 one(글)이에요."),
+          meaning_ids=["s4_lacks", "s4_nothing"])
+add_basic(sentences, 5, [m("The translation of a true work of art", "진짜 예술 작품의 번역은"), " ", m("significant", "의미가 크다"), " — ",
+                         m("it", "그것이"), " 작품에 ", m("inherent", "원래 있는"), " ", m("qualities", "자질"), "을 ", m("reinforces", "강화하기"), " 때문이다."],
+          match_display="The translation of a true work of art is significant because it reinforces qualities already inherent in it.",
+          sv_id="s5_subj")
+add_basic(sentences, 6, [m("translation", "번역은"), " ", m("makeshift", "임시방편"), "이 아니라, ", m("a work", "작품이"), " ", m("étrange", "낯설게"), " ",
+                         m("reaches us", "우리에게 다가오는"), " ", m("the mode of existence", "존재 방식"), "이다."],
+          match_display="translation is not a makeshift, but the mode of existence by which a work reaches us as étrange.",
+          sv_new=sv_step("s6_basic_sv", ["translation", "is not", "a makeshift", "the mode of existence"],
+                         {"translation": "S", "is not": "V", "a makeshift": "C", "the mode of existence": "C"}, {},
+                         "주어는 translation, 동사는 is not, 보어는 a makeshift — but 뒤 the mode of existence도 보어예요(not A but B)."),
+          meaning_ids=["s6_what"])
+add_basic(sentences, 7, [m("As Wilson put it", "Wilson의 말처럼"), " ", m("translation", "번역은"), " ", m("the work", "작품을"), " ",
+                         m("more strange", "더 낯설게"), ", ", m("newly strange", "새롭게 낯설게"), " ", m("seem", "보이게"), " ", m("makes", "만든다"), "."],
+          sv_new=sv_step("s7_basic_sv", ["translation", "makes", "the work", "seem"],
+                         {"translation": "S", "makes": "V", "the work": "O", "seem": "C"}, {},
+                         "주어는 translation, 동사는 makes, 목적어는 the work, 보어는 seem more strange(더 낯설게 보이게)예요."),
+          meaning_ids=["s7_make"])
+fill_chunk_glosses(sentences, {
+    "Something too domesticated": "너무 익숙해진 것", "isn’t": "~이 아니다", "more accessible or approachable": "더 다가가기 쉬운",
+    "more accessible": "더 다가가기 쉬운", "it": "그것", "is": "~이다", "an art": "예술", "well suited": "잘 맞는",
+    "A bad text": "안 좋은 글", "is not": "~이 아니다", "a makeshift": "임시방편", "the work": "그 작품",
+})
+
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from story_boards import add_story_boards  # noqa: E402

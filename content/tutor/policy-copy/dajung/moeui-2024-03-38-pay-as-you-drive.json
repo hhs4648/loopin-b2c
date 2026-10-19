@@ -1,0 +1,517 @@
+{
+  "lesson": "moeui-2024-03-38-pay-as-you-drive",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "문장 넣기 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_sv": {
+      "ask": "긴 문장이에요. 주어(S), 동사(V), 목적어(O), 보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "But in the future": "그건 '하지만 미래에는', 때를 알려 주는 말이에요.",
+        "people’s actual behavior": "그건 depending on(~에 따라) 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 real-time data collection, 동사는 will enable, 목적어는 insurance companies, 보어는 to charge pay-as-you-drive rates예요.",
+      "from": "1chtamu"
+    },
+    "g_enable": {
+      "say": "enable + 회사 + to ~는 '회사가 ~할 수 있게 해 준다'로 읽어요. 실시간 데이터 덕분에 보험사가 운전한 만큼 요금을 매길 수 있대요.",
+      "from": "x2x4ci"
+    },
+    "g_clue": {
+      "ask": "주어진 문장은 'But in the future(하지만 미래에는)'로 시작해요. 앞에는 어떤 내용이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "But은 앞과 뒤집는 말이에요. in the future(미래)와 반대되는 때를 떠올려 봐요.",
+        "But은 앞과 뒤집는 말이에요. in the future(미래)와 반대되는 때를 떠올려 봐요."
+      ],
+      "explain": "But in the future는 앞의 내용과 맞서는 '미래' 이야기예요. 그러니 앞에는 예전부터 해 온 방식이 있어야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "But in the future는 앞의 내용과 맞서는 '미래' 이야기예요. 그러니 앞에는 예전부터 해 온 방식이 있어야 해요.",
+        "o2": "But in the future는 앞의 내용과 맞서는 '미래' 이야기예요. 그러니 앞에는 예전부터 해 온 방식이 있어야 해요."
+      },
+      "from": "1b4ly5z"
+    },
+    "g_opposed": {
+      "ask": "'as opposed to generalized stereotypes of certain at-risk groups'는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "as opposed to는 '~와는 달리, ~가 아니라'예요.",
+        "as opposed to는 '~와는 달리, ~가 아니라'예요."
+      ],
+      "explain": "as opposed to는 '~와는 달리'예요. 집단에 대한 고정관념이 아니라, 사람마다 실제 행동에 따라 요금을 매긴대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "as opposed to는 '~와는 달리'예요. 집단에 대한 고정관념이 아니라, 사람마다 실제 행동에 따라 요금을 매긴대요.",
+        "o1": "as opposed to는 '~와는 달리'예요. 집단에 대한 고정관념이 아니라, 사람마다 실제 행동에 따라 요금을 매긴대요."
+      },
+      "from": "1tea58y"
+    },
+    "g_sort": {
+      "ask": "보험료 매기는 방식을 두 쪽으로 나눠 봐요. 'generalized stereotypes(일반화된 고정관념)'은 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "as opposed to(~와는 달리) 뒤에 있어요. 미래 방식과 다른 쪽이에요.",
+        "as opposed to(~와는 달리) 뒤에 있어요. 미래 방식과 다른 쪽이에요."
+      ],
+      "explain": "as opposed to(~와는 달리) 뒤에 있어요. 미래 방식과 다른 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "as opposed to(~와는 달리) 뒤에 있어요. 미래 방식과 다른 쪽이에요."
+      },
+      "from": "1ymluji"
+    },
+    "g_before": {
+      "ask": "그럼 주어진 문장 바로 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "But in the future와 as opposed to stereotypes를 같이 봐요. 그와 맞서는 예전 방식이 앞에 있어야 해요.",
+        "But in the future와 as opposed to stereotypes를 같이 봐요. 그와 맞서는 예전 방식이 앞에 있어야 해요."
+      ],
+      "explain": "But in the future(미래에는)와 as opposed to stereotypes(고정관념과 달리)가 맞서는 건, 집단으로 묶어 매기던 예전 방식이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "But in the future(미래에는)와 as opposed to stereotypes(고정관념과 달리)가 맞서는 건, 집단으로 묶어 매기던 예전 방식이에요.",
+        "o2": "But in the future(미래에는)와 as opposed to stereotypes(고정관념과 달리)가 맞서는 건, 집단으로 묶어 매기던 예전 방식이에요."
+      },
+      "from": "19m7jhv"
+    },
+    "g_after": {
+      "ask": "주어진 문장 바로 뒤에는 무엇이 오면 자연스러울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "새 방식(실제 행동에 따른 요금)이 나왔으니, 다음엔 그래서 어떻게 되는지가 이어지기 쉬워요.",
+        "새 방식(실제 행동에 따른 요금)이 나왔으니, 다음엔 그래서 어떻게 되는지가 이어지기 쉬워요."
+      ],
+      "explain": "실제 행동에 따라 요금을 매기는 새 방식이 나왔으니, 그 결과(누가 더 내게 되는지)가 이어지기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "실제 행동에 따라 요금을 매기는 새 방식이 나왔으니, 그 결과(누가 더 내게 되는지)가 이어지기 쉬워요.",
+        "o2": "실제 행동에 따라 요금을 매기는 새 방식이 나왔으니, 그 결과(누가 더 내게 되는지)가 이어지기 쉬워요."
+      },
+      "from": "12ma4ss"
+    },
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the safe side": "그건 on 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Insurance companies, 동사는 are expected to err예요.",
+      "from": "l6f2hf"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1ebwbqh"
+    },
+    "s1_safe": {
+      "say": "보험 회사는 늘 안전한 쪽으로, 너무 조심한대요.",
+      "from": "viqbir"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the customers": "그건 picking and choosing(고르고 고르는)의 대상이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 They, 동사는 calculate, 목적어는 risks예요.",
+      "from": "1a37xel"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "c9tf6x"
+    },
+    "s2_pick": {
+      "say": "위험을 꼼꼼히 계산하고, 보험을 들어 줄 고객을 신중하게 고른대요.",
+      "from": "5obqqu"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "their role in the economy": "그건 because 뒤 덩어리 안의 주어예요.",
+        "is": "그건 because 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 They, 동사는 are, 보어는 boring이에요.",
+      "from": "1hp5a63"
+    },
+    "s4_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "w35ymu"
+    },
+    "s3_boring": {
+      "ask": "보험 회사가 따분한(boring) 이유는 무엇이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "because 뒤 'to shield everyone and everything from disastrous loss'를 봐요. shield는 '보호하다'예요.",
+        "because 뒤 'to shield everyone and everything from disastrous loss'를 봐요. shield는 '보호하다'예요."
+      ],
+      "explain": "'their role … is to shield everyone and everything from disastrous loss', 모두를 큰 손실에서 지키는 게 역할이라 늘 조심스럽고 따분하대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'their role … is to shield everyone and everything from disastrous loss', 모두를 큰 손실에서 지키는 게 역할이라 늘 조심스럽고 따분하대요.",
+        "o2": "'their role … is to shield everyone and everything from disastrous loss', 모두를 큰 손실에서 지키는 게 역할이라 늘 조심스럽고 따분하대요."
+      },
+      "from": "jm1j50"
+    },
+    "story_4": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "Unlike manufacturing": "그건 '제조업과 달리'예요.",
+        "the insurance industry": "그건 in 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 nothing truly revolutionary, 동사는 (ever) happens예요. nothing이 주어라 '아무것도 일어나지 않는다'예요.",
+      "from": "1m8cyk5"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "psunvt"
+    },
+    "s4_nothing": {
+      "say": "제조업과 달리 보험 업계에서는 정말 혁신적인 일이 일어나지 않는대요. 따분하다는 말을 이어 가요.",
+      "from": "1ljxhqf"
+    },
+    "s4_flow": {
+      "ask": "① 자리예요. '보험 회사는 늘 조심해서 따분하다' → '보험 업계엔 혁신이 없다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "둘 다 보험 업계가 따분하다는 말이에요. 그대로 이어져요.",
+        "둘 다 보험 업계가 따분하다는 말이에요. 그대로 이어져요."
+      ],
+      "explain": "둘 다 보험 업계가 따분하다는 말이에요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "둘 다 보험 업계가 따분하다는 말이에요. 그대로 이어져요."
+      },
+      "from": "1up6rnh"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "For centuries": "그건 '수 세기 동안', 때를 알려 주는 말이에요.",
+        "people": "그건 to 뒤 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 insurers, 동사는 have charged, 목적어는 higher premiums예요.",
+      "from": "1omsdou"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "l92iuu"
+    },
+    "s5_who": {
+      "ask": "수 세기 동안 보험사는 누구에게 더 높은 보험료를 매겼대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "to people in 'high-risk categories'를 봐요. 그 뒤 such as가 예시예요.",
+        "to people in 'high-risk categories'를 봐요. 그 뒤 such as가 예시예요."
+      ],
+      "explain": "'to people in high-risk categories', 흡연자·30세 미만 남성 운전자처럼 고위험군으로 묶인 집단에 더 매겼대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'to people in high-risk categories', 흡연자·30세 미만 남성 운전자처럼 고위험군으로 묶인 집단에 더 매겼대요.",
+        "o2": "'to people in high-risk categories', 흡연자·30세 미만 남성 운전자처럼 고위험군으로 묶인 집단에 더 매겼대요."
+      },
+      "from": "19l7g64"
+    },
+    "s5_flow": {
+      "ask": "② 자리예요. '보험 업계엔 혁신이 없다' → '수 세기 동안 고위험군에 비싸게 매겼다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "수 세기 동안 똑같이 해 왔다는 건 혁신이 없다는 말의 예예요. 그대로 이어져요.",
+        "수 세기 동안 똑같이 해 왔다는 건 혁신이 없다는 말의 예예요. 그대로 이어져요."
+      ],
+      "explain": "수 세기 동안 똑같이 해 왔다는 건 혁신이 없다는 말의 예예요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "수 세기 동안 똑같이 해 왔다는 건 혁신이 없다는 말의 예예요. 그대로 이어져요."
+      },
+      "from": "1aug0h"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·전치사 뒤 목적어(전목)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "disadvantaged groups": "그건 against 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 This type of classification, 동사는 results in, in 뒤 목적어는 biases and outright discrimination이에요.",
+      "from": "q5wspz"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "wzw50p"
+    },
+    "s6_this": {
+      "ask": "This type of classification(이런 종류의 분류)은 무엇을 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "This는 바로 앞 문장을 받아요. 앞 문장에서 사람들을 무엇으로 나눴는지 봐요.",
+        "This는 바로 앞 문장을 받아요. 앞 문장에서 사람들을 무엇으로 나눴는지 봐요."
+      ],
+      "explain": "This는 바로 앞 문장의 'high-risk categories', 사람들을 고위험군으로 나누던 방식을 가리켜요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "This는 바로 앞 문장의 'high-risk categories', 사람들을 고위험군으로 나누던 방식을 가리켜요.",
+        "o2": "This는 바로 앞 문장의 'high-risk categories', 사람들을 고위험군으로 나누던 방식을 가리켜요."
+      },
+      "point": "This type of classification = 바로 앞의 고위험군 분류 (그 결과 편견·차별)",
+      "from": "76wr9q"
+    },
+    "s6_result": {
+      "say": "그 분류가 불리한 집단에 대한 편견과 차별을 낳는대요. 예전 방식의 문제예요.",
+      "from": "18gf21i"
+    },
+    "s6_flow": {
+      "ask": "③ 자리예요. '고위험군에 비싸게 매겼다' → '이런 분류는 차별을 낳는다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "This type of classification이 바로 앞 '고위험군 나누기'를 받아요. 그대로 이어져요.",
+        "This type of classification이 바로 앞 '고위험군 나누기'를 받아요. 그대로 이어져요."
+      ],
+      "explain": "This type of classification이 바로 앞 '고위험군 나누기'를 받아요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "This type of classification이 바로 앞 '고위험군 나누기'를 받아요. 그대로 이어져요."
+      },
+      "from": "1lzgunu"
+    },
+    "story_7": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "they": "그건 whether 뒤 덩어리 안의 주어예요.",
+        "are": "그건 whether 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Bad or high-risk individual drivers, 동사는 will end up paying이에요.",
+      "from": "cdzm8t"
+    },
+    "s8_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "12tac2e"
+    },
+    "s7_basis": {
+      "ask": "나쁘게 운전하는 사람은 남녀노소 상관없이 더 낸대요. 무엇을 기준으로 요금을 매기는 걸까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "regardless of whether they are men or women, young or old — 성별·나이와 상관없대요. individual drivers를 봐요.",
+        "regardless of whether they are men or women, young or old — 성별·나이와 상관없대요. individual drivers를 봐요."
+      ],
+      "explain": "성별·나이와 상관없이(regardless of) 개인(individual) 운전자의 운전이 나쁘면 더 내요. 실제 운전 행동이 기준이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "성별·나이와 상관없이(regardless of) 개인(individual) 운전자의 운전이 나쁘면 더 내요. 실제 운전 행동이 기준이에요.",
+        "o2": "성별·나이와 상관없이(regardless of) 개인(individual) 운전자의 운전이 나쁘면 더 내요. 실제 운전 행동이 기준이에요."
+      },
+      "from": "1mg1wzp"
+    },
+    "s7_break": {
+      "say": "그런데 바로 앞 문장은 집단 분류가 차별을 낳는다는 말이었어요. 갑자기 '개인 운전 행동' 기준이 나와요, 그 사이에 새 방식이 먼저 나와야 해요.",
+      "point": "④ 뒤 individual drivers(개인 기준)는 새 방식의 결과 → 앞에 미래 방식이 먼저 나와야 한다",
+      "from": "q1okuk"
+    },
+    "s7_flow": {
+      "ask": "④ 자리예요. '이런 분류는 차별을 낳는다' → '개인 운전자가 성별·나이와 상관없이 더 낸다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "집단 분류 이야기에서 갑자기 개인 기준 결과로 넘어가요. 새 방식(실제 행동에 따른 요금)이 빠져서 흐름이 끊겨요.",
+        "집단 분류 이야기에서 갑자기 개인 기준 결과로 넘어가요. 새 방식(실제 행동에 따른 요금)이 빠져서 흐름이 끊겨요."
+      ],
+      "explain": "집단 분류 이야기에서 갑자기 개인 기준 결과로 넘어가요. 새 방식(실제 행동에 따른 요금)이 빠져서 흐름이 끊겨요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "집단 분류 이야기에서 갑자기 개인 기준 결과로 넘어가요. 새 방식(실제 행동에 따른 요금)이 빠져서 흐름이 끊겨요."
+      },
+      "from": "1ruhv8b"
+    },
+    "s8_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "but 앞은 주어 The Big Brother connotations, 동사 are, 보어 threatening이에요. but 뒤는 주어 many people, 동사 might agree to예요.",
+      "from": "17ucdv5"
+    },
+    "s9_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "9m37bq"
+    },
+    "s8_monitor": {
+      "say": "실시간 감시는 위협적이지만, 요금이 낮아진다면 많은 사람이 동의할 수도 있대요. 주어진 문장의 real-time과 이어지는 이야기예요.",
+      "from": "ky722"
+    },
+    "s8_flow": {
+      "ask": "⑤ 자리예요. '개인 운전자가 운전 행동에 따라 더 낸다' → '감시는 위협적이지만 요금이 낮으면 동의할 수도', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "운전 행동에 따라 요금을 매기려면 감시가 필요해요. 그 감시 이야기로 그대로 이어져요.",
+        "운전 행동에 따라 요금을 매기려면 감시가 필요해요. 그 감시 이야기로 그대로 이어져요."
+      ],
+      "explain": "운전 행동에 따라 요금을 매기려면 감시가 필요해요. 그 감시 이야기로 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "운전 행동에 따라 요금을 매기려면 감시가 필요해요. 그 감시 이야기로 그대로 이어져요."
+      },
+      "from": "1kw1ue4"
+    },
+    "story_9": {
+      "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요.",
+      "from": "1m12sey"
+    },
+    "s8_go": {
+      "say": "①~⑤ 중 흐름이 끊긴 곳은 하나였어요. 주어진 문장의 But in the future와 as opposed to를 떠올리며 골라 봐요.",
+      "from": "1fvca90"
+    }
+  },
+  "exam": {
+    "ask": "주어진 문장의 But in the future와 as opposed to stereotypes를 떠올리며 들어갈 곳을 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 예전엔 고위험군으로 묶어 비싸게 받았고, 그 분류는 차별을 낳았어요 → 하지만 미래엔 실제 행동에 따라 요금을 매겨요(주어진 문장) → 그래서 나쁜 운전자는 남녀노소 상관없이 더 내요.",
+    "final_wrong": "정답은 ④예요. 집단 분류의 문제 뒤에 But in the future, 새 방식이 오고, 그 결과(개인 운전자가 더 냄)가 이어져요.",
+    "option_feedback": {
+      "1": "① 앞은 보험 회사가 따분하다는 말뿐이에요. But in the future가 맞설 예전 방식(집단 분류)이 아직 안 나왔어요.",
+      "2": "② 앞은 보험 업계엔 혁신이 없다는 말이에요. 고정관념(stereotypes)이 무엇인지 아직 안 나왔어요.",
+      "3": "③에 넣으면 뒤의 This type of classification이 주어진 문장(실제 행동 기준)을 가리키게 돼요. 그런데 차별을 낳는 건 고위험군 분류예요.",
+      "5": "⑤ 앞에서 이미 개인 운전자가 더 낸다는 결과가 나왔어요. 새 방식은 그 결과보다 먼저 나와야 해요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 28.0%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "③에 넣으면 순서가 '고위험군에 비싸게 → 미래엔 실제 행동 기준 → 이런 종류의 분류가 차별을 낳는다'가 돼요. 그러면 This type of classification이 미래 방식을 가리켜서, 공정해지려는 새 방식이 차별을 낳는다는 말이 돼요. This는 바로 앞 고위험군 분류를 받아야 해요.",
+        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "This가 가리키는 걸 확인 안 했어요",
+            "skills": [
+              "this_refers"
+            ],
+            "reply": "알려 줘서 고마워요. 문장 넣기에서는 넣은 자리 뒤 문장의 This, Such가 무엇을 가리키게 되는지 꼭 확인해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "For centuries 뒤라서 바로 대조하는 줄 알았어요",
+            "skills": [
+              "contrast_guess"
+            ],
+            "reply": "알려 줘서 고마워요. 대조(예전↔미래)는 맞지만, 예전 방식의 이야기(분류와 그 문제)가 끝난 뒤에 와야 해요. 앞으로 단락이 어디서 끝나는지 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "this_refers",
+              "contrast_guess"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 이야기가 끝나는 곳을 같이 짚어 볼게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "③ 뒤",
+              "text": "This type of classification … discrimination",
+              "ko": "이런 분류 = 바로 앞 고위험군 분류",
+              "tone": "hl"
+            },
+            {
+              "label": "④ 뒤",
+              "text": "individual drivers … regardless of men or women",
+              "ko": "개인 기준 = 새 방식의 결과",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "bdfd7"
+  },
+  "intro": {
+    "topic": {
+      "say": "운전을 잘하는데도 젊은 남자라서 보험료를 더 낸다면 공평할까요? 이번 글은 보험료를 매기는 예전 방식과 미래 방식을 다뤄요."
+    },
+    "method1": {
+      "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."
+    },
+    "method2": {
+      "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾을 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "from": "pnzf55"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "n2z3xx"
+}

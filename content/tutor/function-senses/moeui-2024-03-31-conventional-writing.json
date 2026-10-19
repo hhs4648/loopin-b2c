@@ -1,0 +1,64 @@
+{
+ "4": [
+  {
+   "word": "as",
+   "phrase": "as intense preoccupation",
+   "sense": "~하면서",
+   "usage": "접속사 as + 주어·동사 (동시·비례)"
+  },
+  {
+   "word": "to",
+   "phrase": "gives way to",
+   "sense": "~에게, ~로 (자리를 내주다)",
+   "usage": "give way to + 명사 = ~로 바뀌다"
+  }
+ ],
+ "5": [
+  {
+   "word": "as",
+   "phrase": "As a result",
+   "sense": "(As a result의 일부)",
+   "usage": "As a result = 그 결과"
+  },
+  {
+   "word": "that",
+   "phrase": "originality that characterized",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "8": [
+  {
+   "word": "to",
+   "phrase": "need to invent",
+   "sense": "~할",
+   "usage": "명사 + to부정사 (~할 필요)"
+  },
+  {
+   "word": "to",
+   "phrase": "to communicate",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  }
+ ],
+ "9": [
+  {
+   "word": "that",
+   "phrase": "we know that",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (know that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "in contrast to",
+   "sense": "~와 (대조적으로)",
+   "usage": "in contrast to + 명사"
+  },
+  {
+   "word": "that",
+   "phrase": "that star",
+   "sense": "저",
+   "usage": "지시형용사 that + 명사"
+  }
+ ]
+}

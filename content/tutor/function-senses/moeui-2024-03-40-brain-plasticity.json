@@ -1,0 +1,96 @@
+{
+ "2": [
+  {
+   "word": "that",
+   "phrase": "suggests that the key idea",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (suggest that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "to mold something",
+   "sense": "~하는 것",
+   "usage": "to부정사 (보어: ~하는 것)"
+  },
+  {
+   "word": "that",
+   "phrase": "keep it that way",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사 (that way = 그대로)"
+  },
+  {
+   "word": "to",
+   "phrase": "to shape the plastic toy",
+   "sense": "~하는 것",
+   "usage": "to부정사 (콜론 뒤 풀이)"
+  }
+ ],
+ "3": [
+  {
+   "word": "but",
+   "phrase": "But that’s not",
+   "sense": "하지만",
+   "usage": "접속사 but (문장 앞)"
+  },
+  {
+   "word": "that",
+   "phrase": "that’s not",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞 내용)"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "responds to the world",
+   "sense": "~에 (반응하다)",
+   "usage": "respond to + 명사"
+  }
+ ],
+ "11": [
+  {
+   "word": "as",
+   "phrase": "even as the target moves",
+   "sense": "~할 때조차",
+   "usage": "even as + 주어·동사"
+  }
+ ],
+ "12": [
+  {
+   "word": "that",
+   "phrase": "a diary that you wrote",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 주어·동사"
+  }
+ ],
+ "13": [
+  {
+   "word": "that",
+   "phrase": "that previous person",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  }
+ ],
+ "15": [
+  {
+   "word": "to",
+   "phrase": "to fit",
+   "sense": "~하도록, ~에 맞게",
+   "usage": "to부정사 (목적)"
+  }
+ ],
+ "16": [
+  {
+   "word": "while",
+   "phrase": "While some understand",
+   "sense": "~인 반면",
+   "usage": "접속사 while (대조)"
+  },
+  {
+   "word": "to",
+   "phrase": "to mean",
+   "sense": "~을 뜻한다고",
+   "usage": "understand A to mean B = A가 B를 뜻한다고 이해하다"
+  }
+ ]
+}

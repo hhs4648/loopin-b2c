@@ -1,0 +1,1981 @@
+{
+  "id": "moeui-2024-03-30-geometry-landmarks",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 30번 (문맥상 낱말의 쓰임, 3점)",
+  "brief": {
+    "topic": "어휘 문제 푸는 법: 요지 → 두 그룹·+/− 흐름 → 밑줄 단어가 흐름에 맞는지 하나씩 점검",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "word_in_context",
+    "labels": [
+      "요지 잡기",
+      "두 그룹으로 나누기",
+      "밑줄 단어 맞춰 보기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-geometry.svg",
+      "alt": "칠판: Room shape(방 모양) + Blue wall(파란 벽)",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/vocab-method.svg",
+      "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "숨긴 물건을 찾을 때, 방의 모양과 파란 벽 중 무엇을 더 믿을까요? 이번 글은 위치를 찾을 때 쓰는 두 가지 정보를 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "요지를 잡고, 정보를 두 그룹으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 하나씩 볼 거예요. 칠판 순서대로 해 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은? [3점]",
+    "underline": [
+      "①failed",
+      "②weighted",
+      "③invalid",
+      "④reliable",
+      "⑤consistent"
+    ],
+    "sentence": 4,
+    "analysis_first": true,
+    "wrong_rate": 45.9,
+    "wrong_rank": 12,
+    "glosses": [
+      {
+        "en": "failed",
+        "ko": "~하지 못했다"
+      },
+      {
+        "en": "weighted",
+        "ko": "가중된"
+      },
+      {
+        "en": "invalid",
+        "ko": "타당하지 않은"
+      },
+      {
+        "en": "reliable",
+        "ko": "믿을 만한"
+      },
+      {
+        "en": "consistent",
+        "ko": "일치하는"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "failed",
+        "keywords": [
+          "failed"
+        ],
+        "ko": "~하지 못했다"
+      },
+      {
+        "id": "2",
+        "label": "weighted",
+        "keywords": [
+          "weighted"
+        ],
+        "ko": "가중된"
+      },
+      {
+        "id": "3",
+        "label": "invalid",
+        "keywords": [
+          "invalid"
+        ],
+        "ko": "타당하지 않은",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "reliable",
+        "keywords": [
+          "reliable"
+        ],
+        "ko": "믿을 만한"
+      },
+      {
+        "id": "5",
+        "label": "consistent",
+        "keywords": [
+          "consistent"
+        ],
+        "ko": "일치하는"
+      }
+    ],
+    "brief": {
+      "ask": "밑줄 점검표를 떠올려 봐요. 흐름(+/−)과 짝이 맞지 않는 하나를 골라요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! because 뒤 이유는 '더 안정적이다(+)'예요. 안정적이라서 기하 정보가 '타당하지 않다(invalid, −)'는 건 반대예요. 더 믿고 우선한다는 privileged(특혜를 받는)가 맞아요.",
+      "final_wrong": "정답은 ③이에요. 더 안정적이라서(+) 오히려 우선 대우를 받아요(privileged). invalid(−)는 반대예요.",
+      "option_feedback": {
+        "1": "작은 방에선 기하 정보만 썼으니 파란 벽 정보를 넣지 못했다(failed)가 맞아요.",
+        "2": "두 정보를 무게를 달리해 섞는다(weighted)는 뒤의 give more weight와 이어져요.",
+        "4": "큰 특징은 더 안정적이고 그래서(hence) 더 믿을 만하다(reliable), 같은 쪽으로 이어져요.",
+        "5": "가까운 것(짧은 거리)이 더 정확하게 기록되니, 가까운 것에 무게를 두는 건 Weber의 법칙과 일치해요(consistent)."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 13.2%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "⑤ 앞뒤를 나란히 놓아 봐요. 동물은 가까운 랜드마크에 더 무게를 줘요. Weber의 법칙은 짧은 거리가 더 정확히 기록된대요. 가까운 것 = 짧은 거리 = 더 정확하니, 무게를 주는 게 법칙과 일치(consistent)해요.",
+          "ask": "그래서 ⑤는 문맥에 맞아요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "Weber의 법칙 문장이 어려웠어요",
+              "skills": [
+                "long_relative"
+              ],
+              "reply": "알려 줘서 고마워요. in which 뒤는 그 법칙의 내용이에요. 앞으로 긴 덩어리는 끊어 읽기로 나눠서 보여 줄게요."
+            },
+            {
+              "label": "가까운 것 = 짧은 거리로 못 이었어요",
+              "skills": [
+                "paraphrase_link"
+              ],
+              "reply": "알려 줘서 고마워요. nearer landmarks와 smaller distances는 같은 말을 바꿔 쓴 거예요. 앞으로 바꿔 쓴 말을 짝지어 보여 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "long_relative",
+                "paraphrase_link"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 긴 덩어리와 바꿔 쓴 말을 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "동물",
+                "text": "give more weight to nearer landmarks",
+                "ko": "가까운 것에 더 무게",
+                "tone": "hl"
+              },
+              {
+                "label": "Weber’s law",
+                "text": "smaller distances … coded more accurately",
+                "ko": "짧은 거리가 더 정확 → 일치",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "rely on",
+        "ko": "~에 의존하다"
+      },
+      {
+        "en": "exclusively",
+        "ko": "오로지"
+      },
+      {
+        "en": "determine",
+        "ko": "알아내다"
+      },
+      {
+        "en": "incorporate",
+        "ko": "포함하다"
+      },
+      {
+        "en": "feature",
+        "ko": "특징"
+      },
+      {
+        "en": "finding",
+        "ko": "연구 결과"
+      },
+      {
+        "en": "combine",
+        "ko": "결합하다"
+      },
+      {
+        "en": "weighted",
+        "ko": "가중된"
+      },
+      {
+        "en": "stable",
+        "ko": "안정적인"
+      },
+      {
+        "en": "landmark",
+        "ko": "랜드마크"
+      },
+      {
+        "en": "validity",
+        "ko": "타당성"
+      },
+      {
+        "en": "hence",
+        "ko": "그래서"
+      },
+      {
+        "en": "reliable",
+        "ko": "믿을 만한"
+      },
+      {
+        "en": "estimation",
+        "ko": "추정"
+      },
+      {
+        "en": "consistent with",
+        "ko": "~와 일치하는"
+      },
+      {
+        "en": "accurately",
+        "ko": "정확하게"
+      }
+    ],
+    "options": [
+      {
+        "en": "invalid",
+        "ko": "타당하지 않은"
+      },
+      {
+        "en": "privileged",
+        "ko": "특혜를 받는, 우선시되는"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "While it has been found that young children rely exclusively on geometric information to determine the location of an object hidden in a small enclosure, exclusive use of geometry does not occur in larger spaces.",
+      "model_translation": "어린아이들은 작은 에워싸인 장소에 숨겨진 물체의 위치를 파악하는 데 오로지 기하학적 정보에만 의존하는 것으로 밝혀졌지만, 더 큰 공간에서는 기하학의 단독 사용이 일어나지 않는다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "rely",
+          "ko": "의존하다"
+        },
+        {
+          "en": "While",
+          "ko": "~이지만"
+        },
+        {
+          "en": "it has been found that",
+          "ko": "~라는 것이 밝혀졌다"
+        },
+        {
+          "en": "young children",
+          "ko": "어린아이들"
+        },
+        {
+          "en": "rely exclusively on",
+          "ko": "오로지 ~에만 의존하다"
+        },
+        {
+          "en": "geometric information",
+          "ko": "기하 정보(공간의 모양)"
+        },
+        {
+          "en": "to determine the location",
+          "ko": "위치를 알아내려고"
+        },
+        {
+          "en": "an object hidden in a small enclosure",
+          "ko": "작은 공간에 숨긴 물건"
+        },
+        {
+          "en": "exclusive use of geometry",
+          "ko": "기하 정보만 쓰는 것"
+        },
+        {
+          "en": "does not occur",
+          "ko": "일어나지 않는다"
+        },
+        {
+          "en": "in larger spaces",
+          "ko": "더 큰 공간에서는"
+        },
+        {
+          "en": "young",
+          "ko": "어린"
+        },
+        {
+          "en": "children",
+          "ko": "아이들"
+        },
+        {
+          "en": "exclusively",
+          "ko": "오로지"
+        },
+        {
+          "en": "geometric",
+          "ko": "기하학의"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "determine",
+          "ko": "알아내다"
+        },
+        {
+          "en": "object",
+          "ko": "물건"
+        },
+        {
+          "en": "hidden",
+          "ko": "숨겨진"
+        },
+        {
+          "en": "small",
+          "ko": "작은"
+        },
+        {
+          "en": "enclosure",
+          "ko": "둘러싸인 공간"
+        },
+        {
+          "en": "exclusive",
+          "ko": "오로지 그것만의"
+        },
+        {
+          "en": "geometry",
+          "ko": "기하 정보, 기하학"
+        },
+        {
+          "en": "occur",
+          "ko": "일어나다"
+        },
+        {
+          "en": "larger",
+          "ko": "더 큰"
+        },
+        {
+          "en": "spaces",
+          "ko": "공간"
+        }
+      ],
+      "slashes": [
+        "it has been found",
+        "geometric information",
+        "a small enclosure,",
+        "exclusive use of geometry"
+      ],
+      "steps": [
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "young children",
+            "rely",
+            "geometric information",
+            "exclusive use of geometry",
+            "does not occur"
+          ],
+          "answers": [
+            "exclusive use of geometry",
+            "does not occur"
+          ],
+          "roles": {
+            "exclusive use of geometry": "S",
+            "does not occur": "V"
+          },
+          "brief": {
+            "ask": "While 덩어리가 길어요. 콤마 뒤 메인 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "young children": "그건 While 덩어리 안, that 뒤의 주어예요. 콤마 뒤 메인 문장에서 찾아봐요.",
+              "rely": "그건 While 덩어리 안의 동사예요.",
+              "geometric information": "그건 on 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콤마 뒤 메인 문장은 주어 exclusive use of geometry, 동사 does not occur예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s1_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "작은 공간과 큰 공간에서 아이들은 각각 어떻게 했대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "While(~이지만) 앞은 small enclosure, 뒤는 larger spaces예요. exclusively는 '오로지'예요.",
+              "While(~이지만) 앞은 small enclosure, 뒤는 larger spaces예요. exclusively는 '오로지'예요."
+            ],
+            "explain": "작은 공간에선 'rely exclusively on geometric information', 기하 정보만 썼고, 큰 공간에선 'exclusive use … does not occur', 그것만 쓰지 않았대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "작은 공간에선 'rely exclusively on geometric information', 기하 정보만 썼고, 큰 공간에선 'exclusive use … does not occur', 그것만 쓰지 않았대요.",
+              "o2": "작은 공간에선 'rely exclusively on geometric information', 기하 정보만 썼고, 큰 공간에선 'exclusive use … does not occur', 그것만 쓰지 않았대요."
+            },
+            "point": "요지 시작: 작은 공간 → 기하 정보만, 큰 공간 → 기하만 쓰지는 않는다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "작은 곳·큰 곳 모두 기하 정보만 썼다"
+            },
+            {
+              "id": "o1",
+              "label": "작은 곳에선 기하 정보만 쓰고, 큰 곳에선 그렇지 않았다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "작은 곳에선 아무 정보도 안 썼다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "exclusively",
+            "small enclosure",
+            "does not occur",
+            "larger spaces"
+          ],
+          "tips": [
+            {
+              "label": "While (대조)",
+              "text": "문장 앞 While은 '~이지만, ~인 반면'이에요. 앞뒤가 대조돼요.",
+              "mark": "While"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 정보",
+            "left": {
+              "label": "geometry (기하: 공간의 모양)",
+              "words": [
+                {
+                  "text": "small space → only geometry",
+                  "ko": "작은 곳 → 기하만",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "nongeometric (비기하: 파란 벽 같은 특징)",
+              "words": []
+            },
+            "between": "+"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Although, in a small room, children ①failed to incorporate information about nongeometric features (i.e., a blue wall), they used both types of information in a larger room.",
+      "model_translation": "비록 작은 방에서 아이들은 비기하학적 특징(예를 들어, 파란색 벽)에 대한 정보를 포함하는 데 실패했지만, 그들은 더 큰 방에서 두 가지 유형의 정보를 모두 사용했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "used",
+          "ko": "썼다"
+        },
+        {
+          "en": "they",
+          "ko": "그들"
+        },
+        {
+          "en": "failed",
+          "ko": "~하지 못했다"
+        },
+        {
+          "en": "Although",
+          "ko": "비록 ~이지만"
+        },
+        {
+          "en": "in a small room",
+          "ko": "작은 방에서는"
+        },
+        {
+          "en": "children",
+          "ko": "아이들"
+        },
+        {
+          "en": "failed to incorporate",
+          "ko": "포함하지 못했다"
+        },
+        {
+          "en": "information about nongeometric features",
+          "ko": "비기하 특징에 대한 정보"
+        },
+        {
+          "en": "nongeometric features",
+          "ko": "비기하 특징"
+        },
+        {
+          "en": "i.e., a blue wall",
+          "ko": "예를 들어 파란 벽"
+        },
+        {
+          "en": "they used",
+          "ko": "그들은 사용했다"
+        },
+        {
+          "en": "both types of information",
+          "ko": "두 종류의 정보 모두"
+        },
+        {
+          "en": "in a larger room",
+          "ko": "더 큰 방에서는"
+        },
+        {
+          "en": "small",
+          "ko": "작은"
+        },
+        {
+          "en": "incorporate",
+          "ko": "포함하다"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "nongeometric",
+          "ko": "비기하학적인"
+        },
+        {
+          "en": "features",
+          "ko": "특징"
+        },
+        {
+          "en": "i.e",
+          "ko": "즉, 다시 말해"
+        },
+        {
+          "en": "blue",
+          "ko": "파란"
+        },
+        {
+          "en": "wall",
+          "ko": "벽"
+        },
+        {
+          "en": "types",
+          "ko": "종류"
+        },
+        {
+          "en": "larger",
+          "ko": "더 큰"
+        }
+      ],
+      "slashes": [
+        "in a small room,",
+        "nongeometric features",
+        "a blue wall),"
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "children",
+            "failed",
+            "they",
+            "used",
+            "both types of information"
+          ],
+          "answers": [
+            "they",
+            "used",
+            "both types of information"
+          ],
+          "roles": {
+            "they": "S",
+            "used": "V",
+            "both types of information": "O"
+          },
+          "brief": {
+            "ask": "콤마 뒤 메인 문장에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "children": "그건 Although 덩어리 안의 주어예요.",
+              "failed": "그건 Although 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콤마 뒤 메인 문장은 주어 they, 동사 used, 목적어 both types of information이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "i.e.",
+              "text": "'즉, 다시 말해'예요. 괄호 안에서 앞말의 예나 뜻을 풀어 줘요.",
+              "mark": "i.e."
+            },
+            {
+              "label": "incorporate",
+              "text": "'포함하다, 넣다'예요. failed to incorporate = 포함하지 못했다.",
+              "mark": "incorporate"
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "in a small room",
+            "failed to incorporate",
+            "nongeometric features",
+            "they used",
+            "both types of information",
+            "in a larger room"
+          ],
+          "answers": [
+            "in a small room",
+            "nongeometric features",
+            "failed to incorporate",
+            "in a larger room",
+            "both types of information",
+            "they used"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "in a small room",
+                "ko": "작은 방에서는"
+              },
+              " 아이들이 ",
+              {
+                "en": "nongeometric features",
+                "ko": "비기하 특징"
+              },
+              " 정보를 ",
+              {
+                "en": "failed to incorporate",
+                "ko": "포함하지 못했지만"
+              },
+              ", ",
+              {
+                "en": "in a larger room",
+                "ko": "더 큰 방에서는"
+              },
+              " ",
+              {
+                "en": "both types of information",
+                "ko": "두 종류의 정보 모두"
+              },
+              "를 ",
+              {
+                "en": "they used",
+                "ko": "그들은 썼다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Although, in a small room, children failed to incorporate nongeometric features, they used both types of information in a larger room.",
+          "tips": [
+            {
+              "label": "i.e.",
+              "text": "'즉, 다시 말해'예요. 괄호 안에서 앞말의 예나 뜻을 풀어 줘요.",
+              "mark": "i.e."
+            },
+            {
+              "label": "incorporate",
+              "text": "'포함하다, 넣다'예요. failed to incorporate = 포함하지 못했다.",
+              "mark": "incorporate"
+            }
+          ]
+        },
+        {
+          "id": "s2_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'a blue wall(파란 벽)' 같은 정보는 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "괄호 앞 'nongeometric features'를 봐요. non-은 '아님'이에요.",
+              "괄호 앞 'nongeometric features'를 봐요. non-은 '아님'이에요."
+            ],
+            "explain": "'nongeometric features (i.e., a blue wall)', 파란 벽은 공간 모양이 아닌 특징이라 비기하 정보예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'nongeometric features (i.e., a blue wall)', 파란 벽은 공간 모양이 아닌 특징이라 비기하 정보예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 기하 정보 (공간의 모양)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 비기하 정보 (파란 벽 같은 특징)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 정보",
+            "left": {
+              "label": "geometry (기하: 공간의 모양)",
+              "words": [
+                {
+                  "text": "small space → only geometry",
+                  "ko": "작은 곳 → 기하만"
+                }
+              ]
+            },
+            "right": {
+              "label": "nongeometric (비기하: 파란 벽 같은 특징)",
+              "words": []
+            },
+            "between": "+",
+            "sort": {
+              "words": [
+                "a blue wall"
+              ],
+              "left": "왼쪽 · 기하 정보 (공간의 모양)",
+              "right": "오른쪽 · 비기하 정보 (파란 벽 같은 특징)"
+            }
+          },
+          "highlight": [
+            "nongeometric features"
+          ],
+          "tips": [
+            {
+              "label": "i.e.",
+              "text": "'즉, 다시 말해'예요. 괄호 안에서 앞말의 예나 뜻을 풀어 줘요.",
+              "mark": "i.e."
+            }
+          ]
+        },
+        {
+          "id": "s2_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "작은 방에선 기하 정보만 썼으니 파란 벽 정보는 '넣지 못했다(failed to incorporate)'가 맞아요. 큰 방에선 둘 다 썼고요. 그래서 ①은 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "failed to incorporate",
+            "both types of information"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 정보",
+            "left": {
+              "label": "geometry (기하: 공간의 모양)",
+              "words": [
+                {
+                  "text": "small space → only geometry",
+                  "ko": "작은 곳 → 기하만"
+                }
+              ]
+            },
+            "right": {
+              "label": "nongeometric (비기하: 파란 벽 같은 특징)",
+              "words": [
+                {
+                  "text": "a blue wall",
+                  "ko": "파란 벽",
+                  "fresh": true
+                },
+                {
+                  "text": "large room → both",
+                  "ko": "큰 방 → 둘 다",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          },
+          "tips": [
+            {
+              "label": "incorporate",
+              "text": "'포함하다, 넣다'예요. failed to incorporate = 포함하지 못했다.",
+              "mark": "incorporate"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧒",
+                "en": "small room → only geometry",
+                "ko": "작은 공간에선 아이들이 방 모양(기하)만 쓰고, 큰 방에선 파란 벽 같은 특징도 써요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "These findings suggest that geometric and nongeometric information may be combined in a ②weighted fashion.",
+      "model_translation": "이러한 연구 결과는 기하학적 그리고 비기하학적 정보가 가중된 방식으로 결합될 수 있음을 시사한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "These findings",
+          "ko": "이 연구 결과들은"
+        },
+        {
+          "en": "suggest",
+          "ko": "시사하다"
+        },
+        {
+          "en": "geometric and nongeometric information",
+          "ko": "기하·비기하 정보"
+        },
+        {
+          "en": "may be combined",
+          "ko": "결합될 수 있다"
+        },
+        {
+          "en": "in a weighted fashion",
+          "ko": "무게를 달리한 방식으로"
+        },
+        {
+          "en": "fashion",
+          "ko": "방식"
+        },
+        {
+          "en": "findings",
+          "ko": "연구 결과"
+        },
+        {
+          "en": "geometric",
+          "ko": "기하학의"
+        },
+        {
+          "en": "nongeometric",
+          "ko": "비기하학적인"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "weighted",
+          "ko": "가중된, 무게가 실린"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "These findings",
+            "suggest",
+            "geometric and nongeometric information",
+            "may be combined"
+          ],
+          "answers": [
+            "These findings",
+            "suggest"
+          ],
+          "roles": {
+            "These findings": "S",
+            "suggest": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "geometric and nongeometric information": "그건 that 뒤 덩어리 안의 주어예요.",
+              "may be combined": "그건 that 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 These findings, 동사는 suggest예요. that 뒤가 시사하는 내용이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "fashion",
+              "text": "옷의 '패션'이 아니라 '방식'이에요. in a weighted fashion = 무게를 둔 방식으로.",
+              "mark": "fashion"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "These findings",
+            "suggest",
+            "geometric and nongeometric information",
+            "may be combined",
+            "in a weighted fashion"
+          ],
+          "answers": [
+            "These findings",
+            "geometric and nongeometric information",
+            "in a weighted fashion",
+            "may be combined",
+            "suggest"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "These findings",
+                "ko": "이 연구 결과들은"
+              },
+              " ",
+              {
+                "en": "geometric and nongeometric information",
+                "ko": "기하·비기하 정보가"
+              },
+              " ",
+              {
+                "en": "in a weighted fashion",
+                "ko": "무게를 달리한 방식으로"
+              },
+              " ",
+              {
+                "en": "may be combined",
+                "ko": "결합될 수 있다"
+              },
+              "고 ",
+              {
+                "en": "suggest",
+                "ko": "시사한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "These findings suggest that geometric and nongeometric information may be combined in a weighted fashion.",
+          "tips": [
+            {
+              "label": "fashion",
+              "text": "옷의 '패션'이 아니라 '방식'이에요. in a weighted fashion = 무게를 둔 방식으로.",
+              "mark": "fashion"
+            }
+          ]
+        },
+        {
+          "id": "s3_weight",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "두 정보가 어떻게 합쳐질 수 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "weighted는 '무게(weight)가 실린, 가중된'이에요. fashion은 여기서 '방식'이에요.",
+              "weighted는 '무게(weight)가 실린, 가중된'이에요. fashion은 여기서 '방식'이에요."
+            ],
+            "explain": "'combined in a weighted fashion', 무게를 달리하는 방식으로 합쳐진대요. 어느 쪽을 더 믿을지 정해서 섞는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'combined in a weighted fashion', 무게를 달리하는 방식으로 합쳐진대요. 어느 쪽을 더 믿을지 정해서 섞는 거예요.",
+              "o1": "'combined in a weighted fashion', 무게를 달리하는 방식으로 합쳐진대요. 어느 쪽을 더 믿을지 정해서 섞는 거예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "늘 똑같이 반반"
+            },
+            {
+              "id": "o1",
+              "label": "절대 섞이지 않는다"
+            },
+            {
+              "id": "o2",
+              "label": "한쪽에 더 무게를 두는 식으로 섞인다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "combined",
+            "weighted"
+          ],
+          "tips": [
+            {
+              "label": "fashion",
+              "text": "옷의 '패션'이 아니라 '방식'이에요. in a weighted fashion = 무게를 둔 방식으로.",
+              "mark": "fashion"
+            }
+          ]
+        },
+        {
+          "id": "s3_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "무게를 달리해 섞는다는 건, 앞으로 '어느 정보에 더 무게를 줄지'가 이어진다는 신호예요. ②weighted는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "failed to incorporate",
+                "ko": "작은 방에선 파란 벽 정보를 못 넣었다",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "weighted fashion",
+                "ko": "무게를 달리해 섞는다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Geometry may be ③invalid because it is more stable across time than is nongeometric information.",
+      "model_translation": "기하학은 비기하학적 정보가 그러한 것보다 시간이 지나도 안정적이기 때문에 특혜가 주어질 수도 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "Geometry",
+          "ko": "기하 정보"
+        },
+        {
+          "en": "may be",
+          "ko": "~일 수도 있다"
+        },
+        {
+          "en": "because",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "it is more stable",
+          "ko": "그것이 더 안정적이다"
+        },
+        {
+          "en": "across time",
+          "ko": "시간이 지나도"
+        },
+        {
+          "en": "than is nongeometric information",
+          "ko": "비기하 정보보다"
+        },
+        {
+          "en": "stable",
+          "ko": "안정적인"
+        },
+        {
+          "en": "across",
+          "ko": "~에 걸쳐"
+        },
+        {
+          "en": "nongeometric",
+          "ko": "비기하학적인"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Geometry",
+            "may be",
+            "it",
+            "is"
+          ],
+          "answers": [
+            "Geometry",
+            "may be"
+          ],
+          "roles": {
+            "Geometry": "S",
+            "may be": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "it": "그건 because 뒤 덩어리 안의 주어예요.",
+              "is": "그건 because 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Geometry, 동사는 may be예요. 그 뒤가 밑줄 ③이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic"
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "Geometry",
+            "because",
+            "it is more stable",
+            "across time"
+          ],
+          "answers": [
+            "Geometry",
+            "it is more stable",
+            "because",
+            "across time"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Geometry",
+                "ko": "기하 정보는"
+              },
+              " ",
+              {
+                "en": "it is more stable",
+                "ko": "더 안정적이기"
+              },
+              " ",
+              {
+                "en": "because",
+                "ko": "때문에"
+              },
+              " — ",
+              {
+                "en": "across time",
+                "ko": "시간이 지나도"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_stable",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "because 뒤를 봐요. 기하 정보는 비기하 정보보다 어떻대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'it is more stable across time'을 봐요. stable은 '안정적인, 잘 변하지 않는'이에요.",
+              "'it is more stable across time'을 봐요. stable은 '안정적인, 잘 변하지 않는'이에요."
+            ],
+            "explain": "'more stable across time than is nongeometric information', 기하 정보(방의 모양)는 시간이 지나도 잘 안 변해서 더 안정적이래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'more stable across time than is nongeometric information', 기하 정보(방의 모양)는 시간이 지나도 잘 안 변해서 더 안정적이래요.",
+              "o2": "'more stable across time than is nongeometric information', 기하 정보(방의 모양)는 시간이 지나도 잘 안 변해서 더 안정적이래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "시간이 지나도 더 안정적이다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "더 빨리 변한다"
+            },
+            {
+              "id": "o2",
+              "label": "더 크다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "more stable"
+          ]
+        },
+        {
+          "id": "s4_sign",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "더 안정적인(stable) 정보라면, 무게를 줄 때 어떤 대우를 받을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "잘 안 변하는 정보는 길을 찾을 때 믿을 만해요. 앞 문장의 weighted(무게를 둠)도 떠올려 봐요.",
+              "잘 안 변하는 정보는 길을 찾을 때 믿을 만해요. 앞 문장의 weighted(무게를 둠)도 떠올려 봐요."
+            ],
+            "explain": "잘 안 변하는 정보일수록 믿을 만해서 더 무게를 받아요. stable은 좋은 쪽(+) 이유예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "잘 안 변하는 정보일수록 믿을 만해서 더 무게를 받아요. stable은 좋은 쪽(+) 이유예요."
+            },
+            "point": "because it is more stable(+) → 기하 정보는 더 믿고 우선한다(+) — 이 흐름에 ③이 맞는지 문제에서 확인"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "더 믿고 먼저 쓴다 (+)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "믿을 수 없다며 버린다 (−)"
+            }
+          ],
+          "method": 1,
+          "signs": [
+            {
+              "text": "more stable",
+              "sign": "+"
+            }
+          ]
+        },
+        {
+          "id": "s4_hold",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "because 뒤 이유(더 안정적, +)와 밑줄 ③이 같은 쪽인지는 마지막 문제에서 같이 확인해 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "signs": [
+            {
+              "text": "more stable",
+              "sign": "+"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Whether or not nongeometric landmark information is combined with geometry may depend on the ecological validity of nongeometric features; for example, larger features may be more stable and hence more ④reliable.",
+      "model_translation": "비기하학적 랜드마크 정보가 기하학과 결합하는지 또는 아닌지의 여부는 비기하학적 특징의 생태학적 타당성에 달려 있을 수 있다. 예를 들어, 더 큰 특징은 더 안정적일 수 있고 그래서 더 일관된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "is combined",
+          "ko": "결합되다"
+        },
+        {
+          "en": "Whether or not",
+          "ko": "~인지 아닌지"
+        },
+        {
+          "en": "nongeometric landmark information",
+          "ko": "비기하 랜드마크 정보"
+        },
+        {
+          "en": "is combined with geometry",
+          "ko": "기하 정보와 결합되다"
+        },
+        {
+          "en": "may depend on",
+          "ko": "~에 달려 있을 수 있다"
+        },
+        {
+          "en": "the ecological validity",
+          "ko": "생태학적 타당성(실제 환경에서 믿을 만함)"
+        },
+        {
+          "en": "of nongeometric features",
+          "ko": "비기하 특징의"
+        },
+        {
+          "en": "for example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "larger features",
+          "ko": "더 큰 특징"
+        },
+        {
+          "en": "may be more stable",
+          "ko": "더 안정적일 수 있다"
+        },
+        {
+          "en": "hence",
+          "ko": "그래서"
+        },
+        {
+          "en": "more reliable",
+          "ko": "더 믿을 만한"
+        },
+        {
+          "en": "Whether",
+          "ko": "~인지 (아닌지)"
+        },
+        {
+          "en": "nongeometric",
+          "ko": "비기하학적인"
+        },
+        {
+          "en": "landmark",
+          "ko": "랜드마크, 주요 지형지물"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "geometry",
+          "ko": "기하 정보, 기하학"
+        },
+        {
+          "en": "depend",
+          "ko": "달려 있다"
+        },
+        {
+          "en": "ecological",
+          "ko": "생태학적인"
+        },
+        {
+          "en": "validity",
+          "ko": "타당성"
+        },
+        {
+          "en": "features",
+          "ko": "특징"
+        },
+        {
+          "en": "larger",
+          "ko": "더 큰"
+        },
+        {
+          "en": "stable",
+          "ko": "안정적인"
+        },
+        {
+          "en": "reliable",
+          "ko": "믿을 만한"
+        }
+      ],
+      "slashes": [
+        "is combined with geometry",
+        "of nongeometric features;",
+        "may be more stable"
+      ],
+      "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "nongeometric landmark information",
+            "is combined",
+            "may depend on",
+            "the ecological validity",
+            "larger features"
+          ],
+          "answers": [
+            "may depend on",
+            "the ecological validity"
+          ],
+          "roles": {
+            "may depend on": "V",
+            "the ecological validity": "전목"
+          },
+          "brief": {
+            "ask": "Whether or not(~인지 아닌지) 덩어리 전체가 주어예요. 그 뒤 동사(V)와 on 뒤 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "nongeometric landmark information": "그건 Whether or not 덩어리 안의 주어예요. Whether 덩어리 전체가 문장의 주어예요.",
+              "is combined": "그건 Whether 덩어리 안의 동사예요.",
+              "larger features": "그건 세미콜론(;) 뒤 문장의 주어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "Whether or not … geometry 덩어리 전체가 주어예요. 동사는 may depend on, on 뒤 목적어는 the ecological validity예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_reliable",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "세미콜론(;) 뒤 — 큰 특징은 더 안정적이고 그래서(hence) 더 ④reliable(믿을 만한)하대요. 이 흐름이 맞을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "hence는 '그래서'예요. 앞(stable, +)과 뒤(reliable)가 같은 쪽인지 봐요.",
+              "hence는 '그래서'예요. 앞(stable, +)과 뒤(reliable)가 같은 쪽인지 봐요."
+            ],
+            "explain": "stable(안정적, +) → hence(그래서) → reliable(믿을 만한, +), 같은 쪽으로 이어져요. ④는 문맥에 맞아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "stable(안정적, +) → hence(그래서) → reliable(믿을 만한, +), 같은 쪽으로 이어져요. ④는 문맥에 맞아요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "맞아요, 안정적이라 믿을 만해요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "안 맞아요, 안정적인데 믿을 수 없어요"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "more stable",
+            "hence"
+          ],
+          "signs": [
+            {
+              "text": "more stable",
+              "sign": "+"
+            }
+          ],
+          "tips": [
+            {
+              "label": "hence",
+              "text": "'그래서, 따라서'예요. 앞이 원인, 뒤가 결과예요.",
+              "mark": "hence"
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "failed to incorporate",
+                "ko": "작은 방에선 파란 벽 정보를 못 넣었다",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "weighted fashion",
+                "ko": "무게를 달리해 섞는다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        },
+        {
+          "id": "s5_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "④reliable은 문맥에 맞아요. 안정적인 정보 = 믿을 만한 정보예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "failed to incorporate",
+                "ko": "작은 방에선 파란 벽 정보를 못 넣었다",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "weighted fashion",
+                "ko": "무게를 달리해 섞는다",
+                "tone": "hl"
+              },
+              {
+                "label": "④ 맞음",
+                "text": "more stable → more reliable",
+                "ko": "더 안정적 → 더 믿을 만함",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧒",
+                "en": "small room → only geometry",
+                "ko": "작은 공간에선 아이들이 방 모양(기하)만 쓰고, 큰 방에선 파란 벽 같은 특징도 써요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "⚖️",
+                "en": "combined in a weighted fashion",
+                "ko": "두 정보는 무게를 달리해서 섞여요",
+                "fresh": true
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🧱",
+                "en": "more stable · more reliable",
+                "ko": "안정적인 정보일수록 믿을 만해요 — 큰 특징도 더 안정적이에요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Further, a variety of mobile animals give more weight to nearer than to farther landmarks in estimation, ⑤consistent with Weber’s law in which smaller distances would be coded more accurately than larger distances.",
+      "model_translation": "게다가, 다양한 이동하는 동물은 추정 시 더 멀리 있는 랜드마크보다 더 가까이 있는 것에 더 많은 가중치를 부여하는데, (이는) 적은 거리가 큰 거리보다 더 정확하게 부호화된다는 Weber의 법칙과도 모순되지 않는다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "more weight",
+          "ko": "더 많은 무게"
+        },
+        {
+          "en": "give",
+          "ko": "주다"
+        },
+        {
+          "en": "Further",
+          "ko": "게다가"
+        },
+        {
+          "en": "a variety of mobile animals",
+          "ko": "여러 이동하는 동물들"
+        },
+        {
+          "en": "give more weight to",
+          "ko": "~에 더 무게를 주다"
+        },
+        {
+          "en": "nearer than to farther landmarks",
+          "ko": "먼 랜드마크보다 가까운 것에"
+        },
+        {
+          "en": "in estimation",
+          "ko": "추정할 때"
+        },
+        {
+          "en": "consistent with",
+          "ko": "~와 일치하는"
+        },
+        {
+          "en": "Weber’s law",
+          "ko": "베버의 법칙"
+        },
+        {
+          "en": "in which",
+          "ko": "그 법칙에서는"
+        },
+        {
+          "en": "smaller distances",
+          "ko": "더 짧은 거리"
+        },
+        {
+          "en": "would be coded more accurately",
+          "ko": "더 정확하게 기록된다"
+        },
+        {
+          "en": "than larger distances",
+          "ko": "더 긴 거리보다"
+        },
+        {
+          "en": "weight",
+          "ko": "무게, 가중치"
+        },
+        {
+          "en": "variety",
+          "ko": "다양함"
+        },
+        {
+          "en": "mobile",
+          "ko": "이동하는"
+        },
+        {
+          "en": "animals",
+          "ko": "동물들"
+        },
+        {
+          "en": "nearer",
+          "ko": "더 가까운"
+        },
+        {
+          "en": "farther",
+          "ko": "더 먼"
+        },
+        {
+          "en": "landmarks",
+          "ko": "랜드마크들"
+        },
+        {
+          "en": "estimation",
+          "ko": "추정"
+        },
+        {
+          "en": "consistent",
+          "ko": "일치하는"
+        },
+        {
+          "en": "Weber’s",
+          "ko": "베버의"
+        },
+        {
+          "en": "law",
+          "ko": "법칙"
+        },
+        {
+          "en": "smaller",
+          "ko": "더 짧은"
+        },
+        {
+          "en": "distances",
+          "ko": "거리"
+        },
+        {
+          "en": "coded",
+          "ko": "기록된"
+        },
+        {
+          "en": "accurately",
+          "ko": "정확하게"
+        },
+        {
+          "en": "larger",
+          "ko": "더 큰"
+        }
+      ],
+      "slashes": [
+        "mobile animals",
+        "farther landmarks",
+        "in estimation,",
+        "Weber’s law",
+        "more accurately"
+      ],
+      "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "a variety of mobile animals",
+            "give",
+            "more weight",
+            "smaller distances"
+          ],
+          "answers": [
+            "a variety of mobile animals",
+            "give",
+            "more weight"
+          ],
+          "roles": {
+            "a variety of mobile animals": "S",
+            "give": "V",
+            "more weight": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "smaller distances": "그건 in which(그 법칙에서는) 뒤 덩어리 안의 주어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 a variety of mobile animals, 동사는 give, 목적어는 more weight예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "tips": [
+            {
+              "label": "consistent with",
+              "text": "'~와 일치하는, 모순되지 않는'이에요.",
+              "mark": "consistent with"
+            }
+          ]
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "a variety of mobile animals",
+            "give more weight to",
+            "nearer than to farther landmarks"
+          ],
+          "answers": [
+            "a variety of mobile animals",
+            "nearer than to farther landmarks",
+            "give more weight to"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "a variety of mobile animals",
+                "ko": "여러 이동하는 동물들은"
+              },
+              " ",
+              {
+                "en": "nearer than to farther landmarks",
+                "ko": "먼 랜드마크보다 가까운 것에"
+              },
+              " ",
+              {
+                "en": "give more weight to",
+                "ko": "더 무게를 준다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Further, a variety of mobile animals give more weight to nearer than to farther landmarks in estimation.",
+          "tips": [
+            {
+              "label": "consistent with",
+              "text": "'~와 일치하는, 모순되지 않는'이에요.",
+              "mark": "consistent with"
+            }
+          ]
+        },
+        {
+          "id": "s6_weber",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "동물들은 먼 랜드마크보다 가까운 것에 더 무게를 둬요. Weber의 법칙은 짧은 거리가 더 정확히 기록된대요. 두 내용은 ⑤consistent(일치)할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "가까운 것 = 짧은 거리예요. 짧은 거리가 더 정확하면, 그쪽에 무게를 두는 게 자연스러울까요?",
+              "가까운 것 = 짧은 거리예요. 짧은 거리가 더 정확하면, 그쪽에 무게를 두는 게 자연스러울까요?"
+            ],
+            "explain": "가까운 랜드마크 = 짧은 거리 = 더 정확하게 기록돼요. 그러니 가까운 것에 무게를 두는 건 Weber의 법칙과 일치해요. ⑤는 문맥에 맞아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "가까운 랜드마크 = 짧은 거리 = 더 정확하게 기록돼요. 그러니 가까운 것에 무게를 두는 건 Weber의 법칙과 일치해요. ⑤는 문맥에 맞아요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "일치하지 않는다"
+            },
+            {
+              "id": "o1",
+              "label": "일치한다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "give more weight to",
+            "smaller distances",
+            "more accurately"
+          ],
+          "tips": [
+            {
+              "label": "consistent with",
+              "text": "'~와 일치하는, 모순되지 않는'이에요.",
+              "mark": "consistent with"
+            }
+          ]
+        },
+        {
+          "id": "s6_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①②④⑤는 모두 흐름에 맞았어요. 남은 하나, because it is more stable(+)과 짝이 맞지 않는 말을 문제에서 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "failed to incorporate",
+                "ko": "작은 방에선 파란 벽 정보를 못 넣었다",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "weighted fashion",
+                "ko": "무게를 달리해 섞는다",
+                "tone": "hl"
+              },
+              {
+                "label": "④ 맞음",
+                "text": "more stable → more reliable",
+                "ko": "더 안정적 → 더 믿을 만함",
+                "tone": "hl"
+              },
+              {
+                "label": "⑤ 맞음",
+                "text": "consistent with Weber’s law",
+                "ko": "가까울수록 정확 → 더 무게",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

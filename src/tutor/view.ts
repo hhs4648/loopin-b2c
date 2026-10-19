@@ -1,3 +1,4 @@
+import type { OrderCard } from "./policy/types";
 import type { ProperNoun, WordGloss } from "../../content/tutor/types";
 import type { StudyPanel } from "./policy/types";
 
@@ -45,9 +46,15 @@ export type TutorView = {
   studentLine: string;
   effect: null | "light";
   sentence: string;
+  /** 끊어읽기 자리 — 이 말들 뒤에 「/」 (「/ 끊어읽기」를 누르면) */
+  slashes?: string[];
+  /** 여러 문장 중 가리키는 한 문장 ([ ]로 묶은 부분) — 색 괄호와 옅은 바탕으로 보인다 */
+  bracket?: string | null;
   activeChunk: string;
   chunkLabel: string;
   progressIndex: number;
+  /** 있으면 「3/6」 대신 이 자리 이름 (순서 문제: 주어진 글 · (A) …) */
+  progressPlace?: string | null;
   progressTotal: number;
   ended: boolean;
   recordLine: string | null;
@@ -66,7 +73,13 @@ export type TutorView = {
   underline?: string[];
   /** 「찾기」 스텝 — 문장 안 후보 구절을 눌러 고른다. found는 맞힌 것, missed는 틀리게 누른 것 */
   /** `shade` — 후보를 상자 대신 음영으로 (긴 구절을 고를 때) */
-  pick?: { candidates: string[]; found: string[]; missed: string[]; open: boolean; shade?: boolean; soft?: boolean } | null;
+  pick?: {
+    candidates: string[]; found: string[]; missed: string[]; open: boolean; shade?: boolean; soft?: boolean;
+    /** 해석 맞추기 — 한국어 칸에 영어 덩어리를 끌어다 놓는다 */
+    match?: { ko: (string | { en: string; ko: string })[] };
+    /** 순서 잇기 — 주어진 글 아래에 단락 카드를 끌어 놓는다. 다 맞히면(또는 답을 보면) `answers` 순서 */
+    order?: { given: OrderCard; cards: OrderCard[]; answers: string[] };
+  } | null;
   /** 앞 문장을 보여 주는 스텝 — ‹ › 로 지금 문장(`text`)과 오간다 */
   flip?: { tag: string; text: string; highlight?: string[] } | null;
   /** 수업 소개(도입 말) 중 — 화면 아무 데나 눌러도 다음 말로 */
@@ -89,6 +102,8 @@ export type TutorView = {
   translation?: TranslationResult | null;
   /** 문장 위 꼬리표 — 「문장 2」, 「주어진 문장」 */
   sentenceTag?: string | null;
+  /** 순서 문제 — 지금 문장이 든 단락의 문장들과 지금 문장 자리 (‹ › 로 단락 안을 오간다) */
+  paragraph?: { sentences: string[]; at: number } | null;
   /** 문장 하나를 맞히고 끝낸 칭찬 화면 */
   celebrate?: boolean;
   /** 도입 건너뛰기 — 버튼 아래 밑줄 글자로 */
@@ -122,7 +137,10 @@ export type TutorView = {
   /** ❓ 개념 — 문장 아래 칩. 누르면 참고 설명 */
   concepts?: { en: string; title: string; text: string }[];
   /** 💡 요령 말풍선 */
-  tips?: { label: string; text: string; mark?: string; hint?: boolean }[];
+  /** 문장 속 색 글자로 보이는 단어 Tip — 누르면 뜻 아래 Tip 글이 열린다 */
+  wordTips?: { label: string; text: string; mark?: string }[];
+  /** `word`: 헷갈리는 단어 Tip(엑셀) — 되풀이 칩 노출 제한을 받지 않는다 */
+  tips?: { label: string; text: string; mark?: string; hint?: boolean; word?: boolean }[];
   /** 「밑줄 문제 푸는 법」 단계 표시. active가 null이면 표시만 */
   methodSteps?: { labels: string[]; active: number | null } | null;
   /** 시험 보기 — 핵심 단어 색칠, ▸ 한국어 */

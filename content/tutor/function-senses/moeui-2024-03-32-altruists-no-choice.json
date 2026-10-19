@@ -1,0 +1,134 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "conforms to",
+   "sense": "~에 (따르다)",
+   "usage": "conform to + 명사 = ~에 따르다, 일치하다"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "tend to get",
+   "sense": "~하는 (경향)",
+   "usage": "tend + to부정사 = ~하는 경향이 있다"
+  },
+  {
+   "word": "for",
+   "phrase": "determines for us",
+   "sense": "~ 대신, ~을 위해",
+   "usage": "전치사 for + 사람"
+  },
+  {
+   "word": "to",
+   "phrase": "the right to make",
+   "sense": "~할 (권리)",
+   "usage": "명사 + to부정사"
+  },
+  {
+   "word": "for",
+   "phrase": "for ourselves",
+   "sense": "스스로",
+   "usage": "for oneself = 스스로"
+  }
+ ],
+ "3": [
+  {
+   "word": "yet",
+   "phrase": "Yet, when interviewed",
+   "sense": "하지만",
+   "usage": "접속사 yet (문장 앞, 반전)"
+  },
+  {
+   "word": "for",
+   "phrase": "known for making",
+   "sense": "~로 (알려진)",
+   "usage": "be known for + 명사·-ing"
+  },
+  {
+   "word": "to",
+   "phrase": "benefits to their recipients",
+   "sense": "~에게",
+   "usage": "전치사 to + 사람"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "insist that they",
+   "sense": "~라고",
+   "usage": "명사절 that (insist that …)"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "to save others",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  },
+  {
+   "word": "that",
+   "phrase": "denials that they",
+   "sense": "~라는 (부인)",
+   "usage": "동격의 that + 완전한 문장"
+  },
+  {
+   "word": "as",
+   "phrase": "as well as",
+   "sense": "(as well as의 일부)",
+   "usage": "A as well as B = B뿐만 아니라 A도"
+  },
+  {
+   "word": "as",
+   "phrase": "as well as",
+   "sense": "(as well as의 일부)",
+   "usage": "A as well as B = B뿐만 아니라 A도"
+  },
+  {
+   "word": "that",
+   "phrase": "assurance that anyone",
+   "sense": "~라는 (확신)",
+   "usage": "동격의 that + 완전한 문장"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "To be sure",
+   "sense": "(To be sure의 일부)",
+   "usage": "To be sure = 확실히, 물론"
+  },
+  {
+   "word": "that",
+   "phrase": "it seems that",
+   "sense": "~인 (것 같다)",
+   "usage": "it seems that + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "likely to insist",
+   "sense": "~할 (것 같은)",
+   "usage": "be likely + to부정사"
+  },
+  {
+   "word": "that",
+   "phrase": "insist that they",
+   "sense": "~라고",
+   "usage": "명사절 that (insist that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "expected to do",
+   "sense": "~하도록 (기대되는)",
+   "usage": "be expected + to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "obligation to humanity",
+   "sense": "~에 대한",
+   "usage": "전치사 to + 명사"
+  }
+ ]
+}

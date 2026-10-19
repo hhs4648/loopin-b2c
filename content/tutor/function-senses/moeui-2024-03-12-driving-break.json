@@ -1,0 +1,32 @@
+{
+ "1": [
+  {
+   "word": "for",
+   "phrase": "for over two hours",
+   "sense": "~ 동안",
+   "usage": "전치사 for + 기간"
+  }
+ ],
+ "2": [
+  {
+   "word": "so",
+   "phrase": "not so tired",
+   "sense": "그렇게, 그다지",
+   "usage": "부사 so + 형용사"
+  },
+  {
+   "word": "yet",
+   "phrase": "tired yet",
+   "sense": "아직",
+   "usage": "부사 yet (부정문: 아직 ~ 않다)"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "better to take",
+   "sense": "~하는 것",
+   "usage": "가주어 it … 진주어 to부정사"
+  }
+ ]
+}

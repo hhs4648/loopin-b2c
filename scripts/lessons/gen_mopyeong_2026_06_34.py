@@ -110,11 +110,11 @@ SPACE = [("where", "어디"), ("spatial arrangements", "공간 배치"), ("spati
          ("the location of roads", "도로의 위치"), ("the layout", "배치")]
 
 
-def space_board(n, fresh=(), caption="모두 같은 말 — 어디에, 어떻게 배치돼 있나"):
+def space_board(n, fresh=()):
+    # 묶음 이름·아래 한 줄은 안 단다 — 단어만으로 충분하고, '어떻게 배치'는 정답 보기와 같은 말이라 미리 주면 안 된다 (2026-10-14 선생님)
     return {"kind": "groups", "title": "단어 지도",
-            "left": {"label": "공간 · 어디에 어떻게 놓여 있나",
-                     "words": [{"text": en, "ko": ko, **({"fresh": True} if en in fresh else {})} for en, ko in SPACE[:n]]},
-            "caption": caption}
+            "left": {"label": "",
+                     "words": [{"text": en, "ko": ko, **({"fresh": True} if en in fresh else {})} for en, ko in SPACE[:n]]}}
 
 
 sentences = [
@@ -184,14 +184,37 @@ sentences = [
                 },
                 "method": 0,
             },
-            # 이 문장의 뜻 — 객관식
+            # 이 문장의 뜻 — 해석 맞추기 (2026-10-14 선생님): 중·초는 짧은 문장이면 모두 돌려 낸다. 고는 미정
+            # 같은 자리(slot)의 객관식과 돌려 가며 — 최근에 덜 한 방식이 나온다
+            {
+                "id": "s1_match", "levels": ["중", "초"], "slot": "s1_meaning", "type": "pick", "interaction": "word_pick", "no_unknown": False,
+                "candidates": ["One word", "is inextricably associated with", "geography", "where"],
+                "answers": ["One word", "is inextricably associated with", "geography", "where"],
+                "match": {"ko": [
+                    {"en": "One word", "ko": "한 단어는"}, " ",
+                    {"en": "geography", "ko": "지리학과"}, " ",
+                    {"en": "is inextricably associated with", "ko": "떼려야 뗄 수 없이 연관되어 있다"}, ": 바로 ",
+                    {"en": "where", "ko": "'어디'"}, "다.",
+                ]},
+                "brief": {
+                    "ask": "이번엔 해석을 맞춰 봐요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+                    "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+                    "more": "좋아요! {n}개 남았어요.",
+                    "praise": "다 맞췄어요! '어디'라는 한 단어가 지리학과 떼려야 뗄 수 없대요.",
+                    "explain": "One word = 한 단어, geography = 지리학, is inextricably associated with = 떼려야 뗄 수 없이 연관되어 있다, where = 어디예요.",
+                    "point": "One word is inextricably associated with geography: where — 한 단어(where)가 지리학과 떼려야 뗄 수 없다",
+                },
+                "method": 0,
+            },
+            # 이 문장의 뜻 — 객관식 (같은 자리 s1_meaning: 맞추기와 돌려 가며)
             choice("s1_meaning",
                    "그럼 이 문장의 뜻은 무엇일까요?",
                    [("o0", "지리학은 단 한 단어로 설명할 수 있다", False),
                     ("o1", "'어디(where)'라는 단어는 지리학과 떼려야 뗄 수 없다", True),
                     ("o2", "지리학에서는 단어를 정확하게 써야 한다", False)],
                    "주어 One word = where, 동사 is inextricably associated with = 떼려야 뗄 수 없이 연관되어 있다, 목적어 geography예요.",
-                   why="One word는 where이고, is inextricably associated with geography는 '지리학과 떼려야 뗄 수 없이 연관되어 있다'예요."),
+                   why="One word는 where이고, is inextricably associated with geography는 '지리학과 떼려야 뗄 수 없이 연관되어 있다'예요.",
+                   slot="s1_meaning"),
             show("s1_map", "where(어디)가 이 글의 첫 열쇠예요. 단어 지도에 넣어 둘게요.",
                  button="다음 문장", panel=space_board(1, fresh=("where",))),
         ],
@@ -418,7 +441,7 @@ exam = {
                 g("climate change", "기후 변화"), g("authority", "권한"), g("territories", "영토")],
     "options": [{"id": o[0], "label": o[1], "keywords": o[2], "ko": o[3], **({"correct": True} if o[4] else {})} for o in OPTIONS],
     "brief": {
-        "ask": "단어 지도에 모은 '어디에, 어떻게 배치돼 있나'를 떠올리며 골라 봐요.",
+        "ask": "단어 지도에 모은 말을 떠올리며 골라 봐요.",
         "first_correct": "맞았어요!",
         "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
         "final_correct": "정답이에요!",
@@ -486,6 +509,62 @@ for s_ in sentences:
             if c_ not in have:
                 s_["glosses"].insert(0, g(c_, CHUNKS[c_]))
                 have.add(c_)
+
+# 초급 기본 — 문장마다 「주어·동사 + 뜻」 또는 「해석 맞추기」 하나 (2026-10-15 선생님).
+# 문장 1은 s1_meaning 자리(맞추기/뜻 객관식)가 이미 있다. 빈칸 문장(6)은 수업 처음에 뜻을 짚어서 넣지 않는다
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from beginner import add_basic, add_that_sv, fill_chunk_glosses, m, sv_step  # noqa: E402
+
+add_basic(sentences, 2, [m("That is because", "그건 ~ 때문이다:"), " ", m("geography", "지리학은"), " ",
+                         m("where something takes place", "어떤 일이 어디서 일어나는지"), "가 ", m("it matters", "중요하다"), "는 ",
+                         m("the premise", "전제"), "에서 ", m("starts", "출발한다"), "."],
+          sv_id="s2_sv", meaning_ids=["s2_matters"])
+add_basic(sentences, 3, [m("The key questions", "핵심 질문은"), " 단순히 ", m("where", "'어디'"), " 질문이 ", m("are not simply", "아니다"), "; ",
+                         m("they are", "그것들은"), " ", m("why there", "'왜 거기'"), "와 ", m("so what", "'그래서 뭐'"), " 질문이다."],
+          sv_new=sv_step("s3_basic_sv", ["The key questions", "are not simply", "though", "they are"],
+                         {"The key questions": "S", "are not simply": "V"},
+                         {"they are": "그건 세미콜론(;) 뒤 문장이에요. 앞에서 찾아봐요.", "though": "그건 '그렇지만'이라는 연결 말이에요."},
+                         "주어는 The key questions(핵심 질문), 동사는 are not simply(단순히 ~이 아니다)예요."),
+          meaning_ids=["s3_key"],
+          meaning="핵심 질문은 그냥 '어디'가 아니라, '왜 거기'와 '그래서 뭐'라는 질문이래요.")
+add_basic(sentences, 4, [m("Getting to such questions", "그런 질문에 이르는 것은"), " ", m("spatial arrangements", "공간 배치"), ", ",
+                         m("variations", "차이"), ", ", m("interconnections", "상호 연결"), "을 ", m("seriously", "진지하게"), " 받아들임을 ",
+                         m("means", "의미한다"), "."],
+          sv_id="s4_sv", meaning_ids=["s4_what"],
+          meaning="그런 질문에 답하려면 공간 배치, 차이, 상호 연결을 진지하게 봐야 한대요.")
+add_basic(sentences, 5, [m("Engaging in even the simplest day-to-day activity", "가장 단순한 일상 활동을 하는 것도"), " ",
+                         m("spatial circumstances", "공간적 상황"), "에 대한 ", m("some appreciation", "어느 정도의 이해"), "를 ",
+                         m("requires", "필요로 한다"), "."],
+          match_display="Engaging in even the simplest day-to-day activity requires some appreciation of spatial circumstances.",
+          sv_id="s5_sv", meaning_ids=["s5_appreciation"],
+          meaning="가장 단순한 일상 활동을 하는 데에도 공간적 상황을 어느 정도 이해해야 한대요.")
+add_basic(sentences, 7, [m("Locating a new store", "새 가게의 위치를 정하는 것은"), " ", m("population distributions", "인구 분포"), "와 ",
+                         m("the location of roads", "도로의 위치"), "를 ", m("taking into consideration", "고려하는 것"), "을 ",
+                         m("requires", "필요로 한다"), "."],
+          match_display="Locating a new store requires taking into consideration population distributions and the location of roads.",
+          sv_id="s7_sv", meaning_ids=["s7_examples"])
+add_basic(sentences, 8, [m("Understanding why and where migration happens", "이주가 왜, 어디서 일어나는지 이해하는 것은"), " ",
+                         m("the layout of the physical environment", "물리적 환경의 배치"), "에 대한 ", m("consideration", "고려"), "를 ",
+                         m("requires", "필요로 한다"), "."],
+          match_display="Understanding why and where migration happens requires consideration of the layout of the physical environment.",
+          sv_id="s8_sv",
+          meaning="이주가 왜, 어디서 일어나는지 이해하려면 영토의 정치 조직, 차별의 공간적 결과, 물리적 환경의 배치 등을 고려해야 한대요.")
+# the premise that ~ 안이 핵심 (2026-10-16 선생님, 공통)
+add_that_sv(sentences, 2, "s2_sv", "s2_that_sv", ["it", "matters", "where something takes place"],
+            {"it": "S", "matters": "V"},
+            {"where something takes place": "그건 진짜 주어예요. 자리에는 it이 대신 와 있어요."},
+            "that 안의 주어는 it(가짜 주어 — 진짜는 where something takes place), 동사는 matters(중요하다)예요. 어디서 일어나는지가 중요하다는 거예요.",
+            ask="the premise that ~: that 뒤가 그 전제의 내용이에요. 그 안에서 주어(S)와 동사(V)를 찾아볼까요?")
+fill_chunk_glosses(sentences, {
+    "where something takes place": "어떤 일이 어디서 일어나는지", "The key questions": "핵심 질문", "are not simply": "단순히 ~이 아니다",
+    "though": "그렇지만", "they are": "그것들은 ~이다", "where": "어디", "why there": "왜 거기", "so what": "그래서 뭐",
+    "seriously": "진지하게", "variations": "차이", "interconnections": "상호 연결", "means": "의미하다",
+    "Locating a new store": "새 가게의 위치를 정하는 것", "population distributions": "인구 분포",
+    "the location of roads": "도로의 위치", "taking into consideration": "고려하는 것", "consideration": "고려",
+    "the layout of the physical environment": "물리적 환경의 배치", "That is because": "그건 ~ 때문이다",
+    "it matters": "중요하다", "the premise": "전제", "starts": "출발하다", "geography": "지리학",
+    "matters": "중요하다", "it": "그것(가짜 주어)",
+})
 
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

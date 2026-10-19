@@ -351,6 +351,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "its particularities",
+          "ko": "그것의 특징들"
+        },
+        {
           "en": "conceptualize",
           "ko": "개념화하다"
         },
@@ -391,6 +395,100 @@
         "particularities"
       ],
       "steps": [
+        {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Every time",
+            "something",
+            "abstract away from",
+            "its particularities"
+          ],
+          "answers": [
+            "abstract away from",
+            "its particularities"
+          ],
+          "roles": {
+            "abstract away from": "V",
+            "its particularities": "전목"
+          },
+          "brief": {
+            "ask": "콤마 뒤 문장의 주어는 you예요. 그 동사(V)와 from 뒤의 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "Every time": "그건 '~할 때마다' 덩어리를 여는 말이에요.",
+              "something": "그건 put a name on의 대상이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콤마 뒤 문장은 주어 you, 동사 abstract away from(떼어 내다), from 뒤 목적어 its particularities예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "faded": [
+            "that is not a proper name"
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "Every time",
+            "put a name on",
+            "abstract away from",
+            "its particularities"
+          ],
+          "answers": [
+            "Every time",
+            "put a name on",
+            "its particularities",
+            "abstract away from"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Every time",
+                "ko": "~할 때마다"
+              },
+              " 무언가에 ",
+              {
+                "en": "put a name on",
+                "ko": "이름을 붙일"
+              },
+              " 때마다, 우리는 ",
+              {
+                "en": "its particularities",
+                "ko": "그것의 특징들"
+              },
+              "을 ",
+              {
+                "en": "abstract away from",
+                "ko": "떼어 내 빼 버린다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Every time you put a name on something, you abstract away from its particularities."
+        },
         {
           "id": "s1_group",
           "type": "show",
@@ -547,6 +645,14 @@
       "teaching_value": "medium",
       "glosses": [
         {
+          "en": "in a lawn",
+          "ko": "잔디밭에"
+        },
+        {
+          "en": "daisies and clover flowers",
+          "ko": "데이지와 클로버 꽃"
+        },
+        {
           "en": "Picture",
           "ko": "상상해 보다 · 여기서는 '그림'이 아니라 동사예요"
         },
@@ -571,6 +677,99 @@
         "Picture"
       ],
       "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Picture",
+            "daisies and clover flowers",
+            "in a lawn"
+          ],
+          "answers": [
+            "Picture",
+            "daisies and clover flowers"
+          ],
+          "roles": {
+            "Picture": "V",
+            "daisies and clover flowers": "O"
+          },
+          "brief": {
+            "ask": "이 문장은 주어 없이 시작해요. 동사(V)와 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "in a lawn": "그건 '어디에' 있는지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "명령문이라 주어가 없어요. 동사는 Picture(상상해 보다), 목적어는 daisies and clover flowers예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "명령문",
+              "text": "문장 맨 앞에 주어 없이 동사가 오면 명령문이에요. '~해 봐라'로 읽으면 돼요. 여기선 'Picture …'가 '~을 상상해 봐라'예요."
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "Picture",
+            "daisies and clover flowers",
+            "in a lawn"
+          ],
+          "answers": [
+            "in a lawn",
+            "daisies and clover flowers",
+            "Picture"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "in a lawn",
+                "ko": "잔디밭에 있는"
+              },
+              " ",
+              {
+                "en": "daisies and clover flowers",
+                "ko": "데이지와 클로버 꽃"
+              },
+              "을 ",
+              {
+                "en": "Picture",
+                "ko": "상상해 봐요"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "명령문",
+              "text": "문장 맨 앞에 주어 없이 동사가 오면 명령문이에요. '~해 봐라'로 읽으면 돼요. 여기선 'Picture …'가 '~을 상상해 봐라'예요."
+            }
+          ]
+        },
         {
           "id": "s2_picture",
           "type": "show",
@@ -616,7 +815,8 @@
               "label": "명령문",
               "text": "문장 맨 앞에 주어 없이 동사가 오면 명령문이에요. '~해 봐라'로 읽으면 돼요. 여기선 'Picture …'가 '~을 상상해 봐라'예요."
             }
-          ]
+          ],
+          "meaning_check": true
         }
       ]
     },
@@ -652,6 +852,87 @@
         "leave out"
       ],
       "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Those four ordinary nouns",
+            "leave out",
+            "differences"
+          ],
+          "answers": [
+            "Those four ordinary nouns",
+            "leave out",
+            "differences"
+          ],
+          "roles": {
+            "Those four ordinary nouns": "S",
+            "leave out": "V",
+            "differences": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Those four ordinary nouns, 동사는 leave out(빠뜨리다), 목적어는 differences예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic"
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Those four ordinary nouns",
+            "leave out",
+            "differences"
+          ],
+          "answers": [
+            "Those four ordinary nouns",
+            "differences",
+            "leave out"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Those four ordinary nouns",
+                "ko": "그 네 개의 보통 명사는"
+              },
+              " 그것들의 ",
+              {
+                "en": "differences",
+                "ko": "차이"
+              },
+              "를 ",
+              {
+                "en": "leave out",
+                "ko": "빠뜨린다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
         {
           "id": "s3_nouns",
           "type": "show",
@@ -916,6 +1197,14 @@
       "teaching_value": "low",
       "glosses": [
         {
+          "en": "the beige ones",
+          "ko": "베이지색 종류"
+        },
+        {
+          "en": "the white and yellow types",
+          "ko": "흰색과 노란색 종류"
+        },
+        {
           "en": "co-categorizes",
           "ko": "한 범주로 같이 묶다"
         },
@@ -964,6 +1253,95 @@
         "co-categorizes"
       ],
       "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Flower",
+            "co-categorizes",
+            "the white and yellow types"
+          ],
+          "answers": [
+            "Flower",
+            "co-categorizes",
+            "the white and yellow types"
+          ],
+          "roles": {
+            "Flower": "S",
+            "co-categorizes": "V",
+            "the white and yellow types": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 “Flower”라는 말, 동사는 co-categorizes(한 범주로 묶다), 목적어는 the white and yellow types예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic"
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "Flower",
+            "co-categorizes",
+            "the white and yellow types",
+            "the beige ones"
+          ],
+          "answers": [
+            "Flower",
+            "the white and yellow types",
+            "the beige ones",
+            "co-categorizes"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Flower",
+                "ko": "'꽃'이라는 말은"
+              },
+              " ",
+              {
+                "en": "the white and yellow types",
+                "ko": "흰색과 노란색 종류"
+              },
+              "를 ",
+              {
+                "en": "the beige ones",
+                "ko": "베이지색 종류"
+              },
+              "와 ",
+              {
+                "en": "co-categorizes",
+                "ko": "한 범주로 묶는다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "“Flower” co-categorizes the white and yellow types with the beige ones."
+        },
         {
           "id": "s4_skim",
           "type": "show",
@@ -1032,6 +1410,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "the varieties of grass",
+          "ko": "여러 종류의 풀"
+        },
+        {
           "en": "acknowledges",
           "ko": "인정하다"
         },
@@ -1060,6 +1442,94 @@
         "Lawn"
       ],
       "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Lawn",
+            "acknowledges",
+            "the varieties of grass"
+          ],
+          "answers": [
+            "Lawn",
+            "acknowledges",
+            "the varieties of grass"
+          ],
+          "roles": {
+            "Lawn": "S",
+            "acknowledges": "V",
+            "the varieties of grass": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 “Lawn”이라는 말, 동사는 밑줄 친 ②, 목적어는 the varieties of grass예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic"
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "Lawn",
+            "the varieties of grass",
+            "nongrassy plants",
+            "that are there"
+          ],
+          "answers": [
+            "Lawn",
+            "the varieties of grass",
+            "that are there",
+            "nongrassy plants"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Lawn",
+                "ko": "'잔디'라는 말에는"
+              },
+              " ",
+              {
+                "en": "the varieties of grass",
+                "ko": "여러 종류의 풀"
+              },
+              "과 ",
+              {
+                "en": "that are there",
+                "ko": "거기 있는"
+              },
+              " ",
+              {
+                "en": "nongrassy plants",
+                "ko": "풀이 아닌 식물들"
+              },
+              "까지 다 들어가요."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
         {
           "id": "s5_sort",
           "type": "choice",
@@ -1248,6 +1718,18 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "individuality and uniqueness",
+          "ko": "개별성과 고유성"
+        },
+        {
+          "en": "will find",
+          "ko": "발견할 것이다"
+        },
+        {
+          "en": "you",
+          "ko": "너, 사람"
+        },
+        {
           "en": "Zoom in",
           "ko": "확대하다, 가까이 보다"
         },
@@ -1274,6 +1756,97 @@
         "uniqueness"
       ],
       "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Zoom in",
+            "you",
+            "will find",
+            "individuality and uniqueness"
+          ],
+          "answers": [
+            "you",
+            "will find",
+            "individuality and uniqueness"
+          ],
+          "roles": {
+            "you": "S",
+            "will find": "V",
+            "individuality and uniqueness": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "Zoom in": "그건 and 앞, 주어 없이 시작하는 명령이에요. and 뒤에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "and 뒤는 주어 you, 동사 will find, 목적어 individuality and uniqueness예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic"
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "Zoom in",
+            "will find",
+            "individuality and uniqueness",
+            "everywhere"
+          ],
+          "answers": [
+            "Zoom in",
+            "everywhere",
+            "individuality and uniqueness",
+            "will find"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Zoom in",
+                "ko": "가까이 들여다봐요"
+              },
+              ", 그러면 ",
+              {
+                "en": "everywhere",
+                "ko": "어디에서나"
+              },
+              " ",
+              {
+                "en": "individuality and uniqueness",
+                "ko": "개별성과 고유성"
+              },
+              "을 ",
+              {
+                "en": "will find",
+                "ko": "발견할 거예요"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
         {
           "id": "s6_sort",
           "type": "choice",
@@ -1439,6 +2012,18 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "a carpet",
+          "ko": "카펫"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
           "en": "alike",
           "ko": "비슷한, 같은"
         },
@@ -1493,6 +2078,142 @@
       ],
       "steps": [
         {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "No two daisies",
+            "are",
+            "alike",
+            "they",
+            "present"
+          ],
+          "answers": [
+            "No two daisies",
+            "are",
+            "alike",
+            "they",
+            "present"
+          ],
+          "roles": {
+            "No two daisies": "S",
+            "are": "V",
+            "alike": "C",
+            "they": "S",
+            "present": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "and yet 앞은 주어 No two daisies, 동사 are, 보어 alike예요. 뒤는 주어 they, 동사 present예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "tips": [
+            {
+              "label": "No two A are alike",
+              "text": "'똑같은 A 두 개는 없다', 즉 'A는 하나하나 다 다르다'예요. 부정이 주어에 붙어서 거꾸로 읽기 쉬워요."
+            },
+            {
+              "label": "to a quick glance",
+              "text": "'to + 보는 눈'은 '~가 보기에'예요 (to the naked eye: 맨눈으로 보기에). 그래서 'they present to a quick glance a carpet'은 '힐끗 보기에 그것들은 카펫의 모습을 보인다', 즉 '힐끗 보면 카펫처럼 보인다'예요."
+            }
+          ]
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "No two daisies",
+            "exactly",
+            "alike",
+            "and yet",
+            "to a quick glance",
+            "a carpet",
+            "uniformly"
+          ],
+          "answers": [
+            "No two daisies",
+            "exactly",
+            "alike",
+            "and yet",
+            "to a quick glance",
+            "a carpet",
+            "uniformly"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "No two daisies",
+                "ko": "어떤 두 데이지도"
+              },
+              " ",
+              {
+                "en": "exactly",
+                "ko": "똑같이"
+              },
+              " ",
+              {
+                "en": "alike",
+                "ko": "같지"
+              },
+              " 않아요. ",
+              {
+                "en": "and yet",
+                "ko": "그런데도"
+              },
+              " ",
+              {
+                "en": "to a quick glance",
+                "ko": "얼핏 보면"
+              },
+              " ",
+              {
+                "en": "a carpet",
+                "ko": "카펫"
+              },
+              "처럼 ",
+              {
+                "en": "uniformly",
+                "ko": "균일하게"
+              },
+              " 보여요."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "No two daisies are exactly alike, and yet they present to a quick glance a carpet patterned uniformly enough.",
+          "tips": [
+            {
+              "label": "No two A are alike",
+              "text": "'똑같은 A 두 개는 없다', 즉 'A는 하나하나 다 다르다'예요. 부정이 주어에 붙어서 거꾸로 읽기 쉬워요."
+            },
+            {
+              "label": "to a quick glance",
+              "text": "'to + 보는 눈'은 '~가 보기에'예요 (to the naked eye: 맨눈으로 보기에). 그래서 'they present to a quick glance a carpet'은 '힐끗 보기에 그것들은 카펫의 모습을 보인다', 즉 '힐끗 보면 카펫처럼 보인다'예요."
+            }
+          ]
+        },
+        {
           "id": "s7_q",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1533,7 +2254,8 @@
               "label": "No two A are alike",
               "text": "'똑같은 A 두 개는 없다', 즉 'A는 하나하나 다 다르다'예요. 부정이 주어에 붙어서 거꾸로 읽기 쉬워요."
             }
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s7_yet",
@@ -1639,6 +2361,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "the differences",
+          "ko": "그 차이"
+        },
+        {
           "en": "practical purposes",
           "ko": "실용적인 목적"
         },
@@ -1679,6 +2405,104 @@
         "practical purposes"
       ],
       "steps": [
+        {
+          "id": "s8_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the differences",
+            "can be",
+            "ignored",
+            "practical purposes"
+          ],
+          "answers": [
+            "the differences",
+            "can be",
+            "ignored"
+          ],
+          "roles": {
+            "the differences": "S",
+            "can be": "V",
+            "ignored": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "practical purposes": "그건 For most 뒤, '어떤 목적에서' 인지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the differences, 동사는 can be ④ignored(무시될 수 있다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic"
+        },
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "candidates": [
+            "For most",
+            "practical purposes",
+            "the differences",
+            "can be",
+            "ignored"
+          ],
+          "answers": [
+            "For most",
+            "practical purposes",
+            "the differences",
+            "ignored",
+            "can be"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "For most",
+                "ko": "대부분의"
+              },
+              " ",
+              {
+                "en": "practical purposes",
+                "ko": "실용적인 목적"
+              },
+              "에서는 ",
+              {
+                "en": "the differences",
+                "ko": "차이"
+              },
+              "가 ",
+              {
+                "en": "ignored",
+                "ko": "무시될"
+              },
+              " ",
+              {
+                "en": "can be",
+                "ko": "수 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
         {
           "id": "s8_sort",
           "type": "choice",
@@ -1866,6 +2690,10 @@
       "teaching_value": "medium",
       "glosses": [
         {
+          "en": "the constituent grasses",
+          "ko": "구성하는 풀들"
+        },
+        {
           "en": "Not so",
           "ko": "그렇지 않다 · 앞 문장의 '무시해도 된다'를 뒤집어요"
         },
@@ -1912,6 +2740,115 @@
         "really do matter"
       ],
       "steps": [
+        {
+          "id": "s9_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Not so",
+            "groundskeeper",
+            "the constituent grasses",
+            "really do matter"
+          ],
+          "answers": [
+            "the constituent grasses",
+            "really do matter"
+          ],
+          "roles": {
+            "the constituent grasses": "S",
+            "really do matter": "V"
+          },
+          "brief": {
+            "ask": "where 뒤에서 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "Not so": "그건 '그렇지 않다'는 짧은 말이에요. where 뒤에서 찾아봐요.",
+              "groundskeeper": "그건 for 뒤, 누구에게인지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "where 뒤 주어는 the constituent grasses (and their stages of growth), 동사는 really do matter(정말 중요하다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s9_basic",
+          "tips": [
+            {
+              "label": "do matter",
+              "text": "matter는 동사로 '중요하다'예요. 'do matter'의 do는 '하다'가 아니라 강조의 do라서, '정말 중요하다'로 읽어요."
+            }
+          ]
+        },
+        {
+          "id": "s9_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s9_basic",
+          "candidates": [
+            "Not so",
+            "groundskeeper",
+            "the constituent grasses",
+            "stages of growth",
+            "really do matter"
+          ],
+          "answers": [
+            "Not so",
+            "groundskeeper",
+            "the constituent grasses",
+            "stages of growth",
+            "really do matter"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Not so",
+                "ko": "그렇지 않다"
+              },
+              " — ",
+              {
+                "en": "groundskeeper",
+                "ko": "경기장 관리인"
+              },
+              "에게는 ",
+              {
+                "en": "the constituent grasses",
+                "ko": "풀의 종류"
+              },
+              "와 ",
+              {
+                "en": "stages of growth",
+                "ko": "자라는 단계"
+              },
+              "가 ",
+              {
+                "en": "really do matter",
+                "ko": "정말 중요하다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "do matter",
+              "text": "matter는 동사로 '중요하다'예요. 'do matter'의 do는 '하다'가 아니라 강조의 do라서, '정말 중요하다'로 읽어요."
+            }
+          ]
+        },
         {
           "id": "s9_sort",
           "type": "choice",
@@ -2188,6 +3125,22 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "all its fellows",
+          "ko": "모든 동료들"
+        },
+        {
+          "en": "to an infinite mind",
+          "ko": "무한한 정신에게는"
+        },
+        {
+          "en": "each blade of grass",
+          "ko": "풀잎 하나하나"
+        },
+        {
+          "en": "an infinite mind",
+          "ko": "무한한 정신"
+        },
+        {
           "en": "infinite mind",
           "ko": "무한한 정신 · 여기서는 기억력이 무한한 사람이에요"
         },
@@ -2238,6 +3191,129 @@
       ],
       "steps": [
         {
+          "id": "s10_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "an infinite mind",
+            "each blade of grass",
+            "need not be",
+            "co-categorized"
+          ],
+          "answers": [
+            "each blade of grass",
+            "need not be",
+            "co-categorized"
+          ],
+          "roles": {
+            "each blade of grass": "S",
+            "need not be": "V",
+            "co-categorized": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "an infinite mind": "그건 to 뒤, '누구에게'인지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 each blade of grass, 동사는 need not be ⑤co-categorized(묶일 필요가 없다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s10_basic",
+          "faded": [
+            ", with infinite memory,",
+            ", with its own distinct life history,"
+          ],
+          "tips": [
+            {
+              "label": "blade",
+              "text": "'blade'는 원래 '칼날'이라는 뜻이에요. 'blade of grass'처럼 쓰면 칼날처럼 가늘고 긴 '풀잎'을 말해요."
+            },
+            {
+              "label": "with = ~를 가진",
+              "text": "'with'는 여기서 '~를 가진'이라는 뜻이에요. 'with infinite memory'는 '무한한 기억력을 가진', 'with its own distinct life history'는 '자기만의 독특한 생애를 가진'이에요."
+            }
+          ]
+        },
+        {
+          "id": "s10_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s10_basic",
+          "candidates": [
+            "to an infinite mind",
+            "each blade of grass",
+            "need not be",
+            "co-categorized",
+            "all its fellows"
+          ],
+          "answers": [
+            "to an infinite mind",
+            "each blade of grass",
+            "all its fellows",
+            "co-categorized",
+            "need not be"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "to an infinite mind",
+                "ko": "무한한 정신에게는"
+              },
+              " ",
+              {
+                "en": "each blade of grass",
+                "ko": "풀잎 하나하나가"
+              },
+              " ",
+              {
+                "en": "all its fellows",
+                "ko": "모든 동료(다른 풀잎)"
+              },
+              "와 ",
+              {
+                "en": "co-categorized",
+                "ko": "한 범주로 묶일"
+              },
+              " ",
+              {
+                "en": "need not be",
+                "ko": "필요가 없다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "And to an infinite mind, each blade of grass need not be co-categorized with all its fellows.",
+          "tips": [
+            {
+              "label": "blade",
+              "text": "'blade'는 원래 '칼날'이라는 뜻이에요. 'blade of grass'처럼 쓰면 칼날처럼 가늘고 긴 '풀잎'을 말해요."
+            },
+            {
+              "label": "with = ~를 가진",
+              "text": "'with'는 여기서 '~를 가진'이라는 뜻이에요. 'with infinite memory'는 '무한한 기억력을 가진', 'with its own distinct life history'는 '자기만의 독특한 생애를 가진'이에요."
+            }
+          ]
+        },
+        {
           "id": "s10_q",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -2283,7 +3359,8 @@
               "label": "blade",
               "text": "'blade'는 원래 '칼날'이라는 뜻이에요. 'blade of grass'처럼 쓰면 칼날처럼 가늘고 긴 '풀잎'을 말해요."
             }
-          ]
+          ],
+          "meaning_check": true
         },
         {
           "id": "s10_imagine",
@@ -2780,6 +3857,94 @@
         "its own name"
       ],
       "steps": [
+        {
+          "id": "s11_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Each",
+            "could have",
+            "its own name"
+          ],
+          "answers": [
+            "Each",
+            "could have",
+            "its own name"
+          ],
+          "roles": {
+            "Each": "S",
+            "could have": "V",
+            "its own name": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Each(각각), 동사는 could have(가질 수 있다), 목적어는 its own name이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s11_basic"
+        },
+        {
+          "id": "s11_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s11_basic",
+          "candidates": [
+            "Each",
+            "could have",
+            "its own name",
+            "as you yourself do"
+          ],
+          "answers": [
+            "Each",
+            "as you yourself do",
+            "its own name",
+            "could have"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Each",
+                "ko": "각각(풀잎)은"
+              },
+              " ",
+              {
+                "en": "as you yourself do",
+                "ko": "당신이 그렇듯"
+              },
+              " ",
+              {
+                "en": "its own name",
+                "ko": "자기만의 이름"
+              },
+              "을 ",
+              {
+                "en": "could have",
+                "ko": "가질 수 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
         {
           "id": "s11_each",
           "type": "choice",

@@ -177,6 +177,13 @@ export type LessonCollection = {
   subtitle: string;
   /** 카드 왼쪽 위 라벨 (기출 · 모의 …) */
   tag: string;
+  /**
+   * 모의고사·수능 시험 정보 — `track: "exam"` 대분류는 꼭 적는다(테스트가 본다).
+   * 평가원(6월·9월 모의평가, 수능)은 제목 연도가 **학년도**라 시행연도 +1,
+   * 교육청(3·4·7·10월 등 전국연합학력평가)은 제목 연도 = 시행연도.
+   * 헷갈리지 않게 부제 맨 앞에 「YYYY년 M월 시행」을 작게 단다
+   */
+  exam?: { body: "평가원" | "교육청"; held: string };
 };
 
 /** 대분류 — 수능 · 모의고사 · 교과서처럼 가장 큰 갈래 */
@@ -184,5 +191,7 @@ export type LessonGroup = {
   id: string;
   title: string;
   subtitle: string;
+  /** 갈래 — 모의고사·수능(`exam`)과 나중에 만들 일반 영어는 플로우가 달라 따로 관리한다 */
+  track?: "exam" | "general";
   collections: LessonCollection[];
 };

@@ -54,7 +54,7 @@ export function StudyPanelView({ panel, onPick }: { panel: StudyPanel; onPick?: 
   if (panel.kind === "groups") {
     const group = (g: typeof panel.left, side: string) => (
       <div className={`board-group ${side}`} data-side={side.split(" ")[0]}>
-        <span className="board-group-label">{g.label}</span>
+        {g.label ? <span className="board-group-label">{g.label}</span> : null}
         {g.cluster ? (
           <div className={`board-cluster${g.cluster.fresh ? " fresh" : ""}`}>
             <div className="board-words">

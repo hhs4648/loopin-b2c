@@ -1,0 +1,207 @@
+{
+  "lesson": "moeui-2024-03-11-student-id-photo",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "듣기 응답 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_what": {
+      "ask": "Rachel에게 무슨 일이 있었대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "reissue는 're(다시) + issue(발급하다)'예요. got your card reissued는 '카드를 재발급받았다'예요.",
+        "reissue는 're(다시) + issue(발급하다)'예요. got your card reissued는 '카드를 재발급받았다'예요."
+      ],
+      "explain": "'got your student ID card reissued', 학생증을 재발급받았대요. re-는 '다시'예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'got your student ID card reissued', 학생증을 재발급받았대요. re-는 '다시'예요.",
+        "o2": "'got your student ID card reissued', 학생증을 재발급받았대요. re-는 '다시'예요."
+      },
+      "from": "gfjvrs"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the student services office": "그건 to 뒤, 어디로 갔는지 알려 주는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "두 번째 문장은 주어 I, 동사 went와 got, got의 목적어 a new one이에요.",
+      "from": "148k679"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1topmeh"
+    },
+    "s2_office": {
+      "say": "예전 학생증을 잃어버려서 학생 지원실(student services office)에 가서 새로 받았대요. 그 사무실에서 재발급을 해 준다는 거예요.",
+      "point": "여자는 학생 지원실에서 새 학생증을 받았다 = 그곳에서 재발급해 준다",
+      "from": "pj2wxx"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "there": "그건 '거기(학생 지원실)', 어디로 가는지예요.",
+        "my photo": "그건 마지막 질문 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "so 뒤 문장은 주어 I, 동사 need to go예요(가야 한다).",
+      "from": "ekkoqe"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "15wy021"
+    },
+    "s3_q": {
+      "ask": "남자의 마지막 질문은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "마지막 문장 'Do I need to bring my photo …'를 봐요. bring은 '가져가다'예요.",
+        "마지막 문장 'Do I need to bring my photo …'를 봐요. bring은 '가져가다'예요."
+      ],
+      "explain": "'Do I need to bring my photo for a new ID card', 새 학생증을 만들 때 사진을 가져가야 하는지 묻고 있어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'Do I need to bring my photo for a new ID card', 새 학생증을 만들 때 사진을 가져가야 하는지 묻고 있어요.",
+        "o2": "'Do I need to bring my photo for a new ID card', 새 학생증을 만들 때 사진을 가져가야 하는지 묻고 있어요."
+      },
+      "from": "1fy9f2c"
+    },
+    "s3_kind": {
+      "ask": "Do I need to ~(~해야 하나요)라는 질문에는 어떤 대답이 자연스러울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Do I need to ~?는 해야 하는지 묻는 말이에요. 해야 한다/안 해도 된다가 먼저 와요.",
+        "Do I need to ~?는 해야 하는지 묻는 말이에요. 해야 한다/안 해도 된다가 먼저 와요."
+      ],
+      "explain": "Do I need to ~?는 해야 하는지를 묻는 질문이에요. 그래서 필요한지 아닌지와 그 이유가 대답이 돼요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "Do I need to ~?는 해야 하는지를 묻는 질문이에요. 그래서 필요한지 아닌지와 그 이유가 대답이 돼요.",
+        "o2": "Do I need to ~?는 해야 하는지를 묻는 질문이에요. 그래서 필요한지 아닌지와 그 이유가 대답이 돼요."
+      },
+      "from": "zpfz61"
+    },
+    "s4_need": {
+      "ask": "여자는 방금 그 사무실에서 직접 재발급받았어요. 사진을 가져가야 하냐는 질문에 어떤 응답이 자연스러울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "여자는 경험이 있어요. 질문(사진을 가져가야 하나)에 바로 답하는 말을 찾아봐요.",
+        "여자는 경험이 있어요. 질문(사진을 가져가야 하나)에 바로 답하는 말을 찾아봐요."
+      ],
+      "explain": "여자는 그 사무실에서 새로 받았으니 재발급은 해 줘요. 단체 사진은 photo만 같아요. 사진이 필요한지에 답하는 말이 자연스러워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "여자는 그 사무실에서 새로 받았으니 재발급은 해 줘요. 단체 사진은 photo만 같아요. 사진이 필요한지에 답하는 말이 자연스러워요.",
+        "o1": "여자는 그 사무실에서 새로 받았으니 재발급은 해 줘요. 단체 사진은 photo만 같아요. 사진이 필요한지에 답하는 말이 자연스러워요."
+      },
+      "point": "응답 = 사진을 가져가야 하나? → 필요 없다, 거기서 찍어 준다",
+      "from": "x6d3yz"
+    },
+    "s4_go": {
+      "say": "이제 실제 보기 다섯 개에서 골라 봐요. 여자가 이미 겪은 일을 떠올려요.",
+      "from": "vawhit"
+    }
+  },
+  "exam": {
+    "ask": "남자의 마지막 질문(사진을 가져가야 하나)과 여자가 이미 겪은 일을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 사진을 가져가야 하냐는 질문에, 직접 재발급받아 본 여자가 '필요 없어, 거기서 바로 찍어 줘'라고 답하는 게 자연스러워요.",
+    "final_wrong": "정답은 ③이에요. 'No need(필요 없어)'로 질문에 바로 답하고, 그 자리에서 사진을 찍을 수 있다고 이유를 덧붙여요.",
+    "option_feedback": {
+      "1": "신용 카드 이야기는 대화와 상관없어요.",
+      "2": "photo가 겹쳐서 헷갈렸죠. 하지만 단체 사진은 새 학생증과 상관없어요.",
+      "4": "여자는 학생증을 찾은 게 아니라 새로 받았어요.",
+      "5": "여자는 바로 그 학생 지원실에서 새 학생증을 받았어요. 재발급을 안 해 준다는 말은 앞뒤가 안 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 14.8%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "⑤는 '학생 지원실은 학생증을 재발급해 주지 않아'예요. 그런데 여자는 바로 그 학생 지원실에 가서 새 학생증을 받았다고 했어요(got a new one). 그리고 남자가 물은 건 사진을 가져가야 하는지였어요.",
+        "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "여자가 어디서 받았는지 놓쳤어요",
+            "skills": [
+              "detail_earlier"
+            ],
+            "reply": "알려 줘서 고마워요. 응답은 앞에서 한 말과 맞아야 해요. 앞으로 앞 대화의 중요한 사실을 먼저 짚어 줄게요."
+          },
+          {
+            "label": "질문이 무엇이었는지 놓쳤어요",
+            "skills": [
+              "last_question"
+            ],
+            "reply": "알려 줘서 고마워요. 마지막 질문 Do I need to bring my photo가 열쇠였어요. 앞으로 마지막 말을 꼭 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "detail_earlier",
+              "last_question"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 앞 대화의 사실과 마지막 질문을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "여자의 대답",
+              "text": "went to the student services office and got a new one",
+              "ko": "그 사무실에서 새로 받았다",
+              "tone": "hl"
+            },
+            {
+              "label": "남자의 마지막 말",
+              "text": "Do I need to bring my photo",
+              "ko": "사진을 가져가야 하나?",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1bxsh2n"
+  },
+  "intro": {
+    "topic": {
+      "say": "학생증을 잃어버리면 새로 만들 때 무엇을 챙겨야 할까요? 이번엔 듣기 문제를 대본으로 같이 읽어 봐요."
+    },
+    "method1": {
+      "say": "듣기 응답 문제는 누가 무엇을 했는지, 마지막 말이 무엇을 묻는지 잡는 게 핵심이에요. 문장 아래 🔊 듣기로 소리도 들어 봐요."
+    },
+    "from": "a2j48x"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "115zuuh"
+}

@@ -11,6 +11,8 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_URL?: string;
   /** anon 키 — 공개돼도 되는 값이다. 보호는 RLS가 한다 */
   readonly VITE_SUPABASE_ANON_KEY?: string;
+  /** 학생 테스트 링크 — 이 미니 모의고사 하나만 연다 (`npm run share:mini2403`) */
+  readonly VITE_ONLY_MINI?: string;
 }
 
 interface ImportMeta {

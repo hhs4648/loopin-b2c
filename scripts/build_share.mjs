@@ -35,8 +35,12 @@ const MIME = { ".webp": "image/webp", ".jpg": "image/jpeg", ".png": "image/png",
 const dataUri = (file) =>
   `data:${MIME[extname(file)]};base64,${readFileSync(file).toString("base64")}`;
 
-/* public/assets의 그림 — 코드와 레슨 JSON 안에 "/assets/…"로 박혀 있다 */
-const pictures = readdirSync(join(ROOT, "public/assets")).filter((f) => MIME[extname(f)]);
+/* public/assets의 그림 — 코드와 레슨 JSON 안에 "/assets/…"로 박혀 있다. 하위 폴더(village/ 등)까지 */
+const pictures = readdirSync(join(ROOT, "public/assets"), { recursive: true })
+  .map(String)
+  .filter((f) => MIME[extname(f)])
+  // 긴 경로부터 — 「a.webp」가 「x/a.webp」 안에서 먼저 바뀌지 않게
+  .sort((a, b) => b.length - a.length);
 const inlinePictures = (text) =>
   pictures.reduce((t, f) => t.split(`/assets/${f}`).join(dataUri(join(ROOT, "public/assets", f))), text);
 

@@ -338,6 +338,84 @@ lesson = {
     "passage_on_try": True,
 }
 
+# 초급 기본 — 문장마다 「주어·동사 + 뜻」 또는 「해석 맞추기」 하나 (2026-10-15 선생님). 빈칸 문장(8)은 제외
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from beginner import add_basic, fill_chunk_glosses, m, sv_step  # noqa: E402
+
+add_basic(sentences, 1, [m("All architectural structures", "모든 건축 구조물은"), " ", m("guides action", "행동을 이끄는"), " ",
+                         m("spatial choreography", "공간의 안무"), "의 ", m("forms of", "형태들"), m("are", "이다"), "."],
+          match_display="All architectural structures are forms of spatial choreography that guides action.",
+          sv_new=sv_step("s1_basic_sv", ["All architectural structures", "are", "forms of spatial choreography", "space", "facilitates"],
+                         {"All architectural structures": "S", "are": "V", "forms of spatial choreography": "C"},
+                         {"space": "그건 세미콜론(;) 뒤 문장의 주어예요. 앞에서 찾아봐요.", "facilitates": "그건 세미콜론(;) 뒤 문장의 동사예요."},
+                         "주어는 All architectural structures, 동사는 are, 보어는 forms of spatial choreography예요."),
+          meaning_ids=["s1_what"], meaning="모든 건축 구조물은 행동을 이끄는 공간의 안무(춤 동작 짜기) 같은 거래요.")
+add_basic(sentences, 2, [m("This choreography", "이 안무는"), " ", m("patterns of movement and behavior", "움직임과 행동의 패턴"), "을 ",
+                         m("predetermines", "미리 정한다"), ", ", m("but it also", "그러나 그것은 또한"), " ",
+                         m("emotions and feelings", "감정과 느낌"), "도 ", m("guides", "이끈다"), "."],
+          sv_new=sv_step("s2_basic_sv", ["This choreography", "predetermines", "patterns of movement and behavior", "it", "guides"],
+                         {"This choreography": "S", "predetermines": "V", "patterns of movement and behavior": "O", "it": "S", "guides": "V"}, {},
+                         "but 앞은 주어 This choreography, 동사 predetermines, 목적어 patterns of movement and behavior예요. but 뒤는 주어 it, 동사 guides예요."),
+          meaning="이 안무(공간)는 움직임과 행동의 패턴을 미리 정하고, 감정과 느낌 같은 경험도 이끈대요.")
+add_basic(sentences, 3, [m("A sensitive and empathic designer", "섬세하고 공감하는 설계자는"), " ", m("human behavior and desire", "사람의 행동과 욕구"),
+                         "를 ", m("intuits", "직관으로 알아챈다"), "."],
+          match_display="A sensitive and empathic designer intuits human behavior and desire.",
+          sv_new=sv_step("s3_basic_sv", ["A sensitive and empathic designer", "intuits", "human behavior and desire",
+                                         "this intuitive architectural scripting", "resonates with"],
+                         {"A sensitive and empathic designer": "S", "intuits": "V", "human behavior and desire": "O",
+                          "this intuitive architectural scripting": "S", "resonates with": "V"}, {},
+                         "and 앞은 주어 A sensitive and empathic designer, 동사 intuits, 목적어 human behavior and desire예요. and 뒤는 주어 this intuitive architectural scripting, 동사 resonates with예요."),
+          meaning_ids=["s3_designer"])
+add_basic(sentences, 4, [m("the designer", "설계자는"), " ", m("in his imagination", "상상 속에서"), " ", m("the non-existent house", "아직 없는 집"), "을 ",
+                         m("lives, uses and feels", "살아 보고, 써 보고, 느껴 본다"), "."],
+          sv_new=sv_step("s4_basic_sv", ["While designing a house", "the designer", "lives, uses and feels", "the non-existent house"],
+                         {"the designer": "S", "lives, uses and feels": "V", "the non-existent house": "O"},
+                         {"While designing a house": "그건 While(~하는 동안) 덩어리예요. 콤마 뒤에서 찾아봐요."},
+                         "주어는 the designer, 동사는 lives, uses and feels(살아 보고, 써 보고, 느껴 본다), 목적어는 the non-existent house예요."),
+          meaning_after="s4_behalf",
+          meaning="집을 설계하는 동안, 설계자는 아직 없는 집을 미래에 살 사람 대신 상상 속에서 살아 보고, 써 보고, 느껴 봐요.")
+add_basic(sentences, 5, [m("A correctly placed window", "올바르게 놓인 창문은"), " ", m("the occupant", "사는 사람이"), " ",
+                         m("look out into the garden", "정원을 내다보고"), " ", m("wishes to", "싶어 하는"), " ", m("exactly where", "바로 그곳에"), " ",
+                         m("is located", "있다"), "."],
+          match_display="A correctly placed window is located exactly where the occupant wishes to look out into the garden.",
+          sv_new=sv_step("s5_basic_sv", ["A correctly placed window", "is located", "the occupant", "wishes to"],
+                         {"A correctly placed window": "S", "is located": "V"},
+                         {"the occupant": "그건 where 뒤 덩어리 안의 주어예요.", "wishes to": "그건 where 뒤 덩어리 안의 동사예요."},
+                         "주어는 A correctly placed window, 동사는 is located(놓여 있다)예요."),
+          meaning_after="s5_where",
+          meaning="올바르게 놓인 창문은 사는 사람이 정원을 내다보고 싶은 바로 그곳, 햇빛이 필요한 곳에 있대요.")
+add_basic(sentences, 6, [m("The stairway", "계단은"), " ", m("the dweller", "사는 사람이"), " ", m("enter the floor above or below", "위층이나 아래층으로 들어가고"),
+                         " ", m("wishes to", "싶어 하는"), " 곳에 ", m("is located", "있다"), "."],
+          sv_new=sv_step("s6_basic_sv", ["The stairway", "is located", "the dweller", "wishes to"],
+                         {"The stairway": "S", "is located": "V"},
+                         {"the dweller": "그건 where 뒤 덩어리 안의 주어예요.", "wishes to": "그건 where 뒤 덩어리 안의 동사예요."},
+                         "주어는 The stairway, 동사는 is located예요."),
+          meaning_after="s6_same", meaning="계단은 사는 사람이 위층이나 아래층으로 가고 싶은 곳에 있대요.")
+add_basic(sentences, 7, [m("Successful architecture", "성공적인 건축은"), " ", m("manuals or signage", "설명서나 표지판"), "이 ",
+                         m("does not need", "필요 없다"), " — ", m("in a wordless manner", "말없이"), " ", m("reveals", "드러내기"), " 때문이다."],
+          sv_new=sv_step("s7_basic_sv", ["Successful architecture", "does not need", "manuals or signage", "it", "reveals"],
+                         {"Successful architecture": "S", "does not need": "V", "manuals or signage": "O"},
+                         {"it": "그건 as(~ 때문에) 뒤 덩어리 안의 주어예요.", "reveals": "그건 as(~ 때문에) 뒤 덩어리 안의 동사예요."},
+                         "주어는 Successful architecture, 동사는 does not need, 목적어는 manuals or signage예요."),
+          meaning_after="s7_why",
+          meaning="성공적인 건축은 말없이도 구조와 쓰임을 드러내서, 설명서나 표지판이 필요 없대요.")
+fill_chunk_glosses(sentences, {
+    "All architectural structures": "모든 건축 구조물", "are": "~이다", "forms of spatial choreography": "공간 안무의 형태들",
+    "spatial choreography": "공간의 안무", "forms of": "~의 형태들", "guides action": "행동을 이끈다", "space": "공간",
+    "facilitates": "돕다", "This choreography": "이 안무", "predetermines": "미리 정하다",
+    "patterns of movement and behavior": "움직임과 행동의 패턴", "it": "그것", "guides": "이끌다", "but it also": "그러나 그것은 또한",
+    "emotions and feelings": "감정과 느낌", "A sensitive and empathic designer": "섬세하고 공감하는 설계자",
+    "intuits": "직관으로 알아채다", "human behavior and desire": "사람의 행동과 욕구",
+    "this intuitive architectural scripting": "이 직관적인 건축 대본", "resonates with": "~와 잘 맞다",
+    "While designing a house": "집을 설계하는 동안", "the designer": "설계자", "lives, uses and feels": "살아 보고, 써 보고, 느껴 보다",
+    "the non-existent house": "아직 없는 집", "in his imagination": "상상 속에서",
+    "A correctly placed window": "올바르게 놓인 창문", "is located": "놓여 있다", "the occupant": "사는 사람",
+    "wishes to": "~하고 싶어 하다", "look out into the garden": "정원을 내다보다", "exactly where": "바로 ~한 곳에",
+    "The stairway": "계단", "the dweller": "사는 사람", "enter the floor above or below": "위층이나 아래층으로 들어가다",
+    "Successful architecture": "성공적인 건축", "does not need": "필요 없다", "manuals or signage": "설명서나 표지판",
+    "reveals": "드러내다", "in a wordless manner": "말없이",
+})
+
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from story_boards import add_story_boards  # noqa: E402

@@ -1,0 +1,1264 @@
+{
+  "id": "moeui-2024-03-41-reshaping-thoughts",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 41~42번 중 41번 (제목, 2점)",
+  "brief": {
+    "topic": "제목 푸는 법: 글쓴이가 하라는 말 잡기 → 무엇을 바꾸는지 찾기 → 두 핵심어를 다 담은 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "title",
+    "labels": [
+      "하라는 말 잡기",
+      "핵심어 둘 담기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-self-talk.svg",
+      "alt": "칠판: Self-talk(혼잣말) → Feelings(감정)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "새로운 자리에 갈 때 속으로 어떤 말을 하나요? 이번 글은 혼잣말이 감정을 어떻게 바꾸는지 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "제목 문제는 글쓴이가 하라는 말과, 무엇에 대한 말인지를 같이 잡아요. 핵심어 둘을 다 담은 제목이 정답이에요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "윗글의 제목으로 가장 적절한 것은?",
+    "sentence": 4,
+    "analysis_first": true,
+    "glosses": [
+      {
+        "en": "Role",
+        "ko": "역할"
+      },
+      {
+        "en": "Language Learning",
+        "ko": "언어 학습"
+      },
+      {
+        "en": "Improve Your Speech",
+        "ko": "말하기 실력을 높이다"
+      },
+      {
+        "en": "Reshaping",
+        "ko": "다시 만들기, 바꾸기"
+      },
+      {
+        "en": "Manage",
+        "ko": "관리하다"
+      },
+      {
+        "en": "Heightened",
+        "ko": "높아진"
+      },
+      {
+        "en": "Productivity",
+        "ko": "생산성"
+      },
+      {
+        "en": "Inner Thoughts",
+        "ko": "속마음"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "The Role of Automatic Thoughts in Language Learning",
+        "keywords": [
+          "Language Learning"
+        ],
+        "ko": "언어 학습에서 자동적 사고의 역할"
+      },
+      {
+        "id": "2",
+        "label": "Self-talk: The Best Way to Improve Your Speech",
+        "keywords": [
+          "Improve Your Speech"
+        ],
+        "ko": "혼잣말: 말하기 실력을 높이는 최고의 방법"
+      },
+      {
+        "id": "3",
+        "label": "Reshaping Thoughts: Manage Your Self-talk",
+        "keywords": [
+          "Reshaping Thoughts",
+          "Self-talk"
+        ],
+        "ko": "생각 바꾸기: 혼잣말을 관리하라",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "Heightened Anxiety Leads to Productivity",
+        "keywords": [
+          "Productivity"
+        ],
+        "ko": "높아진 불안이 생산성으로 이어진다"
+      },
+      {
+        "id": "5",
+        "label": "Ways to Read Others’ Inner Thoughts",
+        "keywords": [
+          "Others’ Inner Thoughts"
+        ],
+        "ko": "다른 사람의 속마음을 읽는 방법"
+      }
+    ],
+    "brief": {
+      "ask": "칠판의 두 핵심어(생각을 다시 짜기, 혼잣말)를 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! Reshaping Thoughts는 restructure the way you think를, Self-talk는 자동적 사고를 바꿔 쓴 말이에요.",
+      "final_wrong": "정답은 ③이에요. 생각을 다시 짜자(Reshaping Thoughts)는 말과 혼잣말(Self-talk)을 둘 다 담았어요.",
+      "option_feedback": {
+        "1": "Automatic Thoughts는 맞지만 언어 학습 이야기는 글에 없어요.",
+        "2": "Self-talk는 나오지만 말하기 실력을 높이는 글이 아니에요. 혼잣말이 감정을 바꾼다는 글이에요.",
+        "4": "불안은 나쁜 경험을 만든대요. 생산성으로 이어진다는 말은 반대예요.",
+        "5": "남의 속마음이 아니라 내가 나에게 하는 말 이야기예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "narrator",
+        "ko": "이야기하는 사람"
+      },
+      {
+        "en": "generate",
+        "ko": "만들어 내다"
+      },
+      {
+        "en": "restructure",
+        "ko": "재구성하다"
+      },
+      {
+        "en": "automatic",
+        "ko": "자동적인"
+      },
+      {
+        "en": "self-talk",
+        "ko": "혼잣말"
+      },
+      {
+        "en": "navigate",
+        "ko": "헤쳐 나가다"
+      },
+      {
+        "en": "habit",
+        "ko": "습관"
+      }
+    ],
+    "options": [
+      {
+        "en": "reshape",
+        "ko": "다시 만들다"
+      },
+      {
+        "en": "manage",
+        "ko": "관리하다"
+      },
+      {
+        "en": "heightened",
+        "ko": "높아진"
+      },
+      {
+        "en": "productivity",
+        "ko": "생산성"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "medium",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "You are the narrator of your own life.",
+      "model_translation": "여러분은 자기 자신의 삶의 내레이터이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "your own life",
+          "ko": "자기 삶"
+        },
+        {
+          "en": "You",
+          "ko": "너는"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "the narrator",
+          "ko": "이야기하는 사람, 내레이터"
+        },
+        {
+          "en": "of your own life",
+          "ko": "자기 삶의"
+        },
+        {
+          "en": "narrator",
+          "ko": "이야기하는 사람"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_how",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "42번과 같은 글이에요. 이번엔 제목을 찾으려고 글쓴이가 하라는 말과 핵심어만 골라 볼게요."
+          },
+          "method": 1,
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "The tone and perspective with which you describe each experience generates feelings associated with that narration.",
+      "model_translation": "각 경험을 묘사하는 어조와 관점이 그 내레이션과 관련된 감정을 만들어 낸다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "describe",
+          "ko": "묘사하다"
+        },
+        {
+          "en": "you",
+          "ko": "너는"
+        },
+        {
+          "en": "The tone and perspective",
+          "ko": "어조와 관점"
+        },
+        {
+          "en": "with which you describe each experience",
+          "ko": "각 경험을 묘사하는"
+        },
+        {
+          "en": "generates",
+          "ko": "만들어 낸다"
+        },
+        {
+          "en": "feelings",
+          "ko": "감정"
+        },
+        {
+          "en": "associated with that narration",
+          "ko": "그 이야기와 관련된"
+        },
+        {
+          "en": "tone",
+          "ko": "어조, 말투"
+        },
+        {
+          "en": "perspective",
+          "ko": "관점"
+        },
+        {
+          "en": "experience",
+          "ko": "경험"
+        },
+        {
+          "en": "narration",
+          "ko": "이야기, 내레이션"
+        }
+      ],
+      "slashes": [
+        "The tone and perspective",
+        "each experience"
+      ],
+      "steps": [
+        {
+          "id": "s2_feel",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "말하는 어조와 관점이 무엇을 만들어 낸대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "generates 뒤를 봐요. '그 이야기와 관련된 ~'을 만들어 낸대요.",
+              "generates 뒤를 봐요. '그 이야기와 관련된 ~'을 만들어 낸대요."
+            ],
+            "explain": "generates 뒤를 봐요. '그 이야기와 관련된 ~'을 만들어 낸대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "generates 뒤를 봐요. '그 이야기와 관련된 ~'을 만들어 낸대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "감정 (feelings)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "기억 (memories)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "generates feelings"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "For example, if you find yourself constantly assuming, “This is hard,” “I wonder whether I’m going to survive,” or “It looks like this is going to turn out badly,” you’ll generate (a)anxious feelings.",
+      "model_translation": "예를 들어, '이건 어려워.', '내가 살아남을 수 있을지 모르겠어.', 또는 '일이 안 좋게 되어갈 것 같아.'라고 계속해서 가정하는 자신의 모습을 알게 된다면, 여러분은 불안한 감정을 만들어 낼 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "For example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "if you find yourself constantly assuming",
+          "ko": "자신이 계속 ~라고 가정하고 있다면"
+        },
+        {
+          "en": "This is hard",
+          "ko": "이건 어려워"
+        },
+        {
+          "en": "I wonder whether I’m going to survive",
+          "ko": "내가 살아남을지 모르겠어"
+        },
+        {
+          "en": "It looks like",
+          "ko": "~인 것 같아"
+        },
+        {
+          "en": "this is going to turn out badly",
+          "ko": "이게 안 좋게 될 거야"
+        },
+        {
+          "en": "you’ll generate",
+          "ko": "너는 만들어 낼 것이다"
+        },
+        {
+          "en": "anxious feelings",
+          "ko": "불안한 감정"
+        },
+        {
+          "en": "constantly",
+          "ko": "계속"
+        },
+        {
+          "en": "assuming",
+          "ko": "가정하는"
+        },
+        {
+          "en": "hard",
+          "ko": "어려운"
+        },
+        {
+          "en": "wonder",
+          "ko": "궁금해하다"
+        },
+        {
+          "en": "whether",
+          "ko": "~인지"
+        },
+        {
+          "en": "I’m",
+          "ko": "나는 ~이다"
+        },
+        {
+          "en": "going",
+          "ko": "(be going to = ~할 것이다)"
+        },
+        {
+          "en": "survive",
+          "ko": "살아남다"
+        },
+        {
+          "en": "looks",
+          "ko": "~처럼 보이다"
+        },
+        {
+          "en": "turn",
+          "ko": "되다 · turn out = ~로 판명되다"
+        },
+        {
+          "en": "badly",
+          "ko": "나쁘게"
+        },
+        {
+          "en": "you’ll",
+          "ko": "너는 ~할 것이다"
+        },
+        {
+          "en": "generate",
+          "ko": "만들어 내다"
+        },
+        {
+          "en": "anxious",
+          "ko": "불안한"
+        }
+      ],
+      "slashes": [
+        "constantly assuming,",
+        "“This is hard,”",
+        "going to survive,”",
+        "turn out badly,”"
+      ],
+      "steps": [
+        {
+          "id": "s3_ex",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'어려워', '안 좋게 될 거야'처럼 말하면 불안한 감정이 생긴대요. 내가 나에게 하는 말이 감정을 바꾼다는 거예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "anxious feelings"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "문장 1~3",
+                "text": "negative narration → anxious feelings",
+                "ko": "부정적으로 말하면 불안해진다"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "It’s time to restructure the way you think.",
+      "model_translation": "이제는 여러분의 사고방식을 재구성할 때다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "It’s time to",
+          "ko": "~할 때다"
+        },
+        {
+          "en": "restructure",
+          "ko": "다시 짜다, 재구성하다"
+        },
+        {
+          "en": "the way you think",
+          "ko": "네가 생각하는 방식"
+        },
+        {
+          "en": "It’s",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "way",
+          "ko": "방식"
+        },
+        {
+          "en": "think",
+          "ko": "생각하다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_main",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "글쓴이가 이제 무엇을 하라고 하나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "It’s time to 뒤가 글쓴이가 하라는 말이에요. restructure는 '다시 짜다'예요.",
+              "It’s time to 뒤가 글쓴이가 하라는 말이에요. restructure는 '다시 짜다'예요."
+            ],
+            "explain": "It’s time to 뒤가 글쓴이가 하라는 말이에요. restructure는 '다시 짜다'예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "It’s time to 뒤가 글쓴이가 하라는 말이에요. restructure는 '다시 짜다'예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "생각하는 방식을 다시 짜기",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "불안한 감정을 꾹 참기"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "restructure the way you think"
+          ]
+        },
+        {
+          "id": "s4_key",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "제목의 첫 번째 핵심어예요. 생각을 바꾸자. 이제 어떤 생각을 바꾸는지 찾아봐요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "문장 1~3",
+                "text": "negative narration → anxious feelings",
+                "ko": "부정적으로 말하면 불안해진다"
+              },
+              {
+                "label": "문장 4",
+                "text": "restructure the way you think",
+                "ko": "생각하는 방식을 다시 짜라",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Underlying this narration are the beliefs that (b)frame your experience and give it meaning.",
+      "model_translation": "이러한 내레이션의 기저에는 여러분의 경험에 틀을 씌우고 그것에 의미를 부여하는 신념이 존재한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Underlying this narration",
+          "ko": "이 이야기의 밑바탕에"
+        },
+        {
+          "en": "are",
+          "ko": "있다"
+        },
+        {
+          "en": "the beliefs",
+          "ko": "신념, 믿음"
+        },
+        {
+          "en": "frame your experience",
+          "ko": "경험에 틀을 씌우다"
+        },
+        {
+          "en": "give it meaning",
+          "ko": "그것에 의미를 주다"
+        },
+        {
+          "en": "Underlying",
+          "ko": "밑바탕에 있는"
+        },
+        {
+          "en": "narration",
+          "ko": "이야기, 내레이션"
+        },
+        {
+          "en": "beliefs",
+          "ko": "신념, 믿음"
+        },
+        {
+          "en": "frame",
+          "ko": "틀을 씌우다"
+        },
+        {
+          "en": "experience",
+          "ko": "경험"
+        },
+        {
+          "en": "give",
+          "ko": "주다"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 6,
+      "text": "Think of your beliefs as having many layers.",
+      "model_translation": "여러분의 신념에 여러 층이 있다고 생각해 보자.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Think of",
+          "ko": "~을 생각해 보라"
+        },
+        {
+          "en": "your beliefs",
+          "ko": "너의 신념"
+        },
+        {
+          "en": "as having many layers",
+          "ko": "여러 층을 가진 것으로"
+        },
+        {
+          "en": "Think",
+          "ko": "생각하다"
+        },
+        {
+          "en": "beliefs",
+          "ko": "신념, 믿음"
+        },
+        {
+          "en": "having",
+          "ko": "가지고 있는"
+        },
+        {
+          "en": "layers",
+          "ko": "층"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 7,
+      "text": "On the surface are your automatic thoughts.",
+      "model_translation": "그 표면에 바로 '자동적 사고'가 존재한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "the surface",
+          "ko": "겉, 표면"
+        },
+        {
+          "en": "On the surface",
+          "ko": "맨 겉에"
+        },
+        {
+          "en": "are",
+          "ko": "있다"
+        },
+        {
+          "en": "your automatic thoughts",
+          "ko": "너의 자동적 사고"
+        },
+        {
+          "en": "automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 8,
+      "text": "These are like short tapes that momentarily flash through your mind.",
+      "model_translation": "이것은 순간적으로 여러분의 머릿속을 스쳐 가는 짧은 테이프와 같다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "These are like",
+          "ko": "이것들은 ~ 같다"
+        },
+        {
+          "en": "short tapes",
+          "ko": "짧은 테이프"
+        },
+        {
+          "en": "momentarily",
+          "ko": "순간적으로"
+        },
+        {
+          "en": "flash through your mind",
+          "ko": "머릿속을 스쳐 가다"
+        },
+        {
+          "en": "short",
+          "ko": "짧은"
+        },
+        {
+          "en": "tapes",
+          "ko": "테이프"
+        },
+        {
+          "en": "flash",
+          "ko": "번쩍 스치다"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 9,
+      "text": "Call these automatic thoughts a form of “self-talk” that you use as you navigate through the day.",
+      "model_translation": "이 자동적 사고를 여러분이 하루를 항해해 나가며 사용하는 '자기 대화'의 한 종류로 부르자.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Call",
+          "ko": "~라고 불러라"
+        },
+        {
+          "en": "these automatic thoughts",
+          "ko": "이 자동적 사고를"
+        },
+        {
+          "en": "a form of “self-talk”",
+          "ko": "일종의 '혼잣말'"
+        },
+        {
+          "en": "that you use",
+          "ko": "네가 쓰는"
+        },
+        {
+          "en": "as you navigate through the day",
+          "ko": "하루를 헤쳐 나가며"
+        },
+        {
+          "en": "automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "form",
+          "ko": "형태, 종류"
+        },
+        {
+          "en": "self-talk",
+          "ko": "혼잣말"
+        },
+        {
+          "en": "navigate",
+          "ko": "헤쳐 나가다"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "day",
+          "ko": "하루"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_talk",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "자동적 사고를 '혼잣말(self-talk)'이라고 부르재요. 두 번째 핵심어예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "self-talk"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "문장 1~3",
+                "text": "negative narration → anxious feelings",
+                "ko": "부정적으로 말하면 불안해진다"
+              },
+              {
+                "label": "문장 4",
+                "text": "restructure the way you think",
+                "ko": "생각하는 방식을 다시 짜라",
+                "tone": "hl"
+              },
+              {
+                "label": "문장 9",
+                "text": "automatic thoughts = self-talk",
+                "ko": "자동적 사고 = 혼잣말",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "You (c)produce a wide variety of these automatic thoughts, some consciously and some unconsciously.",
+      "model_translation": "여러분은 매우 다양한 자동적 사고를 일부는 의식적으로, 일부는 무의식적으로 만들어 낸다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "You",
+          "ko": "너는"
+        },
+        {
+          "en": "produce",
+          "ko": "만들어 내다"
+        },
+        {
+          "en": "a wide variety of these automatic thoughts",
+          "ko": "아주 다양한 자동적 사고"
+        },
+        {
+          "en": "some consciously",
+          "ko": "일부는 의식적으로"
+        },
+        {
+          "en": "and some unconsciously",
+          "ko": "일부는 무의식적으로"
+        },
+        {
+          "en": "wide",
+          "ko": "넓은"
+        },
+        {
+          "en": "variety",
+          "ko": "다양함"
+        },
+        {
+          "en": "automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "consciously",
+          "ko": "의식적으로"
+        },
+        {
+          "en": "unconsciously",
+          "ko": "무의식적으로"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 11,
+      "text": "For example, automatic thoughts that (d)relieve anxiety go something like this: You walk into a room, see a few new people, and say to yourself, “Oh no, I don’t like this. This is not good.”",
+      "model_translation": "예를 들어, 불안감에 기름을 붓는 자동적 사고는 이런 식으로 흘러간다. 여러분이 방에 들어가서 처음 보는 사람 몇 명을 보고, 자신에게 말한다. '이런, 나는 이거 싫어. 이건 좋지 않아.'",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "For example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "automatic thoughts",
+          "ko": "자동적 사고"
+        },
+        {
+          "en": "anxiety",
+          "ko": "불안"
+        },
+        {
+          "en": "go something like this",
+          "ko": "대략 이런 식이다"
+        },
+        {
+          "en": "You walk into a room",
+          "ko": "방에 들어간다"
+        },
+        {
+          "en": "see a few new people",
+          "ko": "처음 보는 사람 몇 명을 본다"
+        },
+        {
+          "en": "say to yourself",
+          "ko": "혼잣말을 한다"
+        },
+        {
+          "en": "Oh no",
+          "ko": "이런"
+        },
+        {
+          "en": "I don’t like this",
+          "ko": "난 이게 싫어"
+        },
+        {
+          "en": "This is not good",
+          "ko": "이건 좋지 않아"
+        },
+        {
+          "en": "automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "go",
+          "ko": "가다"
+        },
+        {
+          "en": "walk",
+          "ko": "걷다"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "few",
+          "ko": "몇몇의"
+        },
+        {
+          "en": "say",
+          "ko": "말하다"
+        },
+        {
+          "en": "Oh",
+          "ko": "아, 이런"
+        },
+        {
+          "en": "don’t",
+          "ko": "~하지 않다"
+        }
+      ],
+      "slashes": [
+        "go something like this:",
+        "a few new people,",
+        "say to yourself,"
+      ],
+      "steps": []
+    },
+    {
+      "id": 12,
+      "text": "Or, “These people will soon find out that I am full of anxiety and will reject me.”",
+      "model_translation": "또는 '이 사람들은 곧 내가 불안감이 가득하다는 것을 알아채고 날 거부할 거야.'",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Or",
+          "ko": "또는"
+        },
+        {
+          "en": "These people",
+          "ko": "이 사람들은"
+        },
+        {
+          "en": "will soon find out",
+          "ko": "곧 알아챌 것이다"
+        },
+        {
+          "en": "I am full of anxiety",
+          "ko": "내가 불안으로 가득하다"
+        },
+        {
+          "en": "will reject me",
+          "ko": "나를 거부할 것이다"
+        },
+        {
+          "en": "soon",
+          "ko": "곧"
+        },
+        {
+          "en": "am",
+          "ko": "~이다"
+        },
+        {
+          "en": "full",
+          "ko": "가득한"
+        },
+        {
+          "en": "anxiety",
+          "ko": "불안"
+        },
+        {
+          "en": "reject",
+          "ko": "거부하다"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 13,
+      "text": "Automatic thoughts are bad habits that (e)cloud fresh and positive experiences.",
+      "model_translation": "자동적 사고는 새롭고 긍정적인 경험을 우울하게 만드는 나쁜 습관이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "bad habits",
+          "ko": "나쁜 습관"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "Automatic thoughts",
+          "ko": "자동적 사고는"
+        },
+        {
+          "en": "are bad habits",
+          "ko": "나쁜 습관이다"
+        },
+        {
+          "en": "cloud",
+          "ko": "흐리게 하다, 망치다"
+        },
+        {
+          "en": "fresh and positive experiences",
+          "ko": "새롭고 긍정적인 경험"
+        },
+        {
+          "en": "habits",
+          "ko": "습관"
+        },
+        {
+          "en": "Automatic",
+          "ko": "자동적인"
+        },
+        {
+          "en": "thoughts",
+          "ko": "생각"
+        },
+        {
+          "en": "fresh",
+          "ko": "새로운"
+        },
+        {
+          "en": "positive",
+          "ko": "긍정적인"
+        },
+        {
+          "en": "experiences",
+          "ko": "경험들"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s13_bad",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "글쓴이는 자동적 사고를 좋게 보나요, 나쁘게 보나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "주어 Automatic thoughts 바로 뒤 are 다음 말을 봐요.",
+              "주어 Automatic thoughts 바로 뒤 are 다음 말을 봐요."
+            ],
+            "explain": "주어 Automatic thoughts 바로 뒤 are 다음 말을 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "주어 Automatic thoughts 바로 뒤 are 다음 말을 봐요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "나쁘게 (bad habits)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "좋게 (fresh experiences)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "bad habits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "They can turn a potentially good experience into one fraught with anxiety.",
+      "model_translation": "그것들은 잠재적으로 좋은 경험을 불안감으로 가득 찬 것으로 바꿀 수 있다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "They",
+          "ko": "그것들(자동적 사고)"
+        },
+        {
+          "en": "can turn",
+          "ko": "바꿀 수 있다"
+        },
+        {
+          "en": "a potentially good experience",
+          "ko": "좋을 수도 있는 경험"
+        },
+        {
+          "en": "into one fraught with anxiety",
+          "ko": "불안으로 가득한 것으로"
+        },
+        {
+          "en": "turn",
+          "ko": "되다 · turn out = ~로 판명되다"
+        },
+        {
+          "en": "potentially",
+          "ko": "잠재적으로"
+        },
+        {
+          "en": "experience",
+          "ko": "경험"
+        },
+        {
+          "en": "fraught",
+          "ko": "가득한"
+        },
+        {
+          "en": "anxiety",
+          "ko": "불안"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 15,
+      "text": "If you tell yourself that you are always stressed or full of anxiety before doing something new, that new experience will be tainted by that anxiety.",
+      "model_translation": "만약 여러분이 새로운 무언가를 하기 전에 항상 스트레스를 받고 불안감으로 가득하다고 스스로에게 말한다면, 그 새로운 경험은 그 불안에 의해 오염될 것이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "If you tell yourself",
+          "ko": "스스로에게 ~라고 말한다면"
+        },
+        {
+          "en": "you are always stressed",
+          "ko": "늘 스트레스를 받는다"
+        },
+        {
+          "en": "full of anxiety",
+          "ko": "불안으로 가득한"
+        },
+        {
+          "en": "before doing something new",
+          "ko": "새로운 일을 하기 전에"
+        },
+        {
+          "en": "that new experience",
+          "ko": "그 새로운 경험은"
+        },
+        {
+          "en": "will be tainted",
+          "ko": "더럽혀질 것이다"
+        },
+        {
+          "en": "by that anxiety",
+          "ko": "그 불안에 의해"
+        },
+        {
+          "en": "tell",
+          "ko": "말하다"
+        },
+        {
+          "en": "always",
+          "ko": "늘"
+        },
+        {
+          "en": "stressed",
+          "ko": "스트레스를 받는"
+        },
+        {
+          "en": "full",
+          "ko": "가득한"
+        },
+        {
+          "en": "anxiety",
+          "ko": "불안"
+        },
+        {
+          "en": "doing",
+          "ko": "하는 것"
+        },
+        {
+          "en": "experience",
+          "ko": "경험"
+        },
+        {
+          "en": "tainted",
+          "ko": "더럽혀진"
+        }
+      ],
+      "slashes": [
+        "full of anxiety",
+        "something new,"
+      ],
+      "steps": [
+        {
+          "id": "s15_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "나쁜 혼잣말을 바꿔 생각을 다시 짜자는 글이에요. 두 핵심어를 다 담은 제목을 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "문장 1~3",
+                "text": "negative narration → anxious feelings",
+                "ko": "부정적으로 말하면 불안해진다"
+              },
+              {
+                "label": "문장 4",
+                "text": "restructure the way you think",
+                "ko": "생각하는 방식을 다시 짜라",
+                "tone": "hl"
+              },
+              {
+                "label": "문장 9",
+                "text": "automatic thoughts = self-talk",
+                "ko": "자동적 사고 = 혼잣말",
+                "tone": "hl"
+              },
+              {
+                "label": "문장 13",
+                "text": "bad habits",
+                "ko": "자동적 사고는 나쁜 습관"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

@@ -1,0 +1,136 @@
+{
+ "1": [
+  {
+   "word": "if",
+   "phrase": "if there was",
+   "sense": "만약 ~라면",
+   "usage": "가정법 if + 주어 + was"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "the ones that have become",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "3": [
+  {
+   "word": "for",
+   "phrase": "For some ideas",
+   "sense": "~에 대해서는",
+   "usage": "전치사 for + 명사"
+  },
+  {
+   "word": "that",
+   "phrase": "the ones that identify",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "as",
+   "phrase": "as members of a group",
+   "sense": "~로서",
+   "usage": "전치사 as (자격)"
+  },
+  {
+   "word": "as",
+   "phrase": "as individuals",
+   "sense": "~로서",
+   "usage": "전치사 as (자격)"
+  },
+  {
+   "word": "as",
+   "phrase": "as a member of a tribe",
+   "sense": "~로서",
+   "usage": "전치사 as (자격)"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "want to seem",
+   "sense": "~하기를",
+   "usage": "want + to부정사"
+  },
+  {
+   "word": "as",
+   "phrase": "as a trustworthy individual",
+   "sense": "~로서",
+   "usage": "전치사 as (자격)"
+  }
+ ],
+ "6": [
+  {
+   "word": "but",
+   "phrase": "but being alone",
+   "sense": "하지만",
+   "usage": "접속사 but + 주어·동사"
+  }
+ ],
+ "7": [
+  {
+   "word": "so",
+   "phrase": "So we carry",
+   "sense": "그래서",
+   "usage": "접속사 so (결과)"
+  },
+  {
+   "word": "to",
+   "phrase": "drive to form",
+   "sense": "~하려는",
+   "usage": "명사 + to부정사"
+  }
+ ],
+ "8": [
+  {
+   "word": "but",
+   "phrase": "But once you",
+   "sense": "하지만",
+   "usage": "접속사 but (문장 앞)"
+  },
+  {
+   "word": "so",
+   "phrase": "so much so",
+   "sense": "그렇게 (많이)",
+   "usage": "so much so that = 너무 그래서 ~하다"
+  },
+  {
+   "word": "so",
+   "phrase": "much so that",
+   "sense": "그렇게",
+   "usage": "so much so that의 둘째 so"
+  },
+  {
+   "word": "that",
+   "phrase": "so that given",
+   "sense": "(so much so that의 일부)",
+   "usage": "so much so that + 결과"
+  },
+  {
+   "word": "that",
+   "phrase": "an outcome that favors",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "that",
+   "phrase": "one that favors",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "but",
+   "phrase": "but still favors",
+   "sense": "하지만",
+   "usage": "접속사 but (대조)"
+  },
+  {
+   "word": "that",
+   "phrase": "that’s the one",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞에 말한 결과)"
+  }
+ ]
+}

@@ -6,14 +6,63 @@
   "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
   "helps": {},
   "steps": {
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "it": "그건 in that(~라는 점에서) 뒤 덩어리 안의 주어예요.",
+        "does not present": "그건 in that(~라는 점에서) 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 gesture(제스처), 동사는 is different from language(언어와 다르다)예요.",
+      "from": "14wvlp3"
+    },
+    "s1_that_sv": {
+      "ask": "in that(~라는 점에서) 뒤가 어떻게 다른지예요. 그 안에서 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the speaker": "그건 present의 목적어예요. 주어·동사만 찾아요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "in that 안의 주어는 it(= gesture, 제스처), 동사는 does not present(주지 않는다)예요.",
+      "from": "1ne23gl"
+    },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "148rp2h"
+    },
+    "g_situation": {
+      "say": "주어진 문장은 제스처가 언어와 어떻게 다른지 말해요. 제스처는 말하는 사람에게 그런 선택을 주지 않는대요.",
+      "from": "3bw651"
+    },
     "g_clue": {
-      "ask": "주어진 문장에서 앞 문장과 이어지는 단서를 찾아볼까요?",
+      "ask": "주어진 문장에 앞 내용을 가리키는 말이 하나 있어요. 찾아볼까요?",
       "wrong": "그건 이 문장 안에서 뜻이 끝나는 말이에요. 앞에서 말한 걸 다시 가리키는 말을 찾아봐요.",
       "more": "좋아요! {n}개 남았어요.",
-      "praise": "맞아요!",
+      "praise": "맞아요! such(그러한)처럼 앞 내용을 가리키는 말은 문장 넣기·순서 문제에서 주의 깊게 보면 좋아요.",
       "explain": "'such choices(그러한 선택들)'예요. such는 앞에서 말한 걸 가리키니, 앞에 '선택' 이야기가 있어야 해요.",
       "point": "주어진 문장의 단서 = such choices (그러한 선택들) → 앞에 '선택' 이야기가 있어야",
-      "from": "mzvkag"
+      "from": "17j6jf7"
+    },
+    "g_sort": {
+      "ask": "언어와 제스처를 두 그룹으로 나눠 봐요. 제스처는 그러한 선택을 주지 않는다는 점에서 언어와 다르대요. 그럼 choice는 어디 들어가야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요.",
+        "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요."
+      ],
+      "explain": "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "제스처는 선택을 주지 않는다(does not present)고 했어요. 그럼 선택을 주는 건 다른 쪽이에요."
+      },
+      "from": "pvlz8d"
     },
     "g_before": {
       "ask": "그럼 주어진 문장 앞에는 어떤 내용이 와야 할까요?",
@@ -47,6 +96,22 @@
       "point": "주어진 문장 뒤 = 제스처가 선택 대신 하는 일 (Instead, it offers …)",
       "from": "clq1jq"
     },
+    "s1_sv": {
+      "ask": "긴 문장이에요. 주어(S)와 동사(V)를 모두 찾아볼까요? that 뒤에도 한 쌍 있어요.",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "hearing people": "그건 the gestures를 꾸미는 덩어리 안의 주어예요. 「듣는 사람들이 만드는」 제스처라는 말이에요.",
+        "produce": "그건 the gestures를 꾸미는 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "앞은 주어 Scholars, 동사 have demonstrated예요. that 뒤는 주어 the gestures, 동사 are systematically made예요.",
+      "from": "1mx9dsd"
+    },
+    "s1_modify": {
+      "say": "초록 부분은 앞의 the gestures를 꾸며요. 아래 표처럼 읽어요.",
+      "from": "10tzws7"
+    },
     "s1_what": {
       "ask": "학자들이 입증한 건 무엇일까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -62,6 +127,27 @@
       },
       "point": "제스처는 말과 동시에 체계적으로 만들어진다 → co-expressive(함께 표현하는)",
       "from": "98pyt8"
+    },
+    "s3_basic_sv": {
+      "ask": "주어(S)·동사(V)·목적어(O)를 찾고, 목적어가 무엇을 하게 되는지(보어 C)까지 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 This tightly integrated pairing, 동사 enables, 목적어 speakers, 보어 to conceptualize and formulate — 화자가 생각을 개념화하고 정리할 수 있게 해 준대요.",
+      "from": "10omb9j"
+    },
+    "s3_svoc_note": {
+      "say": "enables + 사람 + to ~는 「사람이 ~하게 해 준다」로 읽어요. 그래서 이 짝은 화자가 생각을 개념화하고 정리할 수 있게 해 준대요.",
+      "from": "l42lit"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "이렇게 꼭 붙은 언어와 제스처 덕분에, 화자는 언어의 '범주적' 조건과 제스처의 '심상적' 가능성 둘 다로 생각을 정리할 수 있대요.",
+      "from": "g0zjo1"
     },
     "s2_cat": {
       "ask": "언어와 제스처를 두 그룹으로 나눠 봐요. 'categorical(범주적)'은 어느 쪽일까요?",
@@ -93,9 +179,42 @@
       "point": "imagistic(심상적, 그림 같은) = 제스처 쪽",
       "from": "1fx2yy6"
     },
+    "s3_basic_meaning": {
+      "say": "이렇게 꼭 붙은 언어와 제스처 덕분에, 화자는 언어의 '범주적' 조건과 제스처의 '심상적' 가능성 둘 다로 생각을 정리할 수 있대요.",
+      "from": "pgwo5c"
+    },
     "story_3": {
       "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
       "from": "tguvur"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the event": "그건 if(~인지) 뒤 덩어리 안의 주어예요.",
+        "has been completed": "그건 if(~인지) 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 one(사람), 동사는 must decide(정해야 한다)예요.",
+      "from": "164sy9z"
+    },
+    "s4_that_sv": {
+      "ask": "if(~인지) 뒤가 무엇을 정하는지예요. 그 안에서 주어(S)와 동사(V)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "if 안의 주어는 the event(그 일), 동사는 has been completed(끝났다) 또는 is ongoing(진행 중이다)예요.",
+      "from": "1px9jvu"
+    },
+    "s4_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "예를 들어 어떤 일을 말할 때, 언어에 뜻마다 붙는 꼬리말이 있으면 그 일이 끝났는지 진행 중인지 하나를 꼭 골라야 해요.",
+      "from": "f0y4nx"
     },
     "s3_choice": {
       "ask": "이 예시에서 언어는 화자에게 무엇을 하게 할까요?",
@@ -113,23 +232,57 @@
       "point": "언어는 화자에게 완료인지 진행인지 고르게 한다 (must decide)",
       "from": "1gb3qch"
     },
+    "s4_basic_meaning": {
+      "say": "예를 들어 어떤 일을 말할 때, 언어에 뜻마다 붙는 꼬리말이 있으면 그 일이 끝났는지 진행 중인지 하나를 꼭 골라야 해요.",
+      "from": "19o0or0"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·전치사 뒤 목적어(전목)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 This kind of choice, 동사는 is characteristic of(~의 특징이다), of 뒤 목적어는 language예요.",
+      "from": "145k5pv"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "이런 선택은 기호 체계로서 언어가 가진 특징이래요.",
+      "from": "174ylyh"
+    },
     "s4_sort": {
-      "ask": "'choice(선택)'는 언어와 제스처 중 어느 쪽의 특징이래요?",
-      "reask": "그럼 하나 골라 봐요.",
-      "hints": [
-        "'This kind of choice is characteristic of language'예요.",
-        "'This kind of choice is characteristic of language'예요."
-      ],
-      "explain": "'This kind of choice is characteristic of language'예요.",
-      "praise": "맞아요!",
-      "feedback": {
-        "o1": "'This kind of choice is characteristic of language'예요."
-      },
-      "from": "mfoutj"
+      "say": "This kind of choice is characteristic of language — 선택은 언어의 특징이래요. 주어진 문장에서 choice를 언어 쪽에 넣은 게 맞았어요.",
+      "from": "1f5rde7"
+    },
+    "s5_basic_meaning": {
+      "say": "이런 선택은 기호 체계로서 언어가 가진 특징이래요.",
+      "from": "pp009z"
     },
     "story_5": {
       "say": "칠판에 이어서 정리해 볼게요.",
       "from": "tavsof"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "linguistic elements": "그건 which 뒤에서 무엇을 묶는지 알려 주는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 it, 동사는 offers(준다), 목적어는 a kind of glue(일종의 접착제)예요.",
+      "from": "1ywxe9n"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "115wkra"
     },
     "s5_it": {
       "ask": "'Instead, it offers a kind of glue'의 it은 무엇일까요?",
@@ -167,6 +320,23 @@
       "say": "제스처는 선택을 주는 대신, 언어 요소들을 묶어 주는 접착제 역할을 해요.",
       "from": "1hf7zz4"
     },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 speech and gesture, 동사는 are not, 보어는 redundant(중복된)예요.",
+      "from": "ssm1dy"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "이 관점에서 말과 제스처는 서로 겹치지(중복되지) 않고, 하나가 다른 하나의 '번역'도 아니래요.",
+      "from": "1brpi57"
+    },
     "s6_rel": {
       "ask": "이 관점에서 말과 제스처는 어떤 관계래요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -183,6 +353,27 @@
       "point": "speech and gesture are not redundant nor … a translation = 말과 제스처는 중복도 번역도 아니다",
       "from": "10dgouo"
     },
+    "s7_basic_meaning": {
+      "say": "이 관점에서 말과 제스처는 서로 겹치지(중복되지) 않고, 하나가 다른 하나의 '번역'도 아니래요.",
+      "from": "hwtwid"
+    },
+    "s8_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the minimal processing unit, 동사는 is, 보어는 a combination of the two(둘의 조합)예요.",
+      "from": "1broq4e"
+    },
+    "s8_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "오히려 생각을 표현하는 최소 단위는 둘(언어와 제스처)의 조합이래요.",
+      "from": "w9vpaj"
+    },
     "s7_unit": {
       "ask": "생각을 표현하는 최소 단위는 무엇이래요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -198,6 +389,10 @@
       },
       "point": "생각을 표현하는 최소 단위 = 말과 제스처의 결합 (imagistic-categorial)",
       "from": "1gmly69"
+    },
+    "s8_basic_meaning": {
+      "say": "오히려 생각을 표현하는 최소 단위는 둘(언어와 제스처)의 조합이래요.",
+      "from": "3xl23e"
     },
     "story_8": {
       "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요.",

@@ -1,0 +1,1413 @@
+{
+  "id": "moeui-2024-03-35-translingual-approach",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 35번 (흐름과 무관한 문장, 2점)",
+  "brief": {
+    "topic": "무관한 문장 푸는 법: 첫 문장으로 화제와 방향 잡기 → ①~⑤를 같은 쪽/다른 쪽으로 나누기 → 다른 쪽 한 문장",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "irrelevant",
+    "labels": [
+      "화제·방향 잡기",
+      "문장마다 나누기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-translingual.svg",
+      "alt": "칠판: Difference(언어 차이) → Possibility?(가능성?)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "나라마다 조금씩 다른 영어, 틀린 영어일까요? 이번 글은 언어 차이를 어떻게 볼지 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "무관한 문장 문제는 첫 문장으로 글의 방향을 잡고, ①~⑤를 같은 쪽과 다른 쪽으로 나눠요. 칠판에 하나씩 놓아 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글에서 전체 흐름과 관계 없는 문장은?",
+    "underline": [
+      "①",
+      "②",
+      "③",
+      "④",
+      "⑤"
+    ],
+    "numbers_only": true,
+    "sentence": 5,
+    "analysis_first": true,
+    "glosses": [],
+    "passage_keywords": [
+      "language variances",
+      "avenues",
+      "normalize",
+      "possibilities",
+      "error",
+      "avoided at all cost",
+      "standard"
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "① 문장",
+        "keywords": []
+      },
+      {
+        "id": "2",
+        "label": "② 문장",
+        "keywords": []
+      },
+      {
+        "id": "3",
+        "label": "③ 문장",
+        "keywords": []
+      },
+      {
+        "id": "4",
+        "label": "④ 문장",
+        "keywords": [],
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "⑤ 문장",
+        "keywords": []
+      }
+    ],
+    "brief": {
+      "ask": "칠판 두 칸을 떠올려 봐요. 혼자 다른 쪽에 놓인 문장을 골라요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 글은 언어 차이를 장벽이 아니라 가능성으로 보자고 해요. ④만 오류는 무조건 피해야 한다며 반대쪽 이야기를 해요.",
+      "final_wrong": "정답은 ④예요. 나머지는 모두 언어 차이를 가능성으로 보는데, ④만 오류를 무조건 피하라고 해요.",
+      "option_feedback": {
+        "1": "①은 언어 차이를 장벽이 아니라 통로로 보자는 주장, 글의 방향 그 자체예요.",
+        "2": "②는 Similarly로 이어지는 같은 방향의 연구 결과예요.",
+        "3": "③에 error가 나오지만 '오류가 아니라 가능성'을 보라는 말이라 같은 방향이에요.",
+        "5": "⑤는 After all, 학생들이 늘 표준과 다른 영어를 접한다는 이유예요. 같은 방향이에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "collaborate",
+        "ko": "함께 일하다"
+      },
+      {
+        "en": "encounter",
+        "ko": "마주치다"
+      },
+      {
+        "en": "variance",
+        "ko": "차이"
+      },
+      {
+        "en": "interfere with",
+        "ko": "~을 방해하다"
+      },
+      {
+        "en": "address",
+        "ko": "다루다"
+      },
+      {
+        "en": "call for",
+        "ko": "~을 요구하다"
+      },
+      {
+        "en": "perceive A as B",
+        "ko": "A를 B로 여기다"
+      },
+      {
+        "en": "barrier",
+        "ko": "장벽"
+      },
+      {
+        "en": "avenue",
+        "ko": "통로, 수단"
+      },
+      {
+        "en": "exposure",
+        "ko": "노출"
+      },
+      {
+        "en": "normalize",
+        "ko": "정상으로 만들다"
+      },
+      {
+        "en": "examine",
+        "ko": "살펴보다"
+      },
+      {
+        "en": "at all cost",
+        "ko": "무슨 수를 써서라도"
+      },
+      {
+        "en": "conform to",
+        "ko": "~에 맞다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "medium",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "No doubt students collaborating with other speakers of English might encounter language variances, which may interfere with intentionality.",
+      "model_translation": "영어로 말하는 다른 사용자와 공동으로 일하는 학생들이 언어적 차이와 마주칠 수도 있다는 것은 의심의 여지가 없고, 그것은 의도성에 방해가 될 수도 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "other speakers of English",
+          "ko": "다른 영어 사용자"
+        },
+        {
+          "en": "students",
+          "ko": "학생들"
+        },
+        {
+          "en": "No doubt",
+          "ko": "의심할 여지 없이"
+        },
+        {
+          "en": "students collaborating with other speakers of English",
+          "ko": "다른 영어 사용자와 함께 일하는 학생들"
+        },
+        {
+          "en": "might encounter",
+          "ko": "마주칠 수도 있다"
+        },
+        {
+          "en": "language variances",
+          "ko": "언어 차이"
+        },
+        {
+          "en": "which may interfere with",
+          "ko": "그것은 ~을 방해할 수도 있다"
+        },
+        {
+          "en": "intentionality",
+          "ko": "의도(뜻한 대로 전달하기)"
+        },
+        {
+          "en": "speakers",
+          "ko": "말하는 사람들"
+        },
+        {
+          "en": "English",
+          "ko": "영어"
+        },
+        {
+          "en": "collaborating",
+          "ko": "함께 일하는"
+        },
+        {
+          "en": "encounter",
+          "ko": "마주치다"
+        },
+        {
+          "en": "variances",
+          "ko": "차이"
+        },
+        {
+          "en": "interfere",
+          "ko": "방해하다"
+        }
+      ],
+      "slashes": [
+        "No doubt",
+        "speakers of English",
+        "language variances,"
+      ],
+      "steps": [
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "students",
+            "other speakers of English",
+            "might encounter",
+            "language variances"
+          ],
+          "answers": [
+            "students",
+            "might encounter",
+            "language variances"
+          ],
+          "roles": {
+            "students": "S",
+            "might encounter": "V",
+            "language variances": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "other speakers of English": "그건 collaborating with(~와 함께 일하는) 뒤 덩어리예요. students를 꾸며요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 students (collaborating with …), 동사는 might encounter, 목적어는 language variances예요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "무관한 문장 요령",
+              "text": "번호 없는 첫 문장으로 글의 화제와 방향을 잡아요. ①~⑤를 하나씩 그 방향과 같은 쪽인지 보고, 다른 쪽 한 문장을 골라요. 같은 단어가 나와도 방향이 다를 수 있어요."
+            }
+          ]
+        },
+        {
+          "id": "s1_topic",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "다른 영어를 쓰는 사람과 일하면 언어 차이를 만나게 된대요. 이 글은 그 언어 차이를 어떻게 볼지에 대한 이야기예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "language variances"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": []
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": []
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "①To address such disparities, Horner, Lu, Royster, and Trimbur (2011) call for a “translingual approach” in which language varieties are not perceived as barriers, but as avenues for meaning making.",
+      "model_translation": "이러한 차이를 다루기 위해 Horner, Lu, Royster, Trimbur(2011)는 언어의 다양성이 의미 창출의 장벽이 아니라 수단으로 인식되는 '초언어적 접근법'을 요구한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "To address such disparities",
+          "ko": "그런 차이를 다루기 위해"
+        },
+        {
+          "en": "call for",
+          "ko": "~을 요구하다"
+        },
+        {
+          "en": "a “translingual approach”",
+          "ko": "'초언어적 접근법'"
+        },
+        {
+          "en": "in which",
+          "ko": "그 접근법에서는"
+        },
+        {
+          "en": "language varieties",
+          "ko": "언어의 다양성"
+        },
+        {
+          "en": "are not perceived as barriers",
+          "ko": "장벽으로 여겨지지 않는다"
+        },
+        {
+          "en": "but as avenues",
+          "ko": "통로로 (여겨진다)"
+        },
+        {
+          "en": "avenues",
+          "ko": "통로, 수단"
+        },
+        {
+          "en": "for meaning making",
+          "ko": "의미를 만드는"
+        },
+        {
+          "en": "address",
+          "ko": "다루다"
+        },
+        {
+          "en": "disparities",
+          "ko": "차이"
+        },
+        {
+          "en": "call",
+          "ko": "요구하다 · call for"
+        },
+        {
+          "en": "translingual",
+          "ko": "초언어적인"
+        },
+        {
+          "en": "approach",
+          "ko": "접근법"
+        },
+        {
+          "en": "varieties",
+          "ko": "다양성"
+        },
+        {
+          "en": "perceived",
+          "ko": "여겨지는"
+        },
+        {
+          "en": "barriers",
+          "ko": "장벽"
+        },
+        {
+          "en": "making",
+          "ko": "만드는 것"
+        }
+      ],
+      "slashes": [
+        "such disparities,",
+        "“translingual approach”",
+        "as barriers,"
+      ],
+      "steps": [
+        {
+          "id": "s2_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "① 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요.",
+              "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요."
+            ],
+            "explain": "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 차이 = 가능성 (+)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 차이 = 오류 (−)"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": []
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": []
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "avenues"
+              ],
+              "left": "왼쪽 · 차이 = 가능성 (+)",
+              "right": "오른쪽 · 차이 = 오류 (−)"
+            }
+          },
+          "highlight": [
+            "not perceived as barriers",
+            "avenues"
+          ]
+        },
+        {
+          "id": "s2_dir",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "not A but B — 장벽이 아니라 통로래요. 글의 방향이 나왔어요. 언어 차이를 좋은 가능성으로 보는 쪽이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": [
+                {
+                  "text": "avenues",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": []
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "not A but B",
+              "text": "'A가 아니라 B'예요. 글쓴이 생각은 B 쪽이에요.",
+              "mark": "not perceived"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "②Similarly, Galloway and Rose (2015) study of Global Englishes found that exposure to other Englishes helps normalize language differences.",
+      "model_translation": "마찬가지로, 글로벌 영어들에 대한 Galloway와 Rose(2015)의 연구가 다른 영어들에 대한 노출이 언어 차이를 표준화하는 데 도움이 된다는 사실을 발견했다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "helps",
+          "ko": "돕다"
+        },
+        {
+          "en": "exposure",
+          "ko": "노출"
+        },
+        {
+          "en": "Galloway and Rose (2015) study",
+          "ko": "갤러웨이와 로즈(2015)의 연구"
+        },
+        {
+          "en": "Similarly",
+          "ko": "마찬가지로"
+        },
+        {
+          "en": "Galloway and Rose (2015) study of Global Englishes",
+          "ko": "글로벌 영어에 대한 갤러웨이와 로즈(2015)의 연구"
+        },
+        {
+          "en": "found",
+          "ko": "발견했다"
+        },
+        {
+          "en": "exposure to other Englishes",
+          "ko": "다른 영어들에 노출되는 것"
+        },
+        {
+          "en": "helps normalize",
+          "ko": "~을 자연스럽게(정상으로) 만드는 데 도움이 된다"
+        },
+        {
+          "en": "language differences",
+          "ko": "언어 차이"
+        },
+        {
+          "en": "Galloway",
+          "ko": "갤러웨이"
+        },
+        {
+          "en": "Rose",
+          "ko": "로즈"
+        },
+        {
+          "en": "Global",
+          "ko": "세계의"
+        },
+        {
+          "en": "Englishes",
+          "ko": "여러 영어"
+        },
+        {
+          "en": "normalize",
+          "ko": "정상으로(자연스럽게) 만들다"
+        },
+        {
+          "en": "differences",
+          "ko": "차이"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Galloway and Rose (2015) study",
+            "found",
+            "exposure",
+            "helps"
+          ],
+          "answers": [
+            "Galloway and Rose (2015) study",
+            "found"
+          ],
+          "roles": {
+            "Galloway and Rose (2015) study": "S",
+            "found": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "exposure": "그건 that 뒤 덩어리 안의 주어예요.",
+              "helps": "그건 that 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Galloway and Rose (2015) study (of Global Englishes), 동사는 found예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic"
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Similarly",
+            "found",
+            "exposure to other Englishes",
+            "helps normalize",
+            "language differences"
+          ],
+          "answers": [
+            "Similarly",
+            "exposure to other Englishes",
+            "language differences",
+            "helps normalize",
+            "found"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Similarly",
+                "ko": "마찬가지로"
+              },
+              ", 연구는 ",
+              {
+                "en": "exposure to other Englishes",
+                "ko": "다른 영어들에 노출되는 것이"
+              },
+              " ",
+              {
+                "en": "language differences",
+                "ko": "언어 차이"
+              },
+              "를 ",
+              {
+                "en": "helps normalize",
+                "ko": "자연스럽게 만드는 데 도움이 된다"
+              },
+              "는 걸 ",
+              {
+                "en": "found",
+                "ko": "발견했다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "다른 여러 영어를 접하면 언어 차이가 자연스러운 것이 된다는 연구래요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "② 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요.",
+              "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요."
+            ],
+            "explain": "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 차이 = 가능성 (+)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 차이 = 오류 (−)"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": [
+                {
+                  "text": "avenues"
+                }
+              ]
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": []
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "normalize"
+              ],
+              "left": "왼쪽 · 차이 = 가능성 (+)",
+              "right": "오른쪽 · 차이 = 오류 (−)"
+            }
+          },
+          "highlight": [
+            "Similarly",
+            "normalize"
+          ]
+        },
+        {
+          "id": "s3_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "다른 여러 영어를 접하면 언어 차이가 자연스러운 것이 된다는 연구래요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "③Educators have to work with students to examine phrases, expressions, and other ranges of English language use for their rhetorical and communicative possibilities and not their perceived errors or inferior status.",
+      "model_translation": "교육자들은 그것들의 인식되는 오류나 열등한 지위가 아니라 그것들의 수사적, 의사소통적 가능성을 위한 구문, 표현 그리고 영어 사용의 다른 범주를 검토하기 위해 학생들과 함께해야 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Educators",
+          "ko": "교육자들"
+        },
+        {
+          "en": "have to work with students",
+          "ko": "학생들과 함께해야 한다"
+        },
+        {
+          "en": "to examine",
+          "ko": "살펴보기 위해"
+        },
+        {
+          "en": "phrases, expressions, and other ranges of English language use",
+          "ko": "구문, 표현, 그 밖의 영어 사용"
+        },
+        {
+          "en": "for their rhetorical and communicative possibilities",
+          "ko": "그것의 수사적·의사소통적 가능성을 보려고"
+        },
+        {
+          "en": "possibilities",
+          "ko": "가능성"
+        },
+        {
+          "en": "and not their perceived errors or inferior status",
+          "ko": "여겨지는 오류나 열등함이 아니라"
+        },
+        {
+          "en": "students",
+          "ko": "학생들"
+        },
+        {
+          "en": "examine",
+          "ko": "살펴보다"
+        },
+        {
+          "en": "phrases",
+          "ko": "구문"
+        },
+        {
+          "en": "expressions",
+          "ko": "표현"
+        },
+        {
+          "en": "ranges",
+          "ko": "범위"
+        },
+        {
+          "en": "English",
+          "ko": "영어"
+        },
+        {
+          "en": "rhetorical",
+          "ko": "수사적인"
+        },
+        {
+          "en": "communicative",
+          "ko": "의사소통의"
+        },
+        {
+          "en": "perceived",
+          "ko": "여겨지는"
+        },
+        {
+          "en": "errors",
+          "ko": "오류"
+        },
+        {
+          "en": "inferior",
+          "ko": "열등한"
+        },
+        {
+          "en": "status",
+          "ko": "지위"
+        }
+      ],
+      "slashes": [
+        "with students",
+        "English language use",
+        "communicative possibilities"
+      ],
+      "steps": [
+        {
+          "id": "s4_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "③ 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요.",
+              "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요."
+            ],
+            "explain": "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 차이 = 가능성 (+)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 차이 = 오류 (−)"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": [
+                {
+                  "text": "avenues"
+                },
+                {
+                  "text": "normalize"
+                }
+              ]
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": []
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "possibilities"
+              ],
+              "left": "왼쪽 · 차이 = 가능성 (+)",
+              "right": "오른쪽 · 차이 = 오류 (−)"
+            }
+          },
+          "highlight": [
+            "possibilities",
+            "not their perceived errors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "④Committing an error means unintentionally saying what isn’t true, so any linguistic or perspective error should be avoided at all cost.",
+      "model_translation": "오류를 범한다는 것은 사실이 아닌 것을 의도치 않게 말하는 것을 의미하고, 그래서 그 어떤 언어적 또는 관점적 오류는 무슨 수를 써서라도 피해야 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "should be avoided",
+          "ko": "피해야 한다"
+        },
+        {
+          "en": "Committing an error",
+          "ko": "오류를 범하는 것"
+        },
+        {
+          "en": "means",
+          "ko": "뜻한다"
+        },
+        {
+          "en": "unintentionally saying what isn’t true",
+          "ko": "의도치 않게 사실이 아닌 걸 말하는 것"
+        },
+        {
+          "en": "so",
+          "ko": "그래서"
+        },
+        {
+          "en": "any linguistic or perspective error",
+          "ko": "어떤 언어적·관점적 오류도"
+        },
+        {
+          "en": "should be avoided at all cost",
+          "ko": "무슨 수를 써서라도 피해야 한다"
+        },
+        {
+          "en": "avoided",
+          "ko": "피해진"
+        },
+        {
+          "en": "Committing",
+          "ko": "범하는 것"
+        },
+        {
+          "en": "error",
+          "ko": "오류"
+        },
+        {
+          "en": "unintentionally",
+          "ko": "의도치 않게"
+        },
+        {
+          "en": "saying",
+          "ko": "말하는 것"
+        },
+        {
+          "en": "isn’t",
+          "ko": "~이 아니다"
+        },
+        {
+          "en": "perspective",
+          "ko": "관점의"
+        },
+        {
+          "en": "cost",
+          "ko": "대가 · at all cost = 무슨 수를 써서라도"
+        }
+      ],
+      "slashes": [
+        "what isn’t true,"
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Committing an error",
+            "means",
+            "any linguistic or perspective error",
+            "should be avoided"
+          ],
+          "answers": [
+            "Committing an error",
+            "means",
+            "any linguistic or perspective error",
+            "should be avoided"
+          ],
+          "roles": {
+            "Committing an error": "S",
+            "means": "V",
+            "any linguistic or perspective error": "S",
+            "should be avoided": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "so 앞은 주어 Committing an error, 동사 means예요. so 뒤는 주어 any … error, 동사 should be avoided예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "at all cost",
+              "text": "'무슨 수를 써서라도, 어떻게든'이에요.",
+              "mark": "at all cost"
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "Committing an error",
+            "means",
+            "unintentionally saying what isn’t true",
+            "so",
+            "any linguistic or perspective error",
+            "should be avoided at all cost"
+          ],
+          "answers": [
+            "Committing an error",
+            "unintentionally saying what isn’t true",
+            "means",
+            "so",
+            "any linguistic or perspective error",
+            "should be avoided at all cost"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Committing an error",
+                "ko": "오류를 범하는 것은"
+              },
+              " ",
+              {
+                "en": "unintentionally saying what isn’t true",
+                "ko": "의도치 않게 사실이 아닌 걸 말하는 것"
+              },
+              "을 ",
+              {
+                "en": "means",
+                "ko": "뜻한다"
+              },
+              ", ",
+              {
+                "en": "so",
+                "ko": "그래서"
+              },
+              " ",
+              {
+                "en": "any linguistic or perspective error",
+                "ko": "어떤 오류도"
+              },
+              " ",
+              {
+                "en": "should be avoided at all cost",
+                "ko": "무슨 수를 써서라도 피해야 한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "오류는 사실이 아닌 걸 말하는 거니, 어떤 오류든 무조건 피해야 한대요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "at all cost",
+              "text": "'무슨 수를 써서라도, 어떻게든'이에요.",
+              "mark": "at all cost"
+            }
+          ]
+        },
+        {
+          "id": "s5_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "④ 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요.",
+              "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요."
+            ],
+            "explain": "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 차이 = 가능성 (+)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 차이 = 오류 (−)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": [
+                {
+                  "text": "avenues"
+                },
+                {
+                  "text": "normalize"
+                },
+                {
+                  "text": "possibilities"
+                }
+              ]
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": []
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "avoided at all cost"
+              ],
+              "left": "왼쪽 · 차이 = 가능성 (+)",
+              "right": "오른쪽 · 차이 = 오류 (−)"
+            }
+          },
+          "highlight": [
+            "error",
+            "avoided at all cost"
+          ]
+        },
+        {
+          "id": "s5_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "오류는 사실이 아닌 걸 말하는 거니, 어떤 오류든 무조건 피해야 한대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s5_hold",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "③에도 error가 나왔지만, ③은 '오류가 아니라 가능성'이었어요. 같은 단어여도 방향이 다를 수 있어요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": [
+                {
+                  "text": "avenues"
+                },
+                {
+                  "text": "normalize"
+                },
+                {
+                  "text": "possibilities"
+                }
+              ]
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": [
+                {
+                  "text": "avoided at all cost",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "at all cost",
+              "text": "'무슨 수를 써서라도, 어떻게든'이에요.",
+              "mark": "at all cost"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "⑤After all, students are constantly reading texts and listening to speakers whose Englishes do not necessarily conform to what is considered standard in their own communities.",
+      "model_translation": "결국, 학생들은 계속해서 글을 읽고 화자의 말을 듣는데, 그들의 영어는 그들 자신의 공동체에서 표준으로 여겨지는 것과 반드시 일치하지는 않는다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "After all",
+          "ko": "결국, 어쨌든"
+        },
+        {
+          "en": "students",
+          "ko": "학생들"
+        },
+        {
+          "en": "are constantly reading texts",
+          "ko": "늘 글을 읽는다"
+        },
+        {
+          "en": "listening to speakers",
+          "ko": "화자의 말을 듣다"
+        },
+        {
+          "en": "whose Englishes",
+          "ko": "그들의 영어는"
+        },
+        {
+          "en": "do not necessarily conform to",
+          "ko": "반드시 ~에 맞지는 않는다"
+        },
+        {
+          "en": "what is considered standard",
+          "ko": "표준으로 여겨지는 것"
+        },
+        {
+          "en": "in their own communities",
+          "ko": "그들 자신의 공동체에서"
+        },
+        {
+          "en": "After",
+          "ko": "~ 뒤에"
+        },
+        {
+          "en": "constantly",
+          "ko": "늘"
+        },
+        {
+          "en": "reading",
+          "ko": "읽는"
+        },
+        {
+          "en": "texts",
+          "ko": "글"
+        },
+        {
+          "en": "listening",
+          "ko": "듣는"
+        },
+        {
+          "en": "speakers",
+          "ko": "말하는 사람들"
+        },
+        {
+          "en": "Englishes",
+          "ko": "여러 영어"
+        },
+        {
+          "en": "necessarily",
+          "ko": "반드시"
+        },
+        {
+          "en": "conform",
+          "ko": "맞다, 따르다"
+        },
+        {
+          "en": "considered",
+          "ko": "여겨지는"
+        },
+        {
+          "en": "standard",
+          "ko": "표준"
+        }
+      ],
+      "slashes": [
+        "After all,",
+        "reading texts",
+        "whose Englishes",
+        "considered standard"
+      ],
+      "steps": [
+        {
+          "id": "s6_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "⑤ 문장은 언어 차이를 어떻게 보는지, 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요.",
+              "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요."
+            ],
+            "explain": "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 차이 = 가능성 (+)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 차이 = 오류 (−)"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": [
+                {
+                  "text": "avenues"
+                },
+                {
+                  "text": "normalize"
+                },
+                {
+                  "text": "possibilities"
+                }
+              ]
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": [
+                {
+                  "text": "avoided at all cost"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "not necessarily standard"
+              ],
+              "left": "왼쪽 · 차이 = 가능성 (+)",
+              "right": "오른쪽 · 차이 = 오류 (−)"
+            }
+          },
+          "highlight": [
+            "After all",
+            "do not necessarily conform to"
+          ]
+        },
+        {
+          "id": "s6_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①②③⑤는 언어 차이를 가능성으로 봐요. 다른 쪽에 놓인 한 문장을 문제에서 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "groups",
+            "title": "언어 차이를 어떻게 볼까",
+            "left": {
+              "label": "차이 = 가능성 (+)",
+              "words": [
+                {
+                  "text": "avenues"
+                },
+                {
+                  "text": "normalize"
+                },
+                {
+                  "text": "possibilities"
+                },
+                {
+                  "text": "not necessarily standard"
+                }
+              ]
+            },
+            "right": {
+              "label": "차이 = 오류 (−)",
+              "words": [
+                {
+                  "text": "avoided at all cost"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

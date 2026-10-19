@@ -11,12 +11,20 @@ type Props = { view: TutorView; onSend: (text: string) => void; onClose: () => v
 export function MatchGame({ view, onSend, onClose }: Props) {
   const pairs = view.matchPairs ?? [];
   const meaning = (ko: string) => ko.split(" · ")[0]!;
-  const right = useMemo(
-    () => [...pairs].map((p) => p.en).sort(() => Math.random() - 0.5),
-    // 처음 한 번만 섞는다
+  // 뜻 칸은 제대로 섞는다 — sort(() => random)은 브라우저에 따라 거의 안 섞인다(아이폰에서 순서 그대로였다).
+  // 단어 목록이 같으면 다시 섞지 않고, 섞은 결과가 원래 순서와 같으면 한 칸 돌린다
+  const pairKey = pairs.map((p) => p.en).join("|");
+  const right = useMemo(() => {
+    const ens = pairs.map((p) => p.en);
+    const out = [...ens];
+    for (let i = out.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [out[i], out[j]] = [out[j]!, out[i]!];
+    }
+    if (out.length > 1 && out.every((en, i) => en === ens[i])) out.push(out.shift()!);
+    return out;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
+  }, [pairKey]);
   const [pick, setPick] = useState<string | null>(null);
   const [done, setDone] = useState<string[]>([]);
   const [miss, setMiss] = useState<string | null>(null);

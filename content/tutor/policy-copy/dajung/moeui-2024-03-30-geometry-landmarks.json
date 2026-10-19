@@ -1,0 +1,337 @@
+{
+  "lesson": "moeui-2024-03-30-geometry-landmarks",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어휘 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_sv": {
+      "ask": "While 덩어리가 길어요. 콤마 뒤 메인 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "young children": "그건 While 덩어리 안, that 뒤의 주어예요. 콤마 뒤 메인 문장에서 찾아봐요.",
+        "rely": "그건 While 덩어리 안의 동사예요.",
+        "geometric information": "그건 on 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콤마 뒤 메인 문장은 주어 exclusive use of geometry, 동사 does not occur예요.",
+      "from": "ol3va7"
+    },
+    "s1_mean": {
+      "ask": "작은 공간과 큰 공간에서 아이들은 각각 어떻게 했대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "While(~이지만) 앞은 small enclosure, 뒤는 larger spaces예요. exclusively는 '오로지'예요.",
+        "While(~이지만) 앞은 small enclosure, 뒤는 larger spaces예요. exclusively는 '오로지'예요."
+      ],
+      "explain": "작은 공간에선 'rely exclusively on geometric information', 기하 정보만 썼고, 큰 공간에선 'exclusive use … does not occur', 그것만 쓰지 않았대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "작은 공간에선 'rely exclusively on geometric information', 기하 정보만 썼고, 큰 공간에선 'exclusive use … does not occur', 그것만 쓰지 않았대요.",
+        "o2": "작은 공간에선 'rely exclusively on geometric information', 기하 정보만 썼고, 큰 공간에선 'exclusive use … does not occur', 그것만 쓰지 않았대요."
+      },
+      "point": "요지 시작: 작은 공간 → 기하 정보만, 큰 공간 → 기하만 쓰지는 않는다",
+      "from": "1oeyeix"
+    },
+    "s2_basic_sv": {
+      "ask": "콤마 뒤 메인 문장에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "children": "그건 Although 덩어리 안의 주어예요.",
+        "failed": "그건 Although 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콤마 뒤 메인 문장은 주어 they, 동사 used, 목적어 both types of information이에요.",
+      "from": "11ewn67"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1j00lrq"
+    },
+    "s2_sort": {
+      "ask": "'a blue wall(파란 벽)' 같은 정보는 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "괄호 앞 'nongeometric features'를 봐요. non-은 '아님'이에요.",
+        "괄호 앞 'nongeometric features'를 봐요. non-은 '아님'이에요."
+      ],
+      "explain": "'nongeometric features (i.e., a blue wall)', 파란 벽은 공간 모양이 아닌 특징이라 비기하 정보예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'nongeometric features (i.e., a blue wall)', 파란 벽은 공간 모양이 아닌 특징이라 비기하 정보예요."
+      },
+      "from": "1eq43zd"
+    },
+    "s2_check": {
+      "say": "작은 방에선 기하 정보만 썼으니 파란 벽 정보는 '넣지 못했다(failed to incorporate)'가 맞아요. 큰 방에선 둘 다 썼고요. 그래서 ①은 문맥에 맞아요.",
+      "from": "e43mda"
+    },
+    "story_2": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "geometric and nongeometric information": "그건 that 뒤 덩어리 안의 주어예요.",
+        "may be combined": "그건 that 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 These findings, 동사는 suggest예요. that 뒤가 시사하는 내용이에요.",
+      "from": "1i51y4"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1ua4yxi"
+    },
+    "s3_weight": {
+      "ask": "두 정보가 어떻게 합쳐질 수 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "weighted는 '무게(weight)가 실린, 가중된'이에요. fashion은 여기서 '방식'이에요.",
+        "weighted는 '무게(weight)가 실린, 가중된'이에요. fashion은 여기서 '방식'이에요."
+      ],
+      "explain": "'combined in a weighted fashion', 무게를 달리하는 방식으로 합쳐진대요. 어느 쪽을 더 믿을지 정해서 섞는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'combined in a weighted fashion', 무게를 달리하는 방식으로 합쳐진대요. 어느 쪽을 더 믿을지 정해서 섞는 거예요.",
+        "o1": "'combined in a weighted fashion', 무게를 달리하는 방식으로 합쳐진대요. 어느 쪽을 더 믿을지 정해서 섞는 거예요."
+      },
+      "from": "1fbuin8"
+    },
+    "s3_check": {
+      "say": "무게를 달리해 섞는다는 건, 앞으로 '어느 정보에 더 무게를 줄지'가 이어진다는 신호예요. ②weighted는 문맥에 맞아요.",
+      "from": "1d8sum6"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "it": "그건 because 뒤 덩어리 안의 주어예요.",
+        "is": "그건 because 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Geometry, 동사는 may be예요. 그 뒤가 밑줄 ③이에요.",
+      "from": "x24832"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "pbaki1"
+    },
+    "s4_stable": {
+      "ask": "because 뒤를 봐요. 기하 정보는 비기하 정보보다 어떻대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'it is more stable across time'을 봐요. stable은 '안정적인, 잘 변하지 않는'이에요.",
+        "'it is more stable across time'을 봐요. stable은 '안정적인, 잘 변하지 않는'이에요."
+      ],
+      "explain": "'more stable across time than is nongeometric information', 기하 정보(방의 모양)는 시간이 지나도 잘 안 변해서 더 안정적이래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'more stable across time than is nongeometric information', 기하 정보(방의 모양)는 시간이 지나도 잘 안 변해서 더 안정적이래요.",
+        "o2": "'more stable across time than is nongeometric information', 기하 정보(방의 모양)는 시간이 지나도 잘 안 변해서 더 안정적이래요."
+      },
+      "from": "1t2vf1"
+    },
+    "s4_sign": {
+      "ask": "더 안정적인(stable) 정보라면, 무게를 줄 때 어떤 대우를 받을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "잘 안 변하는 정보는 길을 찾을 때 믿을 만해요. 앞 문장의 weighted(무게를 둠)도 떠올려 봐요.",
+        "잘 안 변하는 정보는 길을 찾을 때 믿을 만해요. 앞 문장의 weighted(무게를 둠)도 떠올려 봐요."
+      ],
+      "explain": "잘 안 변하는 정보일수록 믿을 만해서 더 무게를 받아요. stable은 좋은 쪽(+) 이유예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "잘 안 변하는 정보일수록 믿을 만해서 더 무게를 받아요. stable은 좋은 쪽(+) 이유예요."
+      },
+      "point": "because it is more stable(+) → 기하 정보는 더 믿고 우선한다(+) — 이 흐름에 ③이 맞는지 문제에서 확인",
+      "from": "12ya5c3"
+    },
+    "s4_hold": {
+      "say": "because 뒤 이유(더 안정적, +)와 밑줄 ③이 같은 쪽인지는 마지막 문제에서 같이 확인해 봐요.",
+      "from": "1tny01c"
+    },
+    "s5_sv": {
+      "ask": "Whether or not(~인지 아닌지) 덩어리 전체가 주어예요. 그 뒤 동사(V)와 on 뒤 목적어(전목)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "nongeometric landmark information": "그건 Whether or not 덩어리 안의 주어예요. Whether 덩어리 전체가 문장의 주어예요.",
+        "is combined": "그건 Whether 덩어리 안의 동사예요.",
+        "larger features": "그건 세미콜론(;) 뒤 문장의 주어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "Whether or not … geometry 덩어리 전체가 주어예요. 동사는 may depend on, on 뒤 목적어는 the ecological validity예요.",
+      "from": "texj9f"
+    },
+    "s5_reliable": {
+      "ask": "세미콜론(;) 뒤 — 큰 특징은 더 안정적이고 그래서(hence) 더 ④reliable(믿을 만한)하대요. 이 흐름이 맞을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "hence는 '그래서'예요. 앞(stable, +)과 뒤(reliable)가 같은 쪽인지 봐요.",
+        "hence는 '그래서'예요. 앞(stable, +)과 뒤(reliable)가 같은 쪽인지 봐요."
+      ],
+      "explain": "stable(안정적, +) → hence(그래서) → reliable(믿을 만한, +), 같은 쪽으로 이어져요. ④는 문맥에 맞아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "stable(안정적, +) → hence(그래서) → reliable(믿을 만한, +), 같은 쪽으로 이어져요. ④는 문맥에 맞아요."
+      },
+      "from": "bv596t"
+    },
+    "s5_check": {
+      "say": "④reliable은 문맥에 맞아요. 안정적인 정보 = 믿을 만한 정보예요.",
+      "from": "19kc8gy"
+    },
+    "story_5": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "smaller distances": "그건 in which(그 법칙에서는) 뒤 덩어리 안의 주어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 a variety of mobile animals, 동사는 give, 목적어는 more weight예요.",
+      "from": "116jzi8"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "11m2aeu"
+    },
+    "s6_weber": {
+      "ask": "동물들은 먼 랜드마크보다 가까운 것에 더 무게를 둬요. Weber의 법칙은 짧은 거리가 더 정확히 기록된대요. 두 내용은 ⑤consistent(일치)할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "가까운 것 = 짧은 거리예요. 짧은 거리가 더 정확하면, 그쪽에 무게를 두는 게 자연스러울까요?",
+        "가까운 것 = 짧은 거리예요. 짧은 거리가 더 정확하면, 그쪽에 무게를 두는 게 자연스러울까요?"
+      ],
+      "explain": "가까운 랜드마크 = 짧은 거리 = 더 정확하게 기록돼요. 그러니 가까운 것에 무게를 두는 건 Weber의 법칙과 일치해요. ⑤는 문맥에 맞아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "가까운 랜드마크 = 짧은 거리 = 더 정확하게 기록돼요. 그러니 가까운 것에 무게를 두는 건 Weber의 법칙과 일치해요. ⑤는 문맥에 맞아요."
+      },
+      "from": "1j6rhuc"
+    },
+    "s6_check": {
+      "say": "①②④⑤는 모두 흐름에 맞았어요. 남은 하나, because it is more stable(+)과 짝이 맞지 않는 말을 문제에서 골라 봐요.",
+      "from": "1xcom4y"
+    }
+  },
+  "exam": {
+    "ask": "밑줄 점검표를 떠올려 봐요. 흐름(+/−)과 짝이 맞지 않는 하나를 골라요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! because 뒤 이유는 '더 안정적이다(+)'예요. 안정적이라서 기하 정보가 '타당하지 않다(invalid, −)'는 건 반대예요. 더 믿고 우선한다는 privileged(특혜를 받는)가 맞아요.",
+    "final_wrong": "정답은 ③이에요. 더 안정적이라서(+) 오히려 우선 대우를 받아요(privileged). invalid(−)는 반대예요.",
+    "option_feedback": {
+      "1": "작은 방에선 기하 정보만 썼으니 파란 벽 정보를 넣지 못했다(failed)가 맞아요.",
+      "2": "두 정보를 무게를 달리해 섞는다(weighted)는 뒤의 give more weight와 이어져요.",
+      "4": "큰 특징은 더 안정적이고 그래서(hence) 더 믿을 만하다(reliable), 같은 쪽으로 이어져요.",
+      "5": "가까운 것(짧은 거리)이 더 정확하게 기록되니, 가까운 것에 무게를 두는 건 Weber의 법칙과 일치해요(consistent)."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 13.2%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "⑤ 앞뒤를 나란히 놓아 봐요. 동물은 가까운 랜드마크에 더 무게를 줘요. Weber의 법칙은 짧은 거리가 더 정확히 기록된대요. 가까운 것 = 짧은 거리 = 더 정확하니, 무게를 주는 게 법칙과 일치(consistent)해요.",
+        "ask": "그래서 ⑤는 문맥에 맞아요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "Weber의 법칙 문장이 어려웠어요",
+            "skills": [
+              "long_relative"
+            ],
+            "reply": "알려 줘서 고마워요. in which 뒤는 그 법칙의 내용이에요. 앞으로 긴 덩어리는 끊어 읽기로 나눠서 보여 줄게요."
+          },
+          {
+            "label": "가까운 것 = 짧은 거리로 못 이었어요",
+            "skills": [
+              "paraphrase_link"
+            ],
+            "reply": "알려 줘서 고마워요. nearer landmarks와 smaller distances는 같은 말을 바꿔 쓴 거예요. 앞으로 바꿔 쓴 말을 짝지어 보여 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "long_relative",
+              "paraphrase_link"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 긴 덩어리와 바꿔 쓴 말을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "동물",
+              "text": "give more weight to nearer landmarks",
+              "ko": "가까운 것에 더 무게",
+              "tone": "hl"
+            },
+            {
+              "label": "Weber’s law",
+              "text": "smaller distances … coded more accurately",
+              "ko": "짧은 거리가 더 정확 → 일치",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1nu3mtk"
+  },
+  "intro": {
+    "topic": {
+      "say": "숨긴 물건을 찾을 때, 방의 모양과 파란 벽 중 무엇을 더 믿을까요? 이번 글은 위치를 찾을 때 쓰는 두 가지 정보를 다뤄요."
+    },
+    "method1": {
+      "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+    },
+    "method2": {
+      "say": "요지를 잡고, 정보를 두 그룹으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 하나씩 볼 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "from": "1vlhw0j"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "164xt5g"
+}

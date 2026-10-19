@@ -1,0 +1,102 @@
+{
+ "2": [
+  {
+   "word": "as",
+   "phrase": "known as Grandpa Joe",
+   "sense": "~로",
+   "usage": "be known as + 이름"
+  },
+  {
+   "word": "to",
+   "phrase": "to (a)him",
+   "sense": "~에게",
+   "usage": "전치사 to + 사람"
+  }
+ ],
+ "3": [
+  {
+   "word": "but",
+   "phrase": "but his eyes",
+   "sense": "하지만",
+   "usage": "접속사 but (대조)"
+  }
+ ],
+ "4": [
+  {
+   "word": "while",
+   "phrase": "while searching",
+   "sense": "~하는 동안, ~하다가",
+   "usage": "while + -ing"
+  }
+ ],
+ "5": [
+  {
+   "word": "as",
+   "phrase": "As (b)he opened it",
+   "sense": "~할 때, ~하자",
+   "usage": "접속사 as + 주어·동사 (때)"
+  }
+ ],
+ "6": [
+  {
+   "word": "as",
+   "phrase": "as he took the card",
+   "sense": "~하면서",
+   "usage": "접속사 as + 주어·동사 (동시)"
+  }
+ ],
+ "9": [
+  {
+   "word": "to",
+   "phrase": "connected to his grandfather",
+   "sense": "~와",
+   "usage": "connected to + 사람"
+  }
+ ],
+ "10": [
+  {
+   "word": "to",
+   "phrase": "Eager to learn",
+   "sense": "~하기를 (간절히)",
+   "usage": "eager to + 동사원형"
+  },
+  {
+   "word": "to",
+   "phrase": "to teach him",
+   "sense": "~해 달라고",
+   "usage": "ask + 사람 + to 동사원형"
+  }
+ ],
+ "11": [
+  {
+   "word": "as",
+   "phrase": "as (d)he shared",
+   "sense": "~하면서",
+   "usage": "접속사 as + 주어·동사 (동시)"
+  }
+ ],
+ "13": [
+  {
+   "word": "as",
+   "phrase": "As they bonded",
+   "sense": "~하면서",
+   "usage": "접속사 as + 주어·동사 (동시)"
+  }
+ ],
+ "15": [
+  {
+   "word": "as",
+   "phrase": "as he examined",
+   "sense": "~하면서",
+   "usage": "접속사 as + 주어·동사 (동시)"
+  }
+ ],
+ "18": [
+  {
+   "word": "to",
+   "phrase": "to find Grandpa Joe",
+   "sense": "~하려고",
+   "usage": "to부정사 (목적)"
+  }
+ ]
+}

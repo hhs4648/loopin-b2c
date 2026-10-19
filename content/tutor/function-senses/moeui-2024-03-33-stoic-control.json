@@ -1,0 +1,190 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "is able to confirm",
+   "sense": "~할 (수 있는)",
+   "usage": "be able + to부정사"
+  },
+  {
+   "word": "that",
+   "phrase": "that man",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  }
+ ],
+ "2": [
+  {
+   "word": "if",
+   "phrase": "If you depend",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사 (조건)"
+  },
+  {
+   "word": "to",
+   "phrase": "to satisfy",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "about that",
+   "sense": "그것",
+   "usage": "지시대명사 that (뒤 대시가 풀어 줌)"
+  },
+  {
+   "word": "to",
+   "phrase": "learning to work",
+   "sense": "~하는 (법)",
+   "usage": "learn + to부정사"
+  },
+  {
+   "word": "that",
+   "phrase": "things that are",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "within your power to accomplish",
+   "sense": "~할 (힘)",
+   "usage": "명사 + to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "not to waste",
+   "sense": "~하지 않는 (것)",
+   "usage": "not + to부정사 (learning에 이어짐)"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "circumstances that get us down",
+   "sense": "~하는 것은 (강조)",
+   "usage": "it is not A but B that ~ (강조 구문)"
+  },
+  {
+   "word": "but",
+   "phrase": "but rather",
+   "sense": "~이 아니라 (오히려)",
+   "usage": "not A but (rather) B"
+  }
+ ],
+ "7": [
+  {
+   "word": "if",
+   "phrase": "if it spoils",
+   "sense": "~하더라도, ~하면",
+   "usage": "접속사 if + 주어·동사"
+  }
+ ],
+ "8": [
+  {
+   "word": "that",
+   "phrase": "That would be silly",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞 문장 내용)"
+  }
+ ],
+ "9": [
+  {
+   "word": "but",
+   "phrase": "But we often",
+   "sense": "하지만",
+   "usage": "접속사 but (문장 앞)"
+  },
+  {
+   "word": "if",
+   "phrase": "if someone mistreats",
+   "sense": "만약 ~하면",
+   "usage": "접속사 if + 주어·동사"
+  }
+ ],
+ "10": [
+  {
+   "word": "that",
+   "phrase": "that person",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  },
+  {
+   "word": "so",
+   "phrase": "so that is",
+   "sense": "그래서",
+   "usage": "접속사 so (결과)"
+  },
+  {
+   "word": "that",
+   "phrase": "that is equally silly",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞 내용)"
+  }
+ ],
+ "11": [
+  {
+   "word": "as",
+   "phrase": "just as pointless",
+   "sense": "~만큼 (똑같이)",
+   "usage": "as + 형용사 + as (원급 비교의 앞 as)"
+  },
+  {
+   "word": "to",
+   "phrase": "to tie our feelings",
+   "sense": "~하는 것",
+   "usage": "가주어 it … 진주어 to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "to altering",
+   "sense": "~에 (묶다)",
+   "usage": "tie A to B = A를 B에 묶다 (to 뒤 -ing)"
+  },
+  {
+   "word": "as",
+   "phrase": "as it is",
+   "sense": "~만큼",
+   "usage": "원급 비교의 뒤 as"
+  },
+  {
+   "word": "to",
+   "phrase": "to tie them",
+   "sense": "~하는 것",
+   "usage": "to부정사 (비교 대상)"
+  },
+  {
+   "word": "to",
+   "phrase": "to the weather",
+   "sense": "~에 (묶다)",
+   "usage": "tie A to B"
+  }
+ ],
+ "12": [
+  {
+   "word": "if",
+   "phrase": "If it concerns",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "prepared to say",
+   "sense": "~할 (준비)",
+   "usage": "be prepared + to부정사"
+  },
+  {
+   "word": "that",
+   "phrase": "say that it is",
+   "sense": "~라고",
+   "usage": "명사절 that (say that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "nothing to you",
+   "sense": "~에게",
+   "usage": "전치사 to + 사람"
+  }
+ ]
+}

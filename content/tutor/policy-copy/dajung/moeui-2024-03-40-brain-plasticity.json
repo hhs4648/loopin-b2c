@@ -1,0 +1,439 @@
+{
+  "lesson": "moeui-2024-03-40-brain-plasticity",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "요약문 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "neuroscience": "그건 in 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 “Brain plasticity”, 동사는 is, 보어는 a term이에요.",
+      "from": "12kd38v"
+    },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1u5kts9"
+    },
+    "s1_term": {
+      "say": "뇌 가소성(brain plasticity)이라는 신경 과학 용어 이야기예요. plastic이라는 말에서 나온 용어예요.",
+      "from": "1x0lioq"
+    },
+    "s2_sv": {
+      "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "Whether intentionally or not": "그건 '의도했든 아니든', 덧붙인 말이에요.",
+        "the key idea": "그건 that 뒤 덩어리 안의 주어예요. 먼저 바깥 문장을 봐요.",
+        "is": "그건 that 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 “plasticity”, 동사는 suggests(암시하다)예요. that 뒤가 그 말이 떠올리게 하는 내용이에요.",
+      "from": "qcrig4"
+    },
+    "s2_mean": {
+      "ask": "plasticity라는 말은 무엇을 떠올리게 한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "that 뒤 'to mold something once and keep it that way forever'를 봐요. 콜론(:) 뒤가 같은 말을 풀어 줘요.",
+        "that 뒤 'to mold something once and keep it that way forever'를 봐요. 콜론(:) 뒤가 같은 말을 풀어 줘요."
+      ],
+      "explain": "'to mold something once and keep it that way forever', 한 번 성형하고 영원히 그대로 두는 거래요. 콜론 뒤 '장난감을 만들고 다시는 안 바꾼다'도 같은 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'to mold something once and keep it that way forever', 한 번 성형하고 영원히 그대로 두는 거래요. 콜론 뒤 '장난감을 만들고 다시는 안 바꾼다'도 같은 말이에요.",
+        "o1": "'to mold something once and keep it that way forever', 한 번 성형하고 영원히 그대로 두는 거래요. 콜론 뒤 '장난감을 만들고 다시는 안 바꾼다'도 같은 말이에요."
+      },
+      "point": "plasticity라는 말의 느낌 = 한 번 성형하고(mold once) 영원히 그대로(keep it that way forever)",
+      "from": "19lln1t"
+    },
+    "s3_basic_sv": {
+      "ask": "that’s는 that is를 줄인 말이에요. 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "not": "그건 '~이 아니다', 동사 뒤에 붙은 부정어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "that’s = that is예요. 주어 that, 동사 ’s(is), not 뒤 what the brain does(뇌가 하는 일)가 보어 덩어리예요.",
+      "from": "o2s2l9"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1etbgqx"
+    },
+    "s3_but": {
+      "ask": "But — 'that’s not what the brain does'는 무슨 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "that은 앞 문장의 '한 번 성형하고 영원히 그대로'예요. 뇌는 그렇지 않대요.",
+        "that은 앞 문장의 '한 번 성형하고 영원히 그대로'예요. 뇌는 그렇지 않대요."
+      ],
+      "explain": "that(한 번 성형하고 그대로 두기)은 뇌가 하는 일이 아니래요. But으로 말의 느낌과 실제 뇌를 뒤집어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "that(한 번 성형하고 그대로 두기)은 뇌가 하는 일이 아니래요. But으로 말의 느낌과 실제 뇌를 뒤집어요.",
+        "o2": "that(한 번 성형하고 그대로 두기)은 뇌가 하는 일이 아니래요. But으로 말의 느낌과 실제 뇌를 뒤집어요."
+      },
+      "point": "But that’s not what the brain does = 뇌는 '한 번 만들고 그대로'가 아니다 (글쓴이 주장 시작)",
+      "from": "17q6v2"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "your life": "그건 throughout 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 It(뇌), 동사는 carries on, 목적어는 remolding itself예요.",
+      "from": "11hmhbv"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "14rb71l"
+    },
+    "s4_remold": {
+      "say": "뇌는 평생 스스로를 다시 성형하기를 계속한대요. 칠판 오른쪽에 넣어 둘게요.",
+      "from": "5pgzxj"
+    },
+    "story_4": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s5_city": {
+      "say": "뇌를 도시에 빗대요. 발전하는 도시는 자라고, 나아지고, 주변 세상에 반응한대요.",
+      "from": "1fdkrwz"
+    },
+    "s6_skim": {
+      "say": "트럭 정류장, 이민 정책, 교육·법률 제도 — 도시가 바뀌는 예시들이에요. 깊게 안 읽어도 돼요.",
+      "from": "1xlrodt"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 A city, 동사는 is (always) changing이에요.",
+      "from": "q405lt"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1pxr2ll"
+    },
+    "s7_change": {
+      "say": "도시는 늘 변하고 있대요. 뇌도 그렇다는 말이에요.",
+      "from": "1c3l1f"
+    },
+    "s8_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "urban planners": "그건 by 뒤, 누가 설계하는지예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 A city, 동사는 is not designed와 (is not) immobilized예요.",
+      "from": "ovn7ce"
+    },
+    "s8_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "6wyg2x"
+    },
+    "s8_fixed": {
+      "ask": "도시는 설계된 뒤 플라스틱 물건처럼 고정될까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "문장 앞 'is not'을 봐요. immobilized는 '움직이지 못하게 된, 고정된'이에요.",
+        "문장 앞 'is not'을 봐요. immobilized는 '움직이지 못하게 된, 고정된'이에요."
+      ],
+      "explain": "'is not designed … and then immobilized like a plastic object', 설계된 뒤 플라스틱처럼 고정되지 않는대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'is not designed … and then immobilized like a plastic object', 설계된 뒤 플라스틱처럼 고정되지 않는대요."
+      },
+      "from": "1xmcom8"
+    },
+    "s9_develop": {
+      "say": "도시는 계속 발전한대요. 오른쪽에 쌓아 둘게요.",
+      "from": "1ms906f"
+    },
+    "s10_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "cities": "그건 Just like(~처럼) 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 brains, 동사는 never reach, 목적어는 an end point예요.",
+      "from": "rtxpfs"
+    },
+    "s10_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1sqvvwp"
+    },
+    "s10_end": {
+      "ask": "Just like cities(도시처럼), 뇌는 어떻대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'never reach an end point'를 봐요. never는 '결코 ~ 않다'예요.",
+        "'never reach an end point'를 봐요. never는 '결코 ~ 않다'예요."
+      ],
+      "explain": "'brains never reach an end point', 뇌는 결코 끝점에 이르지 않아요. 도시처럼 계속 바뀐다는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'brains never reach an end point', 뇌는 결코 끝점에 이르지 않아요. 도시처럼 계속 바뀐다는 거예요.",
+        "o1": "'brains never reach an end point', 뇌는 결코 끝점에 이르지 않아요. 도시처럼 계속 바뀐다는 거예요."
+      },
+      "from": "lpd3qp"
+    },
+    "story_10": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s11_bloom": {
+      "say": "목표가 움직여도 우리는 평생 무언가를 향해 피어나며 산대요. 끝없이 자라는 모습이에요.",
+      "from": "158yc17"
+    },
+    "s12_diary": {
+      "say": "몇 년 전에 쓴 일기를 우연히 발견했을 때의 느낌을 떠올려 보래요. 또 다른 예가 시작돼요.",
+      "from": "ymko1a"
+    },
+    "s13_diary": {
+      "ask": "그 일기를 쓴 예전의 나는 지금의 나와 어떻대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'a bit different from who you are now'와 'border on the unrecognizable'을 봐요.",
+        "'a bit different from who you are now'와 'border on the unrecognizable'을 봐요."
+      ],
+      "explain": "'a bit different from who you are now', 지금의 나와 조금 다르고, 'border on the unrecognizable', 때로는 거의 못 알아볼 정도래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'a bit different from who you are now', 지금의 나와 조금 다르고, 'border on the unrecognizable', 때로는 거의 못 알아볼 정도래요.",
+        "o2": "'a bit different from who you are now', 지금의 나와 조금 다르고, 'border on the unrecognizable', 때로는 거의 못 알아볼 정도래요."
+      },
+      "from": "cyettl"
+    },
+    "s14_alter": {
+      "say": "이름과 어린 시절이 같아도, 쓴 때와 읽는 때 사이에 화자(나)가 달라졌대요.",
+      "from": "eyfzhj"
+    },
+    "s15_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "this notion": "그건 to fit(~에 맞도록) 뒤의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The word “plastic”, 동사는 can be stretched예요.",
+      "from": "1bqx9i9"
+    },
+    "s15_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "g01k09"
+    },
+    "s15_stretch": {
+      "ask": "글쓴이는 plastic이라는 말을 이제 어떤 뜻에 맞게 넓혀 쓰자고 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'to fit this notion of ongoing change'를 봐요. ongoing은 '계속되는, 진행 중인'이에요.",
+        "'to fit this notion of ongoing change'를 봐요. ongoing은 '계속되는, 진행 중인'이에요."
+      ],
+      "explain": "'this notion of ongoing change', ongoing(계속되는) change(변화)라는 개념에 맞게 plastic의 뜻을 넓히자는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'this notion of ongoing change', ongoing(계속되는) change(변화)라는 개념에 맞게 plastic의 뜻을 넓히자는 거예요.",
+        "o2": "'this notion of ongoing change', ongoing(계속되는) change(변화)라는 개념에 맞게 plastic의 뜻을 넓히자는 거예요."
+      },
+      "point": "글쓴이 주장 = 뇌는 '한 번 성형하면 그대로'가 아니라 평생 계속 변한다 (ongoing change)",
+      "from": "ojqkc5"
+    },
+    "s15_summary": {
+      "say": "이제 요약문을 읽어요. (A)와 (B)가 칠판의 어느 쪽 말인지 보고 고르면 돼요.",
+      "from": "3iebjm"
+    },
+    "story_15": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s16_a_side": {
+      "ask": "어떤 사람들은 brain plasticity가 '성형되자마자(upon molding) (A)'를 뜻한다고 이해한대요. (A)는 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "While(~인 반면) 앞뒤는 반대예요. 뒤가 '뇌가 실제로(actually)'니까, 앞은 그와 다른 쪽이에요.",
+        "While(~인 반면) 앞뒤는 반대예요. 뒤가 '뇌가 실제로(actually)'니까, 앞은 그와 다른 쪽이에요."
+      ],
+      "explain": "While 앞은 '어떤 사람들이 이해하는 뜻', 뒤는 '뇌가 실제로 하는 일'이에요. (A)는 plastic이라는 말의 느낌 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "While 앞은 '어떤 사람들이 이해하는 뜻', 뒤는 '뇌가 실제로 하는 일'이에요. (A)는 plastic이라는 말의 느낌 쪽이에요."
+      },
+      "from": "1h76ojh"
+    },
+    "s16_a": {
+      "ask": "그럼 (A)에는 어떤 뜻의 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판 왼쪽 'mold once, keep it that way forever, never change it again'을 떠올려 봐요.",
+        "칠판 왼쪽 'mold once, keep it that way forever, never change it again'을 떠올려 봐요."
+      ],
+      "explain": "왼쪽은 한 번 성형하면 영원히 그대로, 다시는 안 바뀐다는 말이에요. (A)는 그 뜻, 변하지 않음이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "왼쪽은 한 번 성형하면 영원히 그대로, 다시는 안 바뀐다는 말이에요. (A)는 그 뜻, 변하지 않음이에요.",
+        "o2": "왼쪽은 한 번 성형하면 영원히 그대로, 다시는 안 바뀐다는 말이에요. (A)는 그 뜻, 변하지 않음이에요."
+      },
+      "point": "(A) = 성형되자마자 영원히 그대로 → '변하지 않음(영속성)'",
+      "from": "9rpna2"
+    },
+    "s16_b": {
+      "ask": "(B)는 '뇌가 실제로 할 수 있는 것'이에요. 어떤 뜻의 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판 오른쪽 'remolding, always changing, ongoing change'를 떠올려 봐요.",
+        "칠판 오른쪽 'remolding, always changing, ongoing change'를 떠올려 봐요."
+      ],
+      "explain": "오른쪽은 평생 다시 성형하고, 늘 변하고, 계속 변한다는 말이에요. (B)는 그 뜻, 변화예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "오른쪽은 평생 다시 성형하고, 늘 변하고, 계속 변한다는 말이에요. (B)는 그 뜻, 변화예요.",
+        "o2": "오른쪽은 평생 다시 성형하고, 늘 변하고, 계속 변한다는 말이에요. (B)는 그 뜻, 변화예요."
+      },
+      "point": "(B) = 뇌가 실제로 하는 일 = 평생 계속되는 변화",
+      "from": "txvfgq"
+    },
+    "s16_go": {
+      "say": "(A)와 (B)의 뜻을 둘 다 맞게 담은 보기를 골라 봐요. 한쪽만 맞으면 오답이에요.",
+      "from": "16ntgt4"
+    }
+  },
+  "exam": {
+    "ask": "(A)는 칠판 왼쪽(변하지 않음), (B)는 오른쪽(계속되는 변화)이에요. 둘 다 맞는 보기를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 어떤 사람들은 뇌 가소성을 성형되자마자 영원히 그대로(permanence)라고 이해하지만, 뇌는 실제로 평생 변할(transformation) 수 있어요.",
+    "final_wrong": "정답은 ①이에요. (A) 한 번 성형하면 그대로 = permanence, (B) 계속되는 변화 = transformation이에요.",
+    "option_feedback": {
+      "2": "flexibility(유연성)는 plastic의 '잘 휘는' 느낌이지만, (A)는 '한 번 만들면 그대로'예요. 공감(sympathizing)도 글에 없어요.",
+      "3": "adaptability(적응성)는 오히려 오른쪽 말에 가까워요. restoration(원래대로 되돌림)은 계속 바뀐다는 말과 달라요.",
+      "4": "firmness(단단함)는 (A)에 가깝지만, (B)의 공감하기(sympathizing)는 글에 없어요.",
+      "5": "(B) transformation은 맞지만, (A) mobility(이동성)는 '영원히 그대로'와 반대예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 14.6%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "⑤는 (B) transformation은 맞아요. 그런데 (A) mobility(이동성, 움직임)는 '성형되자마자 영원히 그대로'와 반대예요. (A)에는 변하지 않음(permanence)이 와야 해요.",
+        "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "plastic이 잘 변하는 느낌이라 (A)를 그렇게 골랐어요",
+            "skills": [
+              "word_feeling"
+            ],
+            "reply": "알려 줘서 고마워요. 이 글에서 plastic이라는 말이 주는 느낌은 '한 번 만들면 그대로'였어요. 단어의 평소 느낌보다 글에서 어떻게 쓰였는지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "(B)만 보고 골랐어요",
+            "skills": [
+              "two_blanks"
+            ],
+            "reply": "알려 줘서 고마워요. 요약문은 (A)와 (B)가 둘 다 맞아야 해요. 앞으로 두 칸을 하나씩 확인하게 할게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "word_feeling",
+              "two_blanks"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 글 속 뜻과 두 칸 확인을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(A)",
+              "text": "mold once · keep it that way forever",
+              "ko": "변하지 않음 = permanence",
+              "tone": "hl"
+            },
+            {
+              "label": "(B)",
+              "text": "remolding · always changing · ongoing change",
+              "ko": "변화 = transformation",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "12ahanf"
+  },
+  "intro": {
+    "topic": {
+      "say": "뇌는 한 번 모양이 잡히면 평생 그대로일까요? 이번 글은 '뇌 가소성'이라는 말의 진짜 뜻을 다뤄요."
+    },
+    "method1": {
+      "say": "요약문 문제는 지문을 먼저 읽으며 글쓴이 주장을 잡아요. 같은 쪽 말을 칠판에 모아 둘 거예요."
+    },
+    "method2": {
+      "say": "마지막에 요약문을 읽고, (A)와 (B)가 칠판의 어느 쪽 말인지 보고 골라요."
+    },
+    "from": "jxi5mf"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "xqwo37"
+}

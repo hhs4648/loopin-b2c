@@ -1,0 +1,98 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "ability to adjust",
+   "sense": "~할 (능력)",
+   "usage": "명사 + to부정사"
+  },
+  {
+   "word": "for",
+   "phrase": "for example",
+   "sense": "(for example의 일부)",
+   "usage": "for example = 예를 들어"
+  },
+  {
+   "word": "as",
+   "phrase": "such as jazz musicians",
+   "sense": "~ 같은",
+   "usage": "such as + 명사 (예시)"
+  }
+ ],
+ "2": [
+  {
+   "word": "as",
+   "phrase": "such as a symphony",
+   "sense": "~ 같은",
+   "usage": "such as + 명사 (예시)"
+  },
+  {
+   "word": "that",
+   "phrase": "concerto, that require",
+   "sense": "(앞 명사 complex forms를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "but",
+   "phrase": "but also careful planning",
+   "sense": "~도 (not just A but also B)",
+   "usage": "not just A but also B"
+  }
+ ],
+ "3": [
+  {
+   "word": "for",
+   "phrase": "for example",
+   "sense": "(for example의 일부)",
+   "usage": "for example = 예를 들어"
+  },
+  {
+   "word": "that",
+   "phrase": "that even Mozart’s creations",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (know that …)"
+  },
+  {
+   "word": "as",
+   "phrase": "as the myths",
+   "sense": "~하듯이",
+   "usage": "접속사 as + 주어·동사 (방식)"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "have to be",
+   "sense": "~해야 (하다)",
+   "usage": "have to + 동사원형"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "that thinking style",
+   "sense": "그",
+   "usage": "지시형용사 that + 명사"
+  },
+  {
+   "word": "as",
+   "phrase": "not as big a factor",
+   "sense": "그만큼",
+   "usage": "not as + 형용사 (+ a + 명사) = 그만큼 ~하지 않은"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "ideas that arose",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "as",
+   "phrase": "much as a scientist does",
+   "sense": "~처럼, ~하듯이",
+   "usage": "much as + 주어·동사 = 꼭 ~하듯"
+  }
+ ]
+}

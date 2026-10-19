@@ -1,0 +1,1387 @@
+{
+  "id": "moeui-2024-03-29-crossing-cultures",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 29번 (어법, 2점)",
+  "brief": {
+    "topic": "어법 푸는 법: 밑줄마다 무슨 문법을 묻는지 이름 붙이기 → 그 문장 뼈대(주어·동사·빈자리)로 확인",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "grammar",
+    "labels": [
+      "묻는 문법 이름 붙이기",
+      "뼈대로 확인"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-crossing-cultures.svg",
+      "alt": "칠판: Home(고향 문화) → New culture(새 문화)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "낯선 나라에 가서 살면 나는 어떻게 달라질까요? 이번 글은 문화를 넘어가는 경험을 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "어법 문제는 밑줄마다 무슨 문법을 묻는지 먼저 이름을 붙여요. 그다음 그 문장의 주어·동사·빈자리로 확인할게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+    "underline": [
+      "①brings",
+      "②uniquely",
+      "③Adapting",
+      "④which",
+      "⑤ourselves"
+    ],
+    "sentence": 9,
+    "analysis_first": true,
+    "glosses": [
+      {
+        "en": "brings",
+        "ko": "가져다준다"
+      },
+      {
+        "en": "uniquely",
+        "ko": "특별히"
+      },
+      {
+        "en": "Adapting",
+        "ko": "적응하는 것"
+      },
+      {
+        "en": "which",
+        "ko": "(관계사)"
+      },
+      {
+        "en": "ourselves",
+        "ko": "우리 자신"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "brings",
+        "keywords": [
+          "brings"
+        ]
+      },
+      {
+        "id": "2",
+        "label": "uniquely",
+        "keywords": [
+          "uniquely"
+        ]
+      },
+      {
+        "id": "3",
+        "label": "Adapting",
+        "keywords": [
+          "Adapting"
+        ]
+      },
+      {
+        "id": "4",
+        "label": "which",
+        "keywords": [
+          "which"
+        ],
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "ourselves",
+        "keywords": [
+          "ourselves"
+        ]
+      }
+    ],
+    "brief": {
+      "ask": "밑줄 점검표를 떠올려 봐요. ④ which 뒤에 빠진 자리가 있었나요?",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! which 뒤 'we were born'이 빠진 자리 없는 완전한 문장이라 into which(be born into = ~에 태어나다)로 고쳐요. in which로 써도 어법은 맞지만, 문화·집안에 '태어나다'는 born into라서 into which가 더 자연스러워요.",
+      "final_wrong": "정답은 ④예요. which 뒤가 완전한 문장이라 into which(be born into = ~에 태어나다)여야 해요. in which도 어법은 맞지만 into which가 더 자연스러워요.",
+      "option_feedback": {
+        "1": "동명사 덩어리 주어(Being uprooted …)는 단수라 brings가 맞아요.",
+        "2": "형용사 privileged를 꾸미는 부사 uniquely가 맞아요.",
+        "3": "동사 is의 주어 자리라 동명사 Adapting이 맞아요.",
+        "5": "찾는 사람 us와 찾는 대상이 같아서 재귀대명사 ourselves가 맞아요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "challenge",
+        "ko": "도전하다, 흔들다"
+      },
+      {
+        "en": "uprooted",
+        "ko": "뿌리째 뽑힌"
+      },
+      {
+        "en": "arise",
+        "ko": "생기다"
+      },
+      {
+        "en": "undergo",
+        "ko": "겪다"
+      },
+      {
+        "en": "privileged",
+        "ko": "특권을 누리는"
+      },
+      {
+        "en": "anew",
+        "ko": "새롭게"
+      },
+      {
+        "en": "cultivate",
+        "ko": "기르다"
+      },
+      {
+        "en": "adapt to",
+        "ko": "~에 적응하다"
+      },
+      {
+        "en": "reinvention",
+        "ko": "재창조"
+      },
+      {
+        "en": "abandon",
+        "ko": "버리다"
+      },
+      {
+        "en": "be born into",
+        "ko": "~에 태어나다"
+      },
+      {
+        "en": "compel",
+        "ko": "강요하다"
+      },
+      {
+        "en": "hold dear",
+        "ko": "소중히 여기다"
+      },
+      {
+        "en": "compromise",
+        "ko": "타협하다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "medium",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "The process of crossing cultures challenges the very basis of who we are as cultural beings.",
+      "model_translation": "문화를 넘어가는 과정은 문화적 존재로서 우리가 누구인지에 대한 바로 그 기반에 도전한다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "The process of crossing cultures",
+          "ko": "문화를 넘어가는 과정"
+        },
+        {
+          "en": "challenges",
+          "ko": "~에 도전하다, 흔들다"
+        },
+        {
+          "en": "the very basis",
+          "ko": "바로 그 기반"
+        },
+        {
+          "en": "of who we are",
+          "ko": "우리가 누구인지의"
+        },
+        {
+          "en": "as cultural beings",
+          "ko": "문화적 존재로서"
+        },
+        {
+          "en": "process",
+          "ko": "과정"
+        },
+        {
+          "en": "crossing",
+          "ko": "넘어가는 것"
+        },
+        {
+          "en": "cultures",
+          "ko": "문화들"
+        },
+        {
+          "en": "basis",
+          "ko": "기반"
+        },
+        {
+          "en": "cultural",
+          "ko": "문화적인"
+        },
+        {
+          "en": "beings",
+          "ko": "존재"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_topic",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "문화를 넘어가면(다른 나라 문화 속으로 가면) 내가 누구인지의 바탕이 흔들린대요. 이 글의 이야기예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "crossing cultures"
+          ],
+          "tips": [
+            {
+              "label": "어법 문제 요령",
+              "text": "밑줄마다 '무슨 문법을 묻는지' 먼저 이름 붙여요(주어-동사 수, 부사/형용사, 동명사 주어, 관계사 뒤 빈자리, 재귀대명사 …). 그다음 그 문장 뼈대로 확인해요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "It offers opportunities for new learning and growth.",
+      "model_translation": "그것은 새로운 배움과 성장을 위한 기회를 제공한다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "It offers",
+          "ko": "그것은 준다"
+        },
+        {
+          "en": "opportunities",
+          "ko": "기회"
+        },
+        {
+          "en": "for new learning and growth",
+          "ko": "새로운 배움과 성장을 위한"
+        },
+        {
+          "en": "learning",
+          "ko": "배움"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_offer",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그 과정은 새로 배우고 자랄 기회를 준대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "opportunities"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Being “uprooted” from our home ①brings us understanding not only of the people and their culture in our new environment, but of ourselves and our home culture.",
+      "model_translation": "우리의 고향에서 '뿌리째 뽑히는' 것은 우리의 새로운 환경에 있는 사람들과 그들의 문화뿐만 아니라 우리 자신과 우리의 고향 문화에 대한 이해도 가져다준다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Being “uprooted” from our home",
+          "ko": "고향에서 '뿌리째 뽑히는' 것"
+        },
+        {
+          "en": "Being",
+          "ko": "~되는 것"
+        },
+        {
+          "en": "uprooted",
+          "ko": "뿌리째 뽑힌"
+        },
+        {
+          "en": "brings",
+          "ko": "가져다준다"
+        },
+        {
+          "en": "us",
+          "ko": "우리에게"
+        },
+        {
+          "en": "understanding",
+          "ko": "이해"
+        },
+        {
+          "en": "not only of the people and their culture",
+          "ko": "사람들과 그들의 문화뿐만 아니라"
+        },
+        {
+          "en": "in our new environment",
+          "ko": "새 환경의"
+        },
+        {
+          "en": "but of ourselves and our home culture",
+          "ko": "우리 자신과 고향 문화에 대한 것도"
+        },
+        {
+          "en": "home",
+          "ko": "고향"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "culture",
+          "ko": "문화"
+        },
+        {
+          "en": "ourselves",
+          "ko": "우리 자신"
+        }
+      ],
+      "slashes": [
+        "from our home",
+        "us understanding",
+        "new environment,"
+      ],
+      "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Being “uprooted” from our home",
+            "brings",
+            "us",
+            "understanding"
+          ],
+          "answers": [
+            "Being “uprooted” from our home",
+            "brings",
+            "understanding"
+          ],
+          "roles": {
+            "Being “uprooted” from our home": "S",
+            "brings": "V",
+            "understanding": "O"
+          },
+          "brief": {
+            "ask": "①이 든 문장이에요. 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "us": "그건 '누구에게' 주는지예요(간접목적어). 무엇을 주는지 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Being “uprooted” from our home(고향에서 뿌리째 뽑히는 것), 동사는 ①brings, 목적어는 understanding이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_number",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어 Being “uprooted” …는 '~되는 것'이라는 동명사 덩어리예요. 동사는 단수형일까요, 복수형일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "동명사(-ing) 덩어리가 주어면 '하나의 일'로 봐요.",
+              "동명사(-ing) 덩어리가 주어면 '하나의 일'로 봐요."
+            ],
+            "explain": "동명사 덩어리 주어는 '하나의 일'이라 단수 취급해요. 그래서 brings가 맞아요. 바로 앞 home은 from 뒤 명사라 주어가 아니에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "동명사 덩어리 주어는 '하나의 일'이라 단수 취급해요. 그래서 brings가 맞아요. 바로 앞 home은 from 뒤 명사라 주어가 아니에요."
+            },
+            "point": "① 동명사 주어(Being uprooted …)는 단수 → brings 맞음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "단수형 (brings)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "복수형 (bring)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Being",
+            "brings"
+          ],
+          "tips": [
+            {
+              "label": "동명사 주어 = 단수",
+              "text": "Being …, Adapting …처럼 -ing 덩어리가 주어면 단수 동사(is, brings)를 써요.",
+              "mark": "Being"
+            }
+          ]
+        },
+        {
+          "id": "s3_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①brings는 맞아요. 밑줄 점검표에 붙여 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "Being uprooted … brings",
+                "ko": "동명사 주어 = 단수 → brings",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Although the difficulties that can arise from crossing cultures are often shocking, success stories are everywhere.",
+      "model_translation": "비록 문화를 넘어가는 것에서 발생할 수 있는 어려움이 흔히 충격적이더라도, 성공담은 어디에나 있다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Although",
+          "ko": "비록 ~이지만"
+        },
+        {
+          "en": "the difficulties",
+          "ko": "어려움"
+        },
+        {
+          "en": "that can arise from crossing cultures",
+          "ko": "문화를 넘어가며 생길 수 있는"
+        },
+        {
+          "en": "are often shocking",
+          "ko": "흔히 충격적이다"
+        },
+        {
+          "en": "success stories",
+          "ko": "성공담"
+        },
+        {
+          "en": "are everywhere",
+          "ko": "어디에나 있다"
+        },
+        {
+          "en": "difficulties",
+          "ko": "어려움"
+        },
+        {
+          "en": "arise",
+          "ko": "생기다"
+        },
+        {
+          "en": "crossing",
+          "ko": "넘어가는 것"
+        },
+        {
+          "en": "cultures",
+          "ko": "문화들"
+        },
+        {
+          "en": "shocking",
+          "ko": "충격적인"
+        },
+        {
+          "en": "success",
+          "ko": "성공"
+        },
+        {
+          "en": "stories",
+          "ko": "이야기"
+        },
+        {
+          "en": "everywhere",
+          "ko": "어디에나"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_success",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "어려움은 충격적이지만 성공한 이야기도 어디에나 있대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "success stories"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Despite, or rather because of, the suffering and ambivalence we undergo when we cross cultures, we gradually find ourselves ②uniquely privileged to define ourselves and others anew with clarity and insight that we could not have cultivated without leaving home.",
+      "model_translation": "우리가 문화를 넘어가면서 겪는 고통, 그리고 상반되는 감정에도 불구하고, 혹은 오히려 이것 때문에, 우리는 고향을 떠나지 않고는 기를 수 없었던 명확성과 통찰력으로 우리 자신과 다른 사람들을 새롭게 정의할 수 있는 특권을 특별히 누리고 있다는 것을 점차 알게 된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Despite, or rather because of",
+          "ko": "~에도 불구하고, 아니 오히려 ~ 때문에"
+        },
+        {
+          "en": "the suffering and ambivalence",
+          "ko": "고통과 상반된 감정"
+        },
+        {
+          "en": "we undergo",
+          "ko": "우리가 겪는"
+        },
+        {
+          "en": "when we cross cultures",
+          "ko": "문화를 넘어갈 때"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "gradually",
+          "ko": "점점"
+        },
+        {
+          "en": "find",
+          "ko": "알게 되다"
+        },
+        {
+          "en": "ourselves",
+          "ko": "우리 자신을"
+        },
+        {
+          "en": "uniquely",
+          "ko": "특별히, 남다르게"
+        },
+        {
+          "en": "privileged",
+          "ko": "특권을 누리는"
+        },
+        {
+          "en": "to define ourselves and others anew",
+          "ko": "우리와 남을 새롭게 정의할"
+        },
+        {
+          "en": "with clarity and insight",
+          "ko": "명확함과 통찰로"
+        },
+        {
+          "en": "that we could not have cultivated",
+          "ko": "우리가 기를 수 없었을"
+        },
+        {
+          "en": "without leaving home",
+          "ko": "고향을 떠나지 않고는"
+        },
+        {
+          "en": "Despite",
+          "ko": "~에도 불구하고"
+        },
+        {
+          "en": "rather",
+          "ko": "오히려"
+        },
+        {
+          "en": "suffering",
+          "ko": "고통"
+        },
+        {
+          "en": "ambivalence",
+          "ko": "상반된 감정"
+        },
+        {
+          "en": "undergo",
+          "ko": "겪다"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "cross",
+          "ko": "넘어가다"
+        },
+        {
+          "en": "cultures",
+          "ko": "문화들"
+        },
+        {
+          "en": "define",
+          "ko": "정의하다"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        },
+        {
+          "en": "anew",
+          "ko": "새롭게"
+        },
+        {
+          "en": "clarity",
+          "ko": "명확함"
+        },
+        {
+          "en": "insight",
+          "ko": "통찰"
+        },
+        {
+          "en": "cultivated",
+          "ko": "기른"
+        },
+        {
+          "en": "without",
+          "ko": "~ 없이"
+        },
+        {
+          "en": "leaving",
+          "ko": "떠나는 것"
+        },
+        {
+          "en": "home",
+          "ko": "고향"
+        }
+      ],
+      "slashes": [
+        "because of,",
+        "cross cultures,",
+        "uniquely privileged",
+        "anew",
+        "cultivated"
+      ],
+      "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the suffering and ambivalence",
+            "we",
+            "find",
+            "ourselves",
+            "privileged"
+          ],
+          "answers": [
+            "we",
+            "find",
+            "ourselves",
+            "privileged"
+          ],
+          "roles": {
+            "we": "S",
+            "find": "V",
+            "ourselves": "O",
+            "privileged": "C"
+          },
+          "brief": {
+            "ask": "길어요. 콤마 뒤 메인 문장에서 주어(S), 동사(V), 목적어(O), 보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the suffering and ambivalence": "그건 Despite / because of 뒤 덩어리예요. 콤마 뒤 메인 문장에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콤마 뒤 메인 문장은 주어 we, 동사 find, 목적어 ourselves, 보어 (uniquely) privileged예요. find + O + C = O가 C하다는 걸 알게 되다."
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_adverb",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "②uniquely는 바로 뒤 privileged(특권을 누리는)를 꾸며요. privileged가 형용사라면, 꾸미는 말은 무엇이어야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "형용사를 꾸미는 건 부사예요. very happy의 very처럼요.",
+              "형용사를 꾸미는 건 부사예요. very happy의 very처럼요."
+            ],
+            "explain": "형용사(privileged)를 꾸미는 건 부사예요. 그래서 uniquely가 맞아요. privileged 자체는 find의 보어라 형용사가 맞고요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "형용사(privileged)를 꾸미는 건 부사예요. 그래서 uniquely가 맞아요. privileged 자체는 find의 보어라 형용사가 맞고요."
+            },
+            "point": "② 형용사 privileged를 꾸미는 부사 uniquely → 맞음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "형용사 (unique)"
+            },
+            {
+              "id": "o1",
+              "label": "부사 (uniquely)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "uniquely",
+            "privileged"
+          ],
+          "tips": [
+            {
+              "label": "find + O + 형용사",
+              "text": "find oneself privileged = 자신이 특권을 누린다는 걸 알게 되다. 보어 자리는 형용사, 그 형용사를 꾸미는 건 부사예요.",
+              "mark": "find"
+            }
+          ]
+        },
+        {
+          "id": "s5_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "②uniquely는 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "Being uprooted … brings",
+                "ko": "동명사 주어 = 단수 → brings",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "find ourselves uniquely privileged",
+                "ko": "형용사 privileged를 꾸미는 부사 uniquely",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "③Adapting to a new and unfamiliar culture, then, is more than survival.",
+      "model_translation": "새롭고 낯선 문화에 적응하는 것은, 그러니까, 생존 그 이상이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Adapting to a new and unfamiliar culture",
+          "ko": "새롭고 낯선 문화에 적응하는 것"
+        },
+        {
+          "en": "Adapting",
+          "ko": "적응하는 것"
+        },
+        {
+          "en": "then",
+          "ko": "그러니까"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "more than survival",
+          "ko": "생존 그 이상"
+        },
+        {
+          "en": "unfamiliar",
+          "ko": "낯선"
+        },
+        {
+          "en": "culture",
+          "ko": "문화"
+        },
+        {
+          "en": "survival",
+          "ko": "생존"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_subject",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "③Adapting to a new and unfamiliar culture는 이 문장에서 무슨 역할일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "뒤에 동사 is가 있어요. is 앞에 무엇이 있어야 할까요?",
+              "뒤에 동사 is가 있어요. is 앞에 무엇이 있어야 할까요?"
+            ],
+            "explain": "뒤에 동사 is가 있으니 그 앞 덩어리가 주어예요. 주어 자리엔 동명사(-ing) Adapting이 올 수 있어요. 그래서 ③은 맞아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "뒤에 동사 is가 있으니 그 앞 덩어리가 주어예요. 주어 자리엔 동명사(-ing) Adapting이 올 수 있어요. 그래서 ③은 맞아요.",
+              "o2": "뒤에 동사 is가 있으니 그 앞 덩어리가 주어예요. 주어 자리엔 동명사(-ing) Adapting이 올 수 있어요. 그래서 ③은 맞아요."
+            },
+            "point": "③ 동사 is의 주어 자리 → 동명사 Adapting 맞음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "동사 is의 주어",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "앞 문장을 꾸미는 말"
+            },
+            {
+              "id": "o2",
+              "label": "is 뒤의 보어"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Adapting to a new and unfamiliar culture",
+            "is"
+          ]
+        },
+        {
+          "id": "s6_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "③Adapting은 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "Being uprooted … brings",
+                "ko": "동명사 주어 = 단수 → brings",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "find ourselves uniquely privileged",
+                "ko": "형용사 privileged를 꾸미는 부사 uniquely",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 맞음",
+                "text": "Adapting … is",
+                "ko": "주어 자리 동명사 Adapting",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "It is a life-changing journey.",
+      "model_translation": "그것은 삶을 바꾸는 여정이다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "It is",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "a life-changing journey",
+          "ko": "삶을 바꾸는 여정"
+        },
+        {
+          "en": "life-changing",
+          "ko": "삶을 바꾸는"
+        },
+        {
+          "en": "journey",
+          "ko": "여정"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_journey",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "문화에 적응하는 건 삶을 바꾸는 여정이래요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "life-changing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "It is a process of “becoming”—personal reinvention, transformation, growth, reaching out beyond the boundaries of our own existence.",
+      "model_translation": "그것은 개인적인 재창조, 변화, 성장, 우리 자신의 존재의 경계 너머로 뻗어가는 '되어가는 것'의 과정이다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "It is a process of “becoming”",
+          "ko": "그것은 '되어 가는' 과정이다"
+        },
+        {
+          "en": "personal reinvention",
+          "ko": "개인의 재창조"
+        },
+        {
+          "en": "transformation",
+          "ko": "변화"
+        },
+        {
+          "en": "growth",
+          "ko": "성장"
+        },
+        {
+          "en": "reaching out beyond the boundaries",
+          "ko": "경계 너머로 뻗어 가는 것"
+        },
+        {
+          "en": "of our own existence",
+          "ko": "우리 자신의 존재의"
+        },
+        {
+          "en": "process",
+          "ko": "과정"
+        },
+        {
+          "en": "becoming",
+          "ko": "되어 가는 것"
+        },
+        {
+          "en": "personal",
+          "ko": "개인의"
+        },
+        {
+          "en": "reinvention",
+          "ko": "재창조"
+        },
+        {
+          "en": "reaching",
+          "ko": "뻗어 가는 것"
+        },
+        {
+          "en": "boundaries",
+          "ko": "경계"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_becoming",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "대시(—) 뒤는 '되어 가는 과정'을 풀어 쓴 말이에요. 앞을 이해했으면 가볍게 넘어가도 돼요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "“becoming”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "The process does not require that we abandon our former personalities and the cultures ④which we were born.",
+      "model_translation": "그 과정은 우리가 우리 이전의 개성과 우리가 태어난 문화를 버릴 것을 요구하지 않는다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "our former personalities and the cultures",
+          "ko": "이전의 성격과 문화들"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "The process",
+          "ko": "그 과정은"
+        },
+        {
+          "en": "does not require",
+          "ko": "요구하지 않는다"
+        },
+        {
+          "en": "that we abandon",
+          "ko": "우리가 버리는 것을"
+        },
+        {
+          "en": "our former personalities",
+          "ko": "이전의 성격"
+        },
+        {
+          "en": "the cultures",
+          "ko": "문화들"
+        },
+        {
+          "en": "which",
+          "ko": "(그) ~하는"
+        },
+        {
+          "en": "we were born",
+          "ko": "우리가 태어났다"
+        },
+        {
+          "en": "abandon",
+          "ko": "버리다"
+        },
+        {
+          "en": "former",
+          "ko": "이전의"
+        },
+        {
+          "en": "personalities",
+          "ko": "성격"
+        },
+        {
+          "en": "cultures",
+          "ko": "문화들"
+        },
+        {
+          "en": "process",
+          "ko": "과정"
+        },
+        {
+          "en": "require",
+          "ko": "요구하다"
+        },
+        {
+          "en": "born",
+          "ko": "태어난"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The process",
+            "does not require",
+            "we",
+            "abandon",
+            "our former personalities and the cultures"
+          ],
+          "answers": [
+            "The process",
+            "does not require"
+          ],
+          "roles": {
+            "The process": "S",
+            "does not require": "V"
+          },
+          "brief": {
+            "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "we": "그건 that 뒤 덩어리 안의 주어예요.",
+              "abandon": "그건 that 뒤 덩어리 안의 동사예요.",
+              "our former personalities and the cultures": "그건 that 뒤 abandon의 목적어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The process, 동사는 does not require예요. that 뒤가 요구하지 않는 내용이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s9_gap",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "④which 뒤 'we were born'을 봐요. 이 덩어리에 빠진 자리(주어나 목적어)가 있나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "be born은 '태어나다'라서 목적어를 받지 않아요. 주어 we도 있어요.",
+              "be born은 '태어나다'라서 목적어를 받지 않아요. 주어 we도 있어요."
+            ],
+            "explain": "we(주어) + were born(동사, 태어나다)으로 빠진 자리가 없는 완전한 문장이에요. be born은 목적어를 받지 않아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "we(주어) + were born(동사, 태어나다)으로 빠진 자리가 없는 완전한 문장이에요. be born은 목적어를 받지 않아요.",
+              "o2": "we(주어) + were born(동사, 태어나다)으로 빠진 자리가 없는 완전한 문장이에요. be born은 목적어를 받지 않아요."
+            },
+            "point": "④ which 뒤 we were born은 빠진 자리 없는 완전한 문장 — 관계대명사 which만으로는 안 되는지 문제에서 확인"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "주어가 빠졌다"
+            },
+            {
+              "id": "o1",
+              "label": "빠진 자리가 없다 (we 주어, were born 동사로 완전하다)",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "목적어가 빠졌다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "which we were born"
+          ],
+          "tips": [
+            {
+              "label": "관계대명사 vs 전치사 + 관계대명사",
+              "text": "관계대명사(which·that) 뒤에는 주어나 목적어가 빠진 자리가 있어요. 빠진 게 없이 완전하면 '전치사 + which(= where)'를 써요. 예: the house in which I live",
+              "mark": "which"
+            }
+          ]
+        },
+        {
+          "id": "s9_hold",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "관계대명사 which 뒤는 빠진 자리가 있어야 해요. 여기는 빠진 게 없어요. ④가 맞는지는 문제에서 골라 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "which we were born"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Rather, it compels us to find ⑤ourselves as if for the first time, particularly those “cultural invariants” within us—aspects that we hold dear and refuse to compromise.",
+      "model_translation": "오히려, 그것은 우리로 하여금 우리 자신을, 특히 우리 내면의 그 '문화의 불변하는 것들', 우리가 소중히 여기고 타협하기를 거부하는 측면들을 마치 처음인 것처럼 발견할 것을 강요한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Rather",
+          "ko": "오히려"
+        },
+        {
+          "en": "it compels us",
+          "ko": "그것은 우리에게 강요한다"
+        },
+        {
+          "en": "to find",
+          "ko": "찾도록"
+        },
+        {
+          "en": "ourselves",
+          "ko": "우리 자신을"
+        },
+        {
+          "en": "as if for the first time",
+          "ko": "마치 처음인 것처럼"
+        },
+        {
+          "en": "particularly",
+          "ko": "특히"
+        },
+        {
+          "en": "those “cultural invariants” within us",
+          "ko": "우리 안의 '문화적으로 변하지 않는 것들'"
+        },
+        {
+          "en": "aspects that we hold dear",
+          "ko": "우리가 소중히 여기는 측면들"
+        },
+        {
+          "en": "refuse to compromise",
+          "ko": "타협하기를 거부하다"
+        },
+        {
+          "en": "compels",
+          "ko": "강요하다"
+        },
+        {
+          "en": "cultural",
+          "ko": "문화적인"
+        },
+        {
+          "en": "invariants",
+          "ko": "변하지 않는 것들"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "aspects",
+          "ko": "측면"
+        },
+        {
+          "en": "hold",
+          "ko": "여기다"
+        },
+        {
+          "en": "dear",
+          "ko": "소중한"
+        },
+        {
+          "en": "refuse",
+          "ko": "거부하다"
+        },
+        {
+          "en": "compromise",
+          "ko": "타협하다"
+        }
+      ],
+      "slashes": [
+        "Rather,",
+        "for the first time,",
+        "within us—"
+      ],
+      "steps": [
+        {
+          "id": "s10_reflexive",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "compels us to find ⑤ourselves — 찾는 사람(to find의 주체)은 누구일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "compel + 사람 + to ~는 '사람이 ~하도록 강요하다'예요. 찾는 건 그 사람이에요.",
+              "compel + 사람 + to ~는 '사람이 ~하도록 강요하다'예요. 찾는 건 그 사람이에요."
+            ],
+            "explain": "compel us to find, 찾는 사람은 us(우리)예요. 찾는 대상도 우리 자신이니 재귀대명사 ourselves가 맞아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "compel us to find, 찾는 사람은 us(우리)예요. 찾는 대상도 우리 자신이니 재귀대명사 ourselves가 맞아요.",
+              "o2": "compel us to find, 찾는 사람은 us(우리)예요. 찾는 대상도 우리 자신이니 재귀대명사 ourselves가 맞아요."
+            },
+            "point": "⑤ 찾는 사람 us = 찾는 대상 → 재귀대명사 ourselves 맞음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "it (그 과정)"
+            },
+            {
+              "id": "o1",
+              "label": "us (우리)",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "the cultures"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "compels us to find",
+            "ourselves"
+          ],
+          "tips": [
+            {
+              "label": "재귀대명사",
+              "text": "하는 사람과 받는 대상이 같으면 -self를 써요. 여기서는 to find의 주체 us = 대상 → ourselves.",
+              "mark": "ourselves"
+            }
+          ]
+        },
+        {
+          "id": "s10_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①②③⑤는 맞았어요. 남은 하나, ④를 다시 떠올리며 문제를 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "Being uprooted … brings",
+                "ko": "동명사 주어 = 단수 → brings",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "find ourselves uniquely privileged",
+                "ko": "형용사 privileged를 꾸미는 부사 uniquely",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 맞음",
+                "text": "Adapting … is",
+                "ko": "주어 자리 동명사 Adapting",
+                "tone": "hl"
+              },
+              {
+                "label": "⑤ 맞음",
+                "text": "compels us to find ourselves",
+                "ko": "찾는 사람 us = 찾는 대상 → 재귀대명사 ourselves",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

@@ -67,7 +67,7 @@ export function PassageFull({ given, sentences, underline, options, onPick, pick
 function paragraphs(sentences: string[]): string[][] {
   const out: string[][] = [];
   for (const text of sentences) {
-    if (!out.length || /^\([A-C]\)/.test(text)) out.push([]);
+    if (!out.length || /^\([A-E]\)/.test(text)) out.push([]);
     out[out.length - 1]!.push(text);
   }
   return out;

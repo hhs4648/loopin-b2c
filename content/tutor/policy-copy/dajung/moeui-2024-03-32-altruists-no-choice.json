@@ -1,0 +1,377 @@
+{
+  "lesson": "moeui-2024-03-32-altruists-no-choice",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1edkfqu"
+    },
+    "s1_where": {
+      "say": "빈칸 문장은 짧아요. They(그들)가 누구이고 무엇을 주장(insist)하는지가 빈칸이에요. 그걸 생각하며 처음부터 읽어 봐요.",
+      "from": "zyqryd"
+    },
+    "s1_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the moral status": "그건 of 뒤 덩어리예요. 앞의 understanding을 꾸며요.",
+        "altruistic acts": "그건 of 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요.",
+        "our responsibilities": "그건 about 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The commonsense understanding, 동사는 conforms to(~에 따르다)예요.",
+      "from": "31zw8d"
+    },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "dt1v6e"
+    },
+    "s1_mean": {
+      "ask": "이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "conforms to는 '~에 따르다, ~와 일치하다'예요. to 뒤 'how most of us think'를 봐요.",
+        "conforms to는 '~에 따르다, ~와 일치하다'예요. to 뒤 'how most of us think'를 봐요."
+      ],
+      "explain": "'conforms to how most of us think about our responsibilities'는 우리 대부분이 책임에 대해 생각하는 방식과 일치한다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'conforms to how most of us think about our responsibilities'는 우리 대부분이 책임에 대해 생각하는 방식과 일치한다는 말이에요.",
+        "o2": "'conforms to how most of us think about our responsibilities'는 우리 대부분이 책임에 대해 생각하는 방식과 일치한다는 말이에요."
+      },
+      "from": "uu5isc"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "someone else or society": "그건 when 뒤 덩어리 안의 주어예요.",
+        "determines": "그건 when 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 tend to get offended(기분이 상하는 경향이 있다)예요.",
+      "from": "1u9mrsq"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "vd2gs6"
+    },
+    "s2_feel": {
+      "ask": "다른 사람이나 사회가 우리 대신 얼마나 나눠 줄지 정하면, 우리는 어떻게 느낀대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "get offended는 '기분이 상하다'예요.",
+        "get offended는 '기분이 상하다'예요."
+      ],
+      "explain": "'We tend to get offended', 우리는 기분이 상하는 경향이 있대요. 내 것을 얼마나 나눌지는 내가 정하고 싶으니까요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'We tend to get offended', 우리는 기분이 상하는 경향이 있대요. 내 것을 얼마나 나눌지는 내가 정하고 싶으니까요.",
+        "o1": "'We tend to get offended', 우리는 기분이 상하는 경향이 있대요. 내 것을 얼마나 나눌지는 내가 정하고 싶으니까요."
+      },
+      "from": "4nsh1i"
+    },
+    "s2_board": {
+      "say": "세미콜론(;) 뒤 — 우리는 어른이니 그런 결정은 스스로 내릴 권리가 있어야 한대요. 칠판 왼쪽(보통 사람들 생각)에 넣어 둘게요.",
+      "from": "1y0po4t"
+    },
+    "s3_sv": {
+      "ask": "대시(—) 사이는 흐리게 해 뒀어요. 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "Yet": "그건 '하지만', 앞과 뒤집는 말이에요.",
+        "making the largest sacrifices": "그건 known for(~로 알려진) 뒤 덩어리예요. 앞의 altruists를 꾸며요.",
+        "their recipients": "그건 대시(—) 사이, to 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 altruists, 동사는 assert, 목적어는 just the opposite(정반대)예요.",
+      "from": "1rwumgv"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "3st186"
+    },
+    "s3_opp": {
+      "ask": "Yet(하지만) — 이타주의자들은 무엇을 주장한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "assert 뒤 'just the opposite'를 봐요. opposite은 '반대'예요.",
+        "assert 뒤 'just the opposite'를 봐요. opposite은 '반대'예요."
+      ],
+      "explain": "'assert just the opposite', 정반대를 주장한대요. 보통 사람들은 '스스로 결정할 권리'를 말했으니, 이타주의자들은 그 반대를 말해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'assert just the opposite', 정반대를 주장한대요. 보통 사람들은 '스스로 결정할 권리'를 말했으니, 이타주의자들은 그 반대를 말해요.",
+        "o2": "'assert just the opposite', 정반대를 주장한대요. 보통 사람들은 '스스로 결정할 권리'를 말했으니, 이타주의자들은 그 반대를 말해요."
+      },
+      "point": "Yet … altruists … assert just the opposite = 이타주의자들은 상식(스스로 결정)과 정반대를 주장한다",
+      "from": "14pxip8"
+    },
+    "s3_board": {
+      "say": "보통 사람들 생각과 정반대예요. 칠판 오른쪽에 넣어 둘게요.",
+      "from": "12x70ie"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_they": {
+      "ask": "빈칸 문장의 They(그들)는 누구일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "바로 앞 문장의 주어를 떠올려 봐요. 무엇을 assert(주장)했는지도요.",
+        "바로 앞 문장의 주어를 떠올려 봐요. 무엇을 assert(주장)했는지도요."
+      ],
+      "explain": "바로 앞 문장의 주어 altruists(이타주의자들)예요. assert가 insist로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "바로 앞 문장의 주어 altruists(이타주의자들)예요. assert가 insist로 이어져요.",
+        "o1": "바로 앞 문장의 주어 altruists(이타주의자들)예요. assert가 insist로 이어져요."
+      },
+      "from": "uw1cn4"
+    },
+    "s4_side": {
+      "ask": "빈칸은 이타주의자들이 주장하는 내용이에요. 칠판 왼쪽(스스로 결정할 권리)과 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞 문장에서 이타주의자들은 just the opposite(정반대)를 주장했어요.",
+        "앞 문장에서 이타주의자들은 just the opposite(정반대)를 주장했어요."
+      ],
+      "explain": "이타주의자들은 just the opposite, 정반대를 주장한다고 했어요. 그러니 빈칸은 '스스로 결정한다'의 반대 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "이타주의자들은 just the opposite, 정반대를 주장한다고 했어요. 그러니 빈칸은 '스스로 결정한다'의 반대 쪽이에요."
+      },
+      "from": "lfaxdv"
+    },
+    "s4_guess": {
+      "ask": "'스스로 결정한다'의 반대라면, 빈칸에는 어떤 말이 올까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "스스로 결정할 권리의 반대예요. 내가 고를 수 있는 게 아니었다는 쪽이에요.",
+        "스스로 결정할 권리의 반대예요. 내가 고를 수 있는 게 아니었다는 쪽이에요."
+      ],
+      "explain": "스스로 결정할 권리의 반대는 '고를 수 있는 게 아니었다'예요. 이타주의자들은 그렇게 할 수밖에 없었다고 말해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "스스로 결정할 권리의 반대는 '고를 수 있는 게 아니었다'예요. 이타주의자들은 그렇게 할 수밖에 없었다고 말해요.",
+        "o2": "스스로 결정할 권리의 반대는 '고를 수 있는 게 아니었다'예요. 이타주의자들은 그렇게 할 수밖에 없었다고 말해요."
+      },
+      "point": "빈칸 = just the opposite → 스스로 고른 게 아니라 그렇게 할 수밖에 없었다",
+      "from": "wkgw7j"
+    },
+    "s4_more": {
+      "say": "빈칸 뒤 문장들이 같은 말을 반복하는지 확인하며 계속 읽어 봐요.",
+      "from": "x9r7ny"
+    },
+    "s5_sv": {
+      "ask": "긴 문장이에요. 주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "risk": "그건 who 뒤 덩어리 안의 동사예요. 앞의 citizens를 꾸며요.",
+        "their own lives": "그건 who 뒤 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Organ donors, and everyday citizens, 동사는 are, 보어는 remarkably consistent예요.",
+      "from": "1obewhq"
+    },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "19i0fxy"
+    },
+    "s5_deny": {
+      "ask": "그들은 무엇을 부인(denials)하고, 무엇을 확신(assurance)한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "denials that 뒤 'anything deserving of high praise', assurance that 뒤 'anyone in their shoes … the same thing'을 봐요.",
+        "denials that 뒤 'anything deserving of high praise', assurance that 뒤 'anyone in their shoes … the same thing'을 봐요."
+      ],
+      "explain": "'denials that they have done anything deserving of high praise', 칭찬받을 일을 했다는 걸 부인하고, 'anyone in their shoes should have done exactly the same thing', 누구라도 똑같이 했을 거래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'denials that they have done anything deserving of high praise', 칭찬받을 일을 했다는 걸 부인하고, 'anyone in their shoes should have done exactly the same thing', 누구라도 똑같이 했을 거래요.",
+        "o2": "'denials that they have done anything deserving of high praise', 칭찬받을 일을 했다는 걸 부인하고, 'anyone in their shoes should have done exactly the same thing', 누구라도 똑같이 했을 거래요."
+      },
+      "from": "uj85x"
+    },
+    "s5_board": {
+      "say": "특별한 걸 한 게 아니라는 말이에요. 빈칸(어쩔 수 없었다)과 같은 쪽이죠. 칠판 오른쪽에 쌓아 둘게요.",
+      "from": "tiddqm"
+    },
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "someone": "그건 the more 덩어리 안의 주어예요.",
+        "they": "그건 that 뒤 덩어리 안의 주어예요.",
+        "are likely to insist": "그건 that 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 it, 동사는 seems예요(~인 것 같다). that 뒤가 그 내용이에요.",
+      "from": "o0jl0t"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1kodmhi"
+    },
+    "s6_more": {
+      "say": "더 이타적인 사람일수록, '우리 모두에게 기대되는 만큼만 했다'고 더 주장한대요. 역시 특별한 선택이 아니었다는 말이에요.",
+      "from": "10j4ykk"
+    },
+    "story_6": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_go": {
+      "say": "빈칸은 보통 사람들 생각과 반대 쪽이에요. 칠판 오른쪽 말을 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "smshir"
+    }
+  },
+  "exam": {
+    "ask": "보통 사람들 생각(스스로 결정)과 반대 쪽, 칠판 오른쪽 말을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 보통 사람들은 '스스로 결정할 권리'를 말하지만, 이타주의자들은 정반대로 '그렇게 할 수밖에 없었다'고 해요. 칭찬받을 일도 아니고 누구라도 똑같이 했을 거라는 말이 같은 쪽이에요.",
+    "final_wrong": "정답은 ①이에요. 이타주의자들은 스스로 고른 게 아니라 그렇게 할 수밖에 없었다고 말해요.",
+    "option_feedback": {
+      "2": "보상 이야기는 글에 없어요. 오히려 칭찬받을 일도 아니라고 했어요.",
+      "3": "후회한다는 말은 글에 없어요. 누구라도 똑같이 했을 거라며 당연하게 여겨요.",
+      "4": "그들은 칭찬받을 일을 했다는 걸 부인했어요(denials). 감사를 받을 만했다는 건 반대예요.",
+      "5": "그들은 기본적인 도덕적 의무를 다했을 뿐이라고 했어요. 의무가 적용되지 않는다는 건 반대예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 16.5%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "④는 '그 대가로 감사를 받을 만했다'예요. 그런데 이타주의자들은 칭찬받을 만한 일을 했다는 걸 분명히 부인했어요(explicit denials). 누구라도 똑같이 했을 거라면서요.",
+        "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "큰 희생을 했으니 감사받을 만하다고 생각했어요",
+            "skills": [
+              "own_opinion"
+            ],
+            "reply": "알려 줘서 고마워요. 내 생각이 아니라 글 속 이타주의자들이 뭐라고 주장하는지를 골라야 해요. 앞으로 '누구의 말인지'를 짚어 줄게요."
+          },
+          {
+            "label": "denials를 못 봤어요",
+            "skills": [
+              "denial_word"
+            ],
+            "reply": "알려 줘서 고마워요. denial은 '부인, 부정'이에요. 앞으로 비슷한 단어가 나오면 강조해서 알려 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "own_opinion",
+              "denial_word"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 누구의 말인지와 부정의 말을 같이 짚어 줄게요."
+          }
+        ]
+      },
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 23.9%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "⑤는 '위험한 상황에서는 도덕적 의무가 적용되지 않는다고 여겼다'예요. 하지만 마지막 문장에서 이타주의자들은 '우리 모두에게 기대되는 만큼만 했다', 기본적인 도덕적 의무를 다했을 뿐이라고 해요. 의무가 그대로 적용된다고 본 거라 반대예요.",
+        "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "moral obligation이 글에 나와서 골랐어요",
+            "skills": [
+              "word_overlap"
+            ],
+            "reply": "알려 줘서 고마워요. 글에 나온 단어가 보기에 있다고 정답은 아니에요. 그 단어를 어떻게 말하는지(적용된다/안 된다)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "lest 뒤 문장이 어려웠어요",
+            "skills": [
+              "lest_clause"
+            ],
+            "reply": "알려 줘서 고마워요. lest we shirk는 '우리가 회피하지 않도록'이에요. 의무를 지킨다는 말이에요. 앞으로 비슷한 구문이 나오면 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "word_overlap",
+              "lest_clause"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 단어가 어떻게 쓰였는지와 어려운 구문을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "마지막 문장",
+              "text": "done no more than … expected … our basic moral obligation",
+              "ko": "기대되는 만큼, 도덕적 의무를 다했을 뿐",
+              "tone": "hl"
+            },
+            {
+              "label": "⑤",
+              "text": "moral obligations inapplicable",
+              "ko": "도덕적 의무가 적용 안 됨 → 반대",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1b6uen2"
+  },
+  "intro": {
+    "topic": {
+      "say": "남을 구하려고 목숨을 건 사람은 자기 행동을 어떻게 말할까요? 이번 글은 이타적인 행동을 보는 두 생각을 다뤄요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "19sjye1"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "6vw8pg"
+}

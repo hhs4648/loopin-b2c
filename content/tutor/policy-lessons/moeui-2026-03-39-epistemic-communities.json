@@ -1129,7 +1129,93 @@
             "explain": "주어는 one, 동사는 needs, 목적어는 to become a member(구성원이 되는 것)예요.",
             "point": "To acquire … = ~하기 위해(주어 아님) · S one / V needs / O to become a member · 콤마 사이가 메인 문장"
           },
-          "method": 0
+          "method": 0,
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "콤마 사이 = 늘 삽입?",
+              "mark": "one needs",
+              "text": "콤마 두 개 사이가 늘 빼도 되는 삽입은 아니에요. 그 안에 주어와 동사가 있으면 메인 문장이라 꼭 읽어야 해요. 여기서는 'one needs'가 주어와 동사예요."
+            },
+            {
+              "label": "for which",
+              "mark": "for which",
+              "text": "which는 앞의 'the relevant group of knowledge bearers'를 받아요. '그 집단에 대해 나는 ~라는 용어를 쓰겠다'예요."
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "To acquire",
+            "one",
+            "needs",
+            "to become a member",
+            "the relevant group"
+          ],
+          "answers": [
+            "To acquire",
+            "one",
+            "the relevant group",
+            "to become a member",
+            "needs"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "To acquire",
+                "ko": "얻으려면"
+              },
+              " 전문 지식을 ",
+              {
+                "en": "one",
+                "ko": "사람은"
+              },
+              " ",
+              {
+                "en": "the relevant group",
+                "ko": "관련 집단"
+              },
+              "의 ",
+              {
+                "en": "to become a member",
+                "ko": "일원이 되는 것"
+              },
+              "이 ",
+              {
+                "en": "needs",
+                "ko": "필요하다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "To acquire expert knowledge, one needs to become a member of the relevant group.",
+          "tips": [
+            {
+              "label": "콤마 사이 = 늘 삽입?",
+              "mark": "one needs",
+              "text": "콤마 두 개 사이가 늘 빼도 되는 삽입은 아니에요. 그 안에 주어와 동사가 있으면 메인 문장이라 꼭 읽어야 해요. 여기서는 'one needs'가 주어와 동사예요."
+            },
+            {
+              "label": "for which",
+              "mark": "for which",
+              "text": "which는 앞의 'the relevant group of knowledge bearers'를 받아요. '그 집단에 대해 나는 ~라는 용어를 쓰겠다'예요."
+            }
+          ]
         },
         {
           "id": "s2_sum",
@@ -1501,6 +1587,67 @@
             "explain": "주어는 A newcomer, 동사는 learns와 is socialized 두 개예요.",
             "point": "A newcomer(S) learns(V) … and is socialized(V) … · and 뒤에 주어 없이 동사가 오면 앞 주어의 동사가 하나 더"
           },
+          "method": 0,
+          "slot": "s3_basic"
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "A newcomer",
+            "learns",
+            "from experts",
+            "is socialized",
+            "into the common practices"
+          ],
+          "answers": [
+            "A newcomer",
+            "from experts",
+            "learns",
+            "into the common practices",
+            "is socialized"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A newcomer",
+                "ko": "새로 온 사람은"
+              },
+              " ",
+              {
+                "en": "from experts",
+                "ko": "전문가에게서"
+              },
+              " ",
+              {
+                "en": "learns",
+                "ko": "배우고"
+              },
+              ", 공동체의 ",
+              {
+                "en": "into the common practices",
+                "ko": "공통된 관행 속으로"
+              },
+              " ",
+              {
+                "en": "is socialized",
+                "ko": "사회화된다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
           "method": 0
         },
         {
@@ -1838,6 +1985,97 @@
       ],
       "steps": [
         {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "there",
+            "are",
+            "admittance processes",
+            "tests"
+          ],
+          "answers": [
+            "are",
+            "admittance processes"
+          ],
+          "roles": {
+            "are": "V",
+            "admittance processes": "S"
+          },
+          "brief": {
+            "ask": "there are(~이 있다) 문장이에요. 동사(V)와 그 뒤의 진짜 주어(S)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "there": "there are(~이 있다)에서 there는 자리만 채우는 말이에요. 진짜 주어는 are 뒤에 있어요.",
+              "tests": "그건 combined with 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "there are 구조라 동사 are 뒤의 admittance processes(입회 절차)가 주어예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic"
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "Often",
+            "are",
+            "admittance processes",
+            "tests"
+          ],
+          "answers": [
+            "Often",
+            "tests",
+            "admittance processes",
+            "are"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Often",
+                "ko": "흔히"
+              },
+              " ",
+              {
+                "en": "tests",
+                "ko": "시험"
+              },
+              "이 붙은 ",
+              {
+                "en": "admittance processes",
+                "ko": "입회 절차"
+              },
+              "가 ",
+              {
+                "en": "are",
+                "ko": "있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Often there are admittance processes, combined with tests."
+        },
+        {
           "id": "s4_key",
           "type": "show",
           "interaction": "note",
@@ -2060,7 +2298,86 @@
             "explain": "주어는 epistemic communities, 동사는 were often kept, 보어는 secret(비밀인 상태)이에요.",
             "point": "epistemic communities(S) were often kept(V) secret(C) · 뒤는 with(시험), because of(이유)로 덧붙임"
           },
-          "method": 0
+          "method": 0,
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "pre-",
+              "mark": "premodern",
+              "text": "pre-는 '~ 이전, 미리'라는 뜻이에요. pre + modern(근대) = 근대 이전, 즉 전근대예요. preview(미리 보기)의 pre-도 같아요."
+            },
+            {
+              "label": "not least because of",
+              "mark": "not least because of",
+              "text": "'특히 ~때문에'예요. 비밀로 한 이유가 뒤에 나와요. 전문 지식이 '잘못된 손', 즉 나쁜 사람에게 들어갈까 봐서예요."
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "In the premodern era",
+            "epistemic communities",
+            "were often kept",
+            "secret"
+          ],
+          "answers": [
+            "In the premodern era",
+            "epistemic communities",
+            "secret",
+            "were often kept"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In the premodern era",
+                "ko": "옛날(근대 이전)에는"
+              },
+              " ",
+              {
+                "en": "epistemic communities",
+                "ko": "지식 공동체가"
+              },
+              " ",
+              {
+                "en": "secret",
+                "ko": "비밀로"
+              },
+              " ",
+              {
+                "en": "were often kept",
+                "ko": "자주 지켜졌다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "In the premodern era, epistemic communities were often kept secret.",
+          "tips": [
+            {
+              "label": "pre-",
+              "mark": "premodern",
+              "text": "pre-는 '~ 이전, 미리'라는 뜻이에요. pre + modern(근대) = 근대 이전, 즉 전근대예요. preview(미리 보기)의 pre-도 같아요."
+            },
+            {
+              "label": "not least because of",
+              "mark": "not least because of",
+              "text": "'특히 ~때문에'예요. 비밀로 한 이유가 뒤에 나와요. 전문 지식이 '잘못된 손', 즉 나쁜 사람에게 들어갈까 봐서예요."
+            }
+          ]
         },
         {
           "id": "s5_past",
@@ -2328,7 +2645,97 @@
             "explain": "but 앞은 S Some traces, V may still be, C present예요. but 뒤는 S the ideal, V has shifted, to 뒤 openness예요.",
             "point": "Some traces(S) may still be(V) present(C) … but … the ideal(S) has shifted(V) to openness(전목)"
           },
-          "method": 0
+          "method": 0,
+          "slot": "s6_basic",
+          "tips": [
+            {
+              "label": "on the whole",
+              "mark": "on the whole",
+              "text": "'전체적으로 봤을 때에는'이라는 뜻이에요. whole만 떼어 '전체'로 읽지 말고 한 덩어리로 봐요."
+            }
+          ]
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "Some traces",
+            "may still be",
+            "today",
+            "but",
+            "the ideal",
+            "has shifted",
+            "openness"
+          ],
+          "answers": [
+            "Some traces",
+            "today",
+            "may still be",
+            "but",
+            "the ideal",
+            "openness",
+            "has shifted"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Some traces",
+                "ko": "어떤 흔적은"
+              },
+              " ",
+              {
+                "en": "today",
+                "ko": "오늘날에도"
+              },
+              " ",
+              {
+                "en": "may still be",
+                "ko": "여전히 남아 있을 수 있다"
+              },
+              ", ",
+              {
+                "en": "but",
+                "ko": "그러나"
+              },
+              " ",
+              {
+                "en": "the ideal",
+                "ko": "이상(추구하는 바)은"
+              },
+              " ",
+              {
+                "en": "openness",
+                "ko": "개방성"
+              },
+              "으로 ",
+              {
+                "en": "has shifted",
+                "ko": "옮겨 갔다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Some traces of these older practices may still be present today, but the ideal has shifted to openness.",
+          "tips": [
+            {
+              "label": "on the whole",
+              "mark": "on the whole",
+              "text": "'전체적으로 봤을 때에는'이라는 뜻이에요. whole만 떼어 '전체'로 읽지 말고 한 덩어리로 봐요."
+            }
+          ]
         },
         {
           "id": "s6_but",
@@ -2529,6 +2936,67 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 Other, more active strategies, 동사는 are needed예요.",
             "point": "Other, more active strategies(S) are needed(V) to make … accessible"
+          },
+          "method": 0,
+          "slot": "s7_basic"
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "Other, more active strategies",
+            "are needed",
+            "to make",
+            "certain forms of knowledge",
+            "accessible"
+          ],
+          "answers": [
+            "Other, more active strategies",
+            "certain forms of knowledge",
+            "accessible",
+            "to make",
+            "are needed"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Other, more active strategies",
+                "ko": "다른, 더 적극적인 전략이"
+              },
+              " ",
+              {
+                "en": "certain forms of knowledge",
+                "ko": "어떤 형태의 지식"
+              },
+              "을 ",
+              {
+                "en": "accessible",
+                "ko": "접근할 수 있게"
+              },
+              " ",
+              {
+                "en": "to make",
+                "ko": "만들기 위해"
+              },
+              " ",
+              {
+                "en": "are needed",
+                "ko": "필요하다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
           },
           "method": 0
         },

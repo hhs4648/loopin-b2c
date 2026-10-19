@@ -1,0 +1,110 @@
+{
+ "1": [
+  {
+   "word": "which",
+   "phrase": "variances, which may interfere",
+   "sense": "(그것은) ~하는",
+   "usage": "콤마 + which = 앞 명사를 덧붙여 설명"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "To address",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  },
+  {
+   "word": "for",
+   "phrase": "call for",
+   "sense": "~을 (요구하다)",
+   "usage": "call for + 명사"
+  },
+  {
+   "word": "which",
+   "phrase": "in which",
+   "sense": "그 (접근법)에서는",
+   "usage": "전치사 + which"
+  },
+  {
+   "word": "as",
+   "phrase": "as barriers",
+   "sense": "~로",
+   "usage": "be perceived as + 명사"
+  },
+  {
+   "word": "but",
+   "phrase": "but as avenues",
+   "sense": "~가 아니라 (B)",
+   "usage": "not A but B"
+  },
+  {
+   "word": "as",
+   "phrase": "as avenues",
+   "sense": "~로",
+   "usage": "be perceived as + 명사"
+  },
+  {
+   "word": "for",
+   "phrase": "for meaning making",
+   "sense": "~을 위한",
+   "usage": "전치사 for + 명사"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "found that exposure",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (find that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "exposure to other Englishes",
+   "sense": "~에 (노출)",
+   "usage": "exposure to + 명사"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "have to work",
+   "sense": "~해야 (하다)",
+   "usage": "have to + 동사원형"
+  },
+  {
+   "word": "to",
+   "phrase": "to examine",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  },
+  {
+   "word": "for",
+   "phrase": "for their rhetorical",
+   "sense": "~을 위해, ~을 보려고",
+   "usage": "전치사 for + 명사"
+  }
+ ],
+ "5": [
+  {
+   "word": "so",
+   "phrase": "so any linguistic",
+   "sense": "그래서",
+   "usage": "접속사 so (결과)"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "listening to speakers",
+   "sense": "~을 (듣다)",
+   "usage": "listen to + 명사"
+  },
+  {
+   "word": "to",
+   "phrase": "conform to what",
+   "sense": "~에 (맞다)",
+   "usage": "conform to + 명사"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 250" fill="none">
+  <!-- 2024년 3월 23번 2문장: 새 생각이 기존 생각에 맞선다 — 기존 생각은 정체성의 일부, 정체성은 우리 무리(group)와 이어진다 → 크게 위협 -->
+  <defs>
+    <marker id="hit" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#e2607d"/>
+    </marker>
+  </defs>
+  <g font-family="'Gowun Dodum','Noto Sans KR',sans-serif" font-weight="700">
+    <!-- 우리 무리 (group) -->
+    <rect x="170" y="14" width="176" height="184" rx="16" fill="#fdf7f2" stroke="#d9b9a6" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="184" y="34" font-size="12.5" fill="#8a5a6a">우리 무리 (group)</text>
+    <g fill="#d9b9a6">
+      <circle cx="312" cy="26" r="4.5"/><rect x="307" y="31" width="10" height="11" rx="3"/>
+      <circle cx="328" cy="26" r="4.5"/><rect x="323" y="31" width="10" height="11" rx="3"/>
+    </g>
+    <!-- 정체성 -->
+    <rect x="182" y="48" width="152" height="134" rx="14" fill="#fff6dd" stroke="#f0b84a" stroke-width="2.5"/>
+    <text x="258" y="68" text-anchor="middle" font-size="13" fill="#a8741a">identity · 정체성</text>
+    <!-- 기존 생각 -->
+    <rect x="202" y="84" width="112" height="58" rx="12" fill="#ffffff" stroke="#ef7a93" stroke-width="2.5"/>
+    <text x="258" y="109" text-anchor="middle" font-size="14" fill="#c0455f">the ones</text>
+    <text x="258" y="128" text-anchor="middle" font-size="11.5" fill="#8a7f88">이미 가진 생각</text>
+    <text x="258" y="165" text-anchor="middle" font-size="11" fill="#a8741a">= part of our identity</text>
+    <!-- 새 생각 -->
+    <rect x="4" y="84" width="88" height="58" rx="12" fill="#f2fbf8" stroke="#8fd0c0" stroke-width="2.5"/>
+    <text x="48" y="109" text-anchor="middle" font-size="13.5" fill="#2f7d6c">a new idea</text>
+    <text x="48" y="128" text-anchor="middle" font-size="11.5" fill="#8a7f88">새 생각</text>
+    <!-- 맞선다 (상자들 위에 그린다) -->
+    <path d="M94 113 H198" stroke="#e2607d" stroke-width="3" marker-end="url(#hit)"/>
+    <text x="131" y="103" text-anchor="middle" font-size="12" fill="#c0455f">challenges</text>
+    <text x="131" y="131" text-anchor="middle" font-size="11" fill="#8a7f88">맞서다</text>
+    <!-- 결과 -->
+    <text x="175" y="222" text-anchor="middle" font-size="13" fill="#2b2430">→ we feel deeply threatened · 크게 위협을 느낀다</text>
+    <text x="175" y="242" text-anchor="middle" font-size="11" fill="#8a7f88">그 생각이 무너지면 무리에서 밀려날 것 같아서 (social death)</text>
+  </g>
+</svg>

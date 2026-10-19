@@ -6,21 +6,40 @@
     {
       "id": "moeui",
       "title": "모의고사",
-      "subtitle": "전국연합학력평가 · 모의평가",
+      "subtitle": "전국연합학력평가 · 모의평가 · 수능",
       "collections": [
         {
           "id": "mopyeong-2026-06",
           "title": "2026학년도 6월 모의평가",
           "subtitle": "2025년 6월 시행 · 한국교육과정평가원",
-          "tag": "평가원"
+          "tag": "평가원",
+          "exam": {
+            "body": "평가원",
+            "held": "2025-06"
+          }
         },
         {
           "id": "moeui-2026-03",
           "title": "2026년 3월 모의고사",
-          "subtitle": "2026년 3월 고3 전국연합학력평가 영어",
-          "tag": "모의"
+          "subtitle": "2026년 3월 시행 · 고3 전국연합학력평가",
+          "tag": "모의",
+          "exam": {
+            "body": "교육청",
+            "held": "2026-03"
+          }
+        },
+        {
+          "id": "moeui-2024-03",
+          "title": "2024년 3월 모의고사",
+          "subtitle": "2024년 3월 시행 · 고3 전국연합학력평가",
+          "tag": "모의",
+          "exam": {
+            "body": "교육청",
+            "held": "2024-03"
+          }
         }
-      ]
+      ],
+      "track": "exam"
     }
   ],
   "sets": [
@@ -120,6 +139,228 @@
       "subtitle": "순서 — 자석 추로 본 혼돈",
       "lessons": [
         "mopyeong-2026-06-37-chaos-pendulum"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-39",
+      "collection": "moeui-2024-03",
+      "title": "39번 문제",
+      "subtitle": "문장 넣기 — 원근법 그림과 예전 그림",
+      "wrong_rate": 78.1,
+      "lessons": [
+        "moeui-2024-03-39-perspective-painting"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-34",
+      "collection": "moeui-2024-03",
+      "title": "34번 문제",
+      "subtitle": "빈칸 — 이름에 맞춰 바꾼 신호등 색",
+      "wrong_rate": 71.9,
+      "lessons": [
+        "moeui-2024-03-34-ao-green-light"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-31",
+      "collection": "moeui-2024-03",
+      "title": "31번 문제",
+      "subtitle": "빈칸 — 자라면서 잃는 즉흥성",
+      "wrong_rate": 71.0,
+      "lessons": [
+        "moeui-2024-03-31-conventional-writing"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-37",
+      "collection": "moeui-2024-03",
+      "title": "37번 문제",
+      "subtitle": "순서 — 지속 가능한 도시 계획의 여러 방식",
+      "wrong_rate": 67.3,
+      "lessons": [
+        "moeui-2024-03-37-urban-planning"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-32",
+      "collection": "moeui-2024-03",
+      "title": "32번 문제",
+      "subtitle": "빈칸 — 이타주의자는 선택이 없었다고 말한다",
+      "wrong_rate": 66.3,
+      "lessons": [
+        "moeui-2024-03-32-altruists-no-choice"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-38",
+      "collection": "moeui-2024-03",
+      "title": "38번 문제",
+      "subtitle": "문장 넣기 — 운전한 만큼 내는 보험료",
+      "wrong_rate": 57.2,
+      "lessons": [
+        "moeui-2024-03-38-pay-as-you-drive"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-33",
+      "collection": "moeui-2024-03",
+      "title": "33번 문제",
+      "subtitle": "빈칸 — 통제할 수 없는 일에 화내지 않기",
+      "wrong_rate": 56.1,
+      "lessons": [
+        "moeui-2024-03-33-stoic-control"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-12",
+      "collection": "moeui-2024-03",
+      "title": "12번 문제",
+      "subtitle": "듣기 응답 — 두 시간 운전 뒤 쉬자는 말",
+      "wrong_rate": 54.9,
+      "lessons": [
+        "moeui-2024-03-12-driving-break"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-24",
+      "collection": "moeui-2024-03",
+      "title": "24번 문제",
+      "subtitle": "제목 — 시간의 경계를 넘어 행동하기",
+      "wrong_rate": 50.3,
+      "lessons": [
+        "moeui-2024-03-24-distance-in-time"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-21",
+      "collection": "moeui-2024-03",
+      "title": "21번 문제",
+      "subtitle": "밑줄 의미 — 가격을 맛본다",
+      "wrong_rate": 49.9,
+      "lessons": [
+        "moeui-2024-03-21-taste-its-price"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-40",
+      "collection": "moeui-2024-03",
+      "title": "40번 문제",
+      "subtitle": "요약문 — 뇌는 평생 바뀐다",
+      "wrong_rate": 48.3,
+      "lessons": [
+        "moeui-2024-03-40-brain-plasticity"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-30",
+      "collection": "moeui-2024-03",
+      "title": "30번 문제",
+      "subtitle": "어휘 — 위치를 찾는 두 가지 정보",
+      "wrong_rate": 45.9,
+      "lessons": [
+        "moeui-2024-03-30-geometry-landmarks"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-11",
+      "collection": "moeui-2024-03",
+      "title": "11번 문제",
+      "subtitle": "듣기 응답 — 학생증 재발급과 사진",
+      "wrong_rate": 42.2,
+      "lessons": [
+        "moeui-2024-03-11-student-id-photo"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-42",
+      "collection": "moeui-2024-03",
+      "title": "42번 문제",
+      "subtitle": "어휘 — 불안을 키우는 혼잣말",
+      "wrong_rate": 40.2,
+      "lessons": [
+        "moeui-2024-03-42-automatic-thoughts"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-36",
+      "collection": "moeui-2024-03",
+      "title": "36번 문제",
+      "subtitle": "순서 — 재즈의 즉흥과 모차르트의 분석",
+      "wrong_rate": 38.9,
+      "lessons": [
+        "moeui-2024-03-36-creative-spectrum"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-22",
+      "collection": "moeui-2024-03",
+      "title": "22번 문제",
+      "subtitle": "요지 — 여러 언어로 느끼는 감정",
+      "lessons": [
+        "moeui-2024-03-22-multilingual-feelings"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-23",
+      "collection": "moeui-2024-03",
+      "title": "23번 문제",
+      "subtitle": "주제 — 왜 '우리 편'을 고를까",
+      "lessons": [
+        "moeui-2024-03-23-tribe-thinking"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-29",
+      "collection": "moeui-2024-03",
+      "title": "29번 문제",
+      "subtitle": "어법 — 문화를 넘나드는 경험",
+      "lessons": [
+        "moeui-2024-03-29-crossing-cultures"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-35",
+      "collection": "moeui-2024-03",
+      "title": "35번 문제",
+      "subtitle": "무관한 문장 — 언어 차이는 장벽일까",
+      "lessons": [
+        "moeui-2024-03-35-translingual-approach"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-41",
+      "collection": "moeui-2024-03",
+      "title": "41번 문제",
+      "subtitle": "제목 — 혼잣말과 생각 바꾸기",
+      "lessons": [
+        "moeui-2024-03-41-reshaping-thoughts"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-43",
+      "collection": "moeui-2024-03",
+      "title": "43번 문제",
+      "subtitle": "순서 — 할아버지의 야구 카드",
+      "lessons": [
+        "moeui-2024-03-43-baseball-card"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-44",
+      "collection": "moeui-2024-03",
+      "title": "44번 문제",
+      "subtitle": "지칭 — 밑줄 친 그는 누구?",
+      "lessons": [
+        "moeui-2024-03-44-who-is-he"
+      ]
+    },
+    {
+      "id": "moeui-2024-03-45",
+      "collection": "moeui-2024-03",
+      "title": "45번 문제",
+      "subtitle": "내용 일치 — 할아버지의 야구 카드",
+      "lessons": [
+        "moeui-2024-03-45-story-details"
       ]
     }
   ]

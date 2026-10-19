@@ -28,6 +28,22 @@ describe("수업 세트", () => {
     expect(missing).toEqual([]);
   });
 
+  it("모의고사·수능: 제목 연도는 평가원이면 학년도(시행 +1), 교육청이면 시행연도 — 부제 맨 앞에 「YYYY년 M월 시행」", () => {
+    const bad = allGroups()
+      .filter((g) => g.track === "exam")
+      .flatMap((g) => g.collections)
+      .flatMap((c) => {
+        if (!c.exam) return [`${c.id}: exam 없음`];
+        const [y, m] = c.exam.held.split("-").map(Number);
+        const titled = c.exam.body === "평가원" ? `${y! + 1}학년도` : `${y}년`;
+        const errs: string[] = [];
+        if (!c.title.startsWith(titled)) errs.push(`${c.id}: 제목은 ${titled}로 시작`);
+        if (!c.subtitle.startsWith(`${y}년 ${m}월 시행`)) errs.push(`${c.id}: 부제는 ${y}년 ${m}월 시행으로 시작`);
+        return errs;
+      });
+    expect(bad).toEqual([]);
+  });
+
   it("세트 id가 겹치지 않는다", () => {
     const ids = RAW.map((set) => set.id);
     expect(new Set(ids).size).toBe(ids.length);
@@ -67,7 +83,7 @@ describe("수업 세트", () => {
 
   it("목록은 2026년 3월 모의고사 — 21번, 30번, 39번, 24번, 36번, 33번, 38번 (2026-10-05에 새로 시작)", () => {
     expect(allGroups().map((g) => g.id)).toEqual(["moeui"]);
-    expect(allCollections().map((c) => c.id)).toEqual(["mopyeong-2026-06", "moeui-2026-03"]);
+    expect(allCollections().map((c) => c.id)).toEqual(["mopyeong-2026-06", "moeui-2026-03", "moeui-2024-03"]);
     expect(setsIn("mopyeong-2026-06").map((s) => s.id)).toEqual(["mopyeong-2026-06-34", "mopyeong-2026-06-37"]);
     expect(setsIn("moeui-2026-03").map((s) => s.id)).toEqual(["moeui-2026-03-21", "moeui-2026-03-30", "moeui-2026-03-39", "moeui-2026-03-39-v1", "moeui-2026-03-24", "moeui-2026-03-36", "moeui-2026-03-33", "moeui-2026-03-38"]);
     expect(getCollection("moeui-2026-03")?.title).toBe("2026년 3월 모의고사");

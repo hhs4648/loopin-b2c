@@ -1,0 +1,90 @@
+{
+ "2": [
+  {
+   "word": "but",
+   "phrase": "But Landscape Urbanists",
+   "sense": "그러나",
+   "usage": "접속사 but (문장 앞)"
+  },
+  {
+   "word": "that",
+   "phrase": "find that these designs",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (find that …)"
+  }
+ ],
+ "3": [
+  {
+   "word": "as",
+   "phrase": "such as those",
+   "sense": "~ 같은",
+   "usage": "such as + 명사 (예시)"
+  },
+  {
+   "word": "for",
+   "phrase": "advocating for",
+   "sense": "~을 (주장하는)",
+   "usage": "advocate for + 명사 = ~을 지지·주장하다"
+  },
+  {
+   "word": "that",
+   "phrase": "find that both approaches",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (find that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "attention to the realities",
+   "sense": "~에 (주의를 기울이다)",
+   "usage": "pay attention to + 명사"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "claim that Landscape Urbanists",
+   "sense": "~라고",
+   "usage": "명사절 that (claim that …)"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "an approach that was popularized",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "7": [
+  {
+   "word": "for",
+   "phrase": "For example",
+   "sense": "(For example의 일부)",
+   "usage": "For example = 예를 들어"
+  },
+  {
+   "word": "that",
+   "phrase": "approach that advocates",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "for",
+   "phrase": "advocates for",
+   "sense": "~을 (옹호하다)",
+   "usage": "advocate for + 명사"
+  },
+  {
+   "word": "that",
+   "phrase": "designs that include",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "that",
+   "phrase": "landscapes that require",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ]
+}

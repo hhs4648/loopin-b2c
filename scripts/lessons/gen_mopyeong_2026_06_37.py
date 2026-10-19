@@ -19,6 +19,8 @@ import os
 
 ID = "mopyeong-2026-06-37-chaos-pendulum"
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from order_tools import card, order_link  # noqa: E402
 
 
 def g(en, ko):
@@ -147,14 +149,7 @@ sentences = [
                     g("at first", "처음에는"), g("the same", "같은"), g("soon", "곧"), g("will become", "~해질 것이다"),
                     g("completely different", "완전히 다른")],
         "steps": [
-            sv_pick("b2_sv", ["the pendulum", "is released", "the pattern of movement", "may at first be",
-                              "it", "will become", "completely different"],
-                    {"the pattern of movement": "S", "may at first be": "V", "it": "S", "will become": "V", "completely different": "C"},
-                    "콤마 뒤 문장에는 주어·동사가 두 쌍 있어요. 주어(S), 동사(V), 보어(C)를 모두 찾아볼까요?",
-                    {"the pendulum": "그건 If 뒤 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
-                     "is released": "그건 If 뒤 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."},
-                    "but 앞은 S the pattern of movement, V may at first be예요. but 뒤는 S it, V will become, C completely different예요.",
-                    wrong="그건 주어·동사·보어가 아니에요."),
+            # 가운데 문장 — 읽기 + 한 줄 정리만 (순서 틀: 첫·끝 문장만 자세히)
             show("b2_change",
                  "같은 자리에서 두 번 놓아도, 처음엔 같다가 곧 완전히 달라진대요. 이게 바로 chaos(혼돈)예요.",
                  panel={"kind": "picture", "title": "칠판 그림", "src": "/assets/magnetic-pendulum.svg",
@@ -224,9 +219,14 @@ sentences = [
                    highlight=["not all"],
                    tips=[{"label": "not all", "mark": "not all",
                           "text": "'모두 ~인 것은 아니다'(부분 부정)예요. '전부 아니다'가 아니에요."}]),
-            show("c2_next",
-                 "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요. 앞에서 읽은 (A)가 바로 그 조건이었죠.",
-                 button="다음", highlight=["not all"]),
+            # 단락 끝 — 다음에 올 내용 예측. 어느 단락이 오는지는 말하지 않는다(순서를 고르기 전)
+            choice("c2_next",
+                   "'모든 반복이 혼돈은 아니다'로 끝났어요. 다음엔 어떤 내용이 오기 쉬울까요?",
+                   [("o0", "추를 놓아 보는 실험 방법", False), ("o1", "어떤 반복이 혼돈이 되는지, 그 조건", True),
+                    ("o2", "자석 장난감의 생김새", False)],
+                   "'모두 그런 건 아니다'라고 했으면, 다음엔 '그럼 어떤 경우에 그런지'가 오기 쉬워요.",
+                   why="'모든 반복이 혼돈은 아니다' 다음엔, 어떤 반복이 혼돈이 되는지 그 조건이 와야 자연스러워요.",
+                   highlight=["not all"]),
         ],
     },
     {
@@ -280,16 +280,20 @@ sentences = [
         "glosses": [g("Before that point is reached", "그 지점에 이르기 전에는"), g("they", "그것들(비선형 체계)"),
                     g("may behave", "움직일 수도 있다"), g("in a quite orderly fashion", "꽤 질서 있게")],
         "steps": [
+            order_link(
+                card("given", "주어진 글", last=("… a pendulum that swings back and forth between them", "자석들 사이를 왔다 갔다 하는 추")),
+                [card("A", "(A)", first=("In order to produce chaos, the iteration has to be …", "혼돈을 만들려면 그 반복이 ~해야 한다"),
+                      last=("Before that point … in a quite orderly fashion", "그 지점 전에는 꽤 질서 있게 움직일 수도 있다")),
+                 card("B", "(B)", first=("Release the pendulum and note the magnets that it visits", "추를 놓고 들르는 자석을 봐요"),
+                      last=("In fact, the pattern of its movement is chaotic", "사실 그 움직임은 혼돈 상태다")),
+                 card("C", "(C)", first=("No matter how much care is taken to start the pendulum in the same position, …", "아무리 조심해서 같은 자리에서 시작해도"),
+                      last=("… though not all iteration leads to chaos", "모든 반복이 혼돈이 되는 건 아니다"))],
+                ["B", "C", "A"],
+                "주어진 글(추 소개) → (B) Release the pendulum(그 추를 놓아 봐요) → (C) the same position(같은 자리에서 두 번), not all iteration → (A) the iteration, Nor(그 조건) 순서예요."),
+            # 보기를 다시 풀게 하지 않는다 — 맞춘 순서가 몇 번 보기인지 보여 준다 (2026-10-16 선생님)
             show("a_go",
-                 "단락마다 첫머리 단서를 다 찾았어요. 이제 주어진 글 다음에 이어질 순서를 직접 골라 봐요.",
-                 button="문제 풀러 갈게요",
-                 panel={"kind": "structure", "rows": [
-                     {"label": "주어진 글", "text": "… a pendulum that swings …", "ko": "장난감 추의 생김새", "tone": "hl2"},
-                     {"label": "(A)", "text": "the iteration … Nor …", "ko": "앞에 iteration, 부정(not all)이 있어야"},
-                     {"label": "(B)", "text": "Release the pendulum …", "ko": "앞에 그 추의 소개가 있어야"},
-                     {"label": "(C)", "text": "… the same position … two occasions", "ko": "앞에 '같은 자리에서 두 번째'가 있어야"},
-                 ]},
-                 method=1),
+                 "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?",
+                 button="문제 풀러 갈게요", method=1),
         ],
     },
 ]
@@ -304,18 +308,19 @@ for s_ in _rest:
     _order.append((_cur, s_))
 _rest = [s_ for _, s_ in sorted(_order, key=lambda x: "ABC".index(x[0]))]
 # 마무리(순서 고르러 가기)는 맨 끝 문장(C)으로
-_go = next(st for s_ in _rest for st in s_["steps"] if st["id"] == "a_go")
+_go = [st for s_ in _rest for st in s_["steps"] if st["id"] in ("order_link", "a_go")]
 for s_ in _rest:
-    s_["steps"] = [st for st in s_["steps"] if st["id"] != "a_go"]
-_rest[-1]["steps"].append(_go)
+    s_["steps"] = [st for st in s_["steps"] if st["id"] not in ("order_link", "a_go")]
+_rest[-1]["steps"].extend(_go)
 # 마무리가 빠진 (A) 끝 문장 — 열쇠 문장이 아니니 한 줄 정리만
 for s_ in _rest:
     if not s_["steps"]:
         s_["steps"] = [show("a3_note", "그 지점(분기점)에 이르기 전에는 꽤 질서 있게 움직일 수도 있대요.", button="다음 문장")]
 # (A) 첫 문장 앞에 「시험지 순서라 어색할 수 있다」
-_rest[0]["steps"].insert(0, show("paper_order",
-    "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 실제 글의 순서와 달라서 단락 사이가 어색하게 이어질 수 있어요. 그 어색한 곳이 바로 순서의 단서예요.",
-    button="(A)부터 읽어 볼게요", before_read=True, method=1))
+# 주어진 글의 마지막 화면에서 — (A) 문장이 뜨기 전에 (2026-10-15 선생님)
+_given["steps"].append(show("paper_order",
+    "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요.",
+    button="(A)부터 읽어 볼게요", method=1))
 OLD_IDS = {s_["text"]: s_["id"] for s_ in _rest}
 sentences = [_given] + _rest
 for i, s_ in enumerate(sentences, 1):
@@ -380,6 +385,84 @@ lesson = {
 }
 
 # 찾기 후보 덩어리는 화면에서 따로 누를 수 있어야 한다 — 덩어리 뜻이 없으면 채운다
+# 헷갈리는 단어 Tip (2026-10-16 선생님) — 초급 화면에도 같이 붙는다(add_basic이 share_tips)
+def _tip(step_id, tip):
+    st = next(x for s_ in sentences for x in s_["steps"] if x["id"] == step_id)
+    st["tips"] = [x for x in st.get("tips", []) if x["label"] != tip["label"]] + [tip]
+
+
+_tip("a3_note", {"label": "fashion", "mark": "fashion",
+                 "text": "'방식'이에요. 옷의 패션이 아니에요. in a quite orderly fashion = 꽤 질서 있는 방식으로."})
+_tip("b_before", {"label": "note", "mark": "note",
+                  "text": "동사로 '주목하다, 눈여겨보다'예요. 공책(노트)이나 메모가 아니에요. note the magnets = 자석들을 눈여겨보다."})
+
+# 초급 기본 — 문장마다 「주어·동사 + 뜻」 또는 「해석 맞추기」 하나 (2026-10-15 선생님). 주어진 글은 모두에게 S·V가 있어 그대로
+from beginner import add_basic, fill_chunk_glosses, m, sv_step  # noqa: E402
+
+add_basic(sentences, 2, [m("In order to produce chaos", "혼돈을 만들어 내려면"), " ", m("the iteration", "그 반복은"), " ",
+                         m("a nonlinear system", "비선형 체계"), " 안에 ", m("has to be", "있어야 한다"), "."],
+          sv_id="a_sv", meaning="혼돈을 만들려면 그 반복(the iteration)이 비선형 체계 안에 있어야 한대요.")
+add_basic(sentences, 3, [m("Nor are all nonlinear systems chaotic", "모든 비선형 체계가 혼돈인 것도 아니다"), ": ", m("they", "그것들은"), " ",
+                         m("beyond a certain point", "어떤 지점 너머로"), " ", m("need to be pushed", "밀려나야 한다"), "."],
+          match_display="Nor are all nonlinear systems chaotic: they need to be pushed beyond a certain point.",
+          sv_new=sv_step("s3_basic_sv", ["all nonlinear systems", "are", "chaotic", "they", "need to be pushed"],
+                         {"are": "V", "all nonlinear systems": "S", "chaotic": "C"},
+                         {"they": "그건 콜론(:) 뒤 문장의 주어예요. 콜론 앞에서 찾아봐요.", "need to be pushed": "그건 콜론(:) 뒤 문장의 동사예요."},
+                         "Nor 뒤라 순서가 바뀌었어요(도치). 동사 are, 주어 all nonlinear systems, 보어 chaotic이에요.",
+                         ask="Nor 뒤는 동사가 주어보다 먼저 와요. 콜론(:) 앞에서 주어(S)·동사(V)·보어(C)를 찾아볼까요?"),
+          meaning_ids=["a2_nor"],
+          meaning="모든 비선형 체계가 혼돈인 것도 아니래요. 혼돈이 되려면 분기점이라는 어떤 지점 너머로 밀려나야 해요.")
+add_basic(sentences, 4, [m("Before that point is reached", "그 지점에 이르기 전에는"), " ", m("they", "그것들은"), " ",
+                         m("in a quite orderly fashion", "꽤 질서 있게"), " ", m("may behave", "움직일 수도 있다"), "."],
+          sv_new=sv_step("s4_basic_sv", ["that point", "is reached", "they", "may behave"], {"they": "S", "may behave": "V"},
+                         {"that point": "그건 Before(~ 전에) 덩어리 안의 주어예요.", "is reached": "그건 Before(~ 전에) 덩어리 안의 동사예요."},
+                         "주어는 they(그것들 — 비선형 체계), 동사는 may behave(움직일 수도 있다)예요."),
+          meaning_ids=["a3_note"])
+add_basic(sentences, 5, [m("the pendulum", "추를"), " ", m("Release", "놓아요"), ". 그리고 ", m("it visits", "그것이 들르는"), " ",
+                         m("the magnets", "자석들"), "과 ", m("in what order", "어떤 순서인지"), "를 ", m("note", "잘 봐요"), "."],
+          sv_id="b_sv", meaning="추를 놓고, 추가 어떤 자석에 어떤 순서로 들르는지 잘 보라는 말이에요.")
+add_basic(sentences, 6, [m("from the same position", "같은 자리에서"), " ", m("a second time", "두 번째로"), " 놓으면, ",
+                         m("the pattern of movement", "움직임의 패턴은"), " ", m("completely different", "완전히 다르게"), " ",
+                         m("will become", "될 것이다"), "."],
+          match_display="If the pendulum is released from the same position a second time, the pattern of movement will become completely different.",
+          sv_new=sv_step("s6_basic_sv", ["the pendulum", "is released", "the pattern of movement", "may at first be", "it", "will become"],
+                         {"the pattern of movement": "S", "may at first be": "V", "it": "S", "will become": "V"},
+                         {"the pendulum": "그건 If 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
+                          "is released": "그건 If 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."},
+                         "but 앞은 주어 the pattern of movement, 동사 may at first be예요. but 뒤는 주어 it, 동사 will become이에요."),
+          meaning_ids=["b2_change"])
+add_basic(sentences, 7, [m("In fact", "사실"), " ", m("the pattern of its movement", "그 움직임의 패턴은"), " ",
+                         m("chaotic", "혼돈 상태"), m("is", "이다"), "."],
+          sv_new=sv_step("s7_basic_sv", ["the pattern of its movement", "is", "chaotic"],
+                         {"the pattern of its movement": "S", "is": "V", "chaotic": "C"}, {},
+                         "주어는 the pattern of its movement, 동사는 is, 보어는 chaotic(혼돈 상태의)이에요."),
+          meaning_ids=["b3_chaotic"])
+add_basic(sentences, 8, [m("No matter how much care is taken", "아무리 주의를 기울여"), " ", m("in the same position", "같은 자리에서"),
+                         " 추를 출발시켜도, ", m("it", "그것은"), " ", m("an entirely different set of points", "전혀 다른 점들을"), " ",
+                         m("will visit", "들를 것이다"), "."],
+          match_display="No matter how much care is taken to start the pendulum in the same position, it will visit an entirely different set of points.",
+          sv_id="c_sv", meaning="아무리 조심해서 같은 자리에서 추를 출발시켜도, 두 번 다 전혀 다른 점들을 들른대요.")
+add_basic(sentences, 9, [m("Chaotic systems", "혼돈 체계는"), " ", m("iteration", "반복"), "에 의해 ", m("are generated", "만들어지지만"), ", ",
+                         m("not all iteration", "모든 반복이"), " 혼돈으로 ", m("leads to", "이어지는"), " 건 아니다."],
+          sv_id="c2_sv", meaning_ids=["c2_not_all"],
+          meaning="혼돈 체계는 반복으로 만들어지지만, 모든 반복이 혼돈이 되는 건 아니래요.")
+fill_chunk_glosses(sentences, {
+    "all nonlinear systems": "모든 비선형 체계", "are": "~이다", "chaotic": "혼돈 상태의", "they": "그것들",
+    "need to be pushed": "밀려나야 한다", "beyond a certain point": "어떤 지점 너머로", "that point": "그 지점",
+    "is reached": "도달되다", "may behave": "움직일 수도 있다", "the pendulum": "그 추", "is released": "놓이다",
+    "the pattern of movement": "움직임의 패턴", "may at first be": "처음엔 ~일 수도 있다", "it": "그것", "will become": "~해질 것이다",
+    "the pattern of its movement": "그 움직임의 패턴", "is": "~이다", "In fact": "사실", "a second time": "두 번째로",
+    "completely different": "완전히 다른", "from the same position": "같은 자리에서",
+    "In order to produce chaos": "혼돈을 만들어 내려면", "the iteration": "그 반복", "a nonlinear system": "비선형 체계",
+    "has to be": "~해야 한다", "Nor are all nonlinear systems chaotic": "모든 비선형 체계가 혼돈인 것도 아니다",
+    "Before that point is reached": "그 지점에 이르기 전에는", "in a quite orderly fashion": "꽤 질서 있게",
+    "Release": "놓다", "note": "주목하다", "the magnets": "자석들", "it visits": "그것이 들르다", "in what order": "어떤 순서로",
+    "No matter how much care is taken": "아무리 주의를 기울여도", "in the same position": "같은 자리에서",
+    "will visit": "들를 것이다", "an entirely different set of points": "완전히 다른 점들",
+    "Chaotic systems": "혼돈 체계", "iteration": "반복", "are generated": "만들어진다", "not all iteration": "모든 반복이 ~인 것은 아니다",
+    "leads to": "~로 이어지다",
+})
+
 CHUNKS = {
     "the pendulum": "추", "may at first be": "처음에는 ~일 수도 있다", "it": "그것(움직임의 패턴)",
     "No matter how much care": "아무리 많은 주의를", "is taken": "기울여지다", "are generated": "만들어진다",
@@ -388,7 +471,7 @@ CHUNKS = {
 for s_ in sentences:
     have = {x["en"] for x in s_["glosses"]}
     for st in s_["steps"]:
-        for c_ in st.get("candidates", []):
+        for c_ in ([] if st.get("order") else st.get("candidates", [])):
             if c_ not in have:
                 s_["glosses"].insert(0, g(c_, CHUNKS[c_]))
                 have.add(c_)

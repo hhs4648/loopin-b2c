@@ -1,0 +1,126 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "used to have",
+   "sense": "(used to의 일부)",
+   "usage": "used to + 동사원형 = 예전에 ~했다"
+  },
+  {
+   "word": "that",
+   "phrase": "ao, that spanned",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "has come to be",
+   "sense": "~하게 (되다)",
+   "usage": "come to + 동사원형 = ~하게 되다"
+  },
+  {
+   "word": "to",
+   "phrase": "restricted mostly to blue",
+   "sense": "~로 (한정)",
+   "usage": "be restricted to + 명사 = ~로 한정되다"
+  }
+ ],
+ "3": [
+  {
+   "word": "as",
+   "phrase": "just as green",
+   "sense": "~만큼 (똑같이)",
+   "usage": "as + 형용사 + as (원급 비교의 앞 as)"
+  },
+  {
+   "word": "as",
+   "phrase": "as anywhere else",
+   "sense": "~와 (같이)",
+   "usage": "원급 비교의 뒤 as — 비교 대상 앞"
+  }
+ ],
+ "5": [
+  {
+   "word": "for",
+   "phrase": "for a green light",
+   "sense": "~에 붙인, ~에 대한",
+   "usage": "전치사 for + 명사"
+  },
+  {
+   "word": "so",
+   "phrase": "so out of the ordinary",
+   "sense": "그다지, 그렇게",
+   "usage": "부사 so + 형용사 (not so = 그리 ~않은)"
+  }
+ ],
+ "6": [
+  {
+   "word": "but",
+   "phrase": "But over time",
+   "sense": "하지만",
+   "usage": "접속사 but (문장 앞)"
+  },
+  {
+   "word": "to",
+   "phrase": "began to feel",
+   "sense": "~하기 (시작하다)",
+   "usage": "begin + to부정사"
+  }
+ ],
+ "7": [
+  {
+   "word": "that",
+   "phrase": "Nations that are",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "for",
+   "phrase": "opted for",
+   "sense": "~을 (택하다)",
+   "usage": "opt for + 명사 = ~을 선택하다"
+  },
+  {
+   "word": "to",
+   "phrase": "the go light to midori",
+   "sense": "~로 (바꾸다)",
+   "usage": "change A to B = A를 B로 바꾸다"
+  }
+ ],
+ "8": [
+  {
+   "word": "so",
+   "phrase": "Not so",
+   "sense": "그렇게 (하지 않다)",
+   "usage": "Not so + 주어 = 주어는 그렇지 않다"
+  }
+ ],
+ "9": [
+  {
+   "word": "to",
+   "phrase": "to fit reality",
+   "sense": "~하도록, ~에 맞추려고",
+   "usage": "to부정사 (목적)"
+  },
+  {
+   "word": "that",
+   "phrase": "announced in 1973 that",
+   "sense": "~라고",
+   "usage": "명사절 that (announce that …)"
+  },
+  {
+   "word": "that",
+   "phrase": "a color that better",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "corresponded to",
+   "sense": "~에 (부합하다)",
+   "usage": "correspond to + 명사 = ~에 부합하다"
+  }
+ ]
+}

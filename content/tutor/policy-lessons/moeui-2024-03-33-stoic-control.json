@@ -1,0 +1,2739 @@
+{
+  "id": "moeui-2024-03-33-stoic-control",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 33번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-stoic.svg",
+      "alt": "칠판: In my control(내 힘 안) ↔ Out of control(내 힘 밖)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "비가 와서 소풍을 망치면 비에게 화가 나나요? 이번 글은 스토아 철학이 말하는 마음 다스리기를 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 4,
+    "analysis_first": true,
+    "wrong_rate": 56.1,
+    "wrong_rank": 7,
+    "glosses": [
+      {
+        "en": "argument",
+        "ko": "주장"
+      },
+      {
+        "en": "evidence",
+        "ko": "증거"
+      },
+      {
+        "en": "opinions",
+        "ko": "의견"
+      },
+      {
+        "en": "judgment",
+        "ko": "판단"
+      },
+      {
+        "en": "reacting",
+        "ko": "반응하는 것"
+      },
+      {
+        "en": "emotionally",
+        "ko": "감정적으로"
+      },
+      {
+        "en": "outside your control",
+        "ko": "통제 밖에 있는"
+      },
+      {
+        "en": "pretending",
+        "ko": "~인 척하는 것"
+      },
+      {
+        "en": "comprehended",
+        "ko": "이해했다"
+      },
+      {
+        "en": "rationalizing",
+        "ko": "합리화하는 것"
+      },
+      {
+        "en": "out of control",
+        "ko": "통제할 수 없는"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "making an argument without enough evidence",
+        "keywords": [
+          "argument",
+          "without enough evidence"
+        ],
+        "ko": "충분한 증거 없이 주장하는 것"
+      },
+      {
+        "id": "2",
+        "label": "listening to others’ opinions without judgment",
+        "keywords": [
+          "others’ opinions",
+          "without judgment"
+        ],
+        "ko": "판단 없이 남의 의견을 듣는 것"
+      },
+      {
+        "id": "3",
+        "label": "reacting emotionally to what is outside your control",
+        "keywords": [
+          "reacting emotionally",
+          "outside your control"
+        ],
+        "ko": "통제 밖의 일에 감정적으로 반응하는 것",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "pretending to have comprehended when you have not",
+        "keywords": [
+          "pretending",
+          "comprehended"
+        ],
+        "ko": "이해하지 못했는데 이해한 척하는 것"
+      },
+      {
+        "id": "5",
+        "label": "rationalizing to yourself that the situation is out of control",
+        "keywords": [
+          "rationalizing",
+          "out of control"
+        ],
+        "ko": "상황이 통제 밖이라고 스스로 합리화하는 것"
+      }
+    ],
+    "brief": {
+      "ask": "warned against(−) 뒤, 칠판 오른쪽 일과 화(anger) 이야기를 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 스토아학파는 할 수 없는 일(비, 그 사람, 날씨)에 화내는 것, 즉 통제 밖의 일에 감정적으로 반응하는 걸 경고했어요.",
+      "final_wrong": "정답은 ③이에요. 비나 남의 행동처럼 통제할 수 없는 일에 화내는(감정적으로 반응하는) 건 어리석다고 했어요.",
+      "option_feedback": {
+        "1": "증거 없이 주장하는 이야기는 글에 없어요. 글은 통제 밖의 일에 대한 감정 이야기예요.",
+        "2": "남의 의견을 듣는 이야기는 글에 없어요. 남이 나를 함부로 대할 때 화내지 말라는 거예요.",
+        "4": "이해한 척하는 이야기는 글에 없어요.",
+        "5": "out of control이 겹쳐서 헷갈렸죠. 하지만 통제 밖이라는 걸 받아들이는 건 스토아학파가 권한 거예요. 경고한 건 그런 일에 화내는 거예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 16.7%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "⑤에 out of control이 있어서 글과 겹쳐 보여요. 하지만 스토아학파는 통제 밖의 일을 '나와 상관없다'고 받아들이라고 했어요. 경고한 건 통제 밖이라고 여기는 게 아니라, 그런 일에 화내는(감정적으로 반응하는) 거예요.",
+          "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "out of control이 글과 겹쳐서 골랐어요",
+              "skills": [
+                "word_overlap"
+              ],
+              "reply": "알려 줘서 고마워요. 겹치는 단어보다 그 단어로 무엇을 한다는 건지(합리화한다 / 화낸다)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "anger 예시를 빈칸과 못 이었어요",
+              "skills": [
+                "example_link"
+              ],
+              "reply": "알려 줘서 고마워요. 빈칸 뒤 Consider anger부터가 빈칸의 예예요. 앞으로 예시를 빈칸과 이어서 보게 할게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "word_overlap",
+                "example_link"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 예시를 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "권한 것",
+                "text": "it is nothing to you",
+                "ko": "통제 밖의 일은 나와 상관없다고 받아들이기",
+                "tone": "hl"
+              },
+              {
+                "label": "경고한 것",
+                "text": "get angry at the rain / that person",
+                "ko": "통제 밖의 일에 화내기 (감정)",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "master",
+        "ko": "주인"
+      },
+      {
+        "en": "confirm",
+        "ko": "확인하다"
+      },
+      {
+        "en": "depend on",
+        "ko": "~에 의지하다"
+      },
+      {
+        "en": "satisfy",
+        "ko": "채우다, 만족시키다"
+      },
+      {
+        "en": "take charge of",
+        "ko": "~을 책임지다"
+      },
+      {
+        "en": "accomplish",
+        "ko": "이루다"
+      },
+      {
+        "en": "warn against",
+        "ko": "~하지 말라고 경고하다"
+      },
+      {
+        "en": "circumstance",
+        "ko": "상황"
+      },
+      {
+        "en": "get ~ down",
+        "ko": "~을 우울하게 하다"
+      },
+      {
+        "en": "judgment",
+        "ko": "판단"
+      },
+      {
+        "en": "spoil",
+        "ko": "망치다"
+      },
+      {
+        "en": "mistreat",
+        "ko": "함부로 대하다"
+      },
+      {
+        "en": "equally",
+        "ko": "똑같이"
+      },
+      {
+        "en": "pointless",
+        "ko": "의미 없는"
+      },
+      {
+        "en": "well-being",
+        "ko": "행복, 안녕"
+      },
+      {
+        "en": "alter",
+        "ko": "바꾸다"
+      },
+      {
+        "en": "concern",
+        "ko": "~에 관한 것이다"
+      }
+    ],
+    "options": [
+      {
+        "en": "evidence",
+        "ko": "증거"
+      },
+      {
+        "en": "react",
+        "ko": "반응하다"
+      },
+      {
+        "en": "comprehend",
+        "ko": "이해하다"
+      },
+      {
+        "en": "rationalize",
+        "ko": "합리화하다"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Epictetus wrote, “A man’s master is he who is able to confirm or remove whatever that man seeks or shuns.”",
+      "model_translation": "Epictetus는 '사람의 주인은 그 사람이 추구하거나 피하는 것 무엇이든지를 확인하거나 제거할 수 있는 사람이다.'라고 썼다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "Epictetus",
+          "ko": "에픽테토스 · 고대 그리스의 스토아 철학자"
+        },
+        {
+          "en": "wrote",
+          "ko": "썼다"
+        },
+        {
+          "en": "A man’s master",
+          "ko": "사람의 주인"
+        },
+        {
+          "en": "he who",
+          "ko": "~하는 사람"
+        },
+        {
+          "en": "is able to",
+          "ko": "~할 수 있다"
+        },
+        {
+          "en": "confirm or remove",
+          "ko": "확인하거나(주거나) 없애다"
+        },
+        {
+          "en": "whatever that man seeks or shuns",
+          "ko": "그 사람이 원하거나 피하는 무엇이든"
+        },
+        {
+          "en": "In particular",
+          "ko": "특히"
+        },
+        {
+          "en": "the Stoics",
+          "ko": "스토아학파"
+        },
+        {
+          "en": "warned against",
+          "ko": "~하지 말라고 경고했다"
+        },
+        {
+          "en": "man’s",
+          "ko": "사람의"
+        },
+        {
+          "en": "master",
+          "ko": "주인"
+        },
+        {
+          "en": "able",
+          "ko": "~할 수 있는"
+        },
+        {
+          "en": "confirm",
+          "ko": "확인하다, 주다"
+        },
+        {
+          "en": "remove",
+          "ko": "없애다"
+        },
+        {
+          "en": "whatever",
+          "ko": "무엇이든"
+        },
+        {
+          "en": "man",
+          "ko": "사람"
+        },
+        {
+          "en": "seeks",
+          "ko": "원하다, 추구하다"
+        },
+        {
+          "en": "shuns",
+          "ko": "피하다"
+        },
+        {
+          "en": "particular",
+          "ko": "특정한 · in particular = 특히"
+        },
+        {
+          "en": "Stoics",
+          "ko": "스토아학파"
+        },
+        {
+          "en": "warned",
+          "ko": "경고했다"
+        },
+        {
+          "en": "against",
+          "ko": "~에 맞서 · warn against = ~하지 말라고 경고하다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "In particular, the Stoics warned against ________."
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "warned against는 '~하지 말라고 경고했다'예요. 스토아학파가 무엇을 하지 말라고 했는지 생각하며 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "In particular, the Stoics warned against ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "warned against",
+            "________"
+          ],
+          "signs": [
+            {
+              "text": "warned against",
+              "sign": "−"
+            }
+          ],
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
+            }
+          ]
+        },
+        {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Epictetus",
+            "wrote",
+            "A man’s master",
+            "is"
+          ],
+          "answers": [
+            "Epictetus",
+            "wrote"
+          ],
+          "roles": {
+            "Epictetus": "S",
+            "wrote": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "A man’s master": "그건 따옴표 안 문장의 주어예요. 먼저 바깥 문장을 봐요.",
+              "is": "그건 따옴표 안 문장의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "바깥 문장의 주어는 Epictetus, 동사는 wrote예요. 따옴표 안이 그가 쓴 말이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "A man’s master",
+            "confirm or remove",
+            "whatever that man seeks or shuns"
+          ],
+          "answers": [
+            "A man’s master",
+            "whatever that man seeks or shuns",
+            "confirm or remove"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A man’s master",
+                "ko": "사람의 주인은"
+              },
+              " ",
+              {
+                "en": "whatever that man seeks or shuns",
+                "ko": "그 사람이 원하거나 피하는 무엇이든"
+              },
+              "을 ",
+              {
+                "en": "confirm or remove",
+                "ko": "주거나 없앨"
+              },
+              " 수 있는 사람이다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "A man’s master is he who is able to confirm or remove whatever that man seeks or shuns.",
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
+            }
+          ]
+        },
+        {
+          "id": "s1_master",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "내가 원하거나 피하는 걸 주고 빼앗을 수 있는 사람이 내 '주인'이래요. 내 마음이 남에게 달려 있으면 그 사람이 주인이 되는 거예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "master",
+            "confirm or remove"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "If you depend on no one except yourself to satisfy your desires, you will have no master other than yourself and you will be free.",
+      "model_translation": "만일 여러분이 자신의 욕망을 만족시키기 위해 여러분 자신 외에 누구에게도 의존하지 않는다면, 여러분은 여러분 자신 외에 주인이 없을 것이고 여러분은 자유로울 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "no master",
+          "ko": "주인이 없음"
+        },
+        {
+          "en": "will have",
+          "ko": "가질 것이다"
+        },
+        {
+          "en": "depend on",
+          "ko": "~에 기대다"
+        },
+        {
+          "en": "you",
+          "ko": "너는"
+        },
+        {
+          "en": "If",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "you depend on no one",
+          "ko": "아무에게도 기대지 않는다"
+        },
+        {
+          "en": "except yourself",
+          "ko": "나 자신 말고는"
+        },
+        {
+          "en": "to satisfy your desires",
+          "ko": "욕구를 채우려고"
+        },
+        {
+          "en": "you will have no master",
+          "ko": "주인이 없을 것이다"
+        },
+        {
+          "en": "other than yourself",
+          "ko": "나 자신 말고는"
+        },
+        {
+          "en": "you will be free",
+          "ko": "자유로울 것이다"
+        },
+        {
+          "en": "master",
+          "ko": "주인"
+        },
+        {
+          "en": "depend",
+          "ko": "의지하다"
+        },
+        {
+          "en": "except",
+          "ko": "~ 말고는"
+        },
+        {
+          "en": "satisfy",
+          "ko": "채우다"
+        },
+        {
+          "en": "desires",
+          "ko": "욕구"
+        },
+        {
+          "en": "free",
+          "ko": "자유로운"
+        }
+      ],
+      "slashes": [
+        "except yourself",
+        "your desires,",
+        "other than yourself"
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "you",
+            "depend on",
+            "you",
+            "will have",
+            "no master"
+          ],
+          "answers": [
+            "you",
+            "will have",
+            "no master"
+          ],
+          "roles": {
+            "you": "S",
+            "will have": "V",
+            "no master": "O"
+          },
+          "brief": {
+            "ask": "콤마 뒤 메인 문장에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "If 덩어리 뒤, 콤마 다음이 메인 문장이에요. 주어 you, 동사 will have, 목적어 no master예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "no one except ~",
+              "text": "'~ 말고는 아무도 (않다)'예요. depend on no one except yourself = 나 자신에게만 기대다.",
+              "mark": "except"
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "If",
+            "you depend on no one",
+            "except yourself",
+            "you will be free"
+          ],
+          "answers": [
+            "If",
+            "except yourself",
+            "you depend on no one",
+            "you will be free"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "If",
+                "ko": "만약"
+              },
+              " ",
+              {
+                "en": "except yourself",
+                "ko": "나 자신 말고는"
+              },
+              " ",
+              {
+                "en": "you depend on no one",
+                "ko": "아무에게도 기대지 않으면"
+              },
+              ", ",
+              {
+                "en": "you will be free",
+                "ko": "자유로울 것이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "If you depend on no one except yourself, you will be free.",
+          "tips": [
+            {
+              "label": "no one except ~",
+              "text": "'~ 말고는 아무도 (않다)'예요. depend on no one except yourself = 나 자신에게만 기대다.",
+              "mark": "except"
+            }
+          ]
+        },
+        {
+          "id": "s2_free",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "언제 자유로워진대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "If 뒤 'depend on no one except yourself'를 봐요. no one except yourself는 '나 말고는 아무도'예요.",
+              "If 뒤 'depend on no one except yourself'를 봐요. no one except yourself는 '나 말고는 아무도'예요."
+            ],
+            "explain": "'If you depend on no one except yourself', 나 말고는 아무에게도 기대지 않으면 나 말고 주인이 없어서 자유롭대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'If you depend on no one except yourself', 나 말고는 아무에게도 기대지 않으면 나 말고 주인이 없어서 자유롭대요.",
+              "o2": "'If you depend on no one except yourself', 나 말고는 아무에게도 기대지 않으면 나 말고 주인이 없어서 자유롭대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "다른 사람에게 많이 도움받을 때"
+            },
+            {
+              "id": "o1",
+              "label": "욕구를 채울 때 나 말고 아무에게도 기대지 않을 때",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "좋은 주인을 만날 때"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "depend on no one",
+            "free"
+          ],
+          "tips": [
+            {
+              "label": "no one except ~",
+              "text": "'~ 말고는 아무도 (않다)'예요. depend on no one except yourself = 나 자신에게만 기대다.",
+              "mark": "except"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Stoic philosophy was about that―taking charge of your life, learning to work on those things that are within your power to accomplish or change and not to waste energy on things you cannot.",
+      "model_translation": "스토아 철학은 그것에 관한 것이었다. 여러분의 삶을 책임지고, 성취하거나 변화하기 위해 여러분의 힘 안에 있는 것들에 노력하는 것과 여러분이 할 수 없는 것들에 에너지를 낭비하지 않는 것을 배우는 것.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "your life",
+          "ko": "너의 삶"
+        },
+        {
+          "en": "Stoic philosophy",
+          "ko": "스토아 철학"
+        },
+        {
+          "en": "was",
+          "ko": "~였다"
+        },
+        {
+          "en": "about that",
+          "ko": "그것에 관한"
+        },
+        {
+          "en": "taking charge of your life",
+          "ko": "삶을 스스로 책임지는 것"
+        },
+        {
+          "en": "learning to work on",
+          "ko": "~에 힘쓰는 법을 배우는 것"
+        },
+        {
+          "en": "those things",
+          "ko": "그런 일들"
+        },
+        {
+          "en": "within your power",
+          "ko": "내 힘 안에 있는"
+        },
+        {
+          "en": "to accomplish or change",
+          "ko": "이루거나 바꿀"
+        },
+        {
+          "en": "not to waste energy",
+          "ko": "에너지를 낭비하지 않는 것"
+        },
+        {
+          "en": "on things you cannot",
+          "ko": "할 수 없는 일에"
+        },
+        {
+          "en": "Stoic",
+          "ko": "스토아학파의"
+        },
+        {
+          "en": "philosophy",
+          "ko": "철학"
+        },
+        {
+          "en": "charge",
+          "ko": "책임 · take charge of = ~을 책임지다"
+        },
+        {
+          "en": "learning",
+          "ko": "배우는 것"
+        },
+        {
+          "en": "things",
+          "ko": "일들"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "power",
+          "ko": "힘"
+        },
+        {
+          "en": "accomplish",
+          "ko": "이루다"
+        },
+        {
+          "en": "change",
+          "ko": "바꾸다"
+        },
+        {
+          "en": "waste",
+          "ko": "낭비하다"
+        },
+        {
+          "en": "energy",
+          "ko": "에너지"
+        },
+        {
+          "en": "cannot",
+          "ko": "~할 수 없다"
+        }
+      ],
+      "slashes": [
+        "about that―",
+        "your life,",
+        "within your power",
+        "accomplish or change"
+      ],
+      "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Stoic philosophy",
+            "was",
+            "about that",
+            "your life",
+            "those things"
+          ],
+          "answers": [
+            "Stoic philosophy",
+            "was"
+          ],
+          "roles": {
+            "Stoic philosophy": "S",
+            "was": "V"
+          },
+          "brief": {
+            "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "about that": "그건 동사 뒤에서 '무엇에 관한' 것인지 말해 줘요.",
+              "your life": "그건 대시(―) 뒤, taking charge of의 대상이에요.",
+              "those things": "그건 대시 뒤, work on의 대상이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Stoic philosophy, 동사는 was예요. 대시(―) 뒤가 that(그것)이 무엇인지 풀어 줘요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_cant",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "대시(―) 뒤를 봐요. 스토아 철학은 '할 수 없는 일(things you cannot)'에 대해 뭐라고 했나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'not to waste energy on things you cannot'을 봐요. waste는 '낭비하다'예요.",
+              "'not to waste energy on things you cannot'을 봐요. waste는 '낭비하다'예요."
+            ],
+            "explain": "'not to waste energy on things you cannot', 할 수 없는 일에는 에너지를 낭비하지 말래요. 내 힘 안의 일에만 힘쓰고요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'not to waste energy on things you cannot', 할 수 없는 일에는 에너지를 낭비하지 말래요. 내 힘 안의 일에만 힘쓰고요.",
+              "o1": "'not to waste energy on things you cannot', 할 수 없는 일에는 에너지를 낭비하지 말래요. 내 힘 안의 일에만 힘쓰고요."
+            },
+            "point": "스토아 철학 = 내 힘 안의 일(within your power)에 힘쓰고, 할 수 없는 일(things you cannot)에 에너지를 낭비하지 않기"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "더 열심히 노력하라"
+            },
+            {
+              "id": "o1",
+              "label": "남에게 맡기라"
+            },
+            {
+              "id": "o2",
+              "label": "에너지를 낭비하지 말라",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "within your power",
+            "not to waste energy"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "내 힘 안 / 밖",
+            "left": {
+              "label": "할 수 있는 것 (within your power)",
+              "words": [
+                {
+                  "text": "within your power",
+                  "ko": "내 힘 안의 일",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "할 수 없는 것",
+              "words": [
+                {
+                  "text": "things you cannot",
+                  "ko": "할 수 없는 일",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🔓",
+                "en": "no master other than yourself",
+                "ko": "내 욕구를 남에게 기대지 않으면 내가 내 주인이라 자유로워요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "⚖️",
+                "en": "within your power ↔ things you cannot",
+                "ko": "할 수 있는 일엔 힘쓰고, 할 수 없는 일엔 에너지를 낭비하지 말아요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "In particular, the Stoics warned against ________.",
+      "model_translation": "특히, 스토아학파는 ________에 대해 경고했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In particular",
+          "ko": "특히"
+        },
+        {
+          "en": "the Stoics",
+          "ko": "스토아학파"
+        },
+        {
+          "en": "warned against",
+          "ko": "~하지 말라고 경고했다"
+        },
+        {
+          "en": "particular",
+          "ko": "특정한 · in particular = 특히"
+        },
+        {
+          "en": "Stoics",
+          "ko": "스토아학파"
+        },
+        {
+          "en": "warned",
+          "ko": "경고했다"
+        },
+        {
+          "en": "against",
+          "ko": "~에 맞서 · warn against = ~하지 말라고 경고하다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "warned against(~하지 말라고 경고했다) 뒤의 빈칸은 스토아학파가 좋게 본 것일까요, 나쁘게 본 것일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "warn against는 '~하지 말라고 경고하다'예요.",
+              "warn against는 '~하지 말라고 경고하다'예요."
+            ],
+            "explain": "warn against는 '~하지 말라고 경고하다'예요. 빈칸은 하지 말아야 할 일, 나쁘게 본 것(−)이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "warn against는 '~하지 말라고 경고하다'예요. 빈칸은 하지 말아야 할 일, 나쁘게 본 것(−)이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "좋게 본 것 (+)"
+            },
+            {
+              "id": "o1",
+              "label": "나쁘게 본 것 (−)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "signs": [
+            {
+              "text": "warned against",
+              "sign": "−"
+            }
+          ],
+          "highlight": [
+            "warned against"
+          ],
+          "tips": [
+            {
+              "label": "warn against",
+              "text": "'~하지 말라고 경고하다'예요. 뒤에는 하지 말아야 할 일이 와요.",
+              "mark": "warned against"
+            }
+          ]
+        },
+        {
+          "id": "s4_which",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "In particular(특히)라고 했어요. 앞 문장에서 하지 말라고 한 건 칠판의 어느 쪽 일이었나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "앞 문장 'not to waste energy on things you cannot'을 떠올려 봐요.",
+              "앞 문장 'not to waste energy on things you cannot'을 떠올려 봐요."
+            ],
+            "explain": "앞 문장에서 할 수 없는 일에 에너지를 낭비하지 말라고 했어요. 빈칸은 그중에서도 특히 하지 말아야 할 일이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "앞 문장에서 할 수 없는 일에 에너지를 낭비하지 말라고 했어요. 빈칸은 그중에서도 특히 하지 말아야 할 일이에요."
+            },
+            "point": "빈칸(warned against, −) = 할 수 없는 일 쪽에서 특히 하지 말아야 할 것"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 할 수 있는 것"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 할 수 없는 것",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "내 힘 안 / 밖",
+            "left": {
+              "label": "할 수 있는 것 (within your power)",
+              "words": [
+                {
+                  "text": "within your power",
+                  "ko": "내 힘 안의 일"
+                }
+              ]
+            },
+            "right": {
+              "label": "할 수 없는 것",
+              "words": [
+                {
+                  "text": "things you cannot",
+                  "ko": "할 수 없는 일"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s4_more",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸 뒤에 예가 이어져요. 할 수 없는 일에 무엇을 하지 말라는 건지 확인하며 읽어 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Often, Epictetus argued, it’s not our circumstances that get us down but rather the judgments we make about them.",
+      "model_translation": "흔히, Epictetus는 우리를 낙담시키는 것은 우리의 상황이 아니라 오히려 그것들에 대해 우리가 내리는 판단이라고 주장했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "our circumstances",
+          "ko": "우리의 상황"
+        },
+        {
+          "en": "argued",
+          "ko": "주장했다"
+        },
+        {
+          "en": "Epictetus",
+          "ko": "에픽테토스"
+        },
+        {
+          "en": "Often",
+          "ko": "흔히"
+        },
+        {
+          "en": "Epictetus argued",
+          "ko": "에픽테토스는 주장했다"
+        },
+        {
+          "en": "it’s not our circumstances",
+          "ko": "우리의 상황이 아니다"
+        },
+        {
+          "en": "get us down",
+          "ko": "우리를 우울하게 하다"
+        },
+        {
+          "en": "but rather",
+          "ko": "오히려 ~이다"
+        },
+        {
+          "en": "the judgments",
+          "ko": "판단"
+        },
+        {
+          "en": "we make about them",
+          "ko": "우리가 그것들에 대해 내리는"
+        },
+        {
+          "en": "it’s",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "down",
+          "ko": "아래로"
+        },
+        {
+          "en": "rather",
+          "ko": "오히려"
+        },
+        {
+          "en": "judgments",
+          "ko": "판단"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Epictetus",
+            "argued",
+            "our circumstances",
+            "the judgments"
+          ],
+          "answers": [
+            "Epictetus",
+            "argued"
+          ],
+          "roles": {
+            "Epictetus": "S",
+            "argued": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "our circumstances": "그건 콤마 뒤 문장(주장한 내용) 안의 말이에요.",
+              "the judgments": "그건 주장한 내용 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콤마 사이에 끼어든 Epictetus argued가 '누가 주장했는지'예요. 주어 Epictetus, 동사 argued예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "it's not A but B that ~",
+              "text": "'~하는 건 A가 아니라 B다'예요. 강조하고 싶은 B가 진짜 답이에요.",
+              "mark": "not our circumstances"
+            },
+            {
+              "label": "get ~ down",
+              "text": "'~을 우울하게 하다, 낙담시키다'예요.",
+              "mark": "get us down"
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "it’s not our circumstances",
+            "get us down",
+            "but rather",
+            "the judgments"
+          ],
+          "answers": [
+            "it’s not our circumstances",
+            "but rather",
+            "the judgments",
+            "get us down"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "it’s not our circumstances",
+                "ko": "우리의 상황이 아니라"
+              },
+              " ",
+              {
+                "en": "but rather",
+                "ko": "오히려"
+              },
+              " ",
+              {
+                "en": "the judgments",
+                "ko": "판단"
+              },
+              "이 우리를 ",
+              {
+                "en": "get us down",
+                "ko": "우울하게 한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "it's not A but B that ~",
+              "text": "'~하는 건 A가 아니라 B다'예요. 강조하고 싶은 B가 진짜 답이에요.",
+              "mark": "not our circumstances"
+            },
+            {
+              "label": "get ~ down",
+              "text": "'~을 우울하게 하다, 낙담시키다'예요.",
+              "mark": "get us down"
+            }
+          ]
+        },
+        {
+          "id": "s5_judg",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Epictetus는 우리를 우울하게 하는 게 무엇이라고 했나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "it's not A but rather B that ~ = '~하는 건 A가 아니라 B다'예요. but rather 뒤를 봐요.",
+              "it's not A but rather B that ~ = '~하는 건 A가 아니라 B다'예요. but rather 뒤를 봐요."
+            ],
+            "explain": "'it's not our circumstances … but rather the judgments we make about them', 상황이 아니라 그에 대한 우리의 판단이 우리를 우울하게 한대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'it's not our circumstances … but rather the judgments we make about them', 상황이 아니라 그에 대한 우리의 판단이 우리를 우울하게 한대요.",
+              "o1": "'it's not our circumstances … but rather the judgments we make about them', 상황이 아니라 그에 대한 우리의 판단이 우리를 우울하게 한대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "상황 자체"
+            },
+            {
+              "id": "o1",
+              "label": "다른 사람의 말"
+            },
+            {
+              "id": "o2",
+              "label": "상황에 대해 우리가 내리는 판단",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "not our circumstances",
+            "the judgments"
+          ],
+          "tips": [
+            {
+              "label": "it's not A but B that ~",
+              "text": "'~하는 건 A가 아니라 B다'예요. 강조하고 싶은 B가 진짜 답이에요.",
+              "mark": "not our circumstances"
+            },
+            {
+              "label": "get ~ down",
+              "text": "'~을 우울하게 하다, 낙담시키다'예요.",
+              "mark": "get us down"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Consider anger.",
+      "model_translation": "분노를 생각해 보라.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Consider",
+          "ko": "생각해 보라"
+        },
+        {
+          "en": "anger",
+          "ko": "분노"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_anger",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "예로 분노(anger)를 들어요. 감정 이야기예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "anger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "We don’t get angry at the rain if it spoils our picnic.",
+      "model_translation": "우리는 비가 우리의 소풍을 망친다 해도, 그것에 화가 나지 않는다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "spoils",
+          "ko": "망치다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "the rain",
+          "ko": "비"
+        },
+        {
+          "en": "angry",
+          "ko": "화난"
+        },
+        {
+          "en": "don’t get",
+          "ko": "~하게 되지 않다"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "We don’t get angry",
+          "ko": "우리는 화내지 않는다"
+        },
+        {
+          "en": "at the rain",
+          "ko": "비에"
+        },
+        {
+          "en": "if",
+          "ko": "~해도, ~하면"
+        },
+        {
+          "en": "it spoils our picnic",
+          "ko": "그것(비)이 소풍을 망치다"
+        },
+        {
+          "en": "rain",
+          "ko": "비"
+        },
+        {
+          "en": "don’t",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "picnic",
+          "ko": "소풍"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "don’t get",
+            "angry",
+            "the rain",
+            "it",
+            "spoils"
+          ],
+          "answers": [
+            "We",
+            "don’t get",
+            "angry"
+          ],
+          "roles": {
+            "We": "S",
+            "don’t get": "V",
+            "angry": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the rain": "그건 at 뒤 덩어리예요.",
+              "it": "그건 if 뒤 덩어리 안의 주어예요.",
+              "spoils": "그건 if 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 don't get, 보어는 angry예요(화가 나지 않는다)."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic"
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "We don’t get angry",
+            "at the rain",
+            "it spoils our picnic"
+          ],
+          "answers": [
+            "We don’t get angry",
+            "at the rain",
+            "it spoils our picnic"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We don’t get angry",
+                "ko": "우리는 화내지 않는다"
+              },
+              " ",
+              {
+                "en": "at the rain",
+                "ko": "비에"
+              },
+              " — ",
+              {
+                "en": "it spoils our picnic",
+                "ko": "비가 소풍을 망쳐도"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_rain",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "비가 소풍을 망쳐도 우리는 비에 화내지 않는대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "don’t get angry",
+            "the rain"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "That would be silly because we can’t do anything about the rain.",
+      "model_translation": "그것은 어리석은 짓인데, 우리가 비에 대해 아무것도 할 수 없기 때문이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "can’t do",
+          "ko": "할 수 없다"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "silly",
+          "ko": "어리석은"
+        },
+        {
+          "en": "would be",
+          "ko": "~일 것이다"
+        },
+        {
+          "en": "That",
+          "ko": "그것"
+        },
+        {
+          "en": "That would be silly",
+          "ko": "그건 어리석은 일일 것이다"
+        },
+        {
+          "en": "because",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "we can’t do anything about the rain",
+          "ko": "비에 대해 우리가 할 수 있는 게 없다"
+        },
+        {
+          "en": "can’t",
+          "ko": "~할 수 없다"
+        },
+        {
+          "en": "rain",
+          "ko": "비"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "That",
+            "would be",
+            "silly",
+            "we",
+            "can’t do"
+          ],
+          "answers": [
+            "That",
+            "would be",
+            "silly"
+          ],
+          "roles": {
+            "That": "S",
+            "would be": "V",
+            "silly": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "we": "그건 because 뒤 덩어리 안의 주어예요.",
+              "can’t do": "그건 because 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 That(비에 화내는 것), 동사는 would be, 보어는 silly예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic"
+        },
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "candidates": [
+            "That would be silly",
+            "because",
+            "we can’t do anything about the rain"
+          ],
+          "answers": [
+            "That would be silly",
+            "because",
+            "we can’t do anything about the rain"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "That would be silly",
+                "ko": "그건 어리석은 일일 것이다"
+              },
+              " ",
+              {
+                "en": "because",
+                "ko": "왜냐하면"
+              },
+              " ",
+              {
+                "en": "we can’t do anything about the rain",
+                "ko": "비에 대해 우리가 할 수 있는 게 없으니까"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s8_silly",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "비에 화내는 게 왜 어리석대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "because 뒤 'we can't do anything about the rain'을 봐요.",
+              "because 뒤 'we can't do anything about the rain'을 봐요."
+            ],
+            "explain": "'because we can't do anything about the rain', 비는 우리가 어떻게 할 수 없는 일이라서 화내 봤자 어리석대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'because we can't do anything about the rain', 비는 우리가 어떻게 할 수 없는 일이라서 화내 봤자 어리석대요.",
+              "o2": "'because we can't do anything about the rain', 비는 우리가 어떻게 할 수 없는 일이라서 화내 봤자 어리석대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "비에 대해 우리가 할 수 있는 게 없어서",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "비는 금방 그쳐서"
+            },
+            {
+              "id": "o2",
+              "label": "소풍은 또 갈 수 있어서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "can’t do anything"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "내 힘 안 / 밖",
+            "left": {
+              "label": "할 수 있는 것 (within your power)",
+              "words": [
+                {
+                  "text": "within your power",
+                  "ko": "내 힘 안의 일"
+                }
+              ]
+            },
+            "right": {
+              "label": "할 수 없는 것",
+              "words": [
+                {
+                  "text": "things you cannot",
+                  "ko": "할 수 없는 일"
+                },
+                {
+                  "text": "the rain",
+                  "ko": "비",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "story_8",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🔓",
+                "en": "no master other than yourself",
+                "ko": "내 욕구를 남에게 기대지 않으면 내가 내 주인이라 자유로워요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "⚖️",
+                "en": "within your power ↔ things you cannot",
+                "ko": "할 수 있는 일엔 힘쓰고, 할 수 없는 일엔 에너지를 낭비하지 말아요",
+                "fresh": false
+              },
+              {
+                "label": "빈칸 문장",
+                "icon": "⚠️",
+                "en": "warned against ____",
+                "ko": "스토아학파는 특히 ____을 경고했어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5~8",
+                "icon": "🌧️",
+                "en": "judgments · anger · the rain",
+                "ko": "우리를 힘들게 하는 건 상황보다 판단 — 비에는 화내지 않죠, 어쩔 수 없으니까",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "But we often do get angry if someone mistreats us.",
+      "model_translation": "하지만 우리는 누군가가 우리를 나쁘게 대한다면 흔히 정말 화가 난다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "mistreats",
+          "ko": "함부로 대하다"
+        },
+        {
+          "en": "someone",
+          "ko": "누군가"
+        },
+        {
+          "en": "angry",
+          "ko": "화난"
+        },
+        {
+          "en": "do get",
+          "ko": "정말 ~하게 되다"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "But",
+          "ko": "하지만"
+        },
+        {
+          "en": "we often do get angry",
+          "ko": "우리는 흔히 정말 화를 낸다"
+        },
+        {
+          "en": "if",
+          "ko": "~하면"
+        },
+        {
+          "en": "someone mistreats us",
+          "ko": "누군가 우리를 함부로 대하다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "we",
+            "do get",
+            "angry",
+            "someone",
+            "mistreats"
+          ],
+          "answers": [
+            "we",
+            "do get",
+            "angry"
+          ],
+          "roles": {
+            "we": "S",
+            "do get": "V",
+            "angry": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "someone": "그건 if 뒤 덩어리 안의 주어예요.",
+              "mistreats": "그건 if 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 we, 동사는 (often) do get, 보어는 angry예요. do는 '정말'이라는 강조예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s9_basic",
+          "tips": [
+            {
+              "label": "강조의 do",
+              "text": "동사 앞의 do는 '정말'이라는 강조예요. do get angry = 정말 화를 낸다.",
+              "mark": "do get"
+            }
+          ]
+        },
+        {
+          "id": "s9_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s9_basic",
+          "candidates": [
+            "But",
+            "we often do get angry",
+            "someone mistreats us"
+          ],
+          "answers": [
+            "But",
+            "someone mistreats us",
+            "we often do get angry"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "But",
+                "ko": "하지만"
+              },
+              " ",
+              {
+                "en": "someone mistreats us",
+                "ko": "누군가 우리를 함부로 대하면"
+              },
+              " ",
+              {
+                "en": "we often do get angry",
+                "ko": "우리는 흔히 정말 화를 낸다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "강조의 do",
+              "text": "동사 앞의 do는 '정말'이라는 강조예요. do get angry = 정말 화를 낸다.",
+              "mark": "do get"
+            }
+          ]
+        },
+        {
+          "id": "s9_person",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "But — 그런데 누가 나를 함부로 대하면 우리는 정말 화를 낸대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "do get angry",
+            "mistreats"
+          ],
+          "tips": [
+            {
+              "label": "강조의 do",
+              "text": "동사 앞의 do는 '정말'이라는 강조예요. do get angry = 정말 화를 낸다.",
+              "mark": "do get"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "We usually can’t control or change that person any more than we can stop the rain, so that is equally silly.",
+      "model_translation": "우리가 비를 멈출 수 없는 것처럼 우리는 대개 그 사람을 통제하거나 바꿀 수도 없으므로, 그것은 마찬가지로 어리석다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "the rain",
+          "ko": "비"
+        },
+        {
+          "en": "that person",
+          "ko": "그 사람"
+        },
+        {
+          "en": "can’t control or change",
+          "ko": "통제하거나 바꿀 수 없다"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "We usually can’t control or change that person",
+          "ko": "우리는 보통 그 사람을 통제하거나 바꿀 수 없다"
+        },
+        {
+          "en": "any more than",
+          "ko": "~할 수 없는 것처럼"
+        },
+        {
+          "en": "we can stop the rain",
+          "ko": "우리가 비를 멈출 수 있다"
+        },
+        {
+          "en": "so",
+          "ko": "그래서"
+        },
+        {
+          "en": "that is equally silly",
+          "ko": "그것도 똑같이 어리석다"
+        },
+        {
+          "en": "rain",
+          "ko": "비"
+        },
+        {
+          "en": "person",
+          "ko": "사람"
+        },
+        {
+          "en": "can’t",
+          "ko": "~할 수 없다"
+        },
+        {
+          "en": "control",
+          "ko": "통제하다, 통제"
+        },
+        {
+          "en": "change",
+          "ko": "바꾸다"
+        },
+        {
+          "en": "usually",
+          "ko": "보통"
+        },
+        {
+          "en": "equally",
+          "ko": "똑같이"
+        },
+        {
+          "en": "silly",
+          "ko": "어리석은"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s10_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "can’t control or change",
+            "that person",
+            "the rain"
+          ],
+          "answers": [
+            "We",
+            "can’t control or change",
+            "that person"
+          ],
+          "roles": {
+            "We": "S",
+            "can’t control or change": "V",
+            "that person": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the rain": "그건 any more than 뒤, 비교하는 덩어리 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 can't control or change, 목적어는 that person이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s10_basic",
+          "tips": [
+            {
+              "label": "not A any more than B",
+              "text": "'B가 아닌 것처럼 A도 아니다'예요. can't change him any more than stop the rain = 비를 못 멈추듯 그도 못 바꾼다.",
+              "mark": "any more than"
+            }
+          ]
+        },
+        {
+          "id": "s10_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s10_basic",
+          "candidates": [
+            "We usually can’t control or change that person",
+            "any more than",
+            "we can stop the rain",
+            "so",
+            "that is equally silly"
+          ],
+          "answers": [
+            "We usually can’t control or change that person",
+            "we can stop the rain",
+            "any more than",
+            "so",
+            "that is equally silly"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We usually can’t control or change that person",
+                "ko": "우리는 보통 그 사람을 통제하거나 바꿀 수 없다"
+              },
+              " — ",
+              {
+                "en": "we can stop the rain",
+                "ko": "비를 멈출 수 있는"
+              },
+              " 게 아닌 ",
+              {
+                "en": "any more than",
+                "ko": "것처럼"
+              },
+              ". ",
+              {
+                "en": "so",
+                "ko": "그래서"
+              },
+              " ",
+              {
+                "en": "that is equally silly",
+                "ko": "그것도 똑같이 어리석다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "not A any more than B",
+              "text": "'B가 아닌 것처럼 A도 아니다'예요. can't change him any more than stop the rain = 비를 못 멈추듯 그도 못 바꾼다.",
+              "mark": "any more than"
+            }
+          ]
+        },
+        {
+          "id": "s10_same",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그 사람에게 화내는 것도 왜 똑같이(equally) 어리석대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not ~ any more than은 '~할 수 없는 것처럼 ~도 못 한다'예요. 비와 그 사람을 나란히 놓아 봐요.",
+              "not ~ any more than은 '~할 수 없는 것처럼 ~도 못 한다'예요. 비와 그 사람을 나란히 놓아 봐요."
+            ],
+            "explain": "'can't control or change that person any more than we can stop the rain', 비를 못 멈추듯 그 사람도 못 바꿔요. 그래서 똑같이 어리석대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'can't control or change that person any more than we can stop the rain', 비를 못 멈추듯 그 사람도 못 바꿔요. 그래서 똑같이 어리석대요.",
+              "o2": "'can't control or change that person any more than we can stop the rain', 비를 못 멈추듯 그 사람도 못 바꿔요. 그래서 똑같이 어리석대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그 사람이 나쁜 사람이 아니라서"
+            },
+            {
+              "id": "o1",
+              "label": "비처럼 그 사람도 우리가 통제하거나 바꿀 수 없어서",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "화를 내면 건강에 나빠서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "can’t control or change that person",
+            "any more than"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "내 힘 안 / 밖",
+            "left": {
+              "label": "할 수 있는 것 (within your power)",
+              "words": [
+                {
+                  "text": "within your power",
+                  "ko": "내 힘 안의 일"
+                }
+              ]
+            },
+            "right": {
+              "label": "할 수 없는 것",
+              "words": [
+                {
+                  "text": "things you cannot",
+                  "ko": "할 수 없는 일"
+                },
+                {
+                  "text": "the rain",
+                  "ko": "비"
+                },
+                {
+                  "text": "that person",
+                  "ko": "그 사람",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "not A any more than B",
+              "text": "'B가 아닌 것처럼 A도 아니다'예요. can't change him any more than stop the rain = 비를 못 멈추듯 그도 못 바꾼다.",
+              "mark": "any more than"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "More generally, it is just as pointless to tie our feelings of well-being to altering another individual’s behavior as it is to tie them to the weather.",
+      "model_translation": "더 일반적으로, 우리의 안녕에 관한 감정을 다른 개인의 행동을 바꾸는 것에 연결하는 것은, 그것들을 날씨에 연결하는 것만큼이나 무의미하다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "More generally",
+          "ko": "더 일반적으로"
+        },
+        {
+          "en": "it is just as pointless",
+          "ko": "똑같이 의미 없다"
+        },
+        {
+          "en": "to tie our feelings of well-being",
+          "ko": "우리의 행복한 기분을 묶는 것"
+        },
+        {
+          "en": "to altering another individual’s behavior",
+          "ko": "다른 사람의 행동을 바꾸는 데"
+        },
+        {
+          "en": "as it is",
+          "ko": "~만큼"
+        },
+        {
+          "en": "to tie them to the weather",
+          "ko": "그것들을 날씨에 묶는 것"
+        },
+        {
+          "en": "generally",
+          "ko": "일반적으로"
+        },
+        {
+          "en": "pointless",
+          "ko": "의미 없는"
+        },
+        {
+          "en": "tie",
+          "ko": "묶다"
+        },
+        {
+          "en": "well-being",
+          "ko": "행복, 안녕"
+        },
+        {
+          "en": "altering",
+          "ko": "바꾸는 것"
+        },
+        {
+          "en": "individual’s",
+          "ko": "개인의"
+        },
+        {
+          "en": "weather",
+          "ko": "날씨"
+        }
+      ],
+      "slashes": [
+        "just as pointless",
+        "feelings of well-being",
+        "another individual’s behavior"
+      ],
+      "steps": [
+        {
+          "id": "s11_tie",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "더 넓게 말하면, 내 기분을 남의 행동을 바꾸는 데 묶는 건 날씨에 묶는 것만큼 의미 없대요. 둘 다 할 수 없는 일이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "just as pointless",
+            "another individual’s behavior",
+            "the weather"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "내 힘 안 / 밖",
+            "left": {
+              "label": "할 수 있는 것 (within your power)",
+              "words": [
+                {
+                  "text": "within your power",
+                  "ko": "내 힘 안의 일"
+                }
+              ]
+            },
+            "right": {
+              "label": "할 수 없는 것",
+              "words": [
+                {
+                  "text": "things you cannot",
+                  "ko": "할 수 없는 일"
+                },
+                {
+                  "text": "the rain",
+                  "ko": "비"
+                },
+                {
+                  "text": "that person",
+                  "ko": "그 사람"
+                },
+                {
+                  "text": "another individual’s behavior",
+                  "ko": "남의 행동",
+                  "fresh": true
+                },
+                {
+                  "text": "the weather",
+                  "ko": "날씨",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "just as A as B",
+              "text": "'B만큼 A하다'예요. just as pointless … as it is to tie them to the weather = 날씨에 묶는 것만큼 의미 없다.",
+              "mark": "just as"
+            }
+          ]
+        },
+        {
+          "id": "story_11",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🔓",
+                "en": "no master other than yourself",
+                "ko": "내 욕구를 남에게 기대지 않으면 내가 내 주인이라 자유로워요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "⚖️",
+                "en": "within your power ↔ things you cannot",
+                "ko": "할 수 있는 일엔 힘쓰고, 할 수 없는 일엔 에너지를 낭비하지 말아요",
+                "fresh": false
+              },
+              {
+                "label": "빈칸 문장",
+                "icon": "⚠️",
+                "en": "warned against ____",
+                "ko": "스토아학파는 특히 ____을 경고했어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5~8",
+                "icon": "🌧️",
+                "en": "judgments · anger · the rain",
+                "ko": "우리를 힘들게 하는 건 상황보다 판단 — 비에는 화내지 않죠, 어쩔 수 없으니까",
+                "fresh": false
+              },
+              {
+                "label": "문장 9~11",
+                "icon": "😠",
+                "en": "that person · the weather",
+                "ko": "남이 날 함부로 대해도, 그 사람도 비처럼 바꿀 수 없어요 — 화내는 건 똑같이 어리석어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Epictetus wrote, “If it concerns anything not in our control, be prepared to say that it is nothing to you.”",
+      "model_translation": "Epictetus는 '만약 그것이 우리의 통제 안에 있지 않은 것과 관련이 있다면, 그것은 당신에게 아무것도 아니라고 말할 준비를 하라.'라고 썼다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "be prepared",
+          "ko": "준비하라"
+        },
+        {
+          "en": "concerns",
+          "ko": "~에 관한 것이다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "wrote",
+          "ko": "썼다"
+        },
+        {
+          "en": "Epictetus",
+          "ko": "에픽테토스"
+        },
+        {
+          "en": "Epictetus wrote",
+          "ko": "에픽테토스는 썼다"
+        },
+        {
+          "en": "If it concerns anything",
+          "ko": "그게 무엇에 관한 것이든"
+        },
+        {
+          "en": "not in our control",
+          "ko": "우리 통제 안에 있지 않은"
+        },
+        {
+          "en": "be prepared to say",
+          "ko": "말할 준비를 하라"
+        },
+        {
+          "en": "it is nothing to you",
+          "ko": "그건 너에게 아무것도 아니다"
+        },
+        {
+          "en": "prepared",
+          "ko": "준비된"
+        },
+        {
+          "en": "control",
+          "ko": "통제하다, 통제"
+        },
+        {
+          "en": "say",
+          "ko": "말하다"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s12_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Epictetus",
+            "wrote",
+            "it",
+            "concerns",
+            "be prepared"
+          ],
+          "answers": [
+            "Epictetus",
+            "wrote"
+          ],
+          "roles": {
+            "Epictetus": "S",
+            "wrote": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "it": "그건 따옴표 안, If 덩어리의 주어예요.",
+              "concerns": "그건 따옴표 안, If 덩어리의 동사예요.",
+              "be prepared": "그건 따옴표 안 명령문의 동사예요. 먼저 바깥 문장을 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "바깥 문장은 주어 Epictetus, 동사 wrote예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s12_basic"
+        },
+        {
+          "id": "s12_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s12_basic",
+          "candidates": [
+            "If it concerns anything",
+            "not in our control",
+            "be prepared to say",
+            "it is nothing to you"
+          ],
+          "answers": [
+            "If it concerns anything",
+            "not in our control",
+            "it is nothing to you",
+            "be prepared to say"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "If it concerns anything",
+                "ko": "무엇에 관한 것이든"
+              },
+              " ",
+              {
+                "en": "not in our control",
+                "ko": "우리 통제 안에 있지 않다면"
+              },
+              ", ",
+              {
+                "en": "it is nothing to you",
+                "ko": "그건 너에게 아무것도 아니라고"
+              },
+              " ",
+              {
+                "en": "be prepared to say",
+                "ko": "말할 준비를 하라"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "If it concerns anything not in our control, be prepared to say that it is nothing to you."
+        },
+        {
+          "id": "s12_nothing",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Epictetus는 통제 밖의 일에 대해 어떻게 말할 준비를 하라고 했나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'be prepared to say that it is nothing to you'를 봐요. nothing to you는 '너에게 아무것도 아닌'이에요.",
+              "'be prepared to say that it is nothing to you'를 봐요. nothing to you는 '너에게 아무것도 아닌'이에요."
+            ],
+            "explain": "'it is nothing to you', 통제 밖의 일은 나에게 아무것도 아니라고, 마음 쓰지 말라는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'it is nothing to you', 통제 밖의 일은 나에게 아무것도 아니라고, 마음 쓰지 말라는 말이에요.",
+              "o2": "'it is nothing to you', 통제 밖의 일은 나에게 아무것도 아니라고, 마음 쓰지 말라는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그 일을 꼭 바꾸겠다고"
+            },
+            {
+              "id": "o1",
+              "label": "그 일은 나와 상관없다고",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "남에게 대신 해 달라고"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "not in our control",
+            "nothing to you"
+          ]
+        },
+        {
+          "id": "s12_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 스토아학파가 경고한(−) 것이에요. 칠판 오른쪽 일들과, 화(anger) 이야기를 떠올리며 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "groups",
+            "title": "내 힘 안 / 밖",
+            "left": {
+              "label": "할 수 있는 것 (within your power)",
+              "words": [
+                {
+                  "text": "within your power",
+                  "ko": "내 힘 안의 일"
+                }
+              ]
+            },
+            "right": {
+              "label": "할 수 없는 것",
+              "words": [
+                {
+                  "text": "things you cannot",
+                  "ko": "할 수 없는 일"
+                },
+                {
+                  "text": "the rain",
+                  "ko": "비"
+                },
+                {
+                  "text": "that person",
+                  "ko": "그 사람"
+                },
+                {
+                  "text": "another individual’s behavior",
+                  "ko": "남의 행동"
+                },
+                {
+                  "text": "the weather",
+                  "ko": "날씨"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

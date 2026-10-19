@@ -175,6 +175,14 @@
       "point": "To acquire … = ~하기 위해(주어 아님) · S one / V needs / O to become a member · 콤마 사이가 메인 문장",
       "from": "1bug6dp"
     },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "18pkwk6"
+    },
     "s2_sum": {
       "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",
       "praise": "잘 요약했어요! 핵심어만으로도 상황이 보여요.",
@@ -242,6 +250,14 @@
       "point": "A newcomer(S) learns(V) … and is socialized(V) … · and 뒤에 주어 없이 동사가 오면 앞 주어의 동사가 하나 더",
       "from": "f7o5iy"
     },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1qax06h"
+    },
     "s3_and": {
       "say": "and 뒤에 주어 없이 동사가 바로 오면, 앞 주어의 동사가 하나 더 있는 거예요. 그래서 A newcomer가 learns도 하고, is socialized도 돼요.",
       "from": "1253ak0"
@@ -296,6 +312,26 @@
       "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
       "from": "tguvur"
     },
+    "s4_basic_sv": {
+      "ask": "there are(~이 있다) 문장이에요. 동사(V)와 그 뒤의 진짜 주어(S)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "there": "there are(~이 있다)에서 there는 자리만 채우는 말이에요. 진짜 주어는 are 뒤에 있어요.",
+        "tests": "그건 combined with 뒤의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "there are 구조라 동사 are 뒤의 admittance processes(입회 절차)가 주어예요.",
+      "from": "10pm0g5"
+    },
+    "s4_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1mi6oxi"
+    },
     "s4_key": {
       "say": "핵심어는 입회 절차(admittance processes)와 능력 시험(tests)이에요. 후보자(a candidate)는 시험을 보고 들어가야 하니 아직 바깥 쪽이에요. 단어 지도에 붙여 둘게요.",
       "from": "1yjks3n"
@@ -330,6 +366,14 @@
       "explain": "주어는 epistemic communities, 동사는 were often kept, 보어는 secret(비밀인 상태)이에요.",
       "point": "epistemic communities(S) were often kept(V) secret(C) · 뒤는 with(시험), because of(이유)로 덧붙임",
       "from": "m01hsv"
+    },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "cse112"
     },
     "s5_past": {
       "say": "In the premodern era는 '전근대 시대에는', 즉 과거를 말해요. 모의고사에서는 과거와 현대의 대조가 자주 나와요. 뒤에서 지금은 어떤지 나오는지 봐요.",
@@ -372,6 +416,14 @@
       "point": "Some traces(S) may still be(V) present(C) … but … the ideal(S) has shifted(V) to openness(전목)",
       "from": "ndtzee"
     },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "57jc2e"
+    },
     "s6_but": {
       "say": "but은 앞과 뒤를 뒤집는 말이에요. 그래서 but 뒤가 글쓴이가 하고 싶은 중요한 말이에요.",
       "from": "wmsrsw"
@@ -412,6 +464,14 @@
       "explain": "주어는 Other, more active strategies, 동사는 are needed예요.",
       "point": "Other, more active strategies(S) are needed(V) to make … accessible",
       "from": "11g3krp"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1xp3495"
     },
     "s7_sum": {
       "ask": "노란 핵심어만 보고, 직역 말고 어떤 상황인지 간단히 요약해서 써 봐요.",

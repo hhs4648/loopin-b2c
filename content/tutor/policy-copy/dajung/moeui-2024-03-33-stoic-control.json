@@ -1,0 +1,437 @@
+{
+  "lesson": "moeui-2024-03-33-stoic-control",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1edkfqu"
+    },
+    "s1_where": {
+      "say": "warned against는 '~하지 말라고 경고했다'예요. 스토아학파가 무엇을 하지 말라고 했는지 생각하며 처음부터 읽어 봐요.",
+      "from": "vstvdo"
+    },
+    "s1_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "A man’s master": "그건 따옴표 안 문장의 주어예요. 먼저 바깥 문장을 봐요.",
+        "is": "그건 따옴표 안 문장의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "바깥 문장의 주어는 Epictetus, 동사는 wrote예요. 따옴표 안이 그가 쓴 말이에요.",
+      "from": "zsu95k"
+    },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1smdsdy"
+    },
+    "s1_master": {
+      "say": "내가 원하거나 피하는 걸 주고 빼앗을 수 있는 사람이 내 '주인'이래요. 내 마음이 남에게 달려 있으면 그 사람이 주인이 되는 거예요.",
+      "from": "1a86kef"
+    },
+    "s2_basic_sv": {
+      "ask": "콤마 뒤 메인 문장에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "If 덩어리 뒤, 콤마 다음이 메인 문장이에요. 주어 you, 동사 will have, 목적어 no master예요.",
+      "from": "1535hbw"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "2u25g6"
+    },
+    "s2_free": {
+      "ask": "언제 자유로워진대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "If 뒤 'depend on no one except yourself'를 봐요. no one except yourself는 '나 말고는 아무도'예요.",
+        "If 뒤 'depend on no one except yourself'를 봐요. no one except yourself는 '나 말고는 아무도'예요."
+      ],
+      "explain": "'If you depend on no one except yourself', 나 말고는 아무에게도 기대지 않으면 나 말고 주인이 없어서 자유롭대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'If you depend on no one except yourself', 나 말고는 아무에게도 기대지 않으면 나 말고 주인이 없어서 자유롭대요.",
+        "o2": "'If you depend on no one except yourself', 나 말고는 아무에게도 기대지 않으면 나 말고 주인이 없어서 자유롭대요."
+      },
+      "from": "vswh6"
+    },
+    "s3_sv": {
+      "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "about that": "그건 동사 뒤에서 '무엇에 관한' 것인지 말해 줘요.",
+        "your life": "그건 대시(―) 뒤, taking charge of의 대상이에요.",
+        "those things": "그건 대시 뒤, work on의 대상이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Stoic philosophy, 동사는 was예요. 대시(―) 뒤가 that(그것)이 무엇인지 풀어 줘요.",
+      "from": "1kwth8m"
+    },
+    "s3_cant": {
+      "ask": "대시(―) 뒤를 봐요. 스토아 철학은 '할 수 없는 일(things you cannot)'에 대해 뭐라고 했나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'not to waste energy on things you cannot'을 봐요. waste는 '낭비하다'예요.",
+        "'not to waste energy on things you cannot'을 봐요. waste는 '낭비하다'예요."
+      ],
+      "explain": "'not to waste energy on things you cannot', 할 수 없는 일에는 에너지를 낭비하지 말래요. 내 힘 안의 일에만 힘쓰고요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'not to waste energy on things you cannot', 할 수 없는 일에는 에너지를 낭비하지 말래요. 내 힘 안의 일에만 힘쓰고요.",
+        "o1": "'not to waste energy on things you cannot', 할 수 없는 일에는 에너지를 낭비하지 말래요. 내 힘 안의 일에만 힘쓰고요."
+      },
+      "point": "스토아 철학 = 내 힘 안의 일(within your power)에 힘쓰고, 할 수 없는 일(things you cannot)에 에너지를 낭비하지 않기",
+      "from": "165tkad"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_side": {
+      "ask": "warned against(~하지 말라고 경고했다) 뒤의 빈칸은 스토아학파가 좋게 본 것일까요, 나쁘게 본 것일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "warn against는 '~하지 말라고 경고하다'예요.",
+        "warn against는 '~하지 말라고 경고하다'예요."
+      ],
+      "explain": "warn against는 '~하지 말라고 경고하다'예요. 빈칸은 하지 말아야 할 일, 나쁘게 본 것(−)이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "warn against는 '~하지 말라고 경고하다'예요. 빈칸은 하지 말아야 할 일, 나쁘게 본 것(−)이에요."
+      },
+      "from": "1vojwt7"
+    },
+    "s4_which": {
+      "ask": "In particular(특히)라고 했어요. 앞 문장에서 하지 말라고 한 건 칠판의 어느 쪽 일이었나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞 문장 'not to waste energy on things you cannot'을 떠올려 봐요.",
+        "앞 문장 'not to waste energy on things you cannot'을 떠올려 봐요."
+      ],
+      "explain": "앞 문장에서 할 수 없는 일에 에너지를 낭비하지 말라고 했어요. 빈칸은 그중에서도 특히 하지 말아야 할 일이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "앞 문장에서 할 수 없는 일에 에너지를 낭비하지 말라고 했어요. 빈칸은 그중에서도 특히 하지 말아야 할 일이에요."
+      },
+      "point": "빈칸(warned against, −) = 할 수 없는 일 쪽에서 특히 하지 말아야 할 것",
+      "from": "1lf3h3u"
+    },
+    "s4_more": {
+      "say": "빈칸 뒤에 예가 이어져요. 할 수 없는 일에 무엇을 하지 말라는 건지 확인하며 읽어 봐요.",
+      "from": "1iwses9"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "our circumstances": "그건 콤마 뒤 문장(주장한 내용) 안의 말이에요.",
+        "the judgments": "그건 주장한 내용 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콤마 사이에 끼어든 Epictetus argued가 '누가 주장했는지'예요. 주어 Epictetus, 동사 argued예요.",
+      "from": "ze1x0l"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1envsyx"
+    },
+    "s5_judg": {
+      "ask": "Epictetus는 우리를 우울하게 하는 게 무엇이라고 했나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "it's not A but rather B that ~ = '~하는 건 A가 아니라 B다'예요. but rather 뒤를 봐요.",
+        "it's not A but rather B that ~ = '~하는 건 A가 아니라 B다'예요. but rather 뒤를 봐요."
+      ],
+      "explain": "'it's not our circumstances … but rather the judgments we make about them', 상황이 아니라 그에 대한 우리의 판단이 우리를 우울하게 한대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'it's not our circumstances … but rather the judgments we make about them', 상황이 아니라 그에 대한 우리의 판단이 우리를 우울하게 한대요.",
+        "o1": "'it's not our circumstances … but rather the judgments we make about them', 상황이 아니라 그에 대한 우리의 판단이 우리를 우울하게 한대요."
+      },
+      "from": "1u3k9ig"
+    },
+    "s6_anger": {
+      "say": "예로 분노(anger)를 들어요. 감정 이야기예요.",
+      "from": "1n0m2uz"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the rain": "그건 at 뒤 덩어리예요.",
+        "it": "그건 if 뒤 덩어리 안의 주어예요.",
+        "spoils": "그건 if 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 don't get, 보어는 angry예요(화가 나지 않는다).",
+      "from": "1lagid8"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "10uz0rt"
+    },
+    "s7_rain": {
+      "say": "비가 소풍을 망쳐도 우리는 비에 화내지 않는대요.",
+      "from": "ny5k6c"
+    },
+    "s8_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "we": "그건 because 뒤 덩어리 안의 주어예요.",
+        "can’t do": "그건 because 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 That(비에 화내는 것), 동사는 would be, 보어는 silly예요.",
+      "from": "1etn9zo"
+    },
+    "s8_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "16tkb8p"
+    },
+    "s8_silly": {
+      "ask": "비에 화내는 게 왜 어리석대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "because 뒤 'we can't do anything about the rain'을 봐요.",
+        "because 뒤 'we can't do anything about the rain'을 봐요."
+      ],
+      "explain": "'because we can't do anything about the rain', 비는 우리가 어떻게 할 수 없는 일이라서 화내 봤자 어리석대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'because we can't do anything about the rain', 비는 우리가 어떻게 할 수 없는 일이라서 화내 봤자 어리석대요.",
+        "o2": "'because we can't do anything about the rain', 비는 우리가 어떻게 할 수 없는 일이라서 화내 봤자 어리석대요."
+      },
+      "from": "173v1lq"
+    },
+    "story_8": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s9_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "someone": "그건 if 뒤 덩어리 안의 주어예요.",
+        "mistreats": "그건 if 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 we, 동사는 (often) do get, 보어는 angry예요. do는 '정말'이라는 강조예요.",
+      "from": "skdec"
+    },
+    "s9_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1ndg0i1"
+    },
+    "s9_person": {
+      "say": "But — 그런데 누가 나를 함부로 대하면 우리는 정말 화를 낸대요.",
+      "from": "7vigjo"
+    },
+    "s10_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the rain": "그건 any more than 뒤, 비교하는 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 can't control or change, 목적어는 that person이에요.",
+      "from": "635e2f"
+    },
+    "s10_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "z2dca1"
+    },
+    "s10_same": {
+      "ask": "그 사람에게 화내는 것도 왜 똑같이(equally) 어리석대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not ~ any more than은 '~할 수 없는 것처럼 ~도 못 한다'예요. 비와 그 사람을 나란히 놓아 봐요.",
+        "not ~ any more than은 '~할 수 없는 것처럼 ~도 못 한다'예요. 비와 그 사람을 나란히 놓아 봐요."
+      ],
+      "explain": "'can't control or change that person any more than we can stop the rain', 비를 못 멈추듯 그 사람도 못 바꿔요. 그래서 똑같이 어리석대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'can't control or change that person any more than we can stop the rain', 비를 못 멈추듯 그 사람도 못 바꿔요. 그래서 똑같이 어리석대요.",
+        "o2": "'can't control or change that person any more than we can stop the rain', 비를 못 멈추듯 그 사람도 못 바꿔요. 그래서 똑같이 어리석대요."
+      },
+      "from": "1g3vr2q"
+    },
+    "s11_tie": {
+      "say": "더 넓게 말하면, 내 기분을 남의 행동을 바꾸는 데 묶는 건 날씨에 묶는 것만큼 의미 없대요. 둘 다 할 수 없는 일이에요.",
+      "from": "11bjd4g"
+    },
+    "story_11": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s12_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "it": "그건 따옴표 안, If 덩어리의 주어예요.",
+        "concerns": "그건 따옴표 안, If 덩어리의 동사예요.",
+        "be prepared": "그건 따옴표 안 명령문의 동사예요. 먼저 바깥 문장을 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "바깥 문장은 주어 Epictetus, 동사 wrote예요.",
+      "from": "1921saj"
+    },
+    "s12_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "x11c2e"
+    },
+    "s12_nothing": {
+      "ask": "Epictetus는 통제 밖의 일에 대해 어떻게 말할 준비를 하라고 했나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'be prepared to say that it is nothing to you'를 봐요. nothing to you는 '너에게 아무것도 아닌'이에요.",
+        "'be prepared to say that it is nothing to you'를 봐요. nothing to you는 '너에게 아무것도 아닌'이에요."
+      ],
+      "explain": "'it is nothing to you', 통제 밖의 일은 나에게 아무것도 아니라고, 마음 쓰지 말라는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'it is nothing to you', 통제 밖의 일은 나에게 아무것도 아니라고, 마음 쓰지 말라는 말이에요.",
+        "o2": "'it is nothing to you', 통제 밖의 일은 나에게 아무것도 아니라고, 마음 쓰지 말라는 말이에요."
+      },
+      "from": "1p47lbi"
+    },
+    "s12_go": {
+      "say": "빈칸은 스토아학파가 경고한(−) 것이에요. 칠판 오른쪽 일들과, 화(anger) 이야기를 떠올리며 바꿔 쓴 보기를 찾아봐요.",
+      "from": "b27ced"
+    }
+  },
+  "exam": {
+    "ask": "warned against(−) 뒤, 칠판 오른쪽 일과 화(anger) 이야기를 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 스토아학파는 할 수 없는 일(비, 그 사람, 날씨)에 화내는 것, 즉 통제 밖의 일에 감정적으로 반응하는 걸 경고했어요.",
+    "final_wrong": "정답은 ③이에요. 비나 남의 행동처럼 통제할 수 없는 일에 화내는(감정적으로 반응하는) 건 어리석다고 했어요.",
+    "option_feedback": {
+      "1": "증거 없이 주장하는 이야기는 글에 없어요. 글은 통제 밖의 일에 대한 감정 이야기예요.",
+      "2": "남의 의견을 듣는 이야기는 글에 없어요. 남이 나를 함부로 대할 때 화내지 말라는 거예요.",
+      "4": "이해한 척하는 이야기는 글에 없어요.",
+      "5": "out of control이 겹쳐서 헷갈렸죠. 하지만 통제 밖이라는 걸 받아들이는 건 스토아학파가 권한 거예요. 경고한 건 그런 일에 화내는 거예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 16.7%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "⑤에 out of control이 있어서 글과 겹쳐 보여요. 하지만 스토아학파는 통제 밖의 일을 '나와 상관없다'고 받아들이라고 했어요. 경고한 건 통제 밖이라고 여기는 게 아니라, 그런 일에 화내는(감정적으로 반응하는) 거예요.",
+        "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "out of control이 글과 겹쳐서 골랐어요",
+            "skills": [
+              "word_overlap"
+            ],
+            "reply": "알려 줘서 고마워요. 겹치는 단어보다 그 단어로 무엇을 한다는 건지(합리화한다 / 화낸다)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "anger 예시를 빈칸과 못 이었어요",
+            "skills": [
+              "example_link"
+            ],
+            "reply": "알려 줘서 고마워요. 빈칸 뒤 Consider anger부터가 빈칸의 예예요. 앞으로 예시를 빈칸과 이어서 보게 할게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "word_overlap",
+              "example_link"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 예시를 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "권한 것",
+              "text": "it is nothing to you",
+              "ko": "통제 밖의 일은 나와 상관없다고 받아들이기",
+              "tone": "hl"
+            },
+            {
+              "label": "경고한 것",
+              "text": "get angry at the rain / that person",
+              "ko": "통제 밖의 일에 화내기 (감정)",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1ml2vr0"
+  },
+  "intro": {
+    "topic": {
+      "say": "비가 와서 소풍을 망치면 비에게 화가 나나요? 이번 글은 스토아 철학이 말하는 마음 다스리기를 다뤄요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "3i9uaj"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1k14t10"
+}

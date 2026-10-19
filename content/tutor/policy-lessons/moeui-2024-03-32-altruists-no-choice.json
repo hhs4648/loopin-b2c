@@ -1,0 +1,2086 @@
+{
+  "id": "moeui-2024-03-32-altruists-no-choice",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2024년 3월 고3 전국연합학력평가 영어 32번 (빈칸 추론, 2점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-altruists.svg",
+      "alt": "칠판: Common sense(보통 생각) ↔ Altruists(이타주의자)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "남을 구하려고 목숨을 건 사람은 자기 행동을 어떻게 말할까요? 이번 글은 이타적인 행동을 보는 두 생각을 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+    "underline": "________",
+    "sentence": 4,
+    "analysis_first": true,
+    "wrong_rate": 66.3,
+    "wrong_rank": 5,
+    "glosses": [
+      {
+        "en": "absolutely",
+        "ko": "전혀, 완전히"
+      },
+      {
+        "en": "no choice but to",
+        "ko": "~할 수밖에 없는"
+      },
+      {
+        "en": "rewarded",
+        "ko": "보상받은"
+      },
+      {
+        "en": "financially",
+        "ko": "금전적으로"
+      },
+      {
+        "en": "regretted",
+        "ko": "후회했다"
+      },
+      {
+        "en": "deserved",
+        "ko": "~을 받을 만했다"
+      },
+      {
+        "en": "appreciation",
+        "ko": "감사"
+      },
+      {
+        "en": "in return",
+        "ko": "그 대가로"
+      },
+      {
+        "en": "obligations",
+        "ko": "의무"
+      },
+      {
+        "en": "inapplicable",
+        "ko": "적용되지 않는"
+      },
+      {
+        "en": "risky",
+        "ko": "위험한"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "had absolutely no choice but to act as they did",
+        "keywords": [
+          "no choice but to"
+        ],
+        "ko": "그렇게 행동할 수밖에 없었다",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "should have been rewarded financially",
+        "keywords": [
+          "rewarded financially"
+        ],
+        "ko": "금전적으로 보상받았어야 했다"
+      },
+      {
+        "id": "3",
+        "label": "regretted making such decisions",
+        "keywords": [
+          "regretted"
+        ],
+        "ko": "그런 결정을 후회했다"
+      },
+      {
+        "id": "4",
+        "label": "deserved others’ appreciation in return",
+        "keywords": [
+          "deserved",
+          "appreciation"
+        ],
+        "ko": "그 대가로 다른 사람들의 감사를 받을 만했다"
+      },
+      {
+        "id": "5",
+        "label": "found the moral obligations inapplicable in risky situations",
+        "keywords": [
+          "moral obligations inapplicable"
+        ],
+        "ko": "위험한 상황에서는 도덕적 의무가 적용되지 않는다고 여겼다"
+      }
+    ],
+    "brief": {
+      "ask": "보통 사람들 생각(스스로 결정)과 반대 쪽, 칠판 오른쪽 말을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 보통 사람들은 '스스로 결정할 권리'를 말하지만, 이타주의자들은 정반대로 '그렇게 할 수밖에 없었다'고 해요. 칭찬받을 일도 아니고 누구라도 똑같이 했을 거라는 말이 같은 쪽이에요.",
+      "final_wrong": "정답은 ①이에요. 이타주의자들은 스스로 고른 게 아니라 그렇게 할 수밖에 없었다고 말해요.",
+      "option_feedback": {
+        "2": "보상 이야기는 글에 없어요. 오히려 칭찬받을 일도 아니라고 했어요.",
+        "3": "후회한다는 말은 글에 없어요. 누구라도 똑같이 했을 거라며 당연하게 여겨요.",
+        "4": "그들은 칭찬받을 일을 했다는 걸 부인했어요(denials). 감사를 받을 만했다는 건 반대예요.",
+        "5": "그들은 기본적인 도덕적 의무를 다했을 뿐이라고 했어요. 의무가 적용되지 않는다는 건 반대예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 23.9%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "⑤는 '위험한 상황에서는 도덕적 의무가 적용되지 않는다고 여겼다'예요. 하지만 마지막 문장에서 이타주의자들은 '우리 모두에게 기대되는 만큼만 했다', 기본적인 도덕적 의무를 다했을 뿐이라고 해요. 의무가 그대로 적용된다고 본 거라 반대예요.",
+          "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "moral obligation이 글에 나와서 골랐어요",
+              "skills": [
+                "word_overlap"
+              ],
+              "reply": "알려 줘서 고마워요. 글에 나온 단어가 보기에 있다고 정답은 아니에요. 그 단어를 어떻게 말하는지(적용된다/안 된다)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "lest 뒤 문장이 어려웠어요",
+              "skills": [
+                "lest_clause"
+              ],
+              "reply": "알려 줘서 고마워요. lest we shirk는 '우리가 회피하지 않도록'이에요. 의무를 지킨다는 말이에요. 앞으로 비슷한 구문이 나오면 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "word_overlap",
+                "lest_clause"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 단어가 어떻게 쓰였는지와 어려운 구문을 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "마지막 문장",
+                "text": "done no more than … expected … our basic moral obligation",
+                "ko": "기대되는 만큼, 도덕적 의무를 다했을 뿐",
+                "tone": "hl"
+              },
+              {
+                "label": "⑤",
+                "text": "moral obligations inapplicable",
+                "ko": "도덕적 의무가 적용 안 됨 → 반대",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 16.5%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "④는 '그 대가로 감사를 받을 만했다'예요. 그런데 이타주의자들은 칭찬받을 만한 일을 했다는 걸 분명히 부인했어요(explicit denials). 누구라도 똑같이 했을 거라면서요.",
+          "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "큰 희생을 했으니 감사받을 만하다고 생각했어요",
+              "skills": [
+                "own_opinion"
+              ],
+              "reply": "알려 줘서 고마워요. 내 생각이 아니라 글 속 이타주의자들이 뭐라고 주장하는지를 골라야 해요. 앞으로 '누구의 말인지'를 짚어 줄게요."
+            },
+            {
+              "label": "denials를 못 봤어요",
+              "skills": [
+                "denial_word"
+              ],
+              "reply": "알려 줘서 고마워요. denial은 '부인, 부정'이에요. 앞으로 비슷한 단어가 나오면 강조해서 알려 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "own_opinion",
+                "denial_word"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 누구의 말인지와 부정의 말을 같이 짚어 줄게요."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "commonsense",
+        "ko": "상식적인"
+      },
+      {
+        "en": "moral",
+        "ko": "도덕적인"
+      },
+      {
+        "en": "conform to",
+        "ko": "~에 따르다"
+      },
+      {
+        "en": "responsibility",
+        "ko": "책임"
+      },
+      {
+        "en": "get offended",
+        "ko": "기분이 상하다"
+      },
+      {
+        "en": "determine",
+        "ko": "정하다"
+      },
+      {
+        "en": "sacrifice",
+        "ko": "희생"
+      },
+      {
+        "en": "recipient",
+        "ko": "수혜자"
+      },
+      {
+        "en": "assert",
+        "ko": "주장하다"
+      },
+      {
+        "en": "insist",
+        "ko": "주장하다"
+      },
+      {
+        "en": "organ donor",
+        "ko": "장기 기증자"
+      },
+      {
+        "en": "mortal",
+        "ko": "치명적인"
+      },
+      {
+        "en": "consistent",
+        "ko": "한결같은"
+      },
+      {
+        "en": "explicit",
+        "ko": "분명한"
+      },
+      {
+        "en": "denial",
+        "ko": "부인"
+      },
+      {
+        "en": "assurance",
+        "ko": "확신"
+      },
+      {
+        "en": "in one's shoes",
+        "ko": "~의 입장에서"
+      },
+      {
+        "en": "obligation",
+        "ko": "의무"
+      }
+    ],
+    "options": [
+      {
+        "en": "no choice but to",
+        "ko": "~할 수밖에 없는"
+      },
+      {
+        "en": "appreciation",
+        "ko": "감사"
+      },
+      {
+        "en": "inapplicable",
+        "ko": "적용되지 않는"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "The commonsense understanding of the moral status of altruistic acts conforms to how most of us think about our responsibilities toward others.",
+      "model_translation": "이타적인 행위의 도덕적 상태에 대한 상식적인 이해는 우리 대부분이 다른 사람들을 향한 우리의 책임에 대해 어떻게 생각하는지에 따른다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "The commonsense understanding",
+          "ko": "상식적인 이해"
+        },
+        {
+          "en": "the moral status",
+          "ko": "도덕적 지위"
+        },
+        {
+          "en": "altruistic acts",
+          "ko": "이타적인 행동"
+        },
+        {
+          "en": "conforms to",
+          "ko": "~에 따르다, ~와 일치하다"
+        },
+        {
+          "en": "how most of us think",
+          "ko": "우리 대부분이 생각하는 방식"
+        },
+        {
+          "en": "our responsibilities",
+          "ko": "우리의 책임"
+        },
+        {
+          "en": "toward others",
+          "ko": "다른 사람들에 대한"
+        },
+        {
+          "en": "They",
+          "ko": "그들"
+        },
+        {
+          "en": "insist",
+          "ko": "주장하다"
+        },
+        {
+          "en": "commonsense",
+          "ko": "상식적인"
+        },
+        {
+          "en": "status",
+          "ko": "지위, 상태"
+        },
+        {
+          "en": "altruistic",
+          "ko": "이타적인"
+        },
+        {
+          "en": "acts",
+          "ko": "행동"
+        },
+        {
+          "en": "conforms",
+          "ko": "따르다"
+        },
+        {
+          "en": "think",
+          "ko": "생각하다"
+        },
+        {
+          "en": "responsibilities",
+          "ko": "책임"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "They insist that they ________."
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸 문장은 짧아요. They(그들)가 누구이고 무엇을 주장(insist)하는지가 빈칸이에요. 그걸 생각하며 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "They insist that they ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "They",
+            "insist",
+            "________"
+          ],
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
+            }
+          ]
+        },
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The commonsense understanding",
+            "the moral status",
+            "altruistic acts",
+            "conforms to",
+            "our responsibilities"
+          ],
+          "answers": [
+            "The commonsense understanding",
+            "conforms to"
+          ],
+          "roles": {
+            "The commonsense understanding": "S",
+            "conforms to": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the moral status": "그건 of 뒤 덩어리예요. 앞의 understanding을 꾸며요.",
+              "altruistic acts": "그건 of 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요.",
+              "our responsibilities": "그건 about 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The commonsense understanding, 동사는 conforms to(~에 따르다)예요."
+          },
+          "method": 0,
+          "slot": "s1_basic",
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
+            },
+            {
+              "label": "conform to",
+              "text": "'~에 따르다, ~와 일치하다'예요.",
+              "mark": "conforms to"
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "The commonsense understanding",
+            "conforms to",
+            "how most of us think"
+          ],
+          "answers": [
+            "The commonsense understanding",
+            "how most of us think",
+            "conforms to"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The commonsense understanding",
+                "ko": "상식적인 이해는"
+              },
+              " ",
+              {
+                "en": "how most of us think",
+                "ko": "우리 대부분이 생각하는 방식"
+              },
+              "에 ",
+              {
+                "en": "conforms to",
+                "ko": "따른다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "The commonsense understanding conforms to how most of us think.",
+          "tips": [
+            {
+              "label": "빈칸 문제 요령",
+              "text": "빈칸이 어디 있는지, 무엇을 묻는 문장인지 먼저 확인하고 처음부터 읽어요. 빈칸에는 글쓴이 주장과 같은 말이 올 때도, 반대 의견이 올 때도 있어요."
+            },
+            {
+              "label": "conform to",
+              "text": "'~에 따르다, ~와 일치하다'예요.",
+              "mark": "conforms to"
+            }
+          ]
+        },
+        {
+          "id": "s1_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "conforms to는 '~에 따르다, ~와 일치하다'예요. to 뒤 'how most of us think'를 봐요.",
+              "conforms to는 '~에 따르다, ~와 일치하다'예요. to 뒤 'how most of us think'를 봐요."
+            ],
+            "explain": "'conforms to how most of us think about our responsibilities'는 우리 대부분이 책임에 대해 생각하는 방식과 일치한다는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'conforms to how most of us think about our responsibilities'는 우리 대부분이 책임에 대해 생각하는 방식과 일치한다는 말이에요.",
+              "o2": "'conforms to how most of us think about our responsibilities'는 우리 대부분이 책임에 대해 생각하는 방식과 일치한다는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "이타적 행동은 상식과 정반대다"
+            },
+            {
+              "id": "o1",
+              "label": "이타적 행동을 보는 상식은 우리가 남에 대한 책임을 생각하는 방식과 같다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "책임감이 강한 사람만 이타적이다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "commonsense",
+            "conforms to",
+            "how most of us think"
+          ],
+          "tips": [
+            {
+              "label": "conform to",
+              "text": "'~에 따르다, ~와 일치하다'예요.",
+              "mark": "conforms to"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "We tend to get offended when someone else or society determines for us how much of what we have should be given away; we are adults and should have the right to make such decisions for ourselves.",
+      "model_translation": "우리는 다른 누군가 또는 사회가 우리를 대신하여 우리가 가진 것의 얼마만큼을 나누어줘야 하는지를 결정하면 그것을 불쾌하게 여기는 경향이 있다. 우리는 성인이고 스스로 그러한 결정을 내릴 권리가 있어야 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "determines",
+          "ko": "정하다"
+        },
+        {
+          "en": "tend to get offended",
+          "ko": "기분이 상하는 경향이 있다"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "We tend to",
+          "ko": "우리는 ~하는 경향이 있다"
+        },
+        {
+          "en": "get offended",
+          "ko": "기분이 상하다"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "someone else or society",
+          "ko": "다른 누군가나 사회"
+        },
+        {
+          "en": "determines for us",
+          "ko": "우리 대신 정하다"
+        },
+        {
+          "en": "how much of what we have",
+          "ko": "우리가 가진 것 중 얼마나"
+        },
+        {
+          "en": "should be given away",
+          "ko": "나눠 줘야 하는지"
+        },
+        {
+          "en": "we are adults",
+          "ko": "우리는 어른이다"
+        },
+        {
+          "en": "should have the right",
+          "ko": "권리가 있어야 한다"
+        },
+        {
+          "en": "to make such decisions",
+          "ko": "그런 결정을 내릴"
+        },
+        {
+          "en": "for ourselves",
+          "ko": "스스로"
+        },
+        {
+          "en": "tend",
+          "ko": "~하는 경향이 있다"
+        },
+        {
+          "en": "offended",
+          "ko": "기분이 상한"
+        },
+        {
+          "en": "society",
+          "ko": "사회"
+        },
+        {
+          "en": "given",
+          "ko": "주어진"
+        },
+        {
+          "en": "adults",
+          "ko": "어른들"
+        },
+        {
+          "en": "right",
+          "ko": "권리"
+        },
+        {
+          "en": "decisions",
+          "ko": "결정"
+        },
+        {
+          "en": "ourselves",
+          "ko": "우리 자신"
+        }
+      ],
+      "slashes": [
+        "get offended",
+        "determines for us",
+        "given away;",
+        "the right"
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "tend to get offended",
+            "someone else or society",
+            "determines"
+          ],
+          "answers": [
+            "We",
+            "tend to get offended"
+          ],
+          "roles": {
+            "We": "S",
+            "tend to get offended": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "someone else or society": "그건 when 뒤 덩어리 안의 주어예요.",
+              "determines": "그건 when 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 tend to get offended(기분이 상하는 경향이 있다)예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "get offended",
+              "text": "'기분이 상하다, 불쾌해하다'예요.",
+              "mark": "offended"
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "We tend to",
+            "get offended",
+            "someone else or society",
+            "determines for us"
+          ],
+          "answers": [
+            "We tend to",
+            "someone else or society",
+            "determines for us",
+            "get offended"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We tend to",
+                "ko": "우리는 ~하는 경향이 있다"
+              },
+              " — ",
+              {
+                "en": "someone else or society",
+                "ko": "다른 누군가나 사회가"
+              },
+              " ",
+              {
+                "en": "determines for us",
+                "ko": "우리 대신 정하면"
+              },
+              " ",
+              {
+                "en": "get offended",
+                "ko": "기분이 상하는"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "We tend to get offended when someone else or society determines for us.",
+          "tips": [
+            {
+              "label": "get offended",
+              "text": "'기분이 상하다, 불쾌해하다'예요.",
+              "mark": "offended"
+            }
+          ]
+        },
+        {
+          "id": "s2_feel",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "다른 사람이나 사회가 우리 대신 얼마나 나눠 줄지 정하면, 우리는 어떻게 느낀대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "get offended는 '기분이 상하다'예요.",
+              "get offended는 '기분이 상하다'예요."
+            ],
+            "explain": "'We tend to get offended', 우리는 기분이 상하는 경향이 있대요. 내 것을 얼마나 나눌지는 내가 정하고 싶으니까요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'We tend to get offended', 우리는 기분이 상하는 경향이 있대요. 내 것을 얼마나 나눌지는 내가 정하고 싶으니까요.",
+              "o1": "'We tend to get offended', 우리는 기분이 상하는 경향이 있대요. 내 것을 얼마나 나눌지는 내가 정하고 싶으니까요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "고마워한다"
+            },
+            {
+              "id": "o1",
+              "label": "상관없어한다"
+            },
+            {
+              "id": "o2",
+              "label": "기분 나빠한다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "get offended"
+          ],
+          "tips": [
+            {
+              "label": "get offended",
+              "text": "'기분이 상하다, 불쾌해하다'예요.",
+              "mark": "offended"
+            }
+          ]
+        },
+        {
+          "id": "s2_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "세미콜론(;) 뒤 — 우리는 어른이니 그런 결정은 스스로 내릴 권리가 있어야 한대요. 칠판 왼쪽(보통 사람들 생각)에 넣어 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "두 생각",
+            "left": {
+              "label": "보통 사람들 (상식)",
+              "words": [
+                {
+                  "text": "decide for ourselves",
+                  "ko": "스스로 결정",
+                  "fresh": true
+                },
+                {
+                  "text": "the right",
+                  "ko": "권리",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "이타주의자들",
+              "words": []
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "the right",
+            "for ourselves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Yet, when interviewed, altruists known for making the largest sacrifices—and bringing about the greatest benefits to their recipients—assert just the opposite.",
+      "model_translation": "하지만, 인터뷰를 하면, 가장 큰 희생을 하고, 그들의 수혜자에게 가장 큰 이익을 가져다주는 것으로 알려진 이타주의자들은 정반대의 주장을 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Yet",
+          "ko": "하지만"
+        },
+        {
+          "en": "when interviewed",
+          "ko": "인터뷰를 하면"
+        },
+        {
+          "en": "altruists",
+          "ko": "이타주의자들"
+        },
+        {
+          "en": "known for",
+          "ko": "~로 알려진"
+        },
+        {
+          "en": "making the largest sacrifices",
+          "ko": "가장 큰 희생을 하는 것"
+        },
+        {
+          "en": "bringing about the greatest benefits",
+          "ko": "가장 큰 이익을 가져다주는 것"
+        },
+        {
+          "en": "their recipients",
+          "ko": "그들의 수혜자(도움받는 사람)"
+        },
+        {
+          "en": "assert",
+          "ko": "주장하다"
+        },
+        {
+          "en": "just the opposite",
+          "ko": "정반대"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "interviewed",
+          "ko": "인터뷰를 받은"
+        },
+        {
+          "en": "known",
+          "ko": "알려진"
+        },
+        {
+          "en": "making",
+          "ko": "하는 것"
+        },
+        {
+          "en": "largest",
+          "ko": "가장 큰"
+        },
+        {
+          "en": "sacrifices",
+          "ko": "희생"
+        },
+        {
+          "en": "bringing",
+          "ko": "가져오는 것"
+        },
+        {
+          "en": "greatest",
+          "ko": "가장 큰"
+        },
+        {
+          "en": "benefits",
+          "ko": "이익"
+        },
+        {
+          "en": "recipients",
+          "ko": "수혜자"
+        },
+        {
+          "en": "opposite",
+          "ko": "반대"
+        }
+      ],
+      "slashes": [
+        "when interviewed,",
+        "the largest sacrifices—",
+        "recipients—"
+      ],
+      "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Yet",
+            "altruists",
+            "making the largest sacrifices",
+            "their recipients",
+            "assert",
+            "just the opposite"
+          ],
+          "answers": [
+            "altruists",
+            "assert",
+            "just the opposite"
+          ],
+          "roles": {
+            "altruists": "S",
+            "assert": "V",
+            "just the opposite": "O"
+          },
+          "brief": {
+            "ask": "대시(—) 사이는 흐리게 해 뒀어요. 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "Yet": "그건 '하지만', 앞과 뒤집는 말이에요.",
+              "making the largest sacrifices": "그건 known for(~로 알려진) 뒤 덩어리예요. 앞의 altruists를 꾸며요.",
+              "their recipients": "그건 대시(—) 사이, to 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 altruists, 동사는 assert, 목적어는 just the opposite(정반대)예요."
+          },
+          "method": 0,
+          "faded": [
+            "—and bringing about the greatest benefits to their recipients—"
+          ],
+          "slot": "s3_basic"
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Yet",
+            "altruists",
+            "assert",
+            "just the opposite"
+          ],
+          "answers": [
+            "Yet",
+            "altruists",
+            "just the opposite",
+            "assert"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Yet",
+                "ko": "하지만"
+              },
+              ", ",
+              {
+                "en": "altruists",
+                "ko": "이타주의자들은"
+              },
+              " ",
+              {
+                "en": "just the opposite",
+                "ko": "정반대"
+              },
+              "를 ",
+              {
+                "en": "assert",
+                "ko": "주장한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Yet, altruists assert just the opposite."
+        },
+        {
+          "id": "s3_opp",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Yet(하지만) — 이타주의자들은 무엇을 주장한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "assert 뒤 'just the opposite'를 봐요. opposite은 '반대'예요.",
+              "assert 뒤 'just the opposite'를 봐요. opposite은 '반대'예요."
+            ],
+            "explain": "'assert just the opposite', 정반대를 주장한대요. 보통 사람들은 '스스로 결정할 권리'를 말했으니, 이타주의자들은 그 반대를 말해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'assert just the opposite', 정반대를 주장한대요. 보통 사람들은 '스스로 결정할 권리'를 말했으니, 이타주의자들은 그 반대를 말해요.",
+              "o2": "'assert just the opposite', 정반대를 주장한대요. 보통 사람들은 '스스로 결정할 권리'를 말했으니, 이타주의자들은 그 반대를 말해요."
+            },
+            "point": "Yet … altruists … assert just the opposite = 이타주의자들은 상식(스스로 결정)과 정반대를 주장한다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "보통 사람들 생각과 같은 것"
+            },
+            {
+              "id": "o1",
+              "label": "보통 사람들 생각과 정반대",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "희생은 쓸모없다는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Yet",
+            "just the opposite"
+          ],
+          "faded": [
+            "—and bringing about the greatest benefits to their recipients—"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "보통 사람들 생각과 정반대예요. 칠판 오른쪽에 넣어 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "두 생각",
+            "left": {
+              "label": "보통 사람들 (상식)",
+              "words": [
+                {
+                  "text": "decide for ourselves",
+                  "ko": "스스로 결정"
+                },
+                {
+                  "text": "the right",
+                  "ko": "권리"
+                }
+              ]
+            },
+            "right": {
+              "label": "이타주의자들",
+              "words": [
+                {
+                  "text": "just the opposite",
+                  "ko": "정반대",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "faded": [
+            "—and bringing about the greatest benefits to their recipients—"
+          ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🙋",
+                "en": "decide for ourselves",
+                "ko": "보통 우리는 내 것을 얼마나 나눌지 스스로 정할 권리가 있다고 봐요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "🔄",
+                "en": "Yet · just the opposite",
+                "ko": "그런데 큰 희생을 한 이타주의자들은 정반대를 말해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "They insist that they ________.",
+      "model_translation": "그들은 자신들이 ________라고 주장한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "They",
+          "ko": "그들"
+        },
+        {
+          "en": "insist",
+          "ko": "주장하다"
+        },
+        {
+          "en": "they",
+          "ko": "그들"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_they",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸 문장의 They(그들)는 누구일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "바로 앞 문장의 주어를 떠올려 봐요. 무엇을 assert(주장)했는지도요.",
+              "바로 앞 문장의 주어를 떠올려 봐요. 무엇을 assert(주장)했는지도요."
+            ],
+            "explain": "바로 앞 문장의 주어 altruists(이타주의자들)예요. assert가 insist로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "바로 앞 문장의 주어 altruists(이타주의자들)예요. assert가 insist로 이어져요.",
+              "o1": "바로 앞 문장의 주어 altruists(이타주의자들)예요. assert가 insist로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "보통 사람들(우리)"
+            },
+            {
+              "id": "o1",
+              "label": "도움을 받은 사람들"
+            },
+            {
+              "id": "o2",
+              "label": "큰 희생을 한 이타주의자들",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "They",
+            "insist"
+          ]
+        },
+        {
+          "id": "s4_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸은 이타주의자들이 주장하는 내용이에요. 칠판 왼쪽(스스로 결정할 권리)과 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "앞 문장에서 이타주의자들은 just the opposite(정반대)를 주장했어요.",
+              "앞 문장에서 이타주의자들은 just the opposite(정반대)를 주장했어요."
+            ],
+            "explain": "이타주의자들은 just the opposite, 정반대를 주장한다고 했어요. 그러니 빈칸은 '스스로 결정한다'의 반대 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "이타주의자들은 just the opposite, 정반대를 주장한다고 했어요. 그러니 빈칸은 '스스로 결정한다'의 반대 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 (스스로 결정)"
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 (스스로 고른 게 아님)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "두 생각",
+            "left": {
+              "label": "보통 사람들 (상식)",
+              "words": [
+                {
+                  "text": "decide for ourselves",
+                  "ko": "스스로 결정"
+                },
+                {
+                  "text": "the right",
+                  "ko": "권리"
+                }
+              ]
+            },
+            "right": {
+              "label": "이타주의자들",
+              "words": [
+                {
+                  "text": "just the opposite",
+                  "ko": "정반대"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장에 But, However, opposite, not 같은 반전 단서가 걸려 있으면 반대 의견이 들어가요."
+            }
+          ]
+        },
+        {
+          "id": "s4_guess",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'스스로 결정한다'의 반대라면, 빈칸에는 어떤 말이 올까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "스스로 결정할 권리의 반대예요. 내가 고를 수 있는 게 아니었다는 쪽이에요.",
+              "스스로 결정할 권리의 반대예요. 내가 고를 수 있는 게 아니었다는 쪽이에요."
+            ],
+            "explain": "스스로 결정할 권리의 반대는 '고를 수 있는 게 아니었다'예요. 이타주의자들은 그렇게 할 수밖에 없었다고 말해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "스스로 결정할 권리의 반대는 '고를 수 있는 게 아니었다'예요. 이타주의자들은 그렇게 할 수밖에 없었다고 말해요.",
+              "o2": "스스로 결정할 권리의 반대는 '고를 수 있는 게 아니었다'예요. 이타주의자들은 그렇게 할 수밖에 없었다고 말해요."
+            },
+            "point": "빈칸 = just the opposite → 스스로 고른 게 아니라 그렇게 할 수밖에 없었다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "충분히 고민해서 스스로 골랐다"
+            },
+            {
+              "id": "o1",
+              "label": "그렇게 하는 것 말고는 선택할 수 없었다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "보상을 받으려고 했다"
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "s4_more",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸 뒤 문장들이 같은 말을 반복하는지 확인하며 계속 읽어 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Organ donors, and everyday citizens who risk their own lives to save others in mortal danger are remarkably consistent in their explicit denials that they have done anything deserving of high praise as well as in their assurance that anyone in their shoes should have done exactly the same thing.",
+      "model_translation": "치명적인 위험에 처한 다른 사람들을 구하기 위해 자기 자신의 목숨을 거는 장기 기증자들과 평범한 시민들은 자신의 입장에 처한 사람이라면 누구나 정확하게 똑같은 것을 했을 것이라는 그들의 확신에서뿐만 아니라 자신이 찬사를 받을 만한 어떤 일을 했다는 것에 대한 그들의 명백한 부인에서도 놀랍게 일관된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Organ donors, and everyday citizens",
+          "ko": "장기 기증자들과 평범한 시민들"
+        },
+        {
+          "en": "risk their own lives",
+          "ko": "자기 목숨을 걸다"
+        },
+        {
+          "en": "risk",
+          "ko": "걸다, 위험을 무릅쓰다"
+        },
+        {
+          "en": "their own lives",
+          "ko": "자기 목숨"
+        },
+        {
+          "en": "to save others",
+          "ko": "다른 사람들을 구하려고"
+        },
+        {
+          "en": "in mortal danger",
+          "ko": "목숨이 위험한"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "remarkably consistent",
+          "ko": "놀랍도록 한결같은"
+        },
+        {
+          "en": "explicit denials",
+          "ko": "분명한 부인"
+        },
+        {
+          "en": "anything deserving of high praise",
+          "ko": "큰 칭찬을 받을 만한 무언가"
+        },
+        {
+          "en": "as well as",
+          "ko": "~뿐만 아니라"
+        },
+        {
+          "en": "their assurance",
+          "ko": "그들의 확신"
+        },
+        {
+          "en": "anyone in their shoes",
+          "ko": "그들의 입장에 있는 누구라도"
+        },
+        {
+          "en": "should have done exactly the same thing",
+          "ko": "정확히 똑같이 했을 것이다"
+        },
+        {
+          "en": "Organ",
+          "ko": "장기"
+        },
+        {
+          "en": "donors",
+          "ko": "기증자들"
+        },
+        {
+          "en": "everyday",
+          "ko": "평범한"
+        },
+        {
+          "en": "citizens",
+          "ko": "시민들"
+        },
+        {
+          "en": "save",
+          "ko": "구하다"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        },
+        {
+          "en": "mortal",
+          "ko": "치명적인"
+        },
+        {
+          "en": "danger",
+          "ko": "위험"
+        },
+        {
+          "en": "remarkably",
+          "ko": "놀랍도록"
+        },
+        {
+          "en": "consistent",
+          "ko": "한결같은"
+        },
+        {
+          "en": "explicit",
+          "ko": "분명한"
+        },
+        {
+          "en": "denials",
+          "ko": "부인"
+        },
+        {
+          "en": "deserving",
+          "ko": "~을 받을 만한"
+        },
+        {
+          "en": "high",
+          "ko": "큰, 높은"
+        },
+        {
+          "en": "praise",
+          "ko": "칭찬"
+        },
+        {
+          "en": "assurance",
+          "ko": "확신"
+        },
+        {
+          "en": "anyone",
+          "ko": "누구라도"
+        },
+        {
+          "en": "shoes",
+          "ko": "신발 · in one's shoes = ~의 입장에서"
+        }
+      ],
+      "slashes": [
+        "Organ donors,",
+        "in mortal danger",
+        "remarkably consistent",
+        "high praise",
+        "assurance"
+      ],
+      "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Organ donors, and everyday citizens",
+            "risk",
+            "their own lives",
+            "are",
+            "remarkably consistent"
+          ],
+          "answers": [
+            "Organ donors, and everyday citizens",
+            "are",
+            "remarkably consistent"
+          ],
+          "roles": {
+            "Organ donors, and everyday citizens": "S",
+            "are": "V",
+            "remarkably consistent": "C"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "risk": "그건 who 뒤 덩어리 안의 동사예요. 앞의 citizens를 꾸며요.",
+              "their own lives": "그건 who 뒤 덩어리 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Organ donors, and everyday citizens, 동사는 are, 보어는 remarkably consistent예요."
+          },
+          "method": 0,
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "in one's shoes",
+              "text": "'~의 입장에서'예요. anyone in their shoes = 그들의 입장이라면 누구라도.",
+              "mark": "in their shoes"
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "Organ donors, and everyday citizens",
+            "are",
+            "remarkably consistent",
+            "explicit denials"
+          ],
+          "answers": [
+            "Organ donors, and everyday citizens",
+            "explicit denials",
+            "remarkably consistent",
+            "are"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Organ donors, and everyday citizens",
+                "ko": "장기 기증자들과 평범한 시민들은"
+              },
+              " ",
+              {
+                "en": "explicit denials",
+                "ko": "분명한 부인"
+              },
+              "에서 ",
+              {
+                "en": "remarkably consistent",
+                "ko": "놀랍도록 한결같"
+              },
+              {
+                "en": "are",
+                "ko": "다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Organ donors, and everyday citizens are remarkably consistent in their explicit denials.",
+          "tips": [
+            {
+              "label": "in one's shoes",
+              "text": "'~의 입장에서'예요. anyone in their shoes = 그들의 입장이라면 누구라도.",
+              "mark": "in their shoes"
+            }
+          ]
+        },
+        {
+          "id": "s5_deny",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그들은 무엇을 부인(denials)하고, 무엇을 확신(assurance)한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "denials that 뒤 'anything deserving of high praise', assurance that 뒤 'anyone in their shoes … the same thing'을 봐요.",
+              "denials that 뒤 'anything deserving of high praise', assurance that 뒤 'anyone in their shoes … the same thing'을 봐요."
+            ],
+            "explain": "'denials that they have done anything deserving of high praise', 칭찬받을 일을 했다는 걸 부인하고, 'anyone in their shoes should have done exactly the same thing', 누구라도 똑같이 했을 거래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'denials that they have done anything deserving of high praise', 칭찬받을 일을 했다는 걸 부인하고, 'anyone in their shoes should have done exactly the same thing', 누구라도 똑같이 했을 거래요.",
+              "o2": "'denials that they have done anything deserving of high praise', 칭찬받을 일을 했다는 걸 부인하고, 'anyone in their shoes should have done exactly the same thing', 누구라도 똑같이 했을 거래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "칭찬받을 일을 했다는 걸 부인하고, 누구라도 똑같이 했을 거라 확신한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "칭찬받아야 한다고 하고, 자기만 할 수 있었다고 확신한다"
+            },
+            {
+              "id": "o2",
+              "label": "위험한 줄 몰랐다고 부인한다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "denials",
+            "high praise",
+            "anyone in their shoes",
+            "the same thing"
+          ],
+          "tips": [
+            {
+              "label": "in one's shoes",
+              "text": "'~의 입장에서'예요. anyone in their shoes = 그들의 입장이라면 누구라도.",
+              "mark": "in their shoes"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "특별한 걸 한 게 아니라는 말이에요. 빈칸(어쩔 수 없었다)과 같은 쪽이죠. 칠판 오른쪽에 쌓아 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "두 생각",
+            "left": {
+              "label": "보통 사람들 (상식)",
+              "words": [
+                {
+                  "text": "decide for ourselves",
+                  "ko": "스스로 결정"
+                },
+                {
+                  "text": "the right",
+                  "ko": "권리"
+                }
+              ]
+            },
+            "right": {
+              "label": "이타주의자들",
+              "words": [
+                {
+                  "text": "just the opposite",
+                  "ko": "정반대"
+                },
+                {
+                  "text": "no high praise",
+                  "ko": "칭찬받을 일 아님",
+                  "fresh": true
+                },
+                {
+                  "text": "anyone … the same thing",
+                  "ko": "누구라도 똑같이",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "To be sure, it seems that the more altruistic someone is, the more they are likely to insist that they have done no more than all of us would be expected to do, lest we shirk our basic moral obligation to humanity.",
+      "model_translation": "확실히, 누군가가 더 이타적일수록, 그들은 우리가 인류에 대한 우리의 기본적인 도덕적 의무를 회피하지 않도록, 우리 모두가 할 것으로 기대되는 만큼만 했을 뿐이라고 주장할 가능성이 더 높아 보인다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "are likely to insist",
+          "ko": "주장할 것 같다"
+        },
+        {
+          "en": "they",
+          "ko": "그들"
+        },
+        {
+          "en": "someone",
+          "ko": "누군가"
+        },
+        {
+          "en": "seems",
+          "ko": "~인 것 같다"
+        },
+        {
+          "en": "it",
+          "ko": "그것(가주어)"
+        },
+        {
+          "en": "To be sure",
+          "ko": "확실히"
+        },
+        {
+          "en": "it seems that",
+          "ko": "~인 것 같다"
+        },
+        {
+          "en": "the more altruistic someone is",
+          "ko": "누군가 더 이타적일수록"
+        },
+        {
+          "en": "the more they are likely to insist",
+          "ko": "그들은 더 ~라고 주장할 것 같다"
+        },
+        {
+          "en": "have done no more than",
+          "ko": "~ 이상은 하지 않았다, ~만큼만 했다"
+        },
+        {
+          "en": "all of us",
+          "ko": "우리 모두"
+        },
+        {
+          "en": "would be expected to do",
+          "ko": "하도록 기대될"
+        },
+        {
+          "en": "lest we shirk",
+          "ko": "우리가 회피하지 않도록"
+        },
+        {
+          "en": "our basic moral obligation",
+          "ko": "우리의 기본적인 도덕적 의무"
+        },
+        {
+          "en": "to humanity",
+          "ko": "인류에 대한"
+        },
+        {
+          "en": "likely",
+          "ko": "~할 것 같은"
+        },
+        {
+          "en": "insist",
+          "ko": "주장하다"
+        },
+        {
+          "en": "altruistic",
+          "ko": "이타적인"
+        },
+        {
+          "en": "expected",
+          "ko": "기대되는"
+        },
+        {
+          "en": "lest",
+          "ko": "~하지 않도록"
+        },
+        {
+          "en": "shirk",
+          "ko": "회피하다"
+        },
+        {
+          "en": "obligation",
+          "ko": "의무"
+        },
+        {
+          "en": "humanity",
+          "ko": "인류"
+        }
+      ],
+      "slashes": [
+        "To be sure,",
+        "someone is,",
+        "likely to insist",
+        "expected to do,"
+      ],
+      "steps": [
+        {
+          "id": "s6_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "it",
+            "seems",
+            "someone",
+            "they",
+            "are likely to insist"
+          ],
+          "answers": [
+            "it",
+            "seems"
+          ],
+          "roles": {
+            "it": "S",
+            "seems": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "someone": "그건 the more 덩어리 안의 주어예요.",
+              "they": "그건 that 뒤 덩어리 안의 주어예요.",
+              "are likely to insist": "그건 that 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 it, 동사는 seems예요(~인 것 같다). that 뒤가 그 내용이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "tips": [
+            {
+              "label": "the 비교급, the 비교급",
+              "text": "'~할수록 더 ~하다'예요. the more altruistic …, the more likely … = 더 이타적일수록 더 ~할 것 같다.",
+              "mark": "the more"
+            },
+            {
+              "label": "no more than",
+              "text": "'~ 이상은 아닌, ~만큼만'이에요. done no more than … expected = 기대되는 만큼만 했다.",
+              "mark": "no more than"
+            }
+          ]
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "the more altruistic someone is",
+            "the more they are likely to insist",
+            "have done no more than",
+            "all of us",
+            "would be expected to do"
+          ],
+          "answers": [
+            "the more altruistic someone is",
+            "the more they are likely to insist",
+            "all of us",
+            "would be expected to do",
+            "have done no more than"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "the more altruistic someone is",
+                "ko": "누군가 더 이타적일수록"
+              },
+              ", ",
+              {
+                "en": "the more they are likely to insist",
+                "ko": "더 주장할 것 같다"
+              },
+              " — ",
+              {
+                "en": "all of us",
+                "ko": "우리 모두"
+              },
+              "가 ",
+              {
+                "en": "would be expected to do",
+                "ko": "하도록 기대될"
+              },
+              " 만큼만 ",
+              {
+                "en": "have done no more than",
+                "ko": "했을 뿐이라고"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "It seems that the more altruistic someone is, the more they are likely to insist that they have done no more than all of us would be expected to do.",
+          "tips": [
+            {
+              "label": "the 비교급, the 비교급",
+              "text": "'~할수록 더 ~하다'예요. the more altruistic …, the more likely … = 더 이타적일수록 더 ~할 것 같다.",
+              "mark": "the more"
+            },
+            {
+              "label": "no more than",
+              "text": "'~ 이상은 아닌, ~만큼만'이에요. done no more than … expected = 기대되는 만큼만 했다.",
+              "mark": "no more than"
+            }
+          ]
+        },
+        {
+          "id": "s6_more",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "더 이타적인 사람일수록, '우리 모두에게 기대되는 만큼만 했다'고 더 주장한대요. 역시 특별한 선택이 아니었다는 말이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "the more altruistic someone is",
+            "no more than"
+          ],
+          "tips": [
+            {
+              "label": "the 비교급, the 비교급",
+              "text": "'~할수록 더 ~하다'예요. the more altruistic …, the more likely … = 더 이타적일수록 더 ~할 것 같다.",
+              "mark": "the more"
+            },
+            {
+              "label": "no more than",
+              "text": "'~ 이상은 아닌, ~만큼만'이에요. done no more than … expected = 기대되는 만큼만 했다.",
+              "mark": "no more than"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "두 생각",
+            "left": {
+              "label": "보통 사람들 (상식)",
+              "words": [
+                {
+                  "text": "decide for ourselves",
+                  "ko": "스스로 결정"
+                },
+                {
+                  "text": "the right",
+                  "ko": "권리"
+                }
+              ]
+            },
+            "right": {
+              "label": "이타주의자들",
+              "words": [
+                {
+                  "text": "just the opposite",
+                  "ko": "정반대"
+                },
+                {
+                  "text": "no high praise",
+                  "ko": "칭찬받을 일 아님"
+                },
+                {
+                  "text": "anyone … the same thing",
+                  "ko": "누구라도 똑같이"
+                },
+                {
+                  "text": "no more than expected",
+                  "ko": "기대되는 만큼만",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "meaning_check": true
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🙋",
+                "en": "decide for ourselves",
+                "ko": "보통 우리는 내 것을 얼마나 나눌지 스스로 정할 권리가 있다고 봐요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "🔄",
+                "en": "Yet · just the opposite",
+                "ko": "그런데 큰 희생을 한 이타주의자들은 정반대를 말해요",
+                "fresh": false
+              },
+              {
+                "label": "빈칸 문장",
+                "icon": "🗣️",
+                "en": "They insist that they ____",
+                "ko": "그들은 자신들이 ____라고 주장해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5~6",
+                "icon": "🫀",
+                "en": "no high praise · the same thing",
+                "ko": "칭찬받을 일이 아니고, 누구라도 똑같이 했을 거래요 — 기대되는 만큼만 했대요",
+                "fresh": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "s6_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 보통 사람들 생각과 반대 쪽이에요. 칠판 오른쪽 말을 다른 말로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

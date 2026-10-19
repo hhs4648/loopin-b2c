@@ -50,8 +50,8 @@
       "from": "d8l4g5"
     },
     "paper_order": {
-      "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 실제 글의 순서와 달라서 단락 사이가 어색하게 이어질 수 있어요. 그 어색한 곳이 바로 순서의 단서예요.",
-      "from": "1u9o88s"
+      "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요.",
+      "from": "11bywp8"
     },
     "a_sv": {
       "ask": "이번엔 주어(S)와 동사(V)를 찾아볼까요?",
@@ -64,6 +64,18 @@
       "praise": "다 찾았어요!",
       "explain": "주어는 the iteration, 동사는 has to be예요.",
       "from": "1ri1000"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "혼돈을 만들려면 그 반복(the iteration)이 비선형 체계 안에 있어야 한대요.",
+      "from": "lmszj7"
+    },
+    "s2_basic_meaning": {
+      "say": "혼돈을 만들려면 그 반복(the iteration)이 비선형 체계 안에 있어야 한대요.",
+      "from": "6hjh8t"
     },
     "a_before": {
       "ask": "(A)는 'the iteration(그 반복)', '혼돈을 만들려면'으로 시작해요. 앞에는 어떤 내용이 와야 할까요?",
@@ -81,6 +93,26 @@
       "point": "(A) the iteration, Nor ← (C)의 iteration, not all iteration",
       "from": "1ratd4v"
     },
+    "s3_basic_sv": {
+      "ask": "Nor 뒤는 동사가 주어보다 먼저 와요. 콜론(:) 앞에서 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "they": "그건 콜론(:) 뒤 문장의 주어예요. 콜론 앞에서 찾아봐요.",
+        "need to be pushed": "그건 콜론(:) 뒤 문장의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "Nor 뒤라 순서가 바뀌었어요(도치). 동사 are, 주어 all nonlinear systems, 보어 chaotic이에요.",
+      "from": "1ud9v9w"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "모든 비선형 체계가 혼돈인 것도 아니래요. 혼돈이 되려면 분기점이라는 어떤 지점 너머로 밀려나야 해요.",
+      "from": "h61py3"
+    },
     "a2_nor": {
       "ask": "'Nor are all nonlinear systems chaotic'은 무슨 뜻일까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -97,18 +129,38 @@
       "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)",
       "from": "f9zptd"
     },
+    "s3_basic_meaning": {
+      "say": "모든 비선형 체계가 혼돈인 것도 아니래요. 혼돈이 되려면 분기점이라는 어떤 지점 너머로 밀려나야 해요.",
+      "from": "4fk7ii"
+    },
     "a2_link": {
       "say": "Nor는 앞에 부정이 있어야 써요. 그러니 (A) 바로 앞 단락은 '모두 ~인 것은 아니다' 같은 부정으로 끝나야 해요.",
       "point": "Nor are all nonlinear systems chaotic = 모든 비선형 체계가 혼돈인 것도 아니다 (Nor 뒤는 순서가 바뀐다)",
       "from": "1gt6m4r"
     },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "that point": "그건 Before(~ 전에) 덩어리 안의 주어예요.",
+        "is reached": "그건 Before(~ 전에) 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 they(그것들 — 비선형 체계), 동사는 may behave(움직일 수도 있다)예요.",
+      "from": "15ngdr0"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "gnbbbd"
+    },
     "a3_note": {
       "say": "그 지점(분기점)에 이르기 전에는 꽤 질서 있게 움직일 수도 있대요.",
       "from": "ki4vem"
-    },
-    "story_4": {
-      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
-      "from": "tguvur"
     },
     "b_sv": {
       "ask": "이 문장은 주어 없이 동사로 시작해요. 동사(V) 두 개를 찾아볼까요?",
@@ -122,6 +174,18 @@
       "praise": "다 찾았어요!",
       "explain": "동사는 Release와 note예요. 주어 없이 동사로 시작하면 '~해 봐요'라는 명령문이에요.",
       "from": "nxc3aq"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "추를 놓고, 추가 어떤 자석에 어떤 순서로 들르는지 잘 보라는 말이에요.",
+      "from": "6y914m"
+    },
+    "s5_basic_meaning": {
+      "say": "추를 놓고, 추가 어떤 자석에 어떤 순서로 들르는지 잘 보라는 말이에요.",
+      "from": "1f1fis8"
     },
     "b_before": {
       "ask": "'Release the pendulum(추를 놓아 봐요)'은 어떤 내용 바로 뒤에 오면 자연스러울까요?",
@@ -139,22 +203,47 @@
       "point": "(B) Release the pendulum(추를 놓아 봐요) ← 추가 어떻게 생겼는지 설명한 뒤",
       "from": "1iogks9"
     },
-    "b2_sv": {
-      "ask": "콤마 뒤 문장에는 주어·동사가 두 쌍 있어요. 주어(S), 동사(V), 보어(C)를 모두 찾아볼까요?",
-      "wrong": "그건 주어·동사·보어가 아니에요.",
+    "s6_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
       "wrong_by": {
-        "the pendulum": "그건 If 뒤 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
-        "is released": "그건 If 뒤 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."
+        "the pendulum": "그건 If 덩어리 안의 주어예요. 콤마 뒤에서 찾아봐요.",
+        "is released": "그건 If 덩어리 안의 동사예요. 콤마 뒤에서 찾아봐요."
       },
       "more": "좋아요! {n}개 남았어요.",
       "praise": "다 찾았어요!",
-      "explain": "but 앞은 S the pattern of movement, V may at first be예요. but 뒤는 S it, V will become, C completely different예요.",
-      "from": "17581tx"
+      "explain": "but 앞은 주어 the pattern of movement, 동사 may at first be예요. but 뒤는 주어 it, 동사 will become이에요.",
+      "from": "qbxzho"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "vnbnue"
     },
     "b2_change": {
       "say": "같은 자리에서 두 번 놓아도, 처음엔 같다가 곧 완전히 달라진대요. 이게 바로 chaos(혼돈)예요.",
       "point": "같은 자리에서 두 번 놓아도 처음엔 같다가 곧 완전히 달라진다 = chaotic",
       "from": "1vygbnf"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {},
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the pattern of its movement, 동사는 is, 보어는 chaotic(혼돈 상태의)이에요.",
+      "from": "1lpy7lz"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "az3bl5"
     },
     "b3_chaotic": {
       "say": "In fact(사실), 그 움직임이 chaotic(혼돈 상태)이래요. 주어진 글의 chaos와 이어져요.",
@@ -172,6 +261,18 @@
       "praise": "다 찾았어요!",
       "explain": "콤마 뒤는 S it, V will visit, O an entirely different set of points예요.",
       "from": "fct78q"
+    },
+    "s8_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "아무리 조심해서 같은 자리에서 추를 출발시켜도, 두 번 다 전혀 다른 점들을 들른대요.",
+      "from": "8e8jcm"
+    },
+    "s8_basic_meaning": {
+      "say": "아무리 조심해서 같은 자리에서 추를 출발시켜도, 두 번 다 전혀 다른 점들을 들른대요.",
+      "from": "1jr9ihz"
     },
     "c_before": {
       "ask": "'the same position', 'the two occasions(두 번)'는 앞의 무엇을 받을까요?",
@@ -202,6 +303,14 @@
       "explain": "though 앞은 S Chaotic systems, V are generated예요.",
       "from": "1ra9qnr"
     },
+    "s9_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "혼돈 체계는 반복으로 만들어지지만, 모든 반복이 혼돈이 되는 건 아니래요.",
+      "from": "1lsrs1o"
+    },
     "c2_not_all": {
       "ask": "'not all iteration leads to chaos'는 무슨 뜻일까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -218,17 +327,41 @@
       "point": "Chaotic systems are generated by iteration, though not all iteration leads to chaos = 반복이 혼돈을 만들지만, 모든 반복이 혼돈은 아니다",
       "from": "nomhn3"
     },
-    "c2_next": {
-      "say": "'모든 반복이 혼돈은 아니다'로 끝났어요. 그럼 다음엔 '어떤 반복이 혼돈이 되는지', 그 조건이 오기 쉬워요. 앞에서 읽은 (A)가 바로 그 조건이었죠.",
-      "from": "gyxlic"
+    "s9_basic_meaning": {
+      "say": "혼돈 체계는 반복으로 만들어지지만, 모든 반복이 혼돈이 되는 건 아니래요.",
+      "from": "1i7lg2a"
     },
-    "story_9": {
-      "say": "칠판에 이어서 정리해 볼게요.",
-      "from": "tavsof"
+    "c2_next": {
+      "ask": "'모든 반복이 혼돈은 아니다'로 끝났어요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'모두 그런 건 아니다'라고 했으면, 다음엔 '그럼 어떤 경우에 그런지'가 오기 쉬워요.",
+        "'모두 그런 건 아니다'라고 했으면, 다음엔 '그럼 어떤 경우에 그런지'가 오기 쉬워요."
+      ],
+      "explain": "'모두 그런 건 아니다'라고 했으면, 다음엔 '그럼 어떤 경우에 그런지'가 오기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'모든 반복이 혼돈은 아니다' 다음엔, 어떤 반복이 혼돈이 되는지 그 조건이 와야 자연스러워요.",
+        "o2": "'모든 반복이 혼돈은 아니다' 다음엔, 어떤 반복이 혼돈이 되는지 그 조건이 와야 자연스러워요."
+      },
+      "from": "qdi99b"
+    },
+    "order_link": {
+      "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+      "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+      "wrong_by": {
+        "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+        "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+      "explain": "주어진 글(추 소개) → (B) Release the pendulum(그 추를 놓아 봐요) → (C) the same position(같은 자리에서 두 번), not all iteration → (A) the iteration, Nor(그 조건) 순서예요.",
+      "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지",
+      "from": "vc6nay"
     },
     "a_go": {
-      "say": "단락마다 첫머리 단서를 다 찾았어요. 이제 주어진 글 다음에 이어질 순서를 직접 골라 봐요.",
-      "from": "1tppez4"
+      "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?",
+      "from": "eua8yu"
     }
   },
   "exam": {
