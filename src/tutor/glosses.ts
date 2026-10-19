@@ -68,7 +68,7 @@ export function lookupGloss(word: string, glosses: WordGloss[] | undefined): Wor
   );
 }
 
-/** JSON에 빠진 고유명사는 칩과 같은 말로 채운다. 덩어리 밖에 홀로 선 of 같은 전치사도 기본 뜻으로 누를 수 있게 */
+/** JSON에 빠진 고유명사는 칩과 같은 말로 채운다. 덩어리 밖에 홀로 선 of·it·or 같은 기능어도 기본 뜻으로 누를 수 있게 */
 export function glossesFor(chunkGlosses: WordGloss[] | undefined, nouns: ProperNoun[]): WordGloss[] {
   const listed = chunkGlosses ?? [];
   const has = (en: string) => listed.some((g) => g.en.toLowerCase() === en.toLowerCase());
@@ -106,13 +106,44 @@ export const CONTEXT_WORDS = new Set([
 ]);
 
 /**
- * 문맥 기능어 중 「~의」 정도의 기본 뜻은 띄워도 되는 전치사 (2026-10-20 선생님: of를 누르면 「~의」 정도는 나오면 좋겠다).
- * to·for·as처럼 자리마다 뜻이 크게 다른 말은 여기 없다 — 레슨의 function-senses에 그 자리 쓰임을 적는다.
+ * 기능어의 기본 뜻 — 누르면 「~의」「그것」「또는」 정도는 나온다 (2026-10-20 선생님).
+ * to·for·as·that·which처럼 자리마다 뜻이 크게 다른 말은 여기 없다 — 레슨의 function-senses에 그 자리 쓰임을 적는다
+ * (so·but·since처럼 여기 있는 말도 레슨에 쓰임이 적혀 있으면 그쪽이 먼저). 관사(a, an, the)는 뜻이 없다.
  * 덩어리 안에서는 덩어리 뜻이 아랫줄에 같이 보인다
  */
 export const BASIC_SENSE: Record<string, string> = {
+  // 전치사
   of: "~의", with: "~와 (함께), ~로", from: "~에서, ~로부터", into: "~ 안으로", about: "~에 대해",
-  by: "~에 의해, ~로", in: "~ 안에, ~에서", on: "~ 위에, ~에", at: "~에(서)",
+  by: "~에 의해, ~로", in: "~ 안에, ~에서", on: "~ 위에, ~에", at: "~에(서)", over: "~ 위에, ~ 넘게",
+  under: "~ 아래에", through: "~을 통해", without: "~ 없이", within: "~ 안에", among: "~ 사이에(셋 이상)",
+  between: "~ 사이에", during: "~ 동안", after: "~ 후에", before: "~ 전에", until: "~까지", toward: "~을 향해", towards: "~을 향해",
+  like: "~처럼", than: "~보다",
+  // 대명사
+  it: "그것", its: "그것의", itself: "그것 자체", they: "그들, 그것들", them: "그들을, 그것들을", their: "그들의",
+  themselves: "그들 자신", he: "그는", him: "그를", his: "그의", she: "그녀는", her: "그녀를, 그녀의", we: "우리는",
+  us: "우리를", our: "우리의", you: "너는, 너를", your: "너의", yourself: "너 자신", i: "나는", me: "나를", my: "나의",
+  one: "하나, (앞 명사 대신) 것", ones: "(앞 명사 대신) 것들", this: "이, 이것", these: "이것들, 이러한", those: "저것들, 그",
+  something: "어떤 것", anything: "무엇이든, 아무것", everything: "모든 것", everyone: "모든 사람", someone: "어떤 사람",
+  who: "누구, ~하는 (사람)", whom: "누구를", whose: "누구의, ~의",
+  // 접속사·연결어
+  and: "그리고", or: "또는", but: "그러나", so: "그래서, 너무", nor: "~도 아니다", yet: "그러나, 아직",
+  if: "만약 ~라면, ~인지", because: "~ 때문에", while: "~하는 동안, ~인 반면", since: "~ 이후로, ~ 때문에",
+  although: "비록 ~이지만", though: "비록 ~이지만", whether: "~인지 아닌지", unless: "~하지 않으면",
+  when: "~할 때, 언제", where: "~하는 곳, 어디", how: "어떻게, 얼마나", why: "왜", what: "무엇, ~하는 것",
+  then: "그다음에, 그때", thus: "따라서", however: "그러나", therefore: "그러므로",
+  // 한정사·부사
+  all: "모든, 모두", both: "둘 다", each: "각각", every: "모든", either: "둘 중 하나", neither: "둘 다 아닌",
+  some: "어떤, 약간의", any: "어떤 ~도, 아무", no: "아무 ~도 없는", such: "그런", own: "자신의", same: "같은",
+  other: "다른", else: "그 밖에", another: "또 다른", here: "여기", there: "거기, (there is) ~이 있다",
+  just: "그저, 딱", too: "너무, ~도", very: "매우", quite: "꽤", really: "정말", also: "또한", even: "심지어, ~조차",
+  much: "많은, 많이", not: "~않다, ~아니다",
+  // be·조동사
+  be: "~이다, 있다", is: "~이다, 있다", are: "~이다, 있다", was: "~였다, 있었다", were: "~였다, 있었다",
+  been: "~였다 (완료)", being: "~인 것, ~되고 있는", has: "가지고 있다, (has + 과거분사) ~했다",
+  have: "가지다, (have + 과거분사) ~했다", had: "가졌다, (had + 과거분사) ~했었다", do: "하다, (do not) ~않다",
+  does: "하다, (does not) ~않다", did: "했다, (did not) ~않았다", will: "~할 것이다", would: "~할 것이다, ~하곤 했다",
+  may: "~일 수 있다, ~해도 된다", might: "~일지도 모른다", can: "~할 수 있다", could: "~할 수 있었다, ~일 수도 있다",
+  should: "~해야 한다", must: "~해야 한다, ~임이 틀림없다",
 };
 
 export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): WordGloss[] {
@@ -153,8 +184,8 @@ export function splitPhraseGlosses(glosses: WordGloss[], keep: string[] = []): W
       if (!phraseOf.has(key)) phraseOf.set(key, phrase);
       if (added.has(key)) continue;
       // to, for 같은 짧은 기능어는 뜻이 문맥마다 달라서 사전 뜻을 쓰지 않는다 — 덩어리 뜻만 (to make = 만들기 위해).
-      // of 같은 전치사는 「~의」 정도의 기본 뜻은 띄운다
-      const own = singles.get(key)?.ko ?? (CONTEXT_WORDS.has(key) ? BASIC_SENSE[key] : WORDS[key]);
+      // of·it·or 같은 기능어는 「~의」「그것」「또는」 정도의 기본 뜻은 띄운다
+      const own = singles.get(key)?.ko ?? (CONTEXT_WORDS.has(key) ? BASIC_SENSE[key] : (WORDS[key] ?? BASIC_SENSE[key]));
       if (!own) {
         // 단어 뜻이 없어도 누르면 덩어리 뜻은 보이게 — 관사(a, an, the)만 뺀다
         if (ARTICLES.has(key)) continue;
