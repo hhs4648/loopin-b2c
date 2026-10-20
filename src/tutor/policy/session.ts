@@ -148,10 +148,10 @@ const DEFAULT_DEPS: PolicyDeps = {
   logEvents: (events) => {
     appendEvents(events);
     recordLessonEvents(events);
-    // 목록의 「몇 번 중 몇 번 맞힘」 — 이번 회차에 처음 고른 보기만 센다
+    // 목록의 「몇 번 중 몇 번 맞힘」 — 분석을 마치고 고른 보기가 기준 (분석 없이 끝내면 바로 풀기)
     for (const e of events) {
-      const o = e.observation as { kind?: string; correct?: boolean } | null;
-      if (o?.kind === "exam" && typeof o.correct === "boolean") noteExamAnswer(o.correct);
+      const o = e.observation as { kind?: string; correct?: boolean; when?: string } | null;
+      if (o?.kind === "exam" && typeof o.correct === "boolean") noteExamAnswer(o.correct, o.when === "first" ? "first" : "final");
     }
   },
   now: () => Date.now(),
@@ -997,7 +997,11 @@ export function createPolicySession(
             resolved: true,
             readingFirst: false,
             panel: null,
-            message: L.sentence_done.replace("{name}", sentenceName(s.si)),
+            // 칭찬이 아닌 앞말(「보충학습실에 담아 뒀어요.」)은 살리고 줄을 바꾼다 — 「네」 뒤에 「맞아요!」는 빼고
+            message:
+              lead.trim() && !praising
+                ? `${lead.trim()}\n${L.sentence_done.replace(/^맞아요!\s*/, "").replace("{name}", sentenceName(s.si))}`
+                : L.sentence_done.replace("{name}", sentenceName(s.si)),
             buttons: [NEXT_BTN],
             shownAt: d.now(),
           };
@@ -2016,7 +2020,9 @@ export function createPolicySession(
         log({ kind: "continue" }, { action: "CONTINUE", interactionId: st.id, reason: [yes ? "practice_saved" : "practice_declined"] });
         if (yes) {
           addGrammarPractice(st.practice, lesson.id, d.now());
-          next(showCopy(copy, st.id).saved ? `${showCopy(copy, st.id).saved} ` : "");
+          // 「담아 뒀어요」와 다음 말은 서로 다른 이야기라 줄을 바꾼다 (2026-10-20 선생님)
+          const saved = showCopy(copy, st.id).saved;
+          next(saved ? `${saved}\n` : "");
         } else next();
         return view();
       }

@@ -7,12 +7,12 @@
   "helps": {},
   "steps": {
     "s1_nor_mean": {
-      "say": "①이 든 nor부터 볼게요. nor는 '~도 아니다'라는 뜻이에요.",
-      "from": "1nophrl"
+      "say": "보기 ①이 있는 nor부터 볼게요. nor는 '~도 아니다'라는 뜻이에요.",
+      "from": "vwsxbd"
     },
     "s1_nor_form": {
-      "say": "nor는 완성된 문장 뒤에 「, nor + 동사 + 주어」 순서로 붙어요. 주어와 동사 순서를 바꾸는 이걸 '도치'라고 해요.",
-      "from": "1oa55s"
+      "say": "nor는 완성된 문장 뒤에 「, nor + 동사 + 주어」 순서로 붙어요. 주어와 동사 순서를 바꾸는 것을 '도치'라고 해요.",
+      "from": "npzqjv"
     },
     "s1_nor_aux": {
       "say": "동사가 두 개 이상이면 맨 앞 동사 하나만 주어 앞으로 가요. has survived에서 has만 it 앞으로 나와 nor has it survived가 됐어요.",
@@ -38,14 +38,25 @@
       "point": "nor + 동사 + 주어(도치), 동사가 둘이면 맨 앞만 → nor has she read",
       "from": "1mpupdx"
     },
+    "s1_nor_judge": {
+      "ask": "그럼 보기 ①은 어법상 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "nor 뒤라서 has가 주어 it 앞으로 나온 도치예요.",
+        "nor 뒤라서 has가 주어 it 앞으로 나온 도치예요."
+      ],
+      "explain": "nor 뒤라서 has가 주어 it 앞으로 나온 도치예요. 그래서 보기 ①은 어법상 맞아요.",
+      "praise": "맞아요! 보기 ①은 어법상 문제가 없어요.",
+      "feedback": {
+        "o1": "nor 뒤라서 has가 주어 it 앞으로 나온 도치예요. 그래서 보기 ①은 어법상 맞아요."
+      },
+      "point": "보기 ①has 어법상 맞음",
+      "from": "hu6wp2"
+    },
     "s1_nor_more": {
       "say": "이 문법을 나중에 좀 더 연습할까요?",
       "saved": "보충학습실에 담아 뒀어요.",
       "from": "lvds32"
-    },
-    "s1_check": {
-      "say": "①has는 맞아요. 밑줄 점검표에 붙여 둘게요.",
-      "from": "9aknjc"
     },
     "s2_improvised": {
       "say": "악보가 없던 이유가 하나 더 있어요. 대부분 정해진 규칙 안에서 즉흥 연주였대요.",
@@ -68,13 +79,13 @@
       "from": "1wudm7z"
     },
     "s3_hold": {
-      "say": "여기서 more는 두 가지를 견주는 말이에요. 견줄 때 more와 짝을 이루는 말이 무엇인지 떠올리며, ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
+      "say": "여기서 more는 두 가지를 견주는 말이에요. more와 짝을 이루는 말이 무엇인지 떠올려 봐요. ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
       "point": "② more가 견주는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인",
-      "from": "1tiol75"
+      "from": "uwc0y3"
     },
     "s4_cons_mean": {
-      "say": "③consisting부터 볼게요. consist of는 '~로 구성되다'라는 뜻이에요.",
-      "from": "1c3tqe7"
+      "say": "보기 ③consisting부터 볼게요. consist of는 '~로 구성되다'라는 뜻이에요.",
+      "from": "l3kshn"
     },
     "s4_cons_one": {
       "say": "콤마 앞에 이미 동사 was가 있어요. 접속사 없이 동사를 하나 더 쓸 수 없어서 consisted는 못 와요.",
@@ -104,18 +115,29 @@
       "point": "접속사 없이 잇는 자리 + consist of는 수동 ✕ → consisting",
       "from": "19vlucn"
     },
+    "s4_cons_judge": {
+      "ask": "그럼 보기 ③은 어법상 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요.",
+        "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요."
+      ],
+      "explain": "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요. 그래서 보기 ③은 어법상 맞아요.",
+      "praise": "맞아요! 보기 ③은 어법상 문제가 없어요.",
+      "feedback": {
+        "o1": "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요. 그래서 보기 ③은 어법상 맞아요."
+      },
+      "point": "보기 ③consisting 어법상 맞음",
+      "from": "1qs5075"
+    },
     "s4_cons_more": {
       "say": "이 문법을 나중에 좀 더 연습할까요?",
       "saved": "보충학습실에 담아 뒀어요.",
       "from": "lvds32"
     },
-    "s4_check": {
-      "say": "③consisting도 맞아요.",
-      "from": "8yxpp"
-    },
     "s5_tobe_mean": {
-      "say": "④to be는 앞의 considered와 짝이에요. consider A to be B는 'A를 B라고 여기다'라는 뜻이에요.",
-      "from": "btxp2e"
+      "say": "보기 ④to be는 앞의 considered와 짝이에요. consider A to be B는 'A를 B라고 여기다'라는 뜻이에요.",
+      "from": "12uvwaq"
     },
     "s5_tobe_form": {
       "say": "모양은 consider + 목적어 + to be + 보어예요. to be를 빼고 consider A B로 써도 돼요.",
@@ -141,18 +163,29 @@
       "point": "consider + 목적어 + to be + 보어",
       "from": "xk6mtu"
     },
+    "s5_tobe_judge": {
+      "ask": "그럼 보기 ④는 어법상 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요.",
+        "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요."
+      ],
+      "explain": "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요. 그래서 보기 ④는 어법상 맞아요.",
+      "praise": "맞아요! 보기 ④는 어법상 문제가 없어요.",
+      "feedback": {
+        "o1": "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요. 그래서 보기 ④는 어법상 맞아요."
+      },
+      "point": "보기 ④to be 어법상 맞음",
+      "from": "3xkn5v"
+    },
     "s5_tobe_more": {
       "say": "이 문법을 나중에 좀 더 연습할까요?",
       "saved": "보충학습실에 담아 뒀어요.",
       "from": "lvds32"
     },
-    "s5_check": {
-      "say": "④to be도 맞아요.",
-      "from": "1ugmfkf"
-    },
     "s6_adv_mean": {
-      "say": "⑤generally는 '일반적으로, 대개'라는 뜻이에요. 바로 뒤의 동사 span(걸쳐 있다)을 꾸며요.",
-      "from": "7f6kn5"
+      "say": "보기 ⑤generally는 '일반적으로, 대개'라는 뜻이에요. 바로 뒤의 동사 span(걸쳐 있다)을 꾸며요.",
+      "from": "13cb17p"
     },
     "s6_adv_rule": {
       "say": "동사를 꾸미는 말은 부사예요. 그래서 형용사 general이 아니라 -ly가 붙은 generally가 맞아요.",
@@ -178,6 +211,21 @@
       "point": "동사를 꾸미는 자리 → 부사(-ly)",
       "from": "i5wmxo"
     },
+    "s6_adv_judge": {
+      "ask": "그럼 보기 ⑤는 어법상 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "동사 span을 꾸미는 자리라 부사가 와야 해요.",
+        "동사 span을 꾸미는 자리라 부사가 와야 해요."
+      ],
+      "explain": "동사 span을 꾸미는 자리라 부사가 와야 해요. 그래서 보기 ⑤는 어법상 맞아요.",
+      "praise": "맞아요! 보기 ⑤는 어법상 문제가 없어요.",
+      "feedback": {
+        "o1": "동사 span을 꾸미는 자리라 부사가 와야 해요. 그래서 보기 ⑤는 어법상 맞아요."
+      },
+      "point": "보기 ⑤generally 어법상 맞음",
+      "from": "tajz2z"
+    },
     "s6_adv_more": {
       "say": "이 문법을 나중에 좀 더 연습할까요?",
       "saved": "보충학습실에 담아 뒀어요.",
@@ -189,7 +237,7 @@
     }
   },
   "exam": {
-    "ask": "밑줄 점검표를 떠올리며, 어법상 틀린 하나를 골라 봐요.",
+    "ask": "밑줄 점검표를 떠올리며 어법상 틀린 것 하나를 골라 봐요.",
     "first_correct": "맞았어요!",
     "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
     "final_correct": "정답이에요!",
@@ -304,7 +352,7 @@
         }
       }
     },
-    "from": "zdft4d"
+    "from": "1psuile"
   },
   "intro": {
     "topic": {

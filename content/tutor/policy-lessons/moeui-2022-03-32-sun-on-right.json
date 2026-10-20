@@ -1827,7 +1827,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "그들이 본 건 늘 보던 것과 정반대였어요. 칠판에 넣어 둘게요."
+            "say": "그들이 본 건 늘 보던 것과 정반대였어요."
           },
           "method": 1,
           "button": "다음 문장",

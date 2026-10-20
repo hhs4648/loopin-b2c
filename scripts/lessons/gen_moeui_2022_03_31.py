@@ -97,7 +97,7 @@ sentences = [
                             ("향하는 곳", "those we … detest = those we love", "싫은 사람에게도 = 사랑하는 사람만큼", "hl2"))),
             show("s1_where", "그럼 사람에게 향하는, 배울 수 있는 것이 무엇인지 생각하며 문장 처음부터 읽어 봐요.",
                  button="처음부터 읽어 볼게요", before_read=True, display=BLANK, tag="빈칸 문장", method=0),
-            show("s1_board", "mettā는 benevolence(자비심)라는 뜻이래요. 칠판에 넣어 둘게요.",
+            show("s1_board", "mettā는 benevolence(자비심)라는 뜻이래요.",
                  panel=board(W1, fresh=("benevolence",)), highlight=["benevolence"], button="다음"),
             # 단어 지도 — 첫 단어(benevolence)는 선생님, 다음 말은 학생이 찾아 넣는다
             pick("s1_same", "benevolence와 같은 쪽 말 두 개를 더 찾아 눌러 볼까요?",
@@ -145,7 +145,7 @@ sentences = [
                    why="foster는 '기르다', to foster는 '기르기 위해'예요. 명상으로 이 태도를 기른대요.",
                    highlight=["foster"], faded=["(known as mettā bhāvanā)"],
                    tips=[tip("foster", "'기르다, 키우다'예요. 마음이나 태도를 키울 때도 써요.", "foster")]),
-            show("s3_map", "명상(meditation)은 방법이고, 기르는 건 this attitude(자비심 같은 마음)예요. 칠판에 붙여 둘게요.",
+            show("s3_map", "명상(meditation)은 방법이고, 기르는 건 this attitude(자비심 같은 마음)예요.",
                  panel=board(W3, fresh=("this attitude",)), highlight=["meditation", "this attitude"], button="다음 문장"),
         ],
     },

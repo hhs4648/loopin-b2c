@@ -490,7 +490,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "신호가 대대로 전해지면서 변한대요. 칠판 오른쪽에 붙여 둘게요."
+            "say": "신호가 대대로 전해지면서 변한대요."
           },
           "method": 1,
           "button": "다음",
@@ -1703,7 +1703,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "몇몇 신호는 거의 그대로 남는대요. 칠판 왼쪽에 붙여 둘게요."
+            "say": "몇몇 신호는 거의 그대로 남는대요."
           },
           "method": 1,
           "button": "다음",

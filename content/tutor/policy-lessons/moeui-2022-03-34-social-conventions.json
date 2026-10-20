@@ -744,7 +744,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "화가 이야기는 비유예요. 칠판에 화가와 우리를 나란히 적어 둘게요."
+            "say": "화가 이야기는 비유예요."
           },
           "method": 1,
           "button": "다음 문장",
@@ -1606,7 +1606,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "화가도 우리도 의문 없이 받아들였어요. 칠판 양쪽에 붙여 둘게요."
+            "say": "화가도 우리도 의문 없이 받아들였어요."
           },
           "method": 1,
           "button": "다음",

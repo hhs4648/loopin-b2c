@@ -93,7 +93,7 @@ sentences = [
                    highlight=["Being", "brings"],
                    tips=[tip("동명사 주어 = 단수", "Being …, Adapting …처럼 -ing 덩어리가 주어면 단수 동사(is, brings)를 써요.", "Being")],
                    point="① 동명사 주어(Being uprooted …)는 단수 → brings 맞음"),
-            show("s3_check", "①brings는 맞아요. 밑줄 점검표에 붙여 둘게요.", panel=check("1"), panel_below=True, button="다음 문장"),
+            show("s3_check", "①brings는 맞아요.", panel=check("1"), panel_below=True, button="다음 문장"),
         ],
     },
     {

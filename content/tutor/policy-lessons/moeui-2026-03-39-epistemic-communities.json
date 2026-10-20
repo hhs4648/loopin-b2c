@@ -1816,7 +1816,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요. 단어 지도에도 붙여 둘게요."
+            "say": "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요."
           },
           "method": 0,
           "button": "다음",
@@ -2080,7 +2080,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "핵심어는 입회 절차(admittance processes)와 능력 시험(tests)이에요. 후보자(a candidate)는 시험을 보고 들어가야 하니 아직 바깥 쪽이에요. 단어 지도에 붙여 둘게요."
+            "say": "핵심어는 입회 절차(admittance processes)와 능력 시험(tests)이에요. 후보자(a candidate)는 시험을 보고 들어가야 하니 아직 바깥 쪽이에요."
           },
           "method": 0,
           "button": "다음",

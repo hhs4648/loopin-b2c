@@ -277,7 +277,8 @@ button, input { font-family: inherit; }
   덮는다. 넘치는 만큼은 말풍선 안에서 스크롤한다.
   꼬리(`.bubble-tail`)는 절대 위치라 이 스크롤에 잘리지 않는다.
 */
-.bubble-card > span { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+/* 서로 다른 이야기는 줄을 바꿔 보인다 (예: 「보충학습실에 담아 뒀어요.」 다음 말) */
+.bubble-card > span { min-height: 0; overflow-y: auto; overscroll-behavior: contain; white-space: pre-line; }
 .teacher-bubble .bubble-card {
   max-height: calc(100cqh - max(17cqh, 132px) - var(--teacher-w) - 66px);
 }

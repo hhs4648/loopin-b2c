@@ -112,7 +112,7 @@ sentences = [
                    why="'not content with an existence that offered them little variety … and minimal challenge', 변화(variety)도 도전(challenge)도 거의 없는 삶에 만족하지 못했대요.",
                    highlight=["not content with", "little variety", "minimal challenge"],
                    tips=[tip("be content with", "content는 '내용'만 있는 게 아니에요. be content with ~ = ~에 만족하다. not content with = 만족하지 못하는.", "content")]),
-            show("s1_board", "변화도 도전도 없는 삶에 만족 못 한 사람이 많았대요. 칠판 왼쪽에 적어 둘게요.",
+            show("s1_board", "변화도 도전도 없는 삶에 만족 못 한 사람이 많았대요.",
                  panel=board(L1, [], fresh=("little variety", "minimal challenge")), button="다음 문장"),
         ],
     },

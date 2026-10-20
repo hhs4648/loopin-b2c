@@ -613,7 +613,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "where(어디)가 이 글의 첫 열쇠예요. 단어 지도에 넣어 둘게요."
+            "say": "where(어디)가 이 글의 첫 열쇠예요."
           },
           "method": 0,
           "button": "다음 문장",

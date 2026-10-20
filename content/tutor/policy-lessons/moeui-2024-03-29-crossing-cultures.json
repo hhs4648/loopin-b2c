@@ -514,7 +514,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "①brings는 맞아요. 밑줄 점검표에 붙여 둘게요."
+            "say": "①brings는 맞아요."
           },
           "method": 1,
           "button": "다음 문장",

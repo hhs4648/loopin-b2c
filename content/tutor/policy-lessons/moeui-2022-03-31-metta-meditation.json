@@ -654,7 +654,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "mettā는 benevolence(자비심)라는 뜻이래요. 칠판에 넣어 둘게요."
+            "say": "mettā는 benevolence(자비심)라는 뜻이래요."
           },
           "method": 1,
           "button": "다음",
@@ -1209,7 +1209,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "명상(meditation)은 방법이고, 기르는 건 this attitude(자비심 같은 마음)예요. 칠판에 붙여 둘게요."
+            "say": "명상(meditation)은 방법이고, 기르는 건 this attitude(자비심 같은 마음)예요."
           },
           "method": 1,
           "button": "다음",

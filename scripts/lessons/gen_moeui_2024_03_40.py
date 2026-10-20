@@ -139,7 +139,7 @@ sentences = [
         "slashes": ["remolding itself"],
         "roles": [r("It", "S"), r("carries on", "V"), r("remolding itself", "O")],
         "steps": [
-            show("s4_remold", "뇌는 평생 스스로를 다시 성형하기를 계속한대요. 칠판 오른쪽에 넣어 둘게요.",
+            show("s4_remold", "뇌는 평생 스스로를 다시 성형하기를 계속한대요.",
                  highlight=["carries on", "remolding itself"],
                  tips=[tip("carry on -ing", "'계속 ~하다'예요. carries on remolding = 계속 다시 성형한다.", "carries on"),
                        tip("re-", "'다시'예요. remold = 다시 성형하다.", "remolding")],

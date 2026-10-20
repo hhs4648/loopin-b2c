@@ -652,7 +652,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "이 글은 색 이름과 실제 색 이야기예요. 칠판 왼쪽에 이름 ao를 넣어 둘게요."
+            "say": "이 글은 색 이름과 실제 색 이야기예요."
           },
           "method": 1,
           "button": "다음 문장",
@@ -930,7 +930,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "지금 ao는 주로 파랑, 초록은 midori예요. 칠판에 붙여 둘게요."
+            "say": "지금 ao는 주로 파랑, 초록은 midori예요."
           },
           "method": 1,
           "button": "다음 문장",

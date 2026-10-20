@@ -215,7 +215,7 @@ sentences = [
                    "주어 One word = where, 동사 is inextricably associated with = 떼려야 뗄 수 없이 연관되어 있다, 목적어 geography예요.",
                    why="One word는 where이고, is inextricably associated with geography는 '지리학과 떼려야 뗄 수 없이 연관되어 있다'예요.",
                    slot="s1_meaning"),
-            show("s1_map", "where(어디)가 이 글의 첫 열쇠예요. 단어 지도에 넣어 둘게요.",
+            show("s1_map", "where(어디)가 이 글의 첫 열쇠예요.",
                  button="다음 문장", panel=space_board(1, fresh=("where",))),
         ],
     },

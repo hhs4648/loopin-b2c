@@ -564,7 +564,7 @@ sentences = [
             sort_word("s3_sort_newcomer", "a newcomer", "새로 온 사람", False, 4, 1,
                       "a newcomer는 이제 막 들어오는 사람이라 초보자 쪽이에요."),
             # 요약 해석 대신 선생님 요약
-            show("s3_draft", "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요. 단어 지도에도 붙여 둘게요.",
+            show("s3_draft", "새로 온 사람은 전문가에게 배우며 그 공동체의 관행에 익숙해져요.",
                  button="다음", panel=groups_board(4, 2, fresh=("experts", "a newcomer"))),
             flow_check("s3_flow", "(①)",
                        "① 자리예요. '구성원이 되어야 한다' → '신입은 전문가에게 배운다', 자연스럽게 이어지나요?",
@@ -587,7 +587,7 @@ sentences = [
         "steps": [
             # 짧은 문장 — S·V·O 찾기 없이 핵심어만. there are는 ❓ 칩. 후보자는 지도에 바로 붙인다
             show("s4_key",
-                 "핵심어는 입회 절차(admittance processes)와 능력 시험(tests)이에요. 후보자(a candidate)는 시험을 보고 들어가야 하니 아직 바깥 쪽이에요. 단어 지도에 붙여 둘게요.",
+                 "핵심어는 입회 절차(admittance processes)와 능력 시험(tests)이에요. 후보자(a candidate)는 시험을 보고 들어가야 하니 아직 바깥 쪽이에요.",
                  button="다음", highlight=["admittance processes", "tests"],
                  panel=groups_board(4, 3, fresh=("a candidate",))),
             flow_check("s4_flow", "(②)",

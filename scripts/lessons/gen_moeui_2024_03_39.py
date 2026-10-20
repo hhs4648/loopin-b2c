@@ -125,7 +125,7 @@ sentences = [
         "roles": [r("Almost all the figurative paintings", "S"), r("we", "S"), r("are familiar", "V"), r("are", "V")],
         "modifiers": ["we are familiar with now"],
         "steps": [
-            show("s1_now", "지금 우리에게 익숙한 그림은 거의 다 원근법으로 그렸대요. 칠판 왼쪽에 넣어 둘게요.",
+            show("s1_now", "지금 우리에게 익숙한 그림은 거의 다 원근법으로 그렸대요.",
                  panel=board(["in perspective"], ["what the artist knew"], fresh=("in perspective",)),
                  highlight=["in perspective"], button="다음 문장",
                  tips=[tip("perspective", "'원근법'이에요. 가까운 건 크게, 먼 건 작게 그리는 방법이에요. '관점'이라는 뜻도 있어요.", "perspective")]),
@@ -160,7 +160,7 @@ sentences = [
                    "represents 뒤 'how the world looks'를 봐요. looks는 '~하게 보이다'예요.",
                    why="'how the world looks to a person seeing the scene from a particular position'은 특정한 자리에서 보는 사람에게 세상이 어떻게 보이는지예요.",
                    highlight=["how the world looks"]),
-            show("s3_board", "원근법 그림은 보이는 모습 그대로, 예전 그림은 아는 것까지 그렸어요. 칠판에 붙여 둘게요.",
+            show("s3_board", "원근법 그림은 보이는 모습 그대로, 예전 그림은 아는 것까지 그렸어요.",
                  panel=board(["in perspective", "how the world looks"], ["what the artist knew"], fresh=("how the world looks",))),
             flow("s3_flow", "①", "멀어질수록 작게 그린다", "원근법 그림은 보이는 모습을 나타낸다", True,
                  "둘 다 원근법 그림 이야기라 그대로 이어져요."),

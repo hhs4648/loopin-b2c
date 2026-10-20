@@ -186,7 +186,7 @@ sentences = [
                    why="'they found the sun was on their right, the opposite direction', 태양이 오른쪽, 늘 보던 곳과 정반대 방향에 있었대요.",
                    highlight=["on their right", "the opposite direction"],
                    tips=[tip("be used to -ing", "'~하는 데 익숙하다'예요. were used to seeing it = 늘 그것을 보던.", "were used to")]),
-            show("s5_board", "그들이 본 건 늘 보던 것과 정반대였어요. 칠판에 넣어 둘게요.",
+            show("s5_board", "그들이 본 건 늘 보던 것과 정반대였어요.",
                  panel=board(B5, fresh=("the sun on their right", "the opposite direction")), button="다음 문장"),
         ],
     },

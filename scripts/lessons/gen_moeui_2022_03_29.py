@@ -124,6 +124,19 @@ def practice_offer(id, drill):
     return st
 
 
+def judge(id, label, why, board_panel, done):
+    """설명·연습 끝에 「그럼 보기 ①은 어법상 맞을까요, 틀릴까요?」 — 알려 주지 않고 고르게 한다 (2026-10-20 선생님).
+    맞히면 칭찬만 한 화면, 그 뒤에 「더 연습할까요?」. 고른 뒤 밑줄 점검표(맞은 밑줄)가 칠판에 남는다"""
+    num, word, eun = label  # eun: 번호에 붙는 조사 (①은 · ④는)
+    return choice(
+        id, f"그럼 보기 {num}{eun} 어법상 맞을까요, 틀릴까요?",
+        [("o0", "맞는 표현", True), ("o1", "틀린 표현", False)],
+        why, praise=f"맞아요! 보기 {num}{eun} 어법상 문제가 없어요.",
+        why=f"{why} 그래서 보기 {num}{eun} 어법상 맞아요.",
+        praise_alone=True, panel=board_panel, panel_below=True, panel_after=check(*done),
+        point=f"보기 {num}{word} 어법상 맞음")
+
+
 # ③ consisting — 뜻 → 동사는 하나(was) → -ing로 잇기(분사) → consist of는 수동 X
 CONS_ROWS = [
     ("뜻", "consist of", "~로 구성되다"),
@@ -132,7 +145,7 @@ CONS_ROWS = [
     ("수동 ✕", "consist of는 수동태로 안 쓴다", "consisted of(과거분사)도 ✕"),
 ]
 cons_steps = [
-    explain("s4_cons_mean", "③consisting부터 볼게요. consist of는 '~로 구성되다'라는 뜻이에요.", CONS_ROWS, 1, ["consisting"]),
+    explain("s4_cons_mean", "보기 ③consisting부터 볼게요. consist of는 '~로 구성되다'라는 뜻이에요.", CONS_ROWS, 1, ["consisting"]),
     explain("s4_cons_one", "콤마 앞에 이미 동사 was가 있어요. 접속사 없이 동사를 하나 더 쓸 수 없어서 consisted는 못 와요.",
             CONS_ROWS, 2, ["was", "consisting"]),
     explain("s4_cons_ing", "그래서 동사를 -ing로 바꿔 이어 붙여요. 이런 -ing를 '분사'라고 하고, 여기선 앞의 a vocal form을 설명해요.",
@@ -150,6 +163,8 @@ cons_steps = [
         "접속사 없이 잇는 자리 + consist of는 수동 ✕ → consisting",
         {"o1": "consist of는 수동태로 못 써요. 그리고 이미 동사 wrote가 있어서 consisting이에요.",
          "o2": "접속사 없이 동사를 하나 더 쓸 수 없어요. 동사 wrote가 있으니 -ing로 이어서 consisting이에요."}),
+    judge("s4_cons_judge", ("③", "consisting", "은"), "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요.",
+          board(CONS_ROWS, 4), ("1", "3")),
     practice_offer("s4_cons_more", "participle-ing"),
 ]
 
@@ -160,7 +175,7 @@ TOBE_ROWS = [
     ("멀리 떨어짐", "considered music … to be coarse", "목적어가 길어 멀어 보일 뿐"),
 ]
 tobe_steps = [
-    explain("s5_tobe_mean", "④to be는 앞의 considered와 짝이에요. consider A to be B는 'A를 B라고 여기다'라는 뜻이에요.",
+    explain("s5_tobe_mean", "보기 ④to be는 앞의 considered와 짝이에요. consider A to be B는 'A를 B라고 여기다'라는 뜻이에요.",
             TOBE_ROWS, 1, ["considered", "to be"]),
     explain("s5_tobe_form", "모양은 consider + 목적어 + to be + 보어예요. to be를 빼고 consider A B로 써도 돼요.",
             TOBE_ROWS, 2, ["considered", "to be"],
@@ -176,6 +191,8 @@ tobe_steps = [
         "consider + 목적어 + to be + 보어",
         {"o1": "consider + 목적어 뒤에는 being이 아니라 to be를 써요.",
          "o2": "이미 동사 consider가 있어요. 목적어 뒤에는 to be + 보어예요."}),
+    judge("s5_tobe_judge", ("④", "to be", "는"), "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요.",
+          board(TOBE_ROWS, 3), ("1", "3", "4")),
     practice_offer("s5_tobe_more", "consider-to-be"),
 ]
 
@@ -186,7 +203,7 @@ ADV_ROWS = [
     ("형용사", "a general rule / It is general.", "명사를 꾸미거나 be동사 뒤"),
 ]
 adv_steps = [
-    explain("s6_adv_mean", "⑤generally는 '일반적으로, 대개'라는 뜻이에요. 바로 뒤의 동사 span(걸쳐 있다)을 꾸며요.",
+    explain("s6_adv_mean", "보기 ⑤generally는 '일반적으로, 대개'라는 뜻이에요. 바로 뒤의 동사 span(걸쳐 있다)을 꾸며요.",
             ADV_ROWS, 1, ["generally", "span"]),
     explain("s6_adv_rule", "동사를 꾸미는 말은 부사예요. 그래서 형용사 general이 아니라 -ly가 붙은 generally가 맞아요.",
             ADV_ROWS, 2, ["generally", "span"],
@@ -202,6 +219,8 @@ adv_steps = [
         "동사를 꾸미는 자리 → 부사(-ly)",
         {"o1": "beautiful은 형용사라 동사 sings를 꾸밀 수 없어요. 부사 beautifully예요.",
          "o2": "beauty는 명사예요. 동사를 꾸미는 건 부사 beautifully예요."}),
+    judge("s6_adv_judge", ("⑤", "generally", "는"), "동사 span을 꾸미는 자리라 부사가 와야 해요.",
+          board(ADV_ROWS, 3), ("1", "3", "4", "5")),
     practice_offer("s6_adv_more", "adverb-verb"),
 ]
 
@@ -220,9 +239,9 @@ sentences = [
         "steps": [
             # ① nor — 뜻 → 「, nor + 동사 + 주어」(도치) → 동사 둘이면 맨 앞만 → nor 앞은 부정문 (2026-10-20 선생님).
             # 설명이 넷 이어지니 칠판(표)에 한 줄씩 쌓는다 [[three-lines-then-board]]
-            show("s1_nor_mean", "①이 든 nor부터 볼게요. nor는 '~도 아니다'라는 뜻이에요.",
+            show("s1_nor_mean", "보기 ①이 있는 nor부터 볼게요. nor는 '~도 아니다'라는 뜻이에요.",
                  highlight=["nor"], panel=nor_board(1), panel_below=True, button="네"),
-            show("s1_nor_form", "nor는 완성된 문장 뒤에 「, nor + 동사 + 주어」 순서로 붙어요. 주어와 동사 순서를 바꾸는 이걸 '도치'라고 해요.",
+            show("s1_nor_form", "nor는 완성된 문장 뒤에 「, nor + 동사 + 주어」 순서로 붙어요. 주어와 동사 순서를 바꾸는 것을 '도치'라고 해요.",
                  highlight=["nor", "has it survived"], panel=nor_board(2), panel_below=True, button="네",
                  tips=[tip("반대말 so", "긍정문 뒤에서 '~도 그렇다'는 so를 써요. 순서는 똑같이 so + 동사 + 주어예요. I like jazz, and so does she. = 나는 재즈를 좋아하고, 그녀도 그렇다.")]),
             show("s1_nor_aux", "동사가 두 개 이상이면 맨 앞 동사 하나만 주어 앞으로 가요. has survived에서 has만 it 앞으로 나와 nor has it survived가 됐어요.",
@@ -230,8 +249,8 @@ sentences = [
             show("s1_nor_neg", "그리고 nor 앞에는 늘 부정문이 와요. 여기도 앞에 no examples가 있어요.",
                  highlight=["there are no examples of it", "nor"], panel=nor_board(4), panel_below=True, button="알겠어요"),
             nor_try,
+            judge("s1_nor_judge", ("①", "has", "은"), "nor 뒤라서 has가 주어 it 앞으로 나온 도치예요.", nor_board(4), ("1",)),
             nor_more,
-            show("s1_check", "①has는 맞아요. 밑줄 점검표에 붙여 둘게요.", panel=check("1"), panel_below=True, button="다음 문장"),
         ],
     },
     {
@@ -268,7 +287,7 @@ sentences = [
                    highlight=["more concerned with", "writing about music"],
                    point="작가들은 음악을 철학·윤리로 다루는 글쓰기에 더 관심 — 연주 기술 입문서 쪽이 아니다"),
             show("s3_hold",
-                 "여기서 more는 두 가지를 견주는 말이에요. 견줄 때 more와 짝을 이루는 말이 무엇인지 떠올리며, ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
+                 "여기서 more는 두 가지를 견주는 말이에요. more와 짝을 이루는 말이 무엇인지 떠올려 봐요. ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
                  highlight=["more concerned with", "as with"], button="다음 문장",
                  tips=[tip("more A than B", "두 가지를 견줄 때 '더'는 more, 견주는 대상은 than으로 이어요. more concerned with A than with B = B보다 A에 더 관심이 있다.", "more")],
                  point="② more가 견주는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인"),
@@ -284,7 +303,6 @@ sentences = [
         "roles": [r("It", "S"), r("seems", "V"), r("Greek music", "S"), r("was", "V"), r("a vocal form", "C")],
         "steps": [
             *cons_steps,
-            show("s4_check", "③consisting도 맞아요.", panel=check("1", "3"), panel_below=True, button="다음 문장"),
         ],
     },
     {
@@ -297,7 +315,6 @@ sentences = [
         "roles": [r("Plato", "S"), r("considered", "V"), r("music", "O"), r("the lyre and flute", "S"), r("played", "V"), r("to be ‘exceedingly coarse and tasteless’", "C")],
         "steps": [
             *tobe_steps,
-            show("s5_check", "④to be도 맞아요.", panel=check("1", "3", "4"), panel_below=True, button="다음 문장"),
         ],
     },
     {
@@ -361,7 +378,7 @@ exam = {
     "options": [{"id": str(i + 1), "label": u[1:], "keywords": [u[1:]], **({"correct": True} if i == 1 else {})}
                 for i, u in enumerate(UNDER)],
     "brief": exam_brief(
-        "밑줄 점검표를 떠올리며, 어법상 틀린 하나를 골라 봐요.",
+        "밑줄 점검표를 떠올리며 어법상 틀린 것 하나를 골라 봐요.",
         "정답이에요! more로 두 가지를 견줬으니 짝이 되는 말은 than이어야 해요. ②as with → than with로 고쳐요.",
         "정답은 ②예요. 'more concerned with A … as with B'에서 more와 짝을 이루는 말은 than이에요. as with를 than with로 고쳐요.",
         {"1": "부정어 nor가 앞에 와서 '조동사 + 주어' 순서가 된 거라 ①has it survived는 맞아요.",
