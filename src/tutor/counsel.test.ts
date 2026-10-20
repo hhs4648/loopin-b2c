@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { VOCAB_PREFIX, buildPlan, courseProgress, courseStatus, examTier, gradeOfScore, levelOfGrade, markVocabSlot, nextMockOf, weakFromMini, type CounselAnswers } from "./counsel";
+import { VOCAB_PREFIX, buildPlan, courseProgress, courseStatus, examTier, gradeOfScore, levelOfGrade, markVocabSlot, minutesPerItem, nextMockOf, savePlan, weakFromMini, withPlanMinutes, type CounselAnswers } from "./counsel";
 import { getMiniMock, saveAttempt } from "./mini";
 import { tenMinMocks } from "./tenmin";
 
@@ -33,6 +33,19 @@ describe("상담실 — 점수와 등급", () => {
     expect(levelOfGrade(5)).toBe("중");
     expect(levelOfGrade(6)).toBe("초");
     expect(levelOfGrade(null)).toBe("중");
+  });
+
+  it("문제당 제한시간: 1~2등급 2분 · 3~4등급 3분 · 5~6등급 4분 · 7~9등급 5분, 모르면 3분", () => {
+    expect([1, 2, 3, 4, 5, 6, 7, 8, 9].map(minutesPerItem)).toEqual([2, 2, 3, 3, 4, 4, 5, 5, 5]);
+    expect(minutesPerItem(null)).toBe(3);
+    const mock = tenMinMocks()[0]!;
+    savePlan(buildPlan({ ...base, grade: 7 }));
+    expect(withPlanMinutes(mock)!.minutes).toBe(mock.items.length * 5);
+    expect(withPlanMinutes(getMiniMock(`${mock.id}-q${mock.items[0]!.no}`))!.minutes).toBe(5);
+    // 시험지 미니 모의고사는 그대로
+    const paper = { ...mock, id: "eng-2024-03-full", minutes: 40 };
+    expect(withPlanMinutes(paper)!.minutes).toBe(40);
+    store.delete("loopin.counsel.v1");
   });
 
   it("미니 모의고사에서 절반 넘게 틀린 유형도 집중 유형에 들어간다", () => {
@@ -87,9 +100,9 @@ describe("상담실 — 코스 (10분 모의고사 순서)", () => {
     expect(examTier({ held: "2025-05", body: "교육청" })).toBe(2);
   });
 
-  it("코스는 최근 시험부터 (1) 다음 (2) — 상담을 안 했어도 같다", () => {
+  it("코스는 최근 시험부터 — 상담을 안 했어도 같다", () => {
     const ids = tenMinMocks().map((m) => m.id);
-    expect(ids[0]).toBe("ten-moeui-2026-03-1");
+    expect(ids[0]).toBe("ten-moeui-2026-03");
     expect(buildPlan(base).course).toEqual(ids);
     expect(courseStatus(null).filter((it) => !it.review).map((it) => it.id)).toEqual(ids);
     expect(nextMockOf(null)).toBe(ids[0]);

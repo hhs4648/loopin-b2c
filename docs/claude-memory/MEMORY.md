@@ -1,3 +1,4 @@
+- [제품 이름 Loopin](product-loopin-b2c.md) — 앱·제품은 Loopin B2C, 다정쌤은 선생님 캐릭터, haksup과 별개
 - [Teaching Policy 방향](teaching-policy-direction.md) — 새 policy가 공식, 예전 엔진은 나중에 폐기, LLM 최소화, UX/UI·말투 유지
 - [21번 단순화 피드백](q21-simplify-feedback.md) — 너무 길다 → 수능 고난도 유지, 한 지문을 짧은 회차 여러 개로 쪼갠다
 - [단위 구조](unit-structure.md) — (보관됨, 안 씀) wip/unit-structure 브랜치
@@ -55,3 +56,4 @@
 - [연습실 단어·문장·문법](practice-room.md) — 문장=해석 맞추기(틀린 지문·연습할 문장), 코스 단어 칸 + 10분 전 주요 단어 미리 보기; 고·중 S·V 줄이기는 보류
 - [AI 말투 금지](no-ai-tone.md) — 제목·버튼·안내는 담백하게(「지문 단어 미리 보기」「문제 풀러 갈게요」), 꾸민 말 빼기
 - [할 일: 핵심어 표시판→가져오기](todo-keys-check.md) — 핵심어 버튼은 keys_checked 레슨(33·24)만, 선생님이 표시판에서 찍으면 가져오기 스크립트 만들어 켜기
+- [칠판은 화면마다 X](board-not-every-screen.md) — 결론·정리 대사엔 칠판 없이 지문만, 같은 칠판 반복 금지, 첫 설명 뒤 대사에서 칠판

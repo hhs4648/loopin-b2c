@@ -98,7 +98,7 @@ FOUR_NOUNS = {"kind": "picture", "title": "칠판 그림", "src": "/assets/daisi
 
 S1 = "Every time you conceptualize, categorize, and put a name on something that is not a proper name, you abstract away from its particularities."
 L = ["abstract away"]
-R = ["particularities"]
+R = ["proper name", "particularities"]
 
 S5_LEFT = L + ["four ordinary nouns", "leave out", "“Flower”"]
 S5_BEFORE = board(S5_LEFT, R + ["differences"])
@@ -135,23 +135,23 @@ sentences = [
             show("s1_group",
                  "conceptualize, categorize, put a name on은 여기서 모두 '이름 붙여 묶는다'는 같은 뜻이에요. 셋 중 하나만 이해해도 충분해요.",
                  method=0, button="다음",
-                 panel={"kind": "groups", "title": "단어 지도",
-                        "left": {"label": LEFT, "cluster": {**CLUSTER, "fresh": True}, "words": []}},
-                 highlight=["conceptualize", "categorize", "put a name on"],
-                 faded=["that is not a proper name"]),
+                 highlight=["conceptualize", "categorize", "put a name on"]),
+            show("s1_board",
+                 "반대로 proper name(고유 명사)은 '철수', '서울'처럼 하나뿐인 대상의 이름이라, 묶는 말이 아니에요. 이 글은 이 둘을 반대편에 놓고 가요.",
+                 method=0, button="다음",
+                 panel=board([], ["proper name*"], fresh_cluster=True, right_label="반대쪽"),
+                 highlight=["proper name"]),
             choice("s1_q",
                    "이름을 붙이면 'abstract away from its particularities' 한대요. particularities는 어느 그룹일까요?",
                    [("o0", SORT_LEFT, False), ("o1", "오른쪽 · 반대쪽", True)],
                    "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요.",
                    why="'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities는 떨어져 나가니, 같은 그룹이 아니에요.",
                    method=0,
-                   panel={**board([], [], right_label="반대쪽"), "sort": {"words": ["particularities"], "left": SORT_LEFT, "right": "오른쪽 · 반대쪽"}},
-                   highlight=["abstract away", "particularities"],
-                   faded=["that is not a proper name"]),
+                   panel={**board([], ["proper name"], right_label="반대쪽"), "sort": {"words": ["particularities"], "left": SORT_LEFT, "right": "오른쪽 · 반대쪽"}},
+                   highlight=["abstract away", "particularities"]),
             show("s1_map",
                  "이름을 붙여 묶으면 하나하나의 특징은 무시된다, 이게 이 글의 요지예요. 오른쪽에서 왼쪽으로 가는 화살표, 이 과정이 'abstract away'예요.",
-                 panel=board(["abstract away*"], ["particularities*"], "하나하나의 특징 → 이름으로 묶이며 무시"),
-                 faded=["that is not a proper name"]),
+                 panel=board(["abstract away*"], ["proper name", "particularities*"], "하나하나의 특징 → 이름으로 묶이며 무시")),
         ],
     },
     {
@@ -192,7 +192,7 @@ sentences = [
                  panel=board(L + ["four ordinary nouns", "leave out*"], R + ["differences*"], "abstract away = leave out")),
             show("s3_check", "그래서 ①differences는 문맥에 맞아요. 이름은 하나하나의 차이를 빠뜨린다는 1문장 요지와 그대로 이어지거든요.",
                  method=2,
-                 panel=board(L + ["four ordinary nouns", "leave out"], R + ["differences"], "① differences → 요지와 맞아요 ✓"),
+                 # 결론 화면엔 칠판 없이 지문만 — 칠판이 너무 많으면 영어를 못 읽는다 (2026-10-20 선생님)
                  highlight=["①differences"]),
         ],
     },

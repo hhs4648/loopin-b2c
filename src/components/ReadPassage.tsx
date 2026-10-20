@@ -2,12 +2,18 @@ import { useEffect, useRef } from "react";
 import type { ReactNode } from "react";
 import type { TutorView } from "../tutor/view";
 import { MODE_TRY_BTN, READ_NEXT_CMD } from "../tutor/policy/session";
+import { clock } from "../tutor/mini";
 import { PassageFull } from "./PassageFull";
 
 type Props = {
   view: TutorView;
   onSend: (text: string) => void;
   onClose: () => void;
+  /**
+   * 코스의 문제(2026-10-20 선생님): 이 미리보기 화면 그대로 **시간을 재서** 푼다. 큰 버튼이 「시간 재서 풀어 볼게요 · N분」,
+   * 분석은 밑줄 글자. `left`는 남은 초(시작 전엔 null, 넘기면 음수 — 계속 풀 수 있다)
+   */
+  course?: { minutes: number; left: number | null };
 };
 
 /**
@@ -17,11 +23,15 @@ type Props = {
  * 학생은 언제든 「계속」으로 넘어갈 수 있고, ▶를 눌러 한 문장을 다시 들을 수 있다.
  * 글자는 학습 화면보다 작다 — 여기서는 뜻을 따지는 게 아니라 흐름을 본다.
  */
-export function ReadPassage({ view, onSend, onClose }: Props) {
+export function ReadPassage({ view, onSend, onClose, course }: Props) {
   const p = view.passage!;
+  const modeScreen = p.auto === false && view.buttons.length === 2 && view.buttons[1] === MODE_TRY_BTN;
   // 처음 고르는 화면 — 「바로 풀어 볼게요」는 큰 버튼에서 빼서 위에 밑줄 글자로
-  const tryLink = p.auto === false && view.buttons.length === 2 && view.buttons[1] === MODE_TRY_BTN;
-  const dockButtons = tryLink ? view.buttons.slice(0, 1) : view.buttons;
+  const tryLink = !course && modeScreen;
+  // 코스에서는 반대 — 큰 버튼이 「시간 재서 풀어 볼게요」, 분석은 밑줄 글자
+  const courseStart = !!course && modeScreen;
+  const dockButtons = tryLink || courseStart ? view.buttons.slice(0, 1) : view.buttons;
+  const left = course?.left ?? null;
   const sendRef = useRef(onSend);
   sendRef.current = onSend;
   const rows = useRef<(HTMLDivElement | null)[]>([]);
@@ -101,7 +111,13 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
           </button>
         )}
         {p.auto === false ? (
-          <span className="read-label">지문 한눈에 미리보기</span>
+          left != null ? (
+            <span className={`read-label mini-clock${left < 0 ? " over" : left < 30 ? " low" : ""}`} aria-label={left < 0 ? "초과한 시간" : "남은 시간"}>
+              ⏱ {left < 0 ? `+${clock(-left)} 초과` : clock(left)}
+            </span>
+          ) : (
+            <span className="read-label">지문 한눈에 미리보기</span>
+          )
         ) : (
           <div className="read-bar">
             {p.sentences.map((_, i) => (
@@ -166,7 +182,11 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
       <div className={`read-dock${p.auto === false && dockButtons.length >= 2 ? " row" : ""}`}>
         {/* 미리보기 화면에서 선생님 말(바로 풀기 안내, 채점)은 버튼 바로 위에 — 보기를 고르는 손 가까이 */}
         {view.message && p.auto === false ? <p className="read-say">{view.message}</p> : null}
-        {dockButtons.map((label, i) => (
+        {courseStart ? (
+          <button type="button" className="read-continue" onClick={() => onSend(MODE_TRY_BTN)}>
+            시간 재서 풀어 볼게요 · {course!.minutes}분
+          </button>
+        ) : dockButtons.map((label, i) => (
           <button
             key={label}
             type="button"
@@ -176,6 +196,11 @@ export function ReadPassage({ view, onSend, onClose }: Props) {
             {label}
           </button>
         ))}
+        {courseStart ? (
+          <button type="button" className="read-try-link" onClick={() => onSend(view.buttons[0]!)}>
+            풀기는 건너뛰고 분석부터
+          </button>
+        ) : null}
         {/* 「바로 풀어 볼게요」는 큰 버튼 아래에 밑줄 글자로 — 큰 버튼은 「분석하러 갈게요」 하나 */}
         {tryLink ? (
           <button type="button" className="read-try-link" onClick={() => onSend(MODE_TRY_BTN)}>

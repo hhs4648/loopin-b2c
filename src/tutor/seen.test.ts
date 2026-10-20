@@ -41,7 +41,7 @@ describe("진도표 — 본 문제·안 본 문제·자주 틀리는 유형", ()
     const two = hardestSets("moeui-2024-03", 10, "2pt");
     expect(two.length).toBeGreaterThan(0);
     const mocks = tenMinMocks("2pt");
-    expect(mocks[0]!.id).toMatch(/-2pt-1$/);
+    expect(mocks[0]!.id).toMatch(/-2pt$/);
     expect(mocks[0]!.title).toContain("2점");
     for (const m of mocks) for (const it of m.items) expect(it.points).toBe(2);
     expect(getMiniMock(mocks[0]!.id)).toBe(mocks[0]);

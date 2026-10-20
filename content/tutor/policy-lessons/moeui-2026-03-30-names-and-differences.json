@@ -374,9 +374,6 @@
             "초"
           ],
           "slot": "s1_basic",
-          "faded": [
-            "that is not a proper name"
-          ],
           "tips": [
             {
               "label": "proper name",
@@ -449,6 +446,21 @@
           },
           "method": 0,
           "button": "다음",
+          "highlight": [
+            "conceptualize",
+            "categorize",
+            "put a name on"
+          ]
+        },
+        {
+          "id": "s1_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "반대로 proper name(고유 명사)은 '철수', '서울'처럼 하나뿐인 대상의 이름이라, 묶는 말이 아니에요. 이 글은 이 둘을 반대편에 놓고 가요."
+          },
+          "method": 0,
+          "button": "다음",
           "panel": {
             "kind": "groups",
             "title": "단어 지도",
@@ -463,15 +475,20 @@
                 "fresh": true
               },
               "words": []
-            }
+            },
+            "right": {
+              "label": "반대쪽",
+              "words": [
+                {
+                  "text": "proper name",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": ""
           },
           "highlight": [
-            "conceptualize",
-            "categorize",
-            "put a name on"
-          ],
-          "faded": [
-            "that is not a proper name"
+            "proper name"
           ]
         },
         {
@@ -521,7 +538,11 @@
             },
             "right": {
               "label": "반대쪽",
-              "words": []
+              "words": [
+                {
+                  "text": "proper name"
+                }
+              ]
             },
             "between": "",
             "sort": {
@@ -535,9 +556,6 @@
           "highlight": [
             "abstract away",
             "particularities"
-          ],
-          "faded": [
-            "that is not a proper name"
           ]
         },
         {
@@ -567,6 +585,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities",
                   "fresh": true
                 }
@@ -582,10 +603,7 @@
               ]
             },
             "caption": "하나하나의 특징 → 이름으로 묶이며 무시"
-          },
-          "faded": [
-            "that is not a proper name"
-          ]
+          }
         }
       ],
       "slashes": [
@@ -1022,6 +1040,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 }
               ]
@@ -1077,6 +1098,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -1109,48 +1133,6 @@
           },
           "method": 2,
           "button": "다음",
-          "panel": {
-            "kind": "groups",
-            "title": "단어 지도",
-            "left": {
-              "label": "이름 붙이기 · 같게 묶음",
-              "cluster": {
-                "words": [
-                  "conceptualize",
-                  "categorize",
-                  "put a name on"
-                ]
-              },
-              "words": [
-                {
-                  "text": "four ordinary nouns"
-                }
-              ]
-            },
-            "right": {
-              "label": "하나하나 다름",
-              "words": [
-                {
-                  "text": "particularities"
-                },
-                {
-                  "text": "differences"
-                }
-              ]
-            },
-            "process": {
-              "arrow": "←",
-              "words": [
-                {
-                  "text": "abstract away"
-                },
-                {
-                  "text": "= leave out"
-                }
-              ]
-            },
-            "caption": "① differences → 요지와 맞아요 ✓"
-          },
           "highlight": [
             "①differences"
           ]
@@ -1393,6 +1375,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -1624,6 +1609,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -1688,6 +1676,9 @@
             "right": {
               "label": "하나하나 다름",
               "words": [
+                {
+                  "text": "proper name"
+                },
                 {
                   "text": "particularities"
                 },
@@ -1960,6 +1951,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -2027,6 +2021,9 @@
             "right": {
               "label": "하나하나 다름",
               "words": [
+                {
+                  "text": "proper name"
+                },
                 {
                   "text": "particularities"
                 },
@@ -2398,6 +2395,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -2680,6 +2680,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -2762,6 +2765,9 @@
             "right": {
               "label": "하나하나 다름",
               "words": [
+                {
+                  "text": "proper name"
+                },
                 {
                   "text": "particularities"
                 },
@@ -3043,6 +3049,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -3130,6 +3139,9 @@
             "right": {
               "label": "하나하나 다름",
               "words": [
+                {
+                  "text": "proper name"
+                },
                 {
                   "text": "particularities"
                 },
@@ -3597,6 +3609,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -3721,6 +3736,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -3831,6 +3849,9 @@
               "label": "하나하나 다름",
               "words": [
                 {
+                  "text": "proper name"
+                },
+                {
                   "text": "particularities"
                 },
                 {
@@ -3929,6 +3950,9 @@
             "right": {
               "label": "하나하나 다름",
               "words": [
+                {
+                  "text": "proper name"
+                },
                 {
                   "text": "particularities"
                 },

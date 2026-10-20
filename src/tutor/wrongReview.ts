@@ -1,5 +1,5 @@
 import { pushKey } from "./cloud";
-import { getMiniMock, loadAttempts, type MiniItem } from "./mini";
+import { combinedAnswers, getMiniMock, type MiniItem } from "./mini";
 
 /**
  * 틀린 문제 복습 — 10분 모의고사 한 회의 4단계 (2026-10-20 선생님).
@@ -22,12 +22,12 @@ function load(): Store {
   }
 }
 
-/** 이 회에서 복습할 문항 — 가장 최근 풀이에서 틀렸거나 안 푼 것 (풀지 않았으면 없음) */
+/** 이 묶음에서 복습할 문항 — 전체·낱개 풀이를 합친 가장 최근 답이 틀린 것 (안 푼 문제는 아직 아니다) */
 export function itemsToReview(mockId: string): MiniItem[] {
   const mock = getMiniMock(mockId);
-  const last = loadAttempts(mockId)[0];
-  if (!mock || !last) return [];
-  return mock.items.filter((it) => last.answers[it.no] !== it.answer);
+  if (!mock) return [];
+  const { answers } = combinedAnswers(mockId);
+  return mock.items.filter((it) => it.no in answers && answers[it.no] !== it.answer);
 }
 
 export function reviewRecords(mockId: string): Record<string, WrongReviewRecord> {

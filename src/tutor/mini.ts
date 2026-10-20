@@ -1,7 +1,7 @@
 import eng2024March from "../../content/tutor/mini-mocks/eng-2024-03-full.json";
 import { pushKey } from "./cloud";
 import { reviewedRight } from "./wrongReview";
-import { TEN_MIN_COUNT, tenMinMocks } from "./tenmin";
+import { TEN_MIN_COUNT, singleMock, singleOf, tenMinMocks } from "./tenmin";
 
 /**
  * 미니 모의고사 — 전체 모의고사는 너무 오래 걸려서, 쉬운 문항(18~20, 도표·일치 등)은 빼고
@@ -76,7 +76,39 @@ export const isReviewMock = (id: string) => id.startsWith(REVIEW_PREFIX);
 export function getMiniMock(id: string | null | undefined): MiniMock | null {
   if (!id) return null;
   if (isReviewMock(id)) return reviewMock(id);
+  const single = singleOf(id);
+  if (single) {
+    const base = getMiniMock(single.base);
+    return base ? singleMock(base, single.no) : null;
+  }
   return MOCKS.find((m) => m.id === id) ?? tenMinMocks("all").find((m) => m.id === id) ?? tenMinMocks("2pt").find((m) => m.id === id) ?? null;
+}
+
+/**
+ * 한 묶음의 문항마다 **가장 최근에 낸 답** — 전체(20분) 풀이와 낱개(`-q<번호>`) 풀이를 합친다.
+ * 코스 화면의 ○/✕·예상 점수·틀린 문제 복습이 이걸 본다
+ */
+export function combinedAnswers(mockId: string): { answers: Record<number, number>; at: string | null; peeked: number[]; checked: number[] } {
+  const mock = getMiniMock(mockId);
+  const out = { answers: {} as Record<number, number>, at: null as string | null, peeked: [] as number[], checked: [] as number[] };
+  if (!mock) return out;
+  const latest = new Map<number, string>();
+  const note = (a: MiniAttempt) => {
+    for (const [no, v] of Object.entries(a.answers)) {
+      const n = Number(no);
+      if ((latest.get(n) ?? "") > a.at) continue;
+      latest.set(n, a.at);
+      out.answers[n] = v;
+      if (a.peeked?.includes(n)) out.peeked.push(n);
+      else out.peeked = out.peeked.filter((x) => x !== n);
+      if (a.checked?.includes(n)) out.checked.push(n);
+      else out.checked = out.checked.filter((x) => x !== n);
+    }
+    if (!out.at || a.at > out.at) out.at = a.at;
+  };
+  for (const a of loadAttempts(mockId)) note(a);
+  for (const it of mock.items) for (const a of loadAttempts(`${mockId}-q${it.no}`)) note(a);
+  return out;
 }
 
 /**
@@ -98,7 +130,14 @@ export function wrongItems(): MiniItem[] {
     }
   };
   const tens = [...tenMinMocks("all"), ...tenMinMocks("2pt")];
-  for (const m of tens) for (const a of all[m.id] ?? []) note(m, a);
+  for (const m of tens) {
+    for (const a of all[m.id] ?? []) note(m, a);
+    // 낱개 풀기 기록도
+    for (const it of m.items) {
+      const single = singleMock(m, it.no);
+      if (single) for (const a of all[single.id] ?? []) note(single, a);
+    }
+  }
   // 복습 기록 — 그때 어떤 문항이었는지는 기록(`items`)에 남겨 둔 것으로 안다
   for (const [id, list] of Object.entries(all)) {
     if (!isReviewMock(id)) continue;
@@ -117,11 +156,10 @@ export function wrongItems(): MiniItem[] {
   const out: MiniItem[] = [];
   const seenLesson = new Set<string>();
   for (const m of tens) {
-    if (!all[m.id]?.length) continue; // 아직 안 푼 회차의 문항은 복습이 아니다
     for (const it of m.items) {
       if (!it.lesson || seenLesson.has(it.lesson)) continue;
       seenLesson.add(it.lesson);
-      const l = latest.get(it.lesson);
+      const l = latest.get(it.lesson); // 아직 안 푼 문제는 복습이 아니다
       if (l && !l.ok) out.push(it);
     }
   }

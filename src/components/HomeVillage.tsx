@@ -132,8 +132,8 @@ export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, o
       <div className="village-dock">
         <button type="button" className="village-cta" onClick={onStart}>
           <span>
-            {firstVisit ? "다정쌤과 한 문제 분석해 보기" : nextVocab ? `단어 외우기 · ${nextVocab.title}` : nextMock ? `오늘의 10분 · ${nextMock.title}` : "오늘의 학습 시작하기"}
-            {firstVisit ? <small>5분 · 어려운 문제를 문장 단위로 같이 읽어요</small> : nextVocab ? <small>방금 푼 회의 주요 단어 테스트</small> : nextMock ? <small>{planDone.done}/{planDone.total}회 · 어려운 {nextMock.items.length}문제</small> : null}
+            {firstVisit ? "다정쌤과 한 문제 분석해 보기" : nextVocab ? `단어 외우기 · ${nextVocab.title}` : nextMock ? `오늘 · ${nextMock.title} 완전 정복` : "오늘의 학습 시작하기"}
+            {firstVisit ? <small>5분 · 어려운 문제를 문장 단위로 같이 읽어요</small> : nextVocab ? <small>방금 푼 시험의 주요 단어 테스트</small> : nextMock ? <small>문제마다 단어 → 풀기 → 분석</small> : null}
           </span>
           <i className="village-cta-go">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

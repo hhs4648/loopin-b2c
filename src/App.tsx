@@ -10,10 +10,11 @@ import { WrongBook } from "./components/WrongBook";
 import { WrongReview } from "./components/WrongReview";
 import type { MiniStage } from "./components/CounselRoom";
 import { VocabTest } from "./components/VocabTest";
-import { firstMockId, isFirstVisit, isVocabSlot, markVocabSlot, onboardingSet, vocabSlotWords } from "./tutor/counsel";
+import { firstMockId, isFirstVisit, isVocabSlot, markVocabSlot, nextProblemOf, onboardingSet, vocabSlotWords, withPlanMinutes } from "./tutor/counsel";
+import { singleOf } from "./tutor/tenmin";
 import { loadPlan, nextMockOf } from "./tutor/counsel";
 import { MiniMockView } from "./components/MiniMockView";
-import { getMiniMock } from "./tutor/mini";
+import { getMiniMock, saveAttempt } from "./tutor/mini";
 import { finishAnalysis } from "./tutor/miniLog";
 import { SavedBook, type SavedKind } from "./components/SavedBook";
 import { AccountLink } from "./components/AccountLink";
@@ -31,7 +32,7 @@ import type { TutorView } from "./tutor/view";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { hasAccount } from "./tutor/auth";
 import { policyLessonIds } from "./tutor/policy/lessons";
-import { AUTO_NEXT_CMD, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
+import { AUTO_NEXT_CMD, MODE_TRY_BTN, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
 import { clearResume, loadResume, markDone, noteReachedEnd, noteStudyTime, resumeRun, saveResume, startRun } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
@@ -134,6 +135,13 @@ function ReadingApp() {
   const [wrongBook, setWrongBook] = useState(false);
   /** 첫 방문 체험 분석 중 — 끝나면 코스 첫 회 10분 모의고사 시작 화면으로 (2026-10-20 선생님) */
   const [onboarding, setOnboarding] = useState(false);
+  /** 코스의 문제 흐름(단어 → 풀기 → 분석 → 다음 문제) 안에 있나 — 그 시험 묶음 id */
+  const [flow, setFlow] = useState<string | null>(null);
+  /**
+   * 코스 문제를 미리보기 화면에서 시간 재서 푸는 중 (2026-10-20 선생님) — 등급별 제한시간(`withPlanMinutes`),
+   * 「시간 재서 풀어 볼게요」를 누르면 시작, 답을 고르면 그 문제의 10분 모의고사 기록(`ten-<시험>-q<번호>`)으로 남긴다
+   */
+  const [courseExam, setCourseExam] = useState<{ mockId: string; no: number; limit: number; startedAt: number | null; endedAt: number | null } | null>(null);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
   /*
@@ -142,14 +150,30 @@ function ReadingApp() {
     수업 화면은 건드리지 않는다 — 진행 중인 세션을 잃으면 안 된다.
   */
   const [cloudGen, setCloudGen] = useState(0);
+  /** 서버 값을 한 번 받아 합쳤나 — 그 뒤에야 「계획이 없다」고 볼 수 있다 */
+  const [pulled, setPulled] = useState(false);
   useEffect(() => {
     if (passedLogin || authCallback) return;
     void hasAccount().then((on) => on && setPassedLogin(true));
   }, [passedLogin, authCallback]);
   useEffect(() => {
     if (authCallback) return;
-    void pullAll().then((changed) => changed && setCloudGen((n) => n + 1));
+    void pullAll().then((changed) => {
+      if (changed) setCloudGen((n) => n + 1);
+      setPulled(true);
+    });
   }, [authCallback]);
+  /*
+    가입하고 들어오면 바로 상담실 — 계획이 없는 학생은 다정쌤과 이야기해 코스를 짜고 그 자리에서 첫 문제를 시작한다
+    (2026-10-20 선생님). 지문·미니 링크로 들어온 경우는 그대로 둔다.
+  */
+  const [autoCounsel, setAutoCounsel] = useState(false);
+  useEffect(() => {
+    if (autoCounsel || !passedLogin || !pulled || started) return;
+    if (directLesson || directSet || shareLesson || onlyMini) return;
+    setAutoCounsel(true);
+    if (!loadPlan()) setCounsel(true);
+  }, [autoCounsel, passedLogin, pulled, started, directLesson, directSet, shareLesson, onlyMini]);
 
   const session = started?.session ?? null;
 
@@ -221,8 +245,26 @@ function ReadingApp() {
     return () => window.clearTimeout(id);
   }, [view, session]);
 
+  // 미리보기에서 답을 골랐다 — 걸린 시간과 답을 코스 기록으로 (맞음/틀림·예상 점수·틀린 문제 복습이 여기서 나온다)
+  useEffect(() => {
+    if (!courseExam?.startedAt || courseExam.endedAt || !view?.passage) return;
+    const picked = view.passage.right ?? view.passage.picked;
+    if (view.passage.pickable || !picked) return;
+    const secs = Math.round((Date.now() - courseExam.startedAt) / 1000);
+    saveAttempt(courseExam.mockId, {
+      at: new Date().toISOString(),
+      answers: { [courseExam.no]: Number(picked) },
+      seconds: secs,
+      timeUp: secs > courseExam.limit,
+      times: { [courseExam.no]: secs },
+    });
+    setCourseExam({ ...courseExam, endedAt: Date.now() });
+  }, [view, courseExam]);
+
   function send(text: string) {
     if (typing || !session) return;
+    // 코스 문제 — 「시간 재서 풀어 볼게요」부터 시계가 간다
+    if (courseExam && !courseExam.startedAt && text === MODE_TRY_BTN) setCourseExam({ ...courseExam, startedAt: Date.now() });
     // 화면 조작 신호(__로 시작)는 선생님이 생각할 일이 아니다 — 기다리지 않고 바로
     if (text.startsWith("__")) {
       void session.submit(text).then(setView);
@@ -248,8 +290,11 @@ function ReadingApp() {
     }, 250);
   }
 
-  /** analyze — 미니 모의고사에서 넘어왔다: 이미 푼 문제라 미리보기·「바로 풀어 볼게요」를 건너뛰고 바로 다정쌤 분석으로 */
-  function startSet(set: LessonSet, analyze = false) {
+  /**
+   * analyze — 미니 모의고사에서 분석하러 넘어왔다: 지문 한눈에 미리보기는 그대로 보여 주되(2026-10-20 선생님: 분석 전에
+   * 전체 지문을 한 번 본다) 이미 푼 문제라 「바로 풀어 볼게요」만 뺀다. 이어 하기 없이 처음부터.
+   */
+  function startSet(set: LessonSet, analyze = false, course = false) {
     setCollection(getCollection(set.collection));
     const lessonId = firstLessonId(set);
     const next = open(lessonId);
@@ -263,10 +308,10 @@ function ReadingApp() {
       setSeconds(0);
     }
     setStarted(next);
-    setView(next.session.view());
+    const first = next.session.view();
+    // 코스 문제는 미리보기에서 시간 재서 푸니 「바로 풀어 볼게요」도 그대로 (화면이 「시간 재서 풀어 볼게요」로 그린다)
+    setView(analyze && !course ? { ...first, buttons: first.buttons.filter((b) => b !== MODE_TRY_BTN) } : first);
     setChatOverride(false);
-    const go = next.session.view().buttons[0];
-    if (analyze && go) void next.session.submit(go).then(setView);
   }
 
   /**
@@ -289,6 +334,14 @@ function ReadingApp() {
     setView(null);
     setChatOverride(false);
     setSeconds(0);
+    setCourseExam(null);
+    // 코스 문제 흐름 — 분석이 끝났으면 다음 문제의 단어 화면으로, 다 끝났으면 코스 카드로
+    if (flow) {
+      const no = nextProblemOf(flow);
+      setMiniView(no == null ? null : { id: `${flow}-q${no}`, showLast: false, n: 0, stage: "words" });
+      if (no == null) setFlow(null);
+      return;
+    }
     // 첫 방문 체험이 끝났다 — 안내 한 줄과 함께 코스 첫 회로
     if (onboarding) {
       setOnboarding(false);
@@ -329,7 +382,7 @@ function ReadingApp() {
     );
   }
 
-  const mini = miniView ? getMiniMock(miniView.id) : null;
+  const mini = miniView ? withPlanMinutes(getMiniMock(miniView.id)) : null;
   if ((!started || !view) && mini && miniView && miniView.stage === "review") {
     return (
       <div className="viewport">
@@ -356,13 +409,20 @@ function ReadingApp() {
             key={`${mini.id}-${miniView.n}`}
             mock={mini}
             showLast={miniView.showLast}
+            flow={!!flow && !!singleOf(mini.id)}
             initialStage={miniView.stage === "review" ? undefined : miniView.stage}
             lead={miniView.lead ? "방금처럼 어려운 문제를 문장 단위로 잡아 드려요. 이제 10분 모의고사로 시작해요!" : undefined}
             standalone={miniView.id === onlyMini}
-            onBack={() => setMiniView(null)}
+            onBack={() => {
+              setFlow(null);
+              setMiniView(null);
+            }}
             onAnalyze={(set, fromExam) => {
               setMiniView({ id: mini.id, showLast: !fromExam, n: miniView.n + 1 });
-              startSet(set, true);
+              // 코스 문제 — 단어 화면 다음은 지문 미리보기, 거기서 시간 재서 푼다
+              const single = flow ? singleOf(mini.id) : null;
+              if (single) setCourseExam({ mockId: mini.id, no: single.no, limit: mini.minutes * 60, startedAt: null, endedAt: null });
+              startSet(set, true, !!single);
             }}
           />
         </div>
@@ -467,7 +527,12 @@ function ReadingApp() {
             learnerName={loadLearnerName()}
             onClose={() => setCounsel(false)}
             // 코스의 10분 모의고사 — 끝나고 「목록으로」 하면 상담실 코스 화면으로 돌아온다
-            onOpenMini={(id, stage) => (isVocabSlot(id) ? setVocabSlot(id) : setMiniView({ id, showLast: false, n: 0, stage }))}
+            onOpenMini={(id, stage) => {
+              if (isVocabSlot(id)) return setVocabSlot(id);
+              // 낱개 문제를 단어 화면부터 열면 문제 흐름 — 분석이 끝나면 다음 문제로 이어진다
+              setFlow(stage === "words" ? (singleOf(id)?.base ?? null) : null);
+              setMiniView({ id, showLast: false, n: 0, stage });
+            }}
             onOpenBoard={() => setBoard(true)}
             onOpenWrong={() => setWrongBook(true)}
           />
@@ -497,8 +562,12 @@ function ReadingApp() {
               }
               const next = nextMockOf(loadPlan());
               if (next && isVocabSlot(next)) setVocabSlot(next);
-              else if (next) setMiniView({ id: next, showLast: false, n: 0 });
-              else setHome(false);
+              else if (next) {
+                // 다음 문제의 단어 화면부터 — 문제 흐름
+                const no = nextProblemOf(next);
+                setFlow(no == null ? null : next);
+                setMiniView(no == null ? { id: next, showLast: false, n: 0 } : { id: `${next}-q${no}`, showLast: false, n: 0, stage: "words" });
+              } else setHome(false);
             }}
             onOpenCounsel={() => setCounsel(true)}
             onOpenMini={() => {
@@ -541,7 +610,19 @@ function ReadingApp() {
     <div className="viewport">
       <div className="phone">
         {screen === "read" && view.passage ? (
-          <ReadPassage view={view} onSend={send} onClose={backToList} />
+          <ReadPassage
+            view={view}
+            onSend={send}
+            onClose={backToList}
+            course={
+              courseExam
+                ? {
+                    minutes: courseExam.limit / 60,
+                    left: courseExam.startedAt ? Math.round(courseExam.limit - ((courseExam.endedAt ?? Date.now()) - courseExam.startedAt) / 1000) : null,
+                  }
+                : undefined
+            }
+          />
         ) : screen === "words" && view.wordCheck ? (
           <WordCheck view={view} onSend={send} onClose={backToList} />
         ) : screen === "summary" && view.summary && session ? (

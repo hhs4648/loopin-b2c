@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react";
 import { ClassroomBg } from "./ClassroomBg";
 import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
-import { allMiniMocks, byKind, clock, loadAttempts } from "../tutor/mini";
+import { allMiniMocks, byKind, getMiniMock, loadAttempts } from "../tutor/mini";
 import { loadStudentState, saveStudentState } from "../tutor/policy/student-state";
 import {
   EXAMS,
@@ -17,9 +17,12 @@ import {
   gradeOfScore,
   levelOfGrade,
   loadPlan,
+  minutesPerItem,
   nextMockOf,
+  nextProblemOf,
   savePlan,
   weakFromMini,
+  withPlanMinutes,
   type CounselAnswers,
   type CounselPlan,
   type CourseItem,
@@ -39,7 +42,7 @@ type Step = "resume" | "intro" | "grade" | "score" | "goal" | "three" | "exam" |
 type Props = {
   learnerName: string | null;
   onClose: () => void;
-  /** 코스의 10분 모의고사 하나를 연다 — stage로 단어 학습(words)·분석 목록(prep)부터 열 수 있다 */
+  /** 코스의 미니 모의고사(묶음·낱개)를 연다 — stage로 단어 학습(words)·분석 목록(prep)·복습(review)부터 열 수 있다 */
   onOpenMini: (mockId: string, stage?: MiniStage) => void;
   /** 진도표 — 시험마다 본 문제·안 본 문제, 자주 틀리는 유형 */
   onOpenBoard: () => void;
@@ -93,7 +96,11 @@ export function CounselRoom({ learnerName, onClose, onOpenMini, onOpenBoard, onO
     // 수업 화면 단계도 같이 맞춘다 (목록의 「내 등급」과 같은 값)
     saveStudentState({ ...loadStudentState(), level: levelOfGrade(grade) });
     setPlan(next);
-    go("plan");
+    // 코스를 짰으면 바로 첫 문제(단어 미리 보기)부터 — 코스 화면은 나중에 (2026-10-20 선생님)
+    const first = next.course[0];
+    const no = first ? nextProblemOf(first) : null;
+    if (first && no != null) onOpenMini(`${first}-q${no}`, "words");
+    else go("plan");
   }
 
   if (step === "plan" && plan) {
@@ -196,8 +203,8 @@ export function CounselRoom({ learnerName, onClose, onOpenMini, onOpenBoard, onO
     case "confirm": {
       const now = grade == null ? "아직 등급은 없고" : `지금 ${grade}등급에서`;
       line = `정리해 볼게요! ${now} ${goal}등급이 목표예요. ${weakSummary}
-최근 시험부터 ${skipThree ? "2점 문제 중 " : ""}어려운 5문제씩 하루 ${MOCKS_PER_DAY[minutes]}회, 회차마다 틀린 문제 복습으로 코스를 짤게요.`;
-      buttons = ["좋아요, 코스 짜 주세요", "처음부터 다시"];
+최근 시험부터 ${skipThree ? "2점 문제 중 " : ""}오답률 Top 10 순으로, 한 문제에 ${minutesPerItem(grade)}분씩 재면서 바로 시작할게요.`;
+      buttons = ["좋아요, 바로 시작할래요", "처음부터 다시"];
       onPick = (b) => (b === "처음부터 다시" ? restart() : finish());
       break;
     }
@@ -336,6 +343,8 @@ function CourseView({
   const { done, total } = courseProgress(plan);
   const next = nextMockOf(plan);
   const a = plan.answers;
+  /** 펼쳐 둔 시험 묶음 — 진행 중인 것 하나만, 나머지는 제목 줄만 (2026-10-20 선생님: 다 펼쳐져 있으면 보기 힘들다) */
+  const [open, setOpen] = useState<string | null>(next);
 
   /*
     쭉 나열하면 보기 힘들다 (2026-10-20 선생님) — 연도 구분줄 → 「시험 오답률 Top 10 풀기」 → 회차 (1)(2) → 1 단어 학습 · 2 실전 풀기 · 3 분석.
@@ -363,7 +372,6 @@ function CourseView({
     const last = blocks[blocks.length - 1];
     if (last?.kind === "exam") last.mocks.push(it);
   }
-  let seq = 0;
 
   return (
     <div className="stage-fill home counsel-plan">
@@ -380,7 +388,7 @@ function CourseView({
 
       <div className="home-body">
         <p className="home-hello">다정쌤이 짠 코스</p>
-        <h1 className="home-title">10분 모의고사 코스</h1>
+        <h1 className="home-title">오답률 Top 10 코스</h1>
 
         <div className="plan-summary">
           <div className="plan-goal">
@@ -404,7 +412,7 @@ function CourseView({
             <i style={{ width: `${total ? (done / total) * 100 : 0}%` }} />
           </div>
           <small className="plan-count">
-            어려운 5문제씩 10분 · 회차마다 틀린 문제 복습 — {total}회 중 {done}회 풀었어요
+            시험마다 오답률 Top 10 — {total}개 시험 중 {done}개 다 풀었어요
           </small>
         </div>
 
@@ -427,63 +435,82 @@ function CourseView({
               <section key={`${bl.title}${k}`} className="course-exam">
                 <h3 className="course-exam-title">
                   {bl.title} 오답률 Top 10 풀기
-                  <small>{bl.mocks.filter((m) => m.done).length}/{bl.mocks.length}회</small>
+                  <small>{bl.mocks.reduce((n, m) => n + (m.marks ?? []).filter((x) => x.analyzed).length, 0)}/{bl.mocks.reduce((n, m) => n + (m.marks?.length ?? 0), 0)} 끝냄</small>
                 </h3>
                 {bl.mocks.map((m) => {
-                  seq++;
+                  const mock = getMiniMock(m.id);
                   const isNext = m.id === next;
-                  const part = /-(\d)(?:\s|$)/.exec(m.title)?.[1] ?? seq;
-                  const analysisDone = !!m.analysis && m.analysis.done >= m.analysis.total && m.done;
+                  const nextNo = nextProblemOf(m.id);
+                  const review4Done = m.done && !!m.review4 && m.review4.done >= m.review4.total;
+                  const analyzedCount = (m.marks ?? []).filter((x) => x.analyzed).length;
+                  const isOpen = m.id === open;
                   return (
-                    <div key={m.id} className={`course-mock${isNext ? " today" : ""}${m.done ? " done" : ""}`}>
-                      <div className="course-mock-head">
+                    <div key={m.id} className={`course-mock${isNext ? " today" : ""}${nextNo == null ? " done" : ""}${isOpen ? "" : " closed"}`}>
+                      <button type="button" className="course-mock-head" aria-expanded={isOpen} onClick={() => setOpen(isOpen ? null : m.id)}>
                         <b>
-                          ({part}) {m.subtitle.split(" · ")[0]} · 10분 모의고사
+                          오답률 Top {mock?.items.length ?? 10} 완전 정복
                           {isNext ? <span className="plan-today">오늘</span> : null}
+                          <span className="course-fold" aria-hidden="true">{isOpen ? "▾" : "▸"}</span>
                         </b>
-                        {m.done && m.score ? (
-                          <small>{m.score.correct}/{m.score.total} 맞힘 · 예상 약 {m.estimate}점 · {clock(m.seconds ?? 0)}</small>
-                        ) : null}
-                      </div>
-                      <ol className="course-steps four">
-                        <li className={m.done ? "fin" : ""}>
-                          <button type="button" onClick={() => onOpenMini(m.id)}>
-                            <i>{m.done ? "✓" : "1"}</i>
-                            <span>실전 풀기<small>{m.done ? "풀기 완료" : "풀기 전에 주요 단어를 한 번 봐요"}</small></span>
-                          </button>
-                        </li>
-                        <li className={analysisDone ? "fin" : ""}>
-                          <button type="button" onClick={() => onOpenMini(m.id, "prep")}>
-                            <i>{analysisDone ? "✓" : "2"}</i>
-                            <span>
-                              분석
-                              <small>
-                                {!m.done
-                                  ? "풀고 나서 틀린 문제를"
-                                  : analysisDone
-                                    ? "분석 완료"
-                                    : `틀린 ${m.analysis!.total}문제 중 ${m.analysis!.done}개 분석`}
-                              </small>
-                            </span>
-                          </button>
-                        </li>
+                        <small>
+                          {nextNo == null
+                            ? `다 끝냈어요 · ${m.score?.correct ?? 0}/${m.solved ?? 0} 맞힘${m.estimate != null ? ` · 예상 약 ${m.estimate}점` : ""}`
+                            : `${analyzedCount}/${mock?.items.length ?? 10} 끝냄${m.solved ? ` · ${m.score?.correct ?? 0}/${m.solved} 맞힘 · 예상 약 ${m.estimate}점` : ""}`}
+                        </small>
+                      </button>
+                      {isOpen ? (<>
+                      <ol className="course-items">
+                        {(m.marks ?? []).map((x, i) => {
+                          const it = mock?.items.find((y) => y.no === x.no);
+                          const isCur = x.no === nextNo;
+                          return (
+                            <li key={x.no} className={`course-item ${x.analyzed ? "fin" : x.result}${isCur ? " cur" : ""}`}>
+                              <button type="button" className="course-item-row" onClick={() => onOpenMini(`${m.id}-q${x.no}`, "words")}>
+                                <span className="course-item-rank">{x.analyzed ? "✓" : i + 1}</span>
+                                <span className="course-item-text">
+                                  <b>
+                                    {x.no}번 · {x.kind}{x.points === 3 ? " [3점]" : ""}
+                                    <em className={`course-item-mark ${x.result}`}>{x.result === "right" ? "○" : x.result === "wrong" ? "✕" : ""}</em>
+                                  </b>
+                                  <small>
+                                    {it?.wrong_rate != null ? `오답률 ${it.wrong_rate}%` : ""}
+                                    {x.analyzed ? " · 분석 끝" : x.result !== "none" ? " · 분석 전" : isCur ? " · 다음" : ""}
+                                    {x.peeked ? " · 분석 보고 고름" : x.checked ? " · 정답 확인" : ""}
+                                  </small>
+                                </span>
+                                <span className="mini-chev">›</span>
+                              </button>
+                            </li>
+                          );
+                        })}
+                      </ol>
+                      {nextNo != null ? (
+                        <button type="button" className="mini-start course-full" onClick={() => onOpenMini(`${m.id}-q${nextNo}`, "words")}>
+                          이어서 하기 · {nextNo}번
+                        </button>
+                      ) : null}
+                      {/* 묶음 전체를 시험처럼 — 문제마다 등급별 시간 × 문제 수 (1~2등급 10문제 20분) */}
+                      <button type="button" className="course-mini-link" onClick={() => onOpenMini(m.id)}>
+                        실제 시험처럼 시간 재서 미니 모의고사 풀기 · {mock?.items.length ?? 10}문제 {withPlanMinutes(mock)?.minutes ?? 20}분
+                      </button>
+                      <ol className="course-steps two">
                         <li className={m.words ? "fin" : ""}>
                           <button type="button" onClick={() => onOpenMini(`${VOCAB_PREFIX}${m.id}`)}>
-                            <i>{m.words ? "✓" : "3"}</i>
+                            <i>{m.words ? "✓" : "📒"}</i>
                             <span>단어 연습<small>{m.words ? "연습 완료" : "별표·모르는 단어 테스트"}</small></span>
                           </button>
                         </li>
-                        <li className={m.done && m.review4 && m.review4.done >= m.review4.total ? "fin" : ""}>
+                        <li className={review4Done ? "fin" : ""}>
                           <button type="button" onClick={() => onOpenMini(m.id, "review")}>
-                            <i>{m.done && m.review4 && m.review4.done >= m.review4.total ? "✓" : "4"}</i>
+                            <i>{review4Done ? "✓" : "↻"}</i>
                             <span>
                               틀린 문제 복습
                               <small>
-                                {!m.done
+                                {!m.solved
                                   ? "풀고 나서"
                                   : m.review4!.total === 0
                                     ? "틀린 문제 없음"
-                                    : m.review4!.done >= m.review4!.total
+                                    : review4Done
                                       ? "복습 완료"
                                       : `${m.review4!.total}문제 중 ${m.review4!.done}개`}
                               </small>
@@ -491,18 +518,7 @@ function CourseView({
                           </button>
                         </li>
                       </ol>
-                      {m.done && m.marks ? (
-                        <ul className="course-marks" aria-label="문항별 결과">
-                          {m.marks.map((x) => (
-                            <li key={x.no} className={x.result}>
-                              <b>{x.no}</b>
-                              <span>{x.result === "right" ? "○" : x.result === "wrong" ? "✕" : "—"}</span>
-                              {x.peeked ? <em>분석 보고</em> : x.checked ? <em>정답 확인</em> : null}
-                              {x.analyzed ? <em className="an">분석 ✓</em> : null}
-                            </li>
-                          ))}
-                        </ul>
-                      ) : null}
+                      </>) : null}
                     </div>
                   );
                 })}
@@ -512,7 +528,7 @@ function CourseView({
         </div>
         <p className="plan-note">
           {next
-            ? "한 회는 실전 풀기 → 분석 → 단어 연습 → 틀린 문제 복습이에요. 실전은 풀기 전에 주요 단어를 한 번 보여 줘요!"
+            ? "문제마다 단어 보기 → 시간 재서 풀기 → 바로 분석이에요. 풀기는 건너뛰어도 돼요!"
             : "지금까지 전부 맞혔어요! 새 시험이 들어오면 코스에 붙여 둘게요."}
         </p>
         {/* 다시 상담은 맨 아래 — 자주 누르는 버튼이 아니다 (2026-10-20 선생님) */}
@@ -523,7 +539,14 @@ function CourseView({
 
       {next ? (
         <div className="village-dock">
-          <button type="button" className="village-cta" onClick={() => onOpenMini(next)}>
+          <button
+            type="button"
+            className="village-cta"
+            onClick={() => {
+              const no = nextProblemOf(next);
+              onOpenMini(no == null ? next : `${next}-q${no}`, no == null ? undefined : "words");
+            }}
+          >
             <span>바로 시작하기</span>
             <i className="village-cta-go">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

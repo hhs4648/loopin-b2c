@@ -30,6 +30,10 @@
       "say": "conceptualize, categorize, put a name on은 여기서 모두 '이름 붙여 묶는다'는 같은 뜻이에요. 셋 중 하나만 이해해도 충분해요.",
       "from": "r5ec4l"
     },
+    "s1_board": {
+      "say": "반대로 proper name(고유 명사)은 '철수', '서울'처럼 하나뿐인 대상의 이름이라, 묶는 말이 아니에요. 이 글은 이 둘을 반대편에 놓고 가요.",
+      "from": "1836ejl"
+    },
     "s1_q": {
       "ask": "이름을 붙이면 'abstract away from its particularities' 한대요. particularities는 어느 그룹일까요?",
       "reask": "그럼 하나 골라 봐요.",

@@ -7,8 +7,8 @@ import type { MiniItem, MiniMock } from "./mini";
 /**
  * 10분 모의고사 — **시험마다 오답률 높은 5문제**를 시험지 순서로 묶어 시간을 재고 푼다 (2026-10-20 선생님).
  *
- * 코스의 단위다: 시험마다 오답률 Top 10을 5문제씩 (1)·(2)로 나눈다(2026-10-20 선생님). 코스 순서는 `counsel.ts`가 정한다.
- * 다 풀면 틀린 문제만 모아 다시(`mini.ts`의 복습 모의고사).
+ * 코스의 단위다: 시험마다 오답률 Top 10 한 묶음(2026-10-20 선생님) — 문제마다 풀기/분석을 따로 누르고, 10문제를 쭉 이어 풀면
+ * 20분 미니 모의고사. 코스 순서는 `counsel.ts`가 정한다. 틀린 문제는 복습(`mini.ts`의 복습 모의고사).
  * 문항은 따로 만들지 않고 **분석 레슨 JSON에서 그대로 꺼낸다** — 지문·문제·보기·정답이 거기 다 있다.
  * 그래서 레슨을 추가하면 10분 모의고사도 저절로 늘어난다. 레슨이 다섯 개 안 되는 시험은 있는 만큼, 세 개 미만이면 뺀다.
  */
@@ -124,50 +124,59 @@ export function hardestSets(collectionId: string, count = TEN_MIN_COUNT, variant
     .slice(0, count);
 }
 
-/** 시험 하나 → (1) Top 1~5, (2) Top 6~10. 각 회 안에서는 시험지 순서 */
-function mocksOf(c: LessonCollection, variant: TenMinVariant): MiniMock[] {
-  const all = hardestSets(c.id, TEN_MIN_TOP, variant)
+/** 한 문제에 몇 분(기본). 코스에서는 등급에 따라 2~5분으로 바꾼다 — `counsel.ts` `withPlanMinutes` */
+export const MIN_PER_ITEM = 2;
+
+/** 시험 하나 → 오답률 Top 10 한 묶음 (Top1부터 순서대로, 2026-10-20 선생님). 10문제 이어 풀면 20분 미니 모의고사 */
+function mockOf(c: LessonCollection, variant: TenMinVariant): MiniMock | null {
+  const items = hardestSets(c.id, TEN_MIN_TOP, variant)
     .map((s) => {
       const lesson = getPolicyLesson(s.lessons[0]!);
       return lesson ? itemOfLesson(s, lesson) : null;
     })
     .filter((x): x is MiniItem => x != null);
-  const out: MiniMock[] = [];
-  for (let k = 0; k * TEN_MIN_COUNT < all.length; k++) {
-    const items = all.slice(k * TEN_MIN_COUNT, (k + 1) * TEN_MIN_COUNT).sort((a, b) => a.no - b.no);
-    if (items.length < MIN_ITEMS) break;
-    const part = k + 1;
-    out.push({
-      id: `${TEN_MIN_PREFIX}${c.id}${variant === "2pt" ? "-2pt" : ""}-${part}`,
-      subject: "english",
-      // 「2026년 3월 10분 모의고사-1」 (2026-10-20 선생님) — 시험 이름 뒤의 「모의고사/모의평가」는 뺀다
-      title: `${c.title.replace(/\s*(모의고사|모의평가)$/, "")} 10분 모의고사-${part}${variant === "2pt" ? " · 2점" : ""}`,
-      subtitle: `${variant === "2pt" ? "2점 문제 " : ""}오답률 Top ${k * TEN_MIN_COUNT + 1}~${k * TEN_MIN_COUNT + items.length} · ${c.subtitle}`,
-      source: c.subtitle,
-      minutes: TEN_MIN_MINUTES,
-      items,
-    });
-  }
-  return out;
+  if (items.length < MIN_ITEMS) return null;
+  const name = c.title.replace(/\s*(모의고사|모의평가)$/, "");
+  return {
+    id: `${TEN_MIN_PREFIX}${c.id}${variant === "2pt" ? "-2pt" : ""}`,
+    subject: "english",
+    title: `${name} 오답률 Top ${items.length}${variant === "2pt" ? " · 2점" : ""}`,
+    subtitle: `${variant === "2pt" ? "2점 문제 " : ""}오답률 높은 순 · ${c.subtitle}`,
+    source: c.subtitle,
+    minutes: items.length * MIN_PER_ITEM,
+    items,
+  };
+}
+
+/** 문제 하나만 풀기 — `ten-<시험>-q<번호>`. 기록은 그 id로 따로 남고, 코스는 전체 풀기와 합쳐 본다 */
+export function singleMock(base: MiniMock, no: number): MiniMock | null {
+  const it = base.items.find((x) => x.no === no);
+  if (!it) return null;
+  return { ...base, id: `${base.id}-q${no}`, title: `${base.title} · ${no}번`, subtitle: `${it.kind}${it.points === 3 ? " [3점]" : ""} · 한 문제만`, minutes: MIN_PER_ITEM, items: [it] };
+}
+
+export function singleOf(id: string): { base: string; no: number } | null {
+  const m = /^(.*)-q(\d+)$/.exec(id);
+  return m ? { base: m[1]!, no: Number(m[2]) } : null;
 }
 
 const cache = new Map<TenMinVariant, MiniMock[]>();
 
-/** 시험마다 (1)(2), **최근 시험부터** (코스 순서는 `counsel.ts`가 다시 정한다) */
+/** 시험마다 하나, **최근 시험부터** (코스 순서는 `counsel.ts`가 다시 정한다) */
 export function tenMinMocks(variant: TenMinVariant = "all"): MiniMock[] {
   const hit = cache.get(variant);
   if (hit) return hit;
   const exams = allCollections()
     .filter((c) => c.exam)
     .sort((a, b) => b.exam!.held.localeCompare(a.exam!.held));
-  const out = exams.flatMap((c) => mocksOf(c, variant));
+  const out = exams.map((c) => mockOf(c, variant)).filter((m): m is MiniMock => m != null);
   cache.set(variant, out);
   return out;
 }
 
 /** 이 10분 모의고사가 어느 시험 것인가 (시행 연월·주관) */
 export function examOfMock(mockId: string): { held: string; body: "평가원" | "교육청" } | null {
-  const cid = mockId.replace(TEN_MIN_PREFIX, "").replace(/(-2pt)?-\d+$/, "");
+  const cid = mockId.replace(TEN_MIN_PREFIX, "").replace(/(-2pt)?(-q\d+)?$/, "");
   return allCollections().find((c) => c.id === cid)?.exam ?? null;
 }
 

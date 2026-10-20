@@ -1,7 +1,7 @@
 import type { LessonSet } from "../../content/tutor/types";
 import type { StudentLevel } from "./policy/student-state";
 import { pushKey } from "./cloud";
-import { allAttempts, estimatedExamScore, getMiniMock, loadAttempts, scoreOf, type MiniScore } from "./mini";
+import { allAttempts, combinedAnswers, estimatedExamScore, getMiniMock, loadAttempts, scoreOf, type MiniMock, type MiniScore } from "./mini";
 import { reviewProgress } from "./wrongReview";
 import { getPolicyLesson } from "./policy/lessons";
 import { getSet } from "./sets";
@@ -85,6 +85,22 @@ export function levelOfGrade(grade: number | null): StudentLevel {
   return "초";
 }
 
+/** 문제 하나에 몇 분 — 1~2등급 2분 · 3~4등급 3분 · 5~6등급 4분 · 7~9등급 5분, 모르면 3분 (2026-10-20 선생님) */
+export function minutesPerItem(grade: number | null): number {
+  if (grade == null) return 3;
+  if (grade <= 2) return 2;
+  if (grade <= 4) return 3;
+  if (grade <= 6) return 4;
+  return 5;
+}
+
+/** 10분 모의고사(코스·복습)의 제한 시간을 상담에서 적은 등급에 맞춘다. 시험지 미니 모의고사는 그대로 */
+export function withPlanMinutes(mock: MiniMock | null): MiniMock | null {
+  if (!mock || !mock.id.startsWith(TEN_MIN_PREFIX)) return mock;
+  const grade = loadPlan()?.answers?.grade ?? null;
+  return { ...mock, minutes: mock.items.length * minutesPerItem(grade) };
+}
+
 /** 세트 부제 맨 앞의 유형 — 「빈칸 — 지리학이 묻는 '어디'」 → 빈칸 */
 export function kindOf(set: LessonSet): string {
   return set.subtitle.split(" — ")[0]!.trim();
@@ -143,13 +159,32 @@ export function isFirstVisit(): boolean {
   return Object.keys(loadProgress()).length === 0 && Object.values(allAttempts()).every((l) => !l.length);
 }
 
-/** 첫 방문에 분석해 볼 문제 — 코스 첫 회의 오답률 1위 (분석 레슨이 있는 것) */
+/** 첫 방문에 분석해 볼 문제 — 코스 첫 시험의 오답률 1위 (문항은 이미 Top1부터) */
 export function onboardingSet(plan: CounselPlan | null): LessonSet | null {
   const ids = plan?.course?.length ? plan.course : defaultCourse();
   const mock = getMiniMock(ids[0] ?? null);
-  if (!mock) return null;
-  const top = [...mock.items].sort((a, b) => (b.wrong_rate ?? -1) - (a.wrong_rate ?? -1)).find((it) => it.lesson);
+  const top = mock?.items.find((it) => it.lesson);
   return top?.lesson ? getSet(top.lesson) : null;
+}
+
+/**
+ * 한 시험 묶음에서 다음에 할 문제 — 분석까지 끝나지 않은 첫 문제의 번호 (Top1부터). 다 끝났으면 null.
+ * 흐름(2026-10-20 선생님): 단어 미리 보기 → 시간 재서 풀기(건너뛰어도 됨) → 바로 분석 → 다음 문제
+ */
+/** 분석까지 끝났나 — 미리보기에서 답만 고르면 「봄」으로 남는데, 그건 분석이 아니다 */
+function analysisDone(progress: Record<string, string>, setId: string): boolean {
+  return isDone(progress, setId) && progress[setId] !== "봄";
+}
+
+export function nextProblemOf(mockId: string): number | null {
+  const mock = getMiniMock(mockId);
+  if (!mock) return null;
+  const progress = loadProgress();
+  for (const it of mock.items) {
+    const set = it.lesson ? getSet(it.lesson) : null;
+    if (!set || !analysisDone(progress, set.id)) return it.no;
+  }
+  return null;
 }
 
 /** 첫 방문 체험이 끝나면 여는 10분 모의고사 — 코스 첫 회 */
@@ -243,8 +278,10 @@ export type CourseItem = {
   id: string;
   title: string;
   subtitle: string;
-  /** 풀어 본 적 있나 (가장 최근 기록 기준) */
+  /** 묶음의 문제를 다 풀었나 */
   done: boolean;
+  /** 푼 문제 수 (전체·낱개 합쳐) */
+  solved?: number;
   score: MiniScore | null;
   /** 예상 시험점수(100점 환산) — 푼 회만 */
   estimate?: number;
@@ -269,7 +306,7 @@ export type CourseItem = {
 
 /** 10분 모의고사가 속한 시험 — 제목 앞 연도(평가원은 학년도)로 묶는다 */
 function examInfoOf(mockId: string): CourseItem["exam"] | undefined {
-  const cid = mockId.replace(TEN_MIN_PREFIX, "").replace(/(-2pt)?-\d+$/, "");
+  const cid = mockId.replace(TEN_MIN_PREFIX, "").replace(/(-2pt)?(-q\d+)?$/, "");
   const c = allCollections().find((x) => x.id === cid);
   if (!c?.exam) return undefined;
   const year = Number(/(\d{4})/.exec(c.title)?.[1] ?? c.exam.held.slice(0, 4));
@@ -284,29 +321,34 @@ export function courseStatus(plan: CounselPlan | null): CourseItem[] {
   ids.forEach((id) => {
     const mock = getMiniMock(id);
     if (!mock) return;
+    // 전체(20분) 풀이와 낱개 풀기를 합친 가장 최근 답
+    const combined = combinedAnswers(id);
+    const solved = Object.keys(combined.answers).length;
     const last = loadAttempts(id)[0];
-    const score = last ? scoreOf(mock, last.answers) : null;
+    const score = solved ? scoreOf(mock, combined.answers) : null;
     const marks = mock.items.map((it) => {
       const set = it.lesson ? getSet(it.lesson) : null;
-      const mine = last?.answers[it.no];
+      const mine = combined.answers[it.no];
       return {
         no: it.no,
         kind: it.kind,
         points: it.points,
         result: (mine == null ? "none" : mine === it.answer ? "right" : "wrong") as "right" | "wrong" | "none",
-        peeked: !!last?.peeked?.includes(it.no),
-        checked: !!last?.checked?.includes(it.no),
-        analyzed: !!set && isDone(progress, set.id),
+        peeked: combined.peeked.includes(it.no),
+        checked: combined.checked.includes(it.no),
+        analyzed: !!set && analysisDone(progress, set.id),
       };
     });
-    const toAnalyze = last ? marks.filter((m) => m.result !== "right") : [];
+    const toAnalyze = marks.filter((m) => m.result === "wrong");
     items.push({
       id,
       title: mock.title,
       subtitle: mock.subtitle,
-      done: !!last,
+      // 열 문제를 다 풀었으면 끝낸 묶음
+      done: solved >= mock.items.length,
+      solved,
       score,
-      ...(last ? { estimate: estimatedExamScore(mock, last.answers) } : {}),
+      ...(solved ? { estimate: estimatedExamScore(mock, combined.answers) } : {}),
       seconds: last?.seconds ?? null,
       wrong: score ? score.total - score.correct : mock.items.length,
       exam: examInfoOf(id),

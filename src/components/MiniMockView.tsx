@@ -55,6 +55,8 @@ type Props = {
   initialStage?: "words" | "prep";
   /** 시작 화면 맨 위 다정쌤 한 줄 — 첫 방문 체험 분석을 마치고 왔을 때 */
   lead?: string;
+  /** 코스의 문제 흐름(단어 → 풀기 → 분석) 안에서 열렸다 — 단어 화면에서 풀기를 건너뛸 수 있고, 결과 화면 맨 위에 분석 버튼 */
+  flow?: boolean;
 };
 
 const NAME_KEY = "loopin.mini.name";
@@ -70,7 +72,9 @@ function savedName(): string {
  * 미니 모의고사 — 시작 → 시간 재며 풀기(문항마다 바로 정답 확인·분석도 된다) → 제출(또는 시간 끝) → 점수와 문항별 해설.
  * 수업과 달리 선생님 말은 없다. 실제 시험처럼 문제만.
  */
-export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone, initialStage, lead }: Props) {
+export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone, initialStage, lead, flow }: Props) {
+  /** 흐름 모드의 문제(한 문항)의 분석 레슨 세트 */
+  const flowSet = flow && mock.items.length === 1 && mock.items[0]!.lesson ? getSet(mock.items[0]!.lesson) : null;
   const resume = paused?.mockId === mock.id ? paused : null;
   // 「분석 먼저」에서 레슨에 갔다 돌아오면 다시 그 목록으로
   const backToPrep = prepFor === mock.id;
@@ -105,8 +109,9 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone, in
     return (
       <MiniWords
         mock={mock}
-        onBack={() => setStage("intro")}
-        onStart={start}
+        onBack={flow ? onBack : () => setStage("intro")}
+        // 코스 문제는 지문 미리보기로 — 거기서 시간 재서 풀고 바로 분석 (2026-10-20 선생님)
+        onStart={flowSet ? () => onAnalyze(flowSet, false) : start}
       />
     );
   }
@@ -161,6 +166,7 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone, in
         attempt={attempt}
         recorder={recorder.current}
         onBack={standalone ? () => setStage("intro") : onBack}
+        flowSet={flowSet}
         onRetry={start}
         onAnalyze={(set, no) => {
           startAnalysis(recorder.current, no);
@@ -241,11 +247,7 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone, in
             바로 풀어 볼게요
           </button>
         )}
-        {!doing && mock.items.some((it) => it.lesson) ? (
-          <button type="button" className="mini-start soft" disabled={standalone && !name.trim()} onClick={() => setStage("prep")}>
-            분석 먼저 하고 풀게요
-          </button>
-        ) : null}
+
         {owner ? (
           <button type="button" className="mini-last" onClick={() => setBoard(true)}>
             선생님 · 학생 결과 보기
@@ -296,7 +298,9 @@ function MiniWords({ mock, onBack, onStart }: { mock: MiniMock; onBack: () => vo
           <button type="button" className="mini-start" onClick={onStart}>
             문제 풀러 갈게요
           </button>
-          <button type="button" className="mini-words-all" onClick={() => setAllShown((v) => !v)}>{allShown ? "뜻 가리기" : "뜻 모두 보기"}</button>
+          <div className="mini-words-sub">
+            <button type="button" className="mini-words-all" onClick={() => setAllShown((v) => !v)}>{allShown ? "뜻 가리기" : "뜻 모두 보기"}</button>
+          </div>
         </div>
         <ul className="mini-words">
           {words.map((w) => {
@@ -539,7 +543,7 @@ function MiniExam({
           </span>
           <button type="button" className="mini-pause" onClick={pause} aria-label="일시정지">⏸</button>
         </span>
-        <button type="button" className="mini-submit" onClick={() => setConfirm("submit")}>제출</button>
+        <span className="mini-top-spacer" aria-hidden="true" />
       </header>
       <nav className="mini-grid" aria-label="문항">
         {mock.items.map((it, i) => {
@@ -615,7 +619,7 @@ function MiniExam({
         <button type="button" disabled={at === 0} onClick={() => setAt(at - 1)}>‹ 이전</button>
         <span>{at + 1} / {mock.items.length}</span>
         {last ? (
-          <button type="button" className="primary" onClick={() => setConfirm("submit")}>제출하기</button>
+          <button type="button" className="primary" onClick={() => (unanswered ? setConfirm("submit") : submit(left < 0))}>다음 ›</button>
         ) : (
           <button type="button" onClick={() => setAt(at + 1)}>다음 ›</button>
         )}
@@ -682,7 +686,6 @@ function CheckPanel({
       {onAnalyze ? (
         <button type="button" className="mini-analyze big" onClick={onAnalyze}>
           <b>다정쌤과 이 문제 분석하기 ›</b>
-          <small>문장마다 같이 읽으며 왜 답이 되는지 찾아요 · 분석하는 동안 시계가 멈춰요</small>
         </button>
       ) : (
         <p className="mini-no-lesson">이 문제는 아직 다정쌤 분석이 없어요. 아래 해설을 봐요.</p>
@@ -863,6 +866,7 @@ function MiniResult({
   attempt,
   recorder,
   onBack,
+  flowSet,
   onRetry,
   onAnalyze,
 }: {
@@ -870,6 +874,8 @@ function MiniResult({
   attempt: MiniAttempt;
   recorder: MiniRecorder | null;
   onBack: () => void;
+  /** 코스 흐름 — 결과 바로 아래 「다정쌤과 분석하기」 (맞았어도 분석한다) */
+  flowSet?: LessonSet | null;
   onRetry: () => void;
   onAnalyze: (set: LessonSet, no: number) => void;
 }) {
@@ -890,6 +896,11 @@ function MiniResult({
       </header>
       <div className="saved-body-scroll">
         <p className="home-hello">{mock.title} · 결과</p>
+        {flowSet ? (
+          <button type="button" className="mini-analyze big flow" onClick={() => onAnalyze(flowSet, mock.items[0]!.no)}>
+            <b>다정쌤과 이 문제 분석하기 ›</b>
+          </button>
+        ) : null}
         <div className="mini-score">
           <b>{s.score}</b>
           <span>/ {s.max}점</span>
@@ -952,7 +963,6 @@ function MiniResult({
                     {set ? (
                       <button type="button" className="mini-analyze big" onClick={() => onAnalyze(set, it.no)}>
                         <b>다정쌤과 이 문제 분석하기 ›</b>
-                        <small>문장마다 같이 읽으며 왜 답이 되는지 찾아요</small>
                       </button>
                     ) : (
                       <p className="mini-no-lesson">이 문제는 아직 다정쌤 분석이 없어요. 아래 해설을 봐요.</p>

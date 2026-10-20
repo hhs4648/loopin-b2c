@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { allMiniMocks } from "./mini";
+import { allMiniMocks, getMiniMock } from "./mini";
 import { hardestSets, itemOfLesson, tenMinMocks } from "./tenmin";
 import { getPolicyLesson } from "./policy/lessons";
 import { setsIn } from "./sets";
@@ -45,7 +45,7 @@ describe("10분 모의고사 — 레슨에서 문항 꺼내기", () => {
     expect(item.options[1]).toBe("(B)-(A)-(C)");
   });
 
-  it("시험마다 오답률 높은 다섯 문제, 듣기·비교용 사본·장문은 빼고, 최근 시험부터", () => {
+  it("시험마다 오답률 Top 10 한 묶음(Top1부터), 듣기·비교용 사본·장문은 빼고, 최근 시험부터", () => {
     const hard = hardestSets("moeui-2024-03");
     expect(hard.length).toBe(5);
     expect(hard.every((s) => Number(/(\d+)번/.exec(s.title)![1]) < 41)).toBe(true);
@@ -53,16 +53,21 @@ describe("10분 모의고사 — 레슨에서 문항 꺼내기", () => {
     expect(hard.some((s) => /-v\d+$/.test(s.id) || s.subtitle.startsWith("듣기"))).toBe(false);
 
     const mocks = tenMinMocks();
-    // Top 10을 (1)(2)로 — 2026년 3월은 레슨이 7개라 (2)는 2문제뿐이어서 안 만든다
-    expect(mocks.map((m) => m.id)).toEqual(["ten-moeui-2026-03-1", "ten-moeui-2024-03-1", "ten-moeui-2024-03-2", "ten-moeui-2022-03-1", "ten-moeui-2022-03-2"]);
-    expect(mocks[1]!.subtitle.startsWith("오답률 Top 1~5")).toBe(true);
-    expect(mocks[2]!.subtitle.startsWith("오답률 Top 6~10")).toBe(true);
+    expect(mocks.map((m) => m.id)).toEqual(["ten-moeui-2026-03", "ten-moeui-2024-03", "ten-moeui-2022-03"]);
+    expect(mocks[1]!.title).toBe("2024년 3월 오답률 Top 10");
     for (const m of mocks) {
-      expect(m.minutes).toBe(10);
       expect(m.items.length).toBeGreaterThanOrEqual(3);
-      expect(m.items.length).toBeLessThanOrEqual(5);
-      expect(m.items.map((it) => it.no)).toEqual([...m.items.map((it) => it.no)].sort((a, b) => a - b));
+      expect(m.items.length).toBeLessThanOrEqual(10);
+      // 문제마다 2분 — 10문제면 20분 미니 모의고사
+      expect(m.minutes).toBe(m.items.length * 2);
+      // 오답률 Top1부터
+      const rates = m.items.map((it) => it.wrong_rate ?? -1);
+      expect(rates).toEqual([...rates].sort((a, b) => b - a));
       for (const it of m.items) expect(it.lesson).toBeTruthy();
     }
+    // 문제 하나만 풀기 — 낱개 id
+    const single = getMiniMock(`${mocks[0]!.id}-q${mocks[0]!.items[0]!.no}`)!;
+    expect(single.items).toHaveLength(1);
+    expect(single.items[0]!.no).toBe(mocks[0]!.items[0]!.no);
   });
 });
