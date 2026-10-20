@@ -155,31 +155,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 18.7%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "cloud를 명사 '구름'으로만 알면 어색해 보여요. 하지만 동사 cloud는 '흐리게 하다, 망치다'예요. 자동적 사고는 나쁜 습관(bad habits)이라서 새롭고 좋은 경험을 흐리게 망친다, 흐름에 딱 맞아요.",
-          "ask": "그래서 (e)는 문맥에 맞아요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "cloud를 '구름'으로만 알았어요",
-              "skills": [
-                "word_sense_cloud"
-              ],
-              "reply": "알려 줘서 고마워요. cloud는 동사로 '흐리게 하다'예요. 앞으로 이런 단어가 나오면 헷갈리는 단어로 표시해 줄게요."
-            },
-            {
-              "label": "(d) 예시를 불안을 줄이는 말로 읽었어요",
-              "skills": [
-                "example_direction"
-              ],
-              "reply": "알려 줘서 고마워요. 'Oh no, I don’t like this'는 불안을 키우는 말이에요. 앞으로 예시가 어느 방향인지 먼저 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "word_sense_cloud",
-                "example_direction"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 단어의 다른 뜻과 예시의 방향을 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -1100,7 +1075,8 @@
             {
               "label": "frame (동사)",
               "text": "명사 '틀, 액자'뿐 아니라 동사로 '틀을 씌우다, (특정 방식으로) 표현하다'예요.",
-              "mark": "frame"
+              "mark": "frame",
+              "trap": true
             }
           ]
         },
@@ -2218,7 +2194,8 @@
             {
               "label": "cloud (동사)",
               "text": "'흐리게 하다, (판단·기분을) 흐리다, 망치다'예요. cloud one's judgment = 판단을 흐리다.",
-              "mark": "cloud"
+              "mark": "cloud",
+              "trap": true
             }
           ]
         },
@@ -2271,7 +2248,8 @@
             {
               "label": "cloud (동사)",
               "text": "'흐리게 하다, (판단·기분을) 흐리다, 망치다'예요. cloud one's judgment = 판단을 흐리다.",
-              "mark": "cloud"
+              "mark": "cloud",
+              "trap": true
             }
           ]
         },
@@ -2319,7 +2297,8 @@
             {
               "label": "cloud (동사)",
               "text": "'흐리게 하다, (판단·기분을) 흐리다, 망치다'예요. cloud one's judgment = 판단을 흐리다.",
-              "mark": "cloud"
+              "mark": "cloud",
+              "trap": true
             }
           ]
         },

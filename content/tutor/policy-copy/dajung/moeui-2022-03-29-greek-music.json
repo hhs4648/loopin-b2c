@@ -63,7 +63,7 @@
       "from": "7z6ron"
     },
     "s3_more": {
-      "ask": "who 뒤를 봐요. 'more concerned with A ②as with B'로 두 가지를 견주는데, 작가들이 더 관심 있던 쪽은 어디일까요?",
+      "ask": "who 뒤를 봐요. 'more concerned with A ②as with B'로 두 가지를 비교하는데, 작가들이 더 관심 있던 쪽은 어디일까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
         "more concerned with 바로 뒤에 오는 쪽이 '더' 관심 있던 쪽이에요.",
@@ -76,155 +76,138 @@
         "o2": "'more concerned with writing about music …', 음악을 철학·윤리의 실천으로 보고 글 쓰는 쪽에 더 관심이 있었대요. 연주 기술 입문서 쪽이 아니고요."
       },
       "point": "작가들은 음악을 철학·윤리로 다루는 글쓰기에 더 관심 — 연주 기술 입문서 쪽이 아니다",
-      "from": "1wudm7z"
+      "from": "yp5mjn"
     },
     "s3_hold": {
-      "say": "여기서 more는 두 가지를 견주는 말이에요. more와 짝을 이루는 말이 무엇인지 떠올려 봐요. ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
-      "point": "② more가 견주는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인",
-      "from": "uwc0y3"
+      "say": "여기서 more는 두 가지를 비교하는 말이에요. more와 짝을 이루는 말이 무엇인지 떠올려 봐요. ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
+      "point": "② more가 비교하는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인",
+      "from": "imhauj"
     },
-    "s4_cons_mean": {
-      "say": "보기 ③consisting부터 볼게요. consist of는 '~로 구성되다'라는 뜻이에요.",
-      "from": "l3kshn"
+    "s4_cons_ask": {
+      "say": "보기 ③consisting부터 볼게요. 이번 밑줄은 '동사'가 와야 하는지 '분사'가 와야 하는지 고르는 문제예요.",
+      "from": "13s9vbp"
     },
-    "s4_cons_one": {
-      "say": "콤마 앞에 이미 동사 was가 있어요. 접속사 없이 동사를 하나 더 쓸 수 없어서 consisted는 못 와요.",
-      "from": "aqub1y"
+    "s4_cons_table": {
+      "say": "동사와 분사의 차이는 표와 같아요.",
+      "saved": "보충학습실에 담아 뒀어요.",
+      "from": "6eav4a"
     },
-    "s4_cons_ing": {
-      "say": "그래서 동사를 -ing로 바꿔 이어 붙여요. 이런 -ing를 '분사'라고 하고, 여기선 앞의 a vocal form을 설명해요.",
-      "from": "1s0cusb"
-    },
-    "s4_cons_pass": {
-      "say": "그리고 consist of는 수동태로 쓰지 않아요. 그래서 과거분사 consisted로도 못 바꾸고, consisting이 맞아요.",
-      "from": "1ibof1l"
-    },
-    "s4_cons_try": {
-      "ask": "두 문장을 접속사 없이 합쳐 봐요. 빈칸에 알맞은 것은 무엇일까요?",
-      "reask": "그럼 하나 골라 봐요.",
-      "hints": [
-        "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요.",
-        "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요."
-      ],
-      "explain": "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요.",
-      "praise": "맞아요! 동사 wrote가 있으니 -ing로 이어서 consisting이에요.",
-      "feedback": {
-        "o1": "consist of는 수동태로 못 써요. 그리고 이미 동사 wrote가 있어서 consisting이에요.",
-        "o2": "접속사 없이 동사를 하나 더 쓸 수 없어요. 동사 wrote가 있으니 -ing로 이어서 consisting이에요."
-      },
-      "point": "접속사 없이 잇는 자리 + consist of는 수동 ✕ → consisting",
-      "from": "19vlucn"
+    "s4_cons_rule": {
+      "say": "꼭 외워 둘 것이 있어요. 한 문장에 동사는 하나예요. and, or, when 같은 접속사가 있어야만 동사를 더 쓸 수 있어요.",
+      "from": "1rrmvfe"
     },
     "s4_cons_judge": {
       "ask": "그럼 보기 ③은 어법상 맞을까요, 틀릴까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
-        "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요.",
-        "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요."
+        "접속사 없이 동사가 또 올 수는 없어서, 분사가 와야 하는 자리예요.",
+        "접속사 없이 동사가 또 올 수는 없어서, 분사가 와야 하는 자리예요."
       ],
-      "explain": "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요. 그래서 보기 ③은 어법상 맞아요.",
+      "explain": "접속사 없이 동사가 또 올 수는 없어서, 분사가 와야 하는 자리예요. 그래서 보기 ③은 어법상 맞아요.",
       "praise": "맞아요! 보기 ③은 어법상 문제가 없어요.",
       "feedback": {
-        "o1": "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요. 그래서 보기 ③은 어법상 맞아요."
+        "o1": "접속사 없이 동사가 또 올 수는 없어서, 분사가 와야 하는 자리예요. 그래서 보기 ③은 어법상 맞아요."
       },
       "point": "보기 ③consisting 어법상 맞음",
-      "from": "1qs5075"
+      "from": "p1kc0x"
+    },
+    "s4_cons_why": {
+      "say": "여기서는 이미 It seems, Greek music was라는 주어·동사가 있고, 그 뒤로 접속사가 없어요. 그래서 동사는 또 못 오고, 분사인 consisting이 와야 해요.",
+      "from": "1q7xq3n"
+    },
+    "s4_cons_phrase": {
+      "say": "이 문장처럼 '완성된 문장 + 콤마(,) + 분사'일 때, 콤마 뒷부분을 '분사구문'이라고 불러요.",
+      "from": "jm7s6h"
+    },
+    "s4_cons_deep": {
+      "say": "consisted는 동사로도, 과거분사(p.p.)로도 볼 수 있어요. 동사라면 한 문장에 동사가 또 오는 거라 안 되고, p.p.라면 '~된'이라는 수동인데 consist of는 수동으로 쓰지 않는 말이라 안 돼요. 그래서 능동인 consisting이에요.",
+      "from": "8lxkpg"
     },
     "s4_cons_more": {
       "say": "이 문법을 나중에 좀 더 연습할까요?",
       "saved": "보충학습실에 담아 뒀어요.",
       "from": "lvds32"
     },
-    "s5_tobe_mean": {
-      "say": "보기 ④to be는 앞의 considered와 짝이에요. consider A to be B는 'A를 B라고 여기다'라는 뜻이에요.",
-      "from": "12uvwaq"
+    "s5_tobe_ask": {
+      "say": "보기 ④to be를 볼게요. 이번 밑줄은 앞의 considered와 짝이 맞는 모양인지 고르는 문제예요.",
+      "from": "19i4oco"
     },
-    "s5_tobe_form": {
-      "say": "모양은 consider + 목적어 + to be + 보어예요. to be를 빼고 consider A B로 써도 돼요.",
-      "from": "1hy2jwd"
+    "s5_tobe_table": {
+      "say": "'A를 B라고 여기다'라는 동사는 짝이 정해져 있어요. 표처럼 to be와 짝인 것, as와 짝인 것이 있어요.",
+      "saved": "보충학습실에 담아 뒀어요.",
+      "from": "1u61x4g"
     },
-    "s5_tobe_far": {
-      "say": "여기선 목적어 music 뒤에 in which부터 긴 설명이 붙었어요. 그래서 to be가 멀리 떨어져 보일 뿐, 짝은 considered예요.",
-      "from": "elycx8"
-    },
-    "s5_tobe_try": {
-      "ask": "빈칸에 알맞은 것은 무엇일까요?",
-      "reask": "그럼 하나 골라 봐요.",
-      "hints": [
-        "consider + 목적어 뒤에는 to be + 보어가 와요.",
-        "consider + 목적어 뒤에는 to be + 보어가 와요."
-      ],
-      "explain": "consider + 목적어 뒤에는 to be + 보어가 와요.",
-      "praise": "맞아요! consider + 목적어(him) + to be + 보어예요.",
-      "feedback": {
-        "o1": "consider + 목적어 뒤에는 being이 아니라 to be를 써요.",
-        "o2": "이미 동사 consider가 있어요. 목적어 뒤에는 to be + 보어예요."
-      },
-      "point": "consider + 목적어 + to be + 보어",
-      "from": "xk6mtu"
+    "s5_tobe_rule": {
+      "say": "이 문제는 목적어가 많이 길어서 헷갈려요. 목적어가 길어진 이유는 중간에 music을 꾸며 주는 in which 절이 들어왔기 때문이에요. [ ]를 빼고 보면 considered 뒤의 짝이 보여요.",
+      "from": "17svvm8"
     },
     "s5_tobe_judge": {
       "ask": "그럼 보기 ④는 어법상 맞을까요, 틀릴까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
-        "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요.",
-        "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요."
+        "considered의 목적어가 끝나는 곳을 찾아보면 짝이 보여요.",
+        "considered의 목적어가 끝나는 곳을 찾아보면 짝이 보여요."
       ],
-      "explain": "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요. 그래서 보기 ④는 어법상 맞아요.",
+      "explain": "considered의 목적어가 끝나는 곳을 찾아보면 짝이 보여요. 그래서 보기 ④는 어법상 맞아요.",
       "praise": "맞아요! 보기 ④는 어법상 문제가 없어요.",
       "feedback": {
-        "o1": "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요. 그래서 보기 ④는 어법상 맞아요."
+        "o1": "considered의 목적어가 끝나는 곳을 찾아보면 짝이 보여요. 그래서 보기 ④는 어법상 맞아요."
       },
       "point": "보기 ④to be 어법상 맞음",
-      "from": "3xkn5v"
+      "from": "1wsyi03"
+    },
+    "s5_tobe_why": {
+      "say": "[ ]를 빼고 보면 considered music to be ‘coarse’예요. consider A to be B 모양 그대로라 to be가 맞아요.",
+      "from": "qm3iwm"
+    },
+    "s5_tobe_name": {
+      "say": "이렇게 '동사 + 목적어 + 목적어를 설명하는 말'로 된 문장을 '5형식'이라고 해요. 목적어를 설명하는 to be ~ 부분은 '목적격 보어'라고 불러요.",
+      "from": "1jna111"
+    },
+    "s5_tobe_deep": {
+      "say": "consider A 뒤 보어 자리에는 to be를 쓰고 being은 쓰지 않아요. is를 쓰면 한 문장에 동사가 또 오는 거라 안 돼요.",
+      "from": "10u1zp"
     },
     "s5_tobe_more": {
       "say": "이 문법을 나중에 좀 더 연습할까요?",
       "saved": "보충학습실에 담아 뒀어요.",
       "from": "lvds32"
     },
-    "s6_adv_mean": {
-      "say": "보기 ⑤generally는 '일반적으로, 대개'라는 뜻이에요. 바로 뒤의 동사 span(걸쳐 있다)을 꾸며요.",
-      "from": "13cb17p"
+    "s6_adv_ask": {
+      "say": "보기 ⑤generally를 볼게요. 이번 밑줄은 '형용사'가 와야 하는지 '부사'가 와야 하는지 고르는 문제예요.",
+      "from": "1usa34y"
+    },
+    "s6_adv_table": {
+      "say": "형용사와 부사의 차이는 표와 같아요.",
+      "saved": "보충학습실에 담아 뒀어요.",
+      "from": "mh0wyz"
     },
     "s6_adv_rule": {
-      "say": "동사를 꾸미는 말은 부사예요. 그래서 형용사 general이 아니라 -ly가 붙은 generally가 맞아요.",
-      "from": "159ju57"
-    },
-    "s6_adv_adj": {
-      "say": "형용사 general은 명사를 꾸미거나 be동사 뒤에 와요. a general rule, It is general처럼요.",
-      "from": "1kqfjzd"
-    },
-    "s6_adv_try": {
-      "ask": "빈칸에 알맞은 것은 무엇일까요?",
-      "reask": "그럼 하나 골라 봐요.",
-      "hints": [
-        "동사 sings를 꾸미는 말이에요.",
-        "동사 sings를 꾸미는 말이에요."
-      ],
-      "explain": "동사 sings를 꾸미는 말이에요.",
-      "praise": "맞아요! 동사 sings를 꾸미니 부사 beautifully예요.",
-      "feedback": {
-        "o1": "beautiful은 형용사라 동사 sings를 꾸밀 수 없어요. 부사 beautifully예요.",
-        "o2": "beauty는 명사예요. 동사를 꾸미는 건 부사 beautifully예요."
-      },
-      "point": "동사를 꾸미는 자리 → 부사(-ly)",
-      "from": "i5wmxo"
+      "say": "꼭 외워 둘 것이 있어요. 명사를 꾸미면 형용사, 동사를 꾸미면 부사예요. 부사는 보통 형용사에 -ly가 붙은 모양이에요.",
+      "from": "v7ei3p"
     },
     "s6_adv_judge": {
       "ask": "그럼 보기 ⑤는 어법상 맞을까요, 틀릴까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
-        "동사 span을 꾸미는 자리라 부사가 와야 해요.",
-        "동사 span을 꾸미는 자리라 부사가 와야 해요."
+        "generally가 무엇을 꾸미는지 바로 뒤를 보면 알 수 있어요.",
+        "generally가 무엇을 꾸미는지 바로 뒤를 보면 알 수 있어요."
       ],
-      "explain": "동사 span을 꾸미는 자리라 부사가 와야 해요. 그래서 보기 ⑤는 어법상 맞아요.",
+      "explain": "generally가 무엇을 꾸미는지 바로 뒤를 보면 알 수 있어요. 그래서 보기 ⑤는 어법상 맞아요.",
       "praise": "맞아요! 보기 ⑤는 어법상 문제가 없어요.",
       "feedback": {
-        "o1": "동사 span을 꾸미는 자리라 부사가 와야 해요. 그래서 보기 ⑤는 어법상 맞아요."
+        "o1": "generally가 무엇을 꾸미는지 바로 뒤를 보면 알 수 있어요. 그래서 보기 ⑤는 어법상 맞아요."
       },
       "point": "보기 ⑤generally 어법상 맞음",
-      "from": "tajz2z"
+      "from": "1y3uol7"
+    },
+    "s6_adv_why": {
+      "say": "여기서 generally 바로 뒤의 span은 '걸쳐 있다'라는 동사예요. 동사를 꾸미니 부사 generally가 와야 해요. 부사는 이렇게 주어와 동사 사이에 와도 돼요.",
+      "from": "myi6qw"
+    },
+    "s6_adv_deep": {
+      "say": "friendly(친절한), lovely(사랑스러운), costly(비싼)는 -ly로 끝나도 형용사예요.",
+      "from": "1vhbgbv"
     },
     "s6_adv_more": {
       "say": "이 문법을 나중에 좀 더 연습할까요?",
@@ -241,7 +224,7 @@
     "first_correct": "맞았어요!",
     "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
     "final_correct": "정답이에요!",
-    "answer_explain": "정답이에요! more로 두 가지를 견줬으니 짝이 되는 말은 than이어야 해요. ②as with → than with로 고쳐요.",
+    "answer_explain": "정답이에요! more로 두 가지를 비교했으니 짝이 되는 말은 than이어야 해요. ②as with → than with로 고쳐요.",
     "final_wrong": "정답은 ②예요. 'more concerned with A … as with B'에서 more와 짝을 이루는 말은 than이에요. as with를 than with로 고쳐요.",
     "option_feedback": {
       "1": "부정어 nor가 앞에 와서 '조동사 + 주어' 순서가 된 거라 ①has it survived는 맞아요.",
@@ -255,38 +238,13 @@
         "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
         "intro_button": "같이 볼게요",
         "say": "③ 앞에는 이미 동사 was가 있어서 '동사가 둘'로 보여요. 하지만 접속사 없이 문장을 이어 붙일 때는 동사를 -ing(분사)로 바꿔요. 그래서 consisting이 맞아요.",
-        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-        "choices": [
-          {
-            "label": "동사가 둘이라 틀린 것 같았어요",
-            "skills": [
-              "participle"
-            ],
-            "reply": "알려 줘서 고마워요. 접속사가 없으면 뒤 동사는 -ing가 돼요. 앞으로 분사로 이어 붙이는 자리를 먼저 짚어 줄게요."
-          },
-          {
-            "label": "consisting of 뜻을 몰랐어요",
-            "skills": [
-              "vocab"
-            ],
-            "reply": "알려 줘서 고마워요. consist of는 '~로 구성되다'예요. 앞으로 이런 숙어를 먼저 알려 줄게요."
-          },
-          {
-            "label": "둘 다요",
-            "skills": [
-              "participle",
-              "vocab"
-            ],
-            "reply": "알려 줘서 고마워요. 앞으로 분사 자리와 숙어를 같이 짚어 줄게요."
-          }
-        ],
         "panel": {
           "kind": "structure",
           "rows": [
             {
               "label": "앞",
-              "text": "a vocal form",
-              "ko": "콤마 앞 — 이미 동사 was가 있다",
+              "text": "It seems Greek music was …",
+              "ko": "콤마 앞 — 이미 주어·동사가 있다",
               "tone": "hl"
             },
             {
@@ -302,31 +260,6 @@
         "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
         "intro_button": "같이 볼게요",
         "say": "④to be는 considered와 멀리 떨어져 있어서 어색해 보여요. 목적어 music 뒤에 in which 덩어리가 길게 붙어서 그래요. consider + 목적어 + to be + 보어 모양이라 ④는 맞아요.",
-        "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
-        "choices": [
-          {
-            "label": "considered와 to be가 멀어서 헷갈렸어요",
-            "skills": [
-              "long_object"
-            ],
-            "reply": "알려 줘서 고마워요. 목적어가 길면 보어가 멀어져요. 앞으로 긴 목적어를 먼저 묶어서 보여 줄게요."
-          },
-          {
-            "label": "consider 뒤에 to be가 오는 걸 몰랐어요",
-            "skills": [
-              "verb_pattern"
-            ],
-            "reply": "알려 줘서 고마워요. consider + 목적어 + to be + 보어는 '~을 …라고 여기다'예요. 앞으로 동사 모양을 먼저 알려 줄게요."
-          },
-          {
-            "label": "둘 다요",
-            "skills": [
-              "long_object",
-              "verb_pattern"
-            ],
-            "reply": "알려 줘서 고마워요. 앞으로 긴 목적어와 동사 모양을 같이 짚어 줄게요."
-          }
-        ],
         "panel": {
           "kind": "structure",
           "rows": [
@@ -352,7 +285,8 @@
         }
       }
     },
-    "from": "1psuile"
+    "answer_note": "참고로 more와 as의 짝을 묻는 어법 문제는 모의고사에 거의 나온 적이 없어요. 낯선 유형이라 이 문제가 이 회차 오답률 1위였어요. 보통은 동사냐 분사냐 같은 것을 주로 물어봐요.",
+    "from": "10prtzf"
   },
   "intro": {
     "topic": {

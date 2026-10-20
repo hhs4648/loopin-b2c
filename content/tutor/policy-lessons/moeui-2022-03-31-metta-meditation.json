@@ -135,31 +135,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 42%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "글에 meditation(명상)이 나와서 Relaxation(긴장 완화)을 가장 많이 골랐어요. 하지만 빈칸(it)은 싫은 사람에게도, 사랑하는 사람에게만큼 '향하게(direct)' 해야 하는 거예요. 긴장 완화는 사람에게 향하는 마음이 아니에요.",
-          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "명상이라서 긴장 완화가 떠올랐어요",
-              "skills": [
-                "topic_word_trap"
-              ],
-              "reply": "알려 줘서 고마워요. 명상은 방법이고, 그걸로 기르는 건 this attitude(자비심)예요. 앞으로 이 점을 짚어 줄게요."
-            },
-            {
-              "label": "direct it towards를 놓쳤어요",
-              "skills": [
-                "blank_clue"
-              ],
-              "reply": "알려 줘서 고마워요. 빈칸 문장의 it은 빈칸이고, 사람에게 향하게 하는 거예요. 앞으로 빈칸 문장 속 단서를 먼저 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "topic_word_trap",
-                "blank_clue"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 명상으로 무엇을 기르는지와 빈칸 문장 단서를 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -1525,6 +1500,12 @@
               "label": "in place of",
               "text": "'~ 대신에'예요. in place of A, B = A 대신 B.",
               "mark": "in place of"
+            },
+            {
+              "label": "call",
+              "text": "이 글에서는 → 요구  ('전화, 부르다' 아님)",
+              "mark": "call",
+              "trap": true
             }
           ]
         },
@@ -1937,6 +1918,12 @@
               "label": "pretty much",
               "text": "'거의'예요. pretty much everyone = 거의 모든 사람.",
               "mark": "pretty much"
+            },
+            {
+              "label": "practice",
+              "text": "이 글에서는 → 수행  ('연습' 아님)",
+              "mark": "practice",
+              "trap": true
             }
           ]
         },
@@ -2652,7 +2639,15 @@
             "praise": "다 찾았어요!",
             "explain": "빈칸이 주어, is가 동사, a learnable skill이 보어예요. and 뒤는 주어 we, 동사 need, 목적어 to direct it이에요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "direct",
+              "text": "이 글에서는 → 향하게 하다  ('직접적인' 아님)",
+              "mark": "direct",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s7_fill",

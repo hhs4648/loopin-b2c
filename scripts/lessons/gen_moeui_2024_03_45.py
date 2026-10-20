@@ -83,4 +83,15 @@ lesson = base_lesson(
             "brief": {"say": "보기는 글 순서대로 나와요. 읽다가 보기 속 장면이 나오면 그 자리에서 같은지 다른지 볼 거예요."}}],
     exam=exam, key_words=src["key_words"], sentences=sentences, english="medium", concept="low")
 
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# lazy 나른한, 한가한.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    4: [tip("lazy", "이 글에서는 → 나른한, 한가한  ('게으른' 아님)", "lazy", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
+
 finish(ID, lesson, senses=SENSES, words={}, topic_intro="내용 일치 푸는 법")

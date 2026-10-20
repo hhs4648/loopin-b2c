@@ -156,31 +156,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 18%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "(c)는 글쓴이가 아니라 Some(몇몇 사람들)의 생각이에요. 신경과 근육이 없으니 행동이라 부르기를 꺼린다(reluctant), 이유와 딱 맞아요. 바로 뒤 But에서 글쓴이가 반박해요.",
-          "ask": "그래서 (c)는 문맥에 맞아요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "글쓴이 생각으로 읽었어요",
-              "skills": [
-                "whose_view"
-              ],
-              "reply": "알려 줘서 고마워요. Some are ~는 다른 사람들 의견이에요. 앞으로 누구의 생각인지 먼저 짚어 줄게요."
-            },
-            {
-              "label": "reluctant 뜻이 헷갈렸어요",
-              "skills": [
-                "word_sense_reluctant"
-              ],
-              "reply": "알려 줘서 고마워요. reluctant는 '꺼리는, 내키지 않는'이에요. 앞으로 이런 단어는 헷갈리는 단어로 표시해 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "whose_view",
-                "word_sense_reluctant"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 누구의 생각인지와 단어 뜻을 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -1333,6 +1308,12 @@
               "label": "accordingly",
               "text": "'그에 맞게, 그에 따라'예요.",
               "mark": "accordingly"
+            },
+            {
+              "label": "content",
+              "text": "이 글에서는 → 함량  ('내용' 아님)",
+              "mark": "content",
+              "trap": true
             }
           ]
         },
@@ -2315,7 +2296,15 @@
               ]
             },
             "between": "vs"
-          }
+          },
+          "tips": [
+            {
+              "label": "store",
+              "text": "이 글에서는 → 저장하다  ('가게' 아님)",
+              "mark": "store",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "story_9",
@@ -2459,7 +2448,15 @@
             "praise": "다 맞췄어요!",
             "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "certain",
+              "text": "이 글에서는 → 어느 정도의  ('확실한' 아님)",
+              "mark": "certain",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s10_intel",

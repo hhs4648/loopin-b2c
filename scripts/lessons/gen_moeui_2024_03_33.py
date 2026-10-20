@@ -410,12 +410,6 @@ exam = {
          "5": "out of control이 겹쳐서 헷갈렸죠. 하지만 통제 밖이라는 걸 받아들이는 건 스토아학파가 권한 거예요. 경고한 건 그런 일에 화내는 거예요."},
         {"5": review(16.7,
                      "⑤에 out of control이 있어서 글과 겹쳐 보여요. 하지만 스토아학파는 통제 밖의 일을 '나와 상관없다'고 받아들이라고 했어요. 경고한 건 통제 밖이라고 여기는 게 아니라, 그런 일에 화내는(감정적으로 반응하는) 거예요.",
-                     "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
-                     [("out of control이 글과 겹쳐서 골랐어요", ["word_overlap"],
-                       "알려 줘서 고마워요. 겹치는 단어보다 그 단어로 무엇을 한다는 건지(합리화한다 / 화낸다)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("anger 예시를 빈칸과 못 이었어요", ["example_link"],
-                       "알려 줘서 고마워요. 빈칸 뒤 Consider anger부터가 빈칸의 예예요. 앞으로 예시를 빈칸과 이어서 보게 할게요."),
-                      ("둘 다요", ["word_overlap", "example_link"], "알려 줘서 고마워요. 앞으로 겹치는 단어와 예시를 같이 짚어 줄게요.")],
                      panel=rows(("권한 것", "it is nothing to you", "통제 밖의 일은 나와 상관없다고 받아들이기", "hl"),
                                 ("경고한 것", "get angry at the rain / that person", "통제 밖의 일에 화내기 (감정)", "hl2")))}),
 }
@@ -439,6 +433,17 @@ lesson = base_lesson(
                            g("alter", "바꾸다"), g("concern", "~에 관한 것이다")],
                "options": [g("evidence", "증거"), g("react", "반응하다"), g("comprehend", "이해하다"), g("rationalize", "합리화하다")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# concerns ~와 관련이 있다.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    12: [tip("concerns", "이 글에서는 → ~와 관련이 있다  ('걱정' 아님)", "concerns", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
        chunks={"Epictetus": "에픽테토스", "wrote": "썼다", "A man’s master": "사람의 주인", "is": "~이다", "you": "너는",

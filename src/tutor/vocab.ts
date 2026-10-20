@@ -1,9 +1,11 @@
 /**
  * 단어장 — 학생이 뜻을 보다가 별표를 눌러 모아 둔 단어.
  *
- * 지금은 이 브라우저에만 남는다. 서버가 생기면 그대로 흘려보낸다.
+ * 이 브라우저가 원본, 서버(`learner_state`)가 사본이다 — `cloud.ts`.
  * 별표는 **저장 여부 하나**만 뜻한다. 외웠는지·복습할지는 여기서 판단하지 않는다.
  */
+
+import { pushKey } from "./cloud";
 
 export type VocabEntry = {
   en: string;
@@ -37,6 +39,7 @@ export function loadVocab(): VocabEntry[] {
 function save(entries: VocabEntry[]): void {
   try {
     window.localStorage.setItem(KEY, JSON.stringify(entries));
+    pushKey(KEY);
   } catch {
     /* 못 저장해도 수업은 그대로 */
   }

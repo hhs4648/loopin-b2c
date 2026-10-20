@@ -386,12 +386,6 @@ exam = {
          "5": "콜론 뒤에서 신호등이 ao에 더 맞는 색이 됐다고 했어요. 색을 바꾼 거라 반대예요."},
         {"2": review(18.8,
                      "'언어가 사람들의 생각을 반영했다'는 그럴듯한 말이지만 글에 없는 일반론이에요. 빈칸 뒤 콜론(:)은 '그 이후로 신호등이 ao에 더 맞는 색이 됐다'예요. 그러니 빈칸은 무엇을 무엇에 맞췄는지, 현실을 이름에 맞췄다는 말이어야 해요.",
-                     "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-                     [("콜론 뒤를 안 봤어요", ["colon_after_blank"],
-                       "알려 줘서 고마워요. 빈칸 바로 뒤 콜론(:)은 빈칸을 풀어 주는 경우가 많아요. 앞으로 빈칸 뒤 콜론을 강조해서 알려 줄게요."),
-                      ("Rather than 뒤가 반대인 걸 놓쳤어요", ["rather_than"],
-                       "알려 줘서 고마워요. Rather than A, B는 'A 대신 B'라서 빈칸은 A와 반대 쪽이에요. 앞으로 이 점을 짚어 줄게요."),
-                      ("둘 다요", ["colon_after_blank", "rather_than"], "알려 줘서 고마워요. 앞으로 Rather than과 빈칸 뒤 콜론을 같이 짚어 줄게요.")],
                      panel=rows(("Rather than", "alter the name to fit reality", "현실에 맞춰 이름을 바꾸는 대신", "hl"),
                                 ("콜론(:) 뒤", "go lights would be a color … of ao", "신호등이 ao에 맞는 색이 됐다", "hl2")))}),
 }
@@ -415,6 +409,17 @@ lesson = base_lesson(
                            g("alter", "바꾸다"), g("henceforth", "그 이후로"), g("correspond to", "~에 부합하다")],
                "options": [g("reality", "현실"), g("reflect", "반영하다"), g("global standard", "세계 기준"), g("ban", "금지하다")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# shades 색조.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    2: [tip("shades", "이 글에서는 → 색조  ('그늘' 아님)", "shades", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
        chunks={"Japanese": "일본어", "used to have": "예전에 가지고 있었다", "a color word": "색 단어", "spanned": "걸쳐 있었다",

@@ -493,6 +493,20 @@
           "highlight": [
             "not perceived as barriers",
             "avenues"
+          ],
+          "tips": [
+            {
+              "label": "address",
+              "text": "이 글에서는 → (문제를) 다루다  ('주소' 아님)",
+              "mark": "address",
+              "trap": true
+            },
+            {
+              "label": "avenues",
+              "text": "이 글에서는 → 수단, 길  ('거리, 대로' 아님)",
+              "mark": "avenues",
+              "trap": true
+            }
           ]
         },
         {

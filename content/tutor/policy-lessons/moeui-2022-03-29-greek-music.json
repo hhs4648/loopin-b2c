@@ -64,7 +64,7 @@
       },
       {
         "en": "as",
-        "ko": "~와 (견주어)"
+        "ko": "~와 (비교해)"
       },
       {
         "en": "consisting",
@@ -122,7 +122,7 @@
       "first_correct": "맞았어요!",
       "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
       "final_correct": "정답이에요!",
-      "answer_explain": "정답이에요! more로 두 가지를 견줬으니 짝이 되는 말은 than이어야 해요. ②as with → than with로 고쳐요.",
+      "answer_explain": "정답이에요! more로 두 가지를 비교했으니 짝이 되는 말은 than이어야 해요. ②as with → than with로 고쳐요.",
       "final_wrong": "정답은 ②예요. 'more concerned with A … as with B'에서 more와 짝을 이루는 말은 than이에요. as with를 than with로 고쳐요.",
       "option_feedback": {
         "1": "부정어 nor가 앞에 와서 '조동사 + 주어' 순서가 된 거라 ①has it survived는 맞아요.",
@@ -136,38 +136,13 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "③ 앞에는 이미 동사 was가 있어서 '동사가 둘'로 보여요. 하지만 접속사 없이 문장을 이어 붙일 때는 동사를 -ing(분사)로 바꿔요. 그래서 consisting이 맞아요.",
-          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "동사가 둘이라 틀린 것 같았어요",
-              "skills": [
-                "participle"
-              ],
-              "reply": "알려 줘서 고마워요. 접속사가 없으면 뒤 동사는 -ing가 돼요. 앞으로 분사로 이어 붙이는 자리를 먼저 짚어 줄게요."
-            },
-            {
-              "label": "consisting of 뜻을 몰랐어요",
-              "skills": [
-                "vocab"
-              ],
-              "reply": "알려 줘서 고마워요. consist of는 '~로 구성되다'예요. 앞으로 이런 숙어를 먼저 알려 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "participle",
-                "vocab"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 분사 자리와 숙어를 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
               {
                 "label": "앞",
-                "text": "a vocal form",
-                "ko": "콤마 앞 — 이미 동사 was가 있다",
+                "text": "It seems Greek music was …",
+                "ko": "콤마 앞 — 이미 주어·동사가 있다",
                 "tone": "hl"
               },
               {
@@ -183,31 +158,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "④to be는 considered와 멀리 떨어져 있어서 어색해 보여요. 목적어 music 뒤에 in which 덩어리가 길게 붙어서 그래요. consider + 목적어 + to be + 보어 모양이라 ④는 맞아요.",
-          "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "considered와 to be가 멀어서 헷갈렸어요",
-              "skills": [
-                "long_object"
-              ],
-              "reply": "알려 줘서 고마워요. 목적어가 길면 보어가 멀어져요. 앞으로 긴 목적어를 먼저 묶어서 보여 줄게요."
-            },
-            {
-              "label": "consider 뒤에 to be가 오는 걸 몰랐어요",
-              "skills": [
-                "verb_pattern"
-              ],
-              "reply": "알려 줘서 고마워요. consider + 목적어 + to be + 보어는 '~을 …라고 여기다'예요. 앞으로 동사 모양을 먼저 알려 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "long_object",
-                "verb_pattern"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 긴 목적어와 동사 모양을 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -232,7 +182,8 @@
             ]
           }
         }
-      }
+      },
+      "answer_note": "참고로 more와 as의 짝을 묻는 어법 문제는 모의고사에 거의 나온 적이 없어요. 낯선 유형이라 이 문제가 이 회차 오답률 1위였어요. 보통은 동사냐 분사냐 같은 것을 주로 물어봐요."
     }
   },
   "key_words": {
@@ -807,6 +758,12 @@
               "label": "improvise",
               "text": "악보 없이 그 자리에서 즉흥으로 연주하는 거예요.",
               "mark": "improvised"
+            },
+            {
+              "label": "conventions",
+              "text": "이 글에서는 → 관례  ('대회, 회의' 아님)",
+              "mark": "conventions",
+              "trap": true
             }
           ]
         }
@@ -864,7 +821,7 @@
         },
         {
           "en": "as with",
-          "ko": "~와 (견주어)"
+          "ko": "~와 (비교해)"
         },
         {
           "en": "providing a technical primer on its practice",
@@ -965,15 +922,10 @@
         {
           "text": "to guess at its basis",
           "role": "O"
-        },
-        {
-          "text": "who",
-          "role": "S"
-        },
-        {
-          "text": "were generally more concerned with",
-          "role": "V"
         }
+      ],
+      "modifiers": [
+        "who were generally more concerned with writing about music as a philosophical and ethical exercise ②as with providing a technical primer on its practice"
       ],
       "steps": [
         {
@@ -982,7 +934,7 @@
           "interaction": "meaning_choice",
           "one_try": true,
           "brief": {
-            "ask": "who 뒤를 봐요. 'more concerned with A ②as with B'로 두 가지를 견주는데, 작가들이 더 관심 있던 쪽은 어디일까요?",
+            "ask": "who 뒤를 봐요. 'more concerned with A ②as with B'로 두 가지를 비교하는데, 작가들이 더 관심 있던 쪽은 어디일까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
               "more concerned with 바로 뒤에 오는 쪽이 '더' 관심 있던 쪽이에요.",
@@ -1015,6 +967,26 @@
           "highlight": [
             "more concerned with",
             "writing about music"
+          ],
+          "tips": [
+            {
+              "label": "accounts",
+              "text": "이 글에서는 → 설명  ('계좌' 아님)",
+              "mark": "accounts",
+              "trap": true
+            },
+            {
+              "label": "exercise",
+              "text": "이 글에서는 → 실천, 행위  ('운동' 아님)",
+              "mark": "exercise",
+              "trap": true
+            },
+            {
+              "label": "practice",
+              "text": "이 글에서는 → 실제(로 하는 것)  ('연습' 아님)",
+              "mark": "practice",
+              "trap": true
+            }
           ]
         },
         {
@@ -1022,8 +994,8 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "여기서 more는 두 가지를 견주는 말이에요. more와 짝을 이루는 말이 무엇인지 떠올려 봐요. ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
-            "point": "② more가 견주는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인"
+            "say": "여기서 more는 두 가지를 비교하는 말이에요. more와 짝을 이루는 말이 무엇인지 떠올려 봐요. ②가 그 짝으로 맞는지는 문제에서 골라 봐요.",
+            "point": "② more가 비교하는 짝 — 비교 구문의 짝이 맞는지 문제에서 확인"
           },
           "method": 0,
           "button": "다음 문장",
@@ -1034,7 +1006,7 @@
           "tips": [
             {
               "label": "more A than B",
-              "text": "두 가지를 견줄 때 '더'는 more, 견주는 대상은 than으로 이어요. more concerned with A than with B = B보다 A에 더 관심이 있다.",
+              "text": "두 가지를 비교할 때 '더'는 more, 비교하는 대상은 than으로 이어요. more concerned with A than with B = B보다 A에 더 관심이 있다.",
               "mark": "more"
             }
           ]
@@ -1171,196 +1143,63 @@
       ],
       "steps": [
         {
-          "id": "s4_cons_mean",
+          "id": "s4_cons_ask",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "보기 ③consisting부터 볼게요. consist of는 '~로 구성되다'라는 뜻이에요."
+            "say": "보기 ③consisting부터 볼게요. 이번 밑줄은 '동사'가 와야 하는지 '분사'가 와야 하는지 고르는 문제예요."
           },
           "method": 0,
           "button": "네",
           "highlight": [
             "consisting"
-          ],
-          "panel": {
-            "kind": "structure",
-            "rows": [
-              {
-                "label": "뜻",
-                "text": "consist of",
-                "ko": "~로 구성되다",
-                "tone": "hl"
-              }
-            ]
-          },
-          "panel_below": true
+          ]
         },
         {
-          "id": "s4_cons_one",
+          "id": "s4_cons_table",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "콤마 앞에 이미 동사 was가 있어요. 접속사 없이 동사를 하나 더 쓸 수 없어서 consisted는 못 와요."
+            "say": "동사와 분사의 차이는 표와 같아요.",
+            "saved": "보충학습실에 담아 뒀어요."
           },
           "method": 0,
-          "button": "네",
-          "highlight": [
-            "was",
-            "consisting"
-          ],
+          "button": "알겠어요",
           "panel": {
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "consist of",
-                "ko": "~로 구성되다"
+                "label": "동사",
+                "text": "~하다",
+                "ko": "현재 learn · 과거 learned / wrote · 미래 will learn · 진행 is learning"
               },
               {
-                "label": "동사 하나",
-                "text": "Greek music was …, consisted ✕",
-                "ko": "접속사 없이 동사를 또 쓸 수 없다",
-                "tone": "hl"
-              }
-            ]
-          },
-          "panel_below": true
-        },
-        {
-          "id": "s4_cons_ing",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "그래서 동사를 -ing로 바꿔 이어 붙여요. 이런 -ing를 '분사'라고 하고, 여기선 앞의 a vocal form을 설명해요."
-          },
-          "method": 0,
-          "button": "네",
-          "highlight": [
-            "a vocal form",
-            "consisting"
-          ],
-          "panel": {
-            "kind": "structure",
-            "rows": [
-              {
-                "label": "뜻",
-                "text": "consist of",
-                "ko": "~로 구성되다"
-              },
-              {
-                "label": "동사 하나",
-                "text": "Greek music was …, consisted ✕",
-                "ko": "접속사 없이 동사를 또 쓸 수 없다"
-              },
-              {
-                "label": "-ing로 잇기",
-                "text": "a vocal form, consisting of …",
-                "ko": "분사 — 앞의 a vocal form을 설명",
-                "tone": "hl"
+                "label": "분사",
+                "text": "~하는 · ~된",
+                "ko": "현재분사 learning · 과거분사(p.p.) learned / written"
               }
             ]
           },
           "panel_below": true,
-          "tips": [
-            {
-              "label": "-ing와 p.p.",
-              "text": "앞의 명사가 직접 하면 -ing, 당하면 p.p.(과거분사)예요. a form consisting of …(구성한다) / a letter written in 1950(쓰였다)."
-            }
-          ]
+          "practice": "participle-ing",
+          "practice_button": "나중에 보충학습실에서 더 깊이 공부할게요"
         },
         {
-          "id": "s4_cons_pass",
+          "id": "s4_cons_rule",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "그리고 consist of는 수동태로 쓰지 않아요. 그래서 과거분사 consisted로도 못 바꾸고, consisting이 맞아요."
+            "say": "꼭 외워 둘 것이 있어요. 한 문장에 동사는 하나예요. and, or, when 같은 접속사가 있어야만 동사를 더 쓸 수 있어요."
           },
           "method": 0,
           "button": "알겠어요",
-          "highlight": [
-            "consisting"
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "consist of",
-                "ko": "~로 구성되다"
-              },
-              {
-                "label": "동사 하나",
-                "text": "Greek music was …, consisted ✕",
-                "ko": "접속사 없이 동사를 또 쓸 수 없다"
-              },
-              {
-                "label": "-ing로 잇기",
-                "text": "a vocal form, consisting of …",
-                "ko": "분사 — 앞의 a vocal form을 설명"
-              },
-              {
-                "label": "수동 ✕",
-                "text": "consist of는 수동태로 안 쓴다",
-                "ko": "consisted of(과거분사)도 ✕",
-                "tone": "hl"
-              }
-            ]
-          },
-          "panel_below": true
-        },
-        {
-          "id": "s4_cons_try",
-          "type": "choice",
-          "interaction": "meaning_choice",
-          "one_try": true,
-          "brief": {
-            "ask": "두 문장을 접속사 없이 합쳐 봐요. 빈칸에 알맞은 것은 무엇일까요?",
-            "reask": "그럼 하나 골라 봐요.",
-            "hints": [
-              "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요.",
-              "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요."
-            ],
-            "explain": "이미 동사 wrote가 있어요. 접속사가 없으면 동사를 -ing로 이어요.",
-            "praise": "맞아요! 동사 wrote가 있으니 -ing로 이어서 consisting이에요.",
-            "feedback": {
-              "o1": "consist of는 수동태로 못 써요. 그리고 이미 동사 wrote가 있어서 consisting이에요.",
-              "o2": "접속사 없이 동사를 하나 더 쓸 수 없어요. 동사 wrote가 있으니 -ing로 이어서 consisting이에요."
-            },
-            "point": "접속사 없이 잇는 자리 + consist of는 수동 ✕ → consisting"
-          },
-          "options": [
-            {
-              "id": "o0",
-              "label": "consisting",
-              "correct": true
-            },
-            {
-              "id": "o1",
-              "label": "consisted"
-            },
-            {
-              "id": "o2",
-              "label": "consists"
-            }
-          ],
-          "method": 0,
-          "praise_alone": true,
-          "panel": {
-            "kind": "structure",
-            "rows": [
-              {
-                "label": "문장 1",
-                "text": "She wrote a book.",
-                "ko": "그녀는 책을 썼다"
-              },
-              {
-                "label": "문장 2",
-                "text": "It consisted of ten stories.",
-                "ko": "그것은 열 개의 이야기로 구성되었다"
-              },
-              {
-                "label": "합치기",
-                "text": "She wrote a book, ___ of ten stories.",
+                "label": "암기",
+                "text": "한 문장에 동사는 하나",
+                "ko": "and · or · when 같은 접속사가 있어야만 동사를 더 쓸 수 있다",
                 "tone": "hl"
               }
             ]
@@ -1376,13 +1215,13 @@
             "ask": "그럼 보기 ③은 어법상 맞을까요, 틀릴까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
-              "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요.",
-              "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요."
+              "접속사 없이 동사가 또 올 수는 없어서, 분사가 와야 하는 자리예요.",
+              "접속사 없이 동사가 또 올 수는 없어서, 분사가 와야 하는 자리예요."
             ],
-            "explain": "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요. 그래서 보기 ③은 어법상 맞아요.",
+            "explain": "접속사 없이 동사가 또 올 수는 없어서, 분사가 와야 하는 자리예요. 그래서 보기 ③은 어법상 맞아요.",
             "praise": "맞아요! 보기 ③은 어법상 문제가 없어요.",
             "feedback": {
-              "o1": "앞에 이미 동사 was가 있고 consist of는 수동태로 안 써서 -ing로 이었어요. 그래서 보기 ③은 어법상 맞아요."
+              "o1": "접속사 없이 동사가 또 올 수는 없어서, 분사가 와야 하는 자리예요. 그래서 보기 ③은 어법상 맞아요."
             },
             "point": "보기 ③consisting 어법상 맞음"
           },
@@ -1403,25 +1242,9 @@
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "consist of",
-                "ko": "~로 구성되다"
-              },
-              {
-                "label": "동사 하나",
-                "text": "Greek music was …, consisted ✕",
-                "ko": "접속사 없이 동사를 또 쓸 수 없다"
-              },
-              {
-                "label": "-ing로 잇기",
-                "text": "a vocal form, consisting of …",
-                "ko": "분사 — 앞의 a vocal form을 설명"
-              },
-              {
-                "label": "수동 ✕",
-                "text": "consist of는 수동태로 안 쓴다",
-                "ko": "consisted of(과거분사)도 ✕",
-                "tone": "hl"
+                "label": "암기",
+                "text": "한 문장에 동사는 하나",
+                "ko": "and · or · when 같은 접속사가 있어야만 동사를 더 쓸 수 있다"
               }
             ]
           },
@@ -1443,6 +1266,109 @@
               }
             ]
           }
+        },
+        {
+          "id": "s4_cons_why",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기서는 이미 It seems, Greek music was라는 주어·동사가 있고, 그 뒤로 접속사가 없어요. 그래서 동사는 또 못 오고, 분사인 consisting이 와야 해요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "It seems",
+            "was",
+            "consisting"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "주어·동사 1",
+                "text": "It seems"
+              },
+              {
+                "label": "주어·동사 2",
+                "text": "Greek music was",
+                "ko": "(사이의 that은 생략)"
+              },
+              {
+                "label": "접속사",
+                "text": "없음 → 동사 ✕"
+              },
+              {
+                "label": "③",
+                "text": "consisting (분사)",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true,
+          "slash_on": true
+        },
+        {
+          "id": "s4_cons_phrase",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 문장처럼 '완성된 문장 + 콤마(,) + 분사'일 때, 콤마 뒷부분을 '분사구문'이라고 불러요."
+          },
+          "method": 0,
+          "button": "알겠어요",
+          "highlight": [
+            "consisting of sung verse"
+          ],
+          "detail_button": "심화: consisted는 왜 안 될까요?",
+          "panel": {
+            "kind": "formula",
+            "lines": [
+              {
+                "parts": [
+                  {
+                    "text": "S + V …"
+                  },
+                  {
+                    "text": ","
+                  },
+                  {
+                    "text": "-ing 또는 p.p. …",
+                    "under": "분사구문"
+                  }
+                ]
+              },
+              {
+                "example": true,
+                "parts": [
+                  {
+                    "text": "Greek music was a vocal form"
+                  },
+                  {
+                    "text": ","
+                  },
+                  {
+                    "text": "consisting of sung verse …",
+                    "under": "분사구문"
+                  }
+                ]
+              }
+            ]
+          },
+          "panel_below": true
+        },
+        {
+          "id": "s4_cons_deep",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "consisted는 동사로도, 과거분사(p.p.)로도 볼 수 있어요. 동사라면 한 문장에 동사가 또 오는 거라 안 되고, p.p.라면 '~된'이라는 수동인데 consist of는 수동으로 쓰지 않는 말이라 안 돼요. 그래서 능동인 consisting이에요."
+          },
+          "method": 0,
+          "button": "알겠어요",
+          "highlight": [
+            "consisting"
+          ],
+          "optional_of": "s4_cons_phrase"
         },
         {
           "id": "s4_cons_more",
@@ -1557,172 +1483,86 @@
           "role": "V"
         },
         {
-          "text": "music",
+          "text": "music in which the lyre and flute played alone and not as the accompaniment of dance or song",
           "role": "O"
-        },
-        {
-          "text": "the lyre and flute",
-          "role": "S"
-        },
-        {
-          "text": "played",
-          "role": "V"
         },
         {
           "text": "to be ‘exceedingly coarse and tasteless’",
           "role": "C"
         }
       ],
+      "modifiers": [
+        "in which the lyre and flute played alone and not as the accompaniment of dance or song"
+      ],
       "steps": [
         {
-          "id": "s5_tobe_mean",
+          "id": "s5_tobe_ask",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "보기 ④to be는 앞의 considered와 짝이에요. consider A to be B는 'A를 B라고 여기다'라는 뜻이에요."
+            "say": "보기 ④to be를 볼게요. 이번 밑줄은 앞의 considered와 짝이 맞는 모양인지 고르는 문제예요."
           },
           "method": 0,
           "button": "네",
           "highlight": [
             "considered",
             "to be"
-          ],
+          ]
+        },
+        {
+          "id": "s5_tobe_table",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'A를 B라고 여기다'라는 동사는 짝이 정해져 있어요. 표처럼 to be와 짝인 것, as와 짝인 것이 있어요.",
+            "saved": "보충학습실에 담아 뒀어요."
+          },
+          "method": 0,
+          "button": "알겠어요",
           "panel": {
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "consider A to be B",
-                "ko": "A를 B라고 여기다",
-                "tone": "hl"
+                "label": "to be와 짝",
+                "text": "consider · believe · find + A + to be + B",
+                "ko": "A를 B라고 여기다 (to be는 빼도 된다)"
+              },
+              {
+                "label": "as와 짝",
+                "text": "regard · see · think of + A + as + B",
+                "ko": "A를 B로 여기다"
               }
             ]
           },
-          "panel_below": true
+          "panel_below": true,
+          "practice": "consider-to-be",
+          "practice_button": "나중에 보충학습실에서 더 깊이 공부할게요"
         },
         {
-          "id": "s5_tobe_form",
+          "id": "s5_tobe_rule",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "모양은 consider + 목적어 + to be + 보어예요. to be를 빼고 consider A B로 써도 돼요."
+            "say": "이 문제는 목적어가 많이 길어서 헷갈려요. 목적어가 길어진 이유는 중간에 music을 꾸며 주는 in which 절이 들어왔기 때문이에요. [ ]를 빼고 보면 considered 뒤의 짝이 보여요."
           },
           "method": 0,
-          "button": "네",
+          "button": "알겠어요",
           "highlight": [
-            "considered",
-            "to be"
+            "considered"
           ],
           "panel": {
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "consider A to be B",
-                "ko": "A를 B라고 여기다"
-              },
-              {
-                "label": "모양",
-                "text": "consider + 목적어 + to be + 보어",
-                "ko": "to be는 빼도 된다",
+                "label": "헷갈리는 이유",
+                "text": "목적어가 길다",
+                "ko": "music을 꾸미는 in which 절이 중간에 들어와서",
                 "tone": "hl"
               }
             ]
           },
           "panel_below": true,
-          "tips": [
-            {
-              "label": "비슷한 regard",
-              "text": "regard A as B도 'A를 B라고 여기다'예요. regard는 to be가 아니라 as와 짝이에요."
-            }
-          ]
-        },
-        {
-          "id": "s5_tobe_far",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "여기선 목적어 music 뒤에 in which부터 긴 설명이 붙었어요. 그래서 to be가 멀리 떨어져 보일 뿐, 짝은 considered예요."
-          },
-          "method": 0,
-          "button": "알겠어요",
-          "highlight": [
-            "considered",
-            "music",
-            "to be"
-          ],
-          "panel": {
-            "kind": "structure",
-            "rows": [
-              {
-                "label": "뜻",
-                "text": "consider A to be B",
-                "ko": "A를 B라고 여기다"
-              },
-              {
-                "label": "모양",
-                "text": "consider + 목적어 + to be + 보어",
-                "ko": "to be는 빼도 된다"
-              },
-              {
-                "label": "멀리 떨어짐",
-                "text": "considered music … to be coarse",
-                "ko": "목적어가 길어 멀어 보일 뿐",
-                "tone": "hl"
-              }
-            ]
-          },
-          "panel_below": true
-        },
-        {
-          "id": "s5_tobe_try",
-          "type": "choice",
-          "interaction": "meaning_choice",
-          "one_try": true,
-          "brief": {
-            "ask": "빈칸에 알맞은 것은 무엇일까요?",
-            "reask": "그럼 하나 골라 봐요.",
-            "hints": [
-              "consider + 목적어 뒤에는 to be + 보어가 와요.",
-              "consider + 목적어 뒤에는 to be + 보어가 와요."
-            ],
-            "explain": "consider + 목적어 뒤에는 to be + 보어가 와요.",
-            "praise": "맞아요! consider + 목적어(him) + to be + 보어예요.",
-            "feedback": {
-              "o1": "consider + 목적어 뒤에는 being이 아니라 to be를 써요.",
-              "o2": "이미 동사 consider가 있어요. 목적어 뒤에는 to be + 보어예요."
-            },
-            "point": "consider + 목적어 + to be + 보어"
-          },
-          "options": [
-            {
-              "id": "o0",
-              "label": "to be",
-              "correct": true
-            },
-            {
-              "id": "o1",
-              "label": "being"
-            },
-            {
-              "id": "o2",
-              "label": "is"
-            }
-          ],
-          "method": 0,
-          "praise_alone": true,
-          "panel": {
-            "kind": "structure",
-            "rows": [
-              {
-                "label": "문장",
-                "text": "Many people consider him ___ a genius.",
-                "ko": "많은 사람이 그를 천재라고 여긴다",
-                "tone": "hl"
-              }
-            ]
-          },
-          "panel_below": true
+          "slash_on": true
         },
         {
           "id": "s5_tobe_judge",
@@ -1733,13 +1573,13 @@
             "ask": "그럼 보기 ④는 어법상 맞을까요, 틀릴까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
-              "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요.",
-              "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요."
+              "considered의 목적어가 끝나는 곳을 찾아보면 짝이 보여요.",
+              "considered의 목적어가 끝나는 곳을 찾아보면 짝이 보여요."
             ],
-            "explain": "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요. 그래서 보기 ④는 어법상 맞아요.",
+            "explain": "considered의 목적어가 끝나는 곳을 찾아보면 짝이 보여요. 그래서 보기 ④는 어법상 맞아요.",
             "praise": "맞아요! 보기 ④는 어법상 문제가 없어요.",
             "feedback": {
-              "o1": "consider + 목적어 + to be + 보어 모양이고, 목적어 music이 길어서 멀어 보일 뿐이에요. 그래서 보기 ④는 어법상 맞아요."
+              "o1": "considered의 목적어가 끝나는 곳을 찾아보면 짝이 보여요. 그래서 보기 ④는 어법상 맞아요."
             },
             "point": "보기 ④to be 어법상 맞음"
           },
@@ -1760,20 +1600,9 @@
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "consider A to be B",
-                "ko": "A를 B라고 여기다"
-              },
-              {
-                "label": "모양",
-                "text": "consider + 목적어 + to be + 보어",
-                "ko": "to be는 빼도 된다"
-              },
-              {
-                "label": "멀리 떨어짐",
-                "text": "considered music … to be coarse",
-                "ko": "목적어가 길어 멀어 보일 뿐",
-                "tone": "hl"
+                "label": "헷갈리는 이유",
+                "text": "목적어가 길다",
+                "ko": "music을 꾸미는 in which 절이 중간에 들어와서"
               }
             ]
           },
@@ -1801,6 +1630,71 @@
               }
             ]
           }
+        },
+        {
+          "id": "s5_tobe_why",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "[ ]를 빼고 보면 considered music to be ‘coarse’예요. consider A to be B 모양 그대로라 to be가 맞아요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "considered",
+            "music",
+            "to be ‘exceedingly coarse and tasteless’"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "동사",
+                "text": "considered"
+              },
+              {
+                "label": "A (목적어)",
+                "text": "music [in which … song]",
+                "ko": "[ ]는 music을 꾸미는 긴 설명"
+              },
+              {
+                "label": "to be + B",
+                "text": "to be ‘exceedingly coarse and tasteless’",
+                "ko": "A를 B라고 여겼다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true,
+          "slash_on": true
+        },
+        {
+          "id": "s5_tobe_name",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이렇게 '동사 + 목적어 + 목적어를 설명하는 말'로 된 문장을 '5형식'이라고 해요. 목적어를 설명하는 to be ~ 부분은 '목적격 보어'라고 불러요."
+          },
+          "method": 0,
+          "button": "알겠어요",
+          "highlight": [
+            "to be ‘exceedingly coarse and tasteless’"
+          ],
+          "detail_button": "심화: being이나 is는 왜 안 될까요?"
+        },
+        {
+          "id": "s5_tobe_deep",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "consider A 뒤 보어 자리에는 to be를 쓰고 being은 쓰지 않아요. is를 쓰면 한 문장에 동사가 또 오는 거라 안 돼요."
+          },
+          "method": 0,
+          "button": "알겠어요",
+          "highlight": [
+            "to be"
+          ],
+          "optional_of": "s5_tobe_name"
         },
         {
           "id": "s5_tobe_more",
@@ -1955,147 +1849,71 @@
       ],
       "steps": [
         {
-          "id": "s6_adv_mean",
+          "id": "s6_adv_ask",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "보기 ⑤generally는 '일반적으로, 대개'라는 뜻이에요. 바로 뒤의 동사 span(걸쳐 있다)을 꾸며요."
+            "say": "보기 ⑤generally를 볼게요. 이번 밑줄은 '형용사'가 와야 하는지 '부사'가 와야 하는지 고르는 문제예요."
           },
           "method": 0,
           "button": "네",
           "highlight": [
-            "generally",
-            "span"
+            "generally"
           ],
+          "tips": [
+            {
+              "label": "pitch range",
+              "text": "이 글에서는 → pitch = 음높이, pitch range = 음역  ('던지다, 투구' 아님)",
+              "mark": "pitch range",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s6_adv_table",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "형용사와 부사의 차이는 표와 같아요.",
+            "saved": "보충학습실에 담아 뒀어요."
+          },
+          "method": 0,
+          "button": "알겠어요",
           "panel": {
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "generally",
-                "ko": "일반적으로, 대개",
-                "tone": "hl"
+                "label": "형용사",
+                "text": "~한 — 명사를 꾸미거나 be동사 뒤",
+                "ko": "a general rule · It is general."
+              },
+              {
+                "label": "부사",
+                "text": "~하게 — 동사·형용사·문장을 꾸밈",
+                "ko": "generally span · surprisingly easy"
               }
             ]
           },
-          "panel_below": true
+          "panel_below": true,
+          "practice": "adverb-verb",
+          "practice_button": "나중에 보충학습실에서 더 깊이 공부할게요"
         },
         {
           "id": "s6_adv_rule",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "동사를 꾸미는 말은 부사예요. 그래서 형용사 general이 아니라 -ly가 붙은 generally가 맞아요."
-          },
-          "method": 0,
-          "button": "네",
-          "highlight": [
-            "generally",
-            "span"
-          ],
-          "panel": {
-            "kind": "structure",
-            "rows": [
-              {
-                "label": "뜻",
-                "text": "generally",
-                "ko": "일반적으로, 대개"
-              },
-              {
-                "label": "부사",
-                "text": "generally span",
-                "ko": "동사를 꾸미는 말 = 부사(-ly)",
-                "tone": "hl"
-              }
-            ]
-          },
-          "panel_below": true,
-          "tips": [
-            {
-              "label": "-ly인데 형용사",
-              "text": "friendly(친절한), lovely(사랑스러운)는 -ly로 끝나도 형용사예요. a lovely house처럼 명사를 꾸며요."
-            }
-          ]
-        },
-        {
-          "id": "s6_adv_adj",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "형용사 general은 명사를 꾸미거나 be동사 뒤에 와요. a general rule, It is general처럼요."
+            "say": "꼭 외워 둘 것이 있어요. 명사를 꾸미면 형용사, 동사를 꾸미면 부사예요. 부사는 보통 형용사에 -ly가 붙은 모양이에요."
           },
           "method": 0,
           "button": "알겠어요",
-          "highlight": [
-            "generally"
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "generally",
-                "ko": "일반적으로, 대개"
-              },
-              {
-                "label": "부사",
-                "text": "generally span",
-                "ko": "동사를 꾸미는 말 = 부사(-ly)"
-              },
-              {
-                "label": "형용사",
-                "text": "a general rule / It is general.",
-                "ko": "명사를 꾸미거나 be동사 뒤",
-                "tone": "hl"
-              }
-            ]
-          },
-          "panel_below": true
-        },
-        {
-          "id": "s6_adv_try",
-          "type": "choice",
-          "interaction": "meaning_choice",
-          "one_try": true,
-          "brief": {
-            "ask": "빈칸에 알맞은 것은 무엇일까요?",
-            "reask": "그럼 하나 골라 봐요.",
-            "hints": [
-              "동사 sings를 꾸미는 말이에요.",
-              "동사 sings를 꾸미는 말이에요."
-            ],
-            "explain": "동사 sings를 꾸미는 말이에요.",
-            "praise": "맞아요! 동사 sings를 꾸미니 부사 beautifully예요.",
-            "feedback": {
-              "o1": "beautiful은 형용사라 동사 sings를 꾸밀 수 없어요. 부사 beautifully예요.",
-              "o2": "beauty는 명사예요. 동사를 꾸미는 건 부사 beautifully예요."
-            },
-            "point": "동사를 꾸미는 자리 → 부사(-ly)"
-          },
-          "options": [
-            {
-              "id": "o0",
-              "label": "beautifully",
-              "correct": true
-            },
-            {
-              "id": "o1",
-              "label": "beautiful"
-            },
-            {
-              "id": "o2",
-              "label": "beauty"
-            }
-          ],
-          "method": 0,
-          "praise_alone": true,
-          "panel": {
-            "kind": "structure",
-            "rows": [
-              {
-                "label": "문장",
-                "text": "She sings ___.",
-                "ko": "그녀는 아름답게 노래한다",
+                "label": "암기",
+                "text": "명사를 꾸미면 형용사, 동사를 꾸미면 부사",
+                "ko": "부사는 보통 형용사 + -ly",
                 "tone": "hl"
               }
             ]
@@ -2111,13 +1929,13 @@
             "ask": "그럼 보기 ⑤는 어법상 맞을까요, 틀릴까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
-              "동사 span을 꾸미는 자리라 부사가 와야 해요.",
-              "동사 span을 꾸미는 자리라 부사가 와야 해요."
+              "generally가 무엇을 꾸미는지 바로 뒤를 보면 알 수 있어요.",
+              "generally가 무엇을 꾸미는지 바로 뒤를 보면 알 수 있어요."
             ],
-            "explain": "동사 span을 꾸미는 자리라 부사가 와야 해요. 그래서 보기 ⑤는 어법상 맞아요.",
+            "explain": "generally가 무엇을 꾸미는지 바로 뒤를 보면 알 수 있어요. 그래서 보기 ⑤는 어법상 맞아요.",
             "praise": "맞아요! 보기 ⑤는 어법상 문제가 없어요.",
             "feedback": {
-              "o1": "동사 span을 꾸미는 자리라 부사가 와야 해요. 그래서 보기 ⑤는 어법상 맞아요."
+              "o1": "generally가 무엇을 꾸미는지 바로 뒤를 보면 알 수 있어요. 그래서 보기 ⑤는 어법상 맞아요."
             },
             "point": "보기 ⑤generally 어법상 맞음"
           },
@@ -2138,20 +1956,9 @@
             "kind": "structure",
             "rows": [
               {
-                "label": "뜻",
-                "text": "generally",
-                "ko": "일반적으로, 대개"
-              },
-              {
-                "label": "부사",
-                "text": "generally span",
-                "ko": "동사를 꾸미는 말 = 부사(-ly)"
-              },
-              {
-                "label": "형용사",
-                "text": "a general rule / It is general.",
-                "ko": "명사를 꾸미거나 be동사 뒤",
-                "tone": "hl"
+                "label": "암기",
+                "text": "명사를 꾸미면 형용사, 동사를 꾸미면 부사",
+                "ko": "부사는 보통 형용사 + -ly"
               }
             ]
           },
@@ -2185,6 +1992,56 @@
               }
             ]
           }
+        },
+        {
+          "id": "s6_adv_why",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기서 generally 바로 뒤의 span은 '걸쳐 있다'라는 동사예요. 동사를 꾸미니 부사 generally가 와야 해요. 부사는 이렇게 주어와 동사 사이에 와도 돼요."
+          },
+          "method": 0,
+          "button": "알겠어요",
+          "highlight": [
+            "the instruments",
+            "generally span"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "주어",
+                "text": "the instruments"
+              },
+              {
+                "label": "부사",
+                "text": "generally",
+                "ko": "일반적으로",
+                "tone": "hl"
+              },
+              {
+                "label": "동사",
+                "text": "span",
+                "ko": "걸쳐 있다"
+              }
+            ]
+          },
+          "panel_below": true,
+          "detail_button": "심화: -ly로 끝나는데 형용사인 말도 있어요?"
+        },
+        {
+          "id": "s6_adv_deep",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "friendly(친절한), lovely(사랑스러운), costly(비싼)는 -ly로 끝나도 형용사예요."
+          },
+          "method": 0,
+          "button": "알겠어요",
+          "highlight": [
+            "generally"
+          ],
+          "optional_of": "s6_adv_why"
         },
         {
           "id": "s6_adv_more",

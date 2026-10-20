@@ -119,7 +119,7 @@ sentences = [
                    why="가리고 마시면 'little or no correlation'(거의 관계없음), 가격표를 붙이면 'a significant correlation'(뚜렷한 관계)이래요. 가격을 알면 맛 평가가 가격을 따라가요.",
                    highlight=["tasted blind", "little or no correlation", "significant correlation", "labeled by price"],
                    tips=[tip("correlation", "'상관관계'예요. 하나가 커지면 다른 것도 커지는 것처럼 함께 움직이는 관계예요.", "correlation"),
-                         tip("tasted blind", "'(정보를) 가리고 맛본'이에요. blind test = 상표·가격을 모르고 하는 시험.", "blind")],
+                         tip("tasted blind", "'(정보를) 가리고 맛본'이에요. blind test = 상표·가격을 모르고 하는 시험.", "blind", trap=True)],
                    panel=board(L1, [("social perceptions", "사회적 인식"), ("the products you buy", "사는 물건"), ("labeled by price", "가격표")],
                                fresh=("labeled by price",)),
                    point="가리고 마시면 맛 평가 ≠ 가격, 가격표를 붙이면 맛 평가 = 가격을 따라감"),
@@ -140,7 +140,7 @@ sentences = [
                    "문장 첫머리 'That wasn’t because …'를 봐요. wasn’t because는 '~ 때문이 아니었다'예요.",
                    why="'That wasn’t because …', 의식적으로 믿고 의견을 바꿨기 때문이 아니었대요. 다음 문장에서 더 깊은 이유가 나와요.",
                    highlight=["wasn’t because", "consciously"],
-                   tips=[tip("subject", "실험 글에서 subject는 '주제'가 아니라 '실험 참가자(피험자)'예요.", "subjects")]),
+                   tips=[tip("subject", "실험 글에서 subject는 '주제'가 아니라 '실험 참가자(피험자)'예요.", "subjects", trap=True)]),
         ],
     },
     {
@@ -333,12 +333,6 @@ exam = {
          "4": "뇌가 같은 반응을 보인 게 아니라, 비싸다고 믿을 때 더 활성화됐어요. 반대예요."},
         {"1": review(23.9,
                      "①은 '고객 평가가 제품 가격을 정한다'예요. 글에 rating(평가)과 price(가격)가 다 나와서 그럴듯해 보여요. 하지만 글은 거꾸로, 가격표가 맛 평가를 바꾼다고 했어요. 무엇이 무엇을 바꾸는지 방향이 반대예요.",
-                     "그래서 ①이 아니에요. 어디서 헷갈렸어요?",
-                     [("ratings·price가 글에 나와서 골랐어요", ["word_overlap"],
-                       "알려 줘서 고마워요. 보기 단어가 글과 겹쳐도, 그 단어들의 관계(무엇이 무엇을 정하나)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("방향(원인과 결과)을 놓쳤어요", ["cause_direction"],
-                       "알려 줘서 고마워요. 가격(원인) → 맛 경험(결과)이었어요. 앞으로 원인과 결과의 방향을 칠판에 화살표로 보여 줄게요."),
-                      ("둘 다요", ["word_overlap", "cause_direction"], "알려 줘서 고마워요. 앞으로 겹치는 단어와 방향을 같이 짚어 줄게요.")],
                      panel=rows(("글", "labeled by price → ratings of taste", "가격이 맛 평가를 바꾼다", "hl"),
                                 ("①", "Customer ratings → the price", "평가가 가격을 정한다 (거꾸로)", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -364,6 +358,18 @@ lesson = base_lesson(
                            g("placebo effect", "위약 효과"), g("depend on", "~에 달려 있다"), g("psychological", "심리적인")],
                "options": [g("perceived value", "지각된 가치"), g("subjective", "주관적인"), g("dismiss", "무시하다"), g("consistent", "일관된")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# construction 구성(된 것) · product 산물, 결과물.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("construction", "이 글에서는 → 구성(된 것)  ('건설, 공사' 아님)", "construction", trap=True)],
+    8: [tip("product", "이 글에서는 → 산물, 결과물  ('제품' 아님)", "product", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="밑줄 문제 푸는 법",
        chunks={"That perception is a construction": "인식이 구성물이라는 것은", "is not true": "해당하지 않는다",

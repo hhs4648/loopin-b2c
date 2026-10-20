@@ -181,7 +181,7 @@ sentences = [
                    why="'to people in high-risk categories', 흡연자·30세 미만 남성 운전자처럼 고위험군으로 묶인 집단에 더 매겼대요.",
                    highlight=["For centuries", "“high-risk categories”"],
                    panel=board(["generalized stereotypes", "high-risk categories"], R0, fresh=("high-risk categories",)),
-                   tips=[tip("premium", "보험에서는 '보험료'예요. '고급의(프리미엄)'만 있는 게 아니에요.", "premiums")]),
+                   tips=[tip("premium", "보험에서는 '보험료'예요. '고급의(프리미엄)'만 있는 게 아니에요.", "premiums", trap=True)]),
             flow("s5_flow", "②", "보험 업계엔 혁신이 없다", "수 세기 동안 고위험군에 비싸게 매겼다", True,
                  "수 세기 동안 똑같이 해 왔다는 건 혁신이 없다는 말의 예예요. 그대로 이어져요."),
         ],
@@ -376,12 +376,6 @@ exam = {
          "5": "⑤ 앞에서 이미 개인 운전자가 더 낸다는 결과가 나왔어요. 새 방식은 그 결과보다 먼저 나와야 해요."},
         {"3": review(28.0,
                      "③에 넣으면 순서가 '고위험군에 비싸게 → 미래엔 실제 행동 기준 → 이런 종류의 분류가 차별을 낳는다'가 돼요. 그러면 This type of classification이 미래 방식을 가리켜서, 공정해지려는 새 방식이 차별을 낳는다는 말이 돼요. This는 바로 앞 고위험군 분류를 받아야 해요.",
-                     "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-                     [("This가 가리키는 걸 확인 안 했어요", ["this_refers"],
-                       "알려 줘서 고마워요. 문장 넣기에서는 넣은 자리 뒤 문장의 This, Such가 무엇을 가리키게 되는지 꼭 확인해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("For centuries 뒤라서 바로 대조하는 줄 알았어요", ["contrast_guess"],
-                       "알려 줘서 고마워요. 대조(예전↔미래)는 맞지만, 예전 방식의 이야기(분류와 그 문제)가 끝난 뒤에 와야 해요. 앞으로 단락이 어디서 끝나는지 짚어 줄게요."),
-                      ("둘 다요", ["this_refers", "contrast_guess"], "알려 줘서 고마워요. 앞으로 가리키는 말과 이야기가 끝나는 곳을 같이 짚어 볼게요.")],
                      panel=rows(("③ 뒤", "This type of classification … discrimination", "이런 분류 = 바로 앞 고위험군 분류", "hl"),
                                 ("④ 뒤", "individual drivers … regardless of men or women", "개인 기준 = 새 방식의 결과", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -409,6 +403,18 @@ lesson = base_lesson(
                            g("connotation", "함축된 의미"), g("monitoring", "감시")],
                "options": []},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# charge (요금을) 부과하다 · rates 요금.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("charge", "이 글에서는 → (요금을) 부과하다  ('충전하다' 아님)", "charge", trap=True),
+        tip("rates", "이 글에서는 → 요금  ('비율' 아님)", "rates", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="문장 넣기 푸는 법",
        chunks={"Insurance companies": "보험 회사들", "are expected to err": "~할 것으로 예상된다", "the safe side": "안전한 쪽",

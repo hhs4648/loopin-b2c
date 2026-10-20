@@ -450,15 +450,6 @@ exam = {
                 "panel": {"kind": "contrast", "title": "yet → 앞뒤가 반대", "between": "↔",
                           "left": {"title": "No two daisies … are exactly ③alike", "text": "모두 제각각 다르고 고유하다"},
                           "right": {"title": "a carpet patterned uniformly enough", "text": "힐끗 보면 균일한 무늬로 보인다"}},
-                "ask": "그래서 ③alike는 문맥에 맞아요. 어디서 헷갈렸어요?",
-                "choices": [
-                    {"label": "No를 못 봤어요", "skills": ["no_negation"],
-                     "reply": "알려 줘서 고마워요. 'No two … alike'처럼 No가 앞에 붙으면 뜻이 뒤집혀요. 앞으로 비슷한 문장이 나오면 No를 강조해서 알려 줄게요."},
-                    {"label": "yet 앞뒤가 반대인 게 헷갈렸어요", "skills": ["yet_contrast"],
-                     "reply": "알려 줘서 고마워요. yet 앞뒤는 반대 관계예요. 앞으로 비슷한 문장이 나오면 yet을 강조해서 알려 줄게요."},
-                    {"label": "둘 다요", "skills": ["no_negation", "yet_contrast"],
-                     "reply": "알려 줘서 고마워요. 앞으로 비슷한 문장이 나오면 No와 yet을 강조해서 알려 줄게요."},
-                ],
             },
             # ④는 38%로 가장 많이 고른 오답 — 9문장 Not so로 반대 관계를 추측하게 한다
             "4": {
@@ -468,15 +459,6 @@ exam = {
                 "panel": {"kind": "contrast", "title": "Not so → 앞뒤가 반대", "between": "↔",
                           "left": {"title": "8 · the differences can be ④ignored", "text": "개별 차이는 무시될 수 있다"},
                           "right": {"title": "9 · the constituent grasses … really do matter", "text": "풀 하나하나가 정말 중요하다"}},
-                "ask": "그래서 ④ignored는 문맥에 맞아요. 어디서 헷갈렸어요?",
-                "choices": [
-                    {"label": "ignored가 부정적인 말이라 틀려 보였어요", "skills": ["word_feeling"],
-                     "reply": "알려 줘서 고마워요. 단어 느낌이 아니라 앞뒤 문장과의 관계로 판단해야 해요. 앞으로 비슷한 문제가 나오면 이 점을 강조해서 알려 줄게요."},
-                    {"label": "Not so가 반대라는 걸 못 봤어요", "skills": ["not_so_contrast"],
-                     "reply": "알려 줘서 고마워요. 'Not so'는 앞 문장과 반대라는 신호예요. 앞으로 비슷한 문장이 나오면 Not so를 강조해서 알려 줄게요."},
-                    {"label": "둘 다요", "skills": ["word_feeling", "not_so_contrast"],
-                     "reply": "알려 줘서 고마워요. 앞으로 비슷한 문제가 나오면 단어 느낌보다 앞뒤 관계를, 특히 Not so를 강조해서 알려 줄게요."},
-                ],
             },
         },
         "option_points": {
@@ -627,6 +609,18 @@ fill_chunk_glosses(sentences, {
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from story_boards import add_story_boards  # noqa: E402
 add_story_boards(ID, lesson["sentences"])
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# proper name 고유 명사 (proper = 고유한) · Picture 떠올려 보다, 상상하다.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [{"label": "proper name", "text": "이 글에서는 → 고유 명사 (proper = 고유한)  ('적절한' 아님)", "mark": "proper name", "trap": True}],
+    2: [{"label": "Picture", "text": "이 글에서는 → 떠올려 보다, 상상하다  ('그림' 아님)", "mark": "Picture", "trap": True}],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 

@@ -13,6 +13,8 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_ANON_KEY?: string;
   /** 학생 테스트 링크 — 이 미니 모의고사 하나만 연다 (`npm run share:mini2403`) */
   readonly VITE_ONLY_MINI?: string;
+  /** vitest가 켜 두는 값 — 테스트에서는 서버 동기화를 하지 않는다 (`cloud.ts`) */
+  readonly VITEST?: string;
 }
 
 interface ImportMeta {

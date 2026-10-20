@@ -84,4 +84,15 @@ lesson = base_lesson(
             "brief": {"say": "지칭 문제는 밑줄 대명사마다 그 문장에서 누가 무엇을 하는지 봐요. 칠판 두 칸에 하나씩 놓아 볼게요."}}],
     exam=exam, key_words=src["key_words"], sentences=sentences, english="medium", concept="low")
 
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# figure 인물.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    2: [tip("figure", "이 글에서는 → 인물  ('숫자, 모양' 아님)", "figure", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
+
 finish(ID, lesson, senses=SENSES, words={}, topic_intro="지칭 푸는 법")

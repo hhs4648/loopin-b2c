@@ -1182,6 +1182,12 @@
               "label": "on behalf of",
               "mark": "on behalf of",
               "text": "'~을 대신해서, ~을 위해'예요."
+            },
+            {
+              "label": "lives",
+              "text": "이 글에서는 → (상상 속에서) 직접 겪어 보다  ('살다' 아님)",
+              "mark": "lives",
+              "trap": true
             }
           ]
         },
@@ -1576,7 +1582,15 @@
           "levels": [
             "초"
           ],
-          "slot": "s6_basic"
+          "slot": "s6_basic",
+          "tips": [
+            {
+              "label": "floor",
+              "text": "이 글에서는 → 층  ('바닥' 아님)",
+              "mark": "floor above",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s6_match",

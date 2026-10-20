@@ -352,12 +352,6 @@ exam = {
          "4": "(C) 끝은 아직 비난자가 상대 마음을 못 보는 상태예요. 비난자가 바뀌는 (B) 없이 (A)의 안도감이 바로 올 수 없어요."},
         {"3": review(21,
                      "주어진 글이 '비난자를 공감으로 옮기면 폭언이 멈춘다'라서, 비난자가 상대 편이 되는 (B)를 바로 붙이고 싶었을 거예요. 하지만 (B)는 however(그러나)와 Suddenly and unexpectedly(갑자기 뜻밖에)로 시작해서, 앞에 '비난자가 상대 마음을 몰랐다'가 있어야 해요. 그 말은 (C) 끝 the ignorant blamer is blind to it에 있어요.",
-                     "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-                     [("비난자 이야기끼리 이어 버렸어요", ["content_link_only"],
-                       "알려 줘서 고마워요. 내용이 비슷해 보여도 however 같은 연결어가 앞과 맞아야 이어져요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("however를 신경 안 썼어요", ["however_contrast"],
-                       "알려 줘서 고마워요. however는 앞과 반대되는 내용이 있어야 써요. 앞으로 연결어가 무엇과 반대인지 먼저 짚어 줄게요."),
-                      ("둘 다요", ["content_link_only", "however_contrast"], "알려 줘서 고마워요. 앞으로 연결어와 내용 연결을 같이 짚어 볼게요.")],
                      panel=rows(("(C) 끝", "the ignorant blamer is blind to it", "비난자는 방어자의 마음을 못 본다", "hl"),
                                 ("(B) 첫머리", "Suddenly and unexpectedly, however, the blamer knows", "그러나 갑자기 비난자가 알게 된다 ← (C) 끝과 반대", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -382,6 +376,19 @@ lesson = base_lesson(
                            g("ignorant", "무지한"), g("barely", "간신히")],
                "options": []},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# matter 물질 · rush (물밀듯) 밀려옴 · mirror (밖으로) 보여 주다.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("matter", "이 글에서는 → 물질  ('문제' 아님)", "matter and", trap=True)],
+    2: [tip("rush", "이 글에서는 → (물밀듯) 밀려옴  ('서두르다' 아님)", "rush", trap=True)],
+    7: [tip("mirror", "이 글에서는 → (밖으로) 보여 주다  ('거울' 아님)", "mirror", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, topic_intro="순서 푸는 법",
        chunks={"Anger and empathy": "분노와 공감", "matter and antimatter": "물질과 반물질", "can’t exist": "존재할 수 없다",

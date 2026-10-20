@@ -403,12 +403,6 @@ exam = {
          "5": "⑤ 앞은 교육을 다르게 보자는 말이고, 뒤 that shift가 바로 그 변화를 받아요. 사이에 넣으면 흐름이 끊겨요."},
         {"4": review(23,
                      "④에 넣으면 ③ 뒤 'But that’s unlikely …'의 that이 바로 앞 '선생님의 생각·수업 방식'을 가리켜요. 학생 태도(질적 변화)를 만드는 그 방식이 좋은 영향을 못 준다는 건 말이 안 맞아요. that이 받을 '시간 늘리기'(주어진 문장)가 But 앞, ③에 와야 해요.",
-                     "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
-                     [("cover가 이어져서 골랐어요", ["word_match"],
-                       "알려 줘서 고마워요. ④ 뒤 covers가 주어진 문장 cover와 같아 끌리기 쉬워요. 같은 낱말보다 that, these 같은 말이 무엇을 받는지 먼저 확인해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("that이 가리키는 걸 확인 안 했어요", ["that_refers"],
-                       "알려 줘서 고마워요. 지문 속 that, this가 받을 대상이 바로 앞에 있는지 꼭 확인해요. 앞으로 가리키는 말을 먼저 짚어 줄게요."),
-                      ("둘 다요", ["word_match", "that_refers"], "알려 줘서 고마워요. 앞으로 가리키는 말과 낱말 함정을 같이 짚어 볼게요.")],
                      panel=rows(("② 뒤", "these attitudes … emerge from the way teachers think", "태도는 선생님의 생각에서 나온다", "hl"),
                                 ("주어진 문장", "maximize time on task", "시간 늘리기 = 양적 변화", "hl2"),
                                 ("③ 뒤", "But that’s unlikely to have a positive effect", "that = 시간 늘리기", "hl")),
@@ -439,6 +433,19 @@ lesson = base_lesson(
                            g("shift", "변화, 전환")],
                "options": []},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# cover (교육과정을) 다루다 · set 정해진 · critical 중요한.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("cover", "이 글에서는 → (교육과정을) 다루다  ('덮다' 아님)", "cover", trap=True),
+        tip("set", "이 글에서는 → 정해진  ('세트' 아님)", "set curriculum", trap=True)],
+    5: [tip("critical", "이 글에서는 → 중요한  ('비판적인' 아님)", "critical", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="문장 넣기 푸는 법",
        chunks={"the goal": "목표", "is": "~이다", "students": "학생들", "it": "그것 · 가짜 주어", "might seem": "~해 보일 수도 있다",

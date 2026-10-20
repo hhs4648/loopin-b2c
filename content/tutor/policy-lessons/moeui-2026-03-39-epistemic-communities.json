@@ -1141,6 +1141,12 @@
               "label": "for which",
               "mark": "for which",
               "text": "which는 앞의 'the relevant group of knowledge bearers'를 받아요. '그 집단에 대해 나는 ~라는 용어를 쓰겠다'예요."
+            },
+            {
+              "label": "term",
+              "text": "이 글에서는 → 용어  ('학기' 아님)",
+              "mark": "term",
+              "trap": true
             }
           ]
         },
@@ -2938,7 +2944,15 @@
             "point": "Other, more active strategies(S) are needed(V) to make … accessible"
           },
           "method": 0,
-          "slot": "s7_basic"
+          "slot": "s7_basic",
+          "tips": [
+            {
+              "label": "certain",
+              "text": "이 글에서는 → 특정한  ('확실한' 아님)",
+              "mark": "certain forms",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s7_match",

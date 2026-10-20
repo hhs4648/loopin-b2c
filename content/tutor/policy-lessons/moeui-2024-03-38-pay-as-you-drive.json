@@ -137,31 +137,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 28.0%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "③에 넣으면 순서가 '고위험군에 비싸게 → 미래엔 실제 행동 기준 → 이런 종류의 분류가 차별을 낳는다'가 돼요. 그러면 This type of classification이 미래 방식을 가리켜서, 공정해지려는 새 방식이 차별을 낳는다는 말이 돼요. This는 바로 앞 고위험군 분류를 받아야 해요.",
-          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "This가 가리키는 걸 확인 안 했어요",
-              "skills": [
-                "this_refers"
-              ],
-              "reply": "알려 줘서 고마워요. 문장 넣기에서는 넣은 자리 뒤 문장의 This, Such가 무엇을 가리키게 되는지 꼭 확인해요. 앞으로 이 점을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "For centuries 뒤라서 바로 대조하는 줄 알았어요",
-              "skills": [
-                "contrast_guess"
-              ],
-              "reply": "알려 줘서 고마워요. 대조(예전↔미래)는 맞지만, 예전 방식의 이야기(분류와 그 문제)가 끝난 뒤에 와야 해요. 앞으로 단락이 어디서 끝나는지 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "this_refers",
-                "contrast_guess"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 이야기가 끝나는 곳을 같이 짚어 볼게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -462,7 +437,21 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 real-time data collection, 동사는 will enable, 목적어는 insurance companies, 보어는 to charge pay-as-you-drive rates예요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "charge",
+              "text": "이 글에서는 → (요금을) 부과하다  ('충전하다' 아님)",
+              "mark": "charge",
+              "trap": true
+            },
+            {
+              "label": "rates",
+              "text": "이 글에서는 → 요금  ('비율' 아님)",
+              "mark": "rates",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "g_enable",
@@ -1753,7 +1742,8 @@
             {
               "label": "premium",
               "text": "보험에서는 '보험료'예요. '고급의(프리미엄)'만 있는 게 아니에요.",
-              "mark": "premiums"
+              "mark": "premiums",
+              "trap": true
             }
           ]
         },
@@ -1828,7 +1818,8 @@
             {
               "label": "premium",
               "text": "보험에서는 '보험료'예요. '고급의(프리미엄)'만 있는 게 아니에요.",
-              "mark": "premiums"
+              "mark": "premiums",
+              "trap": true
             }
           ]
         },
@@ -1905,7 +1896,8 @@
             {
               "label": "premium",
               "text": "보험에서는 '보험료'예요. '고급의(프리미엄)'만 있는 게 아니에요.",
-              "mark": "premiums"
+              "mark": "premiums",
+              "trap": true
             }
           ]
         },

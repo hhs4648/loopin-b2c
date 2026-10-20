@@ -119,8 +119,10 @@ def keywords(id, candidates, answers, wrong, explain, ask=None, **extra):
             "method": extra.pop("method", 0), **extra}
 
 
-def tip(label, text, mark=None):
-    return {"label": label, "text": text, **({"mark": mark} if mark else {})}
+def tip(label, text, mark=None, trap=False):
+    """💡 Tip. trap=True면 헷갈리는 단어(평소 아는 뜻과 이 글의 뜻이 다른 단어, mark 필수) — 「〰 헷갈리는 단어」로 간다.
+    trap이 아니면 알면 좋은 자세한 것 — 그 화면의 칩으로만"""
+    return {"label": label, "text": text, **({"mark": mark} if mark else {}), **({"trap": True} if trap else {})}
 
 
 def groups(title, left_label, left, right_label=None, right=None, fresh=(), sort=None, between=None, caption=None):
@@ -463,11 +465,11 @@ def exam_brief(ask, answer_explain, final_wrong, option_feedback, option_review=
     return b
 
 
-def review(rate, say, ask, choices, panel=None, rank_word="많은 학생이 헷갈린"):
-    """많이 고른 오답 — 「같이 볼까요?」 → 설명(그림) → 어디서 헷갈렸는지 (버튼) → 답. choices = [(label, [skills], reply)]"""
+def review(rate, say, panel=None, rank_word="많은 학생이 헷갈린"):
+    """많이 고른 오답 — 문제를 제출한 뒤 [같이 자세히 볼래요]를 누르면 설명(그림) 한 화면.
+    「어디서 헷갈렸어요?」 되묻기는 없앴다 (2026-10-20 선생님: 학생이 피곤하고 질문이 별로) — 헷갈린 곳 기록은 나중에 다른 방법으로"""
     r = {"intro": f"아쉽게도 틀렸어요. 이 보기는 {rate}%나 고른, {rank_word} 보기예요. 같이 자세히 볼까요?",
-         "intro_button": "같이 볼게요", "say": say, "ask": ask,
-         "choices": [{"label": a, "skills": b, "reply": c} for a, b, c in choices]}
+         "intro_button": "같이 볼게요", "say": say}
     if panel:
         r["panel"] = panel
     return r

@@ -275,7 +275,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 Daniel Dennett, 동사는 argues(주장한다)예요. that 뒤가 그 주장이에요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "close",
+              "text": "이 글에서는 → 끝  ('가까운' 아님)",
+              "mark": "to a close",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "g_claim_sv",

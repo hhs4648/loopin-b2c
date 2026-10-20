@@ -154,31 +154,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 18.8%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "'언어가 사람들의 생각을 반영했다'는 그럴듯한 말이지만 글에 없는 일반론이에요. 빈칸 뒤 콜론(:)은 '그 이후로 신호등이 ao에 더 맞는 색이 됐다'예요. 그러니 빈칸은 무엇을 무엇에 맞췄는지, 현실을 이름에 맞췄다는 말이어야 해요.",
-          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "콜론 뒤를 안 봤어요",
-              "skills": [
-                "colon_after_blank"
-              ],
-              "reply": "알려 줘서 고마워요. 빈칸 바로 뒤 콜론(:)은 빈칸을 풀어 주는 경우가 많아요. 앞으로 빈칸 뒤 콜론을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "Rather than 뒤가 반대인 걸 놓쳤어요",
-              "skills": [
-                "rather_than"
-              ],
-              "reply": "알려 줘서 고마워요. Rather than A, B는 'A 대신 B'라서 빈칸은 A와 반대 쪽이에요. 앞으로 이 점을 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "colon_after_blank",
-                "rather_than"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 Rather than과 빈칸 뒤 콜론을 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -815,7 +790,15 @@
           "levels": [
             "초"
           ],
-          "slot": "s2_basic"
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "shades",
+              "text": "이 글에서는 → 색조  ('그늘' 아님)",
+              "mark": "shades",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s2_match",

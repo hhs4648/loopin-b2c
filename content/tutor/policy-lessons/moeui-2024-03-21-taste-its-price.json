@@ -196,31 +196,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 23.9%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "①은 '고객 평가가 제품 가격을 정한다'예요. 글에 rating(평가)과 price(가격)가 다 나와서 그럴듯해 보여요. 하지만 글은 거꾸로, 가격표가 맛 평가를 바꾼다고 했어요. 무엇이 무엇을 바꾸는지 방향이 반대예요.",
-          "ask": "그래서 ①이 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "ratings·price가 글에 나와서 골랐어요",
-              "skills": [
-                "word_overlap"
-              ],
-              "reply": "알려 줘서 고마워요. 보기 단어가 글과 겹쳐도, 그 단어들의 관계(무엇이 무엇을 정하나)를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "방향(원인과 결과)을 놓쳤어요",
-              "skills": [
-                "cause_direction"
-              ],
-              "reply": "알려 줘서 고마워요. 가격(원인) → 맛 경험(결과)이었어요. 앞으로 원인과 결과의 방향을 칠판에 화살표로 보여 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "word_overlap",
-                "cause_direction"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 방향을 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -448,7 +423,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 That perception is a construction(인식이 구성물이라는 것), 동사는 is not true예요. That + 문장 전체가 주어예요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "construction",
+              "text": "이 글에서는 → 구성(된 것)  ('건설, 공사' 아님)",
+              "mark": "construction",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s1_that",
@@ -991,7 +974,8 @@
             {
               "label": "tasted blind",
               "text": "'(정보를) 가리고 맛본'이에요. blind test = 상표·가격을 모르고 하는 시험.",
-              "mark": "blind"
+              "mark": "blind",
+              "trap": true
             }
           ],
           "panel": {
@@ -1227,7 +1211,8 @@
             {
               "label": "subject",
               "text": "실험 글에서 subject는 '주제'가 아니라 '실험 참가자(피험자)'예요.",
-              "mark": "subjects"
+              "mark": "subjects",
+              "trap": true
             }
           ]
         },
@@ -1295,7 +1280,8 @@
             {
               "label": "subject",
               "text": "실험 글에서 subject는 '주제'가 아니라 '실험 참가자(피험자)'예요.",
-              "mark": "subjects"
+              "mark": "subjects",
+              "trap": true
             }
           ]
         },
@@ -1337,7 +1323,8 @@
             {
               "label": "subject",
               "text": "실험 글에서 subject는 '주제'가 아니라 '실험 참가자(피험자)'예요.",
-              "mark": "subjects"
+              "mark": "subjects",
+              "trap": true
             }
           ]
         }
@@ -2313,7 +2300,15 @@
               ]
             },
             "between": "+"
-          }
+          },
+          "tips": [
+            {
+              "label": "product",
+              "text": "이 글에서는 → 산물, 결과물  ('제품' 아님)",
+              "mark": "product",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s8_underline",

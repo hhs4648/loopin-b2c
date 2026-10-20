@@ -209,31 +209,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 11%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "②는 '산업 시대의 한계를 극복하려 애쓴다'예요. industrial age가 글에 나와서 그럴듯해 보여요. 하지만 this age는 산업 시대 다음의 전기 시대이고, 우리 시대는 그 흔적을 극복하는 게 아니라 지니고 있어요.",
-          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "this age를 산업 시대로 봤어요",
-              "skills": [
-                "reference"
-              ],
-              "reply": "알려 줘서 고마워요. this는 바로 앞에서 말한 것을 가리켜요. 앞으로 this가 나오면 앞 문장 끝부터 같이 찾아볼게요."
-            },
-            {
-              "label": "stamp를 극복으로 읽었어요",
-              "skills": [
-                "word_meaning"
-              ],
-              "reply": "알려 줘서 고마워요. carry the stamp of는 '~의 흔적을 지니다'예요. 앞으로 비유 표현은 뜻을 먼저 풀어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "reference",
-                "word_meaning"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 비유 표현을 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -984,7 +959,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 The technical and economic importance(기술적·경제적 중요성), 동사는 matches(~에 필적한다), 목적어는 that of any other invention이에요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "matches",
+              "text": "이 글에서는 → 필적하다  ('성냥, 경기' 아님)",
+              "mark": "matches",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s3_that",
@@ -995,8 +978,8 @@
             "ask": "that of any other invention의 that은 무엇을 대신할까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
-              "무엇과 무엇을 견주는지 생각해 봐요. 전깃불의 ○○와 다른 발명품의 ○○예요.",
-              "무엇과 무엇을 견주는지 생각해 봐요. 전깃불의 ○○와 다른 발명품의 ○○예요."
+              "무엇과 무엇을 비교하는지 생각해 봐요. 전깃불의 ○○와 다른 발명품의 ○○예요.",
+              "무엇과 무엇을 비교하는지 생각해 봐요. 전깃불의 ○○와 다른 발명품의 ○○예요."
             ],
             "explain": "that은 주어의 핵심 명사를 다시 받아요. 전깃불의 중요성이 다른 발명품의 중요성에 필적한다는 말이에요.",
             "praise": "맞아요!",
@@ -1336,7 +1319,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 The introduction and spread(도입과 확산), 동사는 was, 보어는 one of the key steps(핵심 단계 중 하나)예요. in which 뒤는 앞의 post-industrial one을 꾸며요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "character",
+              "text": "이 글에서는 → 특성  ('등장인물' 아님)",
+              "mark": "character",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s4_from_to",
@@ -1712,8 +1703,9 @@
           "tips": [
             {
               "label": "stamp",
-              "text": "'도장, 찍힌 자국'이에요.",
-              "mark": "stamp"
+              "text": "이 글에서는 → 흔적  ('우표, 도장' 아님)",
+              "mark": "stamp",
+              "trap": true
             }
           ]
         },

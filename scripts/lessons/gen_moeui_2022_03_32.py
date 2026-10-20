@@ -219,7 +219,7 @@ sentences = [
                    "Contemporary는 여기서 '현대의'가 아니라 '그 당시의'예요. not 형용사 enough to ~는 '~할 만큼 …하지 않다'예요.",
                    why="Contemporary astronomical science는 '당시의 천문 과학'이에요. 그때 과학은 이런 정확한 세부 사항을 꾸며 낼 만큼 뛰어나지 않았대요.",
                    highlight=["Contemporary", "not strong enough", "fabricate"],
-                   tips=[tip("contemporary", "'현대의'로 많이 알지만, 옛날 이야기 속에서는 '그 당시의, 동시대의'예요.", "Contemporary"),
+                   tips=[tip("contemporary", "'현대의'로 많이 알지만, 옛날 이야기 속에서는 '그 당시의, 동시대의'예요.", "Contemporary", trap=True),
                          tip("not 형용사 enough to ~", "'~할 만큼 충분히 …하지 않다'예요. not strong enough to fabricate = 꾸며 낼 만큼 뛰어나지 않다.", "enough")]),
             choice("s6_so",
                    "그때 과학으로 꾸며 낼 수 없었다면, 페니키아인들의 보고는 어떻게 나온 걸까요?",
@@ -363,13 +363,6 @@ exam = {
          "5": "언제든 멈출 수 있었다는 말은 글에 없어요. 원정대는 3년 동안 아프리카를 돌고 돌아왔어요."},
         {"2": review(24,
                      "문장 1의 '자료가 적고 덜 알려졌다'를 보고 '보고되지 않았다'를 고르기 쉬워요. 하지만 페니키아인들은 돌아와서 보고했고(reported), 헤로도토스가 그걸 기록했어요. 빈칸은 this(당시엔 꾸며 낼 수 없었다) 때문에 내린 결론이라, 여행이 정말 있었다는 쪽이에요.",
-                     "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-                     [("문장 1을 보고 골랐어요", ["first_sentence_trap"],
-                       "알려 줘서 고마워요. 빈칸은 바로 앞의 this가 이끄는 결론이에요. 앞으로 빈칸 바로 앞 문장을 먼저 짚어 줄게요."),
-                      ("this가 무엇인지 몰랐어요", ["reference"],
-                       "알려 줘서 고마워요. It is this that ~의 this는 앞 문장, 당시 과학으로는 꾸며 낼 수 없었다는 사실이에요. 앞으로 가리키는 말을 먼저 짚어 줄게요."),
-                      ("둘 다요", ["first_sentence_trap", "reference"],
-                       "알려 줘서 고마워요. 앞으로 this가 가리키는 앞 문장과 빈칸의 관계를 같이 짚어 줄게요.")],
                      panel=rows(("this", "not strong enough to fabricate", "당시엔 꾸며 낼 수 없었다", "hl"),
                                 ("그래서", "the journey ________", "여행은 정말 있었다", "hl2")))}),
 }
@@ -394,6 +387,17 @@ lesson = base_lesson(
                            g("conclude", "결론 내리다")],
                "options": [g("take place", "일어나다"), g("worth", "~할 가치가 있는"), g("at any moment", "언제든지")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# mouth (강의) 하구.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    3: [tip("mouth", "이 글에서는 → (강의) 하구  ('입' 아님)", "mouth", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
        chunks={"When trying to understand": "이해하려고 할 때", "the sources": "자료", "become": "~해지다", "fewer": "더 적은",

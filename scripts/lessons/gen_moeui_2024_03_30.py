@@ -126,7 +126,7 @@ sentences = [
                    "weighted는 '무게(weight)가 실린, 가중된'이에요. fashion은 여기서 '방식'이에요.",
                    why="'combined in a weighted fashion', 무게를 달리하는 방식으로 합쳐진대요. 어느 쪽을 더 믿을지 정해서 섞는 거예요.",
                    highlight=["combined", "weighted"],
-                   tips=[tip("fashion", "옷의 '패션'이 아니라 '방식'이에요. in a weighted fashion = 무게를 둔 방식으로.", "fashion")]),
+                   tips=[tip("fashion", "옷의 '패션'이 아니라 '방식'이에요. in a weighted fashion = 무게를 둔 방식으로.", "fashion", trap=True)]),
             show("s3_check", "무게를 달리해 섞는다는 건, 앞으로 '어느 정보에 더 무게를 줄지'가 이어진다는 신호예요. ②weighted는 문맥에 맞아요.",
                  panel=check("1", "2"), panel_below=True, button="다음 문장"),
         ],
@@ -294,12 +294,6 @@ exam = {
          "5": "가까운 것(짧은 거리)이 더 정확하게 기록되니, 가까운 것에 무게를 두는 건 Weber의 법칙과 일치해요(consistent)."},
         {"5": review(13.2,
                      "⑤ 앞뒤를 나란히 놓아 봐요. 동물은 가까운 랜드마크에 더 무게를 줘요. Weber의 법칙은 짧은 거리가 더 정확히 기록된대요. 가까운 것 = 짧은 거리 = 더 정확하니, 무게를 주는 게 법칙과 일치(consistent)해요.",
-                     "그래서 ⑤는 문맥에 맞아요. 어디서 헷갈렸어요?",
-                     [("Weber의 법칙 문장이 어려웠어요", ["long_relative"],
-                       "알려 줘서 고마워요. in which 뒤는 그 법칙의 내용이에요. 앞으로 긴 덩어리는 끊어 읽기로 나눠서 보여 줄게요."),
-                      ("가까운 것 = 짧은 거리로 못 이었어요", ["paraphrase_link"],
-                       "알려 줘서 고마워요. nearer landmarks와 smaller distances는 같은 말을 바꿔 쓴 거예요. 앞으로 바꿔 쓴 말을 짝지어 보여 줄게요."),
-                      ("둘 다요", ["long_relative", "paraphrase_link"], "알려 줘서 고마워요. 앞으로 긴 덩어리와 바꿔 쓴 말을 같이 짚어 줄게요.")],
                      panel=rows(("동물", "give more weight to nearer landmarks", "가까운 것에 더 무게", "hl"),
                                 ("Weber’s law", "smaller distances … coded more accurately", "짧은 거리가 더 정확 → 일치", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -326,6 +320,18 @@ lesson = base_lesson(
                            g("reliable", "믿을 만한"), g("estimation", "추정"), g("consistent with", "~와 일치하는"), g("accurately", "정확하게")],
                "options": [g("invalid", "타당하지 않은"), g("privileged", "특혜를 받는, 우선시되는")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# weight 가중치, 비중 · mobile 이동하는.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    6: [tip("weight", "이 글에서는 → 가중치, 비중  ('무게' 아님)", "more weight", trap=True),
+        tip("mobile", "이 글에서는 → 이동하는  ('휴대폰' 아님)", "mobile", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="어휘 문제 푸는 법",
        chunks={"young children": "어린아이들", "rely": "의존하다", "geometric information": "기하 정보",

@@ -367,23 +367,10 @@ exam = {
          "5": "⑤ 앞은 원근법과 공간 정보가 함께 간다는 결론이에요. 예전 그림을 새로 꺼낼 자리가 아니에요."},
         {"4": review(27.9,
                      "④에 넣으면 This가 바로 앞 '예전 그림은 정보도 덜 준다'를 가리켜요. 그런데 ② 뒤 These pictures부터 이미 예전 그림 이야기였어요. 예전 그림을 처음 꺼내는 주어진 문장은 These pictures보다 앞, ②에 와야 해요.",
-                     "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
-                     [("These pictures가 원근법 그림인 줄 알았어요", ["these_refers"],
-                       "알려 줘서 고마워요. These pictures는 '보는 대로 나타내지 않는' 그림이라 예전 그림이에요. 앞으로 비슷한 문장이 나오면 These가 가리키는 걸 먼저 짚어 줄게요."),
-                      ("less informative와 대조라 이어지는 줄 알았어요", ["contrast_guess"],
-                       "알려 줘서 고마워요. 대조 느낌만으로 정하지 말고, 가리키는 말(This, These)이 무엇을 받는지 확인해야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("둘 다요", ["these_refers", "contrast_guess"],
-                       "알려 줘서 고마워요. 앞으로 These가 가리키는 대상부터 같이 짚어 볼게요.")],
                      panel=rows(("② 뒤", "These pictures … do not represent scenes as we see", "보는 대로 나타내지 않는 그림 = 예전 그림", "hl"),
                                 ("주어진 문장", "This ↔ earlier figurative art", "예전 그림을 처음 꺼낸다", "hl2"))),
          "3": review(25.8,
-                     "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요.",
-                     "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-                     [("These pictures가 원근법 그림인 줄 알았어요", ["these_refers"],
-                       "알려 줘서 고마워요. 앞으로 These·They가 가리키는 대상을 먼저 짚어 줄게요."),
-                      ("but 뒤 내용을 놓쳤어요", ["but_after"],
-                       "알려 줘서 고마워요. but 뒤 'do not represent scenes as we might see them'이 열쇠였어요. 앞으로 but 뒤를 강조해서 알려 줄게요."),
-                      ("둘 다요", ["these_refers", "but_after"], "알려 줘서 고마워요. 앞으로 가리키는 말과 but 뒤를 같이 짚어 줄게요.")])}),
+                     "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요.")}),
 }
 
 lesson = base_lesson(
@@ -395,7 +382,7 @@ lesson = base_lesson(
                       "alt": "칠판: Perspective(원근법) ↔ Earlier art(예전 그림)", "kind": "drawing"},
             "method": METHOD_IMAGES["insert"]},
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
-            "brief": {"say": "그림은 눈에 보이는 대로만 그려야 할까요? 이번 글은 원근법 그림과 예전 그림을 견줘요."}},
+            "brief": {"say": "그림은 눈에 보이는 대로만 그려야 할까요? 이번 글은 원근법 그림과 예전 그림을 비교해요."}},
            {"id": "method1", "type": "say", "button": "네",
             "brief": {"say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."}},
            {"id": "method2", "type": "say", "button": "좋아요",
@@ -408,6 +395,19 @@ lesson = base_lesson(
                            g("extract", "추출하다"), g("relative to", "~에 비해, ~에 상대적인")],
                "options": []},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# figurative 구상(화)의 — 사물을 알아볼 수 있게 그린 · present 나타내다, 보여 주다 · figures 인물.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("figurative", "이 글에서는 → 구상(화)의 — 사물을 알아볼 수 있게 그린  ('비유적인' 아님)", "figurative", trap=True)],
+    3: [tip("present", "이 글에서는 → 나타내다, 보여 주다  ('선물, 현재' 아님)", "present", trap=True),
+        tip("figures", "이 글에서는 → 인물  ('숫자' 아님)", "figures", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="문장 넣기 푸는 법",
        chunks={"Almost all the figurative paintings": "거의 모든 구상화", "we are familiar with": "우리에게 익숙한", "are": "~이다",

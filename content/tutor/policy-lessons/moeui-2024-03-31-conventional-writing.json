@@ -134,31 +134,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 30.0%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "'an accompanying sense of the spontaneity'는 영어로 자연스럽게 들려서 가장 많이 골랐어요. 하지만 그러면 '즉흥성의 감각이 함께 생긴다', 즉흥성이 살아 있다는 말이 돼요. 글은 틀에 박히고 글자 그대로가 된다고 했으니, 반대쪽인 즉흥성은 줄어야 해요.",
-          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "말이 자연스러워 보여서 골랐어요",
-              "skills": [
-                "collocation_trap"
-              ],
-              "reply": "알려 줘서 고마워요. 빈칸은 말이 자연스러운지보다 앞뒤 흐름(어느 쪽이 늘고 주는지)으로 정해요. 앞으로 이 점을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "두 쪽이 반대인 걸 못 봤어요",
-              "skills": [
-                "two_sides"
-              ],
-              "reply": "알려 줘서 고마워요. conventional(틀에 박힌)과 spontaneity(즉흥성)는 반대 쪽이에요. 앞으로 두 쪽을 칠판에 나눠서 보여 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "collocation_trap",
-                "two_sides"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 두 쪽을 먼저 나누고 빈칸을 보게 할게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -180,32 +155,7 @@
         "3": {
           "intro": "아쉽게도 틀렸어요. 이 보기는 24.2%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
-          "say": "increase(증가)를 넣으면 '즉흥성과 독창성이 함께 늘어난다'가 돼요. 그런데 글은 점점 틀에 박히고 남들이 쓰는 단어만 쓴대요. 즉흥성은 늘 수가 없어요.",
-          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "자라면 다 좋아진다고 생각했어요",
-              "skills": [
-                "growth_all_good"
-              ],
-              "reply": "알려 줘서 고마워요. 손재주·글씨는 좋아지지만, 그 대가로 즉흥성은 줄어요. 앞으로 좋아지는 것과 잃는 것을 나눠 보여 줄게요."
-            },
-            {
-              "label": "of 뒤가 누구 쪽인지 헷갈렸어요",
-              "skills": [
-                "two_sides"
-              ],
-              "reply": "알려 줘서 고마워요. that characterized our earlier efforts, 예전의 특징이에요. 앞으로 earlier 같은 시간 단서를 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "growth_all_good",
-                "two_sides"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 두 쪽을 먼저 나누고 빈칸을 보게 할게요."
-            }
-          ]
+          "say": "increase(증가)를 넣으면 '즉흥성과 독창성이 함께 늘어난다'가 돼요. 그런데 글은 점점 틀에 박히고 남들이 쓰는 단어만 쓴대요. 즉흥성은 늘 수가 없어요."
         }
       }
     }
@@ -484,6 +434,14 @@
           "before_read": true,
           "show_passage": [
             "As a result, our writing and oral storying become increasingly conventional and literal, with an accompanying ________ of the spontaneity and originality that characterized our earlier efforts."
+          ],
+          "tips": [
+            {
+              "label": "manual",
+              "text": "이 글에서는 → 손의  ('설명서' 아님)",
+              "mark": "manual",
+              "trap": true
+            }
           ]
         },
         {
@@ -976,7 +934,8 @@
             {
               "label": "mechanics",
               "text": "'기계학'만 있는 게 아니에요. the mechanics of ~ = ~의 기법, 작동 방식.",
-              "mark": "mechanics"
+              "mark": "mechanics",
+              "trap": true
             }
           ]
         },
@@ -1029,7 +988,8 @@
             {
               "label": "mechanics",
               "text": "'기계학'만 있는 게 아니에요. the mechanics of ~ = ~의 기법, 작동 방식.",
-              "mark": "mechanics"
+              "mark": "mechanics",
+              "trap": true
             }
           ]
         },
@@ -1076,7 +1036,8 @@
             {
               "label": "mechanics",
               "text": "'기계학'만 있는 게 아니에요. the mechanics of ~ = ~의 기법, 작동 방식.",
-              "mark": "mechanics"
+              "mark": "mechanics",
+              "trap": true
             }
           ]
         },
@@ -1288,6 +1249,12 @@
               "label": "give way to",
               "text": "'~에 자리를 내주다, ~로 바뀌다'예요. A gives way to B = A가 B로 바뀌다.",
               "mark": "gives way to"
+            },
+            {
+              "label": "stage",
+              "text": "이 글에서는 → 단계  ('무대' 아님)",
+              "mark": "stage",
+              "trap": true
             }
           ]
         },

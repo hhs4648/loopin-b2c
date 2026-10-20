@@ -52,6 +52,8 @@ export type TutorView = {
   slashRoles?: { text: string; role: "S" | "V" | "O" | "C" }[];
   /** 끊어읽기를 켜면 [ ]로 묶어 보이는 수식어(관계대명사절·분사 덩어리) */
   slashModifiers?: string[];
+  /** 이 화면에서는 끊어읽기를 저절로 켠다 (스텝의 `slash_on`) */
+  slashAuto?: boolean;
   /** 여러 문장 중 가리키는 한 문장 ([ ]로 묶은 부분) — 색 괄호와 옅은 바탕으로 보인다 */
   bracket?: string | null;
   activeChunk: string;
@@ -155,7 +157,9 @@ export type TutorView = {
   examPassage?: { given: string | null; sentences: string[]; highlight: string[]; highlightBy: Record<string, string[]> };
   examGlosses?: WordGloss[];
   /** 해설만 보는 마지막 화면 — 보기 id마다 정답 여부와 해설. 보기를 누르면 고르는 게 아니라 해설이 열린다 */
-  examExplain?: Record<string, { correct: boolean; text: string }> | null;
+  examExplain?: Record<string, { correct: boolean; text: string; picked?: boolean }> | null;
+  /** 보기 해설을 처음부터 다 펼쳐 둔다 (분석 뒤 문제를 제출한 뒤) */
+  examExplainOpen?: boolean;
   /**
    * 밑줄이 여러 개인 문제(어휘) — 보기 id마다 그 밑줄이 든 문장. 보기의 「문장 보기」를 누르면
    * 위 문장 칸이 그 문장으로 바뀐다 (보기를 고르는 건 아니다)

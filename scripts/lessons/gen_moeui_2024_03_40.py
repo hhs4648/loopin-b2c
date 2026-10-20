@@ -156,7 +156,7 @@ sentences = [
         "steps": [
             show("s5_city", "뇌를 도시에 빗대요. 발전하는 도시는 자라고, 나아지고, 주변 세상에 반응한대요.",
                  highlight=["a developing city"], button="다음 문장",
-                 tips=[tip("note", "동사로 '주목하다, 눈여겨보다'예요. 공책(노트)이 아니에요.", "note")]),
+                 tips=[tip("note", "동사로 '주목하다, 눈여겨보다'예요. 공책(노트)이 아니에요.", "note", trap=True)]),
         ],
     },
     {
@@ -434,12 +434,6 @@ exam = {
          "5": "(B) transformation은 맞지만, (A) mobility(이동성)는 '영원히 그대로'와 반대예요."},
         {"5": review(14.6,
                      "⑤는 (B) transformation은 맞아요. 그런데 (A) mobility(이동성, 움직임)는 '성형되자마자 영원히 그대로'와 반대예요. (A)에는 변하지 않음(permanence)이 와야 해요.",
-                     "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
-                     [("plastic이 잘 변하는 느낌이라 (A)를 그렇게 골랐어요", ["word_feeling"],
-                       "알려 줘서 고마워요. 이 글에서 plastic이라는 말이 주는 느낌은 '한 번 만들면 그대로'였어요. 단어의 평소 느낌보다 글에서 어떻게 쓰였는지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("(B)만 보고 골랐어요", ["two_blanks"],
-                       "알려 줘서 고마워요. 요약문은 (A)와 (B)가 둘 다 맞아야 해요. 앞으로 두 칸을 하나씩 확인하게 할게요."),
-                      ("둘 다요", ["word_feeling", "two_blanks"], "알려 줘서 고마워요. 앞으로 글 속 뜻과 두 칸 확인을 같이 짚어 줄게요.")],
                      panel=rows(("(A)", "mold once · keep it that way forever", "변하지 않음 = permanence", "hl"),
                                 ("(B)", "remolding · always changing · ongoing change", "변화 = transformation", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -467,6 +461,18 @@ lesson = base_lesson(
                "options": [g("permanence", "영속성"), g("transformation", "변화"), g("flexibility", "유연성"), g("adaptability", "적응성"),
                            g("restoration", "회복"), g("mobility", "이동성")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# term 용어 · crafts 공들여 만들다.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("term", "이 글에서는 → 용어  ('학기' 아님)", "term", trap=True)],
+    6: [tip("crafts", "이 글에서는 → 공들여 만들다  ('공예(품)' 아님)", "crafts", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="요약문 푸는 법",
        chunks={"Brain plasticity": "뇌 가소성", "is": "~이다", "a term": "용어", "neuroscience": "신경 과학",

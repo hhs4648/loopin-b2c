@@ -95,6 +95,17 @@ lesson = base_lesson(
                "options": [g("reshape", "다시 만들다"), g("manage", "관리하다"), g("heightened", "높아진"), g("productivity", "생산성")]},
     sentences=sentences, concept="medium")
 
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# cloud 흐리게 하다, 망치다.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    13: [{"label": "cloud", "text": "이 글에서는 → 흐리게 하다, 망치다  ('구름' 아님)", "mark": "cloud", "trap": True}],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
+
 finish(ID, lesson, senses=SENSES, words={"role": "역할", "learning": "학습", "improve": "높이다", "speech": "말하기", "reshaping": "다시 만들기",
                                           "manage": "관리하다", "heightened": "높아진", "leads": "이끌다", "productivity": "생산성",
                                           "ways": "방법", "read": "읽다", "others’": "다른 사람들의", "inner": "속의"},

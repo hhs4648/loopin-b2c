@@ -556,6 +556,14 @@
           "highlight": [
             "searching the garage",
             "an old, forgotten box"
+          ],
+          "tips": [
+            {
+              "label": "lazy",
+              "text": "이 글에서는 → 나른한, 한가한  ('게으른' 아님)",
+              "mark": "lazy",
+              "trap": true
+            }
           ]
         }
       ],

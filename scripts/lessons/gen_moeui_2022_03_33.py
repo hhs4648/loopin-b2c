@@ -111,7 +111,7 @@ sentences = [
                    "be content with는 '~에 만족하다'예요. 앞에 not이 있어요.",
                    why="'not content with an existence that offered them little variety … and minimal challenge', 변화(variety)도 도전(challenge)도 거의 없는 삶에 만족하지 못했대요.",
                    highlight=["not content with", "little variety", "minimal challenge"],
-                   tips=[tip("be content with", "content는 '내용'만 있는 게 아니에요. be content with ~ = ~에 만족하다. not content with = 만족하지 못하는.", "content")]),
+                   tips=[tip("be content with", "content는 '내용'만 있는 게 아니에요. be content with ~ = ~에 만족하다. not content with = 만족하지 못하는.", "content", trap=True)]),
             show("s1_board", "변화도 도전도 없는 삶에 만족 못 한 사람이 많았대요.",
                  panel=board(L1, [], fresh=("little variety", "minimal challenge")), button="다음 문장"),
         ],
@@ -323,18 +323,12 @@ exam = {
         "빈칸은 변화 없는 삶과 반대 쪽 욕구예요. 칠판 오른쪽 말을 떠올리며 골라 봐요.",
         "정답이에요! 사람은 수동적인 삶을 넘어 자기 운명을 스스로 만들려 해요. 그걸 '자기 삶의 행로를 바꾸려는'으로 바꿔 썼어요.",
         "정답은 ①이에요. 창조자, 자기 운명을 만드는 사람(active shapers of their own destiny)을 바꿔 쓴 말이에요.",
-        {"2": "possess가 셋째 문장에 나와서 헷갈렸죠. 하지만 글에는 남과 견주어 더 갖는다는 말이 없어요.",
+        {"2": "possess가 셋째 문장에 나와서 헷갈렸죠. 하지만 글에는 남과 비교해 더 갖는다는 말이 없어요.",
          "3": "부정적인 감정 이야기는 글에 없어요. 글은 수동적인 삶을 넘어서는 이야기예요.",
          "4": "남을 위한 희생 이야기는 글에 없어요. 자기 목적(their own purposes)을 만든다고 했어요.",
          "5": "초자연적인 힘 이야기는 없어요. 오히려 인간 스스로 창조자가 되려 한다고 했어요."},
         {"2": review(17,
                      "②의 possess는 셋째 문장(people possess a need)에도 나와서 겹쳐 보여요. 하지만 거기서 possess는 '욕구를 지니고 있다'는 말이에요. 글은 남보다 많이 갖는 게 아니라, 수동적인 삶을 넘어 자기 운명을 만드는 이야기예요.",
-                     "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-                     [("possess가 글과 겹쳐서 골랐어요", ["word_overlap"],
-                       "알려 줘서 고마워요. 겹치는 단어보다 그 단어가 글에서 무엇을 한다는 건지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("drive(욕구)를 욕심으로 읽었어요", ["word_sense"],
-                       "알려 줘서 고마워요. 여기서 drive는 앞으로 나아가려는 욕구예요. 앞으로 그 욕구가 무엇을 향하는지 같이 짚어 줄게요."),
-                      ("둘 다요", ["word_overlap", "word_sense"], "알려 줘서 고마워요. 앞으로 겹치는 단어와 단어 뜻을 같이 짚어 줄게요.")],
                      panel=rows(("글의 말", "the active shapers of their own destiny", "자기 운명을 만드는 사람 — 삶을 바꿈", "hl"),
                                 ("②", "possess more than other people", "남보다 더 많이 가지기 — 글에 없는 비교", "hl2")))}),
 }
@@ -360,6 +354,18 @@ lesson = base_lesson(
                "options": [g("alter", "바꾸다"), g("suppress", "억누르다"), g("sacrifice", "희생하다"), g("noble", "숭고한"),
                            g("admiration", "존경, 감탄"), g("supernatural", "초자연적인")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# drive 욕구 · nature 본질.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    2: [tip("drive", "이 글에서는 → 욕구  ('운전하다' 아님)", "drive", trap=True)],
+    6: [tip("nature", "이 글에서는 → 본질  ('자연' 아님)", "nature", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
        chunks={"Gordon Allport": "고든 올포트", "argued": "주장했다", "history": "역사", "records": "기록한다",

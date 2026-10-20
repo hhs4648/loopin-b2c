@@ -235,6 +235,18 @@ lesson = base_lesson(
                "options": []},
     sentences=sentences, concept="medium")
 
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# address (문제를) 다루다 · avenues 수단, 길.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    2: [tip("address", "이 글에서는 → (문제를) 다루다  ('주소' 아님)", "address", trap=True),
+        tip("avenues", "이 글에서는 → 수단, 길  ('거리, 대로' 아님)", "avenues", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
+
 finish(ID, lesson, senses=SENSES, words=WORDS, topic_intro="무관한 문장 푸는 법",
        chunks={"students": "학생들", "other speakers of English": "다른 영어 사용자", "might encounter": "마주칠 수도 있다",
                "language variances": "언어 차이", "Galloway and Rose (2015) study": "갤러웨이와 로즈(2015)의 연구", "found": "발견했다",

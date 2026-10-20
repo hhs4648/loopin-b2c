@@ -276,6 +276,7 @@
             {
               "label": "in that",
               "mark": "in that",
+              "trap": true,
               "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."
             }
           ]
@@ -392,6 +393,7 @@
             {
               "label": "in that",
               "mark": "in that",
+              "trap": true,
               "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."
             }
           ]
@@ -460,6 +462,7 @@
             {
               "label": "in that",
               "mark": "in that",
+              "trap": true,
               "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."
             }
           ],

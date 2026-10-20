@@ -321,12 +321,6 @@ exam = {
          "5": "근시안적이라 글의 좋은 점을 내다보지(foresee) 못했다는 말이라 맞아요."},
         {"3": review(18,
                      "③ 앞뒤를 봐요. 사람들이 가르침 없이(without proper instruction) 많은 정보를 받기만 하면, 실제론 무지한데 박식해 보일 거라는 걱정이에요. receive(받다)는 이 걱정과 딱 맞아요.",
-                     "그래서 ③은 문맥에 맞아요. 어디서 헷갈렸어요?",
-                     [("정보를 받는 건 좋은 일 같았어요", ["word_context_receive"],
-                       "알려 줘서 고마워요. 걱정은 정보를 받는 것보다 '가르침 없이'에 있어요. 앞으로 밑줄 단어 옆 without 같은 말을 같이 짚어 줄게요."),
-                      ("④ 대시(—) 사이를 놓쳤어요", ["dash_clue"],
-                       "알려 줘서 고마워요. 대시(—) 사이에 걱정한 일이 실제로 일어났다는 말이 있었어요. 앞으로 대시(—) 안의 단서를 먼저 짚어 줄게요."),
-                      ("둘 다요", ["word_context_receive", "dash_clue"], "알려 줘서 고마워요. 앞으로 밑줄 옆 말과 대시(—) 안 단서를 같이 짚어 줄게요.")],
                      panel=rows(("③", "receive information without proper instruction", "가르침 없이 정보만 받는다 → 걱정과 맞음", "hl"),
                                 ("④", "wasn’t right — did often have the effects he feared —", "걱정한 일이 실제로 일어남 → '틀리지 않았다'여야", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -354,6 +348,17 @@ lesson = base_lesson(
                            g("foresee", "예견하다"), g("spark", "촉발하다"), g("expand", "확장하다")],
                "options": [g("right", "옳은, 맞는"), g("wrong", "틀린")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# exercise (기억력을) 발휘하다, 쓰다.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    3: [tip("exercise", "이 글에서는 → (기억력을) 발휘하다, 쓰다  ('운동하다' 아님)", "exercise", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="어휘 문제 푸는 법",
        chunks={"He": "그는", "feared": "두려워했다", "people": "사람들", "came": "~하게 되었다", "the written word": "글로 쓰인 말",

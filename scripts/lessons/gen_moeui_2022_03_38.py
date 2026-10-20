@@ -357,12 +357,6 @@ exam = {
          "5": "⑤ 앞에서 이미 '약간의 차이'가 나왔어요. 변화 이야기는 그 차이보다 먼저, ④에 와야 해요."},
         {"5": review(15,
                      "⑤ 뒤에도 more elaborate가 나와서 끌리기 쉬워요. 그런데 ⑤ 앞에서 이미 '약간의 차이가 보인다'가 나왔어요. '그대로 남는다' 바로 뒤에 차이가 나오는 ④가 먼저 끊겨요.",
-                     "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
-                     [("elaborate가 같아서 골랐어요", ["word_match"],
-                       "알려 줘서 고마워요. 같은 낱말만 보고 고르지 말고, 앞뒤 흐름이 어디서 끊기는지 확인해야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("slight variations가 변화인 줄 몰랐어요", ["variation_meaning"],
-                       "알려 줘서 고마워요. variation은 '차이, 변형'이라 '변한다' 쪽 말이에요. 앞으로 비슷한 말이 나오면 같이 짚어 줄게요."),
-                      ("둘 다요", ["word_match", "variation_meaning"], "알려 줘서 고마워요. 앞으로 낱말 뜻과 흐름을 같이 짚어 볼게요.")],
                      panel=rows(("③ 뒤", "Some signals … remain much the same", "몇몇 신호는 거의 그대로", "hl"),
                                 ("주어진 문장", "But many signals … go through changes", "하지만 많은 신호는 변한다", "hl2"),
                                 ("④ 뒤", "slight variations", "그래서 약간의 차이가 보인다", "hl")),
@@ -391,6 +385,18 @@ lesson = base_lesson(
                            g("variation", "차이, 변형"), g("piece together", "종합하다")],
                "options": []},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# means 방법 · displays (동물의) 표현.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("means", "이 글에서는 → 방법  ('의미하다' 아님)", "means", trap=True)],
+    2: [tip("displays", "이 글에서는 → (동물의) 표현  ('화면, 전시' 아님)", "displays", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="문장 넣기 푸는 법",
        chunks={"many signals": "많은 신호", "they": "그것들", "are passed": "전해지다", "go through": "겪다", "changes": "변화",

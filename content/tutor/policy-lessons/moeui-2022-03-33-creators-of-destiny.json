@@ -149,7 +149,7 @@
       "answer_explain": "정답이에요! 사람은 수동적인 삶을 넘어 자기 운명을 스스로 만들려 해요. 그걸 '자기 삶의 행로를 바꾸려는'으로 바꿔 썼어요.",
       "final_wrong": "정답은 ①이에요. 창조자, 자기 운명을 만드는 사람(active shapers of their own destiny)을 바꿔 쓴 말이에요.",
       "option_feedback": {
-        "2": "possess가 셋째 문장에 나와서 헷갈렸죠. 하지만 글에는 남과 견주어 더 갖는다는 말이 없어요.",
+        "2": "possess가 셋째 문장에 나와서 헷갈렸죠. 하지만 글에는 남과 비교해 더 갖는다는 말이 없어요.",
         "3": "부정적인 감정 이야기는 글에 없어요. 글은 수동적인 삶을 넘어서는 이야기예요.",
         "4": "남을 위한 희생 이야기는 글에 없어요. 자기 목적(their own purposes)을 만든다고 했어요.",
         "5": "초자연적인 힘 이야기는 없어요. 오히려 인간 스스로 창조자가 되려 한다고 했어요."
@@ -160,31 +160,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 17%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "②의 possess는 셋째 문장(people possess a need)에도 나와서 겹쳐 보여요. 하지만 거기서 possess는 '욕구를 지니고 있다'는 말이에요. 글은 남보다 많이 갖는 게 아니라, 수동적인 삶을 넘어 자기 운명을 만드는 이야기예요.",
-          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "possess가 글과 겹쳐서 골랐어요",
-              "skills": [
-                "word_overlap"
-              ],
-              "reply": "알려 줘서 고마워요. 겹치는 단어보다 그 단어가 글에서 무엇을 한다는 건지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "drive(욕구)를 욕심으로 읽었어요",
-              "skills": [
-                "word_sense"
-              ],
-              "reply": "알려 줘서 고마워요. 여기서 drive는 앞으로 나아가려는 욕구예요. 앞으로 그 욕구가 무엇을 향하는지 같이 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "word_overlap",
-                "word_sense"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 단어 뜻을 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -663,7 +638,8 @@
             {
               "label": "be content with",
               "text": "content는 '내용'만 있는 게 아니에요. be content with ~ = ~에 만족하다. not content with = 만족하지 못하는.",
-              "mark": "content"
+              "mark": "content",
+              "trap": true
             }
           ]
         },
@@ -847,7 +823,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어 Allport, 동사 considers, 목적어 it, 보어 normal이에요. it은 뒤의 to be pulled forward를 받아요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "drive",
+              "text": "이 글에서는 → 욕구  ('운전하다' 아님)",
+              "mark": "drive",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s2_side",
@@ -2019,7 +2003,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어 humans, 동사 generate와 provide, generate의 목적어는 their own purposes예요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "nature",
+              "text": "이 글에서는 → 본질  ('자연' 아님)",
+              "mark": "nature",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s6_board",

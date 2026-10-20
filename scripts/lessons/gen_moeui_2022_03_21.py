@@ -120,7 +120,7 @@ sentences = [
             choice("s3_that",
                    "that of any other invention의 that은 무엇을 대신할까요?",
                    [("o0", "the importance (중요성)", True), ("o1", "the electrical system (전기 시스템)", False), ("o2", "the light (전깃불)", False)],
-                   "무엇과 무엇을 견주는지 생각해 봐요. 전깃불의 ○○와 다른 발명품의 ○○예요.",
+                   "무엇과 무엇을 비교하는지 생각해 봐요. 전깃불의 ○○와 다른 발명품의 ○○예요.",
                    why="that은 주어의 핵심 명사를 다시 받아요. 전깃불의 중요성이 다른 발명품의 중요성에 필적한다는 말이에요.",
                    levels=["중", "초"], highlight=["that of any other invention"],
                    tips=[tip("that of ~", "앞에 나온 명사를 되풀이하지 않으려고 that(복수면 those)으로 받아요. 'that of + 다른 것' = '다른 것의 그것'.", "that of")]),
@@ -207,7 +207,7 @@ sentences = [
                 "the twenty-first century": "그건 of 뒤 덩어리예요."},
                "주어는 Our own time(우리 자신의 시대), 동사는 carries, 목적어는 the stamp of this age예요. 밑줄이 바로 이 동사와 목적어예요.",
                ask="밑줄이 있는 마지막 문장이에요. 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
-               tips=[tip("stamp", "'도장, 찍힌 자국'이에요.", "stamp")]),
+               tips=[tip("stamp", "이 글에서는 → 흔적  ('우표, 도장' 아님)", "stamp", trap=True)]),
             choice("s5_this",
                    "this age(이 시대)는 어느 시대를 가리킬까요?",
                    [("o0", "철·석탄·증기의 산업 시대", False), ("o1", "전기·석유가 이끈 20세기 후기 산업 시대", True), ("o2", "21세기", False)],
@@ -319,12 +319,6 @@ exam = {
          "5": "미래 세대를 위한 자원 이야기는 글에 없어요."},
         {"2": review(11,
                      "②는 '산업 시대의 한계를 극복하려 애쓴다'예요. industrial age가 글에 나와서 그럴듯해 보여요. 하지만 this age는 산업 시대 다음의 전기 시대이고, 우리 시대는 그 흔적을 극복하는 게 아니라 지니고 있어요.",
-                     "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-                     [("this age를 산업 시대로 봤어요", ["reference"],
-                       "알려 줘서 고마워요. this는 바로 앞에서 말한 것을 가리켜요. 앞으로 this가 나오면 앞 문장 끝부터 같이 찾아볼게요."),
-                      ("stamp를 극복으로 읽었어요", ["word_meaning"],
-                       "알려 줘서 고마워요. carry the stamp of는 '~의 흔적을 지니다'예요. 앞으로 비유 표현은 뜻을 먼저 풀어 줄게요."),
-                      ("둘 다요", ["reference", "word_meaning"], "알려 줘서 고마워요. 앞으로 가리키는 말과 비유 표현을 같이 짚어 줄게요.")],
                      panel=rows(("글", "this age = a post-industrial one", "전기·석유의 20세기 — 그 흔적을 지닌다", "hl"),
                                 ("②", "industrial age · overcome", "산업 시대 · 극복 (다른 시대, 반대 방향)", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -351,6 +345,18 @@ lesson = base_lesson(
                "options": [g("under the influence of", "~의 영향 아래"), g("innovation", "혁신"), g("strive", "애쓰다"),
                            g("overcome", "극복하다"), g("discipline", "학문 분야")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# matches 필적하다 · character 특성.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    3: [tip("matches", "이 글에서는 → 필적하다  ('성냥, 경기' 아님)", "matches", trap=True)],
+    4: [tip("character", "이 글에서는 → 특성  ('등장인물' 아님)", "character", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="밑줄 문제 푸는 법",
        chunks={"The technical and economic importance": "기술적·경제적 중요성", "the electrical system": "전기 시스템",

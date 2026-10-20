@@ -618,7 +618,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.tips?.[0]?.label).toBe("last thing");
   });
 
-  it("시험 보기: 다섯 개를 카드로, 틀리면 이유와 함께 지우고, 맞히면 다시 볼 주기 → 단어 → 짝 맞추기", async () => {
+  it("시험 보기: 다섯 개를 카드로, 한 번 제출하면 정답을 밝히고 보기마다 짧은 해설 → 다시 볼 주기 → 단어 → 짝 맞추기", async () => {
     const { session } = await toAnalysis();
     let v = session.view();
     for (let g = 0; g < 40 && !v.examOptions; g++) {
@@ -631,13 +631,14 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.examOptions![2]!.keywords).toEqual(["embrace", "novelty", "progress"]);
     expect(v.methodSteps?.active).toBe(1);
 
+    // 틀린 보기를 제출 — 다시 고르게 하지 않고 정답을 밝힌다. 보기마다 짧은 해설이 다 펼쳐진다 (2026-10-20 선생님)
     v = await session.submit(L.exam!.options[4]!.label);
-    expect(v.message).toBe("아쉽게도 틀렸어요. science는 지도에도 있지만, 글에선 과학을 흉내 내요. 구별하는 게 아니에요.");
-    expect(v.examOptions).toHaveLength(4);
-
-    v = await session.submit(L.exam!.options[2]!.label);
-    // 정답 해설 한 화면 → 「다음으로」면 다시 볼 주기
-    expect(v.message.startsWith("정답이에요!")).toBe(true);
+    expect(v.message).toBe("아쉽게도 틀렸어요. 정답은 ③예요.");
+    expect(v.examOptions).toHaveLength(5);
+    expect(v.examExplainOpen).toBe(true);
+    expect(v.examExplain?.["5"]).toMatchObject({ correct: false, picked: true });
+    expect(v.examExplain?.["5"]?.text).toBe("science는 지도에도 있지만, 글에선 과학을 흉내 내요. 구별하는 게 아니에요.");
+    expect(v.examExplain?.["3"]?.correct).toBe(true);
     v = await session.submit("다음으로");
     expect(v.screen).toBe("chat");
     // 한 번 틀렸으니 기본 1주
@@ -706,10 +707,9 @@ describe("2026년 3월 30번 — 어휘 문제", () => {
   const ID = "moeui-2026-03-30-names-and-differences";
   const L = allPolicyLessons().find((l) => l.id === ID)!;
 
-  it("29%가 고른 ③을 고르면 같이 자세히 보고, 어디서 헷갈렸는지 기록한 뒤 문제로 돌아온다", async () => {
-    let saved = emptyStudentState();
+  it("29%가 고른 ③을 제출하면 해설 아래 「같이 자세히 볼래요」 — 고르면 설명 한 화면을 보고(어디서 헷갈렸는지는 안 묻는다) 보기 해설로 돌아온다", async () => {
     const session = autoRead(createPolicySession(ID, null, {
-      loadStudent: emptyStudentState, saveStudent: (st) => { saved = st; }, logEvents() {}, now: () => 0,
+      loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0,
     }));
     let v = session.view();
     for (let g = 0; g < 5 && !v.buttons.includes("분석하러 갈게요"); g++) v = await session.submit(v.buttons[0]!);
@@ -722,19 +722,19 @@ describe("2026년 3월 30번 — 어휘 문제", () => {
     expect(v.examOptions).toHaveLength(5);
 
     v = await session.submit("alike");
-    expect(v.message.startsWith("아쉽게도 틀렸어요. ③은 29%나")).toBe(true);
+    expect(v.message.startsWith("아쉽게도 틀렸어요. 정답은")).toBe(true);
+    expect(v.examExplain?.["3"]?.picked).toBe(true);
+    expect(v.buttons).toEqual(["다음으로", "같이 자세히 볼래요"]);
+    v = await session.submit("같이 자세히 볼래요");
     expect(v.examOptions).toBeNull();
     expect(v.sentence).toContain("③alike");
-    v = await session.submit("같이 볼게요");
     expect(v.panel?.kind).toBe("contrast");
     v = await session.submit("다음으로");
-    expect(v.buttons).toEqual(["No를 못 봤어요", "yet 앞뒤가 반대인 게 헷갈렸어요", "둘 다요"]);
-    v = await session.submit("No를 못 봤어요");
-    expect(v.message).toContain("No를 강조해서");
-    expect(saved.skills.no_negation).toBeTruthy();
-    v = await session.submit("다음으로");
-    expect(v.examOptions).toHaveLength(4);
-    expect(v.sentence).toBe(L.sentences[0]!.text);
+    expect(v.message).not.toContain("헷갈렸어요?");
+    // 다시 고르지 않는다 — 다섯 보기와 해설이 그대로, 「다음으로」면 마무리로
+    expect(v.examOptions).toHaveLength(5);
+    expect(v.examExplain?.["3"]?.picked).toBe(true);
+    expect(v.buttons).toEqual(["다음으로"]);
   });
 });
 
@@ -1844,6 +1844,66 @@ describe("읽는 동안 헷갈리는 단어 Tip을 미리", () => {
     expect((v.wordTips ?? []).map((t) => t.label)).toContain("in that");
     // 요령 칩(mark 없는 것)은 읽기 화면에 안 뜬다
     expect((v.tips ?? []).map((t) => t.label)).not.toContain("앞을 가리키는 말");
+  });
+
+  it("헷갈리는 단어는 trap(평소 뜻과 이 글의 뜻이 다른 단어)만 — 2022년 3월 29번 문장 3: accounts는 O, more A than B Tip은 X", async () => {
+    const session = createPolicySession("moeui-2022-03-29-greek-music", null, { loadStudent: () => ({ ...emptyStudentState(), level: "중" }), saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    const lesson = allPolicyLessons().find((l) => l.id === "moeui-2022-03-29-greek-music")!;
+    const steps = new Map(lesson.sentences.flatMap((s) => s.steps).map((st) => [st.id, st]));
+    for (let g = 0; g < 200 && !(v.readingFirst && v.sentence.startsWith("So we are forced")); g++) {
+      const st = steps.get(session.lastAction()?.interactionId ?? "");
+      if (v.readingFirst) v = await session.submit("다 읽었어요");
+      else if (st?.type === "choice" && !v.buttons.includes("다음으로") && v.buttons.length > 1) v = await session.submit(st.options.find((o) => o.correct)!.label);
+      else v = await session.submit(v.buttons[0] ?? "__auto_next");
+    }
+    expect(v.readingFirst).toBe(true);
+    const labels = (v.wordTips ?? []).map((t) => t.label);
+    expect(labels).toEqual(expect.arrayContaining(["accounts", "exercise", "practice"]));
+    expect(labels).not.toContain("more A than B");
+  });
+});
+
+describe("정답 해설 다음 참고(answer_note)", () => {
+  it("2022년 3월 29번: 분석 뒤 문제에서 정답 ② → 해설 → 참고(오답률 1위 이유) → 다음 화면", async () => {
+    const id = "moeui-2022-03-29-greek-music";
+    const session = createPolicySession(id, null, { loadStudent: () => ({ ...emptyStudentState(), level: "중" }), saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    const lesson = allPolicyLessons().find((l) => l.id === id)!;
+    const steps = new Map(lesson.sentences.flatMap((s) => s.steps).map((st) => [st.id, st]));
+    for (let g = 0; g < 400 && !v.message.includes("어법상 틀린 것 하나"); g++) {
+      const st = steps.get(session.lastAction()?.interactionId ?? "");
+      if (v.readingFirst) v = await session.submit("다 읽었어요");
+      else if (st?.type === "choice" && !v.buttons.includes("다음으로") && v.buttons.length > 1) v = await session.submit(st.options.find((o) => o.correct)!.label);
+      else v = await session.submit(v.buttons[0] ?? "__auto_next");
+    }
+    const answer = lesson.exam!.options.find((o) => o.correct)!.label;
+    v = await session.submit(answer);
+    expect(v.message).toBe("정답이에요!");
+    expect(v.examExplain?.["2"]?.text).toContain("than");
+    v = await session.submit("다음으로");
+    expect(v.message).toContain("오답률 1위");
+    v = await session.submit("다음으로");
+    expect(v.message).not.toContain("오답률 1위");
+  });
+});
+
+describe("설명 화면 아래 「보충학습실에서 더 공부할게요」", () => {
+  it("2022년 3월 29번 ③ 동사·분사 표: 그 버튼을 누르면 「담아 뒀어요」를 다음 말과 줄을 바꿔 말하고 넘어간다", async () => {
+    const id = "moeui-2022-03-29-greek-music";
+    const session = createPolicySession(id, null, { loadStudent: () => ({ ...emptyStudentState(), level: "중" }), saveStudent() {}, logEvents() {}, now: () => 0 });
+    let v = await session.submit("분석하러 갈게요");
+    const lesson = allPolicyLessons().find((l) => l.id === id)!;
+    const steps = new Map(lesson.sentences.flatMap((s) => s.steps).map((st) => [st.id, st]));
+    for (let g = 0; g < 300 && session.lastAction()?.interactionId !== "s4_cons_table"; g++) {
+      const st = steps.get(session.lastAction()?.interactionId ?? "");
+      if (v.readingFirst) v = await session.submit("다 읽었어요");
+      else if (st?.type === "choice" && !v.buttons.includes("다음으로") && v.buttons.length > 1) v = await session.submit(st.options.find((o) => o.correct)!.label);
+      else v = await session.submit(v.buttons[0] ?? "__auto_next");
+    }
+    expect(v.buttons).toEqual(["알겠어요", "나중에 보충학습실에서 더 깊이 공부할게요"]);
+    v = await session.submit("나중에 보충학습실에서 더 깊이 공부할게요");
+    expect(v.message.startsWith("보충학습실에 담아 뒀어요.\n꼭 외워 둘 것이 있어요.")).toBe(true);
   });
 });
 

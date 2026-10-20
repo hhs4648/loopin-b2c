@@ -172,7 +172,7 @@ sentences = [
                    "마지막 'that’s the one you will pick'의 that은 바로 앞에 나온 'one that … still favors yours more than theirs'예요.",
                    why="'that’s the one you will pick'은 바로 앞의 '둘 다 덜 이득이지만 우리 쪽이 그들보다 더 이득인 결과'예요. 전체 이득보다 '우리 편'을 고른대요.",
                    highlight=["favoring us", "favors yours more than theirs"],
-                   tips=[tip("favor", "동사로 '편들다, ~에게 유리하게 하다'예요. 명사 '호의'만 있는 게 아니에요.", "favoring")],
+                   tips=[tip("favor", "동사로 '편들다, ~에게 유리하게 하다'예요. 명사 '호의'만 있는 게 아니에요.", "favoring", trap=True)],
                    point="일단 '그들'이 보이면 '우리'를 편든다 — 다 같이 더 이득보다 우리가 더 이득인 쪽을 고른다"),
             choice("s8_gist",
                    "글 전체가 무엇에 대한 이야기인지 한 줄로 묶으면요?",
@@ -289,6 +289,18 @@ lesson = base_lesson(
                            g("favor", "편들다, 유리하게 하다"), g("outcome", "결과")],
                "options": [g("tendency", "경향"), g("identify with", "~와 동일시하다"), g("isolation", "고립"), g("objective", "객관적인")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# reason 판단하다, 따져 생각하다 · sentence (사형) 선고.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    3: [tip("reason", "이 글에서는 → 판단하다, 따져 생각하다  ('이유' 아님)", "reason", trap=True)],
+    6: [tip("sentence", "이 글에서는 → (사형) 선고  ('문장' 아님)", "death sentence", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="주제 푸는 법",
        chunks={"we": "우리는", "carry": "지니다", "an innate drive": "타고난 욕구", "groups": "집단들", "This": "이것", "is": "~이다",

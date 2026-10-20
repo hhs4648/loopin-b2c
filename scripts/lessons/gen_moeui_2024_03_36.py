@@ -315,12 +315,6 @@ exam = {
          "5": "(C)가 맨 앞에 오면 he가 누구인지 알 수 없어요."},
         {"3": review(20.6,
                      "(B) 끝이 '연주 중엔 분석적 생각이 큰 요소가 아니다'라서, (C) 'Instead, he … analyzing'을 붙이고 싶었을 거예요. 하지만 he는 한 사람(his unconscious)이라 (B)의 재즈 음악가들(they)을 받을 수 없어요. he가 받을 모차르트는 (A) 끝에 처음 나와요.",
-                     "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-                     [("분석 이야기끼리 이어 버렸어요", ["content_link_only"],
-                       "알려 줘서 고마워요. 내용이 비슷해 보여도 he, they 같은 가리키는 말이 맞아야 이어져요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("he가 누구인지 확인 안 했어요", ["pronoun_number"],
-                       "알려 줘서 고마워요. he(한 사람)인지 they(여러 사람)인지가 순서 문제의 열쇠예요. 앞으로 대명사를 먼저 짚어 줄게요."),
-                      ("둘 다요", ["content_link_only", "pronoun_number"], "알려 줘서 고마워요. 앞으로 대명사와 내용 연결을 같이 짚어 볼게요.")],
                      panel=rows(("(B) 끝", "They … that thinking style is not as big a factor", "재즈 음악가들(they)", "hl"),
                                 ("(C) 첫머리", "Instead, he spent long, hard hours", "he = 한 사람 = 모차르트 ← (A) 끝", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -344,6 +338,18 @@ lesson = base_lesson(
                            g("factor", "요소"), g("insight", "통찰"), g("reflect", "곰곰이 생각하다")],
                "options": []},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# exacting 고된, 엄격한 · germ 싹, 기원.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    2: [tip("exacting", "이 글에서는 → 고된, 엄격한  ('정확한(exact)' 아님)", "exacting", trap=True)],
+    6: [tip("germ", "이 글에서는 → 싹, 기원  ('세균' 아님)", "germ", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, topic_intro="순서 푸는 법",
        chunks={"Different creative pursuits": "서로 다른 창의적인 일들", "require": "필요로 하다",

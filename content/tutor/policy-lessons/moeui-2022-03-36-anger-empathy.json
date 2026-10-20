@@ -98,31 +98,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 21%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "주어진 글이 '비난자를 공감으로 옮기면 폭언이 멈춘다'라서, 비난자가 상대 편이 되는 (B)를 바로 붙이고 싶었을 거예요. 하지만 (B)는 however(그러나)와 Suddenly and unexpectedly(갑자기 뜻밖에)로 시작해서, 앞에 '비난자가 상대 마음을 몰랐다'가 있어야 해요. 그 말은 (C) 끝 the ignorant blamer is blind to it에 있어요.",
-          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "비난자 이야기끼리 이어 버렸어요",
-              "skills": [
-                "content_link_only"
-              ],
-              "reply": "알려 줘서 고마워요. 내용이 비슷해 보여도 however 같은 연결어가 앞과 맞아야 이어져요. 앞으로 이 점을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "however를 신경 안 썼어요",
-              "skills": [
-                "however_contrast"
-              ],
-              "reply": "알려 줘서 고마워요. however는 앞과 반대되는 내용이 있어야 써요. 앞으로 연결어가 무엇과 반대인지 먼저 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "content_link_only",
-                "however_contrast"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 연결어와 내용 연결을 같이 짚어 볼게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -418,7 +393,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 Anger and empathy(분노와 공감), 동사는 can’t exist(존재할 수 없다)예요. 대시(—) 사이는 비유예요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "matter",
+              "text": "이 글에서는 → 물질  ('문제' 아님)",
+              "mark": "matter and",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "g_cant",
@@ -795,6 +778,14 @@
           "method": 0,
           "faded": [
             "— miraculously —"
+          ],
+          "tips": [
+            {
+              "label": "rush",
+              "text": "이 글에서는 → (물밀듯) 밀려옴  ('서두르다' 아님)",
+              "mark": "rush",
+              "trap": true
+            }
           ]
         },
         {
@@ -1801,6 +1792,12 @@
               "label": "be blind to ~",
               "text": "'~을 보지 못하다, 모르다'예요. 눈이 먼 게 아니라 알아채지 못한다는 말이에요.",
               "mark": "is blind to"
+            },
+            {
+              "label": "mirror",
+              "text": "이 글에서는 → (밖으로) 보여 주다  ('거울' 아님)",
+              "mark": "mirror",
+              "trap": true
             }
           ]
         },

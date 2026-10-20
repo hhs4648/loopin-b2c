@@ -361,6 +361,14 @@
           "method": 1,
           "highlight": [
             "a mysterious figure"
+          ],
+          "tips": [
+            {
+              "label": "figure",
+              "text": "이 글에서는 → 인물  ('숫자, 모양' 아님)",
+              "mark": "figure",
+              "trap": true
+            }
           ]
         }
       ],

@@ -32,6 +32,9 @@ function supabase(): SupabaseClient | null {
   return client;
 }
 
+/** 다른 모듈(`cloud.ts`)도 같은 클라이언트·같은 학습자를 쓴다 */
+export const supabaseClient = supabase;
+
 export function recordingEnabled(): boolean {
   return supabase() != null;
 }
@@ -64,7 +67,7 @@ export async function learnerToken(): Promise<string | null> {
  * 나중에 계정을 붙일 때 `linkIdentity`로 같은 uid에 이어 붙이면 지금까지의
  * 기록이 따라온다 — 새 계정을 만들면 기록이 남의 것이 된다.
  */
-async function ensureLearner(): Promise<string | null> {
+export async function ensureLearner(): Promise<string | null> {
   const db = supabase();
   if (!db) return null;
   if (learnerId) return learnerId;

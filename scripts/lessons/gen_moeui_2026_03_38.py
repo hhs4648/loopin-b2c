@@ -126,7 +126,7 @@ sentences = [
                  "'such choices(그러한 선택들)'예요. such는 앞에서 말한 걸 가리키니, 앞에 '선택' 이야기가 있어야 해요.",
                  praise="맞아요! such(그러한)처럼 앞 내용을 가리키는 말은 문장 넣기·순서 문제에서 주의 깊게 보면 좋아요.",
                  shade=True,
-                 tips=[{"label": "in that", "mark": "in that", "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."}],
+                 tips=[{"label": "in that", "mark": "in that", "trap": True, "text": "'~라는 점에서'예요. 뒤에 다른 점이 무엇인지 나와요."}],
                  # 찾기 전에 보이면 이르다 — 맞힌 화면에서만 (2026-10-16 선생님)
                  praise_tips=[{"label": "앞을 가리키는 말", "text": "this, that, such, these, the처럼 앞에 나온 것을 다시 가리키는 말이에요. 문장 넣기에서는 이 말이 가리키는 게 바로 앞 문장에 있어야 해요."}],
                  method=0),

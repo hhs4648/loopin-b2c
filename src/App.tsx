@@ -21,10 +21,11 @@ import { getSpeakingLesson } from "./speaking/lessons";
 import type { TutorView } from "./tutor/view";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { policyLessonIds } from "./tutor/policy/lessons";
-import { AUTO_NEXT_CMD, createPolicySession, type PolicySession } from "./tutor/policy/session";
+import { AUTO_NEXT_CMD, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
-import { markDone, startRun } from "./tutor/progress";
+import { clearResume, loadResume, markDone, noteReachedEnd, noteStudyTime, resumeRun, saveResume, startRun } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
+import { pullAll } from "./tutor/cloud";
 import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets";
 
 /*
@@ -109,6 +110,15 @@ function ReadingApp() {
   const [counsel, setCounsel] = useState(false);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
+  /*
+    진행 기록·노트·단어장은 localStorage에서 동기로 읽는다. 앱을 열 때 서버 값과 합쳐
+    로컬이 바뀌면 이 수가 올라가고, 그 값을 읽는 화면(홈·목록·단어장·상담실)을 다시 그린다.
+    수업 화면은 건드리지 않는다 — 진행 중인 세션을 잃으면 안 된다.
+  */
+  const [cloudGen, setCloudGen] = useState(0);
+  useEffect(() => {
+    void pullAll().then((changed) => changed && setCloudGen((n) => n + 1));
+  }, []);
 
   const session = started?.session ?? null;
 
@@ -118,6 +128,10 @@ function ReadingApp() {
     const id = window.setInterval(() => setSeconds((n) => n + 1), 1000);
     return () => window.clearInterval(id);
   }, [session]);
+  // 목록에 「⏱ 10m」 — 10초마다, 그리고 목록으로 나갈 때 이 회차의 공부 시간을 남긴다
+  useEffect(() => {
+    if (started?.set && seconds > 0 && seconds % 10 === 0) noteStudyTime(started.set.id, seconds);
+  }, [seconds, started]);
 
   /*
     수업 하나가 기록의 단위다. 시작할 때 행을 하나 열고, 끝날 때 결과와
@@ -127,6 +141,21 @@ function ReadingApp() {
     if (!session) return;
     void startSessionRecord(session.lessonId());
   }, [session]);
+
+  /*
+    이어 하기 — 화면이 바뀔 때마다 지금 자리를 남긴다. 끝난 수업은 지운다(다음엔 처음부터).
+    마지막 문장까지 왔으면 답을 안 냈어도 「봤다」 (2026-10-20 선생님)
+  */
+  useEffect(() => {
+    const id = started?.set?.id;
+    if (!id || !session || shareLesson) return;
+    if (view?.ended) {
+      clearResume(id);
+      return;
+    }
+    saveResume(id, session.lessonId(), session.snapshot());
+    if (session.reachedEnd()) noteReachedEnd(id);
+  }, [view, started, session]);
 
   const ended = view?.ended ?? false;
   const recordLine = view?.recordLine ?? null;
@@ -191,12 +220,20 @@ function ReadingApp() {
   /** analyze — 미니 모의고사에서 넘어왔다: 이미 푼 문제라 미리보기·「바로 풀어 볼게요」를 건너뛰고 바로 다정쌤 분석으로 */
   function startSet(set: LessonSet, analyze = false) {
     setCollection(getCollection(set.collection));
-    startRun(set.id);
-    const next = open(firstLessonId(set));
+    const lessonId = firstLessonId(set);
+    const next = open(lessonId);
+    // 중간에 나갔던 수업이면 멈춘 자리부터 — 그 회차를 잇고 시계도 이어 간다 (미니 모의고사에서 분석하러 온 건 처음부터)
+    const snap = analyze ? null : loadResume(set.id, lessonId);
+    if (snap && next.session.restore(snap as ResumeSnapshot)) {
+      setSeconds(resumeRun(set.id, lessonId));
+    } else {
+      clearResume(set.id);
+      startRun(set.id, lessonId);
+      setSeconds(0);
+    }
     setStarted(next);
     setView(next.session.view());
     setChatOverride(false);
-    setSeconds(0);
     const go = next.session.view().buttons[0];
     if (analyze && go) void next.session.submit(go).then(setView);
   }
@@ -207,6 +244,7 @@ function ReadingApp() {
    */
   function backToList() {
     finishAnalysis("나감");
+    if (started?.set) noteStudyTime(started.set.id, seconds);
     // 공유 파일에는 목록이 없다 — 닫으면 같은 수업을 처음부터
     if (shareLesson) {
       const next = open(shareLesson);
@@ -247,7 +285,7 @@ function ReadingApp() {
     return (
       <div className="viewport">
         <div className="phone">
-          <SavedBook kind={saved} onBack={() => setSaved(null)} />
+          <SavedBook key={cloudGen} kind={saved} onBack={() => setSaved(null)} />
         </div>
       </div>
     );
@@ -267,6 +305,7 @@ function ReadingApp() {
       <div className="viewport">
         <div className="phone">
           <CounselRoom
+            key={cloudGen}
             learnerName={loadLearnerName()}
             onClose={() => setCounsel(false)}
             onStartSet={startPlanned}
@@ -285,6 +324,7 @@ function ReadingApp() {
       <div className="viewport">
         <div className="phone">
           <HomeVillage
+            key={cloudGen}
             learnerName={loadLearnerName()}
             onStart={() => {
               // 상담실에서 짠 계획이 있으면 그다음 문제로, 없으면 수업 목록으로
@@ -311,6 +351,7 @@ function ReadingApp() {
       <div className="viewport">
         <div className="phone">
           <LessonList
+            key={cloudGen}
             onHome={() => {
               setCollection(null);
               setHome(true);

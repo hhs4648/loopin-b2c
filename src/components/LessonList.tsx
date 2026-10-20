@@ -150,7 +150,7 @@ export function LessonList({
                       <span className="set-meta">
                         <span className="set-count">{sentenceCount(set)}문장</span>
                         <span className="set-go">
-                          {doing ? "다시 시작" : done ? "다시 풀기" : "시작하기"}
+                          {st?.resumable ? "이어서 하기" : done ? "다시 풀기" : "시작하기"}
                           <ArrowIcon />
                         </span>
                       </span>

@@ -99,7 +99,7 @@ sentences = [
                    "matter는 명사로 '문제, 물질'이지만, 주어 뒤 동사 자리에 오면 뜻이 달라요.",
                    why="The history … matters에서 matters는 동사예요. 동사 matter는 '중요한 의미가 있다'는 뜻이에요.",
                    highlight=["matters"], levels=["중", "초"],
-                   tips=[tip("matter (동사)", "명사로는 '문제, 물질'이지만 동사로는 '중요하다'예요. It doesn't matter = 상관없다.", "matters")]),
+                   tips=[tip("matter (동사)", "명사로는 '문제, 물질'이지만 동사로는 '중요하다'예요. It doesn't matter = 상관없다.", "matters", trap=True)]),
             show("s1_art", "원근법 그림의 역사가 '삶의 기술'에 대해 무언가를 보여 준대요. 그림 이야기가 삶 이야기로 이어져요.",
                  highlight=["perspective", "the art of living"], button="다음 문장"),
         ],
@@ -356,12 +356,6 @@ exam = {
          "5": "반대쪽 말이에요. 우리는 규칙을 거부하지 않고 받아들인다고 했어요."},
         {"3": review(16,
                      "③에는 artworks(예술품)가 있어서 그림 이야기와 겹쳐 보여요. 하지만 화가는 우리를 설명하려고 든 비유예요(Just as ~, we similarly). 빈칸은 우리가 사회 규칙(them)에 대해 흔히 하는 일이고, 우리는 그 규칙을 따른다고 했어요.",
-                     "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-                     [("그림 이야기와 겹쳐서 골랐어요", ["word_overlap"],
-                       "알려 줘서 고마워요. 겹치는 단어보다 빈칸이 누구에 대한 말인지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("Just as 비유를 못 봤어요", ["analogy"],
-                       "알려 줘서 고마워요. Just as A, B에서 A는 비유, 하고 싶은 말은 B예요. 앞으로 비유를 같이 짚어 줄게요."),
-                      ("둘 다요", ["word_overlap", "analogy"], "알려 줘서 고마워요. 앞으로 겹치는 단어와 비유를 같이 짚어 줄게요.")],
                      panel=rows(("화가 (비유)", "conform to the stylistic conventions", "그 시대 양식을 따른다", "hl2"),
                                 ("우리 (빈칸)", "conform to prevailing social conventions", "사회 관습을 따른다", "hl")))}),
 }
@@ -386,6 +380,18 @@ lesson = base_lesson(
                "options": [g("distinguish", "구분하다"), g("comply with", "~에 따르다"), g("inspirational", "영감을 주는"),
                            g("on account of", "~ 때문에"), g("complexity", "복잡성"), g("objection", "반대")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# art 기술 · conventions 관습.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("art", "이 글에서는 → 기술  ('예술' 아님)", "art of living", trap=True)],
+    2: [tip("conventions", "이 글에서는 → 관습  ('대회, 회의' 아님)", "conventions", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
        chunks={"most artists": "대부분의 화가", "the stylistic conventions": "양식의 관습", "we": "우리는",

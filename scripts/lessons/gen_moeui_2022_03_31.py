@@ -382,13 +382,6 @@ exam = {
          "5": "권한 부여는 힘이나 자격을 주는 거예요. 글은 친절·다정함 같은 마음 이야기예요."},
         {"2": review(42,
                      "글에 meditation(명상)이 나와서 Relaxation(긴장 완화)을 가장 많이 골랐어요. 하지만 빈칸(it)은 싫은 사람에게도, 사랑하는 사람에게만큼 '향하게(direct)' 해야 하는 거예요. 긴장 완화는 사람에게 향하는 마음이 아니에요.",
-                     "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-                     [("명상이라서 긴장 완화가 떠올랐어요", ["topic_word_trap"],
-                       "알려 줘서 고마워요. 명상은 방법이고, 그걸로 기르는 건 this attitude(자비심)예요. 앞으로 이 점을 짚어 줄게요."),
-                      ("direct it towards를 놓쳤어요", ["blank_clue"],
-                       "알려 줘서 고마워요. 빈칸 문장의 it은 빈칸이고, 사람에게 향하게 하는 거예요. 앞으로 빈칸 문장 속 단서를 먼저 짚어 줄게요."),
-                      ("둘 다요", ["topic_word_trap", "blank_clue"],
-                       "알려 줘서 고마워요. 앞으로 명상으로 무엇을 기르는지와 빈칸 문장 단서를 같이 짚어 줄게요.")],
                      panel=rows(("mettā 쪽", "benevolence · kindness · this attitude", "사람을 따뜻하게 대하는 마음", "hl"),
                                 ("빈칸 문장", "direct it towards those we … detest", "싫은 사람에게도 향하게 한다", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -415,6 +408,19 @@ lesson = base_lesson(
                "options": [g("compassion", "연민"), g("relaxation", "긴장 완화"), g("justification", "정당화"),
                            g("empowerment", "권한 부여")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# call 요구 · practice 수행 · direct 향하게 하다.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    4: [tip("call", "이 글에서는 → 요구  ('전화, 부르다' 아님)", "call", trap=True)],
+    5: [tip("practice", "이 글에서는 → 수행  ('연습' 아님)", "practice", trap=True)],
+    7: [tip("direct", "이 글에서는 → 향하게 하다  ('직접적인' 아님)", "direct", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
        chunks={"In the Indian language of pali": "인도의 팔리어에서", "mettā": "mettā", "means": "뜻하다",

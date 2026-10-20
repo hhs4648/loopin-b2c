@@ -375,62 +375,12 @@
       "3": {
         "intro": "아쉽게도 틀렸어요. 이 보기는 25.8%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
         "intro_button": "같이 볼게요",
-        "say": "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요.",
-        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-        "choices": [
-          {
-            "label": "These pictures가 원근법 그림인 줄 알았어요",
-            "skills": [
-              "these_refers"
-            ],
-            "reply": "알려 줘서 고마워요. 앞으로 These·They가 가리키는 대상을 먼저 짚어 줄게요."
-          },
-          {
-            "label": "but 뒤 내용을 놓쳤어요",
-            "skills": [
-              "but_after"
-            ],
-            "reply": "알려 줘서 고마워요. but 뒤 'do not represent scenes as we might see them'이 열쇠였어요. 앞으로 but 뒤를 강조해서 알려 줄게요."
-          },
-          {
-            "label": "둘 다요",
-            "skills": [
-              "these_refers",
-              "but_after"
-            ],
-            "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 but 뒤를 같이 짚어 줄게요."
-          }
-        ]
+        "say": "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요."
       },
       "4": {
         "intro": "아쉽게도 틀렸어요. 이 보기는 27.9%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
         "intro_button": "같이 볼게요",
         "say": "④에 넣으면 This가 바로 앞 '예전 그림은 정보도 덜 준다'를 가리켜요. 그런데 ② 뒤 These pictures부터 이미 예전 그림 이야기였어요. 예전 그림을 처음 꺼내는 주어진 문장은 These pictures보다 앞, ②에 와야 해요.",
-        "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
-        "choices": [
-          {
-            "label": "These pictures가 원근법 그림인 줄 알았어요",
-            "skills": [
-              "these_refers"
-            ],
-            "reply": "알려 줘서 고마워요. These pictures는 '보는 대로 나타내지 않는' 그림이라 예전 그림이에요. 앞으로 비슷한 문장이 나오면 These가 가리키는 걸 먼저 짚어 줄게요."
-          },
-          {
-            "label": "less informative와 대조라 이어지는 줄 알았어요",
-            "skills": [
-              "contrast_guess"
-            ],
-            "reply": "알려 줘서 고마워요. 대조 느낌만으로 정하지 말고, 가리키는 말(This, These)이 무엇을 받는지 확인해야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
-          },
-          {
-            "label": "둘 다요",
-            "skills": [
-              "these_refers",
-              "contrast_guess"
-            ],
-            "reply": "알려 줘서 고마워요. 앞으로 These가 가리키는 대상부터 같이 짚어 볼게요."
-          }
-        ],
         "panel": {
           "kind": "structure",
           "rows": [
@@ -450,11 +400,11 @@
         }
       }
     },
-    "from": "1le2a15"
+    "from": "fztz2s"
   },
   "intro": {
     "topic": {
-      "say": "그림은 눈에 보이는 대로만 그려야 할까요? 이번 글은 원근법 그림과 예전 그림을 견줘요."
+      "say": "그림은 눈에 보이는 대로만 그려야 할까요? 이번 글은 원근법 그림과 예전 그림을 비교해요."
     },
     "method1": {
       "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."
@@ -462,7 +412,7 @@
     "method2": {
       "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾을 거예요. 칠판 순서대로 해 볼게요."
     },
-    "from": "192vzga"
+    "from": "189vfqm"
   },
   "ending": {
     "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",

@@ -262,31 +262,6 @@
         "intro": "아쉽게도 틀렸어요. 이 보기는 13.2%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
         "intro_button": "같이 볼게요",
         "say": "⑤ 앞뒤를 나란히 놓아 봐요. 동물은 가까운 랜드마크에 더 무게를 줘요. Weber의 법칙은 짧은 거리가 더 정확히 기록된대요. 가까운 것 = 짧은 거리 = 더 정확하니, 무게를 주는 게 법칙과 일치(consistent)해요.",
-        "ask": "그래서 ⑤는 문맥에 맞아요. 어디서 헷갈렸어요?",
-        "choices": [
-          {
-            "label": "Weber의 법칙 문장이 어려웠어요",
-            "skills": [
-              "long_relative"
-            ],
-            "reply": "알려 줘서 고마워요. in which 뒤는 그 법칙의 내용이에요. 앞으로 긴 덩어리는 끊어 읽기로 나눠서 보여 줄게요."
-          },
-          {
-            "label": "가까운 것 = 짧은 거리로 못 이었어요",
-            "skills": [
-              "paraphrase_link"
-            ],
-            "reply": "알려 줘서 고마워요. nearer landmarks와 smaller distances는 같은 말을 바꿔 쓴 거예요. 앞으로 바꿔 쓴 말을 짝지어 보여 줄게요."
-          },
-          {
-            "label": "둘 다요",
-            "skills": [
-              "long_relative",
-              "paraphrase_link"
-            ],
-            "reply": "알려 줘서 고마워요. 앞으로 긴 덩어리와 바꿔 쓴 말을 같이 짚어 줄게요."
-          }
-        ],
         "panel": {
           "kind": "structure",
           "rows": [
@@ -306,7 +281,7 @@
         }
       }
     },
-    "from": "1nu3mtk"
+    "from": "1ioowqh"
   },
   "intro": {
     "topic": {

@@ -164,31 +164,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "③에는 artworks(예술품)가 있어서 그림 이야기와 겹쳐 보여요. 하지만 화가는 우리를 설명하려고 든 비유예요(Just as ~, we similarly). 빈칸은 우리가 사회 규칙(them)에 대해 흔히 하는 일이고, 우리는 그 규칙을 따른다고 했어요.",
-          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "그림 이야기와 겹쳐서 골랐어요",
-              "skills": [
-                "word_overlap"
-              ],
-              "reply": "알려 줘서 고마워요. 겹치는 단어보다 빈칸이 누구에 대한 말인지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "Just as 비유를 못 봤어요",
-              "skills": [
-                "analogy"
-              ],
-              "reply": "알려 줘서 고마워요. Just as A, B에서 A는 비유, 하고 싶은 말은 B예요. 앞으로 비유를 같이 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "word_overlap",
-                "analogy"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 비유를 같이 짚어 줄게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -405,6 +380,14 @@
           "before_read": true,
           "show_passage": [
             "It is common to ________."
+          ],
+          "tips": [
+            {
+              "label": "art",
+              "text": "이 글에서는 → 기술  ('예술' 아님)",
+              "mark": "art of living",
+              "trap": true
+            }
           ]
         },
         {
@@ -516,7 +499,8 @@
             {
               "label": "matter (동사)",
               "text": "명사로는 '문제, 물질'이지만 동사로는 '중요하다'예요. It doesn't matter = 상관없다.",
-              "mark": "matters"
+              "mark": "matters",
+              "trap": true
             }
           ]
         },
@@ -683,7 +667,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어 we, 동사 (similarly) conform to, 전치사 뒤 목적어는 prevailing social conventions예요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "conventions",
+              "text": "이 글에서는 → 관습  ('대회, 회의' 아님)",
+              "mark": "conventions",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s2_same",

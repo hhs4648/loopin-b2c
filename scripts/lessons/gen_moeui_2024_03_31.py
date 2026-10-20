@@ -120,7 +120,7 @@ sentences = [
                    "mechanics는 여기서 '기계'가 아니라 '기법, 기술'이에요. gain mastery over는 '~을 익히다'예요.",
                    why="gain mastery over는 '~을 숙달하다', the mechanics of language는 '언어의 기술'이에요. 문법·맞춤법 같은 걸 익힌다는 말이에요.",
                    highlight=["gain mastery over", "mechanics"],
-                   tips=[tip("mechanics", "'기계학'만 있는 게 아니에요. the mechanics of ~ = ~의 기법, 작동 방식.", "mechanics")]),
+                   tips=[tip("mechanics", "'기계학'만 있는 게 아니에요. the mechanics of ~ = ~의 기법, 작동 방식.", "mechanics", trap=True)]),
             show("s3_board", "손재주, 글씨, 언어 기술이 모두 좋아져요. 칠판 오른쪽(자라고 난 뒤)에 쌓아 둘게요.",
                  panel=board([("manual dexterity ↑", "손재주"), ("mechanics of language", "언어 기술")], [],
                              fresh=("mechanics of language",)), button="다음 문장"),
@@ -381,23 +381,11 @@ exam = {
          "5": "즉흥성을 보여 준다면 은유도 지어낼 텐데, 은유를 지어낼 필요가 거의 없대요."},
         {"2": review(30.0,
                      "'an accompanying sense of the spontaneity'는 영어로 자연스럽게 들려서 가장 많이 골랐어요. 하지만 그러면 '즉흥성의 감각이 함께 생긴다', 즉흥성이 살아 있다는 말이 돼요. 글은 틀에 박히고 글자 그대로가 된다고 했으니, 반대쪽인 즉흥성은 줄어야 해요.",
-                     "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
-                     [("말이 자연스러워 보여서 골랐어요", ["collocation_trap"],
-                       "알려 줘서 고마워요. 빈칸은 말이 자연스러운지보다 앞뒤 흐름(어느 쪽이 늘고 주는지)으로 정해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("두 쪽이 반대인 걸 못 봤어요", ["two_sides"],
-                       "알려 줘서 고마워요. conventional(틀에 박힌)과 spontaneity(즉흥성)는 반대 쪽이에요. 앞으로 두 쪽을 칠판에 나눠서 보여 줄게요."),
-                      ("둘 다요", ["collocation_trap", "two_sides"], "알려 줘서 고마워요. 앞으로 두 쪽을 먼저 나누고 빈칸을 보게 할게요.")],
                      panel=rows(("어릴 때", "spontaneity and originality", "즉흥성·독창성 → ↓ (loss)", "hl2"),
                                 ("자라고 난 뒤", "conventional and literal", "틀에 박히고 글자 그대로 ↑", "hl")),
                      rank_word="가장 많이 고른"),
          "3": review(24.2,
-                     "increase(증가)를 넣으면 '즉흥성과 독창성이 함께 늘어난다'가 돼요. 그런데 글은 점점 틀에 박히고 남들이 쓰는 단어만 쓴대요. 즉흥성은 늘 수가 없어요.",
-                     "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-                     [("자라면 다 좋아진다고 생각했어요", ["growth_all_good"],
-                       "알려 줘서 고마워요. 손재주·글씨는 좋아지지만, 그 대가로 즉흥성은 줄어요. 앞으로 좋아지는 것과 잃는 것을 나눠 보여 줄게요."),
-                      ("of 뒤가 누구 쪽인지 헷갈렸어요", ["two_sides"],
-                       "알려 줘서 고마워요. that characterized our earlier efforts, 예전의 특징이에요. 앞으로 earlier 같은 시간 단서를 짚어 줄게요."),
-                      ("둘 다요", ["growth_all_good", "two_sides"], "알려 줘서 고마워요. 앞으로 두 쪽을 먼저 나누고 빈칸을 보게 할게요.")])}),
+                     "increase(증가)를 넣으면 '즉흥성과 독창성이 함께 늘어난다'가 돼요. 그런데 글은 점점 틀에 박히고 남들이 쓰는 단어만 쓴대요. 즉흥성은 늘 수가 없어요.")}),
 }
 
 lesson = base_lesson(
@@ -419,6 +407,18 @@ lesson = base_lesson(
                            g("originality", "독창성"), g("grounded", "자리 잡은"), g("metaphor", "은유"), g("innocent", "순진한")],
                "options": [g("loss", "잃음, 손실"), g("recovery", "회복"), g("demonstration", "보여 줌, 시연")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# manual 손의 · stage 단계.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    1: [tip("manual", "이 글에서는 → 손의  ('설명서' 아님)", "manual", trap=True)],
+    4: [tip("stage", "이 글에서는 → 단계  ('무대' 아님)", "stage", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="빈칸 푸는 법",
        chunks={"From about ages eight through sixteen": "약 8세부터 16세까지", "our manual dexterity": "우리의 손재주",

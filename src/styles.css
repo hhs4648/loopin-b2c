@@ -554,7 +554,8 @@ button, input { font-family: inherit; }
 }
 
 .study-dock {
-  flex: none;
+  /* 화면이 낮으면 아래 칸도 줄어든다 — 줄어드는 건 그 안의 보기 목록(스크롤)이고, [제출]·버튼은 늘 화면 안에 (2026-10-20 선생님: 보기가 잘려 못 고름) */
+  flex: 0 1 auto; min-height: 0;
   padding: 0 14px calc(var(--safe-bottom, env(safe-area-inset-bottom, 0px)) + 16px);
   display: flex; flex-direction: column; gap: 12px;
   z-index: 6;
@@ -891,7 +892,10 @@ mark.hl2, .english-token.hl2 .english-word {
 .exam-options {
   list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px;
   max-height: 46cqh; overflow-y: auto; overscroll-behavior: contain;
+  /* 자리가 모자라면 이 목록이 먼저 줄고 안에서 스크롤 — 적어도 보기 두 개 높이는 남긴다 */
+  flex: 0 1 auto; min-height: 88px;
 }
+.exam-options > li { flex: none; }
 .exam-option {
   display: flex; align-items: flex-start; gap: 8px; cursor: pointer;
   background: rgba(255,255,255,.95); border: 1.5px solid #ef7a93; border-radius: 14px; padding: 8px 10px;
@@ -2071,3 +2075,19 @@ mark.passage-key { background: #fff1b8; color: inherit; border-radius: 3px; padd
 .gdrill-input.right { border-color: #8fd0c0; background: #eefaf6; }
 .gdrill-input.wrong { border-color: #e2607d; background: #fff3f6; }
 .gdrill-check { flex: none; width: auto; padding: 0 18px; }
+
+/* 칠판 공식 한 줄 — 「S + V … , -ing 또는 p.p. …」, 밑줄 친 조각 아래 이름(분사구문) */
+.study-panel.formula { display: flex; flex-direction: column; gap: 12px; }
+.formula-line { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 8px; font-size: 16px; font-weight: 700; color: #2b2430; }
+.formula-line.example { font-size: 13.5px; font-weight: 500; color: #5b4f57; }
+.formula-part { display: inline-flex; flex-direction: column; align-items: center; }
+.formula-part.under .formula-text { border-bottom: 2.5px solid #ef7a93; padding-bottom: 1px; }
+.formula-name { margin-top: 3px; font-size: 11.5px; font-weight: 700; color: #e2607d; }
+
+/* 시험 보기 — 누르면 고르기만, [제출]로 답한다 (2026-10-20 선생님) */
+.exam-option.selected { border-color: #ef7a93 !important; background: #fff1f4 !important; box-shadow: 0 0 0 2px #f6b5c3; }
+.exam-option.picked-wrong { border-color: #e2607d !important; }
+.exam-submit { width: 100%; flex: none; }
+.exam-submit:disabled { opacity: .45; cursor: default; }
+.exam-numbers-wrap .exam-submit { margin-top: 10px; }
+.exam-num-btn.picked-wrong { outline: 2px solid #e2607d; }

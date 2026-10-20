@@ -906,6 +906,18 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from story_boards import add_story_boards  # noqa: E402
 add_story_boards(ID, lesson["sentences"])
 
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# body (많은) 양, 모음 · work 작품.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    3: [{"label": "body", "text": "이 글에서는 → (많은) 양, 모음  ('몸' 아님)", "mark": "a body of", "trap": True},
+        {"label": "work", "text": "이 글에서는 → 작품  ('일' 아님)", "mark": "work of literature", "trap": True}],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
+
 json.dump(lesson, open(f"{ROOT}/content/tutor/policy-lessons/{ID}.json", "w"), ensure_ascii=False, indent=2)
 
 ref = json.load(open(f"{ROOT}/content/tutor/policy-copy/dajung/moeui-2026-03-21-music-researchers.json"))

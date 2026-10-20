@@ -413,12 +413,6 @@ exam = {
          "5": "지능을 환경과의 행동적 상호 작용(interactions)으로 문제를 푸는 능력으로 본다는 말이라 맞아요."},
         {"3": review(18,
                      "(c)는 글쓴이가 아니라 Some(몇몇 사람들)의 생각이에요. 신경과 근육이 없으니 행동이라 부르기를 꺼린다(reluctant), 이유와 딱 맞아요. 바로 뒤 But에서 글쓴이가 반박해요.",
-                     "그래서 (c)는 문맥에 맞아요. 어디서 헷갈렸어요?",
-                     [("글쓴이 생각으로 읽었어요", ["whose_view"],
-                       "알려 줘서 고마워요. Some are ~는 다른 사람들 의견이에요. 앞으로 누구의 생각인지 먼저 짚어 줄게요."),
-                      ("reluctant 뜻이 헷갈렸어요", ["word_sense_reluctant"],
-                       "알려 줘서 고마워요. reluctant는 '꺼리는, 내키지 않는'이에요. 앞으로 이런 단어는 헷갈리는 단어로 표시해 줄게요."),
-                      ("둘 다요", ["whose_view", "word_sense_reluctant"], "알려 줘서 고마워요. 앞으로 누구의 생각인지와 단어 뜻을 같이 짚어 줄게요.")],
                      panel=rows(("(c)", "Some are reluctant … since they lack nerves", "Some의 생각 — 이유와 맞음", "hl"),
                                 ("(d)", "should not dismiss the absence of behavioral capacities", "글쓴이는 '행동한다' 쪽 → presence여야", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -447,6 +441,19 @@ lesson = base_lesson(
                            g("intelligence", "지능"), g("in terms of", "~의 측면에서")],
                "options": [g("absence", "부재, 없음"), g("presence", "존재, 있음")]},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# content 함량 · store 저장하다 · certain 어느 정도의.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    5: [tip("content", "이 글에서는 → 함량  ('내용' 아님)", "content", trap=True)],
+    9: [tip("store", "이 글에서는 → 저장하다  ('가게' 아님)", "store", trap=True)],
+    10: [tip("certain", "이 글에서는 → 어느 정도의  ('확실한' 아님)", "certain", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, stories=STORIES, topic_intro="어휘 문제 푸는 법",
        chunks={"the biologist Daniel Chamovitz": "생물학자 Daniel Chamovitz는", "describes": "설명한다",

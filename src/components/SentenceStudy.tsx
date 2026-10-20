@@ -112,6 +112,10 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
   // 끊어읽기 — 누르면 의미 덩어리마다 「/」를 넣어 보인다. 문장이 바뀌면 끈다
   const [slashOn, setSlashOn] = useState(false);
   useEffect(() => setSlashOn(false), [view.sentence]);
+  // 화면이 저절로 켜 달라고 하면(스텝의 slash_on) 학생이 안 눌렀어도 켠다
+  useEffect(() => {
+    if (view.slashAuto) setSlashOn(true);
+  }, [view.slashAuto]);
   // 자주 헷갈리는 단어 — 누르면 문장 속 그 단어에 밑줄, 단어를 누르면 뜻 아래 💡 (모아보기 목록은 길어서 안 읽는다, 2026-10-16 선생님)
   const [trapOn, setTrapOn] = useState(false);
   useEffect(() => setTrapOn(false), [view.sentence]);
@@ -520,6 +524,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
             glosses={view.examGlosses ?? []}
             peekable={view.examSentences ?? null}
             explain={view.examExplain ?? null}
+            explainOpen={!!view.examExplainOpen}
             numbersOnly={!!view.examNumbersOnly}
             peek={peek}
             onPeek={(id) => setPeek(peek === id ? null : id)}
@@ -940,7 +945,9 @@ function WhyChip({ why, appearance }: { why: { label: string; text: string }; ap
 
 /**
  * 시험 보기 — 영어만 먼저. 핵심 단어는 색칠하고, 단어를 누르면 뜻, ▸를 누르면
- * 보기 아래에 짧은 한국어. 보기(카드)를 누르면 그걸 답으로 고른 것이다.
+ * 보기 아래에 짧은 한국어. 보기(카드)를 누르면 **고르기만** 하고, 아래 [제출]을 눌러야 답이 된다 —
+ * 「문장 보기」·▸·단어 뜻을 누르다 잘못 고르는 일이 잦아서 (2026-10-20 선생님).
+ * 해설 화면(`explain`)에서는 보기를 누르면 해설이 열린다. `explainOpen`이면 처음부터 다 펼쳐 둔다
  */
 function ExamOptions({
   options,
@@ -949,6 +956,7 @@ function ExamOptions({
   peek,
   onPeek,
   explain,
+  explainOpen,
   numbersOnly,
   disabled,
   onPick,
@@ -961,6 +969,8 @@ function ExamOptions({
   onPeek: (id: string) => void;
   /** 해설만 보는 화면 — 보기를 누르면 해설이 열린다 */
   explain: TutorView["examExplain"];
+  /** 해설을 처음부터 다 펼쳐 둔다 (분석 뒤 문제를 제출한 뒤) */
+  explainOpen: boolean;
   /** 보기 글 없이 숫자만 가로로 (문장 넣기) */
   numbersOnly: boolean;
   disabled: boolean;
@@ -968,10 +978,32 @@ function ExamOptions({
 }) {
   const [ko, setKo] = useState<string[]>([]);
   const [opened, setOpened] = useState<string[]>([]);
+  /** 고른 보기 — [제출]을 눌러야 답이 된다 */
+  const [selected, setSelected] = useState<string | null>(null);
+  const ids = options.map((o) => o.id).join(",");
+  // 보기가 바뀌면(다른 화면) 고른 것을 지운다. 해설을 다 펼치는 화면이면 처음부터 다 연다
+  useEffect(() => {
+    setSelected(null);
+    setOpened(explainOpen ? ids.split(",") : []);
+  }, [ids, explainOpen]);
   const pick = (o: { id: string; label: string }) => {
     if (disabled) return;
     if (explain) setOpened(opened.includes(o.id) ? opened.filter((x) => x !== o.id) : [...opened, o.id]);
-    else onPick(o.label);
+    else setSelected(selected === o.id ? null : o.id);
+  };
+  const submit = () => {
+    const o = options.find((x) => x.id === selected);
+    if (o && !disabled) onPick(o.label);
+  };
+  const submitButton = explain ? null : (
+    <button type="button" className="read-continue exam-submit" disabled={!selected || disabled} onClick={submit}>
+      제출
+    </button>
+  );
+  const tag = (id: string) => {
+    const e = explain?.[id];
+    if (!e) return "";
+    return e.picked ? (e.correct ? "내 답 · 정답" : "내 답 · 오답") : e.correct ? "정답" : "오답";
   };
   const [word, setWord] = useState<{ id: string; gloss: WordGloss } | null>(null);
   const NUM = "①②③④⑤";
@@ -987,7 +1019,7 @@ function ExamOptions({
               tabIndex={0}
               aria-disabled={disabled}
               aria-label={`${NUM[Number(o.id) - 1] ?? o.id} ${o.label}`}
-              className={`exam-num-btn${explain?.[o.id]?.correct ? " is-answer" : ""}${opened.includes(o.id) ? " on" : ""}`}
+              className={`exam-num-btn${explain?.[o.id]?.correct ? " is-answer" : ""}${opened.includes(o.id) || selected === o.id ? " on" : ""}${explain?.[o.id]?.picked && !explain[o.id]?.correct ? " picked-wrong" : ""}`}
               onClick={() => pick(o)}
               onKeyDown={(e) => e.key === "Enter" && pick(o)}
             >
@@ -1000,14 +1032,16 @@ function ExamOptions({
               .filter((o) => opened.includes(o.id))
               .map((o) => (
                 <div key={o.id} className={`exam-explain${explain[o.id]?.correct ? " right" : ""}`}>
-                  <b>{NUM[Number(o.id) - 1]} {explain[o.id]?.correct ? "정답" : "오답"}</b> {explain[o.id]?.text}
+                  <b>{NUM[Number(o.id) - 1]} {tag(o.id)}</b> {explain[o.id]?.text}
                 </div>
               ))
           : null}
+        {submitButton}
       </div>
     );
   }
   return (
+    <>
     <ol className="exam-options">
       {options.map((o) => {
         const ranges = highlightRanges(o.label, o.keywords);
@@ -1039,7 +1073,7 @@ function ExamOptions({
               role="button"
               tabIndex={0}
               aria-disabled={disabled}
-              className={`exam-option${explain?.[o.id]?.correct ? " is-answer" : ""}`}
+              className={`exam-option${explain?.[o.id]?.correct ? " is-answer" : ""}${selected === o.id ? " selected" : ""}${explain?.[o.id]?.picked && !explain[o.id]?.correct ? " picked-wrong" : ""}`}
               onClick={() => pick(o)}
               onKeyDown={(e) => e.key === "Enter" && pick(o)}
             >
@@ -1081,13 +1115,16 @@ function ExamOptions({
             {ko.includes(o.id) ? <div className="exam-ko">{o.ko}</div> : null}
             {explain && opened.includes(o.id) ? (
               <div className={`exam-explain${explain[o.id]?.correct ? " right" : ""}`}>
-                <b>{explain[o.id]?.correct ? "정답" : "오답"}</b> {explain[o.id]?.text}
+                <b>{tag(o.id)}</b> {explain[o.id]?.text}
               </div>
             ) : null}
           </li>
         );
       })}
     </ol>
+    {/* [제출]은 목록 밖 — 목록이 스크롤돼도 늘 보인다 */}
+    {submitButton}
+    </>
   );
 }
 
@@ -1141,10 +1178,11 @@ function placeWords(sentence: string, words: string[]): Map<string, [number, num
 
 /**
  * 찾는 말의 정규식. 끊어읽기를 켜면 문장 안 띄어쓰기 자리에 「 / 」(hair space + / + hair space)가 끼는데,
- * S·V·O 덩어리가 끊는 자리를 가로질러도 찾도록 띄어쓰기마다 그 모양도 허용한다 (2026-10-20 선생님: 끊는 자리는 그대로 두고 표시도 보이게)
+ * S·V·O 덩어리가 끊는 자리를 가로질러도 찾도록 띄어쓰기마다 그 모양도 허용한다 (2026-10-20 선생님: 끊는 자리는 그대로 두고 표시도 보이게).
+ * 수식어 [ ]도 건너뛴다 — 목적어 「music [in which … song]」처럼 O 안에 꾸밈이 든 경우
  */
 function wordRe(part: string): RegExp {
-  const esc = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/ /g, "(?: |\\u200A\\/\\u200A)");
+  const esc = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/ /g, "\\]?(?: |\\u200A\\/\\u200A)\\[?");
   return new RegExp(`${/^[a-z0-9]/.test(part) ? "(?<![a-z0-9])" : ""}${esc}(?![a-z0-9])`, "g");
 }
 

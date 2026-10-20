@@ -146,7 +146,16 @@ export type StoryPanel = {
   scenes: { label: string; icon: string; en: string; ko: string; fresh?: boolean }[];
 };
 
-export type StudyPanel = StructurePanel | MappingPanel | ContrastPanel | NotePanel | MapPanel | GroupsPanel | PicturePanel | StoryPanel;
+/**
+ * 공식 한 줄 — 「S + V … , -ing 또는 p.p. …」처럼 문장 모양을 가로로. `under`가 있는 조각은 밑줄을 긋고
+ * 그 아래에 이름(예: 분사구문)을 단다. 둘째 줄부터는 지문 속 예 (2026-10-20 선생님)
+ */
+export type FormulaPanel = {
+  kind: "formula";
+  lines: { parts: { text: string; under?: string }[]; example?: boolean }[];
+};
+
+export type StudyPanel = StructurePanel | MappingPanel | ContrastPanel | NotePanel | MapPanel | GroupsPanel | PicturePanel | StoryPanel | FormulaPanel;
 export type PanelRef = StudyPanel | string;
 
 /* ── 스텝 ─────────────────────────────────────────────────────────── */
@@ -204,11 +213,20 @@ type StepBase = {
   /** 건너뛰어도 되는 문장·부분 — 음영 */
   shaded?: string[];
   /**
+   * 이 화면에서 끊어읽기(/ 와 S·V·O·C)를 저절로 켠다 — 학생이 안 눌렀어도 (2026-10-20 선생님).
+   * 설명 화면(show)의 말에 「주어」·「목적어」가 있으면 따로 안 적어도 저절로 켜진다
+   */
+  slash_on?: boolean;
+  /**
    * 💡 누르면 말풍선으로 열리는 요령 (지문 밖에서도 쓰는 표현·요령).
    * `mark`가 있으면 Tip을 연 동안 문장에서 그 단어를 표시한다 — 긴 문장에서 찾기 힘든 단어 (one 등).
    * 단어 단위로 찾는다 (Nonetheless 안의 one은 안 잡는다)
+   *
+   * `trap`: **헷갈리는 단어** — 학생이 평소 아는 뜻과 이 글에서의 뜻이 다른 단어 (bear = 곰 ✕ → 견디다).
+   * 이것만 「〰 헷갈리는 단어」(문장 속 물결 밑줄)로 가고, 처음 읽는 화면부터 보인다.
+   * trap이 아닌 Tip은 「알면 좋지만 수업에서 말하기엔 자세한 것」 — 그 화면의 💡 칩으로만 (2026-10-20 선생님)
    */
-  tips?: { label: string; text: string; mark?: string; hint?: boolean }[];
+  tips?: { label: string; text: string; mark?: string; hint?: boolean; trap?: boolean }[];
   /** 「밑줄 문제 푸는 법」 중 지금 단계 (0 핵심 단어, 1 관계, 2 밑줄 뜻) */
   method?: number;
   /** 이 스텝에 「자세히 볼래요」 같은 버튼을 둔다. 누르면 `optional_of`가 이 스텝인 것들을 연다 */
@@ -322,6 +340,11 @@ export type ShowStep = StepBase & {
    * `content/tutor/grammar-drills/`)을 연습할 문법으로 남겨 보충학습실에서 drill을 풀게 한다 (2026-10-20 선생님)
    */
   practice?: string;
+  /**
+   * `practice`와 함께 — 묻지 않고 설명 화면 아래에 두는 두 번째 버튼 (예: 「나중에 보충학습실에서 더 공부할게요」).
+   * 누르면 담고 넘어가고, 큰 버튼(`button`)은 그냥 넘어간다. 담은 문법은 뒤의 「더 연습할까요?」를 건너뛴다 (2026-10-20 선생님)
+   */
+  practice_button?: string;
 };
 
 /**
@@ -566,10 +589,6 @@ export type OptionReview = {
   /** 그림과 함께 하는 설명 */
   say: string;
   panel?: StudyPanel;
-  /** 어디서 헷갈렸는지 묻는 말 (물음표 하나) */
-  ask: string;
-  /** 고른 이유 — `skills`에 기록하고 `reply`로 답한다 */
-  choices: { label: string; skills: string[]; reply: string }[];
 };
 
 export type ExamCopy = {
@@ -577,9 +596,8 @@ export type ExamCopy = {
   /** 바로 풀기에서 — 색칠·한국어가 없으니 다른 말을 한다 */
   ask_first?: string;
   /**
-   * 많이 고른 오답 — 이 보기를 고르면 한 줄 해설 대신 같이 자세히 본다.
-   * 「많이 틀렸어요, 같이 볼까요?」 → 그림과 설명 → 「어디서 헷갈렸어요?」(버튼) → 답에 맞춘 말.
-   * 고른 이유는 skill로 기록해, 다음 수업에서 비슷한 문장이 나오면 강조하는 데 쓴다
+   * 많이 고른 오답 — 문제를 제출한 뒤 이 보기를 골랐으면 [같이 자세히 볼래요]로 그림과 설명 한 화면.
+   * 「어디서 헷갈렸어요?」 되묻기는 없앴다 (2026-10-20 선생님) — 헷갈린 곳 기록은 나중에 다른 방법으로
    */
   option_review?: Record<string, OptionReview>;
   /** 마지막 문제에서 고른 오답마다 수업 끝 「헷갈린 포인트」 한 줄. 없으면 `option_feedback` */
@@ -594,6 +612,11 @@ export type ExamCopy = {
    * 없으면 바로 다시 볼 주기로 (21번)
    */
   answer_explain?: string;
+  /**
+   * 정답 해설 다음에 한 화면 더 — 이 문제에 대한 참고 (예: 「more·as 짝은 모의고사에 거의 안 나와서 오답률 1위였어요」).
+   * 정답을 말한 뒤라 답을 미리 말할 걱정이 없다 (2026-10-20 선생님)
+   */
+  answer_note?: string;
   final_wrong: string;
 };
 

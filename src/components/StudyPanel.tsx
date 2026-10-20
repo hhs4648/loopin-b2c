@@ -42,6 +42,29 @@ export function StudyPanelView({ panel, onPick }: { panel: StudyPanel; onPick?: 
     );
   }
 
+  if (panel.kind === "formula") {
+    return (
+      <div className="study-panel formula">
+        {panel.lines.map((line, i) => (
+          <div key={i} className={`formula-line${line.example ? " example" : ""}`}>
+            {line.parts.map((p, j) =>
+              p.under ? (
+                <span key={j} className="formula-part under">
+                  <span className="formula-text">{p.text}</span>
+                  <small className="formula-name">{p.under}</small>
+                </span>
+              ) : (
+                <span key={j} className="formula-part">
+                  <span className="formula-text">{p.text}</span>
+                </span>
+              ),
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   if (panel.kind === "note") {
     return (
       <div className="study-panel note">

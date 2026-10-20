@@ -137,31 +137,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 15%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "⑤ 뒤에도 more elaborate가 나와서 끌리기 쉬워요. 그런데 ⑤ 앞에서 이미 '약간의 차이가 보인다'가 나왔어요. '그대로 남는다' 바로 뒤에 차이가 나오는 ④가 먼저 끊겨요.",
-          "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "elaborate가 같아서 골랐어요",
-              "skills": [
-                "word_match"
-              ],
-              "reply": "알려 줘서 고마워요. 같은 낱말만 보고 고르지 말고, 앞뒤 흐름이 어디서 끊기는지 확인해야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "slight variations가 변화인 줄 몰랐어요",
-              "skills": [
-                "variation_meaning"
-              ],
-              "reply": "알려 줘서 고마워요. variation은 '차이, 변형'이라 '변한다' 쪽 말이에요. 앞으로 비슷한 말이 나오면 같이 짚어 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "word_match",
-                "variation_meaning"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 낱말 뜻과 흐름을 같이 짚어 볼게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -437,7 +412,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 many signals, 동사는 go through, 목적어는 changes예요. 콤마 사이 as 덩어리는 '전해질 때'라는 때를 알려 줘요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "means",
+              "text": "이 글에서는 → 방법  ('의미하다' 아님)",
+              "mark": "means",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "g_elab",
@@ -716,6 +699,12 @@
               "label": "so ~ that …",
               "text": "'너무 ~해서 …하다'예요. so bizarre that we wonder = 너무 기이해서 우리는 궁금해한다.",
               "mark": "so"
+            },
+            {
+              "label": "displays",
+              "text": "이 글에서는 → (동물의) 표현  ('화면, 전시' 아님)",
+              "mark": "displays",
+              "trap": true
             }
           ]
         },

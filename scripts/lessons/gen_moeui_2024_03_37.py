@@ -305,12 +305,6 @@ exam = {
          "4": "많이 고른 오답이에요. (A)의 these designs는 자연을 중시하지 않는 설계라 경관 도시론이 아니에요. 그리고 both approaches는 두 방식이 다 나온 뒤에 와야 해요."},
         {"4": review(31.3,
                      "(C) 끝이 Landscape Urbanism이라 바로 뒤에 Landscape Urbanists로 시작하는 (A)를 붙이기 쉬워요. 하지만 (A)는 경관 도시론자들이 these designs가 자연을 중시하지 않는다고 비판하는 말이에요. 자연 서식지를 옹호하는 경관 도시론의 설계를 가리킬 수 없고, both approaches도 두 방식이 다 나온 뒤라야 해요.",
-                     "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
-                     [("같은 단어(Landscape)로 이었어요", ["same_word_link"],
-                       "알려 줘서 고마워요. 같은 단어가 반복된다고 바로 이어지는 건 아니에요. these designs처럼 가리키는 말이 무엇을 받는지 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."),
-                      ("these designs가 무엇인지 못 봤어요", ["these_refers"],
-                       "알려 줘서 고마워요. these designs는 '자연을 우선하지 않는' 설계라서 신도시론이에요. 앞으로 these가 가리키는 대상을 먼저 짚어 줄게요."),
-                      ("둘 다요", ["same_word_link", "these_refers"], "알려 줘서 고마워요. 앞으로 가리키는 말부터 같이 짚어 볼게요.")],
                      panel=rows(("(C) 끝", "Landscape Urbanism … native habitat designs", "경관 도시론 = 자연 서식지 옹호", "hl"),
                                 ("(A) 첫머리", "these designs do not prioritize the natural environment", "자연을 우선하지 않는 설계 = 신도시론", "hl2")),
                      rank_word="가장 많이 고른")}),
@@ -334,6 +328,17 @@ lesson = base_lesson(
                            g("popularize", "대중화하다"), g("controversial", "논란이 많은"), g("habitat", "서식지"), g("diverse", "다양한")],
                "options": []},
     sentences=sentences)
+
+# 헷갈리는 단어(trap) — 평소 아는 뜻과 이 글의 뜻이 다른 단어 (2026-10-20 선생님). 해설 번역과 대조함:
+# just 정당한.
+# 그 문장의 첫 스텝에 붙이면 처음 읽는 화면부터 물결 밑줄로 보인다. 숙어·문법 요령은 헷갈리는 단어가 아니라 Tip이다
+TRAPS = {
+    3: [tip("just", "이 글에서는 → 정당한  ('단지' 아님)", "just sustainabilities", trap=True)],
+}
+for _s in lesson["sentences"]:
+    if _s["id"] in TRAPS:
+        _first = _s["steps"][0]
+        _first["tips"] = [*_first.get("tips", []), *TRAPS[_s["id"]]]
 
 finish(ID, lesson, senses=SENSES, words=WORDS, topic_intro="순서 푸는 법",
        chunks={"historic ideas": "역사적인 생각들", "find": "찾다", "expression": "표현", "various interpretations": "여러 가지 해석",

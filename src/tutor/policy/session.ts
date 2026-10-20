@@ -9,7 +9,14 @@ import { askedAboutWord } from "../proper-nouns";
 import { addVocab } from "../vocab";
 import { recordLessonEvents } from "../lessonLog";
 import { noteExamAnswer } from "../progress";
-import { addGrammarPractice } from "../grammarPractice";
+import { groupOf } from "../grammarDrills";
+import { addGrammarPractice, loadGrammarPractice } from "../grammarPractice";
+
+/** 이 문법(drill 또는 묶음)을 이미 보충학습실에 담았나 — 같은 묶음이면 담은 것으로 본다 */
+function grammarSaved(id: string): boolean {
+  const group = groupOf(id)?.id ?? id;
+  return loadGrammarPractice().some((e) => e.id === id || (groupOf(e.id)?.id ?? e.id) === group);
+}
 import { bumpMethodIntro, methodIntroCount, saveReview, type ReviewStatus } from "./review";
 import { decideOnChoice, openingAction, shouldShow, type DecideInput } from "./decide";
 import { choiceCopy, pickCopy, showCopy, thinkCopy, translateCopy } from "./copy";
@@ -128,6 +135,8 @@ const PRAISE_MS = 1000;
 const LONG_PRAISE = 25;
 const YES_BTN = "네";
 const NO_THANKS_BTN = "괜찮아요";
+/** 분석 뒤 문제에서 많이 고른 오답을 골랐을 때 — 보기 해설 아래 고를 수 있는 「같이 자세히 보기」 */
+const EXAM_REVIEW_BTN = "같이 자세히 볼래요";
 const ANALYZE_DEEP_BTN = policyFrame.buttons.analyze_deep;
 const SUMMARY_ONLY_BTN = policyFrame.buttons.summary_only;
 const END_NOW_BTN = policyFrame.buttons.end_now;
@@ -151,7 +160,7 @@ const DEFAULT_DEPS: PolicyDeps = {
     // 목록의 「몇 번 중 몇 번 맞힘」 — 분석을 마치고 고른 보기가 기준 (분석 없이 끝내면 바로 풀기)
     for (const e of events) {
       const o = e.observation as { kind?: string; correct?: boolean; when?: string } | null;
-      if (o?.kind === "exam" && typeof o.correct === "boolean") noteExamAnswer(o.correct, o.when === "first" ? "first" : "final");
+      if (o?.kind === "exam" && typeof o.correct === "boolean") noteExamAnswer(o.correct, o.when === "first" ? "first" : "final", e.lessonId);
     }
   },
   now: () => Date.now(),
@@ -231,6 +240,13 @@ type State = {
   points: { key: string; title: string; text: string }[];
   /** 마지막 문제에서 정답을 골라 해설(`answer_explain`)을 보는 중 — 「다음으로」면 다시 볼 주기로 */
   examSolved: boolean;
+  /** 정답 해설 다음 참고(`answer_note`)를 보여 줬나 */
+  examNoted: boolean;
+  /**
+   * 분석 뒤 문제에서 학생이 제출한 보기 — 한 번 제출하면 맞든 틀리든 정답을 밝히고 보기마다 짧은 해설을 아래에 단다.
+   * 틀린 보기를 하나씩 지우며 다시 고르게 하던 건 수업이 길어져서 뺐다 (2026-10-20 선생님)
+   */
+  examPicked: string | null;
   /** 많이 고른 오답을 같이 자세히 보는 중 — 보기 id와 몇 번째 화면인지 (0 제안 · 1 설명 · 2 질문 · 3 답) */
   examReview: { optionId: string; step: number } | null;
   si: number;
@@ -305,6 +321,8 @@ export function createPolicySession(
   */
   let baseline: StudentState = d.loadStudent();
   let s = initial(learnerName?.trim() || null);
+  /** 레슨 모양 — 문장 id와 스텝 id들. 이어 하기로 저장한 자리가 아직 맞는지 본다 */
+  const shape = () => lesson.sentences.map((x) => `${x.id}:${x.steps.map((st) => st.id).join(",")}`).join("|");
 
   function initial(name: string | null): State {
     const base: State = {
@@ -323,6 +341,8 @@ export function createPolicySession(
       ri: 0,
       firstAnswer: null,
       examSolved: false,
+      examNoted: false,
+      examPicked: null,
       examReview: null,
       points: [],
       introDone: false,
@@ -598,77 +618,50 @@ export function createPolicySession(
       return;
     }
     if (exam.analysis_first) {
-      // 틀리면 그 보기를 지우고 다시 고르게 한다. 맞히면 마무리(복습 주기 · 단어)로
+      // 한 번 제출하면 끝 — 정답을 밝히고 보기마다 짧은 해설을 아래에 단다. 「다음으로」면 참고(answer_note) → 마무리로
       if (!correct) {
-        const review = ex.option_review?.[picked.id];
-        s = {
-          ...s,
-          finalWrong: [...s.finalWrong, picked.id],
-          anyExplained: true,
-          message: `${L.wrong_lead} ${ex.option_feedback?.[picked.id] ?? ""}`.trim(),
-        };
         addPoint(
           `exam_${picked.id}`,
           `문제 ${"①②③④⑤"[Number(picked.id) - 1] ?? picked.id}`,
           ex.option_points?.[picked.id] ?? ex.option_feedback?.[picked.id] ?? "",
         );
-        if (review) {
-          // 많이 고른 오답 — 그 밑줄이 든 문장으로 가서 같이 자세히 본다
-          const u = underlinesOf(exam)[exam.options.findIndex((o) => o.id === picked.id)];
-          const at = u ? lesson.sentences.findIndex((x) => x.text.includes(u)) : -1;
-          s = {
-            ...s,
-            examReview: { optionId: picked.id, step: 0 },
-            si: at >= 0 ? at : s.si,
-            message: review.intro,
-            buttons: [review.intro_button],
-          };
-        }
-        return;
       }
-      if (ex.answer_explain) {
-        s = { ...s, examSolved: true, message: ex.answer_explain, buttons: [NEXT_BTN] };
-        return;
-      }
-      startReview();
+      const answerNo = "①②③④⑤"[Number(exam.options.find((o) => o.correct)?.id) - 1] ?? "";
+      s = {
+        ...s,
+        examSolved: true,
+        examPicked: picked.id,
+        finalWrong: correct ? s.finalWrong : [...s.finalWrong, picked.id],
+        anyExplained: s.anyExplained || !correct,
+        message: correct ? ex.final_correct : `${L.wrong_lead} 정답은 ${answerNo}예요.`,
+        // 많이 고른 오답이면 같이 자세히 볼 수도 있다 — 강제하지 않는다 (고른 이유는 skill로 기록)
+        buttons: !correct && ex.option_review?.[picked.id] ? [NEXT_BTN, EXAM_REVIEW_BTN] : [NEXT_BTN],
+        effect: correct ? "light" : null,
+      };
       return;
     }
     s = { ...s, anyExplained: s.anyExplained || !correct, effect: correct && s.firstAnswer && !s.firstAnswer.correct ? "light" : null };
     finish(`${correct ? ex.final_correct : ex.final_wrong} `);
   }
 
-  /** 많이 고른 오답을 같이 자세히 본다 — 제안 → 그림·설명 → 어디서 헷갈렸나 → 답 → 문제로 */
-  function onExamReview(text: string) {
+  /** 많이 고른 오답을 같이 자세히 본다 — [같이 자세히 볼래요] → 그림·설명 한 화면 → 보기 해설로 */
+  function onExamReview() {
     const r = s.examReview!;
     const review = copy.exam!.option_review![r.optionId]!;
     if (r.step === 0) {
       s = { ...s, examReview: { ...r, step: 1 }, message: review.say, panel: review.panel ?? null, buttons: [NEXT_BTN] };
       return;
     }
-    if (r.step === 1) {
-      s = { ...s, examReview: { ...r, step: 2 }, message: review.ask, buttons: review.choices.map((c) => c.label) };
-      return;
-    }
-    if (r.step === 2) {
-      const pick = review.choices.find((c) => c.label === text);
-      if (!pick) return;
-      // 헷갈린 곳을 기록한다 — 다음 수업에서 비슷한 문장이 나오면 이 skill을 보고 강조한다
-      let student = s.student;
-      for (const skill of pick.skills) student = recordPerformance(student, skill, "explained", 1);
-      s = { ...s, student };
-      log({ kind: "wrong_reason", optionId: r.optionId, reason: pick.label, skills: pick.skills }, { action: "SUMMARIZE", reason: ["wrong_reason"] });
-      flush();
-      s = { ...s, examReview: { ...r, step: 3 }, message: pick.reply, buttons: [NEXT_BTN] };
-      return;
-    }
-    // 문제로 돌아온다 — 고른 보기는 지워진 채로
+    // 설명 한 화면 뒤 바로 보기 해설로 — 「어디서 헷갈렸어요?」는 묻지 않는다 (2026-10-20 선생님)
+    // 보기 해설 화면으로 돌아온다 — 정답은 이미 밝혔으니 다시 고르지 않는다
+    const answerNo = "①②③④⑤"[Number(lesson.exam?.options.find((o) => o.correct)?.id) - 1] ?? "";
     s = {
       ...s,
       examReview: null,
       si: lesson.sentences.indexOf(examSentence()),
       panel: null,
-      message: L.review_back,
-      buttons: [],
+      message: `${L.wrong_lead} 정답은 ${answerNo}예요.`,
+      buttons: [NEXT_BTN],
     };
   }
 
@@ -723,6 +716,8 @@ export function createPolicySession(
       ...s,
       stage: "review",
       examSolved: false,
+      examNoted: false,
+      examPicked: null,
       reviewStatus: missed ? "analyzed_wrong" : "analyzed_correct",
       reviewWeeks: missed ? 1 : 3,
       buttons: [NEXT_BTN],
@@ -907,6 +902,7 @@ export function createPolicySession(
       if (s.resolved) return [NEXT_BTN];
       return s.thinkHinted ? [THOUGHT_BTN] : [THOUGHT_BTN, HINT_BTN];
     }
+    if (st.practice && st.practice_button) return [st.button ?? NEXT_BTN, st.practice_button];
     if (st.practice) return [st.button ?? YES_BTN, NO_THANKS_BTN];
     const main = [st.button ?? NEXT_BTN, ...(st.known && st.button !== KNOWN_BTN ? [KNOWN_BTN] : [])];
     return st.detail_button ? [...main, st.detail_button] : main;
@@ -950,10 +946,10 @@ export function createPolicySession(
       const h = same(w);
       return h ? { ...h, word: true as const } : w;
     });
-    // 손으로 쓴 단어 Tip(문장의 단어에 붙은 것 — mark가 있고 문장에 나오는 것)도 처음 읽을 때부터 (2026-10-16 선생님)
-    // 요령 칩(「순서 문제 요령」처럼 mark 없는 것)은 그 화면에서만
+    // 손으로 쓴 헷갈리는 단어(trap — 평소 뜻과 이 글의 뜻이 다른 단어)도 처음 읽을 때부터 (2026-10-16 선생님)
+    // trap이 아닌 Tip(문법 요령·숙어 등)은 헷갈리는 단어가 아니다 — 그 화면의 💡 칩으로만 (2026-10-20 선생님)
     const fromHand = hand
-      .filter((t) => t.mark && sen.text.toLowerCase().includes(t.mark.split(" … ")[0]!.toLowerCase()))
+      .filter((t) => t.trap && t.mark && sen.text.toLowerCase().includes(t.mark.split(" … ")[0]!.toLowerCase()))
       .map((t) => ({ ...t, word: true as const }));
     const seen = new Set<string>();
     return [...fromHand, ...fromExcel]
@@ -1012,6 +1008,12 @@ export function createPolicySession(
         continue;
       }
       // 「자세히 볼래요」를 안 누른 학생에게는 그 뒤의 자세한 스텝을 보여 주지 않는다
+      // 이미 담은 문법이면 「이 문법을 나중에 좀 더 연습할까요?」를 다시 묻지 않는다
+      const cur = step();
+      if (cur.type === "show" && cur.practice && !cur.practice_button && grammarSaved(cur.practice)) {
+        s = { ...s, pi: s.pi + 1 };
+        continue;
+      }
       if (step().optional_of && s.detailOpen !== step().optional_of) {
         s = { ...s, pi: s.pi + 1 };
         continue;
@@ -1625,6 +1627,10 @@ export function createPolicySession(
       // 끊어읽기 때 같이 보이는 S·V·O·C — 주어·동사 찾기 전에도 보인다. 학생이 켜야만 보이는 도움이라 답이 새는 게 아니다 (2026-10-20 선생님)
       slashRoles: inLesson && shown === sen.text ? (sen.roles ?? []) : [],
       slashModifiers: inLesson && shown === sen.text ? (sen.modifiers ?? []) : [],
+      // 스텝이 켜 달라고 했거나(slash_on), 주어·목적어를 말하는 설명 화면(show)이면 끊어읽기를 저절로 켠다 —
+      // 학생이 안 눌렀어도 (2026-10-20 선생님). 고르는 화면(choice·pick)은 답이 보이니 켜지 않는다
+      slashAuto: inLesson && !s.readingFirst && shown === sen.text &&
+        (!!st.slash_on || (st.type === "show" && /주어|목적어/.test(s.message) && !!sen.roles?.length)),
       bracket: inLesson && !s.readingFirst && st.bracket && shown.includes(st.bracket) ? `[${st.bracket}]` : null,
       activeChunk: shown,
       chunkLabel: sen.label ?? paragraphOf(s.si)?.label ?? `${s.si + 1}문장`,
@@ -1720,9 +1726,10 @@ export function createPolicySession(
             }
           : undefined,
       examOptions:
-        exam && lesson.exam?.analysis_first && !(s.stage === "exam_first" && s.firstAnswer) && !s.examSolved && !s.examReview
+        exam && lesson.exam?.analysis_first && !(s.stage === "exam_first" && s.firstAnswer) && (!s.examSolved || !!s.examPicked) && !s.examReview
           ? lesson.exam.options
-              .filter((o) => !s.finalWrong.includes(o.id))
+              // 제출한 뒤에는 다섯 보기를 다 두고 해설을 단다
+              .filter((o) => !!s.examPicked || !s.finalWrong.includes(o.id))
               .map((o) =>
                 // 바로 풀기는 실제 시험처럼 — 색칠도 한국어도 없이
                 s.stage === "exam_first"
@@ -1732,13 +1739,15 @@ export function createPolicySession(
           : null,
       examGlosses: lesson.exam?.glosses ?? [],
       // 바로 맞힌 뒤 분석을 본 학생 — 마지막은 다시 풀지 않고 보기마다 해설
+      // 바로 맞힌 뒤 분석을 본 학생(explainOnly), 또는 분석 뒤 문제를 제출한 학생(examPicked) — 보기마다 짧은 해설
       examExplain:
-        s.stage === "exam_final" && s.explainOnly && lesson.exam
+        s.stage === "exam_final" && (s.explainOnly || s.examPicked) && lesson.exam
           ? Object.fromEntries(
               lesson.exam.options.map((o) => [
                 o.id,
                 {
                   correct: !!o.correct,
+                  picked: s.examPicked === o.id,
                   text: o.correct
                     ? (copy.exam!.answer_explain ?? copy.exam!.final_correct).replace(/^정답이에요!\s*/, "")
                     : (copy.exam!.option_feedback?.[o.id] ?? ""),
@@ -1746,6 +1755,8 @@ export function createPolicySession(
               ]),
             )
           : null,
+      // 제출한 뒤에는 해설을 처음부터 다 펼쳐 둔다 (눌러서 여는 건 explainOnly 화면만)
+      examExplainOpen: s.stage === "exam_final" && !!s.examPicked,
       examSentences: (() => {
         const ex = lesson.exam;
         const lines = ex ? underlinesOf(ex) : [];
@@ -1926,12 +1937,26 @@ export function createPolicySession(
         return view();
       }
       if (s.stage === "exam_final" && s.examReview) {
-        onExamReview(text);
+        onExamReview();
         return view();
       }
       if (s.stage === "exam_final" && s.examSolved) {
-        // 정답 해설을 봤다 — 「다음으로」면 다시 볼 주기로
-        if (text === NEXT_BTN) startReview();
+        // 많이 고른 오답 — 그 밑줄이 든 문장으로 가서 같이 자세히 본다
+        const review = s.examPicked ? copy.exam?.option_review?.[s.examPicked] : undefined;
+        if (text === EXAM_REVIEW_BTN && review && s.examPicked) {
+          const exam = lesson.exam!;
+          const u = underlinesOf(exam)[exam.options.findIndex((o) => o.id === s.examPicked)];
+          const at = u ? lesson.sentences.findIndex((x) => x.text.includes(u)) : -1;
+          s = { ...s, examReview: { optionId: s.examPicked, step: 0 }, si: at >= 0 ? at : s.si };
+          onExamReview();
+          return view();
+        }
+        // 정답 해설을 봤다 — 참고(answer_note)가 있으면 한 화면 더, 그다음 「다음으로」면 다시 볼 주기로
+        if (text === NEXT_BTN) {
+          const note = copy.exam?.answer_note;
+          if (note && !s.examNoted) s = { ...s, examNoted: true, message: note, buttons: [NEXT_BTN] };
+          else startReview();
+        }
         return view();
       }
       if (s.stage === "exam_first" || s.stage === "exam_final") {
@@ -2016,7 +2041,8 @@ export function createPolicySession(
       }
       // 「이 문법을 나중에 좀 더 연습할까요?」 — 「네」면 연습할 문법으로 남긴다
       if (st.type === "show" && st.practice) {
-        const yes = text === (st.button ?? YES_BTN);
+        // 설명 화면 아래 「보충학습실에서 더 공부할게요」면 그 버튼이 「네」, 큰 버튼은 그냥 넘어가기
+        const yes = st.practice_button ? text === st.practice_button : text === (st.button ?? YES_BTN);
         log({ kind: "continue" }, { action: "CONTINUE", interactionId: st.id, reason: [yes ? "practice_saved" : "practice_declined"] });
         if (yes) {
           addGrammarPractice(st.practice, lesson.id, d.now());
@@ -2062,6 +2088,23 @@ export function createPolicySession(
     /** 예전 엔진의 항목 기록은 이 레슨에 없다. 학습 이벤트는 기기에 따로 쌓는다 */
     records: (): PointRecord[] => [],
     lessonId: () => lesson.id,
+    /**
+     * 이어 하기 (2026-10-20 선생님: 중간에 나가면 멈춘 곳부터) — 지금 수업 자리를 통째로. 학생 기록은 기기에 따로 있어 뺀다.
+     * shape는 레슨 모양 — 생성기로 다시 만들어 문장·스텝이 바뀌었으면 되살리지 않는다
+     */
+    snapshot: (): ResumeSnapshot => ({ shape: shape(), state: { ...s, student: undefined } }),
+    /** 되살리기 — 레슨 모양이 그때와 다르거나 이미 끝난 수업이면 false (처음부터) */
+    restore(snap: ResumeSnapshot): boolean {
+      const st = snap?.state as Partial<State> | undefined;
+      if (!st || snap.shape !== shape() || st.stage === "done") return false;
+      if (st.stage !== "intro") methodBumped = true;
+      s = { ...s, ...st, learnerName: s.learnerName, student: d.loadStudent(), shownAt: d.now(), effect: null };
+      return true;
+    },
+    /** 「봤다」 — 마지막 문장까지 왔다 (중간 문장을 건너뛰었어도). 답을 제출한 건 progress가 따로 센다 */
+    reachedEnd: () =>
+      ["exam_final", "points", "summary", "review", "words", "match", "done"].includes(s.stage) ||
+      (s.stage === "lesson" && s.si >= lesson.sentences.length - 1),
     learnerName: () => s.learnerName,
     lastAction: () => s.lastAction,
     reset() {
@@ -2074,3 +2117,6 @@ export function createPolicySession(
 }
 
 export type PolicySession = ReturnType<typeof createPolicySession>;
+
+/** 이어 하기로 저장해 두는 수업 자리 — 안은 세션만 안다 */
+export type ResumeSnapshot = { shape: string; state: unknown };

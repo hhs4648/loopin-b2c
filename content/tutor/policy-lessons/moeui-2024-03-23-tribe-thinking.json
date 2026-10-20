@@ -793,6 +793,14 @@
           "highlight": [
             "as individuals",
             "as a member of a tribe"
+          ],
+          "tips": [
+            {
+              "label": "reason",
+              "text": "이 글에서는 → 판단하다, 따져 생각하다  ('이유' 아님)",
+              "mark": "reason",
+              "trap": true
+            }
           ]
         }
       ]
@@ -1281,7 +1289,15 @@
           "levels": [
             "초"
           ],
-          "slot": "s6_basic"
+          "slot": "s6_basic",
+          "tips": [
+            {
+              "label": "sentence",
+              "text": "이 글에서는 → (사형) 선고  ('문장' 아님)",
+              "mark": "death sentence",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "s6_match",
@@ -1734,7 +1750,8 @@
             {
               "label": "favor",
               "text": "동사로 '편들다, ~에게 유리하게 하다'예요. 명사 '호의'만 있는 게 아니에요.",
-              "mark": "favoring"
+              "mark": "favoring",
+              "trap": true
             }
           ]
         },

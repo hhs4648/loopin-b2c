@@ -1180,6 +1180,20 @@
           "known": "while_two_meanings",
           "highlight": [
             "while"
+          ],
+          "tips": [
+            {
+              "label": "body",
+              "text": "이 글에서는 → (많은) 양, 모음  ('몸' 아님)",
+              "mark": "a body of",
+              "trap": true
+            },
+            {
+              "label": "work",
+              "text": "이 글에서는 → 작품  ('일' 아님)",
+              "mark": "work of literature",
+              "trap": true
+            }
           ]
         },
         {

@@ -1366,6 +1366,14 @@
           "method": 1,
           "highlight": [
             "bad habits"
+          ],
+          "tips": [
+            {
+              "label": "cloud",
+              "text": "이 글에서는 → 흐리게 하다, 망치다  ('구름' 아님)",
+              "mark": "cloud",
+              "trap": true
+            }
           ]
         }
       ]

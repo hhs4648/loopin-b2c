@@ -530,32 +530,7 @@
             "title": "a carpet patterned uniformly enough",
             "text": "힐끗 보면 균일한 무늬로 보인다"
           }
-        },
-        "ask": "그래서 ③alike는 문맥에 맞아요. 어디서 헷갈렸어요?",
-        "choices": [
-          {
-            "label": "No를 못 봤어요",
-            "skills": [
-              "no_negation"
-            ],
-            "reply": "알려 줘서 고마워요. 'No two … alike'처럼 No가 앞에 붙으면 뜻이 뒤집혀요. 앞으로 비슷한 문장이 나오면 No를 강조해서 알려 줄게요."
-          },
-          {
-            "label": "yet 앞뒤가 반대인 게 헷갈렸어요",
-            "skills": [
-              "yet_contrast"
-            ],
-            "reply": "알려 줘서 고마워요. yet 앞뒤는 반대 관계예요. 앞으로 비슷한 문장이 나오면 yet을 강조해서 알려 줄게요."
-          },
-          {
-            "label": "둘 다요",
-            "skills": [
-              "no_negation",
-              "yet_contrast"
-            ],
-            "reply": "알려 줘서 고마워요. 앞으로 비슷한 문장이 나오면 No와 yet을 강조해서 알려 줄게요."
-          }
-        ]
+        }
       },
       "4": {
         "intro": "아쉽게도 틀렸어요. ④는 38%나 고른, 가장 많이 헷갈린 보기예요. 같이 자세히 볼까요?",
@@ -573,32 +548,7 @@
             "title": "9 · the constituent grasses … really do matter",
             "text": "풀 하나하나가 정말 중요하다"
           }
-        },
-        "ask": "그래서 ④ignored는 문맥에 맞아요. 어디서 헷갈렸어요?",
-        "choices": [
-          {
-            "label": "ignored가 부정적인 말이라 틀려 보였어요",
-            "skills": [
-              "word_feeling"
-            ],
-            "reply": "알려 줘서 고마워요. 단어 느낌이 아니라 앞뒤 문장과의 관계로 판단해야 해요. 앞으로 비슷한 문제가 나오면 이 점을 강조해서 알려 줄게요."
-          },
-          {
-            "label": "Not so가 반대라는 걸 못 봤어요",
-            "skills": [
-              "not_so_contrast"
-            ],
-            "reply": "알려 줘서 고마워요. 'Not so'는 앞 문장과 반대라는 신호예요. 앞으로 비슷한 문장이 나오면 Not so를 강조해서 알려 줄게요."
-          },
-          {
-            "label": "둘 다요",
-            "skills": [
-              "word_feeling",
-              "not_so_contrast"
-            ],
-            "reply": "알려 줘서 고마워요. 앞으로 비슷한 문제가 나오면 단어 느낌보다 앞뒤 관계를, 특히 Not so를 강조해서 알려 줄게요."
-          }
-        ]
+        }
       }
     },
     "option_points": {
@@ -614,7 +564,7 @@
       "5": "기억력이 무한한 사람은 풀을 굳이 묶지 않아도 하나하나 다 기억할 수 있어요. 그래서 묶일 필요가 없다는 ⑤는 문맥에 맞아요."
     },
     "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
-    "from": "21q09f"
+    "from": "1y1jxts"
   },
   "intro": {
     "topic": {

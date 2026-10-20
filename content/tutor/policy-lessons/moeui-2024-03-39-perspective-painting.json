@@ -38,7 +38,7 @@
       "button": "네",
       "image": "topic",
       "brief": {
-        "say": "그림은 눈에 보이는 대로만 그려야 할까요? 이번 글은 원근법 그림과 예전 그림을 견줘요."
+        "say": "그림은 눈에 보이는 대로만 그려야 할까요? 이번 글은 원근법 그림과 예전 그림을 비교해요."
       }
     },
     {
@@ -137,31 +137,6 @@
           "intro": "아쉽게도 틀렸어요. 이 보기는 27.9%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
           "say": "④에 넣으면 This가 바로 앞 '예전 그림은 정보도 덜 준다'를 가리켜요. 그런데 ② 뒤 These pictures부터 이미 예전 그림 이야기였어요. 예전 그림을 처음 꺼내는 주어진 문장은 These pictures보다 앞, ②에 와야 해요.",
-          "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "These pictures가 원근법 그림인 줄 알았어요",
-              "skills": [
-                "these_refers"
-              ],
-              "reply": "알려 줘서 고마워요. These pictures는 '보는 대로 나타내지 않는' 그림이라 예전 그림이에요. 앞으로 비슷한 문장이 나오면 These가 가리키는 걸 먼저 짚어 줄게요."
-            },
-            {
-              "label": "less informative와 대조라 이어지는 줄 알았어요",
-              "skills": [
-                "contrast_guess"
-              ],
-              "reply": "알려 줘서 고마워요. 대조 느낌만으로 정하지 말고, 가리키는 말(This, These)이 무엇을 받는지 확인해야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "these_refers",
-                "contrast_guess"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 These가 가리키는 대상부터 같이 짚어 볼게요."
-            }
-          ],
           "panel": {
             "kind": "structure",
             "rows": [
@@ -183,32 +158,7 @@
         "3": {
           "intro": "아쉽게도 틀렸어요. 이 보기는 25.8%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
-          "say": "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요.",
-          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
-          "choices": [
-            {
-              "label": "These pictures가 원근법 그림인 줄 알았어요",
-              "skills": [
-                "these_refers"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 These·They가 가리키는 대상을 먼저 짚어 줄게요."
-            },
-            {
-              "label": "but 뒤 내용을 놓쳤어요",
-              "skills": [
-                "but_after"
-              ],
-              "reply": "알려 줘서 고마워요. but 뒤 'do not represent scenes as we might see them'이 열쇠였어요. 앞으로 but 뒤를 강조해서 알려 줄게요."
-            },
-            {
-              "label": "둘 다요",
-              "skills": [
-                "these_refers",
-                "but_after"
-              ],
-              "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 but 뒤를 같이 짚어 줄게요."
-            }
-          ]
+          "say": "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요."
         }
       }
     }
@@ -439,7 +389,15 @@
             "praise": "다 찾았어요!",
             "explain": "주어는 This, 동사는 stands (in contrast to), to 뒤 목적어는 earlier figurative art예요."
           },
-          "method": 0
+          "method": 0,
+          "tips": [
+            {
+              "label": "figurative",
+              "text": "이 글에서는 → 구상(화)의 — 사물을 알아볼 수 있게 그린  ('비유적인' 아님)",
+              "mark": "figurative",
+              "trap": true
+            }
+          ]
         },
         {
           "id": "g_this",
@@ -969,6 +927,18 @@
               "label": "as + 주어 + 동사",
               "text": "여기서 as는 '~함에 따라'예요. as they move away = 그것들이 멀어짐에 따라.",
               "mark": "as"
+            },
+            {
+              "label": "present",
+              "text": "이 글에서는 → 나타내다, 보여 주다  ('선물, 현재' 아님)",
+              "mark": "present",
+              "trap": true
+            },
+            {
+              "label": "figures",
+              "text": "이 글에서는 → 인물  ('숫자' 아님)",
+              "mark": "figures",
+              "trap": true
             }
           ]
         },
