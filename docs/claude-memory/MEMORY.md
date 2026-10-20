@@ -5,7 +5,7 @@
 - [문법 Tip은 해설지와 대조](check-grammar-tips-against-haeseol.md) — Tip·문맥 뜻은 넣기 전에 해설 번역과 맞춰 본다
 - [메인 문장은 흐림 금지](main-clause-never-faded.md) — 콤마 사이라도 주어+동사 있으면 생략X; 주어 어려운 문장은 묻고 → 슬래시로 나누기
 - [*풀이 단어는 핵심 아님](footnoted-words-not-key.md) — 시험지 아래 *로 풀어 준 단어는 ❓·단어 체크·핵심 정리에서 제외
-- [자유 해석 스텝](free-translation-step.md) — 짧고 중요한 문장은 가이드 뒤 직접 해석, 규칙 채점, ML용 기록, 틀리면 연습할 문장 저장
+- [자유 해석 스텝](free-translation-step.md) — 핵심어 나열형(method 0)은 2026-10-20 삭제, 문장 전체형(method 1)만; 빠진 자리는 해석 맞추기가 모두에게; it/that은 refers로 가리키는 것 표시
 - [칭찬은 질문과 분리](praise-separate-from-question.md) — 맞았다/틀렸다는 말은 다음 질문과 따로, 칭찬만 한 화면 뒤에 질문
 - [한국어로 대답](reply-in-korean.md) — 모든 대답(보고·설명·질문)은 한국어로
 - [빈칸: 주장과 같은 쪽? 반대?](blank-same-or-opposite.md) — 빈칸 문제는 빈칸이 주장과 같은 말인지 반대 의견인지 먼저 파악
@@ -13,7 +13,7 @@
 - [테스트 링크](share-test-link.md) — 영어 테스트용 GmX5HgA6…(작업 중 갱신) · 검수용 DdR3hJTt…만(요청 때만) · 국어 RSSfXXy4…
 - [국어 문단: 핵심어→핵심어로 읽기](korean-paragraph-keys-summary.md) — 핵심어·함정 모두 구절로 전부 직접 찾기 → 핵심어로만 읽기 (자유 요약 없음)
 - [대시 규칙](dash-rules.md) — 대시(—) 하나는 생략 금지(두 개 사이만 삽입) · 학생에겐 「대시(—)」처럼 기호를 괄호로
-- [S·V·O 찾기](svo-finding.md) — 긴 문장(20단어~)은 고·중·초 모두 S·V 다 찾기, 꾸미는 덩어리 있으면 꾸밈 구조 표(S / ↖ 꾸밈 / V)
+- [S·V·O 찾기 삭제](svo-finding.md) — 2026-10-20 전부 삭제(세션이 roles pick·_sv 스텝 건너뜀), 끊어읽기가 대신, 새 레슨에 S·V 스텝 만들지 말 것
 - [줄임말 S·V 나누기](contraction-sv-split.md) — it’s → it(S) + ’s(V), you’ve → you + ’ve been driving; 부정 줄임말은 통째 V
 - [칠판 서랍·그림 틀](board-drawer-and-pictures.md) — 칠판은 큰 서랍(오른쪽 손잡이), 그림은 지문마다 지시받지 않고 그림 틀로 · 틀 만들기는 handoff/틀-만들기.md
 - [이해 정도 체크는 나중에](self-check-later.md) — 막대 전부 삭제(2026-10-14); 다시 만들면 여러 지문에 걸쳐 가끔 한 번
@@ -27,7 +27,7 @@
 - [평가 뒤집기 짚기](evaluation-flip.md) — 핵심어 + 저자 입장 확고할 때만, 평소와 반대 평가면 +/− 2지 + 평가어 근거 (30번처럼 중립이면 X)
 - [대사는 핵심만](lines-core-only.md) — 누구나 아는 말·덜 중요한 문장·과한 요령은 빼고 핵심만 (세 문장 채우지 않기)
 - [순서: (A)(B)(C) 단락 보기](order-paragraph-view.md) — 문장 N 대신 (A), 단락 안은 태그 옆 ‹ › 로 오감(연하게 띄우기 X), method.type=order면 자동
-- [초급 기본: 문장마다 하나](beginner-basic-per-sentence.md) — 초는 문장마다 S·V+뜻 또는 해석 맞추기(번갈아), 긴 문장은 핵심어로; scripts/lessons/beginner.py add_basic, 9개 레슨 적용
+- [초급 기본: 문장마다 하나](beginner-basic-per-sentence.md) — 초는 문장마다 해석 맞추기(S·V+뜻은 2026-10-20 삭제), 긴 문장은 핵심어로; scripts/lessons/beginner.py add_basic
 - [핵심어 정의·[ ] 표시](key-words-definition.md) — 핵심어=S·V·O·C+이해에 필요한 말, 한 문장 가리킬 땐 [ ], 초급 맞추기는 핵심 논지, 초급 Tip 하나하나
 - [지문 표시판](annotation-tool.md) — 선생님이 핵심어·+/−·헷갈릴 곳·역할을 눌러 표시(아티팩트 8kbfdYKS…, db passages/<id>), 레슨 만들기 전에 먼저 읽기
 - [헷갈리는 단어 → Tip 자동](trap-words-to-tips.md) — 엑셀 사용 O인 것만, 단어 Tip은 「자주 헷갈리는 단어 표시하기」 버튼 → 물결 밑줄, 누르면 💡(모아보기 칩 폐기), 기본 질문 X, 표시판 헷갈릴 곳도 엑셀에
@@ -35,9 +35,23 @@
 - [내신 대비 묶음](naesin-packs.md) — 프린트엔 지문만 → 한 문장(일부)으로 찾아 담기, 요청 기능 X
 - [미니 모의고사](mini-mock.md) — 고난도 시간 재기·점수, 2024년 3월 21~45번판(바로 채점·21문항 모두 분석 연결) 학생 링크 R1QpqZ1x…
 - [내신 vs 수능 분석 깊이](naesin-vs-suneung-depth.md) — 지금 분석 정도가 수능 기본(줄이지 않음), 내신은 그 위에 더 얹기 (선생님 고민 중)
-- [끊어읽기 버튼](slash-reading-toggle.md) — 「/ 끊어읽기」 누르면 slashes 자리에 /(좁은 간격), 36번만 적용, 다른 지문은 20단어~ 긴 문장에 넣자고 제안 중
+- [끊어읽기 버튼](slash-reading-toggle.md) — 전체 규칙(2026-10-20 확정): 더 잘게 + 켜면 S·V·O·C + [ ] 수식어, 관계사절 안 S·V X, there is는 be동사만 V. 2024-03·2026-03 36번 적용 완료
 - [대사 3번이면 칠판](three-lines-then-board.md) — 설명·뜻 질문이 3번 이상 이어지면 칠판(핵심어+그림)으로(S·V 찾기는 안 셈), 설명은 칠판 한 줄로 대신
 - [2024년 3월 레슨](lessons-2024-03.md) — Top15 + 미니용 8개(22·23·29·35·41·43·44·45) Claude 초안, exam_kit.py, 41←42·44/45←43 재사용
 - [문장 넣기 주어진 문장 정석](insertion-given-sentence-order.md) — This↔대조 → which → 특징 → 앞 내용, 「뒤에 무엇?」 억지 질문 금지, 개념 차이는 그림으로
 - [그림 칠판 칩 중복 금지](picture-no-duplicate-words.md) — picture 아래 words가 그림 속 글자와 겹치면 빼기
 - [홈 마을 · 상담실](home-village-counsel.md) — 집=기능 입구, 상담실=점수·목표·약점→커리큘럼, 마을 그림은 사용자가 외부 디자인으로 교체
+- [2022년 3월 레슨](lessons-2022-03.md) — Top15의 독해 14개 모두 초안(듣기 제외), 메가 오답률, PYTHONUTF8=1 py
+- [추천하고 쉽게 설명](recommend-and-explain.md) — 선택지는 추천 하나 먼저+이유, git 용어는 풀어서, 큰 파일·되돌리기 어려운 일은 먼저 묻기
+- [어법 레슨 방식](grammar-type-lessons.md) — S·V 빼고 밑줄 문법만: 뜻→도치 등 규칙→바로 연습→「더 연습할까요?」→보충학습실 drill 10문제
+- [목록: Top 순위·진행 기록](list-top-and-runs.md) — 문제 앞 TopN, 진행 중/완료·몇 번 봄·몇 번 중 몇 번 맞힘, 진행 중→안 한 것→완료(최근 위)
+- [자연스러운 한국어 어법](natural-korean-grammar.md) — 「이걸 도치라고」→「것을」, 「①이 든」→「보기 ①이 있는」; 어색한 대사는 시키지 않아도 고쳐 쓰기
+- [화면 중계 말 빼기·줄 바꾸기](no-meta-narration.md) — 「칠판에 붙여 둘게요」 삭제, 다른 이야기는 줄 바꿈, 맞는 밑줄은 「맞을까요, 틀릴까요?」로 고르게
+- [시험 보기 제출·해설 요약](exam-submit-and-summaries.md) — 보기는 고르기만+[제출], 분석 뒤 문제는 한 번 제출하면 정답+보기마다 짧은 해설, 많이 고른 오답은 「같이 자세히 볼래요」 선택
+- [헷갈린 곳 기록 방법 (나중에)](wrong-reason-later.md) — 기록은 좋지만 「어디서 헷갈렸어요?」 질문은 부적절, 다른 방법은 나중에 같이 정하기로 보류
+- [데모 주소 하나](one-demo-address.md) — 로컬 데모는 http://127.0.0.1:5173 하나, 떠 있으면 loopin-attach로 붙기
+- [코스 = 10분 모의고사](course-ten-min.md) — 시험마다 오답률 Top5, 최근 시험부터, 다 돌면 틀린 것만 복습; 유형별 날짜 계획 폐기(2026-10-20)
+- [10분 핵심어는 아주 적게](ten-min-keys-minimal.md) — 지문 전체에서 주장 문장 1~2개의 S·V·O·C·연결어만(33번 기준 11개), 문장마다 치지 않기
+- [연습실 단어·문장·문법](practice-room.md) — 문장=해석 맞추기(틀린 지문·연습할 문장), 코스 단어 칸 + 10분 전 주요 단어 미리 보기; 고·중 S·V 줄이기는 보류
+- [AI 말투 금지](no-ai-tone.md) — 제목·버튼·안내는 담백하게(「지문 단어 미리 보기」「문제 풀러 갈게요」), 꾸민 말 빼기
+- [할 일: 핵심어 표시판→가져오기](todo-keys-check.md) — 핵심어 버튼은 keys_checked 레슨(33·24)만, 선생님이 표시판에서 찍으면 가져오기 스크립트 만들어 켜기
