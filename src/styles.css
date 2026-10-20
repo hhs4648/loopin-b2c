@@ -1104,7 +1104,14 @@ mark.hl2, .english-token.hl2 .english-word {
 .passage-full { display: flex; flex-direction: column; gap: 12px; }
 .passage-play { display: inline-grid; place-items: center; width: 20px; height: 20px; margin: 0 6px 0 0; vertical-align: middle; border-radius: 50%; border: none; background: #fbe3e9; color: #e2607d; font-size: 9px; cursor: pointer; }
 .passage-sentence { display: inline; }
-.mini-word-say { flex: none; border: none; background: none; font-size: 15px; cursor: pointer; padding: 0 2px; }
+.mini-word-say {
+  flex: none; width: 30px; height: 30px; border-radius: 50%; padding: 0; cursor: pointer;
+  display: grid; place-items: center;
+  border: none; background: #fdeef2; color: #e2607d;
+  transition: background .15s ease, transform .12s ease;
+}
+.mini-word-say:hover { background: #fbdbe4; }
+.mini-word-say:active { transform: scale(.92); }
 .passage-given {
   margin: 0; padding: 12px 14px; border: 1.5px solid #2b2430; border-radius: 6px; background: #fff;
   font-size: 14.5px; line-height: 1.65; color: #2b2430;
@@ -1891,7 +1898,10 @@ mark.passage-key { background: #fff1b8; color: inherit; border-radius: 3px; padd
 .mini-word b { font-size: 12.5px; color: #2b2430; line-height: 1.2; }
 .mini-word span { font-size: 11px; color: #b39aa4; line-height: 1.2; }
 .mini-word.on { border-color: #e2607d; background: #fff6f8; }
-.mini-word-row { position: relative; }
+/* 스피커를 단어 칸 왼쪽에 나란히 — 칸 위에 따로 한 줄로 뜨지 않게 */
+.mini-word-row { position: relative; display: flex; align-items: center; gap: 4px; min-width: 0; }
+.mini-word-row .mini-word-say { width: 26px; height: 26px; }
+.mini-word-row .mini-word { flex: 1; min-width: 0; }
 .mini-word-row .mini-word { padding-right: 26px; }
 /* 저장 전엔 빈 별(☆, 연한 회색 배경 없음) — 이미 눌린 것처럼 보이지 않게 (2026-10-20 선생님). 저장하면 ★ 노랑 */
 .mini-word-star { position: absolute; top: 50%; right: 4px; transform: translateY(-50%); width: 22px; height: 22px; font-size: 14px; background: transparent; color: #c9b9c0; }
@@ -2377,3 +2387,5 @@ mark.passage-key { background: #fff1b8; color: inherit; border-radius: 3px; padd
 }
 .login-skip:disabled, .login-btn:disabled { opacity: .55; cursor: default; }
 .login-error { margin: 0; text-align: center; font-size: 13px; line-height: 1.45; color: #d2433f; word-break: keep-all; }
+.small-score { margin: 4px 20px 10px; padding: 12px 14px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1.5px #f4c3cf; font-size: 15px; color: #2b2430; }
+.small-score b { color: #d2566f; }

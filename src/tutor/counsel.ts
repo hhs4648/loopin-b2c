@@ -7,7 +7,7 @@ import { getPolicyLesson } from "./policy/lessons";
 import { getSet } from "./sets";
 import { loadVocab, type VocabEntry } from "./vocab";
 import { examOfMock, tenMinMocks, TEN_MIN_PREFIX } from "./tenmin";
-import { isDone, loadProgress } from "./progress";
+import { isDone, loadProgress, smallScoreOf } from "./progress";
 import { allCollections } from "./sets";
 
 /**
@@ -301,7 +301,7 @@ export type CourseItem = {
   /** 4단계 틀린 문제 복습 — 복습한 수 / 복습할 수 (다 맞혔으면 0/0 = 완료) */
   review4?: { done: number; total: number };
   /** 문항마다 결과 — 코스 화면의 작은 표시 */
-  marks?: { no: number; kind: string; points: number; result: "right" | "wrong" | "none"; peeked: boolean; checked: boolean; analyzed: boolean }[];
+  marks?: { no: number; kind: string; points: number; result: "right" | "wrong" | "none"; peeked: boolean; checked: boolean; analyzed: boolean; small: { right: number; total: number } | null }[];
 };
 
 /** 10분 모의고사가 속한 시험 — 제목 앞 연도(평가원은 학년도)로 묶는다 */
@@ -337,6 +337,7 @@ export function courseStatus(plan: CounselPlan | null): CourseItem[] {
         peeked: combined.peeked.includes(it.no),
         checked: combined.checked.includes(it.no),
         analyzed: !!set && analysisDone(progress, set.id),
+        small: set ? smallScoreOf(set.id) : null,
       };
     });
     const toAnalyze = marks.filter((m) => m.result === "wrong");

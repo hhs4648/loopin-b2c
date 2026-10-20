@@ -34,7 +34,28 @@ export type Run = {
   seconds?: number;
   /** 이 회차에 연 지문 — 공유 링크·개발용 ?set= 처럼 회차 없이 연 수업의 기록이 엉뚱한 회차에 붙지 않게 */
   lesson_id?: string;
+  /** 작은 문제(분석 속 질문) 맞힌 수 / 전체 — 첫 시도 기준 (2026-10-20) */
+  small?: { right: number; total: number };
 };
+
+/** 수업 끝 — 이 회차의 작은 문제 점수를 남긴다 */
+export function noteSmallScore(setId: string, right: number, total: number): void {
+  const runs = loadRuns();
+  const run = runs.current === setId ? currentRun(runs) : null;
+  if (!run || !total) return;
+  run.small = { right, total };
+  write(RUNS_KEY, runs);
+}
+
+/** 그 세트의 가장 최근 작은 문제 점수 */
+export function smallScoreOf(setId: string): { right: number; total: number } | null {
+  const list = loadRuns().sets[setId] ?? [];
+  for (let i = list.length - 1; i >= 0; i--) {
+    const sm = list[i]!.small;
+    if (sm) return sm;
+  }
+  return null;
+}
 
 /** 그 회차의 맞힘/틀림 — 분석 뒤 고른 게 있으면 그것, 없으면 바로 풀기 */
 function verdict(run: Run): boolean | null {

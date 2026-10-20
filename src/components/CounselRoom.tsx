@@ -475,6 +475,7 @@ function CourseView({
                                   <small>
                                     {it?.wrong_rate != null ? `오답률 ${it.wrong_rate}%` : ""}
                                     {x.analyzed ? " · 분석 끝" : x.result !== "none" ? " · 분석 전" : isCur ? " · 다음" : ""}
+                                    {x.small ? ` · 작은 문제 ${x.small.right}/${x.small.total}` : ""}
                                     {x.peeked ? " · 분석 보고 고름" : x.checked ? " · 정답 확인" : ""}
                                   </small>
                                 </span>

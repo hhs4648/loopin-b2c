@@ -120,6 +120,8 @@ const MODE_ANALYZE_BTN = policyFrame.buttons.mode_analyze;
 const ANALYZE_START_BTN = policyFrame.buttons.analyze_start;
 const SOLVE_BTN = policyFrame.buttons.solve;
 const POINTS_DONE_BTN = policyFrame.buttons.points_done;
+/** 수업 끝 — 틀린 작은 문제를 칠판 없이 다시 푼다 */
+const RETRY_BTN = "틀린 것 다시 풀기";
 export const READ_FIRST_DONE_BTN = policyFrame.buttons.read_first_done;
 /** 문장에서 후보 구절을 눌렀다 — 「찾기」 스텝 */
 export const PICK_CMD = "__pick:";
@@ -186,6 +188,7 @@ type State = {
     | "exam_final"
   | "points"
   | "summary"
+    | "retry"
     | "review"
     | "words"
     | "match"
@@ -238,6 +241,13 @@ type State = {
   introDone: boolean;
   /** 헷갈린 질문 — 수업 끝 「헷갈린 포인트」에 모은다 (같은 키는 한 번) */
   points: { key: string; title: string; text: string }[];
+  /**
+   * 작은 문제(분석 속 질문) 결과 — 스텝마다 첫 시도만 (2026-10-20 선생님: 하위 등급은 수능 문제보다 이게 풀 수 있는 단위다).
+   * 수업 끝에 「N개 중 M개 맞혔어요」, 틀린 것은 다시 풀기
+   */
+  small: { id: string; correct: boolean }[];
+  /** 틀린 작은 문제 다시 풀기 — 스텝 id 차례, 지금 몇 번째, 답했나, 맞힌 수 */
+  retry: { ids: string[]; i: number; answered: boolean; right: number } | null;
   /** 마지막 문제에서 정답을 골라 해설(`answer_explain`)을 보는 중 — 「다음으로」면 다시 볼 주기로 */
   examSolved: boolean;
   /** 정답 해설 다음 참고(`answer_note`)를 보여 줬나 */
@@ -345,6 +355,8 @@ export function createPolicySession(
       examPicked: null,
       examReview: null,
       points: [],
+      small: [],
+      retry: null,
       introDone: false,
       explainOnly: false,
       orderSolved: null,
@@ -827,13 +839,14 @@ export function createPolicySession(
       return;
     }
     if (s.stage === "match" && text === MATCH_DONE_CMD) return toPoints();
+    if (s.stage === "points" && text === RETRY_BTN) return startRetry();
     if (s.stage === "points" && text === POINTS_DONE_BTN) finish("");
   }
 
-  /** 헷갈린 곳이 있으면 정리 화면, 없으면 끝 */
+  /** 헷갈린 곳이나 작은 문제 점수가 있으면 정리 화면, 없으면 끝 */
   function toPoints() {
-    if (!s.points.length) return finish("");
-    s = { ...s, stage: "points", message: L.points_title, buttons: [POINTS_DONE_BTN] };
+    if (!s.points.length && !s.small.length) return finish("");
+    s = { ...s, stage: "points", message: L.points_title, buttons: [...(retryable().length ? [RETRY_BTN] : []), POINTS_DONE_BTN] };
   }
 
   const sentence = (): PolicySentence => lesson.sentences[s.si]!;
@@ -880,6 +893,66 @@ export function createPolicySession(
       action,
       ...(outcome ? { outcome } : {}),
     });
+    // 작은 문제 — 그 스텝의 첫 시도만 센다 (시험 문제·도입은 빼고)
+    const id = action?.interactionId;
+    if (id && s.stage !== "retry" && (observation.kind === "answer" || observation.kind === "dont_know") && !s.small.some((x) => x.id === id)) {
+      s = { ...s, small: [...s.small, { id, correct: observation.kind === "answer" && !!observation.correct }] };
+    }
+  }
+
+  /** 틀린 작은 문제 중 다시 풀 수 있는 것 — 보기가 있는 choice 스텝 */
+  function retryable(): string[] {
+    return s.small
+      .filter((x) => !x.correct)
+      .map((x) => x.id)
+      .filter((id) => lesson.sentences.some((sen) => sen.steps.some((st) => st.id === id && st.type === "choice")));
+  }
+
+  function startRetry() {
+    const ids = retryable();
+    if (!ids.length) return finish("");
+    s = { ...s, stage: "retry", retry: { ids, i: 0, answered: false, right: 0 }, panel: null, wrongPicks: [], resolved: false };
+    showRetry();
+  }
+
+  function showRetry() {
+    const r = s.retry!;
+    const id = r.ids[r.i]!;
+    const si = lesson.sentences.findIndex((sen) => sen.steps.some((st) => st.id === id));
+    const pi = lesson.sentences[si]!.steps.findIndex((st) => st.id === id);
+    const st = lesson.sentences[si]!.steps[pi] as ChoiceStep;
+    const lines = choiceCopy(copy, st.id);
+    // 칠판 힌트 없이 — 문장과 질문만
+    s = { ...s, si, pi, message: lines.ask, buttons: st.options.map((o) => o.label), panel: null, wrongPicks: [], resolved: false, shownAt: d.now() };
+  }
+
+  function onRetry(text: string) {
+    const r = s.retry!;
+    const st = step() as ChoiceStep;
+    if (r.answered) {
+      if (text !== NEXT_BTN) return;
+      if (r.i + 1 >= r.ids.length) {
+        const n = r.ids.length;
+        finish(`틀렸던 작은 문제 ${n}개 중 ${r.right}개를 다시 맞혔어요. `);
+        return;
+      }
+      s = { ...s, retry: { ...r, i: r.i + 1, answered: false } };
+      showRetry();
+      return;
+    }
+    const picked = pickOption(st, text);
+    if (!picked) return;
+    const correct = !!picked.correct;
+    const lines = choiceCopy(copy, st.id);
+    log({ kind: "answer", correct, optionId: picked.id, latencyMs: d.now() - s.shownAt }, { action: correct ? "PRAISE" : "EXPLAIN", interactionId: st.id, intensity: "brief" });
+    const why = lines.feedback?.[picked.id] ?? lines.hints?.[0] ?? lines.explain ?? "";
+    s = {
+      ...s,
+      retry: { ...r, answered: true, right: r.right + (correct ? 1 : 0) },
+      message: correct ? (lines.praise ?? "맞아요!") : `${L.wrong_lead} ${why}`.trim(),
+      buttons: [NEXT_BTN],
+      effect: correct ? "light" : null,
+    };
   }
 
   function flush() {
@@ -1613,7 +1686,7 @@ export function createPolicySession(
     const exam = s.stage === "exam_first" || s.stage === "exam_final";
     const sen = sentence();
     const st = step();
-    const inLesson = s.stage === "lesson";
+    const inLesson = s.stage === "lesson" || s.stage === "retry";
     const onStudy = inLesson || exam;
     // 먼저 읽는 화면은 늘 그 문장 원문 — 슬래시·다른 문장 보기(display)는 질문부터
     const shown = inLesson && !s.readingFirst ? (st.display ?? sen.text) : sen.text;
@@ -1628,7 +1701,7 @@ export function createPolicySession(
       문장의 첫 질문에서, 아직 답하기 전에만. 누르면 곁길로 답하고 「이어서 할게요」로 돌아온다
     */
     const helpButtons =
-      inLesson && s.pi === 0 && st.type === "choice" && !s.resolved && !s.aside && !s.readingFirst && !s.praiseOnly
+      s.stage === "lesson" && s.pi === 0 && st.type === "choice" && !s.resolved && !s.aside && !s.readingFirst && !s.praiseOnly
         ? (sen.helps ?? []).map((h) => h.label)
         : [];
     // 한 줄에 못 들어가는 보기가 있으면 세로로 쌓는다
@@ -1855,6 +1928,8 @@ export function createPolicySession(
         return st0?.type === "say" && st0.auto_ms ? st0.auto_ms : null;
       })(),
       pointsReview: s.stage === "points" ? { title: s.message, lessonId: lesson.id, items: s.points } : null,
+      smallScore: s.small.length ? { right: s.small.filter((x) => x.correct).length, total: s.small.length } : null,
+      retryProgress: s.stage === "retry" && s.retry ? { i: s.retry.i + 1, total: s.retry.ids.length } : null,
       // 맞았다는 화면에서만 방금 찾은 말을 칠한다 (2026-10-16 선생님: 「맞아요」 때만)
       highlight: inLesson && !s.readingFirst ? (s.praiseOnly ? s.kept : (st.highlight ?? [])) : [],
       signs: inLesson && !s.readingFirst && !s.praiseOnly ? (st.signs ?? []) : [],
@@ -1913,6 +1988,10 @@ export function createPolicySession(
 
       if (s.stage === "intro") {
         onIntro(text);
+        return view();
+      }
+      if (s.stage === "retry") {
+        onRetry(text);
         return view();
       }
       if (s.stage === "read") {

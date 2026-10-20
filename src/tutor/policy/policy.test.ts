@@ -694,6 +694,55 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
   });
 });
 
+describe("작은 문제 점수 · 틀린 것 다시 풀기 (2026-10-20)", () => {
+  const ID = "moeui-2026-03-21-music-researchers";
+  const L = allPolicyLessons().find((l) => l.id === ID)!;
+  const make = () =>
+    autoRead(createPolicySession(ID, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 }));
+  const stepOf = (id: string) => L.sentences.flatMap((x) => x.steps).find((x) => x.id === id);
+
+  it("분석 속 질문은 첫 시도만 세고, 수업 끝에 점수와 「틀린 것 다시 풀기」가 뜬다", async () => {
+    const session = make();
+    let v = await session.submit("분석하러 갈게요");
+    for (let g = 0; g < 5 && v.screen !== "study"; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
+    let wrongId: string | null = null;
+    // 첫 choice 질문 하나만 일부러 틀리고(한 번 틀리면 힌트 → 그다음 맞힘), 나머지는 다 맞힌다
+    for (let g = 0; g < 400 && !v.ended && v.screen !== "points" && v.screen !== "words"; g++) {
+      const id = session.lastAction()?.interactionId ?? "";
+      const step = stepOf(id);
+      if (!wrongId && step?.type === "choice" && v.buttons.length > 2) {
+        wrongId = step.id;
+        v = await session.submit(step.options.find((o) => !o.correct)!.label);
+        continue;
+      }
+      if (v.examOptions && !v.buttons.length) {
+        v = await session.submit(L.exam!.options[2]!.label);
+        continue;
+      }
+      v = await answer(session, v, step);
+    }
+    expect(wrongId).toBeTruthy();
+    // 단어 체크·짝 맞추기는 건너뛴다
+    for (let g = 0; g < 10 && v.screen === "words"; g++) v = await session.submit(v.buttons[0]!);
+    if (v.screen === "match") v = await session.submit("__match_done");
+    expect(v.screen).toBe("points");
+    expect(v.smallScore!.total).toBeGreaterThan(1);
+    expect(v.smallScore!.right).toBe(v.smallScore!.total - 1);
+    expect(v.buttons).toEqual(["틀린 것 다시 풀기", "다 봤어요"]);
+    // 다시 풀기 — 칠판 없이 그 질문과 보기만, 맞히면 칭찬 → 「다음」 → 끝
+    v = await session.submit("틀린 것 다시 풀기");
+    expect(v.retryProgress).toEqual({ i: 1, total: 1 });
+    expect(v.panel).toBeFalsy();
+    const st = stepOf(wrongId!) as ChoiceStep;
+    expect(v.buttons).toEqual(st.options.map((o) => o.label));
+    v = await session.submit(st.options.find((o) => o.correct)!.label);
+    expect(v.buttons).toEqual(["다음으로"]);
+    v = await session.submit("다음으로");
+    expect(v.ended).toBe(true);
+    expect(v.message.startsWith("틀렸던 작은 문제 1개 중 1개를 다시 맞혔어요.")).toBe(true);
+  });
+});
+
 describe("2026년 3월 30번 — 어휘 문제", () => {
   const ID = "moeui-2026-03-30-names-and-differences";
   const L = allPolicyLessons().find((l) => l.id === ID)!;

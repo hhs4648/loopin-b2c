@@ -178,6 +178,10 @@ export type TutorView = {
   } | null;
   /** 마무리 — 오늘 헷갈렸던 곳 (별표로 노트에 저장) */
   pointsReview?: { title: string; lessonId: string; items: { key: string; title: string; text: string }[] } | null;
+  /** 작은 문제(분석 속 질문) 점수 — 첫 시도 기준. 수업 끝 화면과 코스 카드에 */
+  smallScore?: { right: number; total: number } | null;
+  /** 틀린 작은 문제 다시 풀기 중 — 몇 번째 / 전체 */
+  retryProgress?: { i: number; total: number } | null;
   /** 마무리 — 짝 맞추기 */
   matchPairs?: WordGloss[] | null;
   /** false면 아래 입력창을 숨긴다 — 버튼으로만 답하는 화면에서 (기본은 보인다) */

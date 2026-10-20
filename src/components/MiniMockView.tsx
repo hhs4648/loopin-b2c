@@ -312,7 +312,14 @@ function MiniWords({ mock, onBack, onStart }: { mock: MiniMock; onBack: () => vo
             const on = allShown || shown.has(w.en);
             return (
               <li key={w.en} className="mini-word-row">
-                <button type="button" className="mini-word-say" aria-label={`${w.en} 발음 듣기`} onClick={() => sayWord(w.en)}>🔊</button>
+                <button type="button" className="mini-word-say" aria-label={`${w.en} 발음 듣기`} onClick={() => sayWord(w.en)}>
+                  {/* 이모지 🔊 대신 분홍 선 스피커 (2026-10-20 선생님: 안 예쁘다) */}
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M11 5L6 9H3v6h3l5 4z" fill="currentColor" fillOpacity=".18" />
+                    <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+                    <path d="M18.5 5.5a9 9 0 0 1 0 13" />
+                  </svg>
+                </button>
                 <button type="button" className={`mini-word${on ? " on" : ""}`} onClick={() => toggle(w.en)}>
                   <b>{w.en}</b>
                   <span>{on ? w.ko : "뜻 보기"}</span>

@@ -19,7 +19,13 @@ export function PointsReview({ view, onSend, onClose }: Props) {
           ✕
         </button>
       </header>
-      <p className="words-title">{p.title}</p>
+      {view.smallScore ? (
+        <div className="small-score">
+          <b>작은 문제 {view.smallScore.total}개 중 {view.smallScore.right}개</b> 맞혔어요
+          {view.smallScore.right === view.smallScore.total ? " 🎉" : ""}
+        </div>
+      ) : null}
+      <p className="words-title">{p.items.length ? p.title : "헷갈린 곳 없이 다 맞혔어요!"}</p>
       <ul className="words-list">
         {p.items.map((item) => {
           const on = isNoteSaved(notes, { lessonId: p.lessonId, key: item.key });
@@ -43,9 +49,9 @@ export function PointsReview({ view, onSend, onClose }: Props) {
         })}
       </ul>
       <div className="words-dock">
-        <span className="words-count">☆를 누르면 노트에 저장돼요</span>
-        {view.buttons.map((label) => (
-          <button key={label} type="button" className="read-continue" onClick={() => onSend(label)}>
+        {p.items.length ? <span className="words-count">☆를 누르면 노트에 저장돼요</span> : null}
+        {view.buttons.map((label, i) => (
+          <button key={label} type="button" className={`read-continue${i < view.buttons.length - 1 ? "" : " second"}`} onClick={() => onSend(label)}>
             {label}
           </button>
         ))}

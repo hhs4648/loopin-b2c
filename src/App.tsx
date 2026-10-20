@@ -34,7 +34,7 @@ import { hasAccount } from "./tutor/auth";
 import { policyLessonIds } from "./tutor/policy/lessons";
 import { AUTO_NEXT_CMD, MODE_TRY_BTN, READ_DONE_BTN, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
-import { clearResume, loadResume, markDone, noteReachedEnd, noteStudyTime, resumeRun, saveResume, startRun } from "./tutor/progress";
+import { clearResume, loadResume, markDone, noteReachedEnd, noteSmallScore, noteStudyTime, resumeRun, saveResume, startRun } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
 import { pullAll } from "./tutor/cloud";
 import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets";
@@ -223,6 +223,7 @@ function ReadingApp() {
     // 미니 모의고사에서 분석하러 왔으면 그 풀이 기록에도 결과를 남긴다
     finishAnalysis(result);
     // 목록에 「완료」를 칠하려면 지금 손에 있는 값이 필요하다
+    if (setId && view?.smallScore) noteSmallScore(setId, view.smallScore.right, view.smallScore.total);
     if (setId) markDone(setId, result);
   }, [ended, recordLine, session, setId]);
 
