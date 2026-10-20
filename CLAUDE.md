@@ -61,4 +61,10 @@ Claude Code는 `~/.claude/projects/<프로젝트 경로를 -로 바꾼 이름>/m
 D=~/.claude/projects/$(pwd | sed 's#[/.]#-#g'); mkdir -p "$D"; [ -e "$D/memory" ] && mv "$D/memory" "$D/memory.bak"; ln -s "$(pwd)/docs/claude-memory" "$D/memory"
 ```
 
+Windows(PowerShell)는 심볼릭 링크 대신 연결(junction)으로 (관리자 권한 필요 없음):
+
+```powershell
+$d = "$HOME\.claude\projects\" + ((Get-Location).Path -replace '[:\\.]','-'); if (Test-Path "$d\memory") { Rename-Item "$d\memory" memory.bak }; New-Item -ItemType Junction -Path "$d\memory" -Target "$PWD\docs\claude-memory"
+```
+
 메모리가 바뀌면 다른 파일처럼 커밋·푸시한다. 작업 전 `git pull`.
