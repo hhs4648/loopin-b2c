@@ -1,0 +1,325 @@
+{
+  "lesson": "moeui-2022-03-33-creators-of-destiny",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 둘째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "18ei8yh"
+    },
+    "s1_blank_meaning": {
+      "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "drive는 여기서 '운전'이 아니라 '욕구'예요. pulled forward는 '앞으로 이끌려 가다'예요.",
+        "drive는 여기서 '운전'이 아니라 '욕구'예요. pulled forward는 '앞으로 이끌려 가다'예요."
+      ],
+      "explain": "considers it normal to be pulled forward는 '앞으로 이끌려 가는 걸 정상이라고 여긴다'예요. 미래에 대한 비전이 마음속 ____하려는 욕구(drive)를 깨운대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "considers it normal to be pulled forward는 '앞으로 이끌려 가는 걸 정상이라고 여긴다'예요. 미래에 대한 비전이 마음속 ____하려는 욕구(drive)를 깨운대요.",
+        "o2": "considers it normal to be pulled forward는 '앞으로 이끌려 가는 걸 정상이라고 여긴다'예요. 미래에 대한 비전이 마음속 ____하려는 욕구(drive)를 깨운대요."
+      },
+      "from": "gnv4r7"
+    },
+    "s1_where": {
+      "say": "그럼 사람들이 어떤 욕구를 가졌다는 건지 생각하며 문장 처음부터 읽어 봐요.",
+      "from": "hlubir"
+    },
+    "s1_sv": {
+      "ask": "먼저 바깥 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "history": "그건 that 뒤, 주장한 내용 안의 주어예요. 먼저 바깥 문장을 봐요.",
+        "records": "그건 that 뒤, 주장한 내용 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Gordon Allport, 동사는 argued예요. that 뒤가 주장한 내용이에요.",
+      "from": "1uxtqbz"
+    },
+    "s1_content": {
+      "ask": "who 뒤를 봐요. 역사에 기록된 많은 사람들은 어떤 사람들이었대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "be content with는 '~에 만족하다'예요. 앞에 not이 있어요.",
+        "be content with는 '~에 만족하다'예요. 앞에 not이 있어요."
+      ],
+      "explain": "'not content with an existence that offered them little variety … and minimal challenge', 변화(variety)도 도전(challenge)도 거의 없는 삶에 만족하지 못했대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'not content with an existence that offered them little variety … and minimal challenge', 변화(variety)도 도전(challenge)도 거의 없는 삶에 만족하지 못했대요.",
+        "o2": "'not content with an existence that offered them little variety … and minimal challenge', 변화(variety)도 도전(challenge)도 거의 없는 삶에 만족하지 못했대요."
+      },
+      "from": "1n1hbe6"
+    },
+    "s1_board": {
+      "say": "변화도 도전도 없는 삶에 만족 못 한 사람이 많았대요. 칠판 왼쪽에 적어 둘게요.",
+      "from": "z17a4s"
+    },
+    "s2_sv": {
+      "ask": "빈칸 문장이에요. 주어(S), 동사(V), 목적어(O), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "a vision": "그건 by(~에 의해) 뒤 덩어리예요.",
+        "persons": "그건 within(~ 안에서) 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 Allport, 동사 considers, 목적어 it, 보어 normal이에요. it은 뒤의 to be pulled forward를 받아요.",
+      "from": "15w1lyc"
+    },
+    "s2_side": {
+      "ask": "빈칸은 Allport가 정상(normal)이라고 본 욕구예요. 칠판 왼쪽 삶과 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not content with(만족 못 함)와 pulled forward(앞으로 이끌림)를 나란히 봐요.",
+        "not content with(만족 못 함)와 pulled forward(앞으로 이끌림)를 나란히 봐요."
+      ],
+      "explain": "사람들은 변화 없는 삶에 만족 못 하고, 미래에 이끌려 앞으로 나아간대요. 빈칸 욕구는 왼쪽 삶과 반대 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "사람들은 변화 없는 삶에 만족 못 하고, 미래에 이끌려 앞으로 나아간대요. 빈칸 욕구는 왼쪽 삶과 반대 쪽이에요."
+      },
+      "from": "1ayzjk"
+    },
+    "s2_board": {
+      "say": "빈칸은 Allport가 좋게 본(+) 욕구예요. 이 욕구를 다른 말로 한 표현을 칠판 오른쪽에 모으며 읽어 봐요.",
+      "from": "1q1a8w5"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "people": "그건 that 뒤, 말한 내용 안의 주어예요. 먼저 바깥 문장을 봐요.",
+        "possess": "그건 that 뒤, 말한 내용 안의 동사예요.",
+        "a need": "그건 that 뒤, 말한 내용 안의 목적어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "바깥 문장은 주어 He, 동사 suggests예요. that 뒤가 말한 내용이에요.",
+      "from": "8c8wn5"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "19o0712"
+    },
+    "s3_sort": {
+      "ask": "'invent motives and purposes(동기와 목적을 만들어 내다)'는 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "people possess a need to invent ~ — 사람들에게 있는 욕구(need)예요.",
+        "people possess a need to invent ~ — 사람들에게 있는 욕구(need)예요."
+      ],
+      "explain": "'people possess a need to invent motives and purposes', 사람에게는 스스로 동기와 목적을 만들어 내려는 욕구가 있대요. 욕구 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'people possess a need to invent motives and purposes', 사람에게는 스스로 동기와 목적을 만들어 내려는 욕구가 있대요. 욕구 쪽이에요."
+      },
+      "from": "uh8ise"
+    },
+    "s3_board": {
+      "say": "need(욕구)는 앞 문장의 drive와 같은 말이에요. 스스로 동기와 목적을 만들어 내려는 욕구래요.",
+      "from": "zbm42w"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_sv": {
+      "ask": "주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "humans": "그건 on the part of(~ 쪽의) 뒤 덩어리예요.",
+        "passive creatures": "그건 the roles of 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 Erich Fromm, 동사 proposed, 목적어 a need예요. a need는 뒤의 to rise above와 이어져요.",
+      "from": "i4nito"
+    },
+    "s4_rise": {
+      "ask": "Similarly(마찬가지로) — Fromm도 비슷한 말을 해요. 인간에게 어떤 욕구가 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "rise above는 '~을 넘어서다'예요. a need ~ to rise above로 이어서 읽어요.",
+        "rise above는 '~을 넘어서다'예요. a need ~ to rise above로 이어서 읽어요."
+      ],
+      "explain": "'a need … to rise above the roles of passive creatures', 수동적인 피조물의 역할을 넘어서고 싶어 한대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'a need … to rise above the roles of passive creatures', 수동적인 피조물의 역할을 넘어서고 싶어 한대요.",
+        "o2": "'a need … to rise above the roles of passive creatures', 수동적인 피조물의 역할을 넘어서고 싶어 한대요."
+      },
+      "from": "1hx6bbv"
+    },
+    "s4_board": {
+      "say": "passive creatures(수동적인 피조물)는 왼쪽, rise above(넘어서다)는 오른쪽이에요.",
+      "from": "9wq2kz"
+    },
+    "s5_sv": {
+      "ask": "세미콜론(;) 앞에서 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "To him": "그건 '그에게는'이라고 앞에 붙은 말이에요.",
+        "the state": "그건 to transcend(넘어서도록) 뒤의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 humans, 동사 are driven이에요. 세미콜론(;) 뒤 instead 문장도 주어는 humans, 동사는 seek예요.",
+      "from": "2wfudu"
+    },
+    "s5_become": {
+      "ask": "instead(대신에) 뒤를 봐요. 인간은 무엇이 되려고 한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "seek to become은 '~이 되려고 애쓰다'예요. 콤마(,) 뒤가 the creators를 다시 풀어 줘요.",
+        "seek to become은 '~이 되려고 애쓰다'예요. 콤마(,) 뒤가 the creators를 다시 풀어 줘요."
+      ],
+      "explain": "'seek to become the creators, the active shapers of their own destiny', 창조자, 즉 자기 운명을 만드는 적극적인 사람이 되려 한대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'seek to become the creators, the active shapers of their own destiny', 창조자, 즉 자기 운명을 만드는 적극적인 사람이 되려 한대요.",
+        "o2": "'seek to become the creators, the active shapers of their own destiny', 창조자, 즉 자기 운명을 만드는 적극적인 사람이 되려 한대요."
+      },
+      "from": "1i531dq"
+    },
+    "s5_board": {
+      "say": "그저 창조된 상태는 왼쪽, 창조자·자기 운명을 만드는 사람은 오른쪽이에요.",
+      "from": "1tjh9x9"
+    },
+    "story_5": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_sv": {
+      "ask": "콤마 뒤에서 주어(S), 동사(V) 둘, 목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the passive and accidental nature": "그건 콤마 앞 Rising above(~을 넘어서면서) 덩어리 안의 말이에요. 주어가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 humans, 동사 generate와 provide, generate의 목적어는 their own purposes예요.",
+      "from": "1nj5jf1"
+    },
+    "s6_board": {
+      "say": "Rising above는 앞의 rise above를 또 말해요. 자기 목적을 스스로 만들어 내고, 그래서 자유를 얻는대요.",
+      "from": "1yejyow"
+    },
+    "s6_what": {
+      "ask": "빈칸 문장으로 돌아가요. 칠판 오른쪽 말을 보면, 빈칸에는 어떤 욕구가 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판 오른쪽의 creators, active shapers of their own destiny를 봐요.",
+        "칠판 오른쪽의 creators, active shapers of their own destiny를 봐요."
+      ],
+      "explain": "사람은 수동적인 삶을 넘어 창조자, 자기 운명을 만드는 사람이 되려 한대요. 빈칸 욕구도 그 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "사람은 수동적인 삶을 넘어 창조자, 자기 운명을 만드는 사람이 되려 한대요. 빈칸 욕구도 그 말이에요.",
+        "o2": "사람은 수동적인 삶을 넘어 창조자, 자기 운명을 만드는 사람이 되려 한대요. 빈칸 욕구도 그 말이에요."
+      },
+      "from": "hc4fsc"
+    },
+    "s6_go": {
+      "say": "칠판 오른쪽 말(creators, active shapers of their own destiny)을 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "nj71g8"
+    }
+  },
+  "exam": {
+    "ask": "빈칸은 변화 없는 삶과 반대 쪽 욕구예요. 칠판 오른쪽 말을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 사람은 수동적인 삶을 넘어 자기 운명을 스스로 만들려 해요. 그걸 '자기 삶의 행로를 바꾸려는'으로 바꿔 썼어요.",
+    "final_wrong": "정답은 ①이에요. 창조자, 자기 운명을 만드는 사람(active shapers of their own destiny)을 바꿔 쓴 말이에요.",
+    "option_feedback": {
+      "2": "possess가 셋째 문장에 나와서 헷갈렸죠. 하지만 글에는 남과 견주어 더 갖는다는 말이 없어요.",
+      "3": "부정적인 감정 이야기는 글에 없어요. 글은 수동적인 삶을 넘어서는 이야기예요.",
+      "4": "남을 위한 희생 이야기는 글에 없어요. 자기 목적(their own purposes)을 만든다고 했어요.",
+      "5": "초자연적인 힘 이야기는 없어요. 오히려 인간 스스로 창조자가 되려 한다고 했어요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 17%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "②의 possess는 셋째 문장(people possess a need)에도 나와서 겹쳐 보여요. 하지만 거기서 possess는 '욕구를 지니고 있다'는 말이에요. 글은 남보다 많이 갖는 게 아니라, 수동적인 삶을 넘어 자기 운명을 만드는 이야기예요.",
+        "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "possess가 글과 겹쳐서 골랐어요",
+            "skills": [
+              "word_overlap"
+            ],
+            "reply": "알려 줘서 고마워요. 겹치는 단어보다 그 단어가 글에서 무엇을 한다는 건지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "drive(욕구)를 욕심으로 읽었어요",
+            "skills": [
+              "word_sense"
+            ],
+            "reply": "알려 줘서 고마워요. 여기서 drive는 앞으로 나아가려는 욕구예요. 앞으로 그 욕구가 무엇을 향하는지 같이 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "word_overlap",
+              "word_sense"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 단어 뜻을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "글의 말",
+              "text": "the active shapers of their own destiny",
+              "ko": "자기 운명을 만드는 사람 — 삶을 바꿈",
+              "tone": "hl"
+            },
+            {
+              "label": "②",
+              "text": "possess more than other people",
+              "ko": "남보다 더 많이 가지기 — 글에 없는 비교",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "103nzww"
+  },
+  "intro": {
+    "topic": {
+      "say": "변화도 도전도 없는 하루가 계속되면 어떤 기분일까요? 이번 글은 사람이 가진 욕구에 대한 심리학자들의 생각이에요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "1dwywu9"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1k14t10"
+}

@@ -1,0 +1,118 @@
+{
+ "1": [
+  {
+   "word": "but",
+   "phrase": "But many signals",
+   "sense": "하지만",
+   "usage": "접속사 But — 앞 내용을 뒤집는다"
+  },
+  {
+   "word": "as",
+   "phrase": "as they are passed",
+   "sense": "~할 때",
+   "usage": "접속사 as + 주어·동사 (때)"
+  },
+  {
+   "word": "to",
+   "phrase": "from generation to generation",
+   "sense": "~에게로",
+   "usage": "from A to B = A에서 B로"
+  },
+  {
+   "word": "that",
+   "phrase": "changes that make",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "2": [
+  {
+   "word": "so",
+   "phrase": "so bizarre",
+   "sense": "너무",
+   "usage": "so + 형용사 + that … = 너무 ~해서 …하다"
+  },
+  {
+   "word": "to",
+   "phrase": "to us",
+   "sense": "~에게",
+   "usage": "전치사 to + 사람"
+  },
+  {
+   "word": "that",
+   "phrase": "so bizarre to us that",
+   "sense": "(그래서) ~하다",
+   "usage": "so ~ that … 의 that — 결과"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "forms of signaling that are used",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "4": [
+  {
+   "word": "as",
+   "phrase": "As one species evolves",
+   "sense": "~하면서",
+   "usage": "접속사 as + 주어·동사 (동시·변화)"
+  },
+  {
+   "word": "to",
+   "phrase": "owing to",
+   "sense": "(owing to의 일부)",
+   "usage": "owing to + 명사 = ~ 때문에"
+  }
+ ],
+ "5": [
+  {
+   "word": "so",
+   "phrase": "and so remain",
+   "sense": "그래서",
+   "usage": "and so = 그래서 (결과)"
+  }
+ ],
+ "6": [
+  {
+   "word": "if",
+   "phrase": "If we examine",
+   "sense": "만약 ~하면",
+   "usage": "접속사 if + 주어·동사 (조건)"
+  },
+  {
+   "word": "for",
+   "phrase": "an explanation for",
+   "sense": "~에 대한",
+   "usage": "explanation for + 명사 = ~에 대한 설명"
+  }
+ ],
+ "7": [
+  {
+   "word": "as",
+   "phrase": "as simpler versions",
+   "sense": "~로서",
+   "usage": "전치사 as + 명사 (자격)"
+  },
+  {
+   "word": "that",
+   "phrase": "pattern that became",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "as",
+   "phrase": "as they developed",
+   "sense": "~하면서",
+   "usage": "접속사 as + 주어·동사 (동시·변화)"
+  },
+  {
+   "word": "to",
+   "phrase": "from generation to generation",
+   "sense": "~에게로",
+   "usage": "from A to B = A에서 B로"
+  }
+ ]
+}

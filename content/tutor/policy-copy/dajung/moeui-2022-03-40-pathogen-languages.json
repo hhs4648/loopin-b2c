@@ -1,0 +1,399 @@
+{
+  "lesson": "moeui-2022-03-40-pathogen-languages",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "요약문 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_q": {
+      "say": "질문으로 시작해요. 적도 주변에서 언어와 종교가 왜 빠르게 늘어나는지, 그 답이 이 글의 중심이에요.",
+      "from": "qasxhx"
+    },
+    "s2_sv": {
+      "ask": "긴 문장이에요. 바깥 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "these questions": "그건 to 뒤 덩어리예요. The answer를 꾸며요.",
+        "pathogen density": "그건 that 뒤 덩어리 안의 주어예요. 먼저 바깥 문장을 봐요.",
+        "is": "그건 that 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The answer (to these questions), 동사는 lies예요. 답은 that 뒤 내용에 있대요.",
+      "from": "1qkkesw"
+    },
+    "s2_that_sv": {
+      "ask": "답은 that 뒤에 있어요. that 안의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the tropics": "그건 in 뒤의 말이에요. 어디서 높은지예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "that 안의 주어는 pathogen density, 동사는 is, 보어는 much higher예요.",
+      "from": "y5m4qt"
+    },
+    "s2_mean": {
+      "ask": "그럼 그 답은 무엇이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'pathogen density is much higher in the tropics'를 봐요. pathogen은 시험지 아래 풀이처럼 '병원균'이에요.",
+        "'pathogen density is much higher in the tropics'를 봐요. pathogen은 시험지 아래 풀이처럼 '병원균'이에요."
+      ],
+      "explain": "'pathogen density is much higher in the tropics', 병원균 밀도가 열대에서 온대·추운 기후보다 훨씬 높대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'pathogen density is much higher in the tropics', 병원균 밀도가 열대에서 온대·추운 기후보다 훨씬 높대요.",
+        "o2": "'pathogen density is much higher in the tropics', 병원균 밀도가 열대에서 온대·추운 기후보다 훨씬 높대요."
+      },
+      "point": "질문의 답 = 열대 지방은 병원균 밀도가 훨씬 높다",
+      "from": "2sa42z"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1nfys6h"
+    },
+    "s3_sweden": {
+      "ask": "스웨덴에 살면 500마일 안의 집단들은 어떤 병원균을 접해 왔대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'the same few pathogens'를 봐요. the same few = 같은 몇 안 되는.",
+        "'the same few pathogens'를 봐요. the same few = 같은 몇 안 되는."
+      ],
+      "explain": "'has been exposed to the same few pathogens', 다들 같은 몇 가지 병원균만 접해 왔대요. 새 병원균을 만날 일이 적어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'has been exposed to the same few pathogens', 다들 같은 몇 가지 병원균만 접해 왔대요. 새 병원균을 만날 일이 적어요.",
+        "o2": "'has been exposed to the same few pathogens', 다들 같은 몇 가지 병원균만 접해 왔대요. 새 병원균을 만날 일이 적어요."
+      },
+      "from": "bsl5kx"
+    },
+    "s4_sv": {
+      "ask": "긴 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the Congo": "그건 when 덩어리 안, in 뒤의 말이에요.",
+        "the valley": "그건 of 뒤 덩어리예요. 어느 쪽 집단인지 꾸며요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the group (on the other side of the valley), 동사는 may well have been exposed예요.",
+      "from": "1gwsw1h"
+    },
+    "s4_congo": {
+      "ask": "콩고에서 계곡 건너편 집단은 어떤 병원균에 노출되었을 수 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'with which you’ve had no prior contact'를 봐요. prior는 '이전의'예요.",
+        "'with which you’ve had no prior contact'를 봐요. prior는 '이전의'예요."
+      ],
+      "explain": "'a pathogen with which you’ve had no prior contact', 내가 전에 접촉한 적 없는 병원균이래요. 스웨덴과 반대예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'a pathogen with which you’ve had no prior contact', 내가 전에 접촉한 적 없는 병원균이래요. 스웨덴과 반대예요.",
+        "o2": "'a pathogen with which you’ve had no prior contact', 내가 전에 접촉한 적 없는 병원균이래요. 스웨덴과 반대예요."
+      },
+      "from": "lpg8a3"
+    },
+    "story_4": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s5_sv": {
+      "ask": "긴 문장이에요. 동사(V)가 두 개예요. 주어(S)와 동사(V)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the tropics": "그건 in 뒤 덩어리예요. 어디 사는 사람인지 꾸며요.",
+        "interacted": "그건 when 덩어리 안의 동사예요. 배운 내용 속 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 humans, 동사 learned예요. so 뒤는 they가 주어, would have stopped가 동사예요.",
+      "from": "lmcx29"
+    },
+    "s5_it": {
+      "ask": "doing it의 it은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "가리키는 것은 앞에서 찾아요. when 뒤를 봐요.",
+        "가리키는 것은 앞에서 찾아요. when 뒤를 봐요."
+      ],
+      "explain": "'when they interacted with other groups they tended to get sick', 교류하면 병에 걸리니 그 교류(interacted)를 멈췄을 거래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'when they interacted with other groups they tended to get sick', 교류하면 병에 걸리니 그 교류(interacted)를 멈췄을 거래요.",
+        "o2": "'when they interacted with other groups they tended to get sick', 교류하면 병에 걸리니 그 교류(interacted)를 멈췄을 거래요."
+      },
+      "from": "9dkpt5"
+    },
+    "s5_board": {
+      "say": "병에 걸리니 다른 집단과 만나는 걸 멈췄을 거래요. 칠판 오른쪽에 넣어 둘게요.",
+      "from": "z3sqa2"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "3w2u95"
+    },
+    "s6_blame": {
+      "say": "과학을 모르던 시절엔 병을 이웃 탓으로 돌리고, 그래서 이웃을 싫어하는 게 당연했대요.",
+      "from": "vopzaf"
+    },
+    "s7_sv": {
+      "ask": "긴 문장이에요. 주어(S)·동사(V)·목적어(O)·보어(C)를 모두 찾아볼까요? 두 쌍이 있어요.",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "others": "그건 with 뒤의 말이에요. once 덩어리 안이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "앞은 주어 Dislike and fear, 동사 kept, 목적어 neighbors, 보어 apart예요. 뒤는 주어 your languages and religions, 동사 divide예요.",
+      "from": "1qdd3v1"
+    },
+    "s7_divide": {
+      "ask": "이웃과 더는 교류하지 않게 되면 언어와 종교는 어떻게 된대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'naturally divide as well'을 봐요. divide는 '나뉘다, 갈라지다'예요.",
+        "'naturally divide as well'을 봐요. divide는 '나뉘다, 갈라지다'예요."
+      ],
+      "explain": "'your languages and religions naturally divide', 언어와 종교도 자연스럽게 갈라진대요. 그래서 적도 주변에 언어와 종교가 많은 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'your languages and religions naturally divide', 언어와 종교도 자연스럽게 갈라진대요. 그래서 적도 주변에 언어와 종교가 많은 거예요.",
+        "o2": "'your languages and religions naturally divide', 언어와 종교도 자연스럽게 갈라진대요. 그래서 적도 주변에 언어와 종교가 많은 거예요."
+      },
+      "point": "교류가 끊김(don’t interact) → 언어·종교가 갈라짐(divide)",
+      "from": "1rwnbr"
+    },
+    "s7_board": {
+      "say": "교류가 끊기니 언어와 종교가 갈라졌어요. 칠판 양쪽에 넣어 둘게요.",
+      "from": "tqwxuc"
+    },
+    "story_7": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s8_a_side": {
+      "ask": "(A)는 '언어와 종교의 (A)'예요. 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "(A) 바로 뒤 'of languages and religions'를 봐요.",
+        "(A) 바로 뒤 'of languages and religions'를 봐요."
+      ],
+      "explain": "'the (A) of languages and religions', 언어와 종교에 일어나는 일이에요. (B)는 '사람들의 교류를 (B)함으로써'라 오른쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'the (A) of languages and religions', 언어와 종교에 일어나는 일이에요. (B)는 '사람들의 교류를 (B)함으로써'라 오른쪽이에요."
+      },
+      "from": "fk6vv3"
+    },
+    "s8_a": {
+      "ask": "그럼 (A)에는 어떤 뜻의 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판 왼쪽 'increase rapidly, naturally divide'를 떠올려 봐요.",
+        "칠판 왼쪽 'increase rapidly, naturally divide'를 떠올려 봐요."
+      ],
+      "explain": "왼쪽은 언어와 종교가 빠르게 늘고, 자연스럽게 갈라진다는 말이에요. 병 때문에 언어가 사라진다는 말은 글에 없어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "왼쪽은 언어와 종교가 빠르게 늘고, 자연스럽게 갈라진다는 말이에요. 병 때문에 언어가 사라진다는 말은 글에 없어요.",
+        "o2": "왼쪽은 언어와 종교가 빠르게 늘고, 자연스럽게 갈라진다는 말이에요. 병 때문에 언어가 사라진다는 말은 글에 없어요."
+      },
+      "point": "(A) = 언어·종교가 갈라져 많아짐 → '다양화'",
+      "from": "7n0pe"
+    },
+    "s8_b": {
+      "ask": "(B)는 이웃과의 교류를 어떻게 하는 거예요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판 오른쪽 'stopped doing it, kept neighbors apart'를 떠올려 봐요.",
+        "칠판 오른쪽 'stopped doing it, kept neighbors apart'를 떠올려 봐요."
+      ],
+      "explain": "오른쪽은 교류를 멈추고, 이웃과 떨어져 지냈다는 말이에요. 잠깐 늦춘 게 아니라 아예 멈췄어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "오른쪽은 교류를 멈추고, 이웃과 떨어져 지냈다는 말이에요. 잠깐 늦춘 게 아니라 아예 멈췄어요.",
+        "o2": "오른쪽은 교류를 멈추고, 이웃과 떨어져 지냈다는 말이에요. 잠깐 늦춘 게 아니라 아예 멈췄어요."
+      },
+      "point": "(B) = 교류를 멈춤·떨어져 지냄 → 교류를 '막음'",
+      "from": "1x9osaa"
+    },
+    "s8_go": {
+      "say": "(A)와 (B)의 뜻을 둘 다 맞게 담은 보기를 골라 봐요. 한쪽만 맞으면 오답이에요.",
+      "from": "16ntgt4"
+    }
+  },
+  "exam": {
+    "ask": "(A)는 칠판 왼쪽(언어·종교), (B)는 오른쪽(교류)이에요. 둘 다 맞는 보기를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 높은 병원균 밀도는 이웃과의 교류를 막아서(discouraging), 언어와 종교를 여러 갈래로 나눴어요(diversification).",
+    "final_wrong": "정답은 ①이에요. (A) 언어·종교가 갈라짐 = diversification, (B) 교류를 멈춤 = discouraging이에요.",
+    "option_feedback": {
+      "2": "언어와 종교는 사라진(extinction) 게 아니라 갈라졌어요. 교류도 잠깐 늦춘(delaying) 게 아니라 멈췄어요.",
+      "3": "언어와 종교는 사라진(extinction) 게 아니라 갈라졌어요. 교류도 넓힌(expanding) 게 아니라 멈췄어요.",
+      "4": "(B) discouraging은 맞지만, 언어와 종교는 합쳐진(unification) 게 아니라 갈라졌어요.",
+      "5": "(A) diversification은 맞지만, (B) expanding(넓힘)은 교류를 멈췄다는 말과 반대예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 12%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "②는 (A) extinction(소멸)부터 맞지 않아요. 언어와 종교는 사라진 게 아니라 갈라졌어요(divide). (B) delaying(늦춤)도 교류를 아예 멈췄다는 말과 달라요.",
+        "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "병 때문에 언어가 사라진다고 생각했어요",
+            "skills": [
+              "outside_guess"
+            ],
+            "reply": "알려 줘서 고마워요. 글에 없는 내용을 짐작하면 안 돼요. 마지막 문장의 divide(갈라지다)가 (A)의 근거예요. 앞으로 글에 나온 말로 확인하게 할게요."
+          },
+          {
+            "label": "delaying이 '막음'과 비슷해 보였어요",
+            "skills": [
+              "word_nuance"
+            ],
+            "reply": "알려 줘서 고마워요. delay는 '늦추다'라 잠깐 미룬다는 말이에요. 글은 교류를 멈추고 떨어져 지냈다고 했어요. 앞으로 비슷해 보이는 말을 같이 견줘 볼게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(A)",
+              "text": "naturally divide",
+              "ko": "사라짐(extinction) X → 갈라짐",
+              "tone": "hl"
+            },
+            {
+              "label": "(B)",
+              "text": "stopped · kept apart",
+              "ko": "늦춤(delaying) X → 멈춤",
+              "tone": "hl2"
+            }
+          ]
+        }
+      },
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 12%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "③은 두 칸 다 반대예요. 글은 교류를 멈추니 언어와 종교가 갈라졌다고 했어요. (A)는 다양화(diversification), (B)는 막음(discouraging)이에요.",
+        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "병 때문에 사람이 죽어 언어가 사라진다고 생각했어요",
+            "skills": [
+              "outside_guess"
+            ],
+            "reply": "알려 줘서 고마워요. 글에 없는 내용을 짐작하면 안 돼요. 글은 언어와 종교가 사라진 게 아니라 갈라졌다(divide)고 했어요. 앞으로 글에 나온 말로 확인하게 할게요."
+          },
+          {
+            "label": "교류가 늘어서 병이 퍼진다고 생각했어요",
+            "skills": [
+              "cause_effect"
+            ],
+            "reply": "알려 줘서 고마워요. 교류하면 병에 걸린다는 건 맞아요. 그래서 교류를 멈췄다(stopped)는 게 글의 흐름이에요. 앞으로 원인과 결과를 끝까지 따라가게 할게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "outside_guess",
+              "cause_effect"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 글에 나온 말로 확인하고, 원인과 결과를 끝까지 따라가게 할게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(A)",
+              "text": "naturally divide · increase rapidly",
+              "ko": "갈라져 많아짐 = diversification",
+              "tone": "hl"
+            },
+            {
+              "label": "(B)",
+              "text": "stopped doing it · kept neighbors apart",
+              "ko": "교류를 막음 = discouraging",
+              "tone": "hl2"
+            }
+          ]
+        }
+      },
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 11%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "⑤는 (A) diversification은 맞아요. 그런데 (B) expanding(넓힘)은 교류를 멈췄다(stopped)는 말과 반대예요. 두 칸이 다 맞아야 해요.",
+        "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "(A)만 보고 골랐어요",
+            "skills": [
+              "two_blanks"
+            ],
+            "reply": "알려 줘서 고마워요. 요약문은 (A)와 (B)가 둘 다 맞아야 해요. 앞으로 두 칸을 하나씩 확인하게 할게요."
+          },
+          {
+            "label": "교류가 늘어서 언어가 다양해진다고 생각했어요",
+            "skills": [
+              "cause_effect"
+            ],
+            "reply": "알려 줘서 고마워요. 글은 반대로 교류가 끊겨서 언어가 갈라졌다고 했어요. 앞으로 원인과 결과를 끝까지 따라가게 할게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(B)",
+              "text": "stopped doing it · kept neighbors apart",
+              "ko": "넓힘(expanding) X → 막음(discouraging)",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1wr8q49"
+  },
+  "intro": {
+    "topic": {
+      "say": "적도 주변엔 왜 언어와 종교가 그렇게 많을까요? 이번 글은 그 이유를 다뤄요."
+    },
+    "method1": {
+      "say": "요약문 문제는 지문을 먼저 읽으며 글쓴이 주장을 잡아요. 중요한 말을 칠판에 모아 둘 거예요."
+    },
+    "method2": {
+      "say": "마지막에 요약문을 읽고, (A)와 (B)가 칠판의 어느 쪽 말인지 보고 골라요."
+    },
+    "from": "pyiim1"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1haibqu"
+}

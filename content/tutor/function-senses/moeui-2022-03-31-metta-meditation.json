@@ -1,0 +1,108 @@
+{
+ "3": [
+  {
+   "word": "as",
+   "phrase": "known as",
+   "sense": "~로 (알려진)",
+   "usage": "be known as + 명사 = ~로 알려지다"
+  },
+  {
+   "word": "to",
+   "phrase": "to foster",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "a call to think",
+   "sense": "~하라는",
+   "usage": "명사 + to부정사 (a call to ~ = ~하라는 요구)"
+  },
+  {
+   "word": "to",
+   "phrase": "tends to get",
+   "sense": "~하는 (경향이 있다)",
+   "usage": "tend to + 동사원형 = ~하는 경향이 있다"
+  },
+  {
+   "word": "to",
+   "phrase": "to whom",
+   "sense": "~에게",
+   "usage": "전치사 to + whom (그 사람에게)"
+  },
+  {
+   "word": "to",
+   "phrase": "to rehearse",
+   "sense": "~하라는",
+   "usage": "a call에 이어지는 둘째 to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "wish you to be",
+   "sense": "~하기를",
+   "usage": "wish + 사람 + to부정사 = 사람이 ~하기를 바라다"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "to include",
+   "sense": "~하도록, (결국) ~하게",
+   "usage": "to부정사 (결과)"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "is that",
+   "sense": "~라는 것",
+   "usage": "명사절 that (be동사 뒤 보어)"
+  },
+  {
+   "word": "but",
+   "phrase": "but open",
+   "sense": "~이 아니라 (…이다)",
+   "usage": "not A but B"
+  },
+  {
+   "word": "to",
+   "phrase": "open to",
+   "sense": "~에 (열려 있는)",
+   "usage": "open to + 명사 = ~의 여지가 있는"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "to direct",
+   "sense": "~하는 것을",
+   "usage": "need + to부정사"
+  },
+  {
+   "word": "as",
+   "phrase": "as much towards",
+   "sense": "~만큼 (똑같이)",
+   "usage": "as much A as B (앞 as)"
+  },
+  {
+   "word": "to",
+   "phrase": "tempted to dismiss",
+   "sense": "~하고 싶은",
+   "usage": "be tempted to + 동사원형"
+  },
+  {
+   "word": "as",
+   "phrase": "as to those",
+   "sense": "~에게만큼",
+   "usage": "as much A as B (뒤 as — 비교 대상 앞)"
+  },
+  {
+   "word": "to",
+   "phrase": "as to those",
+   "sense": "~에게",
+   "usage": "전치사 to (direct it to ~)"
+  }
+ ]
+}

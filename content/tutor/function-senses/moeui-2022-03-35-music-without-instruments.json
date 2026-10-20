@@ -1,0 +1,64 @@
+{
+ "1": [
+  {
+   "word": "for",
+   "phrase": "for the first time",
+   "sense": "~ 만에, 처음으로",
+   "usage": "for the first time = 처음으로"
+  },
+  {
+   "word": "to",
+   "phrase": "to avoid using",
+   "sense": "~하는 것",
+   "usage": "to부정사 (진주어: it is … to ~)"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "to focus on the development",
+   "sense": "~하게 (해 주다)",
+   "usage": "allow + 사람 + to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "to focus on the more controllable",
+   "sense": "~하게 (해 주다)",
+   "usage": "allow + 사람 + to부정사"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "response to music",
+   "sense": "~에 대한",
+   "usage": "response to + 명사"
+  },
+  {
+   "word": "but",
+   "phrase": "but also instigate",
+   "sense": "~도 (또한)",
+   "usage": "not only A but also B"
+  }
+ ],
+ "6": [
+  {
+   "word": "which",
+   "phrase": "Activities which develop",
+   "sense": "(앞 명사를 꾸밈) ~하는",
+   "usage": "관계대명사 which + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "responses to visual cues",
+   "sense": "~에 대한",
+   "usage": "response to + 명사"
+  },
+  {
+   "word": "to",
+   "phrase": "necessary to play",
+   "sense": "~하는 데 (필요한)",
+   "usage": "necessary + to부정사"
+  }
+ ]
+}

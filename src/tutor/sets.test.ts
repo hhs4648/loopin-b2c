@@ -90,8 +90,10 @@ describe("수업 세트", () => {
   });
 
   /** 2022년 3월 고3 — 오답률 Top 15의 독해 문항만 만든다(듣기 1~17번은 뺀다, 2026-10-20 선생님) */
-  it("2022년 3월 모의고사는 오답률 높은 순으로 추가한다 — 29번(어법)부터", () => {
-    expect(setsIn("moeui-2022-03").map((s) => s.id)).toEqual(["moeui-2022-03-29"]);
+  it("2022년 3월 모의고사는 Top 15 중 독해 14문항 — 듣기 12번은 없다", () => {
+    expect(setsIn("moeui-2022-03").map((s) => Number(s.id.split("-").pop())).sort((a, b) => a - b)).toEqual([
+      21, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42,
+    ]);
     expect(setsIn("moeui-2022-03").every((s) => Number(s.id.split("-").pop()) >= 18)).toBe(true);
   });
 });

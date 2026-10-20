@@ -1,0 +1,2215 @@
+{
+  "id": "moeui-2022-03-37-living-clouds",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 37번 (글의 순서, 3점)",
+  "brief": {
+    "topic": "순서 푸는 법: 주어진 글의 끝 → 단락 첫머리 단서로 앞 내용 예측 → 단락 끝으로 다음 내용 예측 → 순서 잇기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "order",
+    "labels": [
+      "단락 요지 잡기",
+      "연결 단서 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-living-clouds.svg",
+      "alt": "칠판: Clouds(구름) ? Alive(살아 있음)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "어린아이에게 하늘을 지나가는 구름은 살아 있는 것처럼 보일 수도 있어요. 이번 글은 아이가 그 두려움을 어떻게 다루는지 이야기해요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. still, another, eventually 같은 말이 무엇을 받는지 찾아볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은? [3점]",
+    "sentence": 1,
+    "analysis_first": true,
+    "wrong_rate": 48.0,
+    "wrong_rank": 7,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "(A)-(C)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "2",
+        "label": "(B)-(A)-(C)",
+        "keywords": [],
+        "correct": true
+      },
+      {
+        "id": "3",
+        "label": "(B)-(C)-(A)",
+        "keywords": []
+      },
+      {
+        "id": "4",
+        "label": "(C)-(A)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "5",
+        "label": "(C)-(B)-(A)",
+        "keywords": []
+      }
+    ],
+    "brief": {
+      "ask": "단락 첫머리 단서(still, theorize, Cloud movement, theoretical constructs, eventually)를 떠올리며 순서를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 은유가 두려움을 누그러뜨림 → (B) 살아 있어도 안 무섭다, 또 다른 전략은 이론화 → (A) 바람에 밀려야 움직이니 살아 있지 않다 → (C) 그런 이론으로 결국 두려움이 사라진다, 순서예요.",
+      "final_wrong": "정답은 ② (B)-(A)-(C)예요.",
+      "option_feedback": {
+        "1": "(A)의 '구름의 움직임 구별'은 이론을 세운다는 말이 먼저 나와야 해요. 주어진 글은 은유 이야기에서 끝나요.",
+        "3": "많이 고른 오답이에요. (B) 끝은 이론을 세울 수 있다고만 했어요. 그 이론의 내용인 (A)가 먼저 오고, (C)가 그것을 묶어 eventually(결국)로 마무리해요.",
+        "4": "(C)의 '이론적 생각'과 eventually(결국)는 이론이 나온 뒤라야 해요. 주어진 글은 아직 은유 이야기예요.",
+        "5": "(C)가 주어진 글 바로 뒤에 오면, 아직 나오지 않은 이론을 묶어 말하게 돼요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 18%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "(B) 끝 theorize(이론화하다)와 (C) 첫머리 theoretical constructs(이론적 생각)가 비슷한 말이라 바로 붙이고 싶었을 거예요. 하지만 (B)는 이론을 세울 수 있다고만 했고, 그 이론이 무엇인지(바람에 밀려야 움직이니 살아 있지 않다)는 (A)가 말해요. (C)는 그 이론을 묶어 말하고 eventually(결국) 두려움이 사라진다고 마무리해요.",
+          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "같은 말(theorize)로 이었어요",
+              "skills": [
+                "same_word_link"
+              ],
+              "reply": "알려 줘서 고마워요. 비슷한 말이 반복된다고 바로 이어지는 건 아니에요. 구체적인 내용이 먼저, 묶어 말하는 정리가 뒤에 와요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "eventually(결국)를 못 봤어요",
+              "skills": [
+                "conclusion_signal"
+              ],
+              "reply": "알려 줘서 고마워요. eventually(결국)는 이야기를 마무리할 때 써요. 앞으로 마무리 신호를 먼저 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "same_word_link",
+                "conclusion_signal"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 반복되는 말과 마무리 신호를 같이 짚어 볼게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(B) 끝",
+                "text": "the child can theorize about their movement",
+                "ko": "이론을 세울 수 있다 (내용은 아직)",
+                "tone": "hl"
+              },
+              {
+                "label": "(A)",
+                "text": "the clouds move only if they are “pushed” by the wind",
+                "ko": "이론의 구체적인 내용",
+                "tone": "hl2"
+              },
+              {
+                "label": "(C)",
+                "text": "theoretical constructs … so that eventually the fear … disappears",
+                "ko": "이론을 묶어 말하고 마무리",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "independent",
+        "ko": "독립적인"
+      },
+      {
+        "en": "metaphorical",
+        "ko": "은유적인"
+      },
+      {
+        "en": "neutralize",
+        "ko": "중화하다"
+      },
+      {
+        "en": "differentiate",
+        "ko": "차별화하다, 구별하다"
+      },
+      {
+        "en": "terrifying",
+        "ko": "무서운"
+      },
+      {
+        "en": "metaphor",
+        "ko": "은유"
+      },
+      {
+        "en": "strategy",
+        "ko": "전략"
+      },
+      {
+        "en": "theorize",
+        "ko": "이론화하다"
+      },
+      {
+        "en": "cease to",
+        "ko": "~하기를 멈추다"
+      },
+      {
+        "en": "construct",
+        "ko": "생각, 구성 개념"
+      },
+      {
+        "en": "separate",
+        "ko": "구분하다"
+      },
+      {
+        "en": "eventually",
+        "ko": "결국"
+      },
+      {
+        "en": "border",
+        "ko": "경계"
+      },
+      {
+        "en": "logic",
+        "ko": "논리"
+      },
+      {
+        "en": "redefine",
+        "ko": "재정립하다"
+      },
+      {
+        "en": "boundary",
+        "ko": "경계선"
+      },
+      {
+        "en": "comfortably",
+        "ko": "편안하게"
+      },
+      {
+        "en": "scare",
+        "ko": "무섭게 하다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 글",
+      "text": "When a young child sees clouds moving across the sky, the clouds may seem alive and independent, perhaps dangerous. But if one sees clouds as fleecy lambs, a metaphorical chain begins to neutralize the fear.",
+      "teaching_value": "high",
+      "model_translation": "어린아이가 구름이 하늘을 가로질러 움직이는 것을 보게 될 때, 구름은 살아 있는, 독립적인, 어쩌면 위험한 것처럼 보일 수도 있다. 그러나 구름을 털이 많은 어린 양으로 본다면, 은유의 사슬이 두려움을 중화하기 시작한다.",
+      "glosses": [
+        {
+          "en": "When a young child sees clouds moving across the sky",
+          "ko": "어린아이가 구름이 하늘을 가로질러 움직이는 것을 볼 때"
+        },
+        {
+          "en": "a young child",
+          "ko": "어린아이"
+        },
+        {
+          "en": "the clouds",
+          "ko": "그 구름들은"
+        },
+        {
+          "en": "may seem",
+          "ko": "~처럼 보일 수도 있다"
+        },
+        {
+          "en": "alive and independent",
+          "ko": "살아 있고 독립적인"
+        },
+        {
+          "en": "perhaps dangerous",
+          "ko": "어쩌면 위험한"
+        },
+        {
+          "en": "But if one sees clouds as fleecy lambs",
+          "ko": "그러나 구름을 털이 많은 어린 양으로 본다면"
+        },
+        {
+          "en": "fleecy lambs",
+          "ko": "털이 많은 어린 양"
+        },
+        {
+          "en": "a metaphorical chain",
+          "ko": "은유의 사슬"
+        },
+        {
+          "en": "begins",
+          "ko": "시작하다"
+        },
+        {
+          "en": "to neutralize the fear",
+          "ko": "두려움을 중화하는 것"
+        },
+        {
+          "en": "neutralize",
+          "ko": "중화하다 · 힘을 없애 누그러뜨리다"
+        },
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "young",
+          "ko": "어린"
+        },
+        {
+          "en": "child",
+          "ko": "아이"
+        },
+        {
+          "en": "sees",
+          "ko": "보다"
+        },
+        {
+          "en": "clouds",
+          "ko": "구름들"
+        },
+        {
+          "en": "across",
+          "ko": "~에 걸쳐, ~마다"
+        },
+        {
+          "en": "sky",
+          "ko": "하늘"
+        },
+        {
+          "en": "seem",
+          "ko": "~처럼 보이다"
+        },
+        {
+          "en": "alive",
+          "ko": "살아 있는"
+        },
+        {
+          "en": "independent",
+          "ko": "독립적인"
+        },
+        {
+          "en": "perhaps",
+          "ko": "어쩌면"
+        },
+        {
+          "en": "dangerous",
+          "ko": "위험한"
+        },
+        {
+          "en": "fleecy",
+          "ko": "털이 많은"
+        },
+        {
+          "en": "lambs",
+          "ko": "어린 양들"
+        },
+        {
+          "en": "metaphorical",
+          "ko": "은유적인"
+        },
+        {
+          "en": "fear",
+          "ko": "두려움"
+        }
+      ],
+      "slashes": [
+        "sees clouds",
+        "across the sky,",
+        "alive and independent,",
+        "But",
+        "fleecy lambs,"
+      ],
+      "roles": [
+        {
+          "text": "a young child",
+          "role": "S"
+        },
+        {
+          "text": "sees … sees",
+          "role": "V"
+        },
+        {
+          "text": "the clouds",
+          "role": "S"
+        },
+        {
+          "text": "may seem",
+          "role": "V"
+        },
+        {
+          "text": "alive and independent",
+          "role": "C"
+        },
+        {
+          "text": "one",
+          "role": "S"
+        },
+        {
+          "text": "a metaphorical chain",
+          "role": "S"
+        },
+        {
+          "text": "begins",
+          "role": "V"
+        },
+        {
+          "text": "to neutralize the fear",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "g_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "a young child",
+            "the clouds",
+            "may seem",
+            "alive and independent",
+            "fleecy lambs",
+            "a metaphorical chain",
+            "begins",
+            "to neutralize the fear"
+          ],
+          "answers": [
+            "the clouds",
+            "may seem",
+            "alive and independent",
+            "a metaphorical chain",
+            "begins",
+            "to neutralize the fear"
+          ],
+          "roles": {
+            "the clouds": "S",
+            "may seem": "V",
+            "alive and independent": "C",
+            "a metaphorical chain": "S",
+            "begins": "V",
+            "to neutralize the fear": "O"
+          },
+          "brief": {
+            "ask": "주어진 글은 두 문장이에요. 콤마(,) 뒤 메인 문장의 주어(S)·동사(V)·보어(C)·목적어(O)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "a young child": "그건 When(~할 때) 덩어리 안의 주어예요. 콤마(,) 뒤에서 찾아봐요.",
+              "fleecy lambs": "그건 as(~로) 뒤 덩어리예요. 구름을 무엇으로 보는지예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "첫 문장은 S the clouds, V may seem, C alive and independent예요. 둘째 문장은 S a metaphorical chain, V begins, O to neutralize the fear예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "g_lamb",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "But 뒤를 봐요. 구름을 털 많은 어린 양(fleecy lambs)으로 보면 어떻게 된대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "neutralize the fear(두려움을 중화하다)를 봐요. 중화는 힘을 없앤다는 말이에요.",
+              "neutralize the fear(두려움을 중화하다)를 봐요. 중화는 힘을 없앤다는 말이에요."
+            ],
+            "explain": "'a metaphorical chain begins to neutralize the fear', 은유가 두려움의 힘을 빼기 시작한대요. 구름이 살아 있지 않다고 하진 않았어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'a metaphorical chain begins to neutralize the fear', 은유가 두려움의 힘을 빼기 시작한대요. 구름이 살아 있지 않다고 하진 않았어요.",
+              "o2": "'a metaphorical chain begins to neutralize the fear', 은유가 두려움의 힘을 빼기 시작한대요. 구름이 살아 있지 않다고 하진 않았어요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "두려움이 누그러지기 시작한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "구름이 더 무서워 보인다"
+            },
+            {
+              "id": "o2",
+              "label": "구름이 살아 있지 않다는 걸 알게 된다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "fleecy lambs",
+            "a metaphorical chain",
+            "neutralize the fear"
+          ],
+          "tips": [
+            {
+              "label": "see A as B",
+              "text": "'A를 B로 보다'예요. sees clouds as fleecy lambs = 구름을 털 많은 어린 양으로 본다.",
+              "mark": "as fleecy"
+            },
+            {
+              "label": "metaphorical",
+              "text": "'은유적인'이에요. 구름을 양에 빗대어 보는 것이 은유(metaphor)예요.",
+              "mark": "metaphorical"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "아이 눈에 비친 구름",
+            "left": {
+              "label": "처음",
+              "words": [
+                {
+                  "text": "alive",
+                  "ko": "살아 있는"
+                },
+                {
+                  "text": "dangerous",
+                  "ko": "위험한"
+                }
+              ]
+            },
+            "right": {
+              "label": "metaphor (은유)",
+              "words": [
+                {
+                  "text": "fleecy lambs",
+                  "ko": "털 많은 어린 양",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "→"
+          }
+        },
+        {
+          "id": "g_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 글은 '은유가 두려움을 누그러뜨리기 시작한다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "begins to neutralize(누그러뜨리기 시작한다)라고 했어요. 그 결과 구름이 어떻게 느껴질지 생각해 봐요.",
+              "begins to neutralize(누그러뜨리기 시작한다)라고 했어요. 그 결과 구름이 어떻게 느껴질지 생각해 봐요."
+            ],
+            "explain": "은유가 두려움을 누그러뜨리기 시작했으니, 다음엔 그래서 구름이 아이에게 어떻게 느껴지는지가 이어지기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "은유가 두려움을 누그러뜨리기 시작했으니, 다음엔 그래서 구름이 아이에게 어떻게 느껴지는지가 이어지기 쉬워요.",
+              "o2": "은유가 두려움을 누그러뜨리기 시작했으니, 다음엔 그래서 구름이 아이에게 어떻게 느껴지는지가 이어지기 쉬워요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구름이 바람에 밀려 움직인다는 설명"
+            },
+            {
+              "id": "o1",
+              "label": "은유로 본 뒤 구름이 아이에게 어떻게 느껴지는지",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "무서우면 이론을 세우라는 조언"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "neutralize the fear"
+          ],
+          "tips": [
+            {
+              "label": "순서 문제 요령",
+              "text": "주어진 글의 마지막 말이 다음 단락의 첫머리와 이어져요. still, another, theoretical constructs 같은 말이 무엇을 받는지 봐요."
+            }
+          ]
+        },
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요."
+          },
+          "method": 1,
+          "button": "(A)부터 읽어 볼게요"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "(A) “Cloud movement” becomes differentiated from the kind of movement that makes things alive, because the clouds move only if they are “pushed” by the wind, and what can’t move without a push from the outside is not alive.",
+      "teaching_value": "high",
+      "model_translation": "(A) '구름의 움직임'은 어떤 것들을 살아 있게끔 해 주는 그런 종류의 움직임과는 차별화되는데, 왜냐하면 구름은 바람에 의해 '밀려야만' 움직이고, 외부에서 밀지 않으면 움직일 수 없는 것은 살아 있지 않은 것이기 때문이다.",
+      "glosses": [
+        {
+          "en": "Cloud movement",
+          "ko": "구름의 움직임"
+        },
+        {
+          "en": "becomes",
+          "ko": "~이 되다"
+        },
+        {
+          "en": "differentiated",
+          "ko": "구별되는, 차별화된"
+        },
+        {
+          "en": "from the kind of movement",
+          "ko": "~한 종류의 움직임과"
+        },
+        {
+          "en": "the kind of movement",
+          "ko": "~한 종류의 움직임"
+        },
+        {
+          "en": "that makes things alive",
+          "ko": "것들을 살아 있게 하는"
+        },
+        {
+          "en": "because",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "the clouds",
+          "ko": "구름은"
+        },
+        {
+          "en": "move only if",
+          "ko": "~할 때만 움직이다"
+        },
+        {
+          "en": "they are “pushed” by the wind",
+          "ko": "바람에 '밀릴' 때"
+        },
+        {
+          "en": "the wind",
+          "ko": "바람"
+        },
+        {
+          "en": "what can’t move without a push from the outside",
+          "ko": "밖에서 밀어 주지 않으면 움직일 수 없는 것"
+        },
+        {
+          "en": "is not alive",
+          "ko": "살아 있지 않다"
+        },
+        {
+          "en": "Cloud",
+          "ko": "구름"
+        },
+        {
+          "en": "makes",
+          "ko": "만들다"
+        },
+        {
+          "en": "things",
+          "ko": "것들"
+        },
+        {
+          "en": "alive",
+          "ko": "살아 있는"
+        },
+        {
+          "en": "clouds",
+          "ko": "구름들"
+        },
+        {
+          "en": "move",
+          "ko": "움직이다"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "wind",
+          "ko": "바람"
+        },
+        {
+          "en": "can’t",
+          "ko": "~할 수 없다"
+        },
+        {
+          "en": "without",
+          "ko": "~ 없이"
+        },
+        {
+          "en": "push",
+          "ko": "밀기"
+        },
+        {
+          "en": "outside",
+          "ko": "바깥"
+        }
+      ],
+      "slashes": [
+        "becomes differentiated",
+        "the kind of movement",
+        "things alive,",
+        "the clouds move only",
+        "by the wind,",
+        "can’t move",
+        "from the outside"
+      ],
+      "roles": [
+        {
+          "text": "Cloud movement",
+          "role": "S"
+        },
+        {
+          "text": "becomes",
+          "role": "V"
+        },
+        {
+          "text": "differentiated",
+          "role": "C"
+        },
+        {
+          "text": "the clouds",
+          "role": "S"
+        },
+        {
+          "text": "move only",
+          "role": "V"
+        },
+        {
+          "text": "what can’t move without a push from the outside",
+          "role": "S"
+        },
+        {
+          "text": "is not",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that makes things alive"
+      ],
+      "steps": [
+        {
+          "id": "a_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Cloud movement",
+            "becomes",
+            "differentiated",
+            "the kind of movement",
+            "the clouds",
+            "the wind"
+          ],
+          "answers": [
+            "Cloud movement",
+            "becomes",
+            "differentiated"
+          ],
+          "roles": {
+            "Cloud movement": "S",
+            "becomes": "V",
+            "differentiated": "C"
+          },
+          "brief": {
+            "ask": "(A)는 긴 한 문장이에요. 메인 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the kind of movement": "그건 from(~와) 뒤 덩어리예요. 무엇과 구별되는지예요.",
+              "the clouds": "그건 because 덩어리 안의 주어예요. 메인 문장은 그 앞이에요.",
+              "the wind": "그건 by 뒤 덩어리예요. 누가 미는지예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Cloud movement(구름의 움직임), 동사는 becomes, 보어는 differentiated(구별되는)예요. because 뒤가 그 이유예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "a_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 '구름의 움직임은 생물을 살아 있게 하는 움직임과 구별된다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "differentiated(구별되는)는 따져서 나눈다는 말이에요. 은유가 아니라 논리로 구름을 보는 방식이에요.",
+              "differentiated(구별되는)는 따져서 나눈다는 말이에요. 은유가 아니라 논리로 구름을 보는 방식이에요."
+            ],
+            "explain": "(A)는 바람에 밀려야 움직이니 살아 있지 않다고 따지는, 논리적인 이론이에요. 그러니 앞에는 구름의 움직임을 따져 본다는 말이 먼저 나와야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "(A)는 바람에 밀려야 움직이니 살아 있지 않다고 따지는, 논리적인 이론이에요. 그러니 앞에는 구름의 움직임을 따져 본다는 말이 먼저 나와야 해요.",
+              "o2": "(A)는 바람에 밀려야 움직이니 살아 있지 않다고 따지는, 논리적인 이론이에요. 그러니 앞에는 구름의 움직임을 따져 본다는 말이 먼저 나와야 해요."
+            },
+            "point": "(A) “Cloud movement” becomes differentiated ← 앞에 구름의 움직임을 따져 보는(이론화하는) 이야기"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구름을 어린 양으로 보는 은유"
+            },
+            {
+              "id": "o1",
+              "label": "구름의 움직임을 따져서 이론을 세운다는 내용",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "어린아이가 구름을 처음 보고 겁먹는 장면"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Cloud movement",
+            "differentiated"
+          ]
+        },
+        {
+          "id": "a_why",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "because 뒤를 봐요. 구름은 왜 살아 있지 않다고 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "only if they are “pushed” by the wind를 봐요. only if는 '~할 때만'이에요.",
+              "only if they are “pushed” by the wind를 봐요. only if는 '~할 때만'이에요."
+            ],
+            "explain": "'the clouds move only if they are pushed by the wind', 바람이 밀 때만 움직인대요. 밖에서 밀어야만 움직이는 건 살아 있지 않대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'the clouds move only if they are pushed by the wind', 바람이 밀 때만 움직인대요. 밖에서 밀어야만 움직이는 건 살아 있지 않대요.",
+              "o2": "'the clouds move only if they are pushed by the wind', 바람이 밀 때만 움직인대요. 밖에서 밀어야만 움직이는 건 살아 있지 않대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "하늘 높이 떠 있어서"
+            },
+            {
+              "id": "o1",
+              "label": "바람에 밀려야만 움직여서",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "모양이 자꾸 바뀌어서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "only if they are “pushed” by the wind",
+            "is not alive"
+          ],
+          "tips": [
+            {
+              "label": "only if",
+              "text": "'~할 때만'이에요. move only if they are pushed = 밀릴 때만 움직인다.",
+              "mark": "only if"
+            },
+            {
+              "label": "what + 동사",
+              "text": "what can’t move …는 '움직일 수 없는 것'이에요. what 덩어리 전체가 주어예요.",
+              "mark": "what can’t"
+            }
+          ]
+        },
+        {
+          "id": "a_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 정리해 볼게요. (A)는 '밖에서 밀어야만 움직이는 것은 살아 있지 않다'는 아이의 논리로 끝나요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "is not alive"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "칠판",
+            "left": {
+              "label": "살아 있게 하는 움직임",
+              "words": [
+                {
+                  "text": "the kind of movement that makes things alive",
+                  "ko": "살아 있는 것의 움직임"
+                }
+              ]
+            },
+            "right": {
+              "label": "Cloud movement (구름)",
+              "words": [
+                {
+                  "text": "“pushed” by the wind",
+                  "ko": "바람에 밀려야 움직임",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "≠",
+            "caption": "밖에서 밀어야 움직인다 → not alive"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "(B) The cloud may still be thought of as alive, but it is no longer terrifying.",
+      "teaching_value": "high",
+      "model_translation": "(B) 그 구름이 여전히 살아 있다고 생각될 수도 있지만, 그것이 더는 무섭지 않다.",
+      "glosses": [
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "it",
+          "ko": "그것은"
+        },
+        {
+          "en": "The cloud",
+          "ko": "그 구름은"
+        },
+        {
+          "en": "may still be thought of as alive",
+          "ko": "여전히 살아 있다고 여겨질 수도 있다"
+        },
+        {
+          "en": "may still be thought of",
+          "ko": "여전히 ~로 여겨질 수도 있다"
+        },
+        {
+          "en": "alive",
+          "ko": "살아 있는"
+        },
+        {
+          "en": "but",
+          "ko": "그러나"
+        },
+        {
+          "en": "it is no longer terrifying",
+          "ko": "그것은 더는 무섭지 않다"
+        },
+        {
+          "en": "no longer terrifying",
+          "ko": "더는 무섭지 않은"
+        },
+        {
+          "en": "terrifying",
+          "ko": "무서운"
+        },
+        {
+          "en": "cloud",
+          "ko": "구름"
+        },
+        {
+          "en": "still",
+          "ko": "여전히"
+        },
+        {
+          "en": "longer",
+          "ko": "더 이상"
+        }
+      ],
+      "slashes": [
+        "thought of as alive,"
+      ],
+      "roles": [
+        {
+          "text": "The cloud",
+          "role": "S"
+        },
+        {
+          "text": "may still be thought of",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "no longer terrifying",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The cloud",
+            "may still be thought of",
+            "but",
+            "it",
+            "is",
+            "no longer terrifying"
+          ],
+          "answers": [
+            "The cloud",
+            "may still be thought of",
+            "it",
+            "is",
+            "no longer terrifying"
+          ],
+          "roles": {
+            "The cloud": "S",
+            "may still be thought of": "V",
+            "it": "S",
+            "is": "V",
+            "no longer terrifying": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "but": "그건 '그러나', 두 문장을 잇는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "앞은 S The cloud, V may still be thought of예요. but 뒤는 S it, V is, C no longer terrifying이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "be thought of as ~",
+              "text": "'~로 여겨지다'예요. may still be thought of as alive = 여전히 살아 있다고 여겨질 수도 있다.",
+              "mark": "thought of as"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "The cloud",
+            "may still be thought of as alive",
+            "but",
+            "it is no longer terrifying"
+          ],
+          "answers": [
+            "The cloud",
+            "may still be thought of as alive",
+            "but",
+            "it is no longer terrifying"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The cloud",
+                "ko": "그 구름은"
+              },
+              " ",
+              {
+                "en": "may still be thought of as alive",
+                "ko": "여전히 살아 있다고 여겨질 수 있다"
+              },
+              ", ",
+              {
+                "en": "but",
+                "ko": "그러나"
+              },
+              " ",
+              {
+                "en": "it is no longer terrifying",
+                "ko": "그것은 더는 무섭지 않다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "구름은 여전히 살아 있다고 여겨질 수 있지만, 더는 무섭지 않대요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "be thought of as ~",
+              "text": "'~로 여겨지다'예요. may still be thought of as alive = 여전히 살아 있다고 여겨질 수도 있다.",
+              "mark": "thought of as"
+            }
+          ]
+        },
+        {
+          "id": "b_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 '구름은 여전히 살아 있다고 여겨질 수 있지만, 더는 무섭지 않다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "still(여전히)과 no longer(더는 ~ 않는)를 봐요. 살아 있다는 생각은 그대로인데 무서움만 사라졌어요.",
+              "still(여전히)과 no longer(더는 ~ 않는)를 봐요. 살아 있다는 생각은 그대로인데 무서움만 사라졌어요."
+            ],
+            "explain": "still alive(여전히 살아 있음), no longer terrifying(더는 무섭지 않음)이에요. 살아 있다는 생각은 남고 무서움만 사라졌으니, 앞에는 무서움을 누그러뜨린 무언가가 있어야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "still alive(여전히 살아 있음), no longer terrifying(더는 무섭지 않음)이에요. 살아 있다는 생각은 남고 무서움만 사라졌으니, 앞에는 무서움을 누그러뜨린 무언가가 있어야 해요.",
+              "o2": "still alive(여전히 살아 있음), no longer terrifying(더는 무섭지 않음)이에요. 살아 있다는 생각은 남고 무서움만 사라졌으니, 앞에는 무서움을 누그러뜨린 무언가가 있어야 해요."
+            },
+            "point": "(B) still alive, but no longer terrifying ← 앞에 두려움을 누그러뜨린 것"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구름이 무섭지 않게 된 계기",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "구름이 살아 있지 않다는 아이의 결론"
+            },
+            {
+              "id": "o2",
+              "label": "구름이 바람에 밀려 움직인다는 설명"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "still",
+            "no longer terrifying"
+          ],
+          "tips": [
+            {
+              "label": "be thought of as ~",
+              "text": "'~로 여겨지다'예요. may still be thought of as alive = 여전히 살아 있다고 여겨질 수도 있다.",
+              "mark": "thought of as"
+            }
+          ]
+        },
+        {
+          "id": "s3_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "구름은 여전히 살아 있다고 여겨질 수 있지만, 더는 무섭지 않대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Repression and neutralization through metaphor are possible strategies, but there is another.",
+      "teaching_value": "medium",
+      "model_translation": "은유를 통한 억제와 중화도 가능한 전략이지만, 또 한 가지 전략이 있다.",
+      "glosses": [
+        {
+          "en": "Repression and neutralization",
+          "ko": "억제와 중화"
+        },
+        {
+          "en": "through metaphor",
+          "ko": "은유를 통한"
+        },
+        {
+          "en": "metaphor",
+          "ko": "은유"
+        },
+        {
+          "en": "are possible strategies",
+          "ko": "가능한 전략이다"
+        },
+        {
+          "en": "possible strategies",
+          "ko": "가능한 전략들"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "but",
+          "ko": "그러나"
+        },
+        {
+          "en": "there is another",
+          "ko": "또 다른 하나가 있다"
+        },
+        {
+          "en": "another",
+          "ko": "또 다른 하나(전략)"
+        },
+        {
+          "en": "Repression",
+          "ko": "억제"
+        },
+        {
+          "en": "neutralization",
+          "ko": "중화"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        }
+      ],
+      "slashes": [
+        "through metaphor",
+        "possible strategies,"
+      ],
+      "roles": [
+        {
+          "text": "Repression and neutralization",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "possible strategies",
+          "role": "C"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "another",
+          "role": "S"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Repression and neutralization",
+            "metaphor",
+            "are",
+            "possible strategies"
+          ],
+          "answers": [
+            "Repression and neutralization",
+            "are",
+            "possible strategies"
+          ],
+          "roles": {
+            "Repression and neutralization": "S",
+            "are": "V",
+            "possible strategies": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "metaphor": "그건 through(~을 통한) 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Repression and neutralization, 동사는 are, 보어는 possible strategies예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "another",
+              "text": "'또 다른 하나'예요. 여기서는 another strategy(또 다른 전략)예요.",
+              "mark": "another"
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "Repression and neutralization",
+            "through metaphor",
+            "are possible strategies",
+            "there is another"
+          ],
+          "answers": [
+            "through metaphor",
+            "Repression and neutralization",
+            "are possible strategies",
+            "there is another"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "through metaphor",
+                "ko": "은유를 통한"
+              },
+              " ",
+              {
+                "en": "Repression and neutralization",
+                "ko": "억제와 중화는"
+              },
+              " ",
+              {
+                "en": "are possible strategies",
+                "ko": "가능한 전략이다"
+              },
+              " — ",
+              {
+                "en": "there is another",
+                "ko": "또 다른 하나가 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "another",
+              "text": "'또 다른 하나'예요. 여기서는 another strategy(또 다른 전략)예요.",
+              "mark": "another"
+            }
+          ]
+        },
+        {
+          "id": "b2_another",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "neutralization through metaphor(은유를 통한 중화)는 주어진 글의 '양으로 보기'예요. 그것도 방법이지만, 또 다른 방법이 있대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "through metaphor",
+            "there is another"
+          ],
+          "tips": [
+            {
+              "label": "another",
+              "text": "'또 다른 하나'예요. 여기서는 another strategy(또 다른 전략)예요.",
+              "mark": "another"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Faced with the moving clouds, the child can theorize about their movement in such a way that the clouds cease to be alive.",
+      "teaching_value": "high",
+      "model_translation": "움직이는 구름을 마주쳤을 때, 아이는 구름이 살아 있지 않다는 식으로 구름의 움직임에 대해 이론화할 수 있다.",
+      "glosses": [
+        {
+          "en": "Faced with the moving clouds",
+          "ko": "움직이는 구름을 마주하면"
+        },
+        {
+          "en": "the moving clouds",
+          "ko": "움직이는 구름"
+        },
+        {
+          "en": "the child",
+          "ko": "그 아이는"
+        },
+        {
+          "en": "can theorize",
+          "ko": "이론화할 수 있다"
+        },
+        {
+          "en": "theorize",
+          "ko": "이론을 세우다, 이론화하다"
+        },
+        {
+          "en": "about their movement",
+          "ko": "그것들의 움직임에 대해"
+        },
+        {
+          "en": "their movement",
+          "ko": "그것들의 움직임"
+        },
+        {
+          "en": "in such a way that",
+          "ko": "~하는 식으로"
+        },
+        {
+          "en": "the clouds",
+          "ko": "구름이"
+        },
+        {
+          "en": "cease to be alive",
+          "ko": "더는 살아 있지 않게 되다"
+        },
+        {
+          "en": "Faced",
+          "ko": "마주한"
+        },
+        {
+          "en": "clouds",
+          "ko": "구름들"
+        },
+        {
+          "en": "child",
+          "ko": "아이"
+        },
+        {
+          "en": "way",
+          "ko": "방식, 길"
+        },
+        {
+          "en": "cease",
+          "ko": "멈추다"
+        },
+        {
+          "en": "alive",
+          "ko": "살아 있는"
+        }
+      ],
+      "slashes": [
+        "Faced with the moving clouds,",
+        "the child can theorize",
+        "their movement",
+        "such a way"
+      ],
+      "roles": [
+        {
+          "text": "the child",
+          "role": "S"
+        },
+        {
+          "text": "can theorize",
+          "role": "V"
+        },
+        {
+          "text": "the clouds",
+          "role": "S"
+        },
+        {
+          "text": "cease",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "b3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the moving clouds",
+            "the child",
+            "can theorize",
+            "their movement",
+            "the clouds"
+          ],
+          "answers": [
+            "the child",
+            "can theorize"
+          ],
+          "roles": {
+            "the child": "S",
+            "can theorize": "V"
+          },
+          "brief": {
+            "ask": "(B) 단락의 마지막 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the moving clouds": "그건 Faced with(~을 마주하면) 뒤 덩어리예요.",
+              "their movement": "그건 about 뒤 덩어리예요. 무엇에 대해 이론화하는지예요.",
+              "the clouds": "그건 that 덩어리 안의 주어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the child, 동사는 can theorize(이론화할 수 있다)예요. 콤마(,) 앞은 어떤 상황인지 알려 줘요."
+          },
+          "method": 0
+        },
+        {
+          "id": "b3_how",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "아이가 이론을 세우면 구름이 어떻게 된대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "cease to be alive를 봐요. cease to ~는 '~하기를 멈추다'예요.",
+              "cease to be alive를 봐요. cease to ~는 '~하기를 멈추다'예요."
+            ],
+            "explain": "'the clouds cease to be alive', 구름이 살아 있기를 멈춘대요. 은유는 살아 있는 채로 무서움만 덜었지만, 이론은 살아 있다는 생각 자체를 없애요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'the clouds cease to be alive', 구름이 살아 있기를 멈춘대요. 은유는 살아 있는 채로 무서움만 덜었지만, 이론은 살아 있다는 생각 자체를 없애요.",
+              "o2": "'the clouds cease to be alive', 구름이 살아 있기를 멈춘대요. 은유는 살아 있는 채로 무서움만 덜었지만, 이론은 살아 있다는 생각 자체를 없애요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구름이 어린 양처럼 보이게 된다"
+            },
+            {
+              "id": "o1",
+              "label": "구름이 더는 살아 있지 않게 된다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "구름이 더 위험해 보인다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "can theorize",
+            "cease to be alive"
+          ],
+          "tips": [
+            {
+              "label": "cease to ~",
+              "text": "'~하기를 멈추다, 더는 ~하지 않다'예요. cease to be alive = 더는 살아 있지 않게 되다.",
+              "mark": "cease"
+            },
+            {
+              "label": "Faced with ~",
+              "text": "'~을 마주하면'이에요. 아이가 어떤 상황인지 앞에서 알려 줘요.",
+              "mark": "Faced with"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "두 가지 전략",
+            "left": {
+              "label": "metaphor (은유)",
+              "words": [
+                {
+                  "text": "fleecy lambs",
+                  "ko": "털 많은 어린 양"
+                },
+                {
+                  "text": "no longer terrifying",
+                  "ko": "더는 안 무서움"
+                }
+              ]
+            },
+            "right": {
+              "label": "theorize (이론화)",
+              "words": [
+                {
+                  "text": "cease to be alive",
+                  "ko": "살아 있지 않게 됨",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "vs"
+          }
+        },
+        {
+          "id": "b3_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 '아이는 구름이 살아 있지 않게 되는 쪽으로 움직임을 이론화할 수 있다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "theorize about their movement(움직임을 이론화한다)고만 했어요. 어떻게 따지는지는 아직 안 나왔어요.",
+              "theorize about their movement(움직임을 이론화한다)고만 했어요. 어떻게 따지는지는 아직 안 나왔어요."
+            ],
+            "explain": "이론을 세울 수 있다고만 했지, 그 이론이 무엇인지는 아직 안 나왔어요. 다음엔 구름의 움직임을 어떻게 따지는지가 이어지기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "이론을 세울 수 있다고만 했지, 그 이론이 무엇인지는 아직 안 나왔어요. 다음엔 구름의 움직임을 어떻게 따지는지가 이어지기 쉬워요.",
+              "o2": "이론을 세울 수 있다고만 했지, 그 이론이 무엇인지는 아직 안 나왔어요. 다음엔 구름의 움직임을 어떻게 따지는지가 이어지기 쉬워요."
+            },
+            "point": "(B) 끝 '움직임을 이론화할 수 있다' → 다음은 그 이론의 구체적인 내용"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그 이론의 구체적인 내용",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "그래서 결국 두려움이 사라진다는 마무리"
+            },
+            {
+              "id": "o2",
+              "label": "구름을 다른 동물로 보는 또 다른 은유"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "can theorize",
+            "their movement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "(C) Children develop theoretical constructs that separate the motion of clouds from the motion of people and animals so that eventually the fear of living clouds disappears.",
+      "teaching_value": "high",
+      "model_translation": "(C) 아이들은 구름의 움직임과 사람 및 동물의 움직임을 구분하는 이론적인 생각을 전개하고, 결국 살아 있는 구름에 대한 두려움은 사라진다.",
+      "glosses": [
+        {
+          "en": "Children",
+          "ko": "아이들은"
+        },
+        {
+          "en": "develop",
+          "ko": "만들어 내다, 전개하다"
+        },
+        {
+          "en": "theoretical constructs",
+          "ko": "이론적인 생각(구성 개념)"
+        },
+        {
+          "en": "that separate the motion of clouds",
+          "ko": "구름의 움직임을 구분하는"
+        },
+        {
+          "en": "the motion of clouds",
+          "ko": "구름의 움직임"
+        },
+        {
+          "en": "from the motion of people and animals",
+          "ko": "사람과 동물의 움직임과"
+        },
+        {
+          "en": "so that eventually",
+          "ko": "그래서 결국"
+        },
+        {
+          "en": "the fear of living clouds",
+          "ko": "살아 있는 구름에 대한 두려움"
+        },
+        {
+          "en": "disappears",
+          "ko": "사라지다"
+        },
+        {
+          "en": "theoretical",
+          "ko": "이론적인"
+        },
+        {
+          "en": "constructs",
+          "ko": "생각, 구성 개념"
+        },
+        {
+          "en": "separate",
+          "ko": "구분하다"
+        },
+        {
+          "en": "motion",
+          "ko": "움직임"
+        },
+        {
+          "en": "clouds",
+          "ko": "구름들"
+        },
+        {
+          "en": "animals",
+          "ko": "동물들"
+        },
+        {
+          "en": "eventually",
+          "ko": "결국"
+        },
+        {
+          "en": "fear",
+          "ko": "두려움"
+        },
+        {
+          "en": "living",
+          "ko": "살아 있는"
+        }
+      ],
+      "slashes": [
+        "Children develop",
+        "theoretical constructs",
+        "the motion of clouds",
+        "people and animals"
+      ],
+      "roles": [
+        {
+          "text": "Children",
+          "role": "S"
+        },
+        {
+          "text": "develop",
+          "role": "V"
+        },
+        {
+          "text": "theoretical constructs",
+          "role": "O"
+        },
+        {
+          "text": "the fear of living clouds",
+          "role": "S"
+        },
+        {
+          "text": "disappears",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that separate the motion of clouds from the motion of people and animals"
+      ],
+      "steps": [
+        {
+          "id": "c_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Children",
+            "develop",
+            "theoretical constructs",
+            "the motion of clouds",
+            "the fear of living clouds"
+          ],
+          "answers": [
+            "Children",
+            "develop",
+            "theoretical constructs"
+          ],
+          "roles": {
+            "Children": "S",
+            "develop": "V",
+            "theoretical constructs": "O"
+          },
+          "brief": {
+            "ask": "(C)의 첫 문장이에요. 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the motion of clouds": "그건 that 덩어리 안, separate(구분하다)의 목적어예요.",
+              "the fear of living clouds": "그건 so that 덩어리 안의 주어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Children, 동사는 develop, 목적어는 theoretical constructs(이론적인 생각)예요. that 덩어리가 그 생각을 꾸며요."
+          },
+          "method": 0
+        },
+        {
+          "id": "c_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(C)는 '아이들은 구름의 움직임을 사람·동물의 움직임과 구분하는 이론적 생각을 만든다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "theoretical constructs(이론적 생각)는 앞에서 나온 이론을 한데 묶어 부르는 말이에요. eventually(결국)도 봐요.",
+              "theoretical constructs(이론적 생각)는 앞에서 나온 이론을 한데 묶어 부르는 말이에요. eventually(결국)도 봐요."
+            ],
+            "explain": "(C)는 구름과 생물의 움직임을 구분하는 이론을 묶어 말하고, eventually(결국) 두려움이 사라진다고 마무리해요. 그러니 앞에는 그 구분을 구체적으로 따진 내용이 먼저 나와야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "(C)는 구름과 생물의 움직임을 구분하는 이론을 묶어 말하고, eventually(결국) 두려움이 사라진다고 마무리해요. 그러니 앞에는 그 구분을 구체적으로 따진 내용이 먼저 나와야 해요.",
+              "o2": "(C)는 구름과 생물의 움직임을 구분하는 이론을 묶어 말하고, eventually(결국) 두려움이 사라진다고 마무리해요. 그러니 앞에는 그 구분을 구체적으로 따진 내용이 먼저 나와야 해요."
+            },
+            "point": "(C) theoretical constructs, eventually ← 앞에 구름의 움직임을 구분하는 구체적인 이론"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구름을 털 많은 어린 양으로 보는 은유"
+            },
+            {
+              "id": "o1",
+              "label": "구름의 움직임이 살아 있는 움직임과 어떻게 다른지 따진 구체적인 내용",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "구름이 여전히 살아 있다고 여겨진다는 내용"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "theoretical constructs",
+            "eventually"
+          ],
+          "tips": [
+            {
+              "label": "separate A from B",
+              "text": "'A를 B와 구분하다'예요. 구름의 움직임을 사람·동물의 움직임과 구분한다는 말이에요.",
+              "mark": "separate"
+            },
+            {
+              "label": "so that",
+              "text": "'그래서 ~하게'예요. 여기서는 결과: 그래서 결국 두려움이 사라진다.",
+              "mark": "so that"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "If things seem uncomfortably on the border between the alive and the not-alive, use logic to redefine the boundaries so that things fall more comfortably into place.",
+      "teaching_value": "medium",
+      "model_translation": "어떤 것들이 살아 있는 것과 살아 있지 않은 것 사이의 경계에 불편하게 있는 것으로 보인다면, 논리를 이용해 그 경계선을 재정립하여 그것들이 더 편안하게 제자리를 잡게 하라.",
+      "glosses": [
+        {
+          "en": "If things seem uncomfortably on the border",
+          "ko": "어떤 것들이 경계에 불편하게 있는 것으로 보인다면"
+        },
+        {
+          "en": "between the alive and the not-alive",
+          "ko": "살아 있는 것과 살아 있지 않은 것 사이의"
+        },
+        {
+          "en": "use logic",
+          "ko": "논리를 이용하라"
+        },
+        {
+          "en": "to redefine the boundaries",
+          "ko": "경계선을 재정립하기 위해"
+        },
+        {
+          "en": "so that things fall more comfortably into place",
+          "ko": "그것들이 더 편안하게 제자리를 잡도록"
+        },
+        {
+          "en": "fall into place",
+          "ko": "제자리를 잡다"
+        },
+        {
+          "en": "things",
+          "ko": "것들"
+        },
+        {
+          "en": "seem",
+          "ko": "~처럼 보이다"
+        },
+        {
+          "en": "uncomfortably",
+          "ko": "불편하게"
+        },
+        {
+          "en": "border",
+          "ko": "경계"
+        },
+        {
+          "en": "alive",
+          "ko": "살아 있는"
+        },
+        {
+          "en": "not-alive",
+          "ko": "살아 있지 않은 것"
+        },
+        {
+          "en": "logic",
+          "ko": "논리"
+        },
+        {
+          "en": "redefine",
+          "ko": "재정립하다"
+        },
+        {
+          "en": "boundaries",
+          "ko": "경계선"
+        },
+        {
+          "en": "comfortably",
+          "ko": "편안하게"
+        }
+      ],
+      "slashes": [
+        "uncomfortably",
+        "on the border",
+        "the not-alive,",
+        "use logic",
+        "the boundaries"
+      ],
+      "roles": [
+        {
+          "text": "things … things",
+          "role": "S"
+        },
+        {
+          "text": "seem",
+          "role": "V"
+        },
+        {
+          "text": "use",
+          "role": "V"
+        },
+        {
+          "text": "logic",
+          "role": "O"
+        },
+        {
+          "text": "fall",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "candidates": [
+            "If things seem uncomfortably on the border",
+            "use logic",
+            "to redefine the boundaries"
+          ],
+          "answers": [
+            "If things seem uncomfortably on the border",
+            "to redefine the boundaries",
+            "use logic"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "If things seem uncomfortably on the border",
+                "ko": "어떤 것들이 경계에 불편하게 있는 것 같으면"
+              },
+              ", ",
+              {
+                "en": "to redefine the boundaries",
+                "ko": "경계선을 다시 정하기 위해"
+              },
+              " ",
+              {
+                "en": "use logic",
+                "ko": "논리를 이용하라"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "If things seem uncomfortably on the border, use logic to redefine the boundaries.",
+          "tips": [
+            {
+              "label": "명령문",
+              "text": "use logic …처럼 주어 없이 동사로 시작하면 '~하라'예요. 읽는 사람에게 하는 조언이에요.",
+              "mark": "use logic"
+            },
+            {
+              "label": "fall into place",
+              "text": "'제자리를 잡다'예요. 헷갈리던 것이 깔끔하게 정리된다는 말이에요.",
+              "mark": "into place"
+            }
+          ]
+        },
+        {
+          "id": "c2_logic",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "살아 있는 것과 아닌 것의 경계에 걸쳐 불편하면, 논리로 경계를 다시 그으라고 해요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "use logic",
+            "redefine the boundaries"
+          ],
+          "tips": [
+            {
+              "label": "명령문",
+              "text": "use logic …처럼 주어 없이 동사로 시작하면 '~하라'예요. 읽는 사람에게 하는 조언이에요.",
+              "mark": "use logic"
+            },
+            {
+              "label": "fall into place",
+              "text": "'제자리를 잡다'예요. 헷갈리던 것이 깔끔하게 정리된다는 말이에요.",
+              "mark": "into place"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "If it scares you, make a theory.",
+      "teaching_value": "medium",
+      "model_translation": "그것이 여러분을 무섭게 한다면, 이론을 세워 보라.",
+      "glosses": [
+        {
+          "en": "If it scares you",
+          "ko": "그것이 여러분을 무섭게 한다면"
+        },
+        {
+          "en": "scares",
+          "ko": "무섭게 하다"
+        },
+        {
+          "en": "make a theory",
+          "ko": "이론을 세워라"
+        },
+        {
+          "en": "theory",
+          "ko": "이론"
+        }
+      ],
+      "slashes": [],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "scares",
+          "role": "V"
+        },
+        {
+          "text": "make",
+          "role": "V"
+        },
+        {
+          "text": "a theory",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "candidates": [
+            "If it scares you",
+            "make a theory"
+          ],
+          "answers": [
+            "If it scares you",
+            "make a theory"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "If it scares you",
+                "ko": "그것이 여러분을 무섭게 한다면"
+              },
+              ", ",
+              {
+                "en": "make a theory",
+                "ko": "이론을 세워 보라"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "c3_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(C)는 '무서우면 이론을 세워 보라'는 짧은 조언으로 끝나요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "make a theory"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "order_link",
+          "type": "pick",
+          "interaction": "word_pick",
+          "tag": "순서 잇기",
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "answers": [
+            "B",
+            "A",
+            "C"
+          ],
+          "order": {
+            "given": {
+              "id": "given",
+              "label": "주어진 글",
+              "last": {
+                "en": "… a metaphorical chain begins to neutralize the fear",
+                "ko": "은유의 사슬이 두려움을 누그러뜨리기 시작한다"
+              }
+            },
+            "cards": [
+              {
+                "id": "A",
+                "label": "(A)",
+                "first": {
+                  "en": "“Cloud movement” becomes differentiated from the kind of movement that makes things alive …",
+                  "ko": "구름의 움직임은 생물의 움직임과 구별된다"
+                },
+                "last": {
+                  "en": "… what can’t move without a push from the outside is not alive",
+                  "ko": "밖에서 밀어야만 움직이는 건 살아 있지 않다"
+                }
+              },
+              {
+                "id": "B",
+                "label": "(B)",
+                "first": {
+                  "en": "The cloud may still be thought of as alive, but it is no longer terrifying",
+                  "ko": "구름은 여전히 살아 있다고 여겨져도 더는 무섭지 않다"
+                },
+                "last": {
+                  "en": "… the child can theorize about their movement …",
+                  "ko": "아이는 구름의 움직임을 이론화할 수 있다"
+                }
+              },
+              {
+                "id": "C",
+                "label": "(C)",
+                "first": {
+                  "en": "Children develop theoretical constructs that separate the motion of clouds …",
+                  "ko": "아이들은 구름의 움직임을 구분하는 이론적 생각을 만든다"
+                },
+                "last": {
+                  "en": "If it scares you, make a theory.",
+                  "ko": "무서우면 이론을 세워 보라"
+                }
+              }
+            ]
+          },
+          "brief": {
+            "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+            "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+            "wrong_by": {
+              "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+              "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+            "explain": "주어진 글(은유가 두려움을 누그러뜨림) → (B) 살아 있어도 안 무섭다, 또 다른 전략: 이론화 → (A) 바람에 밀려야 움직이니 살아 있지 않다 → (C) 그런 이론으로 결국 두려움이 사라진다 순서예요.",
+            "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지"
+          },
+          "method": 1
+        },
+        {
+          "id": "c_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?"
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

@@ -1,0 +1,2779 @@
+{
+  "id": "moeui-2022-03-42-plant-behavior",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 41~42번 중 42번 (문맥상 낱말의 쓰임)",
+  "brief": {
+    "topic": "어휘 문제 푸는 법: 요지 → 두 쪽(식물이 하는 일 vs 행동이라 부르기 꺼리는 쪽) → 밑줄 단어가 흐름에 맞는지 하나씩 점검",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "word_in_context",
+    "labels": [
+      "요지 잡기",
+      "두 그룹으로 나누기",
+      "밑줄 단어 맞춰 보기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-plant-behavior.svg",
+      "alt": "칠판: Plants(식물) ? Behavior(행동)",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/vocab-method.svg",
+      "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "식물은 움직일까요? 이번 글은 식물의 움직임을 '행동'이라고 부를 수 있는지 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "요지를 잡고, 생각을 두 쪽으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 하나씩 볼 거예요. 칠판 순서대로 해 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은?",
+    "underline": [
+      "(a)maximize",
+      "(b)sensory",
+      "(c)reluctant",
+      "(d)absence",
+      "(e)interactions"
+    ],
+    "sentence": 8,
+    "analysis_first": true,
+    "wrong_rate": 34.0,
+    "wrong_rank": 13,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "maximize",
+        "ko": "최대로 하다"
+      },
+      {
+        "en": "sensory",
+        "ko": "감각의"
+      },
+      {
+        "en": "reluctant",
+        "ko": "꺼리는"
+      },
+      {
+        "en": "absence",
+        "ko": "없음, 부재"
+      },
+      {
+        "en": "interactions",
+        "ko": "상호 작용"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "(a) maximize",
+        "keywords": [
+          "maximize"
+        ],
+        "ko": "최대로 하다"
+      },
+      {
+        "id": "2",
+        "label": "(b) sensory",
+        "keywords": [
+          "sensory"
+        ],
+        "ko": "감각의"
+      },
+      {
+        "id": "3",
+        "label": "(c) reluctant",
+        "keywords": [
+          "reluctant"
+        ],
+        "ko": "꺼리는"
+      },
+      {
+        "id": "4",
+        "label": "(d) absence",
+        "keywords": [
+          "absence"
+        ],
+        "ko": "없음, 부재",
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "(e) interactions",
+        "keywords": [
+          "interactions"
+        ],
+        "ko": "상호 작용"
+      }
+    ],
+    "brief": {
+      "ask": "글쓴이는 식물이 행동한다는 쪽이에요. 이 생각과 맞지 않는 하나를 골라요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 글쓴이는 식물이 행동한다는 쪽이라, 장치가 없다는 이유만으로 행동 능력의 '존재'를 무시하면 안 된다는 말이에요. absence(부재)가 아니라 presence(존재)여야 해요.",
+      "final_wrong": "정답은 ④ (d)예요. 식물에게 행동 능력이 있다는 걸 무시하지 말라는 말이라, absence(부재)가 아니라 presence(존재)가 맞아요.",
+      "option_feedback": {
+        "1": "빛에 노출되는 걸 최대로 해야(maximize) 성장이 촉진된다는 말이라 맞아요.",
+        "2": "인간에게 없는 감각(sensory) 능력이 열 개 넘게 있다는 말이라 맞아요.",
+        "3": "Some(몇몇 사람들)이 신경이 없다는 이유로 행동이라 부르기를 꺼린다(reluctant)는 말이라 맞아요.",
+        "5": "지능을 환경과의 행동적 상호 작용(interactions)으로 문제를 푸는 능력으로 본다는 말이라 맞아요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 18%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "(c)는 글쓴이가 아니라 Some(몇몇 사람들)의 생각이에요. 신경과 근육이 없으니 행동이라 부르기를 꺼린다(reluctant), 이유와 딱 맞아요. 바로 뒤 But에서 글쓴이가 반박해요.",
+          "ask": "그래서 (c)는 문맥에 맞아요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "글쓴이 생각으로 읽었어요",
+              "skills": [
+                "whose_view"
+              ],
+              "reply": "알려 줘서 고마워요. Some are ~는 다른 사람들 의견이에요. 앞으로 누구의 생각인지 먼저 짚어 줄게요."
+            },
+            {
+              "label": "reluctant 뜻이 헷갈렸어요",
+              "skills": [
+                "word_sense_reluctant"
+              ],
+              "reply": "알려 줘서 고마워요. reluctant는 '꺼리는, 내키지 않는'이에요. 앞으로 이런 단어는 헷갈리는 단어로 표시해 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "whose_view",
+                "word_sense_reluctant"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 누구의 생각인지와 단어 뜻을 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(c)",
+                "text": "Some are reluctant … since they lack nerves",
+                "ko": "Some의 생각 — 이유와 맞음",
+                "tone": "hl"
+              },
+              {
+                "label": "(d)",
+                "text": "should not dismiss the absence of behavioral capacities",
+                "ko": "글쓴이는 '행동한다' 쪽 → presence여야",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "sophisticated",
+        "ko": "정교한"
+      },
+      {
+        "en": "capacity",
+        "ko": "능력"
+      },
+      {
+        "en": "stimulation",
+        "ko": "자극"
+      },
+      {
+        "en": "align",
+        "ko": "정렬하다"
+      },
+      {
+        "en": "exposure",
+        "ko": "노출"
+      },
+      {
+        "en": "thereby",
+        "ko": "그렇게 함으로써"
+      },
+      {
+        "en": "anticipate",
+        "ko": "예상하다"
+      },
+      {
+        "en": "deprive",
+        "ko": "빼앗다"
+      },
+      {
+        "en": "retain",
+        "ko": "보유하다"
+      },
+      {
+        "en": "sensory",
+        "ko": "감각의"
+      },
+      {
+        "en": "alter",
+        "ko": "바꾸다"
+      },
+      {
+        "en": "accordingly",
+        "ko": "그에 맞게"
+      },
+      {
+        "en": "reluctant",
+        "ko": "꺼리는"
+      },
+      {
+        "en": "label A as B",
+        "ko": "A를 B라고 부르다"
+      },
+      {
+        "en": "digest",
+        "ko": "소화하다"
+      },
+      {
+        "en": "nutrient",
+        "ko": "영양분"
+      },
+      {
+        "en": "dismiss",
+        "ko": "일축하다"
+      },
+      {
+        "en": "physiological",
+        "ko": "생리적인"
+      },
+      {
+        "en": "intelligence",
+        "ko": "지능"
+      },
+      {
+        "en": "in terms of",
+        "ko": "~의 측면에서"
+      }
+    ],
+    "options": [
+      {
+        "en": "absence",
+        "ko": "부재, 없음"
+      },
+      {
+        "en": "presence",
+        "ko": "존재, 있음"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "In What a Plant Knows, the biologist Daniel Chamovitz describes sophisticated information-processing capacities that plants use to control their movements in response to stimulation.",
+      "model_translation": "『What a Plant Knows』에서 생물학자 Daniel Chamovitz는 식물이 자극에 반응하여 자신의 움직임을 조절하기 위해 사용하는 정교한 정보 처리 능력을 설명한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In What a Plant Knows",
+          "ko": "『식물은 무엇을 아는가』에서"
+        },
+        {
+          "en": "the biologist Daniel Chamovitz",
+          "ko": "생물학자 Daniel Chamovitz는"
+        },
+        {
+          "en": "describes",
+          "ko": "설명한다"
+        },
+        {
+          "en": "sophisticated information-processing capacities",
+          "ko": "정교한 정보 처리 능력"
+        },
+        {
+          "en": "plants",
+          "ko": "식물"
+        },
+        {
+          "en": "use",
+          "ko": "사용하다"
+        },
+        {
+          "en": "to control their movements",
+          "ko": "자기 움직임을 조절하려고"
+        },
+        {
+          "en": "in response to stimulation",
+          "ko": "자극에 반응해"
+        },
+        {
+          "en": "Plant",
+          "ko": "식물"
+        },
+        {
+          "en": "Knows",
+          "ko": "알다"
+        },
+        {
+          "en": "biologist",
+          "ko": "생물학자"
+        },
+        {
+          "en": "Chamovitz",
+          "ko": "Chamovitz(성)"
+        },
+        {
+          "en": "sophisticated",
+          "ko": "정교한"
+        },
+        {
+          "en": "information-processing",
+          "ko": "정보 처리의"
+        },
+        {
+          "en": "capacities",
+          "ko": "능력"
+        },
+        {
+          "en": "control",
+          "ko": "조절하다"
+        },
+        {
+          "en": "movements",
+          "ko": "움직임"
+        },
+        {
+          "en": "response",
+          "ko": "반응"
+        },
+        {
+          "en": "stimulation",
+          "ko": "자극"
+        }
+      ],
+      "slashes": [
+        "In What a Plant Knows,",
+        "Daniel Chamovitz",
+        "describes",
+        "information-processing capacities",
+        "their movements"
+      ],
+      "roles": [
+        {
+          "text": "the biologist Daniel Chamovitz",
+          "role": "S"
+        },
+        {
+          "text": "describes",
+          "role": "V"
+        },
+        {
+          "text": "sophisticated information-processing capacities",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that plants use to control their movements in response to stimulation"
+      ],
+      "steps": [
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the biologist Daniel Chamovitz",
+            "describes",
+            "sophisticated information-processing capacities",
+            "plants",
+            "use"
+          ],
+          "answers": [
+            "the biologist Daniel Chamovitz",
+            "describes",
+            "sophisticated information-processing capacities"
+          ],
+          "roles": {
+            "the biologist Daniel Chamovitz": "S",
+            "describes": "V",
+            "sophisticated information-processing capacities": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "plants": "그건 that 뒤 덩어리 안의 주어예요.",
+              "use": "그건 that 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the biologist Daniel Chamovitz, 동사는 describes, 목적어는 sophisticated information-processing capacities예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s1_use",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "식물은 그 정보 처리 능력을 어디에 쓴대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "use 뒤 'to control their movements in response to stimulation'을 봐요.",
+              "use 뒤 'to control their movements in response to stimulation'을 봐요."
+            ],
+            "explain": "'to control their movements in response to stimulation', 자극에 반응해 자기 움직임을 조절하는 데 쓴대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'to control their movements in response to stimulation', 자극에 반응해 자기 움직임을 조절하는 데 쓴대요.",
+              "o2": "'to control their movements in response to stimulation', 자극에 반응해 자기 움직임을 조절하는 데 쓴대요."
+            },
+            "point": "요지 시작: 식물은 정보를 처리해 자기 움직임을 조절한다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "자극에 반응해 움직임을 조절하는 데",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "열매를 더 크게 키우는 데"
+            },
+            {
+              "id": "o2",
+              "label": "다른 식물과 대화하는 데"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "control their movements",
+            "in response to stimulation"
+          ],
+          "tips": [
+            {
+              "label": "in response to",
+              "text": "'~에 반응하여'예요.",
+              "mark": "in response to"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Plants not only “follow the sun” by bending their stems, they also align their leaves in such a way as to (a)maximize exposure to light and thereby promote growth.",
+      "model_translation": "식물은 자신의 줄기를 구부려 '태양을 따라갈' 뿐만 아니라, 빛에 최대한 노출되기 위한 방식으로 잎을 정렬하기도 하는데, 그렇게 함으로써 성장을 촉진한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "their stems",
+          "ko": "자기 줄기"
+        },
+        {
+          "en": "follow",
+          "ko": "따라가다"
+        },
+        {
+          "en": "Plants",
+          "ko": "식물은"
+        },
+        {
+          "en": "not only",
+          "ko": "~뿐만 아니라"
+        },
+        {
+          "en": "follow the sun",
+          "ko": "해를 따라가다"
+        },
+        {
+          "en": "by bending their stems",
+          "ko": "줄기를 구부려서"
+        },
+        {
+          "en": "they also align",
+          "ko": "또한 정렬한다"
+        },
+        {
+          "en": "their leaves",
+          "ko": "자기 잎을"
+        },
+        {
+          "en": "in such a way as to",
+          "ko": "~하는 방식으로"
+        },
+        {
+          "en": "maximize",
+          "ko": "최대로 하다"
+        },
+        {
+          "en": "exposure to light",
+          "ko": "빛에 노출됨"
+        },
+        {
+          "en": "and thereby promote growth",
+          "ko": "그렇게 함으로써 성장을 촉진하다"
+        },
+        {
+          "en": "they",
+          "ko": "그것들(식물)은"
+        },
+        {
+          "en": "align",
+          "ko": "정렬하다"
+        },
+        {
+          "en": "stems",
+          "ko": "줄기"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "sun",
+          "ko": "해"
+        },
+        {
+          "en": "bending",
+          "ko": "구부리는 것"
+        },
+        {
+          "en": "leaves",
+          "ko": "잎"
+        },
+        {
+          "en": "way",
+          "ko": "방식"
+        },
+        {
+          "en": "exposure",
+          "ko": "노출"
+        },
+        {
+          "en": "light",
+          "ko": "빛"
+        },
+        {
+          "en": "thereby",
+          "ko": "그렇게 함으로써"
+        },
+        {
+          "en": "promote",
+          "ko": "촉진하다"
+        }
+      ],
+      "slashes": [
+        "“follow the sun”",
+        "their stems,",
+        "their leaves",
+        "exposure to light"
+      ],
+      "roles": [
+        {
+          "text": "Plants",
+          "role": "S"
+        },
+        {
+          "text": "follow",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "align",
+          "role": "V"
+        },
+        {
+          "text": "their leaves",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Plants",
+            "follow",
+            "their stems",
+            "they",
+            "align"
+          ],
+          "answers": [
+            "Plants",
+            "follow",
+            "they",
+            "align"
+          ],
+          "roles": {
+            "Plants": "S",
+            "follow": "V",
+            "they": "S",
+            "align": "V"
+          },
+          "brief": {
+            "ask": "not only ~, also ~로 두 문장이 이어져요. 주어(S)와 동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "their stems": "그건 by bending 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "앞은 Plants가 follow하고, 콤마(,) 뒤는 they가 align해요. not only ~, also ~로 둘을 이었어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_growth",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "잎을 빛에 최대한 닿게 정렬하면 그 결과 어떻게 된대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "thereby(그렇게 함으로써) 뒤를 봐요.",
+              "thereby(그렇게 함으로써) 뒤를 봐요."
+            ],
+            "explain": "'thereby promote growth', 그렇게 해서 성장을 촉진한대요. 빛을 많이 받아야 잘 자라요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'thereby promote growth', 그렇게 해서 성장을 촉진한대요. 빛을 많이 받아야 잘 자라요.",
+              "o2": "'thereby promote growth', 그렇게 해서 성장을 촉진한대요. 빛을 많이 받아야 잘 자라요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "성장이 촉진된다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "잎이 빛을 피한다"
+            },
+            {
+              "id": "o2",
+              "label": "줄기가 약해진다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "thereby",
+            "promote growth"
+          ],
+          "tips": [
+            {
+              "label": "not only A, (but) also B",
+              "text": "'A뿐만 아니라 B도'예요. 이 문장은 but 없이 콤마(,)와 also로 이었어요.",
+              "mark": "not only"
+            },
+            {
+              "label": "thereby",
+              "text": "'그렇게 함으로써, 그 결과'예요.",
+              "mark": "thereby"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "식물이 하는 일",
+            "left": {
+              "label": "식물이 하는 일",
+              "words": [
+                {
+                  "text": "control their movements",
+                  "ko": "움직임을 조절"
+                },
+                {
+                  "text": "follow the sun",
+                  "ko": "해를 따라감",
+                  "fresh": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "s2_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빛에 노출되는 걸 '최대로 해야(maximize)' 성장이 촉진되죠. 그래서 (a)maximize는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "maximize",
+            "exposure to light"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(a) 맞음",
+                "text": "maximize exposure to light → promote growth",
+                "ko": "빛을 최대한 받아 성장을 돕는다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Some plants actually anticipate sunrise from “memory,” and even when deprived of solar signals retain this information for several days.",
+      "model_translation": "몇몇 식물은 실제로 '기억'으로 일출을 예상하며, 심지어 태양의 신호를 받지 못할 때도 며칠 동안 이 정보를 보유한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Some plants",
+          "ko": "몇몇 식물은"
+        },
+        {
+          "en": "actually",
+          "ko": "실제로"
+        },
+        {
+          "en": "anticipate",
+          "ko": "예상하다"
+        },
+        {
+          "en": "sunrise",
+          "ko": "해 뜨는 것"
+        },
+        {
+          "en": "from “memory,”",
+          "ko": "'기억'으로"
+        },
+        {
+          "en": "even when deprived of solar signals",
+          "ko": "해 신호를 받지 못할 때도"
+        },
+        {
+          "en": "retain",
+          "ko": "보유하다, 간직하다"
+        },
+        {
+          "en": "this information",
+          "ko": "이 정보"
+        },
+        {
+          "en": "for several days",
+          "ko": "며칠 동안"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "deprived",
+          "ko": "빼앗긴"
+        },
+        {
+          "en": "solar",
+          "ko": "태양의"
+        },
+        {
+          "en": "signals",
+          "ko": "신호"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "several",
+          "ko": "몇몇의"
+        },
+        {
+          "en": "days",
+          "ko": "날"
+        }
+      ],
+      "slashes": [
+        "anticipate sunrise",
+        "“memory,”",
+        "solar signals",
+        "this information"
+      ],
+      "roles": [
+        {
+          "text": "Some plants",
+          "role": "S"
+        },
+        {
+          "text": "anticipate",
+          "role": "V"
+        },
+        {
+          "text": "sunrise",
+          "role": "O"
+        },
+        {
+          "text": "retain",
+          "role": "V"
+        },
+        {
+          "text": "this information",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Some plants",
+            "anticipate",
+            "sunrise",
+            "retain",
+            "this information"
+          ],
+          "answers": [
+            "Some plants",
+            "anticipate",
+            "retain"
+          ],
+          "roles": {
+            "Some plants": "S",
+            "anticipate": "V",
+            "retain": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)와, and로 이어진 동사(V) 둘을 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "sunrise": "그건 anticipate가 예상하는 것(목적어)이에요.",
+              "this information": "그건 retain이 간직하는 것(목적어)이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Some plants, 동사는 anticipate와 retain 둘이에요. even when ~ signals는 동사 사이에 끼어든 말이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_memory",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "해 뜨는 걸 '기억'으로 미리 알고, 해 신호가 없어도 며칠 동안 그 정보를 간직한대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "anticipate sunrise",
+            "retain"
+          ],
+          "tips": [
+            {
+              "label": "deprived of ~",
+              "text": "'~을 빼앗긴, ~을 받지 못한'이에요. deprived of solar signals = 해 신호를 받지 못한.",
+              "mark": "deprived of"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "식물이 하는 일",
+            "left": {
+              "label": "식물이 하는 일",
+              "words": [
+                {
+                  "text": "control their movements",
+                  "ko": "움직임을 조절"
+                },
+                {
+                  "text": "follow the sun",
+                  "ko": "해를 따라감"
+                },
+                {
+                  "text": "anticipate sunrise",
+                  "ko": "해 뜨는 걸 예상",
+                  "fresh": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~3",
+                "icon": "🌱",
+                "en": "control movements · follow the sun · memory",
+                "ko": "식물은 정보를 처리해 움직여요 — 해를 따라가고, 해 뜨는 걸 기억해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "In Brilliant Green, Stefano Mancuso and Alessandra Viola argue that plants possess not only the senses of sight, touch, smell, and hearing, but more than a dozen other (b)sensory capacities that humans lack.",
+      "model_translation": "『Brilliant Green』에서 Stefano Mancuso와 Alessandra Viola는 식물이 시각, 촉각, 후각, 그리고 청각뿐만 아니라 인간에게 없는 십여 개가 넘는 다른 감각 능력을 갖추고 있다고 주장한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In Brilliant Green",
+          "ko": "『찬란한 초록』에서"
+        },
+        {
+          "en": "Stefano Mancuso and Alessandra Viola",
+          "ko": "Stefano Mancuso와 Alessandra Viola는"
+        },
+        {
+          "en": "argue",
+          "ko": "주장한다"
+        },
+        {
+          "en": "plants",
+          "ko": "식물"
+        },
+        {
+          "en": "possess",
+          "ko": "가지고 있다"
+        },
+        {
+          "en": "not only",
+          "ko": "~뿐만 아니라"
+        },
+        {
+          "en": "the senses of sight, touch, smell, and hearing",
+          "ko": "시각·촉각·후각·청각"
+        },
+        {
+          "en": "more than a dozen other",
+          "ko": "십여 개가 넘는 다른"
+        },
+        {
+          "en": "sensory capacities",
+          "ko": "감각 능력"
+        },
+        {
+          "en": "humans",
+          "ko": "인간"
+        },
+        {
+          "en": "lack",
+          "ko": "~이 없다"
+        },
+        {
+          "en": "Green",
+          "ko": "초록"
+        },
+        {
+          "en": "Stefano",
+          "ko": "Stefano(이름)"
+        },
+        {
+          "en": "Mancuso",
+          "ko": "Mancuso(성)"
+        },
+        {
+          "en": "Alessandra",
+          "ko": "Alessandra(이름)"
+        },
+        {
+          "en": "Viola",
+          "ko": "Viola(성)"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "senses",
+          "ko": "감각"
+        },
+        {
+          "en": "sight",
+          "ko": "시각"
+        },
+        {
+          "en": "touch",
+          "ko": "촉각"
+        },
+        {
+          "en": "smell",
+          "ko": "후각"
+        },
+        {
+          "en": "dozen",
+          "ko": "12개, 십여 개"
+        },
+        {
+          "en": "sensory",
+          "ko": "감각의"
+        },
+        {
+          "en": "capacities",
+          "ko": "능력"
+        }
+      ],
+      "slashes": [
+        "In Brilliant Green,",
+        "Alessandra Viola",
+        "argue",
+        "plants possess",
+        "and hearing,",
+        "a dozen other",
+        "sensory capacities"
+      ],
+      "roles": [
+        {
+          "text": "Stefano Mancuso and Alessandra Viola",
+          "role": "S"
+        },
+        {
+          "text": "argue",
+          "role": "V"
+        },
+        {
+          "text": "plants",
+          "role": "S"
+        },
+        {
+          "text": "possess",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that humans lack"
+      ],
+      "steps": [
+        {
+          "id": "s4_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "argue",
+            "plants",
+            "possess",
+            "humans",
+            "lack"
+          ],
+          "answers": [
+            "plants",
+            "possess"
+          ],
+          "roles": {
+            "plants": "S",
+            "possess": "V"
+          },
+          "brief": {
+            "ask": "argue that 뒤가 두 사람의 주장이에요. 그 안의 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "argue": "그건 두 사람이 '주장한다'는 메인 동사예요. that 뒤에서 찾아봐요.",
+              "humans": "그건 capacities를 꾸미는 that 덩어리 안의 말이에요.",
+              "lack": "그건 capacities를 꾸미는 that 덩어리 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주장 내용의 주어는 plants, 동사는 possess예요. 식물이 무엇을 가지고 있는지가 뒤에 나와요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "식물에겐 오감 말고도 인간에게 없는 감각 능력(sensory capacities)이 열 개 넘게 있대요. 그래서 (b)sensory는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "sensory capacities",
+            "humans lack"
+          ],
+          "tips": [
+            {
+              "label": "not only A but (also) B",
+              "text": "'A뿐만 아니라 B도'예요. 이 문장은 not only the senses ~, but more than a dozen ~이에요.",
+              "mark": "not only"
+            },
+            {
+              "label": "a dozen",
+              "text": "'12개, 열두어 개'예요. more than a dozen = 십여 개가 넘는.",
+              "mark": "a dozen"
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(a) 맞음",
+                "text": "maximize exposure to light → promote growth",
+                "ko": "빛을 최대한 받아 성장을 돕는다",
+                "tone": "hl"
+              },
+              {
+                "label": "(b) 맞음",
+                "text": "a dozen other sensory capacities",
+                "ko": "인간에게 없는 감각 능력이 열 개 넘게",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "For example, the roots of plants sense the mineral and water content of the soil and alter their direction of growth accordingly.",
+      "model_translation": "예를 들어, 식물의 뿌리는 토양의 미네랄과 수분 함량을 감지하고 그것에 맞게 자신의 성장 방향을 바꾼다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "the mineral and water content",
+          "ko": "미네랄과 수분 함량"
+        },
+        {
+          "en": "plants",
+          "ko": "식물"
+        },
+        {
+          "en": "the roots",
+          "ko": "뿌리"
+        },
+        {
+          "en": "For example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "the roots of plants",
+          "ko": "식물의 뿌리는"
+        },
+        {
+          "en": "sense",
+          "ko": "감지하다"
+        },
+        {
+          "en": "the mineral and water content of the soil",
+          "ko": "흙의 미네랄과 수분 함량"
+        },
+        {
+          "en": "alter",
+          "ko": "바꾸다"
+        },
+        {
+          "en": "their direction of growth",
+          "ko": "자라는 방향"
+        },
+        {
+          "en": "accordingly",
+          "ko": "그에 맞게"
+        },
+        {
+          "en": "mineral",
+          "ko": "미네랄"
+        },
+        {
+          "en": "water",
+          "ko": "물"
+        },
+        {
+          "en": "content",
+          "ko": "함량"
+        },
+        {
+          "en": "roots",
+          "ko": "뿌리"
+        },
+        {
+          "en": "soil",
+          "ko": "흙"
+        },
+        {
+          "en": "direction",
+          "ko": "방향"
+        }
+      ],
+      "slashes": [
+        "For example,",
+        "the roots of plants",
+        "of the soil"
+      ],
+      "roles": [
+        {
+          "text": "the roots",
+          "role": "S"
+        },
+        {
+          "text": "sense",
+          "role": "V"
+        },
+        {
+          "text": "the mineral and water content",
+          "role": "O"
+        },
+        {
+          "text": "alter",
+          "role": "V"
+        },
+        {
+          "text": "their direction",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the roots",
+            "plants",
+            "sense",
+            "the mineral and water content",
+            "alter"
+          ],
+          "answers": [
+            "the roots",
+            "sense",
+            "alter"
+          ],
+          "roles": {
+            "the roots": "S",
+            "sense": "V",
+            "alter": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "plants": "그건 of 뒤 덩어리예요.",
+              "the mineral and water content": "그건 sense가 감지하는 것(목적어)이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the roots, 동사는 sense와 alter 둘이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "accordingly",
+              "text": "'그에 맞게, 그에 따라'예요.",
+              "mark": "accordingly"
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "the roots of plants",
+            "sense",
+            "the mineral and water content of the soil",
+            "alter",
+            "their direction of growth",
+            "accordingly"
+          ],
+          "answers": [
+            "the roots of plants",
+            "the mineral and water content of the soil",
+            "sense",
+            "their direction of growth",
+            "accordingly",
+            "alter"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "the roots of plants",
+                "ko": "식물의 뿌리는"
+              },
+              " ",
+              {
+                "en": "the mineral and water content of the soil",
+                "ko": "흙의 미네랄과 수분 함량"
+              },
+              "을 ",
+              {
+                "en": "sense",
+                "ko": "감지하고"
+              },
+              ", ",
+              {
+                "en": "their direction of growth",
+                "ko": "자라는 방향"
+              },
+              "을 ",
+              {
+                "en": "accordingly",
+                "ko": "그에 맞게"
+              },
+              " ",
+              {
+                "en": "alter",
+                "ko": "바꾼다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "accordingly",
+              "text": "'그에 맞게, 그에 따라'예요.",
+              "mark": "accordingly"
+            }
+          ]
+        },
+        {
+          "id": "s5_roots",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "뿌리는 흙 속 미네랄과 물을 느끼고, 그에 맞게(accordingly) 자라는 방향을 바꾼대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "sense",
+            "alter their direction of growth"
+          ],
+          "tips": [
+            {
+              "label": "accordingly",
+              "text": "'그에 맞게, 그에 따라'예요.",
+              "mark": "accordingly"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "식물이 하는 일",
+            "left": {
+              "label": "식물이 하는 일",
+              "words": [
+                {
+                  "text": "control their movements",
+                  "ko": "움직임을 조절"
+                },
+                {
+                  "text": "follow the sun",
+                  "ko": "해를 따라감"
+                },
+                {
+                  "text": "anticipate sunrise",
+                  "ko": "해 뜨는 걸 예상"
+                },
+                {
+                  "text": "sensory capacities",
+                  "ko": "감각 능력"
+                },
+                {
+                  "text": "alter their direction",
+                  "ko": "방향을 바꿈",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "meaning_check": true
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~3",
+                "icon": "🌱",
+                "en": "control movements · follow the sun · memory",
+                "ko": "식물은 정보를 처리해 움직여요 — 해를 따라가고, 해 뜨는 걸 기억해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🌿",
+                "en": "sensory capacities · alter direction",
+                "ko": "인간에게 없는 감각까지 있어서, 흙을 느끼고 자라는 방향을 바꿔요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Some are (c)reluctant to label plant movements as behaviors, since they lack nerves and muscles.",
+      "model_translation": "몇몇 사람은 식물에 신경과 근육이 없어서 식물의 움직임을 행동이라고 부르기를 꺼린다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Some",
+          "ko": "몇몇 사람들은"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "reluctant",
+          "ko": "꺼리는"
+        },
+        {
+          "en": "to label plant movements as behaviors",
+          "ko": "식물의 움직임을 행동이라고 부르기를"
+        },
+        {
+          "en": "since",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "they lack nerves and muscles",
+          "ko": "그것들(식물)은 신경과 근육이 없다"
+        },
+        {
+          "en": "label",
+          "ko": "~라고 부르다"
+        },
+        {
+          "en": "plant",
+          "ko": "식물"
+        },
+        {
+          "en": "movements",
+          "ko": "움직임"
+        },
+        {
+          "en": "behaviors",
+          "ko": "행동"
+        },
+        {
+          "en": "lack",
+          "ko": "~이 없다"
+        },
+        {
+          "en": "nerves",
+          "ko": "신경"
+        },
+        {
+          "en": "muscles",
+          "ko": "근육"
+        }
+      ],
+      "slashes": [
+        "(c)reluctant",
+        "as behaviors,"
+      ],
+      "roles": [
+        {
+          "text": "Some",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "reluctant",
+          "role": "C"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "lack",
+          "role": "V"
+        },
+        {
+          "text": "nerves and muscles",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_why",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "몇몇 사람들은 왜 식물의 움직임을 행동이라고 부르기를 꺼린대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "since(~ 때문에) 뒤를 봐요.",
+              "since(~ 때문에) 뒤를 봐요."
+            ],
+            "explain": "'since they lack nerves and muscles', 신경과 근육이 없다는 이유래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'since they lack nerves and muscles', 신경과 근육이 없다는 이유래요.",
+              "o2": "'since they lack nerves and muscles', 신경과 근육이 없다는 이유래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "식물에게 신경과 근육이 없어서",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "식물은 전혀 움직이지 않아서"
+            },
+            {
+              "id": "o2",
+              "label": "식물의 움직임이 너무 느려서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Some",
+            "lack nerves and muscles"
+          ],
+          "tips": [
+            {
+              "label": "reluctant to + 동사",
+              "text": "'~하기를 꺼리는, 내키지 않는'이에요.",
+              "mark": "reluctant"
+            },
+            {
+              "label": "label A as B",
+              "text": "'A를 B라고 부르다, A에 B라는 이름을 붙이다'예요.",
+              "mark": "label"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "식물의 움직임 = 행동?",
+            "left": {
+              "label": "식물이 하는 일",
+              "words": [
+                {
+                  "text": "control their movements",
+                  "ko": "움직임을 조절"
+                },
+                {
+                  "text": "follow the sun",
+                  "ko": "해를 따라감"
+                },
+                {
+                  "text": "anticipate sunrise",
+                  "ko": "해 뜨는 걸 예상"
+                },
+                {
+                  "text": "sensory capacities",
+                  "ko": "감각 능력"
+                },
+                {
+                  "text": "alter their direction",
+                  "ko": "방향을 바꿈"
+                }
+              ]
+            },
+            "right": {
+              "label": "Some · 행동이라 부르기 꺼림",
+              "words": [
+                {
+                  "text": "lack nerves and muscles",
+                  "ko": "신경·근육 없음",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "vs"
+          }
+        },
+        {
+          "id": "s6_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "Some(몇몇 사람들)은 식물이 행동하지 않는다는 쪽이에요. 신경이 없으니 행동이라 부르기를 꺼린다(reluctant), 이유와 맞아서 (c)reluctant는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "Some",
+            "reluctant"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(a) 맞음",
+                "text": "maximize exposure to light → promote growth",
+                "ko": "빛을 최대한 받아 성장을 돕는다",
+                "tone": "hl"
+              },
+              {
+                "label": "(b) 맞음",
+                "text": "a dozen other sensory capacities",
+                "ko": "인간에게 없는 감각 능력이 열 개 넘게",
+                "tone": "hl"
+              },
+              {
+                "label": "(c) 맞음",
+                "text": "Some are reluctant … since they lack nerves",
+                "ko": "신경이 없어서 행동이라 부르기 꺼린다 (Some의 생각)",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "But just as they are able to breathe without lungs and digest nutrients without a stomach, plants have the ability to move (behave).",
+      "model_translation": "하지만 식물이 폐 없이 숨을 쉴 수 있고 위 없이 영양분을 소화할 수 있는 것처럼, 식물은 움직일(행동할) 수 있는 능력도 지니고 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "But",
+          "ko": "하지만"
+        },
+        {
+          "en": "just as",
+          "ko": "~인 것처럼"
+        },
+        {
+          "en": "they",
+          "ko": "그것들(식물)이"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "able to breathe without lungs",
+          "ko": "폐 없이 숨 쉴 수 있는"
+        },
+        {
+          "en": "digest nutrients without a stomach",
+          "ko": "위 없이 영양분을 소화하다"
+        },
+        {
+          "en": "plants",
+          "ko": "식물은"
+        },
+        {
+          "en": "have",
+          "ko": "가지고 있다"
+        },
+        {
+          "en": "the ability",
+          "ko": "능력"
+        },
+        {
+          "en": "to move",
+          "ko": "움직일"
+        },
+        {
+          "en": "behave",
+          "ko": "행동하다"
+        },
+        {
+          "en": "able",
+          "ko": "~할 수 있는"
+        },
+        {
+          "en": "breathe",
+          "ko": "숨 쉬다"
+        },
+        {
+          "en": "without",
+          "ko": "~ 없이"
+        },
+        {
+          "en": "lungs",
+          "ko": "폐"
+        },
+        {
+          "en": "digest",
+          "ko": "소화하다"
+        },
+        {
+          "en": "nutrients",
+          "ko": "영양분"
+        },
+        {
+          "en": "stomach",
+          "ko": "위"
+        },
+        {
+          "en": "ability",
+          "ko": "능력"
+        },
+        {
+          "en": "move",
+          "ko": "움직이다"
+        }
+      ],
+      "slashes": [
+        "But just as",
+        "without lungs",
+        "without a stomach,",
+        "the ability"
+      ],
+      "roles": [
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "plants",
+          "role": "S"
+        },
+        {
+          "text": "have",
+          "role": "V"
+        },
+        {
+          "text": "the ability",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "they",
+            "are",
+            "plants",
+            "have",
+            "the ability"
+          ],
+          "answers": [
+            "plants",
+            "have",
+            "the ability"
+          ],
+          "roles": {
+            "plants": "S",
+            "have": "V",
+            "the ability": "O"
+          },
+          "brief": {
+            "ask": "just as 덩어리 뒤, 메인 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "they": "그건 just as(~인 것처럼) 덩어리 안의 주어예요.",
+              "are": "그건 just as 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콤마(,) 뒤 메인 문장은 주어 plants, 동사 have, 목적어 the ability예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_but",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "But 뒤 글쓴이 생각은 어느 쪽이에요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "just as(~인 것처럼) 뒤 예를 봐요. 폐가 없는데도 숨을 쉬어요.",
+              "just as(~인 것처럼) 뒤 예를 봐요. 폐가 없는데도 숨을 쉬어요."
+            ],
+            "explain": "'plants have the ability to move (behave)', 폐 없이 숨 쉬듯 신경 없이도 행동할 수 있대요. 글쓴이는 Some과 반대로 '식물은 행동한다' 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'plants have the ability to move (behave)', 폐 없이 숨 쉬듯 신경 없이도 행동할 수 있대요. 글쓴이는 Some과 반대로 '식물은 행동한다' 쪽이에요."
+            },
+            "point": "글쓴이 입장: But 뒤 — 신경이 없어도 식물은 행동한다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "폐 없이 숨 쉬듯, 신경 없이도 움직일(행동할) 수 있다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "신경이 없으니 행동할 수 없다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "But",
+            "the ability to move (behave)"
+          ],
+          "tips": [
+            {
+              "label": "just as A, B",
+              "text": "'A인 것처럼 B도'예요. 앞 예와 뒤 주장이 짝을 이뤄요.",
+              "mark": "just as"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "식물의 움직임 = 행동?",
+            "left": {
+              "label": "식물이 하는 일",
+              "words": [
+                {
+                  "text": "control their movements",
+                  "ko": "움직임을 조절"
+                },
+                {
+                  "text": "follow the sun",
+                  "ko": "해를 따라감"
+                },
+                {
+                  "text": "anticipate sunrise",
+                  "ko": "해 뜨는 걸 예상"
+                },
+                {
+                  "text": "sensory capacities",
+                  "ko": "감각 능력"
+                },
+                {
+                  "text": "alter their direction",
+                  "ko": "방향을 바꿈"
+                },
+                {
+                  "text": "ability to move",
+                  "ko": "움직이는 능력",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "Some · 행동이라 부르기 꺼림",
+              "words": [
+                {
+                  "text": "lack nerves and muscles",
+                  "ko": "신경·근육 없음"
+                }
+              ]
+            },
+            "between": "vs"
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "We should not dismiss the (d)absence of behavioral capacities in an organism simply because it lacks the physiological mechanism that is responsible for the behavior in animals.",
+      "model_translation": "단지 어떤 유기체가 동물에게서 행동의 원인이 되는 생리학적 메커니즘이 없다는 이유로, 그 유기체의 행동 능력 존재를 일축해서는 안 된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "should not dismiss",
+          "ko": "일축해서는 안 된다, 무시해서는 안 된다"
+        },
+        {
+          "en": "absence",
+          "ko": "없음, 부재"
+        },
+        {
+          "en": "of behavioral capacities",
+          "ko": "행동 능력의"
+        },
+        {
+          "en": "in an organism",
+          "ko": "어떤 생물에게서"
+        },
+        {
+          "en": "simply because",
+          "ko": "단지 ~라는 이유로"
+        },
+        {
+          "en": "it",
+          "ko": "그것(그 생물)"
+        },
+        {
+          "en": "lacks",
+          "ko": "~이 없다"
+        },
+        {
+          "en": "the physiological mechanism",
+          "ko": "생리적 장치(메커니즘)"
+        },
+        {
+          "en": "is responsible for",
+          "ko": "~의 원인이 되다"
+        },
+        {
+          "en": "the behavior in animals",
+          "ko": "동물의 행동"
+        },
+        {
+          "en": "dismiss",
+          "ko": "일축하다"
+        },
+        {
+          "en": "behavioral",
+          "ko": "행동의"
+        },
+        {
+          "en": "capacities",
+          "ko": "능력"
+        },
+        {
+          "en": "organism",
+          "ko": "생물, 유기체"
+        },
+        {
+          "en": "physiological",
+          "ko": "생리적인"
+        },
+        {
+          "en": "mechanism",
+          "ko": "장치, 메커니즘"
+        },
+        {
+          "en": "responsible",
+          "ko": "원인이 되는"
+        },
+        {
+          "en": "animals",
+          "ko": "동물"
+        }
+      ],
+      "slashes": [
+        "We should not dismiss",
+        "behavioral capacities",
+        "in an organism",
+        "the physiological mechanism"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "should not dismiss",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "lacks",
+          "role": "V"
+        },
+        {
+          "text": "the physiological mechanism",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that is responsible for the behavior in animals"
+      ],
+      "steps": [
+        {
+          "id": "s8_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "should not dismiss",
+            "it",
+            "lacks",
+            "the physiological mechanism"
+          ],
+          "answers": [
+            "We",
+            "should not dismiss"
+          ],
+          "roles": {
+            "We": "S",
+            "should not dismiss": "V"
+          },
+          "brief": {
+            "ask": "문장이 길어요. 맨 앞 메인 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "it": "그건 because 뒤 덩어리 안의 주어예요.",
+              "lacks": "그건 because 뒤 덩어리 안의 동사예요.",
+              "the physiological mechanism": "그건 lacks 뒤, 없는 것이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 We, 동사는 should not dismiss예요. '~을 일축해서는 안 된다'는 글쓴이의 주장이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s8_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "simply because 뒤를 봐요. 동물 같은 장치가 없다는 이유만으로, 글쓴이는 식물을 어떻게 판단하지 말라는 걸까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "앞 문장에서 글쓴이는 '식물은 행동한다' 쪽이었어요. dismiss는 '일축하다, 무시하다'예요.",
+              "앞 문장에서 글쓴이는 '식물은 행동한다' 쪽이었어요. dismiss는 '일축하다, 무시하다'예요."
+            ],
+            "explain": "글쓴이는 식물이 행동한다는 쪽이에요. 신경 같은 장치가 없다는 이유만으로 '행동 능력이 없다'고 판단하지 말라는 흐름이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "글쓴이는 식물이 행동한다는 쪽이에요. 신경 같은 장치가 없다는 이유만으로 '행동 능력이 없다'고 판단하지 말라는 흐름이에요."
+            },
+            "point": "장치가 없다는 이유만으로 행동 능력이 '없다'고 하지 마라 — 이 흐름에 (d)가 맞는지 문제에서 확인"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "행동 능력이 없다고 판단하지 마라",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "행동 능력이 있다고 판단하지 마라"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "should not dismiss",
+            "simply because"
+          ],
+          "tips": [
+            {
+              "label": "dismiss",
+              "text": "'일축하다, (생각할 가치가 없다며) 무시하다'예요.",
+              "mark": "dismiss"
+            },
+            {
+              "label": "be responsible for",
+              "text": "'~의 원인이 되다, ~을 맡다'예요.",
+              "mark": "responsible for"
+            }
+          ]
+        },
+        {
+          "id": "s8_hold",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "밑줄 (d)가 이 흐름과 맞는지는 마지막 문제에서 같이 확인해 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Plants clearly sense the environment, learn, store information, and use that information to guide movements; they behave.",
+      "model_translation": "식물은 분명히 환경을 감지하고, 배우고, 정보를 저장하며, 움직임을 안내하기 위해 그 정보를 사용한다. 즉, 식물은 행동한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Plants",
+          "ko": "식물은"
+        },
+        {
+          "en": "clearly",
+          "ko": "분명히"
+        },
+        {
+          "en": "sense the environment",
+          "ko": "환경을 감지하다"
+        },
+        {
+          "en": "learn",
+          "ko": "배우다"
+        },
+        {
+          "en": "store information",
+          "ko": "정보를 저장하다"
+        },
+        {
+          "en": "use that information",
+          "ko": "그 정보를 쓰다"
+        },
+        {
+          "en": "to guide movements",
+          "ko": "움직임을 이끌려고"
+        },
+        {
+          "en": "they behave",
+          "ko": "그것들(식물)은 행동한다"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "guide",
+          "ko": "이끌다"
+        },
+        {
+          "en": "movements",
+          "ko": "움직임"
+        }
+      ],
+      "slashes": [
+        "sense the environment,",
+        "learn,",
+        "store information,",
+        "that information",
+        "movements;"
+      ],
+      "roles": [
+        {
+          "text": "Plants",
+          "role": "S"
+        },
+        {
+          "text": "sense",
+          "role": "V"
+        },
+        {
+          "text": "learn",
+          "role": "V"
+        },
+        {
+          "text": "store",
+          "role": "V"
+        },
+        {
+          "text": "use",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "behave",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_behave",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "환경을 느끼고, 배우고, 정보를 저장해 움직임에 쓴대요. 세미콜론(;) 뒤 결론은 they behave, 식물은 행동한다예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "they behave"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "식물의 움직임 = 행동?",
+            "left": {
+              "label": "식물이 하는 일",
+              "words": [
+                {
+                  "text": "control their movements",
+                  "ko": "움직임을 조절"
+                },
+                {
+                  "text": "follow the sun",
+                  "ko": "해를 따라감"
+                },
+                {
+                  "text": "anticipate sunrise",
+                  "ko": "해 뜨는 걸 예상"
+                },
+                {
+                  "text": "sensory capacities",
+                  "ko": "감각 능력"
+                },
+                {
+                  "text": "alter their direction",
+                  "ko": "방향을 바꿈"
+                },
+                {
+                  "text": "ability to move",
+                  "ko": "움직이는 능력"
+                },
+                {
+                  "text": "they behave",
+                  "ko": "행동한다",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "Some · 행동이라 부르기 꺼림",
+              "words": [
+                {
+                  "text": "lack nerves and muscles",
+                  "ko": "신경·근육 없음"
+                }
+              ]
+            },
+            "between": "vs"
+          }
+        },
+        {
+          "id": "story_9",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~3",
+                "icon": "🌱",
+                "en": "control movements · follow the sun · memory",
+                "ko": "식물은 정보를 처리해 움직여요 — 해를 따라가고, 해 뜨는 걸 기억해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🌿",
+                "en": "sensory capacities · alter direction",
+                "ko": "인간에게 없는 감각까지 있어서, 흙을 느끼고 자라는 방향을 바꿔요",
+                "fresh": false
+              },
+              {
+                "label": "문장 6",
+                "icon": "🙅",
+                "en": "Some · lack nerves and muscles",
+                "ko": "신경·근육이 없으니 행동이 아니라는 사람들이 있어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 7~9",
+                "icon": "🌻",
+                "en": "But · they behave",
+                "ko": "하지만 폐 없이 숨 쉬듯, 신경 없이도 식물은 행동해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "One might say that there is certain “intelligence” to their behavior.",
+      "model_translation": "어떤 사람은 식물의 행동에 어느 정도의 '지능'이 있다고 말할지도 모른다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "One might say",
+          "ko": "누군가는 ~라고 말할지도 모른다"
+        },
+        {
+          "en": "there is",
+          "ko": "있다"
+        },
+        {
+          "en": "certain “intelligence”",
+          "ko": "어느 정도의 '지능'"
+        },
+        {
+          "en": "to their behavior",
+          "ko": "그들의 행동에"
+        },
+        {
+          "en": "say",
+          "ko": "말하다"
+        },
+        {
+          "en": "intelligence",
+          "ko": "지능"
+        }
+      ],
+      "slashes": [
+        "One might say",
+        "certain “intelligence”"
+      ],
+      "roles": [
+        {
+          "text": "One",
+          "role": "S"
+        },
+        {
+          "text": "might say",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s10_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "candidates": [
+            "One might say",
+            "there is",
+            "certain “intelligence”",
+            "to their behavior"
+          ],
+          "answers": [
+            "to their behavior",
+            "certain “intelligence”",
+            "there is",
+            "One might say"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "to their behavior",
+                "ko": "그들의 행동에"
+              },
+              " ",
+              {
+                "en": "certain “intelligence”",
+                "ko": "어느 정도의 '지능'"
+              },
+              "이 ",
+              {
+                "en": "there is",
+                "ko": "있다"
+              },
+              "고 ",
+              {
+                "en": "One might say",
+                "ko": "누군가는 말할지도 모른다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s10_intel",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "식물의 행동에 어느 정도 '지능(intelligence)'이 있다고도 말할 수 있대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "certain “intelligence”"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "This is true as long as intelligence is defined in terms of the ability to solve problems through behavioral (e)interactions with the environment, rather than with respect to mental capacity.",
+      "model_translation": "지능이 정신적 능력보다 환경과의 행동적 상호 작용을 통한 문제 해결 능력이라는 측면에서 정의된다면, 이것은 사실이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "This",
+          "ko": "이것은"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "true",
+          "ko": "사실인"
+        },
+        {
+          "en": "as long as",
+          "ko": "~하는 한"
+        },
+        {
+          "en": "intelligence",
+          "ko": "지능"
+        },
+        {
+          "en": "is defined",
+          "ko": "정의되다"
+        },
+        {
+          "en": "in terms of",
+          "ko": "~의 측면에서"
+        },
+        {
+          "en": "the ability to solve problems",
+          "ko": "문제를 해결하는 능력"
+        },
+        {
+          "en": "through behavioral",
+          "ko": "행동을 통한"
+        },
+        {
+          "en": "interactions",
+          "ko": "상호 작용"
+        },
+        {
+          "en": "with the environment",
+          "ko": "환경과의"
+        },
+        {
+          "en": "rather than",
+          "ko": "~보다는"
+        },
+        {
+          "en": "with respect to mental capacity",
+          "ko": "정신적 능력과 관련해서"
+        },
+        {
+          "en": "long",
+          "ko": "(as long as = ~하는 한)"
+        },
+        {
+          "en": "defined",
+          "ko": "정의된"
+        },
+        {
+          "en": "ability",
+          "ko": "능력"
+        },
+        {
+          "en": "solve",
+          "ko": "해결하다"
+        },
+        {
+          "en": "problems",
+          "ko": "문제"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "behavioral",
+          "ko": "행동의"
+        },
+        {
+          "en": "rather",
+          "ko": "(rather than = ~보다는)"
+        },
+        {
+          "en": "respect",
+          "ko": "관련, 측면"
+        },
+        {
+          "en": "mental",
+          "ko": "정신의"
+        }
+      ],
+      "slashes": [
+        "This is true",
+        "is defined",
+        "in terms of the ability",
+        "solve problems",
+        "with the environment,"
+      ],
+      "roles": [
+        {
+          "text": "This",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "true",
+          "role": "C"
+        },
+        {
+          "text": "intelligence",
+          "role": "S"
+        },
+        {
+          "text": "is defined",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s11_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "This",
+            "is",
+            "true",
+            "intelligence",
+            "is defined"
+          ],
+          "answers": [
+            "This",
+            "is",
+            "true"
+          ],
+          "roles": {
+            "This": "S",
+            "is": "V",
+            "true": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "intelligence": "그건 as long as(~하는 한) 덩어리 안의 주어예요.",
+              "is defined": "그건 as long as 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 This, 동사는 is, 보어는 true예요. as long as 뒤가 '어떤 조건에서' 사실인지예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s11_define",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "지능을 무엇으로 정의할 때 식물에게 지능이 있다는 말이 사실이래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "rather than(~보다는) 앞뒤를 봐요. 앞이 고른 쪽, 뒤가 버린 쪽이에요.",
+              "rather than(~보다는) 앞뒤를 봐요. 앞이 고른 쪽, 뒤가 버린 쪽이에요."
+            ],
+            "explain": "'solve problems through behavioral (e)interactions with the environment', 환경과 행동으로 상호 작용해 문제를 푸는 능력이래요. rather than 뒤 정신 능력은 버린 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'solve problems through behavioral (e)interactions with the environment', 환경과 행동으로 상호 작용해 문제를 푸는 능력이래요. rather than 뒤 정신 능력은 버린 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "환경과 행동으로 주고받으며 문제를 푸는 능력",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "머릿속으로 생각하는 정신 능력"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "solve problems",
+            "rather than"
+          ],
+          "tips": [
+            {
+              "label": "as long as",
+              "text": "'~하는 한, ~이기만 하면'이에요. 조건을 달아요.",
+              "mark": "as long as"
+            },
+            {
+              "label": "in terms of / with respect to",
+              "text": "둘 다 '~의 측면에서, ~에 관해서'예요.",
+              "mark": "in terms of"
+            }
+          ]
+        },
+        {
+          "id": "s11_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "식물은 환경을 느끼고 반응해 움직이니, 환경과의 상호 작용(interactions)이 맞아요. 그래서 (e)interactions는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "interactions"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(a) 맞음",
+                "text": "maximize exposure to light → promote growth",
+                "ko": "빛을 최대한 받아 성장을 돕는다",
+                "tone": "hl"
+              },
+              {
+                "label": "(b) 맞음",
+                "text": "a dozen other sensory capacities",
+                "ko": "인간에게 없는 감각 능력이 열 개 넘게",
+                "tone": "hl"
+              },
+              {
+                "label": "(c) 맞음",
+                "text": "Some are reluctant … since they lack nerves",
+                "ko": "신경이 없어서 행동이라 부르기 꺼린다 (Some의 생각)",
+                "tone": "hl"
+              },
+              {
+                "label": "(e) 맞음",
+                "text": "behavioral interactions with the environment",
+                "ko": "환경과 행동으로 주고받으며 문제를 푼다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        },
+        {
+          "id": "s11_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(a)(b)(c)(e)는 흐름에 맞았어요. 남은 하나가 '식물은 행동한다'는 글쓴이 생각과 맞는지 문제에서 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(a) 맞음",
+                "text": "maximize exposure to light → promote growth",
+                "ko": "빛을 최대한 받아 성장을 돕는다",
+                "tone": "hl"
+              },
+              {
+                "label": "(b) 맞음",
+                "text": "a dozen other sensory capacities",
+                "ko": "인간에게 없는 감각 능력이 열 개 넘게",
+                "tone": "hl"
+              },
+              {
+                "label": "(c) 맞음",
+                "text": "Some are reluctant … since they lack nerves",
+                "ko": "신경이 없어서 행동이라 부르기 꺼린다 (Some의 생각)",
+                "tone": "hl"
+              },
+              {
+                "label": "(e) 맞음",
+                "text": "behavioral interactions with the environment",
+                "ko": "환경과 행동으로 주고받으며 문제를 푼다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

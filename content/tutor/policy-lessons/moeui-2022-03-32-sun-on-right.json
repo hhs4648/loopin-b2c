@@ -1,0 +1,2603 @@
+{
+  "id": "moeui-2022-03-32-sun-on-right",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 32번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 근거 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-sun-on-right.svg",
+      "alt": "칠판: Ancient voyage(옛 항해 기록) ? Sun on the right(오른쪽에 뜬 해)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "2600년 전 아프리카를 한 바퀴 돌았다는 항해 기록이 있어요. 이 기록이 진짜인지 어떻게 알 수 있을까요?"
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 7,
+    "analysis_first": true,
+    "wrong_rate": 58.0,
+    "wrong_rank": 3,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "must have taken place",
+        "ko": "일어났음이 틀림없다"
+      },
+      {
+        "en": "take place",
+        "ko": "일어나다"
+      },
+      {
+        "en": "reported",
+        "ko": "보고된"
+      },
+      {
+        "en": "at all",
+        "ko": "전혀"
+      },
+      {
+        "en": "worth the time",
+        "ko": "시간을 들일 가치가 있는"
+      },
+      {
+        "en": "should have been planned",
+        "ko": "계획되었어야 했다"
+      },
+      {
+        "en": "at any moment",
+        "ko": "언제든지"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "must have taken place",
+        "keywords": [
+          "must have taken place"
+        ],
+        "ko": "일어났음이 틀림없다",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "was not reported at all",
+        "keywords": [
+          "not reported"
+        ],
+        "ko": "전혀 보고되지 않았다"
+      },
+      {
+        "id": "3",
+        "label": "was not worth the time",
+        "keywords": [
+          "not worth"
+        ],
+        "ko": "시간을 들일 가치가 없었다"
+      },
+      {
+        "id": "4",
+        "label": "should have been planned better",
+        "keywords": [
+          "planned better"
+        ],
+        "ko": "더 잘 계획되었어야 했다"
+      },
+      {
+        "id": "5",
+        "label": "could be stopped at any moment",
+        "keywords": [
+          "stopped"
+        ],
+        "ko": "언제고 중단될 수 있었다"
+      }
+    ],
+    "brief": {
+      "ask": "this(당시엔 꾸며 낼 수 없었다)가 이끄는 결론을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 당시 과학으로는 '태양이 오른쪽에 있다'는 걸 꾸며 낼 수 없었어요. 그러니 직접 가서 본 것이고, 여행은 실제로 일어났음이 틀림없어요.",
+      "final_wrong": "정답은 ① must have taken place예요. must have p.p.는 '~했음이 틀림없다'예요. 꾸며 낼 수 없는 사실을 보고했으니 여행은 정말 있었어요.",
+      "option_feedback": {
+        "2": "페니키아인들은 돌아와서 보고했고(reported), 헤로도토스가 그걸 기록했어요. 보고되지 않았다면 이 이야기 자체가 없어요.",
+        "3": "여행이 시간을 들일 만했는지는 글에 나오지 않아요. 글은 이 기록이 진짜인지를 말해요.",
+        "4": "계획을 더 잘했어야 했다는 이야기는 없어요. 꾸며 낼 수 없는 세부 사항 때문에 내린 결론이에요.",
+        "5": "언제든 멈출 수 있었다는 말은 글에 없어요. 원정대는 3년 동안 아프리카를 돌고 돌아왔어요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "문장 1의 '자료가 적고 덜 알려졌다'를 보고 '보고되지 않았다'를 고르기 쉬워요. 하지만 페니키아인들은 돌아와서 보고했고(reported), 헤로도토스가 그걸 기록했어요. 빈칸은 this(당시엔 꾸며 낼 수 없었다) 때문에 내린 결론이라, 여행이 정말 있었다는 쪽이에요.",
+          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "문장 1을 보고 골랐어요",
+              "skills": [
+                "first_sentence_trap"
+              ],
+              "reply": "알려 줘서 고마워요. 빈칸은 바로 앞의 this가 이끄는 결론이에요. 앞으로 빈칸 바로 앞 문장을 먼저 짚어 줄게요."
+            },
+            {
+              "label": "this가 무엇인지 몰랐어요",
+              "skills": [
+                "reference"
+              ],
+              "reply": "알려 줘서 고마워요. It is this that ~의 this는 앞 문장, 당시 과학으로는 꾸며 낼 수 없었다는 사실이에요. 앞으로 가리키는 말을 먼저 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "first_sentence_trap",
+                "reference"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 this가 가리키는 앞 문장과 빈칸의 관계를 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "this",
+                "text": "not strong enough to fabricate",
+                "ko": "당시엔 꾸며 낼 수 없었다",
+                "tone": "hl"
+              },
+              {
+                "label": "그래서",
+                "text": "the journey ________",
+                "ko": "여행은 정말 있었다",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "source",
+        "ko": "자료, 출처"
+      },
+      {
+        "en": "exploratory",
+        "ko": "탐험의"
+      },
+      {
+        "en": "voyage",
+        "ko": "항해"
+      },
+      {
+        "en": "commission",
+        "ko": "의뢰하다"
+      },
+      {
+        "en": "reportedly",
+        "ko": "전해 오는 바에 따르면"
+      },
+      {
+        "en": "expedition",
+        "ko": "탐험, 원정대"
+      },
+      {
+        "en": "clockwise",
+        "ko": "시계 방향으로"
+      },
+      {
+        "en": "heroic",
+        "ko": "영웅적인"
+      },
+      {
+        "en": "opposite",
+        "ko": "정반대의"
+      },
+      {
+        "en": "be used to -ing",
+        "ko": "~하는 데 익숙하다"
+      },
+      {
+        "en": "contemporary",
+        "ko": "당시의, 동시대의"
+      },
+      {
+        "en": "astronomical",
+        "ko": "천문학의"
+      },
+      {
+        "en": "accurate",
+        "ko": "정확한"
+      },
+      {
+        "en": "fundamental",
+        "ko": "기초적인"
+      },
+      {
+        "en": "equator",
+        "ko": "적도"
+      },
+      {
+        "en": "southern hemisphere",
+        "ko": "남반구"
+      },
+      {
+        "en": "conclude",
+        "ko": "결론 내리다"
+      }
+    ],
+    "options": [
+      {
+        "en": "take place",
+        "ko": "일어나다"
+      },
+      {
+        "en": "worth",
+        "ko": "~할 가치가 있는"
+      },
+      {
+        "en": "at any moment",
+        "ko": "언제든지"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "When trying to understand the role of the sun in ancient journeys, the sources become fewer and the journeys less well known.",
+      "model_translation": "고대 여행에서 태양의 역할을 이해하려고 할 때, 자료는 더 적어지고 알려진 여행은 더 적어진다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "When trying to understand",
+          "ko": "이해하려고 할 때"
+        },
+        {
+          "en": "the role of the sun",
+          "ko": "태양의 역할"
+        },
+        {
+          "en": "in ancient journeys",
+          "ko": "고대 여행에서"
+        },
+        {
+          "en": "the sources",
+          "ko": "자료, 출처"
+        },
+        {
+          "en": "become",
+          "ko": "~해지다"
+        },
+        {
+          "en": "fewer",
+          "ko": "더 적은"
+        },
+        {
+          "en": "the journeys",
+          "ko": "그 여행들"
+        },
+        {
+          "en": "less well known",
+          "ko": "덜 알려진"
+        },
+        {
+          "en": "become fewer",
+          "ko": "더 적어지다"
+        },
+        {
+          "en": "It is this that",
+          "ko": "~하는 것은 바로 이것이다"
+        },
+        {
+          "en": "leads",
+          "ko": "이끌다, ~하게 하다"
+        },
+        {
+          "en": "many of today’s historians",
+          "ko": "오늘날 역사가 중 많은 이들"
+        },
+        {
+          "en": "to conclude",
+          "ko": "결론 내리도록"
+        },
+        {
+          "en": "conclude",
+          "ko": "결론 내리다"
+        },
+        {
+          "en": "that the journey",
+          "ko": "그 여행이 ~라고"
+        },
+        {
+          "en": "the journey",
+          "ko": "그 여행"
+        },
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "trying",
+          "ko": "애쓰는, ~하려는"
+        },
+        {
+          "en": "understand",
+          "ko": "이해하다"
+        },
+        {
+          "en": "role",
+          "ko": "역할"
+        },
+        {
+          "en": "sun",
+          "ko": "태양"
+        },
+        {
+          "en": "ancient",
+          "ko": "고대의"
+        },
+        {
+          "en": "journeys",
+          "ko": "여행들"
+        },
+        {
+          "en": "sources",
+          "ko": "자료, 출처"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "known",
+          "ko": "알려진"
+        },
+        {
+          "en": "today’s",
+          "ko": "오늘날의"
+        },
+        {
+          "en": "historians",
+          "ko": "역사가들"
+        },
+        {
+          "en": "journey",
+          "ko": "여행"
+        }
+      ],
+      "slashes": [
+        "When trying to understand",
+        "of the sun",
+        "ancient journeys,",
+        "become fewer"
+      ],
+      "roles": [
+        {
+          "text": "the sources",
+          "role": "S"
+        },
+        {
+          "text": "become",
+          "role": "V"
+        },
+        {
+          "text": "fewer",
+          "role": "C"
+        },
+        {
+          "text": "the journeys",
+          "role": "S"
+        },
+        {
+          "text": "less well known",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 마지막 문장, 맨 끝에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "It is this that leads many of today’s historians to conclude that the journey ________."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "It is this that ~은 '~하는 것은 바로 이것이다'예요. lead + 사람 + to ~는 '사람이 ~하게 하다'예요.",
+              "It is this that ~은 '~하는 것은 바로 이것이다'예요. lead + 사람 + to ~는 '사람이 ~하게 하다'예요."
+            ],
+            "explain": "It is this that leads historians to conclude는 '역사가들이 결론 내리게 하는 것은 바로 이것'이에요. 무엇을 결론 내리는지가 that the journey ____예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "It is this that leads historians to conclude는 '역사가들이 결론 내리게 하는 것은 바로 이것'이에요. 무엇을 결론 내리는지가 that the journey ____예요.",
+              "o2": "It is this that leads historians to conclude는 '역사가들이 결론 내리게 하는 것은 바로 이것'이에요. 무엇을 결론 내리는지가 that the journey ____예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "바로 이것 때문에 오늘날 역사가들은 그 여행이 ____라고 결론 내린다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오늘날 역사가들은 이것을 결론 내리지 못하고, 그 여행은 ____"
+            },
+            {
+              "id": "o2",
+              "label": "그 여행이 오늘날 역사가들을 ____로 이끌었다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "It is this that leads many of today’s historians to conclude that the journey ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "this",
+            "conclude",
+            "________"
+          ],
+          "highlight_alt": [
+            "the journey"
+          ],
+          "tips": [
+            {
+              "label": "It is A that ~",
+              "text": "'~하는 것은 바로 A다'예요. A를 강조하는 모양이에요.",
+              "mark": "It is this that"
+            },
+            {
+              "label": "lead + 사람 + to ~",
+              "text": "'사람이 ~하게 하다'예요. leads historians to conclude = 역사가들이 결론 내리게 한다.",
+              "mark": "leads"
+            }
+          ]
+        },
+        {
+          "id": "s1_where_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "this가 가리키는 어떤 사실 때문에, 역사가들이 그 여행에 대해 결론을 내린대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "before_read": true,
+          "levels": [
+            "중",
+            "초"
+          ],
+          "display": "It is this that leads many of today’s historians to conclude that the journey ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "this",
+            "conclude"
+          ],
+          "highlight_alt": [
+            "the journey"
+          ],
+          "panel_below": true,
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "this",
+                "text": "앞에 나온 어떤 사실",
+                "ko": "바로 이것 때문에",
+                "tone": "hl"
+              },
+              {
+                "label": "결론",
+                "text": "the journey ________",
+                "ko": "그 여행이 ____라고",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 '이것'이 무엇인지, 역사가들이 그 여행을 어떻게 봤을지 생각하며 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "It is this that leads many of today’s historians to conclude that the journey ________.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "When trying to understand",
+            "the sources",
+            "become",
+            "fewer",
+            "the journeys",
+            "less well known"
+          ],
+          "answers": [
+            "the sources",
+            "become",
+            "fewer",
+            "the journeys",
+            "less well known"
+          ],
+          "roles": {
+            "the sources": "S",
+            "become": "V",
+            "fewer": "C",
+            "the journeys": "S",
+            "less well known": "C"
+          },
+          "brief": {
+            "ask": "콤마 뒤에서 주어(S), 동사(V), 보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "When trying to understand": "그건 When(~할 때) 덩어리예요. 콤마 뒤에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the sources, 동사는 become, 보어는 fewer예요. and 뒤는 주어 the journeys, 보어 less well known이고, 같은 동사 become은 빠졌어요."
+          },
+          "method": 0,
+          "slot": "s1_basic",
+          "tips": [
+            {
+              "label": "It is A that ~",
+              "text": "'~하는 것은 바로 A다'예요. A를 강조하는 모양이에요.",
+              "mark": "It is this that"
+            },
+            {
+              "label": "lead + 사람 + to ~",
+              "text": "'사람이 ~하게 하다'예요. leads historians to conclude = 역사가들이 결론 내리게 한다.",
+              "mark": "leads"
+            },
+            {
+              "label": "and 뒤 생략",
+              "text": "and 뒤 the journeys (become) less well known — 앞과 같은 동사 become이 빠졌어요.",
+              "mark": "less well known"
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "When trying to understand",
+            "the role of the sun",
+            "the sources",
+            "become fewer"
+          ],
+          "answers": [
+            "the role of the sun",
+            "When trying to understand",
+            "the sources",
+            "become fewer"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "the role of the sun",
+                "ko": "태양의 역할"
+              },
+              "을 ",
+              {
+                "en": "When trying to understand",
+                "ko": "이해하려고 할 때"
+              },
+              ", ",
+              {
+                "en": "the sources",
+                "ko": "자료가"
+              },
+              " ",
+              {
+                "en": "become fewer",
+                "ko": "더 적어진다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "When trying to understand the role of the sun, the sources become fewer.",
+          "tips": [
+            {
+              "label": "It is A that ~",
+              "text": "'~하는 것은 바로 A다'예요. A를 강조하는 모양이에요.",
+              "mark": "It is this that"
+            },
+            {
+              "label": "lead + 사람 + to ~",
+              "text": "'사람이 ~하게 하다'예요. leads historians to conclude = 역사가들이 결론 내리게 한다.",
+              "mark": "leads"
+            },
+            {
+              "label": "and 뒤 생략",
+              "text": "and 뒤 the journeys (become) less well known — 앞과 같은 동사 become이 빠졌어요.",
+              "mark": "less well known"
+            }
+          ]
+        },
+        {
+          "id": "s1_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "고대 여행에서 태양의 역할을 알아보려 하면, 자료도 적고 알려진 여행도 적대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "fewer",
+            "less well known"
+          ],
+          "tips": [
+            {
+              "label": "and 뒤 생략",
+              "text": "and 뒤 the journeys (become) less well known — 앞과 같은 동사 become이 빠졌어요.",
+              "mark": "less well known"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Herodotus writes about an exploratory voyage commissioned by the ancient Egyptian King Necho II in about 600 BC.",
+      "model_translation": "Herodotus는 기원전 600년경 고대 이집트 왕 Necho 2세가 의뢰한 탐험 항해에 대해 기록한다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Herodotus",
+          "ko": "헤로도토스 · 고대 그리스의 역사가"
+        },
+        {
+          "en": "writes about",
+          "ko": "~에 대해 쓰다"
+        },
+        {
+          "en": "an exploratory voyage",
+          "ko": "탐험 항해"
+        },
+        {
+          "en": "exploratory",
+          "ko": "탐험의"
+        },
+        {
+          "en": "voyage",
+          "ko": "항해"
+        },
+        {
+          "en": "commissioned by",
+          "ko": "~가 의뢰한"
+        },
+        {
+          "en": "commissioned",
+          "ko": "의뢰된, 맡겨진"
+        },
+        {
+          "en": "the ancient Egyptian King Necho II",
+          "ko": "고대 이집트 왕 네코 2세"
+        },
+        {
+          "en": "in about 600 BC",
+          "ko": "기원전 600년경"
+        },
+        {
+          "en": "writes",
+          "ko": "쓰다"
+        },
+        {
+          "en": "ancient",
+          "ko": "고대의"
+        },
+        {
+          "en": "Egyptian",
+          "ko": "이집트의"
+        },
+        {
+          "en": "King",
+          "ko": "왕"
+        },
+        {
+          "en": "Necho",
+          "ko": "네코 (이집트 왕 이름)"
+        },
+        {
+          "en": "II",
+          "ko": "2세"
+        },
+        {
+          "en": "BC",
+          "ko": "기원전"
+        }
+      ],
+      "slashes": [
+        "exploratory voyage",
+        "King Necho II"
+      ],
+      "roles": [
+        {
+          "text": "Herodotus",
+          "role": "S"
+        },
+        {
+          "text": "writes about",
+          "role": "V"
+        },
+        {
+          "text": "an exploratory voyage",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "commissioned by the ancient Egyptian King Necho II"
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Herodotus",
+            "writes about",
+            "an exploratory voyage",
+            "the ancient Egyptian King Necho II"
+          ],
+          "answers": [
+            "Herodotus",
+            "writes about",
+            "an exploratory voyage"
+          ],
+          "roles": {
+            "Herodotus": "S",
+            "writes about": "V",
+            "an exploratory voyage": "전목"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·전치사 뒤 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the ancient Egyptian King Necho II": "그건 commissioned by(~가 의뢰한) 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Herodotus, 동사는 writes about, about 뒤 목적어는 an exploratory voyage예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "명사 + p.p. by ~",
+              "text": "voyage commissioned by ~ = ~가 의뢰한 항해예요. 과거분사가 앞 명사를 꾸며요.",
+              "mark": "commissioned"
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "Herodotus",
+            "writes about",
+            "an exploratory voyage"
+          ],
+          "answers": [
+            "Herodotus",
+            "an exploratory voyage",
+            "writes about"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Herodotus",
+                "ko": "헤로도토스는"
+              },
+              " ",
+              {
+                "en": "an exploratory voyage",
+                "ko": "탐험 항해"
+              },
+              "에 ",
+              {
+                "en": "writes about",
+                "ko": "대해 쓴다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Herodotus writes about an exploratory voyage.",
+          "tips": [
+            {
+              "label": "명사 + p.p. by ~",
+              "text": "voyage commissioned by ~ = ~가 의뢰한 항해예요. 과거분사가 앞 명사를 꾸며요.",
+              "mark": "commissioned"
+            }
+          ]
+        },
+        {
+          "id": "s2_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "헤로도토스가 이집트 왕 네코 2세가 맡긴 탐험 항해를 기록했대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "writes about",
+            "exploratory voyage"
+          ],
+          "tips": [
+            {
+              "label": "명사 + p.p. by ~",
+              "text": "voyage commissioned by ~ = ~가 의뢰한 항해예요. 과거분사가 앞 명사를 꾸며요.",
+              "mark": "commissioned"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "📜",
+                "en": "sources become fewer",
+                "ko": "고대 여행 속 태양 이야기는 자료가 적어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 2",
+                "icon": "✍️",
+                "en": "Herodotus writes",
+                "ko": "헤로도토스가 네코 2세가 맡긴 탐험 항해를 기록했어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Necho II reportedly ordered a Phoenician expedition to sail clockwise around Africa, starting at the Red Sea and returning to the mouth of the Nile.",
+      "model_translation": "전해 오는 바에 따르면, Necho 2세는 페니키아 원정대에게 홍해에서 출발해 나일강 하구로 돌아오도록, 아프리카 주위를 시계 방향으로 항해하라고 명령했다고 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Necho II",
+          "ko": "네코 2세"
+        },
+        {
+          "en": "reportedly",
+          "ko": "전해 오는 바에 따르면"
+        },
+        {
+          "en": "ordered",
+          "ko": "명령했다"
+        },
+        {
+          "en": "a Phoenician expedition",
+          "ko": "페니키아 원정대"
+        },
+        {
+          "en": "Phoenician",
+          "ko": "페니키아(사람)의"
+        },
+        {
+          "en": "expedition",
+          "ko": "탐험(여행), 원정대"
+        },
+        {
+          "en": "to sail clockwise around Africa",
+          "ko": "아프리카 주위를 시계 방향으로 항해하라고"
+        },
+        {
+          "en": "clockwise",
+          "ko": "시계 방향으로"
+        },
+        {
+          "en": "starting at the Red Sea",
+          "ko": "홍해에서 출발해"
+        },
+        {
+          "en": "the Red Sea",
+          "ko": "홍해"
+        },
+        {
+          "en": "returning to the mouth of the Nile",
+          "ko": "나일강 하구로 돌아오도록"
+        },
+        {
+          "en": "mouth",
+          "ko": "(강의) 어귀, 하구"
+        },
+        {
+          "en": "to sail around Africa",
+          "ko": "아프리카를 돌아 항해하라고"
+        },
+        {
+          "en": "Necho",
+          "ko": "네코 (이집트 왕 이름)"
+        },
+        {
+          "en": "II",
+          "ko": "2세"
+        },
+        {
+          "en": "sail",
+          "ko": "항해하다"
+        },
+        {
+          "en": "around",
+          "ko": "~ 주위를"
+        },
+        {
+          "en": "Africa",
+          "ko": "아프리카"
+        },
+        {
+          "en": "starting",
+          "ko": "출발하는"
+        },
+        {
+          "en": "Red",
+          "ko": "붉은"
+        },
+        {
+          "en": "Sea",
+          "ko": "바다"
+        },
+        {
+          "en": "returning",
+          "ko": "돌아오는"
+        },
+        {
+          "en": "Nile",
+          "ko": "나일강"
+        }
+      ],
+      "slashes": [
+        "a Phoenician expedition",
+        "around Africa,",
+        "the Red Sea"
+      ],
+      "roles": [
+        {
+          "text": "Necho II",
+          "role": "S"
+        },
+        {
+          "text": "ordered",
+          "role": "V"
+        },
+        {
+          "text": "a Phoenician expedition",
+          "role": "O"
+        },
+        {
+          "text": "to sail clockwise around Africa",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Necho II",
+            "reportedly",
+            "ordered",
+            "a Phoenician expedition",
+            "to sail clockwise around Africa",
+            "the Red Sea"
+          ],
+          "answers": [
+            "Necho II",
+            "ordered",
+            "a Phoenician expedition",
+            "to sail clockwise around Africa"
+          ],
+          "roles": {
+            "Necho II": "S",
+            "ordered": "V",
+            "a Phoenician expedition": "O",
+            "to sail clockwise around Africa": "C"
+          },
+          "brief": {
+            "ask": "주어(S), 동사(V), 목적어(O), 보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "reportedly": "그건 '전해 오는 바에 따르면'이라는 말이에요. 주어·동사가 아니에요.",
+              "the Red Sea": "그건 starting at(~에서 출발해) 뒤, 출발한 곳이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Necho II, 동사는 ordered, 목적어는 a Phoenician expedition, 보어는 to sail clockwise around Africa예요."
+          },
+          "method": 0,
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "동사 + 사람 + to ~",
+              "text": "order/ask/tell + 사람 + to ~ = 사람에게 ~하라고 명령하다/부탁하다/말하다.",
+              "mark": "ordered"
+            },
+            {
+              "label": "reportedly",
+              "text": "'전해 오는 바에 따르면'이에요. 사실인지 아직 확실하지 않다는 느낌이 있어요.",
+              "mark": "reportedly"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Necho II",
+            "reportedly",
+            "ordered",
+            "a Phoenician expedition",
+            "to sail around Africa"
+          ],
+          "answers": [
+            "Necho II",
+            "reportedly",
+            "a Phoenician expedition",
+            "to sail around Africa",
+            "ordered"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Necho II",
+                "ko": "네코 2세는"
+              },
+              " ",
+              {
+                "en": "reportedly",
+                "ko": "전해 오는 바로는"
+              },
+              " ",
+              {
+                "en": "a Phoenician expedition",
+                "ko": "페니키아 원정대"
+              },
+              "에게 ",
+              {
+                "en": "to sail around Africa",
+                "ko": "아프리카를 돌아 항해하라고"
+              },
+              " ",
+              {
+                "en": "ordered",
+                "ko": "명령했다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Necho II reportedly ordered a Phoenician expedition to sail around Africa.",
+          "tips": [
+            {
+              "label": "동사 + 사람 + to ~",
+              "text": "order/ask/tell + 사람 + to ~ = 사람에게 ~하라고 명령하다/부탁하다/말하다.",
+              "mark": "ordered"
+            },
+            {
+              "label": "reportedly",
+              "text": "'전해 오는 바에 따르면'이에요. 사실인지 아직 확실하지 않다는 느낌이 있어요.",
+              "mark": "reportedly"
+            }
+          ]
+        },
+        {
+          "id": "s3_how",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "order + 사람 + to ~는 '사람에게 ~하라고 명령하다'로 읽어요. 원정대에게 아프리카를 돌라고 명령한 거예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "levels": [
+            "중",
+            "초"
+          ],
+          "highlight": [
+            "ordered"
+          ],
+          "highlight_alt": [
+            "to sail clockwise around Africa"
+          ],
+          "tips": [
+            {
+              "label": "동사 + 사람 + to ~",
+              "text": "order/ask/tell + 사람 + to ~ = 사람에게 ~하라고 명령하다/부탁하다/말하다.",
+              "mark": "ordered"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s3_report",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "여기서 reportedly는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "report(보고하다, 전하다)에 -ly가 붙었어요. 누군가 그렇게 전했다는 말이에요.",
+              "report(보고하다, 전하다)에 -ly가 붙었어요. 누군가 그렇게 전했다는 말이에요."
+            ],
+            "explain": "reportedly는 누군가 그렇게 전했다는 말이에요. 확인된 사실이 아니라 그렇게 전해진다는 말이라서, 이 기록이 진짜인지가 이 글의 물음이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "reportedly는 누군가 그렇게 전했다는 말이에요. 확인된 사실이 아니라 그렇게 전해진다는 말이라서, 이 기록이 진짜인지가 이 글의 물음이에요.",
+              "o2": "reportedly는 누군가 그렇게 전했다는 말이에요. 확인된 사실이 아니라 그렇게 전해진다는 말이라서, 이 기록이 진짜인지가 이 글의 물음이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "확실히, 틀림없이"
+            },
+            {
+              "id": "o1",
+              "label": "전해 오는 바에 따르면",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "몰래, 비밀리에"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "reportedly"
+          ],
+          "tips": [
+            {
+              "label": "reportedly",
+              "text": "'전해 오는 바에 따르면'이에요. 사실인지 아직 확실하지 않다는 느낌이 있어요.",
+              "mark": "reportedly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "They were gone for three years.",
+      "model_translation": "그들은 3년간 (원정을) 나가 있었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "They",
+          "ko": "그들(페니키아 원정대)"
+        },
+        {
+          "en": "were gone",
+          "ko": "떠나 있었다"
+        },
+        {
+          "en": "for three years",
+          "ko": "3년 동안"
+        },
+        {
+          "en": "three years",
+          "ko": "3년"
+        },
+        {
+          "en": "gone",
+          "ko": "떠나 있는"
+        },
+        {
+          "en": "three",
+          "ko": "3, 셋의"
+        }
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "were gone",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "They",
+            "were gone",
+            "three years"
+          ],
+          "answers": [
+            "They",
+            "were gone"
+          ],
+          "roles": {
+            "They": "S",
+            "were gone": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "three years": "그건 for(~ 동안) 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 They(원정대), 동사는 were gone이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic"
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "They",
+            "were gone",
+            "for three years"
+          ],
+          "answers": [
+            "They",
+            "for three years",
+            "were gone"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "They",
+                "ko": "그들은"
+              },
+              " ",
+              {
+                "en": "for three years",
+                "ko": "3년 동안"
+              },
+              " ",
+              {
+                "en": "were gone",
+                "ko": "떠나 있었다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "They는 앞 문장의 원정대예요. 3년 동안 떠나 있었대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "They"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "📜",
+                "en": "sources become fewer",
+                "ko": "고대 여행 속 태양 이야기는 자료가 적어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2",
+                "icon": "✍️",
+                "en": "Herodotus writes",
+                "ko": "헤로도토스가 네코 2세가 맡긴 탐험 항해를 기록했어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "⛵",
+                "en": "sail clockwise around Africa",
+                "ko": "원정대가 아프리카를 시계 방향으로 돌아 3년 만에 돌아왔대요 (reportedly)",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Herodotus writes that the Phoenicians, upon returning from their heroic expedition, reported that after sailing south and then turning west, they found the sun was on their right, the opposite direction to where they were used to seeing it or expecting it to be.",
+      "model_translation": "Herodotus는 페니키아인들이 영웅적인 탐험을 마치고 돌아와, 남쪽으로 항해를 한 다음 서쪽으로 방향을 바꾼 후에 태양이 자신들이 늘 보았거나 떠 있으리라고 예상했던 곳과는 정반대 방향인 자신들의 오른편에 있는 것을 발견했노라고 보고했다고 기록한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Herodotus",
+          "ko": "헤로도토스"
+        },
+        {
+          "en": "writes",
+          "ko": "쓰다, 기록하다"
+        },
+        {
+          "en": "the Phoenicians",
+          "ko": "페니키아인들"
+        },
+        {
+          "en": "upon returning from their heroic expedition",
+          "ko": "영웅적인 탐험에서 돌아오자마자"
+        },
+        {
+          "en": "heroic",
+          "ko": "영웅적인"
+        },
+        {
+          "en": "reported",
+          "ko": "보고했다"
+        },
+        {
+          "en": "after sailing south",
+          "ko": "남쪽으로 항해한 뒤"
+        },
+        {
+          "en": "then turning west",
+          "ko": "그다음 서쪽으로 돌고 나서"
+        },
+        {
+          "en": "they found",
+          "ko": "그들은 알게 되었다"
+        },
+        {
+          "en": "the sun",
+          "ko": "태양"
+        },
+        {
+          "en": "was on their right",
+          "ko": "그들의 오른쪽에 있었다"
+        },
+        {
+          "en": "on their right",
+          "ko": "그들의 오른쪽에"
+        },
+        {
+          "en": "the opposite direction",
+          "ko": "정반대 방향"
+        },
+        {
+          "en": "to where they were used to seeing it",
+          "ko": "그들이 늘 그것(태양)을 보던 곳과"
+        },
+        {
+          "en": "were used to",
+          "ko": "~하는 데 익숙했다"
+        },
+        {
+          "en": "or expecting it to be",
+          "ko": "또는 있으리라 예상하던 (곳과)"
+        },
+        {
+          "en": "Phoenicians",
+          "ko": "페니키아인들"
+        },
+        {
+          "en": "returning",
+          "ko": "돌아오는"
+        },
+        {
+          "en": "expedition",
+          "ko": "탐험, 원정대"
+        },
+        {
+          "en": "after",
+          "ko": "~ 뒤에"
+        },
+        {
+          "en": "sailing",
+          "ko": "항해하는 것"
+        },
+        {
+          "en": "south",
+          "ko": "남쪽으로"
+        },
+        {
+          "en": "then",
+          "ko": "그다음"
+        },
+        {
+          "en": "turning",
+          "ko": "방향을 바꾸는 것"
+        },
+        {
+          "en": "west",
+          "ko": "서쪽으로"
+        },
+        {
+          "en": "sun",
+          "ko": "태양"
+        },
+        {
+          "en": "right",
+          "ko": "오른쪽"
+        },
+        {
+          "en": "opposite",
+          "ko": "정반대의"
+        },
+        {
+          "en": "direction",
+          "ko": "방향"
+        },
+        {
+          "en": "used",
+          "ko": "be used to -ing = ~하는 데 익숙하다"
+        },
+        {
+          "en": "seeing",
+          "ko": "보는 것"
+        },
+        {
+          "en": "expecting",
+          "ko": "예상하는 것"
+        }
+      ],
+      "slashes": [
+        "Herodotus writes",
+        "that the Phoenicians,",
+        "heroic expedition,",
+        "reported",
+        "turning west,",
+        "on their right,",
+        "the opposite direction",
+        "seeing it"
+      ],
+      "roles": [
+        {
+          "text": "Herodotus",
+          "role": "S"
+        },
+        {
+          "text": "writes",
+          "role": "V"
+        },
+        {
+          "text": "the Phoenicians",
+          "role": "S"
+        },
+        {
+          "text": "reported",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "found",
+          "role": "V"
+        },
+        {
+          "text": "the sun",
+          "role": "S"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "where they were used to seeing it or expecting it to be"
+      ],
+      "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Herodotus",
+            "writes",
+            "the Phoenicians",
+            "reported",
+            "the sun"
+          ],
+          "answers": [
+            "Herodotus",
+            "writes",
+            "the Phoenicians",
+            "reported"
+          ],
+          "roles": {
+            "Herodotus": "S",
+            "writes": "V",
+            "the Phoenicians": "S",
+            "reported": "V"
+          },
+          "brief": {
+            "ask": "writes that 앞뒤로 주어(S)·동사(V)가 두 쌍 있어요. 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the sun": "그건 reported that 뒤, 보고한 내용 안의 주어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 Herodotus, 동사 writes — 무엇을 썼는지가 that 뒤예요. 그 안의 주어는 the Phoenicians, 동사는 reported예요."
+          },
+          "method": 0,
+          "faded": [
+            "upon returning from their heroic expedition"
+          ],
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "be used to -ing",
+              "text": "'~하는 데 익숙하다'예요. were used to seeing it = 늘 그것을 보던.",
+              "mark": "were used to"
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "Herodotus",
+            "writes",
+            "the Phoenicians",
+            "reported",
+            "the sun",
+            "was on their right"
+          ],
+          "answers": [
+            "Herodotus",
+            "the Phoenicians",
+            "the sun",
+            "was on their right",
+            "reported",
+            "writes"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Herodotus",
+                "ko": "헤로도토스는"
+              },
+              " — ",
+              {
+                "en": "the Phoenicians",
+                "ko": "페니키아인들이"
+              },
+              " ",
+              {
+                "en": "the sun",
+                "ko": "태양이"
+              },
+              " ",
+              {
+                "en": "was on their right",
+                "ko": "오른쪽에 있었다"
+              },
+              "고 ",
+              {
+                "en": "reported",
+                "ko": "보고했다"
+              },
+              "고 ",
+              {
+                "en": "writes",
+                "ko": "쓴다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Herodotus writes that the Phoenicians reported that the sun was on their right.",
+          "tips": [
+            {
+              "label": "be used to -ing",
+              "text": "'~하는 데 익숙하다'예요. were used to seeing it = 늘 그것을 보던.",
+              "mark": "were used to"
+            }
+          ]
+        },
+        {
+          "id": "s5_found",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "페니키아인들은 무엇을 보고했대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "they found the sun was on their right를 봐요. the opposite direction은 '정반대 방향'이에요.",
+              "they found the sun was on their right를 봐요. the opposite direction은 '정반대 방향'이에요."
+            ],
+            "explain": "'they found the sun was on their right, the opposite direction', 태양이 오른쪽, 늘 보던 곳과 정반대 방향에 있었대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'they found the sun was on their right, the opposite direction', 태양이 오른쪽, 늘 보던 곳과 정반대 방향에 있었대요.",
+              "o2": "'they found the sun was on their right, the opposite direction', 태양이 오른쪽, 늘 보던 곳과 정반대 방향에 있었대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "남쪽으로 갔다가 서쪽으로 돌자, 태양이 늘 보던 곳과 정반대인 오른쪽에 있었다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "항해 내내 태양이 늘 보던 자리에 그대로 있었다"
+            },
+            {
+              "id": "o2",
+              "label": "남쪽 바다에서는 태양을 전혀 볼 수 없었다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "on their right",
+            "the opposite direction"
+          ],
+          "tips": [
+            {
+              "label": "be used to -ing",
+              "text": "'~하는 데 익숙하다'예요. were used to seeing it = 늘 그것을 보던.",
+              "mark": "were used to"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그들이 본 건 늘 보던 것과 정반대였어요. 칠판에 넣어 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "보고한 것 ↔ 당시 과학",
+            "left": {
+              "label": "그들이 본 것 (reported)",
+              "words": [
+                {
+                  "text": "the sun on their right",
+                  "ko": "태양이 오른쪽에",
+                  "fresh": true
+                },
+                {
+                  "text": "the opposite direction",
+                  "ko": "늘 보던 곳과 정반대",
+                  "fresh": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Contemporary astronomical science was simply not strong enough to fabricate such an accurate, fundamental and yet prosaic detail of where the sun would be after sailing past the equator and into the southern hemisphere.",
+      "model_translation": "당시의 천문 과학은 적도를 지나 남반구로 항해한 후 태양이 어디에 있을지에 대해 그렇게 정확하고 기초적이지만 평범한 세부 사항을 꾸며 낼 만큼 결코 충분히 뛰어나지 않았다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "the sun",
+          "ko": "태양"
+        },
+        {
+          "en": "Contemporary astronomical science",
+          "ko": "당시의 천문 과학"
+        },
+        {
+          "en": "Contemporary",
+          "ko": "동시대의 · 여기서는 '그 당시의'"
+        },
+        {
+          "en": "astronomical",
+          "ko": "천문학의"
+        },
+        {
+          "en": "was",
+          "ko": "~였다"
+        },
+        {
+          "en": "simply",
+          "ko": "결코, 전혀 (not 강조)"
+        },
+        {
+          "en": "not strong enough",
+          "ko": "충분히 뛰어나지 않은"
+        },
+        {
+          "en": "strong",
+          "ko": "강한 · 여기서는 '뛰어난'"
+        },
+        {
+          "en": "to fabricate",
+          "ko": "꾸며 낼"
+        },
+        {
+          "en": "fabricate",
+          "ko": "꾸며 내다, 만들어 내다"
+        },
+        {
+          "en": "such an accurate, fundamental and yet prosaic detail",
+          "ko": "그렇게 정확하고 기초적이지만 평범한 세부 사항"
+        },
+        {
+          "en": "accurate",
+          "ko": "정확한"
+        },
+        {
+          "en": "fundamental",
+          "ko": "기초적인"
+        },
+        {
+          "en": "prosaic",
+          "ko": "평범한"
+        },
+        {
+          "en": "detail",
+          "ko": "세부 사항"
+        },
+        {
+          "en": "of where the sun would be",
+          "ko": "태양이 어디에 있을지에 대한"
+        },
+        {
+          "en": "after sailing past the equator",
+          "ko": "적도를 지나 항해한 뒤"
+        },
+        {
+          "en": "equator",
+          "ko": "적도"
+        },
+        {
+          "en": "into the southern hemisphere",
+          "ko": "남반구로"
+        },
+        {
+          "en": "southern hemisphere",
+          "ko": "남반구"
+        },
+        {
+          "en": "such a detail",
+          "ko": "그런 세부 사항"
+        },
+        {
+          "en": "sun",
+          "ko": "태양"
+        },
+        {
+          "en": "science",
+          "ko": "과학"
+        },
+        {
+          "en": "enough",
+          "ko": "충분히"
+        },
+        {
+          "en": "after",
+          "ko": "~ 뒤에"
+        },
+        {
+          "en": "sailing",
+          "ko": "항해하는 것"
+        },
+        {
+          "en": "past",
+          "ko": "~을 지나"
+        },
+        {
+          "en": "southern",
+          "ko": "남쪽의"
+        },
+        {
+          "en": "hemisphere",
+          "ko": "반구"
+        }
+      ],
+      "slashes": [
+        "astronomical science",
+        "not strong enough",
+        "to fabricate",
+        "prosaic detail",
+        "the sun would be",
+        "past the equator"
+      ],
+      "roles": [
+        {
+          "text": "Contemporary astronomical science",
+          "role": "S"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        },
+        {
+          "text": "not strong enough",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Contemporary astronomical science",
+            "was",
+            "not strong enough",
+            "such an accurate, fundamental and yet prosaic detail",
+            "the sun"
+          ],
+          "answers": [
+            "Contemporary astronomical science",
+            "was",
+            "not strong enough"
+          ],
+          "roles": {
+            "Contemporary astronomical science": "S",
+            "was": "V",
+            "not strong enough": "C"
+          },
+          "brief": {
+            "ask": "주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "such an accurate, fundamental and yet prosaic detail": "그건 to fabricate(꾸며 낼) 뒤의 목적어예요. 문장 전체의 주어·보어가 아니에요.",
+              "the sun": "그건 where 뒤 덩어리 안의 주어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Contemporary astronomical science, 동사는 was, 보어는 not strong enough예요."
+          },
+          "method": 0,
+          "slot": "s6_basic",
+          "tips": [
+            {
+              "label": "contemporary",
+              "text": "'현대의'로 많이 알지만, 옛날 이야기 속에서는 '그 당시의, 동시대의'예요.",
+              "mark": "Contemporary"
+            },
+            {
+              "label": "not 형용사 enough to ~",
+              "text": "'~할 만큼 충분히 …하지 않다'예요. not strong enough to fabricate = 꾸며 낼 만큼 뛰어나지 않다.",
+              "mark": "enough"
+            }
+          ]
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "Contemporary astronomical science",
+            "not strong enough",
+            "to fabricate",
+            "such a detail"
+          ],
+          "answers": [
+            "Contemporary astronomical science",
+            "such a detail",
+            "to fabricate",
+            "not strong enough"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Contemporary astronomical science",
+                "ko": "당시의 천문 과학은"
+              },
+              " ",
+              {
+                "en": "such a detail",
+                "ko": "그런 세부 사항"
+              },
+              "을 ",
+              {
+                "en": "to fabricate",
+                "ko": "꾸며 낼"
+              },
+              " 만큼 ",
+              {
+                "en": "not strong enough",
+                "ko": "충분히 뛰어나지 않았다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Contemporary astronomical science was not strong enough to fabricate such a detail.",
+          "tips": [
+            {
+              "label": "contemporary",
+              "text": "'현대의'로 많이 알지만, 옛날 이야기 속에서는 '그 당시의, 동시대의'예요.",
+              "mark": "Contemporary"
+            },
+            {
+              "label": "not 형용사 enough to ~",
+              "text": "'~할 만큼 충분히 …하지 않다'예요. not strong enough to fabricate = 꾸며 낼 만큼 뛰어나지 않다.",
+              "mark": "enough"
+            }
+          ]
+        },
+        {
+          "id": "s6_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "Contemporary는 여기서 '현대의'가 아니라 '그 당시의'예요. not 형용사 enough to ~는 '~할 만큼 …하지 않다'예요.",
+              "Contemporary는 여기서 '현대의'가 아니라 '그 당시의'예요. not 형용사 enough to ~는 '~할 만큼 …하지 않다'예요."
+            ],
+            "explain": "Contemporary astronomical science는 '당시의 천문 과학'이에요. 그때 과학은 이런 정확한 세부 사항을 꾸며 낼 만큼 뛰어나지 않았대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "Contemporary astronomical science는 '당시의 천문 과학'이에요. 그때 과학은 이런 정확한 세부 사항을 꾸며 낼 만큼 뛰어나지 않았대요.",
+              "o2": "Contemporary astronomical science는 '당시의 천문 과학'이에요. 그때 과학은 이런 정확한 세부 사항을 꾸며 낼 만큼 뛰어나지 않았대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "현대 천문학은 그 세부 사항을 꾸며 낼 만큼 뛰어나다"
+            },
+            {
+              "id": "o1",
+              "label": "그 시대 천문학은 그렇게 정확한 세부 사항을 꾸며 낼 만큼 뛰어나지 않았다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "그 시대 천문학은 남반구에서 태양이 어디 있을지 정확히 알았다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Contemporary",
+            "not strong enough",
+            "fabricate"
+          ],
+          "tips": [
+            {
+              "label": "contemporary",
+              "text": "'현대의'로 많이 알지만, 옛날 이야기 속에서는 '그 당시의, 동시대의'예요.",
+              "mark": "Contemporary"
+            },
+            {
+              "label": "not 형용사 enough to ~",
+              "text": "'~할 만큼 충분히 …하지 않다'예요. not strong enough to fabricate = 꾸며 낼 만큼 뛰어나지 않다.",
+              "mark": "enough"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s6_so",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그때 과학으로 꾸며 낼 수 없었다면, 페니키아인들의 보고는 어떻게 나온 걸까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "당시엔 누구도 이런 세부 사항을 머리로 지어낼 수 없었어요. 그럼 어디서 알았을지 생각해 봐요.",
+              "당시엔 누구도 이런 세부 사항을 머리로 지어낼 수 없었어요. 그럼 어디서 알았을지 생각해 봐요."
+            ],
+            "explain": "당시 과학으로는 '남반구에서 태양이 오른쪽에 있다'를 지어낼 수 없었어요. 그러니 그들이 실제로 가서 본 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "당시 과학으로는 '남반구에서 태양이 오른쪽에 있다'를 지어낼 수 없었어요. 그러니 그들이 실제로 가서 본 거예요.",
+              "o2": "당시 과학으로는 '남반구에서 태양이 오른쪽에 있다'를 지어낼 수 없었어요. 그러니 그들이 실제로 가서 본 거예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그때 과학책을 보고 지어냈다"
+            },
+            {
+              "id": "o1",
+              "label": "직접 가서 보고 겪었다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "헤로도토스가 대신 지어냈다"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "보고한 것 ↔ 당시 과학",
+            "left": {
+              "label": "그들이 본 것 (reported)",
+              "words": [
+                {
+                  "text": "the sun on their right",
+                  "ko": "태양이 오른쪽에"
+                },
+                {
+                  "text": "the opposite direction",
+                  "ko": "늘 보던 곳과 정반대"
+                },
+                {
+                  "text": "accurate · prosaic detail",
+                  "ko": "정확하지만 평범한 세부 사항"
+                }
+              ]
+            },
+            "right": {
+              "label": "당시 과학 (contemporary science)",
+              "words": [
+                {
+                  "text": "not strong enough to fabricate",
+                  "ko": "꾸며 낼 만큼 뛰어나지 않음"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s6_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그들이 본 것은 당시 과학으로는 꾸며 낼 수 없는 것이었어요. 칠판에 정리해 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "보고한 것 ↔ 당시 과학",
+            "left": {
+              "label": "그들이 본 것 (reported)",
+              "words": [
+                {
+                  "text": "the sun on their right",
+                  "ko": "태양이 오른쪽에"
+                },
+                {
+                  "text": "the opposite direction",
+                  "ko": "늘 보던 곳과 정반대"
+                },
+                {
+                  "text": "accurate · prosaic detail",
+                  "ko": "정확하지만 평범한 세부 사항",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "당시 과학 (contemporary science)",
+              "words": [
+                {
+                  "text": "not strong enough to fabricate",
+                  "ko": "꾸며 낼 만큼 뛰어나지 않음",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "📜",
+                "en": "sources become fewer",
+                "ko": "고대 여행 속 태양 이야기는 자료가 적어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2",
+                "icon": "✍️",
+                "en": "Herodotus writes",
+                "ko": "헤로도토스가 네코 2세가 맡긴 탐험 항해를 기록했어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "⛵",
+                "en": "sail clockwise around Africa",
+                "ko": "원정대가 아프리카를 시계 방향으로 돌아 3년 만에 돌아왔대요 (reportedly)",
+                "fresh": false
+              },
+              {
+                "label": "문장 5",
+                "icon": "☀️",
+                "en": "the sun on their right",
+                "ko": "돌아와서, 태양이 늘 보던 곳과 정반대인 오른쪽에 있었다고 보고했어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 6",
+                "icon": "🔭",
+                "en": "not strong enough to fabricate",
+                "ko": "당시 과학으로는 이런 세부 사항을 꾸며 낼 수 없었어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "It is this that leads many of today’s historians to conclude that the journey ________.",
+      "model_translation": "오늘날의 역사가 중 많은 이들이 그 여행이 ________라고 결론을 내리게 되는 것이 바로 이 때문이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "It is this that",
+          "ko": "~하는 것은 바로 이것이다"
+        },
+        {
+          "en": "leads",
+          "ko": "이끌다, ~하게 하다"
+        },
+        {
+          "en": "many of today’s historians",
+          "ko": "오늘날 역사가 중 많은 이들"
+        },
+        {
+          "en": "to conclude",
+          "ko": "결론 내리도록"
+        },
+        {
+          "en": "conclude",
+          "ko": "결론 내리다"
+        },
+        {
+          "en": "that the journey",
+          "ko": "그 여행이 ~라고"
+        },
+        {
+          "en": "the journey",
+          "ko": "그 여행"
+        },
+        {
+          "en": "today’s",
+          "ko": "오늘날의"
+        },
+        {
+          "en": "historians",
+          "ko": "역사가들"
+        },
+        {
+          "en": "journey",
+          "ko": "여행"
+        }
+      ],
+      "slashes": [
+        "It is this",
+        "today’s historians",
+        "to conclude"
+      ],
+      "roles": [
+        {
+          "text": "this",
+          "role": "S"
+        },
+        {
+          "text": "leads",
+          "role": "V"
+        },
+        {
+          "text": "many of today’s historians",
+          "role": "O"
+        },
+        {
+          "text": "to conclude",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_this",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "It is this that ~의 this는 무엇을 가리킬까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "this는 바로 앞 문장을 가리키는 경우가 많아요. 칠판 오른쪽을 떠올려 봐요.",
+              "this는 바로 앞 문장을 가리키는 경우가 많아요. 칠판 오른쪽을 떠올려 봐요."
+            ],
+            "explain": "this는 바로 앞 문장이에요. 당시 천문 과학은 태양 위치 같은 세부 사항을 지어낼 만큼 뛰어나지 않았다는 사실이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "this는 바로 앞 문장이에요. 당시 천문 과학은 태양 위치 같은 세부 사항을 지어낼 만큼 뛰어나지 않았다는 사실이에요.",
+              "o2": "this는 바로 앞 문장이에요. 당시 천문 과학은 태양 위치 같은 세부 사항을 지어낼 만큼 뛰어나지 않았다는 사실이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "자료가 적고 알려진 여행이 적다는 것"
+            },
+            {
+              "id": "o1",
+              "label": "당시 과학으로는 그런 세부 사항을 꾸며 낼 수 없었다는 것",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "원정대가 3년 동안 떠나 있었다는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "this"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "보고한 것 ↔ 당시 과학",
+            "left": {
+              "label": "그들이 본 것 (reported)",
+              "words": [
+                {
+                  "text": "the sun on their right",
+                  "ko": "태양이 오른쪽에"
+                },
+                {
+                  "text": "the opposite direction",
+                  "ko": "늘 보던 곳과 정반대"
+                },
+                {
+                  "text": "accurate · prosaic detail",
+                  "ko": "정확하지만 평범한 세부 사항"
+                }
+              ]
+            },
+            "right": {
+              "label": "당시 과학 (contemporary science)",
+              "words": [
+                {
+                  "text": "not strong enough to fabricate",
+                  "ko": "꾸며 낼 만큼 뛰어나지 않음"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "It is A that ~",
+              "text": "'~하는 것은 바로 A다'예요. It is this that = 바로 이것이 ~하게 한다.",
+              "mark": "It is this that"
+            }
+          ]
+        },
+        {
+          "id": "s7_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 역사가들은 그 여행이 어땠다고 결론 내렸을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "결론의 근거는 '당시엔 꾸며 낼 수 없었다'는 사실이에요. 꾸며 낸 게 아니라면 어떻게 된 걸지 생각해 봐요.",
+              "결론의 근거는 '당시엔 꾸며 낼 수 없었다'는 사실이에요. 꾸며 낸 게 아니라면 어떻게 된 걸지 생각해 봐요."
+            ],
+            "explain": "꾸며 낼 수 없는 세부 사항을 보고했으니, 정말 아프리카를 돌며 직접 봤다는 뜻이에요. 그래서 여행은 진짜였다고 결론 내려요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "꾸며 낼 수 없는 세부 사항을 보고했으니, 정말 아프리카를 돌며 직접 봤다는 뜻이에요. 그래서 여행은 진짜였다고 결론 내려요.",
+              "o2": "꾸며 낼 수 없는 세부 사항을 보고했으니, 정말 아프리카를 돌며 직접 봤다는 뜻이에요. 그래서 여행은 진짜였다고 결론 내려요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "실제로 있었다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "기록이 남지 않았다"
+            },
+            {
+              "id": "o2",
+              "label": "중간에 멈췄다"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "보고한 것 ↔ 당시 과학",
+            "left": {
+              "label": "그들이 본 것 (reported)",
+              "words": [
+                {
+                  "text": "the sun on their right",
+                  "ko": "태양이 오른쪽에"
+                },
+                {
+                  "text": "the opposite direction",
+                  "ko": "늘 보던 곳과 정반대"
+                },
+                {
+                  "text": "accurate · prosaic detail",
+                  "ko": "정확하지만 평범한 세부 사항"
+                }
+              ]
+            },
+            "right": {
+              "label": "당시 과학 (contemporary science)",
+              "words": [
+                {
+                  "text": "not strong enough to fabricate",
+                  "ko": "꾸며 낼 만큼 뛰어나지 않음"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "conclude",
+            "the journey"
+          ]
+        },
+        {
+          "id": "s7_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸은 '페니키아인들의 보고는 진짜다'와 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "this(당시엔 꾸며 낼 수 없었다)가 이 결론을 이끌었어요(leads).",
+              "this(당시엔 꾸며 낼 수 없었다)가 이 결론을 이끌었어요(leads)."
+            ],
+            "explain": "꾸며 낼 수 없었다는 사실(this)이 결론을 이끌어요. 그러니 빈칸은 보고가 진짜라는 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "꾸며 낼 수 없었다는 사실(this)이 결론을 이끌어요. 그러니 빈칸은 보고가 진짜라는 쪽이에요."
+            },
+            "point": "this(당시엔 꾸며 낼 수 없었다) → 결론 = 보고는 진짜, 여행은 실제로 있었다 = 같은 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 (보고는 진짜다)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 (보고는 꾸며 낸 것이다)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "this",
+            "leads"
+          ]
+        },
+        {
+          "id": "s7_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 '그 여행은 정말 있었다'는 쪽이에요. 이 말을 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

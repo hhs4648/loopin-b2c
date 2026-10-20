@@ -1,0 +1,2219 @@
+{
+  "id": "moeui-2022-03-40-pathogen-languages",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 40번 (요약문 완성, 2점)",
+  "brief": {
+    "topic": "요약문 푸는 법: 지문을 먼저 읽으며 말을 칠판 두 칸에 모으기 → 요약문 (A)(B)가 각각 어느 쪽인지 → 그 뜻의 말 고르기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "summary",
+    "labels": [
+      "지문 먼저 읽기",
+      "두 쪽 말 모으기",
+      "(A)(B) 맞추기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-2022-03-40-pathogens.svg",
+      "alt": "칠판: Equator(적도 주변) → Languages(언어·종교)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "적도 주변엔 왜 언어와 종교가 그렇게 많을까요? 이번 글은 그 이유를 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "요약문 문제는 지문을 먼저 읽으며 글쓴이 주장을 잡아요. 중요한 말을 칠판에 모아 둘 거예요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "마지막에 요약문을 읽고, (A)와 (B)가 칠판의 어느 쪽 말인지 보고 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?",
+    "underline": [
+      "(A) ________",
+      "(B) ________"
+    ],
+    "sentence": 8,
+    "analysis_first": true,
+    "wrong_rate": 41.0,
+    "wrong_rank": 10,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "diversification",
+        "ko": "다양화"
+      },
+      {
+        "en": "discouraging",
+        "ko": "막는 것, 단념시키는 것"
+      },
+      {
+        "en": "extinction",
+        "ko": "소멸, 멸종"
+      },
+      {
+        "en": "delaying",
+        "ko": "늦추는 것"
+      },
+      {
+        "en": "expanding",
+        "ko": "넓히는 것, 늘리는 것"
+      },
+      {
+        "en": "unification",
+        "ko": "통합, 하나로 합침"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "diversification ······ discouraging",
+        "keywords": [],
+        "ko": "다양화 ······ 막음",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "extinction ······ delaying",
+        "keywords": [],
+        "ko": "소멸 ······ 늦춤"
+      },
+      {
+        "id": "3",
+        "label": "extinction ······ expanding",
+        "keywords": [],
+        "ko": "소멸 ······ 넓힘"
+      },
+      {
+        "id": "4",
+        "label": "unification ······ discouraging",
+        "keywords": [],
+        "ko": "통합 ······ 막음"
+      },
+      {
+        "id": "5",
+        "label": "diversification ······ expanding",
+        "keywords": [],
+        "ko": "다양화 ······ 넓힘"
+      }
+    ],
+    "brief": {
+      "ask": "(A)는 칠판 왼쪽(언어·종교), (B)는 오른쪽(교류)이에요. 둘 다 맞는 보기를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 높은 병원균 밀도는 이웃과의 교류를 막아서(discouraging), 언어와 종교를 여러 갈래로 나눴어요(diversification).",
+      "final_wrong": "정답은 ①이에요. (A) 언어·종교가 갈라짐 = diversification, (B) 교류를 멈춤 = discouraging이에요.",
+      "option_feedback": {
+        "2": "언어와 종교는 사라진(extinction) 게 아니라 갈라졌어요. 교류도 잠깐 늦춘(delaying) 게 아니라 멈췄어요.",
+        "3": "언어와 종교는 사라진(extinction) 게 아니라 갈라졌어요. 교류도 넓힌(expanding) 게 아니라 멈췄어요.",
+        "4": "(B) discouraging은 맞지만, 언어와 종교는 합쳐진(unification) 게 아니라 갈라졌어요.",
+        "5": "(A) diversification은 맞지만, (B) expanding(넓힘)은 교류를 멈췄다는 말과 반대예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 12%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "③은 두 칸 다 반대예요. 글은 교류를 멈추니 언어와 종교가 갈라졌다고 했어요. (A)는 다양화(diversification), (B)는 막음(discouraging)이에요.",
+          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "병 때문에 사람이 죽어 언어가 사라진다고 생각했어요",
+              "skills": [
+                "outside_guess"
+              ],
+              "reply": "알려 줘서 고마워요. 글에 없는 내용을 짐작하면 안 돼요. 글은 언어와 종교가 사라진 게 아니라 갈라졌다(divide)고 했어요. 앞으로 글에 나온 말로 확인하게 할게요."
+            },
+            {
+              "label": "교류가 늘어서 병이 퍼진다고 생각했어요",
+              "skills": [
+                "cause_effect"
+              ],
+              "reply": "알려 줘서 고마워요. 교류하면 병에 걸린다는 건 맞아요. 그래서 교류를 멈췄다(stopped)는 게 글의 흐름이에요. 앞으로 원인과 결과를 끝까지 따라가게 할게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "outside_guess",
+                "cause_effect"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 글에 나온 말로 확인하고, 원인과 결과를 끝까지 따라가게 할게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(A)",
+                "text": "naturally divide · increase rapidly",
+                "ko": "갈라져 많아짐 = diversification",
+                "tone": "hl"
+              },
+              {
+                "label": "(B)",
+                "text": "stopped doing it · kept neighbors apart",
+                "ko": "교류를 막음 = discouraging",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 12%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "②는 (A) extinction(소멸)부터 맞지 않아요. 언어와 종교는 사라진 게 아니라 갈라졌어요(divide). (B) delaying(늦춤)도 교류를 아예 멈췄다는 말과 달라요.",
+          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "병 때문에 언어가 사라진다고 생각했어요",
+              "skills": [
+                "outside_guess"
+              ],
+              "reply": "알려 줘서 고마워요. 글에 없는 내용을 짐작하면 안 돼요. 마지막 문장의 divide(갈라지다)가 (A)의 근거예요. 앞으로 글에 나온 말로 확인하게 할게요."
+            },
+            {
+              "label": "delaying이 '막음'과 비슷해 보였어요",
+              "skills": [
+                "word_nuance"
+              ],
+              "reply": "알려 줘서 고마워요. delay는 '늦추다'라 잠깐 미룬다는 말이에요. 글은 교류를 멈추고 떨어져 지냈다고 했어요. 앞으로 비슷해 보이는 말을 같이 견줘 볼게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(A)",
+                "text": "naturally divide",
+                "ko": "사라짐(extinction) X → 갈라짐",
+                "tone": "hl"
+              },
+              {
+                "label": "(B)",
+                "text": "stopped · kept apart",
+                "ko": "늦춤(delaying) X → 멈춤",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 11%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "⑤는 (A) diversification은 맞아요. 그런데 (B) expanding(넓힘)은 교류를 멈췄다(stopped)는 말과 반대예요. 두 칸이 다 맞아야 해요.",
+          "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "(A)만 보고 골랐어요",
+              "skills": [
+                "two_blanks"
+              ],
+              "reply": "알려 줘서 고마워요. 요약문은 (A)와 (B)가 둘 다 맞아야 해요. 앞으로 두 칸을 하나씩 확인하게 할게요."
+            },
+            {
+              "label": "교류가 늘어서 언어가 다양해진다고 생각했어요",
+              "skills": [
+                "cause_effect"
+              ],
+              "reply": "알려 줘서 고마워요. 글은 반대로 교류가 끊겨서 언어가 갈라졌다고 했어요. 앞으로 원인과 결과를 끝까지 따라가게 할게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(B)",
+                "text": "stopped doing it · kept neighbors apart",
+                "ko": "넓힘(expanding) X → 막음(discouraging)",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "religion",
+        "ko": "종교"
+      },
+      {
+        "en": "equator",
+        "ko": "적도"
+      },
+      {
+        "en": "frequency",
+        "ko": "빈도"
+      },
+      {
+        "en": "lie in",
+        "ko": "~에 있다"
+      },
+      {
+        "en": "density",
+        "ko": "밀도"
+      },
+      {
+        "en": "tropics",
+        "ko": "열대 지방"
+      },
+      {
+        "en": "temperate",
+        "ko": "온대의"
+      },
+      {
+        "en": "be exposed to",
+        "ko": "~에 노출되다"
+      },
+      {
+        "en": "in contrast",
+        "ko": "반면에"
+      },
+      {
+        "en": "prior",
+        "ko": "이전의"
+      },
+      {
+        "en": "interact",
+        "ko": "교류하다"
+      },
+      {
+        "en": "tend to",
+        "ko": "~하는 경향이 있다"
+      },
+      {
+        "en": "logical",
+        "ko": "논리적인"
+      },
+      {
+        "en": "blame A for B",
+        "ko": "B를 A 탓으로 돌리다"
+      },
+      {
+        "en": "keep A apart",
+        "ko": "A를 떼어 놓다"
+      },
+      {
+        "en": "divide",
+        "ko": "갈라지다"
+      }
+    ],
+    "options": [
+      {
+        "en": "diversification",
+        "ko": "다양화"
+      },
+      {
+        "en": "discourage",
+        "ko": "막다, 단념시키다"
+      },
+      {
+        "en": "extinction",
+        "ko": "소멸"
+      },
+      {
+        "en": "delay",
+        "ko": "늦추다"
+      },
+      {
+        "en": "expand",
+        "ko": "넓히다"
+      },
+      {
+        "en": "unification",
+        "ko": "통합"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Why would languages and religions increase rapidly around the equator, and why is their frequency also related to ethnocentrism?",
+      "model_translation": "왜 언어와 종교는 적도 주변에서 급증하며, 왜 그것의 빈도가 자민족 중심주의와 또한 관련이 있을까?",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Why would",
+          "ko": "왜 ~할까"
+        },
+        {
+          "en": "languages and religions",
+          "ko": "언어와 종교"
+        },
+        {
+          "en": "increase rapidly",
+          "ko": "빠르게 늘어나다"
+        },
+        {
+          "en": "around the equator",
+          "ko": "적도 주변에서"
+        },
+        {
+          "en": "why is",
+          "ko": "왜 ~일까"
+        },
+        {
+          "en": "their frequency",
+          "ko": "그것들의 빈도(얼마나 많은지)"
+        },
+        {
+          "en": "also related to",
+          "ko": "~와도 관련된"
+        },
+        {
+          "en": "ethnocentrism",
+          "ko": "자민족 중심주의"
+        },
+        {
+          "en": "languages",
+          "ko": "언어들"
+        },
+        {
+          "en": "religions",
+          "ko": "종교들"
+        },
+        {
+          "en": "increase",
+          "ko": "늘어나다"
+        },
+        {
+          "en": "rapidly",
+          "ko": "빠르게"
+        },
+        {
+          "en": "around",
+          "ko": "~ 주변에"
+        },
+        {
+          "en": "equator",
+          "ko": "적도"
+        },
+        {
+          "en": "frequency",
+          "ko": "빈도"
+        },
+        {
+          "en": "related",
+          "ko": "관련된"
+        }
+      ],
+      "slashes": [
+        "languages and religions",
+        "increase rapidly",
+        "around the equator,",
+        "their frequency"
+      ],
+      "roles": [
+        {
+          "text": "languages and religions",
+          "role": "S"
+        },
+        {
+          "text": "increase",
+          "role": "V"
+        },
+        {
+          "text": "their frequency",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "related",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_q",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "질문으로 시작해요. 적도 주변에서 언어와 종교가 왜 빠르게 늘어나는지, 그 답이 이 글의 중심이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "increase rapidly",
+            "around the equator"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "적도 주변에서는?",
+            "left": {
+              "label": "언어·종교",
+              "words": [
+                {
+                  "text": "increase rapidly",
+                  "ko": "빠르게 늘어남",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "tips": [
+            {
+              "label": "요약문 문제 요령",
+              "text": "지문을 먼저 읽으며 글쓴이 주장을 잡고 말을 칠판에 모아요. 마지막에 요약문 (A)(B)가 각각 어느 쪽 말인지 보고 골라요."
+            },
+            {
+              "label": "질문으로 시작하는 글",
+              "text": "첫 문장이 질문이면 그 답이 글의 주제예요. 답이 나오는 문장을 꼭 잡아요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "The answer to these questions lies in the fact that pathogen density is much higher in the tropics than it is in temperate and cold climates.",
+      "model_translation": "이 질문들에 대한 답은 병원균의 밀도가 온대 기후나 한랭 기후보다 열대 지방에서 훨씬 더 높다는 사실에 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "the tropics",
+          "ko": "열대 지방"
+        },
+        {
+          "en": "The answer",
+          "ko": "답"
+        },
+        {
+          "en": "these questions",
+          "ko": "이 질문들"
+        },
+        {
+          "en": "lies",
+          "ko": "놓여 있다 · lie in = ~에 있다"
+        },
+        {
+          "en": "in the fact",
+          "ko": "~라는 사실에"
+        },
+        {
+          "en": "pathogen density",
+          "ko": "병원균 밀도"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "much higher",
+          "ko": "훨씬 더 높은"
+        },
+        {
+          "en": "in the tropics",
+          "ko": "열대 지방에서"
+        },
+        {
+          "en": "than it is",
+          "ko": "~에서(의 병원균 밀도)보다"
+        },
+        {
+          "en": "in temperate and cold climates",
+          "ko": "온대 기후와 추운 기후에서"
+        },
+        {
+          "en": "density",
+          "ko": "밀도"
+        },
+        {
+          "en": "tropics",
+          "ko": "열대 지방"
+        },
+        {
+          "en": "pathogen",
+          "ko": "병원균"
+        },
+        {
+          "en": "higher",
+          "ko": "더 높은"
+        },
+        {
+          "en": "temperate",
+          "ko": "온대의"
+        },
+        {
+          "en": "cold",
+          "ko": "추운"
+        },
+        {
+          "en": "climates",
+          "ko": "기후"
+        }
+      ],
+      "slashes": [
+        "The answer to these questions",
+        "lies in the fact",
+        "pathogen density is",
+        "much higher",
+        "in the tropics",
+        "than it is"
+      ],
+      "roles": [
+        {
+          "text": "The answer",
+          "role": "S"
+        },
+        {
+          "text": "lies",
+          "role": "V"
+        },
+        {
+          "text": "pathogen density",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "much higher",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "to these questions"
+      ],
+      "steps": [
+        {
+          "id": "s2_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The answer",
+            "these questions",
+            "lies",
+            "pathogen density",
+            "is"
+          ],
+          "answers": [
+            "The answer",
+            "lies"
+          ],
+          "roles": {
+            "The answer": "S",
+            "lies": "V"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 바깥 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "these questions": "그건 to 뒤 덩어리예요. The answer를 꾸며요.",
+              "pathogen density": "그건 that 뒤 덩어리 안의 주어예요. 먼저 바깥 문장을 봐요.",
+              "is": "그건 that 뒤 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The answer (to these questions), 동사는 lies예요. 답은 that 뒤 내용에 있대요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "lie in",
+              "text": "'~에 있다'예요. The answer lies in ~ = 답은 ~에 있다.",
+              "mark": "lies in"
+            }
+          ]
+        },
+        {
+          "id": "s2_that_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "pathogen density",
+            "is",
+            "much higher",
+            "the tropics"
+          ],
+          "answers": [
+            "pathogen density",
+            "is",
+            "much higher"
+          ],
+          "roles": {
+            "pathogen density": "S",
+            "is": "V",
+            "much higher": "C"
+          },
+          "brief": {
+            "ask": "답은 that 뒤에 있어요. that 안의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the tropics": "그건 in 뒤의 말이에요. 어디서 높은지예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "that 안의 주어는 pathogen density, 동사는 is, 보어는 much higher예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 그 답은 무엇이래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'pathogen density is much higher in the tropics'를 봐요. pathogen은 시험지 아래 풀이처럼 '병원균'이에요.",
+              "'pathogen density is much higher in the tropics'를 봐요. pathogen은 시험지 아래 풀이처럼 '병원균'이에요."
+            ],
+            "explain": "'pathogen density is much higher in the tropics', 병원균 밀도가 열대에서 온대·추운 기후보다 훨씬 높대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'pathogen density is much higher in the tropics', 병원균 밀도가 열대에서 온대·추운 기후보다 훨씬 높대요.",
+              "o2": "'pathogen density is much higher in the tropics', 병원균 밀도가 열대에서 온대·추운 기후보다 훨씬 높대요."
+            },
+            "point": "질문의 답 = 열대 지방은 병원균 밀도가 훨씬 높다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "열대 지방에 병원균이 훨씬 많다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "열대 지방은 날씨가 따뜻하다"
+            },
+            {
+              "id": "o2",
+              "label": "추운 지방에 병원균이 더 많다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "pathogen density",
+            "much higher in the tropics"
+          ],
+          "tips": [
+            {
+              "label": "than it is",
+              "text": "it is는 pathogen density is예요. 열대와 온대·추운 기후를 견줘요.",
+              "mark": "than it is"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "When you live in Sweden, chances are good that any group within five hundred miles has been exposed to the same few pathogens.",
+      "model_translation": "여러분이 스웨덴에 살면, 500마일 이내의 어떤 집단도 동일한 극히 소수의 병원균에 노출되어 왔을 가능성이 크다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "When you live in Sweden",
+          "ko": "스웨덴에 살면"
+        },
+        {
+          "en": "chances are good",
+          "ko": "가능성이 크다"
+        },
+        {
+          "en": "any group within five hundred miles",
+          "ko": "500마일 안의 어떤 집단이든"
+        },
+        {
+          "en": "has been exposed to",
+          "ko": "~에 노출되어 왔다"
+        },
+        {
+          "en": "the same few pathogens",
+          "ko": "같은 몇 안 되는 병원균"
+        },
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "live",
+          "ko": "살다"
+        },
+        {
+          "en": "Sweden",
+          "ko": "스웨덴"
+        },
+        {
+          "en": "chances",
+          "ko": "가능성"
+        },
+        {
+          "en": "group",
+          "ko": "집단"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "five",
+          "ko": "5"
+        },
+        {
+          "en": "hundred",
+          "ko": "100"
+        },
+        {
+          "en": "miles",
+          "ko": "마일"
+        },
+        {
+          "en": "exposed",
+          "ko": "노출된"
+        },
+        {
+          "en": "few",
+          "ko": "몇 안 되는"
+        },
+        {
+          "en": "pathogens",
+          "ko": "병원균들"
+        }
+      ],
+      "slashes": [
+        "in Sweden,",
+        "chances are good",
+        "any group",
+        "within five hundred miles",
+        "has been exposed"
+      ],
+      "roles": [
+        {
+          "text": "chances",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "good",
+          "role": "C"
+        },
+        {
+          "text": "any group",
+          "role": "S"
+        },
+        {
+          "text": "has been exposed",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "within five hundred miles"
+      ],
+      "steps": [
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "candidates": [
+            "When you live in Sweden",
+            "chances are good",
+            "any group within five hundred miles",
+            "has been exposed to",
+            "the same few pathogens"
+          ],
+          "answers": [
+            "When you live in Sweden",
+            "any group within five hundred miles",
+            "the same few pathogens",
+            "has been exposed to",
+            "chances are good"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "When you live in Sweden",
+                "ko": "스웨덴에 살면"
+              },
+              ", ",
+              {
+                "en": "any group within five hundred miles",
+                "ko": "500마일 안의 어떤 집단이든"
+              },
+              " ",
+              {
+                "en": "the same few pathogens",
+                "ko": "같은 몇 안 되는 병원균"
+              },
+              "에 ",
+              {
+                "en": "has been exposed to",
+                "ko": "노출되어 왔을"
+              },
+              " ",
+              {
+                "en": "chances are good",
+                "ko": "가능성이 크다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "chances are good that ~",
+              "text": "'~일 가능성이 크다'예요.",
+              "mark": "chances are good"
+            }
+          ]
+        },
+        {
+          "id": "s3_sweden",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "스웨덴에 살면 500마일 안의 집단들은 어떤 병원균을 접해 왔대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'the same few pathogens'를 봐요. the same few = 같은 몇 안 되는.",
+              "'the same few pathogens'를 봐요. the same few = 같은 몇 안 되는."
+            ],
+            "explain": "'has been exposed to the same few pathogens', 다들 같은 몇 가지 병원균만 접해 왔대요. 새 병원균을 만날 일이 적어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'has been exposed to the same few pathogens', 다들 같은 몇 가지 병원균만 접해 왔대요. 새 병원균을 만날 일이 적어요.",
+              "o2": "'has been exposed to the same few pathogens', 다들 같은 몇 가지 병원균만 접해 왔대요. 새 병원균을 만날 일이 적어요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "모두 같은 몇 가지 병원균",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "저마다 처음 보는 병원균"
+            },
+            {
+              "id": "o2",
+              "label": "병원균은 하나도 없음"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "the same few pathogens"
+          ],
+          "tips": [
+            {
+              "label": "chances are good that ~",
+              "text": "'~일 가능성이 크다'예요.",
+              "mark": "chances are good"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "In contrast, when you live in the Congo, the group on the other side of the valley may well have been exposed to a pathogen with which you’ve had no prior contact.",
+      "model_translation": "반면에, 여러분이 콩고에 산다면, 계곡 반대편에 있는 집단은 아마 여러분이 이전에 접촉한 적이 없는 병원균에 노출되었을지도 모른다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In contrast",
+          "ko": "반면에"
+        },
+        {
+          "en": "when you live in the Congo",
+          "ko": "콩고에 살면"
+        },
+        {
+          "en": "the Congo",
+          "ko": "콩고"
+        },
+        {
+          "en": "the group on the other side of the valley",
+          "ko": "계곡 건너편의 집단"
+        },
+        {
+          "en": "the group",
+          "ko": "그 집단"
+        },
+        {
+          "en": "the valley",
+          "ko": "계곡"
+        },
+        {
+          "en": "may well have been exposed to",
+          "ko": "아마 ~에 노출되었을지도 모른다"
+        },
+        {
+          "en": "may well have been exposed",
+          "ko": "아마 노출되었을지도 모른다"
+        },
+        {
+          "en": "a pathogen",
+          "ko": "병원균"
+        },
+        {
+          "en": "with which you’ve had no prior contact",
+          "ko": "네가 전에 접촉한 적 없는"
+        },
+        {
+          "en": "prior",
+          "ko": "이전의"
+        },
+        {
+          "en": "contrast",
+          "ko": "대조"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "live",
+          "ko": "살다"
+        },
+        {
+          "en": "Congo",
+          "ko": "콩고"
+        },
+        {
+          "en": "group",
+          "ko": "집단"
+        },
+        {
+          "en": "side",
+          "ko": "쪽, 편"
+        },
+        {
+          "en": "valley",
+          "ko": "계곡"
+        },
+        {
+          "en": "exposed",
+          "ko": "노출된"
+        },
+        {
+          "en": "pathogen",
+          "ko": "병원균"
+        },
+        {
+          "en": "you’ve",
+          "ko": "너는 ~해 왔다"
+        },
+        {
+          "en": "contact",
+          "ko": "접촉"
+        }
+      ],
+      "slashes": [
+        "In contrast,",
+        "in the Congo,",
+        "the group",
+        "on the other side of the valley",
+        "may well have been exposed",
+        "to a pathogen",
+        "with which"
+      ],
+      "roles": [
+        {
+          "text": "the group",
+          "role": "S"
+        },
+        {
+          "text": "may well have been exposed",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "on the other side of the valley",
+        "with which you’ve had no prior contact"
+      ],
+      "steps": [
+        {
+          "id": "s4_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the Congo",
+            "the group",
+            "the valley",
+            "may well have been exposed"
+          ],
+          "answers": [
+            "the group",
+            "may well have been exposed"
+          ],
+          "roles": {
+            "the group": "S",
+            "may well have been exposed": "V"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the Congo": "그건 when 덩어리 안, in 뒤의 말이에요.",
+              "the valley": "그건 of 뒤 덩어리예요. 어느 쪽 집단인지 꾸며요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 the group (on the other side of the valley), 동사는 may well have been exposed예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_congo",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "콩고에서 계곡 건너편 집단은 어떤 병원균에 노출되었을 수 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'with which you’ve had no prior contact'를 봐요. prior는 '이전의'예요.",
+              "'with which you’ve had no prior contact'를 봐요. prior는 '이전의'예요."
+            ],
+            "explain": "'a pathogen with which you’ve had no prior contact', 내가 전에 접촉한 적 없는 병원균이래요. 스웨덴과 반대예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'a pathogen with which you’ve had no prior contact', 내가 전에 접촉한 적 없는 병원균이래요. 스웨덴과 반대예요.",
+              "o2": "'a pathogen with which you’ve had no prior contact', 내가 전에 접촉한 적 없는 병원균이래요. 스웨덴과 반대예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "내가 한 번도 접해 본 적 없는 병원균",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "나와 똑같은 병원균"
+            },
+            {
+              "id": "o2",
+              "label": "이미 사라진 병원균"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "In contrast",
+            "no prior contact"
+          ],
+          "tips": [
+            {
+              "label": "may well have p.p.",
+              "text": "'아마 ~했을지도 모른다'예요. 과거 일을 꽤 그럴듯하게 짐작하는 말이에요.",
+              "mark": "may well"
+            },
+            {
+              "label": "In contrast",
+              "text": "'반면에'예요. 앞 문장(스웨덴)과 반대 경우가 나와요.",
+              "mark": "In contrast"
+            }
+          ]
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🌍",
+                "en": "pathogen density ↑ in the tropics",
+                "ko": "적도 주변에 언어·종교가 많은 이유 — 열대엔 병원균이 훨씬 많아요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "🦠",
+                "en": "Sweden: the same few · Congo: no prior contact",
+                "ko": "스웨덴은 늘 같은 병원균, 콩고는 처음 보는 병원균을 만날 수 있어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "For this reason, humans in the tropics learned that when they interacted with other groups they tended to get sick, so they would have stopped doing it.",
+      "model_translation": "이러한 이유로, 열대 지방의 사람들은 그들이 다른 집단과 교류할 때 병에 잘 걸린다는 것을 알게 되었고, 그래서 그들은 그것(교류)을 하는 것을 중단했을 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "For this reason",
+          "ko": "이런 이유로"
+        },
+        {
+          "en": "humans",
+          "ko": "사람들"
+        },
+        {
+          "en": "the tropics",
+          "ko": "열대 지방"
+        },
+        {
+          "en": "learned",
+          "ko": "알게 되었다"
+        },
+        {
+          "en": "interacted",
+          "ko": "교류했다"
+        },
+        {
+          "en": "other groups",
+          "ko": "다른 집단들"
+        },
+        {
+          "en": "tended to get sick",
+          "ko": "병에 걸리는 경향이 있었다"
+        },
+        {
+          "en": "would have stopped",
+          "ko": "멈췄을 것이다"
+        },
+        {
+          "en": "doing it",
+          "ko": "그것을 하는 것"
+        },
+        {
+          "en": "reason",
+          "ko": "이유"
+        },
+        {
+          "en": "tropics",
+          "ko": "열대 지방"
+        },
+        {
+          "en": "groups",
+          "ko": "집단들"
+        },
+        {
+          "en": "tended",
+          "ko": "~하는 경향이 있었다"
+        },
+        {
+          "en": "sick",
+          "ko": "아픈"
+        },
+        {
+          "en": "stopped",
+          "ko": "멈췄다"
+        },
+        {
+          "en": "doing",
+          "ko": "하는 것"
+        }
+      ],
+      "slashes": [
+        "For this reason,",
+        "humans in the tropics",
+        "learned",
+        "when they interacted",
+        "with other groups",
+        "tended to get sick,"
+      ],
+      "roles": [
+        {
+          "text": "humans",
+          "role": "S"
+        },
+        {
+          "text": "learned",
+          "role": "V"
+        },
+        {
+          "text": "they … they … they",
+          "role": "S"
+        },
+        {
+          "text": "interacted",
+          "role": "V"
+        },
+        {
+          "text": "tended",
+          "role": "V"
+        },
+        {
+          "text": "would have stopped",
+          "role": "V"
+        },
+        {
+          "text": "doing it",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "in the tropics"
+      ],
+      "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "humans",
+            "the tropics",
+            "learned",
+            "interacted",
+            "would have stopped"
+          ],
+          "answers": [
+            "humans",
+            "learned",
+            "would have stopped"
+          ],
+          "roles": {
+            "humans": "S",
+            "learned": "V",
+            "would have stopped": "V"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 동사(V)가 두 개예요. 주어(S)와 동사(V)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the tropics": "그건 in 뒤 덩어리예요. 어디 사는 사람인지 꾸며요.",
+              "interacted": "그건 when 덩어리 안의 동사예요. 배운 내용 속 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 humans, 동사 learned예요. so 뒤는 they가 주어, would have stopped가 동사예요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "would have p.p.",
+              "text": "'~했을 것이다'예요. 과거 일을 짐작하는 말이에요.",
+              "mark": "would have stopped"
+            }
+          ]
+        },
+        {
+          "id": "s5_it",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "doing it의 it은 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "가리키는 것은 앞에서 찾아요. when 뒤를 봐요.",
+              "가리키는 것은 앞에서 찾아요. when 뒤를 봐요."
+            ],
+            "explain": "'when they interacted with other groups they tended to get sick', 교류하면 병에 걸리니 그 교류(interacted)를 멈췄을 거래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'when they interacted with other groups they tended to get sick', 교류하면 병에 걸리니 그 교류(interacted)를 멈췄을 거래요.",
+              "o2": "'when they interacted with other groups they tended to get sick', 교류하면 병에 걸리니 그 교류(interacted)를 멈췄을 거래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "다른 집단과 교류하기",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "병에 걸리기"
+            },
+            {
+              "id": "o2",
+              "label": "열대 지방에 살기"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "doing it"
+          ]
+        },
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "병에 걸리니 다른 집단과 만나는 걸 멈췄을 거래요. 칠판 오른쪽에 넣어 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "would have stopped"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "적도 주변에서는?",
+            "left": {
+              "label": "언어·종교",
+              "words": [
+                {
+                  "text": "increase rapidly",
+                  "ko": "빠르게 늘어남"
+                }
+              ]
+            },
+            "right": {
+              "label": "이웃과의 교류",
+              "words": [
+                {
+                  "text": "stopped doing it",
+                  "ko": "교류를 멈춤",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "←"
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "In a pre-scientific world, it was logical to blame their neighbors for their illness, and therefore to dislike them.",
+      "model_translation": "과학 이전의 세계에서는 자신의 병을 이웃 탓으로 돌리고, 그 결과 그들(이웃)을 싫어하는 것이 논리적이었다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "In a pre-scientific world",
+          "ko": "과학 이전의 세상에서는"
+        },
+        {
+          "en": "it was logical",
+          "ko": "논리적이었다, 당연했다"
+        },
+        {
+          "en": "to blame",
+          "ko": "탓하는 것"
+        },
+        {
+          "en": "their neighbors",
+          "ko": "그들의 이웃"
+        },
+        {
+          "en": "their illness",
+          "ko": "그들의 병"
+        },
+        {
+          "en": "and therefore",
+          "ko": "그래서"
+        },
+        {
+          "en": "to dislike them",
+          "ko": "그들을 싫어하는 것"
+        },
+        {
+          "en": "pre-scientific",
+          "ko": "과학 이전의"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        },
+        {
+          "en": "logical",
+          "ko": "논리적인"
+        },
+        {
+          "en": "blame",
+          "ko": "탓하다"
+        },
+        {
+          "en": "neighbors",
+          "ko": "이웃들"
+        },
+        {
+          "en": "illness",
+          "ko": "병"
+        },
+        {
+          "en": "therefore",
+          "ko": "그래서"
+        },
+        {
+          "en": "dislike",
+          "ko": "싫어하다, 혐오"
+        }
+      ],
+      "slashes": [
+        "pre-scientific world,",
+        "it was logical",
+        "to blame their neighbors",
+        "for their illness,",
+        "and therefore"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        },
+        {
+          "text": "logical",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "candidates": [
+            "In a pre-scientific world",
+            "it was logical",
+            "to blame",
+            "their neighbors",
+            "their illness",
+            "and therefore",
+            "to dislike them"
+          ],
+          "answers": [
+            "In a pre-scientific world",
+            "their illness",
+            "their neighbors",
+            "to blame",
+            "and therefore",
+            "to dislike them",
+            "it was logical"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In a pre-scientific world",
+                "ko": "과학 이전의 세상에서는"
+              },
+              " ",
+              {
+                "en": "their illness",
+                "ko": "자기 병"
+              },
+              "을 ",
+              {
+                "en": "their neighbors",
+                "ko": "이웃"
+              },
+              " 탓으로 ",
+              {
+                "en": "to blame",
+                "ko": "돌리는 것"
+              },
+              ", ",
+              {
+                "en": "and therefore",
+                "ko": "그래서"
+              },
+              " ",
+              {
+                "en": "to dislike them",
+                "ko": "그들을 싫어하는 것"
+              },
+              "이 ",
+              {
+                "en": "it was logical",
+                "ko": "논리적이었다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "blame A for B",
+              "text": "'B를 A 탓으로 돌리다'예요. blame their neighbors for their illness = 병을 이웃 탓으로 돌리다.",
+              "mark": "blame"
+            },
+            {
+              "label": "가주어 it",
+              "text": "it was … to ~는 '~하는 것은 …였다'로 읽어요. it은 뒤의 to ~를 대신 받아요.",
+              "mark": "it was logical"
+            }
+          ]
+        },
+        {
+          "id": "s6_blame",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "과학을 모르던 시절엔 병을 이웃 탓으로 돌리고, 그래서 이웃을 싫어하는 게 당연했대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "blame",
+            "dislike"
+          ],
+          "tips": [
+            {
+              "label": "blame A for B",
+              "text": "'B를 A 탓으로 돌리다'예요. blame their neighbors for their illness = 병을 이웃 탓으로 돌리다.",
+              "mark": "blame"
+            },
+            {
+              "label": "가주어 it",
+              "text": "it was … to ~는 '~하는 것은 …였다'로 읽어요. it은 뒤의 to ~를 대신 받아요.",
+              "mark": "it was logical"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Dislike and fear kept neighbors apart, and once you don’t interact with others anymore, your languages and religions naturally divide as well.",
+      "model_translation": "혐오와 두려움이 이웃을 계속 갈라놓았고, 일단 타인과 더는 교류하지 않게 되면, 언어와 종교도 역시 자연스럽게 갈라지게 된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Dislike and fear",
+          "ko": "혐오와 두려움"
+        },
+        {
+          "en": "kept",
+          "ko": "계속 ~하게 했다 · keep A apart = A를 떼어 놓다"
+        },
+        {
+          "en": "neighbors",
+          "ko": "이웃들"
+        },
+        {
+          "en": "apart",
+          "ko": "떨어져"
+        },
+        {
+          "en": "once",
+          "ko": "일단 ~하면"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        },
+        {
+          "en": "anymore",
+          "ko": "더는"
+        },
+        {
+          "en": "your languages and religions",
+          "ko": "너의 언어와 종교는"
+        },
+        {
+          "en": "naturally",
+          "ko": "자연스럽게"
+        },
+        {
+          "en": "divide",
+          "ko": "나뉘다, 갈라지다"
+        },
+        {
+          "en": "as well",
+          "ko": "~도 역시"
+        },
+        {
+          "en": "Dislike",
+          "ko": "싫어하다, 혐오"
+        },
+        {
+          "en": "fear",
+          "ko": "두려움"
+        },
+        {
+          "en": "languages",
+          "ko": "언어들"
+        },
+        {
+          "en": "religions",
+          "ko": "종교들"
+        }
+      ],
+      "slashes": [
+        "Dislike and fear",
+        "kept neighbors apart,",
+        "and once",
+        "you don’t interact",
+        "with others anymore,",
+        "your languages and religions",
+        "naturally divide"
+      ],
+      "roles": [
+        {
+          "text": "Dislike and fear",
+          "role": "S"
+        },
+        {
+          "text": "kept",
+          "role": "V"
+        },
+        {
+          "text": "neighbors",
+          "role": "O"
+        },
+        {
+          "text": "apart",
+          "role": "C"
+        },
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "don’t interact",
+          "role": "V"
+        },
+        {
+          "text": "your languages and religions",
+          "role": "S"
+        },
+        {
+          "text": "divide",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Dislike and fear",
+            "kept",
+            "neighbors",
+            "apart",
+            "others",
+            "your languages and religions",
+            "divide"
+          ],
+          "answers": [
+            "Dislike and fear",
+            "kept",
+            "neighbors",
+            "apart",
+            "your languages and religions",
+            "divide"
+          ],
+          "roles": {
+            "Dislike and fear": "S",
+            "kept": "V",
+            "neighbors": "O",
+            "apart": "C",
+            "your languages and religions": "S",
+            "divide": "V"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 주어(S)·동사(V)·목적어(O)·보어(C)를 모두 찾아볼까요? 두 쌍이 있어요.",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "others": "그건 with 뒤의 말이에요. once 덩어리 안이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "앞은 주어 Dislike and fear, 동사 kept, 목적어 neighbors, 보어 apart예요. 뒤는 주어 your languages and religions, 동사 divide예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_divide",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이웃과 더는 교류하지 않게 되면 언어와 종교는 어떻게 된대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'naturally divide as well'을 봐요. divide는 '나뉘다, 갈라지다'예요.",
+              "'naturally divide as well'을 봐요. divide는 '나뉘다, 갈라지다'예요."
+            ],
+            "explain": "'your languages and religions naturally divide', 언어와 종교도 자연스럽게 갈라진대요. 그래서 적도 주변에 언어와 종교가 많은 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'your languages and religions naturally divide', 언어와 종교도 자연스럽게 갈라진대요. 그래서 적도 주변에 언어와 종교가 많은 거예요.",
+              "o2": "'your languages and religions naturally divide', 언어와 종교도 자연스럽게 갈라진대요. 그래서 적도 주변에 언어와 종교가 많은 거예요."
+            },
+            "point": "교류가 끊김(don’t interact) → 언어·종교가 갈라짐(divide)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "자연스럽게 여러 갈래로 나뉜다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "하나로 합쳐진다"
+            },
+            {
+              "id": "o2",
+              "label": "사라져 버린다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "naturally divide"
+          ],
+          "tips": [
+            {
+              "label": "keep A apart",
+              "text": "'A를 떼어 놓다, 계속 떨어져 있게 하다'예요.",
+              "mark": "kept"
+            }
+          ]
+        },
+        {
+          "id": "s7_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "교류가 끊기니 언어와 종교가 갈라졌어요. 칠판 양쪽에 넣어 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "적도 주변에서는?",
+            "left": {
+              "label": "언어·종교",
+              "words": [
+                {
+                  "text": "increase rapidly",
+                  "ko": "빠르게 늘어남"
+                },
+                {
+                  "text": "naturally divide",
+                  "ko": "자연스럽게 갈라짐",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "이웃과의 교류",
+              "words": [
+                {
+                  "text": "stopped doing it",
+                  "ko": "교류를 멈춤"
+                },
+                {
+                  "text": "kept neighbors apart",
+                  "ko": "이웃과 떨어져 지냄",
+                  "fresh": true
+                },
+                {
+                  "text": "don’t interact anymore",
+                  "ko": "더는 교류 안 함",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "←"
+          }
+        },
+        {
+          "id": "story_7",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🌍",
+                "en": "pathogen density ↑ in the tropics",
+                "ko": "적도 주변에 언어·종교가 많은 이유 — 열대엔 병원균이 훨씬 많아요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "🦠",
+                "en": "Sweden: the same few · Congo: no prior contact",
+                "ko": "스웨덴은 늘 같은 병원균, 콩고는 처음 보는 병원균을 만날 수 있어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5~6",
+                "icon": "🤒",
+                "en": "interacted → get sick → stopped",
+                "ko": "다른 집단과 만나면 병에 걸려서 교류를 멈추고, 이웃을 탓하고 싫어했어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 7",
+                "icon": "↔️",
+                "en": "kept apart → divide",
+                "ko": "떨어져 지내니 언어와 종교도 갈라졌어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "label": "요약문",
+      "text": "High pathogen density can contribute to the (A) ________ of languages and religions by (B) ________ people’s interactions with their neighboring groups, as was shown in the regions around the equator.",
+      "teaching_value": "high",
+      "model_translation": "적도 주변 지역에서 드러났던 것처럼, 높은 병원균 밀도는 사람들이 이웃 집단과 교류하지 못하게 하여, 언어와 종교의 다양화를 초래할 수 있다.",
+      "glosses": [
+        {
+          "en": "High pathogen density",
+          "ko": "높은 병원균 밀도"
+        },
+        {
+          "en": "can contribute to",
+          "ko": "~에 기여할 수 있다, ~을 낳을 수 있다"
+        },
+        {
+          "en": "of languages and religions",
+          "ko": "언어와 종교의"
+        },
+        {
+          "en": "people’s interactions",
+          "ko": "사람들의 교류"
+        },
+        {
+          "en": "with their neighboring groups",
+          "ko": "이웃 집단과의"
+        },
+        {
+          "en": "as was shown",
+          "ko": "보여진 것처럼"
+        },
+        {
+          "en": "in the regions around the equator",
+          "ko": "적도 주변 지역에서"
+        },
+        {
+          "en": "High",
+          "ko": "높은"
+        },
+        {
+          "en": "pathogen",
+          "ko": "병원균"
+        },
+        {
+          "en": "density",
+          "ko": "밀도"
+        },
+        {
+          "en": "contribute",
+          "ko": "기여하다"
+        },
+        {
+          "en": "languages",
+          "ko": "언어들"
+        },
+        {
+          "en": "religions",
+          "ko": "종교들"
+        },
+        {
+          "en": "people’s",
+          "ko": "사람들의"
+        },
+        {
+          "en": "interactions",
+          "ko": "교류"
+        },
+        {
+          "en": "neighboring",
+          "ko": "이웃한"
+        },
+        {
+          "en": "groups",
+          "ko": "집단들"
+        },
+        {
+          "en": "shown",
+          "ko": "보여진"
+        },
+        {
+          "en": "regions",
+          "ko": "지역들"
+        },
+        {
+          "en": "around",
+          "ko": "~ 주변에"
+        },
+        {
+          "en": "equator",
+          "ko": "적도"
+        }
+      ],
+      "slashes": [
+        "High pathogen density",
+        "can contribute to",
+        "of languages and religions",
+        "people’s interactions",
+        "with their neighboring groups,"
+      ],
+      "roles": [
+        {
+          "text": "High pathogen density",
+          "role": "S"
+        },
+        {
+          "text": "can contribute",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_a_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 '언어와 종교의 (A)'예요. 칠판 어느 쪽 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "(A) 바로 뒤 'of languages and religions'를 봐요.",
+              "(A) 바로 뒤 'of languages and religions'를 봐요."
+            ],
+            "explain": "'the (A) of languages and religions', 언어와 종교에 일어나는 일이에요. (B)는 '사람들의 교류를 (B)함으로써'라 오른쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'the (A) of languages and religions', 언어와 종교에 일어나는 일이에요. (B)는 '사람들의 교류를 (B)함으로써'라 오른쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 언어·종교에 일어나는 일",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 이웃과의 교류에 일어나는 일"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "of languages and religions",
+            "people’s interactions"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "적도 주변에서는?",
+            "left": {
+              "label": "언어·종교",
+              "words": [
+                {
+                  "text": "increase rapidly",
+                  "ko": "빠르게 늘어남"
+                },
+                {
+                  "text": "naturally divide",
+                  "ko": "자연스럽게 갈라짐"
+                }
+              ]
+            },
+            "right": {
+              "label": "이웃과의 교류",
+              "words": [
+                {
+                  "text": "stopped doing it",
+                  "ko": "교류를 멈춤"
+                },
+                {
+                  "text": "kept neighbors apart",
+                  "ko": "이웃과 떨어져 지냄"
+                },
+                {
+                  "text": "don’t interact anymore",
+                  "ko": "더는 교류 안 함"
+                }
+              ]
+            },
+            "between": "←"
+          },
+          "tips": [
+            {
+              "label": "by -ing",
+              "text": "'~함으로써'예요. by (B) people’s interactions = 사람들의 교류를 (B)함으로써."
+            }
+          ]
+        },
+        {
+          "id": "s8_a",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 (A)에는 어떤 뜻의 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 왼쪽 'increase rapidly, naturally divide'를 떠올려 봐요.",
+              "칠판 왼쪽 'increase rapidly, naturally divide'를 떠올려 봐요."
+            ],
+            "explain": "왼쪽은 언어와 종교가 빠르게 늘고, 자연스럽게 갈라진다는 말이에요. 병 때문에 언어가 사라진다는 말은 글에 없어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "왼쪽은 언어와 종교가 빠르게 늘고, 자연스럽게 갈라진다는 말이에요. 병 때문에 언어가 사라진다는 말은 글에 없어요.",
+              "o2": "왼쪽은 언어와 종교가 빠르게 늘고, 자연스럽게 갈라진다는 말이에요. 병 때문에 언어가 사라진다는 말은 글에 없어요."
+            },
+            "point": "(A) = 언어·종교가 갈라져 많아짐 → '다양화'"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "여러 갈래로 나뉘어 다양해짐",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "사라져 없어짐"
+            },
+            {
+              "id": "o2",
+              "label": "하나로 합쳐짐"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "(A) ________"
+          ]
+        },
+        {
+          "id": "s8_b",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 이웃과의 교류를 어떻게 하는 거예요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 오른쪽 'stopped doing it, kept neighbors apart'를 떠올려 봐요.",
+              "칠판 오른쪽 'stopped doing it, kept neighbors apart'를 떠올려 봐요."
+            ],
+            "explain": "오른쪽은 교류를 멈추고, 이웃과 떨어져 지냈다는 말이에요. 잠깐 늦춘 게 아니라 아예 멈췄어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "오른쪽은 교류를 멈추고, 이웃과 떨어져 지냈다는 말이에요. 잠깐 늦춘 게 아니라 아예 멈췄어요.",
+              "o2": "오른쪽은 교류를 멈추고, 이웃과 떨어져 지냈다는 말이에요. 잠깐 늦춘 게 아니라 아예 멈췄어요."
+            },
+            "point": "(B) = 교류를 멈춤·떨어져 지냄 → 교류를 '막음'"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "막고 줄임",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "넓히고 늘림"
+            },
+            {
+              "id": "o2",
+              "label": "잠시 늦춤"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "(B) ________"
+          ]
+        },
+        {
+          "id": "s8_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(A)와 (B)의 뜻을 둘 다 맞게 담은 보기를 골라 봐요. 한쪽만 맞으면 오답이에요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

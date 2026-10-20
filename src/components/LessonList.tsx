@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { loadStudentState, saveStudentState, type StudentLevel } from "../tutor/policy/student-state";
 import type { LessonCollection, LessonSet } from "../../content/tutor/types";
-import { isDone, loadProgress, type Progress } from "../tutor/progress";
+import { isDone, loadProgress, setStatuses, statusLine, type SetStatus } from "../tutor/progress";
 import { loadNotes } from "../tutor/notes";
 import { loadVocab } from "../tutor/vocab";
 import type { SavedKind } from "./SavedBook";
@@ -20,23 +20,40 @@ import { TeacherFigure } from "./TeacherFigure";
  * 목록 내용은 `content/tutor/sets.json`에 있다. 여기 코드는 그리기만 한다.
  */
 
-/**
- * **끝낸 문제는 맨 밑으로.**
- *
- * 26개가 늘어선 목록에서 학생이 찾는 건 늘 「아직 안 한 것」이다. 끝낸 것을
- * 원래 자리에 두면 매번 그것들을 지나쳐 내려가야 한다. 끼리끼리 순서는
- * 그대로 둔다 — 문제 번호가 곧 순서라 뒤섞으면 오히려 못 찾는다.
- */
 /** 오답률 높은 순 — 많이 틀리는 문제가 위로. 오답률이 없는 세트는 맨 뒤 */
 function byWrongRate(sets: LessonSet[]): LessonSet[] {
   return [...sets].sort((a, b) => (b.wrong_rate ?? -1) - (a.wrong_rate ?? -1));
 }
 
-function doneLast(all: LessonSet[], progress: Progress): LessonSet[] {
+/** Top 몇까지 앞에 붙이나 — 회차마다 오답률 Top 15를 만든다 */
+const TOP_N = 15;
+
+/** 세트 id → 이 묶음 안 오답률 순위 (1부터, Top 15까지만) */
+function topRanks(sets: LessonSet[]): Record<string, number> {
+  const out: Record<string, number> = {};
+  byWrongRate(sets)
+    .filter((s) => s.wrong_rate != null)
+    .slice(0, TOP_N)
+    .forEach((s, i) => (out[s.id] = i + 1));
+  return out;
+}
+
+/**
+ * **하던 문제는 위로, 끝낸 문제는 맨 밑으로** (2026-10-20 선생님).
+ *
+ * 1. 진행 중 — 가장 최근에 만진 것이 맨 위
+ * 2. 아직 안 한 것 — 오답률 높은 순 (Top1, Top2 …)
+ * 3. 끝낸 것 — 역시 최근 것이 위
+ */
+function ordered(all: LessonSet[], status: Record<string, SetStatus>): LessonSet[] {
   const sets = byWrongRate(all);
-  const todo = sets.filter((s) => !isDone(progress, s.id));
-  const done = sets.filter((s) => isDone(progress, s.id));
-  return [...todo, ...done];
+  const recent = (a: LessonSet, b: LessonSet) => (status[b.id]?.lastAt ?? "").localeCompare(status[a.id]?.lastAt ?? "");
+  const state = (s: LessonSet) => status[s.id]?.state ?? "new";
+  return [
+    ...sets.filter((s) => state(s) === "doing").sort(recent),
+    ...sets.filter((s) => state(s) === "new"),
+    ...sets.filter((s) => state(s) === "done").sort(recent),
+  ];
 }
 
 /** 학생 단계 — 고 1~2등급 · 중 3~5등급 · 초 6~8등급 */
@@ -68,6 +85,7 @@ export function LessonList({
   onHome,
 }: Props) {
   const progress = loadProgress();
+  const status = setStatuses(progress);
   const vocabCount = loadVocab().length;
   // 학생 단계 — 수업에서 보일 화면이 달라진다 (영어를 돕는 화면만). 정하지 않았으면 중으로 수업한다
   const [level, setLevel] = useState<StudentLevel | undefined>(() => loadStudentState().level);
@@ -76,6 +94,7 @@ export function LessonList({
     setLevel(next);
   };
   const noteCount = loadNotes().length;
+  const ranks = collection ? topRanks(setsIn(collection.id)) : {};
 
   return (
     <div className="stage-fill home">
@@ -107,25 +126,31 @@ export function LessonList({
             <p className="home-hello">{collection.subtitle}</p>
             <h1 className="home-title">{collection.title}</h1>
             <ul className="set-list">
-              {doneLast(setsIn(collection.id), progress).map((set) => {
-                const done = isDone(progress, set.id);
+              {ordered(setsIn(collection.id), status).map((set) => {
+                const st = status[set.id];
+                const done = st?.state === "done";
+                const doing = st?.state === "doing";
+                const record = statusLine(st);
                 return (
                   <li key={set.id}>
                     <button
                       type="button"
-                      className={`set-card${done ? " done" : ""}`}
+                      className={`set-card${done ? " done" : ""}${doing ? " doing" : ""}`}
                       onClick={() => onPickSet(set)}
                     >
                       <strong className="set-title">
+                        {ranks[set.id] ? <span className="set-top">Top{ranks[set.id]}</span> : null}
                         {set.title}
                         {set.wrong_rate != null ? <span className="set-rate">(오답률 {set.wrong_rate}%)</span> : null}
                         {done ? <span className="done-mark">완료</span> : null}
+                        {doing ? <span className="done-mark doing">진행 중</span> : null}
                       </strong>
                       <span className="set-subtitle">{set.subtitle}</span>
+                      {record ? <span className="set-record">{record}</span> : null}
                       <span className="set-meta">
                         <span className="set-count">{sentenceCount(set)}문장</span>
                         <span className="set-go">
-                          {done ? "다시 풀기" : "시작하기"}
+                          {doing ? "다시 시작" : done ? "다시 풀기" : "시작하기"}
                           <ArrowIcon />
                         </span>
                       </span>

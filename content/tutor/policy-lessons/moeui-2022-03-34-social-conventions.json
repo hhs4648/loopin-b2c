@@ -1,0 +1,2247 @@
+{
+  "id": "moeui-2022-03-34-social-conventions",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 34번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-social-conventions.svg",
+      "alt": "칠판: Painters(화가들) = Us(우리)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "한 시대의 화가들은 비슷한 방식으로 그림을 그렸어요. 이번 글은 그림 이야기로 우리가 사는 방식을 말해요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 5,
+    "analysis_first": true,
+    "wrong_rate": 53.0,
+    "wrong_rank": 4,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "distinguish",
+        "ko": "구분하다"
+      },
+      {
+        "en": "ideas and wishes",
+        "ko": "생각과 바람"
+      },
+      {
+        "en": "social pressure",
+        "ko": "사회적 압박"
+      },
+      {
+        "en": "comply with",
+        "ko": "~에 따르다, 순응하다"
+      },
+      {
+        "en": "apply",
+        "ko": "적용하다"
+      },
+      {
+        "en": "inspirational artworks",
+        "ko": "영감을 주는 예술품"
+      },
+      {
+        "en": "ignore",
+        "ko": "무시하다"
+      },
+      {
+        "en": "on account of",
+        "ko": "~ 때문에"
+      },
+      {
+        "en": "complexity",
+        "ko": "복잡성"
+      },
+      {
+        "en": "objection",
+        "ko": "반대, 거부"
+      },
+      {
+        "en": "being controlled",
+        "ko": "통제되는 것"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "distinguish them from ideas and wishes",
+        "keywords": [
+          "distinguish",
+          "ideas and wishes"
+        ],
+        "ko": "그것을 생각 및 바람과 구분하는"
+      },
+      {
+        "id": "2",
+        "label": "feel social pressure to comply with them",
+        "keywords": [
+          "social pressure",
+          "comply with"
+        ],
+        "ko": "그것에 순응해야 한다는 사회적 압박을 느끼는",
+        "correct": true
+      },
+      {
+        "id": "3",
+        "label": "apply them to create inspirational artworks",
+        "keywords": [
+          "apply",
+          "inspirational artworks"
+        ],
+        "ko": "영감을 주는 예술품을 만들기 위해 그것을 적용하는"
+      },
+      {
+        "id": "4",
+        "label": "ignore them on account of their complexity",
+        "keywords": [
+          "ignore",
+          "complexity"
+        ],
+        "ko": "그것의 복잡성 때문에 그것을 무시하는"
+      },
+      {
+        "id": "5",
+        "label": "have an objection to being controlled by them",
+        "keywords": [
+          "objection",
+          "being controlled"
+        ],
+        "ko": "그것에 의해 통제되는 것을 거부하는"
+      }
+    ],
+    "brief": {
+      "ask": "빈칸은 우리가 사회 규칙(them)에 대해 흔히 하는 일이에요. 칠판 오른쪽 말을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 우리는 사회 관습에 순응하고(conform to) 의문 없이 받아들여요. 그걸 '순응해야 한다는 압박을 느낀다'로 바꿔 썼어요.",
+      "final_wrong": "정답은 ②예요. comply with는 conform to와 같은 말이에요. 우리는 사회 관습을 따르고 거의 의문 없이 받아들인다고 했어요.",
+      "option_feedback": {
+        "1": "aspirations(바람)가 나와서 헷갈렸죠. 하지만 규칙을 생각·바람과 구분한다는 말은 글에 없어요.",
+        "3": "painting·artists가 나와서 헷갈렸죠. 그림은 우리를 설명하려고 든 비유예요. 빈칸은 우리가 사회 규칙에 대해 하는 일이에요.",
+        "4": "복잡해서 무시한다는 말은 없어요. 오히려 거의 의문 없이 받아들인다고 했어요.",
+        "5": "반대쪽 말이에요. 우리는 규칙을 거부하지 않고 받아들인다고 했어요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "③에는 artworks(예술품)가 있어서 그림 이야기와 겹쳐 보여요. 하지만 화가는 우리를 설명하려고 든 비유예요(Just as ~, we similarly). 빈칸은 우리가 사회 규칙(them)에 대해 흔히 하는 일이고, 우리는 그 규칙을 따른다고 했어요.",
+          "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "그림 이야기와 겹쳐서 골랐어요",
+              "skills": [
+                "word_overlap"
+              ],
+              "reply": "알려 줘서 고마워요. 겹치는 단어보다 빈칸이 누구에 대한 말인지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "Just as 비유를 못 봤어요",
+              "skills": [
+                "analogy"
+              ],
+              "reply": "알려 줘서 고마워요. Just as A, B에서 A는 비유, 하고 싶은 말은 B예요. 앞으로 비유를 같이 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "word_overlap",
+                "analogy"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 비유를 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "화가 (비유)",
+                "text": "conform to the stylistic conventions",
+                "ko": "그 시대 양식을 따른다",
+                "tone": "hl2"
+              },
+              {
+                "label": "우리 (빈칸)",
+                "text": "conform to prevailing social conventions",
+                "ko": "사회 관습을 따른다",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "perspective",
+        "ko": "원근법, 관점"
+      },
+      {
+        "en": "matter",
+        "ko": "중요하다"
+      },
+      {
+        "en": "reveal",
+        "ko": "드러내다"
+      },
+      {
+        "en": "conform to",
+        "ko": "~에 순응하다"
+      },
+      {
+        "en": "stylistic",
+        "ko": "양식의"
+      },
+      {
+        "en": "convention",
+        "ko": "관습"
+      },
+      {
+        "en": "era",
+        "ko": "시대"
+      },
+      {
+        "en": "prevailing",
+        "ko": "지배적인"
+      },
+      {
+        "en": "unwritten",
+        "ko": "글로 적지 않은"
+      },
+      {
+        "en": "commute",
+        "ko": "통근하다"
+      },
+      {
+        "en": "aspiration",
+        "ko": "열망, 염원"
+      },
+      {
+        "en": "dominant",
+        "ko": "지배적인"
+      },
+      {
+        "en": "much as",
+        "ko": "~와 마찬가지로"
+      },
+      {
+        "en": "linear",
+        "ko": "선의, 선형의"
+      },
+      {
+        "en": "limitation",
+        "ko": "한계"
+      },
+      {
+        "en": "be trapped in",
+        "ko": "~에 갇혀 있다"
+      }
+    ],
+    "options": [
+      {
+        "en": "distinguish",
+        "ko": "구분하다"
+      },
+      {
+        "en": "comply with",
+        "ko": "~에 따르다"
+      },
+      {
+        "en": "inspirational",
+        "ko": "영감을 주는"
+      },
+      {
+        "en": "on account of",
+        "ko": "~ 때문에"
+      },
+      {
+        "en": "complexity",
+        "ko": "복잡성"
+      },
+      {
+        "en": "objection",
+        "ko": "반대"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "The history of perspective in Western painting matters because of what it reveals for the art of living.",
+      "model_translation": "서양화에서 원근법의 역사는 그것이 삶의 기술에 대해 드러내는 것 때문에 중요하다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "The history of perspective",
+          "ko": "원근법의 역사"
+        },
+        {
+          "en": "perspective",
+          "ko": "원근법 · 관점"
+        },
+        {
+          "en": "in Western painting",
+          "ko": "서양 그림에서"
+        },
+        {
+          "en": "matters",
+          "ko": "중요하다"
+        },
+        {
+          "en": "because of",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "what it reveals",
+          "ko": "그것이 드러내는 것"
+        },
+        {
+          "en": "for the art of living",
+          "ko": "삶의 기술에 대해"
+        },
+        {
+          "en": "It is common to",
+          "ko": "~하는 것은 흔하다"
+        },
+        {
+          "en": "common",
+          "ko": "흔한"
+        },
+        {
+          "en": "Western",
+          "ko": "서양의"
+        },
+        {
+          "en": "painting",
+          "ko": "그림"
+        },
+        {
+          "en": "reveals",
+          "ko": "드러내다"
+        },
+        {
+          "en": "living",
+          "ko": "삶, 사는 것"
+        }
+      ],
+      "slashes": [
+        "in Western painting",
+        "matters",
+        "it reveals"
+      ],
+      "roles": [
+        {
+          "text": "The history",
+          "role": "S"
+        },
+        {
+          "text": "matters",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 다섯째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "It is common to ________."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "아주 짧은 문장이에요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "common은 '흔한, 보통의'예요. It은 뒤의 to 이하를 받는 말이에요.",
+              "common은 '흔한, 보통의'예요. It은 뒤의 to 이하를 받는 말이에요."
+            ],
+            "explain": "It은 뒤의 to ____를 받아요. common은 '흔한'이라, 많은 사람이 ____한다는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "It은 뒤의 to ____를 받아요. common은 '흔한'이라, 많은 사람이 ____한다는 말이에요.",
+              "o2": "It은 뒤의 to ____를 받아요. common은 '흔한'이라, 많은 사람이 ____한다는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "____하는 것은 드문 일이다"
+            },
+            {
+              "id": "o1",
+              "label": "____하는 것은 흔한(많은 사람이 하는) 일이다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "____하는 것은 어려운 일이다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "It is common to ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "common",
+            "________"
+          ],
+          "tips": [
+            {
+              "label": "It is ~ to …",
+              "text": "it은 뒤의 to …를 대신 받는 말(가주어)이에요. It is common to ~ = ~하는 것은 흔하다.",
+              "mark": "It is common to"
+            }
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 사람들이 흔히 무엇을 한다는 건지 생각하며 문장 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "It is common to ________.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_matters",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "여기서 matters는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "matter는 명사로 '문제, 물질'이지만, 주어 뒤 동사 자리에 오면 뜻이 달라요.",
+              "matter는 명사로 '문제, 물질'이지만, 주어 뒤 동사 자리에 오면 뜻이 달라요."
+            ],
+            "explain": "The history … matters에서 matters는 동사예요. 동사 matter는 '중요한 의미가 있다'는 뜻이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "The history … matters에서 matters는 동사예요. 동사 matter는 '중요한 의미가 있다'는 뜻이에요.",
+              "o2": "The history … matters에서 matters는 동사예요. 동사 matter는 '중요한 의미가 있다'는 뜻이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "문제가 된다"
+            },
+            {
+              "id": "o1",
+              "label": "중요하다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "물질이다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "matters"
+          ],
+          "levels": [
+            "중",
+            "초"
+          ],
+          "tips": [
+            {
+              "label": "matter (동사)",
+              "text": "명사로는 '문제, 물질'이지만 동사로는 '중요하다'예요. It doesn't matter = 상관없다.",
+              "mark": "matters"
+            }
+          ]
+        },
+        {
+          "id": "s1_art",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "원근법 그림의 역사가 '삶의 기술'에 대해 무언가를 보여 준대요. 그림 이야기가 삶 이야기로 이어져요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "perspective",
+            "the art of living"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Just as most artists conform to the stylistic conventions of the era into which they are born, we similarly conform to prevailing social conventions about how to live.",
+      "model_translation": "대부분 예술가가 자신이 태어나는 시대의 양식적 관습에 순응하듯이, 우리도 어떻게 살아야 하는지에 대한 지배적인 사회적 관습에 비슷하게 순응한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Just as",
+          "ko": "~하듯이"
+        },
+        {
+          "en": "most artists",
+          "ko": "대부분의 화가"
+        },
+        {
+          "en": "conform to",
+          "ko": "~에 따르다, 순응하다"
+        },
+        {
+          "en": "the stylistic conventions",
+          "ko": "양식의 관습(그림 그리는 방식의 관례)"
+        },
+        {
+          "en": "of the era",
+          "ko": "그 시대의"
+        },
+        {
+          "en": "into which they are born",
+          "ko": "그들이 태어나는"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "similarly conform to",
+          "ko": "비슷하게 ~에 순응한다"
+        },
+        {
+          "en": "prevailing social conventions",
+          "ko": "널리 퍼진(지배적인) 사회 관습"
+        },
+        {
+          "en": "about how to live",
+          "ko": "어떻게 살지에 대한"
+        },
+        {
+          "en": "conventions",
+          "ko": "관습, 관례"
+        },
+        {
+          "en": "prevailing",
+          "ko": "지배적인, 널리 퍼진"
+        },
+        {
+          "en": "artists",
+          "ko": "화가, 예술가"
+        },
+        {
+          "en": "conform",
+          "ko": "따르다, 순응하다"
+        },
+        {
+          "en": "stylistic",
+          "ko": "양식의"
+        },
+        {
+          "en": "born",
+          "ko": "태어난"
+        },
+        {
+          "en": "similarly",
+          "ko": "비슷하게"
+        },
+        {
+          "en": "social",
+          "ko": "사회의"
+        },
+        {
+          "en": "live",
+          "ko": "살다"
+        }
+      ],
+      "slashes": [
+        "Just as most artists conform",
+        "stylistic conventions",
+        "of the era",
+        "they are born,",
+        "we similarly conform",
+        "social conventions"
+      ],
+      "roles": [
+        {
+          "text": "most artists",
+          "role": "S"
+        },
+        {
+          "text": "conform to",
+          "role": "V"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "similarly conform to",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "into which they are born"
+      ],
+      "steps": [
+        {
+          "id": "s2_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "most artists",
+            "the stylistic conventions",
+            "we",
+            "similarly conform to",
+            "prevailing social conventions"
+          ],
+          "answers": [
+            "we",
+            "similarly conform to",
+            "prevailing social conventions"
+          ],
+          "roles": {
+            "we": "S",
+            "similarly conform to": "V",
+            "prevailing social conventions": "전목"
+          },
+          "brief": {
+            "ask": "콤마 뒤 메인 문장에서 주어(S), 동사(V), 전치사 뒤 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "most artists": "그건 Just as(~하듯이) 덩어리 안의 주어예요. 콤마 뒤 메인 문장에서 찾아봐요.",
+              "the stylistic conventions": "그건 Just as 덩어리 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 we, 동사 (similarly) conform to, 전치사 뒤 목적어는 prevailing social conventions예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_same",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Just as(~하듯이)로 화가와 우리를 나란히 놓았어요. 우리는 무엇에 순응한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "conform to는 '~에 따르다, 순응하다'예요. 콤마 뒤 we similarly conform to 다음을 봐요.",
+              "conform to는 '~에 따르다, 순응하다'예요. 콤마 뒤 we similarly conform to 다음을 봐요."
+            ],
+            "explain": "'we similarly conform to prevailing social conventions about how to live', 화가가 시대 양식을 따르듯 우리도 사회 관습을 따른대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'we similarly conform to prevailing social conventions about how to live', 화가가 시대 양식을 따르듯 우리도 사회 관습을 따른대요.",
+              "o2": "'we similarly conform to prevailing social conventions about how to live', 화가가 시대 양식을 따르듯 우리도 사회 관습을 따른대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그 시대 화가들의 그림 양식"
+            },
+            {
+              "id": "o1",
+              "label": "어떻게 살지에 대한 널리 퍼진 사회 관습",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "스스로 정한 삶의 규칙"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Just as",
+            "conform to",
+            "similarly",
+            "social conventions"
+          ],
+          "tips": [
+            {
+              "label": "Just as A, (so) B",
+              "text": "'A하듯이 B도 그렇다'예요. 앞 A는 비유, 진짜 하고 싶은 말은 뒤 B예요.",
+              "mark": "Just as"
+            },
+            {
+              "label": "conform to",
+              "text": "'~에 따르다, 순응하다'예요. 정해진 틀에 맞춰 산다는 말이에요.",
+              "mark": "similarly conform to"
+            }
+          ]
+        },
+        {
+          "id": "s2_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "화가 이야기는 비유예요. 칠판에 화가와 우리를 나란히 적어 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "화가들 = 우리",
+            "left": {
+              "label": "화가들 (artists)",
+              "words": [
+                {
+                  "text": "conform to stylistic conventions",
+                  "ko": "그 시대 양식을 따른다",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "우리 (we)",
+              "words": [
+                {
+                  "text": "conform to social conventions",
+                  "ko": "사회 관습을 따른다",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "="
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "These unwritten rules typically include getting married and having children, owning your own home and having a mortgage, having a regular job and commuting to work, and flying abroad for holidays.",
+      "model_translation": "이러한 불문율에는 일반적으로 결혼해서 아이를 갖는 것, 자기 집을 소유하고 담보 대출을 받는 것, 일정한 직업을 갖고 통근하는 것, 휴가를 위해 비행기로 해외에 가는 것이 포함된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "These unwritten rules",
+          "ko": "이런 불문율(글로 적지 않은 규칙)"
+        },
+        {
+          "en": "unwritten",
+          "ko": "글로 적지 않은"
+        },
+        {
+          "en": "typically",
+          "ko": "보통, 일반적으로"
+        },
+        {
+          "en": "include",
+          "ko": "포함한다"
+        },
+        {
+          "en": "getting married",
+          "ko": "결혼하는 것"
+        },
+        {
+          "en": "having children",
+          "ko": "아이를 갖는 것"
+        },
+        {
+          "en": "owning your own home",
+          "ko": "자기 집을 갖는 것"
+        },
+        {
+          "en": "your own home",
+          "ko": "자기 집"
+        },
+        {
+          "en": "having a mortgage",
+          "ko": "담보 대출을 받는 것"
+        },
+        {
+          "en": "mortgage",
+          "ko": "담보 대출"
+        },
+        {
+          "en": "a regular job",
+          "ko": "일정한 직업"
+        },
+        {
+          "en": "having a regular job",
+          "ko": "일정한 직업을 갖는 것"
+        },
+        {
+          "en": "commuting to work",
+          "ko": "직장에 통근하는 것"
+        },
+        {
+          "en": "flying abroad for holidays",
+          "ko": "휴가 때 비행기로 해외에 가는 것"
+        },
+        {
+          "en": "rules",
+          "ko": "규칙"
+        },
+        {
+          "en": "married",
+          "ko": "결혼한"
+        },
+        {
+          "en": "having",
+          "ko": "가지는 것"
+        },
+        {
+          "en": "children",
+          "ko": "아이들"
+        },
+        {
+          "en": "owning",
+          "ko": "소유하는 것"
+        },
+        {
+          "en": "home",
+          "ko": "집"
+        },
+        {
+          "en": "regular",
+          "ko": "일정한"
+        },
+        {
+          "en": "job",
+          "ko": "직업"
+        },
+        {
+          "en": "commuting",
+          "ko": "통근하는 것"
+        },
+        {
+          "en": "flying",
+          "ko": "비행기로 가는 것"
+        },
+        {
+          "en": "abroad",
+          "ko": "해외로"
+        },
+        {
+          "en": "holidays",
+          "ko": "휴가"
+        }
+      ],
+      "slashes": [
+        "These unwritten rules",
+        "typically include",
+        "having children,",
+        "having a mortgage,",
+        "commuting to work,"
+      ],
+      "roles": [
+        {
+          "text": "These unwritten rules",
+          "role": "S"
+        },
+        {
+          "text": "include",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "These unwritten rules",
+            "include",
+            "your own home",
+            "a regular job"
+          ],
+          "answers": [
+            "These unwritten rules",
+            "include"
+          ],
+          "roles": {
+            "These unwritten rules": "S",
+            "include": "V"
+          },
+          "brief": {
+            "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "your own home": "그건 owning(갖는 것)의 대상이에요. 목록 안의 말이에요.",
+              "a regular job": "그건 having(갖는 것)의 대상이에요. 목록 안의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 These unwritten rules, 동사 include예요. 그 뒤 -ing 목록 전체가 목적어예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s3_these",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "These unwritten rules(이런 불문율)는 앞 문장의 무엇을 다시 말한 걸까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "These(이런)가 가리키는 건 앞 문장에서 찾아요. 뒤의 예가 결혼·집·직장이에요.",
+              "These(이런)가 가리키는 건 앞 문장에서 찾아요. 뒤의 예가 결혼·집·직장이에요."
+            ],
+            "explain": "결혼·내 집·직장·해외여행은 어떻게 살지에 대한 규칙이에요. 앞 문장의 사회 관습을 These unwritten rules로 다시 말했어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "결혼·내 집·직장·해외여행은 어떻게 살지에 대한 규칙이에요. 앞 문장의 사회 관습을 These unwritten rules로 다시 말했어요.",
+              "o2": "결혼·내 집·직장·해외여행은 어떻게 살지에 대한 규칙이에요. 앞 문장의 사회 관습을 These unwritten rules로 다시 말했어요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "the stylistic conventions (화가들의 양식)"
+            },
+            {
+              "id": "o1",
+              "label": "prevailing social conventions (널리 퍼진 사회 관습)",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "the art of living (삶의 기술)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "These unwritten rules"
+          ]
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "사회 관습 = 불문율이에요. 결혼, 내 집, 직장, 해외여행 같은 거래요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "화가들 = 우리",
+            "left": {
+              "label": "화가들 (artists)",
+              "words": [
+                {
+                  "text": "conform to stylistic conventions",
+                  "ko": "그 시대 양식을 따른다"
+                }
+              ]
+            },
+            "right": {
+              "label": "우리 (we)",
+              "words": [
+                {
+                  "text": "conform to social conventions",
+                  "ko": "사회 관습을 따른다"
+                },
+                {
+                  "text": "unwritten rules",
+                  "ko": "불문율 — 결혼·내 집·직장·해외여행",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "="
+          }
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🖼️",
+                "en": "artists conform = we conform",
+                "ko": "화가가 그 시대 양식을 따르듯, 우리도 사회 관습을 따라요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "💍",
+                "en": "unwritten rules",
+                "ko": "결혼·내 집·직장·해외여행 같은 불문율",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "For some people these are realities, for others they remain aspirations.",
+      "model_translation": "어떤 사람들에게는 이것이 현실이고, 다른 사람들에게는 염원으로 남는다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "remain",
+          "ko": "남는다"
+        },
+        {
+          "en": "they",
+          "ko": "그것들은"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "these",
+          "ko": "이것들은"
+        },
+        {
+          "en": "For some people",
+          "ko": "어떤 사람들에게는"
+        },
+        {
+          "en": "these are realities",
+          "ko": "이것들이 현실이다"
+        },
+        {
+          "en": "realities",
+          "ko": "현실"
+        },
+        {
+          "en": "for others",
+          "ko": "다른 사람들에게는"
+        },
+        {
+          "en": "they remain aspirations",
+          "ko": "그것들은 바람(염원)으로 남는다"
+        },
+        {
+          "en": "aspirations",
+          "ko": "열망, 염원"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        }
+      ],
+      "slashes": [
+        "For some people",
+        "are realities,"
+      ],
+      "roles": [
+        {
+          "text": "these",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "realities",
+          "role": "C"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "remain",
+          "role": "V"
+        },
+        {
+          "text": "aspirations",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "these",
+            "are",
+            "realities",
+            "they",
+            "remain"
+          ],
+          "answers": [
+            "these",
+            "are",
+            "realities"
+          ],
+          "roles": {
+            "these": "S",
+            "are": "V",
+            "realities": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "they": "그건 콤마 뒤 두 번째 문장의 주어예요. 먼저 앞 문장을 봐요.",
+              "remain": "그건 콤마 뒤 두 번째 문장의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "앞 문장은 주어 these, 동사 are, 보어 realities예요. 뒤 문장도 they / remain / aspirations로 같은 모양이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "for some …, for others …",
+              "text": "'어떤 사람들에게는 ~, 다른 사람들에게는 ~'예요.",
+              "mark": "for others"
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "For some people",
+            "these are realities",
+            "for others",
+            "they remain aspirations"
+          ],
+          "answers": [
+            "For some people",
+            "these are realities",
+            "for others",
+            "they remain aspirations"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "For some people",
+                "ko": "어떤 사람들에게는"
+              },
+              " ",
+              {
+                "en": "these are realities",
+                "ko": "이것들이 현실이고"
+              },
+              ", ",
+              {
+                "en": "for others",
+                "ko": "다른 사람들에게는"
+              },
+              " ",
+              {
+                "en": "they remain aspirations",
+                "ko": "바람으로 남는다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "for some …, for others …",
+              "text": "'어떤 사람들에게는 ~, 다른 사람들에게는 ~'예요.",
+              "mark": "for others"
+            }
+          ]
+        },
+        {
+          "id": "s4_dream",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "어떤 사람에겐 이미 현실, 다른 사람에겐 바라는 것(aspirations)이래요. 어느 쪽이든 이 규칙을 목표로 삼아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "realities",
+            "aspirations"
+          ],
+          "tips": [
+            {
+              "label": "for some …, for others …",
+              "text": "'어떤 사람들에게는 ~, 다른 사람들에게는 ~'예요.",
+              "mark": "for others"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "It is common to ________.",
+      "model_translation": "________은 일반적이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "It is common to",
+          "ko": "~하는 것은 흔하다"
+        },
+        {
+          "en": "common",
+          "ko": "흔한"
+        }
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "common",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸은 사람들이 이 규칙들에 대해 흔히 하는 일이에요. 앞에서 말한 우리 모습과 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "common(흔한)이라고 했어요. 칠판 오른쪽에서 우리가 사회 관습을 어떻게 한다고 했는지 봐요.",
+              "common(흔한)이라고 했어요. 칠판 오른쪽에서 우리가 사회 관습을 어떻게 한다고 했는지 봐요."
+            ],
+            "explain": "우리 대부분은 사회 관습에 순응한대요(conform to). 많은 사람이 흔히 하는 일이니 같은 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "우리 대부분은 사회 관습에 순응한대요(conform to). 많은 사람이 흔히 하는 일이니 같은 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 — 규칙을 따르는 쪽",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 — 규칙에서 벗어나는 쪽"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "common"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "화가들 = 우리",
+            "left": {
+              "label": "화가들 (artists)",
+              "words": [
+                {
+                  "text": "conform to stylistic conventions",
+                  "ko": "그 시대 양식을 따른다"
+                }
+              ]
+            },
+            "right": {
+              "label": "우리 (we)",
+              "words": [
+                {
+                  "text": "conform to social conventions",
+                  "ko": "사회 관습을 따른다"
+                },
+                {
+                  "text": "unwritten rules",
+                  "ko": "불문율 — 결혼·내 집·직장·해외여행"
+                }
+              ]
+            },
+            "between": "="
+          }
+        },
+        {
+          "id": "s5_next",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸 바로 뒤 문장이 이 규칙들 이야기를 이어 가요. 확인하며 읽어 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "At this point in Western history, they are amongst the dominant conventions that most of us have accepted with little questioning, much as Vermeer and other Dutch baroque painters of the seventeenth century accepted linear perspective without question.",
+      "model_translation": "17세기 Vermeer와 다른 네덜란드 바로크 화가들이 선형 원근법을 문제없이 받아들였던 것처럼, 서구 역사의 현시점에서, 그것은 우리 대부분이 거의 의문 없이 받아들여 온 지배적인 관습 중 하나이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "At this point",
+          "ko": "지금 시점에"
+        },
+        {
+          "en": "in Western history",
+          "ko": "서양 역사에서"
+        },
+        {
+          "en": "they",
+          "ko": "그것들(불문율)은"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "amongst",
+          "ko": "~ 중에 (= among)"
+        },
+        {
+          "en": "the dominant conventions",
+          "ko": "지배적인 관습"
+        },
+        {
+          "en": "dominant",
+          "ko": "지배적인"
+        },
+        {
+          "en": "that most of us have accepted",
+          "ko": "우리 대부분이 받아들여 온"
+        },
+        {
+          "en": "most of us",
+          "ko": "우리 대부분"
+        },
+        {
+          "en": "with little questioning",
+          "ko": "거의 의문 없이"
+        },
+        {
+          "en": "much as",
+          "ko": "~와 마찬가지로, ~처럼"
+        },
+        {
+          "en": "Vermeer",
+          "ko": "페르메이르 · 17세기 네덜란드 화가"
+        },
+        {
+          "en": "and other Dutch baroque painters",
+          "ko": "그리고 다른 네덜란드 바로크 화가들"
+        },
+        {
+          "en": "of the seventeenth century",
+          "ko": "17세기의"
+        },
+        {
+          "en": "accepted",
+          "ko": "받아들였다"
+        },
+        {
+          "en": "linear perspective",
+          "ko": "선 원근법"
+        },
+        {
+          "en": "without question",
+          "ko": "의문 없이"
+        },
+        {
+          "en": "Western",
+          "ko": "서양의"
+        },
+        {
+          "en": "conventions",
+          "ko": "관습, 관례"
+        },
+        {
+          "en": "little",
+          "ko": "거의 없는"
+        },
+        {
+          "en": "questioning",
+          "ko": "의문, 따져 묻기"
+        },
+        {
+          "en": "Dutch",
+          "ko": "네덜란드의"
+        },
+        {
+          "en": "baroque",
+          "ko": "바로크 양식의"
+        },
+        {
+          "en": "painters",
+          "ko": "화가들"
+        },
+        {
+          "en": "seventeenth",
+          "ko": "17번째의"
+        },
+        {
+          "en": "century",
+          "ko": "세기"
+        },
+        {
+          "en": "linear",
+          "ko": "선의, 선형의"
+        },
+        {
+          "en": "perspective",
+          "ko": "원근법, 관점"
+        },
+        {
+          "en": "without",
+          "ko": "~ 없이"
+        },
+        {
+          "en": "question",
+          "ko": "의문"
+        }
+      ],
+      "slashes": [
+        "At this point",
+        "Western history,",
+        "the dominant conventions",
+        "little questioning,",
+        "much as Vermeer",
+        "the seventeenth century",
+        "linear perspective"
+      ],
+      "roles": [
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that most of us have accepted with little questioning"
+      ],
+      "steps": [
+        {
+          "id": "s6_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "At this point",
+            "they",
+            "are",
+            "the dominant conventions",
+            "most of us"
+          ],
+          "answers": [
+            "they",
+            "are"
+          ],
+          "roles": {
+            "they": "S",
+            "are": "V"
+          },
+          "brief": {
+            "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "At this point": "그건 '지금 시점에'라는 때를 말해 주는 덩어리예요.",
+              "the dominant conventions": "그건 amongst(~ 중에) 뒤 덩어리예요.",
+              "most of us": "그건 that 뒤, the dominant conventions를 꾸미는 덩어리 안의 주어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 they(그 불문율들), 동사 are예요. that 뒤가 the dominant conventions를 꾸며요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_accept",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "우리 대부분은 이 관습들을 어떻게 받아들였대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "with little questioning을 봐요. little은 '거의 없는'이에요.",
+              "with little questioning을 봐요. little은 '거의 없는'이에요."
+            ],
+            "explain": "'accepted with little questioning', 거의 따져 보지 않고 받아들였대요. 화가들이 원근법을 의문 없이 받아들인 것처럼요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'accepted with little questioning', 거의 따져 보지 않고 받아들였대요. 화가들이 원근법을 의문 없이 받아들인 것처럼요.",
+              "o2": "'accepted with little questioning', 거의 따져 보지 않고 받아들였대요. 화가들이 원근법을 의문 없이 받아들인 것처럼요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "오랫동안 따져 본 뒤에"
+            },
+            {
+              "id": "o1",
+              "label": "거의 의문 없이",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "억지로 마지못해"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "accepted",
+            "little questioning",
+            "without question"
+          ],
+          "tips": [
+            {
+              "label": "much as ~",
+              "text": "'~와 마찬가지로, ~처럼'이에요. 뒤에 비교하는 예가 와요.",
+              "mark": "much as"
+            },
+            {
+              "label": "little + 명사",
+              "text": "a 없이 little이면 '거의 없는'이에요. with little questioning = 거의 의문 없이.",
+              "mark": "little questioning"
+            }
+          ]
+        },
+        {
+          "id": "s6_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "화가도 우리도 의문 없이 받아들였어요. 칠판 양쪽에 붙여 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "화가들 = 우리",
+            "left": {
+              "label": "화가들 (artists)",
+              "words": [
+                {
+                  "text": "conform to stylistic conventions",
+                  "ko": "그 시대 양식을 따른다"
+                },
+                {
+                  "text": "accepted linear perspective without question",
+                  "ko": "원근법을 의문 없이 받아들였다",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "우리 (we)",
+              "words": [
+                {
+                  "text": "conform to social conventions",
+                  "ko": "사회 관습을 따른다"
+                },
+                {
+                  "text": "unwritten rules",
+                  "ko": "불문율 — 결혼·내 집·직장·해외여행"
+                },
+                {
+                  "text": "accepted with little questioning",
+                  "ko": "거의 의문 없이 받아들였다",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "="
+          }
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🖼️",
+                "en": "artists conform = we conform",
+                "ko": "화가가 그 시대 양식을 따르듯, 우리도 사회 관습을 따라요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "💍",
+                "en": "unwritten rules",
+                "ko": "결혼·내 집·직장·해외여행 같은 불문율",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🎯",
+                "en": "realities · aspirations · It is common to ____",
+                "ko": "누구에겐 현실, 누구에겐 바람 — 흔히 ____해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 6",
+                "icon": "🤐",
+                "en": "accepted with little questioning",
+                "ko": "우리 대부분은 거의 의문 없이 받아들였어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "It is difficult to see beyond the limitations of the culture that has shaped our ways of looking at the world and at ourselves.",
+      "model_translation": "세상과 자신을 바라보는 우리의 방식을 형성해 온 문화의 한계 그 너머를 보기는 어렵다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "It",
+          "ko": "그것 (뒤의 to ~를 받음)"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "difficult",
+          "ko": "어려운"
+        },
+        {
+          "en": "to see beyond",
+          "ko": "~ 너머를 보는 것"
+        },
+        {
+          "en": "the limitations",
+          "ko": "한계"
+        },
+        {
+          "en": "of the culture",
+          "ko": "문화의"
+        },
+        {
+          "en": "the culture",
+          "ko": "문화"
+        },
+        {
+          "en": "that has shaped",
+          "ko": "~을 만들어 온"
+        },
+        {
+          "en": "our ways of looking",
+          "ko": "우리가 보는 방식"
+        },
+        {
+          "en": "at the world and at ourselves",
+          "ko": "세상과 우리 자신을"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "limitations",
+          "ko": "한계"
+        },
+        {
+          "en": "culture",
+          "ko": "문화"
+        },
+        {
+          "en": "shaped",
+          "ko": "만들었다"
+        },
+        {
+          "en": "ways",
+          "ko": "방식"
+        },
+        {
+          "en": "looking",
+          "ko": "보는 것"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        },
+        {
+          "en": "ourselves",
+          "ko": "우리 자신"
+        }
+      ],
+      "slashes": [
+        "It is difficult",
+        "to see beyond",
+        "of the culture",
+        "our ways of looking"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "difficult",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that has shaped our ways of looking at the world and at ourselves"
+      ],
+      "steps": [
+        {
+          "id": "s7_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "It",
+            "is",
+            "difficult",
+            "the limitations",
+            "the culture"
+          ],
+          "answers": [
+            "It",
+            "is",
+            "difficult"
+          ],
+          "roles": {
+            "It": "S",
+            "is": "V",
+            "difficult": "C"
+          },
+          "brief": {
+            "ask": "주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the limitations": "그건 to see beyond(~ 너머를 보는 것) 뒤의 말이에요.",
+              "the culture": "그건 of 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 It, 동사 is, 보어 difficult예요. It은 뒤의 to see beyond ~를 받아요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_culture",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "우리를 만든 문화의 한계 너머를 보기는 어렵대요. 문화가 우리가 세상과 자신을 보는 방식을 만들었으니까요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "difficult",
+            "see beyond",
+            "the limitations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "We are trapped in the perspective of our own time.",
+      "model_translation": "우리는 우리 시대의 관점에 갇혀 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "are trapped",
+          "ko": "갇혀 있다"
+        },
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "are trapped in",
+          "ko": "~에 갇혀 있다"
+        },
+        {
+          "en": "the perspective",
+          "ko": "관점"
+        },
+        {
+          "en": "of our own time",
+          "ko": "우리 시대의"
+        },
+        {
+          "en": "perspective",
+          "ko": "관점 · 1문장에서는 '원근법'"
+        },
+        {
+          "en": "trapped",
+          "ko": "갇힌"
+        }
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "are trapped",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "We",
+            "are trapped",
+            "the perspective"
+          ],
+          "answers": [
+            "We",
+            "are trapped"
+          ],
+          "roles": {
+            "We": "S",
+            "are trapped": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the perspective": "그건 in 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 We, 동사 are trapped예요. in 뒤가 갇힌 곳이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "tips": [
+            {
+              "label": "perspective",
+              "text": "그림에선 '원근법', 생각에선 '관점'이에요. 이 글은 두 뜻을 겹쳐 썼어요.",
+              "mark": "perspective"
+            },
+            {
+              "label": "be trapped in ~",
+              "text": "'~에 갇혀 있다'예요.",
+              "mark": "are trapped in"
+            }
+          ]
+        },
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s8_basic",
+          "candidates": [
+            "We",
+            "are trapped in",
+            "the perspective",
+            "of our own time"
+          ],
+          "answers": [
+            "We",
+            "the perspective",
+            "of our own time",
+            "are trapped in"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "We",
+                "ko": "우리는"
+              },
+              " ",
+              {
+                "en": "the perspective",
+                "ko": "관점"
+              },
+              " ",
+              {
+                "en": "of our own time",
+                "ko": "우리 시대의"
+              },
+              "에 ",
+              {
+                "en": "are trapped in",
+                "ko": "갇혀 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "perspective",
+              "text": "그림에선 '원근법', 생각에선 '관점'이에요. 이 글은 두 뜻을 겹쳐 썼어요.",
+              "mark": "perspective"
+            },
+            {
+              "label": "be trapped in ~",
+              "text": "'~에 갇혀 있다'예요.",
+              "mark": "are trapped in"
+            }
+          ]
+        },
+        {
+          "id": "s8_persp",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "perspective는 첫 문장에서 '원근법'이었어요. 여기서는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "앞 문장의 our ways of looking at the world(세상을 보는 방식)를 떠올려 봐요.",
+              "앞 문장의 our ways of looking at the world(세상을 보는 방식)를 떠올려 봐요."
+            ],
+            "explain": "여기서 perspective는 '관점'이에요. 우리는 우리 시대의 관점에 갇혀 있대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "여기서 perspective는 '관점'이에요. 우리는 우리 시대의 관점에 갇혀 있대요.",
+              "o2": "여기서 perspective는 '관점'이에요. 우리는 우리 시대의 관점에 갇혀 있대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "관점, 세상을 보는 방식",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "원근법 그림"
+            },
+            {
+              "id": "o2",
+              "label": "시대의 역사"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "trapped",
+            "perspective"
+          ],
+          "tips": [
+            {
+              "label": "perspective",
+              "text": "그림에선 '원근법', 생각에선 '관점'이에요. 이 글은 두 뜻을 겹쳐 썼어요.",
+              "mark": "perspective"
+            },
+            {
+              "label": "be trapped in ~",
+              "text": "'~에 갇혀 있다'예요.",
+              "mark": "are trapped in"
+            }
+          ]
+        },
+        {
+          "id": "s8_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "우리는 우리 시대의 관점에 갇혀 있대요. 칠판 오른쪽에 붙일게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "화가들 = 우리",
+            "left": {
+              "label": "화가들 (artists)",
+              "words": [
+                {
+                  "text": "conform to stylistic conventions",
+                  "ko": "그 시대 양식을 따른다"
+                },
+                {
+                  "text": "accepted linear perspective without question",
+                  "ko": "원근법을 의문 없이 받아들였다"
+                }
+              ]
+            },
+            "right": {
+              "label": "우리 (we)",
+              "words": [
+                {
+                  "text": "conform to social conventions",
+                  "ko": "사회 관습을 따른다"
+                },
+                {
+                  "text": "unwritten rules",
+                  "ko": "불문율 — 결혼·내 집·직장·해외여행"
+                },
+                {
+                  "text": "accepted with little questioning",
+                  "ko": "거의 의문 없이 받아들였다"
+                },
+                {
+                  "text": "trapped in the perspective of our own time",
+                  "ko": "우리 시대의 관점에 갇혀 있다",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "="
+          }
+        },
+        {
+          "id": "s8_what",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸 문장으로 돌아가요. 칠판을 보면, 사람들은 이 규칙들에 대해 흔히 어떻다는 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 오른쪽의 conform to, accepted with little questioning을 봐요.",
+              "칠판 오른쪽의 conform to, accepted with little questioning을 봐요."
+            ],
+            "explain": "우리는 사회 관습에 순응하고, 거의 의문 없이 받아들였대요. 빈칸도 그 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "우리는 사회 관습에 순응하고, 거의 의문 없이 받아들였대요. 빈칸도 그 말이에요.",
+              "o2": "우리는 사회 관습에 순응하고, 거의 의문 없이 받아들였대요. 빈칸도 그 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "규칙을 깨려고 애쓴다"
+            },
+            {
+              "id": "o1",
+              "label": "규칙을 따라야 한다고 느낀다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "규칙을 잘 모른다"
+            }
+          ],
+          "method": 1,
+          "display": "It is common to ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "common",
+            "________"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "화가들 = 우리",
+            "left": {
+              "label": "화가들 (artists)",
+              "words": [
+                {
+                  "text": "conform to stylistic conventions",
+                  "ko": "그 시대 양식을 따른다"
+                },
+                {
+                  "text": "accepted linear perspective without question",
+                  "ko": "원근법을 의문 없이 받아들였다"
+                }
+              ]
+            },
+            "right": {
+              "label": "우리 (we)",
+              "words": [
+                {
+                  "text": "conform to social conventions",
+                  "ko": "사회 관습을 따른다"
+                },
+                {
+                  "text": "unwritten rules",
+                  "ko": "불문율 — 결혼·내 집·직장·해외여행"
+                },
+                {
+                  "text": "accepted with little questioning",
+                  "ko": "거의 의문 없이 받아들였다"
+                },
+                {
+                  "text": "trapped in the perspective of our own time",
+                  "ko": "우리 시대의 관점에 갇혀 있다"
+                }
+              ]
+            },
+            "between": "="
+          }
+        },
+        {
+          "id": "s8_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "같은 쪽이에요. 칠판 오른쪽 말(conform to, accepted)을 다른 말로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "groups",
+            "title": "화가들 = 우리",
+            "left": {
+              "label": "화가들 (artists)",
+              "words": [
+                {
+                  "text": "conform to stylistic conventions",
+                  "ko": "그 시대 양식을 따른다"
+                },
+                {
+                  "text": "accepted linear perspective without question",
+                  "ko": "원근법을 의문 없이 받아들였다"
+                }
+              ]
+            },
+            "right": {
+              "label": "우리 (we)",
+              "words": [
+                {
+                  "text": "conform to social conventions",
+                  "ko": "사회 관습을 따른다"
+                },
+                {
+                  "text": "unwritten rules",
+                  "ko": "불문율 — 결혼·내 집·직장·해외여행"
+                },
+                {
+                  "text": "accepted with little questioning",
+                  "ko": "거의 의문 없이 받아들였다"
+                },
+                {
+                  "text": "trapped in the perspective of our own time",
+                  "ko": "우리 시대의 관점에 갇혀 있다"
+                }
+              ]
+            },
+            "between": "="
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

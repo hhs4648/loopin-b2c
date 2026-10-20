@@ -1,0 +1,2794 @@
+{
+  "id": "moeui-2022-03-31-metta-meditation",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 31번 (빈칸 추론, 2점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 같은 말 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-metta-meditation.svg",
+      "alt": "칠판: Mettā(자비심 명상) → Feelings(사람을 향한 감정)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "싫은 사람에게도 따뜻한 마음을 가질 수 있을까요? 이번 글은 불교의 mettā 명상 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+    "underline": "________",
+    "sentence": 7,
+    "analysis_first": true,
+    "wrong_rate": 65.0,
+    "wrong_rank": 2,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "Creativity",
+        "ko": "창의성"
+      },
+      {
+        "en": "Relaxation",
+        "ko": "긴장 완화, 휴식"
+      },
+      {
+        "en": "Compassion",
+        "ko": "연민, 동정심"
+      },
+      {
+        "en": "Justification",
+        "ko": "정당화"
+      },
+      {
+        "en": "Empowerment",
+        "ko": "권한 부여"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "Creativity",
+        "keywords": [
+          "Creativity"
+        ],
+        "ko": "창의성"
+      },
+      {
+        "id": "2",
+        "label": "Relaxation",
+        "keywords": [
+          "Relaxation"
+        ],
+        "ko": "긴장 완화"
+      },
+      {
+        "id": "3",
+        "label": "Compassion",
+        "keywords": [
+          "Compassion"
+        ],
+        "ko": "연민",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "Justification",
+        "keywords": [
+          "Justification"
+        ],
+        "ko": "정당화"
+      },
+      {
+        "id": "5",
+        "label": "Empowerment",
+        "keywords": [
+          "Empowerment"
+        ],
+        "ko": "권한 부여"
+      }
+    ],
+    "brief": {
+      "ask": "칠판의 mettā 쪽 말을 한 단어로 바꾼 보기를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! mettā는 자비심·친절·다정함이고, 이런 마음은 연습으로 기를 수 있대요. 싫은 사람에게도 향하게 할 연민(Compassion)이에요.",
+      "final_wrong": "정답은 ③ Compassion(연민)이에요. 싫은 사람에게도 사랑하는 사람만큼 향하게 할, 배울 수 있는 따뜻한 마음이에요.",
+      "option_feedback": {
+        "1": "창의성은 새것을 만들어 내는 힘이에요. 글은 사람을 향한 마음을 기르는 이야기예요.",
+        "2": "명상(meditation)이 나와서 긴장 완화가 떠오르지만, 빈칸은 싫은 사람에게도 '향하게(direct)' 하는 마음이에요.",
+        "4": "정당화는 옳다고 설명하는 거예요. 글에는 그런 이야기가 없어요.",
+        "5": "권한 부여는 힘이나 자격을 주는 거예요. 글은 친절·다정함 같은 마음 이야기예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 42%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "글에 meditation(명상)이 나와서 Relaxation(긴장 완화)을 가장 많이 골랐어요. 하지만 빈칸(it)은 싫은 사람에게도, 사랑하는 사람에게만큼 '향하게(direct)' 해야 하는 거예요. 긴장 완화는 사람에게 향하는 마음이 아니에요.",
+          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "명상이라서 긴장 완화가 떠올랐어요",
+              "skills": [
+                "topic_word_trap"
+              ],
+              "reply": "알려 줘서 고마워요. 명상은 방법이고, 그걸로 기르는 건 this attitude(자비심)예요. 앞으로 이 점을 짚어 줄게요."
+            },
+            {
+              "label": "direct it towards를 놓쳤어요",
+              "skills": [
+                "blank_clue"
+              ],
+              "reply": "알려 줘서 고마워요. 빈칸 문장의 it은 빈칸이고, 사람에게 향하게 하는 거예요. 앞으로 빈칸 문장 속 단서를 먼저 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "topic_word_trap",
+                "blank_clue"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 명상으로 무엇을 기르는지와 빈칸 문장 단서를 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "mettā 쪽",
+                "text": "benevolence · kindness · this attitude",
+                "ko": "사람을 따뜻하게 대하는 마음",
+                "tone": "hl"
+              },
+              {
+                "label": "빈칸 문장",
+                "text": "direct it towards those we … detest",
+                "ko": "싫은 사람에게도 향하게 한다",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "benevolence",
+        "ko": "자비심"
+      },
+      {
+        "en": "tenderness",
+        "ko": "다정함"
+      },
+      {
+        "en": "ritual",
+        "ko": "의례적인"
+      },
+      {
+        "en": "meditation",
+        "ko": "명상"
+      },
+      {
+        "en": "foster",
+        "ko": "기르다"
+      },
+      {
+        "en": "attitude",
+        "ko": "태도"
+      },
+      {
+        "en": "irritated",
+        "ko": "짜증 난"
+      },
+      {
+        "en": "aggressive",
+        "ko": "공격적인"
+      },
+      {
+        "en": "hostile",
+        "ko": "적대적인"
+      },
+      {
+        "en": "impulse",
+        "ko": "충동"
+      },
+      {
+        "en": "in place of",
+        "ko": "~ 대신에"
+      },
+      {
+        "en": "rehearse",
+        "ko": "연습하다"
+      },
+      {
+        "en": "extend",
+        "ko": "확장하다"
+      },
+      {
+        "en": "ultimately",
+        "ko": "결국"
+      },
+      {
+        "en": "assumption",
+        "ko": "가정"
+      },
+      {
+        "en": "stimulus",
+        "ko": "자극"
+      },
+      {
+        "en": "unalterable",
+        "ko": "바꿀 수 없는"
+      },
+      {
+        "en": "deliberate",
+        "ko": "의도적인"
+      },
+      {
+        "en": "be tempted to",
+        "ko": "~하고 싶은 마음이 생기다"
+      },
+      {
+        "en": "dismiss",
+        "ko": "무시하다"
+      },
+      {
+        "en": "detest",
+        "ko": "혐오하다"
+      }
+    ],
+    "options": [
+      {
+        "en": "compassion",
+        "ko": "연민"
+      },
+      {
+        "en": "relaxation",
+        "ko": "긴장 완화"
+      },
+      {
+        "en": "justification",
+        "ko": "정당화"
+      },
+      {
+        "en": "empowerment",
+        "ko": "권한 부여"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "In the Indian language of pali, mettā means benevolence, kindness or tenderness.",
+      "model_translation": "인도 팔리어에서 mettā는 자비심, 친절 혹은 다정함을 의미한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In the Indian language of pali",
+          "ko": "인도의 팔리어에서"
+        },
+        {
+          "en": "pali",
+          "ko": "팔리어 · 고대 인도의 언어"
+        },
+        {
+          "en": "mettā",
+          "ko": "메타 · 팔리어 낱말"
+        },
+        {
+          "en": "means",
+          "ko": "뜻하다"
+        },
+        {
+          "en": "benevolence",
+          "ko": "자비심"
+        },
+        {
+          "en": "kindness",
+          "ko": "친절"
+        },
+        {
+          "en": "tenderness",
+          "ko": "다정함"
+        },
+        {
+          "en": "benevolence, kindness or tenderness",
+          "ko": "자비심, 친절 혹은 다정함"
+        },
+        {
+          "en": "is a learnable skill",
+          "ko": "배울 수 있는 기술이다"
+        },
+        {
+          "en": "learnable",
+          "ko": "배울 수 있는"
+        },
+        {
+          "en": "direct it",
+          "ko": "그것을 향하게 하다"
+        },
+        {
+          "en": "as much towards",
+          "ko": "~에게도 (…만큼) 똑같이"
+        },
+        {
+          "en": "those we are tempted to dismiss and detest",
+          "ko": "우리가 무시하고 혐오하고 싶은 사람들"
+        },
+        {
+          "en": "as to those we love",
+          "ko": "우리가 사랑하는 사람들에게만큼"
+        },
+        {
+          "en": "Indian",
+          "ko": "인도의"
+        },
+        {
+          "en": "skill",
+          "ko": "기술"
+        },
+        {
+          "en": "direct",
+          "ko": "향하게 하다"
+        },
+        {
+          "en": "tempted",
+          "ko": "~하고 싶은 마음이 드는"
+        },
+        {
+          "en": "dismiss",
+          "ko": "무시하다"
+        },
+        {
+          "en": "detest",
+          "ko": "혐오하다"
+        },
+        {
+          "en": "love",
+          "ko": "사랑하다"
+        }
+      ],
+      "slashes": [
+        "of pali,",
+        "means"
+      ],
+      "roles": [
+        {
+          "text": "mettā",
+          "role": "S"
+        },
+        {
+          "text": "means",
+          "role": "V"
+        },
+        {
+          "text": "benevolence, kindness or tenderness",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 마지막 문장, 맨 앞 주어 자리에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "________ is a learnable skill, and we need to direct it as much towards those we are tempted to dismiss and detest as to those we love."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "learnable은 '배울 수 있는'이에요. as much towards A as to B는 'B에게만큼 A에게도'예요.",
+              "learnable은 '배울 수 있는'이에요. as much towards A as to B는 'B에게만큼 A에게도'예요."
+            ],
+            "explain": "a learnable skill은 배울 수 있는 기술이에요. 그것(it)을 무시하고 혐오하고 싶은 사람에게도, 사랑하는 사람에게만큼 향하게 해야 한대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "a learnable skill은 배울 수 있는 기술이에요. 그것(it)을 무시하고 혐오하고 싶은 사람에게도, 사랑하는 사람에게만큼 향하게 해야 한대요.",
+              "o2": "a learnable skill은 배울 수 있는 기술이에요. 그것(it)을 무시하고 혐오하고 싶은 사람에게도, 사랑하는 사람에게만큼 향하게 해야 한대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "____은 타고나는 거라서, 사랑하는 사람에게만 향한다"
+            },
+            {
+              "id": "o1",
+              "label": "____은 배울 수 있는 기술이고, 싫은 사람에게도 사랑하는 사람만큼 향하게 해야 한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "____은 배울 수 있지만, 싫은 사람에게는 쓰지 않아도 된다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "________ is a learnable skill, and we need to direct it as much towards those we are tempted to dismiss and detest as to those we love.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "________",
+            "learnable",
+            "direct"
+          ],
+          "highlight_alt": [
+            "detest",
+            "love"
+          ],
+          "tips": [
+            {
+              "label": "as much A as B",
+              "text": "'B만큼 A에도'예요. as much towards 싫은 사람 as to 사랑하는 사람 = 사랑하는 사람에게만큼 싫은 사람에게도.",
+              "mark": "as much"
+            },
+            {
+              "label": "be tempted to ~",
+              "text": "'~하고 싶은 마음이 생기다'예요. those we are tempted to dismiss = 우리가 무시하고 싶은 사람들.",
+              "mark": "tempted"
+            }
+          ]
+        },
+        {
+          "id": "s1_where_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸(it)은 배울 수 있고, 사람에게 '향하게(direct)' 하는 거예요."
+          },
+          "method": 0,
+          "button": "다음",
+          "before_read": true,
+          "levels": [
+            "중",
+            "초"
+          ],
+          "display": "________ is a learnable skill, and we need to direct it as much towards those we are tempted to dismiss and detest as to those we love.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "learnable",
+            "direct"
+          ],
+          "highlight_alt": [
+            "detest",
+            "love"
+          ],
+          "panel_below": true,
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "빈칸 (it)",
+                "text": "a learnable skill",
+                "ko": "배울 수 있는 기술",
+                "tone": "hl"
+              },
+              {
+                "label": "향하는 곳",
+                "text": "those we … detest = those we love",
+                "ko": "싫은 사람에게도 = 사랑하는 사람만큼",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 사람에게 향하는, 배울 수 있는 것이 무엇인지 생각하며 문장 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "________ is a learnable skill, and we need to direct it as much towards those we are tempted to dismiss and detest as to those we love.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "In the Indian language of pali",
+            "mettā",
+            "means",
+            "benevolence, kindness or tenderness"
+          ],
+          "answers": [
+            "mettā",
+            "means",
+            "benevolence, kindness or tenderness"
+          ],
+          "roles": {
+            "mettā": "S",
+            "means": "V",
+            "benevolence, kindness or tenderness": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "In the Indian language of pali": "그건 '어디에서'를 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 mettā, 동사는 means, 목적어는 benevolence, kindness or tenderness예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "tips": [
+            {
+              "label": "as much A as B",
+              "text": "'B만큼 A에도'예요. as much towards 싫은 사람 as to 사랑하는 사람 = 사랑하는 사람에게만큼 싫은 사람에게도.",
+              "mark": "as much"
+            },
+            {
+              "label": "be tempted to ~",
+              "text": "'~하고 싶은 마음이 생기다'예요. those we are tempted to dismiss = 우리가 무시하고 싶은 사람들.",
+              "mark": "tempted"
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s1_basic",
+          "candidates": [
+            "mettā",
+            "means",
+            "benevolence, kindness or tenderness"
+          ],
+          "answers": [
+            "mettā",
+            "benevolence, kindness or tenderness",
+            "means"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "mettā",
+                "ko": "mettā는"
+              },
+              " ",
+              {
+                "en": "benevolence, kindness or tenderness",
+                "ko": "자비심, 친절 혹은 다정함"
+              },
+              "을 ",
+              {
+                "en": "means",
+                "ko": "뜻한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "as much A as B",
+              "text": "'B만큼 A에도'예요. as much towards 싫은 사람 as to 사랑하는 사람 = 사랑하는 사람에게만큼 싫은 사람에게도.",
+              "mark": "as much"
+            },
+            {
+              "label": "be tempted to ~",
+              "text": "'~하고 싶은 마음이 생기다'예요. those we are tempted to dismiss = 우리가 무시하고 싶은 사람들.",
+              "mark": "tempted"
+            }
+          ]
+        },
+        {
+          "id": "s1_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "mettā는 benevolence(자비심)라는 뜻이래요. 칠판에 넣어 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "mettā vs 평소 마음",
+            "left": {
+              "label": "mettā 쪽",
+              "words": [
+                {
+                  "text": "benevolence",
+                  "ko": "자비심",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "highlight": [
+            "benevolence"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s1_same",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "pali",
+            "mettā",
+            "kindness",
+            "tenderness"
+          ],
+          "answers": [
+            "kindness",
+            "tenderness"
+          ],
+          "brief": {
+            "ask": "benevolence와 같은 쪽 말 두 개를 더 찾아 눌러 볼까요?",
+            "wrong": "그건 benevolence와 같은 쪽 말이 아니에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "kindness(친절), tenderness(다정함)도 benevolence와 같은 쪽이에요. 모두 사람을 따뜻하게 대하는 마음이에요.",
+            "wrong_by": {
+              "pali": "pali는 언어 이름이에요.",
+              "mettā": "mettā는 뜻을 풀어 줄 낱말이에요. means(뜻하다) 뒤에서 찾아봐요."
+            }
+          },
+          "method": 0
+        },
+        {
+          "id": "s1_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "단어 지도에 넣었어요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "mettā vs 평소 마음",
+            "left": {
+              "label": "mettā 쪽",
+              "words": [
+                {
+                  "text": "benevolence",
+                  "ko": "자비심"
+                },
+                {
+                  "text": "kindness",
+                  "ko": "친절",
+                  "fresh": true
+                },
+                {
+                  "text": "tenderness",
+                  "ko": "다정함",
+                  "fresh": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "It is one of the most important ideas in Buddhism.",
+      "model_translation": "그것은 불교에서 가장 중요한 관념 중 하나다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "It",
+          "ko": "그것(mettā)"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "one of the most important ideas",
+          "ko": "가장 중요한 생각 중 하나"
+        },
+        {
+          "en": "in Buddhism",
+          "ko": "불교에서"
+        },
+        {
+          "en": "Buddhism",
+          "ko": "불교"
+        },
+        {
+          "en": "ideas",
+          "ko": "생각, 관념"
+        }
+      ],
+      "slashes": [
+        "important ideas"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "one of the most important ideas",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "It",
+            "is",
+            "one of the most important ideas",
+            "Buddhism"
+          ],
+          "answers": [
+            "It",
+            "is",
+            "one of the most important ideas"
+          ],
+          "roles": {
+            "It": "S",
+            "is": "V",
+            "one of the most important ideas": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "Buddhism": "그건 in 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 It(mettā), 동사는 is, 보어는 one of the most important ideas예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic"
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "It",
+            "is",
+            "one of the most important ideas",
+            "in Buddhism"
+          ],
+          "answers": [
+            "It",
+            "in Buddhism",
+            "one of the most important ideas",
+            "is"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "It",
+                "ko": "그것은"
+              },
+              " ",
+              {
+                "en": "in Buddhism",
+                "ko": "불교에서"
+              },
+              " ",
+              {
+                "en": "one of the most important ideas",
+                "ko": "가장 중요한 생각 중 하나"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "It은 앞 문장의 mettā예요. 불교에서 가장 중요한 생각 중 하나래요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "one of the most important ideas"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Buddhism recommends a daily ritual meditation (known as mettā bhāvanā) to foster this attitude.",
+      "model_translation": "불교에서는 이러한 태도를 기르기 위해 매일 의례적으로 하는 (mettā bhāvanā로 알려진) 명상을 권한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Buddhism",
+          "ko": "불교는"
+        },
+        {
+          "en": "recommends",
+          "ko": "권하다"
+        },
+        {
+          "en": "a daily ritual meditation",
+          "ko": "매일 의례적으로 하는 명상"
+        },
+        {
+          "en": "ritual",
+          "ko": "의례적인"
+        },
+        {
+          "en": "meditation",
+          "ko": "명상"
+        },
+        {
+          "en": "(known as mettā bhāvanā)",
+          "ko": "(mettā bhāvanā로 알려진)"
+        },
+        {
+          "en": "to foster this attitude",
+          "ko": "이 태도를 기르기 위해"
+        },
+        {
+          "en": "foster",
+          "ko": "기르다, 키우다"
+        },
+        {
+          "en": "this attitude",
+          "ko": "이 태도"
+        },
+        {
+          "en": "to foster",
+          "ko": "기르기 위해"
+        },
+        {
+          "en": "daily",
+          "ko": "매일의"
+        },
+        {
+          "en": "known",
+          "ko": "알려진"
+        },
+        {
+          "en": "mettā",
+          "ko": "메타 · 팔리어 낱말"
+        },
+        {
+          "en": "bhāvanā",
+          "ko": "바와나 · 수행"
+        },
+        {
+          "en": "attitude",
+          "ko": "태도, 마음가짐"
+        }
+      ],
+      "slashes": [
+        "recommends",
+        "ritual meditation",
+        "mettā bhāvanā)"
+      ],
+      "roles": [
+        {
+          "text": "Buddhism",
+          "role": "S"
+        },
+        {
+          "text": "recommends",
+          "role": "V"
+        },
+        {
+          "text": "a daily ritual meditation",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Buddhism",
+            "recommends",
+            "a daily ritual meditation",
+            "this attitude"
+          ],
+          "answers": [
+            "Buddhism",
+            "recommends",
+            "a daily ritual meditation"
+          ],
+          "roles": {
+            "Buddhism": "S",
+            "recommends": "V",
+            "a daily ritual meditation": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "this attitude": "그건 to foster(기르기 위해) 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Buddhism, 동사는 recommends, 목적어는 a daily ritual meditation이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "faded": [
+            "(known as mettā bhāvanā)"
+          ],
+          "tips": [
+            {
+              "label": "this + 명사",
+              "text": "this attitude처럼 this가 붙으면 앞에서 말한 것을 가리켜요. 앞 문장에서 찾아요.",
+              "mark": "this attitude"
+            },
+            {
+              "label": "foster",
+              "text": "'기르다, 키우다'예요. 마음이나 태도를 키울 때도 써요.",
+              "mark": "foster"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Buddhism",
+            "recommends",
+            "a daily ritual meditation",
+            "to foster this attitude"
+          ],
+          "answers": [
+            "Buddhism",
+            "to foster this attitude",
+            "a daily ritual meditation",
+            "recommends"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Buddhism",
+                "ko": "불교는"
+              },
+              " ",
+              {
+                "en": "to foster this attitude",
+                "ko": "이 태도를 기르기 위해"
+              },
+              " ",
+              {
+                "en": "a daily ritual meditation",
+                "ko": "매일 의례적으로 하는 명상"
+              },
+              "을 ",
+              {
+                "en": "recommends",
+                "ko": "권한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Buddhism recommends a daily ritual meditation to foster this attitude.",
+          "tips": [
+            {
+              "label": "this + 명사",
+              "text": "this attitude처럼 this가 붙으면 앞에서 말한 것을 가리켜요. 앞 문장에서 찾아요.",
+              "mark": "this attitude"
+            },
+            {
+              "label": "foster",
+              "text": "'기르다, 키우다'예요. 마음이나 태도를 키울 때도 써요.",
+              "mark": "foster"
+            }
+          ]
+        },
+        {
+          "id": "s3_attitude",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "this attitude(이 태도)는 무엇을 가리킬까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "this는 앞에서 말한 것을 가리켜요. 지금까지 칠판에 모은 말을 떠올려 봐요.",
+              "this는 앞에서 말한 것을 가리켜요. 지금까지 칠판에 모은 말을 떠올려 봐요."
+            ],
+            "explain": "this attitude는 앞에서 말한 mettā, 즉 자비심·친절·다정함이에요. attitude는 '자세'보다 '태도, 마음가짐'이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "this attitude는 앞에서 말한 mettā, 즉 자비심·친절·다정함이에요. attitude는 '자세'보다 '태도, 마음가짐'이에요.",
+              "o1": "this attitude는 앞에서 말한 mettā, 즉 자비심·친절·다정함이에요. attitude는 '자세'보다 '태도, 마음가짐'이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "명상할 때 앉는 자세"
+            },
+            {
+              "id": "o1",
+              "label": "불교의 규칙"
+            },
+            {
+              "id": "o2",
+              "label": "mettā — 자비심, 친절, 다정함",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "levels": [
+            "중",
+            "초"
+          ],
+          "highlight": [
+            "this attitude"
+          ],
+          "faded": [
+            "(known as mettā bhāvanā)"
+          ],
+          "tips": [
+            {
+              "label": "this + 명사",
+              "text": "this attitude처럼 this가 붙으면 앞에서 말한 것을 가리켜요. 앞 문장에서 찾아요.",
+              "mark": "this attitude"
+            }
+          ]
+        },
+        {
+          "id": "s3_foster",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "to foster this attitude는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "foster는 '기르다, 키우다'예요. to 뒤 동사는 '~하기 위해'로 읽어요.",
+              "foster는 '기르다, 키우다'예요. to 뒤 동사는 '~하기 위해'로 읽어요."
+            ],
+            "explain": "foster는 '기르다', to foster는 '기르기 위해'예요. 명상으로 이 태도를 기른대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "foster는 '기르다', to foster는 '기르기 위해'예요. 명상으로 이 태도를 기른대요.",
+              "o2": "foster는 '기르다', to foster는 '기르기 위해'예요. 명상으로 이 태도를 기른대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "이 태도를 버리기 위해"
+            },
+            {
+              "id": "o1",
+              "label": "이 태도를 기르기 위해",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "이 태도를 숨기기 위해"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "foster"
+          ],
+          "faded": [
+            "(known as mettā bhāvanā)"
+          ],
+          "tips": [
+            {
+              "label": "foster",
+              "text": "'기르다, 키우다'예요. 마음이나 태도를 키울 때도 써요.",
+              "mark": "foster"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s3_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "명상(meditation)은 방법이고, 기르는 건 this attitude(자비심 같은 마음)예요. 칠판에 붙여 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "mettā vs 평소 마음",
+            "left": {
+              "label": "mettā 쪽",
+              "words": [
+                {
+                  "text": "benevolence",
+                  "ko": "자비심"
+                },
+                {
+                  "text": "kindness",
+                  "ko": "친절"
+                },
+                {
+                  "text": "tenderness",
+                  "ko": "다정함"
+                },
+                {
+                  "text": "this attitude",
+                  "ko": "이 태도",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "highlight": [
+            "meditation",
+            "this attitude"
+          ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🤲",
+                "en": "mettā = benevolence · kindness",
+                "ko": "mettā는 자비심·친절·다정함 — 불교에서 가장 중요한 생각이에요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "🧘",
+                "en": "meditation → foster this attitude",
+                "ko": "매일 하는 명상으로 이 태도를 길러요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "The meditation begins with a call to think carefully every morning of an individual with whom one tends to get irritated or to whom one feels aggressive or cold and — in place of one’s normal hostile impulses — to rehearse kindly messages like ‘I hope you will find peace’ or ‘I wish you to be free from suffering’.",
+      "model_translation": "명상은 짜증이 나게 하거나, 공격적인 혹은 냉담한 기분이 들게 하는 경향이 있는 어떤 한 사람을 매일 아침 사려 깊게 생각하고, 평소의 적대적인 충동 대신 '나는 당신이 평안을 찾길 바랍니다.' 또는 '나는 당신이 고통에서 벗어나기를 기원합니다.'와 같은 메시지를 기꺼이 연습하라는 요구로 시작한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The meditation",
+          "ko": "그 명상"
+        },
+        {
+          "en": "begins with",
+          "ko": "~으로 시작하다"
+        },
+        {
+          "en": "a call",
+          "ko": "요구, 요청"
+        },
+        {
+          "en": "to think",
+          "ko": "생각하라는"
+        },
+        {
+          "en": "carefully every morning",
+          "ko": "매일 아침 사려 깊게"
+        },
+        {
+          "en": "of an individual",
+          "ko": "어떤 한 사람을"
+        },
+        {
+          "en": "an individual",
+          "ko": "어떤 한 사람"
+        },
+        {
+          "en": "with whom one tends to get irritated",
+          "ko": "함께 있으면 짜증이 나는"
+        },
+        {
+          "en": "irritated",
+          "ko": "짜증 난"
+        },
+        {
+          "en": "to whom one feels aggressive or cold",
+          "ko": "공격적이거나 냉담한 기분이 드는"
+        },
+        {
+          "en": "aggressive",
+          "ko": "공격적인"
+        },
+        {
+          "en": "cold",
+          "ko": "차가운, 냉담한"
+        },
+        {
+          "en": "in place of one’s normal hostile impulses",
+          "ko": "평소의 적대적인 충동 대신"
+        },
+        {
+          "en": "in place of",
+          "ko": "~ 대신"
+        },
+        {
+          "en": "hostile",
+          "ko": "적대적인"
+        },
+        {
+          "en": "impulses",
+          "ko": "충동"
+        },
+        {
+          "en": "hostile impulses",
+          "ko": "적대적인 충동"
+        },
+        {
+          "en": "to rehearse",
+          "ko": "연습하라는"
+        },
+        {
+          "en": "rehearse",
+          "ko": "연습하다, 되뇌다"
+        },
+        {
+          "en": "kindly messages",
+          "ko": "친절한 메시지"
+        },
+        {
+          "en": "like",
+          "ko": "~ 같은"
+        },
+        {
+          "en": "‘I hope you will find peace’",
+          "ko": "'당신이 평안을 찾길 바라요'"
+        },
+        {
+          "en": "‘I wish you to be free from suffering’",
+          "ko": "'당신이 고통에서 벗어나길 바라요'"
+        },
+        {
+          "en": "meditation",
+          "ko": "명상"
+        },
+        {
+          "en": "begins",
+          "ko": "시작하다"
+        },
+        {
+          "en": "call",
+          "ko": "요구, 요청"
+        },
+        {
+          "en": "think",
+          "ko": "생각하다"
+        },
+        {
+          "en": "carefully",
+          "ko": "사려 깊게, 신중히"
+        },
+        {
+          "en": "morning",
+          "ko": "아침"
+        },
+        {
+          "en": "individual",
+          "ko": "개인, 한 사람"
+        },
+        {
+          "en": "tends",
+          "ko": "~하는 경향이 있다"
+        },
+        {
+          "en": "one’s",
+          "ko": "자신의"
+        },
+        {
+          "en": "normal",
+          "ko": "평소의"
+        },
+        {
+          "en": "kindly",
+          "ko": "친절한"
+        },
+        {
+          "en": "messages",
+          "ko": "메시지"
+        },
+        {
+          "en": "hope",
+          "ko": "바라다"
+        },
+        {
+          "en": "peace",
+          "ko": "평안"
+        },
+        {
+          "en": "wish",
+          "ko": "바라다"
+        },
+        {
+          "en": "free",
+          "ko": "벗어난, 자유로운"
+        },
+        {
+          "en": "suffering",
+          "ko": "고통"
+        }
+      ],
+      "slashes": [
+        "begins with a call",
+        "every morning",
+        "of an individual",
+        "get irritated",
+        "aggressive or cold and",
+        "hostile impulses —",
+        "kindly messages"
+      ],
+      "roles": [
+        {
+          "text": "The meditation",
+          "role": "S"
+        },
+        {
+          "text": "begins with",
+          "role": "V"
+        },
+        {
+          "text": "a call",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "with whom one tends to get irritated",
+        "to whom one feels aggressive or cold"
+      ],
+      "steps": [
+        {
+          "id": "s4_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The meditation",
+            "begins with",
+            "a call",
+            "an individual",
+            "kindly messages"
+          ],
+          "answers": [
+            "The meditation",
+            "begins with",
+            "a call"
+          ],
+          "roles": {
+            "The meditation": "S",
+            "begins with": "V",
+            "a call": "전목"
+          },
+          "brief": {
+            "ask": "아주 긴 문장이에요. 주어(S), 동사(V), with 뒤 목적어(전목)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "an individual": "그건 think … of(~을 생각하다) 뒤, 생각할 대상이에요. 문장 맨 앞에서 찾아봐요.",
+              "kindly messages": "그건 to rehearse(연습하라는) 뒤의 말이에요. 문장 맨 앞에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The meditation, 동사는 begins with, 전치사 뒤 목적어는 a call(요구)이에요."
+          },
+          "method": 0,
+          "faded": [
+            "— in place of one’s normal hostile impulses —"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "think … of A",
+              "text": "think of A는 'A를 생각하다'예요. 여기선 사이에 carefully every morning이 끼어 있어요.",
+              "mark": "think"
+            },
+            {
+              "label": "with whom / to whom",
+              "text": "'그 사람과 함께 ~하는 / 그 사람에게 ~하는'이에요. 앞의 an individual을 꾸며요.",
+              "mark": "with whom"
+            },
+            {
+              "label": "in place of",
+              "text": "'~ 대신에'예요. in place of A, B = A 대신 B.",
+              "mark": "in place of"
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "The meditation",
+            "begins with",
+            "a call",
+            "to think",
+            "an individual",
+            "to rehearse",
+            "kindly messages"
+          ],
+          "answers": [
+            "The meditation",
+            "an individual",
+            "to think",
+            "kindly messages",
+            "to rehearse",
+            "a call",
+            "begins with"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The meditation",
+                "ko": "명상은"
+              },
+              " ",
+              {
+                "en": "an individual",
+                "ko": "어떤 한 사람"
+              },
+              "을 ",
+              {
+                "en": "to think",
+                "ko": "생각하고"
+              },
+              " ",
+              {
+                "en": "kindly messages",
+                "ko": "친절한 메시지"
+              },
+              "를 ",
+              {
+                "en": "to rehearse",
+                "ko": "연습하라는"
+              },
+              " ",
+              {
+                "en": "a call",
+                "ko": "요구"
+              },
+              "으로 ",
+              {
+                "en": "begins with",
+                "ko": "시작한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "The meditation begins with a call to think of an individual and to rehearse kindly messages.",
+          "tips": [
+            {
+              "label": "think … of A",
+              "text": "think of A는 'A를 생각하다'예요. 여기선 사이에 carefully every morning이 끼어 있어요.",
+              "mark": "think"
+            },
+            {
+              "label": "with whom / to whom",
+              "text": "'그 사람과 함께 ~하는 / 그 사람에게 ~하는'이에요. 앞의 an individual을 꾸며요.",
+              "mark": "with whom"
+            },
+            {
+              "label": "in place of",
+              "text": "'~ 대신에'예요. in place of A, B = A 대신 B.",
+              "mark": "in place of"
+            }
+          ]
+        },
+        {
+          "id": "s4_two",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "a call(요구) 뒤에 to가 두 번 나와요. 무엇을 하라는 요구일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "to think … of an individual과 to rehearse kindly messages, 두 덩어리를 봐요.",
+              "to think … of an individual과 to rehearse kindly messages, 두 덩어리를 봐요."
+            ],
+            "explain": "'to think … of an individual'은 그 사람을 생각하라, 'to rehearse kindly messages'는 친절한 말을 연습하라예요. 싫은 사람을 피하지 않고 떠올려요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'to think … of an individual'은 그 사람을 생각하라, 'to rehearse kindly messages'는 친절한 말을 연습하라예요. 싫은 사람을 피하지 않고 떠올려요.",
+              "o2": "'to think … of an individual'은 그 사람을 생각하라, 'to rehearse kindly messages'는 친절한 말을 연습하라예요. 싫은 사람을 피하지 않고 떠올려요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "짜증 나는 사람을 떠올리고, 그 사람에게 친절한 말을 연습하라",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "짜증 나는 사람을 멀리하고, 좋아하는 사람만 떠올려라"
+            },
+            {
+              "id": "o2",
+              "label": "마음을 편히 쉬고, 아무 생각도 하지 마라"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "to think",
+            "to rehearse"
+          ],
+          "faded": [
+            "— in place of one’s normal hostile impulses —"
+          ],
+          "tips": [
+            {
+              "label": "think … of A",
+              "text": "think of A는 'A를 생각하다'예요. 여기선 사이에 carefully every morning이 끼어 있어요.",
+              "mark": "think"
+            },
+            {
+              "label": "with whom / to whom",
+              "text": "'그 사람과 함께 ~하는 / 그 사람에게 ~하는'이에요. 앞의 an individual을 꾸며요.",
+              "mark": "with whom"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s4_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "in place of(~ 대신) 뒤 'one’s normal hostile impulses(평소의 적대적인 충동)'는 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "hostile은 '적대적인'이에요. 앞의 irritated(짜증 난), aggressive(공격적인), cold(냉담한)와 같은 쪽이에요.",
+              "hostile은 '적대적인'이에요. 앞의 irritated(짜증 난), aggressive(공격적인), cold(냉담한)와 같은 쪽이에요."
+            ],
+            "explain": "hostile은 '적대적인'이에요. 앞의 irritated(짜증 난), aggressive(공격적인), cold(냉담한)와 같은 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "hostile은 '적대적인'이에요. 앞의 irritated(짜증 난), aggressive(공격적인), cold(냉담한)와 같은 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · mettā 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 평소 마음 쪽",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "mettā vs 평소 마음",
+            "left": {
+              "label": "mettā 쪽",
+              "words": [
+                {
+                  "text": "benevolence",
+                  "ko": "자비심"
+                },
+                {
+                  "text": "kindness",
+                  "ko": "친절"
+                },
+                {
+                  "text": "tenderness",
+                  "ko": "다정함"
+                },
+                {
+                  "text": "this attitude",
+                  "ko": "이 태도"
+                }
+              ]
+            },
+            "right": {
+              "label": "평소 마음 쪽",
+              "words": []
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "hostile impulses"
+              ],
+              "left": "왼쪽 · mettā 쪽",
+              "right": "오른쪽 · 평소 마음 쪽"
+            }
+          },
+          "highlight": [
+            "hostile"
+          ]
+        },
+        {
+          "id": "s4_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "평소엔 짜증·공격·냉담 같은 마음이 들어요. 그 대신 친절한 말(kindly messages)을 연습해요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "mettā vs 평소 마음",
+            "left": {
+              "label": "mettā 쪽",
+              "words": [
+                {
+                  "text": "benevolence",
+                  "ko": "자비심"
+                },
+                {
+                  "text": "kindness",
+                  "ko": "친절"
+                },
+                {
+                  "text": "tenderness",
+                  "ko": "다정함"
+                },
+                {
+                  "text": "this attitude",
+                  "ko": "이 태도"
+                },
+                {
+                  "text": "kindly messages",
+                  "ko": "친절한 메시지",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "평소 마음 쪽",
+              "words": [
+                {
+                  "text": "irritated",
+                  "ko": "짜증 난",
+                  "fresh": true
+                },
+                {
+                  "text": "aggressive · cold",
+                  "ko": "공격적 · 냉담",
+                  "fresh": true
+                },
+                {
+                  "text": "hostile impulses",
+                  "ko": "적대적인 충동",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "kindly messages"
+          ],
+          "highlight_alt": [
+            "irritated",
+            "hostile"
+          ],
+          "tips": [
+            {
+              "label": "in place of",
+              "text": "'~ 대신에'예요. in place of A, B = A 대신 B.",
+              "mark": "in place of"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "This practice can be extended outwards ultimately to include pretty much everyone on Earth.",
+      "model_translation": "이 수행은 밖으로 확장되어 결국 지상의 거의 모든 사람을 포함할 수 있다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "This practice",
+          "ko": "이 수행"
+        },
+        {
+          "en": "practice",
+          "ko": "수행, 연습"
+        },
+        {
+          "en": "can be extended",
+          "ko": "확장될 수 있다"
+        },
+        {
+          "en": "outwards ultimately",
+          "ko": "밖으로, 결국"
+        },
+        {
+          "en": "outwards",
+          "ko": "밖으로"
+        },
+        {
+          "en": "ultimately",
+          "ko": "결국"
+        },
+        {
+          "en": "to include",
+          "ko": "포함하도록"
+        },
+        {
+          "en": "pretty much",
+          "ko": "거의"
+        },
+        {
+          "en": "everyone on Earth",
+          "ko": "지구상의 모든 사람"
+        },
+        {
+          "en": "extended",
+          "ko": "확장된"
+        },
+        {
+          "en": "include",
+          "ko": "포함하다"
+        },
+        {
+          "en": "pretty",
+          "ko": "꽤 · pretty much = 거의"
+        },
+        {
+          "en": "Earth",
+          "ko": "지구"
+        }
+      ],
+      "slashes": [
+        "can be extended",
+        "outwards ultimately"
+      ],
+      "roles": [
+        {
+          "text": "This practice",
+          "role": "S"
+        },
+        {
+          "text": "can be extended",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "This practice",
+            "can be extended",
+            "everyone on Earth"
+          ],
+          "answers": [
+            "This practice",
+            "can be extended"
+          ],
+          "roles": {
+            "This practice": "S",
+            "can be extended": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "everyone on Earth": "그건 to include(포함하도록) 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 This practice, 동사는 can be extended예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "pretty much",
+              "text": "'거의'예요. pretty much everyone = 거의 모든 사람.",
+              "mark": "pretty much"
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "This practice",
+            "can be extended",
+            "to include",
+            "everyone on Earth"
+          ],
+          "answers": [
+            "This practice",
+            "everyone on Earth",
+            "to include",
+            "can be extended"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "This practice",
+                "ko": "이 수행은"
+              },
+              " ",
+              {
+                "en": "everyone on Earth",
+                "ko": "지구상의 모든 사람"
+              },
+              "을 ",
+              {
+                "en": "to include",
+                "ko": "포함하도록"
+              },
+              " ",
+              {
+                "en": "can be extended",
+                "ko": "확장될 수 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "This practice can be extended to include everyone on Earth.",
+          "tips": [
+            {
+              "label": "pretty much",
+              "text": "'거의'예요. pretty much everyone = 거의 모든 사람.",
+              "mark": "pretty much"
+            }
+          ]
+        },
+        {
+          "id": "s5_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 연습은 결국 지구상의 거의 모든 사람으로 넓힐 수 있대요. 싫은 사람까지 다요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "extended",
+            "everyone on Earth"
+          ],
+          "tips": [
+            {
+              "label": "pretty much",
+              "text": "'거의'예요. pretty much everyone = 거의 모든 사람.",
+              "mark": "pretty much"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🤲",
+                "en": "mettā = benevolence · kindness",
+                "ko": "mettā는 자비심·친절·다정함 — 불교에서 가장 중요한 생각이에요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "🧘",
+                "en": "meditation → foster this attitude",
+                "ko": "매일 하는 명상으로 이 태도를 길러요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "💌",
+                "en": "irritated → kindly messages",
+                "ko": "짜증 나는 사람을 떠올리고, 적대감 대신 친절한 말을 연습해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5",
+                "icon": "🌍",
+                "en": "everyone on Earth",
+                "ko": "결국 거의 모든 사람으로 넓혀요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "The background assumption is that, with the right stimulus, our feelings towards people are not fixed and unalterable, but open to deliberate change and improvement.",
+      "model_translation": "그 배경이 되는 가정은 적절한 자극으로 사람들을 향한 우리의 감정이 고정되어 바뀔 수 없는 게 아니라 의도적인 변화와 개선의 여지가 있다는 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The background assumption",
+          "ko": "배경이 되는 가정"
+        },
+        {
+          "en": "assumption",
+          "ko": "가정"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "with the right stimulus",
+          "ko": "적절한 자극이 있으면"
+        },
+        {
+          "en": "the right stimulus",
+          "ko": "적절한 자극"
+        },
+        {
+          "en": "stimulus",
+          "ko": "자극"
+        },
+        {
+          "en": "our feelings",
+          "ko": "우리의 감정"
+        },
+        {
+          "en": "towards people",
+          "ko": "사람들을 향한"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "not fixed and unalterable",
+          "ko": "고정되어 바뀔 수 없는 게 아니라"
+        },
+        {
+          "en": "fixed",
+          "ko": "고정된"
+        },
+        {
+          "en": "unalterable",
+          "ko": "바꿀 수 없는"
+        },
+        {
+          "en": "open to",
+          "ko": "~의 여지가 있는, ~에 열려 있는"
+        },
+        {
+          "en": "deliberate",
+          "ko": "의도적인, 계획적인"
+        },
+        {
+          "en": "deliberate change and improvement",
+          "ko": "의도적인 변화와 개선"
+        },
+        {
+          "en": "improvement",
+          "ko": "개선"
+        },
+        {
+          "en": "not fixed",
+          "ko": "고정된 게 아니라"
+        },
+        {
+          "en": "open to change",
+          "ko": "바뀔 여지가 있는"
+        },
+        {
+          "en": "background",
+          "ko": "배경"
+        },
+        {
+          "en": "right",
+          "ko": "알맞은, 적절한"
+        },
+        {
+          "en": "open",
+          "ko": "열려 있는"
+        },
+        {
+          "en": "change",
+          "ko": "변화"
+        }
+      ],
+      "slashes": [
+        "assumption is",
+        "that,",
+        "right stimulus,",
+        "towards people",
+        "unalterable,"
+      ],
+      "roles": [
+        {
+          "text": "The background assumption",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "our feelings",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "not fixed and unalterable",
+          "role": "C"
+        },
+        {
+          "text": "open to deliberate change and improvement",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The background assumption",
+            "is",
+            "the right stimulus",
+            "our feelings"
+          ],
+          "answers": [
+            "The background assumption",
+            "is"
+          ],
+          "roles": {
+            "The background assumption": "S",
+            "is": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the right stimulus": "그건 with(~이 있으면) 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요.",
+              "our feelings": "그건 that 뒤 덩어리 안의 주어예요. that 앞에서 찾아봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The background assumption, 동사는 is예요. is 뒤 that 덩어리가 그 가정의 내용이에요."
+          },
+          "method": 0,
+          "slot": "s6_basic",
+          "tips": [
+            {
+              "label": "not A but B",
+              "text": "'A가 아니라 B'예요. 글쓴이 생각은 B 쪽이에요.",
+              "mark": "but"
+            },
+            {
+              "label": "open to ~",
+              "text": "'~의 여지가 있는, ~에 열려 있는'이에요. open to change = 바뀔 여지가 있는.",
+              "mark": "open to"
+            }
+          ]
+        },
+        {
+          "id": "s6_that_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "our feelings",
+            "towards people",
+            "are",
+            "the right stimulus"
+          ],
+          "answers": [
+            "our feelings",
+            "are"
+          ],
+          "roles": {
+            "our feelings": "S",
+            "are": "V"
+          },
+          "brief": {
+            "ask": "that 뒤가 핵심 내용이에요. that 안에서 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "towards people": "그건 앞의 our feelings를 꾸며 주는 말이에요(사람들을 향한).",
+              "the right stimulus": "그건 with(~이 있으면) 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "that 안의 주어는 our feelings, 동사는 are예요. 사람을 향한 우리 감정이 어떻다는 내용이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s6_basic",
+          "candidates": [
+            "The background assumption",
+            "our feelings",
+            "not fixed",
+            "open to change"
+          ],
+          "answers": [
+            "The background assumption",
+            "our feelings",
+            "not fixed",
+            "open to change"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The background assumption",
+                "ko": "배경이 되는 가정은"
+              },
+              " — ",
+              {
+                "en": "our feelings",
+                "ko": "우리의 감정이"
+              },
+              " ",
+              {
+                "en": "not fixed",
+                "ko": "고정된 게 아니라"
+              },
+              " ",
+              {
+                "en": "open to change",
+                "ko": "바뀔 여지가 있다"
+              },
+              "는 것."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "The background assumption is that our feelings are not fixed, but open to change.",
+          "tips": [
+            {
+              "label": "not A but B",
+              "text": "'A가 아니라 B'예요. 글쓴이 생각은 B 쪽이에요.",
+              "mark": "but"
+            },
+            {
+              "label": "open to ~",
+              "text": "'~의 여지가 있는, ~에 열려 있는'이에요. open to change = 바뀔 여지가 있는.",
+              "mark": "open to"
+            }
+          ]
+        },
+        {
+          "id": "s6_notbut",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "not A but B예요. 사람을 향한 우리 감정은 어떻다는 걸까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not A but B는 'A가 아니라 B'예요. but 뒤 'open to deliberate change'를 봐요.",
+              "not A but B는 'A가 아니라 B'예요. but 뒤 'open to deliberate change'를 봐요."
+            ],
+            "explain": "'not fixed and unalterable, but open to deliberate change and improvement', 고정된 게 아니라 의도적인 변화와 개선의 여지가 있대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'not fixed and unalterable, but open to deliberate change and improvement', 고정된 게 아니라 의도적인 변화와 개선의 여지가 있대요.",
+              "o2": "'not fixed and unalterable, but open to deliberate change and improvement', 고정된 게 아니라 의도적인 변화와 개선의 여지가 있대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "고정돼 있어서 바꿀 수 없다"
+            },
+            {
+              "id": "o1",
+              "label": "일부러 바꾸고 나아지게 할 수 있다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "자극이 없어도 저절로 바뀐다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "not fixed",
+            "but open"
+          ],
+          "tips": [
+            {
+              "label": "not A but B",
+              "text": "'A가 아니라 B'예요. 글쓴이 생각은 B 쪽이에요.",
+              "mark": "but"
+            },
+            {
+              "label": "open to ~",
+              "text": "'~의 여지가 있는, ~에 열려 있는'이에요. open to change = 바뀔 여지가 있는.",
+              "mark": "open to"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s6_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "감정도 연습으로 바꿀 수 있대요. 그래서 평소 마음 대신 mettā 쪽 마음을 연습하는 거예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "mettā vs 평소 마음",
+            "left": {
+              "label": "mettā 쪽",
+              "words": [
+                {
+                  "text": "benevolence",
+                  "ko": "자비심"
+                },
+                {
+                  "text": "kindness",
+                  "ko": "친절"
+                },
+                {
+                  "text": "tenderness",
+                  "ko": "다정함"
+                },
+                {
+                  "text": "this attitude",
+                  "ko": "이 태도"
+                },
+                {
+                  "text": "kindly messages",
+                  "ko": "친절한 메시지"
+                }
+              ]
+            },
+            "right": {
+              "label": "평소 마음 쪽",
+              "words": [
+                {
+                  "text": "irritated",
+                  "ko": "짜증 난"
+                },
+                {
+                  "text": "aggressive · cold",
+                  "ko": "공격적 · 냉담"
+                },
+                {
+                  "text": "hostile impulses",
+                  "ko": "적대적인 충동"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🤲",
+                "en": "mettā = benevolence · kindness",
+                "ko": "mettā는 자비심·친절·다정함 — 불교에서 가장 중요한 생각이에요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "🧘",
+                "en": "meditation → foster this attitude",
+                "ko": "매일 하는 명상으로 이 태도를 길러요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "💌",
+                "en": "irritated → kindly messages",
+                "ko": "짜증 나는 사람을 떠올리고, 적대감 대신 친절한 말을 연습해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5",
+                "icon": "🌍",
+                "en": "everyone on Earth",
+                "ko": "결국 거의 모든 사람으로 넓혀요",
+                "fresh": false
+              },
+              {
+                "label": "문장 6",
+                "icon": "🔄",
+                "en": "not fixed, but open to change",
+                "ko": "사람을 향한 감정은 고정된 게 아니라 바꿀 수 있어요",
+                "fresh": true
+              },
+              {
+                "label": "빈칸 문장",
+                "icon": "🎯",
+                "en": "________ = a learnable skill",
+                "ko": "____은 배울 수 있는 기술 — 싫은 사람에게도 향하게 해야 해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "________ is a learnable skill, and we need to direct it as much towards those we are tempted to dismiss and detest as to those we love.",
+      "model_translation": "________은 학습 가능한 기술이며, 우리가 사랑하는 사람에게만큼이나 우리가 무시하고 혐오하고 싶은 마음이 생기는 사람에게도 그것을 향하게 할 필요가 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a learnable skill",
+          "ko": "배울 수 있는 기술"
+        },
+        {
+          "en": "learnable",
+          "ko": "배울 수 있는"
+        },
+        {
+          "en": "we",
+          "ko": "우리는"
+        },
+        {
+          "en": "need",
+          "ko": "~할 필요가 있다"
+        },
+        {
+          "en": "to direct it",
+          "ko": "그것을 향하게 하는 것"
+        },
+        {
+          "en": "direct",
+          "ko": "향하게 하다"
+        },
+        {
+          "en": "as much towards",
+          "ko": "~에게도 (…만큼) 똑같이"
+        },
+        {
+          "en": "those we are tempted to dismiss and detest",
+          "ko": "우리가 무시하고 혐오하고 싶은 사람들"
+        },
+        {
+          "en": "tempted",
+          "ko": "~하고 싶은 마음이 드는"
+        },
+        {
+          "en": "dismiss",
+          "ko": "무시하다"
+        },
+        {
+          "en": "detest",
+          "ko": "혐오하다"
+        },
+        {
+          "en": "as to those we love",
+          "ko": "우리가 사랑하는 사람들에게만큼"
+        },
+        {
+          "en": "skill",
+          "ko": "기술"
+        },
+        {
+          "en": "love",
+          "ko": "사랑하다"
+        }
+      ],
+      "slashes": [
+        "learnable skill,",
+        "direct it",
+        "towards those",
+        "and detest",
+        "as to those"
+      ],
+      "roles": [
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a learnable skill",
+          "role": "C"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "need",
+          "role": "V"
+        },
+        {
+          "text": "to direct it",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "we are tempted to dismiss and detest",
+        "we love"
+      ],
+      "steps": [
+        {
+          "id": "s7_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "is",
+            "a learnable skill",
+            "we",
+            "need",
+            "to direct it",
+            "those we are tempted to dismiss and detest"
+          ],
+          "answers": [
+            "is",
+            "a learnable skill",
+            "we",
+            "need",
+            "to direct it"
+          ],
+          "roles": {
+            "is": "V",
+            "a learnable skill": "C",
+            "we": "S",
+            "need": "V",
+            "to direct it": "O"
+          },
+          "brief": {
+            "ask": "빈칸이 주어예요. 빈칸 뒤 동사(V)·보어(C)와 and 뒤 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "those we are tempted to dismiss and detest": "그건 towards(~을 향해) 뒤 덩어리예요. 전치사 뒤라 주어·목적어가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "빈칸이 주어, is가 동사, a learnable skill이 보어예요. and 뒤는 주어 we, 동사 need, 목적어 to direct it이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s7_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "it(빈칸)을 싫은 사람에게도 '향하게(direct)' 한대요. 칠판 mettā 쪽 말을 떠올려 봐요.",
+              "it(빈칸)을 싫은 사람에게도 '향하게(direct)' 한대요. 칠판 mettā 쪽 말을 떠올려 봐요."
+            ],
+            "explain": "빈칸(it)은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "빈칸(it)은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요.",
+              "o2": "빈칸(it)은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "마음을 편히 쉬게 하는 것"
+            },
+            {
+              "id": "o1",
+              "label": "다른 사람을 따뜻하게 대하는 마음",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "자기 생각이 옳다고 설명하는 것"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "mettā vs 평소 마음",
+            "left": {
+              "label": "mettā 쪽",
+              "words": [
+                {
+                  "text": "benevolence",
+                  "ko": "자비심"
+                },
+                {
+                  "text": "kindness",
+                  "ko": "친절"
+                },
+                {
+                  "text": "tenderness",
+                  "ko": "다정함"
+                },
+                {
+                  "text": "this attitude",
+                  "ko": "이 태도"
+                },
+                {
+                  "text": "kindly messages",
+                  "ko": "친절한 메시지"
+                }
+              ]
+            },
+            "right": {
+              "label": "평소 마음 쪽",
+              "words": [
+                {
+                  "text": "irritated",
+                  "ko": "짜증 난"
+                },
+                {
+                  "text": "aggressive · cold",
+                  "ko": "공격적 · 냉담"
+                },
+                {
+                  "text": "hostile impulses",
+                  "ko": "적대적인 충동"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "direct",
+            "detest",
+            "love"
+          ]
+        },
+        {
+          "id": "s7_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "글쓴이 주장은 '사람을 향한 감정은 연습으로 바꿀 수 있다'예요. 빈칸은 이 주장과 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "빈칸 바로 뒤 learnable(배울 수 있는)을 봐요. 앞 문장은 감정이 not fixed, but open to change라고 했어요.",
+              "빈칸 바로 뒤 learnable(배울 수 있는)을 봐요. 앞 문장은 감정이 not fixed, but open to change라고 했어요."
+            ],
+            "explain": "빈칸은 learnable(배울 수 있는) 기술이래요. 감정은 바꿀 수 있다는 주장과 같은 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "빈칸은 learnable(배울 수 있는) 기술이래요. 감정은 바꿀 수 있다는 주장과 같은 쪽이에요."
+            },
+            "point": "빈칸 = 배울 수 있고(learnable), 싫은 사람에게도 향하게 할 마음 = mettā 쪽 = 주장과 같은 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 (배워서 기를 수 있는 마음)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 (바꿀 수 없는 마음)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "learnable"
+          ]
+        },
+        {
+          "id": "s7_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 mettā 쪽, 사람을 향한 따뜻한 마음이에요. 이 말을 한 단어로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

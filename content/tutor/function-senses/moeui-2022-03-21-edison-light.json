@@ -1,0 +1,58 @@
+{
+ "1": [
+  {
+   "word": "for",
+   "phrase": "symbol for that flash",
+   "sense": "~의 (상징)",
+   "usage": "a symbol for + 명사 = ~의 상징"
+  },
+  {
+   "word": "that",
+   "phrase": "that flash of inspired genius",
+   "sense": "그 (흔히 말하는)",
+   "usage": "지시형용사 that + 명사"
+  }
+ ],
+ "2": [
+  {
+   "word": "for",
+   "phrase": "for other reasons",
+   "sense": "~로, ~ 때문에",
+   "usage": "for + 이유"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "system that surrounded it",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "that",
+   "phrase": "that of any other invention",
+   "sense": "그것 (= the importance)",
+   "usage": "앞 명사를 되풀이하지 않는 that of ~"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "to a post-industrial one",
+   "sense": "~로",
+   "usage": "from A to B = A에서 B로"
+  },
+  {
+   "word": "which",
+   "phrase": "in which electricity",
+   "sense": "그 시대에는 (앞 명사를 꾸밈)",
+   "usage": "전치사 + 관계대명사 which + 완전한 문장"
+  },
+  {
+   "word": "to",
+   "phrase": "to give the twentieth century",
+   "sense": "~하여 (결과)",
+   "usage": "to부정사 — 결과"
+  }
+ ]
+}

@@ -1,0 +1,2268 @@
+{
+  "id": "moeui-2022-03-33-creators-of-destiny",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 33번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-creators-of-destiny.svg",
+      "alt": "칠판: Same old life(변화 없는 삶) → Something more(그 이상의 무언가)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "변화도 도전도 없는 하루가 계속되면 어떤 기분일까요? 이번 글은 사람이 가진 욕구에 대한 심리학자들의 생각이에요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 2,
+    "analysis_first": true,
+    "wrong_rate": 47.0,
+    "wrong_rank": 8,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "alter",
+        "ko": "바꾸다"
+      },
+      {
+        "en": "the course of their lives",
+        "ko": "그들 삶의 행로(방향)"
+      },
+      {
+        "en": "possess",
+        "ko": "소유하다"
+      },
+      {
+        "en": "more than other people",
+        "ko": "다른 사람들보다 더 많이"
+      },
+      {
+        "en": "suppress",
+        "ko": "억누르다"
+      },
+      {
+        "en": "negative emotions",
+        "ko": "부정적인 감정"
+      },
+      {
+        "en": "sacrifice themselves",
+        "ko": "자신을 희생하다"
+      },
+      {
+        "en": "noble causes",
+        "ko": "숭고한 대의"
+      },
+      {
+        "en": "admiration",
+        "ko": "존경, 감탄"
+      },
+      {
+        "en": "supernatural power",
+        "ko": "초자연적인 힘"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "alter the course of their lives",
+        "keywords": [
+          "alter",
+          "course of their lives"
+        ],
+        "ko": "자기 삶의 행로를 바꾸려는",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "possess more than other people",
+        "keywords": [
+          "possess more",
+          "other people"
+        ],
+        "ko": "다른 사람들보다 더 많이 소유하려는"
+      },
+      {
+        "id": "3",
+        "label": "suppress their negative emotions",
+        "keywords": [
+          "suppress",
+          "negative emotions"
+        ],
+        "ko": "자신의 부정적인 감정을 억누르려는"
+      },
+      {
+        "id": "4",
+        "label": "sacrifice themselves for noble causes",
+        "keywords": [
+          "sacrifice themselves",
+          "noble causes"
+        ],
+        "ko": "숭고한 대의명분을 위해 자신을 희생하려는"
+      },
+      {
+        "id": "5",
+        "label": "show admiration for supernatural power",
+        "keywords": [
+          "admiration",
+          "supernatural power"
+        ],
+        "ko": "초자연적인 힘에 대해 존경심을 보이려는"
+      }
+    ],
+    "brief": {
+      "ask": "빈칸은 변화 없는 삶과 반대 쪽 욕구예요. 칠판 오른쪽 말을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 사람은 수동적인 삶을 넘어 자기 운명을 스스로 만들려 해요. 그걸 '자기 삶의 행로를 바꾸려는'으로 바꿔 썼어요.",
+      "final_wrong": "정답은 ①이에요. 창조자, 자기 운명을 만드는 사람(active shapers of their own destiny)을 바꿔 쓴 말이에요.",
+      "option_feedback": {
+        "2": "possess가 셋째 문장에 나와서 헷갈렸죠. 하지만 글에는 남과 견주어 더 갖는다는 말이 없어요.",
+        "3": "부정적인 감정 이야기는 글에 없어요. 글은 수동적인 삶을 넘어서는 이야기예요.",
+        "4": "남을 위한 희생 이야기는 글에 없어요. 자기 목적(their own purposes)을 만든다고 했어요.",
+        "5": "초자연적인 힘 이야기는 없어요. 오히려 인간 스스로 창조자가 되려 한다고 했어요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 17%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "②의 possess는 셋째 문장(people possess a need)에도 나와서 겹쳐 보여요. 하지만 거기서 possess는 '욕구를 지니고 있다'는 말이에요. 글은 남보다 많이 갖는 게 아니라, 수동적인 삶을 넘어 자기 운명을 만드는 이야기예요.",
+          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "possess가 글과 겹쳐서 골랐어요",
+              "skills": [
+                "word_overlap"
+              ],
+              "reply": "알려 줘서 고마워요. 겹치는 단어보다 그 단어가 글에서 무엇을 한다는 건지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "drive(욕구)를 욕심으로 읽었어요",
+              "skills": [
+                "word_sense"
+              ],
+              "reply": "알려 줘서 고마워요. 여기서 drive는 앞으로 나아가려는 욕구예요. 앞으로 그 욕구가 무엇을 향하는지 같이 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "word_overlap",
+                "word_sense"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 단어 뜻을 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "글의 말",
+                "text": "the active shapers of their own destiny",
+                "ko": "자기 운명을 만드는 사람 — 삶을 바꿈",
+                "tone": "hl"
+              },
+              {
+                "label": "②",
+                "text": "possess more than other people",
+                "ko": "남보다 더 많이 가지기 — 글에 없는 비교",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "be content with",
+        "ko": "~에 만족하다"
+      },
+      {
+        "en": "existence",
+        "ko": "생활, 존재"
+      },
+      {
+        "en": "variety",
+        "ko": "다양성, 변화"
+      },
+      {
+        "en": "minimal",
+        "ko": "최소한의"
+      },
+      {
+        "en": "drive",
+        "ko": "욕구, 충동"
+      },
+      {
+        "en": "possess",
+        "ko": "가지다"
+      },
+      {
+        "en": "motive",
+        "ko": "동기"
+      },
+      {
+        "en": "consume",
+        "ko": "다 쓰다, 소비하다"
+      },
+      {
+        "en": "rise above",
+        "ko": "~을 넘어서다"
+      },
+      {
+        "en": "passive",
+        "ko": "수동적인"
+      },
+      {
+        "en": "creature",
+        "ko": "피조물, 생물"
+      },
+      {
+        "en": "accidental",
+        "ko": "우연한"
+      },
+      {
+        "en": "be driven to",
+        "ko": "~하도록 이끌리다"
+      },
+      {
+        "en": "destiny",
+        "ko": "운명"
+      },
+      {
+        "en": "generate",
+        "ko": "만들어 내다"
+      },
+      {
+        "en": "thereby",
+        "ko": "그렇게 함으로써"
+      }
+    ],
+    "options": [
+      {
+        "en": "alter",
+        "ko": "바꾸다"
+      },
+      {
+        "en": "suppress",
+        "ko": "억누르다"
+      },
+      {
+        "en": "sacrifice",
+        "ko": "희생하다"
+      },
+      {
+        "en": "noble",
+        "ko": "숭고한"
+      },
+      {
+        "en": "admiration",
+        "ko": "존경, 감탄"
+      },
+      {
+        "en": "supernatural",
+        "ko": "초자연적인"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Gordon Allport argued that history records many individuals who were not content with an existence that offered them little variety, a lack of psychic tension, and minimal challenge.",
+      "model_translation": "Gordon Allport는 다양성이 거의 없고 심적 긴장이 결핍되어 있으며 최소한의 도전만을 제공하는 생활에 만족하지 못한 많은 개개인을 역사가 기록하고 있다고 주장했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Gordon Allport",
+          "ko": "고든 올포트 · 미국의 심리학자"
+        },
+        {
+          "en": "argued",
+          "ko": "주장했다"
+        },
+        {
+          "en": "history",
+          "ko": "역사"
+        },
+        {
+          "en": "records",
+          "ko": "기록한다 · 여기서는 동사예요"
+        },
+        {
+          "en": "many individuals",
+          "ko": "많은 개인들"
+        },
+        {
+          "en": "who were not content with",
+          "ko": "~에 만족하지 못했던"
+        },
+        {
+          "en": "an existence",
+          "ko": "생활, 삶"
+        },
+        {
+          "en": "that offered them",
+          "ko": "그들에게 ~을 준"
+        },
+        {
+          "en": "little variety",
+          "ko": "변화(다양성)가 거의 없음"
+        },
+        {
+          "en": "a lack of psychic tension",
+          "ko": "마음의 긴장(자극)이 없음"
+        },
+        {
+          "en": "minimal challenge",
+          "ko": "최소한의 도전"
+        },
+        {
+          "en": "Allport",
+          "ko": "올포트 · 미국의 심리학자"
+        },
+        {
+          "en": "considers it normal",
+          "ko": "~을 정상이라고 여긴다"
+        },
+        {
+          "en": "to be pulled forward",
+          "ko": "앞으로 이끌려 가는 것"
+        },
+        {
+          "en": "by a vision of the future",
+          "ko": "미래에 대한 비전(그려 보는 모습)에 의해"
+        },
+        {
+          "en": "that awakened",
+          "ko": "~을 일깨운"
+        },
+        {
+          "en": "within persons",
+          "ko": "사람들 내면에서"
+        },
+        {
+          "en": "their drive to",
+          "ko": "~하려는 그들의 욕구"
+        },
+        {
+          "en": "Gordon",
+          "ko": "고든 (이름)"
+        },
+        {
+          "en": "individuals",
+          "ko": "개인들"
+        },
+        {
+          "en": "content",
+          "ko": "만족하는"
+        },
+        {
+          "en": "offered",
+          "ko": "주었다"
+        },
+        {
+          "en": "little",
+          "ko": "거의 없는"
+        },
+        {
+          "en": "variety",
+          "ko": "변화, 다양성"
+        },
+        {
+          "en": "lack",
+          "ko": "부족, 없음"
+        },
+        {
+          "en": "psychic",
+          "ko": "마음의, 정신적인"
+        },
+        {
+          "en": "tension",
+          "ko": "긴장"
+        },
+        {
+          "en": "challenge",
+          "ko": "도전"
+        },
+        {
+          "en": "considers",
+          "ko": "여기다"
+        },
+        {
+          "en": "normal",
+          "ko": "정상적인"
+        },
+        {
+          "en": "pulled",
+          "ko": "끌린"
+        },
+        {
+          "en": "forward",
+          "ko": "앞으로"
+        },
+        {
+          "en": "vision",
+          "ko": "비전, 그려 보는 모습"
+        },
+        {
+          "en": "awakened",
+          "ko": "일깨웠다"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "persons",
+          "ko": "사람들"
+        },
+        {
+          "en": "drive",
+          "ko": "욕구"
+        }
+      ],
+      "slashes": [
+        "Gordon Allport argued",
+        "many individuals",
+        "with an existence",
+        "little variety,",
+        "psychic tension,"
+      ],
+      "roles": [
+        {
+          "text": "Gordon Allport",
+          "role": "S"
+        },
+        {
+          "text": "argued",
+          "role": "V"
+        },
+        {
+          "text": "history",
+          "role": "S"
+        },
+        {
+          "text": "records",
+          "role": "V"
+        },
+        {
+          "text": "many individuals",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "who were not content with an existence that offered them little variety, a lack of psychic tension, and minimal challenge"
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 둘째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "Allport considers it normal to be pulled forward by a vision of the future that awakened within persons their drive to ________."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "drive는 여기서 '운전'이 아니라 '욕구'예요. pulled forward는 '앞으로 이끌려 가다'예요.",
+              "drive는 여기서 '운전'이 아니라 '욕구'예요. pulled forward는 '앞으로 이끌려 가다'예요."
+            ],
+            "explain": "considers it normal to be pulled forward는 '앞으로 이끌려 가는 걸 정상이라고 여긴다'예요. 미래에 대한 비전이 마음속 ____하려는 욕구(drive)를 깨운대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "considers it normal to be pulled forward는 '앞으로 이끌려 가는 걸 정상이라고 여긴다'예요. 미래에 대한 비전이 마음속 ____하려는 욕구(drive)를 깨운대요.",
+              "o2": "considers it normal to be pulled forward는 '앞으로 이끌려 가는 걸 정상이라고 여긴다'예요. 미래에 대한 비전이 마음속 ____하려는 욕구(drive)를 깨운대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "미래를 그려 보면 사람은 ____하려는 마음을 잃는다"
+            },
+            {
+              "id": "o1",
+              "label": "미래에 대한 비전이 ____하려는 욕구를 깨워 사람을 앞으로 이끄는 게 정상이다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "미래를 걱정하며 ____하려는 마음을 누르는 게 정상이다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "Allport considers it normal to be pulled forward by a vision of the future that awakened within persons their drive to ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "normal",
+            "pulled forward",
+            "drive",
+            "________"
+          ],
+          "tips": [
+            {
+              "label": "consider it + 형용사 + to ~",
+              "text": "'~하는 것을 (형용사)라고 여기다'예요. it은 뒤의 to ~를 대신 받아요.",
+              "mark": "considers it normal"
+            },
+            {
+              "label": "drive",
+              "text": "'운전하다'만 있는 게 아니에요. 명사로 '욕구, 충동'이에요. drive to ~ = ~하려는 욕구.",
+              "mark": "drive"
+            }
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 사람들이 어떤 욕구를 가졌다는 건지 생각하며 문장 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "Allport considers it normal to be pulled forward by a vision of the future that awakened within persons their drive to ________.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Gordon Allport",
+            "argued",
+            "history",
+            "records"
+          ],
+          "answers": [
+            "Gordon Allport",
+            "argued"
+          ],
+          "roles": {
+            "Gordon Allport": "S",
+            "argued": "V"
+          },
+          "brief": {
+            "ask": "먼저 바깥 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "history": "그건 that 뒤, 주장한 내용 안의 주어예요. 먼저 바깥 문장을 봐요.",
+              "records": "그건 that 뒤, 주장한 내용 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Gordon Allport, 동사는 argued예요. that 뒤가 주장한 내용이에요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s1_content",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "who 뒤를 봐요. 역사에 기록된 많은 사람들은 어떤 사람들이었대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "be content with는 '~에 만족하다'예요. 앞에 not이 있어요.",
+              "be content with는 '~에 만족하다'예요. 앞에 not이 있어요."
+            ],
+            "explain": "'not content with an existence that offered them little variety … and minimal challenge', 변화(variety)도 도전(challenge)도 거의 없는 삶에 만족하지 못했대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'not content with an existence that offered them little variety … and minimal challenge', 변화(variety)도 도전(challenge)도 거의 없는 삶에 만족하지 못했대요.",
+              "o2": "'not content with an existence that offered them little variety … and minimal challenge', 변화(variety)도 도전(challenge)도 거의 없는 삶에 만족하지 못했대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "변화도 도전도 거의 없는 삶에 만족하지 못한 사람들",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "조용하고 편안한 삶에 만족한 사람들"
+            },
+            {
+              "id": "o2",
+              "label": "너무 많은 도전에 지친 사람들"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "not content with",
+            "little variety",
+            "minimal challenge"
+          ],
+          "tips": [
+            {
+              "label": "be content with",
+              "text": "content는 '내용'만 있는 게 아니에요. be content with ~ = ~에 만족하다. not content with = 만족하지 못하는.",
+              "mark": "content"
+            }
+          ]
+        },
+        {
+          "id": "s1_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "변화도 도전도 없는 삶에 만족 못 한 사람이 많았대요. 칠판 왼쪽에 적어 둘게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음",
+                  "fresh": true
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": []
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Allport considers it normal to be pulled forward by a vision of the future that awakened within persons their drive to ________.",
+      "model_translation": "Allport는 인간의 내면에서 ________ 욕구를 일깨운 미래에 대한 통찰력에 의해 앞으로 나아가게 되는 것이 정상이라고 여긴다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Allport",
+          "ko": "올포트 · 미국의 심리학자"
+        },
+        {
+          "en": "considers it normal",
+          "ko": "~을 정상이라고 여긴다"
+        },
+        {
+          "en": "to be pulled forward",
+          "ko": "앞으로 이끌려 가는 것"
+        },
+        {
+          "en": "by a vision of the future",
+          "ko": "미래에 대한 비전(그려 보는 모습)에 의해"
+        },
+        {
+          "en": "that awakened",
+          "ko": "~을 일깨운"
+        },
+        {
+          "en": "within persons",
+          "ko": "사람들 내면에서"
+        },
+        {
+          "en": "their drive to",
+          "ko": "~하려는 그들의 욕구"
+        },
+        {
+          "en": "considers",
+          "ko": "여기다"
+        },
+        {
+          "en": "it",
+          "ko": "그것 (뒤의 to ~를 받음)"
+        },
+        {
+          "en": "normal",
+          "ko": "정상적인, 보통의"
+        },
+        {
+          "en": "a vision",
+          "ko": "비전, 그려 보는 모습"
+        },
+        {
+          "en": "persons",
+          "ko": "사람들"
+        },
+        {
+          "en": "pulled",
+          "ko": "끌린"
+        },
+        {
+          "en": "forward",
+          "ko": "앞으로"
+        },
+        {
+          "en": "vision",
+          "ko": "비전, 그려 보는 모습"
+        },
+        {
+          "en": "awakened",
+          "ko": "일깨웠다"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "drive",
+          "ko": "욕구"
+        }
+      ],
+      "slashes": [
+        "considers it normal",
+        "pulled forward",
+        "of the future",
+        "within persons"
+      ],
+      "roles": [
+        {
+          "text": "Allport",
+          "role": "S"
+        },
+        {
+          "text": "considers",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "O"
+        },
+        {
+          "text": "normal",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that awakened within persons their drive to ________"
+      ],
+      "steps": [
+        {
+          "id": "s2_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Allport",
+            "considers",
+            "it",
+            "normal",
+            "a vision",
+            "persons"
+          ],
+          "answers": [
+            "Allport",
+            "considers",
+            "it",
+            "normal"
+          ],
+          "roles": {
+            "Allport": "S",
+            "considers": "V",
+            "it": "O",
+            "normal": "C"
+          },
+          "brief": {
+            "ask": "빈칸 문장이에요. 주어(S), 동사(V), 목적어(O), 보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "a vision": "그건 by(~에 의해) 뒤 덩어리예요.",
+              "persons": "그건 within(~ 안에서) 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 Allport, 동사 considers, 목적어 it, 보어 normal이에요. it은 뒤의 to be pulled forward를 받아요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s2_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸은 Allport가 정상(normal)이라고 본 욕구예요. 칠판 왼쪽 삶과 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not content with(만족 못 함)와 pulled forward(앞으로 이끌림)를 나란히 봐요.",
+              "not content with(만족 못 함)와 pulled forward(앞으로 이끌림)를 나란히 봐요."
+            ],
+            "explain": "사람들은 변화 없는 삶에 만족 못 하고, 미래에 이끌려 앞으로 나아간대요. 빈칸 욕구는 왼쪽 삶과 반대 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "사람들은 변화 없는 삶에 만족 못 하고, 미래에 이끌려 앞으로 나아간대요. 빈칸 욕구는 왼쪽 삶과 반대 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 — 변화 없는 삶에 머무르려는 욕구"
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 — 그런 삶에서 벗어나 앞으로 나아가려는 욕구",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "normal",
+            "pulled forward"
+          ],
+          "signs": [
+            {
+              "text": "normal",
+              "sign": "+"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": []
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s2_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 Allport가 좋게 본(+) 욕구예요. 이 욕구를 다른 말로 한 표현을 칠판 오른쪽에 모으며 읽어 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": [
+                {
+                  "text": "pulled forward",
+                  "ko": "앞으로 이끌림",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "pulled forward"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "He suggests that people possess a need to invent motives and purposes that would consume their inner energies.",
+      "model_translation": "그는 사람들이 내면의 에너지를 다 쓸 동기와 목적을 만들어 내려는 욕구를 지니고 있다고 말한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "people possess a need",
+          "ko": "사람들이 욕구를 가지고 있다"
+        },
+        {
+          "en": "He suggests",
+          "ko": "그는 말한다"
+        },
+        {
+          "en": "He",
+          "ko": "그(Allport)는"
+        },
+        {
+          "en": "suggests",
+          "ko": "말한다, 제안한다"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "possess",
+          "ko": "가지고 있다"
+        },
+        {
+          "en": "a need",
+          "ko": "욕구, 필요"
+        },
+        {
+          "en": "to invent",
+          "ko": "만들어 내려는"
+        },
+        {
+          "en": "motives and purposes",
+          "ko": "동기와 목적"
+        },
+        {
+          "en": "invent motives and purposes",
+          "ko": "동기와 목적을 만들어 내다"
+        },
+        {
+          "en": "that would consume",
+          "ko": "~을 다 쓰게 할"
+        },
+        {
+          "en": "their inner energies",
+          "ko": "그들 내면의 에너지"
+        },
+        {
+          "en": "invent",
+          "ko": "만들어 내다"
+        },
+        {
+          "en": "motives",
+          "ko": "동기"
+        },
+        {
+          "en": "consume",
+          "ko": "다 쓰다, 소비하다"
+        },
+        {
+          "en": "inner",
+          "ko": "내면의"
+        },
+        {
+          "en": "energies",
+          "ko": "에너지"
+        }
+      ],
+      "slashes": [
+        "He suggests",
+        "possess a need",
+        "motives and purposes"
+      ],
+      "roles": [
+        {
+          "text": "He",
+          "role": "S"
+        },
+        {
+          "text": "suggests",
+          "role": "V"
+        },
+        {
+          "text": "people",
+          "role": "S"
+        },
+        {
+          "text": "possess",
+          "role": "V"
+        },
+        {
+          "text": "a need",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that would consume their inner energies"
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "He",
+            "suggests",
+            "people",
+            "possess",
+            "a need"
+          ],
+          "answers": [
+            "He",
+            "suggests"
+          ],
+          "roles": {
+            "He": "S",
+            "suggests": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "people": "그건 that 뒤, 말한 내용 안의 주어예요. 먼저 바깥 문장을 봐요.",
+              "possess": "그건 that 뒤, 말한 내용 안의 동사예요.",
+              "a need": "그건 that 뒤, 말한 내용 안의 목적어예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "바깥 문장은 주어 He, 동사 suggests예요. that 뒤가 말한 내용이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "consume",
+              "text": "'먹다, 소비하다'예요. 여기선 내면의 에너지를 '다 쏟게 하는'이에요.",
+              "mark": "consume"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "He suggests",
+            "people possess a need",
+            "invent motives and purposes"
+          ],
+          "answers": [
+            "He suggests",
+            "people possess a need",
+            "invent motives and purposes"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "He suggests",
+                "ko": "그는 말한다"
+              },
+              " ",
+              {
+                "en": "people possess a need",
+                "ko": "사람들이 욕구를 가지고 있다고"
+              },
+              " — ",
+              {
+                "en": "invent motives and purposes",
+                "ko": "동기와 목적을 만들어 내려는"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "He suggests that people possess a need to invent motives and purposes.",
+          "tips": [
+            {
+              "label": "consume",
+              "text": "'먹다, 소비하다'예요. 여기선 내면의 에너지를 '다 쏟게 하는'이에요.",
+              "mark": "consume"
+            }
+          ]
+        },
+        {
+          "id": "s3_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'invent motives and purposes(동기와 목적을 만들어 내다)'는 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "people possess a need to invent ~ — 사람들에게 있는 욕구(need)예요.",
+              "people possess a need to invent ~ — 사람들에게 있는 욕구(need)예요."
+            ],
+            "explain": "'people possess a need to invent motives and purposes', 사람에게는 스스로 동기와 목적을 만들어 내려는 욕구가 있대요. 욕구 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'people possess a need to invent motives and purposes', 사람에게는 스스로 동기와 목적을 만들어 내려는 욕구가 있대요. 욕구 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 만족 못 하는 삶"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 사람들의 욕구",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "need",
+            "invent motives and purposes"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": [
+                {
+                  "text": "pulled forward",
+                  "ko": "앞으로 이끌림"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "invent motives and purposes"
+              ],
+              "left": "왼쪽 · 만족 못 하는 삶",
+              "right": "오른쪽 · 사람들의 욕구"
+            }
+          },
+          "tips": [
+            {
+              "label": "consume",
+              "text": "'먹다, 소비하다'예요. 여기선 내면의 에너지를 '다 쏟게 하는'이에요.",
+              "mark": "consume"
+            }
+          ]
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "need(욕구)는 앞 문장의 drive와 같은 말이에요. 스스로 동기와 목적을 만들어 내려는 욕구래요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "need"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": [
+                {
+                  "text": "pulled forward",
+                  "ko": "앞으로 이끌림"
+                },
+                {
+                  "text": "invent motives and purposes",
+                  "ko": "동기와 목적을 만들어 냄",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "😑",
+                "en": "not content with little variety",
+                "ko": "변화도 도전도 없는 삶에 만족 못 한 사람이 많았어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 2~3",
+                "icon": "🔭",
+                "en": "drive to ____ · invent motives and purposes",
+                "ko": "미래가 ____하려는 욕구를 깨워요 — 사람은 스스로 동기와 목적을 만들어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Similarly, Erich Fromm proposed a need on the part of humans to rise above the roles of passive creatures in an accidental if not random world.",
+      "model_translation": "마찬가지로 Erich Fromm은 인간에게는 마구잡이는 아니더라도 우연한 세계에서 수동적인 피조물의 역할을 넘어서고 싶은 욕구가 있다고 제시했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Similarly",
+          "ko": "마찬가지로"
+        },
+        {
+          "en": "Erich Fromm",
+          "ko": "에리히 프롬 · 독일 출신의 심리학자"
+        },
+        {
+          "en": "proposed",
+          "ko": "제시했다"
+        },
+        {
+          "en": "a need",
+          "ko": "욕구"
+        },
+        {
+          "en": "on the part of humans",
+          "ko": "인간 쪽의, 인간에게"
+        },
+        {
+          "en": "humans",
+          "ko": "인간"
+        },
+        {
+          "en": "to rise above",
+          "ko": "~을 넘어서려는"
+        },
+        {
+          "en": "rise above",
+          "ko": "~을 넘어서다"
+        },
+        {
+          "en": "the roles",
+          "ko": "역할"
+        },
+        {
+          "en": "passive creatures",
+          "ko": "수동적인 피조물"
+        },
+        {
+          "en": "in an accidental if not random world",
+          "ko": "마구잡이는 아니더라도 우연한 세상에서"
+        },
+        {
+          "en": "accidental",
+          "ko": "우연한"
+        },
+        {
+          "en": "if not",
+          "ko": "~까지는 아니더라도"
+        },
+        {
+          "en": "random",
+          "ko": "마구잡이의, 무작위의"
+        },
+        {
+          "en": "Erich",
+          "ko": "에리히 (이름)"
+        },
+        {
+          "en": "Fromm",
+          "ko": "프롬 (이름)"
+        },
+        {
+          "en": "part",
+          "ko": "쪽, 부분"
+        },
+        {
+          "en": "rise",
+          "ko": "오르다 · rise above = 넘어서다"
+        },
+        {
+          "en": "roles",
+          "ko": "역할"
+        },
+        {
+          "en": "passive",
+          "ko": "수동적인"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        }
+      ],
+      "slashes": [
+        "Similarly,",
+        "proposed a need",
+        "on the part of humans",
+        "to rise above",
+        "passive creatures"
+      ],
+      "roles": [
+        {
+          "text": "Erich Fromm",
+          "role": "S"
+        },
+        {
+          "text": "proposed",
+          "role": "V"
+        },
+        {
+          "text": "a need",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Erich Fromm",
+            "proposed",
+            "a need",
+            "humans",
+            "passive creatures"
+          ],
+          "answers": [
+            "Erich Fromm",
+            "proposed",
+            "a need"
+          ],
+          "roles": {
+            "Erich Fromm": "S",
+            "proposed": "V",
+            "a need": "O"
+          },
+          "brief": {
+            "ask": "주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "humans": "그건 on the part of(~ 쪽의) 뒤 덩어리예요.",
+              "passive creatures": "그건 the roles of 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 Erich Fromm, 동사 proposed, 목적어 a need예요. a need는 뒤의 to rise above와 이어져요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_rise",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Similarly(마찬가지로) — Fromm도 비슷한 말을 해요. 인간에게 어떤 욕구가 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "rise above는 '~을 넘어서다'예요. a need ~ to rise above로 이어서 읽어요.",
+              "rise above는 '~을 넘어서다'예요. a need ~ to rise above로 이어서 읽어요."
+            ],
+            "explain": "'a need … to rise above the roles of passive creatures', 수동적인 피조물의 역할을 넘어서고 싶어 한대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'a need … to rise above the roles of passive creatures', 수동적인 피조물의 역할을 넘어서고 싶어 한대요.",
+              "o2": "'a need … to rise above the roles of passive creatures', 수동적인 피조물의 역할을 넘어서고 싶어 한대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "수동적인 역할을 잘 해내려는 욕구"
+            },
+            {
+              "id": "o1",
+              "label": "수동적인 피조물의 역할을 넘어서려는 욕구",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "우연한 세상을 피해 숨으려는 욕구"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Similarly",
+            "rise above",
+            "passive creatures"
+          ],
+          "tips": [
+            {
+              "label": "a need … to ~",
+              "text": "need와 to ~ 사이에 on the part of humans가 끼어 있어요. a need to rise above = 넘어서려는 욕구.",
+              "mark": "on the part of humans"
+            },
+            {
+              "label": "A if not B",
+              "text": "'B까지는 아니더라도 A'예요. accidental if not random = 마구잡이는 아니더라도 우연한.",
+              "mark": "if not"
+            }
+          ]
+        },
+        {
+          "id": "s4_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "passive creatures(수동적인 피조물)는 왼쪽, rise above(넘어서다)는 오른쪽이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                },
+                {
+                  "text": "passive creatures",
+                  "ko": "수동적인 피조물",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": [
+                {
+                  "text": "pulled forward",
+                  "ko": "앞으로 이끌림"
+                },
+                {
+                  "text": "invent motives and purposes",
+                  "ko": "동기와 목적을 만들어 냄"
+                },
+                {
+                  "text": "rise above",
+                  "ko": "넘어서다",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "To him, humans are driven to transcend the state of merely having been created; instead, humans seek to become the creators, the active shapers of their own destiny.",
+      "model_translation": "그에게, 인간은 단지 창조된 상태를 넘어서도록 이끌리지만, 대신에, 창조자, 즉 자신의 운명을 만드는 적극적인 행위자가 되려고 노력하는 존재이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "To him",
+          "ko": "그(Fromm)에게"
+        },
+        {
+          "en": "humans",
+          "ko": "인간"
+        },
+        {
+          "en": "are driven",
+          "ko": "이끌린다, 내몰린다"
+        },
+        {
+          "en": "to transcend",
+          "ko": "넘어서도록"
+        },
+        {
+          "en": "transcend",
+          "ko": "초월하다, 넘어서다"
+        },
+        {
+          "en": "the state",
+          "ko": "상태"
+        },
+        {
+          "en": "merely having been created",
+          "ko": "그저 창조된 것"
+        },
+        {
+          "en": "instead",
+          "ko": "대신에"
+        },
+        {
+          "en": "seek",
+          "ko": "~하려고 애쓰다"
+        },
+        {
+          "en": "to become the creators",
+          "ko": "창조자가 되기를"
+        },
+        {
+          "en": "the creators",
+          "ko": "창조자"
+        },
+        {
+          "en": "the active shapers of their own destiny",
+          "ko": "자기 운명을 만드는 적극적인 사람"
+        },
+        {
+          "en": "active shapers of their own destiny",
+          "ko": "자기 운명을 만드는 적극적인 사람"
+        },
+        {
+          "en": "driven",
+          "ko": "이끌린"
+        },
+        {
+          "en": "state",
+          "ko": "상태"
+        },
+        {
+          "en": "merely",
+          "ko": "그저, 단지"
+        },
+        {
+          "en": "having",
+          "ko": "가지고 있는"
+        },
+        {
+          "en": "created",
+          "ko": "창조된"
+        },
+        {
+          "en": "creators",
+          "ko": "창조자"
+        },
+        {
+          "en": "shapers",
+          "ko": "만드는 사람"
+        },
+        {
+          "en": "destiny",
+          "ko": "운명"
+        }
+      ],
+      "slashes": [
+        "To him,",
+        "are driven",
+        "merely having been created;",
+        "instead,",
+        "the creators,"
+      ],
+      "roles": [
+        {
+          "text": "humans … humans",
+          "role": "S"
+        },
+        {
+          "text": "are driven",
+          "role": "V"
+        },
+        {
+          "text": "seek",
+          "role": "V"
+        },
+        {
+          "text": "to become the creators",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "To him",
+            "humans",
+            "are driven",
+            "the state"
+          ],
+          "answers": [
+            "humans",
+            "are driven"
+          ],
+          "roles": {
+            "humans": "S",
+            "are driven": "V"
+          },
+          "brief": {
+            "ask": "세미콜론(;) 앞에서 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "To him": "그건 '그에게는'이라고 앞에 붙은 말이에요.",
+              "the state": "그건 to transcend(넘어서도록) 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 humans, 동사 are driven이에요. 세미콜론(;) 뒤 instead 문장도 주어는 humans, 동사는 seek예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_become",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "instead(대신에) 뒤를 봐요. 인간은 무엇이 되려고 한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "seek to become은 '~이 되려고 애쓰다'예요. 콤마(,) 뒤가 the creators를 다시 풀어 줘요.",
+              "seek to become은 '~이 되려고 애쓰다'예요. 콤마(,) 뒤가 the creators를 다시 풀어 줘요."
+            ],
+            "explain": "'seek to become the creators, the active shapers of their own destiny', 창조자, 즉 자기 운명을 만드는 적극적인 사람이 되려 한대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'seek to become the creators, the active shapers of their own destiny', 창조자, 즉 자기 운명을 만드는 적극적인 사람이 되려 한대요.",
+              "o2": "'seek to become the creators, the active shapers of their own destiny', 창조자, 즉 자기 운명을 만드는 적극적인 사람이 되려 한대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "창조된 그대로 머무는 존재"
+            },
+            {
+              "id": "o1",
+              "label": "창조자, 자기 운명을 스스로 만드는 사람",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "남의 운명을 이끄는 지도자"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "instead",
+            "the creators",
+            "active shapers",
+            "own destiny"
+          ],
+          "tips": [
+            {
+              "label": "A, B (같은 말 풀어 쓰기)",
+              "text": "콤마(,) 뒤 B가 앞의 A를 다시 풀어 줘요. the creators, the active shapers ~ = 창조자, 즉 ~을 만드는 사람.",
+              "mark": "the active shapers"
+            },
+            {
+              "label": "be driven to ~",
+              "text": "'~하도록 이끌리다, 내몰리다'예요.",
+              "mark": "are driven"
+            }
+          ]
+        },
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그저 창조된 상태는 왼쪽, 창조자·자기 운명을 만드는 사람은 오른쪽이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                },
+                {
+                  "text": "passive creatures",
+                  "ko": "수동적인 피조물"
+                },
+                {
+                  "text": "merely having been created",
+                  "ko": "그저 창조된 상태",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": [
+                {
+                  "text": "pulled forward",
+                  "ko": "앞으로 이끌림"
+                },
+                {
+                  "text": "invent motives and purposes",
+                  "ko": "동기와 목적을 만들어 냄"
+                },
+                {
+                  "text": "rise above",
+                  "ko": "넘어서다"
+                },
+                {
+                  "text": "the creators",
+                  "ko": "창조자",
+                  "fresh": true
+                },
+                {
+                  "text": "active shapers of their own destiny",
+                  "ko": "자기 운명을 만드는 적극적인 사람",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "😑",
+                "en": "not content with little variety",
+                "ko": "변화도 도전도 없는 삶에 만족 못 한 사람이 많았어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2~3",
+                "icon": "🔭",
+                "en": "drive to ____ · invent motives and purposes",
+                "ko": "미래가 ____하려는 욕구를 깨워요 — 사람은 스스로 동기와 목적을 만들어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🎨",
+                "en": "rise above passive creatures → the creators",
+                "ko": "수동적인 피조물을 넘어 자기 운명을 만드는 창조자가 되려 해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Rising above the passive and accidental nature of existence, humans generate their own purposes and thereby provide themselves with a true basis of freedom.",
+      "model_translation": "존재의 수동적이고 우연한 본질을 넘어서서, 인간은 자신만의 목적을 만들어 내고 그렇게 함으로써 자신에게 자유의 진정한 토대를 제공한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Rising above",
+          "ko": "~을 넘어서면서"
+        },
+        {
+          "en": "the passive and accidental nature",
+          "ko": "수동적이고 우연한 본질"
+        },
+        {
+          "en": "of existence",
+          "ko": "존재의"
+        },
+        {
+          "en": "humans",
+          "ko": "인간은"
+        },
+        {
+          "en": "generate",
+          "ko": "만들어 낸다"
+        },
+        {
+          "en": "their own purposes",
+          "ko": "자기 자신의 목적"
+        },
+        {
+          "en": "generate their own purposes",
+          "ko": "자기 목적을 만들어 내다"
+        },
+        {
+          "en": "and thereby",
+          "ko": "그리고 그렇게 함으로써"
+        },
+        {
+          "en": "provide",
+          "ko": "준다"
+        },
+        {
+          "en": "themselves",
+          "ko": "자신에게"
+        },
+        {
+          "en": "with a true basis of freedom",
+          "ko": "자유의 진정한 토대를"
+        },
+        {
+          "en": "nature",
+          "ko": "본질, 성질"
+        },
+        {
+          "en": "Rising",
+          "ko": "넘어서는"
+        },
+        {
+          "en": "passive",
+          "ko": "수동적인"
+        },
+        {
+          "en": "accidental",
+          "ko": "우연한"
+        },
+        {
+          "en": "thereby",
+          "ko": "그렇게 함으로써"
+        },
+        {
+          "en": "basis",
+          "ko": "토대, 기초"
+        },
+        {
+          "en": "freedom",
+          "ko": "자유"
+        }
+      ],
+      "slashes": [
+        "nature of existence,",
+        "humans generate",
+        "their own purposes",
+        "provide themselves"
+      ],
+      "roles": [
+        {
+          "text": "humans",
+          "role": "S"
+        },
+        {
+          "text": "generate",
+          "role": "V"
+        },
+        {
+          "text": "their own purposes",
+          "role": "O"
+        },
+        {
+          "text": "provide",
+          "role": "V"
+        },
+        {
+          "text": "themselves",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "the passive and accidental nature",
+            "humans",
+            "generate",
+            "their own purposes",
+            "provide"
+          ],
+          "answers": [
+            "humans",
+            "generate",
+            "their own purposes",
+            "provide"
+          ],
+          "roles": {
+            "humans": "S",
+            "generate": "V",
+            "their own purposes": "O",
+            "provide": "V"
+          },
+          "brief": {
+            "ask": "콤마 뒤에서 주어(S), 동사(V) 둘, 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "the passive and accidental nature": "그건 콤마 앞 Rising above(~을 넘어서면서) 덩어리 안의 말이에요. 주어가 아니에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 humans, 동사 generate와 provide, generate의 목적어는 their own purposes예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "Rising above는 앞의 rise above를 또 말해요. 자기 목적을 스스로 만들어 내고, 그래서 자유를 얻는대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "Rising above",
+            "generate",
+            "freedom"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                },
+                {
+                  "text": "passive creatures",
+                  "ko": "수동적인 피조물"
+                },
+                {
+                  "text": "merely having been created",
+                  "ko": "그저 창조된 상태"
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": [
+                {
+                  "text": "pulled forward",
+                  "ko": "앞으로 이끌림"
+                },
+                {
+                  "text": "invent motives and purposes",
+                  "ko": "동기와 목적을 만들어 냄"
+                },
+                {
+                  "text": "rise above",
+                  "ko": "넘어서다"
+                },
+                {
+                  "text": "the creators",
+                  "ko": "창조자"
+                },
+                {
+                  "text": "active shapers of their own destiny",
+                  "ko": "자기 운명을 만드는 적극적인 사람"
+                },
+                {
+                  "text": "generate their own purposes",
+                  "ko": "자기 목적을 만들어 냄",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "thereby",
+              "text": "'그렇게 함으로써'예요. 앞의 일 덕분에 뒤의 일이 생겨요.",
+              "mark": "thereby"
+            }
+          ]
+        },
+        {
+          "id": "s6_what",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸 문장으로 돌아가요. 칠판 오른쪽 말을 보면, 빈칸에는 어떤 욕구가 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 오른쪽의 creators, active shapers of their own destiny를 봐요.",
+              "칠판 오른쪽의 creators, active shapers of their own destiny를 봐요."
+            ],
+            "explain": "사람은 수동적인 삶을 넘어 창조자, 자기 운명을 만드는 사람이 되려 한대요. 빈칸 욕구도 그 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "사람은 수동적인 삶을 넘어 창조자, 자기 운명을 만드는 사람이 되려 한대요. 빈칸 욕구도 그 말이에요.",
+              "o2": "사람은 수동적인 삶을 넘어 창조자, 자기 운명을 만드는 사람이 되려 한대요. 빈칸 욕구도 그 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "주어진 대로 조용히 살려는 욕구"
+            },
+            {
+              "id": "o1",
+              "label": "자기 삶을 스스로 만들어 가려는 욕구",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "남에게 인정받으려는 욕구"
+            }
+          ],
+          "method": 1,
+          "display": "Allport considers it normal to be pulled forward by a vision of the future that awakened within persons their drive to ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "drive",
+            "________"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                },
+                {
+                  "text": "passive creatures",
+                  "ko": "수동적인 피조물"
+                },
+                {
+                  "text": "merely having been created",
+                  "ko": "그저 창조된 상태"
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": [
+                {
+                  "text": "pulled forward",
+                  "ko": "앞으로 이끌림"
+                },
+                {
+                  "text": "invent motives and purposes",
+                  "ko": "동기와 목적을 만들어 냄"
+                },
+                {
+                  "text": "rise above",
+                  "ko": "넘어서다"
+                },
+                {
+                  "text": "the creators",
+                  "ko": "창조자"
+                },
+                {
+                  "text": "active shapers of their own destiny",
+                  "ko": "자기 운명을 만드는 적극적인 사람"
+                },
+                {
+                  "text": "generate their own purposes",
+                  "ko": "자기 목적을 만들어 냄"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s6_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판 오른쪽 말(creators, active shapers of their own destiny)을 다른 말로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "groups",
+            "title": "만족 못 하는 삶 ↔ 욕구",
+            "left": {
+              "label": "만족 못 하는 삶 (not content with)",
+              "words": [
+                {
+                  "text": "little variety",
+                  "ko": "변화가 거의 없음"
+                },
+                {
+                  "text": "minimal challenge",
+                  "ko": "최소한의 도전"
+                },
+                {
+                  "text": "passive creatures",
+                  "ko": "수동적인 피조물"
+                },
+                {
+                  "text": "merely having been created",
+                  "ko": "그저 창조된 상태"
+                }
+              ]
+            },
+            "right": {
+              "label": "사람들의 욕구 (drive)",
+              "words": [
+                {
+                  "text": "pulled forward",
+                  "ko": "앞으로 이끌림"
+                },
+                {
+                  "text": "invent motives and purposes",
+                  "ko": "동기와 목적을 만들어 냄"
+                },
+                {
+                  "text": "rise above",
+                  "ko": "넘어서다"
+                },
+                {
+                  "text": "the creators",
+                  "ko": "창조자"
+                },
+                {
+                  "text": "active shapers of their own destiny",
+                  "ko": "자기 운명을 만드는 적극적인 사람"
+                },
+                {
+                  "text": "generate their own purposes",
+                  "ko": "자기 목적을 만들어 냄"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

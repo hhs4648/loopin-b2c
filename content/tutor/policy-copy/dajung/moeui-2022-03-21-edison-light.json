@@ -1,0 +1,318 @@
+{
+  "lesson": "moeui-2022-03-21-edison-light",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "밑줄 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_symbol": {
+      "ask": "에디슨의 전구는 흔히 무엇의 상징이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'a familiar symbol for …' 뒤를 봐요. symbol for는 '~의 상징'이에요.",
+        "'a familiar symbol for …' 뒤를 봐요. symbol for는 '~의 상징'이에요."
+      ],
+      "explain": "'a familiar symbol for that flash of inspired genius', 전구는 영감을 받은 천재성이 번쩍하는 순간의 상징이래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'a familiar symbol for that flash of inspired genius', 전구는 영감을 받은 천재성이 번쩍하는 순간의 상징이래요.",
+        "o2": "'a familiar symbol for that flash of inspired genius', 전구는 영감을 받은 천재성이 번쩍하는 순간의 상징이래요."
+      },
+      "from": "huv20k"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the exemplar": "그건 Besides being 뒤 덩어리예요. 주어가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Edison’s electric light(에디슨의 전깃불), 동사는 is, 보어는 worthy(가치가 있는)예요.",
+      "from": "1py5lar"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1x7aspi"
+    },
+    "s2_however": {
+      "ask": "에디슨의 전깃불은 무엇 때문에 연구할 가치가 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Besides(~ 외에도)와 문장 끝 for other reasons를 같이 봐요.",
+        "Besides(~ 외에도)와 문장 끝 for other reasons를 같이 봐요."
+      ],
+      "explain": "'Besides being the exemplar of the bright idea', 번뜩이는 아이디어의 본보기라는 것 말고도 'for other reasons' 연구할 가치가 있대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'Besides being the exemplar of the bright idea', 번뜩이는 아이디어의 본보기라는 것 말고도 'for other reasons' 연구할 가치가 있대요.",
+        "o2": "'Besides being the exemplar of the bright idea', 번뜩이는 아이디어의 본보기라는 것 말고도 'for other reasons' 연구할 가치가 있대요."
+      },
+      "from": "1ef220k"
+    },
+    "s2_next": {
+      "say": "그 다른 이유가 다음 문장부터 나와요. 글의 진짜 이야기는 여기서 시작해요.",
+      "from": "6fx28c"
+    },
+    "story_2": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_sv": {
+      "ask": "주어가 아주 길어요. 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the electrical system": "그건 of 뒤 덩어리예요. 주어를 꾸며요.",
+        "surrounded": "그건 that 덩어리 안의 동사예요. 앞의 system을 꾸며요.",
+        "the last two hundred years": "그건 from 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The technical and economic importance(기술적·경제적 중요성), 동사는 matches(~에 필적한다), 목적어는 that of any other invention이에요.",
+      "from": "5f9drf"
+    },
+    "s3_that": {
+      "ask": "that of any other invention의 that은 무엇을 대신할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "무엇과 무엇을 견주는지 생각해 봐요. 전깃불의 ○○와 다른 발명품의 ○○예요.",
+        "무엇과 무엇을 견주는지 생각해 봐요. 전깃불의 ○○와 다른 발명품의 ○○예요."
+      ],
+      "explain": "that은 주어의 핵심 명사를 다시 받아요. 전깃불의 중요성이 다른 발명품의 중요성에 필적한다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "that은 주어의 핵심 명사를 다시 받아요. 전깃불의 중요성이 다른 발명품의 중요성에 필적한다는 말이에요.",
+        "o2": "that은 주어의 핵심 명사를 다시 받아요. 전깃불의 중요성이 다른 발명품의 중요성에 필적한다는 말이에요."
+      },
+      "from": "19yzho0"
+    },
+    "s3_mean": {
+      "ask": "전깃불과 전기 시스템의 중요성은 어느 정도래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "동사 matches(~에 필적한다)와 any other invention(다른 어떤 발명품)을 같이 봐요.",
+        "동사 matches(~에 필적한다)와 any other invention(다른 어떤 발명품)을 같이 봐요."
+      ],
+      "explain": "'matches that of any other invention', 다른 어떤 발명품의 중요성과도 맞먹는대요. 적어도 지난 200년 동안의 발명품 중에서요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'matches that of any other invention', 다른 어떤 발명품의 중요성과도 맞먹는대요. 적어도 지난 200년 동안의 발명품 중에서요.",
+        "o2": "'matches that of any other invention', 다른 어떤 발명품의 중요성과도 맞먹는대요. 적어도 지난 200년 동안의 발명품 중에서요."
+      },
+      "point": "전깃불(과 전기 시스템)의 기술적·경제적 중요성 = 지난 200년의 어떤 발명품에도 필적",
+      "from": "1ay21tb"
+    },
+    "s4_sv": {
+      "ask": "아주 긴 문장이에요. 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "electric light and power": "그건 of 뒤 덩어리예요. 주어를 꾸며요.",
+        "the transformation of the world": "그건 in 뒤 덩어리예요.",
+        "electricity": "그건 in which 덩어리 안의 주어예요. 문장 전체의 주어가 아니에요.",
+        "was joined": "그건 in which 덩어리 안의 동사예요. 문장 전체의 동사가 아니에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 The introduction and spread(도입과 확산), 동사는 was, 보어는 one of the key steps(핵심 단계 중 하나)예요. in which 뒤는 앞의 post-industrial one을 꾸며요.",
+      "from": "1d1kold"
+    },
+    "s4_from_to": {
+      "ask": "세상이 어느 시대에서 어느 시대로 바뀌었대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "from A to B는 'A에서 B로'예요. from과 to 뒤를 찾아봐요.",
+        "from A to B는 'A에서 B로'예요. from과 to 뒤를 찾아봐요."
+      ],
+      "explain": "'from an industrial age … to a post-industrial one', 철·석탄·증기의 산업 시대를 지나 후기 산업 시대로 넘어갔대요. 전깃불이 그 핵심 단계였고요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'from an industrial age … to a post-industrial one', 철·석탄·증기의 산업 시대를 지나 후기 산업 시대로 넘어갔대요. 전깃불이 그 핵심 단계였고요.",
+        "o2": "'from an industrial age … to a post-industrial one', 철·석탄·증기의 산업 시대를 지나 후기 산업 시대로 넘어갔대요. 전깃불이 그 핵심 단계였고요."
+      },
+      "from": "7yyysk"
+    },
+    "s4_sort": {
+      "ask": "'electricity(전기)'는 칠판 어느 시대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "in which는 바로 앞의 post-industrial one을 꾸며요. 그 안에 electricity가 있어요.",
+        "in which는 바로 앞의 post-industrial one을 꾸며요. 그 안에 electricity가 있어요."
+      ],
+      "explain": "'a post-industrial one, in which electricity was joined by petroleum', 후기 산업 시대에 전기가 석유·경금속·내연 기관과 합쳐졌대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'a post-industrial one, in which electricity was joined by petroleum', 후기 산업 시대에 전기가 석유·경금속·내연 기관과 합쳐졌대요."
+      },
+      "from": "jbn1p0"
+    },
+    "s4_century": {
+      "say": "전기가 석유, 내연 기관과 함께 20세기의 모습을 만들었대요. 철·석탄·증기의 산업 시대 다음 시대예요.",
+      "point": "산업 시대(철·석탄·증기) → 후기 산업 시대(전기·석유·내연 기관 = 20세기의 모습), 전깃불은 그 전환의 핵심 단계",
+      "from": "zm3o2e"
+    },
+    "story_4": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s5_sv": {
+      "ask": "밑줄이 있는 마지막 문장이에요. 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "we": "그건 however 덩어리 안의 주어예요. 문장 전체의 주어가 아니에요.",
+        "may be": "그건 however 덩어리 안의 동사예요.",
+        "the twenty-first century": "그건 of 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Our own time(우리 자신의 시대), 동사는 carries, 목적어는 the stamp of this age예요. 밑줄이 바로 이 동사와 목적어예요.",
+      "from": "fq1d48"
+    },
+    "s5_this": {
+      "ask": "this age(이 시대)는 어느 시대를 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "this는 바로 앞 문장에서 찾아요. 앞 문장 끝에서 이야기한 시대예요.",
+        "this는 바로 앞 문장에서 찾아요. 앞 문장 끝에서 이야기한 시대예요."
+      ],
+      "explain": "this age는 앞 문장 끝의 post-industrial one이에요. 산업 시대는 그보다 앞선 시대이고, 21세기는 지금 우리 시대예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "this age는 앞 문장 끝의 post-industrial one이에요. 산업 시대는 그보다 앞선 시대이고, 21세기는 지금 우리 시대예요.",
+        "o2": "this age는 앞 문장 끝의 post-industrial one이에요. 산업 시대는 그보다 앞선 시대이고, 21세기는 지금 우리 시대예요."
+      },
+      "point": "this age = 앞 문장의 post-industrial one (전기·석유의 20세기)",
+      "from": "v7eu94"
+    },
+    "s5_however": {
+      "ask": "however dazzled we may be by … the twenty-first century는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "however + 형용사(dazzled) + 주어 + 동사는 '아무리 ~하더라도'예요.",
+        "however + 형용사(dazzled) + 주어 + 동사는 '아무리 ~하더라도'예요."
+      ],
+      "explain": "'however dazzled we may be', 우리가 아무리 감탄하더라도예요. 무엇에 감탄하는지는 by 뒤, 21세기의 전자·전산화·미디어의 경이예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'however dazzled we may be', 우리가 아무리 감탄하더라도예요. 무엇에 감탄하는지는 by 뒤, 21세기의 전자·전산화·미디어의 경이예요.",
+        "o2": "'however dazzled we may be', 우리가 아무리 감탄하더라도예요. 무엇에 감탄하는지는 by 뒤, 21세기의 전자·전산화·미디어의 경이예요."
+      },
+      "from": "dm23fp"
+    },
+    "s5_underline": {
+      "ask": "드디어 밑줄이에요. 'Our own time still largely carries the stamp of this age'는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "stamp는 도장 자국이에요. still(여전히)과 this age(앞 문장의 시대)를 이어 봐요.",
+        "stamp는 도장 자국이에요. still(여전히)과 this age(앞 문장의 시대)를 이어 봐요."
+      ],
+      "explain": "도장 자국처럼 그 시대의 흔적을 여전히 지니고 있다는 말이에요. 21세기 기술에 감탄해도, 우리 시대는 전기가 만든 20세기의 영향을 받고 있어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "도장 자국처럼 그 시대의 흔적을 여전히 지니고 있다는 말이에요. 21세기 기술에 감탄해도, 우리 시대는 전기가 만든 20세기의 영향을 받고 있어요.",
+        "o2": "도장 자국처럼 그 시대의 흔적을 여전히 지니고 있다는 말이에요. 21세기 기술에 감탄해도, 우리 시대는 전기가 만든 20세기의 영향을 받고 있어요."
+      },
+      "point": "carries the stamp of this age = 21세기에도 여전히 20세기 전기 시대(앞선 전기 혁신)의 영향을 받고 있다",
+      "from": "a3zqdx"
+    },
+    "s5_go": {
+      "say": "이 뜻을 다른 말로 바꿔 쓴 보기를 골라 봐요. this age가 어느 시대인지 꼭 기억해요.",
+      "from": "dp8g4e"
+    }
+  },
+  "exam": {
+    "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고, this age가 어느 시대이고 우리 시대와 어떤 관계인지 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! this age는 전기가 이끈 20세기 후기 산업 시대예요. 우리 시대가 여전히 그 흔적을 지닌다는 건, 앞선 전기 혁신의 영향 아래 있다는 뜻이에요.",
+    "final_wrong": "정답은 ④예요. 우리 시대는 여전히 앞선 전기 혁신(20세기 전기 시대)의 영향 아래 있다는 말이에요.",
+    "option_feedback": {
+      "1": "여러 분야의 아이디어를 합친다는 이야기는 글에 없어요.",
+      "2": "this age는 산업 시대가 아니라 그다음의 전기 시대예요. 그리고 흔적을 지닌다고 했지, 극복한다고 하지 않았어요.",
+      "3": "학문적 탐구의 이론적 배경 이야기는 글에 없어요.",
+      "5": "미래 세대를 위한 자원 이야기는 글에 없어요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 11%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "②는 '산업 시대의 한계를 극복하려 애쓴다'예요. industrial age가 글에 나와서 그럴듯해 보여요. 하지만 this age는 산업 시대 다음의 전기 시대이고, 우리 시대는 그 흔적을 극복하는 게 아니라 지니고 있어요.",
+        "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "this age를 산업 시대로 봤어요",
+            "skills": [
+              "reference"
+            ],
+            "reply": "알려 줘서 고마워요. this는 바로 앞에서 말한 것을 가리켜요. 앞으로 this가 나오면 앞 문장 끝부터 같이 찾아볼게요."
+          },
+          {
+            "label": "stamp를 극복으로 읽었어요",
+            "skills": [
+              "word_meaning"
+            ],
+            "reply": "알려 줘서 고마워요. carry the stamp of는 '~의 흔적을 지니다'예요. 앞으로 비유 표현은 뜻을 먼저 풀어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "reference",
+              "word_meaning"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 비유 표현을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "글",
+              "text": "this age = a post-industrial one",
+              "ko": "전기·석유의 20세기 — 그 흔적을 지닌다",
+              "tone": "hl"
+            },
+            {
+              "label": "②",
+              "text": "industrial age · overcome",
+              "ko": "산업 시대 · 극복 (다른 시대, 반대 방향)",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "kwxwlg"
+  },
+  "intro": {
+    "topic": {
+      "say": "에디슨 하면 전구가 떠오르죠? 이번 글은 전깃불이 발명의 상징 말고 왜 또 중요한지 다뤄요."
+    },
+    "method1": {
+      "say": "수능 문제는 시간 싸움이에요."
+    },
+    "method2": {
+      "say": "밑줄 문제는 핵심 단어 위주로 지문의 요지를 빠르게 파악하면 좋아요."
+    },
+    "from": "1wez6qg"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "829uc9"
+}

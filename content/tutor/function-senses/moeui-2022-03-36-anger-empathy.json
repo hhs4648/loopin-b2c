@@ -1,0 +1,66 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "have to let",
+   "sense": "~해야 (하다)",
+   "usage": "have to + 동사원형"
+  },
+  {
+   "word": "so",
+   "phrase": "So when",
+   "sense": "그래서, 따라서",
+   "usage": "접속사 So (문장 앞, 결과)"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "beyond that",
+   "sense": "그것",
+   "usage": "지시대명사 that (앞의 용서)"
+  },
+  {
+   "word": "to",
+   "phrase": "willingness to work",
+   "sense": "~하려는 (마음)",
+   "usage": "명사 + to부정사"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "and that they are",
+   "sense": "~라고",
+   "usage": "명사절 that (feels … that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "nothing to defend",
+   "sense": "~할 (것)",
+   "usage": "명사 + to부정사"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "trying to mirror",
+   "sense": "~하려고 (애쓰다)",
+   "usage": "try to + 동사원형"
+  },
+  {
+   "word": "to",
+   "phrase": "blind to it",
+   "sense": "~에 대해 (보지 못하다)",
+   "usage": "be blind to + 명사"
+  }
+ ],
+ "8": [
+  {
+   "word": "as",
+   "phrase": "As a result",
+   "sense": "(As a result의 일부)",
+   "usage": "As a result = 그 결과"
+  }
+ ]
+}

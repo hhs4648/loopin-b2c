@@ -1,0 +1,386 @@
+{
+  "lesson": "moeui-2022-03-32-sun-on-right",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 마지막 문장, 맨 끝에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1x9vx75"
+    },
+    "s1_blank_meaning": {
+      "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "It is this that ~은 '~하는 것은 바로 이것이다'예요. lead + 사람 + to ~는 '사람이 ~하게 하다'예요.",
+        "It is this that ~은 '~하는 것은 바로 이것이다'예요. lead + 사람 + to ~는 '사람이 ~하게 하다'예요."
+      ],
+      "explain": "It is this that leads historians to conclude는 '역사가들이 결론 내리게 하는 것은 바로 이것'이에요. 무엇을 결론 내리는지가 that the journey ____예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "It is this that leads historians to conclude는 '역사가들이 결론 내리게 하는 것은 바로 이것'이에요. 무엇을 결론 내리는지가 that the journey ____예요.",
+        "o2": "It is this that leads historians to conclude는 '역사가들이 결론 내리게 하는 것은 바로 이것'이에요. 무엇을 결론 내리는지가 that the journey ____예요."
+      },
+      "from": "18imw3a"
+    },
+    "s1_where_map": {
+      "say": "this가 가리키는 어떤 사실 때문에, 역사가들이 그 여행에 대해 결론을 내린대요.",
+      "from": "121oh0c"
+    },
+    "s1_where": {
+      "say": "그럼 '이것'이 무엇인지, 역사가들이 그 여행을 어떻게 봤을지 생각하며 처음부터 읽어 봐요.",
+      "from": "1p8t04s"
+    },
+    "s1_sv": {
+      "ask": "콤마 뒤에서 주어(S), 동사(V), 보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "When trying to understand": "그건 When(~할 때) 덩어리예요. 콤마 뒤에서 찾아봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the sources, 동사는 become, 보어는 fewer예요. and 뒤는 주어 the journeys, 보어 less well known이고, 같은 동사 become은 빠졌어요.",
+      "from": "1ciw887"
+    },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1bdzkpi"
+    },
+    "s1_note": {
+      "say": "고대 여행에서 태양의 역할을 알아보려 하면, 자료도 적고 알려진 여행도 적대요.",
+      "from": "1gkd4mu"
+    },
+    "s2_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·전치사 뒤 목적어(전목)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the ancient Egyptian King Necho II": "그건 commissioned by(~가 의뢰한) 뒤의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Herodotus, 동사는 writes about, about 뒤 목적어는 an exploratory voyage예요.",
+      "from": "10wthz7"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1ln7r9y"
+    },
+    "s2_note": {
+      "say": "헤로도토스가 이집트 왕 네코 2세가 맡긴 탐험 항해를 기록했대요.",
+      "from": "u4hal5"
+    },
+    "story_2": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_sv": {
+      "ask": "주어(S), 동사(V), 목적어(O), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "reportedly": "그건 '전해 오는 바에 따르면'이라는 말이에요. 주어·동사가 아니에요.",
+        "the Red Sea": "그건 starting at(~에서 출발해) 뒤, 출발한 곳이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Necho II, 동사는 ordered, 목적어는 a Phoenician expedition, 보어는 to sail clockwise around Africa예요.",
+      "from": "vtqkb4"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1w20252"
+    },
+    "s3_how": {
+      "say": "order + 사람 + to ~는 '사람에게 ~하라고 명령하다'로 읽어요. 원정대에게 아프리카를 돌라고 명령한 거예요.",
+      "from": "1pbtnrh"
+    },
+    "s3_report": {
+      "ask": "여기서 reportedly는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "report(보고하다, 전하다)에 -ly가 붙었어요. 누군가 그렇게 전했다는 말이에요.",
+        "report(보고하다, 전하다)에 -ly가 붙었어요. 누군가 그렇게 전했다는 말이에요."
+      ],
+      "explain": "reportedly는 누군가 그렇게 전했다는 말이에요. 확인된 사실이 아니라 그렇게 전해진다는 말이라서, 이 기록이 진짜인지가 이 글의 물음이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "reportedly는 누군가 그렇게 전했다는 말이에요. 확인된 사실이 아니라 그렇게 전해진다는 말이라서, 이 기록이 진짜인지가 이 글의 물음이에요.",
+        "o2": "reportedly는 누군가 그렇게 전했다는 말이에요. 확인된 사실이 아니라 그렇게 전해진다는 말이라서, 이 기록이 진짜인지가 이 글의 물음이에요."
+      },
+      "from": "zoemh4"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "three years": "그건 for(~ 동안) 뒤의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 They(원정대), 동사는 were gone이에요.",
+      "from": "13uppu9"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "utk3nt"
+    },
+    "s4_note": {
+      "say": "They는 앞 문장의 원정대예요. 3년 동안 떠나 있었대요.",
+      "from": "cw056w"
+    },
+    "story_4": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s5_sv": {
+      "ask": "writes that 앞뒤로 주어(S)·동사(V)가 두 쌍 있어요. 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the sun": "그건 reported that 뒤, 보고한 내용 안의 주어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 Herodotus, 동사 writes — 무엇을 썼는지가 that 뒤예요. 그 안의 주어는 the Phoenicians, 동사는 reported예요.",
+      "from": "17cg4jd"
+    },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "e5ze46"
+    },
+    "s5_found": {
+      "ask": "페니키아인들은 무엇을 보고했대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "they found the sun was on their right를 봐요. the opposite direction은 '정반대 방향'이에요.",
+        "they found the sun was on their right를 봐요. the opposite direction은 '정반대 방향'이에요."
+      ],
+      "explain": "'they found the sun was on their right, the opposite direction', 태양이 오른쪽, 늘 보던 곳과 정반대 방향에 있었대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'they found the sun was on their right, the opposite direction', 태양이 오른쪽, 늘 보던 곳과 정반대 방향에 있었대요.",
+        "o2": "'they found the sun was on their right, the opposite direction', 태양이 오른쪽, 늘 보던 곳과 정반대 방향에 있었대요."
+      },
+      "from": "1pnbm34"
+    },
+    "s5_board": {
+      "say": "그들이 본 건 늘 보던 것과 정반대였어요. 칠판에 넣어 둘게요.",
+      "from": "cbtv6p"
+    },
+    "s6_sv": {
+      "ask": "주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "such an accurate, fundamental and yet prosaic detail": "그건 to fabricate(꾸며 낼) 뒤의 목적어예요. 문장 전체의 주어·보어가 아니에요.",
+        "the sun": "그건 where 뒤 덩어리 안의 주어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Contemporary astronomical science, 동사는 was, 보어는 not strong enough예요.",
+      "from": "1duhy5"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1ijwzue"
+    },
+    "s6_meaning": {
+      "ask": "이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Contemporary는 여기서 '현대의'가 아니라 '그 당시의'예요. not 형용사 enough to ~는 '~할 만큼 …하지 않다'예요.",
+        "Contemporary는 여기서 '현대의'가 아니라 '그 당시의'예요. not 형용사 enough to ~는 '~할 만큼 …하지 않다'예요."
+      ],
+      "explain": "Contemporary astronomical science는 '당시의 천문 과학'이에요. 그때 과학은 이런 정확한 세부 사항을 꾸며 낼 만큼 뛰어나지 않았대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "Contemporary astronomical science는 '당시의 천문 과학'이에요. 그때 과학은 이런 정확한 세부 사항을 꾸며 낼 만큼 뛰어나지 않았대요.",
+        "o2": "Contemporary astronomical science는 '당시의 천문 과학'이에요. 그때 과학은 이런 정확한 세부 사항을 꾸며 낼 만큼 뛰어나지 않았대요."
+      },
+      "from": "mgpz8k"
+    },
+    "s6_so": {
+      "ask": "그때 과학으로 꾸며 낼 수 없었다면, 페니키아인들의 보고는 어떻게 나온 걸까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "당시엔 누구도 이런 세부 사항을 머리로 지어낼 수 없었어요. 그럼 어디서 알았을지 생각해 봐요.",
+        "당시엔 누구도 이런 세부 사항을 머리로 지어낼 수 없었어요. 그럼 어디서 알았을지 생각해 봐요."
+      ],
+      "explain": "당시 과학으로는 '남반구에서 태양이 오른쪽에 있다'를 지어낼 수 없었어요. 그러니 그들이 실제로 가서 본 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "당시 과학으로는 '남반구에서 태양이 오른쪽에 있다'를 지어낼 수 없었어요. 그러니 그들이 실제로 가서 본 거예요.",
+        "o2": "당시 과학으로는 '남반구에서 태양이 오른쪽에 있다'를 지어낼 수 없었어요. 그러니 그들이 실제로 가서 본 거예요."
+      },
+      "from": "r1vp8w"
+    },
+    "s6_board": {
+      "say": "그들이 본 것은 당시 과학으로는 꾸며 낼 수 없는 것이었어요. 칠판에 정리해 둘게요.",
+      "from": "hk1c4f"
+    },
+    "story_6": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s7_this": {
+      "ask": "It is this that ~의 this는 무엇을 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "this는 바로 앞 문장을 가리키는 경우가 많아요. 칠판 오른쪽을 떠올려 봐요.",
+        "this는 바로 앞 문장을 가리키는 경우가 많아요. 칠판 오른쪽을 떠올려 봐요."
+      ],
+      "explain": "this는 바로 앞 문장이에요. 당시 천문 과학은 태양 위치 같은 세부 사항을 지어낼 만큼 뛰어나지 않았다는 사실이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "this는 바로 앞 문장이에요. 당시 천문 과학은 태양 위치 같은 세부 사항을 지어낼 만큼 뛰어나지 않았다는 사실이에요.",
+        "o2": "this는 바로 앞 문장이에요. 당시 천문 과학은 태양 위치 같은 세부 사항을 지어낼 만큼 뛰어나지 않았다는 사실이에요."
+      },
+      "from": "7dm8vz"
+    },
+    "s7_fill": {
+      "ask": "그럼 역사가들은 그 여행이 어땠다고 결론 내렸을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "결론의 근거는 '당시엔 꾸며 낼 수 없었다'는 사실이에요. 꾸며 낸 게 아니라면 어떻게 된 걸지 생각해 봐요.",
+        "결론의 근거는 '당시엔 꾸며 낼 수 없었다'는 사실이에요. 꾸며 낸 게 아니라면 어떻게 된 걸지 생각해 봐요."
+      ],
+      "explain": "꾸며 낼 수 없는 세부 사항을 보고했으니, 정말 아프리카를 돌며 직접 봤다는 뜻이에요. 그래서 여행은 진짜였다고 결론 내려요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "꾸며 낼 수 없는 세부 사항을 보고했으니, 정말 아프리카를 돌며 직접 봤다는 뜻이에요. 그래서 여행은 진짜였다고 결론 내려요.",
+        "o2": "꾸며 낼 수 없는 세부 사항을 보고했으니, 정말 아프리카를 돌며 직접 봤다는 뜻이에요. 그래서 여행은 진짜였다고 결론 내려요."
+      },
+      "from": "650z5j"
+    },
+    "s7_side": {
+      "ask": "빈칸은 '페니키아인들의 보고는 진짜다'와 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "this(당시엔 꾸며 낼 수 없었다)가 이 결론을 이끌었어요(leads).",
+        "this(당시엔 꾸며 낼 수 없었다)가 이 결론을 이끌었어요(leads)."
+      ],
+      "explain": "꾸며 낼 수 없었다는 사실(this)이 결론을 이끌어요. 그러니 빈칸은 보고가 진짜라는 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "꾸며 낼 수 없었다는 사실(this)이 결론을 이끌어요. 그러니 빈칸은 보고가 진짜라는 쪽이에요."
+      },
+      "point": "this(당시엔 꾸며 낼 수 없었다) → 결론 = 보고는 진짜, 여행은 실제로 있었다 = 같은 쪽",
+      "from": "ns6s1i"
+    },
+    "s7_go": {
+      "say": "빈칸은 '그 여행은 정말 있었다'는 쪽이에요. 이 말을 바꿔 쓴 보기를 찾아봐요.",
+      "from": "1nbje43"
+    }
+  },
+  "exam": {
+    "ask": "this(당시엔 꾸며 낼 수 없었다)가 이끄는 결론을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 당시 과학으로는 '태양이 오른쪽에 있다'는 걸 꾸며 낼 수 없었어요. 그러니 직접 가서 본 것이고, 여행은 실제로 일어났음이 틀림없어요.",
+    "final_wrong": "정답은 ① must have taken place예요. must have p.p.는 '~했음이 틀림없다'예요. 꾸며 낼 수 없는 사실을 보고했으니 여행은 정말 있었어요.",
+    "option_feedback": {
+      "2": "페니키아인들은 돌아와서 보고했고(reported), 헤로도토스가 그걸 기록했어요. 보고되지 않았다면 이 이야기 자체가 없어요.",
+      "3": "여행이 시간을 들일 만했는지는 글에 나오지 않아요. 글은 이 기록이 진짜인지를 말해요.",
+      "4": "계획을 더 잘했어야 했다는 이야기는 없어요. 꾸며 낼 수 없는 세부 사항 때문에 내린 결론이에요.",
+      "5": "언제든 멈출 수 있었다는 말은 글에 없어요. 원정대는 3년 동안 아프리카를 돌고 돌아왔어요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "문장 1의 '자료가 적고 덜 알려졌다'를 보고 '보고되지 않았다'를 고르기 쉬워요. 하지만 페니키아인들은 돌아와서 보고했고(reported), 헤로도토스가 그걸 기록했어요. 빈칸은 this(당시엔 꾸며 낼 수 없었다) 때문에 내린 결론이라, 여행이 정말 있었다는 쪽이에요.",
+        "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "문장 1을 보고 골랐어요",
+            "skills": [
+              "first_sentence_trap"
+            ],
+            "reply": "알려 줘서 고마워요. 빈칸은 바로 앞의 this가 이끄는 결론이에요. 앞으로 빈칸 바로 앞 문장을 먼저 짚어 줄게요."
+          },
+          {
+            "label": "this가 무엇인지 몰랐어요",
+            "skills": [
+              "reference"
+            ],
+            "reply": "알려 줘서 고마워요. It is this that ~의 this는 앞 문장, 당시 과학으로는 꾸며 낼 수 없었다는 사실이에요. 앞으로 가리키는 말을 먼저 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "first_sentence_trap",
+              "reference"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 this가 가리키는 앞 문장과 빈칸의 관계를 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "this",
+              "text": "not strong enough to fabricate",
+              "ko": "당시엔 꾸며 낼 수 없었다",
+              "tone": "hl"
+            },
+            {
+              "label": "그래서",
+              "text": "the journey ________",
+              "ko": "여행은 정말 있었다",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1960cky"
+  },
+  "intro": {
+    "topic": {
+      "say": "2600년 전 아프리카를 한 바퀴 돌았다는 항해 기록이 있어요. 이 기록이 진짜인지 어떻게 알 수 있을까요?"
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "hxoygc"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "q1zisl"
+}

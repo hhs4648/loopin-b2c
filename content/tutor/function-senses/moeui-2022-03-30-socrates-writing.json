@@ -1,0 +1,108 @@
+{
+ "1": [
+  {
+   "word": "as",
+   "phrase": "Just as there’s",
+   "sense": "~인 것처럼",
+   "usage": "Just as A, B = A인 것처럼 B도"
+  },
+  {
+   "word": "to",
+   "phrase": "tendency to glorify",
+   "sense": "~하는 (경향)",
+   "usage": "to부정사 (앞 명사 tendency를 꾸밈)"
+  },
+  {
+   "word": "to",
+   "phrase": "countertendency to expect",
+   "sense": "~하는 (반대 경향)",
+   "usage": "to부정사 (앞 명사 countertendency를 꾸밈)"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "feared that",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (feared that …)"
+  },
+  {
+   "word": "as",
+   "phrase": "as people came",
+   "sense": "~함에 따라",
+   "usage": "접속사 as + 주어·동사 (변화)"
+  },
+  {
+   "word": "to",
+   "phrase": "came to rely",
+   "sense": "~하게 (되다)",
+   "usage": "come to + 동사원형 = ~하게 되다"
+  },
+  {
+   "word": "as",
+   "phrase": "as a substitute",
+   "sense": "~로서",
+   "usage": "전치사 as (자격)"
+  },
+  {
+   "word": "for",
+   "phrase": "substitute for the knowledge",
+   "sense": "~의 (대체물)",
+   "usage": "substitute for ~ = ~의 대체물"
+  },
+  {
+   "word": "to",
+   "phrase": "used to carry",
+   "sense": "~하곤 (했다)",
+   "usage": "used to + 동사원형 = (예전에) ~하곤 했다"
+  },
+  {
+   "word": "to",
+   "phrase": "cease to exercise",
+   "sense": "~하기를 (멈추다)",
+   "usage": "cease + to부정사"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "able to receive",
+   "sense": "~할 (수 있는)",
+   "usage": "be able to + 동사원형"
+  },
+  {
+   "word": "for",
+   "phrase": "for the most part",
+   "sense": "(for the most part의 일부)",
+   "usage": "for the most part = 대체로"
+  }
+ ],
+ "6": [
+  {
+   "word": "but",
+   "phrase": "but he was shortsighted",
+   "sense": "하지만",
+   "usage": "접속사 but (대조)"
+  }
+ ],
+ "7": [
+  {
+   "word": "that",
+   "phrase": "ways that writing",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계사 that + 주어·동사 (the many ways를 꾸밈)"
+  },
+  {
+   "word": "to",
+   "phrase": "serve to spread",
+   "sense": "~하는 데 (도움이 되다)",
+   "usage": "serve + to부정사"
+  },
+  {
+   "word": "if",
+   "phrase": "if not wisdom",
+   "sense": "~은 아닐지라도",
+   "usage": "if not ~ = ~까지는 아니더라도"
+  }
+ ]
+}

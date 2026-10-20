@@ -1,0 +1,2080 @@
+{
+  "id": "moeui-2022-03-30-socrates-writing",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 30번 (문맥상 낱말의 쓰임)",
+  "brief": {
+    "topic": "어휘 문제 푸는 법: 요지 → 두 쪽(+ 좋은 쪽 / − 나쁜 쪽) → 밑줄 단어가 흐름에 맞는지 하나씩 점검",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "word_in_context",
+    "labels": [
+      "요지 잡기",
+      "두 그룹으로 나누기",
+      "밑줄 단어 맞춰 보기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-socrates-writing.svg",
+      "alt": "칠판: Writing(글쓰기) vs Memory(기억력)",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/vocab-method.svg",
+      "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "새로운 기술이 나오면 걱정부터 하는 사람들이 있어요. 이번 글은 소크라테스가 '글쓰기'라는 새 기술을 걱정한 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "요지를 잡고, 좋은 쪽과 나쁜 쪽 두 그룹으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 하나씩 볼 거예요. 칠판 순서대로 해 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?",
+    "underline": [
+      "①development",
+      "②substitute",
+      "③receive",
+      "④right",
+      "⑤foresee"
+    ],
+    "sentence": 6,
+    "analysis_first": true,
+    "wrong_rate": 42.0,
+    "wrong_rank": 9,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "development",
+        "ko": "발전"
+      },
+      {
+        "en": "substitute",
+        "ko": "대체물"
+      },
+      {
+        "en": "receive",
+        "ko": "받다"
+      },
+      {
+        "en": "right",
+        "ko": "옳은, 맞는"
+      },
+      {
+        "en": "foresee",
+        "ko": "내다보다"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "development",
+        "keywords": [
+          "development"
+        ],
+        "ko": "발전"
+      },
+      {
+        "id": "2",
+        "label": "substitute",
+        "keywords": [
+          "substitute"
+        ],
+        "ko": "대체물"
+      },
+      {
+        "id": "3",
+        "label": "receive",
+        "keywords": [
+          "receive"
+        ],
+        "ko": "받다"
+      },
+      {
+        "id": "4",
+        "label": "right",
+        "keywords": [
+          "right"
+        ],
+        "ko": "옳은, 맞는",
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "foresee",
+        "keywords": [
+          "foresee"
+        ],
+        "ko": "내다보다"
+      }
+    ],
+    "brief": {
+      "ask": "밑줄 점검표를 떠올려 봐요. 대시(—) 사이 내용과 but 앞뒤 흐름에 맞지 않는 하나를 골라요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 대시(—) 사이에서 새 기술이 그가 걱정한 결과를 실제로 가져왔다고 했어요. 그러니 '소크라테스가 틀리지는 않았다'가 맞고, but 뒤 '근시안적이었다'와 이어져요. right가 아니라 wrong이어야 해요.",
+      "final_wrong": "정답은 ④예요. 걱정한 일이 실제로 일어났으니 소크라테스는 틀리지 않았어요(wasn’t wrong). right를 wrong으로 바꿔야 해요.",
+      "option_feedback": {
+        "1": "소크라테스가 새 기술인 글쓰기의 발전(development)을 한탄했다는 말이라 맞아요.",
+        "2": "머릿속 지식을 대신하는 것(substitute)으로 글에 기댄다는 말이라 맞아요.",
+        "3": "가르침 없이 정보만 받는다(receive)는 소크라테스의 걱정이라 맞아요.",
+        "5": "근시안적이라 글의 좋은 점을 내다보지(foresee) 못했다는 말이라 맞아요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 18%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "③ 앞뒤를 봐요. 사람들이 가르침 없이(without proper instruction) 많은 정보를 받기만 하면, 실제론 무지한데 박식해 보일 거라는 걱정이에요. receive(받다)는 이 걱정과 딱 맞아요.",
+          "ask": "그래서 ③은 문맥에 맞아요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "정보를 받는 건 좋은 일 같았어요",
+              "skills": [
+                "word_context_receive"
+              ],
+              "reply": "알려 줘서 고마워요. 걱정은 정보를 받는 것보다 '가르침 없이'에 있어요. 앞으로 밑줄 단어 옆 without 같은 말을 같이 짚어 줄게요."
+            },
+            {
+              "label": "④ 대시(—) 사이를 놓쳤어요",
+              "skills": [
+                "dash_clue"
+              ],
+              "reply": "알려 줘서 고마워요. 대시(—) 사이에 걱정한 일이 실제로 일어났다는 말이 있었어요. 앞으로 대시(—) 안의 단서를 먼저 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "word_context_receive",
+                "dash_clue"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 밑줄 옆 말과 대시(—) 안 단서를 같이 짚어 줄게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "③",
+                "text": "receive information without proper instruction",
+                "ko": "가르침 없이 정보만 받는다 → 걱정과 맞음",
+                "tone": "hl"
+              },
+              {
+                "label": "④",
+                "text": "wasn’t right — did often have the effects he feared —",
+                "ko": "걱정한 일이 실제로 일어남 → '틀리지 않았다'여야",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "tendency",
+        "ko": "경향"
+      },
+      {
+        "en": "glorify",
+        "ko": "미화하다"
+      },
+      {
+        "en": "progress",
+        "ko": "발달, 진보"
+      },
+      {
+        "en": "countertendency",
+        "ko": "반대 경향"
+      },
+      {
+        "en": "rely on",
+        "ko": "~에 의존하다"
+      },
+      {
+        "en": "substitute",
+        "ko": "대체물"
+      },
+      {
+        "en": "cease",
+        "ko": "멈추다"
+      },
+      {
+        "en": "forgetful",
+        "ko": "잘 잊어버리는"
+      },
+      {
+        "en": "a quantity of",
+        "ko": "많은 양의"
+      },
+      {
+        "en": "instruction",
+        "ko": "가르침"
+      },
+      {
+        "en": "knowledgeable",
+        "ko": "박식한"
+      },
+      {
+        "en": "for the most part",
+        "ko": "대체로"
+      },
+      {
+        "en": "ignorant",
+        "ko": "무지한"
+      },
+      {
+        "en": "shortsighted",
+        "ko": "근시안적인"
+      },
+      {
+        "en": "foresee",
+        "ko": "예견하다"
+      },
+      {
+        "en": "spark",
+        "ko": "촉발하다"
+      },
+      {
+        "en": "expand",
+        "ko": "확장하다"
+      }
+    ],
+    "options": [
+      {
+        "en": "right",
+        "ko": "옳은, 맞는"
+      },
+      {
+        "en": "wrong",
+        "ko": "틀린"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Just as there’s a tendency to glorify technological progress, there’s a countertendency to expect the worst of every new tool or machine.",
+      "model_translation": "기술의 발달을 미화하는 경향이 있는 것과 마찬가지로, 모든 새로운 도구나 기계에서 최악의 것을 예상하는 반대 경향도 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Just as",
+          "ko": "~인 것처럼"
+        },
+        {
+          "en": "there’s a tendency",
+          "ko": "경향이 있다"
+        },
+        {
+          "en": "to glorify",
+          "ko": "미화하는, 좋게만 보는"
+        },
+        {
+          "en": "technological progress",
+          "ko": "기술의 발달"
+        },
+        {
+          "en": "there’s a countertendency",
+          "ko": "반대 경향이 있다"
+        },
+        {
+          "en": "to expect the worst",
+          "ko": "최악을 예상하는"
+        },
+        {
+          "en": "of every new tool or machine",
+          "ko": "모든 새 도구나 기계에서"
+        },
+        {
+          "en": "there’s",
+          "ko": "~이 있다"
+        },
+        {
+          "en": "tendency",
+          "ko": "경향"
+        },
+        {
+          "en": "glorify",
+          "ko": "미화하다"
+        },
+        {
+          "en": "technological",
+          "ko": "기술의"
+        },
+        {
+          "en": "countertendency",
+          "ko": "반대 경향"
+        },
+        {
+          "en": "expect",
+          "ko": "예상하다"
+        },
+        {
+          "en": "worst",
+          "ko": "최악"
+        },
+        {
+          "en": "tool",
+          "ko": "도구"
+        },
+        {
+          "en": "machine",
+          "ko": "기계"
+        }
+      ],
+      "slashes": [
+        "there’s a tendency",
+        "technological progress,",
+        "a countertendency",
+        "expect the worst"
+      ],
+      "roles": [
+        {
+          "text": "a tendency",
+          "role": "S"
+        },
+        {
+          "text": "a countertendency",
+          "role": "S"
+        },
+        {
+          "text": "’s … ’s",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_counter",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Just as A, B는 'A인 것처럼 B도'예요. 새 도구나 기계를 두고 반대 경향(countertendency)은 무엇을 한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "콤마(,) 뒤 'to expect the worst'를 봐요.",
+              "콤마(,) 뒤 'to expect the worst'를 봐요."
+            ],
+            "explain": "'expect the worst of every new tool or machine', 새 도구마다 최악을 예상하는 경향이래요. 기술을 미화하는(glorify) 경향과 반대예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'expect the worst of every new tool or machine', 새 도구마다 최악을 예상하는 경향이래요. 기술을 미화하는(glorify) 경향과 반대예요.",
+              "o2": "'expect the worst of every new tool or machine', 새 도구마다 최악을 예상하는 경향이래요. 기술을 미화하는(glorify) 경향과 반대예요."
+            },
+            "point": "요지 시작: 새 기술을 미화하는 경향(+) ↔ 최악을 예상하는 경향(−)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "최악을 예상한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "더 높이 칭찬한다"
+            },
+            {
+              "id": "o2",
+              "label": "아무 관심을 두지 않는다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "glorify",
+            "expect the worst"
+          ],
+          "tips": [
+            {
+              "label": "Just as A, B",
+              "text": "'A인 것처럼 B도 그렇다'예요. 앞뒤가 짝을 이뤄요.",
+              "mark": "Just as"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "새 기술을 보는 눈",
+            "left": {
+              "label": "(+) 좋은 쪽",
+              "words": [
+                {
+                  "text": "glorify progress",
+                  "ko": "진보를 미화"
+                }
+              ]
+            },
+            "right": {
+              "label": "(−) 나쁜 쪽",
+              "words": [
+                {
+                  "text": "expect the worst",
+                  "ko": "최악을 예상",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "vs"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "In Plato’s Phaedrus, Socrates bemoaned the ①development of writing.",
+      "model_translation": "플라톤의 『Phaedrus』에서, 소크라테스는 글쓰기의 발전을 한탄했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "the development of writing",
+          "ko": "글쓰기의 발전"
+        },
+        {
+          "en": "writing",
+          "ko": "글쓰기"
+        },
+        {
+          "en": "In Plato’s Phaedrus",
+          "ko": "플라톤의 『파이드로스』에서"
+        },
+        {
+          "en": "Plato’s Phaedrus",
+          "ko": "플라톤의 『파이드로스』"
+        },
+        {
+          "en": "Socrates",
+          "ko": "소크라테스는"
+        },
+        {
+          "en": "bemoaned",
+          "ko": "한탄했다"
+        },
+        {
+          "en": "development of writing",
+          "ko": "글쓰기의 발전"
+        },
+        {
+          "en": "development",
+          "ko": "발전"
+        },
+        {
+          "en": "Plato’s",
+          "ko": "플라톤의"
+        },
+        {
+          "en": "Phaedrus",
+          "ko": "『파이드로스』(플라톤의 대화편)"
+        }
+      ],
+      "slashes": [
+        "In Plato’s Phaedrus,"
+      ],
+      "roles": [
+        {
+          "text": "Socrates",
+          "role": "S"
+        },
+        {
+          "text": "bemoaned",
+          "role": "V"
+        },
+        {
+          "text": "the ①development",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Plato’s Phaedrus",
+            "Socrates",
+            "bemoaned",
+            "writing"
+          ],
+          "answers": [
+            "Socrates",
+            "bemoaned"
+          ],
+          "roles": {
+            "Socrates": "S",
+            "bemoaned": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "Plato’s Phaedrus": "그건 In 뒤, 어디에서인지예요.",
+              "writing": "그건 of 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Socrates, 동사는 bemoaned예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic"
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "In Plato’s Phaedrus",
+            "Socrates",
+            "bemoaned",
+            "the development of writing"
+          ],
+          "answers": [
+            "In Plato’s Phaedrus",
+            "Socrates",
+            "the development of writing",
+            "bemoaned"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In Plato’s Phaedrus",
+                "ko": "플라톤의 『파이드로스』에서"
+              },
+              " ",
+              {
+                "en": "Socrates",
+                "ko": "소크라테스는"
+              },
+              " ",
+              {
+                "en": "the development of writing",
+                "ko": "글쓰기의 발전"
+              },
+              "을 ",
+              {
+                "en": "bemoaned",
+                "ko": "한탄했다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "In Plato’s Phaedrus, Socrates bemoaned the development of writing."
+        },
+        {
+          "id": "s2_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "소크라테스는 글쓰기의 발전을 bemoan(한탄)했대요. 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "bemoan은 시험지 아래에 '한탄하다'라고 풀어 줬어요.",
+              "bemoan은 시험지 아래에 '한탄하다'라고 풀어 줬어요."
+            ],
+            "explain": "한탄했다는 건 글쓰기를 나쁘게 봤다는 거예요. 1문장의 '최악을 예상하는 경향'의 예예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "한탄했다는 건 글쓰기를 나쁘게 봤다는 거예요. 1문장의 '최악을 예상하는 경향'의 예예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "(+) 좋은 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "(−) 나쁜 쪽",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "bemoaned"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "새 기술을 보는 눈",
+            "left": {
+              "label": "(+) 좋은 쪽",
+              "words": [
+                {
+                  "text": "glorify progress",
+                  "ko": "진보를 미화"
+                }
+              ]
+            },
+            "right": {
+              "label": "(−) 나쁜 쪽",
+              "words": [
+                {
+                  "text": "expect the worst",
+                  "ko": "최악을 예상"
+                }
+              ]
+            },
+            "between": "vs",
+            "sort": {
+              "words": [
+                "bemoaned writing"
+              ],
+              "left": "(+) 좋은 쪽",
+              "right": "(−) 나쁜 쪽"
+            }
+          }
+        },
+        {
+          "id": "s2_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "새 기술(글쓰기)이 발전하는 걸 한탄했다는 말이라 ①development는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "bemoaned the development of writing",
+                "ko": "글쓰기의 발전을 한탄했다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "📜",
+                "en": "expect the worst · bemoaned writing",
+                "ko": "새 기술마다 최악을 예상하는 경향 — 소크라테스도 글쓰기를 한탄했어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "He feared that, as people came to rely on the written word as a ②substitute for the knowledge they used to carry inside their heads, they would, in the words of one of the dialogue’s characters, “cease to exercise their memory and become forgetful.”",
+      "model_translation": "그는 사람들이 머릿속에 지니고 다니던 지식에 대한 대체물로서 글로 쓰인 말에 의존하게 됨에 따라, 대화의 등장인물 중 한 사람의 말처럼, 그들은 '기억력을 발휘하는 것을 멈추고 잘 잊어버리게' 될 것이라고 우려했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "came",
+          "ko": "~하게 되었다"
+        },
+        {
+          "en": "He",
+          "ko": "그는"
+        },
+        {
+          "en": "feared",
+          "ko": "두려워했다"
+        },
+        {
+          "en": "people",
+          "ko": "사람들"
+        },
+        {
+          "en": "came to rely on",
+          "ko": "~에 의존하게 되었다"
+        },
+        {
+          "en": "the written word",
+          "ko": "글로 쓰인 말"
+        },
+        {
+          "en": "as a substitute for",
+          "ko": "~의 대체물로"
+        },
+        {
+          "en": "the knowledge",
+          "ko": "지식"
+        },
+        {
+          "en": "they used to carry inside their heads",
+          "ko": "머릿속에 지니고 다니던"
+        },
+        {
+          "en": "in the words of one of the dialogue’s characters",
+          "ko": "대화의 등장인물 중 한 사람의 말로"
+        },
+        {
+          "en": "would",
+          "ko": "~할 것이다"
+        },
+        {
+          "en": "cease to exercise their memory",
+          "ko": "기억력을 쓰기를 멈추다"
+        },
+        {
+          "en": "become forgetful",
+          "ko": "잘 잊어버리게 되다"
+        },
+        {
+          "en": "rely",
+          "ko": "의존하다"
+        },
+        {
+          "en": "written",
+          "ko": "글로 쓰인"
+        },
+        {
+          "en": "substitute",
+          "ko": "대체물"
+        },
+        {
+          "en": "used",
+          "ko": "~하곤 했다"
+        },
+        {
+          "en": "carry",
+          "ko": "지니고 다니다"
+        },
+        {
+          "en": "inside",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "heads",
+          "ko": "머리"
+        },
+        {
+          "en": "words",
+          "ko": "말"
+        },
+        {
+          "en": "dialogue’s",
+          "ko": "대화편의"
+        },
+        {
+          "en": "characters",
+          "ko": "등장인물"
+        },
+        {
+          "en": "cease",
+          "ko": "멈추다"
+        },
+        {
+          "en": "exercise",
+          "ko": "발휘하다, 쓰다"
+        },
+        {
+          "en": "forgetful",
+          "ko": "잘 잊어버리는"
+        }
+      ],
+      "slashes": [
+        "He feared that,",
+        "rely on the written word",
+        "the knowledge",
+        "inside their heads,",
+        "they would,",
+        "dialogue’s characters,",
+        "exercise their memory"
+      ],
+      "roles": [
+        {
+          "text": "He",
+          "role": "S"
+        },
+        {
+          "text": "feared",
+          "role": "V"
+        },
+        {
+          "text": "people",
+          "role": "S"
+        },
+        {
+          "text": "came",
+          "role": "V"
+        },
+        {
+          "text": "would … cease",
+          "role": "V"
+        },
+        {
+          "text": "become",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "they used to carry inside their heads"
+      ],
+      "steps": [
+        {
+          "id": "s3_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "He",
+            "feared",
+            "people",
+            "came",
+            "the written word"
+          ],
+          "answers": [
+            "He",
+            "feared"
+          ],
+          "roles": {
+            "He": "S",
+            "feared": "V"
+          },
+          "brief": {
+            "ask": "아주 긴 문장이에요. 맨 앞 메인 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "people": "그건 as(~함에 따라) 덩어리 안의 주어예요.",
+              "came": "그건 as 덩어리 안의 동사예요.",
+              "the written word": "그건 rely on 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 He, 동사는 feared예요. that 뒤가 소크라테스가 두려워한 내용이에요."
+          },
+          "method": 0,
+          "faded": [
+            "in the words of one of the dialogue’s characters,"
+          ]
+        },
+        {
+          "id": "s3_fear",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "소크라테스는 사람들이 글에 기대면 어떻게 될까 봐 두려워했대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "따옴표 안 'cease to exercise their memory and become forgetful'을 봐요.",
+              "따옴표 안 'cease to exercise their memory and become forgetful'을 봐요."
+            ],
+            "explain": "'cease to exercise their memory and become forgetful', 기억력 쓰기를 멈추고 잘 잊어버리게 된대요. 소크라테스의 걱정(−)이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'cease to exercise their memory and become forgetful', 기억력 쓰기를 멈추고 잘 잊어버리게 된대요. 소크라테스의 걱정(−)이에요.",
+              "o2": "'cease to exercise their memory and become forgetful', 기억력 쓰기를 멈추고 잘 잊어버리게 된대요. 소크라테스의 걱정(−)이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "기억력을 안 써서 잘 잊어버리게 된다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "글을 너무 많이 써서 지친다"
+            },
+            {
+              "id": "o2",
+              "label": "남의 생각만 따라 하게 된다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "cease to exercise their memory",
+            "become forgetful"
+          ],
+          "faded": [
+            "in the words of one of the dialogue’s characters,"
+          ],
+          "tips": [
+            {
+              "label": "come to + 동사",
+              "text": "'~하게 되다'예요. came to rely on = 의존하게 되었다.",
+              "mark": "came to"
+            },
+            {
+              "label": "cease to + 동사",
+              "text": "'~하기를 멈추다'예요. cease to exercise = 쓰기를 멈추다.",
+              "mark": "cease"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "새 기술을 보는 눈",
+            "left": {
+              "label": "(+) 좋은 쪽",
+              "words": [
+                {
+                  "text": "glorify progress",
+                  "ko": "진보를 미화"
+                }
+              ]
+            },
+            "right": {
+              "label": "(−) 나쁜 쪽",
+              "words": [
+                {
+                  "text": "expect the worst",
+                  "ko": "최악을 예상"
+                },
+                {
+                  "text": "bemoaned writing",
+                  "ko": "글쓰기를 한탄"
+                },
+                {
+                  "text": "become forgetful",
+                  "ko": "잘 잊어버림",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "vs"
+          }
+        },
+        {
+          "id": "s3_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "머릿속 지식을 대신하는 것(substitute)으로 글에 기대니, 기억력을 안 쓰게 된다는 흐름이에요. 그래서 ②substitute는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "substitute",
+            "the knowledge"
+          ],
+          "tips": [
+            {
+              "label": "substitute for ~",
+              "text": "'~의 대체물, ~을 대신하는 것'이에요.",
+              "mark": "substitute"
+            },
+            {
+              "label": "used to + 동사",
+              "text": "'(예전에) ~하곤 했다'예요. they used to carry = 지니고 다니던.",
+              "mark": "used to"
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "bemoaned the development of writing",
+                "ko": "글쓰기의 발전을 한탄했다",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "a substitute for the knowledge",
+                "ko": "머릿속 지식 대신 글에 기댄다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "And because they would be able to “③receive a quantity of information without proper instruction,” they would “be thought very knowledgeable when they are for the most part quite ignorant.”",
+      "model_translation": "그리고 그들은 '적절한 가르침 없이 많은 양의 정보를 받을' 수 있을 것이기 때문에, '대체로 상당히 무지할 때도 매우 박식하다고 생각될' 것이었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "And because",
+          "ko": "그리고 ~ 때문에"
+        },
+        {
+          "en": "they would be able to",
+          "ko": "그들은 ~할 수 있을 것이다"
+        },
+        {
+          "en": "receive",
+          "ko": "받다"
+        },
+        {
+          "en": "a quantity of information",
+          "ko": "많은 양의 정보"
+        },
+        {
+          "en": "without proper instruction",
+          "ko": "제대로 된 가르침 없이"
+        },
+        {
+          "en": "they would",
+          "ko": "그들은 ~할 것이다"
+        },
+        {
+          "en": "be thought",
+          "ko": "~라고 여겨지다"
+        },
+        {
+          "en": "very knowledgeable",
+          "ko": "아주 박식한"
+        },
+        {
+          "en": "when they are",
+          "ko": "그들이 ~일 때에도"
+        },
+        {
+          "en": "for the most part",
+          "ko": "대체로"
+        },
+        {
+          "en": "quite ignorant",
+          "ko": "상당히 무지한"
+        },
+        {
+          "en": "able",
+          "ko": "~할 수 있는"
+        },
+        {
+          "en": "quantity",
+          "ko": "양"
+        },
+        {
+          "en": "without",
+          "ko": "~ 없이"
+        },
+        {
+          "en": "instruction",
+          "ko": "가르침"
+        },
+        {
+          "en": "knowledgeable",
+          "ko": "박식한"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        },
+        {
+          "en": "part",
+          "ko": "부분"
+        },
+        {
+          "en": "ignorant",
+          "ko": "무지한"
+        }
+      ],
+      "slashes": [
+        "they would be able",
+        "a quantity of information",
+        "proper instruction,”",
+        "very knowledgeable",
+        "when they are"
+      ],
+      "roles": [
+        {
+          "text": "they … they … they",
+          "role": "S"
+        },
+        {
+          "text": "would be able",
+          "role": "V"
+        },
+        {
+          "text": "be thought",
+          "role": "V"
+        },
+        {
+          "text": "very knowledgeable",
+          "role": "C"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "quite ignorant",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "receive",
+            "information",
+            "be thought",
+            "very knowledgeable",
+            "are"
+          ],
+          "answers": [
+            "be thought",
+            "very knowledgeable"
+          ],
+          "roles": {
+            "be thought": "V",
+            "very knowledgeable": "C"
+          },
+          "brief": {
+            "ask": "because 덩어리가 길어요. 콤마(,) 뒤 메인 문장의 동사(V)와 보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "receive": "그건 because 덩어리 안의 동사예요.",
+              "information": "그건 receive 뒤 받는 것이에요.",
+              "are": "그건 when 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "메인 문장은 they would be thought very knowledgeable, '아주 박식하다고 여겨질 것이다'예요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_seem",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "가르침 없이 많은 정보를 받으면, 사람들은 어떻게 보인대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "when 뒤 'for the most part quite ignorant'를 봐요. ignorant는 '무지한'이에요.",
+              "when 뒤 'for the most part quite ignorant'를 봐요. ignorant는 '무지한'이에요."
+            ],
+            "explain": "'be thought very knowledgeable when they are … quite ignorant', 실제론 무지한데 박식해 보인대요. 이것도 걱정(−)이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'be thought very knowledgeable when they are … quite ignorant', 실제론 무지한데 박식해 보인대요. 이것도 걱정(−)이에요.",
+              "o2": "'be thought very knowledgeable when they are … quite ignorant', 실제론 무지한데 박식해 보인대요. 이것도 걱정(−)이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "실제로는 무지한데 박식하다고 여겨진다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "정말로 박식해진다"
+            },
+            {
+              "id": "o2",
+              "label": "정보를 하나도 기억하지 못한다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "very knowledgeable",
+            "quite ignorant"
+          ],
+          "tips": [
+            {
+              "label": "a quantity of",
+              "text": "'많은 양의'예요. a quantity of information = 많은 양의 정보.",
+              "mark": "a quantity of"
+            },
+            {
+              "label": "for the most part",
+              "text": "'대체로, 대부분'이에요.",
+              "mark": "for the most part"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "새 기술을 보는 눈",
+            "left": {
+              "label": "(+) 좋은 쪽",
+              "words": [
+                {
+                  "text": "glorify progress",
+                  "ko": "진보를 미화"
+                }
+              ]
+            },
+            "right": {
+              "label": "(−) 나쁜 쪽",
+              "words": [
+                {
+                  "text": "expect the worst",
+                  "ko": "최악을 예상"
+                },
+                {
+                  "text": "bemoaned writing",
+                  "ko": "글쓰기를 한탄"
+                },
+                {
+                  "text": "become forgetful",
+                  "ko": "잘 잊어버림"
+                },
+                {
+                  "text": "quite ignorant",
+                  "ko": "상당히 무지",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "vs"
+          }
+        },
+        {
+          "id": "s4_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "가르침 없이 정보만 '받으니(receive)' 아는 척만 하게 된다, 걱정의 흐름에 맞아요. 그래서 ③receive는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "receive",
+            "without proper instruction"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "bemoaned the development of writing",
+                "ko": "글쓰기의 발전을 한탄했다",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "a substitute for the knowledge",
+                "ko": "머릿속 지식 대신 글에 기댄다",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 맞음",
+                "text": "receive information without instruction",
+                "ko": "가르침 없이 정보만 받는다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "They would be “filled with the conceit of wisdom instead of real wisdom.”",
+      "model_translation": "그들은 '진정한 지혜 대신 지혜의 자만심으로 가득 차' 있게 될 것이었다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "wisdom",
+          "ko": "지혜"
+        },
+        {
+          "en": "They",
+          "ko": "그들은"
+        },
+        {
+          "en": "would be",
+          "ko": "~일 것이다"
+        },
+        {
+          "en": "filled with",
+          "ko": "~으로 가득 찬"
+        },
+        {
+          "en": "the conceit of wisdom",
+          "ko": "지혜의 자만심"
+        },
+        {
+          "en": "instead of real wisdom",
+          "ko": "진정한 지혜 대신"
+        },
+        {
+          "en": "filled",
+          "ko": "가득 찬"
+        },
+        {
+          "en": "conceit",
+          "ko": "자만심"
+        },
+        {
+          "en": "instead",
+          "ko": "대신에"
+        },
+        {
+          "en": "real",
+          "ko": "진정한"
+        }
+      ],
+      "slashes": [
+        "They would be",
+        "the conceit of wisdom"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "would be",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "They",
+            "would be",
+            "wisdom"
+          ],
+          "answers": [
+            "They",
+            "would be"
+          ],
+          "roles": {
+            "They": "S",
+            "would be": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "wisdom": "그건 of 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 They, 동사는 would be예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic"
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "They",
+            "would be",
+            "filled with",
+            "the conceit of wisdom",
+            "instead of real wisdom"
+          ],
+          "answers": [
+            "They",
+            "instead of real wisdom",
+            "the conceit of wisdom",
+            "filled with",
+            "would be"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "They",
+                "ko": "그들은"
+              },
+              " ",
+              {
+                "en": "instead of real wisdom",
+                "ko": "진정한 지혜 대신"
+              },
+              " ",
+              {
+                "en": "the conceit of wisdom",
+                "ko": "지혜의 자만심"
+              },
+              "으로 ",
+              {
+                "en": "filled with",
+                "ko": "가득 찬"
+              },
+              " 상태",
+              {
+                "en": "would be",
+                "ko": "일 것이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_conceit",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "진짜 지혜 대신 '지혜의 자만심(conceit)'으로 가득 찬대요. 소크라테스의 걱정은 여기까지예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "the conceit of wisdom",
+            "real wisdom"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "새 기술을 보는 눈",
+            "left": {
+              "label": "(+) 좋은 쪽",
+              "words": [
+                {
+                  "text": "glorify progress",
+                  "ko": "진보를 미화"
+                }
+              ]
+            },
+            "right": {
+              "label": "(−) 나쁜 쪽",
+              "words": [
+                {
+                  "text": "expect the worst",
+                  "ko": "최악을 예상"
+                },
+                {
+                  "text": "bemoaned writing",
+                  "ko": "글쓰기를 한탄"
+                },
+                {
+                  "text": "become forgetful",
+                  "ko": "잘 잊어버림"
+                },
+                {
+                  "text": "quite ignorant",
+                  "ko": "상당히 무지"
+                },
+                {
+                  "text": "conceit of wisdom",
+                  "ko": "지혜의 자만심",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "vs"
+          },
+          "meaning_check": true
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "📜",
+                "en": "expect the worst · bemoaned writing",
+                "ko": "새 기술마다 최악을 예상하는 경향 — 소크라테스도 글쓰기를 한탄했어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~5",
+                "icon": "🧠",
+                "en": "forgetful · ignorant · conceit",
+                "ko": "글에 기대면 잊어버리고, 아는 척만 하고, 자만심만 커질 거라고 걱정했어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Socrates wasn’t ④right — the new technology did often have the effects he feared — but he was shortsighted.",
+      "model_translation": "소크라테스가 틀리지는 않았지만(새로운 기술은 자주 그가 두려워했던 결과를 실제로 가져왔지만), 그는 근시안적이었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Socrates",
+          "ko": "소크라테스는"
+        },
+        {
+          "en": "wasn’t",
+          "ko": "~가 아니었다"
+        },
+        {
+          "en": "right",
+          "ko": "옳은, 맞는"
+        },
+        {
+          "en": "the new technology",
+          "ko": "그 새 기술은"
+        },
+        {
+          "en": "did often have",
+          "ko": "실제로 자주 가져왔다"
+        },
+        {
+          "en": "the effects he feared",
+          "ko": "그가 두려워한 결과"
+        },
+        {
+          "en": "but he was shortsighted",
+          "ko": "하지만 그는 근시안적이었다"
+        },
+        {
+          "en": "shortsighted",
+          "ko": "근시안적인, 멀리 못 보는"
+        },
+        {
+          "en": "technology",
+          "ko": "기술"
+        },
+        {
+          "en": "effects",
+          "ko": "결과, 효과"
+        },
+        {
+          "en": "feared",
+          "ko": "두려워했다"
+        }
+      ],
+      "slashes": [
+        "wasn’t ④right",
+        "the effects he feared —"
+      ],
+      "roles": [
+        {
+          "text": "Socrates",
+          "role": "S"
+        },
+        {
+          "text": "wasn’t",
+          "role": "V"
+        },
+        {
+          "text": "the new technology",
+          "role": "S"
+        },
+        {
+          "text": "did often have",
+          "role": "V"
+        },
+        {
+          "text": "the effects",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_dash",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "대시(—) 두 개 사이를 봐요. 새 기술은 소크라테스가 두려워한 결과를 실제로 가져왔대요, 아니래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'did often have the effects he feared'를 봐요. 동사 앞 did는 '정말로'라는 강조예요.",
+              "'did often have the effects he feared'를 봐요. 동사 앞 did는 '정말로'라는 강조예요."
+            ],
+            "explain": "'the new technology did often have the effects he feared', 새 기술이 그가 걱정한 결과를 정말로 자주 가져왔대요. 그의 걱정에 맞는 부분이 있었던 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'the new technology did often have the effects he feared', 새 기술이 그가 걱정한 결과를 정말로 자주 가져왔대요. 그의 걱정에 맞는 부분이 있었던 거예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "실제로 자주 가져왔다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "전혀 가져오지 않았다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "did often have",
+            "the effects he feared"
+          ],
+          "tips": [
+            {
+              "label": "did + 동사원형 (강조)",
+              "text": "동사 앞 do·does·did는 '정말로, 실제로'라는 강조예요. did have = 실제로 가져왔다.",
+              "mark": "did often have"
+            }
+          ]
+        },
+        {
+          "id": "s6_but",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "but 뒤에서 그는 shortsighted(근시안적)였대요. 그럼 대시(—) 내용으로 보아, but 앞은 소크라테스를 어떻게 보는 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "걱정한 결과가 실제로 일어났다면, 소크라테스의 걱정은 맞은 걸까요, 틀린 걸까요?",
+              "걱정한 결과가 실제로 일어났다면, 소크라테스의 걱정은 맞은 걸까요, 틀린 걸까요?"
+            ],
+            "explain": "걱정한 일이 실제로 일어났으니 그의 걱정엔 맞는 부분이 있었어요. but 앞은 이렇게 인정하고, 뒤는 '하지만 멀리는 못 봤다'로 꼬집어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "걱정한 일이 실제로 일어났으니 그의 걱정엔 맞는 부분이 있었어요. but 앞은 이렇게 인정하고, 뒤는 '하지만 멀리는 못 봤다'로 꼬집어요."
+            },
+            "point": "대시 사이: 걱정한 결과가 실제로 일어났다 → but 앞은 그를 인정(+), 뒤는 근시안(−) — 이 흐름에 ④가 맞는지 문제에서 확인"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그의 걱정에도 맞는 부분이 있었다 (+)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "그의 걱정은 완전히 엉터리였다 (−)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "did often have",
+            "but he was shortsighted"
+          ],
+          "signs": [
+            {
+              "text": "did often have",
+              "sign": "+"
+            },
+            {
+              "text": "shortsighted",
+              "sign": "−"
+            }
+          ]
+        },
+        {
+          "id": "s6_hold",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "대시(—) 사이 내용과 but 앞뒤 흐름에 밑줄 ④가 맞는지는 마지막 문제에서 같이 확인해 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "signs": [
+            {
+              "text": "did often have",
+              "sign": "+"
+            },
+            {
+              "text": "shortsighted",
+              "sign": "−"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "He couldn’t ⑤foresee the many ways that writing and reading would serve to spread information, spark fresh ideas, and expand human knowledge (if not wisdom).",
+      "model_translation": "그는 쓰기와 읽기가 정보를 전파하고, 신선한 생각을 촉발하며, (지혜는 아닐지라도) 인간의 지식을 확장하는 데 도움이 될 많은 방법을 예견할 수 없었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "He",
+          "ko": "그는"
+        },
+        {
+          "en": "couldn’t",
+          "ko": "~할 수 없었다"
+        },
+        {
+          "en": "foresee",
+          "ko": "내다보다, 예견하다"
+        },
+        {
+          "en": "the many ways",
+          "ko": "많은 방식"
+        },
+        {
+          "en": "writing and reading",
+          "ko": "쓰기와 읽기"
+        },
+        {
+          "en": "would serve to",
+          "ko": "~하는 데 도움이 될 것이다"
+        },
+        {
+          "en": "spread information",
+          "ko": "정보를 퍼뜨리다"
+        },
+        {
+          "en": "spark fresh ideas",
+          "ko": "새로운 생각을 일으키다"
+        },
+        {
+          "en": "expand human knowledge",
+          "ko": "인간의 지식을 넓히다"
+        },
+        {
+          "en": "if not wisdom",
+          "ko": "지혜는 아닐지라도"
+        },
+        {
+          "en": "ways",
+          "ko": "방식"
+        },
+        {
+          "en": "writing",
+          "ko": "글쓰기"
+        },
+        {
+          "en": "reading",
+          "ko": "읽기"
+        },
+        {
+          "en": "spread",
+          "ko": "퍼뜨리다"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "spark",
+          "ko": "일으키다, 촉발하다"
+        },
+        {
+          "en": "fresh",
+          "ko": "새로운"
+        },
+        {
+          "en": "ideas",
+          "ko": "생각"
+        },
+        {
+          "en": "expand",
+          "ko": "넓히다, 확장하다"
+        },
+        {
+          "en": "wisdom",
+          "ko": "지혜"
+        }
+      ],
+      "slashes": [
+        "the many ways",
+        "would serve",
+        "spread information,",
+        "spark fresh ideas,"
+      ],
+      "roles": [
+        {
+          "text": "He",
+          "role": "S"
+        },
+        {
+          "text": "couldn’t … foresee",
+          "role": "V"
+        },
+        {
+          "text": "the many ways",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that writing and reading would serve to spread information, spark fresh ideas, and expand human knowledge"
+      ],
+      "steps": [
+        {
+          "id": "s7_ways",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "소크라테스가 내다보지 못한 건 무엇이래요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "the many ways that 뒤 'spread information, spark fresh ideas, and expand human knowledge'를 봐요.",
+              "the many ways that 뒤 'spread information, spark fresh ideas, and expand human knowledge'를 봐요."
+            ],
+            "explain": "'spread information, spark fresh ideas, and expand human knowledge', 글이 정보를 퍼뜨리고 새 생각을 일으키고 지식을 넓히는 좋은 점(+)을 못 봤대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'spread information, spark fresh ideas, and expand human knowledge', 글이 정보를 퍼뜨리고 새 생각을 일으키고 지식을 넓히는 좋은 점(+)을 못 봤대요.",
+              "o2": "'spread information, spark fresh ideas, and expand human knowledge', 글이 정보를 퍼뜨리고 새 생각을 일으키고 지식을 넓히는 좋은 점(+)을 못 봤대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "글이 정보를 퍼뜨리고 지식을 넓힐 많은 방식",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "글이 기억력을 망치는 방식"
+            },
+            {
+              "id": "o2",
+              "label": "사람들이 글을 싫어할 이유"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "spread information",
+            "spark fresh ideas",
+            "expand human knowledge"
+          ],
+          "tips": [
+            {
+              "label": "serve to + 동사",
+              "text": "'~하는 데 도움이 되다, 쓰이다'예요.",
+              "mark": "serve to"
+            },
+            {
+              "label": "if not ~",
+              "text": "'~은 아닐지라도'예요. (if not wisdom) = 지혜까지는 아닐지라도.",
+              "mark": "if not"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "새 기술을 보는 눈",
+            "left": {
+              "label": "(+) 좋은 쪽",
+              "words": [
+                {
+                  "text": "glorify progress",
+                  "ko": "진보를 미화"
+                },
+                {
+                  "text": "spread information",
+                  "ko": "정보를 퍼뜨림",
+                  "fresh": true
+                },
+                {
+                  "text": "spark fresh ideas",
+                  "ko": "새 생각을 일으킴",
+                  "fresh": true
+                },
+                {
+                  "text": "expand human knowledge",
+                  "ko": "지식을 넓힘",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "(−) 나쁜 쪽",
+              "words": [
+                {
+                  "text": "expect the worst",
+                  "ko": "최악을 예상"
+                },
+                {
+                  "text": "bemoaned writing",
+                  "ko": "글쓰기를 한탄"
+                },
+                {
+                  "text": "become forgetful",
+                  "ko": "잘 잊어버림"
+                },
+                {
+                  "text": "quite ignorant",
+                  "ko": "상당히 무지"
+                },
+                {
+                  "text": "conceit of wisdom",
+                  "ko": "지혜의 자만심"
+                }
+              ]
+            },
+            "between": "vs"
+          }
+        },
+        {
+          "id": "s7_check",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "근시안적(shortsighted)이라 글의 좋은 점을 '내다보지 못했다(couldn’t foresee)', 앞 문장과 이어져요. 그래서 ⑤foresee는 문맥에 맞아요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "foresee"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "bemoaned the development of writing",
+                "ko": "글쓰기의 발전을 한탄했다",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "a substitute for the knowledge",
+                "ko": "머릿속 지식 대신 글에 기댄다",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 맞음",
+                "text": "receive information without instruction",
+                "ko": "가르침 없이 정보만 받는다",
+                "tone": "hl"
+              },
+              {
+                "label": "⑤ 맞음",
+                "text": "shortsighted → couldn’t foresee",
+                "ko": "근시안적 → 내다보지 못했다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        },
+        {
+          "id": "s7_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①②③⑤는 흐름에 맞았어요. 남은 하나가 대시(—) 사이 내용과 but 앞뒤 흐름에 맞는지 문제에서 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "① 맞음",
+                "text": "bemoaned the development of writing",
+                "ko": "글쓰기의 발전을 한탄했다",
+                "tone": "hl"
+              },
+              {
+                "label": "② 맞음",
+                "text": "a substitute for the knowledge",
+                "ko": "머릿속 지식 대신 글에 기댄다",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 맞음",
+                "text": "receive information without instruction",
+                "ko": "가르침 없이 정보만 받는다",
+                "tone": "hl"
+              },
+              {
+                "label": "⑤ 맞음",
+                "text": "shortsighted → couldn’t foresee",
+                "ko": "근시안적 → 내다보지 못했다",
+                "tone": "hl"
+              }
+            ]
+          },
+          "panel_below": true
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

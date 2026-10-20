@@ -1,0 +1,98 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "trying to understand",
+   "sense": "~하려고",
+   "usage": "try + to부정사 = ~하려고 애쓰다"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "to sail",
+   "sense": "~하라고",
+   "usage": "order + 사람 + to부정사 = 사람에게 ~하라고 명령하다"
+  },
+  {
+   "word": "to",
+   "phrase": "returning to the mouth",
+   "sense": "~로",
+   "usage": "전치사 to (방향)"
+  }
+ ],
+ "4": [
+  {
+   "word": "for",
+   "phrase": "for three years",
+   "sense": "~ 동안",
+   "usage": "전치사 for + 기간"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "writes that",
+   "sense": "~라고",
+   "usage": "명사절 that (write that …)"
+  },
+  {
+   "word": "that",
+   "phrase": "reported that",
+   "sense": "~라고",
+   "usage": "명사절 that (report that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "direction to where",
+   "sense": "~와 (반대인)",
+   "usage": "the opposite direction to ~ = ~와 정반대 방향"
+  },
+  {
+   "word": "to",
+   "phrase": "used to seeing",
+   "sense": "~하는 데 (익숙한)",
+   "usage": "be used to + -ing = ~하는 데 익숙하다"
+  },
+  {
+   "word": "to",
+   "phrase": "expecting it to be",
+   "sense": "~하기를, ~할 것이라고",
+   "usage": "expect + 목적어 + to부정사"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "to fabricate",
+   "sense": "~할 (만큼)",
+   "usage": "형용사 + enough + to부정사 = ~할 만큼 충분히 …한"
+  },
+  {
+   "word": "yet",
+   "phrase": "and yet prosaic",
+   "sense": "그러면서도, 그런데도",
+   "usage": "and yet = 그렇지만 (대조를 잇는 말)"
+  }
+ ],
+ "7": [
+  {
+   "word": "that",
+   "phrase": "It is this that",
+   "sense": "(강조 — 바로 ~가)",
+   "usage": "It is A that ~ 강조 구문"
+  },
+  {
+   "word": "to",
+   "phrase": "to conclude",
+   "sense": "~하도록",
+   "usage": "lead + 사람 + to부정사 = 사람이 ~하게 하다"
+  },
+  {
+   "word": "that",
+   "phrase": "conclude that",
+   "sense": "~라고",
+   "usage": "명사절 that (conclude that …)"
+  }
+ ]
+}

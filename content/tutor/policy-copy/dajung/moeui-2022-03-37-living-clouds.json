@@ -1,0 +1,373 @@
+{
+  "lesson": "moeui-2022-03-37-living-clouds",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "순서 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_sv": {
+      "ask": "주어진 글은 두 문장이에요. 콤마(,) 뒤 메인 문장의 주어(S)·동사(V)·보어(C)·목적어(O)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "a young child": "그건 When(~할 때) 덩어리 안의 주어예요. 콤마(,) 뒤에서 찾아봐요.",
+        "fleecy lambs": "그건 as(~로) 뒤 덩어리예요. 구름을 무엇으로 보는지예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "첫 문장은 S the clouds, V may seem, C alive and independent예요. 둘째 문장은 S a metaphorical chain, V begins, O to neutralize the fear예요.",
+      "from": "fq3rmq"
+    },
+    "g_lamb": {
+      "ask": "But 뒤를 봐요. 구름을 털 많은 어린 양(fleecy lambs)으로 보면 어떻게 된대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "neutralize the fear(두려움을 중화하다)를 봐요. 중화는 힘을 없앤다는 말이에요.",
+        "neutralize the fear(두려움을 중화하다)를 봐요. 중화는 힘을 없앤다는 말이에요."
+      ],
+      "explain": "'a metaphorical chain begins to neutralize the fear', 은유가 두려움의 힘을 빼기 시작한대요. 구름이 살아 있지 않다고 하진 않았어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'a metaphorical chain begins to neutralize the fear', 은유가 두려움의 힘을 빼기 시작한대요. 구름이 살아 있지 않다고 하진 않았어요.",
+        "o2": "'a metaphorical chain begins to neutralize the fear', 은유가 두려움의 힘을 빼기 시작한대요. 구름이 살아 있지 않다고 하진 않았어요."
+      },
+      "from": "1hji7r0"
+    },
+    "g_next": {
+      "ask": "주어진 글은 '은유가 두려움을 누그러뜨리기 시작한다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "begins to neutralize(누그러뜨리기 시작한다)라고 했어요. 그 결과 구름이 어떻게 느껴질지 생각해 봐요.",
+        "begins to neutralize(누그러뜨리기 시작한다)라고 했어요. 그 결과 구름이 어떻게 느껴질지 생각해 봐요."
+      ],
+      "explain": "은유가 두려움을 누그러뜨리기 시작했으니, 다음엔 그래서 구름이 아이에게 어떻게 느껴지는지가 이어지기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "은유가 두려움을 누그러뜨리기 시작했으니, 다음엔 그래서 구름이 아이에게 어떻게 느껴지는지가 이어지기 쉬워요.",
+        "o2": "은유가 두려움을 누그러뜨리기 시작했으니, 다음엔 그래서 구름이 아이에게 어떻게 느껴지는지가 이어지기 쉬워요."
+      },
+      "from": "865p30"
+    },
+    "paper_order": {
+      "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요.",
+      "from": "11bywp8"
+    },
+    "a_sv": {
+      "ask": "(A)는 긴 한 문장이에요. 메인 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the kind of movement": "그건 from(~와) 뒤 덩어리예요. 무엇과 구별되는지예요.",
+        "the clouds": "그건 because 덩어리 안의 주어예요. 메인 문장은 그 앞이에요.",
+        "the wind": "그건 by 뒤 덩어리예요. 누가 미는지예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Cloud movement(구름의 움직임), 동사는 becomes, 보어는 differentiated(구별되는)예요. because 뒤가 그 이유예요.",
+      "from": "1usqww0"
+    },
+    "a_before": {
+      "ask": "(A)는 '구름의 움직임은 생물을 살아 있게 하는 움직임과 구별된다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "differentiated(구별되는)는 따져서 나눈다는 말이에요. 은유가 아니라 논리로 구름을 보는 방식이에요.",
+        "differentiated(구별되는)는 따져서 나눈다는 말이에요. 은유가 아니라 논리로 구름을 보는 방식이에요."
+      ],
+      "explain": "(A)는 바람에 밀려야 움직이니 살아 있지 않다고 따지는, 논리적인 이론이에요. 그러니 앞에는 구름의 움직임을 따져 본다는 말이 먼저 나와야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "(A)는 바람에 밀려야 움직이니 살아 있지 않다고 따지는, 논리적인 이론이에요. 그러니 앞에는 구름의 움직임을 따져 본다는 말이 먼저 나와야 해요.",
+        "o2": "(A)는 바람에 밀려야 움직이니 살아 있지 않다고 따지는, 논리적인 이론이에요. 그러니 앞에는 구름의 움직임을 따져 본다는 말이 먼저 나와야 해요."
+      },
+      "point": "(A) “Cloud movement” becomes differentiated ← 앞에 구름의 움직임을 따져 보는(이론화하는) 이야기",
+      "from": "ok82uh"
+    },
+    "a_why": {
+      "ask": "because 뒤를 봐요. 구름은 왜 살아 있지 않다고 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "only if they are “pushed” by the wind를 봐요. only if는 '~할 때만'이에요.",
+        "only if they are “pushed” by the wind를 봐요. only if는 '~할 때만'이에요."
+      ],
+      "explain": "'the clouds move only if they are pushed by the wind', 바람이 밀 때만 움직인대요. 밖에서 밀어야만 움직이는 건 살아 있지 않대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'the clouds move only if they are pushed by the wind', 바람이 밀 때만 움직인대요. 밖에서 밀어야만 움직이는 건 살아 있지 않대요.",
+        "o2": "'the clouds move only if they are pushed by the wind', 바람이 밀 때만 움직인대요. 밖에서 밀어야만 움직이는 건 살아 있지 않대요."
+      },
+      "from": "1aunnwe"
+    },
+    "a_end": {
+      "say": "칠판에 정리해 볼게요. (A)는 '밖에서 밀어야만 움직이는 것은 살아 있지 않다'는 아이의 논리로 끝나요.",
+      "from": "d7gvvm"
+    },
+    "s3_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "but": "그건 '그러나', 두 문장을 잇는 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "앞은 S The cloud, V may still be thought of예요. but 뒤는 S it, V is, C no longer terrifying이에요.",
+      "from": "kdqcfk"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "구름은 여전히 살아 있다고 여겨질 수 있지만, 더는 무섭지 않대요.",
+      "from": "2kkeor"
+    },
+    "b_before": {
+      "ask": "(B)는 '구름은 여전히 살아 있다고 여겨질 수 있지만, 더는 무섭지 않다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "still(여전히)과 no longer(더는 ~ 않는)를 봐요. 살아 있다는 생각은 그대로인데 무서움만 사라졌어요.",
+        "still(여전히)과 no longer(더는 ~ 않는)를 봐요. 살아 있다는 생각은 그대로인데 무서움만 사라졌어요."
+      ],
+      "explain": "still alive(여전히 살아 있음), no longer terrifying(더는 무섭지 않음)이에요. 살아 있다는 생각은 남고 무서움만 사라졌으니, 앞에는 무서움을 누그러뜨린 무언가가 있어야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "still alive(여전히 살아 있음), no longer terrifying(더는 무섭지 않음)이에요. 살아 있다는 생각은 남고 무서움만 사라졌으니, 앞에는 무서움을 누그러뜨린 무언가가 있어야 해요.",
+        "o2": "still alive(여전히 살아 있음), no longer terrifying(더는 무섭지 않음)이에요. 살아 있다는 생각은 남고 무서움만 사라졌으니, 앞에는 무서움을 누그러뜨린 무언가가 있어야 해요."
+      },
+      "point": "(B) still alive, but no longer terrifying ← 앞에 두려움을 누그러뜨린 것",
+      "from": "4anals"
+    },
+    "s3_basic_meaning": {
+      "say": "구름은 여전히 살아 있다고 여겨질 수 있지만, 더는 무섭지 않대요.",
+      "from": "qxfevp"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "metaphor": "그건 through(~을 통한) 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Repression and neutralization, 동사는 are, 보어는 possible strategies예요.",
+      "from": "bcnj39"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "gbm015"
+    },
+    "b2_another": {
+      "say": "neutralization through metaphor(은유를 통한 중화)는 주어진 글의 '양으로 보기'예요. 그것도 방법이지만, 또 다른 방법이 있대요.",
+      "from": "1qx2ue3"
+    },
+    "b3_sv": {
+      "ask": "(B) 단락의 마지막 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the moving clouds": "그건 Faced with(~을 마주하면) 뒤 덩어리예요.",
+        "their movement": "그건 about 뒤 덩어리예요. 무엇에 대해 이론화하는지예요.",
+        "the clouds": "그건 that 덩어리 안의 주어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the child, 동사는 can theorize(이론화할 수 있다)예요. 콤마(,) 앞은 어떤 상황인지 알려 줘요.",
+      "from": "1l4ynjh"
+    },
+    "b3_how": {
+      "ask": "아이가 이론을 세우면 구름이 어떻게 된대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "cease to be alive를 봐요. cease to ~는 '~하기를 멈추다'예요.",
+        "cease to be alive를 봐요. cease to ~는 '~하기를 멈추다'예요."
+      ],
+      "explain": "'the clouds cease to be alive', 구름이 살아 있기를 멈춘대요. 은유는 살아 있는 채로 무서움만 덜었지만, 이론은 살아 있다는 생각 자체를 없애요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'the clouds cease to be alive', 구름이 살아 있기를 멈춘대요. 은유는 살아 있는 채로 무서움만 덜었지만, 이론은 살아 있다는 생각 자체를 없애요.",
+        "o2": "'the clouds cease to be alive', 구름이 살아 있기를 멈춘대요. 은유는 살아 있는 채로 무서움만 덜었지만, 이론은 살아 있다는 생각 자체를 없애요."
+      },
+      "from": "1946s9n"
+    },
+    "b3_next": {
+      "ask": "(B)는 '아이는 구름이 살아 있지 않게 되는 쪽으로 움직임을 이론화할 수 있다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "theorize about their movement(움직임을 이론화한다)고만 했어요. 어떻게 따지는지는 아직 안 나왔어요.",
+        "theorize about their movement(움직임을 이론화한다)고만 했어요. 어떻게 따지는지는 아직 안 나왔어요."
+      ],
+      "explain": "이론을 세울 수 있다고만 했지, 그 이론이 무엇인지는 아직 안 나왔어요. 다음엔 구름의 움직임을 어떻게 따지는지가 이어지기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "이론을 세울 수 있다고만 했지, 그 이론이 무엇인지는 아직 안 나왔어요. 다음엔 구름의 움직임을 어떻게 따지는지가 이어지기 쉬워요.",
+        "o2": "이론을 세울 수 있다고만 했지, 그 이론이 무엇인지는 아직 안 나왔어요. 다음엔 구름의 움직임을 어떻게 따지는지가 이어지기 쉬워요."
+      },
+      "point": "(B) 끝 '움직임을 이론화할 수 있다' → 다음은 그 이론의 구체적인 내용",
+      "from": "1il5oad"
+    },
+    "c_sv": {
+      "ask": "(C)의 첫 문장이에요. 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the motion of clouds": "그건 that 덩어리 안, separate(구분하다)의 목적어예요.",
+        "the fear of living clouds": "그건 so that 덩어리 안의 주어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Children, 동사는 develop, 목적어는 theoretical constructs(이론적인 생각)예요. that 덩어리가 그 생각을 꾸며요.",
+      "from": "12ez3vo"
+    },
+    "c_before": {
+      "ask": "(C)는 '아이들은 구름의 움직임을 사람·동물의 움직임과 구분하는 이론적 생각을 만든다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "theoretical constructs(이론적 생각)는 앞에서 나온 이론을 한데 묶어 부르는 말이에요. eventually(결국)도 봐요.",
+        "theoretical constructs(이론적 생각)는 앞에서 나온 이론을 한데 묶어 부르는 말이에요. eventually(결국)도 봐요."
+      ],
+      "explain": "(C)는 구름과 생물의 움직임을 구분하는 이론을 묶어 말하고, eventually(결국) 두려움이 사라진다고 마무리해요. 그러니 앞에는 그 구분을 구체적으로 따진 내용이 먼저 나와야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "(C)는 구름과 생물의 움직임을 구분하는 이론을 묶어 말하고, eventually(결국) 두려움이 사라진다고 마무리해요. 그러니 앞에는 그 구분을 구체적으로 따진 내용이 먼저 나와야 해요.",
+        "o2": "(C)는 구름과 생물의 움직임을 구분하는 이론을 묶어 말하고, eventually(결국) 두려움이 사라진다고 마무리해요. 그러니 앞에는 그 구분을 구체적으로 따진 내용이 먼저 나와야 해요."
+      },
+      "point": "(C) theoretical constructs, eventually ← 앞에 구름의 움직임을 구분하는 구체적인 이론",
+      "from": "16jji4i"
+    },
+    "s7_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "10fx9ti"
+    },
+    "c2_logic": {
+      "say": "살아 있는 것과 아닌 것의 경계에 걸쳐 불편하면, 논리로 경계를 다시 그으라고 해요.",
+      "from": "1f712w2"
+    },
+    "s8_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "nu071l"
+    },
+    "c3_end": {
+      "say": "(C)는 '무서우면 이론을 세워 보라'는 짧은 조언으로 끝나요.",
+      "from": "1otjt1i"
+    },
+    "order_link": {
+      "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+      "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+      "wrong_by": {
+        "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+        "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+      "explain": "주어진 글(은유가 두려움을 누그러뜨림) → (B) 살아 있어도 안 무섭다, 또 다른 전략: 이론화 → (A) 바람에 밀려야 움직이니 살아 있지 않다 → (C) 그런 이론으로 결국 두려움이 사라진다 순서예요.",
+      "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지",
+      "from": "7zpfzn"
+    },
+    "c_go": {
+      "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?",
+      "from": "eua8yu"
+    }
+  },
+  "exam": {
+    "ask": "단락 첫머리 단서(still, theorize, Cloud movement, theoretical constructs, eventually)를 떠올리며 순서를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 은유가 두려움을 누그러뜨림 → (B) 살아 있어도 안 무섭다, 또 다른 전략은 이론화 → (A) 바람에 밀려야 움직이니 살아 있지 않다 → (C) 그런 이론으로 결국 두려움이 사라진다, 순서예요.",
+    "final_wrong": "정답은 ② (B)-(A)-(C)예요.",
+    "option_feedback": {
+      "1": "(A)의 '구름의 움직임 구별'은 이론을 세운다는 말이 먼저 나와야 해요. 주어진 글은 은유 이야기에서 끝나요.",
+      "3": "많이 고른 오답이에요. (B) 끝은 이론을 세울 수 있다고만 했어요. 그 이론의 내용인 (A)가 먼저 오고, (C)가 그것을 묶어 eventually(결국)로 마무리해요.",
+      "4": "(C)의 '이론적 생각'과 eventually(결국)는 이론이 나온 뒤라야 해요. 주어진 글은 아직 은유 이야기예요.",
+      "5": "(C)가 주어진 글 바로 뒤에 오면, 아직 나오지 않은 이론을 묶어 말하게 돼요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 18%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "(B) 끝 theorize(이론화하다)와 (C) 첫머리 theoretical constructs(이론적 생각)가 비슷한 말이라 바로 붙이고 싶었을 거예요. 하지만 (B)는 이론을 세울 수 있다고만 했고, 그 이론이 무엇인지(바람에 밀려야 움직이니 살아 있지 않다)는 (A)가 말해요. (C)는 그 이론을 묶어 말하고 eventually(결국) 두려움이 사라진다고 마무리해요.",
+        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "같은 말(theorize)로 이었어요",
+            "skills": [
+              "same_word_link"
+            ],
+            "reply": "알려 줘서 고마워요. 비슷한 말이 반복된다고 바로 이어지는 건 아니에요. 구체적인 내용이 먼저, 묶어 말하는 정리가 뒤에 와요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "eventually(결국)를 못 봤어요",
+            "skills": [
+              "conclusion_signal"
+            ],
+            "reply": "알려 줘서 고마워요. eventually(결국)는 이야기를 마무리할 때 써요. 앞으로 마무리 신호를 먼저 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "same_word_link",
+              "conclusion_signal"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 반복되는 말과 마무리 신호를 같이 짚어 볼게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(B) 끝",
+              "text": "the child can theorize about their movement",
+              "ko": "이론을 세울 수 있다 (내용은 아직)",
+              "tone": "hl"
+            },
+            {
+              "label": "(A)",
+              "text": "the clouds move only if they are “pushed” by the wind",
+              "ko": "이론의 구체적인 내용",
+              "tone": "hl2"
+            },
+            {
+              "label": "(C)",
+              "text": "theoretical constructs … so that eventually the fear … disappears",
+              "ko": "이론을 묶어 말하고 마무리",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "mddbri"
+  },
+  "intro": {
+    "topic": {
+      "say": "어린아이에게 하늘을 지나가는 구름은 살아 있는 것처럼 보일 수도 있어요. 이번 글은 아이가 그 두려움을 어떻게 다루는지 이야기해요."
+    },
+    "method1": {
+      "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. still, another, eventually 같은 말이 무엇을 받는지 찾아볼게요."
+    },
+    "from": "123ffjt"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "t4h276"
+}

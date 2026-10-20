@@ -1,0 +1,90 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "argued that",
+   "sense": "~라고",
+   "usage": "명사절 that (argue that …)"
+  },
+  {
+   "word": "that",
+   "phrase": "existence that offered",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "normal to be pulled",
+   "sense": "~하는 것 (it이 받는 말)",
+   "usage": "가목적어 it … 진목적어 to부정사"
+  },
+  {
+   "word": "that",
+   "phrase": "the future that awakened",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "drive to",
+   "sense": "~하려는 (욕구)",
+   "usage": "명사 + to부정사"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "suggests that",
+   "sense": "~라고",
+   "usage": "명사절 that (suggest that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "a need to invent",
+   "sense": "~하려는 (욕구)",
+   "usage": "명사 + to부정사"
+  },
+  {
+   "word": "that",
+   "phrase": "purposes that would consume",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "to rise above",
+   "sense": "~하려는 (욕구)",
+   "usage": "a need … to부정사 (사이에 on the part of humans)"
+  },
+  {
+   "word": "if",
+   "phrase": "accidental if not random",
+   "sense": "~까지는 아니더라도",
+   "usage": "A if not B"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "To him",
+   "sense": "~에게는",
+   "usage": "전치사 to + 사람"
+  },
+  {
+   "word": "to",
+   "phrase": "driven to transcend",
+   "sense": "~하도록",
+   "usage": "be driven + to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "seek to become",
+   "sense": "~하려고 (애쓰다)",
+   "usage": "seek + to부정사"
+  }
+ ]
+}

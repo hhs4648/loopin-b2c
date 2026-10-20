@@ -1,0 +1,160 @@
+{
+ "1": [
+  {
+   "word": "if",
+   "phrase": "If the goal is",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사 (조건)"
+  },
+  {
+   "word": "to",
+   "phrase": "is to figure out",
+   "sense": "~하는 것",
+   "usage": "be + to부정사 — 보어 '~하는 것'"
+  },
+  {
+   "word": "to",
+   "phrase": "how best to cover",
+   "sense": "~할 (방법)",
+   "usage": "how + to부정사 = 어떻게 ~할지"
+  },
+  {
+   "word": "to",
+   "phrase": "— to fill students",
+   "sense": "~하는 것",
+   "usage": "to부정사 '~하는 것' — 대시 사이, 앞말을 다시 풂"
+  },
+  {
+   "word": "to",
+   "phrase": "appropriate to try",
+   "sense": "~하는 것 (진짜 주어)",
+   "usage": "가주어 it … to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "try to maximize",
+   "sense": "~하려고",
+   "usage": "try + to부정사 = ~하려고 애쓰다"
+  },
+  {
+   "word": "as",
+   "phrase": "such as by assigning",
+   "sense": "예를 들어 ~ 같은",
+   "usage": "such as = 예를 들어"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "points out that",
+   "sense": "~라고",
+   "usage": "명사절 접속사 that — 지적한 내용"
+  },
+  {
+   "word": "as",
+   "phrase": "such as requiring",
+   "sense": "예를 들어 ~ 같은",
+   "usage": "such as = 예를 들어"
+  },
+  {
+   "word": "to",
+   "phrase": "students to spend",
+   "sense": "~하도록",
+   "usage": "require + 사람 + to부정사 = 사람에게 ~하도록 요구하다"
+  },
+  {
+   "word": "that",
+   "phrase": "that help children",
+   "sense": "~하는 것은 (강조)",
+   "usage": "it is A that ~ 강조 구문의 that"
+  },
+  {
+   "word": "to",
+   "phrase": "children to learn",
+   "sense": "~하도록",
+   "usage": "help + 사람 + to부정사 = 사람이 ~하게 돕다"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "in relation to the task",
+   "sense": "~와 (관련하여)",
+   "usage": "in relation to + 명사 = ~와 관련하여"
+  },
+  {
+   "word": "to",
+   "phrase": "respond to",
+   "sense": "~에 (반응하다)",
+   "usage": "respond to + 명사 = ~에 반응하다"
+  }
+ ],
+ "4": [
+  {
+   "word": "as",
+   "phrase": "as a result",
+   "sense": "~로서",
+   "usage": "as a result = 그 결과로"
+  }
+ ],
+ "5": [
+  {
+   "word": "but",
+   "phrase": "But that’s",
+   "sense": "하지만",
+   "usage": "접속사 But — 앞 내용을 반박"
+  },
+  {
+   "word": "that",
+   "phrase": "that’s unlikely",
+   "sense": "그것",
+   "usage": "지시대명사 that — 앞에 나온 것을 가리킴"
+  },
+  {
+   "word": "to",
+   "phrase": "unlikely to have",
+   "sense": "~할 (것 같지 않다)",
+   "usage": "be unlikely to부정사 = ~할 것 같지 않다"
+  },
+  {
+   "word": "that",
+   "phrase": "variables that Ames identifies",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 주어·동사 (목적어 빠짐)"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "makes sense to see",
+   "sense": "~하는 것 (진짜 주어)",
+   "usage": "가주어 it … to부정사"
+  },
+  {
+   "word": "as",
+   "phrase": "see education as being",
+   "sense": "~로",
+   "usage": "see A as B = A를 B로 보다"
+  },
+  {
+   "word": "to",
+   "phrase": "helped to discover",
+   "sense": "~하도록",
+   "usage": "be helped to부정사 = ~하도록 도움받다"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "to bring about",
+   "sense": "~하는 데",
+   "usage": "to부정사 — 목적 '~하는 데, ~하기 위해'"
+  },
+  {
+   "word": "that",
+   "phrase": "that shift",
+   "sense": "그 (변화)",
+   "usage": "지시형용사 that + 명사"
+  }
+ ]
+}

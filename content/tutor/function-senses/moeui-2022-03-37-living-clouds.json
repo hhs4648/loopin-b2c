@@ -1,0 +1,132 @@
+{
+ "1": [
+  {
+   "word": "as",
+   "phrase": "sees clouds as",
+   "sense": "~로 (보다)",
+   "usage": "see A as B = A를 B로 보다"
+  },
+  {
+   "word": "but",
+   "phrase": "But if one",
+   "sense": "그러나",
+   "usage": "접속사 but (문장 앞)"
+  },
+  {
+   "word": "if",
+   "phrase": "if one sees",
+   "sense": "~한다면",
+   "usage": "조건 if + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "begins to neutralize",
+   "sense": "~하기 (시작하다)",
+   "usage": "begin to + 동사원형"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "movement that makes",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "if",
+   "phrase": "only if they are",
+   "sense": "~할 때만",
+   "usage": "only if + 주어·동사"
+  }
+ ],
+ "3": [
+  {
+   "word": "as",
+   "phrase": "thought of as alive",
+   "sense": "~로 (여겨지다)",
+   "usage": "be thought of as = ~로 여겨지다"
+  },
+  {
+   "word": "but",
+   "phrase": "but it is",
+   "sense": "그러나",
+   "usage": "접속사 but (두 문장을 이음)"
+  }
+ ],
+ "4": [
+  {
+   "word": "but",
+   "phrase": "but there is another",
+   "sense": "그러나",
+   "usage": "접속사 but (두 문장을 이음)"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "such a way that",
+   "sense": "~하는 (식으로)",
+   "usage": "in such a way that + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "cease to be",
+   "sense": "~하기를 (멈추다)",
+   "usage": "cease to + 동사원형"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "constructs that separate",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "so",
+   "phrase": "so that eventually",
+   "sense": "그래서 (so that의 일부)",
+   "usage": "so that + 주어·동사 = 그래서 ~하게"
+  },
+  {
+   "word": "that",
+   "phrase": "so that eventually",
+   "sense": "(so that의 일부)",
+   "usage": "so that + 주어·동사 = 그래서 ~하게"
+  }
+ ],
+ "7": [
+  {
+   "word": "if",
+   "phrase": "If things seem",
+   "sense": "~한다면",
+   "usage": "조건 if + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "to redefine",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  },
+  {
+   "word": "so",
+   "phrase": "so that things fall",
+   "sense": "~하도록 (so that의 일부)",
+   "usage": "so that + 주어·동사 = ~하도록"
+  },
+  {
+   "word": "that",
+   "phrase": "so that things fall",
+   "sense": "(so that의 일부)",
+   "usage": "so that + 주어·동사 = ~하도록"
+  }
+ ],
+ "8": [
+  {
+   "word": "if",
+   "phrase": "If it scares you",
+   "sense": "~한다면",
+   "usage": "조건 if + 주어·동사"
+  }
+ ]
+}

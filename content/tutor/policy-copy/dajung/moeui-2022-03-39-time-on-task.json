@@ -1,0 +1,471 @@
+{
+  "lesson": "moeui-2022-03-39-time-on-task",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "문장 넣기 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_sv": {
+      "ask": "긴 문장이에요. 메인 주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the goal": "그건 If(만약 ~라면) 덩어리 안의 주어예요. then 뒤에서 찾아봐요.",
+        "is": "그건 If(만약 ~라면) 덩어리 안의 동사예요. then 뒤에서 찾아봐요.",
+        "students": "그건 대시(—) 사이 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "If 덩어리 뒤 then 다음이 메인이에요. 주어는 it, 동사는 might seem, 보어는 appropriate예요.",
+      "from": "djl8x0"
+    },
+    "g_dash": {
+      "say": "대시(—) 사이 'to fill students with facts'는 앞의 'cover a set curriculum'을 다시 풀어 준 말이에요. 정해진 교육과정을 다룬다는 건 학생을 사실로 채운다는 뜻이에요.",
+      "from": "1ccn66h"
+    },
+    "g_time": {
+      "ask": "'try to maximize time on task, such as by assigning homework'는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "maximize는 '최대로 늘리다', time on task는 '과제에 쓰는 시간'이에요.",
+        "maximize는 '최대로 늘리다', time on task는 '과제에 쓰는 시간'이에요."
+      ],
+      "explain": "maximize는 '최대로 늘리다', time on task는 '과제에 쓰는 시간'이에요. 숙제를 내 줘서 공부 시간을 최대한 늘리는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "maximize는 '최대로 늘리다', time on task는 '과제에 쓰는 시간'이에요. 숙제를 내 줘서 공부 시간을 최대한 늘리는 거예요.",
+        "o2": "maximize는 '최대로 늘리다', time on task는 '과제에 쓰는 시간'이에요. 숙제를 내 줘서 공부 시간을 최대한 늘리는 거예요."
+      },
+      "point": "maximize time on task (by assigning homework) = 숙제로 공부 시간을 최대한 늘리기",
+      "from": "1yrnues"
+    },
+    "g_seem": {
+      "ask": "'it might seem appropriate'라고 했어요. 글쓴이는 이 방법이 정말 좋다고 단정할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "might seem은 '~해 보일 수도 있다'예요. 앞에 If(만약 목표가 ~라면)도 붙어 있어요.",
+        "might seem은 '~해 보일 수도 있다'예요. 앞에 If(만약 목표가 ~라면)도 붙어 있어요."
+      ],
+      "explain": "might seem은 '~해 보일 수도 있다'예요. 그것도 '만약 목표가 사실로 채우는 거라면'이라는 조건이 붙어서, 글쓴이가 단정한 게 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "might seem은 '~해 보일 수도 있다'예요. 그것도 '만약 목표가 사실로 채우는 거라면'이라는 조건이 붙어서, 글쓴이가 단정한 게 아니에요."
+      },
+      "from": "2sle7i"
+    },
+    "g_noclue": {
+      "say": "주어진 문장엔 This, But처럼 앞을 가리키는 말이 없어요. 이럴 땐 지문에서 가리킬 대상이 없는 말을 찾으면 돼요.",
+      "point": "주어진 문장에 단서가 없으면 → 지문에서 가리킬 대상이 없는 말을 찾는다",
+      "from": "1p12a4r"
+    },
+    "s1_sv": {
+      "ask": "아주 긴 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "dean of the college of education": "그건 콤마 사이, Carole Ames가 누구인지 덧붙인 말이에요.",
+        "students": "그건 괄호 안 예시 속 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Carole Ames, 동사는 points out(지적한다)이에요. that 뒤가 지적한 내용이에요.",
+      "from": "6pz0qa"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1effu3a"
+    },
+    "s1_cleft": {
+      "say": "it isn’t A that ~는 '~하는 건 A가 아니다'예요. 아이들이 더 잘 배우게 돕는 건 행동의 양적 변화가 아니래요.",
+      "from": "jegzbs"
+    },
+    "s1_quant": {
+      "ask": "그럼 quantitative changes(양적 변화)의 예는 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "괄호 안 such as(예를 들어) 뒤를 봐요.",
+        "괄호 안 such as(예를 들어) 뒤를 봐요."
+      ],
+      "explain": "괄호 안 such as 뒤, 책이나 학습지 앞에서 더 많은 시간을 보내게 하는 게 양적 변화의 예예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "괄호 안 such as 뒤, 책이나 학습지 앞에서 더 많은 시간을 보내게 하는 게 양적 변화의 예예요.",
+        "o2": "괄호 안 such as 뒤, 책이나 학습지 앞에서 더 많은 시간을 보내게 하는 게 양적 변화의 예예요."
+      },
+      "from": "h90hjl"
+    },
+    "s1_board": {
+      "say": "더 오래 공부시키는 양적 변화는 돕지 않는대요. 칠판 왼쪽에 붙여 둘게요.",
+      "from": "lw8z32"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "pra3km"
+    },
+    "s2_rather": {
+      "ask": "Rather(오히려) 뒤를 봐요. 아이들이 더 잘 배우게 돕는 건 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "qualitative는 '질적인'이에요. 학생이 자신을 보고(view), 참여하고(engage), 반응하는(respond) 방식을 봐요.",
+        "qualitative는 '질적인'이에요. 학생이 자신을 보고(view), 참여하고(engage), 반응하는(respond) 방식을 봐요."
+      ],
+      "explain": "qualitative changes(질적 변화), 학생이 자신을 보고, 학습에 참여하고, 반응하는 방식이 바뀌는 게 돕는대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "qualitative changes(질적 변화), 학생이 자신을 보고, 학습에 참여하고, 반응하는 방식이 바뀌는 게 돕는대요.",
+        "o2": "qualitative changes(질적 변화), 학생이 자신을 보고, 학습에 참여하고, 반응하는 방식이 바뀌는 게 돕는대요."
+      },
+      "from": "1dxwmmx"
+    },
+    "s2_board": {
+      "say": "양적 변화가 아니라 질적 변화가 돕는대요. 칠판 오른쪽에 붙여 둘게요.",
+      "from": "13evb0"
+    },
+    "s2_sort": {
+      "ask": "주어진 문장의 'maximize time on task(과제 시간 최대로 늘리기)'는 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "time(시간)을 늘리는 거예요. 더 많은 시간(more hours)과 같은 쪽이에요.",
+        "time(시간)을 늘리는 거예요. 더 많은 시간(more hours)과 같은 쪽이에요."
+      ],
+      "explain": "과제에 쓰는 시간을 늘리는 건 more hours(더 많은 시간)처럼 양을 바꾸는 거라 왼쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "과제에 쓰는 시간을 늘리는 건 more hours(더 많은 시간)처럼 양을 바꾸는 거라 왼쪽이에요."
+      },
+      "from": "1yssvn1"
+    },
+    "s2_flow": {
+      "ask": "① 자리예요. '돕는 건 양적 변화가 아니다' → '오히려 질적 변화다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not(아니다)으로 부정한 뒤 Rather(오히려)로 진짜를 말해요. 그대로 이어져요.",
+        "not(아니다)으로 부정한 뒤 Rather(오히려)로 진짜를 말해요. 그대로 이어져요."
+      ],
+      "explain": "not(아니다)으로 부정한 뒤 Rather(오히려)로 진짜를 말해요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "not(아니다)으로 부정한 뒤 Rather(오히려)로 진짜를 말해요. 그대로 이어져요."
+      },
+      "from": "17nh9uv"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_sv": {
+      "ask": "긴 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "students": "그건 on the part of(~ 쪽의) 뒤, 누구의 태도인지 알려 주는 말이에요.",
+        "teachers": "그건 the way(~하는 방식)를 꾸며 주는 덩어리 안의 주어예요.",
+        "think": "그건 the way(~하는 방식)를 꾸며 주는 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 these attitudes and responses, 동사는 emerge (from)예요.",
+      "from": "15brf5n"
+    },
+    "s4_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "r25frq"
+    },
+    "s3_these": {
+      "ask": "these attitudes and responses(이런 태도와 반응)는 무엇을 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "these는 바로 앞 문장을 가리켜요. view·engage·respond를 봐요.",
+        "these는 바로 앞 문장을 가리켜요. view·engage·respond를 봐요."
+      ],
+      "explain": "these는 바로 앞 문장의 질적 변화, 학생이 자신을 보고 참여하고 반응하는 방식을 받아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "these는 바로 앞 문장의 질적 변화, 학생이 자신을 보고 참여하고 반응하는 방식을 받아요.",
+        "o2": "these는 바로 앞 문장의 질적 변화, 학생이 자신을 보고 참여하고 반응하는 방식을 받아요."
+      },
+      "from": "1sx4es7"
+    },
+    "s3_from": {
+      "say": "학생의 이런 태도는 선생님이 학습을 어떻게 생각하고 수업을 어떻게 꾸리는지에서 나온대요.",
+      "from": "fikfgi"
+    },
+    "s3_flow": {
+      "ask": "② 자리예요. '질적 변화가 돕는다' → '그 태도는 선생님의 생각·수업 방식에서 나온다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "these attitudes가 바로 앞 질적 변화를 받아요. 그대로 이어져요.",
+        "these attitudes가 바로 앞 질적 변화를 받아요. 그대로 이어져요."
+      ],
+      "explain": "these attitudes가 바로 앞 질적 변화를 받아요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "these attitudes가 바로 앞 질적 변화를 받아요. 그대로 이어져요."
+      },
+      "from": "1ijhm11"
+    },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1h97dcm"
+    },
+    "s4_mean": {
+      "ask": "'that’s unlikely to have a positive effect on the critical variables'는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "unlikely to ~는 '~할 것 같지 않다'예요.",
+        "unlikely to ~는 '~할 것 같지 않다'예요."
+      ],
+      "explain": "unlikely to ~는 '~할 것 같지 않다'예요. 그것(that)은 Ames가 밝힌 중요한 변수에 좋은 영향을 줄 것 같지 않대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "unlikely to ~는 '~할 것 같지 않다'예요. 그것(that)은 Ames가 밝힌 중요한 변수에 좋은 영향을 줄 것 같지 않대요.",
+        "o1": "unlikely to ~는 '~할 것 같지 않다'예요. 그것(that)은 Ames가 밝힌 중요한 변수에 좋은 영향을 줄 것 같지 않대요."
+      },
+      "from": "7yv71x"
+    },
+    "s4_var": {
+      "ask": "the critical variables that Ames identifies(Ames가 밝힌 중요한 변수)는 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Ames는 무엇이 아이들을 더 잘 배우게 돕는다고 했는지 떠올려 봐요.",
+        "Ames는 무엇이 아이들을 더 잘 배우게 돕는다고 했는지 떠올려 봐요."
+      ],
+      "explain": "Ames는 질적 변화가 돕는다고 했어요. Ames가 밝힌 중요한 변수는 오른쪽, 질적 변화예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "Ames는 질적 변화가 돕는다고 했어요. Ames가 밝힌 중요한 변수는 오른쪽, 질적 변화예요."
+      },
+      "from": "et4eii"
+    },
+    "s4_that": {
+      "ask": "그럼 that(그것)은 질적 변화에 도움이 안 되는 것이어야 해요. 바로 앞 문장의 '선생님의 생각·수업 방식'이 that일 수 있을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "바로 앞 문장에서 학생의 태도(질적 변화)는 어디에서 나온다고 했는지 떠올려 봐요.",
+        "바로 앞 문장에서 학생의 태도(질적 변화)는 어디에서 나온다고 했는지 떠올려 봐요."
+      ],
+      "explain": "학생의 태도(질적 변화)는 선생님의 생각·수업 방식에서 나온다고 했어요. 그게 질적 변화에 도움이 안 된다는 건 말이 안 맞아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "학생의 태도(질적 변화)는 선생님의 생각·수업 방식에서 나온다고 했어요. 그게 질적 변화에 도움이 안 된다는 건 말이 안 맞아요."
+      },
+      "from": "a7yzcj"
+    },
+    "s4_break": {
+      "say": "That이 가리킬, 질적 변화에 도움이 안 되는 방법이 But 바로 앞에 있어야 해요. 지금 앞에는 그런 방법이 없어요.",
+      "point": "③ 앞에 that이 받을 '도움 안 되는 방법'이 없다 → 흐름이 끊긴다",
+      "from": "jpv6r7"
+    },
+    "s4_flow": {
+      "ask": "③ 자리예요. '태도는 선생님의 생각·수업 방식에서 나온다' → '하지만 그것은 좋은 영향을 줄 것 같지 않다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "that이 받을 '도움 안 되는 방법'이 앞에 없어요. 갑자기 But으로 반박해서 흐름이 끊겨요.",
+        "that이 받을 '도움 안 되는 방법'이 앞에 없어요. 갑자기 But으로 반박해서 흐름이 끊겨요."
+      ],
+      "explain": "that이 받을 '도움 안 되는 방법'이 앞에 없어요. 갑자기 But으로 반박해서 흐름이 끊겨요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "that이 받을 '도움 안 되는 방법'이 앞에 없어요. 갑자기 But으로 반박해서 흐름이 끊겨요."
+      },
+      "from": "m3ykoj"
+    },
+    "story_5": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1y1i4bt"
+    },
+    "s5_lessmore": {
+      "ask": "'less about how much the teacher covers and more about what the students can be helped to discover'는 무슨 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "less about A and more about B는 'A보다는 B에 관한 것'이에요.",
+        "less about A and more about B는 'A보다는 B에 관한 것'이에요."
+      ],
+      "explain": "less about A and more about B는 'A보다는 B에 관한 것'이에요. 교육은 얼마나 많이 다루느냐보다 학생이 무엇을 발견하게 돕느냐래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "less about A and more about B는 'A보다는 B에 관한 것'이에요. 교육은 얼마나 많이 다루느냐보다 학생이 무엇을 발견하게 돕느냐래요.",
+        "o2": "less about A and more about B는 'A보다는 B에 관한 것'이에요. 교육은 얼마나 많이 다루느냐보다 학생이 무엇을 발견하게 돕느냐래요."
+      },
+      "from": "j4g3gj"
+    },
+    "s5_flow": {
+      "ask": "④ 자리예요. '하지만 그것은 좋은 영향을 줄 것 같지 않다' → '교육은 무엇을 발견하게 돕느냐다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "도움 안 되는 방법을 반박한 뒤, 교육을 다르게 보자고 이어 가요. 흐름이 끊기지 않아요.",
+        "도움 안 되는 방법을 반박한 뒤, 교육을 다르게 보자고 이어 가요. 흐름이 끊기지 않아요."
+      ],
+      "explain": "도움 안 되는 방법을 반박한 뒤, 교육을 다르게 보자고 이어 가요. 흐름이 끊기지 않아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "도움 안 되는 방법을 반박한 뒤, 교육을 다르게 보자고 이어 가요. 흐름이 끊기지 않아요."
+      },
+      "from": "1fxrb0r"
+    },
+    "s7_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "that shift": "그건 bring about(일으키다)의 목적어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 More time, 동사는 won’t do, 목적어는 a thing이에요.",
+      "from": "1t3kaeq"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "vvctt5"
+    },
+    "s6_shift": {
+      "say": "that shift(그런 변화)는 바로 앞, 교육을 보는 눈을 바꾸는 거예요. 시간만 더 쓴다고 그 변화가 생기진 않는대요.",
+      "from": "gkvrzw"
+    },
+    "s6_flow": {
+      "ask": "⑤ 자리예요. '교육은 무엇을 발견하게 돕느냐다' → '시간만 늘려서는 그 변화가 안 생긴다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "that shift가 바로 앞, 교육을 보는 눈의 변화를 받아요. 그대로 이어져요.",
+        "that shift가 바로 앞, 교육을 보는 눈의 변화를 받아요. 그대로 이어져요."
+      ],
+      "explain": "that shift가 바로 앞, 교육을 보는 눈의 변화를 받아요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "that shift가 바로 앞, 교육을 보는 눈의 변화를 받아요. 그대로 이어져요."
+      },
+      "from": "ifmjld"
+    },
+    "story_7": {
+      "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요.",
+      "from": "1m12sey"
+    },
+    "s6_go": {
+      "say": "①~⑤ 중 흐름이 끊긴 곳은 하나였어요. 주어진 문장의 maximize time on task를 떠올리며 골라 봐요.",
+      "from": "1akheqg"
+    }
+  },
+  "exam": {
+    "ask": "③ 뒤 But that’s의 that이 무엇을 가리켜야 하는지 떠올리며 들어갈 곳을 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 태도는 선생님의 생각·수업 방식에서 나온다 → 목표가 사실로 채우는 거라면 숙제로 시간을 늘리는 게 맞아 보일 수도 있다(주어진 문장) → 하지만 그것(시간 늘리기)은 질적 변화에 좋은 영향을 못 준다, 순서예요.",
+    "final_wrong": "정답은 ③이에요. But that’s unlikely의 that이 받을 '시간 늘리기'를 주어진 문장이 먼저 꺼내 줘야 해요.",
+    "option_feedback": {
+      "1": "① 뒤 Rather는 바로 앞 '양적 변화가 아니다'를 받아 진짜를 말해요. 그 사이에 끼어들 자리가 아니에요.",
+      "2": "② 뒤 these attitudes and responses는 바로 앞 질적 변화(보고·참여하고·반응하는 방식)를 받아요. 사이에 넣으면 these가 가리킬 게 없어져요.",
+      "4": "④에 넣으면 ③ 뒤 But that’s의 that이 '선생님의 생각·수업 방식'을 가리키게 돼요. 질적 변화를 만드는 쪽이 좋은 영향을 못 준다는 건 말이 안 맞아요.",
+      "5": "⑤ 앞은 교육을 다르게 보자는 말이고, 뒤 that shift가 바로 그 변화를 받아요. 사이에 넣으면 흐름이 끊겨요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "④에 넣으면 ③ 뒤 'But that’s unlikely …'의 that이 바로 앞 '선생님의 생각·수업 방식'을 가리켜요. 학생 태도(질적 변화)를 만드는 그 방식이 좋은 영향을 못 준다는 건 말이 안 맞아요. that이 받을 '시간 늘리기'(주어진 문장)가 But 앞, ③에 와야 해요.",
+        "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "cover가 이어져서 골랐어요",
+            "skills": [
+              "word_match"
+            ],
+            "reply": "알려 줘서 고마워요. ④ 뒤 covers가 주어진 문장 cover와 같아 끌리기 쉬워요. 같은 낱말보다 that, these 같은 말이 무엇을 받는지 먼저 확인해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "that이 가리키는 걸 확인 안 했어요",
+            "skills": [
+              "that_refers"
+            ],
+            "reply": "알려 줘서 고마워요. 지문 속 that, this가 받을 대상이 바로 앞에 있는지 꼭 확인해요. 앞으로 가리키는 말을 먼저 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "word_match",
+              "that_refers"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 가리키는 말과 낱말 함정을 같이 짚어 볼게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "② 뒤",
+              "text": "these attitudes … emerge from the way teachers think",
+              "ko": "태도는 선생님의 생각에서 나온다",
+              "tone": "hl"
+            },
+            {
+              "label": "주어진 문장",
+              "text": "maximize time on task",
+              "ko": "시간 늘리기 = 양적 변화",
+              "tone": "hl2"
+            },
+            {
+              "label": "③ 뒤",
+              "text": "But that’s unlikely to have a positive effect",
+              "ko": "that = 시간 늘리기",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1iv4v7r"
+  },
+  "intro": {
+    "topic": {
+      "say": "숙제를 많이 내서 공부 시간을 늘리면 더 잘 배울까요? 이번 글은 무엇이 배움을 돕는지 다뤄요."
+    },
+    "method1": {
+      "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."
+    },
+    "method2": {
+      "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾을 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "from": "1sqq8r3"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "n2z3xx"
+}

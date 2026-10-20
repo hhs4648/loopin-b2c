@@ -1,0 +1,120 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "related to ethnocentrism",
+   "sense": "~와 (관련된)",
+   "usage": "be related to + 명사"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "The answer to these questions",
+   "sense": "~에 대한",
+   "usage": "answer to + 명사"
+  },
+  {
+   "word": "that",
+   "phrase": "the fact that pathogen density",
+   "sense": "~라는 (사실)",
+   "usage": "동격 that (the fact that …)"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "chances are good that any group",
+   "sense": "~라는 (가능성)",
+   "usage": "명사절 that (chances are good that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "exposed to the same",
+   "sense": "~에 (노출된)",
+   "usage": "be exposed to + 명사"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "exposed to a pathogen",
+   "sense": "~에 (노출된)",
+   "usage": "be exposed to + 명사"
+  },
+  {
+   "word": "which",
+   "phrase": "with which you’ve had",
+   "sense": "그 (병원균)과",
+   "usage": "전치사 + which (관계대명사)"
+  }
+ ],
+ "5": [
+  {
+   "word": "for",
+   "phrase": "For this reason",
+   "sense": "~ 때문에, ~로",
+   "usage": "for this reason = 이런 이유로"
+  },
+  {
+   "word": "that",
+   "phrase": "learned that when",
+   "sense": "~라는 것을",
+   "usage": "명사절 that (learn that …)"
+  },
+  {
+   "word": "to",
+   "phrase": "tended to get sick",
+   "sense": "~하는 (경향이 있다)",
+   "usage": "tend to + 동사원형"
+  },
+  {
+   "word": "so",
+   "phrase": "so they would have stopped",
+   "sense": "그래서",
+   "usage": "접속사 so (결과)"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "to blame their neighbors",
+   "sense": "~하는 것",
+   "usage": "to부정사 (진주어: it was … to ~)"
+  },
+  {
+   "word": "for",
+   "phrase": "for their illness",
+   "sense": "~에 대해, ~ 때문에",
+   "usage": "blame A for B"
+  },
+  {
+   "word": "to",
+   "phrase": "to dislike them",
+   "sense": "~하는 것",
+   "usage": "to부정사 (진주어: it was … to ~)"
+  }
+ ],
+ "7": [
+  {
+   "word": "as",
+   "phrase": "as well",
+   "sense": "~도 역시",
+   "usage": "as well = ~도 역시"
+  }
+ ],
+ "8": [
+  {
+   "word": "to",
+   "phrase": "contribute to the (A)",
+   "sense": "~에 (기여하다)",
+   "usage": "contribute to + 명사"
+  },
+  {
+   "word": "as",
+   "phrase": "as was shown",
+   "sense": "~처럼",
+   "usage": "접속사 as (~처럼)"
+  }
+ ]
+}

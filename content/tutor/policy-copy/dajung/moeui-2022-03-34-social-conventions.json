@@ -1,0 +1,357 @@
+{
+  "lesson": "moeui-2022-03-34-social-conventions",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 다섯째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "pb6edm"
+    },
+    "s1_blank_meaning": {
+      "ask": "아주 짧은 문장이에요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "common은 '흔한, 보통의'예요. It은 뒤의 to 이하를 받는 말이에요.",
+        "common은 '흔한, 보통의'예요. It은 뒤의 to 이하를 받는 말이에요."
+      ],
+      "explain": "It은 뒤의 to ____를 받아요. common은 '흔한'이라, 많은 사람이 ____한다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "It은 뒤의 to ____를 받아요. common은 '흔한'이라, 많은 사람이 ____한다는 말이에요.",
+        "o2": "It은 뒤의 to ____를 받아요. common은 '흔한'이라, 많은 사람이 ____한다는 말이에요."
+      },
+      "from": "hkmm1c"
+    },
+    "s1_where": {
+      "say": "그럼 사람들이 흔히 무엇을 한다는 건지 생각하며 문장 처음부터 읽어 봐요.",
+      "from": "1qm5071"
+    },
+    "s1_matters": {
+      "ask": "여기서 matters는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "matter는 명사로 '문제, 물질'이지만, 주어 뒤 동사 자리에 오면 뜻이 달라요.",
+        "matter는 명사로 '문제, 물질'이지만, 주어 뒤 동사 자리에 오면 뜻이 달라요."
+      ],
+      "explain": "The history … matters에서 matters는 동사예요. 동사 matter는 '중요한 의미가 있다'는 뜻이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "The history … matters에서 matters는 동사예요. 동사 matter는 '중요한 의미가 있다'는 뜻이에요.",
+        "o2": "The history … matters에서 matters는 동사예요. 동사 matter는 '중요한 의미가 있다'는 뜻이에요."
+      },
+      "from": "tw824i"
+    },
+    "s1_art": {
+      "say": "원근법 그림의 역사가 '삶의 기술'에 대해 무언가를 보여 준대요. 그림 이야기가 삶 이야기로 이어져요.",
+      "from": "1i4vh10"
+    },
+    "s2_sv": {
+      "ask": "콤마 뒤 메인 문장에서 주어(S), 동사(V), 전치사 뒤 목적어(전목)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "most artists": "그건 Just as(~하듯이) 덩어리 안의 주어예요. 콤마 뒤 메인 문장에서 찾아봐요.",
+        "the stylistic conventions": "그건 Just as 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 we, 동사 (similarly) conform to, 전치사 뒤 목적어는 prevailing social conventions예요.",
+      "from": "1hnmewi"
+    },
+    "s2_same": {
+      "ask": "Just as(~하듯이)로 화가와 우리를 나란히 놓았어요. 우리는 무엇에 순응한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "conform to는 '~에 따르다, 순응하다'예요. 콤마 뒤 we similarly conform to 다음을 봐요.",
+        "conform to는 '~에 따르다, 순응하다'예요. 콤마 뒤 we similarly conform to 다음을 봐요."
+      ],
+      "explain": "'we similarly conform to prevailing social conventions about how to live', 화가가 시대 양식을 따르듯 우리도 사회 관습을 따른대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'we similarly conform to prevailing social conventions about how to live', 화가가 시대 양식을 따르듯 우리도 사회 관습을 따른대요.",
+        "o2": "'we similarly conform to prevailing social conventions about how to live', 화가가 시대 양식을 따르듯 우리도 사회 관습을 따른대요."
+      },
+      "from": "4w4nym"
+    },
+    "s2_board": {
+      "say": "화가 이야기는 비유예요. 칠판에 화가와 우리를 나란히 적어 둘게요.",
+      "from": "1l3t3hh"
+    },
+    "s3_sv": {
+      "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "your own home": "그건 owning(갖는 것)의 대상이에요. 목록 안의 말이에요.",
+        "a regular job": "그건 having(갖는 것)의 대상이에요. 목록 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 These unwritten rules, 동사 include예요. 그 뒤 -ing 목록 전체가 목적어예요.",
+      "from": "9v8s20"
+    },
+    "s3_these": {
+      "ask": "These unwritten rules(이런 불문율)는 앞 문장의 무엇을 다시 말한 걸까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "These(이런)가 가리키는 건 앞 문장에서 찾아요. 뒤의 예가 결혼·집·직장이에요.",
+        "These(이런)가 가리키는 건 앞 문장에서 찾아요. 뒤의 예가 결혼·집·직장이에요."
+      ],
+      "explain": "결혼·내 집·직장·해외여행은 어떻게 살지에 대한 규칙이에요. 앞 문장의 사회 관습을 These unwritten rules로 다시 말했어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "결혼·내 집·직장·해외여행은 어떻게 살지에 대한 규칙이에요. 앞 문장의 사회 관습을 These unwritten rules로 다시 말했어요.",
+        "o2": "결혼·내 집·직장·해외여행은 어떻게 살지에 대한 규칙이에요. 앞 문장의 사회 관습을 These unwritten rules로 다시 말했어요."
+      },
+      "from": "um60j9"
+    },
+    "s3_board": {
+      "say": "사회 관습 = 불문율이에요. 결혼, 내 집, 직장, 해외여행 같은 거래요.",
+      "from": "10dhc9l"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "they": "그건 콤마 뒤 두 번째 문장의 주어예요. 먼저 앞 문장을 봐요.",
+        "remain": "그건 콤마 뒤 두 번째 문장의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "앞 문장은 주어 these, 동사 are, 보어 realities예요. 뒤 문장도 they / remain / aspirations로 같은 모양이에요.",
+      "from": "1vyir3h"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "18ljp7t"
+    },
+    "s4_dream": {
+      "say": "어떤 사람에겐 이미 현실, 다른 사람에겐 바라는 것(aspirations)이래요. 어느 쪽이든 이 규칙을 목표로 삼아요.",
+      "from": "ya89tg"
+    },
+    "s5_side": {
+      "ask": "빈칸은 사람들이 이 규칙들에 대해 흔히 하는 일이에요. 앞에서 말한 우리 모습과 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "common(흔한)이라고 했어요. 칠판 오른쪽에서 우리가 사회 관습을 어떻게 한다고 했는지 봐요.",
+        "common(흔한)이라고 했어요. 칠판 오른쪽에서 우리가 사회 관습을 어떻게 한다고 했는지 봐요."
+      ],
+      "explain": "우리 대부분은 사회 관습에 순응한대요(conform to). 많은 사람이 흔히 하는 일이니 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "우리 대부분은 사회 관습에 순응한대요(conform to). 많은 사람이 흔히 하는 일이니 같은 쪽이에요."
+      },
+      "from": "o9oayj"
+    },
+    "s5_next": {
+      "say": "빈칸 바로 뒤 문장이 이 규칙들 이야기를 이어 가요. 확인하며 읽어 봐요.",
+      "from": "1gxx38s"
+    },
+    "s6_sv": {
+      "ask": "주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "At this point": "그건 '지금 시점에'라는 때를 말해 주는 덩어리예요.",
+        "the dominant conventions": "그건 amongst(~ 중에) 뒤 덩어리예요.",
+        "most of us": "그건 that 뒤, the dominant conventions를 꾸미는 덩어리 안의 주어예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 they(그 불문율들), 동사 are예요. that 뒤가 the dominant conventions를 꾸며요.",
+      "from": "1w23sb"
+    },
+    "s6_accept": {
+      "ask": "우리 대부분은 이 관습들을 어떻게 받아들였대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "with little questioning을 봐요. little은 '거의 없는'이에요.",
+        "with little questioning을 봐요. little은 '거의 없는'이에요."
+      ],
+      "explain": "'accepted with little questioning', 거의 따져 보지 않고 받아들였대요. 화가들이 원근법을 의문 없이 받아들인 것처럼요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'accepted with little questioning', 거의 따져 보지 않고 받아들였대요. 화가들이 원근법을 의문 없이 받아들인 것처럼요.",
+        "o2": "'accepted with little questioning', 거의 따져 보지 않고 받아들였대요. 화가들이 원근법을 의문 없이 받아들인 것처럼요."
+      },
+      "from": "c62xgc"
+    },
+    "s6_board": {
+      "say": "화가도 우리도 의문 없이 받아들였어요. 칠판 양쪽에 붙여 둘게요.",
+      "from": "ghqo6k"
+    },
+    "story_6": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s7_sv": {
+      "ask": "주어(S), 동사(V), 보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the limitations": "그건 to see beyond(~ 너머를 보는 것) 뒤의 말이에요.",
+        "the culture": "그건 of 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 It, 동사 is, 보어 difficult예요. It은 뒤의 to see beyond ~를 받아요.",
+      "from": "1s1se8x"
+    },
+    "s7_culture": {
+      "say": "우리를 만든 문화의 한계 너머를 보기는 어렵대요. 문화가 우리가 세상과 자신을 보는 방식을 만들었으니까요.",
+      "from": "1wizgps"
+    },
+    "s8_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "the perspective": "그건 in 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어 We, 동사 are trapped예요. in 뒤가 갇힌 곳이에요.",
+      "from": "1iv7ye7"
+    },
+    "s8_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1ofdz7t"
+    },
+    "s8_persp": {
+      "ask": "perspective는 첫 문장에서 '원근법'이었어요. 여기서는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞 문장의 our ways of looking at the world(세상을 보는 방식)를 떠올려 봐요.",
+        "앞 문장의 our ways of looking at the world(세상을 보는 방식)를 떠올려 봐요."
+      ],
+      "explain": "여기서 perspective는 '관점'이에요. 우리는 우리 시대의 관점에 갇혀 있대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "여기서 perspective는 '관점'이에요. 우리는 우리 시대의 관점에 갇혀 있대요.",
+        "o2": "여기서 perspective는 '관점'이에요. 우리는 우리 시대의 관점에 갇혀 있대요."
+      },
+      "from": "1h88uv5"
+    },
+    "s8_board": {
+      "say": "우리는 우리 시대의 관점에 갇혀 있대요. 칠판 오른쪽에 붙일게요.",
+      "from": "ij1d8j"
+    },
+    "s8_what": {
+      "ask": "빈칸 문장으로 돌아가요. 칠판을 보면, 사람들은 이 규칙들에 대해 흔히 어떻다는 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판 오른쪽의 conform to, accepted with little questioning을 봐요.",
+        "칠판 오른쪽의 conform to, accepted with little questioning을 봐요."
+      ],
+      "explain": "우리는 사회 관습에 순응하고, 거의 의문 없이 받아들였대요. 빈칸도 그 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "우리는 사회 관습에 순응하고, 거의 의문 없이 받아들였대요. 빈칸도 그 말이에요.",
+        "o2": "우리는 사회 관습에 순응하고, 거의 의문 없이 받아들였대요. 빈칸도 그 말이에요."
+      },
+      "from": "gkv035"
+    },
+    "s8_go": {
+      "say": "같은 쪽이에요. 칠판 오른쪽 말(conform to, accepted)을 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "abpc78"
+    }
+  },
+  "exam": {
+    "ask": "빈칸은 우리가 사회 규칙(them)에 대해 흔히 하는 일이에요. 칠판 오른쪽 말을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 우리는 사회 관습에 순응하고(conform to) 의문 없이 받아들여요. 그걸 '순응해야 한다는 압박을 느낀다'로 바꿔 썼어요.",
+    "final_wrong": "정답은 ②예요. comply with는 conform to와 같은 말이에요. 우리는 사회 관습을 따르고 거의 의문 없이 받아들인다고 했어요.",
+    "option_feedback": {
+      "1": "aspirations(바람)가 나와서 헷갈렸죠. 하지만 규칙을 생각·바람과 구분한다는 말은 글에 없어요.",
+      "3": "painting·artists가 나와서 헷갈렸죠. 그림은 우리를 설명하려고 든 비유예요. 빈칸은 우리가 사회 규칙에 대해 하는 일이에요.",
+      "4": "복잡해서 무시한다는 말은 없어요. 오히려 거의 의문 없이 받아들인다고 했어요.",
+      "5": "반대쪽 말이에요. 우리는 규칙을 거부하지 않고 받아들인다고 했어요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "③에는 artworks(예술품)가 있어서 그림 이야기와 겹쳐 보여요. 하지만 화가는 우리를 설명하려고 든 비유예요(Just as ~, we similarly). 빈칸은 우리가 사회 규칙(them)에 대해 흔히 하는 일이고, 우리는 그 규칙을 따른다고 했어요.",
+        "ask": "그래서 ③이 아니에요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "그림 이야기와 겹쳐서 골랐어요",
+            "skills": [
+              "word_overlap"
+            ],
+            "reply": "알려 줘서 고마워요. 겹치는 단어보다 빈칸이 누구에 대한 말인지를 봐야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+          },
+          {
+            "label": "Just as 비유를 못 봤어요",
+            "skills": [
+              "analogy"
+            ],
+            "reply": "알려 줘서 고마워요. Just as A, B에서 A는 비유, 하고 싶은 말은 B예요. 앞으로 비유를 같이 짚어 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "word_overlap",
+              "analogy"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 겹치는 단어와 비유를 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "화가 (비유)",
+              "text": "conform to the stylistic conventions",
+              "ko": "그 시대 양식을 따른다",
+              "tone": "hl2"
+            },
+            {
+              "label": "우리 (빈칸)",
+              "text": "conform to prevailing social conventions",
+              "ko": "사회 관습을 따른다",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1u3i912"
+  },
+  "intro": {
+    "topic": {
+      "say": "한 시대의 화가들은 비슷한 방식으로 그림을 그렸어요. 이번 글은 그림 이야기로 우리가 사는 방식을 말해요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "5mttew"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1k14t10"
+}

@@ -1,0 +1,356 @@
+{
+  "lesson": "moeui-2022-03-42-plant-behavior",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어휘 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "plants": "그건 that 뒤 덩어리 안의 주어예요.",
+        "use": "그건 that 뒤 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the biologist Daniel Chamovitz, 동사는 describes, 목적어는 sophisticated information-processing capacities예요.",
+      "from": "6ihd0l"
+    },
+    "s1_use": {
+      "ask": "식물은 그 정보 처리 능력을 어디에 쓴대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "use 뒤 'to control their movements in response to stimulation'을 봐요.",
+        "use 뒤 'to control their movements in response to stimulation'을 봐요."
+      ],
+      "explain": "'to control their movements in response to stimulation', 자극에 반응해 자기 움직임을 조절하는 데 쓴대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'to control their movements in response to stimulation', 자극에 반응해 자기 움직임을 조절하는 데 쓴대요.",
+        "o2": "'to control their movements in response to stimulation', 자극에 반응해 자기 움직임을 조절하는 데 쓴대요."
+      },
+      "point": "요지 시작: 식물은 정보를 처리해 자기 움직임을 조절한다",
+      "from": "3ftp0o"
+    },
+    "s2_sv": {
+      "ask": "not only ~, also ~로 두 문장이 이어져요. 주어(S)와 동사(V)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "their stems": "그건 by bending 뒤 덩어리예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "앞은 Plants가 follow하고, 콤마(,) 뒤는 they가 align해요. not only ~, also ~로 둘을 이었어요.",
+      "from": "zfviv0"
+    },
+    "s2_growth": {
+      "ask": "잎을 빛에 최대한 닿게 정렬하면 그 결과 어떻게 된대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "thereby(그렇게 함으로써) 뒤를 봐요.",
+        "thereby(그렇게 함으로써) 뒤를 봐요."
+      ],
+      "explain": "'thereby promote growth', 그렇게 해서 성장을 촉진한대요. 빛을 많이 받아야 잘 자라요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'thereby promote growth', 그렇게 해서 성장을 촉진한대요. 빛을 많이 받아야 잘 자라요.",
+        "o2": "'thereby promote growth', 그렇게 해서 성장을 촉진한대요. 빛을 많이 받아야 잘 자라요."
+      },
+      "from": "10za6we"
+    },
+    "s2_check": {
+      "say": "빛에 노출되는 걸 '최대로 해야(maximize)' 성장이 촉진되죠. 그래서 (a)maximize는 문맥에 맞아요.",
+      "from": "1m3zhmg"
+    },
+    "s3_sv": {
+      "ask": "이 문장의 주어(S)와, and로 이어진 동사(V) 둘을 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "sunrise": "그건 anticipate가 예상하는 것(목적어)이에요.",
+        "this information": "그건 retain이 간직하는 것(목적어)이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 Some plants, 동사는 anticipate와 retain 둘이에요. even when ~ signals는 동사 사이에 끼어든 말이에요.",
+      "from": "bs6v0a"
+    },
+    "s3_memory": {
+      "say": "해 뜨는 걸 '기억'으로 미리 알고, 해 신호가 없어도 며칠 동안 그 정보를 간직한대요.",
+      "from": "1b8377s"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_sv": {
+      "ask": "argue that 뒤가 두 사람의 주장이에요. 그 안의 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "argue": "그건 두 사람이 '주장한다'는 메인 동사예요. that 뒤에서 찾아봐요.",
+        "humans": "그건 capacities를 꾸미는 that 덩어리 안의 말이에요.",
+        "lack": "그건 capacities를 꾸미는 that 덩어리 안의 말이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주장 내용의 주어는 plants, 동사는 possess예요. 식물이 무엇을 가지고 있는지가 뒤에 나와요.",
+      "from": "8s1cwx"
+    },
+    "s4_check": {
+      "say": "식물에겐 오감 말고도 인간에게 없는 감각 능력(sensory capacities)이 열 개 넘게 있대요. 그래서 (b)sensory는 문맥에 맞아요.",
+      "from": "1fsxxa1"
+    },
+    "s5_basic_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)를 모두 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "plants": "그건 of 뒤 덩어리예요.",
+        "the mineral and water content": "그건 sense가 감지하는 것(목적어)이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 the roots, 동사는 sense와 alter 둘이에요.",
+      "from": "13i5r1u"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1gb35k9"
+    },
+    "s5_roots": {
+      "say": "뿌리는 흙 속 미네랄과 물을 느끼고, 그에 맞게(accordingly) 자라는 방향을 바꾼대요.",
+      "from": "1mceuf0"
+    },
+    "story_5": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_why": {
+      "ask": "몇몇 사람들은 왜 식물의 움직임을 행동이라고 부르기를 꺼린대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "since(~ 때문에) 뒤를 봐요.",
+        "since(~ 때문에) 뒤를 봐요."
+      ],
+      "explain": "'since they lack nerves and muscles', 신경과 근육이 없다는 이유래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'since they lack nerves and muscles', 신경과 근육이 없다는 이유래요.",
+        "o2": "'since they lack nerves and muscles', 신경과 근육이 없다는 이유래요."
+      },
+      "from": "13im5u7"
+    },
+    "s6_check": {
+      "say": "Some(몇몇 사람들)은 식물이 행동하지 않는다는 쪽이에요. 신경이 없으니 행동이라 부르기를 꺼린다(reluctant), 이유와 맞아서 (c)reluctant는 문맥에 맞아요.",
+      "from": "108yd42"
+    },
+    "s7_sv": {
+      "ask": "just as 덩어리 뒤, 메인 문장의 주어(S)·동사(V)·목적어(O)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "they": "그건 just as(~인 것처럼) 덩어리 안의 주어예요.",
+        "are": "그건 just as 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "콤마(,) 뒤 메인 문장은 주어 plants, 동사 have, 목적어 the ability예요.",
+      "from": "1j0p5qk"
+    },
+    "s7_but": {
+      "ask": "But 뒤 글쓴이 생각은 어느 쪽이에요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "just as(~인 것처럼) 뒤 예를 봐요. 폐가 없는데도 숨을 쉬어요.",
+        "just as(~인 것처럼) 뒤 예를 봐요. 폐가 없는데도 숨을 쉬어요."
+      ],
+      "explain": "'plants have the ability to move (behave)', 폐 없이 숨 쉬듯 신경 없이도 행동할 수 있대요. 글쓴이는 Some과 반대로 '식물은 행동한다' 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'plants have the ability to move (behave)', 폐 없이 숨 쉬듯 신경 없이도 행동할 수 있대요. 글쓴이는 Some과 반대로 '식물은 행동한다' 쪽이에요."
+      },
+      "point": "글쓴이 입장: But 뒤 — 신경이 없어도 식물은 행동한다",
+      "from": "1454sa8"
+    },
+    "s8_sv": {
+      "ask": "문장이 길어요. 맨 앞 메인 문장의 주어(S)와 동사(V)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "it": "그건 because 뒤 덩어리 안의 주어예요.",
+        "lacks": "그건 because 뒤 덩어리 안의 동사예요.",
+        "the physiological mechanism": "그건 lacks 뒤, 없는 것이에요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 We, 동사는 should not dismiss예요. '~을 일축해서는 안 된다'는 글쓴이의 주장이에요.",
+      "from": "n7m8c2"
+    },
+    "s8_flow": {
+      "ask": "simply because 뒤를 봐요. 동물 같은 장치가 없다는 이유만으로, 글쓴이는 식물을 어떻게 판단하지 말라는 걸까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞 문장에서 글쓴이는 '식물은 행동한다' 쪽이었어요. dismiss는 '일축하다, 무시하다'예요.",
+        "앞 문장에서 글쓴이는 '식물은 행동한다' 쪽이었어요. dismiss는 '일축하다, 무시하다'예요."
+      ],
+      "explain": "글쓴이는 식물이 행동한다는 쪽이에요. 신경 같은 장치가 없다는 이유만으로 '행동 능력이 없다'고 판단하지 말라는 흐름이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "글쓴이는 식물이 행동한다는 쪽이에요. 신경 같은 장치가 없다는 이유만으로 '행동 능력이 없다'고 판단하지 말라는 흐름이에요."
+      },
+      "point": "장치가 없다는 이유만으로 행동 능력이 '없다'고 하지 마라 — 이 흐름에 (d)가 맞는지 문제에서 확인",
+      "from": "1qnj3m4"
+    },
+    "s8_hold": {
+      "say": "밑줄 (d)가 이 흐름과 맞는지는 마지막 문제에서 같이 확인해 봐요.",
+      "from": "lfbdbl"
+    },
+    "s9_behave": {
+      "say": "환경을 느끼고, 배우고, 정보를 저장해 움직임에 쓴대요. 세미콜론(;) 뒤 결론은 they behave, 식물은 행동한다예요.",
+      "from": "7em8ty"
+    },
+    "story_9": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s10_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "6pffah"
+    },
+    "s10_intel": {
+      "say": "식물의 행동에 어느 정도 '지능(intelligence)'이 있다고도 말할 수 있대요.",
+      "from": "25gugf"
+    },
+    "s11_sv": {
+      "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+      "wrong": "그건 주어·동사가 아니에요.",
+      "wrong_by": {
+        "intelligence": "그건 as long as(~하는 한) 덩어리 안의 주어예요.",
+        "is defined": "그건 as long as 덩어리 안의 동사예요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "주어는 This, 동사는 is, 보어는 true예요. as long as 뒤가 '어떤 조건에서' 사실인지예요.",
+      "from": "1ev514f"
+    },
+    "s11_define": {
+      "ask": "지능을 무엇으로 정의할 때 식물에게 지능이 있다는 말이 사실이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "rather than(~보다는) 앞뒤를 봐요. 앞이 고른 쪽, 뒤가 버린 쪽이에요.",
+        "rather than(~보다는) 앞뒤를 봐요. 앞이 고른 쪽, 뒤가 버린 쪽이에요."
+      ],
+      "explain": "'solve problems through behavioral (e)interactions with the environment', 환경과 행동으로 상호 작용해 문제를 푸는 능력이래요. rather than 뒤 정신 능력은 버린 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'solve problems through behavioral (e)interactions with the environment', 환경과 행동으로 상호 작용해 문제를 푸는 능력이래요. rather than 뒤 정신 능력은 버린 쪽이에요."
+      },
+      "from": "1wnahfu"
+    },
+    "s11_check": {
+      "say": "식물은 환경을 느끼고 반응해 움직이니, 환경과의 상호 작용(interactions)이 맞아요. 그래서 (e)interactions는 문맥에 맞아요.",
+      "from": "1lnb2yo"
+    },
+    "s11_go": {
+      "say": "(a)(b)(c)(e)는 흐름에 맞았어요. 남은 하나가 '식물은 행동한다'는 글쓴이 생각과 맞는지 문제에서 골라 봐요.",
+      "from": "e5icww"
+    }
+  },
+  "exam": {
+    "ask": "글쓴이는 식물이 행동한다는 쪽이에요. 이 생각과 맞지 않는 하나를 골라요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 글쓴이는 식물이 행동한다는 쪽이라, 장치가 없다는 이유만으로 행동 능력의 '존재'를 무시하면 안 된다는 말이에요. absence(부재)가 아니라 presence(존재)여야 해요.",
+    "final_wrong": "정답은 ④ (d)예요. 식물에게 행동 능력이 있다는 걸 무시하지 말라는 말이라, absence(부재)가 아니라 presence(존재)가 맞아요.",
+    "option_feedback": {
+      "1": "빛에 노출되는 걸 최대로 해야(maximize) 성장이 촉진된다는 말이라 맞아요.",
+      "2": "인간에게 없는 감각(sensory) 능력이 열 개 넘게 있다는 말이라 맞아요.",
+      "3": "Some(몇몇 사람들)이 신경이 없다는 이유로 행동이라 부르기를 꺼린다(reluctant)는 말이라 맞아요.",
+      "5": "지능을 환경과의 행동적 상호 작용(interactions)으로 문제를 푸는 능력으로 본다는 말이라 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 18%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "(c)는 글쓴이가 아니라 Some(몇몇 사람들)의 생각이에요. 신경과 근육이 없으니 행동이라 부르기를 꺼린다(reluctant), 이유와 딱 맞아요. 바로 뒤 But에서 글쓴이가 반박해요.",
+        "ask": "그래서 (c)는 문맥에 맞아요. 어디서 헷갈렸어요?",
+        "choices": [
+          {
+            "label": "글쓴이 생각으로 읽었어요",
+            "skills": [
+              "whose_view"
+            ],
+            "reply": "알려 줘서 고마워요. Some are ~는 다른 사람들 의견이에요. 앞으로 누구의 생각인지 먼저 짚어 줄게요."
+          },
+          {
+            "label": "reluctant 뜻이 헷갈렸어요",
+            "skills": [
+              "word_sense_reluctant"
+            ],
+            "reply": "알려 줘서 고마워요. reluctant는 '꺼리는, 내키지 않는'이에요. 앞으로 이런 단어는 헷갈리는 단어로 표시해 줄게요."
+          },
+          {
+            "label": "둘 다요",
+            "skills": [
+              "whose_view",
+              "word_sense_reluctant"
+            ],
+            "reply": "알려 줘서 고마워요. 앞으로 누구의 생각인지와 단어 뜻을 같이 짚어 줄게요."
+          }
+        ],
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(c)",
+              "text": "Some are reluctant … since they lack nerves",
+              "ko": "Some의 생각 — 이유와 맞음",
+              "tone": "hl"
+            },
+            {
+              "label": "(d)",
+              "text": "should not dismiss the absence of behavioral capacities",
+              "ko": "글쓴이는 '행동한다' 쪽 → presence여야",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "4ad1su"
+  },
+  "intro": {
+    "topic": {
+      "say": "식물은 움직일까요? 이번 글은 식물의 움직임을 '행동'이라고 부를 수 있는지 다뤄요."
+    },
+    "method1": {
+      "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+    },
+    "method2": {
+      "say": "요지를 잡고, 생각을 두 쪽으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 하나씩 볼 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "from": "xoqz4n"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1v5k8t5"
+}

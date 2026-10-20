@@ -1,0 +1,2049 @@
+{
+  "id": "moeui-2022-03-35-music-without-instruments",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 35번 (흐름과 무관한 문장, 2점)",
+  "brief": {
+    "topic": "무관한 문장 푸는 법: 첫 문장으로 글의 방향 잡기 → ①~⑤를 같은 쪽/다른 쪽으로 나누기 → 다른 쪽 한 문장",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "irrelevant",
+    "labels": [
+      "방향 잡기",
+      "문장마다 나누기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-2022-03-35-music-class.svg",
+      "alt": "칠판: Instruments(악기) ? Voice & body(목소리·몸)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "교실에서 처음 음악 수업을 한다면 무엇으로 시작할까요? 이번 글은 첫 음악 수업 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "무관한 문장 문제는 첫 문장으로 글의 방향을 잡고, ①~⑤를 같은 쪽과 다른 쪽으로 나눠요. 칠판에 하나씩 놓아 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글에서 전체 흐름과 관계 없는 문장은?",
+    "underline": [
+      "①",
+      "②",
+      "③",
+      "④",
+      "⑤"
+    ],
+    "numbers_only": true,
+    "sentence": 4,
+    "analysis_first": true,
+    "wrong_rate": 36.0,
+    "wrong_rank": 12,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [],
+    "passage_keywords": [
+      "avoid using instruments",
+      "voices and body percussion",
+      "the human voice",
+      "sound quality",
+      "Body movements",
+      "without instruments"
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "① 문장",
+        "keywords": []
+      },
+      {
+        "id": "2",
+        "label": "② 문장",
+        "keywords": []
+      },
+      {
+        "id": "3",
+        "label": "③ 문장",
+        "keywords": [],
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "④ 문장",
+        "keywords": []
+      },
+      {
+        "id": "5",
+        "label": "⑤ 문장",
+        "keywords": []
+      }
+    ],
+    "brief": {
+      "ask": "칠판 두 칸을 떠올려 봐요. 혼자 다른 쪽에 놓인 문장을 골라요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 글은 처음 음악 수업을 악기 없이, 목소리와 몸으로 시작하자고 해요. ③만 악기의 음질 이야기를 해요.",
+      "final_wrong": "정답은 ③이에요. 나머지는 모두 악기 없이 목소리·몸으로 시작하는 이야기인데, ③만 악기 자체의 음질을 말해요.",
+      "option_feedback": {
+        "1": "①은 악기 없이 하면 아이들이 목소리와 몸 소리에 집중할 수 있다는 말이에요. 글의 방향 그대로예요.",
+        "2": "②의 instrument는 사람의 목소리를 악기에 빗댄 말이에요. 목소리로 시작한다는 같은 방향이에요.",
+        "4": "④의 몸의 움직임은 ①의 body percussion과 이어져요. 몸으로 음악을 시작하니 같은 방향이에요.",
+        "5": "⑤는 악기 연주에 필요한 능력도 악기 없이 기를 수 있다는 말이에요. 같은 방향이에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "④는 악기 말이 없어서 엉뚱해 보여요. 그런데 Body movements(몸의 움직임)는 ①의 body percussion(몸 두드리기)과 이어져요. 몸으로 음악을 시작하니 '악기 없이' 쪽이에요.",
+          "ask": "그래서 ④가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "악기 말이 없어서 상관없어 보였어요",
+              "skills": [
+                "direction"
+              ],
+              "reply": "알려 줘서 고마워요. 무관한 문장은 같은 단어가 있는지가 아니라 글의 방향과 같은 쪽인지로 봐요. 몸으로 하는 음악은 '악기 없이' 쪽이었어요. 앞으로 이 점을 짚어 줄게요."
+            },
+            {
+              "label": "instigate가 어려웠어요",
+              "skills": [
+                "vocab"
+              ],
+              "reply": "알려 줘서 고마워요. instigate는 '부추기다'예요. 시험지 아래 풀이(*)도 꼭 같이 봐요. 앞으로 어려운 단어를 먼저 짚어 줄게요."
+            },
+            {
+              "label": "③은 맞는 말 같았어요",
+              "skills": [
+                "true_vs_flow"
+              ],
+              "reply": "알려 줘서 고마워요. ③은 그 자체로는 맞는 말이에요. 하지만 이 글은 '처음엔 악기 없이'라는 흐름이라 악기의 음질 이야기는 벗어나요. 앞으로 사실인지보다 흐름을 보게 할게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "④",
+                "text": "Body movements … music making",
+                "ko": "몸으로 음악 시작 → 악기 없이 (같은 쪽)",
+                "tone": "hl"
+              },
+              {
+                "label": "①",
+                "text": "voices and body percussion",
+                "ko": "목소리·몸 소리 → 악기 없이 (같은 쪽)",
+                "tone": "hl"
+              }
+            ]
+          }
+        },
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 11%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "②에는 instrument가 나와서 악기 이야기로 보일 수 있어요. 그런데 여기서 악기는 the human voice, 사람의 목소리예요. 목소리로 시작하니 '악기 없이' 쪽이에요.",
+          "ask": "그래서 ②가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "instrument가 나와서 악기 이야기인 줄 알았어요",
+              "skills": [
+                "word_trap"
+              ],
+              "reply": "알려 줘서 고마워요. 같은 단어여도 무엇을 가리키는지 봐야 해요. 여기서는 목소리를 악기에 빗댔어요. 앞으로 이런 단어를 먼저 짚어 줄게요."
+            },
+            {
+              "label": "these가 무엇인지 몰랐어요",
+              "skills": [
+                "reference"
+              ],
+              "reply": "알려 줘서 고마워요. these는 앞 문장의 voices and body percussion이에요. 앞으로 가리키는 말을 같이 찾아볼게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "②",
+                "text": "the most expressive … instrument is the human voice",
+                "ko": "가장 좋은 '악기' = 사람의 목소리",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "approach",
+        "ko": "다가가다, 접근하다"
+      },
+      {
+        "en": "practical",
+        "ko": "실제의"
+      },
+      {
+        "en": "avoid",
+        "ko": "피하다"
+      },
+      {
+        "en": "altogether",
+        "ko": "완전히"
+      },
+      {
+        "en": "inexperienced",
+        "ko": "경험이 적은"
+      },
+      {
+        "en": "fundamental",
+        "ko": "기본적인"
+      },
+      {
+        "en": "compose",
+        "ko": "작곡하다"
+      },
+      {
+        "en": "controllable",
+        "ko": "통제할 수 있는"
+      },
+      {
+        "en": "percussion",
+        "ko": "두드려 내는 소리, 타악기"
+      },
+      {
+        "en": "developmentally",
+        "ko": "발달 면에서"
+      },
+      {
+        "en": "expressive",
+        "ko": "표현이 풍부한"
+      },
+      {
+        "en": "immediate",
+        "ko": "즉각적인"
+      },
+      {
+        "en": "instinctive",
+        "ko": "본능적인"
+      },
+      {
+        "en": "aural",
+        "ko": "청각의"
+      },
+      {
+        "en": "visual cue",
+        "ko": "시각적 신호"
+      },
+      {
+        "en": "establish",
+        "ko": "자리 잡게 하다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "medium",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "When approaching practical music making for the first time in the classroom, it is a good idea to avoid using instruments altogether.",
+      "model_translation": "처음으로 교실에서 실제 음악을 만들어 내는 일에 접근할 때, 악기 사용을 완전히 피하는 것이 좋은 생각이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "instruments",
+          "ko": "악기들"
+        },
+        {
+          "en": "When approaching",
+          "ko": "~에 다가갈(시작할) 때"
+        },
+        {
+          "en": "practical music making",
+          "ko": "실제로 음악을 만드는 일"
+        },
+        {
+          "en": "for the first time",
+          "ko": "처음으로"
+        },
+        {
+          "en": "in the classroom",
+          "ko": "교실에서"
+        },
+        {
+          "en": "it",
+          "ko": "그것 · 뒤의 to avoid …를 대신 받는 말"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a good idea",
+          "ko": "좋은 생각"
+        },
+        {
+          "en": "to avoid using instruments altogether",
+          "ko": "악기 사용을 완전히 피하는 것"
+        },
+        {
+          "en": "altogether",
+          "ko": "완전히, 아예"
+        },
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "approaching",
+          "ko": "다가가는, 시작하는"
+        },
+        {
+          "en": "music",
+          "ko": "음악"
+        },
+        {
+          "en": "making",
+          "ko": "만드는 것"
+        },
+        {
+          "en": "classroom",
+          "ko": "교실"
+        },
+        {
+          "en": "idea",
+          "ko": "생각"
+        },
+        {
+          "en": "avoid",
+          "ko": "피하다"
+        },
+        {
+          "en": "using",
+          "ko": "쓰는 것"
+        }
+      ],
+      "slashes": [
+        "When approaching",
+        "practical music making",
+        "for the first time",
+        "in the classroom,",
+        "a good idea"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a good idea",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "When approaching practical music making for the first time in the classroom"
+      ],
+      "steps": [
+        {
+          "id": "s1_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "practical music making",
+            "it",
+            "is",
+            "a good idea",
+            "instruments"
+          ],
+          "answers": [
+            "it",
+            "is",
+            "a good idea"
+          ],
+          "roles": {
+            "it": "S",
+            "is": "V",
+            "a good idea": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "practical music making": "그건 When approaching(~에 다가갈 때) 뒤의 말이에요. 문장 앞 덧붙인 덩어리예요.",
+              "instruments": "그건 to avoid using 뒤의 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 it, 동사는 is, 보어는 a good idea예요. it은 뒤의 to avoid …를 대신 받아요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "무관한 문장 요령",
+              "text": "번호 없는 첫 문장으로 글의 방향을 잡아요. ①~⑤를 하나씩 그 방향과 같은 쪽인지 보고, 다른 쪽 한 문장을 골라요. 같은 단어가 나와도 방향이 다를 수 있어요."
+            }
+          ]
+        },
+        {
+          "id": "s1_dir",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "글쓴이는 교실에서 처음 음악 활동을 할 때 어떻게 하라고 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "it은 뒤의 'to avoid using instruments altogether'를 받아요. altogether는 '완전히, 아예'예요.",
+              "it은 뒤의 'to avoid using instruments altogether'를 받아요. altogether는 '완전히, 아예'예요."
+            ],
+            "explain": "'to avoid using instruments altogether', 악기 사용을 완전히 피하는 게 좋은 생각이래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'to avoid using instruments altogether', 악기 사용을 완전히 피하는 게 좋은 생각이래요.",
+              "o2": "'to avoid using instruments altogether', 악기 사용을 완전히 피하는 게 좋은 생각이래요."
+            },
+            "point": "글의 방향 = 처음 음악 수업은 악기 없이 (avoid using instruments)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "악기를 아예 쓰지 않는다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "좋은 악기부터 고른다"
+            },
+            {
+              "id": "o2",
+              "label": "악기 연주부터 가르친다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "to avoid using instruments altogether"
+          ],
+          "tips": [
+            {
+              "label": "가주어 it",
+              "text": "it is … to ~는 '~하는 것은 …이다'로 읽어요. it은 뒤의 to ~를 대신 받아요.",
+              "mark": "it is"
+            }
+          ]
+        },
+        {
+          "id": "s1_topic",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 글의 방향은 '처음엔 악기 없이'예요. ①~⑤를 이 방향과 같은 쪽인지 칠판에 나눠 볼게요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "첫 음악 수업",
+            "left": {
+              "label": "악기 없이 시작",
+              "words": []
+            },
+            "right": {
+              "label": "다른 이야기",
+              "words": []
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "①This will allow an inexperienced teacher to focus on the development of fundamental musical behaviour through listening, performing and composing; and allow the children to focus on the more controllable sound sources i.e. voices and body percussion (clapping, clicking, stamping etc).",
+      "model_translation": "이렇게 하면 경험이 많지 않은 교사는 듣기와 연주하기 그리고 작곡하기를 통해 기본적인 음악 행위 발달에 집중할 수 있고, 아이들은 더 통제 가능한 음원, 즉 목소리와 몸을 두드려 내는 소리(손뼉 치기, 딸깍딸깍 소리를 내기, 발 구르기 등)에 집중할 수 있을 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "This",
+          "ko": "이것 · 앞 문장에서 말한 방법"
+        },
+        {
+          "en": "will allow",
+          "ko": "~하게 해 줄 것이다"
+        },
+        {
+          "en": "an inexperienced teacher",
+          "ko": "경험이 적은 교사"
+        },
+        {
+          "en": "to focus on the development of fundamental musical behaviour",
+          "ko": "기본적인 음악 행동의 발달에 집중하는 것"
+        },
+        {
+          "en": "through listening, performing and composing",
+          "ko": "듣기, 연주하기, 작곡하기를 통해"
+        },
+        {
+          "en": "allow",
+          "ko": "~하게 해 주다"
+        },
+        {
+          "en": "the children",
+          "ko": "아이들"
+        },
+        {
+          "en": "to focus on the more controllable sound sources",
+          "ko": "더 다루기 쉬운 소리 내는 것들에 집중하는 것"
+        },
+        {
+          "en": "i.e.",
+          "ko": "즉"
+        },
+        {
+          "en": "voices and body percussion",
+          "ko": "목소리와 몸 두드리기 소리"
+        },
+        {
+          "en": "clapping, clicking, stamping etc",
+          "ko": "손뼉 치기, 딸깍 소리 내기, 발 구르기 등"
+        },
+        {
+          "en": "controllable",
+          "ko": "통제할 수 있는, 다루기 쉬운"
+        },
+        {
+          "en": "inexperienced",
+          "ko": "경험이 적은"
+        },
+        {
+          "en": "teacher",
+          "ko": "교사"
+        },
+        {
+          "en": "focus",
+          "ko": "집중하다"
+        },
+        {
+          "en": "development",
+          "ko": "발달"
+        },
+        {
+          "en": "fundamental",
+          "ko": "기본적인"
+        },
+        {
+          "en": "behaviour",
+          "ko": "행동"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "listening",
+          "ko": "듣기"
+        },
+        {
+          "en": "performing",
+          "ko": "연주하기"
+        },
+        {
+          "en": "composing",
+          "ko": "작곡하기"
+        },
+        {
+          "en": "children",
+          "ko": "아이들"
+        },
+        {
+          "en": "sound",
+          "ko": "소리"
+        },
+        {
+          "en": "sources",
+          "ko": "원천, 내는 것"
+        },
+        {
+          "en": "voices",
+          "ko": "목소리"
+        },
+        {
+          "en": "percussion",
+          "ko": "두드려 내는 소리"
+        },
+        {
+          "en": "clapping",
+          "ko": "손뼉 치기"
+        },
+        {
+          "en": "clicking",
+          "ko": "딸깍 소리 내기"
+        },
+        {
+          "en": "stamping",
+          "ko": "발 구르기"
+        },
+        {
+          "en": "etc",
+          "ko": "등"
+        }
+      ],
+      "slashes": [
+        "①This will allow",
+        "an inexperienced teacher",
+        "to focus on the development",
+        "of fundamental musical behaviour",
+        "performing and composing;",
+        "and allow the children",
+        "to focus on",
+        "controllable sound sources",
+        "i.e.",
+        "body percussion"
+      ],
+      "roles": [
+        {
+          "text": "This",
+          "role": "S"
+        },
+        {
+          "text": "will allow",
+          "role": "V"
+        },
+        {
+          "text": "an inexperienced teacher",
+          "role": "O"
+        },
+        {
+          "text": "to focus on the development of fundamental musical behaviour",
+          "role": "C"
+        },
+        {
+          "text": "allow",
+          "role": "V"
+        },
+        {
+          "text": "the children",
+          "role": "O"
+        },
+        {
+          "text": "to focus on the more controllable sound sources",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "This",
+            "will allow",
+            "an inexperienced teacher",
+            "to focus on the development of fundamental musical behaviour",
+            "through listening, performing and composing",
+            "allow",
+            "the children",
+            "to focus on the more controllable sound sources"
+          ],
+          "answers": [
+            "This",
+            "will allow",
+            "an inexperienced teacher",
+            "to focus on the development of fundamental musical behaviour",
+            "allow",
+            "the children",
+            "to focus on the more controllable sound sources"
+          ],
+          "roles": {
+            "This": "S",
+            "will allow": "V",
+            "an inexperienced teacher": "O",
+            "to focus on the development of fundamental musical behaviour": "C",
+            "allow": "V",
+            "the children": "O",
+            "to focus on the more controllable sound sources": "C"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 주어(S)·동사(V)·목적어(O)를 찾고, 목적어가 무엇을 하게 되는지(보어 C)까지 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "through listening, performing and composing": "그건 through(~을 통해) 뒤 덩어리예요. 어떻게 집중하는지 덧붙여요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어 This, 동사 will allow와 allow, 목적어 an inexperienced teacher와 the children, 보어는 각각 to focus on … 덩어리예요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "allow + 사람 + to ~",
+              "text": "'사람이 ~하게 해 주다'예요. allow the children to focus = 아이들이 집중하게 해 준다.",
+              "mark": "will allow"
+            }
+          ]
+        },
+        {
+          "id": "s2_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "① 문장은 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'the more controllable sound sources i.e. voices and body percussion', 악기 대신 목소리와 몸 소리에 집중하게 된대요. 악기 없이 시작하는 쪽이에요.",
+              "'the more controllable sound sources i.e. voices and body percussion', 악기 대신 목소리와 몸 소리에 집중하게 된대요. 악기 없이 시작하는 쪽이에요."
+            ],
+            "explain": "'the more controllable sound sources i.e. voices and body percussion', 악기 대신 목소리와 몸 소리에 집중하게 된대요. 악기 없이 시작하는 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'the more controllable sound sources i.e. voices and body percussion', 악기 대신 목소리와 몸 소리에 집중하게 된대요. 악기 없이 시작하는 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 악기 없이 시작",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 다른 이야기"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "첫 음악 수업",
+            "left": {
+              "label": "악기 없이 시작",
+              "words": []
+            },
+            "right": {
+              "label": "다른 이야기",
+              "words": []
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "voices · body percussion"
+              ],
+              "left": "왼쪽 · 악기 없이 시작",
+              "right": "오른쪽 · 다른 이야기"
+            }
+          },
+          "highlight": [
+            "voices and body percussion"
+          ],
+          "tips": [
+            {
+              "label": "i.e.",
+              "text": "'즉, 다시 말해'예요. 앞말을 풀어 줘요.",
+              "mark": "i.e."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "②Music starts with these both developmentally and historically: the most expressive and immediate musical instrument is the human voice.",
+      "model_translation": "음악은 (아동의) 발달 측면에서뿐만 아니라 역사적으로도 이것들로 시작하는데, 가장 표현이 풍부하고 즉각 쓸 수 있는 악기는 인간의 목소리이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Music",
+          "ko": "음악"
+        },
+        {
+          "en": "starts",
+          "ko": "시작한다 · start with = ~로 시작하다"
+        },
+        {
+          "en": "these",
+          "ko": "이것들"
+        },
+        {
+          "en": "both developmentally and historically",
+          "ko": "발달 면에서도 역사적으로도"
+        },
+        {
+          "en": "the most expressive and immediate musical instrument",
+          "ko": "가장 표현이 풍부하고 바로 쓸 수 있는 악기"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "the human voice",
+          "ko": "인간의 목소리"
+        },
+        {
+          "en": "developmentally",
+          "ko": "발달 면에서"
+        },
+        {
+          "en": "historically",
+          "ko": "역사적으로"
+        },
+        {
+          "en": "expressive",
+          "ko": "표현이 풍부한"
+        },
+        {
+          "en": "immediate",
+          "ko": "즉각적인, 바로 쓸 수 있는"
+        },
+        {
+          "en": "instrument",
+          "ko": "악기"
+        },
+        {
+          "en": "voice",
+          "ko": "목소리"
+        }
+      ],
+      "slashes": [
+        "②Music starts with these",
+        "and historically:",
+        "musical instrument"
+      ],
+      "roles": [
+        {
+          "text": "Music",
+          "role": "S"
+        },
+        {
+          "text": "starts",
+          "role": "V"
+        },
+        {
+          "text": "the most expressive and immediate musical instrument",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "the human voice",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Music",
+            "starts",
+            "these",
+            "the most expressive and immediate musical instrument",
+            "is",
+            "the human voice"
+          ],
+          "answers": [
+            "Music",
+            "starts",
+            "the most expressive and immediate musical instrument",
+            "is",
+            "the human voice"
+          ],
+          "roles": {
+            "Music": "S",
+            "starts": "V",
+            "the most expressive and immediate musical instrument": "S",
+            "is": "V",
+            "the human voice": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "these": "그건 with 뒤의 말이에요. 무엇으로 시작하는지예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "콜론(:) 앞은 주어 Music, 동사 starts예요. 뒤는 주어 the most … instrument, 동사 is, 보어 the human voice예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "both A and B",
+              "text": "'A와 B 둘 다'예요. both developmentally and historically = 발달 면에서도 역사적으로도.",
+              "mark": "both"
+            },
+            {
+              "label": "instrument = 목소리?",
+              "text": "여기서는 사람의 목소리를 '악기'에 빗댄 말이에요. 진짜 악기 이야기가 아니에요.",
+              "mark": "musical instrument"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Music",
+            "starts",
+            "these",
+            "both developmentally and historically",
+            "the most expressive and immediate musical instrument",
+            "is",
+            "the human voice"
+          ],
+          "answers": [
+            "Music",
+            "both developmentally and historically",
+            "these",
+            "starts",
+            "the most expressive and immediate musical instrument",
+            "the human voice",
+            "is"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Music",
+                "ko": "음악은"
+              },
+              " ",
+              {
+                "en": "both developmentally and historically",
+                "ko": "발달 면에서도 역사적으로도"
+              },
+              " ",
+              {
+                "en": "these",
+                "ko": "이것들"
+              },
+              "로 ",
+              {
+                "en": "starts",
+                "ko": "시작한다"
+              },
+              ": ",
+              {
+                "en": "the most expressive and immediate musical instrument",
+                "ko": "가장 표현이 풍부하고 바로 쓸 수 있는 악기는"
+              },
+              " ",
+              {
+                "en": "the human voice",
+                "ko": "인간의 목소리"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "음악은 목소리와 몸 소리에서 시작하고, 가장 좋은 악기는 사람의 목소리래요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "both A and B",
+              "text": "'A와 B 둘 다'예요. both developmentally and historically = 발달 면에서도 역사적으로도.",
+              "mark": "both"
+            },
+            {
+              "label": "instrument = 목소리?",
+              "text": "여기서는 사람의 목소리를 '악기'에 빗댄 말이에요. 진짜 악기 이야기가 아니에요.",
+              "mark": "musical instrument"
+            }
+          ]
+        },
+        {
+          "id": "s3_these",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "these(이것들)는 무엇을 가리킬까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "가리키는 것은 앞 문장에서 찾아요. ① 문장의 끝부분을 봐요.",
+              "가리키는 것은 앞 문장에서 찾아요. ① 문장의 끝부분을 봐요."
+            ],
+            "explain": "앞 문장 끝 'voices and body percussion'이에요. 음악은 여기서 시작한대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "앞 문장 끝 'voices and body percussion'이에요. 음악은 여기서 시작한대요.",
+              "o2": "앞 문장 끝 'voices and body percussion'이에요. 음악은 여기서 시작한대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "목소리와 몸으로 내는 소리",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "여러 가지 악기"
+            },
+            {
+              "id": "o2",
+              "label": "교사와 아이들"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "these"
+          ],
+          "levels": [
+            "중",
+            "초"
+          ],
+          "tips": [
+            {
+              "label": "both A and B",
+              "text": "'A와 B 둘 다'예요. both developmentally and historically = 발달 면에서도 역사적으로도.",
+              "mark": "both"
+            }
+          ]
+        },
+        {
+          "id": "s3_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "② 문장은 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "음악은 목소리와 몸 소리로 시작하고, 가장 표현이 풍부한 악기는 사람의 목소리래요. 악기 없이 시작하는 쪽이에요.",
+              "음악은 목소리와 몸 소리로 시작하고, 가장 표현이 풍부한 악기는 사람의 목소리래요. 악기 없이 시작하는 쪽이에요."
+            ],
+            "explain": "음악은 목소리와 몸 소리로 시작하고, 가장 표현이 풍부한 악기는 사람의 목소리래요. 악기 없이 시작하는 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "음악은 목소리와 몸 소리로 시작하고, 가장 표현이 풍부한 악기는 사람의 목소리래요. 악기 없이 시작하는 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 악기 없이 시작",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 다른 이야기"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "첫 음악 수업",
+            "left": {
+              "label": "악기 없이 시작",
+              "words": [
+                {
+                  "text": "voices · body percussion"
+                }
+              ]
+            },
+            "right": {
+              "label": "다른 이야기",
+              "words": []
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "the human voice"
+              ],
+              "left": "왼쪽 · 악기 없이 시작",
+              "right": "오른쪽 · 다른 이야기"
+            }
+          },
+          "highlight": [
+            "these",
+            "the human voice"
+          ],
+          "tips": [
+            {
+              "label": "instrument = 목소리?",
+              "text": "여기서는 사람의 목소리를 '악기'에 빗댄 말이에요. 진짜 악기 이야기가 아니에요.",
+              "mark": "musical instrument"
+            }
+          ]
+        },
+        {
+          "id": "s3_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "음악은 목소리와 몸 소리에서 시작하고, 가장 좋은 악기는 사람의 목소리래요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "③The sound quality of an instrument is a direct result of the quality of the materials, design, and making.",
+      "model_translation": "악기의 음질은 재료, 디자인, 그리고 제작의 품질로 인한 직접적인 결과이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The sound quality",
+          "ko": "음질, 소리의 질"
+        },
+        {
+          "en": "an instrument",
+          "ko": "악기"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a direct result",
+          "ko": "직접적인 결과"
+        },
+        {
+          "en": "of the quality of the materials, design, and making",
+          "ko": "재료, 디자인, 제작의 품질의"
+        },
+        {
+          "en": "sound",
+          "ko": "소리"
+        },
+        {
+          "en": "quality",
+          "ko": "질, 품질"
+        },
+        {
+          "en": "instrument",
+          "ko": "악기"
+        },
+        {
+          "en": "direct",
+          "ko": "직접적인"
+        },
+        {
+          "en": "result",
+          "ko": "결과"
+        },
+        {
+          "en": "materials",
+          "ko": "재료"
+        },
+        {
+          "en": "design",
+          "ko": "디자인"
+        },
+        {
+          "en": "making",
+          "ko": "만드는 것"
+        }
+      ],
+      "slashes": [
+        "of an instrument",
+        "a direct result",
+        "materials, design,"
+      ],
+      "roles": [
+        {
+          "text": "The sound quality",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a direct result",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "The sound quality",
+            "an instrument",
+            "is",
+            "a direct result"
+          ],
+          "answers": [
+            "The sound quality",
+            "is",
+            "a direct result"
+          ],
+          "roles": {
+            "The sound quality": "S",
+            "is": "V",
+            "a direct result": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "an instrument": "그건 of 뒤 덩어리예요. 어떤 음질인지 꾸며요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 The sound quality (of an instrument), 동사는 is, 보어는 a direct result예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic"
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "The sound quality",
+            "an instrument",
+            "is",
+            "a direct result",
+            "of the quality of the materials, design, and making"
+          ],
+          "answers": [
+            "The sound quality",
+            "an instrument",
+            "of the quality of the materials, design, and making",
+            "a direct result",
+            "is"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The sound quality",
+                "ko": "음질은"
+              },
+              " (",
+              {
+                "en": "an instrument",
+                "ko": "악기의"
+              },
+              ") ",
+              {
+                "en": "of the quality of the materials, design, and making",
+                "ko": "재료·디자인·제작 품질의"
+              },
+              " ",
+              {
+                "en": "a direct result",
+                "ko": "직접적인 결과"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "악기 소리가 좋은지는 재료·디자인·만듦새에 달렸대요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s4_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "③ 문장은 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'The sound quality of an instrument', 악기의 음질은 재료·디자인·제작에 달렸대요. 악기 없이 시작하자는 말이 아니라 악기 자체 이야기예요.",
+              "'The sound quality of an instrument', 악기의 음질은 재료·디자인·제작에 달렸대요. 악기 없이 시작하자는 말이 아니라 악기 자체 이야기예요."
+            ],
+            "explain": "'The sound quality of an instrument', 악기의 음질은 재료·디자인·제작에 달렸대요. 악기 없이 시작하자는 말이 아니라 악기 자체 이야기예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'The sound quality of an instrument', 악기의 음질은 재료·디자인·제작에 달렸대요. 악기 없이 시작하자는 말이 아니라 악기 자체 이야기예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 악기 없이 시작"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 다른 이야기",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "첫 음악 수업",
+            "left": {
+              "label": "악기 없이 시작",
+              "words": [
+                {
+                  "text": "voices · body percussion"
+                },
+                {
+                  "text": "the human voice"
+                }
+              ]
+            },
+            "right": {
+              "label": "다른 이야기",
+              "words": []
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "sound quality of an instrument"
+              ],
+              "left": "왼쪽 · 악기 없이 시작",
+              "right": "오른쪽 · 다른 이야기"
+            }
+          },
+          "highlight": [
+            "sound quality",
+            "materials"
+          ]
+        },
+        {
+          "id": "s4_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "악기 소리가 좋은지는 재료·디자인·만듦새에 달렸대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s4_hold",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "②에도 instrument가 나왔지만 목소리를 악기에 빗댄 말이었어요. ③은 진짜 악기의 음질 이야기라 방향에서 벗어나요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "첫 음악 수업",
+            "left": {
+              "label": "악기 없이 시작",
+              "words": [
+                {
+                  "text": "voices · body percussion"
+                },
+                {
+                  "text": "the human voice"
+                }
+              ]
+            },
+            "right": {
+              "label": "다른 이야기",
+              "words": [
+                {
+                  "text": "sound quality of an instrument",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "④Body movements are not only an instinctive response to music but also instigate music making.",
+      "model_translation": "몸의 움직임은 음악에 대한 본능적인 반응일 뿐만 아니라 음악을 만들어 내도록 부추긴다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Body movements",
+          "ko": "몸의 움직임"
+        },
+        {
+          "en": "are",
+          "ko": "~이다"
+        },
+        {
+          "en": "not only",
+          "ko": "~일 뿐만 아니라"
+        },
+        {
+          "en": "an instinctive response",
+          "ko": "본능적인 반응"
+        },
+        {
+          "en": "to music",
+          "ko": "음악에 대한"
+        },
+        {
+          "en": "but also",
+          "ko": "~도 (한다)"
+        },
+        {
+          "en": "instigate",
+          "ko": "부추기다"
+        },
+        {
+          "en": "music making",
+          "ko": "음악 만들기"
+        },
+        {
+          "en": "movements",
+          "ko": "움직임"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "instinctive",
+          "ko": "본능적인"
+        },
+        {
+          "en": "response",
+          "ko": "반응"
+        },
+        {
+          "en": "music",
+          "ko": "음악"
+        },
+        {
+          "en": "making",
+          "ko": "만드는 것"
+        }
+      ],
+      "slashes": [
+        "④Body movements",
+        "are not only",
+        "to music",
+        "but also"
+      ],
+      "roles": [
+        {
+          "text": "Body movements",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "an instinctive response",
+          "role": "C"
+        },
+        {
+          "text": "instigate",
+          "role": "V"
+        },
+        {
+          "text": "music making",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Body movements",
+            "are",
+            "an instinctive response",
+            "instigate",
+            "music making"
+          ],
+          "answers": [
+            "Body movements",
+            "are",
+            "an instinctive response",
+            "instigate",
+            "music making"
+          ],
+          "roles": {
+            "Body movements": "S",
+            "are": "V",
+            "an instinctive response": "C",
+            "instigate": "V",
+            "music making": "O"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)·보어(C)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Body movements, 동사는 are와 instigate예요. are의 보어는 an instinctive response, instigate의 목적어는 music making이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "tips": [
+            {
+              "label": "not only A but also B",
+              "text": "'A일 뿐만 아니라 B도'예요. 글쓴이가 더 말하고 싶은 쪽은 B예요.",
+              "mark": "not only"
+            }
+          ]
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "Body movements",
+            "are",
+            "an instinctive response",
+            "to music",
+            "instigate",
+            "music making"
+          ],
+          "answers": [
+            "Body movements",
+            "to music",
+            "an instinctive response",
+            "are",
+            "music making",
+            "instigate"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Body movements",
+                "ko": "몸의 움직임은"
+              },
+              " ",
+              {
+                "en": "to music",
+                "ko": "음악에 대한"
+              },
+              " ",
+              {
+                "en": "an instinctive response",
+                "ko": "본능적인 반응"
+              },
+              {
+                "en": "are",
+                "ko": "일"
+              },
+              " 뿐만 아니라, ",
+              {
+                "en": "music making",
+                "ko": "음악 만들기"
+              },
+              "를 ",
+              {
+                "en": "instigate",
+                "ko": "부추기기도 한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "몸의 움직임은 음악에 저절로 나오는 반응이면서, 음악을 만들게 부추기기도 한대요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "not only A but also B",
+              "text": "'A일 뿐만 아니라 B도'예요. 글쓴이가 더 말하고 싶은 쪽은 B예요.",
+              "mark": "not only"
+            }
+          ]
+        },
+        {
+          "id": "s5_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "④ 문장은 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "몸의 움직임이 음악을 만들게(music making) 부추긴대요. ①의 body percussion처럼 악기 없이 몸으로 하는 음악이에요.",
+              "몸의 움직임이 음악을 만들게(music making) 부추긴대요. ①의 body percussion처럼 악기 없이 몸으로 하는 음악이에요."
+            ],
+            "explain": "몸의 움직임이 음악을 만들게(music making) 부추긴대요. ①의 body percussion처럼 악기 없이 몸으로 하는 음악이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "몸의 움직임이 음악을 만들게(music making) 부추긴대요. ①의 body percussion처럼 악기 없이 몸으로 하는 음악이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 악기 없이 시작",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 다른 이야기"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "첫 음악 수업",
+            "left": {
+              "label": "악기 없이 시작",
+              "words": [
+                {
+                  "text": "voices · body percussion"
+                },
+                {
+                  "text": "the human voice"
+                }
+              ]
+            },
+            "right": {
+              "label": "다른 이야기",
+              "words": [
+                {
+                  "text": "sound quality of an instrument"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "body movements"
+              ],
+              "left": "왼쪽 · 악기 없이 시작",
+              "right": "오른쪽 · 다른 이야기"
+            }
+          },
+          "highlight": [
+            "Body movements",
+            "music making"
+          ],
+          "tips": [
+            {
+              "label": "not only A but also B",
+              "text": "'A일 뿐만 아니라 B도'예요. 글쓴이가 더 말하고 싶은 쪽은 B예요.",
+              "mark": "not only"
+            }
+          ]
+        },
+        {
+          "id": "s5_basic_meaning",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "몸의 움직임은 음악에 저절로 나오는 반응이면서, 음악을 만들게 부추기기도 한대요."
+          },
+          "method": 0,
+          "button": "다음",
+          "levels": [
+            "초"
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "⑤Activities which develop many of the coordination skills, aural sensitivity, responses to visual cues and symbols, and the musical understanding necessary to play an instrument can all be established without instruments.",
+      "model_translation": "조정 능력, 청각적 감수성, 시각적 신호와 기호에 대한 반응, 그리고 악기 연주에 필요한 음악적 이해의 많은 부분을 발달시키는 활동은 모두 악기 없이 자리 잡을 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "develop",
+          "ko": "발달시키다"
+        },
+        {
+          "en": "Activities",
+          "ko": "활동들"
+        },
+        {
+          "en": "which develop",
+          "ko": "~을 발달시키는"
+        },
+        {
+          "en": "many of the coordination skills",
+          "ko": "조정 능력의 많은 부분"
+        },
+        {
+          "en": "aural sensitivity",
+          "ko": "청각적 감수성(듣는 감각)"
+        },
+        {
+          "en": "responses to visual cues and symbols",
+          "ko": "시각적 신호와 기호에 대한 반응"
+        },
+        {
+          "en": "the musical understanding",
+          "ko": "음악적 이해"
+        },
+        {
+          "en": "necessary to play an instrument",
+          "ko": "악기를 연주하는 데 필요한"
+        },
+        {
+          "en": "can all be established",
+          "ko": "모두 자리 잡을 수 있다"
+        },
+        {
+          "en": "without instruments",
+          "ko": "악기 없이"
+        },
+        {
+          "en": "coordination",
+          "ko": "조정"
+        },
+        {
+          "en": "skills",
+          "ko": "능력"
+        },
+        {
+          "en": "aural",
+          "ko": "청각의"
+        },
+        {
+          "en": "sensitivity",
+          "ko": "감수성"
+        },
+        {
+          "en": "responses",
+          "ko": "반응"
+        },
+        {
+          "en": "visual",
+          "ko": "시각의"
+        },
+        {
+          "en": "cues",
+          "ko": "신호"
+        },
+        {
+          "en": "symbols",
+          "ko": "기호"
+        },
+        {
+          "en": "necessary",
+          "ko": "필요한"
+        },
+        {
+          "en": "play",
+          "ko": "연주하다"
+        },
+        {
+          "en": "instrument",
+          "ko": "악기"
+        },
+        {
+          "en": "established",
+          "ko": "자리 잡은"
+        },
+        {
+          "en": "without",
+          "ko": "~ 없이"
+        },
+        {
+          "en": "instruments",
+          "ko": "악기들"
+        }
+      ],
+      "slashes": [
+        "⑤Activities",
+        "which develop",
+        "coordination skills,",
+        "aural sensitivity,",
+        "visual cues and symbols,",
+        "the musical understanding",
+        "to play an instrument",
+        "can all be established"
+      ],
+      "roles": [
+        {
+          "text": "Activities",
+          "role": "S"
+        },
+        {
+          "text": "can all be established",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "which develop many of the coordination skills, aural sensitivity, responses to visual cues and symbols, and the musical understanding necessary to play an instrument"
+      ],
+      "steps": [
+        {
+          "id": "s6_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Activities",
+            "develop",
+            "can all be established",
+            "without instruments"
+          ],
+          "answers": [
+            "Activities",
+            "can all be established"
+          ],
+          "roles": {
+            "Activities": "S",
+            "can all be established": "V"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "develop": "그건 which 덩어리 안의 동사예요. 앞의 Activities를 꾸며요.",
+              "without instruments": "그건 without(~ 없이) 뒤 덩어리예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Activities, 동사는 can (all) be established예요. 그 사이 which … instrument가 길게 Activities를 꾸며요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_modify",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "초록 부분은 앞의 Activities를 꾸며요. 아래 표처럼 읽어요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "Activities"
+          ],
+          "highlight_alt": [
+            "which develop many of the coordination skills, aural sensitivity, responses to visual cues and symbols, and the musical understanding necessary to play an instrument"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "S",
+                "text": "Activities",
+                "ko": "활동들",
+                "tone": "hl"
+              },
+              {
+                "label": "↖ 꾸밈",
+                "text": "which develop … necessary to play an instrument",
+                "ko": "악기 연주에 필요한 능력을 발달시키는",
+                "tone": "hl2"
+              },
+              {
+                "label": "V",
+                "text": "can all be established",
+                "ko": "모두 자리 잡을 수 있다"
+              }
+            ]
+          },
+          "panel_below": true
+        },
+        {
+          "id": "s6_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "⑤ 문장은 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'can all be established without instruments', 악기 연주에 필요한 능력도 모두 악기 없이 기를 수 있대요. 악기 없이 시작하는 쪽이에요.",
+              "'can all be established without instruments', 악기 연주에 필요한 능력도 모두 악기 없이 기를 수 있대요. 악기 없이 시작하는 쪽이에요."
+            ],
+            "explain": "'can all be established without instruments', 악기 연주에 필요한 능력도 모두 악기 없이 기를 수 있대요. 악기 없이 시작하는 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'can all be established without instruments', 악기 연주에 필요한 능력도 모두 악기 없이 기를 수 있대요. 악기 없이 시작하는 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 악기 없이 시작",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 다른 이야기"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "첫 음악 수업",
+            "left": {
+              "label": "악기 없이 시작",
+              "words": [
+                {
+                  "text": "voices · body percussion"
+                },
+                {
+                  "text": "the human voice"
+                },
+                {
+                  "text": "body movements"
+                }
+              ]
+            },
+            "right": {
+              "label": "다른 이야기",
+              "words": [
+                {
+                  "text": "sound quality of an instrument"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "without instruments"
+              ],
+              "left": "왼쪽 · 악기 없이 시작",
+              "right": "오른쪽 · 다른 이야기"
+            }
+          },
+          "highlight": [
+            "without instruments"
+          ]
+        },
+        {
+          "id": "s6_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①②④⑤는 '악기 없이 시작' 쪽이에요. 다른 쪽에 놓인 한 문장을 문제에서 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "panel": {
+            "kind": "groups",
+            "title": "첫 음악 수업",
+            "left": {
+              "label": "악기 없이 시작",
+              "words": [
+                {
+                  "text": "voices · body percussion"
+                },
+                {
+                  "text": "the human voice"
+                },
+                {
+                  "text": "body movements"
+                },
+                {
+                  "text": "without instruments",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "다른 이야기",
+              "words": [
+                {
+                  "text": "sound quality of an instrument"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

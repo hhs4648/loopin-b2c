@@ -1,0 +1,106 @@
+{
+ "1": [
+  {
+   "word": "for",
+   "phrase": "for the art of living",
+   "sense": "~에 대해",
+   "usage": "전치사 for (대상)"
+  }
+ ],
+ "2": [
+  {
+   "word": "as",
+   "phrase": "Just as",
+   "sense": "~하듯이",
+   "usage": "Just as A, B (비유·같은 모양)"
+  },
+  {
+   "word": "to",
+   "phrase": "conform to the stylistic",
+   "sense": "~에 (따르다)",
+   "usage": "conform to + 명사"
+  },
+  {
+   "word": "which",
+   "phrase": "into which",
+   "sense": "(그 시대) 안으로",
+   "usage": "전치사 + 관계대명사 which (the era를 꾸밈)"
+  },
+  {
+   "word": "to",
+   "phrase": "similarly conform to",
+   "sense": "~에 (순응하다)",
+   "usage": "conform to + 명사"
+  },
+  {
+   "word": "to",
+   "phrase": "how to live",
+   "sense": "~해야 할지",
+   "usage": "how + to부정사"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "commuting to work",
+   "sense": "~로 (통근하다)",
+   "usage": "전치사 to (방향)"
+  },
+  {
+   "word": "for",
+   "phrase": "for holidays",
+   "sense": "~을 위해, ~ 때",
+   "usage": "전치사 for (목적)"
+  }
+ ],
+ "4": [
+  {
+   "word": "for",
+   "phrase": "For some people",
+   "sense": "~에게는",
+   "usage": "전치사 for (대상)"
+  },
+  {
+   "word": "for",
+   "phrase": "for others",
+   "sense": "~에게는",
+   "usage": "전치사 for (대상)"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "common to",
+   "sense": "~하는 것은",
+   "usage": "가주어 it … 진주어 to부정사"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "conventions that most of us",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 주어 + 동사"
+  },
+  {
+   "word": "as",
+   "phrase": "much as",
+   "sense": "~와 마찬가지로",
+   "usage": "much as + 주어 + 동사"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "to see beyond",
+   "sense": "~하는 것은",
+   "usage": "가주어 it … 진주어 to부정사"
+  },
+  {
+   "word": "that",
+   "phrase": "culture that has shaped",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ]
+}

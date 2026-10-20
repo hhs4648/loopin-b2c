@@ -8,6 +8,7 @@ import { isUnknownInput, matchChoice } from "../match";
 import { askedAboutWord } from "../proper-nouns";
 import { addVocab } from "../vocab";
 import { recordLessonEvents } from "../lessonLog";
+import { noteExamAnswer } from "../progress";
 import { addGrammarPractice } from "../grammarPractice";
 import { bumpMethodIntro, methodIntroCount, saveReview, type ReviewStatus } from "./review";
 import { decideOnChoice, openingAction, shouldShow, type DecideInput } from "./decide";
@@ -147,6 +148,11 @@ const DEFAULT_DEPS: PolicyDeps = {
   logEvents: (events) => {
     appendEvents(events);
     recordLessonEvents(events);
+    // 목록의 「몇 번 중 몇 번 맞힘」 — 이번 회차에 처음 고른 보기만 센다
+    for (const e of events) {
+      const o = e.observation as { kind?: string; correct?: boolean } | null;
+      if (o?.kind === "exam" && typeof o.correct === "boolean") noteExamAnswer(o.correct);
+    }
   },
   now: () => Date.now(),
 };
@@ -527,6 +533,7 @@ export function createPolicySession(
         observation: { kind: "exam", when: "final", correct: clean, optionId: ans.id },
         action: { action: "FINISH", reason: [clean ? "exam_correct" : "exam_wrong", "order_link"] },
       });
+      flush();
       s = {
         ...s,
         explainOnly: true,
@@ -559,6 +566,8 @@ export function createPolicySession(
       observation: { kind: "exam", when, correct, optionId: picked.id },
       action: { action: when === "first" ? "CONTINUE" : "FINISH", reason: [correct ? "exam_correct" : "exam_wrong"] },
     });
+    // 고르자마자 남긴다 — 바로 풀고 나가도 목록에 「맞힘/틀림」이 뜨게
+    flush();
     if (when === "first" && lesson.passage_on_try) {
       // 분석 없이 맞혔다 — 그래도 중요 표현이 많으니 같이 보자고 가볍게 권한다. 틀렸으면 답을 말하지 않고 분석으로
       if (correct) {

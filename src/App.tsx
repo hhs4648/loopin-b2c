@@ -23,7 +23,7 @@ import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { policyLessonIds } from "./tutor/policy/lessons";
 import { AUTO_NEXT_CMD, createPolicySession, type PolicySession } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
-import { markDone } from "./tutor/progress";
+import { markDone, startRun } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
 import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets";
 
@@ -191,6 +191,7 @@ function ReadingApp() {
   /** analyze — 미니 모의고사에서 넘어왔다: 이미 푼 문제라 미리보기·「바로 풀어 볼게요」를 건너뛰고 바로 다정쌤 분석으로 */
   function startSet(set: LessonSet, analyze = false) {
     setCollection(getCollection(set.collection));
+    startRun(set.id);
     const next = open(firstLessonId(set));
     setStarted(next);
     setView(next.session.view());

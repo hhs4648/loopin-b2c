@@ -1,0 +1,2428 @@
+{
+  "id": "moeui-2022-03-38-animal-signals",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2022년 3월 고3 전국연합학력평가 영어 38번 (주어진 문장 넣기, 2점)",
+  "brief": {
+    "topic": "문장 넣기 푸는 법: 주어진 문장의 단서 → 앞뒤 예측 → ①~⑤ 흐름이 끊기는 곳",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "sentence_insertion",
+    "labels": [
+      "주어진 문장 단서 찾기",
+      "앞에 올 내용 예측하기",
+      "흐름 끊기는 곳 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-animal-signals.svg",
+      "alt": "칠판: Signals(신호) → Generations(세대)",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/insert-method.svg",
+      "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "동물은 몸짓으로 신호를 보내요. 이번 글은 그 신호가 대대로 어떻게 전해지는지 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있거든요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾을 거예요. 칠판 순서대로 해 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳을 고르시오.",
+    "underline": [
+      "(①)",
+      "(②)",
+      "(③)",
+      "(④)",
+      "(⑤)"
+    ],
+    "numbers_only": true,
+    "passage_keywords": [
+      "But many signals",
+      "go through changes",
+      "more elaborate",
+      "have not arisen afresh",
+      "passed on",
+      "Some signals",
+      "remain much the same",
+      "slight variations",
+      "simpler versions"
+    ],
+    "sentence": 1,
+    "analysis_first": true,
+    "wrong_rate": 40.0,
+    "wrong_rank": 11,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "Most of the various forms … 앞",
+        "keywords": [],
+        "ko": "어떻게 생겨났는지 궁금하다 뒤"
+      },
+      {
+        "id": "2",
+        "label": "As one species evolves … 앞",
+        "keywords": [],
+        "ko": "종마다 새로 생긴 게 아니다 뒤"
+      },
+      {
+        "id": "3",
+        "label": "Some signals have significance … 앞",
+        "keywords": [],
+        "ko": "진화하며 신호가 전해진다 뒤"
+      },
+      {
+        "id": "4",
+        "label": "If we examine closely related species … 앞",
+        "keywords": [],
+        "ko": "몇몇 신호는 거의 그대로 남는다 뒤",
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "Some very elaborate displays … 앞",
+        "keywords": [],
+        "ko": "가까운 종에서 약간의 차이가 보인다 뒤"
+      }
+    ],
+    "brief": {
+      "ask": "주어진 문장의 But과 go through changes를 떠올리며 들어갈 곳을 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 몇몇 신호는 거의 그대로 남는다 → 하지만 많은 신호는 변화를 겪는다(주어진 문장) → 그래서 가까운 종을 보면 약간의 차이가 보인다, 순서예요.",
+      "final_wrong": "정답은 ④예요. '거의 그대로 남는다'를 But으로 뒤집고, 그 변화 덕분에 뒤에서 '약간의 차이'가 보여요.",
+      "option_feedback": {
+        "1": "① 앞은 동물 표현이 어떻게 생겼는지 궁금하다는 말이에요. But이 뒤집을 '변하지 않는다'가 아직 안 나왔어요.",
+        "2": "② 앞은 신호가 종마다 새로 생긴 게 아니라는 말이에요. 아직 '그대로 남는다'가 안 나왔어요.",
+        "3": "③ 앞은 신호가 진화하며 전해진다는 말이에요. 그 뒤 '몇몇은 그대로 남는다'로 그대로 이어져서 끊긴 곳이 아니에요.",
+        "5": "⑤ 앞에서 이미 '약간의 차이'가 나왔어요. 변화 이야기는 그 차이보다 먼저, ④에 와야 해요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+      "option_review": {
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 15%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "⑤ 뒤에도 more elaborate가 나와서 끌리기 쉬워요. 그런데 ⑤ 앞에서 이미 '약간의 차이가 보인다'가 나왔어요. '그대로 남는다' 바로 뒤에 차이가 나오는 ④가 먼저 끊겨요.",
+          "ask": "그래서 ⑤가 아니에요. 어디서 헷갈렸어요?",
+          "choices": [
+            {
+              "label": "elaborate가 같아서 골랐어요",
+              "skills": [
+                "word_match"
+              ],
+              "reply": "알려 줘서 고마워요. 같은 낱말만 보고 고르지 말고, 앞뒤 흐름이 어디서 끊기는지 확인해야 해요. 앞으로 이 점을 강조해서 알려 줄게요."
+            },
+            {
+              "label": "slight variations가 변화인 줄 몰랐어요",
+              "skills": [
+                "variation_meaning"
+              ],
+              "reply": "알려 줘서 고마워요. variation은 '차이, 변형'이라 '변한다' 쪽 말이에요. 앞으로 비슷한 말이 나오면 같이 짚어 줄게요."
+            },
+            {
+              "label": "둘 다요",
+              "skills": [
+                "word_match",
+                "variation_meaning"
+              ],
+              "reply": "알려 줘서 고마워요. 앞으로 낱말 뜻과 흐름을 같이 짚어 볼게요."
+            }
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "③ 뒤",
+                "text": "Some signals … remain much the same",
+                "ko": "몇몇 신호는 거의 그대로",
+                "tone": "hl"
+              },
+              {
+                "label": "주어진 문장",
+                "text": "But many signals … go through changes",
+                "ko": "하지만 많은 신호는 변한다",
+                "tone": "hl2"
+              },
+              {
+                "label": "④ 뒤",
+                "text": "slight variations",
+                "ko": "그래서 약간의 차이가 보인다",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "go through",
+        "ko": "겪다"
+      },
+      {
+        "en": "elaborate",
+        "ko": "정교한, 공들인"
+      },
+      {
+        "en": "generation",
+        "ko": "세대"
+      },
+      {
+        "en": "ritualized",
+        "ko": "의례화된"
+      },
+      {
+        "en": "display",
+        "ko": "(동물의) 표현, 과시 행동"
+      },
+      {
+        "en": "arise",
+        "ko": "생겨나다"
+      },
+      {
+        "en": "afresh",
+        "ko": "새로"
+      },
+      {
+        "en": "separate",
+        "ko": "별개의"
+      },
+      {
+        "en": "evolve",
+        "ko": "진화하다"
+      },
+      {
+        "en": "owing to",
+        "ko": "~ 때문에"
+      },
+      {
+        "en": "gene",
+        "ko": "유전자"
+      },
+      {
+        "en": "significance",
+        "ko": "중요성"
+      },
+      {
+        "en": "remain",
+        "ko": "남아 있다"
+      },
+      {
+        "en": "examine",
+        "ko": "조사하다"
+      },
+      {
+        "en": "variation",
+        "ko": "차이, 변형"
+      },
+      {
+        "en": "piece together",
+        "ko": "종합하다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 문장",
+      "text": "But many signals, as they are passed from generation to generation by whatever means, go through changes that make them either more elaborate or simply different.",
+      "teaching_value": "high",
+      "model_translation": "그러나 많은 신호가 어떤 방법에 의해서든 대대로 전달될 때 그것을 더욱 정교하게 또는 단순히 다르게 만드는 변화를 겪는다.",
+      "glosses": [
+        {
+          "en": "make",
+          "ko": "만들다"
+        },
+        {
+          "en": "are passed",
+          "ko": "전해지다"
+        },
+        {
+          "en": "they",
+          "ko": "그것들"
+        },
+        {
+          "en": "But",
+          "ko": "하지만"
+        },
+        {
+          "en": "many signals",
+          "ko": "많은 신호"
+        },
+        {
+          "en": "as they are passed",
+          "ko": "그것들이 전해질 때"
+        },
+        {
+          "en": "from generation to generation",
+          "ko": "대대로, 세대에서 세대로"
+        },
+        {
+          "en": "by whatever means",
+          "ko": "어떤 방법으로든"
+        },
+        {
+          "en": "go through changes",
+          "ko": "변화를 겪다"
+        },
+        {
+          "en": "go through",
+          "ko": "겪다"
+        },
+        {
+          "en": "changes",
+          "ko": "변화"
+        },
+        {
+          "en": "make them",
+          "ko": "그것들을 ~하게 만들다"
+        },
+        {
+          "en": "either more elaborate or simply different",
+          "ko": "더 정교하게 또는 그냥 다르게"
+        },
+        {
+          "en": "elaborate",
+          "ko": "정교한, 공들인"
+        },
+        {
+          "en": "means",
+          "ko": "방법, 수단"
+        },
+        {
+          "en": "passed",
+          "ko": "전해진"
+        },
+        {
+          "en": "signals",
+          "ko": "신호"
+        },
+        {
+          "en": "generation",
+          "ko": "세대"
+        },
+        {
+          "en": "whatever",
+          "ko": "어떤 ~이든"
+        },
+        {
+          "en": "go",
+          "ko": "가다"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해 · go through = 겪다"
+        }
+      ],
+      "emphasis": [
+        "go through changes"
+      ],
+      "slashes": [
+        "But many signals,",
+        "are passed",
+        "to generation",
+        "whatever means,",
+        "go through changes",
+        "make them"
+      ],
+      "roles": [
+        {
+          "text": "many signals",
+          "role": "S"
+        },
+        {
+          "text": "go through",
+          "role": "V"
+        },
+        {
+          "text": "changes",
+          "role": "O"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "are passed",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that make them either more elaborate or simply different"
+      ],
+      "steps": [
+        {
+          "id": "g_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "many signals",
+            "they",
+            "are passed",
+            "go through",
+            "changes",
+            "make"
+          ],
+          "answers": [
+            "many signals",
+            "go through",
+            "changes"
+          ],
+          "roles": {
+            "many signals": "S",
+            "go through": "V",
+            "changes": "O"
+          },
+          "brief": {
+            "ask": "긴 문장이에요. 콤마 사이 덩어리는 잠깐 두고 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "they": "그건 콤마 사이 as(~할 때) 덩어리 안의 주어예요.",
+              "are passed": "그건 콤마 사이 as(~할 때) 덩어리 안의 동사예요.",
+              "make": "그건 that 뒤 덩어리 안의 동사예요. 앞의 changes를 꾸며 줘요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 many signals, 동사는 go through, 목적어는 changes예요. 콤마 사이 as 덩어리는 '전해질 때'라는 때를 알려 줘요."
+          },
+          "method": 0
+        },
+        {
+          "id": "g_elab",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'changes that make them either more elaborate or simply different'는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "elaborate는 '정교한, 공들인'이에요. either A or B는 'A 또는 B'예요.",
+              "elaborate는 '정교한, 공들인'이에요. either A or B는 'A 또는 B'예요."
+            ],
+            "explain": "elaborate는 '정교한'이에요. 신호가 대대로 전해지면서 더 정교해지거나 그냥 달라진대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "elaborate는 '정교한'이에요. 신호가 대대로 전해지면서 더 정교해지거나 그냥 달라진대요.",
+              "o2": "elaborate는 '정교한'이에요. 신호가 대대로 전해지면서 더 정교해지거나 그냥 달라진대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "신호를 더 정교하게 또는 그냥 다르게 만드는 변화",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "신호를 더 단순하게 만드는 변화"
+            },
+            {
+              "id": "o2",
+              "label": "신호를 처음 그대로 지켜 주는 변화"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "either more elaborate or simply different"
+          ],
+          "tips": [
+            {
+              "label": "either A or B",
+              "text": "'A 또는 B (둘 중 하나)'예요. either more elaborate or simply different = 더 정교하게 또는 그냥 다르게.",
+              "mark": "either"
+            }
+          ]
+        },
+        {
+          "id": "g_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "신호가 대대로 전해지면서 변한대요. 칠판 오른쪽에 붙여 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "대대로 전해지는 신호",
+            "left": {
+              "label": "거의 그대로 남는다",
+              "words": []
+            },
+            "right": {
+              "label": "변한다",
+              "words": [
+                {
+                  "text": "go through changes",
+                  "ko": "변화를 겪는다",
+                  "fresh": true
+                },
+                {
+                  "text": "more elaborate",
+                  "ko": "더 정교한",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "go through changes"
+          ]
+        },
+        {
+          "id": "g_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 문장은 But(하지만)으로 시작해요. 그럼 바로 앞에는 어떤 내용이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "But은 앞 내용을 뒤집어요. go through changes(변화를 겪는다)와 반대되는 말을 떠올려 봐요.",
+              "But은 앞 내용을 뒤집어요. go through changes(변화를 겪는다)와 반대되는 말을 떠올려 봐요."
+            ],
+            "explain": "But은 앞 내용을 뒤집어요. 뒤가 '변화를 겪는다'니까, 바로 앞에는 '변하지 않고 그대로 남는다'가 와야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "But은 앞 내용을 뒤집어요. 뒤가 '변화를 겪는다'니까, 바로 앞에는 '변하지 않고 그대로 남는다'가 와야 해요.",
+              "o1": "But은 앞 내용을 뒤집어요. 뒤가 '변화를 겪는다'니까, 바로 앞에는 '변하지 않고 그대로 남는다'가 와야 해요."
+            },
+            "point": "But many signals … go through changes → 바로 앞 = 신호가 변하지 않는다는 내용"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "신호가 더 정교해진다는 내용"
+            },
+            {
+              "id": "o1",
+              "label": "동물이 신호를 보내는 이유"
+            },
+            {
+              "id": "o2",
+              "label": "신호가 변하지 않고 거의 그대로 남는다는 내용",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "But",
+            "go through changes"
+          ],
+          "tips": [
+            {
+              "label": "But으로 시작하는 주어진 문장",
+              "text": "But, However로 시작하면 바로 앞에는 반대되는 내용이 있어야 해요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Many of the ritualized displays performed by animals look so bizarre to us that we wonder how they came about.",
+      "model_translation": "동물들이 행하는 의례화된 표현 중에 많은 것이 우리에게 너무 기이하게 보여서 우리는 그런 표현이 어떻게 생겨났는지 궁금해 한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "so bizarre",
+          "ko": "너무 기이한"
+        },
+        {
+          "en": "look",
+          "ko": "~해 보이다"
+        },
+        {
+          "en": "Many of the ritualized displays",
+          "ko": "의례화된 표현 중 많은 것"
+        },
+        {
+          "en": "performed by animals",
+          "ko": "동물이 행하는"
+        },
+        {
+          "en": "look so bizarre",
+          "ko": "너무 기이해 보이다"
+        },
+        {
+          "en": "to us",
+          "ko": "우리에게"
+        },
+        {
+          "en": "we wonder",
+          "ko": "우리는 궁금해한다"
+        },
+        {
+          "en": "how they came about",
+          "ko": "그것들이 어떻게 생겨났는지"
+        },
+        {
+          "en": "came about",
+          "ko": "생겨났다"
+        },
+        {
+          "en": "ritualized",
+          "ko": "의례화된 · 늘 같은 틀로 되풀이되는"
+        },
+        {
+          "en": "displays",
+          "ko": "표현 · 여기서는 동물이 몸짓으로 보여 주는 행동이에요"
+        },
+        {
+          "en": "bizarre",
+          "ko": "기이한"
+        },
+        {
+          "en": "performed",
+          "ko": "행해진"
+        },
+        {
+          "en": "animals",
+          "ko": "동물들"
+        },
+        {
+          "en": "wonder",
+          "ko": "궁금해하다"
+        },
+        {
+          "en": "came",
+          "ko": "왔다 · come about = 생겨나다"
+        }
+      ],
+      "slashes": [
+        "ritualized displays",
+        "performed by animals",
+        "so bizarre to us",
+        "we wonder"
+      ],
+      "roles": [
+        {
+          "text": "Many of the ritualized displays",
+          "role": "S"
+        },
+        {
+          "text": "look",
+          "role": "V"
+        },
+        {
+          "text": "so bizarre",
+          "role": "C"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "wonder",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "performed by animals"
+      ],
+      "steps": [
+        {
+          "id": "s2_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Many of the ritualized displays",
+            "performed by animals",
+            "look",
+            "so bizarre"
+          ],
+          "answers": [
+            "Many of the ritualized displays",
+            "look",
+            "so bizarre"
+          ],
+          "roles": {
+            "Many of the ritualized displays": "S",
+            "look": "V",
+            "so bizarre": "C"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "performed by animals": "그건 앞의 displays를 꾸며 주는 덩어리예요(동물이 행하는)."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Many of the ritualized displays, 동사는 look, 보어는 so bizarre예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "tips": [
+            {
+              "label": "so ~ that …",
+              "text": "'너무 ~해서 …하다'예요. so bizarre that we wonder = 너무 기이해서 우리는 궁금해한다.",
+              "mark": "so"
+            }
+          ]
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s2_basic",
+          "candidates": [
+            "Many of the ritualized displays",
+            "look so bizarre",
+            "we wonder",
+            "how they came about"
+          ],
+          "answers": [
+            "Many of the ritualized displays",
+            "look so bizarre",
+            "how they came about",
+            "we wonder"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Many of the ritualized displays",
+                "ko": "의례화된 표현 중 많은 것이"
+              },
+              " ",
+              {
+                "en": "look so bizarre",
+                "ko": "너무 기이해 보여서"
+              },
+              " ",
+              {
+                "en": "how they came about",
+                "ko": "어떻게 생겨났는지"
+              },
+              " ",
+              {
+                "en": "we wonder",
+                "ko": "우리는 궁금해한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Many of the ritualized displays look so bizarre that we wonder how they came about.",
+          "tips": [
+            {
+              "label": "so ~ that …",
+              "text": "'너무 ~해서 …하다'예요. so bizarre that we wonder = 너무 기이해서 우리는 궁금해한다.",
+              "mark": "so"
+            }
+          ]
+        },
+        {
+          "id": "s1_display",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "여기서 displays는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "performed by animals(동물이 행하는)가 꾸며 줘요. 동물이 '하는' 것이에요.",
+              "performed by animals(동물이 행하는)가 꾸며 줘요. 동물이 '하는' 것이에요."
+            ],
+            "explain": "performed by animals(동물이 행하는)가 꾸며 줘요. 여기서 display는 동물이 몸짓으로 보여 주는 표현(행동)이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "performed by animals(동물이 행하는)가 꾸며 줘요. 여기서 display는 동물이 몸짓으로 보여 주는 표현(행동)이에요.",
+              "o2": "performed by animals(동물이 행하는)가 꾸며 줘요. 여기서 display는 동물이 몸짓으로 보여 주는 표현(행동)이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "화면, 디스플레이"
+            },
+            {
+              "id": "o1",
+              "label": "동물이 몸짓으로 보여 주는 행동",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "물건을 늘어놓은 전시회"
+            }
+          ],
+          "method": 1,
+          "levels": [
+            "중",
+            "초"
+          ],
+          "highlight": [
+            "displays"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s1_show",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "동물이 보여 주는 표현(displays) 중엔 너무 기이해서 어떻게 생겨났는지 궁금한 게 많대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "how they came about"
+          ],
+          "tips": [
+            {
+              "label": "so ~ that …",
+              "text": "'너무 ~해서 …하다'예요. so bizarre that we wonder = 너무 기이해서 우리는 궁금해한다.",
+              "mark": "so"
+            }
+          ],
+          "meaning_check": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "(①) Most of the various forms of signaling that are used by different species of animals have not arisen afresh in each separate species.",
+      "model_translation": "여러 종의 동물들에 의해 사용되는 다양한 신호 보내기 형식의 대부분은 각 개별 종에서 새로 생겨나지 않았다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "have not arisen afresh",
+          "ko": "새로 생겨나지 않았다"
+        },
+        {
+          "en": "Most of the various forms of signaling",
+          "ko": "다양한 신호 형식의 대부분"
+        },
+        {
+          "en": "are used",
+          "ko": "쓰이다"
+        },
+        {
+          "en": "different species of animals",
+          "ko": "여러 종의 동물들"
+        },
+        {
+          "en": "have not arisen",
+          "ko": "생겨나지 않았다"
+        },
+        {
+          "en": "afresh",
+          "ko": "새로"
+        },
+        {
+          "en": "in each separate species",
+          "ko": "각 개별 종에서"
+        },
+        {
+          "en": "arisen",
+          "ko": "생겨난 · arise(생겨나다)의 과거분사"
+        },
+        {
+          "en": "signaling",
+          "ko": "신호 보내기"
+        },
+        {
+          "en": "species",
+          "ko": "(생물의) 종"
+        },
+        {
+          "en": "various",
+          "ko": "다양한"
+        },
+        {
+          "en": "used",
+          "ko": "쓰이는"
+        },
+        {
+          "en": "animals",
+          "ko": "동물들"
+        },
+        {
+          "en": "separate",
+          "ko": "별개의"
+        }
+      ],
+      "slashes": [
+        "forms of signaling",
+        "that are used",
+        "species of animals",
+        "have not arisen afresh"
+      ],
+      "roles": [
+        {
+          "text": "Most of the various forms of signaling",
+          "role": "S"
+        },
+        {
+          "text": "have not arisen",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that are used by different species of animals"
+      ],
+      "steps": [
+        {
+          "id": "s2_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Most of the various forms of signaling",
+            "are used",
+            "different species of animals",
+            "have not arisen"
+          ],
+          "answers": [
+            "Most of the various forms of signaling",
+            "have not arisen"
+          ],
+          "roles": {
+            "Most of the various forms of signaling": "S",
+            "have not arisen": "V"
+          },
+          "brief": {
+            "ask": "이번에도 긴 문장이에요. 주어(S)와 동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "are used": "그건 that 뒤 덩어리 안의 동사예요. 앞의 forms를 꾸며 줘요.",
+              "different species of animals": "그건 by 뒤, 누가 쓰는지 알려 주는 말이에요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Most of the various forms of signaling, 동사는 have not arisen이에요."
+          },
+          "method": 0,
+          "slot": "s3_basic",
+          "tips": [
+            {
+              "label": "arise",
+              "text": "'생겨나다, 일어나다'예요. arise – arose – arisen.",
+              "mark": "arisen"
+            }
+          ]
+        },
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s3_basic",
+          "candidates": [
+            "Most of the various forms of signaling",
+            "have not arisen afresh",
+            "in each separate species"
+          ],
+          "answers": [
+            "Most of the various forms of signaling",
+            "in each separate species",
+            "have not arisen afresh"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Most of the various forms of signaling",
+                "ko": "다양한 신호 형식의 대부분은"
+              },
+              " ",
+              {
+                "en": "in each separate species",
+                "ko": "각 개별 종에서"
+              },
+              " ",
+              {
+                "en": "have not arisen afresh",
+                "ko": "새로 생겨나지 않았다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Most of the various forms of signaling have not arisen afresh in each separate species.",
+          "tips": [
+            {
+              "label": "arise",
+              "text": "'생겨나다, 일어나다'예요. arise – arose – arisen.",
+              "mark": "arisen"
+            }
+          ]
+        },
+        {
+          "id": "s2_mod",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "초록 부분은 앞의 forms of signaling을 꾸며요. 아래 표처럼 읽어요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "Most of the various forms of signaling",
+            "have not arisen"
+          ],
+          "highlight_alt": [
+            "that are used by different species of animals"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "S",
+                "text": "Most of the various forms of signaling",
+                "ko": "다양한 신호 형식의 대부분은",
+                "tone": "hl"
+              },
+              {
+                "label": "↖ 꾸밈",
+                "text": "that are used by different species of animals",
+                "ko": "여러 종의 동물들이 쓰는",
+                "tone": "hl2"
+              },
+              {
+                "label": "V",
+                "text": "have not arisen afresh",
+                "ko": "새로 생겨나지 않았다",
+                "tone": "hl"
+              }
+            ]
+          }
+        },
+        {
+          "id": "s2_afresh",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'have not arisen afresh in each separate species'는 무슨 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "arise는 '생겨나다', afresh는 '새로'예요. 앞에 not이 있어요.",
+              "arise는 '생겨나다', afresh는 '새로'예요. 앞에 not이 있어요."
+            ],
+            "explain": "arise는 '생겨나다', afresh는 '새로'예요. not이 있으니 종마다 새로 생겨난 게 아니라는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "arise는 '생겨나다', afresh는 '새로'예요. not이 있으니 종마다 새로 생겨난 게 아니라는 말이에요.",
+              "o2": "arise는 '생겨나다', afresh는 '새로'예요. not이 있으니 종마다 새로 생겨난 게 아니라는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "종마다 새로 생겨난 게 아니다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "종마다 따로 새로 생겨났다"
+            },
+            {
+              "id": "o2",
+              "label": "어떤 종에서도 쓰이지 않는다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "have not arisen afresh"
+          ],
+          "tips": [
+            {
+              "label": "arise",
+              "text": "'생겨나다, 일어나다'예요. arise – arose – arisen.",
+              "mark": "arisen"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s2_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "① 자리예요. '어떻게 생겨났는지 궁금하다' → '종마다 새로 생겨난 게 아니다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "어떻게 생겨났는지 궁금하다고 한 뒤, 그 답을 꺼내기 시작해요. 그대로 이어져요.",
+              "어떻게 생겨났는지 궁금하다고 한 뒤, 그 답을 꺼내기 시작해요. 그대로 이어져요."
+            ],
+            "explain": "어떻게 생겨났는지 궁금하다고 한 뒤, 그 답을 꺼내기 시작해요. 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "어떻게 생겨났는지 궁금하다고 한 뒤, 그 답을 꺼내기 시작해요. 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🔄",
+                "en": "But many signals · go through changes",
+                "ko": "하지만 많은 신호는 대대로 전해지며 변화를 겪어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "🦚",
+                "en": "displays · not arisen afresh",
+                "ko": "동물의 기이한 표현은 종마다 새로 생긴 게 아니래요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "(②) As one species evolves into another, particular forms of signaling may be passed on, owing to the effects of both genes and learning or experience.",
+      "model_translation": "하나의 종이 다른 종으로 진화하면서, 유전자 및 학습이나 경험의 영향 때문에 특정한 신호 보내기 형식이 전달될 수도 있다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "evolves",
+          "ko": "진화하다"
+        },
+        {
+          "en": "one species",
+          "ko": "한 종"
+        },
+        {
+          "en": "As one species evolves into another",
+          "ko": "한 종이 다른 종으로 진화하면서"
+        },
+        {
+          "en": "evolves into",
+          "ko": "~로 진화하다"
+        },
+        {
+          "en": "particular forms of signaling",
+          "ko": "특정한 신호 형식"
+        },
+        {
+          "en": "may be passed on",
+          "ko": "전해질 수도 있다"
+        },
+        {
+          "en": "passed on",
+          "ko": "전해진"
+        },
+        {
+          "en": "owing to",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "the effects",
+          "ko": "영향"
+        },
+        {
+          "en": "both genes and learning or experience",
+          "ko": "유전자와 학습 또는 경험 둘 다"
+        },
+        {
+          "en": "genes",
+          "ko": "유전자"
+        },
+        {
+          "en": "species",
+          "ko": "(생물의) 종"
+        },
+        {
+          "en": "particular",
+          "ko": "특정한"
+        },
+        {
+          "en": "signaling",
+          "ko": "신호 보내기"
+        },
+        {
+          "en": "passed",
+          "ko": "전해진"
+        },
+        {
+          "en": "owing",
+          "ko": "~ 때문에 · owing to"
+        },
+        {
+          "en": "effects",
+          "ko": "영향, 효과"
+        },
+        {
+          "en": "learning",
+          "ko": "학습"
+        },
+        {
+          "en": "experience",
+          "ko": "경험"
+        }
+      ],
+      "slashes": [
+        "into another,",
+        "forms of signaling",
+        "may be passed on,",
+        "owing to the effects"
+      ],
+      "roles": [
+        {
+          "text": "particular forms of signaling",
+          "role": "S"
+        },
+        {
+          "text": "may be passed on",
+          "role": "V"
+        },
+        {
+          "text": "one species",
+          "role": "S"
+        },
+        {
+          "text": "evolves",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "one species",
+            "evolves",
+            "particular forms of signaling",
+            "may be passed on"
+          ],
+          "answers": [
+            "particular forms of signaling",
+            "may be passed on"
+          ],
+          "roles": {
+            "particular forms of signaling": "S",
+            "may be passed on": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "one species": "그건 As(~하면서) 덩어리 안의 주어예요.",
+              "evolves": "그건 As(~하면서) 덩어리 안의 동사예요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 particular forms of signaling, 동사는 may be passed on이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "tips": [
+            {
+              "label": "owing to",
+              "text": "'~ 때문에'예요. owing to the effects = 영향 때문에.",
+              "mark": "owing to"
+            }
+          ]
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s4_basic",
+          "candidates": [
+            "As one species evolves into another",
+            "particular forms of signaling",
+            "may be passed on"
+          ],
+          "answers": [
+            "As one species evolves into another",
+            "particular forms of signaling",
+            "may be passed on"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "As one species evolves into another",
+                "ko": "한 종이 다른 종으로 진화하면서"
+              },
+              ", ",
+              {
+                "en": "particular forms of signaling",
+                "ko": "특정한 신호 형식이"
+              },
+              " ",
+              {
+                "en": "may be passed on",
+                "ko": "전해질 수도 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "As one species evolves into another, particular forms of signaling may be passed on.",
+          "tips": [
+            {
+              "label": "owing to",
+              "text": "'~ 때문에'예요. owing to the effects = 영향 때문에.",
+              "mark": "owing to"
+            }
+          ]
+        },
+        {
+          "id": "s3_pass",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "As는 '~하면서'예요. 한 종이 다른 종으로 진화하면서, 신호 형식이 다음 종으로 전해질 수 있대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "may be passed on"
+          ],
+          "tips": [
+            {
+              "label": "owing to",
+              "text": "'~ 때문에'예요. owing to the effects = 영향 때문에.",
+              "mark": "owing to"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s3_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "② 자리예요. '종마다 새로 생겨난 게 아니다' → '진화하면서 신호가 전해진다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "새로 생긴 게 아니라면 어디서 왔는지, 앞 종에서 전해진다고 풀어 줘요. 그대로 이어져요.",
+              "새로 생긴 게 아니라면 어디서 왔는지, 앞 종에서 전해진다고 풀어 줘요. 그대로 이어져요."
+            ],
+            "explain": "새로 생긴 게 아니라면 어디서 왔는지, 앞 종에서 전해진다고 풀어 줘요. 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "새로 생긴 게 아니라면 어디서 왔는지, 앞 종에서 전해진다고 풀어 줘요. 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "(③) Some signals have significance across many species, and so remain much the same over generations and in a number of species.",
+      "model_translation": "몇몇 신호들은 여러 종에 걸쳐서 중요성을 지니며, 그래서 세대를 넘어, 그리고 많은 종에 거의 똑같이 남아 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "have",
+          "ko": "가지다"
+        },
+        {
+          "en": "Some signals",
+          "ko": "몇몇 신호"
+        },
+        {
+          "en": "have significance",
+          "ko": "중요성을 지니다"
+        },
+        {
+          "en": "significance",
+          "ko": "중요성"
+        },
+        {
+          "en": "across many species",
+          "ko": "여러 종에 걸쳐"
+        },
+        {
+          "en": "and so",
+          "ko": "그래서"
+        },
+        {
+          "en": "remain much the same",
+          "ko": "거의 똑같이 남아 있다"
+        },
+        {
+          "en": "remain",
+          "ko": "남아 있다"
+        },
+        {
+          "en": "much the same",
+          "ko": "거의 똑같은"
+        },
+        {
+          "en": "over generations",
+          "ko": "세대를 넘어"
+        },
+        {
+          "en": "in a number of species",
+          "ko": "많은 종에서"
+        },
+        {
+          "en": "signals",
+          "ko": "신호"
+        },
+        {
+          "en": "across",
+          "ko": "~에 걸쳐, ~마다"
+        },
+        {
+          "en": "species",
+          "ko": "(생물의) 종"
+        },
+        {
+          "en": "over",
+          "ko": "~ 위에, ~에 대해"
+        },
+        {
+          "en": "generations",
+          "ko": "세대들"
+        },
+        {
+          "en": "number",
+          "ko": "수 · a number of = 많은"
+        }
+      ],
+      "slashes": [
+        "have significance",
+        "many species,",
+        "remain much the same",
+        "over generations"
+      ],
+      "roles": [
+        {
+          "text": "Some signals",
+          "role": "S"
+        },
+        {
+          "text": "have",
+          "role": "V"
+        },
+        {
+          "text": "significance",
+          "role": "O"
+        },
+        {
+          "text": "remain",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Some signals",
+            "have",
+            "significance",
+            "remain"
+          ],
+          "answers": [
+            "Some signals",
+            "have",
+            "significance",
+            "remain"
+          ],
+          "roles": {
+            "Some signals": "S",
+            "have": "V",
+            "significance": "O",
+            "remain": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)·목적어(O)를 모두 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {},
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Some signals, 동사는 have와 remain 두 개예요. have의 목적어는 significance예요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic"
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s5_basic",
+          "candidates": [
+            "Some signals",
+            "have significance",
+            "across many species",
+            "remain much the same"
+          ],
+          "answers": [
+            "Some signals",
+            "across many species",
+            "have significance",
+            "remain much the same"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Some signals",
+                "ko": "몇몇 신호는"
+              },
+              " ",
+              {
+                "en": "across many species",
+                "ko": "여러 종에 걸쳐"
+              },
+              " ",
+              {
+                "en": "have significance",
+                "ko": "중요성을 지니고"
+              },
+              ", 그래서 ",
+              {
+                "en": "remain much the same",
+                "ko": "거의 똑같이 남아 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Some signals have significance across many species, and so remain much the same."
+        },
+        {
+          "id": "s4_same",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Some signals(몇몇 신호)는 세대를 넘어 어떻게 된대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "remain은 '남아 있다', much the same은 '거의 똑같은'이에요.",
+              "remain은 '남아 있다', much the same은 '거의 똑같은'이에요."
+            ],
+            "explain": "remain much the same은 '거의 똑같이 남아 있다'예요. 몇몇 신호는 대대로 거의 그대로래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "remain much the same은 '거의 똑같이 남아 있다'예요. 몇몇 신호는 대대로 거의 그대로래요.",
+              "o2": "remain much the same은 '거의 똑같이 남아 있다'예요. 몇몇 신호는 대대로 거의 그대로래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "점점 더 정교해진다"
+            },
+            {
+              "id": "o1",
+              "label": "거의 똑같이 남는다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "사라진다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "remain much the same"
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s4_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "③ 자리예요. '진화하면서 신호가 전해진다' → '몇몇 신호는 거의 똑같이 남는다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "전해진 신호 중 몇몇은 그대로 남는다고 이어 가요. 흐름이 끊기지 않아요.",
+              "전해진 신호 중 몇몇은 그대로 남는다고 이어 가요. 흐름이 끊기지 않아요."
+            ],
+            "explain": "전해진 신호 중 몇몇은 그대로 남는다고 이어 가요. 흐름이 끊기지 않아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "전해진 신호 중 몇몇은 그대로 남는다고 이어 가요. 흐름이 끊기지 않아요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "s4_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "몇몇 신호는 거의 그대로 남는대요. 칠판 왼쪽에 붙여 둘게요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "대대로 전해지는 신호",
+            "left": {
+              "label": "거의 그대로 남는다",
+              "words": [
+                {
+                  "text": "remain much the same",
+                  "ko": "거의 똑같이 남다",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "변한다",
+              "words": [
+                {
+                  "text": "go through changes",
+                  "ko": "변화를 겪는다"
+                },
+                {
+                  "text": "more elaborate",
+                  "ko": "더 정교한"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "Some signals",
+            "remain much the same"
+          ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🔄",
+                "en": "But many signals · go through changes",
+                "ko": "하지만 많은 신호는 대대로 전해지며 변화를 겪어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "🦚",
+                "en": "displays · not arisen afresh",
+                "ko": "동물의 기이한 표현은 종마다 새로 생긴 게 아니래요",
+                "fresh": false
+              },
+              {
+                "label": "②~③",
+                "icon": "🧬",
+                "en": "passed on · remain much the same",
+                "ko": "진화하며 신호가 전해지고, 몇몇은 거의 그대로 남아요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "(④) If we examine closely related species, we can often see slight variations in a particular display and we can piece together an explanation for the spread of the display across species.",
+      "model_translation": "밀접하게 관련된 종을 조사하면, 우리는 하나의 특정한 표현에서 약간의 차이를 자주 볼 수 있고, 여러 종에 걸친 그 표현의 확산에 대한 설명을 종합할 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "If we examine closely related species",
+          "ko": "밀접하게 관련된 종을 살펴보면"
+        },
+        {
+          "en": "If we examine",
+          "ko": "우리가 살펴보면"
+        },
+        {
+          "en": "closely related species",
+          "ko": "밀접하게 관련된 종"
+        },
+        {
+          "en": "can often see",
+          "ko": "자주 볼 수 있다"
+        },
+        {
+          "en": "slight variations",
+          "ko": "약간의 차이"
+        },
+        {
+          "en": "variations",
+          "ko": "차이, 변형"
+        },
+        {
+          "en": "in a particular display",
+          "ko": "한 특정한 표현에서"
+        },
+        {
+          "en": "can piece together",
+          "ko": "종합할 수 있다, 짜 맞출 수 있다"
+        },
+        {
+          "en": "piece together",
+          "ko": "(조각을) 종합하다, 짜 맞추다"
+        },
+        {
+          "en": "an explanation",
+          "ko": "설명"
+        },
+        {
+          "en": "the spread of the display",
+          "ko": "그 표현의 퍼짐"
+        },
+        {
+          "en": "across species",
+          "ko": "여러 종에 걸쳐"
+        },
+        {
+          "en": "examine",
+          "ko": "살펴보다, 조사하다"
+        },
+        {
+          "en": "closely",
+          "ko": "밀접하게"
+        },
+        {
+          "en": "related",
+          "ko": "관련된"
+        },
+        {
+          "en": "species",
+          "ko": "(생물의) 종"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "slight",
+          "ko": "약간의"
+        },
+        {
+          "en": "particular",
+          "ko": "특정한"
+        },
+        {
+          "en": "display",
+          "ko": "표현, 보여 주는 행동"
+        },
+        {
+          "en": "piece",
+          "ko": "조각 · piece together = 종합하다"
+        },
+        {
+          "en": "together",
+          "ko": "함께"
+        },
+        {
+          "en": "explanation",
+          "ko": "설명"
+        },
+        {
+          "en": "spread",
+          "ko": "퍼짐, 확산"
+        },
+        {
+          "en": "across",
+          "ko": "~에 걸쳐, ~마다"
+        }
+      ],
+      "slashes": [
+        "closely related species,",
+        "slight variations",
+        "a particular display",
+        "piece together",
+        "an explanation",
+        "of the display"
+      ],
+      "roles": [
+        {
+          "text": "we … we",
+          "role": "S"
+        },
+        {
+          "text": "can often see",
+          "role": "V"
+        },
+        {
+          "text": "slight variations",
+          "role": "O"
+        },
+        {
+          "text": "can piece together",
+          "role": "V"
+        },
+        {
+          "text": "an explanation",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "candidates": [
+            "If we examine closely related species",
+            "can often see",
+            "slight variations"
+          ],
+          "answers": [
+            "If we examine closely related species",
+            "slight variations",
+            "can often see"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "If we examine closely related species",
+                "ko": "밀접하게 관련된 종을 살펴보면"
+              },
+              ", ",
+              {
+                "en": "slight variations",
+                "ko": "약간의 차이"
+              },
+              "를 ",
+              {
+                "en": "can often see",
+                "ko": "자주 볼 수 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "If we examine closely related species, we can often see slight variations."
+        },
+        {
+          "id": "s5_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'slight variations(약간의 차이)'는 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "variation은 '차이, 변형'이에요. 똑같이 남았다면 차이가 없겠죠.",
+              "variation은 '차이, 변형'이에요. 똑같이 남았다면 차이가 없겠죠."
+            ],
+            "explain": "variation은 '차이, 변형'이에요. 차이가 보인다는 건 신호가 변했다는 뜻이라 오른쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "variation은 '차이, 변형'이에요. 차이가 보인다는 건 신호가 변했다는 뜻이라 오른쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · 거의 그대로 남는다"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 변한다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "대대로 전해지는 신호",
+            "left": {
+              "label": "거의 그대로 남는다",
+              "words": [
+                {
+                  "text": "remain much the same",
+                  "ko": "거의 똑같이 남다"
+                }
+              ]
+            },
+            "right": {
+              "label": "변한다",
+              "words": [
+                {
+                  "text": "go through changes",
+                  "ko": "변화를 겪는다"
+                },
+                {
+                  "text": "more elaborate",
+                  "ko": "더 정교한"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "slight variations"
+              ],
+              "left": "왼쪽 · 거의 그대로 남는다",
+              "right": "오른쪽 · 변한다"
+            }
+          },
+          "highlight": [
+            "slight variations"
+          ]
+        },
+        {
+          "id": "s5_break",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그런데 바로 앞 문장은 '몇몇 신호는 거의 똑같이 남는다'였어요. 그대로 남는다더니 갑자기 차이가 보인다니 어색해요.",
+            "point": "④ 앞에서 '변한다'는 말이 먼저 나와야 slight variations가 이어진다"
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "대대로 전해지는 신호",
+            "left": {
+              "label": "거의 그대로 남는다",
+              "words": [
+                {
+                  "text": "remain much the same",
+                  "ko": "거의 똑같이 남다"
+                }
+              ]
+            },
+            "right": {
+              "label": "변한다",
+              "words": [
+                {
+                  "text": "go through changes",
+                  "ko": "변화를 겪는다"
+                },
+                {
+                  "text": "more elaborate",
+                  "ko": "더 정교한"
+                },
+                {
+                  "text": "slight variations",
+                  "ko": "약간의 차이",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "slight variations"
+          ]
+        },
+        {
+          "id": "s5_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "④ 자리예요. '몇몇 신호는 거의 똑같이 남는다' → '가까운 종에서 약간의 차이가 보인다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "그대로 남는다는 말 뒤에 바로 차이 이야기가 나와요. 그 사이에 '하지만 변한다'가 빠져서 흐름이 끊겨요.",
+              "그대로 남는다는 말 뒤에 바로 차이 이야기가 나와요. 그 사이에 '하지만 변한다'가 빠져서 흐름이 끊겨요."
+            ],
+            "explain": "그대로 남는다는 말 뒤에 바로 차이 이야기가 나와요. 그 사이에 '하지만 변한다'가 빠져서 흐름이 끊겨요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "그대로 남는다는 말 뒤에 바로 차이 이야기가 나와요. 그 사이에 '하지만 변한다'가 빠져서 흐름이 끊겨요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요"
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요",
+              "correct": true
+            }
+          ],
+          "method": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "(⑤) Some very elaborate displays may have begun as simpler versions of the same behavioral pattern that became more elaborate as they developed and were passed on from generation to generation.",
+      "model_translation": "매우 정교한 몇몇 표현은 그것이 발전하고 대대로 전달될 때 더 정교해졌던, 똑같은 행동 양식의 더 단순한 형태로 시작했을지도 모른다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "became",
+          "ko": "~이 되었다"
+        },
+        {
+          "en": "Some very elaborate displays",
+          "ko": "아주 정교한 몇몇 표현"
+        },
+        {
+          "en": "may have begun",
+          "ko": "시작했을지도 모른다"
+        },
+        {
+          "en": "as simpler versions",
+          "ko": "더 단순한 형태로"
+        },
+        {
+          "en": "simpler versions",
+          "ko": "더 단순한 형태"
+        },
+        {
+          "en": "the same behavioral pattern",
+          "ko": "같은 행동 양식"
+        },
+        {
+          "en": "became more elaborate",
+          "ko": "더 정교해졌다"
+        },
+        {
+          "en": "as they developed",
+          "ko": "그것들이 발전하면서"
+        },
+        {
+          "en": "were passed on",
+          "ko": "전해졌다"
+        },
+        {
+          "en": "from generation to generation",
+          "ko": "대대로, 세대에서 세대로"
+        },
+        {
+          "en": "behavioral",
+          "ko": "행동의"
+        },
+        {
+          "en": "versions",
+          "ko": "형태, 판"
+        },
+        {
+          "en": "elaborate",
+          "ko": "정교한, 공들인"
+        },
+        {
+          "en": "displays",
+          "ko": "표현, 보여 주는 행동"
+        },
+        {
+          "en": "begun",
+          "ko": "시작된"
+        },
+        {
+          "en": "simpler",
+          "ko": "더 단순한"
+        },
+        {
+          "en": "developed",
+          "ko": "발전했다"
+        },
+        {
+          "en": "passed",
+          "ko": "전해진"
+        },
+        {
+          "en": "generation",
+          "ko": "세대"
+        }
+      ],
+      "slashes": [
+        "elaborate displays",
+        "may have begun",
+        "simpler versions",
+        "behavioral pattern",
+        "more elaborate",
+        "they developed",
+        "were passed on"
+      ],
+      "roles": [
+        {
+          "text": "Some very elaborate displays",
+          "role": "S"
+        },
+        {
+          "text": "may have begun",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that became more elaborate as they developed and were passed on from generation to generation"
+      ],
+      "steps": [
+        {
+          "id": "s7_basic_sv",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "no_unknown": true,
+          "candidates": [
+            "Some very elaborate displays",
+            "may have begun",
+            "simpler versions",
+            "became"
+          ],
+          "answers": [
+            "Some very elaborate displays",
+            "may have begun"
+          ],
+          "roles": {
+            "Some very elaborate displays": "S",
+            "may have begun": "V"
+          },
+          "brief": {
+            "ask": "이 문장의 주어(S)·동사(V)를 찾아볼까요?",
+            "wrong": "그건 주어·동사가 아니에요.",
+            "wrong_by": {
+              "simpler versions": "그건 as(~로서) 뒤 덩어리예요.",
+              "became": "그건 that 뒤 덩어리 안의 동사예요. 앞의 pattern을 꾸며 줘요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "주어는 Some very elaborate displays, 동사는 may have begun이에요."
+          },
+          "method": 0,
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "tips": [
+            {
+              "label": "may have p.p.",
+              "text": "'~했을지도 모른다'예요. 지난 일을 짐작할 때 써요. may have begun = 시작했을지도 모른다.",
+              "mark": "may have begun"
+            }
+          ]
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "levels": [
+            "초"
+          ],
+          "slot": "s7_basic",
+          "candidates": [
+            "Some very elaborate displays",
+            "may have begun",
+            "as simpler versions"
+          ],
+          "answers": [
+            "Some very elaborate displays",
+            "as simpler versions",
+            "may have begun"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Some very elaborate displays",
+                "ko": "아주 정교한 몇몇 표현은"
+              },
+              " ",
+              {
+                "en": "as simpler versions",
+                "ko": "더 단순한 형태로"
+              },
+              " ",
+              {
+                "en": "may have begun",
+                "ko": "시작했을지도 모른다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Some very elaborate displays may have begun as simpler versions.",
+          "tips": [
+            {
+              "label": "may have p.p.",
+              "text": "'~했을지도 모른다'예요. 지난 일을 짐작할 때 써요. may have begun = 시작했을지도 모른다.",
+              "mark": "may have begun"
+            }
+          ]
+        },
+        {
+          "id": "s6_simple",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "아주 정교한 표현도 처음엔 더 단순한 모습이었다가, 대대로 전해지며 정교해졌을지도 모른대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "simpler versions",
+            "became more elaborate"
+          ],
+          "tips": [
+            {
+              "label": "may have p.p.",
+              "text": "'~했을지도 모른다'예요. 지난 일을 짐작할 때 써요. may have begun = 시작했을지도 모른다.",
+              "mark": "may have begun"
+            }
+          ],
+          "meaning_check": true
+        },
+        {
+          "id": "s6_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "⑤ 자리예요. '가까운 종에서 약간의 차이가 보인다' → '정교한 표현도 단순하게 시작했을 수 있다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "차이가 쌓여 정교해진 예를 들어 줘요. 그대로 이어져요.",
+              "차이가 쌓여 정교해진 예를 들어 줘요. 그대로 이어져요."
+            ],
+            "explain": "차이가 쌓여 정교해진 예를 들어 줘요. 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "차이가 쌓여 정교해진 예를 들어 줘요. 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "story_7",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "주어진 문장",
+                "icon": "🔄",
+                "en": "But many signals · go through changes",
+                "ko": "하지만 많은 신호는 대대로 전해지며 변화를 겪어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 1~2",
+                "icon": "🦚",
+                "en": "displays · not arisen afresh",
+                "ko": "동물의 기이한 표현은 종마다 새로 생긴 게 아니래요",
+                "fresh": false
+              },
+              {
+                "label": "②~③",
+                "icon": "🧬",
+                "en": "passed on · remain much the same",
+                "ko": "진화하며 신호가 전해지고, 몇몇은 거의 그대로 남아요",
+                "fresh": false
+              },
+              {
+                "label": "④~⑤",
+                "icon": "🔍",
+                "en": "slight variations · more elaborate",
+                "ko": "가까운 종에서 약간의 차이가 보이고, 단순한 표현이 정교해졌을 수 있어요",
+                "fresh": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "s6_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①~⑤ 중 흐름이 끊긴 곳은 하나였어요. 주어진 문장의 But과 go through changes를 떠올리며 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}
