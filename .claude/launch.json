@@ -11,56 +11,27 @@
         "--host",
         "127.0.0.1",
         "--port",
-        "5173"
+        "5173",
+        "--strictPort"
       ],
-      "port": 5173
+      "port": 5173,
+      "autoPort": false
+    },
+    {
+      "name": "loopin-attach",
+      "url": "http://127.0.0.1:5173"
     },
     {
       "name": "loopin-vocab",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run",
-        "dev",
-        "--",
-        "--host",
-        "127.0.0.1",
-        "--port",
-        "5181",
-        "--strictPort"
-      ],
-      "port": 5181
+      "url": "http://127.0.0.1:5173"
     },
     {
       "name": "loopin-dev-auto",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run",
-        "dev",
-        "--",
-        "--host",
-        "127.0.0.1",
-        "--port",
-        "5190",
-        "--strictPort"
-      ],
-      "port": 5190,
-      "autoPort": false
+      "url": "http://127.0.0.1:5173"
     },
     {
       "name": "loopin-home",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run",
-        "dev",
-        "--",
-        "--host",
-        "127.0.0.1",
-        "--port",
-        "5195",
-        "--strictPort"
-      ],
-      "port": 5195,
-      "autoPort": false
+      "url": "http://127.0.0.1:5173"
     }
   ]
 }
