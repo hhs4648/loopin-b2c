@@ -1,0 +1,43 @@
+- [Teaching Policy 방향](teaching-policy-direction.md) — 새 policy가 공식, 예전 엔진은 나중에 폐기, LLM 최소화, UX/UI·말투 유지
+- [21번 단순화 피드백](q21-simplify-feedback.md) — 너무 길다 → 수능 고난도 유지, 한 지문을 짧은 회차 여러 개로 쪼갠다
+- [단위 구조](unit-structure.md) — (보관됨, 안 씀) wip/unit-structure 브랜치
+- [기준 레슨 2026 21번](reference-lesson-2026-q21.md) — 2026-10-05부터 기준. 다음은 오답률 높은 순: 30 → 39 → 24 → 36 …
+- [문법 Tip은 해설지와 대조](check-grammar-tips-against-haeseol.md) — Tip·문맥 뜻은 넣기 전에 해설 번역과 맞춰 본다
+- [메인 문장은 흐림 금지](main-clause-never-faded.md) — 콤마 사이라도 주어+동사 있으면 생략X; 주어 어려운 문장은 묻고 → 슬래시로 나누기
+- [*풀이 단어는 핵심 아님](footnoted-words-not-key.md) — 시험지 아래 *로 풀어 준 단어는 ❓·단어 체크·핵심 정리에서 제외
+- [자유 해석 스텝](free-translation-step.md) — 짧고 중요한 문장은 가이드 뒤 직접 해석, 규칙 채점, ML용 기록, 틀리면 연습할 문장 저장
+- [칭찬은 질문과 분리](praise-separate-from-question.md) — 맞았다/틀렸다는 말은 다음 질문과 따로, 칭찬만 한 화면 뒤에 질문
+- [한국어로 대답](reply-in-korean.md) — 모든 대답(보고·설명·질문)은 한국어로
+- [빈칸: 주장과 같은 쪽? 반대?](blank-same-or-opposite.md) — 빈칸 문제는 빈칸이 주장과 같은 말인지 반대 의견인지 먼저 파악
+- [국어 라인](korean-line.md) — 브랜치 korean/2025-03-10(폴더 loopin-b2c-korean), 다정쌤, 비문학·문단별, 목록은 지문별(회차 parts), 10~13번 회차 1~3 완료
+- [테스트 링크](share-test-link.md) — 영어 테스트용 GmX5HgA6…(작업 중 갱신) · 검수용 DdR3hJTt…만(요청 때만) · 국어 RSSfXXy4…
+- [국어 문단: 핵심어→핵심어로 읽기](korean-paragraph-keys-summary.md) — 핵심어·함정 모두 구절로 전부 직접 찾기 → 핵심어로만 읽기 (자유 요약 없음)
+- [대시 규칙](dash-rules.md) — 대시(—) 하나는 생략 금지(두 개 사이만 삽입) · 학생에겐 「대시(—)」처럼 기호를 괄호로
+- [S·V·O 찾기](svo-finding.md) — 긴 문장(20단어~)은 고·중·초 모두 S·V 다 찾기, 꾸미는 덩어리 있으면 꾸밈 구조 표(S / ↖ 꾸밈 / V)
+- [줄임말 S·V 나누기](contraction-sv-split.md) — it’s → it(S) + ’s(V), you’ve → you + ’ve been driving; 부정 줄임말은 통째 V
+- [칠판 서랍·그림 틀](board-drawer-and-pictures.md) — 칠판은 큰 서랍(오른쪽 손잡이), 그림은 지문마다 지시받지 않고 그림 틀로 · 틀 만들기는 handoff/틀-만들기.md
+- [이해 정도 체크는 나중에](self-check-later.md) — 막대 전부 삭제(2026-10-14); 다시 만들면 여러 지문에 걸쳐 가끔 한 번
+- [길이 vs 참을성](length-vs-patience.md) — 수험생은 끝까지 본다 → 짧게보다 "화면마다 점수에 도움 + 아는 학생 건너뛰기", 버튼 20 목표 재검토 중
+- [유형별 틀](type-templates.md) — docs/tutor/templates/ (공통 README + 빈칸 blank.md v0.1), 유형 규칙 바뀌면 여기부터
+- [칠하기는 최소한](minimal-highlight.md) — 덩어리 전체 말고 핵심 단어만, 맥락 필수어(difficult·not 등)는 남김
+- [💡 칩 노출 제한](tip-chip-limit.md) — 같은 칩은 학생 전체 3번(안 누르면 5번)까지, 전체 정책
+- [시험 연도 표기](exam-year-labeling.md) — 평가원(6·9월·수능)=학년도(시행+1), 교육청=시행연도, 제목 아래 「YYYY년 M월 시행」; 일반 영어는 별개 갈래
+- [칠판엔 읽은 데까지만](board-read-so-far-only.md) — 칠판 정보는 지금까지 읽은 문장에서만, 묶음 이름·캡션으로 뒤 내용/정답 말 금지
+- [해석 맞추기·방식 돌려 내기](match-ko-step.md) — 중·초 짧은 문장 모두(고 미정), 맞추면 S·V·뜻확인 skip, 같은 slot에 여러 방식 두고 최근에 덜 한 것을 냄(듀오링고처럼)
+- [평가 뒤집기 짚기](evaluation-flip.md) — 핵심어 + 저자 입장 확고할 때만, 평소와 반대 평가면 +/− 2지 + 평가어 근거 (30번처럼 중립이면 X)
+- [대사는 핵심만](lines-core-only.md) — 누구나 아는 말·덜 중요한 문장·과한 요령은 빼고 핵심만 (세 문장 채우지 않기)
+- [순서: (A)(B)(C) 단락 보기](order-paragraph-view.md) — 문장 N 대신 (A), 단락 안은 태그 옆 ‹ › 로 오감(연하게 띄우기 X), method.type=order면 자동
+- [초급 기본: 문장마다 하나](beginner-basic-per-sentence.md) — 초는 문장마다 S·V+뜻 또는 해석 맞추기(번갈아), 긴 문장은 핵심어로; scripts/lessons/beginner.py add_basic, 9개 레슨 적용
+- [핵심어 정의·[ ] 표시](key-words-definition.md) — 핵심어=S·V·O·C+이해에 필요한 말, 한 문장 가리킬 땐 [ ], 초급 맞추기는 핵심 논지, 초급 Tip 하나하나
+- [지문 표시판](annotation-tool.md) — 선생님이 핵심어·+/−·헷갈릴 곳·역할을 눌러 표시(아티팩트 8kbfdYKS…, db passages/<id>), 레슨 만들기 전에 먼저 읽기
+- [헷갈리는 단어 → Tip 자동](trap-words-to-tips.md) — 엑셀 사용 O인 것만, 단어 Tip은 「자주 헷갈리는 단어 표시하기」 버튼 → 물결 밑줄, 누르면 💡(모아보기 칩 폐기), 기본 질문 X, 표시판 헷갈릴 곳도 엑셀에
+- [좋은 방식은 추천하기](feedback-recommend-designs.md) — 시키지 않았어도 학습 효과 큰 방식을 (추천) 보기로 제안 (순서 잇기처럼)
+- [내신 대비 묶음](naesin-packs.md) — 프린트엔 지문만 → 한 문장(일부)으로 찾아 담기, 요청 기능 X
+- [미니 모의고사](mini-mock.md) — 고난도 시간 재기·점수, 2024년 3월 21~45번판(바로 채점·21문항 모두 분석 연결) 학생 링크 R1QpqZ1x…
+- [내신 vs 수능 분석 깊이](naesin-vs-suneung-depth.md) — 지금 분석 정도가 수능 기본(줄이지 않음), 내신은 그 위에 더 얹기 (선생님 고민 중)
+- [끊어읽기 버튼](slash-reading-toggle.md) — 「/ 끊어읽기」 누르면 slashes 자리에 /(좁은 간격), 36번만 적용, 다른 지문은 20단어~ 긴 문장에 넣자고 제안 중
+- [대사 3번이면 칠판](three-lines-then-board.md) — 설명·뜻 질문이 3번 이상 이어지면 칠판(핵심어+그림)으로(S·V 찾기는 안 셈), 설명은 칠판 한 줄로 대신
+- [2024년 3월 레슨](lessons-2024-03.md) — Top15 + 미니용 8개(22·23·29·35·41·43·44·45) Claude 초안, exam_kit.py, 41←42·44/45←43 재사용
+- [문장 넣기 주어진 문장 정석](insertion-given-sentence-order.md) — This↔대조 → which → 특징 → 앞 내용, 「뒤에 무엇?」 억지 질문 금지, 개념 차이는 그림으로
+- [그림 칠판 칩 중복 금지](picture-no-duplicate-words.md) — picture 아래 words가 그림 속 글자와 겹치면 빼기
+- [홈 마을 · 상담실](home-village-counsel.md) — 집=기능 입구, 상담실=점수·목표·약점→커리큘럼, 마을 그림은 사용자가 외부 디자인으로 교체
