@@ -294,13 +294,8 @@ function MiniWords({ mock, onBack, onStart }: { mock: MiniMock; onBack: () => vo
         <p className="home-hello">{mock.title}</p>
         <h1 className="home-title">지문 단어 미리 보기</h1>
         <p className="pack-help">이번 회 지문과 보기에 나오는 단어 {words.length}개예요. 모르는 단어는 별표를 누르면 단어장에 저장돼요.</p>
-        <div className="mini-words-top">
-          <button type="button" className="mini-start" onClick={onStart}>
-            문제 풀러 갈게요
-          </button>
-          <div className="mini-words-sub">
-            <button type="button" className="mini-words-all" onClick={() => setAllShown((v) => !v)}>{allShown ? "뜻 가리기" : "뜻 모두 보기"}</button>
-          </div>
+        <div className="mini-words-sub">
+          <button type="button" className="mini-words-all" onClick={() => setAllShown((v) => !v)}>{allShown ? "뜻 가리기" : "뜻 모두 보기"}</button>
         </div>
         <ul className="mini-words">
           {words.map((w) => {
@@ -323,6 +318,10 @@ function MiniWords({ mock, onBack, onStart }: { mock: MiniMock; onBack: () => vo
             );
           })}
         </ul>
+        {/* 단어를 다 본 뒤에 — 버튼은 아래 (2026-10-20 선생님) */}
+        <button type="button" className="mini-start mini-words-go" onClick={onStart}>
+          문제 풀러 갈게요
+        </button>
       </div>
     </div>
   );

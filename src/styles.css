@@ -1845,7 +1845,8 @@ mark.passage-key { background: #fff1b8; color: inherit; border-radius: 3px; padd
 .course-item.fin { border-color: #9cc59a; background: #f3f8f1; }
 .course-item.fin .course-item-rank { background: #8fbf7a; color: #fff; }
 .course-item.cur { border-color: #e2607d; box-shadow: 0 0 0 1px #e2607d inset; }
-.mini-words-sub { display: flex; flex-wrap: wrap; gap: 6px; }
+.mini-words-sub { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.mini-words-go { margin-top: 14px; }
 .mini-analyze.flow { margin: 0 0 14px; }
 .course-item-btns { flex: none; display: inline-flex; gap: 4px; }
 .course-item-btns .pill { height: 28px; padding: 0 10px; font-size: 12px; }

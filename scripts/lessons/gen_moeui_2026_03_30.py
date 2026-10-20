@@ -137,10 +137,11 @@ sentences = [
                  method=0, button="다음",
                  highlight=["conceptualize", "categorize", "put a name on"]),
             show("s1_board",
-                 "반대로 proper name(고유 명사)은 '철수', '서울'처럼 하나뿐인 대상의 이름이라, 묶는 말이 아니에요. 이 글은 이 둘을 반대편에 놓고 가요.",
+                 "'something that is not a proper name' — not이 붙었으니 proper name(고유 명사)은 이름 붙여 묶는 것의 반대편이에요. "
+                 "시험 꿀팁! not, isn't, don't가 붙은 말은 바로 반대 그룹에 놓으면 돼요.",
                  method=0, button="다음",
                  panel=board([], ["proper name*"], fresh_cluster=True, right_label="반대쪽"),
-                 highlight=["proper name"]),
+                 highlight=["not a proper name"]),
             choice("s1_q",
                    "이름을 붙이면 'abstract away from its particularities' 한대요. particularities는 어느 그룹일까요?",
                    [("o0", SORT_LEFT, False), ("o1", "오른쪽 · 반대쪽", True)],
