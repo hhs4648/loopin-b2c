@@ -32,7 +32,7 @@ import type { TutorView } from "./tutor/view";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
 import { hasAccount } from "./tutor/auth";
 import { policyLessonIds } from "./tutor/policy/lessons";
-import { AUTO_NEXT_CMD, MODE_TRY_BTN, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
+import { AUTO_NEXT_CMD, MODE_TRY_BTN, READ_DONE_BTN, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
 import { clearResume, loadResume, markDone, noteReachedEnd, noteStudyTime, resumeRun, saveResume, startRun } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
@@ -141,7 +141,7 @@ function ReadingApp() {
    * 코스 문제를 미리보기 화면에서 시간 재서 푸는 중 (2026-10-20 선생님) — 등급별 제한시간(`withPlanMinutes`),
    * 「시간 재서 풀어 볼게요」를 누르면 시작, 답을 고르면 그 문제의 10분 모의고사 기록(`ten-<시험>-q<번호>`)으로 남긴다
    */
-  const [courseExam, setCourseExam] = useState<{ mockId: string; no: number; limit: number; startedAt: number | null; endedAt: number | null } | null>(null);
+  const [courseExam, setCourseExam] = useState<{ mockId: string; no: number; limit: number; startedAt: number | null; endedAt: number | null; analyzeBtn: string } | null>(null);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
   /*
@@ -311,6 +311,13 @@ function ReadingApp() {
     const first = next.session.view();
     // 코스 문제는 미리보기에서 시간 재서 푸니 「바로 풀어 볼게요」도 그대로 (화면이 「시간 재서 풀어 볼게요」로 그린다)
     setView(analyze && !course ? { ...first, buttons: first.buttons.filter((b) => b !== MODE_TRY_BTN) } : first);
+    // 코스 문제는 들어가자마자 보기를 고를 수 있게 (시계는 `courseExam.startedAt`부터) — 2026-10-20 선생님
+    if (course && first.buttons.includes(MODE_TRY_BTN)) {
+      // 「분석하기」 버튼이 보낼 말은 이 레슨의 읽기 버튼(첫 버튼) — 레슨마다 다를 수 있다
+      const analyzeBtn = first.buttons[0] ?? READ_DONE_BTN;
+      setCourseExam((c) => (c ? { ...c, analyzeBtn } : c));
+      void next.session.submit(MODE_TRY_BTN).then(setView);
+    }
     setChatOverride(false);
   }
 
@@ -421,7 +428,7 @@ function ReadingApp() {
               setMiniView({ id: mini.id, showLast: !fromExam, n: miniView.n + 1 });
               // 코스 문제 — 단어 화면 다음은 지문 미리보기, 거기서 시간 재서 푼다
               const single = flow ? singleOf(mini.id) : null;
-              if (single) setCourseExam({ mockId: mini.id, no: single.no, limit: mini.minutes * 60, startedAt: null, endedAt: null });
+              if (single) setCourseExam({ mockId: mini.id, no: single.no, limit: mini.minutes * 60, startedAt: Date.now(), endedAt: null, analyzeBtn: "" });
               startSet(set, true, !!single);
             }}
           />
@@ -619,6 +626,7 @@ function ReadingApp() {
                 ? {
                     minutes: courseExam.limit / 60,
                     left: courseExam.startedAt ? Math.round(courseExam.limit - ((courseExam.endedAt ?? Date.now()) - courseExam.startedAt) / 1000) : null,
+                    analyzeBtn: courseExam.analyzeBtn || READ_DONE_BTN,
                   }
                 : undefined
             }

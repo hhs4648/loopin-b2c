@@ -97,7 +97,7 @@ const NEXT_BTN = policyFrame.buttons.next;
 const THOUGHT_BTN = policyFrame.buttons.thought;
 const BACK_BTN = policyFrame.buttons.back;
 const SKIP_BTN = policyFrame.buttons.skip;
-const READ_DONE_BTN = policyFrame.buttons.read_done;
+export const READ_DONE_BTN = policyFrame.buttons.read_done;
 const INTRO_NEXT_BTN = policyFrame.buttons.intro_next;
 const INTRO_SKIP_BTN = policyFrame.buttons.intro_skip;
 const KNOWN_BTN = policyFrame.buttons.known;
@@ -1930,6 +1930,11 @@ export function createPolicySession(
         // 처음에 문제·지문·보기를 한 번 다 보여 준 화면에서 고른다
         if (text === MODE_TRY_BTN) askExam("first");
         else if (text === readButton) startAnalysis();
+        return view();
+      }
+      // 코스: 풀지 않고 바로 분석 — 답 고르기 전 「분석하러 갈게요」 (2026-10-20 선생님)
+      if (s.stage === "exam_first" && !s.firstAnswer && lesson.passage_on_try && text === readButton) {
+        startAnalysis();
         return view();
       }
       // 바로 풀다가 지문을 다시 본다 — 고른 답은 없으니 그대로 돌아오면 된다
