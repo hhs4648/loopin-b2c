@@ -1349,6 +1349,8 @@ mark.hl2, .english-token.hl2 .english-word {
   font-size: 11.5px; font-weight: 800;
 }
 .set-card.done .set-top { background: #f1ecef; color: #a2969e; }
+/* Top 6부터 — 카드는 그대로, Top 표시만 살짝 연하게 (2026-10-20 선생님: 카드 전체를 흐리게 하면 비활성처럼 보인다) */
+.set-card.later .set-top { background: #fdf2f5; color: #e391a8; }
 /* 진행 중 · 몇 번 봄 · 몇 번 중 몇 번 맞힘 */
 .done-mark.doing { background: #fff1d6; color: #a86d12; }
 .set-card.doing { box-shadow: 0 10px 24px rgba(60,30,20,.12), 0 0 0 2px #f4c66b; }

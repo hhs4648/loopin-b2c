@@ -55,7 +55,6 @@ function weakFromRecords(): string[] {
 export function CounselRoom({ learnerName, onClose, onStartSet, onOpenMini }: Props) {
   const [plan, setPlan] = useState<CounselPlan | null>(() => loadPlan());
   const [step, setStep] = useState<Step>(() => (loadPlan() ? "resume" : "intro"));
-  const [said, setSaid] = useState<string | null>(null);
   const records = useState(() => weakFromRecords())[0];
 
   const [grade, setGrade] = useState<number | null>(null);
@@ -66,8 +65,8 @@ export function CounselRoom({ learnerName, onClose, onStartSet, onOpenMini }: Pr
   const [timeShort, setTimeShort] = useState(false);
   const [minutes, setMinutes] = useState<Minutes>(30);
 
-  const go = (next: Step, studentLine: string | null = null) => {
-    setSaid(studentLine);
+  // 학생이 고른 답을 오른쪽 말풍선으로 되보여 주던 것은 뺐다 — 버튼처럼 보여서 오류로 보인다 (2026-10-20 선생님)
+  const go = (next: Step, _studentLine: string | null = null) => {
     setStep(next);
   };
 
@@ -212,7 +211,6 @@ export function CounselRoom({ learnerName, onClose, onStartSet, onOpenMini }: Pr
           <i className="bubble-tail" />
         </div>
       </div>
-      {said ? <div className="student-bubble" key={`s-${step}`}>{said}</div> : null}
 
       <div className="dock">
         {step === "score" ? (

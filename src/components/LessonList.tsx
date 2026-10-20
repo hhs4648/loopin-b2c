@@ -25,6 +25,9 @@ function byWrongRate(sets: LessonSet[]): LessonSet[] {
   return [...sets].sort((a, b) => (b.wrong_rate ?? -1) - (a.wrong_rate ?? -1));
 }
 
+/** 진하게 보이는 순위 — 지금 먼저 검수하는 Top 1~5. 그 뒤는 연하게 (2026-10-20 선생님) */
+const FOCUS_TOP = 5;
+
 /** Top 몇까지 앞에 붙이나 — 회차마다 오답률 Top 15를 만든다 */
 const TOP_N = 15;
 
@@ -131,11 +134,13 @@ export function LessonList({
                 const done = st?.state === "done";
                 const doing = st?.state === "doing";
                 const record = statusLine(st);
+                // 지금은 Top 1~5만 먼저 검수한다 — 그 뒤 순위는 연하게 해서 덜 누르게 (2026-10-20 선생님)
+                const later = !!ranks[set.id] && ranks[set.id]! > FOCUS_TOP;
                 return (
                   <li key={set.id}>
                     <button
                       type="button"
-                      className={`set-card${done ? " done" : ""}${doing ? " doing" : ""}`}
+                      className={`set-card${done ? " done" : ""}${doing ? " doing" : ""}${later ? " later" : ""}`}
                       onClick={() => onPickSet(set)}
                     >
                       <strong className="set-title">
