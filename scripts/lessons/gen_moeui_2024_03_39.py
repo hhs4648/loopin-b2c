@@ -63,7 +63,6 @@ sentences = [
                     g("representing", "나타내는 것"), g("what the artist knew", "화가가 알고 있던 것"), g("the artist", "화가"),
                     g("knew", "알았다"), g("the objects and the space", "사물과 공간"), g("he or she was painting", "그(그녀)가 그리고 있던"),
                     g("how they looked", "그것들이 어떻게 보였는지"), g("stands", "서 있다 · stand in contrast to = ~와 대조되다")],
-        "emphasis": ["earlier figurative art"],
         "slashes": ["This stands in contrast", "figurative art,", "as focused", "the artist knew", "and the space", "was painting"],
         "roles": [r("This", "S"), r("stands", "V")],
         "modifiers": ["which had been as focused on representing what the artist knew about the objects and the space he or she was painting as on how they looked"],
@@ -372,6 +371,39 @@ exam = {
          "3": review(25.8,
                      "③에 넣으면 ② 뒤 'These pictures … do not represent scenes as we might see them'이 원근법 그림을 가리켜요. 그런데 원근법 그림은 보이는 모습 그대로를 나타낸다고 했어요. 그래서 These pictures 앞에서 예전 그림이 나와야 해요.")}),
 }
+
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["This", "stands in contrast to", "earlier figurative art", "what the artist knew"],
+    2: ["figurative", "in perspective"],
+    4: ["represents", "how the world looks"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("This", "이것은"), " ", _m("earlier figurative art", "초기 구상화와"), " ", _m("stands in contrast to", "대조적이다"),
+                         " — 초기 구상화는 ", _m("what the artist knew", "화가가 알고 있던 것을"), " ", _m("representing", "나타내는 데"), " 초점을 맞췄다."],
+          display="This stands in contrast to earlier figurative art, which had been focused on representing what the artist knew.")
+add_refers(sentences, 1, {"This": "painting in perspective(원근법으로 그린 그림)", "how they looked": "they = the objects and the space(사물과 공간)"})
+add_refers(sentences, 3, {"They": "figurative paintings in perspective(원근법 구상화)"})
+add_refers(sentences, 5, {"These pictures": "earlier figurative art(초기 구상화)", "they do not represent": "they = earlier figurative paintings(초기 구상화)"})
+add_refers(sentences, 6, {"They": "earlier figurative paintings(초기 구상화)"})
 
 lesson = base_lesson(
     ID, source="2024년 3월 고3 전국연합학력평가 영어 39번 (주어진 문장 넣기, 3점)",

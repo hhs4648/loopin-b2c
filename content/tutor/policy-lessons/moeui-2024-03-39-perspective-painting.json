@@ -330,9 +330,6 @@
           "ko": "보였다"
         }
       ],
-      "emphasis": [
-        "earlier figurative art"
-      ],
       "slashes": [
         "This stands in contrast",
         "figurative art,",
@@ -396,6 +393,79 @@
               "text": "이 글에서는 → 구상(화)의 — 사물을 알아볼 수 있게 그린  ('비유적인' 아님)",
               "mark": "figurative",
               "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "This",
+            "stands in contrast to",
+            "earlier figurative art",
+            "representing",
+            "what the artist knew"
+          ],
+          "answers": [
+            "This",
+            "earlier figurative art",
+            "stands in contrast to",
+            "what the artist knew",
+            "representing"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "This",
+                "ko": "이것은"
+              },
+              " ",
+              {
+                "en": "earlier figurative art",
+                "ko": "초기 구상화와"
+              },
+              " ",
+              {
+                "en": "stands in contrast to",
+                "ko": "대조적이다"
+              },
+              " — 초기 구상화는 ",
+              {
+                "en": "what the artist knew",
+                "ko": "화가가 알고 있던 것을"
+              },
+              " ",
+              {
+                "en": "representing",
+                "ko": "나타내는 데"
+              },
+              " 초점을 맞췄다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "This stands in contrast to earlier figurative art, which had been focused on representing what the artist knew.",
+          "tips": [
+            {
+              "label": "앞을 가리키는 말",
+              "text": "This, These, Such처럼 앞 내용을 가리키는 말이 주어진 문장에 있으면, 가리키는 대상이 바로 앞 문장에 있어야 해요."
+            },
+            {
+              "label": "as A as B",
+              "text": "'B만큼 A'예요. as focused on X as on Y = Y만큼이나 X에도 초점을 맞춘",
+              "mark": "as … as"
+            },
+            {
+              "label": "아는 대로 vs 보이는 대로",
+              "text": "아는 대로 = 실제 크기·모양(멀리 있는 사람도 원래 크기로). 보이는 대로 = 한 자리에서 눈에 비친 모습(멀면 작게)."
             }
           ]
         },
@@ -598,7 +668,17 @@
             "earlier figurative art"
           ]
         }
-      ]
+      ],
+      "emphasis": [
+        "This",
+        "stands in contrast to",
+        "earlier figurative art",
+        "what the artist knew"
+      ],
+      "refers": {
+        "This": "painting in perspective(원근법으로 그린 그림)",
+        "how they looked": "they = the objects and the space(사물과 공간)"
+      }
     },
     {
       "id": 2,
@@ -813,6 +893,10 @@
           ],
           "meaning_check": true
         }
+      ],
+      "emphasis": [
+        "figurative",
+        "in perspective"
       ]
     },
     {
@@ -1047,7 +1131,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "They": "figurative paintings in perspective(원근법 구상화)"
+      }
     },
     {
       "id": 4,
@@ -1337,6 +1424,10 @@
           ],
           "method": 1
         }
+      ],
+      "emphasis": [
+        "represents",
+        "how the world looks"
       ]
     },
     {
@@ -1711,7 +1802,11 @@
           ],
           "method": 1
         }
-      ]
+      ],
+      "refers": {
+        "These pictures": "earlier figurative art(초기 구상화)",
+        "they do not represent": "they = earlier figurative paintings(초기 구상화)"
+      }
     },
     {
       "id": 6,
@@ -2015,7 +2110,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "They": "earlier figurative paintings(초기 구상화)"
+      }
     },
     {
       "id": 7,

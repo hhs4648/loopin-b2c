@@ -358,6 +358,21 @@ exam = {
          }),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 2, [_m("these questions", "이 질문들에 대한"), " ", _m("The answer", "답은"), " 열대 지방에서 ", _m("pathogen density", "병원균의 밀도가"), " ",
+                         _m("much higher", "훨씬 더 높다는"), " ", _m("lies in the fact", "사실에 있다"), "."])
+add_match(sentences, 4, [_m("In contrast", "반면에"), ", ", _m("when you live in the Congo", "콩고에 산다면"), ", 계곡 반대편의 ", _m("the group", "집단은"), " 여러분이 접촉한 적 없는 ",
+                         _m("a pathogen", "병원균에"), " ", _m("may well have been exposed to", "노출되었을지도 모른다"), "."])
+add_match(sentences, 5, [_m("For this reason", "이러한 이유로"), ", 열대 지방의 ", _m("humans", "사람들은"), " 다른 집단과 교류하면 ", _m("tended to get sick", "병에 잘 걸린다는 것을"), " ",
+                         _m("learned", "알게 되었다"), " — 그래서 교류를 ", _m("would have stopped", "중단했을 것이다"), "."])
+add_match(sentences, 7, [_m("Dislike and fear", "혐오와 두려움이"), " ", _m("neighbors", "이웃을"), " ", _m("apart", "떨어져 있"), "게 했고, 교류하지 않으면 ",
+                         _m("your languages and religions", "언어와 종교도"), " ", _m("divide", "갈라진다"), "."])
+add_refers(sentences, 1, {"their frequency": "their = languages’ and religions’(언어와 종교의)"})
+add_refers(sentences, 2, {"these questions": "why languages and religions increase near the equator(적도 근처에 언어·종교가 많은 이유)"})
+add_refers(sentences, 5, {"For this reason": "pathogens from other groups make you sick(다른 집단의 병원균 때문에 병이 나서)", "they": "humans in the tropics(열대 지방 사람들)"})
+add_refers(sentences, 6, {"to dislike them": "them = neighbors(이웃)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 40번 (요약문 완성, 2점)",
     topic="요약문 푸는 법: 지문을 먼저 읽으며 말을 칠판 두 칸에 모으기 → 요약문 (A)(B)가 각각 어느 쪽인지 → 그 뜻의 말 고르기",

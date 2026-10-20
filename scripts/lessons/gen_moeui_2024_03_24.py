@@ -387,6 +387,16 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("Distance in time", "시간 속의 거리는"), " ", _m("distance in space", "공간 속의 거리"), _m("is like", "와 같다"), "."])
+add_refers(sentences, 2, {"they live": "they = people(사람들)"})
+add_refers(sentences, 3, {"they": "people(사람들)"})
+add_refers(sentences, 5, {"it": "the world(세상)"})
+add_refers(sentences, 6, {"These ideas": "distance in time is like distance in space(시간의 거리도 공간의 거리처럼 사람을 덜 중요하게 만들지 않는다)"})
+add_refers(sentences, 8, {"this poisons people": "this = radioactive waste(방사성 폐기물)"})
+add_refers(sentences, 9, {"so": "care about climate change or pollution(기후 변화·오염에 신경 쓰는 것)"})
+
 lesson = base_lesson(
     ID, source="2024년 3월 고3 전국연합학력평가 영어 24번 (제목, 2점)",
     topic="제목 푸는 법: 문장마다 핵심어와 뜻 → 글쓴이 생각 → 글 전체를 한 줄로 → 그 한 줄을 바꿔 쓴 제목",

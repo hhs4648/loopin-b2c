@@ -297,6 +297,14 @@
           "ko": "공간"
         },
         {
+          "en": "architectural",
+          "ko": "건축의"
+        },
+        {
+          "en": "facilitates or prohibits",
+          "ko": "돕거나 막는다"
+        },
+        {
           "en": "facilitates",
           "ko": "촉진하다, 쉽게 하다"
         },
@@ -551,6 +559,44 @@
             }
           ]
         }
+      ],
+      "slashes": [
+        "architectural structures",
+        "spatial choreography",
+        "guides action;",
+        "or prohibits,",
+        "or prevents,"
+      ],
+      "roles": [
+        {
+          "text": "All architectural structures",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "forms of spatial choreography",
+          "role": "C"
+        },
+        {
+          "text": "space",
+          "role": "S"
+        },
+        {
+          "text": "facilitates",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that guides action"
+      ],
+      "emphasis": [
+        "architectural",
+        "guides action",
+        "space",
+        "facilitates or prohibits"
       ]
     },
     {
@@ -570,6 +616,26 @@
         {
           "en": "predetermines",
           "ko": "미리 결정하다"
+        },
+        {
+          "en": "This",
+          "ko": "이"
+        },
+        {
+          "en": "behavior",
+          "ko": "행동"
+        },
+        {
+          "en": "but",
+          "ko": "하지만"
+        },
+        {
+          "en": "also",
+          "ko": "또한"
+        },
+        {
+          "en": "emotions",
+          "ko": "감정"
         },
         {
           "en": "patterns of movement and behavior",
@@ -872,7 +938,47 @@
             "caption": "공간 = 몸과 마음을 함께 이끈다"
           }
         }
-      ]
+      ],
+      "slashes": [
+        "predetermines",
+        "movement and behavior,",
+        "but it also guides",
+        "experiential characteristics,"
+      ],
+      "roles": [
+        {
+          "text": "This choreography",
+          "role": "S"
+        },
+        {
+          "text": "predetermines",
+          "role": "V"
+        },
+        {
+          "text": "patterns of movement and behavior",
+          "role": "O"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "guides",
+          "role": "V"
+        }
+      ],
+      "emphasis": [
+        "This",
+        "predetermines",
+        "behavior",
+        "but",
+        "also",
+        "guides",
+        "emotions"
+      ],
+      "refers": {
+        "but it also": "it = this choreography(이 공간적 연출)"
+      }
     },
     {
       "id": 3,
@@ -1095,7 +1201,39 @@
             ]
           }
         }
-      ]
+      ],
+      "slashes": [
+        "empathic designer",
+        "behavior and desire,",
+        "architectural scripting",
+        "resonates with",
+        "user/occupant’s"
+      ],
+      "roles": [
+        {
+          "text": "A sensitive and empathic designer",
+          "role": "S"
+        },
+        {
+          "text": "intuits",
+          "role": "V"
+        },
+        {
+          "text": "human behavior and desire",
+          "role": "O"
+        },
+        {
+          "text": "this intuitive architectural scripting",
+          "role": "S"
+        },
+        {
+          "text": "resonates with",
+          "role": "V"
+        }
+      ],
+      "refers": {
+        "this intuitive architectural scripting": "the designer’s intuition of behavior and desire(설계자의 직관)"
+      }
     },
     {
       "id": 4,
@@ -1316,7 +1454,30 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "slashes": [
+        "designing a house,",
+        "the designer",
+        "non-existent house",
+        "in his imagination"
+      ],
+      "roles": [
+        {
+          "text": "the designer",
+          "role": "S"
+        },
+        {
+          "text": "lives, uses and feels",
+          "role": "V"
+        },
+        {
+          "text": "the non-existent house",
+          "role": "O"
+        }
+      ],
+      "refers": {
+        "in his imagination": "his = the designer’s(설계자의)"
+      }
     },
     {
       "id": 5,
@@ -1516,6 +1677,38 @@
             "초"
           ],
           "meaning_check": true
+        }
+      ],
+      "slashes": [
+        "placed window",
+        "is located",
+        "exactly where",
+        "into the garden,"
+      ],
+      "roles": [
+        {
+          "text": "A correctly placed window",
+          "role": "S"
+        },
+        {
+          "text": "is located",
+          "role": "V"
+        },
+        {
+          "text": "the occupant",
+          "role": "S"
+        },
+        {
+          "text": "wishes to",
+          "role": "V"
+        },
+        {
+          "text": "daylight",
+          "role": "S"
+        },
+        {
+          "text": "is needed",
+          "role": "V"
         }
       ]
     },
@@ -1750,6 +1943,28 @@
             ]
           }
         }
+      ],
+      "slashes": [
+        "is located",
+        "the dweller wishes"
+      ],
+      "roles": [
+        {
+          "text": "The stairway",
+          "role": "S"
+        },
+        {
+          "text": "is located",
+          "role": "V"
+        },
+        {
+          "text": "the dweller",
+          "role": "S"
+        },
+        {
+          "text": "wishes to",
+          "role": "V"
+        }
       ]
     },
     {
@@ -1967,7 +2182,42 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "slashes": [
+        "does not need",
+        "manuals or signage",
+        "for its use,",
+        "structure and use"
+      ],
+      "roles": [
+        {
+          "text": "Successful architecture",
+          "role": "S"
+        },
+        {
+          "text": "does not need",
+          "role": "V"
+        },
+        {
+          "text": "manuals or signage",
+          "role": "O"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "reveals",
+          "role": "V"
+        },
+        {
+          "text": "its very structure and use",
+          "role": "O"
+        }
+      ],
+      "refers": {
+        "it": "successful architecture(성공적인 건축)"
+      }
     },
     {
       "id": 8,
@@ -2120,8 +2370,19 @@
             "caption": "훌륭한 건물 = 사는 사람의 몸과 마음에 꼭 맞는다"
           }
         }
+      ],
+      "roles": [
+        {
+          "text": "A profound building",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        }
       ]
     }
   ],
-  "passage_on_try": true
+  "passage_on_try": true,
+  "keys_checked": true
 }

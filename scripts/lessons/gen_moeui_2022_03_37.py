@@ -352,6 +352,21 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, ["어린아이가 구름을 볼 때 ", _m("the clouds", "구름은"), " ", _m("alive and independent", "살아 있고 독립적으로"), " ", _m("may seem", "보일 수 있다"),
+                         ". 그러나 구름을 양으로 본다면 ", _m("a metaphorical chain", "은유의 사슬이"), " ", _m("to neutralize the fear", "두려움을 중화하기"), " 시작한다."],
+          display="When a young child sees clouds moving, the clouds may seem alive and independent. But if one sees clouds as fleecy lambs, a metaphorical chain begins to neutralize the fear.")
+add_match(sentences, 2, [_m("Cloud movement", "구름의 움직임은"), " ", _m("that makes things alive", "사물을 살아 있게 하는"), " ", _m("the kind of movement", "그런 종류의 움직임과"), " ",
+                         _m("becomes differentiated", "차별화된다"), " — 구름은 바람에 밀려야만 움직이기 때문이다."],
+          display="(A) “Cloud movement” becomes differentiated from the kind of movement that makes things alive, because the clouds move only if they are “pushed” by the wind.")
+add_match(sentences, 5, [_m("Faced with the moving clouds", "움직이는 구름을 마주쳤을 때"), ", ", _m("the child", "아이는"), " 구름이 ", _m("cease to be alive", "살아 있지 않다"),
+                         "는 식으로 ", _m("about their movement", "구름의 움직임에 대해"), " ", _m("can theorize", "이론화할 수 있다"), "."])
+add_match(sentences, 6, [_m("Children", "아이들은"), " ", _m("the motion of clouds", "구름의 움직임을"), " 사람의 움직임과 구분하는 ", _m("theoretical constructs", "이론적인 생각을"), " ",
+                         _m("develop", "전개하고"), ", 결국 살아 있는 구름에 대한 두려움은 ", _m("disappears", "사라진다"), "."])
+add_refers(sentences, 3, {"it is no longer terrifying": "it = the cloud(구름)"})
+add_refers(sentences, 8, {"If it scares you": "it = something that seems alive(살아 있는 듯 보이는 것)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 37번 (글의 순서, 3점)",
     topic="순서 푸는 법: 주어진 글의 끝 → 단락 첫머리 단서로 앞 내용 예측 → 단락 끝으로 다음 내용 예측 → 순서 잇기",

@@ -518,6 +518,11 @@
             "the art of living"
           ]
         }
+      ],
+      "emphasis": [
+        "perspective",
+        "matters",
+        "for the art of living"
       ]
     },
     {
@@ -678,6 +683,76 @@
           ]
         },
         {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "Just as",
+            "most artists",
+            "the stylistic conventions",
+            "similarly conform to",
+            "prevailing social conventions"
+          ],
+          "answers": [
+            "most artists",
+            "the stylistic conventions",
+            "Just as",
+            "prevailing social conventions",
+            "similarly conform to"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "most artists",
+                "ko": "대부분의 예술가가"
+              },
+              " 시대의 ",
+              {
+                "en": "the stylistic conventions",
+                "ko": "양식적 관습에"
+              },
+              " 순응하",
+              {
+                "en": "Just as",
+                "ko": "듯이"
+              },
+              ", 우리도 어떻게 살지에 대한 ",
+              {
+                "en": "prevailing social conventions",
+                "ko": "지배적인 사회적 관습에"
+              },
+              " ",
+              {
+                "en": "similarly conform to",
+                "ko": "비슷하게 순응한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Just as most artists conform to the stylistic conventions of the era, we similarly conform to prevailing social conventions about how to live.",
+          "tips": [
+            {
+              "label": "Just as A, (so) B",
+              "text": "'A하듯이 B도 그렇다'예요. 앞 A는 비유, 진짜 하고 싶은 말은 뒤 B예요.",
+              "mark": "Just as"
+            },
+            {
+              "label": "conform to",
+              "text": "'~에 따르다, 순응하다'예요. 정해진 틀에 맞춰 산다는 말이에요.",
+              "mark": "similarly conform to"
+            }
+          ]
+        },
+        {
           "id": "s2_same",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -766,6 +841,12 @@
             "between": "="
           }
         }
+      ],
+      "emphasis": [
+        "Just as",
+        "the stylistic conventions",
+        "similarly conform to",
+        "prevailing social conventions"
       ]
     },
     {
@@ -931,6 +1012,64 @@
           "method": 0
         },
         {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s3_basic",
+          "candidates": [
+            "These unwritten rules",
+            "typically",
+            "include",
+            "getting married",
+            "having a regular job"
+          ],
+          "answers": [
+            "These unwritten rules",
+            "typically",
+            "getting married",
+            "having a regular job",
+            "include"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "These unwritten rules",
+                "ko": "이러한 불문율에는"
+              },
+              " ",
+              {
+                "en": "typically",
+                "ko": "일반적으로"
+              },
+              " ",
+              {
+                "en": "getting married",
+                "ko": "결혼하는 것"
+              },
+              ", 집을 소유하는 것, ",
+              {
+                "en": "having a regular job",
+                "ko": "일정한 직업을 갖는 것"
+              },
+              ", 해외여행",
+              {
+                "en": "include",
+                "ko": "이 포함된다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "These unwritten rules typically include getting married and having children, owning your own home, having a regular job, and flying abroad for holidays."
+        },
+        {
           "id": "s3_these",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1037,7 +1176,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "These unwritten rules": "prevailing social conventions(지배적인 사회적 관습)"
+      }
     },
     {
       "id": 4,
@@ -1250,7 +1392,11 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "refers": {
+        "these are realities": "these = the unwritten rules(불문율)",
+        "they remain aspirations": "they = the unwritten rules(불문율)"
+      }
     },
     {
       "id": 5,
@@ -1353,6 +1499,9 @@
           "method": 1,
           "button": "다음 문장"
         }
+      ],
+      "emphasis": [
+        "It is common to"
       ]
     },
     {
@@ -1541,6 +1690,77 @@
           "method": 0
         },
         {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s6_basic",
+          "candidates": [
+            "At this point",
+            "they",
+            "the dominant conventions",
+            "most of us",
+            "with little questioning"
+          ],
+          "answers": [
+            "At this point",
+            "they",
+            "most of us",
+            "with little questioning",
+            "the dominant conventions"
+          ],
+          "match": {
+            "ko": [
+              "서구 역사의 ",
+              {
+                "en": "At this point",
+                "ko": "현시점에서"
+              },
+              ", ",
+              {
+                "en": "they",
+                "ko": "그것은"
+              },
+              " ",
+              {
+                "en": "most of us",
+                "ko": "우리 대부분이"
+              },
+              " ",
+              {
+                "en": "with little questioning",
+                "ko": "거의 의문 없이"
+              },
+              " 받아들여 온 ",
+              {
+                "en": "the dominant conventions",
+                "ko": "지배적인 관습"
+              },
+              " 중 하나이다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "At this point in Western history, they are amongst the dominant conventions that most of us have accepted with little questioning.",
+          "tips": [
+            {
+              "label": "much as ~",
+              "text": "'~와 마찬가지로, ~처럼'이에요. 뒤에 비교하는 예가 와요.",
+              "mark": "much as"
+            },
+            {
+              "label": "little + 명사",
+              "text": "a 없이 little이면 '거의 없는'이에요. with little questioning = 거의 의문 없이.",
+              "mark": "little questioning"
+            }
+          ]
+        },
+        {
           "id": "s6_accept",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1684,7 +1904,15 @@
             ]
           }
         }
-      ]
+      ],
+      "emphasis": [
+        "accepted",
+        "with little questioning"
+      ],
+      "refers": {
+        "they": "the unwritten rules / social conventions(불문율 — 사회적 관습)",
+        "At this point": "today(지금, 현대)"
+      }
     },
     {
       "id": 7,
@@ -1692,6 +1920,10 @@
       "model_translation": "세상과 자신을 바라보는 우리의 방식을 형성해 온 문화의 한계 그 너머를 보기는 어렵다.",
       "teaching_value": "medium",
       "glosses": [
+        {
+          "en": "It is difficult",
+          "ko": "어렵다"
+        },
         {
           "en": "It",
           "ko": "그것 (뒤의 to ~를 받음)"
@@ -1824,6 +2056,64 @@
             "explain": "주어 It, 동사 is, 보어 difficult예요. It은 뒤의 to see beyond ~를 받아요."
           },
           "method": 0
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s7_basic",
+          "candidates": [
+            "It is difficult",
+            "to see beyond",
+            "the limitations",
+            "the culture",
+            "our ways of looking"
+          ],
+          "answers": [
+            "our ways of looking",
+            "the culture",
+            "the limitations",
+            "to see beyond",
+            "It is difficult"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "our ways of looking",
+                "ko": "우리의 보는 방식을"
+              },
+              " 형성해 온 ",
+              {
+                "en": "the culture",
+                "ko": "문화의"
+              },
+              " ",
+              {
+                "en": "the limitations",
+                "ko": "한계"
+              },
+              " ",
+              {
+                "en": "to see beyond",
+                "ko": "너머를 보기는"
+              },
+              " ",
+              {
+                "en": "It is difficult",
+                "ko": "어렵다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "It is difficult to see beyond the limitations of the culture that has shaped our ways of looking at the world."
         },
         {
           "id": "s7_culture",

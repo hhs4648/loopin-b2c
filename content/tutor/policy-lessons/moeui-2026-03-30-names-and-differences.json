@@ -337,13 +337,6 @@
           "ko": "무언가"
         }
       ],
-      "emphasis": [
-        "conceptualize",
-        "categorize",
-        "put a name on",
-        "abstract away from",
-        "particularities"
-      ],
       "steps": [
         {
           "id": "s1_basic_sv",
@@ -594,7 +587,44 @@
             "that is not a proper name"
           ]
         }
-      ]
+      ],
+      "slashes": [
+        "put a name on something",
+        "proper name,"
+      ],
+      "roles": [
+        {
+          "text": "you … you",
+          "role": "S"
+        },
+        {
+          "text": "conceptualize",
+          "role": "V"
+        },
+        {
+          "text": "categorize",
+          "role": "V"
+        },
+        {
+          "text": "put",
+          "role": "V"
+        },
+        {
+          "text": "abstract away from",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that is not a proper name"
+      ],
+      "emphasis": [
+        "put a name on",
+        "abstract away from",
+        "particularities"
+      ],
+      "refers": {
+        "its particularities": "its = something you named(이름 붙인 그 대상의)"
+      }
     },
     {
       "id": 2,
@@ -630,9 +660,6 @@
           "en": "flowers",
           "ko": "꽃"
         }
-      ],
-      "emphasis": [
-        "Picture"
       ],
       "steps": [
         {
@@ -782,6 +809,16 @@
           ],
           "meaning_check": true
         }
+      ],
+      "roles": [
+        {
+          "text": "Picture",
+          "role": "V"
+        },
+        {
+          "text": "daisies and clover flowers",
+          "role": "O"
+        }
       ]
     },
     {
@@ -810,10 +847,6 @@
           "en": "their",
           "ko": "그것들의"
         }
-      ],
-      "emphasis": [
-        "ordinary nouns",
-        "leave out"
       ],
       "steps": [
         {
@@ -1152,7 +1185,29 @@
             ]
           }
         }
-      ]
+      ],
+      "roles": [
+        {
+          "text": "Those four ordinary nouns",
+          "role": "S"
+        },
+        {
+          "text": "leave out",
+          "role": "V"
+        },
+        {
+          "text": "differences",
+          "role": "O"
+        }
+      ],
+      "emphasis": [
+        "ordinary nouns",
+        "leave out",
+        "differences"
+      ],
+      "refers": {
+        "their": "the daisies, clovers, flowers and lawn(데이지·클로버·꽃·잔디)"
+      }
     },
     {
       "id": 4,
@@ -1212,9 +1267,6 @@
           "en": "to be found",
           "ko": "발견되는"
         }
-      ],
-      "emphasis": [
-        "co-categorizes"
       ],
       "steps": [
         {
@@ -1365,7 +1417,32 @@
             "“Flower” co-categorizes the white and yellow types with the beige ones, and all the many other sorts to be found elsewhere."
           ]
         }
-      ]
+      ],
+      "slashes": [
+        "yellow types",
+        "beige ones,",
+        "other sorts"
+      ],
+      "roles": [
+        {
+          "text": "Flower",
+          "role": "S"
+        },
+        {
+          "text": "co-categorizes",
+          "role": "V"
+        },
+        {
+          "text": "the white and yellow types",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "to be found elsewhere"
+      ],
+      "refers": {
+        "the beige ones": "ones = types of flowers(꽃의 종류)"
+      }
     },
     {
       "id": 5,
@@ -1401,9 +1478,6 @@
           "en": "that are there",
           "ko": "거기 있는"
         }
-      ],
-      "emphasis": [
-        "Lawn"
       ],
       "steps": [
         {
@@ -1673,6 +1747,27 @@
             ]
           }
         }
+      ],
+      "slashes": [
+        "varieties of grass",
+        "nongrassy plants"
+      ],
+      "roles": [
+        {
+          "text": "Lawn",
+          "role": "S"
+        },
+        {
+          "text": "acknowledges",
+          "role": "V"
+        },
+        {
+          "text": "the varieties of grass",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that are there"
       ]
     },
     {
@@ -1713,11 +1808,6 @@
           "en": "find",
           "ko": "발견하다"
         }
-      ],
-      "emphasis": [
-        "Zoom in",
-        "individuality",
-        "uniqueness"
       ],
       "steps": [
         {
@@ -1967,6 +2057,33 @@
             "caption": "가까이 보면 → 하나하나 다름"
           }
         }
+      ],
+      "slashes": [
+        "Zoom in,",
+        "will find"
+      ],
+      "roles": [
+        {
+          "text": "Zoom in",
+          "role": "V"
+        },
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "will find",
+          "role": "V"
+        },
+        {
+          "text": "individuality and uniqueness",
+          "role": "O"
+        }
+      ],
+      "emphasis": [
+        "Zoom in",
+        "individuality",
+        "uniqueness"
       ]
     },
     {
@@ -2035,10 +2152,6 @@
           "en": "enough",
           "ko": "충분히"
         }
-      ],
-      "emphasis": [
-        "and yet",
-        "uniformly"
       ],
       "steps": [
         {
@@ -2316,7 +2429,45 @@
             "caption": "가까이 → 다름 ↔ 힐끗 → 균일"
           }
         }
-      ]
+      ],
+      "slashes": [
+        "no two clovers,",
+        "alike,",
+        "and yet",
+        "a quick glance"
+      ],
+      "roles": [
+        {
+          "text": "No two daisies",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "alike",
+          "role": "C"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "present",
+          "role": "V"
+        },
+        {
+          "text": "a carpet",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "patterned uniformly enough"
+      ],
+      "refers": {
+        "they": "daisies and clovers(데이지와 클로버)"
+      }
     },
     {
       "id": 8,
@@ -2364,9 +2515,6 @@
           "en": "making",
           "ko": "만들기"
         }
-      ],
-      "emphasis": [
-        "practical purposes"
       ],
       "steps": [
         {
@@ -2645,6 +2793,25 @@
             "caption": "보통 목적 → 차이를 무시해도 됨"
           }
         }
+      ],
+      "slashes": [
+        "practical purposes,",
+        "ignored—",
+        "daisy chain,"
+      ],
+      "roles": [
+        {
+          "text": "the differences",
+          "role": "S"
+        },
+        {
+          "text": "can be",
+          "role": "V"
+        },
+        {
+          "text": "ignored",
+          "role": "V"
+        }
       ]
     },
     {
@@ -2697,11 +2864,6 @@
           "en": "grasses",
           "ko": "풀들"
         }
-      ],
-      "emphasis": [
-        "Not so",
-        "groundskeeper",
-        "really do matter"
       ],
       "steps": [
         {
@@ -3080,7 +3242,26 @@
             ]
           }
         }
-      ]
+      ],
+      "slashes": [
+        "Not so,",
+        "however,",
+        "sports stadium,",
+        "stages of growth"
+      ],
+      "roles": [
+        {
+          "text": "the constituent grasses",
+          "role": "S"
+        },
+        {
+          "text": "really do matter",
+          "role": "V"
+        }
+      ],
+      "refers": {
+        "Not so": "the differences cannot be ignored(차이를 무시할 수 없다 — 앞 문장의 반대)"
+      }
     },
     {
       "id": 10,
@@ -3147,11 +3328,11 @@
         {
           "en": "its own",
           "ko": "그 자신의"
+        },
+        {
+          "en": "its",
+          "ko": "그것의"
         }
-      ],
-      "emphasis": [
-        "infinite mind",
-        "need not be"
       ],
       "steps": [
         {
@@ -3792,7 +3973,31 @@
             ", with its own distinct life history,"
           ]
         }
-      ]
+      ],
+      "slashes": [
+        "infinite mind,",
+        "infinite memory,",
+        "blade of grass,",
+        "life history,",
+        "co-categorized"
+      ],
+      "roles": [
+        {
+          "text": "each blade of grass",
+          "role": "S"
+        },
+        {
+          "text": "need not be",
+          "role": "V"
+        },
+        {
+          "text": "co-categorized",
+          "role": "V"
+        }
+      ],
+      "refers": {
+        "its": "each blade of grass(각 풀잎)"
+      }
     },
     {
       "id": 11,
@@ -3816,9 +4021,6 @@
           "en": "could have",
           "ko": "가질 수 있다"
         }
-      ],
-      "emphasis": [
-        "its own name"
       ],
       "steps": [
         {
@@ -4094,6 +4296,31 @@
           "highlight": [
             "could"
           ]
+        }
+      ],
+      "slashes": [
+        "its own name,"
+      ],
+      "roles": [
+        {
+          "text": "Each",
+          "role": "S"
+        },
+        {
+          "text": "could have",
+          "role": "V"
+        },
+        {
+          "text": "its own name",
+          "role": "O"
+        },
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "do",
+          "role": "V"
         }
       ]
     }

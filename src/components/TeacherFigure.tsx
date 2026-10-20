@@ -2,7 +2,7 @@
  * 다정쌤.
  *
  * 원본은 `assets/상냥한 선생님.svg`(282KB, 비트맵이 박힌 Figma 내보내기)이고,
- * 화면에는 표시 크기에 맞춰 뽑은 `public/assets/dajung-teacher.webp`(39KB)를 쓴다.
+ * 화면에는 표시 크기에 맞춰 뽑은 `public/assets/character/dajung.webp`(39KB)를 쓴다.
  * `public/`에 넣는 건 전부 학생 기기로 내려가므로 원본을 그대로 싣지 않는다.
  *
  * 예전에는 여기서 손으로 그린 SVG를 `height="auto"`로 그렸다. SVG 속성에는
@@ -13,7 +13,7 @@ export function TeacherFigure() {
   return (
     <img
       className="teacher-art"
-      src="/assets/dajung-teacher.webp"
+      src="/assets/character/dajung.webp"
       alt="다정쌤"
       width={650}
       height={616}

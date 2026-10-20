@@ -557,7 +557,8 @@ sentences = [
         "text": S5,
         "model_translation": "진정한 예술 작품의 번역은 그것이 작품 안에 이미 내재된 자질을 강화하고 높이기 때문에 의미 있다.",
         "teaching_value": "high",
-        "glosses": [g("The translation of a true work of art", "진정한 예술 작품의 번역"), g("significant", "의미 있는, 중요한"),
+        "glosses": [g("The translation of a true work of art", "진정한 예술 작품의 번역"), g("translation", "번역"), g("significant", "의미 있는, 중요한"),
+                    g("already inherent", "이미 내재된"),
                     g("because", "~ 때문에"), g("reinforces", "강화하다"), g("enhances", "높이다, 더 좋게 하다"),
                     g("qualities", "자질, 특성"), g("already", "이미"), g("inherent", "내재된 · inherent in it = 그것 안에 원래 있는")],
         "steps": [
@@ -817,6 +818,61 @@ for s_ in sentences:
     have = {x["en"].lower() for x in s_["glosses"]}
     s_["glosses"] += [g(en, ko) for en, ko in MORE_GLOSSES.get(s_["id"], []) if en.lower() not in have]
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) + 끊어읽기(slashes)·S·V·O·C(roles)·[ ] 수식어(modifiers) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+# 이 레슨은 문장마다 학생이 핵심어를 직접 찾는 스텝(s*_pick)이 있어 수업에서 미리 칠하면 안 된다 → emphasis 대신 `keys`
+# (10분 모의고사의 「핵심어만 읽고 풀기」에서만 칠한다, policy.test「핵심어는 마지막에 직접 찾는다」)
+def _r(text, role):
+    return {"text": text, "role": role}
+
+SLASHES = {
+    1: ["Something too domesticated", "or approachable,", "altogether—", "take it for granted", "until art"],
+    2: ["translation is an art"],
+    3: ["work of literature", "accumulates imitations and clichés", "scholarship and analysis", "may well bury it,", "translations of that work",
+        "stodgy fame", "stony again,"],
+    4: ["A bad text is one", "Berman’s terms,", "strangeness”—", "translate it,"],
+    5: ["work of art", "is significant", "reinforces and enhances"],
+    6: ["a makeshift,", "mode of existence", "as étrange”", "as “foreign,”"],
+    7: ["As Wilson put it,", "makes the work"],
+}
+ROLES = {
+    1: [_r("Something too domesticated", "S"), _r("isn’t", "V"), _r("more accessible or approachable", "C"), _r("it", "S"), _r("evaporates", "V"),
+        _r("we", "S"), _r("take", "V"), _r("art", "S"), _r("restores", "V"), _r("its visibility", "O")],
+    2: [_r("translation", "S"), _r("is", "V"), _r("an art", "C")],
+    3: [_r("a great work of literature", "S"), _r("accumulates", "V"), _r("translations of that work", "S"), _r("free", "V"),
+        _r("make", "V"), _r("the stone", "O"), _r("stony", "C")],
+    4: [_r("A bad text", "S"), _r("is", "V"), _r("one", "C"), _r("you", "S"), _r("translate", "V"), _r("nothing", "S"), _r("happens", "V")],
+    5: [_r("The translation of a true work of art", "S"), _r("is", "V"), _r("significant", "C"), _r("it", "S"), _r("reinforces", "V"),
+        _r("enhances", "V"), _r("qualities", "O")],
+    6: [_r("translation", "S"), _r("is not", "V"), _r("a makeshift", "C"), _r("the mode of existence", "C")],
+    7: [_r("translation", "S"), _r("makes", "V"), _r("the work", "O"), _r("seem", "C")],
+}
+MODIFIERS = {
+    3: ["that may well bury it"],
+    4: ["that, in Berman’s terms, lacks “native strangeness”"],
+    6: ["by which a work reaches us as étrange"],
+}
+KEYS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["domesticated", "evaporates", "take it for granted", "art", "restores", "visibility"],
+    2: ["translation", "well suited"],  # art는 선생님이 뺌 (2026-10-20)
+    # 5문장은 선생님이 직접 고름 (2026-10-20)
+    5: ["translation", "significant", "reinforces", "enhances", "already inherent"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if KEYS.get(_s["id"]):
+        _s["keys"] = KEYS[_s["id"]]
+assert set(KEYS) <= {_s["id"] for _s in sentences}, "KEYS에 없는 문장 번호"
+
 lesson = {
     "id": ID, "kind": "policy", "version": "0.1",
     "source": "2026년 3월 고3 전국연합학력평가 영어 24번 (글의 제목, 3점)",
@@ -845,6 +901,8 @@ lesson = {
              "exam_importance": "high", "teaching_value": "high", "intervention_density": "normal"},
     "sentences": sentences,
     "passage_on_try": True,
+    # 핵심어는 선생님이 직접 확인함 (2026-10-20) — 10분 모의고사 「핵심어만 읽고 풀기」 버튼이 보인다
+    "keys_checked": True,
 }
 
 # 핵심어 고르기는 정답이 하나로 딱 떨어지지 않는다 — 틀렸다고 하지 않고 「더 좋은 선택이 있어요」
@@ -903,6 +961,15 @@ fill_chunk_glosses(sentences, {
 
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_refers(sentences, 1, {"it": "something too domesticated(너무 길든 것)", "its": "something too domesticated(너무 길든 것)"})
+add_refers(sentences, 2, {"this task": "restoring visibility(사라진 것을 다시 보이게 하는 일)"})
+add_refers(sentences, 3, {"it": "a great work of literature(위대한 문학 작품)"})
+add_refers(sentences, 4, {"it": "a bad text(안 좋은 텍스트)", "one": "a text(텍스트)"})
+add_refers(sentences, 5, {"it": "the translation(번역) · 끝의 it은 the work(작품)"})
+add_refers(sentences, 6, {"that": "translating étrange as ‘foreign’(foreign이라는 번역)"})
+
 from story_boards import add_story_boards  # noqa: E402
 add_story_boards(ID, lesson["sentences"])
 

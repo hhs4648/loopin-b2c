@@ -322,6 +322,10 @@
         {
           "en": "we",
           "ko": "우리"
+        },
+        {
+          "en": "its",
+          "ko": "그것의"
         }
       ],
       "concepts": [
@@ -690,7 +694,68 @@
           },
           "method": 0
         }
-      ]
+      ],
+      "slashes": [
+        "Something too domesticated",
+        "or approachable,",
+        "altogether—",
+        "take it for granted",
+        "until art"
+      ],
+      "roles": [
+        {
+          "text": "Something too domesticated",
+          "role": "S"
+        },
+        {
+          "text": "isn’t",
+          "role": "V"
+        },
+        {
+          "text": "more accessible or approachable",
+          "role": "C"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "evaporates",
+          "role": "V"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "take",
+          "role": "V"
+        },
+        {
+          "text": "art",
+          "role": "S"
+        },
+        {
+          "text": "restores",
+          "role": "V"
+        },
+        {
+          "text": "its visibility",
+          "role": "O"
+        }
+      ],
+      "keys": [
+        "domesticated",
+        "evaporates",
+        "take it for granted",
+        "art",
+        "restores",
+        "visibility"
+      ],
+      "refers": {
+        "it": "something too domesticated(너무 길든 것)",
+        "its": "something too domesticated(너무 길든 것)"
+      }
     },
     {
       "id": 2,
@@ -1076,7 +1141,31 @@
           },
           "method": 0
         }
-      ]
+      ],
+      "slashes": [
+        "translation is an art"
+      ],
+      "roles": [
+        {
+          "text": "translation",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "an art",
+          "role": "C"
+        }
+      ],
+      "keys": [
+        "translation",
+        "well suited"
+      ],
+      "refers": {
+        "this task": "restoring visibility(사라진 것을 다시 보이게 하는 일)"
+      }
     },
     {
       "id": 3,
@@ -1163,6 +1252,10 @@
         {
           "en": "another language",
           "ko": "다른 언어"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
         }
       ],
       "steps": [
@@ -1705,7 +1798,52 @@
             ]
           }
         }
-      ]
+      ],
+      "slashes": [
+        "work of literature",
+        "accumulates imitations and clichés",
+        "scholarship and analysis",
+        "may well bury it,",
+        "translations of that work",
+        "stodgy fame",
+        "stony again,"
+      ],
+      "roles": [
+        {
+          "text": "a great work of literature",
+          "role": "S"
+        },
+        {
+          "text": "accumulates",
+          "role": "V"
+        },
+        {
+          "text": "translations of that work",
+          "role": "S"
+        },
+        {
+          "text": "free",
+          "role": "V"
+        },
+        {
+          "text": "make",
+          "role": "V"
+        },
+        {
+          "text": "the stone",
+          "role": "O"
+        },
+        {
+          "text": "stony",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that may well bury it"
+      ],
+      "refers": {
+        "it": "a great work of literature(위대한 문학 작품)"
+      }
     },
     {
       "id": 4,
@@ -1756,6 +1894,10 @@
         {
           "en": "nothing happens",
           "ko": "아무 일도 일어나지 않는다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
         }
       ],
       "steps": [
@@ -2338,7 +2480,50 @@
           },
           "method": 0
         }
-      ]
+      ],
+      "slashes": [
+        "A bad text is one",
+        "Berman’s terms,",
+        "strangeness”—",
+        "translate it,"
+      ],
+      "roles": [
+        {
+          "text": "A bad text",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "one",
+          "role": "C"
+        },
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "translate",
+          "role": "V"
+        },
+        {
+          "text": "nothing",
+          "role": "S"
+        },
+        {
+          "text": "happens",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that, in Berman’s terms, lacks “native strangeness”"
+      ],
+      "refers": {
+        "it": "a bad text(안 좋은 텍스트)",
+        "one": "a text(텍스트)"
+      }
     },
     {
       "id": 5,
@@ -2355,8 +2540,16 @@
           "ko": "진정한 예술 작품의 번역"
         },
         {
+          "en": "translation",
+          "ko": "번역"
+        },
+        {
           "en": "significant",
           "ko": "의미 있는, 중요한"
+        },
+        {
+          "en": "already inherent",
+          "ko": "이미 내재된"
         },
         {
           "en": "because",
@@ -2721,7 +2914,52 @@
           },
           "method": 0
         }
-      ]
+      ],
+      "slashes": [
+        "work of art",
+        "is significant",
+        "reinforces and enhances"
+      ],
+      "roles": [
+        {
+          "text": "The translation of a true work of art",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "significant",
+          "role": "C"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "reinforces",
+          "role": "V"
+        },
+        {
+          "text": "enhances",
+          "role": "V"
+        },
+        {
+          "text": "qualities",
+          "role": "O"
+        }
+      ],
+      "keys": [
+        "translation",
+        "significant",
+        "reinforces",
+        "enhances",
+        "already inherent"
+      ],
+      "refers": {
+        "it": "the translation(번역) · 끝의 it은 the work(작품)"
+      }
     },
     {
       "id": 6,
@@ -2784,6 +3022,10 @@
         {
           "en": "not sure",
           "ko": "확신하지 못하는"
+        },
+        {
+          "en": "that",
+          "ko": "그것"
         }
       ],
       "steps": [
@@ -3191,7 +3433,37 @@
             ]
           }
         }
-      ]
+      ],
+      "slashes": [
+        "a makeshift,",
+        "mode of existence",
+        "as étrange”",
+        "as “foreign,”"
+      ],
+      "roles": [
+        {
+          "text": "translation",
+          "role": "S"
+        },
+        {
+          "text": "is not",
+          "role": "V"
+        },
+        {
+          "text": "a makeshift",
+          "role": "C"
+        },
+        {
+          "text": "the mode of existence",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "by which a work reaches us as étrange"
+      ],
+      "refers": {
+        "that": "translating étrange as ‘foreign’(foreign이라는 번역)"
+      }
     },
     {
       "id": 7,
@@ -3656,8 +3928,31 @@
             "caption": "번역 = 익숙해진 작품을 다시 낯설게, 생생하게"
           }
         }
+      ],
+      "slashes": [
+        "As Wilson put it,",
+        "makes the work"
+      ],
+      "roles": [
+        {
+          "text": "translation",
+          "role": "S"
+        },
+        {
+          "text": "makes",
+          "role": "V"
+        },
+        {
+          "text": "the work",
+          "role": "O"
+        },
+        {
+          "text": "seem",
+          "role": "C"
+        }
       ]
     }
   ],
-  "passage_on_try": true
+  "passage_on_try": true,
+  "keys_checked": true
 }

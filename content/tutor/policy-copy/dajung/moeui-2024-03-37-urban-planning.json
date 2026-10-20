@@ -19,6 +19,14 @@
       "explain": "주어는 historic ideas, 동사는 find, 목적어는 expression이에요. find expression in은 '~로 나타나다'예요.",
       "from": "9t9r5d"
     },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "moxaqx"
+    },
     "g_mean": {
       "ask": "주어·동사·목적어를 칠한 채로 봐요. 이 문장은 무슨 뜻일까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -65,6 +73,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어는 Landscape Urbanists, 동사는 find예요. that 뒤가 그들이 알게 된 내용이에요.",
       "from": "1pj5f6y"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "11drhp2"
     },
     "a_that_sv": {
       "ask": "that 뒤가 핵심 내용이에요. that 안에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",

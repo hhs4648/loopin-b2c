@@ -222,6 +222,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "without the relevant training",
+          "ko": "관련 교육 없이는"
+        },
+        {
           "en": "Nonetheless",
           "ko": "그럼에도 불구하고"
         },
@@ -405,6 +409,76 @@
             "point": "주어진 문장의 S·V·O 두 쌍 = even completely transparent practices + do not lift + the veil / (대시 뒤) one + cannot make sense of + the information · for most outsiders는 전치사 덩어리라 주어 아님"
           },
           "method": 0
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "even completely transparent practices",
+            "do not lift",
+            "the veil",
+            "without the relevant training",
+            "cannot make sense of"
+          ],
+          "answers": [
+            "even completely transparent practices",
+            "the veil",
+            "do not lift",
+            "without the relevant training",
+            "cannot make sense of"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "even completely transparent practices",
+                "ko": "완전히 투명한 관행조차"
+              },
+              " ",
+              {
+                "en": "the veil",
+                "ko": "장막을"
+              },
+              " ",
+              {
+                "en": "do not lift",
+                "ko": "들어 올리지 못한다"
+              },
+              " — ",
+              {
+                "en": "without the relevant training",
+                "ko": "관련 교육 없이는"
+              },
+              " 정보를 ",
+              {
+                "en": "cannot make sense of",
+                "ko": "이해할 수 없다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Nonetheless, for most outsiders even completely transparent practices do not lift the veil—without the relevant training, one simply cannot make sense of the information.",
+          "tips": [
+            {
+              "label": "one",
+              "mark": "one",
+              "text": "여기서 one은 숫자 '1'이 아니라 '사람'이에요. 이 문장에서는 앞에 나온 outsiders(외부인)를 가리켜요. 'one simply cannot …'은 '외부인은 그야말로 ~할 수 없다'예요."
+            },
+            {
+              "label": "make sense of",
+              "mark": "make sense of",
+              "text": "'~을 이해하다'라는 중요한 표현이에요. 'make sense'만 쓰면 '말이 되다, 이치에 맞다'예요."
+            }
+          ]
         },
         {
           "id": "g_for",
@@ -988,7 +1062,57 @@
             "Nonetheless"
           ]
         }
-      ]
+      ],
+      "slashes": [
+        "Nonetheless,",
+        "for most outsiders",
+        "do not lift the veil",
+        "are hidden—",
+        "acquisition of skills,",
+        "many years,",
+        "make sense of the information"
+      ],
+      "roles": [
+        {
+          "text": "even completely transparent practices",
+          "role": "S"
+        },
+        {
+          "text": "do not lift",
+          "role": "V"
+        },
+        {
+          "text": "the veil",
+          "role": "O"
+        },
+        {
+          "text": "one",
+          "role": "S"
+        },
+        {
+          "text": "cannot make sense of",
+          "role": "V"
+        },
+        {
+          "text": "the information",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "behind which such forms of knowledge are hidden",
+        "which often take many years",
+        "that is being shared"
+      ],
+      "emphasis": [
+        "Nonetheless",
+        "outsiders",
+        "completely transparent",
+        "lift the veil",
+        "cannot make sense of"
+      ],
+      "refers": {
+        "such forms of knowledge": "such = expert knowledge(전문 지식 같은)"
+      }
     },
     {
       "id": 2,
@@ -1484,6 +1608,34 @@
             }
           ]
         }
+      ],
+      "slashes": [
+        "expert knowledge,",
+        "become a member",
+        "knowledge bearers,",
+        "use the term"
+      ],
+      "roles": [
+        {
+          "text": "one",
+          "role": "S"
+        },
+        {
+          "text": "needs",
+          "role": "V"
+        },
+        {
+          "text": "to become a member",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "for which I will use the term “epistemic communities.”"
+      ],
+      "emphasis": [
+        "expert knowledge",
+        "a member",
+        "epistemic communities"
       ]
     },
     {
@@ -1933,6 +2085,24 @@
             ]
           }
         }
+      ],
+      "slashes": [
+        "from experts",
+        "common practices"
+      ],
+      "roles": [
+        {
+          "text": "A newcomer",
+          "role": "S"
+        },
+        {
+          "text": "learns",
+          "role": "V"
+        },
+        {
+          "text": "is socialized",
+          "role": "V"
+        }
       ]
     },
     {
@@ -2174,6 +2344,22 @@
             "(②)"
           ]
         }
+      ],
+      "slashes": [
+        "admittance processes,"
+      ],
+      "roles": [
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "admittance processes",
+          "role": "S"
+        }
+      ],
+      "modifiers": [
+        "combined with tests of a candidate’s abilities"
       ]
     },
     {
@@ -2496,6 +2682,34 @@
               }
             ]
           }
+        }
+      ],
+      "slashes": [
+        "premodern era,",
+        "kept secret,",
+        "new members,",
+        "not least because of fears"
+      ],
+      "roles": [
+        {
+          "text": "epistemic communities",
+          "role": "S"
+        },
+        {
+          "text": "were often kept",
+          "role": "V"
+        },
+        {
+          "text": "secret",
+          "role": "C"
+        },
+        {
+          "text": "specialized knowledge",
+          "role": "S"
+        },
+        {
+          "text": "would fall",
+          "role": "V"
         }
       ]
     },
@@ -2860,7 +3074,45 @@
             "(④)"
           ]
         }
-      ]
+      ],
+      "slashes": [
+        "older practices",
+        "present today,",
+        "on the whole,",
+        "shifted to openness",
+        "epistemic communities,",
+        "to some extent,"
+      ],
+      "roles": [
+        {
+          "text": "Some traces",
+          "role": "S"
+        },
+        {
+          "text": "may still be",
+          "role": "V"
+        },
+        {
+          "text": "present",
+          "role": "C"
+        },
+        {
+          "text": "the ideal",
+          "role": "S"
+        },
+        {
+          "text": "has shifted",
+          "role": "V"
+        }
+      ],
+      "emphasis": [
+        "but",
+        "has shifted to",
+        "openness"
+      ],
+      "refers": {
+        "these older practices": "secrecy and tests of loyalty(비밀 유지와 충성 시험)"
+      }
     },
     {
       "id": 7,
@@ -3215,7 +3467,26 @@
           "method": 0,
           "button": "문제 풀러 갈게요"
         }
-      ]
+      ],
+      "slashes": [
+        "active strategies",
+        "are needed",
+        "forms of knowledge",
+        "as “accessible”"
+      ],
+      "roles": [
+        {
+          "text": "Other, more active strategies",
+          "role": "S"
+        },
+        {
+          "text": "are needed",
+          "role": "V"
+        }
+      ],
+      "refers": {
+        "Other, more active strategies": "Other = other than openness(개방성 말고 다른)"
+      }
     }
   ],
   "passage_on_try": true

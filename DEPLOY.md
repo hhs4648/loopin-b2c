@@ -16,14 +16,14 @@ npx vercel --prod
 ```
 
 SPA 라우팅을 위해 모든 경로를 `index.html`로 보내되, **확장자가 붙은 요청은
-제외**한다. 이걸 `/(.*)`로 두면 `/assets/dajung-teacher.webp` 같은 정적 파일까지
+제외**한다. 이걸 `/(.*)`로 두면 `/assets/character/dajung.webp` 같은 정적 파일까지
 index.html로 삼킨다. 브라우저는 **200을 받으므로 실패 로그도 안 남기고**, 그림만
 조용히 안 보인다 (2026-09-06 실제로 이렇게 캐릭터가 사라졌다).
 
 확인하는 법:
 
 ```bash
-curl -s https://loopin-b2c.vercel.app/assets/dajung-teacher.webp | head -c 4
+curl -s https://loopin-b2c.vercel.app/assets/character/dajung.webp | head -c 4
 # RIFF 가 나와야 한다. <!do 가 나오면 위 규칙이 깨진 것이다
 ```
 

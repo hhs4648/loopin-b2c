@@ -484,6 +484,84 @@
           ]
         },
         {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "If the goal is",
+            "to fill students with facts",
+            "it might seem appropriate",
+            "to try to maximize",
+            "time on task"
+          ],
+          "answers": [
+            "If the goal is",
+            "to fill students with facts",
+            "time on task",
+            "to try to maximize",
+            "it might seem appropriate"
+          ],
+          "match": {
+            "ko": [
+              "만약 ",
+              {
+                "en": "If the goal is",
+                "ko": "목표가 ~라면"
+              },
+              " — ",
+              {
+                "en": "to fill students with facts",
+                "ko": "학생을 사실로 채우는 것"
+              },
+              " — 그러면 숙제처럼 ",
+              {
+                "en": "time on task",
+                "ko": "과제에 들이는 시간을"
+              },
+              " ",
+              {
+                "en": "to try to maximize",
+                "ko": "최대화하려 애쓰는 것이"
+              },
+              " ",
+              {
+                "en": "it might seem appropriate",
+                "ko": "적절해 보일 수 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "If the goal is to fill students with facts, then it might seem appropriate to try to maximize time on task, such as by assigning homework.",
+          "tips": [
+            {
+              "label": "가주어 it … to ~",
+              "text": "it은 뒤의 to try …를 대신하는 가짜 주어예요. it might seem appropriate to try = 애쓰는 것이 적절해 보일 수도 있다."
+            },
+            {
+              "label": "대시(—) 두 개 사이",
+              "text": "대시 두 개 사이는 앞말을 다시 풀어 주는 경우가 많아요. 한쪽을 이해했으면 다른 쪽은 가볍게 넘겨요."
+            },
+            {
+              "label": "might seem",
+              "text": "'~해 보일 수도 있다'예요. 글쓴이가 그렇다고 단정하지 않는 말이라, 뒤에서 반박하는 경우가 많아요.",
+              "mark": "might seem"
+            },
+            {
+              "label": "단서가 없는 주어진 문장",
+              "text": "주어진 문장에 지시어·연결어가 없으면, 지문 쪽의 that, this, But 같은 말이 받을 대상이 앞에 있는지 확인해요."
+            }
+          ]
+        },
+        {
           "id": "g_dash",
           "type": "show",
           "interaction": "note",
@@ -1661,7 +1739,10 @@
           ],
           "method": 1
         }
-      ]
+      ],
+      "refers": {
+        "these attitudes and responses": "qualitative changes in how students view themselves(학생 쪽의 질적 변화)"
+      }
     },
     {
       "id": 5,
@@ -1708,6 +1789,10 @@
         {
           "en": "identifies",
           "ko": "밝히다, 찾아내다"
+        },
+        {
+          "en": "that",
+          "ko": "그것"
         },
         {
           "en": "effect",
@@ -2064,7 +2149,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "that": "maximizing time on task, e.g. more homework(숙제로 과제 시간을 늘리는 것)"
+      }
     },
     {
       "id": 6,
@@ -2571,7 +2659,10 @@
           "method": 1,
           "button": "문제 풀러 갈게요"
         }
-      ]
+      ],
+      "refers": {
+        "that shift": "seeing education as discovery, not coverage(교육을 발견 중심으로 보는 변화)"
+      }
     }
   ],
   "passage_on_try": true

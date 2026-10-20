@@ -804,6 +804,55 @@ for s_ in sentences:
     have = {x["en"].lower() for x in s_["glosses"]}
     s_["glosses"] += [g(en, ko) for en, ko in MORE_GLOSSES.get(s_["id"], []) if en.lower() not in have]
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) + 끊어읽기(slashes)·S·V·O·C(roles)·[ ] 수식어(modifiers) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+def _r(text, role):
+    return {"text": text, "role": role}
+
+SLASHES = {
+    1: ["Nonetheless,", "for most outsiders", "do not lift the veil", "are hidden—", "acquisition of skills,", "many years,", "make sense of the information"],
+    2: ["expert knowledge,", "become a member", "knowledge bearers,", "use the term"],
+    3: ["from experts", "common practices"],
+    4: ["admittance processes,"],
+    5: ["premodern era,", "kept secret,", "new members,", "not least because of fears"],
+    6: ["older practices", "present today,", "on the whole,", "shifted to openness", "epistemic communities,", "to some extent,"],
+    7: ["active strategies", "are needed", "forms of knowledge", "as “accessible”"],
+}
+ROLES = {
+    1: [_r("even completely transparent practices", "S"), _r("do not lift", "V"), _r("the veil", "O"),
+        _r("one", "S"), _r("cannot make sense of", "V"), _r("the information", "O")],
+    2: [_r("one", "S"), _r("needs", "V"), _r("to become a member", "O")],
+    3: [_r("A newcomer", "S"), _r("learns", "V"), _r("is socialized", "V")],
+    4: [_r("are", "V"), _r("admittance processes", "S")],
+    5: [_r("epistemic communities", "S"), _r("were often kept", "V"), _r("secret", "C"), _r("specialized knowledge", "S"), _r("would fall", "V")],
+    6: [_r("Some traces", "S"), _r("may still be", "V"), _r("present", "C"), _r("the ideal", "S"), _r("has shifted", "V")],
+    7: [_r("Other, more active strategies", "S"), _r("are needed", "V")],
+}
+MODIFIERS = {
+    1: ["behind which such forms of knowledge are hidden", "which often take many years", "that is being shared"],
+    2: ["for which I will use the term “epistemic communities.”"],
+    4: ["combined with tests of a candidate’s abilities"],
+}
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["Nonetheless", "outsiders", "completely transparent", "lift the veil", "cannot make sense of"],
+    2: ["expert knowledge", "a member", "epistemic communities"],
+    6: ["but", "has shifted to", "openness"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
 lesson = {
     "id": ID, "kind": "policy", "version": "0.2",
     "source": "2026년 3월 고3 전국연합학력평가 영어 39번 (주어진 문장 넣기, 3점)",
@@ -876,6 +925,16 @@ fill_chunk_glosses(sentences, {"there": "거기(자리 채움)", "are": "있다"
 
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("even completely transparent practices", "완전히 투명한 관행조차"), " ", _m("the veil", "장막을"), " ",
+                         _m("do not lift", "들어 올리지 못한다"), " — ", _m("without the relevant training", "관련 교육 없이는"), " 정보를 ",
+                         _m("cannot make sense of", "이해할 수 없다"), "."],
+          display="Nonetheless, for most outsiders even completely transparent practices do not lift the veil—without the relevant training, one simply cannot make sense of the information.")
+add_refers(sentences, 1, {"such forms of knowledge": "such = expert knowledge(전문 지식 같은)"})
+add_refers(sentences, 6, {"these older practices": "secrecy and tests of loyalty(비밀 유지와 충성 시험)"})
+add_refers(sentences, 7, {"Other, more active strategies": "Other = other than openness(개방성 말고 다른)"})
+
 from story_boards import add_story_boards  # noqa: E402
 add_story_boards(ID, lesson["sentences"])
 

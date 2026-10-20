@@ -98,6 +98,7 @@ sentences = [
         # choreography는 시험지 아래 *로 풀어 준 단어 — 뜻만 단다
         "glosses": [g("architectural structures", "건축 구조물"), g("forms of", "~의 형태"), g("spatial", "공간의"),
                     g("choreography", "연출"), g("guides action", "행동을 이끌다"), g("space", "공간"),
+                    g("architectural", "건축의"), g("facilitates or prohibits", "돕거나 막는다"),
                     g("facilitates", "촉진하다, 쉽게 하다"), g("prohibits", "금지하다"), g("encourages", "권장하다"),
                     g("prevents", "막다"), g("invites", "초대하다"), g("inhibits", "억제하다"),
                     g("A profound building", "심오한(훌륭한) 건물")],
@@ -127,6 +128,7 @@ sentences = [
     {
         "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "high",
         "glosses": [g("This choreography", "이 연출"), g("predetermines", "미리 결정하다"),
+                    g("This", "이"), g("behavior", "행동"), g("but", "하지만"), g("also", "또한"), g("emotions", "감정"),
                     g("patterns of movement and behavior", "움직임과 행동 양식"), g("but it also", "그러나 그것은 또한"),
                     g("guides", "이끌다"), g("experiential characteristics", "경험적 특성"), g("perceptions", "지각, 인식"),
                     g("imageries", "심상, 이미지"), g("emotions and feelings", "감정과 느낌")],
@@ -308,6 +310,54 @@ exam = {
     },
 }
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) + 끊어읽기(slashes)·S·V·O·C(roles)·[ ] 수식어(modifiers) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+def _r(text, role):
+    return {"text": text, "role": role}
+
+SLASHES = {
+    1: ["architectural structures", "spatial choreography", "guides action;", "or prohibits,", "or prevents,"],
+    2: ["predetermines", "movement and behavior,", "but it also guides", "experiential characteristics,"],
+    3: ["empathic designer", "behavior and desire,", "architectural scripting", "resonates with", "user/occupant’s"],
+    4: ["designing a house,", "the designer", "non-existent house", "in his imagination"],
+    5: ["placed window", "is located", "exactly where", "into the garden,"],
+    6: ["is located", "the dweller wishes"],
+    7: ["does not need", "manuals or signage", "for its use,", "structure and use"],
+}
+ROLES = {
+    1: [_r("All architectural structures", "S"), _r("are", "V"), _r("forms of spatial choreography", "C"), _r("space", "S"), _r("facilitates", "V")],
+    2: [_r("This choreography", "S"), _r("predetermines", "V"), _r("patterns of movement and behavior", "O"), _r("it", "S"), _r("guides", "V")],
+    3: [_r("A sensitive and empathic designer", "S"), _r("intuits", "V"), _r("human behavior and desire", "O"),
+        _r("this intuitive architectural scripting", "S"), _r("resonates with", "V")],
+    4: [_r("the designer", "S"), _r("lives, uses and feels", "V"), _r("the non-existent house", "O")],
+    5: [_r("A correctly placed window", "S"), _r("is located", "V"), _r("the occupant", "S"), _r("wishes to", "V"), _r("daylight", "S"), _r("is needed", "V")],
+    6: [_r("The stairway", "S"), _r("is located", "V"), _r("the dweller", "S"), _r("wishes to", "V")],
+    7: [_r("Successful architecture", "S"), _r("does not need", "V"), _r("manuals or signage", "O"), _r("it", "S"), _r("reveals", "V"),
+        _r("its very structure and use", "O")],
+    8: [_r("A profound building", "S"), _r("is", "V")],
+}
+MODIFIERS = {
+    1: ["that guides action"],
+}
+EMPHASIS = {
+    # 선생님이 직접 고른 것 (2026-10-20) — 지문 전체에서 이것만 칠한다. 너무 많이 치지 않는다: 주장이 서는 1~2문장만
+    1: ["architectural", "guides action", "space", "facilitates or prohibits"],
+    2: ["This", "predetermines", "behavior", "but", "also", "guides", "emotions"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
 lesson = {
     "id": ID, "kind": "policy", "version": "0.1",
     "source": "2026년 3월 고3 전국연합학력평가 영어 33번 (빈칸 추론, 3점)",
@@ -336,6 +386,8 @@ lesson = {
              "exam_importance": "high", "teaching_value": "high", "intervention_density": "normal"},
     "sentences": sentences,
     "passage_on_try": True,
+    # 핵심어는 선생님이 직접 확인함 (2026-10-20) — 10분 모의고사 「핵심어만 읽고 풀기」 버튼이 보인다
+    "keys_checked": True,
 }
 
 # 초급 기본 — 문장마다 「주어·동사 + 뜻」 또는 「해석 맞추기」 하나 (2026-10-15 선생님). 빈칸 문장(8)은 제외
@@ -418,6 +470,13 @@ fill_chunk_glosses(sentences, {
 
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_refers(sentences, 2, {"but it also": "it = this choreography(이 공간적 연출)"})
+add_refers(sentences, 3, {"this intuitive architectural scripting": "the designer’s intuition of behavior and desire(설계자의 직관)"})
+add_refers(sentences, 4, {"in his imagination": "his = the designer’s(설계자의)"})
+add_refers(sentences, 7, {"it": "successful architecture(성공적인 건축)"})
+
 from story_boards import add_story_boards  # noqa: E402
 add_story_boards(ID, lesson["sentences"])
 

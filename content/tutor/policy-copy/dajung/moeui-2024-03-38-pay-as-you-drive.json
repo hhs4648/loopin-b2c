@@ -18,6 +18,14 @@
       "explain": "주어는 real-time data collection, 동사는 will enable, 목적어는 insurance companies, 보어는 to charge pay-as-you-drive rates예요.",
       "from": "1chtamu"
     },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "tczn3q"
+    },
     "g_enable": {
       "say": "enable + 회사 + to ~는 '회사가 ~할 수 있게 해 준다'로 읽어요. 실시간 데이터 덕분에 보험사가 운전한 만큼 요금을 매길 수 있대요.",
       "from": "x2x4ci"

@@ -333,6 +333,24 @@ exam = {
                                 ("②", "possess more than other people", "남보다 더 많이 가지기 — 글에 없는 비교", "hl2")))}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("Gordon Allport", "Gordon Allport는"), " ", _m("argued", "주장했다"), " — 역사가 변화 없는 생활", _m("who were not content with", "에 만족하지 못한"), " ",
+                         _m("many individuals", "많은 개개인을"), " ", _m("records", "기록한다고"), "."],
+          display="Gordon Allport argued that history records many individuals who were not content with an existence that offered them little variety and minimal challenge.")
+add_match(sentences, 2, [_m("Allport", "Allport는"), " ", _m("by a vision of the future", "미래에 대한 통찰력에 의해"), " ", _m("to be pulled forward", "앞으로 나아가게 되는"), " 것을 ",
+                         _m("normal", "정상이라고"), " ", _m("considers", "여긴다"), "."])
+add_match(sentences, 4, [_m("Erich Fromm", "Erich Fromm은"), " 인간에게 ", _m("passive creatures", "수동적인 피조물"), "의 역할을 ", _m("to rise above", "넘어서고 싶은"), " ",
+                         _m("a need", "욕구를"), " 있다고 ", _m("proposed", "제시했다"), "."])
+add_match(sentences, 5, [_m("To him", "그에게"), ", ", _m("humans", "인간은"), " 창조된 상태를 ", _m("to transcend", "넘어서도록"), " ", _m("are driven", "이끌린다"),
+                         " — 대신 자기 운명의 ", _m("to become the creators", "창조자가 되려고"), " 노력한다."],
+          display="To him, humans are driven to transcend the state of merely having been created; instead, humans seek to become the creators of their own destiny.")
+add_match(sentences, 6, ["존재의 수동적 본질을 ", _m("Rising above", "넘어서서"), ", ", _m("humans", "인간은"), " ", _m("their own purposes", "자신만의 목적을"), " ",
+                         _m("generate", "만들어 내고"), " 자유의 토대를 ", _m("provide", "제공한다"), "."])
+add_refers(sentences, 2, {"it": "to be pulled forward by a vision of the future(미래의 통찰에 이끌리는 것 — 가목적어)"})
+add_refers(sentences, 3, {"He": "Allport"})
+add_refers(sentences, 5, {"To him": "to Erich Fromm(Fromm에게)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 33번 (빈칸 추론, 3점)",
     topic="빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",

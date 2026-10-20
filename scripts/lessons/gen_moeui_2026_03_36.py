@@ -468,6 +468,22 @@ for _s in sentences:
     if MODIFIERS.get(_s["id"]):
         _s["modifiers"] = MODIFIERS[_s["id"]]
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["moral considerations", "conversation-stoppers", "bring deliberations to a close"],
+    2: ["consideration-generator-squelchers", "stop any further deliberation"],
+    4: ["The problem", "what justifies that", "endlessly"],
+}
+
+for _s in sentences:
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
+
 # 초급 기본 — 문장마다 「주어·동사 찾기 + 뜻 알려 주기」 또는 「해석 맞추기」 중 하나 (2026-10-15 선생님).
 # 같은 자리(slot)에 두 방식을 두고 최근에 덜 한 쪽을 낸다. 긴 문장(20단어~)의 맞추기는 핵심어만 모은 문장으로.
 # 맞추기를 하면 주어·동사 찾기와 뜻 확인(meaning_check)은 건너뛴다
@@ -571,6 +587,18 @@ for s_ in sentences:
 
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("Daniel Dennett argues", "Daniel Dennett은 주장한다"), " — ", _m("moral considerations", "도덕적 고려 사항의"), " ",
+                         _m("one benefit", "한 가지 이점은"), " ", _m("conversation-stoppers", "대화 중단자"),
+                         " 역할을 할 수 있다는 것, 즉 그 가치는 ", _m("bring deliberations to a close", "심사숙고를 끝내는 것"), "이다."],
+          display="Daniel Dennett argues that one benefit of moral considerations is that they can serve as conversation-stoppers: their value is to bring deliberations to a close.")
+add_refers(sentences, 1, {"this": "always being able to ask for justification(항상 이유를 물을 수 있는 것)"})
+add_refers(sentences, 2, {"This": "endlessly asking ‘what justifies that?’ — the problem in (C)((C)의 끝없이 근거를 묻는 문제)",
+                          "our public interpersonal ones": "ones = deliberations(심사숙고)"})
+add_refers(sentences, 3, {"in this manner": "as a conversation-stopper(대화 중단자처럼)", "the claim": "‘That would be morally wrong!’(그 말)"})
+add_refers(sentences, 4, {"so": "respond ‘what justifies that?’(계속 되묻기)"})
+
 from story_boards import add_story_boards  # noqa: E402
 add_story_boards(ID, lesson["sentences"])
 

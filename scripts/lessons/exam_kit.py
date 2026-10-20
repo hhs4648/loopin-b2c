@@ -20,7 +20,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 sys.path.insert(0, HERE)
 import story_boards  # noqa: E402
-from beginner import add_basic, fill_chunk_glosses, m, sv_step, add_that_sv  # noqa: E402,F401
+from beginner import add_basic, fill_chunk_glosses, m, sv_step, add_that_sv, add_match, add_refers  # noqa: E402,F401
 
 SHARED = json.load(open(f"{ROOT}/content/tutor/word-glosses.json"))["words"]
 
@@ -307,6 +307,9 @@ def check(lesson, senses):
         for w in s.get("emphasis", []):
             if w not in known:
                 errs.append(f"{s['id']}: emphasis {w} 뜻 없음")
+        for w in s.get("keys", []):  # 10분 모의고사에서만 칠하는 핵심어 (수업에서 직접 찾는 문장)
+            if w not in known:
+                errs.append(f"{s['id']}: keys {w} 뜻 없음")
         for c in s.get("slashes", []):
             if c not in s["text"]:
                 errs.append(f"{s['id']}: 끊는 자리 {c} 없음")

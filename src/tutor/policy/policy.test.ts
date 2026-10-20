@@ -367,7 +367,9 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.examExplain?.["3"]?.text.startsWith("음악가도")).toBe(true);
     expect(v.buttons).toEqual(["다음으로"]);
     v = await session.submit("다음으로");
-    expect(v.review?.weeks).toBeNull();
+    // 「다시 볼 주기」 화면은 없다 — 바로 단어 체크
+    expect(v.review).toBeFalsy();
+    expect(v.screen).toBe("words");
   });
 
   it("처음엔 문제 보기(문제·지문 전체·보기), 「분석하러 갈게요」 뒤에 칠판 풀이법 + 말풍선, 그다음 분석", async () => {
@@ -640,19 +642,8 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(v.examExplain?.["5"]?.text).toBe("science는 지도에도 있지만, 글에선 과학을 흉내 내요. 구별하는 게 아니에요.");
     expect(v.examExplain?.["3"]?.correct).toBe(true);
     v = await session.submit("다음으로");
-    expect(v.screen).toBe("chat");
-    // 한 번 틀렸으니 기본 1주
-    expect(v.review?.weeks).toBe(1);
-    expect(v.message).toContain("1주 뒤에");
-    v = await session.submit("__weeks:4");
-    expect(v.message).toContain("4주 뒤에");
-    v = await session.submit("__weeks:none");
-    expect(v.review?.weeks).toBeNull();
-    expect(v.message).toBe("알겠어요, 이 지문은 복습 목록에서 뺄게요.");
-    v = await session.submit("__save");
-    expect(v.review?.saved).toBe(true);
-
-    v = await session.submit("다음으로");
+    // 「다시 볼 주기」 화면 없이 바로 단어 체크
+    expect(v.review).toBeFalsy();
     expect(v.screen).toBe("words");
     expect(v.wordCheck?.step).toBe("본문 단어 1/2");
     expect(v.wordCheck?.words.some((w) => w.en === "pastiche")).toBe(false);
@@ -697,9 +688,8 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     // 정답 해설 한 화면 → 「다음으로」면 다시 볼 주기
     expect(v.message.startsWith("정답이에요!")).toBe(true);
     v = await session.submit("다음으로");
-    expect(v.review?.weeks).toBe(3);
-    expect(v.message.startsWith("잘했어요.")).toBe(true);
-    expect(v.message).toContain("3주 뒤에");
+    expect(v.review).toBeFalsy();
+    expect(["words", "points", "chat"]).toContain(v.screen);
   });
 });
 
@@ -743,6 +733,14 @@ describe("2026년 3월 24번 — 제목 문제", () => {
   const L24 = () => allPolicyLessons().find((l) => l.id === ID24)!;
   const raw = () =>
     createPolicySession(ID24, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+  /** 핵심어 자유 해석을 뺀 문장은 읽자마자 해석 맞추기 — 칸마다 맞는 덩어리를 놓고 칭찬 화면을 넘긴다 */
+  async function solveMatch(session: ReturnType<typeof raw>, v: Awaited<ReturnType<typeof session.submit>>) {
+    if (!v.pick?.match) return v;
+    const slots = v.pick.match.ko.filter((x): x is { en: string; ko: string } => typeof x !== "string");
+    for (const [i, sl] of slots.entries()) v = await session.submit(`__match:${i}:${sl.en}`);
+    if (v.praiseOnly) v = await session.submit("__auto_next");
+    return v;
+  }
 
   it("1문장: accessible X / evaporates O → 예술의 역할 자유 응답(힌트 its) → 핵심어 6개 찾기 → 핵심어만으로 해석", async () => {
     const session = raw();
@@ -753,9 +751,10 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     expect(v.concepts?.map((c) => c.en)).toEqual(["domesticated", "take it for granted"]);
     // 핵심어는 마지막에 직접 찾는다 — 미리 색칠하지 않는다
     expect(v.emphasis).toEqual([]);
-    v = await session.submit("사라져 버린다 (evaporates)");
-    expect(v.praiseOnly).toBe(true);
-    v = await session.submit("__auto_next");
+    // 핵심어 자유 해석을 뺀 문장 — 해석 맞추기가 먼저 (2026-10-20)
+    expect(v.pick?.match).toBeTruthy();
+    v = await solveMatch(session, v);
+    // 뜻 질문(사라져 버린다)은 맞추기가 대신한다 — 바로 대조 칠판
     expect(v.panel?.kind).toBe("contrast");
     v = await session.submit("다음");
     expect(v.message).toBe("그럼 예술(art)의 역할은 뭘까요? 자유롭게 써 봐요.");
@@ -768,15 +767,9 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     v = await session.submit("다음으로");
     expect(v.message).toBe("이제 이 문장의 핵심어 6개를 찾아볼까요?");
     for (const w of ["domesticated", "evaporates", "take it for granted", "art", "restores", "visibility"]) v = await session.submit(`__pick:${w}`);
-    expect(v.praiseOnly).toBe(true);
-    v = await session.submit("__auto_next");
-    // 찾은 핵심어만 가지고 해석해 본다
-    expect(v.message).toBe("그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.");
-    expect(v.allowInput).toBe(true);
-    expect(v.highlight).toContain("take it for granted");
-    v = await session.submit("익숙한 것은 사라지고 우리는 당연하게 여긴다 예술이 다시 보이게 할 때까지");
-    expect(v.translation?.fixes).toEqual([]);
-    v = await session.submit("다음으로");
+    // 「핵심어만 가지고 해석」(자유 해석)은 뺐다 (2026-10-20) — 칭찬 뒤 바로 문장 마무리
+    for (let g = 0; g < 3 && !v.celebrate; g++) v = await session.submit(v.praiseOnly ? "__auto_next" : v.buttons[0] ?? "__auto_next");
+    expect(v.allowInput).toBeFalsy();
     expect(v.celebrate).toBe(true);
   });
 
@@ -786,6 +779,7 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     v = await session.submit("넘어가기");
     v = await session.submit("__next_sentence");
     v = await session.submit("다 읽었어요");
+    v = await solveMatch(session, v);
     expect(v.message.startsWith("this처럼 앞에 나온 걸 가리키는 말이 나오면")).toBe(true);
     expect(v.highlight).toEqual(["this task"]);
     v = await session.submit("앞 문장 볼게요");
@@ -812,10 +806,7 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     expect(v.message).toBe("이 문장의 핵심어 4개를 찾아볼까요?");
     for (const w of ["translation", "art", "suited", "this task"]) v = await session.submit(`__pick:${w}`);
     v = await session.submit("__auto_next");
-    expect(v.message).toBe("그럼 이 핵심어만 가지고 문장을 자유롭게 해석해 봐요.");
-    v = await session.submit("번역은 이 일에 잘 맞는 예술이다");
-    expect(v.translation?.fixes).toEqual([]);
-    v = await session.submit("다음으로");
+    // 핵심어만으로 해석(자유 해석)은 뺐다 (2026-10-20) — 바로 문장 마무리
     expect(v.celebrate).toBe(true);
     expect(v.message).toBe("맞아요! 두 번째 문장을 아주 잘 이해했어요!");
   });
@@ -868,12 +859,16 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     v = await session.submit("넘어가기");
     for (let i = 0; i < 3; i++) v = await session.submit("__next_sentence");
     v = await session.submit("다 읽었어요");
+    v = await solveMatch(session, v);
     expect(v.message).toBe("여기서 one은 무슨 뜻일까요?");
     expect(v.faded).toEqual(["in Berman’s terms"]);
     v = await session.submit("앞의 text를 다시 받는 '것(글)'");
-    v = await session.submit("__auto_next");
-    v = await session.submit("'본래의 낯섦'이 없는 글");
-    v = await session.submit("__auto_next");
+    if (v.praiseOnly) v = await session.submit("__auto_next");
+    // 뜻 질문('본래의 낯섦'이 없는 글)은 맞추기를 한 문장에선 건너뛴다
+    if (!v.message.startsWith("그럼 native strangeness")) {
+      v = await session.submit("'본래의 낯섦'이 없는 글");
+      if (v.praiseOnly) v = await session.submit("__auto_next");
+    }
     expect(v.message).toBe("그럼 native strangeness(본래의 낯섦)는 좋은 말일까요, 나쁜 말일까요?");
     expect(v.signs).toEqual([]);
     v = await session.submit("나쁜 말 (−)");
@@ -887,13 +882,12 @@ describe("2026년 3월 24번 — 제목 문제", () => {
     v = await session.submit("__auto_next");
     v = await session.submit("아무 일도 일어나지 않는다");
     v = await session.submit("__auto_next");
-    expect(v.message).toContain("극복할 게 아니라");
-    v = await session.submit("다음");
+    // 뜻 설명(극복할 게 아니라)은 맞추기를 한 문장에선 건너뛴다 — 바로 핵심어 찾기
+    if (!v.message.includes("핵심어")) v = await session.submit("다음");
+    expect(v.message).toBe("이 문장의 핵심어 4개를 찾아볼까요?");
     for (const w of ["A bad text", "lacks", "native strangeness", "nothing happens"]) v = await session.submit(`__pick:${w}`);
     v = await session.submit("__auto_next");
-    v = await session.submit("안 좋은 글은 본래의 낯섦이 없어서 번역해도 아무 일도 일어나지 않는다");
-    expect(v.translation?.fixes).toEqual([]);
-    v = await session.submit("다음으로");
+    // 핵심어만으로 해석(자유 해석)은 뺐다 (2026-10-20)
     expect(v.message).toBe("맞아요! 네 번째 문장을 아주 잘 이해했어요!");
   });
 
@@ -909,39 +903,36 @@ describe("2026년 3월 24번 — 제목 문제", () => {
       if (v.praiseOnly) v = await session.submit("__auto_next");
       return v;
     };
+    v = await solveMatch(session, v);
     await go("__pick:The translation of a true work of art");
     await go("번역 (The translation)");
     await go("작품 안에 이미 있던 것");
     expect(v.signs?.map((x) => x.sign)).toEqual(["+", "+"]);
     await go("다음");
     for (const w of ["The translation of a true work of art", "significant", "reinforces", "enhances", "qualities", "inherent"]) await go(`__pick:${w}`);
-    await go("진정한 예술 작품의 번역은 작품 안에 이미 있는 자질을 강화해 주기 때문에 의미 있다");
-    expect(v.translation?.fixes).toEqual([]);
-    await go("다음으로");
-    expect(v.message).toBe("맞아요! 다섯 번째 문장을 아주 잘 이해했어요!");
-    await go("다음으로");
+    // 핵심어만으로 해석(자유 해석)은 뺐다 (2026-10-20) — 문장 6으로, 읽고 나면 해석 맞추기부터
+    for (let g = 0; g < 4 && v.sentenceTag !== "문장 6"; g++) await go(v.buttons[0] ?? "__auto_next");
+    await go("다 읽었어요");
+    v = await solveMatch(session, v);
     // 문장 6 — 괄호 속 덧붙임만 흐림, 안내도 괄호로
     expect(v.faded?.[0]).toContain("Heyvaert");
     expect(v.fadedNote).toContain("괄호");
-    expect(v.tips?.[0]?.label).toBe("괄호 건너뛰기");
-    await go("다 읽었어요");
+    // 「괄호 건너뛰기」 Tip은 뺀 자유 해석 스텝에 달려 있었다
     await go("A가 아니라 B");
     await go("작품이 우리에게 낯설게 다가오는 방식");
     await go("다음");
     for (const w of ["translation", "makeshift", "the mode of existence", "reaches us", "étrange"]) await go(`__pick:${w}`);
-    await go("번역은 임시방편이 아니라 작품이 우리에게 낯설게 다가오는 방식이다");
-    expect(v.translation?.fixes).toEqual([]);
-    await go("다음으로");
-    await go("다음으로");
+    // 핵심어만으로 해석(자유 해석)은 뺐다 (2026-10-20) — 문장 7로
+    for (let g = 0; g < 4 && v.sentenceTag !== "문장 7"; g++) await go(v.buttons[0] ?? "__auto_next");
     // 문장 7 — As Wilson put it은 주어+동사가 있어 흐리지 않는다
     expect(v.faded ?? []).toEqual([]);
     await go("다 읽었어요");
-    await go("더 낯설게, 새롭게 낯설게");
-    await go("오른쪽 · 다시 보이게 함");
+    v = await solveMatch(session, v);
+    // 맞추기를 한 문장은 뜻 질문을 건너뛸 수 있다 — 핵심어 찾기까지 넘긴다
+    for (let g = 0; g < 6 && !v.pick?.open; g++) await go(v.buttons.find((b) => /낯설게|다시 보이게/.test(b)) ?? v.buttons[0] ?? "__auto_next");
     for (const w of ["translation", "makes", "the work", "more strange", "newly strange"]) await go(`__pick:${w}`);
-    await go("번역은 작품을 더 낯설게 그리고 새롭게 낯설게 보이게 만든다");
-    expect(v.translation?.fixes).toEqual([]);
-    await go("다음으로");
+    // 핵심어만으로 해석(자유 해석)은 뺐다 (2026-10-20)
+    for (let g = 0; g < 3 && !v.message.startsWith("다 모으면 이래요."); g++) await go(v.buttons[0] ?? "__auto_next");
     expect(v.message.startsWith("다 모으면 이래요.")).toBe(true);
     await go("문제 풀러 갈게요");
     expect(v.examOptions).toHaveLength(5);
@@ -973,7 +964,11 @@ describe("2026년 3월 24번 — 제목 문제", () => {
 
   it("예술의 역할 — 가리키는 것·보이게 한다가 없으면 짚어 준다", async () => {
     const session = raw();
-    for (const t of ["분석하러 갈게요", "넘어가기", "다 읽었어요", "사라져 버린다 (evaporates)", "__auto_next", "다음"]) await session.submit(t);
+    let v0 = await session.submit("분석하러 갈게요");
+    v0 = await session.submit("넘어가기");
+    v0 = await session.submit("다 읽었어요");
+    await solveMatch(session, v0);
+    await session.submit("다음");
     const v = await session.submit("예술은 사람들을 감동시킨다");
     expect(v.translation?.fixes).toEqual(["너무 익숙해서 당연하게 여기던 것을", "다시 보이게 한다"]);
     expect(v.translation?.save).toBe(true);
@@ -989,17 +984,19 @@ describe("2026년 3월 36번 — 순서 문제", () => {
     expect(v.sentenceTag).toBe("주어진 글");
     const go = async (t: string) => {
       v = await session.submit(t);
-      // 칠판 정리(2~3문장마다)는 넘긴다 — 따로 검사한다
-      for (let g = 0; g < 4 && (v.praiseOnly || v.readingFirst || v.celebrate || v.panel?.kind === "story"); g++)
+      // 칠판 정리(2~3문장마다)는 넘긴다 — 따로 검사한다. 해석 맞추기(주어·동사 찾기 대신, 2026-10-20)는 다 채우고 넘긴다
+      for (let g = 0; g < 6 && (v.praiseOnly || v.readingFirst || v.celebrate || v.panel?.kind === "story" || v.pick?.match); g++) {
+        if (v.pick?.match) {
+          const slots = v.pick.match.ko.filter((x): x is { en: string; ko: string } => typeof x !== "string");
+          for (const [i, sl] of slots.entries()) v = await session.submit(`__match:${i}:${sl.en}`);
+          continue;
+        }
         v = await session.submit(v.praiseOnly ? "__auto_next" : v.readingFirst ? "다 읽었어요" : v.buttons[0]!);
+      }
       return v;
     };
     await go("다 읽었어요");
-    // 읽자마자 뜻을 묻지 않는다 — 주어·동사(·보어)로 뼈대부터
-    expect(v.pick?.shade).toBe(true);
-    for (const w of ["Daniel Dennett", "argues"]) await go(`__pick:${w}`);
-    for (const w of ["one benefit", "is", "that they can serve as conversation-stoppers"]) await go(`__pick:${w}`);
-    expect(v.message.startsWith("찾은 뼈대를 보면")).toBe(true);
+    // 주어·동사 찾기는 뺐다 (2026-10-20) — 읽자마자 뜻 질문
     await go("대화를 끝내 주는 역할");
     // 보통은 나쁜 말인데 글은 좋게 본다 — benefit·value로 짚는다
     expect(v.message).toContain("conversation-stoppers(대화를 멈추게 하는 것)");
@@ -1062,7 +1059,7 @@ describe("2026년 3월 36번 — 순서 문제", () => {
     expect(v.examExplain?.["4"]?.correct).toBe(true);
     expect(v.examOptions?.map((o) => o.label)).toEqual(["(A)-(C)-(B)", "(B)-(A)-(C)", "(B)-(C)-(A)", "(C)-(A)-(B)", "(C)-(B)-(A)"]);
     v = await session.submit("다음으로");
-    expect(v.message).toContain("1주");
+    expect(v.review).toBeFalsy();
   });
 });
 
@@ -1156,8 +1153,7 @@ describe("2026년 3월 38번 — 문장 넣기", () => {
     await go("__auto_next");
     await go("언어가 화자에게 선택을 하게 한다는 내용");
     await go("제스처가 선택 대신 하는 일");
-    // 긴 문장 — 단계 상관없이 주어·동사 두 쌍, 그다음 the gestures를 꾸미는 덩어리
-    for (const w of ["Scholars", "have demonstrated", "the gestures", "are systematically made"]) await go(`__pick:${w}`);
+    // 주어·동사 찾기는 뺐다 (2026-10-20) — 꾸미는 덩어리 설명(그림) 다음 뜻 질문
     expect(v.panel?.kind).toBe("structure");
     await go("다음");
     await go("제스처는 말과 동시에 만들어진다");
@@ -1209,23 +1205,23 @@ describe("2026년 3월 39번 — 줄인 판(2026-10-14): 줄기는 모두에게,
     return { v, seen, saved };
   }
 
-  it("다 맞히면: S·V·O 찾기는 처음 한 번만, 딸린 설명·대시 뒤 해석은 건너뛰고, ①~⑤ 흐름 확인과 Other를 지나 보기 화면에 간다", async () => {
-    const { v, seen, saved } = await walk();
+  it("다 맞히면: S·V·O 찾기는 없고(2026-10-20 삭제), 딸린 설명·대시 뒤 해석은 건너뛰고, ①~⑤ 흐름 확인과 Other를 지나 보기 화면에 간다", async () => {
+    const { v, seen } = await walk();
     expect(v.examOptions).toHaveLength(5);
-    expect(saved.known).toContain("svo_find");
-    expect(seen.filter((x) => /_svc?$/.test(x))).toEqual(["g_sv"]);
+    expect(seen.filter((x) => /_svc?$/.test(x))).toEqual([]);
     for (const x of ["g_for_note", "g_svo2", "g_rel_note"]) expect(seen).not.toContain(x);
     for (const x of ["s3_flow", "s4_flow", "s5_flow", "s6_flow", "s7_other", "s7_flow", "s2_sort", "s3_sort_experts"]) expect(seen).toContain(x);
-    // 잘하는 학생 기준 — 예전 56스텝에서 크게 줄었다 (칠판 정리 3장 포함)
-    expect(seen.length).toBeLessThanOrEqual(38);
+    // 잘하는 학생 기준 — 예전 56스텝에서 크게 줄었다 (칠판 정리 3장 + 주어진 문장의 해석 맞추기 1장 포함)
+    expect(seen.length).toBeLessThanOrEqual(39);
   });
 
-  it("주어진 문장에서 S·V·O를 한 번 틀리면 다음 문장에서도 S·V·O를 찾고, 거기서 다 맞히면 그다음부터 건너뛴다", async () => {
+  it("S·V·O 찾기는 틀려도 다시 나오지 않는다 — 활동 자체를 뺐다 (2026-10-20)", async () => {
     const { seen } = await walk(true);
-    expect(seen.filter((x) => /_svc?$/.test(x))).toEqual(["g_sv", "s2_svc"]);
+    expect(seen.filter((x) => /_svc?$/.test(x))).toEqual([]);
   });
 
-  it("S·V·O 해석 안내 대사 없이 바로 해석하고, 노란 박스 위에 「왜 핵심어만 보나요?」 칩이 뜬다", async () => {
+  // 핵심어만 나열하는 자유 해석은 뺐다 (2026-10-20 선생님) — 해석 맞추기가 대신한다
+  it.skip("S·V·O 해석 안내 대사 없이 바로 해석하고, 노란 박스 위에 「왜 핵심어만 보나요?」 칩이 뜬다", async () => {
     const { seen } = await walk();
     expect(seen).not.toContain("g_svo_tip");
     const session = createPolicySession(ID, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
@@ -1247,7 +1243,8 @@ describe("2026년 3월 39번 — 줄인 판(2026-10-14): 줄기는 모두에게,
   });
 });
 
-describe("2026년 3월 39번 이전 버전(v1) — 주어진 문장 주어·동사 찾기", () => {
+// 주어·동사 찾기 활동은 2026-10-20에 뺐다 — v1 흐름 검사는 건너뛴다
+describe.skip("2026년 3월 39번 이전 버전(v1) — 주어진 문장 주어·동사 찾기", () => {
   it("읽기 끝나면 덩어리째 S·V·O 두 쌍을 찾고 S·V·O만으로 해석한다 — for most outsiders는 전치사라서, 찾은 건 S·V 표시로 남는다", async () => {
     const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
@@ -1341,7 +1338,7 @@ describe("2026년 3월 39번 이전 버전(v1) — 주어진 문장 주어·동�
   });
 });
 
-describe("2026년 3월 39번 이전 버전(v1) — 문장 1 주어·동사·목적어 찾기", () => {
+describe.skip("2026년 3월 39번 이전 버전(v1) — 문장 1 주어·동사·목적어 찾기", () => {
   it("읽기 끝나면 덩어리째 S·V·O를 찾고(to become a member = needs의 목적어), for which 뒤 I는 덧붙임 안의 주어라고 알려 준 뒤 S·V·O만 해석한다", async () => {
     const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
@@ -1389,7 +1386,7 @@ describe("2026년 3월 39번 이전 버전(v1) — 문장 1 주어·동사·목�
   });
 });
 
-describe("2026년 3월 39번 이전 버전(v1) — 문장 2 동사 두 개·전치사의 목적어", () => {
+describe.skip("2026년 3월 39번 이전 버전(v1) — 문장 2 동사 두 개·전치사의 목적어", () => {
   it("and 뒤 동사까지 S·V를 찾고, 전치사의 목적어를 찾은 뒤 핵심어로 요약하고, 단어 지도로 끝난다", async () => {
     const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
@@ -1417,7 +1414,7 @@ describe("2026년 3월 39번 이전 버전(v1) — 문장 2 동사 두 개·전�
   });
 });
 
-describe("2026년 3월 39번 이전 버전(v1) — 문장 3~6도 주어·동사 찾기 → 핵심어 요약", () => {
+describe.skip("2026년 3월 39번 이전 버전(v1) — 문장 3~6도 주어·동사 찾기 → 핵심어 요약", () => {
   // [주어·동사(보어) 고르기, 그 답, 전치사의 목적어 답, 요약]
   const cases: [string, string[], string[], string][] = [
     ["s5_sv", ["epistemic communities", "were often kept", "secret"], [],
@@ -1451,7 +1448,7 @@ describe("2026년 3월 39번 이전 버전(v1) — 문장 3~6도 주어·동사 
   });
 });
 
-describe("2026년 3월 39번 이전 버전(v1) — 문장 3은 요약 없이 핵심어(주어·동사 + tests) → 그림", () => {
+describe.skip("2026년 3월 39번 이전 버전(v1) — 문장 3은 요약 없이 핵심어(주어·동사 + tests) → 그림", () => {
   it("there are 설명 뒤 핵심어를 짚고 입회 절차 그림을 보여 준다", async () => {
     const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
@@ -1470,7 +1467,7 @@ describe("2026년 3월 39번 이전 버전(v1) — 문장 3은 요약 없이 핵
   });
 });
 
-describe("2026년 3월 39번 이전 버전(v1) — 문장 5: S·V·C·목적어 모두 → 앞부분 뜻 고르기 → but → 핵심어 → 칠판", () => {
+describe.skip("2026년 3월 39번 이전 버전(v1) — 문장 5: S·V·C·목적어 모두 → 앞부분 뜻 고르기 → but → 핵심어 → 칠판", () => {
   it("요약 없이 secret → openness 칠판으로 정리한다", async () => {
     const session = createPolicySession("moeui-2026-03-39-epistemic-communities-v1", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
@@ -1504,7 +1501,8 @@ describe("자유 해석 — 한 군데까지는 봐준다", () => {
   it("lift를 '들어올리다'로 써도 맞다", () => {
     expect(gradeTranslation(svo1(), "대부분의 외부인에게는 완전히 투명한 관행조차 장막을 들어올리지 못한다").issues).toEqual([]);
   });
-  it("한 군데만 다르면 틀렸다고 하지 않고 그 곳만 표시한다", async () => {
+  // 핵심어 자유 해석 스텝이 빠져 수업에서는 안 나온다 — 채점 규칙 자체는 위 gradeTranslation 테스트가 본다
+  it.skip("한 군데만 다르면 틀렸다고 하지 않고 그 곳만 표시한다", async () => {
     const session = createPolicySession("moeui-2026-03-39-epistemic-communities", null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
     let v = await session.submit("분석하러 갈게요");
     for (let g = 0; g < 4 && !v.readingFirst; g++) v = await session.submit(v.buttons[0] ?? "__auto_next");
@@ -1544,9 +1542,8 @@ describe("2026학년도 6월 모평 34·37번 — 처음부터 끝까지 정답�
       } else v = await session.submit(v.buttons[0] ?? "__auto_next");
     }
     expect(v.examOptions).toHaveLength(5);
-    // 주어·동사 찾기와 보기 고르기를 실제로 지나왔다 (모두에게 보이는 찾기가 있는 레슨만 — 듣기 대본 레슨은 초급만 찾는다)
-    if (lesson.sentences.some((s) => s.steps.some((st) => st.id.endsWith("_sv") && !st.levels)))
-      expect([...seen].some((x) => x.endsWith("_sv"))).toBe(true);
+    // 주어·동사 찾기는 수업에서 뺐다 (2026-10-20) — 지나오지 않는다
+    expect([...seen].some((x) => /_sv$|_svc$/.test(x))).toBe(false);
   });
 });
 
@@ -1620,7 +1617,8 @@ describe("6월 34번 — 빈칸 위치 먼저(질문 없이) → 순서대로 �
     expect(v.readingFirst).toBe(true);
     expect(v.sentenceTag).toBe("문장 1");
     v = await session.submit("다 읽었어요");
-    expect(session.lastAction()?.interactionId).toBe("s1_sv");
+    // 주어·동사 찾기는 뺐다 (2026-10-20)
+    expect(session.lastAction()?.interactionId).not.toBe("s1_sv");
     const lesson = allPolicyLessons().find((l) => l.id === "mopyeong-2026-06-34-geography-where")!;
     const blankSentence = lesson.sentences.find((s) => s.steps.some((st) => st.id === "s6_fill"))!;
     expect(blankSentence.text).toContain("________");
@@ -1649,16 +1647,24 @@ describe("학생 단계 — 고·중·초에 따라 영어를 돕는 화면만 �
   it("고는 짧은 문장의 주어·동사, 가리키는 말, 헷갈리는 단어 뜻을 건너뛰고 내용 파악은 그대로 본다", async () => {
     const high = await walk("고");
     const mid = await walk("중", ["match"]); // 맞추기 차례가 아닐 때
-    for (const id of ["s1_sv", "s1_word", "s5_appreciation", "s6_scale"]) {
+    for (const id of ["s6_scale"]) {
       expect(high.has(id)).toBe(false);
       expect(mid.has(id)).toBe(true);
     }
-    for (const id of ["s1_meaning", "s5_sv", "s6_fill", "s6_side", "s4_same"]) expect(high.has(id)).toBe(true);
+    expect(high.has("s5_appreciation")).toBe(false);
+    // s1_word는 1문장의 맞추기가 자리를 차지해 중도 안 본다
+    expect(mid.has("s1_match")).toBe(true);
+    // 주어·동사 찾기는 누구에게도 없다 (2026-10-20)
+    for (const id of ["s1_sv", "s5_sv"]) {
+      expect(high.has(id)).toBe(false);
+      expect(mid.has(id)).toBe(false);
+    }
+    for (const id of ["s6_fill", "s6_side", "s4_same"]) expect(high.has(id)).toBe(true);
     expect(high.size).toBeLessThan(mid.size);
-    // 해석 맞추기는 중·초만 — 고는 뜻 객관식
+    // 1문장의 주어·동사 찾기(중·초)를 뺀 자리는 해석 맞추기가 대신한다 — 고는 원래 안 봤으니 뜻 객관식 그대로 (2026-10-20)
     expect(high.has("s1_match")).toBe(false);
+    expect(high.has("s1_meaning")).toBe(true);
     expect((await walk("중")).has("s1_match")).toBe(true);
-    expect(mid.has("s1_meaning")).toBe(true);
   });
   it("해석 맞추기(s1_match): 칸에 맞지 않는 덩어리는 「아쉽게도 틀렸어요」+ 그 칸 뜻, 맞으면 칸이 채워지고 다 채우면 칭찬", async () => {
     const id = "mopyeong-2026-06-34-geography-where";
@@ -1686,12 +1692,11 @@ describe("학생 단계 — 고·중·초에 따라 영어를 돕는 화면만 �
     const fresh = await walk("초");
     expect(fresh.has("s1_match")).toBe(true);
     expect(fresh.has("s1_meaning")).toBe(false);
-    // 맞추기를 하는 문장은 주어·동사 찾기를 건너뛴다 — 둘 다 하면 되풀이
-    expect(fresh.has("s1_sv")).toBe(false);
+    expect(fresh.has("s1_sv")).toBe(false); // 주어·동사 찾기는 뺐다
+    // 주어·동사 찾기를 뺀 자리는 돌려 내지 않고 늘 맞추기 (2026-10-20)
     const after = await walk("초", ["match"]);
-    expect(after.has("s1_match")).toBe(false);
-    expect(after.has("s1_meaning")).toBe(true);
-    expect(after.has("s1_sv")).toBe(true);
+    expect(after.has("s1_match")).toBe(true);
+    expect(after.has("s1_meaning")).toBe(false);
   });
 
   it("초는 중이 보는 화면을 다 보되, 해석 맞추기를 한 문장에서만 주어·동사 찾기·뜻 확인을 건너뛴다", async () => {
@@ -1725,7 +1730,7 @@ describe("다의 기능어(to, for, that …)는 문장마다 그 자리 쓰임�
   });
 });
 
-describe("초급은 문장마다 「주어·동사 + 뜻」 또는 「해석 맞추기」 하나", () => {
+describe("초급은 문장마다 「해석 맞추기」 하나 — 주어·동사 찾기는 뺐다 (2026-10-20)", () => {
   it.each([
     ["moeui-2026-03-36-conversation-stoppers", [2, 3, 4]],
     ["mopyeong-2026-06-37-chaos-pendulum", [2, 3, 4, 5, 6, 7, 8, 9]],
@@ -1756,27 +1761,19 @@ describe("초급은 문장마다 「주어·동사 + 뜻」 또는 「해석 맞
       else v = await session.submit(v.buttons[0] ?? "__auto_next");
     }
     expect(v.examOptions).toHaveLength(5);
-    // that(명사절) 안이 핵심인 문장은 메인 주어·동사 다음 그 안의 주어·동사도 찾는다
-    for (const st of lesson.sentences.flatMap((s) => s.steps).filter((x) => x.id.endsWith("_that_sv"))) expect(seen).toContain(st.id);
-    // 긴 문장(20단어~)은 주어·동사가 늘 보이고(맞추기는 더해질 수 있다), 짧은 문장만 둘 중 하나
-    const long = (n: number) => lesson.sentences.find((s) => s.id === n)!.text.split(/\s+/).length >= 20;
-    for (const n of ids.filter(long)) {
-      const sv = lesson.sentences.find((s) => s.id === n)!.steps.find((x) => x.slot === `s${n}_basic` && x.type === "pick" && x.roles);
-      // 「이미 잘 찾는다」(known)로 건너뛸 수 있는 찾기는 빼고
-      if (sv && !sv.known) expect(seen, `긴 문장 ${n}`).toContain(sv.id);
-    }
-    const kinds = ids.filter((n) => !long(n)).map((n) => {
-      const slotted = lesson.sentences.find((s) => s.id === n)!.steps.filter((x) => x.slot === `s${n}_basic`).map((x) => x.id);
+    // 주어·동사 찾기(roles pick)는 어떤 문장에서도 나오지 않는다
+    for (const st of lesson.sentences.flatMap((s) => s.steps).filter((x) => x.type === "pick" && x.roles)) expect(seen).not.toContain(st.id);
+    for (const n of ids) {
+      const sen = lesson.sentences.find((s) => s.id === n)!;
+      const slotted = sen.steps.filter((x) => x.slot === `s${n}_basic`).map((x) => x.id);
       const shown = slotted.filter((x) => seen.includes(x));
-      expect(shown, `문장 ${n}`).toHaveLength(1);
-      const match = shown[0] === `s${n}_match`;
+      // 같은 자리에선 하나만 (맞추기·객관식을 돌려 낸다) — 주어·동사 찾기는 절대 아니다
+      expect(shown.length, `문장 ${n}`).toBeLessThanOrEqual(1);
+      expect(shown.some((x) => /_sv$|_svc$/.test(x)), `문장 ${n}`).toBe(false);
       // 맞추기를 하면 뜻 풀기·뜻 질문은 건너뛴다
-      if (match) for (const x of lesson.sentences.find((s) => s.id === n)!.steps.filter((x) => x.meaning_check)) expect(seen).not.toContain(x.id);
-      return match;
-    });
-    // 방식이 돌아간다 — 긴 문장의 맞추기까지 쳐서 수업 전체에 맞추기와 주어·동사 찾기가 둘 다 나온다
+      if (shown[0] === `s${n}_match`) for (const x of sen.steps.filter((x) => x.meaning_check)) expect(seen).not.toContain(x.id);
+    }
     expect(seen.some((x) => x.endsWith("_match"))).toBe(true);
-    expect(kinds.length === 0 || seen.some((x) => /_sv$|_svc$/.test(x))).toBe(true);
   });
 });
 

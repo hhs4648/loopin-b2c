@@ -18,6 +18,14 @@
       "explain": "주어는 That perception is a construction(인식이 구성물이라는 것), 동사는 is not true예요. That + 문장 전체가 주어예요.",
       "from": "5w3yp2"
     },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "145mfe1"
+    },
     "s1_that": {
       "say": "That + 문장이 통째로 주어가 될 수 있어요. 'That perception is a construction'은 '인식이 만들어진 것이라는 것은'이에요.",
       "from": "4ghdg1"
@@ -161,6 +169,14 @@
       "praise": "다 찾았어요!",
       "explain": "and 뒤는 주어 the imaging(그 영상), 동사 showed(보여 주었다)예요. that 뒤가 보여 준 내용이에요.",
       "from": "169bs6w"
+    },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1k5pl5i"
     },
     "s6_that_sv": {
       "ask": "that 뒤가 실험 결과예요. 그 안에서 주어(S), 동사(V), 목적어(O)를 찾아볼까요?",

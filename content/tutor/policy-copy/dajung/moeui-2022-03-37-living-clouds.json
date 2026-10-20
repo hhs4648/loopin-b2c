@@ -18,6 +18,14 @@
       "explain": "첫 문장은 S the clouds, V may seem, C alive and independent예요. 둘째 문장은 S a metaphorical chain, V begins, O to neutralize the fear예요.",
       "from": "fq3rmq"
     },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1n3uonq"
+    },
     "g_lamb": {
       "ask": "But 뒤를 봐요. 구름을 털 많은 어린 양(fleecy lambs)으로 보면 어떻게 된대요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -64,6 +72,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어는 Cloud movement(구름의 움직임), 동사는 becomes, 보어는 differentiated(구별되는)예요. because 뒤가 그 이유예요.",
       "from": "1usqww0"
+    },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "15cn8pi"
     },
     "a_before": {
       "ask": "(A)는 '구름의 움직임은 생물을 살아 있게 하는 움직임과 구별된다'로 시작해요. 앞에는 무엇이 와야 할까요?",
@@ -175,6 +191,14 @@
       "explain": "주어는 the child, 동사는 can theorize(이론화할 수 있다)예요. 콤마(,) 앞은 어떤 상황인지 알려 줘요.",
       "from": "1l4ynjh"
     },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1dgg7yh"
+    },
     "b3_how": {
       "ask": "아이가 이론을 세우면 구름이 어떻게 된대요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -217,6 +241,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어는 Children, 동사는 develop, 목적어는 theoretical constructs(이론적인 생각)예요. that 덩어리가 그 생각을 꾸며요.",
       "from": "12ez3vo"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "14ljyll"
     },
     "c_before": {
       "ask": "(C)는 '아이들은 구름의 움직임을 사람·동물의 움직임과 구분하는 이론적 생각을 만든다'로 시작해요. 앞에는 무엇이 와야 할까요?",

@@ -41,6 +41,14 @@
       "explain": "주어는 Gordon Allport, 동사는 argued예요. that 뒤가 주장한 내용이에요.",
       "from": "1uxtqbz"
     },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "gxvvme"
+    },
     "s1_content": {
       "ask": "who 뒤를 봐요. 역사에 기록된 많은 사람들은 어떤 사람들이었대요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -71,6 +79,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어 Allport, 동사 considers, 목적어 it, 보어 normal이에요. it은 뒤의 to be pulled forward를 받아요.",
       "from": "15w1lyc"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "z59nzd"
     },
     "s2_side": {
       "ask": "빈칸은 Allport가 정상(normal)이라고 본 욕구예요. 칠판 왼쪽 삶과 같은 쪽일까요, 반대 쪽일까요?",
@@ -145,6 +161,14 @@
       "explain": "주어 Erich Fromm, 동사 proposed, 목적어 a need예요. a need는 뒤의 to rise above와 이어져요.",
       "from": "i4nito"
     },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "t8shxl"
+    },
     "s4_rise": {
       "ask": "Similarly(마찬가지로) — Fromm도 비슷한 말을 해요. 인간에게 어떤 욕구가 있대요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -175,6 +199,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어 humans, 동사 are driven이에요. 세미콜론(;) 뒤 instead 문장도 주어는 humans, 동사는 seek예요.",
       "from": "2wfudu"
+    },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1t5xf3q"
     },
     "s5_become": {
       "ask": "instead(대신에) 뒤를 봐요. 인간은 무엇이 되려고 한대요?",
@@ -209,6 +241,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어 humans, 동사 generate와 provide, generate의 목적어는 their own purposes예요.",
       "from": "1nj5jf1"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1chckrt"
     },
     "s6_board": {
       "say": "Rising above는 앞의 rise above를 또 말해요. 자기 목적을 스스로 만들어 내고, 그래서 자유를 얻는대요.",

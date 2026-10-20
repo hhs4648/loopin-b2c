@@ -414,6 +414,18 @@ exam = {
                                 ("경고한 것", "get angry at the rain / that person", "통제 밖의 일에 화내기 (감정)", "hl2")))}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 3, [_m("Stoic philosophy", "스토아 철학은"), " ", _m("about that", "그것에 관한 것"), "이었다 — ", _m("taking charge of your life", "여러분의 삶을 책임지는 것"),
+                         ", ", _m("within your power", "여러분의 힘 안에 있는"), " 것들에 노력하고, 할 수 없는 것들에는 ", _m("not to waste energy", "에너지를 낭비하지 않는 것"), "."],
+          display="Stoic philosophy was about that―taking charge of your life, learning to work on those things within your power and not to waste energy on things you cannot.")
+add_refers(sentences, 3, {"about that": "depending on no one but yourself(자신 외에 누구에게도 의존하지 않는 것)"})
+add_refers(sentences, 5, {"we make about them": "them = our circumstances(우리의 상황)"})
+add_refers(sentences, 7, {"it spoils our picnic": "it = the rain(비)"})
+add_refers(sentences, 8, {"That would be silly": "That = getting angry at the rain(비에 화내는 것)"})
+add_refers(sentences, 11, {"to tie them to the weather": "them = our feelings of well-being(안녕에 관한 감정)"})
+add_refers(sentences, 12, {"it": "anything not in our control(통제 밖의 것)"})
+
 lesson = base_lesson(
     ID, source="2024년 3월 고3 전국연합학력평가 영어 33번 (빈칸 추론, 3점)",
     topic="빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",

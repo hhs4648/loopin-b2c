@@ -684,6 +684,10 @@
           ],
           "meaning_check": true
         }
+      ],
+      "emphasis": [
+        "dexterity",
+        "has strengthened"
       ]
     },
     {
@@ -1455,6 +1459,12 @@
             ]
           }
         }
+      ],
+      "emphasis": [
+        "eliminate",
+        "the logical gaps",
+        "gives way to",
+        "preoccupation with correctness"
       ]
     },
     {
@@ -1614,6 +1624,64 @@
             "explain": "주어는 our writing and oral storying, 동사는 become, 보어는 increasingly conventional and literal이에요."
           },
           "method": 0
+        },
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s5_basic",
+          "candidates": [
+            "As a result",
+            "our writing and oral storying",
+            "become",
+            "increasingly conventional and literal",
+            "the spontaneity and originality"
+          ],
+          "answers": [
+            "As a result",
+            "our writing and oral storying",
+            "increasingly conventional and literal",
+            "become",
+            "the spontaneity and originality"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "As a result",
+                "ko": "그 결과"
+              },
+              ", ",
+              {
+                "en": "our writing and oral storying",
+                "ko": "우리의 글쓰기와 구술은"
+              },
+              " ",
+              {
+                "en": "increasingly conventional and literal",
+                "ko": "점점 더 상투적이고 사실에 충실하게"
+              },
+              " ",
+              {
+                "en": "become",
+                "ko": "된다"
+              },
+              ", ",
+              {
+                "en": "the spontaneity and originality",
+                "ko": "즉흥성과 독창성의"
+              },
+              " ________을 수반하면서."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "As a result, our writing and oral storying become increasingly conventional and literal, with an accompanying ________ of the spontaneity and originality."
         },
         {
           "id": "s5_sort_now",
@@ -1864,6 +1932,11 @@
           "method": 1,
           "button": "다음 문장"
         }
+      ],
+      "emphasis": [
+        "conventional and literal",
+        "with an accompanying",
+        "spontaneity and originality"
       ]
     },
     {
@@ -2010,7 +2083,10 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "refers": {
+        "At this stage": "ages eight through sixteen(8~16세)"
+      }
     },
     {
       "id": 7,

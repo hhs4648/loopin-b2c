@@ -28,7 +28,30 @@ function supabase(): SupabaseClient | null {
   const url = import.meta.env.VITE_SUPABASE_URL?.trim();
   const key = import.meta.env.VITE_SUPABASE_ANON_KEY?.trim();
   if (!url || !key) return null;
-  if (!client) client = createClient(url, key);
+  if (!client) {
+    client = createClient(url, key, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        /*
+          소셜 로그인에서 돌아올 때 URL의 `?code=`를 세션으로 바꾼다.
+          끄면 `/auth/callback`이 세션을 영원히 못 찾는다.
+        */
+        detectSessionInUrl: true,
+        flowType: "pkce",
+      },
+    });
+    /*
+      이메일을 붙이거나 다른 기기에서 로그인하면(`auth.ts`) 학습자가 바뀔 수 있다.
+      여기서 따라가야 그 뒤의 기록·동기화(`cloud.ts`)가 새 uid로 간다.
+    */
+    client.auth.onAuthStateChange((_event, session) => {
+      if (session?.user && session.user.id !== learnerId) {
+        learnerId = session.user.id;
+        sessionRow = null; // 수업 행은 예전 학습자 것 — 새 uid로는 못 고친다
+      }
+    });
+  }
   return client;
 }
 
@@ -64,8 +87,8 @@ export async function learnerToken(): Promise<string | null> {
  * 학습자 신원.
  *
  * **익명으로 시작한다.** 지금 필요한 건 난이도 집계이고 그건 익명으로 충분하다.
- * 나중에 계정을 붙일 때 `linkIdentity`로 같은 uid에 이어 붙이면 지금까지의
- * 기록이 따라온다 — 새 계정을 만들면 기록이 남의 것이 된다.
+ * 계정(이메일)은 `auth.ts`가 `updateUser({ email })`로 **같은 uid에** 붙인다 —
+ * 지금까지의 기록이 그대로 따라온다. 새 계정을 만들면 기록이 남의 것이 된다.
  */
 export async function ensureLearner(): Promise<string | null> {
   const db = supabase();
@@ -83,6 +106,14 @@ export async function ensureLearner(): Promise<string | null> {
     return (learnerId = signed.user.id);
   })();
   return learnerInFlight;
+}
+
+/** 로그인 직후(`auth.ts`) — 이벤트를 기다리지 않고 바로 새 학습자로 바꾼다 */
+export function adoptLearner(id: string): void {
+  if (id === learnerId) return;
+  learnerId = id;
+  learnerInFlight = Promise.resolve(id);
+  sessionRow = null;
 }
 
 /** 수업 시작. 실패하면 이후 기록도 조용히 건너뛴다 */

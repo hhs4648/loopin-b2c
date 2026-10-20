@@ -338,6 +338,21 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("That perception is a construction", "인식이 구성이라는 것은"), " 단지 ", _m("visual and auditory information", "시각 및 청각 정보"),
+                         _m("such as", "와 같은"), " ", _m("one’s perception of sensory input", "감각적 투입에 대한 인식"),
+                         _m("is not true just of", "에만 해당되는 것이 아니다"), "."])
+add_match(sentences, 6, ["우리는 안다 — ", _m("the imaging", "그 영상은"), " ", _m("drinking what they believed was an expensive glass of wine", "비싼 와인이라고 믿은 것을 마시는 것이"), " ",
+                         _m("their centers of taste for pleasure", "만족감을 담당하는 미각 중추를"), " ", _m("really did activate", "실제로 더 활성화했다는 것을"), " ",
+                         _m("showed", "보여 줬다"), "."],
+          display="We know because the imaging showed that drinking what they believed was an expensive glass of wine really did activate their centers of taste for pleasure.")
+add_refers(sentences, 2, {"It is true of": "It = that perception is a construction(인식이 구성이라는 것)"})
+add_refers(sentences, 4, {"That wasn’t because": "That = the correlation when wines were labeled by price(가격표를 붙이자 평가가 달라진 것)"})
+add_refers(sentences, 5, {"it wasn’t true": "it = the effect of price on taste(가격이 맛 평가에 미친 영향)"})
+add_refers(sentences, 7, {"That": "price activating the taste centers(가격이 미각 중추를 더 활성화한 것)"})
+add_refers(sentences, 8, {"it": "taste(미각)"})
+
 lesson = base_lesson(
     ID, source="2024년 3월 고3 전국연합학력평가 영어 21번 (밑줄 의미 추론, 2점)",
     topic="밑줄 문제 푸는 법: 핵심 단어 → 관계(감각 + 마음) → 밑줄 뜻",

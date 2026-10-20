@@ -189,8 +189,8 @@ export function LessonList({
             </div>
             <div className="my-shelf">
               <button type="button" className="shelf-btn" onClick={() => onOpenSaved("vocab")}>
-                <b>📒 단어장</b>
-                <small>저장한 단어 {vocabCount}개</small>
+                <b>📒 연습실</b>
+                <small>단어 {vocabCount} · 문장 · 문법</small>
               </button>
               <button type="button" className="shelf-btn" onClick={() => onOpenSaved("notes")}>
                 <b>⭐ 내 노트</b>

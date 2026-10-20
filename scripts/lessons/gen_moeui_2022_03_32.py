@@ -367,6 +367,35 @@ exam = {
                                 ("그래서", "the journey ________", "여행은 정말 있었다", "hl2")))}),
 }
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["the sources", "become fewer"],
+    5: ["on their right", "the opposite direction"],
+    6: ["not strong enough", "fabricate", "accurate", "detail"],
+    7: ["leads", "conclude"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_refers(sentences, 4, {"They": "the Phoenician expedition(페니키아 원정대)"})
+add_refers(sentences, 7, {"It is this that": "this = the prosaic detail about the sun(태양 위치라는 평범한 세부 사항)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 32번 (빈칸 추론, 3점)",
     topic="빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 근거 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",

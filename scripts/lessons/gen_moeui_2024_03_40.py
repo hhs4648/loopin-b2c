@@ -439,6 +439,17 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 2, [_m("plasticity", "‘가소성’은"), " ", _m("the key idea", "핵심 개념이"), " ", _m("to mold something once", "무언가를 한 번 성형하고"), " ",
+                         _m("keep it that way forever", "그대로 영원히 유지하는 것이라고"), " ", _m("suggests", "시사한다"), "."],
+          display="“plasticity” suggests that the key idea is to mold something once and keep it that way forever.")
+add_refers(sentences, 4, {"It": "the brain(뇌)"})
+add_refers(sentences, 5, {"it": "a developing city(개발 중인 도시)"})
+add_refers(sentences, 6, {"it": "the city(그 도시)"})
+add_refers(sentences, 9, {"It": "a city(도시)"})
+add_refers(sentences, 13, {"It": "the diary(일기)", "that previous person": "the you who wrote the diary(일기를 쓴 과거의 나)"})
+
 lesson = base_lesson(
     ID, source="2024년 3월 고3 전국연합학력평가 영어 40번 (요약문 완성, 2점)",
     topic="요약문 푸는 법: 지문을 먼저 읽으며 두 쪽 말을 칠판에 모으기 → 요약문 (A)(B)가 각각 어느 쪽인지 → 그 뜻의 말 고르기",

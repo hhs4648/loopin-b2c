@@ -1,30 +1,42 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { LessonSet } from "../../content/tutor/types";
 import {
+  averageTimes,
   byKind,
   clock,
+  clearDoing,
+  estimatedExamScore,
+  isReviewMock,
   loadAttempts,
+  loadDoing,
   saveAttempt,
+  saveDoing,
   scoreOf,
   type MiniAttempt,
   type MiniItem,
   type MiniMock,
 } from "../tutor/mini";
 import { getSet } from "../tutor/sets";
+import { isDone, loadProgress } from "../tutor/progress";
+import { mockKeyWords } from "../tutor/counsel";
 import { loadLearnerName } from "../tutor/learner-name";
 import { getUser, MiniRecorder, startAnalysis } from "../tutor/miniLog";
 import { MiniTeacherBoard } from "./MiniTeacherBoard";
-import { MarkArea, markWords, NO_MARKS, type Marks } from "./MiniMarks";
+import { MarkArea, markWords, NO_MARKS, NO_OVERLAY, type Marks, type Overlay, type Pen } from "./MiniMarks";
+import { getPolicyLesson } from "../tutor/policy/lessons";
 import { cleanWord, meaningOf } from "../tutor/miniWords";
-import { addVocab } from "../tutor/vocab";
+import { addVocab, isSaved, loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab";
 
-const NUM = "①②③④⑤";
+export const NUM = "①②③④⑤";
 
 /**
  * 푸는 중에 분석 레슨으로 간 시험 — 돌아오면 같은 문항에서 이어 푼다(분석한 시간은 시험 시간에서 뺀다).
  * 화면이 닫혀도 남아야 해서 모듈에 둔다
  */
-type Paused = { mockId: string; answers: Record<number, number>; checked: number[]; peeked: number[]; marks: Record<number, Marks>; at: number; usedMs: number; recorder: MiniRecorder | null };
+/** 「분석 먼저 하고 풀게요」에서 레슨으로 간 모의고사 — 돌아오면 분석 목록으로 (`paused`와 같은 방식) */
+let prepFor: string | null = null;
+
+type Paused = { mockId: string; answers: Record<number, number>; checked: number[]; peeked: number[]; marks: Record<number, Marks>; at: number; usedMs: number; times?: Record<number, number>; recorder: MiniRecorder | null };
 let paused: Paused | null = null;
 export function hasPausedExam(mockId: string): boolean {
   return paused?.mockId === mockId;
@@ -39,6 +51,10 @@ type Props = {
   onAnalyze: (set: LessonSet, fromExam: boolean) => void;
   /** 학생 테스트용 링크 — 목록 없이 이 시험만. 이름을 받고 지표를 남긴다 */
   standalone?: boolean;
+  /** 코스에서 단계별로 열 때 — 단어 학습(words) · 분석 목록(prep) */
+  initialStage?: "words" | "prep";
+  /** 시작 화면 맨 위 다정쌤 한 줄 — 첫 방문 체험 분석을 마치고 왔을 때 */
+  lead?: string;
 };
 
 const NAME_KEY = "loopin.mini.name";
@@ -54,10 +70,12 @@ function savedName(): string {
  * 미니 모의고사 — 시작 → 시간 재며 풀기(문항마다 바로 정답 확인·분석도 된다) → 제출(또는 시간 끝) → 점수와 문항별 해설.
  * 수업과 달리 선생님 말은 없다. 실제 시험처럼 문제만.
  */
-export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone }: Props) {
+export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone, initialStage, lead }: Props) {
   const resume = paused?.mockId === mock.id ? paused : null;
-  const [stage, setStage] = useState<"intro" | "exam" | "result">(() =>
-    resume ? "exam" : showLast && loadAttempts(mock.id).length ? "result" : "intro",
+  // 「분석 먼저」에서 레슨에 갔다 돌아오면 다시 그 목록으로
+  const backToPrep = prepFor === mock.id;
+  const [stage, setStage] = useState<"intro" | "words" | "prep" | "exam" | "result">(() =>
+    resume ? "exam" : backToPrep ? "prep" : initialStage ?? (showLast && loadAttempts(mock.id).length ? "result" : "intro"),
   );
   const [attempt, setAttempt] = useState<MiniAttempt | null>(() => (showLast ? (loadAttempts(mock.id)[0] ?? null) : null));
   const [name, setName] = useState(() => (standalone ? savedName() : (loadLearnerName() ?? "")));
@@ -65,10 +83,12 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone }: 
   const [owner, setOwner] = useState(false);
   const [board, setBoard] = useState(false);
   const recorder = useRef<MiniRecorder | null>(resume?.recorder ?? null);
-  const [initial] = useState(() => {
+  const [initial, setInitial] = useState<Paused | null>(() => {
     paused = null;
     return resume;
   });
+  /** 중간에 나갔던 풀이 — 있으면 「이어서 풀기」 */
+  const doing = loadDoing(mock.id);
   useEffect(() => {
     if (!standalone) return;
     void getUser().then(async (u) => setOwner((await u?.isOwner()) ?? false));
@@ -81,6 +101,37 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone }: 
 
   if (board) return <MiniTeacherBoard mock={mock} onBack={() => setBoard(false)} />;
 
+  if (stage === "words") {
+    return (
+      <MiniWords
+        mock={mock}
+        onBack={() => setStage("intro")}
+        onStart={start}
+      />
+    );
+  }
+
+  if (stage === "prep") {
+    return (
+      <MiniPrep
+        mock={mock}
+        onBack={() => {
+          prepFor = null;
+          setStage("intro");
+        }}
+        onStart={() => {
+          prepFor = null;
+          start();
+        }}
+        onAnalyze={(set, no) => {
+          prepFor = mock.id;
+          startAnalysis(recorder.current, no);
+          onAnalyze(set, false);
+        }}
+      />
+    );
+  }
+
   if (stage === "exam") {
     return (
       <MiniExam
@@ -89,7 +140,9 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone }: 
         recorder={recorder.current}
         onQuit={() => setStage("intro")}
         onSubmit={(a) => {
-          saveAttempt(mock.id, a);
+          // 복습 모의고사는 풀 때마다 문항이 달라서 그때 문항을 같이 남긴다
+          saveAttempt(mock.id, isReviewMock(mock.id) ? { ...a, items: mock.items.map((it) => ({ no: it.no, lesson: it.lesson })) } : a);
+          clearDoing(mock.id);
           setAttempt(a);
           setStage("result");
         }}
@@ -128,6 +181,7 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone }: 
         )}
       </header>
       <div className="saved-body-scroll">
+        {lead ? <p className="mini-lead">{lead}</p> : null}
         <p className="home-hello">미니 모의고사</p>
         <h1 className="saved-title">{mock.title}</h1>
         <p className="mini-sub">{mock.subtitle}</p>
@@ -159,9 +213,39 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone }: 
             />
           </label>
         ) : null}
-        <button type="button" className="mini-start" disabled={standalone && !name.trim()} onClick={start}>
-          시작하기
-        </button>
+        {doing ? (
+          // 풀던 게 있으면 무조건 이어서 — 「처음부터 다시」는 두지 않는다 (2026-10-20 선생님: 선택지가 너무 많다)
+          <button
+            type="button"
+            className="mini-start"
+            disabled={standalone && !name.trim()}
+            onClick={() => {
+              setInitial({ ...doing, mockId: mock.id, recorder: null });
+              start();
+            }}
+          >
+            이어서 풀게요 · {Object.keys(doing.answers).length}/{mock.items.length}문항 · 남은 {clock(Math.max(0, mock.minutes * 60 - doing.usedMs / 1000))}
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="mini-start"
+            disabled={standalone && !name.trim()}
+            onClick={() => {
+              setInitial(null);
+              // 풀기 전에 주요 단어를 한 번 보여 준다 — 따로 메뉴로 두지 않는다 (2026-10-20 선생님). 단어가 없는 시험은 바로
+              if (mockKeyWords(mock.id).length) setStage("words");
+              else start();
+            }}
+          >
+            바로 풀어 볼게요
+          </button>
+        )}
+        {!doing && mock.items.some((it) => it.lesson) ? (
+          <button type="button" className="mini-start soft" disabled={standalone && !name.trim()} onClick={() => setStage("prep")}>
+            분석 먼저 하고 풀게요
+          </button>
+        ) : null}
         {owner ? (
           <button type="button" className="mini-last" onClick={() => setBoard(true)}>
             선생님 · 학생 결과 보기
@@ -184,7 +268,104 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone }: 
   );
 }
 
-type ExamState = { answers: Record<number, number>; checked: number[]; peeked: number[]; marks: Record<number, Marks>; at: number; usedMs: number; no: number };
+/** 지문 단어 미리 보기 —풀기 전에 그 회 지문·보기의 주요 단어를 훑는다. 뜻은 가려 두고 누르면 보인다 (외웠나 스스로 확인) */
+function MiniWords({ mock, onBack, onStart }: { mock: MiniMock; onBack: () => void; onStart: () => void }) {
+  const words = useMemo(() => mockKeyWords(mock.id), [mock.id]);
+  const [shown, setShown] = useState<Set<string>>(() => new Set());
+  const [allShown, setAllShown] = useState(false);
+  /** 별표 — 단어장에 저장 (수업의 단어 별표와 같은 단어장) */
+  const [vocab, setVocab] = useState<VocabEntry[]>(() => loadVocab());
+  const toggle = (en: string) => setShown((s) => {
+    const n = new Set(s);
+    if (n.has(en)) n.delete(en);
+    else n.add(en);
+    return n;
+  });
+  return (
+    <div className="stage-fill saved mini">
+      <header className="saved-top">
+        <button type="button" className="icon-btn light" title="뒤로" aria-label="뒤로" onClick={onBack}>
+          <BackIcon />
+        </button>
+      </header>
+      <div className="saved-body-scroll">
+        <p className="home-hello">{mock.title}</p>
+        <h1 className="home-title">지문 단어 미리 보기</h1>
+        <p className="pack-help">이번 회 지문과 보기에 나오는 단어 {words.length}개예요. 모르는 단어는 별표를 누르면 단어장에 저장돼요.</p>
+        <div className="mini-words-top">
+          <button type="button" className="mini-start" onClick={onStart}>
+            문제 풀러 갈게요
+          </button>
+          <button type="button" className="mini-words-all" onClick={() => setAllShown((v) => !v)}>{allShown ? "뜻 가리기" : "뜻 모두 보기"}</button>
+        </div>
+        <ul className="mini-words">
+          {words.map((w) => {
+            const on = allShown || shown.has(w.en);
+            return (
+              <li key={w.en} className="mini-word-row">
+                <button type="button" className={`mini-word${on ? " on" : ""}`} onClick={() => toggle(w.en)}>
+                  <b>{w.en}</b>
+                  <span>{on ? w.ko : "뜻 보기"}</span>
+                </button>
+                <button
+                  type="button"
+                  className={`point-star mini-word-star${isSaved(vocab, w.en) ? " on" : ""}`}
+                  aria-label={isSaved(vocab, w.en) ? "단어장에서 빼기" : "단어장에 저장"}
+                  onClick={() => setVocab(toggleVocab(vocab, { en: w.en, ko: w.ko, sentence: "", source: w.source, kind: w.kind }))}
+                >
+                  {isSaved(vocab, w.en) ? "★" : "☆"}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+/** 분석 먼저 — 문항마다 다정쌤 분석 레슨으로. 다 보고(또는 보고 싶은 만큼 보고) 시간을 재며 푼다 */
+function MiniPrep({ mock, onBack, onStart, onAnalyze }: { mock: MiniMock; onBack: () => void; onStart: () => void; onAnalyze: (set: LessonSet, no: number) => void }) {
+  const progress = loadProgress();
+  const rows = mock.items.map((it) => ({ it, set: it.lesson ? getSet(it.lesson) : null }));
+  const seen = rows.filter((r) => r.set && isDone(progress, r.set.id)).length;
+  return (
+    <div className="stage-fill saved mini">
+      <header className="saved-top">
+        <button type="button" className="icon-btn light" title="뒤로" aria-label="뒤로" onClick={onBack}>
+          <BackIcon />
+        </button>
+      </header>
+      <div className="saved-body-scroll">
+        <p className="home-hello">{mock.title}</p>
+        <h1 className="home-title">분석 먼저 하고 풀기</h1>
+        <p className="pack-help">문제마다 다정쌤과 한 문장씩 읽고 나서 시간을 재며 풀어요. 다 안 봐도 돼요 — 보고 싶은 것만 보고 풀어도 괜찮아요.</p>
+        <ul className="mini-review prep">
+          {rows.map(({ it, set }) => {
+            const done = !!set && isDone(progress, set.id);
+            return (
+              <li key={it.no} className={done ? "right" : ""}>
+                <button type="button" className="mini-row" disabled={!set} onClick={() => set && onAnalyze(set, it.no)}>
+                  <span className="mini-mark">{done ? "✓" : ""}</span>
+                  <span className="mini-row-text">
+                    <b>{it.no}번 · {it.kind}{it.points === 3 ? " [3점]" : ""}</b>
+                    <small>{set ? (done ? "분석 봤어요 · 다시 보기" : "다정쌤과 분석하기") : "분석 레슨이 아직 없어요"}{it.wrong_rate != null ? ` · 전국 오답률 ${it.wrong_rate}%` : ""}</small>
+                  </span>
+                  <span className="mini-chev">›</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+        <button type="button" className="mini-start" onClick={onStart}>
+          {seen ? `이제 풀어 볼게요 (${seen}/${rows.length} 분석함)` : "분석 없이 바로 풀게요"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+type ExamState = { answers: Record<number, number>; checked: number[]; peeked: number[]; marks: Record<number, Marks>; at: number; usedMs: number; times: Record<number, number>; no: number };
 
 function MiniExam({
   mock,
@@ -209,12 +390,19 @@ function MiniExam({
   const [peeked, setPeeked] = useState<number[]>(initial?.peeked ?? []);
   /** 지문에 표시한 것 — 문항마다 형광펜·모르는 단어 */
   const [marks, setMarks] = useState<Record<number, Marks>>(initial?.marks ?? {});
-  const [toast, setToast] = useState<string | null>(null);
+  /** 고른 펜 · 끊어읽기 · 핵심어 보기 — 문항을 넘겨도 그대로 */
+  const [pen, setPen] = useState<Pen>("none");
+  const [showSlash, setShowSlash] = useState(false);
+  const [showKeys, setShowKeys] = useState(false);
+  // 뜻을 보여 주는 토스트는 조금 더 오래(ms) — 읽을 시간이 필요하다
+  const [toastState, setToastState] = useState<{ text: string; ms: number } | null>(null);
+  const toast = toastState?.text ?? null;
+  const setToast = (text: string | null, ms = 1600) => setToastState(text ? { text, ms } : null);
   useEffect(() => {
-    if (!toast) return;
-    const id = window.setTimeout(() => setToast(null), 1600);
+    if (!toastState) return;
+    const id = window.setTimeout(() => setToastState(null), toastState.ms);
     return () => window.clearTimeout(id);
-  }, [toast]);
+  }, [toastState]);
   const unknownList = () => mock.items.flatMap((it) => (marks[it.no]?.unk ?? []).map((u) => ({ no: it.no, en: u.en, ko: u.ko })));
   const [at, setAt] = useState(initial?.at ?? 0);
   // 분석하러 갔다 오면 쓴 시간만큼 이어서 — 분석한 시간은 빠진다
@@ -225,31 +413,69 @@ function MiniExam({
   const [breakAt, setBreakAt] = useState<number | null>(null);
   const done = useRef(false);
   const scroll = useRef<HTMLDivElement>(null);
+  /** 문항마다 쓴 시간(초) — 지금 문항은 들어온 때부터 더해 간다 (일시정지 동안은 안 셈) */
+  const times = useRef<Record<number, number>>({ ...(initial?.times ?? {}) });
+  const timing = useRef<{ no: number; since: number } | null>(null);
+  const tally = () => {
+    const t = timing.current;
+    if (!t) return times.current;
+    const now = Date.now();
+    times.current[t.no] = Math.round(((times.current[t.no] ?? 0) + (now - t.since) / 1000) * 10) / 10;
+    t.since = now;
+    return times.current;
+  };
 
   const submit = (timeUp: boolean) => {
     if (done.current) return;
     done.current = true;
     recorder?.finish(timeUp ? "timeup" : "submitted", answers);
-    onSubmit({ at: new Date().toISOString(), answers, seconds: Math.min(limit, (Date.now() - started.current) / 1000), timeUp, checked, peeked, unknown: unknownList() });
+    const spent = { ...tally() };
+    timing.current = null;
+    onSubmit({ at: new Date().toISOString(), answers, seconds: (Date.now() - started.current) / 1000, timeUp, checked, peeked, unknown: unknownList(), times: spent });
   };
   // 남은 시간 — 시계로 잰다 (탭이 잠깐 멈춰도 어긋나지 않게)
   useEffect(() => {
     if (breakAt != null) return;
     const id = window.setInterval(() => {
-      const rest = limit - (Date.now() - started.current) / 1000;
-      setLeft(rest);
-      if (rest <= 0) submit(true);
+      // 시간이 다 돼도 내지 않는다 — 「초과」만 보여 주고 계속 풀게 (2026-10-20 선생님)
+      setLeft(limit - (Date.now() - started.current) / 1000);
     }, 500);
     return () => window.clearInterval(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [answers, checked, breakAt]);
+  }, [limit, breakAt]);
+  /*
+    푸는 중 상태를 남긴다 — 답을 고르거나 표시할 때마다, 그리고 10초마다(쓴 시간). 중간에 나가도 돌아오면
+    거기서부터, 남은 시간부터 이어 푼다. 제출하면 지운다 (`clearDoing`).
+  */
+  const snapshot = () => {
+    if (done.current) return;
+    const usedMs = (breakAt ?? Date.now()) - started.current;
+    if (breakAt == null) tally();
+    saveDoing(mock.id, { answers, checked, peeked, marks, at, usedMs, times: { ...times.current } });
+  };
+  const snapshotRef = useRef(snapshot);
+  snapshotRef.current = snapshot;
+  useEffect(() => {
+    snapshotRef.current();
+  }, [answers, checked, peeked, marks, at]);
+  useEffect(() => {
+    const id = window.setInterval(() => snapshotRef.current(), 10_000);
+    const hide = () => snapshotRef.current();
+    window.addEventListener("pagehide", hide);
+    return () => {
+      window.clearInterval(id);
+      window.removeEventListener("pagehide", hide);
+    };
+  }, []);
   const pause = () => {
     recorder?.pause();
+    tally();
+    timing.current = null;
     setBreakAt(Date.now());
   };
   const resume = () => {
     if (breakAt == null) return;
     started.current += Date.now() - breakAt;
+    timing.current = { no: mock.items[at]!.no, since: Date.now() };
     recorder?.resume();
     setBreakAt(null);
   };
@@ -258,6 +484,8 @@ function MiniExam({
     // 위 번호 줄도 지금 문항이 보이게
     document.querySelector(".mini-grid button.now")?.scrollIntoView({ inline: "center", block: "nearest" });
     recorder?.enter(mock.items[at]!.no);
+    tally();
+    timing.current = { no: mock.items[at]!.no, since: Date.now() };
   }, [at, mock, recorder]);
 
   const item = mock.items[at]!;
@@ -284,19 +512,31 @@ function MiniExam({
       const sentence = block.split(/(?<=[.!?”])\s+/).find((x) => x.includes(token)) ?? block;
       addVocab([{ en, ko, sentence: sentence.trim(), source: set?.lessons[0] ?? mock.id, kind: "word" }]);
     }
-    setToast(`「${en}」 모르는 단어로 담았어요${ko ? ` · ${ko.split(" · ")[0]}` : ""}`);
+    setToast(ko ? `${en} — ${ko.split(" · ")[0]}` : `「${en}」 모르는 단어로 담았어요`, 2600);
+  };
+  const onTapUnknown = (i: number) => {
+    const u = itemMarks.unk.find((x) => x.i === i);
+    if (u) setToast(u.ko ? `${u.en} — ${u.ko.split(" · ")[0]}` : `「${u.en}」 뜻을 아직 못 찾았어요`, 2600);
   };
   const unanswered = mock.items.filter((it) => !answers[it.no]).length;
   const last = at === mock.items.length - 1;
   const isChecked = checked.includes(item.no);
   const set = item.lesson ? getSet(item.lesson) : null;
+  // 끊어읽기·핵심어는 분석 레슨에 적힌 것(slashes · emphasis)을 그대로 지문 위에
+  const lesson = set ? getPolicyLesson(set.lessons[0]!) : null;
+  const overlay: Overlay = {
+    slashes: showSlash ? (lesson?.sentences.flatMap((x) => x.slashes ?? []) ?? []) : [],
+    keys: showKeys ? (lesson?.sentences.flatMap((x) => x.keys ?? x.emphasis ?? []) ?? []) : [],
+  };
   return (
     <div className="stage-fill saved mini mini-exam">
       {toast ? <div className="mini-toast" role="status">{toast}</div> : null}
       <header className="mini-top">
         <button type="button" className="mini-quit" onClick={() => setConfirm("quit")}>그만</button>
         <span className="mini-clock-wrap">
-          <span className={`mini-clock${left < 120 ? " low" : ""}`} aria-label="남은 시간">⏱ {clock(left)}</span>
+          <span className={`mini-clock${left < 0 ? " over" : left < 120 ? " low" : ""}`} aria-label={left < 0 ? "초과한 시간" : "남은 시간"}>
+            ⏱ {left < 0 ? `+${clock(-left)} 초과` : clock(left)}
+          </span>
           <button type="button" className="mini-pause" onClick={pause} aria-label="일시정지">⏸</button>
         </span>
         <button type="button" className="mini-submit" onClick={() => setConfirm("submit")}>제출</button>
@@ -319,6 +559,9 @@ function MiniExam({
           marks={itemMarks}
           onHighlight={onHighlight}
           onUnknown={onUnknown}
+          onTapUnknown={onTapUnknown}
+          tools={{ pen, setPen, slash: showSlash, setSlash: setShowSlash, keys: showKeys, setKeys: setShowKeys, has: { slash: !!lesson?.sentences.some((x) => x.slashes?.length), keys: !!lesson?.keys_checked && !!lesson.sentences.some((x) => x.keys?.length || x.emphasis?.length) } }}
+          overlay={overlay}
           onPick={isChecked ? undefined : (n) => {
             recorder?.pick(item.no, n);
             setAnswers({ ...answers, [item.no]: n });
@@ -334,7 +577,7 @@ function MiniExam({
             unknown={itemMarks.unk}
             picked={answers[item.no] ?? null}
             recorder={recorder}
-            onAnalyze={set ? () => onAnalyze(set, { answers, checked, peeked, marks, at, usedMs: Date.now() - started.current, no: item.no }) : null}
+            onAnalyze={set ? () => onAnalyze(set, { answers, checked, peeked, marks, at, usedMs: Date.now() - started.current, times: { ...tally() }, no: item.no }) : null}
           />
         ) : (
           <>
@@ -358,7 +601,7 @@ function MiniExam({
                 recorder?.peek(item.no);
                 const next = [...peeked, item.no];
                 setPeeked(next);
-                onAnalyze(set, { answers, checked, peeked: next, marks, at, usedMs: Date.now() - started.current, no: item.no });
+                onAnalyze(set, { answers, checked, peeked: next, marks, at, usedMs: Date.now() - started.current, times: { ...tally() }, no: item.no });
               }}
             >
               <b>답 고르지 않고 다정쌤 분석 보기 ›</b>
@@ -390,7 +633,7 @@ function MiniExam({
           <div>
             <p>
               {confirm === "quit"
-                ? "그만두면 이번 풀이는 남지 않아요. 그만둘까요?"
+                ? "지금까지 푼 것은 남아요. 돌아오면 남은 시간부터 이어 풀 수 있어요."
                 : unanswered
                   ? `아직 안 푼 문항이 ${unanswered}개 있어요. 그래도 제출할까요?`
                   : "제출할까요?"}
@@ -398,8 +641,9 @@ function MiniExam({
             <button type="button" className="primary" onClick={() => {
               if (confirm === "quit") {
                 recorder?.finish("quit", answers);
+                snapshot();
                 onQuit();
-              } else submit(false);
+              } else submit(left < 0);
             }}>
               {confirm === "quit" ? "그만두기" : "제출하기"}
             </button>
@@ -489,7 +733,7 @@ function UnknownWords({ words }: { words: { en: string; ko: string; no?: number 
   );
 }
 
-function ItemView({
+export function ItemView({
   item,
   picked,
   onPick,
@@ -497,6 +741,9 @@ function ItemView({
   marks,
   onHighlight,
   onUnknown,
+  onTapUnknown,
+  tools,
+  overlay = NO_OVERLAY,
 }: {
   item: MiniItem;
   picked: number | null;
@@ -507,9 +754,18 @@ function ItemView({
   marks?: Marks;
   onHighlight?: (hi: number[]) => void;
   onUnknown?: (i: number, token: string, el: HTMLElement) => void;
+  onTapUnknown?: (i: number) => void;
+  /** 펜 줄 — 보라펜(모르는 단어) · 형광펜 · 끊어읽기 · 핵심어. has: 이 문항의 레슨에 그 표시가 있나 */
+  tools?: {
+    pen: Pen; setPen: (p: Pen) => void;
+    slash: boolean; setSlash: (v: boolean) => void;
+    keys: boolean; setKeys: (v: boolean) => void;
+    has: { slash: boolean; keys: boolean };
+  };
+  overlay?: Overlay;
 }) {
   const numbersOnly = item.options.every((o) => !o);
-  const ctx = marks ? { counter: { n: 0 }, marks } : null;
+  const ctx = marks ? { counter: { n: 0 }, marks, overlay } : null;
   const body = (
     <>
       {item.given ? <p className="mini-given">{passageNodes(item.given, item, ctx, "g")}</p> : null}
@@ -525,11 +781,32 @@ function ItemView({
       {item.group ? <p className="mini-group">{item.group}</p> : null}
       <p className="mini-q">
         <b>{item.no}.</b> {item.question}
+        {item.points === 3 && !item.question.includes("3점") ? " [3점]" : null}
       </p>
-      {marks && onHighlight && onUnknown ? (
+      {marks && onHighlight && onUnknown && onTapUnknown && tools ? (
         <>
-          <p className="mini-mark-hint">두 번 두드리면 <b className="unk">모르는 단어</b> · 길게 누르거나 끌면 <b className="hi">형광펜</b></p>
-          <MarkArea marks={marks} onHighlight={onHighlight} onUnknown={onUnknown}>{body}</MarkArea>
+          <div className="mini-pens" role="toolbar" aria-label="펜">
+            <button type="button" className={`pen-btn unk${tools.pen === "unk" ? " on" : ""}`} aria-pressed={tools.pen === "unk"} onClick={() => tools.setPen(tools.pen === "unk" ? "none" : "unk")}>
+              <i /> 모르는 단어
+            </button>
+            <button type="button" className={`pen-btn hi${tools.pen === "hi" ? " on" : ""}`} aria-pressed={tools.pen === "hi"} onClick={() => tools.setPen(tools.pen === "hi" ? "none" : "hi")}>
+              <i /> 형광펜
+            </button>
+            {tools.has.slash ? (
+              <button type="button" className={`pen-btn slash${tools.slash ? " on" : ""}`} aria-pressed={tools.slash} onClick={() => tools.setSlash(!tools.slash)}>
+                / 끊어읽기
+              </button>
+            ) : null}
+            {tools.has.keys ? (
+              <button type="button" className={`pen-btn keys${tools.keys ? " on" : ""}`} aria-pressed={tools.keys} onClick={() => tools.setKeys(!tools.keys)}>
+                핵심어만 읽고 풀기
+              </button>
+            ) : null}
+          </div>
+          <p className="mini-mark-hint">
+            {tools.pen === "unk" ? "모르는 낱말을 두드리면 밑줄이 그어지고 뜻이 떠요. 다시 두드리면 빼요" : tools.pen === "hi" ? "낱말을 두드리거나 끌어서 칠해요. 칠한 곳에서 시작하면 지워요" : "펜을 고르고 낱말을 두드려요. 밑줄 친 낱말은 그냥 두드리면 뜻이 떠요"}
+          </p>
+          <MarkArea pen={tools.pen} marks={marks} onHighlight={onHighlight} onUnknown={onUnknown} onTapUnknown={onTapUnknown}>{body}</MarkArea>
         </>
       ) : body}
       {item.foot ? <p className="mini-foot-note">{item.foot}</p> : null}
@@ -560,7 +837,7 @@ function ItemView({
 }
 
 /** 밑줄(함축 의미), ①~⑤·(a)~(e) 뒤 낱말 밑줄(어법·어휘·지칭), 빈칸, 문장 넣기 자리 표시 */
-function passageNodes(text: string, item: MiniItem, ctx: { counter: { n: number }; marks: Marks } | null = null, key = ""): ReactNode[] {
+function passageNodes(text: string, item: MiniItem, ctx: { counter: { n: number }; marks: Marks; overlay?: Overlay } | null = null, key = ""): ReactNode[] {
   const out: ReactNode[] = [];
   const re = item.underline
     ? new RegExp(`(${item.underline.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}|_{4,}|\\([①②③④⑤]\\))`)
@@ -569,7 +846,7 @@ function passageNodes(text: string, item: MiniItem, ctx: { counter: { n: number 
       : /(_{4,}|\([①②③④⑤]\))/;
   text.split(re).forEach((part, i) => {
     if (!part) return;
-    if (i % 2 === 0) out.push(...markWords(part, `${key}${i}`, ctx?.counter ?? { n: 0 }, ctx?.marks ?? null));
+    if (i % 2 === 0) out.push(...markWords(part, `${key}${i}`, ctx?.counter ?? { n: 0 }, ctx?.marks ?? null, ctx?.overlay));
     else if (/^_{4,}$/.test(part)) out.push(<span key={i} className="mini-blank" aria-label="빈칸" />);
     else if (/^\([①②③④⑤]\)$/.test(part)) out.push(<b key={i} className="mini-slot">{part}</b>);
     else if (item.marked) {
@@ -603,6 +880,7 @@ function MiniResult({
     ? scoreOf(mock, Object.fromEntries(Object.entries(attempt.answers).filter(([no]) => !attempt.peeked!.includes(Number(no)))))
     : null, [mock, attempt]);
   const [open, setOpen] = useState<number | null>(null);
+  const avgTimes = useMemo(() => averageTimes(mock, attempt.times), [mock, attempt]);
   return (
     <div className="stage-fill saved mini">
       <header className="saved-top">
@@ -616,11 +894,25 @@ function MiniResult({
           <b>{s.score}</b>
           <span>/ {s.max}점</span>
         </div>
+        {mock.id.startsWith("ten-") ? (
+          <p className="mini-estimate">
+            예상 시험점수 <b>약 {estimatedExamScore(mock, attempt.answers)}점</b> / 100
+            <small>어려운 문제만 푼 결과라, 나머지 쉬운 문제는 잘 맞힌다고 보고 환산한 값이에요</small>
+          </p>
+        ) : null}
         <ul className="mini-facts">
           <li><b>{s.correct} / {s.total}</b><small>맞힌 문항</small></li>
           {own ? <li><b>{own.score}점</b><small>분석 안 보고 맞힌 점수 · 분석 보고 고른 문항 {attempt.peeked!.length}개</small></li> : null}
-          <li><b>{clock(attempt.seconds)}</b><small>{attempt.timeUp ? "시간 끝" : `걸린 시간 (제한 ${mock.minutes}분)`}</small></li>
+          <li><b>{clock(attempt.seconds)}</b><small>{attempt.timeUp ? `걸린 시간 · ${mock.minutes}분 초과` : `걸린 시간 (제한 ${mock.minutes}분)`}</small></li>
         </ul>
+        {avgTimes ? (
+          <ul className="mini-facts">
+            <li><b>{dur(avgTimes.all)}</b><small>문항당 평균</small></li>
+            {avgTimes.byPoints.map((g) => (
+              <li key={g.points}><b>{dur(g.avg)}</b><small>{g.points}점 문항 평균 · {g.n}개</small></li>
+            ))}
+          </ul>
+        ) : null}
         <div className="mini-kinds">
           {kinds.map((k) => (
             <span key={k.kind} className={k.right === k.total ? "all" : k.right === 0 ? "none" : ""}>
@@ -649,6 +941,7 @@ function MiniResult({
                     <b>{it.no}번 · {it.kind}{set ? <i className="mini-tag lesson">다정쌤 분석</i> : null}{attempt.checked?.includes(it.no) ? <i className="mini-tag">바로 확인</i> : null}{attempt.peeked?.includes(it.no) ? <i className="mini-tag peek">분석 보고 고름</i> : null}</b>
                     <small>
                       {mine ? `내 답 ${NUM[mine - 1]}` : "안 풂"} · 정답 {NUM[it.answer - 1]} · {it.points}점
+                      {attempt.times?.[it.no] ? ` · ${dur(attempt.times[it.no]!)}` : ""}
                       {it.wrong_rate != null ? ` · 전국 오답률 ${it.wrong_rate}%` : ""}
                     </small>
                   </span>
@@ -683,6 +976,12 @@ function MiniResult({
       </div>
     </div>
   );
+}
+
+/** 걸린 시간 — 「1분 12초」 · 「48초」 */
+function dur(seconds: number): string {
+  const s = Math.round(seconds);
+  return s >= 60 ? `${Math.floor(s / 60)}분${s % 60 ? ` ${s % 60}초` : ""}` : `${s}초`;
 }
 
 function BackIcon() {

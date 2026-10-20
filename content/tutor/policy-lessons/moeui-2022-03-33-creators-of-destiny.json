@@ -595,6 +595,82 @@
           "method": 0
         },
         {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "Gordon Allport",
+            "argued",
+            "records",
+            "many individuals",
+            "who were not content with"
+          ],
+          "answers": [
+            "Gordon Allport",
+            "argued",
+            "who were not content with",
+            "many individuals",
+            "records"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Gordon Allport",
+                "ko": "Gordon Allport는"
+              },
+              " ",
+              {
+                "en": "argued",
+                "ko": "주장했다"
+              },
+              " — 역사가 변화 없는 생활",
+              {
+                "en": "who were not content with",
+                "ko": "에 만족하지 못한"
+              },
+              " ",
+              {
+                "en": "many individuals",
+                "ko": "많은 개개인을"
+              },
+              " ",
+              {
+                "en": "records",
+                "ko": "기록한다고"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Gordon Allport argued that history records many individuals who were not content with an existence that offered them little variety and minimal challenge.",
+          "tips": [
+            {
+              "label": "consider it + 형용사 + to ~",
+              "text": "'~하는 것을 (형용사)라고 여기다'예요. it은 뒤의 to ~를 대신 받아요.",
+              "mark": "considers it normal"
+            },
+            {
+              "label": "drive",
+              "text": "'운전하다'만 있는 게 아니에요. 명사로 '욕구, 충동'이에요. drive to ~ = ~하려는 욕구.",
+              "mark": "drive"
+            },
+            {
+              "label": "be content with",
+              "text": "content는 '내용'만 있는 게 아니에요. be content with ~ = ~에 만족하다. not content with = 만족하지 못하는.",
+              "mark": "content",
+              "trap": true
+            }
+          ]
+        },
+        {
           "id": "s1_content",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -834,6 +910,63 @@
           ]
         },
         {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "Allport",
+            "considers",
+            "normal",
+            "to be pulled forward",
+            "by a vision of the future"
+          ],
+          "answers": [
+            "Allport",
+            "by a vision of the future",
+            "to be pulled forward",
+            "normal",
+            "considers"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Allport",
+                "ko": "Allport는"
+              },
+              " ",
+              {
+                "en": "by a vision of the future",
+                "ko": "미래에 대한 통찰력에 의해"
+              },
+              " ",
+              {
+                "en": "to be pulled forward",
+                "ko": "앞으로 나아가게 되는"
+              },
+              " 것을 ",
+              {
+                "en": "normal",
+                "ko": "정상이라고"
+              },
+              " ",
+              {
+                "en": "considers",
+                "ko": "여긴다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
           "id": "s2_side",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -937,7 +1070,10 @@
             "pulled forward"
           ]
         }
-      ]
+      ],
+      "refers": {
+        "it": "to be pulled forward by a vision of the future(미래의 통찰에 이끌리는 것 — 가목적어)"
+      }
     },
     {
       "id": 3,
@@ -1296,7 +1432,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "He": "Allport"
+      }
     },
     {
       "id": 4,
@@ -1446,6 +1585,75 @@
             "explain": "주어 Erich Fromm, 동사 proposed, 목적어 a need예요. a need는 뒤의 to rise above와 이어져요."
           },
           "method": 0
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s4_basic",
+          "candidates": [
+            "Erich Fromm",
+            "proposed",
+            "a need",
+            "to rise above",
+            "passive creatures"
+          ],
+          "answers": [
+            "Erich Fromm",
+            "passive creatures",
+            "to rise above",
+            "a need",
+            "proposed"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Erich Fromm",
+                "ko": "Erich Fromm은"
+              },
+              " 인간에게 ",
+              {
+                "en": "passive creatures",
+                "ko": "수동적인 피조물"
+              },
+              "의 역할을 ",
+              {
+                "en": "to rise above",
+                "ko": "넘어서고 싶은"
+              },
+              " ",
+              {
+                "en": "a need",
+                "ko": "욕구를"
+              },
+              " 있다고 ",
+              {
+                "en": "proposed",
+                "ko": "제시했다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "a need … to ~",
+              "text": "need와 to ~ 사이에 on the part of humans가 끼어 있어요. a need to rise above = 넘어서려는 욕구.",
+              "mark": "on the part of humans"
+            },
+            {
+              "label": "A if not B",
+              "text": "'B까지는 아니더라도 A'예요. accidental if not random = 마구잡이는 아니더라도 우연한.",
+              "mark": "if not"
+            }
+          ]
         },
         {
           "id": "s4_rise",
@@ -1704,6 +1912,76 @@
           "method": 0
         },
         {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s5_basic",
+          "candidates": [
+            "To him",
+            "humans",
+            "are driven",
+            "to transcend",
+            "to become the creators"
+          ],
+          "answers": [
+            "To him",
+            "humans",
+            "to transcend",
+            "are driven",
+            "to become the creators"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "To him",
+                "ko": "그에게"
+              },
+              ", ",
+              {
+                "en": "humans",
+                "ko": "인간은"
+              },
+              " 창조된 상태를 ",
+              {
+                "en": "to transcend",
+                "ko": "넘어서도록"
+              },
+              " ",
+              {
+                "en": "are driven",
+                "ko": "이끌린다"
+              },
+              " — 대신 자기 운명의 ",
+              {
+                "en": "to become the creators",
+                "ko": "창조자가 되려고"
+              },
+              " 노력한다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "To him, humans are driven to transcend the state of merely having been created; instead, humans seek to become the creators of their own destiny.",
+          "tips": [
+            {
+              "label": "A, B (같은 말 풀어 쓰기)",
+              "text": "콤마(,) 뒤 B가 앞의 A를 다시 풀어 줘요. the creators, the active shapers ~ = 창조자, 즉 ~을 만드는 사람.",
+              "mark": "the active shapers"
+            },
+            {
+              "label": "be driven to ~",
+              "text": "'~하도록 이끌리다, 내몰리다'예요.",
+              "mark": "are driven"
+            }
+          ]
+        },
+        {
           "id": "s5_become",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1858,7 +2136,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "To him": "to Erich Fromm(Fromm에게)"
+      }
     },
     {
       "id": 6,
@@ -2010,6 +2291,71 @@
               "text": "이 글에서는 → 본질  ('자연' 아님)",
               "mark": "nature",
               "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s6_basic",
+          "candidates": [
+            "Rising above",
+            "humans",
+            "generate",
+            "their own purposes",
+            "provide"
+          ],
+          "answers": [
+            "Rising above",
+            "humans",
+            "their own purposes",
+            "generate",
+            "provide"
+          ],
+          "match": {
+            "ko": [
+              "존재의 수동적 본질을 ",
+              {
+                "en": "Rising above",
+                "ko": "넘어서서"
+              },
+              ", ",
+              {
+                "en": "humans",
+                "ko": "인간은"
+              },
+              " ",
+              {
+                "en": "their own purposes",
+                "ko": "자신만의 목적을"
+              },
+              " ",
+              {
+                "en": "generate",
+                "ko": "만들어 내고"
+              },
+              " 자유의 토대를 ",
+              {
+                "en": "provide",
+                "ko": "제공한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "thereby",
+              "text": "'그렇게 함으로써'예요. 앞의 일 덕분에 뒤의 일이 생겨요.",
+              "mark": "thereby"
             }
           ]
         },

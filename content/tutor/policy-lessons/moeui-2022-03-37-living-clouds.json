@@ -428,6 +428,81 @@
           "method": 0
         },
         {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "the clouds",
+            "may seem",
+            "alive and independent",
+            "a metaphorical chain",
+            "to neutralize the fear"
+          ],
+          "answers": [
+            "the clouds",
+            "alive and independent",
+            "may seem",
+            "a metaphorical chain",
+            "to neutralize the fear"
+          ],
+          "match": {
+            "ko": [
+              "어린아이가 구름을 볼 때 ",
+              {
+                "en": "the clouds",
+                "ko": "구름은"
+              },
+              " ",
+              {
+                "en": "alive and independent",
+                "ko": "살아 있고 독립적으로"
+              },
+              " ",
+              {
+                "en": "may seem",
+                "ko": "보일 수 있다"
+              },
+              ". 그러나 구름을 양으로 본다면 ",
+              {
+                "en": "a metaphorical chain",
+                "ko": "은유의 사슬이"
+              },
+              " ",
+              {
+                "en": "to neutralize the fear",
+                "ko": "두려움을 중화하기"
+              },
+              " 시작한다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "When a young child sees clouds moving, the clouds may seem alive and independent. But if one sees clouds as fleecy lambs, a metaphorical chain begins to neutralize the fear.",
+          "tips": [
+            {
+              "label": "see A as B",
+              "text": "'A를 B로 보다'예요. sees clouds as fleecy lambs = 구름을 털 많은 어린 양으로 본다.",
+              "mark": "as fleecy"
+            },
+            {
+              "label": "metaphorical",
+              "text": "'은유적인'이에요. 구름을 양에 빗대어 보는 것이 은유(metaphor)예요.",
+              "mark": "metaphorical"
+            },
+            {
+              "label": "순서 문제 요령",
+              "text": "주어진 글의 마지막 말이 다음 단락의 첫머리와 이어져요. still, another, theoretical constructs 같은 말이 무엇을 받는지 봐요."
+            }
+          ]
+        },
+        {
           "id": "g_lamb",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -571,6 +646,10 @@
       "teaching_value": "high",
       "model_translation": "(A) '구름의 움직임'은 어떤 것들을 살아 있게끔 해 주는 그런 종류의 움직임과는 차별화되는데, 왜냐하면 구름은 바람에 의해 '밀려야만' 움직이고, 외부에서 밀지 않으면 움직일 수 없는 것은 살아 있지 않은 것이기 때문이다.",
       "glosses": [
+        {
+          "en": "becomes differentiated",
+          "ko": "차별화된다"
+        },
         {
           "en": "Cloud movement",
           "ko": "구름의 움직임"
@@ -752,6 +831,69 @@
             "explain": "주어는 Cloud movement(구름의 움직임), 동사는 becomes, 보어는 differentiated(구별되는)예요. because 뒤가 그 이유예요."
           },
           "method": 0
+        },
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "Cloud movement",
+            "becomes differentiated",
+            "the kind of movement",
+            "that makes things alive"
+          ],
+          "answers": [
+            "Cloud movement",
+            "that makes things alive",
+            "the kind of movement",
+            "becomes differentiated"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Cloud movement",
+                "ko": "구름의 움직임은"
+              },
+              " ",
+              {
+                "en": "that makes things alive",
+                "ko": "사물을 살아 있게 하는"
+              },
+              " ",
+              {
+                "en": "the kind of movement",
+                "ko": "그런 종류의 움직임과"
+              },
+              " ",
+              {
+                "en": "becomes differentiated",
+                "ko": "차별화된다"
+              },
+              " — 구름은 바람에 밀려야만 움직이기 때문이다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "(A) “Cloud movement” becomes differentiated from the kind of movement that makes things alive, because the clouds move only if they are “pushed” by the wind.",
+          "tips": [
+            {
+              "label": "only if",
+              "text": "'~할 때만'이에요. move only if they are pushed = 밀릴 때만 움직인다.",
+              "mark": "only if"
+            },
+            {
+              "label": "what + 동사",
+              "text": "what can’t move …는 '움직일 수 없는 것'이에요. what 덩어리 전체가 주어예요.",
+              "mark": "what can’t"
+            }
+          ]
         },
         {
           "id": "a_before",
@@ -1144,7 +1286,10 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "refers": {
+        "it is no longer terrifying": "it = the cloud(구름)"
+      }
     },
     {
       "id": 4,
@@ -1489,6 +1634,75 @@
           "method": 0
         },
         {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s5_basic",
+          "candidates": [
+            "Faced with the moving clouds",
+            "the child",
+            "can theorize",
+            "about their movement",
+            "cease to be alive"
+          ],
+          "answers": [
+            "Faced with the moving clouds",
+            "the child",
+            "cease to be alive",
+            "about their movement",
+            "can theorize"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Faced with the moving clouds",
+                "ko": "움직이는 구름을 마주쳤을 때"
+              },
+              ", ",
+              {
+                "en": "the child",
+                "ko": "아이는"
+              },
+              " 구름이 ",
+              {
+                "en": "cease to be alive",
+                "ko": "살아 있지 않다"
+              },
+              "는 식으로 ",
+              {
+                "en": "about their movement",
+                "ko": "구름의 움직임에 대해"
+              },
+              " ",
+              {
+                "en": "can theorize",
+                "ko": "이론화할 수 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "cease to ~",
+              "text": "'~하기를 멈추다, 더는 ~하지 않다'예요. cease to be alive = 더는 살아 있지 않게 되다.",
+              "mark": "cease"
+            },
+            {
+              "label": "Faced with ~",
+              "text": "'~을 마주하면'이에요. 아이가 어떤 상황인지 앞에서 알려 줘요.",
+              "mark": "Faced with"
+            }
+          ]
+        },
+        {
           "id": "b3_how",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1757,6 +1971,75 @@
             "explain": "주어는 Children, 동사는 develop, 목적어는 theoretical constructs(이론적인 생각)예요. that 덩어리가 그 생각을 꾸며요."
           },
           "method": 0
+        },
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s6_basic",
+          "candidates": [
+            "Children",
+            "develop",
+            "theoretical constructs",
+            "the motion of clouds",
+            "disappears"
+          ],
+          "answers": [
+            "Children",
+            "the motion of clouds",
+            "theoretical constructs",
+            "develop",
+            "disappears"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Children",
+                "ko": "아이들은"
+              },
+              " ",
+              {
+                "en": "the motion of clouds",
+                "ko": "구름의 움직임을"
+              },
+              " 사람의 움직임과 구분하는 ",
+              {
+                "en": "theoretical constructs",
+                "ko": "이론적인 생각을"
+              },
+              " ",
+              {
+                "en": "develop",
+                "ko": "전개하고"
+              },
+              ", 결국 살아 있는 구름에 대한 두려움은 ",
+              {
+                "en": "disappears",
+                "ko": "사라진다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "separate A from B",
+              "text": "'A를 B와 구분하다'예요. 구름의 움직임을 사람·동물의 움직임과 구분한다는 말이에요.",
+              "mark": "separate"
+            },
+            {
+              "label": "so that",
+              "text": "'그래서 ~하게'예요. 여기서는 결과: 그래서 결국 두려움이 사라진다.",
+              "mark": "so that"
+            }
+          ]
         },
         {
           "id": "c_before",
@@ -2183,7 +2466,10 @@
           "method": 1,
           "button": "문제 풀러 갈게요"
         }
-      ]
+      ],
+      "refers": {
+        "If it scares you": "it = something that seems alive(살아 있는 듯 보이는 것)"
+      }
     }
   ],
   "passage_on_try": true

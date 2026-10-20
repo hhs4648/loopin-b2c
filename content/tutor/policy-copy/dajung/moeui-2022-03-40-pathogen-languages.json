@@ -23,6 +23,14 @@
       "explain": "주어는 The answer (to these questions), 동사는 lies예요. 답은 that 뒤 내용에 있대요.",
       "from": "1qkkesw"
     },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "vnuumh"
+    },
     "s2_that_sv": {
       "ask": "답은 that 뒤에 있어요. that 안의 주어(S)·동사(V)·보어(C)를 찾아볼까요?",
       "wrong": "그건 주어·동사가 아니에요.",
@@ -85,6 +93,14 @@
       "explain": "주어는 the group (on the other side of the valley), 동사는 may well have been exposed예요.",
       "from": "1gwsw1h"
     },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "nw8qnd"
+    },
     "s4_congo": {
       "ask": "콩고에서 계곡 건너편 집단은 어떤 병원균에 노출되었을 수 있대요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -115,6 +131,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어 humans, 동사 learned예요. so 뒤는 they가 주어, would have stopped가 동사예요.",
       "from": "lmcx29"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1t42rxl"
     },
     "s5_it": {
       "ask": "doing it의 it은 무엇일까요?",
@@ -157,6 +181,14 @@
       "praise": "다 찾았어요!",
       "explain": "앞은 주어 Dislike and fear, 동사 kept, 목적어 neighbors, 보어 apart예요. 뒤는 주어 your languages and religions, 동사 divide예요.",
       "from": "1qdd3v1"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "uavxzd"
     },
     "s7_divide": {
       "ask": "이웃과 더는 교류하지 않게 되면 언어와 종교는 어떻게 된대요?",

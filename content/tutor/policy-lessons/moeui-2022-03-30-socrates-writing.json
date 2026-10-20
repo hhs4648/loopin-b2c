@@ -903,6 +903,87 @@
           ]
         },
         {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s3_basic",
+          "candidates": [
+            "feared",
+            "came to rely on",
+            "the written word",
+            "cease to exercise their memory",
+            "become forgetful"
+          ],
+          "answers": [
+            "the written word",
+            "came to rely on",
+            "cease to exercise their memory",
+            "become forgetful",
+            "feared"
+          ],
+          "match": {
+            "ko": [
+              "그는 사람들이 ",
+              {
+                "en": "the written word",
+                "ko": "글로 쓰인 말에"
+              },
+              " ",
+              {
+                "en": "came to rely on",
+                "ko": "의존하게 됨에 따라"
+              },
+              " ",
+              {
+                "en": "cease to exercise their memory",
+                "ko": "기억력을 발휘하는 것을 멈추고"
+              },
+              " ",
+              {
+                "en": "become forgetful",
+                "ko": "잘 잊어버리게 될 것이라고"
+              },
+              " ",
+              {
+                "en": "feared",
+                "ko": "우려했다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "He feared that, as people came to rely on the written word, they would “cease to exercise their memory and become forgetful.”",
+          "tips": [
+            {
+              "label": "come to + 동사",
+              "text": "'~하게 되다'예요. came to rely on = 의존하게 되었다.",
+              "mark": "came to"
+            },
+            {
+              "label": "cease to + 동사",
+              "text": "'~하기를 멈추다'예요. cease to exercise = 쓰기를 멈추다.",
+              "mark": "cease"
+            },
+            {
+              "label": "substitute for ~",
+              "text": "'~의 대체물, ~을 대신하는 것'이에요.",
+              "mark": "substitute"
+            },
+            {
+              "label": "used to + 동사",
+              "text": "'(예전에) ~하곤 했다'예요. they used to carry = 지니고 다니던.",
+              "mark": "used to"
+            }
+          ]
+        },
+        {
           "id": "s3_fear",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1033,7 +1114,10 @@
           },
           "panel_below": true
         }
-      ]
+      ],
+      "refers": {
+        "He": "Socrates(소크라테스)"
+      }
     },
     {
       "id": 4,
@@ -1194,6 +1278,77 @@
             "explain": "메인 문장은 they would be thought very knowledgeable, '아주 박식하다고 여겨질 것이다'예요."
           },
           "method": 0
+        },
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s4_basic",
+          "candidates": [
+            "a quantity of information",
+            "without proper instruction",
+            "be thought",
+            "very knowledgeable",
+            "quite ignorant"
+          ],
+          "answers": [
+            "without proper instruction",
+            "a quantity of information",
+            "quite ignorant",
+            "very knowledgeable",
+            "be thought"
+          ],
+          "match": {
+            "ko": [
+              "그리고 ",
+              {
+                "en": "without proper instruction",
+                "ko": "적절한 가르침 없이"
+              },
+              " ",
+              {
+                "en": "a quantity of information",
+                "ko": "많은 양의 정보를"
+              },
+              " 받을 수 있을 것이기 때문에, ",
+              {
+                "en": "quite ignorant",
+                "ko": "상당히 무지"
+              },
+              "할 때도 ",
+              {
+                "en": "very knowledgeable",
+                "ko": "매우 박식하다고"
+              },
+              " ",
+              {
+                "en": "be thought",
+                "ko": "생각될 것이었다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "And because they would be able to “receive a quantity of information without proper instruction,” they would “be thought very knowledgeable when they are quite ignorant.”",
+          "tips": [
+            {
+              "label": "a quantity of",
+              "text": "'많은 양의'예요. a quantity of information = 많은 양의 정보.",
+              "mark": "a quantity of"
+            },
+            {
+              "label": "for the most part",
+              "text": "'대체로, 대부분'이에요.",
+              "mark": "for the most part"
+            }
+          ]
         },
         {
           "id": "s4_seem",
@@ -1565,7 +1720,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "They": "people who rely on writing(글에 의존하게 된 사람들)"
+      }
     },
     {
       "id": 6,
@@ -1604,6 +1762,10 @@
         {
           "en": "shortsighted",
           "ko": "근시안적인, 멀리 못 보는"
+        },
+        {
+          "en": "he",
+          "ko": "그"
         },
         {
           "en": "technology",
@@ -1753,7 +1915,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "he": "Socrates(소크라테스)"
+      }
     },
     {
       "id": 7,
@@ -2056,7 +2221,10 @@
           },
           "panel_below": true
         }
-      ]
+      ],
+      "refers": {
+        "He": "Socrates(소크라테스)"
+      }
     }
   ],
   "passage_on_try": true

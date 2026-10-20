@@ -408,6 +408,33 @@ exam = {
 exam["brief"]["answer_note"] = ("참고로 more와 as의 짝을 묻는 어법 문제는 모의고사에 거의 나온 적이 없어요. "
                                 "낯선 유형이라 이 문제가 이 회차 오답률 1위였어요. 보통은 동사냐 분사냐 같은 것을 주로 물어봐요.")
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["don’t know", "nor", "has it survived"],
+    3: ["were generally more concerned with", "as with"],
+    5: ["considered", "to be ‘exceedingly coarse and tasteless’"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_refers(sentences, 2, {"Much of it": "much of ancient Greek music(고대 그리스 음악의 대부분)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 29번 (어법, 3점)",
     topic="어법 푸는 법: 밑줄마다 무슨 문법을 묻는지 이름 붙이기 → 그 문장 뼈대(주어·동사·빈자리)로 확인",

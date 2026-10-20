@@ -326,6 +326,19 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 3, ["그는 사람들이 ", _m("the written word", "글로 쓰인 말에"), " ", _m("came to rely on", "의존하게 됨에 따라"), " ",
+                         _m("cease to exercise their memory", "기억력을 발휘하는 것을 멈추고"), " ", _m("become forgetful", "잘 잊어버리게 될 것이라고"), " ", _m("feared", "우려했다"), "."],
+          display="He feared that, as people came to rely on the written word, they would “cease to exercise their memory and become forgetful.”")
+add_match(sentences, 4, ["그리고 ", _m("without proper instruction", "적절한 가르침 없이"), " ", _m("a quantity of information", "많은 양의 정보를"), " 받을 수 있을 것이기 때문에, ",
+                         _m("quite ignorant", "상당히 무지"), "할 때도 ", _m("very knowledgeable", "매우 박식하다고"), " ", _m("be thought", "생각될 것이었다"), "."],
+          display="And because they would be able to “receive a quantity of information without proper instruction,” they would “be thought very knowledgeable when they are quite ignorant.”")
+add_refers(sentences, 3, {"He": "Socrates(소크라테스)"})
+add_refers(sentences, 5, {"They": "people who rely on writing(글에 의존하게 된 사람들)"})
+add_refers(sentences, 6, {"he": "Socrates(소크라테스)"})
+add_refers(sentences, 7, {"He": "Socrates(소크라테스)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 30번 (문맥상 낱말의 쓰임)",
     topic="어휘 문제 푸는 법: 요지 → 두 쪽(+ 좋은 쪽 / − 나쁜 쪽) → 밑줄 단어가 흐름에 맞는지 하나씩 점검",

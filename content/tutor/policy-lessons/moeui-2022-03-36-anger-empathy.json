@@ -404,6 +404,85 @@
           ]
         },
         {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "Anger and empathy",
+            "can’t exist",
+            "at the same time",
+            "shift a blamer into empathy",
+            "the person’s angry ranting"
+          ],
+          "answers": [
+            "Anger and empathy",
+            "at the same time",
+            "can’t exist",
+            "shift a blamer into empathy",
+            "the person’s angry ranting"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Anger and empathy",
+                "ko": "분노와 공감은"
+              },
+              " 같은 장소 ",
+              {
+                "en": "at the same time",
+                "ko": "같은 시간에"
+              },
+              " ",
+              {
+                "en": "can’t exist",
+                "ko": "존재할 수 없다"
+              },
+              ". 따라서 ",
+              {
+                "en": "shift a blamer into empathy",
+                "ko": "비난자를 공감 속으로 이동시키면"
+              },
+              " ",
+              {
+                "en": "the person’s angry ranting",
+                "ko": "그 사람의 분노에 찬 폭언을"
+              },
+              " 멈추게 한다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Anger and empathy can’t exist in the same place at the same time. So when you shift a blamer into empathy, you stop the person’s angry ranting.",
+          "tips": [
+            {
+              "label": "명령문, and ~",
+              "text": "Let one in, and ~는 '하나를 들이면 ~'이에요. 명령문 뒤 and는 '그러면'으로 읽어요.",
+              "mark": "Let one in"
+            },
+            {
+              "label": "dead in its tracks",
+              "text": "'그 자리에서 즉시'예요. stop ~ dead in its tracks = ~을 즉시 멈추게 하다.",
+              "mark": "dead in its tracks"
+            },
+            {
+              "label": "shift A into B",
+              "text": "'A를 B로 옮기다'예요. 비난하는 사람을 공감 쪽으로 옮긴다는 말이에요.",
+              "mark": "shift"
+            },
+            {
+              "label": "순서 문제 요령",
+              "text": "주어진 글의 마지막 말이 다음 단락의 첫머리와 이어져요. however, What about, the defender 같은 말이 무엇을 받는지 봐요."
+            }
+          ]
+        },
+        {
           "id": "g_cant",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -581,6 +660,12 @@
           "method": 1,
           "button": "(A)부터 읽어 볼게요"
         }
+      ],
+      "emphasis": [
+        "Anger and empathy",
+        "can’t exist",
+        "at the same time",
+        "shift a blamer into empathy"
       ]
     },
     {
@@ -789,6 +874,82 @@
           ]
         },
         {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "The relief",
+            "triggers",
+            "a tremendous rush of gratitude",
+            "the person’s quiet rage",
+            "forgiveness"
+          ],
+          "answers": [
+            "The relief",
+            "a tremendous rush of gratitude",
+            "triggers",
+            "the person’s quiet rage",
+            "forgiveness"
+          ],
+          "match": {
+            "ko": [
+              "두려움을 더는 느끼지 않는 ",
+              {
+                "en": "The relief",
+                "ko": "안도감은"
+              },
+              " ",
+              {
+                "en": "a tremendous rush of gratitude",
+                "ko": "엄청난 고마움을"
+              },
+              " ",
+              {
+                "en": "triggers",
+                "ko": "불러일으키고"
+              },
+              ", ",
+              {
+                "en": "the person’s quiet rage",
+                "ko": "그 사람의 조용한 분노는"
+              },
+              " ",
+              {
+                "en": "forgiveness",
+                "ko": "용서"
+              },
+              "로 바뀐다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "(A) The relief from no longer feeling “fear or hatred” toward the blamer triggers a tremendous rush of gratitude and the person’s quiet rage turns into forgiveness.",
+          "tips": [
+            {
+              "label": "no longer",
+              "text": "'더는 ~ 않는'이에요. no longer feeling fear = 더는 두려움을 느끼지 않는 것. 전에는 느꼈다는 말이에요.",
+              "mark": "no longer"
+            },
+            {
+              "label": "trigger",
+              "text": "'촉발하다, 불러일으키다'예요. 총의 방아쇠(trigger)처럼 어떤 일을 일으킨다는 말이에요.",
+              "mark": "triggers"
+            },
+            {
+              "label": "beyond that",
+              "text": "'그것을 넘어'예요. 용서에서 한 걸음 더 나아간다는 말이에요.",
+              "mark": "beyond that"
+            }
+          ]
+        },
+        {
           "id": "a_person",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -897,7 +1058,14 @@
             }
           ]
         }
-      ]
+      ],
+      "emphasis": [
+        "relief",
+        "forgiveness"
+      ],
+      "refers": {
+        "beyond that": "beyond forgiveness(용서를 넘어)"
+      }
     },
     {
       "id": 3,
@@ -1049,6 +1217,69 @@
           "method": 0
         },
         {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s3_basic",
+          "candidates": [
+            "however",
+            "the blamer",
+            "knows",
+            "turns into",
+            "an ally"
+          ],
+          "answers": [
+            "however",
+            "the blamer",
+            "knows",
+            "an ally",
+            "turns into"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "however",
+                "ko": "그러나"
+              },
+              " 갑자기 ",
+              {
+                "en": "the blamer",
+                "ko": "비난자는"
+              },
+              " 방어자가 얼마나 슬픈지 ",
+              {
+                "en": "knows",
+                "ko": "알게 되고"
+              },
+              ", ",
+              {
+                "en": "an ally",
+                "ko": "동맹자"
+              },
+              {
+                "en": "turns into",
+                "ko": "로 바뀐다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "the + 명사",
+              "text": "the defender처럼 the가 붙으면 앞에서 이미 나온 사람이에요. 방어하는 사람이 먼저 소개돼야 해요.",
+              "mark": "the defender"
+            }
+          ]
+        },
+        {
           "id": "b_before",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1097,6 +1328,11 @@
             }
           ]
         }
+      ],
+      "emphasis": [
+        "however",
+        "the blamer",
+        "an ally"
       ]
     },
     {
@@ -1504,7 +1740,11 @@
             "disappears"
           ]
         }
-      ]
+      ],
+      "refers": {
+        "and with it": "with the defender’s wall(그 벽과 함께)",
+        "his unspoken rage and frustration": "his = the defender’s(방어자의)"
+      }
     },
     {
       "id": 6,
@@ -1646,6 +1886,9 @@
             }
           ]
         }
+      ],
+      "emphasis": [
+        "on the defensive"
       ]
     },
     {
@@ -1895,7 +2138,10 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "refers": {
+        "this human punching bag": "the person on the defensive(방어하는 쪽 사람)"
+      }
     },
     {
       "id": 8,

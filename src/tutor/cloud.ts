@@ -12,7 +12,8 @@
  * 한 달 공개 동안 "사라졌다"가 "되살아났다"보다 훨씬 나쁘다.
  *
  * 환경변수(`VITE_SUPABASE_*`)가 없으면 아무것도 하지 않는다 — 지금까지처럼 브라우저만으로 돈다.
- * 익명 학습자 기준이라 **기기를 바꾸면 아직 따라오지 않는다** — 계정(이메일)을 붙이는 게 다음 일이다.
+ * 학습자는 익명으로 시작하고, 「기록 지키기」(`auth.ts`)로 이메일을 붙이면 다른 기기에서도 같은 uid로
+ * 들어온다. 로그인한 뒤에는 `resetPull()` → `pullAll()`로 서버 값을 다시 받아 합친다.
  */
 
 import { ensureLearner, supabaseClient } from "./records";
@@ -56,6 +57,54 @@ export const MERGES: Record<string, Merge> = {
     unionBy<{ lessonId: string; key: string; savedAt: string }>(l, s, (n) => `${n.lessonId}#${n.key}`, (n) => n.savedAt),
   "loopin.vocab.v1": (l, s) =>
     unionBy<{ en: string; savedAt: string }>(l, s, (w) => w.en.trim().toLowerCase(), (w) => w.savedAt),
+  // 미니 모의고사 기록 — 시험마다 풀이 목록, 푼 시각으로 합치고 최근 것이 앞
+  "loopin.mini.v1": (l, s) => {
+    const L = isObj(l) ? (l as Record<string, unknown>) : {};
+    const S = isObj(s) ? (s as Record<string, unknown>) : {};
+    const out: Record<string, { at: string }[]> = {};
+    for (const id of new Set([...Object.keys(L), ...Object.keys(S)])) {
+      out[id] = unionBy<{ at: string }>(L[id], S[id], (a) => a.at, (a) => a.at).reverse().slice(0, 20);
+    }
+    return out;
+  },
+  // 푸는 중인 시험 — 시험마다 더 최근에 저장한 쪽. 한쪽에만 있으면 그것
+  "loopin.mini.doing.v1": (l, s) => {
+    const L = isObj(l) ? (l as Record<string, { savedAt?: string }>) : {};
+    const S = isObj(s) ? (s as Record<string, { savedAt?: string }>) : {};
+    const out: Record<string, unknown> = {};
+    for (const id of new Set([...Object.keys(L), ...Object.keys(S)])) {
+      const a = L[id];
+      const b = S[id];
+      out[id] = a && b ? ((a.savedAt ?? "") >= (b.savedAt ?? "") ? a : b) : (a ?? b);
+    }
+    return out;
+  },
+  // 틀린 문제 복습 기록 — 회차마다 문항별, 더 최근 기록
+  "loopin.wrong-reviews.v1": (l, s) => {
+    const L = isObj(l) ? (l as Record<string, Record<string, { at?: string }>>) : {};
+    const S = isObj(s) ? (s as Record<string, Record<string, { at?: string }>>) : {};
+    const out: Record<string, Record<string, unknown>> = {};
+    for (const id of new Set([...Object.keys(L), ...Object.keys(S)])) {
+      const a = L[id] ?? {};
+      const b = S[id] ?? {};
+      out[id] = {};
+      for (const no of new Set([...Object.keys(a), ...Object.keys(b)])) {
+        const x = a[no];
+        const y = b[no];
+        out[id]![no] = x && y ? ((x.at ?? "") >= (y.at ?? "") ? x : y) : (x ?? y);
+      }
+    }
+    return out;
+  },
+  // 연습한 문장 — 합집합
+  "loopin.sentence-practice.v1": (l, s) => ({ ...(isObj(s) ? s : {}), ...(isObj(l) ? l : {}) }),
+  // 코스 단어 칸 — 끝낸 칸의 합집합
+  "loopin.vocab-slots.v1": (l, s) => ({ ...(isObj(s) ? s : {}), ...(isObj(l) ? l : {}) }),
+  // 상담 코스 — 더 최근에 짠 쪽
+  "loopin.counsel.v1": (l, s) => {
+    const at = (v: unknown) => (isObj(v) && typeof v.at === "string" ? v.at : "");
+    return at(l) >= at(s) ? (l ?? s) : s;
+  },
 };
 
 export const SYNCED_KEYS = Object.keys(MERGES);
@@ -136,6 +185,14 @@ export function pullAll(): Promise<boolean> {
 }
 
 let pullInFlight: Promise<boolean> | null = null;
+
+/**
+ * 로그인해서 학습자가 바뀐 뒤 부른다 — 다음 `pullAll()`이 서버에서 다시 받게.
+ * (기존 받기가 아직 날아가는 중이면 그것이 끝난 뒤 새로 받는다)
+ */
+export function resetPull(): void {
+  pullInFlight = null;
+}
 
 async function pull(): Promise<boolean> {
   if (!enabled()) return false;

@@ -310,6 +310,44 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["historic ideas", "integrating", "sustainable urban planning"],
+    2: ["But", "these designs"],
+    4: ["However", "critics"],
+    5: ["In contrast", "New Urbanism"],
+    7: ["For example", "Landscape Urbanism"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("Today", "오늘날"), ", ", _m("integrating nature and urban/suburban space", "자연과 도시 공간의 통합에 대한"), " ",
+                         _m("historic ideas", "역사적인 생각들은"), " ", _m("sustainable urban planning", "지속 가능한 도시 계획"), "의 다양한 해석",
+                         _m("find expression in", "으로 나타난다"), "."])
+add_match(sentences, 2, [_m("But", "그러나"), " ", _m("Landscape Urbanists", "경관 도시론자들은"), " ", _m("these designs", "이러한 설계가"), " ",
+                         _m("the natural environment", "자연 환경을"), " ", _m("do not prioritize", "우선시하지 않는다"), "는 것을 알게 되었다."],
+          display="(A) But Landscape Urbanists find that these designs do not prioritize the natural environment.")
+add_refers(sentences, 2, {"these designs": "New Urbanism designs(신도시론의 설계)"})
+add_refers(sentences, 3, {"Still others": "people other than Landscape Urbanists and New Urbanists(그 둘 말고 다른 사람들)",
+                          "both approaches": "Landscape Urbanism and New Urbanism(경관 도시론과 신도시론)"})
+add_refers(sentences, 6, {"in these approaches": "Landscape Urbanism and New Urbanism(경관 도시론과 신도시론)"})
+
 lesson = base_lesson(
     ID, source="2024년 3월 고3 전국연합학력평가 영어 37번 (글의 순서, 2점)",
     topic="순서 푸는 법: 주어진 글의 끝 → 단락 첫머리 단서로 앞 내용 예측 → 단락 끝으로 다음 내용 예측 → 순서 잇기",

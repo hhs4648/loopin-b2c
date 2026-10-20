@@ -281,7 +281,7 @@ export function SpeakingLesson({ lesson, onClose }: { lesson: Lesson; onClose: (
       </div>
 
       <div className="sp-teacher">
-        <img src="/assets/dajung-teacher.webp" alt="다정쌤" width={650} height={616} draggable={false} />
+        <img src="/assets/character/dajung.webp" alt="다정쌤" width={650} height={616} draggable={false} />
         <p className="sp-bubble">{line}</p>
       </div>
       <div className="sp-actions">

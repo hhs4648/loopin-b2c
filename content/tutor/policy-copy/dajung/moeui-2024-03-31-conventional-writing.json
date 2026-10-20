@@ -172,6 +172,14 @@
       "explain": "주어는 our writing and oral storying, 동사는 become, 보어는 increasingly conventional and literal이에요.",
       "from": "1uagaga"
     },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "txecpi"
+    },
     "s5_sort_now": {
       "ask": "'conventional and literal(틀에 박히고 글자 그대로인)'은 칠판 어느 쪽일까요?",
       "reask": "그럼 하나 골라 봐요.",

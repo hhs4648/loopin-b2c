@@ -651,6 +651,10 @@
             "between": "↔"
           }
         }
+      ],
+      "emphasis": [
+        "ao",
+        "both green and blue"
       ]
     },
     {
@@ -941,6 +945,11 @@
             "between": "↔"
           }
         }
+      ],
+      "emphasis": [
+        "has come to be restricted",
+        "blue shades",
+        "midori"
       ]
     },
     {
@@ -1236,7 +1245,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "they": "the first traffic lights(최초의 신호등)"
+      }
     },
     {
       "id": 4,
@@ -2687,7 +2699,13 @@
             ]
           }
         }
-      ]
+      ],
+      "emphasis": [
+        "Not so"
+      ],
+      "refers": {
+        "Not so": "did not change the name to midori(이름을 midori로 바꾸지 않았다)"
+      }
     },
     {
       "id": 9,
@@ -3000,6 +3018,12 @@
           "method": 1,
           "button": "문제 풀러 갈게요"
         }
+      ],
+      "emphasis": [
+        "Rather than",
+        "alter the name",
+        "to fit reality",
+        "would be a color"
       ]
     }
   ],

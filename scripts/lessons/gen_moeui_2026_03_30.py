@@ -131,7 +131,6 @@ sentences = [
             g("abstract away from", "~에서 떼어 내다 · 여기서는 '무시하다'로 이해하면 돼요"),
             g("particularities", "세부 특징 · 하나하나가 가진 특성"),
         ],
-        "emphasis": ["conceptualize", "categorize", "put a name on", "abstract away from", "particularities"],
         "steps": [
             show("s1_group",
                  "conceptualize, categorize, put a name on은 여기서 모두 '이름 붙여 묶는다'는 같은 뜻이에요. 셋 중 하나만 이해해도 충분해요.",
@@ -160,7 +159,6 @@ sentences = [
         "model_translation": "잔디에 있는 데이지와 클로버 꽃을 떠올려 보라.",
         "teaching_value": "medium",
         "glosses": [g("Picture", "상상해 보다 · 여기서는 '그림'이 아니라 동사예요"), g("daisies", "데이지 꽃"), g("clover", "클로버"), g("lawn", "잔디밭")],
-        "emphasis": ["Picture"],
         "steps": [
             show("s2_picture", "여기서 'Picture'는 '그림'이 아니라 '상상해 보다'라는 동사예요. 잔디밭에 핀 데이지와 클로버를 한번 상상해 보래요.",
                  method=0,
@@ -176,7 +174,6 @@ sentences = [
         "model_translation": "그 네 개의 보통 명사는 그것들의 차이를 생략한다.",
         "teaching_value": "high",
         "glosses": [g("Those four ordinary nouns", "그 네 개의 보통 명사 · 앞 문장의 daisies, clover, flower, lawn이에요"), g("ordinary nouns", "보통 명사"), g("leave out", "빠뜨리다, 생략하다"), g("differences", "차이")],
-        "emphasis": ["ordinary nouns", "leave out"],
         "steps": [
             show("s3_nouns", "'Those four ordinary nouns'는 앞 문장의 네 단어예요. daisies, clover, flower, lawn 모두 보통 명사, 즉 이름이에요.",
                  method=0, button="다음",
@@ -204,7 +201,6 @@ sentences = [
         "model_translation": "'꽃'이라는 말은 흰색과 노란색 종류를 베이지색 종류, 그리고 다른 곳의 수많은 종류와 함께 하나의 범주로 묶는다.",
         "teaching_value": "low",
         "glosses": [g("co-categorizes", "한 범주로 같이 묶다"), g("types", "종류"), g("beige", "베이지색"), g("sorts", "종류"), g("elsewhere", "다른 곳에서")],
-        "emphasis": ["co-categorizes"],
         "steps": [
             show("s4_skim", "앞 문장의 반복이에요. 'Flower'도 세세한 차이를 무시하고 꽃을 다 묶어요. 앞을 이해했다면 깊게 안 읽어도 돼요.",
                  panel=board(L + ["four ordinary nouns", "leave out", "“Flower”*"], R + ["differences"], "'꽃' → 색이 달라도 한데 묶음"),
@@ -216,7 +212,6 @@ sentences = [
         "model_translation": "'잔디'라는 말은 그곳의 다양한 풀과 풀이 아닌 모든 식물을 인정한다(→ 무시한다).",
         "teaching_value": "high",
         "glosses": [g("acknowledges", "인정하다"), g("varieties", "다양한 종류"), g("nongrassy plants", "풀이 아닌 식물")],
-        "emphasis": ["Lawn"],
         "steps": [
             # 정답 문장이지만 ②는 여기서 말하지 않는다 — 마지막 문제에서 학생이 맞힌다
             choice("s5_sort",
@@ -234,7 +229,6 @@ sentences = [
         "model_translation": "확대해 보면, 개별성과 고유성을 어디에서나 발견할 것이다.",
         "teaching_value": "high",
         "glosses": [g("Zoom in", "확대하다, 가까이 보다"), g("individuality", "개별성 · 하나하나가 따로인 성질"), g("uniqueness", "고유성 · 하나뿐인 성질"), g("everywhere", "어디에서나")],
-        "emphasis": ["Zoom in", "individuality", "uniqueness"],
         "steps": [
             choice("s6_sort",
                    "가까이 보면(Zoom in) individuality와 uniqueness가 보인대요. 이 두 단어는 어느 그룹일까요?",
@@ -252,7 +246,6 @@ sentences = [
         "model_translation": "어떤 데이지 두 송이도, 어떤 클로버 두 개도 정확히 같지 않지만, 힐끗 보면 충분히 균일한 무늬의 카펫으로 보인다.",
         "teaching_value": "high",
         "glosses": [g("alike", "비슷한, 같은"), g("and yet", "그러나 · yet이 문장 앞에 오면 '그러나'예요"), g("present", "(모습을) 보이다, 나타내다 · 여기서는 '~처럼 보이다'"), g("to a quick glance", "힐끗 보기에"), g("quick glance", "힐끗 보기"), g("patterned", "무늬가 있는"), g("uniformly", "균일하게")],
-        "emphasis": ["and yet", "uniformly"],
         "steps": [
             choice("s7_q",
                    "'No two daisies … are exactly alike'는 무슨 뜻일까요?",
@@ -273,7 +266,6 @@ sentences = [
         "model_translation": "데이지 꽃 사슬 만들기, 일광욕 같은 대부분의 실용적인 목적에서는 그 차이를 무시할 수 있다.",
         "teaching_value": "high",
         "glosses": [g("practical purposes", "실용적인 목적"), g("ignored", "무시되는"), g("daisy chain", "데이지 꽃목걸이"), g("sunbathing", "일광욕"), g("and the like", "~ 등")],
-        "emphasis": ["practical purposes"],
         "steps": [
             choice("s8_sort",
                    "'For most practical purposes(대부분의 실용적인 목적에서는)' 차이를 무시해도 된대요. practical purposes는 어느 그룹일까요?",
@@ -291,7 +283,6 @@ sentences = [
         "model_translation": "그러나 스포츠 경기장 관리인에게는 그렇지 않은데, 그곳에서는 잔디를 이루는 풀들과 그 성장 단계가 정말 중요하다.",
         "teaching_value": "medium",
         "glosses": [g("Not so", "그렇지 않다 · 앞 문장의 '무시해도 된다'를 뒤집어요"), g("groundskeeper", "경기장 관리인"), g("stadium", "경기장"), g("constituent", "구성하는"), g("stages of growth", "성장 단계"), g("really do matter", "정말 중요하다")],
-        "emphasis": ["Not so", "groundskeeper", "really do matter"],
         "steps": [
             choice("s9_sort",
                    "경기장 관리인(groundskeeper)에게는 풀 종류와 자라는 단계가 정말 중요하대요. groundskeeper는 어느 그룹일까요?",
@@ -316,7 +307,6 @@ sentences = [
         "model_translation": "그리고 무한한 기억력을 지닌 무한한 정신에게, 고유한 생애를 지닌 각각의 풀잎은 다른 모든 풀잎과 한 범주로 묶일 필요가 없다.",
         "teaching_value": "high",
         "glosses": [g("infinite mind", "무한한 정신 · 여기서는 기억력이 무한한 사람이에요"), g("blade", "칼날 · 여기서는 '풀잎'이에요"), g("distinct", "독특한, 뚜렷이 다른"), g("need not be", "~될 필요가 없다"), g("co-categorized", "한 범주로 같이 묶인"), g("fellows", "동료, 같은 무리")],
-        "emphasis": ["infinite mind", "need not be"],
         "steps": [
             choice("s10_q",
                    "무한한 정신(infinite mind)이라면, 풀잎을 모두 한 범주로 묶어야 할까요?",
@@ -372,7 +362,6 @@ sentences = [
         "model_translation": "여러분 자신이 그러하듯, 각각은 자기만의 이름을 가질 수 있다.",
         "teaching_value": "medium",
         "glosses": [g("its own name", "자기만의 이름 · 고유명사처럼"), g("as you yourself do", "여러분 자신이 그러하듯")],
-        "emphasis": ["its own name"],
         "steps": [
             # 끌어 넣기는 여기까지 충분했다 — 확인 질문 세 개로 짧게. proper name은 꺼내지 않는다
             choice("s11_each",
@@ -476,6 +465,61 @@ exam = {
         "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
     },
 }
+
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) + 끊어읽기(slashes)·S·V·O·C(roles)·[ ] 수식어(modifiers) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+def _r(text, role):
+    return {"text": text, "role": role}
+
+SLASHES = {  # 이 말 뒤에 /
+    1: ["put a name on something", "proper name,"],
+    4: ["yellow types", "beige ones,", "other sorts"],
+    5: ["varieties of grass", "nongrassy plants"],
+    6: ["Zoom in,", "will find"],
+    7: ["no two clovers,", "alike,", "and yet", "a quick glance"],
+    8: ["practical purposes,", "ignored—", "daisy chain,"],
+    9: ["Not so,", "however,", "sports stadium,", "stages of growth"],
+    10: ["infinite mind,", "infinite memory,", "blade of grass,", "life history,", "co-categorized"],
+    11: ["its own name,"],
+}
+ROLES = {  # 끊어읽기를 켜면 같이 보이는 S·V·O·C (sv 스텝의 roles 글자와 같게)
+    1: [_r("you … you", "S"), _r("conceptualize", "V"), _r("categorize", "V"), _r("put", "V"), _r("abstract away from", "V")],
+    2: [_r("Picture", "V"), _r("daisies and clover flowers", "O")],
+    3: [_r("Those four ordinary nouns", "S"), _r("leave out", "V"), _r("differences", "O")],
+    4: [_r("Flower", "S"), _r("co-categorizes", "V"), _r("the white and yellow types", "O")],
+    5: [_r("Lawn", "S"), _r("acknowledges", "V"), _r("the varieties of grass", "O")],
+    6: [_r("Zoom in", "V"), _r("you", "S"), _r("will find", "V"), _r("individuality and uniqueness", "O")],
+    7: [_r("No two daisies", "S"), _r("are", "V"), _r("alike", "C"), _r("they", "S"), _r("present", "V"), _r("a carpet", "O")],
+    8: [_r("the differences", "S"), _r("can be", "V"), _r("ignored", "V")],
+    9: [_r("the constituent grasses", "S"), _r("really do matter", "V")],
+    10: [_r("each blade of grass", "S"), _r("need not be", "V"), _r("co-categorized", "V")],
+    11: [_r("Each", "S"), _r("could have", "V"), _r("its own name", "O"), _r("you", "S"), _r("do", "V")],
+}
+MODIFIERS = {  # [ ]로 묶는 수식어 — 관계사절·분사 덩어리 (안의 S·V는 안 적는다)
+    1: ["that is not a proper name"],
+    4: ["to be found elsewhere"],
+    5: ["that are there"],
+    7: ["patterned uniformly enough"],
+}
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["put a name on", "abstract away from", "particularities"],
+    3: ["ordinary nouns", "leave out", "differences"],
+    6: ["Zoom in", "individuality", "uniqueness"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
 
 lesson = {
     "id": ID, "kind": "policy", "version": "0.2",
@@ -607,6 +651,15 @@ fill_chunk_glosses(sentences, {
 
 # 칠판 정리 — 2~3문장마다 지금까지 상황을 칠판에 (공통 틀)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_refers(sentences, 1, {"its particularities": "its = something you named(이름 붙인 그 대상의)"})
+add_refers(sentences, 3, {"their": "the daisies, clovers, flowers and lawn(데이지·클로버·꽃·잔디)"})
+add_refers(sentences, 4, {"the beige ones": "ones = types of flowers(꽃의 종류)"})
+add_refers(sentences, 7, {"they": "daisies and clovers(데이지와 클로버)"})
+add_refers(sentences, 9, {"Not so": "the differences cannot be ignored(차이를 무시할 수 없다 — 앞 문장의 반대)"})
+add_refers(sentences, 10, {"its": "each blade of grass(각 풀잎)"})
+
 from story_boards import add_story_boards  # noqa: E402
 add_story_boards(ID, lesson["sentences"])
 

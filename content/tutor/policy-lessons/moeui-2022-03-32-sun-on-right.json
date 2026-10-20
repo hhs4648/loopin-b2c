@@ -695,6 +695,10 @@
           ],
           "meaning_check": true
         }
+      ],
+      "emphasis": [
+        "the sources",
+        "become fewer"
       ]
     },
     {
@@ -1447,7 +1451,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "They": "the Phoenician expedition(페니키아 원정대)"
+      }
     },
     {
       "id": 5,
@@ -1832,6 +1839,10 @@
             }
           }
         }
+      ],
+      "emphasis": [
+        "on their right",
+        "the opposite direction"
       ]
     },
     {
@@ -2313,6 +2324,12 @@
             ]
           }
         }
+      ],
+      "emphasis": [
+        "not strong enough",
+        "fabricate",
+        "accurate",
+        "detail"
       ]
     },
     {
@@ -2580,7 +2597,14 @@
           "method": 1,
           "button": "문제 풀러 갈게요"
         }
-      ]
+      ],
+      "emphasis": [
+        "leads",
+        "conclude"
+      ],
+      "refers": {
+        "It is this that": "this = the prosaic detail about the sun(태양 위치라는 평범한 세부 사항)"
+      }
     }
   ],
   "passage_on_try": true

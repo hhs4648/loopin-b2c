@@ -634,6 +634,71 @@
           "method": 0
         },
         {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "plasticity",
+            "suggests",
+            "the key idea",
+            "to mold something once",
+            "keep it that way forever"
+          ],
+          "answers": [
+            "plasticity",
+            "the key idea",
+            "to mold something once",
+            "keep it that way forever",
+            "suggests"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "plasticity",
+                "ko": "‘가소성’은"
+              },
+              " ",
+              {
+                "en": "the key idea",
+                "ko": "핵심 개념이"
+              },
+              " ",
+              {
+                "en": "to mold something once",
+                "ko": "무언가를 한 번 성형하고"
+              },
+              " ",
+              {
+                "en": "keep it that way forever",
+                "ko": "그대로 영원히 유지하는 것이라고"
+              },
+              " ",
+              {
+                "en": "suggests",
+                "ko": "시사한다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "“plasticity” suggests that the key idea is to mold something once and keep it that way forever.",
+          "tips": [
+            {
+              "label": "keep it that way",
+              "text": "'그 상태 그대로 두다'예요. that way = 그런 식으로, 그 상태로.",
+              "mark": "that way"
+            }
+          ]
+        },
+        {
           "id": "s2_mean",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1148,7 +1213,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "It": "the brain(뇌)"
+      }
     },
     {
       "id": 5,
@@ -1179,6 +1247,10 @@
         {
           "en": "the world around it",
           "ko": "그 주변 세상"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
         },
         {
           "en": "Think",
@@ -1278,7 +1350,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "it": "a developing city(개발 중인 도시)"
+      }
     },
     {
       "id": 6,
@@ -1309,6 +1384,10 @@
         {
           "en": "its education and legal systems",
           "ko": "교육·법률 제도"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
         },
         {
           "en": "truck",
@@ -1392,7 +1471,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "it": "the city(그 도시)"
+      }
     },
     {
       "id": 7,
@@ -1941,7 +2023,10 @@
             "continually develops"
           ]
         }
-      ]
+      ],
+      "refers": {
+        "It": "a city(도시)"
+      }
     },
     {
       "id": 10,
@@ -2555,7 +2640,11 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "It": "the diary(일기)",
+        "that previous person": "the you who wrote the diary(일기를 쓴 과거의 나)"
+      }
     },
     {
       "id": 14,

@@ -60,6 +60,14 @@
       "explain": "주어 we, 동사 (similarly) conform to, 전치사 뒤 목적어는 prevailing social conventions예요.",
       "from": "1hnmewi"
     },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "14w6s0m"
+    },
     "s2_same": {
       "ask": "Just as(~하듯이)로 화가와 우리를 나란히 놓았어요. 우리는 무엇에 순응한대요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -90,6 +98,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어 These unwritten rules, 동사 include예요. 그 뒤 -ing 목록 전체가 목적어예요.",
       "from": "9v8s20"
+    },
+    "s3_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1k4yro6"
     },
     "s3_these": {
       "ask": "These unwritten rules(이런 불문율)는 앞 문장의 무엇을 다시 말한 걸까요?",
@@ -169,6 +185,14 @@
       "explain": "주어 they(그 불문율들), 동사 are예요. that 뒤가 the dominant conventions를 꾸며요.",
       "from": "1w23sb"
     },
+    "s6_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1l95lx2"
+    },
     "s6_accept": {
       "ask": "우리 대부분은 이 관습들을 어떻게 받아들였대요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -203,6 +227,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어 It, 동사 is, 보어 difficult예요. It은 뒤의 to see beyond ~를 받아요.",
       "from": "1s1se8x"
+    },
+    "s7_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1c2ytqu"
     },
     "s7_culture": {
       "say": "우리를 만든 문화의 한계 너머를 보기는 어렵대요. 문화가 우리가 세상과 자신을 보는 방식을 만들었으니까요.",

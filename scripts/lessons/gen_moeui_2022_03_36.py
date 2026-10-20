@@ -357,6 +357,44 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["Anger and empathy", "can’t exist", "at the same time", "shift a blamer into empathy"],
+    2: ["relief", "forgiveness"],
+    3: ["however", "the blamer", "an ally"],
+    6: ["on the defensive"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("Anger and empathy", "분노와 공감은"), " 같은 장소 ", _m("at the same time", "같은 시간에"), " ", _m("can’t exist", "존재할 수 없다"),
+                         ". 따라서 ", _m("shift a blamer into empathy", "비난자를 공감 속으로 이동시키면"), " ", _m("the person’s angry ranting", "그 사람의 분노에 찬 폭언을"), " 멈추게 한다."],
+          display="Anger and empathy can’t exist in the same place at the same time. So when you shift a blamer into empathy, you stop the person’s angry ranting.")
+add_match(sentences, 2, ["두려움을 더는 느끼지 않는 ", _m("The relief", "안도감은"), " ", _m("a tremendous rush of gratitude", "엄청난 고마움을"), " ", _m("triggers", "불러일으키고"),
+                         ", ", _m("the person’s quiet rage", "그 사람의 조용한 분노는"), " ", _m("forgiveness", "용서"), "로 바뀐다."],
+          display="(A) The relief from no longer feeling “fear or hatred” toward the blamer triggers a tremendous rush of gratitude and the person’s quiet rage turns into forgiveness.")
+add_match(sentences, 3, [_m("however", "그러나"), " 갑자기 ", _m("the blamer", "비난자는"), " 방어자가 얼마나 슬픈지 ", _m("knows", "알게 되고"), ", ",
+                         _m("an ally", "동맹자"), _m("turns into", "로 바뀐다"), "."])
+add_refers(sentences, 2, {"beyond that": "beyond forgiveness(용서를 넘어)"})
+add_refers(sentences, 5, {"and with it": "with the defender’s wall(그 벽과 함께)", "his unspoken rage and frustration": "his = the defender’s(방어자의)"})
+add_refers(sentences, 7, {"this human punching bag": "the person on the defensive(방어하는 쪽 사람)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 36번 (글의 순서)",
     topic="순서 푸는 법: 주어진 글의 끝 → 단락 첫머리 단서로 앞 내용 예측 → 단락 끝으로 다음 내용 예측 → 순서 잇기",

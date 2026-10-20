@@ -454,6 +454,78 @@
           ]
         },
         {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "But in the future",
+            "real-time data collection",
+            "will enable",
+            "insurance companies",
+            "to charge pay-as-you-drive rates"
+          ],
+          "answers": [
+            "But in the future",
+            "real-time data collection",
+            "insurance companies",
+            "to charge pay-as-you-drive rates",
+            "will enable"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "But in the future",
+                "ko": "그러나 미래에는"
+              },
+              " ",
+              {
+                "en": "real-time data collection",
+                "ko": "실시간 데이터 수집이"
+              },
+              " ",
+              {
+                "en": "insurance companies",
+                "ko": "보험사로 하여금"
+              },
+              " 실제 운전 행동에 따라 ",
+              {
+                "en": "to charge pay-as-you-drive rates",
+                "ko": "‘운전하는 대로 내는’ 요금을 부과"
+              },
+              {
+                "en": "will enable",
+                "ko": "할 수 있게 할 것이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "But in the future, real-time data collection will enable insurance companies to charge pay-as-you-drive rates depending on people’s actual behavior on the road.",
+          "tips": [
+            {
+              "label": "동사 + 사람 + to ~",
+              "text": "enable·allow·help + 사람 + to ~ = '사람이 ~하게 (해) 주다'예요."
+            },
+            {
+              "label": "앞을 가리키는 말·연결어",
+              "text": "But, However, This, Such처럼 앞과 이어지는 말이 주어진 문장에 있으면, 그 말이 받을 내용이 바로 앞에 있어야 해요."
+            },
+            {
+              "label": "as opposed to",
+              "text": "'~와는 달리, ~가 아니라'예요. A as opposed to B = B가 아니라 A.",
+              "mark": "as opposed to"
+            }
+          ]
+        },
+        {
           "id": "g_enable",
           "type": "show",
           "interaction": "note",
@@ -1087,7 +1159,10 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "refers": {
+        "They": "insurance companies(보험 회사)"
+      }
     },
     {
       "id": 4,
@@ -1362,7 +1437,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "They": "insurance companies(보험 회사)"
+      }
     },
     {
       "id": 5,
@@ -2260,7 +2338,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "This type of classification": "high-risk categories(고위험군 분류)"
+      }
     },
     {
       "id": 8,
@@ -2612,7 +2693,10 @@
           ],
           "method": 1
         }
-      ]
+      ],
+      "refers": {
+        "whether they are men or women": "they = bad or high-risk individual drivers(고위험 운전자들)"
+      }
     },
     {
       "id": 9,
@@ -2659,6 +2743,10 @@
         {
           "en": "if it means lower rates",
           "ko": "그게 더 낮은 요금을 뜻한다면"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
         },
         {
           "en": "Big",
@@ -2972,7 +3060,10 @@
           "method": 1,
           "button": "문제 풀러 갈게요"
         }
-      ]
+      ],
+      "refers": {
+        "it": "real-time monitoring of driving(운전 실시간 감시)"
+      }
     }
   ],
   "passage_on_try": true

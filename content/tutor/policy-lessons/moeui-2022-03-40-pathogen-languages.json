@@ -446,7 +446,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "their frequency": "their = languages’ and religions’(언어와 종교의)"
+      }
     },
     {
       "id": 2,
@@ -457,6 +460,10 @@
         {
           "en": "the tropics",
           "ko": "열대 지방"
+        },
+        {
+          "en": "lies in the fact",
+          "ko": "사실에 있다"
         },
         {
           "en": "The answer",
@@ -604,6 +611,75 @@
           ]
         },
         {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "The answer",
+            "these questions",
+            "lies in the fact",
+            "pathogen density",
+            "much higher"
+          ],
+          "answers": [
+            "these questions",
+            "The answer",
+            "pathogen density",
+            "much higher",
+            "lies in the fact"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "these questions",
+                "ko": "이 질문들에 대한"
+              },
+              " ",
+              {
+                "en": "The answer",
+                "ko": "답은"
+              },
+              " 열대 지방에서 ",
+              {
+                "en": "pathogen density",
+                "ko": "병원균의 밀도가"
+              },
+              " ",
+              {
+                "en": "much higher",
+                "ko": "훨씬 더 높다는"
+              },
+              " ",
+              {
+                "en": "lies in the fact",
+                "ko": "사실에 있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "lie in",
+              "text": "'~에 있다'예요. The answer lies in ~ = 답은 ~에 있다.",
+              "mark": "lies in"
+            },
+            {
+              "label": "than it is",
+              "text": "it is는 pathogen density is예요. 열대와 온대·추운 기후를 비교해요.",
+              "mark": "than it is"
+            }
+          ]
+        },
+        {
           "id": "s2_that_sv",
           "type": "pick",
           "interaction": "word_pick",
@@ -685,7 +761,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "these questions": "why languages and religions increase near the equator(적도 근처에 언어·종교가 많은 이유)"
+      }
     },
     {
       "id": 3,
@@ -1062,6 +1141,75 @@
           "method": 0
         },
         {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s4_basic",
+          "candidates": [
+            "In contrast",
+            "when you live in the Congo",
+            "the group",
+            "may well have been exposed to",
+            "a pathogen"
+          ],
+          "answers": [
+            "In contrast",
+            "when you live in the Congo",
+            "the group",
+            "a pathogen",
+            "may well have been exposed to"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In contrast",
+                "ko": "반면에"
+              },
+              ", ",
+              {
+                "en": "when you live in the Congo",
+                "ko": "콩고에 산다면"
+              },
+              ", 계곡 반대편의 ",
+              {
+                "en": "the group",
+                "ko": "집단은"
+              },
+              " 여러분이 접촉한 적 없는 ",
+              {
+                "en": "a pathogen",
+                "ko": "병원균에"
+              },
+              " ",
+              {
+                "en": "may well have been exposed to",
+                "ko": "노출되었을지도 모른다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "may well have p.p.",
+              "text": "'아마 ~했을지도 모른다'예요. 과거 일을 꽤 그럴듯하게 짐작하는 말이에요.",
+              "mark": "may well"
+            },
+            {
+              "label": "In contrast",
+              "text": "'반면에'예요. 앞 문장(스웨덴)과 반대 경우가 나와요.",
+              "mark": "In contrast"
+            }
+          ]
+        },
+        {
           "id": "s4_congo",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1188,6 +1336,10 @@
           "ko": "그것을 하는 것"
         },
         {
+          "en": "they",
+          "ko": "그들(그것들)"
+        },
+        {
           "en": "reason",
           "ko": "이유"
         },
@@ -1302,6 +1454,70 @@
           ]
         },
         {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s5_basic",
+          "candidates": [
+            "For this reason",
+            "humans",
+            "learned",
+            "tended to get sick",
+            "would have stopped"
+          ],
+          "answers": [
+            "For this reason",
+            "humans",
+            "tended to get sick",
+            "learned",
+            "would have stopped"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "For this reason",
+                "ko": "이러한 이유로"
+              },
+              ", 열대 지방의 ",
+              {
+                "en": "humans",
+                "ko": "사람들은"
+              },
+              " 다른 집단과 교류하면 ",
+              {
+                "en": "tended to get sick",
+                "ko": "병에 잘 걸린다는 것을"
+              },
+              " ",
+              {
+                "en": "learned",
+                "ko": "알게 되었다"
+              },
+              " — 그래서 교류를 ",
+              {
+                "en": "would have stopped",
+                "ko": "중단했을 것이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "would have p.p.",
+              "text": "'~했을 것이다'예요. 과거 일을 짐작하는 말이에요.",
+              "mark": "would have stopped"
+            }
+          ]
+        },
+        {
           "id": "s5_it",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1377,7 +1593,11 @@
             "between": "←"
           }
         }
-      ]
+      ],
+      "refers": {
+        "For this reason": "pathogens from other groups make you sick(다른 집단의 병원균 때문에 병이 나서)",
+        "they": "humans in the tropics(열대 지방 사람들)"
+      }
     },
     {
       "id": 6,
@@ -1580,7 +1800,10 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "refers": {
+        "to dislike them": "them = neighbors(이웃)"
+      }
     },
     {
       "id": 7,
@@ -1735,6 +1958,70 @@
             "explain": "앞은 주어 Dislike and fear, 동사 kept, 목적어 neighbors, 보어 apart예요. 뒤는 주어 your languages and religions, 동사 divide예요."
           },
           "method": 0
+        },
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s7_basic",
+          "candidates": [
+            "Dislike and fear",
+            "neighbors",
+            "apart",
+            "your languages and religions",
+            "divide"
+          ],
+          "answers": [
+            "Dislike and fear",
+            "neighbors",
+            "apart",
+            "your languages and religions",
+            "divide"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Dislike and fear",
+                "ko": "혐오와 두려움이"
+              },
+              " ",
+              {
+                "en": "neighbors",
+                "ko": "이웃을"
+              },
+              " ",
+              {
+                "en": "apart",
+                "ko": "떨어져 있"
+              },
+              "게 했고, 교류하지 않으면 ",
+              {
+                "en": "your languages and religions",
+                "ko": "언어와 종교도"
+              },
+              " ",
+              {
+                "en": "divide",
+                "ko": "갈라진다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "keep A apart",
+              "text": "'A를 떼어 놓다, 계속 떨어져 있게 하다'예요.",
+              "mark": "kept"
+            }
+          ]
         },
         {
           "id": "s7_divide",

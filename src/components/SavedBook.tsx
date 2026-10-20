@@ -21,7 +21,14 @@ import { loadDrillScores, loadGrammarPractice, removeGrammarPractice, type Gramm
  */
 export type SavedKind = "vocab" | "notes";
 
-type Props = { kind: SavedKind; onBack: () => void };
+type Props = {
+  kind: SavedKind;
+  onBack: () => void;
+  /** 연습실 탭 — "vocab"이면 단어장·단어 테스트만, "grammar"면 연습할 문법만 */
+  section?: "vocab" | "grammar";
+  /** 연습실 안에 끼워 넣음 — 머리(뒤로 가기)와 바깥 상자는 연습실이 그린다 */
+  embedded?: boolean;
+};
 
 /** 저장한 지문의 이름 — 「30번 문제」. 목록에 없는 지문은 「다른 수업」 */
 function lessonTitle(id?: string): string {
@@ -44,7 +51,7 @@ function groupBy<T extends { savedAt: string }>(items: T[], keyOf: (x: T) => str
   return [...groups.entries()];
 }
 
-export function SavedBook({ kind, onBack }: Props) {
+export function SavedBook({ kind, onBack, section, embedded }: Props) {
   // 처음 연 순간의 목록을 줄 순서로 쓴다 — 별표를 빼도 줄이 바로 사라지지 않게
   const [rows, setRows] = useState(() => (kind === "vocab" ? loadVocab() : loadNotes()));
   const [vocab, setVocab] = useState<VocabEntry[]>(() => loadVocab());
@@ -100,26 +107,23 @@ export function SavedBook({ kind, onBack }: Props) {
   }
 
   // 연습할 문법이 있으면 단어장만이 아니니 집 이름(보충학습실)으로
-  const title = kind === "vocab" ? (grammar.length ? "보충학습실" : "단어장") : "내 노트";
+  const showVocab = kind === "vocab" && section !== "grammar";
+  const showGrammar = kind === "vocab" && section !== "vocab";
+  const title = section === "grammar" ? "문법 연습" : section === "vocab" ? "단어 연습" : kind === "vocab" ? (grammar.length ? "보충학습실" : "단어장") : "내 노트";
   const empty =
-    kind === "vocab"
-      ? "아직 저장한 단어가 없어요. 수업 중에 단어를 누르고 ☆를 눌러 보세요."
-      : "아직 저장한 노트가 없어요. 수업 끝 「헷갈린 포인트」에서 ☆를 눌러 보세요.";
+    section === "grammar"
+      ? "아직 연습할 문법이 없어요. 수업 중 「이 문법을 나중에 좀 더 연습할까요?」에서 「네」를 누르면 여기 모여요."
+      : kind === "vocab"
+        ? "아직 저장한 단어가 없어요. 수업 중에 단어를 누르고 ☆를 누르거나, 10분 모의고사에서 보라펜으로 표시해 보세요."
+        : "아직 저장한 노트가 없어요. 수업 끝 「헷갈린 포인트」에서 ☆를 눌러 보세요.";
+  const nothing = section === "grammar" ? !grammar.length : section === "vocab" ? rows.length === 0 : rows.length === 0 && !grammar.length;
 
-  return (
-    <div className="stage-fill saved">
-      <header className="saved-top">
-        <button type="button" className="icon-btn light" title="목록으로" onClick={onBack}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M15 6l-6 6 6 6" />
-          </svg>
-        </button>
-      </header>
+  const body = (
       <div className="saved-body-scroll">
         <h1 className="saved-title">{title}</h1>
-        {rows.length === 0 && !grammar.length ? <p className="saved-empty">{empty}</p> : null}
+        {nothing ? <p className="saved-empty">{empty}</p> : null}
 
-        {grammar.length ? (
+        {showGrammar && grammar.length ? (
           <section className="saved-group gprac">
             <h2 className="saved-group-title">연습할 문법</h2>
             {groups.map(({ entry, group }) => (
@@ -173,17 +177,19 @@ export function SavedBook({ kind, onBack }: Props) {
                 </ol> : null}
               </div>
             ))}
-            {rows.length ? <h2 className="saved-group-title">단어장</h2> : null}
+            {showVocab && rows.length ? <h2 className="saved-group-title">단어장</h2> : null}
           </section>
         ) : null}
 
-        {kind === "vocab" && vocab.length ? (
+        {showVocab && vocab.length ? (
           <button type="button" className="read-continue vtest-start" onClick={() => setTest({ n: 0 })}>
             단어 테스트
           </button>
         ) : null}
 
-        {kind === "vocab"
+        {kind === "vocab" && !showVocab
+          ? null
+          : kind === "vocab"
           ? (
               <ul className="saved-list">
                 {[...(rows as VocabEntry[])]
@@ -250,6 +256,19 @@ export function SavedBook({ kind, onBack }: Props) {
               </section>
             ))}
       </div>
+  );
+
+  if (embedded) return body;
+  return (
+    <div className="stage-fill saved">
+      <header className="saved-top">
+        <button type="button" className="icon-btn light" title="목록으로" onClick={onBack}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </button>
+      </header>
+      {body}
     </div>
   );
 }

@@ -360,6 +360,48 @@ exam = {
                                 ("우리 (빈칸)", "conform to prevailing social conventions", "사회 관습을 따른다", "hl")))}),
 }
 
+# ── 10분 모의고사·분석 화면의 「핵심어」(emphasis) — 2026-10-20 ──
+# 핵심어 = S·V·O·C + 이해에 필요한 말, 최소한(덩어리 말고 핵심 단어). 모두 glosses에 뜻이 있는 말로 (exam_kit check)
+
+EMPHASIS = {
+    # 선생님 기준(2026-10-20, 33번): 지문당 10개 안팎 — 주장이 서는 1~2문장의 S·V·O·C와 연결어만, 나머지 문장은 없음
+    1: ["perspective", "matters", "for the art of living"],
+    2: ["Just as", "the stylistic conventions", "similarly conform to", "prevailing social conventions"],
+    5: ["It is common to"],
+    6: ["accepted", "with little questioning"],
+}
+
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []) if "SLASHES" in globals() else []:
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if "SLASHES" in globals() and SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if "ROLES" in globals() and ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if "MODIFIERS" in globals() and MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
+    if EMPHASIS.get(_s["id"]):
+        _s["emphasis"] = EMPHASIS[_s["id"]]
+assert set(EMPHASIS) <= {_s["id"] for _s in sentences}, "EMPHASIS에 없는 문장 번호"
+
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 2, [_m("most artists", "대부분의 예술가가"), " 시대의 ", _m("the stylistic conventions", "양식적 관습에"), " 순응하", _m("Just as", "듯이"),
+                         ", 우리도 어떻게 살지에 대한 ", _m("prevailing social conventions", "지배적인 사회적 관습에"), " ", _m("similarly conform to", "비슷하게 순응한다"), "."],
+          display="Just as most artists conform to the stylistic conventions of the era, we similarly conform to prevailing social conventions about how to live.")
+add_match(sentences, 3, [_m("These unwritten rules", "이러한 불문율에는"), " ", _m("typically", "일반적으로"), " ", _m("getting married", "결혼하는 것"), ", 집을 소유하는 것, ",
+                         _m("having a regular job", "일정한 직업을 갖는 것"), ", 해외여행", _m("include", "이 포함된다"), "."],
+          display="These unwritten rules typically include getting married and having children, owning your own home, having a regular job, and flying abroad for holidays.")
+add_match(sentences, 6, ["서구 역사의 ", _m("At this point", "현시점에서"), ", ", _m("they", "그것은"), " ", _m("most of us", "우리 대부분이"), " ",
+                         _m("with little questioning", "거의 의문 없이"), " 받아들여 온 ", _m("the dominant conventions", "지배적인 관습"), " 중 하나이다."],
+          display="At this point in Western history, they are amongst the dominant conventions that most of us have accepted with little questioning.")
+add_match(sentences, 7, [_m("our ways of looking", "우리의 보는 방식을"), " 형성해 온 ", _m("the culture", "문화의"), " ", _m("the limitations", "한계"), " ",
+                         _m("to see beyond", "너머를 보기는"), " ", _m("It is difficult", "어렵다"), "."],
+          display="It is difficult to see beyond the limitations of the culture that has shaped our ways of looking at the world.")
+add_refers(sentences, 3, {"These unwritten rules": "prevailing social conventions(지배적인 사회적 관습)"})
+add_refers(sentences, 4, {"these are realities": "these = the unwritten rules(불문율)", "they remain aspirations": "they = the unwritten rules(불문율)"})
+add_refers(sentences, 6, {"they": "the unwritten rules / social conventions(불문율 — 사회적 관습)", "At this point": "today(지금, 현대)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 34번 (빈칸 추론, 3점)",
     topic="빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",

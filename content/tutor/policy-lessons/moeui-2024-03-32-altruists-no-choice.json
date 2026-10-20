@@ -581,6 +581,11 @@
           ],
           "meaning_check": true
         }
+      ],
+      "emphasis": [
+        "commonsense",
+        "altruistic acts",
+        "conforms to"
       ]
     },
     {
@@ -915,7 +920,13 @@
             "for ourselves"
           ]
         }
-      ]
+      ],
+      "emphasis": [
+        "should have the right"
+      ],
+      "refers": {
+        "to make such decisions": "deciding how much to give away(얼마나 나눌지 정하는 것)"
+      }
     },
     {
       "id": 3,
@@ -1241,6 +1252,12 @@
             ]
           }
         }
+      ],
+      "emphasis": [
+        "Yet",
+        "altruists",
+        "assert",
+        "just the opposite"
       ]
     },
     {
@@ -1424,7 +1441,13 @@
           "method": 1,
           "button": "다음 문장"
         }
-      ]
+      ],
+      "emphasis": [
+        "insist"
+      ],
+      "refers": {
+        "They": "altruists(이타주의자들)"
+      }
     },
     {
       "id": 5,
@@ -1821,10 +1844,6 @@
           "ko": "주장할 것 같다"
         },
         {
-          "en": "they",
-          "ko": "그들"
-        },
-        {
           "en": "someone",
           "ko": "누군가"
         },
@@ -1875,6 +1894,10 @@
         {
           "en": "to humanity",
           "ko": "인류에 대한"
+        },
+        {
+          "en": "they",
+          "ko": "그들(그것들)"
         },
         {
           "en": "likely",
@@ -2210,7 +2233,10 @@
           "method": 1,
           "button": "문제 풀러 갈게요"
         }
-      ]
+      ],
+      "refers": {
+        "they": "the more altruistic someone(더 이타적인 사람)"
+      }
     }
   ],
   "passage_on_try": true

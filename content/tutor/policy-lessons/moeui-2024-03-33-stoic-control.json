@@ -999,6 +999,64 @@
           "method": 0
         },
         {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s3_basic",
+          "candidates": [
+            "Stoic philosophy",
+            "about that",
+            "taking charge of your life",
+            "within your power",
+            "not to waste energy"
+          ],
+          "answers": [
+            "Stoic philosophy",
+            "about that",
+            "taking charge of your life",
+            "within your power",
+            "not to waste energy"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Stoic philosophy",
+                "ko": "스토아 철학은"
+              },
+              " ",
+              {
+                "en": "about that",
+                "ko": "그것에 관한 것"
+              },
+              "이었다 — ",
+              {
+                "en": "taking charge of your life",
+                "ko": "여러분의 삶을 책임지는 것"
+              },
+              ", ",
+              {
+                "en": "within your power",
+                "ko": "여러분의 힘 안에 있는"
+              },
+              " 것들에 노력하고, 할 수 없는 것들에는 ",
+              {
+                "en": "not to waste energy",
+                "ko": "에너지를 낭비하지 않는 것"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Stoic philosophy was about that―taking charge of your life, learning to work on those things within your power and not to waste energy on things you cannot."
+        },
+        {
           "id": "s3_cant",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -1094,7 +1152,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "about that": "depending on no one but yourself(자신 외에 누구에게도 의존하지 않는 것)"
+      }
     },
     {
       "id": 4,
@@ -1518,7 +1579,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "we make about them": "them = our circumstances(우리의 상황)"
+      }
     },
     {
       "id": 6,
@@ -1753,7 +1817,10 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "refers": {
+        "it spoils our picnic": "it = the rain(비)"
+      }
     },
     {
       "id": 8,
@@ -2029,7 +2096,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "That would be silly": "That = getting angry at the rain(비에 화내는 것)"
+      }
     },
     {
       "id": 9,
@@ -2731,7 +2801,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "to tie them to the weather": "them = our feelings of well-being(안녕에 관한 감정)"
+      }
     },
     {
       "id": 12,
@@ -2746,10 +2819,6 @@
         {
           "en": "concerns",
           "ko": "~에 관한 것이다"
-        },
-        {
-          "en": "it",
-          "ko": "그것"
         },
         {
           "en": "wrote",
@@ -2778,6 +2847,10 @@
         {
           "en": "it is nothing to you",
           "ko": "그건 너에게 아무것도 아니다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
         },
         {
           "en": "prepared",
@@ -3023,7 +3096,10 @@
             "between": "↔"
           }
         }
-      ]
+      ],
+      "refers": {
+        "it": "anything not in our control(통제 밖의 것)"
+      }
     }
   ],
   "passage_on_try": true

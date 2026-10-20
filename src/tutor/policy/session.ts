@@ -703,27 +703,32 @@ export function createPolicySession(
     return { title: s.message, board, expressions, words: keyWords().passage };
   }
 
-  /** 바로 풀어서 맞혔다 — 다시 볼 주기로 (기본 「다시 안 봄」) */
+  /**
+   * 「1/2/3주 뒤 다시 보기」 화면은 뺐다 (2026-10-20 선생님: 코스 구조와 안 맞는다) — 기록만 남기고 바로 단어 체크(또는 헷갈린 포인트)로.
+   * 바로 풀어서 맞혔다 — 「분석 없이 1회 맞힘」(mastered)
+   */
   function startMastered() {
-    s = { ...s, stage: "review", reviewStatus: "mastered", reviewWeeks: null, buttons: [NEXT_BTN], panel: null };
-    s = { ...s, message: reviewMessage() };
+    s = { ...s, reviewStatus: "mastered", reviewWeeks: null, panel: null };
+    saveReview(lesson.id, { status: "mastered", weeks: null, saved: false });
+    if (lesson.key_words) return startWords(0);
+    toPoints();
   }
 
-  /** 분석 뒤 마지막 문제를 맞혔다 — 다시 볼 주기로. 한 번이라도 틀렸으면 1주, 아니면 3주 */
+  /** 분석 뒤 마지막 문제를 맞혔다 — 틀린 적이 있으면 analyzed_wrong, 아니면 analyzed_correct로 기록하고 다음으로 */
   function startReview() {
     const missed = s.finalWrong.length > 0;
     s = {
       ...s,
-      stage: "review",
       examSolved: false,
       examNoted: false,
       examPicked: null,
       reviewStatus: missed ? "analyzed_wrong" : "analyzed_correct",
-      reviewWeeks: missed ? 1 : 3,
-      buttons: [NEXT_BTN],
+      reviewWeeks: null,
       effect: missed ? "light" : null,
     };
-    s = { ...s, message: reviewMessage() };
+    saveReview(lesson.id, { status: missed ? "analyzed_wrong" : "analyzed_correct", weeks: null, saved: false });
+    if (lesson.key_words) return startWords(0);
+    toPoints();
   }
 
   function weeksLabel(w: number | null) {
@@ -1018,11 +1023,16 @@ export function createPolicySession(
         s = { ...s, pi: s.pi + 1 };
         continue;
       }
-      // 긴 문장(20단어~)의 주어·동사 찾기는 고·중·초 모두, 맞추기를 해도 건너뛰지 않는다 (2026-10-16 선생님, 공통)
-      const longSv = isLongSentence(sentence()) && step().type === "pick" && !!(step() as PickStep).roles;
+      // 주어·동사 찾기(roles가 있는 pick)는 수업에서 뺐다 — 끊어읽기(/ 와 S·V·O·C 표시)가 대신한다 (2026-10-20 선생님). 긴 문장도 마찬가지
+      if (isSvStep(step()) || isKeywordTranslate(step())) {
+        // 기록(lastAction)에 남기지 않는다 — 없는 활동이다
+        s = { ...s, skipped: [...s.skipped, step().id], pi: s.pi + 1 };
+        continue;
+      }
       // 이 학생 단계에게 안 보이는 화면 — 건너뛰고, 딸린 스텝도 같이 (skip_with)
+      // 주어·동사 찾기·핵심어 자유 해석을 뺀 문장에서는 해석 맞추기가 그 자리를 대신한다 — 단계와 상관없이 모두에게 (2026-10-20 선생님)
       const levels = step().levels;
-      if (levels && !levels.includes(s.student.level ?? "중") && !longSv) {
+      if (levels && !levels.includes(s.student.level ?? "중") && !(isMatchStep(step()) && matchReplaces())) {
         log({ kind: "skip" }, { action: "CONTINUE", interactionId: step().id, reason: ["student_level"] });
         s = { ...s, skipped: [...s.skipped, step().id], pi: s.pi + 1 };
         continue;
@@ -1030,12 +1040,12 @@ export function createPolicySession(
       // 같은 자리의 여러 방식 중 하나만 — 최근에 덜 한 방식으로. 문장에 들어서면 그 문장의 자리를 한꺼번에 정한다
       decideSlots();
       const slot = step().slot;
-      if (slot && s.slotPicked[slot] !== step().id && !longSv) {
+      if (slot && s.slotPicked[slot] !== step().id) {
         s = { ...s, pi: s.pi + 1 };
         continue;
       }
       // 해석 맞추기를 하는 문장은 주어·동사 찾기와 뜻 다시 풀기·뜻 객관식을 건너뛴다 — 둘 다 하면 되풀이다 (2026-10-14 선생님)
-      if (sentenceMatched() && ((step().type === "pick" && !!(step() as PickStep).roles && !longSv) || step().meaning_check)) {
+      if (sentenceMatched() && ((step().type === "pick" && !!(step() as PickStep).roles) || step().meaning_check)) {
         log({ kind: "skip" }, { action: "CONTINUE", interactionId: step().id, reason: ["matched_sentence"] });
         s = { ...s, pi: s.pi + 1 };
         continue;
@@ -1247,8 +1257,32 @@ export function createPolicySession(
   }
 
   /** 긴 문장 — 20단어 이상 (주어·동사 찾기를 모든 단계에) */
-  function isLongSentence(sen: PolicySentence): boolean {
-    return sen.text.split(/\s+/).filter(Boolean).length >= 20;
+  /** 해석 맞추기 스텝 — 영어 덩어리를 한국어 칸에 끌어 맞추는 pick */
+  function isMatchStep(st: { type: string; match?: unknown }): boolean {
+    return st.type === "pick" && !!st.match;
+  }
+
+  /**
+   * 이 문장에서 **이 학생 단계에 보이던** 주어·동사 찾기나 핵심어 자유 해석을 뺐나 — 그 자리는 해석 맞추기가 대신한다.
+   * 초급 전용 S·V만 있던 문장은 중·고 흐름이 그대로다 (기준 레슨 21번)
+   */
+  function matchReplaces(): boolean {
+    const level = s.student.level ?? "중";
+    return sentence().steps.some((x) => (isSvStep(x) || isKeywordTranslate(x)) && (!x.levels || x.levels.includes(level)));
+  }
+
+  /**
+   * 핵심어만 나열해 놓고 해석하라는 자유 해석 — 학생이 뭘 하라는지 모른다 (2026-10-20 선생님). 문장이 그대로 보이는
+   * 것(흐림으로 줄인 문장)만 남기고 뺀다
+   */
+  function isKeywordTranslate(st: { type: string; method?: number }): boolean {
+    // method 0 = 「핵심어(노란 부분)만 보고 해석」, method 1 = 문장 전체를 자유롭게 해석·자유 응답 (남긴다)
+    return st.type === "translate" && st.method === 0;
+  }
+
+  /** 주어·동사 찾기 스텝 — roles가 있는 pick, 또는 id가 _sv·_svc로 끝나는 pick(roles 없이 주어만 찾는 초급 기본) */
+  function isSvStep(st: { id: string; type: string; roles?: unknown }): boolean {
+    return st.type === "pick" && (!!st.roles || /_svc?$/.test(st.id));
   }
 
   /** 지금 문장의 같은 자리(`slot`)들을 정한다 — 정한 방식은 학생 기록(최근 방식)에 남긴다 */
@@ -1257,10 +1291,12 @@ export function createPolicySession(
     for (const slot of new Set(steps.map((x) => x.slot).filter((x): x is string => !!x))) {
       if (s.slotPicked[slot]) continue;
       // 이 학생 단계에 안 보이거나 「이미 안다」로 건너뛸 스텝은 빼고 고른다 — 안 그러면 그 자리가 비어 버린다
-      // 긴 문장의 주어·동사 찾기는 자리 다툼에서 뺀다 — 늘 보인다
-      const long = isLongSentence(sentence());
-      const chosen = pickSlot(steps.filter((x) => x.slot === slot && !(long && x.type === "pick" && x.roles) && (!x.levels || x.levels.includes(s.student.level ?? "중"))
-        && !(x.known && s.student.known?.includes(x.known))));
+      // 주어·동사 찾기는 수업에서 뺐으니 자리 다툼에서도 뺀다 — 같은 자리에 맞추기·객관식이 있으면 그것
+      const replaces = matchReplaces();
+      const pool = steps.filter((x) => x.slot === slot && !isSvStep(x) && (!x.levels || x.levels.includes(s.student.level ?? "중") || (replaces && isMatchStep(x)))
+        && !(x.known && s.student.known?.includes(x.known)));
+      // 뺀 활동의 자리는 해석 맞추기가 — 돌려 내지 않는다 (2026-10-20 선생님: 끌어 맞추기가 해석에 가장 유용)
+      const chosen = (replaces ? pool.find((x) => isMatchStep(x)) : undefined) ?? pickSlot(pool);
       if (!chosen) continue;
       const recent = [formatOf(chosen), ...(s.student.recentFormats ?? [])].slice(0, 6);
       s = { ...s, slotPicked: { ...s.slotPicked, [slot]: chosen.id }, student: { ...s.student, recentFormats: recent } };
@@ -1670,7 +1706,8 @@ export function createPolicySession(
       senses: onStudy && shown === sen.text ? sensesOf(lesson.id, sen.id) : [],
       glosses: onStudy
         ? [
-            ...sen.glosses,
+            // 가리키는 말(it·its·that…)은 뜻 뒤에 「→ 가리키는 것」을 붙인다
+            ...sen.glosses.map((g) => (sen.refers?.[g.en] ? { ...g, ko: `${g.ko} → 가리키는 것: ${sen.refers[g.en]}` } : g)),
             ...(sen.concepts ?? [])
               .filter((c) => !sen.glosses.some((g) => g.en.toLowerCase() === c.en.toLowerCase()))
               .map((c) => ({ en: c.en, ko: c.title.replace(/:\s*$/, "") })),

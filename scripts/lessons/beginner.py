@@ -148,3 +148,72 @@ def fill_chunk_glosses(sentences, chunks):
                 if c_ not in have and c_ in chunks:
                     s_["glosses"].insert(0, {"en": c_, "ko": chunks[c_]})
                     have.add(c_)
+
+
+def add_match(sentences, sid, match_ko, *, display=None, explain=None):
+    """
+    해석 맞추기만 더한다 — **모두에게**(levels 없음). 2026-10-20 엔진: 주어·동사 찾기(roles pick, _sv/_basic_sv)와
+    핵심어 나열형 자유 해석(translate method 0)은 수업에서 빠지고, 그 문장에서는 해석 맞추기 pick이 단계와 상관없이 대신 나온다.
+    맞추기 스텝이 없던 문장에 쓴다. slot은 그 문장의 `s<n>_basic`, 덩어리는 문장(또는 display)에 그대로 있는 구절,
+    칸의 en은 candidates에 다 들어간다. 20단어 넘는 긴 문장은 핵심 덩어리 4~5개만(display로 줄인 문장).
+    덩어리 뜻이 없으면 칸의 한국어로 glosses에 채운다(화면에서 따로 눌리게).
+    """
+    s_ = next(x for x in sentences if x["id"] == sid)
+    steps = s_["steps"]
+    assert not any(st.get("match") for st in steps), (sid, "해석 맞추기가 이미 있음")
+    shown = display or s_["text"]
+    slots = [x for x in match_ko if not isinstance(x, str)]
+    for x in slots:
+        assert x["en"] in shown, (sid, x["en"], "덩어리가 문장에 없음")
+    have = {g["en"] for g in s_["glosses"]}
+    for x in slots:
+        if x["en"] not in have:
+            s_["glosses"].insert(0, {"en": x["en"], "ko": x["ko"]})
+            have.add(x["en"])
+    match = {
+        "id": f"s{sid}_match", "type": "pick", "interaction": "word_pick", "slot": f"s{sid}_basic",
+        "candidates": _in_order(shown, [x["en"] for x in slots]), "answers": [x["en"] for x in slots],
+        "match": {"ko": match_ko},
+        "brief": {"ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?" if display else
+                  "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+                  "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.", "more": "좋아요! {n}개 남았어요.",
+                  "praise": "다 맞췄어요!", "explain": explain or "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."},
+        "method": 0,
+    }
+    if display:
+        match["display"] = display
+    sv = next((st for st in steps if st["type"] == "pick" and (st.get("roles") or re.search(r"_svc?$", st["id"]))), None)
+    if sv:
+        at = steps.index(sv) + 1
+    else:
+        at = 0
+        while at < len(steps) and steps[at].get("before_read"):
+            at += 1
+    steps.insert(at, match)
+    share_tips(steps, [match])
+
+
+REF_KO = {"it": "그것", "its": "그것의", "this": "이것", "that": "그것", "these": "이것들", "those": "그것들", "they": "그들(그것들)",
+          "them": "그들을", "their": "그들의", "such": "그러한", "one": "하나", "so": "그렇게", "he": "그", "she": "그녀", "his": "그의",
+          "her": "그녀의", "him": "그를"}
+
+
+def add_refers(sentences, sid, refers, ko=None):
+    """
+    가리키는 말(it·its·this·that·they·these·such …) → 가리키는 것. 문장 필드 `refers` — 학생이 그 낱말을 누르면 뜻 뒤에
+    「→ 가리키는 것: …」이 붙는다(session.ts glosses). 키는 문장에 나오는 그대로, 값은 영어+한국어 ("translation(번역)").
+    그 낱말은 glosses에도 있어야 해서 없으면 채운다(ko 또는 기본 뜻). 더 긴 뜻 덩어리가 그 말을 품고 있으면 화면에서
+    따로 안 눌리니 그 덩어리를 키로 쓴다 — 경고를 찍는다
+    """
+    s_ = next(x for x in sentences if x["id"] == sid)
+    s_["refers"] = {**s_.get("refers", {}), **refers}
+    have = {x["en"] for x in s_["glosses"]}
+    for k in refers:
+        assert k in s_["text"], (sid, k, "문장에 없음")
+        if k not in have:
+            s_["glosses"].append({"en": k, "ko": (ko or {}).get(k) or REF_KO.get(k.lower()) or k})
+            have.add(k)
+        longer = [x["en"] for x in s_["glosses"]
+                  if x["en"] != k and re.search(r"(?<![A-Za-z])" + re.escape(k) + r"(?![A-Za-z’])", x["en"])]
+        if longer and s_["text"].count(k) <= 1:
+            print(f"  ⚠ refers s{sid} '{k}': 더 긴 뜻 덩어리 {longer} 안에 있어 따로 안 눌릴 수 있음")

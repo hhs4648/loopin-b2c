@@ -409,6 +409,15 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, ["만약 ", _m("If the goal is", "목표가 ~라면"), " — ", _m("to fill students with facts", "학생을 사실로 채우는 것"), " — 그러면 숙제처럼 ",
+                         _m("time on task", "과제에 들이는 시간을"), " ", _m("to try to maximize", "최대화하려 애쓰는 것이"), " ", _m("it might seem appropriate", "적절해 보일 수 있다"), "."],
+          display="If the goal is to fill students with facts, then it might seem appropriate to try to maximize time on task, such as by assigning homework.")
+add_refers(sentences, 4, {"these attitudes and responses": "qualitative changes in how students view themselves(학생 쪽의 질적 변화)"})
+add_refers(sentences, 5, {"that": "maximizing time on task, e.g. more homework(숙제로 과제 시간을 늘리는 것)"})
+add_refers(sentences, 7, {"that shift": "seeing education as discovery, not coverage(교육을 발견 중심으로 보는 변화)"})
+
 lesson = base_lesson(
     ID, source="2022년 3월 고3 전국연합학력평가 영어 39번 (주어진 문장 넣기, 3점)",
     topic="문장 넣기 푸는 법: 주어진 문장의 단서 → 앞뒤 예측 → ①~⑤ 흐름이 끊기는 곳",

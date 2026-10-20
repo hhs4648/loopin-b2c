@@ -434,6 +434,73 @@
           ]
         },
         {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "That perception is a construction",
+            "is not true just of",
+            "one’s perception of sensory input",
+            "such as",
+            "visual and auditory information"
+          ],
+          "answers": [
+            "That perception is a construction",
+            "visual and auditory information",
+            "such as",
+            "one’s perception of sensory input",
+            "is not true just of"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "That perception is a construction",
+                "ko": "인식이 구성이라는 것은"
+              },
+              " 단지 ",
+              {
+                "en": "visual and auditory information",
+                "ko": "시각 및 청각 정보"
+              },
+              {
+                "en": "such as",
+                "ko": "와 같은"
+              },
+              " ",
+              {
+                "en": "one’s perception of sensory input",
+                "ko": "감각적 투입에 대한 인식"
+              },
+              {
+                "en": "is not true just of",
+                "ko": "에만 해당되는 것이 아니다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "That + 문장 = 주어",
+              "text": "문장 맨 앞의 That 뒤에 주어·동사가 있고, 그 뒤에 또 동사가 오면 That 덩어리 전체가 주어예요. '~라는 것은'으로 읽어요.",
+              "mark": "That"
+            },
+            {
+              "label": "not just",
+              "text": "'~만이 아니다'예요. 뒤에 '다른 것도'가 이어질 거라는 신호예요.",
+              "mark": "just"
+            }
+          ]
+        },
+        {
           "id": "s1_that",
           "type": "show",
           "interaction": "note",
@@ -783,7 +850,10 @@
             "between": "+"
           }
         }
-      ]
+      ],
+      "refers": {
+        "It is true of": "It = that perception is a construction(인식이 구성이라는 것)"
+      }
     },
     {
       "id": 3,
@@ -1328,7 +1398,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "That wasn’t because": "That = the correlation when wines were labeled by price(가격표를 붙이자 평가가 달라진 것)"
+      }
     },
     {
       "id": 5,
@@ -1495,7 +1568,10 @@
           ],
           "meaning_check": true
         }
-      ]
+      ],
+      "refers": {
+        "it wasn’t true": "it = the effect of price on taste(가격이 맛 평가에 미친 영향)"
+      }
     },
     {
       "id": 6,
@@ -1731,6 +1807,65 @@
           "method": 0
         },
         {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s6_basic",
+          "candidates": [
+            "the imaging",
+            "showed",
+            "drinking what they believed was an expensive glass of wine",
+            "really did activate",
+            "their centers of taste for pleasure"
+          ],
+          "answers": [
+            "the imaging",
+            "drinking what they believed was an expensive glass of wine",
+            "their centers of taste for pleasure",
+            "really did activate",
+            "showed"
+          ],
+          "match": {
+            "ko": [
+              "우리는 안다 — ",
+              {
+                "en": "the imaging",
+                "ko": "그 영상은"
+              },
+              " ",
+              {
+                "en": "drinking what they believed was an expensive glass of wine",
+                "ko": "비싼 와인이라고 믿은 것을 마시는 것이"
+              },
+              " ",
+              {
+                "en": "their centers of taste for pleasure",
+                "ko": "만족감을 담당하는 미각 중추를"
+              },
+              " ",
+              {
+                "en": "really did activate",
+                "ko": "실제로 더 활성화했다는 것을"
+              },
+              " ",
+              {
+                "en": "showed",
+                "ko": "보여 줬다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "We know because the imaging showed that drinking what they believed was an expensive glass of wine really did activate their centers of taste for pleasure."
+        },
+        {
           "id": "s6_that_sv",
           "type": "pick",
           "interaction": "word_pick",
@@ -1855,16 +1990,16 @@
           "ko": "관련 있는"
         },
         {
-          "en": "That",
-          "ko": "그것"
-        },
-        {
           "en": "That’s related to",
           "ko": "그것은 ~와 관련 있다"
         },
         {
           "en": "the placebo effect",
           "ko": "플라세보(위약) 효과"
+        },
+        {
+          "en": "That",
+          "ko": "그것"
         },
         {
           "en": "placebo",
@@ -2089,7 +2224,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "That": "price activating the taste centers(가격이 미각 중추를 더 활성화한 것)"
+      }
     },
     {
       "id": 8,
@@ -2128,6 +2266,10 @@
         {
           "en": "you taste its price",
           "ko": "너는 그것의 가격을 맛본다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
         },
         {
           "en": "pain",
@@ -2413,7 +2555,10 @@
           "method": 1,
           "button": "문제 풀러 갈게요"
         }
-      ]
+      ],
+      "refers": {
+        "it": "taste(미각)"
+      }
     }
   ],
   "passage_on_try": true

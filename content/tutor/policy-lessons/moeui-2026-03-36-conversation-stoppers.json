@@ -171,6 +171,10 @@
       "teaching_value": "high",
       "glosses": [
         {
+          "en": "Daniel Dennett argues",
+          "ko": "Daniel Dennett은 주장한다"
+        },
+        {
           "en": "Daniel Dennett",
           "ko": "대니얼 데닛 · 철학자 이름"
         },
@@ -241,6 +245,10 @@
         {
           "en": "that they can serve as conversation-stoppers",
           "ko": "그것들이 대화를 끝내는 역할을 할 수 있다는 것"
+        },
+        {
+          "en": "this",
+          "ko": "이것"
         }
       ],
       "steps": [
@@ -282,6 +290,70 @@
               "text": "이 글에서는 → 끝  ('가까운' 아님)",
               "mark": "to a close",
               "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "Daniel Dennett argues",
+            "one benefit",
+            "moral considerations",
+            "conversation-stoppers",
+            "bring deliberations to a close"
+          ],
+          "answers": [
+            "Daniel Dennett argues",
+            "moral considerations",
+            "one benefit",
+            "conversation-stoppers",
+            "bring deliberations to a close"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Daniel Dennett argues",
+                "ko": "Daniel Dennett은 주장한다"
+              },
+              " — ",
+              {
+                "en": "moral considerations",
+                "ko": "도덕적 고려 사항의"
+              },
+              " ",
+              {
+                "en": "one benefit",
+                "ko": "한 가지 이점은"
+              },
+              " ",
+              {
+                "en": "conversation-stoppers",
+                "ko": "대화 중단자"
+              },
+              " 역할을 할 수 있다는 것, 즉 그 가치는 ",
+              {
+                "en": "bring deliberations to a close",
+                "ko": "심사숙고를 끝내는 것"
+              },
+              "이다."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "Daniel Dennett argues that one benefit of moral considerations is that they can serve as conversation-stoppers: their value is to bring deliberations to a close.",
+          "tips": [
+            {
+              "label": "순서 문제 요령",
+              "text": "주어진 글의 마지막 문장이 다음 단락의 첫 문장과 이어져요. 단락 첫머리의 This, The problem, in this manner 같은 말이 앞 내용을 가리켜요."
             }
           ]
         },
@@ -648,7 +720,15 @@
       ],
       "modifiers": [
         "that has served us well in many contexts"
-      ]
+      ],
+      "emphasis": [
+        "moral considerations",
+        "conversation-stoppers",
+        "bring deliberations to a close"
+      ],
+      "refers": {
+        "this": "always being able to ask for justification(항상 이유를 물을 수 있는 것)"
+      }
     },
     {
       "id": 2,
@@ -1138,7 +1218,15 @@
       ],
       "modifiers": [
         "that, once introduced, stop any further deliberation in its tracks"
-      ]
+      ],
+      "emphasis": [
+        "consideration-generator-squelchers",
+        "stop any further deliberation"
+      ],
+      "refers": {
+        "This": "endlessly asking ‘what justifies that?’ — the problem in (C)((C)의 끝없이 근거를 묻는 문제)",
+        "our public interpersonal ones": "ones = deliberations(심사숙고)"
+      }
     },
     {
       "id": 3,
@@ -1558,7 +1646,11 @@
           "text": "tempting",
           "role": "C"
         }
-      ]
+      ],
+      "refers": {
+        "in this manner": "as a conversation-stopper(대화 중단자처럼)",
+        "the claim": "‘That would be morally wrong!’(그 말)"
+      }
     },
     {
       "id": 4,
@@ -1641,6 +1733,10 @@
         {
           "en": "always",
           "ko": "언제나"
+        },
+        {
+          "en": "so",
+          "ko": "그렇게"
         }
       ],
       "steps": [
@@ -2071,7 +2167,15 @@
           "text": "can potentially do",
           "role": "V"
         }
-      ]
+      ],
+      "emphasis": [
+        "The problem",
+        "what justifies that",
+        "endlessly"
+      ],
+      "refers": {
+        "so": "respond ‘what justifies that?’(계속 되묻기)"
+      }
     }
   ],
   "passage_on_try": true

@@ -381,6 +381,17 @@ exam = {
                      rank_word="가장 많이 고른")}),
 }
 
+# ── 해석 맞추기(모두에게)·가리키는 말 — 2026-10-20 엔진: S·V 찾기·핵심어 자유 해석은 빠지고 맞추기가 대신 나온다 ──
+from beginner import add_match, add_refers, m as _m  # noqa: E402
+add_match(sentences, 1, [_m("But in the future", "그러나 미래에는"), " ", _m("real-time data collection", "실시간 데이터 수집이"), " ", _m("insurance companies", "보험사로 하여금"),
+                         " 실제 운전 행동에 따라 ", _m("to charge pay-as-you-drive rates", "‘운전하는 대로 내는’ 요금을 부과"), _m("will enable", "할 수 있게 할 것이다"), "."],
+          display="But in the future, real-time data collection will enable insurance companies to charge pay-as-you-drive rates depending on people’s actual behavior on the road.")
+add_refers(sentences, 3, {"They": "insurance companies(보험 회사)"})
+add_refers(sentences, 4, {"They": "insurance companies(보험 회사)"})
+add_refers(sentences, 7, {"This type of classification": "high-risk categories(고위험군 분류)"})
+add_refers(sentences, 8, {"whether they are men or women": "they = bad or high-risk individual drivers(고위험 운전자들)"})
+add_refers(sentences, 9, {"it": "real-time monitoring of driving(운전 실시간 감시)"})
+
 lesson = base_lesson(
     ID, source="2024년 3월 고3 전국연합학력평가 영어 38번 (주어진 문장 넣기, 2점)",
     topic="문장 넣기 푸는 법: 주어진 문장의 단서 → 앞뒤 예측 → ①~⑤ 흐름이 끊기는 곳",

@@ -4,12 +4,21 @@ import { ClassroomChat } from "./components/ClassroomChat";
 import { LessonList } from "./components/LessonList";
 import { HomeVillage } from "./components/HomeVillage";
 import { CounselRoom } from "./components/CounselRoom";
-import { loadPlan, nextSetOf } from "./tutor/counsel";
-import { loadProgress } from "./tutor/progress";
+import { ProgressBoard } from "./components/ProgressBoard";
+import { PracticeRoom } from "./components/PracticeRoom";
+import { WrongBook } from "./components/WrongBook";
+import { WrongReview } from "./components/WrongReview";
+import type { MiniStage } from "./components/CounselRoom";
+import { VocabTest } from "./components/VocabTest";
+import { firstMockId, isFirstVisit, isVocabSlot, markVocabSlot, onboardingSet, vocabSlotWords } from "./tutor/counsel";
+import { loadPlan, nextMockOf } from "./tutor/counsel";
 import { MiniMockView } from "./components/MiniMockView";
-import { allMiniMocks, getMiniMock } from "./tutor/mini";
+import { getMiniMock } from "./tutor/mini";
 import { finishAnalysis } from "./tutor/miniLog";
 import { SavedBook, type SavedKind } from "./components/SavedBook";
+import { AccountLink } from "./components/AccountLink";
+import { LoginScreen } from "./components/LoginScreen";
+import { AuthCallback } from "./components/AuthCallback";
 import { ReadPassage } from "./components/ReadPassage";
 import { PointsReview } from "./components/PointsReview";
 import { SummaryView } from "./components/SummaryView";
@@ -20,6 +29,7 @@ import { SpeakingLesson } from "./components/SpeakingLesson";
 import { getSpeakingLesson } from "./speaking/lessons";
 import type { TutorView } from "./tutor/view";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
+import { hasAccount } from "./tutor/auth";
 import { policyLessonIds } from "./tutor/policy/lessons";
 import { AUTO_NEXT_CMD, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
@@ -101,13 +111,29 @@ function ReadingApp() {
   /** 메인에서 연 단어장 · 내 노트 */
   const [saved, setSaved] = useState<SavedKind | null>(null);
   /** 미니 모의고사 — 분석 레슨을 보고 돌아오면 그 결과로(showLast), 푸는 중에 갔으면 이어 풀기로 */
-  const [miniView, setMiniView] = useState<{ id: string; showLast: boolean; n: number } | null>(() =>
+  const [miniView, setMiniView] = useState<{ id: string; showLast: boolean; n: number; stage?: MiniStage; lead?: boolean } | null>(() =>
     onlyMini ? { id: onlyMini, showLast: false, n: 0 } : null,
   );
   /** 홈(마을)에 있나 — 「오늘의 학습 시작하기」를 누르면 수업 목록으로 */
   const [home, setHome] = useState(true);
   /** 상담실에 있나 */
   const [counsel, setCounsel] = useState(false);
+  /** 「기록 지키기」(이메일 붙이기) 화면에 있나 */
+  const [account, setAccount] = useState(false);
+  /** 로그인. 지문·세트·미니 링크로 들어온 경우는 건너뛴다 */
+  const [passedLogin, setPassedLogin] = useState(
+    () => Boolean(directLesson || directSet || shareLesson || onlyMini),
+  );
+  /** 소셜 로그인에서 돌아온 주소 (`/auth/callback`) */
+  const [authCallback, setAuthCallback] = useState(() => window.location.pathname === "/auth/callback");
+  /** 진도표(본 문제·안 본 문제·자주 틀리는 유형)에 있나 */
+  const [board, setBoard] = useState(false);
+  /** 코스의 단어 칸 — 그 회차 주요 단어 테스트 (id = vocab-<10분 모의고사 id>) */
+  const [vocabSlot, setVocabSlot] = useState<string | null>(null);
+  /** 틀린 문제 모아보기에 있나 */
+  const [wrongBook, setWrongBook] = useState(false);
+  /** 첫 방문 체험 분석 중 — 끝나면 코스 첫 회 10분 모의고사 시작 화면으로 (2026-10-20 선생님) */
+  const [onboarding, setOnboarding] = useState(false);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
   /*
@@ -117,8 +143,13 @@ function ReadingApp() {
   */
   const [cloudGen, setCloudGen] = useState(0);
   useEffect(() => {
+    if (passedLogin || authCallback) return;
+    void hasAccount().then((on) => on && setPassedLogin(true));
+  }, [passedLogin, authCallback]);
+  useEffect(() => {
+    if (authCallback) return;
     void pullAll().then((changed) => changed && setCloudGen((n) => n + 1));
-  }, []);
+  }, [authCallback]);
 
   const session = started?.session ?? null;
 
@@ -258,9 +289,65 @@ function ReadingApp() {
     setView(null);
     setChatOverride(false);
     setSeconds(0);
+    // 첫 방문 체험이 끝났다 — 안내 한 줄과 함께 코스 첫 회로
+    if (onboarding) {
+      setOnboarding(false);
+      const first = firstMockId(loadPlan());
+      setHome(false);
+      if (first) setMiniView({ id: first, showLast: false, n: 0, lead: true });
+    }
+  }
+
+  if (authCallback && !started) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <AuthCallback
+            onDone={() => {
+              window.history.replaceState({}, "", "/");
+              setAuthCallback(false);
+              setPassedLogin(true);
+              setCloudGen((n) => n + 1);
+            }}
+            onBack={() => {
+              window.history.replaceState({}, "", "/");
+              setAuthCallback(false);
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (!passedLogin && !started) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <LoginScreen onSkip={() => setPassedLogin(true)} />
+        </div>
+      </div>
+    );
   }
 
   const mini = miniView ? getMiniMock(miniView.id) : null;
+  if ((!started || !view) && mini && miniView && miniView.stage === "review") {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <WrongReview
+            key={`${mini.id}-review-${miniView.n}`}
+            mockId={mini.id}
+            onBack={() => setMiniView(null)}
+            onAnalyze={(set) => {
+              // 분석을 보고 돌아오면 같은 복습 화면으로
+              setMiniView({ ...miniView, n: miniView.n + 1 });
+              startSet(set, true);
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
   if ((!started || !view) && mini && miniView) {
     return (
       <div className="viewport">
@@ -269,6 +356,8 @@ function ReadingApp() {
             key={`${mini.id}-${miniView.n}`}
             mock={mini}
             showLast={miniView.showLast}
+            initialStage={miniView.stage === "review" ? undefined : miniView.stage}
+            lead={miniView.lead ? "방금처럼 어려운 문제를 문장 단위로 잡아 드려요. 이제 10분 모의고사로 시작해요!" : undefined}
             standalone={miniView.id === onlyMini}
             onBack={() => setMiniView(null)}
             onAnalyze={(set, fromExam) => {
@@ -281,23 +370,92 @@ function ReadingApp() {
     );
   }
 
-  if ((!started || !view) && saved) {
+  if ((!started || !view) && wrongBook) {
     return (
       <div className="viewport">
         <div className="phone">
-          <SavedBook key={cloudGen} kind={saved} onBack={() => setSaved(null)} />
+          <WrongBook
+            key={cloudGen}
+            onBack={() => setWrongBook(false)}
+            onOpenSet={(set) => {
+              setWrongBook(false);
+              setCounsel(false);
+              setHome(false);
+              startSet(set);
+            }}
+            onOpenMini={(id) => {
+              setWrongBook(false);
+              setMiniView({ id, showLast: false, n: 0 });
+            }}
+          />
         </div>
       </div>
     );
   }
 
-  /** 상담실 계획의 문제를 바로 시작한다 (끝나면 다른 수업처럼 그 문제가 있던 목록으로) */
-  function startPlanned(setId: string) {
-    const set = getSet(setId);
-    if (!set) return;
-    setCounsel(false);
-    setHome(false);
-    startSet(set);
+  if ((!started || !view) && vocabSlot) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <VocabTest
+            key={vocabSlot}
+            only={vocabSlotWords(vocabSlot)}
+            onRetry={() => setVocabSlot(null)}
+            onClose={() => {
+              markVocabSlot(vocabSlot);
+              setVocabSlot(null);
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if ((!started || !view) && board) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <ProgressBoard
+            key={cloudGen}
+            onBack={() => setBoard(false)}
+            onOpenSet={(set) => {
+              setBoard(false);
+              setCounsel(false);
+              setHome(false);
+              startSet(set);
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if ((!started || !view) && saved) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          {saved === "notes" ? (
+            <SavedBook key={cloudGen} kind={saved} onBack={() => setSaved(null)} />
+          ) : (
+            <PracticeRoom key={cloudGen} tab="vocab" onBack={() => setSaved(null)} />
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  if ((!started || !view) && account) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <AccountLink
+            onBack={() => setAccount(false)}
+            // 로그인해서 서버 기록과 합쳐 로컬이 바뀌었으면 홈·목록·단어장을 다시 그린다
+            onSynced={(changed) => changed && setCloudGen((n) => n + 1)}
+          />
+        </div>
+      </div>
+    );
   }
 
   if ((!started || !view) && counsel) {
@@ -308,11 +466,10 @@ function ReadingApp() {
             key={cloudGen}
             learnerName={loadLearnerName()}
             onClose={() => setCounsel(false)}
-            onStartSet={startPlanned}
-            onOpenMini={() => {
-              const first = allMiniMocks()[0];
-              if (first) setMiniView({ id: first.id, showLast: false, n: 0 });
-            }}
+            // 코스의 10분 모의고사 — 끝나고 「목록으로」 하면 상담실 코스 화면으로 돌아온다
+            onOpenMini={(id, stage) => (isVocabSlot(id) ? setVocabSlot(id) : setMiniView({ id, showLast: false, n: 0, stage }))}
+            onOpenBoard={() => setBoard(true)}
+            onOpenWrong={() => setWrongBook(true)}
           />
         </div>
       </div>
@@ -327,19 +484,28 @@ function ReadingApp() {
             key={cloudGen}
             learnerName={loadLearnerName()}
             onStart={() => {
-              // 상담실에서 짠 계획이 있으면 그다음 문제로, 없으면 수업 목록으로
-              const plan = loadPlan();
-              const next = plan ? nextSetOf(plan, loadProgress()) : null;
-              if (next) startPlanned(next);
+              // 코스의 다음 10분 모의고사로(상담을 안 했어도 최근 시험부터), 코스를 다 맞혔으면 수업 목록으로
+              // 첫 방문 — 코스 첫 회 오답률 1위 문제를 분석 모드로 바로 (10분 시험은 그다음)
+              if (isFirstVisit()) {
+                const set = onboardingSet(loadPlan());
+                if (set) {
+                  setOnboarding(true);
+                  setHome(false);
+                  startSet(set, true);
+                  return;
+                }
+              }
+              const next = nextMockOf(loadPlan());
+              if (next && isVocabSlot(next)) setVocabSlot(next);
+              else if (next) setMiniView({ id: next, showLast: false, n: 0 });
               else setHome(false);
             }}
             onOpenCounsel={() => setCounsel(true)}
             onOpenMini={() => {
-              const first = allMiniMocks()[0];
-              if (first) setMiniView({ id: first.id, showLast: false, n: 0 });
-              else setHome(false);
+              window.location.assign("/staff/loopin-staff-room-raised.html");
             }}
             onOpenSaved={setSaved}
+            onOpenAccount={() => setAccount(true)}
           />
         </div>
       </div>

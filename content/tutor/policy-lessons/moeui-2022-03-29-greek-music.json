@@ -682,6 +682,11 @@
           "button": "네",
           "practice": "nor-so"
         }
+      ],
+      "emphasis": [
+        "don’t know",
+        "nor",
+        "has it survived"
       ]
     },
     {
@@ -767,7 +772,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "Much of it": "much of ancient Greek music(고대 그리스 음악의 대부분)"
+      }
     },
     {
       "id": 3,
@@ -1011,6 +1019,10 @@
             }
           ]
         }
+      ],
+      "emphasis": [
+        "were generally more concerned with",
+        "as with"
       ]
     },
     {
@@ -1708,6 +1720,10 @@
           "button": "네",
           "practice": "consider-to-be"
         }
+      ],
+      "emphasis": [
+        "considered",
+        "to be ‘exceedingly coarse and tasteless’"
       ]
     },
     {

@@ -336,6 +336,48 @@
       ],
       "steps": [
         {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "Distance in time",
+            "is like",
+            "distance in space"
+          ],
+          "answers": [
+            "Distance in time",
+            "distance in space",
+            "is like"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Distance in time",
+                "ko": "시간 속의 거리는"
+              },
+              " ",
+              {
+                "en": "distance in space",
+                "ko": "공간 속의 거리"
+              },
+              {
+                "en": "is like",
+                "ko": "와 같다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
           "id": "s1_like",
           "type": "choice",
           "interaction": "meaning_choice",
@@ -655,7 +697,10 @@
             }
           ]
         }
-      ]
+      ],
+      "refers": {
+        "they live": "they = people(사람들)"
+      }
     },
     {
       "id": 3,
@@ -670,10 +715,6 @@
         {
           "en": "matter",
           "ko": "중요하다"
-        },
-        {
-          "en": "they",
-          "ko": "그들"
         },
         {
           "en": "Likewise",
@@ -698,6 +739,10 @@
         {
           "en": "hence",
           "ko": "지금부터 (~ 뒤에)"
+        },
+        {
+          "en": "they",
+          "ko": "그들(그것들)"
         },
         {
           "en": "live",
@@ -942,7 +987,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "they": "people(사람들)"
+      }
     },
     {
       "id": 4,
@@ -1211,10 +1259,6 @@
           "ko": "멈추다"
         },
         {
-          "en": "it",
-          "ko": "그것(세상)"
-        },
-        {
           "en": "our doorstep",
           "ko": "우리 집 문 앞"
         },
@@ -1253,6 +1297,10 @@
         {
           "en": "or the next",
           "ko": "또는 다음 세대에서"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
         },
         {
           "en": "generation",
@@ -1556,7 +1604,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "it": "the world(세상)"
+      }
     },
     {
       "id": 6,
@@ -1609,7 +1660,10 @@
             "common sense"
           ]
         }
-      ]
+      ],
+      "refers": {
+        "These ideas": "distance in time is like distance in space(시간의 거리도 공간의 거리처럼 사람을 덜 중요하게 만들지 않는다)"
+      }
     },
     {
       "id": 7,
@@ -2075,7 +2129,10 @@
             "between": "="
           }
         }
-      ]
+      ],
+      "refers": {
+        "this poisons people": "this = radioactive waste(방사성 폐기물)"
+      }
     },
     {
       "id": 9,
@@ -2118,6 +2175,10 @@
         {
           "en": "people alive today",
           "ko": "오늘 살아 있는 사람들"
+        },
+        {
+          "en": "so",
+          "ko": "그렇게"
         },
         {
           "en": "few",
@@ -2376,7 +2437,10 @@
             ]
           }
         }
-      ]
+      ],
+      "refers": {
+        "so": "care about climate change or pollution(기후 변화·오염에 신경 쓰는 것)"
+      }
     },
     {
       "id": 10,

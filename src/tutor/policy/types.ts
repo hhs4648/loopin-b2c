@@ -523,6 +523,12 @@ export type PolicySentence = {
   /** 문장 내내 색으로 눈에 띄게 할 단어 — 누르면 뜻이 나온다. 스텝의 `highlight`와 다르다 */
   emphasis?: string[];
   /**
+   * 10분 모의고사의 「핵심어만 읽고 풀기」에서만 칠하는 핵심어 — 수업에서는 칠하지 않는다.
+   * 수업에서 학생이 직접 핵심어를 찾는 스텝이 있는 문장은 `emphasis` 대신 여기에 적는다(미리 답을 보여 주지 않게).
+   * 없으면 10분 모의고사는 `emphasis`를 쓴다
+   */
+  keys?: string[];
+  /**
    * 끊어읽기 — 이 말들 바로 뒤에 「/」를 넣는다. 화면의 「/ 끊어읽기」를 누르면 보인다(긴 문장을 의미 덩어리로 읽는 법을 모르는 학생용,
    * 2026-10-16 선생님). 문장에 나오는 그대로(문장부호 포함) 적는다
    */
@@ -539,6 +545,11 @@ export type PolicySentence = {
    */
   modifiers?: string[];
   glosses: WordGloss[];
+  /**
+   * it·its·this·that 같은 가리키는 말이 앞에서 무엇을 가리키나 — 단어를 누르면 뜻과 함께 「→ 가리키는 것: …」로 보인다 (2026-10-20 선생님).
+   * 키는 문장에 나오는 그대로(it / its / this task …), 값은 가리키는 것(영어 + 한국어)
+   */
+  refers?: Record<string, string>;
   vocabulary?: Record<string, VocabularySupport>;
   helps?: OptionalHelp[];
   steps: PolicyStep[];
@@ -681,6 +692,11 @@ export type PolicyLesson = {
    * 바로 풀기를 고른 학생만 지문 전체를 한 화면에서 보고 바로 문제를 푼다.
    */
   passage_on_try?: boolean;
+  /**
+   * 핵심어(`keys`/`emphasis`)를 선생님이 지문 표시판에서 직접 확인했다. 10분 모의고사의 「핵심어만 읽고 풀기」 버튼은
+   * 이게 true인 레슨에서만 보인다 — AI가 고른 핵심어는 엉뚱할 수 있어서 (2026-10-20 선생님)
+   */
+  keys_checked?: boolean;
   /** 마무리 단어 체크 — 본문 단어와 보기 단어를 따로 */
   key_words?: { passage: WordGloss[]; options: WordGloss[] };
   context: LearningContext;

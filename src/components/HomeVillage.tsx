@@ -1,7 +1,10 @@
-import type { CSSProperties, ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import { cloudEnabled } from "../tutor/cloud";
+import { linkedEmail } from "../tutor/auth";
 import { loadVocab } from "../tutor/vocab";
 import { loadProgress } from "../tutor/progress";
-import { loadPlan, planProgress } from "../tutor/counsel";
+import { courseProgress, isFirstVisit, isVocabSlot, loadPlan, nextMockOf } from "../tutor/counsel";
+import { getMiniMock } from "../tutor/mini";
 import type { SavedKind } from "./SavedBook";
 
 /**
@@ -18,22 +21,41 @@ import type { SavedKind } from "./SavedBook";
 
 type Props = {
   learnerName: string | null;
-  /** 「오늘의 학습 시작하기」 — 계획이 있으면 그다음 문제, 없으면 수업 목록 */
+  /** 「오늘의 10분」 — 코스에서 다음 10분 모의고사. 코스를 다 맞혔으면 수업 목록 */
   onStart: () => void;
-  /** 교무실 — 미니 모의고사 */
+  /** 교무실 — public/staff 의 선생님 고르기 페이지 */
   onOpenMini: () => void;
   /** 상담실 — 점수·목표를 듣고 커리큘럼을 짠다 */
   onOpenCounsel: () => void;
   /** 보충학습실(단어장) */
   onOpenSaved: (kind: SavedKind) => void;
+  /** 「기록 지키기」 — 이메일을 붙여 다른 기기에서도 이어 한다 */
+  onOpenAccount: () => void;
 };
 
 /** 별가루·친밀도 — 데모(학생 테스트)에서는 가린다. 쓰임이 정해지면 true로 (2026-10-19 선생님) */
 const SHOW_STATS = false;
 
-export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, onOpenSaved }: Props) {
+export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, onOpenSaved, onOpenAccount }: Props) {
+  /** 이메일을 붙여 두었나 — 서버가 있을 때만 묻고, 모르는 동안은 「기록 지키기」로 둔다 */
+  const [linked, setLinked] = useState<string | null>(null);
+  useEffect(() => {
+    if (!cloudEnabled()) return;
+    let alive = true;
+    void linkedEmail().then((e) => alive && setLinked(e));
+    return () => {
+      alive = false;
+    };
+  }, []);
+
   const plan = loadPlan();
-  const planDone = plan ? planProgress(plan, loadProgress()) : null;
+  // 코스는 상담을 안 했어도 있다(최근 시험부터) — 「오늘의 10분」은 안 푼 첫 회, 다 돌면 틀린 문제 다시
+  const planDone = courseProgress(plan);
+  const nextId = nextMockOf(plan);
+  // 첫 방문 — 10분 시험보다 다정쌤 분석을 먼저 한 문제 경험하게 (2026-10-20 선생님)
+  const firstVisit = isFirstVisit();
+  const nextVocab = nextId && isVocabSlot(nextId) ? getMiniMock(nextId.slice("vocab-".length)) : null;
+  const nextMock = nextId && !nextVocab ? getMiniMock(nextId) : null;
   const vocabCount = loadVocab().length;
   const doneCount = Object.keys(loadProgress()).length;
 
@@ -45,7 +67,7 @@ export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, o
         <House
           img="staff"
           sign="교무실"
-          badge={{ icon: "⏱", text: "미니 모의고사" }}
+          badge={{ icon: "👋", text: "선생님 고르기" }}
           // 가운데 x · 바닥 y · 폭 (지도에 대한 %) · 간판 높이 (집 그림에 대한 %)
           at={{ x: 50, y: 48, w: 24, sign: 37 }}
           delay={0}
@@ -54,15 +76,15 @@ export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, o
         <House
           img="counsel"
           sign="상담실"
-          badge={{ icon: "💬", text: planDone ? `내 계획 ${planDone.done}/${planDone.total}` : "학습 상담" }}
+          badge={{ icon: "💬", text: plan ? `코스 ${planDone.done}/${planDone.total}` : "학습 상담" }}
           at={{ x: 33, y: 68, w: 21, sign: 37 }}
           delay={0.9}
           onOpen={onOpenCounsel}
         />
         <House
           img="extra"
-          sign="보충학습실"
-          badge={{ icon: "📒", text: vocabCount > 0 ? `단어장 ${vocabCount}` : "단어장" }}
+          sign="연습실"
+          badge={{ icon: "📒", text: vocabCount > 0 ? `단어 ${vocabCount} · 문장 · 문법` : "단어 · 문장 · 문법" }}
           at={{ x: 67.5, y: 70, w: 22, sign: 37 }}
           delay={1.8}
           onOpen={() => onOpenSaved("vocab")}
@@ -71,13 +93,18 @@ export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, o
         {/* 다정쌤 — 광장 한가운데 */}
         <div className="village-teacher">
           <div className="teacher-bob">
-            <img src="/assets/dajung-teacher.webp" alt="다정쌤" width={650} height={616} draggable={false} />
+            <img src="/assets/character/dajung.webp" alt="다정쌤" width={650} height={616} draggable={false} />
           </div>
         </div>
       </div>
 
       <header className="village-top">
         <h1 className="village-home">홈</h1>
+        {cloudEnabled() ? (
+          <button type="button" className={`village-account${linked ? " linked" : ""}`} onClick={onOpenAccount} title={linked ?? "기록 지키기"}>
+            {linked ? "✓ 기록 지킴" : "🔒 기록 지키기"}
+          </button>
+        ) : null}
         {SHOW_STATS ? (
           <div className="village-stats">
             <span className="village-stat">
@@ -104,7 +131,10 @@ export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, o
 
       <div className="village-dock">
         <button type="button" className="village-cta" onClick={onStart}>
-          <span>{plan ? "오늘의 계획 이어 하기" : "오늘의 학습 시작하기"}</span>
+          <span>
+            {firstVisit ? "다정쌤과 한 문제 분석해 보기" : nextVocab ? `단어 외우기 · ${nextVocab.title}` : nextMock ? `오늘의 10분 · ${nextMock.title}` : "오늘의 학습 시작하기"}
+            {firstVisit ? <small>5분 · 어려운 문제를 문장 단위로 같이 읽어요</small> : nextVocab ? <small>방금 푼 회의 주요 단어 테스트</small> : nextMock ? <small>{planDone.done}/{planDone.total}회 · 어려운 {nextMock.items.length}문제</small> : null}
+          </span>
           <i className="village-cta-go">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 6l6 6-6 6" />

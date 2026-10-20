@@ -18,6 +18,14 @@
       "explain": "주어는 Anger and empathy(분노와 공감), 동사는 can’t exist(존재할 수 없다)예요. 대시(—) 사이는 비유예요.",
       "from": "68hlw5"
     },
+    "s1_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1er8vfa"
+    },
     "g_cant": {
       "ask": "Anger and empathy(분노와 공감)는 서로 어떤 관계라고 할까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -78,6 +86,14 @@
       "explain": "앞은 S The relief, V triggers, O a tremendous rush of gratitude예요. and 뒤는 S the person’s quiet rage, V turns into, 전목 forgiveness예요.",
       "from": "13516d2"
     },
+    "s2_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "hxro6"
+    },
     "a_person": {
       "ask": "the person’s quiet rage(그 사람의 조용한 분노)에서 the person은 누구일까요?",
       "reask": "그럼 하나 골라 봐요.",
@@ -122,6 +138,14 @@
       "praise": "다 찾았어요!",
       "explain": "주어는 the blamer, 동사는 knows와 turns into예요. how 덩어리 전체가 아는 내용(O)이고, an ally는 into 뒤 목적어예요.",
       "from": "a20zou"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1vnd6rt"
     },
     "b_before": {
       "ask": "(B)는 'Suddenly and unexpectedly, however(그러나 갑자기 뜻밖에도)'로 시작해요. 앞에는 어떤 내용이 와야 할까요?",
