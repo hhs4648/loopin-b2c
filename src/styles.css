@@ -2091,3 +2091,6 @@ mark.passage-key { background: #fff1b8; color: inherit; border-radius: 3px; padd
 .exam-submit:disabled { opacity: .45; cursor: default; }
 .exam-numbers-wrap .exam-submit { margin-top: 10px; }
 .exam-num-btn.picked-wrong { outline: 2px solid #e2607d; }
+
+/* 「전체 지문」 팝업 맨 위의 문제 글 */
+.passage-question { margin: 0 0 10px; font-size: 14.5px; font-weight: 700; line-height: 1.5; color: #2b2430; }

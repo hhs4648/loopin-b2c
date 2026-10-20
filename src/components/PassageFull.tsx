@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
 type Props = {
+  /** 시험 문제 글 (「다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?」) — 있으면 맨 위에 */
+  question?: string | null;
   /** 문장 넣기 문제의 「주어진 문장」 — 지문 위에 따로 상자로 */
   given?: string | null;
   sentences: string[];
@@ -25,12 +27,13 @@ type Props = {
  * 문제지처럼 지문을 한 덩어리로 쭉 보여 준다. 문장 번호도, 장 넘기기도 없다 —
  * 학생이 처음 보는 건 실제 시험지 모양이어야 「무슨 문제인지」 바로 안다.
  */
-export function PassageFull({ given, sentences, underline, options, onPick, picked, right, numbersOnly, highlight = [], highlightBy = {} }: Props) {
+export function PassageFull({ question, given, sentences, underline, options, onPick, picked, right, numbersOnly, highlight = [], highlightBy = {} }: Props) {
   const NUM = "①②③④⑤";
   // 핵심어를 칠하는 화면(답 고르기) — 핵심어가 없는 문장의 ①~⑤도 굵게
   const keyMode = highlight.length > 0 || Object.keys(highlightBy).length > 0;
   return (
     <div className="passage-full">
+      {question ? <p className="passage-question">{question}</p> : null}
       {given ? <p className="passage-given">{underlined(given, [], [...highlight, ...(highlightBy[given] ?? [])], keyMode)}</p> : null}
       {/* 순서 문제처럼 (A)·(B)·(C)로 시작하는 문장에서 단락을 나눈다 — 시험지 모양 그대로 */}
       {paragraphs(sentences).map((para, k) => (

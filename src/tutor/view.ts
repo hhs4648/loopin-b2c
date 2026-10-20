@@ -183,7 +183,8 @@ export type TutorView = {
   /** false면 아래 입력창을 숨긴다 — 버튼으로만 답하는 화면에서 (기본은 보인다) */
   allowInput?: boolean;
   /** 문장 학습 중 위의 「전체 지문」으로 여는 지문 */
-  fullPassage?: { given?: string | null; sentences: string[]; underline: string[] } | null;
+  /** 「전체 지문」 팝업 — 맨 위에 시험 문제 글(question)도 같이 (2026-10-20 선생님) */
+  fullPassage?: { question?: string | null; given?: string | null; sentences: string[]; underline: string[] } | null;
   /** 이전·다음 문장으로 옮겨 갈 수 있나 */
   canPrevSentence?: boolean;
   canNextSentence?: boolean;

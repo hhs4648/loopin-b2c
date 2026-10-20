@@ -1782,7 +1782,7 @@ export function createPolicySession(
           : [],
       fullPassage:
         lesson.passage_on_try && (inLesson || exam)
-          ? { given: givenText, sentences: passageTexts, underline: lesson.exam ? underlinesOf(lesson.exam) : [] }
+          ? { question: lesson.exam?.question ?? null, given: givenText, sentences: passageTexts, underline: lesson.exam ? underlinesOf(lesson.exam) : [] }
           : null,
       canPrevSentence: inLesson && s.si > 0,
       canNextSentence: inLesson,

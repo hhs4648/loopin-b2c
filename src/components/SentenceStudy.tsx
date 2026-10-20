@@ -505,6 +505,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
               </button>
             </div>
             <PassageFull
+              question={view.fullPassage.question}
               given={view.fullPassage.given}
               sentences={view.fullPassage.sentences}
               underline={view.fullPassage.underline}
