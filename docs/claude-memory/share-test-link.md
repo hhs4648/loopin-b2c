@@ -9,7 +9,8 @@ metadata:
 
 테스트 링크는 앱 전체를 `scripts/build_share.mjs all`로 한 장 HTML로 묶어 claude.ai 아티팩트로 올린 것이다.
 
-- **영어**: https://claude.ai/artifact/GmX5HgA6MH8ksXgwLCRUrk (「다정쌤 테스트 수업」, 영어 대화가 관리). 2026-10-12에 국어를 한 번 넣었지만(버전 49) 영어 대화가 다음에 올리면 영어만 남아도 된다
+- **실제 배포(Vercel, 2026-10-20부터 메인)**: https://loopin-b2c.vercel.app — `npx vercel --prod --yes`(프로젝트 .vercel/project.json에 연결됨, Supabase 공개 키는 Vercel production env에 있음). 로그인·클라우드 저장까지 되는 진짜 앱.
+- **영어 아티팩트**: https://claude.ai/artifact/GmX5HgA6MH8ksXgwLCRUrk (「다정쌤 테스트 수업」, 영어 대화가 관리). 2026-10-12에 국어를 한 번 넣었지만(버전 49) 영어 대화가 다음에 올리면 영어만 남아도 된다
 - 테스트용은 예전 링크 GmX5HgA6…를 계속 쓴다(2026-10-14 새로 만들었던 ELnV3MH9…는 사용자 뜻을 잘못 이해한 것이라 지움). 작업용 파일 scratchpad/site/index.html. 2026-10-17 버전 208에 2024년 3월 Top15 포함해 갱신(사용자: 다른 사람에게 공개돼도 됨)
 - **국어**: https://claude.ai/artifact/RSSfXXy48XYdYZWRXzHqsS (「다정쌤 국어 테스트」, 이 국어 라인이 관리). 국어 폴더에서 `npm run share:korean` → `share/korean-test.html`을 같은 URL에 올린다. 국어만 보임 — 과목 드롭다운 없음(`VITE_ONLY_SUBJECT=korean`, 2026-10-13 사용자 요청: 영어는 이 링크로 안 들어가도 됨). 만들 때는 비공개 — 공유는 사용자가 Share 메뉴에서
 

@@ -11,7 +11,7 @@
 - [한국어로 대답](reply-in-korean.md) — 모든 대답(보고·설명·질문)은 한국어로
 - [빈칸: 주장과 같은 쪽? 반대?](blank-same-or-opposite.md) — 빈칸 문제는 빈칸이 주장과 같은 말인지 반대 의견인지 먼저 파악
 - [국어 라인](korean-line.md) — 브랜치 korean/2025-03-10(폴더 loopin-b2c-korean), 다정쌤, 비문학·문단별, 목록은 지문별(회차 parts), 10~13번 회차 1~3 완료
-- [테스트 링크](share-test-link.md) — 영어 테스트용 GmX5HgA6…(작업 중 갱신) · 검수용 DdR3hJTt…만(요청 때만) · 국어 RSSfXXy4…
+- [테스트 링크](share-test-link.md) — 배포 loopin-b2c.vercel.app(`npx vercel --prod`) · 영어 테스트용 GmX5HgA6…(작업 중 갱신) · 검수용 DdR3hJTt…만(요청 때만) · 국어 RSSfXXy4…
 - [국어 문단: 핵심어→핵심어로 읽기](korean-paragraph-keys-summary.md) — 핵심어·함정 모두 구절로 전부 직접 찾기 → 핵심어로만 읽기 (자유 요약 없음)
 - [대시 규칙](dash-rules.md) — 대시(—) 하나는 생략 금지(두 개 사이만 삽입) · 학생에겐 「대시(—)」처럼 기호를 괄호로
 - [S·V·O 찾기 삭제](svo-finding.md) — 2026-10-20 전부 삭제(세션이 roles pick·_sv 스텝 건너뜀), 끊어읽기가 대신, 새 레슨에 S·V 스텝 만들지 말 것
