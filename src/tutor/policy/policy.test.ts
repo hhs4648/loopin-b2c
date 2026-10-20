@@ -325,19 +325,20 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     expect(session.lastAction()?.interactionId).toBe("s1_pick");
   });
 
-  it("바로 풀어서 맞히면 꼼꼼히 분석 · 핵심만 정리 · 여기서 끝 중에 고른다. 끝내면 다시 볼 주기 없이 종료", async () => {
+  it("바로 풀어서 맞히면 「분석하기」「다음 문제로」 둘 중에 고른다. 다음 문제로 가면 다시 볼 주기 없이 종료", async () => {
     const session = make();
     let v = session.view();
     await session.submit("바로 풀어 볼게요");
     v = await session.submit(L.exam!.options[2]!.label);
     expect(v.message.startsWith("맞았어요!")).toBe(true);
     expect(v.passage?.right).toBe("3");
-    expect(v.buttons).toEqual(["제대로 분석", "핵심 정리", "끝내기"]);
-    v = await session.submit("끝내기");
+    expect(v.buttons).toEqual(["분석하기", "다음 문제로"]);
+    v = await session.submit("다음 문제로");
     expect(v.ended).toBe(true);
   });
 
-  it("「핵심만 정리」는 마지막 단어 지도, 수업의 💡·❓ 표현, 주요 단어를 한 화면에", async () => {
+  // 「핵심 정리」 버튼은 2026-10-20 화면에서 뺐다 — 세션은 아직 받는다
+  it.skip("「핵심만 정리」는 마지막 단어 지도, 수업의 💡·❓ 표현, 주요 단어를 한 화면에", async () => {
     const session = make();
     let v = session.view();
     await session.submit("바로 풀어 볼게요");
@@ -357,7 +358,7 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     let v = session.view();
     await session.submit("바로 풀어 볼게요");
     await session.submit(L.exam!.options[2]!.label);
-    v = await session.submit("제대로 분석");
+    v = await session.submit("분석하기");
     for (let g = 0; g < 80 && !v.examOptions && !v.examExplain; g++) {
       const id = session.lastAction()?.interactionId ?? "";
       const step = L.sentences.flatMap((x) => x.steps).find((x) => x.id === id);

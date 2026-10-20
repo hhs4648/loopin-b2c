@@ -595,7 +595,8 @@ export function createPolicySession(
           ...s,
           firstAnswer: { optionId: picked.id, correct },
           message: L.first_correct_offer,
-          buttons: [ANALYZE_DEEP_BTN, SUMMARY_ONLY_BTN, END_NOW_BTN],
+          // 버튼은 둘만 — 「분석하기」「다음 문제로」 (2026-10-20 선생님). 핵심 정리는 안 내민다
+          buttons: [ANALYZE_DEEP_BTN, END_NOW_BTN],
         };
         return;
       }
