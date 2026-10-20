@@ -141,7 +141,7 @@ function ReadingApp() {
    * 코스 문제를 미리보기 화면에서 시간 재서 푸는 중 (2026-10-20 선생님) — 등급별 제한시간(`withPlanMinutes`),
    * 「시간 재서 풀어 볼게요」를 누르면 시작, 답을 고르면 그 문제의 10분 모의고사 기록(`ten-<시험>-q<번호>`)으로 남긴다
    */
-  const [courseExam, setCourseExam] = useState<{ mockId: string; no: number; limit: number; startedAt: number | null; endedAt: number | null; analyzeBtn: string } | null>(null);
+  const [courseExam, setCourseExam] = useState<{ mockId: string; no: number; limit: number; startedAt: number | null; endedAt: number | null; analyzeBtn: string; unknown: { en: string; ko: string }[] } | null>(null);
   const [typing, setTyping] = useState(false);
   const [seconds, setSeconds] = useState(0);
   /*
@@ -257,6 +257,7 @@ function ReadingApp() {
       seconds: secs,
       timeUp: secs > courseExam.limit,
       times: { [courseExam.no]: secs },
+      unknown: courseExam.unknown.map((u) => ({ no: courseExam.no, ...u })),
     });
     setCourseExam({ ...courseExam, endedAt: Date.now() });
   }, [view, courseExam]);
@@ -428,7 +429,7 @@ function ReadingApp() {
               setMiniView({ id: mini.id, showLast: !fromExam, n: miniView.n + 1 });
               // 코스 문제 — 단어 화면 다음은 지문 미리보기, 거기서 시간 재서 푼다
               const single = flow ? singleOf(mini.id) : null;
-              if (single) setCourseExam({ mockId: mini.id, no: single.no, limit: mini.minutes * 60, startedAt: Date.now(), endedAt: null, analyzeBtn: "" });
+              if (single) setCourseExam({ mockId: mini.id, no: single.no, limit: mini.minutes * 60, startedAt: Date.now(), endedAt: null, analyzeBtn: "", unknown: [] });
               startSet(set, true, !!single);
             }}
           />
@@ -627,6 +628,8 @@ function ReadingApp() {
                     minutes: courseExam.limit / 60,
                     left: courseExam.startedAt ? Math.round(courseExam.limit - ((courseExam.endedAt ?? Date.now()) - courseExam.startedAt) / 1000) : null,
                     analyzeBtn: courseExam.analyzeBtn || READ_DONE_BTN,
+                    item: getMiniMock(courseExam.mockId)!.items[0]!,
+                    onUnknown: (unknown) => setCourseExam((c) => (c ? { ...c, unknown } : c)),
                   }
                 : undefined
             }

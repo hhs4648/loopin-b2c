@@ -462,7 +462,7 @@ def base_lesson(ID, *, source, topic, method, images, intro, exam, key_words, se
 def exam_brief(ask, answer_explain, final_wrong, option_feedback, option_review=None):
     b = {"ask": ask, "first_correct": "맞았어요!", "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
          "final_correct": "정답이에요!", "answer_explain": answer_explain, "final_wrong": final_wrong,
-         "option_feedback": option_feedback, "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요."}
+         "option_feedback": option_feedback, "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요."}
     if option_review:
         b["option_review"] = option_review
     return b

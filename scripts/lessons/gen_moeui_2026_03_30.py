@@ -142,8 +142,12 @@ sentences = [
                  method=0, button="다음",
                  panel=board([], ["proper name*"], fresh_cluster=True, right_label="반대쪽"),
                  highlight=["not a proper name"]),
+            show("s1_abstract",
+                 "이름을 붙이면 'abstract away from its particularities' 한대요.",
+                 method=0, button="다음",
+                 highlight=["abstract away from its particularities"]),
             choice("s1_q",
-                   "이름을 붙이면 'abstract away from its particularities' 한대요. particularities는 어느 그룹일까요?",
+                   "particularities는 어느 그룹일까요?",
                    [("o0", SORT_LEFT, False), ("o1", "오른쪽 · 반대쪽", True)],
                    "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요.",
                    why="'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities는 떨어져 나가니, 같은 그룹이 아니에요.",
@@ -463,7 +467,7 @@ exam = {
             "4": "보통 때는 차이를 무시해도 된다는 말이에요. 뒤의 'Not so … groundskeeper'가 그 반대 경우예요.",
             "5": "기억력이 무한한 사람은 풀을 굳이 묶지 않아도 하나하나 다 기억할 수 있어요. 그래서 묶일 필요가 없다는 ⑤는 문맥에 맞아요.",
         },
-        "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
+        "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
     },
 }
 

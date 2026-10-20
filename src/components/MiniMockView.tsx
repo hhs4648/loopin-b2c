@@ -271,6 +271,16 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone, in
 }
 
 /** 지문 단어 미리 보기 —풀기 전에 그 회 지문·보기의 주요 단어를 훑는다. 뜻은 가려 두고 누르면 보인다 (외웠나 스스로 확인) */
+/** 단어 발음 — 브라우저 음성(en-US). 소리를 못 내는 기기면 조용히 넘어간다 */
+export function sayWord(text: string): void {
+  if (!("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US";
+  u.rate = 0.9;
+  window.speechSynthesis.speak(u);
+}
+
 function MiniWords({ mock, onBack, onStart }: { mock: MiniMock; onBack: () => void; onStart: () => void }) {
   const words = useMemo(() => mockKeyWords(mock.id), [mock.id]);
   const [shown, setShown] = useState<Set<string>>(() => new Set());
@@ -302,6 +312,7 @@ function MiniWords({ mock, onBack, onStart }: { mock: MiniMock; onBack: () => vo
             const on = allShown || shown.has(w.en);
             return (
               <li key={w.en} className="mini-word-row">
+                <button type="button" className="mini-word-say" aria-label={`${w.en} 발음 듣기`} onClick={() => sayWord(w.en)}>🔊</button>
                 <button type="button" className={`mini-word${on ? " on" : ""}`} onClick={() => toggle(w.en)}>
                   <b>{w.en}</b>
                   <span>{on ? w.ko : "뜻 보기"}</span>
@@ -839,7 +850,7 @@ export function ItemView({
 }
 
 /** 밑줄(함축 의미), ①~⑤·(a)~(e) 뒤 낱말 밑줄(어법·어휘·지칭), 빈칸, 문장 넣기 자리 표시 */
-function passageNodes(text: string, item: MiniItem, ctx: { counter: { n: number }; marks: Marks; overlay?: Overlay } | null = null, key = ""): ReactNode[] {
+export function passageNodes(text: string, item: MiniItem, ctx: { counter: { n: number }; marks: Marks; overlay?: Overlay } | null = null, key = ""): ReactNode[] {
   const out: ReactNode[] = [];
   const re = item.underline
     ? new RegExp(`(${item.underline.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}|_{4,}|\\([①②③④⑤]\\))`)

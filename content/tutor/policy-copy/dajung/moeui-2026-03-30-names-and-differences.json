@@ -34,8 +34,12 @@
       "say": "'something that is not a proper name' — not이 붙었으니 proper name(고유 명사)은 이름 붙여 묶는 것의 반대편이에요. 시험 꿀팁! not, isn't, don't가 붙은 말은 바로 반대 그룹에 놓으면 돼요.",
       "from": "39fw9g"
     },
+    "s1_abstract": {
+      "say": "이름을 붙이면 'abstract away from its particularities' 한대요.",
+      "from": "u0oxa4"
+    },
     "s1_q": {
-      "ask": "이름을 붙이면 'abstract away from its particularities' 한대요. particularities는 어느 그룹일까요?",
+      "ask": "particularities는 어느 그룹일까요?",
       "reask": "그럼 하나 골라 봐요.",
       "hints": [
         "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities와 멀어진다는 말이에요.",
@@ -47,7 +51,7 @@
         "o0": "'abstract away from'은 '~에서 떼어 내다'예요. 이름을 붙이면 particularities는 떨어져 나가니, 같은 그룹이 아니에요."
       },
       "point": "abstract away from = ~에서 떼어 내다 → 이름을 붙이면 하나하나의 특징(particularities)은 무시된다 (글의 요지)",
-      "from": "k9ga2m"
+      "from": "1v3tfzq"
     },
     "s1_map": {
       "say": "이름을 붙여 묶으면 하나하나의 특징은 무시된다, 이게 이 글의 요지예요. 오른쪽에서 왼쪽으로 가는 화살표, 이 과정이 'abstract away'예요.",
@@ -567,8 +571,8 @@
       "4": "보통 때는 차이를 무시해도 된다는 말이에요. 뒤의 'Not so … groundskeeper'가 그 반대 경우예요.",
       "5": "기억력이 무한한 사람은 풀을 굳이 묶지 않아도 하나하나 다 기억할 수 있어요. 그래서 묶일 필요가 없다는 ⑤는 문맥에 맞아요."
     },
-    "ask_first": "실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.",
-    "from": "1y1jxts"
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "from": "2j5e0i"
   },
   "intro": {
     "topic": {

@@ -342,7 +342,7 @@ SENSES = {
         sense("that", "that star", "저", "지시형용사 that + 명사")],
 }
 
-WORDS = {"conventional": "틀에 박힌, 관습적인", "literal": "글자 그대로의", "ages": "나이", "eight": "8", "sixteen": "16", "about": "약", "manual": "손의", "continually": "계속", "improving": "좋아지는",
+WORDS = {"conventional": "틀에 박힌, 관습적인", "literal": "글자 그대로의", "ages": "나이", "eight": "8", "sixteen": "16", "about": "약", "manual": "손으로 하는, 손을 쓰는", "continually": "계속", "improving": "좋아지는",
          "eye-hand": "눈과 손의", "coordination": "협응", "writing": "글쓰기", "oral": "말로 하는", "storying": "이야기하기",
          "accompanying": "함께 따라오는", "spontaneity": "즉흥성", "originality": "독창성", "earlier": "예전의", "efforts": "노력",
          "considerable": "상당한", "improvement": "향상", "handwriting": "손글씨", "skills": "실력", "gain": "얻다",
@@ -431,7 +431,7 @@ lesson = base_lesson(
            {"id": "method1", "type": "say", "button": "좋아요",
             "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
     exam=exam,
-    key_words={"passage": [g("manual", "손의"), g("coordination", "협응"), g("considerable", "상당한"), g("mastery", "숙달"),
+    key_words={"passage": [g("manual", "손으로 하는, 손을 쓰는"), g("coordination", "협응"), g("considerable", "상당한"), g("mastery", "숙달"),
                            g("mechanics", "기법, 기술"), g("eliminate", "없애다"), g("characteristic of", "~의 특징인"),
                            g("perception", "인식, 지각"), g("preoccupation", "집착"), g("give way to", "~로 바뀌다"),
                            g("conventional", "틀에 박힌, 관습적인"), g("literal", "글자 그대로의"), g("accompanying", "수반하는"),

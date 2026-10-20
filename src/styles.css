@@ -1102,6 +1102,9 @@ mark.hl2, .english-token.hl2 .english-word {
 
 /* 문제 보기 — 시험지처럼 지문을 한 덩어리로 */
 .passage-full { display: flex; flex-direction: column; gap: 12px; }
+.passage-play { display: inline-grid; place-items: center; width: 20px; height: 20px; margin: 0 6px 0 0; vertical-align: middle; border-radius: 50%; border: none; background: #fbe3e9; color: #e2607d; font-size: 9px; cursor: pointer; }
+.passage-sentence { display: inline; }
+.mini-word-say { flex: none; border: none; background: none; font-size: 15px; cursor: pointer; padding: 0 2px; }
 .passage-given {
   margin: 0; padding: 12px 14px; border: 1.5px solid #2b2430; border-radius: 6px; background: #fff;
   font-size: 14.5px; line-height: 1.65; color: #2b2430;

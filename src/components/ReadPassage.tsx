@@ -1,9 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import type { TutorView } from "../tutor/view";
 import { MODE_TRY_BTN, READ_NEXT_CMD } from "../tutor/policy/session";
-import { clock } from "../tutor/mini";
+import { clock, type MiniItem } from "../tutor/mini";
+import { getPolicyLesson } from "../tutor/policy/lessons";
+import { getSet } from "../tutor/sets";
+import { cleanWord, meaningOf } from "../tutor/miniWords";
+import { addVocab } from "../tutor/vocab";
 import { PassageFull } from "./PassageFull";
+import { MarkArea, NO_MARKS, type Marks, type Overlay, type Pen } from "./MiniMarks";
 
 type Props = {
   view: TutorView;
@@ -13,7 +18,15 @@ type Props = {
    * 코스의 문제(2026-10-20 선생님): 이 미리보기 화면 그대로 **시간을 재서** 푼다. 큰 버튼이 「시간 재서 풀어 볼게요 · N분」,
    * 분석은 밑줄 글자. `left`는 남은 초(시작 전엔 null, 넘기면 음수 — 계속 풀 수 있다)
    */
-  course?: { minutes: number; left: number | null; analyzeBtn: string };
+  course?: {
+    minutes: number;
+    left: number | null;
+    analyzeBtn: string;
+    /** 이 문제의 10분 모의고사 문항 — 시험 밑줄·펜 표시용 */
+    item: MiniItem;
+    /** 보라펜으로 표시한 모르는 단어가 바뀌면 (풀이 기록에 같이 남긴다) */
+    onUnknown?: (words: { en: string; ko: string }[]) => void;
+  };
 };
 
 /**
@@ -32,6 +45,46 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
   const courseSolving = !!course && p.pickable;
   const dockButtons = tryLink ? view.buttons.slice(0, 1) : courseSolving ? [] : view.buttons;
   const left = course?.left ?? null;
+  /* ── 코스 풀기: 펜 줄 — 모르는 단어(보라펜) · 형광펜 · 끊어읽기 (미니 모의고사와 같은 `MiniMarks`), 2026-10-20 선생님 ── */
+  const [pen, setPen] = useState<Pen>("none");
+  const [showSlash, setShowSlash] = useState(false);
+  const [marks, setMarks] = useState<Marks>(NO_MARKS);
+  const [toast, setToast] = useState<string | null>(null);
+  // item.lesson은 세트 id — 끊어읽기·뜻은 그 세트의 분석 레슨에서
+  const set = course?.item.lesson ? getSet(course.item.lesson) : null;
+  const lesson = set ? getPolicyLesson(set.lessons[0]!) : null;
+  const hasSlash = !!lesson?.sentences.some((x) => x.slashes?.length);
+  const overlay: Overlay = { slashes: showSlash ? (lesson?.sentences.flatMap((x) => x.slashes ?? []) ?? []) : [], keys: [] };
+  useEffect(() => {
+    if (!toast) return;
+    const id = window.setTimeout(() => setToast(null), 2600);
+    return () => window.clearTimeout(id);
+  }, [toast]);
+  const putMarks = (m: Marks) => {
+    setMarks(m);
+    course?.onUnknown?.(m.unk.map((u) => ({ en: u.en, ko: u.ko })));
+  };
+  const onUnknown = (i: number, token: string, el: HTMLElement) => {
+    const en = cleanWord(token);
+    if (!en) return;
+    if (marks.unk.some((u) => u.i === i)) {
+      putMarks({ ...marks, unk: marks.unk.filter((u) => u.i !== i) });
+      setToast(`「${en}」 모르는 단어에서 뺐어요`);
+      return;
+    }
+    const ko = meaningOf(en, set?.lessons ?? []);
+    putMarks({ ...marks, unk: [...marks.unk, { i, en, ko }] });
+    if (ko) {
+      const block = el.closest("p")?.textContent ?? "";
+      const sentence = block.split(/(?<=[.!?”])\s+/).find((x) => x.includes(token)) ?? block;
+      addVocab([{ en, ko, sentence: sentence.trim(), source: lesson?.id ?? "", kind: "word" }]);
+    }
+    setToast(ko ? `${en} — ${ko.split(" · ")[0]}` : `「${en}」 모르는 단어로 담았어요`);
+  };
+  const onTapUnknown = (i: number) => {
+    const u = marks.unk.find((x) => x.i === i);
+    if (u) setToast(u.ko ? `${u.en} — ${u.ko.split(" · ")[0]}` : `「${u.en}」 뜻을 아직 못 찾았어요`);
+  };
   const sendRef = useRef(onSend);
   sendRef.current = onSend;
   const rows = useRef<(HTMLDivElement | null)[]>([]);
@@ -138,8 +191,43 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
         <h1 className="read-title">{p.title}</h1>
         {view.message && p.auto !== false ? <p className="read-note">{view.message}</p> : null}
 
+        {/* 코스 풀기 — 펜 줄. 미니 모의고사와 같은 보라펜·형광펜·끊어읽기 */}
+        {course ? (
+          <>
+            <div className="mini-pens" role="toolbar" aria-label="펜">
+              <button type="button" className={`pen-btn unk${pen === "unk" ? " on" : ""}`} aria-pressed={pen === "unk"} onClick={() => setPen(pen === "unk" ? "none" : "unk")}>
+                <i /> 모르는 단어
+              </button>
+              <button type="button" className={`pen-btn hi${pen === "hi" ? " on" : ""}`} aria-pressed={pen === "hi"} onClick={() => setPen(pen === "hi" ? "none" : "hi")}>
+                <i /> 형광펜
+              </button>
+              {hasSlash ? (
+                <button type="button" className={`pen-btn slash${showSlash ? " on" : ""}`} aria-pressed={showSlash} onClick={() => setShowSlash(!showSlash)}>
+                  / 끊어읽기
+                </button>
+              ) : null}
+            </div>
+            {toast ? <div className="mini-toast" role="status">{toast}</div> : null}
+          </>
+        ) : null}
+
         {/* 시험지처럼 — 문제 제목 아래 (주어진 문장) · 지문 전체 · 보기. 꼼꼼히 읽히려는 게 아니다 */}
-        {p.auto === false ? (
+        {p.auto === false && course ? (
+          <MarkArea pen={pen} marks={marks} onHighlight={(hi) => putMarks({ ...marks, hi })} onUnknown={onUnknown} onTapUnknown={onTapUnknown}>
+            <PassageFull
+              given={p.given}
+              sentences={p.sentences}
+              underline={p.underline}
+              options={p.options}
+              numbersOnly={p.numbersOnly}
+              onPick={p.pickable ? onSend : null}
+              picked={p.picked}
+              right={p.right}
+              onPlay={(t) => speak(t)}
+              mark={{ item: course.item, marks, overlay }}
+            />
+          </MarkArea>
+        ) : p.auto === false ? (
           <PassageFull
             given={p.given}
             sentences={p.sentences}
@@ -149,6 +237,7 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
             onPick={p.pickable ? onSend : null}
             picked={p.picked}
             right={p.right}
+            onPlay={(t) => speak(t)}
           />
         ) : null}
 
@@ -181,7 +270,12 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
       {/* 지문 미리보기에서는 버튼을 한 줄로 — 지문 자리를 넓힌다 */}
       <div className={`read-dock${p.auto === false && dockButtons.length >= 2 ? " row" : ""}`}>
         {/* 미리보기 화면에서 선생님 말(바로 풀기 안내, 채점)은 버튼 바로 위에 — 보기를 고르는 손 가까이 */}
-        {view.message && p.auto === false ? <p className="read-say">{view.message}</p> : null}
+        {/* 코스 풀기 안내는 한 줄로 고정 (2026-10-20 선생님) */}
+        {courseSolving ? (
+          <p className="read-say">실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.</p>
+        ) : view.message && p.auto === false ? (
+          <p className="read-say">{view.message}</p>
+        ) : null}
         {courseSolving ? (
           <button type="button" className="read-continue" onClick={() => onSend(course!.analyzeBtn)}>
             분석하기
