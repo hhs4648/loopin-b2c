@@ -457,6 +457,20 @@
           "ko": "노력"
         }
       ],
+      "slashes": [
+        "through sixteen,",
+        "has strengthened"
+      ],
+      "roles": [
+        {
+          "text": "our manual dexterity",
+          "role": "S"
+        },
+        {
+          "text": "has strengthened",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s1_passage",
@@ -725,6 +739,10 @@
           "ko": "글씨 쓰는 실력"
         },
         {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
           "en": "There is",
           "ko": "~이 있다"
         },
@@ -753,6 +771,19 @@
           "ko": "향상"
         }
       ],
+      "slashes": [
+        "considerable improvement"
+      ],
+      "roles": [
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "considerable improvement",
+          "role": "S"
+        }
+      ],
       "steps": [
         {
           "id": "s2_basic_sv",
@@ -761,16 +792,16 @@
           "shade": true,
           "no_unknown": true,
           "candidates": [
-            "There is",
+            "is",
             "considerable improvement",
             "handwriting skills"
           ],
           "answers": [
-            "There is",
+            "is",
             "considerable improvement"
           ],
           "roles": {
-            "There is": "V",
+            "is": "V",
             "considerable improvement": "S"
           },
           "brief": {
@@ -884,6 +915,23 @@
         {
           "en": "over",
           "ko": "~ 위에, ~에 대해"
+        }
+      ],
+      "slashes": [
+        "gain mastery"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "gain",
+          "role": "V"
+        },
+        {
+          "text": "mastery",
+          "role": "O"
         }
       ],
       "steps": [
@@ -1167,9 +1215,33 @@
         }
       ],
       "slashes": [
-        "in our stories",
+        "gradually eliminate",
+        "in our stories―",
         "stage of perception―",
-        "the whole vision"
+        "the whole vision",
+        "gives way"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "eliminate",
+          "role": "V"
+        },
+        {
+          "text": "the logical gaps",
+          "role": "O"
+        },
+        {
+          "text": "intense preoccupation",
+          "role": "S"
+        },
+        {
+          "text": "gives way",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -1518,9 +1590,28 @@
         }
       ],
       "slashes": [
+        "As a result,",
         "oral storying",
         "conventional and literal,",
-        "originality"
+        "an accompanying ________",
+        "and originality"
+      ],
+      "roles": [
+        {
+          "text": "our writing and oral storying",
+          "role": "S"
+        },
+        {
+          "text": "become",
+          "role": "V"
+        },
+        {
+          "text": "increasingly conventional and literal",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that characterized our earlier efforts"
       ],
       "steps": [
         {
@@ -1843,6 +1934,19 @@
           "ko": "자리 잡은"
         }
       ],
+      "slashes": [
+        "At this stage"
+      ],
+      "roles": [
+        {
+          "text": "our vocabulary",
+          "role": "S"
+        },
+        {
+          "text": "is firmly grounded",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s6_basic_sv",
@@ -1963,6 +2067,23 @@
           "en": "everyone else uses",
           "ko": "다른 모든 사람이 쓰는"
         }
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "use",
+          "role": "V"
+        },
+        {
+          "text": "words",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "everyone else uses"
       ],
       "steps": [
         {
@@ -2218,6 +2339,23 @@
         {
           "en": "communicate",
           "ko": "의사소통하다"
+        }
+      ],
+      "slashes": [
+        "little need"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "have",
+          "role": "V"
+        },
+        {
+          "text": "little need",
+          "role": "O"
         }
       ],
       "steps": [
@@ -2552,8 +2690,41 @@
         }
       ],
       "slashes": [
+        "By now we know",
+        "gaseous mass",
         "floating in space”",
-        "innocent stage,"
+        "innocent stage,",
+        "we noticed,"
+      ],
+      "roles": [
+        {
+          "text": "we … we",
+          "role": "S"
+        },
+        {
+          "text": "know",
+          "role": "V"
+        },
+        {
+          "text": "a star",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "a hot gaseous mass",
+          "role": "C"
+        },
+        {
+          "text": "noticed",
+          "role": "V"
+        },
+        {
+          "text": "that star",
+          "role": "S"
+        }
       ],
       "steps": [
         {

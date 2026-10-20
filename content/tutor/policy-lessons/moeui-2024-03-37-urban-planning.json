@@ -306,6 +306,26 @@
           "ko": "계획"
         }
       ],
+      "slashes": [
+        "Today,",
+        "historic ideas",
+        "urban/suburban space",
+        "find expression"
+      ],
+      "roles": [
+        {
+          "text": "historic ideas",
+          "role": "S"
+        },
+        {
+          "text": "find",
+          "role": "V"
+        },
+        {
+          "text": "expression",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "g_sv",
@@ -530,8 +550,36 @@
         }
       ],
       "slashes": [
+        "Landscape Urbanists find",
         "these designs",
-        "the natural environment"
+        "the natural environment",
+        "diverting streams"
+      ],
+      "roles": [
+        {
+          "text": "Landscape Urbanists",
+          "role": "S"
+        },
+        {
+          "text": "find",
+          "role": "V"
+        },
+        {
+          "text": "these designs",
+          "role": "S"
+        },
+        {
+          "text": "do not prioritize",
+          "role": "V"
+        },
+        {
+          "text": "the natural environment",
+          "role": "O"
+        },
+        {
+          "text": "involve",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -771,9 +819,49 @@
       ],
       "slashes": [
         "Still others,",
+        "“just sustainabilities”",
         "“complete streets,”",
+        "find",
         "overly idealistic",
-        "attention to the realities"
+        "enough attention",
+        "social dynamics"
+      ],
+      "roles": [
+        {
+          "text": "Still others",
+          "role": "S"
+        },
+        {
+          "text": "find",
+          "role": "V"
+        },
+        {
+          "text": "both approaches",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "overly idealistic",
+          "role": "C"
+        },
+        {
+          "text": "neither",
+          "role": "S"
+        },
+        {
+          "text": "pays",
+          "role": "V"
+        },
+        {
+          "text": "enough attention",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "such as those advocating for “just sustainabilities” or “complete streets,”"
       ],
       "steps": [
         {
@@ -895,6 +983,34 @@
         {
           "en": "over",
           "ko": "~ 위에, ~에 대해"
+        }
+      ],
+      "slashes": [
+        "However,",
+        "critics claim",
+        "Landscape Urbanists prioritize",
+        "ecological concerns"
+      ],
+      "roles": [
+        {
+          "text": "critics",
+          "role": "S"
+        },
+        {
+          "text": "claim",
+          "role": "V"
+        },
+        {
+          "text": "Landscape Urbanists",
+          "role": "S"
+        },
+        {
+          "text": "prioritize",
+          "role": "V"
+        },
+        {
+          "text": "aesthetic and ecological concerns",
+          "role": "O"
         }
       ],
       "steps": [
@@ -1183,8 +1299,27 @@
         }
       ],
       "slashes": [
-        "an approach",
-        "in the 1980s"
+        "In contrast,",
+        "is an approach",
+        "in the 1980s",
+        "walkable streets,"
+      ],
+      "roles": [
+        {
+          "text": "New Urbanism",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "an approach",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that was popularized in the 1980s and promotes walkable streets, compact design, and mixed-use developments"
       ],
       "steps": [
         {
@@ -1397,6 +1532,25 @@
         {
           "en": "controversial",
           "ko": "논란이 많은"
+        }
+      ],
+      "slashes": [
+        "However,",
+        "social justice",
+        "these approaches"
+      ],
+      "roles": [
+        {
+          "text": "the role of social justice",
+          "role": "S"
+        },
+        {
+          "text": "remains",
+          "role": "V"
+        },
+        {
+          "text": "highly controversial",
+          "role": "C"
         }
       ],
       "steps": [
@@ -1683,9 +1837,27 @@
         }
       ],
       "slashes": [
+        "For example,",
         "planning approach",
         "native habitat designs",
         "species and landscapes"
+      ],
+      "roles": [
+        {
+          "text": "Landscape Urbanism",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a relatively recent planning approach",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that advocates for native habitat designs that include diverse species and landscapes that require very low resource use"
       ],
       "steps": [
         {

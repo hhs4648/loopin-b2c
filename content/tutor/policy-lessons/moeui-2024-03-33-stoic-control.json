@@ -416,6 +416,36 @@
           "ko": "~에 맞서 · warn against = ~하지 말라고 경고하다"
         }
       ],
+      "slashes": [
+        "Epictetus wrote,",
+        "master is he",
+        "confirm or remove"
+      ],
+      "roles": [
+        {
+          "text": "Epictetus",
+          "role": "S"
+        },
+        {
+          "text": "wrote",
+          "role": "V"
+        },
+        {
+          "text": "A man’s master",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "he",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "who is able to confirm or remove whatever that man seeks or shuns"
+      ],
       "steps": [
         {
           "id": "s1_passage",
@@ -649,9 +679,37 @@
         }
       ],
       "slashes": [
+        "If you depend on no one",
         "except yourself",
         "your desires,",
+        "no master",
         "other than yourself"
+      ],
+      "roles": [
+        {
+          "text": "you … you … you",
+          "role": "S"
+        },
+        {
+          "text": "depend",
+          "role": "V"
+        },
+        {
+          "text": "will have",
+          "role": "V"
+        },
+        {
+          "text": "no master",
+          "role": "O"
+        },
+        {
+          "text": "will be",
+          "role": "V"
+        },
+        {
+          "text": "free",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -908,10 +966,26 @@
         }
       ],
       "slashes": [
-        "about that―",
+        "was about that―",
         "your life,",
+        "learning to work",
         "within your power",
-        "accomplish or change"
+        "accomplish or change",
+        "waste energy"
+      ],
+      "roles": [
+        {
+          "text": "Stoic philosophy",
+          "role": "S"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that are within your power to accomplish or change",
+        "you cannot"
       ],
       "steps": [
         {
@@ -1080,6 +1154,19 @@
         {
           "en": "against",
           "ko": "~에 맞서 · warn against = ~하지 말라고 경고하다"
+        }
+      ],
+      "slashes": [
+        "In particular,"
+      ],
+      "roles": [
+        {
+          "text": "the Stoics",
+          "role": "S"
+        },
+        {
+          "text": "warned",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1259,6 +1346,35 @@
           "en": "judgments",
           "ko": "판단"
         }
+      ],
+      "slashes": [
+        "Often,",
+        "Epictetus argued,",
+        "our circumstances",
+        "get us down",
+        "the judgments"
+      ],
+      "roles": [
+        {
+          "text": "Epictetus",
+          "role": "S"
+        },
+        {
+          "text": "argued",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that get us down",
+        "we make about them"
       ],
       "steps": [
         {
@@ -1444,6 +1560,16 @@
           "ko": "분노"
         }
       ],
+      "roles": [
+        {
+          "text": "Consider",
+          "role": "V"
+        },
+        {
+          "text": "anger",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s6_anger",
@@ -1517,6 +1643,35 @@
         {
           "en": "picnic",
           "ko": "소풍"
+        }
+      ],
+      "slashes": [
+        "at the rain"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "don’t get",
+          "role": "V"
+        },
+        {
+          "text": "angry",
+          "role": "C"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "spoils",
+          "role": "V"
+        },
+        {
+          "text": "our picnic",
+          "role": "O"
         }
       ],
       "steps": [
@@ -1670,6 +1825,35 @@
         {
           "en": "rain",
           "ko": "비"
+        }
+      ],
+      "slashes": [
+        "would be silly"
+      ],
+      "roles": [
+        {
+          "text": "That",
+          "role": "S"
+        },
+        {
+          "text": "would be",
+          "role": "V"
+        },
+        {
+          "text": "silly",
+          "role": "C"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "can’t do",
+          "role": "V"
+        },
+        {
+          "text": "anything",
+          "role": "O"
         }
       ],
       "steps": [
@@ -1915,6 +2099,35 @@
           "ko": "누군가 우리를 함부로 대하다"
         }
       ],
+      "slashes": [
+        "get angry"
+      ],
+      "roles": [
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "do get",
+          "role": "V"
+        },
+        {
+          "text": "angry",
+          "role": "C"
+        },
+        {
+          "text": "someone",
+          "role": "S"
+        },
+        {
+          "text": "mistreats",
+          "role": "V"
+        },
+        {
+          "text": "us",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s9_basic_sv",
@@ -2113,6 +2326,45 @@
         {
           "en": "silly",
           "ko": "어리석은"
+        }
+      ],
+      "slashes": [
+        "control or change",
+        "that person",
+        "stop the rain,"
+      ],
+      "roles": [
+        {
+          "text": "We … we",
+          "role": "S"
+        },
+        {
+          "text": "can’t control or change",
+          "role": "V"
+        },
+        {
+          "text": "that person",
+          "role": "O"
+        },
+        {
+          "text": "can stop",
+          "role": "V"
+        },
+        {
+          "text": "the rain",
+          "role": "O"
+        },
+        {
+          "text": "that",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "equally silly",
+          "role": "C"
         }
       ],
       "steps": [
@@ -2369,9 +2621,25 @@
         }
       ],
       "slashes": [
+        "More generally,",
         "just as pointless",
         "feelings of well-being",
-        "another individual’s behavior"
+        "individual’s behavior",
+        "as it is"
+      ],
+      "roles": [
+        {
+          "text": "it … it",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "pointless",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -2547,6 +2815,46 @@
         {
           "en": "say",
           "ko": "말하다"
+        }
+      ],
+      "slashes": [
+        "Epictetus wrote,",
+        "concerns anything",
+        "in our control,",
+        "be prepared to say"
+      ],
+      "roles": [
+        {
+          "text": "Epictetus",
+          "role": "S"
+        },
+        {
+          "text": "wrote",
+          "role": "V"
+        },
+        {
+          "text": "it … it",
+          "role": "S"
+        },
+        {
+          "text": "concerns",
+          "role": "V"
+        },
+        {
+          "text": "anything",
+          "role": "O"
+        },
+        {
+          "text": "be prepared",
+          "role": "V"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "nothing",
+          "role": "C"
         }
       ],
       "steps": [

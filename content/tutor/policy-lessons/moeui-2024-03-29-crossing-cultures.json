@@ -10,8 +10,8 @@
   "method": {
     "type": "grammar",
     "labels": [
-      "묻는 문법 이름 붙이기",
-      "뼈대로 확인"
+      "문장 뼈대 찾기",
+      "밑줄 문법 확인"
     ],
     "intro_times": 3
   },
@@ -256,6 +256,24 @@
           "ko": "존재"
         }
       ],
+      "slashes": [
+        "crossing cultures",
+        "the very basis"
+      ],
+      "roles": [
+        {
+          "text": "The process of crossing cultures",
+          "role": "S"
+        },
+        {
+          "text": "challenges",
+          "role": "V"
+        },
+        {
+          "text": "the very basis",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s1_topic",
@@ -299,6 +317,23 @@
         {
           "en": "learning",
           "ko": "배움"
+        }
+      ],
+      "slashes": [
+        "offers opportunities"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "offers",
+          "role": "V"
+        },
+        {
+          "text": "opportunities",
+          "role": "O"
         }
       ],
       "steps": [
@@ -379,7 +414,22 @@
       "slashes": [
         "from our home",
         "us understanding",
+        "and their culture",
         "new environment,"
+      ],
+      "roles": [
+        {
+          "text": "Being “uprooted” from our home",
+          "role": "S"
+        },
+        {
+          "text": "brings",
+          "role": "V"
+        },
+        {
+          "text": "understanding",
+          "role": "O"
+        }
       ],
       "steps": [
         {
@@ -546,6 +596,32 @@
           "ko": "어디에나"
         }
       ],
+      "slashes": [
+        "the difficulties",
+        "crossing cultures",
+        "often shocking,"
+      ],
+      "roles": [
+        {
+          "text": "the difficulties",
+          "role": "S"
+        },
+        {
+          "text": "are … are",
+          "role": "V"
+        },
+        {
+          "text": "shocking",
+          "role": "C"
+        },
+        {
+          "text": "success stories",
+          "role": "S"
+        }
+      ],
+      "modifiers": [
+        "that can arise from crossing cultures"
+      ],
       "steps": [
         {
           "id": "s4_success",
@@ -694,11 +770,50 @@
         }
       ],
       "slashes": [
+        "Despite,",
         "because of,",
+        "and ambivalence",
+        "we undergo",
         "cross cultures,",
+        "we gradually find ourselves",
         "uniquely privileged",
-        "anew",
+        "ourselves and others anew",
+        "clarity and insight",
         "cultivated"
+      ],
+      "roles": [
+        {
+          "text": "we … we … we … we",
+          "role": "S"
+        },
+        {
+          "text": "undergo",
+          "role": "V"
+        },
+        {
+          "text": "cross",
+          "role": "V"
+        },
+        {
+          "text": "find",
+          "role": "V"
+        },
+        {
+          "text": "ourselves",
+          "role": "O"
+        },
+        {
+          "text": "privileged",
+          "role": "C"
+        },
+        {
+          "text": "could not have cultivated",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "we undergo when we cross cultures",
+        "that we could not have cultivated without leaving home"
       ],
       "steps": [
         {
@@ -850,6 +965,24 @@
           "ko": "생존"
         }
       ],
+      "slashes": [
+        "unfamiliar culture,",
+        "then,"
+      ],
+      "roles": [
+        {
+          "text": "Adapting to a new and unfamiliar culture",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "more than survival",
+          "role": "C"
+        }
+      ],
       "steps": [
         {
           "id": "s6_subject",
@@ -951,6 +1084,20 @@
           "ko": "여정"
         }
       ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a life-changing journey",
+          "role": "C"
+        }
+      ],
       "steps": [
         {
           "id": "s7_journey",
@@ -1020,6 +1167,25 @@
         {
           "en": "boundaries",
           "ko": "경계"
+        }
+      ],
+      "slashes": [
+        "of “becoming”—",
+        "transformation, growth,",
+        "the boundaries"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a process",
+          "role": "C"
         }
       ],
       "steps": [
@@ -1108,6 +1274,35 @@
           "en": "born",
           "ko": "태어난"
         }
+      ],
+      "slashes": [
+        "does not require",
+        "former personalities"
+      ],
+      "roles": [
+        {
+          "text": "The process",
+          "role": "S"
+        },
+        {
+          "text": "does not require",
+          "role": "V"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "abandon",
+          "role": "V"
+        },
+        {
+          "text": "our former personalities and the cultures",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "which we were born"
       ],
       "steps": [
         {
@@ -1288,8 +1483,28 @@
       ],
       "slashes": [
         "Rather,",
+        "compels us",
+        "find ⑤ourselves",
         "for the first time,",
-        "within us—"
+        "within us—",
+        "hold dear"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "compels",
+          "role": "V"
+        },
+        {
+          "text": "us",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that we hold dear and refuse to compromise"
       ],
       "steps": [
         {

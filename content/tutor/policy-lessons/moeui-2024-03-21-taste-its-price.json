@@ -403,7 +403,18 @@
       ],
       "slashes": [
         "is a construction",
+        "is not true",
         "sensory input,"
+      ],
+      "roles": [
+        {
+          "text": "That perception is a construction",
+          "role": "S"
+        },
+        {
+          "text": "is not true",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -605,8 +616,24 @@
         }
       ],
       "slashes": [
+        "It is true",
         "as well―",
-        "the people you meet,"
+        "the people you meet,",
+        "the food you eat,"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "true",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -875,10 +902,42 @@
         }
       ],
       "slashes": [
+        "For example,",
         "in a study of wine,",
         "tasted blind,",
-        "a wine’s taste and its cost,",
+        "little or no correlation",
+        "and its cost,",
         "a significant correlation"
+      ],
+      "roles": [
+        {
+          "text": "was … was",
+          "role": "V"
+        },
+        {
+          "text": "little or no correlation",
+          "role": "S"
+        },
+        {
+          "text": "wines",
+          "role": "S"
+        },
+        {
+          "text": "were tasted",
+          "role": "V"
+        },
+        {
+          "text": "a significant correlation",
+          "role": "S"
+        },
+        {
+          "text": "the wines",
+          "role": "S"
+        },
+        {
+          "text": "were labeled",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -1088,8 +1147,44 @@
         }
       ],
       "slashes": [
+        "That wasn’t",
         "consciously believed",
-        "the better ones"
+        "the better ones",
+        "and thus revised"
+      ],
+      "roles": [
+        {
+          "text": "That",
+          "role": "S"
+        },
+        {
+          "text": "wasn’t",
+          "role": "V"
+        },
+        {
+          "text": "the subjects",
+          "role": "S"
+        },
+        {
+          "text": "consciously believed",
+          "role": "V"
+        },
+        {
+          "text": "revised",
+          "role": "V"
+        },
+        {
+          "text": "the higher-priced wines",
+          "role": "S"
+        },
+        {
+          "text": "should be",
+          "role": "V"
+        },
+        {
+          "text": "the better ones",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -1293,6 +1388,24 @@
         {
           "en": "rather",
           "ko": "오히려 · Or rather = 더 정확히는"
+        }
+      ],
+      "slashes": [
+        "Or rather,",
+        "it wasn’t true"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "wasn’t",
+          "role": "V"
+        },
+        {
+          "text": "true",
+          "role": "C"
         }
       ],
       "steps": [
@@ -1533,12 +1646,64 @@
         }
       ],
       "slashes": [
+        "We know",
         "tasting the wine,",
+        "were imaging",
         "their brain activity,",
         "the imaging showed",
         "an expensive glass of wine",
+        "really did activate",
         "taste for pleasure",
         "the same wine"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "know",
+          "role": "V"
+        },
+        {
+          "text": "the subjects",
+          "role": "S"
+        },
+        {
+          "text": "were tasting",
+          "role": "V"
+        },
+        {
+          "text": "the researchers",
+          "role": "S"
+        },
+        {
+          "text": "were imaging",
+          "role": "V"
+        },
+        {
+          "text": "the imaging",
+          "role": "S"
+        },
+        {
+          "text": "showed",
+          "role": "V"
+        },
+        {
+          "text": "drinking what they believed was an expensive glass of wine",
+          "role": "S"
+        },
+        {
+          "text": "really did activate",
+          "role": "V"
+        },
+        {
+          "text": "their centers of taste for pleasure",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that had been labeled as cheaper"
       ],
       "steps": [
         {
@@ -1721,6 +1886,23 @@
         {
           "en": "effect",
           "ko": "효과"
+        }
+      ],
+      "slashes": [
+        "That’s related"
+      ],
+      "roles": [
+        {
+          "text": "That",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "related",
+          "role": "C"
         }
       ],
       "steps": [
@@ -2003,9 +2185,49 @@
       ],
       "slashes": [
         "Like pain,",
+        "is not just the product",
         "sensory signals;",
+        "it depends also",
         "psychological factors:",
         "the wine;"
+      ],
+      "roles": [
+        {
+          "text": "taste",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "the product",
+          "role": "C"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "depends",
+          "role": "V"
+        },
+        {
+          "text": "you … you",
+          "role": "S"
+        },
+        {
+          "text": "don’t just taste … taste",
+          "role": "V"
+        },
+        {
+          "text": "the wine",
+          "role": "O"
+        },
+        {
+          "text": "its price",
+          "role": "O"
+        }
       ],
       "steps": [
         {

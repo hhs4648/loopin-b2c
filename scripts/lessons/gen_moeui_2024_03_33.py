@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 
 ID = "moeui-2024-03-33-stoic-control"
@@ -67,6 +67,9 @@ sentences = [
                     g("he who", "~하는 사람"), g("is able to", "~할 수 있다"), g("confirm or remove", "확인하거나(주거나) 없애다"),
                     g("whatever that man seeks or shuns", "그 사람이 원하거나 피하는 무엇이든"),
                     g("In particular", "특히"), g("the Stoics", "스토아학파"), g("warned against", "~하지 말라고 경고했다")],
+        "slashes": ["Epictetus wrote,", "master is he", "confirm or remove"],
+        "roles": [r("Epictetus", "S"), r("wrote", "V"), r("A man’s master", "S"), r("is", "V"), r("he", "C")],
+        "modifiers": ["who is able to confirm or remove whatever that man seeks or shuns"],
         "steps": [
             show("s1_passage", "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?",
                  button="네", before_read=True, show_passage=[BLANK], method=0),
@@ -84,7 +87,8 @@ sentences = [
         "glosses": [g("If", "만약 ~라면"), g("you depend on no one", "아무에게도 기대지 않는다"), g("except yourself", "나 자신 말고는"),
                     g("to satisfy your desires", "욕구를 채우려고"), g("you will have no master", "주인이 없을 것이다"),
                     g("other than yourself", "나 자신 말고는"), g("you will be free", "자유로울 것이다")],
-        "slashes": ["except yourself", "your desires,", "other than yourself"],
+        "slashes": ["If you depend on no one", "except yourself", "your desires,", "no master", "other than yourself"],
+        "roles": [r("you … you … you", "S"), r("depend", "V"), r("will have", "V"), r("no master", "O"), r("will be", "V"), r("free", "C")],
         "steps": [
             choice("s2_free",
                    "언제 자유로워진대요?",
@@ -102,7 +106,9 @@ sentences = [
                     g("taking charge of your life", "삶을 스스로 책임지는 것"), g("learning to work on", "~에 힘쓰는 법을 배우는 것"),
                     g("those things", "그런 일들"), g("within your power", "내 힘 안에 있는"), g("to accomplish or change", "이루거나 바꿀"),
                     g("not to waste energy", "에너지를 낭비하지 않는 것"), g("on things you cannot", "할 수 없는 일에")],
-        "slashes": ["about that―", "your life,", "within your power", "accomplish or change"],
+        "slashes": ["was about that―", "your life,", "learning to work", "within your power", "accomplish or change", "waste energy"],
+        "roles": [r("Stoic philosophy", "S"), r("was", "V")],
+        "modifiers": ["that are within your power to accomplish or change", "you cannot"],
         "steps": [
             sv("s3_sv", ["Stoic philosophy", "was", "about that", "your life", "those things"],
                {"Stoic philosophy": "S", "was": "V"},
@@ -123,6 +129,8 @@ sentences = [
     {
         "id": 4, "text": BLANK, "model_translation": KO[3], "teaching_value": "high",
         "glosses": [g("In particular", "특히"), g("the Stoics", "스토아학파"), g("warned against", "~하지 말라고 경고했다")],
+        "slashes": ["In particular,"],
+        "roles": [r("the Stoics", "S"), r("warned", "V")],
         "steps": [
             choice("s4_side",
                    "warned against(~하지 말라고 경고했다) 뒤의 빈칸은 스토아학파가 좋게 본 것일까요, 나쁘게 본 것일까요?",
@@ -145,6 +153,9 @@ sentences = [
         "glosses": [g("Often", "흔히"), g("Epictetus argued", "에픽테토스는 주장했다"), g("it’s not our circumstances", "우리의 상황이 아니다"),
                     g("get us down", "우리를 우울하게 하다"), g("but rather", "오히려 ~이다"), g("the judgments", "판단"),
                     g("we make about them", "우리가 그것들에 대해 내리는")],
+        "slashes": ["Often,", "Epictetus argued,", "our circumstances", "get us down", "the judgments"],
+        "roles": [r("Epictetus", "S"), r("argued", "V"), r("it", "S"), r("’s", "V")],
+        "modifiers": ["that get us down", "we make about them"],
         "steps": [
             choice("s5_judg",
                    "Epictetus는 우리를 우울하게 하는 게 무엇이라고 했나요?",
@@ -159,6 +170,7 @@ sentences = [
     {
         "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "low",
         "glosses": [g("Consider", "생각해 보라"), g("anger", "분노")],
+        "roles": [r("Consider", "V"), r("anger", "O")],
         "steps": [
             show("s6_anger", "예로 분노(anger)를 들어요. 감정 이야기예요.", highlight=["anger"], button="다음 문장"),
         ],
@@ -167,6 +179,8 @@ sentences = [
         "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "medium",
         "glosses": [g("We don’t get angry", "우리는 화내지 않는다"), g("at the rain", "비에"), g("if", "~해도, ~하면"),
                     g("it spoils our picnic", "그것(비)이 소풍을 망치다")],
+        "slashes": ["at the rain"],
+        "roles": [r("We", "S"), r("don’t get", "V"), r("angry", "C"), r("it", "S"), r("spoils", "V"), r("our picnic", "O")],
         "steps": [
             show("s7_rain", "비가 소풍을 망쳐도 우리는 비에 화내지 않는대요.", highlight=["don’t get angry", "the rain"], button="다음 문장"),
         ],
@@ -175,6 +189,8 @@ sentences = [
         "id": 8, "text": S[7], "model_translation": KO[7], "teaching_value": "high",
         "glosses": [g("That would be silly", "그건 어리석은 일일 것이다"), g("because", "~ 때문에"),
                     g("we can’t do anything about the rain", "비에 대해 우리가 할 수 있는 게 없다")],
+        "slashes": ["would be silly"],
+        "roles": [r("That", "S"), r("would be", "V"), r("silly", "C"), r("we", "S"), r("can’t do", "V"), r("anything", "O")],
         "steps": [
             choice("s8_silly",
                    "비에 화내는 게 왜 어리석대요?",
@@ -189,6 +205,8 @@ sentences = [
         "id": 9, "text": S[8], "model_translation": KO[8], "teaching_value": "medium",
         "glosses": [g("But", "하지만"), g("we often do get angry", "우리는 흔히 정말 화를 낸다"), g("if", "~하면"),
                     g("someone mistreats us", "누군가 우리를 함부로 대하다")],
+        "slashes": ["get angry"],
+        "roles": [r("we", "S"), r("do get", "V"), r("angry", "C"), r("someone", "S"), r("mistreats", "V"), r("us", "O")],
         "steps": [
             show("s9_person", "But — 그런데 누가 나를 함부로 대하면 우리는 정말 화를 낸대요.",
                  highlight=["do get angry", "mistreats"],
@@ -200,6 +218,9 @@ sentences = [
         "glosses": [g("We usually can’t control or change that person", "우리는 보통 그 사람을 통제하거나 바꿀 수 없다"),
                     g("any more than", "~할 수 없는 것처럼"), g("we can stop the rain", "우리가 비를 멈출 수 있다"),
                     g("so", "그래서"), g("that is equally silly", "그것도 똑같이 어리석다")],
+        "slashes": ["control or change", "that person", "stop the rain,"],
+        "roles": [r("We … we", "S"), r("can’t control or change", "V"), r("that person", "O"), r("can stop", "V"), r("the rain", "O"), r("that", "S"),
+                  r("is", "V"), r("equally silly", "C")],
         "steps": [
             choice("s10_same",
                    "그 사람에게 화내는 것도 왜 똑같이(equally) 어리석대요?",
@@ -218,7 +239,8 @@ sentences = [
                     g("to tie our feelings of well-being", "우리의 행복한 기분을 묶는 것"),
                     g("to altering another individual’s behavior", "다른 사람의 행동을 바꾸는 데"),
                     g("as it is", "~만큼"), g("to tie them to the weather", "그것들을 날씨에 묶는 것")],
-        "slashes": ["just as pointless", "feelings of well-being", "another individual’s behavior"],
+        "slashes": ["More generally,", "just as pointless", "feelings of well-being", "individual’s behavior", "as it is"],
+        "roles": [r("it … it", "S"), r("is … is", "V"), r("pointless", "C")],
         "steps": [
             show("s11_tie",
                  "더 넓게 말하면, 내 기분을 남의 행동을 바꾸는 데 묶는 건 날씨에 묶는 것만큼 의미 없대요. 둘 다 할 수 없는 일이에요.",
@@ -233,6 +255,9 @@ sentences = [
         "glosses": [g("Epictetus wrote", "에픽테토스는 썼다"), g("If it concerns anything", "그게 무엇에 관한 것이든"),
                     g("not in our control", "우리 통제 안에 있지 않은"), g("be prepared to say", "말할 준비를 하라"),
                     g("it is nothing to you", "그건 너에게 아무것도 아니다")],
+        "slashes": ["Epictetus wrote,", "concerns anything", "in our control,", "be prepared to say"],
+        "roles": [r("Epictetus", "S"), r("wrote", "V"), r("it … it", "S"), r("concerns", "V"), r("anything", "O"), r("be prepared", "V"),
+                  r("is", "V"), r("nothing", "C")],
         "steps": [
             choice("s12_nothing",
                    "Epictetus는 통제 밖의 일에 대해 어떻게 말할 준비를 하라고 했나요?",

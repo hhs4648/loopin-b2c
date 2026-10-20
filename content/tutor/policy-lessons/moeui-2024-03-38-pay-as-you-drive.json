@@ -400,9 +400,29 @@
       ],
       "slashes": [
         "in the future,",
+        "real-time data collection",
         "insurance companies",
         "pay-as-you-drive rates",
-        "on the road,"
+        "on the road,",
+        "generalized stereotypes"
+      ],
+      "roles": [
+        {
+          "text": "real-time data collection",
+          "role": "S"
+        },
+        {
+          "text": "will enable",
+          "role": "V"
+        },
+        {
+          "text": "insurance companies",
+          "role": "O"
+        },
+        {
+          "text": "to charge pay-as-you-drive rates",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -774,6 +794,19 @@
           "ko": "회사들"
         }
       ],
+      "slashes": [
+        "are expected to err"
+      ],
+      "roles": [
+        {
+          "text": "Insurance companies",
+          "role": "S"
+        },
+        {
+          "text": "are expected to err",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s1_basic_sv",
@@ -930,6 +963,27 @@
           "en": "insure",
           "ko": "보험을 들어 주다"
         }
+      ],
+      "slashes": [
+        "risks thoroughly,",
+        "picking and choosing"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "calculate",
+          "role": "V"
+        },
+        {
+          "text": "risks",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "they insure"
       ],
       "steps": [
         {
@@ -1111,6 +1165,33 @@
         {
           "en": "loss",
           "ko": "손실"
+        }
+      ],
+      "slashes": [
+        "are boring",
+        "in the economy",
+        "everyone and everything"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "boring",
+          "role": "C"
+        },
+        {
+          "text": "their role",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1347,6 +1428,20 @@
         {
           "en": "ever",
           "ko": "언제든, 결코"
+        }
+      ],
+      "slashes": [
+        "Unlike manufacturing,",
+        "nothing truly revolutionary"
+      ],
+      "roles": [
+        {
+          "text": "nothing truly revolutionary",
+          "role": "S"
+        },
+        {
+          "text": "ever happens",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1594,7 +1689,25 @@
         "For centuries,",
         "higher premiums",
         "“high-risk categories”",
-        "smokers,"
+        "smokers,",
+        "the age of thirty,"
+      ],
+      "roles": [
+        {
+          "text": "insurers",
+          "role": "S"
+        },
+        {
+          "text": "have charged",
+          "role": "V"
+        },
+        {
+          "text": "higher premiums",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "such as smokers, male drivers under the age of thirty, and extreme-sports enthusiasts"
       ],
       "steps": [
         {
@@ -1890,6 +2003,21 @@
         {
           "en": "against",
           "ko": "~에 대한, ~에 맞서"
+        }
+      ],
+      "slashes": [
+        "This type of classification",
+        "results in",
+        "outright discrimination"
+      ],
+      "roles": [
+        {
+          "text": "This type of classification",
+          "role": "S"
+        },
+        {
+          "text": "results in",
+          "role": "V"
         }
       ],
       "steps": [
@@ -2235,7 +2363,27 @@
       ],
       "slashes": [
         "individual drivers",
-        "for insurance,"
+        "for insurance,",
+        "regardless of",
+        "men or women,"
+      ],
+      "roles": [
+        {
+          "text": "Bad or high-risk individual drivers",
+          "role": "S"
+        },
+        {
+          "text": "will end up paying",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -2563,7 +2711,43 @@
       ],
       "slashes": [
         "are threatening,",
-        "real-time monitoring"
+        "many people might agree",
+        "real-time monitoring",
+        "driving behavior"
+      ],
+      "roles": [
+        {
+          "text": "The Big Brother connotations",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "threatening",
+          "role": "C"
+        },
+        {
+          "text": "many people",
+          "role": "S"
+        },
+        {
+          "text": "might agree to",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "means",
+          "role": "V"
+        },
+        {
+          "text": "lower rates",
+          "role": "O"
+        }
       ],
       "steps": [
         {

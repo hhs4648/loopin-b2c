@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, rows, sense, m, sv_step, add_basic, add_that_sv, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, rows, sense, m, sv_step, add_basic, add_that_sv, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 from order_tools import card, order_link  # noqa: E402
 
@@ -39,6 +39,8 @@ sentences = [
                     g("integrating nature and urban/suburban space", "자연과 도시·교외 공간을 합치는 것"), g("find", "찾다"),
                     g("expression", "표현"), g("find expression in", "~에서 표현되다, ~로 나타나다"),
                     g("various interpretations", "여러 가지 해석"), g("sustainable urban planning", "지속 가능한 도시 계획")],
+        "slashes": ["Today,", "historic ideas", "urban/suburban space", "find expression"],
+        "roles": [r("historic ideas", "S"), r("find", "V"), r("expression", "O")],
         "steps": [
             sv("g_sv", ["Today", "historic ideas", "integrating nature and urban/suburban space", "find", "expression", "various interpretations"],
                {"historic ideas": "S", "find": "V", "expression": "O"},
@@ -75,7 +77,9 @@ sentences = [
                     g("these designs", "이 설계들"), g("do not prioritize", "우선시하지 않는다"), g("the natural environment", "자연 환경"),
                     g("often involve", "흔히 수반하다"), g("diverting streams", "하천의 물길을 돌리는 것"),
                     g("disrupting natural wetlands", "자연 습지를 망가뜨리는 것")],
-        "slashes": ["these designs", "the natural environment"],
+        "slashes": ["Landscape Urbanists find", "these designs", "the natural environment", "diverting streams"],
+        "roles": [r("Landscape Urbanists", "S"), r("find", "V"), r("these designs", "S"), r("do not prioritize", "V"),
+                  r("the natural environment", "O"), r("involve", "V")],
         "steps": [
             sv("a_sv", ["But", "Landscape Urbanists", "find", "these designs", "do not prioritize"],
                {"Landscape Urbanists": "S", "find": "V"},
@@ -102,7 +106,11 @@ sentences = [
                     g("both approaches", "두 접근법 모두"), g("are overly idealistic", "지나치게 이상적이다"),
                     g("neither pays enough attention to", "어느 쪽도 ~에 충분히 주의를 기울이지 않는다"),
                     g("the realities", "현실"), g("social dynamics", "사회적 역학 관계"), g("systemic inequality", "구조적 불평등")],
-        "slashes": ["Still others,", "“complete streets,”", "overly idealistic", "attention to the realities"],
+        "slashes": ["Still others,", "“just sustainabilities”", "“complete streets,”", "find", "overly idealistic", "enough attention",
+                    "social dynamics"],
+        "roles": [r("Still others", "S"), r("find", "V"), r("both approaches", "S"), r("are", "V"), r("overly idealistic", "C"), r("neither", "S"),
+                  r("pays", "V"), r("enough attention", "O")],
+        "modifiers": ["such as those advocating for “just sustainabilities” or “complete streets,”"],
         "steps": [
             choice("a2_both",
                    "'both approaches(두 접근법 모두)'라고 하려면, 앞에서 무엇이 나왔어야 할까요?",
@@ -122,6 +130,8 @@ sentences = [
         "glosses": [g("However", "그러나"), g("critics", "비판가들"), g("claim", "주장하다"), g("Landscape Urbanists", "경관 도시론자들"),
                     g("prioritize", "우선시하다"), g("aesthetic and ecological concerns", "미적·생태적 관심사"),
                     g("over human needs", "인간의 필요보다")],
+        "slashes": ["However,", "critics claim", "Landscape Urbanists prioritize", "ecological concerns"],
+        "roles": [r("critics", "S"), r("claim", "V"), r("Landscape Urbanists", "S"), r("prioritize", "V"), r("aesthetic and ecological concerns", "O")],
         "steps": [
             choice("b_before",
                    "(B)는 '비판가들은 경관 도시론자들이 인간의 필요보다 미적·생태적 관심을 우선한다고 주장한다'로 시작해요. 앞에는 무엇이 와야 할까요?",
@@ -140,7 +150,9 @@ sentences = [
         "glosses": [g("In contrast", "그와 대조적으로"), g("New Urbanism", "신도시론"), g("is an approach", "~한 접근법이다"),
                     g("was popularized", "대중화되었다"), g("in the 1980s", "1980년대에"), g("promotes", "장려하다"),
                     g("walkable streets", "걷기 좋은 거리"), g("compact design", "고밀도(촘촘한) 설계"), g("mixed-use developments", "복합 용도 개발")],
-        "slashes": ["an approach", "in the 1980s"],
+        "slashes": ["In contrast,", "is an approach", "in the 1980s", "walkable streets,"],
+        "roles": [r("New Urbanism", "S"), r("is", "V"), r("an approach", "C")],
+        "modifiers": ["that was popularized in the 1980s and promotes walkable streets, compact design, and mixed-use developments"],
         "steps": [
             choice("b2_next",
                    "(B)는 새 방식 New Urbanism(신도시론) 소개로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
@@ -156,6 +168,8 @@ sentences = [
         "model_translation": "(C) 그러나 이러한 접근 방식에서 사회 정의의 역할은 논란의 소지가 많이 남아 있다.",
         "glosses": [g("However", "그러나"), g("the role of social justice", "사회 정의의 역할"), g("in these approaches", "이 접근법들에서"),
                     g("remains", "여전히 ~이다"), g("highly controversial", "논란이 많은")],
+        "slashes": ["However,", "social justice", "these approaches"],
+        "roles": [r("the role of social justice", "S"), r("remains", "V"), r("highly controversial", "C")],
         "steps": [
             choice("c_before",
                    "'these approaches(이 접근법들)'는 앞의 무엇을 받을까요?",
@@ -175,7 +189,9 @@ sentences = [
                     g("advocates for", "~을 옹호하다, 주장하다"), g("native habitat designs", "자연 서식지 설계"),
                     g("include diverse species and landscapes", "다양한 종과 경관을 포함하다"),
                     g("require very low resource use", "자원을 아주 적게 쓰다")],
-        "slashes": ["planning approach", "native habitat designs", "species and landscapes"],
+        "slashes": ["For example,", "planning approach", "native habitat designs", "species and landscapes"],
+        "roles": [r("Landscape Urbanism", "S"), r("is", "V"), r("a relatively recent planning approach", "C")],
+        "modifiers": ["that advocates for native habitat designs that include diverse species and landscapes that require very low resource use"],
         "steps": [
             choice("c2_next",
                    "(C)는 경관 도시론 소개로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",

@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish, METHOD_IMAGES)
 
 ID = "moeui-2024-03-30-geometry-landmarks"
@@ -64,7 +64,11 @@ sentences = [
                     g("rely exclusively on", "오로지 ~에만 의존하다"), g("geometric information", "기하 정보(공간의 모양)"),
                     g("to determine the location", "위치를 알아내려고"), g("an object hidden in a small enclosure", "작은 공간에 숨긴 물건"),
                     g("exclusive use of geometry", "기하 정보만 쓰는 것"), g("does not occur", "일어나지 않는다"), g("in larger spaces", "더 큰 공간에서는")],
-        "slashes": ["it has been found", "geometric information", "a small enclosure,", "exclusive use of geometry"],
+        "slashes": ["it has been found", "rely exclusively", "geometric information", "the location of an object", "a small enclosure,",
+                    "exclusive use of geometry"],
+        "roles": [r("it", "S"), r("has been found", "V"), r("young children", "S"), r("rely", "V"), r("exclusive use of geometry", "S"),
+                  r("does not occur", "V")],
+        "modifiers": ["hidden in a small enclosure"],
         "steps": [
             sv("s1_sv", ["young children", "rely", "geometric information", "exclusive use of geometry", "does not occur"],
                {"exclusive use of geometry": "S", "does not occur": "V"},
@@ -90,7 +94,9 @@ sentences = [
                     g("failed to incorporate", "포함하지 못했다"), g("information about nongeometric features", "비기하 특징에 대한 정보"),
                     g("nongeometric features", "비기하 특징"), g("i.e., a blue wall", "예를 들어 파란 벽"),
                     g("they used", "그들은 사용했다"), g("both types of information", "두 종류의 정보 모두"), g("in a larger room", "더 큰 방에서는")],
-        "slashes": ["in a small room,", "nongeometric features", "a blue wall),"],
+        "slashes": ["Although,", "in a small room,", "failed to incorporate information", "nongeometric features", "a blue wall),",
+                    "both types of information"],
+        "roles": [r("children", "S"), r("failed", "V"), r("they", "S"), r("used", "V"), r("both types of information", "O")],
         "steps": [
             choice("s2_sort",
                    "'a blue wall(파란 벽)' 같은 정보는 칠판 어느 쪽일까요?",
@@ -111,6 +117,8 @@ sentences = [
         "id": 3, "text": S[2], "model_translation": KO[2], "teaching_value": "high",
         "glosses": [g("These findings", "이 연구 결과들은"), g("suggest", "시사하다"), g("geometric and nongeometric information", "기하·비기하 정보"),
                     g("may be combined", "결합될 수 있다"), g("in a weighted fashion", "무게를 달리한 방식으로"), g("fashion", "방식")],
+        "slashes": ["These findings suggest", "nongeometric information", "may be combined"],
+        "roles": [r("These findings", "S"), r("suggest", "V"), r("geometric and nongeometric information", "S"), r("may be combined", "V")],
         "steps": [
             choice("s3_weight",
                    "두 정보가 어떻게 합쳐질 수 있대요?",
@@ -127,6 +135,9 @@ sentences = [
         "id": 4, "text": S[3], "model_translation": KO[3], "teaching_value": "high",
         "glosses": [g("Geometry", "기하 정보"), g("may be", "~일 수도 있다"), g("because", "~ 때문에"), g("it is more stable", "그것이 더 안정적이다"),
                     g("across time", "시간이 지나도"), g("than is nongeometric information", "비기하 정보보다")],
+        "slashes": ["may be ③invalid", "more stable", "across time"],
+        "roles": [r("Geometry", "S"), r("may be", "V"), r("invalid", "C"), r("it", "S"), r("is … is", "V"), r("more stable", "C"),
+                  r("nongeometric information", "S")],
         "steps": [
             choice("s4_stable",
                    "because 뒤를 봐요. 기하 정보는 비기하 정보보다 어떻대요?",
@@ -152,7 +163,9 @@ sentences = [
                     g("the ecological validity", "생태학적 타당성(실제 환경에서 믿을 만함)"), g("of nongeometric features", "비기하 특징의"),
                     g("for example", "예를 들어"), g("larger features", "더 큰 특징"), g("may be more stable", "더 안정적일 수 있다"),
                     g("hence", "그래서"), g("more reliable", "더 믿을 만한")],
-        "slashes": ["is combined with geometry", "of nongeometric features;", "may be more stable"],
+        "slashes": ["landmark information", "combined with geometry", "may depend on", "nongeometric features;", "for example,", "more stable"],
+        "roles": [r("Whether or not nongeometric landmark information is combined with geometry", "S"), r("may depend on", "V"),
+                  r("larger features", "S"), r("may be", "V"), r("more stable", "C")],
         "steps": [
             sv("s5_sv", ["nongeometric landmark information", "is combined", "may depend on", "the ecological validity", "larger features"],
                {"may depend on": "V", "the ecological validity": "전목"},
@@ -178,7 +191,10 @@ sentences = [
                     g("nearer than to farther landmarks", "먼 랜드마크보다 가까운 것에"), g("in estimation", "추정할 때"),
                     g("consistent with", "~와 일치하는"), g("Weber’s law", "베버의 법칙"), g("in which", "그 법칙에서는"),
                     g("smaller distances", "더 짧은 거리"), g("would be coded more accurately", "더 정확하게 기록된다"), g("than larger distances", "더 긴 거리보다")],
-        "slashes": ["mobile animals", "farther landmarks", "in estimation,", "Weber’s law", "more accurately"],
+        "slashes": ["Further,", "mobile animals", "more weight", "farther landmarks", "in estimation,", "Weber’s law", "smaller distances",
+                    "more accurately"],
+        "roles": [r("a variety of mobile animals", "S"), r("give", "V"), r("more weight", "O")],
+        "modifiers": ["in which smaller distances would be coded more accurately than larger distances"],
         "steps": [
             choice("s6_weber",
                    "동물들은 먼 랜드마크보다 가까운 것에 더 무게를 둬요. Weber의 법칙은 짧은 거리가 더 정확히 기록된대요. 두 내용은 ⑤consistent(일치)할까요?",

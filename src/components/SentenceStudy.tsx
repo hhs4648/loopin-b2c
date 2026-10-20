@@ -126,13 +126,19 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
     setTrapHint(on && !seen);
   };
   const withSlashes = (text: string) => {
-    if (!slashOn || !view.slashes?.length) return text;
-    // 끊는 자리는 원래 문장에서 먼저 다 찾고 뒤에서부터 넣는다 — 「repertoire」와 「repertoire is」처럼 겹쳐도 둘 다 들어가게
-    const cuts = [...new Set(view.slashes.map((after) => {
-      const at = text.indexOf(after);
-      return at < 0 ? -1 : at + after.length;
-    }).filter((x) => x > 0))].sort((a, b) => b - a);
+    if (!slashOn || !(view.slashes?.length || view.slashModifiers?.length)) return text;
+    // 수식어(관계대명사절·분사 덩어리)는 [ ]로 묶는다 — 끊는 자리보다 먼저, 뒤에서부터 (2026-10-20 선생님: 수식어라는 걸 괄호로)
     let out = text;
+    const mods = [...new Set(view.slashModifiers ?? [])].map((m) => [text.indexOf(m), m.length] as const).filter(([a]) => a >= 0)
+      .sort((x, y) => y[0] - x[0]);
+    for (const [a, len] of mods) out = `${out.slice(0, a)}[${out.slice(a, a + len)}]${out.slice(a + len)}`;
+    // 끊는 자리는 원래 문장에서 먼저 다 찾고 뒤에서부터 넣는다 — 「repertoire」와 「repertoire is」처럼 겹쳐도 둘 다 들어가게
+    const cuts = [...new Set((view.slashes ?? []).map((after) => {
+      const at = out.indexOf(after);
+      if (at < 0) return -1;
+      // 수식어 끝에서 끊으면 「]」 뒤에서 — 「danger / ]」가 되지 않게
+      return out[at + after.length] === "]" ? at + after.length + 1 : at + after.length;
+    }).filter((x) => x > 0))].sort((a, b) => b - a);
     for (const cut of cuts) {
       // 「/」 양옆은 아주 좁은 띄어쓰기(hair space)로 — 보통 띄어쓰기는 너무 벌어져 보인다
       const rest = out.slice(cut).replace(/^ /, "");
@@ -1118,7 +1124,8 @@ function placeWords(sentence: string, words: string[]): Map<string, [number, num
   const free = ([a, b]: [number, number]) => !taken.some(([x, y]) => a < y && x < b);
   for (const w of [...new Set(words)].sort((x, y) => y.length - x.length)) {
     if (w.includes(" … ")) {
-      const r = wordRanges(sentence, w);
+      // 「we … we」처럼 차례로 잡는 낱말도 이미 긴 덩어리가 차지한 자리(what we have 안의 we)는 건너뛴다 (2026-10-20 선생님: we are adults의 we도 S)
+      const r = wordRanges(sentence, w, taken);
       out.set(w, r);
       taken.push(...r);
       continue;
@@ -1132,29 +1139,37 @@ function placeWords(sentence: string, words: string[]): Map<string, [number, num
   return out;
 }
 
+/**
+ * 찾는 말의 정규식. 끊어읽기를 켜면 문장 안 띄어쓰기 자리에 「 / 」(hair space + / + hair space)가 끼는데,
+ * S·V·O 덩어리가 끊는 자리를 가로질러도 찾도록 띄어쓰기마다 그 모양도 허용한다 (2026-10-20 선생님: 끊는 자리는 그대로 두고 표시도 보이게)
+ */
+function wordRe(part: string): RegExp {
+  const esc = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/ /g, "(?: |\\u200A\\/\\u200A)");
+  return new RegExp(`${/^[a-z0-9]/.test(part) ? "(?<![a-z0-9])" : ""}${esc}(?![a-z0-9])`, "g");
+}
+
 function allWordRanges(sentence: string, word: string): [number, number][] {
   const text = sentence.toLowerCase().replace(/[’']/g, "'");
-  const part = word.toLowerCase().replace(/[’']/g, "'");
-  const esc = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const re = new RegExp(`${/^[a-z0-9]/.test(part) ? "(?<![a-z0-9])" : ""}${esc}(?![a-z0-9])`, "g");
+  const re = wordRe(word.toLowerCase().replace(/[’']/g, "'"));
   const out: [number, number][] = [];
-  for (let m = re.exec(text); m; m = re.exec(text)) out.push([m.index, m.index + part.length]);
+  for (let m = re.exec(text); m; m = re.exec(text)) out.push([m.index, m.index + m[0].length]);
   return out;
 }
 
-function wordRanges(sentence: string, word: string): [number, number][] {
+function wordRanges(sentence: string, word: string, taken: [number, number][] = []): [number, number][] {
   const text = sentence.toLowerCase().replace(/[’']/g, "'");
   const out: [number, number][] = [];
   let from = 0;
   for (const part of word.toLowerCase().replace(/[’']/g, "'").split(" … ")) {
-    const esc = part.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     // ’s처럼 기호로 시작하는 조각은 앞 글자(it)에 붙어 있다 — 앞쪽 경계는 보지 않는다
-    const re = new RegExp(`${/^[a-z0-9]/.test(part) ? "(?<![a-z0-9])" : ""}${esc}(?![a-z0-9])`, "g");
+    const re = wordRe(part);
     re.lastIndex = from;
-    const m = re.exec(text);
+    let m = re.exec(text);
+    // 이미 다른 표시가 차지한 자리는 건너뛰고 다음 자리로
+    while (m && taken.some(([x, y]) => m!.index < y && x < m!.index + m![0].length)) m = re.exec(text);
     if (!m) break;
-    out.push([m.index, m.index + part.length]);
-    from = m.index + part.length;
+    out.push([m.index, m.index + m[0].length]);
+    from = m.index + m[0].length;
   }
   return out;
 }

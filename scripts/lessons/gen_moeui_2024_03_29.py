@@ -11,7 +11,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, finish)
 
 ID = "moeui-2024-03-29-crossing-cultures"
@@ -56,6 +56,8 @@ sentences = [
         "id": 1, "text": S[0], "model_translation": KO[0], "teaching_value": "low",
         "glosses": [g("The process of crossing cultures", "문화를 넘어가는 과정"), g("challenges", "~에 도전하다, 흔들다"),
                     g("the very basis", "바로 그 기반"), g("of who we are", "우리가 누구인지의"), g("as cultural beings", "문화적 존재로서")],
+        "slashes": ["crossing cultures", "the very basis"],
+        "roles": [r("The process of crossing cultures", "S"), r("challenges", "V"), r("the very basis", "O")],
         "steps": [
             show("s1_topic", "문화를 넘어가면(다른 나라 문화 속으로 가면) 내가 누구인지의 바탕이 흔들린대요. 이 글의 이야기예요.",
                  highlight=["crossing cultures"], button="다음 문장",
@@ -65,6 +67,8 @@ sentences = [
     {
         "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "low",
         "glosses": [g("It offers", "그것은 준다"), g("opportunities", "기회"), g("for new learning and growth", "새로운 배움과 성장을 위한")],
+        "slashes": ["offers opportunities"],
+        "roles": [r("It", "S"), r("offers", "V"), r("opportunities", "O")],
         "steps": [show("s2_offer", "그 과정은 새로 배우고 자랄 기회를 준대요.", highlight=["opportunities"], button="다음 문장")],
     },
     {
@@ -73,7 +77,8 @@ sentences = [
                     g("brings", "가져다준다"), g("us", "우리에게"), g("understanding", "이해"),
                     g("not only of the people and their culture", "사람들과 그들의 문화뿐만 아니라"), g("in our new environment", "새 환경의"),
                     g("but of ourselves and our home culture", "우리 자신과 고향 문화에 대한 것도")],
-        "slashes": ["from our home", "us understanding", "new environment,"],
+        "slashes": ["from our home", "us understanding", "and their culture", "new environment,"],
+        "roles": [r("Being “uprooted” from our home", "S"), r("brings", "V"), r("understanding", "O")],
         "steps": [
             sv("s3_sv", ["Being “uprooted” from our home", "brings", "us", "understanding"],
                {"Being “uprooted” from our home": "S", "brings": "V", "understanding": "O"},
@@ -95,6 +100,9 @@ sentences = [
         "id": 4, "text": S[3], "model_translation": KO[3], "teaching_value": "low",
         "glosses": [g("Although", "비록 ~이지만"), g("the difficulties", "어려움"), g("that can arise from crossing cultures", "문화를 넘어가며 생길 수 있는"),
                     g("are often shocking", "흔히 충격적이다"), g("success stories", "성공담"), g("are everywhere", "어디에나 있다")],
+        "slashes": ["the difficulties", "crossing cultures", "often shocking,"],
+        "roles": [r("the difficulties", "S"), r("are … are", "V"), r("shocking", "C"), r("success stories", "S")],
+        "modifiers": ["that can arise from crossing cultures"],
         "steps": [show("s4_success", "어려움은 충격적이지만 성공한 이야기도 어디에나 있대요.", highlight=["success stories"], button="다음 문장")],
     },
     {
@@ -104,7 +112,11 @@ sentences = [
                     g("find", "알게 되다"), g("ourselves", "우리 자신을"), g("uniquely", "특별히, 남다르게"), g("privileged", "특권을 누리는"),
                     g("to define ourselves and others anew", "우리와 남을 새롭게 정의할"), g("with clarity and insight", "명확함과 통찰로"),
                     g("that we could not have cultivated", "우리가 기를 수 없었을"), g("without leaving home", "고향을 떠나지 않고는")],
-        "slashes": ["because of,", "cross cultures,", "uniquely privileged", "anew", "cultivated"],
+        "slashes": ["Despite,", "because of,", "and ambivalence", "we undergo", "cross cultures,", "we gradually find ourselves",
+                    "uniquely privileged", "ourselves and others anew", "clarity and insight", "cultivated"],
+        "roles": [r("we … we … we … we", "S"), r("undergo", "V"), r("cross", "V"), r("find", "V"), r("ourselves", "O"), r("privileged", "C"),
+                  r("could not have cultivated", "V")],
+        "modifiers": ["we undergo when we cross cultures", "that we could not have cultivated without leaving home"],
         "steps": [
             sv("s5_sv", ["the suffering and ambivalence", "we", "find", "ourselves", "privileged"],
                {"we": "S", "find": "V", "ourselves": "O", "privileged": "C"},
@@ -126,6 +138,8 @@ sentences = [
         "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "high",
         "glosses": [g("Adapting to a new and unfamiliar culture", "새롭고 낯선 문화에 적응하는 것"), g("Adapting", "적응하는 것"),
                     g("then", "그러니까"), g("is", "~이다"), g("more than survival", "생존 그 이상")],
+        "slashes": ["unfamiliar culture,", "then,"],
+        "roles": [r("Adapting to a new and unfamiliar culture", "S"), r("is", "V"), r("more than survival", "C")],
         "steps": [
             choice("s6_subject",
                    "③Adapting to a new and unfamiliar culture는 이 문장에서 무슨 역할일까요?",
@@ -140,6 +154,7 @@ sentences = [
     {
         "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "low",
         "glosses": [g("It is", "그것은 ~이다"), g("a life-changing journey", "삶을 바꾸는 여정")],
+        "roles": [r("It", "S"), r("is", "V"), r("a life-changing journey", "C")],
         "steps": [show("s7_journey", "문화에 적응하는 건 삶을 바꾸는 여정이래요.", highlight=["life-changing"], button="다음 문장")],
     },
     {
@@ -147,6 +162,8 @@ sentences = [
         "glosses": [g("It is a process of “becoming”", "그것은 '되어 가는' 과정이다"), g("personal reinvention", "개인의 재창조"),
                     g("transformation", "변화"), g("growth", "성장"), g("reaching out beyond the boundaries", "경계 너머로 뻗어 가는 것"),
                     g("of our own existence", "우리 자신의 존재의")],
+        "slashes": ["of “becoming”—", "transformation, growth,", "the boundaries"],
+        "roles": [r("It", "S"), r("is", "V"), r("a process", "C")],
         "steps": [show("s8_becoming", "대시(—) 뒤는 '되어 가는 과정'을 풀어 쓴 말이에요. 앞을 이해했으면 가볍게 넘어가도 돼요.",
                        highlight=["“becoming”"], button="다음 문장")],
     },
@@ -155,6 +172,10 @@ sentences = [
         "glosses": [g("The process", "그 과정은"), g("does not require", "요구하지 않는다"), g("that we abandon", "우리가 버리는 것을"),
                     g("our former personalities", "이전의 성격"), g("the cultures", "문화들"), g("which", "(그) ~하는"),
                     g("we were born", "우리가 태어났다"), g("abandon", "버리다")],
+        "slashes": ["does not require", "former personalities"],
+        "roles": [r("The process", "S"), r("does not require", "V"), r("we", "S"), r("abandon", "V"),
+                  r("our former personalities and the cultures", "O")],
+        "modifiers": ["which we were born"],
         "steps": [
             sv("s9_sv", ["The process", "does not require", "we", "abandon", "our former personalities and the cultures"],
                {"The process": "S", "does not require": "V"},
@@ -181,7 +202,9 @@ sentences = [
                     g("as if for the first time", "마치 처음인 것처럼"), g("particularly", "특히"),
                     g("those “cultural invariants” within us", "우리 안의 '문화적으로 변하지 않는 것들'"),
                     g("aspects that we hold dear", "우리가 소중히 여기는 측면들"), g("refuse to compromise", "타협하기를 거부하다")],
-        "slashes": ["Rather,", "for the first time,", "within us—"],
+        "slashes": ["Rather,", "compels us", "find ⑤ourselves", "for the first time,", "within us—", "hold dear"],
+        "roles": [r("it", "S"), r("compels", "V"), r("us", "O")],
+        "modifiers": ["that we hold dear and refuse to compromise"],
         "steps": [
             choice("s10_reflexive",
                    "compels us to find ⑤ourselves — 찾는 사람(to find의 주체)은 누구일까요?",
@@ -245,7 +268,7 @@ exam = {
 lesson = base_lesson(
     ID, source="2024년 3월 고3 전국연합학력평가 영어 29번 (어법, 2점)",
     topic="어법 푸는 법: 밑줄마다 무슨 문법을 묻는지 이름 붙이기 → 그 문장 뼈대(주어·동사·빈자리)로 확인",
-    method={"type": "grammar", "labels": ["묻는 문법 이름 붙이기", "뼈대로 확인"], "intro_times": 3},
+    method={"type": "grammar", "labels": ["문장 뼈대 찾기", "밑줄 문법 확인"], "intro_times": 3},
     images={"topic": {"src": topic_svg("topic-crossing-cultures.svg", ("Home", "고향 문화"), "→", ("New culture", "새 문화"),
                                        "다른 문화로 가면 나는 어떻게 달라질까?", "2024년 3월 29번 도입 칠판"),
                       "alt": "칠판: Home(고향 문화) → New culture(새 문화)", "kind": "drawing"}},

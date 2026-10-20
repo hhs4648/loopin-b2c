@@ -415,6 +415,27 @@
           "ko": "주된, 지배적인"
         }
       ],
+      "slashes": [
+        "a color word,",
+        "ao,"
+      ],
+      "roles": [
+        {
+          "text": "Japanese",
+          "role": "S"
+        },
+        {
+          "text": "used to have",
+          "role": "V"
+        },
+        {
+          "text": "a color word",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that spanned both green and blue"
+      ],
       "steps": [
         {
           "id": "s1_passage",
@@ -732,6 +753,31 @@
           "ko": "표현된"
         }
       ],
+      "slashes": [
+        "In the modern language,",
+        "however,",
+        "restricted mostly",
+        "blue shades,",
+        "is usually expressed"
+      ],
+      "roles": [
+        {
+          "text": "ao",
+          "role": "S"
+        },
+        {
+          "text": "has come to be restricted",
+          "role": "V"
+        },
+        {
+          "text": "green",
+          "role": "S"
+        },
+        {
+          "text": "is usually expressed",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s2_basic_sv",
@@ -998,8 +1044,37 @@
         }
       ],
       "slashes": [
+        "the first traffic lights",
+        "were imported",
         "the United States",
-        "in the 1930s,"
+        "in the 1930s,",
+        "just as green"
+      ],
+      "roles": [
+        {
+          "text": "the first traffic lights",
+          "role": "S"
+        },
+        {
+          "text": "were imported",
+          "role": "V"
+        },
+        {
+          "text": "installed",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "were",
+          "role": "V"
+        },
+        {
+          "text": "just as green",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -1280,8 +1355,34 @@
         }
       ],
       "slashes": [
+        "Nevertheless,",
+        "in common parlance",
         "ao shingoo,",
+        "perhaps because",
+        "three primary colors",
         "artists’ palettes"
+      ],
+      "roles": [
+        {
+          "text": "the go light",
+          "role": "S"
+        },
+        {
+          "text": "was called",
+          "role": "V"
+        },
+        {
+          "text": "ao shingoo",
+          "role": "C"
+        },
+        {
+          "text": "the three primary colors",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -1551,6 +1652,27 @@
           "ko": "초록빛"
         }
       ],
+      "slashes": [
+        "The label ao",
+        "for a green light",
+        "did not appear",
+        "at first,",
+        "the remaining associations"
+      ],
+      "roles": [
+        {
+          "text": "The label ao",
+          "role": "S"
+        },
+        {
+          "text": "did not appear",
+          "role": "V"
+        },
+        {
+          "text": "so out of the ordinary",
+          "role": "C"
+        }
+      ],
       "steps": [
         {
           "id": "s5_basic_sv",
@@ -1784,6 +1906,26 @@
         {
           "en": "feel",
           "ko": "느껴지다"
+        }
+      ],
+      "slashes": [
+        "over time,",
+        "the difference",
+        "the green color",
+        "the word ao"
+      ],
+      "roles": [
+        {
+          "text": "the difference",
+          "role": "S"
+        },
+        {
+          "text": "began to feel",
+          "role": "V"
+        },
+        {
+          "text": "awkward",
+          "role": "C"
         }
       ],
       "steps": [
@@ -2117,6 +2259,24 @@
           "ko": "미도리 · 일본어로 초록"
         }
       ],
+      "slashes": [
+        "less assertive",
+        "opted for the solution",
+        "the official name"
+      ],
+      "roles": [
+        {
+          "text": "Nations",
+          "role": "S"
+        },
+        {
+          "text": "might have opted for",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that are less assertive"
+      ],
       "steps": [
         {
           "id": "s7_basic_sv",
@@ -2348,6 +2508,12 @@
         {
           "en": "Japanese",
           "ko": "일본의"
+        }
+      ],
+      "roles": [
+        {
+          "text": "the Japanese",
+          "role": "S"
         }
       ],
       "steps": [
@@ -2642,6 +2808,39 @@
           "en": "ao",
           "ko": "아오 · 일본어 색 단어"
         }
+      ],
+      "slashes": [
+        "Rather than alter the name",
+        "to fit reality,",
+        "announced in 1973",
+        "that ________:",
+        "henceforth,",
+        "would be a color"
+      ],
+      "roles": [
+        {
+          "text": "the Japanese government",
+          "role": "S"
+        },
+        {
+          "text": "announced",
+          "role": "V"
+        },
+        {
+          "text": "go lights",
+          "role": "S"
+        },
+        {
+          "text": "would be",
+          "role": "V"
+        },
+        {
+          "text": "a color",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that better corresponded to the dominant meaning of ao"
       ],
       "steps": [
         {

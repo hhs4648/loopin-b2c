@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, pick, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg, translate,  # noqa: E402
+from exam_kit import (g, r, choice, pick, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg, translate,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 
 ID = "moeui-2024-03-24-distance-in-time"
@@ -58,6 +58,8 @@ sentences = [
         "id": 1, "text": S[0], "model_translation": KO[0], "teaching_value": "high",
         "glosses": [g("Distance in time", "시간 속의 거리"), g("distance", "거리"), g("time", "시간"), g("is like", "~와 같다"),
                     g("distance in space", "공간 속의 거리"), g("space", "공간")],
+        "slashes": ["Distance in time"],
+        "roles": [r("Distance in time", "S"), r("is", "V")],
         "steps": [
             choice("s1_like",
                    "여기서 like는 무슨 뜻일까요?",
@@ -77,6 +79,8 @@ sentences = [
         "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "medium",
         "glosses": [g("People", "사람들"), g("matter", "중요하다"), g("even if", "비록 ~라도"), g("they live", "그들이 산다"),
                     g("thousands of miles away", "수천 마일 떨어진 곳에")],
+        "slashes": ["People matter"],
+        "roles": [r("People", "S"), r("matter", "V"), r("they", "S"), r("live", "V")],
         "steps": [
             choice("s2_matter",
                    "수천 마일 떨어져 사는 사람들은 어떻대요?",
@@ -91,6 +95,8 @@ sentences = [
         "id": 3, "text": S[2], "model_translation": KO[2], "teaching_value": "high",
         "glosses": [g("Likewise", "마찬가지로"), g("they matter", "그들은 중요하다"), g("even if", "비록 ~라도"),
                     g("they live", "그들이 산다"), g("thousands of years hence", "지금부터 수천 년 뒤에"), g("hence", "지금부터 (~ 뒤에)")],
+        "slashes": ["Likewise,", "they matter"],
+        "roles": [r("they … they", "S"), r("matter", "V"), r("live", "V")],
         "steps": [
             choice("s3_hence",
                    "Likewise(마찬가지로), 수천 년 뒤에 살 사람들은 어떻대요?",
@@ -112,7 +118,8 @@ sentences = [
                     g("mistake distance for unreality", "거리를 비현실로 착각하다"),
                     g("mistake", "착각하다"), g("unreality", "비현실, 실제가 아님"),
                     g("to treat the limits of what we can see", "우리가 볼 수 있는 것의 한계를 취급하다"), g("as the limits of the world", "세상의 한계로")],
-        "slashes": ["In both cases,", "for unreality,", "what we can see"],
+        "slashes": ["In both cases,", "it’s easy", "for unreality,", "what we can see"],
+        "roles": [r("it", "S"), r("’s", "V"), r("easy", "C")],
         "steps": [
             choice("s4_mistake",
                    "두 경우 모두(In both cases) 우리가 쉽게 하는 실수는 무엇이래요?",
@@ -129,7 +136,8 @@ sentences = [
         "glosses": [g("But", "하지만"), g("just as", "~처럼"), g("the world", "세상"), g("does not stop", "멈추지 않는다"),
                     g("at our doorstep", "우리 집 문 앞에서"), g("our country’s borders", "우리나라 국경"),
                     g("neither does it stop", "그것도 멈추지 않는다"), g("with our generation", "우리 세대에서"), g("or the next", "또는 다음 세대에서")],
-        "slashes": ["just as the world", "country’s borders,"],
+        "slashes": ["does not stop", "country’s borders,", "does it stop"],
+        "roles": [r("the world", "S"), r("does not stop", "V"), r("does", "V"), r("it", "S"), r("stop", "V")],
         "steps": [
             sv("s5_sv", ["the world", "does not stop", "our doorstep", "neither", "does", "it", "stop", "our generation"],
                {"the world": "S", "does not stop": "V", "does": "V", "it": "S", "stop": "V"},
@@ -154,6 +162,7 @@ sentences = [
     {
         "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "low",
         "glosses": [g("These ideas", "이런 생각들"), g("are", "~이다"), g("common sense", "상식")],
+        "roles": [r("These ideas", "S"), r("are", "V"), r("common sense", "C")],
         "steps": [
             show("s6_common", "이런 생각은 상식이래요. 이제부터 우리가 실제로 그렇게 산다는 예시가 이어져요.",
                  highlight=["common sense"], button="다음 문장"),
@@ -164,6 +173,10 @@ sentences = [
         "glosses": [g("A popular proverb", "유명한 속담"), g("says", "말한다"), g("A society", "사회는"), g("grows great", "크게 성장한다"),
                     g("when", "~할 때"), g("old men", "노인들"), g("plant trees", "나무를 심다"),
                     g("under whose shade", "그 나무의 그늘 아래에"), g("they will never sit", "그들은 결코 앉지 못할 것이다")],
+        "slashes": ["proverb says,", "grows great", "plant trees"],
+        "roles": [r("A popular proverb", "S"), r("says", "V"), r("A society", "S"), r("grows", "V"), r("great", "C"), r("old men", "S"),
+                  r("plant", "V"), r("trees", "O")],
+        "modifiers": ["under whose shade they will never sit"],
         "steps": [
             choice("s7_proverb",
                    "노인들이 그 그늘에 결코 앉지 못할 나무를 심을 때 사회가 위대해진대요. 무슨 뜻일까요?",
@@ -180,6 +193,9 @@ sentences = [
         "glosses": [g("When", "~할 때"), g("we dispose of", "우리가 ~을 버리다"), g("radioactive waste", "방사성 폐기물"),
                     g("we don’t say", "우리는 말하지 않는다"), g("Who cares", "누가 신경 쓰겠어"), g("if", "~하든"),
                     g("this poisons people", "이것이 사람들을 해치다"), g("centuries from now", "지금부터 수백 년 뒤")],
+        "slashes": ["radioactive waste,", "we don’t say,", "Who cares", "poisons people"],
+        "roles": [r("we … we", "S"), r("dispose of", "V"), r("don’t say", "V"), r("Who", "S"), r("cares", "V"), r("this", "S"), r("poisons", "V"),
+                  r("people", "O")],
         "steps": [
             show("s8_waste", "방사성 폐기물을 버릴 때 '수백 년 뒤 사람이 다치든 말든'이라고 하지 않는대요. 미래 사람도 신경 쓰는 예예요.",
                  highlight=["we don’t say", "centuries from now"],
@@ -194,6 +210,9 @@ sentences = [
         "glosses": [g("Similarly", "비슷하게"), g("few of us", "우리 중 거의 없다"), g("who care about", "~에 신경 쓰는"),
                     g("climate change or pollution", "기후 변화나 오염"), g("do so", "그렇게 하다"), g("solely", "오로지"),
                     g("for the sake of", "~을 위해"), g("people alive today", "오늘 살아 있는 사람들")],
+        "slashes": ["Similarly,", "few of us", "climate change or pollution", "do so solely"],
+        "roles": [r("few of us", "S"), r("do so", "V")],
+        "modifiers": ["who care about climate change or pollution"],
         "steps": [
             choice("s9_few",
                    "기후 변화를 걱정하는 사람 중에, 오로지 오늘 사는 사람만을 위해 그러는 사람은 어떻대요?",
@@ -210,7 +229,10 @@ sentences = [
                     g("that we hope will last for generations", "여러 세대 동안 남기를 바라는"), g("last", "지속되다, 오래가다 (동사)"), g("we invest in", "우리는 ~에 투자한다"),
                     g("schools and long-term scientific projects", "학교와 장기 과학 프로젝트"), g("we preserve", "우리는 보존한다"),
                     g("paintings, traditions, languages", "그림, 전통, 언어"), g("we protect", "우리는 보호한다"), g("beautiful places", "아름다운 장소")],
-        "slashes": ["museums and parks and bridges", "for generations;", "scientific projects;", "languages;"],
+        "slashes": ["We build", "and bridges", "for generations;", "we invest", "scientific projects;", "we preserve", "languages;"],
+        "roles": [r("We … we … we … we … we", "S"), r("build", "V"), r("museums and parks and bridges", "O"), r("hope", "V"), r("invest", "V"),
+                  r("preserve", "V"), r("paintings, traditions, languages", "O"), r("protect", "V"), r("beautiful places", "O")],
+        "modifiers": ["that we hope will last for generations"],
         "steps": [
             show("s10_list", "박물관·다리, 학교·과학 프로젝트, 그림·전통, 아름다운 장소를 여러 세대 동안 남기려고 만든대요. 모두 미래를 위한 일이에요.",
                  highlight=["last for generations"],
@@ -225,6 +247,8 @@ sentences = [
         "glosses": [g("In many cases", "많은 경우"), g("we don’t draw clear lines", "우리는 분명한 선을 긋지 않는다"),
                     g("between", "~ 사이에"), g("our concerns", "우리의 관심, 걱정"), g("for the present and the future", "현재와 미래에 대한"),
                     g("both are in play", "둘 다 작용한다")],
+        "slashes": ["In many cases,", "clear lines", "the future―"],
+        "roles": [r("we", "S"), r("don’t draw", "V"), r("clear lines", "O"), r("both", "S"), r("are", "V")],
         "steps": [
             choice("s11_both",
                    "우리는 현재와 미래에 대한 걱정 사이에 선을 긋지 않는대요. 'both are in play'는 무슨 뜻일까요?",

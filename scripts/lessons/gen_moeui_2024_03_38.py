@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish, METHOD_IMAGES)
 
 ID = "moeui-2024-03-38-pay-as-you-drive"
@@ -67,7 +67,10 @@ sentences = [
                     g("to charge pay-as-you-drive rates", "운전한 만큼 내는 요금을 매기도록"), g("depending on", "~에 따라"),
                     g("people’s actual behavior", "사람들의 실제 행동"), g("on the road", "도로에서"), g("as opposed to", "~와는 달리"),
                     g("generalized stereotypes", "일반화된 고정관념"), g("certain “at-risk” groups", "특정 '위험' 집단")],
-        "slashes": ["in the future,", "insurance companies", "pay-as-you-drive rates", "on the road,"],
+        "slashes": ["in the future,", "real-time data collection", "insurance companies", "pay-as-you-drive rates", "on the road,",
+                    "generalized stereotypes"],
+        "roles": [r("real-time data collection", "S"), r("will enable", "V"), r("insurance companies", "O"),
+                  r("to charge pay-as-you-drive rates", "C")],
         "steps": [
             sv("g_sv", ["But in the future", "real-time data collection", "will enable", "insurance companies",
                         "to charge pay-as-you-drive rates", "people’s actual behavior"],
@@ -116,6 +119,8 @@ sentences = [
     {
         "id": 2, "text": S[0], "model_translation": KO[0], "teaching_value": "low",
         "glosses": [g("Insurance companies", "보험 회사들"), g("are expected to", "~할 것으로 예상된다"), g("err on the safe side", "너무 만전을 기하다")],
+        "slashes": ["are expected to err"],
+        "roles": [r("Insurance companies", "S"), r("are expected to err", "V")],
         "steps": [
             show("s1_safe", "보험 회사는 늘 안전한 쪽으로, 너무 조심한대요.", highlight=["err on the safe side"], button="다음 문장"),
         ],
@@ -124,6 +129,9 @@ sentences = [
         "id": 3, "text": S[1], "model_translation": KO[1], "teaching_value": "low",
         "glosses": [g("They", "그들(보험 회사)"), g("calculate risks", "위험을 계산하다"), g("thoroughly", "철저하게"),
                     g("carefully picking and choosing", "신중하게 고르고 골라"), g("the customers", "고객들"), g("they insure", "그들이 보험을 맡는")],
+        "slashes": ["risks thoroughly,", "picking and choosing"],
+        "roles": [r("They", "S"), r("calculate", "V"), r("risks", "O")],
+        "modifiers": ["they insure"],
         "steps": [
             show("s2_pick", "위험을 꼼꼼히 계산하고, 보험을 들어 줄 고객을 신중하게 고른대요.", highlight=["calculate risks"], button="다음 문장"),
         ],
@@ -132,6 +140,8 @@ sentences = [
         "id": 4, "text": S[2], "model_translation": KO[2], "teaching_value": "medium",
         "glosses": [g("They", "그들(보험 회사)"), g("are boring", "따분하다"), g("because", "~ 때문에"), g("their role in the economy", "경제에서 그들의 역할"),
                     g("to shield", "보호하는 것"), g("everyone and everything", "모든 사람과 모든 것"), g("from disastrous loss", "막심한 손실로부터")],
+        "slashes": ["are boring", "in the economy", "everyone and everything"],
+        "roles": [r("They", "S"), r("are", "V"), r("boring", "C"), r("their role", "S"), r("is", "V")],
         "steps": [
             choice("s3_boring",
                    "보험 회사가 따분한(boring) 이유는 무엇이래요?",
@@ -145,6 +155,8 @@ sentences = [
         "id": 5, "text": S[3], "model_translation": KO[3], "teaching_value": "medium",
         "glosses": [g("Unlike manufacturing", "제조업과 달리"), g("nothing truly revolutionary", "정말 혁신적인 것은 아무것도"),
                     g("ever happens", "일어나지 않는다(nothing과 함께)"), g("in the insurance industry", "보험 업계에서")],
+        "slashes": ["Unlike manufacturing,", "nothing truly revolutionary"],
+        "roles": [r("nothing truly revolutionary", "S"), r("ever happens", "V")],
         "steps": [
             show("s4_nothing", "제조업과 달리 보험 업계에서는 정말 혁신적인 일이 일어나지 않는대요. 따분하다는 말을 이어 가요.",
                  highlight=["nothing truly revolutionary"]),
@@ -158,7 +170,9 @@ sentences = [
                     g("to people", "사람들에게"), g("in “high-risk categories”", "'고위험군'에 속한"), g("such as", "~ 같은"),
                     g("smokers", "흡연자"), g("male drivers under the age of thirty", "30세 미만 남성 운전자"),
                     g("extreme-sports enthusiasts", "익스트림 스포츠 애호가")],
-        "slashes": ["For centuries,", "higher premiums", "“high-risk categories”", "smokers,"],
+        "slashes": ["For centuries,", "higher premiums", "“high-risk categories”", "smokers,", "the age of thirty,"],
+        "roles": [r("insurers", "S"), r("have charged", "V"), r("higher premiums", "O")],
+        "modifiers": ["such as smokers, male drivers under the age of thirty, and extreme-sports enthusiasts"],
         "steps": [
             choice("s5_who",
                    "수 세기 동안 보험사는 누구에게 더 높은 보험료를 매겼대요?",
@@ -176,6 +190,8 @@ sentences = [
         "id": 7, "text": S[5], "model_translation": KO[5], "teaching_value": "high",
         "glosses": [g("This type of classification", "이런 종류의 분류"), g("frequently", "자주"), g("results in", "~을 낳다, ~로 이어지다"),
                     g("biases and outright discrimination", "편견과 노골적인 차별"), g("against disadvantaged groups", "불리한 집단에 대한")],
+        "slashes": ["This type of classification", "results in", "outright discrimination"],
+        "roles": [r("This type of classification", "S"), r("results in", "V")],
         "steps": [
             choice("s6_this",
                    "This type of classification(이런 종류의 분류)은 무엇을 가리킬까요?",
@@ -196,7 +212,8 @@ sentences = [
         "glosses": [g("Bad or high-risk individual drivers", "나쁘거나 위험한 개인 운전자"), g("will end up paying more", "결국 더 내게 될 것이다"),
                     g("for insurance", "보험료로"), g("regardless of", "~와 상관없이"), g("whether they are men or women", "남자든 여자든"),
                     g("young or old", "젊든 나이 들었든")],
-        "slashes": ["individual drivers", "for insurance,"],
+        "slashes": ["individual drivers", "for insurance,", "regardless of", "men or women,"],
+        "roles": [r("Bad or high-risk individual drivers", "S"), r("will end up paying", "V"), r("they", "S"), r("are", "V")],
         "steps": [
             choice("s7_basis",
                    "나쁘게 운전하는 사람은 남녀노소 상관없이 더 낸대요. 무엇을 기준으로 요금을 매기는 걸까요?",
@@ -218,7 +235,9 @@ sentences = [
         "glosses": [g("The Big Brother connotations", "빅브라더(감시 사회) 같은 느낌"), g("are threatening", "위협적이다"), g("but", "하지만"),
                     g("many people", "많은 사람들"), g("might agree to", "~에 동의할지도 모른다"),
                     g("the real-time monitoring", "실시간 감시"), g("of their driving behavior", "자기 운전 행동의"), g("if it means lower rates", "그게 더 낮은 요금을 뜻한다면")],
-        "slashes": ["are threatening,", "real-time monitoring"],
+        "slashes": ["are threatening,", "many people might agree", "real-time monitoring", "driving behavior"],
+        "roles": [r("The Big Brother connotations", "S"), r("are", "V"), r("threatening", "C"), r("many people", "S"), r("might agree to", "V"),
+                  r("it", "S"), r("means", "V"), r("lower rates", "O")],
         "steps": [
             show("s8_monitor", "실시간 감시는 위협적이지만, 요금이 낮아진다면 많은 사람이 동의할 수도 있대요. 주어진 문장의 real-time과 이어지는 이야기예요.",
                  highlight=["real-time monitoring", "lower rates"],

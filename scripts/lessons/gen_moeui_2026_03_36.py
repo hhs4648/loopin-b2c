@@ -430,22 +430,43 @@ sentences.remove(_b2)
 for _i, _s in enumerate(sentences, 1):
     _s["id"] = _i
 
-# 끊어읽기 — 「/ 끊어읽기」를 누르면 이 말들 뒤에 / (2026-10-16 선생님: 긴 문장을 의미 덩어리로 읽는 법을 모른다)
+# 끊어읽기 자리와, 켜면 같이 보이는 S·V·O·C(메인 문장 + because·if 같은 절 안의 S·V, 같은 진하기)·[ ] 수식어 — 2026-10-20 선생님 전체 규칙
+def r(text, role):
+    """끊어읽기를 켜면 같이 보이는 S·V·O·C — 절 안의 것도 같은 진하기로. 떨어진 동사는 "has … survived"처럼 … 로 (exam_kit.r와 같다)"""
+    return {"text": text, "role": role}
+
+
 SLASHES = {
-    1: ["Dennett argues", "conceptual repertoire", "repertoire is", "conversation-stoppers:", "to a close.", "rational creatures,",
-        "ask for justification,", "is a trait", "served us well"],
-    2: ["as much a problem", "private deliberations", "Dennett suggests", "it is useful", "squelchers”:", "items",
+    1: ["Dennett argues", "one benefit", "moral considerations", "repertoire is", "conversation-stoppers:", "their value is", "to a close.",
+        "rational creatures,", "ask for justification,", "is a trait", "served us well"],
+    2: ["as much a problem", "private deliberations", "interpersonal ones.", "Dennett suggests", "it is useful", "squelchers”:", "items",
         "once introduced,", "further deliberation"],
     3: ["morally wrong!”", "appear to work", "in this manner.", "Once the claim is accepted", "no need or room", "further justification:",
         "mustn’t be done,", "is tempting,"],
-    4: ["The problem is", "a perfectly good answer", "sensibly respond", "justifies that?”—", "do so endlessly,",
-        "to a decision,", "and doubting,"],
+    4: ["The problem is", "a perfectly good answer", "sensibly respond", "justifies that?”—", "do so endlessly,", "to a decision,", "and doubting,"],
 }
-for _sid, _cuts in SLASHES.items():
-    _s = next(x for x in sentences if x["id"] == _sid)
-    for _c in _cuts:
-        assert _s["text"].count(_c) == 1, (_sid, _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
-    _s["slashes"] = _cuts
+ROLES = {
+    1: [r("Daniel Dennett", "S"), r("argues", "V"), r("one benefit", "S"), r("is … is … is", "V"),
+        r("that they can serve as conversation-stoppers", "C"), r("their value", "S"), r("We", "S"), r("are", "V"), r("rational creatures", "C"),
+        r("this", "S"), r("a trait", "C")],
+    2: [r("This", "S"), r("is … is", "V"), r("a problem", "C"), r("Dennett", "S"), r("suggests", "V"), r("it", "S"), r("useful", "C")],
+    3: [r("That would be morally wrong", "S"), r("would appear to work", "V"), r("the claim", "S"), r("is accepted", "V"), r("is … is", "V"),
+        r("no need or room", "S"), r("the action", "S"), r("mustn’t be done", "V"), r("it", "S"), r("tempting", "C")],
+    4: [r("The problem", "S"), r("is", "V"), r("we … we", "S"), r("can always sensibly respond", "V"), r("can potentially do", "V")],
+}
+MODIFIERS = {  # 끊어읽기 때 [ ]로 묶는 수식어 — 관계대명사절·분사 덩어리 (안의 S·V는 안 적는다)
+    1: ["that has served us well in many contexts"],
+    2: ["that, once introduced, stop any further deliberation in its tracks"],
+}
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []):
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
 
 # 초급 기본 — 문장마다 「주어·동사 찾기 + 뜻 알려 주기」 또는 「해석 맞추기」 중 하나 (2026-10-15 선생님).
 # 같은 자리(slot)에 두 방식을 두고 최근에 덜 한 쪽을 낸다. 긴 문장(20단어~)의 맞추기는 핵심어만 모은 문장으로.

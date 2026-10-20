@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 
 ID = "moeui-2024-03-31-conventional-writing"
@@ -68,6 +68,8 @@ sentences = [
                     g("literal", "글자 그대로의, 사실에 충실한"), g("with an accompanying", "~이 함께 따라오면서"),
                     g("the spontaneity and originality", "즉흥성과 독창성"), g("characterized", "~의 특징이었다"),
                     g("our earlier efforts", "우리의 예전 노력(어릴 때 쓴 것)")],
+        "slashes": ["through sixteen,", "has strengthened"],
+        "roles": [r("our manual dexterity", "S"), r("has strengthened", "V")],
         "steps": [
             show("s1_passage", "빈칸은 여기, 다섯째 문장에 있어요. 이 문장을 잠깐 볼까요?",
                  button="네", before_read=True, show_passage=[BLANK], method=0),
@@ -98,6 +100,8 @@ sentences = [
     {
         "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "low",
         "glosses": [g("There is", "~이 있다"), g("considerable improvement", "상당한 향상"), g("in handwriting skills", "글씨 쓰는 실력에")],
+        "slashes": ["considerable improvement"],
+        "roles": [r("is", "V"), r("considerable improvement", "S")],
         "steps": [
             show("s2_hand", "글씨 쓰는 실력도 많이 좋아진대요.", highlight=["considerable improvement"], button="다음 문장"),
         ],
@@ -106,6 +110,8 @@ sentences = [
         "id": 3, "text": S[2], "model_translation": KO[2], "teaching_value": "medium",
         "glosses": [g("We", "우리는"), g("gain mastery over", "~을 익히다, 숙달하다"), g("the mechanics of language", "언어의 기술(문법·맞춤법)"),
                     g("mechanics", "기법, 기술")],
+        "slashes": ["gain mastery"],
+        "roles": [r("We", "S"), r("gain", "V"), r("mastery", "O")],
         "steps": [
             choice("s3_mech",
                    "We gain mastery over the mechanics of language는 무슨 뜻일까요?",
@@ -127,7 +133,8 @@ sentences = [
                     g("intense preoccupation", "강한 집착"), g("with the whole vision", "전체 그림에 대한"),
                     g("gives way to", "~에 자리를 내주다, ~로 바뀌다"), g("preoccupation with correctness", "정확성에 대한 집착"),
                     g("correctness", "정확성")],
-        "slashes": ["in our stories", "stage of perception―", "the whole vision"],
+        "slashes": ["gradually eliminate", "in our stories―", "stage of perception―", "the whole vision", "gives way"],
+        "roles": [r("We", "S"), r("eliminate", "V"), r("the logical gaps", "O"), r("intense preoccupation", "S"), r("gives way", "V")],
         "steps": [
             sv("s4_sv", ["We", "eliminate", "the logical gaps", "intense preoccupation", "gives way to"],
                {"We": "S", "eliminate": "V", "the logical gaps": "O"},
@@ -158,7 +165,9 @@ sentences = [
                     g("with an accompanying", "~이 함께 따라오면서"), g("the spontaneity and originality", "즉흥성과 독창성"),
                     g("spontaneity and originality", "즉흥성과 독창성"),
                     g("that characterized our earlier efforts", "예전 노력의 특징이었던"), g("earlier efforts", "예전 노력")],
-        "slashes": ["oral storying", "conventional and literal,", "originality"],
+        "slashes": ["As a result,", "oral storying", "conventional and literal,", "an accompanying ________", "and originality"],
+        "roles": [r("our writing and oral storying", "S"), r("become", "V"), r("increasingly conventional and literal", "C")],
+        "modifiers": ["that characterized our earlier efforts"],
         "steps": [
             sv("s5_sv", ["our writing and oral storying", "become", "increasingly conventional and literal", "the spontaneity and originality"],
                {"our writing and oral storying": "S", "become": "V", "increasingly conventional and literal": "C"},
@@ -197,6 +206,8 @@ sentences = [
     {
         "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "low",
         "glosses": [g("At this stage", "이 단계에서"), g("our vocabulary", "우리의 어휘"), g("is firmly grounded", "단단히 자리 잡혀 있다")],
+        "slashes": ["At this stage"],
+        "roles": [r("our vocabulary", "S"), r("is firmly grounded", "V")],
         "steps": [
             show("s6_ground", "이 시기엔 어휘가 단단히 자리 잡혀 있대요.", highlight=["firmly grounded"], button="다음 문장"),
         ],
@@ -204,6 +215,8 @@ sentences = [
     {
         "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "medium",
         "glosses": [g("We", "우리는"), g("use", "쓰다"), g("words", "단어들"), g("everyone else uses", "다른 모든 사람이 쓰는")],
+        "roles": [r("We", "S"), r("use", "V"), r("words", "O")],
+        "modifiers": ["everyone else uses"],
         "steps": [
             show("s7_same", "남들이 다 쓰는 단어를 쓴대요. conventional(틀에 박힌)과 같은 말이에요.",
                  panel=board([("correctness", "정확성"), ("conventional and literal", "틀에 박힌"), ("words everyone else uses", "남들이 쓰는 단어")],
@@ -221,6 +234,8 @@ sentences = [
         "id": 8, "text": S[7], "model_translation": KO[7], "teaching_value": "high",
         "glosses": [g("We", "우리는"), g("have little need", "필요가 거의 없다"), g("to invent metaphors", "은유를 지어낼"),
                     g("metaphors", "은유"), g("to communicate", "의사소통하기 위해")],
+        "slashes": ["little need"],
+        "roles": [r("We", "S"), r("have", "V"), r("little need", "O")],
         "steps": [
             choice("s8_little",
                    "We have little need to invent metaphors는 무슨 뜻일까요?",
@@ -242,7 +257,9 @@ sentences = [
                     g("floating in space", "우주를 떠다니는"), g("in contrast to", "~와 대조적으로"), g("our innocent stage", "우리의 순진한 단계"),
                     g("when we noticed", "그때 우리는 ~라고 알아챘다"), g("Look", "봐"), g("that star", "저 별"), g("is like", "~ 같다"),
                     g("a flower without a stem", "줄기 없는 꽃")],
-        "slashes": ["floating in space”", "innocent stage,"],
+        "slashes": ["By now we know", "gaseous mass", "floating in space”", "innocent stage,", "we noticed,"],
+        "roles": [r("we … we", "S"), r("know", "V"), r("a star", "S"), r("is … is", "V"), r("a hot gaseous mass", "C"), r("noticed", "V"),
+                  r("that star", "S")],
         "steps": [
             show("s9_star",
                  "지금은 별을 '뜨거운 기체 덩어리'라고 사실 그대로 말해요. 어릴 땐 '줄기 없는 꽃 같다'고 은유로 말했어요.",
@@ -269,8 +286,9 @@ add_basic(sentences, 1, [m("From about ages eight through sixteen", "약 8세부
                          "주어는 our manual dexterity, 동사는 has strengthened예요."),
           meaning_ids=["s1_board"])
 add_basic(sentences, 2, [m("There is", "~이 있다"), " — ", m("in handwriting skills", "글씨 쓰는 실력에"), " ", m("considerable improvement", "상당한 향상"), "."],
-          sv_new=sv_step("s2_basic_sv", ["There is", "considerable improvement", "handwriting skills"],
-                         {"There is": "V", "considerable improvement": "S"},
+          # 동사는 is만 — there는 표시하지 않는다 (there was가 둘인 21번 3문장과 같게, 2026-10-20 선생님)
+          sv_new=sv_step("s2_basic_sv", ["is", "considerable improvement", "handwriting skills"],
+                         {"is": "V", "considerable improvement": "S"},
                          {"handwriting skills": "그건 in 뒤 덩어리예요. 전치사 뒤라 주어가 아니에요."},
                          "There is 문장은 동사 뒤가 진짜 주어예요. 동사는 is, 주어는 considerable improvement예요.",
                          ask="there is(~이 있다) 문장이에요. 동사(V)와 그 뒤의 진짜 주어(S)를 찾아볼까요?"),

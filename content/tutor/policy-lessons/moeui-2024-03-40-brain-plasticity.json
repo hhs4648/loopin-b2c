@@ -357,6 +357,26 @@
           "ko": "가소성"
         }
       ],
+      "slashes": [
+        "is a term"
+      ],
+      "roles": [
+        {
+          "text": "Brain plasticity",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a term",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "we use in neuroscience"
+      ],
       "steps": [
         {
           "id": "s1_basic_sv",
@@ -572,9 +592,29 @@
       ],
       "slashes": [
         "intentionally or not,",
+        "“plasticity” suggests",
         "the key idea is",
+        "mold something once",
         "that way forever:",
         "the plastic toy"
+      ],
+      "roles": [
+        {
+          "text": "plasticity",
+          "role": "S"
+        },
+        {
+          "text": "suggests",
+          "role": "V"
+        },
+        {
+          "text": "the key idea",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -717,6 +757,20 @@
         {
           "en": "brain",
           "ko": "뇌"
+        }
+      ],
+      "roles": [
+        {
+          "text": "that",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "what the brain does",
+          "role": "C"
         }
       ],
       "steps": [
@@ -884,6 +938,23 @@
         {
           "en": "throughout",
           "ko": "~ 내내"
+        }
+      ],
+      "slashes": [
+        "remolding itself"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "carries on",
+          "role": "V"
+        },
+        {
+          "text": "remolding itself",
+          "role": "O"
         }
       ],
       "steps": [
@@ -1165,6 +1236,45 @@
           "ko": "주변의"
         }
       ],
+      "slashes": [
+        "a developing city,",
+        "note the way",
+        "and responds"
+      ],
+      "roles": [
+        {
+          "text": "Think",
+          "role": "V"
+        },
+        {
+          "text": "a developing city",
+          "role": "O"
+        },
+        {
+          "text": "note",
+          "role": "V"
+        },
+        {
+          "text": "the way",
+          "role": "O"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "grows",
+          "role": "V"
+        },
+        {
+          "text": "improves",
+          "role": "V"
+        },
+        {
+          "text": "responds",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s5_city",
@@ -1243,6 +1353,41 @@
           "ko": "법률의"
         }
       ],
+      "slashes": [
+        "Observe",
+        "its truck stops,",
+        "immigration policies,"
+      ],
+      "roles": [
+        {
+          "text": "Observe",
+          "role": "V"
+        },
+        {
+          "text": "the city",
+          "role": "S"
+        },
+        {
+          "text": "builds",
+          "role": "V"
+        },
+        {
+          "text": "its truck stops",
+          "role": "O"
+        },
+        {
+          "text": "it … it",
+          "role": "S"
+        },
+        {
+          "text": "crafts",
+          "role": "V"
+        },
+        {
+          "text": "modifies",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s6_skim",
@@ -1284,6 +1429,16 @@
         {
           "en": "changing",
           "ko": "변하는"
+        }
+      ],
+      "roles": [
+        {
+          "text": "A city",
+          "role": "S"
+        },
+        {
+          "text": "is always changing",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1475,6 +1630,24 @@
         {
           "en": "object",
           "ko": "물건"
+        }
+      ],
+      "slashes": [
+        "is not designed",
+        "urban planners"
+      ],
+      "roles": [
+        {
+          "text": "A city",
+          "role": "S"
+        },
+        {
+          "text": "is not designed",
+          "role": "V"
+        },
+        {
+          "text": "immobilized",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1701,6 +1874,16 @@
           "ko": "발전하다"
         }
       ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "continually develops",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s9_develop",
@@ -1803,6 +1986,23 @@
         {
           "en": "end",
           "ko": "끝"
+        }
+      ],
+      "slashes": [
+        "Just like cities,"
+      ],
+      "roles": [
+        {
+          "text": "brains",
+          "role": "S"
+        },
+        {
+          "text": "never reach",
+          "role": "V"
+        },
+        {
+          "text": "an end point",
+          "role": "O"
         }
       ],
       "steps": [
@@ -2078,6 +2278,32 @@
           "ko": "움직이다"
         }
       ],
+      "slashes": [
+        "our lives",
+        "toward something,"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "spend",
+          "role": "V"
+        },
+        {
+          "text": "our lives",
+          "role": "O"
+        },
+        {
+          "text": "the target",
+          "role": "S"
+        },
+        {
+          "text": "moves",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s11_bloom",
@@ -2141,6 +2367,23 @@
           "en": "ago",
           "ko": "전에"
         }
+      ],
+      "slashes": [
+        "the feeling",
+        "a diary"
+      ],
+      "roles": [
+        {
+          "text": "Consider",
+          "role": "V"
+        },
+        {
+          "text": "the feeling",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that you wrote many years ago"
       ],
       "steps": [
         {
@@ -2242,9 +2485,37 @@
         }
       ],
       "slashes": [
+        "It represents",
         "and viewpoint",
+        "of someone",
+        "a bit different",
         "who you are now,",
         "previous person"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "represents",
+          "role": "V"
+        },
+        {
+          "text": "the thinking, opinions, and viewpoint",
+          "role": "O"
+        },
+        {
+          "text": "that previous person",
+          "role": "S"
+        },
+        {
+          "text": "can sometimes border on",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "who was a bit different from who you are now"
       ],
       "steps": [
         {
@@ -2356,8 +2627,20 @@
         }
       ],
       "slashes": [
+        "the same name",
         "early history,",
+        "in the years",
         "inscription and interpretation"
+      ],
+      "roles": [
+        {
+          "text": "the narrator",
+          "role": "S"
+        },
+        {
+          "text": "has altered",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -2485,6 +2768,20 @@
         {
           "en": "change",
           "ko": "바꾸다"
+        }
+      ],
+      "slashes": [
+        "can be stretched",
+        "this notion"
+      ],
+      "roles": [
+        {
+          "text": "The word “plastic”",
+          "role": "S"
+        },
+        {
+          "text": "can be stretched",
+          "role": "V"
         }
       ],
       "steps": [
@@ -2819,6 +3116,34 @@
         {
           "en": "capable",
           "ko": "~할 수 있는"
+        }
+      ],
+      "slashes": [
+        "While some understand",
+        "“brain plasticity”",
+        "upon molding,",
+        "is actually capable"
+      ],
+      "roles": [
+        {
+          "text": "some",
+          "role": "S"
+        },
+        {
+          "text": "understand",
+          "role": "V"
+        },
+        {
+          "text": "the brain",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "capable",
+          "role": "C"
         }
       ],
       "steps": [

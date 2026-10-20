@@ -324,6 +324,20 @@
           "ko": "이야기하는 사람"
         }
       ],
+      "roles": [
+        {
+          "text": "You",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "the narrator",
+          "role": "C"
+        }
+      ],
       "steps": [
         {
           "id": "s1_basic_sv",
@@ -484,7 +498,25 @@
       ],
       "slashes": [
         "The tone and perspective",
-        "each experience"
+        "each experience",
+        "generates feelings"
+      ],
+      "roles": [
+        {
+          "text": "The tone and perspective",
+          "role": "S"
+        },
+        {
+          "text": "generates",
+          "role": "V"
+        },
+        {
+          "text": "feelings",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "with which you describe each experience"
       ],
       "steps": [
         {
@@ -711,10 +743,33 @@
         }
       ],
       "slashes": [
+        "For example,",
         "constantly assuming,",
         "“This is hard,”",
         "going to survive,”",
         "turn out badly,”"
+      ],
+      "roles": [
+        {
+          "text": "you … you",
+          "role": "S"
+        },
+        {
+          "text": "find",
+          "role": "V"
+        },
+        {
+          "text": "yourself",
+          "role": "O"
+        },
+        {
+          "text": "’ll generate",
+          "role": "V"
+        },
+        {
+          "text": "anxious feelings",
+          "role": "O"
+        }
       ],
       "steps": [
         {
@@ -801,6 +856,26 @@
           "en": "think",
           "ko": "생각하다"
         }
+      ],
+      "slashes": [
+        "It’s time"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "time",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "you think"
       ],
       "steps": [
         {
@@ -959,6 +1034,23 @@
           "ko": "주다"
         }
       ],
+      "slashes": [
+        "this narration",
+        "are the beliefs"
+      ],
+      "roles": [
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "the beliefs",
+          "role": "S"
+        }
+      ],
+      "modifiers": [
+        "that (b)frame your experience and give it meaning"
+      ],
       "steps": [
         {
           "id": "s5_frame",
@@ -1077,6 +1169,19 @@
           "ko": "층"
         }
       ],
+      "slashes": [
+        "your beliefs"
+      ],
+      "roles": [
+        {
+          "text": "Think",
+          "role": "V"
+        },
+        {
+          "text": "your beliefs",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s6_layers",
@@ -1122,6 +1227,19 @@
         {
           "en": "thoughts",
           "ko": "생각"
+        }
+      ],
+      "slashes": [
+        "On the surface"
+      ],
+      "roles": [
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "your automatic thoughts",
+          "role": "S"
         }
       ],
       "steps": [
@@ -1261,6 +1379,22 @@
           "ko": "~을 통해"
         }
       ],
+      "slashes": [
+        "short tapes"
+      ],
+      "roles": [
+        {
+          "text": "These",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that momentarily flash through your mind"
+      ],
       "steps": [
         {
           "id": "s8_tapes",
@@ -1332,6 +1466,28 @@
           "ko": "하루"
         }
       ],
+      "slashes": [
+        "these automatic thoughts",
+        "“self-talk”",
+        "that you use"
+      ],
+      "roles": [
+        {
+          "text": "Call",
+          "role": "V"
+        },
+        {
+          "text": "these automatic thoughts",
+          "role": "O"
+        },
+        {
+          "text": "a form of “self-talk”",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that you use as you navigate through the day"
+      ],
       "steps": [
         {
           "id": "s9_selftalk",
@@ -1397,6 +1553,24 @@
         {
           "en": "unconsciously",
           "ko": "무의식적으로"
+        }
+      ],
+      "slashes": [
+        "(c)produce",
+        "automatic thoughts,"
+      ],
+      "roles": [
+        {
+          "text": "You",
+          "role": "S"
+        },
+        {
+          "text": "produce",
+          "role": "V"
+        },
+        {
+          "text": "a wide variety of these automatic thoughts",
+          "role": "O"
         }
       ],
       "steps": [
@@ -1664,9 +1838,51 @@
         }
       ],
       "slashes": [
+        "For example,",
+        "automatic thoughts",
+        "relieve anxiety",
         "go something like this:",
+        "into a room,",
         "a few new people,",
-        "say to yourself,"
+        "say to yourself,",
+        "like this."
+      ],
+      "roles": [
+        {
+          "text": "automatic thoughts",
+          "role": "S"
+        },
+        {
+          "text": "go",
+          "role": "V"
+        },
+        {
+          "text": "You",
+          "role": "S"
+        },
+        {
+          "text": "walk",
+          "role": "V"
+        },
+        {
+          "text": "see",
+          "role": "V"
+        },
+        {
+          "text": "say",
+          "role": "V"
+        },
+        {
+          "text": "I",
+          "role": "S"
+        },
+        {
+          "text": "don’t like",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that (d)relieve anxiety"
       ],
       "steps": [
         {
@@ -1801,6 +2017,37 @@
           "ko": "거부하다"
         }
       ],
+      "slashes": [
+        "Or,",
+        "find out",
+        "full of anxiety"
+      ],
+      "roles": [
+        {
+          "text": "These people",
+          "role": "S"
+        },
+        {
+          "text": "will soon find out",
+          "role": "V"
+        },
+        {
+          "text": "I",
+          "role": "S"
+        },
+        {
+          "text": "am",
+          "role": "V"
+        },
+        {
+          "text": "will reject",
+          "role": "V"
+        },
+        {
+          "text": "me",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s12_reject",
@@ -1908,6 +2155,26 @@
           "en": "experiences",
           "ko": "경험들"
         }
+      ],
+      "slashes": [
+        "bad habits"
+      ],
+      "roles": [
+        {
+          "text": "Automatic thoughts",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "bad habits",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that (e)cloud fresh and positive experiences"
       ],
       "steps": [
         {
@@ -2141,6 +2408,24 @@
           "ko": "불안"
         }
       ],
+      "slashes": [
+        "can turn",
+        "good experience"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "can turn",
+          "role": "V"
+        },
+        {
+          "text": "a potentially good experience",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s14_turn",
@@ -2323,8 +2608,37 @@
         }
       ],
       "slashes": [
+        "tell yourself",
+        "always stressed",
         "full of anxiety",
-        "something new,"
+        "something new,",
+        "that new experience"
+      ],
+      "roles": [
+        {
+          "text": "you … you",
+          "role": "S"
+        },
+        {
+          "text": "tell",
+          "role": "V"
+        },
+        {
+          "text": "yourself",
+          "role": "O"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "that new experience",
+          "role": "S"
+        },
+        {
+          "text": "will be tainted",
+          "role": "V"
+        }
       ],
       "steps": [
         {

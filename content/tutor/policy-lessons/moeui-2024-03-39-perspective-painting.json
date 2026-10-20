@@ -383,6 +383,27 @@
       "emphasis": [
         "earlier figurative art"
       ],
+      "slashes": [
+        "This stands in contrast",
+        "figurative art,",
+        "as focused",
+        "the artist knew",
+        "and the space",
+        "was painting"
+      ],
+      "roles": [
+        {
+          "text": "This",
+          "role": "S"
+        },
+        {
+          "text": "stands",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "which had been as focused on representing what the artist knew about the objects and the space he or she was painting as on how they looked"
+      ],
       "steps": [
         {
           "id": "g_sv",
@@ -668,6 +689,31 @@
           "ko": "익숙한"
         }
       ],
+      "slashes": [
+        "figurative paintings",
+        "familiar with now"
+      ],
+      "roles": [
+        {
+          "text": "Almost all the figurative paintings",
+          "role": "S"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "are familiar",
+          "role": "V"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "we are familiar with now"
+      ],
       "steps": [
         {
           "id": "s2_basic_sv",
@@ -857,6 +903,28 @@
           "en": "focal",
           "ko": "초점의"
         }
+      ],
+      "slashes": [
+        "figures and objects",
+        "that diminish",
+        "move away"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "present",
+          "role": "V"
+        },
+        {
+          "text": "foreshortened figures and objects",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that diminish as they move away from the focal point of the painting"
       ],
       "steps": [
         {
@@ -1085,6 +1153,28 @@
           "en": "space",
           "ko": "공간"
         }
+      ],
+      "slashes": [
+        "in perspective",
+        "how the world looks",
+        "seeing the scene"
+      ],
+      "roles": [
+        {
+          "text": "A painting in perspective",
+          "role": "S"
+        },
+        {
+          "text": "represents",
+          "role": "V"
+        },
+        {
+          "text": "how the world looks",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "seeing the scene from a particular position in space"
       ],
       "steps": [
         {
@@ -1352,6 +1442,50 @@
         {
           "en": "looking",
           "ko": "보는"
+        }
+      ],
+      "slashes": [
+        "are beautiful",
+        "their own right,",
+        "represent scenes",
+        "see them"
+      ],
+      "roles": [
+        {
+          "text": "These pictures",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "beautiful",
+          "role": "C"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "do not represent",
+          "role": "V"
+        },
+        {
+          "text": "scenes",
+          "role": "O"
+        },
+        {
+          "text": "we … we",
+          "role": "S"
+        },
+        {
+          "text": "might see",
+          "role": "V"
+        },
+        {
+          "text": "were looking",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1664,6 +1798,27 @@
           "ko": "나타내다"
         }
       ],
+      "slashes": [
+        "less informative",
+        "the layout"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "less informative",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "they represent"
+      ],
       "steps": [
         {
           "id": "s6_basic_sv",
@@ -1951,6 +2106,33 @@
           "ko": "보는"
         }
       ],
+      "slashes": [
+        "The fact",
+        "spatial layout",
+        "go together"
+      ],
+      "roles": [
+        {
+          "text": "The fact",
+          "role": "S"
+        },
+        {
+          "text": "perspective and information",
+          "role": "S"
+        },
+        {
+          "text": "go together",
+          "role": "V"
+        },
+        {
+          "text": "reveals",
+          "role": "V"
+        },
+        {
+          "text": "something important",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s6_sv",
@@ -2213,10 +2395,38 @@
         }
       ],
       "slashes": [
+        "Not only do we see the world",
         "egocentric frame",
+        "we also see it",
         "in a way",
         "extract information",
-        "objects relative to us,"
+        "and sizes of,",
+        "relative to us,"
+      ],
+      "roles": [
+        {
+          "text": "we … we",
+          "role": "S"
+        },
+        {
+          "text": "do … see",
+          "role": "V"
+        },
+        {
+          "text": "the world",
+          "role": "O"
+        },
+        {
+          "text": "see",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that allows us to extract information about distances to, and sizes of, objects relative to us, and relative to one another"
       ],
       "steps": [
         {

@@ -13,7 +13,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, add_that_sv, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, add_that_sv, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 
 ID = "moeui-2024-03-40-brain-plasticity"
@@ -81,6 +81,9 @@ sentences = [
         "id": 1, "text": S[0], "model_translation": KO[0], "teaching_value": "medium",
         "glosses": [g("Brain plasticity", "뇌 가소성 · 뇌가 바뀔 수 있는 성질"), g("is a term", "용어이다"), g("we use", "우리가 쓰는"),
                     g("in neuroscience", "신경 과학에서")],
+        "slashes": ["is a term"],
+        "roles": [r("Brain plasticity", "S"), r("is", "V"), r("a term", "C")],
+        "modifiers": ["we use in neuroscience"],
         "steps": [
             show("s1_term", "뇌 가소성(brain plasticity)이라는 신경 과학 용어 이야기예요. plastic이라는 말에서 나온 용어예요.",
                  highlight=["Brain plasticity"], button="다음 문장",
@@ -93,7 +96,8 @@ sentences = [
                     g("the key idea", "핵심 개념"), g("is", "~이다"), g("to mold something once", "무언가를 한 번 성형하는 것"),
                     g("keep it that way forever", "영원히 그대로 두다"), g("to shape the plastic toy", "플라스틱 장난감의 모양을 만드는 것"),
                     g("never change it again", "다시는 바꾸지 않다")],
-        "slashes": ["intentionally or not,", "the key idea is", "that way forever:", "the plastic toy"],
+        "slashes": ["intentionally or not,", "“plasticity” suggests", "the key idea is", "mold something once", "that way forever:", "the plastic toy"],
+        "roles": [r("plasticity", "S"), r("suggests", "V"), r("the key idea", "S"), r("is", "V")],
         "steps": [
             sv("s2_sv", ["Whether intentionally or not", "plasticity", "suggests", "the key idea", "is"],
                {"plasticity": "S", "suggests": "V"},
@@ -116,6 +120,7 @@ sentences = [
     {
         "id": 3, "text": S[2], "model_translation": KO[2], "teaching_value": "high",
         "glosses": [g("But", "하지만"), g("that’s not", "그것은 ~이 아니다"), g("what the brain does", "뇌가 하는 일")],
+        "roles": [r("that", "S"), r("’s", "V"), r("what the brain does", "C")],
         "steps": [
             choice("s3_but",
                    "But — 'that’s not what the brain does'는 무슨 말일까요?",
@@ -131,6 +136,8 @@ sentences = [
         "id": 4, "text": S[3], "model_translation": KO[3], "teaching_value": "high",
         "glosses": [g("It", "그것(뇌)"), g("carries on", "계속하다"), g("remolding itself", "스스로를 다시 성형하는 것"),
                     g("throughout your life", "평생 동안")],
+        "slashes": ["remolding itself"],
+        "roles": [r("It", "S"), r("carries on", "V"), r("remolding itself", "O")],
         "steps": [
             show("s4_remold", "뇌는 평생 스스로를 다시 성형하기를 계속한대요. 칠판 오른쪽에 넣어 둘게요.",
                  highlight=["carries on", "remolding itself"],
@@ -143,6 +150,9 @@ sentences = [
         "id": 5, "text": S[4], "model_translation": KO[4], "teaching_value": "low",
         "glosses": [g("Think of", "~을 떠올려 보라"), g("a developing city", "발전하는 도시"), g("note", "주목하라"), g("the way", "방식"),
                     g("grows, improves, and responds", "자라고, 나아지고, 반응한다"), g("the world around it", "그 주변 세상")],
+        "slashes": ["a developing city,", "note the way", "and responds"],
+        "roles": [r("Think", "V"), r("a developing city", "O"), r("note", "V"), r("the way", "O"), r("it", "S"), r("grows", "V"), r("improves", "V"),
+                  r("responds", "V")],
         "steps": [
             show("s5_city", "뇌를 도시에 빗대요. 발전하는 도시는 자라고, 나아지고, 주변 세상에 반응한대요.",
                  highlight=["a developing city"], button="다음 문장",
@@ -153,6 +163,9 @@ sentences = [
         "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "low",
         "glosses": [g("Observe", "관찰하라"), g("its truck stops", "트럭 정류장"), g("crafts", "공들여 만들다"),
                     g("its immigration policies", "이민 정책"), g("modifies", "수정하다"), g("its education and legal systems", "교육·법률 제도")],
+        "slashes": ["Observe", "its truck stops,", "immigration policies,"],
+        "roles": [r("Observe", "V"), r("the city", "S"), r("builds", "V"), r("its truck stops", "O"), r("it … it", "S"), r("crafts", "V"),
+                  r("modifies", "V")],
         "steps": [
             show("s6_skim", "트럭 정류장, 이민 정책, 교육·법률 제도 — 도시가 바뀌는 예시들이에요. 깊게 안 읽어도 돼요.",
                  highlight=["modifies"], button="다음 문장"),
@@ -161,6 +174,7 @@ sentences = [
     {
         "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "medium",
         "glosses": [g("A city", "도시는"), g("is always changing", "늘 변하고 있다")],
+        "roles": [r("A city", "S"), r("is always changing", "V")],
         "steps": [
             show("s7_change", "도시는 늘 변하고 있대요. 뇌도 그렇다는 말이에요.",
                  panel=board(L2, R7, fresh=("always changing",)), highlight=["always changing"], button="다음 문장"),
@@ -170,6 +184,8 @@ sentences = [
         "id": 8, "text": S[7], "model_translation": KO[7], "teaching_value": "high",
         "glosses": [g("A city", "도시는"), g("is not designed", "설계되지 않는다"), g("by urban planners", "도시 계획가들에 의해"),
                     g("and then immobilized", "그리고 나서 고정되다"), g("immobilized", "움직이지 못하게 된, 고정된"), g("like a plastic object", "플라스틱 물건처럼")],
+        "slashes": ["is not designed", "urban planners"],
+        "roles": [r("A city", "S"), r("is not designed", "V"), r("immobilized", "V")],
         "steps": [
             choice("s8_fixed",
                    "도시는 설계된 뒤 플라스틱 물건처럼 고정될까요?",
@@ -184,6 +200,7 @@ sentences = [
     {
         "id": 9, "text": S[8], "model_translation": KO[8], "teaching_value": "medium",
         "glosses": [g("It", "그것(도시)"), g("continually develops", "계속 발전한다")],
+        "roles": [r("It", "S"), r("continually develops", "V")],
         "steps": [
             show("s9_develop", "도시는 계속 발전한대요. 오른쪽에 쌓아 둘게요.",
                  panel=board(L2 + [("a plastic object", "플라스틱 물건")], R9, fresh=("not immobilized", "continually develops")),
@@ -194,6 +211,8 @@ sentences = [
         "id": 10, "text": S[9], "model_translation": KO[9], "teaching_value": "high",
         "glosses": [g("Just like cities", "도시와 꼭 마찬가지로"), g("brains", "뇌는"), g("never reach", "결코 도달하지 않는다"),
                     g("an end point", "끝나는 지점")],
+        "slashes": ["Just like cities,"],
+        "roles": [r("brains", "S"), r("never reach", "V"), r("an end point", "O")],
         "steps": [
             choice("s10_end",
                    "Just like cities(도시처럼), 뇌는 어떻대요?",
@@ -209,6 +228,8 @@ sentences = [
         "id": 11, "text": S[10], "model_translation": KO[10], "teaching_value": "low",
         "glosses": [g("We spend our lives", "우리는 평생을 보낸다"), g("blossoming toward something", "무언가를 향해 피어나며"),
                     g("even as", "~할 때조차"), g("the target moves", "목표가 움직이다")],
+        "slashes": ["our lives", "toward something,"],
+        "roles": [r("We", "S"), r("spend", "V"), r("our lives", "O"), r("the target", "S"), r("moves", "V")],
         "steps": [
             show("s11_bloom", "목표가 움직여도 우리는 평생 무언가를 향해 피어나며 산대요. 끝없이 자라는 모습이에요.",
                  highlight=["blossoming", "the target moves"], button="다음 문장"),
@@ -218,6 +239,9 @@ sentences = [
         "id": 12, "text": S[11], "model_translation": KO[11], "teaching_value": "low",
         "glosses": [g("Consider", "생각해 보라"), g("the feeling", "느낌"), g("encountering a diary", "일기를 우연히 발견하는 것"),
                     g("that you wrote", "네가 쓴"), g("many years ago", "여러 해 전에")],
+        "slashes": ["the feeling", "a diary"],
+        "roles": [r("Consider", "V"), r("the feeling", "O")],
+        "modifiers": ["that you wrote many years ago"],
         "steps": [
             show("s12_diary", "몇 년 전에 쓴 일기를 우연히 발견했을 때의 느낌을 떠올려 보래요. 또 다른 예가 시작돼요.",
                  highlight=["a diary"], button="다음 문장"),
@@ -229,7 +253,10 @@ sentences = [
                     g("of someone", "누군가의"), g("who was a bit different", "조금 달랐던"), g("from who you are now", "지금의 너와"),
                     g("that previous person", "그 이전의 사람"), g("can sometimes border on", "때때로 거의 ~에 가까울 수 있다"),
                     g("the unrecognizable", "알아볼 수 없는 것")],
-        "slashes": ["and viewpoint", "who you are now,", "previous person"],
+        "slashes": ["It represents", "and viewpoint", "of someone", "a bit different", "who you are now,", "previous person"],
+        "roles": [r("It", "S"), r("represents", "V"), r("the thinking, opinions, and viewpoint", "O"), r("that previous person", "S"),
+                  r("can sometimes border on", "V")],
+        "modifiers": ["who was a bit different from who you are now"],
         "steps": [
             choice("s13_diary",
                    "그 일기를 쓴 예전의 나는 지금의 나와 어떻대요?",
@@ -245,7 +272,8 @@ sentences = [
         "glosses": [g("Despite", "~에도 불구하고"), g("having the same name", "같은 이름을 가진 것"), g("the same early history", "같은 어린 시절"),
                     g("in the years", "세월 동안"), g("between inscription and interpretation", "쓴 때와 읽는 때 사이에"),
                     g("the narrator", "화자, 이야기하는 사람"), g("has altered", "달라졌다")],
-        "slashes": ["early history,", "inscription and interpretation"],
+        "slashes": ["the same name", "early history,", "in the years", "inscription and interpretation"],
+        "roles": [r("the narrator", "S"), r("has altered", "V")],
         "steps": [
             show("s14_alter", "이름과 어린 시절이 같아도, 쓴 때와 읽는 때 사이에 화자(나)가 달라졌대요.",
                  highlight=["Despite", "has altered"],
@@ -256,6 +284,8 @@ sentences = [
         "id": 15, "text": S[14], "model_translation": KO[14], "teaching_value": "high",
         "glosses": [g("The word “plastic”", "'플라스틱'이라는 단어"), g("can be stretched", "넓혀질 수 있다"), g("to fit", "~에 맞도록"),
                     g("this notion", "이 개념"), g("of ongoing change", "계속되는 변화의")],
+        "slashes": ["can be stretched", "this notion"],
+        "roles": [r("The word “plastic”", "S"), r("can be stretched", "V")],
         "steps": [
             choice("s15_stretch",
                    "글쓴이는 plastic이라는 말을 이제 어떤 뜻에 맞게 넓혀 쓰자고 할까요?",
@@ -274,6 +304,8 @@ sentences = [
         "glosses": [g("While", "~인 반면"), g("some understand", "어떤 사람들은 이해한다"), g("brain plasticity", "뇌 가소성"),
                     g("to mean", "~을 뜻한다고"), g("upon molding", "성형되자마자"), g("the brain", "뇌는"),
                     g("is actually capable of", "실제로는 ~할 수 있다")],
+        "slashes": ["While some understand", "“brain plasticity”", "upon molding,", "is actually capable"],
+        "roles": [r("some", "S"), r("understand", "V"), r("the brain", "S"), r("is", "V"), r("capable", "C")],
         "steps": [
             choice("s16_a_side",
                    "어떤 사람들은 brain plasticity가 '성형되자마자(upon molding) (A)'를 뜻한다고 이해한대요. (A)는 칠판 어느 쪽 말일까요?",

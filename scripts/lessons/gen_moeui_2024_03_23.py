@@ -11,7 +11,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, finish)
 
 ID = "moeui-2024-03-23-tribe-thinking"
@@ -54,7 +54,9 @@ sentences = [
                     g("an E = mc² of social science", "사회 과학의 E = mc²(가장 중요한 공식)"), g("it would be", "그것은 ~일 것이다"),
                     g("SD>PD", "사회적 죽음 > 신체적 죽음"), g("social death", "사회적 죽음(무리에서 밀려남)"),
                     g("is more frightening than", "~보다 더 무섭다"), g("physical death", "신체적 죽음")],
-        "slashes": ["Brooke Harrington said", "social science,", "SD>PD,"],
+        "slashes": ["Brooke Harrington said", "an E = mc²", "social science,", "SD>PD,", "more frightening"],
+        "roles": [r("Sociologist Brooke Harrington", "S"), r("said", "V"), r("was", "V"), r("an E = mc²", "S"), r("it", "S"), r("would be", "V"),
+                  r("SD>PD", "C"), r("social death", "S"), r("is", "V"), r("more frightening", "C")],
         "steps": [
             choice("s1_sdpd",
                    "SD>PD, 'social death is more frightening than physical death'는 무슨 뜻일까요?",
@@ -71,6 +73,10 @@ sentences = [
         "glosses": [g("This is why", "이것이 ~하는 이유이다"), g("we feel deeply threatened", "우리는 크게 위협을 느낀다"), g("when", "~할 때"),
                     g("a new idea", "새로운 생각"), g("challenges", "~에 맞서다, 도전하다"), g("the ones", "그것들(생각들)"),
                     g("that have become part of our identity", "우리 정체성의 일부가 된")],
+        "slashes": ["This is why", "deeply threatened", "the ones"],
+        "roles": [r("This", "S"), r("is", "V"), r("we", "S"), r("feel", "V"), r("deeply threatened", "C"), r("a new idea", "S"), r("challenges", "V"),
+                  r("the ones", "O")],
+        "modifiers": ["that have become part of our identity"],
         "steps": [
             show("s2_identity", "새 생각이 맞서는 건 그냥 생각이 아니라 정체성의 일부가 된 생각이에요. 그래서 크게 위협을 느낀대요.",
                  highlight=["challenges", "identity"],
@@ -84,7 +90,9 @@ sentences = [
         "glosses": [g("For some ideas", "어떤 생각들에 대해서는"), g("the ones that identify us", "우리를 ~로 규정하는 것들"),
                     g("as members of a group", "한 집단의 구성원으로"), g("we don’t reason as individuals", "우리는 개인으로서 판단하지 않는다"),
                     g("we reason", "우리는 판단한다"), g("as a member of a tribe", "한 부족의 일원으로서")],
-        "slashes": ["For some ideas,", "members of a group,", "as individuals;"],
+        "slashes": ["For some ideas,", "identify us", "members of a group,", "as individuals;"],
+        "roles": [r("we … we", "S"), r("don’t reason", "V"), r("reason", "V")],
+        "modifiers": ["that identify us as members of a group"],
         "steps": [
             choice("s3_tribe",
                    "세미콜론(;) 앞뒤를 봐요. 집단과 관련된 생각에서는 우리가 어떻게 판단한대요?",
@@ -100,6 +108,9 @@ sentences = [
         "glosses": [g("We want to seem trustworthy", "우리는 믿음직하게 보이고 싶다"), g("reputation management", "평판 관리"),
                     g("as a trustworthy individual", "믿음직한 개인으로서의"), g("often overrides", "흔히 ~보다 앞선다"),
                     g("most other concerns", "대부분의 다른 걱정"), g("even our own mortality", "심지어 우리 자신의 죽음까지")],
+        "slashes": ["seem trustworthy,", "reputation management", "trustworthy individual", "most other concerns,"],
+        "roles": [r("We", "S"), r("want", "V"), r("to seem trustworthy", "O"), r("reputation management", "S"), r("overrides", "V"),
+                  r("most other concerns", "O")],
         "steps": [
             show("s4_reputation", "무리 안에서 믿음직하게 보이는 평판 관리가 다른 걱정, 심지어 죽음보다 앞선대요. SD>PD와 같은 말이에요.",
                  highlight=["overrides", "even our own mortality"], button="다음 문장",
@@ -110,6 +121,7 @@ sentences = [
     {
         "id": 5, "text": S[4], "model_translation": KO[4], "teaching_value": "low",
         "glosses": [g("This is not entirely irrational", "이것이 완전히 비이성적인 것은 아니다"), g("irrational", "비이성적인")],
+        "roles": [r("This", "S"), r("is", "V"), r("irrational", "C")],
         "steps": [
             show("s5_not", "이게 완전히 말도 안 되는 건 아니래요. 다음 문장에 그 이유가 나와요.", highlight=["not entirely irrational"], button="다음 문장"),
         ],
@@ -119,6 +131,9 @@ sentences = [
         "glosses": [g("A human alone in this world", "이 세상에 홀로인 인간"), g("faces a lot of difficulty", "많은 어려움을 겪는다"),
                     g("being alone in the world", "세상에 혼자 있는 것"), g("before modern times", "근대 이전에는"),
                     g("was almost certainly a death sentence", "거의 확실한 사형 선고였다")],
+        "slashes": ["in this world", "a lot of difficulty,", "in the world", "modern times"],
+        "roles": [r("A human", "S"), r("faces", "V"), r("a lot of difficulty", "O"), r("being alone in the world", "S"), r("was", "V"),
+                  r("a death sentence", "C")],
         "steps": [
             show("s6_alone", "옛날에는 혼자가 되면 거의 죽음이었대요. 그래서 무리에서 밀려나는 걸 그렇게 무서워하는 거예요.",
                  highlight=["a death sentence"], button="다음 문장"),
@@ -129,6 +144,8 @@ sentences = [
         "glosses": [g("So", "그래서"), g("we carry with us", "우리는 지니고 있다"), g("an innate drive", "타고난 욕구"),
                     g("to form groups", "집단을 만들려는"), g("join groups", "집단에 들어가다"), g("remain in those groups", "그 집단에 남다"),
                     g("oppose other groups", "다른 집단에 맞서다")],
+        "slashes": ["an innate drive", "join groups,", "those groups,"],
+        "roles": [r("we", "S"), r("carry", "V"), r("an innate drive", "O")],
         "steps": [
             sv("s7_sv", ["we", "carry", "an innate drive", "groups"], {"we": "S", "carry": "V", "an innate drive": "O"},
                {"groups": "그건 to form 뒤, 어떤 욕구인지 알려 주는 말이에요."},
@@ -144,7 +161,9 @@ sentences = [
                     g("an outcome that favors both groups a lot", "두 집단 모두에게 크게 유리한 결과"),
                     g("one that favors both much less", "둘 다에게 훨씬 덜 유리한 결과"),
                     g("but still favors yours more than theirs", "그래도 그들보다 우리 쪽에 더 유리한"), g("that’s the one you will pick", "바로 그것을 고를 것이다")],
-        "slashes": ["identify them,", "favoring us;", "groups a lot", "much less", "than theirs,"],
+        "slashes": ["identify them,", "favoring us;", "so much so that", "given a choice", "groups a lot", "much less", "than theirs,"],
+        "roles": [r("you … you … you", "S"), r("can identify", "V"), r("them", "O"), r("start", "V"), r("favoring us", "O"), r("will pick", "V")],
+        "modifiers": ["that favors both groups a lot", "that favors both much less but still favors yours more than theirs"],
         "steps": [
             choice("s8_pick",
                    "두 집단 모두 크게 이득 vs 둘 다 덜 이득이지만 우리 쪽이 더 이득. 사람들은 어느 쪽을 고른대요?",

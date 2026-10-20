@@ -11,7 +11,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, tip, rows, sense, topic_svg, base_lesson, exam_brief, finish)  # noqa: E402
+from exam_kit import (g, r, choice, show, tip, rows, sense, topic_svg, base_lesson, exam_brief, finish)  # noqa: E402
 from order_tools import card, order_link  # noqa: E402
 
 ID = "moeui-2024-03-43-baseball-card"
@@ -189,6 +189,66 @@ STEPS = {
 
 sentences = [{"id": i + 1, "text": S[i], "model_translation": KO[i], "teaching_value": "high" if i + 1 in STEPS else "low",
               "glosses": GLOSSES[i], "steps": STEPS.get(i + 1, []), **({"label": "주어진 글"} if i == 0 else {})} for i in range(len(S))]
+
+# 끊어읽기 자리와, 켜면 같이 보이는 S·V·O·C(메인 문장 + because·if 같은 절 안의 S·V, 같은 진하기)·[ ] 수식어 — 2026-10-20 선생님 전체 규칙
+SLASHES = {
+    1: ["Once upon a time", "Meadowville,", "there lived"],
+    2: ["Tommy’s grandfather,", "Grandpa Joe,", "a mysterious figure"],
+    3: ["few words,", "lit up"],
+    4: ["summer afternoon,", "the garage,"],
+    5: ["opened it,", "spilled out,", "baseball card"],
+    6: ["A spark of nostalgia", "Joe’s eyes"],
+    7: ["flooded back,", "told stories", "youthful days"],
+    8: ["spoke of", "the thrill of the game"],
+    9: ["Tommy,", "these stories,", "more connected"],
+    10: ["learn more,", "asked Grandpa Joe"],
+    11: ["spent afternoons", "the backyard", "the wisdom of the game"],
+    12: ["Together,", "hitting, catching,"],
+    13: ["over baseball,", "between generations"],
+    14: ["Grandpa Joe’s eyes", "no longer held", "untold stories;", "radiated warmth"],
+    15: ["widened with excitement"],
+    16: ["In the card,", "stood proudly"],
+    17: ["the quiet person"],
+    18: ["this discovery,", "inside the house"],
+    19: ["Hey, Grandpa!", "baseball card of you.", "a baseball player?”", "he asked,"],
+}
+ROLES = {
+    1: [r("lived", "V"), r("a curious boy", "S")],
+    2: [r("Tommy’s grandfather", "S"), r("had always been", "V"), r("a mysterious figure", "C")],
+    3: [r("Grandpa Joe", "S"), r("was", "V"), r("a man", "C"), r("his eyes", "S"), r("lit up", "V")],
+    4: [r("Tommy", "S"), r("found", "V"), r("an old, forgotten box", "O")],
+    5: [r("he", "S"), r("opened", "V"), r("it", "O"), r("the treasure of memories", "S"), r("spilled out", "V")],
+    6: [r("A spark of nostalgia", "S"), r("lit up", "V"), r("Grandpa Joe’s eyes", "O"), r("he", "S"), r("took", "V"), r("the card", "O")],
+    7: [r("Memories", "S"), r("flooded back", "V"), r("he", "S"), r("told", "V"), r("stories", "O")],
+    8: [r("Grandpa Joe", "S"), r("spoke of", "V")],
+    9: [r("Tommy", "S"), r("felt", "V"), r("more connected", "C")],
+    10: [r("he", "S"), r("asked", "V"), r("Grandpa Joe", "O")],
+    11: [r("They", "S"), r("spent", "V"), r("afternoons", "O"), r("he", "S"), r("shared", "V"), r("the wisdom of the game", "O")],
+    12: [r("they", "S"), r("practiced", "V"), r("laughed", "V")],
+    13: [r("they", "S"), r("bonded", "V"), r("the gap", "S"), r("closed", "V")],
+    14: [r("Grandpa Joe’s eyes", "S"), r("no longer held", "V"), r("the twinkle", "O"), r("they", "S"), r("now radiated", "V"),
+         r("warmth and shared memories", "O")],
+    15: [r("Tommy’s eyes", "S"), r("widened", "V"), r("he", "S"), r("examined", "V"), r("the card", "O")],
+    16: [r("Grandpa Joe", "S"), r("stood", "V")],
+    17: [r("He", "S"), r("was not", "V"), r("the quiet person", "C")],
+    18: [r("Tommy", "S"), r("rushed", "V")],
+    19: [r("I", "S"), r("found", "V"), r("this cool baseball card", "O"), r("he", "S"), r("asked", "V")],
+}
+MODIFIERS = {  # 끊어읽기 때 [ ]로 묶는 수식어 — 관계대명사절·분사 덩어리 (안의 S·V는 안 적는다)
+    2: ["affectionately known as Grandpa Joe"],
+    5: ["featuring a young Grandpa Joe"],
+    9: ["fascinated by these stories"],
+    17: ["Tommy knew"],
+}
+for _s in sentences:
+    for _c in SLASHES.get(_s["id"], []):
+        assert _s["text"].count(_c) == 1, (_s["id"], _c)  # 한 번만 나오는 말로 — 끊을 자리가 하나로 정해지게
+    if SLASHES.get(_s["id"]):
+        _s["slashes"] = SLASHES[_s["id"]]
+    if ROLES.get(_s["id"]):
+        _s["roles"] = ROLES[_s["id"]]
+    if MODIFIERS.get(_s["id"]):
+        _s["modifiers"] = MODIFIERS[_s["id"]]
 
 OPTIONS = [("1", "(B)-(D)-(C)", False), ("2", "(C)-(B)-(D)", False), ("3", "(C)-(D)-(B)", False), ("4", "(D)-(B)-(C)", True), ("5", "(D)-(C)-(B)", False)]
 exam = {

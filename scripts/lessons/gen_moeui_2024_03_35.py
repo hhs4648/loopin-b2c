@@ -11,7 +11,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, finish)
 
 ID = "moeui-2024-03-35-translingual-approach"
@@ -58,7 +58,9 @@ sentences = [
         "glosses": [g("No doubt", "의심할 여지 없이"), g("students collaborating with other speakers of English", "다른 영어 사용자와 함께 일하는 학생들"),
                     g("might encounter", "마주칠 수도 있다"), g("language variances", "언어 차이"), g("which may interfere with", "그것은 ~을 방해할 수도 있다"),
                     g("intentionality", "의도(뜻한 대로 전달하기)")],
-        "slashes": ["No doubt", "speakers of English", "language variances,"],
+        "slashes": ["No doubt", "students", "speakers of English", "language variances,"],
+        "roles": [r("students", "S"), r("might encounter", "V"), r("language variances", "O")],
+        "modifiers": ["collaborating with other speakers of English", "which may interfere with intentionality"],
         "steps": [
             sv("s1_sv", ["students", "other speakers of English", "might encounter", "language variances"],
                {"students": "S", "might encounter": "V", "language variances": "O"},
@@ -74,7 +76,9 @@ sentences = [
         "glosses": [g("To address such disparities", "그런 차이를 다루기 위해"), g("call for", "~을 요구하다"), g("a “translingual approach”", "'초언어적 접근법'"),
                     g("in which", "그 접근법에서는"), g("language varieties", "언어의 다양성"), g("are not perceived as barriers", "장벽으로 여겨지지 않는다"),
                     g("but as avenues", "통로로 (여겨진다)"), g("avenues", "통로, 수단"), g("for meaning making", "의미를 만드는")],
-        "slashes": ["such disparities,", "“translingual approach”", "as barriers,"],
+        "slashes": ["such disparities,", "Trimbur (2011)", "“translingual approach”", "language varieties", "as barriers,"],
+        "roles": [r("Horner, Lu, Royster, and Trimbur (2011)", "S"), r("call for", "V")],
+        "modifiers": ["in which language varieties are not perceived as barriers, but as avenues for meaning making"],
         "steps": [
             sort_step("s2_sort", "①", "avenues", False,
                       "'not perceived as barriers, but as avenues', 언어 차이를 장벽이 아니라 의미를 만드는 통로로 본대요. 가능성 쪽이에요.",
@@ -89,6 +93,8 @@ sentences = [
         "glosses": [g("Similarly", "마찬가지로"), g("Galloway and Rose (2015) study of Global Englishes", "글로벌 영어에 대한 갤러웨이와 로즈(2015)의 연구"),
                     g("found", "발견했다"), g("exposure to other Englishes", "다른 영어들에 노출되는 것"), g("helps normalize", "~을 자연스럽게(정상으로) 만드는 데 도움이 된다"),
                     g("language differences", "언어 차이")],
+        "slashes": ["②Similarly,", "Global Englishes", "found", "other Englishes"],
+        "roles": [r("Galloway and Rose (2015) study", "S"), r("found", "V"), r("exposure to other Englishes", "S"), r("helps", "V")],
         "steps": [
             sort_step("s3_sort", "②", "normalize", False,
                       "Similarly(마찬가지로)로 이어지고, 다른 영어에 노출되면 언어 차이가 자연스러워진대요(normalize). 가능성 쪽이에요.",
@@ -101,7 +107,8 @@ sentences = [
                     g("phrases, expressions, and other ranges of English language use", "구문, 표현, 그 밖의 영어 사용"),
                     g("for their rhetorical and communicative possibilities", "그것의 수사적·의사소통적 가능성을 보려고"),
                     g("possibilities", "가능성"), g("and not their perceived errors or inferior status", "여겨지는 오류나 열등함이 아니라")],
-        "slashes": ["with students", "English language use", "communicative possibilities"],
+        "slashes": ["with students", "to examine phrases, expressions,", "English language use", "communicative possibilities"],
+        "roles": [r("Educators", "S"), r("have to work", "V")],
         "steps": [
             sort_step("s4_sort", "③", "possibilities", False,
                       "'for their … possibilities and not their perceived errors', 오류가 아니라 가능성을 보래요. 가능성 쪽이에요.",
@@ -113,7 +120,8 @@ sentences = [
         "glosses": [g("Committing an error", "오류를 범하는 것"), g("means", "뜻한다"), g("unintentionally saying what isn’t true", "의도치 않게 사실이 아닌 걸 말하는 것"),
                     g("so", "그래서"), g("any linguistic or perspective error", "어떤 언어적·관점적 오류도"),
                     g("should be avoided at all cost", "무슨 수를 써서라도 피해야 한다")],
-        "slashes": ["what isn’t true,"],
+        "slashes": ["Committing an error", "means unintentionally saying", "what isn’t true,", "should be avoided"],
+        "roles": [r("Committing an error", "S"), r("means", "V"), r("any linguistic or perspective error", "S"), r("should be avoided", "V")],
         "steps": [
             sort_step("s5_sort", "④", "avoided at all cost", True,
                       "'any … error should be avoided at all cost', 어떤 오류든 무조건 피하래요. 차이를 오류로 보고 없애려는 쪽이에요.",
@@ -129,7 +137,9 @@ sentences = [
                     g("listening to speakers", "화자의 말을 듣다"), g("whose Englishes", "그들의 영어는"),
                     g("do not necessarily conform to", "반드시 ~에 맞지는 않는다"), g("what is considered standard", "표준으로 여겨지는 것"),
                     g("in their own communities", "그들 자신의 공동체에서")],
-        "slashes": ["After all,", "reading texts", "whose Englishes", "considered standard"],
+        "slashes": ["⑤After all,", "constantly reading texts", "listening to speakers", "conform to", "considered standard"],
+        "roles": [r("students", "S"), r("are constantly reading", "V"), r("texts", "O"), r("listening", "V")],
+        "modifiers": ["whose Englishes do not necessarily conform to what is considered standard in their own communities"],
         "steps": [
             sort_step("s6_sort", "⑤", "not necessarily standard", False,
                       "After all(결국), 학생들은 늘 표준과 다른 영어를 접한대요. 그러니 차이를 받아들여야 한다는 앞 문장들의 이유예요. 가능성 쪽이에요.",

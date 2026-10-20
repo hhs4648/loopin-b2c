@@ -11,7 +11,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish, METHOD_IMAGES)
 
 ID = "moeui-2024-03-42-automatic-thoughts"
@@ -77,6 +77,7 @@ sentences = [
     {
         "id": 1, "text": S[0], "model_translation": KO[0], "teaching_value": "medium",
         "glosses": [g("You", "너는"), g("are", "~이다"), g("the narrator", "이야기하는 사람, 내레이터"), g("of your own life", "자기 삶의")],
+        "roles": [r("You", "S"), r("are", "V"), r("the narrator", "C")],
         "steps": [
             show("s1_narrator", "우리는 자기 삶을 말로 풀어 가는 내레이터래요. 내가 내 경험을 어떻게 말하는지가 이 글의 주제예요.",
                  highlight=["the narrator"], button="다음 문장"),
@@ -86,7 +87,9 @@ sentences = [
         "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "high",
         "glosses": [g("The tone and perspective", "어조와 관점"), g("with which you describe each experience", "각 경험을 묘사하는"),
                     g("generates", "만들어 낸다"), g("feelings", "감정"), g("associated with that narration", "그 이야기와 관련된")],
-        "slashes": ["The tone and perspective", "each experience"],
+        "slashes": ["The tone and perspective", "each experience", "generates feelings"],
+        "roles": [r("The tone and perspective", "S"), r("generates", "V"), r("feelings", "O")],
+        "modifiers": ["with which you describe each experience"],
         "steps": [
             sv("s2_sv", ["The tone and perspective", "you", "describe", "generates", "feelings"],
                {"The tone and perspective": "S", "generates": "V", "feelings": "O"},
@@ -108,7 +111,8 @@ sentences = [
                     g("This is hard", "이건 어려워"), g("I wonder whether I’m going to survive", "내가 살아남을지 모르겠어"),
                     g("It looks like", "~인 것 같아"), g("this is going to turn out badly", "이게 안 좋게 될 거야"),
                     g("you’ll generate", "너는 만들어 낼 것이다"), g("anxious feelings", "불안한 감정")],
-        "slashes": ["constantly assuming,", "“This is hard,”", "going to survive,”", "turn out badly,”"],
+        "slashes": ["For example,", "constantly assuming,", "“This is hard,”", "going to survive,”", "turn out badly,”"],
+        "roles": [r("you … you", "S"), r("find", "V"), r("yourself", "O"), r("’ll generate", "V"), r("anxious feelings", "O")],
         "steps": [
             show("s3_check", "'이건 어려워', '안 좋게 될 거야'처럼 계속 부정적으로 말하면 불안한 감정이 생긴대요. 부정적인 말 → 불안, 그래서 (a)anxious는 문맥에 맞아요.",
                  highlight=["This is hard", "turn out badly", "anxious"],
@@ -120,6 +124,9 @@ sentences = [
     {
         "id": 4, "text": S[3], "model_translation": KO[3], "teaching_value": "medium",
         "glosses": [g("It’s time to", "~할 때다"), g("restructure", "다시 짜다, 재구성하다"), g("the way you think", "네가 생각하는 방식")],
+        "slashes": ["It’s time"],
+        "roles": [r("It", "S"), r("’s", "V"), r("time", "C")],
+        "modifiers": ["you think"],
         "steps": [
             show("s4_time", "이제 생각하는 방식을 다시 짤 때래요. 글쓴이가 바꾸자고 하는 건 이 부정적인 말하기예요.",
                  highlight=["restructure"], button="다음 문장",
@@ -130,6 +137,9 @@ sentences = [
         "id": 5, "text": S[4], "model_translation": KO[4], "teaching_value": "high",
         "glosses": [g("Underlying this narration", "이 이야기의 밑바탕에"), g("are", "있다"), g("the beliefs", "신념, 믿음"),
                     g("frame your experience", "경험에 틀을 씌우다"), g("give it meaning", "그것에 의미를 주다")],
+        "slashes": ["this narration", "are the beliefs"],
+        "roles": [r("are", "V"), r("the beliefs", "S")],
+        "modifiers": ["that (b)frame your experience and give it meaning"],
         "steps": [
             choice("s5_frame",
                    "Underlying ~ are the beliefs: 이야기 밑바탕에 신념이 있대요. 신념은 경험에 무엇을 한대요?",
@@ -146,11 +156,15 @@ sentences = [
     {
         "id": 6, "text": S[5], "model_translation": KO[5], "teaching_value": "low",
         "glosses": [g("Think of", "~을 생각해 보라"), g("your beliefs", "너의 신념"), g("as having many layers", "여러 층을 가진 것으로")],
+        "slashes": ["your beliefs"],
+        "roles": [r("Think", "V"), r("your beliefs", "O")],
         "steps": [show("s6_layers", "신념에 여러 층이 있다고 생각해 보래요.", highlight=["many layers"], button="다음 문장")],
     },
     {
         "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "medium",
         "glosses": [g("On the surface", "맨 겉에"), g("are", "있다"), g("your automatic thoughts", "너의 자동적 사고")],
+        "slashes": ["On the surface"],
+        "roles": [r("are", "V"), r("your automatic thoughts", "S")],
         "steps": [show("s7_surface", "맨 겉층에 '자동적 사고(automatic thoughts)'가 있대요. 저절로 떠오르는 생각이에요.",
                        highlight=["automatic thoughts"], button="다음 문장")],
     },
@@ -158,12 +172,18 @@ sentences = [
         "id": 8, "text": S[7], "model_translation": KO[7], "teaching_value": "low",
         "glosses": [g("These are like", "이것들은 ~ 같다"), g("short tapes", "짧은 테이프"), g("momentarily", "순간적으로"),
                     g("flash through your mind", "머릿속을 스쳐 가다")],
+        "slashes": ["short tapes"],
+        "roles": [r("These", "S"), r("are", "V")],
+        "modifiers": ["that momentarily flash through your mind"],
         "steps": [show("s8_tapes", "자동적 사고는 머릿속을 순간 스쳐 가는 짧은 녹음테이프 같대요.", highlight=["short tapes"], button="다음 문장")],
     },
     {
         "id": 9, "text": S[8], "model_translation": KO[8], "teaching_value": "medium",
         "glosses": [g("Call", "~라고 불러라"), g("these automatic thoughts", "이 자동적 사고를"), g("a form of “self-talk”", "일종의 '혼잣말'"),
                     g("that you use", "네가 쓰는"), g("as you navigate through the day", "하루를 헤쳐 나가며")],
+        "slashes": ["these automatic thoughts", "“self-talk”", "that you use"],
+        "roles": [r("Call", "V"), r("these automatic thoughts", "O"), r("a form of “self-talk”", "C")],
+        "modifiers": ["that you use as you navigate through the day"],
         "steps": [show("s9_selftalk", "자동적 사고를 하루를 지내며 쓰는 '혼잣말(self-talk)'이라고 부르자고 해요.",
                        highlight=["self-talk"], button="다음 문장")],
     },
@@ -171,6 +191,8 @@ sentences = [
         "id": 10, "text": S[9], "model_translation": KO[9], "teaching_value": "high",
         "glosses": [g("You", "너는"), g("produce", "만들어 내다"), g("a wide variety of these automatic thoughts", "아주 다양한 자동적 사고"),
                     g("some consciously", "일부는 의식적으로"), g("and some unconsciously", "일부는 무의식적으로")],
+        "slashes": ["(c)produce", "automatic thoughts,"],
+        "roles": [r("You", "S"), r("produce", "V"), r("a wide variety of these automatic thoughts", "O")],
         "steps": [
             show("s10_check", "우리는 아주 다양한 자동적 사고를 의식적으로도, 무의식적으로도 만들어 낸대요. 그래서 (c)produce는 문맥에 맞아요.",
                  highlight=["produce", "a wide variety"], panel=check("a", "b", "c"), panel_below=True, button="다음 문장"),
@@ -181,7 +203,11 @@ sentences = [
         "glosses": [g("For example", "예를 들어"), g("automatic thoughts", "자동적 사고"), g("anxiety", "불안"),
                     g("go something like this", "대략 이런 식이다"), g("You walk into a room", "방에 들어간다"), g("see a few new people", "처음 보는 사람 몇 명을 본다"),
                     g("say to yourself", "혼잣말을 한다"), g("Oh no", "이런"), g("I don’t like this", "난 이게 싫어"), g("This is not good", "이건 좋지 않아")],
-        "slashes": ["go something like this:", "a few new people,", "say to yourself,"],
+        "slashes": ["For example,", "automatic thoughts", "relieve anxiety", "go something like this:", "into a room,", "a few new people,",
+                    "say to yourself,", "like this."],
+        "roles": [r("automatic thoughts", "S"), r("go", "V"), r("You", "S"), r("walk", "V"), r("see", "V"), r("say", "V"), r("I", "S"),
+                  r("don’t like", "V")],
+        "modifiers": ["that (d)relieve anxiety"],
         "steps": [
             choice("s11_effect",
                    "콜론(:) 뒤 예시를 봐요. 방에 들어가며 '이런, 난 이게 싫어, 좋지 않아'라고 혼잣말하면, 불안은 어떻게 될까요?",
@@ -199,6 +225,8 @@ sentences = [
         "id": 12, "text": S[11], "model_translation": KO[11], "teaching_value": "medium",
         "glosses": [g("Or", "또는"), g("These people", "이 사람들은"), g("will soon find out", "곧 알아챌 것이다"),
                     g("I am full of anxiety", "내가 불안으로 가득하다"), g("will reject me", "나를 거부할 것이다")],
+        "slashes": ["Or,", "find out", "full of anxiety"],
+        "roles": [r("These people", "S"), r("will soon find out", "V"), r("I", "S"), r("am", "V"), r("will reject", "V"), r("me", "O")],
         "steps": [
             show("s12_reject", "'이 사람들은 내가 불안한 걸 곧 알아채고 날 거부할 거야' — 이것도 불안을 키우는 혼잣말이에요.",
                  highlight=["full of anxiety", "reject me"],
@@ -210,6 +238,9 @@ sentences = [
         "id": 13, "text": S[12], "model_translation": KO[12], "teaching_value": "high",
         "glosses": [g("Automatic thoughts", "자동적 사고는"), g("are bad habits", "나쁜 습관이다"), g("cloud", "흐리게 하다, 망치다"),
                     g("fresh and positive experiences", "새롭고 긍정적인 경험")],
+        "slashes": ["bad habits"],
+        "roles": [r("Automatic thoughts", "S"), r("are", "V"), r("bad habits", "C")],
+        "modifiers": ["that (e)cloud fresh and positive experiences"],
         "steps": [
             choice("s13_cloud",
                    "자동적 사고는 '나쁜 습관(bad habits)'이래요. 그럼 새롭고 긍정적인 경험을 (e)cloud한다는 건 무슨 뜻일까요?",
@@ -228,6 +259,8 @@ sentences = [
         "id": 14, "text": S[13], "model_translation": KO[13], "teaching_value": "medium",
         "glosses": [g("They", "그것들(자동적 사고)"), g("can turn", "바꿀 수 있다"), g("a potentially good experience", "좋을 수도 있는 경험"),
                     g("into one fraught with anxiety", "불안으로 가득한 것으로")],
+        "slashes": ["can turn", "good experience"],
+        "roles": [r("They", "S"), r("can turn", "V"), r("a potentially good experience", "O")],
         "steps": [
             show("s14_turn", "자동적 사고는 좋을 수도 있는 경험을 불안으로 가득한 경험으로 바꿀 수 있대요.",
                  highlight=["fraught with anxiety"],
@@ -240,7 +273,8 @@ sentences = [
         "glosses": [g("If you tell yourself", "스스로에게 ~라고 말한다면"), g("you are always stressed", "늘 스트레스를 받는다"),
                     g("full of anxiety", "불안으로 가득한"), g("before doing something new", "새로운 일을 하기 전에"),
                     g("that new experience", "그 새로운 경험은"), g("will be tainted", "더럽혀질 것이다"), g("by that anxiety", "그 불안에 의해")],
-        "slashes": ["full of anxiety", "something new,"],
+        "slashes": ["tell yourself", "always stressed", "full of anxiety", "something new,", "that new experience"],
+        "roles": [r("you … you", "S"), r("tell", "V"), r("yourself", "O"), r("are", "V"), r("that new experience", "S"), r("will be tainted", "V")],
         "steps": [
             show("s15_taint", "새 일을 앞두고 '난 늘 불안해'라고 말하면, 그 새 경험이 불안으로 물든대요. 처음부터 끝까지 부정적 혼잣말 → 불안이에요.",
                  highlight=["tainted"],

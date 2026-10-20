@@ -50,6 +50,8 @@ export type TutorView = {
   slashes?: string[];
   /** 끊어읽기를 켜면 같이 보이는 S·V·O·C (문장에 적어 둔 것) */
   slashRoles?: { text: string; role: "S" | "V" | "O" | "C" }[];
+  /** 끊어읽기를 켜면 [ ]로 묶어 보이는 수식어(관계대명사절·분사 덩어리) */
+  slashModifiers?: string[];
   /** 여러 문장 중 가리키는 한 문장 ([ ]로 묶은 부분) — 색 괄호와 옅은 바탕으로 보인다 */
   bracket?: string | null;
   activeChunk: string;

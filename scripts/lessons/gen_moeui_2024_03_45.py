@@ -18,7 +18,7 @@ SRC = "moeui-2024-03-43-baseball-card"
 
 src = json.load(open(f"{ROOT}/content/tutor/policy-lessons/{SRC}.json"))
 SENSES = {int(k): v for k, v in json.load(open(f"{ROOT}/content/tutor/function-senses/{SRC}.json")).items()}
-sentences = [{k: s[k] for k in ("id", "text", "model_translation", "glosses", "slashes") if k in s} | {"steps": [], "teaching_value": "low"}
+sentences = [{k: s[k] for k in ("id", "text", "model_translation", "glosses", "slashes", "roles", "modifiers") if k in s} | {"steps": [], "teaching_value": "low"}
              for s in src["sentences"]]
 
 OPTS = ["Tommy는 차고에서 오래되고 잊혀진 상자를 발견했다.",

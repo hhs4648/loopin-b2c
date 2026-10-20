@@ -322,6 +322,34 @@
           "ko": "휴식"
         }
       ],
+      "slashes": [
+        "Honey,",
+        "been driving",
+        "two hours.",
+        "Why don’t we"
+      ],
+      "roles": [
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "’ve been driving",
+          "role": "V"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "don’t … take",
+          "role": "V"
+        },
+        {
+          "text": "a break",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s1_basic_sv",
@@ -571,6 +599,35 @@
           "ko": "피곤한"
         }
       ],
+      "slashes": [
+        "It’s okay."
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "okay",
+          "role": "C"
+        },
+        {
+          "text": "I",
+          "role": "S"
+        },
+        {
+          "text": "’m",
+          "role": "V"
+        },
+        {
+          "text": "tired",
+          "role": "C"
+        }
+      ],
       "steps": [
         {
           "id": "s2_refuse",
@@ -649,6 +706,25 @@
         {
           "en": "driving",
           "ko": "운전하는"
+        }
+      ],
+      "slashes": [
+        "Still,",
+        "it’s better",
+        "take a rest"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "better",
+          "role": "C"
         }
       ],
       "steps": [

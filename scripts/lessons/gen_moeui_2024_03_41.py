@@ -19,7 +19,7 @@ SRC = "moeui-2024-03-42-automatic-thoughts"
 
 src = json.load(open(f"{ROOT}/content/tutor/policy-lessons/{SRC}.json"))
 SENSES = {int(k): v for k, v in json.load(open(f"{ROOT}/content/tutor/function-senses/{SRC}.json")).items()}
-sentences = [{k: s[k] for k in ("id", "text", "model_translation", "teaching_value", "glosses", "slashes") if k in s} | {"steps": []}
+sentences = [{k: s[k] for k in ("id", "text", "model_translation", "teaching_value", "glosses", "slashes", "roles", "modifiers") if k in s} | {"steps": []}
              for s in src["sentences"]]
 
 

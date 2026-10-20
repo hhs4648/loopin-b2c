@@ -414,6 +414,30 @@
           "ko": "다른 사람들"
         }
       ],
+      "slashes": [
+        "The commonsense understanding",
+        "altruistic acts",
+        "conforms to",
+        "most of us think"
+      ],
+      "roles": [
+        {
+          "text": "The commonsense understanding",
+          "role": "S"
+        },
+        {
+          "text": "conforms to",
+          "role": "V"
+        },
+        {
+          "text": "most of us",
+          "role": "S"
+        },
+        {
+          "text": "think",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s1_passage",
@@ -706,9 +730,50 @@
       ],
       "slashes": [
         "get offended",
+        "someone else or society",
         "determines for us",
+        "what we have",
         "given away;",
+        "we are adults",
         "the right"
+      ],
+      "roles": [
+        {
+          "text": "We … we",
+          "role": "S"
+        },
+        {
+          "text": "tend to get offended",
+          "role": "V"
+        },
+        {
+          "text": "someone else or society",
+          "role": "S"
+        },
+        {
+          "text": "determines",
+          "role": "V"
+        },
+        {
+          "text": "how much of what we have should be given away",
+          "role": "O"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "adults",
+          "role": "C"
+        },
+        {
+          "text": "should have",
+          "role": "V"
+        },
+        {
+          "text": "the right",
+          "role": "O"
+        }
       ],
       "steps": [
         {
@@ -990,9 +1055,28 @@
         }
       ],
       "slashes": [
+        "Yet,",
         "when interviewed,",
+        "altruists",
         "the largest sacrifices—",
         "recipients—"
+      ],
+      "roles": [
+        {
+          "text": "altruists",
+          "role": "S"
+        },
+        {
+          "text": "assert",
+          "role": "V"
+        },
+        {
+          "text": "just the opposite",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "known for making the largest sacrifices—and bringing about the greatest benefits to their recipients—"
       ],
       "steps": [
         {
@@ -1226,6 +1310,16 @@
         {
           "en": "they",
           "ko": "그들"
+        }
+      ],
+      "roles": [
+        {
+          "text": "They … they",
+          "role": "S"
+        },
+        {
+          "text": "insist",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1518,11 +1612,49 @@
         }
       ],
       "slashes": [
-        "Organ donors,",
+        "everyday citizens",
+        "their own lives",
         "in mortal danger",
         "remarkably consistent",
+        "explicit denials",
+        "have done anything",
         "high praise",
-        "assurance"
+        "as well as",
+        "their assurance",
+        "in their shoes"
+      ],
+      "roles": [
+        {
+          "text": "Organ donors, and everyday citizens",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "remarkably consistent",
+          "role": "C"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "have done",
+          "role": "V"
+        },
+        {
+          "text": "anyone",
+          "role": "S"
+        },
+        {
+          "text": "should have done",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "who risk their own lives to save others in mortal danger"
       ],
       "steps": [
         {
@@ -1829,9 +1961,58 @@
       ],
       "slashes": [
         "To be sure,",
+        "it seems",
         "someone is,",
         "likely to insist",
-        "expected to do,"
+        "no more than",
+        "expected to do,",
+        "lest we shirk"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "seems",
+          "role": "V"
+        },
+        {
+          "text": "someone",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "they … they",
+          "role": "S"
+        },
+        {
+          "text": "are likely to insist",
+          "role": "V"
+        },
+        {
+          "text": "have done",
+          "role": "V"
+        },
+        {
+          "text": "all of us",
+          "role": "S"
+        },
+        {
+          "text": "would be expected",
+          "role": "V"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "shirk",
+          "role": "V"
+        }
       ],
       "steps": [
         {

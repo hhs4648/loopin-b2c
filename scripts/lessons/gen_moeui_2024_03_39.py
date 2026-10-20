@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish, METHOD_IMAGES)
 
 ID = "moeui-2024-03-39-perspective-painting"
@@ -64,6 +64,9 @@ sentences = [
                     g("knew", "알았다"), g("the objects and the space", "사물과 공간"), g("he or she was painting", "그(그녀)가 그리고 있던"),
                     g("how they looked", "그것들이 어떻게 보였는지"), g("stands", "서 있다 · stand in contrast to = ~와 대조되다")],
         "emphasis": ["earlier figurative art"],
+        "slashes": ["This stands in contrast", "figurative art,", "as focused", "the artist knew", "and the space", "was painting"],
+        "roles": [r("This", "S"), r("stands", "V")],
+        "modifiers": ["which had been as focused on representing what the artist knew about the objects and the space he or she was painting as on how they looked"],
         "steps": [
             sv("g_sv", ["This", "stands", "earlier figurative art", "the artist", "knew"],
                {"This": "S", "stands": "V", "earlier figurative art": "전목"},
@@ -118,6 +121,9 @@ sentences = [
         "id": 2, "text": S[0], "model_translation": KO[0], "teaching_value": "medium",
         "glosses": [g("Almost all the figurative paintings", "거의 모든 구상화"), g("we are familiar with", "우리에게 익숙한"),
                     g("now", "지금"), g("are", "~이다"), g("in perspective", "원근법으로 그린"), g("perspective", "원근법")],
+        "slashes": ["figurative paintings", "familiar with now"],
+        "roles": [r("Almost all the figurative paintings", "S"), r("we", "S"), r("are familiar", "V"), r("are", "V")],
+        "modifiers": ["we are familiar with now"],
         "steps": [
             show("s1_now", "지금 우리에게 익숙한 그림은 거의 다 원근법으로 그렸대요. 칠판 왼쪽에 넣어 둘게요.",
                  panel=board(["in perspective"], ["what the artist knew"], fresh=("in perspective",)),
@@ -129,6 +135,9 @@ sentences = [
         "id": 3, "text": S[1], "model_translation": KO[1], "teaching_value": "low",
         "glosses": [g("They", "그것들(원근법 그림)"), g("present", "보여 주다, 나타내다"), g("foreshortened figures and objects", "축소된 인물과 사물"),
                     g("diminish", "작아지다"), g("move away from", "~에서 멀어지다"), g("the focal point", "초점")],
+        "slashes": ["figures and objects", "that diminish", "move away"],
+        "roles": [r("They", "S"), r("present", "V"), r("foreshortened figures and objects", "O")],
+        "modifiers": ["that diminish as they move away from the focal point of the painting"],
         "steps": [
             show("s2_small", "멀어질수록 작아지게 그린대요. 원근법 그림이 어떻게 생겼는지 설명하는 문장이에요.",
                  highlight=["diminish", "move away from"], button="다음 문장",
@@ -140,6 +149,9 @@ sentences = [
         "glosses": [g("A painting in perspective", "원근법으로 그린 그림"), g("represents", "나타내다"),
                     g("how the world looks", "세상이 어떻게 보이는지"), g("to a person", "사람에게"), g("seeing the scene", "그 장면을 보는"),
                     g("from a particular position", "특정한 자리에서"), g("in space", "공간에서")],
+        "slashes": ["in perspective", "how the world looks", "seeing the scene"],
+        "roles": [r("A painting in perspective", "S"), r("represents", "V"), r("how the world looks", "O")],
+        "modifiers": ["seeing the scene from a particular position in space"],
         "steps": [
             choice("s3_what",
                    "원근법 그림은 무엇을 나타낸대요?",
@@ -159,6 +171,9 @@ sentences = [
         "glosses": [g("These pictures", "이 그림들"), g("are beautiful", "아름답다"), g("in their own right", "그 자체로"),
                     g("but", "하지만"), g("they do not represent", "그것들은 나타내지 않는다"), g("scenes", "장면들"),
                     g("as we might see them", "우리가 볼 법한 대로"), g("if we were looking at them", "우리가 그것들을 보고 있다면")],
+        "slashes": ["are beautiful", "their own right,", "represent scenes", "see them"],
+        "roles": [r("These pictures", "S"), r("are", "V"), r("beautiful", "C"), r("they", "S"), r("do not represent", "V"), r("scenes", "O"),
+                  r("we … we", "S"), r("might see", "V"), r("were looking", "V")],
         "steps": [
             choice("s4_these",
                    "These pictures(이 그림들)는 우리가 보는 대로 장면을 나타내지 않는대요. 그럼 어느 쪽 그림일까요?",
@@ -182,6 +197,9 @@ sentences = [
         "id": 6, "text": S[4], "model_translation": KO[4], "teaching_value": "medium",
         "glosses": [g("They", "그것들(예전 그림)"), g("are also less informative", "또한 정보를 덜 준다"),
                     g("as to", "~에 관해서"), g("the layout of the space", "공간의 배치"), g("they represent", "그것들이 나타내는")],
+        "slashes": ["less informative", "the layout"],
+        "roles": [r("They", "S"), r("are", "V"), r("less informative", "C")],
+        "modifiers": ["they represent"],
         "steps": [
             show("s5_also",
                  "They도 앞 문장의 These pictures, 즉 예전 그림이에요. also(또한), 공간 배치에 대한 정보도 덜 준대요.",
@@ -198,6 +216,8 @@ sentences = [
         "glosses": [g("The fact", "사실"), g("perspective and information about spatial layout", "원근법과 공간 배치에 대한 정보"),
                     g("go together", "함께 간다"), g("reveals", "드러내다"), g("something important", "중요한 무언가"),
                     g("about seeing", "보는 것에 대해"), g("spatial", "공간의"), g("layout", "배치")],
+        "slashes": ["The fact", "spatial layout", "go together"],
+        "roles": [r("The fact", "S"), r("perspective and information", "S"), r("go together", "V"), r("reveals", "V"), r("something important", "O")],
         "steps": [
             sv("s6_sv", ["The fact", "perspective and information about spatial layout", "go together", "reveals", "something important"],
                {"The fact": "S", "reveals": "V", "something important": "O"},
@@ -223,7 +243,10 @@ sentences = [
                     g("extract", "추출하다, 뽑아내다"), g("information", "정보"), g("distances to", "~까지의 거리"),
                     g("sizes of", "~의 크기"), g("objects", "물체들"), g("relative to us", "우리를 기준으로"),
                     g("relative to one another", "서로를 기준으로")],
-        "slashes": ["egocentric frame", "in a way", "extract information", "objects relative to us,"],
+        "slashes": ["Not only do we see the world", "egocentric frame", "we also see it", "in a way", "extract information", "and sizes of,",
+                    "relative to us,"],
+        "roles": [r("we … we", "S"), r("do … see", "V"), r("the world", "O"), r("see", "V"), r("it", "O")],
+        "modifiers": ["that allows us to extract information about distances to, and sizes of, objects relative to us, and relative to one another"],
         "steps": [
             show("s7_note",
                  "Not only A but also B는 'A뿐만 아니라 B도'예요. 우리는 나를 중심으로 세상을 볼 뿐 아니라, 거리와 크기 정보도 뽑아낸대요.",

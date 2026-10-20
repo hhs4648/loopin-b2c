@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, add_that_sv, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, add_that_sv, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish, METHOD_IMAGES)
 
 ID = "moeui-2024-03-21-taste-its-price"
@@ -60,7 +60,8 @@ sentences = [
                     g("construction", "구성물, 만들어진 것"), g("is not true just of", "~에만 해당하는 것은 아니다"),
                     g("one’s perception of sensory input", "감각으로 들어오는 것에 대한 인식"), g("sensory input", "감각 입력"),
                     g("such as", "~ 같은"), g("visual and auditory information", "시각·청각 정보")],
-        "slashes": ["is a construction", "sensory input,"],
+        "slashes": ["is a construction", "is not true", "sensory input,"],
+        "roles": [r("That perception is a construction", "S"), r("is not true", "V")],
         "steps": [
             sv("s1_sv", ["That perception is a construction", "is not true", "one’s perception of sensory input", "visual and auditory information"],
                {"That perception is a construction": "S", "is not true": "V"},
@@ -87,7 +88,8 @@ sentences = [
         "glosses": [g("It is true of", "그것은 ~에도 해당한다"), g("your social perceptions", "너의 사회적 인식"), g("as well", "~도 또한"),
                     g("the people you meet", "네가 만나는 사람들"), g("the food you eat", "네가 먹는 음식"),
                     g("the products you buy", "네가 사는 물건들")],
-        "slashes": ["as well―", "the people you meet,"],
+        "slashes": ["It is true", "as well―", "the people you meet,", "the food you eat,"],
+        "roles": [r("It", "S"), r("is", "V"), r("true", "C")],
         "steps": [
             choice("s2_also",
                    "그럼 감각 정보 말고 무엇에도 해당한대요?",
@@ -105,7 +107,9 @@ sentences = [
                     g("there was little or no correlation", "상관관계가 거의 또는 전혀 없었다"), g("correlation", "상관관계"),
                     g("between", "~ 사이에"), g("the ratings of a wine’s taste", "와인 맛에 대한 평가"), g("its cost", "그것의 가격"),
                     g("there was a significant correlation", "뚜렷한 상관관계가 있었다"), g("when the wines were labeled by price", "와인에 가격표를 붙였을 때")],
-        "slashes": ["in a study of wine,", "tasted blind,", "a wine’s taste and its cost,", "a significant correlation"],
+        "slashes": ["For example,", "in a study of wine,", "tasted blind,", "little or no correlation", "and its cost,", "a significant correlation"],
+        "roles": [r("was … was", "V"), r("little or no correlation", "S"), r("wines", "S"), r("were tasted", "V"),
+                  r("a significant correlation", "S"), r("the wines", "S"), r("were labeled", "V")],
         "steps": [
             choice("s3_blind",
                    "와인을 가리고(blind) 맛봤을 때와 가격표를 붙였을 때, 결과가 어떻게 달랐대요?",
@@ -126,7 +130,9 @@ sentences = [
         "glosses": [g("That wasn’t because", "그것은 ~ 때문이 아니었다"), g("the subjects", "실험 참가자들"), g("consciously believed", "의식적으로 믿었다"),
                     g("the higher-priced wines", "더 비싼 와인들"), g("should be the better ones", "더 좋은 것이어야 한다"),
                     g("thus", "그래서"), g("revised", "바꿨다"), g("whatever opinion they had", "그들이 가졌던 어떤 의견이든"), g("accordingly", "그에 맞춰")],
-        "slashes": ["consciously believed", "the better ones"],
+        "slashes": ["That wasn’t", "consciously believed", "the better ones", "and thus revised"],
+        "roles": [r("That", "S"), r("wasn’t", "V"), r("the subjects", "S"), r("consciously believed", "V"), r("revised", "V"),
+                  r("the higher-priced wines", "S"), r("should be", "V"), r("the better ones", "C")],
         "steps": [
             choice("s4_conscious",
                    "그건 참가자들이 '비싼 게 더 좋겠지' 하고 일부러(의식적으로) 의견을 바꿨기 때문이래요?",
@@ -140,6 +146,8 @@ sentences = [
     {
         "id": 5, "text": S[4], "model_translation": KO[4], "teaching_value": "medium",
         "glosses": [g("Or rather", "더 정확히 말하면"), g("it wasn’t true", "그건 사실이 아니었다"), g("just at the conscious level", "의식적인 수준에서만")],
+        "slashes": ["Or rather,", "it wasn’t true"],
+        "roles": [r("it", "S"), r("wasn’t", "V"), r("true", "C")],
         "steps": [
             show("s5_rather", "Or rather(더 정확히는), 의식적인 수준에서만 그런 게 아니었대요. 뇌 깊은 곳에서도 일어났다는 거예요.",
                  highlight=["Or rather", "just at the conscious level"], button="다음 문장"),
@@ -154,8 +162,12 @@ sentences = [
                     g("really did activate", "정말로 활성화했다"), g("their centers of taste for pleasure", "즐거움을 느끼는 미각 중추"),
                     g("more than", "~보다 더"), g("drinking a glass of the same wine", "같은 와인 한 잔을 마시는 것"),
                     g("that had been labeled as cheaper", "더 싸다고 붙여진")],
-        "slashes": ["tasting the wine,", "their brain activity,", "the imaging showed", "an expensive glass of wine",
-                    "taste for pleasure", "the same wine"],
+        "slashes": ["We know", "tasting the wine,", "were imaging", "their brain activity,", "the imaging showed", "an expensive glass of wine",
+                    "really did activate", "taste for pleasure", "the same wine"],
+        "roles": [r("We", "S"), r("know", "V"), r("the subjects", "S"), r("were tasting", "V"), r("the researchers", "S"), r("were imaging", "V"),
+                  r("the imaging", "S"), r("showed", "V"), r("drinking what they believed was an expensive glass of wine", "S"),
+                  r("really did activate", "V"), r("their centers of taste for pleasure", "O")],
+        "modifiers": ["that had been labeled as cheaper"],
         "steps": [
             sv("s6_sv", ["We", "know", "the researchers", "were imaging", "the imaging", "showed"],
                {"the imaging": "S", "showed": "V"},
@@ -179,6 +191,8 @@ sentences = [
     {
         "id": 7, "text": S[6], "model_translation": KO[6], "teaching_value": "medium",
         "glosses": [g("That’s related to", "그것은 ~와 관련 있다"), g("the placebo effect", "플라세보(위약) 효과")],
+        "slashes": ["That’s related"],
+        "roles": [r("That", "S"), r("’s", "V"), r("related", "C")],
         "steps": [
             show("s7_placebo", "플라세보 효과와 관련 있대요. 가짜 약도 진짜라고 믿으면 몸이 나아지는 것처럼, 믿음이 실제 느낌을 바꾸는 거예요.",
                  highlight=["the placebo effect"],
@@ -192,7 +206,9 @@ sentences = [
         "glosses": [g("Like pain", "통증처럼"), g("taste", "맛, 미각"), g("is not just the product of", "~의 결과만은 아니다"),
                     g("sensory signals", "감각 신호"), g("it depends also on", "그것은 ~에도 달려 있다"), g("psychological factors", "심리적 요인"),
                     g("you don’t just taste the wine", "너는 와인을 맛보기만 하는 게 아니다"), g("you taste its price", "너는 그것의 가격을 맛본다")],
-        "slashes": ["Like pain,", "sensory signals;", "psychological factors:", "the wine;"],
+        "slashes": ["Like pain,", "is not just the product", "sensory signals;", "it depends also", "psychological factors:", "the wine;"],
+        "roles": [r("taste", "S"), r("is", "V"), r("the product", "C"), r("it", "S"), r("depends", "V"), r("you … you", "S"),
+                  r("don’t just taste … taste", "V"), r("the wine", "O"), r("its price", "O")],
         "steps": [
             choice("s8_factor",
                    "세미콜론(;) 앞을 봐요. 맛은 감각 신호의 결과만이 아니라 무엇에도 달려 있대요?",

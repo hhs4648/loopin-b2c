@@ -225,6 +225,21 @@
           "ko": "토미"
         }
       ],
+      "slashes": [
+        "Once upon a time",
+        "Meadowville,",
+        "there lived"
+      ],
+      "roles": [
+        {
+          "text": "lived",
+          "role": "V"
+        },
+        {
+          "text": "a curious boy",
+          "role": "S"
+        }
+      ],
       "steps": [
         {
           "id": "d_how",
@@ -311,6 +326,28 @@
           "ko": "(a) 그에게"
         }
       ],
+      "slashes": [
+        "Tommy’s grandfather,",
+        "Grandpa Joe,",
+        "a mysterious figure"
+      ],
+      "roles": [
+        {
+          "text": "Tommy’s grandfather",
+          "role": "S"
+        },
+        {
+          "text": "had always been",
+          "role": "V"
+        },
+        {
+          "text": "a mysterious figure",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "affectionately known as Grandpa Joe"
+      ],
       "steps": [],
       "teaching_value": "low"
     },
@@ -380,6 +417,32 @@
           "ko": "말하지 않은"
         }
       ],
+      "slashes": [
+        "few words,",
+        "lit up"
+      ],
+      "roles": [
+        {
+          "text": "Grandpa Joe",
+          "role": "S"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        },
+        {
+          "text": "a man",
+          "role": "C"
+        },
+        {
+          "text": "his eyes",
+          "role": "S"
+        },
+        {
+          "text": "lit up",
+          "role": "V"
+        }
+      ],
       "steps": [],
       "teaching_value": "low"
     },
@@ -439,6 +502,24 @@
         {
           "en": "box",
           "ko": "상자"
+        }
+      ],
+      "slashes": [
+        "summer afternoon,",
+        "the garage,"
+      ],
+      "roles": [
+        {
+          "text": "Tommy",
+          "role": "S"
+        },
+        {
+          "text": "found",
+          "role": "V"
+        },
+        {
+          "text": "an old, forgotten box",
+          "role": "O"
         }
       ],
       "steps": [
@@ -558,6 +639,36 @@
           "ko": "조"
         }
       ],
+      "slashes": [
+        "opened it,",
+        "spilled out,",
+        "baseball card"
+      ],
+      "roles": [
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "opened",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "O"
+        },
+        {
+          "text": "the treasure of memories",
+          "role": "S"
+        },
+        {
+          "text": "spilled out",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "featuring a young Grandpa Joe"
+      ],
       "steps": [],
       "teaching_value": "low"
     },
@@ -609,6 +720,36 @@
         {
           "en": "card",
           "ko": "카드"
+        }
+      ],
+      "slashes": [
+        "A spark of nostalgia",
+        "Joe’s eyes"
+      ],
+      "roles": [
+        {
+          "text": "A spark of nostalgia",
+          "role": "S"
+        },
+        {
+          "text": "lit up",
+          "role": "V"
+        },
+        {
+          "text": "Grandpa Joe’s eyes",
+          "role": "O"
+        },
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "took",
+          "role": "V"
+        },
+        {
+          "text": "the card",
+          "role": "O"
         }
       ],
       "steps": [],
@@ -666,6 +807,33 @@
         {
           "en": "field",
           "ko": "경기장"
+        }
+      ],
+      "slashes": [
+        "flooded back,",
+        "told stories",
+        "youthful days"
+      ],
+      "roles": [
+        {
+          "text": "Memories",
+          "role": "S"
+        },
+        {
+          "text": "flooded back",
+          "role": "V"
+        },
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "told",
+          "role": "V"
+        },
+        {
+          "text": "stories",
+          "role": "O"
         }
       ],
       "steps": [
@@ -775,6 +943,20 @@
           "ko": "달리기, 득점"
         }
       ],
+      "slashes": [
+        "spoke of",
+        "the thrill of the game"
+      ],
+      "roles": [
+        {
+          "text": "Grandpa Joe",
+          "role": "S"
+        },
+        {
+          "text": "spoke of",
+          "role": "V"
+        }
+      ],
       "steps": [],
       "teaching_value": "low"
     },
@@ -819,6 +1001,28 @@
           "en": "grandfather",
           "ko": "할아버지"
         }
+      ],
+      "slashes": [
+        "Tommy,",
+        "these stories,",
+        "more connected"
+      ],
+      "roles": [
+        {
+          "text": "Tommy",
+          "role": "S"
+        },
+        {
+          "text": "felt",
+          "role": "V"
+        },
+        {
+          "text": "more connected",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "fascinated by these stories"
       ],
       "steps": [],
       "teaching_value": "low"
@@ -871,6 +1075,24 @@
         {
           "en": "baseball",
           "ko": "야구"
+        }
+      ],
+      "slashes": [
+        "learn more,",
+        "asked Grandpa Joe"
+      ],
+      "roles": [
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "asked",
+          "role": "V"
+        },
+        {
+          "text": "Grandpa Joe",
+          "role": "O"
         }
       ],
       "steps": [],
@@ -934,6 +1156,37 @@
           "ko": "손자"
         }
       ],
+      "slashes": [
+        "spent afternoons",
+        "the backyard",
+        "the wisdom of the game"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "spent",
+          "role": "V"
+        },
+        {
+          "text": "afternoons",
+          "role": "O"
+        },
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "shared",
+          "role": "V"
+        },
+        {
+          "text": "the wisdom of the game",
+          "role": "O"
+        }
+      ],
       "steps": [],
       "teaching_value": "low"
     },
@@ -981,6 +1234,24 @@
         {
           "en": "mistakes",
           "ko": "실수들"
+        }
+      ],
+      "slashes": [
+        "Together,",
+        "hitting, catching,"
+      ],
+      "roles": [
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "practiced",
+          "role": "V"
+        },
+        {
+          "text": "laughed",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1076,6 +1347,28 @@
           "ko": "세대"
         }
       ],
+      "slashes": [
+        "over baseball,",
+        "between generations"
+      ],
+      "roles": [
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "bonded",
+          "role": "V"
+        },
+        {
+          "text": "the gap",
+          "role": "S"
+        },
+        {
+          "text": "closed",
+          "role": "V"
+        }
+      ],
       "steps": [],
       "teaching_value": "low"
     },
@@ -1153,6 +1446,38 @@
           "ko": "기억들, 추억"
         }
       ],
+      "slashes": [
+        "Grandpa Joe’s eyes",
+        "no longer held",
+        "untold stories;",
+        "radiated warmth"
+      ],
+      "roles": [
+        {
+          "text": "Grandpa Joe’s eyes",
+          "role": "S"
+        },
+        {
+          "text": "no longer held",
+          "role": "V"
+        },
+        {
+          "text": "the twinkle",
+          "role": "O"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "now radiated",
+          "role": "V"
+        },
+        {
+          "text": "warmth and shared memories",
+          "role": "O"
+        }
+      ],
       "steps": [],
       "teaching_value": "low"
     },
@@ -1196,6 +1521,31 @@
         {
           "en": "card",
           "ko": "카드"
+        }
+      ],
+      "slashes": [
+        "widened with excitement"
+      ],
+      "roles": [
+        {
+          "text": "Tommy’s eyes",
+          "role": "S"
+        },
+        {
+          "text": "widened",
+          "role": "V"
+        },
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "examined",
+          "role": "V"
+        },
+        {
+          "text": "the card",
+          "role": "O"
         }
       ],
       "steps": [],
@@ -1249,6 +1599,20 @@
         {
           "en": "uniform",
           "ko": "유니폼"
+        }
+      ],
+      "slashes": [
+        "In the card,",
+        "stood proudly"
+      ],
+      "roles": [
+        {
+          "text": "Grandpa Joe",
+          "role": "S"
+        },
+        {
+          "text": "stood",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1346,6 +1710,26 @@
           "ko": "알았다"
         }
       ],
+      "slashes": [
+        "the quiet person"
+      ],
+      "roles": [
+        {
+          "text": "He",
+          "role": "S"
+        },
+        {
+          "text": "was not",
+          "role": "V"
+        },
+        {
+          "text": "the quiet person",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "Tommy knew"
+      ],
       "steps": [],
       "teaching_value": "low"
     },
@@ -1393,6 +1777,20 @@
         {
           "en": "Joe",
           "ko": "조"
+        }
+      ],
+      "slashes": [
+        "this discovery,",
+        "inside the house"
+      ],
+      "roles": [
+        {
+          "text": "Tommy",
+          "role": "S"
+        },
+        {
+          "text": "rushed",
+          "role": "V"
         }
       ],
       "steps": [
@@ -1582,6 +1980,34 @@
         {
           "en": "curiosity",
           "ko": "호기심"
+        }
+      ],
+      "slashes": [
+        "Hey, Grandpa!",
+        "baseball card of you.",
+        "a baseball player?”",
+        "he asked,"
+      ],
+      "roles": [
+        {
+          "text": "I",
+          "role": "S"
+        },
+        {
+          "text": "found",
+          "role": "V"
+        },
+        {
+          "text": "this cool baseball card",
+          "role": "O"
+        },
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "asked",
+          "role": "V"
         }
       ],
       "steps": [],

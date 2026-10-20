@@ -581,14 +581,65 @@
       ],
       "slashes": [
         "Dennett argues",
-        "conceptual repertoire",
+        "one benefit",
+        "moral considerations",
         "repertoire is",
         "conversation-stoppers:",
+        "their value is",
         "to a close.",
         "rational creatures,",
         "ask for justification,",
         "is a trait",
         "served us well"
+      ],
+      "roles": [
+        {
+          "text": "Daniel Dennett",
+          "role": "S"
+        },
+        {
+          "text": "argues",
+          "role": "V"
+        },
+        {
+          "text": "one benefit",
+          "role": "S"
+        },
+        {
+          "text": "is … is … is",
+          "role": "V"
+        },
+        {
+          "text": "that they can serve as conversation-stoppers",
+          "role": "C"
+        },
+        {
+          "text": "their value",
+          "role": "S"
+        },
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "rational creatures",
+          "role": "C"
+        },
+        {
+          "text": "this",
+          "role": "S"
+        },
+        {
+          "text": "a trait",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that has served us well in many contexts"
       ]
     },
     {
@@ -1039,12 +1090,46 @@
       "slashes": [
         "as much a problem",
         "private deliberations",
+        "interpersonal ones.",
         "Dennett suggests",
         "it is useful",
         "squelchers”:",
         "items",
         "once introduced,",
         "further deliberation"
+      ],
+      "roles": [
+        {
+          "text": "This",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "a problem",
+          "role": "C"
+        },
+        {
+          "text": "Dennett",
+          "role": "S"
+        },
+        {
+          "text": "suggests",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "useful",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that, once introduced, stop any further deliberation in its tracks"
       ]
     },
     {
@@ -1423,6 +1508,48 @@
         "further justification:",
         "mustn’t be done,",
         "is tempting,"
+      ],
+      "roles": [
+        {
+          "text": "That would be morally wrong",
+          "role": "S"
+        },
+        {
+          "text": "would appear to work",
+          "role": "V"
+        },
+        {
+          "text": "the claim",
+          "role": "S"
+        },
+        {
+          "text": "is accepted",
+          "role": "V"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "no need or room",
+          "role": "S"
+        },
+        {
+          "text": "the action",
+          "role": "S"
+        },
+        {
+          "text": "mustn’t be done",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "tempting",
+          "role": "C"
+        }
       ]
     },
     {
@@ -1914,6 +2041,28 @@
         "do so endlessly,",
         "to a decision,",
         "and doubting,"
+      ],
+      "roles": [
+        {
+          "text": "The problem",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "we … we",
+          "role": "S"
+        },
+        {
+          "text": "can always sensibly respond",
+          "role": "V"
+        },
+        {
+          "text": "can potentially do",
+          "role": "V"
+        }
       ]
     }
   ],

@@ -11,7 +11,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, finish)
 
 ID = "moeui-2024-03-22-multilingual-feelings"
@@ -47,7 +47,8 @@ sentences = [
                     g("can quite literally feel differently", "말 그대로 꽤 다르게 느낄 수 있다"),
                     g("about people, events or things", "사람, 사건, 사물에 대해"), g("when using one language", "한 언어를 쓸 때"),
                     g("versus another", "다른 언어에 비해")],
-        "slashes": ["seem extreme,", "feel differently", "events or things"],
+        "slashes": ["seem extreme,", "a multilingual", "feel differently", "events or things"],
+        "roles": [r("it", "S"), r("may seem", "V"), r("extreme", "C"), r("a multilingual", "S"), r("can quite literally feel differently", "V")],
         "steps": [
             sv("s1_sv", ["Though it may seem extreme", "a multilingual", "can quite literally feel differently", "people, events or things"],
                {"a multilingual": "S", "can quite literally feel differently": "V"},
@@ -76,6 +77,8 @@ sentences = [
         "id": 2, "text": S[1], "model_translation": KO[1], "teaching_value": "low",
         "glosses": [g("The likelihood", "가능성"), g("of being rattled", "당황할"), g("by curse words or taboo words", "욕이나 금기어에"),
                     g("changes", "달라진다"), g("across native and second languages", "모국어와 제2 언어에 따라")],
+        "slashes": ["The likelihood", "being rattled", "taboo words"],
+        "roles": [r("The likelihood", "S"), r("changes", "V")],
         "steps": [
             show("s2_example", "욕이나 금기어에 당황하는 정도도 모국어냐 제2 언어냐에 따라 달라진대요. 첫 문장의 예예요.",
                  highlight=["changes", "native and second languages"], button="다음 문장"),
@@ -87,7 +90,10 @@ sentences = [
                     g("but", "~도"), g("their bodies", "그들의 몸"), g("have different physiological reactions", "서로 다른 생리적 반응을 보인다"),
                     g("their minds", "그들의 생각"), g("make different emotionally driven decisions", "감정에 이끌린 서로 다른 판단을 한다"),
                     g("across languages", "언어마다")],
-        "slashes": ["multiple languages", "feeling different,", "physiological reactions", "driven decisions"],
+        "slashes": ["multiple languages", "not only report", "feeling different,", "their bodies have", "physiological reactions", "their minds make",
+                    "driven decisions"],
+        "roles": [r("Speakers", "S"), r("report", "V"), r("feeling different", "O"), r("their bodies", "S"), r("have", "V"),
+                  r("different physiological reactions", "O"), r("their minds", "S"), r("make", "V"), r("different emotionally driven decisions", "O")],
         "steps": [
             choice("s3_more",
                    "not only A but B예요. 말로만 다르다고 하는 게 아니라 무엇도 다르대요?",
@@ -103,6 +109,8 @@ sentences = [
         "id": 4, "text": S[3], "model_translation": KO[3], "teaching_value": "medium",
         "glosses": [g("The exact relationship", "정확한 관계"), g("between positive and negative emotions and language", "긍정·부정 감정과 언어 사이의"),
                     g("varies across people", "사람마다 다르다")],
+        "slashes": ["The exact relationship", "and language"],
+        "roles": [r("The exact relationship", "S"), r("varies", "V")],
         "steps": [
             show("s4_varies", "다만 어느 언어가 좋은 감정, 어느 언어가 나쁜 감정과 이어지는지는 사람마다 다르대요. 이제 그 예가 나와요.",
                  highlight=["varies across people"], button="다음 문장"),
@@ -114,7 +122,10 @@ sentences = [
                     g("because", "~ 때문에"), g("is associated with", "~와 관련되다"), g("freedom, opportunity, financial well-being", "자유, 기회, 경제적 풍요"),
                     g("escape from persecution", "박해에서 벗어남"), g("whereas", "반면에"), g("the native language", "모국어"),
                     g("poverty and hardship", "가난과 고난")],
-        "slashes": ["For some,", "positive connotations", "financial well-being", "persecution,"],
+        "slashes": ["For some,", "the second language carries", "positive connotations", "because it is associated with", "financial well-being",
+                    "persecution,", "the native language"],
+        "roles": [r("the second language", "S"), r("carries", "V"), r("more positive connotations", "O"), r("it", "S"),
+                  r("is associated … is associated", "V"), r("the native language", "S")],
         "steps": [
             show("s5_some", "어떤 사람에게는 제2 언어가 자유·기회 같은 좋은 느낌이고, 모국어는 가난·고난과 이어진대요.",
                  panel=board([("+ freedom, opportunity", "자유·기회")], [("− poverty, hardship", "가난·고난")], fresh=("+ freedom, opportunity", "− poverty, hardship")),
@@ -127,7 +138,9 @@ sentences = [
                     g("is associated with", "~와 관련되다"), g("post-immigration challenges", "이민 후의 어려움"), g("discrimination", "차별"),
                     g("lack of close relationships", "가까운 관계가 없음"), g("whereas", "반면에"), g("the native language", "모국어"),
                     g("family, friends and parental love", "가족, 친구, 부모의 사랑")],
-        "slashes": ["For others,", "is true―", "post-immigration challenges,", "close relationships,"],
+        "slashes": ["For others,", "is true―", "the second language", "post-immigration challenges,", "close relationships,", "the native language"],
+        "roles": [r("the opposite", "S"), r("is", "V"), r("true", "C"), r("the second language", "S"), r("is associated … is associated", "V"),
+                  r("the native language", "S")],
         "steps": [
             choice("s6_opposite",
                    "For others, the opposite is true예요. 다른 사람들에게는 어떻대요?",
@@ -147,6 +160,8 @@ sentences = [
         "glosses": [g("And many are somewhere in between", "그리고 많은 사람은 그 사이 어딘가에 있다"),
                     g("having a mix of positive and negative experiences", "좋고 나쁜 경험이 섞여 있으면서"),
                     g("associated with each language", "각 언어와 관련된")],
+        "slashes": ["in between,", "negative experiences"],
+        "roles": [r("many", "S"), r("are", "V")],
         "steps": [
             show("s7_between", "많은 사람은 그 사이 어딘가, 언어마다 좋고 나쁜 경험이 섞여 있대요.", highlight=["somewhere in between"]),
             choice("s7_gist",

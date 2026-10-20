@@ -323,8 +323,52 @@
       ],
       "slashes": [
         "Brooke Harrington said",
+        "an E = mc²",
         "social science,",
-        "SD>PD,"
+        "SD>PD,",
+        "more frightening"
+      ],
+      "roles": [
+        {
+          "text": "Sociologist Brooke Harrington",
+          "role": "S"
+        },
+        {
+          "text": "said",
+          "role": "V"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        },
+        {
+          "text": "an E = mc²",
+          "role": "S"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "would be",
+          "role": "V"
+        },
+        {
+          "text": "SD>PD",
+          "role": "C"
+        },
+        {
+          "text": "social death",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "more frightening",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -445,6 +489,48 @@
           "en": "identity",
           "ko": "정체성"
         }
+      ],
+      "slashes": [
+        "This is why",
+        "deeply threatened",
+        "the ones"
+      ],
+      "roles": [
+        {
+          "text": "This",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "feel",
+          "role": "V"
+        },
+        {
+          "text": "deeply threatened",
+          "role": "C"
+        },
+        {
+          "text": "a new idea",
+          "role": "S"
+        },
+        {
+          "text": "challenges",
+          "role": "V"
+        },
+        {
+          "text": "the ones",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that have become part of our identity"
       ],
       "steps": [
         {
@@ -646,8 +732,26 @@
       ],
       "slashes": [
         "For some ideas,",
+        "identify us",
         "members of a group,",
         "as individuals;"
+      ],
+      "roles": [
+        {
+          "text": "we … we",
+          "role": "S"
+        },
+        {
+          "text": "don’t reason",
+          "role": "V"
+        },
+        {
+          "text": "reason",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that identify us as members of a group"
       ],
       "steps": [
         {
@@ -762,6 +866,38 @@
         {
           "en": "mortality",
           "ko": "죽음"
+        }
+      ],
+      "slashes": [
+        "seem trustworthy,",
+        "reputation management",
+        "trustworthy individual",
+        "most other concerns,"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "want",
+          "role": "V"
+        },
+        {
+          "text": "to seem trustworthy",
+          "role": "O"
+        },
+        {
+          "text": "reputation management",
+          "role": "S"
+        },
+        {
+          "text": "overrides",
+          "role": "V"
+        },
+        {
+          "text": "most other concerns",
+          "role": "O"
         }
       ],
       "steps": [
@@ -967,6 +1103,20 @@
           "ko": "비이성적인"
         }
       ],
+      "roles": [
+        {
+          "text": "This",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "irrational",
+          "role": "C"
+        }
+      ],
       "steps": [
         {
           "id": "s5_not",
@@ -1060,6 +1210,38 @@
         {
           "en": "sentence",
           "ko": "선고"
+        }
+      ],
+      "slashes": [
+        "in this world",
+        "a lot of difficulty,",
+        "in the world",
+        "modern times"
+      ],
+      "roles": [
+        {
+          "text": "A human",
+          "role": "S"
+        },
+        {
+          "text": "faces",
+          "role": "V"
+        },
+        {
+          "text": "a lot of difficulty",
+          "role": "O"
+        },
+        {
+          "text": "being alone in the world",
+          "role": "S"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        },
+        {
+          "text": "a death sentence",
+          "role": "C"
         }
       ],
       "steps": [
@@ -1246,6 +1428,25 @@
         {
           "en": "oppose",
           "ko": "맞서다"
+        }
+      ],
+      "slashes": [
+        "an innate drive",
+        "join groups,",
+        "those groups,"
+      ],
+      "roles": [
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "carry",
+          "role": "V"
+        },
+        {
+          "text": "an innate drive",
+          "role": "O"
         }
       ],
       "steps": [
@@ -1452,9 +1653,41 @@
       "slashes": [
         "identify them,",
         "favoring us;",
+        "so much so that",
+        "given a choice",
         "groups a lot",
         "much less",
         "than theirs,"
+      ],
+      "roles": [
+        {
+          "text": "you … you … you",
+          "role": "S"
+        },
+        {
+          "text": "can identify",
+          "role": "V"
+        },
+        {
+          "text": "them",
+          "role": "O"
+        },
+        {
+          "text": "start",
+          "role": "V"
+        },
+        {
+          "text": "favoring us",
+          "role": "O"
+        },
+        {
+          "text": "will pick",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that favors both groups a lot",
+        "that favors both much less but still favors yours more than theirs"
       ],
       "steps": [
         {

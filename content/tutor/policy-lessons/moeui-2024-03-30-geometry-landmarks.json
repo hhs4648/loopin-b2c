@@ -406,9 +406,40 @@
       ],
       "slashes": [
         "it has been found",
+        "rely exclusively",
         "geometric information",
+        "the location of an object",
         "a small enclosure,",
         "exclusive use of geometry"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "has been found",
+          "role": "V"
+        },
+        {
+          "text": "young children",
+          "role": "S"
+        },
+        {
+          "text": "rely",
+          "role": "V"
+        },
+        {
+          "text": "exclusive use of geometry",
+          "role": "S"
+        },
+        {
+          "text": "does not occur",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "hidden in a small enclosure"
       ],
       "steps": [
         {
@@ -617,9 +648,34 @@
         }
       ],
       "slashes": [
+        "Although,",
         "in a small room,",
+        "failed to incorporate information",
         "nongeometric features",
-        "a blue wall),"
+        "a blue wall),",
+        "both types of information"
+      ],
+      "roles": [
+        {
+          "text": "children",
+          "role": "S"
+        },
+        {
+          "text": "failed",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "used",
+          "role": "V"
+        },
+        {
+          "text": "both types of information",
+          "role": "O"
+        }
       ],
       "steps": [
         {
@@ -947,6 +1003,29 @@
           "ko": "가중된, 무게가 실린"
         }
       ],
+      "slashes": [
+        "These findings suggest",
+        "nongeometric information",
+        "may be combined"
+      ],
+      "roles": [
+        {
+          "text": "These findings",
+          "role": "S"
+        },
+        {
+          "text": "suggest",
+          "role": "V"
+        },
+        {
+          "text": "geometric and nongeometric information",
+          "role": "S"
+        },
+        {
+          "text": "may be combined",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s3_basic_sv",
@@ -1190,6 +1269,41 @@
         {
           "en": "information",
           "ko": "정보"
+        }
+      ],
+      "slashes": [
+        "may be ③invalid",
+        "more stable",
+        "across time"
+      ],
+      "roles": [
+        {
+          "text": "Geometry",
+          "role": "S"
+        },
+        {
+          "text": "may be",
+          "role": "V"
+        },
+        {
+          "text": "invalid",
+          "role": "C"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "more stable",
+          "role": "C"
+        },
+        {
+          "text": "nongeometric information",
+          "role": "S"
         }
       ],
       "steps": [
@@ -1482,9 +1596,34 @@
         }
       ],
       "slashes": [
-        "is combined with geometry",
-        "of nongeometric features;",
-        "may be more stable"
+        "landmark information",
+        "combined with geometry",
+        "may depend on",
+        "nongeometric features;",
+        "for example,",
+        "more stable"
+      ],
+      "roles": [
+        {
+          "text": "Whether or not nongeometric landmark information is combined with geometry",
+          "role": "S"
+        },
+        {
+          "text": "may depend on",
+          "role": "V"
+        },
+        {
+          "text": "larger features",
+          "role": "S"
+        },
+        {
+          "text": "may be",
+          "role": "V"
+        },
+        {
+          "text": "more stable",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -1785,11 +1924,31 @@
         }
       ],
       "slashes": [
+        "Further,",
         "mobile animals",
+        "more weight",
         "farther landmarks",
         "in estimation,",
         "Weber’s law",
+        "smaller distances",
         "more accurately"
+      ],
+      "roles": [
+        {
+          "text": "a variety of mobile animals",
+          "role": "S"
+        },
+        {
+          "text": "give",
+          "role": "V"
+        },
+        {
+          "text": "more weight",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "in which smaller distances would be coded more accurately than larger distances"
       ],
       "steps": [
         {

@@ -1855,6 +1855,9 @@ describe("끊어읽기", () => {
     // 「has … survived」처럼 떨어진 두 조각은 조각마다
     for (const l of allPolicyLessons()) for (const s of l.sentences) for (const r of s.roles ?? []) for (const part of r.text.split(" … ")) expect(s.text, `${l.id} ${s.id}`).toContain(part);
   });
+  it("[ ]로 묶는 수식어도 문장에 그대로 있다 (모든 레슨)", () => {
+    for (const l of allPolicyLessons()) for (const s of l.sentences) for (const m of s.modifiers ?? []) expect(s.text, `${l.id} ${s.id}`).toContain(m);
+  });
 });
 
 describe("칠판은 정답을 먼저 말하지 않는다 — 질문에 답하기 전엔 이번에 붙을 말(fresh)이 안 보인다", () => {

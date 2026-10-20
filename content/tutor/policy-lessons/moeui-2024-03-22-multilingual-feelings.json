@@ -262,8 +262,31 @@
       ],
       "slashes": [
         "seem extreme,",
+        "a multilingual",
         "feel differently",
         "events or things"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "may seem",
+          "role": "V"
+        },
+        {
+          "text": "extreme",
+          "role": "C"
+        },
+        {
+          "text": "a multilingual",
+          "role": "S"
+        },
+        {
+          "text": "can quite literally feel differently",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -443,6 +466,21 @@
         {
           "en": "languages",
           "ko": "언어들"
+        }
+      ],
+      "slashes": [
+        "The likelihood",
+        "being rattled",
+        "taboo words"
+      ],
+      "roles": [
+        {
+          "text": "The likelihood",
+          "role": "S"
+        },
+        {
+          "text": "changes",
+          "role": "V"
         }
       ],
       "steps": [
@@ -655,9 +693,50 @@
       ],
       "slashes": [
         "multiple languages",
+        "not only report",
         "feeling different,",
+        "their bodies have",
         "physiological reactions",
+        "their minds make",
         "driven decisions"
+      ],
+      "roles": [
+        {
+          "text": "Speakers",
+          "role": "S"
+        },
+        {
+          "text": "report",
+          "role": "V"
+        },
+        {
+          "text": "feeling different",
+          "role": "O"
+        },
+        {
+          "text": "their bodies",
+          "role": "S"
+        },
+        {
+          "text": "have",
+          "role": "V"
+        },
+        {
+          "text": "different physiological reactions",
+          "role": "O"
+        },
+        {
+          "text": "their minds",
+          "role": "S"
+        },
+        {
+          "text": "make",
+          "role": "V"
+        },
+        {
+          "text": "different emotionally driven decisions",
+          "role": "O"
+        }
       ],
       "steps": [
         {
@@ -788,6 +867,20 @@
         {
           "en": "across",
           "ko": "~에 걸쳐, ~마다"
+        }
+      ],
+      "slashes": [
+        "The exact relationship",
+        "and language"
+      ],
+      "roles": [
+        {
+          "text": "The exact relationship",
+          "role": "S"
+        },
+        {
+          "text": "varies",
+          "role": "V"
         }
       ],
       "steps": [
@@ -974,9 +1067,38 @@
       ],
       "slashes": [
         "For some,",
+        "the second language carries",
         "positive connotations",
+        "because it is associated with",
         "financial well-being",
-        "persecution,"
+        "persecution,",
+        "the native language"
+      ],
+      "roles": [
+        {
+          "text": "the second language",
+          "role": "S"
+        },
+        {
+          "text": "carries",
+          "role": "V"
+        },
+        {
+          "text": "more positive connotations",
+          "role": "O"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "is associated … is associated",
+          "role": "V"
+        },
+        {
+          "text": "the native language",
+          "role": "S"
+        }
       ],
       "steps": [
         {
@@ -1113,8 +1235,36 @@
       "slashes": [
         "For others,",
         "is true―",
+        "the second language",
         "post-immigration challenges,",
-        "close relationships,"
+        "close relationships,",
+        "the native language"
+      ],
+      "roles": [
+        {
+          "text": "the opposite",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "true",
+          "role": "C"
+        },
+        {
+          "text": "the second language",
+          "role": "S"
+        },
+        {
+          "text": "is associated … is associated",
+          "role": "V"
+        },
+        {
+          "text": "the native language",
+          "role": "S"
+        }
       ],
       "steps": [
         {
@@ -1307,6 +1457,20 @@
         {
           "en": "experiences",
           "ko": "경험"
+        }
+      ],
+      "slashes": [
+        "in between,",
+        "negative experiences"
+      ],
+      "roles": [
+        {
+          "text": "many",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
         }
       ],
       "steps": [

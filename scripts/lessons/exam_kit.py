@@ -157,6 +157,14 @@ def rows(*rs):
     return {"kind": "structure", "rows": out}
 
 
+def r(text, role):
+    """끊어읽기(「/ 끊어읽기」)를 켜면 같이 보이는 S·V·O·C — 문장 필드 roles. 메인 문장 S·V·O·C + 절 안의 S·V, 모두 같은 진하기,
+    주어·동사 찾기 전에도 보인다 (2026-10-20 선생님 전체 규칙). 떨어진 동사는 "has … survived"처럼 「 … 」로 잇는다.
+    같은 낱말이 여러 번 나오면 화면은 긴 덩어리부터 자리를 잡고 짧은 것은 아직 안 잡힌 첫 자리로 간다 — 앞쪽 같은 낱말을
+    더 긴 덩어리로 먼저 잡아 두거나, 둘 다 같은 역할이면 "we … we"로 차례로 잡는다"""
+    return {"text": text, "role": role}
+
+
 def sense(word, phrase, sense_, usage):
     return {"word": word, "phrase": phrase, "sense": sense_, "usage": usage}
 
@@ -300,6 +308,9 @@ def check(lesson, senses):
         for c in s.get("slashes", []):
             if c not in s["text"]:
                 errs.append(f"{s['id']}: 끊는 자리 {c} 없음")
+        for m_ in s.get("modifiers", []):
+            if m_ not in s["text"]:
+                errs.append(f"{s['id']}: 수식어 [ ] {m_} 없음")
         for r in s.get("roles", []):
             # 「has … survived」처럼 떨어진 조각은 조각마다
             if any(part not in s["text"] for part in r["text"].split(" … ")):

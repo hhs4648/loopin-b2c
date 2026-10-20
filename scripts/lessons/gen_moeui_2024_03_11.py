@@ -10,7 +10,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, tip, rows, sense, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, tip, rows, sense, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 
 ID = "moeui-2024-03-11-student-id-photo"
@@ -28,6 +28,8 @@ sentences = [
         "model_translation": "(남자) Rachel, 너 학생증 재발급받았다고 들었어.",
         "glosses": [g("Rachel", "레이철 · 여자 이름"), g("I heard", "~라고 들었다"), g("you got", "네가 ~하게 했다"),
                     g("your student ID card", "너의 학생증"), g("reissued", "재발급된")],
+        "slashes": ["Rachel,", "I heard"],
+        "roles": [r("I", "S"), r("heard", "V"), r("you", "S"), r("got", "V"), r("your student ID card", "O")],
         "steps": [
             choice("s1_what",
                    "Rachel에게 무슨 일이 있었대요?",
@@ -44,6 +46,8 @@ sentences = [
         "model_translation": "(여자) 응, 예전 걸 어디서 잃어버렸어. 그래서 학생 지원실에 가서 새로 받았어.",
         "glosses": [g("Yeah", "응"), g("I lost my old one", "예전 것을 잃어버렸다"), g("somewhere", "어딘가에서"), g("So", "그래서"),
                     g("I went to", "~에 갔다"), g("the student services office", "학생 지원실"), g("got a new one", "새것을 받았다")],
+        "slashes": ["Yeah,", "my old one", "somewhere.", "the student services office"],
+        "roles": [r("I … I", "S"), r("lost", "V"), r("my old one", "O"), r("went", "V"), r("got", "V"), r("a new one", "O")],
         "steps": [
             show("s2_office", "예전 학생증을 잃어버려서 학생 지원실(student services office)에 가서 새로 받았대요. 그 사무실에서 재발급을 해 준다는 거예요.",
                  highlight=["the student services office", "got a new one"], button="다음 문장",
@@ -55,6 +59,8 @@ sentences = [
         "model_translation": "(남자) 사실 나도 내 걸 잃어버려서 거기 가야 해. 새 학생증 만들려면 사진을 가져가야 해?",
         "glosses": [g("Actually", "사실"), g("I lost mine too", "나도 내 것을 잃어버렸다"), g("so", "그래서"), g("I need to go there", "거기 가야 한다"),
                     g("Do I need to bring", "내가 ~을 가져가야 하니"), g("my photo", "내 사진"), g("for a new ID card", "새 학생증을 위해")],
+        "slashes": ["Actually,", "mine too,", "go there.", "Do I need to bring", "my photo"],
+        "roles": [r("I … I … I", "S"), r("lost", "V"), r("mine", "O"), r("need to go", "V"), r("Do … need to bring", "V"), r("my photo", "O")],
         "steps": [
             choice("s3_q",
                    "남자의 마지막 질문은 무엇일까요?",

@@ -282,6 +282,32 @@
           "ko": "카드"
         }
       ],
+      "slashes": [
+        "Rachel,",
+        "I heard"
+      ],
+      "roles": [
+        {
+          "text": "I",
+          "role": "S"
+        },
+        {
+          "text": "heard",
+          "role": "V"
+        },
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "got",
+          "role": "V"
+        },
+        {
+          "text": "your student ID card",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s1_what",
@@ -402,6 +428,38 @@
         {
           "en": "office",
           "ko": "사무실"
+        }
+      ],
+      "slashes": [
+        "Yeah,",
+        "my old one",
+        "somewhere.",
+        "the student services office"
+      ],
+      "roles": [
+        {
+          "text": "I … I",
+          "role": "S"
+        },
+        {
+          "text": "lost",
+          "role": "V"
+        },
+        {
+          "text": "my old one",
+          "role": "O"
+        },
+        {
+          "text": "went",
+          "role": "V"
+        },
+        {
+          "text": "got",
+          "role": "V"
+        },
+        {
+          "text": "a new one",
+          "role": "O"
         }
       ],
       "steps": [
@@ -601,6 +659,39 @@
         {
           "en": "card",
           "ko": "카드"
+        }
+      ],
+      "slashes": [
+        "Actually,",
+        "mine too,",
+        "go there.",
+        "Do I need to bring",
+        "my photo"
+      ],
+      "roles": [
+        {
+          "text": "I … I … I",
+          "role": "S"
+        },
+        {
+          "text": "lost",
+          "role": "V"
+        },
+        {
+          "text": "mine",
+          "role": "O"
+        },
+        {
+          "text": "need to go",
+          "role": "V"
+        },
+        {
+          "text": "Do … need to bring",
+          "role": "V"
+        },
+        {
+          "text": "my photo",
+          "role": "O"
         }
       ],
       "steps": [

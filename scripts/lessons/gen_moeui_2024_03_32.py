@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 
 ID = "moeui-2024-03-32-altruists-no-choice"
@@ -58,6 +58,8 @@ sentences = [
                     g("altruistic acts", "이타적인 행동"), g("conforms to", "~에 따르다, ~와 일치하다"),
                     g("how most of us think", "우리 대부분이 생각하는 방식"), g("our responsibilities", "우리의 책임"),
                     g("toward others", "다른 사람들에 대한"), g("They", "그들"), g("insist", "주장하다")],
+        "slashes": ["The commonsense understanding", "altruistic acts", "conforms to", "most of us think"],
+        "roles": [r("The commonsense understanding", "S"), r("conforms to", "V"), r("most of us", "S"), r("think", "V")],
         "steps": [
             show("s1_passage", "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?",
                  button="네", before_read=True, show_passage=[BLANK], method=0),
@@ -90,7 +92,9 @@ sentences = [
                     g("how much of what we have", "우리가 가진 것 중 얼마나"), g("should be given away", "나눠 줘야 하는지"),
                     g("we are adults", "우리는 어른이다"), g("should have the right", "권리가 있어야 한다"),
                     g("to make such decisions", "그런 결정을 내릴"), g("for ourselves", "스스로")],
-        "slashes": ["get offended", "determines for us", "given away;", "the right"],
+        "slashes": ["get offended", "someone else or society", "determines for us", "what we have", "given away;", "we are adults", "the right"],
+        "roles": [r("We … we", "S"), r("tend to get offended", "V"), r("someone else or society", "S"), r("determines", "V"),
+                  r("how much of what we have should be given away", "O"), r("are", "V"), r("adults", "C"), r("should have", "V"), r("the right", "O")],
         "steps": [
             choice("s2_feel",
                    "다른 사람이나 사회가 우리 대신 얼마나 나눠 줄지 정하면, 우리는 어떻게 느낀대요?",
@@ -110,7 +114,9 @@ sentences = [
                     g("known for", "~로 알려진"), g("making the largest sacrifices", "가장 큰 희생을 하는 것"),
                     g("bringing about the greatest benefits", "가장 큰 이익을 가져다주는 것"), g("their recipients", "그들의 수혜자(도움받는 사람)"),
                     g("assert", "주장하다"), g("just the opposite", "정반대")],
-        "slashes": ["when interviewed,", "the largest sacrifices—", "recipients—"],
+        "slashes": ["Yet,", "when interviewed,", "altruists", "the largest sacrifices—", "recipients—"],
+        "roles": [r("altruists", "S"), r("assert", "V"), r("just the opposite", "O")],
+        "modifiers": ["known for making the largest sacrifices—and bringing about the greatest benefits to their recipients—"],
         "steps": [
             sv("s3_sv", ["Yet", "altruists", "making the largest sacrifices", "their recipients", "assert", "just the opposite"],
                {"altruists": "S", "assert": "V", "just the opposite": "O"},
@@ -135,6 +141,7 @@ sentences = [
     {
         "id": 4, "text": BLANK, "model_translation": KO[3], "teaching_value": "high",
         "glosses": [g("They", "그들"), g("insist", "주장하다"), g("they", "그들")],
+        "roles": [r("They … they", "S"), r("insist", "V")],
         "steps": [
             choice("s4_they",
                    "빈칸 문장의 They(그들)는 누구일까요?",
@@ -167,7 +174,11 @@ sentences = [
                     g("anything deserving of high praise", "큰 칭찬을 받을 만한 무언가"), g("as well as", "~뿐만 아니라"),
                     g("their assurance", "그들의 확신"), g("anyone in their shoes", "그들의 입장에 있는 누구라도"),
                     g("should have done exactly the same thing", "정확히 똑같이 했을 것이다")],
-        "slashes": ["Organ donors,", "in mortal danger", "remarkably consistent", "high praise", "assurance"],
+        "slashes": ["everyday citizens", "their own lives", "in mortal danger", "remarkably consistent", "explicit denials", "have done anything",
+                    "high praise", "as well as", "their assurance", "in their shoes"],
+        "roles": [r("Organ donors, and everyday citizens", "S"), r("are", "V"), r("remarkably consistent", "C"), r("they", "S"), r("have done", "V"),
+                  r("anyone", "S"), r("should have done", "V")],
+        "modifiers": ["who risk their own lives to save others in mortal danger"],
         "steps": [
             sv("s5_sv", ["Organ donors, and everyday citizens", "risk", "their own lives", "are", "remarkably consistent"],
                {"Organ donors, and everyday citizens": "S", "are": "V", "remarkably consistent": "C"},
@@ -196,7 +207,9 @@ sentences = [
                     g("have done no more than", "~ 이상은 하지 않았다, ~만큼만 했다"), g("all of us", "우리 모두"),
                     g("would be expected to do", "하도록 기대될"), g("lest we shirk", "우리가 회피하지 않도록"),
                     g("our basic moral obligation", "우리의 기본적인 도덕적 의무"), g("to humanity", "인류에 대한")],
-        "slashes": ["To be sure,", "someone is,", "likely to insist", "expected to do,"],
+        "slashes": ["To be sure,", "it seems", "someone is,", "likely to insist", "no more than", "expected to do,", "lest we shirk"],
+        "roles": [r("it", "S"), r("seems", "V"), r("someone", "S"), r("is", "V"), r("they … they", "S"), r("are likely to insist", "V"),
+                  r("have done", "V"), r("all of us", "S"), r("would be expected", "V"), r("we", "S"), r("shirk", "V")],
         "steps": [
             show("s6_more",
                  "더 이타적인 사람일수록, '우리 모두에게 기대되는 만큼만 했다'고 더 주장한대요. 역시 특별한 선택이 아니었다는 말이에요.",

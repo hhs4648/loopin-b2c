@@ -249,8 +249,27 @@
       ],
       "slashes": [
         "No doubt",
+        "students",
         "speakers of English",
         "language variances,"
+      ],
+      "roles": [
+        {
+          "text": "students",
+          "role": "S"
+        },
+        {
+          "text": "might encounter",
+          "role": "V"
+        },
+        {
+          "text": "language variances",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "collaborating with other speakers of English",
+        "which may interfere with intentionality"
       ],
       "steps": [
         {
@@ -402,8 +421,23 @@
       ],
       "slashes": [
         "such disparities,",
+        "Trimbur (2011)",
         "“translingual approach”",
+        "language varieties",
         "as barriers,"
+      ],
+      "roles": [
+        {
+          "text": "Horner, Lu, Royster, and Trimbur (2011)",
+          "role": "S"
+        },
+        {
+          "text": "call for",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "in which language varieties are not perceived as barriers, but as avenues for meaning making"
       ],
       "steps": [
         {
@@ -563,6 +597,30 @@
         {
           "en": "differences",
           "ko": "차이"
+        }
+      ],
+      "slashes": [
+        "②Similarly,",
+        "Global Englishes",
+        "found",
+        "other Englishes"
+      ],
+      "roles": [
+        {
+          "text": "Galloway and Rose (2015) study",
+          "role": "S"
+        },
+        {
+          "text": "found",
+          "role": "V"
+        },
+        {
+          "text": "exposure to other Englishes",
+          "role": "S"
+        },
+        {
+          "text": "helps",
+          "role": "V"
         }
       ],
       "steps": [
@@ -823,8 +881,19 @@
       ],
       "slashes": [
         "with students",
+        "to examine phrases, expressions,",
         "English language use",
         "communicative possibilities"
+      ],
+      "roles": [
+        {
+          "text": "Educators",
+          "role": "S"
+        },
+        {
+          "text": "have to work",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -959,7 +1028,28 @@
         }
       ],
       "slashes": [
-        "what isn’t true,"
+        "Committing an error",
+        "means unintentionally saying",
+        "what isn’t true,",
+        "should be avoided"
+      ],
+      "roles": [
+        {
+          "text": "Committing an error",
+          "role": "S"
+        },
+        {
+          "text": "means",
+          "role": "V"
+        },
+        {
+          "text": "any linguistic or perspective error",
+          "role": "S"
+        },
+        {
+          "text": "should be avoided",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -1291,10 +1381,32 @@
         }
       ],
       "slashes": [
-        "After all,",
-        "reading texts",
-        "whose Englishes",
+        "⑤After all,",
+        "constantly reading texts",
+        "listening to speakers",
+        "conform to",
         "considered standard"
+      ],
+      "roles": [
+        {
+          "text": "students",
+          "role": "S"
+        },
+        {
+          "text": "are constantly reading",
+          "role": "V"
+        },
+        {
+          "text": "texts",
+          "role": "O"
+        },
+        {
+          "text": "listening",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "whose Englishes do not necessarily conform to what is considered standard in their own communities"
       ],
       "steps": [
         {

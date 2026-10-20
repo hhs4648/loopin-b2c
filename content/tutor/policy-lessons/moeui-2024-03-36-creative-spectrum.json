@@ -363,11 +363,37 @@
         }
       ],
       "slashes": [
-        "creative pursuits",
+        "Different creative pursuits require",
         "flexible thinking,",
+        "in combination with",
         "the conscious ability",
+        "adjust it and shape it",
+        "analytical thinking.",
         "In music, for example,",
-        "creative spectrum"
+        "creative spectrum",
+        "improvisational artists,"
+      ],
+      "roles": [
+        {
+          "text": "Different creative pursuits",
+          "role": "S"
+        },
+        {
+          "text": "require",
+          "role": "V"
+        },
+        {
+          "text": "varying degrees of unconscious flexible thinking",
+          "role": "O"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "improvisational artists",
+          "role": "S"
+        }
       ],
       "steps": [
         {
@@ -682,9 +708,23 @@
       ],
       "slashes": [
         "the spectrum",
+        "are those",
         "complex forms,",
         "or concerto,",
-        "imagination"
+        "not just imagination"
+      ],
+      "roles": [
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "those",
+          "role": "S"
+        }
+      ],
+      "modifiers": [
+        "who compose complex forms, such as a symphony or concerto, that require not just imagination but also careful planning and exacting editing"
       ],
       "steps": [
         {
@@ -887,10 +927,38 @@
       ],
       "slashes": [
         "We know,",
+        "for example,",
         "through his letters",
         "the reports of others,",
+        "Mozart’s creations",
         "appear spontaneously,",
         "his consciousness,"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "know",
+          "role": "V"
+        },
+        {
+          "text": "Mozart’s creations",
+          "role": "S"
+        },
+        {
+          "text": "did not appear",
+          "role": "V"
+        },
+        {
+          "text": "the myths",
+          "role": "S"
+        },
+        {
+          "text": "portray",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -1152,6 +1220,20 @@
       "slashes": [
         "particularly talented",
         "their inhibitions"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "have to be",
+          "role": "V"
+        },
+        {
+          "text": "particularly talented",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -1427,9 +1509,38 @@
         }
       ],
       "slashes": [
+        "the process of learning",
         "the fundamentals of jazz",
+        "would require",
         "analytical thought,",
-        "that thinking style"
+        "that thinking style",
+        "as big a factor"
+      ],
+      "roles": [
+        {
+          "text": "the process",
+          "role": "S"
+        },
+        {
+          "text": "would require",
+          "role": "V"
+        },
+        {
+          "text": "a high degree of analytical thought",
+          "role": "O"
+        },
+        {
+          "text": "that thinking style",
+          "role": "S"
+        },
+        {
+          "text": "is not",
+          "role": "V"
+        },
+        {
+          "text": "as big a factor",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -1706,8 +1817,35 @@
       "slashes": [
         "Instead,",
         "hard hours",
+        "the ideas",
         "his unconscious,",
-        "a scientist does"
+        "a scientist does",
+        "producing a theory"
+      ],
+      "roles": [
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "spent",
+          "role": "V"
+        },
+        {
+          "text": "long, hard hours",
+          "role": "O"
+        },
+        {
+          "text": "a scientist",
+          "role": "S"
+        },
+        {
+          "text": "does",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that arose in his unconscious"
       ],
       "steps": [
         {
@@ -1875,6 +2013,33 @@
         {
           "en": "experimenting",
           "ko": "실험하기"
+        }
+      ],
+      "slashes": [
+        "own words:",
+        "in music...",
+        "all day long―"
+      ],
+      "roles": [
+        {
+          "text": "I … I … I",
+          "role": "S"
+        },
+        {
+          "text": "immerse",
+          "role": "V"
+        },
+        {
+          "text": "myself",
+          "role": "O"
+        },
+        {
+          "text": "think",
+          "role": "V"
+        },
+        {
+          "text": "like",
+          "role": "V"
         }
       ],
       "steps": [

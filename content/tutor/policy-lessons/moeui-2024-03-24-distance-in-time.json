@@ -346,6 +346,19 @@
           "ko": "공간"
         }
       ],
+      "slashes": [
+        "Distance in time"
+      ],
+      "roles": [
+        {
+          "text": "Distance in time",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        }
+      ],
       "steps": [
         {
           "id": "s1_like",
@@ -482,6 +495,27 @@
         {
           "en": "miles",
           "ko": "마일"
+        }
+      ],
+      "slashes": [
+        "People matter"
+      ],
+      "roles": [
+        {
+          "text": "People",
+          "role": "S"
+        },
+        {
+          "text": "matter",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "live",
+          "role": "V"
         }
       ],
       "steps": [
@@ -694,6 +728,24 @@
         {
           "en": "thousands",
           "ko": "수천"
+        }
+      ],
+      "slashes": [
+        "Likewise,",
+        "they matter"
+      ],
+      "roles": [
+        {
+          "text": "they … they",
+          "role": "S"
+        },
+        {
+          "text": "matter",
+          "role": "V"
+        },
+        {
+          "text": "live",
+          "role": "V"
         }
       ],
       "steps": [
@@ -999,8 +1051,23 @@
       ],
       "slashes": [
         "In both cases,",
+        "it’s easy",
         "for unreality,",
         "what we can see"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "easy",
+          "role": "C"
+        }
       ],
       "steps": [
         {
@@ -1235,8 +1302,31 @@
         }
       ],
       "slashes": [
-        "just as the world",
-        "country’s borders,"
+        "does not stop",
+        "country’s borders,",
+        "does it stop"
+      ],
+      "roles": [
+        {
+          "text": "the world",
+          "role": "S"
+        },
+        {
+          "text": "does not stop",
+          "role": "V"
+        },
+        {
+          "text": "does",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "stop",
+          "role": "V"
+        }
       ],
       "steps": [
         {
@@ -1513,6 +1603,20 @@
           "ko": "생각들"
         }
       ],
+      "roles": [
+        {
+          "text": "These ideas",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "common sense",
+          "role": "C"
+        }
+      ],
       "steps": [
         {
           "id": "s6_common",
@@ -1615,6 +1719,48 @@
           "en": "sit",
           "ko": "앉다"
         }
+      ],
+      "slashes": [
+        "proverb says,",
+        "grows great",
+        "plant trees"
+      ],
+      "roles": [
+        {
+          "text": "A popular proverb",
+          "role": "S"
+        },
+        {
+          "text": "says",
+          "role": "V"
+        },
+        {
+          "text": "A society",
+          "role": "S"
+        },
+        {
+          "text": "grows",
+          "role": "V"
+        },
+        {
+          "text": "great",
+          "role": "C"
+        },
+        {
+          "text": "old men",
+          "role": "S"
+        },
+        {
+          "text": "plant",
+          "role": "V"
+        },
+        {
+          "text": "trees",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "under whose shade they will never sit"
       ],
       "steps": [
         {
@@ -1853,6 +1999,46 @@
           "ko": "지금"
         }
       ],
+      "slashes": [
+        "radioactive waste,",
+        "we don’t say,",
+        "Who cares",
+        "poisons people"
+      ],
+      "roles": [
+        {
+          "text": "we … we",
+          "role": "S"
+        },
+        {
+          "text": "dispose of",
+          "role": "V"
+        },
+        {
+          "text": "don’t say",
+          "role": "V"
+        },
+        {
+          "text": "Who",
+          "role": "S"
+        },
+        {
+          "text": "cares",
+          "role": "V"
+        },
+        {
+          "text": "this",
+          "role": "S"
+        },
+        {
+          "text": "poisons",
+          "role": "V"
+        },
+        {
+          "text": "people",
+          "role": "O"
+        }
+      ],
       "steps": [
         {
           "id": "s8_waste",
@@ -1983,6 +2169,25 @@
           "en": "today",
           "ko": "오늘"
         }
+      ],
+      "slashes": [
+        "Similarly,",
+        "few of us",
+        "climate change or pollution",
+        "do so solely"
+      ],
+      "roles": [
+        {
+          "text": "few of us",
+          "role": "S"
+        },
+        {
+          "text": "do so",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "who care about climate change or pollution"
       ],
       "steps": [
         {
@@ -2307,10 +2512,54 @@
         }
       ],
       "slashes": [
-        "museums and parks and bridges",
+        "We build",
+        "and bridges",
         "for generations;",
+        "we invest",
         "scientific projects;",
+        "we preserve",
         "languages;"
+      ],
+      "roles": [
+        {
+          "text": "We … we … we … we … we",
+          "role": "S"
+        },
+        {
+          "text": "build",
+          "role": "V"
+        },
+        {
+          "text": "museums and parks and bridges",
+          "role": "O"
+        },
+        {
+          "text": "hope",
+          "role": "V"
+        },
+        {
+          "text": "invest",
+          "role": "V"
+        },
+        {
+          "text": "preserve",
+          "role": "V"
+        },
+        {
+          "text": "paintings, traditions, languages",
+          "role": "O"
+        },
+        {
+          "text": "protect",
+          "role": "V"
+        },
+        {
+          "text": "beautiful places",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that we hope will last for generations"
       ],
       "steps": [
         {
@@ -2433,6 +2682,33 @@
         {
           "en": "play",
           "ko": "작용 · in play = 작용하는"
+        }
+      ],
+      "slashes": [
+        "In many cases,",
+        "clear lines",
+        "the future―"
+      ],
+      "roles": [
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "don’t draw",
+          "role": "V"
+        },
+        {
+          "text": "clear lines",
+          "role": "O"
+        },
+        {
+          "text": "both",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
         }
       ],
       "steps": [

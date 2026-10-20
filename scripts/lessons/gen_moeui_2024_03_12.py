@@ -11,7 +11,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, tip, rows, sense, m, sv_step, add_basic, topic_svg, pick,  # noqa: E402
+from exam_kit import (g, r, choice, show, tip, rows, sense, m, sv_step, add_basic, topic_svg, pick,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 
 ID = "moeui-2024-03-12-driving-break"
@@ -30,6 +30,8 @@ sentences = [
         "glosses": [g("Honey", "여보, 자기"), g("you’ve been driving", "당신은 계속 운전해 왔다"), g("you", "당신은"),
                     g("’ve been driving", "계속 운전해 왔다 (= have been driving)"), g("’ve", "= have"), g("for over two hours", "두 시간 넘게"),
                     g("Why don’t we", "우리 ~하는 게 어때요"), g("take a break", "잠깐 쉬다")],
+        "slashes": ["Honey,", "been driving", "two hours.", "Why don’t we"],
+        "roles": [r("you", "S"), r("’ve been driving", "V"), r("we", "S"), r("don’t … take", "V"), r("a break", "O")],
         "steps": [
             choice("s1_who",
                    "지금 운전하고 있는 사람은 누구일까요?",
@@ -52,6 +54,8 @@ sentences = [
         "id": 2, "label": "남자의 대답", "text": S[1], "teaching_value": "medium",
         "model_translation": "(남자) 괜찮아요. 아직 그렇게 피곤하지 않아요.",
         "glosses": [g("It’s okay", "괜찮아요"), g("I’m not so tired", "그렇게 피곤하지 않아요"), g("yet", "아직")],
+        "slashes": ["It’s okay."],
+        "roles": [r("It", "S"), r("’s", "V"), r("okay", "C"), r("I", "S"), r("’m", "V"), r("tired", "C")],
         "steps": [
             show("s2_refuse", "남자는 괜찮다며 아직 그렇게 피곤하지 않대요. 쉬자는 제안을 한 번 거절했어요.",
                  highlight=["It’s okay", "not so tired"], button="다음 문장",
@@ -64,6 +68,8 @@ sentences = [
         "glosses": [g("Still", "그래도"), g("it’s better to", "~하는 게 더 낫다"), g("take a rest", "쉬다"), g("to take a rest", "쉬는 것"),
                     g("every two hours", "두 시간마다"),
                     g("after every two hours of driving", "두 시간 운전할 때마다")],
+        "slashes": ["Still,", "it’s better", "take a rest"],
+        "roles": [r("it", "S"), r("’s", "V"), r("better", "C")],
         "steps": [
             choice("s3_still",
                    "Still(그래도)로 시작해요. 여자는 마지막에 무엇을 말하고 있나요?",

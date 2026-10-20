@@ -12,7 +12,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, sc, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 
 ID = "moeui-2024-03-34-ao-green-light"
@@ -60,6 +60,9 @@ sentences = [
                     g("Rather than", "~하는 대신"), g("alter", "바꾸다"), g("the name", "이름"), g("to fit reality", "현실에 맞추려고"),
                     g("announced", "발표했다"), g("henceforth", "그 이후로"), g("go lights", "주행 신호등(초록 불)"),
                     g("corresponded to", "~에 부합했다"), g("the dominant meaning", "주된 의미")],
+        "slashes": ["a color word,", "ao,"],
+        "roles": [r("Japanese", "S"), r("used to have", "V"), r("a color word", "O")],
+        "modifiers": ["that spanned both green and blue"],
         "steps": [
             show("s1_passage", "빈칸은 마지막 문장에 있어요. 이 문장을 잠깐 볼까요?",
                  button="네", before_read=True, show_passage=[BLANK], method=0),
@@ -85,6 +88,8 @@ sentences = [
         "glosses": [g("In the modern language", "현대어에서는"), g("however", "하지만"), g("has come to be restricted", "한정되게 되었다"),
                     g("mostly", "주로"), g("blue shades", "파란 색조"), g("green", "초록"), g("is usually expressed", "보통 표현된다"),
                     g("by the word midori", "미도리라는 단어로"), g("midori", "미도리 · 일본어로 초록")],
+        "slashes": ["In the modern language,", "however,", "restricted mostly", "blue shades,", "is usually expressed"],
+        "roles": [r("ao", "S"), r("has come to be restricted", "V"), r("green", "S"), r("is usually expressed", "V")],
         "steps": [
             choice("s2_now",
                    "그런데 지금 ao는 주로 무슨 색을 가리킨대요?",
@@ -102,7 +107,9 @@ sentences = [
                     g("from the United States", "미국에서"), g("installed", "설치된"), g("in the 1930s", "1930년대에"),
                     g("they", "그것들(신호등)"), g("were", "~였다"), g("just as green", "똑같이 초록인"), g("as anywhere else", "다른 어느 곳과"),
                     g("anywhere else", "다른 어느 곳")],
-        "slashes": ["the United States", "in the 1930s,"],
+        "slashes": ["the first traffic lights", "were imported", "the United States", "in the 1930s,", "just as green"],
+        "roles": [r("the first traffic lights", "S"), r("were imported", "V"), r("installed", "V"), r("they", "S"), r("were", "V"),
+                  r("just as green", "C")],
         "steps": [
             sv("s3_sv", ["the first traffic lights", "were imported", "they", "were", "just as green"],
                {"they": "S", "were": "V", "just as green": "C"},
@@ -121,7 +128,8 @@ sentences = [
                     g("was called", "~라고 불렸다"), g("ao shingoo", "아오 신고 · 'ao 신호'"), g("perhaps because", "아마도 ~이기 때문에"),
                     g("the three primary colors", "삼원색"), g("on Japanese artists’ palettes", "일본 화가들의 팔레트에서"),
                     g("traditionally", "전통적으로"), g("aka", "아카 · 빨강"), g("kiiro", "키이로 · 노랑")],
-        "slashes": ["ao shingoo,", "artists’ palettes"],
+        "slashes": ["Nevertheless,", "in common parlance", "ao shingoo,", "perhaps because", "three primary colors", "artists’ palettes"],
+        "roles": [r("the go light", "S"), r("was called", "V"), r("ao shingoo", "C"), r("the three primary colors", "S"), r("are", "V")],
         "steps": [
             choice("s4_called",
                    "Nevertheless(그럼에도) — 초록 불을 사람들은 뭐라고 불렀대요?",
@@ -140,6 +148,8 @@ sentences = [
         "glosses": [g("The label ao", "ao라는 이름표"), g("for a green light", "초록 불에 붙인"), g("did not appear", "보이지 않았다"),
                     g("so out of the ordinary", "그리 이상한"), g("at first", "처음에는"), g("because of", "~ 때문에"),
                     g("the remaining associations", "남아 있는 연관성"), g("with greenness", "초록과의")],
+        "slashes": ["The label ao", "for a green light", "did not appear", "at first,", "the remaining associations"],
+        "roles": [r("The label ao", "S"), r("did not appear", "V"), r("so out of the ordinary", "C")],
         "steps": [
             choice("s5_first",
                    "처음엔 초록 불을 ao라고 불러도 왜 그리 이상하지 않았을까요?",
@@ -156,6 +166,8 @@ sentences = [
         "glosses": [g("But over time", "하지만 시간이 지나며"), g("the difference", "차이"), g("between", "~ 사이의"),
                     g("the green color", "초록색"), g("the dominant meaning of the word ao", "ao라는 단어의 주된 뜻"),
                     g("began to feel", "느껴지기 시작했다"), g("awkward", "어색한")],
+        "slashes": ["over time,", "the difference", "the green color", "the word ao"],
+        "roles": [r("the difference", "S"), r("began to feel", "V"), r("awkward", "C")],
         "steps": [
             sv("s6_sv", ["the difference", "the green color", "the dominant meaning of the word ao", "began to feel", "awkward"],
                {"the difference": "S", "began to feel": "V", "awkward": "C"},
@@ -181,6 +193,9 @@ sentences = [
                     g("might have opted for", "~을 택했을지도 모른다"), g("the solution", "해결책"),
                     g("simply changing", "간단히 바꾸는 것"), g("the official name of the go light", "주행 신호의 공식 이름"),
                     g("to midori", "midori로")],
+        "slashes": ["less assertive", "opted for the solution", "the official name"],
+        "roles": [r("Nations", "S"), r("might have opted for", "V")],
+        "modifiers": ["that are less assertive"],
         "steps": [
             choice("s7_other",
                    "덜 단호한(less assertive) 나라라면 이 어색함을 어떻게 풀었을 거래요?",
@@ -197,6 +212,7 @@ sentences = [
     {
         "id": 8, "text": S[7], "model_translation": KO[7], "teaching_value": "high",
         "glosses": [g("Not so", "그렇지 않다"), g("the Japanese", "일본(사람들)")],
+        "roles": [r("the Japanese", "S")],
         "steps": [
             choice("s8_not_so",
                    "Not so the Japanese는 무슨 뜻일까요?",
@@ -213,6 +229,9 @@ sentences = [
                     g("the Japanese government", "일본 정부"), g("announced", "발표했다"), g("in 1973", "1973년에"),
                     g("henceforth", "그 이후로"), g("go lights", "주행 신호등(초록 불)"), g("would be a color", "~한 색이 될 것이다"),
                     g("better corresponded to", "~에 더 잘 부합했다"), g("the dominant meaning of ao", "ao의 주된 뜻")],
+        "slashes": ["Rather than alter the name", "to fit reality,", "announced in 1973", "that ________:", "henceforth,", "would be a color"],
+        "roles": [r("the Japanese government", "S"), r("announced", "V"), r("go lights", "S"), r("would be", "V"), r("a color", "C")],
+        "modifiers": ["that better corresponded to the dominant meaning of ao"],
         "steps": [
             choice("s9_side",
                    "빈칸 문장은 Rather than(~하는 대신)으로 시작해요. 빈칸은 'alter the name to fit reality'와 같은 쪽일까요, 반대 쪽일까요?",

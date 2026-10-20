@@ -11,7 +11,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from exam_kit import (g, choice, show, sv, tip, groups, rows, sense, m, sv_step, add_basic, topic_svg,  # noqa: E402
+from exam_kit import (g, r, choice, show, sv, tip, groups, rows, sense, m, sv_step, add_basic, topic_svg,  # noqa: E402
                       base_lesson, exam_brief, review, finish)
 from order_tools import card, order_link  # noqa: E402
 
@@ -51,7 +51,10 @@ sentences = [
                     g("In music", "음악에서"), g("at one end of the creative spectrum", "창의성 스펙트럼의 한쪽 끝에"),
                     g("the creative spectrum", "창의성의 스펙트럼"), g("are", "있다"), g("improvisational artists", "즉흥 연주가들"),
                     g("such as jazz musicians", "재즈 음악가 같은")],
-        "slashes": ["creative pursuits", "flexible thinking,", "the conscious ability", "In music, for example,", "creative spectrum"],
+        "slashes": ["Different creative pursuits require", "flexible thinking,", "in combination with", "the conscious ability",
+                    "adjust it and shape it", "analytical thinking.", "In music, for example,", "creative spectrum", "improvisational artists,"],
+        "roles": [r("Different creative pursuits", "S"), r("require", "V"), r("varying degrees of unconscious flexible thinking", "O"), r("are", "V"),
+                  r("improvisational artists", "S")],
         "steps": [
             sv("g_sv", ["Different creative pursuits", "require", "varying degrees of unconscious flexible thinking",
                         "the creative spectrum", "are", "improvisational artists"],
@@ -95,7 +98,9 @@ sentences = [
                     g("complex forms", "복잡한 형식"), g("such as a symphony or concerto", "교향곡이나 협주곡 같은"),
                     g("require", "필요로 하다"), g("not just imagination", "상상력뿐 아니라"),
                     g("but also careful planning and exacting editing", "꼼꼼한 계획과 고된 편집도")],
-        "slashes": ["the spectrum", "complex forms,", "or concerto,", "imagination"],
+        "slashes": ["the spectrum", "are those", "complex forms,", "or concerto,", "not just imagination"],
+        "roles": [r("are", "V"), r("those", "S")],
+        "modifiers": ["who compose complex forms, such as a symphony or concerto, that require not just imagination but also careful planning and exacting editing"],
         "steps": [
             choice("a_before",
                    "(A)는 'On the other end of the spectrum(스펙트럼의 다른 끝에는)'으로 시작해요. 앞에는 무엇이 나와야 할까요?",
@@ -119,7 +124,9 @@ sentences = [
                     g("the reports of others", "다른 사람들의 기록"), g("even Mozart’s creations", "모차르트의 작품조차"),
                     g("did not appear spontaneously", "저절로(즉흥적으로) 나타나지 않았다"), g("wholly formed in his consciousness", "의식 속에서 완전히 만들어진 채로"),
                     g("as the myths about him portray", "그에 관한 전설이 그리듯")],
-        "slashes": ["We know,", "through his letters", "the reports of others,", "appear spontaneously,", "his consciousness,"],
+        "slashes": ["We know,", "for example,", "through his letters", "the reports of others,", "Mozart’s creations", "appear spontaneously,",
+                    "his consciousness,"],
+        "roles": [r("We", "S"), r("know", "V"), r("Mozart’s creations", "S"), r("did not appear", "V"), r("the myths", "S"), r("portray", "V")],
         "steps": [
             choice("a2_myth",
                    "모차르트의 작품은 전설(myths)이 그리는 것처럼 저절로 완성돼 나왔대요?",
@@ -145,6 +152,7 @@ sentences = [
                     g("lowering their inhibitions", "억제를 낮추는 것"), g("inhibitions", "억제, 거리낌"),
                     g("letting in", "받아들이는 것"), g("their unconsciously generated ideas", "무의식적으로 떠오른 생각들")],
         "slashes": ["particularly talented", "their inhibitions"],
+        "roles": [r("They", "S"), r("have to be", "V"), r("particularly talented", "C")],
         "steps": [
             choice("b_before",
                    "(B)는 'They have to be particularly talented at lowering their inhibitions …'로 시작해요. They는 누구일까요?",
@@ -163,7 +171,10 @@ sentences = [
                     g("would require", "필요로 할 것이다"), g("a high degree of analytical thought", "높은 수준의 분석적 생각"),
                     g("that thinking style", "그런 생각 방식"), g("is not as big a factor", "그만큼 큰 요소가 아니다"),
                     g("during the performance", "연주하는 동안")],
-        "slashes": ["the fundamentals of jazz", "analytical thought,", "that thinking style"],
+        "slashes": ["the process of learning", "the fundamentals of jazz", "would require", "analytical thought,", "that thinking style",
+                    "as big a factor"],
+        "roles": [r("the process", "S"), r("would require", "V"), r("a high degree of analytical thought", "O"), r("that thinking style", "S"),
+                  r("is not", "V"), r("as big a factor", "C")],
         "steps": [
             show("b2_perf", "재즈 기초를 배울 땐 분석적 생각이 많이 필요하지만, 연주하는 동안엔 그게 큰 요소가 아니래요. 재즈 쪽 이야기를 마무리해요.",
                  highlight=["although", "not as big a factor", "during the performance"],
@@ -183,7 +194,9 @@ sentences = [
                     g("analyzing and reworking", "분석하고 다시 다듬는 데"), g("the ideas", "생각들"),
                     g("that arose in his unconscious", "그의 무의식에서 떠오른"), g("much as a scientist does", "과학자가 그러듯이"),
                     g("when producing a theory", "이론을 만들 때"), g("from a germ of insight", "통찰의 싹에서")],
-        "slashes": ["Instead,", "hard hours", "his unconscious,", "a scientist does"],
+        "slashes": ["Instead,", "hard hours", "the ideas", "his unconscious,", "a scientist does", "producing a theory"],
+        "roles": [r("he", "S"), r("spent", "V"), r("long, hard hours", "O"), r("a scientist", "S"), r("does", "V")],
+        "modifiers": ["that arose in his unconscious"],
         "steps": [
             choice("c_before",
                    "(C)는 'Instead, he spent long, hard hours analyzing …'으로 시작해요. he와 Instead(대신)가 받을 말은 무엇일까요?",
@@ -207,6 +220,8 @@ sentences = [
         "glosses": [g("In Mozart’s own words", "모차르트 자신의 말로"), g("I immerse myself in music", "나는 음악에 몰두한다"),
                     g("I think about it all day long", "나는 하루 종일 그것을 생각한다"), g("I like experimenting", "나는 실험하기를 좋아한다"),
                     g("studying", "공부하기"), g("reflecting", "곰곰이 생각하기")],
+        "slashes": ["own words:", "in music...", "all day long―"],
+        "roles": [r("I … I … I", "S"), r("immerse", "V"), r("myself", "O"), r("think", "V"), r("like", "V")],
         "steps": [
             order_link(
                 card("given", "주어진 글", last=("… at one end of the creative spectrum are improvisational artists, such as jazz musicians",
