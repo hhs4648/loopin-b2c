@@ -12,5 +12,5 @@ Visual source: KakaoTalk prototypes `학습첫화면_대답버튼.html` (classro
 - Two screens: **classroom chat** (character + one teacher bubble + last student bubble + pill quick replies) and **sentence study** (huge English line + small teacher bubble; board drawer for maps and pictures).
 - Do not build a long chat transcript. One current teacher line, one last student line.
 - `buttons` from the session view render as the pink outline pills. The input bar (text + mic + send) appears **only on `translate` steps** — the lesson is answered with buttons.
-- Product name is **다정쌤**, not 상냥한 선생님. Keep the prototype look; swap the label.
+- Teacher character label is **다정쌤**, not 상냥한 선생님. The product/app name is **Loopin**. Keep the prototype look; swap the label.
 - Do not import haksup UI.

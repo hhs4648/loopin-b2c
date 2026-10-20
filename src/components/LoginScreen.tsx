@@ -11,8 +11,8 @@ type Props = {
 };
 
 const BUTTONS: { provider: SocialProvider; label: string; className: string; mark: () => ReactNode }[] = [
-  { provider: "google", label: "Google로 계속하기", className: "google", mark: GoogleMark },
   { provider: "kakao", label: "카카오로 계속하기", className: "kakao", mark: KakaoMark },
+  { provider: "google", label: "Google로 계속하기", className: "google", mark: GoogleMark },
   { provider: "apple", label: "Apple로 계속하기", className: "apple", mark: AppleMark },
 ];
 
@@ -35,7 +35,7 @@ export function LoginScreen({ onSkip }: Props) {
   return (
     <div className="stage-fill login">
       <div className="login-hero">
-        <p className="login-kicker">다정쌤</p>
+        <p className="login-kicker">Loopin</p>
         <h1>안녕하세요</h1>
         <p className="login-say">기록을 남기려면 로그인하면 돼요.</p>
         <div className="login-mascot">

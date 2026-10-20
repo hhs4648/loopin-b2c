@@ -4,9 +4,9 @@ globs: docs/tutor/**,content/tutor/**,scripts/lessons/**,src/tutor/**
 alwaysApply: true
 ---
 
-# 다정쌤
+# Loopin 수업 (다정쌤)
 
-Source of truth: `CLAUDE.md` and `docs/tutor/policy/AUTHORING_RULES.md` (dated feedback at the top first).
+Product is **Loopin**; **다정쌤** is the teacher character. Source of truth: `CLAUDE.md` and `docs/tutor/policy/AUTHORING_RULES.md` (dated feedback at the top first).
 
 **Never**
 

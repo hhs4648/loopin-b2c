@@ -62,7 +62,7 @@ export function AuthCallback({ onDone, onBack }: Props) {
   return (
     <div className="stage-fill login">
       <div className="login-hero">
-        <p className="login-kicker">다정쌤</p>
+        <p className="login-kicker">Loopin</p>
         <h1>{failed ? "로그인을 마치지 못했어요" : "로그인 중이에요"}</h1>
         <p className="login-say">{failed ?? "잠시만 기다려 주세요."}</p>
       </div>

@@ -1,3 +1,4 @@
+- [제품 이름 Loopin](product-loopin-b2c.md) — 앱·제품은 Loopin B2C, 다정쌤은 선생님 캐릭터, haksup과 별개
 - [Teaching Policy 방향](teaching-policy-direction.md) — 새 policy가 공식, 예전 엔진은 나중에 폐기, LLM 최소화, UX/UI·말투 유지
 - [21번 단순화 피드백](q21-simplify-feedback.md) — 너무 길다 → 수능 고난도 유지, 한 지문을 짧은 회차 여러 개로 쪼갠다
 - [단위 구조](unit-structure.md) — (보관됨, 안 씀) wip/unit-structure 브랜치

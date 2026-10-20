@@ -6,7 +6,7 @@ This repo is **Loopin B2C**, the real Loopin product. Apps named haksup are a di
 
 ## What the app is
 
-다정쌤 is a Korean-language tutor for **수능/모의고사 English reading**. Each lesson is one high-wrong-rate exam question, taught with that question type's solving method. Students answer with buttons; free text only appears in `translate` steps, graded by rules (regex `need`/`wrong`), never by an LLM.
+**Loopin** (this B2C repo) is a Korean-language tutor for **수능/모의고사 English reading**. **다정쌤** is the teacher character, not the product name. Each lesson is one high-wrong-rate exam question, taught with that question type's solving method. Students answer with buttons; free text only appears in `translate` steps, graded by rules (regex `need`/`wrong`), never by an LLM.
 
 **No LLM is called during a lesson.** Teacher lines are generated ahead of time from each step's `brief` and stored as JSON (`npm run policy:copy check|prompt|stamp`).
 
