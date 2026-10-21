@@ -54,9 +54,18 @@ export type CounselAnswers = {
   minutes: Minutes;
   /** 수능 기출을 모의고사보다 먼저 */
   suneungFirst?: boolean;
-  /** 3점 문제는 빼고 2점부터 — 등급이 낮은 학생 */
+  /** 3점 문제는 빼고 2점부터 — 등급이 낮은 학생 (첫 상담: 5등급 이하면 저절로, 2026-10-21 선생님) */
   skipThree?: boolean;
+  /** 학년 (첫 상담에서 묻는다) */
+  year?: SchoolYear;
+  /** 기출 순서 — 최근 기출부터(기본) / 이전 기출부터 */
+  order?: "recent" | "old";
+  /** 기출 범위 — 평가원(6·9월·수능)만 / 교육청(3·5·7·10월)까지(기본) */
+  scope?: "평가원" | "all";
 };
+
+export const SCHOOL_YEARS = ["n수", "고3", "고2", "고1", "중학생"] as const;
+export type SchoolYear = (typeof SCHOOL_YEARS)[number];
 
 /** 공부 시간 → 하루에 10분 모의고사 몇 회 (분석·단어까지 한 회에 30분쯤 잡는다) */
 export const MOCKS_PER_DAY: Record<Minutes, number> = { 15: 1, 30: 1, 60: 2 };
@@ -138,18 +147,44 @@ export function examTier(exam: { held: string; body: string } | null, suneungFir
   return [3, 6, 9].includes(month) ? 0 : 2;
 }
 
-/** 기본 코스 — 순위대로, 같은 순위 안에서는 최근 시험부터 ((1) 다음 (2)). skipThree면 2점 문제만 */
-export function defaultCourse(suneungFirst = false, skipThree = false): string[] {
-  return tenMinMocks(skipThree ? "2pt" : "all")
-    .map((m, i) => ({ m, i, tier: examTier(examOfMock(m.id), suneungFirst) }))
+/**
+ * 기본 코스 — 순위대로, 같은 순위 안에서는 최근 시험부터. skipThree면 2점 문제만.
+ * 첫 상담의 답(2026-10-21 선생님): order "old"면 이전 기출부터, scope "평가원"이면 평가원 기출(6·9월·수능)만 —
+ * 평가원 기출이 아직 하나도 없으면 범위를 넓혀 다 넣는다 (코스가 비지 않게)
+ */
+export function defaultCourse(opts: Pick<CounselAnswers, "suneungFirst" | "skipThree" | "order" | "scope"> = {}): string[] {
+  const all = tenMinMocks(opts.skipThree ? "2pt" : "all");
+  const inScope = opts.scope === "평가원" ? all.filter((m) => examOfMock(m.id)?.body === "평가원") : all;
+  const old = opts.order === "old";
+  return (inScope.length ? inScope : all)
+    // tenMinMocks는 최근 시험부터 — 이전 기출부터면 거꾸로
+    .map((m, i, arr) => ({ m, i: old ? arr.length - 1 - i : i, tier: examTier(examOfMock(m.id), !!opts.suneungFirst) }))
     .sort((a, b) => a.tier - b.tier || a.i - b.i)
     .map((x) => x.m.id);
+}
+
+/** 평가원 기출(6·9월·수능)로 짠 10분 모의고사가 하나라도 있나 — 없으면 「평가원만」을 골라도 교육청까지 넣는다 */
+export function hasPyeongwonCourse(skipThree = false): boolean {
+  return tenMinMocks(skipThree ? "2pt" : "all").some((m) => examOfMock(m.id)?.body === "평가원");
+}
+
+/** 코스 첫 시험의 이름 — 「2026학년도 6월 모의평가」. 첫 상담 끝에 「… 중 오답률이 가장 높았던 문제부터」 */
+export function examTitleOfMock(mockId: string | null | undefined): string | null {
+  if (!mockId) return null;
+  const cid = mockId.replace(TEN_MIN_PREFIX, "").replace(/(-2pt)?(-q\d+)?$/, "");
+  return allCollections().find((c) => c.id === cid)?.title ?? null;
+}
+
+/** 앱에 있는 기출의 가장 최근·가장 이전 연도 — 「최근 기출(2026)부터 / 이전 기출(2022)부터」 */
+export function examYearRange(): { newest: number; oldest: number } | null {
+  const years = allCollections().filter((c) => c.exam).map((c) => Number(c.exam!.held.slice(0, 4)));
+  return years.length ? { newest: Math.max(...years), oldest: Math.min(...years) } : null;
 }
 
 /** 상담 답을 기록하고 코스를 짠다 */
 export function buildPlan(answers: CounselAnswers, fromRecords: string[] = []): CounselPlan {
   const focus = [...new Set([...answers.weak, ...fromRecords])];
-  return { version: 2, at: new Date().toISOString(), answers, focus, course: defaultCourse(!!answers.suneungFirst, !!answers.skipThree) };
+  return { version: 2, at: new Date().toISOString(), answers, focus, course: defaultCourse(answers) };
 }
 
 /* ── 첫 방문 — 10분 시험보다 분석을 먼저 경험하게 (2026-10-20 선생님: 앱의 강점은 분석) ── */
@@ -382,7 +417,7 @@ export function loadPlan(): CounselPlan | null {
     // 예전(v1, 문제 낱개 계획)은 버린다 — 다시 상담하면 코스로 짠다
     if (!parsed || parsed.version !== 2 || !Array.isArray(parsed.course)) return null;
     // 10분 모의고사 id가 바뀌었거나(예: (1)(2)로 나뉨) 시험이 늘었으면 상담 답은 두고 코스만 다시 짠다
-    const fresh = defaultCourse(!!parsed.answers?.suneungFirst, !!parsed.answers?.skipThree);
+    const fresh = defaultCourse(parsed.answers ?? {});
     if (parsed.course.length !== fresh.length || parsed.course.some((id) => !fresh.includes(id))) return { ...parsed, course: fresh };
     return parsed;
   } catch {

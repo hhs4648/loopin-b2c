@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { VOCAB_PREFIX, buildPlan, courseProgress, courseStatus, examTier, gradeOfScore, levelOfGrade, markVocabSlot, minutesPerItem, nextMockOf, savePlan, weakFromMini, withPlanMinutes, type CounselAnswers } from "./counsel";
+import { VOCAB_PREFIX, buildPlan, courseProgress, courseStatus, defaultCourse, examTier, examTitleOfMock, hasPyeongwonCourse, gradeOfScore, levelOfGrade, markVocabSlot, minutesPerItem, nextMockOf, savePlan, weakFromMini, withPlanMinutes, type CounselAnswers } from "./counsel";
 import { getMiniMock, saveAttempt } from "./mini";
-import { tenMinMocks } from "./tenmin";
+import { examOfMock, tenMinMocks } from "./tenmin";
 
 /* 노드에는 localStorage가 없다 — 미니 모의고사 기록이 쓰는 세 함수만 흉내 낸다 */
 const store = new Map<string, string>();
@@ -142,5 +142,32 @@ describe("상담실 — 코스 (10분 모의고사 순서)", () => {
     expect(wrongItems().map((x) => x.lesson)).not.toContain(it0.lesson);
     // 세 회마다 끼던 복습 칸은 없다
     expect(courseStatus(plan).some((x) => x.review)).toBe(false);
+  });
+});
+
+describe("첫 상담 — 기출 순서·범위 (2026-10-21 선생님)", () => {
+  it("이전 기출부터면 가장 오래된 시험이 먼저, 최근 기출부터면 가장 최근 시험이 먼저", () => {
+    const held = (id: string) => examOfMock(id)!.held;
+    const recent = defaultCourse({ order: "recent" });
+    const old = defaultCourse({ order: "old" });
+    expect(new Set(recent)).toEqual(new Set(old));
+    // 같은 순위(3·6·9월·수능) 안에서 최근 / 이전
+    expect(held(old[0]!) <= held(recent[0]!)).toBe(true);
+    expect(held(old[0]!).slice(0, 4)).toBe("2022");
+  });
+
+  it("평가원만이면 평가원 기출(6·9월·수능)만 — 평가원 묶음이 아직 없으면 교육청까지 다 넣는다(코스가 비지 않게)", () => {
+    const only = defaultCourse({ scope: "평가원" });
+    expect(only.length).toBeGreaterThan(0);
+    if (hasPyeongwonCourse()) expect(only.every((id) => examOfMock(id)?.body === "평가원")).toBe(true);
+    else expect(only).toEqual(defaultCourse({ scope: "all" }));
+  });
+
+  it("코스 첫 시험의 이름을 말할 수 있다", () => {
+    expect(examTitleOfMock(defaultCourse()[0])).toMatch(/모의/);
+  });
+
+  it("2점부터면 2점 문제 묶음으로 짠다", () => {
+    expect(defaultCourse({ skipThree: true }).every((id) => id.endsWith("-2pt"))).toBe(true);
   });
 });

@@ -4,6 +4,7 @@ import { ClassroomChat } from "./components/ClassroomChat";
 import { LessonList } from "./components/LessonList";
 import { HomeVillage } from "./components/HomeVillage";
 import { CounselRoom } from "./components/CounselRoom";
+import { SignupWelcome } from "./components/SignupWelcome";
 import { ProgressBoard } from "./components/ProgressBoard";
 import { PracticeRoom } from "./components/PracticeRoom";
 import { WrongBook } from "./components/WrongBook";
@@ -119,6 +120,8 @@ function ReadingApp() {
   const [home, setHome] = useState(true);
   /** 상담실에 있나 */
   const [counsel, setCounsel] = useState(false);
+  /** 온보딩 — 처음 가입한 학생(코스가 없는 학생)에게 다정쌤 소개 + 학년·등급·기출 묻기 (2026-10-21 선생님) */
+  const [welcome, setWelcome] = useState(false);
   /** 「기록 지키기」(이메일 붙이기) 화면에 있나 */
   const [account, setAccount] = useState(false);
   /** 로그인. 지문·세트·미니 링크로 들어온 경우는 건너뛴다 */
@@ -164,15 +167,16 @@ function ReadingApp() {
     });
   }, [authCallback]);
   /*
-    가입하고 들어오면 바로 상담실 — 계획이 없는 학생은 다정쌤과 이야기해 코스를 짜고 그 자리에서 첫 문제를 시작한다
-    (2026-10-20 선생님). 지문·미니 링크로 들어온 경우는 그대로 둔다.
+    가입하고 들어오면 온보딩 — 코스가 없는 학생은 다정쌤 소개를 듣고 학년·등급·기출을 골라 코스를 짠 뒤
+    그 자리에서 첫 문제를 예시로 본다 (2026-10-20·21 선생님). 상담실은 홈에서 따로 들어간다.
+    지문·미니 링크로 들어온 경우는 그대로 둔다.
   */
   const [autoCounsel, setAutoCounsel] = useState(false);
   useEffect(() => {
     if (autoCounsel || !passedLogin || !pulled || started) return;
     if (directLesson || directSet || shareLesson || onlyMini) return;
     setAutoCounsel(true);
-    if (!loadPlan()) setCounsel(true);
+    if (!loadPlan()) setWelcome(true);
   }, [autoCounsel, passedLogin, pulled, started, directLesson, directSet, shareLesson, onlyMini]);
 
   const session = started?.session ?? null;
@@ -521,6 +525,27 @@ function ReadingApp() {
             onBack={() => setAccount(false)}
             // 로그인해서 서버 기록과 합쳐 로컬이 바뀌었으면 홈·목록·단어장을 다시 그린다
             onSynced={(changed) => changed && setCloudGen((n) => n + 1)}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if ((!started || !view) && welcome) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <SignupWelcome
+            learnerName={loadLearnerName()}
+            // 예시 문제는 풀기가 아니라 **바로 분석** — 코스 첫 시험의 오답률 1위 (홈의 첫 방문 길과 같다, 2026-10-21 선생님)
+            onStartExample={() => {
+              setWelcome(false);
+              const set = onboardingSet(loadPlan());
+              if (!set) return;
+              setOnboarding(true);
+              setHome(false);
+              startSet(set, true);
+            }}
           />
         </div>
       </div>
