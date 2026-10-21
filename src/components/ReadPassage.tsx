@@ -223,7 +223,7 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
               onPick={p.pickable ? onSend : null}
               picked={p.picked}
               right={p.right}
-              onPlay={(t) => speak(t)}
+              // 시간 재서 푸는 화면엔 문장 듣기(▶)를 두지 않는다 (2026-10-21 선생님)
               mark={{ item: course.item, marks, overlay }}
             />
           </MarkArea>
@@ -237,7 +237,7 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
             onPick={p.pickable ? onSend : null}
             picked={p.picked}
             right={p.right}
-            onPlay={(t) => speak(t)}
+            // 지문 한눈에 미리보기에도 문장 듣기(▶)를 두지 않는다 (2026-10-21 선생님)
           />
         ) : null}
 
