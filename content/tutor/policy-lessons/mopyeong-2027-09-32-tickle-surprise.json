@@ -1,0 +1,2086 @@
+{
+  "id": "mopyeong-2027-09-32-tickle-surprise",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 9월 모의평가(2027학년도, 한국교육과정평가원) 영어 32번 (빈칸 추론, 2점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 같은 말 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-tickle-surprise.svg",
+      "alt": "칠판: Tickle yourself(스스로 간지럽히기) vs Tickled by others(남이 간지럽히기)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "스스로 간지럽히면 왜 별로 안 간지러울까요? 이번 글은 우리 감각이 어떤 자극에 크게 반응하는지 이야기해요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+    "underline": "________",
+    "sentence": 8,
+    "analysis_first": true,
+    "wrong_rate": 61,
+    "wrong_rank": 2,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "cautious",
+        "ko": "조심하는"
+      },
+      {
+        "en": "acting immediately",
+        "ko": "즉각적으로 행동하는 것"
+      },
+      {
+        "en": "immediately",
+        "ko": "즉각적으로"
+      },
+      {
+        "en": "sensitive",
+        "ko": "민감한"
+      },
+      {
+        "en": "others’ reactions",
+        "ko": "다른 사람들의 반응"
+      },
+      {
+        "en": "ability to focus",
+        "ko": "집중하는 능력"
+      },
+      {
+        "en": "ability",
+        "ko": "능력"
+      },
+      {
+        "en": "focus",
+        "ko": "집중하다"
+      },
+      {
+        "en": "adapting to changes",
+        "ko": "변화에 적응하는 것"
+      },
+      {
+        "en": "adapting",
+        "ko": "적응하는 것"
+      },
+      {
+        "en": "anticipating",
+        "ko": "예상하는 것"
+      },
+      {
+        "en": "stimuli",
+        "ko": "자극"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "more cautious of acting immediately",
+        "keywords": [
+          "cautious",
+          "acting immediately"
+        ],
+        "ko": "즉각적으로 행동하는 것에 더 조심하는"
+      },
+      {
+        "id": "2",
+        "label": "less sensitive to others’ reactions",
+        "keywords": [
+          "less sensitive",
+          "others’ reactions"
+        ],
+        "ko": "다른 사람들의 반응에 덜 민감한"
+      },
+      {
+        "id": "3",
+        "label": "stronger in their ability to focus",
+        "keywords": [
+          "ability to focus"
+        ],
+        "ko": "자신의 집중하는 능력에서 더 강한"
+      },
+      {
+        "id": "4",
+        "label": "slower in adapting to changes",
+        "keywords": [
+          "slower",
+          "adapting"
+        ],
+        "ko": "변화에 적응하는 데에 더 느린"
+      },
+      {
+        "id": "5",
+        "label": "better at anticipating stimuli",
+        "keywords": [
+          "anticipating",
+          "stimuli"
+        ],
+        "ko": "자극을 더 잘 예상하는",
+        "correct": true
+      }
+    ],
+    "brief": {
+      "ask": "빈칸은 어른을 놀라게 하기 어려운 이유, 스스로 간지럽힐 때와 같은 쪽이에요. 이 말을 바꿔 쓴 보기를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 스스로 간지럽힐 때처럼, 무엇이 올지 미리 알면 덜 놀라요. 어른은 아이보다 자극을 더 잘 예상해서(better at anticipating stimuli) 놀라게 하기가 더 어려워요.",
+      "final_wrong": "정답은 ⑤ better at anticipating stimuli(자극을 더 잘 예상하는)예요. 어른은 무엇이 올지 더 잘 알아서 놀라게 하기가 더 어려워요.",
+      "option_feedback": {
+        "1": "cautious of acting(행동하는 것에 조심하는)은 글에 없는 이야기예요. 글은 행동이 아니라 자극을 느끼는 이야기예요.",
+        "2": "less·others·reactions는 글에 나온 말이라 헷갈리기 쉬워요. 하지만 글은 남의 반응이 아니라 남이 만든 자극 이야기예요.",
+        "3": "ability to focus(집중하는 능력)는 글에 나오지 않아요. 빈칸은 놀라게 하기 어려운 이유예요.",
+        "4": "change(변화)·adaptive(적응의)는 1·5문장에 나와서 헷갈리기 쉬워요. 하지만 적응이 느리다는 말은 글에 없어요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 37%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "less sensitive to others’ reactions에는 글에 나온 말(less, another individual, emotional reaction)이 섞여 있어 그럴듯해 보여요.\n하지만 글은 남의 '반응'이 아니라 남이 만든 '자극' 이야기예요. 빈칸은 hence(그래서) 뒤 '놀라게 하기 더 어렵다'의 이유라서, 무엇이 올지 미리 아는 쪽이에요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "빈칸 문장",
+                "text": "adults are ____, and hence are more difficult to surprise",
+                "ko": "____ 그래서 놀라게 하기 더 어렵다",
+                "tone": "hl"
+              },
+              {
+                "label": "2·6문장",
+                "text": "you move your body · tickle yourself",
+                "ko": "내가 만든 자극 → 덜 느낌",
+                "tone": "hl"
+              },
+              {
+                "label": "2·6문장",
+                "text": "another individual · someone else",
+                "ko": "남이 만든 자극 → 크게 느낌",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "sensory",
+        "ko": "감각의"
+      },
+      {
+        "en": "detect",
+        "ko": "감지하다"
+      },
+      {
+        "en": "be tuned to",
+        "ko": "~에 맞춰져 있다"
+      },
+      {
+        "en": "stimulus",
+        "ko": "자극 (pl. stimuli)"
+      },
+      {
+        "en": "unexpected",
+        "ko": "예상치 못한"
+      },
+      {
+        "en": "sensation",
+        "ko": "감각"
+      },
+      {
+        "en": "noticeable",
+        "ko": "두드러진"
+      },
+      {
+        "en": "individual",
+        "ko": "개인, 사람"
+      },
+      {
+        "en": "cross one’s legs",
+        "ko": "다리를 꼬다"
+      },
+      {
+        "en": "brush",
+        "ko": "스치다"
+      },
+      {
+        "en": "likewise",
+        "ko": "마찬가지로"
+      },
+      {
+        "en": "lap",
+        "ko": "무릎"
+      },
+      {
+        "en": "differential",
+        "ko": "상이한"
+      },
+      {
+        "en": "defense mechanism",
+        "ko": "방어 기제"
+      },
+      {
+        "en": "adaptive",
+        "ko": "적응의"
+      },
+      {
+        "en": "significance",
+        "ko": "의미"
+      },
+      {
+        "en": "effective",
+        "ko": "효과적인"
+      },
+      {
+        "en": "emotional",
+        "ko": "감정적인"
+      },
+      {
+        "en": "diminish",
+        "ko": "감소하다"
+      },
+      {
+        "en": "due to",
+        "ko": "~ 때문에"
+      },
+      {
+        "en": "hence",
+        "ko": "따라서"
+      }
+    ],
+    "options": [
+      {
+        "en": "cautious",
+        "ko": "조심하는"
+      },
+      {
+        "en": "immediately",
+        "ko": "즉각적으로"
+      },
+      {
+        "en": "sensitive",
+        "ko": "민감한"
+      },
+      {
+        "en": "ability",
+        "ko": "능력"
+      },
+      {
+        "en": "adapt to",
+        "ko": "~에 적응하다"
+      },
+      {
+        "en": "anticipate",
+        "ko": "예상하다"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Not only are our sensory systems organized to detect change, but they are most tuned to stimuli that are unexpected and surprising.",
+      "model_translation": "우리의 감각 체계는 변화를 감지하도록 구성되어 있을 뿐만 아니라, 예상치 못하고 놀라운 자극에 가장 맞춰져 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Not only",
+          "ko": "~일 뿐만 아니라"
+        },
+        {
+          "en": "our sensory systems",
+          "ko": "우리의 감각 체계"
+        },
+        {
+          "en": "sensory",
+          "ko": "감각의"
+        },
+        {
+          "en": "systems",
+          "ko": "체계"
+        },
+        {
+          "en": "organized",
+          "ko": "구성된"
+        },
+        {
+          "en": "to detect change",
+          "ko": "변화를 감지하도록"
+        },
+        {
+          "en": "detect",
+          "ko": "감지하다"
+        },
+        {
+          "en": "change",
+          "ko": "변화"
+        },
+        {
+          "en": "are most tuned to",
+          "ko": "~에 가장 맞춰져 있다"
+        },
+        {
+          "en": "most",
+          "ko": "가장"
+        },
+        {
+          "en": "tuned",
+          "ko": "맞춰진"
+        },
+        {
+          "en": "stimuli",
+          "ko": "자극 (stimulus의 복수)"
+        },
+        {
+          "en": "unexpected and surprising",
+          "ko": "예상치 못하고 놀라운"
+        },
+        {
+          "en": "unexpected",
+          "ko": "예상치 못한"
+        },
+        {
+          "en": "surprising",
+          "ko": "놀라운"
+        },
+        {
+          "en": "is likely due to",
+          "ko": "아마 ~ 때문일 것이다"
+        },
+        {
+          "en": "likely",
+          "ko": "아마"
+        },
+        {
+          "en": "due to",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "the fact that",
+          "ko": "~라는 사실"
+        },
+        {
+          "en": "fact",
+          "ko": "사실"
+        },
+        {
+          "en": "adults",
+          "ko": "성인, 어른"
+        },
+        {
+          "en": "hence",
+          "ko": "따라서, 그래서"
+        },
+        {
+          "en": "more difficult to surprise",
+          "ko": "놀라게 하기가 더 어려운"
+        },
+        {
+          "en": "difficult",
+          "ko": "어려운"
+        },
+        {
+          "en": "surprise",
+          "ko": "놀라게 하다"
+        },
+        {
+          "en": "than are children",
+          "ko": "어린이가 그러한 것보다"
+        },
+        {
+          "en": "children",
+          "ko": "어린이"
+        },
+        {
+          "en": "they",
+          "ko": "그들(그것들)"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "due",
+          "ko": "~ 때문인"
+        }
+      ],
+      "slashes": [
+        "systems organized",
+        "detect change,",
+        "most tuned",
+        "to stimuli"
+      ],
+      "roles": [
+        {
+          "text": "our sensory systems",
+          "role": "S"
+        },
+        {
+          "text": "are … organized",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "are most tuned",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that are unexpected and surprising"
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 마지막 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "This is likely due to the fact that adults are ________, and hence are more difficult to surprise, than are children."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "hence는 '그래서'예요. 'adults are ____, and hence …'의 주어는 adults, 비교 대상은 끝의 children이에요.",
+              "hence는 '그래서'예요. 'adults are ____, and hence …'의 주어는 adults, 비교 대상은 끝의 children이에요."
+            ],
+            "explain": "'adults are ____, and hence are more difficult to surprise', 어른은 ____해서 놀라게 하기가 더 어렵대요. 'than are children'은 아이보다라는 뜻이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'adults are ____, and hence are more difficult to surprise', 어른은 ____해서 놀라게 하기가 더 어렵대요. 'than are children'은 아이보다라는 뜻이에요.",
+              "o2": "'adults are ____, and hence are more difficult to surprise', 어른은 ____해서 놀라게 하기가 더 어렵대요. 'than are children'은 아이보다라는 뜻이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "어른은 아이보다 더 ____하고, 그래서 놀라게 하기가 더 어렵다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "어른은 아이보다 덜 ____해서, 놀라게 하기가 더 쉽다"
+            },
+            {
+              "id": "o2",
+              "label": "아이는 어른보다 더 ____하고, 그래서 놀라게 하기가 더 어렵다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "This is likely due to the fact that adults are ________, and hence are more difficult to surprise, than are children.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "adults",
+            "________",
+            "hence",
+            "difficult",
+            "surprise",
+            "children"
+          ],
+          "tips": [
+            {
+              "label": "A, and hence B",
+              "text": "'A이고, 그래서 B'예요. 빈칸(A)은 놀라게 하기 어려운 것(B)의 이유예요.",
+              "mark": "hence"
+            },
+            {
+              "label": "than are children",
+              "text": "than children are를 뒤집은 꼴이에요. '아이들이 그런 것보다'로 읽어요.",
+              "mark": "than are"
+            }
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 어른을 놀라게 하기 어려운 이유예요. 무엇이 사람을 놀라게 하는지 생각하며 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "This is likely due to the fact that adults are ________, and hence are more difficult to surprise, than are children.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "hence",
+            "difficult",
+            "surprise"
+          ]
+        },
+        {
+          "id": "s1_tuned",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "우리 감각 체계는 어떤 자극에 가장 맞춰져 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "but 뒤 'are most tuned to stimuli that …'을 봐요. that 뒤가 어떤 자극인지 말해요.",
+              "but 뒤 'are most tuned to stimuli that …'을 봐요. that 뒤가 어떤 자극인지 말해요."
+            ],
+            "explain": "'most tuned to stimuli that are unexpected and surprising', 예상치 못하고 놀라운 자극에 가장 맞춰져 있대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'most tuned to stimuli that are unexpected and surprising', 예상치 못하고 놀라운 자극에 가장 맞춰져 있대요.",
+              "o2": "'most tuned to stimuli that are unexpected and surprising', 예상치 못하고 놀라운 자극에 가장 맞춰져 있대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "예상하지 못한, 놀라운 자극",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "늘 반복되는 익숙한 자극"
+            },
+            {
+              "id": "o2",
+              "label": "아주 약하고 작은 자극"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "most tuned",
+            "unexpected",
+            "surprising"
+          ],
+          "tips": [
+            {
+              "label": "Not only are ~",
+              "text": "Not only가 문장 맨 앞에 오면 주어와 동사 순서가 바뀌어요. are our sensory systems = our sensory systems are.",
+              "mark": "Not only"
+            },
+            {
+              "label": "be tuned to ~",
+              "text": "'~에 맞춰져 있다'예요. 라디오 주파수를 맞추듯 그 자극을 잘 잡는다는 뜻이에요.",
+              "mark": "tuned to"
+            },
+            {
+              "label": "tuned",
+              "text": "이 글에서는 → (~에) 맞춰진  ('곡조·노래' 아님)",
+              "mark": "tuned",
+              "trap": true
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "they": "our sensory systems(우리의 감각 체계)"
+      },
+      "emphasis": [
+        "tuned",
+        "unexpected and surprising"
+      ]
+    },
+    {
+      "id": 2,
+      "text": "When you move your body and produce tactile sensations, these stimuli are less noticeable to you than are sensations produced by another individual.",
+      "model_translation": "여러분이 몸을 움직여 촉각의 감각을 만들어 낼 때, 여러분에게 이 자극은 또 다른 사람이 만들어 내는 감각보다 덜 두드러진다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "you move your body",
+          "ko": "몸을 움직이다"
+        },
+        {
+          "en": "move",
+          "ko": "움직이다"
+        },
+        {
+          "en": "body",
+          "ko": "몸"
+        },
+        {
+          "en": "produce",
+          "ko": "만들어 내다"
+        },
+        {
+          "en": "tactile sensations",
+          "ko": "촉각의 감각"
+        },
+        {
+          "en": "tactile",
+          "ko": "촉각의"
+        },
+        {
+          "en": "sensations",
+          "ko": "감각"
+        },
+        {
+          "en": "these stimuli",
+          "ko": "이 자극"
+        },
+        {
+          "en": "stimuli",
+          "ko": "자극"
+        },
+        {
+          "en": "less noticeable",
+          "ko": "덜 두드러진"
+        },
+        {
+          "en": "noticeable",
+          "ko": "두드러진, 눈에 띄는"
+        },
+        {
+          "en": "than are sensations",
+          "ko": "감각보다"
+        },
+        {
+          "en": "produced by another individual",
+          "ko": "다른 사람이 만들어 내는"
+        },
+        {
+          "en": "produced",
+          "ko": "만들어진"
+        },
+        {
+          "en": "another individual",
+          "ko": "다른 사람"
+        },
+        {
+          "en": "individual",
+          "ko": "개인, 사람"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        }
+      ],
+      "slashes": [
+        "your body",
+        "tactile sensations,",
+        "to you",
+        "than are sensations"
+      ],
+      "roles": [
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "move",
+          "role": "V"
+        },
+        {
+          "text": "these stimuli",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "less noticeable",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "produced by another individual"
+      ],
+      "steps": [
+        {
+          "id": "s2_which",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "어느 쪽 감각이 덜 두드러진대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'these stimuli are less noticeable … than ~'에서 these stimuli가 무엇인지 앞을 봐요.",
+              "'these stimuli are less noticeable … than ~'에서 these stimuli가 무엇인지 앞을 봐요."
+            ],
+            "explain": "these stimuli는 내가 몸을 움직여(you move your body) 만든 감각이에요. 이게 다른 사람이 만든 감각보다 덜 두드러져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "these stimuli는 내가 몸을 움직여(you move your body) 만든 감각이에요. 이게 다른 사람이 만든 감각보다 덜 두드러져요.",
+              "o2": "these stimuli는 내가 몸을 움직여(you move your body) 만든 감각이에요. 이게 다른 사람이 만든 감각보다 덜 두드러져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "내가 몸을 움직여 만든 감각",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "다른 사람이 만든 감각"
+            },
+            {
+              "id": "o2",
+              "label": "둘 다 똑같다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "less noticeable",
+            "another individual"
+          ],
+          "tips": [
+            {
+              "label": "than are sensations",
+              "text": "than sensations … are를 뒤집은 꼴이에요. '다른 사람이 만든 감각보다'로 읽어요.",
+              "mark": "than are"
+            }
+          ]
+        },
+        {
+          "id": "s2_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "내가 만든 감각은 덜 느끼고, 다른 사람이 만든 감각은 더 크게 느껴요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "덜 느끼는 감각과 크게 느끼는 감각",
+            "left": {
+              "label": "less noticeable (덜 두드러짐)",
+              "words": [
+                {
+                  "text": "you move your body",
+                  "ko": "내가 몸을 움직임",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "surprising (놀라움)",
+              "words": [
+                {
+                  "text": "unexpected and surprising",
+                  "ko": "예상 못 한, 놀라운"
+                },
+                {
+                  "text": "another individual",
+                  "ko": "다른 사람",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "less noticeable",
+            "another individual"
+          ]
+        }
+      ],
+      "refers": {
+        "these stimuli": "내가 몸을 움직여 만든 촉각의 감각"
+      },
+      "emphasis": [
+        "less noticeable",
+        "another individual"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "The sensations of your own legs touching one another when you cross your legs, for example, are generally less noticeable than a similar touch on your leg would be if someone sitting next to you brushed their leg against yours.",
+      "model_translation": "예를 들어, 여러분이 다리를 꼬았을 때 여러분 자신의 다리가 서로 닿는 감각은, 여러분 옆에 앉아 있는 어떤 사람이 자신의 다리를 여러분의 다리에 스치는 경우에 여러분의 다리에 느껴지는 유사한 접촉이 그러한 경우보다 일반적으로 덜 두드러진다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "The sensations",
+          "ko": "감각"
+        },
+        {
+          "en": "sensations",
+          "ko": "감각"
+        },
+        {
+          "en": "your own legs",
+          "ko": "자기 자신의 다리"
+        },
+        {
+          "en": "legs",
+          "ko": "다리"
+        },
+        {
+          "en": "touching one another",
+          "ko": "서로 닿는"
+        },
+        {
+          "en": "touching",
+          "ko": "닿는"
+        },
+        {
+          "en": "one another",
+          "ko": "서로"
+        },
+        {
+          "en": "cross your legs",
+          "ko": "다리를 꼬다"
+        },
+        {
+          "en": "cross",
+          "ko": "꼬다"
+        },
+        {
+          "en": "for example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "example",
+          "ko": "예"
+        },
+        {
+          "en": "generally",
+          "ko": "일반적으로"
+        },
+        {
+          "en": "less noticeable",
+          "ko": "덜 두드러진"
+        },
+        {
+          "en": "noticeable",
+          "ko": "두드러진"
+        },
+        {
+          "en": "a similar touch on your leg",
+          "ko": "다리에 느껴지는 비슷한 접촉"
+        },
+        {
+          "en": "similar",
+          "ko": "비슷한"
+        },
+        {
+          "en": "touch",
+          "ko": "접촉"
+        },
+        {
+          "en": "leg",
+          "ko": "다리"
+        },
+        {
+          "en": "would be",
+          "ko": "~일 것이다"
+        },
+        {
+          "en": "someone sitting next to you",
+          "ko": "옆에 앉아 있는 사람"
+        },
+        {
+          "en": "someone",
+          "ko": "어떤 사람"
+        },
+        {
+          "en": "sitting",
+          "ko": "앉아 있는"
+        },
+        {
+          "en": "next to",
+          "ko": "~ 옆에"
+        },
+        {
+          "en": "brushed",
+          "ko": "스쳤다"
+        },
+        {
+          "en": "against yours",
+          "ko": "너의 것(다리)에"
+        },
+        {
+          "en": "against",
+          "ko": "~에 닿게"
+        },
+        {
+          "en": "yours",
+          "ko": "너의 것"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "next",
+          "ko": "옆의"
+        }
+      ],
+      "slashes": [
+        "The sensations",
+        "one another",
+        "your legs,",
+        "for example,",
+        "less noticeable",
+        "would be",
+        "next to you"
+      ],
+      "roles": [
+        {
+          "text": "The sensations",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "less noticeable",
+          "role": "C"
+        },
+        {
+          "text": "someone",
+          "role": "S"
+        },
+        {
+          "text": "brushed",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "of your own legs touching one another",
+        "sitting next to you"
+      ],
+      "steps": [
+        {
+          "id": "s3_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'someone sitting next to you(옆에 앉은 사람)'의 다리가 스치는 건 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'less noticeable than ~'을 봐요. 내 다리끼리 닿는 감각이 그것보다 덜 두드러진대요.",
+              "'less noticeable than ~'을 봐요. 내 다리끼리 닿는 감각이 그것보다 덜 두드러진대요."
+            ],
+            "explain": "내 다리끼리 닿는 건 덜 느끼고, 옆 사람 다리가 스치는 건 더 크게 느껴요. 다른 사람이 만든 감각이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "내 다리끼리 닿는 건 덜 느끼고, 옆 사람 다리가 스치는 건 더 크게 느껴요. 다른 사람이 만든 감각이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · less noticeable 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · surprising 쪽",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "덜 느끼는 감각과 크게 느끼는 감각",
+            "left": {
+              "label": "less noticeable (덜 두드러짐)",
+              "words": [
+                {
+                  "text": "you move your body",
+                  "ko": "내가 몸을 움직임"
+                }
+              ]
+            },
+            "right": {
+              "label": "surprising (놀라움)",
+              "words": [
+                {
+                  "text": "unexpected and surprising",
+                  "ko": "예상 못 한, 놀라운"
+                },
+                {
+                  "text": "another individual",
+                  "ko": "다른 사람"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "someone sitting next to you"
+              ],
+              "left": "왼쪽 · less noticeable 쪽",
+              "right": "오른쪽 · surprising 쪽"
+            }
+          },
+          "highlight": [
+            "your own legs",
+            "less noticeable",
+            "someone"
+          ],
+          "tips": [
+            {
+              "label": "cross",
+              "text": "이 글에서는 → (다리를) 꼬다  ('건너다' 아님)",
+              "mark": "cross",
+              "trap": true
+            },
+            {
+              "label": "brushed",
+              "text": "이 글에서는 → 스쳤다  ('솔질했다' 아님)",
+              "mark": "brushed",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "2문장의 예시예요. 내 다리끼리 닿는 건 덜 느끼고, 옆 사람 다리가 스치면 더 크게 느껴요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "덜 느끼는 감각과 크게 느끼는 감각",
+            "left": {
+              "label": "less noticeable (덜 두드러짐)",
+              "words": [
+                {
+                  "text": "you move your body",
+                  "ko": "내가 몸을 움직임"
+                },
+                {
+                  "text": "your own legs",
+                  "ko": "내 다리끼리",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "surprising (놀라움)",
+              "words": [
+                {
+                  "text": "unexpected and surprising",
+                  "ko": "예상 못 한, 놀라운"
+                },
+                {
+                  "text": "another individual",
+                  "ko": "다른 사람"
+                },
+                {
+                  "text": "someone sitting next to you",
+                  "ko": "옆에 앉은 사람",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "your own legs",
+            "someone"
+          ],
+          "faded": [
+            "for example,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Likewise, your reaction to your cat jumping onto your lap is likely to be much greater if you have your eyes closed when it happens.",
+      "model_translation": "마찬가지로, 고양이가 여러분의 무릎 위로 뛰어오르는 것에 대한 여러분의 반응은 그 일이 발생할 때 여러분이 눈을 감는다면 훨씬 더 클 것이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Likewise",
+          "ko": "마찬가지로"
+        },
+        {
+          "en": "your reaction",
+          "ko": "너의 반응"
+        },
+        {
+          "en": "reaction",
+          "ko": "반응"
+        },
+        {
+          "en": "to your cat jumping onto your lap",
+          "ko": "고양이가 무릎 위로 뛰어오르는 것에 대한"
+        },
+        {
+          "en": "cat",
+          "ko": "고양이"
+        },
+        {
+          "en": "jumping",
+          "ko": "뛰어오르는"
+        },
+        {
+          "en": "onto",
+          "ko": "~ 위로"
+        },
+        {
+          "en": "lap",
+          "ko": "무릎 (앉았을 때 허벅지 위)"
+        },
+        {
+          "en": "is likely to be",
+          "ko": "~일 것이다"
+        },
+        {
+          "en": "likely",
+          "ko": "~할 것 같은"
+        },
+        {
+          "en": "much greater",
+          "ko": "훨씬 더 큰"
+        },
+        {
+          "en": "greater",
+          "ko": "더 큰"
+        },
+        {
+          "en": "have your eyes closed",
+          "ko": "눈을 감고 있다"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "closed",
+          "ko": "감은"
+        },
+        {
+          "en": "eyes closed",
+          "ko": "눈을 감고"
+        },
+        {
+          "en": "when it happens",
+          "ko": "그 일이 일어날 때"
+        },
+        {
+          "en": "happens",
+          "ko": "일어나다"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        }
+      ],
+      "slashes": [
+        "Likewise,",
+        "onto your lap",
+        "much greater",
+        "eyes closed"
+      ],
+      "roles": [
+        {
+          "text": "your reaction",
+          "role": "S"
+        },
+        {
+          "text": "is likely to be",
+          "role": "V"
+        },
+        {
+          "text": "much greater",
+          "role": "C"
+        },
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "have",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "to your cat jumping onto your lap"
+      ],
+      "steps": [
+        {
+          "id": "s4_when",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "고양이가 무릎에 뛰어오를 때, 언제 반응이 훨씬 클까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "문장 끝 'if you have your eyes …'를 봐요.",
+              "문장 끝 'if you have your eyes …'를 봐요."
+            ],
+            "explain": "'much greater if you have your eyes closed', 눈을 감고 있으면 반응이 훨씬 더 크대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'much greater if you have your eyes closed', 눈을 감고 있으면 반응이 훨씬 더 크대요.",
+              "o2": "'much greater if you have your eyes closed', 눈을 감고 있으면 반응이 훨씬 더 크대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "눈을 감고 있을 때",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "눈을 뜨고 고양이를 보고 있을 때"
+            },
+            {
+              "id": "o2",
+              "label": "고양이를 직접 안아 올릴 때"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "much greater",
+            "eyes closed"
+          ],
+          "tips": [
+            {
+              "label": "have + 목적어 + p.p.",
+              "text": "have your eyes closed = 눈을 감은 상태로 두다, 눈을 감고 있다.",
+              "mark": "have your eyes"
+            }
+          ]
+        },
+        {
+          "id": "s4_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "눈을 감고 있으면(eyes closed) 반응이 훨씬 커요. 이것도 surprising 쪽이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "덜 느끼는 감각과 크게 느끼는 감각",
+            "left": {
+              "label": "less noticeable (덜 두드러짐)",
+              "words": [
+                {
+                  "text": "you move your body",
+                  "ko": "내가 몸을 움직임"
+                },
+                {
+                  "text": "your own legs",
+                  "ko": "내 다리끼리"
+                }
+              ]
+            },
+            "right": {
+              "label": "surprising (놀라움)",
+              "words": [
+                {
+                  "text": "unexpected and surprising",
+                  "ko": "예상 못 한, 놀라운"
+                },
+                {
+                  "text": "another individual",
+                  "ko": "다른 사람"
+                },
+                {
+                  "text": "someone sitting next to you",
+                  "ko": "옆에 앉은 사람"
+                },
+                {
+                  "text": "eyes closed",
+                  "ko": "눈을 감고",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "eyes closed"
+          ]
+        }
+      ],
+      "refers": {
+        "when it happens": "it = 고양이가 무릎 위로 뛰어오르는 일"
+      }
+    },
+    {
+      "id": 5,
+      "text": "This differential response to surprising tactile stimuli appears to be a defense mechanism that has adaptive significance.",
+      "model_translation": "놀라운 촉각의 자극에 대한 이러한 상이한 반응은 적응의 의미를 지닌 방어 기제인 것으로 보인다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "This differential response",
+          "ko": "이러한 상이한 반응"
+        },
+        {
+          "en": "differential",
+          "ko": "상이한, 차이를 보이는"
+        },
+        {
+          "en": "response",
+          "ko": "반응"
+        },
+        {
+          "en": "to surprising tactile stimuli",
+          "ko": "놀라운 촉각의 자극에 대한"
+        },
+        {
+          "en": "appears to be",
+          "ko": "~인 것으로 보인다"
+        },
+        {
+          "en": "appears",
+          "ko": "~인 것 같다"
+        },
+        {
+          "en": "a defense mechanism",
+          "ko": "방어 기제"
+        },
+        {
+          "en": "defense",
+          "ko": "방어"
+        },
+        {
+          "en": "mechanism",
+          "ko": "기제, 구조"
+        },
+        {
+          "en": "adaptive significance",
+          "ko": "적응의 의미"
+        },
+        {
+          "en": "adaptive",
+          "ko": "적응의"
+        },
+        {
+          "en": "significance",
+          "ko": "의미, 중요성"
+        },
+        {
+          "en": "surprising",
+          "ko": "놀라운"
+        },
+        {
+          "en": "tactile",
+          "ko": "촉각의"
+        },
+        {
+          "en": "stimuli",
+          "ko": "자극"
+        }
+      ],
+      "slashes": [
+        "differential response",
+        "tactile stimuli",
+        "defense mechanism"
+      ],
+      "roles": [
+        {
+          "text": "This differential response",
+          "role": "S"
+        },
+        {
+          "text": "appears to be",
+          "role": "V"
+        },
+        {
+          "text": "a defense mechanism",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that has adaptive significance"
+      ],
+      "steps": [
+        {
+          "id": "s5_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "놀라운 자극에 이렇게 더 크게 반응하는 건, 몸을 지키는 방어 기제(defense mechanism)래요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "differential response",
+            "defense mechanism"
+          ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🎯",
+                "en": "most tuned to unexpected and surprising stimuli",
+                "ko": "감각은 예상 못 한 놀라운 자극에 가장 맞춰져 있어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 2~4",
+                "icon": "🐈",
+                "en": "your own touch < someone else’s touch · eyes closed",
+                "ko": "내가 만든 감각보다 남이 만든 감각, 눈을 감았을 때를 더 크게 느껴요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5",
+                "icon": "🛡️",
+                "en": "a defense mechanism",
+                "ko": "놀라운 자극에 더 크게 반응하는 건 방어 기제예요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "This differential response": "놀라운 자극에 더 크게 반응하는 것(2~4문장)"
+      }
+    },
+    {
+      "id": 6,
+      "text": "It is probably also the reason why being tickled by someone else is more effective at producing an emotional reaction than trying to tickle yourself.",
+      "model_translation": "그것은 아마도 또한 스스로를 간지럽히려고 할 때보다 어떤 다른 사람에 의해 간지럼을 당하는 것이 감정적 반응을 일으키는 데에 더 효과적인 이유일 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "It",
+          "ko": "그것"
+        },
+        {
+          "en": "probably",
+          "ko": "아마"
+        },
+        {
+          "en": "the reason why",
+          "ko": "~하는 이유"
+        },
+        {
+          "en": "reason",
+          "ko": "이유"
+        },
+        {
+          "en": "being tickled",
+          "ko": "간지럼을 당하는 것"
+        },
+        {
+          "en": "tickled",
+          "ko": "간지럼을 당한"
+        },
+        {
+          "en": "by someone else",
+          "ko": "다른 사람에 의해"
+        },
+        {
+          "en": "someone else",
+          "ko": "다른 사람"
+        },
+        {
+          "en": "more effective at producing",
+          "ko": "일으키는 데 더 효과적인"
+        },
+        {
+          "en": "effective",
+          "ko": "효과적인"
+        },
+        {
+          "en": "producing",
+          "ko": "일으키는 것"
+        },
+        {
+          "en": "an emotional reaction",
+          "ko": "감정적 반응"
+        },
+        {
+          "en": "emotional",
+          "ko": "감정적인"
+        },
+        {
+          "en": "reaction",
+          "ko": "반응"
+        },
+        {
+          "en": "trying to tickle yourself",
+          "ko": "스스로 간지럽히려고 하는 것"
+        },
+        {
+          "en": "trying",
+          "ko": "~하려고 하는 것"
+        },
+        {
+          "en": "tickle",
+          "ko": "간지럽히다"
+        },
+        {
+          "en": "yourself",
+          "ko": "자기 자신"
+        },
+        {
+          "en": "tickle yourself",
+          "ko": "스스로 간지럽히다"
+        }
+      ],
+      "slashes": [
+        "the reason",
+        "someone else",
+        "emotional reaction"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "the reason",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "why being tickled by someone else is more effective at producing an emotional reaction than trying to tickle yourself"
+      ],
+      "steps": [
+        {
+          "id": "s6_same",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "being tickled",
+            "someone else",
+            "an emotional reaction",
+            "tickle yourself"
+          ],
+          "answers": [
+            "someone else"
+          ],
+          "brief": {
+            "ask": "칠판의 another individual(다른 사람)과 같은 쪽 말을 이 문장에서 찾아 눌러 볼까요?",
+            "wrong": "그건 surprising 쪽, 남이 만드는 쪽 말이 아니에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "someone else(다른 사람)예요. 남이 간지럽히면 스스로 간지럽힐 때보다 반응이 커요.",
+            "wrong_by": {
+              "being tickled": "간지럼을 당하는 건 두 쪽 모두에 있어요. 누가 간지럽히는지(by ~) 봐요.",
+              "an emotional reaction": "감정적 반응은 결과예요. 누가 간지럽힐 때 반응이 큰지 봐요.",
+              "tickle yourself": "스스로 간지럽히는 건 내가 만드는 쪽, 덜 느끼는 쪽이에요."
+            }
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "It",
+              "text": "It은 앞 문장의 This differential response(놀라운 자극에 다르게 반응하는 것)를 가리켜요.",
+              "mark": "It is"
+            },
+            {
+              "label": "more ~ than …",
+              "text": "'…보다 더 ~한'이에요. being tickled by someone else가 trying to tickle yourself보다 더 효과적이래요.",
+              "mark": "more effective"
+            }
+          ]
+        },
+        {
+          "id": "s6_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "남이 간지럽히면(someone else) 크게 느끼고, 스스로 간지럽히면(tickle yourself) 덜 느껴요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "덜 느끼는 감각과 크게 느끼는 감각",
+            "left": {
+              "label": "less noticeable (덜 두드러짐)",
+              "words": [
+                {
+                  "text": "you move your body",
+                  "ko": "내가 몸을 움직임"
+                },
+                {
+                  "text": "your own legs",
+                  "ko": "내 다리끼리"
+                },
+                {
+                  "text": "tickle yourself",
+                  "ko": "스스로 간지럽히기",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "surprising (놀라움)",
+              "words": [
+                {
+                  "text": "unexpected and surprising",
+                  "ko": "예상 못 한, 놀라운"
+                },
+                {
+                  "text": "another individual",
+                  "ko": "다른 사람"
+                },
+                {
+                  "text": "someone sitting next to you",
+                  "ko": "옆에 앉은 사람"
+                },
+                {
+                  "text": "eyes closed",
+                  "ko": "눈을 감고"
+                },
+                {
+                  "text": "someone else",
+                  "ko": "다른 사람",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "someone else",
+            "tickle yourself"
+          ]
+        }
+      ],
+      "refers": {
+        "It": "This differential response(놀라운 자극에 다르게 반응하는 것)"
+      },
+      "emphasis": [
+        "someone else",
+        "tickle yourself"
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Our enjoyment of being tickled generally diminishes as we age.",
+      "model_translation": "간지럼을 당하는 것에 대한 우리의 즐거움은 나이가 들어가면서 일반적으로 감소한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Our enjoyment of being tickled",
+          "ko": "간지럼을 당하는 것에 대한 우리의 즐거움은"
+        },
+        {
+          "en": "Our enjoyment",
+          "ko": "우리의 즐거움"
+        },
+        {
+          "en": "enjoyment",
+          "ko": "즐거움"
+        },
+        {
+          "en": "of being tickled",
+          "ko": "간지럼을 당하는 것에 대한"
+        },
+        {
+          "en": "being tickled",
+          "ko": "간지럼을 당하는 것"
+        },
+        {
+          "en": "tickled",
+          "ko": "간지럼을 당한"
+        },
+        {
+          "en": "generally",
+          "ko": "일반적으로"
+        },
+        {
+          "en": "generally diminishes",
+          "ko": "일반적으로 감소한다"
+        },
+        {
+          "en": "diminishes",
+          "ko": "감소하다, 줄어들다"
+        },
+        {
+          "en": "as we age",
+          "ko": "나이가 들어가면서"
+        },
+        {
+          "en": "age",
+          "ko": "나이가 들다"
+        }
+      ],
+      "slashes": [
+        "of being tickled"
+      ],
+      "roles": [
+        {
+          "text": "Our enjoyment",
+          "role": "S"
+        },
+        {
+          "text": "diminishes",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "of being tickled"
+      ],
+      "steps": [
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s7_basic",
+          "candidates": [
+            "Our enjoyment of being tickled",
+            "generally diminishes",
+            "as we age"
+          ],
+          "answers": [
+            "Our enjoyment of being tickled",
+            "generally diminishes",
+            "as we age"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Our enjoyment of being tickled",
+                "ko": "간지럼을 당하는 것에 대한 우리의 즐거움은"
+              },
+              " ",
+              {
+                "en": "generally diminishes",
+                "ko": "일반적으로 줄어든다"
+              },
+              " ",
+              {
+                "en": "as we age",
+                "ko": "나이가 들어가면서"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "This is likely due to the fact that adults are ________, and hence are more difficult to surprise, than are children.",
+      "model_translation": "이것은 아마도 어린이가 그러한 것보다 성인이 ________, 따라서 놀라게 하기가 더 어렵다는 사실 때문일 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "This",
+          "ko": "이것"
+        },
+        {
+          "en": "is likely due to",
+          "ko": "아마 ~ 때문일 것이다"
+        },
+        {
+          "en": "likely",
+          "ko": "아마"
+        },
+        {
+          "en": "due to",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "the fact that",
+          "ko": "~라는 사실"
+        },
+        {
+          "en": "fact",
+          "ko": "사실"
+        },
+        {
+          "en": "adults",
+          "ko": "성인, 어른"
+        },
+        {
+          "en": "hence",
+          "ko": "따라서, 그래서"
+        },
+        {
+          "en": "more difficult to surprise",
+          "ko": "놀라게 하기가 더 어려운"
+        },
+        {
+          "en": "difficult",
+          "ko": "어려운"
+        },
+        {
+          "en": "surprise",
+          "ko": "놀라게 하다"
+        },
+        {
+          "en": "than are children",
+          "ko": "어린이가 그러한 것보다"
+        },
+        {
+          "en": "children",
+          "ko": "어린이"
+        },
+        {
+          "en": "due",
+          "ko": "~ 때문인"
+        }
+      ],
+      "slashes": [
+        "This is likely",
+        "the fact",
+        "________,",
+        "to surprise,"
+      ],
+      "roles": [
+        {
+          "text": "This",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "adults",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸 속 어른은 놀라게 하기 어렵대요. 어른은 칠판의 어느 쪽에 더 가까울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "빈칸 바로 뒤 'and hence are more difficult to surprise'를 봐요. 반전 단서 없이 결과를 이어요.",
+              "빈칸 바로 뒤 'and hence are more difficult to surprise'를 봐요. 반전 단서 없이 결과를 이어요."
+            ],
+            "explain": "'more difficult to surprise', 놀라게 하기가 더 어렵대요. 덜 놀라는 쪽이니, 스스로 간지럽힐 때와 같은 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'more difficult to surprise', 놀라게 하기가 더 어렵대요. 덜 놀라는 쪽이니, 스스로 간지럽힐 때와 같은 쪽이에요."
+            },
+            "point": "빈칸 = 놀라게 하기 어려운 이유 = 덜 느끼는 쪽(스스로 간지럽히기)과 같은 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "less noticeable 쪽 — 스스로 간지럽힐 때처럼 덜 놀란다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "surprising 쪽 — 남이 간지럽힐 때처럼 크게 놀란다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "hence",
+            "difficult",
+            "surprise"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "덜 느끼는 감각과 크게 느끼는 감각",
+            "left": {
+              "label": "less noticeable (덜 두드러짐)",
+              "words": [
+                {
+                  "text": "you move your body",
+                  "ko": "내가 몸을 움직임"
+                },
+                {
+                  "text": "your own legs",
+                  "ko": "내 다리끼리"
+                },
+                {
+                  "text": "tickle yourself",
+                  "ko": "스스로 간지럽히기"
+                }
+              ]
+            },
+            "right": {
+              "label": "surprising (놀라움)",
+              "words": [
+                {
+                  "text": "unexpected and surprising",
+                  "ko": "예상 못 한, 놀라운"
+                },
+                {
+                  "text": "another individual",
+                  "ko": "다른 사람"
+                },
+                {
+                  "text": "someone sitting next to you",
+                  "ko": "옆에 앉은 사람"
+                },
+                {
+                  "text": "eyes closed",
+                  "ko": "눈을 감고"
+                },
+                {
+                  "text": "someone else",
+                  "ko": "다른 사람"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장에 But, However, not 같은 반전 단서가 있으면 반대 의견이 들어가요. and hence(그래서)처럼 결과를 잇는 말이 있으면, 그 결과와 같은 쪽 말이 들어가요."
+            }
+          ]
+        },
+        {
+          "id": "s8_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 빈칸에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "빈칸은 hence(그래서) 앞, 놀라게 하기 어려운 이유예요. 스스로 간지럽힐 때 덜 놀라는 까닭을 떠올려 봐요.",
+              "빈칸은 hence(그래서) 앞, 놀라게 하기 어려운 이유예요. 스스로 간지럽힐 때 덜 놀라는 까닭을 떠올려 봐요."
+            ],
+            "explain": "스스로 간지럽히면 어디를 언제 간지럽힐지 이미 알아서 덜 놀라요. 어른도 무엇이 올지 더 잘 알아서 놀라게 하기 어려워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "스스로 간지럽히면 어디를 언제 간지럽힐지 이미 알아서 덜 놀라요. 어른도 무엇이 올지 더 잘 알아서 놀라게 하기 어려워요.",
+              "o2": "스스로 간지럽히면 어디를 언제 간지럽힐지 이미 알아서 덜 놀라요. 어른도 무엇이 올지 더 잘 알아서 놀라게 하기 어려워요."
+            },
+            "point": "빈칸 = 무엇이 올지 미리 앎 → 그래서 놀라게 하기 어렵다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "남의 반응을 덜 신경 쓰는"
+            },
+            {
+              "id": "o1",
+              "label": "자극이 올 것을 미리 아는",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "한 가지에 더 오래 집중하는"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "________",
+            "hence",
+            "surprise"
+          ]
+        },
+        {
+          "id": "s8_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 어른을 놀라게 하기 어려운 이유, 스스로 간지럽힐 때와 같은 쪽이에요. 이 말을 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ],
+      "refers": {
+        "This": "나이가 들면서 간지럼이 덜 즐거워지는 것(7문장)"
+      },
+      "emphasis": [
+        "hence",
+        "more difficult to surprise"
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

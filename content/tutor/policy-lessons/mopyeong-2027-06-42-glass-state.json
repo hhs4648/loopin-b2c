@@ -1,0 +1,2311 @@
+{
+  "id": "mopyeong-2027-06-42-glass-state",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 42번 (문맥상 낱말의 쓰임, 3점)",
+  "brief": {
+    "topic": "어휘 문제 푸는 법: 요지 → 두 그룹(Clear and perfect ↔ a mess) → 밑줄 단어가 흐름에 맞는지",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "word_in_context",
+    "labels": [
+      "요지 잡기",
+      "두 그룹으로 나누기",
+      "밑줄 단어 맞춰 보기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-glass-state.svg",
+      "alt": "칠판: Solid(고체) ? Liquid(액체) — 유리는 고체일까, 액체일까?",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/vocab-method.svg",
+      "alt": "어휘 문제 푸는 법: ① 요지 잡기 ② 단어를 두 그룹으로 나누기 ③ 밑줄 단어가 맞는 쪽인지 보기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "유리창은 단단하고 투명해 보이죠? 이번 글은 유리의 정체를 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "요지를 잡고, 단어를 두 그룹으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 볼 거예요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은? [3점]",
+    "underline": [
+      "(a)liquid",
+      "(b)misshapen",
+      "(c)solidified",
+      "(d)paradox",
+      "(e)obey"
+    ],
+    "sentence": 10,
+    "analysis_first": true,
+    "wrong_rate": 45.0,
+    "wrong_rank": 10,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "liquid",
+        "ko": "액체"
+      },
+      {
+        "en": "misshapen",
+        "ko": "보기 흉한"
+      },
+      {
+        "en": "solidified",
+        "ko": "응고된"
+      },
+      {
+        "en": "paradox",
+        "ko": "역설"
+      },
+      {
+        "en": "obey",
+        "ko": "따르다"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "(a) liquid",
+        "keywords": [
+          "liquid"
+        ],
+        "ko": "액체"
+      },
+      {
+        "id": "2",
+        "label": "(b) misshapen",
+        "keywords": [
+          "misshapen"
+        ],
+        "ko": "보기 흉한"
+      },
+      {
+        "id": "3",
+        "label": "(c) solidified",
+        "keywords": [
+          "solidified"
+        ],
+        "ko": "응고된"
+      },
+      {
+        "id": "4",
+        "label": "(d) paradox",
+        "keywords": [
+          "paradox"
+        ],
+        "ko": "역설"
+      },
+      {
+        "id": "5",
+        "label": "(e) obey",
+        "keywords": [
+          "obey"
+        ],
+        "ko": "따르다",
+        "correct": true
+      }
+    ],
+    "brief": {
+      "ask": "밑줄 단어마다 칠판의 어느 그룹 흐름인지 떠올려 봐요. 흐름과 안 맞는 것 하나를 골라요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 과학자들도 유리가 왜 그렇게 작용하는지 이해하지 못하니, 유리는 분자 법칙을 따르는(obey) 게 아니라 거스르는(defy) 것처럼 보인다고 해야 맞아요.",
+      "final_wrong": "정답은 ⑤ (e)예요. 과학자들도 유리를 이해하지 못한다고 했으니, obey(따르다)가 아니라 defy(거스르다)가 맞아요.",
+      "option_feedback": {
+        "1": "실제로는 고체라서, 상온에서 결코 액체처럼 행동하지 않는다는 말이라 맞아요.",
+        "2": "위보다 아래가 두꺼운 유리판이니 모양이 일그러진(misshapen) 게 맞아요.",
+        "3": "유리판이 고르지 않은 건 애초에 불어서 만들고 굳힐(solidified) 때 그렇게 돼서예요. 맞는 낱말이에요.",
+        "4": "아주 오래된 물질인데 아직 이해하지 못한다는, 서로 안 맞는 사실이라 역설(paradox)이 맞아요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 26%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "solidified(굳은)가 '유리는 오래 흘러내린다'는 생각과 안 맞아 보여서 많이 골라요. 하지만 글은 유리가 액체처럼 흐르지 않는다고 해요. 유리판이 고르지 않은 건 애초에 불어서 만들고 굳힐 때 그렇게 된 거예요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "5문장",
+                "text": "never behaves as a liquid",
+                "ko": "결코 액체처럼 행동하지 않음",
+                "tone": "hl"
+              },
+              {
+                "label": "6문장",
+                "text": "not … because the glass is slowly sinking",
+                "ko": "흘러내려서 그런 게 아님",
+                "tone": "hl"
+              },
+              {
+                "label": "7문장",
+                "text": "blown and (c)solidified in the first place",
+                "ko": "애초에 불어서 만들고 굳혀서",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "structure",
+        "ko": "구조"
+      },
+      {
+        "en": "frankly",
+        "ko": "솔직히"
+      },
+      {
+        "en": "mess",
+        "ko": "엉망"
+      },
+      {
+        "en": "random",
+        "ko": "마구잡이의"
+      },
+      {
+        "en": "technical term",
+        "ko": "전문 용어"
+      },
+      {
+        "en": "depend on",
+        "ko": "~에 따라 달라지다"
+      },
+      {
+        "en": "in theory",
+        "ko": "이론상으로는"
+      },
+      {
+        "en": "in practice",
+        "ko": "실제로는"
+      },
+      {
+        "en": "the latter",
+        "ko": "후자"
+      },
+      {
+        "en": "imperceptibly",
+        "ko": "알아차릴 수 없을 정도로"
+      },
+      {
+        "en": "misshapen",
+        "ko": "보기 흉한"
+      },
+      {
+        "en": "endure",
+        "ko": "견디다"
+      },
+      {
+        "en": "uneven",
+        "ko": "고르지 않은"
+      },
+      {
+        "en": "solidify",
+        "ko": "응고시키다"
+      },
+      {
+        "en": "in the first place",
+        "ko": "애초에"
+      },
+      {
+        "en": "paradox",
+        "ko": "역설"
+      },
+      {
+        "en": "substance",
+        "ko": "물질"
+      },
+      {
+        "en": "comprehend",
+        "ko": "이해하다"
+      },
+      {
+        "en": "obey",
+        "ko": "따르다"
+      }
+    ],
+    "options": [
+      {
+        "en": "defy",
+        "ko": "거스르다, 거부하다"
+      },
+      {
+        "en": "solidified",
+        "ko": "응고된"
+      },
+      {
+        "en": "misshapen",
+        "ko": "보기 흉한"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "The structure of glass is, frankly, a bit of a mess.",
+      "model_translation": "유리의 구조는, 솔직히 말해서, 다소 엉망진창이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The structure of glass",
+          "ko": "유리의 구조"
+        },
+        {
+          "en": "structure",
+          "ko": "구조"
+        },
+        {
+          "en": "glass",
+          "ko": "유리"
+        },
+        {
+          "en": "frankly",
+          "ko": "솔직히"
+        },
+        {
+          "en": "a bit of a mess",
+          "ko": "다소 엉망"
+        },
+        {
+          "en": "mess",
+          "ko": "엉망"
+        },
+        {
+          "en": "bit",
+          "ko": "조금 · a bit of a ~ = 다소 ~"
+        }
+      ],
+      "slashes": [
+        "The structure of glass",
+        "frankly,"
+      ],
+      "roles": [
+        {
+          "text": "The structure of glass",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a bit of a mess",
+          "role": "C"
+        }
+      ],
+      "emphasis": [
+        "a bit of a mess"
+      ],
+      "steps": [
+        {
+          "id": "s1_mess",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "유리의 구조는 솔직히(frankly) 좀 엉망(a mess)이래요. 이 글의 요지가 여기서 시작해요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "mess"
+          ],
+          "tips": [
+            {
+              "label": "a bit of a ~",
+              "text": "'다소 ~한 것'이에요. a bit of a mess = 다소 엉망.",
+              "mark": "a bit of"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Clear and perfect as it might appear to our eyes, down at the molecular level, glass looks more like a random ball-pit of atoms.",
+      "model_translation": "우리 눈에는 투명하고 완벽해 보일지 몰라도, 분자 수준으로 내려가 보면, 유리는 원자들이 마구잡이로 있는 볼풀에 더 가까워 보인다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Clear and perfect",
+          "ko": "투명하고 완벽한"
+        },
+        {
+          "en": "clear",
+          "ko": "투명한, 분명한"
+        },
+        {
+          "en": "perfect",
+          "ko": "완벽한"
+        },
+        {
+          "en": "as it might appear",
+          "ko": "~해 보일지 몰라도"
+        },
+        {
+          "en": "appear",
+          "ko": "~처럼 보이다"
+        },
+        {
+          "en": "to our eyes",
+          "ko": "우리 눈에"
+        },
+        {
+          "en": "down at the molecular level",
+          "ko": "분자 수준으로 내려가 보면"
+        },
+        {
+          "en": "molecular",
+          "ko": "분자의 (*풀이 단어)"
+        },
+        {
+          "en": "level",
+          "ko": "수준"
+        },
+        {
+          "en": "looks more like",
+          "ko": "~에 더 가까워 보인다"
+        },
+        {
+          "en": "random",
+          "ko": "마구잡이의"
+        },
+        {
+          "en": "ball-pit",
+          "ko": "볼풀 · 공이 가득 찬 놀이 풀"
+        },
+        {
+          "en": "atoms",
+          "ko": "원자"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈"
+        },
+        {
+          "en": "down",
+          "ko": "아래로"
+        },
+        {
+          "en": "looks",
+          "ko": "~해 보이다"
+        }
+      ],
+      "slashes": [
+        "Clear and perfect",
+        "to our eyes,",
+        "molecular level,",
+        "more like"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "might appear",
+          "role": "V"
+        },
+        {
+          "text": "glass",
+          "role": "S"
+        },
+        {
+          "text": "looks",
+          "role": "V"
+        },
+        {
+          "text": "more like a random ball-pit of atoms",
+          "role": "C"
+        }
+      ],
+      "emphasis": [
+        "Clear and perfect",
+        "random"
+      ],
+      "steps": [
+        {
+          "id": "s2_as",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Clear and perfect as it might appear to our eyes는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "형용사가 맨 앞에 나오고 as + 주어 + 동사가 이어져요. 콤마(,) 뒤 내용(볼풀 같다)과 어떻게 이어지는지 봐요.",
+              "형용사가 맨 앞에 나오고 as + 주어 + 동사가 이어져요. 콤마(,) 뒤 내용(볼풀 같다)과 어떻게 이어지는지 봐요."
+            ],
+            "explain": "형용사 + as + 주어 + 동사는 '비록 ~이지만'이에요. 겉으로는 깔끔해 보여도, 분자 수준에선 마구잡이 볼풀 같대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "형용사 + as + 주어 + 동사는 '비록 ~이지만'이에요. 겉으로는 깔끔해 보여도, 분자 수준에선 마구잡이 볼풀 같대요.",
+              "o2": "형용사 + as + 주어 + 동사는 '비록 ~이지만'이에요. 겉으로는 깔끔해 보여도, 분자 수준에선 마구잡이 볼풀 같대요."
+            },
+            "point": "Clear and perfect as it might appear = 투명하고 완벽해 보일지 몰라도 (양보의 as)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "우리 눈에는 투명하고 완벽해 보일지 몰라도",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "우리 눈에 투명하고 완벽해 보이기 때문에"
+            },
+            {
+              "id": "o2",
+              "label": "우리 눈처럼 투명하고 완벽하게"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Clear and perfect",
+            "as it might appear"
+          ],
+          "tips": [
+            {
+              "label": "형용사 + as + 주어 + 동사",
+              "text": "'비록 ~이지만'이에요. Clear and perfect as it might appear = 투명하고 완벽해 보일지 몰라도.",
+              "mark": "as it might"
+            }
+          ]
+        },
+        {
+          "id": "s2_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "겉보기(Clear and perfect)와 1문장의 a mess를 두 그룹으로 나눠 봐요.\n유리의 구조는 오른쪽, 엉망이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "유리의 정체",
+            "left": {
+              "label": "Clear and perfect 쪽 (깔끔)",
+              "words": [
+                {
+                  "text": "Clear and perfect",
+                  "ko": "투명하고 완벽한",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "a mess 쪽 (엉망)",
+              "words": [
+                {
+                  "text": "a mess",
+                  "ko": "엉망",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s2_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "random ball-pit of atoms(원자들의 마구잡이 볼풀)는 어느 그룹일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "random은 '마구잡이의'예요. 깔끔하게 정돈된 모습일지 생각해 봐요.",
+              "random은 '마구잡이의'예요. 깔끔하게 정돈된 모습일지 생각해 봐요."
+            ],
+            "explain": "원자들이 마구잡이로 섞인 볼풀은 정돈된 모습이 아니에요. 1문장의 a mess와 같은 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "원자들이 마구잡이로 섞인 볼풀은 정돈된 모습이 아니에요. 1문장의 a mess와 같은 쪽이에요."
+            },
+            "point": "random ball-pit(마구잡이 볼풀) → a mess(엉망) 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · Clear and perfect (깔끔)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · a mess (엉망)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "random"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "유리의 정체",
+            "left": {
+              "label": "Clear and perfect 쪽 (깔끔)",
+              "words": [
+                {
+                  "text": "Clear and perfect",
+                  "ko": "투명하고 완벽한"
+                }
+              ]
+            },
+            "right": {
+              "label": "a mess 쪽 (엉망)",
+              "words": [
+                {
+                  "text": "a mess",
+                  "ko": "엉망"
+                },
+                {
+                  "text": "random ball-pit",
+                  "ko": "마구잡이 볼풀",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "random ball-pit"
+              ],
+              "left": "왼쪽 · Clear and perfect (깔끔)",
+              "right": "오른쪽 · a mess (엉망)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "The technical term for this mess depends on who you’re asking: for some scientists it is an “amorphous solid,” for others a “supercooled liquid.”",
+      "model_translation": "이러한 엉망진창인 상태를 뜻하는 전문 용어는 여러분이 누구에게 묻고 있느냐에 따라 달라지는데, 어떤 과학자들에게는 그것이 '무정형의 고체'이고, 다른 이들에게는 '과냉각 액체'이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "The technical term",
+          "ko": "전문 용어"
+        },
+        {
+          "en": "technical",
+          "ko": "전문적인"
+        },
+        {
+          "en": "term",
+          "ko": "기간, 학기 · 여기서는 '용어'"
+        },
+        {
+          "en": "for this mess",
+          "ko": "이 엉망인 상태에 대한"
+        },
+        {
+          "en": "depends on",
+          "ko": "~에 따라 달라진다"
+        },
+        {
+          "en": "who you’re asking",
+          "ko": "누구에게 묻느냐"
+        },
+        {
+          "en": "for some scientists",
+          "ko": "어떤 과학자들에게는"
+        },
+        {
+          "en": "amorphous",
+          "ko": "무정형의 (*풀이 단어)"
+        },
+        {
+          "en": "solid",
+          "ko": "고체"
+        },
+        {
+          "en": "for others",
+          "ko": "다른 이들에게는"
+        },
+        {
+          "en": "supercooled",
+          "ko": "과냉각된"
+        },
+        {
+          "en": "liquid",
+          "ko": "액체"
+        },
+        {
+          "en": "mess",
+          "ko": "엉망"
+        },
+        {
+          "en": "depends",
+          "ko": "~에 달려 있다"
+        },
+        {
+          "en": "you’re",
+          "ko": "너는 ~이다"
+        },
+        {
+          "en": "asking",
+          "ko": "묻는"
+        },
+        {
+          "en": "scientists",
+          "ko": "과학자들"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        }
+      ],
+      "slashes": [
+        "The technical term",
+        "for this mess",
+        "depends on",
+        "you’re asking:",
+        "for some scientists",
+        "“amorphous solid,”"
+      ],
+      "roles": [
+        {
+          "text": "The technical term for this mess",
+          "role": "S"
+        },
+        {
+          "text": "depends",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "an “amorphous solid",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_term",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "과학자들은 이 엉망인 상태(this mess)를 뭐라고 부를까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "for some scientists ~, for others ~는 '어떤 과학자에게는 ~, 다른 이들에게는 ~'예요.",
+              "for some scientists ~, for others ~는 '어떤 과학자에게는 ~, 다른 이들에게는 ~'예요."
+            ],
+            "explain": "'amorphous solid'(무정형의 고체)라고도, 'supercooled liquid'(과냉각 액체)라고도 불러요. 묻는 사람에 따라 이름이 달라요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'amorphous solid'(무정형의 고체)라고도, 'supercooled liquid'(과냉각 액체)라고도 불러요. 묻는 사람에 따라 이름이 달라요.",
+              "o2": "'amorphous solid'(무정형의 고체)라고도, 'supercooled liquid'(과냉각 액체)라고도 불러요. 묻는 사람에 따라 이름이 달라요."
+            },
+            "point": "같은 유리를 어떤 과학자는 고체(solid), 어떤 과학자는 액체(liquid)라고 부른다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "어떤 이는 고체, 어떤 이는 액체라고 부른다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "모두 고체라고 부른다"
+            },
+            {
+              "id": "o2",
+              "label": "모두 액체라고 부른다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "solid",
+            "liquid"
+          ],
+          "tips": [
+            {
+              "label": "depend on who ~",
+              "text": "'누구에게 ~하느냐에 따라 달라지다'예요.",
+              "mark": "depends on"
+            },
+            {
+              "label": "term",
+              "text": "이 글에서는 → 용어  ('기간·학기' 아님)",
+              "mark": "term",
+              "trap": true
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "for this mess": "this mess = 유리의 엉망인 구조(1~2문장)"
+      }
+    },
+    {
+      "id": 4,
+      "text": "In theory it’s both liquid and solid, though, given the way it behaves, in practice it’s really the latter.",
+      "model_translation": "이론적으로 그것은 액체이면서 동시에 고체이지만, 그것이 작용하는 방식을 고려하면 실제로는 후자(고체)이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In theory",
+          "ko": "이론상으로는"
+        },
+        {
+          "en": "theory",
+          "ko": "이론"
+        },
+        {
+          "en": "it’s",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "both liquid and solid",
+          "ko": "액체이면서 고체"
+        },
+        {
+          "en": "though",
+          "ko": "하지만 · 문장 가운데 though"
+        },
+        {
+          "en": "given the way it behaves",
+          "ko": "그것이 작용하는 방식을 고려하면"
+        },
+        {
+          "en": "given",
+          "ko": "~을 고려하면"
+        },
+        {
+          "en": "behaves",
+          "ko": "작용하다, 행동하다"
+        },
+        {
+          "en": "in practice",
+          "ko": "실제로는"
+        },
+        {
+          "en": "practice",
+          "ko": "연습 · in practice = 실제로는"
+        },
+        {
+          "en": "really",
+          "ko": "정말로"
+        },
+        {
+          "en": "the latter",
+          "ko": "후자 · 둘 중 뒤의 것"
+        },
+        {
+          "en": "liquid",
+          "ko": "액체"
+        },
+        {
+          "en": "solid",
+          "ko": "고체"
+        },
+        {
+          "en": "way",
+          "ko": "방식, 길"
+        },
+        {
+          "en": "latter",
+          "ko": "후자"
+        }
+      ],
+      "slashes": [
+        "In theory",
+        "both liquid and solid,",
+        "though,",
+        "the way it behaves,",
+        "in practice"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "both liquid and solid",
+          "role": "C"
+        }
+      ],
+      "emphasis": [
+        "In theory",
+        "in practice",
+        "the latter"
+      ],
+      "steps": [
+        {
+          "id": "s4_latter",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이론상(In theory) 유리는 액체이면서 고체래요. 실제로는(in practice) 그중 the latter(후자)라는데, 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "the latter는 '후자', 앞에 나온 둘 중 뒤의 것이에요. both liquid and solid의 순서를 봐요.",
+              "the latter는 '후자', 앞에 나온 둘 중 뒤의 것이에요. both liquid and solid의 순서를 봐요."
+            ],
+            "explain": "both liquid and solid에서 뒤에 나온 건 solid예요. 실제로 작용하는 걸 보면 고체래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "both liquid and solid에서 뒤에 나온 건 solid예요. 실제로 작용하는 걸 보면 고체래요.",
+              "o2": "both liquid and solid에서 뒤에 나온 건 solid예요. 실제로 작용하는 걸 보면 고체래요."
+            },
+            "point": "In theory 액체 + 고체 ↔ in practice the latter = 고체"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "solid (고체)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "liquid (액체)"
+            },
+            {
+              "id": "o2",
+              "label": "둘 다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "both liquid and solid",
+            "the latter"
+          ],
+          "tips": [
+            {
+              "label": "the former / the latter",
+              "text": "'전자 / 후자'예요. 앞에 나온 둘 중 앞의 것과 뒤의 것이에요.",
+              "mark": "the latter"
+            },
+            {
+              "label": "given ~",
+              "text": "'~을 고려하면'이에요. given the way it behaves = 그것이 작용하는 방식을 고려하면.",
+              "mark": "given"
+            },
+            {
+              "label": "practice",
+              "text": "이 글에서는 → in practice = 실제로는  ('연습' 아님)",
+              "mark": "practice",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧊",
+                "en": "a mess · random ball-pit of atoms",
+                "ko": "유리는 깔끔해 보여도 분자 수준에선 엉망이에요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "⚖️",
+                "en": "both liquid and solid · in practice the latter",
+                "ko": "이론상 액체이면서 고체, 실제로는 고체예요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "In fact, at room temperature glass never behaves as a (a)liquid, even an imperceptibly viscous one, even over long periods of time (though it can “sweat” if you don’t add enough lime to the mix).",
+      "model_translation": "사실, 상온에서 유리는, 심지어 (알아차릴 수 없을 정도로) 미세하게 점성이 있는 것이라 해도, 심지어 오랜 시간이 지나더라도, 결코 액체처럼 행동하지 않는다(비록 혼합물에 석회를 충분히 넣지 않으면 유리가 '땀을 흘릴' 수는 있지만).",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In fact",
+          "ko": "사실"
+        },
+        {
+          "en": "at room temperature",
+          "ko": "상온에서"
+        },
+        {
+          "en": "temperature",
+          "ko": "온도"
+        },
+        {
+          "en": "never behaves as",
+          "ko": "결코 ~처럼 행동하지 않는다"
+        },
+        {
+          "en": "never",
+          "ko": "결코 ~ 않다"
+        },
+        {
+          "en": "liquid",
+          "ko": "액체"
+        },
+        {
+          "en": "even an imperceptibly viscous one",
+          "ko": "알아차릴 수 없을 만큼 조금 들러붙는 것이라 해도"
+        },
+        {
+          "en": "imperceptibly",
+          "ko": "알아차릴 수 없을 정도로"
+        },
+        {
+          "en": "viscous",
+          "ko": "들러붙는 (*풀이 단어)"
+        },
+        {
+          "en": "even over long periods of time",
+          "ko": "심지어 오랜 시간이 지나도"
+        },
+        {
+          "en": "periods",
+          "ko": "기간"
+        },
+        {
+          "en": "sweat",
+          "ko": "땀을 흘리다"
+        },
+        {
+          "en": "if you don’t add",
+          "ko": "~을 넣지 않으면"
+        },
+        {
+          "en": "enough lime",
+          "ko": "충분한 석회"
+        },
+        {
+          "en": "lime",
+          "ko": "석회"
+        },
+        {
+          "en": "the mix",
+          "ko": "혼합물"
+        },
+        {
+          "en": "behaves",
+          "ko": "작용하다"
+        },
+        {
+          "en": "over",
+          "ko": "~ 위에, ~에 대해"
+        },
+        {
+          "en": "long",
+          "ko": "긴"
+        },
+        {
+          "en": "don’t",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "add",
+          "ko": "넣다, 더하다"
+        },
+        {
+          "en": "enough",
+          "ko": "충분한"
+        },
+        {
+          "en": "mix",
+          "ko": "혼합물"
+        }
+      ],
+      "slashes": [
+        "In fact,",
+        "at room temperature",
+        "a (a)liquid,",
+        "viscous one,",
+        "periods of time",
+        "“sweat”"
+      ],
+      "roles": [
+        {
+          "text": "glass",
+          "role": "S"
+        },
+        {
+          "text": "behaves",
+          "role": "V"
+        }
+      ],
+      "emphasis": [
+        "never"
+      ],
+      "steps": [
+        {
+          "id": "s5_check",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 (a)liquid는 문맥에 맞을까요, 틀릴까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "4문장에서 실제로는 후자, 고체라고 했어요. 상온에서 결코(never) 액체처럼 행동하지 않는다는 말이 그 흐름과 이어지는지 봐요.",
+              "4문장에서 실제로는 후자, 고체라고 했어요. 상온에서 결코(never) 액체처럼 행동하지 않는다는 말이 그 흐름과 이어지는지 봐요."
+            ],
+            "explain": "실제로는 고체니까, 상온에서 아무리 오래 지나도 결코 액체처럼 행동하지 않는다는 말이 이어져요. (a)liquid는 맞는 낱말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "실제로는 고체니까, 상온에서 아무리 오래 지나도 결코 액체처럼 행동하지 않는다는 말이 이어져요. (a)liquid는 맞는 낱말이에요."
+            },
+            "point": "(a) liquid: 실제로는 고체 → never behaves as a liquid (결코 액체처럼 행동하지 않음)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "문맥에 맞아요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "문맥에 안 맞아요"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "never",
+            "liquid"
+          ],
+          "faded": [
+            "(though it can “sweat” if you don’t add enough lime to the mix)"
+          ],
+          "tips": [
+            {
+              "label": "never ~, even …, even …",
+              "text": "'심지어 ~라도, 심지어 ~해도 결코 ~ 않다'예요. even을 겹쳐 never를 더 세게 말해요.",
+              "mark": "even"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Those (b)misshapen sheets of glass you sometimes see in old stained-glass windows, thicker at the bottom than the top, are generally not that way because the glass is slowly sinking over time.",
+      "model_translation": "여러분이 오래된 스테인드글라스 창문에서 가끔 보는, 윗부분보다 아랫부분이 더 두꺼운 보기 흉한 유리판들은 대개 시간이 지나면서 유리가 천천히 아래로 가라앉고 있기 때문에 그렇게 된 것이 아니다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "misshapen",
+          "ko": "보기 흉한, 모양이 일그러진"
+        },
+        {
+          "en": "sheets of glass",
+          "ko": "유리판"
+        },
+        {
+          "en": "sheets",
+          "ko": "시트 · 여기서는 '판'"
+        },
+        {
+          "en": "you sometimes see",
+          "ko": "여러분이 가끔 보는"
+        },
+        {
+          "en": "in old stained-glass windows",
+          "ko": "오래된 스테인드글라스 창문에서"
+        },
+        {
+          "en": "stained-glass",
+          "ko": "스테인드글라스"
+        },
+        {
+          "en": "windows",
+          "ko": "창문"
+        },
+        {
+          "en": "thicker at the bottom than the top",
+          "ko": "윗부분보다 아랫부분이 더 두꺼운"
+        },
+        {
+          "en": "thicker",
+          "ko": "더 두꺼운"
+        },
+        {
+          "en": "bottom",
+          "ko": "아랫부분"
+        },
+        {
+          "en": "top",
+          "ko": "윗부분"
+        },
+        {
+          "en": "are generally not that way",
+          "ko": "대개 그렇게 된 것이 아니다"
+        },
+        {
+          "en": "generally",
+          "ko": "대개"
+        },
+        {
+          "en": "because the glass is slowly sinking",
+          "ko": "유리가 천천히 가라앉고 있기 때문에"
+        },
+        {
+          "en": "slowly",
+          "ko": "천천히"
+        },
+        {
+          "en": "sinking",
+          "ko": "가라앉는"
+        },
+        {
+          "en": "over time",
+          "ko": "시간이 지나면서"
+        },
+        {
+          "en": "glass",
+          "ko": "유리"
+        },
+        {
+          "en": "sometimes",
+          "ko": "때때로"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "old",
+          "ko": "오래된"
+        },
+        {
+          "en": "way",
+          "ko": "방식, 길"
+        },
+        {
+          "en": "over",
+          "ko": "~ 위에, ~에 대해"
+        }
+      ],
+      "slashes": [
+        "sheets of glass",
+        "stained-glass windows,",
+        "than the top,",
+        "not that way",
+        "slowly sinking"
+      ],
+      "roles": [
+        {
+          "text": "Those (b)misshapen sheets of glass",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "that way",
+          "role": "C"
+        },
+        {
+          "text": "the glass",
+          "role": "S"
+        },
+        {
+          "text": "is slowly sinking",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "you sometimes see in old stained-glass windows",
+        "thicker at the bottom than the top"
+      ],
+      "steps": [
+        {
+          "id": "s6_why",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "아래가 더 두꺼운 오래된 유리판, 유리가 천천히 가라앉아서(sinking) 그렇게 된 걸까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "are generally not that way because ~를 봐요. not이 붙어서 '~ 때문에 그런 게 아니다'예요.",
+              "are generally not that way because ~를 봐요. not이 붙어서 '~ 때문에 그런 게 아니다'예요."
+            ],
+            "explain": "'are generally not that way because the glass is slowly sinking', not이 붙어서 '가라앉고 있기 때문에 그렇게 된 게 아니다'예요. 유리는 흐르지 않으니까요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'are generally not that way because the glass is slowly sinking', not이 붙어서 '가라앉고 있기 때문에 그렇게 된 게 아니다'예요. 유리는 흐르지 않으니까요."
+            },
+            "point": "아래가 두꺼운 유리판 ≠ 유리가 흘러내려서 (not … because … sinking)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "가라앉아서 그런 게 아니다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "천천히 가라앉아서 그렇다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "not",
+            "sinking"
+          ],
+          "tips": [
+            {
+              "label": "not ~ because …",
+              "text": "'… 때문에 ~한 것이 아니다'예요. not이 because 덩어리까지 부정해요.",
+              "mark": "not that way"
+            },
+            {
+              "label": "sheets",
+              "text": "이 글에서는 → (유리)판  ('시트·종이' 아님)",
+              "mark": "sheets",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s6_check",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 (b)misshapen는 문맥에 맞을까요, 틀릴까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "thicker at the bottom than the top(윗부분보다 아랫부분이 더 두꺼운)을 봐요. 이런 유리판의 모양이 어떨지 봐요.",
+              "thicker at the bottom than the top(윗부분보다 아랫부분이 더 두꺼운)을 봐요. 이런 유리판의 모양이 어떨지 봐요."
+            ],
+            "explain": "위아래 두께가 다르니 모양이 고르지 않아요. misshapen(보기 흉한, 일그러진)은 맞는 낱말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "위아래 두께가 다르니 모양이 고르지 않아요. misshapen(보기 흉한, 일그러진)은 맞는 낱말이에요."
+            },
+            "point": "(b) misshapen: thicker at the bottom than the top → 모양이 일그러진 유리판"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "문맥에 맞아요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "문맥에 안 맞아요"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "misshapen",
+            "thicker"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Unless the church has endured temperatures of more than 400˚C, the chances are they are uneven because that’s the way they were blown and (c)solidified in the first place.",
+      "model_translation": "교회가 400°C가 넘는 온도를 견뎌낸 것이 아니라면, 아마 그것들이 애초에 그런 방식으로 불어서 만들어지고 응고되었기 때문에 고르지 않은 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Unless",
+          "ko": "~하지 않는 한"
+        },
+        {
+          "en": "the church",
+          "ko": "교회"
+        },
+        {
+          "en": "has endured",
+          "ko": "견뎌 왔다"
+        },
+        {
+          "en": "endured",
+          "ko": "견뎠다"
+        },
+        {
+          "en": "temperatures of more than 400˚C",
+          "ko": "400℃가 넘는 온도"
+        },
+        {
+          "en": "temperatures",
+          "ko": "온도"
+        },
+        {
+          "en": "the chances are",
+          "ko": "아마 ~일 것이다"
+        },
+        {
+          "en": "chances",
+          "ko": "가능성"
+        },
+        {
+          "en": "uneven",
+          "ko": "고르지 않은"
+        },
+        {
+          "en": "that’s the way",
+          "ko": "그것이 ~한 방식이다"
+        },
+        {
+          "en": "were blown",
+          "ko": "불어서 만들어졌다"
+        },
+        {
+          "en": "blown",
+          "ko": "(유리를) 불어서 만든"
+        },
+        {
+          "en": "solidified",
+          "ko": "응고된, 굳은"
+        },
+        {
+          "en": "in the first place",
+          "ko": "애초에"
+        },
+        {
+          "en": "church",
+          "ko": "교회"
+        },
+        {
+          "en": "400˚C",
+          "ko": "섭씨 400도"
+        },
+        {
+          "en": "way",
+          "ko": "방식, 길"
+        }
+      ],
+      "slashes": [
+        "Unless the church",
+        "more than 400˚C,",
+        "the chances are",
+        "are uneven",
+        "the way",
+        "were blown"
+      ],
+      "roles": [
+        {
+          "text": "the church",
+          "role": "S"
+        },
+        {
+          "text": "has endured",
+          "role": "V"
+        },
+        {
+          "text": "the chances",
+          "role": "S"
+        },
+        {
+          "text": "are … are",
+          "role": "V"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "uneven",
+          "role": "C"
+        },
+        {
+          "text": "that",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "the way",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "they were blown and (c)solidified in the first place"
+      ],
+      "emphasis": [
+        "uneven",
+        "in the first place"
+      ],
+      "steps": [
+        {
+          "id": "s7_reason",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 유리판이 고르지 않은(uneven) 진짜 이유는 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "because 뒤 that’s the way they were blown and solidified를 봐요. in the first place는 '애초에'예요.",
+              "because 뒤 that’s the way they were blown and solidified를 봐요. in the first place는 '애초에'예요."
+            ],
+            "explain": "'that’s the way they were blown and solidified in the first place', 처음 만들 때부터 그렇게 불어서 만들고 굳혔기 때문이래요. Unless는 '~하지 않는 한'이라 400℃는 이유가 아니에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'that’s the way they were blown and solidified in the first place', 처음 만들 때부터 그렇게 불어서 만들고 굳혔기 때문이래요. Unless는 '~하지 않는 한'이라 400℃는 이유가 아니에요.",
+              "o2": "'that’s the way they were blown and solidified in the first place', 처음 만들 때부터 그렇게 불어서 만들고 굳혔기 때문이래요. Unless는 '~하지 않는 한'이라 400℃는 이유가 아니에요."
+            },
+            "point": "고르지 않은 진짜 이유 = 애초에(in the first place) 불어서 만들고 굳힐 때부터 (흘러내린 게 아님)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "애초에 불어서 만들고 굳힐 때 그렇게 돼서",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오랜 시간 천천히 흘러내려서"
+            },
+            {
+              "id": "o2",
+              "label": "교회가 400℃ 넘게 뜨거워서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "uneven",
+            "in the first place"
+          ],
+          "tips": [
+            {
+              "label": "Unless ~",
+              "text": "'~하지 않는 한'이에요. 교회가 400℃ 넘는 열을 견딘 게 아니라면, 이라는 말이에요.",
+              "mark": "Unless"
+            },
+            {
+              "label": "the chances are (that) ~",
+              "text": "'아마 ~일 것이다'예요.",
+              "mark": "the chances are"
+            },
+            {
+              "label": "blown",
+              "text": "이 글에서는 → (유리를) 불어서 만든  ('바람에 날린' 아님)",
+              "mark": "blown",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s7_check",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 (c)solidified는 문맥에 맞을까요, 틀릴까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "6문장에서 유리가 흘러내린 게 아니라고 했어요. 처음 불어서 만든 유리가 어떻게 됐을지 봐요.",
+              "6문장에서 유리가 흘러내린 게 아니라고 했어요. 처음 불어서 만든 유리가 어떻게 됐을지 봐요."
+            ],
+            "explain": "불어서 모양을 만든 다음 굳혀서(solidified) 처음부터 고르지 않았던 거예요. 흘러내린 게 아니라는 6문장과 이어져 (c)는 맞는 낱말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "불어서 모양을 만든 다음 굳혀서(solidified) 처음부터 고르지 않았던 거예요. 흘러내린 게 아니라는 6문장과 이어져 (c)는 맞는 낱말이에요."
+            },
+            "point": "(c) solidified: 애초에 불어서 만들고 굳혀서 고르지 않음 → 흘러내린 게 아님(6문장)과 이어짐"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "문맥에 맞아요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "문맥에 안 맞아요"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "solidified"
+          ]
+        },
+        {
+          "id": "story_7",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🧊",
+                "en": "a mess · random ball-pit of atoms",
+                "ko": "유리는 깔끔해 보여도 분자 수준에선 엉망이에요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "⚖️",
+                "en": "both liquid and solid · in practice the latter",
+                "ko": "이론상 액체이면서 고체, 실제로는 고체예요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5~7",
+                "icon": "🪟",
+                "en": "never behaves as a liquid · uneven in the first place",
+                "ko": "유리는 흐르지 않아요 — 오래된 유리판이 고르지 않은 건 처음 만들 때부터예요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Flat glass was only developed in the nineteenth century and we had to wait until the middle of the twentieth century for truly flat, thin sheets of glass.",
+      "model_translation": "판유리는 19세기가 되어서야 겨우 개발되었고, 정말로 평평하고 얇은 유리판을 얻기 위해서는 20세기 중반까지 기다려야 했다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Flat glass",
+          "ko": "판유리"
+        },
+        {
+          "en": "flat",
+          "ko": "평평한"
+        },
+        {
+          "en": "was only developed",
+          "ko": "~에야 겨우 개발되었다"
+        },
+        {
+          "en": "developed",
+          "ko": "개발된"
+        },
+        {
+          "en": "in the nineteenth century",
+          "ko": "19세기에"
+        },
+        {
+          "en": "nineteenth",
+          "ko": "19번째의"
+        },
+        {
+          "en": "century",
+          "ko": "세기"
+        },
+        {
+          "en": "had to wait until",
+          "ko": "~까지 기다려야 했다"
+        },
+        {
+          "en": "wait",
+          "ko": "기다리다"
+        },
+        {
+          "en": "the middle of the twentieth century",
+          "ko": "20세기 중반"
+        },
+        {
+          "en": "middle",
+          "ko": "중간"
+        },
+        {
+          "en": "twentieth",
+          "ko": "20번째의"
+        },
+        {
+          "en": "truly",
+          "ko": "정말로"
+        },
+        {
+          "en": "thin",
+          "ko": "얇은"
+        },
+        {
+          "en": "glass",
+          "ko": "유리"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "until",
+          "ko": "~까지"
+        }
+      ],
+      "slashes": [
+        "only developed",
+        "nineteenth century",
+        "had to wait",
+        "twentieth century"
+      ],
+      "roles": [
+        {
+          "text": "Flat glass",
+          "role": "S"
+        },
+        {
+          "text": "was … developed",
+          "role": "V"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "had to wait",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_skim",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "판유리(flat glass)는 19세기에야 만들어졌대요. 유리 만드는 역사 이야기라 가볍게 넘어가요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "shaded": [
+            "Flat glass was only developed in the nineteenth century and we had to wait until the middle of the twentieth century for truly flat, thin sheets of glass."
+          ],
+          "tips": [
+            {
+              "label": "only + 때",
+              "text": "'~에야 겨우'예요. was only developed in the nineteenth century = 19세기에야 겨우 개발되었다.",
+              "mark": "only developed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "The (d)paradox is that, despite it being one of the very oldest human-made substances, scientists still struggle to comprehend why glass behaves the way it does.",
+      "model_translation": "역설은 유리가 인간이 만든 가장 오래된 물질 중 하나임에도 불구하고, 과학자들은 유리가 왜 그런 방식으로 작용하는지 이해하는 데 여전히 애를 먹고 있다는 점이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "paradox",
+          "ko": "역설"
+        },
+        {
+          "en": "despite",
+          "ko": "~에도 불구하고"
+        },
+        {
+          "en": "it being one of",
+          "ko": "그것이 ~ 중 하나라는 것"
+        },
+        {
+          "en": "the very oldest human-made substances",
+          "ko": "인간이 만든 가장 오래된 물질"
+        },
+        {
+          "en": "oldest",
+          "ko": "가장 오래된"
+        },
+        {
+          "en": "human-made",
+          "ko": "인간이 만든"
+        },
+        {
+          "en": "substances",
+          "ko": "물질"
+        },
+        {
+          "en": "scientists",
+          "ko": "과학자들"
+        },
+        {
+          "en": "still struggle to comprehend",
+          "ko": "여전히 이해하는 데 애를 먹는다"
+        },
+        {
+          "en": "struggle",
+          "ko": "애쓰다, 애를 먹다"
+        },
+        {
+          "en": "comprehend",
+          "ko": "이해하다"
+        },
+        {
+          "en": "why glass behaves the way it does",
+          "ko": "유리가 왜 그런 방식으로 작용하는지"
+        },
+        {
+          "en": "behaves",
+          "ko": "작용하다"
+        },
+        {
+          "en": "still",
+          "ko": "여전히"
+        },
+        {
+          "en": "glass",
+          "ko": "유리"
+        },
+        {
+          "en": "way",
+          "ko": "방식, 길"
+        }
+      ],
+      "slashes": [
+        "The (d)paradox is",
+        "that,",
+        "human-made substances,",
+        "struggle to comprehend"
+      ],
+      "roles": [
+        {
+          "text": "The (d)paradox",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "scientists",
+          "role": "S"
+        },
+        {
+          "text": "struggle",
+          "role": "V"
+        }
+      ],
+      "emphasis": [
+        "despite",
+        "struggle"
+      ],
+      "steps": [
+        {
+          "id": "s9_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "despite(~에도 불구하고) 앞뒤를 보면, 유리에 대해 무엇이 이상할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "despite 뒤 one of the very oldest(가장 오래된 것 중 하나)와 still struggle to comprehend를 같이 봐요.",
+              "despite 뒤 one of the very oldest(가장 오래된 것 중 하나)와 still struggle to comprehend를 같이 봐요."
+            ],
+            "explain": "'one of the very oldest human-made substances', 아주 오래된 물질인데 'still struggle to comprehend', 과학자들이 여전히 이해하는 데 애를 먹는대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'one of the very oldest human-made substances', 아주 오래된 물질인데 'still struggle to comprehend', 과학자들이 여전히 이해하는 데 애를 먹는대요.",
+              "o2": "'one of the very oldest human-made substances', 아주 오래된 물질인데 'still struggle to comprehend', 과학자들이 여전히 이해하는 데 애를 먹는대요."
+            },
+            "point": "아주 오래된 물질 ↔ 아직도 이해 못 함 (despite로 맞섬)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "가장 오래된 물질인데도 아직 잘 이해하지 못한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "가장 새로운 물질이라 아직 모른다"
+            },
+            {
+              "id": "o2",
+              "label": "오래된 물질이라 이제 다 이해했다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "oldest",
+            "struggle to comprehend"
+          ],
+          "tips": [
+            {
+              "label": "despite + 명사(-ing)",
+              "text": "'~에도 불구하고'예요. despite it being ~ = 그것이 ~임에도 불구하고.",
+              "mark": "despite"
+            }
+          ]
+        },
+        {
+          "id": "s9_check",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 (d)paradox는 문맥에 맞을까요, 틀릴까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "paradox는 '역설'이에요. 서로 안 맞는 두 사실이 함께 있을 때 써요.",
+              "paradox는 '역설'이에요. 서로 안 맞는 두 사실이 함께 있을 때 써요."
+            ],
+            "explain": "아주 오래된 물질인데 아직도 이해하지 못한다는, 서로 안 맞는 두 사실이에요. (d)paradox는 맞는 낱말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "아주 오래된 물질인데 아직도 이해하지 못한다는, 서로 안 맞는 두 사실이에요. (d)paradox는 맞는 낱말이에요."
+            },
+            "point": "(d) paradox: 가장 오래된 물질 ↔ 아직 이해 못 함 → 역설"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "문맥에 맞아요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "문맥에 안 맞아요"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "paradox"
+          ]
+        },
+        {
+          "id": "s9_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "struggle to comprehend(이해하는 데 애를 먹다)는 어느 그룹일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "깔끔하게 정돈된 것이라면 이해하기 어려울지 생각해 봐요.",
+              "깔끔하게 정돈된 것이라면 이해하기 어려울지 생각해 봐요."
+            ],
+            "explain": "과학자들도 이해하기 어려울 만큼 정체가 뒤죽박죽이라는 말이에요. 1문장의 a mess와 같은 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "과학자들도 이해하기 어려울 만큼 정체가 뒤죽박죽이라는 말이에요. 1문장의 a mess와 같은 쪽이에요."
+            },
+            "point": "struggle to comprehend → a mess(엉망) 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · Clear and perfect (깔끔)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · a mess (엉망)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "struggle to comprehend"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "유리의 정체",
+            "left": {
+              "label": "Clear and perfect 쪽 (깔끔)",
+              "words": [
+                {
+                  "text": "Clear and perfect",
+                  "ko": "투명하고 완벽한"
+                }
+              ]
+            },
+            "right": {
+              "label": "a mess 쪽 (엉망)",
+              "words": [
+                {
+                  "text": "a mess",
+                  "ko": "엉망"
+                },
+                {
+                  "text": "random ball-pit",
+                  "ko": "마구잡이 볼풀"
+                },
+                {
+                  "text": "struggle to comprehend",
+                  "ko": "이해하는 데 애를 먹음",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "struggle to comprehend"
+              ],
+              "left": "왼쪽 · Clear and perfect (깔끔)",
+              "right": "오른쪽 · a mess (엉망)"
+            }
+          }
+        }
+      ],
+      "refers": {
+        "it being one of": "it = glass(유리)"
+      }
+    },
+    {
+      "id": 10,
+      "text": "Glass seems to (e)obey most molecular laws.",
+      "model_translation": "유리는 대부분의 분자 법칙을 따르는(→ 거부하는) 것처럼 보인다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Glass",
+          "ko": "유리"
+        },
+        {
+          "en": "seems to",
+          "ko": "~하는 것 같다"
+        },
+        {
+          "en": "obey",
+          "ko": "따르다"
+        },
+        {
+          "en": "most molecular laws",
+          "ko": "대부분의 분자 법칙"
+        },
+        {
+          "en": "molecular",
+          "ko": "분자의 (*풀이 단어)"
+        },
+        {
+          "en": "laws",
+          "ko": "법칙"
+        },
+        {
+          "en": "seems",
+          "ko": "~인 것 같다"
+        }
+      ],
+      "roles": [
+        {
+          "text": "Glass",
+          "role": "S"
+        },
+        {
+          "text": "seems",
+          "role": "V"
+        },
+        {
+          "text": "to (e)obey most molecular laws",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s10_glass",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "1~9문장에서 유리는 칠판 어느 그룹이었나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "1문장 a mess, 2문장 random ball-pit, 9문장 struggle to comprehend를 떠올려 봐요.",
+              "1문장 a mess, 2문장 random ball-pit, 9문장 struggle to comprehend를 떠올려 봐요."
+            ],
+            "explain": "엉망인 구조, 마구잡이 볼풀, 과학자도 이해 못 함이 모두 유리 이야기였어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "엉망인 구조, 마구잡이 볼풀, 과학자도 이해 못 함이 모두 유리 이야기였어요."
+            },
+            "point": "1~9문장의 유리 = a mess(엉망) 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · Clear and perfect (깔끔)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · a mess (엉망)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "유리의 정체",
+            "left": {
+              "label": "Clear and perfect 쪽 (깔끔)",
+              "words": [
+                {
+                  "text": "Clear and perfect",
+                  "ko": "투명하고 완벽한"
+                }
+              ]
+            },
+            "right": {
+              "label": "a mess 쪽 (엉망)",
+              "words": [
+                {
+                  "text": "a mess",
+                  "ko": "엉망"
+                },
+                {
+                  "text": "random ball-pit",
+                  "ko": "마구잡이 볼풀"
+                },
+                {
+                  "text": "struggle to comprehend",
+                  "ko": "이해하는 데 애를 먹음"
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s10_obey",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "obey most molecular laws(대부분의 분자 법칙을 따른다)는 어느 그룹 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "법칙을 그대로 따르면 깔끔하게 설명될지, 뒤죽박죽일지 생각해 봐요.",
+              "법칙을 그대로 따르면 깔끔하게 설명될지, 뒤죽박죽일지 생각해 봐요."
+            ],
+            "explain": "법칙을 그대로 따르면 정돈되어 깔끔하게 설명돼요. 엉망 쪽이 아니에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "법칙을 그대로 따르면 정돈되어 깔끔하게 설명돼요. 엉망 쪽이 아니에요."
+            },
+            "point": "obey most molecular laws → Clear and perfect(깔끔) 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · Clear and perfect (깔끔)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · a mess (엉망)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "obey"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "유리의 정체",
+            "left": {
+              "label": "Clear and perfect 쪽 (깔끔)",
+              "words": [
+                {
+                  "text": "Clear and perfect",
+                  "ko": "투명하고 완벽한"
+                },
+                {
+                  "text": "obey most molecular laws",
+                  "ko": "대부분의 분자 법칙을 따름",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "a mess 쪽 (엉망)",
+              "words": [
+                {
+                  "text": "a mess",
+                  "ko": "엉망"
+                },
+                {
+                  "text": "random ball-pit",
+                  "ko": "마구잡이 볼풀"
+                },
+                {
+                  "text": "struggle to comprehend",
+                  "ko": "이해하는 데 애를 먹음"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "obey most molecular laws"
+              ],
+              "left": "왼쪽 · Clear and perfect (깔끔)",
+              "right": "오른쪽 · a mess (엉망)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "As one glassmaker put it, glass is not a material; it’s a state.",
+      "model_translation": "한 유리 제조업자가 말했듯이, 유리는 재료가 아니라 상태이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "As one glassmaker put it",
+          "ko": "한 유리 제조업자가 말했듯이"
+        },
+        {
+          "en": "glassmaker",
+          "ko": "유리 제조업자"
+        },
+        {
+          "en": "put",
+          "ko": "놓다 · 여기서는 '말하다'"
+        },
+        {
+          "en": "glass",
+          "ko": "유리"
+        },
+        {
+          "en": "material",
+          "ko": "재료"
+        },
+        {
+          "en": "it’s",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "state",
+          "ko": "상태"
+        }
+      ],
+      "slashes": [
+        "As one glassmaker put it,",
+        "not a material;"
+      ],
+      "roles": [
+        {
+          "text": "one glassmaker",
+          "role": "S"
+        },
+        {
+          "text": "put",
+          "role": "V"
+        },
+        {
+          "text": "glass",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "not a material",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s11_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "유리는 재료(material)가 아니라 상태(state)래요.\n밑줄 다섯 개가 칠판의 어느 그룹 흐름과 맞는지 떠올리며 문제를 풀어 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "highlight": [
+            "state"
+          ],
+          "tips": [
+            {
+              "label": "put",
+              "text": "이 글에서는 → As ~ put it = ~가 말했듯이  ('놓다' 아님)",
+              "mark": "put",
+              "trap": true
+            },
+            {
+              "label": "state",
+              "text": "이 글에서는 → 상태  ('주(州)·말하다' 아님)",
+              "mark": "state",
+              "trap": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

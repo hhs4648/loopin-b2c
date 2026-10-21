@@ -22,7 +22,7 @@
 - [유형별 틀](type-templates.md) — docs/tutor/templates/ (공통 README + 빈칸 blank.md v0.1), 유형 규칙 바뀌면 여기부터
 - [칠하기는 최소한](minimal-highlight.md) — 덩어리 전체 말고 핵심 단어만, 맥락 필수어(difficult·not 등)는 남김
 - [💡 칩 노출 제한](tip-chip-limit.md) — 같은 칩은 학생 전체 3번(안 누르면 5번)까지, 전체 정책
-- [시험 연도 표기](exam-year-labeling.md) — 평가원(6·9월·수능)=학년도(시행+1), 교육청=시행연도, 제목 아래 「YYYY년 M월 시행」; 일반 영어는 별개 갈래
+- [시험 연도 표기](exam-year-labeling.md) — 제목은 모두 시행연도, 목록도 시행한 해로 묶음 + 안내 한 줄, 평가원은 부제에 학년도; PC 「2026 수능」 파일만 학년도 표기 (2026-10-21)
 - [칠판엔 읽은 데까지만](board-read-so-far-only.md) — 칠판 정보는 지금까지 읽은 문장에서만, 묶음 이름·캡션으로 뒤 내용/정답 말 금지
 - [해석 맞추기·방식 돌려 내기](match-ko-step.md) — 중·초 짧은 문장 모두(고 미정), 맞추면 S·V·뜻확인 skip, 같은 slot에 여러 방식 두고 최근에 덜 한 것을 냄(듀오링고처럼)
 - [평가 뒤집기 짚기](evaluation-flip.md) — 핵심어 + 저자 입장 확고할 때만, 평소와 반대 평가면 +/− 2지 + 평가어 근거 (30번처럼 중립이면 X)
@@ -42,6 +42,7 @@
 - [문장 넣기 주어진 문장 정석](insertion-given-sentence-order.md) — This↔대조 → which → 특징 → 앞 내용, 「뒤에 무엇?」 억지 질문 금지, 개념 차이는 그림으로
 - [그림 칠판 칩 중복 금지](picture-no-duplicate-words.md) — picture 아래 words가 그림 속 글자와 겹치면 빼기
 - [홈 마을 · 상담실](home-village-counsel.md) — 집=기능 입구, 상담실=점수·목표·약점→커리큘럼, 마을 그림은 사용자가 외부 디자인으로 교체
+- [2026년 시행 기출 Top 10](lessons-2026-held.md) — 3월 31·41·42 + 6·9월 모평 20개 초안(10-21), 검수 목록 docs/tutor/review/, 수능은 보류
 - [2022년 3월 레슨](lessons-2022-03.md) — Top15의 독해 14개 모두 초안(듣기 제외), 메가 오답률, PYTHONUTF8=1 py
 - [추천하고 쉽게 설명](recommend-and-explain.md) — 선택지는 추천 하나 먼저+이유, git 용어는 풀어서, 큰 파일·되돌리기 어려운 일은 먼저 묻기
 - [어법 레슨 방식](grammar-type-lessons.md) — S·V 빼고 밑줄 문법만: 뜻→도치 등 규칙→바로 연습→「더 연습할까요?」→보충학습실 drill 10문제

@@ -1,0 +1,321 @@
+{
+  "lesson": "mopyeong-2027-06-42-glass-state",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어휘 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_mess": {
+      "say": "유리의 구조는 솔직히(frankly) 좀 엉망(a mess)이래요. 이 글의 요지가 여기서 시작해요.",
+      "from": "1ghqp4w"
+    },
+    "s2_as": {
+      "ask": "Clear and perfect as it might appear to our eyes는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "형용사가 맨 앞에 나오고 as + 주어 + 동사가 이어져요. 콤마(,) 뒤 내용(볼풀 같다)과 어떻게 이어지는지 봐요.",
+        "형용사가 맨 앞에 나오고 as + 주어 + 동사가 이어져요. 콤마(,) 뒤 내용(볼풀 같다)과 어떻게 이어지는지 봐요."
+      ],
+      "explain": "형용사 + as + 주어 + 동사는 '비록 ~이지만'이에요. 겉으로는 깔끔해 보여도, 분자 수준에선 마구잡이 볼풀 같대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "형용사 + as + 주어 + 동사는 '비록 ~이지만'이에요. 겉으로는 깔끔해 보여도, 분자 수준에선 마구잡이 볼풀 같대요.",
+        "o2": "형용사 + as + 주어 + 동사는 '비록 ~이지만'이에요. 겉으로는 깔끔해 보여도, 분자 수준에선 마구잡이 볼풀 같대요."
+      },
+      "point": "Clear and perfect as it might appear = 투명하고 완벽해 보일지 몰라도 (양보의 as)",
+      "from": "16x5sos"
+    },
+    "s2_board": {
+      "say": "겉보기(Clear and perfect)와 1문장의 a mess를 두 그룹으로 나눠 봐요.\n유리의 구조는 오른쪽, 엉망이에요.",
+      "from": "1lexk36"
+    },
+    "s2_sort": {
+      "ask": "random ball-pit of atoms(원자들의 마구잡이 볼풀)는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "random은 '마구잡이의'예요. 깔끔하게 정돈된 모습일지 생각해 봐요.",
+        "random은 '마구잡이의'예요. 깔끔하게 정돈된 모습일지 생각해 봐요."
+      ],
+      "explain": "원자들이 마구잡이로 섞인 볼풀은 정돈된 모습이 아니에요. 1문장의 a mess와 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "원자들이 마구잡이로 섞인 볼풀은 정돈된 모습이 아니에요. 1문장의 a mess와 같은 쪽이에요."
+      },
+      "point": "random ball-pit(마구잡이 볼풀) → a mess(엉망) 쪽",
+      "from": "6vgg6o"
+    },
+    "s3_term": {
+      "ask": "과학자들은 이 엉망인 상태(this mess)를 뭐라고 부를까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "for some scientists ~, for others ~는 '어떤 과학자에게는 ~, 다른 이들에게는 ~'예요.",
+        "for some scientists ~, for others ~는 '어떤 과학자에게는 ~, 다른 이들에게는 ~'예요."
+      ],
+      "explain": "'amorphous solid'(무정형의 고체)라고도, 'supercooled liquid'(과냉각 액체)라고도 불러요. 묻는 사람에 따라 이름이 달라요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'amorphous solid'(무정형의 고체)라고도, 'supercooled liquid'(과냉각 액체)라고도 불러요. 묻는 사람에 따라 이름이 달라요.",
+        "o2": "'amorphous solid'(무정형의 고체)라고도, 'supercooled liquid'(과냉각 액체)라고도 불러요. 묻는 사람에 따라 이름이 달라요."
+      },
+      "point": "같은 유리를 어떤 과학자는 고체(solid), 어떤 과학자는 액체(liquid)라고 부른다",
+      "from": "1lcfnvp"
+    },
+    "s4_latter": {
+      "ask": "이론상(In theory) 유리는 액체이면서 고체래요. 실제로는(in practice) 그중 the latter(후자)라는데, 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "the latter는 '후자', 앞에 나온 둘 중 뒤의 것이에요. both liquid and solid의 순서를 봐요.",
+        "the latter는 '후자', 앞에 나온 둘 중 뒤의 것이에요. both liquid and solid의 순서를 봐요."
+      ],
+      "explain": "both liquid and solid에서 뒤에 나온 건 solid예요. 실제로 작용하는 걸 보면 고체래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "both liquid and solid에서 뒤에 나온 건 solid예요. 실제로 작용하는 걸 보면 고체래요.",
+        "o2": "both liquid and solid에서 뒤에 나온 건 solid예요. 실제로 작용하는 걸 보면 고체래요."
+      },
+      "point": "In theory 액체 + 고체 ↔ in practice the latter = 고체",
+      "from": "1vth1bv"
+    },
+    "story_4": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s5_check": {
+      "ask": "그럼 (a)liquid는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "4문장에서 실제로는 후자, 고체라고 했어요. 상온에서 결코(never) 액체처럼 행동하지 않는다는 말이 그 흐름과 이어지는지 봐요.",
+        "4문장에서 실제로는 후자, 고체라고 했어요. 상온에서 결코(never) 액체처럼 행동하지 않는다는 말이 그 흐름과 이어지는지 봐요."
+      ],
+      "explain": "실제로는 고체니까, 상온에서 아무리 오래 지나도 결코 액체처럼 행동하지 않는다는 말이 이어져요. (a)liquid는 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "실제로는 고체니까, 상온에서 아무리 오래 지나도 결코 액체처럼 행동하지 않는다는 말이 이어져요. (a)liquid는 맞는 낱말이에요."
+      },
+      "point": "(a) liquid: 실제로는 고체 → never behaves as a liquid (결코 액체처럼 행동하지 않음)",
+      "from": "e565ds"
+    },
+    "s6_why": {
+      "ask": "아래가 더 두꺼운 오래된 유리판, 유리가 천천히 가라앉아서(sinking) 그렇게 된 걸까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "are generally not that way because ~를 봐요. not이 붙어서 '~ 때문에 그런 게 아니다'예요.",
+        "are generally not that way because ~를 봐요. not이 붙어서 '~ 때문에 그런 게 아니다'예요."
+      ],
+      "explain": "'are generally not that way because the glass is slowly sinking', not이 붙어서 '가라앉고 있기 때문에 그렇게 된 게 아니다'예요. 유리는 흐르지 않으니까요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'are generally not that way because the glass is slowly sinking', not이 붙어서 '가라앉고 있기 때문에 그렇게 된 게 아니다'예요. 유리는 흐르지 않으니까요."
+      },
+      "point": "아래가 두꺼운 유리판 ≠ 유리가 흘러내려서 (not … because … sinking)",
+      "from": "1mj07do"
+    },
+    "s6_check": {
+      "ask": "그럼 (b)misshapen는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "thicker at the bottom than the top(윗부분보다 아랫부분이 더 두꺼운)을 봐요. 이런 유리판의 모양이 어떨지 봐요.",
+        "thicker at the bottom than the top(윗부분보다 아랫부분이 더 두꺼운)을 봐요. 이런 유리판의 모양이 어떨지 봐요."
+      ],
+      "explain": "위아래 두께가 다르니 모양이 고르지 않아요. misshapen(보기 흉한, 일그러진)은 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "위아래 두께가 다르니 모양이 고르지 않아요. misshapen(보기 흉한, 일그러진)은 맞는 낱말이에요."
+      },
+      "point": "(b) misshapen: thicker at the bottom than the top → 모양이 일그러진 유리판",
+      "from": "12x78q8"
+    },
+    "s7_reason": {
+      "ask": "그럼 유리판이 고르지 않은(uneven) 진짜 이유는 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "because 뒤 that’s the way they were blown and solidified를 봐요. in the first place는 '애초에'예요.",
+        "because 뒤 that’s the way they were blown and solidified를 봐요. in the first place는 '애초에'예요."
+      ],
+      "explain": "'that’s the way they were blown and solidified in the first place', 처음 만들 때부터 그렇게 불어서 만들고 굳혔기 때문이래요. Unless는 '~하지 않는 한'이라 400℃는 이유가 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'that’s the way they were blown and solidified in the first place', 처음 만들 때부터 그렇게 불어서 만들고 굳혔기 때문이래요. Unless는 '~하지 않는 한'이라 400℃는 이유가 아니에요.",
+        "o2": "'that’s the way they were blown and solidified in the first place', 처음 만들 때부터 그렇게 불어서 만들고 굳혔기 때문이래요. Unless는 '~하지 않는 한'이라 400℃는 이유가 아니에요."
+      },
+      "point": "고르지 않은 진짜 이유 = 애초에(in the first place) 불어서 만들고 굳힐 때부터 (흘러내린 게 아님)",
+      "from": "fj0h73"
+    },
+    "s7_check": {
+      "ask": "그럼 (c)solidified는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "6문장에서 유리가 흘러내린 게 아니라고 했어요. 처음 불어서 만든 유리가 어떻게 됐을지 봐요.",
+        "6문장에서 유리가 흘러내린 게 아니라고 했어요. 처음 불어서 만든 유리가 어떻게 됐을지 봐요."
+      ],
+      "explain": "불어서 모양을 만든 다음 굳혀서(solidified) 처음부터 고르지 않았던 거예요. 흘러내린 게 아니라는 6문장과 이어져 (c)는 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "불어서 모양을 만든 다음 굳혀서(solidified) 처음부터 고르지 않았던 거예요. 흘러내린 게 아니라는 6문장과 이어져 (c)는 맞는 낱말이에요."
+      },
+      "point": "(c) solidified: 애초에 불어서 만들고 굳혀서 고르지 않음 → 흘러내린 게 아님(6문장)과 이어짐",
+      "from": "1mm3tse"
+    },
+    "story_7": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s8_skim": {
+      "say": "판유리(flat glass)는 19세기에야 만들어졌대요. 유리 만드는 역사 이야기라 가볍게 넘어가요.",
+      "from": "h9hvp0"
+    },
+    "s9_mean": {
+      "ask": "despite(~에도 불구하고) 앞뒤를 보면, 유리에 대해 무엇이 이상할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "despite 뒤 one of the very oldest(가장 오래된 것 중 하나)와 still struggle to comprehend를 같이 봐요.",
+        "despite 뒤 one of the very oldest(가장 오래된 것 중 하나)와 still struggle to comprehend를 같이 봐요."
+      ],
+      "explain": "'one of the very oldest human-made substances', 아주 오래된 물질인데 'still struggle to comprehend', 과학자들이 여전히 이해하는 데 애를 먹는대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'one of the very oldest human-made substances', 아주 오래된 물질인데 'still struggle to comprehend', 과학자들이 여전히 이해하는 데 애를 먹는대요.",
+        "o2": "'one of the very oldest human-made substances', 아주 오래된 물질인데 'still struggle to comprehend', 과학자들이 여전히 이해하는 데 애를 먹는대요."
+      },
+      "point": "아주 오래된 물질 ↔ 아직도 이해 못 함 (despite로 맞섬)",
+      "from": "149do16"
+    },
+    "s9_check": {
+      "ask": "그럼 (d)paradox는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "paradox는 '역설'이에요. 서로 안 맞는 두 사실이 함께 있을 때 써요.",
+        "paradox는 '역설'이에요. 서로 안 맞는 두 사실이 함께 있을 때 써요."
+      ],
+      "explain": "아주 오래된 물질인데 아직도 이해하지 못한다는, 서로 안 맞는 두 사실이에요. (d)paradox는 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "아주 오래된 물질인데 아직도 이해하지 못한다는, 서로 안 맞는 두 사실이에요. (d)paradox는 맞는 낱말이에요."
+      },
+      "point": "(d) paradox: 가장 오래된 물질 ↔ 아직 이해 못 함 → 역설",
+      "from": "1l80lcv"
+    },
+    "s9_sort": {
+      "ask": "struggle to comprehend(이해하는 데 애를 먹다)는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "깔끔하게 정돈된 것이라면 이해하기 어려울지 생각해 봐요.",
+        "깔끔하게 정돈된 것이라면 이해하기 어려울지 생각해 봐요."
+      ],
+      "explain": "과학자들도 이해하기 어려울 만큼 정체가 뒤죽박죽이라는 말이에요. 1문장의 a mess와 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "과학자들도 이해하기 어려울 만큼 정체가 뒤죽박죽이라는 말이에요. 1문장의 a mess와 같은 쪽이에요."
+      },
+      "point": "struggle to comprehend → a mess(엉망) 쪽",
+      "from": "17nnchp"
+    },
+    "s10_glass": {
+      "ask": "1~9문장에서 유리는 칠판 어느 그룹이었나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "1문장 a mess, 2문장 random ball-pit, 9문장 struggle to comprehend를 떠올려 봐요.",
+        "1문장 a mess, 2문장 random ball-pit, 9문장 struggle to comprehend를 떠올려 봐요."
+      ],
+      "explain": "엉망인 구조, 마구잡이 볼풀, 과학자도 이해 못 함이 모두 유리 이야기였어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "엉망인 구조, 마구잡이 볼풀, 과학자도 이해 못 함이 모두 유리 이야기였어요."
+      },
+      "point": "1~9문장의 유리 = a mess(엉망) 쪽",
+      "from": "6dhdum"
+    },
+    "s10_obey": {
+      "ask": "obey most molecular laws(대부분의 분자 법칙을 따른다)는 어느 그룹 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "법칙을 그대로 따르면 깔끔하게 설명될지, 뒤죽박죽일지 생각해 봐요.",
+        "법칙을 그대로 따르면 깔끔하게 설명될지, 뒤죽박죽일지 생각해 봐요."
+      ],
+      "explain": "법칙을 그대로 따르면 정돈되어 깔끔하게 설명돼요. 엉망 쪽이 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "법칙을 그대로 따르면 정돈되어 깔끔하게 설명돼요. 엉망 쪽이 아니에요."
+      },
+      "point": "obey most molecular laws → Clear and perfect(깔끔) 쪽",
+      "from": "53jqld"
+    },
+    "s11_go": {
+      "say": "유리는 재료(material)가 아니라 상태(state)래요.\n밑줄 다섯 개가 칠판의 어느 그룹 흐름과 맞는지 떠올리며 문제를 풀어 봐요.",
+      "from": "s5v43a"
+    }
+  },
+  "exam": {
+    "ask": "밑줄 단어마다 칠판의 어느 그룹 흐름인지 떠올려 봐요. 흐름과 안 맞는 것 하나를 골라요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 과학자들도 유리가 왜 그렇게 작용하는지 이해하지 못하니, 유리는 분자 법칙을 따르는(obey) 게 아니라 거스르는(defy) 것처럼 보인다고 해야 맞아요.",
+    "final_wrong": "정답은 ⑤ (e)예요. 과학자들도 유리를 이해하지 못한다고 했으니, obey(따르다)가 아니라 defy(거스르다)가 맞아요.",
+    "option_feedback": {
+      "1": "실제로는 고체라서, 상온에서 결코 액체처럼 행동하지 않는다는 말이라 맞아요.",
+      "2": "위보다 아래가 두꺼운 유리판이니 모양이 일그러진(misshapen) 게 맞아요.",
+      "3": "유리판이 고르지 않은 건 애초에 불어서 만들고 굳힐(solidified) 때 그렇게 돼서예요. 맞는 낱말이에요.",
+      "4": "아주 오래된 물질인데 아직 이해하지 못한다는, 서로 안 맞는 사실이라 역설(paradox)이 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 26%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "solidified(굳은)가 '유리는 오래 흘러내린다'는 생각과 안 맞아 보여서 많이 골라요. 하지만 글은 유리가 액체처럼 흐르지 않는다고 해요. 유리판이 고르지 않은 건 애초에 불어서 만들고 굳힐 때 그렇게 된 거예요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "5문장",
+              "text": "never behaves as a liquid",
+              "ko": "결코 액체처럼 행동하지 않음",
+              "tone": "hl"
+            },
+            {
+              "label": "6문장",
+              "text": "not … because the glass is slowly sinking",
+              "ko": "흘러내려서 그런 게 아님",
+              "tone": "hl"
+            },
+            {
+              "label": "7문장",
+              "text": "blown and (c)solidified in the first place",
+              "ko": "애초에 불어서 만들고 굳혀서",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "i7czcq"
+  },
+  "intro": {
+    "topic": {
+      "say": "유리창은 단단하고 투명해 보이죠? 이번 글은 유리의 정체를 다뤄요."
+    },
+    "method1": {
+      "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+    },
+    "method2": {
+      "say": "요지를 잡고, 단어를 두 그룹으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 볼 거예요."
+    },
+    "from": "wyi99l"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "nhkfyd"
+}

@@ -1,0 +1,72 @@
+{
+ "2": [
+  {
+   "word": "but",
+   "phrase": "But whatever",
+   "sense": "그러나",
+   "usage": "접속사 but (앞 내용과 맞섬)"
+  },
+  {
+   "word": "that",
+   "phrase": "difference that occurred",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "that",
+   "phrase": "realized that crossing",
+   "sense": "~라는 것을",
+   "usage": "명사절 that + 주어·동사"
+  },
+  {
+   "word": "that",
+   "phrase": "salmon that grew faster",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "that would be quite different",
+   "sense": "(앞의 A domestic population을 꾸밈)",
+   "usage": "관계대명사 that (꾸미는 명사와 떨어져 있음)"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "to which fish must adapt",
+   "sense": "~에 (적응하다)",
+   "usage": "adapt to ~ = ~에 적응하다 (to which = 그 난관에)"
+  },
+  {
+   "word": "which",
+   "phrase": "to which",
+   "sense": "그것(난관)",
+   "usage": "관계대명사 which (전치사 to + which)"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "animals that can",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "in order to survive",
+   "sense": "~하기 위해",
+   "usage": "in order to + 동사원형 = ~하기 위해"
+  }
+ ],
+ "7": [
+  {
+   "word": "that",
+   "phrase": "a fish that can",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ]
+}

@@ -1,0 +1,1962 @@
+{
+  "id": "moeui-2026-03-41-literary-mirror",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 3월 고3 전국연합학력평가 영어 41~42번 중 41번 (제목, 2점)",
+  "brief": {
+    "topic": "제목 푸는 법: 문장마다 핵심어 → 글쓴이 생각(두 그룹, +/−) → 글 전체 한 줄 → 바꿔 쓴 제목",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "title",
+    "labels": [
+      "핵심어 찾기",
+      "글쓴이 생각 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-literary-mirror.svg",
+      "alt": "칠판: Literature(문학) = Mirror(거울)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "문학 작품이 세상을 비추는 거울이라면, 그 거울엔 무엇이 비칠까요? 이번 글은 문학이라는 거울을 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "제목 문제는 글 전체를 한 줄로 묶는 말을 찾는 거예요. 문장마다 핵심어를 찾고 글쓴이 생각을 잡아 볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "윗글의 제목으로 가장 적절한 것은?",
+    "sentence": 4,
+    "analysis_first": true,
+    "wrong_rate": 60.8,
+    "wrong_rank": 7,
+    "wrong_rate_source": "EBS",
+    "glosses": [
+      {
+        "en": "Significance",
+        "ko": "중요성"
+      },
+      {
+        "en": "Literary Mirrors",
+        "ko": "문학이라는 거울"
+      },
+      {
+        "en": "Fail to Show",
+        "ko": "보여 주지 못하다"
+      },
+      {
+        "en": "Tool",
+        "ko": "도구"
+      },
+      {
+        "en": "Deliver Their View",
+        "ko": "자기 관점을 전하다"
+      },
+      {
+        "en": "Fascinated",
+        "ko": "매료된, 끌리는"
+      },
+      {
+        "en": "Twists",
+        "ko": "반전"
+      },
+      {
+        "en": "Power",
+        "ko": "힘"
+      },
+      {
+        "en": "Reflect Reality",
+        "ko": "현실을 비추다"
+      },
+      {
+        "en": "As It Stands",
+        "ko": "있는 그대로"
+      },
+      {
+        "en": "Classic",
+        "ko": "고전"
+      },
+      {
+        "en": "Elements",
+        "ko": "요소"
+      },
+      {
+        "en": "Working in Harmony",
+        "ko": "조화를 이루는"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "The Significance of What Literary Mirrors Fail to Show",
+        "keywords": [
+          "Significance",
+          "What Literary Mirrors Fail to Show"
+        ],
+        "ko": "문학이라는 거울이 보여 주지 못하는 것의 중요성",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "Literature: A Tool for Writers to Deliver Their View",
+        "keywords": [
+          "Deliver Their View"
+        ],
+        "ko": "문학: 작가가 자기 관점을 전하는 도구"
+      },
+      {
+        "id": "3",
+        "label": "Why Are We Fascinated by Twists in Literature?",
+        "keywords": [
+          "Twists"
+        ],
+        "ko": "우리는 왜 문학 속 반전에 끌리는가?"
+      },
+      {
+        "id": "4",
+        "label": "The Power of Literature to Reflect Reality As It Stands",
+        "keywords": [
+          "Reflect Reality As It Stands"
+        ],
+        "ko": "현실을 있는 그대로 비추는 문학의 힘"
+      },
+      {
+        "id": "5",
+        "label": "What Makes a Classic: All Elements Working in Harmony",
+        "keywords": [
+          "Working in Harmony"
+        ],
+        "ko": "고전을 만드는 것: 조화를 이루는 모든 요소"
+      }
+    ],
+    "brief": {
+      "ask": "글 전체 한 줄을 다른 말로 바꾼 제목을 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! What Literary Mirrors Fail to Show는 4문장의 what they don’t reflect를, Significance는 significant를 바꿔 쓴 말이에요.",
+      "final_wrong": "정답은 ①이에요. 문학이라는 거울이 비추지 못하는 것(what they don’t reflect)도 중요하다(significant)는 글이에요.",
+      "option_feedback": {
+        "2": "viewpoint(관점)는 나오지만, 거울 안에 담기지 않아 보이지 않는다는 말이에요. 작가가 관점을 전한다는 글이 아니에요.",
+        "3": "문학 속 반전(twists) 이야기는 글에 없어요.",
+        "4": "2문장은 by no means, 결코 있는 그대로 비추지 않는다고 했어요. 방향이 반대예요.",
+        "5": "9문장은 거울 속 모습이 조화롭지 않을(discordant) 수도 있다고 했어요. 방향이 반대예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 24.0%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "as it stands가 2문장에 그대로 나와서 고르기 쉬워요. 하지만 그 앞에 by no means(결코 ~이 아닌)가 있어요. 문학은 세상을 있는 그대로 비추는 게 결코 아니래요.",
+          "panel": {
+            "kind": "contrast",
+            "title": "단어는 같아도 방향이 반대",
+            "between": "↔",
+            "left": {
+              "title": "2문장 · by no means a direct reflection of the world as it stands",
+              "text": "결코 있는 그대로 비추지 않는다"
+            },
+            "right": {
+              "title": "④ Reflect Reality As It Stands",
+              "text": "있는 그대로 비추는 힘"
+            }
+          }
+        },
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 21.2%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "11·12문장에 viewpoint(관점)가 나와서 고르기 쉬워요. 하지만 그 관점은 거울 안에 담기지 않아 우리에게 보이지 않는대요(invisible). 작가가 관점을 전한다는 글이 아니라, 비추지 못하는 것도 중요하다는 글이에요.",
+          "panel": {
+            "kind": "contrast",
+            "title": "viewpoint는 어떻게 쓰였나",
+            "between": "↔",
+            "left": {
+              "title": "11·12문장 · a viewpoint which cannot be captured … invisible to us",
+              "text": "관점은 거울 안에 안 보인다"
+            },
+            "right": {
+              "title": "② A Tool for Writers to Deliver Their View",
+              "text": "작가가 관점을 전하는 도구"
+            }
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "hold up a mirror to",
+        "ko": "~을 비추어 보여 주다"
+      },
+      {
+        "en": "by no means",
+        "ko": "결코 ~이 아닌"
+      },
+      {
+        "en": "reflection",
+        "ko": "(비친) 상"
+      },
+      {
+        "en": "flaw",
+        "ko": "결함"
+      },
+      {
+        "en": "blind spot",
+        "ko": "사각지대"
+      },
+      {
+        "en": "significant",
+        "ko": "중요한"
+      },
+      {
+        "en": "exclusion",
+        "ko": "배제"
+      },
+      {
+        "en": "distortion",
+        "ko": "왜곡"
+      },
+      {
+        "en": "figure",
+        "ko": "나타나다"
+      },
+      {
+        "en": "absence",
+        "ko": "부재"
+      },
+      {
+        "en": "viewpoint",
+        "ko": "관점"
+      }
+    ],
+    "options": [
+      {
+        "en": "significance",
+        "ko": "중요성"
+      },
+      {
+        "en": "fail to",
+        "ko": "~하지 못하다"
+      },
+      {
+        "en": "deliver",
+        "ko": "전하다"
+      },
+      {
+        "en": "fascinated",
+        "ko": "매료된"
+      },
+      {
+        "en": "twist",
+        "ko": "반전"
+      },
+      {
+        "en": "as it stands",
+        "ko": "있는 그대로"
+      },
+      {
+        "en": "in harmony",
+        "ko": "조화를 이루어"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Writing of a commentary by Lenin on Leo Tolstoy, the critic Pierre Macherey agrees with Lenin’s claim that Tolstoy’s work holds up a mirror to the Russian revolution of 1905.",
+      "model_translation": "Leo Tolstoy에 대한 Lenin의 논평에 관해 기술하며, 비평가 Pierre Macherey는 Tolstoy의 작품이 1905년 러시아 혁명에 거울을 비추고 있다는 Lenin의 주장에 동의한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Writing of",
+          "ko": "~에 관해 쓰면서"
+        },
+        {
+          "en": "a commentary",
+          "ko": "논평"
+        },
+        {
+          "en": "by Lenin",
+          "ko": "Lenin이 쓴 · Lenin은 사람 이름이에요"
+        },
+        {
+          "en": "on Leo Tolstoy",
+          "ko": "Tolstoy에 대한 · Tolstoy는 작가 이름이에요"
+        },
+        {
+          "en": "the critic Pierre Macherey",
+          "ko": "비평가 Pierre Macherey"
+        },
+        {
+          "en": "agrees with",
+          "ko": "~에 동의한다"
+        },
+        {
+          "en": "Lenin’s claim",
+          "ko": "Lenin의 주장"
+        },
+        {
+          "en": "Tolstoy’s work",
+          "ko": "Tolstoy의 작품"
+        },
+        {
+          "en": "holds up a mirror",
+          "ko": "거울을 비추다 · 여기서는 '~을 거울처럼 비추어 보여 주다'"
+        },
+        {
+          "en": "the Russian revolution of 1905",
+          "ko": "1905년 러시아 혁명"
+        },
+        {
+          "en": "Writing",
+          "ko": "쓰기, 쓰는 것"
+        },
+        {
+          "en": "commentary",
+          "ko": "논평"
+        },
+        {
+          "en": "Lenin",
+          "ko": "레닌(사람 이름)"
+        },
+        {
+          "en": "Leo",
+          "ko": "레오(이름)"
+        },
+        {
+          "en": "Tolstoy",
+          "ko": "톨스토이(작가 이름)"
+        },
+        {
+          "en": "critic",
+          "ko": "비평가"
+        },
+        {
+          "en": "Pierre",
+          "ko": "피에르(이름)"
+        },
+        {
+          "en": "Macherey",
+          "ko": "마슈레(사람 이름)"
+        },
+        {
+          "en": "agrees",
+          "ko": "동의하다"
+        },
+        {
+          "en": "Lenin’s",
+          "ko": "레닌의"
+        },
+        {
+          "en": "Tolstoy’s",
+          "ko": "톨스토이의"
+        },
+        {
+          "en": "holds",
+          "ko": "~라고 믿다"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울"
+        },
+        {
+          "en": "Russian",
+          "ko": "러시아의"
+        },
+        {
+          "en": "revolution",
+          "ko": "혁명"
+        }
+      ],
+      "slashes": [
+        "by Lenin",
+        "Leo Tolstoy,",
+        "Pierre Macherey",
+        "Lenin’s claim",
+        "holds up a mirror"
+      ],
+      "roles": [
+        {
+          "text": "the critic Pierre Macherey",
+          "role": "S"
+        },
+        {
+          "text": "agrees",
+          "role": "V"
+        },
+        {
+          "text": "Tolstoy’s work",
+          "role": "S"
+        },
+        {
+          "text": "holds up",
+          "role": "V"
+        },
+        {
+          "text": "a mirror",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_mirror",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "Tolstoy의 작품이 1905년 러시아 혁명을 비추는 거울이라는 주장에 Macherey도 동의한대요. 이 글은 '문학 = 거울'이라는 비유로 이어져요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "holds up a mirror"
+          ],
+          "tips": [
+            {
+              "label": "Writing of ~, 주어 …",
+              "text": "Writing of ~는 '~에 관해 쓰면서'예요. 콤마(,) 뒤 the critic Pierre Macherey가 이 문장의 주어예요.",
+              "mark": "Writing of"
+            },
+            {
+              "label": "work",
+              "text": "이 글에서는 → 작품  ('일' 아님)",
+              "mark": "work",
+              "trap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Yet this mirroring, Macherey argues, is a complex affair, by no means a (a)direct reflection of the world as it stands.",
+      "model_translation": "하지만 Macherey는 이러한 거울 비추기가 복잡한 일이며, 결코 있는 그대로의 세상에 대한 직접적인 상(像)이 아니라고 주장한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Yet",
+          "ko": "그러나 · 문장 앞의 yet은 '그러나'예요"
+        },
+        {
+          "en": "this mirroring",
+          "ko": "이 거울 비추기"
+        },
+        {
+          "en": "Macherey argues",
+          "ko": "Macherey는 주장한다"
+        },
+        {
+          "en": "complex affair",
+          "ko": "복잡한 일"
+        },
+        {
+          "en": "by no means",
+          "ko": "결코 ~이 아닌"
+        },
+        {
+          "en": "direct reflection",
+          "ko": "직접적인 상(像) · 그대로 비친 모습"
+        },
+        {
+          "en": "of the world",
+          "ko": "세상의"
+        },
+        {
+          "en": "as it stands",
+          "ko": "있는 그대로의"
+        },
+        {
+          "en": "mirroring",
+          "ko": "거울 비추기"
+        },
+        {
+          "en": "Macherey",
+          "ko": "마슈레(사람 이름)"
+        },
+        {
+          "en": "argues",
+          "ko": "주장하다"
+        },
+        {
+          "en": "complex",
+          "ko": "복잡한"
+        },
+        {
+          "en": "affair",
+          "ko": "일"
+        },
+        {
+          "en": "means",
+          "ko": "방법 · by no means = 결코 ~이 아닌"
+        },
+        {
+          "en": "direct",
+          "ko": "직접적인"
+        },
+        {
+          "en": "reflection",
+          "ko": "(비친) 상"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        },
+        {
+          "en": "stands",
+          "ko": "서 있다 · as it stands = 있는 그대로"
+        }
+      ],
+      "slashes": [
+        "Yet this mirroring,",
+        "Macherey argues,",
+        "complex affair,",
+        "(a)direct reflection"
+      ],
+      "roles": [
+        {
+          "text": "this mirroring",
+          "role": "S"
+        },
+        {
+          "text": "Macherey",
+          "role": "S"
+        },
+        {
+          "text": "argues",
+          "role": "V"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "a complex affair",
+          "role": "C"
+        }
+      ],
+      "emphasis": [
+        "complex affair",
+        "by no means"
+      ],
+      "refers": {
+        "this mirroring": "Tolstoy’s work holds up a mirror(톨스토이 작품이 거울을 비추는 것)"
+      },
+      "steps": [
+        {
+          "id": "s2_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Macherey는 이 거울 비추기(this mirroring)가 세상을 있는 그대로 비춘다고 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "by no means를 봐요. not보다 센 부정, '결코 ~이 아닌'이에요.",
+              "by no means를 봐요. not보다 센 부정, '결코 ~이 아닌'이에요."
+            ],
+            "explain": "'a complex affair, by no means a direct reflection', 복잡한 일이고 결코 직접 비추는 게 아니래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'a complex affair, by no means a direct reflection', 복잡한 일이고 결코 직접 비추는 게 아니래요."
+            },
+            "point": "요지 시작: 문학이라는 거울은 세상을 결코 있는 그대로 비추지 않는다 (by no means = 결코 ~이 아닌)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "있는 그대로 비춘다"
+            },
+            {
+              "id": "o1",
+              "label": "복잡하고, 결코 그대로 비추지 않는다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "complex affair",
+            "by no means"
+          ],
+          "tips": [
+            {
+              "label": "by no means",
+              "text": "'결코 ~이 아닌'이에요. not보다 센 부정이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "If literary works are in some sense mirrors, they are mirrors marked by flaws and blind spots.",
+      "model_translation": "만약 문학 작품이 어떤 의미에서 거울이라면, 그것은 결함과 사각지대에 의해 특징지어지는 거울이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "If",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "literary works",
+          "ko": "문학 작품"
+        },
+        {
+          "en": "in some sense",
+          "ko": "어떤 의미에서"
+        },
+        {
+          "en": "mirrors",
+          "ko": "거울"
+        },
+        {
+          "en": "marked by",
+          "ko": "~로 특징지어진 · 여기서는 '~이 있는'"
+        },
+        {
+          "en": "flaws",
+          "ko": "결함"
+        },
+        {
+          "en": "blind spots",
+          "ko": "사각지대 · 거울에 안 비치는 곳"
+        },
+        {
+          "en": "they",
+          "ko": "그들(그것들)"
+        },
+        {
+          "en": "literary",
+          "ko": "문학의"
+        },
+        {
+          "en": "works",
+          "ko": "작품"
+        },
+        {
+          "en": "marked",
+          "ko": "특징지어진"
+        },
+        {
+          "en": "blind",
+          "ko": "눈이 먼, 보이지 않는"
+        },
+        {
+          "en": "spots",
+          "ko": "곳, 지점"
+        }
+      ],
+      "slashes": [
+        "If literary works",
+        "in some sense mirrors,",
+        "they are mirrors"
+      ],
+      "roles": [
+        {
+          "text": "literary works",
+          "role": "S"
+        },
+        {
+          "text": "are … are",
+          "role": "V"
+        },
+        {
+          "text": "mirrors marked by flaws and blind spots",
+          "role": "C"
+        },
+        {
+          "text": "mirrors",
+          "role": "C"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        }
+      ],
+      "modifiers": [
+        "marked by flaws and blind spots"
+      ],
+      "emphasis": [
+        "literary works",
+        "flaws",
+        "blind spots"
+      ],
+      "refers": {
+        "they": "literary works(문학 작품)"
+      },
+      "steps": [
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "결함(flaws)과 사각지대(blind spots)가 있는 거울이래요. 2문장의 '결코 그대로 비추지 않는다'와 같은 쪽이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "flaws",
+            "blind spots"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "문학이라는 거울",
+            "left": {
+              "label": "있는 그대로 비춤",
+              "words": [
+                {
+                  "text": "direct reflection",
+                  "ko": "직접 비춤",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "그대로 비추지 않음",
+              "words": [
+                {
+                  "text": "complex affair",
+                  "ko": "복잡한 일",
+                  "fresh": true
+                },
+                {
+                  "text": "flaws",
+                  "ko": "결함",
+                  "fresh": true
+                },
+                {
+                  "text": "blind spots",
+                  "ko": "사각지대",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "In fact, they are as significant for what they don’t reflect—for their exclusions and distortions—as for what they do.",
+      "model_translation": "사실 그것은 그것이 비추는 것만큼이나 비추지 않는 것, 즉 배제와 왜곡으로 인해 중요하다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In fact",
+          "ko": "사실"
+        },
+        {
+          "en": "significant",
+          "ko": "중요한"
+        },
+        {
+          "en": "don’t reflect",
+          "ko": "비추지 않다 · what they don’t reflect = 그것들이 비추지 않는 것"
+        },
+        {
+          "en": "exclusions",
+          "ko": "배제 · 빼놓은 것"
+        },
+        {
+          "en": "distortions",
+          "ko": "왜곡 · 비틀어 보인 것"
+        },
+        {
+          "en": "what they do",
+          "ko": "그것들이 비추는 것 · do = reflect"
+        },
+        {
+          "en": "they",
+          "ko": "그들(그것들)"
+        },
+        {
+          "en": "don’t",
+          "ko": "~하지 않다"
+        },
+        {
+          "en": "reflect",
+          "ko": "비추다"
+        }
+      ],
+      "slashes": [
+        "In fact,",
+        "as significant",
+        "don’t reflect—",
+        "and distortions—"
+      ],
+      "roles": [
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "significant",
+          "role": "C"
+        }
+      ],
+      "emphasis": [
+        "significant",
+        "don’t reflect",
+        "exclusions",
+        "distortions"
+      ],
+      "refers": {
+        "they": "literary works(문학 작품)"
+      },
+      "steps": [
+        {
+          "id": "s4_free",
+          "type": "translate",
+          "interaction": "free_translation",
+          "model": "문학 작품은 비추는 것만큼이나 비추지 않는 것(빼놓고 비튼 것) 때문에도 중요하다.",
+          "labels": {
+            "mine": "내 답",
+            "model": "모범 답"
+          },
+          "rules": [
+            {
+              "id": "not_reflect",
+              "need": [
+                "비추지 않",
+                "비추지 못",
+                "안 비추",
+                "안 비치",
+                "비치지 않",
+                "보여 주지 않",
+                "보여주지 않",
+                "보여 주지 못",
+                "보여주지 못",
+                "안 보여",
+                "빠",
+                "배제",
+                "없는",
+                "드러나지 않",
+                "왜곡",
+                "비틀",
+                "비튼",
+                "결함"
+              ],
+              "fix": "비추지 않는 것 때문에도"
+            }
+          ],
+          "highlight": [
+            "significant",
+            "don’t reflect"
+          ],
+          "brief": {
+            "ask": "문학 작품은 무엇 때문에도 중요할까요? 자유롭게 써 봐요.",
+            "praise": "잘 답했어요! 비추지 않는 것도 똑같이 중요하대요.",
+            "wrong": "모범 답과 같이 봐요.",
+            "explain": "괜찮아요. 모범 답을 같이 봐요.",
+            "feedback": {
+              "not_reflect": "what they don’t reflect는 '그것들이 비추지 않는 것'이에요. 대시(—) 사이 exclusions and distortions(배제와 왜곡)가 같은 말이에요."
+            },
+            "placeholder": "문학 작품은 …",
+            "point": "as significant for what they don’t reflect … as for what they do = 비추는 것만큼이나 비추지 않는 것 때문에도 중요하다"
+          },
+          "tips": [
+            {
+              "label": "as ~ for A as for B",
+              "text": "'B만큼이나 A 때문에도 ~하다'예요. 여기선 비추는 것(what they do)만큼이나 비추지 않는 것(what they don’t reflect) 때문에도 중요하다는 말이에요."
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "s4_sign",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "exclusions(배제)와 distortions(왜곡)를 글쓴이는 좋게 볼까요, 나쁘게 볼까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "문장 앞부분 they are as significant for ~를 봐요. significant는 '중요한'이에요.",
+              "문장 앞부분 they are as significant for ~를 봐요. significant는 '중요한'이에요."
+            ],
+            "explain": "'as significant for what they don’t reflect', 비추지 않는 것 때문에도 중요하대요. 중요하다고 했으니 좋게 봐요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'as significant for what they don’t reflect', 비추지 않는 것 때문에도 중요하대요. 중요하다고 했으니 좋게 봐요."
+            },
+            "point": "exclusions·distortions = 보통은 나쁜 말이지만 significant(중요한)와 함께 쓰여 좋은 쪽(+)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "좋게 (+) 본다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "나쁘게 (−) 본다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "significant"
+          ]
+        },
+        {
+          "id": "s4_plus",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "배제와 왜곡은 보통 나쁜 말이에요. 그런데 여기선 significant(중요한)와 함께 쓰여서 좋은 쪽(+)이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "significant"
+          ],
+          "signs": [
+            {
+              "text": "significant",
+              "sign": "+"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "문학이라는 거울",
+            "left": {
+              "label": "있는 그대로 비춤",
+              "words": [
+                {
+                  "text": "direct reflection",
+                  "ko": "직접 비춤"
+                }
+              ]
+            },
+            "right": {
+              "label": "그대로 비추지 않음",
+              "words": [
+                {
+                  "text": "complex affair",
+                  "ko": "복잡한 일"
+                },
+                {
+                  "text": "flaws",
+                  "ko": "결함"
+                },
+                {
+                  "text": "blind spots",
+                  "ko": "사각지대"
+                },
+                {
+                  "text": "exclusions",
+                  "ko": "배제",
+                  "fresh": true
+                },
+                {
+                  "text": "distortions",
+                  "ko": "왜곡",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "There are things which do not and cannot (b)figure in the mirror—in the case of Tolstoy, certain contradictions in society of which he could not be conscious.",
+      "model_translation": "거울 속에 나타나지 않으며 나타날 수도 없는 것들이 있는데, Tolstoy의 경우 그가 의식할 수 없었던 사회의 특정 모순들이 그러하다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "There are things",
+          "ko": "~한 것들이 있다"
+        },
+        {
+          "en": "do not and cannot",
+          "ko": "~하지 않고 ~할 수도 없다"
+        },
+        {
+          "en": "figure",
+          "ko": "숫자, 인물 · 여기서는 동사 '나타나다'예요"
+        },
+        {
+          "en": "in the mirror",
+          "ko": "거울 속에"
+        },
+        {
+          "en": "in the case of",
+          "ko": "~의 경우에"
+        },
+        {
+          "en": "Tolstoy",
+          "ko": "Tolstoy · 작가 이름"
+        },
+        {
+          "en": "certain contradictions",
+          "ko": "어떤 모순들"
+        },
+        {
+          "en": "in society",
+          "ko": "사회 속의"
+        },
+        {
+          "en": "of which he could not be conscious",
+          "ko": "그가 의식할 수 없었던"
+        },
+        {
+          "en": "things",
+          "ko": "것들"
+        },
+        {
+          "en": "cannot",
+          "ko": "~할 수 없다"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울"
+        },
+        {
+          "en": "contradictions",
+          "ko": "모순"
+        },
+        {
+          "en": "society",
+          "ko": "사회"
+        },
+        {
+          "en": "conscious",
+          "ko": "의식하는"
+        }
+      ],
+      "slashes": [
+        "There are things",
+        "(b)figure in the mirror—",
+        "case of Tolstoy,",
+        "in society"
+      ],
+      "roles": [
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "things",
+          "role": "S"
+        }
+      ],
+      "modifiers": [
+        "which do not and cannot (b)figure in the mirror",
+        "of which he could not be conscious"
+      ],
+      "steps": [
+        {
+          "id": "s5_figure",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "거울에 나타나지 않는(do not … figure) 것들이 있대요. Tolstoy에게는 그가 의식하지 못한 사회의 모순(contradictions)이 그랬대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "figure",
+            "contradictions"
+          ],
+          "tips": [
+            {
+              "label": "figure",
+              "text": "이 글에서는 → (동사) 나타나다  ('숫자·인물' 아님)",
+              "mark": "figure",
+              "trap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Even so, the mirror makes us aware of these (c)absences, which thus become faintly present.",
+      "model_translation": "그렇다 하더라도, 거울은 우리에게 이러한 부재를 인식하게 하며, 그리하여 그것들은 희미하게 존재하게 된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Even so",
+          "ko": "그렇다 하더라도"
+        },
+        {
+          "en": "the mirror",
+          "ko": "거울은"
+        },
+        {
+          "en": "makes us aware of",
+          "ko": "우리가 ~을 깨닫게 하다"
+        },
+        {
+          "en": "these",
+          "ko": "이러한"
+        },
+        {
+          "en": "absences",
+          "ko": "없음, 부재"
+        },
+        {
+          "en": "thus",
+          "ko": "그리하여"
+        },
+        {
+          "en": "become",
+          "ko": "~이 되다"
+        },
+        {
+          "en": "faintly",
+          "ko": "희미하게"
+        },
+        {
+          "en": "present",
+          "ko": "선물, 현재 · 여기서는 '존재하는'이에요"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울"
+        },
+        {
+          "en": "makes",
+          "ko": "~하게 만들다"
+        },
+        {
+          "en": "aware",
+          "ko": "알고 있는, 깨닫는"
+        }
+      ],
+      "slashes": [
+        "Even so,",
+        "makes us aware",
+        "(c)absences,"
+      ],
+      "roles": [
+        {
+          "text": "the mirror",
+          "role": "S"
+        },
+        {
+          "text": "makes",
+          "role": "V"
+        },
+        {
+          "text": "us",
+          "role": "O"
+        },
+        {
+          "text": "aware",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "which thus become faintly present"
+      ],
+      "steps": [
+        {
+          "id": "s6_aware",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그래도 거울은 이런 부재(absences)를 어떻게 한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "makes us aware of를 봐요. aware는 '알고 있는, 깨닫는'이에요.",
+              "makes us aware of를 봐요. aware는 '알고 있는, 깨닫는'이에요."
+            ],
+            "explain": "'makes us aware of these absences', 우리가 그 부재를 깨닫게 해 준대요. 그래서 없는 것이 희미하게나마 존재하게 돼요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'makes us aware of these absences', 우리가 그 부재를 깨닫게 해 준대요. 그래서 없는 것이 희미하게나마 존재하게 돼요."
+            },
+            "point": "makes us aware of these absences = 거울은 그 부재를 깨닫게 해 준다 → 없는 것이 희미하게 존재하게 됨"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "깨닫게 해 준다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "완전히 감춘다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "aware",
+            "absences"
+          ],
+          "tips": [
+            {
+              "label": "present",
+              "text": "이 글에서는 → 존재하는  ('선물·현재' 아님)",
+              "mark": "present",
+              "trap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "It is as though it allows us to see more clearly what isn’t there.",
+      "model_translation": "그것은 마치 거울이 우리가 그곳에 없는 것을 더 명확하게 볼 수 있게 해 주는 것과 같다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "It is as though",
+          "ko": "마치 ~인 것 같다"
+        },
+        {
+          "en": "allows us to see",
+          "ko": "우리가 ~을 보게 해 주다"
+        },
+        {
+          "en": "more clearly",
+          "ko": "더 분명하게"
+        },
+        {
+          "en": "what isn’t there",
+          "ko": "그곳에 없는 것"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "though",
+          "ko": "~이지만 · as though = 마치 ~처럼"
+        },
+        {
+          "en": "allows",
+          "ko": "허락하다, ~하게 해 주다"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "clearly",
+          "ko": "분명하게"
+        },
+        {
+          "en": "isn’t",
+          "ko": "~이 아니다, 없다"
+        }
+      ],
+      "slashes": [
+        "It is as though",
+        "allows us"
+      ],
+      "roles": [
+        {
+          "text": "It",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "allows",
+          "role": "V"
+        },
+        {
+          "text": "us",
+          "role": "O"
+        },
+        {
+          "text": "to see",
+          "role": "C"
+        }
+      ],
+      "refers": {
+        "it": "the mirror(거울)"
+      },
+      "steps": [
+        {
+          "id": "s7_there",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "거울 덕분에 그곳에 없는 것(what isn’t there)이 더 잘 보인대요. 4문장의 '비추지 않는 것도 중요하다'와 이어져요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "what isn’t there"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "문학이라는 거울",
+            "left": {
+              "label": "있는 그대로 비춤",
+              "words": [
+                {
+                  "text": "direct reflection",
+                  "ko": "직접 비춤"
+                }
+              ]
+            },
+            "right": {
+              "label": "그대로 비추지 않음",
+              "words": [
+                {
+                  "text": "complex affair",
+                  "ko": "복잡한 일"
+                },
+                {
+                  "text": "flaws",
+                  "ko": "결함"
+                },
+                {
+                  "text": "blind spots",
+                  "ko": "사각지대"
+                },
+                {
+                  "text": "exclusions",
+                  "ko": "배제"
+                },
+                {
+                  "text": "distortions",
+                  "ko": "왜곡"
+                },
+                {
+                  "text": "what isn’t there",
+                  "ko": "그곳에 없는 것",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "There is also no reason to assume that what we see in the mirror must form a coherent whole.",
+      "model_translation": "우리가 거울 속에서 보는 것이 틀림없이 일관된 전체를 형성할 것이라고 가정할 이유 또한 없다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "There is also no reason",
+          "ko": "~할 이유도 없다"
+        },
+        {
+          "en": "to assume",
+          "ko": "가정하다"
+        },
+        {
+          "en": "what we see in the mirror",
+          "ko": "우리가 거울 속에서 보는 것"
+        },
+        {
+          "en": "must form",
+          "ko": "반드시 이루다"
+        },
+        {
+          "en": "coherent whole",
+          "ko": "일관된 전체"
+        },
+        {
+          "en": "reason",
+          "ko": "이유"
+        },
+        {
+          "en": "assume",
+          "ko": "가정하다"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울"
+        },
+        {
+          "en": "form",
+          "ko": "이루다, 형성하다"
+        },
+        {
+          "en": "coherent",
+          "ko": "일관된"
+        }
+      ],
+      "slashes": [
+        "no reason",
+        "to assume",
+        "in the mirror"
+      ],
+      "roles": [
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "no reason",
+          "role": "S"
+        },
+        {
+          "text": "what we see in the mirror",
+          "role": "S"
+        },
+        {
+          "text": "must form",
+          "role": "V"
+        },
+        {
+          "text": "a coherent whole",
+          "role": "O"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "id": 9,
+      "text": "On the contrary, it may be in pieces and discordant.",
+      "model_translation": "그와는 반대로 그것은 단편적이고 조화를 이루지 못할 수도 있다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "On the contrary",
+          "ko": "그와는 반대로"
+        },
+        {
+          "en": "may be",
+          "ko": "~일 수도 있다"
+        },
+        {
+          "en": "in pieces",
+          "ko": "조각조각 난"
+        },
+        {
+          "en": "discordant",
+          "ko": "조화를 이루지 못하는"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "contrary",
+          "ko": "반대"
+        },
+        {
+          "en": "pieces",
+          "ko": "조각"
+        }
+      ],
+      "slashes": [
+        "On the contrary,"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "may be",
+          "role": "V"
+        },
+        {
+          "text": "in pieces and discordant",
+          "role": "C"
+        }
+      ],
+      "refers": {
+        "it": "what we see in the mirror(거울 속에서 보는 것)"
+      },
+      "steps": [
+        {
+          "id": "s9_pieces",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "8·9문장: 거울 속 모습이 일관된 전체(coherent whole)일 이유는 없고, 오히려 조각나 있을(in pieces) 수도 있대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "On the contrary",
+            "in pieces"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "‘The mirror is doubtless defective; the outlines will sometimes be disturbed; the reflection faint or confused’, remarks George Eliot in Adam Bede, (d)praising the kind of naive realism which holds that art (or mirrors) always tell it like it is.",
+      "model_translation": "George Eliot은 Adam Bede에서 \"그 거울은 의심할 바 없이 불완전하고, 윤곽은 때때로 흐트러질 것이며, 상(像)은 희미하거나 분명치 않기도 할 것이다.\"라고 언급하며, 예술(또는 거울)이 언제나 있는 그대로를 말해 준다고 믿는 종류의 소박실재론을 비난한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The mirror",
+          "ko": "거울은"
+        },
+        {
+          "en": "doubtless",
+          "ko": "의심할 바 없이"
+        },
+        {
+          "en": "defective",
+          "ko": "불완전한"
+        },
+        {
+          "en": "the outlines",
+          "ko": "윤곽"
+        },
+        {
+          "en": "will sometimes be disturbed",
+          "ko": "때때로 흐트러질 것이다"
+        },
+        {
+          "en": "the reflection",
+          "ko": "(비친) 상"
+        },
+        {
+          "en": "faint or confused",
+          "ko": "희미하거나 분명치 않은"
+        },
+        {
+          "en": "remarks",
+          "ko": "말하다, 언급하다"
+        },
+        {
+          "en": "George Eliot",
+          "ko": "George Eliot · 작가 이름"
+        },
+        {
+          "en": "in Adam Bede",
+          "ko": "『Adam Bede』라는 책에서"
+        },
+        {
+          "en": "praising",
+          "ko": "칭찬하는"
+        },
+        {
+          "en": "the kind of",
+          "ko": "~한 종류의"
+        },
+        {
+          "en": "naive realism",
+          "ko": "소박실재론 · 예술이 현실을 있는 그대로 보여 준다고 믿는 생각"
+        },
+        {
+          "en": "holds",
+          "ko": "잡다 · 여기서는 '~라고 믿다, 주장하다'예요"
+        },
+        {
+          "en": "art (or mirrors)",
+          "ko": "예술(또는 거울)"
+        },
+        {
+          "en": "always",
+          "ko": "언제나"
+        },
+        {
+          "en": "tell it like it is",
+          "ko": "있는 그대로 말하다"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울"
+        },
+        {
+          "en": "outlines",
+          "ko": "윤곽"
+        },
+        {
+          "en": "sometimes",
+          "ko": "때때로"
+        },
+        {
+          "en": "disturbed",
+          "ko": "흐트러진"
+        },
+        {
+          "en": "reflection",
+          "ko": "(비친) 상"
+        },
+        {
+          "en": "faint",
+          "ko": "희미한"
+        },
+        {
+          "en": "confused",
+          "ko": "분명치 않은, 혼란스러운"
+        },
+        {
+          "en": "George",
+          "ko": "조지(이름)"
+        },
+        {
+          "en": "Eliot",
+          "ko": "엘리엇(작가 이름)"
+        },
+        {
+          "en": "Adam",
+          "ko": "애덤(책 이름의 일부)"
+        },
+        {
+          "en": "Bede",
+          "ko": "비드(책 이름의 일부)"
+        },
+        {
+          "en": "naive",
+          "ko": "순진한, 소박한"
+        },
+        {
+          "en": "realism",
+          "ko": "실재론, 사실주의"
+        },
+        {
+          "en": "mirrors",
+          "ko": "거울"
+        },
+        {
+          "en": "tell",
+          "ko": "말하다"
+        }
+      ],
+      "slashes": [
+        "doubtless defective;",
+        "be disturbed;",
+        "confused’,",
+        "in Adam Bede,",
+        "naive realism"
+      ],
+      "roles": [
+        {
+          "text": "‘The mirror is doubtless defective; the outlines will sometimes be disturbed; the reflection faint or confused’",
+          "role": "O"
+        },
+        {
+          "text": "remarks",
+          "role": "V"
+        },
+        {
+          "text": "George Eliot",
+          "role": "S"
+        }
+      ],
+      "modifiers": [
+        "which holds that art (or mirrors) always tell it like it is"
+      ],
+      "steps": [
+        {
+          "id": "s10_eliot",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "작가 Eliot도 거울은 불완전하고(defective), 윤곽이 흐트러지고, 상이 희미하다고 말해요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "defective"
+          ],
+          "tips": [
+            {
+              "label": "‘인용’, remarks + 주어",
+              "text": "따옴표 말 뒤에 remarks George Eliot이 왔어요. 'Eliot이 ~라고 말한다'로 읽어요."
+            },
+            {
+              "label": "holds",
+              "text": "이 글에서는 → ~라고 믿다, 주장하다  ('잡다' 아님)",
+              "mark": "holds",
+              "trap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "A mirror offers us a version of reality, but it does so from a viewpoint which cannot be captured in the mirror itself.",
+      "model_translation": "거울은 우리에게 현실의 한 버전을 제공하지만, 그것은 거울 그 자체에서는 포착될 수 없는 관점에서 그렇게 하는 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "A mirror",
+          "ko": "거울은"
+        },
+        {
+          "en": "offers us",
+          "ko": "우리에게 제공하다"
+        },
+        {
+          "en": "a version of reality",
+          "ko": "현실의 한 버전"
+        },
+        {
+          "en": "does so",
+          "ko": "그렇게 하다"
+        },
+        {
+          "en": "viewpoint",
+          "ko": "관점"
+        },
+        {
+          "en": "cannot be captured",
+          "ko": "포착될 수 없다, 담길 수 없다"
+        },
+        {
+          "en": "in the mirror itself",
+          "ko": "거울 그 자체에서는"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울"
+        },
+        {
+          "en": "version",
+          "ko": "버전, 판"
+        },
+        {
+          "en": "reality",
+          "ko": "현실"
+        },
+        {
+          "en": "cannot",
+          "ko": "~할 수 없다"
+        },
+        {
+          "en": "captured",
+          "ko": "포착된, 담긴"
+        }
+      ],
+      "slashes": [
+        "offers us",
+        "of reality,",
+        "does so",
+        "a viewpoint"
+      ],
+      "roles": [
+        {
+          "text": "A mirror",
+          "role": "S"
+        },
+        {
+          "text": "offers",
+          "role": "V"
+        },
+        {
+          "text": "us",
+          "role": "O"
+        },
+        {
+          "text": "a version of reality",
+          "role": "O"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "does",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "which cannot be captured in the mirror itself"
+      ],
+      "refers": {
+        "does so": "offers us a version of reality(현실의 한 버전을 보여 주다)"
+      },
+      "steps": [
+        {
+          "id": "s11_view",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "거울은 현실의 한 버전(a version of reality)을 보여 주지만, 그 관점(viewpoint)은 거울 안에 담길 수 없대요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "viewpoint",
+            "cannot be captured"
+          ],
+          "tips": [
+            {
+              "label": "does so",
+              "text": "앞의 offers us a version of reality를 다시 쓰지 않으려고 does so로 받았어요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "text": "And because this viewpoint is (e)invisible to us, we might be tempted to take it as beyond question.",
+      "model_translation": "그리고 이 관점은 우리에게 보이지 않기 때문에, 우리는 그것을 의심할 여지가 없는 것으로 받아들이고 싶은 유혹을 느낄지도 모른다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "And because",
+          "ko": "그리고 ~ 때문에"
+        },
+        {
+          "en": "this viewpoint",
+          "ko": "이 관점"
+        },
+        {
+          "en": "invisible",
+          "ko": "보이지 않는"
+        },
+        {
+          "en": "to us",
+          "ko": "우리에게"
+        },
+        {
+          "en": "we might be tempted to",
+          "ko": "우리는 ~하고 싶은 유혹을 느낄지도 모른다"
+        },
+        {
+          "en": "take it as",
+          "ko": "그것을 ~로 받아들이다"
+        },
+        {
+          "en": "beyond question",
+          "ko": "의심할 여지가 없는"
+        },
+        {
+          "en": "viewpoint",
+          "ko": "관점"
+        },
+        {
+          "en": "tempted",
+          "ko": "유혹을 느끼는"
+        },
+        {
+          "en": "question",
+          "ko": "의문, 의심"
+        }
+      ],
+      "slashes": [
+        "this viewpoint",
+        "invisible to us,",
+        "be tempted"
+      ],
+      "roles": [
+        {
+          "text": "this viewpoint",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "invisible",
+          "role": "C"
+        },
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "might be tempted",
+          "role": "V"
+        }
+      ],
+      "refers": {
+        "take it as": "it = this viewpoint(이 관점)"
+      },
+      "steps": [
+        {
+          "id": "s12_line",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "마지막 문장까지 읽었어요. 글 전체를 한 줄로 묶으면 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "4문장 as significant for what they don’t reflect를 떠올려 봐요.",
+              "4문장 as significant for what they don’t reflect를 떠올려 봐요."
+            ],
+            "explain": "2문장은 결코 그대로 비추지 않는다(by no means), 4문장은 비추지 않는 것도 중요하다(significant)고 했어요. 9문장도 조화롭지 않을 수 있대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "2문장은 결코 그대로 비추지 않는다(by no means), 4문장은 비추지 않는 것도 중요하다(significant)고 했어요. 9문장도 조화롭지 않을 수 있대요.",
+              "o2": "2문장은 결코 그대로 비추지 않는다(by no means), 4문장은 비추지 않는 것도 중요하다(significant)고 했어요. 9문장도 조화롭지 않을 수 있대요."
+            },
+            "point": "글 전체 한 줄 = 문학이라는 거울은 비추지 못하는 것 때문에도 중요하다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "문학은 현실을 있는 그대로 비춰야 한다"
+            },
+            {
+              "id": "o1",
+              "label": "문학이라는 거울은 비추지 못하는 것 때문에도 중요하다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "좋은 문학은 모든 요소가 조화를 이룬다"
+            }
+          ],
+          "method": 1
+        },
+        {
+          "id": "s12_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이 한 줄을 다른 말로 바꾼 제목을 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

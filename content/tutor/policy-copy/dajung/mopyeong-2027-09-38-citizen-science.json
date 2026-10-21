@@ -1,0 +1,310 @@
+{
+  "lesson": "mopyeong-2027-09-38-citizen-science",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "문장 넣기 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_situation": {
+      "ask": "주어진 문장은 무슨 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "A, rather than B는 'B가 아니라 A'예요. helping 바로 뒤에 누가 오는지 봐요.",
+        "A, rather than B는 'B가 아니라 A'예요. helping 바로 뒤에 누가 오는지 봐요."
+      ],
+      "explain": "'people helping governments, rather than scientists', 사람들이 과학자가 아니라 정부를 돕는 거래요. 지역 사회의 공공 서비스와 정책을 개선하려고요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'people helping governments, rather than scientists', 사람들이 과학자가 아니라 정부를 돕는 거래요. 지역 사회의 공공 서비스와 정책을 개선하려고요.",
+        "o2": "'people helping governments, rather than scientists', 사람들이 과학자가 아니라 정부를 돕는 거래요. 지역 사회의 공공 서비스와 정책을 개선하려고요."
+      },
+      "point": "주어진 문장 = 시민 참여는 사람들이 (과학자가 아니라) 정부를 도와 공공 서비스·정책을 개선하는 것",
+      "from": "yzh1az"
+    },
+    "g_clue": {
+      "ask": "주어진 문장에서 앞에 어떤 이야기가 있었는지 알려 주는 말을 찾아 눌러 볼까요?",
+      "wrong": "그건 이 문장 안에서 뜻이 끝나는 말이에요. 무엇과 비교하고 있는지 알려 주는 말을 찾아봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "'rather than scientists(과학자가 아니라)'예요. 과학자를 돕는 이야기와 다르다고 말하고 있어요.",
+      "wrong_by": {
+        "helping governments": "helping governments는 이 문장이 새로 하는 말이에요. 무엇과 다르다고 하는지 찾아봐요.",
+        "Citizen engagement": "Citizen engagement는 이 문장의 주어예요. 앞 이야기와 비교하는 말을 찾아봐요."
+      },
+      "point": "단서 = rather than scientists (과학자를 돕는 이야기와 대비)",
+      "from": "cg70wn"
+    },
+    "g_before": {
+      "ask": "그럼 이 문장 바로 앞에는 어떤 내용이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "rather than scientists(과학자가 아니라)를 떠올려 봐요. 무엇과 다르다고 말하려면 그 대상이 앞에 있어야 해요.",
+        "rather than scientists(과학자가 아니라)를 떠올려 봐요. 무엇과 다르다고 말하려면 그 대상이 앞에 있어야 해요."
+      ],
+      "explain": "'rather than scientists'라고 했으니 앞에는 과학자를 돕는 이야기가 와야 해요. 그 이야기와 달리 시민 참여는 정부를 돕는다는 흐름이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'rather than scientists'라고 했으니 앞에는 과학자를 돕는 이야기가 와야 해요. 그 이야기와 달리 시민 참여는 정부를 돕는다는 흐름이에요.",
+        "o2": "'rather than scientists'라고 했으니 앞에는 과학자를 돕는 이야기가 와야 해요. 그 이야기와 달리 시민 참여는 정부를 돕는다는 흐름이에요."
+      },
+      "point": "주어진 문장 앞 = 사람들이 과학자를 돕는 이야기 (rather than scientists)",
+      "from": "su2b5q"
+    },
+    "g_before_note": {
+      "say": "지문을 읽으며 사람들이 과학자를 돕는 이야기가 어디서 끝나는지 찾아봐요.",
+      "from": "16uwtwk"
+    },
+    "s2_mean": {
+      "ask": "시민 과학과 시민 참여가 커지고 성공할 수 있었던 것은 무엇 덕분이래요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'has been made possible by ~'는 '~에 의해 가능해졌다'예요. by 뒤를 봐요.",
+        "'has been made possible by ~'는 '~에 의해 가능해졌다'예요. by 뒤를 봐요."
+      ],
+      "explain": "'has been made possible by ~'는 '~에 의해 가능해졌다'예요. by 뒤의 the Internet and mobile technology를 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'has been made possible by ~'는 '~에 의해 가능해졌다'예요. by 뒤의 the Internet and mobile technology를 봐요.",
+        "o2": "'has been made possible by ~'는 '~에 의해 가능해졌다'예요. by 뒤의 the Internet and mobile technology를 봐요."
+      },
+      "from": "4t6uqm"
+    },
+    "s3_flow": {
+      "ask": "① 자리예요. '인터넷과 모바일 기술이 시민 과학·시민 참여를 가능하게 했다' → '웹사이트·앱·소셜 미디어가 시민 과학 프로젝트를 넓혔다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞의 인터넷과 모바일 기술을 웹사이트·앱·소셜 미디어로 구체적으로 이어 가요. 흐름이 끊기지 않아요.",
+        "앞의 인터넷과 모바일 기술을 웹사이트·앱·소셜 미디어로 구체적으로 이어 가요. 흐름이 끊기지 않아요."
+      ],
+      "explain": "앞의 인터넷과 모바일 기술을 웹사이트·앱·소셜 미디어로 구체적으로 이어 가요. 흐름이 끊기지 않아요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "앞의 인터넷과 모바일 기술을 웹사이트·앱·소셜 미디어로 구체적으로 이어 가요. 흐름이 끊기지 않아요."
+      },
+      "from": "16npsco"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "qpcjt5"
+    },
+    "s4_sort": {
+      "ask": "Citizen science(시민 과학)는 어느 쪽에 들어갈까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'local people helping ~' 뒤에 누가 오는지 봐요.",
+        "'local people helping ~' 뒤에 누가 오는지 봐요."
+      ],
+      "explain": "'local people helping scientists', 시민 과학은 지역 사람들이 과학자를 돕는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'local people helping scientists', 시민 과학은 지역 사람들이 과학자를 돕는 거예요."
+      },
+      "point": "citizen science = 사람들이 과학자를 돕는다 (주어진 문장의 citizen engagement와 반대쪽)",
+      "from": "1c6zjlg"
+    },
+    "s4_flow": {
+      "ask": "② 자리예요. '웹사이트·앱·소셜 미디어가 시민 과학 프로젝트를 넓혔다' → '시민 과학은 사람들이 과학자를 돕는 것이다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "앞 문장의 citizen science projects에서 시민 과학이 무엇인지 풀어 줘요. 그대로 이어져요.",
+        "앞 문장의 citizen science projects에서 시민 과학이 무엇인지 풀어 줘요. 그대로 이어져요."
+      ],
+      "explain": "앞 문장의 citizen science projects에서 시민 과학이 무엇인지 풀어 줘요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "앞 문장의 citizen science projects에서 시민 과학이 무엇인지 풀어 줘요. 그대로 이어져요."
+      },
+      "from": "1dgti6f"
+    },
+    "s5_such": {
+      "ask": "'such projects(그러한 프로젝트)'는 어떤 프로젝트일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "such(그러한)는 바로 앞 문장에서 말한 것을 가리켜요. 앞 문장의 a scientific project를 봐요.",
+        "such(그러한)는 바로 앞 문장에서 말한 것을 가리켜요. 앞 문장의 a scientific project를 봐요."
+      ],
+      "explain": "such projects는 바로 앞 문장의 a scientific project, 곧 사람들이 과학자를 돕는 시민 과학 프로젝트예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "such projects는 바로 앞 문장의 a scientific project, 곧 사람들이 과학자를 돕는 시민 과학 프로젝트예요.",
+        "o2": "such projects는 바로 앞 문장의 a scientific project, 곧 사람들이 과학자를 돕는 시민 과학 프로젝트예요."
+      },
+      "from": "1q0vkwc"
+    },
+    "s5_flow": {
+      "ask": "③ 자리예요. '시민 과학은 사람들이 과학자를 돕는 것이다' → '지금 전 세계에 그러한 프로젝트가 수천 개 있다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "such projects(그러한 프로젝트)가 바로 앞의 a scientific project를 받아요. 그대로 이어져요.",
+        "such projects(그러한 프로젝트)가 바로 앞의 a scientific project를 받아요. 그대로 이어져요."
+      ],
+      "explain": "such projects(그러한 프로젝트)가 바로 앞의 a scientific project를 받아요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "such projects(그러한 프로젝트)가 바로 앞의 a scientific project를 받아요. 그대로 이어져요."
+      },
+      "from": "iz32zm"
+    },
+    "s6_doso": {
+      "ask": "'They do so'는 누가 무엇을 한다는 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "They는 바로 앞 문장의 사람들, do so는 앞 문장의 동사를 다시 받는 말이에요.",
+        "They는 바로 앞 문장의 사람들, do so는 앞 문장의 동사를 다시 받는 말이에요."
+      ],
+      "explain": "They는 앞 문장의 volunteers(자원봉사자들), do so는 help out(돕다)을 다시 받아요. 과학 활동에 참여해서 돕는대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "They는 앞 문장의 volunteers(자원봉사자들), do so는 help out(돕다)을 다시 받아요. 과학 활동에 참여해서 돕는대요.",
+        "o2": "They는 앞 문장의 volunteers(자원봉사자들), do so는 help out(돕다)을 다시 받아요. 과학 활동에 참여해서 돕는대요."
+      },
+      "from": "1tfvf0e"
+    },
+    "s6_flow": {
+      "ask": "④ 자리예요. '자원봉사자들이 여러 연구 분야에서 돕는다' → '그들은 과학 활동에 참여해서 그렇게 한다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "They(자원봉사자들)와 do so(돕는다)가 바로 앞 문장을 받아요. 그대로 이어져요.",
+        "They(자원봉사자들)와 do so(돕는다)가 바로 앞 문장을 받아요. 그대로 이어져요."
+      ],
+      "explain": "They(자원봉사자들)와 do so(돕는다)가 바로 앞 문장을 받아요. 그대로 이어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "They(자원봉사자들)와 do so(돕는다)가 바로 앞 문장을 받아요. 그대로 이어져요."
+      },
+      "from": "1hyr5zz"
+    },
+    "s7_flow": {
+      "ask": "⑤ 자리예요. '식물 관찰·DNA 분석 같은 과학 활동에 참여한다' → '예로는 재난 대비 웹사이트와 비상 대응팀 만들기가 있다', 자연스럽게 이어지나요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "재난 대비 웹사이트와 비상 대응팀은 과학 활동이 아니에요. Examples가 무엇의 예인지 앞에 없어서 흐름이 끊겨요.",
+        "재난 대비 웹사이트와 비상 대응팀은 과학 활동이 아니에요. Examples가 무엇의 예인지 앞에 없어서 흐름이 끊겨요."
+      ],
+      "explain": "재난 대비 웹사이트와 비상 대응팀은 과학 활동이 아니에요. Examples가 무엇의 예인지 앞에 없어서 흐름이 끊겨요.",
+      "praise": "맞아요! 여기서 흐름이 끊겨요.",
+      "feedback": {
+        "o0": "재난 대비 웹사이트와 비상 대응팀은 과학 활동이 아니에요. Examples가 무엇의 예인지 앞에 없어서 흐름이 끊겨요."
+      },
+      "from": "16hhzqm"
+    },
+    "s7_sort": {
+      "ask": "재난 대비 웹사이트와 비상 대응팀(emergency response team)은 어느 쪽에 들어갈까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "과학 연구를 돕는 일인지, 지역 사회의 공공 서비스인지 생각해 봐요.",
+        "과학 연구를 돕는 일인지, 지역 사회의 공공 서비스인지 생각해 봐요."
+      ],
+      "explain": "재난에 대비한 지역 서비스는 과학 연구가 아니라 지역 사회의 공공 서비스예요. 주어진 문장의 citizen engagement 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "재난에 대비한 지역 서비스는 과학 연구가 아니라 지역 사회의 공공 서비스예요. 주어진 문장의 citizen engagement 쪽이에요."
+      },
+      "point": "⑤ 뒤 Examples(재난 대비 웹사이트·비상 대응팀) = 정부를 돕는 일의 예 ← 주어진 문장이 먼저 와야",
+      "from": "cng3j9"
+    },
+    "s7_go": {
+      "say": "①~⑤ 중 흐름이 끊긴 곳은 하나였어요. 주어진 문장의 rather than scientists를 떠올리며 골라 봐요.",
+      "from": "4d6hbr"
+    }
+  },
+  "exam": {
+    "ask": "주어진 문장의 rather than scientists와 ⑤ 뒤 Examples를 떠올리며 들어갈 곳을 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 시민 과학은 사람들이 과학자를 돕는 일(⑤ 앞까지 과학 활동 이야기) → 시민 참여는 과학자가 아니라 정부를 돕는 일(주어진 문장) → 그 예시(Examples): 재난 대비 웹사이트·비상 대응팀, 순서예요.",
+    "final_wrong": "정답은 ⑤예요. ⑤ 뒤 Examples(재난 대비 웹사이트·비상 대응팀)는 과학 활동이 아니라 정부를 돕는 일의 예라서, 그 앞에 주어진 문장이 와야 해요.",
+    "option_feedback": {
+      "1": "① 뒤 문장은 앞의 인터넷과 모바일 기술을 웹사이트·앱·소셜 미디어로 이어 가요. 아직 과학자를 돕는 이야기도 나오지 않았어요.",
+      "2": "② 뒤에서 시민 과학(과학자를 돕는 일)이 처음 풀이돼요. 그 앞에 넣으면 rather than scientists가 비교할 이야기가 아직 없어요.",
+      "3": "③ 뒤 such projects(그러한 프로젝트)는 바로 앞 a scientific project를 받아요. 사이에 넣으면 이 연결이 끊겨요.",
+      "4": "④ 뒤 They do so는 앞 문장의 volunteers(자원봉사자들)와 help out(돕다)을 받아요. 사이에 넣으면 이 연결이 끊겨요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "③에 넣으면 시민 과학 풀이 바로 뒤에 시민 참여 풀이가 와서 그럴듯해 보여요. 그런데 ③ 뒤 such projects(그러한 프로젝트)는 과학 프로젝트를 받아야 해서, 그 사이에 정부 이야기가 끼면 연결이 끊겨요.\n과학 이야기는 ④ 뒤 문장까지 이어지고, ⑤에서 끝나요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "② 뒤",
+              "text": "Citizen science … helping scientists … a scientific project",
+              "ko": "과학자를 돕는 과학 프로젝트",
+              "tone": "hl2"
+            },
+            {
+              "label": "③ 뒤",
+              "text": "thousands of such projects",
+              "ko": "그러한(과학) 프로젝트 수천 개",
+              "tone": "hl2"
+            }
+          ]
+        }
+      },
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "④에 넣으면 They do so가 주어진 문장의 people을 받는 것처럼 보여서 끌려요. 그런데 그러면 정부를 돕는 사람들이 '과학 활동'에 참여해서 돕는다는 말이 돼서 맞지 않아요.\nThey do so(자원봉사자들이 돕는다)는 바로 앞 문장을 받고, 주어진 문장은 과학 활동 이야기가 끝난 ⑤에 와야 해요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "③ 뒤",
+              "text": "whereby volunteers help out …",
+              "ko": "자원봉사자들이 연구 분야에서 돕는다",
+              "tone": "hl2"
+            },
+            {
+              "label": "④ 뒤",
+              "text": "They do so by … scientific activities",
+              "ko": "그들은 과학 활동에 참여해서 그렇게 한다",
+              "tone": "hl2"
+            },
+            {
+              "label": "⑤ 뒤",
+              "text": "Examples include … community disasters",
+              "ko": "재난 대비 웹사이트·비상 대응팀",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1pfhq41"
+  },
+  "intro": {
+    "topic": {
+      "say": "과학자가 아닌 평범한 시민도 무언가를 도울 수 있을까요? 이번 글은 시민 과학과 시민 참여를 다뤄요."
+    },
+    "method1": {
+      "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있어요."
+    },
+    "method2": {
+      "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾아요."
+    },
+    "from": "143y4kk"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "6mvcj4"
+}

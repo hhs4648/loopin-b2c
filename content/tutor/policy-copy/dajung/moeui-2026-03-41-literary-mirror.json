@@ -1,0 +1,196 @@
+{
+  "lesson": "moeui-2026-03-41-literary-mirror",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "제목 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_mirror": {
+      "say": "Tolstoy의 작품이 1905년 러시아 혁명을 비추는 거울이라는 주장에 Macherey도 동의한대요. 이 글은 '문학 = 거울'이라는 비유로 이어져요.",
+      "from": "11tngdm"
+    },
+    "s2_mean": {
+      "ask": "Macherey는 이 거울 비추기(this mirroring)가 세상을 있는 그대로 비춘다고 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "by no means를 봐요. not보다 센 부정, '결코 ~이 아닌'이에요.",
+        "by no means를 봐요. not보다 센 부정, '결코 ~이 아닌'이에요."
+      ],
+      "explain": "'a complex affair, by no means a direct reflection', 복잡한 일이고 결코 직접 비추는 게 아니래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'a complex affair, by no means a direct reflection', 복잡한 일이고 결코 직접 비추는 게 아니래요."
+      },
+      "point": "요지 시작: 문학이라는 거울은 세상을 결코 있는 그대로 비추지 않는다 (by no means = 결코 ~이 아닌)",
+      "from": "1thag6f"
+    },
+    "s3_board": {
+      "say": "결함(flaws)과 사각지대(blind spots)가 있는 거울이래요. 2문장의 '결코 그대로 비추지 않는다'와 같은 쪽이에요.",
+      "from": "kas3m9"
+    },
+    "s4_free": {
+      "ask": "문학 작품은 무엇 때문에도 중요할까요? 자유롭게 써 봐요.",
+      "praise": "잘 답했어요! 비추지 않는 것도 똑같이 중요하대요.",
+      "wrong": "모범 답과 같이 봐요.",
+      "explain": "괜찮아요. 모범 답을 같이 봐요.",
+      "feedback": {
+        "not_reflect": "what they don’t reflect는 '그것들이 비추지 않는 것'이에요. 대시(—) 사이 exclusions and distortions(배제와 왜곡)가 같은 말이에요."
+      },
+      "placeholder": "문학 작품은 …",
+      "point": "as significant for what they don’t reflect … as for what they do = 비추는 것만큼이나 비추지 않는 것 때문에도 중요하다",
+      "from": "6me76h"
+    },
+    "s4_sign": {
+      "ask": "exclusions(배제)와 distortions(왜곡)를 글쓴이는 좋게 볼까요, 나쁘게 볼까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "문장 앞부분 they are as significant for ~를 봐요. significant는 '중요한'이에요.",
+        "문장 앞부분 they are as significant for ~를 봐요. significant는 '중요한'이에요."
+      ],
+      "explain": "'as significant for what they don’t reflect', 비추지 않는 것 때문에도 중요하대요. 중요하다고 했으니 좋게 봐요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'as significant for what they don’t reflect', 비추지 않는 것 때문에도 중요하대요. 중요하다고 했으니 좋게 봐요."
+      },
+      "point": "exclusions·distortions = 보통은 나쁜 말이지만 significant(중요한)와 함께 쓰여 좋은 쪽(+)",
+      "from": "yfa7uc"
+    },
+    "s4_plus": {
+      "say": "배제와 왜곡은 보통 나쁜 말이에요. 그런데 여기선 significant(중요한)와 함께 쓰여서 좋은 쪽(+)이에요.",
+      "from": "1a9zlgt"
+    },
+    "s5_figure": {
+      "say": "거울에 나타나지 않는(do not … figure) 것들이 있대요. Tolstoy에게는 그가 의식하지 못한 사회의 모순(contradictions)이 그랬대요.",
+      "from": "1g5cbdr"
+    },
+    "s6_aware": {
+      "ask": "그래도 거울은 이런 부재(absences)를 어떻게 한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "makes us aware of를 봐요. aware는 '알고 있는, 깨닫는'이에요.",
+        "makes us aware of를 봐요. aware는 '알고 있는, 깨닫는'이에요."
+      ],
+      "explain": "'makes us aware of these absences', 우리가 그 부재를 깨닫게 해 준대요. 그래서 없는 것이 희미하게나마 존재하게 돼요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'makes us aware of these absences', 우리가 그 부재를 깨닫게 해 준대요. 그래서 없는 것이 희미하게나마 존재하게 돼요."
+      },
+      "point": "makes us aware of these absences = 거울은 그 부재를 깨닫게 해 준다 → 없는 것이 희미하게 존재하게 됨",
+      "from": "6rg4z"
+    },
+    "s7_there": {
+      "say": "거울 덕분에 그곳에 없는 것(what isn’t there)이 더 잘 보인대요. 4문장의 '비추지 않는 것도 중요하다'와 이어져요.",
+      "from": "dyu15y"
+    },
+    "s9_pieces": {
+      "say": "8·9문장: 거울 속 모습이 일관된 전체(coherent whole)일 이유는 없고, 오히려 조각나 있을(in pieces) 수도 있대요.",
+      "from": "egk6s7"
+    },
+    "s10_eliot": {
+      "say": "작가 Eliot도 거울은 불완전하고(defective), 윤곽이 흐트러지고, 상이 희미하다고 말해요.",
+      "from": "1y61r46"
+    },
+    "s11_view": {
+      "say": "거울은 현실의 한 버전(a version of reality)을 보여 주지만, 그 관점(viewpoint)은 거울 안에 담길 수 없대요.",
+      "from": "mk3lqd"
+    },
+    "s12_line": {
+      "ask": "마지막 문장까지 읽었어요. 글 전체를 한 줄로 묶으면 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "4문장 as significant for what they don’t reflect를 떠올려 봐요.",
+        "4문장 as significant for what they don’t reflect를 떠올려 봐요."
+      ],
+      "explain": "2문장은 결코 그대로 비추지 않는다(by no means), 4문장은 비추지 않는 것도 중요하다(significant)고 했어요. 9문장도 조화롭지 않을 수 있대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "2문장은 결코 그대로 비추지 않는다(by no means), 4문장은 비추지 않는 것도 중요하다(significant)고 했어요. 9문장도 조화롭지 않을 수 있대요.",
+        "o2": "2문장은 결코 그대로 비추지 않는다(by no means), 4문장은 비추지 않는 것도 중요하다(significant)고 했어요. 9문장도 조화롭지 않을 수 있대요."
+      },
+      "point": "글 전체 한 줄 = 문학이라는 거울은 비추지 못하는 것 때문에도 중요하다",
+      "from": "mii5la"
+    },
+    "s12_go": {
+      "say": "이 한 줄을 다른 말로 바꾼 제목을 골라 봐요.",
+      "from": "hxefm3"
+    }
+  },
+  "exam": {
+    "ask": "글 전체 한 줄을 다른 말로 바꾼 제목을 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! What Literary Mirrors Fail to Show는 4문장의 what they don’t reflect를, Significance는 significant를 바꿔 쓴 말이에요.",
+    "final_wrong": "정답은 ①이에요. 문학이라는 거울이 비추지 못하는 것(what they don’t reflect)도 중요하다(significant)는 글이에요.",
+    "option_feedback": {
+      "2": "viewpoint(관점)는 나오지만, 거울 안에 담기지 않아 보이지 않는다는 말이에요. 작가가 관점을 전한다는 글이 아니에요.",
+      "3": "문학 속 반전(twists) 이야기는 글에 없어요.",
+      "4": "2문장은 by no means, 결코 있는 그대로 비추지 않는다고 했어요. 방향이 반대예요.",
+      "5": "9문장은 거울 속 모습이 조화롭지 않을(discordant) 수도 있다고 했어요. 방향이 반대예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 21.2%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "11·12문장에 viewpoint(관점)가 나와서 고르기 쉬워요. 하지만 그 관점은 거울 안에 담기지 않아 우리에게 보이지 않는대요(invisible). 작가가 관점을 전한다는 글이 아니라, 비추지 못하는 것도 중요하다는 글이에요.",
+        "panel": {
+          "kind": "contrast",
+          "title": "viewpoint는 어떻게 쓰였나",
+          "between": "↔",
+          "left": {
+            "title": "11·12문장 · a viewpoint which cannot be captured … invisible to us",
+            "text": "관점은 거울 안에 안 보인다"
+          },
+          "right": {
+            "title": "② A Tool for Writers to Deliver Their View",
+            "text": "작가가 관점을 전하는 도구"
+          }
+        }
+      },
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 24.0%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "as it stands가 2문장에 그대로 나와서 고르기 쉬워요. 하지만 그 앞에 by no means(결코 ~이 아닌)가 있어요. 문학은 세상을 있는 그대로 비추는 게 결코 아니래요.",
+        "panel": {
+          "kind": "contrast",
+          "title": "단어는 같아도 방향이 반대",
+          "between": "↔",
+          "left": {
+            "title": "2문장 · by no means a direct reflection of the world as it stands",
+            "text": "결코 있는 그대로 비추지 않는다"
+          },
+          "right": {
+            "title": "④ Reflect Reality As It Stands",
+            "text": "있는 그대로 비추는 힘"
+          }
+        }
+      }
+    },
+    "from": "1037wzf"
+  },
+  "intro": {
+    "topic": {
+      "say": "문학 작품이 세상을 비추는 거울이라면, 그 거울엔 무엇이 비칠까요? 이번 글은 문학이라는 거울을 다뤄요."
+    },
+    "method1": {
+      "say": "제목 문제는 글 전체를 한 줄로 묶는 말을 찾는 거예요. 문장마다 핵심어를 찾고 글쓴이 생각을 잡아 볼게요."
+    },
+    "from": "tb8abz"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "wmhk7q"
+}

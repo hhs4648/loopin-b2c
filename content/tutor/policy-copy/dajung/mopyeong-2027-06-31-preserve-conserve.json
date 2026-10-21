@@ -1,0 +1,263 @@
+{
+  "lesson": "mopyeong-2027-06-31-preserve-conserve",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1edkfqu"
+    },
+    "s1_blank_meaning": {
+      "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "acknowledge는 '인정하다', prolong은 '연장하다, 더 오래 가게 하다'예요. but 앞뒤를 나눠 봐요.",
+        "acknowledge는 '인정하다', prolong은 '연장하다, 더 오래 가게 하다'예요. but 앞뒤를 나눠 봐요."
+      ],
+      "explain": "'acknowledge change but try to manage it', 변화를 인정하지만 관리하려 해요. 'in order to prolong', 그 상태를 더 오래 가게 하려고요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'acknowledge change but try to manage it', 변화를 인정하지만 관리하려 해요. 'in order to prolong', 그 상태를 더 오래 가게 하려고요.",
+        "o2": "'acknowledge change but try to manage it', 변화를 인정하지만 관리하려 해요. 'in order to prolong', 그 상태를 더 오래 가게 하려고요."
+      },
+      "from": "1o1ihc5"
+    },
+    "s1_where": {
+      "say": "보전주의자(Conservationists)가 어떤 상태를 오래 가게 하려는지가 빈칸이에요. 그걸 생각하며 처음부터 읽어 봐요.",
+      "from": "1d7o5bp"
+    },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "14ibnop"
+    },
+    "s2_meaning": {
+      "ask": "두 말을 거의 같은 말로 볼 때, 그 뜻은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "is 뒤 'to maintain …'과 'to protect …' 두 덩어리를 봐요.",
+        "is 뒤 'to maintain …'과 'to protect …' 두 덩어리를 봐요."
+      ],
+      "explain": "'to maintain … in its present state', 현재 상태로 유지하고, 'to protect it from change', 변화로부터 보호하는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'to maintain … in its present state', 현재 상태로 유지하고, 'to protect it from change', 변화로부터 보호하는 거예요.",
+        "o2": "'to maintain … in its present state', 현재 상태로 유지하고, 'to protect it from change', 변화로부터 보호하는 거예요."
+      },
+      "from": "aveiai"
+    },
+    "story_2": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_find": {
+      "ask": "보전주의자가 보존과 달리 강조(emphasize)하는 것을 문장에서 찾아 눌러 볼까요?",
+      "wrong": "그건 보전주의자가 강조하는 것이 아니에요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "restorative aspects(복원적인 측면)예요. 대시(—) 뒤는 악기·그림·공룡·생태계를 복원하는 예시예요.",
+      "wrong_by": {
+        "their activities": "their activities는 보존과 구별하는 '자기 활동'이에요. emphasize 뒤를 봐요.",
+        "a historical musical instrument": "그건 대시(—) 뒤 예시 속 말이에요. 무엇의 예시인지 대시 앞을 봐요.",
+        "an ecosystem": "그건 대시(—) 뒤 예시 속 말이에요. 무엇의 예시인지 대시 앞을 봐요."
+      },
+      "from": "9tcerp"
+    },
+    "s3_board": {
+      "say": "보전(conservation)은 망가진 것을 원래대로 되살리는(restorative) 쪽이에요.",
+      "from": "n0p12u"
+    },
+    "s4_side": {
+      "ask": "빈칸 상태는 칠판의 conservation 쪽(복원) 이야기와 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "빈칸 문장의 주어는 Conservationists예요. 변화를 인정하고 관리(manage)한대요.",
+        "빈칸 문장의 주어는 Conservationists예요. 변화를 인정하고 관리(manage)한대요."
+      ],
+      "explain": "주어 Conservationists는 3문장에서 복원을 강조한 사람들이에요. 변화를 막지 않고 관리하니, 손대지 않은 그대로의 상태가 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "주어 Conservationists는 3문장에서 복원을 강조한 사람들이에요. 변화를 막지 않고 관리하니, 손대지 않은 그대로의 상태가 아니에요."
+      },
+      "point": "빈칸 = 주어 Conservationists(복원하는 쪽)가 관리해서 오래 가게 하려는 상태 = conservation 쪽",
+      "from": "1hd6sl5"
+    },
+    "s4_fill": {
+      "ask": "빈칸에는 어떤 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "보전주의자는 복원해서 그 상태를 일부러 오래 가게(prolong) 해요. 일부러 오래 가게 하는 상태라면 어떤 상태일지 생각해 봐요.",
+        "보전주의자는 복원해서 그 상태를 일부러 오래 가게(prolong) 해요. 일부러 오래 가게 하는 상태라면 어떤 상태일지 생각해 봐요."
+      ],
+      "explain": "보전주의자는 변화를 관리해서 그 상태를 일부러 오래 가게 해요. 오래 지키려는 상태니 좋은, 바라는 상태예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "보전주의자는 변화를 관리해서 그 상태를 일부러 오래 가게 해요. 오래 지키려는 상태니 좋은, 바라는 상태예요.",
+        "o1": "보전주의자는 변화를 관리해서 그 상태를 일부러 오래 가게 해요. 오래 지키려는 상태니 좋은, 바라는 상태예요."
+      },
+      "point": "빈칸 = 복원·관리해서 오래 가게 하려는 (좋은, 바라는) 상태",
+      "from": "nmt0ol"
+    },
+    "story_4": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s5_board": {
+      "say": "보존주의자(Preservationists)는 자신을 보호자(protectors)에 더 가깝게 생각해요. 괄호 안은 빼고 읽어도 돼요.",
+      "from": "1ttxs2w"
+    },
+    "s6_crit": {
+      "ask": "보존주의자는 보전주의자의 무엇을 비판한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "criticize A for B는 'B라고 A를 비판하다'예요. for 뒤를 봐요.",
+        "criticize A for B는 'B라고 A를 비판하다'예요. for 뒤를 봐요."
+      ],
+      "explain": "'setting an additional priority on yield or harvest or use', 산출량·수확·이용을 더 우선한다고 비판해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'setting an additional priority on yield or harvest or use', 산출량·수확·이용을 더 우선한다고 비판해요.",
+        "o2": "'setting an additional priority on yield or harvest or use', 산출량·수확·이용을 더 우선한다고 비판해요."
+      },
+      "from": "wv0edz"
+    },
+    "s6_sort": {
+      "ask": "'preserve the original(원래의 것을 보존하다)'은 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "문장 끝 'as they would do'를 봐요. they는 이 문장의 주어 They와 같은 사람들이에요.",
+        "문장 끝 'as they would do'를 봐요. they는 이 문장의 주어 They와 같은 사람들이에요."
+      ],
+      "explain": "'as they would do', 보존주의자들이 그렇게 한대요. 가능한 한 적게 손대고 원래 것을 지키는 건 preservation 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'as they would do', 보존주의자들이 그렇게 한대요. 가능한 한 적게 손대고 원래 것을 지키는 건 preservation 쪽이에요."
+      },
+      "from": "3paszn"
+    },
+    "s6_map": {
+      "say": "보전 쪽은 이용(use)을 더 우선해요. 보존 쪽은 가능한 한 적게 손대고(minimally) 원래 것(the original)을 지켜요.",
+      "from": "o7pc36"
+    },
+    "s7_prefer": {
+      "ask": "보존주의자는 오래된 악기를 어떻게 하고 싶어 한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "prefer to A rather than to B는 'B하기보다 A하기를 선호하다'예요. rather than 앞쪽이 하고 싶은 거예요.",
+        "prefer to A rather than to B는 'B하기보다 A하기를 선호하다'예요. rather than 앞쪽이 하고 싶은 거예요."
+      ],
+      "explain": "'keep … “as found” in a deteriorated state, for study', 발견된 그대로 손상된 상태로 두고 연구하고 싶어 해요. 고치는 건 rather than 뒤, 원하지 않는 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'keep … “as found” in a deteriorated state, for study', 발견된 그대로 손상된 상태로 두고 연구하고 싶어 해요. 고치는 건 rather than 뒤, 원하지 않는 쪽이에요.",
+        "o2": "'keep … “as found” in a deteriorated state, for study', 발견된 그대로 손상된 상태로 두고 연구하고 싶어 해요. 고치는 건 rather than 뒤, 원하지 않는 쪽이에요."
+      },
+      "from": "1m5fwhp"
+    },
+    "s7_map": {
+      "say": "보존 쪽은 '발견된 그대로(as found)' 둬요. 보전 쪽은 복원하거나 수리해서(restore or repair) 전시하고 이용해요.",
+      "from": "1fs8xho"
+    },
+    "s7_go": {
+      "say": "빈칸은 보전(conservation) 쪽, 손보고 관리해서 오래 가게 하려는 상태예요. 이 상태를 바꿔 쓴 보기를 찾아봐요.",
+      "from": "1i17d7b"
+    }
+  },
+  "exam": {
+    "ask": "빈칸은 conservation 쪽, 손보고 관리해서 오래 가게 하려는 상태예요. 이 상태를 바꿔 쓴 보기를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 보전주의자는 변화를 인정하고 복원·수리해서, 지키고 싶은 바람직한(desired) 상태를 오래 가게 해요. 원래 그대로 두는 건 보존주의자 쪽이에요.",
+    "final_wrong": "정답은 ① desired(바람직한)예요. 보전주의자는 복원·관리해서 보고 쓰기 좋은, 바라는 상태를 오래 가게 해요.",
+    "option_feedback": {
+      "2": "acknowledge change(변화를 인정)에서 떠올리기 쉽지만, 불안정한 상태를 일부러 오래 가게 하지는 않아요.",
+      "3": "isolated(고립된)는 글에 없는 이야기예요. 다른 것과 떨어져 있다는 말은 나오지 않아요.",
+      "4": "natural(자연 그대로의)은 손대지 않은 원래 상태(the original, “as found”) 쪽이에요. 그건 보존주의자 쪽 말이에요.",
+      "5": "delicate(연약한)는 글에 없는 이야기예요. 보전주의자는 연약한 상태가 아니라 지키고 싶은 상태를 오래 가게 해요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 19%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "unstable(불안정한)은 acknowledge change(변화를 인정)에서 떠올리기 쉬워요. 하지만 빈칸은 prolong(더 오래 가게 하다)의 목적어예요.\n일부러 오래 가게 하려는 상태라면 불안정한 상태가 아니라 지키고 싶은 좋은 상태예요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "빈칸 문장",
+              "text": "try to manage it",
+              "ko": "변화를 관리하려 한다",
+              "tone": "hl"
+            },
+            {
+              "label": "빈칸 문장",
+              "text": "in order to prolong a(n) ____ state",
+              "ko": "____ 상태를 더 오래 가게 하려고",
+              "tone": "hl"
+            }
+          ]
+        }
+      },
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 33%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "natural(자연 그대로의)은 손대지 않은 원래 상태 쪽 말이에요. 그건 보존주의자가 지키려는 것(the original, “as found”)이에요.\n빈칸의 주어는 보전주의자예요. 변화를 인정하고 복원·수리해서, 보고 쓰기 좋은 상태를 오래 가게 해요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "빈칸 문장",
+              "text": "Conservationists acknowledge change",
+              "ko": "보전주의자는 변화를 인정한다",
+              "tone": "hl"
+            },
+            {
+              "label": "3·7문장",
+              "text": "restorative · restore or repair",
+              "ko": "복원·수리하는 쪽",
+              "tone": "hl"
+            },
+            {
+              "label": "6·7문장",
+              "text": "the original · “as found”",
+              "ko": "원래 그대로 — 보존 쪽",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "wwue5o"
+  },
+  "intro": {
+    "topic": {
+      "say": "오래된 악기는 그대로 둬야 할까요, 고쳐서 써야 할까요? 이번 글은 보존(preservation)과 보전(conservation) 이야기예요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "cphnya"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1iqatnk"
+}

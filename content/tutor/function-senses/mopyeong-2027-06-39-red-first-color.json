@@ -1,0 +1,118 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "reds that they learned",
+   "sense": "~한 것은 (강조)",
+   "usage": "It was A that ~ 강조 구문의 that"
+  },
+  {
+   "word": "to",
+   "phrase": "to diversify",
+   "sense": "~하는 것(법)",
+   "usage": "learn to + 동사원형 = ~하는 법을 배우다"
+  },
+  {
+   "word": "to",
+   "phrase": "to produce",
+   "sense": "~하는 것(법)",
+   "usage": "learned에 이어지는 둘째 to부정사"
+  },
+  {
+   "word": "as",
+   "phrase": "as the oldest known color terms demonstrate",
+   "sense": "~가 보여 주듯이",
+   "usage": "접속사 as (~하듯이)"
+  }
+ ],
+ "2": [
+  {
+   "word": "for",
+   "phrase": "For thousands of years",
+   "sense": "~ 동안",
+   "usage": "전치사 for (기간)"
+  },
+  {
+   "word": "that",
+   "phrase": "that name",
+   "sense": "그",
+   "usage": "지시형용사 that — 앞의 color를 가리킴"
+  }
+ ],
+ "3": [
+  {
+   "word": "as",
+   "phrase": "As much on the historical",
+   "sense": "~만큼",
+   "usage": "as much A as B = B만큼 A도"
+  },
+  {
+   "word": "as",
+   "phrase": "as hierarchical level",
+   "sense": "~만큼",
+   "usage": "as much A as B의 둘째 as"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "Not that they",
+   "sense": "~라는 것은 (아니고)",
+   "usage": "Not that A, but B = A라는 건 아니고 B"
+  },
+  {
+   "word": "but",
+   "phrase": "but they had to wait",
+   "sense": "다만, 그러나",
+   "usage": "Not that A, but B의 but"
+  },
+  {
+   "word": "to",
+   "phrase": "had to wait",
+   "sense": "~해야 (했다)",
+   "usage": "have to + 동사원형 = ~해야 하다"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "red that humans did",
+   "sense": "~한 것은 (강조)",
+   "usage": "It was A that ~ 강조 구문의 that"
+  }
+ ],
+ "7": [
+  {
+   "word": "as",
+   "phrase": "such as coloratus",
+   "sense": "~처럼",
+   "usage": "such as = ~ 같은, 예를 들어"
+  }
+ ],
+ "8": [
+  {
+   "word": "for",
+   "phrase": "for example",
+   "sense": "예를 들어",
+   "usage": "for example = 예를 들어"
+  },
+  {
+   "word": "that",
+   "phrase": "that is the case",
+   "sense": "그것",
+   "usage": "지시대명사 that — 앞 내용(같은 어원을 가짐)"
+  },
+  {
+   "word": "which",
+   "phrase": "in which the terms",
+   "sense": "그 안에서 (러시아어에서)",
+   "usage": "전치사 + 관계대명사 which — Russian을 받음"
+  },
+  {
+   "word": "to",
+   "phrase": "belong to",
+   "sense": "~에",
+   "usage": "belong to = ~에 속하다"
+  }
+ ]
+}

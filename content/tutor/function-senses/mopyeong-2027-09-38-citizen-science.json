@@ -1,0 +1,38 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "to improve",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  }
+ ],
+ "6": [
+  {
+   "word": "so",
+   "phrase": "do so",
+   "sense": "그렇게",
+   "usage": "do so = 앞의 동사(help out)를 다시 받는 말"
+  },
+  {
+   "word": "as",
+   "phrase": "such as monitoring",
+   "sense": "~와 같은",
+   "usage": "such as = ~ 같은, 예를 들어"
+  }
+ ],
+ "7": [
+  {
+   "word": "that",
+   "phrase": "a website that offers",
+   "sense": "~하는 (웹사이트)",
+   "usage": "관계대명사 that — a website를 꾸밈"
+  },
+  {
+   "word": "for",
+   "phrase": "for community disasters",
+   "sense": "~에 대비한",
+   "usage": "전치사 for (대비·목적)"
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "attributing consciousness to any animal",
+   "sense": "~에게 (있다고)",
+   "usage": "attribute A to B = A가 B에게 있다고 보다"
+  },
+  {
+   "word": "so",
+   "phrase": "so recent that",
+   "sense": "너무 (~해서)",
+   "usage": "so ~ that … = 너무 ~해서 …하다"
+  },
+  {
+   "word": "that",
+   "phrase": "so recent that the internet",
+   "sense": "(그래서) …할 정도로",
+   "usage": "so ~ that …의 that"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "arguing that animal cognition",
+   "sense": "~라고",
+   "usage": "명사절 that (argue that … = ~라고 주장하다)"
+  },
+  {
+   "word": "to",
+   "phrase": "ought to be taken",
+   "sense": "~해야 (한다)",
+   "usage": "ought to + 동사원형 = ~해야 한다"
+  }
+ ],
+ "3": [
+  {
+   "word": "for",
+   "phrase": "responsible in 1944 for discovering",
+   "sense": "~에 대해, ~한 데에",
+   "usage": "be responsible for ~ = ~의 주역이다"
+  },
+  {
+   "word": "that",
+   "phrase": "discovering that bats navigate",
+   "sense": "~라는 것",
+   "usage": "명사절 that (discover that … = ~라는 것을 발견하다)"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "the ability to change",
+   "sense": "~할 (능력)",
+   "usage": "명사 + to부정사 = ~할 명사"
+  },
+  {
+   "word": "as",
+   "phrase": "as external circumstances changed",
+   "sense": "~함에 따라",
+   "usage": "접속사 as + 주어·동사 = ~함에 따라"
+  }
+ ],
+ "6": [
+  {
+   "word": "for",
+   "phrase": "techniques for finding food",
+   "sense": "~을 위한",
+   "usage": "for + -ing = ~하기 위한"
+  },
+  {
+   "word": "as",
+   "phrase": "the same problem-solving abilities as humans did",
+   "sense": "~와 같은",
+   "usage": "the same A as B = B와 같은 A"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "ought to be seriously studied",
+   "sense": "~해야 (한다)",
+   "usage": "ought to + 동사원형 = ~해야 한다"
+  }
+ ],
+ "8": [
+  {
+   "word": "yet",
+   "phrase": "had yet found",
+   "sense": "아직",
+   "usage": "부정문(no one)의 yet = 아직"
+  },
+  {
+   "word": "to",
+   "phrase": "unique to humans",
+   "sense": "~에게만 (있는)",
+   "usage": "unique to ~ = ~에게만 있는"
+  },
+  {
+   "word": "that",
+   "phrase": "humans that might be responsible",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사 — 앞의 any part of the brain을 꾸밈"
+  },
+  {
+   "word": "for",
+   "phrase": "responsible for this hallowed",
+   "sense": "~을 (담당하는)",
+   "usage": "be responsible for ~ = ~을 담당하다"
+  }
+ ],
+ "9": [
+  {
+   "word": "to",
+   "phrase": "time to give up",
+   "sense": "~할 (때)",
+   "usage": "time to + 동사원형 = ~할 때"
+  }
+ ]
+}

@@ -102,7 +102,7 @@ describe("상담실 — 코스 (10분 모의고사 순서)", () => {
 
   it("코스는 최근 시험부터 — 상담을 안 했어도 같다", () => {
     const ids = tenMinMocks().map((m) => m.id);
-    expect(ids[0]).toBe("ten-moeui-2026-03");
+    expect(ids[0]).toBe("ten-mopyeong-2027-09");
     expect(buildPlan(base).course).toEqual(ids);
     expect(courseStatus(null).filter((it) => !it.review).map((it) => it.id)).toEqual(ids);
     expect(nextMockOf(null)).toBe(ids[0]);

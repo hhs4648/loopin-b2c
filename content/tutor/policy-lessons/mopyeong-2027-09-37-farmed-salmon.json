@@ -1,0 +1,1645 @@
+{
+  "id": "mopyeong-2027-09-37-farmed-salmon",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 9월 모의평가(2027학년도, 한국교육과정평가원) 영어 37번 (글의 순서, 3점)",
+  "brief": {
+    "topic": "순서 푸는 법: 주어진 글의 끝 → 단락 첫머리 단서로 앞 내용 예측 → 단락 끝으로 다음 내용 예측 → 순서 잇기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "order",
+    "labels": [
+      "단락 요지 잡기",
+      "연결 단서 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-farmed-salmon.svg",
+      "alt": "칠판: Wild salmon(야생 연어) → Farmed salmon(양식 연어)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "양식장에서 기르는 연어도 처음엔 강에서 데려온 야생 연어였어요. 이번 글은 양식 연어를 처음 어떻게 골라 길렀는지 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. But, And 같은 말이 무엇을 받는지 찾아볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은? [3점]",
+    "sentence": 1,
+    "analysis_first": true,
+    "wrong_rate": 38.0,
+    "wrong_rank": 8,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "(A)-(C)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "2",
+        "label": "(B)-(A)-(C)",
+        "keywords": []
+      },
+      {
+        "id": "3",
+        "label": "(B)-(C)-(A)",
+        "keywords": []
+      },
+      {
+        "id": "4",
+        "label": "(C)-(A)-(B)",
+        "keywords": [],
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "(C)-(B)-(A)",
+        "keywords": []
+      }
+    ],
+    "brief": {
+      "ask": "단락 첫머리 단서(But whatever … difference, And … once)를 떠올리며 순서를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 40개의 서로 다른 하천 → (C) 하천마다 필요한 연어가 다르다 → (A) 그러나 차이가 무엇이든 교배하면 더 빨리 자라는 연어 → (B) 그리고 유리한 개체만 찾으면 새 품종을 빠르게, 순서예요.",
+      "final_wrong": "정답은 ④ (C)-(A)-(B)예요.",
+      "option_feedback": {
+        "1": "(A)의 difference(차이)는 앞에 연어들이 어떻게 다른지 나와 있어야 해요. 그 차이는 (C)의 하천마다 다른 난관이에요.",
+        "2": "(B)의 favorable individuals(유리한 개체)는 무엇에 유리한지 앞에 나와 있어야 해요. 주어진 글 바로 뒤에는 그런 말이 없어요.",
+        "3": "(B)가 주어진 글 바로 뒤에 오면 favorable individuals가 무엇에 유리한지 알 수 없어요. (A)의 difference도 (C)의 하천별 차이를 받아요.",
+        "5": "가장 많이 고른 오답이에요. (A)의 difference는 (B) 끝 '야생 조상과 다르다'가 아니라 (C)의 하천마다 다른 연어를 받아요. (B)의 And … once favorable individuals were found는 (A)의 '더 빨리 자라는 연어'에 덧붙이는 말이에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "(B) 끝의 different(다른)와 (A) 첫머리의 difference(차이)가 같은 말이라 이었을 거예요. 하지만 (A)의 차이는 'difference that occurred in different species of salmon', 연어 종들 사이의 차이로 (C)의 하천마다 다른 연어예요. 또 (A)는 the first salmon farmers(최초의 양식업자들)가 깨달은 일이고, (B)의 favorable individuals(유리한 개체)는 그 깨달음 뒤에 찾은 '더 빨리 자라는 연어'예요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(C)",
+                "text": "Every salmon river has its own unique set of challenges …",
+                "ko": "하천마다 다른 연어",
+                "tone": "hl"
+              },
+              {
+                "label": "(A) 첫머리",
+                "text": "But whatever the manifestation of difference …",
+                "ko": "그 차이가 무엇이든",
+                "tone": "hl"
+              },
+              {
+                "label": "(B) 끝",
+                "text": "… quite different from the initial wild ancestors",
+                "ko": "사육 집단 ≠ 야생 조상 (다른 차이)",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "initial",
+        "ko": "초기의"
+      },
+      {
+        "en": "selection",
+        "ko": "선발"
+      },
+      {
+        "en": "farmed",
+        "ko": "양식된"
+      },
+      {
+        "en": "take place",
+        "ko": "이루어지다"
+      },
+      {
+        "en": "river system",
+        "ko": "수계"
+      },
+      {
+        "en": "whatever",
+        "ko": "무엇이든"
+      },
+      {
+        "en": "species",
+        "ko": "종"
+      },
+      {
+        "en": "cross",
+        "ko": "교배시키다"
+      },
+      {
+        "en": "specific",
+        "ko": "특정한"
+      },
+      {
+        "en": "family",
+        "ko": "계통"
+      },
+      {
+        "en": "result in",
+        "ko": "~을 낳다"
+      },
+      {
+        "en": "unlike",
+        "ko": "~와 달리"
+      },
+      {
+        "en": "cattle",
+        "ko": "소"
+      },
+      {
+        "en": "once",
+        "ko": "일단 ~하면"
+      },
+      {
+        "en": "favorable",
+        "ko": "유리한"
+      },
+      {
+        "en": "individual",
+        "ko": "개체"
+      },
+      {
+        "en": "basis",
+        "ko": "기반"
+      },
+      {
+        "en": "race",
+        "ko": "품종"
+      },
+      {
+        "en": "productive",
+        "ko": "생산성이 높은"
+      },
+      {
+        "en": "domestic",
+        "ko": "사육되는"
+      },
+      {
+        "en": "population",
+        "ko": "집단"
+      },
+      {
+        "en": "ancestor",
+        "ko": "조상"
+      },
+      {
+        "en": "unique",
+        "ko": "고유한"
+      },
+      {
+        "en": "a set of",
+        "ko": "일련의"
+      },
+      {
+        "en": "challenge",
+        "ko": "난관"
+      },
+      {
+        "en": "adapt to",
+        "ko": "~에 적응하다"
+      },
+      {
+        "en": "require",
+        "ko": "필요로 하다"
+      },
+      {
+        "en": "build up",
+        "ko": "축적하다"
+      },
+      {
+        "en": "massive",
+        "ko": "막대한"
+      },
+      {
+        "en": "reserve",
+        "ko": "비축량"
+      },
+      {
+        "en": "extended",
+        "ko": "길어진"
+      },
+      {
+        "en": "maximize",
+        "ko": "극대화하다"
+      },
+      {
+        "en": "particularly",
+        "ko": "특히"
+      },
+      {
+        "en": "phase",
+        "ko": "시기"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 글",
+      "text": "The initial selection of farmed Atlantic salmon took place from fish drawn from forty different river systems.",
+      "teaching_value": "high",
+      "model_translation": "양식 대서양 연어의 초기 선발은 40개의 서로 다른 하천 수계에서 가져온 물고기로부터 이루어졌다.",
+      "glosses": [
+        {
+          "en": "The initial selection",
+          "ko": "초기 선발"
+        },
+        {
+          "en": "initial",
+          "ko": "초기의"
+        },
+        {
+          "en": "selection",
+          "ko": "선발, 고르기"
+        },
+        {
+          "en": "farmed Atlantic salmon",
+          "ko": "양식 대서양 연어"
+        },
+        {
+          "en": "farmed",
+          "ko": "양식된"
+        },
+        {
+          "en": "Atlantic",
+          "ko": "대서양의"
+        },
+        {
+          "en": "salmon",
+          "ko": "연어"
+        },
+        {
+          "en": "took place",
+          "ko": "이루어졌다"
+        },
+        {
+          "en": "fish",
+          "ko": "물고기"
+        },
+        {
+          "en": "drawn from",
+          "ko": "~에서 가져온"
+        },
+        {
+          "en": "drawn",
+          "ko": "가져온, 뽑아 온"
+        },
+        {
+          "en": "forty different river systems",
+          "ko": "40개의 서로 다른 하천 수계"
+        },
+        {
+          "en": "forty",
+          "ko": "40개의"
+        },
+        {
+          "en": "different",
+          "ko": "서로 다른"
+        },
+        {
+          "en": "river systems",
+          "ko": "하천 수계 · 본류와 지류를 묶은 강 하나의 물줄기"
+        },
+        {
+          "en": "took",
+          "ko": "가졌다"
+        },
+        {
+          "en": "river",
+          "ko": "하천"
+        }
+      ],
+      "slashes": [
+        "of farmed Atlantic salmon",
+        "took place",
+        "from fish"
+      ],
+      "roles": [
+        {
+          "text": "The initial selection of farmed Atlantic salmon",
+          "role": "S"
+        },
+        {
+          "text": "took place",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "drawn from forty different river systems"
+      ],
+      "steps": [
+        {
+          "id": "g_main",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "양식 연어를 처음 고를 때 물고기를 어디에서 가져왔대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "took place from fish drawn from … 뒤를 봐요.",
+              "took place from fish drawn from … 뒤를 봐요."
+            ],
+            "explain": "'fish drawn from forty different river systems', 40개의 서로 다른 하천 수계에서 가져온 물고기래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'fish drawn from forty different river systems', 40개의 서로 다른 하천 수계에서 가져온 물고기래요.",
+              "o1": "'fish drawn from forty different river systems', 40개의 서로 다른 하천 수계에서 가져온 물고기래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "한 강에서만"
+            },
+            {
+              "id": "o1",
+              "label": "바다 양식장에서"
+            },
+            {
+              "id": "o2",
+              "label": "40개의 서로 다른 하천에서",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "initial selection",
+            "forty different river systems"
+          ],
+          "tips": [
+            {
+              "label": "take place",
+              "text": "'일어나다, 이루어지다'예요. The initial selection … took place = 초기 선발이 이루어졌다.",
+              "mark": "took place"
+            },
+            {
+              "label": "farmed",
+              "text": "'양식된'이에요. farmed salmon = 양식장에서 기른 연어.",
+              "mark": "farmed"
+            }
+          ]
+        },
+        {
+          "id": "g_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 글은 '40개의 서로 다른 하천에서 가져온 물고기'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "forty different river systems에서 different(서로 다른)를 봐요.",
+              "forty different river systems에서 different(서로 다른)를 봐요."
+            ],
+            "explain": "서로 다른 40개 하천이라고 했어요. 다음엔 그 하천들이 어떻게 다른지 풀어 주는 말이 오기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "서로 다른 40개 하천이라고 했어요. 다음엔 그 하천들이 어떻게 다른지 풀어 주는 말이 오기 쉬워요.",
+              "o2": "서로 다른 40개 하천이라고 했어요. 다음엔 그 하천들이 어떻게 다른지 풀어 주는 말이 오기 쉬워요."
+            },
+            "point": "주어진 글 끝 '40개의 서로 다른 하천' → 다음은 하천마다 다른 점"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "하천마다 무엇이 다른지",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "양식 연어를 요리하는 방법"
+            },
+            {
+              "id": "o2",
+              "label": "소와 양을 기르는 방법"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "different river systems"
+          ]
+        },
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요."
+          },
+          "method": 1,
+          "button": "(A)부터 읽어 볼게요"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "(A) But whatever the manifestation of difference that occurred in different species of salmon, the first salmon farmers realized that crossing and recrossing the specific families from the original forty rivers would result in salmon that grew faster.",
+      "teaching_value": "high",
+      "model_translation": "(A) 그러나 서로 다른 연어 종들 사이에서 나타난 차이가 무엇이든, 최초의 연어 양식업자들은 원래의 40개 하천에서 가져온 특정 계통들을 교배하고 재교배하면 더 빨리 자라는 연어를 얻게 될 것임을 깨달았다.",
+      "glosses": [
+        {
+          "en": "But whatever the manifestation of difference",
+          "ko": "그러나 차이가 어떤 모습으로 나타났든"
+        },
+        {
+          "en": "whatever",
+          "ko": "무엇이든"
+        },
+        {
+          "en": "manifestation",
+          "ko": "표현, 나타남"
+        },
+        {
+          "en": "difference",
+          "ko": "차이"
+        },
+        {
+          "en": "occurred",
+          "ko": "생겼다, 나타났다"
+        },
+        {
+          "en": "different species of salmon",
+          "ko": "서로 다른 연어 종들"
+        },
+        {
+          "en": "species",
+          "ko": "종"
+        },
+        {
+          "en": "the first salmon farmers",
+          "ko": "최초의 연어 양식업자들"
+        },
+        {
+          "en": "farmers",
+          "ko": "양식업자, 농부"
+        },
+        {
+          "en": "realized",
+          "ko": "깨달았다"
+        },
+        {
+          "en": "crossing and recrossing",
+          "ko": "교배하고 재교배하는 것"
+        },
+        {
+          "en": "crossing",
+          "ko": "교배하는 것"
+        },
+        {
+          "en": "recrossing",
+          "ko": "다시 교배하는 것"
+        },
+        {
+          "en": "the specific families",
+          "ko": "특정 계통들"
+        },
+        {
+          "en": "specific",
+          "ko": "특정한"
+        },
+        {
+          "en": "families",
+          "ko": "계통"
+        },
+        {
+          "en": "the original forty rivers",
+          "ko": "원래의 40개 하천"
+        },
+        {
+          "en": "original",
+          "ko": "원래의"
+        },
+        {
+          "en": "rivers",
+          "ko": "하천"
+        },
+        {
+          "en": "would result in",
+          "ko": "~을 낳을 것이다, 결과로 ~이 되다"
+        },
+        {
+          "en": "result",
+          "ko": "결과"
+        },
+        {
+          "en": "grew faster",
+          "ko": "더 빨리 자랐다"
+        },
+        {
+          "en": "grew",
+          "ko": "자랐다"
+        },
+        {
+          "en": "faster",
+          "ko": "더 빨리"
+        },
+        {
+          "en": "salmon",
+          "ko": "연어"
+        },
+        {
+          "en": "forty",
+          "ko": "40"
+        }
+      ],
+      "slashes": [
+        "But whatever the manifestation of difference",
+        "different species of salmon,",
+        "the first salmon farmers realized",
+        "crossing and recrossing",
+        "the specific families",
+        "the original forty rivers",
+        "would result in salmon"
+      ],
+      "roles": [
+        {
+          "text": "the first salmon farmers",
+          "role": "S"
+        },
+        {
+          "text": "realized",
+          "role": "V"
+        },
+        {
+          "text": "crossing and recrossing the specific families from the original forty rivers",
+          "role": "S"
+        },
+        {
+          "text": "would result in",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that occurred in different species of salmon",
+        "that grew faster"
+      ],
+      "steps": [
+        {
+          "id": "a_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 'But whatever the manifestation of difference(그러나 차이가 어떤 모습이든)'로 시작해요. 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "difference that occurred in different species of salmon을 봐요. 어디에서 생긴 차이인지가 단서예요.",
+              "difference that occurred in different species of salmon을 봐요. 어디에서 생긴 차이인지가 단서예요."
+            ],
+            "explain": "'difference that occurred in different species of salmon', 서로 다른 연어 종들 사이에서 나타난 차이예요. 그러니 앞에 연어들이 어떻게 다른지 말한 내용이 있어야 해요.\n또 the first salmon farmers(최초의 양식업자들)가 깨달은 일이라 양식이 막 시작될 때 이야기예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'difference that occurred in different species of salmon', 서로 다른 연어 종들 사이에서 나타난 차이예요. 그러니 앞에 연어들이 어떻게 다른지 말한 내용이 있어야 해요.\n또 the first salmon farmers(최초의 양식업자들)가 깨달은 일이라 양식이 막 시작될 때 이야기예요.",
+              "o2": "'difference that occurred in different species of salmon', 서로 다른 연어 종들 사이에서 나타난 차이예요. 그러니 앞에 연어들이 어떻게 다른지 말한 내용이 있어야 해요.\n또 the first salmon farmers(최초의 양식업자들)가 깨달은 일이라 양식이 막 시작될 때 이야기예요."
+            },
+            "point": "(A) But whatever … difference ← 앞에 연어들 사이의 차이"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "양식 연어가 야생 조상과 아주 달라졌다는 결과"
+            },
+            {
+              "id": "o1",
+              "label": "연어들 사이에 어떤 차이가 있는지 설명한 내용",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "연어 양식이 실패한 까닭"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "But whatever",
+            "difference",
+            "different species of salmon"
+          ],
+          "tips": [
+            {
+              "label": "whatever + 명사",
+              "text": "'~이 무엇이든'이에요. whatever the manifestation of difference = 차이가 어떤 모습으로 나타났든.",
+              "mark": "whatever"
+            },
+            {
+              "label": "cross",
+              "text": "평소엔 '건너다'로 알기 쉬워요. 여기서는 '교배시키다'예요. crossing and recrossing = 교배하고 다시 교배하는 것.",
+              "mark": "crossing",
+              "trap": true
+            },
+            {
+              "label": "family",
+              "text": "평소엔 '가족'으로 알기 쉬워요. 여기서는 생물의 '계통'이에요. the specific families = 특정 계통들.",
+              "mark": "families",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "a_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 '특정 계통을 교배하면 더 빨리 자라는 연어가 나온다'는 깨달음으로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "would result in salmon that grew faster를 봐요. 더 빨리 자라는 연어를 얻을 길을 찾았어요.",
+              "would result in salmon that grew faster를 봐요. 더 빨리 자라는 연어를 얻을 길을 찾았어요."
+            ],
+            "explain": "양식업자들이 더 빨리 자라는 연어를 얻는 교배 방법을 깨달았어요. 다음엔 그 방법으로 연어를 길러 나가는 이야기가 이어지기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "양식업자들이 더 빨리 자라는 연어를 얻는 교배 방법을 깨달았어요. 다음엔 그 방법으로 연어를 길러 나가는 이야기가 이어지기 쉬워요.",
+              "o1": "양식업자들이 더 빨리 자라는 연어를 얻는 교배 방법을 깨달았어요. 다음엔 그 방법으로 연어를 길러 나가는 이야기가 이어지기 쉬워요."
+            },
+            "point": "(A) 끝 '더 빨리 자라는 연어를 얻는 교배' → 다음은 그 연어로 기르는 이야기"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "하천마다 다른 난관"
+            },
+            {
+              "id": "o1",
+              "label": "야생 연어가 강으로 돌아오는 길"
+            },
+            {
+              "id": "o2",
+              "label": "그렇게 고른 연어로 새 품종을 만드는 이야기",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "result in",
+            "grew faster"
+          ],
+          "tips": [
+            {
+              "label": "result in",
+              "text": "'~을 낳다, 결과로 ~이 되다'예요. would result in salmon that grew faster = 더 빨리 자라는 연어를 얻게 될 것이다.",
+              "mark": "result"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "(B) And because salmon, unlike cattle and sheep, can produce many thousands of offspring in the course of their lives, once favorable individuals were found, just a few strong males and females could form the basis of a whole new race of highly productive fish.",
+      "teaching_value": "high",
+      "model_translation": "(B) 그리고 연어는 소나 양과 달리 일생 동안 ‘수천 마리의’ 새끼를 낳을 수 있기 때문에, 일단 유리한 개체가 발견되면 소수의 강한 수컷과 암컷만으로도 생산성이 매우 높은 완전히 새로운 품종의 물고기 기반을 형성할 수 있었다.",
+      "glosses": [
+        {
+          "en": "And because salmon",
+          "ko": "그리고 연어는 ~ 때문에"
+        },
+        {
+          "en": "salmon",
+          "ko": "연어"
+        },
+        {
+          "en": "unlike",
+          "ko": "~와 달리"
+        },
+        {
+          "en": "cattle and sheep",
+          "ko": "소와 양"
+        },
+        {
+          "en": "cattle",
+          "ko": "소"
+        },
+        {
+          "en": "sheep",
+          "ko": "양"
+        },
+        {
+          "en": "can produce",
+          "ko": "낳을 수 있다"
+        },
+        {
+          "en": "produce",
+          "ko": "낳다, 만들어 내다"
+        },
+        {
+          "en": "many thousands of offspring",
+          "ko": "수천 마리의 새끼"
+        },
+        {
+          "en": "thousands",
+          "ko": "수천"
+        },
+        {
+          "en": "offspring",
+          "ko": "자손, 새끼"
+        },
+        {
+          "en": "in the course of their lives",
+          "ko": "일생 동안"
+        },
+        {
+          "en": "course",
+          "ko": "과정, 동안"
+        },
+        {
+          "en": "lives",
+          "ko": "삶, 일생"
+        },
+        {
+          "en": "once",
+          "ko": "일단 ~하면"
+        },
+        {
+          "en": "favorable individuals",
+          "ko": "유리한 개체"
+        },
+        {
+          "en": "favorable",
+          "ko": "유리한"
+        },
+        {
+          "en": "individuals",
+          "ko": "개체"
+        },
+        {
+          "en": "were found",
+          "ko": "발견되었다"
+        },
+        {
+          "en": "just a few strong males and females",
+          "ko": "소수의 강한 수컷과 암컷만"
+        },
+        {
+          "en": "few",
+          "ko": "적은"
+        },
+        {
+          "en": "strong",
+          "ko": "강한"
+        },
+        {
+          "en": "males",
+          "ko": "수컷"
+        },
+        {
+          "en": "females",
+          "ko": "암컷"
+        },
+        {
+          "en": "could form",
+          "ko": "형성할 수 있었다"
+        },
+        {
+          "en": "form",
+          "ko": "형성하다"
+        },
+        {
+          "en": "the basis",
+          "ko": "기반"
+        },
+        {
+          "en": "basis",
+          "ko": "기반"
+        },
+        {
+          "en": "a whole new race",
+          "ko": "완전히 새로운 품종"
+        },
+        {
+          "en": "whole",
+          "ko": "완전한"
+        },
+        {
+          "en": "race",
+          "ko": "품종"
+        },
+        {
+          "en": "highly productive fish",
+          "ko": "생산성이 매우 높은 물고기"
+        },
+        {
+          "en": "highly",
+          "ko": "매우"
+        },
+        {
+          "en": "productive",
+          "ko": "생산성이 높은"
+        },
+        {
+          "en": "fish",
+          "ko": "물고기"
+        }
+      ],
+      "slashes": [
+        "And because salmon,",
+        "cattle and sheep,",
+        "many thousands of offspring",
+        "of their lives,",
+        "were found,",
+        "males and females",
+        "could form the basis",
+        "a whole new race"
+      ],
+      "roles": [
+        {
+          "text": "salmon",
+          "role": "S"
+        },
+        {
+          "text": "can produce",
+          "role": "V"
+        },
+        {
+          "text": "favorable individuals",
+          "role": "S"
+        },
+        {
+          "text": "were found",
+          "role": "V"
+        },
+        {
+          "text": "just a few strong males and females",
+          "role": "S"
+        },
+        {
+          "text": "could form",
+          "role": "V"
+        },
+        {
+          "text": "the basis of a whole new race of highly productive fish",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "b_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 'And(그리고)'로 시작하고, 'once favorable individuals were found(일단 유리한 개체가 발견되면)'라고 해요. 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "favorable individuals(유리한 개체)를 봐요. 무엇에 유리한지가 앞에 나와 있어야 해요.",
+              "favorable individuals(유리한 개체)를 봐요. 무엇에 유리한지가 앞에 나와 있어야 해요."
+            ],
+            "explain": "And(그리고)는 앞 이야기에 덧붙이는 말이에요. once favorable individuals were found(일단 유리한 개체를 찾으면)라고 했으니, 앞에 어떤 연어를 찾으려는지가 먼저 나와야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "And(그리고)는 앞 이야기에 덧붙이는 말이에요. once favorable individuals were found(일단 유리한 개체를 찾으면)라고 했으니, 앞에 어떤 연어를 찾으려는지가 먼저 나와야 해요.",
+              "o1": "And(그리고)는 앞 이야기에 덧붙이는 말이에요. once favorable individuals were found(일단 유리한 개체를 찾으면)라고 했으니, 앞에 어떤 연어를 찾으려는지가 먼저 나와야 해요."
+            },
+            "point": "(B) And … once favorable individuals ← 앞에 어떤 연어를 고를지"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "하천마다 필요한 연어가 다르다는 내용"
+            },
+            {
+              "id": "o1",
+              "label": "소와 양이 새끼를 적게 낳는 까닭"
+            },
+            {
+              "id": "o2",
+              "label": "어떤 연어를 골라 기르면 좋은지 알아낸 내용",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "And",
+            "once",
+            "favorable individuals"
+          ],
+          "tips": [
+            {
+              "label": "once",
+              "text": "평소엔 '한 번'으로 알기 쉬워요. 여기서는 주어·동사 앞에 와서 '일단 ~하면'이에요. once favorable individuals were found = 일단 유리한 개체가 발견되면.",
+              "mark": "once",
+              "trap": true
+            },
+            {
+              "label": "race",
+              "text": "평소엔 '경주'로 알기 쉬워요. 여기서는 '품종'이에요. a whole new race of … fish = 완전히 새로운 품종의 물고기.",
+              "mark": "race",
+              "trap": true
+            },
+            {
+              "label": "unlike",
+              "text": "'~와 달리'예요. salmon, unlike cattle and sheep = 소나 양과 달리 연어는.",
+              "mark": "unlike"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "A domestic population could be created quickly that would be quite different from the initial wild ancestors.",
+      "teaching_value": "high",
+      "model_translation": "최초의 야생 조상들과는 상당히 다른 사육 집단이 빠르게 만들어질 수 있었다.",
+      "glosses": [
+        {
+          "en": "A domestic population",
+          "ko": "사육 집단"
+        },
+        {
+          "en": "domestic",
+          "ko": "사육되는"
+        },
+        {
+          "en": "population",
+          "ko": "집단"
+        },
+        {
+          "en": "could be created",
+          "ko": "만들어질 수 있었다"
+        },
+        {
+          "en": "created",
+          "ko": "만들어진"
+        },
+        {
+          "en": "quickly",
+          "ko": "빠르게"
+        },
+        {
+          "en": "quite different from",
+          "ko": "~와 상당히 다른"
+        },
+        {
+          "en": "quite",
+          "ko": "상당히"
+        },
+        {
+          "en": "different",
+          "ko": "다른"
+        },
+        {
+          "en": "the initial wild ancestors",
+          "ko": "최초의 야생 조상들"
+        },
+        {
+          "en": "initial",
+          "ko": "최초의, 초기의"
+        },
+        {
+          "en": "wild",
+          "ko": "야생의"
+        },
+        {
+          "en": "ancestors",
+          "ko": "조상"
+        }
+      ],
+      "slashes": [
+        "A domestic population",
+        "created quickly",
+        "quite different"
+      ],
+      "roles": [
+        {
+          "text": "A domestic population",
+          "role": "S"
+        },
+        {
+          "text": "could be created",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that would be quite different from the initial wild ancestors"
+      ],
+      "steps": [
+        {
+          "id": "b_diff",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 '야생 조상과 상당히 다른 사육 집단이 빠르게 만들어질 수 있었다'로 끝나요. 여기서 different(다른)는 무엇과 무엇이 다르다는 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "A domestic population … different from the initial wild ancestors를 이어 봐요.",
+              "A domestic population … different from the initial wild ancestors를 이어 봐요."
+            ],
+            "explain": "that would be quite different …는 앞의 A domestic population을 꾸며요. 사육 집단이 the initial wild ancestors(최초의 야생 조상)와 다르다는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "that would be quite different …는 앞의 A domestic population을 꾸며요. 사육 집단이 the initial wild ancestors(최초의 야생 조상)와 다르다는 말이에요.",
+              "o2": "that would be quite different …는 앞의 A domestic population을 꾸며요. 사육 집단이 the initial wild ancestors(최초의 야생 조상)와 다르다는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "새로 만든 사육 집단과 야생 조상",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "긴 하천의 연어와 북쪽 하천의 연어"
+            },
+            {
+              "id": "o2",
+              "label": "연어와 소·양"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "domestic population",
+            "different from",
+            "wild ancestors"
+          ],
+          "tips": [
+            {
+              "label": "domestic",
+              "text": "평소엔 '국내의'로 알기 쉬워요. 여기서는 동물이 '사육되는'이에요. A domestic population = 사육 집단.",
+              "mark": "domestic",
+              "trap": true
+            },
+            {
+              "label": "떨어진 that",
+              "text": "A domestic population … that would be quite different에서 that 덩어리는 동사 뒤로 밀려났지만 A domestic population을 꾸며요.",
+              "mark": "that"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "(C) Every salmon river has its own unique set of challenges to which fish must adapt.",
+      "teaching_value": "high",
+      "model_translation": "(C) 모든 연어 하천은 물고기가 적응해야 하는 고유한 일련의 난관이 있다.",
+      "glosses": [
+        {
+          "en": "has",
+          "ko": "있다"
+        },
+        {
+          "en": "Every salmon river",
+          "ko": "모든 연어 하천은"
+        },
+        {
+          "en": "salmon",
+          "ko": "연어"
+        },
+        {
+          "en": "river",
+          "ko": "하천"
+        },
+        {
+          "en": "its own unique set of challenges",
+          "ko": "고유한 일련의 난관"
+        },
+        {
+          "en": "unique",
+          "ko": "고유한"
+        },
+        {
+          "en": "a set of",
+          "ko": "일련의"
+        },
+        {
+          "en": "set",
+          "ko": "한 벌, 묶음"
+        },
+        {
+          "en": "challenges",
+          "ko": "난관, 어려움"
+        },
+        {
+          "en": "to which fish must adapt",
+          "ko": "물고기가 적응해야 하는"
+        },
+        {
+          "en": "adapt",
+          "ko": "적응하다"
+        },
+        {
+          "en": "fish",
+          "ko": "물고기"
+        }
+      ],
+      "slashes": [
+        "Every salmon river has",
+        "set of challenges"
+      ],
+      "roles": [
+        {
+          "text": "Every salmon river",
+          "role": "S"
+        },
+        {
+          "text": "has",
+          "role": "V"
+        },
+        {
+          "text": "its own unique set of challenges to which fish must adapt",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "to which fish must adapt"
+      ],
+      "steps": [
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s5_basic",
+          "candidates": [
+            "Every salmon river",
+            "has",
+            "its own unique set of challenges",
+            "to which fish must adapt"
+          ],
+          "answers": [
+            "Every salmon river",
+            "to which fish must adapt",
+            "its own unique set of challenges",
+            "has"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Every salmon river",
+                "ko": "모든 연어 하천은"
+              },
+              " ",
+              {
+                "en": "to which fish must adapt",
+                "ko": "물고기가 적응해야 하는"
+              },
+              " ",
+              {
+                "en": "its own unique set of challenges",
+                "ko": "고유한 일련의 난관이"
+              },
+              " ",
+              {
+                "en": "has",
+                "ko": "있다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Some rivers are very long, like the Yukon, and require animals that can build up massive fat reserves in order to survive the extended journey.",
+      "teaching_value": "medium",
+      "model_translation": "Yukon강처럼 어떤 하천은 매우 길어서, 길어진 여정에서 살아남기 위해 막대한 지방 비축량을 축적할 수 있는 동물이 필요하다.",
+      "glosses": [
+        {
+          "en": "Some rivers",
+          "ko": "어떤 하천은"
+        },
+        {
+          "en": "rivers",
+          "ko": "하천"
+        },
+        {
+          "en": "very long",
+          "ko": "매우 긴"
+        },
+        {
+          "en": "like the Yukon",
+          "ko": "Yukon강처럼"
+        },
+        {
+          "en": "Yukon",
+          "ko": "유콘강 · 캐나다와 알래스카를 흐르는 긴 강"
+        },
+        {
+          "en": "require",
+          "ko": "필요로 하다"
+        },
+        {
+          "en": "animals",
+          "ko": "동물"
+        },
+        {
+          "en": "build up",
+          "ko": "축적하다, 쌓다"
+        },
+        {
+          "en": "massive fat reserves",
+          "ko": "막대한 지방 비축량"
+        },
+        {
+          "en": "massive",
+          "ko": "막대한"
+        },
+        {
+          "en": "fat",
+          "ko": "지방"
+        },
+        {
+          "en": "reserves",
+          "ko": "비축량"
+        },
+        {
+          "en": "in order to survive",
+          "ko": "살아남기 위해"
+        },
+        {
+          "en": "survive",
+          "ko": "살아남다"
+        },
+        {
+          "en": "the extended journey",
+          "ko": "길어진 여정"
+        },
+        {
+          "en": "extended",
+          "ko": "길어진"
+        },
+        {
+          "en": "journey",
+          "ko": "여정"
+        },
+        {
+          "en": "long",
+          "ko": "긴"
+        },
+        {
+          "en": "build",
+          "ko": "쌓다"
+        }
+      ],
+      "slashes": [
+        "are very long,",
+        "like the Yukon,",
+        "and require animals",
+        "massive fat reserves"
+      ],
+      "roles": [
+        {
+          "text": "Some rivers",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "very long",
+          "role": "C"
+        },
+        {
+          "text": "require",
+          "role": "V"
+        },
+        {
+          "text": "animals that can build up massive fat reserves in order to survive the extended journey",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that can build up massive fat reserves in order to survive the extended journey"
+      ],
+      "steps": [
+        {
+          "id": "c2_mid",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "Yukon강처럼 아주 긴 하천에는 긴 여정을 버티도록 지방을 많이 쌓아 두는 연어가 필요하대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "very long",
+            "massive fat reserves"
+          ],
+          "tips": [
+            {
+              "label": "reserve",
+              "text": "평소엔 '예약하다'로 알기 쉬워요. 여기서는 명사로 '비축량, 쌓아 둔 것'이에요. massive fat reserves = 막대한 지방 비축량.",
+              "mark": "reserves",
+              "trap": true
+            },
+            {
+              "label": "build up",
+              "text": "'축적하다, 쌓다'예요. build up massive fat reserves = 막대한 지방 비축량을 쌓다.",
+              "mark": "build up"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Others are very far north, with only a short season of warmer temperatures, and require a fish that can maximize growth, particularly during its younger phase.",
+      "teaching_value": "high",
+      "model_translation": "다른 하천들은 아주 멀리 북쪽에 있어 기온이 더 따뜻한 시기가 짧아서, 특히 어린 시기 동안 성장을 극대화할 수 있는 물고기가 필요하다.",
+      "glosses": [
+        {
+          "en": "Others",
+          "ko": "다른 하천들은"
+        },
+        {
+          "en": "very far north",
+          "ko": "아주 멀리 북쪽에"
+        },
+        {
+          "en": "far",
+          "ko": "멀리"
+        },
+        {
+          "en": "north",
+          "ko": "북쪽"
+        },
+        {
+          "en": "with only a short season of warmer temperatures",
+          "ko": "더 따뜻한 시기가 짧아서"
+        },
+        {
+          "en": "short",
+          "ko": "짧은"
+        },
+        {
+          "en": "season",
+          "ko": "시기, 계절"
+        },
+        {
+          "en": "warmer",
+          "ko": "더 따뜻한"
+        },
+        {
+          "en": "temperatures",
+          "ko": "기온"
+        },
+        {
+          "en": "require",
+          "ko": "필요로 하다"
+        },
+        {
+          "en": "maximize growth",
+          "ko": "성장을 극대화하다"
+        },
+        {
+          "en": "maximize",
+          "ko": "극대화하다"
+        },
+        {
+          "en": "growth",
+          "ko": "성장"
+        },
+        {
+          "en": "particularly",
+          "ko": "특히"
+        },
+        {
+          "en": "during its younger phase",
+          "ko": "어린 시기 동안"
+        },
+        {
+          "en": "younger",
+          "ko": "더 어린"
+        },
+        {
+          "en": "phase",
+          "ko": "시기, 단계"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "during",
+          "ko": "~ 동안"
+        }
+      ],
+      "slashes": [
+        "very far north,",
+        "warmer temperatures,",
+        "and require a fish",
+        "maximize growth,"
+      ],
+      "roles": [
+        {
+          "text": "Others",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "very far north",
+          "role": "C"
+        },
+        {
+          "text": "require",
+          "role": "V"
+        },
+        {
+          "text": "a fish that can maximize growth",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that can maximize growth"
+      ],
+      "steps": [
+        {
+          "id": "c3_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "아주 먼 북쪽 하천은 따뜻한 시기가 짧아서, 어릴 때 빨리 자라는 물고기가 필요하대요.\n하천마다 필요한 연어가 이렇게 달라요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "very far north",
+            "maximize growth"
+          ],
+          "tips": [
+            {
+              "label": "Others",
+              "text": "'다른 것들(다른 하천들)'이에요. 앞 문장 Some rivers와 짝을 이뤄요. Some … Others … = 어떤 것은 …, 다른 것은 ….",
+              "mark": "Others"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "Every salmon river (하천마다 다른 난관)",
+            "left": {
+              "label": "very long (아주 긴 하천)",
+              "words": [
+                {
+                  "text": "massive fat reserves",
+                  "ko": "막대한 지방 비축량"
+                }
+              ]
+            },
+            "right": {
+              "label": "very far north (아주 먼 북쪽 하천)",
+              "words": [
+                {
+                  "text": "maximize growth",
+                  "ko": "성장 극대화",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "/"
+          }
+        },
+        {
+          "id": "order_link",
+          "type": "pick",
+          "interaction": "word_pick",
+          "tag": "순서 잇기",
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "answers": [
+            "C",
+            "A",
+            "B"
+          ],
+          "order": {
+            "given": {
+              "id": "given",
+              "label": "주어진 글",
+              "last": {
+                "en": "… from fish drawn from forty different river systems.",
+                "ko": "40개의 서로 다른 하천 수계에서 가져온 물고기로부터"
+              }
+            },
+            "cards": [
+              {
+                "id": "A",
+                "label": "(A)",
+                "first": {
+                  "en": "But whatever the manifestation of difference that occurred in different species of salmon …",
+                  "ko": "그러나 서로 다른 연어 종들 사이의 차이가 무엇이든"
+                },
+                "last": {
+                  "en": "… would result in salmon that grew faster.",
+                  "ko": "더 빨리 자라는 연어를 얻게 될 것이다"
+                }
+              },
+              {
+                "id": "B",
+                "label": "(B)",
+                "first": {
+                  "en": "And because salmon … once favorable individuals were found …",
+                  "ko": "그리고 연어는 … 일단 유리한 개체가 발견되면"
+                },
+                "last": {
+                  "en": "… quite different from the initial wild ancestors.",
+                  "ko": "최초의 야생 조상들과 상당히 다른"
+                }
+              },
+              {
+                "id": "C",
+                "label": "(C)",
+                "first": {
+                  "en": "Every salmon river has its own unique set of challenges …",
+                  "ko": "모든 연어 하천은 고유한 난관이 있다"
+                },
+                "last": {
+                  "en": "… require a fish that can maximize growth …",
+                  "ko": "성장을 극대화하는 물고기가 필요하다"
+                }
+              }
+            ]
+          },
+          "brief": {
+            "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+            "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+            "wrong_by": {
+              "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+              "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+            "explain": "주어진 글(40개의 서로 다른 하천에서 가져온 물고기) → (C) 하천마다 난관이 달라 필요한 연어도 다르다 → (A) 그러나 차이가 무엇이든 교배하면 더 빨리 자라는 연어가 나온다 → (B) 그리고 유리한 개체만 찾으면 새 품종을 빠르게 만들 수 있었다, 순서예요.",
+            "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지"
+          },
+          "method": 1
+        },
+        {
+          "id": "c_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?"
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

@@ -1,0 +1,229 @@
+{
+  "lesson": "mopyeong-2027-09-31-public-speaking",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 아홉째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1inua6k"
+    },
+    "s1_blank_meaning": {
+      "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not merely A but also B는 'A일 뿐만 아니라 B이기도 하다'예요. not이 있어도 A를 지우는 말이 아니에요.",
+        "not merely A but also B는 'A일 뿐만 아니라 B이기도 하다'예요. not이 있어도 A를 지우는 말이 아니에요."
+      ],
+      "explain": "'not merely a matter of safety but also of survival', 안전의 문제일 뿐만 아니라 생존의 문제이기도 했대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'not merely a matter of safety but also of survival', 안전의 문제일 뿐만 아니라 생존의 문제이기도 했대요.",
+        "o2": "'not merely a matter of safety but also of survival', 안전의 문제일 뿐만 아니라 생존의 문제이기도 했대요."
+      },
+      "from": "1g7znsa"
+    },
+    "s1_where": {
+      "say": "빈칸은 생존이 걸린 무언가예요. 옛날 사람들에게 무엇이 생존의 문제였는지 생각하며 처음부터 읽어 봐요.",
+      "from": "nh6j7d"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1gf5gp"
+    },
+    "s3_note": {
+      "say": "사람들 앞에서 말하기는 너무 스트레스라서, glossophobia(말하기 공포증)라는 이름까지 있대요.",
+      "from": "m49pj7"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_why": {
+      "ask": "모든 사람의 시선이 나에게 쏠리면 왜 불편하대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "is probably that 뒤가 이유예요. 'not to be excluded'의 not을 놓치지 말아요.",
+        "is probably that 뒤가 이유예요. 'not to be excluded'의 not을 놓치지 말아요."
+      ],
+      "explain": "'it’s been extremely important not to be excluded from the group', 집단에서 배제되지 않는 것이 매우 중요했대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'it’s been extremely important not to be excluded from the group', 집단에서 배제되지 않는 것이 매우 중요했대요.",
+        "o2": "'it’s been extremely important not to be excluded from the group', 집단에서 배제되지 않는 것이 매우 중요했대요."
+      },
+      "from": "1b2ds77"
+    },
+    "s5_same": {
+      "ask": "4문장의 'excluded from the group(집단에서 배제됨)'과 같은 말을 이 문장에서 찾아 눌러 볼까요?",
+      "wrong": "그건 집단에서 밀려나는 말이 아니에요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "alienated from the group(집단으로부터 소외된)이에요. 평가받고 망신당하면, 그 결과(and thus) 집단에서 밀려나요.",
+      "wrong_by": {
+        "evaluated": "평가받는 건 맨 처음 일이에요. 그 뒤 and thus(그로 인해) 어떻게 되는지 봐요.",
+        "socially shamed": "망신당하는 건 그 앞 단계예요. and thus(그로 인해) 뒤를 봐요.",
+        "the stress system": "스트레스 체계는 뇌가 작동시키는 것이에요. 대시(—) 사이를 봐요."
+      },
+      "from": "1m8nnfg"
+    },
+    "s5_board": {
+      "say": "평가받고 망신당하면 집단에서 소외될까 봐, 뇌가 스트레스 체계를 켜요.",
+      "from": "9zyyi1"
+    },
+    "s6_meaning": {
+      "ask": "이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'our brain not being adapted'에서 not을 봐요. 우리 뇌가 현대 세계에 어떻다는 걸까요?",
+        "'our brain not being adapted'에서 not을 봐요. 우리 뇌가 현대 세계에 어떻다는 걸까요?"
+      ],
+      "explain": "'our brain not being adapted to the modern world', 뇌가 현대 세계에 적응되어 있지 않은 것의 예래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'our brain not being adapted to the modern world', 뇌가 현대 세계에 적응되어 있지 않은 것의 예래요.",
+        "o2": "'our brain not being adapted to the modern world', 뇌가 현대 세계에 적응되어 있지 않은 것의 예래요."
+      },
+      "from": "gl605s"
+    },
+    "story_6": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s7_note": {
+      "say": "요즘은 발표를 망쳐도 직장을 잃고 굶어 죽을 일은 거의 없어요.",
+      "from": "1tcn5vt"
+    },
+    "s8_same": {
+      "ask": "칠판의 말과 같은 말을 이 문장에서 찾아 눌러 볼까요?",
+      "wrong": "그건 집단에서 밀려나는 말이 아니에요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "exclusion from the group(집단으로부터의 배제)이에요. excluded(배제된)의 명사 꼴이에요.",
+      "wrong_by": {
+        "the world": "the world는 '세계', 우리가 오래전 진화한 곳이에요.",
+        "long ago": "long ago는 '오래전', 때를 말해요.",
+        "a matter of life and death": "그건 배제가 어떤 문제였는지예요. 무엇이 생사의 문제였는지 봐요."
+      },
+      "from": "1r4jt1t"
+    },
+    "s8_board": {
+      "say": "요즘과 달리(But), 오래전에는 집단에서 배제되면(exclusion) 생사가 걸렸어요.",
+      "from": "lao4m9"
+    },
+    "s9_side": {
+      "ask": "글쓴이 주장은 '옛날엔 집단에서 밀려나면 생사가 걸렸다'예요. 빈칸 문장은 이 주장과 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not merely A but also B는 A에 B를 더하는 말이에요. But이나 However 같은 반전 단서는 없어요.",
+        "not merely A but also B는 A에 B를 더하는 말이에요. But이나 However 같은 반전 단서는 없어요."
+      ],
+      "explain": "'not merely … but also of survival', 생존의 문제이기도 했대요. 반전 없이 앞 문장의 생사 이야기를 이어 가요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'not merely … but also of survival', 생존의 문제이기도 했대요. 반전 없이 앞 문장의 생사 이야기를 이어 가요."
+      },
+      "point": "빈칸 문장 = 앞 문장(배제는 생사의 문제)을 이어 가는 말 = 주장과 같은 쪽",
+      "from": "ugnmsn"
+    },
+    "s9_fill": {
+      "ask": "빈칸에는 어떤 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판의 말은 모두 집단에서 밀려나는 거예요. 밀려나면 생사가 걸렸다면, 생존의 문제였던 건 그 반대예요.",
+        "칠판의 말은 모두 집단에서 밀려나는 거예요. 밀려나면 생사가 걸렸다면, 생존의 문제였던 건 그 반대예요."
+      ],
+      "explain": "집단에서 밀려나면(exclusion) 생사가 걸렸어요. 그러니 생존이 걸린 건 그 반대, 집단 안에 있는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "집단에서 밀려나면(exclusion) 생사가 걸렸어요. 그러니 생존이 걸린 건 그 반대, 집단 안에 있는 거예요.",
+        "o2": "집단에서 밀려나면(exclusion) 생사가 걸렸어요. 그러니 생존이 걸린 건 그 반대, 집단 안에 있는 거예요."
+      },
+      "point": "빈칸 = 배제(exclusion)의 반대 = 집단에 속하기",
+      "from": "tk4hr3"
+    },
+    "s10_board": {
+      "say": "혼자서는(on your own) 결코 살아남을 수 없었대요. 이것도 집단에서 밀려난 모습이에요.",
+      "from": "qawdku"
+    },
+    "s10_go": {
+      "say": "빈칸은 집단에서 밀려나는 것의 반대, 생존이 걸린 것이에요. 이 말을 바꿔 쓴 보기를 찾아봐요.",
+      "from": "195pdk2"
+    }
+  },
+  "exam": {
+    "ask": "빈칸은 집단에서 밀려나는 것의 반대, 생존이 걸린 것이에요. 이 말을 바꿔 쓴 보기를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 오래전에는 집단에서 밀려나면(exclusion) 생사가 걸렸어요. 혼자서는 살아남을 수 없었으니, 집단에 속하는 것(Belonging)이 생존의 문제였어요.",
+    "final_wrong": "정답은 ① Belonging(소속감)이에요. 집단에서 배제되면 생사가 걸렸으니, 집단에 속하는 것이 생존의 문제였어요.",
+    "option_feedback": {
+      "2": "Confidence(자신감)는 '사람들 앞에서 말하기'에서 떠올리기 쉬워요. 하지만 글은 자신감이 아니라 집단에서 밀려나는 이야기예요.",
+      "3": "Endurance(인내)는 글에 없는 이야기예요. 무엇을 참고 견딘다는 말은 나오지 않아요.",
+      "4": "Learning(학습)은 글에 없는 이야기예요. 빈칸은 집단과 생존에 관한 말이에요.",
+      "5": "Competition(경쟁)은 남과 겨루는 말이에요. 글은 겨루기가 아니라 집단에서 배제되지 않는 게 중요했다는 이야기예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "Confidence(자신감)는 글 첫머리의 '사람들 앞에서 말하기'에서 떠올리기 쉬워요. 하지만 글은 왜 그게 불편한지, 그 이유를 말해요.\n이유는 집단에서 밀려나는 것(excluded, alienated, exclusion)이에요. 혼자서는 살아남을 수 없었으니, 생존이 걸린 건 집단에 속하는 거예요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "4문장",
+              "text": "not to be excluded from the group",
+              "ko": "집단에서 배제되지 않는 것이 중요했다",
+              "tone": "hl"
+            },
+            {
+              "label": "8문장",
+              "text": "exclusion from the group … life and death",
+              "ko": "집단에서 배제되면 생사가 걸렸다",
+              "tone": "hl"
+            },
+            {
+              "label": "10문장",
+              "text": "couldn’t make it on your own",
+              "ko": "혼자서는 살아남을 수 없었다",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "j6jgtt"
+  },
+  "intro": {
+    "topic": {
+      "say": "사람들 앞에서 말할 때 왜 심장이 빨리 뛸까요? 이번 글은 그 이유를 진화(evolution)에서 찾아요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "1qcjh3v"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1iqatnk"
+}

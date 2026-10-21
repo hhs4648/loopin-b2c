@@ -1,0 +1,154 @@
+{
+ "1": [
+  {
+   "word": "since",
+   "phrase": "Ever since the early Enlightenment",
+   "sense": "~ 이후로 줄곧",
+   "usage": "전치사 since (ever since = ~ 이후로 줄곧)"
+  }
+ ],
+ "2": [
+  {
+   "word": "as",
+   "phrase": "Taken as near synonyms",
+   "sense": "~로",
+   "usage": "take A as B(A를 B로 받아들이다)의 수동 분사구문 — ~로 받아들여질 때"
+  },
+  {
+   "word": "to",
+   "phrase": "to maintain",
+   "sense": "~하는 것",
+   "usage": "to부정사 보어 (their meaning is to ~)"
+  },
+  {
+   "word": "as",
+   "phrase": "insofar as possible",
+   "sense": "~하는 한",
+   "usage": "insofar as possible = 가능한 한"
+  },
+  {
+   "word": "to",
+   "phrase": "to protect it",
+   "sense": "~하는 것",
+   "usage": "앞의 to maintain과 나란한 둘째 보어"
+  },
+  {
+   "word": "for",
+   "phrase": "for contemplation, research, display",
+   "sense": "~을 위해",
+   "usage": "전치사 for (목적)"
+  },
+  {
+   "word": "for",
+   "phrase": "for use",
+   "sense": "~을 위해",
+   "usage": "전치사 for (목적)"
+  }
+ ],
+ "3": [
+  {
+   "word": "for",
+   "phrase": "for example",
+   "sense": "예를 들어",
+   "usage": "for example = 예를 들어"
+  }
+ ],
+ "4": [
+  {
+   "word": "but",
+   "phrase": "but try to manage",
+   "sense": "하지만",
+   "usage": "접속사 but — 인정하지만 관리하려 한다"
+  },
+  {
+   "word": "to",
+   "phrase": "try to manage",
+   "sense": "~하려고",
+   "usage": "try to + 동사원형 = ~하려고 하다"
+  },
+  {
+   "word": "to",
+   "phrase": "in order to prolong",
+   "sense": "~하기 위해",
+   "usage": "in order to + 동사원형 = ~하기 위해"
+  }
+ ],
+ "5": [
+  {
+   "word": "as",
+   "phrase": "more as protectors",
+   "sense": "~로",
+   "usage": "think of A as B = A를 B로 생각하다"
+  }
+ ],
+ "6": [
+  {
+   "word": "for",
+   "phrase": "criticize conservationists for setting",
+   "sense": "~한다고 (~ 때문에)",
+   "usage": "criticize A for B = B라고 A를 비판하다"
+  },
+  {
+   "word": "as",
+   "phrase": "as minimally",
+   "sense": "~만큼",
+   "usage": "as ~ as possible = 가능한 한 ~하게 (앞 as)"
+  },
+  {
+   "word": "as",
+   "phrase": "as possible",
+   "sense": "~만큼",
+   "usage": "as ~ as possible (뒤 as)"
+  },
+  {
+   "word": "to",
+   "phrase": "in order to preserve",
+   "sense": "~하기 위해",
+   "usage": "in order to + 동사원형 = ~하기 위해"
+  },
+  {
+   "word": "as",
+   "phrase": "as they would do",
+   "sense": "~하듯이",
+   "usage": "접속사 as — 그들(보존주의자들)이 그러듯이"
+  }
+ ],
+ "7": [
+  {
+   "word": "for",
+   "phrase": "for example",
+   "sense": "예를 들어",
+   "usage": "for example = 예를 들어"
+  },
+  {
+   "word": "to",
+   "phrase": "prefer to keep",
+   "sense": "~하는 것을",
+   "usage": "prefer to + 동사원형 = ~하는 것을 선호하다"
+  },
+  {
+   "word": "as",
+   "phrase": "“as found”",
+   "sense": "~한 대로",
+   "usage": "접속사 as — as found = 발견된 그대로"
+  },
+  {
+   "word": "for",
+   "phrase": "for study",
+   "sense": "~을 위해",
+   "usage": "전치사 for (목적)"
+  },
+  {
+   "word": "to",
+   "phrase": "rather than to restore",
+   "sense": "~하는 것",
+   "usage": "prefer to A rather than to B — 둘째 to부정사"
+  },
+  {
+   "word": "for",
+   "phrase": "for display or use",
+   "sense": "~을 위해",
+   "usage": "전치사 for (목적)"
+  }
+ ]
+}

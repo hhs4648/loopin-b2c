@@ -1,0 +1,229 @@
+{
+  "lesson": "mopyeong-2027-06-40-ai-neglected-diseases",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "요약문 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_rare": {
+      "ask": "알고리즘(algorithms)은 어떤 질병의 치료법을 찾는 데 쓰이고 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "rare diseases 뒤 'that to date haven’t received much attention'을 봐요. to date는 '지금까지'예요.",
+        "rare diseases 뒤 'that to date haven’t received much attention'을 봐요. to date는 '지금까지'예요."
+      ],
+      "explain": "'rare diseases that to date haven’t received much attention'이에요. 희귀하고, 지금까지 관심을 별로 못 받은 병이래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'rare diseases that to date haven’t received much attention'이에요. 희귀하고, 지금까지 관심을 별로 못 받은 병이래요.",
+        "o2": "'rare diseases that to date haven’t received much attention'이에요. 희귀하고, 지금까지 관심을 별로 못 받은 병이래요."
+      },
+      "point": "rare diseases that to date haven’t received much attention = 지금까지 관심을 못 받은 희귀 질병",
+      "from": "1m5tvb0"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "ft62ax"
+    },
+    "s3_poor": {
+      "ask": "'The definition of rare has too often been associated with poor'는 무슨 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "be associated with는 '~와 연관되다'예요. rare(희귀한)와 poor(가난한)가 묶여 왔대요.",
+        "be associated with는 '~와 연관되다'예요. rare(희귀한)와 poor(가난한)가 묶여 왔대요."
+      ],
+      "explain": "'associated with poor', 희귀하다는 말이 가난함과 너무 자주 묶여 왔대요. 대시(—) 뒤 that is(즉)가 그 뜻을 풀어 줘요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'associated with poor', 희귀하다는 말이 가난함과 너무 자주 묶여 왔대요. 대시(—) 뒤 that is(즉)가 그 뜻을 풀어 줘요.",
+        "o2": "'associated with poor', 희귀하다는 말이 가난함과 너무 자주 묶여 왔대요. 대시(—) 뒤 that is(즉)가 그 뜻을 풀어 줘요."
+      },
+      "from": "1ouyheo"
+    },
+    "s3_neglect": {
+      "ask": "대시(—) 뒤를 봐요. 돈을 낼 수 없는 사람들 사이에 널리 퍼진 병은 어떻게 되어 왔대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "문장 끝 'has been neglected compared to First World illnesses'를 봐요. neglect는 '등한시하다, 방치하다'예요.",
+        "문장 끝 'has been neglected compared to First World illnesses'를 봐요. neglect는 '등한시하다, 방치하다'예요."
+      ],
+      "explain": "'the disease has been neglected', 그 병은 선진국 질병에 비해 방치되어 왔대요. 꽤 널리 퍼져 있어도 그랬대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'the disease has been neglected', 그 병은 선진국 질병에 비해 방치되어 왔대요. 꽤 널리 퍼져 있어도 그랬대요.",
+        "o2": "'the disease has been neglected', 그 병은 선진국 질병에 비해 방치되어 왔대요. 꽤 널리 퍼져 있어도 그랬대요."
+      },
+      "from": "x2rzk1"
+    },
+    "s3_board": {
+      "say": "희귀한(rare) 병은 사실상 돈을 낼 수 없는 가난한(poor) 사람들의 병이에요. 그래서 부자들(the rich)의 병에 비해 등한시돼 왔어요.",
+      "point": "rare = poor(돈을 낼 수 없는 사람들의 병) → 선진국 질병에 비해 neglected(등한시됨)",
+      "from": "bc5x77"
+    },
+    "s4_ai": {
+      "ask": "AI는 무엇에 도움이 될 수 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'help offset imbalances'를 봐요. offset은 시험지 아래에 '상쇄하다'로 풀어 줬어요.",
+        "'help offset imbalances'를 봐요. offset은 시험지 아래에 '상쇄하다'로 풀어 줬어요."
+      ],
+      "explain": "offset은 '상쇄하다'예요. 'imbalances … that direct attention to diseases that “pay,”', 돈이 되는 병으로 관심을 돌리는 불균형을 AI가 상쇄할 수 있대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "offset은 '상쇄하다'예요. 'imbalances … that direct attention to diseases that “pay,”', 돈이 되는 병으로 관심을 돌리는 불균형을 AI가 상쇄할 수 있대요.",
+        "o2": "offset은 '상쇄하다'예요. 'imbalances … that direct attention to diseases that “pay,”', 돈이 되는 병으로 관심을 돌리는 불균형을 AI가 상쇄할 수 있대요."
+      },
+      "point": "AI = 비용을 낮춰서, 돈이 되는(“pay”) 병에 관심이 쏠리는 불균형을 상쇄",
+      "from": "rmnhun"
+    },
+    "s4_board": {
+      "say": "돈이 되는(“pay”) 병은 더 흔한 병이거나, 돈을 더 낼 수 있는 사람들이 걸리는 병이에요.",
+      "from": "12oxhen"
+    },
+    "s5_broaden": {
+      "ask": "AI가 의료계와 연구계의 관심을 어디까지 넓힌대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'to find cures to traditionally neglected health issues'와 문장 끝 populations를 봐요.",
+        "'to find cures to traditionally neglected health issues'와 문장 끝 populations를 봐요."
+      ],
+      "explain": "'traditionally neglected health issues and … populations', 그동안 등한시되어 온 건강 문제와 사람들에게까지 관심을 넓힌대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'traditionally neglected health issues and … populations', 그동안 등한시되어 온 건강 문제와 사람들에게까지 관심을 넓힌대요.",
+        "o2": "'traditionally neglected health issues and … populations', 그동안 등한시되어 온 건강 문제와 사람들에게까지 관심을 넓힌대요."
+      },
+      "point": "AI의 democratizing power = 등한시되어 온(neglected) 건강 문제·사람들에게까지 관심을 넓힘",
+      "from": "a2w6k1"
+    },
+    "s5_board": {
+      "say": "그동안 등한시된 사람들(neglected populations)에게까지 관심을 넓히는 게 AI의 힘이래요.",
+      "from": "1djkku3"
+    },
+    "s5_summary": {
+      "say": "이제 요약문을 읽어요. (A)와 (B)가 칠판의 어느 쪽 말인지 보고 고르면 돼요.",
+      "from": "3iebjm"
+    },
+    "s6_a_side": {
+      "ask": "(A)는 불균형이 less profitable diseases(수익이 덜 나는 병)에 가져온 일이에요. 칠판 어느 쪽 이야기일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "수익이 덜 나는 병은 돈을 낼 수 없는 사람들의 병이에요. 그런 병이 어느 쪽이었는지 떠올려 봐요.",
+        "수익이 덜 나는 병은 돈을 낼 수 없는 사람들의 병이에요. 그런 병이 어느 쪽이었는지 떠올려 봐요."
+      ],
+      "explain": "돈이 덜 되는 병은 가난한(poor) 사람들의 병, 칠판 오른쪽이에요. 왼쪽은 돈이 되는(“pay”) 병이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "돈이 덜 되는 병은 가난한(poor) 사람들의 병, 칠판 오른쪽이에요. 왼쪽은 돈이 되는(“pay”) 병이에요."
+      },
+      "from": "1st1o80"
+    },
+    "s6_a": {
+      "ask": "그럼 (A)에는 어떤 뜻의 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "불균형이 가져온 일이라 좋은 일이 아니에요. 칠판 오른쪽 neglected(등한시된)를 떠올려 봐요.",
+        "불균형이 가져온 일이라 좋은 일이 아니에요. 칠판 오른쪽 neglected(등한시된)를 떠올려 봐요."
+      ],
+      "explain": "불균형 때문에 생긴 일이라 병을 막아 준 좋은 일이 아니에요. 오른쪽 neglected처럼, 수익이 덜 나는 병은 관심을 못 받아 왔어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "불균형 때문에 생긴 일이라 병을 막아 준 좋은 일이 아니에요. 오른쪽 neglected처럼, 수익이 덜 나는 병은 관심을 못 받아 왔어요.",
+        "o2": "불균형 때문에 생긴 일이라 병을 막아 준 좋은 일이 아니에요. 오른쪽 neglected처럼, 수익이 덜 나는 병은 관심을 못 받아 왔어요."
+      },
+      "point": "(A) = 수익이 덜 나는 병이 받아 온 대접 = neglected(등한시됨) → 무시",
+      "from": "12h0qf5"
+    },
+    "s6_b": {
+      "ask": "(B)는 의학 연구의 초점을 넓혀 포함하게 될 사람들(populations)이에요. 어떤 뜻의 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판 오른쪽 'traditionally neglected populations'를 떠올려 봐요.",
+        "칠판 오른쪽 'traditionally neglected populations'를 떠올려 봐요."
+      ],
+      "explain": "초점을 넓혀 새로 포함하는 사람들은 그동안 등한시된(neglected) 사람들이에요. 오른쪽 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "초점을 넓혀 새로 포함하는 사람들은 그동안 등한시된(neglected) 사람들이에요. 오른쪽 말이에요.",
+        "o2": "초점을 넓혀 새로 포함하는 사람들은 그동안 등한시된(neglected) 사람들이에요. 오른쪽 말이에요."
+      },
+      "point": "(B) = traditionally neglected populations = 의료 혜택을 충분히 못 받은 사람들",
+      "from": "1opra1i"
+    },
+    "s6_go": {
+      "say": "(A)와 (B)의 뜻을 둘 다 맞게 담은 보기를 골라 봐요. 한쪽만 맞으면 오답이에요.",
+      "from": "16ntgt4"
+    }
+  },
+  "exam": {
+    "ask": "(A)와 (B) 둘 다 칠판 오른쪽 이야기예요. 두 칸이 다 맞는 보기를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 돈이 되는 병에 쏠린 불균형 때문에 수익이 덜 나는 병은 무시(disregard)되어 왔어요. AI는 그 초점을 의료 서비스를 충분히 못 받은(underserved) 사람들까지 넓혀요.",
+    "final_wrong": "정답은 ⑤예요. (A) 등한시되어 온 것 = disregard, (B) 등한시되어 온 사람들 = underserved예요.",
+    "option_feedback": {
+      "1": "(B) marginalized(소외된)는 맞아요. 그런데 (A) prevention(예방)은 병을 막아 주는 좋은 일이라, 불균형이 가져온 일과 반대예요.",
+      "2": "spread(확산)는 병이 퍼지는 거예요. general(일반적인) 사람들도 '그동안 등한시된 사람들'과 달라요.",
+      "3": "(A) overlook(간과)은 맞는 쪽이에요. 그런데 (B) native(현지의)는 글에 없는 말이에요.",
+      "4": "ignorance(무지)는 '알지 못함'이에요. (B) wealthy(부유한)는 칠판 왼쪽, 이미 관심을 받던 쪽이에요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "1": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 33%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "①은 (B) marginalized(소외된)는 맞아요. 그런데 (A) 자리는 불균형이 수익이 덜 나는 병에 '가져온(led to)' 일이에요. prevention(예방)은 병을 막아 주는 좋은 일이라, 글의 neglected(등한시됨)와 반대예요.\n두 칸이 다 맞아야 정답이에요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(A)",
+              "text": "has been neglected",
+              "ko": "등한시됨 = disregard",
+              "tone": "hl"
+            },
+            {
+              "label": "(B)",
+              "text": "traditionally neglected populations",
+              "ko": "서비스를 충분히 못 받은 = underserved",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "ddv3x"
+  },
+  "intro": {
+    "topic": {
+      "say": "돈이 안 되는 병에도 치료제가 나올까요? 이번 글은 제약 산업과 AI 이야기예요."
+    },
+    "method1": {
+      "say": "요약문 문제는 지문을 먼저 읽으며 글쓴이 주장을 잡아요. 같은 쪽 말을 칠판에 모아요."
+    },
+    "method2": {
+      "say": "마지막에 요약문을 읽고, (A)와 (B)가 칠판의 어느 쪽 말인지 보고 골라요."
+    },
+    "from": "2pzhlg"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "xqwo37"
+}

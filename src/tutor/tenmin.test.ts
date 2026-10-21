@@ -53,8 +53,9 @@ describe("10분 모의고사 — 레슨에서 문항 꺼내기", () => {
     expect(hard.some((s) => /-v\d+$/.test(s.id) || s.subtitle.startsWith("듣기"))).toBe(false);
 
     const mocks = tenMinMocks();
-    expect(mocks.map((m) => m.id)).toEqual(["ten-moeui-2026-03", "ten-moeui-2024-03", "ten-moeui-2022-03"]);
-    expect(mocks[1]!.title).toBe("2024년 3월 오답률 Top 10");
+    expect(mocks.map((m) => m.id)).toEqual(["ten-mopyeong-2027-09", "ten-mopyeong-2027-06", "ten-moeui-2026-03", "ten-moeui-2024-03", "ten-moeui-2022-03"]);
+    expect(mocks[3]!.title).toBe("2024년 3월 오답률 Top 10");
+    expect(mocks[1]!.title).toBe("2026년 6월 오답률 Top 9"); // 42번은 장문이라 빠진다
     for (const m of mocks) {
       expect(m.items.length).toBeGreaterThanOrEqual(3);
       expect(m.items.length).toBeLessThanOrEqual(10);

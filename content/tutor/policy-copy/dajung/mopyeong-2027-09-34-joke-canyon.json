@@ -1,0 +1,270 @@
+{
+  "lesson": "mopyeong-2027-09-34-joke-canyon",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 마지막 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1ae47yg"
+    },
+    "s1_blank_meaning": {
+      "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "joke-hearers는 '농담을 듣는 사람들'이에요. far more는 '훨씬 더'예요.",
+        "joke-hearers는 '농담을 듣는 사람들'이에요. far more는 '훨씬 더'예요."
+      ],
+      "explain": "'The joke-hearers get far more pleasure from the joke', 듣는 사람들이 그 농담에서 훨씬 더 큰 즐거움을 얻는대요. 빈칸에는 언제 그런지가 와요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'The joke-hearers get far more pleasure from the joke', 듣는 사람들이 그 농담에서 훨씬 더 큰 즐거움을 얻는대요. 빈칸에는 언제 그런지가 와요.",
+        "o2": "'The joke-hearers get far more pleasure from the joke', 듣는 사람들이 그 농담에서 훨씬 더 큰 즐거움을 얻는대요. 빈칸에는 언제 그런지가 와요."
+      },
+      "from": "hkaxaz"
+    },
+    "s1_where": {
+      "say": "그럼 듣는 사람이 언제 농담을 더 즐기는지 생각하며 문장 처음부터 읽어 봐요.",
+      "from": "11gbcsk"
+    },
+    "s1_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "yhmgcp"
+    },
+    "s2_why": {
+      "ask": "농담을 세 번째 들으면 재미가 없는 이유는 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "that’s why 앞이 이유예요. rely on은 '~에 의존하다'예요.",
+        "that’s why 앞이 이유예요. rely on은 '~에 의존하다'예요."
+      ],
+      "explain": "'Most punch lines rely on an element of surprise', 웃음은 놀라움에 기대요. 세 번째로 들으면 이미 아는 말이라 놀랄 게 없어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'Most punch lines rely on an element of surprise', 웃음은 놀라움에 기대요. 세 번째로 들으면 이미 아는 말이라 놀랄 게 없어요.",
+        "o2": "'Most punch lines rely on an element of surprise', 웃음은 놀라움에 기대요. 세 번째로 들으면 이미 아는 말이라 놀랄 게 없어요."
+      },
+      "from": "ay4mrq"
+    },
+    "s3_skill": {
+      "ask": "농담하는 사람의 기술은 무엇을 판단하는 데 있을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "judging 뒤 how much of a surprise를 봐요. take는 여기서 '받아들이다'예요.",
+        "judging 뒤 how much of a surprise를 봐요. take는 여기서 '받아들이다'예요."
+      ],
+      "explain": "'judging exactly how much of a surprise the audience is prepared to take', 청중이 받아들일 수 있는 놀라움이 정확히 얼마인지 판단하는 거래요. 많을수록 좋은 게 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'judging exactly how much of a surprise the audience is prepared to take', 청중이 받아들일 수 있는 놀라움이 정확히 얼마인지 판단하는 거래요. 많을수록 좋은 게 아니에요.",
+        "o2": "'judging exactly how much of a surprise the audience is prepared to take', 청중이 받아들일 수 있는 놀라움이 정확히 얼마인지 판단하는 거래요. 많을수록 좋은 게 아니에요."
+      },
+      "from": "mxcy2l"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_note": {
+      "say": "얼마나 놀라게 할지 정하려고, 농담하는 사람이 청중에 대해 짐작해야(assumptions) 하는 것들이에요.",
+      "from": "1pmqyun"
+    },
+    "s5_compare": {
+      "ask": "Seinfeld는 농담하는 것을 무엇에 비유했을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "compared A to B를 봐요. leap은 '뛰어넘다', taking the audience with you는 '청중을 데리고'예요.",
+        "compared A to B를 봐요. leap은 '뛰어넘다', taking the audience with you는 '청중을 데리고'예요."
+      ],
+      "explain": "'compared telling a joke to attempting to leap a metaphorical canyon', 농담하기를 협곡 뛰어넘기에 비유했어요. 'taking the audience with you', 청중을 데리고요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'compared telling a joke to attempting to leap a metaphorical canyon', 농담하기를 협곡 뛰어넘기에 비유했어요. 'taking the audience with you', 청중을 데리고요.",
+        "o2": "'compared telling a joke to attempting to leap a metaphorical canyon', 농담하기를 협곡 뛰어넘기에 비유했어요. 'taking the audience with you', 청중을 데리고요."
+      },
+      "from": "1bl8639"
+    },
+    "story_5": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "1j79r6x"
+    },
+    "s6_map": {
+      "say": "농담 앞부분(setup)은 이쪽 절벽, 웃음이 터지는 말(punch line)은 건너편 절벽이래요.\n청중이 둘 사이를 뛰어 건너야 웃음이 나요.",
+      "from": "1wps1lp"
+    },
+    "s7_far": {
+      "ask": "두 절벽이 너무 멀면(too far apart), 농담에서는 어떤 상황일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "don’t make it to the other side는 '건너편에 닿지 못한다'예요.",
+        "don’t make it to the other side는 '건너편에 닿지 못한다'예요."
+      ],
+      "explain": "앞부분과 웃음 포인트가 너무 떨어져 있으면 청중이 건너편에 닿지 못해요. 무슨 말인지 이해를 못 하는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "앞부분과 웃음 포인트가 너무 떨어져 있으면 청중이 건너편에 닿지 못해요. 무슨 말인지 이해를 못 하는 거예요.",
+        "o2": "앞부분과 웃음 포인트가 너무 떨어져 있으면 청중이 건너편에 닿지 못해요. 무슨 말인지 이해를 못 하는 거예요."
+      },
+      "from": "yvt3j3"
+    },
+    "s8_close": {
+      "ask": "두 절벽이 너무 가까우면(too close together), 농담에서는 어떤 상황일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "just steps across the gap은 '그냥 그 틈을 걸어서 건너간다'예요. thrilling은 '짜릿한'이에요.",
+        "just steps across the gap은 '그냥 그 틈을 걸어서 건너간다'예요. thrilling은 '짜릿한'이에요."
+      ],
+      "explain": "앞부분에서 웃음 포인트가 다 보이면 청중은 뛰지 않고 그냥 걸어서 건너요. 'doesn’t experience a thrilling leap', 짜릿한 도약이 없대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "앞부분에서 웃음 포인트가 다 보이면 청중은 뛰지 않고 그냥 걸어서 건너요. 'doesn’t experience a thrilling leap', 짜릿한 도약이 없대요.",
+        "o1": "앞부분에서 웃음 포인트가 다 보이면 청중은 뛰지 않고 그냥 걸어서 건너요. 'doesn’t experience a thrilling leap', 짜릿한 도약이 없대요."
+      },
+      "from": "1qghi2"
+    },
+    "s8_table": {
+      "say": "너무 멀어도, 너무 가까워도 재미가 없어요.\n둘 다 짜릿한 도약(a thrilling leap)이 없어요.",
+      "from": "8jwq6z"
+    },
+    "s9_side": {
+      "ask": "빈칸은 훨씬 더 큰 즐거움(far more pleasure)을 얻을 때예요. 표의 어느 줄과 같은 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "pleasure(즐거움)는 좋은 말(+)이에요. 표에서 재미없다고 한 줄은 빼 봐요.",
+        "pleasure(즐거움)는 좋은 말(+)이에요. 표에서 재미없다고 한 줄은 빼 봐요."
+      ],
+      "explain": "너무 멀면 못 건너고, 너무 가까우면 도약이 없어요. 즐거움은 청중이 직접 뛰어 건너는 짜릿한 도약 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "너무 멀면 못 건너고, 너무 가까우면 도약이 없어요. 즐거움은 청중이 직접 뛰어 건너는 짜릿한 도약 쪽이에요.",
+        "o1": "너무 멀면 못 건너고, 너무 가까우면 도약이 없어요. 즐거움은 청중이 직접 뛰어 건너는 짜릿한 도약 쪽이에요."
+      },
+      "point": "빈칸 = far more pleasure(+) = 너무 멀지도 가깝지도 않아 청중이 직접 뛰어 건너는 도약 = 같은 쪽",
+      "from": "zivje6"
+    },
+    "s9_fill": {
+      "ask": "그럼 빈칸에는 어떤 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "표의 가운데, 너무 가깝지도 너무 멀지도 않은 자리를 떠올려 봐요.",
+        "표의 가운데, 너무 가깝지도 너무 멀지도 않은 자리를 떠올려 봐요."
+      ],
+      "explain": "다 예상되면 너무 가까운 쪽이고, 끝까지 모르면 너무 먼 쪽이에요. 청중이 조금 애써서 틈을 뛰어 건널 때 가장 즐거워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "다 예상되면 너무 가까운 쪽이고, 끝까지 모르면 너무 먼 쪽이에요. 청중이 조금 애써서 틈을 뛰어 건널 때 가장 즐거워요.",
+        "o1": "다 예상되면 너무 가까운 쪽이고, 끝까지 모르면 너무 먼 쪽이에요. 청중이 조금 애써서 틈을 뛰어 건널 때 가장 즐거워요."
+      },
+      "from": "jtkb2d"
+    },
+    "s9_go": {
+      "say": "빈칸은 짜릿한 도약 쪽이에요. 청중이 틈을 직접 뛰어 건너는 것을 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "y4atki"
+    }
+  },
+  "exam": {
+    "ask": "표의 가운데, 짜릿한 도약을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 너무 가까우면 그냥 걸어 건너고, 너무 멀면 못 건너요. 청중이 약간 애써서 틈을 뛰어 건널 때 가장 즐거워요.",
+    "final_wrong": "정답은 ④예요. 두 절벽이 너무 가까우면 도약이 없고, 너무 멀면 건너지 못해요. 청중이 조금 노력해서 뛰어 건널 때 즐거움이 커요.",
+    "option_feedback": {
+      "1": "relaxed는 4문장에서 농담하는 사람이 짐작하는 것 중 하나예요. 즐거움은 편안함이 아니라 짜릿한 도약에서 와요.",
+      "2": "예상과 맞으면 놀라움이 없어요. 두 절벽이 너무 가까워 그냥 걸어 건너는 쪽이에요.",
+      "3": "누구에 관한 농담인지는 글에 없어요. 글은 놀라움의 크기 이야기예요.",
+      "5": "끝까지 이해하지 못하면 두 절벽이 너무 먼 쪽이에요. 건너편에 닿지 못하면 즐거움도 없어요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "1": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "①은 4문장에 relaxed(편안한)가 나와서 끌려요. 하지만 그건 농담하는 사람이 청중에 대해 짐작하는 것 중 하나예요.\n빈칸은 청중이 언제 더 즐거운지예요 — 7·8문장 협곡 비유가 답을 줘요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "4문장",
+              "text": "how relaxed they appear to be",
+              "ko": "농담하는 사람이 짐작하는 것",
+              "tone": "hl2"
+            },
+            {
+              "label": "7·8문장",
+              "text": "not too far, not too close → a thrilling leap",
+              "ko": "짜릿한 도약 — 즐거움",
+              "tone": "hl"
+            }
+          ]
+        }
+      },
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 25%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "②는 '예상과 맞으면 즐겁다'는 상식처럼 들려서 끌려요. 하지만 글은 놀라움(surprise)이 농담의 기본이라고 했어요.\n예상과 딱 맞으면 두 절벽이 너무 가까워 그냥 걸어 건널 뿐, 짜릿한 도약이 없어요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "1·2문장",
+              "text": "Surprise is the fundamental joke mechanism",
+              "ko": "놀라움이 농담의 기본",
+              "tone": "hl"
+            },
+            {
+              "label": "8문장",
+              "text": "too close together → just steps across the gap",
+              "ko": "다 예상됨 — 도약 없음",
+              "tone": "hl2"
+            },
+            {
+              "label": "②",
+              "text": "matches their expectations",
+              "ko": "예상과 일치 — 너무 가까운 쪽",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1m7vf7x"
+  },
+  "intro": {
+    "topic": {
+      "say": "같은 농담을 세 번 들으면 어떤가요? 이번 글은 농담과 놀라움 이야기예요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "1js9b5b"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "jqxrgg"
+}

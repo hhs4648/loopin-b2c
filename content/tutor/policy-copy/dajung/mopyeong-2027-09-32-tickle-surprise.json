@@ -1,0 +1,241 @@
+{
+  "lesson": "mopyeong-2027-09-32-tickle-surprise",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 마지막 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1ae47yg"
+    },
+    "s1_blank_meaning": {
+      "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "hence는 '그래서'예요. 'adults are ____, and hence …'의 주어는 adults, 비교 대상은 끝의 children이에요.",
+        "hence는 '그래서'예요. 'adults are ____, and hence …'의 주어는 adults, 비교 대상은 끝의 children이에요."
+      ],
+      "explain": "'adults are ____, and hence are more difficult to surprise', 어른은 ____해서 놀라게 하기가 더 어렵대요. 'than are children'은 아이보다라는 뜻이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'adults are ____, and hence are more difficult to surprise', 어른은 ____해서 놀라게 하기가 더 어렵대요. 'than are children'은 아이보다라는 뜻이에요.",
+        "o2": "'adults are ____, and hence are more difficult to surprise', 어른은 ____해서 놀라게 하기가 더 어렵대요. 'than are children'은 아이보다라는 뜻이에요."
+      },
+      "from": "3gw439"
+    },
+    "s1_where": {
+      "say": "빈칸은 어른을 놀라게 하기 어려운 이유예요. 무엇이 사람을 놀라게 하는지 생각하며 처음부터 읽어 봐요.",
+      "from": "n4n77e"
+    },
+    "s1_tuned": {
+      "ask": "우리 감각 체계는 어떤 자극에 가장 맞춰져 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "but 뒤 'are most tuned to stimuli that …'을 봐요. that 뒤가 어떤 자극인지 말해요.",
+        "but 뒤 'are most tuned to stimuli that …'을 봐요. that 뒤가 어떤 자극인지 말해요."
+      ],
+      "explain": "'most tuned to stimuli that are unexpected and surprising', 예상치 못하고 놀라운 자극에 가장 맞춰져 있대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'most tuned to stimuli that are unexpected and surprising', 예상치 못하고 놀라운 자극에 가장 맞춰져 있대요.",
+        "o2": "'most tuned to stimuli that are unexpected and surprising', 예상치 못하고 놀라운 자극에 가장 맞춰져 있대요."
+      },
+      "from": "1rxy81s"
+    },
+    "s2_which": {
+      "ask": "어느 쪽 감각이 덜 두드러진대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'these stimuli are less noticeable … than ~'에서 these stimuli가 무엇인지 앞을 봐요.",
+        "'these stimuli are less noticeable … than ~'에서 these stimuli가 무엇인지 앞을 봐요."
+      ],
+      "explain": "these stimuli는 내가 몸을 움직여(you move your body) 만든 감각이에요. 이게 다른 사람이 만든 감각보다 덜 두드러져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "these stimuli는 내가 몸을 움직여(you move your body) 만든 감각이에요. 이게 다른 사람이 만든 감각보다 덜 두드러져요.",
+        "o2": "these stimuli는 내가 몸을 움직여(you move your body) 만든 감각이에요. 이게 다른 사람이 만든 감각보다 덜 두드러져요."
+      },
+      "from": "odq0j"
+    },
+    "s2_board": {
+      "say": "내가 만든 감각은 덜 느끼고, 다른 사람이 만든 감각은 더 크게 느껴요.",
+      "from": "1i2j7lq"
+    },
+    "s3_sort": {
+      "ask": "'someone sitting next to you(옆에 앉은 사람)'의 다리가 스치는 건 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "'less noticeable than ~'을 봐요. 내 다리끼리 닿는 감각이 그것보다 덜 두드러진대요.",
+        "'less noticeable than ~'을 봐요. 내 다리끼리 닿는 감각이 그것보다 덜 두드러진대요."
+      ],
+      "explain": "내 다리끼리 닿는 건 덜 느끼고, 옆 사람 다리가 스치는 건 더 크게 느껴요. 다른 사람이 만든 감각이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "내 다리끼리 닿는 건 덜 느끼고, 옆 사람 다리가 스치는 건 더 크게 느껴요. 다른 사람이 만든 감각이에요."
+      },
+      "from": "bvr3q6"
+    },
+    "s3_board": {
+      "say": "2문장의 예시예요. 내 다리끼리 닿는 건 덜 느끼고, 옆 사람 다리가 스치면 더 크게 느껴요.",
+      "from": "poolja"
+    },
+    "s4_when": {
+      "ask": "고양이가 무릎에 뛰어오를 때, 언제 반응이 훨씬 클까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "문장 끝 'if you have your eyes …'를 봐요.",
+        "문장 끝 'if you have your eyes …'를 봐요."
+      ],
+      "explain": "'much greater if you have your eyes closed', 눈을 감고 있으면 반응이 훨씬 더 크대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'much greater if you have your eyes closed', 눈을 감고 있으면 반응이 훨씬 더 크대요.",
+        "o2": "'much greater if you have your eyes closed', 눈을 감고 있으면 반응이 훨씬 더 크대요."
+      },
+      "from": "18a80ya"
+    },
+    "s4_board": {
+      "say": "눈을 감고 있으면(eyes closed) 반응이 훨씬 커요. 이것도 surprising 쪽이에요.",
+      "from": "zs03l6"
+    },
+    "s5_note": {
+      "say": "놀라운 자극에 이렇게 더 크게 반응하는 건, 몸을 지키는 방어 기제(defense mechanism)래요.",
+      "from": "1mwxzpo"
+    },
+    "story_5": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s6_same": {
+      "ask": "칠판의 another individual(다른 사람)과 같은 쪽 말을 이 문장에서 찾아 눌러 볼까요?",
+      "wrong": "그건 surprising 쪽, 남이 만드는 쪽 말이 아니에요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "someone else(다른 사람)예요. 남이 간지럽히면 스스로 간지럽힐 때보다 반응이 커요.",
+      "wrong_by": {
+        "being tickled": "간지럼을 당하는 건 두 쪽 모두에 있어요. 누가 간지럽히는지(by ~) 봐요.",
+        "an emotional reaction": "감정적 반응은 결과예요. 누가 간지럽힐 때 반응이 큰지 봐요.",
+        "tickle yourself": "스스로 간지럽히는 건 내가 만드는 쪽, 덜 느끼는 쪽이에요."
+      },
+      "from": "xo9yvh"
+    },
+    "s6_board": {
+      "say": "남이 간지럽히면(someone else) 크게 느끼고, 스스로 간지럽히면(tickle yourself) 덜 느껴요.",
+      "from": "zgvhqg"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "8haell"
+    },
+    "s8_side": {
+      "ask": "빈칸 속 어른은 놀라게 하기 어렵대요. 어른은 칠판의 어느 쪽에 더 가까울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "빈칸 바로 뒤 'and hence are more difficult to surprise'를 봐요. 반전 단서 없이 결과를 이어요.",
+        "빈칸 바로 뒤 'and hence are more difficult to surprise'를 봐요. 반전 단서 없이 결과를 이어요."
+      ],
+      "explain": "'more difficult to surprise', 놀라게 하기가 더 어렵대요. 덜 놀라는 쪽이니, 스스로 간지럽힐 때와 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'more difficult to surprise', 놀라게 하기가 더 어렵대요. 덜 놀라는 쪽이니, 스스로 간지럽힐 때와 같은 쪽이에요."
+      },
+      "point": "빈칸 = 놀라게 하기 어려운 이유 = 덜 느끼는 쪽(스스로 간지럽히기)과 같은 쪽",
+      "from": "xbumcx"
+    },
+    "s8_fill": {
+      "ask": "그럼 빈칸에는 어떤 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "빈칸은 hence(그래서) 앞, 놀라게 하기 어려운 이유예요. 스스로 간지럽힐 때 덜 놀라는 까닭을 떠올려 봐요.",
+        "빈칸은 hence(그래서) 앞, 놀라게 하기 어려운 이유예요. 스스로 간지럽힐 때 덜 놀라는 까닭을 떠올려 봐요."
+      ],
+      "explain": "스스로 간지럽히면 어디를 언제 간지럽힐지 이미 알아서 덜 놀라요. 어른도 무엇이 올지 더 잘 알아서 놀라게 하기 어려워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "스스로 간지럽히면 어디를 언제 간지럽힐지 이미 알아서 덜 놀라요. 어른도 무엇이 올지 더 잘 알아서 놀라게 하기 어려워요.",
+        "o2": "스스로 간지럽히면 어디를 언제 간지럽힐지 이미 알아서 덜 놀라요. 어른도 무엇이 올지 더 잘 알아서 놀라게 하기 어려워요."
+      },
+      "point": "빈칸 = 무엇이 올지 미리 앎 → 그래서 놀라게 하기 어렵다",
+      "from": "1gle13s"
+    },
+    "s8_go": {
+      "say": "빈칸은 어른을 놀라게 하기 어려운 이유, 스스로 간지럽힐 때와 같은 쪽이에요. 이 말을 바꿔 쓴 보기를 찾아봐요.",
+      "from": "1708c5z"
+    }
+  },
+  "exam": {
+    "ask": "빈칸은 어른을 놀라게 하기 어려운 이유, 스스로 간지럽힐 때와 같은 쪽이에요. 이 말을 바꿔 쓴 보기를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 스스로 간지럽힐 때처럼, 무엇이 올지 미리 알면 덜 놀라요. 어른은 아이보다 자극을 더 잘 예상해서(better at anticipating stimuli) 놀라게 하기가 더 어려워요.",
+    "final_wrong": "정답은 ⑤ better at anticipating stimuli(자극을 더 잘 예상하는)예요. 어른은 무엇이 올지 더 잘 알아서 놀라게 하기가 더 어려워요.",
+    "option_feedback": {
+      "1": "cautious of acting(행동하는 것에 조심하는)은 글에 없는 이야기예요. 글은 행동이 아니라 자극을 느끼는 이야기예요.",
+      "2": "less·others·reactions는 글에 나온 말이라 헷갈리기 쉬워요. 하지만 글은 남의 반응이 아니라 남이 만든 자극 이야기예요.",
+      "3": "ability to focus(집중하는 능력)는 글에 나오지 않아요. 빈칸은 놀라게 하기 어려운 이유예요.",
+      "4": "change(변화)·adaptive(적응의)는 1·5문장에 나와서 헷갈리기 쉬워요. 하지만 적응이 느리다는 말은 글에 없어요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 37%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "less sensitive to others’ reactions에는 글에 나온 말(less, another individual, emotional reaction)이 섞여 있어 그럴듯해 보여요.\n하지만 글은 남의 '반응'이 아니라 남이 만든 '자극' 이야기예요. 빈칸은 hence(그래서) 뒤 '놀라게 하기 더 어렵다'의 이유라서, 무엇이 올지 미리 아는 쪽이에요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "빈칸 문장",
+              "text": "adults are ____, and hence are more difficult to surprise",
+              "ko": "____ 그래서 놀라게 하기 더 어렵다",
+              "tone": "hl"
+            },
+            {
+              "label": "2·6문장",
+              "text": "you move your body · tickle yourself",
+              "ko": "내가 만든 자극 → 덜 느낌",
+              "tone": "hl"
+            },
+            {
+              "label": "2·6문장",
+              "text": "another individual · someone else",
+              "ko": "남이 만든 자극 → 크게 느낌",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1cnvgsv"
+  },
+  "intro": {
+    "topic": {
+      "say": "스스로 간지럽히면 왜 별로 안 간지러울까요? 이번 글은 우리 감각이 어떤 자극에 크게 반응하는지 이야기해요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "gwlata"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1iqatnk"
+}

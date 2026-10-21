@@ -1,0 +1,106 @@
+{
+ "1": [
+  {
+   "word": "as",
+   "phrase": "as diverse as",
+   "sense": "~만큼 (as … as의 앞)",
+   "usage": "as + 형용사 + as = ~만큼 …한"
+  },
+  {
+   "word": "as",
+   "phrase": "diverse as the number",
+   "sense": "~만큼 (as … as의 뒤)",
+   "usage": "as + 형용사 + as = ~만큼 …한"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "compounds that either are",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "unpleasant to insects",
+   "sense": "~에게",
+   "usage": "전치사 to + 명사"
+  },
+  {
+   "word": "to",
+   "phrase": "the insects to go",
+   "sense": "~하도록",
+   "usage": "encourage + 대상 + to 동사원형"
+  }
+ ],
+ "3": [
+  {
+   "word": "but",
+   "phrase": "but more like",
+   "sense": "(A가 아니라) B",
+   "usage": "not A but B = A가 아니라 B"
+  }
+ ],
+ "4": [
+  {
+   "word": "for",
+   "phrase": "select for insects",
+   "sense": "~을 (선택하다)",
+   "usage": "select for = ~을 선택하다(살아남게 하다)"
+  },
+  {
+   "word": "to",
+   "phrase": "ways to get around",
+   "sense": "~할 (방법)",
+   "usage": "to부정사 (앞 명사를 꾸밈)"
+  },
+  {
+   "word": "which",
+   "phrase": ", which in turn help",
+   "sense": "그리고 그것(들)은",
+   "usage": "콤마 + which (앞 내용을 이어 설명)"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "compounds that let",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "that",
+   "phrase": "know that an attack",
+   "sense": "~라는 것을",
+   "usage": "명사절 that + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "plants to start",
+   "sense": "~하도록",
+   "usage": "push + 대상 + to 동사원형"
+  }
+ ],
+ "7": [
+  {
+   "word": "for",
+   "phrase": "a call for an assist",
+   "sense": "~을 (요청)",
+   "usage": "a call for ~ = ~ 요청"
+  },
+  {
+   "word": "that",
+   "phrase": "an assist that benefits",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  }
+ ],
+ "9": [
+  {
+   "word": "while",
+   "phrase": "while under attack",
+   "sense": "~하는 동안",
+   "usage": "while + (주어·be동사 생략) 상태"
+  }
+ ]
+}

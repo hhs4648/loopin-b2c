@@ -1,0 +1,210 @@
+{
+  "lesson": "mopyeong-2027-09-37-farmed-salmon",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "순서 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_main": {
+      "ask": "양식 연어를 처음 고를 때 물고기를 어디에서 가져왔대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "took place from fish drawn from … 뒤를 봐요.",
+        "took place from fish drawn from … 뒤를 봐요."
+      ],
+      "explain": "'fish drawn from forty different river systems', 40개의 서로 다른 하천 수계에서 가져온 물고기래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'fish drawn from forty different river systems', 40개의 서로 다른 하천 수계에서 가져온 물고기래요.",
+        "o1": "'fish drawn from forty different river systems', 40개의 서로 다른 하천 수계에서 가져온 물고기래요."
+      },
+      "from": "1thlsd2"
+    },
+    "g_next": {
+      "ask": "주어진 글은 '40개의 서로 다른 하천에서 가져온 물고기'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "forty different river systems에서 different(서로 다른)를 봐요.",
+        "forty different river systems에서 different(서로 다른)를 봐요."
+      ],
+      "explain": "서로 다른 40개 하천이라고 했어요. 다음엔 그 하천들이 어떻게 다른지 풀어 주는 말이 오기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "서로 다른 40개 하천이라고 했어요. 다음엔 그 하천들이 어떻게 다른지 풀어 주는 말이 오기 쉬워요.",
+        "o2": "서로 다른 40개 하천이라고 했어요. 다음엔 그 하천들이 어떻게 다른지 풀어 주는 말이 오기 쉬워요."
+      },
+      "point": "주어진 글 끝 '40개의 서로 다른 하천' → 다음은 하천마다 다른 점",
+      "from": "7edby3"
+    },
+    "paper_order": {
+      "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요.",
+      "from": "11bywp8"
+    },
+    "a_before": {
+      "ask": "(A)는 'But whatever the manifestation of difference(그러나 차이가 어떤 모습이든)'로 시작해요. 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "difference that occurred in different species of salmon을 봐요. 어디에서 생긴 차이인지가 단서예요.",
+        "difference that occurred in different species of salmon을 봐요. 어디에서 생긴 차이인지가 단서예요."
+      ],
+      "explain": "'difference that occurred in different species of salmon', 서로 다른 연어 종들 사이에서 나타난 차이예요. 그러니 앞에 연어들이 어떻게 다른지 말한 내용이 있어야 해요.\n또 the first salmon farmers(최초의 양식업자들)가 깨달은 일이라 양식이 막 시작될 때 이야기예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'difference that occurred in different species of salmon', 서로 다른 연어 종들 사이에서 나타난 차이예요. 그러니 앞에 연어들이 어떻게 다른지 말한 내용이 있어야 해요.\n또 the first salmon farmers(최초의 양식업자들)가 깨달은 일이라 양식이 막 시작될 때 이야기예요.",
+        "o2": "'difference that occurred in different species of salmon', 서로 다른 연어 종들 사이에서 나타난 차이예요. 그러니 앞에 연어들이 어떻게 다른지 말한 내용이 있어야 해요.\n또 the first salmon farmers(최초의 양식업자들)가 깨달은 일이라 양식이 막 시작될 때 이야기예요."
+      },
+      "point": "(A) But whatever … difference ← 앞에 연어들 사이의 차이",
+      "from": "1ghqzgl"
+    },
+    "a_next": {
+      "ask": "(A)는 '특정 계통을 교배하면 더 빨리 자라는 연어가 나온다'는 깨달음으로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "would result in salmon that grew faster를 봐요. 더 빨리 자라는 연어를 얻을 길을 찾았어요.",
+        "would result in salmon that grew faster를 봐요. 더 빨리 자라는 연어를 얻을 길을 찾았어요."
+      ],
+      "explain": "양식업자들이 더 빨리 자라는 연어를 얻는 교배 방법을 깨달았어요. 다음엔 그 방법으로 연어를 길러 나가는 이야기가 이어지기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "양식업자들이 더 빨리 자라는 연어를 얻는 교배 방법을 깨달았어요. 다음엔 그 방법으로 연어를 길러 나가는 이야기가 이어지기 쉬워요.",
+        "o1": "양식업자들이 더 빨리 자라는 연어를 얻는 교배 방법을 깨달았어요. 다음엔 그 방법으로 연어를 길러 나가는 이야기가 이어지기 쉬워요."
+      },
+      "point": "(A) 끝 '더 빨리 자라는 연어를 얻는 교배' → 다음은 그 연어로 기르는 이야기",
+      "from": "15pomr2"
+    },
+    "b_before": {
+      "ask": "(B)는 'And(그리고)'로 시작하고, 'once favorable individuals were found(일단 유리한 개체가 발견되면)'라고 해요. 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "favorable individuals(유리한 개체)를 봐요. 무엇에 유리한지가 앞에 나와 있어야 해요.",
+        "favorable individuals(유리한 개체)를 봐요. 무엇에 유리한지가 앞에 나와 있어야 해요."
+      ],
+      "explain": "And(그리고)는 앞 이야기에 덧붙이는 말이에요. once favorable individuals were found(일단 유리한 개체를 찾으면)라고 했으니, 앞에 어떤 연어를 찾으려는지가 먼저 나와야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "And(그리고)는 앞 이야기에 덧붙이는 말이에요. once favorable individuals were found(일단 유리한 개체를 찾으면)라고 했으니, 앞에 어떤 연어를 찾으려는지가 먼저 나와야 해요.",
+        "o1": "And(그리고)는 앞 이야기에 덧붙이는 말이에요. once favorable individuals were found(일단 유리한 개체를 찾으면)라고 했으니, 앞에 어떤 연어를 찾으려는지가 먼저 나와야 해요."
+      },
+      "point": "(B) And … once favorable individuals ← 앞에 어떤 연어를 고를지",
+      "from": "1tcqw2w"
+    },
+    "b_diff": {
+      "ask": "(B)는 '야생 조상과 상당히 다른 사육 집단이 빠르게 만들어질 수 있었다'로 끝나요. 여기서 different(다른)는 무엇과 무엇이 다르다는 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "A domestic population … different from the initial wild ancestors를 이어 봐요.",
+        "A domestic population … different from the initial wild ancestors를 이어 봐요."
+      ],
+      "explain": "that would be quite different …는 앞의 A domestic population을 꾸며요. 사육 집단이 the initial wild ancestors(최초의 야생 조상)와 다르다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "that would be quite different …는 앞의 A domestic population을 꾸며요. 사육 집단이 the initial wild ancestors(최초의 야생 조상)와 다르다는 말이에요.",
+        "o2": "that would be quite different …는 앞의 A domestic population을 꾸며요. 사육 집단이 the initial wild ancestors(최초의 야생 조상)와 다르다는 말이에요."
+      },
+      "from": "1uckgkl"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "w5j39l"
+    },
+    "c2_mid": {
+      "say": "Yukon강처럼 아주 긴 하천에는 긴 여정을 버티도록 지방을 많이 쌓아 두는 연어가 필요하대요.",
+      "from": "5oor15"
+    },
+    "c3_end": {
+      "say": "아주 먼 북쪽 하천은 따뜻한 시기가 짧아서, 어릴 때 빨리 자라는 물고기가 필요하대요.\n하천마다 필요한 연어가 이렇게 달라요.",
+      "from": "11lgoo9"
+    },
+    "order_link": {
+      "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+      "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+      "wrong_by": {
+        "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+        "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+      "explain": "주어진 글(40개의 서로 다른 하천에서 가져온 물고기) → (C) 하천마다 난관이 달라 필요한 연어도 다르다 → (A) 그러나 차이가 무엇이든 교배하면 더 빨리 자라는 연어가 나온다 → (B) 그리고 유리한 개체만 찾으면 새 품종을 빠르게 만들 수 있었다, 순서예요.",
+      "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지",
+      "from": "gc3ohb"
+    },
+    "c_go": {
+      "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?",
+      "from": "eua8yu"
+    }
+  },
+  "exam": {
+    "ask": "단락 첫머리 단서(But whatever … difference, And … once)를 떠올리며 순서를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 40개의 서로 다른 하천 → (C) 하천마다 필요한 연어가 다르다 → (A) 그러나 차이가 무엇이든 교배하면 더 빨리 자라는 연어 → (B) 그리고 유리한 개체만 찾으면 새 품종을 빠르게, 순서예요.",
+    "final_wrong": "정답은 ④ (C)-(A)-(B)예요.",
+    "option_feedback": {
+      "1": "(A)의 difference(차이)는 앞에 연어들이 어떻게 다른지 나와 있어야 해요. 그 차이는 (C)의 하천마다 다른 난관이에요.",
+      "2": "(B)의 favorable individuals(유리한 개체)는 무엇에 유리한지 앞에 나와 있어야 해요. 주어진 글 바로 뒤에는 그런 말이 없어요.",
+      "3": "(B)가 주어진 글 바로 뒤에 오면 favorable individuals가 무엇에 유리한지 알 수 없어요. (A)의 difference도 (C)의 하천별 차이를 받아요.",
+      "5": "가장 많이 고른 오답이에요. (A)의 difference는 (B) 끝 '야생 조상과 다르다'가 아니라 (C)의 하천마다 다른 연어를 받아요. (B)의 And … once favorable individuals were found는 (A)의 '더 빨리 자라는 연어'에 덧붙이는 말이에요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "(B) 끝의 different(다른)와 (A) 첫머리의 difference(차이)가 같은 말이라 이었을 거예요. 하지만 (A)의 차이는 'difference that occurred in different species of salmon', 연어 종들 사이의 차이로 (C)의 하천마다 다른 연어예요. 또 (A)는 the first salmon farmers(최초의 양식업자들)가 깨달은 일이고, (B)의 favorable individuals(유리한 개체)는 그 깨달음 뒤에 찾은 '더 빨리 자라는 연어'예요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "(C)",
+              "text": "Every salmon river has its own unique set of challenges …",
+              "ko": "하천마다 다른 연어",
+              "tone": "hl"
+            },
+            {
+              "label": "(A) 첫머리",
+              "text": "But whatever the manifestation of difference …",
+              "ko": "그 차이가 무엇이든",
+              "tone": "hl"
+            },
+            {
+              "label": "(B) 끝",
+              "text": "… quite different from the initial wild ancestors",
+              "ko": "사육 집단 ≠ 야생 조상 (다른 차이)",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1a9mu6"
+  },
+  "intro": {
+    "topic": {
+      "say": "양식장에서 기르는 연어도 처음엔 강에서 데려온 야생 연어였어요. 이번 글은 양식 연어를 처음 어떻게 골라 길렀는지 이야기예요."
+    },
+    "method1": {
+      "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. But, And 같은 말이 무엇을 받는지 찾아볼게요."
+    },
+    "from": "45bztj"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "t4h276"
+}

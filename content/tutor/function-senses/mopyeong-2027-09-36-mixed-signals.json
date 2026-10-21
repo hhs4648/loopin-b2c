@@ -1,0 +1,112 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "messages to others",
+   "sense": "~에게",
+   "usage": "전치사 to (받는 사람)"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "communicates to her employees",
+   "sense": "~에게",
+   "usage": "전치사 to (받는 사람)"
+  },
+  {
+   "word": "that",
+   "phrase": "that “customer care",
+   "sense": "~라고",
+   "usage": "명사절 that (전달하는 내용)"
+  },
+  {
+   "word": "for",
+   "phrase": "for our company",
+   "sense": "~에 (있어)",
+   "usage": "전치사 for"
+  }
+ ],
+ "3": [
+  {
+   "word": "but",
+   "phrase": "but compensation",
+   "sense": "하지만",
+   "usage": "접속사 but (두 문장을 이음)"
+  },
+  {
+   "word": "to",
+   "phrase": "given to one aspect",
+   "sense": "~에 (주어지다)",
+   "usage": "be given to ~ = ~에 주어지다"
+  },
+  {
+   "word": "that",
+   "phrase": "the one that is",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "easiest to measure",
+   "sense": "~하기에 (쉬운)",
+   "usage": "easy to + 동사원형 = ~하기 쉬운"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "message to the workers",
+   "sense": "~에게",
+   "usage": "전치사 to (받는 사람)"
+  },
+  {
+   "word": "for",
+   "phrase": "paying you for",
+   "sense": "~에 대해 (돈을 주다)",
+   "usage": "pay A for B = B에 대해 A에게 돈을 주다 (what이 for의 목적어)"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "That’s",
+   "sense": "그것 (앞에서 한 말)",
+   "usage": "지시대명사 that"
+  },
+  {
+   "word": "to",
+   "phrase": "to others",
+   "sense": "~에게",
+   "usage": "전치사 to (받는 사람)"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "imagine that the manager",
+   "sense": "~라고 (상상하다)",
+   "usage": "명사절 that + 주어·동사"
+  },
+  {
+   "word": "that",
+   "phrase": "such that employees",
+   "sense": "~하도록",
+   "usage": "such that + 주어·동사 = ~하도록"
+  }
+ ],
+ "7": [
+  {
+   "word": "for",
+   "phrase": "is looking for",
+   "sense": "(look for = 찾다, 원하다)",
+   "usage": "look for ~ = ~을 찾다, 원하다"
+  },
+  {
+   "word": "which",
+   "phrase": ", which comes",
+   "sense": "(앞 내용에 덧붙임) 그것은",
+   "usage": "관계대명사 which (콤마 뒤 덧붙이는 설명)"
+  }
+ ]
+}

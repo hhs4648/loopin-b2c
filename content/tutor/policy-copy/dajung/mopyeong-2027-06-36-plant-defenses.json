@@ -1,0 +1,263 @@
+{
+  "lesson": "mopyeong-2027-06-36-plant-defenses",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "순서 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_diverse": {
+      "ask": "식물의 방어(defenses)는 어떻대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "as diverse as를 봐요. as + 형용사 + as는 '~만큼 …한'이에요.",
+        "as diverse as를 봐요. as + 형용사 + as는 '~만큼 …한'이에요."
+      ],
+      "explain": "'almost as diverse as the number of genera', 생물을 나누는 속(genera)의 수만큼이나 다양하대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'almost as diverse as the number of genera', 생물을 나누는 속(genera)의 수만큼이나 다양하대요.",
+        "o2": "'almost as diverse as the number of genera', 생물을 나누는 속(genera)의 수만큼이나 다양하대요."
+      },
+      "from": "1oyu4xv"
+    },
+    "g_some": {
+      "ask": "둘째 문장은 Some(어떤 식물은)으로 시작해요. 이 식물들은 곤충을 어떻게 막을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "load their tissues with harsh compounds를 봐요. load A with B는 'A를 B로 채우다'예요.",
+        "load their tissues with harsh compounds를 봐요. load A with B는 'A를 B로 채우다'예요."
+      ],
+      "explain": "'load their tissues with harsh compounds', 조직 안을 독한 화합물(harsh compounds)로 채운대요. 곤충은 불쾌하거나 취해서 다른 식물로 가게 돼요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'load their tissues with harsh compounds', 조직 안을 독한 화합물(harsh compounds)로 채운대요. 곤충은 불쾌하거나 취해서 다른 식물로 가게 돼요.",
+        "o2": "'load their tissues with harsh compounds', 조직 안을 독한 화합물(harsh compounds)로 채운대요. 곤충은 불쾌하거나 취해서 다른 식물로 가게 돼요."
+      },
+      "from": "1cyz5qr"
+    },
+    "g_next": {
+      "ask": "주어진 글은 '어떤 식물(Some)은 독한 화합물로 곤충을 쫓는다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "첫 문장에서 방어가 아주 다양하다고 했어요. Some(어떤 식물은)은 그중 하나만 보여 준 거예요.",
+        "첫 문장에서 방어가 아주 다양하다고 했어요. Some(어떤 식물은)은 그중 하나만 보여 준 거예요."
+      ],
+      "explain": "방어가 아주 다양하다고 하고 Some(어떤 식물은)으로 하나를 들었어요. 그러니 다음엔 다른 방어가 더 나오기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "방어가 아주 다양하다고 하고 Some(어떤 식물은)으로 하나를 들었어요. 그러니 다음엔 다른 방어가 더 나오기 쉬워요.",
+        "o2": "방어가 아주 다양하다고 하고 Some(어떤 식물은)으로 하나를 들었어요. 그러니 다음엔 다른 방어가 더 나오기 쉬워요."
+      },
+      "point": "주어진 글 끝 '어떤 식물(Some)은 독한 화합물' → 다음은 또 다른 방어",
+      "from": "1ef7dxq"
+    },
+    "paper_order": {
+      "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요.",
+      "from": "11bywp8"
+    },
+    "s3_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "w0j6ax"
+    },
+    "a_before": {
+      "ask": "(A)는 'The back-and-forth(이 주고받기)는 자연의 균형이 아니라 길게 이어지는 진화의 대화에 가깝다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "The back-and-forth의 The를 봐요. 앞에서 이미 나온 주고받기를 가리켜요.",
+        "The back-and-forth의 The를 봐요. 앞에서 이미 나온 주고받기를 가리켜요."
+      ],
+      "explain": "The back-and-forth(그 주고받기)는 앞에서 식물과 곤충이 공격과 방어를 주고받은 것을 받는 말이에요. not a matter of natural balance는 글쓴이가 '균형 문제가 아니다'라고 바로잡는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "The back-and-forth(그 주고받기)는 앞에서 식물과 곤충이 공격과 방어를 주고받은 것을 받는 말이에요. not a matter of natural balance는 글쓴이가 '균형 문제가 아니다'라고 바로잡는 말이에요.",
+        "o2": "The back-and-forth(그 주고받기)는 앞에서 식물과 곤충이 공격과 방어를 주고받은 것을 받는 말이에요. not a matter of natural balance는 글쓴이가 '균형 문제가 아니다'라고 바로잡는 말이에요."
+      },
+      "point": "(A) The back-and-forth ← 앞에 식물과 곤충이 주고받은 방어 이야기",
+      "from": "16mwa8d"
+    },
+    "a2_mid": {
+      "say": "식물이 새 방어를 만들면 그걸 피해 갈 방법을 지닌 곤충이 선택되고, 그 곤충이 다시 더 강한 식물 종이 나오게 돕는대요.",
+      "from": "23u2vj"
+    },
+    "a3_end": {
+      "say": "(A)는 새 변이들이 교착 상태(stalemate)를 계속 유지한다는 말로 끝나요. 어느 한쪽이 이기지 않고 주고받기가 이어진다는 뜻이에요.",
+      "from": "165uwso"
+    },
+    "b_tell": {
+      "ask": "식물이 화학 물질을 내보내면 같은 종 이웃(same-species neighbors)은 무엇을 알게 될까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "let … know that 뒤를 봐요. let + 대상 + know는 '~에게 알려 주다'예요.",
+        "let … know that 뒤를 봐요. let + 대상 + know는 '~에게 알려 주다'예요."
+      ],
+      "explain": "'that an attack is likely coming', 공격이 올 것 같다고 알려 준대요. 그래서 주변 식물도 방어용 화합물을 쌓기 시작해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'that an attack is likely coming', 공격이 올 것 같다고 알려 준대요. 그래서 주변 식물도 방어용 화합물을 쌓기 시작해요.",
+        "o2": "'that an attack is likely coming', 공격이 올 것 같다고 알려 준대요. 그래서 주변 식물도 방어용 화합물을 쌓기 시작해요."
+      },
+      "from": "1bbuj61"
+    },
+    "b_who": {
+      "ask": "these cues(이 신호들) 중 일부는 무엇을 끌어들인대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "attract insect predators를 봐요. predator는 '포식자, 잡아먹는 동물'이에요.",
+        "attract insect predators를 봐요. predator는 '포식자, 잡아먹는 동물'이에요."
+      ],
+      "explain": "'attract insect predators', 곤충의 포식자를 불러들인대요. 식물과 그 포식자(bug-eating collaborators) 모두에게 이익이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'attract insect predators', 곤충의 포식자를 불러들인대요. 식물과 그 포식자(bug-eating collaborators) 모두에게 이익이에요.",
+        "o2": "'attract insect predators', 곤충의 포식자를 불러들인대요. 식물과 그 포식자(bug-eating collaborators) 모두에게 이익이에요."
+      },
+      "from": "s8czuw"
+    },
+    "b_together": {
+      "ask": "(B)에 나온 방어는 식물이 혼자 하는 걸까요, 다른 생물과 함께 하는 걸까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "neighbors(이웃)와 collaborators(협력자)를 봐요.",
+        "neighbors(이웃)와 collaborators(협력자)를 봐요."
+      ],
+      "explain": "이웃 식물에게 알리고(neighbors), 포식자를 불러(collaborators) 같이 막아요. 혼자가 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "이웃 식물에게 알리고(neighbors), 포식자를 불러(collaborators) 같이 막아요. 혼자가 아니에요."
+      },
+      "point": "(B) 이웃에게 알리고 포식자를 부르는 방어 = 함께 하는 방어",
+      "from": "12wajtp"
+    },
+    "c_before": {
+      "ask": "(C)는 'Structural defenses(구조적 방어)'로 시작해요. 이렇게 종류를 밝힌 걸 보면, 앞에는 어떤 방어가 나왔을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Structural(구조적인)이라고 굳이 종류를 밝혔어요. 잎의 왁스층처럼 몸의 구조로 막는 방어예요.",
+        "Structural(구조적인)이라고 굳이 종류를 밝혔어요. 잎의 왁스층처럼 몸의 구조로 막는 방어예요."
+      ],
+      "explain": "Structural(구조적)이라고 종류를 밝힌 건, 앞에 다른 종류의 방어가 이미 나왔기 때문이에요. 몸 구조가 아니라 화학 물질로 막는 방어 같은 것이요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "Structural(구조적)이라고 종류를 밝힌 건, 앞에 다른 종류의 방어가 이미 나왔기 때문이에요. 몸 구조가 아니라 화학 물질로 막는 방어 같은 것이요.",
+        "o1": "Structural(구조적)이라고 종류를 밝힌 건, 앞에 다른 종류의 방어가 이미 나왔기 때문이에요. 몸 구조가 아니라 화학 물질로 막는 방어 같은 것이요."
+      },
+      "point": "(C) Structural defenses ← 앞에 구조가 아닌 다른 방어(화학 물질)",
+      "from": "ue0hg6"
+    },
+    "s9_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "e459yh"
+    },
+    "c_next": {
+      "ask": "(C)는 '식물은 공격받는 동안 완전히 혼자인 것도 아니다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not … on their own(혼자가 아니다)이라고 했어요. 그럼 누구와 함께인지가 궁금해지죠.",
+        "not … on their own(혼자가 아니다)이라고 했어요. 그럼 누구와 함께인지가 궁금해지죠."
+      ],
+      "explain": "혼자가 아니라고 했으니, 다음엔 누구와 어떻게 함께 막는지가 이어지기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "혼자가 아니라고 했으니, 다음엔 누구와 어떻게 함께 막는지가 이어지기 쉬워요.",
+        "o2": "혼자가 아니라고 했으니, 다음엔 누구와 어떻게 함께 막는지가 이어지기 쉬워요."
+      },
+      "point": "(C) 끝 '혼자인 것도 아니다' → 다음은 함께 막는 방법",
+      "from": "11h665o"
+    },
+    "order_link": {
+      "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+      "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+      "wrong_by": {
+        "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+        "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+      "explain": "주어진 글(어떤 식물은 독한 화합물로 방어) → (C) 또 다른 방어인 구조적 방어, 그리고 식물은 혼자가 아니다 → (B) 이웃에게 알리고 포식자를 부르는, 함께 하는 방어 → (A) 이런 공방전은 길게 이어지는 진화의 대화, 순서예요.",
+      "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지",
+      "from": "iakbqo"
+    },
+    "c_go": {
+      "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?",
+      "from": "eua8yu"
+    }
+  },
+  "exam": {
+    "ask": "단락 첫머리와 끝의 단서(Structural, Nor … on their own, The back-and-forth)를 떠올리며 순서를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 독한 화합물 방어 → (C) 또 다른 구조적 방어, 그리고 식물은 혼자가 아니다 → (B) 이웃·포식자와 함께 하는 방어 → (A) 이 공방전은 길게 이어지는 진화의 대화, 순서예요.",
+    "final_wrong": "정답은 ⑤ (C)-(B)-(A)예요.",
+    "option_feedback": {
+      "1": "(A)의 The back-and-forth(그 공방전)는 여러 방어가 다 나온 뒤에 묶어 말하는 말이에요. 주어진 글 바로 뒤에 오기엔 일러요.",
+      "2": "(B)의 함께 하는 방어는 (C) 끝 '혼자인 것도 아니다' 뒤에 와야 자연스러워요. (A)는 공방을 묶는 말이라 맨 뒤예요.",
+      "3": "많이 고른 오답이에요. (B)의 chemical compounds는 주어진 글의 화합물과 비슷해 보이지만, 이웃과 함께 막는 방어예요. (C) 끝 '혼자인 것도 아니다'가 먼저 와야 해요.",
+      "4": "(A)는 공방을 묶어 말하는 단락이라 (C)와 (B)의 방어가 다 나온 뒤에 와요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 26%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "주어진 글의 harsh compounds(독한 화합물)와 (B)의 chemical compounds(화학 화합물)가 같은 말 같아서 바로 이었을 거예요. 하지만 (B)는 곤충을 쫓는 방어가 아니라, 이웃에게 알리고 포식자를 부르는 '함께 하는' 방어예요. 그래서 (C) 끝 'Nor are individual plants entirely on their own(혼자인 것도 아니다)'이 먼저 나와야 (B)로 이어져요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "주어진 글 끝",
+              "text": "Some load their tissues with harsh compounds",
+              "ko": "혼자 하는 방어 ①",
+              "tone": "hl"
+            },
+            {
+              "label": "(C)",
+              "text": "Structural defenses … Nor are individual plants entirely on their own",
+              "ko": "혼자 하는 방어 ② → 혼자가 아니다",
+              "tone": "hl2"
+            },
+            {
+              "label": "(B)",
+              "text": "release chemical compounds … attract insect predators",
+              "ko": "함께 하는 방어",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "ugp87n"
+  },
+  "intro": {
+    "topic": {
+      "say": "식물은 도망칠 수 없는데, 곤충이 잎을 먹으러 오면 어떻게 할까요? 이번 글은 식물의 방어(defenses) 이야기예요."
+    },
+    "method1": {
+      "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. Structural, Nor, The 같은 말이 무엇을 받는지 찾아볼게요."
+    },
+    "from": "18p4d48"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "t4h276"
+}

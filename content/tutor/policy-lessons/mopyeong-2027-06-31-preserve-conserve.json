@@ -1,0 +1,2043 @@
+{
+  "id": "mopyeong-2027-06-31-preserve-conserve",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 31번 (빈칸 추론, 2점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 같은 말 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-preserve-conserve.svg",
+      "alt": "칠판: Preservation(보존) vs Conservation(보전)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "오래된 악기는 그대로 둬야 할까요, 고쳐서 써야 할까요? 이번 글은 보존(preservation)과 보전(conservation) 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+    "underline": "________",
+    "sentence": 4,
+    "analysis_first": true,
+    "wrong_rate": 69,
+    "wrong_rank": 2,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "desired",
+        "ko": "바람직한, 바라던"
+      },
+      {
+        "en": "unstable",
+        "ko": "불안정한"
+      },
+      {
+        "en": "isolated",
+        "ko": "고립된"
+      },
+      {
+        "en": "natural",
+        "ko": "자연스러운, 자연 그대로의"
+      },
+      {
+        "en": "delicate",
+        "ko": "연약한"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "desired",
+        "keywords": [
+          "desired"
+        ],
+        "ko": "바람직한",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "unstable",
+        "keywords": [
+          "unstable"
+        ],
+        "ko": "불안정한"
+      },
+      {
+        "id": "3",
+        "label": "isolated",
+        "keywords": [
+          "isolated"
+        ],
+        "ko": "고립된"
+      },
+      {
+        "id": "4",
+        "label": "natural",
+        "keywords": [
+          "natural"
+        ],
+        "ko": "자연스러운"
+      },
+      {
+        "id": "5",
+        "label": "delicate",
+        "keywords": [
+          "delicate"
+        ],
+        "ko": "연약한"
+      }
+    ],
+    "brief": {
+      "ask": "빈칸은 conservation 쪽, 손보고 관리해서 오래 가게 하려는 상태예요. 이 상태를 바꿔 쓴 보기를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 보전주의자는 변화를 인정하고 복원·수리해서, 지키고 싶은 바람직한(desired) 상태를 오래 가게 해요. 원래 그대로 두는 건 보존주의자 쪽이에요.",
+      "final_wrong": "정답은 ① desired(바람직한)예요. 보전주의자는 복원·관리해서 보고 쓰기 좋은, 바라는 상태를 오래 가게 해요.",
+      "option_feedback": {
+        "2": "acknowledge change(변화를 인정)에서 떠올리기 쉽지만, 불안정한 상태를 일부러 오래 가게 하지는 않아요.",
+        "3": "isolated(고립된)는 글에 없는 이야기예요. 다른 것과 떨어져 있다는 말은 나오지 않아요.",
+        "4": "natural(자연 그대로의)은 손대지 않은 원래 상태(the original, “as found”) 쪽이에요. 그건 보존주의자 쪽 말이에요.",
+        "5": "delicate(연약한)는 글에 없는 이야기예요. 보전주의자는 연약한 상태가 아니라 지키고 싶은 상태를 오래 가게 해요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 33%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "natural(자연 그대로의)은 손대지 않은 원래 상태 쪽 말이에요. 그건 보존주의자가 지키려는 것(the original, “as found”)이에요.\n빈칸의 주어는 보전주의자예요. 변화를 인정하고 복원·수리해서, 보고 쓰기 좋은 상태를 오래 가게 해요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "빈칸 문장",
+                "text": "Conservationists acknowledge change",
+                "ko": "보전주의자는 변화를 인정한다",
+                "tone": "hl"
+              },
+              {
+                "label": "3·7문장",
+                "text": "restorative · restore or repair",
+                "ko": "복원·수리하는 쪽",
+                "tone": "hl"
+              },
+              {
+                "label": "6·7문장",
+                "text": "the original · “as found”",
+                "ko": "원래 그대로 — 보존 쪽",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 19%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "unstable(불안정한)은 acknowledge change(변화를 인정)에서 떠올리기 쉬워요. 하지만 빈칸은 prolong(더 오래 가게 하다)의 목적어예요.\n일부러 오래 가게 하려는 상태라면 불안정한 상태가 아니라 지키고 싶은 좋은 상태예요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "빈칸 문장",
+                "text": "try to manage it",
+                "ko": "변화를 관리하려 한다",
+                "tone": "hl"
+              },
+              {
+                "label": "빈칸 문장",
+                "text": "in order to prolong a(n) ____ state",
+                "ko": "____ 상태를 더 오래 가게 하려고",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "Enlightenment",
+        "ko": "계몽주의"
+      },
+      {
+        "en": "preservation",
+        "ko": "보존"
+      },
+      {
+        "en": "conservation",
+        "ko": "보전"
+      },
+      {
+        "en": "synonym",
+        "ko": "동의어"
+      },
+      {
+        "en": "maintain",
+        "ko": "유지하다"
+      },
+      {
+        "en": "insofar as possible",
+        "ko": "가능한 한"
+      },
+      {
+        "en": "protect A from B",
+        "ko": "A를 B로부터 보호하다"
+      },
+      {
+        "en": "distinguish A from B",
+        "ko": "A를 B와 구별하다"
+      },
+      {
+        "en": "emphasize",
+        "ko": "강조하다"
+      },
+      {
+        "en": "restorative",
+        "ko": "복원적인"
+      },
+      {
+        "en": "aspect",
+        "ko": "측면"
+      },
+      {
+        "en": "musical instrument",
+        "ko": "악기"
+      },
+      {
+        "en": "ecosystem",
+        "ko": "생태계"
+      },
+      {
+        "en": "acknowledge",
+        "ko": "인정하다"
+      },
+      {
+        "en": "manage",
+        "ko": "관리하다"
+      },
+      {
+        "en": "prolong",
+        "ko": "연장하다"
+      },
+      {
+        "en": "nonetheless",
+        "ko": "그럼에도 불구하고"
+      },
+      {
+        "en": "protector",
+        "ko": "보호자"
+      },
+      {
+        "en": "criticize A for B",
+        "ko": "B라고 A를 비판하다"
+      },
+      {
+        "en": "priority",
+        "ko": "우선순위"
+      },
+      {
+        "en": "yield",
+        "ko": "산출량"
+      },
+      {
+        "en": "harvest",
+        "ko": "수확"
+      },
+      {
+        "en": "rather than",
+        "ko": "~하기보다는"
+      },
+      {
+        "en": "interfere",
+        "ko": "개입하다"
+      },
+      {
+        "en": "minimally",
+        "ko": "최소한으로"
+      },
+      {
+        "en": "preserve",
+        "ko": "보존하다"
+      },
+      {
+        "en": "original",
+        "ko": "원래의"
+      },
+      {
+        "en": "prefer",
+        "ko": "선호하다"
+      },
+      {
+        "en": "restore",
+        "ko": "복원하다"
+      },
+      {
+        "en": "repair",
+        "ko": "수리하다"
+      }
+    ],
+    "options": [
+      {
+        "en": "desired",
+        "ko": "바람직한"
+      },
+      {
+        "en": "unstable",
+        "ko": "불안정한"
+      },
+      {
+        "en": "isolated",
+        "ko": "고립된"
+      },
+      {
+        "en": "delicate",
+        "ko": "연약한"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Ever since the early Enlightenment, preservation and conservation have been closely related.",
+      "model_translation": "초기 계몽주의 이후로 줄곧, 보존과 보전은 밀접하게 관련되어 왔다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Ever since the early Enlightenment",
+          "ko": "초기 계몽주의 이후로 줄곧"
+        },
+        {
+          "en": "Ever since",
+          "ko": "~ 이후로 줄곧"
+        },
+        {
+          "en": "early",
+          "ko": "초기의"
+        },
+        {
+          "en": "Enlightenment",
+          "ko": "계몽주의"
+        },
+        {
+          "en": "preservation and conservation",
+          "ko": "보존과 보전"
+        },
+        {
+          "en": "preservation",
+          "ko": "보존"
+        },
+        {
+          "en": "conservation",
+          "ko": "보전"
+        },
+        {
+          "en": "have been closely related",
+          "ko": "밀접하게 관련되어 왔다"
+        },
+        {
+          "en": "closely",
+          "ko": "밀접하게"
+        },
+        {
+          "en": "related",
+          "ko": "관련된"
+        },
+        {
+          "en": "Conservationists",
+          "ko": "보전주의자들 · 보전(conservation)을 하는 사람들"
+        },
+        {
+          "en": "acknowledge change",
+          "ko": "변화를 인정하다"
+        },
+        {
+          "en": "acknowledge",
+          "ko": "인정하다"
+        },
+        {
+          "en": "change",
+          "ko": "변화"
+        },
+        {
+          "en": "try to manage",
+          "ko": "관리하려고 하다"
+        },
+        {
+          "en": "manage",
+          "ko": "관리하다"
+        },
+        {
+          "en": "in order to prolong",
+          "ko": "연장하기 위해"
+        },
+        {
+          "en": "prolong",
+          "ko": "연장하다 · 더 오래 가게 하다"
+        },
+        {
+          "en": "state",
+          "ko": "상태"
+        },
+        {
+          "en": "Ever",
+          "ko": "줄곧, 언제나"
+        },
+        {
+          "en": "since",
+          "ko": "~ 이후로"
+        },
+        {
+          "en": "try",
+          "ko": "~하려고 하다"
+        }
+      ],
+      "slashes": [
+        "Enlightenment,"
+      ],
+      "roles": [
+        {
+          "text": "preservation and conservation",
+          "role": "S"
+        },
+        {
+          "text": "have been closely related",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 넷째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "Conservationists acknowledge change but try to manage it in order to prolong a(n) ________ state."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "acknowledge는 '인정하다', prolong은 '연장하다, 더 오래 가게 하다'예요. but 앞뒤를 나눠 봐요.",
+              "acknowledge는 '인정하다', prolong은 '연장하다, 더 오래 가게 하다'예요. but 앞뒤를 나눠 봐요."
+            ],
+            "explain": "'acknowledge change but try to manage it', 변화를 인정하지만 관리하려 해요. 'in order to prolong', 그 상태를 더 오래 가게 하려고요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'acknowledge change but try to manage it', 변화를 인정하지만 관리하려 해요. 'in order to prolong', 그 상태를 더 오래 가게 하려고요.",
+              "o2": "'acknowledge change but try to manage it', 변화를 인정하지만 관리하려 해요. 'in order to prolong', 그 상태를 더 오래 가게 하려고요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "보전주의자는 변화를 인정하지만, ____ 상태를 오래 가게 하려고 변화를 관리한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "보전주의자는 변화를 막고, ____ 상태로 되돌리려 한다"
+            },
+            {
+              "id": "o2",
+              "label": "보전주의자는 변화를 인정해서, ____ 상태가 끝나도록 그냥 둔다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "Conservationists acknowledge change but try to manage it in order to prolong a(n) ________ state.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "acknowledge change",
+            "but",
+            "manage",
+            "prolong",
+            "________"
+          ],
+          "tips": [
+            {
+              "label": "in order to ~",
+              "text": "'~하기 위해'예요. in order to prolong = 연장하기 위해.",
+              "mark": "in order to"
+            }
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "보전주의자(Conservationists)가 어떤 상태를 오래 가게 하려는지가 빈칸이에요. 그걸 생각하며 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "Conservationists acknowledge change but try to manage it in order to prolong a(n) ________ state.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "Conservationists",
+            "prolong"
+          ]
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "Ever since the early Enlightenment",
+            "preservation and conservation",
+            "have been closely related"
+          ],
+          "answers": [
+            "Ever since the early Enlightenment",
+            "preservation and conservation",
+            "have been closely related"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Ever since the early Enlightenment",
+                "ko": "초기 계몽주의 이후로 줄곧"
+              },
+              ", ",
+              {
+                "en": "preservation and conservation",
+                "ko": "보존과 보전은"
+              },
+              " ",
+              {
+                "en": "have been closely related",
+                "ko": "밀접하게 관련되어 왔다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "in order to ~",
+              "text": "'~하기 위해'예요. in order to prolong = 연장하기 위해.",
+              "mark": "in order to"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Taken as near synonyms, their meaning is to maintain an object or system insofar as possible in its present state, to protect it from change, usually for contemplation, research, display, and perhaps for use.",
+      "model_translation": "거의 동의어로 받아들여질 때, 그것들의 의미는 보통 주시, 연구, 전시, 그리고 아마도 사용을 위해 사물이나 체계를 가능한 한 그것의 현재 상태로 유지하고, 그것을 변화로부터 보호하는 것이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Taken as near synonyms",
+          "ko": "거의 동의어로 받아들여질 때"
+        },
+        {
+          "en": "Taken",
+          "ko": "받아들여진"
+        },
+        {
+          "en": "near synonyms",
+          "ko": "거의 동의어"
+        },
+        {
+          "en": "near",
+          "ko": "거의 ~에 가까운"
+        },
+        {
+          "en": "synonyms",
+          "ko": "동의어"
+        },
+        {
+          "en": "their meaning",
+          "ko": "그것들의 의미"
+        },
+        {
+          "en": "meaning",
+          "ko": "의미"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "to maintain an object or system",
+          "ko": "사물이나 체계를 유지하는 것"
+        },
+        {
+          "en": "maintain",
+          "ko": "유지하다"
+        },
+        {
+          "en": "object",
+          "ko": "사물"
+        },
+        {
+          "en": "system",
+          "ko": "체계"
+        },
+        {
+          "en": "insofar as possible",
+          "ko": "가능한 한"
+        },
+        {
+          "en": "insofar",
+          "ko": "~하는 한"
+        },
+        {
+          "en": "possible",
+          "ko": "가능한"
+        },
+        {
+          "en": "in its present state",
+          "ko": "그것의 현재 상태로"
+        },
+        {
+          "en": "present",
+          "ko": "현재의"
+        },
+        {
+          "en": "state",
+          "ko": "상태"
+        },
+        {
+          "en": "to protect it from change",
+          "ko": "그것을 변화로부터 보호하는 것"
+        },
+        {
+          "en": "protect",
+          "ko": "보호하다"
+        },
+        {
+          "en": "change",
+          "ko": "변화"
+        },
+        {
+          "en": "usually",
+          "ko": "보통"
+        },
+        {
+          "en": "contemplation",
+          "ko": "주시(注視) · 가만히 지켜봄"
+        },
+        {
+          "en": "research",
+          "ko": "연구"
+        },
+        {
+          "en": "display",
+          "ko": "전시"
+        },
+        {
+          "en": "perhaps",
+          "ko": "아마도"
+        },
+        {
+          "en": "for use",
+          "ko": "사용을 위해"
+        },
+        {
+          "en": "use",
+          "ko": "사용, 이용"
+        }
+      ],
+      "slashes": [
+        "near synonyms,",
+        "object or system",
+        "insofar as possible",
+        "present state,",
+        "from change,",
+        "research, display,"
+      ],
+      "roles": [
+        {
+          "text": "their meaning",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "to maintain an object or system",
+          "role": "C"
+        },
+        {
+          "text": "to protect it from change",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "두 말을 거의 같은 말로 볼 때, 그 뜻은 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "is 뒤 'to maintain …'과 'to protect …' 두 덩어리를 봐요.",
+              "is 뒤 'to maintain …'과 'to protect …' 두 덩어리를 봐요."
+            ],
+            "explain": "'to maintain … in its present state', 현재 상태로 유지하고, 'to protect it from change', 변화로부터 보호하는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'to maintain … in its present state', 현재 상태로 유지하고, 'to protect it from change', 변화로부터 보호하는 거예요.",
+              "o2": "'to maintain … in its present state', 현재 상태로 유지하고, 'to protect it from change', 변화로부터 보호하는 거예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사물을 가능한 한 지금 상태로 유지하고, 변화로부터 보호하는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "사물을 새것으로 바꾸어 계속 발전시키는 것"
+            },
+            {
+              "id": "o2",
+              "label": "사물을 연구한 뒤 자연으로 돌려보내는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "maintain",
+            "present state",
+            "protect",
+            "change"
+          ],
+          "tips": [
+            {
+              "label": "Taken as ~",
+              "text": "'~로 받아들여질 때'예요. 두 말(preservation, conservation)이 거의 동의어로 받아들여질 때라는 뜻이에요.",
+              "mark": "Taken as"
+            },
+            {
+              "label": "protect A from B",
+              "text": "'A를 B로부터 보호하다'예요. protect it from change = 그것을 변화로부터 보호하다.",
+              "mark": "protect"
+            },
+            {
+              "label": "present",
+              "text": "이 글에서는 → 현재의  ('선물' 아님)",
+              "mark": "present",
+              "trap": true
+            },
+            {
+              "label": "state",
+              "text": "이 글에서는 → 상태  ('주(州)·국가' 아님)",
+              "mark": "state",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🏛️",
+                "en": "preservation ≈ conservation",
+                "ko": "보존과 보전은 거의 같은 말로 쓰여요 — 지금 상태로 유지하고 변화로부터 보호해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "their meaning": "preservation and conservation(보존과 보전)의 의미"
+      }
+    },
+    {
+      "id": 3,
+      "text": "Conservationists who distinguish their activities from preservation emphasize conservation’s restorative aspects — restoring a historical musical instrument, for example, or a painting, or a dinosaur, or an ecosystem.",
+      "model_translation": "자신의 활동을 보존과 구별하는 보전주의자는 보전의 복원적인 측면을 강조하는데, 예를 들어 역사적인 악기나 그림, 공룡, 또는 생태계를 복원하는 것을 강조한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Conservationists",
+          "ko": "보전주의자들 · 보전을 하는 사람들"
+        },
+        {
+          "en": "who distinguish their activities from preservation",
+          "ko": "자기 활동을 보존과 구별하는"
+        },
+        {
+          "en": "distinguish",
+          "ko": "구별하다"
+        },
+        {
+          "en": "their activities",
+          "ko": "자기 활동"
+        },
+        {
+          "en": "activities",
+          "ko": "활동"
+        },
+        {
+          "en": "from preservation",
+          "ko": "보존과"
+        },
+        {
+          "en": "preservation",
+          "ko": "보존"
+        },
+        {
+          "en": "emphasize",
+          "ko": "강조하다"
+        },
+        {
+          "en": "conservation’s restorative aspects",
+          "ko": "보전의 복원적인 측면"
+        },
+        {
+          "en": "conservation’s",
+          "ko": "보전의"
+        },
+        {
+          "en": "restorative aspects",
+          "ko": "복원적인 측면"
+        },
+        {
+          "en": "restorative",
+          "ko": "복원적인 · 원래대로 되살리는"
+        },
+        {
+          "en": "aspects",
+          "ko": "측면"
+        },
+        {
+          "en": "restoring",
+          "ko": "복원하는 것"
+        },
+        {
+          "en": "a historical musical instrument",
+          "ko": "역사적인 악기"
+        },
+        {
+          "en": "historical",
+          "ko": "역사적인"
+        },
+        {
+          "en": "musical instrument",
+          "ko": "악기"
+        },
+        {
+          "en": "musical",
+          "ko": "음악의"
+        },
+        {
+          "en": "instrument",
+          "ko": "기구, 악기"
+        },
+        {
+          "en": "for example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "example",
+          "ko": "예"
+        },
+        {
+          "en": "a painting",
+          "ko": "그림"
+        },
+        {
+          "en": "painting",
+          "ko": "그림"
+        },
+        {
+          "en": "a dinosaur",
+          "ko": "공룡"
+        },
+        {
+          "en": "dinosaur",
+          "ko": "공룡"
+        },
+        {
+          "en": "an ecosystem",
+          "ko": "생태계"
+        },
+        {
+          "en": "ecosystem",
+          "ko": "생태계"
+        }
+      ],
+      "slashes": [
+        "Conservationists",
+        "from preservation",
+        "restorative aspects",
+        "musical instrument,",
+        "for example,",
+        "a painting,",
+        "a dinosaur,"
+      ],
+      "roles": [
+        {
+          "text": "Conservationists",
+          "role": "S"
+        },
+        {
+          "text": "emphasize",
+          "role": "V"
+        },
+        {
+          "text": "conservation’s restorative aspects",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "who distinguish their activities from preservation"
+      ],
+      "steps": [
+        {
+          "id": "s3_find",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "their activities",
+            "restorative aspects",
+            "a historical musical instrument",
+            "an ecosystem"
+          ],
+          "answers": [
+            "restorative aspects"
+          ],
+          "brief": {
+            "ask": "보전주의자가 보존과 달리 강조(emphasize)하는 것을 문장에서 찾아 눌러 볼까요?",
+            "wrong": "그건 보전주의자가 강조하는 것이 아니에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "restorative aspects(복원적인 측면)예요. 대시(—) 뒤는 악기·그림·공룡·생태계를 복원하는 예시예요.",
+            "wrong_by": {
+              "their activities": "their activities는 보존과 구별하는 '자기 활동'이에요. emphasize 뒤를 봐요.",
+              "a historical musical instrument": "그건 대시(—) 뒤 예시 속 말이에요. 무엇의 예시인지 대시 앞을 봐요.",
+              "an ecosystem": "그건 대시(—) 뒤 예시 속 말이에요. 무엇의 예시인지 대시 앞을 봐요."
+            }
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "distinguish A from B",
+              "text": "'A를 B와 구별하다'예요. distinguish their activities from preservation = 자기 활동을 보존과 구별하다.",
+              "mark": "distinguish"
+            }
+          ]
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "보전(conservation)은 망가진 것을 원래대로 되살리는(restorative) 쪽이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "conservation과 preservation",
+            "left": {
+              "label": "conservation 쪽",
+              "words": [
+                {
+                  "text": "restorative",
+                  "ko": "복원적인",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "highlight": [
+            "restorative"
+          ],
+          "tips": [
+            {
+              "label": "대시(—) 뒤 예시",
+              "text": "대시(—) 뒤에 for example이 있으면 앞말의 예시예요. 앞말을 이해했으면 가볍게 넘겨도 돼요."
+            }
+          ]
+        }
+      ],
+      "emphasis": [
+        "Conservationists",
+        "distinguish",
+        "restorative aspects"
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Conservationists acknowledge change but try to manage it in order to prolong a(n) ________ state.",
+      "model_translation": "보전주의자는 변화를 인정하지만, ________ 상태를 연장하기 위해 그것을 관리하려고 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Conservationists",
+          "ko": "보전주의자들"
+        },
+        {
+          "en": "acknowledge change",
+          "ko": "변화를 인정하다"
+        },
+        {
+          "en": "acknowledge",
+          "ko": "인정하다"
+        },
+        {
+          "en": "change",
+          "ko": "변화"
+        },
+        {
+          "en": "try to manage",
+          "ko": "관리하려고 하다"
+        },
+        {
+          "en": "manage",
+          "ko": "관리하다"
+        },
+        {
+          "en": "in order to prolong",
+          "ko": "연장하기 위해"
+        },
+        {
+          "en": "prolong",
+          "ko": "연장하다 · 더 오래 가게 하다"
+        },
+        {
+          "en": "state",
+          "ko": "상태"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "try",
+          "ko": "~하려고 하다"
+        }
+      ],
+      "slashes": [
+        "acknowledge change",
+        "manage it"
+      ],
+      "roles": [
+        {
+          "text": "Conservationists",
+          "role": "S"
+        },
+        {
+          "text": "acknowledge",
+          "role": "V"
+        },
+        {
+          "text": "change",
+          "role": "O"
+        },
+        {
+          "text": "try to manage",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸 상태는 칠판의 conservation 쪽(복원) 이야기와 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "빈칸 문장의 주어는 Conservationists예요. 변화를 인정하고 관리(manage)한대요.",
+              "빈칸 문장의 주어는 Conservationists예요. 변화를 인정하고 관리(manage)한대요."
+            ],
+            "explain": "주어 Conservationists는 3문장에서 복원을 강조한 사람들이에요. 변화를 막지 않고 관리하니, 손대지 않은 그대로의 상태가 아니에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "주어 Conservationists는 3문장에서 복원을 강조한 사람들이에요. 변화를 막지 않고 관리하니, 손대지 않은 그대로의 상태가 아니에요."
+            },
+            "point": "빈칸 = 주어 Conservationists(복원하는 쪽)가 관리해서 오래 가게 하려는 상태 = conservation 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 — 손보고 관리해서 지키는 상태",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 — 손대지 않은 원래 그대로의 상태"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Conservationists",
+            "acknowledge change",
+            "manage"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "conservation과 preservation",
+            "left": {
+              "label": "conservation 쪽",
+              "words": [
+                {
+                  "text": "restorative",
+                  "ko": "복원적인"
+                }
+              ]
+            }
+          },
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장의 주어가 누구인지, 그 사람이 앞에서 어느 쪽이었는지 보면 같은 쪽인지 알 수 있어요. But, However, not 같은 반전 단서가 있으면 반대 의견이 들어가요."
+            }
+          ]
+        },
+        {
+          "id": "s4_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "보전주의자는 복원해서 그 상태를 일부러 오래 가게(prolong) 해요. 일부러 오래 가게 하는 상태라면 어떤 상태일지 생각해 봐요.",
+              "보전주의자는 복원해서 그 상태를 일부러 오래 가게(prolong) 해요. 일부러 오래 가게 하는 상태라면 어떤 상태일지 생각해 봐요."
+            ],
+            "explain": "보전주의자는 변화를 관리해서 그 상태를 일부러 오래 가게 해요. 오래 지키려는 상태니 좋은, 바라는 상태예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "보전주의자는 변화를 관리해서 그 상태를 일부러 오래 가게 해요. 오래 지키려는 상태니 좋은, 바라는 상태예요.",
+              "o1": "보전주의자는 변화를 관리해서 그 상태를 일부러 오래 가게 해요. 오래 지키려는 상태니 좋은, 바라는 상태예요."
+            },
+            "point": "빈칸 = 복원·관리해서 오래 가게 하려는 (좋은, 바라는) 상태"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "손대지 않아 발견된 그대로인"
+            },
+            {
+              "id": "o1",
+              "label": "변화 때문에 흔들리는, 불안정한"
+            },
+            {
+              "id": "o2",
+              "label": "고쳐서라도 오래 지키고 싶은, 좋은",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "prolong",
+            "________"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "conservation과 preservation",
+            "left": {
+              "label": "conservation 쪽",
+              "words": [
+                {
+                  "text": "restorative",
+                  "ko": "복원적인"
+                },
+                {
+                  "text": "acknowledge change",
+                  "ko": "변화를 인정"
+                },
+                {
+                  "text": "manage",
+                  "ko": "관리"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🏛️",
+                "en": "preservation ≈ conservation",
+                "ko": "보존과 보전은 거의 같은 말로 쓰여요 — 지금 상태로 유지하고 변화로부터 보호해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "🔧",
+                "en": "conservation → restorative",
+                "ko": "보전주의자는 보존과 달리 복원하는 면을 강조해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 4",
+                "icon": "⏳",
+                "en": "manage change → prolong a(n) ____ state",
+                "ko": "변화를 인정하고 관리해서 ____ 상태를 오래 가게 해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "it": "change(변화)"
+      },
+      "emphasis": [
+        "acknowledge change",
+        "manage",
+        "prolong",
+        "state"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Preservationists (who may nonetheless call themselves conservationists) think of themselves more as protectors.",
+      "model_translation": "보존주의자는, (그럼에도 불구하고 자신을 보전주의자라고 부를 수도 있지만), 자신을 보호자에 더 가깝다고 생각한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Preservationists",
+          "ko": "보존주의자들 · 보존(preservation)을 하는 사람들"
+        },
+        {
+          "en": "who may nonetheless call themselves conservationists",
+          "ko": "그럼에도 자신을 보전주의자라고 부를 수도 있는"
+        },
+        {
+          "en": "nonetheless",
+          "ko": "그럼에도 불구하고"
+        },
+        {
+          "en": "call themselves",
+          "ko": "자신을 ~라고 부르다"
+        },
+        {
+          "en": "call",
+          "ko": "부르다"
+        },
+        {
+          "en": "themselves",
+          "ko": "자신"
+        },
+        {
+          "en": "conservationists",
+          "ko": "보전주의자들"
+        },
+        {
+          "en": "think of themselves",
+          "ko": "자신을 ~로 생각하다"
+        },
+        {
+          "en": "more as protectors",
+          "ko": "보호자에 더 가깝게"
+        },
+        {
+          "en": "protectors",
+          "ko": "보호자"
+        },
+        {
+          "en": "think",
+          "ko": "생각하다"
+        }
+      ],
+      "slashes": [
+        "Preservationists",
+        "conservationists)",
+        "of themselves"
+      ],
+      "roles": [
+        {
+          "text": "Preservationists",
+          "role": "S"
+        },
+        {
+          "text": "think of",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "who may nonetheless call themselves conservationists"
+      ],
+      "steps": [
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "보존주의자(Preservationists)는 자신을 보호자(protectors)에 더 가깝게 생각해요. 괄호 안은 빼고 읽어도 돼요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "conservation과 preservation",
+            "left": {
+              "label": "conservation 쪽",
+              "words": [
+                {
+                  "text": "restorative",
+                  "ko": "복원적인"
+                },
+                {
+                  "text": "acknowledge change",
+                  "ko": "변화를 인정"
+                },
+                {
+                  "text": "manage",
+                  "ko": "관리"
+                }
+              ]
+            },
+            "right": {
+              "label": "preservation 쪽",
+              "words": [
+                {
+                  "text": "protectors",
+                  "ko": "보호자",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "Preservationists",
+            "protectors"
+          ],
+          "faded": [
+            "(who may nonetheless call themselves conservationists)"
+          ],
+          "tips": [
+            {
+              "label": "think of A as B",
+              "text": "'A를 B로 생각하다'예요. think of themselves more as protectors = 자신을 보호자에 더 가깝다고 생각하다.",
+              "mark": "think of"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "They sometimes criticize conservationists for setting an additional priority on yield or harvest or use, rather than interfering as minimally as possible in order to preserve the original object or system, as they would do.",
+      "model_translation": "그들은 때때로 보전주의자가, 자신들처럼 원래의 사물이나 체계를 보존하기 위해 가능한 한 최소한으로 개입하기보다는 산출량이나 수확 또는 이용에 추가적인 우선순위를 둔다고 비판한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "sometimes",
+          "ko": "때때로"
+        },
+        {
+          "en": "criticize",
+          "ko": "비판하다"
+        },
+        {
+          "en": "conservationists",
+          "ko": "보전주의자들"
+        },
+        {
+          "en": "setting an additional priority on",
+          "ko": "~에 추가적인 우선순위를 두는 것"
+        },
+        {
+          "en": "setting",
+          "ko": "두는 것"
+        },
+        {
+          "en": "additional",
+          "ko": "추가적인"
+        },
+        {
+          "en": "priority",
+          "ko": "우선순위"
+        },
+        {
+          "en": "yield or harvest or use",
+          "ko": "산출량이나 수확 또는 이용"
+        },
+        {
+          "en": "yield",
+          "ko": "산출량"
+        },
+        {
+          "en": "harvest",
+          "ko": "수확"
+        },
+        {
+          "en": "use",
+          "ko": "이용"
+        },
+        {
+          "en": "rather than",
+          "ko": "~하기보다는"
+        },
+        {
+          "en": "interfering as minimally as possible",
+          "ko": "가능한 한 최소한으로 개입하는 것"
+        },
+        {
+          "en": "interfering",
+          "ko": "개입하는 것"
+        },
+        {
+          "en": "minimally",
+          "ko": "최소한으로"
+        },
+        {
+          "en": "possible",
+          "ko": "가능한"
+        },
+        {
+          "en": "in order to preserve",
+          "ko": "보존하기 위해"
+        },
+        {
+          "en": "preserve",
+          "ko": "보존하다"
+        },
+        {
+          "en": "the original object or system",
+          "ko": "원래의 사물이나 체계"
+        },
+        {
+          "en": "the original",
+          "ko": "원래의 것"
+        },
+        {
+          "en": "original",
+          "ko": "원래의"
+        },
+        {
+          "en": "object",
+          "ko": "사물"
+        },
+        {
+          "en": "system",
+          "ko": "체계"
+        },
+        {
+          "en": "would do",
+          "ko": "그렇게 할 것이다"
+        },
+        {
+          "en": "They",
+          "ko": "그들(그것들)"
+        },
+        {
+          "en": "they",
+          "ko": "그들(그것들)"
+        },
+        {
+          "en": "rather",
+          "ko": "오히려 · rather than = ~하기보다는"
+        }
+      ],
+      "slashes": [
+        "conservationists",
+        "additional priority",
+        "or use,",
+        "rather than",
+        "as possible",
+        "object or system,"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "criticize",
+          "role": "V"
+        },
+        {
+          "text": "conservationists",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_crit",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "보존주의자는 보전주의자의 무엇을 비판한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "criticize A for B는 'B라고 A를 비판하다'예요. for 뒤를 봐요.",
+              "criticize A for B는 'B라고 A를 비판하다'예요. for 뒤를 봐요."
+            ],
+            "explain": "'setting an additional priority on yield or harvest or use', 산출량·수확·이용을 더 우선한다고 비판해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'setting an additional priority on yield or harvest or use', 산출량·수확·이용을 더 우선한다고 비판해요.",
+              "o2": "'setting an additional priority on yield or harvest or use', 산출량·수확·이용을 더 우선한다고 비판해요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "산출량·수확·이용에 우선순위를 더 둔다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "너무 조금만 손댄다"
+            },
+            {
+              "id": "o2",
+              "label": "원래 상태를 그대로 지키려 한다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "criticize",
+            "priority",
+            "yield or harvest or use"
+          ],
+          "tips": [
+            {
+              "label": "criticize A for B",
+              "text": "'B라고(B 때문에) A를 비판하다'예요.",
+              "mark": "criticize"
+            },
+            {
+              "label": "rather than ~",
+              "text": "'~하기보다는'이에요. A rather than B = B보다는 A.",
+              "mark": "rather than"
+            },
+            {
+              "label": "yield",
+              "text": "이 글에서는 → 산출량  ('양보하다' 아님)",
+              "mark": "yield",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s6_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'preserve the original(원래의 것을 보존하다)'은 칠판 어느 쪽 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "문장 끝 'as they would do'를 봐요. they는 이 문장의 주어 They와 같은 사람들이에요.",
+              "문장 끝 'as they would do'를 봐요. they는 이 문장의 주어 They와 같은 사람들이에요."
+            ],
+            "explain": "'as they would do', 보존주의자들이 그렇게 한대요. 가능한 한 적게 손대고 원래 것을 지키는 건 preservation 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'as they would do', 보존주의자들이 그렇게 한대요. 가능한 한 적게 손대고 원래 것을 지키는 건 preservation 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · conservation 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · preservation 쪽",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "conservation과 preservation",
+            "left": {
+              "label": "conservation 쪽",
+              "words": [
+                {
+                  "text": "restorative",
+                  "ko": "복원적인"
+                },
+                {
+                  "text": "acknowledge change",
+                  "ko": "변화를 인정"
+                },
+                {
+                  "text": "manage",
+                  "ko": "관리"
+                }
+              ]
+            },
+            "right": {
+              "label": "preservation 쪽",
+              "words": [
+                {
+                  "text": "protectors",
+                  "ko": "보호자"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "the original"
+              ],
+              "left": "왼쪽 · conservation 쪽",
+              "right": "오른쪽 · preservation 쪽"
+            }
+          },
+          "highlight": [
+            "the original",
+            "as they would do"
+          ]
+        },
+        {
+          "id": "s6_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "보전 쪽은 이용(use)을 더 우선해요. 보존 쪽은 가능한 한 적게 손대고(minimally) 원래 것(the original)을 지켜요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "conservation과 preservation",
+            "left": {
+              "label": "conservation 쪽",
+              "words": [
+                {
+                  "text": "restorative",
+                  "ko": "복원적인"
+                },
+                {
+                  "text": "acknowledge change",
+                  "ko": "변화를 인정"
+                },
+                {
+                  "text": "manage",
+                  "ko": "관리"
+                },
+                {
+                  "text": "yield or harvest or use",
+                  "ko": "산출량·수확·이용",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "preservation 쪽",
+              "words": [
+                {
+                  "text": "protectors",
+                  "ko": "보호자"
+                },
+                {
+                  "text": "as minimally as possible",
+                  "ko": "가능한 한 적게 손대기",
+                  "fresh": true
+                },
+                {
+                  "text": "the original",
+                  "ko": "원래의 것",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "use",
+            "minimally",
+            "the original"
+          ],
+          "tips": [
+            {
+              "label": "as ~ as possible",
+              "text": "'가능한 한 ~하게'예요. as minimally as possible = 가능한 한 최소한으로.",
+              "mark": "as minimally"
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "They": "Preservationists(보존주의자들)",
+        "they": "Preservationists(보존주의자들)"
+      },
+      "emphasis": [
+        "criticize",
+        "the original"
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Preservationists would, for example, prefer to keep a historical musical instrument “as found” in a deteriorated state, for study, rather than to restore or repair it for display or use.",
+      "model_translation": "예를 들어, 보존주의자는 역사적인 악기를 전시나 이용을 위해 복원하거나 수리하기보다는, 연구를 위해 ‘발견된 그대로’의 손상된 상태로 유지하는 것을 선호할 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Preservationists",
+          "ko": "보존주의자들"
+        },
+        {
+          "en": "would",
+          "ko": "~할 것이다"
+        },
+        {
+          "en": "for example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "example",
+          "ko": "예"
+        },
+        {
+          "en": "prefer to keep",
+          "ko": "유지하는 것을 선호하다"
+        },
+        {
+          "en": "prefer",
+          "ko": "선호하다"
+        },
+        {
+          "en": "keep",
+          "ko": "유지하다"
+        },
+        {
+          "en": "a historical musical instrument",
+          "ko": "역사적인 악기"
+        },
+        {
+          "en": "historical",
+          "ko": "역사적인"
+        },
+        {
+          "en": "musical",
+          "ko": "음악의"
+        },
+        {
+          "en": "instrument",
+          "ko": "기구, 악기"
+        },
+        {
+          "en": "as found",
+          "ko": "발견된 그대로"
+        },
+        {
+          "en": "found",
+          "ko": "발견된"
+        },
+        {
+          "en": "in a deteriorated state",
+          "ko": "손상된 상태로"
+        },
+        {
+          "en": "deteriorated",
+          "ko": "손상된 · 나빠진"
+        },
+        {
+          "en": "state",
+          "ko": "상태"
+        },
+        {
+          "en": "for study",
+          "ko": "연구를 위해"
+        },
+        {
+          "en": "study",
+          "ko": "연구"
+        },
+        {
+          "en": "rather than",
+          "ko": "~하기보다는"
+        },
+        {
+          "en": "restore or repair",
+          "ko": "복원하거나 수리하다"
+        },
+        {
+          "en": "restore",
+          "ko": "복원하다"
+        },
+        {
+          "en": "repair",
+          "ko": "수리하다"
+        },
+        {
+          "en": "for display or use",
+          "ko": "전시나 이용을 위해"
+        },
+        {
+          "en": "display",
+          "ko": "전시"
+        },
+        {
+          "en": "use",
+          "ko": "이용"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "rather",
+          "ko": "오히려 · rather than = ~하기보다는"
+        }
+      ],
+      "slashes": [
+        "for example,",
+        "prefer to keep",
+        "musical instrument",
+        "“as found”",
+        "deteriorated state,",
+        "for study,",
+        "rather than",
+        "repair it"
+      ],
+      "roles": [
+        {
+          "text": "Preservationists",
+          "role": "S"
+        },
+        {
+          "text": "would … prefer",
+          "role": "V"
+        },
+        {
+          "text": "to keep a historical musical instrument",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_prefer",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "보존주의자는 오래된 악기를 어떻게 하고 싶어 한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "prefer to A rather than to B는 'B하기보다 A하기를 선호하다'예요. rather than 앞쪽이 하고 싶은 거예요.",
+              "prefer to A rather than to B는 'B하기보다 A하기를 선호하다'예요. rather than 앞쪽이 하고 싶은 거예요."
+            ],
+            "explain": "'keep … “as found” in a deteriorated state, for study', 발견된 그대로 손상된 상태로 두고 연구하고 싶어 해요. 고치는 건 rather than 뒤, 원하지 않는 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'keep … “as found” in a deteriorated state, for study', 발견된 그대로 손상된 상태로 두고 연구하고 싶어 해요. 고치는 건 rather than 뒤, 원하지 않는 쪽이에요.",
+              "o2": "'keep … “as found” in a deteriorated state, for study', 발견된 그대로 손상된 상태로 두고 연구하고 싶어 해요. 고치는 건 rather than 뒤, 원하지 않는 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "발견된 그대로, 손상된 상태로 두고 연구한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "고쳐서 전시하고 연주한다"
+            },
+            {
+              "id": "o2",
+              "label": "새 악기로 바꾼다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "prefer",
+            "“as found”",
+            "rather than"
+          ],
+          "faded": [
+            "for example,"
+          ],
+          "tips": [
+            {
+              "label": "as found",
+              "text": "'발견된 그대로'예요. 손대지 않고 처음 찾았을 때 모습 그대로라는 뜻이에요.",
+              "mark": "as found"
+            }
+          ]
+        },
+        {
+          "id": "s7_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "보존 쪽은 '발견된 그대로(as found)' 둬요. 보전 쪽은 복원하거나 수리해서(restore or repair) 전시하고 이용해요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "conservation과 preservation",
+            "left": {
+              "label": "conservation 쪽",
+              "words": [
+                {
+                  "text": "restorative",
+                  "ko": "복원적인"
+                },
+                {
+                  "text": "acknowledge change",
+                  "ko": "변화를 인정"
+                },
+                {
+                  "text": "manage",
+                  "ko": "관리"
+                },
+                {
+                  "text": "yield or harvest or use",
+                  "ko": "산출량·수확·이용"
+                },
+                {
+                  "text": "restore or repair",
+                  "ko": "복원·수리",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "preservation 쪽",
+              "words": [
+                {
+                  "text": "protectors",
+                  "ko": "보호자"
+                },
+                {
+                  "text": "as minimally as possible",
+                  "ko": "가능한 한 적게 손대기"
+                },
+                {
+                  "text": "the original",
+                  "ko": "원래의 것"
+                },
+                {
+                  "text": "“as found”",
+                  "ko": "발견된 그대로",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "“as found”",
+            "restore or repair"
+          ],
+          "faded": [
+            "for example,"
+          ]
+        },
+        {
+          "id": "s7_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 보전(conservation) 쪽, 손보고 관리해서 오래 가게 하려는 상태예요. 이 상태를 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ],
+      "refers": {
+        "it": "a historical musical instrument(역사적인 악기)"
+      }
+    }
+  ],
+  "passage_on_try": true
+}

@@ -1,0 +1,276 @@
+{
+  "lesson": "mopyeong-2027-06-21-give-up-the-ghost",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "밑줄 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_keys": {
+      "ask": "이 문장을 빠르게 이해하려면 모든 단어를 읽지 않아도 돼요. 핵심어 3개를 찾아볼까요?",
+      "wrong": "그건 뜻을 덧붙이는 말이라 핵심은 아니에요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 attributing consciousness, to any animal, so recent예요. 동물에게 의식이 있다고 보는 게 아주 최근이라는 말이에요.",
+      "point": "핵심어 = attributing consciousness · to any animal · so recent",
+      "from": "1p93a58"
+    },
+    "s1_before": {
+      "ask": "동물에게 의식이 있다고 본 게 인터넷보다도 최근이래요. 그럼 그 전 과학자들은 동물을 어떻게 봤을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "so recent(아주 최근)를 봐요. 최근에야 생긴 생각이면 그 전엔 어땠을지 떠올려 봐요.",
+        "so recent(아주 최근)를 봐요. 최근에야 생긴 생각이면 그 전엔 어땠을지 떠올려 봐요."
+      ],
+      "explain": "'so recent that the internet is older', 동물에게 의식을 인정한 건 아주 최근 일이래요. 그 전 과학자들은 의식을 동물에게 주지 않았다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'so recent that the internet is older', 동물에게 의식을 인정한 건 아주 최근 일이래요. 그 전 과학자들은 의식을 동물에게 주지 않았다는 말이에요.",
+        "o2": "'so recent that the internet is older', 동물에게 의식을 인정한 건 아주 최근 일이래요. 그 전 과학자들은 의식을 동물에게 주지 않았다는 말이에요."
+      },
+      "point": "동물에게 의식이 있다고 보는 건 아주 최근 → 그 전 과학자들은 동물에게 의식이 없다고 봤다",
+      "from": "1qeaz6g"
+    },
+    "s2_claim": {
+      "ask": "Griffin의 책은 무엇을 주장했을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "콤마(,) 뒤 a book arguing that ~이 책의 주장이에요. that 뒤를 봐요.",
+        "콤마(,) 뒤 a book arguing that ~이 책의 주장이에요. that 뒤를 봐요."
+      ],
+      "explain": "'animal cognition ought to be taken seriously', 동물의 인지를 진지하게 여겨야 한대요. 1문장의 새로운 생각과 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'animal cognition ought to be taken seriously', 동물의 인지를 진지하게 여겨야 한대요. 1문장의 새로운 생각과 같은 쪽이에요.",
+        "o2": "'animal cognition ought to be taken seriously', 동물의 인지를 진지하게 여겨야 한대요. 1문장의 새로운 생각과 같은 쪽이에요."
+      },
+      "point": "Griffin = 동물의 인지를 진지하게 다뤄야 한다",
+      "from": "1h6cwa6"
+    },
+    "story_2": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_skim": {
+      "say": "Griffin은 박쥐(bats)가 소리로 길을 찾는다는 걸 밝힌 사람이에요. 이 글의 동물은 박쥐예요.",
+      "from": "b4roe4"
+    },
+    "s4_those": {
+      "ask": "those creatures(그 생물들)는 무엇을 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "those가 가리키는 것은 앞 문장에서 찾아요. Griffin이 무엇을 연구했는지 떠올려 봐요.",
+        "those가 가리키는 것은 앞 문장에서 찾아요. Griffin이 무엇을 연구했는지 떠올려 봐요."
+      ],
+      "explain": "those는 앞 문장에서 찾아요. 3문장에서 Griffin이 연구한 동물은 박쥐(bats)예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "those는 앞 문장에서 찾아요. 3문장에서 Griffin이 연구한 동물은 박쥐(bats)예요.",
+        "o2": "those는 앞 문장에서 찾아요. 3문장에서 Griffin이 연구한 동물은 박쥐(bats)예요."
+      },
+      "from": "1u29fht"
+    },
+    "s4_conv": {
+      "ask": "평생 박쥐를 지켜본 Griffin은 무엇을 확신하게 됐을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "became convinced 뒤에 that이 빠져 있어요. they had inner worlds가 확신한 내용이에요.",
+        "became convinced 뒤에 that이 빠져 있어요. they had inner worlds가 확신한 내용이에요."
+      ],
+      "explain": "'he became convinced they had inner worlds', 박쥐들에게도 내면 세계가 있다고 확신하게 됐대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'he became convinced they had inner worlds', 박쥐들에게도 내면 세계가 있다고 확신하게 됐대요.",
+        "o2": "'he became convinced they had inner worlds', 박쥐들에게도 내면 세계가 있다고 확신하게 됐대요."
+      },
+      "point": "Griffin의 확신: 박쥐에게도 inner worlds(내면 세계)가 있다",
+      "from": "nvu1q8"
+    },
+    "s5_hallmark": {
+      "ask": "Griffin은 박쥐의 유연한 행동(flexible behavior)을 무엇의 특징이라고 했을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "문장 끝 a hallmark of ~를 봐요. hallmark는 '특징'이에요.",
+        "문장 끝 a hallmark of ~를 봐요. hallmark는 '특징'이에요."
+      ],
+      "explain": "'a hallmark of true intelligence', 진정한 지능의 특징이래요. 환경이 바뀌면 행동을 바꿀 줄 안다는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'a hallmark of true intelligence', 진정한 지능의 특징이래요. 환경이 바뀌면 행동을 바꿀 줄 안다는 거예요.",
+        "o2": "'a hallmark of true intelligence', 진정한 지능의 특징이래요. 환경이 바뀌면 행동을 바꿀 줄 안다는 거예요."
+      },
+      "point": "flexible behavior(환경에 따라 행동을 바꾸는 능력) = 진정한 지능의 특징",
+      "from": "10nqzv7"
+    },
+    "story_5": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_same": {
+      "ask": "박쥐의 문제 해결 능력은 사람과 비교해 어떻대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "the same A as B는 'B와 같은 A'예요. as humans did를 봐요.",
+        "the same A as B는 'B와 같은 A'예요. as humans did를 봐요."
+      ],
+      "explain": "'many of the same problem-solving abilities as humans did', 사람과 같은 문제 해결 능력을 많이 보였대요. 누가 더 낫다는 비교가 아니라 '같다'는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'many of the same problem-solving abilities as humans did', 사람과 같은 문제 해결 능력을 많이 보였대요. 누가 더 낫다는 비교가 아니라 '같다'는 말이에요.",
+        "o2": "'many of the same problem-solving abilities as humans did', 사람과 같은 문제 해결 능력을 많이 보였대요. 누가 더 낫다는 비교가 아니라 '같다'는 말이에요."
+      },
+      "point": "박쥐 = 사람과 같은 문제 해결 능력 (더 낫다·못하다가 아니라 같다)",
+      "from": "1qkd3qz"
+    },
+    "s7_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "p61crt"
+    },
+    "story_7": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s8_found": {
+      "ask": "신경과학이 크게 발전했는데도, 의식을 담당하는 인간만의 뇌 부위를 찾았을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "주어 no one(아무도 ~ 않다)을 봐요. 문장 전체가 부정이에요.",
+        "주어 no one(아무도 ~ 않다)을 봐요. 문장 전체가 부정이에요."
+      ],
+      "explain": "'no one had yet found', 아직 아무도 발견하지 못했대요. 신경과학이 번성했는데도요(despite).",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'no one had yet found', 아직 아무도 발견하지 못했대요. 신경과학이 번성했는데도요(despite).",
+        "o2": "'no one had yet found', 아직 아무도 발견하지 못했대요. 신경과학이 번성했는데도요(despite)."
+      },
+      "point": "인간에게만 있고 의식을 담당할 뇌 부위 → 아직 아무도 못 찾음",
+      "from": "r3n9f4"
+    },
+    "s8_sort": {
+      "ask": "unique to humans(인간에게만 있는)는 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "Griffin은 동물에게도 의식이 있다고 봐요. '인간에게만'이 그 생각과 같은지 봐요.",
+        "Griffin은 동물에게도 의식이 있다고 봐요. '인간에게만'이 그 생각과 같은지 봐요."
+      ],
+      "explain": "Griffin은 의식이 동물에게도 있다고 봐요. 인간에게만 있다는 건 Griffin이 맞서는 생각이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "Griffin은 의식이 동물에게도 있다고 봐요. 인간에게만 있다는 건 Griffin이 맞서는 생각이에요."
+      },
+      "point": "unique to humans(인간에게만) ↔ Griffin(동물에게도)",
+      "from": "1ejb0fy"
+    },
+    "s9_sort": {
+      "ask": "드디어 밑줄이에요. Griffin이 버리자는 the ghost(유령)는 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "give up은 '버리다'예요. Griffin이 버리자고 할 생각은 자기 생각일지, 맞서는 생각일지 봐요.",
+        "give up은 '버리다'예요. Griffin이 버리자고 할 생각은 자기 생각일지, 맞서는 생각일지 봐요."
+      ],
+      "explain": "Griffin은 자기 생각을 버리자고 하지 않아요. 버리자는 건 Griffin이 맞서는 쪽 생각이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "Griffin은 자기 생각을 버리자고 하지 않아요. 버리자는 건 Griffin이 맞서는 쪽 생각이에요."
+      },
+      "point": "the ghost = Griffin이 버리자는 생각 → 반대 쪽",
+      "from": "1ixtiq0"
+    },
+    "s9_q": {
+      "ask": "그럼 the ghost가 가리키는 생각은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "8문장의 unique to humans(인간에게만 있는)를 떠올려 봐요. 무엇이 인간에게만 있다고 했나요?",
+        "8문장의 unique to humans(인간에게만 있는)를 떠올려 봐요. 무엇이 인간에게만 있다고 했나요?"
+      ],
+      "explain": "'unique to humans', 의식을 담당하는 인간만의 뇌 부위를 아무도 못 찾았대요. 누가 더 똑똑한지가 아니라 의식이 인간에게만 있느냐는 이야기예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'unique to humans', 의식을 담당하는 인간만의 뇌 부위를 아무도 못 찾았대요. 누가 더 똑똑한지가 아니라 의식이 인간에게만 있느냐는 이야기예요.",
+        "o2": "'unique to humans', 의식을 담당하는 인간만의 뇌 부위를 아무도 못 찾았대요. 누가 더 똑똑한지가 아니라 의식이 인간에게만 있느냐는 이야기예요."
+      },
+      "point": "the ghost = 의식은 인간에게만 있다는 믿음 (더 똑똑하다는 비교 X)",
+      "from": "1ni5iif"
+    },
+    "s9_map": {
+      "say": "the ghost는 실체 없는 '환상'이에요. 의식이 인간에게만 있다는 믿음을 이제 버릴 때가 됐다는 말이에요.\n이 뜻을 바꿔 쓴 보기를 골라 봐요.",
+      "from": "1dsuhnc"
+    }
+  },
+  "exam": {
+    "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고, the ghost가 칠판 어느 쪽 생각인지 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! the ghost는 인간에게만 있다고 떠받든 '의식'이에요. 의식이 인간에게만 있다는 믿음을 이제 버리자는 말이에요.",
+    "final_wrong": "정답은 ②예요. the ghost는 의식이 인간에게만 있다는 믿음이에요. 인간만의 뇌 부위를 아무도 못 찾았으니 버리자는 말이에요.",
+    "option_feedback": {
+      "1": "동물의 의식을 연구하자는 건 Griffin의 주장이에요. 버리자는 생각이 아니에요.",
+      "3": "Griffin은 동물에게 내면 세계가 있다고 확신했어요. 그걸 착각이라고 하지 않았어요.",
+      "4": "누가 더 뛰어난지는 글에 없어요. 의식이 인간에게만 있느냐가 글의 이야기예요.",
+      "5": "인간과 동물이 비슷하다는 건 Griffin 쪽 생각이에요. 버리자는 생각이 아니에요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 25%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "④는 '인간의 인지가 동물보다 우월하다'예요. 사람이 특별하다는 말처럼 들려서 그럴듯해요. 하지만 글은 박쥐가 사람과 '같은' 능력을 보였다고 하고, 인간에게만(unique to humans) 의식이 있느냐를 따져요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "6문장",
+              "text": "the same problem-solving abilities as humans",
+              "ko": "사람과 같은 능력 — 더 낫다·못하다가 아님",
+              "tone": "hl"
+            },
+            {
+              "label": "8문장",
+              "text": "unique to humans … “consciousness”",
+              "ko": "인간에게만 있다는 의식 → the ghost",
+              "tone": "hl"
+            },
+            {
+              "label": "④",
+              "text": "superior",
+              "ko": "더 뛰어나다 — 글에 없는 비교",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1wgq2dq"
+  },
+  "intro": {
+    "topic": {
+      "say": "동물에게도 의식이 있을까요? 이번 글은 박쥐를 평생 지켜본 한 동물학자의 주장을 다뤄요."
+    },
+    "method1": {
+      "say": "수능 문제는 시간 싸움이에요."
+    },
+    "method2": {
+      "say": "밑줄 문제는 핵심 단어 위주로 지문의 요지를 빠르게 파악하면 좋아요."
+    },
+    "from": "853lm7"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1h77tdm"
+}

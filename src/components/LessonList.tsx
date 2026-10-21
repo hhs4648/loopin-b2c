@@ -21,6 +21,11 @@ import { TeacherFigure } from "./TeacherFigure";
  */
 
 /** 오답률 높은 순 — 많이 틀리는 문제가 위로. 오답률이 없는 세트는 맨 뒤 */
+/** 모의고사·수능은 시행한 해로 묶는다 — 최근 시행부터 (2026-10-21 선생님) */
+function byHeldYear(collections: LessonCollection[]): LessonCollection[] {
+  return [...collections].sort((a, b) => (b.exam?.held ?? "").localeCompare(a.exam?.held ?? ""));
+}
+
 function byWrongRate(sets: LessonSet[]): LessonSet[] {
   return [...sets].sort((a, b) => (b.wrong_rate ?? -1) - (a.wrong_rate ?? -1));
 }
@@ -231,12 +236,18 @@ export function LessonList({
                   {group.title}
                   <small>{group.subtitle}</small>
                 </h2>
+                {group.track === "exam" ? (
+                  <p className="year-note">6월·9월 모의평가와 수능은 다음 해 학년도로 부르지만, 여기서는 시행한 해로 묶었어요.</p>
+                ) : null}
                 <ul className="set-list">
-                  {group.collections.map((c) => {
+                  {byHeldYear(group.collections).map((c, i, list) => {
+                    const year = c.exam?.held.slice(0, 4);
+                    const yearHead = year && year !== list[i - 1]?.exam?.held.slice(0, 4) ? <li key={`y-${year}`} className="year-head">{year}년</li> : null;
                     const sets = setsIn(c.id);
                     const sentences = sets.reduce((n, s) => n + sentenceCount(s), 0);
                     const done = sets.filter((s) => isDone(progress, s.id)).length;
-                    return (
+                    return [
+                      yearHead,
                       <li key={c.id}>
                         <button
                           type="button"
@@ -258,8 +269,8 @@ export function LessonList({
                             </span>
                           </span>
                         </button>
-                      </li>
-                    );
+                      </li>,
+                    ];
                   })}
                 </ul>
               </section>

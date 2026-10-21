@@ -1,0 +1,1650 @@
+{
+  "id": "mopyeong-2027-09-36-mixed-signals",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 9월 모의평가(2027학년도, 한국교육과정평가원) 영어 36번 (글의 순서, 2점)",
+  "brief": {
+    "topic": "순서 푸는 법: 주어진 글의 끝 → 단락 첫머리 단서로 앞 내용 예측 → 단락 끝으로 다음 내용 예측 → 순서 잇기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "order",
+    "labels": [
+      "단락 요지 잡기",
+      "연결 단서 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-mixed-signals.svg",
+      "alt": "칠판: Words(말) ? Pay(급여)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "회사가 직원에게 무엇을 바라는지는 말로만 전해질까요? 이번 글은 가치관과 보상(compensation) 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. That, Such 같은 말이 무엇을 받는지 찾아볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?",
+    "sentence": 1,
+    "analysis_first": true,
+    "wrong_rate": 30.0,
+    "wrong_rank": 9,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "(A)-(C)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "2",
+        "label": "(B)-(A)-(C)",
+        "keywords": []
+      },
+      {
+        "id": "3",
+        "label": "(B)-(C)-(A)",
+        "keywords": [],
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "(C)-(A)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "5",
+        "label": "(C)-(B)-(A)",
+        "keywords": []
+      }
+    ],
+    "brief": {
+      "ask": "단락 첫머리 단서(That, Such mixed signals)와 (C) 끝의 물음을 떠올리며 순서를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 관리자의 말 → (B) 그것도 신호인데 통화 수로 급여를 주면 아주 다른 신호 → (C) 그런 엇갈린 신호, 무엇을 보상해야 하나 → (A) 한 측면에만 보상하면 그것에만 집중한다, 순서예요.",
+      "final_wrong": "정답은 ③ (B)-(C)-(A)예요.",
+      "option_feedback": {
+        "1": "(A)는 보상(compensation) 이야기예요. 주어진 글 바로 뒤에는 보상 이야기가 나올 까닭이 아직 없어요.",
+        "2": "가장 많이 고른 오답이에요. (C)의 Such mixed signals(그러한 엇갈리는 신호)는 (B)의 서로 다른 두 신호를 바로 받아요. (A)는 (C) 끝 물음 '무엇이 보상되어야 하는가'를 받아요.",
+        "4": "많이 고른 오답이에요. 주어진 글에는 관리자의 말 하나뿐이라 (C)의 Such mixed signals가 받을 신호가 둘이 아니에요. 그 말은 (B)의 That이 받아요.",
+        "5": "(C)의 Such mixed signals는 (B)의 두 신호를 받아요. (B)가 (C) 뒤에 오면 엇갈린 신호가 먼저 나오고 신호는 나중에 나와요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 12%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "(B)의 '통화 수대로 급여'와 (A)의 '보상은 측정하기 쉬운 한 측면에만'이 비슷해 보여서 바로 이었을 거예요. 하지만 (C)의 Such mixed signals는 (B)의 두 신호, 곧 '고객 응대가 가장 중요하다'는 말과 '빨리 하라'는 급여를 받아요. (A)는 (C) 끝 물음 what should be rewarded?를 받아 보상 이야기를 이어 가요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(B) 끝",
+                "text": "This incentive sends a very different signal … being fast",
+                "ko": "말과 다른 신호 → 신호 둘",
+                "tone": "hl"
+              },
+              {
+                "label": "(C) 첫머리",
+                "text": "Such mixed signals …",
+                "ko": "그 엇갈린 신호",
+                "tone": "hl"
+              },
+              {
+                "label": "(C) 끝 → (A)",
+                "text": "what should be rewarded? → compensation is only given to …",
+                "ko": "보상 물음 → 보상 이야기",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 10%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "주어진 글의 관리자 말을 보고 (C)의 Such mixed signals를 바로 이었을 거예요. 하지만 주어진 글에는 신호가 '고객 응대가 가장 중요하다'는 말 하나뿐이에요. 그 말은 (B)의 That’s a signal이 받고, 엇갈리는 두 번째 신호도 (B)에서 나와요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "주어진 글",
+                "text": "“customer care is the most important thing …”",
+                "ko": "신호 하나",
+                "tone": "hl"
+              },
+              {
+                "label": "(B)",
+                "text": "That’s a signal … a very different signal",
+                "ko": "그것도 신호 + 아주 다른 신호",
+                "tone": "hl2"
+              },
+              {
+                "label": "(C)",
+                "text": "Such mixed signals …",
+                "ko": "엇갈린 신호",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "values",
+        "ko": "가치관"
+      },
+      {
+        "en": "communicate",
+        "ko": "전달하다"
+      },
+      {
+        "en": "customer care",
+        "ko": "고객 응대"
+      },
+      {
+        "en": "performance",
+        "ko": "성과"
+      },
+      {
+        "en": "multidimensional",
+        "ko": "다차원적인"
+      },
+      {
+        "en": "compensation",
+        "ko": "보상"
+      },
+      {
+        "en": "aspect",
+        "ko": "측면"
+      },
+      {
+        "en": "typically",
+        "ko": "일반적으로"
+      },
+      {
+        "en": "measure",
+        "ko": "측정하다"
+      },
+      {
+        "en": "concentrate on",
+        "ko": "~에 집중하다"
+      },
+      {
+        "en": "ignore",
+        "ko": "무시하다"
+      },
+      {
+        "en": "signal",
+        "ko": "신호"
+      },
+      {
+        "en": "regarding",
+        "ko": "~에 관하여"
+      },
+      {
+        "en": "incentive",
+        "ko": "유인책"
+      },
+      {
+        "en": "at the expense of",
+        "ko": "~을 희생하여"
+      },
+      {
+        "en": "quality",
+        "ko": "질"
+      },
+      {
+        "en": "mixed",
+        "ko": "엇갈리는"
+      },
+      {
+        "en": "leave + 사람 + 상태",
+        "ko": "~를 …한 상태로 만들다"
+      },
+      {
+        "en": "confused",
+        "ko": "혼란스러운"
+      },
+      {
+        "en": "expectation",
+        "ko": "기대"
+      },
+      {
+        "en": "be channeled into",
+        "ko": "~으로 귀결되다"
+      },
+      {
+        "en": "reward",
+        "ko": "보상하다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 글",
+      "text": "Our choices and actions send messages to others about our values.",
+      "teaching_value": "high",
+      "model_translation": "우리의 선택과 행동은 다른 사람들에게 우리의 가치관에 관한 메시지를 보낸다.",
+      "glosses": [
+        {
+          "en": "Our choices and actions",
+          "ko": "우리의 선택과 행동은"
+        },
+        {
+          "en": "choices",
+          "ko": "선택"
+        },
+        {
+          "en": "actions",
+          "ko": "행동"
+        },
+        {
+          "en": "send messages",
+          "ko": "메시지를 보낸다"
+        },
+        {
+          "en": "messages",
+          "ko": "메시지"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        },
+        {
+          "en": "our values",
+          "ko": "우리의 가치관"
+        },
+        {
+          "en": "values",
+          "ko": "가치관"
+        },
+        {
+          "en": "send",
+          "ko": "보내다"
+        }
+      ],
+      "slashes": [
+        "send messages",
+        "to others"
+      ],
+      "roles": [
+        {
+          "text": "Our choices and actions",
+          "role": "S"
+        },
+        {
+          "text": "send",
+          "role": "V"
+        },
+        {
+          "text": "messages",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "g_main",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "우리의 선택과 행동은 다른 사람들에게 무엇에 관한 메시지를 보낸대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "send messages to others about ~에서 about 뒤를 봐요.",
+              "send messages to others about ~에서 about 뒤를 봐요."
+            ],
+            "explain": "'about our values', 가치관(values)에 관한 메시지래요. 무엇을 고르고 어떻게 행동하는지가 그 사람의 가치관을 보여 준다는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'about our values', 가치관(values)에 관한 메시지래요. 무엇을 고르고 어떻게 행동하는지가 그 사람의 가치관을 보여 준다는 말이에요.",
+              "o2": "'about our values', 가치관(values)에 관한 메시지래요. 무엇을 고르고 어떻게 행동하는지가 그 사람의 가치관을 보여 준다는 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "우리가 중요하게 여기는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "우리가 잘하는 일"
+            },
+            {
+              "id": "o2",
+              "label": "우리의 그날 기분"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "messages",
+            "values"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Consider a manager who communicates to her employees in a call center that “customer care is the most important thing for our company.”",
+      "teaching_value": "high",
+      "model_translation": "콜센터 직원들에게 “고객 응대가 우리 회사에 가장 중요한 일이다.”라고 전달하는 한 관리자를 생각해 보라.",
+      "glosses": [
+        {
+          "en": "Consider",
+          "ko": "생각해 보라"
+        },
+        {
+          "en": "a manager",
+          "ko": "한 관리자"
+        },
+        {
+          "en": "manager",
+          "ko": "관리자"
+        },
+        {
+          "en": "communicates",
+          "ko": "전달하다"
+        },
+        {
+          "en": "her employees",
+          "ko": "자기 직원들"
+        },
+        {
+          "en": "employees",
+          "ko": "직원들"
+        },
+        {
+          "en": "in a call center",
+          "ko": "콜센터에서"
+        },
+        {
+          "en": "call center",
+          "ko": "콜센터"
+        },
+        {
+          "en": "customer care",
+          "ko": "고객 응대"
+        },
+        {
+          "en": "customer",
+          "ko": "고객"
+        },
+        {
+          "en": "care",
+          "ko": "돌봄, 응대"
+        },
+        {
+          "en": "the most important thing",
+          "ko": "가장 중요한 일"
+        },
+        {
+          "en": "important",
+          "ko": "중요한"
+        },
+        {
+          "en": "company",
+          "ko": "회사"
+        },
+        {
+          "en": "call",
+          "ko": "전화"
+        },
+        {
+          "en": "center",
+          "ko": "센터"
+        }
+      ],
+      "slashes": [
+        "Consider a manager",
+        "to her employees",
+        "in a call center"
+      ],
+      "roles": [
+        {
+          "text": "Consider",
+          "role": "V"
+        },
+        {
+          "text": "a manager who communicates to her employees in a call center that “customer care is the most important thing for our company",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "who communicates to her employees in a call center that “customer care is the most important thing for our company"
+      ],
+      "steps": [
+        {
+          "id": "g_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 글은 관리자가 '고객 응대가 가장 중요하다'고 말하는 예로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "첫 문장을 떠올려 봐요. 선택과 행동은 가치관에 관한 메시지를 보낸다고 했어요.",
+              "첫 문장을 떠올려 봐요. 선택과 행동은 가치관에 관한 메시지를 보낸다고 했어요."
+            ],
+            "explain": "첫 문장에서 선택과 행동이 가치관에 관한 메시지를 보낸다고 하고, Consider(생각해 보라)로 관리자의 예를 들었어요. 그러니 다음엔 이 관리자가 어떤 메시지를 보내는지 이어지기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "첫 문장에서 선택과 행동이 가치관에 관한 메시지를 보낸다고 하고, Consider(생각해 보라)로 관리자의 예를 들었어요. 그러니 다음엔 이 관리자가 어떤 메시지를 보내는지 이어지기 쉬워요.",
+              "o2": "첫 문장에서 선택과 행동이 가치관에 관한 메시지를 보낸다고 하고, Consider(생각해 보라)로 관리자의 예를 들었어요. 그러니 다음엔 이 관리자가 어떤 메시지를 보내는지 이어지기 쉬워요."
+            },
+            "point": "주어진 글 끝 '고객 응대가 가장 중요하다'는 관리자의 말 → 다음은 그 말이 보내는 메시지"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "관리자의 그 말이 직원들에게 보내는 메시지",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "콜센터 직원을 뽑는 방법"
+            },
+            {
+              "id": "o2",
+              "label": "고객이 콜센터에 거는 전화의 종류"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Consider",
+            "customer care"
+          ],
+          "tips": [
+            {
+              "label": "Consider ~",
+              "text": "'~를 생각해 보라'예요. 주장을 하고 예를 들 때 자주 써요.",
+              "mark": "Consider"
+            }
+          ]
+        },
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요."
+          },
+          "method": 1,
+          "button": "(A)부터 읽어 볼게요"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "(A) In many cases, performance is multidimensional, but compensation is only given to one aspect of performance, typically the one that is easiest to measure.",
+      "teaching_value": "high",
+      "model_translation": "(A) 많은 경우, 성과는 다차원적이지만 보상은 성과의 한 측면, 일반적으로 가장 측정하기 쉬운 측면에만 주어진다.",
+      "glosses": [
+        {
+          "en": "In many cases",
+          "ko": "많은 경우"
+        },
+        {
+          "en": "cases",
+          "ko": "경우"
+        },
+        {
+          "en": "performance",
+          "ko": "성과"
+        },
+        {
+          "en": "multidimensional",
+          "ko": "다차원적인 · 여러 측면이 있는"
+        },
+        {
+          "en": "compensation",
+          "ko": "보상"
+        },
+        {
+          "en": "is only given",
+          "ko": "~에만 주어진다"
+        },
+        {
+          "en": "given",
+          "ko": "주어진"
+        },
+        {
+          "en": "one aspect of performance",
+          "ko": "성과의 한 측면"
+        },
+        {
+          "en": "aspect",
+          "ko": "측면"
+        },
+        {
+          "en": "typically",
+          "ko": "일반적으로, 보통"
+        },
+        {
+          "en": "easiest",
+          "ko": "가장 쉬운"
+        },
+        {
+          "en": "easiest to measure",
+          "ko": "가장 측정하기 쉬운"
+        },
+        {
+          "en": "measure",
+          "ko": "측정하다"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        }
+      ],
+      "slashes": [
+        "In many cases,",
+        "is multidimensional,",
+        "is only given",
+        "of performance,",
+        "typically the one"
+      ],
+      "roles": [
+        {
+          "text": "performance",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "multidimensional",
+          "role": "C"
+        },
+        {
+          "text": "compensation",
+          "role": "S"
+        },
+        {
+          "text": "is only given",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that is easiest to measure"
+      ],
+      "steps": [
+        {
+          "id": "a_comp",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 '성과는 여러 측면이 있지만, but 보상(compensation)은 …'으로 시작해요. 보상은 성과의 어느 쪽에 주어진대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "but 뒤 is only given to one aspect of performance를 봐요.",
+              "but 뒤 is only given to one aspect of performance를 봐요."
+            ],
+            "explain": "'is only given to one aspect of performance', 보상은 성과의 한 측면에만 주어진대요. typically the one that is easiest to measure, 보통 가장 측정하기 쉬운 것이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'is only given to one aspect of performance', 보상은 성과의 한 측면에만 주어진대요. typically the one that is easiest to measure, 보통 가장 측정하기 쉬운 것이에요.",
+              "o2": "'is only given to one aspect of performance', 보상은 성과의 한 측면에만 주어진대요. typically the one that is easiest to measure, 보통 가장 측정하기 쉬운 것이에요."
+            },
+            "point": "(A) 보상(compensation)은 성과의 한 측면(가장 측정하기 쉬운 것)에만"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "여러 측면 모두에 골고루"
+            },
+            {
+              "id": "o1",
+              "label": "가장 측정하기 쉬운 한 측면에만",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "직원이 스스로 고른 측면에"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "compensation",
+            "only",
+            "one aspect"
+          ],
+          "tips": [
+            {
+              "label": "multidimensional",
+              "text": "'다차원적인, 여러 측면이 있는'이에요. multi(여럿) + dimension(차원)이에요.",
+              "mark": "multidimensional"
+            },
+            {
+              "label": "compensation",
+              "text": "'보상'이에요. 일한 대가로 주는 급여나 상을 말해요.",
+              "mark": "compensation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Simple “one-aspect” compensation sends a clear message to the workers: concentrate on what we’re paying you for and ignore everything else.",
+      "teaching_value": "medium",
+      "model_translation": "단순한 ‘단일 측면’에 대한 보상은 직원들에게 명확한 메시지를 보내는데, 즉 우리가 여러분에게 급여를 지불하는 대상에 집중하고 그 밖의 다른 모든 것은 무시하라는 것이다.",
+      "glosses": [
+        {
+          "en": "Simple “one-aspect” compensation",
+          "ko": "단순한 '단일 측면' 보상은"
+        },
+        {
+          "en": "Simple",
+          "ko": "단순한"
+        },
+        {
+          "en": "one-aspect",
+          "ko": "단일 측면의"
+        },
+        {
+          "en": "compensation",
+          "ko": "보상"
+        },
+        {
+          "en": "a clear message",
+          "ko": "명확한 메시지"
+        },
+        {
+          "en": "clear",
+          "ko": "명확한"
+        },
+        {
+          "en": "message",
+          "ko": "메시지"
+        },
+        {
+          "en": "workers",
+          "ko": "직원들"
+        },
+        {
+          "en": "concentrate on",
+          "ko": "~에 집중하다"
+        },
+        {
+          "en": "concentrate",
+          "ko": "집중하다"
+        },
+        {
+          "en": "what we’re paying you for",
+          "ko": "우리가 여러분에게 급여를 주는 대상"
+        },
+        {
+          "en": "paying",
+          "ko": "(돈을) 주는"
+        },
+        {
+          "en": "ignore",
+          "ko": "무시하다"
+        },
+        {
+          "en": "everything else",
+          "ko": "그 밖의 모든 것"
+        },
+        {
+          "en": "we’re",
+          "ko": "우리가 ~하고 있다"
+        }
+      ],
+      "slashes": [
+        "Simple “one-aspect” compensation",
+        "sends a clear message",
+        "to the workers:",
+        "what we’re paying you for"
+      ],
+      "roles": [
+        {
+          "text": "Simple “one-aspect” compensation",
+          "role": "S"
+        },
+        {
+          "text": "sends",
+          "role": "V"
+        },
+        {
+          "text": "a clear message",
+          "role": "O"
+        },
+        {
+          "text": "concentrate on",
+          "role": "V"
+        },
+        {
+          "text": "what we’re paying you for",
+          "role": "O"
+        },
+        {
+          "text": "ignore",
+          "role": "V"
+        },
+        {
+          "text": "everything else",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "a2_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "한 측면에만 보상하면 직원들은 '돈 받는 일에만 집중하고 나머지는 무시하라'는 메시지로 받아들인대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "concentrate on",
+            "ignore"
+          ],
+          "tips": [
+            {
+              "label": "콜론(:)",
+              "text": "콜론(:) 뒤는 앞의 a clear message가 무엇인지 풀어 쓴 말이에요."
+            },
+            {
+              "label": "pay A for B",
+              "text": "'B에 대해 A에게 돈을 주다'예요. what we’re paying you for = 우리가 여러분에게 돈을 주는 대상.",
+              "mark": "paying"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "(B) That’s a signal to others regarding values.",
+      "teaching_value": "high",
+      "model_translation": "(B) 그것은 가치관에 관해 다른 사람들에게 보내는 하나의 신호이다.",
+      "glosses": [
+        {
+          "en": "That’s",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "That",
+          "ko": "그것은"
+        },
+        {
+          "en": "’s",
+          "ko": "~이다"
+        },
+        {
+          "en": "a signal",
+          "ko": "하나의 신호"
+        },
+        {
+          "en": "signal",
+          "ko": "신호"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        },
+        {
+          "en": "regarding values",
+          "ko": "가치관에 관한"
+        },
+        {
+          "en": "regarding",
+          "ko": "~에 관하여"
+        },
+        {
+          "en": "values",
+          "ko": "가치관"
+        }
+      ],
+      "slashes": [],
+      "roles": [
+        {
+          "text": "That",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "a signal",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "b_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 'That’s a signal to others regarding values(그것은 가치관에 관한 신호다)'로 시작해요. That(그것)을 보면 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "That은 앞에 나온 것을 가리켜요. 그것이 '가치관에 관한 신호'가 될 수 있어야 해요.",
+              "That은 앞에 나온 것을 가리켜요. 그것이 '가치관에 관한 신호'가 될 수 있어야 해요."
+            ],
+            "explain": "That(그것)은 앞에 나온 것을 가리키고, 그것이 가치관에 관한 신호래요. 그러니 앞에 무엇을 중요하게 여기는지 보여 주는 말이나 행동이 있어야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "That(그것)은 앞에 나온 것을 가리키고, 그것이 가치관에 관한 신호래요. 그러니 앞에 무엇을 중요하게 여기는지 보여 주는 말이나 행동이 있어야 해요.",
+              "o2": "That(그것)은 앞에 나온 것을 가리키고, 그것이 가치관에 관한 신호래요. 그러니 앞에 무엇을 중요하게 여기는지 보여 주는 말이나 행동이 있어야 해요."
+            },
+            "point": "(B) That ← 앞에 가치관을 보여 주는 말이나 행동"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "가치관을 드러내는 누군가의 말이나 행동",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "직원들이 혼란스러워한다는 내용"
+            },
+            {
+              "id": "o2",
+              "label": "성과를 측정하기 어렵다는 내용"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "That",
+            "signal",
+            "values"
+          ],
+          "tips": [
+            {
+              "label": "regarding",
+              "text": "'~에 관하여'예요. a signal regarding values = 가치관에 관한 신호.",
+              "mark": "regarding"
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "That": "the manager’s words in the given text(주어진 글에서 관리자가 한 말)"
+      }
+    },
+    {
+      "id": 6,
+      "text": "Now, imagine that the manager sets the incentives such that employees are paid by the number of calls they answer.",
+      "teaching_value": "medium",
+      "model_translation": "이제 관리자가 직원들이 응답하는 통화 수에 따라 급여를 받도록 유인책을 설정한다고 상상해 보라.",
+      "glosses": [
+        {
+          "en": "Now",
+          "ko": "이제"
+        },
+        {
+          "en": "imagine",
+          "ko": "상상해 보라"
+        },
+        {
+          "en": "the manager",
+          "ko": "그 관리자"
+        },
+        {
+          "en": "manager",
+          "ko": "관리자"
+        },
+        {
+          "en": "sets the incentives",
+          "ko": "유인책을 정한다"
+        },
+        {
+          "en": "sets",
+          "ko": "정하다"
+        },
+        {
+          "en": "incentives",
+          "ko": "유인책, 장려책 · 무엇을 하게 만드는 보상"
+        },
+        {
+          "en": "such that",
+          "ko": "~하도록"
+        },
+        {
+          "en": "employees",
+          "ko": "직원들"
+        },
+        {
+          "en": "are paid",
+          "ko": "급여를 받는다"
+        },
+        {
+          "en": "paid",
+          "ko": "돈을 받는"
+        },
+        {
+          "en": "the number of calls",
+          "ko": "통화 수"
+        },
+        {
+          "en": "number",
+          "ko": "수"
+        },
+        {
+          "en": "calls",
+          "ko": "통화"
+        },
+        {
+          "en": "answer",
+          "ko": "응답하다"
+        }
+      ],
+      "slashes": [
+        "Now,",
+        "imagine",
+        "sets the incentives",
+        "are paid"
+      ],
+      "roles": [
+        {
+          "text": "imagine",
+          "role": "V"
+        },
+        {
+          "text": "the manager",
+          "role": "S"
+        },
+        {
+          "text": "sets",
+          "role": "V"
+        },
+        {
+          "text": "the incentives",
+          "role": "O"
+        },
+        {
+          "text": "employees",
+          "role": "S"
+        },
+        {
+          "text": "are paid",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "they answer"
+      ],
+      "steps": [
+        {
+          "id": "b2_mid",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "'imagine that …', 이번엔 그 관리자가 직원들이 받은 전화 수에 따라 급여를 준다고 상상해 보래요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "the number of calls"
+          ],
+          "tips": [
+            {
+              "label": "such that",
+              "text": "'~하도록'이에요. sets the incentives such that employees are paid … = 직원들이 …에 따라 급여를 받도록 유인책을 정하다.",
+              "mark": "such that"
+            },
+            {
+              "label": "incentive",
+              "text": "'유인책, 장려책'이에요. 사람이 어떤 일을 더 하게 만드는 보상이에요.",
+              "mark": "incentives"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "This incentive sends a very different signal about what the manager is looking for: it’s about being fast, which comes at the expense of quality of care.",
+      "teaching_value": "high",
+      "model_translation": "이러한 유인책은 관리자가 무엇을 원하는지에 관해 매우 다른 신호를 보내는데, 즉, 그것은 신속함에 관한 것이며, 고객 응대의 질을 희생하면서 이루어진다.",
+      "glosses": [
+        {
+          "en": "This incentive",
+          "ko": "이 유인책은"
+        },
+        {
+          "en": "incentive",
+          "ko": "유인책"
+        },
+        {
+          "en": "sends",
+          "ko": "보낸다"
+        },
+        {
+          "en": "a very different signal",
+          "ko": "매우 다른 신호"
+        },
+        {
+          "en": "different",
+          "ko": "다른"
+        },
+        {
+          "en": "signal",
+          "ko": "신호"
+        },
+        {
+          "en": "what the manager is looking for",
+          "ko": "관리자가 원하는 것"
+        },
+        {
+          "en": "looking for",
+          "ko": "찾는, 원하는"
+        },
+        {
+          "en": "it’s",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "it",
+          "ko": "그것은"
+        },
+        {
+          "en": "’s",
+          "ko": "~이다"
+        },
+        {
+          "en": "about being fast",
+          "ko": "빠른 것에 관한"
+        },
+        {
+          "en": "fast",
+          "ko": "빠른"
+        },
+        {
+          "en": "at the expense of",
+          "ko": "~을 희생하여"
+        },
+        {
+          "en": "expense",
+          "ko": "희생, 비용"
+        },
+        {
+          "en": "quality of care",
+          "ko": "고객 응대의 질"
+        },
+        {
+          "en": "quality",
+          "ko": "질"
+        },
+        {
+          "en": "care",
+          "ko": "응대"
+        },
+        {
+          "en": "manager",
+          "ko": "관리자"
+        },
+        {
+          "en": "looking",
+          "ko": "찾는"
+        }
+      ],
+      "slashes": [
+        "a very different signal",
+        "is looking for:",
+        "about being fast,"
+      ],
+      "roles": [
+        {
+          "text": "This incentive",
+          "role": "S"
+        },
+        {
+          "text": "sends",
+          "role": "V"
+        },
+        {
+          "text": "a very different signal",
+          "role": "O"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "about being fast",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "which comes at the expense of quality of care"
+      ],
+      "steps": [
+        {
+          "id": "b_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 '이 유인책은 매우 다른 신호를 보낸다, 빨리 하라는 신호다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "a very different signal(매우 다른 신호)이라고 했어요. 무엇과 다른지 떠올려 봐요.",
+              "a very different signal(매우 다른 신호)이라고 했어요. 무엇과 다른지 떠올려 봐요."
+            ],
+            "explain": "관리자는 말로는 '고객 응대가 가장 중요하다'고 했는데, 급여는 '빨리 하라'는 아주 다른 신호를 보내요. 신호가 둘로 갈렸으니 다음엔 그 때문에 생기는 문제가 이어지기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "관리자는 말로는 '고객 응대가 가장 중요하다'고 했는데, 급여는 '빨리 하라'는 아주 다른 신호를 보내요. 신호가 둘로 갈렸으니 다음엔 그 때문에 생기는 문제가 이어지기 쉬워요.",
+              "o2": "관리자는 말로는 '고객 응대가 가장 중요하다'고 했는데, 급여는 '빨리 하라'는 아주 다른 신호를 보내요. 신호가 둘로 갈렸으니 다음엔 그 때문에 생기는 문제가 이어지기 쉬워요."
+            },
+            "point": "(B) 끝 '매우 다른 신호(빨리 하라)' → 다음은 두 신호가 엇갈려 생기는 문제"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "고객 응대의 질을 높이는 방법"
+            },
+            {
+              "id": "o1",
+              "label": "서로 다른 두 신호 때문에 생기는 문제",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "통화를 빨리 끝내는 요령"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "very different signal",
+            "being fast"
+          ],
+          "tips": [
+            {
+              "label": "at the expense of",
+              "text": "'~을 희생하여'예요. which comes at the expense of quality of care = 그것은 고객 응대의 질을 희생하면서 이루어진다.",
+              "mark": "expense"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "관리자가 보내는 신호 (signal)",
+            "left": {
+              "label": "says (말)",
+              "words": [
+                {
+                  "text": "customer care",
+                  "ko": "고객 응대"
+                }
+              ]
+            },
+            "right": {
+              "label": "pays (급여)",
+              "words": [
+                {
+                  "text": "the number of calls",
+                  "ko": "받은 통화 수",
+                  "fresh": true
+                },
+                {
+                  "text": "being fast",
+                  "ko": "빠름",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "≠"
+          }
+        }
+      ],
+      "refers": {
+        "This incentive": "paying by the number of calls(통화 수에 따라 급여를 주는 것)"
+      }
+    },
+    {
+      "id": 8,
+      "text": "(C) Such mixed signals leave the employees confused about the manager’s values and expectations.",
+      "teaching_value": "high",
+      "model_translation": "(C) 그러한 엇갈리는 신호는 직원들을 관리자의 가치관과 기대에 대해 혼란스럽게 만든다.",
+      "glosses": [
+        {
+          "en": "Such mixed signals",
+          "ko": "그러한 엇갈리는 신호는"
+        },
+        {
+          "en": "Such",
+          "ko": "그러한"
+        },
+        {
+          "en": "mixed",
+          "ko": "엇갈리는, 뒤섞인"
+        },
+        {
+          "en": "signals",
+          "ko": "신호"
+        },
+        {
+          "en": "leave",
+          "ko": "(~한 상태로) 만들다, 두다"
+        },
+        {
+          "en": "the employees",
+          "ko": "직원들을"
+        },
+        {
+          "en": "employees",
+          "ko": "직원들"
+        },
+        {
+          "en": "confused",
+          "ko": "혼란스러운"
+        },
+        {
+          "en": "about the manager’s values and expectations",
+          "ko": "관리자의 가치관과 기대에 대해"
+        },
+        {
+          "en": "manager’s",
+          "ko": "관리자의"
+        },
+        {
+          "en": "values",
+          "ko": "가치관"
+        },
+        {
+          "en": "expectations",
+          "ko": "기대"
+        }
+      ],
+      "slashes": [
+        "Such mixed signals",
+        "leave the employees confused"
+      ],
+      "roles": [
+        {
+          "text": "Such mixed signals",
+          "role": "S"
+        },
+        {
+          "text": "leave",
+          "role": "V"
+        },
+        {
+          "text": "the employees",
+          "role": "O"
+        },
+        {
+          "text": "confused",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s8_basic",
+          "candidates": [
+            "Such mixed signals",
+            "leave",
+            "the employees",
+            "confused",
+            "about the manager’s values and expectations"
+          ],
+          "answers": [
+            "Such mixed signals",
+            "the employees",
+            "about the manager’s values and expectations",
+            "confused",
+            "leave"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Such mixed signals",
+                "ko": "그러한 엇갈리는 신호는"
+              },
+              " ",
+              {
+                "en": "the employees",
+                "ko": "직원들을"
+              },
+              " ",
+              {
+                "en": "about the manager’s values and expectations",
+                "ko": "관리자의 가치관과 기대에 대해"
+              },
+              " ",
+              {
+                "en": "confused",
+                "ko": "혼란스럽게"
+              },
+              " ",
+              {
+                "en": "leave",
+                "ko": "만든다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "leave",
+              "text": "평소엔 '떠나다'로 알기 쉬워요. 여기서는 leave + 사람 + 상태로 '~를 …한 상태로 만들다'예요. leave the employees confused = 직원들을 혼란스럽게 만들다.",
+              "mark": "leave",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "c_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(C)는 'Such mixed signals(그러한 엇갈리는 신호)'로 시작해요. 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "Such(그러한)는 앞에 나온 것을 받아요. mixed(엇갈리는)는 서로 다른 것이 섞였다는 말이에요.",
+              "Such(그러한)는 앞에 나온 것을 받아요. mixed(엇갈리는)는 서로 다른 것이 섞였다는 말이에요."
+            ],
+            "explain": "Such mixed signals는 앞에 이미 서로 다른 신호가 나와 있어야 쓸 수 있어요. 신호 하나만으로는 '엇갈린다'고 할 수 없어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "Such mixed signals는 앞에 이미 서로 다른 신호가 나와 있어야 쓸 수 있어요. 신호 하나만으로는 '엇갈린다'고 할 수 없어요.",
+              "o2": "Such mixed signals는 앞에 이미 서로 다른 신호가 나와 있어야 쓸 수 있어요. 신호 하나만으로는 '엇갈린다'고 할 수 없어요."
+            },
+            "point": "(C) Such mixed signals ← 앞에 서로 다른 신호 둘"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "관리자가 한 가지 말을 하는 장면"
+            },
+            {
+              "id": "o1",
+              "label": "서로 다른 신호가 둘 이상 나온 내용",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "보상이 한 측면에만 주어진다는 설명"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Such mixed signals"
+          ],
+          "tips": [
+            {
+              "label": "leave",
+              "text": "평소엔 '떠나다'로 알기 쉬워요. 여기서는 leave + 사람 + 상태로 '~를 …한 상태로 만들다'예요. leave the employees confused = 직원들을 혼란스럽게 만들다.",
+              "mark": "leave",
+              "trap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "This mixed signals problem is channeled into a simple question: what should be rewarded?",
+      "teaching_value": "high",
+      "model_translation": "이 엇갈리는 신호의 문제는 ‘무엇이 보상되어야 하는가?’라는 하나의 간단한 질문으로 귀결된다.",
+      "glosses": [
+        {
+          "en": "This mixed signals problem",
+          "ko": "이 엇갈리는 신호의 문제는"
+        },
+        {
+          "en": "mixed",
+          "ko": "엇갈리는"
+        },
+        {
+          "en": "signals",
+          "ko": "신호"
+        },
+        {
+          "en": "problem",
+          "ko": "문제"
+        },
+        {
+          "en": "is channeled into",
+          "ko": "~으로 귀결된다"
+        },
+        {
+          "en": "channeled",
+          "ko": "(한 곳으로) 모인"
+        },
+        {
+          "en": "a simple question",
+          "ko": "하나의 간단한 질문"
+        },
+        {
+          "en": "simple",
+          "ko": "간단한"
+        },
+        {
+          "en": "question",
+          "ko": "질문"
+        },
+        {
+          "en": "what should be rewarded",
+          "ko": "무엇이 보상되어야 하는가"
+        },
+        {
+          "en": "rewarded",
+          "ko": "보상받는"
+        }
+      ],
+      "slashes": [
+        "This mixed signals problem",
+        "a simple question:"
+      ],
+      "roles": [
+        {
+          "text": "This mixed signals problem",
+          "role": "S"
+        },
+        {
+          "text": "is channeled",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "c_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(C)는 '무엇이 보상되어야 하는가'라는 물음으로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "what should be rewarded(무엇이 보상되어야 할까)라고 물었어요. 그 물음을 이어 받는 말을 찾아봐요.",
+              "what should be rewarded(무엇이 보상되어야 할까)라고 물었어요. 그 물음을 이어 받는 말을 찾아봐요."
+            ],
+            "explain": "글이 '무엇을 보상해야 할까'라는 물음으로 끝났어요. 다음엔 그 물음을 받아 보상 이야기를 이어 가는 말이 오기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "글이 '무엇을 보상해야 할까'라는 물음으로 끝났어요. 다음엔 그 물음을 받아 보상 이야기를 이어 가는 말이 오기 쉬워요.",
+              "o2": "글이 '무엇을 보상해야 할까'라는 물음으로 끝났어요. 다음엔 그 물음을 받아 보상 이야기를 이어 가는 말이 오기 쉬워요."
+            },
+            "point": "(C) 끝 '무엇이 보상되어야 할까?' → 다음은 보상 이야기"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "보상을 무엇에 어떻게 주는지에 대한 이야기",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "관리자가 직원들에게 하는 첫인사"
+            },
+            {
+              "id": "o2",
+              "label": "콜센터의 하루 통화 수"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "rewarded"
+          ],
+          "tips": [
+            {
+              "label": "be channeled into",
+              "text": "'~으로 귀결되다, 모이다'예요. 엇갈린 신호의 문제가 결국 하나의 질문으로 모인다는 말이에요.",
+              "mark": "channeled"
+            },
+            {
+              "label": "reward",
+              "text": "'보상하다'예요. (A)의 compensation(보상)과 같은 쪽 말이에요.",
+              "mark": "rewarded"
+            }
+          ]
+        },
+        {
+          "id": "order_link",
+          "type": "pick",
+          "interaction": "word_pick",
+          "tag": "순서 잇기",
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "answers": [
+            "B",
+            "C",
+            "A"
+          ],
+          "order": {
+            "given": {
+              "id": "given",
+              "label": "주어진 글",
+              "last": {
+                "en": "Consider a manager who communicates … “customer care is the most important thing …”",
+                "ko": "'고객 응대가 가장 중요하다'고 말하는 관리자를 생각해 보라"
+              }
+            },
+            "cards": [
+              {
+                "id": "A",
+                "label": "(A)",
+                "first": {
+                  "en": "In many cases, performance is multidimensional, but compensation is only given to one aspect …",
+                  "ko": "많은 경우, 성과는 여러 측면이지만 보상은 한 측면에만 주어진다"
+                },
+                "last": {
+                  "en": "… concentrate on what we’re paying you for and ignore everything else.",
+                  "ko": "돈 받는 일에 집중하고 나머지는 무시하라"
+                }
+              },
+              {
+                "id": "B",
+                "label": "(B)",
+                "first": {
+                  "en": "That’s a signal to others regarding values.",
+                  "ko": "그것은 가치관에 관한 신호다"
+                },
+                "last": {
+                  "en": "… it’s about being fast, which comes at the expense of quality of care.",
+                  "ko": "빨리 하라는 신호, 고객 응대의 질을 희생하면서"
+                }
+              },
+              {
+                "id": "C",
+                "label": "(C)",
+                "first": {
+                  "en": "Such mixed signals leave the employees confused …",
+                  "ko": "그러한 엇갈리는 신호는 직원들을 혼란스럽게 한다"
+                },
+                "last": {
+                  "en": "… a simple question: what should be rewarded?",
+                  "ko": "무엇이 보상되어야 하는가?"
+                }
+              }
+            ]
+          },
+          "brief": {
+            "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+            "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+            "wrong_by": {
+              "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+              "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+            "explain": "주어진 글('고객 응대가 가장 중요하다'는 관리자의 말) → (B) 그것도 신호인데, 통화 수로 급여를 주면 아주 다른 신호 → (C) 그런 엇갈린 신호, 무엇을 보상해야 할까 → (A) 보상이 한 측면에만 주어지면 그것에만 집중한다, 순서예요.",
+            "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지"
+          },
+          "method": 1
+        },
+        {
+          "id": "c_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?"
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

@@ -1,0 +1,1889 @@
+{
+  "id": "mopyeong-2027-09-34-joke-canyon",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 9월 모의평가(2027학년도, 한국교육과정평가원) 영어 34번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 같은 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-joke-canyon.svg",
+      "alt": "칠판: Joke(농담) + Surprise(놀라움)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "같은 농담을 세 번 들으면 어떤가요? 이번 글은 농담과 놀라움 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 9,
+    "analysis_first": true,
+    "wrong_rate": 73.0,
+    "wrong_rank": 1,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "feel relaxed",
+        "ko": "편안하다고 느끼다"
+      },
+      {
+        "en": "enough to laugh",
+        "ko": "웃을 수 있을 만큼"
+      },
+      {
+        "en": "matches",
+        "ko": "일치하다, 맞다"
+      },
+      {
+        "en": "expectations",
+        "ko": "예상, 기대"
+      },
+      {
+        "en": "someone else",
+        "ko": "다른 사람"
+      },
+      {
+        "en": "have to",
+        "ko": "~해야 하다"
+      },
+      {
+        "en": "do a little work",
+        "ko": "약간의 노력을 하다"
+      },
+      {
+        "en": "fail to",
+        "ko": "~하지 못하다"
+      },
+      {
+        "en": "fully understand",
+        "ko": "완전히 이해하다"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "if they feel relaxed enough to laugh",
+        "keywords": [
+          "relaxed"
+        ],
+        "ko": "웃을 수 있을 만큼 충분히 편안하다고 느낄 때"
+      },
+      {
+        "id": "2",
+        "label": "when it matches their expectations",
+        "keywords": [
+          "matches",
+          "expectations"
+        ],
+        "ko": "그것이 자신의 예상과 일치할 때"
+      },
+      {
+        "id": "3",
+        "label": "if it is about someone else",
+        "keywords": [
+          "someone else"
+        ],
+        "ko": "그것이 다른 사람에 관한 것일 때"
+      },
+      {
+        "id": "4",
+        "label": "if they have to do a little work",
+        "keywords": [
+          "a little work"
+        ],
+        "ko": "약간의 노력을 해야 할 때",
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "when they fail to fully understand it",
+        "keywords": [
+          "fail",
+          "fully understand"
+        ],
+        "ko": "그것을 완전히 이해하지 못할 때"
+      }
+    ],
+    "brief": {
+      "ask": "표의 가운데, 짜릿한 도약을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 너무 가까우면 그냥 걸어 건너고, 너무 멀면 못 건너요. 청중이 약간 애써서 틈을 뛰어 건널 때 가장 즐거워요.",
+      "final_wrong": "정답은 ④예요. 두 절벽이 너무 가까우면 도약이 없고, 너무 멀면 건너지 못해요. 청중이 조금 노력해서 뛰어 건널 때 즐거움이 커요.",
+      "option_feedback": {
+        "1": "relaxed는 4문장에서 농담하는 사람이 짐작하는 것 중 하나예요. 즐거움은 편안함이 아니라 짜릿한 도약에서 와요.",
+        "2": "예상과 맞으면 놀라움이 없어요. 두 절벽이 너무 가까워 그냥 걸어 건너는 쪽이에요.",
+        "3": "누구에 관한 농담인지는 글에 없어요. 글은 놀라움의 크기 이야기예요.",
+        "5": "끝까지 이해하지 못하면 두 절벽이 너무 먼 쪽이에요. 건너편에 닿지 못하면 즐거움도 없어요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 25%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "②는 '예상과 맞으면 즐겁다'는 상식처럼 들려서 끌려요. 하지만 글은 놀라움(surprise)이 농담의 기본이라고 했어요.\n예상과 딱 맞으면 두 절벽이 너무 가까워 그냥 걸어 건널 뿐, 짜릿한 도약이 없어요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "1·2문장",
+                "text": "Surprise is the fundamental joke mechanism",
+                "ko": "놀라움이 농담의 기본",
+                "tone": "hl"
+              },
+              {
+                "label": "8문장",
+                "text": "too close together → just steps across the gap",
+                "ko": "다 예상됨 — 도약 없음",
+                "tone": "hl2"
+              },
+              {
+                "label": "②",
+                "text": "matches their expectations",
+                "ko": "예상과 일치 — 너무 가까운 쪽",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "1": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "①은 4문장에 relaxed(편안한)가 나와서 끌려요. 하지만 그건 농담하는 사람이 청중에 대해 짐작하는 것 중 하나예요.\n빈칸은 청중이 언제 더 즐거운지예요 — 7·8문장 협곡 비유가 답을 줘요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "4문장",
+                "text": "how relaxed they appear to be",
+                "ko": "농담하는 사람이 짐작하는 것",
+                "tone": "hl2"
+              },
+              {
+                "label": "7·8문장",
+                "text": "not too far, not too close → a thrilling leap",
+                "ko": "짜릿한 도약 — 즐거움",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "fundamental",
+        "ko": "기본적인"
+      },
+      {
+        "en": "mechanism",
+        "ko": "작동 원리"
+      },
+      {
+        "en": "punch line",
+        "ko": "농담의 결정적인 구절"
+      },
+      {
+        "en": "rely on",
+        "ko": "~에 의존하다"
+      },
+      {
+        "en": "element",
+        "ko": "요소"
+      },
+      {
+        "en": "lie in",
+        "ko": "~에 있다"
+      },
+      {
+        "en": "be prepared to",
+        "ko": "~할 준비가 되어 있다"
+      },
+      {
+        "en": "assumption",
+        "ko": "가정"
+      },
+      {
+        "en": "reference point",
+        "ko": "기준점"
+      },
+      {
+        "en": "relaxed",
+        "ko": "편안한"
+      },
+      {
+        "en": "compare A to B",
+        "ko": "A를 B에 비유하다"
+      },
+      {
+        "en": "leap",
+        "ko": "뛰어넘다; 도약"
+      },
+      {
+        "en": "metaphorical",
+        "ko": "은유적인"
+      },
+      {
+        "en": "cliff",
+        "ko": "절벽"
+      },
+      {
+        "en": "make it",
+        "ko": "도달하다"
+      },
+      {
+        "en": "gap",
+        "ko": "틈"
+      },
+      {
+        "en": "thrilling",
+        "ko": "짜릿한"
+      }
+    ],
+    "options": [
+      {
+        "en": "match",
+        "ko": "일치하다"
+      },
+      {
+        "en": "expectation",
+        "ko": "예상"
+      },
+      {
+        "en": "fail to",
+        "ko": "~하지 못하다"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Surprise is the fundamental joke mechanism.",
+      "model_translation": "놀라움은 농담의 기본적인 작동 원리이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Surprise",
+          "ko": "놀라움"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "the fundamental joke mechanism",
+          "ko": "농담의 기본적인 작동 원리"
+        },
+        {
+          "en": "fundamental",
+          "ko": "기본적인, 근본적인"
+        },
+        {
+          "en": "mechanism",
+          "ko": "작동 원리, 구조"
+        },
+        {
+          "en": "The joke-hearers",
+          "ko": "농담을 듣는 사람들"
+        },
+        {
+          "en": "joke-hearers",
+          "ko": "농담을 듣는 사람들"
+        },
+        {
+          "en": "get",
+          "ko": "얻다"
+        },
+        {
+          "en": "far more pleasure",
+          "ko": "훨씬 더 큰 즐거움"
+        },
+        {
+          "en": "far more",
+          "ko": "훨씬 더"
+        },
+        {
+          "en": "pleasure",
+          "ko": "즐거움"
+        },
+        {
+          "en": "from the joke",
+          "ko": "그 농담에서"
+        },
+        {
+          "en": "joke",
+          "ko": "농담"
+        },
+        {
+          "en": "far",
+          "ko": "먼"
+        }
+      ],
+      "roles": [
+        {
+          "text": "Surprise",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "the fundamental joke mechanism",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 마지막 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "The joke-hearers get far more pleasure from the joke ________."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "joke-hearers는 '농담을 듣는 사람들'이에요. far more는 '훨씬 더'예요.",
+              "joke-hearers는 '농담을 듣는 사람들'이에요. far more는 '훨씬 더'예요."
+            ],
+            "explain": "'The joke-hearers get far more pleasure from the joke', 듣는 사람들이 그 농담에서 훨씬 더 큰 즐거움을 얻는대요. 빈칸에는 언제 그런지가 와요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'The joke-hearers get far more pleasure from the joke', 듣는 사람들이 그 농담에서 훨씬 더 큰 즐거움을 얻는대요. 빈칸에는 언제 그런지가 와요.",
+              "o2": "'The joke-hearers get far more pleasure from the joke', 듣는 사람들이 그 농담에서 훨씬 더 큰 즐거움을 얻는대요. 빈칸에는 언제 그런지가 와요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "농담을 듣는 사람들은 ____할 때 그 농담에서 훨씬 더 큰 즐거움을 얻는다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "농담을 하는 사람은 ____할 때 훨씬 더 즐겁다"
+            },
+            {
+              "id": "o2",
+              "label": "농담을 듣는 사람들은 ____ 농담보다 다른 데서 즐거움을 얻는다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "The joke-hearers get far more pleasure from the joke ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "joke-hearers",
+            "far more pleasure",
+            "________"
+          ],
+          "tips": [
+            {
+              "label": "far + 비교급",
+              "text": "far more는 '훨씬 더'예요. far가 비교급을 세게 해요.",
+              "mark": "far more"
+            }
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 듣는 사람이 언제 농담을 더 즐기는지 생각하며 문장 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "The joke-hearers get far more pleasure from the joke ________.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s1_basic",
+          "candidates": [
+            "Surprise",
+            "is",
+            "the fundamental joke mechanism"
+          ],
+          "answers": [
+            "Surprise",
+            "the fundamental joke mechanism",
+            "is"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Surprise",
+                "ko": "놀라움은"
+              },
+              " ",
+              {
+                "en": "the fundamental joke mechanism",
+                "ko": "농담의 기본적인 작동 원리"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "far + 비교급",
+              "text": "far more는 '훨씬 더'예요. far가 비교급을 세게 해요.",
+              "mark": "far more"
+            }
+          ]
+        }
+      ],
+      "emphasis": [
+        "Surprise",
+        "fundamental"
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Most punch lines rely on an element of surprise for their effect — that’s why they’re not funny the third time you hear them.",
+      "model_translation": "농담의 결정적인 대부분의 구절은 그것의 효과를 위해 놀라움이라는 요소에 의존하는데, 여러분이 그것을 세 번째 들을 때에는 재미가 없는 이유가 바로 그것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Most punch lines",
+          "ko": "대부분의 농담의 결정적 구절"
+        },
+        {
+          "en": "punch lines",
+          "ko": "농담의 결정적 구절 · 웃음이 터지는 마지막 한마디"
+        },
+        {
+          "en": "punch",
+          "ko": "펀치"
+        },
+        {
+          "en": "lines",
+          "ko": "구절, 대사"
+        },
+        {
+          "en": "Most",
+          "ko": "대부분의"
+        },
+        {
+          "en": "rely on",
+          "ko": "~에 의존하다"
+        },
+        {
+          "en": "rely",
+          "ko": "의존하다"
+        },
+        {
+          "en": "an element of surprise",
+          "ko": "놀라움이라는 요소"
+        },
+        {
+          "en": "element",
+          "ko": "요소"
+        },
+        {
+          "en": "surprise",
+          "ko": "놀라움"
+        },
+        {
+          "en": "for their effect",
+          "ko": "그 효과를 위해"
+        },
+        {
+          "en": "effect",
+          "ko": "효과"
+        },
+        {
+          "en": "that’s why",
+          "ko": "그래서 ~이다, 그것이 ~하는 이유이다"
+        },
+        {
+          "en": "they’re not funny",
+          "ko": "그것들은 재미가 없다"
+        },
+        {
+          "en": "funny",
+          "ko": "재미있는"
+        },
+        {
+          "en": "the third time",
+          "ko": "세 번째에"
+        },
+        {
+          "en": "third",
+          "ko": "세 번째의"
+        },
+        {
+          "en": "you hear them",
+          "ko": "여러분이 그것을 들을 때"
+        },
+        {
+          "en": "hear",
+          "ko": "듣다"
+        },
+        {
+          "en": "they’re",
+          "ko": "그것들은 ~이다"
+        }
+      ],
+      "slashes": [
+        "Most punch lines",
+        "an element of surprise",
+        "for their effect",
+        "that’s why",
+        "not funny"
+      ],
+      "roles": [
+        {
+          "text": "Most punch lines",
+          "role": "S"
+        },
+        {
+          "text": "rely on",
+          "role": "V"
+        },
+        {
+          "text": "an element of surprise",
+          "role": "O"
+        },
+        {
+          "text": "that",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "why they’re not funny the third time you hear them",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_why",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "농담을 세 번째 들으면 재미가 없는 이유는 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "that’s why 앞이 이유예요. rely on은 '~에 의존하다'예요.",
+              "that’s why 앞이 이유예요. rely on은 '~에 의존하다'예요."
+            ],
+            "explain": "'Most punch lines rely on an element of surprise', 웃음은 놀라움에 기대요. 세 번째로 들으면 이미 아는 말이라 놀랄 게 없어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'Most punch lines rely on an element of surprise', 웃음은 놀라움에 기대요. 세 번째로 들으면 이미 아는 말이라 놀랄 게 없어요.",
+              "o2": "'Most punch lines rely on an element of surprise', 웃음은 놀라움에 기대요. 세 번째로 들으면 이미 아는 말이라 놀랄 게 없어요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "이미 알고 있어서 놀라움이 없으니까",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "듣는 사람이 지쳐서"
+            },
+            {
+              "id": "o2",
+              "label": "농담이 점점 길어져서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "surprise",
+            "that’s why",
+            "not funny",
+            "third time"
+          ],
+          "tips": [
+            {
+              "label": "that’s why ~",
+              "text": "'그래서 ~이다'예요. 앞 말이 이유, why 뒤가 결과예요.",
+              "mark": "that’s why"
+            },
+            {
+              "label": "punch line",
+              "text": "이 글에서는 → 농담의 결정적 구절, 웃음이 터지는 마지막 말  ('주먹' 아님)",
+              "mark": "punch lines",
+              "trap": true
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "they’re not funny": "they = punch lines(농담의 결정적 구절)"
+      }
+    },
+    {
+      "id": 3,
+      "text": "The joke-teller’s skill lies in judging exactly how much of a surprise the audience is prepared to take.",
+      "model_translation": "농담을 하는 사람의 기술은 청중이 정확히 얼마만큼의 놀라움을 받아들일 준비가 되어 있는지를 판단하는 데 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The joke-teller’s skill",
+          "ko": "농담하는 사람의 기술"
+        },
+        {
+          "en": "joke-teller’s",
+          "ko": "농담하는 사람의"
+        },
+        {
+          "en": "skill",
+          "ko": "기술"
+        },
+        {
+          "en": "lies in",
+          "ko": "~에 있다"
+        },
+        {
+          "en": "lies",
+          "ko": "있다, 놓여 있다"
+        },
+        {
+          "en": "judging",
+          "ko": "판단하는 것"
+        },
+        {
+          "en": "exactly",
+          "ko": "정확히"
+        },
+        {
+          "en": "how much of a surprise",
+          "ko": "얼마만큼의 놀라움"
+        },
+        {
+          "en": "the audience",
+          "ko": "청중"
+        },
+        {
+          "en": "audience",
+          "ko": "청중"
+        },
+        {
+          "en": "is prepared to take",
+          "ko": "받아들일 준비가 되어 있다"
+        },
+        {
+          "en": "prepared",
+          "ko": "준비가 된"
+        },
+        {
+          "en": "take",
+          "ko": "받아들이다"
+        },
+        {
+          "en": "surprise",
+          "ko": "놀라움"
+        }
+      ],
+      "slashes": [
+        "The joke-teller’s skill",
+        "judging exactly",
+        "how much of a surprise"
+      ],
+      "roles": [
+        {
+          "text": "The joke-teller’s skill",
+          "role": "S"
+        },
+        {
+          "text": "lies",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_skill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "농담하는 사람의 기술은 무엇을 판단하는 데 있을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "judging 뒤 how much of a surprise를 봐요. take는 여기서 '받아들이다'예요.",
+              "judging 뒤 how much of a surprise를 봐요. take는 여기서 '받아들이다'예요."
+            ],
+            "explain": "'judging exactly how much of a surprise the audience is prepared to take', 청중이 받아들일 수 있는 놀라움이 정확히 얼마인지 판단하는 거래요. 많을수록 좋은 게 아니에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'judging exactly how much of a surprise the audience is prepared to take', 청중이 받아들일 수 있는 놀라움이 정확히 얼마인지 판단하는 거래요. 많을수록 좋은 게 아니에요.",
+              "o2": "'judging exactly how much of a surprise the audience is prepared to take', 청중이 받아들일 수 있는 놀라움이 정확히 얼마인지 판단하는 거래요. 많을수록 좋은 게 아니에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "청중을 최대한 많이 놀라게 하는 방법"
+            },
+            {
+              "id": "o1",
+              "label": "청중이 놀라움을 정확히 얼마만큼 받아들일 준비가 됐는지",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "같은 농담을 몇 번 들려줄지"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "lies in",
+            "how much",
+            "prepared to take"
+          ],
+          "tips": [
+            {
+              "label": "lie in ~",
+              "text": "이 글에서는 → ~에 있다  ('거짓말하다, 눕다' 아님)",
+              "mark": "lies in",
+              "trap": true
+            },
+            {
+              "label": "take",
+              "text": "이 글에서는 → 받아들이다  ('가져가다' 아님)",
+              "mark": "take",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "😲",
+                "en": "Surprise = joke mechanism",
+                "ko": "놀라움이 농담의 기본 — 세 번째 들으면 재미없어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "⚖️",
+                "en": "how much of a surprise",
+                "ko": "농담하는 사람은 청중이 받아들일 놀라움이 얼마인지 판단해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "emphasis": [
+        "how much of a surprise"
+      ]
+    },
+    {
+      "id": 4,
+      "text": "He must make a series of assumptions about what they will understand, what their reference points are, and how relaxed they appear to be.",
+      "model_translation": "그는 청중이 무엇을 이해할지, 그들의 기준점이 무엇인지, 그리고 그들이 얼마나 편안해 보이는지에 대해 일련의 가정을 세워야 한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "He",
+          "ko": "그(농담하는 사람)"
+        },
+        {
+          "en": "must make",
+          "ko": "세워야 한다"
+        },
+        {
+          "en": "must",
+          "ko": "~해야 한다"
+        },
+        {
+          "en": "a series of assumptions",
+          "ko": "일련의 가정"
+        },
+        {
+          "en": "series",
+          "ko": "일련, 연속"
+        },
+        {
+          "en": "assumptions",
+          "ko": "가정, 짐작"
+        },
+        {
+          "en": "about what they will understand",
+          "ko": "청중이 무엇을 이해할지에 대해"
+        },
+        {
+          "en": "understand",
+          "ko": "이해하다"
+        },
+        {
+          "en": "what their reference points are",
+          "ko": "그들의 기준점이 무엇인지"
+        },
+        {
+          "en": "reference points",
+          "ko": "기준점"
+        },
+        {
+          "en": "reference",
+          "ko": "참고, 기준"
+        },
+        {
+          "en": "points",
+          "ko": "점"
+        },
+        {
+          "en": "how relaxed they appear to be",
+          "ko": "그들이 얼마나 편안해 보이는지"
+        },
+        {
+          "en": "relaxed",
+          "ko": "편안한"
+        },
+        {
+          "en": "appear",
+          "ko": "~처럼 보이다"
+        }
+      ],
+      "slashes": [
+        "a series of assumptions",
+        "will understand,",
+        "reference points are,"
+      ],
+      "roles": [
+        {
+          "text": "He",
+          "role": "S"
+        },
+        {
+          "text": "must make",
+          "role": "V"
+        },
+        {
+          "text": "a series of assumptions",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "얼마나 놀라게 할지 정하려고, 농담하는 사람이 청중에 대해 짐작해야(assumptions) 하는 것들이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "assumptions"
+          ],
+          "tips": [
+            {
+              "label": "reference point",
+              "text": "'기준점'이에요. 청중이 무엇을 기준으로 알아듣는지예요.",
+              "mark": "reference points"
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "He": "the joke-teller(농담하는 사람)"
+      }
+    },
+    {
+      "id": 5,
+      "text": "Jerry Seinfeld once compared telling a joke to attempting to leap a metaphorical canyon, taking the audience with you.",
+      "model_translation": "한때 Jerry Seinfeld는 농담하는 것을 청중을 데리고 은유적인 협곡을 뛰어넘으려고 하는 것에 비유했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Jerry Seinfeld",
+          "ko": "제리 사인펠드 · 미국 코미디언 이름"
+        },
+        {
+          "en": "Jerry",
+          "ko": "제리 (이름)"
+        },
+        {
+          "en": "Seinfeld",
+          "ko": "사인펠드 (이름)"
+        },
+        {
+          "en": "once",
+          "ko": "한때, 언젠가"
+        },
+        {
+          "en": "compared",
+          "ko": "비유했다, 비교했다"
+        },
+        {
+          "en": "telling a joke",
+          "ko": "농담하는 것"
+        },
+        {
+          "en": "telling",
+          "ko": "말하는 것"
+        },
+        {
+          "en": "to attempting to leap",
+          "ko": "뛰어넘으려 하는 것에"
+        },
+        {
+          "en": "attempting",
+          "ko": "시도하는 것"
+        },
+        {
+          "en": "leap",
+          "ko": "뛰어넘다"
+        },
+        {
+          "en": "a metaphorical canyon",
+          "ko": "은유적인 협곡"
+        },
+        {
+          "en": "metaphorical",
+          "ko": "은유적인, 비유의"
+        },
+        {
+          "en": "canyon",
+          "ko": "협곡"
+        },
+        {
+          "en": "taking the audience with you",
+          "ko": "청중을 데리고"
+        },
+        {
+          "en": "taking",
+          "ko": "데리고 가는"
+        },
+        {
+          "en": "audience",
+          "ko": "청중"
+        },
+        {
+          "en": "joke",
+          "ko": "농담"
+        }
+      ],
+      "slashes": [
+        "once compared",
+        "telling a joke",
+        "to attempting to leap",
+        "a metaphorical canyon,"
+      ],
+      "roles": [
+        {
+          "text": "Jerry Seinfeld",
+          "role": "S"
+        },
+        {
+          "text": "compared",
+          "role": "V"
+        },
+        {
+          "text": "telling a joke",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_compare",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Seinfeld는 농담하는 것을 무엇에 비유했을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "compared A to B를 봐요. leap은 '뛰어넘다', taking the audience with you는 '청중을 데리고'예요.",
+              "compared A to B를 봐요. leap은 '뛰어넘다', taking the audience with you는 '청중을 데리고'예요."
+            ],
+            "explain": "'compared telling a joke to attempting to leap a metaphorical canyon', 농담하기를 협곡 뛰어넘기에 비유했어요. 'taking the audience with you', 청중을 데리고요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'compared telling a joke to attempting to leap a metaphorical canyon', 농담하기를 협곡 뛰어넘기에 비유했어요. 'taking the audience with you', 청중을 데리고요.",
+              "o2": "'compared telling a joke to attempting to leap a metaphorical canyon', 농담하기를 협곡 뛰어넘기에 비유했어요. 'taking the audience with you', 청중을 데리고요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "혼자 협곡을 구경하는 것"
+            },
+            {
+              "id": "o1",
+              "label": "청중을 데리고 협곡을 뛰어넘는 것",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "청중에게 협곡 사진을 보여 주는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "compared",
+            "leap",
+            "canyon",
+            "taking the audience"
+          ],
+          "tips": [
+            {
+              "label": "compare A to B",
+              "text": "여기서는 'A를 B에 비유하다'예요. 농담하기(A)를 협곡 뛰어넘기(B)에 빗댔어요.",
+              "mark": "compared"
+            }
+          ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "😲",
+                "en": "Surprise = joke mechanism",
+                "ko": "놀라움이 농담의 기본 — 세 번째 들으면 재미없어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "⚖️",
+                "en": "how much of a surprise",
+                "ko": "농담하는 사람은 청중이 받아들일 놀라움이 얼마인지 판단해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "🤔",
+                "en": "a series of assumptions",
+                "ko": "청중이 무엇을 이해할지 짐작해야 해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5",
+                "icon": "🏞️",
+                "en": "leap a canyon with the audience",
+                "ko": "농담하기 = 청중을 데리고 협곡을 뛰어넘기",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "The setup to the joke is the near-side cliff, and the punch line is the far side.",
+      "model_translation": "농담의 설정은 가까운 쪽 절벽이고, 농담의 결정적인 구절은 건너편 절벽이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The setup to the joke",
+          "ko": "농담의 설정"
+        },
+        {
+          "en": "setup",
+          "ko": "설정 · 웃음 전에 상황을 깔아 두는 앞부분"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "the near-side cliff",
+          "ko": "가까운 쪽 절벽"
+        },
+        {
+          "en": "near-side",
+          "ko": "가까운 쪽의"
+        },
+        {
+          "en": "cliff",
+          "ko": "절벽"
+        },
+        {
+          "en": "the punch line",
+          "ko": "농담의 결정적 구절"
+        },
+        {
+          "en": "punch line",
+          "ko": "농담의 결정적 구절"
+        },
+        {
+          "en": "the far side",
+          "ko": "건너편"
+        },
+        {
+          "en": "far",
+          "ko": "먼"
+        },
+        {
+          "en": "side",
+          "ko": "쪽, 편"
+        },
+        {
+          "en": "joke",
+          "ko": "농담"
+        },
+        {
+          "en": "punch",
+          "ko": "펀치"
+        },
+        {
+          "en": "line",
+          "ko": "구절"
+        }
+      ],
+      "slashes": [
+        "The setup to the joke",
+        "near-side cliff,"
+      ],
+      "roles": [
+        {
+          "text": "The setup to the joke",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "the near-side cliff",
+          "role": "C"
+        },
+        {
+          "text": "the punch line",
+          "role": "S"
+        },
+        {
+          "text": "the far side",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s6_basic",
+          "candidates": [
+            "The setup to the joke",
+            "the near-side cliff",
+            "the punch line",
+            "the far side"
+          ],
+          "answers": [
+            "The setup to the joke",
+            "the near-side cliff",
+            "the punch line",
+            "the far side"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The setup to the joke",
+                "ko": "농담의 설정은"
+              },
+              " ",
+              {
+                "en": "the near-side cliff",
+                "ko": "가까운 쪽 절벽"
+              },
+              "이고, ",
+              {
+                "en": "the punch line",
+                "ko": "결정적 구절은"
+              },
+              " ",
+              {
+                "en": "the far side",
+                "ko": "건너편 절벽"
+              },
+              "이다."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "농담 앞부분(setup)은 이쪽 절벽, 웃음이 터지는 말(punch line)은 건너편 절벽이래요.\n청중이 둘 사이를 뛰어 건너야 웃음이 나요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "setup (농담의 설정)",
+                "text": "the near-side cliff",
+                "ko": "이쪽 절벽",
+                "tone": "hl"
+              },
+              {
+                "label": "punch line (결정적 구절)",
+                "text": "the far side",
+                "ko": "건너편 절벽",
+                "tone": "hl"
+              },
+              {
+                "label": "joke (농담하기)",
+                "text": "leap a canyon",
+                "ko": "청중을 데리고 협곡을 뛰어넘기"
+              }
+            ]
+          },
+          "highlight": [
+            "setup",
+            "near-side cliff",
+            "punch line",
+            "far side"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "If they’re too far apart, the listeners don’t make it to the other side.",
+      "model_translation": "그것들이 너무 멀리 떨어져 있으면 청중은 반대편에 도달하지 못한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "If",
+          "ko": "만약 ~라면"
+        },
+        {
+          "en": "too far apart",
+          "ko": "너무 멀리 떨어진"
+        },
+        {
+          "en": "too",
+          "ko": "너무"
+        },
+        {
+          "en": "apart",
+          "ko": "떨어져"
+        },
+        {
+          "en": "the listeners",
+          "ko": "듣는 사람들"
+        },
+        {
+          "en": "listeners",
+          "ko": "듣는 사람들"
+        },
+        {
+          "en": "don’t make it",
+          "ko": "도달하지 못하다, 해내지 못하다"
+        },
+        {
+          "en": "make it",
+          "ko": "도달하다, 해내다"
+        },
+        {
+          "en": "to the other side",
+          "ko": "반대편에"
+        },
+        {
+          "en": "other",
+          "ko": "다른, 반대의"
+        },
+        {
+          "en": "side",
+          "ko": "편"
+        },
+        {
+          "en": "they’re",
+          "ko": "they’re"
+        },
+        {
+          "en": "far",
+          "ko": "먼"
+        },
+        {
+          "en": "don’t",
+          "ko": "~하지 않다"
+        }
+      ],
+      "slashes": [
+        "too far apart,"
+      ],
+      "roles": [
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "’re",
+          "role": "V"
+        },
+        {
+          "text": "too far apart",
+          "role": "C"
+        },
+        {
+          "text": "the listeners",
+          "role": "S"
+        },
+        {
+          "text": "don’t make",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_far",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "두 절벽이 너무 멀면(too far apart), 농담에서는 어떤 상황일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "don’t make it to the other side는 '건너편에 닿지 못한다'예요.",
+              "don’t make it to the other side는 '건너편에 닿지 못한다'예요."
+            ],
+            "explain": "앞부분과 웃음 포인트가 너무 떨어져 있으면 청중이 건너편에 닿지 못해요. 무슨 말인지 이해를 못 하는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "앞부분과 웃음 포인트가 너무 떨어져 있으면 청중이 건너편에 닿지 못해요. 무슨 말인지 이해를 못 하는 거예요.",
+              "o2": "앞부분과 웃음 포인트가 너무 떨어져 있으면 청중이 건너편에 닿지 못해요. 무슨 말인지 이해를 못 하는 거예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "청중이 너무 쉽게 다 알아챈다"
+            },
+            {
+              "id": "o1",
+              "label": "청중이 농담을 따라가지 못해 이해하지 못한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "농담이 너무 짧게 끝난다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "too far apart",
+            "don’t make it"
+          ],
+          "tips": [
+            {
+              "label": "make it",
+              "text": "이 글에서는 → (목적지에) 도달하다, 해내다  ('그것을 만들다' 아님)",
+              "mark": "make it",
+              "trap": true
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "they’re": "they = the setup and the punch line(설정과 결정적 구절, 두 절벽)"
+      },
+      "emphasis": [
+        "too far apart"
+      ]
+    },
+    {
+      "id": 8,
+      "text": "And if they are too close together, the audience just steps across the gap and doesn’t experience a thrilling leap of any kind.",
+      "model_translation": "그리고 그것들이 서로 너무 가깝다면, 청중은 그냥 그 틈을 걸어서 건너갈 뿐 어떠한 짜릿한 도약도 경험하지 못한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "And if",
+          "ko": "그리고 만약 ~라면"
+        },
+        {
+          "en": "they are",
+          "ko": "그것들이 ~이다"
+        },
+        {
+          "en": "too close together",
+          "ko": "서로 너무 가까운"
+        },
+        {
+          "en": "close",
+          "ko": "가까운"
+        },
+        {
+          "en": "together",
+          "ko": "함께, 서로"
+        },
+        {
+          "en": "the audience",
+          "ko": "청중"
+        },
+        {
+          "en": "just steps across the gap",
+          "ko": "그냥 그 틈을 걸어서 건너간다"
+        },
+        {
+          "en": "just",
+          "ko": "그냥, 단지"
+        },
+        {
+          "en": "steps",
+          "ko": "걸어가다, 발을 내딛다"
+        },
+        {
+          "en": "across",
+          "ko": "~을 가로질러"
+        },
+        {
+          "en": "the gap",
+          "ko": "그 틈"
+        },
+        {
+          "en": "gap",
+          "ko": "틈"
+        },
+        {
+          "en": "doesn’t experience",
+          "ko": "경험하지 못한다"
+        },
+        {
+          "en": "experience",
+          "ko": "경험하다"
+        },
+        {
+          "en": "a thrilling leap",
+          "ko": "짜릿한 도약"
+        },
+        {
+          "en": "thrilling",
+          "ko": "짜릿한, 신나는"
+        },
+        {
+          "en": "leap",
+          "ko": "도약"
+        },
+        {
+          "en": "of any kind",
+          "ko": "어떤 종류의 ~도"
+        },
+        {
+          "en": "kind",
+          "ko": "종류"
+        },
+        {
+          "en": "audience",
+          "ko": "청중"
+        },
+        {
+          "en": "doesn’t",
+          "ko": "~하지 않다"
+        }
+      ],
+      "slashes": [
+        "too close together,",
+        "across the gap",
+        "doesn’t experience"
+      ],
+      "roles": [
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "too close together",
+          "role": "C"
+        },
+        {
+          "text": "the audience",
+          "role": "S"
+        },
+        {
+          "text": "steps",
+          "role": "V"
+        },
+        {
+          "text": "doesn’t experience",
+          "role": "V"
+        },
+        {
+          "text": "a thrilling leap",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_close",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "두 절벽이 너무 가까우면(too close together), 농담에서는 어떤 상황일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "just steps across the gap은 '그냥 그 틈을 걸어서 건너간다'예요. thrilling은 '짜릿한'이에요.",
+              "just steps across the gap은 '그냥 그 틈을 걸어서 건너간다'예요. thrilling은 '짜릿한'이에요."
+            ],
+            "explain": "앞부분에서 웃음 포인트가 다 보이면 청중은 뛰지 않고 그냥 걸어서 건너요. 'doesn’t experience a thrilling leap', 짜릿한 도약이 없대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "앞부분에서 웃음 포인트가 다 보이면 청중은 뛰지 않고 그냥 걸어서 건너요. 'doesn’t experience a thrilling leap', 짜릿한 도약이 없대요.",
+              "o1": "앞부분에서 웃음 포인트가 다 보이면 청중은 뛰지 않고 그냥 걸어서 건너요. 'doesn’t experience a thrilling leap', 짜릿한 도약이 없대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "청중이 이해를 못 해서 웃지 못한다"
+            },
+            {
+              "id": "o1",
+              "label": "청중이 기분이 상한다"
+            },
+            {
+              "id": "o2",
+              "label": "청중이 다 예상해서 놀라움 없이 쉽게 넘어간다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "too close together",
+            "just steps across",
+            "thrilling leap"
+          ]
+        },
+        {
+          "id": "s8_table",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "너무 멀어도, 너무 가까워도 재미가 없어요.\n둘 다 짜릿한 도약(a thrilling leap)이 없어요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "too far apart",
+                "text": "don’t make it to the other side",
+                "ko": "건너편에 닿지 못한다",
+                "tone": "hl2"
+              },
+              {
+                "label": "too close together",
+                "text": "just steps across the gap",
+                "ko": "그냥 걸어 건넌다 — 짜릿한 도약이 없다",
+                "tone": "hl2"
+              },
+              {
+                "label": "?",
+                "text": "a thrilling leap",
+                "ko": "짜릿한 도약",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "they are": "they = the setup and the punch line(설정과 결정적 구절, 두 절벽)"
+      },
+      "emphasis": [
+        "too close together",
+        "a thrilling leap"
+      ]
+    },
+    {
+      "id": 9,
+      "text": "The joke-hearers get far more pleasure from the joke ________.",
+      "model_translation": "농담을 듣는 사람들은 ________ 그 농담에서 훨씬 더 큰 즐거움을 얻는다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The joke-hearers",
+          "ko": "농담을 듣는 사람들"
+        },
+        {
+          "en": "joke-hearers",
+          "ko": "농담을 듣는 사람들"
+        },
+        {
+          "en": "get",
+          "ko": "얻다"
+        },
+        {
+          "en": "far more pleasure",
+          "ko": "훨씬 더 큰 즐거움"
+        },
+        {
+          "en": "far more",
+          "ko": "훨씬 더"
+        },
+        {
+          "en": "pleasure",
+          "ko": "즐거움"
+        },
+        {
+          "en": "from the joke",
+          "ko": "그 농담에서"
+        },
+        {
+          "en": "joke",
+          "ko": "농담"
+        },
+        {
+          "en": "far",
+          "ko": "먼"
+        }
+      ],
+      "slashes": [
+        "far more pleasure"
+      ],
+      "roles": [
+        {
+          "text": "The joke-hearers",
+          "role": "S"
+        },
+        {
+          "text": "get",
+          "role": "V"
+        },
+        {
+          "text": "far more pleasure",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸은 훨씬 더 큰 즐거움(far more pleasure)을 얻을 때예요. 표의 어느 줄과 같은 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "pleasure(즐거움)는 좋은 말(+)이에요. 표에서 재미없다고 한 줄은 빼 봐요.",
+              "pleasure(즐거움)는 좋은 말(+)이에요. 표에서 재미없다고 한 줄은 빼 봐요."
+            ],
+            "explain": "너무 멀면 못 건너고, 너무 가까우면 도약이 없어요. 즐거움은 청중이 직접 뛰어 건너는 짜릿한 도약 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "너무 멀면 못 건너고, 너무 가까우면 도약이 없어요. 즐거움은 청중이 직접 뛰어 건너는 짜릿한 도약 쪽이에요.",
+              "o1": "너무 멀면 못 건너고, 너무 가까우면 도약이 없어요. 즐거움은 청중이 직접 뛰어 건너는 짜릿한 도약 쪽이에요."
+            },
+            "point": "빈칸 = far more pleasure(+) = 너무 멀지도 가깝지도 않아 청중이 직접 뛰어 건너는 도약 = 같은 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "너무 멂 — 건너편에 닿지 못함"
+            },
+            {
+              "id": "o1",
+              "label": "너무 가까움 — 그냥 걸어 건넘"
+            },
+            {
+              "id": "o2",
+              "label": "그 사이 — 짜릿한 도약",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "far more pleasure",
+            "________"
+          ],
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "too far apart",
+                "text": "don’t make it to the other side",
+                "ko": "건너편에 닿지 못한다",
+                "tone": "hl2"
+              },
+              {
+                "label": "too close together",
+                "text": "just steps across the gap",
+                "ko": "그냥 걸어 건넌다 — 짜릿한 도약이 없다",
+                "tone": "hl2"
+              },
+              {
+                "label": "?",
+                "text": "a thrilling leap",
+                "ko": "짜릿한 도약",
+                "tone": "hl"
+              }
+            ]
+          },
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장에 But, However, not 같은 반전 단서가 있으면 반대 의견이 들어가요. far more pleasure(훨씬 더 큰 즐거움)처럼 좋은 말(+)이면 글에서 좋다고 한 쪽과 같은 말이 들어가요."
+            }
+          ]
+        },
+        {
+          "id": "s9_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 빈칸에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "표의 가운데, 너무 가깝지도 너무 멀지도 않은 자리를 떠올려 봐요.",
+              "표의 가운데, 너무 가깝지도 너무 멀지도 않은 자리를 떠올려 봐요."
+            ],
+            "explain": "다 예상되면 너무 가까운 쪽이고, 끝까지 모르면 너무 먼 쪽이에요. 청중이 조금 애써서 틈을 뛰어 건널 때 가장 즐거워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "다 예상되면 너무 가까운 쪽이고, 끝까지 모르면 너무 먼 쪽이에요. 청중이 조금 애써서 틈을 뛰어 건널 때 가장 즐거워요.",
+              "o1": "다 예상되면 너무 가까운 쪽이고, 끝까지 모르면 너무 먼 쪽이에요. 청중이 조금 애써서 틈을 뛰어 건널 때 가장 즐거워요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "모든 것이 예상한 대로 흘러갈 때"
+            },
+            {
+              "id": "o1",
+              "label": "끝까지 무슨 말인지 모를 때"
+            },
+            {
+              "id": "o2",
+              "label": "청중이 스스로 조금 생각해서 뛰어 건너야 할 때",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "far more pleasure",
+            "________"
+          ]
+        },
+        {
+          "id": "s9_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 짜릿한 도약 쪽이에요. 청중이 틈을 직접 뛰어 건너는 것을 다른 말로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

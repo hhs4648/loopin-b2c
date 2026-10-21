@@ -1,0 +1,1983 @@
+{
+  "id": "mopyeong-2027-06-39-red-first-color",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 39번 (주어진 문장 넣기, 3점)",
+  "brief": {
+    "topic": "문장 넣기 푸는 법: 주어진 문장의 단서 → 앞에 올 내용 예측 → ①~⑤ 흐름이 끊기는 곳",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "sentence_insertion",
+    "labels": [
+      "주어진 문장 단서 찾기",
+      "앞에 올 내용 예측하기",
+      "흐름 끊기는 곳 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-red-first-color.svg",
+      "alt": "칠판: Red(빨간색) ↔ Other colors(다른 색들)",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/insert-method.svg",
+      "alt": "문장 넣기 푸는 법: ① 주어진 문장의 단서 찾기 ② 앞에 올 내용 예측하기 ③ 흐름이 끊기는 곳 찾기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "옛날 서양 사람들에게 빨간색은 어떤 색이었을까요? 이번 글은 서양에서 빨간색이 가진 자리를 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "문장 넣기는 주어진 문장부터 꼼꼼히 봐야 해요. 그 안에 앞 문장과 이어지는 단서가 숨어 있어요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "단서를 찾고, 앞에 올 내용을 예측한 뒤, 흐름이 끊기는 곳을 찾아요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳을 고르시오. [3점]",
+    "underline": [
+      "(①)",
+      "(②)",
+      "(③)",
+      "(④)",
+      "(⑤)"
+    ],
+    "numbers_only": true,
+    "passage_keywords": [
+      "also",
+      "color terms",
+      "humans",
+      "lexicon"
+    ],
+    "sentence": 1,
+    "analysis_first": true,
+    "wrong_rate": 59,
+    "wrong_rank": 6,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "Not that they did not exist … 앞",
+        "keywords": [],
+        "ko": "빨간색은 다른 모든 색을 뛰어넘었다 뒤"
+      },
+      {
+        "id": "2",
+        "label": "It was with red that humans … 앞",
+        "keywords": [],
+        "ko": "다른 색들은 오래 기다려야 했다 뒤"
+      },
+      {
+        "id": "3",
+        "label": "Here the lexicon seems … 앞",
+        "keywords": [],
+        "ko": "사람들의 첫 색 실험은 빨간색으로 했다 뒤",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "In certain languages … 앞",
+        "keywords": [],
+        "ko": "어휘 목록이 회화 관행과 일치한다 뒤"
+      },
+      {
+        "id": "5",
+        "label": "In other languages … 앞",
+        "keywords": [],
+        "ko": "같은 단어가 '빨간'과 '색이 있는'을 뜻한다 뒤"
+      }
+    ],
+    "brief": {
+      "ask": "주어진 문장의 also·they와 끝의 color terms를 떠올리며 들어갈 곳을 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 사람들의 첫 색 실험은 빨간색으로 했다(It was with red that humans …) → 색을 다양하게 만드는 법을 배운 것도(also) 빨간색 안에서였다, 가장 오래된 색 이름(color terms)이 보여 주듯이 → 여기서 그 어휘 목록(the lexicon)은 …, 순서예요.",
+      "final_wrong": "정답은 ③이에요. ③ 뒤 Here the lexicon이 받을 color terms를 주어진 문장이 먼저 꺼내 줘야 해요.",
+      "option_feedback": {
+        "1": "① 뒤 Not that they …의 they는 바로 앞 all others(다른 색들)를 받아요. 그 사이에 넣으면 they가 가리킬 게 바뀌어요.",
+        "2": "② 뒤 It was with red that humans …가 먼저 와야 주어진 문장의 also와 they(사람들)가 받을 말이 생겨요.",
+        "4": "④에 넣으면 ③ 뒤 Here the lexicon이 받을 단어 이야기가 여전히 앞에 없어요. 흐름이 ③에서 끊긴 채로 남아요.",
+        "5": "⑤ 앞뒤는 In certain languages → In other languages로 짝을 이룬 예시예요. 사이에 넣으면 짝이 끊겨요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 29%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "④에 넣으면 color terms 바로 뒤에 언어 예시(In certain languages …)가 와서 그럴듯해 보여요. 그런데 그러면 ③ 뒤 'Here the lexicon(여기서 그 어휘 목록)'이 받을 단어 이야기가 앞에 없어요.\nthe lexicon이 받을 color terms(주어진 문장)가 그보다 먼저, ③에 와야 해요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "② 뒤",
+                "text": "It was with red that humans …",
+                "ko": "사람들의 첫 색 실험은 빨간색으로",
+                "tone": "hl2"
+              },
+              {
+                "label": "주어진 문장",
+                "text": "also … they … color terms",
+                "ko": "그것도 빨간색 안에서 · 색 이름",
+                "tone": "hl"
+              },
+              {
+                "label": "③ 뒤",
+                "text": "Here the lexicon …",
+                "ko": "그 어휘 목록 = 색 이름",
+                "tone": "hl"
+              }
+            ]
+          }
+        },
+        "5": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 19%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "⑤ 앞뒤는 'In certain languages(어떤 언어에서는) … / In other languages(다른 언어에서는) …'로 짝을 이룬 예시예요. 그 사이에 넣으면 짝이 끊기고, ③ 뒤 the lexicon도 여전히 받을 말이 없어요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "④ 뒤",
+                "text": "In certain languages …",
+                "ko": "어떤 언어에서는",
+                "tone": "hl"
+              },
+              {
+                "label": "⑤ 뒤",
+                "text": "In other languages …",
+                "ko": "다른 언어에서는",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "within",
+        "ko": "~ 안에서"
+      },
+      {
+        "en": "diversify",
+        "ko": "다양화하다"
+      },
+      {
+        "en": "palette",
+        "ko": "색채의 범위"
+      },
+      {
+        "en": "varied",
+        "ko": "다양한"
+      },
+      {
+        "en": "tone",
+        "ko": "색조"
+      },
+      {
+        "en": "shade",
+        "ko": "명암"
+      },
+      {
+        "en": "demonstrate",
+        "ko": "보여 주다"
+      },
+      {
+        "en": "worthy of",
+        "ko": "~에 걸맞은"
+      },
+      {
+        "en": "exceed",
+        "ko": "뛰어넘다, 능가하다"
+      },
+      {
+        "en": "comparable",
+        "ko": "비슷한"
+      },
+      {
+        "en": "material culture",
+        "ko": "물질문화"
+      },
+      {
+        "en": "construct",
+        "ko": "구축하다"
+      },
+      {
+        "en": "in keeping with",
+        "ko": "~와 일치하는"
+      },
+      {
+        "en": "pictorial",
+        "ko": "회화의"
+      },
+      {
+        "en": "depending on",
+        "ko": "~에 따라"
+      },
+      {
+        "en": "context",
+        "ko": "문맥"
+      },
+      {
+        "en": "share",
+        "ko": "공유하다"
+      },
+      {
+        "en": "root",
+        "ko": "어원"
+      },
+      {
+        "en": "belong to",
+        "ko": "~에 속하다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 문장",
+      "text": "It was also within the range of reds that they learned early on to diversify the palette and to produce varied tones and shades, as the oldest known color terms demonstrate.",
+      "model_translation": "가장 오래된 색채 용어가 보여주듯이, 그들(인간)이 일찍부터 색채의 범위를 다양화하고 다양한 색조와 명암을 만들어 내는 법을 배웠던 것도 역시 바로 빨간색 계열 안에서였다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "It was",
+          "ko": "~한 것은 바로 …였다 (강조)"
+        },
+        {
+          "en": "also",
+          "ko": "~도 역시"
+        },
+        {
+          "en": "within the range of reds",
+          "ko": "빨간색 계열 안에서"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에서"
+        },
+        {
+          "en": "range",
+          "ko": "범위, 계열"
+        },
+        {
+          "en": "reds",
+          "ko": "빨간색들"
+        },
+        {
+          "en": "they",
+          "ko": "그들"
+        },
+        {
+          "en": "learned early on",
+          "ko": "일찍부터 배웠다"
+        },
+        {
+          "en": "learned",
+          "ko": "배웠다"
+        },
+        {
+          "en": "early on",
+          "ko": "일찍부터"
+        },
+        {
+          "en": "diversify",
+          "ko": "다양화하다"
+        },
+        {
+          "en": "the palette",
+          "ko": "색채의 범위"
+        },
+        {
+          "en": "palette",
+          "ko": "색채의 범위 · 원래는 물감을 섞는 판"
+        },
+        {
+          "en": "produce",
+          "ko": "만들어 내다"
+        },
+        {
+          "en": "varied tones and shades",
+          "ko": "다양한 색조와 명암"
+        },
+        {
+          "en": "varied",
+          "ko": "다양한"
+        },
+        {
+          "en": "tones",
+          "ko": "색조"
+        },
+        {
+          "en": "shades",
+          "ko": "명암"
+        },
+        {
+          "en": "the oldest known color terms",
+          "ko": "가장 오래된 색 이름(색채 용어)"
+        },
+        {
+          "en": "color terms",
+          "ko": "색 이름, 색채 용어"
+        },
+        {
+          "en": "oldest",
+          "ko": "가장 오래된"
+        },
+        {
+          "en": "known",
+          "ko": "알려진"
+        },
+        {
+          "en": "color",
+          "ko": "색"
+        },
+        {
+          "en": "terms",
+          "ko": "용어, 이름"
+        },
+        {
+          "en": "demonstrate",
+          "ko": "보여 주다"
+        },
+        {
+          "en": "early",
+          "ko": "일찍"
+        }
+      ],
+      "emphasis": [
+        "also",
+        "they",
+        "color terms"
+      ],
+      "slashes": [
+        "It was also",
+        "range of reds",
+        "learned early on",
+        "diversify the palette",
+        "and shades,"
+      ],
+      "roles": [
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "learned",
+          "role": "V"
+        },
+        {
+          "text": "the oldest known color terms",
+          "role": "S"
+        },
+        {
+          "text": "demonstrate",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "g_situation",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 문장은 무슨 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "It was A that ~는 '~한 것은 바로 A였다'예요. within the range of reds는 '빨간색 계열 안에서'예요.",
+              "It was A that ~는 '~한 것은 바로 A였다'예요. within the range of reds는 '빨간색 계열 안에서'예요."
+            ],
+            "explain": "'It was also within the range of reds that they learned …', 그들이 색조와 명암을 다양하게 만드는 법을 일찍 배운 것도 바로 빨간색 계열 안에서였대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'It was also within the range of reds that they learned …', 그들이 색조와 명암을 다양하게 만드는 법을 일찍 배운 것도 바로 빨간색 계열 안에서였대요.",
+              "o2": "'It was also within the range of reds that they learned …', 그들이 색조와 명암을 다양하게 만드는 법을 일찍 배운 것도 바로 빨간색 계열 안에서였대요."
+            },
+            "point": "주어진 문장 = 색을 다양하게 만드는 법을 배운 것도(also) 빨간색 안에서였다 (가장 오래된 색 이름이 보여 주듯이)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사람들이 색을 다양하게 만드는 법을 일찍 배운 것도 빨간색 계열 안에서였다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "사람들은 빨간색보다 다른 색으로 먼저 색을 다양하게 만들었다"
+            },
+            {
+              "id": "o2",
+              "label": "가장 오래된 색 이름에는 빨간색이 없었다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "within the range of reds",
+            "diversify"
+          ],
+          "tips": [
+            {
+              "label": "It was A that ~",
+              "text": "'~한 것은 바로 A였다'예요. A를 강조해요.",
+              "mark": "It was"
+            },
+            {
+              "label": "as + 주어 + 동사 (끝)",
+              "text": "'~가 보여 주듯이'예요. as the oldest known color terms demonstrate = 가장 오래된 색 이름이 보여 주듯이.",
+              "mark": "demonstrate"
+            },
+            {
+              "label": "shades",
+              "text": "이 글에서는 → 명암  ('그늘' 아님)",
+              "mark": "shades",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "g_clue",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "also",
+            "they",
+            "the palette",
+            "the oldest known color terms"
+          ],
+          "answers": [
+            "also",
+            "they"
+          ],
+          "brief": {
+            "ask": "앞 문장과 이어 주는 단서 두 개를 찾아 눌러 볼까요?",
+            "wrong": "그건 앞 문장과 잇는 말이 아니에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "also(~도 역시)는 앞에도 비슷한 말이 있다는 뜻이고, they(그들)는 앞에 나온 사람들을 가리켜요.",
+            "wrong_by": {
+              "the palette": "the palette는 '색채의 범위'예요. 앞에 무엇이 나왔다고 알려 주는 말을 찾아봐요.",
+              "the oldest known color terms": "이건 이 문장 안에서 근거를 대는 말이에요. 앞 문장과 잇는 말을 찾아봐요."
+            },
+            "point": "단서 = also(앞에도 비슷한 말) · they(앞에 나온 사람들)"
+          },
+          "method": 0,
+          "praise_tips": [
+            {
+              "label": "앞을 가리키는 말",
+              "text": "they, this, such 같은 말이 가리키는 것과 also가 받는 비슷한 내용은 바로 앞 문장에 있어야 해요."
+            }
+          ]
+        },
+        {
+          "id": "g_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 이 문장 바로 앞에는 어떤 내용이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "also(~도 역시)와 they(그들)를 떠올려 봐요. 앞에도 비슷한 말과 they가 가리킬 사람들이 있어야 해요.",
+              "also(~도 역시)와 they(그들)를 떠올려 봐요. 앞에도 비슷한 말과 they가 가리킬 사람들이 있어야 해요."
+            ],
+            "explain": "also가 있으니 앞에도 '빨간색 안에서 무언가를 했다'는 비슷한 말이 와요. they가 가리킬 사람들도 앞에 나와야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "also가 있으니 앞에도 '빨간색 안에서 무언가를 했다'는 비슷한 말이 와요. they가 가리킬 사람들도 앞에 나와야 해요.",
+              "o2": "also가 있으니 앞에도 '빨간색 안에서 무언가를 했다'는 비슷한 말이 와요. they가 가리킬 사람들도 앞에 나와야 해요."
+            },
+            "point": "주어진 문장 앞 = 사람들이 빨간색으로 무언가를 했다는 비슷한 말 (also · they)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사람들이 빨간색으로 해낸 또 다른 일",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "빨간색 말고 다른 색들이 먼저 쓰였다는 이야기"
+            },
+            {
+              "id": "o2",
+              "label": "여러 언어에서 빨간색을 뜻하는 단어 이야기"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "also",
+            "they"
+          ]
+        },
+        {
+          "id": "g_before_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "지문을 읽으며 사람들이 빨간색으로 무언가를 했다는 문장을 찾아봐요."
+          },
+          "method": 1,
+          "button": "지문 읽어 볼게요",
+          "panel": {
+            "kind": "contrast",
+            "title": "also → 앞에도 비슷한 말",
+            "between": "+",
+            "left": {
+              "title": "바로 앞 문장 (찾을 곳)",
+              "text": "사람들이 빨간색으로 ~했다"
+            },
+            "right": {
+              "title": "주어진 문장",
+              "text": "~한 것도(also) 빨간색 안에서였다"
+            }
+          },
+          "highlight": [
+            "also"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "For thousands of years in the West, red was the only color worthy of that name, the only true color.",
+      "model_translation": "서양에서 수천 년 동안 빨간색은 그 이름에 걸맞은 유일한 색, 즉 유일한 진정한 색이었다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "For thousands of years",
+          "ko": "수천 년 동안"
+        },
+        {
+          "en": "thousands",
+          "ko": "수천"
+        },
+        {
+          "en": "years",
+          "ko": "년"
+        },
+        {
+          "en": "in the West",
+          "ko": "서양에서"
+        },
+        {
+          "en": "West",
+          "ko": "서양"
+        },
+        {
+          "en": "red",
+          "ko": "빨간색"
+        },
+        {
+          "en": "was",
+          "ko": "~이었다"
+        },
+        {
+          "en": "the only color",
+          "ko": "유일한 색"
+        },
+        {
+          "en": "only",
+          "ko": "유일한"
+        },
+        {
+          "en": "color",
+          "ko": "색"
+        },
+        {
+          "en": "worthy of that name",
+          "ko": "그 이름에 걸맞은"
+        },
+        {
+          "en": "worthy",
+          "ko": "~할 만한, ~에 걸맞은"
+        },
+        {
+          "en": "name",
+          "ko": "이름"
+        },
+        {
+          "en": "the only true color",
+          "ko": "유일한 진정한 색"
+        },
+        {
+          "en": "true",
+          "ko": "진정한, 진짜의"
+        }
+      ],
+      "slashes": [
+        "For thousands of years",
+        "in the West,",
+        "the only color",
+        "worthy of that name,"
+      ],
+      "roles": [
+        {
+          "text": "red",
+          "role": "S"
+        },
+        {
+          "text": "was",
+          "role": "V"
+        },
+        {
+          "text": "the only color",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "worthy of that name"
+      ],
+      "steps": [
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "For thousands of years",
+            "red",
+            "was",
+            "the only color",
+            "worthy of that name"
+          ],
+          "answers": [
+            "For thousands of years",
+            "red",
+            "worthy of that name",
+            "the only color",
+            "was"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "For thousands of years",
+                "ko": "수천 년 동안"
+              },
+              " ",
+              {
+                "en": "red",
+                "ko": "빨간색은"
+              },
+              " ",
+              {
+                "en": "worthy of that name",
+                "ko": "그 이름에 걸맞은"
+              },
+              " ",
+              {
+                "en": "the only color",
+                "ko": "유일한 색"
+              },
+              {
+                "en": "was",
+                "ko": "이었다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "worthy of",
+              "text": "'~에 걸맞은, ~할 만한'이에요. worthy of that name = 그(색이라는) 이름에 걸맞은.",
+              "mark": "worthy of"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "As much on the historical as hierarchical level, it exceeded all others.",
+      "model_translation": "위계상으로나 역사적으로나 그것은 다른 모든 색을 뛰어넘었다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "As much on the historical",
+          "ko": "역사적으로도"
+        },
+        {
+          "en": "historical",
+          "ko": "역사적인"
+        },
+        {
+          "en": "as hierarchical level",
+          "ko": "위계상으로만큼"
+        },
+        {
+          "en": "hierarchical",
+          "ko": "위계의"
+        },
+        {
+          "en": "level",
+          "ko": "수준, 차원"
+        },
+        {
+          "en": "it",
+          "ko": "그것(빨간색)"
+        },
+        {
+          "en": "exceeded",
+          "ko": "뛰어넘었다, 능가했다"
+        },
+        {
+          "en": "all others",
+          "ko": "다른 모든 것(색)"
+        },
+        {
+          "en": "others",
+          "ko": "다른 것들"
+        }
+      ],
+      "slashes": [
+        "hierarchical level,"
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "exceeded",
+          "role": "V"
+        },
+        {
+          "text": "all others",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_exceed",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'it exceeded all others'는 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "it은 앞 문장의 red예요. exceed는 '뛰어넘다, 능가하다'예요.",
+              "it은 앞 문장의 red예요. exceed는 '뛰어넘다, 능가하다'예요."
+            ],
+            "explain": "it은 red, exceeded는 '뛰어넘었다', all others는 '다른 모든 색'이에요. 역사적으로나 위계상으로나 빨간색이 으뜸이었대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "it은 red, exceeded는 '뛰어넘었다', all others는 '다른 모든 색'이에요. 역사적으로나 위계상으로나 빨간색이 으뜸이었대요.",
+              "o2": "it은 red, exceeded는 '뛰어넘었다', all others는 '다른 모든 색'이에요. 역사적으로나 위계상으로나 빨간색이 으뜸이었대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "빨간색이 다른 모든 색을 뛰어넘었다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "다른 모든 색이 빨간색을 뛰어넘었다"
+            },
+            {
+              "id": "o2",
+              "label": "빨간색이 다른 색들과 똑같아졌다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "it exceeded all others"
+          ],
+          "tips": [
+            {
+              "label": "as much A as B",
+              "text": "'B만큼 A도'예요. As much on the historical as hierarchical level = 위계상으로나 역사적으로나.",
+              "mark": "As much"
+            }
+          ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🟥",
+                "en": "red = the only true color",
+                "ko": "서양에서 수천 년 동안 빨간색만 진짜 색이었고, 다른 모든 색을 뛰어넘었어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "it": "red(빨간색)"
+      }
+    },
+    {
+      "id": 4,
+      "text": "(①) Not that they did not exist, but they had to wait a long time before they were considered colors and then played a comparable role in material culture, social codes, and systems of thought.",
+      "model_translation": "다른 색들이 존재하지 않았던 것은 아니고, 다만 그것들이 색으로 인정받고 그다음 물질문화, 사회 규범, 그리고 사상 체계에서 비슷한 역할을 하게 되기까지 오랜 시간을 기다려야 했다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Not that",
+          "ko": "~라는 것은 아니고"
+        },
+        {
+          "en": "they",
+          "ko": "그것들(다른 색들)"
+        },
+        {
+          "en": "did not exist",
+          "ko": "존재하지 않았다"
+        },
+        {
+          "en": "exist",
+          "ko": "존재하다"
+        },
+        {
+          "en": "had to wait",
+          "ko": "기다려야 했다"
+        },
+        {
+          "en": "wait",
+          "ko": "기다리다"
+        },
+        {
+          "en": "a long time",
+          "ko": "오랜 시간"
+        },
+        {
+          "en": "before",
+          "ko": "~하기 전에, ~하기까지"
+        },
+        {
+          "en": "were considered",
+          "ko": "~로 여겨졌다"
+        },
+        {
+          "en": "considered",
+          "ko": "여겨진"
+        },
+        {
+          "en": "colors",
+          "ko": "색"
+        },
+        {
+          "en": "and then played",
+          "ko": "그다음 (역할을) 했다"
+        },
+        {
+          "en": "played",
+          "ko": "(역할을) 했다"
+        },
+        {
+          "en": "a comparable role",
+          "ko": "비슷한 역할"
+        },
+        {
+          "en": "comparable",
+          "ko": "비슷한, 비교할 만한"
+        },
+        {
+          "en": "role",
+          "ko": "역할"
+        },
+        {
+          "en": "material culture",
+          "ko": "물질문화"
+        },
+        {
+          "en": "material",
+          "ko": "물질의"
+        },
+        {
+          "en": "culture",
+          "ko": "문화"
+        },
+        {
+          "en": "social codes",
+          "ko": "사회 규범"
+        },
+        {
+          "en": "social",
+          "ko": "사회의"
+        },
+        {
+          "en": "codes",
+          "ko": "규범, 규칙"
+        },
+        {
+          "en": "systems of thought",
+          "ko": "사상 체계"
+        },
+        {
+          "en": "systems",
+          "ko": "체계"
+        },
+        {
+          "en": "thought",
+          "ko": "사상, 생각"
+        },
+        {
+          "en": "long",
+          "ko": "긴"
+        },
+        {
+          "en": "then",
+          "ko": "그때, 그러면"
+        }
+      ],
+      "slashes": [
+        "Not that they did not exist,",
+        "had to wait",
+        "a long time",
+        "considered colors",
+        "and then played",
+        "comparable role",
+        "material culture,"
+      ],
+      "roles": [
+        {
+          "text": "they … they … they",
+          "role": "S"
+        },
+        {
+          "text": "did not exist",
+          "role": "V"
+        },
+        {
+          "text": "had to wait",
+          "role": "V"
+        },
+        {
+          "text": "were considered",
+          "role": "V"
+        },
+        {
+          "text": "colors",
+          "role": "C"
+        },
+        {
+          "text": "played",
+          "role": "V"
+        },
+        {
+          "text": "a comparable role",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_notthat",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'Not that they did not exist, but …'는 무슨 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "Not that A, but B는 'A라는 건 아니고, B다'예요. they는 앞 문장의 all others(다른 색들)예요.",
+              "Not that A, but B는 'A라는 건 아니고, B다'예요. they는 앞 문장의 all others(다른 색들)예요."
+            ],
+            "explain": "'Not that they did not exist', 다른 색들이 없었던 건 아니래요. 'but they had to wait a long time', 다만 색으로 인정받기까지 오래 기다려야 했대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'Not that they did not exist', 다른 색들이 없었던 건 아니래요. 'but they had to wait a long time', 다만 색으로 인정받기까지 오래 기다려야 했대요.",
+              "o2": "'Not that they did not exist', 다른 색들이 없었던 건 아니래요. 'but they had to wait a long time', 다만 색으로 인정받기까지 오래 기다려야 했대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "다른 색들이 없었던 건 아니지만, 색으로 인정받기까지 오래 기다려야 했다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "다른 색들은 아예 존재하지 않았다"
+            },
+            {
+              "id": "o2",
+              "label": "다른 색들이 빨간색보다 먼저 색으로 인정받았다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Not that",
+            "had to wait a long time"
+          ],
+          "tips": [
+            {
+              "label": "Not that A, but B",
+              "text": "'A라는 것은 아니고, (다만) B다'예요.",
+              "mark": "Not that"
+            }
+          ]
+        },
+        {
+          "id": "s4_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "① 자리예요. '빨간색이 다른 모든 색을 뛰어넘었다' → '다른 색들도 없었던 건 아니지만 오래 기다려야 했다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "they가 바로 앞 all others(다른 색들)를 받아요. 그대로 이어져요.",
+              "they가 바로 앞 all others(다른 색들)를 받아요. 그대로 이어져요."
+            ],
+            "explain": "they가 바로 앞 all others(다른 색들)를 받아요. 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "they가 바로 앞 all others(다른 색들)를 받아요. 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 2,
+          "highlight": [
+            "(①)"
+          ]
+        }
+      ],
+      "refers": {
+        "they": "all others = the other colors(다른 색들)"
+      }
+    },
+    {
+      "id": 5,
+      "text": "(②) It was with red that humans did their first color experiments, achieved their first successes, and then constructed a chromatic universe.",
+      "model_translation": "인간이 최초의 색채 실험을 하고, 최초의 성공을 거두며, 나아가 색채의 세계를 구축했던 것은 바로 빨간색을 이용해서였다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "It was with red",
+          "ko": "바로 빨간색으로였다 (강조)"
+        },
+        {
+          "en": "red",
+          "ko": "빨간색"
+        },
+        {
+          "en": "humans",
+          "ko": "인간, 사람들"
+        },
+        {
+          "en": "did their first color experiments",
+          "ko": "첫 색채 실험을 했다"
+        },
+        {
+          "en": "first",
+          "ko": "첫, 최초의"
+        },
+        {
+          "en": "experiments",
+          "ko": "실험"
+        },
+        {
+          "en": "achieved their first successes",
+          "ko": "첫 성공을 거두었다"
+        },
+        {
+          "en": "achieved",
+          "ko": "거두었다, 이루었다"
+        },
+        {
+          "en": "successes",
+          "ko": "성공"
+        },
+        {
+          "en": "and then constructed",
+          "ko": "나아가 구축했다"
+        },
+        {
+          "en": "constructed",
+          "ko": "구축했다, 만들었다"
+        },
+        {
+          "en": "a chromatic universe",
+          "ko": "색채의 세계"
+        },
+        {
+          "en": "chromatic",
+          "ko": "색채의"
+        },
+        {
+          "en": "universe",
+          "ko": "세계, 우주"
+        },
+        {
+          "en": "color",
+          "ko": "색"
+        },
+        {
+          "en": "then",
+          "ko": "그때, 그러면"
+        }
+      ],
+      "slashes": [
+        "It was with red",
+        "color experiments,",
+        "first successes,",
+        "and then constructed"
+      ],
+      "roles": [
+        {
+          "text": "humans",
+          "role": "S"
+        },
+        {
+          "text": "did",
+          "role": "V"
+        },
+        {
+          "text": "their first color experiments",
+          "role": "O"
+        },
+        {
+          "text": "achieved",
+          "role": "V"
+        },
+        {
+          "text": "their first successes",
+          "role": "O"
+        },
+        {
+          "text": "constructed",
+          "role": "V"
+        },
+        {
+          "text": "a chromatic universe",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_mean",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "사람들(humans)이 빨간색으로 무엇을 했대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "It was with red that ~는 '~한 것은 바로 빨간색으로였다'예요. did · achieved · constructed 세 동사를 봐요.",
+              "It was with red that ~는 '~한 것은 바로 빨간색으로였다'예요. did · achieved · constructed 세 동사를 봐요."
+            ],
+            "explain": "'did their first color experiments, achieved their first successes, and then constructed a chromatic universe', 첫 실험, 첫 성공, 그리고 색의 세계까지 빨간색으로 해냈대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'did their first color experiments, achieved their first successes, and then constructed a chromatic universe', 첫 실험, 첫 성공, 그리고 색의 세계까지 빨간색으로 해냈대요.",
+              "o2": "'did their first color experiments, achieved their first successes, and then constructed a chromatic universe', 첫 실험, 첫 성공, 그리고 색의 세계까지 빨간색으로 해냈대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "처음으로 색 실험을 하고, 성공하고, 색의 세계를 만들었다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "빨간색만 쓰고 다른 색은 실험하지 않았다"
+            },
+            {
+              "id": "o2",
+              "label": "빨간색이라는 이름을 처음 지었다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "It was with red",
+            "first color experiments",
+            "first successes",
+            "constructed"
+          ]
+        },
+        {
+          "id": "s5_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "② 자리예요. '다른 색들은 색으로 인정받기까지 오래 기다려야 했다' → '사람들의 첫 색 실험은 빨간색으로 했다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "다른 색들이 오래 기다리는 동안, 첫 색 실험은 빨간색으로 했다는 말이 이어져요. 빨간색이 먼저였다는 흐름이에요.",
+              "다른 색들이 오래 기다리는 동안, 첫 색 실험은 빨간색으로 했다는 말이 이어져요. 빨간색이 먼저였다는 흐름이에요."
+            ],
+            "explain": "다른 색들이 오래 기다리는 동안, 첫 색 실험은 빨간색으로 했다는 말이 이어져요. 빨간색이 먼저였다는 흐름이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "다른 색들이 오래 기다리는 동안, 첫 색 실험은 빨간색으로 했다는 말이 이어져요. 빨간색이 먼저였다는 흐름이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 2,
+          "highlight": [
+            "(②)"
+          ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🟥",
+                "en": "red = the only true color",
+                "ko": "서양에서 수천 년 동안 빨간색만 진짜 색이었고, 다른 모든 색을 뛰어넘었어요",
+                "fresh": false
+              },
+              {
+                "label": "①~②",
+                "icon": "🧪",
+                "en": "others had to wait · with red → first experiments",
+                "ko": "다른 색들은 오래 기다렸고, 사람들의 첫 색 실험은 빨간색으로 했어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "emphasis": [
+        "It was with red",
+        "humans"
+      ]
+    },
+    {
+      "id": 6,
+      "text": "(③) Here the lexicon seems in keeping with pictorial practices and coloring techniques.",
+      "model_translation": "여기서 그 어휘 목록은 회화 관행 및 채색 기법과 일치하는 것 같다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Here",
+          "ko": "여기서"
+        },
+        {
+          "en": "the lexicon",
+          "ko": "그 어휘 목록"
+        },
+        {
+          "en": "lexicon",
+          "ko": "어휘 목록"
+        },
+        {
+          "en": "seems",
+          "ko": "~인 것 같다"
+        },
+        {
+          "en": "in keeping with",
+          "ko": "~와 일치하는, ~에 맞는"
+        },
+        {
+          "en": "pictorial practices",
+          "ko": "회화 관행"
+        },
+        {
+          "en": "pictorial",
+          "ko": "회화의, 그림의"
+        },
+        {
+          "en": "practices",
+          "ko": "관행"
+        },
+        {
+          "en": "coloring techniques",
+          "ko": "채색 기법"
+        },
+        {
+          "en": "coloring",
+          "ko": "채색"
+        },
+        {
+          "en": "techniques",
+          "ko": "기법"
+        },
+        {
+          "en": "keeping",
+          "ko": "일치 · in keeping with = ~와 일치하는"
+        }
+      ],
+      "slashes": [
+        "Here the lexicon",
+        "seems in keeping",
+        "pictorial practices"
+      ],
+      "roles": [
+        {
+          "text": "the lexicon",
+          "role": "S"
+        },
+        {
+          "text": "seems",
+          "role": "V"
+        },
+        {
+          "text": "in keeping with",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_here",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'Here the lexicon(여기서 그 어휘 목록)'이라고 했어요. 바로 앞에는 어떤 이야기가 있어야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "lexicon은 시험지 아래에 '어휘 목록'으로 풀어 줬어요. the와 Here는 앞에 나온 것을 받아요.",
+              "lexicon은 시험지 아래에 '어휘 목록'으로 풀어 줬어요. the와 Here는 앞에 나온 것을 받아요."
+            ],
+            "explain": "the lexicon(그 어휘 목록)은 앞에 나온 단어 이야기를 받아요. Here(여기서)도 앞 내용을 가리켜요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "the lexicon(그 어휘 목록)은 앞에 나온 단어 이야기를 받아요. Here(여기서)도 앞 내용을 가리켜요.",
+              "o2": "the lexicon(그 어휘 목록)은 앞에 나온 단어 이야기를 받아요. Here(여기서)도 앞 내용을 가리켜요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "색을 부르는 말(단어) 이야기",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "색을 칠하는 기법 이야기"
+            },
+            {
+              "id": "o2",
+              "label": "다른 색들이 오래 기다린 이야기"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Here the lexicon"
+          ],
+          "tips": [
+            {
+              "label": "in keeping with",
+              "text": "'~와 일치하는, ~에 맞는'이에요. seems in keeping with = ~와 일치하는 것 같다.",
+              "mark": "in keeping with"
+            }
+          ]
+        },
+        {
+          "id": "s6_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "③ 자리예요. '사람들의 첫 색 실험은 빨간색으로 했다' → '여기서 그 어휘 목록은 회화 관행과 일치한다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "앞 문장에는 단어·이름 이야기가 없어요. the lexicon(그 어휘 목록)이 받을 말이 없어서 흐름이 끊겨요.",
+              "앞 문장에는 단어·이름 이야기가 없어요. the lexicon(그 어휘 목록)이 받을 말이 없어서 흐름이 끊겨요."
+            ],
+            "explain": "앞 문장에는 단어·이름 이야기가 없어요. the lexicon(그 어휘 목록)이 받을 말이 없어서 흐름이 끊겨요.",
+            "praise": "맞아요! 여기서 흐름이 끊겨요.",
+            "feedback": {
+              "o0": "앞 문장에는 단어·이름 이야기가 없어요. the lexicon(그 어휘 목록)이 받을 말이 없어서 흐름이 끊겨요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요"
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요",
+              "correct": true
+            }
+          ],
+          "method": 2,
+          "highlight": [
+            "(③)"
+          ]
+        },
+        {
+          "id": "s6_terms",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 문장에서 the lexicon(어휘 목록)이 받을 수 있는 말은 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "lexicon은 단어(말)를 모은 거예요. 주어진 문장에서 단어·이름을 뜻하는 말을 찾아봐요.",
+              "lexicon은 단어(말)를 모은 거예요. 주어진 문장에서 단어·이름을 뜻하는 말을 찾아봐요."
+            ],
+            "explain": "terms는 '용어, 이름'이에요. 가장 오래된 색 이름이 단어 이야기라 the lexicon이 받을 수 있어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "terms는 '용어, 이름'이에요. 가장 오래된 색 이름이 단어 이야기라 the lexicon이 받을 수 있어요.",
+              "o1": "terms는 '용어, 이름'이에요. 가장 오래된 색 이름이 단어 이야기라 the lexicon이 받을 수 있어요."
+            },
+            "point": "③ 뒤 the lexicon(어휘 목록) ← 주어진 문장의 color terms(색 이름)가 받아 준다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "the palette"
+            },
+            {
+              "id": "o1",
+              "label": "varied tones and shades"
+            },
+            {
+              "id": "o2",
+              "label": "the oldest known color terms",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "display": "It was also within the range of reds that they learned early on to diversify the palette and to produce varied tones and shades, as the oldest known color terms demonstrate.",
+          "tag": "주어진 문장"
+        }
+      ],
+      "emphasis": [
+        "Here",
+        "the lexicon"
+      ]
+    },
+    {
+      "id": 7,
+      "text": "(④) In certain languages, the same word can mean “red” or simply “colored,” depending on the context, such as coloratus in classical Latin or colorado in modern Castilian.",
+      "model_translation": "어떤 언어에서는 문맥에 따라, 고전 라틴어의 ‘coloratus’ 또는 현대 카스티야어의 ‘colorado’처럼 같은 단어가 ‘빨간색’을 의미하거나 단순히 ‘색이 있는(유색의)’을 의미하기도 한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "In certain languages",
+          "ko": "어떤 언어에서는"
+        },
+        {
+          "en": "certain",
+          "ko": "어떤, 특정한"
+        },
+        {
+          "en": "languages",
+          "ko": "언어"
+        },
+        {
+          "en": "the same word",
+          "ko": "같은 단어"
+        },
+        {
+          "en": "same",
+          "ko": "같은"
+        },
+        {
+          "en": "word",
+          "ko": "단어"
+        },
+        {
+          "en": "can mean",
+          "ko": "~을 뜻할 수 있다"
+        },
+        {
+          "en": "mean",
+          "ko": "뜻하다"
+        },
+        {
+          "en": "red",
+          "ko": "빨간"
+        },
+        {
+          "en": "simply",
+          "ko": "단순히"
+        },
+        {
+          "en": "colored",
+          "ko": "색이 있는, 유색의"
+        },
+        {
+          "en": "depending on the context",
+          "ko": "문맥에 따라"
+        },
+        {
+          "en": "depending on",
+          "ko": "~에 따라"
+        },
+        {
+          "en": "context",
+          "ko": "문맥"
+        },
+        {
+          "en": "such as",
+          "ko": "~처럼"
+        },
+        {
+          "en": "coloratus",
+          "ko": "콜로라투스 · 라틴어 단어"
+        },
+        {
+          "en": "in classical Latin",
+          "ko": "고전 라틴어의"
+        },
+        {
+          "en": "classical",
+          "ko": "고전의"
+        },
+        {
+          "en": "Latin",
+          "ko": "라틴어"
+        },
+        {
+          "en": "colorado",
+          "ko": "콜로라도 · 카스티야어(스페인어) 단어"
+        },
+        {
+          "en": "in modern Castilian",
+          "ko": "현대 카스티야어의"
+        },
+        {
+          "en": "modern",
+          "ko": "현대의"
+        },
+        {
+          "en": "Castilian",
+          "ko": "카스티야어 · 스페인어"
+        },
+        {
+          "en": "depending",
+          "ko": "~에 따라 · depending on"
+        }
+      ],
+      "slashes": [
+        "In certain languages,",
+        "can mean",
+        "“colored,”",
+        "the context,",
+        "classical Latin"
+      ],
+      "roles": [
+        {
+          "text": "the same word",
+          "role": "S"
+        },
+        {
+          "text": "can mean",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_lang",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "어떤 언어에서는 같은 단어가 '빨간'도, 그냥 '색이 있는'도 뜻한대요. 빨간색이 곧 '색'이었다는 단어 예시예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "the same word",
+            "“red”",
+            "“colored,”"
+          ],
+          "tips": [
+            {
+              "label": "depending on",
+              "text": "'~에 따라'예요. depending on the context = 문맥에 따라.",
+              "mark": "depending on"
+            },
+            {
+              "label": "certain",
+              "text": "이 글에서는 → 어떤  ('확실한' 아님)",
+              "mark": "certain",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s7_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "④ 자리예요. '여기서 그 어휘 목록은 회화 관행과 일치한다' → '어떤 언어에서는 같은 단어가 '빨간'과 '색이 있는'을 뜻한다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "어휘 목록 이야기를 In certain languages(어떤 언어에서는)의 단어 예시로 이어 가요. 흐름이 끊기지 않아요.",
+              "어휘 목록 이야기를 In certain languages(어떤 언어에서는)의 단어 예시로 이어 가요. 흐름이 끊기지 않아요."
+            ],
+            "explain": "어휘 목록 이야기를 In certain languages(어떤 언어에서는)의 단어 예시로 이어 가요. 흐름이 끊기지 않아요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "어휘 목록 이야기를 In certain languages(어떤 언어에서는)의 단어 예시로 이어 가요. 흐름이 끊기지 않아요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 2,
+          "highlight": [
+            "(④)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "(⑤) In other languages, the words meaning “red” and “beautiful” share a common root; for example, that is the case in Russian, in which the terms krasnyy (red) and krasivy (beautiful) belong to the same lexical family.",
+      "model_translation": "다른 언어들에서는 ‘빨간’을 뜻하는 단어와 ‘아름다운’을 뜻하는 단어가 같은 어원을 공유하는데, 예를 들어 러시아어에서 ‘krasnyy’(빨간색의)와 ‘krasivy’(아름다운)라는 용어가 같은 어족에 속하는 것이 이 경우이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "In other languages",
+          "ko": "다른 언어들에서는"
+        },
+        {
+          "en": "languages",
+          "ko": "언어"
+        },
+        {
+          "en": "the words",
+          "ko": "단어들"
+        },
+        {
+          "en": "meaning",
+          "ko": "~을 뜻하는"
+        },
+        {
+          "en": "beautiful",
+          "ko": "아름다운"
+        },
+        {
+          "en": "share",
+          "ko": "공유하다, 같이 가지다"
+        },
+        {
+          "en": "a common root",
+          "ko": "같은 어원(뿌리)"
+        },
+        {
+          "en": "common",
+          "ko": "공통의"
+        },
+        {
+          "en": "root",
+          "ko": "뿌리, 어원"
+        },
+        {
+          "en": "for example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "that",
+          "ko": "그것(앞 내용)"
+        },
+        {
+          "en": "the case",
+          "ko": "이 경우"
+        },
+        {
+          "en": "case",
+          "ko": "경우"
+        },
+        {
+          "en": "in Russian",
+          "ko": "러시아어에서"
+        },
+        {
+          "en": "Russian",
+          "ko": "러시아어"
+        },
+        {
+          "en": "in which",
+          "ko": "그 안에서(러시아어에서)"
+        },
+        {
+          "en": "the terms",
+          "ko": "용어들"
+        },
+        {
+          "en": "terms",
+          "ko": "용어"
+        },
+        {
+          "en": "krasnyy",
+          "ko": "크라스니 · 러시아어 '빨간'"
+        },
+        {
+          "en": "krasivy",
+          "ko": "크라시비 · 러시아어 '아름다운'"
+        },
+        {
+          "en": "belong to",
+          "ko": "~에 속하다"
+        },
+        {
+          "en": "belong",
+          "ko": "속하다"
+        },
+        {
+          "en": "the same lexical family",
+          "ko": "같은 어족(어휘 집안)"
+        },
+        {
+          "en": "lexical",
+          "ko": "어휘의"
+        },
+        {
+          "en": "family",
+          "ko": "가족, 집안"
+        },
+        {
+          "en": "words",
+          "ko": "단어들"
+        }
+      ],
+      "slashes": [
+        "In other languages,",
+        "the words meaning",
+        "share a common root;",
+        "for example,",
+        "the case in Russian,",
+        "and krasivy (beautiful)"
+      ],
+      "roles": [
+        {
+          "text": "the words",
+          "role": "S"
+        },
+        {
+          "text": "share",
+          "role": "V"
+        },
+        {
+          "text": "a common root",
+          "role": "O"
+        },
+        {
+          "text": "that",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "the case",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "meaning “red” and “beautiful”",
+        "in which the terms krasnyy (red) and krasivy (beautiful) belong to the same lexical family"
+      ],
+      "steps": [
+        {
+          "id": "s8_lang",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "다른 언어에서는 '빨간'과 '아름다운'을 뜻하는 단어가 같은 뿌리래요. 러시아어 krasnyy와 krasivy가 그 예예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "a common root",
+            "krasnyy",
+            "krasivy"
+          ],
+          "tips": [
+            {
+              "label": "case",
+              "text": "이 글에서는 → 경우  ('상자' 아님) · that is the case = 이 경우이다",
+              "mark": "the case",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s8_flow",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "⑤ 자리예요. '어떤 언어에서는 같은 단어가 '빨간'과 '색이 있는'을 뜻한다' → '다른 언어에서는 '빨간'과 '아름다운'이 같은 뿌리다', 자연스럽게 이어지나요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "In certain languages(어떤 언어에서는) → In other languages(다른 언어에서는)로 짝을 이뤄요. 그대로 이어져요.",
+              "In certain languages(어떤 언어에서는) → In other languages(다른 언어에서는)로 짝을 이뤄요. 그대로 이어져요."
+            ],
+            "explain": "In certain languages(어떤 언어에서는) → In other languages(다른 언어에서는)로 짝을 이뤄요. 그대로 이어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "In certain languages(어떤 언어에서는) → In other languages(다른 언어에서는)로 짝을 이뤄요. 그대로 이어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "네, 이어져요",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "아니요, 끊겨요"
+            }
+          ],
+          "method": 2,
+          "highlight": [
+            "(⑤)"
+          ]
+        },
+        {
+          "id": "story_8",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "글 전체가 어떤 이야기인지 칠판으로 한 번 볼게요."
+          },
+          "method": 0,
+          "button": "다음",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🟥",
+                "en": "red = the only true color",
+                "ko": "서양에서 수천 년 동안 빨간색만 진짜 색이었고, 다른 모든 색을 뛰어넘었어요",
+                "fresh": false
+              },
+              {
+                "label": "①~②",
+                "icon": "🧪",
+                "en": "others had to wait · with red → first experiments",
+                "ko": "다른 색들은 오래 기다렸고, 사람들의 첫 색 실험은 빨간색으로 했어요",
+                "fresh": false
+              },
+              {
+                "label": "③~⑤",
+                "icon": "🔤",
+                "en": "red = colored · red ~ beautiful",
+                "ko": "여러 언어에서 '빨간'은 '색이 있는', '아름다운'과 같은 말이에요",
+                "fresh": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "s8_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "①~⑤ 중 흐름이 끊긴 곳은 하나였어요. 주어진 문장의 also와 color terms를 떠올리며 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ],
+      "refers": {
+        "that": "the words for red and beautiful share a root(빨간·아름다운이 같은 어원)"
+      }
+    }
+  ],
+  "passage_on_try": true
+}

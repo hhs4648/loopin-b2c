@@ -1,0 +1,1819 @@
+{
+  "id": "mopyeong-2027-09-31-public-speaking",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 9월 모의평가(2027학년도, 한국교육과정평가원) 영어 31번 (빈칸 추론, 2점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 같은 말 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-public-speaking.svg",
+      "alt": "칠판: Speaking(사람들 앞에서 말하기) → Stress(스트레스)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "사람들 앞에서 말할 때 왜 심장이 빨리 뛸까요? 이번 글은 그 이유를 진화(evolution)에서 찾아요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.",
+    "underline": "________",
+    "sentence": 9,
+    "analysis_first": true,
+    "wrong_rate": 29,
+    "wrong_rank": 10,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "Belonging",
+        "ko": "소속감, 소속"
+      },
+      {
+        "en": "Confidence",
+        "ko": "자신감"
+      },
+      {
+        "en": "Endurance",
+        "ko": "인내"
+      },
+      {
+        "en": "Learning",
+        "ko": "학습"
+      },
+      {
+        "en": "Competition",
+        "ko": "경쟁"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "Belonging",
+        "keywords": [
+          "Belonging"
+        ],
+        "ko": "소속감",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "Confidence",
+        "keywords": [
+          "Confidence"
+        ],
+        "ko": "자신감"
+      },
+      {
+        "id": "3",
+        "label": "Endurance",
+        "keywords": [
+          "Endurance"
+        ],
+        "ko": "인내"
+      },
+      {
+        "id": "4",
+        "label": "Learning",
+        "keywords": [
+          "Learning"
+        ],
+        "ko": "학습"
+      },
+      {
+        "id": "5",
+        "label": "Competition",
+        "keywords": [
+          "Competition"
+        ],
+        "ko": "경쟁"
+      }
+    ],
+    "brief": {
+      "ask": "빈칸은 집단에서 밀려나는 것의 반대, 생존이 걸린 것이에요. 이 말을 바꿔 쓴 보기를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 오래전에는 집단에서 밀려나면(exclusion) 생사가 걸렸어요. 혼자서는 살아남을 수 없었으니, 집단에 속하는 것(Belonging)이 생존의 문제였어요.",
+      "final_wrong": "정답은 ① Belonging(소속감)이에요. 집단에서 배제되면 생사가 걸렸으니, 집단에 속하는 것이 생존의 문제였어요.",
+      "option_feedback": {
+        "2": "Confidence(자신감)는 '사람들 앞에서 말하기'에서 떠올리기 쉬워요. 하지만 글은 자신감이 아니라 집단에서 밀려나는 이야기예요.",
+        "3": "Endurance(인내)는 글에 없는 이야기예요. 무엇을 참고 견딘다는 말은 나오지 않아요.",
+        "4": "Learning(학습)은 글에 없는 이야기예요. 빈칸은 집단과 생존에 관한 말이에요.",
+        "5": "Competition(경쟁)은 남과 겨루는 말이에요. 글은 겨루기가 아니라 집단에서 배제되지 않는 게 중요했다는 이야기예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "Confidence(자신감)는 글 첫머리의 '사람들 앞에서 말하기'에서 떠올리기 쉬워요. 하지만 글은 왜 그게 불편한지, 그 이유를 말해요.\n이유는 집단에서 밀려나는 것(excluded, alienated, exclusion)이에요. 혼자서는 살아남을 수 없었으니, 생존이 걸린 건 집단에 속하는 거예요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "4문장",
+                "text": "not to be excluded from the group",
+                "ko": "집단에서 배제되지 않는 것이 중요했다",
+                "tone": "hl"
+              },
+              {
+                "label": "8문장",
+                "text": "exclusion from the group … life and death",
+                "ko": "집단에서 배제되면 생사가 걸렸다",
+                "tone": "hl"
+              },
+              {
+                "label": "10문장",
+                "text": "couldn’t make it on your own",
+                "ko": "혼자서는 살아남을 수 없었다",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "stress out",
+        "ko": "스트레스를 주다"
+      },
+      {
+        "en": "in front of",
+        "ko": "~ 앞에서"
+      },
+      {
+        "en": "glossophobia",
+        "ko": "말하기 공포증"
+      },
+      {
+        "en": "uncomfortable",
+        "ko": "불편한"
+      },
+      {
+        "en": "evolution",
+        "ko": "진화"
+      },
+      {
+        "en": "exclude",
+        "ko": "배제하다"
+      },
+      {
+        "en": "prepare for",
+        "ko": "~에 대비하다"
+      },
+      {
+        "en": "evaluate",
+        "ko": "평가하다"
+      },
+      {
+        "en": "shame",
+        "ko": "망신시키다"
+      },
+      {
+        "en": "alienate",
+        "ko": "소외시키다"
+      },
+      {
+        "en": "fire up",
+        "ko": "작동시키다"
+      },
+      {
+        "en": "sensitivity",
+        "ko": "민감성"
+      },
+      {
+        "en": "adapt",
+        "ko": "적응시키다"
+      },
+      {
+        "en": "presentation",
+        "ko": "발표"
+      },
+      {
+        "en": "be unlikely to",
+        "ko": "~할 것 같지 않다"
+      },
+      {
+        "en": "risk",
+        "ko": "~의 위험에 처하다"
+      },
+      {
+        "en": "evolve",
+        "ko": "진화하다"
+      },
+      {
+        "en": "exclusion",
+        "ko": "배제"
+      },
+      {
+        "en": "a matter of life and death",
+        "ko": "생사의 문제"
+      },
+      {
+        "en": "not merely A but also B",
+        "ko": "A일 뿐만 아니라 B이기도"
+      },
+      {
+        "en": "survival",
+        "ko": "생존"
+      },
+      {
+        "en": "make it",
+        "ko": "살아남다, 해내다"
+      },
+      {
+        "en": "on one’s own",
+        "ko": "혼자서"
+      }
+    ],
+    "options": [
+      {
+        "en": "belonging",
+        "ko": "소속감"
+      },
+      {
+        "en": "confidence",
+        "ko": "자신감"
+      },
+      {
+        "en": "endurance",
+        "ko": "인내"
+      },
+      {
+        "en": "learning",
+        "ko": "학습"
+      },
+      {
+        "en": "competition",
+        "ko": "경쟁"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "What stresses you out more than anything?",
+      "model_translation": "무엇이 여러분에게 어떤 것보다 더 많은 스트레스를 주는가?",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "What",
+          "ko": "무엇"
+        },
+        {
+          "en": "stresses you out",
+          "ko": "너에게 스트레스를 주다"
+        },
+        {
+          "en": "stresses",
+          "ko": "스트레스를 주다"
+        },
+        {
+          "en": "more than anything",
+          "ko": "어떤 것보다 더"
+        },
+        {
+          "en": "anything",
+          "ko": "어떤 것"
+        },
+        {
+          "en": "not merely",
+          "ko": "단순히 ~만이 아니라"
+        },
+        {
+          "en": "merely",
+          "ko": "단순히, 그저"
+        },
+        {
+          "en": "a matter of safety",
+          "ko": "안전의 문제"
+        },
+        {
+          "en": "matter",
+          "ko": "문제"
+        },
+        {
+          "en": "safety",
+          "ko": "안전"
+        },
+        {
+          "en": "but also",
+          "ko": "~이기도 하다"
+        },
+        {
+          "en": "of survival",
+          "ko": "생존의"
+        },
+        {
+          "en": "survival",
+          "ko": "생존"
+        }
+      ],
+      "roles": [
+        {
+          "text": "What",
+          "role": "S"
+        },
+        {
+          "text": "stresses … out",
+          "role": "V"
+        },
+        {
+          "text": "you",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 아홉째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "________ was not merely a matter of safety but also of survival."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not merely A but also B는 'A일 뿐만 아니라 B이기도 하다'예요. not이 있어도 A를 지우는 말이 아니에요.",
+              "not merely A but also B는 'A일 뿐만 아니라 B이기도 하다'예요. not이 있어도 A를 지우는 말이 아니에요."
+            ],
+            "explain": "'not merely a matter of safety but also of survival', 안전의 문제일 뿐만 아니라 생존의 문제이기도 했대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'not merely a matter of safety but also of survival', 안전의 문제일 뿐만 아니라 생존의 문제이기도 했대요.",
+              "o2": "'not merely a matter of safety but also of survival', 안전의 문제일 뿐만 아니라 생존의 문제이기도 했대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "____은 안전의 문제였을 뿐 아니라 생존의 문제이기도 했다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "____은 안전의 문제였을 뿐, 생존과는 상관없었다"
+            },
+            {
+              "id": "o2",
+              "label": "____은 안전의 문제도 생존의 문제도 아니었다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "________ was not merely a matter of safety but also of survival.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "________",
+            "not merely",
+            "but also",
+            "survival"
+          ],
+          "tips": [
+            {
+              "label": "not merely A but also B",
+              "text": "'A일 뿐만 아니라 B이기도 하다'예요. not only A but also B와 같아요.",
+              "mark": "not merely"
+            }
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 생존이 걸린 무언가예요. 옛날 사람들에게 무엇이 생존의 문제였는지 생각하며 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "________ was not merely a matter of safety but also of survival.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "________",
+            "survival"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Perhaps it’s speaking in front of others.",
+      "model_translation": "아마도 그것은 사람들 앞에서 말하는 것일 것이다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Perhaps",
+          "ko": "아마도"
+        },
+        {
+          "en": "it’s",
+          "ko": "그것은 ~이다"
+        },
+        {
+          "en": "speaking in front of others",
+          "ko": "다른 사람들 앞에서 말하는 것"
+        },
+        {
+          "en": "speaking",
+          "ko": "말하는 것"
+        },
+        {
+          "en": "in front of",
+          "ko": "~ 앞에서"
+        },
+        {
+          "en": "front",
+          "ko": "앞"
+        },
+        {
+          "en": "others",
+          "ko": "다른 사람들"
+        }
+      ],
+      "roles": [
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "’s",
+          "role": "V"
+        },
+        {
+          "text": "speaking in front of others",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "Perhaps",
+            "it’s",
+            "speaking in front of others"
+          ],
+          "answers": [
+            "Perhaps",
+            "it’s",
+            "speaking in front of others"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Perhaps",
+                "ko": "아마도"
+              },
+              " ",
+              {
+                "en": "it’s",
+                "ko": "그것은 ~이다"
+              },
+              " ",
+              {
+                "en": "speaking in front of others",
+                "ko": "다른 사람들 앞에서 말하는 것"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        }
+      ],
+      "refers": {
+        "it’s": "What stresses you out(가장 스트레스를 주는 것)"
+      }
+    },
+    {
+      "id": 3,
+      "text": "For many, this is so stressful it even has a name: glossophobia.",
+      "model_translation": "많은 사람에게, 이것은 매우 스트레스를 주는 일이어서 심지어 ‘말하기 공포증’이라는 이름을 갖고 있다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "For many",
+          "ko": "많은 사람에게"
+        },
+        {
+          "en": "many",
+          "ko": "많은 사람"
+        },
+        {
+          "en": "this",
+          "ko": "이것"
+        },
+        {
+          "en": "so stressful",
+          "ko": "너무 스트레스를 주는"
+        },
+        {
+          "en": "stressful",
+          "ko": "스트레스를 주는"
+        },
+        {
+          "en": "even",
+          "ko": "심지어"
+        },
+        {
+          "en": "has a name",
+          "ko": "이름을 갖고 있다"
+        },
+        {
+          "en": "name",
+          "ko": "이름"
+        },
+        {
+          "en": "glossophobia",
+          "ko": "말하기 공포증 · 사람들 앞에서 말하는 것을 몹시 두려워하는 것"
+        }
+      ],
+      "slashes": [
+        "For many,",
+        "so stressful"
+      ],
+      "roles": [
+        {
+          "text": "this",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "so stressful",
+          "role": "C"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "has",
+          "role": "V"
+        },
+        {
+          "text": "a name",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "사람들 앞에서 말하기는 너무 스트레스라서, glossophobia(말하기 공포증)라는 이름까지 있대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "this",
+            "stressful",
+            "glossophobia"
+          ],
+          "tips": [
+            {
+              "label": "so ~ (that)",
+              "text": "'너무 ~해서 …하다'예요. so stressful (that) it even has a name에서 that이 빠졌어요.",
+              "mark": "so stressful"
+            }
+          ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~3",
+                "icon": "🎤",
+                "en": "speaking in front of others → glossophobia",
+                "ko": "사람들 앞에서 말하기는 이름이 붙을 만큼 스트레스예요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "this": "speaking in front of others(사람들 앞에서 말하기)"
+      }
+    },
+    {
+      "id": 4,
+      "text": "The explanation for why it’s uncomfortable to have everyone’s eyes on you is probably that, for almost all of our evolution, it’s been extremely important not to be excluded from the group.",
+      "model_translation": "모든 사람의 시선이 여러분에게 놓이게 하는 것이 불편한 이유에 대한 설명은 아마도 우리가 진화해 온 거의 전 기간 동안, 집단으로부터 배제되지 않는 것이 매우 중요했기 때문일 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The explanation",
+          "ko": "설명"
+        },
+        {
+          "en": "explanation",
+          "ko": "설명"
+        },
+        {
+          "en": "for why it’s uncomfortable",
+          "ko": "왜 불편한지에 대한"
+        },
+        {
+          "en": "uncomfortable",
+          "ko": "불편한"
+        },
+        {
+          "en": "to have everyone’s eyes on you",
+          "ko": "모든 사람의 시선이 나에게 놓이게 하는 것"
+        },
+        {
+          "en": "everyone’s eyes",
+          "ko": "모든 사람의 시선"
+        },
+        {
+          "en": "everyone’s",
+          "ko": "모든 사람의"
+        },
+        {
+          "en": "eyes",
+          "ko": "눈, 시선"
+        },
+        {
+          "en": "is probably that",
+          "ko": "아마 ~이기 때문일 것이다"
+        },
+        {
+          "en": "probably",
+          "ko": "아마"
+        },
+        {
+          "en": "for almost all of our evolution",
+          "ko": "우리가 진화해 온 거의 전 기간 동안"
+        },
+        {
+          "en": "almost",
+          "ko": "거의"
+        },
+        {
+          "en": "evolution",
+          "ko": "진화"
+        },
+        {
+          "en": "it’s been extremely important",
+          "ko": "매우 중요했다"
+        },
+        {
+          "en": "extremely",
+          "ko": "매우"
+        },
+        {
+          "en": "important",
+          "ko": "중요한"
+        },
+        {
+          "en": "not to be excluded from the group",
+          "ko": "집단으로부터 배제되지 않는 것"
+        },
+        {
+          "en": "excluded",
+          "ko": "배제된"
+        },
+        {
+          "en": "group",
+          "ko": "집단"
+        },
+        {
+          "en": "it’s",
+          "ko": "그것은 ~이다"
+        }
+      ],
+      "slashes": [
+        "The explanation",
+        "uncomfortable",
+        "on you",
+        "probably that,",
+        "evolution,",
+        "extremely important"
+      ],
+      "roles": [
+        {
+          "text": "The explanation",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "for why it’s uncomfortable to have everyone’s eyes on you"
+      ],
+      "steps": [
+        {
+          "id": "s4_why",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "모든 사람의 시선이 나에게 쏠리면 왜 불편하대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "is probably that 뒤가 이유예요. 'not to be excluded'의 not을 놓치지 말아요.",
+              "is probably that 뒤가 이유예요. 'not to be excluded'의 not을 놓치지 말아요."
+            ],
+            "explain": "'it’s been extremely important not to be excluded from the group', 집단에서 배제되지 않는 것이 매우 중요했대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'it’s been extremely important not to be excluded from the group', 집단에서 배제되지 않는 것이 매우 중요했대요.",
+              "o2": "'it’s been extremely important not to be excluded from the group', 집단에서 배제되지 않는 것이 매우 중요했대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "진화하는 내내 집단에서 배제되지 않는 것이 매우 중요했기 때문",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "진화하는 내내 집단을 떠나 혼자 서는 것이 매우 중요했기 때문"
+            },
+            {
+              "id": "o2",
+              "label": "진화하는 내내 남들과 겨뤄 이기는 것이 매우 중요했기 때문"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "explanation",
+            "important",
+            "not",
+            "excluded"
+          ],
+          "tips": [
+            {
+              "label": "not to ~",
+              "text": "to부정사 앞에 not이 오면 '~하지 않는 것'이에요. not to be excluded = 배제되지 않는 것.",
+              "mark": "not to be"
+            },
+            {
+              "label": "it’s been",
+              "text": "it has been을 줄인 말이에요. 여기 it은 뒤의 not to be excluded …를 대신하는 가짜 주어예요."
+            }
+          ]
+        }
+      ],
+      "emphasis": [
+        "important",
+        "excluded",
+        "group"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "To prepare for what might happen if you are evaluated and socially shamed — and thus alienated from the group — your brain fires up the stress system and your heart begins to beat harder.",
+      "model_translation": "여러분이 평가받고 사회적으로 망신을 당하고 그로 인해 집단으로부터 소외되는 경우에 일어날 ‘수도’ 있을 것에 대비하기 위해, 뇌는 스트레스 체계를 작동시키고 심장은 더 세게 뛰기 시작한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "To prepare for",
+          "ko": "~에 대비하기 위해"
+        },
+        {
+          "en": "prepare",
+          "ko": "대비하다"
+        },
+        {
+          "en": "what might happen",
+          "ko": "일어날 수도 있는 것"
+        },
+        {
+          "en": "happen",
+          "ko": "일어나다"
+        },
+        {
+          "en": "if you are evaluated",
+          "ko": "평가받는다면"
+        },
+        {
+          "en": "evaluated",
+          "ko": "평가받는"
+        },
+        {
+          "en": "socially shamed",
+          "ko": "사회적으로 망신을 당한"
+        },
+        {
+          "en": "socially",
+          "ko": "사회적으로"
+        },
+        {
+          "en": "shamed",
+          "ko": "망신을 당한"
+        },
+        {
+          "en": "thus",
+          "ko": "그로 인해, 따라서"
+        },
+        {
+          "en": "alienated from the group",
+          "ko": "집단으로부터 소외된"
+        },
+        {
+          "en": "alienated",
+          "ko": "소외된"
+        },
+        {
+          "en": "group",
+          "ko": "집단"
+        },
+        {
+          "en": "your brain",
+          "ko": "너의 뇌"
+        },
+        {
+          "en": "brain",
+          "ko": "뇌"
+        },
+        {
+          "en": "fires up",
+          "ko": "작동시키다"
+        },
+        {
+          "en": "the stress system",
+          "ko": "스트레스 체계"
+        },
+        {
+          "en": "stress",
+          "ko": "스트레스"
+        },
+        {
+          "en": "system",
+          "ko": "체계"
+        },
+        {
+          "en": "your heart",
+          "ko": "너의 심장"
+        },
+        {
+          "en": "heart",
+          "ko": "심장"
+        },
+        {
+          "en": "begins to beat harder",
+          "ko": "더 세게 뛰기 시작한다"
+        },
+        {
+          "en": "begins",
+          "ko": "시작하다"
+        },
+        {
+          "en": "beat",
+          "ko": "뛰다"
+        },
+        {
+          "en": "harder",
+          "ko": "더 세게"
+        },
+        {
+          "en": "fires",
+          "ko": "작동시키다 · fire up"
+        }
+      ],
+      "slashes": [
+        "To prepare",
+        "might happen",
+        "socially shamed",
+        "the group —",
+        "stress system"
+      ],
+      "roles": [
+        {
+          "text": "you",
+          "role": "S"
+        },
+        {
+          "text": "are evaluated",
+          "role": "V"
+        },
+        {
+          "text": "your brain",
+          "role": "S"
+        },
+        {
+          "text": "fires up",
+          "role": "V"
+        },
+        {
+          "text": "the stress system",
+          "role": "O"
+        },
+        {
+          "text": "your heart",
+          "role": "S"
+        },
+        {
+          "text": "begins to beat",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_same",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "evaluated",
+            "socially shamed",
+            "alienated from the group",
+            "the stress system"
+          ],
+          "answers": [
+            "alienated from the group"
+          ],
+          "brief": {
+            "ask": "4문장의 'excluded from the group(집단에서 배제됨)'과 같은 말을 이 문장에서 찾아 눌러 볼까요?",
+            "wrong": "그건 집단에서 밀려나는 말이 아니에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "alienated from the group(집단으로부터 소외된)이에요. 평가받고 망신당하면, 그 결과(and thus) 집단에서 밀려나요.",
+            "wrong_by": {
+              "evaluated": "평가받는 건 맨 처음 일이에요. 그 뒤 and thus(그로 인해) 어떻게 되는지 봐요.",
+              "socially shamed": "망신당하는 건 그 앞 단계예요. and thus(그로 인해) 뒤를 봐요.",
+              "the stress system": "스트레스 체계는 뇌가 작동시키는 것이에요. 대시(—) 사이를 봐요."
+            }
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "To ~, 주어 + 동사",
+              "text": "문장 맨 앞 To ~는 '~하기 위해'예요. 진짜 주어는 대시(—) 뒤 your brain이에요.",
+              "mark": "To prepare"
+            },
+            {
+              "label": "fires up",
+              "text": "이 글에서는 → 작동시키다, 켜다  ('불을 지르다·해고하다' 아님)",
+              "mark": "fires up",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "평가받고 망신당하면 집단에서 소외될까 봐, 뇌가 스트레스 체계를 켜요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "같은 말",
+            "left": {
+              "label": "집단에서 밀려남",
+              "words": [
+                {
+                  "text": "excluded from the group",
+                  "ko": "집단에서 배제됨"
+                },
+                {
+                  "text": "alienated from the group",
+                  "ko": "집단에서 소외됨",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "highlight": [
+            "alienated",
+            "fires up"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Our natural sensitivity to being evaluated by other people is another example of our brain not being adapted to the modern world.",
+      "model_translation": "다른 사람에게 평가받는 것에 대한 우리의 타고난 민감성은 우리의 뇌가 현대 세계에 적응되어 있지 않은 것의 또 다른 예이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Our natural sensitivity",
+          "ko": "우리의 타고난 민감성"
+        },
+        {
+          "en": "natural",
+          "ko": "타고난"
+        },
+        {
+          "en": "sensitivity",
+          "ko": "민감성"
+        },
+        {
+          "en": "to being evaluated by other people",
+          "ko": "다른 사람에게 평가받는 것에 대한"
+        },
+        {
+          "en": "being evaluated",
+          "ko": "평가받는 것"
+        },
+        {
+          "en": "evaluated",
+          "ko": "평가받는"
+        },
+        {
+          "en": "other people",
+          "ko": "다른 사람"
+        },
+        {
+          "en": "is another example",
+          "ko": "또 다른 예이다"
+        },
+        {
+          "en": "another example",
+          "ko": "또 다른 예"
+        },
+        {
+          "en": "example",
+          "ko": "예"
+        },
+        {
+          "en": "our brain",
+          "ko": "우리의 뇌"
+        },
+        {
+          "en": "brain",
+          "ko": "뇌"
+        },
+        {
+          "en": "not being adapted",
+          "ko": "적응되어 있지 않은 것"
+        },
+        {
+          "en": "adapted",
+          "ko": "적응된"
+        },
+        {
+          "en": "to the modern world",
+          "ko": "현대 세계에"
+        },
+        {
+          "en": "modern",
+          "ko": "현대의"
+        },
+        {
+          "en": "world",
+          "ko": "세계"
+        }
+      ],
+      "slashes": [
+        "natural sensitivity",
+        "other people",
+        "another example",
+        "not being adapted"
+      ],
+      "roles": [
+        {
+          "text": "Our natural sensitivity",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "another example",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "to being evaluated by other people"
+      ],
+      "steps": [
+        {
+          "id": "s6_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'our brain not being adapted'에서 not을 봐요. 우리 뇌가 현대 세계에 어떻다는 걸까요?",
+              "'our brain not being adapted'에서 not을 봐요. 우리 뇌가 현대 세계에 어떻다는 걸까요?"
+            ],
+            "explain": "'our brain not being adapted to the modern world', 뇌가 현대 세계에 적응되어 있지 않은 것의 예래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'our brain not being adapted to the modern world', 뇌가 현대 세계에 적응되어 있지 않은 것의 예래요.",
+              "o2": "'our brain not being adapted to the modern world', 뇌가 현대 세계에 적응되어 있지 않은 것의 예래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "남의 평가에 예민한 건, 뇌가 아직 현대 세계에 맞춰지지 않았다는 예이다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "남의 평가에 예민한 건, 뇌가 현대 세계에 잘 맞춰졌다는 예이다"
+            },
+            {
+              "id": "o2",
+              "label": "남을 평가하는 버릇은 현대 세계가 만든 것이다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "sensitivity",
+            "not being adapted",
+            "modern world"
+          ],
+          "tips": [
+            {
+              "label": "our brain not being adapted",
+              "text": "our brain이 뒤 not being adapted의 주어 역할이에요. '뇌가 적응되어 있지 않은 것'으로 읽어요.",
+              "mark": "not being adapted"
+            }
+          ]
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~3",
+                "icon": "🎤",
+                "en": "speaking in front of others → glossophobia",
+                "ko": "사람들 앞에서 말하기는 이름이 붙을 만큼 스트레스예요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "👀",
+                "en": "everyone’s eyes on you → uncomfortable",
+                "ko": "모든 시선이 쏠리면 불편한 건, 진화 내내 집단에서 배제되지 않는 게 중요해서예요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5~6",
+                "icon": "💓",
+                "en": "brain fires up the stress system",
+                "ko": "평가받고 소외될까 봐 뇌가 스트레스 체계를 켜요 — 뇌가 현대 세계에 맞춰지지 않았어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "If we give a bad presentation at work, we are unlikely to lose our job and thus risk starving to death.",
+      "model_translation": "직장에서 발표를 망친다고 하더라도, 우리가 직장을 잃고 따라서 굶주려 죽을 위험에 처할 것 같지는 않다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "give a bad presentation",
+          "ko": "발표를 망치다"
+        },
+        {
+          "en": "bad",
+          "ko": "나쁜"
+        },
+        {
+          "en": "presentation",
+          "ko": "발표"
+        },
+        {
+          "en": "at work",
+          "ko": "직장에서"
+        },
+        {
+          "en": "work",
+          "ko": "직장"
+        },
+        {
+          "en": "are unlikely to lose our job",
+          "ko": "직장을 잃을 것 같지 않다"
+        },
+        {
+          "en": "unlikely",
+          "ko": "~할 것 같지 않은"
+        },
+        {
+          "en": "lose",
+          "ko": "잃다"
+        },
+        {
+          "en": "job",
+          "ko": "직장"
+        },
+        {
+          "en": "thus",
+          "ko": "따라서"
+        },
+        {
+          "en": "risk starving to death",
+          "ko": "굶주려 죽을 위험에 처하다"
+        },
+        {
+          "en": "risk",
+          "ko": "~의 위험에 처하다"
+        },
+        {
+          "en": "starving",
+          "ko": "굶주리는 것"
+        },
+        {
+          "en": "death",
+          "ko": "죽음"
+        },
+        {
+          "en": "give",
+          "ko": "하다 · give a presentation = 발표하다"
+        }
+      ],
+      "slashes": [
+        "at work,",
+        "are unlikely",
+        "our job"
+      ],
+      "roles": [
+        {
+          "text": "we … we",
+          "role": "S"
+        },
+        {
+          "text": "give",
+          "role": "V"
+        },
+        {
+          "text": "a bad presentation",
+          "role": "O"
+        },
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "unlikely",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "요즘은 발표를 망쳐도 직장을 잃고 굶어 죽을 일은 거의 없어요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "bad presentation",
+            "unlikely",
+            "starving"
+          ],
+          "tips": [
+            {
+              "label": "be unlikely to ~",
+              "text": "'~할 것 같지 않다'예요. we are unlikely to lose our job = 직장을 잃을 것 같지 않다.",
+              "mark": "unlikely"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "But in the world we long ago evolved for, exclusion from the group could be a matter of life and death.",
+      "model_translation": "하지만 오래전 우리가 진화했던 세계에서 집단으로부터의 배제는 생사의 문제일 수 있었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "But",
+          "ko": "하지만"
+        },
+        {
+          "en": "in the world",
+          "ko": "세계에서"
+        },
+        {
+          "en": "the world",
+          "ko": "세계"
+        },
+        {
+          "en": "world",
+          "ko": "세계"
+        },
+        {
+          "en": "we long ago evolved for",
+          "ko": "우리가 오래전 진화했던"
+        },
+        {
+          "en": "long ago",
+          "ko": "오래전"
+        },
+        {
+          "en": "evolved",
+          "ko": "진화했다"
+        },
+        {
+          "en": "exclusion from the group",
+          "ko": "집단으로부터의 배제"
+        },
+        {
+          "en": "exclusion",
+          "ko": "배제"
+        },
+        {
+          "en": "group",
+          "ko": "집단"
+        },
+        {
+          "en": "could be",
+          "ko": "~일 수 있었다"
+        },
+        {
+          "en": "a matter of life and death",
+          "ko": "생사의 문제"
+        },
+        {
+          "en": "matter",
+          "ko": "문제"
+        },
+        {
+          "en": "life",
+          "ko": "삶, 생명"
+        },
+        {
+          "en": "death",
+          "ko": "죽음"
+        },
+        {
+          "en": "long",
+          "ko": "오래"
+        },
+        {
+          "en": "ago",
+          "ko": "전에"
+        }
+      ],
+      "slashes": [
+        "the world",
+        "evolved for,",
+        "the group",
+        "could be"
+      ],
+      "roles": [
+        {
+          "text": "exclusion from the group",
+          "role": "S"
+        },
+        {
+          "text": "could be",
+          "role": "V"
+        },
+        {
+          "text": "a matter of life and death",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "we long ago evolved for"
+      ],
+      "steps": [
+        {
+          "id": "s8_same",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "the world",
+            "long ago",
+            "exclusion from the group",
+            "a matter of life and death"
+          ],
+          "answers": [
+            "exclusion from the group"
+          ],
+          "brief": {
+            "ask": "칠판의 말과 같은 말을 이 문장에서 찾아 눌러 볼까요?",
+            "wrong": "그건 집단에서 밀려나는 말이 아니에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "exclusion from the group(집단으로부터의 배제)이에요. excluded(배제된)의 명사 꼴이에요.",
+            "wrong_by": {
+              "the world": "the world는 '세계', 우리가 오래전 진화한 곳이에요.",
+              "long ago": "long ago는 '오래전', 때를 말해요.",
+              "a matter of life and death": "그건 배제가 어떤 문제였는지예요. 무엇이 생사의 문제였는지 봐요."
+            }
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "the world we evolved for",
+              "text": "world 뒤에 that이 빠지고 꾸밈말이 붙었어요. '우리가 오래전 진화했던 세계'로 읽어요.",
+              "mark": "evolved for"
+            }
+          ]
+        },
+        {
+          "id": "s8_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "요즘과 달리(But), 오래전에는 집단에서 배제되면(exclusion) 생사가 걸렸어요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "같은 말",
+            "left": {
+              "label": "집단에서 밀려남",
+              "words": [
+                {
+                  "text": "excluded from the group",
+                  "ko": "집단에서 배제됨"
+                },
+                {
+                  "text": "alienated from the group",
+                  "ko": "집단에서 소외됨"
+                },
+                {
+                  "text": "exclusion from the group",
+                  "ko": "집단에서 배제",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "highlight": [
+            "But",
+            "exclusion",
+            "life and death"
+          ]
+        }
+      ],
+      "emphasis": [
+        "exclusion from the group",
+        "a matter of life and death"
+      ]
+    },
+    {
+      "id": 9,
+      "text": "________ was not merely a matter of safety but also of survival.",
+      "model_translation": "________은 단순히 안전의 문제만이 아니라 생존의 문제이기도 했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "not merely",
+          "ko": "단순히 ~만이 아니라"
+        },
+        {
+          "en": "merely",
+          "ko": "단순히, 그저"
+        },
+        {
+          "en": "a matter of safety",
+          "ko": "안전의 문제"
+        },
+        {
+          "en": "matter",
+          "ko": "문제"
+        },
+        {
+          "en": "safety",
+          "ko": "안전"
+        },
+        {
+          "en": "but also",
+          "ko": "~이기도 하다"
+        },
+        {
+          "en": "of survival",
+          "ko": "생존의"
+        },
+        {
+          "en": "survival",
+          "ko": "생존"
+        }
+      ],
+      "roles": [
+        {
+          "text": "was",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "글쓴이 주장은 '옛날엔 집단에서 밀려나면 생사가 걸렸다'예요. 빈칸 문장은 이 주장과 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not merely A but also B는 A에 B를 더하는 말이에요. But이나 However 같은 반전 단서는 없어요.",
+              "not merely A but also B는 A에 B를 더하는 말이에요. But이나 However 같은 반전 단서는 없어요."
+            ],
+            "explain": "'not merely … but also of survival', 생존의 문제이기도 했대요. 반전 없이 앞 문장의 생사 이야기를 이어 가요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'not merely … but also of survival', 생존의 문제이기도 했대요. 반전 없이 앞 문장의 생사 이야기를 이어 가요."
+            },
+            "point": "빈칸 문장 = 앞 문장(배제는 생사의 문제)을 이어 가는 말 = 주장과 같은 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 — 집단이 생존에 중요했다는 말",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 — 집단은 생존과 상관없었다는 말"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "not merely",
+            "but also",
+            "survival"
+          ],
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장에 But, However 같은 반전 단서가 있으면 반대 의견이 들어가요. not merely A but also B는 반전이 아니라 A에 B를 더하는 말이에요."
+            }
+          ]
+        },
+        {
+          "id": "s9_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판의 말은 모두 집단에서 밀려나는 거예요. 밀려나면 생사가 걸렸다면, 생존의 문제였던 건 그 반대예요.",
+              "칠판의 말은 모두 집단에서 밀려나는 거예요. 밀려나면 생사가 걸렸다면, 생존의 문제였던 건 그 반대예요."
+            ],
+            "explain": "집단에서 밀려나면(exclusion) 생사가 걸렸어요. 그러니 생존이 걸린 건 그 반대, 집단 안에 있는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "집단에서 밀려나면(exclusion) 생사가 걸렸어요. 그러니 생존이 걸린 건 그 반대, 집단 안에 있는 거예요.",
+              "o2": "집단에서 밀려나면(exclusion) 생사가 걸렸어요. 그러니 생존이 걸린 건 그 반대, 집단 안에 있는 거예요."
+            },
+            "point": "빈칸 = 배제(exclusion)의 반대 = 집단에 속하기"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "집단에 속해 있는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "자기 자신을 믿는 것"
+            },
+            {
+              "id": "o2",
+              "label": "남들과 겨뤄 이기는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "________",
+            "survival"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "같은 말",
+            "left": {
+              "label": "집단에서 밀려남",
+              "words": [
+                {
+                  "text": "excluded from the group",
+                  "ko": "집단에서 배제됨"
+                },
+                {
+                  "text": "alienated from the group",
+                  "ko": "집단에서 소외됨"
+                },
+                {
+                  "text": "exclusion from the group",
+                  "ko": "집단에서 배제"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "You simply couldn’t make it on your own.",
+      "model_translation": "여러분은 결코 혼자서는 살아남을 수 없었다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "You",
+          "ko": "여러분"
+        },
+        {
+          "en": "simply couldn’t make it",
+          "ko": "결코 살아남을 수 없었다"
+        },
+        {
+          "en": "simply",
+          "ko": "결코 (부정과 함께)"
+        },
+        {
+          "en": "couldn’t",
+          "ko": "~할 수 없었다"
+        },
+        {
+          "en": "make it",
+          "ko": "살아남다, 해내다"
+        },
+        {
+          "en": "on your own",
+          "ko": "혼자서"
+        }
+      ],
+      "roles": [
+        {
+          "text": "You",
+          "role": "S"
+        },
+        {
+          "text": "couldn’t make it",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s10_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "혼자서는(on your own) 결코 살아남을 수 없었대요. 이것도 집단에서 밀려난 모습이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "같은 말",
+            "left": {
+              "label": "집단에서 밀려남",
+              "words": [
+                {
+                  "text": "excluded from the group",
+                  "ko": "집단에서 배제됨"
+                },
+                {
+                  "text": "alienated from the group",
+                  "ko": "집단에서 소외됨"
+                },
+                {
+                  "text": "exclusion from the group",
+                  "ko": "집단에서 배제"
+                },
+                {
+                  "text": "on your own",
+                  "ko": "혼자서",
+                  "fresh": true
+                }
+              ]
+            }
+          },
+          "highlight": [
+            "make it",
+            "on your own"
+          ],
+          "tips": [
+            {
+              "label": "simply + not",
+              "text": "부정어와 함께 쓴 simply는 '결코'예요. simply couldn’t = 결코 ~할 수 없었다.",
+              "mark": "simply"
+            },
+            {
+              "label": "make it",
+              "text": "이 글에서는 → 살아남다, 해내다  ('그것을 만들다' 아님)",
+              "mark": "make it",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s10_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 집단에서 밀려나는 것의 반대, 생존이 걸린 것이에요. 이 말을 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ],
+      "emphasis": [
+        "make it",
+        "on your own"
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

@@ -1,0 +1,74 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "continues to function",
+   "sense": "~하는 것을 (계속하다)",
+   "usage": "continue to + 동사원형"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "to see the world",
+   "sense": "~하도록",
+   "usage": "dispose + 사람 + to부정사 = ~가 …하도록 이끌다"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "disposition to experience",
+   "sense": "~하는 (성향)",
+   "usage": "명사 + to부정사 (disposition to ~ = ~하는 성향)"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "expects to see",
+   "sense": "~하기를 (기대하다)",
+   "usage": "expect to + 동사원형"
+  },
+  {
+   "word": "to",
+   "phrase": "lead to",
+   "sense": "~로 (이어지다)",
+   "usage": "lead to + 명사"
+  },
+  {
+   "word": "as",
+   "phrase": "as that thing",
+   "sense": "~로 (잘못 알아봄)",
+   "usage": "misidentification of A as B = A를 B로 오인함"
+  },
+  {
+   "word": "that",
+   "phrase": "that thing",
+   "sense": "그 (것)",
+   "usage": "지시형용사 that — 앞의 the thing one expects to see"
+  }
+ ],
+ "6": [
+  {
+   "word": "while",
+   "phrase": "while the lover",
+   "sense": "~하는 반면",
+   "usage": "접속사 while (대조)"
+  }
+ ],
+ "8": [
+  {
+   "word": "while",
+   "phrase": "While the central organ",
+   "sense": "~이지만, ~인 반면",
+   "usage": "접속사 While (대조)"
+  },
+  {
+   "word": "to",
+   "phrase": "to discern",
+   "sense": "~하도록",
+   "usage": "dispose + 사람 + to부정사"
+  }
+ ]
+}

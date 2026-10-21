@@ -1,0 +1,158 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "to find treatments",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  },
+  {
+   "word": "for",
+   "phrase": "for rare diseases",
+   "sense": "~을 위한",
+   "usage": "전치사 for (치료법과 의약품이 어떤 병을 위한 것인지)"
+  },
+  {
+   "word": "that",
+   "phrase": "rare diseases that to date",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that — rare diseases를 꾸민다"
+  },
+  {
+   "word": "to",
+   "phrase": "to date",
+   "sense": "지금까지",
+   "usage": "to date = 지금까지 (숙어)"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "has always been that",
+   "sense": "~라는 것",
+   "usage": "명사절 접속사 that (보어: ~라는 점)"
+  },
+  {
+   "word": "to",
+   "phrase": "to diseases",
+   "sense": "~에",
+   "usage": "devote A to B = A를 B에 쏟다"
+  },
+  {
+   "word": "that",
+   "phrase": "diseases that affect",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that — diseases를 꾸민다"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "that is,",
+   "sense": "즉",
+   "usage": "that is = 즉, 다시 말해"
+  },
+  {
+   "word": "if",
+   "phrase": "even if a disease",
+   "sense": "비록 ~일지라도",
+   "usage": "even if + 주어·동사 (양보)"
+  },
+  {
+   "word": "that",
+   "phrase": "a population that cannot",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that — a population을 꾸민다"
+  },
+  {
+   "word": "to",
+   "phrase": "afford to pay",
+   "sense": "~할 (여유)",
+   "usage": "afford to + 동사원형 = ~할 여유가 있다"
+  },
+  {
+   "word": "for",
+   "phrase": "pay for it",
+   "sense": "~의 값을",
+   "usage": "pay for = ~의 값을 치르다"
+  },
+  {
+   "word": "for",
+   "phrase": "for example",
+   "sense": "예를 들어",
+   "usage": "for example = 예를 들어"
+  },
+  {
+   "word": "to",
+   "phrase": "compared to",
+   "sense": "~에 (비해)",
+   "usage": "compared to = ~에 비해"
+  }
+ ],
+ "4": [
+  {
+   "word": "that",
+   "phrase": "industry that direct",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that — imbalances를 꾸민다"
+  },
+  {
+   "word": "to",
+   "phrase": "attention to diseases",
+   "sense": "~로",
+   "usage": "direct attention to = ~로 관심을 향하게 하다"
+  },
+  {
+   "word": "that",
+   "phrase": "diseases that “pay,”",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that — diseases를 꾸민다"
+  },
+  {
+   "word": "that",
+   "phrase": "demographics that can pay",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that — demographics를 꾸민다"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "to broaden",
+   "sense": "~할 (힘)",
+   "usage": "명사 + to부정사 (power to ~ = ~할 힘)"
+  },
+  {
+   "word": "to",
+   "phrase": "to find cures",
+   "sense": "~하도록",
+   "usage": "to부정사 (목적: 치료법을 찾도록)"
+  },
+  {
+   "word": "to",
+   "phrase": "cures to",
+   "sense": "~에 대한 (치료법)",
+   "usage": "cure to/for + 문제 = ~에 대한 해결책"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "investment that has led",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that — the imbalance를 꾸민다"
+  },
+  {
+   "word": "to",
+   "phrase": "led to",
+   "sense": "~로 (이어지다)",
+   "usage": "lead to = ~을 가져오다"
+  },
+  {
+   "word": "to",
+   "phrase": "to include",
+   "sense": "~하도록",
+   "usage": "to부정사 (broaden … to include = 넓혀서 ~을 포함하도록)"
+  }
+ ]
+}

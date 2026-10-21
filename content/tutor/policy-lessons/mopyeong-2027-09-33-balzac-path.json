@@ -1,0 +1,1786 @@
+{
+  "id": "mopyeong-2027-09-33-balzac-path",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 9월 모의평가(2027학년도, 한국교육과정평가원) 영어 33번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-balzac-path.svg",
+      "alt": "칠판: Picture(그림) ↔ Language(언어)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "그림은 한눈에 보이지만 글은 한 줄씩 읽어야 해요. 이번 글은 소설이 장소를 묘사하는 방법 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 3,
+    "analysis_first": true,
+    "wrong_rate": 57.0,
+    "wrong_rank": 3,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "flood",
+        "ko": "가득 채우다, 넘치게 하다"
+      },
+      {
+        "en": "abstract images",
+        "ko": "추상적인 이미지"
+      },
+      {
+        "en": "present",
+        "ko": "보여 주다, 표현하다"
+      },
+      {
+        "en": "small objects",
+        "ko": "작은 사물"
+      },
+      {
+        "en": "in detail",
+        "ko": "상세하게"
+      },
+      {
+        "en": "tie",
+        "ko": "묶다, 연결하다"
+      },
+      {
+        "en": "description",
+        "ko": "묘사"
+      },
+      {
+        "en": "a moving body",
+        "ko": "움직이는 몸(사람)"
+      },
+      {
+        "en": "distance",
+        "ko": "멀어지게 하다"
+      },
+      {
+        "en": "scene",
+        "ko": "장면"
+      },
+      {
+        "en": "portray",
+        "ko": "묘사하다"
+      },
+      {
+        "en": "upward angles",
+        "ko": "아래에서 위로 보는 각도"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "flood the reader’s mind with abstract images",
+        "keywords": [
+          "flood",
+          "abstract images"
+        ],
+        "ko": "독자의 마음을 추상적인 이미지로 가득 채우는 것"
+      },
+      {
+        "id": "2",
+        "label": "present small objects in detail",
+        "keywords": [
+          "small objects",
+          "in detail"
+        ],
+        "ko": "작은 사물을 상세하게 표현하는 것"
+      },
+      {
+        "id": "3",
+        "label": "tie description to a moving body",
+        "keywords": [
+          "tie",
+          "moving body"
+        ],
+        "ko": "묘사를 움직이는 사람과 연결하는 것",
+        "correct": true
+      },
+      {
+        "id": "4",
+        "label": "distance readers from a scene",
+        "keywords": [
+          "distance"
+        ],
+        "ko": "독자를 장면에서 멀어지게 하는 것"
+      },
+      {
+        "id": "5",
+        "label": "portray a landscape from upward angles",
+        "keywords": [
+          "upward angles"
+        ],
+        "ko": "아래에서 위를 바라보는 시점으로 풍경을 묘사하는 것"
+      }
+    ],
+    "brief": {
+      "ask": "칠판 오른쪽, 화자가 집을 어떻게 묘사했는지 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸으며 묘사해요. 움직이는 사람의 길을 따라 묘사하니 독자가 길을 잃지 않아요.",
+      "final_wrong": "정답은 ③이에요. Balzac의 묘사는 집으로 다가가 들어가 방에서 방으로 걷는 사람의 길을 따라가요. 그래서 독자는 묘사의 숲에서 길을 잃지 않아요.",
+      "option_feedback": {
+        "1": "추상적인 이미지 이야기는 없어요. 글은 집 안을 걷는 구체적인 길을 따라가요.",
+        "2": "detail이 여러 번 나와서 헷갈렸죠. 하지만 자세한 묘사는 길을 잃게 할 수 있는 쪽이고, 해결책은 정확한 경로를 따라가는 거예요.",
+        "4": "반대예요. 화자는 독자를 데리고 집 안으로 들어가요.",
+        "5": "보는 각도 이야기는 없어요. 화자는 한자리에서 보지 않고 걸어 다니며 묘사해요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "②는 detail by detail, detailed portrayals처럼 '자세히'가 여러 번 나와서 끌려요. 하지만 자세한 묘사는 독자가 묘사의 숲에서 길을 잃을 수 있는 문제 쪽이에요.\nBalzac의 해결책은 화자가 집 안을 걸어 다니는 길(a precise path)을 따라 묘사하는 거예요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "2문장",
+                "text": "losing the reader in a descriptive forest",
+                "ko": "자세한 묘사 — 길을 잃을 수 있다",
+                "tone": "hl2"
+              },
+              {
+                "label": "4·5문장",
+                "text": "trace a precise path · walking from room to room",
+                "ko": "걷는 길을 따라 묘사 — 해결책",
+                "tone": "hl"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "transport",
+        "ko": "이동시키다"
+      },
+      {
+        "en": "spectator",
+        "ko": "보는 사람"
+      },
+      {
+        "en": "instantly",
+        "ko": "즉시"
+      },
+      {
+        "en": "literary",
+        "ko": "문학의"
+      },
+      {
+        "en": "capture",
+        "ko": "담아내다"
+      },
+      {
+        "en": "atmosphere",
+        "ko": "분위기"
+      },
+      {
+        "en": "descriptive",
+        "ko": "묘사의"
+      },
+      {
+        "en": "solution",
+        "ko": "해결책"
+      },
+      {
+        "en": "portrayal",
+        "ko": "묘사"
+      },
+      {
+        "en": "setting",
+        "ko": "배경"
+      },
+      {
+        "en": "threaten",
+        "ko": "위협하다"
+      },
+      {
+        "en": "sense of orientation",
+        "ko": "방향 감각"
+      },
+      {
+        "en": "precise",
+        "ko": "정확한"
+      },
+      {
+        "en": "fictional",
+        "ko": "허구의"
+      },
+      {
+        "en": "narrator",
+        "ko": "화자, 서술자"
+      },
+      {
+        "en": "inspect",
+        "ko": "점검하다"
+      },
+      {
+        "en": "systematic",
+        "ko": "체계적인"
+      },
+      {
+        "en": "prospective",
+        "ko": "미래의, 장래의"
+      },
+      {
+        "en": "resident",
+        "ko": "거주자"
+      },
+      {
+        "en": "notion",
+        "ko": "개념"
+      },
+      {
+        "en": "layout",
+        "ko": "배치"
+      },
+      {
+        "en": "floor plan",
+        "ko": "평면도"
+      }
+    ],
+    "options": [
+      {
+        "en": "flood",
+        "ko": "가득 채우다"
+      },
+      {
+        "en": "abstract",
+        "ko": "추상적인"
+      },
+      {
+        "en": "tie A to B",
+        "ko": "A를 B와 연결하다"
+      },
+      {
+        "en": "distance",
+        "ko": "멀어지게 하다"
+      },
+      {
+        "en": "upward",
+        "ko": "위쪽으로의"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "While a picture transports the spectator almost instantly into a landscape, language can only describe it detail by detail, bringing it slowly into the reader’s mind.",
+      "model_translation": "그림은 보는 사람을 거의 즉시 풍경 속으로 이동시키지만, 언어는 그것을 세부 사항별로 하나하나 묘사하여 그것을 독자의 마음속에 서서히 떠오르게 할 수 있을 뿐이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "While",
+          "ko": "~이지만, ~인 반면"
+        },
+        {
+          "en": "a picture",
+          "ko": "그림"
+        },
+        {
+          "en": "picture",
+          "ko": "그림"
+        },
+        {
+          "en": "transports",
+          "ko": "이동시키다, 데려가다"
+        },
+        {
+          "en": "the spectator",
+          "ko": "보는 사람"
+        },
+        {
+          "en": "spectator",
+          "ko": "보는 사람, 관객"
+        },
+        {
+          "en": "almost instantly",
+          "ko": "거의 즉시"
+        },
+        {
+          "en": "instantly",
+          "ko": "즉시"
+        },
+        {
+          "en": "into a landscape",
+          "ko": "풍경 속으로"
+        },
+        {
+          "en": "landscape",
+          "ko": "풍경"
+        },
+        {
+          "en": "language",
+          "ko": "언어"
+        },
+        {
+          "en": "can only describe",
+          "ko": "묘사할 수 있을 뿐이다"
+        },
+        {
+          "en": "describe",
+          "ko": "묘사하다"
+        },
+        {
+          "en": "detail by detail",
+          "ko": "세부 사항 하나하나"
+        },
+        {
+          "en": "detail",
+          "ko": "세부 사항"
+        },
+        {
+          "en": "bringing it slowly",
+          "ko": "그것을 서서히 데려오며"
+        },
+        {
+          "en": "bringing",
+          "ko": "가져오는, 떠오르게 하는"
+        },
+        {
+          "en": "slowly",
+          "ko": "천천히, 서서히"
+        },
+        {
+          "en": "into the reader’s mind",
+          "ko": "독자의 마음속으로"
+        },
+        {
+          "en": "reader’s",
+          "ko": "독자의"
+        },
+        {
+          "en": "mind",
+          "ko": "마음"
+        },
+        {
+          "en": "One solution",
+          "ko": "한 가지 해결책"
+        },
+        {
+          "en": "solution",
+          "ko": "해결책"
+        },
+        {
+          "en": "proposed by Balzac",
+          "ko": "Balzac이 제안한"
+        },
+        {
+          "en": "proposed",
+          "ko": "제안된"
+        },
+        {
+          "en": "Balzac",
+          "ko": "발자크 · 프랑스 소설가 이름"
+        },
+        {
+          "en": "is to",
+          "ko": "~하는 것이다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "almost",
+          "ko": "거의"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        }
+      ],
+      "slashes": [
+        "almost instantly",
+        "into a landscape,",
+        "describe it",
+        "detail by detail,",
+        "bringing it slowly"
+      ],
+      "roles": [
+        {
+          "text": "a picture",
+          "role": "S"
+        },
+        {
+          "text": "transports",
+          "role": "V"
+        },
+        {
+          "text": "the spectator",
+          "role": "O"
+        },
+        {
+          "text": "language",
+          "role": "S"
+        },
+        {
+          "text": "can only describe",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 셋째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "One solution, proposed by Balzac, is to ________."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "아주 짧은 문장이에요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "solution은 '해결책'이에요. 콤마 사이 proposed by Balzac은 '발자크가 제안한'이에요.",
+              "solution은 '해결책'이에요. 콤마 사이 proposed by Balzac은 '발자크가 제안한'이에요."
+            ],
+            "explain": "'One solution … is to ____', 한 가지 해결책은 ____하는 것이래요. 해결책이면 앞에 풀어야 할 문제가 있어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'One solution … is to ____', 한 가지 해결책은 ____하는 것이래요. 해결책이면 앞에 풀어야 할 문제가 있어요.",
+              "o2": "'One solution … is to ____', 한 가지 해결책은 ____하는 것이래요. 해결책이면 앞에 풀어야 할 문제가 있어요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "Balzac이 풀지 못한 문제는 ____이다"
+            },
+            {
+              "id": "o1",
+              "label": "Balzac이 제안한 한 가지 해결책은 ____하는 것이다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "Balzac은 ____하는 것에 반대했다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "One solution, proposed by Balzac, is to ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "One solution",
+            "________"
+          ],
+          "faded": [
+            "proposed by Balzac,"
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 무엇을 해결하려는 건지 생각하며 문장 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "One solution, proposed by Balzac, is to ________.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "While 앞뒤를 비교하면 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "While은 여기서 '~이지만, ~인 반면'이에요. instantly는 '즉시', slowly는 '천천히'예요.",
+              "While은 여기서 '~이지만, ~인 반면'이에요. instantly는 '즉시', slowly는 '천천히'예요."
+            ],
+            "explain": "'a picture transports the spectator almost instantly', 그림은 거의 즉시 보여 줘요. 'language can only describe it detail by detail', 언어는 하나하나 묘사할 수밖에 없대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'a picture transports the spectator almost instantly', 그림은 거의 즉시 보여 줘요. 'language can only describe it detail by detail', 언어는 하나하나 묘사할 수밖에 없대요.",
+              "o2": "'a picture transports the spectator almost instantly', 그림은 거의 즉시 보여 줘요. 'language can only describe it detail by detail', 언어는 하나하나 묘사할 수밖에 없대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그림도 언어도 풍경을 곧바로 보여 준다"
+            },
+            {
+              "id": "o1",
+              "label": "그림은 풍경을 곧바로 보여 주지만, 언어는 하나하나 묘사해서 천천히 떠올리게 한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "언어가 그림보다 풍경을 더 빨리 보여 준다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "While",
+            "instantly",
+            "detail by detail",
+            "slowly"
+          ],
+          "tips": [
+            {
+              "label": "can only + 동사",
+              "text": "'~할 수 있을 뿐이다'예요. 언어는 하나하나 묘사하는 것밖에 못 한다는 말이에요.",
+              "mark": "can only describe"
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "it": "a landscape(풍경)"
+      }
+    },
+    {
+      "id": 2,
+      "text": "How can a literary work capture the feel of a place in both its atmosphere and its topography without losing the reader in a descriptive forest?",
+      "model_translation": "문학 작품은 독자가 묘사의 숲에서 길을 잃게 하지 않으면서, 어떤 장소의 분위기와 지형 모두에 깃든 그곳의 느낌을 어떻게 담아낼 수 있을까?",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "How can",
+          "ko": "어떻게 ~할 수 있을까"
+        },
+        {
+          "en": "a literary work",
+          "ko": "문학 작품"
+        },
+        {
+          "en": "literary",
+          "ko": "문학의"
+        },
+        {
+          "en": "work",
+          "ko": "작품"
+        },
+        {
+          "en": "capture",
+          "ko": "담아내다, 포착하다"
+        },
+        {
+          "en": "the feel of a place",
+          "ko": "어떤 장소의 느낌"
+        },
+        {
+          "en": "feel",
+          "ko": "느낌"
+        },
+        {
+          "en": "place",
+          "ko": "장소"
+        },
+        {
+          "en": "in both its atmosphere and its topography",
+          "ko": "그곳의 분위기와 지형 모두에서"
+        },
+        {
+          "en": "both",
+          "ko": "둘 다"
+        },
+        {
+          "en": "atmosphere",
+          "ko": "분위기"
+        },
+        {
+          "en": "topography",
+          "ko": "지형"
+        },
+        {
+          "en": "without losing the reader",
+          "ko": "독자가 길을 잃게 하지 않고"
+        },
+        {
+          "en": "losing",
+          "ko": "잃는 것, 길을 잃게 하는 것"
+        },
+        {
+          "en": "reader",
+          "ko": "독자"
+        },
+        {
+          "en": "in a descriptive forest",
+          "ko": "묘사의 숲에서"
+        },
+        {
+          "en": "descriptive",
+          "ko": "묘사의"
+        },
+        {
+          "en": "forest",
+          "ko": "숲"
+        },
+        {
+          "en": "without",
+          "ko": "~ 없이"
+        }
+      ],
+      "slashes": [
+        "a literary work",
+        "the feel of a place",
+        "its topography",
+        "losing the reader"
+      ],
+      "roles": [
+        {
+          "text": "a literary work",
+          "role": "S"
+        },
+        {
+          "text": "can … capture",
+          "role": "V"
+        },
+        {
+          "text": "the feel of a place",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_question",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "묻는 문장이에요. 이 문장은 무엇을 묻고 있을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "a descriptive forest는 진짜 숲이 아니라 비유예요. without losing the reader는 '독자를 잃지 않고'예요.",
+              "a descriptive forest는 진짜 숲이 아니라 비유예요. without losing the reader는 '독자를 잃지 않고'예요."
+            ],
+            "explain": "'How can a literary work capture the feel of a place', 장소의 느낌을 어떻게 담을지 물어요. 'without losing the reader in a descriptive forest', 묘사가 빽빽한 숲에서 독자가 길을 잃지 않게 하면서요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'How can a literary work capture the feel of a place', 장소의 느낌을 어떻게 담을지 물어요. 'without losing the reader in a descriptive forest', 묘사가 빽빽한 숲에서 독자가 길을 잃지 않게 하면서요.",
+              "o1": "'How can a literary work capture the feel of a place', 장소의 느낌을 어떻게 담을지 물어요. 'without losing the reader in a descriptive forest', 묘사가 빽빽한 숲에서 독자가 길을 잃지 않게 하면서요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "문학 작품은 숲을 어떻게 묘사할까"
+            },
+            {
+              "id": "o1",
+              "label": "독자가 왜 그림보다 글을 좋아할까"
+            },
+            {
+              "id": "o2",
+              "label": "문학 작품은 독자가 묘사 속에서 헤매지 않게 하면서 장소의 느낌을 어떻게 담을까",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "How can",
+            "capture",
+            "without losing the reader",
+            "descriptive forest"
+          ],
+          "tips": [
+            {
+              "label": "lose A in B",
+              "text": "'A가 B에서 길을 잃게 하다'예요. 묘사가 너무 많으면 독자가 숲에서처럼 헤맨다는 비유예요.",
+              "mark": "losing the reader"
+            },
+            {
+              "label": "feel",
+              "text": "이 글에서는 → (장소의) 느낌  ('느끼다' 동사 아님)",
+              "mark": "the feel",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🖼️",
+                "en": "picture: instantly ↔ language: detail by detail",
+                "ko": "그림은 바로 보여 주지만, 글은 하나하나 묘사해야 해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 2",
+                "icon": "🌲",
+                "en": "without losing the reader in a descriptive forest?",
+                "ko": "묘사의 숲에서 독자가 길을 잃지 않게 하려면?",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "emphasis": [
+        "capture",
+        "without losing the reader"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "One solution, proposed by Balzac, is to ________.",
+      "model_translation": "Balzac이 제안한 한 가지 해결책은 ________ 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "One solution",
+          "ko": "한 가지 해결책"
+        },
+        {
+          "en": "solution",
+          "ko": "해결책"
+        },
+        {
+          "en": "proposed by Balzac",
+          "ko": "Balzac이 제안한"
+        },
+        {
+          "en": "proposed",
+          "ko": "제안된"
+        },
+        {
+          "en": "Balzac",
+          "ko": "발자크 · 프랑스 소설가 이름"
+        },
+        {
+          "en": "is to",
+          "ko": "~하는 것이다"
+        }
+      ],
+      "roles": [
+        {
+          "text": "One solution",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸은 2문장 물음에 대한 해결책(One solution)이에요. 빈칸에는 어떤 쪽 말이 올까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "2문장은 '어떻게 하면 독자가 묘사의 숲에서 길을 잃지 않을까'를 물었어요.",
+              "2문장은 '어떻게 하면 독자가 묘사의 숲에서 길을 잃지 않을까'를 물었어요."
+            ],
+            "explain": "해결책은 물음에 답하는 말이에요. 장소의 느낌은 담고, 독자는 길을 잃지 않게 하는 방법이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "해결책은 물음에 답하는 말이에요. 장소의 느낌은 담고, 독자는 길을 잃지 않게 하는 방법이에요.",
+              "o1": "해결책은 물음에 답하는 말이에요. 장소의 느낌은 담고, 독자는 길을 잃지 않게 하는 방법이에요."
+            },
+            "point": "빈칸 = One solution = 2문장 물음(길을 잃지 않게 하며 장소를 담는 법)에 답하는 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "묘사를 더 길고 자세하게 늘리는 방법"
+            },
+            {
+              "id": "o1",
+              "label": "장소 묘사를 아예 빼는 방법"
+            },
+            {
+              "id": "o2",
+              "label": "장소의 느낌을 담으면서도 독자가 길을 잃지 않게 하는 방법",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "One solution",
+            "________"
+          ],
+          "faded": [
+            "proposed by Balzac,"
+          ],
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장에 But, However, not 같은 반전 단서가 있으면 반대 의견이 들어가요. 앞 물음을 solution(해결책)으로 받으면 그 물음에 답하는 말이 들어가요."
+            }
+          ]
+        },
+        {
+          "id": "s3_next",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "어떻게 하면 길을 잃지 않는지는 빈칸 뒤에 나와요. Balzac이 어떻게 묘사하는지 찾으며 읽어 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Balzac’s novels open with detailed portrayals of the setting, but the descriptions never threaten the reader’s sense of orientation because they trace a precise path through the fictional world.",
+      "model_translation": "Balzac의 소설은 배경에 대한 상세한 묘사로 시작하지만, 그 묘사는 허구의 세계 속에서 정확한 경로를 따라 이루어지기 때문에 독자의 방향 감각을 결코 위협하지 않는다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Balzac’s novels",
+          "ko": "Balzac의 소설"
+        },
+        {
+          "en": "novels",
+          "ko": "소설"
+        },
+        {
+          "en": "open with",
+          "ko": "~로 시작하다"
+        },
+        {
+          "en": "open",
+          "ko": "시작하다"
+        },
+        {
+          "en": "detailed portrayals",
+          "ko": "상세한 묘사"
+        },
+        {
+          "en": "detailed",
+          "ko": "상세한, 자세한"
+        },
+        {
+          "en": "portrayals",
+          "ko": "묘사"
+        },
+        {
+          "en": "of the setting",
+          "ko": "배경에 대한"
+        },
+        {
+          "en": "setting",
+          "ko": "배경"
+        },
+        {
+          "en": "the descriptions",
+          "ko": "그 묘사"
+        },
+        {
+          "en": "descriptions",
+          "ko": "묘사"
+        },
+        {
+          "en": "never threaten",
+          "ko": "결코 위협하지 않는다"
+        },
+        {
+          "en": "never",
+          "ko": "결코 ~ 않다"
+        },
+        {
+          "en": "threaten",
+          "ko": "위협하다"
+        },
+        {
+          "en": "the reader’s sense of orientation",
+          "ko": "독자의 방향 감각"
+        },
+        {
+          "en": "sense of orientation",
+          "ko": "방향 감각"
+        },
+        {
+          "en": "sense",
+          "ko": "감각"
+        },
+        {
+          "en": "orientation",
+          "ko": "방향, 방향 감각"
+        },
+        {
+          "en": "because",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "they",
+          "ko": "그것들(그 묘사)"
+        },
+        {
+          "en": "trace a precise path",
+          "ko": "정확한 경로를 따라가다"
+        },
+        {
+          "en": "trace",
+          "ko": "따라가다, 그리다"
+        },
+        {
+          "en": "a precise path",
+          "ko": "정확한 경로"
+        },
+        {
+          "en": "precise",
+          "ko": "정확한"
+        },
+        {
+          "en": "path",
+          "ko": "경로, 길"
+        },
+        {
+          "en": "through the fictional world",
+          "ko": "허구의 세계 속에서"
+        },
+        {
+          "en": "fictional",
+          "ko": "허구의, 소설 속의"
+        },
+        {
+          "en": "world",
+          "ko": "세계"
+        },
+        {
+          "en": "Balzac’s",
+          "ko": "발자크의"
+        },
+        {
+          "en": "reader’s",
+          "ko": "독자의"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        }
+      ],
+      "slashes": [
+        "Balzac’s novels open",
+        "of the setting,",
+        "never threaten",
+        "sense of orientation",
+        "a precise path"
+      ],
+      "roles": [
+        {
+          "text": "Balzac’s novels",
+          "role": "S"
+        },
+        {
+          "text": "open",
+          "role": "V"
+        },
+        {
+          "text": "the descriptions",
+          "role": "S"
+        },
+        {
+          "text": "never threaten",
+          "role": "V"
+        },
+        {
+          "text": "the reader’s sense of orientation",
+          "role": "O"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "trace",
+          "role": "V"
+        },
+        {
+          "text": "a precise path",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_why",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "자세한 묘사인데도 독자가 방향을 잃지 않는 이유는 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "because 뒤를 봐요. trace는 '따라가다', path는 '경로'예요.",
+              "because 뒤를 봐요. trace는 '따라가다', path는 '경로'예요."
+            ],
+            "explain": "'because they trace a precise path through the fictional world', 묘사가 소설 속 세계에서 정확한 길을 따라가기 때문이래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'because they trace a precise path through the fictional world', 묘사가 소설 속 세계에서 정확한 길을 따라가기 때문이래요.",
+              "o2": "'because they trace a precise path through the fictional world', 묘사가 소설 속 세계에서 정확한 길을 따라가기 때문이래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "묘사가 짧고 간단해서"
+            },
+            {
+              "id": "o1",
+              "label": "묘사가 소설 속 세계에서 정확한 경로를 따라가서",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "독자가 그 장소를 이미 알고 있어서"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "but",
+            "never threaten",
+            "because",
+            "precise path"
+          ],
+          "tips": [
+            {
+              "label": "sense of orientation",
+              "text": "'방향 감각'이에요. 내가 어디쯤 있는지 아는 감각이에요.",
+              "mark": "sense of orientation"
+            },
+            {
+              "label": "open",
+              "text": "이 글에서는 → (~로) 시작하다  ('열다' 아님)",
+              "mark": "open with",
+              "trap": true
+            },
+            {
+              "label": "setting",
+              "text": "이 글에서는 → (소설의) 배경  ('설정' 아님)",
+              "mark": "setting",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s4_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "묘사가 많으면 독자가 길을 잃을 수 있어요.\nBalzac의 묘사는 정확한 경로(a precise path)를 따라가서 길을 잃지 않아요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "길을 잃음 ↔ 정확한 경로",
+            "left": {
+              "label": "losing the reader (길을 잃음)",
+              "words": [
+                {
+                  "text": "a descriptive forest",
+                  "ko": "묘사의 숲",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "a precise path (정확한 경로)",
+              "words": [
+                {
+                  "text": "trace a precise path",
+                  "ko": "정확한 경로를 따라가다",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ],
+      "refers": {
+        "they": "the descriptions(그 묘사)"
+      },
+      "emphasis": [
+        "never threaten",
+        "trace a precise path"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "When the novel describes a house, the narrator inspects the building in a systematic manner, approaching it from the street, examining the garden and the front, entering through the main door, and walking from room to room, as would a real estate agent or a prospective resident.",
+      "model_translation": "소설이 집을 묘사할 때, 화자는 부동산 중개인이나 미래의 거주자처럼 체계적인 방식으로 건물을 점검하는데, 거리에서 그 집으로 다가가 정원과 정면을 살펴보고, 현관문을 통해 들어가서 방에서 방으로 걸어 다닌다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "When",
+          "ko": "~할 때"
+        },
+        {
+          "en": "the novel",
+          "ko": "그 소설"
+        },
+        {
+          "en": "novel",
+          "ko": "소설"
+        },
+        {
+          "en": "describes a house",
+          "ko": "집을 묘사하다"
+        },
+        {
+          "en": "describes",
+          "ko": "묘사하다"
+        },
+        {
+          "en": "house",
+          "ko": "집"
+        },
+        {
+          "en": "the narrator",
+          "ko": "화자, 서술자"
+        },
+        {
+          "en": "narrator",
+          "ko": "화자, 서술자"
+        },
+        {
+          "en": "inspects the building",
+          "ko": "건물을 점검하다"
+        },
+        {
+          "en": "inspects",
+          "ko": "점검하다, 살펴보다"
+        },
+        {
+          "en": "building",
+          "ko": "건물"
+        },
+        {
+          "en": "in a systematic manner",
+          "ko": "체계적인 방식으로"
+        },
+        {
+          "en": "systematic",
+          "ko": "체계적인"
+        },
+        {
+          "en": "manner",
+          "ko": "방식"
+        },
+        {
+          "en": "approaching it from the street",
+          "ko": "거리에서 그곳으로 다가가며"
+        },
+        {
+          "en": "approaching",
+          "ko": "다가가는"
+        },
+        {
+          "en": "street",
+          "ko": "거리"
+        },
+        {
+          "en": "examining the garden and the front",
+          "ko": "정원과 정면을 살펴보며"
+        },
+        {
+          "en": "examining",
+          "ko": "살펴보는"
+        },
+        {
+          "en": "garden",
+          "ko": "정원"
+        },
+        {
+          "en": "front",
+          "ko": "정면, 앞쪽"
+        },
+        {
+          "en": "entering through the main door",
+          "ko": "현관문으로 들어가며"
+        },
+        {
+          "en": "entering",
+          "ko": "들어가는"
+        },
+        {
+          "en": "main door",
+          "ko": "현관문"
+        },
+        {
+          "en": "main",
+          "ko": "주된"
+        },
+        {
+          "en": "door",
+          "ko": "문"
+        },
+        {
+          "en": "walking from room to room",
+          "ko": "방에서 방으로 걸어 다니며"
+        },
+        {
+          "en": "walking",
+          "ko": "걷는"
+        },
+        {
+          "en": "room",
+          "ko": "방"
+        },
+        {
+          "en": "as would a real estate agent",
+          "ko": "부동산 중개인이 그러하듯"
+        },
+        {
+          "en": "real estate agent",
+          "ko": "부동산 중개인"
+        },
+        {
+          "en": "real",
+          "ko": "실제의"
+        },
+        {
+          "en": "estate",
+          "ko": "부동산, 토지"
+        },
+        {
+          "en": "agent",
+          "ko": "중개인"
+        },
+        {
+          "en": "a prospective resident",
+          "ko": "미래의 거주자"
+        },
+        {
+          "en": "prospective",
+          "ko": "미래의, 장래의"
+        },
+        {
+          "en": "resident",
+          "ko": "거주자"
+        },
+        {
+          "en": "through",
+          "ko": "~을 통해"
+        }
+      ],
+      "slashes": [
+        "describes a house,",
+        "inspects the building",
+        "a systematic manner,",
+        "from the street,",
+        "and the front,",
+        "the main door,",
+        "room to room,"
+      ],
+      "roles": [
+        {
+          "text": "the novel",
+          "role": "S"
+        },
+        {
+          "text": "describes",
+          "role": "V"
+        },
+        {
+          "text": "a house",
+          "role": "O"
+        },
+        {
+          "text": "the narrator",
+          "role": "S"
+        },
+        {
+          "text": "inspects",
+          "role": "V"
+        },
+        {
+          "text": "the building",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_order",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "화자(the narrator)는 집을 어떤 순서로 묘사할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "콤마 뒤 approaching, examining, entering, walking을 차례로 봐요.",
+              "콤마 뒤 approaching, examining, entering, walking을 차례로 봐요."
+            ],
+            "explain": "거리에서 다가가고(approaching), 정원과 정면을 보고(examining), 현관문으로 들어가(entering) 방에서 방으로 걸어요(walking). 집을 보러 온 사람처럼 움직이며 묘사해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "거리에서 다가가고(approaching), 정원과 정면을 보고(examining), 현관문으로 들어가(entering) 방에서 방으로 걸어요(walking). 집을 보러 온 사람처럼 움직이며 묘사해요.",
+              "o2": "거리에서 다가가고(approaching), 정원과 정면을 보고(examining), 현관문으로 들어가(entering) 방에서 방으로 걸어요(walking). 집을 보러 온 사람처럼 움직이며 묘사해요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "작은 물건부터 하나씩 아주 자세히"
+            },
+            {
+              "id": "o1",
+              "label": "집에 들어가는 사람이 걷는 순서대로",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "하늘에서 내려다보듯 한눈에"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "approaching",
+            "examining",
+            "entering",
+            "walking"
+          ],
+          "tips": [
+            {
+              "label": "as would + 사람",
+              "text": "'(그 사람이) 그러하듯이'예요. as a real estate agent would (inspect)에서 순서가 바뀐 꼴이에요.",
+              "mark": "as would"
+            },
+            {
+              "label": "manner",
+              "text": "이 글에서는 → 방식  ('예의, 매너' 아님)",
+              "mark": "manner",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s5_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'walking from room to room(방에서 방으로 걸어 다니며)'는 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "걸어가는 길이 정해져 있으면 길을 잃을까요, 안 잃을까요?",
+              "걸어가는 길이 정해져 있으면 길을 잃을까요, 안 잃을까요?"
+            ],
+            "explain": "방에서 방으로 차례로 걸어가는 건 정해진 길을 따라가는 거예요. 정확한 경로 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "방에서 방으로 차례로 걸어가는 건 정해진 길을 따라가는 거예요. 정확한 경로 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · losing the reader (길을 잃음)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · a precise path (정확한 경로)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "길을 잃음 ↔ 정확한 경로",
+            "left": {
+              "label": "losing the reader (길을 잃음)",
+              "words": [
+                {
+                  "text": "a descriptive forest",
+                  "ko": "묘사의 숲"
+                }
+              ]
+            },
+            "right": {
+              "label": "a precise path (정확한 경로)",
+              "words": [
+                {
+                  "text": "trace a precise path",
+                  "ko": "정확한 경로를 따라가다"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "walking from room to room"
+              ],
+              "left": "왼쪽 · losing the reader (길을 잃음)",
+              "right": "오른쪽 · a precise path (정확한 경로)"
+            }
+          },
+          "highlight": [
+            "walking from room to room"
+          ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🖼️",
+                "en": "picture: instantly ↔ language: detail by detail",
+                "ko": "그림은 바로 보여 주지만, 글은 하나하나 묘사해야 해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2",
+                "icon": "🌲",
+                "en": "without losing the reader in a descriptive forest?",
+                "ko": "묘사의 숲에서 독자가 길을 잃지 않게 하려면?",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "🧭",
+                "en": "One solution: ____ · a precise path",
+                "ko": "Balzac의 해결책 — 묘사가 정확한 경로를 따라가요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5",
+                "icon": "🚶",
+                "en": "approaching → entering → room to room",
+                "ko": "화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "approaching it from the street": "it = the building(그 건물)"
+      },
+      "emphasis": [
+        "the narrator",
+        "walking from room to room"
+      ]
+    },
+    {
+      "id": 6,
+      "text": "The reader ends up with a precise notion of the layout of the building, all the way down to the floor plan.",
+      "model_translation": "결국 독자는 평면도에 이르기까지 그 건물의 배치에 대해 정확한 개념을 갖게 된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The reader",
+          "ko": "독자"
+        },
+        {
+          "en": "ends up with",
+          "ko": "결국 ~을 갖게 되다"
+        },
+        {
+          "en": "ends",
+          "ko": "끝나다"
+        },
+        {
+          "en": "a precise notion",
+          "ko": "정확한 개념"
+        },
+        {
+          "en": "notion",
+          "ko": "개념, 생각"
+        },
+        {
+          "en": "of the layout of the building",
+          "ko": "그 건물의 배치에 대한"
+        },
+        {
+          "en": "the layout of the building",
+          "ko": "그 건물의 배치"
+        },
+        {
+          "en": "layout",
+          "ko": "배치, 구조"
+        },
+        {
+          "en": "all the way down to the floor plan",
+          "ko": "평면도에 이르기까지"
+        },
+        {
+          "en": "all the way down to",
+          "ko": "~에 이르기까지"
+        },
+        {
+          "en": "way",
+          "ko": "길, 방식"
+        },
+        {
+          "en": "floor plan",
+          "ko": "평면도"
+        },
+        {
+          "en": "floor",
+          "ko": "바닥, 층"
+        },
+        {
+          "en": "plan",
+          "ko": "도면, 계획"
+        },
+        {
+          "en": "reader",
+          "ko": "독자"
+        },
+        {
+          "en": "precise",
+          "ko": "정확한"
+        },
+        {
+          "en": "down",
+          "ko": "아래로"
+        }
+      ],
+      "slashes": [
+        "a precise notion",
+        "of the building,"
+      ],
+      "roles": [
+        {
+          "text": "The reader",
+          "role": "S"
+        },
+        {
+          "text": "ends up with",
+          "role": "V"
+        },
+        {
+          "text": "a precise notion",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s6_basic",
+          "candidates": [
+            "The reader",
+            "ends up with",
+            "a precise notion",
+            "the layout of the building",
+            "all the way down to the floor plan"
+          ],
+          "answers": [
+            "The reader",
+            "all the way down to the floor plan",
+            "the layout of the building",
+            "a precise notion",
+            "ends up with"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The reader",
+                "ko": "독자는"
+              },
+              " 결국 ",
+              {
+                "en": "all the way down to the floor plan",
+                "ko": "평면도에 이르기까지"
+              },
+              " ",
+              {
+                "en": "the layout of the building",
+                "ko": "건물의 배치에 대해"
+              },
+              " ",
+              {
+                "en": "a precise notion",
+                "ko": "정확한 개념을"
+              },
+              " ",
+              {
+                "en": "ends up with",
+                "ko": "갖게 된다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0
+        },
+        {
+          "id": "s6_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 빈칸 '해결책은 ____하는 것'에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 오른쪽, 5문장에서 화자가 어떻게 움직였는지 떠올려 봐요.",
+              "칠판 오른쪽, 5문장에서 화자가 어떻게 움직였는지 떠올려 봐요."
+            ],
+            "explain": "화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸으며 묘사해요. 그 길을 따라가니 독자는 길을 잃지 않고 평면도까지 정확히 알게 돼요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸으며 묘사해요. 그 길을 따라가니 독자는 길을 잃지 않고 평면도까지 정확히 알게 돼요.",
+              "o2": "화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸으며 묘사해요. 그 길을 따라가니 독자는 길을 잃지 않고 평면도까지 정확히 알게 돼요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "작은 물건 하나하나를 아주 자세히 그린다"
+            },
+            {
+              "id": "o1",
+              "label": "집 안을 걸어 다니는 사람의 길을 따라 묘사한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "장면을 멀리서 한눈에 보여 준다"
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "길을 잃음 ↔ 정확한 경로",
+            "left": {
+              "label": "losing the reader (길을 잃음)",
+              "words": [
+                {
+                  "text": "a descriptive forest",
+                  "ko": "묘사의 숲"
+                }
+              ]
+            },
+            "right": {
+              "label": "a precise path (정확한 경로)",
+              "words": [
+                {
+                  "text": "trace a precise path",
+                  "ko": "정확한 경로를 따라가다"
+                },
+                {
+                  "text": "walking from room to room",
+                  "ko": "방에서 방으로 걸어 다니며"
+                },
+                {
+                  "text": "a precise notion",
+                  "ko": "정확한 개념",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "a precise notion"
+          ]
+        },
+        {
+          "id": "s6_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 해결책 쪽이에요. 4·5문장의 정확한 경로(a precise path)를 다른 말로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

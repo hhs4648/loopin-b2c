@@ -1,6 +1,6 @@
 {
   "version": "0.3",
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "note": "대분류(groups) → 중분류(collections) → 세트(sets). 2026년 3월 21번을 기준으로 새로 시작하며 예전 지문은 지웠다",
   "groups": [
     {
@@ -9,9 +9,29 @@
       "subtitle": "전국연합학력평가 · 모의평가 · 수능",
       "collections": [
         {
+          "id": "mopyeong-2027-09",
+          "title": "2026년 9월 모의평가",
+          "subtitle": "2027학년도 9월 모의평가 · 한국교육과정평가원",
+          "tag": "평가원",
+          "exam": {
+            "body": "평가원",
+            "held": "2026-09"
+          }
+        },
+        {
+          "id": "mopyeong-2027-06",
+          "title": "2026년 6월 모의평가",
+          "subtitle": "2027학년도 6월 모의평가 · 한국교육과정평가원",
+          "tag": "평가원",
+          "exam": {
+            "body": "평가원",
+            "held": "2026-06"
+          }
+        },
+        {
           "id": "mopyeong-2026-06",
-          "title": "2026학년도 6월 모의평가",
-          "subtitle": "2025년 6월 시행 · 한국교육과정평가원",
+          "title": "2025년 6월 모의평가",
+          "subtitle": "2026학년도 6월 모의평가 · 한국교육과정평가원",
           "tag": "평가원",
           "exam": {
             "body": "평가원",
@@ -21,7 +41,7 @@
         {
           "id": "moeui-2026-03",
           "title": "2026년 3월 모의고사",
-          "subtitle": "2026년 3월 시행 · 고3 전국연합학력평가",
+          "subtitle": "고3 전국연합학력평가",
           "tag": "모의",
           "exam": {
             "body": "교육청",
@@ -31,7 +51,7 @@
         {
           "id": "moeui-2024-03",
           "title": "2024년 3월 모의고사",
-          "subtitle": "2024년 3월 시행 · 고3 전국연합학력평가",
+          "subtitle": "고3 전국연합학력평가",
           "tag": "모의",
           "exam": {
             "body": "교육청",
@@ -41,7 +61,7 @@
         {
           "id": "moeui-2022-03",
           "title": "2022년 3월 모의고사",
-          "subtitle": "2022년 3월 시행 · 고3 전국연합학력평가",
+          "subtitle": "고3 전국연합학력평가",
           "tag": "모의",
           "exam": {
             "body": "교육청",
@@ -134,6 +154,36 @@
       ]
     },
     {
+      "id": "moeui-2026-03-31",
+      "collection": "moeui-2026-03",
+      "title": "31번 문제",
+      "subtitle": "빈칸 — 예술과 상업",
+      "wrong_rate": 59.8,
+      "lessons": [
+        "moeui-2026-03-31-art-and-commerce"
+      ]
+    },
+    {
+      "id": "moeui-2026-03-41",
+      "collection": "moeui-2026-03",
+      "title": "41번 문제",
+      "subtitle": "제목 — 문학이라는 거울",
+      "wrong_rate": 60.8,
+      "lessons": [
+        "moeui-2026-03-41-literary-mirror"
+      ]
+    },
+    {
+      "id": "moeui-2026-03-42",
+      "collection": "moeui-2026-03",
+      "title": "42번 문제",
+      "subtitle": "어휘 — 문학이라는 거울",
+      "wrong_rate": 57.7,
+      "lessons": [
+        "moeui-2026-03-42-literary-mirror"
+      ]
+    },
+    {
       "id": "mopyeong-2026-06-34",
       "collection": "mopyeong-2026-06",
       "title": "34번 문제",
@@ -176,7 +226,7 @@
       "collection": "moeui-2024-03",
       "title": "31번 문제",
       "subtitle": "빈칸 — 자라면서 잃는 즉흥성",
-      "wrong_rate": 71.0,
+      "wrong_rate": 71,
       "lessons": [
         "moeui-2024-03-31-conventional-writing"
       ]
@@ -378,7 +428,7 @@
       "collection": "moeui-2022-03",
       "title": "29번 문제",
       "subtitle": "어법 — 고대 그리스 음악은 어떤 소리였을까",
-      "wrong_rate": 67.0,
+      "wrong_rate": 67,
       "lessons": [
         "moeui-2022-03-29-greek-music"
       ]
@@ -388,7 +438,7 @@
       "collection": "moeui-2022-03",
       "title": "31번 문제",
       "subtitle": "빈칸 — 싫은 사람에게도 배울 수 있는 마음",
-      "wrong_rate": 65.0,
+      "wrong_rate": 65,
       "lessons": [
         "moeui-2022-03-31-metta-meditation"
       ]
@@ -398,7 +448,7 @@
       "collection": "moeui-2022-03",
       "title": "32번 문제",
       "subtitle": "빈칸 — 해가 오른쪽에 뜬 항해 기록",
-      "wrong_rate": 58.0,
+      "wrong_rate": 58,
       "lessons": [
         "moeui-2022-03-32-sun-on-right"
       ]
@@ -408,7 +458,7 @@
       "collection": "moeui-2022-03",
       "title": "34번 문제",
       "subtitle": "빈칸 — 화가와 우리는 무엇이 닮았을까",
-      "wrong_rate": 53.0,
+      "wrong_rate": 53,
       "lessons": [
         "moeui-2022-03-34-social-conventions"
       ]
@@ -418,7 +468,7 @@
       "collection": "moeui-2022-03",
       "title": "36번 문제",
       "subtitle": "순서 — 분노와 공감은 함께 있을 수 없다",
-      "wrong_rate": 53.0,
+      "wrong_rate": 53,
       "lessons": [
         "moeui-2022-03-36-anger-empathy"
       ]
@@ -428,7 +478,7 @@
       "collection": "moeui-2022-03",
       "title": "39번 문제",
       "subtitle": "문장 넣기 — 시간만 늘리면 성적이 오를까",
-      "wrong_rate": 52.0,
+      "wrong_rate": 52,
       "lessons": [
         "moeui-2022-03-39-time-on-task"
       ]
@@ -438,7 +488,7 @@
       "collection": "moeui-2022-03",
       "title": "37번 문제",
       "subtitle": "순서 — 구름이 무서우면 이론을 세워라",
-      "wrong_rate": 48.0,
+      "wrong_rate": 48,
       "lessons": [
         "moeui-2022-03-37-living-clouds"
       ]
@@ -448,7 +498,7 @@
       "collection": "moeui-2022-03",
       "title": "33번 문제",
       "subtitle": "빈칸 — 사람은 왜 지루한 삶에 만족하지 못할까",
-      "wrong_rate": 47.0,
+      "wrong_rate": 47,
       "lessons": [
         "moeui-2022-03-33-creators-of-destiny"
       ]
@@ -458,7 +508,7 @@
       "collection": "moeui-2022-03",
       "title": "30번 문제",
       "subtitle": "어휘 — 소크라테스는 왜 글쓰기를 걱정했을까",
-      "wrong_rate": 42.0,
+      "wrong_rate": 42,
       "lessons": [
         "moeui-2022-03-30-socrates-writing"
       ]
@@ -468,7 +518,7 @@
       "collection": "moeui-2022-03",
       "title": "40번 문제",
       "subtitle": "요약문 — 적도 주변엔 왜 언어와 종교가 많을까",
-      "wrong_rate": 41.0,
+      "wrong_rate": 41,
       "lessons": [
         "moeui-2022-03-40-pathogen-languages"
       ]
@@ -478,7 +528,7 @@
       "collection": "moeui-2022-03",
       "title": "38번 문제",
       "subtitle": "문장 넣기 — 동물의 신호는 그대로 남을까",
-      "wrong_rate": 40.0,
+      "wrong_rate": 40,
       "lessons": [
         "moeui-2022-03-38-animal-signals"
       ]
@@ -488,7 +538,7 @@
       "collection": "moeui-2022-03",
       "title": "35번 문제",
       "subtitle": "무관한 문장 — 첫 음악 수업, 악기 없이 시작할까",
-      "wrong_rate": 36.0,
+      "wrong_rate": 36,
       "lessons": [
         "moeui-2022-03-35-music-without-instruments"
       ]
@@ -498,7 +548,7 @@
       "collection": "moeui-2022-03",
       "title": "42번 문제",
       "subtitle": "어휘 — 식물도 행동한다고 할 수 있을까",
-      "wrong_rate": 34.0,
+      "wrong_rate": 34,
       "lessons": [
         "moeui-2022-03-42-plant-behavior"
       ]
@@ -508,9 +558,209 @@
       "collection": "moeui-2022-03",
       "title": "21번 문제",
       "subtitle": "밑줄 의미 — 에디슨의 전깃불이 남긴 흔적",
-      "wrong_rate": 32.0,
+      "wrong_rate": 32,
       "lessons": [
         "moeui-2022-03-21-edison-light"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-21",
+      "collection": "mopyeong-2027-06",
+      "title": "21번 문제",
+      "subtitle": "밑줄 의미 — 동물의 의식을 연구한 동물학자",
+      "wrong_rate": 60,
+      "lessons": [
+        "mopyeong-2027-06-21-give-up-the-ghost"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-31",
+      "collection": "mopyeong-2027-06",
+      "title": "31번 문제",
+      "subtitle": "빈칸 — 보존과 보전의 차이",
+      "wrong_rate": 69,
+      "lessons": [
+        "mopyeong-2027-06-31-preserve-conserve"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-32",
+      "collection": "mopyeong-2027-06",
+      "title": "32번 문제",
+      "subtitle": "빈칸 — 말과 비언어적 행동",
+      "wrong_rate": 52,
+      "lessons": [
+        "mopyeong-2027-06-32-nonverbal-secret"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-33",
+      "collection": "mopyeong-2027-06",
+      "title": "33번 문제",
+      "subtitle": "빈칸 — 감정과 지각",
+      "wrong_rate": 58,
+      "lessons": [
+        "mopyeong-2027-06-33-emotion-perception"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-34",
+      "collection": "mopyeong-2027-06",
+      "title": "34번 문제",
+      "subtitle": "빈칸 — 미술 수집가와 작품 가치",
+      "wrong_rate": 76,
+      "lessons": [
+        "mopyeong-2027-06-34-art-collector"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-36",
+      "collection": "mopyeong-2027-06",
+      "title": "36번 문제",
+      "subtitle": "순서 — 곤충을 막는 식물의 방어",
+      "wrong_rate": 57,
+      "lessons": [
+        "mopyeong-2027-06-36-plant-defenses"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-37",
+      "collection": "mopyeong-2027-06",
+      "title": "37번 문제",
+      "subtitle": "순서 — 구경거리와 문화",
+      "wrong_rate": 68,
+      "lessons": [
+        "mopyeong-2027-06-37-spectacle-culture"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-39",
+      "collection": "mopyeong-2027-06",
+      "title": "39번 문제",
+      "subtitle": "문장 넣기 — 빨간색과 색 이름",
+      "wrong_rate": 59,
+      "lessons": [
+        "mopyeong-2027-06-39-red-first-color"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-40",
+      "collection": "mopyeong-2027-06",
+      "title": "40번 문제",
+      "subtitle": "요약문 — 제약 산업과 AI",
+      "wrong_rate": 61,
+      "lessons": [
+        "mopyeong-2027-06-40-ai-neglected-diseases"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-06-42",
+      "collection": "mopyeong-2027-06",
+      "title": "42번 문제",
+      "subtitle": "어휘 — 유리의 구조와 성질",
+      "wrong_rate": 45,
+      "lessons": [
+        "mopyeong-2027-06-42-glass-state"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-21",
+      "collection": "mopyeong-2027-09",
+      "title": "21번 문제",
+      "subtitle": "밑줄 의미 — 검색어 자동 완성",
+      "wrong_rate": 46,
+      "lessons": [
+        "mopyeong-2027-09-21-autocomplete-mirror"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-30",
+      "collection": "mopyeong-2027-09",
+      "title": "30번 문제",
+      "subtitle": "어휘 — 정원의 해충 관리",
+      "wrong_rate": 38,
+      "lessons": [
+        "mopyeong-2027-09-30-garden-pests"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-31",
+      "collection": "mopyeong-2027-09",
+      "title": "31번 문제",
+      "subtitle": "빈칸 — 사람들 앞에서 말할 때의 긴장",
+      "wrong_rate": 29,
+      "lessons": [
+        "mopyeong-2027-09-31-public-speaking"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-32",
+      "collection": "mopyeong-2027-09",
+      "title": "32번 문제",
+      "subtitle": "빈칸 — 간지럼과 촉각 자극",
+      "wrong_rate": 61,
+      "lessons": [
+        "mopyeong-2027-09-32-tickle-surprise"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-33",
+      "collection": "mopyeong-2027-09",
+      "title": "33번 문제",
+      "subtitle": "빈칸 — 소설 속 장소 묘사",
+      "wrong_rate": 57,
+      "lessons": [
+        "mopyeong-2027-09-33-balzac-path"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-34",
+      "collection": "mopyeong-2027-09",
+      "title": "34번 문제",
+      "subtitle": "빈칸 — 농담과 웃음",
+      "wrong_rate": 73,
+      "lessons": [
+        "mopyeong-2027-09-34-joke-canyon"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-36",
+      "collection": "mopyeong-2027-09",
+      "title": "36번 문제",
+      "subtitle": "순서 — 관리자의 말과 보상",
+      "wrong_rate": 30,
+      "lessons": [
+        "mopyeong-2027-09-36-mixed-signals"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-37",
+      "collection": "mopyeong-2027-09",
+      "title": "37번 문제",
+      "subtitle": "순서 — 양식 연어의 시작",
+      "wrong_rate": 38,
+      "lessons": [
+        "mopyeong-2027-09-37-farmed-salmon"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-38",
+      "collection": "mopyeong-2027-09",
+      "title": "38번 문제",
+      "subtitle": "문장 넣기 — 시민 과학과 시민 참여",
+      "wrong_rate": 49,
+      "lessons": [
+        "mopyeong-2027-09-38-citizen-science"
+      ]
+    },
+    {
+      "id": "mopyeong-2027-09-39",
+      "collection": "mopyeong-2027-09",
+      "title": "39번 문제",
+      "subtitle": "문장 넣기 — 음악을 듣는 사람의 주의력",
+      "wrong_rate": 41,
+      "lessons": [
+        "mopyeong-2027-09-39-musical-attention"
       ]
     }
   ]

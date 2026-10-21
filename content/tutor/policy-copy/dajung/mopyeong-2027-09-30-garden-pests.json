@@ -1,0 +1,317 @@
+{
+  "lesson": "mopyeong-2027-09-30-garden-pests",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어휘 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_good": {
+      "ask": "허브가 정원에 좋은 소식(good news)인 까닭은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "콜론(:) 뒤가 좋은 소식의 내용이에요. either A or B는 'A하거나 B하다'예요.",
+        "콜론(:) 뒤가 좋은 소식의 내용이에요. either A or B는 'A하거나 B하다'예요."
+      ],
+      "explain": "'either repel pests or attract beneficial insects', 해충을 쫓거나 이로운 곤충을 부른대요. 그 곤충이 해충 수를 억제(keep in check)해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'either repel pests or attract beneficial insects', 해충을 쫓거나 이로운 곤충을 부른대요. 그 곤충이 해충 수를 억제(keep in check)해요.",
+        "o2": "'either repel pests or attract beneficial insects', 해충을 쫓거나 이로운 곤충을 부른대요. 그 곤충이 해충 수를 억제(keep in check)해요."
+      },
+      "point": "허브 = 해충을 쫓거나(repel), 해충을 억제하는 익충을 부른다",
+      "from": "lnlyaa"
+    },
+    "s2_check": {
+      "ask": "그럼 보기 ①destructive는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "“good” bugs(유익한 곤충)가 잡아먹는 해충이에요. 그 해충이 정원에 어떤 해충일지 봐요.",
+        "“good” bugs(유익한 곤충)가 잡아먹는 해충이에요. 그 해충이 정원에 어떤 해충일지 봐요."
+      ],
+      "explain": "유익한 곤충이 잡아먹는 건 정원을 망치는, 더 파괴적인(destructive) 해충이에요. 그래서 정원이 더 성공적이 돼요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "유익한 곤충이 잡아먹는 건 정원을 망치는, 더 파괴적인(destructive) 해충이에요. 그래서 정원이 더 성공적이 돼요."
+      },
+      "point": "① destructive: 유익한 곤충이 잡아먹는 해충 = 정원을 망치는 해충",
+      "from": "1r7ewbq"
+    },
+    "story_2": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_before": {
+      "ask": "that existed on its own before you planted anything은 어떤 생태계일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "on its own은 '스스로, 자체적으로'예요. before you planted anything을 같이 봐요.",
+        "on its own은 '스스로, 자체적으로'예요. before you planted anything을 같이 봐요."
+      ],
+      "explain": "'existed on its own before you planted anything', 여러분이 무엇을 심기 전부터 그 자리에 스스로 있던 생태계래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'existed on its own before you planted anything', 여러분이 무엇을 심기 전부터 그 자리에 스스로 있던 생태계래요.",
+        "o2": "'existed on its own before you planted anything', 여러분이 무엇을 심기 전부터 그 자리에 스스로 있던 생태계래요."
+      },
+      "point": "원래 생태계 = 내가 심기 전부터 스스로(on its own) 있던 것",
+      "from": "wu2yoz"
+    },
+    "s3_board": {
+      "say": "두 그룹으로 나눠 봐요.\n원래 스스로 있던 생태계(on its own)와, 거기에 무언가를 심는 나(you planted)예요.",
+      "from": "l88k6e"
+    },
+    "s3_check": {
+      "ask": "그럼 보기 ②altering는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "원래 스스로 있던 생태계에 내가 무언가를 심어요. 그러면 그 생태계가 그대로일지 봐요.",
+        "원래 스스로 있던 생태계에 내가 무언가를 심어요. 그러면 그 생태계가 그대로일지 봐요."
+      ],
+      "explain": "스스로 있던 생태계에 무언가를 심으면 그 생태계는 바뀌어요. 그래서 altering(변화시키다)은 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "스스로 있던 생태계에 무언가를 심으면 그 생태계는 바뀌어요. 그래서 altering(변화시키다)은 맞는 낱말이에요."
+      },
+      "point": "② altering: 스스로 있던 생태계 + 내가 심음 → 생태계가 바뀜",
+      "from": "ra3f8a"
+    },
+    "s4_sort": {
+      "ask": "So로 이어져요. wave after wave of pests(잇달아 밀려오는 해충)는 칠판 어느 쪽에서 생긴 일일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "So는 앞 문장의 결과예요. 3문장에서 무엇을 했기 때문인지 봐요.",
+        "So는 앞 문장의 결과예요. 3문장에서 무엇을 했기 때문인지 봐요."
+      ],
+      "explain": "내가 무언가를 심어 원래 생태계를 건드렸기 때문에(So) 생긴 일이에요. 오른쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "내가 무언가를 심어 원래 생태계를 건드렸기 때문에(So) 생긴 일이에요. 오른쪽이에요."
+      },
+      "point": "wave after wave of pests ← 내가 심어서 생태계를 건드린 결과(So)",
+      "from": "d78me2"
+    },
+    "s4_check": {
+      "ask": "그럼 보기 ③overtaking는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "해충이 파도처럼 잇달아 밀려와요. 그 해충이 내 식물을 어떻게 하는 것처럼 느껴질지 봐요.",
+        "해충이 파도처럼 잇달아 밀려와요. 그 해충이 내 식물을 어떻게 하는 것처럼 느껴질지 봐요."
+      ],
+      "explain": "해충이 파도처럼 밀려오면 식물을 뒤덮는(overtaking) 것처럼 느껴져요. 다음 문장 This is normal과도 이어져서 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "해충이 파도처럼 밀려오면 식물을 뒤덮는(overtaking) 것처럼 느껴져요. 다음 문장 This is normal과도 이어져서 맞는 낱말이에요."
+      },
+      "point": "③ overtaking: 해충이 잇달아 밀려옴 → 식물을 뒤덮는 것 같다 (그래도 정상)",
+      "from": "1imk1fn"
+    },
+    "s5_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "lwh93d"
+    },
+    "story_5": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_with": {
+      "ask": "work with the environment는 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "with는 '~와 함께'예요. 싸운다면 against를 써요.",
+        "with는 '~와 함께'예요. 싸운다면 against를 써요."
+      ],
+      "explain": "'work with the environment', 환경과 함께, 환경에 맞춰 일한다는 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'work with the environment', 환경과 함께, 환경에 맞춰 일한다는 말이에요.",
+        "o2": "'work with the environment', 환경과 함께, 환경에 맞춰 일한다는 말이에요."
+      },
+      "point": "목표 = 환경과 함께(work with) — 맞서 싸우지 않는다",
+      "from": "1sucit2"
+    },
+    "s6_sort": {
+      "ask": "balance out(균형을 이루다)은 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "식물, 꽃가루 매개자, 해충까지 모두 균형을 이뤄요. 내가 하나하나 손대는 건지 봐요.",
+        "식물, 꽃가루 매개자, 해충까지 모두 균형을 이뤄요. 내가 하나하나 손대는 건지 봐요."
+      ],
+      "explain": "균형은 식물과 곤충이 스스로 맞춰 가는 거예요. 원래 스스로 있던 생태계 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "균형은 식물과 곤충이 스스로 맞춰 가는 거예요. 원래 스스로 있던 생태계 쪽이에요."
+      },
+      "point": "balance out → on its own(스스로) 쪽",
+      "from": "40zpjk"
+    },
+    "s6_check": {
+      "ask": "그럼 보기 ④allow는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "목표는 balance out(균형을 이루다)이에요. 식물, 꽃가루 매개자, 심지어 해충(even the annoying pests)까지 어떻게 해야 균형이 될지 봐요.",
+        "목표는 balance out(균형을 이루다)이에요. 식물, 꽃가루 매개자, 심지어 해충(even the annoying pests)까지 어떻게 해야 균형이 될지 봐요."
+      ],
+      "explain": "해충까지 다 없애지 않고 함께 균형을 이루도록 두는(allow) 게 목표예요. 그래서 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "해충까지 다 없애지 않고 함께 균형을 이루도록 두는(allow) 게 목표예요. 그래서 맞는 낱말이에요."
+      },
+      "point": "④ allow: 식물·곤충·해충까지 균형을 이루도록 둔다",
+      "from": "13tzoui"
+    },
+    "s7_sort": {
+      "ask": "Immediately attempting to remove(즉시 없애려는 시도)는 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "새 해충을 즉시, 완전히(entirely) 없애려는 건 누가 하는 일인지 봐요.",
+        "새 해충을 즉시, 완전히(entirely) 없애려는 건 누가 하는 일인지 봐요."
+      ],
+      "explain": "해충을 바로 없애려는 건 내가 정원에 손대는 일이에요. 오른쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "해충을 바로 없애려는 건 내가 정원에 손대는 일이에요. 오른쪽이에요."
+      },
+      "point": "Immediately attempting to remove → you planted(내가 손댐) 쪽",
+      "from": "1jiystf"
+    },
+    "s7_further": {
+      "ask": "그렇게 하면 these initial imbalances(이 초기 불균형)는 어떻게 된대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "will only further를 봐요. 여기서 further는 동사예요.",
+        "will only further를 봐요. 여기서 further는 동사예요."
+      ],
+      "explain": "'will only further these initial imbalances', further는 동사로 '심화시키다'예요. 불균형을 더 키울 뿐이래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'will only further these initial imbalances', further는 동사로 '심화시키다'예요. 불균형을 더 키울 뿐이래요.",
+        "o2": "'will only further these initial imbalances', further는 동사로 '심화시키다'예요. 불균형을 더 키울 뿐이래요."
+      },
+      "point": "해충을 즉시 없애려 함 → 초기 불균형을 더 키울 뿐(further)",
+      "from": "1f2n0h7"
+    },
+    "s7_sort2": {
+      "ask": "helping your garden grow better on its own(정원이 스스로 더 잘 자라게 돕기)은 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "on its own은 '스스로'예요.",
+        "on its own은 '스스로'예요."
+      ],
+      "explain": "정원이 스스로(on its own) 자라는 거예요. 왼쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "정원이 스스로(on its own) 자라는 거예요. 왼쪽이에요."
+      },
+      "point": "grow better on its own → on its own(스스로) 쪽",
+      "from": "a32gdi"
+    },
+    "s7_go": {
+      "say": "밑줄 다섯 개가 칠판의 흐름과 맞는지 떠올리며 문제를 풀어 봐요.",
+      "from": "61jqi"
+    }
+  },
+  "exam": {
+    "ask": "밑줄 단어마다 칠판의 어느 쪽 흐름인지 떠올려 봐요. 흐름과 안 맞는 것 하나를 골라요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 해충을 바로 다 없애려 하면 불균형만 커져요. 그러면 정원이 스스로 균형을 찾는 과정은 짧아지는(shorten) 게 아니라 길어져요(prolong).",
+    "final_wrong": "정답은 ⑤예요. 해충을 바로 없애려 하면 불균형이 커지니, 정원이 스스로 자라는 과정은 짧아지는 게 아니라 길어져요(prolong).",
+    "option_feedback": {
+      "1": "유익한 곤충이 잡아먹는 건 정원을 망치는 해충이라 destructive(파괴적인)가 맞아요.",
+      "2": "스스로 있던 생태계에 무언가를 심으면 생태계가 바뀌니 altering(변화시키는)이 맞아요.",
+      "3": "생태계를 건드린 뒤라 해충이 밀려와 식물을 뒤덮는 것 같대요. 다음 문장이 그게 정상이래요.",
+      "4": "해충까지 다 없애지 않고 함께 균형을 이루도록 두는(allow) 게 목표라 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 11%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "altering(변화시키는)이 '원래 스스로 있던(on its own)'과 안 맞아 보여서 골라요. 하지만 스스로 있던 생태계에 내가 무언가를 심으면 그 생태계는 바뀌어요. 그래서 4문장에서 해충이 밀려와요."
+      },
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 13%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "overtaking(장악하는)이 1문장의 '허브가 해충을 쫓는다'와 안 맞아 보여서 골라요. 하지만 4문장은 So로 이어져요. 내가 생태계를 바꿨으니 처음엔 해충이 식물을 뒤덮는 것 같고, 5문장이 그게 정상이래요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "3문장",
+              "text": "you are altering the ecosystem",
+              "ko": "내가 생태계를 바꿈",
+              "tone": "hl"
+            },
+            {
+              "label": "4문장",
+              "text": "So … wave after wave of pests are overtaking",
+              "ko": "그래서 해충이 밀려와 식물을 뒤덮는 것 같음",
+              "tone": "hl"
+            },
+            {
+              "label": "5문장",
+              "text": "This is normal.",
+              "ko": "그건 정상",
+              "tone": "hl"
+            }
+          ]
+        }
+      },
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 12%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "allow(허용하다)가 '성가신 해충까지 허용한다'로 읽혀서 이상해 보여요. 하지만 목표는 balance out, 해충까지 함께 균형을 이루게 하는 거예요. 해충을 다 없애는 게 아니에요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "6문장",
+              "text": "allow … even the annoying pests to balance out",
+              "ko": "해충까지 균형을 이루도록 둠",
+              "tone": "hl"
+            },
+            {
+              "label": "7문장",
+              "text": "Immediately attempting to remove … will only further these initial imbalances",
+              "ko": "바로 없애면 불균형만 커짐",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1h7med6"
+  },
+  "intro": {
+    "topic": {
+      "say": "정원에 벌레가 생기면 어떻게 할까요? 이번 글은 정원의 해충(pests)을 다뤄요."
+    },
+    "method1": {
+      "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+    },
+    "method2": {
+      "say": "요지를 잡고, 단어를 두 그룹으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 볼 거예요."
+    },
+    "from": "1bv2xgj"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "106jk29"
+}

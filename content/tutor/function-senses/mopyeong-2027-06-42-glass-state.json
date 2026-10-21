@@ -1,0 +1,116 @@
+{
+ "2": [
+  {
+   "word": "as",
+   "phrase": "Clear and perfect as it might appear",
+   "sense": "비록 ~이지만",
+   "usage": "형용사 + as + 주어 + 동사 = 비록 ~이지만 (양보)"
+  },
+  {
+   "word": "to",
+   "phrase": "appear to our eyes",
+   "sense": "~에게",
+   "usage": "appear to ~ = ~에게 ~해 보이다"
+  }
+ ],
+ "3": [
+  {
+   "word": "for",
+   "phrase": "term for this mess",
+   "sense": "~에 대한, ~을 뜻하는",
+   "usage": "명사 + for ~ = ~에 대한 명사"
+  },
+  {
+   "word": "for",
+   "phrase": "for some scientists",
+   "sense": "~에게는",
+   "usage": "for + 사람 = ~에게는"
+  },
+  {
+   "word": "for",
+   "phrase": "for others",
+   "sense": "~에게는",
+   "usage": "for some ~, for others ~ = 어떤 이에게는 ~, 다른 이에게는 ~"
+  }
+ ],
+ "5": [
+  {
+   "word": "as",
+   "phrase": "behaves as a (a)liquid",
+   "sense": "~처럼, ~로서",
+   "usage": "behave as ~ = ~처럼 행동하다"
+  },
+  {
+   "word": "if",
+   "phrase": "if you don’t add",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "add enough lime to the mix",
+   "sense": "~에",
+   "usage": "add A to B = A를 B에 넣다"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "not that way",
+   "sense": "그렇게 (그런)",
+   "usage": "지시형용사 that + 명사 = 그 ~ (that way = 그렇게)"
+  }
+ ],
+ "7": [
+  {
+   "word": "that",
+   "phrase": "that’s the way",
+   "sense": "그것",
+   "usage": "지시대명사 that (= 그것이 ~한 방식이다)"
+  }
+ ],
+ "8": [
+  {
+   "word": "to",
+   "phrase": "had to wait",
+   "sense": "~해야 (했다)",
+   "usage": "have to + 동사원형 = ~해야 한다"
+  },
+  {
+   "word": "for",
+   "phrase": "for truly flat, thin sheets",
+   "sense": "~을 (얻으려고)",
+   "usage": "wait for ~ = ~을 기다리다"
+  }
+ ],
+ "9": [
+  {
+   "word": "that",
+   "phrase": "The (d)paradox is that",
+   "sense": "~라는 것",
+   "usage": "명사절 that — be동사 뒤 보어 (역설은 ~라는 것이다)"
+  },
+  {
+   "word": "to",
+   "phrase": "struggle to comprehend",
+   "sense": "~하는 데",
+   "usage": "struggle to + 동사원형 = ~하는 데 애를 먹다"
+  }
+ ],
+ "10": [
+  {
+   "word": "to",
+   "phrase": "seems to (e)obey",
+   "sense": "~하는 것 (같다)",
+   "usage": "seem to + 동사원형 = ~하는 것 같다"
+  }
+ ],
+ "11": [
+  {
+   "word": "as",
+   "phrase": "As one glassmaker put it",
+   "sense": "~대로, ~듯이",
+   "usage": "As + 주어 + put it = ~가 말했듯이"
+  }
+ ]
+}

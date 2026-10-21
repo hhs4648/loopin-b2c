@@ -1,0 +1,307 @@
+{
+  "lesson": "mopyeong-2027-06-33-emotion-perception",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 일곱째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "s4g3nw"
+    },
+    "s1_blank_meaning": {
+      "ask": "아주 짧은 문장이에요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "The more ~, (the) …는 '~할수록 더 …하다'예요. affected는 '영향을 받은'이에요.",
+        "The more ~, (the) …는 '~할수록 더 …하다'예요. affected는 '영향을 받은'이에요."
+      ],
+      "explain": "'The more affected one is'는 '사람이 더 영향을 받을수록'이에요. 빈칸에는 그러면 무엇이 더하거나 덜한지가 와요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'The more affected one is'는 '사람이 더 영향을 받을수록'이에요. 빈칸에는 그러면 무엇이 더하거나 덜한지가 와요.",
+        "o2": "'The more affected one is'는 '사람이 더 영향을 받을수록'이에요. 빈칸에는 그러면 무엇이 더하거나 덜한지가 와요."
+      },
+      "from": "14ssnvy"
+    },
+    "s1_where": {
+      "say": "그럼 무엇에 영향을 받으면 어떻게 되는지 생각하며 문장 처음부터 읽어 봐요.",
+      "from": "2yp62p"
+    },
+    "s1_when": {
+      "ask": "상상력(Imagination)은 언제 계속 작동한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "when 뒤를 봐요. perception은 '지각', discerning은 '분별하는'이에요.",
+        "when 뒤를 봐요. perception은 '지각', discerning은 '분별하는'이에요."
+      ],
+      "explain": "'when perception is not actively discerning objects', 지각이 대상을 애써 가려 보지 않는 때래요. 감정, 질병, 잠이 그런 경우예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'when perception is not actively discerning objects', 지각이 대상을 애써 가려 보지 않는 때래요. 감정, 질병, 잠이 그런 경우예요.",
+        "o2": "'when perception is not actively discerning objects', 지각이 대상을 애써 가려 보지 않는 때래요. 감정, 질병, 잠이 그런 경우예요."
+      },
+      "from": "1czddk2"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "dif155"
+    },
+    "s2_note": {
+      "say": "감정은 세상을 비뚤어지게(distorted) 보게 한대요. 이 글이 하려는 말이에요.",
+      "from": "v5qdlb"
+    },
+    "s3_fear": {
+      "ask": "겁쟁이(coward)가 세상을 보는 방식은 무엇에 영향을 받는대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "is affected by 뒤를 봐요. disposition은 '성향'이에요.",
+        "is affected by 뒤를 봐요. disposition은 '성향'이에요."
+      ],
+      "explain": "'is affected by his disposition to experience fear', 겁쟁이는 두려움을 잘 느끼는 성향 때문에 다르게 봐요. 감정이 보는 방식을 바꾸는 예예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'is affected by his disposition to experience fear', 겁쟁이는 두려움을 잘 느끼는 성향 때문에 다르게 봐요. 감정이 보는 방식을 바꾸는 예예요.",
+        "o2": "'is affected by his disposition to experience fear', 겁쟁이는 두려움을 잘 느끼는 성향 때문에 다르게 봐요. 감정이 보는 방식을 바꾸는 예예요."
+      },
+      "from": "1gyns79"
+    },
+    "story_3": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s4_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "사랑에 빠진 사람의 기대도 욕망에 영향을 받는대요. 3문장 겁쟁이와 같은 예시예요.",
+      "from": "1tmr3cn"
+    },
+    "s5_meaning": {
+      "ask": "In such cases(그러한 경우), 무슨 일이 생길 수 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "a small similarity(약간의 유사성)가 주어예요. can lead to 뒤 misidentification은 '잘못 알아봄'이에요.",
+        "a small similarity(약간의 유사성)가 주어예요. can lead to 뒤 misidentification은 '잘못 알아봄'이에요."
+      ],
+      "explain": "'a small similarity … can lead to the misidentification', 약간만 비슷해도 잘못 알아보게 될 수 있대요. 보이는 대상을 기대한 것(that thing)으로 착각하는 거예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'a small similarity … can lead to the misidentification', 약간만 비슷해도 잘못 알아보게 될 수 있대요. 보이는 대상을 기대한 것(that thing)으로 착각하는 거예요.",
+        "o2": "'a small similarity … can lead to the misidentification', 약간만 비슷해도 잘못 알아보게 될 수 있대요. 보이는 대상을 기대한 것(that thing)으로 착각하는 거예요."
+      },
+      "from": "1j0cery"
+    },
+    "s5_same": {
+      "ask": "distorted(왜곡된)와 같은 쪽 말을 이 문장에서 하나 찾아 눌러 볼까요?",
+      "wrong": "그건 왜곡과 같은 쪽 말이 아니에요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "맞아요!",
+      "explain": "the misidentification(잘못 알아봄)이에요. 감정이 세상을 비뚤어지게 보게 한다는 말과 같은 쪽이에요.",
+      "wrong_by": {
+        "a small similarity": "a small similarity는 잘못 알아보게 만드는 계기예요. 그 결과를 찾아봐요.",
+        "a perceived object": "a perceived object는 '지각된 대상', 눈에 보이는 것이에요."
+      },
+      "from": "1gc1pvp"
+    },
+    "s5_board": {
+      "say": "감정에 영향을 받으면 조금만 비슷해도 잘못 알아봐요.",
+      "from": "mrmj8k"
+    },
+    "s6_note": {
+      "say": "겁쟁이는 어디서나 적을, 사랑에 빠진 사람은 어디서나 원하는 대상을 본대요. 3·4문장 예시가 이어진 거예요.",
+      "from": "1hj3yc0"
+    },
+    "story_6": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s7_side": {
+      "ask": "빈칸은 감정에 더 영향을 받으면 어떻게 되는지예요. 칠판의 말과 같은 쪽일까요, 반대 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "affected(영향을 받은)는 3·4문장에서 감정의 영향이었어요. But이나 not 같은 반전 단서도 없어요.",
+        "affected(영향을 받은)는 3·4문장에서 감정의 영향이었어요. But이나 not 같은 반전 단서도 없어요."
+      ],
+      "explain": "감정은 세상을 비뚤어지게 보게 하고, 조금만 비슷해도 잘못 알아보게 해요. 영향을 더 받을수록 그 일이 더 심해지니 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "감정은 세상을 비뚤어지게 보게 하고, 조금만 비슷해도 잘못 알아보게 해요. 영향을 더 받을수록 그 일이 더 심해지니 같은 쪽이에요."
+      },
+      "point": "빈칸 = 감정의 영향을 더 받을수록 → 더 잘못 알아봄 = 칠판 Emotions 쪽 = 같은 쪽",
+      "from": "6rg7js"
+    },
+    "s7_fill": {
+      "ask": "그럼 빈칸에는 어떤 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "5문장의 a small similarity(약간의 유사성)를 떠올려 봐요.",
+        "5문장의 a small similarity(약간의 유사성)를 떠올려 봐요."
+      ],
+      "explain": "영향을 받으면 조금만 비슷해도 잘못 알아본다고 했어요. 영향을 더 받을수록 필요한 비슷함은 더 적어져요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "영향을 받으면 조금만 비슷해도 잘못 알아본다고 했어요. 영향을 더 받을수록 필요한 비슷함은 더 적어져요.",
+        "o1": "영향을 받으면 조금만 비슷해도 잘못 알아본다고 했어요. 영향을 더 받을수록 필요한 비슷함은 더 적어져요."
+      },
+      "from": "1surtw5"
+    },
+    "s7_next": {
+      "say": "빈칸 뒤 두 문장도 같은 이야기를 이어 가요. 확인하며 읽어 봐요.",
+      "from": "1tjd4lk"
+    },
+    "s8_while": {
+      "ask": "While 앞뒤를 비교하면 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "While은 여기서 '~이지만, ~인 반면'이에요. inaccurately는 '부정확하게'예요.",
+        "While은 여기서 '~이지만, ~인 반면'이에요. inaccurately는 '부정확하게'예요."
+      ],
+      "explain": "'normally functions by comparing similarities and differences', 보통은 비슷한 점과 다른 점을 비교해요. 하지만 'emotions dispose one to discern objects inaccurately', 감정은 대상을 부정확하게 분별하게 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'normally functions by comparing similarities and differences', 보통은 비슷한 점과 다른 점을 비교해요. 하지만 'emotions dispose one to discern objects inaccurately', 감정은 대상을 부정확하게 분별하게 해요.",
+        "o2": "'normally functions by comparing similarities and differences', 보통은 비슷한 점과 다른 점을 비교해요. 하지만 'emotions dispose one to discern objects inaccurately', 감정은 대상을 부정확하게 분별하게 해요."
+      },
+      "from": "ufrnm4"
+    },
+    "s9_meaning": {
+      "ask": "이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "The 비교급 ~, the 비교급 …은 '~할수록 더 …'예요. biased는 '편향된, 치우친'이에요.",
+        "The 비교급 ~, the 비교급 …은 '~할수록 더 …'예요. biased는 '편향된, 치우친'이에요."
+      ],
+      "explain": "'The greater the emotional investment, the more biased', 감정적 몰입이 클수록 지각이 더 편향된대요. 빈칸 문장과 같은 모양이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'The greater the emotional investment, the more biased', 감정적 몰입이 클수록 지각이 더 편향된대요. 빈칸 문장과 같은 모양이에요.",
+        "o2": "'The greater the emotional investment, the more biased', 감정적 몰입이 클수록 지각이 더 편향된대요. 빈칸 문장과 같은 모양이에요."
+      },
+      "from": "zr0t12"
+    },
+    "s9_go": {
+      "say": "빈칸은 감정의 영향 쪽이에요. 5문장의 '조금만 비슷해도 잘못 알아본다'를 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "179wt26"
+    }
+  },
+  "exam": {
+    "ask": "감정에 더 영향을 받을수록 어떻게 되는지, 5문장을 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 감정에 영향을 받으면 조금만 비슷해도 기대한 것으로 잘못 봐요. 영향을 더 받을수록 그렇게 보이는 데 필요한 비슷함은 더 적어져요.",
+    "final_wrong": "정답은 ②예요. 감정에 영향을 받으면 약간만 비슷해도 잘못 알아본다고 했어요(5문장). 영향을 더 받을수록 필요한 유사성은 더 적어요.",
+    "option_feedback": {
+      "1": "차이점을 비교하는 건 보통의 감각 기관이 하는 일이에요(8문장). 감정은 오히려 대상을 부정확하게 분별하게 해요.",
+      "3": "similarity가 나와서 헷갈렸죠. 하지만 비슷함이 사라진다는 말은 없어요. 조금만 비슷해도 잘못 본다는 게 핵심이에요.",
+      "4": "반대 쪽 말이에요. 감정에 영향을 받을수록 세상을 왜곡해서 보고, 지각은 더 편향된다고 했어요.",
+      "5": "감정이 표출되는 빠르기는 글에 없어요. 글은 감정이 보는 방식을 바꾼다는 이야기예요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "1": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 15%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "①은 8문장의 similarities and differences가 떠올라 끌려요. 하지만 차이를 비교하는 건 보통 때(normally) 감각 기관이 하는 일이에요.\n감정은 오히려 대상을 부정확하게(inaccurately) 분별하게 해요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "8문장",
+              "text": "normally … comparing similarities and differences",
+              "ko": "보통 때 — 비교한다",
+              "tone": "hl2"
+            },
+            {
+              "label": "8문장",
+              "text": "emotions … discern objects inaccurately",
+              "ko": "감정 — 부정확하게 분별한다",
+              "tone": "hl"
+            }
+          ]
+        }
+      },
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 15%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "③은 similarity(유사성)가 있어서 끌려요. 하지만 글은 비슷함이 사라진다는 게 아니라, 약간만 비슷해도(a small similarity) 잘못 알아본다는 이야기예요.\n영향을 더 받을수록 필요한 비슷함이 줄어들어요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "5문장",
+              "text": "a small similarity → misidentification",
+              "ko": "약간만 비슷해도 잘못 알아봄",
+              "tone": "hl"
+            },
+            {
+              "label": "③",
+              "text": "the perceived similarity fades away",
+              "ko": "비슷함이 사라진다 — 글에 없음",
+              "tone": "hl2"
+            }
+          ]
+        }
+      },
+      "4": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "④는 '~할수록 더 쉽게'라는 모양이 빈칸 문장과 잘 맞아 보여요. 하지만 감정은 세상을 왜곡된 방식으로(in a distorted way) 보게 하고, 몰입이 클수록 지각은 더 편향돼요(biased).\n세상을 있는 그대로 보는 건 반대 쪽이에요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "2문장",
+              "text": "see the world in a distorted way",
+              "ko": "세상을 왜곡해서 본다",
+              "tone": "hl"
+            },
+            {
+              "label": "9문장",
+              "text": "the more biased one’s perception",
+              "ko": "지각이 더 편향된다",
+              "tone": "hl"
+            },
+            {
+              "label": "④",
+              "text": "sense the world the way it is",
+              "ko": "있는 그대로 본다 — 반대 쪽",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "o8ohhz"
+  },
+  "intro": {
+    "topic": {
+      "say": "무서울 때 그림자가 사람처럼 보인 적 있나요? 이번 글은 감정과 지각(보고 알아차리는 일) 이야기예요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "n21yx2"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1iqatnk"
+}

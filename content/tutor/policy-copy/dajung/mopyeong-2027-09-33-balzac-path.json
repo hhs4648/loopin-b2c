@@ -1,0 +1,229 @@
+{
+  "lesson": "mopyeong-2027-09-33-balzac-path",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "빈칸 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_passage": {
+      "say": "빈칸은 여기, 셋째 문장에 있어요. 이 문장을 잠깐 볼까요?",
+      "from": "1jhg03u"
+    },
+    "s1_blank_meaning": {
+      "ask": "아주 짧은 문장이에요. 이 문장은 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "solution은 '해결책'이에요. 콤마 사이 proposed by Balzac은 '발자크가 제안한'이에요.",
+        "solution은 '해결책'이에요. 콤마 사이 proposed by Balzac은 '발자크가 제안한'이에요."
+      ],
+      "explain": "'One solution … is to ____', 한 가지 해결책은 ____하는 것이래요. 해결책이면 앞에 풀어야 할 문제가 있어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'One solution … is to ____', 한 가지 해결책은 ____하는 것이래요. 해결책이면 앞에 풀어야 할 문제가 있어요.",
+        "o2": "'One solution … is to ____', 한 가지 해결책은 ____하는 것이래요. 해결책이면 앞에 풀어야 할 문제가 있어요."
+      },
+      "from": "125rljk"
+    },
+    "s1_where": {
+      "say": "그럼 무엇을 해결하려는 건지 생각하며 문장 처음부터 읽어 봐요.",
+      "from": "y2zbl"
+    },
+    "s1_meaning": {
+      "ask": "While 앞뒤를 비교하면 무슨 뜻일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "While은 여기서 '~이지만, ~인 반면'이에요. instantly는 '즉시', slowly는 '천천히'예요.",
+        "While은 여기서 '~이지만, ~인 반면'이에요. instantly는 '즉시', slowly는 '천천히'예요."
+      ],
+      "explain": "'a picture transports the spectator almost instantly', 그림은 거의 즉시 보여 줘요. 'language can only describe it detail by detail', 언어는 하나하나 묘사할 수밖에 없대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'a picture transports the spectator almost instantly', 그림은 거의 즉시 보여 줘요. 'language can only describe it detail by detail', 언어는 하나하나 묘사할 수밖에 없대요.",
+        "o2": "'a picture transports the spectator almost instantly', 그림은 거의 즉시 보여 줘요. 'language can only describe it detail by detail', 언어는 하나하나 묘사할 수밖에 없대요."
+      },
+      "from": "dg406x"
+    },
+    "s2_question": {
+      "ask": "묻는 문장이에요. 이 문장은 무엇을 묻고 있을까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "a descriptive forest는 진짜 숲이 아니라 비유예요. without losing the reader는 '독자를 잃지 않고'예요.",
+        "a descriptive forest는 진짜 숲이 아니라 비유예요. without losing the reader는 '독자를 잃지 않고'예요."
+      ],
+      "explain": "'How can a literary work capture the feel of a place', 장소의 느낌을 어떻게 담을지 물어요. 'without losing the reader in a descriptive forest', 묘사가 빽빽한 숲에서 독자가 길을 잃지 않게 하면서요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'How can a literary work capture the feel of a place', 장소의 느낌을 어떻게 담을지 물어요. 'without losing the reader in a descriptive forest', 묘사가 빽빽한 숲에서 독자가 길을 잃지 않게 하면서요.",
+        "o1": "'How can a literary work capture the feel of a place', 장소의 느낌을 어떻게 담을지 물어요. 'without losing the reader in a descriptive forest', 묘사가 빽빽한 숲에서 독자가 길을 잃지 않게 하면서요."
+      },
+      "from": "1gmur5a"
+    },
+    "story_2": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_side": {
+      "ask": "빈칸은 2문장 물음에 대한 해결책(One solution)이에요. 빈칸에는 어떤 쪽 말이 올까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "2문장은 '어떻게 하면 독자가 묘사의 숲에서 길을 잃지 않을까'를 물었어요.",
+        "2문장은 '어떻게 하면 독자가 묘사의 숲에서 길을 잃지 않을까'를 물었어요."
+      ],
+      "explain": "해결책은 물음에 답하는 말이에요. 장소의 느낌은 담고, 독자는 길을 잃지 않게 하는 방법이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "해결책은 물음에 답하는 말이에요. 장소의 느낌은 담고, 독자는 길을 잃지 않게 하는 방법이에요.",
+        "o1": "해결책은 물음에 답하는 말이에요. 장소의 느낌은 담고, 독자는 길을 잃지 않게 하는 방법이에요."
+      },
+      "point": "빈칸 = One solution = 2문장 물음(길을 잃지 않게 하며 장소를 담는 법)에 답하는 쪽",
+      "from": "1x86vxb"
+    },
+    "s3_next": {
+      "say": "어떻게 하면 길을 잃지 않는지는 빈칸 뒤에 나와요. Balzac이 어떻게 묘사하는지 찾으며 읽어 봐요.",
+      "from": "1sisn5t"
+    },
+    "s4_why": {
+      "ask": "자세한 묘사인데도 독자가 방향을 잃지 않는 이유는 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "because 뒤를 봐요. trace는 '따라가다', path는 '경로'예요.",
+        "because 뒤를 봐요. trace는 '따라가다', path는 '경로'예요."
+      ],
+      "explain": "'because they trace a precise path through the fictional world', 묘사가 소설 속 세계에서 정확한 길을 따라가기 때문이래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'because they trace a precise path through the fictional world', 묘사가 소설 속 세계에서 정확한 길을 따라가기 때문이래요.",
+        "o2": "'because they trace a precise path through the fictional world', 묘사가 소설 속 세계에서 정확한 길을 따라가기 때문이래요."
+      },
+      "from": "1cduwu2"
+    },
+    "s4_board": {
+      "say": "묘사가 많으면 독자가 길을 잃을 수 있어요.\nBalzac의 묘사는 정확한 경로(a precise path)를 따라가서 길을 잃지 않아요.",
+      "from": "14xuzmv"
+    },
+    "s5_order": {
+      "ask": "화자(the narrator)는 집을 어떤 순서로 묘사할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "콤마 뒤 approaching, examining, entering, walking을 차례로 봐요.",
+        "콤마 뒤 approaching, examining, entering, walking을 차례로 봐요."
+      ],
+      "explain": "거리에서 다가가고(approaching), 정원과 정면을 보고(examining), 현관문으로 들어가(entering) 방에서 방으로 걸어요(walking). 집을 보러 온 사람처럼 움직이며 묘사해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "거리에서 다가가고(approaching), 정원과 정면을 보고(examining), 현관문으로 들어가(entering) 방에서 방으로 걸어요(walking). 집을 보러 온 사람처럼 움직이며 묘사해요.",
+        "o2": "거리에서 다가가고(approaching), 정원과 정면을 보고(examining), 현관문으로 들어가(entering) 방에서 방으로 걸어요(walking). 집을 보러 온 사람처럼 움직이며 묘사해요."
+      },
+      "from": "rmwgp2"
+    },
+    "s5_sort": {
+      "ask": "'walking from room to room(방에서 방으로 걸어 다니며)'는 칠판 어느 쪽일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "걸어가는 길이 정해져 있으면 길을 잃을까요, 안 잃을까요?",
+        "걸어가는 길이 정해져 있으면 길을 잃을까요, 안 잃을까요?"
+      ],
+      "explain": "방에서 방으로 차례로 걸어가는 건 정해진 길을 따라가는 거예요. 정확한 경로 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "방에서 방으로 차례로 걸어가는 건 정해진 길을 따라가는 거예요. 정확한 경로 쪽이에요."
+      },
+      "from": "u216gc"
+    },
+    "story_5": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s6_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "11kut2h"
+    },
+    "s6_fill": {
+      "ask": "그럼 빈칸 '해결책은 ____하는 것'에는 어떤 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "칠판 오른쪽, 5문장에서 화자가 어떻게 움직였는지 떠올려 봐요.",
+        "칠판 오른쪽, 5문장에서 화자가 어떻게 움직였는지 떠올려 봐요."
+      ],
+      "explain": "화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸으며 묘사해요. 그 길을 따라가니 독자는 길을 잃지 않고 평면도까지 정확히 알게 돼요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸으며 묘사해요. 그 길을 따라가니 독자는 길을 잃지 않고 평면도까지 정확히 알게 돼요.",
+        "o2": "화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸으며 묘사해요. 그 길을 따라가니 독자는 길을 잃지 않고 평면도까지 정확히 알게 돼요."
+      },
+      "from": "huqaai"
+    },
+    "s6_go": {
+      "say": "빈칸은 해결책 쪽이에요. 4·5문장의 정확한 경로(a precise path)를 다른 말로 바꿔 쓴 보기를 찾아봐요.",
+      "from": "1dzznv2"
+    }
+  },
+  "exam": {
+    "ask": "칠판 오른쪽, 화자가 집을 어떻게 묘사했는지 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 화자가 거리에서 다가가 문으로 들어가 방에서 방으로 걸으며 묘사해요. 움직이는 사람의 길을 따라 묘사하니 독자가 길을 잃지 않아요.",
+    "final_wrong": "정답은 ③이에요. Balzac의 묘사는 집으로 다가가 들어가 방에서 방으로 걷는 사람의 길을 따라가요. 그래서 독자는 묘사의 숲에서 길을 잃지 않아요.",
+    "option_feedback": {
+      "1": "추상적인 이미지 이야기는 없어요. 글은 집 안을 걷는 구체적인 길을 따라가요.",
+      "2": "detail이 여러 번 나와서 헷갈렸죠. 하지만 자세한 묘사는 길을 잃게 할 수 있는 쪽이고, 해결책은 정확한 경로를 따라가는 거예요.",
+      "4": "반대예요. 화자는 독자를 데리고 집 안으로 들어가요.",
+      "5": "보는 각도 이야기는 없어요. 화자는 한자리에서 보지 않고 걸어 다니며 묘사해요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 23%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "②는 detail by detail, detailed portrayals처럼 '자세히'가 여러 번 나와서 끌려요. 하지만 자세한 묘사는 독자가 묘사의 숲에서 길을 잃을 수 있는 문제 쪽이에요.\nBalzac의 해결책은 화자가 집 안을 걸어 다니는 길(a precise path)을 따라 묘사하는 거예요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "2문장",
+              "text": "losing the reader in a descriptive forest",
+              "ko": "자세한 묘사 — 길을 잃을 수 있다",
+              "tone": "hl2"
+            },
+            {
+              "label": "4·5문장",
+              "text": "trace a precise path · walking from room to room",
+              "ko": "걷는 길을 따라 묘사 — 해결책",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "um9xv4"
+  },
+  "intro": {
+    "topic": {
+      "say": "그림은 한눈에 보이지만 글은 한 줄씩 읽어야 해요. 이번 글은 소설이 장소를 묘사하는 방법 이야기예요."
+    },
+    "method1": {
+      "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+    },
+    "from": "vr6bry"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1k14t10"
+}

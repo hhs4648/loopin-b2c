@@ -1,0 +1,325 @@
+{
+  "lesson": "moeui-2026-03-42-literary-mirror",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "어휘 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_mirror": {
+      "say": "Tolstoy의 작품이 1905년 러시아 혁명을 비추는 거울이라는 주장에 Macherey도 동의한대요. 이 글은 '문학 = 거울'이라는 비유로 이어져요.",
+      "from": "11tngdm"
+    },
+    "s2_mean": {
+      "ask": "Macherey는 이 거울 비추기(this mirroring)가 세상을 있는 그대로 비춘다고 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "by no means를 봐요. not보다 센 부정, '결코 ~이 아닌'이에요.",
+        "by no means를 봐요. not보다 센 부정, '결코 ~이 아닌'이에요."
+      ],
+      "explain": "'a complex affair, by no means a direct reflection', 복잡한 일이고 결코 직접 비추는 게 아니래요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'a complex affair, by no means a direct reflection', 복잡한 일이고 결코 직접 비추는 게 아니래요."
+      },
+      "point": "요지 시작: 문학이라는 거울은 복잡하고, 세상을 결코 있는 그대로 비추지 않는다 (by no means = 결코 ~이 아닌)",
+      "from": "hn81d3"
+    },
+    "s2_check": {
+      "ask": "그럼 (a)direct는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "by no means(결코 ~이 아닌)가 direct reflection 앞에 있어요. '직접 비추는 게 결코 아니다'가 앞의 complex affair와 이어지는지 봐요.",
+        "by no means(결코 ~이 아닌)가 direct reflection 앞에 있어요. '직접 비추는 게 결코 아니다'가 앞의 complex affair와 이어지는지 봐요."
+      ],
+      "explain": "복잡한 일이지 결코 직접 비추는 게 아니라는 말이라 앞뒤가 이어져요. (a)direct는 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "복잡한 일이지 결코 직접 비추는 게 아니라는 말이라 앞뒤가 이어져요. (a)direct는 맞는 낱말이에요."
+      },
+      "point": "(a) direct: by no means a direct reflection = 결코 직접 비추는 게 아니다 → complex affair와 이어짐",
+      "from": "136zvsy"
+    },
+    "s3_board": {
+      "say": "2문장을 두 그룹으로 나눠 봐요. by no means(결코 ~이 아닌)가 붙은 direct reflection은 반대편이에요.\n시험 꿀팁: not, no, by no means가 붙은 말은 바로 반대 그룹이에요.",
+      "from": "9q5v2h"
+    },
+    "s3_sort": {
+      "ask": "문학 작품은 결함(flaws)과 사각지대(blind spots)가 있는 거울이래요. flaws와 blind spots는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "결함이 있는 거울이 세상을 있는 그대로 비출 수 있을지 생각해 봐요.",
+        "결함이 있는 거울이 세상을 있는 그대로 비출 수 있을지 생각해 봐요."
+      ],
+      "explain": "결함과 사각지대가 있으면 그대로 비출 수 없어요. 2문장의 complex affair와 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "결함과 사각지대가 있으면 그대로 비출 수 없어요. 2문장의 complex affair와 같은 쪽이에요."
+      },
+      "point": "flaws(결함)·blind spots(사각지대) → 그대로 비추지 않는 쪽",
+      "from": "1iubj6h"
+    },
+    "s4_mean": {
+      "ask": "문학 작품은 비추는 것만 중요할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "as significant for A as for B는 'B만큼이나 A 때문에도 중요하다'예요. A 자리의 what they don’t reflect를 봐요.",
+        "as significant for A as for B는 'B만큼이나 A 때문에도 중요하다'예요. A 자리의 what they don’t reflect를 봐요."
+      ],
+      "explain": "'as significant for what they don’t reflect … as for what they do', 비추는 것만큼이나 비추지 않는 것 때문에도 중요하대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'as significant for what they don’t reflect … as for what they do', 비추는 것만큼이나 비추지 않는 것 때문에도 중요하대요."
+      },
+      "point": "as significant for A as for B = B만큼이나 A 때문에도 중요하다 → 비추지 않는 것도 중요",
+      "from": "kdp2dc"
+    },
+    "s4_sort": {
+      "ask": "대시(—) 사이의 exclusions(배제)와 distortions(왜곡)는 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "대시(—) 사이는 앞의 what they don’t reflect를 다시 말한 거예요.",
+        "대시(—) 사이는 앞의 what they don’t reflect를 다시 말한 거예요."
+      ],
+      "explain": "대시(—) 사이는 '비추지 않는 것'을 다시 말한 거예요. 빼놓고 비튼 것이니 그대로 비추는 쪽이 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "대시(—) 사이는 '비추지 않는 것'을 다시 말한 거예요. 빼놓고 비튼 것이니 그대로 비추는 쪽이 아니에요."
+      },
+      "point": "대시(—) 사이 exclusions·distortions = what they don’t reflect → 그대로 비추지 않는 쪽",
+      "from": "t5a0en"
+    },
+    "story_4": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s5_check": {
+      "ask": "그럼 (b)figure는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "figure는 여기서 동사 '나타나다'예요. 거울에 나타나지 않는 것들이 4문장의 what they don’t reflect와 같은 말인지 봐요.",
+        "figure는 여기서 동사 '나타나다'예요. 거울에 나타나지 않는 것들이 4문장의 what they don’t reflect와 같은 말인지 봐요."
+      ],
+      "explain": "'things which do not and cannot figure in the mirror', 거울에 나타나지 않고 나타날 수도 없는 것들이에요. 4문장의 '비추지 않는 것'과 같은 말이라 (b)figure는 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'things which do not and cannot figure in the mirror', 거울에 나타나지 않고 나타날 수도 없는 것들이에요. 4문장의 '비추지 않는 것'과 같은 말이라 (b)figure는 맞는 낱말이에요."
+      },
+      "point": "(b) figure = 나타나다 → 거울에 나타나지 않는 것 = 4문장의 what they don’t reflect",
+      "from": "15c91s2"
+    },
+    "s6_these": {
+      "ask": "these (c)absences의 these는 무엇을 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "these가 가리키는 것은 앞 문장에서 찾아요. 5문장 맨 앞 There are things which …를 떠올려 봐요.",
+        "these가 가리키는 것은 앞 문장에서 찾아요. 5문장 맨 앞 There are things which …를 떠올려 봐요."
+      ],
+      "explain": "these는 5문장의 things which do not … figure in the mirror를 받아요. 거울에 없는 것들이라 absences(부재)라고 불렀어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "these는 5문장의 things which do not … figure in the mirror를 받아요. 거울에 없는 것들이라 absences(부재)라고 불렀어요.",
+        "o2": "these는 5문장의 things which do not … figure in the mirror를 받아요. 거울에 없는 것들이라 absences(부재)라고 불렀어요."
+      },
+      "point": "these absences = 5문장의 '거울에 나타나지 않는 것들' (this·these는 앞 문장에서 찾는다)",
+      "from": "hcxd4u"
+    },
+    "s6_present": {
+      "say": "거울은 이런 부재(absences)를 깨닫게 해 줘서, 없는 것들이 희미하게나마 존재하게 된대요. 없는 것이 오히려 느껴진다는 말이에요.",
+      "from": "1oh0cbg"
+    },
+    "s6_check": {
+      "ask": "그럼 (c)absences는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "absence는 '없음, 부재'예요. 5문장의 '거울에 나타나지 않는 것들'을 한 단어로 하면 무엇일지 봐요.",
+        "absence는 '없음, 부재'예요. 5문장의 '거울에 나타나지 않는 것들'을 한 단어로 하면 무엇일지 봐요."
+      ],
+      "explain": "these는 5문장의 '거울에 나타나지 않는 것들'이에요. 그걸 absences(부재)로 받았으니 (c)는 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "these는 5문장의 '거울에 나타나지 않는 것들'이에요. 그걸 absences(부재)로 받았으니 (c)는 맞는 낱말이에요."
+      },
+      "point": "(c) absences: these = 5문장의 거울에 나타나지 않는 것들 → 부재 · 거울이 그걸 깨닫게 해 희미하게 존재하게 됨",
+      "from": "1p0wm8u"
+    },
+    "s7_skim": {
+      "say": "6문장을 다시 말한 거예요. 거울 덕분에 그곳에 없는 것(what isn’t there)이 더 잘 보인대요.",
+      "from": "1guf8kc"
+    },
+    "story_7": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s8_sort": {
+      "ask": "거울 속 모습이 반드시 일관된 전체(coherent whole)를 이룬다고 볼 이유는 없대요. coherent whole은 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "no reason to assume, 그렇게 생각할 이유가 없다는 말이에요. 부정이 붙은 말은 반대 그룹이에요.",
+        "no reason to assume, 그렇게 생각할 이유가 없다는 말이에요. 부정이 붙은 말은 반대 그룹이에요."
+      ],
+      "explain": "'no reason to assume', 그렇게 볼 이유가 없대요. 부정이 붙었으니 direct reflection과 같은 반대편이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'no reason to assume', 그렇게 볼 이유가 없대요. 부정이 붙었으니 direct reflection과 같은 반대편이에요."
+      },
+      "point": "no reason to assume ~ = ~라고 볼 이유가 없다 → coherent whole(일관된 전체)은 반대편",
+      "from": "1d4gu2z"
+    },
+    "s9_pieces": {
+      "say": "On the contrary(그와는 반대로), 거울 속 모습은 조각나 있고(in pieces) 조화롭지 않을(discordant) 수도 있대요.",
+      "from": "mvl8x2"
+    },
+    "s10_eliot": {
+      "ask": "Eliot은 거울이 불완전하고(defective), 윤곽이 흐트러지고, 상이 희미하대요. Eliot의 이 말은 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "불완전하고 흐릿한 거울이 세상을 있는 그대로 비출 수 있을지 생각해 봐요.",
+        "불완전하고 흐릿한 거울이 세상을 있는 그대로 비출 수 있을지 생각해 봐요."
+      ],
+      "explain": "불완전하고 흐릿한 거울은 그대로 비출 수 없어요. 3문장의 flaws(결함)와 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "불완전하고 흐릿한 거울은 그대로 비출 수 없어요. 3문장의 flaws(결함)와 같은 쪽이에요."
+      },
+      "point": "Eliot의 말(defective, disturbed, faint) → 그대로 비추지 않는 쪽",
+      "from": "zi3iti"
+    },
+    "s10_realism": {
+      "ask": "naive realism은 예술(거울)이 언제나 있는 그대로 말해 준다(always tell it like it is)고 믿는 생각이래요. naive realism은 어느 그룹일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "always tell it like it is는 '언제나 있는 그대로 말한다'예요. 2문장의 direct reflection을 떠올려 봐요.",
+        "always tell it like it is는 '언제나 있는 그대로 말한다'예요. 2문장의 direct reflection을 떠올려 봐요."
+      ],
+      "explain": "'always tell it like it is', 언제나 있는 그대로 말해 준다는 생각이에요. direct reflection과 같은 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'always tell it like it is', 언제나 있는 그대로 말해 준다는 생각이에요. direct reflection과 같은 쪽이에요."
+      },
+      "point": "naive realism = 예술이 언제나 있는 그대로 말해 준다는 생각 → 있는 그대로 비춤 쪽",
+      "from": "1bhyv0z"
+    },
+    "story_10": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s11_view": {
+      "say": "거울은 현실의 한 버전(a version of reality)을 보여 주지만, 그 관점(viewpoint)은 거울 안에 담길 수 없대요.",
+      "from": "mk3lqd"
+    },
+    "s12_check": {
+      "ask": "그럼 (e)invisible는 문맥에 맞을까요, 틀릴까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "11문장에서 관점은 거울 안에 담길 수 없다(cannot be captured)고 했어요. 담기지 않는 관점이 우리 눈에 어떨지 봐요.",
+        "11문장에서 관점은 거울 안에 담길 수 없다(cannot be captured)고 했어요. 담기지 않는 관점이 우리 눈에 어떨지 봐요."
+      ],
+      "explain": "11문장의 'cannot be captured in the mirror', 거울에 담기지 않으니 우리에게 보이지 않아요. 보이지 않아서 의심 없이 받아들이기 쉽다는 뒤 말과도 이어져 (e)는 맞는 낱말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "11문장의 'cannot be captured in the mirror', 거울에 담기지 않으니 우리에게 보이지 않아요. 보이지 않아서 의심 없이 받아들이기 쉽다는 뒤 말과도 이어져 (e)는 맞는 낱말이에요."
+      },
+      "point": "(e) invisible: 11문장 cannot be captured in the mirror = 보이지 않음 → 그래서 의심 없이 받아들이기 쉽다",
+      "from": "och6fa"
+    },
+    "s12_go": {
+      "say": "밑줄 다섯 개가 칠판의 어느 그룹 흐름과 맞는지 떠올리며 문제를 풀어 봐요.",
+      "from": "18kme6n"
+    }
+  },
+  "exam": {
+    "ask": "밑줄 단어마다 칠판의 어느 그룹 흐름인지 떠올려 봐요. 흐름과 안 맞는 하나를 골라요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! Eliot은 거울이 불완전하다(defective)고 하니, 언제나 있는 그대로 말해 준다는 naive realism을 칭찬할 수 없어요. reproaching(비난하는)이 맞아요.",
+    "final_wrong": "정답은 ④ (d)예요. Eliot은 거울이 불완전하다(defective)고 하니, naive realism을 칭찬(praising)이 아니라 비난(reproaching)해야 맞아요.",
+    "option_feedback": {
+      "1": "결코(by no means) 직접 비추는 게 아니라 복잡한 일이라는 말이라 맞아요.",
+      "2": "figure는 '나타나다'예요. 거울에 나타나지 않는 것, 4문장의 '비추지 않는 것'과 같은 말이라 맞아요.",
+      "3": "these absences는 5문장의 '거울에 나타나지 않는 것들'이에요. 거울이 그 부재를 깨닫게 해 준다는 말이라 맞아요.",
+      "5": "관점이 거울 안에 담길 수 없으니(cannot be captured) 우리에게 보이지 않아요. 그래서 의심 없이 받아들이기 쉽다는 흐름이라 맞아요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 24.8%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "absences(부재)와 present(존재하는)가 한 문장에 있어서 어색해 보여요. 하지만 these absences는 5문장의 '거울에 나타나지 않는 것들'이에요. 거울이 그 빈자리를 깨닫게 해 줘서, 없는 것이 희미하게나마 존재하게 된다는 말이에요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "5문장",
+              "text": "things which do not … figure in the mirror",
+              "ko": "거울에 나타나지 않는 것들",
+              "tone": "hl"
+            },
+            {
+              "label": "6문장",
+              "text": "these (c)absences, which thus become faintly present",
+              "ko": "그 부재를 깨닫게 됨 → 희미하게 존재",
+              "tone": "hl"
+            },
+            {
+              "label": "7문장",
+              "text": "what isn’t there",
+              "ko": "그곳에 없는 것이 더 잘 보임",
+              "tone": "hl"
+            }
+          ]
+        }
+      },
+      "5": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 21.9%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "invisible(보이지 않는)이 거울 이야기와 안 맞아 보일 수 있어요. 하지만 11문장에서 관점은 거울 안에 담길 수 없대요(cannot be captured). 보이지 않으니 의심 없이 받아들이기 쉽다는 흐름이라 맞아요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "11문장",
+              "text": "a viewpoint which cannot be captured in the mirror itself",
+              "ko": "거울 안에 담길 수 없는 관점",
+              "tone": "hl"
+            },
+            {
+              "label": "12문장",
+              "text": "this viewpoint is (e)invisible to us",
+              "ko": "그래서 우리에게 보이지 않음 → 의심 없이 받아들임",
+              "tone": "hl"
+            }
+          ]
+        }
+      }
+    },
+    "from": "33k7o6"
+  },
+  "intro": {
+    "topic": {
+      "say": "문학 작품이 세상을 비추는 거울이라면, 그 거울엔 무엇이 비칠까요? 이번 글은 문학이라는 거울을 다뤄요."
+    },
+    "method1": {
+      "say": "어휘 문제는 단어 뜻만 보면 다 맞아 보여요. 문장마다 흐름을 잡아야 틀린 단어가 보여요."
+    },
+    "method2": {
+      "say": "요지를 잡고, 단어를 두 그룹으로 나눈 뒤, 밑줄 단어가 흐름에 맞는지 볼 거예요. 칠판 순서대로 해 볼게요."
+    },
+    "from": "1lmfpfp"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1in3fif"
+}

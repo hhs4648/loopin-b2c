@@ -1,0 +1,2104 @@
+{
+  "id": "mopyeong-2027-09-21-autocomplete-mirror",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 9월 모의평가(2027학년도, 한국교육과정평가원) 영어 21번 (밑줄 의미 추론, 3점)",
+  "brief": {
+    "topic": "밑줄 문제 푸는 법: 핵심 단어 → 관계(personalized 쪽 ↔ massive 쪽) → 밑줄 뜻",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "underline_meaning",
+    "labels": [
+      "핵심 단어 찾기",
+      "관계 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-autocomplete-mirror.svg",
+      "alt": "칠판: Autocomplete(자동 완성) → Mirror(거울) — 자동 완성은 무엇을 비출까?",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/underline-method.svg",
+      "alt": "밑줄 문제 푸는 법: ① 핵심 단어 찾기 ② 단어 사이의 관계 잡기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "검색창에 글자를 치면 검색어가 저절로 뜨죠? 이번 글은 그 자동 완성(autocomplete)을 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "수능 문제는 시간 싸움이에요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "밑줄 문제는 핵심 단어 위주로 지문의 요지를 빠르게 파악하면 좋아요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "밑줄 친 holding a mirror up to society가 다음 글에서 의미하는 바로 가장 적절한 것은? [3점]",
+    "underline": "holding a mirror up to society",
+    "analysis_first": true,
+    "wrong_rate": 46.0,
+    "wrong_rank": 5,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "manipulating",
+        "ko": "조작하는 것"
+      },
+      {
+        "en": "search results",
+        "ko": "검색 결과"
+      },
+      {
+        "en": "in favor of",
+        "ko": "~에게 유리하도록"
+      },
+      {
+        "en": "the socially influential",
+        "ko": "사회적으로 영향력 있는 사람들"
+      },
+      {
+        "en": "revealing",
+        "ko": "드러내는 것"
+      },
+      {
+        "en": "commonalities",
+        "ko": "공통점"
+      },
+      {
+        "en": "users",
+        "ko": "사용자들"
+      },
+      {
+        "en": "shared interests",
+        "ko": "공유된 관심사"
+      },
+      {
+        "en": "censoring",
+        "ko": "검열하는 것"
+      },
+      {
+        "en": "personal data",
+        "ko": "개인 데이터"
+      },
+      {
+        "en": "utilizing",
+        "ko": "활용하여"
+      },
+      {
+        "en": "collecting",
+        "ko": "수집하는 것"
+      },
+      {
+        "en": "information",
+        "ko": "정보"
+      },
+      {
+        "en": "building",
+        "ko": "구축하는 것"
+      },
+      {
+        "en": "user networks",
+        "ko": "사용자 네트워크"
+      },
+      {
+        "en": "examining",
+        "ko": "조사하는 것"
+      },
+      {
+        "en": "apparently",
+        "ko": "겉보기에"
+      },
+      {
+        "en": "random",
+        "ko": "무작위의"
+      },
+      {
+        "en": "regularity",
+        "ko": "규칙성"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "manipulating search results in favor of the socially influential",
+        "keywords": [
+          "manipulating",
+          "the socially influential"
+        ],
+        "ko": "사회적으로 영향력 있는 사람들에게 유리하도록 검색 결과를 조작하는 것"
+      },
+      {
+        "id": "2",
+        "label": "revealing commonalities in users and their shared interests",
+        "keywords": [
+          "revealing commonalities",
+          "shared interests"
+        ],
+        "ko": "사용자들의 공통점과 그들의 공유된 관심사를 드러내는 것",
+        "correct": true
+      },
+      {
+        "id": "3",
+        "label": "censoring personal data utilizing social media algorithms",
+        "keywords": [
+          "censoring",
+          "personal data"
+        ],
+        "ko": "소셜 미디어 알고리즘을 활용하여 개인 데이터를 검열하는 것"
+      },
+      {
+        "id": "4",
+        "label": "collecting information useful for building user networks",
+        "keywords": [
+          "collecting information",
+          "user networks"
+        ],
+        "ko": "사용자 네트워크를 구축하는 데 유용한 정보를 수집하는 것"
+      },
+      {
+        "id": "5",
+        "label": "examining apparently random data to find regularity",
+        "keywords": [
+          "apparently random data",
+          "regularity"
+        ],
+        "ko": "규칙성을 찾기 위해 겉보기에 무작위인 것 같은 데이터를 조사하는 것"
+      }
+    ],
+    "brief": {
+      "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고, 거울이 칠판 어느 쪽을 비추는지 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 자동 완성은 수백만 건의 검색에서 나와요. 많은 사용자의 공통점과 관심사를 거울처럼 그대로 보여 준다는 말이에요.",
+      "final_wrong": "정답은 ②예요. 자동 완성은 수많은 사용자 정보에서 비슷한 점을 찾아 보여 줘요. 그래서 사회를 비추는 거울이에요.",
+      "option_feedback": {
+        "1": "누구에게 유리하게 결과를 조작한다는 말은 글에 없어요. 많은 사용자의 검색을 그대로 비춰요.",
+        "3": "personal data, algorithms는 글에 나온 말이지만, 데이터를 검열한다(censoring)는 이야기는 없어요.",
+        "4": "사용자 네트워크를 만든다는 말은 글에 없어요. 많은 사용자의 검색을 보여 주는 거예요.",
+        "5": "데이터가 무작위처럼 보인다는 말은 글에 없어요. 거울은 사용자들의 비슷한 점을 그대로 비춰요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 22%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "③에는 personal data, social media algorithms처럼 글에 나온 말이 많아서 그럴듯해 보여요. 하지만 글에 검열(censoring), 즉 무언가를 막거나 지운다는 말은 없어요. 거울은 수많은 사용자의 비슷한 점을 그대로 비춰요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "5문장",
+                "text": "mining for similarities across vast quantities of user information",
+                "ko": "수많은 사용자 정보에서 비슷한 점을 찾음",
+                "tone": "hl"
+              },
+              {
+                "label": "7문장",
+                "text": "holding a mirror up to society",
+                "ko": "사회를 거울처럼 그대로 비춤",
+                "tone": "hl"
+              },
+              {
+                "label": "③",
+                "text": "censoring",
+                "ko": "검열하다 — 글에 없는 말",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "personalization",
+        "ko": "개인화"
+      },
+      {
+        "en": "reflect",
+        "ko": "반영하다"
+      },
+      {
+        "en": "maximize",
+        "ko": "최대화하다"
+      },
+      {
+        "en": "relevance",
+        "ko": "관련성"
+      },
+      {
+        "en": "predictive",
+        "ko": "예측의"
+      },
+      {
+        "en": "autocomplete",
+        "ko": "자동 완성"
+      },
+      {
+        "en": "refinement",
+        "ko": "다듬어진 검색어"
+      },
+      {
+        "en": "prompt",
+        "ko": "제시하다"
+      },
+      {
+        "en": "accumulated",
+        "ko": "누적된"
+      },
+      {
+        "en": "immensely",
+        "ko": "매우, 엄청나게"
+      },
+      {
+        "en": "massive",
+        "ko": "거대한"
+      },
+      {
+        "en": "mine",
+        "ko": "채굴하다, 탐색하다"
+      },
+      {
+        "en": "similarity",
+        "ko": "유사성"
+      },
+      {
+        "en": "vast",
+        "ko": "방대한"
+      },
+      {
+        "en": "take ~ into account",
+        "ko": "~을 고려하다"
+      },
+      {
+        "en": "derive",
+        "ko": "도출하다, 얻다"
+      },
+      {
+        "en": "in a sense",
+        "ko": "어떤 의미에서"
+      },
+      {
+        "en": "hold a mirror up to",
+        "ko": "~을 거울에 비추다, ~을 그대로 반영하다"
+      }
+    ],
+    "options": [
+      {
+        "en": "manipulate",
+        "ko": "조작하다"
+      },
+      {
+        "en": "commonality",
+        "ko": "공통점"
+      },
+      {
+        "en": "censor",
+        "ko": "검열하다"
+      },
+      {
+        "en": "apparently",
+        "ko": "겉보기에"
+      },
+      {
+        "en": "regularity",
+        "ko": "규칙성"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Social media companies are working to keep you on site or attempting to deliver results useful to you.",
+      "model_translation": "소셜 미디어 기업들은 여러분을 사이트에 머물게 하려고 노력하거나 여러분에게 유용한 결과를 제공하려고 시도한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Social media companies",
+          "ko": "소셜 미디어 기업들"
+        },
+        {
+          "en": "social",
+          "ko": "사회의, 사회적인"
+        },
+        {
+          "en": "media",
+          "ko": "매체"
+        },
+        {
+          "en": "companies",
+          "ko": "기업들"
+        },
+        {
+          "en": "are working",
+          "ko": "애쓰고 있다 · work to ~ = ~하려고 노력하다"
+        },
+        {
+          "en": "working",
+          "ko": "일하는, 노력하는"
+        },
+        {
+          "en": "keep you on site",
+          "ko": "여러분을 사이트에 머물게 하다"
+        },
+        {
+          "en": "site",
+          "ko": "(웹)사이트"
+        },
+        {
+          "en": "attempting",
+          "ko": "시도하는 · attempt to ~ = ~하려고 시도하다"
+        },
+        {
+          "en": "deliver",
+          "ko": "전달하다, 제공하다"
+        },
+        {
+          "en": "results useful to you",
+          "ko": "여러분에게 유용한 결과"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "useful",
+          "ko": "유용한"
+        },
+        {
+          "en": "keep",
+          "ko": "유지하다, 머물게 하다"
+        }
+      ],
+      "slashes": [
+        "are working",
+        "on site",
+        "or attempting",
+        "deliver results"
+      ],
+      "roles": [
+        {
+          "text": "Social media companies",
+          "role": "S"
+        },
+        {
+          "text": "are working",
+          "role": "V"
+        },
+        {
+          "text": "attempting",
+          "role": "V"
+        }
+      ],
+      "emphasis": [
+        "keep you on site",
+        "results useful to you"
+      ],
+      "steps": [
+        {
+          "id": "s1_keys",
+          "type": "pick",
+          "interaction": "word_pick",
+          "candidates": [
+            "Social media companies",
+            "are working",
+            "keep you on site",
+            "attempting",
+            "results useful to you"
+          ],
+          "answers": [
+            "Social media companies",
+            "keep you on site",
+            "results useful to you"
+          ],
+          "keyword": true,
+          "brief": {
+            "ask": "이 문장을 빠르게 이해하려면 모든 단어를 읽지 않아도 돼요. 핵심어 3개를 찾아볼까요?",
+            "wrong": "그건 '~하려고 애쓰다'라는 말이에요. 무엇을 하려는지가 핵심이에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "핵심어는 Social media companies, keep you on site, results useful to you예요. 소셜 미디어 기업은 나를 사이트에 붙잡아 두고, 나에게 쓸모 있는 결과를 주려 해요.",
+            "point": "핵심어 = Social media companies · keep you on site · results useful to you"
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "work to ~ / attempt to ~",
+              "text": "둘 다 '~하려고 애쓰다'예요. 뒤의 to ~가 하려는 일이에요.",
+              "mark": "attempting"
+            },
+            {
+              "label": "results useful to you",
+              "text": "명사 뒤에서 useful to you가 꾸며요. '여러분에게 유용한 결과'예요.",
+              "mark": "useful"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You can see this personalization reflected in the results of search engines, which try to maximize relevance: searching for “bakery” in New York should return different results than searching in Paris.",
+      "model_translation": "여러분은 관련성을 최대화하려고 노력하는 검색 엔진의 결과에 반영된 이러한 개인화를 볼 수 있는데, 뉴욕에서 '빵집(bakery)'을 검색하는 것은 파리에서 검색하는 것과 다른 결과를 내놓아야 한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "You can see",
+          "ko": "여러분은 볼 수 있다"
+        },
+        {
+          "en": "this personalization",
+          "ko": "이러한 개인화"
+        },
+        {
+          "en": "personalization",
+          "ko": "개인화 · 사람마다 맞춰 주는 것"
+        },
+        {
+          "en": "reflected",
+          "ko": "반영된"
+        },
+        {
+          "en": "in the results of search engines",
+          "ko": "검색 엔진의 결과에"
+        },
+        {
+          "en": "search",
+          "ko": "검색"
+        },
+        {
+          "en": "engines",
+          "ko": "엔진"
+        },
+        {
+          "en": "try to maximize relevance",
+          "ko": "관련성을 최대화하려고 하다"
+        },
+        {
+          "en": "maximize",
+          "ko": "최대화하다"
+        },
+        {
+          "en": "relevance",
+          "ko": "관련성 · 나에게 맞는 정도"
+        },
+        {
+          "en": "searching for “bakery”",
+          "ko": "'빵집'을 검색하는 것"
+        },
+        {
+          "en": "searching",
+          "ko": "검색하는 것"
+        },
+        {
+          "en": "bakery",
+          "ko": "빵집"
+        },
+        {
+          "en": "in New York",
+          "ko": "뉴욕에서"
+        },
+        {
+          "en": "should return",
+          "ko": "내놓아야 한다"
+        },
+        {
+          "en": "return",
+          "ko": "돌아오다 · 여기서는 (결과를) '내놓다'"
+        },
+        {
+          "en": "different results",
+          "ko": "다른 결과"
+        },
+        {
+          "en": "different",
+          "ko": "다른"
+        },
+        {
+          "en": "in Paris",
+          "ko": "파리에서"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "try",
+          "ko": "노력하다"
+        },
+        {
+          "en": "York",
+          "ko": "요크 · New York = 뉴욕"
+        },
+        {
+          "en": "Paris",
+          "ko": "파리"
+        }
+      ],
+      "slashes": [
+        "this personalization",
+        "of search engines,",
+        "maximize relevance:",
+        "in New York",
+        "different results"
+      ],
+      "roles": [
+        {
+          "text": "You",
+          "role": "S"
+        },
+        {
+          "text": "can see",
+          "role": "V"
+        },
+        {
+          "text": "this personalization",
+          "role": "O"
+        },
+        {
+          "text": "reflected",
+          "role": "C"
+        },
+        {
+          "text": "searching for “bakery” in New York",
+          "role": "S"
+        },
+        {
+          "text": "should return",
+          "role": "V"
+        },
+        {
+          "text": "different results",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "which try to maximize relevance"
+      ],
+      "emphasis": [
+        "this personalization",
+        "different results"
+      ],
+      "steps": [
+        {
+          "id": "s2_this",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "this personalization(이러한 개인화)은 무엇을 가리킬까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "this가 가리키는 것은 앞 문장에서 찾아요. 1문장 끝 results useful to you를 봐요.",
+              "this가 가리키는 것은 앞 문장에서 찾아요. 1문장 끝 results useful to you를 봐요."
+            ],
+            "explain": "this는 앞 문장을 가리켜요. 1문장의 results useful to you, 나에게 쓸모 있게 맞춰 준 결과예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "this는 앞 문장을 가리켜요. 1문장의 results useful to you, 나에게 쓸모 있게 맞춰 준 결과예요.",
+              "o2": "this는 앞 문장을 가리켜요. 1문장의 results useful to you, 나에게 쓸모 있게 맞춰 준 결과예요."
+            },
+            "point": "this personalization = 나에게 맞춘 결과 (뉴욕과 파리에서 bakery 검색 결과가 다름)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "나에게 쓸모 있는 결과를 주는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "모든 사람에게 같은 결과를 주는 것"
+            },
+            {
+              "id": "o2",
+              "label": "회사 광고를 먼저 보여 주는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "this personalization"
+          ],
+          "tips": [
+            {
+              "label": "see A reflected in B",
+              "text": "'A가 B에 반영된 것을 보다'예요.",
+              "mark": "reflected"
+            },
+            {
+              "label": "return",
+              "text": "이 글에서는 → (결과를) 내놓다  ('돌아오다' 아님)",
+              "mark": "return",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "📱",
+                "en": "keep you on site · results useful to you",
+                "ko": "소셜 미디어 기업은 나에게 쓸모 있는 결과를 주려 해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 2",
+                "icon": "🥐",
+                "en": "personalization · different results",
+                "ko": "같은 bakery 검색도 뉴욕과 파리에서 결과가 달라요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Features like the little predictive-text cues of autocomplete also look to maximize relevance by suggesting refinements: typing in “cats” might prompt the user with “cats movie” or “cats that don’t shed.”",
+      "model_translation": "자동 완성의 작은 예측 입력 단서와 같은 기능들 또한 다듬어진 검색어들을 제안함으로써 관련성을 최대화하려고 하는데, '고양이(cats)'를 입력하면 사용자에게 '고양이 영화(cats movie)' 또는 '털 안 빠지는 고양이(cats that don’t shed)'를 제시할지도 모른다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "Features",
+          "ko": "기능들"
+        },
+        {
+          "en": "like the little predictive-text cues",
+          "ko": "작은 예측 입력 단서 같은"
+        },
+        {
+          "en": "little",
+          "ko": "작은"
+        },
+        {
+          "en": "predictive-text",
+          "ko": "예측 입력"
+        },
+        {
+          "en": "cues",
+          "ko": "단서, 신호"
+        },
+        {
+          "en": "of autocomplete",
+          "ko": "자동 완성의"
+        },
+        {
+          "en": "autocomplete",
+          "ko": "자동 완성"
+        },
+        {
+          "en": "also look to maximize relevance",
+          "ko": "또한 관련성을 최대화하려고 한다"
+        },
+        {
+          "en": "look",
+          "ko": "보다 · 여기서는 look to ~ = ~하려고 하다"
+        },
+        {
+          "en": "by suggesting refinements",
+          "ko": "다듬어진 검색어를 제안함으로써"
+        },
+        {
+          "en": "suggesting",
+          "ko": "제안하는 것"
+        },
+        {
+          "en": "refinements",
+          "ko": "다듬어진 검색어"
+        },
+        {
+          "en": "typing in “cats”",
+          "ko": "'cats'를 입력하는 것"
+        },
+        {
+          "en": "typing",
+          "ko": "입력하는 것"
+        },
+        {
+          "en": "cats",
+          "ko": "고양이"
+        },
+        {
+          "en": "might prompt",
+          "ko": "제시할지도 모른다"
+        },
+        {
+          "en": "prompt",
+          "ko": "신속한 · 여기서는 '제시하다, 유도하다'"
+        },
+        {
+          "en": "the user",
+          "ko": "사용자"
+        },
+        {
+          "en": "user",
+          "ko": "사용자"
+        },
+        {
+          "en": "movie",
+          "ko": "영화"
+        },
+        {
+          "en": "shed",
+          "ko": "(털이) 빠지다"
+        },
+        {
+          "en": "maximize",
+          "ko": "최대화하다"
+        },
+        {
+          "en": "relevance",
+          "ko": "관련성"
+        }
+      ],
+      "slashes": [
+        "Features",
+        "cues of autocomplete",
+        "maximize relevance",
+        "refinements:",
+        "typing in “cats”",
+        "prompt the user",
+        "“cats movie”"
+      ],
+      "roles": [
+        {
+          "text": "Features like the little predictive-text cues of autocomplete",
+          "role": "S"
+        },
+        {
+          "text": "look to maximize",
+          "role": "V"
+        },
+        {
+          "text": "relevance",
+          "role": "O"
+        },
+        {
+          "text": "typing in “cats”",
+          "role": "S"
+        },
+        {
+          "text": "might prompt",
+          "role": "V"
+        },
+        {
+          "text": "the user",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that don’t shed"
+      ],
+      "steps": [
+        {
+          "id": "s3_skim",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "자동 완성(autocomplete)도 나에게 맞는 검색어를 골라 제안해요. cats를 치면 cats movie를 띄우는 식이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "autocomplete"
+          ],
+          "tips": [
+            {
+              "label": "look",
+              "text": "이 글에서는 → look to ~ = ~하려고 하다  ('보다' 아님)",
+              "mark": "look",
+              "trap": true
+            },
+            {
+              "label": "prompt",
+              "text": "이 글에서는 → (사용자에게) 제시하다  ('신속한' 아님)",
+              "mark": "prompt",
+              "trap": true
+            },
+            {
+              "label": "A: 예시",
+              "text": "콜론(:) 뒤는 앞말의 예시예요. cats 예시는 가볍게 읽고 넘어가요.",
+              "mark": "refinements:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Autocomplete suggestions offer a look into the algorithm’s understanding of accumulated user behavior — an immensely important part of how key social media algorithms work.",
+      "model_translation": "자동 완성 제안 검색어는 누적된 사용자 행동에 대한 알고리즘의 이해를 들여다볼 수 있게 해 주는데, 이는 주요 소셜 미디어 알고리즘이 작동하는 방식의 매우 중요한 부분이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Autocomplete suggestions",
+          "ko": "자동 완성 제안 검색어"
+        },
+        {
+          "en": "autocomplete",
+          "ko": "자동 완성"
+        },
+        {
+          "en": "suggestions",
+          "ko": "제안"
+        },
+        {
+          "en": "offer a look into",
+          "ko": "~을 들여다볼 수 있게 해 주다"
+        },
+        {
+          "en": "offer",
+          "ko": "제공하다"
+        },
+        {
+          "en": "look",
+          "ko": "봄, 살펴봄"
+        },
+        {
+          "en": "the algorithm’s understanding",
+          "ko": "알고리즘의 이해"
+        },
+        {
+          "en": "algorithm’s",
+          "ko": "알고리즘의"
+        },
+        {
+          "en": "understanding",
+          "ko": "이해"
+        },
+        {
+          "en": "accumulated user behavior",
+          "ko": "누적된 사용자 행동"
+        },
+        {
+          "en": "accumulated",
+          "ko": "누적된"
+        },
+        {
+          "en": "user",
+          "ko": "사용자"
+        },
+        {
+          "en": "behavior",
+          "ko": "행동"
+        },
+        {
+          "en": "an immensely important part",
+          "ko": "매우 중요한 부분"
+        },
+        {
+          "en": "immensely",
+          "ko": "매우, 엄청나게"
+        },
+        {
+          "en": "important",
+          "ko": "중요한"
+        },
+        {
+          "en": "part",
+          "ko": "부분"
+        },
+        {
+          "en": "how key social media algorithms work",
+          "ko": "주요 소셜 미디어 알고리즘이 작동하는 방식"
+        },
+        {
+          "en": "key",
+          "ko": "열쇠 · 여기서는 '주요한'"
+        },
+        {
+          "en": "social",
+          "ko": "사회의"
+        },
+        {
+          "en": "media",
+          "ko": "매체"
+        },
+        {
+          "en": "algorithms",
+          "ko": "알고리즘"
+        },
+        {
+          "en": "work",
+          "ko": "작동하다"
+        }
+      ],
+      "slashes": [
+        "offer a look",
+        "algorithm’s understanding",
+        "user behavior",
+        "important part"
+      ],
+      "roles": [
+        {
+          "text": "Autocomplete suggestions",
+          "role": "S"
+        },
+        {
+          "text": "offer",
+          "role": "V"
+        },
+        {
+          "text": "a look",
+          "role": "O"
+        }
+      ],
+      "emphasis": [
+        "accumulated user behavior"
+      ],
+      "steps": [
+        {
+          "id": "s4_look",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "자동 완성 제안을 보면 무엇을 들여다볼 수 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "offer a look into 뒤를 봐요. accumulated user behavior는 '누적된 사용자 행동'이에요.",
+              "offer a look into 뒤를 봐요. accumulated user behavior는 '누적된 사용자 행동'이에요."
+            ],
+            "explain": "'the algorithm’s understanding of accumulated user behavior', 사용자들이 쌓아 온 행동을 알고리즘이 어떻게 이해하는지 보여 준대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'the algorithm’s understanding of accumulated user behavior', 사용자들이 쌓아 온 행동을 알고리즘이 어떻게 이해하는지 보여 준대요.",
+              "o2": "'the algorithm’s understanding of accumulated user behavior', 사용자들이 쌓아 온 행동을 알고리즘이 어떻게 이해하는지 보여 준대요."
+            },
+            "point": "자동 완성 제안 = 누적된 사용자 행동(accumulated user behavior)을 보여 준다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "쌓인 사용자 행동을 알고리즘이 어떻게 이해하는지",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "나 한 사람이 숨긴 개인 정보"
+            },
+            {
+              "id": "o2",
+              "label": "회사가 광고로 번 돈"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "accumulated user behavior"
+          ],
+          "tips": [
+            {
+              "label": "offer a look into ~",
+              "text": "'~을 들여다볼 수 있게 해 주다'예요. 여기서 look은 명사 '살펴봄'이에요.",
+              "mark": "offer a look"
+            },
+            {
+              "label": "대시(—) 하나",
+              "text": "대시(—) 뒤는 앞말을 다시 설명해요. 그만큼 아주 중요한 부분이라는 말이에요.",
+              "mark": "immensely"
+            },
+            {
+              "label": "key",
+              "text": "이 글에서는 → 주요한  ('열쇠' 아님)",
+              "mark": "key",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_4",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "📱",
+                "en": "keep you on site · results useful to you",
+                "ko": "소셜 미디어 기업은 나에게 쓸모 있는 결과를 주려 해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2",
+                "icon": "🥐",
+                "en": "personalization · different results",
+                "ko": "같은 bakery 검색도 뉴욕과 파리에서 결과가 달라요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "⌨️",
+                "en": "autocomplete · accumulated user behavior",
+                "ko": "자동 완성 제안에는 쌓인 사용자 행동이 담겨 있어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "The outputs are personalized, but the data sets are massive, and the platforms are mining for similarities across vast quantities of user information.",
+      "model_translation": "결과물은 개인화되지만, 데이터 세트는 거대하며 플랫폼은 방대한 양의 사용자 정보 전체에서 유사성을 채굴하고 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "are massive",
+          "ko": "거대하다"
+        },
+        {
+          "en": "are personalized",
+          "ko": "개인화되지만"
+        },
+        {
+          "en": "The outputs",
+          "ko": "결과물"
+        },
+        {
+          "en": "outputs",
+          "ko": "결과물"
+        },
+        {
+          "en": "personalized",
+          "ko": "개인화된, 나에게 맞춘"
+        },
+        {
+          "en": "the data sets",
+          "ko": "데이터 세트"
+        },
+        {
+          "en": "data",
+          "ko": "데이터"
+        },
+        {
+          "en": "sets",
+          "ko": "세트, 묶음"
+        },
+        {
+          "en": "massive",
+          "ko": "거대한"
+        },
+        {
+          "en": "the platforms",
+          "ko": "플랫폼"
+        },
+        {
+          "en": "platforms",
+          "ko": "플랫폼"
+        },
+        {
+          "en": "are mining",
+          "ko": "채굴하고 있다, 캐내고 있다"
+        },
+        {
+          "en": "mining",
+          "ko": "광산 · 여기서는 '캐내는, 탐색하는'"
+        },
+        {
+          "en": "similarities",
+          "ko": "유사성, 비슷한 점"
+        },
+        {
+          "en": "across vast quantities",
+          "ko": "방대한 양 전체에서"
+        },
+        {
+          "en": "vast",
+          "ko": "방대한"
+        },
+        {
+          "en": "quantities",
+          "ko": "양"
+        },
+        {
+          "en": "of user information",
+          "ko": "사용자 정보의"
+        },
+        {
+          "en": "information",
+          "ko": "정보"
+        },
+        {
+          "en": "across",
+          "ko": "~에 걸쳐, ~마다"
+        }
+      ],
+      "slashes": [
+        "are personalized,",
+        "are massive,",
+        "are mining",
+        "for similarities"
+      ],
+      "roles": [
+        {
+          "text": "The outputs",
+          "role": "S"
+        },
+        {
+          "text": "are … are",
+          "role": "V"
+        },
+        {
+          "text": "personalized",
+          "role": "C"
+        },
+        {
+          "text": "the data sets",
+          "role": "S"
+        },
+        {
+          "text": "massive",
+          "role": "C"
+        },
+        {
+          "text": "the platforms",
+          "role": "S"
+        },
+        {
+          "text": "are mining",
+          "role": "V"
+        }
+      ],
+      "emphasis": [
+        "personalized",
+        "massive",
+        "similarities"
+      ],
+      "steps": [
+        {
+          "id": "s5_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s5_basic",
+          "candidates": [
+            "The outputs",
+            "are personalized",
+            "the data sets",
+            "are massive"
+          ],
+          "answers": [
+            "The outputs",
+            "are personalized",
+            "the data sets",
+            "are massive"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The outputs",
+                "ko": "결과물은"
+              },
+              " ",
+              {
+                "en": "are personalized",
+                "ko": "개인화되지만"
+              },
+              ", ",
+              {
+                "en": "the data sets",
+                "ko": "데이터 세트는"
+              },
+              " ",
+              {
+                "en": "are massive",
+                "ko": "거대하다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "display": "The outputs are personalized, but the data sets are massive",
+          "tips": [
+            {
+              "label": "mining",
+              "text": "이 글에서는 → 캐내는, 탐색하는  ('광산' 아님)",
+              "mark": "mining",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s5_mine",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "플랫폼은 방대한 사용자 정보 전체에서 무엇을 캐낸대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "are mining for 뒤를 봐요. similarities는 similar(비슷한)의 명사예요.",
+              "are mining for 뒤를 봐요. similarities는 similar(비슷한)의 명사예요."
+            ],
+            "explain": "'mining for similarities across vast quantities of user information', 수많은 사용자 정보에서 비슷한 점을 찾는대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'mining for similarities across vast quantities of user information', 수많은 사용자 정보에서 비슷한 점을 찾는대요.",
+              "o2": "'mining for similarities across vast quantities of user information', 수많은 사용자 정보에서 비슷한 점을 찾는대요."
+            },
+            "point": "플랫폼 = 수많은 사용자 정보에서 비슷한 점(similarities)을 캐낸다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사용자들 사이의 비슷한 점",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "한 사람만의 특별한 점"
+            },
+            {
+              "id": "o2",
+              "label": "틀린 정보"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "mining",
+            "similarities"
+          ],
+          "tips": [
+            {
+              "label": "mining",
+              "text": "이 글에서는 → 캐내는, 탐색하는  ('광산' 아님)",
+              "mark": "mining",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "but을 기준으로 두 그룹으로 나눠 봐요.\n결과는 나에게 맞춤(personalized)이지만, 데이터는 수많은 사용자의 것(massive)이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "but"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "자동 완성",
+            "left": {
+              "label": "personalized 쪽 (나에게 맞춤)",
+              "words": [
+                {
+                  "text": "personalized",
+                  "ko": "나에게 맞춘",
+                  "fresh": true
+                },
+                {
+                  "text": "results useful to you",
+                  "ko": "나에게 쓸모 있는 결과",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "massive 쪽 (수많은 사용자)",
+              "words": [
+                {
+                  "text": "massive",
+                  "ko": "거대한",
+                  "fresh": true
+                },
+                {
+                  "text": "accumulated user behavior",
+                  "ko": "쌓인 사용자 행동",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        },
+        {
+          "id": "s5_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "similarities(비슷한 점)는 칠판 어느 쪽 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "누구와 누구 사이의 비슷한 점인지 봐요. across vast quantities of user information이에요.",
+              "누구와 누구 사이의 비슷한 점인지 봐요. across vast quantities of user information이에요."
+            ],
+            "explain": "수많은 사용자 정보 전체에서 찾는 비슷한 점이에요. 나 한 사람이 아니라 많은 사용자 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "수많은 사용자 정보 전체에서 찾는 비슷한 점이에요. 나 한 사람이 아니라 많은 사용자 쪽이에요."
+            },
+            "point": "similarities → massive(수많은 사용자) 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · personalized (나에게 맞춤)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · massive (수많은 사용자)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "similarities"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "자동 완성",
+            "left": {
+              "label": "personalized 쪽 (나에게 맞춤)",
+              "words": [
+                {
+                  "text": "personalized",
+                  "ko": "나에게 맞춘"
+                },
+                {
+                  "text": "results useful to you",
+                  "ko": "나에게 쓸모 있는 결과"
+                }
+              ]
+            },
+            "right": {
+              "label": "massive 쪽 (수많은 사용자)",
+              "words": [
+                {
+                  "text": "massive",
+                  "ko": "거대한"
+                },
+                {
+                  "text": "accumulated user behavior",
+                  "ko": "쌓인 사용자 행동"
+                },
+                {
+                  "text": "similarities",
+                  "ko": "비슷한 점",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "similarities"
+              ],
+              "left": "왼쪽 · personalized (나에게 맞춤)",
+              "right": "오른쪽 · massive (수많은 사용자)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "If a whole lot of users near you or similar to you complete the search that you’ve begun with specific words, the autocomplete algorithm takes that into account and may be more likely to suggest them to you.",
+      "model_translation": "여러분 근처에 있거나 여러분과 유사한 수많은 사용자가 여러분이 특정 단어를 가지고 시작한 검색을 완료한다면, 자동 완성 알고리즘은 그 점을 고려하고 그것들을 여러분에게 제안할 가능성이 더 높을 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "a whole lot of users",
+          "ko": "아주 많은 사용자"
+        },
+        {
+          "en": "whole",
+          "ko": "전체의 · a whole lot of = 아주 많은"
+        },
+        {
+          "en": "lot",
+          "ko": "많음"
+        },
+        {
+          "en": "users",
+          "ko": "사용자들"
+        },
+        {
+          "en": "near you",
+          "ko": "여러분 근처에 있는"
+        },
+        {
+          "en": "near",
+          "ko": "~ 근처에"
+        },
+        {
+          "en": "similar to you",
+          "ko": "여러분과 비슷한"
+        },
+        {
+          "en": "similar",
+          "ko": "비슷한"
+        },
+        {
+          "en": "complete",
+          "ko": "완료하다"
+        },
+        {
+          "en": "the search",
+          "ko": "검색"
+        },
+        {
+          "en": "you’ve begun",
+          "ko": "여러분이 시작한"
+        },
+        {
+          "en": "begun",
+          "ko": "시작된"
+        },
+        {
+          "en": "with specific words",
+          "ko": "특정 단어로"
+        },
+        {
+          "en": "specific",
+          "ko": "특정한"
+        },
+        {
+          "en": "words",
+          "ko": "단어"
+        },
+        {
+          "en": "the autocomplete algorithm",
+          "ko": "자동 완성 알고리즘"
+        },
+        {
+          "en": "autocomplete",
+          "ko": "자동 완성"
+        },
+        {
+          "en": "algorithm",
+          "ko": "알고리즘"
+        },
+        {
+          "en": "takes that into account",
+          "ko": "그 점을 고려한다"
+        },
+        {
+          "en": "takes",
+          "ko": "가지다"
+        },
+        {
+          "en": "account",
+          "ko": "계좌 · 여기서는 take ~ into account = 고려하다"
+        },
+        {
+          "en": "may be",
+          "ko": "~일 수도 있다"
+        },
+        {
+          "en": "more likely",
+          "ko": "~할 가능성이 더 높은"
+        },
+        {
+          "en": "likely",
+          "ko": "~할 것 같은"
+        },
+        {
+          "en": "suggest",
+          "ko": "제안하다"
+        },
+        {
+          "en": "them",
+          "ko": "그들을"
+        },
+        {
+          "en": "search",
+          "ko": "검색"
+        },
+        {
+          "en": "you’ve",
+          "ko": "너는 ~했다 (= you have)"
+        }
+      ],
+      "slashes": [
+        "of users",
+        "similar to you",
+        "the search",
+        "you’ve begun",
+        "specific words,",
+        "the autocomplete algorithm",
+        "into account",
+        "more likely"
+      ],
+      "roles": [
+        {
+          "text": "a whole lot of users near you or similar to you",
+          "role": "S"
+        },
+        {
+          "text": "complete",
+          "role": "V"
+        },
+        {
+          "text": "the search that you’ve begun with specific words",
+          "role": "O"
+        },
+        {
+          "text": "the autocomplete algorithm",
+          "role": "S"
+        },
+        {
+          "text": "takes",
+          "role": "V"
+        },
+        {
+          "text": "may be",
+          "role": "V"
+        },
+        {
+          "text": "more likely",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "near you or similar to you",
+        "that you’ve begun with specific words"
+      ],
+      "emphasis": [
+        "a whole lot of users"
+      ],
+      "steps": [
+        {
+          "id": "s6_suggest",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "자동 완성은 나에게 어떤 검색어를 띄울 가능성이 더 높대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "If 덩어리를 봐요. 누가 검색을 완료하면 알고리즘이 그걸 고려한대요.",
+              "If 덩어리를 봐요. 누가 검색을 완료하면 알고리즘이 그걸 고려한대요."
+            ],
+            "explain": "'If a whole lot of users near you or similar to you complete the search', 나와 가깝거나 비슷한 사용자들이 많이 쓴 검색어를 더 띄울 수 있대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'If a whole lot of users near you or similar to you complete the search', 나와 가깝거나 비슷한 사용자들이 많이 쓴 검색어를 더 띄울 수 있대요.",
+              "o2": "'If a whole lot of users near you or similar to you complete the search', 나와 가깝거나 비슷한 사용자들이 많이 쓴 검색어를 더 띄울 수 있대요."
+            },
+            "point": "나와 비슷한 많은 사용자가 쓴 검색어 → 자동 완성이 나에게 제안"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "나와 가깝거나 비슷한 많은 사용자가 쓴 검색어",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "내가 예전에 딱 한 번 쓴 검색어"
+            },
+            {
+              "id": "o2",
+              "label": "회사가 광고하려는 검색어"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "a whole lot of users",
+            "suggest"
+          ],
+          "tips": [
+            {
+              "label": "take ~ into account",
+              "text": "'~을 고려하다'예요. that은 앞의 If 덩어리 내용이에요.",
+              "mark": "into account"
+            },
+            {
+              "label": "account",
+              "text": "이 글에서는 → take ~ into account = 고려하다  ('계좌' 아님)",
+              "mark": "account",
+              "trap": true
+            },
+            {
+              "label": "a whole lot of ~",
+              "text": "'아주 많은 ~'예요.",
+              "mark": "whole"
+            }
+          ]
+        },
+        {
+          "id": "s6_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "a whole lot of users(아주 많은 사용자)는 칠판 어느 쪽 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "나 한 사람인지, 많은 사람인지 봐요.",
+              "나 한 사람인지, 많은 사람인지 봐요."
+            ],
+            "explain": "나 한 사람이 아니라 많은 사용자예요. massive 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "나 한 사람이 아니라 많은 사용자예요. massive 쪽이에요."
+            },
+            "point": "a whole lot of users → massive(수많은 사용자) 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · personalized (나에게 맞춤)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · massive (수많은 사용자)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "a whole lot of users"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "자동 완성",
+            "left": {
+              "label": "personalized 쪽 (나에게 맞춤)",
+              "words": [
+                {
+                  "text": "personalized",
+                  "ko": "나에게 맞춘"
+                },
+                {
+                  "text": "results useful to you",
+                  "ko": "나에게 쓸모 있는 결과"
+                }
+              ]
+            },
+            "right": {
+              "label": "massive 쪽 (수많은 사용자)",
+              "words": [
+                {
+                  "text": "massive",
+                  "ko": "거대한"
+                },
+                {
+                  "text": "accumulated user behavior",
+                  "ko": "쌓인 사용자 행동"
+                },
+                {
+                  "text": "similarities",
+                  "ko": "비슷한 점"
+                },
+                {
+                  "text": "a whole lot of users",
+                  "ko": "아주 많은 사용자",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "a whole lot of users"
+              ],
+              "left": "왼쪽 · personalized (나에게 맞춤)",
+              "right": "오른쪽 · massive (수많은 사용자)"
+            }
+          }
+        }
+      ],
+      "refers": {
+        "them": "them = specific words(특정 단어들)"
+      }
+    },
+    {
+      "id": 7,
+      "text": "Since the results are derived from data related to millions of searches, autocomplete is, in a sense, holding a mirror up to society.",
+      "model_translation": "그 결과는 수백만 건의 검색과 관련된 데이터에서 도출되기 때문에, 자동 완성은 어떤 의미에서 사회에 거울을 비추고 있는 것이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Since",
+          "ko": "~ 때문에"
+        },
+        {
+          "en": "the results",
+          "ko": "그 결과"
+        },
+        {
+          "en": "results",
+          "ko": "결과"
+        },
+        {
+          "en": "are derived from",
+          "ko": "~에서 도출된다"
+        },
+        {
+          "en": "derived",
+          "ko": "도출된, 얻어진"
+        },
+        {
+          "en": "data",
+          "ko": "데이터"
+        },
+        {
+          "en": "related to",
+          "ko": "~와 관련된"
+        },
+        {
+          "en": "millions of searches",
+          "ko": "수백만 건의 검색"
+        },
+        {
+          "en": "related",
+          "ko": "관련된"
+        },
+        {
+          "en": "millions",
+          "ko": "수백만"
+        },
+        {
+          "en": "searches",
+          "ko": "검색"
+        },
+        {
+          "en": "autocomplete",
+          "ko": "자동 완성"
+        },
+        {
+          "en": "in a sense",
+          "ko": "어떤 의미에서"
+        },
+        {
+          "en": "sense",
+          "ko": "감각 · 여기서는 in a sense = 어떤 의미에서"
+        },
+        {
+          "en": "holding a mirror up to society",
+          "ko": "사회에 거울을 비추고 있는"
+        },
+        {
+          "en": "holding",
+          "ko": "들고 있는"
+        },
+        {
+          "en": "mirror",
+          "ko": "거울"
+        },
+        {
+          "en": "society",
+          "ko": "사회"
+        }
+      ],
+      "slashes": [
+        "are derived",
+        "from data",
+        "of searches,",
+        "autocomplete is,",
+        "in a sense,",
+        "holding a mirror"
+      ],
+      "roles": [
+        {
+          "text": "the results",
+          "role": "S"
+        },
+        {
+          "text": "are derived",
+          "role": "V"
+        },
+        {
+          "text": "autocomplete",
+          "role": "S"
+        },
+        {
+          "text": "is … holding",
+          "role": "V"
+        },
+        {
+          "text": "a mirror",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "related to millions of searches"
+      ],
+      "emphasis": [
+        "millions of searches"
+      ],
+      "steps": [
+        {
+          "id": "s7_since",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Since 덩어리를 보면, 자동 완성 결과는 어디에서 나올까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "are derived from 뒤를 봐요. derive from ~은 '~에서 얻다'예요.",
+              "are derived from 뒤를 봐요. derive from ~은 '~에서 얻다'예요."
+            ],
+            "explain": "'derived from data related to millions of searches', 수백만 건의 검색과 관련된 데이터에서 나온대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'derived from data related to millions of searches', 수백만 건의 검색과 관련된 데이터에서 나온대요.",
+              "o2": "'derived from data related to millions of searches', 수백만 건의 검색과 관련된 데이터에서 나온대요."
+            },
+            "point": "자동 완성 결과 = 수백만 건의 검색 데이터에서 나옴"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "수백만 건의 검색 데이터",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "나 한 사람의 검색 기록"
+            },
+            {
+              "id": "o2",
+              "label": "회사가 고른 인기 검색어"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "millions of searches"
+          ],
+          "tips": [
+            {
+              "label": "be derived from ~",
+              "text": "'~에서 도출되다, ~에서 나오다'예요.",
+              "mark": "derived"
+            },
+            {
+              "label": "sense",
+              "text": "이 글에서는 → in a sense = 어떤 의미에서  ('감각' 아님)",
+              "mark": "sense",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s7_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "드디어 밑줄이에요. 거울이 비추는 society(사회)는 칠판 어느 쪽 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "사회는 나 한 사람인지, 많은 사람인지 봐요.",
+              "사회는 나 한 사람인지, 많은 사람인지 봐요."
+            ],
+            "explain": "사회는 나 한 사람이 아니라 수많은 사람이에요. massive 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "사회는 나 한 사람이 아니라 수많은 사람이에요. massive 쪽이에요."
+            },
+            "point": "society → massive(수많은 사용자) 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · personalized (나에게 맞춤)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · massive (수많은 사용자)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "society"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "자동 완성",
+            "left": {
+              "label": "personalized 쪽 (나에게 맞춤)",
+              "words": [
+                {
+                  "text": "personalized",
+                  "ko": "나에게 맞춘"
+                },
+                {
+                  "text": "results useful to you",
+                  "ko": "나에게 쓸모 있는 결과"
+                }
+              ]
+            },
+            "right": {
+              "label": "massive 쪽 (수많은 사용자)",
+              "words": [
+                {
+                  "text": "massive",
+                  "ko": "거대한"
+                },
+                {
+                  "text": "accumulated user behavior",
+                  "ko": "쌓인 사용자 행동"
+                },
+                {
+                  "text": "similarities",
+                  "ko": "비슷한 점"
+                },
+                {
+                  "text": "a whole lot of users",
+                  "ko": "아주 많은 사용자"
+                },
+                {
+                  "text": "society",
+                  "ko": "사회",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "society"
+              ],
+              "left": "왼쪽 · personalized (나에게 맞춤)",
+              "right": "오른쪽 · massive (수많은 사용자)"
+            }
+          }
+        },
+        {
+          "id": "s7_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 자동 완성이라는 거울에 비치는 것은 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "거울은 앞에 있는 것을 그대로 비춰요. 자동 완성 결과가 무엇에서 나왔는지 떠올려 봐요.",
+              "거울은 앞에 있는 것을 그대로 비춰요. 자동 완성 결과가 무엇에서 나왔는지 떠올려 봐요."
+            ],
+            "explain": "자동 완성은 수백만 건의 검색에서 비슷한 점을 찾아 보여 줘요. 개인 정보를 숨기거나 결과를 바꾼다는 말은 글에 없어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "자동 완성은 수백만 건의 검색에서 비슷한 점을 찾아 보여 줘요. 개인 정보를 숨기거나 결과를 바꾼다는 말은 글에 없어요.",
+              "o2": "자동 완성은 수백만 건의 검색에서 비슷한 점을 찾아 보여 줘요. 개인 정보를 숨기거나 결과를 바꾼다는 말은 글에 없어요."
+            },
+            "point": "거울에 비치는 것 = 많은 사용자의 검색 (개인 정보·조작 이야기 X)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "많은 사용자가 함께 검색하는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "한 사람이 숨기고 싶은 개인 정보"
+            },
+            {
+              "id": "o2",
+              "label": "회사가 몰래 바꾼 검색 결과"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "holding a mirror up to society"
+          ]
+        },
+        {
+          "id": "s7_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "hold a mirror up to ~는 '~을 거울에 비추다', 그대로 보여 준다는 말이에요. 자동 완성은 수많은 사람이 무엇을 검색하는지 그대로 보여 줘요.\n이 뜻을 바꿔 쓴 보기를 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "tips": [
+            {
+              "label": "hold a mirror up to ~",
+              "text": "'~을 거울에 비추다, ~을 그대로 반영하다'예요.",
+              "mark": "holding a mirror"
+            },
+            {
+              "label": "in a sense",
+              "text": "'어떤 의미에서'예요. 진짜 거울이 아니라 비유라는 표시예요.",
+              "mark": "in a sense"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

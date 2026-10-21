@@ -1,0 +1,1796 @@
+{
+  "id": "mopyeong-2027-06-37-spectacle-culture",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 37번 (글의 순서, 3점)",
+  "brief": {
+    "topic": "순서 푸는 법: 주어진 글의 끝 → 단락 첫머리 단서로 앞 내용 예측 → 단락 끝으로 다음 내용 예측 → 순서 잇기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "order",
+    "labels": [
+      "단락 요지 잡기",
+      "연결 단서 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-spectacle-culture.svg",
+      "alt": "칠판: Spectacle(구경거리) + Culture(문화)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "축제의 퍼레이드나 불꽃놀이 같은 볼거리를 spectacle(구경거리)이라고 해요. 이번 글은 구경거리와 문화 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. In saying that, By extension, also 같은 말이 무엇을 받는지 찾아볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은? [3점]",
+    "sentence": 1,
+    "analysis_first": true,
+    "wrong_rate": 68.0,
+    "wrong_rank": 3,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "(A)-(C)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "2",
+        "label": "(B)-(A)-(C)",
+        "keywords": []
+      },
+      {
+        "id": "3",
+        "label": "(B)-(C)-(A)",
+        "keywords": []
+      },
+      {
+        "id": "4",
+        "label": "(C)-(A)-(B)",
+        "keywords": [],
+        "correct": true
+      },
+      {
+        "id": "5",
+        "label": "(C)-(B)-(A)",
+        "keywords": []
+      }
+    ],
+    "brief": {
+      "ask": "단락 첫머리 단서(In saying that, By extension, must also)를 떠올리며 순서를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 문화의 틀 → (C) 그렇게 말하며, 문화의 표현이 아니라 전략이고 문학에 비유된다 → (A) 더 나아가 기존의 것 + 새것, 모방만으론 부족 → (B) 또한 장관이어야 한다, 순서예요.",
+      "final_wrong": "정답은 ④ (C)-(A)-(B)예요.",
+      "option_feedback": {
+        "1": "(A)의 By extension(더 나아가)은 앞의 원리를 넓히는 말이에요. 주어진 글 바로 뒤에는 넓힐 원리(문학 비유)가 아직 없어요.",
+        "2": "가장 많이 고른 오답이에요. (B)의 must also(또한 ~해야 한다)는 앞에 구경거리가 해야 할 조건이 있어야 해요. 그 조건은 (A) 끝 '모방만으로는 부족하다'예요.",
+        "3": "많이 고른 오답이에요. (B)가 주어진 글 바로 뒤에 오면 must also가 받을 조건이 없어요. (C)의 In saying that도 문화의 틀 이야기를 받아요.",
+        "5": "(B)의 must also는 (A) 끝 '모방만으로는 부족하다'를 받아요. (A)의 By extension은 (C)의 문학 비유를 넓히는 말이에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 30%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "(B)의 also(또한)를 보고 주어진 글에 하나를 더 붙이는 말로 읽었을 거예요. 하지만 must also는 '~해야 한다'는 조건을 하나 더 붙이는 말이고, 주어진 글은 조건이 아니라 구경거리가 어떻게 작용하는지 설명이에요. 앞의 조건은 (A) 끝 'imitation is not enough(모방만으로는 부족하다)'이고, (B)의 outdoing previous efforts도 (A)의 previous festivals와 이어져요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "주어진 글",
+                "text": "spectacle works primarily within a cultural frame",
+                "ko": "어떻게 작용하는지 (조건 아님)",
+                "tone": "hl"
+              },
+              {
+                "label": "(A) 끝",
+                "text": "… but imitation is not enough",
+                "ko": "모방만으론 부족 → 무엇이 더?",
+                "tone": "hl2"
+              },
+              {
+                "label": "(B)",
+                "text": "Spectacle must also be spectacular … outdoing previous efforts",
+                "ko": "또한 장관이어야, 이전 시도를 능가",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 19%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "(B)를 주어진 글 바로 뒤에 놓고, (C)의 In saying that이 (B)를 받는다고 본 거예요. 하지만 (C)는 that을 받아 '구경거리의 창조는 문화의 보편적 표현이 아니다'라고 덧붙여요. 그러니 that은 '장관이어야 한다'가 아니라 주어진 글의 '문화의 틀' 이야기예요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "주어진 글",
+                "text": "… works primarily within a cultural frame",
+                "ko": "문화의 틀",
+                "tone": "hl"
+              },
+              {
+                "label": "(C)",
+                "text": "In saying that, … neither a universal nor … expression of culture",
+                "ko": "그 말(문화 이야기)을 받음",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "trigger",
+        "ko": "유발하다"
+      },
+      {
+        "en": "instinctive",
+        "ko": "본능적인"
+      },
+      {
+        "en": "spectacle",
+        "ko": "구경거리"
+      },
+      {
+        "en": "primarily",
+        "ko": "주로"
+      },
+      {
+        "en": "be subject to",
+        "ko": "~에 영향을 받다"
+      },
+      {
+        "en": "perception",
+        "ko": "지각, 인식"
+      },
+      {
+        "en": "bring to bear",
+        "ko": "적용하다"
+      },
+      {
+        "en": "by extension",
+        "ko": "더 나아가"
+      },
+      {
+        "en": "grain",
+        "ko": "결"
+      },
+      {
+        "en": "blend A with B",
+        "ko": "A를 B와 혼합하다"
+      },
+      {
+        "en": "innovative",
+        "ko": "혁신적인"
+      },
+      {
+        "en": "established",
+        "ko": "기존의"
+      },
+      {
+        "en": "draw on",
+        "ko": "활용하다"
+      },
+      {
+        "en": "repertoire",
+        "ko": "레퍼토리"
+      },
+      {
+        "en": "convention",
+        "ko": "관습"
+      },
+      {
+        "en": "imitation",
+        "ko": "모방"
+      },
+      {
+        "en": "spectacular",
+        "ko": "장관인"
+      },
+      {
+        "en": "amaze",
+        "ko": "놀라게 하다"
+      },
+      {
+        "en": "outdo",
+        "ko": "능가하다"
+      },
+      {
+        "en": "collective",
+        "ko": "집단의"
+      },
+      {
+        "en": "witness",
+        "ko": "목격하다"
+      },
+      {
+        "en": "stress",
+        "ko": "강조하다"
+      },
+      {
+        "en": "universal",
+        "ko": "보편적인"
+      },
+      {
+        "en": "inevitable",
+        "ko": "필연적인"
+      },
+      {
+        "en": "strategy",
+        "ko": "전략"
+      },
+      {
+        "en": "address",
+        "ko": "해결하다"
+      },
+      {
+        "en": "liken A to B",
+        "ko": "A를 B에 비유하다"
+      },
+      {
+        "en": "literature",
+        "ko": "문학"
+      },
+      {
+        "en": "bound",
+        "ko": "얽매인"
+      },
+      {
+        "en": "sufficient",
+        "ko": "충분한"
+      },
+      {
+        "en": "originality",
+        "ko": "독창성"
+      },
+      {
+        "en": "impress",
+        "ko": "깊은 인상을 주다"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 글",
+      "text": "Although there may be elements that trigger instinctive response, spectacle works primarily within a cultural frame and is subject to prevailing modes of perception that observers bring to bear.",
+      "teaching_value": "high",
+      "model_translation": "비록 본능적인 반응을 유발하는 요소들이 있을 수 있지만, 구경거리는 주로 문화적인 틀 안에서 작용하며 관찰자들이 적용하는 주요한 지각 방식에 영향을 받는다.",
+      "glosses": [
+        {
+          "en": "Although there may be elements",
+          "ko": "~하는 요소들이 있을 수 있지만"
+        },
+        {
+          "en": "elements",
+          "ko": "요소"
+        },
+        {
+          "en": "trigger",
+          "ko": "유발하다"
+        },
+        {
+          "en": "instinctive response",
+          "ko": "본능적인 반응"
+        },
+        {
+          "en": "instinctive",
+          "ko": "본능적인"
+        },
+        {
+          "en": "response",
+          "ko": "반응"
+        },
+        {
+          "en": "spectacle",
+          "ko": "구경거리, 볼거리"
+        },
+        {
+          "en": "works",
+          "ko": "작용하다"
+        },
+        {
+          "en": "primarily",
+          "ko": "주로"
+        },
+        {
+          "en": "within a cultural frame",
+          "ko": "문화적인 틀 안에서"
+        },
+        {
+          "en": "cultural",
+          "ko": "문화적인"
+        },
+        {
+          "en": "frame",
+          "ko": "틀"
+        },
+        {
+          "en": "is subject to",
+          "ko": "~에 영향을 받는다"
+        },
+        {
+          "en": "prevailing modes of perception",
+          "ko": "주요한 지각 방식"
+        },
+        {
+          "en": "prevailing",
+          "ko": "주요한, 지배적인"
+        },
+        {
+          "en": "modes",
+          "ko": "방식"
+        },
+        {
+          "en": "perception",
+          "ko": "지각, 인식"
+        },
+        {
+          "en": "observers",
+          "ko": "관찰자"
+        },
+        {
+          "en": "bring to bear",
+          "ko": "적용하다"
+        },
+        {
+          "en": "Although",
+          "ko": "비록 ~이지만"
+        },
+        {
+          "en": "within",
+          "ko": "~ 안에"
+        },
+        {
+          "en": "subject",
+          "ko": "영향을 받는"
+        },
+        {
+          "en": "bear",
+          "ko": "작용하다 (bring to bear)"
+        }
+      ],
+      "slashes": [
+        "Although there may be elements",
+        "instinctive response,",
+        "spectacle works primarily",
+        "a cultural frame",
+        "is subject to",
+        "modes of perception"
+      ],
+      "roles": [
+        {
+          "text": "may be",
+          "role": "V"
+        },
+        {
+          "text": "elements",
+          "role": "S"
+        },
+        {
+          "text": "spectacle",
+          "role": "S"
+        },
+        {
+          "text": "works",
+          "role": "V"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "subject to prevailing modes of perception that observers bring to bear",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "that trigger instinctive response",
+        "that observers bring to bear"
+      ],
+      "steps": [
+        {
+          "id": "g_main",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Although(비록 ~이지만)는 한발 물러서는 말이에요. 글쓴이가 정말 하고 싶은 말은 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "콤마(,) 뒤 메인 문장 spectacle works primarily within …을 봐요.",
+              "콤마(,) 뒤 메인 문장 spectacle works primarily within …을 봐요."
+            ],
+            "explain": "Although 덩어리는 '본능적 반응을 일으키는 요소도 있을 수 있지만'이라고 물러서는 말이에요. 콤마(,) 뒤 'works primarily within a cultural frame'이 글쓴이의 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "Although 덩어리는 '본능적 반응을 일으키는 요소도 있을 수 있지만'이라고 물러서는 말이에요. 콤마(,) 뒤 'works primarily within a cultural frame'이 글쓴이의 말이에요.",
+              "o2": "Although 덩어리는 '본능적 반응을 일으키는 요소도 있을 수 있지만'이라고 물러서는 말이에요. 콤마(,) 뒤 'works primarily within a cultural frame'이 글쓴이의 말이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구경거리는 본능적인 반응에서 나온다"
+            },
+            {
+              "id": "o1",
+              "label": "구경거리는 주로 문화의 틀 안에서 작용한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "관찰자는 구경거리에 관심이 없다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "spectacle",
+            "cultural frame"
+          ],
+          "tips": [
+            {
+              "label": "spectacle",
+              "text": "평소 spectacles(안경)로 알던 학생이 많아요. 여기서는 '구경거리, 볼거리'예요.",
+              "mark": "spectacle",
+              "trap": true
+            },
+            {
+              "label": "be subject to",
+              "text": "'~에 영향을 받다'예요. is subject to prevailing modes of perception = 주요한 지각 방식에 영향을 받는다.",
+              "mark": "subject"
+            },
+            {
+              "label": "bring to bear",
+              "text": "'적용하다'예요. modes of perception that observers bring to bear = 관찰자들이 적용하는 지각 방식.",
+              "mark": "bring"
+            }
+          ]
+        },
+        {
+          "id": "g_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 글은 '구경거리는 문화의 틀 안에서 작용하고 관찰자의 지각 방식에 영향을 받는다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "주어진 글의 중심은 a cultural frame(문화의 틀)이에요.",
+              "주어진 글의 중심은 a cultural frame(문화의 틀)이에요."
+            ],
+            "explain": "주어진 글은 구경거리가 문화의 틀 안에서 작용한다는 주장이에요. 이 주장을 이어 받아 더 풀어 주는 내용이 오기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "주어진 글은 구경거리가 문화의 틀 안에서 작용한다는 주장이에요. 이 주장을 이어 받아 더 풀어 주는 내용이 오기 쉬워요.",
+              "o2": "주어진 글은 구경거리가 문화의 틀 안에서 작용한다는 주장이에요. 이 주장을 이어 받아 더 풀어 주는 내용이 오기 쉬워요."
+            },
+            "point": "주어진 글 끝 '문화의 틀 안에서 작용' → 다음은 그 주장을 더 풀어 주는 내용"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구경거리와 문화의 관계를 더 풀어 말하는 내용",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "구경거리가 갖춰야 할 조건"
+            },
+            {
+              "id": "o2",
+              "label": "본능적인 반응의 예"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "cultural frame"
+          ]
+        },
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요."
+          },
+          "method": 1,
+          "button": "(A)부터 읽어 볼게요"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "(A) By extension, spectacle is produced by working with the grain of a particular culture, blending the innovative with the established.",
+      "teaching_value": "high",
+      "model_translation": "(A) 더 나아가, 구경거리는 특정 문화의 결에 맞추어 작업함으로써, 즉 혁신적인 요소와 기존의 요소를 혼합함으로써 만들어진다.",
+      "glosses": [
+        {
+          "en": "the grain of a particular culture",
+          "ko": "특정 문화의 결에"
+        },
+        {
+          "en": "By extension",
+          "ko": "더 나아가"
+        },
+        {
+          "en": "extension",
+          "ko": "확장"
+        },
+        {
+          "en": "spectacle",
+          "ko": "구경거리"
+        },
+        {
+          "en": "is produced",
+          "ko": "만들어진다"
+        },
+        {
+          "en": "produced",
+          "ko": "만들어진"
+        },
+        {
+          "en": "by working with",
+          "ko": "~에 맞추어 작업함으로써"
+        },
+        {
+          "en": "working",
+          "ko": "작업하는 것"
+        },
+        {
+          "en": "grain",
+          "ko": "결 · 나뭇결처럼 타고난 방향"
+        },
+        {
+          "en": "particular",
+          "ko": "특정한"
+        },
+        {
+          "en": "culture",
+          "ko": "문화"
+        },
+        {
+          "en": "blending",
+          "ko": "혼합하는"
+        },
+        {
+          "en": "the innovative",
+          "ko": "혁신적인 것"
+        },
+        {
+          "en": "innovative",
+          "ko": "혁신적인"
+        },
+        {
+          "en": "the established",
+          "ko": "기존의 것"
+        },
+        {
+          "en": "established",
+          "ko": "기존의, 확립된"
+        }
+      ],
+      "slashes": [
+        "By extension,",
+        "spectacle is produced",
+        "by working",
+        "a particular culture,"
+      ],
+      "roles": [
+        {
+          "text": "spectacle",
+          "role": "S"
+        },
+        {
+          "text": "is produced",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "By extension",
+            "spectacle",
+            "is produced",
+            "the grain of a particular culture",
+            "the innovative",
+            "the established"
+          ],
+          "answers": [
+            "By extension",
+            "spectacle",
+            "the grain of a particular culture",
+            "the innovative",
+            "the established",
+            "is produced"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "By extension",
+                "ko": "더 나아가"
+              },
+              ", ",
+              {
+                "en": "spectacle",
+                "ko": "구경거리는"
+              },
+              " ",
+              {
+                "en": "the grain of a particular culture",
+                "ko": "특정 문화의 결에"
+              },
+              " 맞추어 작업함으로써, 즉 ",
+              {
+                "en": "the innovative",
+                "ko": "혁신적인 요소와"
+              },
+              " ",
+              {
+                "en": "the established",
+                "ko": "기존의 요소를"
+              },
+              " 혼합함으로써 ",
+              {
+                "en": "is produced",
+                "ko": "만들어진다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "by extension",
+              "text": "'더 나아가, 같은 원리를 넓혀서'예요. 앞의 이야기를 다른 것에 넓혀 적용할 때 써요.",
+              "mark": "By extension"
+            },
+            {
+              "label": "grain",
+              "text": "평소엔 '곡물, 낟알'로 알기 쉬워요. 여기서는 나뭇결처럼 '결'이에요. work with the grain = 결에 맞춰 작업하다.",
+              "mark": "grain",
+              "trap": true
+            },
+            {
+              "label": "the + 형용사",
+              "text": "'~한 것'이에요. the innovative = 혁신적인 것, the established = 기존의 것.",
+              "mark": "innovative"
+            },
+            {
+              "label": "blend A with B",
+              "text": "'A를 B와 섞다'예요. blending the innovative with the established = 혁신적인 것과 기존의 것을 섞으면서.",
+              "mark": "blending"
+            }
+          ]
+        },
+        {
+          "id": "a_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 'By extension(더 나아가), 구경거리는 새것과 기존의 것을 섞어 만들어진다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "By extension은 '같은 원리를 넓혀서'예요. blending the innovative with the established와 같은 원리가 앞에 있어야 해요.",
+              "By extension은 '같은 원리를 넓혀서'예요. blending the innovative with the established와 같은 원리가 앞에 있어야 해요."
+            ],
+            "explain": "By extension(더 나아가)은 앞에서 말한 원리를 구경거리로 넓힐 때 써요. 그러니 앞에도 '기존의 것 + 새것'과 같은 원리가 먼저 나와야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "By extension(더 나아가)은 앞에서 말한 원리를 구경거리로 넓힐 때 써요. 그러니 앞에도 '기존의 것 + 새것'과 같은 원리가 먼저 나와야 해요.",
+              "o1": "By extension(더 나아가)은 앞에서 말한 원리를 구경거리로 넓힐 때 써요. 그러니 앞에도 '기존의 것 + 새것'과 같은 원리가 먼저 나와야 해요."
+            },
+            "point": "(A) By extension ← 앞에 '기존 + 새로움'과 같은 원리(비슷한 예)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구경거리는 관객을 놀라게 해야 한다는 조건"
+            },
+            {
+              "id": "o1",
+              "label": "본능적인 반응을 일으키는 요소의 예"
+            },
+            {
+              "id": "o2",
+              "label": "규칙을 따르면서도 새로움을 보여야 하는 비슷한 예",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "By extension",
+            "the innovative",
+            "the established"
+          ],
+          "tips": [
+            {
+              "label": "by extension",
+              "text": "'더 나아가, 같은 원리를 넓혀서'예요. 앞의 이야기를 다른 것에 넓혀 적용할 때 써요.",
+              "mark": "By extension"
+            },
+            {
+              "label": "grain",
+              "text": "평소엔 '곡물, 낟알'로 알기 쉬워요. 여기서는 나뭇결처럼 '결'이에요. work with the grain = 결에 맞춰 작업하다.",
+              "mark": "grain",
+              "trap": true
+            },
+            {
+              "label": "the + 형용사",
+              "text": "'~한 것'이에요. the innovative = 혁신적인 것, the established = 기존의 것.",
+              "mark": "innovative"
+            },
+            {
+              "label": "blend A with B",
+              "text": "'A를 B와 섞다'예요. blending the innovative with the established = 혁신적인 것과 기존의 것을 섞으면서.",
+              "mark": "blending"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "구경거리를 만드는 두 가지",
+            "left": {
+              "label": "old (기존)",
+              "words": [
+                {
+                  "text": "the established",
+                  "ko": "기존의 것",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "new (새로움)",
+              "words": [
+                {
+                  "text": "the innovative",
+                  "ko": "혁신적인 것",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Thus anyone deploying spectacle may draw on a repertoire of techniques and conventions developed from previous festivals or related activities, but imitation is not enough.",
+      "teaching_value": "high",
+      "model_translation": "따라서 구경거리를 전개하는 누구든 이전의 축제나 관련 활동들로부터 발전된 기법과 관습의 레퍼토리를 활용할 수 있지만, 모방만으로는 충분하지 않다.",
+      "glosses": [
+        {
+          "en": "Thus",
+          "ko": "따라서"
+        },
+        {
+          "en": "anyone deploying spectacle",
+          "ko": "구경거리를 전개하는 누구든"
+        },
+        {
+          "en": "anyone",
+          "ko": "누구든"
+        },
+        {
+          "en": "deploying",
+          "ko": "전개하는"
+        },
+        {
+          "en": "may draw on",
+          "ko": "~을 활용할 수 있다"
+        },
+        {
+          "en": "draw on",
+          "ko": "활용하다, 끌어 쓰다"
+        },
+        {
+          "en": "repertoire",
+          "ko": "레퍼토리, (쓸 수 있는) 목록"
+        },
+        {
+          "en": "techniques and conventions",
+          "ko": "기법과 관습"
+        },
+        {
+          "en": "techniques",
+          "ko": "기법"
+        },
+        {
+          "en": "conventions",
+          "ko": "관습"
+        },
+        {
+          "en": "developed",
+          "ko": "발전된"
+        },
+        {
+          "en": "previous festivals",
+          "ko": "이전의 축제"
+        },
+        {
+          "en": "previous",
+          "ko": "이전의"
+        },
+        {
+          "en": "festivals",
+          "ko": "축제"
+        },
+        {
+          "en": "related activities",
+          "ko": "관련 활동"
+        },
+        {
+          "en": "related",
+          "ko": "관련된"
+        },
+        {
+          "en": "activities",
+          "ko": "활동"
+        },
+        {
+          "en": "imitation",
+          "ko": "모방"
+        },
+        {
+          "en": "is not enough",
+          "ko": "충분하지 않다"
+        },
+        {
+          "en": "enough",
+          "ko": "충분한"
+        },
+        {
+          "en": "spectacle",
+          "ko": "구경거리"
+        },
+        {
+          "en": "draw",
+          "ko": "끌어 쓰다"
+        }
+      ],
+      "slashes": [
+        "deploying spectacle",
+        "a repertoire",
+        "techniques and conventions",
+        "related activities,"
+      ],
+      "roles": [
+        {
+          "text": "anyone deploying spectacle",
+          "role": "S"
+        },
+        {
+          "text": "may draw on",
+          "role": "V"
+        },
+        {
+          "text": "a repertoire of techniques and conventions developed from previous festivals or related activities",
+          "role": "O"
+        },
+        {
+          "text": "imitation",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "not enough",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "deploying spectacle",
+        "developed from previous festivals or related activities"
+      ],
+      "steps": [
+        {
+          "id": "a_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 'but imitation is not enough(하지만 모방만으로는 충분하지 않다)'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not enough(충분하지 않다)라고 했어요. 그럼 무엇이 더 필요한지가 궁금해지죠.",
+              "not enough(충분하지 않다)라고 했어요. 그럼 무엇이 더 필요한지가 궁금해지죠."
+            ],
+            "explain": "모방만으로는 부족하다고 했으니, 다음엔 그 밖에 무엇이 더 필요한지가 이어지기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "모방만으로는 부족하다고 했으니, 다음엔 그 밖에 무엇이 더 필요한지가 이어지기 쉬워요.",
+              "o2": "모방만으로는 부족하다고 했으니, 다음엔 그 밖에 무엇이 더 필요한지가 이어지기 쉬워요."
+            },
+            "point": "(A) 끝 '모방만으로는 충분하지 않다' → 다음은 더 필요한 것"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "모방 말고 더 갖춰야 할 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "이전 축제를 모방하는 방법"
+            },
+            {
+              "id": "o2",
+              "label": "구경거리가 어느 문화에나 있다는 내용"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "imitation",
+            "not enough"
+          ],
+          "tips": [
+            {
+              "label": "draw on",
+              "text": "'~을 활용하다, 끌어 쓰다'예요. draw on a repertoire = 레퍼토리를 활용하다.",
+              "mark": "draw"
+            },
+            {
+              "label": "repertoire",
+              "text": "'(쓸 수 있는) 목록, 레퍼토리'예요. 이전 축제에서 발전된 기법과 관습을 모아 둔 것이에요.",
+              "mark": "repertoire"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "(B) Spectacle must also be spectacular.",
+      "teaching_value": "high",
+      "model_translation": "(B) 구경거리는 또한 장관이어야 한다.",
+      "glosses": [
+        {
+          "en": "Spectacle",
+          "ko": "구경거리는"
+        },
+        {
+          "en": "must also be",
+          "ko": "또한 ~이어야 한다"
+        },
+        {
+          "en": "spectacular",
+          "ko": "장관인, 볼 만한"
+        }
+      ],
+      "slashes": [],
+      "roles": [
+        {
+          "text": "Spectacle",
+          "role": "S"
+        },
+        {
+          "text": "must … be",
+          "role": "V"
+        },
+        {
+          "text": "spectacular",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "b_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 'Spectacle must also be spectacular(구경거리는 또한 장관이어야 한다)'로 시작해요. also(또한)를 보면 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "must(~해야 한다)와 also(또한)를 같이 봐요. '~해야 한다'를 하나 더 붙이는 말이에요.",
+              "must(~해야 한다)와 also(또한)를 같이 봐요. '~해야 한다'를 하나 더 붙이는 말이에요."
+            ],
+            "explain": "must also는 '~해야 한다'는 조건을 하나 더 붙이는 말이에요. 그러니 앞에도 구경거리가 무엇을 해야 하는지가 먼저 있어야 해요. 문화의 틀 이야기는 어떻게 작용하는지 설명이지 조건이 아니에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "must also는 '~해야 한다'는 조건을 하나 더 붙이는 말이에요. 그러니 앞에도 구경거리가 무엇을 해야 하는지가 먼저 있어야 해요. 문화의 틀 이야기는 어떻게 작용하는지 설명이지 조건이 아니에요.",
+              "o2": "must also는 '~해야 한다'는 조건을 하나 더 붙이는 말이에요. 그러니 앞에도 구경거리가 무엇을 해야 하는지가 먼저 있어야 해요. 문화의 틀 이야기는 어떻게 작용하는지 설명이지 조건이 아니에요."
+            },
+            "point": "(B) must also ← 앞에 구경거리가 '~해야 한다'는 다른 조건"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구경거리가 문화의 틀 안에서 작용한다는 설명"
+            },
+            {
+              "id": "o1",
+              "label": "구경거리가 갖춰야 할 또 다른 조건",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "문학 작품을 쓰는 방법"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "must also be"
+          ],
+          "tips": [
+            {
+              "label": "spectacular",
+              "text": "'장관인, 볼 만한'이에요. spectacle(구경거리)의 형용사예요.",
+              "mark": "spectacular"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "A spectacle has to amaze spectators, outdoing previous efforts if it is to become part of the collective memory of those who witnessed and participated in it.",
+      "teaching_value": "high",
+      "model_translation": "구경거리가 그것을 목격하고 참여한 사람들의 집단 기억의 일부가 되려면, 관객을 놀라게 하고 이전의 시도들을 능가해야만 한다.",
+      "glosses": [
+        {
+          "en": "A spectacle",
+          "ko": "구경거리는"
+        },
+        {
+          "en": "has to amaze",
+          "ko": "놀라게 해야 한다"
+        },
+        {
+          "en": "amaze",
+          "ko": "놀라게 하다"
+        },
+        {
+          "en": "spectators",
+          "ko": "관객"
+        },
+        {
+          "en": "outdoing previous efforts",
+          "ko": "이전의 시도들을 능가하며"
+        },
+        {
+          "en": "outdoing",
+          "ko": "능가하는"
+        },
+        {
+          "en": "previous",
+          "ko": "이전의"
+        },
+        {
+          "en": "efforts",
+          "ko": "시도, 노력"
+        },
+        {
+          "en": "if it is to become",
+          "ko": "~이 되려면"
+        },
+        {
+          "en": "part of the collective memory",
+          "ko": "집단 기억의 일부"
+        },
+        {
+          "en": "collective memory",
+          "ko": "집단 기억"
+        },
+        {
+          "en": "collective",
+          "ko": "집단의"
+        },
+        {
+          "en": "those who witnessed and participated in it",
+          "ko": "그것을 목격하고 참여한 사람들"
+        },
+        {
+          "en": "witnessed",
+          "ko": "목격했다"
+        },
+        {
+          "en": "participated in",
+          "ko": "~에 참여했다"
+        },
+        {
+          "en": "spectacle",
+          "ko": "구경거리"
+        },
+        {
+          "en": "part",
+          "ko": "일부"
+        },
+        {
+          "en": "participated",
+          "ko": "참여했다"
+        }
+      ],
+      "slashes": [
+        "has to amaze spectators,",
+        "previous efforts",
+        "if it is to become part",
+        "the collective memory"
+      ],
+      "roles": [
+        {
+          "text": "A spectacle",
+          "role": "S"
+        },
+        {
+          "text": "has to amaze",
+          "role": "V"
+        },
+        {
+          "text": "spectators",
+          "role": "O"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "is to become",
+          "role": "V"
+        },
+        {
+          "text": "part of the collective memory",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "who witnessed and participated in it"
+      ],
+      "steps": [
+        {
+          "id": "b_amaze",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "구경거리가 사람들의 집단 기억에 남으려면 어떻게 해야 한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "has to amaze spectators, outdoing previous efforts를 봐요. outdo는 '능가하다'예요.",
+              "has to amaze spectators, outdoing previous efforts를 봐요. outdo는 '능가하다'예요."
+            ],
+            "explain": "'has to amaze spectators, outdoing previous efforts', 관객을 놀라게 하고 이전의 시도들을 능가해야 한대요. if it is to become …는 '~이 되려면'이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'has to amaze spectators, outdoing previous efforts', 관객을 놀라게 하고 이전의 시도들을 능가해야 한대요. if it is to become …는 '~이 되려면'이에요.",
+              "o1": "'has to amaze spectators, outdoing previous efforts', 관객을 놀라게 하고 이전의 시도들을 능가해야 한대요. if it is to become …는 '~이 되려면'이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "이전 축제를 그대로 따라 해야 한다"
+            },
+            {
+              "id": "o1",
+              "label": "관객이 직접 만들어야 한다"
+            },
+            {
+              "id": "o2",
+              "label": "관객을 놀라게 하고 이전 시도를 넘어서야 한다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "amaze",
+            "outdoing previous efforts"
+          ],
+          "tips": [
+            {
+              "label": "if + be to ~",
+              "text": "if 안의 be to ~는 '~하려면'이에요. if it is to become part of … = …의 일부가 되려면.",
+              "mark": "is to become"
+            },
+            {
+              "label": "outdo",
+              "text": "'능가하다, 넘어서다'예요. outdoing previous efforts = 이전의 시도들을 능가하면서.",
+              "mark": "outdoing"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "구경거리를 만드는 두 가지",
+            "left": {
+              "label": "old (기존)",
+              "words": [
+                {
+                  "text": "the established",
+                  "ko": "기존의 것"
+                }
+              ]
+            },
+            "right": {
+              "label": "new (새로움)",
+              "words": [
+                {
+                  "text": "the innovative",
+                  "ko": "혁신적인 것"
+                },
+                {
+                  "text": "outdoing previous efforts",
+                  "ko": "이전 시도를 능가함",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "(C) In saying that, we stress that creation of spectacle is neither a universal nor even an inevitable expression of culture, but is a strategy commonly used by people from many different cultures to address specific needs.",
+      "teaching_value": "high",
+      "model_translation": "(C) 그렇게 말함에 있어, 우리는 구경거리의 창조가 문화의 보편적이거나 심지어 필연적인 표현이 아니라, 오히려 특정한 요구를 해결하기 위해 여러 다양한 문화권의 사람들이 '흔히' 사용하는 전략임을 강조한다.",
+      "glosses": [
+        {
+          "en": "In saying that",
+          "ko": "그렇게 말함에 있어, 그렇게 말하면서"
+        },
+        {
+          "en": "saying",
+          "ko": "말하는 것"
+        },
+        {
+          "en": "we stress",
+          "ko": "우리는 강조한다"
+        },
+        {
+          "en": "stress",
+          "ko": "강조하다"
+        },
+        {
+          "en": "creation of spectacle",
+          "ko": "구경거리의 창조"
+        },
+        {
+          "en": "creation",
+          "ko": "창조"
+        },
+        {
+          "en": "neither",
+          "ko": "~도 아니다 (neither A nor B)"
+        },
+        {
+          "en": "universal",
+          "ko": "보편적인"
+        },
+        {
+          "en": "inevitable",
+          "ko": "필연적인"
+        },
+        {
+          "en": "expression of culture",
+          "ko": "문화의 표현"
+        },
+        {
+          "en": "expression",
+          "ko": "표현"
+        },
+        {
+          "en": "culture",
+          "ko": "문화"
+        },
+        {
+          "en": "a strategy",
+          "ko": "전략"
+        },
+        {
+          "en": "strategy",
+          "ko": "전략"
+        },
+        {
+          "en": "commonly used",
+          "ko": "흔히 사용되는"
+        },
+        {
+          "en": "commonly",
+          "ko": "흔히"
+        },
+        {
+          "en": "many different cultures",
+          "ko": "여러 다양한 문화(권)"
+        },
+        {
+          "en": "cultures",
+          "ko": "문화(권)"
+        },
+        {
+          "en": "to address specific needs",
+          "ko": "특정한 요구를 해결하기 위해"
+        },
+        {
+          "en": "address",
+          "ko": "해결하다, 다루다"
+        },
+        {
+          "en": "specific needs",
+          "ko": "특정한 요구"
+        },
+        {
+          "en": "specific",
+          "ko": "특정한"
+        },
+        {
+          "en": "needs",
+          "ko": "요구"
+        },
+        {
+          "en": "spectacle",
+          "ko": "구경거리"
+        },
+        {
+          "en": "used",
+          "ko": "사용되는"
+        }
+      ],
+      "slashes": [
+        "In saying that,",
+        "we stress",
+        "creation of spectacle",
+        "expression of culture,",
+        "but is a strategy",
+        "by people",
+        "many different cultures"
+      ],
+      "roles": [
+        {
+          "text": "we",
+          "role": "S"
+        },
+        {
+          "text": "stress",
+          "role": "V"
+        },
+        {
+          "text": "creation of spectacle",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "neither a universal nor even an inevitable expression of culture",
+          "role": "C"
+        },
+        {
+          "text": "a strategy commonly used by people from many different cultures to address specific needs",
+          "role": "C"
+        }
+      ],
+      "modifiers": [
+        "commonly used by people from many different cultures to address specific needs"
+      ],
+      "steps": [
+        {
+          "id": "c_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(C)는 'In saying that(그렇게 말하면서)'으로 시작해요. 앞에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "(C)가 that을 받아 무엇에 대해 덧붙이는지 봐요. expression of culture(문화의 표현)가 나와요.",
+              "(C)가 that을 받아 무엇에 대해 덧붙이는지 봐요. expression of culture(문화의 표현)가 나와요."
+            ],
+            "explain": "(C)는 that을 받아 '구경거리의 창조는 문화의 보편적 표현이 아니라 여러 문화가 쓰는 전략'이라고 덧붙여요. 그러니 that은 구경거리와 문화를 이어 말한 내용이어야 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "(C)는 that을 받아 '구경거리의 창조는 문화의 보편적 표현이 아니라 여러 문화가 쓰는 전략'이라고 덧붙여요. 그러니 that은 구경거리와 문화를 이어 말한 내용이어야 해요.",
+              "o2": "(C)는 that을 받아 '구경거리의 창조는 문화의 보편적 표현이 아니라 여러 문화가 쓰는 전략'이라고 덧붙여요. 그러니 that은 구경거리와 문화를 이어 말한 내용이어야 해요."
+            },
+            "point": "(C) In saying that ← 앞에 구경거리와 문화를 이어 말한 내용"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "구경거리는 관객을 놀라게 해야 한다는 내용"
+            },
+            {
+              "id": "o1",
+              "label": "구경거리와 문화의 관계를 말한 내용",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "모방만으로는 충분하지 않다는 내용"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "In saying that",
+            "expression of culture"
+          ],
+          "tips": [
+            {
+              "label": "neither A nor B",
+              "text": "'A도 B도 아닌'이에요. neither a universal nor even an inevitable expression = 보편적인 표현도, 심지어 필연적인 표현도 아닌.",
+              "mark": "neither"
+            },
+            {
+              "label": "address",
+              "text": "평소엔 '주소'로 알기 쉬워요. 여기서는 '(문제를) 해결하다, 다루다'예요.",
+              "mark": "address",
+              "trap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "The task of creating spectacle has been likened to creating new works of literature, where writers normally feel bound by the rules and traditions of their genre yet need to show sufficient originality to impress their audiences.",
+      "teaching_value": "high",
+      "model_translation": "구경거리를 창조하는 과업은 새로운 문학 작품을 창작하는 것에 비유되어 왔는데, 문학에서 작가들은 보통 자신들 장르의 규칙과 전통에 얽매인다고 느끼면서도 독자들에게 깊은 인상을 주기 위해 충분한 독창성을 보여야 한다.",
+      "glosses": [
+        {
+          "en": "The task of creating spectacle",
+          "ko": "구경거리를 창조하는 과업"
+        },
+        {
+          "en": "task",
+          "ko": "과업, 일"
+        },
+        {
+          "en": "creating",
+          "ko": "창조하는 것"
+        },
+        {
+          "en": "has been likened to",
+          "ko": "~에 비유되어 왔다"
+        },
+        {
+          "en": "likened",
+          "ko": "비유된"
+        },
+        {
+          "en": "new works of literature",
+          "ko": "새로운 문학 작품"
+        },
+        {
+          "en": "works",
+          "ko": "작품"
+        },
+        {
+          "en": "literature",
+          "ko": "문학"
+        },
+        {
+          "en": "writers",
+          "ko": "작가들"
+        },
+        {
+          "en": "normally",
+          "ko": "보통"
+        },
+        {
+          "en": "feel bound",
+          "ko": "얽매인다고 느끼다"
+        },
+        {
+          "en": "bound",
+          "ko": "얽매인"
+        },
+        {
+          "en": "rules and traditions",
+          "ko": "규칙과 전통"
+        },
+        {
+          "en": "traditions",
+          "ko": "전통"
+        },
+        {
+          "en": "genre",
+          "ko": "장르"
+        },
+        {
+          "en": "sufficient originality",
+          "ko": "충분한 독창성"
+        },
+        {
+          "en": "sufficient",
+          "ko": "충분한"
+        },
+        {
+          "en": "originality",
+          "ko": "독창성"
+        },
+        {
+          "en": "to impress their audiences",
+          "ko": "독자들에게 깊은 인상을 주기 위해"
+        },
+        {
+          "en": "impress",
+          "ko": "깊은 인상을 주다"
+        },
+        {
+          "en": "audiences",
+          "ko": "독자, 청중"
+        },
+        {
+          "en": "spectacle",
+          "ko": "구경거리"
+        },
+        {
+          "en": "feel",
+          "ko": "느끼다"
+        },
+        {
+          "en": "rules",
+          "ko": "규칙"
+        }
+      ],
+      "slashes": [
+        "The task of creating spectacle",
+        "has been likened",
+        "works of literature,",
+        "feel bound",
+        "of their genre",
+        "sufficient originality"
+      ],
+      "roles": [
+        {
+          "text": "The task of creating spectacle",
+          "role": "S"
+        },
+        {
+          "text": "has been likened",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "where writers normally feel bound by the rules and traditions of their genre yet need to show sufficient originality to impress their audiences"
+      ],
+      "steps": [
+        {
+          "id": "c_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(C)는 '작가는 장르의 규칙에 얽매이면서도 충분한 독창성을 보여야 한다'는 비유로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "The task of creating spectacle has been likened to …, 구경거리 만들기를 문학 창작에 비유했어요.",
+              "The task of creating spectacle has been likened to …, 구경거리 만들기를 문학 창작에 비유했어요."
+            ],
+            "explain": "구경거리 만들기를 문학 창작에 비유했으니, 다음엔 그 원리(규칙 + 독창성)를 다시 구경거리에 적용하는 말이 오기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "구경거리 만들기를 문학 창작에 비유했으니, 다음엔 그 원리(규칙 + 독창성)를 다시 구경거리에 적용하는 말이 오기 쉬워요.",
+              "o2": "구경거리 만들기를 문학 창작에 비유했으니, 다음엔 그 원리(규칙 + 독창성)를 다시 구경거리에 적용하는 말이 오기 쉬워요."
+            },
+            "point": "(C) 끝 문학 비유(규칙 + 독창성) → 다음은 그 원리를 구경거리에 넓힘"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "문학 장르의 규칙을 하나씩 소개하는 내용"
+            },
+            {
+              "id": "o1",
+              "label": "그 원리를 구경거리에 넓혀 적용하는 내용",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "구경거리가 본능적인 반응에서 나온다는 내용"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "rules and traditions",
+            "yet",
+            "sufficient originality"
+          ],
+          "tips": [
+            {
+              "label": "liken A to B",
+              "text": "'A를 B에 비유하다'예요. has been likened to creating new works of literature = 새 문학 작품을 쓰는 것에 비유되어 왔다.",
+              "mark": "likened"
+            },
+            {
+              "label": "works",
+              "text": "평소엔 '일하다'로 알기 쉬워요. 여기서는 '작품'이에요. new works of literature = 새로운 문학 작품.",
+              "mark": "works",
+              "trap": true
+            },
+            {
+              "label": "yet",
+              "text": "여기서는 '그런데도, 하지만'이에요. 규칙에 얽매이면서도 독창성을 보여야 한다는 말이에요.",
+              "mark": "yet"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "구경거리를 만드는 두 가지",
+            "left": {
+              "label": "old (기존)",
+              "words": [
+                {
+                  "text": "the established",
+                  "ko": "기존의 것"
+                },
+                {
+                  "text": "rules and traditions",
+                  "ko": "규칙과 전통",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "new (새로움)",
+              "words": [
+                {
+                  "text": "the innovative",
+                  "ko": "혁신적인 것"
+                },
+                {
+                  "text": "outdoing previous efforts",
+                  "ko": "이전 시도를 능가함"
+                },
+                {
+                  "text": "sufficient originality",
+                  "ko": "충분한 독창성",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "+"
+          }
+        },
+        {
+          "id": "order_link",
+          "type": "pick",
+          "interaction": "word_pick",
+          "tag": "순서 잇기",
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "answers": [
+            "C",
+            "A",
+            "B"
+          ],
+          "order": {
+            "given": {
+              "id": "given",
+              "label": "주어진 글",
+              "last": {
+                "en": "… spectacle works primarily within a cultural frame …",
+                "ko": "구경거리는 주로 문화의 틀 안에서 작용한다"
+              }
+            },
+            "cards": [
+              {
+                "id": "A",
+                "label": "(A)",
+                "first": {
+                  "en": "By extension, spectacle is produced by working with the grain of a particular culture …",
+                  "ko": "더 나아가, 구경거리는 특정 문화의 결에 맞춰 만들어진다"
+                },
+                "last": {
+                  "en": "… but imitation is not enough.",
+                  "ko": "하지만 모방만으로는 충분하지 않다"
+                }
+              },
+              {
+                "id": "B",
+                "label": "(B)",
+                "first": {
+                  "en": "Spectacle must also be spectacular.",
+                  "ko": "구경거리는 또한 장관이어야 한다"
+                },
+                "last": {
+                  "en": "… outdoing previous efforts if it is to become part of the collective memory …",
+                  "ko": "집단 기억에 남으려면 이전 시도를 능가해야 한다"
+                }
+              },
+              {
+                "id": "C",
+                "label": "(C)",
+                "first": {
+                  "en": "In saying that, we stress that creation of spectacle is neither a universal nor … expression of culture …",
+                  "ko": "그렇게 말하며, 구경거리의 창조는 문화의 보편적 표현이 아니라고 강조한다"
+                },
+                "last": {
+                  "en": "… writers … feel bound by the rules … yet need to show sufficient originality …",
+                  "ko": "작가는 규칙에 얽매이면서도 독창성을 보여야 한다"
+                }
+              }
+            ]
+          },
+          "brief": {
+            "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+            "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+            "wrong_by": {
+              "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+              "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+            "explain": "주어진 글(구경거리는 문화의 틀 안에서 작용) → (C) 그렇게 말하며, 문화의 보편적 표현이 아니라 전략이고 문학 창작에 비유된다 → (A) 더 나아가 기존의 것과 새것을 섞어 만들고, 모방만으론 부족하다 → (B) 또한 장관이어야 한다, 순서예요.",
+            "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지"
+          },
+          "method": 1
+        },
+        {
+          "id": "c_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?"
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

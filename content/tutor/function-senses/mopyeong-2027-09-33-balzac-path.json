@@ -1,0 +1,48 @@
+{
+ "1": [
+  {
+   "word": "while",
+   "phrase": "While a picture",
+   "sense": "~이지만, ~인 반면",
+   "usage": "접속사 While (대조)"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "is to ________",
+   "sense": "~하는 것",
+   "usage": "be to + 동사원형 = ~하는 것이다 (보어)"
+  }
+ ],
+ "4": [
+  {
+   "word": "but",
+   "phrase": "but the descriptions",
+   "sense": "그러나",
+   "usage": "등위접속사 but (대조)"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "from room to room",
+   "sense": "~로 (방에서 방으로)",
+   "usage": "from A to B = A에서 B로"
+  },
+  {
+   "word": "as",
+   "phrase": "as would a real estate agent",
+   "sense": "~처럼, ~하듯이",
+   "usage": "접속사 as (같은 방식) + 도치"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "all the way down to",
+   "sense": "~에 이르기까지",
+   "usage": "all the way down to + 명사"
+  }
+ ]
+}

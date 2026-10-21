@@ -1,0 +1,1942 @@
+{
+  "id": "mopyeong-2027-06-34-art-collector",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 34번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 두 쪽 말 모으기 → 빈칸이 어느 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-art-collector.svg",
+      "alt": "칠판: Art Collector(미술 수집가) + Art Values(작품 가치)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "비싼 그림을 사는 사람은 무엇을 믿고 살까요? 이번 글은 미술 수집가와 작품 가치 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 7,
+    "analysis_first": true,
+    "wrong_rate": 76.0,
+    "wrong_rank": 1,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "predict",
+        "ko": "예측하다"
+      },
+      {
+        "en": "where art is going",
+        "ko": "미술이 나아가는 방향"
+      },
+      {
+        "en": "artist",
+        "ko": "미술가, 예술가"
+      },
+      {
+        "en": "behind the work",
+        "ko": "작품 이면의"
+      },
+      {
+        "en": "reliable",
+        "ko": "신뢰할 수 있는"
+      },
+      {
+        "en": "tells the story of his time",
+        "ko": "자신의 시대 이야기를 말해 주다"
+      },
+      {
+        "en": "lead to",
+        "ko": "~을 초래하다"
+      },
+      {
+        "en": "immediate profits",
+        "ko": "즉각적인 이익"
+      },
+      {
+        "en": "originality",
+        "ko": "독창성"
+      },
+      {
+        "en": "unshakable",
+        "ko": "흔들리지 않는"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "he can predict where art is going",
+        "keywords": [
+          "predict",
+          "where art is going"
+        ],
+        "ko": "스스로 미술이 나아갈 방향을 예측할 수 있다",
+        "correct": true
+      },
+      {
+        "id": "2",
+        "label": "the artist behind the work is reliable",
+        "keywords": [
+          "artist",
+          "reliable"
+        ],
+        "ko": "그 작품 이면의 미술가는 신뢰할 수 있다"
+      },
+      {
+        "id": "3",
+        "label": "the art work tells the story of his time",
+        "keywords": [
+          "story of his time"
+        ],
+        "ko": "그 미술 작품이 자신의 시대의 이야기를 말해 준다"
+      },
+      {
+        "id": "4",
+        "label": "his choice will lead to immediate profits",
+        "keywords": [
+          "immediate profits"
+        ],
+        "ko": "자신의 선택이 즉각적인 이익을 초래할 것이다"
+      },
+      {
+        "id": "5",
+        "label": "the originality of the work is unshakable",
+        "keywords": [
+          "originality",
+          "unshakable"
+        ],
+        "ko": "그 작품의 독창성은 흔들리지 않는다"
+      }
+    ],
+    "brief": {
+      "ask": "칠판 왼쪽, 3문장에서 수집가가 믿은 것을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 수집가는 작품이 미래에도 미술 전체가 이룬 중요한 지점으로 남는다고 믿어요. 그 믿음을 '미술이 어디로 갈지 예측할 수 있다'로 바꿔 썼어요.",
+      "final_wrong": "정답은 ①이에요. 가치가 변해도 수집가는 작품이 앞으로 미술에서 중요한 지점이 될 거라고 믿고 사요. 미술이 나아갈 방향을 내다본다는 확신이에요.",
+      "option_feedback": {
+        "2": "글에 작가(artist) 이야기는 나오지 않아요. 수집가가 믿는 건 작품이 앞으로 미술에서 차지할 자리예요.",
+        "3": "art history, present-day가 나와서 헷갈렸죠. 하지만 수집가의 믿음은 지금 시대가 아니라 미래(future)를 향해요.",
+        "4": "즉각적인(immediate) 이익 이야기는 없어요. 수집가는 먼 미래의 미술을 보고 사요.",
+        "5": "가치는 변하고 지금의 합의는 바뀐다고 했어요. 흔들리지 않는다는 말은 글과 반대예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 27%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "③은 art history(미술사), present-day(현재의)와 겹쳐 보여서 끌려요. 하지만 수집가가 믿는 건 지금 시대 이야기가 아니라, 작품이 미래에도(future) 중요한 지점으로 남는다는 거예요.\n지금의 합의(present-day consensus)는 오히려 바뀐다고 했어요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "3문장",
+                "text": "belief in the future presence of the work",
+                "ko": "작품이 미래에도 남는다는 믿음",
+                "tone": "hl"
+              },
+              {
+                "label": "4·5문장",
+                "text": "a present-day consensus … displaced",
+                "ko": "지금의 합의는 바뀐다",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "2": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 24%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "②는 무언가를 믿는다는 말이라 끌려요. 하지만 글에 작가(artist)는 한 번도 나오지 않아요.\n수집가가 믿는 건 작품이 앞으로 미술 전체에서 차지할 자리예요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "3문장",
+                "text": "a significant point attained by art as a whole",
+                "ko": "미술 전체가 이룬 중요한 지점",
+                "tone": "hl"
+              },
+              {
+                "label": "②",
+                "text": "the artist behind the work",
+                "ko": "글에 없는 말",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "dependent",
+        "ko": "의존적인"
+      },
+      {
+        "en": "shifting",
+        "ko": "가변적인"
+      },
+      {
+        "en": "inherently",
+        "ko": "본질적으로"
+      },
+      {
+        "en": "uppermost",
+        "ko": "가장 우선적인"
+      },
+      {
+        "en": "representative",
+        "ko": "대표자"
+      },
+      {
+        "en": "institution",
+        "ko": "기관"
+      },
+      {
+        "en": "acquire",
+        "ko": "소장하다"
+      },
+      {
+        "en": "souvenir",
+        "ko": "기념품"
+      },
+      {
+        "en": "assert",
+        "ko": "단언하다"
+      },
+      {
+        "en": "attain",
+        "ko": "달성하다, 이루다"
+      },
+      {
+        "en": "as a whole",
+        "ko": "전체로서"
+      },
+      {
+        "en": "merit",
+        "ko": "가치"
+      },
+      {
+        "en": "validation",
+        "ko": "확인"
+      },
+      {
+        "en": "at best",
+        "ko": "기껏해야"
+      },
+      {
+        "en": "all but",
+        "ko": "거의"
+      },
+      {
+        "en": "displace",
+        "ko": "대체하다"
+      },
+      {
+        "en": "in the last analysis",
+        "ko": "결국"
+      },
+      {
+        "en": "commit oneself to",
+        "ko": "~에 헌신하다"
+      },
+      {
+        "en": "courageously",
+        "ko": "용기 있게"
+      },
+      {
+        "en": "affirm",
+        "ko": "확언하다"
+      },
+      {
+        "en": "derive",
+        "ko": "유래하다"
+      },
+      {
+        "en": "conviction",
+        "ko": "확신"
+      }
+    ],
+    "options": [
+      {
+        "en": "predict",
+        "ko": "예측하다"
+      },
+      {
+        "en": "reliable",
+        "ko": "신뢰할 수 있는"
+      },
+      {
+        "en": "immediate",
+        "ko": "즉각적인"
+      },
+      {
+        "en": "profit",
+        "ko": "이익"
+      },
+      {
+        "en": "originality",
+        "ko": "독창성"
+      },
+      {
+        "en": "unshakable",
+        "ko": "흔들리지 않는"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "The dependent and shifting nature of art values, not only on the market but inherently, is uppermost in the mind of today’s art collector, whether he buys for himself or as the representative of an institution.",
+      "model_translation": "미술 작품의 가치가 단지 시장에서뿐만 아니라 본질적으로 의존적이며 가변적이라는 속성은, 오늘날의 미술 수집가가 자신을 위해 구매하든 한 기관의 대표자로서 구매하든 스스로의 마음 속에 가장 우선적으로 자리하고 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The dependent and shifting nature",
+          "ko": "의존적이며 가변적인 속성"
+        },
+        {
+          "en": "dependent",
+          "ko": "의존적인 · 여기서는 '무언가에 따라 달라지는'"
+        },
+        {
+          "en": "shifting",
+          "ko": "가변적인, 변하는"
+        },
+        {
+          "en": "nature",
+          "ko": "속성, 본질"
+        },
+        {
+          "en": "of art values",
+          "ko": "미술 작품 가치의"
+        },
+        {
+          "en": "art values",
+          "ko": "미술 작품의 가치"
+        },
+        {
+          "en": "not only on the market but inherently",
+          "ko": "시장에서뿐만 아니라 본질적으로"
+        },
+        {
+          "en": "market",
+          "ko": "시장"
+        },
+        {
+          "en": "inherently",
+          "ko": "본질적으로"
+        },
+        {
+          "en": "is uppermost",
+          "ko": "가장 우선적이다"
+        },
+        {
+          "en": "uppermost",
+          "ko": "가장 우선적인, 맨 위의"
+        },
+        {
+          "en": "in the mind of",
+          "ko": "~의 마음속에서"
+        },
+        {
+          "en": "today’s art collector",
+          "ko": "오늘날의 미술 수집가"
+        },
+        {
+          "en": "collector",
+          "ko": "수집가"
+        },
+        {
+          "en": "whether he buys for himself",
+          "ko": "자신을 위해 사든"
+        },
+        {
+          "en": "buys",
+          "ko": "사다, 구매하다"
+        },
+        {
+          "en": "as the representative of an institution",
+          "ko": "한 기관의 대표자로서"
+        },
+        {
+          "en": "representative",
+          "ko": "대표자"
+        },
+        {
+          "en": "institution",
+          "ko": "기관"
+        },
+        {
+          "en": "Through it",
+          "ko": "그것(그림 한 점에 헌신하는 행위)을 통해"
+        },
+        {
+          "en": "courageously",
+          "ko": "용기 있게"
+        },
+        {
+          "en": "affirms",
+          "ko": "확언하다, 분명히 말하다"
+        },
+        {
+          "en": "not only",
+          "ko": "~뿐 아니라"
+        },
+        {
+          "en": "his aesthetic judgment",
+          "ko": "자신의 미학적 판단"
+        },
+        {
+          "en": "aesthetic",
+          "ko": "미학의"
+        },
+        {
+          "en": "judgment",
+          "ko": "판단"
+        },
+        {
+          "en": "from whatever source it be derived",
+          "ko": "그것이 어떤 근원에서 유래했든"
+        },
+        {
+          "en": "the conviction",
+          "ko": "확신"
+        },
+        {
+          "en": "conviction",
+          "ko": "확신"
+        },
+        {
+          "en": "but the conviction that",
+          "ko": "~라는 확신도"
+        },
+        {
+          "en": "values",
+          "ko": "가치"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "today’s",
+          "ko": "오늘날의"
+        },
+        {
+          "en": "whether",
+          "ko": "~인지"
+        },
+        {
+          "en": "himself",
+          "ko": "그 자신"
+        },
+        {
+          "en": "Through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "whatever",
+          "ko": "어떤 ~이든"
+        },
+        {
+          "en": "source",
+          "ko": "근원"
+        },
+        {
+          "en": "derived",
+          "ko": "유래된"
+        }
+      ],
+      "slashes": [
+        "of art values,",
+        "but inherently,",
+        "is uppermost",
+        "art collector,",
+        "buys for himself"
+      ],
+      "roles": [
+        {
+          "text": "The dependent and shifting nature of art values",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "uppermost",
+          "role": "C"
+        },
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "buys",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 마지막 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "Through it he courageously affirms not only his aesthetic judgment, from whatever source it be derived, but the conviction that ________."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "핵심어만 칠해 뒀어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not only A but B는 'A뿐 아니라 B도'예요. affirms는 '확언하다, 분명히 말하다'예요.",
+              "not only A but B는 'A뿐 아니라 B도'예요. affirms는 '확언하다, 분명히 말하다'예요."
+            ],
+            "explain": "'not only his aesthetic judgment … but the conviction', 미적 판단뿐 아니라 확신도래요. 콤마 사이 흐린 부분은 빼고 읽어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'not only his aesthetic judgment … but the conviction', 미적 판단뿐 아니라 확신도래요. 콤마 사이 흐린 부분은 빼고 읽어요.",
+              "o2": "'not only his aesthetic judgment … but the conviction', 미적 판단뿐 아니라 확신도래요. 콤마 사이 흐린 부분은 빼고 읽어요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "그는 자기 미적 판단을 버리고 ____라는 확신만 갖는다"
+            },
+            {
+              "id": "o1",
+              "label": "그는 자기 미적 판단뿐 아니라 ____라는 확신도 용기 있게 확언한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "그는 ____라는 확신이 없어서 미적 판단을 숨긴다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "Through it he courageously affirms not only his aesthetic judgment, from whatever source it be derived, but the conviction that ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "affirms",
+            "not only",
+            "the conviction",
+            "________"
+          ],
+          "faded": [
+            "from whatever source it be derived,"
+          ],
+          "tips": [
+            {
+              "label": "not only A but B",
+              "text": "'A뿐 아니라 B도'예요. 더 중요한 말은 뒤의 B 쪽에 와요.",
+              "mark": "not only"
+            }
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 그(he)가 무엇을 확신하는지 생각하며 문장 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "Through it he courageously affirms not only his aesthetic judgment, from whatever source it be derived, but the conviction that ________.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어가 아주 길어요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "is 앞까지가 주어예요. shifting은 '변하는', uppermost는 '가장 우선적인'이에요.",
+              "is 앞까지가 주어예요. shifting은 '변하는', uppermost는 '가장 우선적인'이에요."
+            ],
+            "explain": "'The dependent and shifting nature of art values', 작품 가치가 달라지고 변한다는 성질이 주어예요. 그게 수집가 마음에 가장 우선(uppermost)이래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'The dependent and shifting nature of art values', 작품 가치가 달라지고 변한다는 성질이 주어예요. 그게 수집가 마음에 가장 우선(uppermost)이래요.",
+              "o1": "'The dependent and shifting nature of art values', 작품 가치가 달라지고 변한다는 성질이 주어예요. 그게 수집가 마음에 가장 우선(uppermost)이래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "작품 가치는 시장에서 정해지니, 수집가는 값을 가장 먼저 본다"
+            },
+            {
+              "id": "o1",
+              "label": "작품 가치는 늘 그대로라서, 수집가는 안심하고 산다"
+            },
+            {
+              "id": "o2",
+              "label": "작품 가치가 무언가에 따라 달라지고 변한다는 점을 오늘날 수집가는 가장 먼저 생각한다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "shifting",
+            "uppermost"
+          ],
+          "faded": [
+            "not only on the market but inherently,"
+          ],
+          "tips": [
+            {
+              "label": "uppermost",
+              "text": "'가장 우선적인, 맨 위의'예요. be uppermost in the mind = 마음속에 가장 먼저 자리하다.",
+              "mark": "uppermost"
+            },
+            {
+              "label": "whether A or B",
+              "text": "'A든 B든'이에요. 자신을 위해 사든, 기관 대표로서 사든.",
+              "mark": "whether he buys"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Acquiring a work is acquiring a piece of art history, or it is acquiring nothing (beyond, that is, an object of personal enjoyment in the same class as a cat or a souvenir).",
+      "model_translation": "작품을 소장하는 것은 미술사의 한 부분을 소장하는 것이거나, (다시 말해, 고양이나 기념품과 같은 부류의 개인적 즐거움의 대상을 제외하면) 아무것도 소장하지 않는 것이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Acquiring a work",
+          "ko": "작품을 소장하는 것"
+        },
+        {
+          "en": "Acquiring",
+          "ko": "소장하는 것"
+        },
+        {
+          "en": "acquiring",
+          "ko": "소장하는 것"
+        },
+        {
+          "en": "work",
+          "ko": "작품"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "a piece of art history",
+          "ko": "미술사의 한 부분"
+        },
+        {
+          "en": "art history",
+          "ko": "미술사"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "nothing",
+          "ko": "아무것도 ~ 않음"
+        },
+        {
+          "en": "acquiring nothing",
+          "ko": "아무것도 소장하지 않는 것"
+        },
+        {
+          "en": "beyond",
+          "ko": "~을 제외하면"
+        },
+        {
+          "en": "that is",
+          "ko": "다시 말해, 즉"
+        },
+        {
+          "en": "an object of personal enjoyment",
+          "ko": "개인적 즐거움의 대상"
+        },
+        {
+          "en": "personal enjoyment",
+          "ko": "개인적 즐거움"
+        },
+        {
+          "en": "in the same class as",
+          "ko": "~와 같은 부류의"
+        },
+        {
+          "en": "class",
+          "ko": "부류, 종류"
+        },
+        {
+          "en": "a cat or a souvenir",
+          "ko": "고양이나 기념품"
+        },
+        {
+          "en": "souvenir",
+          "ko": "기념품"
+        },
+        {
+          "en": "piece",
+          "ko": "부분, 한 점"
+        },
+        {
+          "en": "object",
+          "ko": "대상"
+        },
+        {
+          "en": "personal",
+          "ko": "개인적인"
+        },
+        {
+          "en": "enjoyment",
+          "ko": "즐거움"
+        },
+        {
+          "en": "cat",
+          "ko": "고양이"
+        }
+      ],
+      "slashes": [
+        "Acquiring a work",
+        "art history,",
+        "acquiring nothing",
+        "that is,",
+        "personal enjoyment"
+      ],
+      "roles": [
+        {
+          "text": "Acquiring a work",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "acquiring a piece of art history",
+          "role": "C"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "acquiring nothing",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_two",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "작품을 산다는 건 둘 중 하나래요. 무엇과 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "A, or it is B는 'A이거나, 아니면 B'예요. 괄호 안은 빼고 읽어도 돼요.",
+              "A, or it is B는 'A이거나, 아니면 B'예요. 괄호 안은 빼고 읽어도 돼요."
+            ],
+            "explain": "'acquiring a piece of art history, or it is acquiring nothing', 미술사의 한 부분을 소장하거나 아무것도 소장하지 않는 거래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'acquiring a piece of art history, or it is acquiring nothing', 미술사의 한 부분을 소장하거나 아무것도 소장하지 않는 거래요.",
+              "o2": "'acquiring a piece of art history, or it is acquiring nothing', 미술사의 한 부분을 소장하거나 아무것도 소장하지 않는 거래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "미술사의 한 부분을 사는 것, 아니면 아무것도 사지 않는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "비싼 물건을 사는 것, 아니면 싼 물건을 사는 것"
+            },
+            {
+              "id": "o2",
+              "label": "작가의 이름을 사는 것, 아니면 그림을 사는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "a piece of art history",
+            "nothing"
+          ],
+          "faded": [
+            "(beyond, that is, an object of personal enjoyment in the same class as a cat or a souvenir)"
+          ],
+          "tips": [
+            {
+              "label": "that is",
+              "text": "콤마 사이 that is는 '즉, 다시 말해'예요.",
+              "mark": "that is,"
+            },
+            {
+              "label": "beyond",
+              "text": "여기서는 '~을 제외하면'이에요. 고양이나 기념품 같은 개인적 즐거움을 빼면 아무것도 아니래요.",
+              "mark": "beyond"
+            },
+            {
+              "label": "work",
+              "text": "이 글에서는 → 작품  ('일' 아님)",
+              "mark": "a work",
+              "trap": true
+            },
+            {
+              "label": "class",
+              "text": "이 글에서는 → 부류, 종류  ('수업, 반' 아님)",
+              "mark": "class",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🔄",
+                "en": "dependent and shifting art values",
+                "ko": "작품 가치는 달라지고 변해요 — 수집가가 가장 먼저 생각하는 것",
+                "fresh": true
+              },
+              {
+                "label": "문장 2",
+                "icon": "🖼️",
+                "en": "a piece of art history, or nothing",
+                "ko": "작품을 사는 건 미술사의 한 부분을 사거나, 아무것도 아닌 것",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "it": "acquiring a work(작품을 소장하는 것)"
+      }
+    },
+    {
+      "id": 3,
+      "text": "In signing his check the collector asserts his belief in the future presence of the work as a significant point attained by art as a whole.",
+      "model_translation": "수표에 서명함으로써, 수집가는 미술 전체에 의해 달성된 하나의 중요한 지점으로서 그 작품이 미래에도 존재할 것이라는 자신의 믿음을 단언한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In signing his check",
+          "ko": "수표에 서명할 때"
+        },
+        {
+          "en": "signing",
+          "ko": "서명하는 것"
+        },
+        {
+          "en": "check",
+          "ko": "수표"
+        },
+        {
+          "en": "the collector",
+          "ko": "수집가"
+        },
+        {
+          "en": "asserts",
+          "ko": "단언하다, 분명히 말하다"
+        },
+        {
+          "en": "his belief",
+          "ko": "자신의 믿음"
+        },
+        {
+          "en": "belief",
+          "ko": "믿음"
+        },
+        {
+          "en": "in the future presence",
+          "ko": "미래에도 존재함에 대한"
+        },
+        {
+          "en": "future presence",
+          "ko": "미래에도 존재함, 남아 있음"
+        },
+        {
+          "en": "presence",
+          "ko": "존재, 있음"
+        },
+        {
+          "en": "of the work",
+          "ko": "그 작품의"
+        },
+        {
+          "en": "a significant point",
+          "ko": "하나의 중요한 지점"
+        },
+        {
+          "en": "significant point",
+          "ko": "중요한 지점"
+        },
+        {
+          "en": "significant",
+          "ko": "중요한"
+        },
+        {
+          "en": "point",
+          "ko": "지점"
+        },
+        {
+          "en": "attained by art",
+          "ko": "미술에 의해 달성된"
+        },
+        {
+          "en": "attained",
+          "ko": "달성된, 이룬"
+        },
+        {
+          "en": "as a whole",
+          "ko": "전체로서"
+        },
+        {
+          "en": "collector",
+          "ko": "수집가"
+        }
+      ],
+      "slashes": [
+        "In signing his check",
+        "asserts his belief",
+        "of the work",
+        "a significant point",
+        "by art"
+      ],
+      "roles": [
+        {
+          "text": "the collector",
+          "role": "S"
+        },
+        {
+          "text": "asserts",
+          "role": "V"
+        },
+        {
+          "text": "his belief",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "attained by art as a whole"
+      ],
+      "steps": [
+        {
+          "id": "s3_belief",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "수표에 서명하며 수집가는 무엇을 믿는다고 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "his belief in 뒤를 봐요. future presence는 '미래에도 남아 있음'이에요.",
+              "his belief in 뒤를 봐요. future presence는 '미래에도 남아 있음'이에요."
+            ],
+            "explain": "'his belief in the future presence of the work', 작품이 미래에도 남는다는 믿음이에요. 'a significant point attained by art as a whole', 미술 전체가 이룬 중요한 지점으로서래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'his belief in the future presence of the work', 작품이 미래에도 남는다는 믿음이에요. 'a significant point attained by art as a whole', 미술 전체가 이룬 중요한 지점으로서래요.",
+              "o2": "'his belief in the future presence of the work', 작품이 미래에도 남는다는 믿음이에요. 'a significant point attained by art as a whole', 미술 전체가 이룬 중요한 지점으로서래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "이 작품 값이 곧 오를 것이다"
+            },
+            {
+              "id": "o1",
+              "label": "이 작품이 앞으로도 미술 전체가 이룬 중요한 지점으로 남을 것이다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "이 작품을 만든 작가는 믿을 만하다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "belief",
+            "future presence",
+            "significant point"
+          ],
+          "tips": [
+            {
+              "label": "as a whole",
+              "text": "'전체로서'예요. art as a whole = 미술 전체.",
+              "mark": "as a whole"
+            },
+            {
+              "label": "attained by ~",
+              "text": "'~에 의해 달성된'이에요. 앞의 a significant point를 꾸며요.",
+              "mark": "attained"
+            },
+            {
+              "label": "check",
+              "text": "이 글에서는 → 수표  ('확인' 아님)",
+              "mark": "check",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "수집가는 작품이 미래에도(future) 남을 거라고 믿어요. 그런데 1문장에서 작품 가치는 변한다(shifting)고 했어요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "수집가의 믿음 ↔ 변하는 가치",
+            "left": {
+              "label": "his belief (수집가의 믿음)",
+              "words": [
+                {
+                  "text": "future presence",
+                  "ko": "미래에도 남아 있음",
+                  "fresh": true
+                },
+                {
+                  "text": "a significant point",
+                  "ko": "중요한 지점",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "shifting (변하는 가치)",
+              "words": [
+                {
+                  "text": "dependent and shifting",
+                  "ko": "달라지고 변하는",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          }
+        }
+      ],
+      "emphasis": [
+        "belief",
+        "future presence",
+        "significant point"
+      ]
+    },
+    {
+      "id": 4,
+      "text": "History, however, is open to anything and the merit of the chosen painting or sculpture has —at best— only the validation of a present-day consensus.",
+      "model_translation": "하지만 역사는 어느 것에나 열려 있고, 선택된 그림이나 조각의 가치는 기껏해야 현재의 합의에 의한 확인에 불과하다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "History",
+          "ko": "역사"
+        },
+        {
+          "en": "however",
+          "ko": "하지만"
+        },
+        {
+          "en": "is open to anything",
+          "ko": "무엇에든 열려 있다"
+        },
+        {
+          "en": "open to anything",
+          "ko": "무엇에든 열려 있는"
+        },
+        {
+          "en": "open",
+          "ko": "열려 있는"
+        },
+        {
+          "en": "anything",
+          "ko": "무엇이든"
+        },
+        {
+          "en": "the merit",
+          "ko": "가치"
+        },
+        {
+          "en": "merit",
+          "ko": "가치"
+        },
+        {
+          "en": "of the chosen painting or sculpture",
+          "ko": "선택된 그림이나 조각의"
+        },
+        {
+          "en": "chosen",
+          "ko": "선택된"
+        },
+        {
+          "en": "painting",
+          "ko": "그림"
+        },
+        {
+          "en": "sculpture",
+          "ko": "조각"
+        },
+        {
+          "en": "has",
+          "ko": "가지다"
+        },
+        {
+          "en": "at best",
+          "ko": "기껏해야"
+        },
+        {
+          "en": "only",
+          "ko": "~뿐"
+        },
+        {
+          "en": "the validation",
+          "ko": "확인, 인정"
+        },
+        {
+          "en": "validation",
+          "ko": "확인, 인정"
+        },
+        {
+          "en": "of a present-day consensus",
+          "ko": "현재의 합의에 의한"
+        },
+        {
+          "en": "present-day consensus",
+          "ko": "현재의 합의"
+        },
+        {
+          "en": "present-day",
+          "ko": "현재의, 오늘날의"
+        },
+        {
+          "en": "consensus",
+          "ko": "합의"
+        },
+        {
+          "en": "best",
+          "ko": "최선 · at best = 기껏해야"
+        }
+      ],
+      "slashes": [
+        "History, however,",
+        "open to anything",
+        "or sculpture",
+        "—at best—",
+        "only the validation"
+      ],
+      "roles": [
+        {
+          "text": "History",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "open to anything",
+          "role": "C"
+        },
+        {
+          "text": "the merit of the chosen painting or sculpture",
+          "role": "S"
+        },
+        {
+          "text": "has",
+          "role": "V"
+        },
+        {
+          "text": "only the validation of a present-day consensus",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_however",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "however(하지만)가 있어요. 수집가의 믿음과 비교하면 이 문장은 어떤 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "open to anything은 '무엇에든 열려 있다'예요. at best는 '기껏해야'예요.",
+              "open to anything은 '무엇에든 열려 있다'예요. at best는 '기껏해야'예요."
+            ],
+            "explain": "'History … is open to anything', 역사는 어떻게 될지 몰라요. 'only the validation of a present-day consensus', 작품 가치도 지금 사람들의 합의로 확인된 것뿐이래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'History … is open to anything', 역사는 어떻게 될지 몰라요. 'only the validation of a present-day consensus', 작품 가치도 지금 사람들의 합의로 확인된 것뿐이래요.",
+              "o1": "'History … is open to anything', 역사는 어떻게 될지 몰라요. 'only the validation of a present-day consensus', 작품 가치도 지금 사람들의 합의로 확인된 것뿐이래요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "역사가 수집가의 믿음을 확실히 지켜 준다"
+            },
+            {
+              "id": "o1",
+              "label": "작품 가치는 이미 역사가 정해 두었다"
+            },
+            {
+              "id": "o2",
+              "label": "역사는 어떻게 될지 모르고, 작품 가치도 기껏해야 지금의 합의일 뿐이다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "however",
+            "open to anything",
+            "only",
+            "present-day consensus"
+          ],
+          "tips": [
+            {
+              "label": "at best",
+              "text": "'기껏해야, 잘해야'예요. at best only ~ = 기껏해야 ~일 뿐.",
+              "mark": "at best"
+            }
+          ]
+        },
+        {
+          "id": "s4_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'open to anything(무엇에든 열려 있다)'는 칠판 어느 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "무엇에든 열려 있으면 앞날을 장담할 수 없어요.",
+              "무엇에든 열려 있으면 앞날을 장담할 수 없어요."
+            ],
+            "explain": "역사가 무엇에든 열려 있으면 작품이 미래에도 남는다고 장담할 수 없어요. 변하는 가치 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "역사가 무엇에든 열려 있으면 작품이 미래에도 남는다고 장담할 수 없어요. 변하는 가치 쪽이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · his belief (수집가의 믿음)"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · shifting (변하는 가치)",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "panel": {
+            "kind": "groups",
+            "title": "수집가의 믿음 ↔ 변하는 가치",
+            "left": {
+              "label": "his belief (수집가의 믿음)",
+              "words": [
+                {
+                  "text": "future presence",
+                  "ko": "미래에도 남아 있음"
+                },
+                {
+                  "text": "a significant point",
+                  "ko": "중요한 지점"
+                }
+              ]
+            },
+            "right": {
+              "label": "shifting (변하는 가치)",
+              "words": [
+                {
+                  "text": "dependent and shifting",
+                  "ko": "달라지고 변하는"
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "open to anything"
+              ],
+              "left": "왼쪽 · his belief (수집가의 믿음)",
+              "right": "오른쪽 · shifting (변하는 가치)"
+            }
+          },
+          "highlight": [
+            "open to anything"
+          ]
+        }
+      ],
+      "emphasis": [
+        "however",
+        "open to anything"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "This consensus is all but certain to be displaced, as others have been in the past.",
+      "model_translation": "이러한 합의는, 과거에 다른 합의들이 그래왔듯이, 대체될 것이 거의 확실하다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "This consensus",
+          "ko": "이러한 합의"
+        },
+        {
+          "en": "consensus",
+          "ko": "합의"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "all but certain",
+          "ko": "거의 확실한"
+        },
+        {
+          "en": "all but",
+          "ko": "거의"
+        },
+        {
+          "en": "certain",
+          "ko": "확실한"
+        },
+        {
+          "en": "to be displaced",
+          "ko": "대체될"
+        },
+        {
+          "en": "displaced",
+          "ko": "대체된"
+        },
+        {
+          "en": "have been",
+          "ko": "그래 왔다"
+        },
+        {
+          "en": "others",
+          "ko": "다른 것들(다른 합의들)"
+        },
+        {
+          "en": "in the past",
+          "ko": "과거에"
+        },
+        {
+          "en": "past",
+          "ko": "과거"
+        }
+      ],
+      "slashes": [
+        "all but certain",
+        "to be displaced,",
+        "have been"
+      ],
+      "roles": [
+        {
+          "text": "This consensus",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "all but certain",
+          "role": "C"
+        },
+        {
+          "text": "others",
+          "role": "S"
+        },
+        {
+          "text": "have been",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s5_allbut",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "all but certain은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "all but + 형용사는 한 덩어리 표현이에요. '~ 빼고 전부'로 읽으면 뜻이 꼬여요.",
+              "all but + 형용사는 한 덩어리 표현이에요. '~ 빼고 전부'로 읽으면 뜻이 꼬여요."
+            ],
+            "explain": "all but은 형용사 앞에서 '거의'예요. 지금의 합의도 과거의 다른 합의들처럼 거의 확실히 대체된대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "all but은 형용사 앞에서 '거의'예요. 지금의 합의도 과거의 다른 합의들처럼 거의 확실히 대체된대요.",
+              "o2": "all but은 형용사 앞에서 '거의'예요. 지금의 합의도 과거의 다른 합의들처럼 거의 확실히 대체된대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "확실한 것 빼고 전부"
+            },
+            {
+              "id": "o1",
+              "label": "거의 확실한",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "전혀 확실하지 않은"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "all but certain",
+            "displaced"
+          ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🔄",
+                "en": "dependent and shifting art values",
+                "ko": "작품 가치는 달라지고 변해요 — 수집가가 가장 먼저 생각하는 것",
+                "fresh": false
+              },
+              {
+                "label": "문장 2",
+                "icon": "🖼️",
+                "en": "a piece of art history, or nothing",
+                "ko": "작품을 사는 건 미술사의 한 부분을 사거나, 아무것도 아닌 것",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "✍️",
+                "en": "belief in the future presence",
+                "ko": "수표에 서명하며 작품이 미래에도 중요하게 남는다고 믿어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 4~5",
+                "icon": "🌀",
+                "en": "open to anything · all but certain to be displaced",
+                "ko": "하지만 역사는 알 수 없고, 지금의 합의는 거의 확실히 바뀌어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "This consensus": "a present-day consensus(현재의 합의)",
+        "others": "other consensuses(과거의 다른 합의들)"
+      }
+    },
+    {
+      "id": 6,
+      "text": "In the last analysis, committing himself to a painting is the collector’s own act.",
+      "model_translation": "결국, 그림 한 작품에 헌신하는 것은 수집가 자신의 행위이다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "In the last analysis",
+          "ko": "결국"
+        },
+        {
+          "en": "analysis",
+          "ko": "분석"
+        },
+        {
+          "en": "committing himself to a painting",
+          "ko": "그림 한 점에 헌신하는 것"
+        },
+        {
+          "en": "committing himself to",
+          "ko": "~에 헌신하는 것"
+        },
+        {
+          "en": "committing",
+          "ko": "헌신하는 것, 맡기는 것"
+        },
+        {
+          "en": "a painting",
+          "ko": "그림 한 점"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        },
+        {
+          "en": "the collector’s own act",
+          "ko": "수집가 자신의 행위"
+        },
+        {
+          "en": "own",
+          "ko": "자기 자신의"
+        },
+        {
+          "en": "act",
+          "ko": "행위"
+        },
+        {
+          "en": "himself",
+          "ko": "그 자신"
+        },
+        {
+          "en": "painting",
+          "ko": "그림"
+        },
+        {
+          "en": "collector’s",
+          "ko": "수집가의"
+        }
+      ],
+      "slashes": [
+        "In the last analysis,",
+        "to a painting"
+      ],
+      "roles": [
+        {
+          "text": "committing himself to a painting",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        },
+        {
+          "text": "the collector’s own act",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s6_basic",
+          "candidates": [
+            "In the last analysis",
+            "committing himself to a painting",
+            "is",
+            "the collector’s own act"
+          ],
+          "answers": [
+            "In the last analysis",
+            "committing himself to a painting",
+            "the collector’s own act",
+            "is"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "In the last analysis",
+                "ko": "결국"
+              },
+              ", ",
+              {
+                "en": "committing himself to a painting",
+                "ko": "그림 한 점에 헌신하는 것은"
+              },
+              " ",
+              {
+                "en": "the collector’s own act",
+                "ko": "수집가 자신의 행위"
+              },
+              {
+                "en": "is",
+                "ko": "이다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "commit oneself to ~",
+              "text": "'~에 헌신하다, 전념하다'예요. 여기서는 그림 한 점을 골라 사기로 마음을 정하는 거예요.",
+              "mark": "committing himself"
+            },
+            {
+              "label": "In the last analysis",
+              "text": "이 글에서는 → 결국  ('마지막 분석' 아님)",
+              "mark": "In the last analysis",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "s6_own",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "가치가 바뀔지 모르니, 그림을 사는 건 결국 수집가가 스스로 정하고 책임지는 일이래요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "own act"
+          ],
+          "tips": [
+            {
+              "label": "commit oneself to ~",
+              "text": "'~에 헌신하다, 전념하다'예요. 여기서는 그림 한 점을 골라 사기로 마음을 정하는 거예요.",
+              "mark": "committing himself"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Through it he courageously affirms not only his aesthetic judgment, from whatever source it be derived, but the conviction that ________.",
+      "model_translation": "이러한 행위를 통해 그는, 그것(자신의 미학적 판단)이 어떤 근원으로부터 유래되었든, 자신의 미학적 판단뿐만 아니라 ________라는 확신 또한 용기 있게 확언한다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Through it",
+          "ko": "그것(그림 한 점에 헌신하는 행위)을 통해"
+        },
+        {
+          "en": "courageously",
+          "ko": "용기 있게"
+        },
+        {
+          "en": "affirms",
+          "ko": "확언하다, 분명히 말하다"
+        },
+        {
+          "en": "not only",
+          "ko": "~뿐 아니라"
+        },
+        {
+          "en": "his aesthetic judgment",
+          "ko": "자신의 미학적 판단"
+        },
+        {
+          "en": "aesthetic",
+          "ko": "미학의"
+        },
+        {
+          "en": "judgment",
+          "ko": "판단"
+        },
+        {
+          "en": "from whatever source it be derived",
+          "ko": "그것이 어떤 근원에서 유래했든"
+        },
+        {
+          "en": "the conviction",
+          "ko": "확신"
+        },
+        {
+          "en": "conviction",
+          "ko": "확신"
+        },
+        {
+          "en": "but the conviction that",
+          "ko": "~라는 확신도"
+        },
+        {
+          "en": "Through",
+          "ko": "~을 통해"
+        },
+        {
+          "en": "only",
+          "ko": "오직, ~만"
+        },
+        {
+          "en": "whatever",
+          "ko": "어떤 ~이든"
+        },
+        {
+          "en": "source",
+          "ko": "근원"
+        },
+        {
+          "en": "derived",
+          "ko": "유래된"
+        }
+      ],
+      "slashes": [
+        "Through it",
+        "courageously affirms",
+        "aesthetic judgment,",
+        "it be derived,",
+        "the conviction"
+      ],
+      "roles": [
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "affirms",
+          "role": "V"
+        },
+        {
+          "text": "his aesthetic judgment",
+          "role": "O"
+        },
+        {
+          "text": "the conviction",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸은 수집가의 확신(the conviction)이에요. 칠판 어느 쪽과 같은 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "3문장에서 수집가가 무엇을 믿는다고(belief) 했는지 떠올려 봐요.",
+              "3문장에서 수집가가 무엇을 믿는다고(belief) 했는지 떠올려 봐요."
+            ],
+            "explain": "conviction(확신)은 3문장의 belief(믿음)를 다른 말로 받은 거예요. courageously(용기 있게)는 가치가 변해도 그 믿음을 지킨다는 뜻이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "conviction(확신)은 3문장의 belief(믿음)를 다른 말로 받은 거예요. courageously(용기 있게)는 가치가 변해도 그 믿음을 지킨다는 뜻이에요."
+            },
+            "point": "빈칸 = the conviction = 3문장 his belief(작품이 미래에도 중요한 지점으로 남는다) = 왼쪽, 같은 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · his belief (수집가의 믿음)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · shifting (변하는 가치)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "courageously",
+            "the conviction"
+          ],
+          "faded": [
+            "from whatever source it be derived,"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "수집가의 믿음 ↔ 변하는 가치",
+            "left": {
+              "label": "his belief (수집가의 믿음)",
+              "words": [
+                {
+                  "text": "future presence",
+                  "ko": "미래에도 남아 있음"
+                },
+                {
+                  "text": "a significant point",
+                  "ko": "중요한 지점"
+                }
+              ]
+            },
+            "right": {
+              "label": "shifting (변하는 가치)",
+              "words": [
+                {
+                  "text": "dependent and shifting",
+                  "ko": "달라지고 변하는"
+                },
+                {
+                  "text": "open to anything",
+                  "ko": "무엇에든 열려 있다"
+                },
+                {
+                  "text": "a present-day consensus",
+                  "ko": "지금의 합의일 뿐"
+                },
+                {
+                  "text": "be displaced",
+                  "ko": "대체된다"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장에 But, However, not 같은 반전 단서가 있으면 반대 의견이 들어가요. 앞에서 말한 생각을 다른 말(belief → conviction)로 받으면 같은 말이 들어가요."
+            }
+          ]
+        },
+        {
+          "id": "s7_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 빈칸에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 왼쪽, 3문장의 future presence와 a significant point를 봐요.",
+              "칠판 왼쪽, 3문장의 future presence와 a significant point를 봐요."
+            ],
+            "explain": "수집가는 작품이 미래에도 미술 전체가 이룬 중요한 지점으로 남는다고 믿어요. 지금의 합의는 바뀐다고 했고, 돈 이야기는 없어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "수집가는 작품이 미래에도 미술 전체가 이룬 중요한 지점으로 남는다고 믿어요. 지금의 합의는 바뀐다고 했고, 돈 이야기는 없어요.",
+              "o2": "수집가는 작품이 미래에도 미술 전체가 이룬 중요한 지점으로 남는다고 믿어요. 지금의 합의는 바뀐다고 했고, 돈 이야기는 없어요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "지금 사람들의 평가가 앞으로도 그대로일 것이다"
+            },
+            {
+              "id": "o1",
+              "label": "자기가 고른 작품이 앞으로 미술 전체에서 중요한 지점이 될 것이다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "작품이 곧 큰돈을 벌어 줄 것이다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "the conviction",
+            "________"
+          ]
+        },
+        {
+          "id": "s7_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 수집가의 믿음 쪽이에요. 3문장의 믿음을 다른 말로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ],
+      "refers": {
+        "Through it": "it = committing himself to a painting(그림 한 점에 헌신하는 것)"
+      },
+      "emphasis": [
+        "not only",
+        "the conviction"
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

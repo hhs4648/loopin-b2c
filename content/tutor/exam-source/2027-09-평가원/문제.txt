@@ -1,0 +1,926 @@
+1
+8
+  1번부터 17번까지는 듣고 답하는 문제입니다. 1번부터 
+15번까지는 한 번만 들려주고, 16번부터 17번까지는 두 번 
+들려줍니다. 방송을 잘 듣고 답을 하시기 바랍니다.
+1. 다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 
+고르시오.
+①해변 출입 금지를 당부하려고
+②환경 보호 단체 가입을 독려하려고
+③물놀이 장비 대여 방법을 안내하려고
+④해변의 다양한 동식물의 특징을 소개하려고
+⑤해변에서 돌을 가져가지 말 것을 공지하려고
+2. 대화를 듣고, 여자의 의견으로 가장 적절한 것을 고르시오.
+①혼자 어느 정도의 시간을 가지면 에너지를 재충전할 수 있다.
+②정신 건강을 위해서는 음악을 자주 들어야 한다.
+③다양한 행사에 참여하는 것은 기분 전환에 도움이 된다.
+④비언어적 표현은 원활한 의사소통에 필수적이다.
+⑤경청을 통해 상대방의 감정 상태를 파악할 수 있다.
+3. 다음을 듣고, 여자가 하는 말의 요지로 가장 적절한 것을 고르시오.
+①자기 전에 목표를 소리 내어 읽으면 목표 달성에 도움이 된다.
+②책을 소리 내어 읽는 것은 발음 교정에 효과적이다.
+③목표 달성을 위해서는 규칙적인 운동이 필요하다.
+④수면 시 몸의 자세는 건강에 영향을 준다.
+⑤귀마개를 착용하면 숙면을 취할 수 있다.
+4. 대화를 듣고, 그림에서 대화의 내용과 일치하지 않는 것을 고르시오.
+5. 대화를 듣고, 남자가 할 일로 가장 적절한 것을 고르시오.
+①유인물 준비하기
+②책과 크레용 옮기기
+③참가자 명단 출력하기
+④선물용 배지 주문하기
+⑤스캐너 작동 여부 점검하기
+6. 대화를 듣고, 여자가 지불할 금액을 고르시오.
+①$40
+②$45
+③$50
+④$54
+⑤$63
+7. 대화를 듣고, 여자가 필라테스 수업을 그만둔 이유를 고르시오.
+①기구가 낡아서
+②수강생이 너무 많아서
+③일대일 수업 시간이 변경되어서
+④강사가 수업에 자주 늦어서
+⑤수강료가 비싸서
+8. 대화를 듣고, UXZ Time Capsule Event에 관해 언급되지 않은 
+것을 고르시오.
+①개최 목적
+②참가 대상
+③후원 기업
+④물품 제출 장소
+⑤물품 제출 기간
+9. Senior Dinner Cruise에 관한 다음 내용을 듣고, 일치하지 않는 
+것을 고르시오.
+①10월 1일부터 운항될 것이다.
+②해산물 뷔페와 전통 춤 공연을 포함한다.
+③반려동물을 데리고 올 수 있다.
+④최소 4인의 단체 예약 시 할인을 받을 것이다.
+⑤모든 승객들은 신분증을 지참해야 한다.
+10. 다음 표를 보면서 대화를 듣고, 두 사람이 예약할 우주 박물관 
+프로그램을 고르시오.
+Space Museum Programs
+Program
+Suggested 
+Age
+Activity
+Program 
+Duration
+4D Space 
+Movie
+①
+A
+Under 10
+Moon 
+Observation
+30 min.
+Not 
+Included
+②
+B
+Under 12
+Star 
+Watching
+40 min.
+Included
+③
+C
+Under 12
+Toy Rocket 
+Building
+50 min.
+Not 
+Included
+④
+D
+Under 15
+VR Drone 
+Operation
+60 min.
+Included
+⑤
+E
+Under 15
+Flight 
+Simulation
+70 min.
+Included
+11. 대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 
+적절한 것을 고르시오.
+①Of course. Let’s go there right away.
+②No way. Skateboarding needs a lot of practice.
+③No problem. I already know how to skateboard.
+④Certainly. Your driving is improving.
+⑤Sorry. I hope you get well soon.
+12. 대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 
+적절한 것을 고르시오. [3점]
+①Too bad. You need to shop online sometime.
+②Oh, really? I should try getting beef at that time.
+③Definitely! It’s better to get a refund for the beef.
+④I disagree. Vegetables are much healthier than meat.
+⑤You’re right. I should’ve paid with a different credit card.
+2027학년도 대학수학능력시험 9월 모의평가 문제지
+제3 교시
+1
+이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.
+
+2
+2
+8
+13. 대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 
+적절한 것을 고르시오. [3점]
+Woman:
+①Absolutely! I won’t buy any tickets on the website.
+②Super! Bigger stadiums are better to enjoy games.
+③What a shame. We missed the game again.
+④Oh, no. The instant noodles are sold out.
+⑤I agree. It’s worth checking before we go.
+14. 대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 
+적절한 것을 고르시오.
+Man:
+①Definitely not. I don’t like your fish sauce.
+②Well, I’ll repair your house lamp as soon as possible.
+③No worries. I’ll bring the flashlight to you later today.
+④I’ll let you know when the barbecue is ready to eat.
+⑤Hmm, I have no idea where to buy a fishing net.
+15. 다음 상황 설명을 듣고, Chris가 Judy에게 할 말로 가장 적절한 
+것을 고르시오. [3점]
+Chris:
+①You shouldn’t allow strangers to see your pictures on social media.
+②Have you considered choosing images that AI has generated?
+③How about uploading the pictures I took onto your account?
+④You must cut back the time you spend on online platforms.
+⑤You don’t have to care about the comments on your posts.
+[16～17] 다음을 듣고, 물음에 답하시오.
+16. 남자가 하는 말의 주제로 가장 적절한 것은?
+①areas where traditional songs are disappearing
+②connections between music and marketing fields
+③use of songs to build group unity at various places
+④effects of selecting good locations on public events
+⑤roles of group unity in boosting individual creativity
+17. 언급된 장소가 아닌 것은?
+①sports stadiums
+②schools
+③concert halls
+④military bases
+⑤farms
+18. 다음 글의 목적으로 가장 적절한 것은?
+Dear Mr. Steve Carter,
+Congratulations on the 60th graduation ceremony of Yuoralis 
+High School. As a former student, I am extremely proud 
+that the school has become one of the best schools in the 
+local community. I felt honored when I received your kind 
+invitation to deliver a speech at the ceremony. However, I 
+am deeply sorry to say that I will not be able to give a speech 
+because I have a very important overseas business trip 
+scheduled during that time. I would have loved to speak to 
+the graduating students, but I must decline your invitation 
+to this meaningful celebration. I wish you a memorable 
+graduation ceremony.
+Sincerely,
+Jane Whittmore
+①졸업식 일정을 문의하려고
+②졸업식 연설 초청을 거절하려고
+③졸업식 자원 봉사를 지원하려고
+④졸업식의 미흡했던 점을 지적하려고
+⑤졸업식에서 공연할 팀을 추천하려고
+19. 다음 글에 드러난 Katie의 심경 변화로 가장 적절한 것은?
+On her way to school, Katie thought of the argument she 
+had with Sarah the day before and wiped tears from her eyes. 
+“I can’t believe I fought with my best friend,” she cried. “I just 
+want things to go back to normal.” It seemed that nothing 
+could help her overcome this painful moment. As she walked 
+into her classroom, she heard a familiar voice. Sarah was 
+calling her name. “Katie, I’m sorry for the things I said 
+yesterday.” A big smile spread across Katie’s face. “I’m sorry, 
+too. Let’s never fight again.” Katie and Sarah hugged each 
+other tightly and laughed the way they always did before.
+①nervous →frustrated
+②sad
+→delighted
+③excited →calm
+④bored →happy
+⑤hopeful →disappointed
+20. 다음 글에서 필자가 주장하는 바로 가장 적절한 것은?
+Current social changes driven by technological advancements 
+demand a fundamental rethinking in our approach to education. 
+In particular, lifelong learning is no longer optional; it is essential. 
+We must recognize that the rapidly evolving socioeconomic 
+ecology requires individuals to engage in constant upskilling 
+and self-transformation. If we can enhance lifelong learning 
+initiatives, we will not only promote personal growth and 
+well-being but also sustain national productivity and global 
+competitiveness. Furthermore, our efforts will support social 
+integration by providing opportunities for people from various 
+backgrounds to connect and move on together. Investing in 
+lifelong education thus is not simply an extra expense; we must 
+consider it a necessity for survival and success as we encounter 
+significant changes in the years ahead. By prioritizing lifelong 
+education, we will be able to navigate this changing world 
+with confidence and a sense of fulfillment.
+①변화하는 사회에 대응하기 위해 평생교육을 강화해야 한다.
+②융합 교육을 통해 미래 사회의 인재를 적극 육성해야 한다.
+③경제 교육을 강화하여 투자에 대한 바른 인식을 갖도록 해야 한다.
+④기술 발전을 위해 특정 분야의 전문 지식 습득을 장려해야 한다.
+⑤평생교육 기관을 설립하여 사회의 균형 발전을 도모해야 한다.
+  이제 듣기 문제가 끝났습니다. 18번부터는 문제지의 지시에 
+따라 답을 하시기 바랍니다.
+이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.
+
+3
+3
+8
+21. 밑줄 친 holding a mirror up to society가 다음 글에서 의미
+하는 바로 가장 적절한 것은? [3점]
+Social media companies are working to keep you on site or 
+attempting to deliver results useful to you. You can see this 
+personalization reflected in the results of search engines, 
+which try to maximize relevance: searching for “bakery” in 
+New York should return different results than searching in 
+Paris. Features like the little predictive-text cues of autocomplete 
+also look to maximize relevance by suggesting refinements: 
+typing in “cats” might prompt the user with “cats movie” or 
+“cats that don’t shed.” Autocomplete suggestions offer a look 
+into the algorithm’s understanding of accumulated user 
+behavior ― an immensely important part of how key social 
+media algorithms work. The outputs are personalized, but the 
+data sets are massive, and the platforms are mining for 
+similarities across vast quantities of user information. If a 
+whole lot of users near you or similar to you complete the 
+search that you’ve begun with specific words, the autocomplete 
+algorithm takes that into account and may be more likely to 
+suggest them to you. Since the results are derived from data 
+related to millions of searches, autocomplete is, in a sense, 
+holding a mirror up to society.
+①manipulating search results in favor of the socially influential
+②revealing commonalities in users and their shared interests
+③censoring personal data utilizing social media algorithms
+④collecting information useful for building user networks
+⑤examining apparently random data to find regularity
+22. 다음 글의 요지로 가장 적절한 것은?
+Studies show that people who sit in the front row learn and 
+retain more than others in the audience, partially because those 
+in the front row are more eager to learn, and they show more 
+attention to the speaker in order to avoid being called on. 
+Those in the middle sections are the next most attentive and 
+ask the most questions, as the middle section is considered a 
+safe area, surrounded by others. The side areas and back are 
+the least responsive and attentive. In one experiment we 
+conducted, we placed name cards on participants’ seats so 
+they could not take their usual positions. We intentionally sat 
+enthusiastic people to the sides and rear of the room, and 
+well-known back-row hermits sat in the front. We found that 
+this strategy not only increased the participation and recall of 
+the normally negative participants who sat up front, it also 
+decreased the participation and recall of the usually positive 
+participants who had been sent to the back.
+* hermit: 은둔자
+①개인의 성향을 고려한 좌석 배정이 업무의 효율성을 높인다.
+②앉은 위치가 학습 참여와 배운 내용의 기억에 영향을 준다.
+③학습자들의 적극적인 참여는 생산적인 토론에 필수적이다.
+④자유로운 질의응답은 강연 분위기를 결정하는 요인이다.
+⑤수업 집중도와 기억력은 긍정적 상관관계를 보인다.
+23. 다음 글의 주제로 가장 적절한 것은?
+Popular culture loves to label dopamine as the “pleasure 
+molecule,” yet science reveals a richer, more nuanced reality. 
+Dopamine’s true role is found not simply in the thrill of 
+reward, but in the dance of anticipation, striving, and imagining 
+what could be. The rush of motivation that energizes you at 
+the start of a new day, the focus that allows you to solve 
+complex problems, and the curiosity that fuels ambition are all 
+orchestrated by dopamine. Dopamine doesn’t give contentment; 
+it delivers possibility. It sets the stage for new challenges, 
+frames future goals as attainable, and propels you to ask 
+“What if?” about new opportunities, relationships, or aspirations. 
+The anticipation of a meaningful conversation, the excitement 
+for a fresh project, and even just the temptation of a delicious 
+meal are all sparked by dopamine’s drive for future reward. 
+Critically, dopamine rewards the process, not just the finished 
+result. It’s what sharpens focus and fills ordinary moments 
+with potential.
+* strive: 노력하다
+①limitation of dopamine as a chemical reaction orchestrator
+②impact of dopamine on sparking intense pleasure
+③usefulness of dopamine in improving cognitive skills
+④importance of rewards in sustaining motivation
+⑤force of dopamine as a facilitator of realizing possibilities
+24. 다음 글의 제목으로 가장 적절한 것은?
+The new views about and questions being asked about aging 
+could be detected across society. “Something strange is 
+happening in America,” wrote Marj Jackson Levin for the St. 
+Louis Post-Dispatch in 1988, finding that what she called “the 
+former boundaries of age” were being expanded or relaxed in 
+many arenas. Whether it was fortysomething baseball players, 
+midlife women having babies, or the oldest president in the 
+nation’s history, it did indeed appear that the preconceptions 
+surrounding aging were weakening. As baby boomers entered 
+midlife, the idea of oldness was being pushed back, and the 
+expectations for what people should or should not be doing at 
+a particular age broadened. Turning fifty had only recently 
+been commonly viewed as the unofficial turning of the corner 
+into one’s senior years, for example, but now that number did 
+not automatically mean one could not start a new career or 
+family. In a good number of cases, at least, age was becoming 
+less significant, a clear victory for those lobbying for a less 
+age-centric society.
+①Fading Boundaries: Evolving Views of Aging
+②Forever Young! The Rise of the Anti-aging Industry
+③How Multiple Perspectives Narrow Generation Gaps
+④Older and Wiser: What the Elderly Can Teach Us
+⑤Do Modern Lifestyles Really Slow Aging?
+이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.
+
+4
+4
+8
+25. 다음 도표의 내용과 일치하지 않는 것은?
+The above graph shows the percentages of U.K. respondents 
+by age who self-reported their dietary choices as Meat-eater, 
+Flexitarian, or Vegetarian, based on data released in 2026. 
+①The most common dietary choice among the respondents 
+was Meat-eater in all age groups shown. ②With respect to 
+the category of Vegetarian, Group A, the youngest age group, 
+showed the highest percentage among the four age groups. 
+③In Group B, the percentage of Meat-eater was lower than 
+70 percent. ④When it comes to the percentage of Flexitarian 
+in each age group, the highest was in Group C. ⑤For Group D, 
+the oldest age group, less than five percent of the respondents 
+reported Vegetarian as their dietary choice.
+26. Chuck Jones에 관한 다음 글의 내용과 일치하지 않는 것은?
+Chuck Jones was an influential director and artist whose 
+work shaped animated films and cartoon production. He was 
+born in Spokane, Washington, in 1912, though he grew up in 
+Los Angeles. As a child, Jones had many opportunities to 
+draw. He used the leftover pencils and paper that his father 
+brought him from work. Jones began his career in animation 
+in 1930 and was quickly promoted. In the 1940s, he created 
+famous characters such as Wile E. Coyote and the Road 
+Runner. He directed the famous cartoon film How the Grinch 
+Stole Christmas, which is still enjoyed by many people today. 
+Jones started his own company, Chuck Jones Enterprises, in 
+1970. For his contribution to the field of animation, he received 
+an Honorary Academy Award in 1996. Late in his life, he 
+established a non-profit organization supporting art education 
+and other creative skills.
+①어렸을 때 그림을 그릴 기회가 많았다.
+②Wile E. Coyote와 같은 유명한 캐릭터를 만들었다.
+③많은 사람들이 여전히 즐기는 만화 영화를 감독했다.
+④애니메이션 분야에 기여한 공로로 1970년에 상을 받았다.
+⑤예술 교육을 지원하는 비영리 기구를 설립했다.
+27. RCQ High School Food Waste Reduction Competition에 
+관한 다음 안내문의 내용과 일치하지 않는 것은?
+RCQ High School Food Waste Reduction 
+Competition
+Our school is holding a food waste reduction competition 
+to promote sustainable living. This competition has been held 
+every year since 2023. Your effort makes a difference!
+When: October 1 to October 31, 2026
+Who: All classes of RCQ High School will participate.
+How 
+∙Every lunch, we will give a point to each student who 
+doesn’t leave food on their tray.
+∙Students’ points will be combined by class. Winning classes 
+will be decided by each class’s points.
+Prizes
+Number of Winners
+Reward (per class)
+1st prize 
+1 class
+Snacks worth $200
+2nd prize 
+1 class
+Snacks worth $150
+3rd prize 
+2 classes
+Snacks worth $100
+①2023년 이래로 매년 개최되고 있다.
+②한 달간 진행된다.
+③RCQ 고등학교의 모든 학급이 참가할 것이다.
+④수상 학급은 각 학급의 점수로 결정될 것이다.
+⑤2등상은 두 학급에 주어진다.
+28. Newstar Voice Acting Course에 관한 다음 안내문의 내용과 
+일치하는 것은?
+Newstar Voice Acting Course
+Do you dream of hearing your own voice in an animation 
+or movie? If so, our voice acting course is perfect for you.
+When & Where
+∙6 p.m. to 8 p.m. every Thursday
+∙Room #223, Newstar Building
+Course Content 
+Class Schedule
+Content
+Week 1
+Ways to Breathe and Vocalize
+Week 2
+Script Analysis
+Week 3
+Animation Dubbing
+Week 4
+Movie Dubbing
+Registration 
+∙The registration fee is $170.
+∙You can register only in the first week of every month.
+∙To register, call 789-331-0234 or email us at n#star@v#ac.com.
+Special Benefits
+∙Video-recorded class lectures will be provided for no 
+additional fee.
+∙You will have a chance to meet the famous voice actor 
+Richard Choi, who will share his know-how with you.
+①매주 주말마다 진행된다.
+②1주 차 수업에 스크립트 분석을 한다.
+③매월 마지막 주에만 등록할 수 있다.
+④추가 비용을 내면 녹화된 수업 강의가 제공될 것이다.
+⑤유명한 성우를 만날 기회가 있을 것이다.
+이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.
+
+5
+5
+8
+29. 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
+Leaders come in all shapes and sizes, but successful leaders 
+tend to have one thing in common: the ability to share someone 
+else’s feelings, known as empathy. While empathy forms in 
+everyone to some degree, effective leaders know how to develop 
+this emotional guidance system ①to connect with others’ 
+feelings and perspectives. However, empathy in leaders is more 
+than ②simply being kind to employees, clients, and customers. 
+Empathetic people seem more approachable, focusing on the 
+words of others. Listening to the needs of employees ③enable 
+leaders to clearly identify what makes them feel heard. 
+Utilized in this way, empathy can be considered a crucial part 
+of ④maintaining employee satisfaction. Leaders who are unable 
+to surround themselves with competent employees will not be 
+successful. Indeed, a leader’s failure to empathize with talented 
+workers is one of the main situations ⑤that could lead them to 
+leave an organization. In this case, the organization must spend 
+precious time and money to find suitable replacements for them.
+30. 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 
+않은 것은? [3점]
+There is good news about pests and medicinal herbs: Most 
+herbs either repel pests or attract beneficial insects that help 
+keep pest populations in check. So the more herbs you grow, 
+the more you will attract pollinators and “good” bugs that like 
+to eat the more ①destructive pests, which will lead to a more 
+successful garden! When it comes to managing pests in the 
+garden, it’s important to remember that you are ②altering the 
+ecosystem of an area that existed on its own before you planted 
+anything into it. So the first couple years in a new garden can 
+feel like wave after wave of pests are ③overtaking your 
+plants. This is normal. The goal of a long-term healthy garden 
+is to work with the environment you are trying to cultivate to 
+④allow the plants, pollinators, and even the annoying pests to 
+balance out. Immediately attempting to remove a new pest entirely 
+from your garden will only further these initial imbalances 
+and ⑤shorten the process of helping your garden grow better 
+on its own.
+* repel: 쫓아버리다
+** pollinator: 꽃가루 매개자
+[31～34] 다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오.
+31. What stresses you out more than anything? Perhaps it’s 
+speaking in front of others. For many, this is so stressful it 
+even has a name: glossophobia. The explanation for why it’s 
+uncomfortable to have everyone’s eyes on you is probably 
+that, for almost all of our evolution, it’s been extremely important 
+not to be excluded from the group. To prepare for what might 
+happen if you are evaluated and socially shamed ― and thus 
+alienated from the group ― your brain fires up the stress system 
+and your heart begins to beat harder. Our natural sensitivity to 
+being evaluated by other people is another example of our 
+brain not being adapted to the modern world. If we give a bad 
+presentation at work, we are unlikely to lose our job and thus 
+risk starving to death. But in the world we long ago evolved 
+for, exclusion from the group could be a matter of life and 
+death.
+was not merely a matter of safety but also 
+of survival. You simply couldn’t make it on your own.
+* starve: 굶주리다
+①Belonging
+②Confidence
+③Endurance
+④Learning
+⑤Competition
+32. Not only are our sensory systems organized to detect change, 
+but they are most tuned to stimuli that are unexpected and 
+surprising. When you move your body and produce tactile 
+sensations, these stimuli are less noticeable to you than are 
+sensations produced by another individual. The sensations of 
+your own legs touching one another when you cross your legs, 
+for example, are generally less noticeable than a similar touch on 
+your leg would be if someone sitting next to you brushed their 
+leg against yours. Likewise, your reaction to your cat jumping 
+onto your lap is likely to be much greater if you have your eyes 
+closed when it happens. This differential response to surprising 
+tactile stimuli appears to be a defense mechanism that has 
+adaptive significance. It is probably also the reason why being 
+tickled by someone else is more effective at producing an 
+emotional reaction than trying to tickle yourself. Our enjoyment 
+of being tickled generally diminishes as we age. This is likely 
+due to the fact that adults are
+, 
+and hence are more difficult to surprise, than are children.
+* tactile: 촉각의
+** tickle: 간질이다
+①more cautious of acting immediately
+②less sensitive to others’ reactions
+③stronger in their ability to focus
+④slower in adapting to changes
+⑤better at anticipating stimuli
+이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.
+
+6
+6
+8
+33. While a picture transports the spectator almost instantly 
+into a landscape, language can only describe it detail by detail, 
+bringing it slowly into the reader’s mind. How can a literary 
+work capture the feel of a place in both its atmosphere and its 
+topography without losing the reader in a descriptive forest? One 
+solution, proposed by Balzac, is to 
+. 
+Balzac’s novels open with detailed portrayals of the setting, but 
+the descriptions never threaten the reader’s sense of orientation 
+because they trace a precise path through the fictional world. 
+When the novel describes a house, the narrator inspects the 
+building in a systematic manner, approaching it from the street, 
+examining the garden and the front, entering through the main 
+door, and walking from room to room, as would a real estate 
+agent or a prospective resident. The reader ends up with a precise 
+notion of the layout of the building, all the way down to the 
+floor plan. [3점]
+* topography: 지형
+①flood the reader’s mind with abstract images
+②present small objects in detail
+③tie description to a moving body
+④distance readers from a scene
+⑤portray a landscape from upward angles
+34. Surprise is the fundamental joke mechanism. Most punch 
+lines rely on an element of surprise for their effect ― that’s 
+why they’re not funny the third time you hear them. The 
+joke-teller’s skill lies in judging exactly how much of a 
+surprise the audience is prepared to take. He must make a 
+series of assumptions about what they will understand, what 
+their reference points are, and how relaxed they appear to be. 
+Jerry Seinfeld once compared telling a joke to attempting to 
+leap a metaphorical canyon, taking the audience with you. The 
+setup to the joke is the near-side cliff, and the punch line is the 
+far side. If they’re too far apart, the listeners don’t make it to 
+the other side. And if they are too close together, the audience 
+just steps across the gap and doesn’t experience a thrilling leap 
+of any kind. The joke-hearers get far more pleasure from the 
+joke 
+. [3점]
+* canyon: 협곡
+①if they feel relaxed enough to laugh
+②when it matches their expectations
+③if it is about someone else
+④if they have to do a little work
+⑤when they fail to fully understand it
+35. 다음 글에서 전체 흐름과 관계 없는 문장은?
+Tourists make intense and short-term use of a very limited 
+number of historical assets and cultural attractions, including 
+material and non-material ones. ①The reason is to be found 
+in the fact that tourist experience in cities is measured in days 
+and hours, even in minutes in the case of cultural attractions or 
+seconds in particular sites. ②In addition, cultural tourists do 
+not often repeat their visit to the same place, and therefore 
+they are continuously looking for new attractions. ③As a 
+result of this, a process of selection of cultural assets takes 
+place since only a few buildings and only a small number of 
+social representations are able to be adapted to the tourist visit. 
+④International festivals bring tourists closer to the community 
+by offering a highly interactive and engaging experience. ⑤The 
+main difference between the selection of cultural assets made 
+for locals and the one made for tourists is that in the second 
+case, only a small choice is made among the largest, most 
+impressive and unique resources.
+[36～37] 주어진 글 다음에 이어질 글의 순서로 가장 적절한 
+것을 고르시오.
+36.
+Our choices and actions send messages to others about 
+our values. Consider a manager who communicates to her 
+employees in a call center that “customer care is the most 
+important thing for our company.”
+(A) In many cases, performance is multidimensional, but 
+compensation is only given to one aspect of performance, 
+typically the one that is easiest to measure. Simple 
+“one-aspect” compensation sends a clear message to the 
+workers: concentrate on what we’re paying you for and 
+ignore everything else.
+(B) That’s a signal to others regarding values. Now, imagine 
+that the manager sets the incentives such that employees 
+are paid by the number of calls they answer. This incentive 
+sends a very different signal about what the manager is 
+looking for: it’s about being fast, which comes at the 
+expense of quality of care.
+(C) Such mixed signals leave the employees confused about 
+the manager’s values and expectations. This mixed signals 
+problem is channeled into a simple question: what should 
+be rewarded? 
+①
+③
+⑤
+(A)
+(B)
+(C)
+－
+－
+－
+(C)
+(C)
+(B)
+－
+－
+－
+(B)
+(A)
+(A)
+②
+④
+(B)
+(C)
+－
+－
+(A)
+(A)
+－
+－
+(C)
+(B)
+이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.
+
+7
+7
+8
+37.
+The initial selection of farmed Atlantic salmon took 
+place from fish drawn from forty different river systems.
+(A) But whatever the manifestation of difference that 
+occurred in different species of salmon, the first salmon 
+farmers realized that crossing and recrossing the specific 
+families from the original forty rivers would result in 
+salmon that grew faster.
+(B) And because salmon, unlike cattle and sheep, can produce 
+many thousands of offspring in the course of their lives, 
+once favorable individuals were found, just a few strong 
+males and females could form the basis of a whole new 
+race of highly productive fish. A domestic population 
+could be created quickly that would be quite different 
+from the initial wild ancestors.
+(C) Every salmon river has its own unique set of challenges to 
+which fish must adapt. Some rivers are very long, like the 
+Yukon, and require animals that can build up massive fat 
+reserves in order to survive the extended journey. Others 
+are very far north, with only a short season of warmer 
+temperatures, and require a fish that can maximize 
+growth, particularly during its younger phase. [3점]
+* manifestation: 표현
+** offspring: 자손
+①
+③
+⑤
+(A)
+(B)
+(C)
+－
+－
+－
+(C)
+(C)
+(B)
+－
+－
+－
+(B)
+(A)
+(A)
+②
+④
+(B)
+(C)
+－
+－
+(A)
+(A)
+－
+－
+(C)
+(B)
+[38～39] 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 
+적절한 곳을 고르시오.
+38.
+Citizen engagement involves people helping governments, 
+rather than scientists, to improve public services and policies 
+in their communities.
+The growth and success of citizen science and citizen 
+engagement has been made possible by the Internet and mobile 
+technology, encouraging and coordinating the efforts of millions 
+of people throughout the world. ( ①) Websites, smartphone 
+apps, and social media have been instrumental in expanding 
+the reach and impact of a diversity of citizen science projects 
+across time and geographical zones. ( ②) Citizen science 
+involves local people helping scientists carry out a scientific 
+project at scale. ( ③) Currently, thousands of such projects 
+have been set up all over the world, whereby volunteers help 
+out in a number of research areas, including biodiversity, 
+air quality, astronomy, and environmental issues. ( ④) They 
+do so by participating in scientific activities such as monitoring 
+plants and wildlife, collecting air and water samples, categorizing 
+galaxies, and analyzing DNA sequences. ( ⑤) Examples 
+include setting up and managing a website that offers local 
+services for community disasters and creating an emergency 
+response team when a disaster occurs.
+39.
+However, melody alone would not normally keep the 
+listener’s attention for long because a piece of music needs 
+some variety and contrasting elements from time to time.
+Regardless of musical style, an increase of focus on certain 
+parameters in a musical passage should be accompanied by a 
+decrease in focus on others. ( ①) The human mind has an 
+attention limit, beyond which music is most likely to be 
+perceived as lacking order or direction. ( ②) For instance, if 
+the intention is to focus on melodic lines, then one should 
+avoid making too many contrasting timbre variations while the 
+melodies are unfolding; otherwise, the timbre may distract 
+attention away from the pitch. ( ③) One of the most difficult 
+issues in the practice of composition is to find the right balance 
+between repetition and diversity: a well-balanced piece of music 
+should unfold naturally to listeners. ( ④) In most Western 
+musical styles, this unfolding results from a network of 
+relationships between musical attributes that combine in 
+different ways to create situations where contrasts can take place. 
+( ⑤) Such contrasts are normally preceded by a preparatory 
+stage, which builds upon the listener’s expectations. [3점]
+* timbre: 음색
+40. 다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), 
+(B)에 들어갈 말로 가장 적절한 것은?
+Many designers would argue that the most important 
+element of lighting is visibility. Some even refer to it as the 
+primary function of lighting. Visibility simply refers to the 
+principle of using light to reveal or illuminate objects. In 
+the early days, the job of the designer was nothing more 
+than to create enough light so that the audience or occupants 
+of a space could see. In many ways, this philosophy of 
+lighting was based on the premise that more was better, 
+and many believed that the more footcandles or lumens 
+placed on a stage or in a room, the better visibility that you 
+had. Since the 1950s or ’60s, theatrical designing moved 
+toward a concept that we call selective visibility, which 
+simply refers to revealing to an audience only what needs 
+to be seen. Hence, a less-revealing image on stage might 
+be more appropriate for the dramatic action than a fully 
+illuminated stage. In selective visibility, areas of low intensity, 
+shadows, silhouettes, and high contrast can become effective 
+elements in a lighting designer’s set of tools.
+* illuminate: 비추다
+** premise: 전제
+󰀻
+While stage lighting designs in the early days focused on 
+(A)
+visibility, they later shifted to
+(B)
+ 
+illumination to enhance dramatic effect.
+(A)
+(B)
+(A)
+(B)
+①maximizing……strategic
+②increasing……uniform
+③controlling ……minimal
+④reducing ……targeted
+⑤limiting
+……purposeful
+이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.
+
+8
+8
+8
+[41～42] 다음 글을 읽고, 물음에 답하시오.
+In a consumer research classic, Maloney proposed that 
+the disbelief most people experience when encountering 
+exaggerated product claims is often overwhelmed by a natural 
+curiosity. When advertising information conflicts with existing 
+beliefs, the resulting disagreement must be somehow resolved. 
+This is often done by (a) yielding to the message and trying 
+out the product in an attempt to readjust personal attitudes 
+toward the brand. In his study, a sample of housewives was 
+exposed to advertisements for food products and then divided 
+into two groups: those participants that found the ad claims to 
+be believable and the others that thought they were hard to 
+believe. The latter group was further divided into two groups, 
+those who (b) confidently disbelieved the claims and those 
+who had what Maloney described as a curious nonbelief. The 
+latter was tied into beliefs that actual product experience 
+was (c) necessary to fully judge the claims. Few consumers 
+who clearly disbelieved the message were interested in trying 
+the product (18%). However, Maloney’s results showed that 
+more consumers who were in the curious nonbelief group 
+were ready to try the product (44%) than in the group that 
+expressed no concerns about (i.e., believed) the advertising 
+claims (34%). The results suggest that advertising that causes 
+consumers not to believe the message claims but makes them 
+(d) indifferent may be the most effective form of new product 
+advertising. Convincing consumers that the claims about a 
+new product are true is not necessary to (e) create interest in 
+product trial.
+* overwhelm: 압도하다
+41. 윗글의 제목으로 가장 적절한 것은?
+①Why Do Advertisers Trick Careless People?
+②Accurate Claims Matter for Consumer Trust
+③Curiosity over Truth: How to Attract Consumers
+④How Can We Deal with Exaggerated Product Claims?
+⑤To Buy or Not to Buy? What Makes Consumers Hesitate
+42. 밑줄 친 (a)～(e) 중에서 문맥상 낱말의 쓰임이 적절하지 않은 
+것은? [3점]
+①(a)
+②(b)
+③(c)
+④(d)
+⑤(e)
+[43～45] 다음 글을 읽고, 물음에 답하시오.
+(A)
+Tim adopted a dog a few months ago. When he met his dog 
+for the first time, he named him after his favorite character, 
+Mickey. Mickey was a healthy dog, but he soon seemed to 
+lack energy. Tim thought that taking care of a dog was much 
+harder than he had expected. So, he decided to sign up for a 
+dog training course. At the training center, he met an 
+instructor named Jack. He emphasized to Tim, “Be sure to 
+walk (a) your dog daily. Dogs need regular exercise to be 
+happy and healthy.”
+(B)
+When Tim and Mickey arrived at the park Jack had 
+recommended, dozens of dogs were already jumping and 
+playing. Mickey looked nervous in the unfamiliar surroundings. 
+Tim said, “Don’t worry, Mickey. It’ll be fun.” Just then, Tim 
+saw a boy about (b) his age standing with a small dog. 
+Gathering his courage, Tim walked over to him. “Hi, I’m Tim. 
+Can I introduce my dog to yours?” The boy replied, “Sure. 
+I’m Daniel. Oh, it looks like they like each other already!”
+(C)
+Having something in common as dog owners, Tim and 
+Daniel enjoyed talking to each other. They spent the next two 
+hours pleasantly chatting and decided to walk their dogs 
+together regularly. “See you soon,” said Tim as (c) he and 
+Mickey left the park. Over the next few weeks, the boys and 
+their dogs became great friends. After returning from a walk 
+one day, Tim said to Mickey, “Walking you felt like a burden 
+at first, but now I see doing things for (d) you can be great 
+for me, too!”
+(D)
+Being sure to follow Jack’s advice, Tim took Mickey for a 
+walk every day. However, this extra responsibility soon 
+seemed like a burden, and Tim felt exhausted. One day, Tim 
+got a call from Jack. “Hello, Tim. How’s everything going 
+with Mickey?” Tim replied, “Actually, it’s pretty hard walking 
+him every day. We’ve been taking the same route, and it has 
+become a little boring.” Jack offered (e) him a new idea. 
+“How about going to Happy Dog Park?” Tim said, “That’s a 
+great idea!” 
+43. 주어진 글 (A)에 이어질 내용을 순서에 맞게 배열한 것으로 
+가장 적절한 것은?
+①
+③
+⑤
+(B)
+(C)
+(D)
+－
+－
+－
+(D)
+(D)
+(C)
+－
+－
+－
+(C)
+(B)
+(B)
+②
+④
+(C)
+(D)
+－
+－
+(B)
+(B)
+－
+－
+(D)
+(C)
+44. 밑줄 친 (a)～(e) 중에서 가리키는 대상이 나머지 넷과 다른 
+것은?
+①(a)
+②(b)
+③(c)
+④(d)
+⑤(e)
+45. 윗글에 관한 내용으로 적절하지 않은 것은?
+①Mickey는 Tim이 좋아하는 캐릭터의 이름이었다.
+②Mickey는 공원에 도착하자마자 즐겁게 뛰어다녔다.
+③Tim은 Mickey를 다른 개에게 소개하려 했다.
+④Tim과 Daniel은 자신의 개를 함께 산책시키기로 했다.
+⑤Tim은 Jack과의 통화에서 고민을 이야기했다.
+* 확인 사항
+◦답안지의 해당란에 필요한 내용을 정확히 기입(표기)했는지 확인
+하시오.
+이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.

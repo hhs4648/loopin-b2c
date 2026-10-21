@@ -1,0 +1,2084 @@
+{
+  "id": "mopyeong-2027-06-21-give-up-the-ghost",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 21번 (밑줄 의미 추론, 3점)",
+  "brief": {
+    "topic": "밑줄 문제 푸는 법: 핵심 단어 → 관계(Griffin 쪽 ↔ 반대 쪽) → 밑줄 뜻",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "underline_meaning",
+    "labels": [
+      "핵심 단어 찾기",
+      "관계 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-animal-consciousness.svg",
+      "alt": "칠판: Animals(동물) ? Consciousness(의식) — 동물에게도 의식이 있을까?",
+      "kind": "drawing"
+    },
+    "method": {
+      "src": "/assets/underline-method.svg",
+      "alt": "밑줄 문제 푸는 법: ① 핵심 단어 찾기 ② 단어 사이의 관계 잡기",
+      "kind": "drawing"
+    }
+  },
+  "intro_board": "method",
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "동물에게도 의식이 있을까요? 이번 글은 박쥐를 평생 지켜본 한 동물학자의 주장을 다뤄요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "수능 문제는 시간 싸움이에요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "밑줄 문제는 핵심 단어 위주로 지문의 요지를 빠르게 파악하면 좋아요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "밑줄 친 the ghost가 다음 글에서 의미하는 바로 가장 적절한 것은? [3점]",
+    "underline": "the ghost",
+    "analysis_first": true,
+    "wrong_rate": 60.0,
+    "wrong_rank": 5,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "claim",
+        "ko": "주장"
+      },
+      {
+        "en": "animal consciousness",
+        "ko": "동물의 의식"
+      },
+      {
+        "en": "should be studied",
+        "ko": "연구되어야 한다"
+      },
+      {
+        "en": "belief",
+        "ko": "믿음"
+      },
+      {
+        "en": "quality",
+        "ko": "특성"
+      },
+      {
+        "en": "exclusive to",
+        "ko": "~에게만 독점적인"
+      },
+      {
+        "en": "illusion",
+        "ko": "착각"
+      },
+      {
+        "en": "possess",
+        "ko": "지니다, 가지다"
+      },
+      {
+        "en": "truly",
+        "ko": "진정으로"
+      },
+      {
+        "en": "conscious",
+        "ko": "의식이 있는"
+      },
+      {
+        "en": "inner worlds",
+        "ko": "내면 세계"
+      },
+      {
+        "en": "idea",
+        "ko": "생각"
+      },
+      {
+        "en": "human cognition",
+        "ko": "인간의 인지"
+      },
+      {
+        "en": "superior to",
+        "ko": "~보다 우월한"
+      },
+      {
+        "en": "concept",
+        "ko": "개념"
+      },
+      {
+        "en": "essentially",
+        "ko": "본질적으로"
+      },
+      {
+        "en": "alike",
+        "ko": "비슷한"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "the claim that animal consciousness should be studied",
+        "keywords": [
+          "animal consciousness",
+          "should be studied"
+        ],
+        "ko": "동물의 의식을 연구해야 한다는 주장"
+      },
+      {
+        "id": "2",
+        "label": "the belief that consciousness is a quality exclusive to humans",
+        "keywords": [
+          "consciousness",
+          "exclusive to humans"
+        ],
+        "ko": "의식이 인간에게만 독점적으로 존재하는 특성이라는 믿음",
+        "correct": true
+      },
+      {
+        "id": "3",
+        "label": "the illusion that animals possess truly conscious inner worlds",
+        "keywords": [
+          "illusion",
+          "truly conscious inner worlds"
+        ],
+        "ko": "동물이 진정한 의식을 지닌 내면 세계를 가지고 있다는 착각"
+      },
+      {
+        "id": "4",
+        "label": "the idea that human cognition is superior to that of animals",
+        "keywords": [
+          "human cognition",
+          "superior"
+        ],
+        "ko": "인간의 인지가 동물의 인지보다 우월하다는 생각"
+      },
+      {
+        "id": "5",
+        "label": "the concept that humans and animals are essentially alike",
+        "keywords": [
+          "humans and animals",
+          "essentially alike"
+        ],
+        "ko": "인간과 동물은 본질적으로 비슷하다는 개념"
+      }
+    ],
+    "brief": {
+      "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고, the ghost가 칠판 어느 쪽 생각인지 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! the ghost는 인간에게만 있다고 떠받든 '의식'이에요. 의식이 인간에게만 있다는 믿음을 이제 버리자는 말이에요.",
+      "final_wrong": "정답은 ②예요. the ghost는 의식이 인간에게만 있다는 믿음이에요. 인간만의 뇌 부위를 아무도 못 찾았으니 버리자는 말이에요.",
+      "option_feedback": {
+        "1": "동물의 의식을 연구하자는 건 Griffin의 주장이에요. 버리자는 생각이 아니에요.",
+        "3": "Griffin은 동물에게 내면 세계가 있다고 확신했어요. 그걸 착각이라고 하지 않았어요.",
+        "4": "누가 더 뛰어난지는 글에 없어요. 의식이 인간에게만 있느냐가 글의 이야기예요.",
+        "5": "인간과 동물이 비슷하다는 건 Griffin 쪽 생각이에요. 버리자는 생각이 아니에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 25%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "④는 '인간의 인지가 동물보다 우월하다'예요. 사람이 특별하다는 말처럼 들려서 그럴듯해요. 하지만 글은 박쥐가 사람과 '같은' 능력을 보였다고 하고, 인간에게만(unique to humans) 의식이 있느냐를 따져요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "6문장",
+                "text": "the same problem-solving abilities as humans",
+                "ko": "사람과 같은 능력 — 더 낫다·못하다가 아님",
+                "tone": "hl"
+              },
+              {
+                "label": "8문장",
+                "text": "unique to humans … “consciousness”",
+                "ko": "인간에게만 있다는 의식 → the ghost",
+                "tone": "hl"
+              },
+              {
+                "label": "④",
+                "text": "superior",
+                "ko": "더 뛰어나다 — 글에 없는 비교",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "consciousness",
+        "ko": "의식"
+      },
+      {
+        "en": "attribute A to B",
+        "ko": "A가 B에게 있다고 보다"
+      },
+      {
+        "en": "cognition",
+        "ko": "인지"
+      },
+      {
+        "en": "take ~ seriously",
+        "ko": "~을 진지하게 여기다"
+      },
+      {
+        "en": "be responsible for",
+        "ko": "~의 주역이다, ~을 담당하다"
+      },
+      {
+        "en": "navigate",
+        "ko": "길을 찾다"
+      },
+      {
+        "en": "echolocation",
+        "ko": "반향 위치 측정"
+      },
+      {
+        "en": "convinced",
+        "ko": "확신하는"
+      },
+      {
+        "en": "inner world",
+        "ko": "내면 세계"
+      },
+      {
+        "en": "flexible",
+        "ko": "유연한"
+      },
+      {
+        "en": "circumstances",
+        "ko": "환경, 상황"
+      },
+      {
+        "en": "hallmark",
+        "ko": "특징"
+      },
+      {
+        "en": "on the fly",
+        "ko": "즉석에서"
+      },
+      {
+        "en": "exhibit",
+        "ko": "보여 주다"
+      },
+      {
+        "en": "neuroscience",
+        "ko": "신경과학"
+      },
+      {
+        "en": "unique to",
+        "ko": "~에게만 있는"
+      },
+      {
+        "en": "give up",
+        "ko": "포기하다"
+      },
+      {
+        "en": "ghost",
+        "ko": "유령, 환상"
+      }
+    ],
+    "options": [
+      {
+        "en": "exclusive to",
+        "ko": "~에게만 독점적인"
+      },
+      {
+        "en": "superior to",
+        "ko": "~보다 우월한"
+      },
+      {
+        "en": "illusion",
+        "ko": "착각"
+      },
+      {
+        "en": "possess",
+        "ko": "지니다"
+      },
+      {
+        "en": "essentially",
+        "ko": "본질적으로"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "In fact, scientists attributing consciousness to any animal is so recent that the internet is older.",
+      "model_translation": "사실 과학자들이 어떤 동물이든 의식이 있다고 생각한 일이 너무 최근이어서 인터넷이 더 오래되었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In fact",
+          "ko": "사실"
+        },
+        {
+          "en": "scientists",
+          "ko": "과학자들"
+        },
+        {
+          "en": "attributing consciousness",
+          "ko": "의식이 있다고 보는 것 · attribute A to B = A가 B에게 있다고 보다"
+        },
+        {
+          "en": "attributing",
+          "ko": "~이 있다고 보는"
+        },
+        {
+          "en": "consciousness",
+          "ko": "의식"
+        },
+        {
+          "en": "to any animal",
+          "ko": "어떤 동물에게든"
+        },
+        {
+          "en": "so recent",
+          "ko": "너무 최근이라"
+        },
+        {
+          "en": "recent",
+          "ko": "최근의"
+        },
+        {
+          "en": "the internet",
+          "ko": "인터넷"
+        },
+        {
+          "en": "older",
+          "ko": "더 오래된"
+        },
+        {
+          "en": "animal",
+          "ko": "동물"
+        },
+        {
+          "en": "internet",
+          "ko": "인터넷"
+        }
+      ],
+      "slashes": [
+        "In fact,",
+        "attributing consciousness",
+        "to any animal",
+        "so recent"
+      ],
+      "roles": [
+        {
+          "text": "scientists attributing consciousness to any animal",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        },
+        {
+          "text": "so recent",
+          "role": "C"
+        },
+        {
+          "text": "the internet",
+          "role": "S"
+        },
+        {
+          "text": "older",
+          "role": "C"
+        }
+      ],
+      "emphasis": [
+        "attributing consciousness",
+        "so recent"
+      ],
+      "steps": [
+        {
+          "id": "s1_keys",
+          "type": "pick",
+          "interaction": "word_pick",
+          "candidates": [
+            "In fact",
+            "attributing consciousness",
+            "to any animal",
+            "so recent"
+          ],
+          "answers": [
+            "attributing consciousness",
+            "to any animal",
+            "so recent"
+          ],
+          "keyword": true,
+          "brief": {
+            "ask": "이 문장을 빠르게 이해하려면 모든 단어를 읽지 않아도 돼요. 핵심어 3개를 찾아볼까요?",
+            "wrong": "그건 뜻을 덧붙이는 말이라 핵심은 아니에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 찾았어요!",
+            "explain": "핵심어는 attributing consciousness, to any animal, so recent예요. 동물에게 의식이 있다고 보는 게 아주 최근이라는 말이에요.",
+            "point": "핵심어 = attributing consciousness · to any animal · so recent"
+          },
+          "method": 0
+        },
+        {
+          "id": "s1_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "동물에게 의식이 있다고 본 게 인터넷보다도 최근이래요. 그럼 그 전 과학자들은 동물을 어떻게 봤을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "so recent(아주 최근)를 봐요. 최근에야 생긴 생각이면 그 전엔 어땠을지 떠올려 봐요.",
+              "so recent(아주 최근)를 봐요. 최근에야 생긴 생각이면 그 전엔 어땠을지 떠올려 봐요."
+            ],
+            "explain": "'so recent that the internet is older', 동물에게 의식을 인정한 건 아주 최근 일이래요. 그 전 과학자들은 의식을 동물에게 주지 않았다는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'so recent that the internet is older', 동물에게 의식을 인정한 건 아주 최근 일이래요. 그 전 과학자들은 의식을 동물에게 주지 않았다는 말이에요.",
+              "o2": "'so recent that the internet is older', 동물에게 의식을 인정한 건 아주 최근 일이래요. 그 전 과학자들은 의식을 동물에게 주지 않았다는 말이에요."
+            },
+            "point": "동물에게 의식이 있다고 보는 건 아주 최근 → 그 전 과학자들은 동물에게 의식이 없다고 봤다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "동물에게는 의식이 없다고 봤다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "동물에게도 의식이 있다고 봤다"
+            },
+            {
+              "id": "o2",
+              "label": "인터넷으로 동물을 연구했다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "so recent"
+          ],
+          "tips": [
+            {
+              "label": "attribute A to B",
+              "text": "'A가 B에게 있다고 보다'예요. attributing consciousness to any animal = 어떤 동물에게든 의식이 있다고 보는 것.",
+              "mark": "attributing"
+            },
+            {
+              "label": "so ~ that …",
+              "text": "'너무 ~해서 …하다'예요. 너무 최근이라 인터넷이 더 오래됐을 정도래요.",
+              "mark": "so recent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "In 1976 a zoologist named Donald Griffin published The Question of Animal Awareness, a book arguing that animal cognition ought to be taken seriously.",
+      "model_translation": "1976년에 Donald Griffin이라는 한 동물학자는 'The Question of Animal Awareness'라는 책을 출간했는데, 그 책은 동물의 인지를 진지하게 여겨야 한다고 주장했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In 1976",
+          "ko": "1976년에"
+        },
+        {
+          "en": "a zoologist",
+          "ko": "동물학자"
+        },
+        {
+          "en": "zoologist",
+          "ko": "동물학자"
+        },
+        {
+          "en": "named Donald Griffin",
+          "ko": "Donald Griffin이라는 이름의"
+        },
+        {
+          "en": "published",
+          "ko": "출간했다"
+        },
+        {
+          "en": "The Question of Animal Awareness",
+          "ko": "『동물의 인식에 관한 질문』 · 책 제목이에요"
+        },
+        {
+          "en": "a book arguing",
+          "ko": "~라고 주장하는 책"
+        },
+        {
+          "en": "arguing",
+          "ko": "주장하는"
+        },
+        {
+          "en": "animal cognition",
+          "ko": "동물의 인지"
+        },
+        {
+          "en": "cognition",
+          "ko": "인지"
+        },
+        {
+          "en": "ought to be taken seriously",
+          "ko": "진지하게 여겨져야 한다"
+        },
+        {
+          "en": "seriously",
+          "ko": "진지하게"
+        },
+        {
+          "en": "named",
+          "ko": "~라는 이름의"
+        },
+        {
+          "en": "Donald",
+          "ko": "도널드(이름)"
+        },
+        {
+          "en": "Griffin",
+          "ko": "그리핀(사람 이름)"
+        },
+        {
+          "en": "Question",
+          "ko": "질문, 문제"
+        },
+        {
+          "en": "Animal",
+          "ko": "동물"
+        },
+        {
+          "en": "book",
+          "ko": "책"
+        },
+        {
+          "en": "ought",
+          "ko": "~해야 한다"
+        }
+      ],
+      "slashes": [
+        "In 1976",
+        "named Donald Griffin",
+        "Animal Awareness,",
+        "a book arguing"
+      ],
+      "roles": [
+        {
+          "text": "a zoologist",
+          "role": "S"
+        },
+        {
+          "text": "published",
+          "role": "V"
+        },
+        {
+          "text": "The Question of Animal Awareness",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "named Donald Griffin",
+        "arguing that animal cognition ought to be taken seriously"
+      ],
+      "emphasis": [
+        "animal cognition",
+        "seriously"
+      ],
+      "steps": [
+        {
+          "id": "s2_claim",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Griffin의 책은 무엇을 주장했을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "콤마(,) 뒤 a book arguing that ~이 책의 주장이에요. that 뒤를 봐요.",
+              "콤마(,) 뒤 a book arguing that ~이 책의 주장이에요. that 뒤를 봐요."
+            ],
+            "explain": "'animal cognition ought to be taken seriously', 동물의 인지를 진지하게 여겨야 한대요. 1문장의 새로운 생각과 같은 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'animal cognition ought to be taken seriously', 동물의 인지를 진지하게 여겨야 한대요. 1문장의 새로운 생각과 같은 쪽이에요.",
+              "o2": "'animal cognition ought to be taken seriously', 동물의 인지를 진지하게 여겨야 한대요. 1문장의 새로운 생각과 같은 쪽이에요."
+            },
+            "point": "Griffin = 동물의 인지를 진지하게 다뤄야 한다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "동물의 인지를 진지하게 다뤄야 한다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "동물에게는 인지 능력이 없다"
+            },
+            {
+              "id": "o2",
+              "label": "인터넷이 동물 연구를 바꿨다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "animal cognition",
+            "seriously"
+          ],
+          "tips": [
+            {
+              "label": "책 제목, a book arguing that ~",
+              "text": "콤마(,) 뒤 a book은 앞의 책 제목을 다시 설명해요. arguing that ~ = ~라고 주장하는.",
+              "mark": "a book arguing"
+            },
+            {
+              "label": "ought to",
+              "text": "'~해야 한다'예요. should와 비슷해요.",
+              "mark": "ought to"
+            }
+          ]
+        },
+        {
+          "id": "story_2",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🧠",
+                "en": "consciousness to any animal · so recent",
+                "ko": "동물에게 의식이 있다고 본 건 아주 최근 일이에요",
+                "fresh": true
+              },
+              {
+                "label": "문장 2",
+                "icon": "📘",
+                "en": "animal cognition · taken seriously",
+                "ko": "Griffin은 동물의 인지를 진지하게 다뤄야 한다고 했어요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "He and a colleague had been responsible in 1944 for discovering that bats navigate by echolocation.",
+      "model_translation": "그와 한 동료는 1944년에 박쥐가 반향 위치 측정으로 길을 찾는다는 사실을 발견한 주역이었다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "He and a colleague",
+          "ko": "그와 한 동료"
+        },
+        {
+          "en": "colleague",
+          "ko": "동료"
+        },
+        {
+          "en": "had been responsible",
+          "ko": "주역이었다, 책임이 있었다"
+        },
+        {
+          "en": "responsible",
+          "ko": "책임이 있는, 주역인"
+        },
+        {
+          "en": "in 1944",
+          "ko": "1944년에"
+        },
+        {
+          "en": "for discovering",
+          "ko": "~을 발견한 데에"
+        },
+        {
+          "en": "discovering",
+          "ko": "발견하는 것"
+        },
+        {
+          "en": "bats",
+          "ko": "박쥐"
+        },
+        {
+          "en": "navigate",
+          "ko": "길을 찾다"
+        },
+        {
+          "en": "by echolocation",
+          "ko": "반향 위치 측정으로 · 소리를 내고 돌아오는 메아리로 위치를 아는 것"
+        },
+        {
+          "en": "echolocation",
+          "ko": "반향 위치 측정"
+        }
+      ],
+      "slashes": [
+        "He and a colleague",
+        "in 1944",
+        "for discovering"
+      ],
+      "roles": [
+        {
+          "text": "He and a colleague",
+          "role": "S"
+        },
+        {
+          "text": "had been",
+          "role": "V"
+        },
+        {
+          "text": "responsible",
+          "role": "C"
+        },
+        {
+          "text": "bats",
+          "role": "S"
+        },
+        {
+          "text": "navigate",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_skim",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "Griffin은 박쥐(bats)가 소리로 길을 찾는다는 걸 밝힌 사람이에요. 이 글의 동물은 박쥐예요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "bats"
+          ],
+          "tips": [
+            {
+              "label": "be responsible for ~",
+              "text": "'~을 한 주역이다, ~을 담당하다'예요. 여기선 박쥐의 길 찾기를 발견한 주역이었다는 말이에요.",
+              "mark": "responsible"
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "He and a colleague": "He = Donald Griffin"
+      }
+    },
+    {
+      "id": 4,
+      "text": "Now, after a lifetime spent watching those creatures, he became convinced they had inner worlds.",
+      "model_translation": "이제 평생 그 생물들을 지켜본 끝에 그는 박쥐들이 내면 세계를 가지고 있다고 확신하게 되었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Now",
+          "ko": "이제"
+        },
+        {
+          "en": "after a lifetime",
+          "ko": "평생을 보낸 뒤"
+        },
+        {
+          "en": "lifetime",
+          "ko": "평생"
+        },
+        {
+          "en": "spent watching",
+          "ko": "지켜보며 보낸"
+        },
+        {
+          "en": "watching",
+          "ko": "지켜보는"
+        },
+        {
+          "en": "those creatures",
+          "ko": "그 생물들"
+        },
+        {
+          "en": "creatures",
+          "ko": "생물"
+        },
+        {
+          "en": "became convinced",
+          "ko": "확신하게 되었다"
+        },
+        {
+          "en": "convinced",
+          "ko": "확신하는"
+        },
+        {
+          "en": "inner worlds",
+          "ko": "내면 세계"
+        },
+        {
+          "en": "inner",
+          "ko": "내면의"
+        },
+        {
+          "en": "after",
+          "ko": "~ 뒤에"
+        },
+        {
+          "en": "spent",
+          "ko": "보낸"
+        },
+        {
+          "en": "became",
+          "ko": "~이 되었다"
+        },
+        {
+          "en": "worlds",
+          "ko": "세계"
+        }
+      ],
+      "slashes": [
+        "Now,",
+        "after a lifetime",
+        "those creatures,",
+        "became convinced"
+      ],
+      "roles": [
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "became",
+          "role": "V"
+        },
+        {
+          "text": "convinced",
+          "role": "C"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "had",
+          "role": "V"
+        },
+        {
+          "text": "inner worlds",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "spent watching those creatures"
+      ],
+      "emphasis": [
+        "inner worlds"
+      ],
+      "steps": [
+        {
+          "id": "s4_those",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "those creatures(그 생물들)는 무엇을 가리킬까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "those가 가리키는 것은 앞 문장에서 찾아요. Griffin이 무엇을 연구했는지 떠올려 봐요.",
+              "those가 가리키는 것은 앞 문장에서 찾아요. Griffin이 무엇을 연구했는지 떠올려 봐요."
+            ],
+            "explain": "those는 앞 문장에서 찾아요. 3문장에서 Griffin이 연구한 동물은 박쥐(bats)예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "those는 앞 문장에서 찾아요. 3문장에서 Griffin이 연구한 동물은 박쥐(bats)예요.",
+              "o2": "those는 앞 문장에서 찾아요. 3문장에서 Griffin이 연구한 동물은 박쥐(bats)예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "bats (박쥐들)",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "scientists (과학자들)"
+            },
+            {
+              "id": "o2",
+              "label": "humans (사람들)"
+            }
+          ],
+          "method": 1,
+          "levels": [
+            "중",
+            "초"
+          ],
+          "highlight": [
+            "those creatures"
+          ]
+        },
+        {
+          "id": "s4_conv",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "평생 박쥐를 지켜본 Griffin은 무엇을 확신하게 됐을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "became convinced 뒤에 that이 빠져 있어요. they had inner worlds가 확신한 내용이에요.",
+              "became convinced 뒤에 that이 빠져 있어요. they had inner worlds가 확신한 내용이에요."
+            ],
+            "explain": "'he became convinced they had inner worlds', 박쥐들에게도 내면 세계가 있다고 확신하게 됐대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'he became convinced they had inner worlds', 박쥐들에게도 내면 세계가 있다고 확신하게 됐대요.",
+              "o2": "'he became convinced they had inner worlds', 박쥐들에게도 내면 세계가 있다고 확신하게 됐대요."
+            },
+            "point": "Griffin의 확신: 박쥐에게도 inner worlds(내면 세계)가 있다"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "박쥐에게 내면 세계가 있다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "박쥐는 본능으로만 움직인다"
+            },
+            {
+              "id": "o2",
+              "label": "박쥐와 사람은 전혀 다르다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "convinced",
+            "inner worlds"
+          ],
+          "tips": [
+            {
+              "label": "become convinced (that) ~",
+              "text": "'~라고 확신하게 되다'예요. 여기선 that이 빠졌어요.",
+              "mark": "convinced"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "They had flexible behavior, he said, or the ability to change their behavior as external circumstances changed, a hallmark of true intelligence.",
+      "model_translation": "박쥐들이 유연한 행동, 즉 외부 환경의 변화에 따라 행동을 바꿀 수 있는 능력을 가지고 있으며, 이는 진정한 지능의 특징이라고 그는 말했다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "They had",
+          "ko": "그것들은 ~을 가졌다"
+        },
+        {
+          "en": "flexible behavior",
+          "ko": "유연한 행동"
+        },
+        {
+          "en": "flexible",
+          "ko": "유연한"
+        },
+        {
+          "en": "behavior",
+          "ko": "행동"
+        },
+        {
+          "en": "he said",
+          "ko": "그는 말했다"
+        },
+        {
+          "en": "or",
+          "ko": "또는 · 여기서는 앞말을 바꿔 말하는 '즉'이에요"
+        },
+        {
+          "en": "the ability to change",
+          "ko": "~을 바꾸는 능력"
+        },
+        {
+          "en": "ability",
+          "ko": "능력"
+        },
+        {
+          "en": "their behavior",
+          "ko": "그들의 행동"
+        },
+        {
+          "en": "as external circumstances changed",
+          "ko": "외부 환경이 바뀜에 따라"
+        },
+        {
+          "en": "external",
+          "ko": "외부의"
+        },
+        {
+          "en": "circumstances",
+          "ko": "환경, 상황"
+        },
+        {
+          "en": "a hallmark of",
+          "ko": "~의 특징"
+        },
+        {
+          "en": "hallmark",
+          "ko": "특징"
+        },
+        {
+          "en": "true intelligence",
+          "ko": "진정한 지능"
+        },
+        {
+          "en": "intelligence",
+          "ko": "지능"
+        },
+        {
+          "en": "said",
+          "ko": "말했다"
+        },
+        {
+          "en": "change",
+          "ko": "바꾸다"
+        },
+        {
+          "en": "changed",
+          "ko": "바뀌었다"
+        }
+      ],
+      "slashes": [
+        "flexible behavior,",
+        "he said,",
+        "or the ability",
+        "their behavior",
+        "circumstances changed,"
+      ],
+      "roles": [
+        {
+          "text": "They",
+          "role": "S"
+        },
+        {
+          "text": "had",
+          "role": "V"
+        },
+        {
+          "text": "flexible behavior",
+          "role": "O"
+        },
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "said",
+          "role": "V"
+        },
+        {
+          "text": "external circumstances",
+          "role": "S"
+        },
+        {
+          "text": "changed",
+          "role": "V"
+        }
+      ],
+      "emphasis": [
+        "flexible behavior",
+        "true intelligence"
+      ],
+      "steps": [
+        {
+          "id": "s5_hallmark",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "Griffin은 박쥐의 유연한 행동(flexible behavior)을 무엇의 특징이라고 했을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "문장 끝 a hallmark of ~를 봐요. hallmark는 '특징'이에요.",
+              "문장 끝 a hallmark of ~를 봐요. hallmark는 '특징'이에요."
+            ],
+            "explain": "'a hallmark of true intelligence', 진정한 지능의 특징이래요. 환경이 바뀌면 행동을 바꿀 줄 안다는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'a hallmark of true intelligence', 진정한 지능의 특징이래요. 환경이 바뀌면 행동을 바꿀 줄 안다는 거예요.",
+              "o2": "'a hallmark of true intelligence', 진정한 지능의 특징이래요. 환경이 바뀌면 행동을 바꿀 줄 안다는 거예요."
+            },
+            "point": "flexible behavior(환경에 따라 행동을 바꾸는 능력) = 진정한 지능의 특징"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "진짜 지능",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "겁 많은 성격"
+            },
+            {
+              "id": "o2",
+              "label": "타고난 본능"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "flexible behavior",
+            "true intelligence"
+          ],
+          "tips": [
+            {
+              "label": "A, or B",
+              "text": "콤마(,) 뒤 or the ability …는 앞의 flexible behavior를 바꿔 말한 거예요. 이때 or는 '즉'이에요.",
+              "mark": "or the ability"
+            }
+          ]
+        },
+        {
+          "id": "story_5",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🧠",
+                "en": "consciousness to any animal · so recent",
+                "ko": "동물에게 의식이 있다고 본 건 아주 최근 일이에요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2",
+                "icon": "📘",
+                "en": "animal cognition · taken seriously",
+                "ko": "Griffin은 동물의 인지를 진지하게 다뤄야 한다고 했어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "🦇",
+                "en": "bats · inner worlds",
+                "ko": "박쥐를 평생 지켜본 Griffin은 박쥐에게 내면 세계가 있다고 확신했어요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5",
+                "icon": "🔄",
+                "en": "flexible behavior · true intelligence",
+                "ko": "환경에 따라 행동을 바꾸는 건 진정한 지능의 특징이래요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "They had": "They = bats(박쥐들)"
+      }
+    },
+    {
+      "id": 6,
+      "text": "He’d watched bats develop clever techniques for finding food; they could clearly make decisions on the fly, and exhibited many of the same problem-solving abilities as humans did.",
+      "model_translation": "그는 박쥐들이 먹이를 찾기 위해 영리한 기술을 개발하는 것을 관찰했는데, 박쥐들은 분명히 즉석에서 결정을 내릴 수 있었고, 인간이 보여주는 것과 동일한 문제 해결 능력을 다수 보여주었다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "He’d watched",
+          "ko": "그는 지켜봤었다 · He’d = He had"
+        },
+        {
+          "en": "bats",
+          "ko": "박쥐들이"
+        },
+        {
+          "en": "develop",
+          "ko": "개발하다"
+        },
+        {
+          "en": "clever techniques",
+          "ko": "영리한 기술"
+        },
+        {
+          "en": "clever",
+          "ko": "영리한"
+        },
+        {
+          "en": "techniques",
+          "ko": "기술"
+        },
+        {
+          "en": "for finding food",
+          "ko": "먹이를 찾기 위한"
+        },
+        {
+          "en": "finding",
+          "ko": "찾는 것"
+        },
+        {
+          "en": "food",
+          "ko": "먹이"
+        },
+        {
+          "en": "could clearly make decisions",
+          "ko": "분명히 결정을 내릴 수 있었다"
+        },
+        {
+          "en": "clearly",
+          "ko": "분명히"
+        },
+        {
+          "en": "decisions",
+          "ko": "결정"
+        },
+        {
+          "en": "on the fly",
+          "ko": "즉석에서"
+        },
+        {
+          "en": "exhibited",
+          "ko": "보여 주었다"
+        },
+        {
+          "en": "the same problem-solving abilities",
+          "ko": "같은 문제 해결 능력"
+        },
+        {
+          "en": "problem-solving",
+          "ko": "문제 해결의"
+        },
+        {
+          "en": "abilities",
+          "ko": "능력"
+        },
+        {
+          "en": "as humans did",
+          "ko": "인간이 보여 준 것과"
+        },
+        {
+          "en": "humans",
+          "ko": "인간"
+        },
+        {
+          "en": "they",
+          "ko": "그들(그것들)"
+        },
+        {
+          "en": "He’d",
+          "ko": "그는 ~했었다 (= he had)"
+        },
+        {
+          "en": "watched",
+          "ko": "지켜봤다"
+        },
+        {
+          "en": "fly",
+          "ko": "날다, 파리 · on the fly = 즉석에서"
+        }
+      ],
+      "slashes": [
+        "He’d watched bats",
+        "clever techniques",
+        "finding food;",
+        "make decisions",
+        "on the fly,",
+        "and exhibited",
+        "problem-solving abilities"
+      ],
+      "roles": [
+        {
+          "text": "He",
+          "role": "S"
+        },
+        {
+          "text": "’d watched",
+          "role": "V"
+        },
+        {
+          "text": "bats",
+          "role": "O"
+        },
+        {
+          "text": "develop",
+          "role": "C"
+        },
+        {
+          "text": "they",
+          "role": "S"
+        },
+        {
+          "text": "could … make",
+          "role": "V"
+        },
+        {
+          "text": "decisions",
+          "role": "O"
+        },
+        {
+          "text": "exhibited",
+          "role": "V"
+        },
+        {
+          "text": "many of the same problem-solving abilities",
+          "role": "O"
+        },
+        {
+          "text": "humans",
+          "role": "S"
+        },
+        {
+          "text": "did",
+          "role": "V"
+        }
+      ],
+      "emphasis": [
+        "the same problem-solving abilities"
+      ],
+      "steps": [
+        {
+          "id": "s6_same",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "박쥐의 문제 해결 능력은 사람과 비교해 어떻대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "the same A as B는 'B와 같은 A'예요. as humans did를 봐요.",
+              "the same A as B는 'B와 같은 A'예요. as humans did를 봐요."
+            ],
+            "explain": "'many of the same problem-solving abilities as humans did', 사람과 같은 문제 해결 능력을 많이 보였대요. 누가 더 낫다는 비교가 아니라 '같다'는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'many of the same problem-solving abilities as humans did', 사람과 같은 문제 해결 능력을 많이 보였대요. 누가 더 낫다는 비교가 아니라 '같다'는 말이에요.",
+              "o2": "'many of the same problem-solving abilities as humans did', 사람과 같은 문제 해결 능력을 많이 보였대요. 누가 더 낫다는 비교가 아니라 '같다'는 말이에요."
+            },
+            "point": "박쥐 = 사람과 같은 문제 해결 능력 (더 낫다·못하다가 아니라 같다)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사람과 같은 능력을 많이 보였다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "사람보다 훨씬 떨어졌다"
+            },
+            {
+              "id": "o2",
+              "label": "사람보다 훨씬 뛰어났다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "the same problem-solving abilities",
+            "humans"
+          ],
+          "tips": [
+            {
+              "label": "the same A as B",
+              "text": "'B와 같은 A'예요. as humans did의 did는 exhibited를 대신해요.",
+              "mark": "the same"
+            },
+            {
+              "label": "on the fly",
+              "text": "'즉석에서'예요. 그 자리에서 바로 결정한다는 말이에요.",
+              "mark": "on the fly"
+            },
+            {
+              "label": "exhibited",
+              "text": "이 글에서는 → 보여 주었다  ('전시했다' 아님)",
+              "mark": "exhibited",
+              "trap": true
+            }
+          ]
+        }
+      ],
+      "refers": {
+        "they": "bats(박쥐들)"
+      }
+    },
+    {
+      "id": 7,
+      "text": "Animal thought and reason ought to be seriously studied, he argued.",
+      "model_translation": "동물의 사고력과 판단력을 진지하게 연구해야 한다고 그는 주장했다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Animal thought and reason",
+          "ko": "동물의 사고력과 판단력"
+        },
+        {
+          "en": "thought",
+          "ko": "사고, 생각"
+        },
+        {
+          "en": "reason",
+          "ko": "이성, 판단력"
+        },
+        {
+          "en": "ought to be seriously studied",
+          "ko": "진지하게 연구되어야 한다"
+        },
+        {
+          "en": "studied",
+          "ko": "연구된"
+        },
+        {
+          "en": "he argued",
+          "ko": "그는 주장했다"
+        },
+        {
+          "en": "argued",
+          "ko": "주장했다"
+        },
+        {
+          "en": "Animal",
+          "ko": "동물"
+        },
+        {
+          "en": "ought",
+          "ko": "~해야 한다"
+        },
+        {
+          "en": "seriously",
+          "ko": "진지하게"
+        }
+      ],
+      "slashes": [
+        "Animal thought and reason",
+        "seriously studied,"
+      ],
+      "roles": [
+        {
+          "text": "Animal thought and reason",
+          "role": "S"
+        },
+        {
+          "text": "ought to be seriously studied",
+          "role": "V"
+        },
+        {
+          "text": "he",
+          "role": "S"
+        },
+        {
+          "text": "argued",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s7_basic",
+          "candidates": [
+            "Animal thought and reason",
+            "ought to be seriously studied",
+            "he argued"
+          ],
+          "answers": [
+            "Animal thought and reason",
+            "ought to be seriously studied",
+            "he argued"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Animal thought and reason",
+                "ko": "동물의 사고력과 판단력은"
+              },
+              " ",
+              {
+                "en": "ought to be seriously studied",
+                "ko": "진지하게 연구되어야 한다"
+              },
+              ", ",
+              {
+                "en": "he argued",
+                "ko": "그는 주장했다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "reason",
+              "text": "이 글에서는 → 이성, 판단력  ('이유' 아님)",
+              "mark": "reason",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_7",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1",
+                "icon": "🧠",
+                "en": "consciousness to any animal · so recent",
+                "ko": "동물에게 의식이 있다고 본 건 아주 최근 일이에요",
+                "fresh": false
+              },
+              {
+                "label": "문장 2",
+                "icon": "📘",
+                "en": "animal cognition · taken seriously",
+                "ko": "Griffin은 동물의 인지를 진지하게 다뤄야 한다고 했어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3~4",
+                "icon": "🦇",
+                "en": "bats · inner worlds",
+                "ko": "박쥐를 평생 지켜본 Griffin은 박쥐에게 내면 세계가 있다고 확신했어요",
+                "fresh": false
+              },
+              {
+                "label": "문장 5",
+                "icon": "🔄",
+                "en": "flexible behavior · true intelligence",
+                "ko": "환경에 따라 행동을 바꾸는 건 진정한 지능의 특징이래요",
+                "fresh": false
+              },
+              {
+                "label": "문장 6~7",
+                "icon": "🧩",
+                "en": "the same problem-solving abilities as humans",
+                "ko": "박쥐도 사람과 같은 문제 해결 능력을 보여요 — 동물의 생각을 연구해야 해요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "After all, despite the flourishing of neuroscience, no one had yet found any part of the brain unique to humans that might be responsible for this hallowed “consciousness.”",
+      "model_translation": "결국, 신경과학의 번영에도 불구하고, 이 신성한 '의식'을 담당할지도 모르는 인간에게만 유일무이한 뇌의 어떤 부위를 아직 아무도 발견하지 못했다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "After all",
+          "ko": "결국 · 앞 주장의 근거를 댈 때"
+        },
+        {
+          "en": "despite",
+          "ko": "~에도 불구하고"
+        },
+        {
+          "en": "the flourishing of neuroscience",
+          "ko": "신경과학의 번영"
+        },
+        {
+          "en": "flourishing",
+          "ko": "번영, 번성"
+        },
+        {
+          "en": "neuroscience",
+          "ko": "신경과학"
+        },
+        {
+          "en": "no one",
+          "ko": "아무도 ~ 않다"
+        },
+        {
+          "en": "had yet found",
+          "ko": "아직 찾았다 · no one과 함께 '아직 아무도 찾지 못했다'"
+        },
+        {
+          "en": "any part of the brain",
+          "ko": "뇌의 어떤 부위"
+        },
+        {
+          "en": "brain",
+          "ko": "뇌"
+        },
+        {
+          "en": "unique to humans",
+          "ko": "인간에게만 있는"
+        },
+        {
+          "en": "unique",
+          "ko": "유일무이한, 고유한"
+        },
+        {
+          "en": "might be responsible for",
+          "ko": "~을 담당할지도 모르는"
+        },
+        {
+          "en": "hallowed",
+          "ko": "신성한 (*풀이 단어)"
+        },
+        {
+          "en": "consciousness",
+          "ko": "의식"
+        },
+        {
+          "en": "After",
+          "ko": "~ 뒤에"
+        },
+        {
+          "en": "part",
+          "ko": "부위, 부분"
+        },
+        {
+          "en": "humans",
+          "ko": "인간"
+        },
+        {
+          "en": "responsible",
+          "ko": "책임이 있는, 주역인"
+        }
+      ],
+      "slashes": [
+        "After all,",
+        "of neuroscience,",
+        "had yet found",
+        "of the brain",
+        "unique to humans",
+        "might be responsible"
+      ],
+      "roles": [
+        {
+          "text": "no one",
+          "role": "S"
+        },
+        {
+          "text": "had … found",
+          "role": "V"
+        },
+        {
+          "text": "any part of the brain unique to humans that might be responsible for this hallowed “consciousness",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "unique to humans",
+        "that might be responsible for this hallowed “consciousness"
+      ],
+      "emphasis": [
+        "no one",
+        "unique to humans"
+      ],
+      "steps": [
+        {
+          "id": "s8_found",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "신경과학이 크게 발전했는데도, 의식을 담당하는 인간만의 뇌 부위를 찾았을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "주어 no one(아무도 ~ 않다)을 봐요. 문장 전체가 부정이에요.",
+              "주어 no one(아무도 ~ 않다)을 봐요. 문장 전체가 부정이에요."
+            ],
+            "explain": "'no one had yet found', 아직 아무도 발견하지 못했대요. 신경과학이 번성했는데도요(despite).",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'no one had yet found', 아직 아무도 발견하지 못했대요. 신경과학이 번성했는데도요(despite).",
+              "o2": "'no one had yet found', 아직 아무도 발견하지 못했대요. 신경과학이 번성했는데도요(despite)."
+            },
+            "point": "인간에게만 있고 의식을 담당할 뇌 부위 → 아직 아무도 못 찾음"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "아직 아무도 못 찾았다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "신경과학이 찾아냈다"
+            },
+            {
+              "id": "o2",
+              "label": "동물의 뇌에서만 찾았다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "no one",
+            "unique to humans"
+          ],
+          "tips": [
+            {
+              "label": "no one + 동사",
+              "text": "'아무도 ~ 않다'예요. not이 없어도 문장 전체가 부정이에요.",
+              "mark": "no one"
+            },
+            {
+              "label": "despite ~",
+              "text": "'~에도 불구하고'예요. 뒤에는 명사(the flourishing)가 와요.",
+              "mark": "despite"
+            },
+            {
+              "label": "this hallowed “consciousness”",
+              "text": "따옴표는 '사람들이 그렇게 떠받드는' 정도로 거리를 두는 표시예요. hallowed는 *풀이 단어(신성한)예요.",
+              "mark": "hallowed"
+            }
+          ]
+        },
+        {
+          "id": "s8_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "unique to humans(인간에게만 있는)는 칠판 어느 쪽 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "Griffin은 동물에게도 의식이 있다고 봐요. '인간에게만'이 그 생각과 같은지 봐요.",
+              "Griffin은 동물에게도 의식이 있다고 봐요. '인간에게만'이 그 생각과 같은지 봐요."
+            ],
+            "explain": "Griffin은 의식이 동물에게도 있다고 봐요. 인간에게만 있다는 건 Griffin이 맞서는 생각이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "Griffin은 의식이 동물에게도 있다고 봐요. 인간에게만 있다는 건 Griffin이 맞서는 생각이에요."
+            },
+            "point": "unique to humans(인간에게만) ↔ Griffin(동물에게도)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · Griffin 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 반대 쪽",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "unique to humans"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "동물의 의식",
+            "left": {
+              "label": "Griffin 쪽 (동물에게도)",
+              "words": [
+                {
+                  "text": "consciousness to any animal",
+                  "ko": "동물에게도 의식"
+                },
+                {
+                  "text": "inner worlds",
+                  "ko": "내면 세계"
+                },
+                {
+                  "text": "true intelligence",
+                  "ko": "진정한 지능"
+                },
+                {
+                  "text": "same problem-solving abilities",
+                  "ko": "같은 문제 해결 능력"
+                },
+                {
+                  "text": "thought and reason",
+                  "ko": "사고력과 판단력"
+                }
+              ]
+            },
+            "right": {
+              "label": "반대 쪽",
+              "words": [
+                {
+                  "text": "unique to humans",
+                  "ko": "인간에게만 있는",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "unique to humans"
+              ],
+              "left": "왼쪽 · Griffin 쪽",
+              "right": "오른쪽 · 반대 쪽"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Wasn’t it time to give up the ghost?",
+      "model_translation": "그 환상을 포기할 때가 되지 않았는가?",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Wasn’t it time to",
+          "ko": "~할 때가 되지 않았는가"
+        },
+        {
+          "en": "give up",
+          "ko": "포기하다, 버리다"
+        },
+        {
+          "en": "the ghost",
+          "ko": "그 유령"
+        },
+        {
+          "en": "ghost",
+          "ko": "유령"
+        },
+        {
+          "en": "Wasn’t",
+          "ko": "~이 아니었다"
+        },
+        {
+          "en": "give",
+          "ko": "주다 · give up = 포기하다"
+        }
+      ],
+      "roles": [
+        {
+          "text": "Wasn’t",
+          "role": "V"
+        },
+        {
+          "text": "it",
+          "role": "S"
+        },
+        {
+          "text": "time",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_sort",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "드디어 밑줄이에요. Griffin이 버리자는 the ghost(유령)는 칠판 어느 쪽 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "give up은 '버리다'예요. Griffin이 버리자고 할 생각은 자기 생각일지, 맞서는 생각일지 봐요.",
+              "give up은 '버리다'예요. Griffin이 버리자고 할 생각은 자기 생각일지, 맞서는 생각일지 봐요."
+            ],
+            "explain": "Griffin은 자기 생각을 버리자고 하지 않아요. 버리자는 건 Griffin이 맞서는 쪽 생각이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "Griffin은 자기 생각을 버리자고 하지 않아요. 버리자는 건 Griffin이 맞서는 쪽 생각이에요."
+            },
+            "point": "the ghost = Griffin이 버리자는 생각 → 반대 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · Griffin 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · 반대 쪽",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "the ghost"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "동물의 의식",
+            "left": {
+              "label": "Griffin 쪽 (동물에게도)",
+              "words": [
+                {
+                  "text": "consciousness to any animal",
+                  "ko": "동물에게도 의식"
+                },
+                {
+                  "text": "inner worlds",
+                  "ko": "내면 세계"
+                },
+                {
+                  "text": "true intelligence",
+                  "ko": "진정한 지능"
+                },
+                {
+                  "text": "same problem-solving abilities",
+                  "ko": "같은 문제 해결 능력"
+                },
+                {
+                  "text": "thought and reason",
+                  "ko": "사고력과 판단력"
+                }
+              ]
+            },
+            "right": {
+              "label": "반대 쪽",
+              "words": [
+                {
+                  "text": "unique to humans",
+                  "ko": "인간에게만 있는"
+                },
+                {
+                  "text": "the ghost",
+                  "ko": "그 유령",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔",
+            "sort": {
+              "words": [
+                "the ghost"
+              ],
+              "left": "왼쪽 · Griffin 쪽",
+              "right": "오른쪽 · 반대 쪽"
+            }
+          }
+        },
+        {
+          "id": "s9_q",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 the ghost가 가리키는 생각은 무엇일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "8문장의 unique to humans(인간에게만 있는)를 떠올려 봐요. 무엇이 인간에게만 있다고 했나요?",
+              "8문장의 unique to humans(인간에게만 있는)를 떠올려 봐요. 무엇이 인간에게만 있다고 했나요?"
+            ],
+            "explain": "'unique to humans', 의식을 담당하는 인간만의 뇌 부위를 아무도 못 찾았대요. 누가 더 똑똑한지가 아니라 의식이 인간에게만 있느냐는 이야기예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'unique to humans', 의식을 담당하는 인간만의 뇌 부위를 아무도 못 찾았대요. 누가 더 똑똑한지가 아니라 의식이 인간에게만 있느냐는 이야기예요.",
+              "o2": "'unique to humans', 의식을 담당하는 인간만의 뇌 부위를 아무도 못 찾았대요. 누가 더 똑똑한지가 아니라 의식이 인간에게만 있느냐는 이야기예요."
+            },
+            "point": "the ghost = 의식은 인간에게만 있다는 믿음 (더 똑똑하다는 비교 X)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "사람에게만 의식이 있다는 생각",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "사람이 동물보다 더 똑똑하다는 생각"
+            },
+            {
+              "id": "o2",
+              "label": "동물에게도 내면 세계가 있다는 생각"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "the ghost"
+          ]
+        },
+        {
+          "id": "s9_map",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "the ghost는 실체 없는 '환상'이에요. 의식이 인간에게만 있다는 믿음을 이제 버릴 때가 됐다는 말이에요.\n이 뜻을 바꿔 쓴 보기를 골라 봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요",
+          "tips": [
+            {
+              "label": "Wasn’t it time to ~?",
+              "text": "'~할 때가 되지 않았나요?'예요. 묻는 말이지만 '이제 ~할 때다'라는 주장이에요.",
+              "mark": "Wasn’t it time"
+            },
+            {
+              "label": "ghost",
+              "text": "원래 뜻은 '유령'이에요. 여기서는 실체가 없는 '환상'이에요.",
+              "mark": "ghost"
+            },
+            {
+              "label": "give up",
+              "text": "'포기하다, 버리다'예요.",
+              "mark": "give up"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

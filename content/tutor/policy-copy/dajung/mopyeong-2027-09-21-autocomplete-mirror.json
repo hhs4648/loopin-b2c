@@ -1,0 +1,260 @@
+{
+  "lesson": "mopyeong-2027-09-21-autocomplete-mirror",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "밑줄 문제 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "s1_keys": {
+      "ask": "이 문장을 빠르게 이해하려면 모든 단어를 읽지 않아도 돼요. 핵심어 3개를 찾아볼까요?",
+      "wrong": "그건 '~하려고 애쓰다'라는 말이에요. 무엇을 하려는지가 핵심이에요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 찾았어요!",
+      "explain": "핵심어는 Social media companies, keep you on site, results useful to you예요. 소셜 미디어 기업은 나를 사이트에 붙잡아 두고, 나에게 쓸모 있는 결과를 주려 해요.",
+      "point": "핵심어 = Social media companies · keep you on site · results useful to you",
+      "from": "1xh8q8m"
+    },
+    "s2_this": {
+      "ask": "this personalization(이러한 개인화)은 무엇을 가리킬까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "this가 가리키는 것은 앞 문장에서 찾아요. 1문장 끝 results useful to you를 봐요.",
+        "this가 가리키는 것은 앞 문장에서 찾아요. 1문장 끝 results useful to you를 봐요."
+      ],
+      "explain": "this는 앞 문장을 가리켜요. 1문장의 results useful to you, 나에게 쓸모 있게 맞춰 준 결과예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "this는 앞 문장을 가리켜요. 1문장의 results useful to you, 나에게 쓸모 있게 맞춰 준 결과예요.",
+        "o2": "this는 앞 문장을 가리켜요. 1문장의 results useful to you, 나에게 쓸모 있게 맞춰 준 결과예요."
+      },
+      "point": "this personalization = 나에게 맞춘 결과 (뉴욕과 파리에서 bakery 검색 결과가 다름)",
+      "from": "1djbbof"
+    },
+    "story_2": {
+      "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요.",
+      "from": "tguvur"
+    },
+    "s3_skim": {
+      "say": "자동 완성(autocomplete)도 나에게 맞는 검색어를 골라 제안해요. cats를 치면 cats movie를 띄우는 식이에요.",
+      "from": "1p21u8t"
+    },
+    "s4_look": {
+      "ask": "자동 완성 제안을 보면 무엇을 들여다볼 수 있대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "offer a look into 뒤를 봐요. accumulated user behavior는 '누적된 사용자 행동'이에요.",
+        "offer a look into 뒤를 봐요. accumulated user behavior는 '누적된 사용자 행동'이에요."
+      ],
+      "explain": "'the algorithm’s understanding of accumulated user behavior', 사용자들이 쌓아 온 행동을 알고리즘이 어떻게 이해하는지 보여 준대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'the algorithm’s understanding of accumulated user behavior', 사용자들이 쌓아 온 행동을 알고리즘이 어떻게 이해하는지 보여 준대요.",
+        "o2": "'the algorithm’s understanding of accumulated user behavior', 사용자들이 쌓아 온 행동을 알고리즘이 어떻게 이해하는지 보여 준대요."
+      },
+      "point": "자동 완성 제안 = 누적된 사용자 행동(accumulated user behavior)을 보여 준다",
+      "from": "2cbb5n"
+    },
+    "story_4": {
+      "say": "칠판에 이어서 정리해 볼게요.",
+      "from": "tavsof"
+    },
+    "s5_match": {
+      "ask": "핵심어만 모았어요. 영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "xq7yeu"
+    },
+    "s5_mine": {
+      "ask": "플랫폼은 방대한 사용자 정보 전체에서 무엇을 캐낸대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "are mining for 뒤를 봐요. similarities는 similar(비슷한)의 명사예요.",
+        "are mining for 뒤를 봐요. similarities는 similar(비슷한)의 명사예요."
+      ],
+      "explain": "'mining for similarities across vast quantities of user information', 수많은 사용자 정보에서 비슷한 점을 찾는대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'mining for similarities across vast quantities of user information', 수많은 사용자 정보에서 비슷한 점을 찾는대요.",
+        "o2": "'mining for similarities across vast quantities of user information', 수많은 사용자 정보에서 비슷한 점을 찾는대요."
+      },
+      "point": "플랫폼 = 수많은 사용자 정보에서 비슷한 점(similarities)을 캐낸다",
+      "from": "1i4dv8w"
+    },
+    "s5_board": {
+      "say": "but을 기준으로 두 그룹으로 나눠 봐요.\n결과는 나에게 맞춤(personalized)이지만, 데이터는 수많은 사용자의 것(massive)이에요.",
+      "from": "6x02ai"
+    },
+    "s5_sort": {
+      "ask": "similarities(비슷한 점)는 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "누구와 누구 사이의 비슷한 점인지 봐요. across vast quantities of user information이에요.",
+        "누구와 누구 사이의 비슷한 점인지 봐요. across vast quantities of user information이에요."
+      ],
+      "explain": "수많은 사용자 정보 전체에서 찾는 비슷한 점이에요. 나 한 사람이 아니라 많은 사용자 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "수많은 사용자 정보 전체에서 찾는 비슷한 점이에요. 나 한 사람이 아니라 많은 사용자 쪽이에요."
+      },
+      "point": "similarities → massive(수많은 사용자) 쪽",
+      "from": "1v821km"
+    },
+    "s6_suggest": {
+      "ask": "자동 완성은 나에게 어떤 검색어를 띄울 가능성이 더 높대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "If 덩어리를 봐요. 누가 검색을 완료하면 알고리즘이 그걸 고려한대요.",
+        "If 덩어리를 봐요. 누가 검색을 완료하면 알고리즘이 그걸 고려한대요."
+      ],
+      "explain": "'If a whole lot of users near you or similar to you complete the search', 나와 가깝거나 비슷한 사용자들이 많이 쓴 검색어를 더 띄울 수 있대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'If a whole lot of users near you or similar to you complete the search', 나와 가깝거나 비슷한 사용자들이 많이 쓴 검색어를 더 띄울 수 있대요.",
+        "o2": "'If a whole lot of users near you or similar to you complete the search', 나와 가깝거나 비슷한 사용자들이 많이 쓴 검색어를 더 띄울 수 있대요."
+      },
+      "point": "나와 비슷한 많은 사용자가 쓴 검색어 → 자동 완성이 나에게 제안",
+      "from": "13v26un"
+    },
+    "s6_sort": {
+      "ask": "a whole lot of users(아주 많은 사용자)는 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "나 한 사람인지, 많은 사람인지 봐요.",
+        "나 한 사람인지, 많은 사람인지 봐요."
+      ],
+      "explain": "나 한 사람이 아니라 많은 사용자예요. massive 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "나 한 사람이 아니라 많은 사용자예요. massive 쪽이에요."
+      },
+      "point": "a whole lot of users → massive(수많은 사용자) 쪽",
+      "from": "cpg8iy"
+    },
+    "s7_since": {
+      "ask": "Since 덩어리를 보면, 자동 완성 결과는 어디에서 나올까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "are derived from 뒤를 봐요. derive from ~은 '~에서 얻다'예요.",
+        "are derived from 뒤를 봐요. derive from ~은 '~에서 얻다'예요."
+      ],
+      "explain": "'derived from data related to millions of searches', 수백만 건의 검색과 관련된 데이터에서 나온대요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "'derived from data related to millions of searches', 수백만 건의 검색과 관련된 데이터에서 나온대요.",
+        "o2": "'derived from data related to millions of searches', 수백만 건의 검색과 관련된 데이터에서 나온대요."
+      },
+      "point": "자동 완성 결과 = 수백만 건의 검색 데이터에서 나옴",
+      "from": "1jeee9f"
+    },
+    "s7_sort": {
+      "ask": "드디어 밑줄이에요. 거울이 비추는 society(사회)는 칠판 어느 쪽 말일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "사회는 나 한 사람인지, 많은 사람인지 봐요.",
+        "사회는 나 한 사람인지, 많은 사람인지 봐요."
+      ],
+      "explain": "사회는 나 한 사람이 아니라 수많은 사람이에요. massive 쪽이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "사회는 나 한 사람이 아니라 수많은 사람이에요. massive 쪽이에요."
+      },
+      "point": "society → massive(수많은 사용자) 쪽",
+      "from": "c5n5s6"
+    },
+    "s7_q": {
+      "ask": "그럼 자동 완성이라는 거울에 비치는 것은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "거울은 앞에 있는 것을 그대로 비춰요. 자동 완성 결과가 무엇에서 나왔는지 떠올려 봐요.",
+        "거울은 앞에 있는 것을 그대로 비춰요. 자동 완성 결과가 무엇에서 나왔는지 떠올려 봐요."
+      ],
+      "explain": "자동 완성은 수백만 건의 검색에서 비슷한 점을 찾아 보여 줘요. 개인 정보를 숨기거나 결과를 바꾼다는 말은 글에 없어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "자동 완성은 수백만 건의 검색에서 비슷한 점을 찾아 보여 줘요. 개인 정보를 숨기거나 결과를 바꾼다는 말은 글에 없어요.",
+        "o2": "자동 완성은 수백만 건의 검색에서 비슷한 점을 찾아 보여 줘요. 개인 정보를 숨기거나 결과를 바꾼다는 말은 글에 없어요."
+      },
+      "point": "거울에 비치는 것 = 많은 사용자의 검색 (개인 정보·조작 이야기 X)",
+      "from": "1v1amec"
+    },
+    "s7_map": {
+      "say": "hold a mirror up to ~는 '~을 거울에 비추다', 그대로 보여 준다는 말이에요. 자동 완성은 수많은 사람이 무엇을 검색하는지 그대로 보여 줘요.\n이 뜻을 바꿔 쓴 보기를 골라 봐요.",
+      "from": "ai9mwm"
+    }
+  },
+  "exam": {
+    "ask": "보기도 다 해석할 필요 없어요. 색칠된 단어만 보고, 거울이 칠판 어느 쪽을 비추는지 떠올리며 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 자동 완성은 수백만 건의 검색에서 나와요. 많은 사용자의 공통점과 관심사를 거울처럼 그대로 보여 준다는 말이에요.",
+    "final_wrong": "정답은 ②예요. 자동 완성은 수많은 사용자 정보에서 비슷한 점을 찾아 보여 줘요. 그래서 사회를 비추는 거울이에요.",
+    "option_feedback": {
+      "1": "누구에게 유리하게 결과를 조작한다는 말은 글에 없어요. 많은 사용자의 검색을 그대로 비춰요.",
+      "3": "personal data, algorithms는 글에 나온 말이지만, 데이터를 검열한다(censoring)는 이야기는 없어요.",
+      "4": "사용자 네트워크를 만든다는 말은 글에 없어요. 많은 사용자의 검색을 보여 주는 거예요.",
+      "5": "데이터가 무작위처럼 보인다는 말은 글에 없어요. 거울은 사용자들의 비슷한 점을 그대로 비춰요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 22%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "③에는 personal data, social media algorithms처럼 글에 나온 말이 많아서 그럴듯해 보여요. 하지만 글에 검열(censoring), 즉 무언가를 막거나 지운다는 말은 없어요. 거울은 수많은 사용자의 비슷한 점을 그대로 비춰요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "5문장",
+              "text": "mining for similarities across vast quantities of user information",
+              "ko": "수많은 사용자 정보에서 비슷한 점을 찾음",
+              "tone": "hl"
+            },
+            {
+              "label": "7문장",
+              "text": "holding a mirror up to society",
+              "ko": "사회를 거울처럼 그대로 비춤",
+              "tone": "hl"
+            },
+            {
+              "label": "③",
+              "text": "censoring",
+              "ko": "검열하다 — 글에 없는 말",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "lbggv6"
+  },
+  "intro": {
+    "topic": {
+      "say": "검색창에 글자를 치면 검색어가 저절로 뜨죠? 이번 글은 그 자동 완성(autocomplete)을 다뤄요."
+    },
+    "method1": {
+      "say": "수능 문제는 시간 싸움이에요."
+    },
+    "method2": {
+      "say": "밑줄 문제는 핵심 단어 위주로 지문의 요지를 빠르게 파악하면 좋아요."
+    },
+    "from": "1s4kl61"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "1utk2w5"
+}

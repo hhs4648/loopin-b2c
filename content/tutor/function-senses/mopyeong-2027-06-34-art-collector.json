@@ -1,0 +1,100 @@
+{
+ "1": [
+  {
+   "word": "but",
+   "phrase": "not only on the market but inherently",
+   "sense": "~뿐 아니라 (본질적으로도)",
+   "usage": "not only A but (also) B"
+  },
+  {
+   "word": "for",
+   "phrase": "for himself",
+   "sense": "~을 위해",
+   "usage": "전치사 for (목적·대상)"
+  },
+  {
+   "word": "as",
+   "phrase": "as the representative",
+   "sense": "~로서",
+   "usage": "전치사 as (자격)"
+  }
+ ],
+ "2": [
+  {
+   "word": "that",
+   "phrase": "that is,",
+   "sense": "즉, 다시 말해",
+   "usage": "삽입 that is"
+  },
+  {
+   "word": "as",
+   "phrase": "the same class as",
+   "sense": "~와 같은",
+   "usage": "the same A as B = B와 같은 A"
+  }
+ ],
+ "3": [
+  {
+   "word": "as",
+   "phrase": "as a significant point",
+   "sense": "~로서",
+   "usage": "전치사 as (자격)"
+  },
+  {
+   "word": "as",
+   "phrase": "as a whole",
+   "sense": "전체로서",
+   "usage": "as a whole = 전체로서"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "open to anything",
+   "sense": "~에 (열려 있다)",
+   "usage": "be open to + 명사"
+  }
+ ],
+ "5": [
+  {
+   "word": "but",
+   "phrase": "all but certain",
+   "sense": "거의",
+   "usage": "all but + 형용사 = 거의 ~한"
+  },
+  {
+   "word": "to",
+   "phrase": "to be displaced",
+   "sense": "~될 (것이 확실한)",
+   "usage": "be certain to + 동사원형"
+  },
+  {
+   "word": "as",
+   "phrase": "as others have been",
+   "sense": "~처럼, ~듯이",
+   "usage": "접속사 as (같은 방식)"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "committing himself to",
+   "sense": "~에 (헌신하다)",
+   "usage": "commit oneself to + 명사"
+  }
+ ],
+ "7": [
+  {
+   "word": "but",
+   "phrase": "but the conviction",
+   "sense": "~도 (B도)",
+   "usage": "not only A but B"
+  },
+  {
+   "word": "that",
+   "phrase": "the conviction that",
+   "sense": "~라는 (확신)",
+   "usage": "동격 that — the conviction의 내용"
+  }
+ ]
+}

@@ -1,0 +1,256 @@
+{
+  "lesson": "mopyeong-2027-06-37-spectacle-culture",
+  "character": "dajung",
+  "note": "생성물",
+  "topic_intro": "순서 푸는 법",
+  "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+  "helps": {},
+  "steps": {
+    "g_main": {
+      "ask": "Although(비록 ~이지만)는 한발 물러서는 말이에요. 글쓴이가 정말 하고 싶은 말은 무엇일까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "콤마(,) 뒤 메인 문장 spectacle works primarily within …을 봐요.",
+        "콤마(,) 뒤 메인 문장 spectacle works primarily within …을 봐요."
+      ],
+      "explain": "Although 덩어리는 '본능적 반응을 일으키는 요소도 있을 수 있지만'이라고 물러서는 말이에요. 콤마(,) 뒤 'works primarily within a cultural frame'이 글쓴이의 말이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "Although 덩어리는 '본능적 반응을 일으키는 요소도 있을 수 있지만'이라고 물러서는 말이에요. 콤마(,) 뒤 'works primarily within a cultural frame'이 글쓴이의 말이에요.",
+        "o2": "Although 덩어리는 '본능적 반응을 일으키는 요소도 있을 수 있지만'이라고 물러서는 말이에요. 콤마(,) 뒤 'works primarily within a cultural frame'이 글쓴이의 말이에요."
+      },
+      "from": "1qveiq9"
+    },
+    "g_next": {
+      "ask": "주어진 글은 '구경거리는 문화의 틀 안에서 작용하고 관찰자의 지각 방식에 영향을 받는다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "주어진 글의 중심은 a cultural frame(문화의 틀)이에요.",
+        "주어진 글의 중심은 a cultural frame(문화의 틀)이에요."
+      ],
+      "explain": "주어진 글은 구경거리가 문화의 틀 안에서 작용한다는 주장이에요. 이 주장을 이어 받아 더 풀어 주는 내용이 오기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "주어진 글은 구경거리가 문화의 틀 안에서 작용한다는 주장이에요. 이 주장을 이어 받아 더 풀어 주는 내용이 오기 쉬워요.",
+        "o2": "주어진 글은 구경거리가 문화의 틀 안에서 작용한다는 주장이에요. 이 주장을 이어 받아 더 풀어 주는 내용이 오기 쉬워요."
+      },
+      "point": "주어진 글 끝 '문화의 틀 안에서 작용' → 다음은 그 주장을 더 풀어 주는 내용",
+      "from": "1kz9wi8"
+    },
+    "paper_order": {
+      "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요.",
+      "from": "11bywp8"
+    },
+    "s2_match": {
+      "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+      "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 맞췄어요!",
+      "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요.",
+      "from": "bcpnu1"
+    },
+    "a_before": {
+      "ask": "(A)는 'By extension(더 나아가), 구경거리는 새것과 기존의 것을 섞어 만들어진다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "By extension은 '같은 원리를 넓혀서'예요. blending the innovative with the established와 같은 원리가 앞에 있어야 해요.",
+        "By extension은 '같은 원리를 넓혀서'예요. blending the innovative with the established와 같은 원리가 앞에 있어야 해요."
+      ],
+      "explain": "By extension(더 나아가)은 앞에서 말한 원리를 구경거리로 넓힐 때 써요. 그러니 앞에도 '기존의 것 + 새것'과 같은 원리가 먼저 나와야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "By extension(더 나아가)은 앞에서 말한 원리를 구경거리로 넓힐 때 써요. 그러니 앞에도 '기존의 것 + 새것'과 같은 원리가 먼저 나와야 해요.",
+        "o1": "By extension(더 나아가)은 앞에서 말한 원리를 구경거리로 넓힐 때 써요. 그러니 앞에도 '기존의 것 + 새것'과 같은 원리가 먼저 나와야 해요."
+      },
+      "point": "(A) By extension ← 앞에 '기존 + 새로움'과 같은 원리(비슷한 예)",
+      "from": "izxnrz"
+    },
+    "a_next": {
+      "ask": "(A)는 'but imitation is not enough(하지만 모방만으로는 충분하지 않다)'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "not enough(충분하지 않다)라고 했어요. 그럼 무엇이 더 필요한지가 궁금해지죠.",
+        "not enough(충분하지 않다)라고 했어요. 그럼 무엇이 더 필요한지가 궁금해지죠."
+      ],
+      "explain": "모방만으로는 부족하다고 했으니, 다음엔 그 밖에 무엇이 더 필요한지가 이어지기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o1": "모방만으로는 부족하다고 했으니, 다음엔 그 밖에 무엇이 더 필요한지가 이어지기 쉬워요.",
+        "o2": "모방만으로는 부족하다고 했으니, 다음엔 그 밖에 무엇이 더 필요한지가 이어지기 쉬워요."
+      },
+      "point": "(A) 끝 '모방만으로는 충분하지 않다' → 다음은 더 필요한 것",
+      "from": "w23qt9"
+    },
+    "b_before": {
+      "ask": "(B)는 'Spectacle must also be spectacular(구경거리는 또한 장관이어야 한다)'로 시작해요. also(또한)를 보면 앞에는 무엇이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "must(~해야 한다)와 also(또한)를 같이 봐요. '~해야 한다'를 하나 더 붙이는 말이에요.",
+        "must(~해야 한다)와 also(또한)를 같이 봐요. '~해야 한다'를 하나 더 붙이는 말이에요."
+      ],
+      "explain": "must also는 '~해야 한다'는 조건을 하나 더 붙이는 말이에요. 그러니 앞에도 구경거리가 무엇을 해야 하는지가 먼저 있어야 해요. 문화의 틀 이야기는 어떻게 작용하는지 설명이지 조건이 아니에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "must also는 '~해야 한다'는 조건을 하나 더 붙이는 말이에요. 그러니 앞에도 구경거리가 무엇을 해야 하는지가 먼저 있어야 해요. 문화의 틀 이야기는 어떻게 작용하는지 설명이지 조건이 아니에요.",
+        "o2": "must also는 '~해야 한다'는 조건을 하나 더 붙이는 말이에요. 그러니 앞에도 구경거리가 무엇을 해야 하는지가 먼저 있어야 해요. 문화의 틀 이야기는 어떻게 작용하는지 설명이지 조건이 아니에요."
+      },
+      "point": "(B) must also ← 앞에 구경거리가 '~해야 한다'는 다른 조건",
+      "from": "1j2a60e"
+    },
+    "b_amaze": {
+      "ask": "구경거리가 사람들의 집단 기억에 남으려면 어떻게 해야 한대요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "has to amaze spectators, outdoing previous efforts를 봐요. outdo는 '능가하다'예요.",
+        "has to amaze spectators, outdoing previous efforts를 봐요. outdo는 '능가하다'예요."
+      ],
+      "explain": "'has to amaze spectators, outdoing previous efforts', 관객을 놀라게 하고 이전의 시도들을 능가해야 한대요. if it is to become …는 '~이 되려면'이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "'has to amaze spectators, outdoing previous efforts', 관객을 놀라게 하고 이전의 시도들을 능가해야 한대요. if it is to become …는 '~이 되려면'이에요.",
+        "o1": "'has to amaze spectators, outdoing previous efforts', 관객을 놀라게 하고 이전의 시도들을 능가해야 한대요. if it is to become …는 '~이 되려면'이에요."
+      },
+      "from": "wrv0lu"
+    },
+    "c_before": {
+      "ask": "(C)는 'In saying that(그렇게 말하면서)'으로 시작해요. 앞에는 어떤 말이 와야 할까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "(C)가 that을 받아 무엇에 대해 덧붙이는지 봐요. expression of culture(문화의 표현)가 나와요.",
+        "(C)가 that을 받아 무엇에 대해 덧붙이는지 봐요. expression of culture(문화의 표현)가 나와요."
+      ],
+      "explain": "(C)는 that을 받아 '구경거리의 창조는 문화의 보편적 표현이 아니라 여러 문화가 쓰는 전략'이라고 덧붙여요. 그러니 that은 구경거리와 문화를 이어 말한 내용이어야 해요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "(C)는 that을 받아 '구경거리의 창조는 문화의 보편적 표현이 아니라 여러 문화가 쓰는 전략'이라고 덧붙여요. 그러니 that은 구경거리와 문화를 이어 말한 내용이어야 해요.",
+        "o2": "(C)는 that을 받아 '구경거리의 창조는 문화의 보편적 표현이 아니라 여러 문화가 쓰는 전략'이라고 덧붙여요. 그러니 that은 구경거리와 문화를 이어 말한 내용이어야 해요."
+      },
+      "point": "(C) In saying that ← 앞에 구경거리와 문화를 이어 말한 내용",
+      "from": "oa4b3e"
+    },
+    "c_next": {
+      "ask": "(C)는 '작가는 장르의 규칙에 얽매이면서도 충분한 독창성을 보여야 한다'는 비유로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+      "reask": "그럼 하나 골라 봐요.",
+      "hints": [
+        "The task of creating spectacle has been likened to …, 구경거리 만들기를 문학 창작에 비유했어요.",
+        "The task of creating spectacle has been likened to …, 구경거리 만들기를 문학 창작에 비유했어요."
+      ],
+      "explain": "구경거리 만들기를 문학 창작에 비유했으니, 다음엔 그 원리(규칙 + 독창성)를 다시 구경거리에 적용하는 말이 오기 쉬워요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "o0": "구경거리 만들기를 문학 창작에 비유했으니, 다음엔 그 원리(규칙 + 독창성)를 다시 구경거리에 적용하는 말이 오기 쉬워요.",
+        "o2": "구경거리 만들기를 문학 창작에 비유했으니, 다음엔 그 원리(규칙 + 독창성)를 다시 구경거리에 적용하는 말이 오기 쉬워요."
+      },
+      "point": "(C) 끝 문학 비유(규칙 + 독창성) → 다음은 그 원리를 구경거리에 넓힘",
+      "from": "1rousv8"
+    },
+    "order_link": {
+      "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+      "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+      "wrong_by": {
+        "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+        "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+      },
+      "more": "좋아요! {n}개 남았어요.",
+      "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+      "explain": "주어진 글(구경거리는 문화의 틀 안에서 작용) → (C) 그렇게 말하며, 문화의 보편적 표현이 아니라 전략이고 문학 창작에 비유된다 → (A) 더 나아가 기존의 것과 새것을 섞어 만들고, 모방만으론 부족하다 → (B) 또한 장관이어야 한다, 순서예요.",
+      "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지",
+      "from": "1turqbf"
+    },
+    "c_go": {
+      "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?",
+      "from": "eua8yu"
+    }
+  },
+  "exam": {
+    "ask": "단락 첫머리 단서(In saying that, By extension, must also)를 떠올리며 순서를 골라 봐요.",
+    "first_correct": "맞았어요!",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "answer_explain": "정답이에요! 문화의 틀 → (C) 그렇게 말하며, 문화의 표현이 아니라 전략이고 문학에 비유된다 → (A) 더 나아가 기존의 것 + 새것, 모방만으론 부족 → (B) 또한 장관이어야 한다, 순서예요.",
+    "final_wrong": "정답은 ④ (C)-(A)-(B)예요.",
+    "option_feedback": {
+      "1": "(A)의 By extension(더 나아가)은 앞의 원리를 넓히는 말이에요. 주어진 글 바로 뒤에는 넓힐 원리(문학 비유)가 아직 없어요.",
+      "2": "가장 많이 고른 오답이에요. (B)의 must also(또한 ~해야 한다)는 앞에 구경거리가 해야 할 조건이 있어야 해요. 그 조건은 (A) 끝 '모방만으로는 부족하다'예요.",
+      "3": "많이 고른 오답이에요. (B)가 주어진 글 바로 뒤에 오면 must also가 받을 조건이 없어요. (C)의 In saying that도 문화의 틀 이야기를 받아요.",
+      "5": "(B)의 must also는 (A) 끝 '모방만으로는 부족하다'를 받아요. (A)의 By extension은 (C)의 문학 비유를 넓히는 말이에요."
+    },
+    "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+    "option_review": {
+      "2": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 30%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "(B)의 also(또한)를 보고 주어진 글에 하나를 더 붙이는 말로 읽었을 거예요. 하지만 must also는 '~해야 한다'는 조건을 하나 더 붙이는 말이고, 주어진 글은 조건이 아니라 구경거리가 어떻게 작용하는지 설명이에요. 앞의 조건은 (A) 끝 'imitation is not enough(모방만으로는 부족하다)'이고, (B)의 outdoing previous efforts도 (A)의 previous festivals와 이어져요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "주어진 글",
+              "text": "spectacle works primarily within a cultural frame",
+              "ko": "어떻게 작용하는지 (조건 아님)",
+              "tone": "hl"
+            },
+            {
+              "label": "(A) 끝",
+              "text": "… but imitation is not enough",
+              "ko": "모방만으론 부족 → 무엇이 더?",
+              "tone": "hl2"
+            },
+            {
+              "label": "(B)",
+              "text": "Spectacle must also be spectacular … outdoing previous efforts",
+              "ko": "또한 장관이어야, 이전 시도를 능가",
+              "tone": "hl2"
+            }
+          ]
+        }
+      },
+      "3": {
+        "intro": "아쉽게도 틀렸어요. 이 보기는 19%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+        "intro_button": "같이 볼게요",
+        "say": "(B)를 주어진 글 바로 뒤에 놓고, (C)의 In saying that이 (B)를 받는다고 본 거예요. 하지만 (C)는 that을 받아 '구경거리의 창조는 문화의 보편적 표현이 아니다'라고 덧붙여요. 그러니 that은 '장관이어야 한다'가 아니라 주어진 글의 '문화의 틀' 이야기예요.",
+        "panel": {
+          "kind": "structure",
+          "rows": [
+            {
+              "label": "주어진 글",
+              "text": "… works primarily within a cultural frame",
+              "ko": "문화의 틀",
+              "tone": "hl"
+            },
+            {
+              "label": "(C)",
+              "text": "In saying that, … neither a universal nor … expression of culture",
+              "ko": "그 말(문화 이야기)을 받음",
+              "tone": "hl2"
+            }
+          ]
+        }
+      }
+    },
+    "from": "1yzhzbf"
+  },
+  "intro": {
+    "topic": {
+      "say": "축제의 퍼레이드나 불꽃놀이 같은 볼거리를 spectacle(구경거리)이라고 해요. 이번 글은 구경거리와 문화 이야기예요."
+    },
+    "method1": {
+      "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. In saying that, By extension, also 같은 말이 무엇을 받는지 찾아볼게요."
+    },
+    "from": "1spybbv"
+  },
+  "ending": {
+    "correct": "잘했어요. 오늘은 뜻을 참고해서 본 것이기 때문에 아직 완전히 소화되지 않았을 수 있어요. {weeks} 뒤에 다시 한번 볼 거예요.",
+    "wrong": "이번엔 한 번 헷갈렸으니 {weeks} 뒤에 다시 한번 볼 거예요.",
+    "never": "알겠어요, 이 지문은 복습 목록에서 뺄게요.",
+    "save_caption": "저장하면 특별 목록에서 바로 다시 볼 수 있어요.",
+    "words_passage": "본문 단어예요. 모르는 걸 체크해 봐요.",
+    "words_options": "보기 단어예요. 모르는 걸 체크해 봐요.",
+    "words_done": "다 했어요",
+    "match_title": "체크한 단어로 짝을 맞춰 봐요.",
+    "closing": "오늘 수업 끝! 체크한 단어는 단어장에 넣어 뒀어요. 수고했어요 😊",
+    "mastered": "바로 맞혔으니 다시 볼 때는 '다시 안 봄'으로 해 뒀어요. 필요하면 바꿔도 돼요.",
+    "mastered_later": "{weeks} 뒤에 한 번 더 볼게요."
+  },
+  "from": "t4h276"
+}

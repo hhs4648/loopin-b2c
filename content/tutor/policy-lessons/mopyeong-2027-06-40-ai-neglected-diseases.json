@@ -1,0 +1,1896 @@
+{
+  "id": "mopyeong-2027-06-40-ai-neglected-diseases",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 40번 (요약문 완성, 2점)",
+  "brief": {
+    "topic": "요약문 푸는 법: 지문을 먼저 읽으며 두 쪽 말을 칠판에 모으기 → 요약문 (A)(B)가 각각 어느 쪽인지 → 그 뜻의 말 고르기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "summary",
+    "labels": [
+      "지문 먼저 읽기",
+      "두 쪽 말 모으기",
+      "(A)(B) 맞추기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-ai-neglected-diseases.svg",
+      "alt": "칠판: Rare diseases(희귀 질병) + AI(인공지능)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "돈이 안 되는 병에도 치료제가 나올까요? 이번 글은 제약 산업과 AI 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "네",
+      "brief": {
+        "say": "요약문 문제는 지문을 먼저 읽으며 글쓴이 주장을 잡아요. 같은 쪽 말을 칠판에 모아요."
+      }
+    },
+    {
+      "id": "method2",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "마지막에 요약문을 읽고, (A)와 (B)가 칠판의 어느 쪽 말인지 보고 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?",
+    "underline": [
+      "(A) ________",
+      "(B) ________"
+    ],
+    "sentence": 6,
+    "analysis_first": true,
+    "wrong_rate": 61,
+    "wrong_rank": 4,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "prevention",
+        "ko": "예방"
+      },
+      {
+        "en": "marginalized",
+        "ko": "소외된"
+      },
+      {
+        "en": "spread",
+        "ko": "확산"
+      },
+      {
+        "en": "general",
+        "ko": "일반적인"
+      },
+      {
+        "en": "overlook",
+        "ko": "간과"
+      },
+      {
+        "en": "native",
+        "ko": "현지의, 토박이의"
+      },
+      {
+        "en": "ignorance",
+        "ko": "무지"
+      },
+      {
+        "en": "wealthy",
+        "ko": "부유한"
+      },
+      {
+        "en": "disregard",
+        "ko": "무시"
+      },
+      {
+        "en": "underserved",
+        "ko": "(의료) 서비스를 충분히 받지 못하는"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "prevention ······ marginalized",
+        "keywords": [],
+        "ko": "예방 ······ 소외된"
+      },
+      {
+        "id": "2",
+        "label": "spread ······ general",
+        "keywords": [],
+        "ko": "확산 ······ 일반적인"
+      },
+      {
+        "id": "3",
+        "label": "overlook ······ native",
+        "keywords": [],
+        "ko": "간과 ······ 현지의"
+      },
+      {
+        "id": "4",
+        "label": "ignorance ······ wealthy",
+        "keywords": [],
+        "ko": "무지 ······ 부유한"
+      },
+      {
+        "id": "5",
+        "label": "disregard ······ underserved",
+        "keywords": [],
+        "ko": "무시 ······ (의료) 서비스를 충분히 받지 못하는",
+        "correct": true
+      }
+    ],
+    "brief": {
+      "ask": "(A)와 (B) 둘 다 칠판 오른쪽 이야기예요. 두 칸이 다 맞는 보기를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 돈이 되는 병에 쏠린 불균형 때문에 수익이 덜 나는 병은 무시(disregard)되어 왔어요. AI는 그 초점을 의료 서비스를 충분히 못 받은(underserved) 사람들까지 넓혀요.",
+      "final_wrong": "정답은 ⑤예요. (A) 등한시되어 온 것 = disregard, (B) 등한시되어 온 사람들 = underserved예요.",
+      "option_feedback": {
+        "1": "(B) marginalized(소외된)는 맞아요. 그런데 (A) prevention(예방)은 병을 막아 주는 좋은 일이라, 불균형이 가져온 일과 반대예요.",
+        "2": "spread(확산)는 병이 퍼지는 거예요. general(일반적인) 사람들도 '그동안 등한시된 사람들'과 달라요.",
+        "3": "(A) overlook(간과)은 맞는 쪽이에요. 그런데 (B) native(현지의)는 글에 없는 말이에요.",
+        "4": "ignorance(무지)는 '알지 못함'이에요. (B) wealthy(부유한)는 칠판 왼쪽, 이미 관심을 받던 쪽이에요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "1": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 33%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "①은 (B) marginalized(소외된)는 맞아요. 그런데 (A) 자리는 불균형이 수익이 덜 나는 병에 '가져온(led to)' 일이에요. prevention(예방)은 병을 막아 주는 좋은 일이라, 글의 neglected(등한시됨)와 반대예요.\n두 칸이 다 맞아야 정답이에요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "(A)",
+                "text": "has been neglected",
+                "ko": "등한시됨 = disregard",
+                "tone": "hl"
+              },
+              {
+                "label": "(B)",
+                "text": "traditionally neglected populations",
+                "ko": "서비스를 충분히 못 받은 = underserved",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "pharmaceutical",
+        "ko": "제약의"
+      },
+      {
+        "en": "employ",
+        "ko": "활용하다"
+      },
+      {
+        "en": "treatment",
+        "ko": "치료(법)"
+      },
+      {
+        "en": "to date",
+        "ko": "지금까지"
+      },
+      {
+        "en": "devote A to B",
+        "ko": "A를 B에 쏟다"
+      },
+      {
+        "en": "affect",
+        "ko": "(병이) 걸리게 하다"
+      },
+      {
+        "en": "the rich",
+        "ko": "부자들"
+      },
+      {
+        "en": "be associated with",
+        "ko": "~와 연관되다"
+      },
+      {
+        "en": "prevalent",
+        "ko": "널리 퍼진"
+      },
+      {
+        "en": "afford",
+        "ko": "(비용을) 감당하다"
+      },
+      {
+        "en": "neglect",
+        "ko": "등한시하다"
+      },
+      {
+        "en": "clinical trial",
+        "ko": "임상 시험"
+      },
+      {
+        "en": "imbalance",
+        "ko": "불균형"
+      },
+      {
+        "en": "direct attention to",
+        "ko": "~로 관심을 향하게 하다"
+      },
+      {
+        "en": "democratize",
+        "ko": "민주화하다"
+      },
+      {
+        "en": "broaden",
+        "ko": "넓히다"
+      },
+      {
+        "en": "cure",
+        "ko": "치료법"
+      },
+      {
+        "en": "profitable",
+        "ko": "수익성 있는"
+      }
+    ],
+    "options": [
+      {
+        "en": "prevention",
+        "ko": "예방"
+      },
+      {
+        "en": "marginalized",
+        "ko": "소외된"
+      },
+      {
+        "en": "overlook",
+        "ko": "간과하다"
+      },
+      {
+        "en": "ignorance",
+        "ko": "무지"
+      },
+      {
+        "en": "disregard",
+        "ko": "무시"
+      },
+      {
+        "en": "underserved",
+        "ko": "서비스를 충분히 받지 못하는"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "In the pharmaceutical industry, algorithms are being employed to find treatments and drugs for rare diseases that to date haven’t received much attention.",
+      "model_translation": "제약 산업에서는 지금까지 많은 관심을 받지 못했던 희귀한 질병의 치료법과 의약품을 찾기 위해 알고리즘이 활용되고 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In the pharmaceutical industry",
+          "ko": "제약 산업에서"
+        },
+        {
+          "en": "pharmaceutical",
+          "ko": "제약의"
+        },
+        {
+          "en": "industry",
+          "ko": "산업"
+        },
+        {
+          "en": "algorithms",
+          "ko": "알고리즘"
+        },
+        {
+          "en": "are being employed",
+          "ko": "활용되고 있다"
+        },
+        {
+          "en": "employed",
+          "ko": "활용되는"
+        },
+        {
+          "en": "to find treatments and drugs",
+          "ko": "치료법과 의약품을 찾기 위해"
+        },
+        {
+          "en": "treatments",
+          "ko": "치료법"
+        },
+        {
+          "en": "drugs",
+          "ko": "의약품, 약"
+        },
+        {
+          "en": "rare diseases",
+          "ko": "희귀 질병"
+        },
+        {
+          "en": "rare",
+          "ko": "희귀한, 드문"
+        },
+        {
+          "en": "diseases",
+          "ko": "질병"
+        },
+        {
+          "en": "to date",
+          "ko": "지금까지"
+        },
+        {
+          "en": "haven’t received much attention",
+          "ko": "많은 관심을 받지 못했다"
+        },
+        {
+          "en": "received",
+          "ko": "받았다"
+        },
+        {
+          "en": "attention",
+          "ko": "관심"
+        },
+        {
+          "en": "date",
+          "ko": "날짜 · to date = 지금까지"
+        },
+        {
+          "en": "haven’t",
+          "ko": "~하지 않았다"
+        }
+      ],
+      "slashes": [
+        "In the pharmaceutical industry,",
+        "are being employed",
+        "and drugs",
+        "rare diseases"
+      ],
+      "roles": [
+        {
+          "text": "algorithms",
+          "role": "S"
+        },
+        {
+          "text": "are being employed",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that to date haven’t received much attention"
+      ],
+      "steps": [
+        {
+          "id": "s1_rare",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "알고리즘(algorithms)은 어떤 질병의 치료법을 찾는 데 쓰이고 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "rare diseases 뒤 'that to date haven’t received much attention'을 봐요. to date는 '지금까지'예요.",
+              "rare diseases 뒤 'that to date haven’t received much attention'을 봐요. to date는 '지금까지'예요."
+            ],
+            "explain": "'rare diseases that to date haven’t received much attention'이에요. 희귀하고, 지금까지 관심을 별로 못 받은 병이래요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'rare diseases that to date haven’t received much attention'이에요. 희귀하고, 지금까지 관심을 별로 못 받은 병이래요.",
+              "o2": "'rare diseases that to date haven’t received much attention'이에요. 희귀하고, 지금까지 관심을 별로 못 받은 병이래요."
+            },
+            "point": "rare diseases that to date haven’t received much attention = 지금까지 관심을 못 받은 희귀 질병"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "지금까지 관심을 많이 받지 못한 희귀 질병",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "이미 치료법이 많이 나온 흔한 질병"
+            },
+            {
+              "id": "o2",
+              "label": "알고리즘 때문에 새로 생긴 질병"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "rare diseases",
+            "haven’t received much attention"
+          ],
+          "tips": [
+            {
+              "label": "요약문 문제 요령",
+              "text": "지문을 먼저 읽으며 글쓴이 주장을 잡고 같은 쪽 말을 모아요. 마지막에 요약문 (A)(B)가 각각 어느 쪽 말인지 보고 골라요."
+            },
+            {
+              "label": "employed",
+              "text": "이 글에서는 → 활용되는  ('고용된' 아님)",
+              "mark": "employed",
+              "trap": true
+            },
+            {
+              "label": "to date",
+              "text": "이 글에서는 → 지금까지  ('날짜' 아님)",
+              "mark": "to date",
+              "trap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "The hard truth has always been that pharma devotes more research and development resources to diseases that affect the rich.",
+      "model_translation": "냉혹한 진실은 제약 회사들이 부유한 사람들이 걸리는 질병에 늘 더 많은 연구개발 자원을 쏟아 왔다는 점이다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The hard truth",
+          "ko": "냉혹한 진실"
+        },
+        {
+          "en": "hard",
+          "ko": "냉혹한, 힘든"
+        },
+        {
+          "en": "truth",
+          "ko": "진실"
+        },
+        {
+          "en": "has always been",
+          "ko": "늘 ~였다"
+        },
+        {
+          "en": "pharma",
+          "ko": "제약 회사"
+        },
+        {
+          "en": "devotes",
+          "ko": "쏟다, 바치다"
+        },
+        {
+          "en": "more research and development resources",
+          "ko": "더 많은 연구 개발 자원"
+        },
+        {
+          "en": "research",
+          "ko": "연구"
+        },
+        {
+          "en": "development",
+          "ko": "개발"
+        },
+        {
+          "en": "resources",
+          "ko": "자원"
+        },
+        {
+          "en": "diseases that affect the rich",
+          "ko": "부자들이 걸리는 질병"
+        },
+        {
+          "en": "affect",
+          "ko": "(병이) 걸리게 하다, 침범하다"
+        },
+        {
+          "en": "the rich",
+          "ko": "부자들"
+        },
+        {
+          "en": "always",
+          "ko": "늘"
+        },
+        {
+          "en": "diseases",
+          "ko": "질병"
+        },
+        {
+          "en": "rich",
+          "ko": "부유한 · the rich = 부자들"
+        }
+      ],
+      "slashes": [
+        "has always been",
+        "pharma devotes",
+        "development resources"
+      ],
+      "roles": [
+        {
+          "text": "The hard truth",
+          "role": "S"
+        },
+        {
+          "text": "has always been",
+          "role": "V"
+        },
+        {
+          "text": "pharma",
+          "role": "S"
+        },
+        {
+          "text": "devotes",
+          "role": "V"
+        },
+        {
+          "text": "more research and development resources",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that affect the rich"
+      ],
+      "steps": [
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "The hard truth",
+            "devotes",
+            "more research and development resources",
+            "diseases that affect the rich"
+          ],
+          "answers": [
+            "The hard truth",
+            "diseases that affect the rich",
+            "more research and development resources",
+            "devotes"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The hard truth",
+                "ko": "냉혹한 진실은"
+              },
+              " 제약 회사가 ",
+              {
+                "en": "diseases that affect the rich",
+                "ko": "부자들이 걸리는 질병에"
+              },
+              " ",
+              {
+                "en": "more research and development resources",
+                "ko": "더 많은 연구 개발 자원을"
+              },
+              " ",
+              {
+                "en": "devotes",
+                "ko": "쏟는다"
+              },
+              "는 것이다."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "affect",
+              "text": "이 글에서는 → (병이) 걸리게 하다  (diseases that affect the rich = 부자들이 걸리는 병)",
+              "mark": "affect",
+              "trap": true
+            },
+            {
+              "label": "the rich",
+              "text": "the + 형용사 = ~한 사람들이에요. the rich = 부자들.",
+              "mark": "the rich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "The definition of rare has too often been associated with poor — that is, even if a disease is quite prevalent in a population that cannot afford to pay for it (for example, people living in the developing world), the disease has been neglected compared to First World illnesses.",
+      "model_translation": "희귀하다는 것의 정의는 빈곤과 연관된 경우가 아주 흔했는데, 즉, 어떤 질병이 비용을 감당할 수 없는 어떤 사람들(예를 들어 개발도상국에 살고 있는 사람들) 사이에 꽤 널리 퍼져있다 할지라도 그 질병은 부유한 선진국 질환에 비해 등한시되어왔다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The definition of rare",
+          "ko": "'희귀하다'의 정의"
+        },
+        {
+          "en": "definition",
+          "ko": "정의"
+        },
+        {
+          "en": "has too often been associated with",
+          "ko": "너무 자주 ~와 연관되어 왔다"
+        },
+        {
+          "en": "associated",
+          "ko": "연관된"
+        },
+        {
+          "en": "associated with poor",
+          "ko": "가난과 연관된"
+        },
+        {
+          "en": "poor",
+          "ko": "가난한, 가난"
+        },
+        {
+          "en": "that is",
+          "ko": "즉, 다시 말해"
+        },
+        {
+          "en": "even if",
+          "ko": "비록 ~일지라도"
+        },
+        {
+          "en": "a disease",
+          "ko": "어떤 질병"
+        },
+        {
+          "en": "quite prevalent",
+          "ko": "꽤 널리 퍼진"
+        },
+        {
+          "en": "prevalent",
+          "ko": "널리 퍼진, 흔한"
+        },
+        {
+          "en": "in a population",
+          "ko": "어떤 사람들 사이에"
+        },
+        {
+          "en": "population",
+          "ko": "인구, 사람들"
+        },
+        {
+          "en": "cannot afford to pay",
+          "ko": "돈을 낼 여유가 없다"
+        },
+        {
+          "en": "cannot afford",
+          "ko": "~할 여유가 없다"
+        },
+        {
+          "en": "afford",
+          "ko": "(비용을) 감당하다"
+        },
+        {
+          "en": "pay for it",
+          "ko": "그 값을 치르다"
+        },
+        {
+          "en": "for example",
+          "ko": "예를 들어"
+        },
+        {
+          "en": "people living in the developing world",
+          "ko": "개발도상국에 사는 사람들"
+        },
+        {
+          "en": "developing world",
+          "ko": "개발도상국"
+        },
+        {
+          "en": "the disease",
+          "ko": "그 질병"
+        },
+        {
+          "en": "has been neglected",
+          "ko": "등한시되어 왔다"
+        },
+        {
+          "en": "neglected",
+          "ko": "등한시된, 방치된"
+        },
+        {
+          "en": "compared to",
+          "ko": "~에 비해"
+        },
+        {
+          "en": "First World illnesses",
+          "ko": "선진국 질병"
+        },
+        {
+          "en": "illnesses",
+          "ko": "질병"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "rare",
+          "ko": "희귀한"
+        },
+        {
+          "en": "disease",
+          "ko": "질병"
+        },
+        {
+          "en": "cannot",
+          "ko": "~할 수 없다"
+        },
+        {
+          "en": "pay",
+          "ko": "(돈을) 내다"
+        },
+        {
+          "en": "living",
+          "ko": "사는"
+        },
+        {
+          "en": "developing",
+          "ko": "개발 중인"
+        },
+        {
+          "en": "world",
+          "ko": "세계"
+        },
+        {
+          "en": "compared",
+          "ko": "비교된"
+        }
+      ],
+      "slashes": [
+        "The definition of rare",
+        "associated with poor",
+        "— that is,",
+        "even if a disease",
+        "quite prevalent",
+        "in a population",
+        "pay for it",
+        "developing world),",
+        "has been neglected"
+      ],
+      "roles": [
+        {
+          "text": "The definition of rare",
+          "role": "S"
+        },
+        {
+          "text": "has too often been associated with",
+          "role": "V"
+        },
+        {
+          "text": "the disease",
+          "role": "S"
+        },
+        {
+          "text": "has been neglected",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that cannot afford to pay for it",
+        "living in the developing world"
+      ],
+      "steps": [
+        {
+          "id": "s3_poor",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "'The definition of rare has too often been associated with poor'는 무슨 말일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "be associated with는 '~와 연관되다'예요. rare(희귀한)와 poor(가난한)가 묶여 왔대요.",
+              "be associated with는 '~와 연관되다'예요. rare(희귀한)와 poor(가난한)가 묶여 왔대요."
+            ],
+            "explain": "'associated with poor', 희귀하다는 말이 가난함과 너무 자주 묶여 왔대요. 대시(—) 뒤 that is(즉)가 그 뜻을 풀어 줘요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'associated with poor', 희귀하다는 말이 가난함과 너무 자주 묶여 왔대요. 대시(—) 뒤 that is(즉)가 그 뜻을 풀어 줘요.",
+              "o2": "'associated with poor', 희귀하다는 말이 가난함과 너무 자주 묶여 왔대요. 대시(—) 뒤 that is(즉)가 그 뜻을 풀어 줘요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "'희귀하다'는 말이 너무 자주 가난과 연결되어 왔다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "가난한 사람들은 희귀한 병에 잘 걸리지 않는다"
+            },
+            {
+              "id": "o2",
+              "label": "희귀한 병일수록 가난한 나라에서 먼저 치료된다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "rare",
+            "associated with poor"
+          ],
+          "tips": [
+            {
+              "label": "be associated with",
+              "text": "'~와 연관되다, ~와 결부되다'예요.",
+              "mark": "associated with"
+            }
+          ]
+        },
+        {
+          "id": "s3_neglect",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "대시(—) 뒤를 봐요. 돈을 낼 수 없는 사람들 사이에 널리 퍼진 병은 어떻게 되어 왔대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "문장 끝 'has been neglected compared to First World illnesses'를 봐요. neglect는 '등한시하다, 방치하다'예요.",
+              "문장 끝 'has been neglected compared to First World illnesses'를 봐요. neglect는 '등한시하다, 방치하다'예요."
+            ],
+            "explain": "'the disease has been neglected', 그 병은 선진국 질병에 비해 방치되어 왔대요. 꽤 널리 퍼져 있어도 그랬대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'the disease has been neglected', 그 병은 선진국 질병에 비해 방치되어 왔대요. 꽤 널리 퍼져 있어도 그랬대요.",
+              "o2": "'the disease has been neglected', 그 병은 선진국 질병에 비해 방치되어 왔대요. 꽤 널리 퍼져 있어도 그랬대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "선진국 질병에 비해 등한시되어 왔다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "선진국 질병보다 먼저 치료되어 왔다"
+            },
+            {
+              "id": "o2",
+              "label": "널리 퍼져서 더는 희귀하지 않게 되었다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "cannot afford",
+            "neglected"
+          ],
+          "faded": [
+            "(for example, people living in the developing world)"
+          ],
+          "tips": [
+            {
+              "label": "that is (대시 뒤)",
+              "text": "'즉, 다시 말해'예요. 앞말을 풀어 줘요.",
+              "mark": "that is"
+            },
+            {
+              "label": "even if",
+              "text": "'비록 ~일지라도'예요. even if a disease is quite prevalent = 병이 꽤 널리 퍼져 있어도.",
+              "mark": "even if"
+            }
+          ]
+        },
+        {
+          "id": "s3_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "희귀한(rare) 병은 사실상 돈을 낼 수 없는 가난한(poor) 사람들의 병이에요. 그래서 부자들(the rich)의 병에 비해 등한시돼 왔어요.",
+            "point": "rare = poor(돈을 낼 수 없는 사람들의 병) → 선진국 질병에 비해 neglected(등한시됨)"
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "pharma의 attention(관심)",
+            "left": {
+              "label": "the rich 쪽",
+              "words": [
+                {
+                  "text": "the rich",
+                  "ko": "부자들",
+                  "fresh": true
+                },
+                {
+                  "text": "First World illnesses",
+                  "ko": "선진국 질병",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "rare · poor 쪽",
+              "words": [
+                {
+                  "text": "rare diseases",
+                  "ko": "희귀 질병",
+                  "fresh": true
+                },
+                {
+                  "text": "poor",
+                  "ko": "가난한",
+                  "fresh": true
+                },
+                {
+                  "text": "cannot afford to pay",
+                  "ko": "돈을 낼 수 없다",
+                  "fresh": true
+                },
+                {
+                  "text": "neglected",
+                  "ko": "등한시된",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "poor",
+            "neglected"
+          ]
+        }
+      ],
+      "refers": {
+        "it": "a disease(그 질병)"
+      }
+    },
+    {
+      "id": 4,
+      "text": "By lowering the cost of data collection, mining, and analysis in drug development and clinical trials, AI can help offset imbalances in the pharmaceutical industry that direct attention to diseases that “pay,” whether because the disease is more common or because it is prevalent among demographics that can pay more.",
+      "model_translation": "AI는 신약 개발과 임상시험에서 데이터 수집, 데이터 마이닝, 그리고 데이터 분석 비용을 낮춤으로써, 그 질병이 더 흔하기 때문이든, 혹은 그것이 더 많은 돈을 낼 수 있는 인구 집단에 널리 퍼져있기 때문이든, ‘수익을 내는’ 질병에 관심을 향하게 하는, 제약 산업에서의 불균형을 상쇄하는 데 도움이 될 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "By lowering the cost",
+          "ko": "비용을 낮춤으로써"
+        },
+        {
+          "en": "lowering",
+          "ko": "낮추는 것"
+        },
+        {
+          "en": "cost",
+          "ko": "비용"
+        },
+        {
+          "en": "data collection, mining, and analysis",
+          "ko": "데이터 수집, 마이닝, 분석"
+        },
+        {
+          "en": "data",
+          "ko": "데이터"
+        },
+        {
+          "en": "collection",
+          "ko": "수집"
+        },
+        {
+          "en": "mining",
+          "ko": "(데이터) 마이닝 · 데이터에서 쓸모 있는 정보를 캐내는 일"
+        },
+        {
+          "en": "analysis",
+          "ko": "분석"
+        },
+        {
+          "en": "in drug development and clinical trials",
+          "ko": "신약 개발과 임상 시험에서"
+        },
+        {
+          "en": "drug",
+          "ko": "약"
+        },
+        {
+          "en": "clinical trials",
+          "ko": "임상 시험"
+        },
+        {
+          "en": "clinical",
+          "ko": "임상의"
+        },
+        {
+          "en": "trials",
+          "ko": "시험"
+        },
+        {
+          "en": "AI",
+          "ko": "인공지능"
+        },
+        {
+          "en": "can help offset",
+          "ko": "상쇄하는 데 도움이 될 수 있다"
+        },
+        {
+          "en": "offset",
+          "ko": "상쇄하다"
+        },
+        {
+          "en": "imbalances",
+          "ko": "불균형"
+        },
+        {
+          "en": "in the pharmaceutical industry",
+          "ko": "제약 산업에서의"
+        },
+        {
+          "en": "direct attention to",
+          "ko": "~로 관심을 향하게 하다"
+        },
+        {
+          "en": "direct",
+          "ko": "향하게 하다"
+        },
+        {
+          "en": "diseases that “pay,”",
+          "ko": "돈이 되는 질병"
+        },
+        {
+          "en": "pay",
+          "ko": "돈이 되다, 돈을 내다"
+        },
+        {
+          "en": "whether because",
+          "ko": "~ 때문이든"
+        },
+        {
+          "en": "the disease",
+          "ko": "그 질병"
+        },
+        {
+          "en": "more common",
+          "ko": "더 흔한"
+        },
+        {
+          "en": "common",
+          "ko": "흔한"
+        },
+        {
+          "en": "or because",
+          "ko": "또는 ~ 때문이든"
+        },
+        {
+          "en": "prevalent",
+          "ko": "널리 퍼진"
+        },
+        {
+          "en": "among demographics",
+          "ko": "인구 집단들 사이에"
+        },
+        {
+          "en": "demographics",
+          "ko": "인구 집단"
+        },
+        {
+          "en": "can pay more",
+          "ko": "돈을 더 낼 수 있다"
+        },
+        {
+          "en": "it",
+          "ko": "그것"
+        },
+        {
+          "en": "development",
+          "ko": "개발"
+        },
+        {
+          "en": "help",
+          "ko": "돕다"
+        },
+        {
+          "en": "pharmaceutical",
+          "ko": "제약의"
+        },
+        {
+          "en": "industry",
+          "ko": "산업"
+        },
+        {
+          "en": "attention",
+          "ko": "관심"
+        },
+        {
+          "en": "diseases",
+          "ko": "질병"
+        },
+        {
+          "en": "whether",
+          "ko": "~인지"
+        },
+        {
+          "en": "disease",
+          "ko": "질병"
+        },
+        {
+          "en": "among",
+          "ko": "~ 사이에서"
+        }
+      ],
+      "slashes": [
+        "By lowering the cost",
+        "data collection, mining,",
+        "clinical trials,",
+        "help offset imbalances",
+        "pharmaceutical industry",
+        "direct attention",
+        "“pay,”",
+        "more common",
+        "or because",
+        "among demographics"
+      ],
+      "roles": [
+        {
+          "text": "AI",
+          "role": "S"
+        },
+        {
+          "text": "can help offset",
+          "role": "V"
+        },
+        {
+          "text": "imbalances",
+          "role": "O"
+        },
+        {
+          "text": "the disease … it",
+          "role": "S"
+        },
+        {
+          "text": "is … is",
+          "role": "V"
+        }
+      ],
+      "modifiers": [
+        "that direct attention to diseases that “pay,”",
+        "that can pay more"
+      ],
+      "steps": [
+        {
+          "id": "s4_ai",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "AI는 무엇에 도움이 될 수 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'help offset imbalances'를 봐요. offset은 시험지 아래에 '상쇄하다'로 풀어 줬어요.",
+              "'help offset imbalances'를 봐요. offset은 시험지 아래에 '상쇄하다'로 풀어 줬어요."
+            ],
+            "explain": "offset은 '상쇄하다'예요. 'imbalances … that direct attention to diseases that “pay,”', 돈이 되는 병으로 관심을 돌리는 불균형을 AI가 상쇄할 수 있대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "offset은 '상쇄하다'예요. 'imbalances … that direct attention to diseases that “pay,”', 돈이 되는 병으로 관심을 돌리는 불균형을 AI가 상쇄할 수 있대요.",
+              "o2": "offset은 '상쇄하다'예요. 'imbalances … that direct attention to diseases that “pay,”', 돈이 되는 병으로 관심을 돌리는 불균형을 AI가 상쇄할 수 있대요."
+            },
+            "point": "AI = 비용을 낮춰서, 돈이 되는(“pay”) 병에 관심이 쏠리는 불균형을 상쇄"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "돈이 되는 병에만 관심이 쏠리는 불균형을 줄이는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "돈이 되는 병에 관심을 더 모으는 것"
+            },
+            {
+              "id": "o2",
+              "label": "신약 개발 비용을 더 높이는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "By lowering the cost",
+            "offset imbalances"
+          ],
+          "tips": [
+            {
+              "label": "By -ing",
+              "text": "'~함으로써'예요. By lowering the cost = 비용을 낮춤으로써.",
+              "mark": "By lowering"
+            },
+            {
+              "label": "whether because A or because B",
+              "text": "'A 때문이든 B 때문이든'이에요.",
+              "mark": "whether because"
+            }
+          ]
+        },
+        {
+          "id": "s4_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "돈이 되는(“pay”) 병은 더 흔한 병이거나, 돈을 더 낼 수 있는 사람들이 걸리는 병이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "pharma의 attention(관심)",
+            "left": {
+              "label": "the rich 쪽",
+              "words": [
+                {
+                  "text": "the rich",
+                  "ko": "부자들"
+                },
+                {
+                  "text": "First World illnesses",
+                  "ko": "선진국 질병"
+                },
+                {
+                  "text": "diseases that “pay”",
+                  "ko": "돈이 되는 병",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "rare · poor 쪽",
+              "words": [
+                {
+                  "text": "rare diseases",
+                  "ko": "희귀 질병"
+                },
+                {
+                  "text": "poor",
+                  "ko": "가난한"
+                },
+                {
+                  "text": "cannot afford to pay",
+                  "ko": "돈을 낼 수 없다"
+                },
+                {
+                  "text": "neglected",
+                  "ko": "등한시된"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "more common",
+            "can pay more"
+          ]
+        }
+      ],
+      "refers": {
+        "it": "the disease(그 질병)"
+      },
+      "emphasis": [
+        "AI",
+        "offset",
+        "imbalances",
+        "diseases that “pay,”"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "We see the democratizing power of AI to broaden the attention of the medical and research communities to find cures to traditionally neglected health issues and among traditionally neglected populations.",
+      "model_translation": "우리는 의료계와 연구계의 관심을 넓혀 전통적으로 등한시되어 온 건강 문제의 해결책을 찾고, 전통적으로 등한시되어 온 사람들에게도 관심을 기울이게 할 AI의 민주화하는 힘을 보고 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "We",
+          "ko": "우리는"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "the democratizing power of AI",
+          "ko": "AI의 민주화하는 힘"
+        },
+        {
+          "en": "democratizing",
+          "ko": "민주화하는"
+        },
+        {
+          "en": "power",
+          "ko": "힘"
+        },
+        {
+          "en": "to broaden the attention",
+          "ko": "관심을 넓힐"
+        },
+        {
+          "en": "broaden",
+          "ko": "넓히다"
+        },
+        {
+          "en": "the medical and research communities",
+          "ko": "의료계와 연구계"
+        },
+        {
+          "en": "medical",
+          "ko": "의료의"
+        },
+        {
+          "en": "communities",
+          "ko": "~계, 집단"
+        },
+        {
+          "en": "to find cures",
+          "ko": "치료법을 찾도록"
+        },
+        {
+          "en": "cures",
+          "ko": "치료법"
+        },
+        {
+          "en": "traditionally neglected health issues",
+          "ko": "전통적으로 등한시되어 온 건강 문제"
+        },
+        {
+          "en": "traditionally",
+          "ko": "전통적으로, 예부터"
+        },
+        {
+          "en": "neglected",
+          "ko": "등한시된"
+        },
+        {
+          "en": "health issues",
+          "ko": "건강 문제"
+        },
+        {
+          "en": "health",
+          "ko": "건강"
+        },
+        {
+          "en": "issues",
+          "ko": "문제"
+        },
+        {
+          "en": "among traditionally neglected populations",
+          "ko": "전통적으로 등한시되어 온 사람들 사이에서"
+        },
+        {
+          "en": "populations",
+          "ko": "사람들, 인구 집단"
+        },
+        {
+          "en": "AI",
+          "ko": "인공지능"
+        },
+        {
+          "en": "attention",
+          "ko": "관심"
+        },
+        {
+          "en": "research",
+          "ko": "연구"
+        },
+        {
+          "en": "among",
+          "ko": "~ 사이에서"
+        }
+      ],
+      "slashes": [
+        "We see",
+        "power of AI",
+        "to broaden the attention",
+        "research communities",
+        "to find cures",
+        "health issues"
+      ],
+      "roles": [
+        {
+          "text": "We",
+          "role": "S"
+        },
+        {
+          "text": "see",
+          "role": "V"
+        },
+        {
+          "text": "the democratizing power of AI",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "to broaden the attention of the medical and research communities"
+      ],
+      "steps": [
+        {
+          "id": "s5_broaden",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "AI가 의료계와 연구계의 관심을 어디까지 넓힌대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "'to find cures to traditionally neglected health issues'와 문장 끝 populations를 봐요.",
+              "'to find cures to traditionally neglected health issues'와 문장 끝 populations를 봐요."
+            ],
+            "explain": "'traditionally neglected health issues and … populations', 그동안 등한시되어 온 건강 문제와 사람들에게까지 관심을 넓힌대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'traditionally neglected health issues and … populations', 그동안 등한시되어 온 건강 문제와 사람들에게까지 관심을 넓힌대요.",
+              "o2": "'traditionally neglected health issues and … populations', 그동안 등한시되어 온 건강 문제와 사람들에게까지 관심을 넓힌대요."
+            },
+            "point": "AI의 democratizing power = 등한시되어 온(neglected) 건강 문제·사람들에게까지 관심을 넓힘"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "전통적으로 등한시되어 온 건강 문제와 사람들",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "이미 관심을 많이 받는 선진국 질병"
+            },
+            {
+              "id": "o2",
+              "label": "의료와 상관없는 다른 산업"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "broaden",
+            "traditionally neglected health issues",
+            "traditionally neglected populations"
+          ],
+          "tips": [
+            {
+              "label": "democratize",
+              "text": "'민주화하다'예요. 여기서는 일부만 누리던 의료 연구의 관심을 더 많은 사람에게 넓힌다는 말이에요.",
+              "mark": "democratizing"
+            }
+          ]
+        },
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그동안 등한시된 사람들(neglected populations)에게까지 관심을 넓히는 게 AI의 힘이래요."
+          },
+          "method": 1,
+          "button": "다음",
+          "panel": {
+            "kind": "groups",
+            "title": "pharma의 attention(관심)",
+            "left": {
+              "label": "the rich 쪽",
+              "words": [
+                {
+                  "text": "the rich",
+                  "ko": "부자들"
+                },
+                {
+                  "text": "First World illnesses",
+                  "ko": "선진국 질병"
+                },
+                {
+                  "text": "diseases that “pay”",
+                  "ko": "돈이 되는 병"
+                }
+              ]
+            },
+            "right": {
+              "label": "rare · poor 쪽",
+              "words": [
+                {
+                  "text": "rare diseases",
+                  "ko": "희귀 질병"
+                },
+                {
+                  "text": "poor",
+                  "ko": "가난한"
+                },
+                {
+                  "text": "cannot afford to pay",
+                  "ko": "돈을 낼 수 없다"
+                },
+                {
+                  "text": "neglected",
+                  "ko": "등한시된"
+                },
+                {
+                  "text": "neglected populations",
+                  "ko": "등한시된 사람들",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "highlight": [
+            "traditionally neglected populations"
+          ]
+        },
+        {
+          "id": "s5_summary",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 요약문을 읽어요. (A)와 (B)가 칠판의 어느 쪽 말인지 보고 고르면 돼요."
+          },
+          "method": 1,
+          "button": "요약문 읽어 볼게요"
+        }
+      ],
+      "emphasis": [
+        "broaden",
+        "attention",
+        "neglected",
+        "populations"
+      ]
+    },
+    {
+      "id": 6,
+      "label": "요약문",
+      "text": "By lowering the cost of pharmaceutical research and development, AI can help reduce the imbalance in investment that has led to the (A) ________ of less profitable diseases, thereby broadening the focus of medical research to include (B) ________ populations.",
+      "model_translation": "제약 연구개발 비용을 낮춤으로써 AI는 수익성이 낮은 질병에 대한 (A)를 초래했던 투자에서의 불균형을 줄이고 그 결과 의학 연구의 초점을 (B) 사람들에게로 확대하는 데 도움을 줄 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "By lowering the cost",
+          "ko": "비용을 낮춤으로써"
+        },
+        {
+          "en": "lowering",
+          "ko": "낮추는 것"
+        },
+        {
+          "en": "cost",
+          "ko": "비용"
+        },
+        {
+          "en": "pharmaceutical research and development",
+          "ko": "제약 연구 개발"
+        },
+        {
+          "en": "pharmaceutical",
+          "ko": "제약의"
+        },
+        {
+          "en": "AI",
+          "ko": "인공지능"
+        },
+        {
+          "en": "can help reduce",
+          "ko": "줄이는 데 도움이 될 수 있다"
+        },
+        {
+          "en": "reduce",
+          "ko": "줄이다"
+        },
+        {
+          "en": "the imbalance",
+          "ko": "불균형"
+        },
+        {
+          "en": "imbalance",
+          "ko": "불균형"
+        },
+        {
+          "en": "in investment",
+          "ko": "투자에서의"
+        },
+        {
+          "en": "investment",
+          "ko": "투자"
+        },
+        {
+          "en": "has led to",
+          "ko": "~을 가져왔다, ~로 이어졌다"
+        },
+        {
+          "en": "less profitable diseases",
+          "ko": "수익이 덜 나는 질병"
+        },
+        {
+          "en": "profitable",
+          "ko": "수익이 나는"
+        },
+        {
+          "en": "thereby",
+          "ko": "그렇게 함으로써, 그 결과"
+        },
+        {
+          "en": "broadening",
+          "ko": "넓히는"
+        },
+        {
+          "en": "the focus",
+          "ko": "초점"
+        },
+        {
+          "en": "focus",
+          "ko": "초점"
+        },
+        {
+          "en": "medical research",
+          "ko": "의학 연구"
+        },
+        {
+          "en": "medical",
+          "ko": "의학의"
+        },
+        {
+          "en": "include",
+          "ko": "포함하다"
+        },
+        {
+          "en": "populations",
+          "ko": "사람들, 인구 집단"
+        },
+        {
+          "en": "research",
+          "ko": "연구"
+        },
+        {
+          "en": "development",
+          "ko": "개발"
+        },
+        {
+          "en": "help",
+          "ko": "돕다"
+        },
+        {
+          "en": "led",
+          "ko": "이어졌다 · lead to"
+        },
+        {
+          "en": "less",
+          "ko": "덜"
+        },
+        {
+          "en": "diseases",
+          "ko": "질병"
+        }
+      ],
+      "slashes": [
+        "By lowering the cost",
+        "and development,",
+        "AI can help reduce",
+        "in investment",
+        "less profitable diseases,",
+        "thereby broadening",
+        "medical research"
+      ],
+      "roles": [
+        {
+          "text": "AI",
+          "role": "S"
+        },
+        {
+          "text": "can help reduce",
+          "role": "V"
+        },
+        {
+          "text": "the imbalance",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that has led to the (A) ________ of less profitable diseases"
+      ],
+      "steps": [
+        {
+          "id": "s6_a_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 불균형이 less profitable diseases(수익이 덜 나는 병)에 가져온 일이에요. 칠판 어느 쪽 이야기일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "수익이 덜 나는 병은 돈을 낼 수 없는 사람들의 병이에요. 그런 병이 어느 쪽이었는지 떠올려 봐요.",
+              "수익이 덜 나는 병은 돈을 낼 수 없는 사람들의 병이에요. 그런 병이 어느 쪽이었는지 떠올려 봐요."
+            ],
+            "explain": "돈이 덜 되는 병은 가난한(poor) 사람들의 병, 칠판 오른쪽이에요. 왼쪽은 돈이 되는(“pay”) 병이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "돈이 덜 되는 병은 가난한(poor) 사람들의 병, 칠판 오른쪽이에요. 왼쪽은 돈이 되는(“pay”) 병이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왼쪽 · the rich 쪽"
+            },
+            {
+              "id": "o1",
+              "label": "오른쪽 · rare · poor 쪽",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "has led to",
+            "less profitable diseases"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "pharma의 attention(관심)",
+            "left": {
+              "label": "the rich 쪽",
+              "words": [
+                {
+                  "text": "the rich",
+                  "ko": "부자들"
+                },
+                {
+                  "text": "First World illnesses",
+                  "ko": "선진국 질병"
+                },
+                {
+                  "text": "diseases that “pay”",
+                  "ko": "돈이 되는 병"
+                }
+              ]
+            },
+            "right": {
+              "label": "rare · poor 쪽",
+              "words": [
+                {
+                  "text": "rare diseases",
+                  "ko": "희귀 질병"
+                },
+                {
+                  "text": "poor",
+                  "ko": "가난한"
+                },
+                {
+                  "text": "cannot afford to pay",
+                  "ko": "돈을 낼 수 없다"
+                },
+                {
+                  "text": "neglected",
+                  "ko": "등한시된"
+                },
+                {
+                  "text": "neglected populations",
+                  "ko": "등한시된 사람들"
+                }
+              ]
+            },
+            "between": "↔"
+          },
+          "tips": [
+            {
+              "label": "lead to",
+              "text": "'~을 가져오다, ~로 이어지다'예요. the imbalance that has led to (A) = (A)를 가져온 불균형.",
+              "mark": "led to"
+            }
+          ]
+        },
+        {
+          "id": "s6_a",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 (A)에는 어떤 뜻의 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "불균형이 가져온 일이라 좋은 일이 아니에요. 칠판 오른쪽 neglected(등한시된)를 떠올려 봐요.",
+              "불균형이 가져온 일이라 좋은 일이 아니에요. 칠판 오른쪽 neglected(등한시된)를 떠올려 봐요."
+            ],
+            "explain": "불균형 때문에 생긴 일이라 병을 막아 준 좋은 일이 아니에요. 오른쪽 neglected처럼, 수익이 덜 나는 병은 관심을 못 받아 왔어요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "불균형 때문에 생긴 일이라 병을 막아 준 좋은 일이 아니에요. 오른쪽 neglected처럼, 수익이 덜 나는 병은 관심을 못 받아 왔어요.",
+              "o2": "불균형 때문에 생긴 일이라 병을 막아 준 좋은 일이 아니에요. 오른쪽 neglected처럼, 수익이 덜 나는 병은 관심을 못 받아 왔어요."
+            },
+            "point": "(A) = 수익이 덜 나는 병이 받아 온 대접 = neglected(등한시됨) → 무시"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "미리 막음(예방)"
+            },
+            {
+              "id": "o1",
+              "label": "관심을 주지 않음(무시)",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "널리 퍼짐(확산)"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "(A) ________"
+          ]
+        },
+        {
+          "id": "s6_b",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)는 의학 연구의 초점을 넓혀 포함하게 될 사람들(populations)이에요. 어떤 뜻의 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "칠판 오른쪽 'traditionally neglected populations'를 떠올려 봐요.",
+              "칠판 오른쪽 'traditionally neglected populations'를 떠올려 봐요."
+            ],
+            "explain": "초점을 넓혀 새로 포함하는 사람들은 그동안 등한시된(neglected) 사람들이에요. 오른쪽 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "초점을 넓혀 새로 포함하는 사람들은 그동안 등한시된(neglected) 사람들이에요. 오른쪽 말이에요.",
+              "o2": "초점을 넓혀 새로 포함하는 사람들은 그동안 등한시된(neglected) 사람들이에요. 오른쪽 말이에요."
+            },
+            "point": "(B) = traditionally neglected populations = 의료 혜택을 충분히 못 받은 사람들"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "돈을 많이 낼 수 있는"
+            },
+            {
+              "id": "o1",
+              "label": "의료 혜택을 충분히 받지 못한",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "그 지역에 원래 사는"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "broadening the focus",
+            "(B) ________"
+          ]
+        },
+        {
+          "id": "s6_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(A)와 (B)의 뜻을 둘 다 맞게 담은 보기를 골라 봐요. 한쪽만 맞으면 오답이에요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

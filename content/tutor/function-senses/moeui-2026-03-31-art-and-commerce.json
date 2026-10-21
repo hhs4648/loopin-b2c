@@ -1,0 +1,154 @@
+{
+ "2": [
+  {
+   "word": "to",
+   "phrase": "to senior fine arts majors",
+   "sense": "~에게",
+   "usage": "전치사 to (spoken to + 사람 = ~에게 전달된)"
+  },
+  {
+   "word": "that",
+   "phrase": "the kind that",
+   "sense": "~하는 (종류)",
+   "usage": "관계대명사 that — 앞의 the kind를 꾸민다"
+  },
+  {
+   "word": "to",
+   "phrase": "unable to ignore",
+   "sense": "~할 (수 없는)",
+   "usage": "be unable to + 동사원형 = ~할 수 없다"
+  }
+ ],
+ "3": [
+  {
+   "word": "that",
+   "phrase": "this idea that",
+   "sense": "~라는 (생각)",
+   "usage": "동격 that — this idea의 내용"
+  },
+  {
+   "word": "if",
+   "phrase": "if we are not engaged",
+   "sense": "만약 ~라면",
+   "usage": "조건 if (if A, then B)"
+  },
+  {
+   "word": "if",
+   "phrase": "if we are not professional",
+   "sense": "만약 ~라면",
+   "usage": "조건 if"
+  }
+ ],
+ "4": [
+  {
+   "word": "yet",
+   "phrase": "and yet",
+   "sense": "그런데도",
+   "usage": "접속사 yet (and yet = 그런데도)"
+  },
+  {
+   "word": "to",
+   "phrase": "in an effort to appear",
+   "sense": "~하려는 (노력)",
+   "usage": "in an effort to + 동사원형 = ~하려는 노력으로"
+  },
+  {
+   "word": "to",
+   "phrase": "to perhaps justify",
+   "sense": "~하기 위한",
+   "usage": "앞의 effort에 이어지는 둘째 to부정사"
+  },
+  {
+   "word": "to",
+   "phrase": "urge to create",
+   "sense": "~하고자 하는 (충동)",
+   "usage": "명사 + to부정사 (urge to ~ = ~하고자 하는 충동)"
+  }
+ ],
+ "5": [
+  {
+   "word": "for",
+   "phrase": "for art’s sake",
+   "sense": "~을 위한",
+   "usage": "for one’s sake = ~을 위해"
+  },
+  {
+   "word": "as",
+   "phrase": "seen as",
+   "sense": "~로",
+   "usage": "be seen as A = A로 보이다, 여겨지다"
+  }
+ ],
+ "6": [
+  {
+   "word": "but",
+   "phrase": "but it better be",
+   "sense": "하지만",
+   "usage": "접속사 but"
+  },
+  {
+   "word": "for",
+   "phrase": "for money",
+   "sense": "~을 위한",
+   "usage": "전치사 for (목적)"
+  },
+  {
+   "word": "for",
+   "phrase": "for that is",
+   "sense": "왜냐하면 ~이니까",
+   "usage": "접속사 for (콤마 뒤 이유)"
+  },
+  {
+   "word": "that",
+   "phrase": "that is the only marker",
+   "sense": "그것(돈)",
+   "usage": "지시대명사 that — 앞의 money"
+  }
+ ],
+ "7": [
+  {
+   "word": "but",
+   "phrase": "But was",
+   "sense": "하지만",
+   "usage": "접속사 But (의심하는 질문을 이끈다)"
+  },
+  {
+   "word": "that",
+   "phrase": "that professor’s",
+   "sense": "그 (교수의)",
+   "usage": "지시형용사 that"
+  },
+  {
+   "word": "that",
+   "phrase": "that had labeled",
+   "sense": "~한 (규범과 기대)",
+   "usage": "관계대명사 that — the cultural norms and expectations를 꾸민다"
+  },
+  {
+   "word": "as",
+   "phrase": "labeled him as",
+   "sense": "~라고",
+   "usage": "label A as B = A에게 B라는 명칭을 붙이다"
+  }
+ ],
+ "8": [
+  {
+   "word": "to",
+   "phrase": "to separate",
+   "sense": "~하는 것은",
+   "usage": "가주어 it … to부정사 (진주어)"
+  },
+  {
+   "word": "so",
+   "phrase": "and so",
+   "sense": "따라서, 그래서",
+   "usage": "접속사 so (결과)"
+  },
+  {
+   "word": "to",
+   "phrase": "ability to earn",
+   "sense": "~할 (능력)",
+   "usage": "명사 + to부정사 (ability to ~ = ~할 능력)"
+  }
+ ]
+}

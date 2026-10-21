@@ -1,0 +1,98 @@
+{
+ "1": [
+  {
+   "word": "for",
+   "phrase": "for long",
+   "sense": "~ 동안 (오래)",
+   "usage": "for long = 오랫동안"
+  },
+  {
+   "word": "to",
+   "phrase": "from time to time",
+   "sense": "~까지",
+   "usage": "from time to time = 때때로"
+  }
+ ],
+ "3": [
+  {
+   "word": "which",
+   "phrase": "beyond which",
+   "sense": "그것(주의력의 한계)",
+   "usage": "전치사 + 관계대명사 which — an attention limit을 받음"
+  },
+  {
+   "word": "to",
+   "phrase": "to be perceived",
+   "sense": "~하게 (될)",
+   "usage": "be likely to + 동사원형 = ~할 가능성이 있다"
+  },
+  {
+   "word": "as",
+   "phrase": "as lacking order",
+   "sense": "~로",
+   "usage": "perceive A as B = A를 B로 인식하다"
+  }
+ ],
+ "4": [
+  {
+   "word": "for",
+   "phrase": "For instance",
+   "sense": "예를 들어",
+   "usage": "for instance = 예를 들어"
+  },
+  {
+   "word": "if",
+   "phrase": "if the intention is",
+   "sense": "만약 ~라면",
+   "usage": "조건의 if"
+  },
+  {
+   "word": "to",
+   "phrase": "to focus on",
+   "sense": "~하는 것",
+   "usage": "to부정사 (명사 — 보어)"
+  },
+  {
+   "word": "while",
+   "phrase": "while the melodies are unfolding",
+   "sense": "~하는 동안",
+   "usage": "시간의 while"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "to find",
+   "sense": "~하는 것",
+   "usage": "to부정사 (명사 — 보어)"
+  },
+  {
+   "word": "to",
+   "phrase": "to listeners",
+   "sense": "~에게",
+   "usage": "전치사 to (대상)"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "attributes that combine",
+   "sense": "~하는 (속성들)",
+   "usage": "관계대명사 that — musical attributes를 꾸밈"
+  },
+  {
+   "word": "to",
+   "phrase": "to create situations",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  }
+ ],
+ "7": [
+  {
+   "word": "which",
+   "phrase": "which builds upon",
+   "sense": "그것은 (준비 단계)",
+   "usage": "콤마 뒤 관계대명사 which — a preparatory stage를 받음"
+  }
+ ]
+}

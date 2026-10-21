@@ -1,0 +1,76 @@
+{
+ "2": [
+  {
+   "word": "for",
+   "phrase": "for their effect",
+   "sense": "~을 위해",
+   "usage": "전치사 for (목적)"
+  },
+  {
+   "word": "that",
+   "phrase": "that’s why",
+   "sense": "그것이 (~하는 이유다)",
+   "usage": "지시대명사 that — 앞 내용 전체"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "prepared to take",
+   "sense": "~할 (준비가 된)",
+   "usage": "be prepared to + 동사원형"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "appear to be",
+   "sense": "~인 것처럼 (보이다)",
+   "usage": "appear to + 동사원형"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "to attempting",
+   "sense": "~에 (비유하다)",
+   "usage": "compare A to B = A를 B에 비유하다"
+  },
+  {
+   "word": "to",
+   "phrase": "attempting to leap",
+   "sense": "~하려고 (시도하다)",
+   "usage": "attempt to + 동사원형"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "The setup to the joke",
+   "sense": "~의 (농담의 설정)",
+   "usage": "전치사 to (소속·관련)"
+  }
+ ],
+ "7": [
+  {
+   "word": "if",
+   "phrase": "If they’re too far apart",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if (조건)"
+  },
+  {
+   "word": "to",
+   "phrase": "to the other side",
+   "sense": "~에 (닿다)",
+   "usage": "make it to + 장소 = ~에 도달하다"
+  }
+ ],
+ "8": [
+  {
+   "word": "if",
+   "phrase": "And if they are",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if (조건)"
+  }
+ ]
+}

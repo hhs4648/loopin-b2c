@@ -1,0 +1,180 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "claim that Tolstoy’s work",
+   "sense": "~라는",
+   "usage": "동격 that — claim의 내용"
+  },
+  {
+   "word": "to",
+   "phrase": "a mirror to the Russian revolution",
+   "sense": "~에",
+   "usage": "hold up a mirror to ~ = ~을 비추어 보여 주다"
+  }
+ ],
+ "2": [
+  {
+   "word": "yet",
+   "phrase": "Yet this mirroring",
+   "sense": "그러나",
+   "usage": "문장 앞 Yet = 그러나"
+  },
+  {
+   "word": "as",
+   "phrase": "as it stands",
+   "sense": "~대로",
+   "usage": "as it stands = 있는 그대로"
+  }
+ ],
+ "3": [
+  {
+   "word": "if",
+   "phrase": "If literary works are",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사"
+  }
+ ],
+ "4": [
+  {
+   "word": "as",
+   "phrase": "as significant for",
+   "sense": "~만큼 (앞 as)",
+   "usage": "as A as B = B만큼 A한"
+  },
+  {
+   "word": "for",
+   "phrase": "for what they don’t reflect",
+   "sense": "~ 때문에",
+   "usage": "be significant for ~ = ~ 때문에 중요하다"
+  },
+  {
+   "word": "for",
+   "phrase": "for their exclusions",
+   "sense": "~ 때문에",
+   "usage": "앞 for what they don’t reflect를 대시 사이에서 다시 말함"
+  },
+  {
+   "word": "as",
+   "phrase": "as for what they do",
+   "sense": "~만큼 (뒤 as)",
+   "usage": "as A as B의 뒤 as"
+  },
+  {
+   "word": "for",
+   "phrase": "as for what they do",
+   "sense": "~ 때문에",
+   "usage": "be significant for ~ = ~ 때문에 중요하다"
+  }
+ ],
+ "5": [
+  {
+   "word": "which",
+   "phrase": "things which do not",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 which + 동사"
+  },
+  {
+   "word": "which",
+   "phrase": "of which he could not be conscious",
+   "sense": "(그것을) ~하는",
+   "usage": "전치사 + which = 앞 contradictions를 꾸밈 (be conscious of)"
+  }
+ ],
+ "6": [
+  {
+   "word": "so",
+   "phrase": "Even so",
+   "sense": "그렇다 하더라도",
+   "usage": "Even so = 그렇다 하더라도"
+  },
+  {
+   "word": "which",
+   "phrase": ", which thus become",
+   "sense": "그리고 그것들은",
+   "usage": "콤마 + which = 앞 absences를 받아 덧붙임"
+  }
+ ],
+ "7": [
+  {
+   "word": "as",
+   "phrase": "as though",
+   "sense": "마치 ~처럼",
+   "usage": "as though = 마치 ~인 것처럼"
+  },
+  {
+   "word": "to",
+   "phrase": "allows us to see",
+   "sense": "~하도록",
+   "usage": "allow + 사람 + to부정사 = 사람이 ~하게 해 주다"
+  }
+ ],
+ "8": [
+  {
+   "word": "to",
+   "phrase": "no reason to assume",
+   "sense": "~할 (이유)",
+   "usage": "명사 + to부정사 = ~할 명사"
+  },
+  {
+   "word": "that",
+   "phrase": "assume that what we see",
+   "sense": "~라고",
+   "usage": "명사절 that (assume that …)"
+  }
+ ],
+ "10": [
+  {
+   "word": "which",
+   "phrase": "realism which holds",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 which + 동사"
+  },
+  {
+   "word": "that",
+   "phrase": "holds that art",
+   "sense": "~라고",
+   "usage": "명사절 that (hold that … = ~라고 믿다)"
+  }
+ ],
+ "11": [
+  {
+   "word": "but",
+   "phrase": "but it does so",
+   "sense": "하지만",
+   "usage": "접속사 but — 앞뒤가 반대"
+  },
+  {
+   "word": "so",
+   "phrase": "does so",
+   "sense": "그렇게",
+   "usage": "do so = 앞 동사구(offers us a version of reality)를 받음"
+  },
+  {
+   "word": "which",
+   "phrase": "viewpoint which cannot",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 which + 동사"
+  }
+ ],
+ "12": [
+  {
+   "word": "to",
+   "phrase": "invisible to us",
+   "sense": "~에게",
+   "usage": "invisible to ~ = ~에게 보이지 않는"
+  },
+  {
+   "word": "to",
+   "phrase": "tempted to take",
+   "sense": "~하고 싶은",
+   "usage": "be tempted to + 동사원형 = ~하고 싶은 유혹을 느끼다"
+  },
+  {
+   "word": "as",
+   "phrase": "take it as beyond question",
+   "sense": "~로",
+   "usage": "take A as B = A를 B로 받아들이다"
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "3": [
+  {
+   "word": "for",
+   "phrase": "For many",
+   "sense": "~에게",
+   "usage": "전치사 for (대상)"
+  },
+  {
+   "word": "so",
+   "phrase": "so stressful (that) it …",
+   "sense": "너무 (~해서)",
+   "usage": "so 형용사 (that) ~ = 너무 …해서 ~하다 (that 생략)"
+  }
+ ],
+ "4": [
+  {
+   "word": "for",
+   "phrase": "for why it’s uncomfortable",
+   "sense": "~에 대한",
+   "usage": "전치사 for — The explanation for ~ = ~에 대한 설명"
+  },
+  {
+   "word": "to",
+   "phrase": "to have everyone’s eyes on you",
+   "sense": "~하는 것",
+   "usage": "가주어 it … to부정사(진주어)"
+  },
+  {
+   "word": "that",
+   "phrase": "is probably that",
+   "sense": "~라는 것",
+   "usage": "접속사 that — is의 보어 절"
+  },
+  {
+   "word": "for",
+   "phrase": "for almost all of our evolution",
+   "sense": "~ 동안",
+   "usage": "전치사 for (기간)"
+  },
+  {
+   "word": "to",
+   "phrase": "not to be excluded",
+   "sense": "~하는 것",
+   "usage": "가주어 it … to부정사(진주어), not to = ~하지 않는 것"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "To prepare for",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  },
+  {
+   "word": "for",
+   "phrase": "prepare for what might happen",
+   "sense": "~에 (대비하다)",
+   "usage": "prepare for ~ = ~에 대비하다"
+  },
+  {
+   "word": "if",
+   "phrase": "if you are evaluated",
+   "sense": "만약 ~라면",
+   "usage": "조건 if"
+  },
+  {
+   "word": "to",
+   "phrase": "begins to beat",
+   "sense": "~하기 (시작하다)",
+   "usage": "begin to + 동사원형 = ~하기 시작하다"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "sensitivity to being evaluated",
+   "sense": "~에 대한",
+   "usage": "전치사 to — sensitivity to ~ = ~에 대한 민감성"
+  },
+  {
+   "word": "to",
+   "phrase": "adapted to the modern world",
+   "sense": "~에",
+   "usage": "be adapted to ~ = ~에 적응되다"
+  }
+ ],
+ "7": [
+  {
+   "word": "if",
+   "phrase": "If we give a bad presentation",
+   "sense": "~하더라도",
+   "usage": "if — 해설은 '망친다고 하더라도'로 옮김"
+  },
+  {
+   "word": "to",
+   "phrase": "unlikely to lose",
+   "sense": "~할 (것 같지 않다)",
+   "usage": "be unlikely to + 동사원형 = ~할 것 같지 않다"
+  },
+  {
+   "word": "to",
+   "phrase": "starving to death",
+   "sense": "~에 이르도록",
+   "usage": "starve to death = 굶어 죽다"
+  }
+ ],
+ "8": [
+  {
+   "word": "but",
+   "phrase": "But in the world",
+   "sense": "하지만",
+   "usage": "접속사 but — 요즘(7문장)과 옛날을 대조"
+  },
+  {
+   "word": "for",
+   "phrase": "evolved for",
+   "sense": "~에 맞춰",
+   "usage": "전치사 for — 목적어는 앞의 the world (that 생략)"
+  }
+ ],
+ "9": [
+  {
+   "word": "but",
+   "phrase": "not merely … but also",
+   "sense": "~뿐만 아니라 …도",
+   "usage": "not merely A but also B = A일 뿐만 아니라 B이기도"
+  }
+ ]
+}

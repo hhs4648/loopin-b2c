@@ -1,0 +1,1907 @@
+{
+  "id": "mopyeong-2027-06-36-plant-defenses",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 36번 (글의 순서, 2점)",
+  "brief": {
+    "topic": "순서 푸는 법: 주어진 글의 끝 → 단락 첫머리 단서로 앞 내용 예측 → 단락 끝으로 다음 내용 예측 → 순서 잇기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "order",
+    "labels": [
+      "단락 요지 잡기",
+      "연결 단서 찾기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-plant-defenses.svg",
+      "alt": "칠판: Plants(식물) vs Insects(곤충)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "식물은 도망칠 수 없는데, 곤충이 잎을 먹으러 오면 어떻게 할까요? 이번 글은 식물의 방어(defenses) 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "순서 문제는 단락 첫머리의 단서가 앞 내용과 이어지는지 보는 거예요. Structural, Nor, The 같은 말이 무엇을 받는지 찾아볼게요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?",
+    "sentence": 1,
+    "analysis_first": true,
+    "wrong_rate": 57.0,
+    "wrong_rank": 8,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [],
+    "options": [
+      {
+        "id": "1",
+        "label": "(A)-(C)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "2",
+        "label": "(B)-(A)-(C)",
+        "keywords": []
+      },
+      {
+        "id": "3",
+        "label": "(B)-(C)-(A)",
+        "keywords": []
+      },
+      {
+        "id": "4",
+        "label": "(C)-(A)-(B)",
+        "keywords": []
+      },
+      {
+        "id": "5",
+        "label": "(C)-(B)-(A)",
+        "keywords": [],
+        "correct": true
+      }
+    ],
+    "brief": {
+      "ask": "단락 첫머리와 끝의 단서(Structural, Nor … on their own, The back-and-forth)를 떠올리며 순서를 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 독한 화합물 방어 → (C) 또 다른 구조적 방어, 그리고 식물은 혼자가 아니다 → (B) 이웃·포식자와 함께 하는 방어 → (A) 이 공방전은 길게 이어지는 진화의 대화, 순서예요.",
+      "final_wrong": "정답은 ⑤ (C)-(B)-(A)예요.",
+      "option_feedback": {
+        "1": "(A)의 The back-and-forth(그 공방전)는 여러 방어가 다 나온 뒤에 묶어 말하는 말이에요. 주어진 글 바로 뒤에 오기엔 일러요.",
+        "2": "(B)의 함께 하는 방어는 (C) 끝 '혼자인 것도 아니다' 뒤에 와야 자연스러워요. (A)는 공방을 묶는 말이라 맨 뒤예요.",
+        "3": "많이 고른 오답이에요. (B)의 chemical compounds는 주어진 글의 화합물과 비슷해 보이지만, 이웃과 함께 막는 방어예요. (C) 끝 '혼자인 것도 아니다'가 먼저 와야 해요.",
+        "4": "(A)는 공방을 묶어 말하는 단락이라 (C)와 (B)의 방어가 다 나온 뒤에 와요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 26%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "주어진 글의 harsh compounds(독한 화합물)와 (B)의 chemical compounds(화학 화합물)가 같은 말 같아서 바로 이었을 거예요. 하지만 (B)는 곤충을 쫓는 방어가 아니라, 이웃에게 알리고 포식자를 부르는 '함께 하는' 방어예요. 그래서 (C) 끝 'Nor are individual plants entirely on their own(혼자인 것도 아니다)'이 먼저 나와야 (B)로 이어져요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "주어진 글 끝",
+                "text": "Some load their tissues with harsh compounds",
+                "ko": "혼자 하는 방어 ①",
+                "tone": "hl"
+              },
+              {
+                "label": "(C)",
+                "text": "Structural defenses … Nor are individual plants entirely on their own",
+                "ko": "혼자 하는 방어 ② → 혼자가 아니다",
+                "tone": "hl2"
+              },
+              {
+                "label": "(B)",
+                "text": "release chemical compounds … attract insect predators",
+                "ko": "함께 하는 방어",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "defense",
+        "ko": "방어 (기제)"
+      },
+      {
+        "en": "diverse",
+        "ko": "다양한"
+      },
+      {
+        "en": "load",
+        "ko": "채우다"
+      },
+      {
+        "en": "harsh",
+        "ko": "독한"
+      },
+      {
+        "en": "compound",
+        "ko": "화합물"
+      },
+      {
+        "en": "intoxicate",
+        "ko": "취하게 하다"
+      },
+      {
+        "en": "back-and-forth",
+        "ko": "공방전"
+      },
+      {
+        "en": "drawn-out",
+        "ko": "길게 이어지는"
+      },
+      {
+        "en": "evolutionary",
+        "ko": "진화적인"
+      },
+      {
+        "en": "unintentionally",
+        "ko": "의도치 않게"
+      },
+      {
+        "en": "select for",
+        "ko": "~을 선택하다"
+      },
+      {
+        "en": "get around",
+        "ko": "우회하다"
+      },
+      {
+        "en": "in turn",
+        "ko": "결국"
+      },
+      {
+        "en": "resistant",
+        "ko": "저항력 있는"
+      },
+      {
+        "en": "variation",
+        "ko": "변이"
+      },
+      {
+        "en": "adaptation",
+        "ko": "적응"
+      },
+      {
+        "en": "maintain",
+        "ko": "유지하다"
+      },
+      {
+        "en": "release",
+        "ko": "방출하다"
+      },
+      {
+        "en": "build up",
+        "ko": "축적하다"
+      },
+      {
+        "en": "predator",
+        "ko": "포식자"
+      },
+      {
+        "en": "cue",
+        "ko": "신호"
+      },
+      {
+        "en": "collaborator",
+        "ko": "협력자"
+      },
+      {
+        "en": "structural",
+        "ko": "구조적인"
+      },
+      {
+        "en": "altogether",
+        "ko": "아예, 완전히"
+      },
+      {
+        "en": "individual",
+        "ko": "개별의"
+      },
+      {
+        "en": "on one's own",
+        "ko": "혼자서"
+      }
+    ],
+    "options": []
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "label": "주어진 글",
+      "text": "Plants have evolved defenses almost as diverse as the number of genera.",
+      "teaching_value": "high",
+      "model_translation": "식물들은 거의 그 속의 수만큼이나 다양한 방어 기제를 진화시켜 왔다.",
+      "glosses": [
+        {
+          "en": "Plants",
+          "ko": "식물들은"
+        },
+        {
+          "en": "have evolved",
+          "ko": "진화시켜 왔다"
+        },
+        {
+          "en": "evolved",
+          "ko": "진화시킨"
+        },
+        {
+          "en": "defenses",
+          "ko": "방어 (기제)"
+        },
+        {
+          "en": "almost as diverse as",
+          "ko": "거의 ~만큼이나 다양한"
+        },
+        {
+          "en": "diverse",
+          "ko": "다양한"
+        },
+        {
+          "en": "the number of genera",
+          "ko": "속(屬)의 수"
+        },
+        {
+          "en": "genera",
+          "ko": "속(屬) · genus의 복수, 생물을 나누는 단위예요"
+        },
+        {
+          "en": "almost",
+          "ko": "거의"
+        },
+        {
+          "en": "number",
+          "ko": "수"
+        }
+      ],
+      "slashes": [
+        "Plants have evolved defenses"
+      ],
+      "roles": [
+        {
+          "text": "Plants",
+          "role": "S"
+        },
+        {
+          "text": "have evolved",
+          "role": "V"
+        },
+        {
+          "text": "defenses",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "almost as diverse as the number of genera"
+      ],
+      "steps": [
+        {
+          "id": "g_diverse",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "식물의 방어(defenses)는 어떻대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "as diverse as를 봐요. as + 형용사 + as는 '~만큼 …한'이에요.",
+              "as diverse as를 봐요. as + 형용사 + as는 '~만큼 …한'이에요."
+            ],
+            "explain": "'almost as diverse as the number of genera', 생물을 나누는 속(genera)의 수만큼이나 다양하대요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'almost as diverse as the number of genera', 생물을 나누는 속(genera)의 수만큼이나 다양하대요.",
+              "o2": "'almost as diverse as the number of genera', 생물을 나누는 속(genera)의 수만큼이나 다양하대요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "아주 여러 가지다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "거의 다 비슷하다"
+            },
+            {
+              "id": "o2",
+              "label": "곤충 한 종류만 막는다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "defenses",
+            "diverse"
+          ],
+          "tips": [
+            {
+              "label": "as + 형용사 + as",
+              "text": "'~만큼 …한'이에요. as diverse as the number of genera = 속의 수만큼 다양한.",
+              "mark": "as diverse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Some load their tissues with harsh compounds that either are unpleasant to insects or intoxicate them, encouraging the insects to go bother another plant or at least slowing down their eating.",
+      "teaching_value": "high",
+      "model_translation": "어떤 식물은 자신의 조직을 곤충에게 불쾌감을 주거나 곤충을 취하게 만드는 독한 화합물로 채워서, 곤충이 다른 식물을 괴롭히러 가도록 유도하거나 적어도 곤충이 먹이를 먹는 속도를 늦춘다.",
+      "glosses": [
+        {
+          "en": "Some",
+          "ko": "어떤 것들(식물들)은"
+        },
+        {
+          "en": "load",
+          "ko": "채우다, 싣다"
+        },
+        {
+          "en": "their tissues",
+          "ko": "자기 조직"
+        },
+        {
+          "en": "tissues",
+          "ko": "(생물의) 조직"
+        },
+        {
+          "en": "harsh compounds",
+          "ko": "독한 화합물"
+        },
+        {
+          "en": "harsh",
+          "ko": "독한"
+        },
+        {
+          "en": "compounds",
+          "ko": "화합물"
+        },
+        {
+          "en": "that either are unpleasant to insects or intoxicate them",
+          "ko": "곤충에게 불쾌감을 주거나 곤충을 취하게 하는"
+        },
+        {
+          "en": "unpleasant",
+          "ko": "불쾌한"
+        },
+        {
+          "en": "intoxicate",
+          "ko": "취하게 하다"
+        },
+        {
+          "en": "encouraging the insects to go bother another plant",
+          "ko": "곤충이 다른 식물을 괴롭히러 가도록 부추겨"
+        },
+        {
+          "en": "bother",
+          "ko": "괴롭히다"
+        },
+        {
+          "en": "at least",
+          "ko": "적어도"
+        },
+        {
+          "en": "slowing down their eating",
+          "ko": "먹는 속도를 늦추어"
+        },
+        {
+          "en": "slowing down",
+          "ko": "늦추는"
+        },
+        {
+          "en": "insects",
+          "ko": "곤충들"
+        },
+        {
+          "en": "encouraging",
+          "ko": "부추기는"
+        },
+        {
+          "en": "go",
+          "ko": "가다"
+        },
+        {
+          "en": "plant",
+          "ko": "식물"
+        },
+        {
+          "en": "slowing",
+          "ko": "늦추는"
+        },
+        {
+          "en": "down",
+          "ko": "아래로"
+        },
+        {
+          "en": "eating",
+          "ko": "먹기"
+        }
+      ],
+      "slashes": [
+        "Some load their tissues",
+        "with harsh compounds",
+        "unpleasant to insects",
+        "intoxicate them,",
+        "encouraging the insects",
+        "another plant"
+      ],
+      "roles": [
+        {
+          "text": "Some",
+          "role": "S"
+        },
+        {
+          "text": "load",
+          "role": "V"
+        },
+        {
+          "text": "their tissues",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that either are unpleasant to insects or intoxicate them"
+      ],
+      "steps": [
+        {
+          "id": "g_some",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "둘째 문장은 Some(어떤 식물은)으로 시작해요. 이 식물들은 곤충을 어떻게 막을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "load their tissues with harsh compounds를 봐요. load A with B는 'A를 B로 채우다'예요.",
+              "load their tissues with harsh compounds를 봐요. load A with B는 'A를 B로 채우다'예요."
+            ],
+            "explain": "'load their tissues with harsh compounds', 조직 안을 독한 화합물(harsh compounds)로 채운대요. 곤충은 불쾌하거나 취해서 다른 식물로 가게 돼요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'load their tissues with harsh compounds', 조직 안을 독한 화합물(harsh compounds)로 채운대요. 곤충은 불쾌하거나 취해서 다른 식물로 가게 돼요.",
+              "o2": "'load their tissues with harsh compounds', 조직 안을 독한 화합물(harsh compounds)로 채운대요. 곤충은 불쾌하거나 취해서 다른 식물로 가게 돼요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "자기 조직을 독한 화합물로 채운다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "곤충을 직접 잡아먹는다"
+            },
+            {
+              "id": "o2",
+              "label": "잎을 떨어뜨려 숨긴다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "harsh compounds"
+          ],
+          "tips": [
+            {
+              "label": "compound",
+              "text": "평소엔 '복합의, 합성의'로 알기 쉬워요. 여기서는 '화합물'이에요.",
+              "mark": "compounds",
+              "trap": true
+            },
+            {
+              "label": "load A with B",
+              "text": "'A를 B로 채우다'예요. load their tissues with harsh compounds = 조직을 독한 화합물로 채우다.",
+              "mark": "load"
+            },
+            {
+              "label": "either A or B",
+              "text": "'A이거나 B'예요. either are unpleasant to insects or intoxicate them = 곤충에게 불쾌하거나 곤충을 취하게 하다.",
+              "mark": "either"
+            },
+            {
+              "label": "encourage + 대상 + to ~",
+              "text": "'~가 …하도록 부추기다'예요. encouraging the insects to go bother another plant = 곤충이 다른 식물을 괴롭히러 가게 하다.",
+              "mark": "encouraging"
+            }
+          ]
+        },
+        {
+          "id": "g_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "주어진 글은 '어떤 식물(Some)은 독한 화합물로 곤충을 쫓는다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "첫 문장에서 방어가 아주 다양하다고 했어요. Some(어떤 식물은)은 그중 하나만 보여 준 거예요.",
+              "첫 문장에서 방어가 아주 다양하다고 했어요. Some(어떤 식물은)은 그중 하나만 보여 준 거예요."
+            ],
+            "explain": "방어가 아주 다양하다고 하고 Some(어떤 식물은)으로 하나를 들었어요. 그러니 다음엔 다른 방어가 더 나오기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "방어가 아주 다양하다고 하고 Some(어떤 식물은)으로 하나를 들었어요. 그러니 다음엔 다른 방어가 더 나오기 쉬워요.",
+              "o2": "방어가 아주 다양하다고 하고 Some(어떤 식물은)으로 하나를 들었어요. 그러니 다음엔 다른 방어가 더 나오기 쉬워요."
+            },
+            "point": "주어진 글 끝 '어떤 식물(Some)은 독한 화합물' → 다음은 또 다른 방어"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "독한 화합물이 곤충 몸에서 일으키는 변화"
+            },
+            {
+              "id": "o1",
+              "label": "식물이 쓰는 또 다른 방어",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "식물이 곤충을 막지 못하는 이유"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Some",
+            "harsh compounds"
+          ]
+        },
+        {
+          "id": "paper_order",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "이제 (A)·(B)·(C)를 시험지 순서대로 읽어요. 단락마다 첫머리와 끝을 잘 봐 두면 좋아요."
+          },
+          "method": 1,
+          "button": "(A)부터 읽어 볼게요"
+        }
+      ],
+      "refers": {
+        "Some": "some plants(어떤 식물들)"
+      }
+    },
+    {
+      "id": 3,
+      "text": "(A) The back-and-forth is not a matter of natural balance, but more like a drawn-out evolutionary conversation.",
+      "teaching_value": "high",
+      "model_translation": "(A) 이러한 공방전은 자연적 균형의 문제가 아니라 오히려 길게 이어지는 진화적 대화에 가깝다.",
+      "glosses": [
+        {
+          "en": "a drawn-out evolutionary conversation",
+          "ko": "길게 이어지는 진화적 대화에"
+        },
+        {
+          "en": "is not",
+          "ko": "아니라"
+        },
+        {
+          "en": "a matter of natural balance",
+          "ko": "자연적 균형의 문제가"
+        },
+        {
+          "en": "The back-and-forth",
+          "ko": "이 공방전, 이 주고받기"
+        },
+        {
+          "en": "back-and-forth",
+          "ko": "공방전 · 서로 주고받는 것"
+        },
+        {
+          "en": "a matter of",
+          "ko": "~의 문제"
+        },
+        {
+          "en": "natural balance",
+          "ko": "자연적 균형"
+        },
+        {
+          "en": "balance",
+          "ko": "균형"
+        },
+        {
+          "en": "more like",
+          "ko": "오히려 ~에 가까운"
+        },
+        {
+          "en": "drawn-out",
+          "ko": "길게 이어지는"
+        },
+        {
+          "en": "evolutionary",
+          "ko": "진화의, 진화적인"
+        },
+        {
+          "en": "conversation",
+          "ko": "대화"
+        }
+      ],
+      "slashes": [
+        "The back-and-forth",
+        "natural balance,"
+      ],
+      "roles": [
+        {
+          "text": "The back-and-forth",
+          "role": "S"
+        },
+        {
+          "text": "is not",
+          "role": "V"
+        },
+        {
+          "text": "a matter of natural balance",
+          "role": "C"
+        },
+        {
+          "text": "more like a drawn-out evolutionary conversation",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s3_basic",
+          "candidates": [
+            "The back-and-forth",
+            "is not",
+            "a matter of natural balance",
+            "a drawn-out evolutionary conversation"
+          ],
+          "answers": [
+            "The back-and-forth",
+            "a matter of natural balance",
+            "is not",
+            "a drawn-out evolutionary conversation"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "The back-and-forth",
+                "ko": "이 공방전은"
+              },
+              " ",
+              {
+                "en": "a matter of natural balance",
+                "ko": "자연적 균형의 문제가"
+              },
+              " ",
+              {
+                "en": "is not",
+                "ko": "아니라"
+              },
+              ", 오히려 ",
+              {
+                "en": "a drawn-out evolutionary conversation",
+                "ko": "길게 이어지는 진화적 대화에"
+              },
+              " 가깝다."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "back-and-forth",
+              "text": "평소엔 '왔다 갔다'로 알기 쉬워요. 여기서는 식물과 곤충이 공격·방어를 주고받는 '공방전'이에요.",
+              "mark": "back-and-forth",
+              "trap": true
+            },
+            {
+              "label": "not A but B",
+              "text": "'A가 아니라 B'예요. not a matter of natural balance, but more like … conversation = 균형의 문제가 아니라 대화에 가깝다.",
+              "mark": "not"
+            }
+          ]
+        },
+        {
+          "id": "a_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(A)는 'The back-and-forth(이 주고받기)는 자연의 균형이 아니라 길게 이어지는 진화의 대화에 가깝다'로 시작해요. 앞에는 무엇이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "The back-and-forth의 The를 봐요. 앞에서 이미 나온 주고받기를 가리켜요.",
+              "The back-and-forth의 The를 봐요. 앞에서 이미 나온 주고받기를 가리켜요."
+            ],
+            "explain": "The back-and-forth(그 주고받기)는 앞에서 식물과 곤충이 공격과 방어를 주고받은 것을 받는 말이에요. not a matter of natural balance는 글쓴이가 '균형 문제가 아니다'라고 바로잡는 말이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "The back-and-forth(그 주고받기)는 앞에서 식물과 곤충이 공격과 방어를 주고받은 것을 받는 말이에요. not a matter of natural balance는 글쓴이가 '균형 문제가 아니다'라고 바로잡는 말이에요.",
+              "o2": "The back-and-forth(그 주고받기)는 앞에서 식물과 곤충이 공격과 방어를 주고받은 것을 받는 말이에요. not a matter of natural balance는 글쓴이가 '균형 문제가 아니다'라고 바로잡는 말이에요."
+            },
+            "point": "(A) The back-and-forth ← 앞에 식물과 곤충이 주고받은 방어 이야기"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "식물이 막고 곤충이 버티는, 주고받는 이야기",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "자연은 늘 균형을 이룬다는 설명"
+            },
+            {
+              "id": "o2",
+              "label": "곤충이 모두 사라졌다는 이야기"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "The back-and-forth"
+          ],
+          "tips": [
+            {
+              "label": "back-and-forth",
+              "text": "평소엔 '왔다 갔다'로 알기 쉬워요. 여기서는 식물과 곤충이 공격·방어를 주고받는 '공방전'이에요.",
+              "mark": "back-and-forth",
+              "trap": true
+            },
+            {
+              "label": "not A but B",
+              "text": "'A가 아니라 B'예요. not a matter of natural balance, but more like … conversation = 균형의 문제가 아니라 대화에 가깝다.",
+              "mark": "not"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "New plant defenses unintentionally select for insects with ways to get around them, which in turn help bring about more resilient and resistant plant species.",
+      "teaching_value": "medium",
+      "model_translation": "식물의 새로운 방어 기제는 의도치 않게 그것을 우회할 방법을 지닌 곤충들을 선택하게 되고, 이는 결국 더 회복력과 저항력이 강한 식물 종이 나타나도록 돕는다.",
+      "glosses": [
+        {
+          "en": "New plant defenses",
+          "ko": "식물의 새로운 방어"
+        },
+        {
+          "en": "unintentionally",
+          "ko": "의도치 않게"
+        },
+        {
+          "en": "select for",
+          "ko": "~을 선택하다 · 그런 것이 살아남게 하다"
+        },
+        {
+          "en": "insects",
+          "ko": "곤충들"
+        },
+        {
+          "en": "ways",
+          "ko": "방법"
+        },
+        {
+          "en": "get around",
+          "ko": "우회하다, 피해 가다"
+        },
+        {
+          "en": "them",
+          "ko": "그것들을"
+        },
+        {
+          "en": "in turn",
+          "ko": "결국, 이번엔 또"
+        },
+        {
+          "en": "help bring about",
+          "ko": "~이 생겨나도록 돕다"
+        },
+        {
+          "en": "bring about",
+          "ko": "생겨나게 하다, 일으키다"
+        },
+        {
+          "en": "resilient",
+          "ko": "회복 탄력성이 있는"
+        },
+        {
+          "en": "resistant",
+          "ko": "저항력 있는"
+        },
+        {
+          "en": "resistant plant species",
+          "ko": "저항력 있는 식물 종"
+        },
+        {
+          "en": "species",
+          "ko": "종"
+        },
+        {
+          "en": "plant",
+          "ko": "식물"
+        },
+        {
+          "en": "defenses",
+          "ko": "방어"
+        },
+        {
+          "en": "select",
+          "ko": "선택하다"
+        },
+        {
+          "en": "around",
+          "ko": "돌아서, 피해서"
+        },
+        {
+          "en": "turn",
+          "ko": "차례"
+        },
+        {
+          "en": "help",
+          "ko": "돕다"
+        }
+      ],
+      "slashes": [
+        "New plant defenses",
+        "select for insects",
+        "with ways",
+        "get around them,",
+        "in turn"
+      ],
+      "roles": [
+        {
+          "text": "New plant defenses",
+          "role": "S"
+        },
+        {
+          "text": "select for",
+          "role": "V"
+        },
+        {
+          "text": "insects",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "which in turn help bring about more resilient and resistant plant species"
+      ],
+      "steps": [
+        {
+          "id": "a2_mid",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "식물이 새 방어를 만들면 그걸 피해 갈 방법을 지닌 곤충이 선택되고, 그 곤충이 다시 더 강한 식물 종이 나오게 돕는대요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "get around them",
+            "resistant plant species"
+          ],
+          "tips": [
+            {
+              "label": "select for",
+              "text": "'~을 (살아남도록) 선택하다'예요. 새 방어가 그걸 피할 수 있는 곤충을 남게 만든다는 말이에요.",
+              "mark": "select"
+            },
+            {
+              "label": "in turn",
+              "text": "'결국, 이번엔 또'예요. 곤충이 다시 식물 쪽에 영향을 준다는 흐름이에요.",
+              "mark": "in turn"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "The back-and-forth (공방전)",
+            "left": {
+              "label": "Plants (식물)",
+              "words": [
+                {
+                  "text": "new plant defenses",
+                  "ko": "새 방어",
+                  "fresh": true
+                },
+                {
+                  "text": "resistant plant species",
+                  "ko": "더 강한 식물 종",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "Insects (곤충)",
+              "words": [
+                {
+                  "text": "ways to get around them",
+                  "ko": "피해 갈 방법",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "⇄"
+          }
+        }
+      ],
+      "refers": {
+        "them": "new plant defenses(식물의 새 방어)"
+      }
+    },
+    {
+      "id": 5,
+      "text": "New variations, shading into entire new forms and adaptations, maintain the stalemate.",
+      "teaching_value": "medium",
+      "model_translation": "새로운 변이들은 완전히 새로운 형태와 적응으로 점차 변해가며 그 교착 상태를 유지한다.",
+      "glosses": [
+        {
+          "en": "New variations",
+          "ko": "새로운 변이들"
+        },
+        {
+          "en": "variations",
+          "ko": "변이"
+        },
+        {
+          "en": "shading into",
+          "ko": "점차 ~으로 변해 가는"
+        },
+        {
+          "en": "entire new forms and adaptations",
+          "ko": "완전히 새로운 형태와 적응"
+        },
+        {
+          "en": "entire",
+          "ko": "완전한"
+        },
+        {
+          "en": "forms",
+          "ko": "형태"
+        },
+        {
+          "en": "adaptations",
+          "ko": "적응"
+        },
+        {
+          "en": "maintain",
+          "ko": "유지하다"
+        },
+        {
+          "en": "the stalemate",
+          "ko": "그 교착 상태"
+        },
+        {
+          "en": "stalemate",
+          "ko": "교착 상태 · 어느 쪽도 이기지 못하는 상태"
+        },
+        {
+          "en": "shading",
+          "ko": "점차 변하는"
+        }
+      ],
+      "slashes": [
+        "New variations,",
+        "and adaptations,"
+      ],
+      "roles": [
+        {
+          "text": "New variations",
+          "role": "S"
+        },
+        {
+          "text": "maintain",
+          "role": "V"
+        },
+        {
+          "text": "the stalemate",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "shading into entire new forms and adaptations"
+      ],
+      "steps": [
+        {
+          "id": "a3_end",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "(A)는 새 변이들이 교착 상태(stalemate)를 계속 유지한다는 말로 끝나요. 어느 한쪽이 이기지 않고 주고받기가 이어진다는 뜻이에요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "maintain the stalemate"
+          ],
+          "faded": [
+            "shading into entire new forms and adaptations"
+          ],
+          "tips": [
+            {
+              "label": "흐린 부분",
+              "text": "콤마(,) 두 개 사이의 shading into …는 빼고 읽어도 돼요. New variations … maintain the stalemate가 뼈대예요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "(B) Plants can release chemical compounds that let their same-species neighbors know that an attack is likely coming, pushing those nearby plants to start building up defensive compounds in their tissues.",
+      "teaching_value": "high",
+      "model_translation": "(B) 식물은 동종의 이웃 식물에게 공격이 임박한 것 같다고 알려주는 화학 화합물을 방출하여, 그 주변의 식물들이 자신의 조직에 방어용 화합물을 축적하기 시작하도록 유도할 수 있다.",
+      "glosses": [
+        {
+          "en": "Plants",
+          "ko": "식물은"
+        },
+        {
+          "en": "can release",
+          "ko": "방출할 수 있다"
+        },
+        {
+          "en": "release",
+          "ko": "방출하다, 내보내다"
+        },
+        {
+          "en": "chemical compounds",
+          "ko": "화학 화합물"
+        },
+        {
+          "en": "chemical",
+          "ko": "화학의"
+        },
+        {
+          "en": "same-species neighbors",
+          "ko": "같은 종의 이웃 (식물)"
+        },
+        {
+          "en": "neighbors",
+          "ko": "이웃"
+        },
+        {
+          "en": "an attack",
+          "ko": "공격"
+        },
+        {
+          "en": "is likely coming",
+          "ko": "올 것 같다"
+        },
+        {
+          "en": "likely",
+          "ko": "~할 것 같은"
+        },
+        {
+          "en": "those nearby plants",
+          "ko": "그 주변 식물들"
+        },
+        {
+          "en": "nearby",
+          "ko": "근처의, 주변의"
+        },
+        {
+          "en": "building up",
+          "ko": "쌓는, 축적하는"
+        },
+        {
+          "en": "defensive compounds",
+          "ko": "방어용 화합물"
+        },
+        {
+          "en": "defensive",
+          "ko": "방어용의"
+        },
+        {
+          "en": "in their tissues",
+          "ko": "자기 조직 안에"
+        },
+        {
+          "en": "compounds",
+          "ko": "화합물"
+        },
+        {
+          "en": "same-species",
+          "ko": "같은 종의"
+        },
+        {
+          "en": "attack",
+          "ko": "공격"
+        },
+        {
+          "en": "tissues",
+          "ko": "조직"
+        }
+      ],
+      "slashes": [
+        "chemical compounds",
+        "neighbors know",
+        "likely coming,",
+        "nearby plants",
+        "defensive compounds"
+      ],
+      "roles": [
+        {
+          "text": "Plants",
+          "role": "S"
+        },
+        {
+          "text": "can release",
+          "role": "V"
+        },
+        {
+          "text": "chemical compounds that let their same-species neighbors know that an attack is likely coming",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that let their same-species neighbors know that an attack is likely coming"
+      ],
+      "steps": [
+        {
+          "id": "b_tell",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "식물이 화학 물질을 내보내면 같은 종 이웃(same-species neighbors)은 무엇을 알게 될까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "let … know that 뒤를 봐요. let + 대상 + know는 '~에게 알려 주다'예요.",
+              "let … know that 뒤를 봐요. let + 대상 + know는 '~에게 알려 주다'예요."
+            ],
+            "explain": "'that an attack is likely coming', 공격이 올 것 같다고 알려 준대요. 그래서 주변 식물도 방어용 화합물을 쌓기 시작해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'that an attack is likely coming', 공격이 올 것 같다고 알려 준대요. 그래서 주변 식물도 방어용 화합물을 쌓기 시작해요.",
+              "o2": "'that an attack is likely coming', 공격이 올 것 같다고 알려 준대요. 그래서 주변 식물도 방어용 화합물을 쌓기 시작해요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "곧 공격이 올 것 같다는 것",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "곤충이 이미 떠났다는 것"
+            },
+            {
+              "id": "o2",
+              "label": "물이 부족하다는 것"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "same-species neighbors",
+            "an attack is likely coming"
+          ],
+          "tips": [
+            {
+              "label": "let + 대상 + know",
+              "text": "'~에게 알려 주다'예요. let their same-species neighbors know that … = 같은 종 이웃에게 …라고 알려 주다.",
+              "mark": "let"
+            },
+            {
+              "label": "push + 대상 + to ~",
+              "text": "'~가 …하도록 몰아가다'예요. pushing those nearby plants to start … = 주변 식물들이 …을 시작하게 하다.",
+              "mark": "pushing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Some of these cues even attract insect predators, a call for an assist that benefits both the plant and its bug-eating collaborators.",
+      "teaching_value": "high",
+      "model_translation": "이러한 신호 중 일부는 심지어 곤충의 포식자를 유인하기도 하는데, 이는 식물과 곤충을 잡아먹는 협력자 모두에게 이익이 되는 지원 요청이다.",
+      "glosses": [
+        {
+          "en": "these cues",
+          "ko": "이 신호들"
+        },
+        {
+          "en": "cues",
+          "ko": "신호"
+        },
+        {
+          "en": "even",
+          "ko": "심지어"
+        },
+        {
+          "en": "attract",
+          "ko": "끌어들이다, 유인하다"
+        },
+        {
+          "en": "insect predators",
+          "ko": "곤충의 포식자"
+        },
+        {
+          "en": "predators",
+          "ko": "포식자"
+        },
+        {
+          "en": "a call for an assist",
+          "ko": "지원 요청"
+        },
+        {
+          "en": "call",
+          "ko": "요청"
+        },
+        {
+          "en": "assist",
+          "ko": "도움, 지원"
+        },
+        {
+          "en": "benefits",
+          "ko": "~에게 이익이 되다"
+        },
+        {
+          "en": "bug-eating collaborators",
+          "ko": "곤충을 잡아먹는 협력자"
+        },
+        {
+          "en": "collaborators",
+          "ko": "협력자"
+        },
+        {
+          "en": "insect",
+          "ko": "곤충"
+        },
+        {
+          "en": "bug-eating",
+          "ko": "곤충을 먹는"
+        }
+      ],
+      "slashes": [
+        "Some of these cues",
+        "insect predators,",
+        "for an assist"
+      ],
+      "roles": [
+        {
+          "text": "Some of these cues",
+          "role": "S"
+        },
+        {
+          "text": "attract",
+          "role": "V"
+        },
+        {
+          "text": "insect predators",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "that benefits both the plant and its bug-eating collaborators"
+      ],
+      "steps": [
+        {
+          "id": "b_who",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "these cues(이 신호들) 중 일부는 무엇을 끌어들인대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "attract insect predators를 봐요. predator는 '포식자, 잡아먹는 동물'이에요.",
+              "attract insect predators를 봐요. predator는 '포식자, 잡아먹는 동물'이에요."
+            ],
+            "explain": "'attract insect predators', 곤충의 포식자를 불러들인대요. 식물과 그 포식자(bug-eating collaborators) 모두에게 이익이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'attract insect predators', 곤충의 포식자를 불러들인대요. 식물과 그 포식자(bug-eating collaborators) 모두에게 이익이에요.",
+              "o2": "'attract insect predators', 곤충의 포식자를 불러들인대요. 식물과 그 포식자(bug-eating collaborators) 모두에게 이익이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "더 많은 곤충"
+            },
+            {
+              "id": "o1",
+              "label": "곤충을 잡아먹는 포식자",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "다른 종의 식물"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "insect predators",
+            "collaborators"
+          ],
+          "tips": [
+            {
+              "label": "a call for ~",
+              "text": "'~ 요청'이에요. a call for an assist = 도와 달라는 요청. 앞 문장 전체를 바꿔 말한 것이에요.",
+              "mark": "a call"
+            }
+          ]
+        },
+        {
+          "id": "b_together",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(B)에 나온 방어는 식물이 혼자 하는 걸까요, 다른 생물과 함께 하는 걸까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "neighbors(이웃)와 collaborators(협력자)를 봐요.",
+              "neighbors(이웃)와 collaborators(협력자)를 봐요."
+            ],
+            "explain": "이웃 식물에게 알리고(neighbors), 포식자를 불러(collaborators) 같이 막아요. 혼자가 아니에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "이웃 식물에게 알리고(neighbors), 포식자를 불러(collaborators) 같이 막아요. 혼자가 아니에요."
+            },
+            "point": "(B) 이웃에게 알리고 포식자를 부르는 방어 = 함께 하는 방어"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "식물 혼자 하는 방어"
+            },
+            {
+              "id": "o1",
+              "label": "다른 생물과 함께 하는 방어",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "collaborators"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "식물의 방어 (defenses)",
+            "left": {
+              "label": "by itself (혼자)",
+              "words": [
+                {
+                  "text": "harsh compounds",
+                  "ko": "독한 화합물"
+                }
+              ]
+            },
+            "right": {
+              "label": "with others (함께)",
+              "words": [
+                {
+                  "text": "same-species neighbors",
+                  "ko": "같은 종 이웃",
+                  "fresh": true
+                },
+                {
+                  "text": "insect predators",
+                  "ko": "곤충의 포식자",
+                  "fresh": true
+                }
+              ]
+            },
+            "between": "/"
+          }
+        }
+      ],
+      "refers": {
+        "these cues": "the chemical compounds in (B)((B) 첫 문장의 알리는 화학 물질)"
+      }
+    },
+    {
+      "id": 8,
+      "text": "(C) Structural defenses like thick coats of wax on leaves may prevent some insect species from damaging the plant tissues altogether.",
+      "teaching_value": "high",
+      "model_translation": "(C) 잎의 두꺼운 왁스층과 같은 구조적 방어 기제는 일부 곤충 종이 식물 조직을 아예 손상시키지 못하게 막을 수도 있다.",
+      "glosses": [
+        {
+          "en": "Structural defenses",
+          "ko": "구조적 방어 (기제)"
+        },
+        {
+          "en": "structural",
+          "ko": "구조적인"
+        },
+        {
+          "en": "like thick coats of wax on leaves",
+          "ko": "잎의 두꺼운 왁스층 같은"
+        },
+        {
+          "en": "thick coats of wax",
+          "ko": "두꺼운 왁스층"
+        },
+        {
+          "en": "coats",
+          "ko": "막, 층"
+        },
+        {
+          "en": "wax",
+          "ko": "왁스, 밀랍"
+        },
+        {
+          "en": "leaves",
+          "ko": "잎들"
+        },
+        {
+          "en": "may prevent",
+          "ko": "막을 수도 있다"
+        },
+        {
+          "en": "prevent",
+          "ko": "막다"
+        },
+        {
+          "en": "some insect species",
+          "ko": "일부 곤충 종"
+        },
+        {
+          "en": "from damaging the plant tissues",
+          "ko": "식물 조직을 손상시키는 것을"
+        },
+        {
+          "en": "damaging",
+          "ko": "손상시키는"
+        },
+        {
+          "en": "altogether",
+          "ko": "아예, 완전히"
+        },
+        {
+          "en": "defenses",
+          "ko": "방어"
+        },
+        {
+          "en": "thick",
+          "ko": "두꺼운"
+        },
+        {
+          "en": "insect",
+          "ko": "곤충"
+        },
+        {
+          "en": "species",
+          "ko": "종"
+        },
+        {
+          "en": "plant",
+          "ko": "식물"
+        },
+        {
+          "en": "tissues",
+          "ko": "조직"
+        }
+      ],
+      "slashes": [
+        "Structural defenses",
+        "wax on leaves",
+        "some insect species"
+      ],
+      "roles": [
+        {
+          "text": "Structural defenses",
+          "role": "S"
+        },
+        {
+          "text": "may prevent",
+          "role": "V"
+        },
+        {
+          "text": "some insect species",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "c_before",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(C)는 'Structural defenses(구조적 방어)'로 시작해요. 이렇게 종류를 밝힌 걸 보면, 앞에는 어떤 방어가 나왔을까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "Structural(구조적인)이라고 굳이 종류를 밝혔어요. 잎의 왁스층처럼 몸의 구조로 막는 방어예요.",
+              "Structural(구조적인)이라고 굳이 종류를 밝혔어요. 잎의 왁스층처럼 몸의 구조로 막는 방어예요."
+            ],
+            "explain": "Structural(구조적)이라고 종류를 밝힌 건, 앞에 다른 종류의 방어가 이미 나왔기 때문이에요. 몸 구조가 아니라 화학 물질로 막는 방어 같은 것이요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "Structural(구조적)이라고 종류를 밝힌 건, 앞에 다른 종류의 방어가 이미 나왔기 때문이에요. 몸 구조가 아니라 화학 물질로 막는 방어 같은 것이요.",
+              "o1": "Structural(구조적)이라고 종류를 밝힌 건, 앞에 다른 종류의 방어가 이미 나왔기 때문이에요. 몸 구조가 아니라 화학 물질로 막는 방어 같은 것이요."
+            },
+            "point": "(C) Structural defenses ← 앞에 구조가 아닌 다른 방어(화학 물질)"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "방어를 하지 않는 식물 이야기"
+            },
+            {
+              "id": "o1",
+              "label": "곤충이 식물을 공격하는 방법"
+            },
+            {
+              "id": "o2",
+              "label": "구조가 아닌 다른 종류의 방어",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Structural defenses"
+          ],
+          "tips": [
+            {
+              "label": "prevent A from ~ing",
+              "text": "'A가 ~하지 못하게 막다'예요. prevent some insect species from damaging … = 일부 곤충 종이 … 손상시키지 못하게 막다.",
+              "mark": "prevent"
+            },
+            {
+              "label": "altogether",
+              "text": "'아예, 완전히'예요.",
+              "mark": "altogether"
+            }
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "식물의 방어 (defenses)",
+            "left": {
+              "label": "by itself (혼자)",
+              "words": [
+                {
+                  "text": "harsh compounds",
+                  "ko": "독한 화합물"
+                },
+                {
+                  "text": "thick coats of wax",
+                  "ko": "두꺼운 왁스층",
+                  "fresh": true
+                }
+              ]
+            },
+            "right": {
+              "label": "with others (함께)",
+              "words": [
+                {
+                  "text": "same-species neighbors",
+                  "ko": "같은 종 이웃"
+                },
+                {
+                  "text": "insect predators",
+                  "ko": "곤충의 포식자"
+                }
+              ]
+            },
+            "between": "/"
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Nor are individual plants entirely on their own while under attack.",
+      "teaching_value": "high",
+      "model_translation": "또한 개별 식물은 공격을 받는 동안 완전히 혼자인 것도 아니다.",
+      "glosses": [
+        {
+          "en": "Nor are",
+          "ko": "아니다"
+        },
+        {
+          "en": "entirely on their own",
+          "ko": "완전히 혼자인"
+        },
+        {
+          "en": "while under attack",
+          "ko": "공격을 받는 동안"
+        },
+        {
+          "en": "Nor",
+          "ko": "~도 아니다 · 앞 내용에 부정을 하나 더 붙여요"
+        },
+        {
+          "en": "individual plants",
+          "ko": "개별 식물"
+        },
+        {
+          "en": "individual",
+          "ko": "개별의"
+        },
+        {
+          "en": "entirely",
+          "ko": "완전히"
+        },
+        {
+          "en": "on their own",
+          "ko": "혼자서, 스스로"
+        },
+        {
+          "en": "under attack",
+          "ko": "공격을 받는"
+        },
+        {
+          "en": "attack",
+          "ko": "공격"
+        },
+        {
+          "en": "under",
+          "ko": "~ 아래"
+        }
+      ],
+      "slashes": [
+        "individual plants",
+        "on their own"
+      ],
+      "roles": [
+        {
+          "text": "are",
+          "role": "V"
+        },
+        {
+          "text": "individual plants",
+          "role": "S"
+        },
+        {
+          "text": "entirely on their own",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s9_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s9_basic",
+          "candidates": [
+            "Nor are",
+            "individual plants",
+            "entirely on their own",
+            "while under attack"
+          ],
+          "answers": [
+            "individual plants",
+            "while under attack",
+            "entirely on their own",
+            "Nor are"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "individual plants",
+                "ko": "개별 식물은"
+              },
+              " ",
+              {
+                "en": "while under attack",
+                "ko": "공격을 받는 동안"
+              },
+              " ",
+              {
+                "en": "entirely on their own",
+                "ko": "완전히 혼자인"
+              },
+              " 것도 ",
+              {
+                "en": "Nor are",
+                "ko": "아니다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "Nor + 동사 + 주어",
+              "text": "'~도 아니다'예요. 앞 내용에 부정을 하나 더 붙이고, 동사 are가 주어 individual plants 앞에 와요.",
+              "mark": "Nor"
+            },
+            {
+              "label": "on one's own",
+              "text": "'혼자서, 스스로'예요. not on their own = 혼자가 아닌.",
+              "mark": "on their own"
+            }
+          ]
+        },
+        {
+          "id": "c_next",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "(C)는 '식물은 공격받는 동안 완전히 혼자인 것도 아니다'로 끝나요. 다음엔 어떤 내용이 오기 쉬울까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "not … on their own(혼자가 아니다)이라고 했어요. 그럼 누구와 함께인지가 궁금해지죠.",
+              "not … on their own(혼자가 아니다)이라고 했어요. 그럼 누구와 함께인지가 궁금해지죠."
+            ],
+            "explain": "혼자가 아니라고 했으니, 다음엔 누구와 어떻게 함께 막는지가 이어지기 쉬워요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "혼자가 아니라고 했으니, 다음엔 누구와 어떻게 함께 막는지가 이어지기 쉬워요.",
+              "o2": "혼자가 아니라고 했으니, 다음엔 누구와 어떻게 함께 막는지가 이어지기 쉬워요."
+            },
+            "point": "(C) 끝 '혼자인 것도 아니다' → 다음은 함께 막는 방법"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "왁스층이 두꺼워지는 과정"
+            },
+            {
+              "id": "o1",
+              "label": "식물이 다른 생물과 함께 공격을 막는 방법",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "곤충이 혼자 사는 이유"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Nor",
+            "on their own"
+          ],
+          "tips": [
+            {
+              "label": "Nor + 동사 + 주어",
+              "text": "'~도 아니다'예요. 앞 내용에 부정을 하나 더 붙이고, 동사 are가 주어 individual plants 앞에 와요.",
+              "mark": "Nor"
+            },
+            {
+              "label": "on one's own",
+              "text": "'혼자서, 스스로'예요. not on their own = 혼자가 아닌.",
+              "mark": "on their own"
+            }
+          ]
+        },
+        {
+          "id": "order_link",
+          "type": "pick",
+          "interaction": "word_pick",
+          "tag": "순서 잇기",
+          "candidates": [
+            "A",
+            "B",
+            "C"
+          ],
+          "answers": [
+            "C",
+            "B",
+            "A"
+          ],
+          "order": {
+            "given": {
+              "id": "given",
+              "label": "주어진 글",
+              "last": {
+                "en": "Some load their tissues with harsh compounds …",
+                "ko": "어떤 식물은 조직을 독한 화합물로 채운다"
+              }
+            },
+            "cards": [
+              {
+                "id": "A",
+                "label": "(A)",
+                "first": {
+                  "en": "The back-and-forth is not a matter of natural balance …",
+                  "ko": "이 공방전은 자연의 균형 문제가 아니다"
+                },
+                "last": {
+                  "en": "… New variations … maintain the stalemate.",
+                  "ko": "새 변이들이 교착 상태를 유지한다"
+                }
+              },
+              {
+                "id": "B",
+                "label": "(B)",
+                "first": {
+                  "en": "Plants can release chemical compounds that let their same-species neighbors know …",
+                  "ko": "식물은 같은 종 이웃에게 알리는 화학 물질을 내보낸다"
+                },
+                "last": {
+                  "en": "… a call for an assist that benefits both the plant and its bug-eating collaborators",
+                  "ko": "식물과 협력자 모두에게 이익이 되는 지원 요청"
+                }
+              },
+              {
+                "id": "C",
+                "label": "(C)",
+                "first": {
+                  "en": "Structural defenses like thick coats of wax on leaves …",
+                  "ko": "잎의 두꺼운 왁스층 같은 구조적 방어"
+                },
+                "last": {
+                  "en": "Nor are individual plants entirely on their own while under attack.",
+                  "ko": "식물은 공격받는 동안 혼자인 것도 아니다"
+                }
+              }
+            ]
+          },
+          "brief": {
+            "ask": "이제 직접 이어 봐요. 앞 카드의 끝과 다음 카드의 첫머리가 이어지게 카드를 순서대로 놓아 볼까요?",
+            "wrong": "앞 카드의 끝과 다음 카드의 첫머리가 이어지는지 다시 봐요.",
+            "wrong_by": {
+              "0": "주어진 글의 끝을 다시 봐요. 그 바로 뒤에 이어질 첫머리를 찾아봐요.",
+              "1": "두 번째 칸의 첫머리가 바로 위 카드의 끝을 받는지 다시 봐요."
+            },
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 이었어요! 끝과 첫머리가 딱딱 이어지죠.",
+            "explain": "주어진 글(어떤 식물은 독한 화합물로 방어) → (C) 또 다른 방어인 구조적 방어, 그리고 식물은 혼자가 아니다 → (B) 이웃에게 알리고 포식자를 부르는, 함께 하는 방어 → (A) 이런 공방전은 길게 이어지는 진화의 대화, 순서예요.",
+            "point": "순서: 앞 단락의 끝 ↔ 다음 단락의 첫머리(This, the, in this manner, Nor …)가 이어지는지"
+          },
+          "method": 1
+        },
+        {
+          "id": "c_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "직접 이어 봤어요. 실제 시험 보기에서는 몇 번일지 볼까요?"
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

@@ -1,0 +1,1771 @@
+{
+  "id": "mopyeong-2027-06-33-emotion-perception",
+  "kind": "policy",
+  "version": "0.1",
+  "source": "2026년 6월 모의평가(2027학년도, 한국교육과정평가원) 영어 33번 (빈칸 추론, 3점)",
+  "brief": {
+    "topic": "빈칸 푸는 법: 빈칸 문장부터 → 처음부터 읽으며 같은 말 모으기 → 빈칸이 같은 쪽인지 반대 쪽인지 → 바꿔 쓴 보기",
+    "closing": "수고 인사"
+  },
+  "method": {
+    "type": "blank",
+    "labels": [
+      "빈칸 문장 먼저 보기",
+      "요지 잡기"
+    ],
+    "intro_times": 3
+  },
+  "read_button": "분석하러 갈게요",
+  "read_first": true,
+  "images": {
+    "topic": {
+      "src": "/assets/topic-emotion-perception.svg",
+      "alt": "칠판: Emotion(감정) → Perception(지각)",
+      "kind": "drawing"
+    }
+  },
+  "intro": [
+    {
+      "id": "topic",
+      "type": "say",
+      "button": "네",
+      "image": "topic",
+      "brief": {
+        "say": "무서울 때 그림자가 사람처럼 보인 적 있나요? 이번 글은 감정과 지각(보고 알아차리는 일) 이야기예요."
+      }
+    },
+    {
+      "id": "method1",
+      "type": "say",
+      "button": "좋아요",
+      "brief": {
+        "say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."
+      }
+    }
+  ],
+  "exam": {
+    "question": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]",
+    "underline": "________",
+    "sentence": 7,
+    "analysis_first": true,
+    "wrong_rate": 58.0,
+    "wrong_rank": 7,
+    "wrong_rate_source": "메가스터디 풀서비스 채점 기준 — 전체 응시자 공개 오답률과 다를 수 있다",
+    "glosses": [
+      {
+        "en": "chances",
+        "ko": "기회"
+      },
+      {
+        "en": "find differences",
+        "ko": "차이점을 발견하다"
+      },
+      {
+        "en": "less similarity",
+        "ko": "더 적은 유사성"
+      },
+      {
+        "en": "is required",
+        "ko": "필요하다"
+      },
+      {
+        "en": "for the thing to appear",
+        "ko": "그 대상이 (기대한 것으로) 나타나는 데"
+      },
+      {
+        "en": "sooner",
+        "ko": "더 빨리"
+      },
+      {
+        "en": "fades away",
+        "ko": "사라지다"
+      },
+      {
+        "en": "easily",
+        "ko": "쉽게"
+      },
+      {
+        "en": "sense",
+        "ko": "지각하다, 느끼다"
+      },
+      {
+        "en": "the way it is",
+        "ko": "있는 그대로"
+      },
+      {
+        "en": "less slowly",
+        "ko": "덜 느리게"
+      },
+      {
+        "en": "released",
+        "ko": "표출된, 풀려난"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "label": "the more chances one gets to find differences",
+        "keywords": [
+          "find differences"
+        ],
+        "ko": "차이점을 발견할 기회를 더 많이 얻는다"
+      },
+      {
+        "id": "2",
+        "label": "the less similarity is required for the thing to appear",
+        "keywords": [
+          "less similarity",
+          "required"
+        ],
+        "ko": "그 대상이 (볼 것을 기대한 것으로) 나타나는 데에 필요한 유사성은 더 적다",
+        "correct": true
+      },
+      {
+        "id": "3",
+        "label": "the sooner the perceived similarity fades away",
+        "keywords": [
+          "sooner",
+          "fades away"
+        ],
+        "ko": "지각된 유사성은 더 빨리 사라진다"
+      },
+      {
+        "id": "4",
+        "label": "the more easily one can sense the world the way it is",
+        "keywords": [
+          "the way it is"
+        ],
+        "ko": "사람은 세상을 있는 그대로 더 쉽게 지각할 수 있다"
+      },
+      {
+        "id": "5",
+        "label": "the less slowly different emotions are released",
+        "keywords": [
+          "less slowly",
+          "released"
+        ],
+        "ko": "서로 다른 감정들이 덜 느리게 표출된다"
+      }
+    ],
+    "brief": {
+      "ask": "감정에 더 영향을 받을수록 어떻게 되는지, 5문장을 떠올리며 골라 봐요.",
+      "first_correct": "맞았어요!",
+      "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+      "final_correct": "정답이에요!",
+      "answer_explain": "정답이에요! 감정에 영향을 받으면 조금만 비슷해도 기대한 것으로 잘못 봐요. 영향을 더 받을수록 그렇게 보이는 데 필요한 비슷함은 더 적어져요.",
+      "final_wrong": "정답은 ②예요. 감정에 영향을 받으면 약간만 비슷해도 잘못 알아본다고 했어요(5문장). 영향을 더 받을수록 필요한 유사성은 더 적어요.",
+      "option_feedback": {
+        "1": "차이점을 비교하는 건 보통의 감각 기관이 하는 일이에요(8문장). 감정은 오히려 대상을 부정확하게 분별하게 해요.",
+        "3": "similarity가 나와서 헷갈렸죠. 하지만 비슷함이 사라진다는 말은 없어요. 조금만 비슷해도 잘못 본다는 게 핵심이에요.",
+        "4": "반대 쪽 말이에요. 감정에 영향을 받을수록 세상을 왜곡해서 보고, 지각은 더 편향된다고 했어요.",
+        "5": "감정이 표출되는 빠르기는 글에 없어요. 글은 감정이 보는 방식을 바꾼다는 이야기예요."
+      },
+      "ask_first": "실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.",
+      "option_review": {
+        "4": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 16%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "④는 '~할수록 더 쉽게'라는 모양이 빈칸 문장과 잘 맞아 보여요. 하지만 감정은 세상을 왜곡된 방식으로(in a distorted way) 보게 하고, 몰입이 클수록 지각은 더 편향돼요(biased).\n세상을 있는 그대로 보는 건 반대 쪽이에요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "2문장",
+                "text": "see the world in a distorted way",
+                "ko": "세상을 왜곡해서 본다",
+                "tone": "hl"
+              },
+              {
+                "label": "9문장",
+                "text": "the more biased one’s perception",
+                "ko": "지각이 더 편향된다",
+                "tone": "hl"
+              },
+              {
+                "label": "④",
+                "text": "sense the world the way it is",
+                "ko": "있는 그대로 본다 — 반대 쪽",
+                "tone": "hl2"
+              }
+            ]
+          }
+        },
+        "1": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 15%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "①은 8문장의 similarities and differences가 떠올라 끌려요. 하지만 차이를 비교하는 건 보통 때(normally) 감각 기관이 하는 일이에요.\n감정은 오히려 대상을 부정확하게(inaccurately) 분별하게 해요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "8문장",
+                "text": "normally … comparing similarities and differences",
+                "ko": "보통 때 — 비교한다",
+                "tone": "hl2"
+              },
+              {
+                "label": "8문장",
+                "text": "emotions … discern objects inaccurately",
+                "ko": "감정 — 부정확하게 분별한다",
+                "tone": "hl"
+              }
+            ]
+          }
+        },
+        "3": {
+          "intro": "아쉽게도 틀렸어요. 이 보기는 15%나 고른, 많은 학생이 헷갈린 보기예요. 같이 자세히 볼까요?",
+          "intro_button": "같이 볼게요",
+          "say": "③은 similarity(유사성)가 있어서 끌려요. 하지만 글은 비슷함이 사라진다는 게 아니라, 약간만 비슷해도(a small similarity) 잘못 알아본다는 이야기예요.\n영향을 더 받을수록 필요한 비슷함이 줄어들어요.",
+          "panel": {
+            "kind": "structure",
+            "rows": [
+              {
+                "label": "5문장",
+                "text": "a small similarity → misidentification",
+                "ko": "약간만 비슷해도 잘못 알아봄",
+                "tone": "hl"
+              },
+              {
+                "label": "③",
+                "text": "the perceived similarity fades away",
+                "ko": "비슷함이 사라진다 — 글에 없음",
+                "tone": "hl2"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "key_words": {
+    "passage": [
+      {
+        "en": "imagination",
+        "ko": "상상력"
+      },
+      {
+        "en": "perception",
+        "ko": "지각"
+      },
+      {
+        "en": "dispose A to B",
+        "ko": "A가 B하도록 이끌다"
+      },
+      {
+        "en": "distorted",
+        "ko": "왜곡된"
+      },
+      {
+        "en": "coward",
+        "ko": "겁쟁이"
+      },
+      {
+        "en": "perceptual",
+        "ko": "지각의"
+      },
+      {
+        "en": "disposition",
+        "ko": "성향"
+      },
+      {
+        "en": "be affected by",
+        "ko": "~에 영향을 받다"
+      },
+      {
+        "en": "desire",
+        "ko": "욕망"
+      },
+      {
+        "en": "similarity",
+        "ko": "유사성"
+      },
+      {
+        "en": "misidentification",
+        "ko": "오인"
+      },
+      {
+        "en": "organ",
+        "ko": "기관"
+      },
+      {
+        "en": "inaccurately",
+        "ko": "부정확하게"
+      },
+      {
+        "en": "investment",
+        "ko": "몰입"
+      },
+      {
+        "en": "biased",
+        "ko": "편향된"
+      }
+    ],
+    "options": [
+      {
+        "en": "be required",
+        "ko": "필요하다"
+      },
+      {
+        "en": "fade away",
+        "ko": "사라지다"
+      },
+      {
+        "en": "release",
+        "ko": "표출하다"
+      }
+    ]
+  },
+  "context": {
+    "mode": "paper_review",
+    "exam_relevance": "high",
+    "time_budget": "normal"
+  },
+  "item": {
+    "english_difficulty": "high",
+    "conceptual_difficulty": "high",
+    "background_knowledge_required": "low",
+    "exam_importance": "high",
+    "teaching_value": "high",
+    "intervention_density": "normal"
+  },
+  "sentences": [
+    {
+      "id": 1,
+      "text": "Imagination continues to function when perception is not actively discerning objects, in cases of emotion, disease, and sleep.",
+      "model_translation": "감정, 질병, 수면의 경우처럼 지각이 대상을 적극적으로 분별하지 않을 때에도 상상력은 계속 기능한다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "Imagination",
+          "ko": "상상력"
+        },
+        {
+          "en": "continues to function",
+          "ko": "계속 기능하다, 계속 작동하다"
+        },
+        {
+          "en": "function",
+          "ko": "기능하다, 작동하다"
+        },
+        {
+          "en": "continues",
+          "ko": "계속하다"
+        },
+        {
+          "en": "when perception is not actively discerning objects",
+          "ko": "지각이 대상을 적극적으로 분별하지 않을 때"
+        },
+        {
+          "en": "perception",
+          "ko": "지각 · 눈·귀 같은 감각으로 알아차리는 것"
+        },
+        {
+          "en": "not actively discerning",
+          "ko": "적극적으로 분별하지 않는"
+        },
+        {
+          "en": "actively",
+          "ko": "적극적으로"
+        },
+        {
+          "en": "discerning",
+          "ko": "분별하는"
+        },
+        {
+          "en": "objects",
+          "ko": "대상"
+        },
+        {
+          "en": "in cases of emotion, disease, and sleep",
+          "ko": "감정, 질병, 수면의 경우처럼"
+        },
+        {
+          "en": "cases",
+          "ko": "경우"
+        },
+        {
+          "en": "emotion",
+          "ko": "감정"
+        },
+        {
+          "en": "disease",
+          "ko": "질병"
+        },
+        {
+          "en": "sleep",
+          "ko": "수면, 잠"
+        },
+        {
+          "en": "The more affected one is",
+          "ko": "사람이 더 영향을 받을수록"
+        },
+        {
+          "en": "The more",
+          "ko": "더 ~할수록"
+        },
+        {
+          "en": "affected",
+          "ko": "영향을 받은"
+        },
+        {
+          "en": "one",
+          "ko": "사람"
+        },
+        {
+          "en": "when",
+          "ko": "~할 때"
+        }
+      ],
+      "slashes": [
+        "continues to function",
+        "actively discerning objects,"
+      ],
+      "roles": [
+        {
+          "text": "Imagination",
+          "role": "S"
+        },
+        {
+          "text": "continues to function",
+          "role": "V"
+        },
+        {
+          "text": "perception",
+          "role": "S"
+        },
+        {
+          "text": "is not actively discerning",
+          "role": "V"
+        },
+        {
+          "text": "objects",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1_passage",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 여기, 일곱째 문장에 있어요. 이 문장을 잠깐 볼까요?"
+          },
+          "method": 0,
+          "button": "네",
+          "before_read": true,
+          "show_passage": [
+            "The more affected one is, ________."
+          ]
+        },
+        {
+          "id": "s1_blank_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "아주 짧은 문장이에요. 이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "The more ~, (the) …는 '~할수록 더 …하다'예요. affected는 '영향을 받은'이에요.",
+              "The more ~, (the) …는 '~할수록 더 …하다'예요. affected는 '영향을 받은'이에요."
+            ],
+            "explain": "'The more affected one is'는 '사람이 더 영향을 받을수록'이에요. 빈칸에는 그러면 무엇이 더하거나 덜한지가 와요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'The more affected one is'는 '사람이 더 영향을 받을수록'이에요. 빈칸에는 그러면 무엇이 더하거나 덜한지가 와요.",
+              "o2": "'The more affected one is'는 '사람이 더 영향을 받을수록'이에요. 빈칸에는 그러면 무엇이 더하거나 덜한지가 와요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "영향을 받지 않으면, ____하다"
+            },
+            {
+              "id": "o1",
+              "label": "사람이 더 영향을 받을수록, (더) ____하다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "영향을 받는 것보다 ____하는 게 낫다"
+            }
+          ],
+          "method": 0,
+          "before_read": true,
+          "display": "The more affected one is, ________.",
+          "tag": "빈칸 문장",
+          "highlight": [
+            "The more",
+            "affected",
+            "________"
+          ],
+          "tips": [
+            {
+              "label": "The 비교급 ~, the 비교급 …",
+              "text": "'~할수록 더 …하다'예요. 빈칸 안에도 the more, the less 같은 비교급이 와요.",
+              "mark": "The more"
+            }
+          ]
+        },
+        {
+          "id": "s1_where",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "그럼 무엇에 영향을 받으면 어떻게 되는지 생각하며 문장 처음부터 읽어 봐요."
+          },
+          "method": 0,
+          "button": "처음부터 읽어 볼게요",
+          "before_read": true,
+          "display": "The more affected one is, ________.",
+          "tag": "빈칸 문장"
+        },
+        {
+          "id": "s1_when",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "상상력(Imagination)은 언제 계속 작동한대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "when 뒤를 봐요. perception은 '지각', discerning은 '분별하는'이에요.",
+              "when 뒤를 봐요. perception은 '지각', discerning은 '분별하는'이에요."
+            ],
+            "explain": "'when perception is not actively discerning objects', 지각이 대상을 애써 가려 보지 않는 때래요. 감정, 질병, 잠이 그런 경우예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'when perception is not actively discerning objects', 지각이 대상을 애써 가려 보지 않는 때래요. 감정, 질병, 잠이 그런 경우예요.",
+              "o2": "'when perception is not actively discerning objects', 지각이 대상을 애써 가려 보지 않는 때래요. 감정, 질병, 잠이 그런 경우예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "눈으로 대상을 정확히 볼 때만"
+            },
+            {
+              "id": "o1",
+              "label": "지각이 대상을 적극적으로 분별하지 않을 때",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "아무 감정도 없을 때"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "Imagination",
+            "not actively discerning"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Emotions dispose one to see the world in a distorted way.",
+      "model_translation": "감정은 사람이 세상을 왜곡된 방식으로 바라보도록 이끈다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "Emotions",
+          "ko": "감정"
+        },
+        {
+          "en": "dispose one",
+          "ko": "사람이 ~하도록 이끌다"
+        },
+        {
+          "en": "dispose",
+          "ko": "~하도록 이끌다"
+        },
+        {
+          "en": "to see the world",
+          "ko": "세상을 보도록"
+        },
+        {
+          "en": "world",
+          "ko": "세상"
+        },
+        {
+          "en": "in a distorted way",
+          "ko": "왜곡된 방식으로"
+        },
+        {
+          "en": "distorted",
+          "ko": "왜곡된, 비뚤어진"
+        },
+        {
+          "en": "way",
+          "ko": "방식"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        }
+      ],
+      "slashes": [
+        "dispose one",
+        "see the world"
+      ],
+      "roles": [
+        {
+          "text": "Emotions",
+          "role": "S"
+        },
+        {
+          "text": "dispose",
+          "role": "V"
+        },
+        {
+          "text": "one",
+          "role": "O"
+        },
+        {
+          "text": "to see the world in a distorted way",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s2_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s2_basic",
+          "candidates": [
+            "Emotions",
+            "dispose one",
+            "to see the world",
+            "in a distorted way"
+          ],
+          "answers": [
+            "Emotions",
+            "in a distorted way",
+            "to see the world",
+            "dispose one"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "Emotions",
+                "ko": "감정은"
+              },
+              " 사람이 ",
+              {
+                "en": "in a distorted way",
+                "ko": "왜곡된 방식으로"
+              },
+              " ",
+              {
+                "en": "to see the world",
+                "ko": "세상을 보도록"
+              },
+              " ",
+              {
+                "en": "dispose one",
+                "ko": "이끈다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "칸마다 영어 덩어리의 뜻을 맞춰 봤어요."
+          },
+          "method": 0,
+          "tips": [
+            {
+              "label": "dispose",
+              "text": "이 글에서는 → ~하도록 이끌다  ('처분하다' 아님)",
+              "mark": "dispose",
+              "trap": true
+            },
+            {
+              "label": "dispose + 사람 + to ~",
+              "text": "'사람이 ~하도록 이끌다'예요. dispose of(처분하다)와 다른 말이에요.",
+              "mark": "dispose one"
+            }
+          ]
+        },
+        {
+          "id": "s2_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "감정은 세상을 비뚤어지게(distorted) 보게 한대요. 이 글이 하려는 말이에요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "highlight": [
+            "Emotions",
+            "distorted"
+          ],
+          "tips": [
+            {
+              "label": "dispose",
+              "text": "이 글에서는 → ~하도록 이끌다  ('처분하다' 아님)",
+              "mark": "dispose",
+              "trap": true
+            },
+            {
+              "label": "dispose + 사람 + to ~",
+              "text": "'사람이 ~하도록 이끌다'예요. dispose of(처분하다)와 다른 말이에요.",
+              "mark": "dispose one"
+            }
+          ]
+        }
+      ],
+      "emphasis": [
+        "Emotions",
+        "dispose",
+        "distorted"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "A coward’s perceptual disposition is affected by his disposition to experience fear.",
+      "model_translation": "겁쟁이의 지각적 성향은 두려움을 경험하는 자신의 성향에 영향을 받는다.",
+      "teaching_value": "medium",
+      "glosses": [
+        {
+          "en": "A coward’s perceptual disposition",
+          "ko": "겁쟁이의 지각적 성향"
+        },
+        {
+          "en": "coward’s",
+          "ko": "겁쟁이의"
+        },
+        {
+          "en": "coward",
+          "ko": "겁쟁이"
+        },
+        {
+          "en": "perceptual",
+          "ko": "지각의"
+        },
+        {
+          "en": "disposition",
+          "ko": "성향, 경향"
+        },
+        {
+          "en": "is affected by",
+          "ko": "~에 영향을 받다"
+        },
+        {
+          "en": "is affected",
+          "ko": "영향을 받는다"
+        },
+        {
+          "en": "affected by",
+          "ko": "~에 영향을 받는"
+        },
+        {
+          "en": "his disposition to experience fear",
+          "ko": "두려움을 경험하는 자신의 성향"
+        },
+        {
+          "en": "experience",
+          "ko": "경험하다"
+        },
+        {
+          "en": "fear",
+          "ko": "두려움"
+        },
+        {
+          "en": "affected",
+          "ko": "영향을 받은"
+        }
+      ],
+      "slashes": [
+        "perceptual disposition",
+        "is affected",
+        "his disposition"
+      ],
+      "roles": [
+        {
+          "text": "A coward’s perceptual disposition",
+          "role": "S"
+        },
+        {
+          "text": "is affected",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s3_fear",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "겁쟁이(coward)가 세상을 보는 방식은 무엇에 영향을 받는대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "is affected by 뒤를 봐요. disposition은 '성향'이에요.",
+              "is affected by 뒤를 봐요. disposition은 '성향'이에요."
+            ],
+            "explain": "'is affected by his disposition to experience fear', 겁쟁이는 두려움을 잘 느끼는 성향 때문에 다르게 봐요. 감정이 보는 방식을 바꾸는 예예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'is affected by his disposition to experience fear', 겁쟁이는 두려움을 잘 느끼는 성향 때문에 다르게 봐요. 감정이 보는 방식을 바꾸는 예예요.",
+              "o2": "'is affected by his disposition to experience fear', 겁쟁이는 두려움을 잘 느끼는 성향 때문에 다르게 봐요. 감정이 보는 방식을 바꾸는 예예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "두려움을 느끼는 성향",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "적을 이기고 싶은 욕망"
+            },
+            {
+              "id": "o2",
+              "label": "잠과 질병"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "affected by",
+            "fear"
+          ],
+          "tips": [
+            {
+              "label": "disposition",
+              "text": "이 글에서는 → 성향, 경향  ('처분, 배치' 아님)",
+              "mark": "perceptual disposition",
+              "trap": true
+            }
+          ]
+        },
+        {
+          "id": "story_3",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "여기까지 어떤 상황인지 칠판에 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🌫️",
+                "en": "Emotions → a distorted way",
+                "ko": "감정은 세상을 왜곡해서 보게 해요",
+                "fresh": true
+              },
+              {
+                "label": "문장 3",
+                "icon": "😨",
+                "en": "coward ← fear",
+                "ko": "겁쟁이는 두려움 때문에 다르게 봐요",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ],
+      "refers": {
+        "his disposition to experience fear": "his = the coward’s(겁쟁이의)"
+      }
+    },
+    {
+      "id": 4,
+      "text": "A lover’s expectations are affected by desire.",
+      "model_translation": "사랑에 빠진 사람의 기대는 욕망에 의해 영향을 받는다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "A lover’s expectations",
+          "ko": "사랑에 빠진 사람의 기대"
+        },
+        {
+          "en": "lover’s",
+          "ko": "사랑에 빠진 사람의"
+        },
+        {
+          "en": "expectations",
+          "ko": "기대"
+        },
+        {
+          "en": "are affected",
+          "ko": "영향을 받는다"
+        },
+        {
+          "en": "by desire",
+          "ko": "욕망에 의해"
+        },
+        {
+          "en": "desire",
+          "ko": "욕망"
+        },
+        {
+          "en": "affected",
+          "ko": "영향을 받은"
+        }
+      ],
+      "roles": [
+        {
+          "text": "A lover’s expectations",
+          "role": "S"
+        },
+        {
+          "text": "are affected",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s4_match",
+          "type": "pick",
+          "interaction": "word_pick",
+          "slot": "s4_basic",
+          "candidates": [
+            "A lover’s expectations",
+            "are affected",
+            "by desire"
+          ],
+          "answers": [
+            "A lover’s expectations",
+            "by desire",
+            "are affected"
+          ],
+          "match": {
+            "ko": [
+              {
+                "en": "A lover’s expectations",
+                "ko": "사랑에 빠진 사람의 기대는"
+              },
+              " ",
+              {
+                "en": "by desire",
+                "ko": "욕망에 의해"
+              },
+              " ",
+              {
+                "en": "are affected",
+                "ko": "영향을 받는다"
+              },
+              "."
+            ]
+          },
+          "brief": {
+            "ask": "영어 덩어리를 끌어다 맞는 한국어 칸에 놓아 볼까요?",
+            "wrong": "그 칸은 '{ko}'예요. 다른 덩어리를 놓아 봐요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "다 맞췄어요!",
+            "explain": "사랑에 빠진 사람의 기대도 욕망에 영향을 받는대요. 3문장 겁쟁이와 같은 예시예요."
+          },
+          "method": 0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "In such cases, a small similarity between a perceived object and the thing one expects to see can lead to the misidentification of the perceived object as that thing.",
+      "model_translation": "그러한 경우, 지각된 대상과 자신이 보기를 기대하는 것 사이의 약간의 유사성만으로도 지각된 대상을 바로 그것(볼 것을 기대한 것)으로 오인하게 만들 수 있다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "In such cases",
+          "ko": "그러한 경우"
+        },
+        {
+          "en": "such",
+          "ko": "그러한"
+        },
+        {
+          "en": "a small similarity",
+          "ko": "약간의 유사성"
+        },
+        {
+          "en": "small similarity",
+          "ko": "약간의 유사성"
+        },
+        {
+          "en": "similarity",
+          "ko": "유사성, 비슷함"
+        },
+        {
+          "en": "small",
+          "ko": "약간의, 작은"
+        },
+        {
+          "en": "between",
+          "ko": "~ 사이의"
+        },
+        {
+          "en": "a perceived object",
+          "ko": "지각된(눈에 보인) 대상"
+        },
+        {
+          "en": "perceived",
+          "ko": "지각된"
+        },
+        {
+          "en": "the thing one expects to see",
+          "ko": "자신이 보기를 기대하는 것"
+        },
+        {
+          "en": "expects",
+          "ko": "기대하다"
+        },
+        {
+          "en": "can lead to",
+          "ko": "~로 이어질 수 있다"
+        },
+        {
+          "en": "the misidentification",
+          "ko": "오인, 잘못 알아봄"
+        },
+        {
+          "en": "misidentification",
+          "ko": "오인, 잘못 알아봄"
+        },
+        {
+          "en": "of the perceived object",
+          "ko": "지각된 대상을"
+        },
+        {
+          "en": "as that thing",
+          "ko": "바로 그것으로"
+        },
+        {
+          "en": "object",
+          "ko": "대상"
+        },
+        {
+          "en": "see",
+          "ko": "보다"
+        },
+        {
+          "en": "lead",
+          "ko": "이어지다"
+        }
+      ],
+      "slashes": [
+        "In such cases,",
+        "a small similarity",
+        "a perceived object",
+        "expects to see",
+        "the misidentification",
+        "the perceived object"
+      ],
+      "roles": [
+        {
+          "text": "a small similarity",
+          "role": "S"
+        },
+        {
+          "text": "can lead to",
+          "role": "V"
+        },
+        {
+          "text": "the misidentification",
+          "role": "O"
+        }
+      ],
+      "modifiers": [
+        "one expects to see"
+      ],
+      "steps": [
+        {
+          "id": "s5_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "In such cases(그러한 경우), 무슨 일이 생길 수 있대요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "a small similarity(약간의 유사성)가 주어예요. can lead to 뒤 misidentification은 '잘못 알아봄'이에요.",
+              "a small similarity(약간의 유사성)가 주어예요. can lead to 뒤 misidentification은 '잘못 알아봄'이에요."
+            ],
+            "explain": "'a small similarity … can lead to the misidentification', 약간만 비슷해도 잘못 알아보게 될 수 있대요. 보이는 대상을 기대한 것(that thing)으로 착각하는 거예요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'a small similarity … can lead to the misidentification', 약간만 비슷해도 잘못 알아보게 될 수 있대요. 보이는 대상을 기대한 것(that thing)으로 착각하는 거예요.",
+              "o2": "'a small similarity … can lead to the misidentification', 약간만 비슷해도 잘못 알아보게 될 수 있대요. 보이는 대상을 기대한 것(that thing)으로 착각하는 거예요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "아주 많이 비슷해야만 대상을 잘못 알아본다"
+            },
+            {
+              "id": "o1",
+              "label": "조금만 비슷해도 보이는 대상을 기대한 것으로 잘못 알아본다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "조금 비슷하면 대상을 더 정확히 알아본다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "small similarity",
+            "misidentification"
+          ],
+          "tips": [
+            {
+              "label": "misidentification of A as B",
+              "text": "'A를 B로 잘못 알아봄, 오인'이에요. mis-는 '잘못'이라는 뜻이에요.",
+              "mark": "misidentification"
+            },
+            {
+              "label": "lead to ~",
+              "text": "'~로 이어지다, ~을 낳다'예요.",
+              "mark": "can lead to"
+            }
+          ]
+        },
+        {
+          "id": "s5_same",
+          "type": "pick",
+          "interaction": "word_pick",
+          "shade": true,
+          "candidates": [
+            "a small similarity",
+            "a perceived object",
+            "the misidentification"
+          ],
+          "answers": [
+            "the misidentification"
+          ],
+          "brief": {
+            "ask": "distorted(왜곡된)와 같은 쪽 말을 이 문장에서 하나 찾아 눌러 볼까요?",
+            "wrong": "그건 왜곡과 같은 쪽 말이 아니에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "the misidentification(잘못 알아봄)이에요. 감정이 세상을 비뚤어지게 보게 한다는 말과 같은 쪽이에요.",
+            "wrong_by": {
+              "a small similarity": "a small similarity는 잘못 알아보게 만드는 계기예요. 그 결과를 찾아봐요.",
+              "a perceived object": "a perceived object는 '지각된 대상', 눈에 보이는 것이에요."
+            }
+          },
+          "method": 0
+        },
+        {
+          "id": "s5_board",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "감정에 영향을 받으면 조금만 비슷해도 잘못 알아봐요."
+          },
+          "method": 1,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "groups",
+            "title": "감정이 하는 일",
+            "left": {
+              "label": "Emotions (감정)",
+              "words": [
+                {
+                  "text": "distorted",
+                  "ko": "왜곡된"
+                },
+                {
+                  "text": "misidentification",
+                  "ko": "잘못 알아봄, 오인",
+                  "fresh": true
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "refers": {
+        "In such cases": "감정의 영향을 받는 경우(겁쟁이·사랑에 빠진 사람)",
+        "as that thing": "that thing = the thing one expects to see(보기를 기대하는 것)"
+      },
+      "emphasis": [
+        "small similarity",
+        "misidentification"
+      ]
+    },
+    {
+      "id": 6,
+      "text": "The coward sees the enemy, while the lover sees the object of desire everywhere.",
+      "model_translation": "겁쟁이는 어디에서나 적을 보고, 사랑에 빠진 사람은 어디에서나 욕망의 대상을 바라본다.",
+      "teaching_value": "low",
+      "glosses": [
+        {
+          "en": "The coward",
+          "ko": "겁쟁이"
+        },
+        {
+          "en": "sees",
+          "ko": "보다"
+        },
+        {
+          "en": "the enemy",
+          "ko": "적"
+        },
+        {
+          "en": "enemy",
+          "ko": "적"
+        },
+        {
+          "en": "the lover",
+          "ko": "사랑에 빠진 사람"
+        },
+        {
+          "en": "lover",
+          "ko": "사랑에 빠진 사람"
+        },
+        {
+          "en": "the object of desire",
+          "ko": "욕망의 대상"
+        },
+        {
+          "en": "everywhere",
+          "ko": "어디에서나"
+        },
+        {
+          "en": "coward",
+          "ko": "겁쟁이"
+        },
+        {
+          "en": "object",
+          "ko": "대상"
+        }
+      ],
+      "slashes": [
+        "the enemy,"
+      ],
+      "roles": [
+        {
+          "text": "The coward",
+          "role": "S"
+        },
+        {
+          "text": "sees … sees",
+          "role": "V"
+        },
+        {
+          "text": "the enemy",
+          "role": "O"
+        },
+        {
+          "text": "the lover",
+          "role": "S"
+        },
+        {
+          "text": "the object of desire",
+          "role": "O"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s6_note",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "겁쟁이는 어디서나 적을, 사랑에 빠진 사람은 어디서나 원하는 대상을 본대요. 3·4문장 예시가 이어진 거예요."
+          },
+          "method": 1,
+          "button": "다음",
+          "highlight": [
+            "everywhere"
+          ],
+          "tips": [
+            {
+              "label": "while",
+              "text": "여기서는 '~하는 반면'이에요. 두 사람을 나란히 놓고 비교해요.",
+              "mark": "while"
+            }
+          ]
+        },
+        {
+          "id": "story_6",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "칠판에 이어서 정리해 볼게요."
+          },
+          "method": 0,
+          "button": "다음 문장",
+          "panel": {
+            "kind": "story",
+            "title": "지금까지 이야기",
+            "scenes": [
+              {
+                "label": "문장 1~2",
+                "icon": "🌫️",
+                "en": "Emotions → a distorted way",
+                "ko": "감정은 세상을 왜곡해서 보게 해요",
+                "fresh": false
+              },
+              {
+                "label": "문장 3",
+                "icon": "😨",
+                "en": "coward ← fear",
+                "ko": "겁쟁이는 두려움 때문에 다르게 봐요",
+                "fresh": false
+              },
+              {
+                "label": "문장 4",
+                "icon": "💘",
+                "en": "lover ← desire",
+                "ko": "사랑에 빠진 사람은 욕망 때문에 다르게 봐요",
+                "fresh": true
+              },
+              {
+                "label": "문장 5~6",
+                "icon": "👀",
+                "en": "a small similarity → misidentification",
+                "ko": "조금만 비슷해도 기대한 것으로 잘못 봐요 — 어디서나 적, 어디서나 원하는 대상",
+                "fresh": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "The more affected one is, ________.",
+      "model_translation": "감정의 영향을 더 많이 받을수록, ________.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The more affected one is",
+          "ko": "사람이 더 영향을 받을수록"
+        },
+        {
+          "en": "The more",
+          "ko": "더 ~할수록"
+        },
+        {
+          "en": "affected",
+          "ko": "영향을 받은"
+        },
+        {
+          "en": "one",
+          "ko": "사람"
+        },
+        {
+          "en": "is",
+          "ko": "~이다"
+        }
+      ],
+      "roles": [
+        {
+          "text": "one",
+          "role": "S"
+        },
+        {
+          "text": "is",
+          "role": "V"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s7_side",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "빈칸은 감정에 더 영향을 받으면 어떻게 되는지예요. 칠판의 말과 같은 쪽일까요, 반대 쪽일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "affected(영향을 받은)는 3·4문장에서 감정의 영향이었어요. But이나 not 같은 반전 단서도 없어요.",
+              "affected(영향을 받은)는 3·4문장에서 감정의 영향이었어요. But이나 not 같은 반전 단서도 없어요."
+            ],
+            "explain": "감정은 세상을 비뚤어지게 보게 하고, 조금만 비슷해도 잘못 알아보게 해요. 영향을 더 받을수록 그 일이 더 심해지니 같은 쪽이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "감정은 세상을 비뚤어지게 보게 하고, 조금만 비슷해도 잘못 알아보게 해요. 영향을 더 받을수록 그 일이 더 심해지니 같은 쪽이에요."
+            },
+            "point": "빈칸 = 감정의 영향을 더 받을수록 → 더 잘못 알아봄 = 칠판 Emotions 쪽 = 같은 쪽"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "같은 쪽 — 더 잘못 알아보는 쪽",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "반대 쪽 — 더 정확히 보는 쪽"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "affected",
+            "________"
+          ],
+          "panel": {
+            "kind": "groups",
+            "title": "감정이 하는 일",
+            "left": {
+              "label": "Emotions (감정)",
+              "words": [
+                {
+                  "text": "distorted",
+                  "ko": "왜곡된"
+                },
+                {
+                  "text": "misidentification",
+                  "ko": "잘못 알아봄, 오인"
+                }
+              ]
+            }
+          },
+          "tips": [
+            {
+              "label": "같은 쪽? 반대 쪽?",
+              "text": "빈칸 문장에 But, However, not 같은 반전 단서가 있으면 반대 의견이 들어가요. 반전 단서 없이 앞 이야기를 '~할수록 더'로 이어 가면 같은 말이 들어가요."
+            }
+          ]
+        },
+        {
+          "id": "s7_fill",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "그럼 빈칸에는 어떤 말이 와야 할까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "5문장의 a small similarity(약간의 유사성)를 떠올려 봐요.",
+              "5문장의 a small similarity(약간의 유사성)를 떠올려 봐요."
+            ],
+            "explain": "영향을 받으면 조금만 비슷해도 잘못 알아본다고 했어요. 영향을 더 받을수록 필요한 비슷함은 더 적어져요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "영향을 받으면 조금만 비슷해도 잘못 알아본다고 했어요. 영향을 더 받을수록 필요한 비슷함은 더 적어져요.",
+              "o1": "영향을 받으면 조금만 비슷해도 잘못 알아본다고 했어요. 영향을 더 받을수록 필요한 비슷함은 더 적어져요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "차이를 찾을 기회가 더 많아진다"
+            },
+            {
+              "id": "o1",
+              "label": "세상을 있는 그대로 더 쉽게 본다"
+            },
+            {
+              "id": "o2",
+              "label": "더 적게 비슷해도 기대한 것으로 보인다",
+              "correct": true
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "The more",
+            "________"
+          ]
+        },
+        {
+          "id": "s7_next",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸 뒤 두 문장도 같은 이야기를 이어 가요. 확인하며 읽어 봐요."
+          },
+          "method": 1,
+          "button": "다음 문장"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "While the central organ of sense normally functions by comparing similarities and differences, emotions dispose one to discern objects inaccurately.",
+      "model_translation": "감각의 중추 기관은 보통 유사점과 차이점을 비교함으로써 기능하지만, 감정은 사람이 대상을 부정확하게 분별하도록 이끈다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "While",
+          "ko": "~이지만, ~인 반면"
+        },
+        {
+          "en": "the central organ of sense",
+          "ko": "감각의 중추 기관"
+        },
+        {
+          "en": "central",
+          "ko": "중추의, 중심의"
+        },
+        {
+          "en": "organ",
+          "ko": "기관"
+        },
+        {
+          "en": "sense",
+          "ko": "감각"
+        },
+        {
+          "en": "normally",
+          "ko": "보통, 평소에"
+        },
+        {
+          "en": "functions",
+          "ko": "기능하다, 작동하다"
+        },
+        {
+          "en": "by comparing similarities and differences",
+          "ko": "유사점과 차이점을 비교함으로써"
+        },
+        {
+          "en": "comparing",
+          "ko": "비교하는 것"
+        },
+        {
+          "en": "similarities",
+          "ko": "유사점"
+        },
+        {
+          "en": "differences",
+          "ko": "차이점"
+        },
+        {
+          "en": "emotions",
+          "ko": "감정"
+        },
+        {
+          "en": "dispose one",
+          "ko": "사람이 ~하도록 이끌다"
+        },
+        {
+          "en": "dispose",
+          "ko": "~하도록 이끌다"
+        },
+        {
+          "en": "to discern objects inaccurately",
+          "ko": "대상을 부정확하게 분별하도록"
+        },
+        {
+          "en": "discern",
+          "ko": "분별하다"
+        },
+        {
+          "en": "objects",
+          "ko": "대상"
+        },
+        {
+          "en": "inaccurately",
+          "ko": "부정확하게"
+        }
+      ],
+      "slashes": [
+        "the central organ of sense",
+        "normally functions",
+        "and differences,",
+        "dispose one"
+      ],
+      "roles": [
+        {
+          "text": "the central organ of sense",
+          "role": "S"
+        },
+        {
+          "text": "functions",
+          "role": "V"
+        },
+        {
+          "text": "emotions",
+          "role": "S"
+        },
+        {
+          "text": "dispose",
+          "role": "V"
+        },
+        {
+          "text": "one",
+          "role": "O"
+        },
+        {
+          "text": "to discern objects inaccurately",
+          "role": "C"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s8_while",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "While 앞뒤를 비교하면 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "While은 여기서 '~이지만, ~인 반면'이에요. inaccurately는 '부정확하게'예요.",
+              "While은 여기서 '~이지만, ~인 반면'이에요. inaccurately는 '부정확하게'예요."
+            ],
+            "explain": "'normally functions by comparing similarities and differences', 보통은 비슷한 점과 다른 점을 비교해요. 하지만 'emotions dispose one to discern objects inaccurately', 감정은 대상을 부정확하게 분별하게 해요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o0": "'normally functions by comparing similarities and differences', 보통은 비슷한 점과 다른 점을 비교해요. 하지만 'emotions dispose one to discern objects inaccurately', 감정은 대상을 부정확하게 분별하게 해요.",
+              "o2": "'normally functions by comparing similarities and differences', 보통은 비슷한 점과 다른 점을 비교해요. 하지만 'emotions dispose one to discern objects inaccurately', 감정은 대상을 부정확하게 분별하게 해요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "감각 기관도 감정도 대상을 정확히 분별한다"
+            },
+            {
+              "id": "o1",
+              "label": "감각 기관은 보통 비슷한 점과 다른 점을 비교하지만, 감정은 대상을 부정확하게 분별하게 한다",
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "label": "감정이 비슷한 점과 다른 점을 더 잘 비교하게 한다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "While",
+            "normally",
+            "inaccurately"
+          ],
+          "tips": [
+            {
+              "label": "While (문장 앞)",
+              "text": "문장 앞 While이 두 내용을 맞세우면 '~이지만, ~인 반면'이에요. 시간의 '~하는 동안'이 아니에요.",
+              "mark": "While"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "The greater the emotional investment, the more biased one’s perception.",
+      "model_translation": "감정적 몰입이 더 클수록, 지각은 더 편향된다.",
+      "teaching_value": "high",
+      "glosses": [
+        {
+          "en": "The greater",
+          "ko": "더 클수록"
+        },
+        {
+          "en": "greater",
+          "ko": "더 큰"
+        },
+        {
+          "en": "the emotional investment",
+          "ko": "감정적 몰입"
+        },
+        {
+          "en": "emotional",
+          "ko": "감정적인"
+        },
+        {
+          "en": "investment",
+          "ko": "몰입 · 감정을 쏟는 것"
+        },
+        {
+          "en": "the more biased",
+          "ko": "더 편향된"
+        },
+        {
+          "en": "biased",
+          "ko": "편향된, 치우친"
+        },
+        {
+          "en": "one’s perception",
+          "ko": "사람의 지각"
+        },
+        {
+          "en": "one’s",
+          "ko": "사람의"
+        },
+        {
+          "en": "perception",
+          "ko": "지각"
+        }
+      ],
+      "slashes": [
+        "the emotional investment,"
+      ],
+      "steps": [
+        {
+          "id": "s9_meaning",
+          "type": "choice",
+          "interaction": "meaning_choice",
+          "one_try": true,
+          "brief": {
+            "ask": "이 문장은 무슨 뜻일까요?",
+            "reask": "그럼 하나 골라 봐요.",
+            "hints": [
+              "The 비교급 ~, the 비교급 …은 '~할수록 더 …'예요. biased는 '편향된, 치우친'이에요.",
+              "The 비교급 ~, the 비교급 …은 '~할수록 더 …'예요. biased는 '편향된, 치우친'이에요."
+            ],
+            "explain": "'The greater the emotional investment, the more biased', 감정적 몰입이 클수록 지각이 더 편향된대요. 빈칸 문장과 같은 모양이에요.",
+            "praise": "맞아요!",
+            "feedback": {
+              "o1": "'The greater the emotional investment, the more biased', 감정적 몰입이 클수록 지각이 더 편향된대요. 빈칸 문장과 같은 모양이에요.",
+              "o2": "'The greater the emotional investment, the more biased', 감정적 몰입이 클수록 지각이 더 편향된대요. 빈칸 문장과 같은 모양이에요."
+            }
+          },
+          "options": [
+            {
+              "id": "o0",
+              "label": "감정적 몰입이 클수록 지각은 더 치우친다",
+              "correct": true
+            },
+            {
+              "id": "o1",
+              "label": "감정을 많이 쏟을수록 더 정확히 본다"
+            },
+            {
+              "id": "o2",
+              "label": "감정적 몰입이 클수록 지각은 덜 치우친다"
+            }
+          ],
+          "method": 1,
+          "highlight": [
+            "The greater",
+            "the more biased"
+          ],
+          "tips": [
+            {
+              "label": "investment",
+              "text": "이 글에서는 → (감정의) 몰입  ('투자' 아님)",
+              "mark": "investment",
+              "trap": true
+            },
+            {
+              "label": "is가 빠진 비교급",
+              "text": "The greater (is) the investment, the more biased (is) one’s perception — is가 빠진 꼴이에요.",
+              "mark": "The greater"
+            }
+          ]
+        },
+        {
+          "id": "s9_go",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "빈칸은 감정의 영향 쪽이에요. 5문장의 '조금만 비슷해도 잘못 알아본다'를 다른 말로 바꿔 쓴 보기를 찾아봐요."
+          },
+          "method": 1,
+          "button": "문제 풀러 갈게요"
+        }
+      ],
+      "emphasis": [
+        "The greater",
+        "the more biased"
+      ]
+    }
+  ],
+  "passage_on_try": true
+}

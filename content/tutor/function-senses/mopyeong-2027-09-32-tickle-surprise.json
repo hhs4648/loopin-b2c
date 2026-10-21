@@ -1,0 +1,132 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "organized to detect change",
+   "sense": "~하도록",
+   "usage": "to부정사 (목적) — 변화를 감지하도록 구성된"
+  },
+  {
+   "word": "but",
+   "phrase": "Not only …, but they are …",
+   "sense": "~뿐만 아니라",
+   "usage": "not only A but (also) B = A일 뿐만 아니라 B"
+  },
+  {
+   "word": "to",
+   "phrase": "tuned to stimuli",
+   "sense": "~에",
+   "usage": "be tuned to ~ = ~에 맞춰져 있다"
+  },
+  {
+   "word": "that",
+   "phrase": "stimuli that are unexpected",
+   "sense": "~한 (자극)",
+   "usage": "관계대명사 that — stimuli를 꾸민다"
+  }
+ ],
+ "2": [
+  {
+   "word": "to",
+   "phrase": "less noticeable to you",
+   "sense": "~에게",
+   "usage": "전치사 to (대상)"
+  }
+ ],
+ "3": [
+  {
+   "word": "for",
+   "phrase": "for example",
+   "sense": "예를 들어",
+   "usage": "for example = 예를 들어"
+  },
+  {
+   "word": "if",
+   "phrase": "if someone … brushed",
+   "sense": "만약 ~라면",
+   "usage": "가정 if (과거형 brushed — would be와 짝)"
+  },
+  {
+   "word": "to",
+   "phrase": "next to you",
+   "sense": "~ 옆에",
+   "usage": "next to ~ = ~ 옆에"
+  }
+ ],
+ "4": [
+  {
+   "word": "to",
+   "phrase": "reaction to your cat",
+   "sense": "~에 대한",
+   "usage": "전치사 to — reaction to ~ = ~에 대한 반응"
+  },
+  {
+   "word": "to",
+   "phrase": "is likely to be",
+   "sense": "~할 (것 같다)",
+   "usage": "be likely to + 동사원형 = ~할 것 같다"
+  },
+  {
+   "word": "if",
+   "phrase": "if you have your eyes closed",
+   "sense": "만약 ~라면",
+   "usage": "조건 if"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "response to surprising tactile stimuli",
+   "sense": "~에 대한",
+   "usage": "전치사 to — response to ~ = ~에 대한 반응"
+  },
+  {
+   "word": "to",
+   "phrase": "appears to be",
+   "sense": "~인 (것 같다)",
+   "usage": "appear to + 동사원형 = ~인 것 같다"
+  },
+  {
+   "word": "that",
+   "phrase": "a defense mechanism that has",
+   "sense": "~한 (기제)",
+   "usage": "관계대명사 that — a defense mechanism을 꾸민다"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "trying to tickle yourself",
+   "sense": "~하려고",
+   "usage": "try to + 동사원형 = ~하려고 하다"
+  }
+ ],
+ "7": [
+  {
+   "word": "as",
+   "phrase": "as we age",
+   "sense": "~하면서",
+   "usage": "접속사 as — 나이가 들어가면서"
+  }
+ ],
+ "8": [
+  {
+   "word": "to",
+   "phrase": "due to the fact",
+   "sense": "~ 때문에",
+   "usage": "due to ~ = ~ 때문에"
+  },
+  {
+   "word": "that",
+   "phrase": "the fact that adults are",
+   "sense": "~라는 (사실)",
+   "usage": "동격 that — the fact의 내용"
+  },
+  {
+   "word": "to",
+   "phrase": "difficult to surprise",
+   "sense": "~하기 (어려운)",
+   "usage": "형용사 + to부정사 = ~하기에 …한"
+  }
+ ]
+}

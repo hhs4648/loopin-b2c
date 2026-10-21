@@ -1,0 +1,128 @@
+{
+ "1": [
+  {
+   "word": "to",
+   "phrase": "are working to keep",
+   "sense": "~하려고",
+   "usage": "work to + 동사원형 = ~하려고 노력하다"
+  },
+  {
+   "word": "to",
+   "phrase": "attempting to deliver",
+   "sense": "~하려고",
+   "usage": "attempt to + 동사원형 = ~하려고 시도하다"
+  },
+  {
+   "word": "to",
+   "phrase": "useful to you",
+   "sense": "~에게",
+   "usage": "useful to ~ = ~에게 유용한"
+  }
+ ],
+ "2": [
+  {
+   "word": "which",
+   "phrase": "search engines, which try",
+   "sense": "(그런데) 그것은",
+   "usage": "콤마 + which — 앞의 search engines를 덧붙여 설명"
+  },
+  {
+   "word": "to",
+   "phrase": "try to maximize",
+   "sense": "~하려고",
+   "usage": "try to + 동사원형 = ~하려고 노력하다"
+  },
+  {
+   "word": "for",
+   "phrase": "searching for “bakery”",
+   "sense": "~을",
+   "usage": "search for ~ = ~을 검색하다"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "look to maximize",
+   "sense": "~하려고",
+   "usage": "look to + 동사원형 = ~하려고 하다"
+  },
+  {
+   "word": "that",
+   "phrase": "cats that don’t shed",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사 — 앞의 cats를 꾸밈"
+  }
+ ],
+ "5": [
+  {
+   "word": "but",
+   "phrase": "are personalized, but the data sets",
+   "sense": "하지만",
+   "usage": "앞뒤를 맞세우는 but"
+  },
+  {
+   "word": "for",
+   "phrase": "mining for similarities",
+   "sense": "~을 찾아",
+   "usage": "mine for ~ = ~을 캐내다, 찾다"
+  }
+ ],
+ "6": [
+  {
+   "word": "if",
+   "phrase": "If a whole lot of users",
+   "sense": "만약 ~라면",
+   "usage": "접속사 if + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "similar to you",
+   "sense": "~와",
+   "usage": "similar to ~ = ~와 비슷한"
+  },
+  {
+   "word": "that",
+   "phrase": "the search that you’ve begun",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that — 앞의 the search를 꾸밈"
+  },
+  {
+   "word": "that",
+   "phrase": "takes that into account",
+   "sense": "그것",
+   "usage": "지시대명사 that — 앞의 If 덩어리 내용"
+  },
+  {
+   "word": "to",
+   "phrase": "likely to suggest",
+   "sense": "~할",
+   "usage": "be likely to + 동사원형 = ~할 가능성이 있다"
+  },
+  {
+   "word": "to",
+   "phrase": "suggest them to you",
+   "sense": "~에게",
+   "usage": "suggest A to B = A를 B에게 제안하다"
+  }
+ ],
+ "7": [
+  {
+   "word": "since",
+   "phrase": "Since the results are derived",
+   "sense": "~ 때문에",
+   "usage": "접속사 since + 주어·동사 = ~ 때문에"
+  },
+  {
+   "word": "to",
+   "phrase": "related to millions",
+   "sense": "~와",
+   "usage": "related to ~ = ~와 관련된"
+  },
+  {
+   "word": "to",
+   "phrase": "up to society",
+   "sense": "~에",
+   "usage": "hold a mirror up to ~ = ~에 거울을 비추다"
+  }
+ ]
+}

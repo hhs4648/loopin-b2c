@@ -1,0 +1,108 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "elements that trigger",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사"
+  },
+  {
+   "word": "to",
+   "phrase": "is subject to",
+   "sense": "~에 (영향을 받는)",
+   "usage": "be subject to ~ = ~에 영향을 받다"
+  },
+  {
+   "word": "that",
+   "phrase": "perception that observers",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 주어·동사 (목적어 빠짐)"
+  },
+  {
+   "word": "to",
+   "phrase": "bring to bear",
+   "sense": "(숙어의 일부)",
+   "usage": "bring to bear = 적용하다"
+  }
+ ],
+ "3": [
+  {
+   "word": "but",
+   "phrase": "but imitation is",
+   "sense": "하지만",
+   "usage": "접속사 but (두 문장을 이음)"
+  }
+ ],
+ "5": [
+  {
+   "word": "to",
+   "phrase": "has to amaze",
+   "sense": "~해야 (한다)",
+   "usage": "have to + 동사원형 = ~해야 한다"
+  },
+  {
+   "word": "if",
+   "phrase": "if it is to become",
+   "sense": "~한다면 (~하려면)",
+   "usage": "조건 if + 주어·동사"
+  },
+  {
+   "word": "to",
+   "phrase": "is to become",
+   "sense": "~하려면",
+   "usage": "if 안의 be to + 동사원형 = ~하려면"
+  }
+ ],
+ "6": [
+  {
+   "word": "that",
+   "phrase": "In saying that",
+   "sense": "그것 (앞에서 한 말)",
+   "usage": "지시대명사 that"
+  },
+  {
+   "word": "that",
+   "phrase": "stress that creation",
+   "sense": "~라는 것을",
+   "usage": "명사절 that + 주어·동사"
+  },
+  {
+   "word": "but",
+   "phrase": "but is a strategy",
+   "sense": "(A가 아니라) 오히려",
+   "usage": "neither A nor B, but C = A도 B도 아니라 C"
+  },
+  {
+   "word": "to",
+   "phrase": "to address specific needs",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "likened to creating",
+   "sense": "~에 (비유하다)",
+   "usage": "liken A to B = A를 B에 비유하다"
+  },
+  {
+   "word": "yet",
+   "phrase": "yet need to show",
+   "sense": "그런데도, 하지만",
+   "usage": "접속사 yet"
+  },
+  {
+   "word": "to",
+   "phrase": "need to show",
+   "sense": "~하는 것 (필요하다)",
+   "usage": "need to + 동사원형 = ~해야 한다"
+  },
+  {
+   "word": "to",
+   "phrase": "to impress their audiences",
+   "sense": "~하기 위해",
+   "usage": "to부정사 (목적)"
+  }
+ ]
+}

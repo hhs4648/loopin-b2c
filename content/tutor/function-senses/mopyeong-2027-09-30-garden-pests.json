@@ -1,0 +1,110 @@
+{
+ "1": [
+  {
+   "word": "that",
+   "phrase": "insects that help keep",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사 — 앞의 beneficial insects를 꾸밈"
+  }
+ ],
+ "2": [
+  {
+   "word": "so",
+   "phrase": "So the more herbs",
+   "sense": "그래서",
+   "usage": "앞 문장의 결과를 잇는 So"
+  },
+  {
+   "word": "that",
+   "phrase": "bugs that like to eat",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사 — 앞의 pollinators and “good” bugs를 꾸밈"
+  },
+  {
+   "word": "to",
+   "phrase": "like to eat",
+   "sense": "~하기를",
+   "usage": "like to + 동사원형 = ~하기를 좋아하다"
+  },
+  {
+   "word": "which",
+   "phrase": "pests, which will lead",
+   "sense": "(그런데) 그것은",
+   "usage": "콤마 + which — 앞 내용 전체를 덧붙여 설명"
+  },
+  {
+   "word": "to",
+   "phrase": "lead to a more successful garden",
+   "sense": "~으로",
+   "usage": "lead to ~ = ~으로 이어지다"
+  }
+ ],
+ "3": [
+  {
+   "word": "to",
+   "phrase": "When it comes to managing",
+   "sense": "~에 관해",
+   "usage": "When it comes to ~ = ~에 관해 말하자면 (to 뒤에 -ing)"
+  },
+  {
+   "word": "to",
+   "phrase": "important to remember",
+   "sense": "~하는 것",
+   "usage": "it ~ to부정사 — 기억하는 것이 중요하다"
+  },
+  {
+   "word": "that",
+   "phrase": "remember that you are",
+   "sense": "~라는 것",
+   "usage": "명사절 that (remember that … = ~라는 것을 기억하다)"
+  },
+  {
+   "word": "that",
+   "phrase": "an area that existed",
+   "sense": "(앞 명사를 꾸밈)",
+   "usage": "관계대명사 that + 동사 — 앞의 an area를 꾸밈"
+  }
+ ],
+ "4": [
+  {
+   "word": "so",
+   "phrase": "So the first couple years",
+   "sense": "그래서",
+   "usage": "앞 문장의 결과를 잇는 So"
+  }
+ ],
+ "6": [
+  {
+   "word": "to",
+   "phrase": "is to work",
+   "sense": "~하는 것",
+   "usage": "be동사 + to부정사 = ~하는 것이다 (목표는 ~하는 것)"
+  },
+  {
+   "word": "to",
+   "phrase": "trying to cultivate",
+   "sense": "~하려고",
+   "usage": "try to + 동사원형 = ~하려고 애쓰다"
+  },
+  {
+   "word": "to",
+   "phrase": "to ④allow",
+   "sense": "~하도록",
+   "usage": "to부정사 — ~하도록 (목적)"
+  },
+  {
+   "word": "to",
+   "phrase": "pests to balance out",
+   "sense": "~하도록 (두다)",
+   "usage": "allow A to B = A가 B하도록 두다"
+  }
+ ],
+ "7": [
+  {
+   "word": "to",
+   "phrase": "attempting to remove",
+   "sense": "~하려고",
+   "usage": "attempt to + 동사원형 = ~하려고 시도하다"
+  }
+ ]
+}
