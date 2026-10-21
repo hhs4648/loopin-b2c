@@ -2100,7 +2100,10 @@ mark.passage-key { background: #fff1b8; color: inherit; border-radius: 3px; padd
   background: #fff; border-radius: 999px; padding: 6px 12px 6px 9px;
   font-size: 12.5px; font-weight: 700; color: #2b2430;
   box-shadow: 0 6px 14px rgba(107,58,42,.16), 0 0 0 1px #f3c2ce;
-  animation: badge-float 2.8s ease-in-out infinite; animation-delay: var(--delay);
+  /* 가운데 맞춤(-50%)을 애니메이션에만 두면, 늦게 시작하는 집(--delay)의 말풍선이 시작 전까지 오른쪽으로 어긋나 있다가 돌아온다 —
+     평소 자리에도 같은 transform을 두고, 기다리는 동안도 첫 장면을 쓴다 (2026-10-21 선생님: 오른쪽 아래 집 말풍선) */
+  transform: translate(-50%, 0);
+  animation: badge-float 2.8s ease-in-out infinite both; animation-delay: var(--delay);
   pointer-events: none;
 }
 .house-badge::after {
