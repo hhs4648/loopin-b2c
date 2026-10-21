@@ -1104,6 +1104,12 @@ export function createPolicySession(
         s = { ...s, skipped: [...s.skipped, step().id], pi: s.pi + 1 };
         continue;
       }
+      // 단어·짧은 구절 뜻 묻기(「to foster this attitude는 무슨 뜻일까요?」)는 5~9등급만 — 1~4등급은 건너뛴다 (2026-10-21 선생님)
+      if (skipsWordMeaning() && isWordMeaningStep(step())) {
+        log({ kind: "skip" }, { action: "CONTINUE", interactionId: step().id, reason: ["student_level"] });
+        s = { ...s, skipped: [...s.skipped, step().id], pi: s.pi + 1 };
+        continue;
+      }
       // 이 학생 단계에게 안 보이는 화면 — 건너뛰고, 딸린 스텝도 같이 (skip_with)
       // 주어·동사 찾기·핵심어 자유 해석을 뺀 문장에서는 해석 맞추기가 그 자리를 대신한다 — 단계와 상관없이 모두에게 (2026-10-20 선생님)
       const levels = step().levels;
@@ -1149,7 +1155,8 @@ export function createPolicySession(
       s = { ...s, pi: s.pi + 1 };
     }
     // 칭찬은 따로 한 화면 — 다음 질문은 그 뒤에 (같은 문장 안에서만. 새 문장이면 문장 칭찬 화면이 한다)
-    if (praising && lead.trim() && !(lesson.read_first && !s.readSentences.includes(s.si))) {
+    // 읽기 전에 짚는 스텝(before_read)이 이어지면 그것도 따로 — 「맞아요!」와 다음 설명이 한 화면에 붙었다 (2026-10-21 선생님)
+    if (praising && lead.trim() && !(lesson.read_first && !s.readSentences.includes(s.si) && !step()?.before_read)) {
       // 칭찬에 설명이 붙어 길면 저절로 넘기지 않고 「네」로 (2026-10-16 선생님)
       const long = lead.trim().length > LONG_PRAISE;
       s = { ...s, praiseOnly: true, message: lead.trim(), buttons: long ? [YES_BTN] : [], panel: s.panel, shownAt: d.now() };
@@ -1215,6 +1222,26 @@ export function createPolicySession(
     const add = p.sort.words.filter((w) => !group.words.some((x) => x.text === w)).map((w) => ({ text: w, fresh: true }));
     const { sort: _sort, ...rest } = p;
     return { ...rest, [side]: { ...group, words: [...group.words.map((x) => ({ ...x, fresh: false })), ...add] } } as StudyPanel;
+  }
+
+  /** 1~4등급(등급을 모르면 「고」 단계)은 단어 뜻 묻기를 하지 않는다 */
+  function skipsWordMeaning(): boolean {
+    const g = s.student.grade;
+    return g != null ? g <= 4 : s.student.level === "고";
+  }
+  /**
+   * 단어·짧은 구절 하나의 뜻을 묻는 객관식 — 「foster는 무슨 뜻일까요?」 「to foster this attitude는 무슨 뜻일까요?」.
+   * 영어 네 단어까지 + 「은/는 무슨 뜻일까요?」로 끝나는 질문만. 문장·절 뜻, 문맥 속 다의어(「여기서 bear는」)는 남긴다.
+   * 지금 해당: 31번(2022) foster · 39번(2026) lift the veil · 34번 Moving up in scale · all but certain · work with the environment
+   * 레슨에서 `word_meaning`으로 직접 정할 수도 있다
+   */
+  function isWordMeaningStep(st: PolicyStep): boolean {
+    if (st.type !== "choice") return false;
+    if (st.word_meaning != null) return st.word_meaning;
+    const ask = choiceCopy(copy, st.id).ask ?? "";
+    const m = /^(?:그럼\s+)?['‘]?([A-Za-z][A-Za-z’'\-]*(?:\s+[A-Za-z][A-Za-z’'\-]*){0,3})['’]?(?:은|는)\s*무슨 뜻일까요\?$/.exec(ask.trim());
+    // 주어+동사가 있는 절(「it exceeded all others」)·도치(「Not so the Japanese」)는 구조를 묻는 것 — 남긴다
+    return !!m && !/^(?:it|they|we|he|she|i|you|not so)\b/i.test(m[1]!);
   }
 
   function praiseThenNext(praise: string | undefined) {
@@ -1938,6 +1965,7 @@ export function createPolicySession(
       roles: inLesson && !s.readingFirst && !(st.display && st.tag) ? s.roles : [],
       underline,
       highlightAlt: inLesson && !s.readingFirst && !s.praiseOnly ? (st.highlight_alt ?? []) : [],
+      highlightSame: inLesson && !s.readingFirst ? (st.highlight_same ?? []) : [],
       readingFirst: inLesson && s.readingFirst,
       // 이해 정도·아는 단어 비율은 이 문제를 처음 볼 때, 지문의 첫 문장에서만 — 다시 풀 때는 묻지 않는다
       sentenceTag: inLesson ? ((!s.readingFirst && st.tag) || sen.label || paragraphOf(s.si)?.label || `문장 ${sentenceNumber(s.si)}`) : null,
@@ -1954,11 +1982,17 @@ export function createPolicySession(
       celebrate: inLesson && s.sentenceDone,
       praiseOnly: inLesson && s.praiseOnly,
       bubbleNote: inLesson && s.readingFirst ? L.read_first_note : null,
+      // 틀린 뒤에도 문제가 무엇이었는지 — 말풍선 위에 다시 띄운다 (2026-10-21 선생님: 문제가 기억 안 날 수 있다)
+      askAgain:
+        inLesson && !s.readingFirst && !s.resolved && !s.praiseOnly && (st.type === "pick" || st.type === "choice") &&
+        [L.wrong_lead, L.dont_know_lead, L.pick_better].some((x) => x && s.message.startsWith(x))
+          ? (st.type === "pick" ? pickCopy(copy, st.id).ask : choiceCopy(copy, st.id).ask) || null
+          : null,
       // 「다 읽었어요」는 문장 길이만큼 기다렸다가 — 너무 길면 답답하다 (1.2~3.5초)
       readDelayMs: inLesson && s.readingFirst ? Math.min(3500, Math.max(1200, sen.text.split(/\s+/).length * 120)) : null,
       pick:
         inLesson && st.type === "pick" && !s.readingFirst
-          ? { candidates: st.candidates, found: s.found, missed: s.missed, open: !s.resolved, shade: st.shade, soft: !!st.keyword, ...(st.match ? { match: st.match } : {}), ...(st.order ? { order: { ...st.order, answers: st.answers } } : {}) }
+          ? { candidates: st.candidates, found: s.found, missed: s.missed, open: !s.resolved, shade: st.shade, soft: !!st.keyword, ...(st.found_tone ? { foundTone: st.found_tone } : {}), ...(st.match ? { match: st.match } : {}), ...(st.order ? { order: { ...st.order, answers: st.answers } } : {}) }
           : null,
       flip:
         inLesson && st.flip && !s.readingFirst

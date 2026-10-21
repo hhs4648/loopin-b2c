@@ -7,6 +7,9 @@ export function isBoardPanel(panel: StudyPanel | undefined | null): panel is Stu
   return !!panel && (panel.kind === "groups" || panel.kind === "picture" || panel.kind === "map" || panel.kind === "story");
 }
 
+/** 손잡이를 한 번이라도 눌렀거나 끌었으면 — 온보딩 안내(손잡이 깜빡임 + 말풍선)를 그만 띄운다 */
+let handleUsed = false;
+
 /**
  * 칠판 서랍 — 문장 자리를 덮는 흰 칠판. 오른쪽 가장자리의 손잡이로 언제든 열고 닫는다
  * (누르거나 옆으로 끌어서). 새 칠판이 뜨면 저절로 펼쳐진다.
@@ -17,18 +20,35 @@ export function BoardDrawer({
   panel,
   fresh,
   onPick,
+  coach = false,
 }: {
   panel: StudyPanel;
+  /** 온보딩 — 손잡이를 깜빡이고 「여길 드래그하면…」 말풍선 (손잡이를 한 번 쓰면 끝) */
+  coach?: boolean;
   /** 지금 스텝의 칠판인지 (아니면 이 문장에서 앞서 본 칠판을 다시 여는 것) */
   fresh: boolean;
   onPick?: (label: string) => void;
 }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
+  const openRef = useRef(open);
+  openRef.current = open;
   const key = JSON.stringify(panel);
-  // 새 칠판(내용이 바뀐 칠판)이 뜨면 펼치고, 칠판 스텝이 끝나면 접어서 문장을 보여 준다
+  // 새 칠판(내용이 바뀐 칠판)이 뜨면 펼치고, 칠판 스텝이 끝나면 접어서 문장을 보여 준다.
+  // 닫혀 있던 칠판은 문장을 먼저 1초 보여 준 뒤에 펼친다 — 처음부터 문장을 덮으면 무슨 말인지 모른다 (2026-10-21 선생님)
   useEffect(() => {
-    setOpen(fresh);
+    if (!fresh) {
+      setOpen(false);
+      return;
+    }
+    if (openRef.current) return;
+    const id = window.setTimeout(() => setOpen(true), 1000);
+    return () => window.clearTimeout(id);
   }, [key, fresh]);
+  const [coaching, setCoaching] = useState(coach && !handleUsed);
+  const used = () => {
+    handleUsed = true;
+    setCoaching(false);
+  };
 
   const self = useRef<HTMLDivElement>(null);
   const [box, setBox] = useState<{ top: number; bottom: number } | null>(null);
@@ -61,7 +81,7 @@ export function BoardDrawer({
   return (
     <div
       ref={self}
-      className={`board-drawer${open ? " open" : ""}${drag.current ? " dragging" : ""}`}
+      className={`board-drawer${open ? " open" : ""}${drag.current ? " dragging" : ""}${coaching ? " coaching" : ""}`}
       style={{
         top: box?.top ?? 64,
         bottom: box?.bottom ?? 240,
@@ -88,6 +108,7 @@ export function BoardDrawer({
           drag.current = null;
           const d = e.clientX - (g?.x ?? e.clientX);
           setDx(0);
+          used();
           if (!g || g.moved < 8) setOpen(!open);
           else if (open && d > 60) setOpen(false);
           else if (!open && d < -60) setOpen(true);
@@ -100,9 +121,11 @@ export function BoardDrawer({
         <span aria-hidden="true">{open ? "›" : "‹"}</span>
         <b>칠판</b>
       </button>
+      {coaching && open ? <p className="board-coach">여길 드래그하면 칠판을 열었다 닫을 수 있어요</p> : null}
       <div className="board-sheet">
-        <button type="button" className="board-close text-link" onClick={() => setOpen(false)}>
-          칠판 닫고 문장 보기
+        {/* 글자 링크는 잘 안 보였다 — 오른쪽 위 ✕ (2026-10-21 선생님) */}
+        <button type="button" className="board-close" aria-label="칠판 닫고 문장 보기" title="칠판 닫기" onClick={() => setOpen(false)}>
+          ✕
         </button>
         <StudyPanelView panel={panel} onPick={onPick} />
       </div>

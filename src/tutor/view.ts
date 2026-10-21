@@ -81,6 +81,8 @@ export type TutorView = {
   /** `shade` — 후보를 상자 대신 음영으로 (긴 구절을 고를 때) */
   pick?: {
     candidates: string[]; found: string[]; missed: string[]; open: boolean; shade?: boolean; soft?: boolean;
+    /** 찾은 말을 노랑으로 (기본 민트) */
+    foundTone?: "hl";
     /** 해석 맞추기 — 한국어 칸에 영어 덩어리를 끌어다 놓는다 */
     match?: { ko: (string | { en: string; ko: string })[] };
     /** 순서 잇기 — 주어진 글 아래에 단락 카드를 끌어 놓는다. 다 맞히면(또는 답을 보면) `answers` 순서 */
@@ -123,6 +125,10 @@ export type TutorView = {
   readDelayMs?: number | null;
   /** 두 번째 색(민트) 강조 */
   highlightAlt?: string[];
+  /** 세 번째 색(보라) — 같은 것을 가리키는 말끼리 (빈칸 ↔ it) */
+  highlightSame?: string[];
+  /** 틀린 뒤 말풍선 위에 다시 띄우는 문제 (반짝이며) */
+  askAgain?: string | null;
   /** 문장 내내 색으로 띄우는 단어 (누르면 뜻) */
   emphasis?: string[];
   /** 문장 아래에 띄우는 그림 — 문장 뼈대, 대응표, 대비 */

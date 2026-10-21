@@ -27,6 +27,8 @@ export type StudentLevel = "고" | "중" | "초";
 export type StudentState = {
   version: 1;
   level?: StudentLevel;
+  /** 등급(1~9) — 가입·상담실에서 고른 값. 목록에서 단계를 직접 고르면 지운다 */
+  grade?: number;
   skills: Record<string, SkillRecord>;
   /** 「이미 잘 알고 있어요 → 다음부턴 안 뜨게」를 고른 설명들 (스텝의 `known` 키) */
   known?: string[];

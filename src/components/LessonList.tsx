@@ -98,7 +98,7 @@ export function LessonList({
   // 학생 단계 — 수업에서 보일 화면이 달라진다 (영어를 돕는 화면만). 정하지 않았으면 중으로 수업한다
   const [level, setLevel] = useState<StudentLevel | undefined>(() => loadStudentState().level);
   const pickLevel = (next: StudentLevel) => {
-    saveStudentState({ ...loadStudentState(), level: next });
+    saveStudentState({ ...loadStudentState(), level: next, grade: undefined });
     setLevel(next);
   };
   const noteCount = loadNotes().length;

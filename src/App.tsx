@@ -138,6 +138,8 @@ function ReadingApp() {
   const [wrongBook, setWrongBook] = useState(false);
   /** 첫 방문 체험 분석 중 — 끝나면 코스 첫 회 10분 모의고사 시작 화면으로 (2026-10-20 선생님) */
   const [onboarding, setOnboarding] = useState(false);
+  /** ✕를 눌렀을 때 「여기까지 저장하고 나갈까요?」 — 모르고 눌러 나가 버리는 일이 있었다 (2026-10-21 선생님) */
+  const [confirmExit, setConfirmExit] = useState(false);
   /** 코스의 문제 흐름(단어 → 풀기 → 분석 → 다음 문제) 안에 있나 — 그 시험 묶음 id */
   const [flow, setFlow] = useState<string | null>(null);
   /**
@@ -298,14 +300,15 @@ function ReadingApp() {
 
   /**
    * analyze — 미니 모의고사에서 분석하러 넘어왔다: 지문 한눈에 미리보기는 그대로 보여 주되(2026-10-20 선생님: 분석 전에
-   * 전체 지문을 한 번 본다) 이미 푼 문제라 「바로 풀어 볼게요」만 뺀다. 이어 하기 없이 처음부터.
+   * 전체 지문을 한 번 본다) 이미 푼 문제라 「바로 풀어 볼게요」만 뺀다. 중간에 나갔던 분석이면 이어서.
    */
   function startSet(set: LessonSet, analyze = false, course = false) {
     setCollection(getCollection(set.collection));
     const lessonId = firstLessonId(set);
     const next = open(lessonId);
-    // 중간에 나갔던 수업이면 멈춘 자리부터 — 그 회차를 잇고 시계도 이어 간다 (미니 모의고사에서 분석하러 온 건 처음부터)
-    const snap = analyze ? null : loadResume(set.id, lessonId);
+    // 중간에 나갔던 수업이면 멈춘 자리부터 — 그 회차를 잇고 시계도 이어 간다
+    // 분석으로 바로 들어온 수업(온보딩·코스)도 중간에 나갔으면 이어서 (2026-10-21 선생님)
+    const snap = loadResume(set.id, lessonId);
     if (snap && next.session.restore(snap as ResumeSnapshot)) {
       setSeconds(resumeRun(set.id, lessonId));
     } else {
@@ -331,7 +334,14 @@ function ReadingApp() {
    * 「학습 종료」와 「다시 시작」이 같은 자리로 간다 — **그 문제가 있던 목록**.
    * 맨 앞으로 돌려보내면 방금 있던 자리를 다시 찾아 들어가야 한다.
    */
+  /** 수업 중 ✕ — 끝난 수업이 아니면 먼저 묻는다. 멈춘 자리는 화면마다 저장돼 있어서 다시 들어오면 이어서 한다 */
+  function requestExit() {
+    if (view?.ended || shareLesson) backToList();
+    else setConfirmExit(true);
+  }
+
   function backToList() {
+    setConfirmExit(false);
     finishAnalysis("나감");
     if (started?.set) noteStudyTime(started.set.id, seconds);
     // 공유 파일에는 목록이 없다 — 닫으면 같은 수업을 처음부터
@@ -647,7 +657,7 @@ function ReadingApp() {
           <ReadPassage
             view={view}
             onSend={send}
-            onClose={backToList}
+            onClose={requestExit}
             course={
               courseExam
                 ? {
@@ -661,21 +671,22 @@ function ReadingApp() {
             }
           />
         ) : screen === "words" && view.wordCheck ? (
-          <WordCheck view={view} onSend={send} onClose={backToList} />
+          <WordCheck view={view} onSend={send} onClose={requestExit} />
         ) : screen === "summary" && view.summary && session ? (
-          <SummaryView view={view} lessonId={session.lessonId()} onSend={send} onClose={backToList} />
+          <SummaryView view={view} lessonId={session.lessonId()} onSend={send} onClose={requestExit} />
         ) : screen === "points" && view.pointsReview ? (
-          <PointsReview view={view} onSend={send} onClose={backToList} />
+          <PointsReview view={view} onSend={send} onClose={requestExit} />
         ) : screen === "match" && view.matchPairs ? (
-          <MatchGame view={view} onSend={send} onClose={backToList} />
+          <MatchGame view={view} onSend={send} onClose={requestExit} />
         ) : screen === "study" ? (
           <SentenceStudy
             view={view}
             typing={typing}
             onSend={send}
             onBack={() => setChatOverride(true)}
-            onClose={backToList}
+            onClose={requestExit}
             onObserve={session?.observe}
+            onboarding={onboarding}
           />
         ) : (
           <ClassroomChat
@@ -684,10 +695,22 @@ function ReadingApp() {
             elapsed={elapsed}
             typing={typing}
             onSend={send}
-            onClose={backToList}
+            onClose={requestExit}
           />
         )}
         {view.recordLine ? <pre className="record">{view.recordLine}</pre> : null}
+        {confirmExit ? (
+          <div className="exit-confirm" role="dialog" aria-modal="true" aria-label="수업 나가기">
+            <div className="exit-card">
+              <p>여기까지 저장하고 나갈까요?</p>
+              <small>다시 들어오면 이어서 할 수 있어요.</small>
+              <div className="exit-actions">
+                <button type="button" className="exit-stay" onClick={() => setConfirmExit(false)}>계속 할게요</button>
+                <button type="button" className="exit-leave" onClick={backToList}>저장하고 나가기</button>
+              </div>
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

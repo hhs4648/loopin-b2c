@@ -50,7 +50,7 @@ export type VocabularySupport = "lookup_only" | "teaching_target" | "concept_sup
 export type StructurePanel = {
   kind: "structure";
   /** `ko`가 있으면 영어 아래에 작은 글씨로 뜻을 단다. `tone`은 문장 강조색(노랑 hl · 민트 hl2)과 맞춘다 */
-  rows: { label: string; text: string; ko?: string; tone?: "hl" | "hl2" }[];
+  rows: { label: string; text: string; ko?: string; tone?: "hl" | "hl2" | "hl3" }[];
 };
 
 /** 한 줄 정리 카드 */
@@ -201,6 +201,8 @@ type StepBase = {
   signs?: { text: string; sign: "+" | "−" }[];
   /** 두 번째 색(민트)으로 강조할 구절 — 노란 강조와 덩어리를 나눠 보일 때 (예: 「~에게는」 덩어리 ↔ 주어) */
   highlight_alt?: string[];
+  /** 세 번째 색(보라) — 같은 것을 가리키는 말끼리 (빈칸 ↔ it). 「빈칸(it)」이라고 쓰지 않고 색으로 잇는다 (2026-10-21 선생님) */
+  highlight_same?: string[];
   /** 그림 자체이거나, 레슨 `panels`에 적어 둔 이름 */
   panel?: PanelRef;
   /** 앞 문장에서 만든 표상을 다시 꺼내 쓰는 스텝인가 (§15) */
@@ -257,6 +259,8 @@ type StepBase = {
    * 내용 파악(문장 뜻, 요약, 그림, 쪼갠 설명)은 고·중도 어렵다 (2026-10-14 선생님)
    */
   levels?: ("고" | "중" | "초")[];
+  /** 단어 뜻 묻기인가 — 1~4등급은 건너뛴다. 안 적으면 질문 모양(영어 네 단어까지 + 「는 무슨 뜻일까요?」)으로 정한다 (2026-10-21) */
+  word_meaning?: boolean;
   /**
    * 같은 자리의 다른 방식 — 같은 `slot`인 스텝 중 **하나만** 보인다(뜻 객관식 / 해석 맞추기 / 핵심어 요약 / 자유 해석 …).
    * 그 학생 단계에 맞는 것(`levels`) 중 최근에 덜 한 방식을 고른다 — 같은 방식만 계속 나오면 질린다 (2026-10-14 선생님)
@@ -365,6 +369,11 @@ export type PickStep = StepBase & {
   keyword?: boolean;
   /** 「잘 모르겠어요」를 두지 않는다 — 끝까지 직접 찾게 할 때 */
   no_unknown?: boolean;
+  /**
+   * 찾은 말의 색 — 기본은 민트. "hl"이면 노랑(문장 강조와 같은 색).
+   * 비슷한 말 셋은 노랑, 반대 말은 민트처럼 두 무리를 색으로 나눌 때 (2026-10-21 선생님, 30번 문장 1)
+   */
+  found_tone?: "hl";
   /** 주어·동사(·목적어) 찾기 — 찾은 정답 위에 S·V·O 표시를 붙여 그 문장이 끝날 때까지 남긴다 */
   roles?: Record<string, "S" | "V" | "O" | "C" | "대상" | "전목">;
   /**

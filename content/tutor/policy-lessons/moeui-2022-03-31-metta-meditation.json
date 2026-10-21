@@ -134,7 +134,7 @@
         "2": {
           "intro": "아쉽게도 틀렸어요. 이 보기는 42%나 고른, 가장 많이 고른 보기예요. 같이 자세히 볼까요?",
           "intro_button": "같이 볼게요",
-          "say": "글에 meditation(명상)이 나와서 Relaxation(긴장 완화)을 가장 많이 골랐어요. 하지만 빈칸(it)은 싫은 사람에게도, 사랑하는 사람에게만큼 '향하게(direct)' 해야 하는 거예요. 긴장 완화는 사람에게 향하는 마음이 아니에요.",
+          "say": "글에 meditation(명상)이 나와서 Relaxation(긴장 완화)을 가장 많이 골랐어요. 하지만 빈칸은 싫은 사람에게도, 사랑하는 사람에게만큼 '향하게(direct)' 해야 하는 거예요. 긴장 완화는 사람에게 향하는 마음이 아니에요.",
           "panel": {
             "kind": "structure",
             "rows": [
@@ -439,13 +439,16 @@
           "display": "________ is a learnable skill, and we need to direct it as much towards those we are tempted to dismiss and detest as to those we love.",
           "tag": "빈칸 문장",
           "highlight": [
-            "________",
             "learnable",
             "direct"
           ],
           "highlight_alt": [
             "detest",
             "love"
+          ],
+          "highlight_same": [
+            "________",
+            "it"
           ],
           "tips": [
             {
@@ -461,11 +464,32 @@
           ]
         },
         {
+          "id": "s1_it",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "direct it의 it은 앞의 빈칸을 다시 가리켜요."
+          },
+          "method": 0,
+          "button": "다음",
+          "before_read": true,
+          "levels": [
+            "중",
+            "초"
+          ],
+          "display": "________ is a learnable skill, and we need to direct it as much towards those we are tempted to dismiss and detest as to those we love.",
+          "tag": "빈칸 문장",
+          "highlight_same": [
+            "________",
+            "it"
+          ]
+        },
+        {
           "id": "s1_where_map",
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "빈칸(it)은 배울 수 있고, 사람에게 '향하게(direct)' 하는 거예요."
+            "say": "그래서 빈칸은 배울 수 있고, 사람에게 '향하게(direct)' 하는 거예요."
           },
           "method": 0,
           "button": "다음",
@@ -484,12 +508,16 @@
             "detest",
             "love"
           ],
+          "highlight_same": [
+            "________",
+            "it"
+          ],
           "panel_below": true,
           "panel": {
             "kind": "structure",
             "rows": [
               {
-                "label": "빈칸 (it)",
+                "label": "빈칸 = it",
                 "text": "a learnable skill",
                 "ko": "배울 수 있는 기술",
                 "tone": "hl"
@@ -508,7 +536,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "그럼 사람에게 향하는, 배울 수 있는 것이 무엇인지 생각하며 문장 처음부터 읽어 봐요."
+            "say": "그럼 배울 수 있고, 좋아하는 사람과 싫어하는 사람 모두에게 향하게 해야 하는 게 뭘지 생각해 보며 문장 처음부터 읽어 봐요."
           },
           "method": 0,
           "button": "처음부터 읽어 볼게요",
@@ -1110,7 +1138,7 @@
             },
             {
               "id": "o1",
-              "label": "불교의 규칙"
+              "label": "남에게 화를 내는 마음"
             },
             {
               "id": "o2",
@@ -2732,14 +2760,14 @@
             "ask": "빈칸에는 어떤 말이 와야 할까요?",
             "reask": "그럼 하나 골라 봐요.",
             "hints": [
-              "it(빈칸)을 싫은 사람에게도 '향하게(direct)' 한대요. 칠판 mettā 쪽 말을 떠올려 봐요.",
-              "it(빈칸)을 싫은 사람에게도 '향하게(direct)' 한대요. 칠판 mettā 쪽 말을 떠올려 봐요."
+              "빈칸을 가리키는 it을 싫은 사람에게도 '향하게(direct)' 한대요. 칠판 mettā 쪽 말을 떠올려 봐요.",
+              "빈칸을 가리키는 it을 싫은 사람에게도 '향하게(direct)' 한대요. 칠판 mettā 쪽 말을 떠올려 봐요."
             ],
-            "explain": "빈칸(it)은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요.",
+            "explain": "빈칸은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요.",
             "praise": "맞아요!",
             "feedback": {
-              "o0": "빈칸(it)은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요.",
-              "o2": "빈칸(it)은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요."
+              "o0": "빈칸은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요.",
+              "o2": "빈칸은 싫은 사람에게도 사랑하는 사람만큼 향하게 하는 거예요. 사람을 향하는 마음, 칠판 mettā 쪽 말이에요."
             }
           },
           "options": [
@@ -2809,6 +2837,10 @@
             "direct",
             "detest",
             "love"
+          ],
+          "highlight_same": [
+            "________",
+            "it"
           ]
         },
         {

@@ -438,19 +438,57 @@
           "display": "Every time you put a name on something, you abstract away from its particularities."
         },
         {
-          "id": "s1_group",
-          "type": "show",
-          "interaction": "note",
-          "brief": {
-            "say": "conceptualize, categorize, put a name on은 여기서 모두 '이름 붙여 묶는다'는 같은 뜻이에요. 셋 중 하나만 이해해도 충분해요."
-          },
+          "id": "s1_similar",
+          "type": "pick",
+          "interaction": "word_pick",
           "method": 0,
-          "button": "다음",
+          "candidates": [
+            "conceptualize",
+            "categorize",
+            "put a name on",
+            "proper name"
+          ],
+          "answers": [
+            "conceptualize",
+            "categorize",
+            "put a name on"
+          ],
+          "found_tone": "hl",
+          "brief": {
+            "ask": "이 네 말 중에서 비슷한 뜻을 가진 말 세 개를 골라 볼까요?",
+            "wrong": "proper name은 '고유명사'예요. 나머지 셋과 뜻이 달라요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요! 셋 다 '이름 붙여 묶는다'는 뜻이에요.",
+            "explain": "conceptualize, categorize, put a name on, 셋 다 '이름 붙여 묶는다'는 뜻이에요.",
+            "point": "conceptualize = categorize = put a name on (이름 붙여 묶다)"
+          }
+        },
+        {
+          "id": "s1_opposite",
+          "type": "pick",
+          "interaction": "word_pick",
+          "method": 0,
+          "candidates": [
+            "conceptualize",
+            "categorize",
+            "put a name on",
+            "proper name"
+          ],
+          "answers": [
+            "proper name"
+          ],
           "highlight": [
             "conceptualize",
             "categorize",
             "put a name on"
-          ]
+          ],
+          "brief": {
+            "ask": "그럼 이 셋과 반대 의미를 가진 말은 무엇일까요?",
+            "wrong": "그건 앞에서 고른 비슷한 말이에요.",
+            "more": "좋아요! {n}개 남았어요.",
+            "praise": "맞아요!",
+            "explain": "'not a proper name'처럼 not이 붙어 있어서, proper name이 반대 의미예요."
+          }
         },
         {
           "id": "s1_board",
@@ -487,8 +525,14 @@
             },
             "between": ""
           },
+          "panel_below": true,
           "highlight": [
-            "not a proper name"
+            "conceptualize",
+            "categorize",
+            "put a name on"
+          ],
+          "highlight_alt": [
+            "proper name"
           ]
         },
         {

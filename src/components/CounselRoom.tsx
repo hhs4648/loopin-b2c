@@ -94,7 +94,7 @@ export function CounselRoom({ learnerName, onClose, onOpenMini, onOpenBoard, onO
     const next = buildPlan(answers, records);
     savePlan(next);
     // 수업 화면 단계도 같이 맞춘다 (목록의 「내 등급」과 같은 값)
-    saveStudentState({ ...loadStudentState(), level: levelOfGrade(grade) });
+    saveStudentState({ ...loadStudentState(), level: levelOfGrade(grade), grade: grade ?? undefined });
     setPlan(next);
     // 코스를 짰으면 바로 첫 문제(단어 미리 보기)부터 — 코스 화면은 나중에 (2026-10-20 선생님)
     const first = next.course[0];

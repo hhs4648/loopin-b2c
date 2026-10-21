@@ -60,7 +60,7 @@ export function SignupWelcome({ learnerName, onStartExample }: Props) {
   function finish() {
     savePlan(buildPlan(answers()));
     // 수업 화면 단계도 같이 맞춘다 (상담실과 같다)
-    saveStudentState({ ...loadStudentState(), level: levelOfGrade(grade) });
+    saveStudentState({ ...loadStudentState(), level: levelOfGrade(grade), grade: grade ?? undefined });
     onStartExample();
   }
 

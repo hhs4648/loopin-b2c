@@ -26,11 +26,13 @@ type Props = {
   onClose: () => void;
   /** 턴이 아닌 관찰(단어를 눌러 봄)을 세션에 알린다. 예전 레슨에는 없다 */
   onObserve?: (observation: UiObservation) => void;
+  /** 온보딩(가입 직후 첫 분석) — 칠판 손잡이 쓰는 법을 알려 준다 */
+  onboarding?: boolean;
 };
 
 const NO_CONCEPTS: NonNullable<TutorView["concepts"]> = [];
 
-export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve }: Props) {
+export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve, onboarding = false }: Props) {
   function listen() {
     const text = view.sentence;
     if (!("speechSynthesis" in window)) return;
@@ -193,7 +195,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
     const box = sentenceBox.current;
     if (!box) return;
     box.scrollTop = 0;
-    const marks = [...box.querySelectorAll<HTMLElement>(tipMark ? ".hl-tip" : ".hl, .hl2, .ul")];
+    const marks = [...box.querySelectorAll<HTMLElement>(tipMark ? ".hl-tip" : ".hl, .hl2, .hl3, .ul")];
     if (!marks.length) return;
     // 칠한 구절이 처음부터 다 보이면 그대로 둔다. 칸 아래로 숨으면 첫 구절이 위에 오게 내린다
     const boxTop = box.getBoundingClientRect().top;
@@ -224,6 +226,9 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
     </>
   ) : null;
   const dots = Array.from({ length: view.progressTotal }, (_, i) => i);
+  // 단어를 눌러 뜻을 볼 수 있는 화면인가 — 지문 전체(시험지 모양)·순서 카드·해석 맞추기는 못 누른다.
+  // 못 누르는 화면에 「단어를 누르면 뜻이 나와요」를 띄우지 않는다 (2026-10-21 선생님)
+  const wordsTappable = !view.examPassage && !((view.pick?.order || view.pick?.match) && !peeked && !alt);
 
   return (
     <div className={`stage-fill study${kbOpen && view.allowInput ? " kb-open" : ""}${view.allowInput || view.translation ? " input-mode" : ""}${view.celebrate ? " celebrate" : ""}${inlinePanel ? " has-panel" : ""}${boardNow ? " board-on" : ""}${view.panelBelow ? " input-mode" : ""}${view.readingFirst ? " reading-first" : ""}${view.examPassage ? " exam-passage-mode" : ""}`}>
@@ -316,14 +321,13 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
               onClick={() => setParaAt((paraAt ?? para.at) + 1)}>›</button>
           </div>
         ) : view.sentenceTag && !peeked ? (
-          // 듣기는 꼬리표 옆 아이콘만 — 아래 칩 줄에 버튼이 셋이나 되어 많아 보였다 (2026-10-20 선생님). 칠판이 한 번 나오기 전까지만
+          // 듣기는 꼬리표 옆 아이콘만 — 아래 칩 줄에 버튼이 셋이나 되어 많아 보였다 (2026-10-20 선생님)
           <div className="sentence-tag-row">
             <span className="sentence-no">{view.sentenceTag}</span>
-            {sawBoard || shadePick ? null : (
-              <button type="button" className="listen-icon" aria-label="듣기" title="듣기" onClick={listen}>
-                <SpeakerIcon />
-              </button>
-            )}
+            {/* 듣기 아이콘은 늘 — 칠판이 한 번 나오면 치웠더니, 첫 문장부터 칠판이 있는 레슨(31번)은 아예 안 보였다 (2026-10-21 선생님) */}
+            <button type="button" className="listen-icon" aria-label="듣기" title="듣기" onClick={listen}>
+              <SpeakerIcon />
+            </button>
           </div>
         ) : null}
         <div className={view.givenBox && !peeked && !alt ? "given-box" : undefined}>
@@ -356,6 +360,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           highlight={peeked || alt ? (alt?.highlight ?? []) : (view.highlight ?? [])}
           underline={peeked ? [peeked.underline] : (view.underline ?? [])}
           highlightAlt={peeked || alt ? [] : (view.highlightAlt ?? [])}
+          highlightSame={peeked || alt ? [] : (view.highlightSame ?? [])}
           tipMark={peeked || alt ? null : tipMark}
           pick={peeked || alt ? null : (view.pick ?? null)}
           signs={peeked || alt ? [] : (view.signs ?? [])}
@@ -410,7 +415,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
           {/* 지시문은 말풍선 말고 칩 아래에 (2026-10-16 선생님) — 듣기가 보이는 처음 화면들, 밑줄 켰을 땐 그 안내 */}
           {trapHint ? (
             <span className="toggles-hint">밑줄 친 단어를 눌러 보세요</span>
-          ) : sawBoard || shadePick ? null : (
+          ) : sawBoard || shadePick || !wordsTappable ? null : (
             <span className="toggles-hint">단어를 누르면 뜻이 나와요 · 모르는 단어는 ☆로 저장해요</span>
           )}
         </div>
@@ -444,6 +449,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         <BoardDrawer
           panel={board}
           fresh={board === boardNow}
+          coach={onboarding}
           onPick={
             !typing && board === boardNow && board.kind === "groups" && board.sort && view.buttons.includes(board.sort.right)
               ? onSend
@@ -460,7 +466,13 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
               덩어리 고르기에서 3초 동안 아무것도 안 누르면 — 무엇을 할지 말풍선 위에서 알려 준다.
               (문장 칸 안에 두면 긴 문장에서는 스크롤 아래로 숨는다)
             */}
-            {pickNudge ? (
+            {/* 틀린 뒤 — 문제가 무엇이었는지 반짝이며 다시 (2026-10-21 선생님) */}
+            {view.askAgain && !typing ? (
+              <p className="ask-again" role="status" key={view.message}>
+                <span className="ask-again-star" aria-hidden="true">✨</span>
+                {view.askAgain}
+              </p>
+            ) : pickNudge ? (
               <p className="pick-nudge" role="status">
                 <span className="nudge-arrow" aria-hidden="true">👆</span>
                 {view.pick?.shade ? "회색 부분을 눌러 보세요!" : "상자 친 부분을 눌러 보세요!"}
@@ -600,6 +612,7 @@ function GlossSentence({
   highlight,
   underline,
   highlightAlt,
+  highlightSame = [],
   tipMark,
   pick,
   signs,
@@ -631,6 +644,8 @@ function GlossSentence({
   highlight: string[];
   underline: string[];
   highlightAlt: string[];
+  /** 세 번째 색(보라) — 같은 것을 가리키는 말끼리 (빈칸 ↔ it) */
+  highlightSame?: string[];
   tipMark: string | null;
   /** 「찾기」 스텝 — 후보 구절을 누르면 고른다 (뜻 대신) */
   pick: TutorView["pick"];
@@ -661,6 +676,7 @@ function GlossSentence({
     phraseRanges.filter((r) => r.a <= a && b <= r.b).sort((x, y) => x.b - x.a - (y.b - y.a))[0] ?? null;
   const marked = highlightRanges(sentence, highlight);
   const markedAlt = highlightRanges(sentence, highlightAlt);
+  const markedSame = highlightRanges(sentence, highlightSame);
   const markedUl = highlightRanges(sentence, underline);
   const markedTip = tipMark ? wordRanges(sentence, tipMark) : [];
   // 같은 낱말이 두 번 나오면(does not stop … it stop) 이미 다른 후보가 차지한 자리는 건너뛴다
@@ -722,8 +738,9 @@ function GlossSentence({
     if (i > 0 && spans[i - 1]!.gloss && CLOSING.test(span.text)) return;
     if (spans[i + 1]?.gloss && OPENING.test(span.text)) return;
     const hit = (ranges: [number, number][]) => ranges.some(([from, to]) => start < to && at > from);
-    const hl = hit(marked);
-    const hl2 = !hl && hit(markedAlt);
+    const hl3 = hit(markedSame);
+    const hl = !hl3 && hit(marked);
+    const hl2 = !hl && !hl3 && hit(markedAlt);
     const tip = hit(markedTip);
     /*
       흐림 = 빼도 되는 삽입, 음영 = 건너뛰어도 되는 부분. 공백까지 같은 칸으로 감싸야
@@ -747,7 +764,7 @@ function GlossSentence({
           )
         : span.text;
       if (tip) parts.push(<mark key={i} {...roleAttr} className={`hl-tip${marks}`}>{text}</mark>);
-      else if (hl || hl2) parts.push(<mark key={i} {...roleAttr} className={`${hl ? "hl" : "hl2"}${marks}`}>{text}</mark>);
+      else if (hl || hl2 || hl3) parts.push(<mark key={i} {...roleAttr} className={`${hl3 ? "hl3" : hl ? "hl" : "hl2"}${marks}`}>{text}</mark>);
       else if (marks) parts.push(<span key={i} {...roleAttr} className={marks.trim()}>{text}</span>);
       else parts.push(<span key={i}>{text}</span>);
       return;
@@ -756,12 +773,15 @@ function GlossSentence({
     const cand = candAt.find((x) => start < x.b && at > x.a);
     if (cand && pick) {
       // 핵심어 고르기에서 덜 좋은 선택은 줄을 긋지 않고 흐리게만 (틀렸다는 표시가 아니다)
-      const state = pick.found.includes(cand.c) ? " found" : pick.missed.includes(cand.c) ? (pick.soft ? " missed soft" : " missed") : "";
+      const state = pick.found.includes(cand.c)
+        ? ` found${pick.foundTone === "hl" ? " tone-hl" : ""}`
+        : pick.missed.includes(cand.c) ? (pick.soft ? " missed soft" : " missed") : "";
       parts.push(
         <span key={i} {...roleAttr} className={`english-token${longPhrase(span.text) ? " long" : ""}${marks}`}>
           {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
           <Tap
-            className={`english-word cand${pick.shade ? " shade" : ""}${state}`}
+            // 후보라도 강조(highlight)할 말이면 노랑 그대로 — 앞에서 고른 비슷한 말이 계속 노랗게 보이게 (2026-10-21)
+            className={`english-word cand${pick.shade ? " shade" : ""}${state}${!state && hl ? " hl-cand" : ""}`}
             disabled={!pick.open || !!state}
             onTap={() => onPickWord(cand.c)}
           >
@@ -782,7 +802,7 @@ function GlossSentence({
         key={i}
         {...(sign ? { "data-sign": sign } : {})}
         {...roleAttr}
-        className={`english-token${longPhrase(span.text) ? " long" : ""}${sign ? (sign === "+" ? " sign-plus" : " sign-minus") : ""}${selected ? " open" : ""}${hl ? " hl" : ""}${hl2 ? " hl2" : ""}${tip ? " hl-tip" : ""}${marks}`}
+        className={`english-token${longPhrase(span.text) ? " long" : ""}${sign ? (sign === "+" ? " sign-plus" : " sign-minus") : ""}${selected ? " open" : ""}${hl ? " hl" : ""}${hl2 ? " hl2" : ""}${hl3 ? " hl3" : ""}${tip ? " hl-tip" : ""}${marks}`}
       >
         {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
         <Tap
