@@ -202,7 +202,8 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
     const top = Math.min(...marks.map((m) => m.getBoundingClientRect().top - boxTop));
     box.scrollTop = Math.max(0, top - 12);
   }, [highlightKey, view.sentence, peek, tipMark]);
-  const showSlash = !!view.slashes?.length && !peeked && !view.pick?.match && !view.pick?.order;
+  // 지문 전체를 띄운 화면(빈칸 위치 보기 등)에서는 끊어읽기를 안 띄운다 — 한 문장을 읽는 화면이 아니다 (2026-10-21 선생님)
+  const showSlash = !!view.slashes?.length && !peeked && !view.pick?.match && !view.pick?.order && !view.examPassage;
   // 고르는 문제 중에는 밑줄이 답을 알려 줄 수 있어 띄우지 않는다
   // 지금 문장에 밑줄 칠 단어가 실제로 있을 때만 — 없으면 버튼도 없다 (2026-10-19 선생님)
   const norm = (t: string) => t.toLowerCase().replace(/[’']/g, "'");
