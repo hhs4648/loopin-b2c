@@ -311,7 +311,8 @@ describe("2026년 3월 21번 — 밑줄 문제 푸는 법", () => {
     // 화면은 그대로(지문 미리보기), 보기만 누를 수 있게 된다
     expect(v.screen).toBe("read");
     expect(v.passage?.pickable).toBe(true);
-    expect(v.message.startsWith("실제 시험처럼")).toBe(true);
+    // 바로 풀기에서는 아무 말도 하지 않는다 (2026-10-21 선생님 — 「실제 시험처럼 풀어 봐요…」 뺌)
+    expect(v.message).toBe("");
     expect(v.buttons).toEqual([]);
 
     // 틀리면 답을 말하지 않고 분석으로

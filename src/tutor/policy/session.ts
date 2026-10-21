@@ -539,9 +539,10 @@ export function createPolicySession(
       ...s,
       stage: when === "first" ? "exam_first" : "exam_final",
       si: lesson.sentences.indexOf(examSentence()),
+      // 바로 풀기(지문 미리보기)에서는 아무 말도 하지 않는다 — 「실제 시험처럼 풀어 봐요. 위 보기에서 답을 골라요.」는 뺐다 (2026-10-21 선생님)
       message:
         when === "first" && lesson.passage_on_try
-          ? (ex.ask_first ?? ex.ask)
+          ? ""
           : `${when === "final" && !lesson.exam!.analysis_first ? L.final_lead : ""}${ex.ask}`,
       // 분석 먼저인 문제는 보기를 카드로 그린다 (핵심 단어 색칠, ▸ 한국어) — 버튼은 없다.
       // 바로 풀기는 지문 미리보기 화면 그대로, 지문 아래 보기를 눌러 고른다 — 버튼도 없다

@@ -270,10 +270,8 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
       {/* 지문 미리보기에서는 버튼을 한 줄로 — 지문 자리를 넓힌다 */}
       <div className={`read-dock${p.auto === false && dockButtons.length >= 2 ? " row" : ""}`}>
         {/* 미리보기 화면에서 선생님 말(바로 풀기 안내, 채점)은 버튼 바로 위에 — 보기를 고르는 손 가까이 */}
-        {/* 코스 풀기 안내는 한 줄로 고정 (2026-10-20 선생님) */}
-        {courseSolving ? (
-          <p className="read-say">실제 시험처럼 풀어 봐요. 풀지 않고 분석 먼저 하고 풀어도 돼요.</p>
-        ) : view.message && p.auto === false ? (
+        {/* 풀기 안내(「실제 시험처럼 풀어 봐요 …」)는 뺐다 — 풀 때는 말하지 않는다 (2026-10-21 선생님) */}
+        {courseSolving ? null : view.message && p.auto === false ? (
           <p className="read-say">{view.message}</p>
         ) : null}
         {courseSolving ? (

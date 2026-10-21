@@ -2392,3 +2392,8 @@ mark.passage-key { background: #fff1b8; color: inherit; border-radius: 3px; padd
 .login-error { margin: 0; text-align: center; font-size: 13px; line-height: 1.45; color: #d2433f; word-break: keep-all; }
 .small-score { margin: 4px 20px 10px; padding: 12px 14px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1.5px #f4c3cf; font-size: 15px; color: #2b2430; }
 .small-score b { color: #d2566f; }
+
+/* 바로 풀기 — 보기를 누르면 고르기만, [정답 확인하기]로 채점 (2026-10-21 선생님) */
+.passage-options li.selected .passage-pick { border-color: #ef7a93; background: #fff1f4; box-shadow: 0 0 0 2px #f6b5c3; }
+.passage-check { width: 100%; margin-top: 10px; }
+.passage-check:disabled { opacity: .45; cursor: default; }

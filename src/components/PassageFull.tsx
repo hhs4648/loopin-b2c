@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import type { MiniItem } from "../tutor/mini";
 import type { Marks, Overlay } from "./MiniMarks";
 import { passageNodes } from "./MiniMockView";
@@ -36,6 +36,8 @@ type Props = {
  */
 export function PassageFull({ question, given, sentences, underline, options, onPick, picked, right, numbersOnly, highlight = [], highlightBy = {}, onPlay, mark }: Props) {
   const NUM = "①②③④⑤";
+  /** 바로 풀기에서 고른 보기 — 아직 채점 전 */
+  const [selected, setSelected] = useState<string | null>(null);
   // 핵심어를 칠하는 화면(답 고르기) — 핵심어가 없는 문장의 ①~⑤도 굵게
   const keyMode = highlight.length > 0 || Object.keys(highlightBy).length > 0;
   // 낱말 차례는 지문 전체에서 이어진다 (주어진 문장 → 본문 순)
@@ -65,9 +67,21 @@ export function PassageFull({ question, given, sentences, underline, options, on
       {options?.length ? (
         <ol className={`passage-options${onPick ? " pickable" : ""}${numbersOnly ? " numbers" : ""}`}>
           {options.map((o, i) => (
-            <li key={o} className={picked === String(i + 1) ? "picked" : right === String(i + 1) ? "right" : undefined}>
+            <li
+              key={o}
+              className={
+                picked === String(i + 1) ? "picked" : right === String(i + 1) ? "right" : onPick && selected === o ? "selected" : undefined
+              }
+            >
               {onPick ? (
-                <button type="button" className="passage-pick" aria-label={numbersOnly ? `${NUM[i]} ${o}` : undefined} onClick={() => onPick(o)}>
+                // 누르면 고르기만 — [정답 확인하기]를 눌러야 맞았는지 알려 준다 (2026-10-21 선생님)
+                <button
+                  type="button"
+                  className="passage-pick"
+                  aria-pressed={selected === o}
+                  aria-label={numbersOnly ? `${NUM[i]} ${o}` : undefined}
+                  onClick={() => setSelected(selected === o ? null : o)}
+                >
                   <b>{NUM[i]}</b> {numbersOnly ? null : o}
                 </button>
               ) : (
@@ -78,6 +92,11 @@ export function PassageFull({ question, given, sentences, underline, options, on
             </li>
           ))}
         </ol>
+      ) : null}
+      {options?.length && onPick ? (
+        <button type="button" className="read-continue passage-check" disabled={!selected} onClick={() => selected && onPick(selected)}>
+          정답 확인하기
+        </button>
       ) : null}
     </div>
   );
