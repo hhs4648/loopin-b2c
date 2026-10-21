@@ -303,7 +303,8 @@ function MiniWords({ mock, onBack, onStart }: { mock: MiniMock; onBack: () => vo
       <div className="saved-body-scroll">
         <p className="home-hello">{mock.title}</p>
         <h1 className="home-title">지문 단어 미리 보기</h1>
-        <p className="pack-help">이번 회 지문과 보기에 나오는 단어 {words.length}개예요. 모르는 단어는 별표를 누르면 단어장에 저장돼요.</p>
+        {/* 단어 수·「이번 회 지문과 보기에 나오는」은 뺐다 — 할 일만 한 줄 (2026-10-21 선생님) */}
+        <p className="pack-help">모르는 단어는 별표를 누르면 단어장에 저장돼요.</p>
         <div className="mini-words-sub">
           <button type="button" className="mini-words-all" onClick={() => setAllShown((v) => !v)}>{allShown ? "뜻 가리기" : "뜻 모두 보기"}</button>
         </div>
