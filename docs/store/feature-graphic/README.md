@@ -10,4 +10,6 @@ py -c "from PIL import Image; Image.open('docs/store/feature-graphic/raw.png').c
 ```
 
 로고 색(2026-10-22 확정): 글자 #2b2430 · ∞ 왼쪽 핑크 #f8a0a4 · 오른쪽 보라 #b498f4 · i 점 핑크 #f8a0a4 (캐릭터 몸 색에서 뽑음).
+
+앱 아이콘은 같은 고리만 먹색 `#2b2430` 정사각에 둔다. 원본 `public/brand/loopin-icon.svg`, 스토어용 `docs/store/loopin-icon-1024.png`. 다시 뽑기: `py scripts/brand/render_icon.py`.
 원본 흰 로고(파란 배경용)는 `public/brand/loopin-logo.svg`, 크림용은 같은 색을 넣은 `loopin-logo-cream.svg`(벡터). PNG가 필요하면 `loopin-logo-cream.png`(832×304).

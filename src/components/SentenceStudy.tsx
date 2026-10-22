@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { TeacherFigure } from "./TeacherFigure";
+import { TeacherFigure, TeacherReaction } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
 import type { TranslationResult, TutorView } from "../tutor/view";
@@ -34,7 +34,8 @@ const NO_CONCEPTS: NonNullable<TutorView["concepts"]> = [];
 
 export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve, onboarding = false }: Props) {
   function listen() {
-    const text = view.sentence;
+    // 화면에 보이는 빈칸(________)을 그대로 읽으면 "underscore"가 된다. 정답 단어로 읽는다.
+    const text = view.speakSentence ?? view.sentence;
     if (!("speechSynthesis" in window)) return;
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
@@ -260,7 +261,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
               </button>
             ) : null}
             {/* 위쪽은 한 줄로 — 풀이법 단계(①②③)도 따로 줄을 두지 않고 여기 적는다 */}
-            {(() => {
+            <span className="progress-label">{(() => {
               const label =
                 view.progressLabel ??
                 (view.methodSteps?.active != null
@@ -269,7 +270,7 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
               // 순서 문제는 「3/6」 대신 자리(주어진 글 · (A)) — 앞 이름과 같으면 한 번만
               if (view.progressPlace) return view.progressPlace === label ? label : `${label} · ${view.progressPlace}`;
               return `${label} · ${view.progressIndex}/${view.progressTotal}`;
-            })()}
+            })()}</span>
             {view.canNextSentence != null && view.fullPassage ? (
               <button
                 type="button"
@@ -503,8 +504,10 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         ) : null}
         <div className="study-mascot">
           <div className="teacher-bob">
-            <TeacherFigure />
+            <TeacherFigure mood={view.mood} />
           </div>
+          {/* 쌤 한마디는 말풍선 밖, 쌤 옆 — 말풍선(설명)을 길게 만들지 않고, 틀렸을 때 첫마디도 그대로 */}
+          {typing ? null : <TeacherReaction reaction={view.reaction} beside />}
         </div>
       </div>
 
@@ -1144,7 +1147,7 @@ function ExamOptions({
         );
       })}
     </ol>
-    {/* [제출]은 목록 밖 — 목록이 스크롤돼도 늘 보인다 */}
+    {/* [제출]은 목록 밖 — 보기 다섯 개는 스크롤 없이 다 보이고, 그 아래 붙는다 */}
     {submitButton}
     </>
   );

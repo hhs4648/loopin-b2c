@@ -30,6 +30,8 @@ export function BoardDrawer({
   onPick?: (label: string) => void;
 }) {
   const [open, setOpen] = useState(false);
+  // 곧 펼칠 칠판 (1초 기다리는 중) — 그동안 온보딩 길잡이가 뜨면 칠판이 펼쳐지며 바로 사라진다 (2026-10-22 선생님: 떴다가 사라졌다)
+  const [pending, setPending] = useState(false);
   const openRef = useRef(open);
   openRef.current = open;
   const key = JSON.stringify(panel);
@@ -41,8 +43,15 @@ export function BoardDrawer({
       return;
     }
     if (openRef.current) return;
-    const id = window.setTimeout(() => setOpen(true), 1000);
-    return () => window.clearTimeout(id);
+    setPending(true);
+    const id = window.setTimeout(() => {
+      setPending(false);
+      setOpen(true);
+    }, 1000);
+    return () => {
+      window.clearTimeout(id);
+      setPending(false);
+    };
   }, [key, fresh]);
   const [coaching, setCoaching] = useState(coach && !handleUsed);
   const used = () => {
@@ -81,7 +90,7 @@ export function BoardDrawer({
   return (
     <div
       ref={self}
-      className={`board-drawer${open ? " open" : ""}${drag.current ? " dragging" : ""}${coaching ? " coaching" : ""}`}
+      className={`board-drawer${open ? " open" : ""}${pending ? " pending" : ""}${drag.current ? " dragging" : ""}${coaching ? " coaching" : ""}`}
       style={{
         top: box?.top ?? 64,
         bottom: box?.bottom ?? 240,

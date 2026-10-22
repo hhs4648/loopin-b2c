@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { AuthFailure, linkedEmail, sendCode, verifyCode, type OtpKind } from "../tutor/auth";
+import { AuthFailure, accountLabel, sendCode, verifyCode, type OtpKind } from "../tutor/auth";
 
 /**
  * 「기록 지키기」 — 익명 학습자에 이메일을 붙인다.
@@ -43,10 +43,10 @@ export function AccountLink({ onBack, onSynced }: Props) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // 이미 붙여 둔 이메일이 있으면 그 상태를 보여 준다
+  // 이미 로그인해 두었으면 그 상태를 보여 준다 (카카오는 이메일이 없을 수 있다)
   useEffect(() => {
     let alive = true;
-    void linkedEmail().then((e) => alive && e && setStep({ at: "done", email: e }));
+    void accountLabel().then((e) => alive && e && setStep({ at: "done", email: e }));
     return () => {
       alive = false;
     };
@@ -88,7 +88,7 @@ export function AccountLink({ onBack, onSynced }: Props) {
   return (
     <div className="stage-fill saved account">
       <header className="saved-top">
-        <button type="button" className="icon-btn light" title="홈으로" onClick={onBack}>
+        <button type="button" className="icon-btn light" title="뒤로" onClick={onBack}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
             <path d="M15 6l-6 6 6 6" />
           </svg>
@@ -152,10 +152,10 @@ export function AccountLink({ onBack, onSynced }: Props) {
             <p className="account-say">
               <b>{step.email}</b>로 이어 두었어요.
               <br />
-              이제 어느 기기에서든 이 이메일로 기록을 이어 할 수 있어요.
+              이제 어느 기기에서든 이 계정으로 기록을 이어 할 수 있어요.
             </p>
             <button type="button" className="pill" onClick={onBack}>
-              홈으로
+              돌아가기
             </button>
           </div>
         )}

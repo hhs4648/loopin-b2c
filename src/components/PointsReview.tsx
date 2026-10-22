@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { TutorView } from "../tutor/view";
 import { isNoteSaved, loadNotes, toggleNote, type NoteEntry } from "../tutor/notes";
+import { speak } from "../tutor/teacher";
 
 type Props = { view: TutorView; onSend: (text: string) => void; onClose: () => void };
 
@@ -25,7 +26,7 @@ export function PointsReview({ view, onSend, onClose }: Props) {
           {view.smallScore.right === view.smallScore.total ? " 🎉" : ""}
         </div>
       ) : null}
-      <p className="words-title">{p.items.length ? p.title : "헷갈린 곳 없이 다 맞혔어요!"}</p>
+      <p className="words-title">{p.items.length ? p.title : speak("헷갈린 곳 없이 다 맞혔어요!")}</p>
       <ul className="words-list">
         {p.items.map((item) => {
           const on = isNoteSaved(notes, { lessonId: p.lessonId, key: item.key });

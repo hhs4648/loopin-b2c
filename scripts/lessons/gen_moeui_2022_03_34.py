@@ -412,7 +412,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "한 시대의 화가들은 비슷한 방식으로 그림을 그렸어요. 이번 글은 그림 이야기로 우리가 사는 방식을 말해요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("perspective", "원근법, 관점"), g("matter", "중요하다"), g("reveal", "드러내다"), g("conform to", "~에 순응하다"),
                            g("stylistic", "양식의"), g("convention", "관습"), g("era", "시대"), g("prevailing", "지배적인"),

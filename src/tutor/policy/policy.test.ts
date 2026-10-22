@@ -1131,6 +1131,7 @@ describe("2026년 3월 33번 — 빈칸 문제", () => {
     expect(v.readingFirst).toBe(false);
     expect(v.sentenceTag).toBe("빈칸 문장");
     expect(v.sentence).toBe("A profound building is ________.");
+    expect(v.speakSentence).toBe("A profound building is an extension of human bodily and mental actions and capabilities.");
     expect(v.buttons).toEqual(["처음부터 읽어 볼게요"]);
     v = await session.submit("처음부터 읽어 볼게요");
     expect(v.readingFirst).toBe(true);
@@ -1989,5 +1990,36 @@ describe("칠판은 정답을 먼저 말하지 않는다 — 질문에 답하기
       else if (st?.type === "choice" && !v.buttons.includes("다음으로") && v.buttons.length > 1) v = await session.submit(st.options.find((o) => o.correct)!.label);
       else v = await session.submit(v.buttons[0] ?? "__auto_next");
     }
+  });
+});
+
+describe("고른 쌤 — 표정과 한마디 (2026-10-22)", () => {
+  it("맞히면 happy, 틀리면 sorry, 세 문제 연속이면 「연속 정답」, 시험 답엔 한마디", async () => {
+    const id = "moeui-2026-03-21-music-researchers";
+    const lesson = allPolicyLessons().find((l) => l.id === id)!;
+    const steps = new Map(lesson.sentences.flatMap((s) => s.steps).map((st) => [st.id, st]));
+    const session = createPolicySession(id, null, { loadStudent: emptyStudentState, saveStudent() {}, logEvents() {}, now: () => 0 });
+    // 바로 풀어서 틀린다 — 아쉬운 얼굴 + 오답 한마디, 대사는 「아쉽게도 틀렸어요」가 먼저
+    let v = await session.submit("바로 풀어 볼게요");
+    v = await session.submit(lesson.exam!.options.find((o) => !o.correct)!.label);
+    expect(v.mood).toBe("sorry");
+    expect(v.reaction).toBe("wrong");
+    v = await session.submit("분석하러 갈게요");
+    expect(v.mood ?? null).toBe(null);
+    const reactions: string[] = [];
+    let happy = 0;
+    for (let g = 0; g < 200 && !v.examOptions; g++) {
+      const st = steps.get(session.lastAction()?.interactionId ?? "");
+      if (v.readingFirst) v = await session.submit("다 읽었어요");
+      else if (st?.type === "pick" && v.pick?.open) for (const a of st.answers) v = await session.submit(`__pick:${a}`);
+      else if (st?.type === "choice" && !v.buttons.includes("다음으로") && v.buttons.length > 1) v = await session.submit(st.options.find((o) => o.correct)!.label);
+      else v = await session.submit(v.buttons[0] ?? "__auto_next");
+      if (v.mood === "happy") happy++;
+      expect(v.mood).not.toBe("sorry");
+      if (v.reaction) reactions.push(v.reaction);
+    }
+    expect(happy).toBeGreaterThan(3);
+    expect(reactions).toContain("combo");
+    expect(reactions).not.toContain("repeat");
   });
 });

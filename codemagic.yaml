@@ -1,0 +1,115 @@
+workflows:
+  ios-app-store:
+    name: Loopin iOS App Store Upload
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+
+    integrations:
+      app_store_connect: codemagic
+
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.loopin.b2capp
+
+      # Codemagic → Environment variables → 그룹 `loopin_b2c`:
+      #   VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY  (필수, 웹과 같은 값)
+      #   APP_STORE_APPLE_ID  (앱 정보의 Apple ID 숫자)
+      groups:
+        - loopin_b2c
+      vars:
+        APP_VERSION: "1.0"
+        XCODE_PROJECT: "App.xcodeproj"
+        XCODE_SCHEME: "App"
+
+      node: 22
+      xcode: latest
+
+    scripts:
+      - name: Install dependencies
+        script: |
+          npm ci
+
+      - name: Check env
+        script: |
+          if [ -z "${VITE_SUPABASE_URL:-}" ] || [ -z "${VITE_SUPABASE_ANON_KEY:-}" ]; then
+            echo "ERROR: VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY 가 비어 있습니다."
+            echo "Codemagic → Environment variables → 그룹 loopin_b2c 에 넣고 다시 빌드하세요."
+            exit 1
+          fi
+          if [ -z "${APP_STORE_APPLE_ID:-}" ]; then
+            echo "ERROR: APP_STORE_APPLE_ID 가 비어 있습니다."
+            echo "App Store Connect → 앱 정보 → Apple ID 숫자를 그룹 loopin_b2c 에 넣으세요."
+            exit 1
+          fi
+          echo "Supabase URL prefix: ${VITE_SUPABASE_URL:0:40}..."
+
+      - name: Build web app
+        script: |
+          npm run build
+
+      - name: Create and sync iOS project
+        script: |
+          if [ ! -d "ios" ]; then
+            npx cap add ios
+          fi
+          npx cap sync ios
+
+      - name: Restrict to iPhone only
+        script: |
+          PBX="$CM_BUILD_DIR/ios/App/App.xcodeproj/project.pbxproj"
+          sed -i '' 's/TARGETED_DEVICE_FAMILY = "[^"]*";/TARGETED_DEVICE_FAMILY = "1";/g' "$PBX"
+          sed -i '' 's/TARGETED_DEVICE_FAMILY = [^;]*;/TARGETED_DEVICE_FAMILY = 1;/g' "$PBX"
+
+      - name: Register login deep link and microphone
+        script: |
+          PLIST="$CM_BUILD_DIR/ios/App/App/Info.plist"
+
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes array" "$PLIST" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0 dict" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0:CFBundleURLName string com.loopin.b2capp" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes array" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes:0 string loopin" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Set :NSMicrophoneUsageDescription 수업에서 문장을 읽어 볼 때 마이크를 씁니다." "$PLIST" \
+            || /usr/libexec/PlistBuddy -c "Add :NSMicrophoneUsageDescription string 수업에서 문장을 읽어 볼 때 마이크를 씁니다." "$PLIST"
+
+      - name: Generate iOS app icon
+        script: |
+          echo "Using app icon:"
+          ls -lh assets/icon.png
+          npx @capacitor/assets generate --ios --assetPath assets
+
+      - name: Set up iOS code signing
+        script: |
+          xcode-project use-profiles \
+            --project "$CM_BUILD_DIR/ios/App/App.xcodeproj"
+
+      - name: Set app version and build number
+        script: |
+          cd "$CM_BUILD_DIR/ios/App"
+          agvtool new-marketing-version "$APP_VERSION"
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-build-number \
+            "$APP_STORE_APPLE_ID" \
+            --version-string "$APP_VERSION")
+          NEW_BUILD_NUMBER=$((LATEST_BUILD_NUMBER + 1))
+          echo "Latest uploaded build: $LATEST_BUILD_NUMBER"
+          echo "New build number: $NEW_BUILD_NUMBER"
+          agvtool new-version -all "$NEW_BUILD_NUMBER"
+
+      - name: Build signed IPA
+        script: |
+          cd "$CM_BUILD_DIR/ios/App"
+          xcode-project build-ipa \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
+
+    artifacts:
+      - ios/App/build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: false
+        submit_to_app_store: false

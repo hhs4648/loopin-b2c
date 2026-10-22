@@ -436,7 +436,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "비가 와서 소풍을 망치면 비에게 화가 나나요? 이번 글은 스토아 철학이 말하는 마음 다스리기를 다뤄요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("master", "주인"), g("confirm", "확인하다"), g("depend on", "~에 의지하다"), g("satisfy", "채우다, 만족시키다"),
                            g("take charge of", "~을 책임지다"), g("accomplish", "이루다"), g("warn against", "~하지 말라고 경고하다"),

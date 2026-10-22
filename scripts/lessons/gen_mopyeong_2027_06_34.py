@@ -385,7 +385,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "비싼 그림을 사는 사람은 무엇을 믿고 살까요? 이번 글은 미술 수집가와 작품 가치 이야기예요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("dependent", "의존적인"), g("shifting", "가변적인"), g("inherently", "본질적으로"),
                            g("uppermost", "가장 우선적인"), g("representative", "대표자"), g("institution", "기관"),

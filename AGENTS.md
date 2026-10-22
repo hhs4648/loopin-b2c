@@ -15,7 +15,7 @@ This repo is **Loopin B2C**, the real Loopin product. Apps named haksup are a di
 1. `CLAUDE.md` — product rules, lesson flow, code map
 2. `docs/tutor/policy/AUTHORING_RULES.md` — dated feedback at the top first
 3. `docs/tutor/templates/README.md` — shared lesson template + per-type templates
-4. `content/tutor/policy-copy/dajung/VOICE.md` — teacher voice (해요체, never 반말)
+4. `content/tutor/policy-copy/dajung/VOICE.md` — lesson copy voice (write 해요체; 반말 teachers get it converted by `speak()` in `src/tutor/teacher.ts`)
 5. `src/tutor/policy/types.ts` — step types (choice · show · think · pick · translate)
 
 `docs/tutor/policy/Loopin_Teaching_Policy_Spec_v0.1.md` is the original engine design; its worked example (2025 Q21, Descartes) was deleted. Use it for background only.

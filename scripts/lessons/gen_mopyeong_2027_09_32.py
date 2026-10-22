@@ -402,7 +402,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "스스로 간지럽히면 왜 별로 안 간지러울까요? 이번 글은 우리 감각이 어떤 자극에 크게 반응하는지 이야기해요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("sensory", "감각의"), g("detect", "감지하다"), g("be tuned to", "~에 맞춰져 있다"),
                            g("stimulus", "자극 (pl. stimuli)"), g("unexpected", "예상치 못한"), g("sensation", "감각"),

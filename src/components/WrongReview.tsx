@@ -4,6 +4,7 @@ import { getMiniMock } from "../tutor/mini";
 import { getSet } from "../tutor/sets";
 import { itemsToReview, reviewRecords, saveReviewRecord } from "../tutor/wrongReview";
 import { ItemView, NUM } from "./MiniMockView";
+import { currentTeacher } from "../tutor/teacher";
 
 /**
  * 틀린 문제 복습 (회차의 4단계) — 힌트 없이 한 문제씩. 맞히면 「잘했어요!」, 또 틀리면 「두 번 틀렸어요. 왜 틀렸을까요?」를
@@ -126,7 +127,7 @@ export function WrongReview({ mockId, onBack, onAnalyze }: Props) {
                 <p className="wr-saved">기록했어요: “{reason.trim()}”</p>
                 {set ? (
                   <button type="button" className="mini-analyze big" onClick={() => onAnalyze(set)}>
-                    <b>다정쌤 분석 다시 보기 ›</b>
+                    <b>{currentTeacher().name} 분석 다시 보기 ›</b>
                     <small>지난번 분석을 처음부터 다시 봐요</small>
                   </button>
                 ) : null}

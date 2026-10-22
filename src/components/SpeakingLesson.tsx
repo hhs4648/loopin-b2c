@@ -3,6 +3,7 @@ import { checkSpeech, slotUsed, type SpeechCheck } from "../speaking/check";
 import { canRecognize, listen, record, say, stopSaying, type Listener, type Recorder } from "../speaking/speech";
 import type { ModelLine, SpeakingLesson as Lesson, TemplateSlot } from "../speaking/types";
 import "../speaking/speaking.css";
+import { TeacherFigure } from "./TeacherFigure";
 
 /**
  * 토익 스피킹 시범 수업 — 사진 묘사(Q3~4).
@@ -281,7 +282,7 @@ export function SpeakingLesson({ lesson, onClose }: { lesson: Lesson; onClose: (
       </div>
 
       <div className="sp-teacher">
-        <img src="/assets/character/dajung.webp" alt="다정쌤" width={650} height={616} draggable={false} />
+        <TeacherFigure />
         <p className="sp-bubble">{line}</p>
       </div>
       <div className="sp-actions">

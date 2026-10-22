@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import type { LessonSet } from "../../content/tutor/types";
 import { wrongItems, type MiniItem } from "../tutor/mini";
 import { getCollection, getSet } from "../tutor/sets";
+import { currentTeacher } from "../tutor/teacher";
 
 /**
  * 틀린 문제 모아보기 — 10분 모의고사(복습 포함)에서 **가장 최근에 틀렸거나 안 푼** 문제만 시험별로.
@@ -60,7 +61,7 @@ export function WrongBook({ onBack, onOpenSet, onOpenMini }: Props) {
                         <span className="mini-mark">✕</span>
                         <span className="mini-row-text">
                           <b>{it.no}번 · {it.kind}{it.points === 3 ? " [3점]" : ""}</b>
-                          <small>{set.subtitle}{it.wrong_rate != null ? ` · 전국 오답률 ${it.wrong_rate}%` : ""} · 다정쌤과 분석하기</small>
+                          <small>{set.subtitle}{it.wrong_rate != null ? ` · 전국 오답률 ${it.wrong_rate}%` : ""} · {currentTeacher().name}과 분석하기</small>
                         </span>
                         <span className="mini-chev">›</span>
                       </button>

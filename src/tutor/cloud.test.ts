@@ -3,8 +3,14 @@ import { MERGES, SYNCED_KEYS } from "./cloud";
 
 /* 합치기 규칙만 본다 — 네트워크는 테스트에서 꺼져 있다(`enabled()`) */
 describe("서버 사본 합치기", () => {
-  it("동기화하는 키는 진행 기록 둘 · 노트 · 단어장 · 미니 모의고사 기록 · 상담 코스", () => {
-    expect(SYNCED_KEYS).toEqual(["dajung.done", "dajung.runs", "loopin.notes.v1", "loopin.vocab.v1", "loopin.mini.v1", "loopin.mini.doing.v1", "loopin.wrong-reviews.v1", "loopin.sentence-practice.v1", "loopin.vocab-slots.v1", "loopin.counsel.v1"]);
+  it("동기화하는 키는 진행 기록 둘 · 노트 · 단어장 · 미니 모의고사 기록 · 이름 · 상담 코스", () => {
+    expect(SYNCED_KEYS).toEqual(["dajung.done", "dajung.runs", "loopin.notes.v1", "loopin.vocab.v1", "loopin.mini.v1", "loopin.mini.doing.v1", "loopin.wrong-reviews.v1", "loopin.sentence-practice.v1", "loopin.vocab-slots.v1", "dajung.learner_name", "loopin.tester", "loopin.study_style", "loopin.learner_group", "loopin.counsel.v1"]);
+  });
+
+  it("이름 — 이 기기에 있으면 그것, 없으면 서버 것", () => {
+    expect(MERGES["dajung.learner_name"]!("수정", "헌석")).toBe("수정");
+    expect(MERGES["dajung.learner_name"]!(null, "헌석")).toBe("헌석");
+    expect(MERGES["dajung.learner_name"]!(null, null)).toBeNull();
   });
 
   it("미니 기록은 시험마다 합쳐 최근 것이 앞, 상담 코스는 더 최근에 짠 쪽", () => {

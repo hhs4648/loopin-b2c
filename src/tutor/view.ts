@@ -1,6 +1,7 @@
 import type { OrderCard } from "./policy/types";
 import type { ProperNoun, WordGloss } from "../../content/tutor/types";
 import type { StudyPanel } from "./policy/types";
+import type { Mood, Reaction } from "./teacher";
 
 /**
  * 세션이 화면에 넘기는 모양 (`TutorView`)과 공통 버튼 글.
@@ -45,7 +46,18 @@ export type TutorView = {
   translateWhy?: { label: string; text: string } | null;
   studentLine: string;
   effect: null | "light";
+  /** 방금 답에 대한 쌤 표정 (맞힘 happy · 틀림 sorry) */
+  mood?: Mood | null;
+  /** 그림 옆에 잠깐 뜨는 쌤 한마디 — `teacher.ts` LINES의 상황 */
+  reaction?: Reaction | null;
   sentence: string;
+  /**
+   * 듣기 버튼이 읽는 문장. 빈칸(`________`)은 정답 말로 바꿔 읽는다.
+   * 화면에 보이는 `sentence`는 빈칸 그대로다 (2026-10-22 선생님: underscore라고 읽히지 않게).
+   */
+  speakSentence?: string;
+  /** 지문 듣기에 쓰는 빈칸 → 정답 말. 화면 글은 바꾸지 않는다 */
+  speakBlanks?: { mark: string; say: string }[];
   /** 끊어읽기 자리 — 이 말들 뒤에 「/」 (「/ 끊어읽기」를 누르면) */
   slashes?: string[];
   /** 끊어읽기를 켜면 같이 보이는 S·V·O·C (문장에 적어 둔 것) */

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { OrderCard } from "../tutor/policy/types";
+import { phoneScale } from "./phoneScale";
 
 /**
  * 순서 잇기 — 주어진 글 카드 아래 빈칸 세 개에 단락 카드(A·B·C)를 끌어 순서대로 놓는다.
@@ -104,8 +105,9 @@ export function OrderBoard({
               }}
               onPointerMove={(e) => {
                 if (!drag || drag.id !== c.id) return;
-                const dx = e.clientX - drag.x;
-                const dy = e.clientY - drag.y;
+                const s = phoneScale(e.currentTarget);
+                const dx = (e.clientX - drag.x) / s;
+                const dy = (e.clientY - drag.y) / s;
                 if (Math.abs(dx) + Math.abs(dy) > 6) moved.current = true;
                 setDrag({ ...drag, dx, dy });
                 mark(slotAt(e.clientX, e.clientY));

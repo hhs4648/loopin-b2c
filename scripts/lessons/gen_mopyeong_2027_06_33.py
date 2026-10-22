@@ -382,7 +382,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "무서울 때 그림자가 사람처럼 보인 적 있나요? 이번 글은 감정과 지각(보고 알아차리는 일) 이야기예요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("imagination", "상상력"), g("perception", "지각"), g("dispose A to B", "A가 B하도록 이끌다"),
                            g("distorted", "왜곡된"), g("coward", "겁쟁이"), g("perceptual", "지각의"), g("disposition", "성향"),

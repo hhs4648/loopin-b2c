@@ -16,7 +16,7 @@
  * 들어온다. 로그인한 뒤에는 `resetPull()` → `pullAll()`로 서버 값을 다시 받아 합친다.
  */
 
-import { ensureLearner, supabaseClient } from "./records";
+import { ensureLearner, isTestBrowser, supabaseClient } from "./records";
 
 type Merge = (local: unknown, server: unknown) => unknown;
 
@@ -100,6 +100,17 @@ export const MERGES: Record<string, Merge> = {
   "loopin.sentence-practice.v1": (l, s) => ({ ...(isObj(s) ? s : {}), ...(isObj(l) ? l : {}) }),
   // 코스 단어 칸 — 끝낸 칸의 합집합
   "loopin.vocab-slots.v1": (l, s) => ({ ...(isObj(s) ? s : {}), ...(isObj(l) ? l : {}) }),
+  // 온보딩에서 적은 이름 — 이 기기에 있으면 그것. 테스트 기록(수정·헌석 등)을 이름으로 거르려고 올린다
+  "dajung.learner_name": (l, s) => (typeof l === "string" && l ? l : typeof s === "string" && s ? s : null),
+  // 테스터 표시(`tester.ts`) — 분석에서 뺄 학습자. 로그인하면 다른 기기에도 따라온다
+  "loopin.tester": (l, s) => (typeof l === "string" && l ? l : typeof s === "string" && s ? s : null),
+  // 공부 성향(`study-style.ts`) — 더 최근에 고른 쪽
+  "loopin.study_style": (l, s) => {
+    const at = (v: unknown) => (isObj(v) && typeof v.at === "string" ? v.at : "");
+    return at(l) >= at(s) ? (l ?? s) : s;
+  },
+  // 학습자 구분(`learner-group.ts`) — 고3·N수생 / 고1·2 / 중학생 / 일반인
+  "loopin.learner_group": (l, s) => (typeof l === "string" && l ? l : typeof s === "string" && s ? s : null),
   // 상담 코스 — 더 최근에 짠 쪽
   "loopin.counsel.v1": (l, s) => {
     const at = (v: unknown) => (isObj(v) && typeof v.at === "string" ? v.at : "");
@@ -114,14 +125,18 @@ export const SYNCED_KEYS = Object.keys(MERGES);
   안 되므로 테스트에서는 꺼 둔다.
 */
 function enabled(): boolean {
-  return !import.meta.env.VITEST && typeof window !== "undefined" && supabaseClient() != null;
+  return !import.meta.env.VITEST && typeof window !== "undefined" && supabaseClient() != null && !isTestBrowser();
 }
+
+/** JSON이 아니라 글자 그대로 저장하는 키 (`learner-name.ts`) */
+const RAW_KEYS = new Set(["dajung.learner_name", "loopin.tester", "loopin.learner_group"]);
 
 export const cloudEnabled = enabled;
 
 function readLocal(key: string): unknown {
   try {
     const raw = window.localStorage.getItem(key);
+    if (RAW_KEYS.has(key)) return raw?.trim() || null;
     return raw ? (JSON.parse(raw) as unknown) : null;
   } catch {
     return null;
@@ -130,7 +145,7 @@ function readLocal(key: string): unknown {
 
 function writeLocal(key: string, value: unknown): void {
   try {
-    window.localStorage.setItem(key, JSON.stringify(value));
+    window.localStorage.setItem(key, RAW_KEYS.has(key) ? String(value) : JSON.stringify(value));
   } catch {
     /* 못 써도 서버 값은 이번 화면에 못 쓸 뿐 */
   }
@@ -166,6 +181,19 @@ function flushAll(): void {
     window.clearTimeout(timers.get(key));
     void flush(key);
   }
+}
+
+/** 로그아웃 직전 — 모아 둔 것을 지금 보내고 끝날 때까지 기다린다 */
+export async function flushNow(): Promise<void> {
+  const keys = [...timers.keys()];
+  for (const key of keys) window.clearTimeout(timers.get(key));
+  await Promise.all(keys.map((key) => flush(key)));
+}
+
+/** 탈퇴 직전 — 모아 둔 것을 보내지 않고 버린다 */
+export function dropPending(): void {
+  for (const id of timers.values()) window.clearTimeout(id);
+  timers.clear();
 }
 
 if (typeof window !== "undefined" && typeof window.addEventListener === "function") {

@@ -1,7 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
+import { TesterBadge } from "./components/TesterBadge";
+import { readTesterFromUrl } from "./tutor/tester";
 import "./styles.css";
+import { applyTheme } from "./tutor/teacher";
+
+// 고른 쌤 색 — 첫 화면부터 (`<html data-teacher>`)
+applyTheme();
 
 /*
   **보이는 높이를 직접 재서 CSS에 넘긴다** (`--app-h`, `styles.css`의 `.viewport`).
@@ -50,9 +56,20 @@ window.addEventListener("orientationchange", () => {
   requestAnimationFrame(syncAppHeight);
 });
 
+// `?tester=헌석` — 만드는 사람 기기 표시 (`tutor/tester.ts`)
+readTesterFromUrl();
+
+// Play 앱(Trusted Web Activity)이 이 사이트를 앱으로 인정하려면 서비스 워커가 있어야 한다.
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    void navigator.serviceWorker.register("/sw.js");
+  });
+}
+
 /* 수업 중에는 모델을 부르지 않는다 — 대사는 미리 뽑아 둔 JSON이다 (예전 LLM 어댑터는 지웠다) */
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
+    <TesterBadge />
   </StrictMode>,
 );

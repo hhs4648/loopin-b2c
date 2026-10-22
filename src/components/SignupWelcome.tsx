@@ -1,24 +1,26 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { loadLearnerName, parseName, saveLearnerName } from "../tutor/learner-name";
+import { LEARNER_GROUPS, saveLearnerGroup } from "../tutor/learner-group";
 import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { loadStudentState, saveStudentState } from "../tutor/policy/student-state";
+import { currentTeacher, speak } from "../tutor/teacher";
 import {
   buildPlan,
-  defaultCourse,
-  examTitleOfMock,
   examYearRange,
   levelOfGrade,
   savePlan,
   type CounselAnswers,
 } from "../tutor/counsel";
+import { note } from "../tutor/journey";
 
 /**
  * 온보딩 — 처음 가입했을 때 다정쌤이 앱을 소개하고, 코스를 짤 것만 묻는다 (2026-10-21 선생님이 짠 흐름).
  *
  * **다섯 번 누르면 첫 문제** (2026-10-21 선생님: 줄여 줘):
- * 이름(이미 있으면 건너뜀) → 소개 한 화면(Top 10 · 같이 분석하며 1등급 사고방식 · 필수 단어)
- * → 최근 등급 → 최근 기출부터/이전 기출부터 → 「좋아요! 다 됐어요」 → 코스 첫 시험의 오답률 1위 문제를 **바로 분석**
+ * 이름(이미 있으면 건너뜀) → 소개 한 화면(Top 10 · 1:1 수업 · 필수 단어)
+ * → 학습자 구분(고3·N수생/고1·2/중학생/일반인, 지표용 · 2026-10-22) → 최근 등급(중학생·일반인은 건너뜀)
+ * → 최근 기출부터/이전 기출부터 → 「좋아요! 다 됐어요」 → 코스 첫 시험의 오답률 1위 문제를 **바로 분석**
  * (풀기·시간 재기가 아니다). 5등급 이하는 묻지 않고 2점짜리부터.
  * 학년·기출 범위(평가원만/교육청까지)는 지금 코스에 영향이 없어 뺐다 — 쓸 곳이 생기면(평가원 기출이 들어오면) 다시 넣는다.
  * 상담실(목표·공부 시간 등)은 따로 있다.
@@ -26,7 +28,20 @@ import {
  * 선생님은 반말로 적어 줬지만 다정쌤은 해요체다 (CLAUDE.md). 한 화면에 세 문장까지, 물음표 하나, 이모지 하나.
  */
 
-type Step = "name" | "intro" | "grade" | "order" | "done";
+type Step = "name" | "intro" | "group" | "grade" | "order" | "done";
+
+/**
+ * 등급은 다섯 묶음 + 모름 (2026-10-21 선생님: 단순화). 묶음은 아래쪽 등급(숫자가 큰 쪽)으로 저장한다 —
+ * 도움을 더 받는 쪽으로 (4~5등급 → 5: 2점짜리부터 · 단어 뜻 묻기 O). 모름은 null(코스·시간은 중간값).
+ */
+const GRADE_BANDS: [label: string, grade: number | null][] = [
+  ["1등급", 1],
+  ["2~3등급", 3],
+  ["4~5등급", 5],
+  ["6~7등급", 7],
+  ["8~9등급", 9],
+  ["모름", null],
+];
 
 type Props = {
   learnerName: string | null;
@@ -42,6 +57,10 @@ export function SignupWelcome({ learnerName, onStartExample }: Props) {
   const [order, setOrder] = useState<"recent" | "old">("recent");
   // 5등급 이하는 2점짜리부터 (묻지 않는다)
   const skipThree = grade != null && grade >= 5;
+
+  useEffect(() => {
+    note({ kind: "new", onboard_step: step });
+  }, [step]);
 
   function answers(): CounselAnswers {
     return {
@@ -75,21 +94,34 @@ export function SignupWelcome({ learnerName, onStartExample }: Props) {
 
   switch (step) {
     case "name":
-      line = "안녕하세요! 저는 영어 선생님 다정쌤이에요.\n이름을 알려 줄래요?";
+      line = `안녕하세요! 저는 영어 선생님 ${currentTeacher().name}이에요.\n이름을 알려 줄래요?`;
       buttons = ["이름 없이 할게요"];
       onPick = () => setStep("intro");
       break;
     case "intro":
       // 소개 세 화면을 한 화면으로 — 줄마다 다른 이야기라 줄을 바꾼다
-      line = `${name}수능 전에 꼭 필요한 기출 오답률 Top 10 문제들만 모았어요💛\n저랑 같이 분석하면서 1등급 사고방식을 똑같이 배울 수 있어요.\n풀었던 지문의 필수 단어도 수능 전까지 계속 볼 수 있게 도와줄게요.`;
+      line = `${name}수능 전에 꼭 필요한 기출 오답률 Top 10 문제들만 모았어요💛\n다양한 성격의 쌤들과 1:1 수업으로 집중 코치받아요\n풀었던 지문의 필수 단어도 수능 전까지 계속 볼 수 있게 도와줄게요`;
       buttons = ["좋아요"];
-      onPick = () => setStep("grade");
+      onPick = () => setStep("group");
+      break;
+    case "group":
+      line = "지금 어디에 해당해요?";
+      buttons = LEARNER_GROUPS.map((g) => g.label);
+      onPick = (b) => {
+        const group = LEARNER_GROUPS.find((g) => g.label === b)?.id ?? "suneung";
+        saveLearnerGroup(group);
+        note({ learner_group: group });
+        // 중학생·일반인은 모의고사 등급이 없다 — 묻지 않고 「모름」으로 간다
+        setStep(group === "middle" || group === "adult" ? "order" : "grade");
+      };
       break;
     case "grade":
       line = "최근 모의고사 영어는 몇 등급이었어요?";
-      buttons = Array.from({ length: 9 }, (_, i) => `${i + 1}등급`);
+      buttons = GRADE_BANDS.map(([label]) => label);
       onPick = (b) => {
-        setGrade(Number.parseInt(b, 10));
+        const picked = GRADE_BANDS.find(([label]) => label === b)?.[1] ?? null;
+        setGrade(picked);
+        if (picked != null) note({ grade: picked });
         setStep("order");
       };
       break;
@@ -102,11 +134,9 @@ export function SignupWelcome({ learnerName, onStartExample }: Props) {
       };
       break;
     case "done": {
-      // 학생이 고른 순서로 짠 코스의 첫 시험 — 5등급 이하면 2점 문제 중에서
-      const firstExam = examTitleOfMock(defaultCourse(answers())[0]);
-      const which = `${firstExam ?? "첫 시험"}${skipThree ? " 2점 문제" : ""}`;
+      // 예시 문제는 누구에게나 2026년 3월 30번 이름과 차이 (`onboardingSet`) — 코스(5등급 이하는 2점부터)는 그다음
       const note = skipThree ? "\n처음엔 2점짜리부터 차근차근 풀어 볼게요." : "";
-      line = `좋아요! 다 됐어요💛${note}\n아직 낯설 테니까, ${which} 중 오답률이 가장 높았던 문제부터 예시로 함께 봐요.`;
+      line = `좋아요! 다 됐어요💛${note}\n아직 낯설 테니까, 예시 문제 하나를 먼저 함께 봐요.`;
       buttons = ["같이 볼래요"];
       onPick = () => finish();
       break;
@@ -119,9 +149,9 @@ export function SignupWelcome({ learnerName, onStartExample }: Props) {
       <img className="counsel-bg" src="/assets/counsel-room.webp" alt="" width={1122} height={1402} draggable={false} />
       <header className="top-bar">
         <div className="chip">
-          <span className="avatar">다</span>
+          <span className="avatar">{currentTeacher().initial}</span>
           <div className="chip-text">
-            <strong>다정쌤</strong>
+            <strong>{currentTeacher().name}</strong>
             <small>처음 만났어요</small>
           </div>
         </div>
@@ -135,8 +165,8 @@ export function SignupWelcome({ learnerName, onStartExample }: Props) {
       <img className="counsel-bg counsel-desk" src="/assets/counsel-desk.webp" alt="" width={1122} height={1402} draggable={false} />
       <div className="teacher-bubble" key={step}>
         <div className="bubble-card" aria-live="polite">
-          <b className="bubble-name">다정쌤</b>
-          <span>{line}</span>
+          <b className="bubble-name">{currentTeacher().name}</b>
+          <span>{speak(line)}</span>
         </div>
       </div>
 

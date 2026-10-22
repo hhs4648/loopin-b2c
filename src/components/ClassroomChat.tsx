@@ -1,5 +1,5 @@
 import { ClassroomBg } from "./ClassroomBg";
-import { TeacherFigure } from "./TeacherFigure";
+import { TeacherFigure, TeacherReaction, useTeacher } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { InputBar } from "./InputBar";
 import type { TutorView } from "../tutor/view";
@@ -19,6 +19,7 @@ type Props = {
 export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose }: Props) {
   // 칩이 뜨면 아래 도크가 그만큼 높아진다. 학생 말풍선을 같이 올리지 않으면 가린다
   const showNouns = view.properNouns.length > 0 && !view.ended;
+  const teacher = useTeacher();
 
   return (
     <div
@@ -33,9 +34,9 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
       <ClassroomBg />
       <header className="top-bar">
         <div className="chip">
-          <span className="avatar">다</span>
+          <span className="avatar">{teacher.initial}</span>
           <div className="chip-text">
-            <strong>다정쌤</strong>
+            <strong>{teacher.name}</strong>
             <small>{setTitle ?? "오늘의 학습"}</small>
           </div>
         </div>
@@ -66,7 +67,7 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
 
       <div className="teacher-full">
         <div className="teacher-bob">
-          <TeacherFigure />
+          <TeacherFigure mood={view.mood} />
         </div>
       </div>
 
@@ -76,6 +77,8 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
             aria-live="polite"
           >
           {typing ? <TypingDots /> : <span>{view.message}</span>}
+          {/* 쌤 한마디는 대사 뒤 — 틀렸을 때 첫마디는 「아쉽게도 틀렸어요」 */}
+          {typing ? null : <TeacherReaction reaction={view.reaction} />}
           <i className="bubble-tail" />
         </div>
       </div>

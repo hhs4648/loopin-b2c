@@ -1,6 +1,6 @@
-import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
-import { cloudEnabled } from "../tutor/cloud";
-import { linkedEmail } from "../tutor/auth";
+import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { homeLine, recordVisit } from "../tutor/teacher";
+import { TeacherFigure, useTeacher } from "./TeacherFigure";
 import { loadVocab } from "../tutor/vocab";
 import { loadProgress } from "../tutor/progress";
 import { courseProgress, isFirstVisit, isVocabSlot, loadPlan, nextMockOf } from "../tutor/counsel";
@@ -29,25 +29,14 @@ type Props = {
   onOpenCounsel: () => void;
   /** 보충학습실(단어장) */
   onOpenSaved: (kind: SavedKind) => void;
-  /** 「기록 지키기」 — 이메일을 붙여 다른 기기에서도 이어 한다 */
-  onOpenAccount: () => void;
+  /** 설정 — 계정, 로그아웃, 회원 탈퇴 */
+  onOpenSettings: () => void;
 };
 
 /** 별가루·친밀도 — 데모(학생 테스트)에서는 가린다. 쓰임이 정해지면 true로 (2026-10-19 선생님) */
 const SHOW_STATS = false;
 
-export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, onOpenSaved, onOpenAccount }: Props) {
-  /** 이메일을 붙여 두었나 — 서버가 있을 때만 묻고, 모르는 동안은 「기록 지키기」로 둔다 */
-  const [linked, setLinked] = useState<string | null>(null);
-  useEffect(() => {
-    if (!cloudEnabled()) return;
-    let alive = true;
-    void linkedEmail().then((e) => alive && setLinked(e));
-    return () => {
-      alive = false;
-    };
-  }, []);
-
+export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, onOpenSaved, onOpenSettings }: Props) {
   const plan = loadPlan();
   // 코스는 상담을 안 했어도 있다(최근 시험부터) — 「오늘의 10분」은 안 푼 첫 회, 다 돌면 틀린 문제 다시
   const planDone = courseProgress(plan);
@@ -58,6 +47,10 @@ export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, o
   const nextMock = nextId && !nextVocab ? getMiniMock(nextId) : null;
   const vocabCount = loadVocab().length;
   const doneCount = Object.keys(loadProgress()).length;
+  const teacher = useTeacher();
+  // 쌤 첫마디 — 출석 기록을 보고 (오랜만이면 복귀, 3일 연속이면 출석, 아니면 첫 인사)
+  const [visits] = useState(() => recordVisit());
+  const hello = useMemo(() => homeLine(teacher, visits), [teacher, visits]);
 
   return (
     <div className="stage-fill village">
@@ -90,21 +83,22 @@ export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, o
           onOpen={() => onOpenSaved("vocab")}
         />
 
-        {/* 다정쌤 — 광장 한가운데 */}
+        {/* 고른 쌤 — 광장 한가운데 */}
         <div className="village-teacher">
           <div className="teacher-bob">
-            <img src="/assets/character/dajung.webp" alt="다정쌤" width={650} height={616} draggable={false} />
+            <TeacherFigure />
           </div>
         </div>
       </div>
 
       <header className="village-top">
         <h1 className="village-home">홈</h1>
-        {cloudEnabled() ? (
-          <button type="button" className={`village-account${linked ? " linked" : ""}`} onClick={onOpenAccount} title={linked ?? "기록 지키기"}>
-            {linked ? "✓ 기록 지킴" : "🔒 기록 지키기"}
-          </button>
-        ) : null}
+        <button type="button" className="village-settings" aria-label="설정" onClick={onOpenSettings}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9c.3.6.9 1 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" />
+          </svg>
+        </button>
         {SHOW_STATS ? (
           <div className="village-stats">
             <span className="village-stat">
@@ -119,20 +113,15 @@ export function HomeVillage({ learnerName, onStart, onOpenMini, onOpenCounsel, o
         ) : null}
       </header>
       <p className="village-hello">
-        {learnerName ? (
-          <>
-            <small>{learnerName}님,</small>
-            오늘도 함께 배워 볼까요?
-          </>
-        ) : (
-          "오늘도 함께 배워 볼까요?"
-        )}
+        {learnerName ? <small>{learnerName}님,</small> : null}
+        <span className="village-hello-who">{teacher.name}</span>
+        {hello}
       </p>
 
       <div className="village-dock">
         <button type="button" className="village-cta" onClick={onStart}>
           <span>
-            {firstVisit ? "다정쌤과 한 문제 분석해 보기" : nextVocab ? `단어 외우기 · ${nextVocab.title}` : nextMock ? `오늘 · ${nextMock.title} 완전 정복` : "오늘의 학습 시작하기"}
+            {firstVisit ? `${teacher.name}과 한 문제 분석해 보기` : nextVocab ? `단어 외우기 · ${nextVocab.title}` : nextMock ? `오늘 · ${nextMock.title} 완전 정복` : "오늘의 학습 시작하기"}
             {firstVisit ? <small>5분 · 어려운 문제를 문장 단위로 같이 읽어요</small> : nextVocab ? <small>방금 푼 시험의 주요 단어 테스트</small> : nextMock ? <small>문제마다 단어 → 풀기 → 분석</small> : null}
           </span>
           <i className="village-cta-go">

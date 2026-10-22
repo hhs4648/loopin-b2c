@@ -58,6 +58,38 @@ function supabase(): SupabaseClient | null {
 /** 다른 모듈(`cloud.ts`)도 같은 클라이언트·같은 학습자를 쓴다 */
 export const supabaseClient = supabase;
 
+/*
+  **테스트 브라우저에서는 기록을 남기지 않는다.** 2026-10-21에 보니 사용자 157명 중 136명이
+  개발 PC(HeadlessChrome·curl·Claude 앱)와 클라우드 자동 테스트였다 — 진짜 학생 기록이 묻힌다.
+  개발 서버(`npm run dev`), 내 컴퓨터 주소(127.0.0.1·localhost), 자동 브라우저(webdriver·HeadlessChrome)면
+  익명 학습자를 만들지 않고 수업·동기화·호출 기록을 모두 건너뛴다.
+  동기화를 직접 확인해야 할 때만 주소에 `?record=1`을 붙인다 (이 탭에서만 켜진다).
+*/
+const LOCAL_HOST = /^(localhost|127\.0\.0\.1|\[::1\])$|\.localhost$|\.test$/;
+const FORCE_KEY = "loopin.record.force";
+
+function forced(): boolean {
+  try {
+    if (new URLSearchParams(window.location.search).get("record") === "1") {
+      window.sessionStorage.setItem(FORCE_KEY, "1");
+    }
+    return window.sessionStorage.getItem(FORCE_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+export function isTestBrowser(): boolean {
+  if (typeof window === "undefined" || typeof navigator === "undefined") return false;
+  if (forced()) return false;
+  return (
+    import.meta.env.DEV ||
+    LOCAL_HOST.test(window.location.hostname) ||
+    navigator.webdriver === true ||
+    /HeadlessChrome/.test(navigator.userAgent)
+  );
+}
+
 export function recordingEnabled(): boolean {
   return supabase() != null;
 }
@@ -92,7 +124,7 @@ export async function learnerToken(): Promise<string | null> {
  */
 export async function ensureLearner(): Promise<string | null> {
   const db = supabase();
-  if (!db) return null;
+  if (!db || isTestBrowser()) return null;
   if (learnerId) return learnerId;
   learnerInFlight ??= (async () => {
     const { data } = await db.auth.getSession();
@@ -147,7 +179,7 @@ export async function finishSessionRecord(
   // 시작 기록이 아직 날아가는 중일 수 있다
   await sessionInFlight;
   const db = supabase();
-  if (!db || !sessionRow || !learnerId) return;
+  if (!db || !sessionRow || !learnerId || isTestBrowser()) return;
 
   /*
     `select()`를 붙여 **몇 행이 바뀌었는지 확인한다.** PostgREST는 RLS에 막혀
@@ -190,7 +222,7 @@ export type LlmCallRecord = {
 /** 모델 호출 한 건. 비용·지연·폐기율을 나중에 보려고 남긴다 */
 export async function recordLlmCall(info: LlmCallRecord): Promise<void> {
   const db = supabase();
-  if (!db || !learnerId) return;
+  if (!db || !learnerId || isTestBrowser()) return;
   const { error } = await db.from("llm_calls").insert({
     session_id: sessionRow,
     learner_id: learnerId,

@@ -1,8 +1,10 @@
+import { applySpeakBlanks, speakBlanksOf } from "../spoken";
 import { trapTips } from "./traps";
 import { sensesOf } from "./senses";
 import policyFrame from "../../../content/tutor/policy-frame.json";
 import type { TutorResult } from "../../../content/tutor/types";
 import { UNKNOWN_BTN, HINT_BTN, type PointRecord, type TranslationResult, type TutorView } from "../view";
+import { speak, type Mood, type Reaction } from "../teacher";
 import { lookupGloss } from "../glosses";
 import { isUnknownInput, matchChoice } from "../match";
 import { askedAboutWord } from "../proper-nouns";
@@ -139,9 +141,9 @@ const YES_BTN = "네";
 const NO_THANKS_BTN = "괜찮아요";
 /** 분석 뒤 문제에서 많이 고른 오답을 골랐을 때 — 보기 해설 아래 고를 수 있는 「같이 자세히 보기」 */
 const EXAM_REVIEW_BTN = "같이 자세히 볼래요";
-const ANALYZE_DEEP_BTN = policyFrame.buttons.analyze_deep;
+export const ANALYZE_DEEP_BTN = policyFrame.buttons.analyze_deep;
 const SUMMARY_ONLY_BTN = policyFrame.buttons.summary_only;
-const END_NOW_BTN = policyFrame.buttons.end_now;
+export const END_NOW_BTN = policyFrame.buttons.end_now;
 const PASSAGE_AGAIN_BTN = policyFrame.buttons.passage_again;
 
 /** 기기 저장소·시계를 갈아 끼울 수 있게 — 테스트에서 쓴다 */
@@ -218,6 +220,14 @@ type State = {
   sentenceDone: boolean;
   /** 맞았다는 말만 하는 화면 — 다음 질문은 잠깐 뒤에 따로 */
   praiseOnly: boolean;
+  /** 방금 답의 쌤 표정 — 학생이 다음을 누르면 지운다 */
+  mood: Mood | null;
+  /** 그림 옆에 잠깐 뜨는 쌤 한마디 (표 대사) — 시험 답·연속 정답·같은 실수·끝 */
+  reaction: Reaction | null;
+  /** 작은 문제 연속 정답·연속 오답 수, 방금 틀린 문제 */
+  streak: number;
+  wrongStreak: number;
+  wrongIds: string[];
   /** 「이미 잘 알고 있어요」 뒤 「다음부턴 안 뜨도록 할까요?」를 묻는 중 */
   /** 자유 해석에서 「잘 모르겠어요」를 한 번 눌렀다 — 이제 「답 바로 보기」가 뜬다 */
   translateNudged: boolean;
@@ -366,6 +376,11 @@ export function createPolicySession(
       readingFirst: false,
       sentenceDone: false,
       praiseOnly: false,
+      mood: null,
+      reaction: null,
+      streak: 0,
+      wrongStreak: 0,
+      wrongIds: [],
       translateNudged: false,
       roles: [],
       kept: [],
@@ -591,6 +606,8 @@ export function createPolicySession(
     }
     const correct = !!picked.correct;
     const when = s.stage === "exam_first" ? "first" : "final";
+    // 시험 문제는 꼭 한마디 — 분석 끝에 작은 문제를 하나도 안 틀리고 맞히면 최상급 칭찬
+    s = { ...s, mood: correct ? "happy" : "sorry", reaction: correct ? (when === "final" && !s.small.some((x) => !x.correct) && s.small.length >= 5 ? "best" : "correct") : "wrong" };
     pending.push({
       at: new Date(d.now()).toISOString(),
       lessonId: lesson.id,
@@ -714,7 +731,7 @@ export function createPolicySession(
       ...lesson.sentences.flatMap((x) => (x.concepts ?? []).map((c) => ({ icon: "❓", label: c.en, text: `${c.title} ${c.text}` }))),
       ...steps.flatMap((x) => (x.tips ?? []).map((t) => ({ icon: "💡", label: t.label, text: t.text }))),
     ].filter((e) => !seen.has(e.label) && seen.add(e.label));
-    return { title: s.message, board, expressions, words: keyWords().passage };
+    return { title: speak(s.message), board, expressions, words: keyWords().passage };
   }
 
   /**
@@ -894,11 +911,33 @@ export function createPolicySession(
       action,
       ...(outcome ? { outcome } : {}),
     });
+    if (observation.kind === "answer" || observation.kind === "dont_know") noteAnswer(observation.kind === "answer" && !!observation.correct, action?.interactionId);
     // 작은 문제 — 그 스텝의 첫 시도만 센다 (시험 문제·도입은 빼고)
     const id = action?.interactionId;
     if (id && s.stage !== "retry" && (observation.kind === "answer" || observation.kind === "dont_know") && !s.small.some((x) => x.id === id)) {
       s = { ...s, small: [...s.small, { id, correct: observation.kind === "answer" && !!observation.correct }] };
     }
+  }
+
+  /**
+   * 쌤 표정과 한마디. 맞히면 웃고 틀리면 아쉬운 얼굴 — 한마디는 드물게만:
+   * 세 번 연속 맞히면 「연속 정답」, 틀렸던 문제를 다시 풀 때(retry) 또 틀리면 「같은 실수」, 네 번 연속 틀리면 「슬럼프」.
+   * 한 문제 안에서 두 번째로 틀린 건 「같은 실수」가 아니다.
+   */
+  function noteAnswer(correct: boolean, id?: string) {
+    const streak = correct ? s.streak + 1 : 0;
+    const wrongStreak = correct ? 0 : s.wrongStreak + 1;
+    const again = !correct && !!id && s.stage === "retry" && s.wrongIds.includes(id);
+    const reaction: Reaction | null =
+      correct && streak > 0 && streak % 3 === 0 ? "combo" : wrongStreak === 4 ? "slump" : again ? "repeat" : null;
+    s = {
+      ...s,
+      mood: correct ? "happy" : "sorry",
+      reaction: reaction ?? s.reaction,
+      streak,
+      wrongStreak,
+      wrongIds: !correct && id && !s.wrongIds.includes(id) ? [...s.wrongIds, id] : s.wrongIds,
+    };
   }
 
   /** 틀린 작은 문제 중 다시 풀 수 있는 것 — 보기가 있는 choice 스텝 */
@@ -1341,7 +1380,7 @@ export function createPolicySession(
     s = { ...s, found, roles: addRoles(st, [word]) };
     const left = st.answers.length - found.length;
     if (left > 0) {
-      s = { ...s, message: lines.more.replace("{n}", String(left)) };
+      s = { ...s, mood: "happy", message: lines.more.replace("{n}", String(left)) };
       return;
     }
     log({ kind: "answer", correct: true, optionId: word, latencyMs: d.now() - s.shownAt }, { action: "PRAISE", interactionId: st.id });
@@ -1734,6 +1773,10 @@ export function createPolicySession(
         : [];
     // 한 줄에 못 들어가는 보기가 있으면 세로로 쌓는다
     const stack = s.buttons.some((b) => b.length > 18);
+    const sentenceText =
+      inLesson && !s.readingFirst && st.bracket && shown.includes(st.bracket) ? shown.replace(st.bracket, `[${st.bracket}]`) : shown;
+    // 빈칸은 화면에는 ________로 두고, 듣기에서만 정답 말을 넣는다
+    const speakBlanks = speakBlanksOf(lesson.exam);
     return {
       screen: reading
         ? "read"
@@ -1748,7 +1791,10 @@ export function createPolicySession(
             : onStudy
               ? "study"
               : "chat",
-      message: s.message,
+      // 고른 쌤 말투로 — 반말 쌤이면 끝말만 반말 (레슨 대사는 해요체 한 벌)
+      message: speak(s.message),
+      mood: s.mood,
+      reaction: s.reaction ?? (s.stage === "done" ? "done" : null),
       boardImage: (() => {
         const key =
           s.boardImage ??
@@ -1760,7 +1806,9 @@ export function createPolicySession(
       studentLine: "",
       effect: s.effect,
       // 여러 문장 중 한 문장을 가리킬 때 — 따로 띄우지 않고 그 문장을 [ ]로 묶어 보인다 (2026-10-15 선생님, 공통 규칙)
-      sentence: inLesson && !s.readingFirst && st.bracket && shown.includes(st.bracket) ? shown.replace(st.bracket, `[${st.bracket}]`) : shown,
+      sentence: sentenceText,
+      speakSentence: applySpeakBlanks(sentenceText, speakBlanks),
+      speakBlanks,
       slashes: inLesson && shown === sen.text ? (sen.slashes ?? []) : [],
       // 끊어읽기 때 같이 보이는 S·V·O·C — 주어·동사 찾기 전에도 보인다. 학생이 켜야만 보이는 도움이라 답이 새는 게 아니다 (2026-10-20 선생님)
       slashRoles: inLesson && shown === sen.text ? (sen.roles ?? []) : [],
@@ -1817,13 +1865,14 @@ export function createPolicySession(
         : [],
       faded: inLesson ? (st.faded ?? []) : [],
       // 흐린 부분이 있으면 왜 흐린지 문장 아래 작게
-      fadedNote: inLesson && st.faded?.length ? (st.faded_note ?? L.faded_note) : null,
+      fadedNote: inLesson && st.faded?.length ? speak(st.faded_note ?? L.faded_note) : null,
       shaded: inLesson ? (st.shaded ?? []) : [],
       concepts: inLesson && !s.readingFirst && !s.sentenceDone && !s.praiseOnly ? (sen.concepts ?? []) : [],
       // 단어에 붙은 Tip(엑셀 단어 + 손으로 쓴 단어 Tip)은 칩이 아니라 문장 속 색 글자로 — 누르면 뜻 아래 Tip이 열린다.
       // 칩이 너무 많아서 (2026-10-16 선생님). 칩에는 요령(단어에 안 붙은 것)·힌트만
       wordTips: inLesson && !s.sentenceDone && (shown === sen.text) ? sentenceWordTips : [],
-      tips: inLesson && s.praiseOnly
+      // 칩 설명(💡·힌트)도 쌤 말투로
+      tips: (inLesson && s.praiseOnly
         ? s.praiseTips
         : inLesson && s.readingFirst
         ? [...(st.faded?.length ? [st.faded_tip ?? { label: L.faded_tip_label, text: L.faded_tip }] : [])]
@@ -1836,7 +1885,8 @@ export function createPolicySession(
             // 레슨에 적어 둔 칩 — 문장 속 색 글자로 간 단어 Tip은 빼고, 힌트는 답하기 전에만
             ...(st.tips ?? []).filter((t) => !(t.hint && s.resolved) && !(t.mark && !t.hint && inWordTips(t))),
           ]
-        : [],
+        : []
+      ).map((t) => ({ ...t, text: speak(t.text) })),
       methodSteps:
         lesson.method && (inLesson || s.stage === "exam_final")
           ? { labels: lesson.method.labels, active: exam ? lesson.method.labels.length - 1 : (st.method ?? null) }
@@ -1887,9 +1937,11 @@ export function createPolicySession(
                 {
                   correct: !!o.correct,
                   picked: s.examPicked === o.id,
-                  text: o.correct
-                    ? (copy.exam!.answer_explain ?? copy.exam!.final_correct).replace(/^정답이에요!\s*/, "")
-                    : (copy.exam!.option_feedback?.[o.id] ?? ""),
+                  text: speak(
+                    o.correct
+                      ? (copy.exam!.answer_explain ?? copy.exam!.final_correct).replace(/^정답이에요!\s*/, "")
+                      : (copy.exam!.option_feedback?.[o.id] ?? ""),
+                  ),
                 },
               ]),
             )
@@ -1932,7 +1984,7 @@ export function createPolicySession(
       wordCheck:
         s.stage === "words"
           ? {
-              title: s.message,
+              title: speak(s.message),
               step: `${s.wordPart === 0 ? "본문 단어" : "보기 단어"} ${s.wordPart + 1}/${keyWords().options.length ? 2 : 1}`,
               words: s.wordPart === 0 ? keyWords().passage : keyWords().options,
               checked: s.checked,
@@ -1955,7 +2007,8 @@ export function createPolicySession(
         const st0 = s.stage === "intro" ? lesson.intro?.[s.ii] : undefined;
         return st0?.type === "say" && st0.auto_ms ? st0.auto_ms : null;
       })(),
-      pointsReview: s.stage === "points" ? { title: s.message, lessonId: lesson.id, items: s.points } : null,
+      // 화면 제목도 쌤 말투로 (2026-10-22 선생님: 반말 쌤인데 「…곳이에요」가 존댓말로 나왔다)
+      pointsReview: s.stage === "points" ? { title: speak(s.message), lessonId: lesson.id, items: s.points } : null,
       smallScore: s.small.length ? { right: s.small.filter((x) => x.correct).length, total: s.small.length } : null,
       retryProgress: s.stage === "retry" && s.retry ? { i: s.retry.i + 1, total: s.retry.ids.length } : null,
       // 맞았다는 화면에서만 방금 찾은 말을 칠한다 (2026-10-16 선생님: 「맞아요」 때만)
@@ -1981,12 +2034,12 @@ export function createPolicySession(
       // 맞힌 칭찬 화면 — 나중에 선생님 표정·몸짓을 바꾼다
       celebrate: inLesson && s.sentenceDone,
       praiseOnly: inLesson && s.praiseOnly,
-      bubbleNote: inLesson && s.readingFirst ? L.read_first_note : null,
+      bubbleNote: inLesson && s.readingFirst ? speak(L.read_first_note) : null,
       // 틀린 뒤에도 문제가 무엇이었는지 — 말풍선 위에 다시 띄운다 (2026-10-21 선생님: 문제가 기억 안 날 수 있다)
       askAgain:
         inLesson && !s.readingFirst && !s.resolved && !s.praiseOnly && (st.type === "pick" || st.type === "choice") &&
         [L.wrong_lead, L.dont_know_lead, L.pick_better].some((x) => x && s.message.startsWith(x))
-          ? (st.type === "pick" ? pickCopy(copy, st.id).ask : choiceCopy(copy, st.id).ask) || null
+          ? speak((st.type === "pick" ? pickCopy(copy, st.id).ask : choiceCopy(copy, st.id).ask) ?? "") || null
           : null,
       // 「다 읽었어요」는 문장 길이만큼 기다렸다가 — 너무 길면 답답하다 (1.2~3.5초)
       readDelayMs: inLesson && s.readingFirst ? Math.min(3500, Math.max(1200, sen.text.split(/\s+/).length * 120)) : null,
@@ -2019,7 +2072,7 @@ export function createPolicySession(
     async submit(raw: string): Promise<TutorView> {
       const text = raw.trim();
       if (!text || s.stage === "done") return view();
-      s = { ...s, studentLine: text.startsWith("__") ? s.studentLine : text, effect: null };
+      s = { ...s, studentLine: text.startsWith("__") ? s.studentLine : text, effect: null, mood: null, reaction: null };
 
       if (s.stage === "intro") {
         onIntro(text);

@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import type { StudyPanel } from "../tutor/policy/types";
+import { phoneScale } from "./phoneScale";
 
 /**
  * 문장 아래에 띄우는 그림 — Teaching Policy 레슨만 쓴다.
@@ -257,7 +258,8 @@ function SortChip({ words, onDrop }: { words: string[]; onDrop: (side: "left" | 
         }}
         onPointerMove={(e) => {
           if (!start.current) return;
-          setOffset({ x: e.clientX - start.current.x, y: e.clientY - start.current.y });
+          const s = phoneScale(e.currentTarget);
+          setOffset({ x: (e.clientX - start.current.x) / s, y: (e.clientY - start.current.y) / s });
           mark(sideAt(e.clientX, e.clientY));
         }}
         onPointerUp={() => {

@@ -26,6 +26,7 @@ import { MarkArea, markWords, NO_MARKS, NO_OVERLAY, type Marks, type Overlay, ty
 import { getPolicyLesson } from "../tutor/policy/lessons";
 import { cleanWord, meaningOf } from "../tutor/miniWords";
 import { addVocab, isSaved, loadVocab, toggleVocab, type VocabEntry } from "../tutor/vocab";
+import { currentTeacher } from "../tutor/teacher";
 
 export const NUM = "①②③④⑤";
 
@@ -198,7 +199,7 @@ export function MiniMockView({ mock, showLast, onBack, onAnalyze, standalone, in
         </ul>
         <p className="pack-help">
           실제 시험처럼 시간을 재며 풀어요. 한 문제를 풀고 바로 「정답 확인」을 눌러 맞혀 볼 수도 있어요.
-          틀린 문제나 모르는 문제는 다정쌤과 분석하러 갈 수 있고, 분석하는 동안은 시계가 멈춰요. ⏸ 버튼으로 잠깐 쉴 수도 있어요.
+          틀린 문제나 모르는 문제는 {currentTeacher().name}과 분석하러 갈 수 있고, 분석하는 동안은 시계가 멈춰요. ⏸ 버튼으로 잠깐 쉴 수도 있어요.
         </p>
         {standalone ? (
           <label className="mini-name">
@@ -361,7 +362,7 @@ function MiniPrep({ mock, onBack, onStart, onAnalyze }: { mock: MiniMock; onBack
       <div className="saved-body-scroll">
         <p className="home-hello">{mock.title}</p>
         <h1 className="home-title">분석 먼저 하고 풀기</h1>
-        <p className="pack-help">문제마다 다정쌤과 한 문장씩 읽고 나서 시간을 재며 풀어요. 다 안 봐도 돼요 — 보고 싶은 것만 보고 풀어도 괜찮아요.</p>
+        <p className="pack-help">문제마다 {currentTeacher().name}과 한 문장씩 읽고 나서 시간을 재며 풀어요. 다 안 봐도 돼요 — 보고 싶은 것만 보고 풀어도 괜찮아요.</p>
         <ul className="mini-review prep">
           {rows.map(({ it, set }) => {
             const done = !!set && isDone(progress, set.id);
@@ -371,7 +372,7 @@ function MiniPrep({ mock, onBack, onStart, onAnalyze }: { mock: MiniMock; onBack
                   <span className="mini-mark">{done ? "✓" : ""}</span>
                   <span className="mini-row-text">
                     <b>{it.no}번 · {it.kind}{it.points === 3 ? " [3점]" : ""}</b>
-                    <small>{set ? (done ? "분석 봤어요 · 다시 보기" : "다정쌤과 분석하기") : "분석 레슨이 아직 없어요"}{it.wrong_rate != null ? ` · 전국 오답률 ${it.wrong_rate}%` : ""}</small>
+                    <small>{set ? (done ? "분석 봤어요 · 다시 보기" : `${currentTeacher().name}과 분석하기`) : "분석 레슨이 아직 없어요"}{it.wrong_rate != null ? ` · 전국 오답률 ${it.wrong_rate}%` : ""}</small>
                   </span>
                   <span className="mini-chev">›</span>
                 </button>
@@ -590,7 +591,7 @@ function MiniExam({
           }}
         />
         {peeked.includes(item.no) && !isChecked ? (
-          <p className="mini-peek-note">다정쌤 분석을 보고 고르는 문항이에요. 결과에 「분석 보고 고름」으로 따로 표시돼요.</p>
+          <p className="mini-peek-note">{currentTeacher().name} 분석을 보고 고르는 문항이에요. 결과에 「분석 보고 고름」으로 따로 표시돼요.</p>
         ) : null}
         {isChecked ? (
           <CheckPanel
@@ -626,7 +627,7 @@ function MiniExam({
                 onAnalyze(set, { answers, checked, peeked: next, marks, at, usedMs: Date.now() - started.current, times: { ...tally() }, no: item.no });
               }}
             >
-              <b>답 고르지 않고 다정쌤 분석 보기 ›</b>
+              <b>답 고르지 않고 {currentTeacher().name} 분석 보기 ›</b>
               <small>돌아와서 답을 고를 수 있어요 · 「분석 보고 고름」으로 따로 표시돼요</small>
             </button>
           ) : null}
@@ -703,10 +704,10 @@ function CheckPanel({
       </p>
       {onAnalyze ? (
         <button type="button" className="mini-analyze big" onClick={onAnalyze}>
-          <b>다정쌤과 이 문제 분석하기 ›</b>
+          <b>{currentTeacher().name}과 이 문제 분석하기 ›</b>
         </button>
       ) : (
-        <p className="mini-no-lesson">이 문제는 아직 다정쌤 분석이 없어요. 아래 해설을 봐요.</p>
+        <p className="mini-no-lesson">이 문제는 아직 {currentTeacher().name} 분석이 없어요. 아래 해설을 봐요.</p>
       )}
       {item.fix ? <p className="mini-fix">{item.fix}</p> : null}
       {unknown?.length ? <UnknownWords words={unknown} /> : null}
@@ -916,7 +917,7 @@ function MiniResult({
         <p className="home-hello">{mock.title} · 결과</p>
         {flowSet ? (
           <button type="button" className="mini-analyze big flow" onClick={() => onAnalyze(flowSet, mock.items[0]!.no)}>
-            <b>다정쌤과 이 문제 분석하기 ›</b>
+            <b>{currentTeacher().name}과 이 문제 분석하기 ›</b>
           </button>
         ) : null}
         <div className="mini-score">
@@ -967,7 +968,7 @@ function MiniResult({
                 }}>
                   <span className="mini-mark">{right ? "○" : "✕"}</span>
                   <span className="mini-row-text">
-                    <b>{it.no}번 · {it.kind}{set ? <i className="mini-tag lesson">다정쌤 분석</i> : null}{attempt.checked?.includes(it.no) ? <i className="mini-tag">바로 확인</i> : null}{attempt.peeked?.includes(it.no) ? <i className="mini-tag peek">분석 보고 고름</i> : null}</b>
+                    <b>{it.no}번 · {it.kind}{set ? <i className="mini-tag lesson">{currentTeacher().name} 분석</i> : null}{attempt.checked?.includes(it.no) ? <i className="mini-tag">바로 확인</i> : null}{attempt.peeked?.includes(it.no) ? <i className="mini-tag peek">분석 보고 고름</i> : null}</b>
                     <small>
                       {mine ? `내 답 ${NUM[mine - 1]}` : "안 풂"} · 정답 {NUM[it.answer - 1]} · {it.points}점
                       {attempt.times?.[it.no] ? ` · ${dur(attempt.times[it.no]!)}` : ""}
@@ -980,10 +981,10 @@ function MiniResult({
                   <div className="mini-explain">
                     {set ? (
                       <button type="button" className="mini-analyze big" onClick={() => onAnalyze(set, it.no)}>
-                        <b>다정쌤과 이 문제 분석하기 ›</b>
+                        <b>{currentTeacher().name}과 이 문제 분석하기 ›</b>
                       </button>
                     ) : (
-                      <p className="mini-no-lesson">이 문제는 아직 다정쌤 분석이 없어요. 아래 해설을 봐요.</p>
+                      <p className="mini-no-lesson">이 문제는 아직 {currentTeacher().name} 분석이 없어요. 아래 해설을 봐요.</p>
                     )}
                     {it.fix ? <p className="mini-fix">{it.fix}</p> : null}
                     {it.intent ? <p className="mini-intent">{it.intent}</p> : null}

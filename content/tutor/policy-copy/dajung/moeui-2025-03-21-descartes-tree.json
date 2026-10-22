@@ -1,0 +1,207 @@
+{
+  "lesson": "moeui-2025-03-21-descartes-tree",
+  "character": "dajung",
+  "note": "생성물. 가르치는 내용은 policy-lessons의 brief를 고치고, 이 파일은 그 brief에서 다정쌤 말투로 다시 뽑는다 (scripts/policy_copy.mjs)",
+  "topic_intro": "데카르트의 '나무'로 과학과 철학의 관계를 설명하는 글을 다시 읽어",
+  "closing": "오늘은 나무 한 그루로 글 전체를 읽었어요. 밑줄 문장이 왜 '과학이 철학에서 떨어져 나왔다'는 뜻인지 이제 그림으로 설명할 수 있어요 😊",
+  "helps": {
+    "what_is_metaphysics": {
+      "answer": "형이상학은 눈에 보이는 현상 너머의 근본 원리를 따지는 철학 분야예요. 이 글에서는 모든 학문의 바탕이 되는 원리, 곧 나무의 뿌리라는 것만 알면 돼요.",
+      "from": "1mm90l9"
+    },
+    "what_is_applied_science": {
+      "answer": "응용과학은 원리를 실제 문제에 써서 쓸모 있는 결과를 내는 분야예요. 공학이나 의학을 떠올리면 돼요.",
+      "from": "1jpnvo5"
+    },
+    "cartesian_aristotelian": {
+      "answer": "Cartesian은 '데카르트의', Aristotelian은 '아리스토텔레스의'라는 뜻이에요. 둘 다 근본 원리에서 출발해 세상을 설명하려 한 옛 학문을 가리켜요.",
+      "from": "10adm9o"
+    }
+  },
+  "steps": {
+    "s1_meaning": {
+      "ask": "첫 문장이에요. 가장 가까운 뜻은 무엇일까요?",
+      "reask": "그럼 이 문장의 뜻을 골라 봐요.",
+      "hints": [
+        "'unity'는 '하나'라는 말이에요. 과학과 철학의 관계가 어땠다는 건지부터 봐요.",
+        "'was described by the tree'예요. 나무가 무언가를 '설명해 주는' 문장이에요. 옛 관점에서 과학과 철학이 어떤 사이였는지 봐요."
+      ],
+      "explain": "여기서는 첫 번째가 가장 가까워요. 옛날에는 과학과 철학을 하나로 이어진 체계로 보았고, 데카르트의 나무가 그걸 잘 보여 준다는 말이에요.",
+      "praise": "맞아요! 옛날에는 과학과 철학을 하나로 보았다는 뜻이에요.",
+      "feedback": {
+        "b": "'분리되어야 한다'는 반대예요. 'unity'는 '하나'라는 말이에요. 나무가 무엇을 보여 주는지 다시 봐요.",
+        "c": "실제 나무 이야기가 아니에요. 'famous tree of Descartes'는 비유예요. 고전 시대 과학자 이야기도 아니고요."
+      },
+      "from": "j6nchq"
+    },
+    "s2_correspond": {
+      "ask": "괄호는 잠깐 빼 뒀어요. 'corresponded to'는 여기서 어떤 뜻일까요?",
+      "reask": "그럼 'corresponded to'의 뜻을 골라 봐요.",
+      "hints": [
+        "나무의 '뿌리'와 학문 하나를 나란히 놓고 짝짓는 문장이에요.",
+        "비유에서 'A corresponded to B'는 A와 B를 짝지을 때 써요. 뿌리가 곧 형이상학인 셈이에요."
+      ],
+      "explain": "'corresponded to'는 여기서 '~에 해당했다'예요. 나무의 각 부분이 어떤 학문에 해당하는지 하나씩 짝짓는 문장이에요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "b": "그 뜻도 있는 단어예요. 그런데 여기서는 나무의 뿌리와 학문 하나를 짝짓고 있어요."
+      },
+      "from": "18rp9pr"
+    },
+    "s2_map_trunk": {
+      "ask": "뿌리는 형이상학에 해당한다고 했어요. 그럼 줄기(trunk)는 무엇에 해당할까요?",
+      "reask": "그럼 줄기가 무엇에 해당하는지 골라 봐요.",
+      "hints": [
+        "'the trunk to physics'에는 동사가 안 보여요. 앞에 나온 동사가 되풀이돼서 생략된 거예요.",
+        "'the trunk [corresponded] to physics'로 읽어 보세요."
+      ],
+      "explain": "'the trunk to physics'는 'the trunk corresponded to physics'에서 되풀이되는 동사를 뺀 거예요. 그래서 줄기는 physics, 물리학에 해당해요.",
+      "praise": "맞아요!",
+      "from": "4p0bke"
+    },
+    "s2_map_fruit": {
+      "ask": "마지막 칸이에요. 가지와 열매(branches and fruit)는 무엇에 해당할까요?",
+      "reask": "그럼 가지와 열매가 무엇에 해당하는지 골라 봐요.",
+      "hints": [
+        "여기도 동사가 생략됐어요. 'the branches and fruit to' 뒤를 봐요.",
+        "'what we would call applied science'가 한 덩어리예요. '우리가 응용과학이라고 부를 만한 것'이에요."
+      ],
+      "explain": "'the branches and fruit [corresponded] to what we would call applied science'예요. 가지와 열매는 응용과학에 해당해요.",
+      "praise": "맞아요! 나무가 다 채워졌어요.",
+      "from": "1gy1t3u"
+    },
+    "s2_what": {
+      "say": "정리하면 뿌리는 형이상학, 줄기는 물리학, 가지와 열매는 응용과학이에요.",
+      "from": "ovpudh"
+    },
+    "s2_restore": {
+      "say": "괄호는 바로 앞 단어를 풀어 주는 말이에요. 뼈대를 잡은 뒤에 읽으면 쉬워요.",
+      "from": "o0z7hr"
+    },
+    "s3_as": {
+      "ask": "앞 절반은 어떤 해석이 맞을까요?",
+      "reask": "그럼 앞 절반의 해석을 골라 봐요.",
+      "hints": [
+        "as 뒤에 주어와 동사(we … regard)가 또 나와요. 이럴 때 as는 접속사예요.",
+        "접속사 as는 '~하듯이'예요. '오늘날 우리가 과학만을 바라보듯이'가 먼저 한 덩어리로 묶여요."
+      ],
+      "explain": "정답은 첫 번째예요. as 뒤에 주어·동사(we … regard)가 또 나오면 '~하듯이'로 읽어요. 'regard A as B'의 as와 헷갈리기 쉬운 자리예요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "b": "'regard A as B'가 떠오를 수 있어요. 그런데 as 뒤를 보면 'we today regard'로 주어와 동사가 또 나와요."
+      },
+      "from": "ya6ikb"
+    },
+    "s3_fruits": {
+      "ask": "뒤 절반의 'fruits'는 따옴표가 붙은 비유예요. 여기서 무엇을 뜻할까요?",
+      "reask": "그럼 'fruits'가 뜻하는 걸 골라 봐요.",
+      "hints": [
+        "나무 그림에서 fruit가 어느 칸에 있었는지 봐요.",
+        "fruit는 applied science 칸에 있었어요. 원리에서 실제로 맺히는 것이에요."
+      ],
+      "explain": "정답은 두 번째예요. 나무에서 열매는 응용과학 자리였어요. 그래서 'fruits'는 실제로 얻어지는 응용과 결과예요.",
+      "praise": "맞아요!",
+      "from": "1v0tan4"
+    },
+    "s4_scope": {
+      "ask": "데카르트에게 응용과학, 곧 나무의 열매는 어디까지였을까요?",
+      "reask": "그럼 데카르트에게 응용과학이 어디까지였는지 골라 봐요.",
+      "hints": [
+        "'not only A but also B'를 찾아봐요.",
+        "'not only A but also B'는 'A뿐 아니라 B도'예요. mechanics, medicine, ethics가 모두 들어가요."
+      ],
+      "explain": "'not only in mechanics but also in medicine and ethics'는 '역학뿐 아니라 의학과 윤리학에도'예요. 데카르트에게 나무의 열매는 그만큼 넓었어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "c": "'not A but B'와 비슷해 보이지만 only와 also가 들어 있어요. A가 빠지지 않아요."
+      },
+      "from": "b3vmot"
+    },
+    "s5_difficulty": {
+      "ask": "긴 수식어는 잠깐 빼 뒀어요. 그 '어려움'은 무엇이었을까요?",
+      "reask": "그럼 그 '어려움'이 무엇이었는지 골라 봐요.",
+      "hints": [
+        "'no results … which were …'에서 which 이하는 멀리 있는 results를 꾸며요.",
+        "'관찰과 정확히 일치하는 결과'는 하나도 끌어낼 수 없었다는 말이에요. 그리고 but 뒤에서 원리가 어때 보였는지 봐요."
+      ],
+      "explain": "정답은 첫 번째예요. which 이하가 떨어져 있는 results를 꾸며서 '관찰과 정확히 일치하는 결과는 끌어낼 수 없었다'가 돼요. 그런데도 원리는 이해되고 그럴듯해 보였다는 게 어려움이었어요.",
+      "praise": "맞아요!",
+      "feedback": {
+        "b": "but 뒤를 봐요. 원리들은 'intelligible and plausible', 곧 이해되고 그럴듯해 보였다고 해요.",
+        "c": "'no results could be derived'예요. 결과가 많았던 게 아니에요."
+      },
+      "from": "12gclh0"
+    },
+    "s5_restore": {
+      "say": "'from the general principles …'는 '그 일반 원리들로부터'예요. 나무로 치면 뿌리에서 곧바로 열매를 얻으려 한 거예요.",
+      "from": "g6g4ro"
+    },
+    "s5_predict": {
+      "ask": "뿌리는 그럴듯한데 열매가 안 열려요. 그렇다면 사람들은 이 나무를 어떻게 했을까요? 다음 문장을 보기 전에 예상해 봐요.",
+      "reask": "사람들이 이 나무를 어떻게 했을지 예상해 봐요.",
+      "hint": "열매는 얻고 싶은데 뿌리에서는 안 나와요. 나무의 어느 부분만 있으면 될지 생각해 봐요.",
+      "summary": "좋아요, 그 예상을 들고 다음 문장으로 가요.",
+      "from": "k3us0"
+    },
+    "s6_where": {
+      "ask": "시험에서 밑줄 친 문장이에요. 나무의 '가운데'가 잘렸다면 어디와 어디 사이일까요?",
+      "reask": "그럼 나무의 어디가 잘렸는지 골라 봐요.",
+      "hints": [
+        "앞 문장에서 결과가 안 나온 쪽이 나무의 어느 부분이었는지 떠올려 봐요.",
+        "결과를 못 낸 건 뿌리, 곧 형이상학이었어요. 열매를 맺으려면 어디부터 남겨야 할지 봐요."
+      ],
+      "explain": "뿌리와 줄기 사이예요. 뿌리(형이상학)에서는 관찰과 맞는 결과가 안 나왔으니, 뿌리를 떼어 내고 줄기(물리학)부터 남긴 거예요.",
+      "praise": "맞아요!",
+      "from": "ikz6qe"
+    },
+    "s6_meaning": {
+      "ask": "그럼 이 문장이 글에서 뜻하는 바는 무엇일까요?",
+      "reask": "그럼 밑줄 문장이 뜻하는 바를 골라 봐요.",
+      "hints": [
+        "나무에서 잘려 나간 쪽과 남은 쪽을 각각 학문 이름으로 바꿔 봐요.",
+        "잘려 나간 건 뿌리(형이상학)이고, 남은 건 줄기(물리학)와 열매(응용과학)예요."
+      ],
+      "explain": "정답은 첫 번째예요. 뿌리가 잘렸다는 건 과학이 철학적 토대(형이상학)에서 떨어져 나왔다는 뜻이에요. 남은 줄기, 곧 물리 원리에서 결과를 끌어내게 됐어요.",
+      "praise": "맞아요! 시험지의 ①번이 바로 이 내용이에요.",
+      "feedback": {
+        "b": "잘려 나간 쪽이 뿌리, 곧 형이상학이에요. 우선이 된 게 아니라 떨어져 나갔어요.",
+        "c": "잘린 건 뿌리 쪽뿐이에요. 줄기, 곧 물리 원리는 그대로 남아 있어요."
+      },
+      "from": "1f3byui"
+    },
+    "s7_confirm": {
+      "say": "방금 고른 답을 글이 직접 확인해 줘요. 기술적 결과를 끌어내려면 줄기의 물리 원리에서 출발해야 했대요.",
+      "from": "1wa4bnr"
+    },
+    "s8_new_sense": {
+      "ask": "첫 문장의 'old classical sense'와 짝인 'new sense'예요. 새로운 의미의 과학은 무엇이 달라졌을까요?",
+      "reask": "그럼 새로운 의미의 과학이 어떻게 달라졌는지 골라 봐요.",
+      "hints": [
+        "'without regard to'는 '~을 고려하지 않고'예요.",
+        "'only of how the fruits would develop from the trunk', 곧 줄기에서 열매가 나오는 것'만' 생각한다고 했어요."
+      ],
+      "explain": "정답은 첫 번째예요. 'without regard to the roots'는 '뿌리는 고려하지 않고'예요. 새 과학은 줄기(물리학)에서 열매(응용)가 어떻게 나오는지만 생각하게 됐어요.",
+      "praise": "맞아요!",
+      "from": "14mgb9h"
+    },
+    "s8_wrap": {
+      "say": "하나였던 나무에서 뿌리가 잘리고, 과학은 줄기와 열매만 보게 됐어요.",
+      "from": "eo1lmb"
+    }
+  },
+  "from": "1s8bv7f",
+  "exam": {
+    "ask": "시험 문제 그대로예요. 밑줄 친 부분이 뜻하는 바로 가장 적절한 것은 무엇일까요?",
+    "first_correct": "맞았어요! 그래도 객관식은 찍을 수도 있으니, 지문을 같이 분석하고 가요.",
+    "first_wrong": "아쉽게도 틀렸어요. 정답은 분석하면서 같이 찾아봐요.",
+    "final_correct": "정답이에요!",
+    "final_wrong": "아쉽게도 틀렸어요. 정답은 ①이에요. 뿌리(형이상학)가 잘려 나가고, 줄기(물리 원리)에서 결과를 끌어내게 됐다는 뜻이에요.",
+    "from": "1dpge3l"
+  },
+  "intro": {
+    "go": {
+      "say": "그럼 지문을 한번 살펴볼까요?"
+    },
+    "from": "2rqyga"
+  }
+}

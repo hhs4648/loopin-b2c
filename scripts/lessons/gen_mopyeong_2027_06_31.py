@@ -399,7 +399,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "오래된 악기는 그대로 둬야 할까요, 고쳐서 써야 할까요? 이번 글은 보존(preservation)과 보전(conservation) 이야기예요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("Enlightenment", "계몽주의"), g("preservation", "보존"), g("conservation", "보전"), g("synonym", "동의어"),
                            g("maintain", "유지하다"), g("insofar as possible", "가능한 한"), g("protect A from B", "A를 B로부터 보호하다"),

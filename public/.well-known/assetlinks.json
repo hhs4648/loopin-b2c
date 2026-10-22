@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.loopin.b2capp",
+      "sha256_cert_fingerprints": [
+        "9A:25:AF:87:A2:26:D0:FE:89:73:49:E0:1A:48:A8:2D:00:7C:58:C5:5B:9D:05:F9:4D:14:8D:21:C8:00:61:8E"
+      ]
+    }
+  }
+]

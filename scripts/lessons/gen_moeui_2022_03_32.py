@@ -406,7 +406,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "2600년 전 아프리카를 한 바퀴 돌았다는 항해 기록이 있어요. 이 기록이 진짜인지 어떻게 알 수 있을까요?"}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("source", "자료, 출처"), g("exploratory", "탐험의"), g("voyage", "항해"), g("commission", "의뢰하다"),
                            g("reportedly", "전해 오는 바에 따르면"), g("expedition", "탐험, 원정대"), g("clockwise", "시계 방향으로"),

@@ -368,7 +368,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "남을 구하려고 목숨을 건 사람은 자기 행동을 어떻게 말할까요? 이번 글은 이타적인 행동을 보는 두 생각을 다뤄요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("commonsense", "상식적인"), g("moral", "도덕적인"), g("conform to", "~에 따르다"), g("responsibility", "책임"),
                            g("get offended", "기분이 상하다"), g("determine", "정하다"), g("sacrifice", "희생"), g("recipient", "수혜자"),

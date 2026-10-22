@@ -702,6 +702,12 @@ export type PolicyLesson = {
    */
   passage_on_try?: boolean;
   /**
+   * 온보딩 예시 문제의 「한 번에 풀기」 안내 (2026-10-22 선생님: 그림으로 이해되는 지문이 앱의 쓸모를 보여 준다).
+   * `image`는 `images`의 키 — 지문 위에 그림을 띄우고, `say`를 다정쌤 풀이법 대신 말한다. 없으면 핵심어 풀이법.
+   * `keys`가 있으면 그것만 칠한다(그림과 맞는 말만) — 없으면 문장마다의 keys/emphasis
+   */
+  quick_hint?: { image?: string; say: string; keys?: string[] };
+  /**
    * 핵심어(`keys`/`emphasis`)를 선생님이 지문 표시판에서 직접 확인했다. 10분 모의고사의 「핵심어만 읽고 풀기」 버튼은
    * 이게 true인 레슨에서만 보인다 — AI가 고른 핵심어는 엉뚱할 수 있어서 (2026-10-20 선생님)
    */

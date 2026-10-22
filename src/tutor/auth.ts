@@ -15,8 +15,10 @@
  * 강제하지 않는다 — 안 해도 지금처럼 익명으로 돈다. 대시보드 설정은 `.env.example` 참고.
  */
 
+import { note } from "./journey";
+import { isNativeApp, openNativeLogin } from "./nativeAuth";
 import { adoptLearner, ensureLearner, supabaseClient, supabaseConfig } from "./records";
-import { pullAll, resetPull } from "./cloud";
+import { dropPending, flushNow, pullAll, resetPull } from "./cloud";
 
 export type OtpKind = "email_change" | "email";
 
@@ -58,9 +60,56 @@ const SOCIAL_LABEL: Record<SocialProvider, string> = {
   apple: "Apple",
 };
 
+/** 계정 화면에 보일 이름 — 이메일, 없으면 「카카오 계정」처럼. 익명이면 null */
+export async function accountLabel(): Promise<string | null> {
+  const db = supabaseClient();
+  if (!db) return null;
+  const { data } = await db.auth.getSession();
+  const user = data.session?.user;
+  if (!user || user.is_anonymous) return null;
+  if (user.email) return user.email;
+  const provider = user.app_metadata?.provider as string | undefined;
+  return provider && provider in SOCIAL_LABEL ? `${SOCIAL_LABEL[provider as SocialProvider]} 계정` : "내 계정";
+}
+
 /** 소셜 로그인을 마치고 돌아올 주소. Supabase 대시보드 Redirect URLs 에도 같은 주소를 넣는다 */
 export function socialRedirectUrl(): string {
+  // 아이폰 앱의 주소는 capacitor://localhost 라 허용 목록에 없다. 앱은 loopin:// 로 돌아온다.
+  if (isNativeApp()) return "loopin://auth/callback";
   return `${window.location.origin}/auth/callback`;
+}
+
+const AFTER_LOGIN = "loopin.afterLogin";
+
+/** 로그인 뒤에 관리자 화면으로 돌아올 때. 허용한 주소만 기억한다 */
+export function rememberAfterLogin(path: "/admin"): void {
+  try {
+    window.sessionStorage.setItem(AFTER_LOGIN, path);
+  } catch {
+    /* 기억 못 하면 로그인 뒤 홈으로 간다 */
+  }
+}
+
+export function takeAfterLogin(): "/admin" | null {
+  try {
+    const value = window.sessionStorage.getItem(AFTER_LOGIN);
+    window.sessionStorage.removeItem(AFTER_LOGIN);
+    return value === "/admin" ? "/admin" : null;
+  } catch {
+    return null;
+  }
+}
+
+/** 붙어 있는 소셜 계정. 익명이면 null */
+export async function accountProvider(): Promise<SocialProvider | "guest" | null> {
+  const db = supabaseClient();
+  if (!db) return null;
+  const { data } = await db.auth.getSession();
+  const user = data.session?.user;
+  if (!user || user.is_anonymous) return null;
+  const provider = user.app_metadata?.provider;
+  if (provider === "google" || provider === "kakao" || provider === "apple") return provider;
+  return "guest";
 }
 
 /*
@@ -99,11 +148,16 @@ export async function startSocialLogin(provider: SocialProvider): Promise<void> 
   if ((await isSocialProviderEnabled(provider)) === false) {
     throw new AuthFailure("unknown", `${SOCIAL_LABEL[provider]} 로그인이 아직 준비되지 않았어요.`);
   }
-  const { error } = await db.auth.signInWithOAuth({
+  const redirectTo = socialRedirectUrl();
+  const { data, error } = await db.auth.signInWithOAuth({
     provider,
-    options: { redirectTo: socialRedirectUrl() },
+    options: { redirectTo, skipBrowserRedirect: isNativeApp() },
   });
   if (error) throw new AuthFailure(classify(error.message, error.status), error.message);
+  if (isNativeApp()) {
+    if (!data.url) throw new AuthFailure("unknown", "로그인 주소를 받지 못했어요.");
+    await openNativeLogin(data.url);
+  }
 }
 
 /**
@@ -118,6 +172,8 @@ export async function finishSocialLogin(): Promise<boolean> {
   if (!user || user.is_anonymous) throw new AuthFailure("unknown", "세션을 만들지 못했어요.");
   adoptLearner(user.id);
   resetPull();
+  const provider = user.app_metadata?.provider;
+  if (provider === "google" || provider === "kakao" || provider === "apple") void note({ account: provider });
   return pullAll();
 }
 
@@ -155,6 +211,74 @@ export async function sendCode(email: string): Promise<OtpKind> {
   const { error } = await db.auth.signInWithOtp({ email, options: { shouldCreateUser: !user } });
   if (error) throw new AuthFailure(classify(error.message, error.status), error.message);
   return "email";
+}
+
+/*
+  **이 기기의 학습 기록을 지운다.** 남겨 두면 다음 사람이 「로그인 없이 시작하기」로 들어왔을 때
+  `pullAll()`이 그 기록을 새 익명 uid에 합쳐 올린다 — 남의 노트·단어장이 따라간다.
+*/
+const LOCAL_PREFIXES = ["dajung.", "loopin."];
+/** 「로그인 없이 시작하기」. 로그아웃·탈퇴의 clearLocalLearner가 loopin. 접두사로 같이 지운다 */
+const ENTERED_KEY = "loopin.entered";
+
+/** 한 번 들어와 봤다. 새로고침이나 교무실을 다녀와도 로그인 화면으로 돌아가지 않는다 */
+export function hasEntered(): boolean {
+  try {
+    return window.localStorage.getItem(ENTERED_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+export function markEntered(): void {
+  try {
+    window.localStorage.setItem(ENTERED_KEY, "1");
+  } catch {
+    /* 저장이 안 되면 이번 화면만 지나간다 */
+  }
+}
+
+function clearLocalLearner(): void {
+  try {
+    const keys: string[] = [];
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i);
+      if (key && LOCAL_PREFIXES.some((p) => key.startsWith(p))) keys.push(key);
+    }
+    for (const key of keys) window.localStorage.removeItem(key);
+  } catch {
+    /* 저장소를 못 읽으면 지울 것도 없다 */
+  }
+}
+
+/**
+ * 로그아웃. 기록은 서버에 남아 다시 로그인하면 돌아온다.
+ * 끝나면 페이지를 새로 연다 — 메모리에 남은 학습자·동기화 상태를 한 번에 버린다.
+ */
+export async function signOut(): Promise<void> {
+  const db = supabaseClient();
+  if (db) {
+    await flushNow();
+    const { error } = await db.auth.signOut();
+    if (error) throw new AuthFailure("unknown", error.message);
+  }
+  clearLocalLearner();
+  window.location.replace("/");
+}
+
+/**
+ * 회원 탈퇴. 서버의 계정과 모든 학습 기록을 지운다 (`003_delete_account.sql`). 되돌릴 수 없다.
+ */
+export async function deleteAccount(): Promise<void> {
+  const db = supabaseClient();
+  if (!db) throw new AuthFailure("unknown", "서버 설정이 없다");
+  dropPending();
+  const { error } = await db.rpc("delete_my_account");
+  if (error) throw new AuthFailure(classify(error.message), error.message);
+  // 서버의 사용자는 이미 없다 — 이 기기의 세션만 버린다
+  await db.auth.signOut({ scope: "local" });
+  clearLocalLearner();
+  window.location.replace("/");
 }
 
 /**

@@ -429,7 +429,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "어릴 땐 별을 '줄기 없는 꽃'이라고 했는데, 지금은 뭐라고 할까요? 이번 글은 자라면서 글쓰기가 어떻게 바뀌는지 다뤄요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("manual", "손으로 하는, 손을 쓰는"), g("coordination", "협응"), g("considerable", "상당한"), g("mastery", "숙달"),
                            g("mechanics", "기법, 기술"), g("eliminate", "없애다"), g("characteristic of", "~의 특징인"),

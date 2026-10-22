@@ -3,6 +3,7 @@ import type { LessonCollection, LessonSet } from "../content/tutor/types";
 import { ClassroomChat } from "./components/ClassroomChat";
 import { LessonList } from "./components/LessonList";
 import { HomeVillage } from "./components/HomeVillage";
+import { StaffRoom } from "./components/StaffRoom";
 import { CounselRoom } from "./components/CounselRoom";
 import { SignupWelcome } from "./components/SignupWelcome";
 import { ProgressBoard } from "./components/ProgressBoard";
@@ -11,7 +12,7 @@ import { WrongBook } from "./components/WrongBook";
 import { WrongReview } from "./components/WrongReview";
 import type { MiniStage } from "./components/CounselRoom";
 import { VocabTest } from "./components/VocabTest";
-import { firstMockId, isFirstVisit, isVocabSlot, markVocabSlot, nextProblemOf, onboardingSet, vocabSlotWords, withPlanMinutes } from "./tutor/counsel";
+import { isFirstVisit, isVocabSlot, markVocabSlot, nextProblemOf, onboardingSet, vocabSlotWords, withPlanMinutes } from "./tutor/counsel";
 import { singleOf } from "./tutor/tenmin";
 import { loadPlan, nextMockOf } from "./tutor/counsel";
 import { MiniMockView } from "./components/MiniMockView";
@@ -19,7 +20,11 @@ import { getMiniMock, saveAttempt } from "./tutor/mini";
 import { finishAnalysis } from "./tutor/miniLog";
 import { SavedBook, type SavedKind } from "./components/SavedBook";
 import { AccountLink } from "./components/AccountLink";
+import { Settings } from "./components/Settings";
 import { LoginScreen } from "./components/LoginScreen";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
+import { AccountDeletion } from "./components/AccountDeletion";
+import { AdminBoard } from "./components/AdminBoard";
 import { AuthCallback } from "./components/AuthCallback";
 import { ReadPassage } from "./components/ReadPassage";
 import { PointsReview } from "./components/PointsReview";
@@ -31,14 +36,21 @@ import { SpeakingLesson } from "./components/SpeakingLesson";
 import { getSpeakingLesson } from "./speaking/lessons";
 import type { TutorView } from "./tutor/view";
 import { loadLearnerName, saveLearnerName } from "./tutor/learner-name";
-import { hasAccount } from "./tutor/auth";
+import { accountProvider, hasAccount, hasEntered, markEntered, takeAfterLogin } from "./tutor/auth";
+import { listenNativeLogin } from "./tutor/nativeAuth";
+import { examplePatch, note, rememberSource } from "./tutor/journey";
 import { policyLessonIds } from "./tutor/policy/lessons";
-import { AUTO_NEXT_CMD, MODE_TRY_BTN, READ_DONE_BTN, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
+import { getPolicyLesson } from "./tutor/policy/lessons";
+import { loadStudyStyle, markHowtoSeen, recordStudyChoice } from "./tutor/study-style";
+import { ANALYZE_DEEP_BTN, AUTO_NEXT_CMD, END_NOW_BTN, MODE_TRY_BTN, READ_DONE_BTN, createPolicySession, type PolicySession, type ResumeSnapshot } from "./tutor/policy/session";
 import type { UiObservation } from "./tutor/policy/types";
 import { clearResume, loadResume, markDone, noteReachedEnd, noteSmallScore, noteStudyTime, resumeRun, saveResume, startRun } from "./tutor/progress";
 import { finishSessionRecord, startSessionRecord } from "./tutor/records";
 import { pullAll } from "./tutor/cloud";
 import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets";
+import { OnboardingCoach, PRACTICE_COACHES, resetCoach } from "./components/OnboardingCoach";
+import { seedPracticeSamples } from "./tutor/practiceSamples";
+import { currentTeacher, LINES } from "./tutor/teacher";
 
 /*
   개발에서 지문 하나만 보고 싶을 때가 있다. `?lesson=<id>`나 `?set=<id>`가
@@ -46,6 +58,9 @@ import { firstLessonId, getCollection, getSet, setOfLesson } from "./tutor/sets"
   문장 학습의 단어 뜻은 레슨 JSON `glosses`에서 온다.
 */
 const params = new URLSearchParams(window.location.search);
+/** `?onboarding` — 코스가 있어도 온보딩을 처음부터 다시 본다 (선생님 확인용). 길잡이도 처음부터 */
+const forceOnboarding = params.has("onboarding");
+if (forceOnboarding) resetCoach();
 /*
   공유용 한 장짜리 HTML(`scripts/build_share.mjs`)은 빌드할 때 `VITE_SHARE_LESSON`에 지문을
   박는다. 그 파일에는 목록이 없고, 열면 바로 그 수업이 시작된다.
@@ -124,20 +139,37 @@ function ReadingApp() {
   const [welcome, setWelcome] = useState(false);
   /** 「기록 지키기」(이메일 붙이기) 화면에 있나 */
   const [account, setAccount] = useState(false);
-  /** 로그인. 지문·세트·미니 링크로 들어온 경우는 건너뛴다 */
+  /** 설정 — 계정, 로그아웃, 회원 탈퇴 */
+  const [settings, setSettings] = useState(false);
+  /** 교무실 — 선생님 고르기 */
+  const [staff, setStaff] = useState(false);
+  /** 로그인. 지문 링크, 이미 들어온 적, 이 기기에 이름·코스가 있으면 건너뛴다 */
   const [passedLogin, setPassedLogin] = useState(
-    () => Boolean(directLesson || directSet || shareLesson || onlyMini),
+    () => Boolean(directLesson || directSet || shareLesson || onlyMini || hasEntered() || loadLearnerName() || loadPlan()),
   );
   /** 소셜 로그인에서 돌아온 주소 (`/auth/callback`) */
   const [authCallback, setAuthCallback] = useState(() => window.location.pathname === "/auth/callback");
+  /** 개인정보 처리방침. `/privacy` 로 바로 열릴 수도 있다 */
+  const [privacy, setPrivacy] = useState(() => window.location.pathname === "/privacy");
+  /** 계정 삭제 안내. Play 스토어 등록정보의 `/delete-account` */
+  const [deletion, setDeletion] = useState(() => window.location.pathname === "/delete-account");
+  /** 유입·이탈 관리자. `/admin` */
+  const [admin, setAdmin] = useState(() => window.location.pathname === "/admin");
   /** 진도표(본 문제·안 본 문제·자주 틀리는 유형)에 있나 */
   const [board, setBoard] = useState(false);
   /** 코스의 단어 칸 — 그 회차 주요 단어 테스트 (id = vocab-<10분 모의고사 id>) */
   const [vocabSlot, setVocabSlot] = useState<string | null>(null);
   /** 틀린 문제 모아보기에 있나 */
   const [wrongBook, setWrongBook] = useState(false);
-  /** 첫 방문 체험 분석 중 — 끝나면 코스 첫 회 10분 모의고사 시작 화면으로 (2026-10-20 선생님) */
+  /** 첫 방문 체험 분석 중 — 끝나면 홈으로 가서 교무실(선생님 고르기)을 짚는다 (2026-10-22 선생님) */
   const [onboarding, setOnboarding] = useState(false);
+  /**
+   * 체험 분석 뒤 마을 둘러보기 (2026-10-22 선생님) — 교무실(쌤 고르기·친밀도) → 연습실(맛보기 단어·문장·문법을 탭마다)
+   * → 상담실(코스 짜기). 단계마다 홈에서 그 집을 짚는다. 상담실에 들어가면 끝
+   */
+  const [tour, setTour] = useState<"staff" | "practice" | "counsel" | null>(null);
+  /** 핵심어로 한 번에 풀기 중인 문제 (온보딩 예시) — 칠할 핵심어 · 다정쌤 풀이법 · 「분석부터」가 보낼 말 */
+  const [quick, setQuick] = useState<{ keys: string[]; howto: string; readBtn: string; image?: { src: string; alt: string } } | null>(null);
   /** ✕를 눌렀을 때 「여기까지 저장하고 나갈까요?」 — 모르고 눌러 나가 버리는 일이 있었다 (2026-10-21 선생님) */
   const [confirmExit, setConfirmExit] = useState(false);
   /** 코스의 문제 흐름(단어 → 풀기 → 분석 → 다음 문제) 안에 있나 — 그 시험 묶음 id */
@@ -162,12 +194,46 @@ function ReadingApp() {
     void hasAccount().then((on) => on && setPassedLogin(true));
   }, [passedLogin, authCallback]);
   useEffect(() => {
+    const sync = () => {
+      setPrivacy(window.location.pathname === "/privacy");
+      setDeletion(window.location.pathname === "/delete-account");
+      setAdmin(window.location.pathname === "/admin");
+    };
+    window.addEventListener("popstate", sync);
+    return () => window.removeEventListener("popstate", sync);
+  }, []);
+  useEffect(() => {
+    void listenNativeLogin(() => setAuthCallback(true));
+  }, []);
+  function openPrivacy() {
+    window.history.pushState({}, "", "/privacy");
+    setPrivacy(true);
+  }
+  function closePrivacy() {
+    if (window.location.pathname === "/privacy") window.history.pushState({}, "", "/");
+    setPrivacy(false);
+  }
+  useEffect(() => {
     if (authCallback) return;
     void pullAll().then((changed) => {
       if (changed) setCloudGen((n) => n + 1);
       setPulled(true);
     });
   }, [authCallback]);
+  // 들어온 경로와, 이미 로그인 화면을 넘긴 사람. 관리자 화면에서는 학생 기록을 만들지 않는다
+  useEffect(() => {
+    if (admin) return;
+    rememberSource();
+    const link = Boolean(directLesson || directSet || shareLesson || onlyMini);
+    void (async () => {
+      const provider = (await hasAccount()) ? await accountProvider() : null;
+      const passed = Boolean(provider || hasEntered() || loadLearnerName() || loadPlan());
+      note({
+        ...(link ? { kind: "link" as const } : {}),
+        ...(provider && provider !== "guest" ? { account: provider } : passed ? { account: "guest" as const } : {}),
+      });
+    })();
+  }, [admin]);
   /*
     가입하고 들어오면 온보딩 — 코스가 없는 학생은 다정쌤 소개를 듣고 학년·등급·기출을 골라 코스를 짠 뒤
     그 자리에서 첫 문제를 예시로 본다 (2026-10-20·21 선생님). 상담실은 홈에서 따로 들어간다.
@@ -175,11 +241,14 @@ function ReadingApp() {
   */
   const [autoCounsel, setAutoCounsel] = useState(false);
   useEffect(() => {
-    if (autoCounsel || !passedLogin || !pulled || started) return;
+    if (admin || autoCounsel || !passedLogin || !pulled || started) return;
     if (directLesson || directSet || shareLesson || onlyMini) return;
     setAutoCounsel(true);
-    if (!loadPlan()) setWelcome(true);
-  }, [autoCounsel, passedLogin, pulled, started, directLesson, directSet, shareLesson, onlyMini]);
+    if (!loadPlan() || forceOnboarding) {
+      setWelcome(true);
+      note({ kind: "new" });
+    } else note({ kind: "returning" });
+  }, [admin, autoCounsel, passedLogin, pulled, started, directLesson, directSet, shareLesson, onlyMini]);
 
   const session = started?.session ?? null;
 
@@ -202,6 +271,12 @@ function ReadingApp() {
     if (!session) return;
     void startSessionRecord(session.lessonId());
   }, [session]);
+
+  // 첫 예시 분석 — 마지막으로 보던 문장. 이름과 해석은 올리지 않는다
+  useEffect(() => {
+    if (!onboarding || !view) return;
+    note(examplePatch(view));
+  }, [onboarding, view]);
 
   /*
     이어 하기 — 화면이 바뀔 때마다 지금 자리를 남긴다. 끝난 수업은 지운다(다음엔 처음부터).
@@ -271,6 +346,9 @@ function ReadingApp() {
 
   function send(text: string) {
     if (typing || !session) return;
+    // 핵심어로 바로 푼 뒤 고른 것 — 공부 성향으로 남긴다 (`study-style.ts`)
+    if (quick && text === ANALYZE_DEEP_BTN) recordStudyChoice("deep");
+    if (quick && text === END_NOW_BTN) recordStudyChoice("fast");
     // 코스 문제 — 「시간 재서 풀어 볼게요」부터 시계가 간다
     if (courseExam && !courseExam.startedAt && text === MODE_TRY_BTN) setCourseExam({ ...courseExam, startedAt: Date.now() });
     // 화면 조작 신호(__로 시작)는 선생님이 생각할 일이 아니다 — 기다리지 않고 바로
@@ -302,7 +380,19 @@ function ReadingApp() {
    * analyze — 미니 모의고사에서 분석하러 넘어왔다: 지문 한눈에 미리보기는 그대로 보여 주되(2026-10-20 선생님: 분석 전에
    * 전체 지문을 한 번 본다) 이미 푼 문제라 「바로 풀어 볼게요」만 뺀다. 중간에 나갔던 분석이면 이어서.
    */
-  function startSet(set: LessonSet, analyze = false, course = false) {
+  /**
+   * 온보딩 예시 문제 — 지문 한눈에 미리보기 → 바로 분석 (2026-10-22 선생님). 정답을 먼저 풀게 하지 않고
+   * 분석하게 이끈다 — 미리보기에서 「바로 풀어 볼게요」를 뺀다. (핵심어로 먼저 풀기 버전은 써 보고 뺐다)
+   */
+  function startOnboardingExample(set: LessonSet) {
+    setOnboarding(true);
+    setHome(false);
+    note({ example_started: true });
+    startSet(set, true);
+  }
+
+  function startSet(set: LessonSet, analyze = false, course = false, quickKeys: string[] | null = null) {
+    setQuick(null);
     setCollection(getCollection(set.collection));
     const lessonId = firstLessonId(set);
     const next = open(lessonId);
@@ -325,6 +415,20 @@ function ReadingApp() {
       // 「분석하기」 버튼이 보낼 말은 이 레슨의 읽기 버튼(첫 버튼) — 레슨마다 다를 수 있다
       const analyzeBtn = first.buttons[0] ?? READ_DONE_BTN;
       setCourseExam((c) => (c ? { ...c, analyzeBtn } : c));
+      void next.session.submit(MODE_TRY_BTN).then(setView);
+    }
+    // 핵심어로 한 번에 풀기 — 미리보기에서 바로 보기를 고르게. 풀이법 설명은 처음 한 번만 길게
+    if (quickKeys && first.buttons.includes(MODE_TRY_BTN)) {
+      // 레슨에 그림 안내가 있으면 그것(데카르트의 나무), 없으면 핵심어 풀이법
+      const hint = getPolicyLesson(lessonId)?.quick_hint;
+      const image = hint?.image ? getPolicyLesson(lessonId)?.images?.[hint.image] : undefined;
+      const howto =
+        hint?.say ??
+        (loadStudyStyle().howtoSeen
+          ? "핵심어와 같은 뜻을 담은 보기를 골라 봐요."
+          : "칠한 핵심어만 이어 읽어도 글이 무슨 말인지 보여요.\n이 핵심어와 같은 뜻을 담은 보기를 골라 봐요.");
+      if (!hint) markHowtoSeen();
+      setQuick({ keys: quickKeys, howto, readBtn: first.buttons[0] ?? READ_DONE_BTN, ...(image ? { image: { src: image.src, alt: image.alt } } : {}) });
       void next.session.submit(MODE_TRY_BTN).then(setView);
     }
     setChatOverride(false);
@@ -365,13 +469,24 @@ function ReadingApp() {
       if (no == null) setFlow(null);
       return;
     }
-    // 첫 방문 체험이 끝났다 — 안내 한 줄과 함께 코스 첫 회로
+    // 첫 방문 체험이 끝났다 — 시험으로 보내지 않고 홈으로. 교무실을 짚어 쌤을 고르게 한다 (2026-10-22 선생님)
+    setQuick(null);
     if (onboarding) {
       setOnboarding(false);
-      const first = firstMockId(loadPlan());
-      setHome(false);
-      if (first) setMiniView({ id: first, showLast: false, n: 0, lead: true });
+      setHome(true);
+      setTour("staff");
     }
+  }
+
+  if (admin && !started) {
+    return (
+      <AdminBoard
+        onClose={() => {
+          window.history.pushState({}, "", "/");
+          setAdmin(false);
+        }}
+      />
+    );
   }
 
   if (authCallback && !started) {
@@ -380,8 +495,13 @@ function ReadingApp() {
         <div className="phone">
           <AuthCallback
             onDone={() => {
-              window.history.replaceState({}, "", "/");
+              const next = takeAfterLogin();
+              window.history.replaceState({}, "", next ?? "/");
               setAuthCallback(false);
+              if (next === "/admin") {
+                setAdmin(true);
+                return;
+              }
               setPassedLogin(true);
               setCloudGen((n) => n + 1);
             }}
@@ -395,11 +515,42 @@ function ReadingApp() {
     );
   }
 
+  if (privacy && !started) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <PrivacyPolicy onBack={closePrivacy} />
+        </div>
+      </div>
+    );
+  }
+
+  if (deletion && !started) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <AccountDeletion
+            onBack={() => {
+              if (window.location.pathname === "/delete-account") window.history.pushState({}, "", "/");
+              setDeletion(false);
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
   if (!passedLogin && !started) {
     return (
       <div className="viewport">
         <div className="phone">
-          <LoginScreen onSkip={() => setPassedLogin(true)} />
+          <LoginScreen
+            onSkip={() => {
+              markEntered();
+              setPassedLogin(true);
+            }}
+            onOpenPrivacy={openPrivacy}
+          />
         </div>
       </div>
     );
@@ -520,8 +671,16 @@ function ReadingApp() {
           {saved === "notes" ? (
             <SavedBook key={cloudGen} kind={saved} onBack={() => setSaved(null)} />
           ) : (
-            <PracticeRoom key={cloudGen} tab="vocab" onBack={() => setSaved(null)} />
+            <PracticeRoom
+              key={cloudGen}
+              tab="vocab"
+              onBack={() => {
+                setSaved(null);
+                if (tour === "practice") setTour("counsel");
+              }}
+            />
           )}
+          {tour === "practice" && saved === "vocab" ? <OnboardingCoach only={PRACTICE_COACHES} /> : null}
         </div>
       </div>
     );
@@ -541,6 +700,36 @@ function ReadingApp() {
     );
   }
 
+  if ((!started || !view) && staff) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <StaffRoom
+            intro={tour === "staff"}
+            onClose={() => {
+              setStaff(false);
+              // 다음은 연습실 — 빈 칸만 보면 뭘 하는 곳인지 모르니 맛보기를 넣어 둔다
+              if (tour === "staff") {
+                seedPracticeSamples();
+                setTour("practice");
+              }
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if ((!started || !view) && settings) {
+    return (
+      <div className="viewport">
+        <div className="phone">
+          <Settings onBack={() => setSettings(false)} onOpenAccount={() => setAccount(true)} onOpenPrivacy={openPrivacy} />
+        </div>
+      </div>
+    );
+  }
+
   if ((!started || !view) && welcome) {
     return (
       <div className="viewport">
@@ -552,9 +741,9 @@ function ReadingApp() {
               setWelcome(false);
               const set = onboardingSet(loadPlan());
               if (!set) return;
-              setOnboarding(true);
-              setHome(false);
-              startSet(set, true);
+              // 다시 보는 온보딩은 예시 문제도 처음부터
+              if (forceOnboarding) clearResume(set.id);
+              startOnboardingExample(set);
             }}
           />
         </div>
@@ -569,7 +758,10 @@ function ReadingApp() {
           <CounselRoom
             key={cloudGen}
             learnerName={loadLearnerName()}
-            onClose={() => setCounsel(false)}
+            onClose={() => {
+              setCounsel(false);
+              if (tour === "counsel") setTour(null);
+            }}
             // 코스의 10분 모의고사 — 끝나고 「목록으로」 하면 상담실 코스 화면으로 돌아온다
             onOpenMini={(id, stage) => {
               if (isVocabSlot(id)) return setVocabSlot(id);
@@ -580,6 +772,8 @@ function ReadingApp() {
             onOpenBoard={() => setBoard(true)}
             onOpenWrong={() => setWrongBook(true)}
           />
+          {/* 마을 둘러보기 끝 — 「다시 상담하기」로 내 코스를 짜게 */}
+          {tour === "counsel" ? <OnboardingCoach only={["counsel-plan"]} /> : null}
         </div>
       </div>
     );
@@ -598,9 +792,7 @@ function ReadingApp() {
               if (isFirstVisit()) {
                 const set = onboardingSet(loadPlan());
                 if (set) {
-                  setOnboarding(true);
-                  setHome(false);
-                  startSet(set, true);
+                  startOnboardingExample(set);
                   return;
                 }
               }
@@ -614,12 +806,12 @@ function ReadingApp() {
               } else setHome(false);
             }}
             onOpenCounsel={() => setCounsel(true)}
-            onOpenMini={() => {
-              window.location.assign("/staff/loopin-staff-room-raised.html");
-            }}
+            onOpenMini={() => setStaff(true)}
             onOpenSaved={setSaved}
-            onOpenAccount={() => setAccount(true)}
+            onOpenSettings={() => setSettings(true)}
           />
+          {/* 체험 분석 뒤 마을 둘러보기 — 지금 단계의 집을 짚는다 */}
+          {tour ? <OnboardingCoach key={tour} only={[`house-${tour}`]} /> : null}
         </div>
       </div>
     );
@@ -669,6 +861,19 @@ function ReadingApp() {
                   }
                 : undefined
             }
+            quick={
+              quick
+                ? {
+                    keys: quick.keys,
+                    howto: quick.howto,
+                    image: quick.image,
+                    onAnalyze: () => {
+                      recordStudyChoice("deep");
+                      send(quick.readBtn);
+                    },
+                  }
+                : undefined
+            }
           />
         ) : screen === "words" && view.wordCheck ? (
           <WordCheck view={view} onSend={send} onClose={requestExit} />
@@ -699,11 +904,13 @@ function ReadingApp() {
           />
         )}
         {view.recordLine ? <pre className="record">{view.recordLine}</pre> : null}
+        {/* 온보딩 예시 문제 — 단어 누르기·☆·끊어읽기 같은 기능을 처음 보일 때 하나씩 짚는다 */}
+        {onboarding ? <OnboardingCoach /> : null}
         {confirmExit ? (
           <div className="exit-confirm" role="dialog" aria-modal="true" aria-label="수업 나가기">
             <div className="exit-card">
-              <p>여기까지 저장하고 나갈까요?</p>
-              <small>다시 들어오면 이어서 할 수 있어요.</small>
+              {/* 쌤마다 한마디 — 나가도 저장되니 작은 안내 글은 뺐다 (2026-10-22 선생님) */}
+              <p>{LINES[currentTeacher().id].quit}</p>
               <div className="exit-actions">
                 <button type="button" className="exit-stay" onClick={() => setConfirmExit(false)}>계속 할게요</button>
                 <button type="button" className="exit-leave" onClick={backToList}>저장하고 나가기</button>

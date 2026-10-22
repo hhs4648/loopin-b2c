@@ -7,6 +7,8 @@ import { getPolicyLesson } from "../tutor/policy/lessons";
 import { getSet } from "../tutor/sets";
 import { cleanWord, meaningOf } from "../tutor/miniWords";
 import { addVocab } from "../tutor/vocab";
+import { applySpeakBlanks } from "../tutor/spoken";
+import { TeacherFigure, TeacherReaction } from "./TeacherFigure";
 import { PassageFull } from "./PassageFull";
 import { MarkArea, NO_MARKS, type Marks, type Overlay, type Pen } from "./MiniMarks";
 
@@ -27,6 +29,11 @@ type Props = {
     /** 보라펜으로 표시한 모르는 단어가 바뀌면 (풀이 기록에 같이 남긴다) */
     onUnknown?: (words: { en: string; ko: string }[]) => void;
   };
+  /**
+   * 핵심어로 한 번에 풀기 (온보딩 예시 문제, 2026-10-22 선생님): 지문에 핵심어를 칠하고, 다정쌤이 「이 핵심어로 푸는 법」을
+   * 말한 뒤 바로 보기를 고른다. 분석을 원하는 학생은 아래 「분석부터 할게요」로
+   */
+  quick?: { keys: string[]; howto: string; image?: { src: string; alt: string }; onAnalyze: () => void };
 };
 
 /**
@@ -36,14 +43,16 @@ type Props = {
  * 학생은 언제든 「계속」으로 넘어갈 수 있고, ▶를 눌러 한 문장을 다시 들을 수 있다.
  * 글자는 학습 화면보다 작다 — 여기서는 뜻을 따지는 게 아니라 흐름을 본다.
  */
-export function ReadPassage({ view, onSend, onClose, course }: Props) {
+export function ReadPassage({ view, onSend, onClose, course, quick }: Props) {
   const p = view.passage!;
+  // 핵심어로 풀기 — 아직 답을 안 골랐으면 다정쌤 풀이법 + 「분석부터 할게요」
+  const quickSolving = !!quick && !!p.pickable && !p.picked;
   const modeScreen = p.auto === false && view.buttons.length === 2 && view.buttons[1] === MODE_TRY_BTN;
   // 처음 고르는 화면 — 「바로 풀어 볼게요」는 큰 버튼에서 빼서 위에 밑줄 글자로
   const tryLink = !course && modeScreen;
   // 코스(2026-10-20 선생님): 들어가자마자 시계가 가고 보기를 고를 수 있다. 분홍 버튼은 「분석하기」 하나
   const courseSolving = !!course && p.pickable;
-  const dockButtons = tryLink ? view.buttons.slice(0, 1) : courseSolving ? [] : view.buttons;
+  const dockButtons = tryLink ? view.buttons.slice(0, 1) : courseSolving || quickSolving ? [] : view.buttons;
   const left = course?.left ?? null;
   /* ── 코스 풀기: 펜 줄 — 모르는 단어(보라펜) · 형광펜 · 끊어읽기 (미니 모의고사와 같은 `MiniMarks`), 2026-10-20 선생님 ── */
   const [pen, setPen] = useState<Pen>("none");
@@ -97,7 +106,7 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
   function speak(text: string, onEnd?: () => void) {
     if (!("speechSynthesis" in window)) return false;
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
+    const u = new SpeechSynthesisUtterance(applySpeakBlanks(text, view.speakBlanks));
     u.lang = "en-US";
     u.rate = 0.95;
     if (onEnd) u.onend = onEnd;
@@ -121,7 +130,7 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
     let timer = 0;
     let done = false;
     rows.current[p.current]?.scrollIntoView({ behavior: "smooth", block: "center" });
-    const text = p.sentences[p.current]!;
+    const text = applySpeakBlanks(p.sentences[p.current]!, view.speakBlanks);
     const last = p.current >= p.sentences.length - 1;
     const advance = () => {
       if (!live || done) return;
@@ -228,6 +237,9 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
             />
           </MarkArea>
         ) : p.auto === false ? (
+          <>
+          {/* 한 번에 풀기 그림 (데카르트의 나무) — 글로만 읽으면 어려운 비유를 그림으로 먼저 */}
+          {quick?.image ? <img className="quick-picture" src={quick.image.src} alt={quick.image.alt} /> : null}
           <PassageFull
             given={p.given}
             sentences={p.sentences}
@@ -237,8 +249,10 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
             onPick={p.pickable ? onSend : null}
             picked={p.picked}
             right={p.right}
+            highlight={quick?.keys}
             // 지문 한눈에 미리보기에도 문장 듣기(▶)를 두지 않는다 (2026-10-21 선생님)
           />
+          </>
         ) : null}
 
         {/* (.read-list는 display:flex라 hidden 속성이 안 먹는다 — 아예 그리지 않는다) */}
@@ -271,8 +285,24 @@ export function ReadPassage({ view, onSend, onClose, course }: Props) {
       <div className={`read-dock${p.auto === false && dockButtons.length >= 2 ? " row" : ""}`}>
         {/* 미리보기 화면에서 선생님 말(바로 풀기 안내, 채점)은 버튼 바로 위에 — 보기를 고르는 손 가까이 */}
         {/* 풀기 안내(「실제 시험처럼 풀어 봐요 …」)는 뺐다 — 풀 때는 말하지 않는다 (2026-10-21 선생님) */}
-        {courseSolving ? null : view.message && p.auto === false ? (
-          <p className="read-say">{view.message}</p>
+        {courseSolving ? null : quickSolving ? (
+          <p className="read-say">{quick!.howto}</p>
+        ) : view.message && p.auto === false ? (
+          // 채점 말 — 고른 쌤 얼굴(표정)과 한마디를 같이
+          <div className="read-say with-face">
+            <span className="read-face" aria-hidden="true">
+              <TeacherFigure mood={view.mood} />
+            </span>
+            <p>
+              {view.message}
+              <TeacherReaction reaction={view.reaction} />
+            </p>
+          </div>
+        ) : null}
+        {quickSolving ? (
+          <button type="button" className="read-try-link" onClick={quick!.onAnalyze}>
+            분석부터 할게요
+          </button>
         ) : null}
         {courseSolving ? (
           <button type="button" className="read-continue" onClick={() => onSend(course!.analyzeBtn)}>

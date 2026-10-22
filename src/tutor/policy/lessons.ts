@@ -25,6 +25,9 @@ import geographyWhere from "../../../content/tutor/policy-lessons/mopyeong-2026-
 import geographyWhereDajung from "../../../content/tutor/policy-copy/dajung/mopyeong-2026-06-34-geography-where.json";
 import chaosPendulum from "../../../content/tutor/policy-lessons/mopyeong-2026-06-37-chaos-pendulum.json";
 import chaosPendulumDajung from "../../../content/tutor/policy-copy/dajung/mopyeong-2026-06-37-chaos-pendulum.json";
+// 2025년 3월 21번 데카르트의 나무 — 보관(archive/2025-03-21-descartes/)에서 되살렸다. 온보딩 예시 문제 (2026-10-22 선생님: 그림으로 이해되는 지문)
+import descartesTree from "../../../content/tutor/policy-lessons/moeui-2025-03-21-descartes-tree.json";
+import descartesTreeDajung from "../../../content/tutor/policy-copy/dajung/moeui-2025-03-21-descartes-tree.json";
 import type { PolicyCopy, PolicyLesson } from "./types";
 
 /** 2024년 3월 고3 — 생성기(scripts/lessons/gen_moeui_2024_03_*.py)로 만든 레슨은 파일 이름으로 모은다 (레슨 순서 = 문항 번호) */
@@ -49,11 +52,11 @@ const COPY_2022_03 = byName(import.meta.glob("../../../content/tutor/policy-copy
  * 다르다. 지문을 추가하면 여기에 레슨 한 줄과 대사 한 줄,
  * `content/tutor/sets.json`에 세트 하나.
  */
-const POLICY_LESSONS = [musicResearchers, namesAndDifferences, epistemicCommunities, epistemicCommunitiesV1, translationStrangeness, conversationStoppers, profoundBuilding, gestureGlue, artAndCommerce, literaryMirror41, literaryMirror42, geographyWhere, chaosPendulum, ...LESSONS_2024_03, ...LESSONS_2022_03, ...LESSONS_2027_06, ...LESSONS_2027_09] as unknown as PolicyLesson[];
+const POLICY_LESSONS = [musicResearchers, namesAndDifferences, epistemicCommunities, epistemicCommunitiesV1, translationStrangeness, conversationStoppers, profoundBuilding, gestureGlue, artAndCommerce, literaryMirror41, literaryMirror42, geographyWhere, chaosPendulum, descartesTree, ...LESSONS_2024_03, ...LESSONS_2022_03, ...LESSONS_2027_06, ...LESSONS_2027_09] as unknown as PolicyLesson[];
 
 /** 캐릭터 → 레슨 → 뽑아 둔 대사. 지금 캐릭터는 다정쌤 하나다 */
 const POLICY_COPY: Record<string, PolicyCopy[]> = {
-  dajung: [musicResearchersDajung, namesAndDifferencesDajung, epistemicCommunitiesDajung, epistemicCommunitiesV1Dajung, translationStrangenessDajung, conversationStoppersDajung, profoundBuildingDajung, gestureGlueDajung, artAndCommerceDajung, literaryMirror41Dajung, literaryMirror42Dajung, geographyWhereDajung, chaosPendulumDajung, ...COPY_2024_03, ...COPY_2022_03, ...COPY_2027_06, ...COPY_2027_09] as unknown as PolicyCopy[],
+  dajung: [musicResearchersDajung, namesAndDifferencesDajung, epistemicCommunitiesDajung, epistemicCommunitiesV1Dajung, translationStrangenessDajung, conversationStoppersDajung, profoundBuildingDajung, gestureGlueDajung, artAndCommerceDajung, literaryMirror41Dajung, literaryMirror42Dajung, geographyWhereDajung, chaosPendulumDajung, descartesTreeDajung, ...COPY_2024_03, ...COPY_2022_03, ...COPY_2027_06, ...COPY_2027_09] as unknown as PolicyCopy[],
 };
 
 export function getPolicyCopy(lessonId: string, character = "dajung"): PolicyCopy | null {

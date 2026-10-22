@@ -34,7 +34,8 @@ describe("단어 테스트", () => {
       expect(q.options.length).toBe(4);
       expect(new Set(q.options).size).toBe(4);
     }
-  });
+    // 레슨 전체를 읽어서 느리다 — Vercel 빌드 서버에서 기본 5초를 넘겨 배포가 막혔다 (2026-10-22)
+  }, 30_000);
 
   it("덜 본 단어와 많이 틀린 단어를 먼저 고른다", () => {
     const ws = [word("a", "가"), word("b", "나"), word("c", "다")];

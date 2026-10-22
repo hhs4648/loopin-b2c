@@ -4,10 +4,12 @@
  * 수업을 "안녕하세요, 민준님!"으로 열려면 이름이 필요하다. 물어보는 건 한
  * 번뿐이고, 그다음부터는 이 브라우저에 남은 걸 쓴다.
  *
- * **서버에 올리지 않는다.** 이름은 수업 진행에 쓰는 호칭일 뿐이고, 난이도
- * 집계(`sessions`·`point_attempts`)는 익명 uid로 이미 이어진다. 실명을 굳이
- * 서버에 두면 지켜야 할 것만 늘어난다.
+ * 서버(`learner_state`)에도 사본을 둔다 (`cloud.ts`, 2026-10-21). 익명 학습자 중 누가
+ * 만든 사람의 테스트(수정·헌석)이고 누가 학생인지 이름으로 거르려고. 다른 기기에서
+ * 로그인하면 이름도 따라온다.
  */
+
+import { pushKey } from "./cloud";
 
 const KEY = "dajung.learner_name";
 
@@ -93,8 +95,10 @@ export function loadLearnerName(): string | null {
 
 export function saveLearnerName(name: string | null): void {
   try {
-    if (name) window.localStorage.setItem(KEY, name);
-    else window.localStorage.removeItem(KEY);
+    if (name) {
+      window.localStorage.setItem(KEY, name);
+      pushKey(KEY);
+    } else window.localStorage.removeItem(KEY);
   } catch {
     /* 저장 못 해도 이번 수업에는 이름이 있다 */
   }

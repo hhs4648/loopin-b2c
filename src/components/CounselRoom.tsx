@@ -4,6 +4,7 @@ import { TeacherFigure } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
 import { allMiniMocks, byKind, getMiniMock, loadAttempts } from "../tutor/mini";
 import { loadStudentState, saveStudentState } from "../tutor/policy/student-state";
+import { currentTeacher, speak } from "../tutor/teacher";
 import {
   EXAMS,
   MINUTES,
@@ -218,9 +219,9 @@ export function CounselRoom({ learnerName, onClose, onOpenMini, onOpenBoard, onO
       <img className="counsel-bg" src="/assets/counsel-room.webp" alt="" width={1122} height={1402} draggable={false} />
       <header className="top-bar">
         <div className="chip">
-          <span className="avatar">다</span>
+          <span className="avatar">{currentTeacher().initial}</span>
           <div className="chip-text">
-            <strong>다정쌤</strong>
+            <strong>{currentTeacher().name}</strong>
             <small>상담실</small>
           </div>
         </div>
@@ -239,8 +240,8 @@ export function CounselRoom({ learnerName, onClose, onOpenMini, onOpenBoard, onO
       {/* 말풍선은 책상 앞, 화면 폭 가득 — 이름표가 왼쪽 위에 걸린다 (시안) */}
       <div className="teacher-bubble" key={step}>
         <div className="bubble-card" aria-live="polite">
-          <b className="bubble-name">다정쌤</b>
-          <span>{line}</span>
+          <b className="bubble-name">{currentTeacher().name}</b>
+          <span>{speak(line)}</span>
         </div>
       </div>
 
@@ -387,7 +388,7 @@ function CourseView({
       </header>
 
       <div className="home-body">
-        <p className="home-hello">다정쌤이 짠 코스</p>
+        <p className="home-hello">{currentTeacher().name}이 짠 코스</p>
         <h1 className="home-title">오답률 Top 10 코스</h1>
 
         <div className="plan-summary">

@@ -9,6 +9,7 @@ import { allGroups, sentenceCount, setsIn } from "../tutor/sets";
 import { allMiniMocks, loadAttempts, scoreOf } from "../tutor/mini";
 import { ClassroomBg } from "./ClassroomBg";
 import { TeacherFigure } from "./TeacherFigure";
+import { currentTeacher } from "../tutor/teacher";
 
 /**
  * 메인 화면 — **수업 목록.**
@@ -119,9 +120,9 @@ export function LessonList({
           </button>
         ) : (
           <div className="chip">
-            <span className="avatar">다</span>
+            <span className="avatar">{currentTeacher().initial}</span>
             <div className="chip-text">
-              <strong>다정쌤</strong>
+              <strong>{currentTeacher().name}</strong>
               <small>{learnerName ? `${learnerName}님과 함께` : "영어 해석 수업"}</small>
             </div>
           </div>

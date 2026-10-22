@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { phoneScale } from "./phoneScale";
 
 type Part = string | { en: string; ko: string };
 
@@ -69,8 +70,9 @@ export function MatchKo({
               }}
               onPointerMove={(e) => {
                 if (!drag || drag.chunk !== p.text) return;
-                const dx = e.clientX - drag.x;
-                const dy = e.clientY - drag.y;
+                const s = phoneScale(e.currentTarget);
+                const dx = (e.clientX - drag.x) / s;
+                const dy = (e.clientY - drag.y) / s;
                 if (Math.abs(dx) + Math.abs(dy) > 6) moved.current = true;
                 setDrag({ ...drag, dx, dy });
                 mark(slotAt(e.clientX, e.clientY));

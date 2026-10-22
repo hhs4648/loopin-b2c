@@ -418,7 +418,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "말하지 않아도 뜻이 전해질까요? 이번 글은 말(words)과 말 아닌 행동(nonverbal behavior) 이야기예요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("put A into words", "A를 말로 표현하다"), g("observe", "관찰하다"), g("nonverbal", "비언어적인"),
                            g("vocal", "목소리의"), g("tone", "어조"), g("eye contact", "시선 교환"), g("facial expression", "얼굴 표정"),

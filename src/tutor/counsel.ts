@@ -194,8 +194,17 @@ export function isFirstVisit(): boolean {
   return Object.keys(loadProgress()).length === 0 && Object.values(allAttempts()).every((l) => !l.length);
 }
 
-/** 첫 방문에 분석해 볼 문제 — 코스 첫 시험의 오답률 1위 (문항은 이미 Top1부터) */
+/**
+ * 첫 방문에 분석해 볼 문제 — 누구에게나 **2026년 3월 30번 이름과 차이** (2026-10-22 선생님).
+ * 예전엔 코스 첫 시험의 오답률 1위였는데, 너무 어렵고 답이 납득이 안 가 이탈할 것 같다고 — 그림으로 이해되는 지문으로 바꿨다.
+ * 처음엔 데카르트의 나무(2025년 3월 21번)였는데 너무 옛날에 만든 문제라 선생님이 손 많이 댄 30번(잔디밭 꽃 그림)으로.
+ * 그 레슨이 없으면 예전처럼 코스 첫 시험의 1위
+ */
+export const ONBOARDING_SET_ID = "moeui-2026-03-30";
+
 export function onboardingSet(plan: CounselPlan | null): LessonSet | null {
+  const fixed = getSet(ONBOARDING_SET_ID);
+  if (fixed) return fixed;
   const ids = plan?.course?.length ? plan.course : defaultCourse();
   const mock = getMiniMock(ids[0] ?? null);
   const top = mock?.items.find((it) => it.lesson);

@@ -381,7 +381,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "사람들 앞에서 말할 때 왜 심장이 빨리 뛸까요? 이번 글은 그 이유를 진화(evolution)에서 찾아요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("stress out", "스트레스를 주다"), g("in front of", "~ 앞에서"), g("glossophobia", "말하기 공포증"),
                            g("uncomfortable", "불편한"), g("evolution", "진화"), g("exclude", "배제하다"), g("prepare for", "~에 대비하다"),

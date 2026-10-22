@@ -1,9 +1,12 @@
 node_modules
 dist
+ios/
 .DS_Store
 *.local
 .vercel
 .env*
+android-twa/
+android-signing/
 share/
 __pycache__/
 # 모의고사 PDF 원본(400MB+) — 컴퓨터에만 둔다. 레슨은 엑셀(오답률)과 content/tutor/exam-source/만 쓴다

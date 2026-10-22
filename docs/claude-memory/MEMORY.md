@@ -1,4 +1,5 @@
-- [제품 이름 Loopin](product-loopin-b2c.md) — 앱·제품은 Loopin B2C, 다정쌤은 선생님 캐릭터, haksup과 별개
+- [제품 이름 Loopin](product-loopin-b2c.md) — 앱·제품은 Loopin B2C, 기본 선생님은 상냥쌤(다정쌤과 같은 부류), haksup과 별개
+- [쌤 고르기 · 반말 허용](teacher-choice.md) — 교무실에서 6명 중 고르면 앱 전체가 바뀜(해금 없음), 상냥·소심만 존댓말, 표 대사는 teacher.ts
 - [Teaching Policy 방향](teaching-policy-direction.md) — 새 policy가 공식, 예전 엔진은 나중에 폐기, LLM 최소화, UX/UI·말투 유지
 - [21번 단순화 피드백](q21-simplify-feedback.md) — 너무 길다 → 수능 고난도 유지, 한 지문을 짧은 회차 여러 개로 쪼갠다
 - [단위 구조](unit-structure.md) — (보관됨, 안 씀) wip/unit-structure 브랜치
@@ -59,5 +60,6 @@
 - [할 일: 핵심어 표시판→가져오기](todo-keys-check.md) — 핵심어 버튼은 keys_checked 레슨(33·24)만, 선생님이 표시판에서 찍으면 가져오기 스크립트 만들어 켜기
 - [칠판은 화면마다 X](board-not-every-screen.md) — 결론·정리 대사엔 칠판 없이 지문만, 같은 칠판 반복 금지, 첫 설명 뒤 대사에서 칠판
 - [하위 등급 사용자 테스트](user-test-low-grade.md) — 8~9등급: 시험 문제는 못 풀고 분석 속 작은 문제에 흥미, 작은 문제 점수·틀린 것 다시 보기 원함 (2026-10-20)
-- [온보딩(가입 직후) 흐름](onboarding-flow.md) — 상담실 아님, 5번 누르기: 이름 → 소개 1장 → 등급 → 기출 순서 → 첫 시험 1위 문제 바로 분석, 5등급 이하 2점부터
+- [온보딩(가입 직후) 흐름](onboarding-flow.md) — 이름 → 소개 → 등급 → 기출 순서 → 30번 예시를 바로 분석(정답 먼저 X) → 홈에서 교무실·연습실·상담실 둘러보기(tour), 확인 ?onboarding
 - [단어 뜻 묻기는 5~9등급만](word-meaning-grade-5-9.md) — 「foster는 무슨 뜻?」류 3지는 1~4등급 건너뜀(엔진 isWordMeaningStep), 문장·구조 뜻은 모두에게
+- [사용자 분석: 테스터 빼기](user-analytics-exclude-testers.md) — 10-20부터만, loopin.tester·이름 헌석/수정·개발 IP·자동 브라우저 제외

@@ -1,0 +1,112 @@
+{
+ "2": [
+  {
+   "word": "to",
+   "phrase": "corresponded to metaphysics",
+   "sense": "~에",
+   "usage": "correspond to ~ = ~에 해당하다"
+  },
+  {
+   "word": "to",
+   "phrase": "the trunk to physics",
+   "sense": "~에",
+   "usage": "앞의 corresponded가 생략됨 — 줄기는 물리학에 (해당했다)"
+  },
+  {
+   "word": "to",
+   "phrase": "fruit to what we would call",
+   "sense": "~에",
+   "usage": "앞의 corresponded가 생략됨 — 가지와 열매는 ~에 (해당했다)"
+  }
+ ],
+ "3": [
+  {
+   "word": "as",
+   "phrase": "as we today regard science alone",
+   "sense": "~처럼, ~하듯이",
+   "usage": "접속사 as + 주어·동사"
+  },
+  {
+   "word": "that",
+   "phrase": "felt that the metaphysical principles",
+   "sense": "~라고",
+   "usage": "felt that + 문장 = ~라고 느꼈다"
+  }
+ ],
+ "4": [
+  {
+   "word": "for",
+   "phrase": "for him",
+   "sense": "~에게는",
+   "usage": "전치사 for + 사람"
+  },
+  {
+   "word": "but",
+   "phrase": "not only in mechanics but also in medicine",
+   "sense": "~뿐 아니라 …도",
+   "usage": "not only A but also B"
+  }
+ ],
+ "5": [
+  {
+   "word": "that",
+   "phrase": "The difficulty was that",
+   "sense": "~라는 것",
+   "usage": "be동사 뒤 that + 문장 = ~라는 것이다"
+  },
+  {
+   "word": "which",
+   "phrase": "no results could be derived which were",
+   "sense": "~인 (결과)",
+   "usage": "관계대명사 which — 앞의 results를 꾸민다 (사이에 could be derived가 끼어 있다)"
+  },
+  {
+   "word": "but",
+   "phrase": "but these principles seemed",
+   "sense": "그런데도, 하지만",
+   "usage": "접속사 but"
+  },
+  {
+   "word": "to",
+   "phrase": "seemed to be intelligible",
+   "sense": "~인 것처럼",
+   "usage": "seem to be ~ = ~인 것처럼 보이다"
+  }
+ ],
+ "6": [
+  {
+   "word": "so",
+   "phrase": "So the tree",
+   "sense": "그래서",
+   "usage": "접속부사 so — 앞 문장의 결과"
+  }
+ ],
+ "7": [
+  {
+   "word": "for",
+   "phrase": "For the derivation of",
+   "sense": "~을 위해",
+   "usage": "전치사 for + 명사 (목적)"
+  },
+  {
+   "word": "to",
+   "phrase": "necessary to start",
+   "sense": "~하는 것",
+   "usage": "it is necessary to + 동사 = ~하는 것이 필요하다 (it은 가주어)"
+  }
+ ],
+ "8": [
+  {
+   "word": "to",
+   "phrase": "was to think",
+   "sense": "~하게 되어 있었다",
+   "usage": "be to + 동사 (예정·의무)"
+  },
+  {
+   "word": "to",
+   "phrase": "without regard to the roots",
+   "sense": "~에 대한",
+   "usage": "regard to ~ = ~에 대한 고려"
+  }
+ ]
+}

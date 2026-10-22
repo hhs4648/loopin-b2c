@@ -444,7 +444,7 @@ lesson = base_lesson(
     intro=[{"id": "topic", "type": "say", "button": "네", "image": "topic",
             "brief": {"say": "돈을 벌지 않아도 예술가라고 할 수 있을까요? 이번 글은 예술과 상업(commerce) 이야기예요."}},
            {"id": "method1", "type": "say", "button": "좋아요",
-            "brief": {"say": "빈칸 문제는 빈칸 문장부터 보고 글쓴이의 주장을 잡아요. 빈칸이 주장과 같은 말인지, 반대 의견인지 파악해서 보기를 골라요."}}],
+            "brief": {"say": "빈칸 문제는 빈칸 위치를 살펴보고 가면 좋아요. 빈칸은 글쓴이 의견과 동일할 수도 있고, 반대일 수도 있어요."}}],
     exam=exam,
     key_words={"passage": [g("commerce", "상업"), g("authority", "권위"), g("senior", "졸업반"), g("major", "전공생"),
                            g("ignore", "무시하다"), g("be engaged in", "~에 종사하다"), g("professional", "전문적인, 전문가"),
