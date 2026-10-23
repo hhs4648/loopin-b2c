@@ -133,7 +133,7 @@ sentences = [
         ],
         "steps": [
             # 처음부터 「같은 뜻이에요」라고 알려 주면 갑작스럽다 → 학생이 고른다 (2026-10-21 선생님):
-            # 네 말 중 비슷한 뜻 셋(노랑) → 반대 뜻 하나(민트) → 그다음 설명·칠판(칠판은 문장 아래에)
+            # 네 말 중 비슷한 뜻 셋(노랑) → 반대 뜻 하나(민트) → 그다음 설명·칠판
             {"id": "s1_similar", "type": "pick", "interaction": "word_pick", "method": 0,
              "candidates": ["conceptualize", "categorize", "put a name on", "proper name"],
              "answers": ["conceptualize", "categorize", "put a name on"], "found_tone": "hl",
@@ -152,13 +152,17 @@ sentences = [
                        "more": "좋아요! {n}개 남았어요.",
                        "praise": "맞아요!",
                        "explain": "'not a proper name'처럼 not이 붙어 있어서, proper name이 반대 의미예요."}},
+            # 비슷한 말 셋은 노랑, 반대 말은 민트, not은 크게 움직이게(엔진이 부정어를 알아서).
+            # 칠판은 아래에 두면 대사·문장이 잘려서 열고 닫는 서랍으로, 긴 대사는 두 화면으로 (2026-10-23 선생님)
             show("s1_board",
-                 "'something that is not a proper name' — not이 붙었으니 proper name(고유 명사)은 이름 붙여 묶는 것의 반대편이에요. "
+                 "'something that is not a proper name' — not이 붙었으니 proper name(고유 명사)은 이름 붙여 묶는 것의 반대편이에요.",
+                 method=0, button="다음",
+                 panel=board([], ["proper name*"], fresh_cluster=True, right_label="반대쪽"),
+                 highlight=["conceptualize", "categorize", "put a name on", "not"], highlight_alt=["proper name"]),
+            show("s1_not_tip",
                  "시험 꿀팁! not, isn't, don't가 붙은 말은 바로 반대 그룹에 놓으면 돼요.",
                  method=0, button="다음",
-                 # 비슷한 말 셋은 노랑, 반대 말은 민트 — 칠판은 문장을 가리지 않게 아래에 (2026-10-21 선생님)
-                 panel=board([], ["proper name*"], fresh_cluster=True, right_label="반대쪽"), panel_below=True,
-                 highlight=["conceptualize", "categorize", "put a name on"], highlight_alt=["proper name"]),
+                 highlight=["not"], highlight_alt=["proper name"]),
             show("s1_abstract",
                  "이름을 붙이면 'abstract away from its particularities' 한대요.",
                  method=0, button="다음",

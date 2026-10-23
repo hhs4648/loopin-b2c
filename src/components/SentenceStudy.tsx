@@ -26,13 +26,13 @@ type Props = {
   onClose: () => void;
   /** 턴이 아닌 관찰(단어를 눌러 봄)을 세션에 알린다. 예전 레슨에는 없다 */
   onObserve?: (observation: UiObservation) => void;
-  /** 온보딩(가입 직후 첫 분석) — 칠판 손잡이 쓰는 법을 알려 준다 */
+  /** 온보딩(가입 직후 첫 분석)인가 — 지금은 쓰지 않는다(칠판 안내도 OnboardingCoach가 한다) */
   onboarding?: boolean;
 };
 
 const NO_CONCEPTS: NonNullable<TutorView["concepts"]> = [];
 
-export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve, onboarding = false }: Props) {
+export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve }: Props) {
   function listen() {
     // 화면에 보이는 빈칸(________)을 그대로 읽으면 "underscore"가 된다. 정답 단어로 읽는다.
     const text = view.speakSentence ?? view.sentence;
@@ -450,7 +450,6 @@ export function SentenceStudy({ view, typing, onSend, onBack, onClose, onObserve
         <BoardDrawer
           panel={board}
           fresh={board === boardNow}
-          coach={onboarding}
           onPick={
             !typing && board === boardNow && board.kind === "groups" && board.sort && view.buttons.includes(board.sort.right)
               ? onSend
@@ -744,6 +743,8 @@ function GlossSentence({
     const hl3 = hit(markedSame);
     const hl = !hl3 && hit(marked);
     const hl2 = !hl && !hl3 && hit(markedAlt);
+    // 칠한 말이 not·never 같은 부정어면 아주 크게, 움직여서 — 시험에서 큰 힌트다 (2026-10-23 선생님)
+    const neg = (hl || hl2 || hl3) && NEGATION.test(span.text.trim());
     const tip = hit(markedTip);
     /*
       흐림 = 빼도 되는 삽입, 음영 = 건너뛰어도 되는 부분. 공백까지 같은 칸으로 감싸야
@@ -767,7 +768,7 @@ function GlossSentence({
           )
         : span.text;
       if (tip) parts.push(<mark key={i} {...roleAttr} className={`hl-tip${marks}`}>{text}</mark>);
-      else if (hl || hl2 || hl3) parts.push(<mark key={i} {...roleAttr} className={`${hl3 ? "hl3" : hl ? "hl" : "hl2"}${marks}`}>{text}</mark>);
+      else if (hl || hl2 || hl3) parts.push(<mark key={i} {...roleAttr} className={`${hl3 ? "hl3" : hl ? "hl" : "hl2"}${neg ? " neg-pop" : ""}${marks}`}>{text}</mark>);
       else if (marks) parts.push(<span key={i} {...roleAttr} className={marks.trim()}>{text}</span>);
       else parts.push(<span key={i}>{text}</span>);
       return;
@@ -805,7 +806,7 @@ function GlossSentence({
         key={i}
         {...(sign ? { "data-sign": sign } : {})}
         {...roleAttr}
-        className={`english-token${longPhrase(span.text) ? " long" : ""}${sign ? (sign === "+" ? " sign-plus" : " sign-minus") : ""}${selected ? " open" : ""}${hl ? " hl" : ""}${hl2 ? " hl2" : ""}${hl3 ? " hl3" : ""}${tip ? " hl-tip" : ""}${marks}`}
+        className={`english-token${longPhrase(span.text) ? " long" : ""}${sign ? (sign === "+" ? " sign-plus" : " sign-minus") : ""}${selected ? " open" : ""}${hl ? " hl" : ""}${hl2 ? " hl2" : ""}${hl3 ? " hl3" : ""}${neg ? " neg-pop" : ""}${tip ? " hl-tip" : ""}${marks}`}
       >
         {OPENING.test(spans[i - 1]?.text ?? "") ? spans[i - 1]!.text : null}
         <Tap
@@ -1159,6 +1160,9 @@ const CLOSING = /^[,.;:!?)”’"']$/;
 const OPENING = /^[(“‘①②③④⑤]$/;
 
 /** 강조할 구절이 문장의 몇 번째 글자부터 몇 번째까지인지 */
+/** 부정어 — 칠하면 크게 움직이는 강조 (not, never, isn't …) */
+const NEGATION = /^(?:not|never|no|nor|neither|none|nothing|hardly|scarcely|barely|seldom|rarely|cannot|[a-z]+n['’]t)[.,;:!?]?$/i;
+
 function highlightRanges(sentence: string, phrases: string[]): [number, number][] {
   const ranges: [number, number][] = [];
   for (const phrase of phrases) {

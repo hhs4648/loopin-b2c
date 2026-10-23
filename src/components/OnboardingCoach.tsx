@@ -7,7 +7,7 @@ import { currentTeacher } from "../tutor/teacher";
  *
  * - 한 번에 하나만. 기능이 화면에 보일 때(다른 것에 가려지지 않았을 때) 순서대로
  * - 그 기능을 직접 누르거나 [알겠어요]를 누르면 끝 — 다시 안 나온다 (기기에 기억)
- * - 칠판 손잡이 안내는 칠판 서랍(`BoardDrawer`)이 따로 한다. 그게 떠 있는 동안은 쉰다
+ * - 칠판 열고 닫기도 여기서 짚는다 — 칠판이 열리면 ✕·손잡이로 닫기, 닫히면 손잡이로 다시 열기 (2026-10-23 선생님)
  */
 
 type Coach = {
@@ -33,6 +33,14 @@ const COACHES: Coach[] = [
       return `여기를 누르면 ${currentTeacher().name}과 문장마다 같이 분석해요.`;
     },
     find: button("분석하러 갈게요"),
+  },
+  // 칠판은 뜨면 문장을 덮는다 — 닫는 법을 먼저, 닫은 뒤엔 다시 여는 법을
+  { id: "board-close", text: "칠판이에요. 다 보면 ✕나 왼쪽 손잡이를 눌러 닫고 문장을 봐요.", find: all(".board-drawer.open .board-close") },
+  {
+    id: "board-open",
+    text: "칠판은 닫아도 여기 있어요. 손잡이를 누르거나 왼쪽으로 끌면 다시 열려요.",
+    find: all(".board-drawer:not(.open):not(.pending) .board-handle"),
+    after: "board-close",
   },
   {
     id: "word",
@@ -115,7 +123,8 @@ export function OnboardingCoach({ only }: { only?: string[] } = {}) {
       const phone = self.current?.closest<HTMLElement>(".phone");
       if (!phone) return;
       // 칠판 손잡이 안내·확인 창이 떠 있거나 칠판이 곧 펼쳐질 참이면 쉰다 (펼쳐질 때 떴다가 바로 사라지지 않게)
-      if (phone.querySelector(".board-coach, .exit-confirm, .board-drawer.open, .board-drawer.pending")) {
+      // 칠판이 열려 있을 때 문장 쪽 기능은 가려져서 저절로 안 짚힌다(visible) — 칠판 안내만 나온다
+      if (phone.querySelector(".board-coach, .exit-confirm, .board-drawer.pending")) {
         setNow(null);
         return;
       }

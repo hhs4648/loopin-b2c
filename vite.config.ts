@@ -42,4 +42,8 @@ export default defineConfig({
     legalComments: "none",
     drop: ["debugger"],
   },
+  // 폰으로 바로 보기 — Cloudflare 임시 터널(https://….trycloudflare.com)로 개발 서버를 열 때 그 주소를 허용한다
+  server: {
+    allowedHosts: [".trycloudflare.com"],
+  },
 });

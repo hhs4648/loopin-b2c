@@ -963,8 +963,9 @@ mark.hl2, .english-token.hl2 .english-word {
 .read-continue:hover { background: var(--accent); }
 
 /* 칠판 위 그림 — 도입에서 인물 사진 등을 칠판에 붙인 것처럼 */
+/* --fit: 말풍선과 겹치면 줄이는 비율 (ClassroomChat이 잰다) — 위쪽 가장자리는 그대로 두고 아래만 올라간다 */
 .board-image {
-  position: absolute; left: 50%; top: 17%; transform: translateX(-50%); z-index: 2;
+  position: absolute; left: 50%; top: 17%; transform: translateX(-50%) scale(var(--fit, 1)); transform-origin: 50% 0; z-index: 2;
   height: 26%; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 4px;
 }
 /* 등장 애니메이션은 그림에만 — figure에 걸면 transform이 가운데 정렬을 덮는다 */
@@ -977,7 +978,7 @@ mark.hl2, .english-token.hl2 .english-word {
 .board-image.drawing img { border: none; box-shadow: none; background: none; border-radius: 0; }
 /* 이름표까지 들어간 그림은 칠판 폭에 맞춘다 */
 /* 칠판 위쪽에 붙인다 — 아래로 내려오면 말풍선에 가린다 */
-.board-image.drawing { width: 74%; height: auto; top: 30.5%; transform: translate(-50%, -50%); }
+.board-image.drawing { width: 74%; height: auto; top: 30.5%; transform: translate(-50%, -50%) scale(var(--fit, 1)); transform-origin: 50% 0; }
 .board-image.drawing img { width: 100%; height: auto; }
 
 /* ── 밑줄 문제 데모(2026-03 21번) 화면 요소 ─────────────────────────── */
@@ -3038,3 +3039,13 @@ mark.hl3, .english-token.hl3 .english-word {
   100% { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { .match-card.shuffle-in { animation: none; } }
+
+/* 부정어(not·never …)를 칠하면 크게, 빨갛게, 흔들어서 — 시험의 큰 힌트 (2026-10-23 선생님) */
+mark.neg-pop, .english-token.neg-pop .english-word {
+  background: #ffd6de !important; color: #d12c4f !important; font-weight: 800;
+  box-shadow: inset 0 -3px #e2607d; border-radius: 6px;
+  display: inline-block; animation: neg-pop .5s cubic-bezier(.3,1.6,.5,1) both, neg-wiggle .9s ease-in-out .5s 3;
+}
+@keyframes neg-pop { 0% { transform: scale(.6); } 100% { transform: scale(1.18); } }
+@keyframes neg-wiggle { 0%, 100% { transform: scale(1.18) rotate(0); } 25% { transform: scale(1.18) rotate(-6deg); } 75% { transform: scale(1.18) rotate(6deg); } }
+@media (prefers-reduced-motion: reduce) { mark.neg-pop, .english-token.neg-pop .english-word { animation: none; transform: scale(1.12); } }

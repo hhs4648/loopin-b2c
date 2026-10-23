@@ -495,7 +495,7 @@
           "type": "show",
           "interaction": "note",
           "brief": {
-            "say": "'something that is not a proper name' — not이 붙었으니 proper name(고유 명사)은 이름 붙여 묶는 것의 반대편이에요. 시험 꿀팁! not, isn't, don't가 붙은 말은 바로 반대 그룹에 놓으면 돼요."
+            "say": "'something that is not a proper name' — not이 붙었으니 proper name(고유 명사)은 이름 붙여 묶는 것의 반대편이에요."
           },
           "method": 0,
           "button": "다음",
@@ -525,11 +525,27 @@
             },
             "between": ""
           },
-          "panel_below": true,
           "highlight": [
             "conceptualize",
             "categorize",
-            "put a name on"
+            "put a name on",
+            "not"
+          ],
+          "highlight_alt": [
+            "proper name"
+          ]
+        },
+        {
+          "id": "s1_not_tip",
+          "type": "show",
+          "interaction": "note",
+          "brief": {
+            "say": "시험 꿀팁! not, isn't, don't가 붙은 말은 바로 반대 그룹에 놓으면 돼요."
+          },
+          "method": 0,
+          "button": "다음",
+          "highlight": [
+            "not"
           ],
           "highlight_alt": [
             "proper name"

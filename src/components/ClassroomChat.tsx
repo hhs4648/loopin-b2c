@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef } from "react";
 import { ClassroomBg } from "./ClassroomBg";
 import { TeacherFigure, TeacherReaction, useTeacher } from "./TeacherFigure";
 import { QuickReplies } from "./QuickReplies";
@@ -20,6 +21,34 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
   // 칩이 뜨면 아래 도크가 그만큼 높아진다. 학생 말풍선을 같이 올리지 않으면 가린다
   const showNouns = view.properNouns.length > 0 && !view.ended;
   const teacher = useTeacher();
+
+  /*
+    칠판 그림(「어휘 문제 푸는 법」 등)이 말풍선에 가리지 않게 — 겹치면 그림을 위쪽에 붙인 채 줄인다.
+    말이 길어 말풍선이 커지면 그때그때 다시 잰다 (2026-10-23 선생님: 처음부터 칠판 아래가 가렸다)
+  */
+  const figRef = useRef<HTMLElement>(null);
+  const bubbleRef = useRef<HTMLDivElement>(null);
+  const fitRef = useRef<() => void>(() => {});
+  useLayoutEffect(() => {
+    const fig = figRef.current;
+    const bubble = bubbleRef.current;
+    if (!fig || !bubble) return;
+    const fit = () => {
+      const now = Number(fig.style.getPropertyValue("--fit") || 1);
+      const f = fig.getBoundingClientRect();
+      const b = bubble.getBoundingClientRect();
+      const natural = f.height / now;
+      if (!natural) return;
+      const s = Math.max(0.55, Math.min(1, (b.top - 10 - f.top) / natural));
+      if (Math.abs(s - now) > 0.01) fig.style.setProperty("--fit", String(s));
+    };
+    fitRef.current = fit;
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(bubble);
+    ro.observe(fig);
+    return () => ro.disconnect();
+  }, [view.boardImage?.src, view.message, typing]);
 
   return (
     <div
@@ -53,10 +82,12 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
 
       {/* 칠판에 띄우는 그림 (도입의 데카르트 초상 등). 파일이 없으면 조용히 숨는다 */}
       {view.boardImage ? (
-        <figure className={`board-image ${view.boardImage.kind ?? "photo"}`} key={view.boardImage.src}>
+        <figure ref={figRef} className={`board-image ${view.boardImage.kind ?? "photo"}`} key={view.boardImage.src}>
           <img
             src={view.boardImage.src}
             alt={view.boardImage.alt}
+            // 그림이 늦게 들어오면 그때 다시 잰다
+            onLoad={() => fitRef.current()}
             onError={(e) => {
               (e.currentTarget.parentElement as HTMLElement).hidden = true;
             }}
@@ -71,7 +102,7 @@ export function ClassroomChat({ view, setTitle, elapsed, typing, onSend, onClose
         </div>
       </div>
 
-      <div className="teacher-bubble">
+      <div className="teacher-bubble" ref={bubbleRef}>
           <div
             className={`bubble-card${view.effect === "light" ? " lit" : ""}`}
             aria-live="polite"
